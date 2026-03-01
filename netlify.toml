@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# All routes fall through to index.html (HashRouter handles the rest)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
