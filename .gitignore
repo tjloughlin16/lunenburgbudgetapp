@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Force-include data directories blocked by global gitignore rule for "data"
+!public/data/
+!public/data/budget.xlsx
+!src/data/
+!src/data/*.ts
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
