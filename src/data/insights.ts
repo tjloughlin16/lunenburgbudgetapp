@@ -23,10 +23,12 @@ export function computeBudgetStory(
   const compareLabel = years.find(y => y.key === compareYear)?.label ?? compareYear.toUpperCase()
   const primaryShort = years.find(y => y.key === primaryYear)?.short ?? primaryYear.toUpperCase()
 
-  const totalPrimary = grandTotals[primaryYear] ?? 0
-  const totalCompare = grandTotals[compareYear] ?? 0
-  const totalDelta = totalPrimary - totalCompare
-  const totalPctChange = pct(totalCompare, totalPrimary)
+  const totalPrimary   = grandTotals[primaryYear] ?? 0
+  const totalCompare   = grandTotals[compareYear] ?? 0
+  const freeCashAdjust = data.freeCash[compareYear] ?? 0
+  const adjustedBase   = totalCompare + freeCashAdjust  // actual prior-year levy
+  const totalDelta     = totalPrimary - adjustedBase    // levy delta
+  const totalPctChange = pct(adjustedBase, totalPrimary)
 
   // Salary totals
   const salPrimary = sections.salaries.filter(i => !i.isGroupHeader).reduce((s, i) => s + (i.values[primaryYear] ?? 0), 0)
@@ -168,18 +170,22 @@ export function computeBudgetStory(
   // ── Paragraph 1: Opening — the headline number and overall direction ─────────
   {
     const parts: string[] = []
+    // Use adjustedBase (levy) as the comparison anchor, with a parenthetical when free cash applies
+    const compareAmt = freeCashAdjust < 0
+      ? `${formatDollar(adjustedBase)} levy (${compareLabel}'s ${formatDollar(totalCompare)} gross budget less ${formatDollar(Math.abs(freeCashAdjust))} free cash)`
+      : `${formatDollar(adjustedBase)}`
     if (totalDelta > 0 && totalPctChange !== null) {
       const magnitude = totalPctChange > 0.1 ? 'a significant increase' : totalPctChange > 0.05 ? 'an increase' : 'a modest increase'
       parts.push(
-        `The ${primaryShort} proposed budget for Lunenburg Public Schools totals ${formatDollar(totalPrimary)} — ${magnitude} of ${formatDollar(totalDelta)} (${formatPct(totalPctChange)}) over ${compareLabel}'s ${formatDollar(totalCompare)}.`
+        `The ${primaryShort} proposed budget for Lunenburg Public Schools totals ${formatDollar(totalPrimary)} — ${magnitude} of ${formatDollar(totalDelta)} (${formatPct(totalPctChange)}) over ${compareLabel}'s ${compareAmt}.`
       )
     } else if (totalDelta < 0 && totalPctChange !== null) {
       parts.push(
-        `The ${primaryShort} proposed budget for Lunenburg Public Schools totals ${formatDollar(totalPrimary)} — a reduction of ${formatDollar(Math.abs(totalDelta))} (${formatPct(totalPctChange)}) from ${compareLabel}'s ${formatDollar(totalCompare)}.`
+        `The ${primaryShort} proposed budget for Lunenburg Public Schools totals ${formatDollar(totalPrimary)} — a reduction of ${formatDollar(Math.abs(totalDelta))} (${formatPct(totalPctChange)}) from ${compareLabel}'s ${compareAmt}.`
       )
     } else {
       parts.push(
-        `The ${primaryShort} proposed budget for Lunenburg Public Schools totals ${formatDollar(totalPrimary)}, essentially flat compared to ${compareLabel}'s ${formatDollar(totalCompare)}.`
+        `The ${primaryShort} proposed budget for Lunenburg Public Schools totals ${formatDollar(totalPrimary)}, essentially flat compared to ${compareLabel}'s ${compareAmt}.`
       )
     }
     parts.push(
@@ -190,10 +196,9 @@ export function computeBudgetStory(
 
   // ── Paragraph 1b: Prop 2½ context ────────────────────────────────────────────
   {
-    const freeCashAdjust = data.freeCash[compareYear] ?? 0
-    const adjustedBase   = totalCompare + freeCashAdjust   // actual prior-year levy
-    const levyDelta      = totalPrimary - adjustedBase
-    const levyPctChange  = adjustedBase > 0.005 ? levyDelta / adjustedBase : totalPctChange
+    // freeCashAdjust and adjustedBase already computed above
+    const levyDelta      = totalDelta   // same thing now (totalDelta = totalPrimary - adjustedBase)
+    const levyPctChange  = totalPctChange
     const capAmount      = adjustedBase * 0.025
     const dollarAbove    = levyDelta - capAmount
     const pptAbove       = levyPctChange !== null ? levyPctChange - 0.025 : null
@@ -890,10 +895,12 @@ export function computeInsights(
 ): InsightCard[] {
   const { groups, lineItems, grandTotals, sections, years } = data
 
-  const totalPrimary = grandTotals[primaryYear] ?? 0
-  const totalCompare = grandTotals[compareYear] ?? 0
-  const totalDelta = totalPrimary - totalCompare
-  const totalPctChange = pct(totalCompare, totalPrimary)
+  const totalPrimary    = grandTotals[primaryYear] ?? 0
+  const totalCompare    = grandTotals[compareYear] ?? 0
+  const freeCashAdjust  = data.freeCash[compareYear] ?? 0
+  const adjustedBase    = totalCompare + freeCashAdjust   // actual prior-year levy
+  const totalDelta      = totalPrimary - adjustedBase     // levy delta (free-cash-adjusted)
+  const totalPctChange  = pct(adjustedBase, totalPrimary) // levy % change
 
   const primaryLabel = years.find(y => y.key === primaryYear)?.short ?? primaryYear.toUpperCase()
   const compareLabel = years.find(y => y.key === compareYear)?.short ?? compareYear.toUpperCase()
@@ -929,9 +936,12 @@ export function computeInsights(
   {
     const dir = totalDelta >= 0 ? 'an increase' : 'a decrease'
     const pctStr = totalPctChange !== null ? ` (${formatPct(totalPctChange)})` : ''
+    const baseNote = freeCashAdjust < 0
+      ? ` ${compareLabel}'s actual levy was ${formatDollar(adjustedBase)} after a ${formatDollar(Math.abs(freeCashAdjust))} one-time free cash offset.`
+      : ''
     cards.push({
       id: 'hero', title: 'The Big Picture', stat: formatDollar(totalPrimary), type: totalDelta >= 0 ? 'increase' : 'decrease',
-      description: `The ${primaryLabel} proposed budget is ${formatDollar(totalPrimary)} — ${dir} of ${formatDollar(Math.abs(totalDelta))}${pctStr} compared to ${compareLabel}'s ${formatDollar(totalCompare)}.`,
+      description: `The ${primaryLabel} proposed budget is ${formatDollar(totalPrimary)} — ${dir} of ${formatDollar(Math.abs(totalDelta))}${pctStr} over ${compareLabel}'s levy of ${formatDollar(adjustedBase)}.${baseNote}`,
     })
   }
 
