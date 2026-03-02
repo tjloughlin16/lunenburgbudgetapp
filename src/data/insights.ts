@@ -188,6 +188,31 @@ export function computeBudgetStory(
     paragraphs.push(parts.join(' '))
   }
 
+  // ── Paragraph 1b: Prop 2½ context ────────────────────────────────────────────
+  if (totalPctChange !== null) {
+    const capAmount    = totalCompare * 0.025
+    const dollarAbove  = totalDelta - capAmount
+    const pptAbove     = totalPctChange - 0.025
+
+    if (totalPctChange > 0.025) {
+      const abovePpts = fmtPctMag(pptAbove)
+      const aboveDollars = formatDollar(dollarAbove)
+      paragraphs.push(
+        `Under Massachusetts' Proposition 2½, a town's property tax levy can only grow by 2.5% per year without a voter-approved override. ` +
+        `The proposed school budget is up ${formatPct(totalPctChange)} — ${abovePpts} above that cap, representing roughly ${aboveDollars} more than the 2.5% threshold would allow. ` +
+        `This does not automatically mean an override is required: Prop 2½ applies to the entire town levy, not the school budget alone, and increases in state aid can offset some of the pressure. ` +
+        `However, it signals that school spending may be putting upward pressure on the town's levy limit, and residents should watch for override discussion at Town Meeting.`
+      )
+    } else if (totalPctChange >= 0) {
+      paragraphs.push(
+        `Under Massachusetts' Proposition 2½, a town's property tax levy can only grow by 2.5% per year without a voter-approved override. ` +
+        `The proposed school budget increase of ${formatPct(totalPctChange)} falls within that cap, meaning the school budget growth alone does not appear to create override pressure this year — ` +
+        `though the full picture depends on the rest of the town budget and any changes in state aid.`
+      )
+    }
+    // If totalDelta < 0 (budget is shrinking), skip this paragraph entirely
+  }
+
   // ── Paragraph 2: Personnel costs — always the dominant story ────────────────
   {
     const parts: string[] = []
@@ -1217,6 +1242,52 @@ export function computeInsightSections(
 
   // Filter out sections with no items
   return result.filter(s => s.items.length > 0)
+}
+
+// ── Prop 2½ context ───────────────────────────────────────────────────────────
+//
+// Compares the school budget year-over-year change against the 2.5% annual
+// levy cap. This is NOT a definitive override determination — that requires
+// the full town levy picture — but it surfaces whether the school budget
+// alone is above or below the cap threshold.
+
+export interface Prop25Metrics {
+  budgetPctChange: number | null   // actual YoY % change (decimal, e.g. 0.042)
+  capPct: number                   // always 0.025
+  isAboveCap: boolean
+  pptAboveCap: number | null       // percentage points above cap (negative = under cap)
+  dollarAboveCap: number           // $ above what 2.5% would allow (negative = under)
+  capAmount: number                // what a 2.5% increase on prior year would be
+  totalDelta: number
+  totalPrimary: number
+  totalCompare: number
+}
+
+export function computeProp25(
+  data: BudgetData,
+  primaryYear: FiscalYear,
+  compareYear: FiscalYear,
+): Prop25Metrics {
+  const totalPrimary = data.grandTotals[primaryYear] ?? 0
+  const totalCompare = data.grandTotals[compareYear] ?? 0
+  const totalDelta   = totalPrimary - totalCompare
+  const budgetPctChange = totalCompare > 0.005 ? totalDelta / totalCompare : null
+  const capAmount    = totalCompare * 0.025
+  const dollarAboveCap = totalDelta - capAmount
+  const pptAboveCap  = budgetPctChange !== null ? budgetPctChange - 0.025 : null
+  const isAboveCap   = pptAboveCap !== null && pptAboveCap > 0
+
+  return {
+    budgetPctChange,
+    capPct: 0.025,
+    isAboveCap,
+    pptAboveCap,
+    dollarAboveCap,
+    capAmount,
+    totalDelta,
+    totalPrimary,
+    totalCompare,
+  }
 }
 
 // ── Public review: anomaly detection ──────────────────────────────────────────

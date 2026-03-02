@@ -5,8 +5,8 @@ import {
 } from 'recharts'
 import { useBudgetStore } from '../store/budgetStore'
 import { useBudgetData } from '../hooks/useBudgetData'
-import { computeInsights, computeCostDriversChart, computeCategoryDriversChart, computeInsightSections, computeBudgetStory, computeSchoolBreakdown, computeAnomalies } from '../data/insights'
-import type { InsightCard, InsightType, InsightSection, InsightItem, CategoryDriversResult, SchoolBudget, Anomaly, AnomalyType } from '../data/insights'
+import { computeInsights, computeCostDriversChart, computeCategoryDriversChart, computeInsightSections, computeBudgetStory, computeSchoolBreakdown, computeAnomalies, computeProp25 } from '../data/insights'
+import type { InsightCard, InsightType, InsightSection, InsightItem, CategoryDriversResult, SchoolBudget, Anomaly, AnomalyType, Prop25Metrics } from '../data/insights'
 import { YearSelector } from '../components/filters/YearSelector'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
@@ -459,6 +459,88 @@ function DetailedSection({ section }: { section: InsightSection }) {
   )
 }
 
+// ── Prop 2½ banner ────────────────────────────────────────────────────────────
+
+function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: string }) {
+  if (m.budgetPctChange === null) return null
+
+  const isAbove = m.isAboveCap
+  const pctChange = m.budgetPctChange
+
+  const accentBorder = isAbove ? 'border-amber-300' : 'border-green-300'
+  const accentBg     = isAbove ? 'bg-amber-50'      : 'bg-green-50'
+  const accentText   = isAbove ? 'text-amber-900'   : 'text-green-900'
+  const accentSub    = isAbove ? 'text-amber-700'   : 'text-green-700'
+  const statColor    = isAbove ? 'text-amber-700'   : 'text-green-700'
+
+  return (
+    <div className={`rounded-xl border ${accentBorder} ${accentBg} overflow-hidden`}>
+      {/* Header */}
+      <div className={`px-6 py-3 border-b ${accentBorder} flex items-center gap-2`}>
+        <svg className={`w-4 h-4 ${isAbove ? 'text-amber-600' : 'text-green-600'} flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isAbove
+            ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          }
+        </svg>
+        <h2 className={`text-sm font-bold ${accentText}`}>Proposition 2½ Context</h2>
+        <span className={`ml-auto text-xs ${accentSub}`}>
+          {isAbove ? 'School budget increase exceeds the 2.5% annual cap' : 'School budget increase is within the 2.5% annual cap'}
+        </span>
+      </div>
+
+      {/* Metrics row */}
+      <div className="grid grid-cols-3 divide-x divide-amber-100 bg-white/60">
+        {/* Actual increase */}
+        <div className="px-5 py-4 text-center">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Budget Increase</p>
+          <p className={`text-3xl font-bold tabular-nums ${statColor}`}>
+            {formatPct(pctChange)}
+          </p>
+          <p className="text-xs text-gray-500 mt-1 tabular-nums">
+            {m.totalDelta >= 0 ? '+' : ''}{formatDollar(m.totalDelta)} vs {compareLabel}
+          </p>
+        </div>
+
+        {/* Cap */}
+        <div className="px-5 py-4 text-center">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Prop 2½ Annual Cap</p>
+          <p className="text-3xl font-bold tabular-nums text-gray-500">2.5%</p>
+          <p className="text-xs text-gray-500 mt-1 tabular-nums">
+            +{formatDollar(m.capAmount)} allowed
+          </p>
+        </div>
+
+        {/* Above / below cap */}
+        <div className="px-5 py-4 text-center">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
+            {isAbove ? 'Above Cap By' : 'Below Cap By'}
+          </p>
+          <p className={`text-3xl font-bold tabular-nums ${statColor}`}>
+            {m.pptAboveCap !== null
+              ? `${isAbove ? '+' : ''}${(Math.abs(m.pptAboveCap) * 100).toFixed(1)} pts`
+              : '—'}
+          </p>
+          <p className={`text-xs mt-1 tabular-nums font-medium ${statColor}`}>
+            {isAbove ? '+' : ''}{formatDollar(m.dollarAboveCap)} {isAbove ? 'above threshold' : 'under threshold'}
+          </p>
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className={`px-6 py-3 border-t ${accentBorder}`}>
+        <p className={`text-xs ${accentSub} leading-relaxed`}>
+          <span className="font-semibold">Note:</span>{' '}
+          {isAbove
+            ? `This reflects the school budget only. Prop 2½ is measured against the entire town levy — not just schools — and state aid increases can offset some of this pressure. Whether a voter override is ultimately needed depends on the full town budget and revenue picture.`
+            : `This reflects the school budget only. The full override determination depends on the entire town levy, including all municipal departments and changes in state aid.`
+          }
+        </p>
+      </div>
+    </div>
+  )
+}
+
 // ── Public review: anomalies ──────────────────────────────────────────────────
 
 const ANOMALY_CONFIG: Record<AnomalyType, {
@@ -643,6 +725,11 @@ export function InsightsPage() {
     [data, primaryYear, compareYear]
   )
 
+  const prop25 = useMemo(
+    () => (data ? computeProp25(data, primaryYear, compareYear) : null),
+    [data, primaryYear, compareYear]
+  )
+
   if (loading) return <LoadingSpinner />
   if (error) return <ErrorBanner message={error} />
   if (!data) return null
@@ -664,6 +751,9 @@ export function InsightsPage() {
         </div>
         <YearSelector mode="primary" />
       </div>
+
+      {/* Prop 2½ banner */}
+      {prop25 && <Prop25Banner m={prop25} compareLabel={compareLabel} />}
 
       {/* Story */}
       {story && <BudgetStorySection story={story} />}
