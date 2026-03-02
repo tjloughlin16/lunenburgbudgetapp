@@ -280,7 +280,7 @@ export function computeBudgetStory(
       const parent = groups.find(g => g.code === lineSpotlight.parentCode)
       const parentName = parent ? ` within ${cleanLabel(parent.label)}` : ''
       parts.push(
-        `One item worth highlighting: "${lineSpotlight.description}"${parentName} has increased ${formatPct(lineSpotlight.pctChange)} — from ${formatDollar(lineSpotlight.a)} to ${formatDollar(lineSpotlight.b)} — a change that warrants attention and reflects ${lineSpotlight.delta > 50_000 ? 'a significant new commitment' : 'a targeted adjustment'} in this area.`
+        `One item worth highlighting: "${lineSpotlight.description}"${parentName} has increased ${fmtPctMag(lineSpotlight.pctChange)} — from ${formatDollar(lineSpotlight.a)} to ${formatDollar(lineSpotlight.b)} — a change that warrants attention and reflects ${lineSpotlight.delta > 50_000 ? 'a significant new commitment' : 'a targeted adjustment'} in this area.`
       )
     }
     paragraphs.push(parts.join(' '))
@@ -333,7 +333,7 @@ export function computeBudgetStory(
     )
 
     for (const s of sorted) {
-      const pctStr = s.pctChange !== null ? ` (${formatPct(Math.abs(s.pctChange))})` : ''
+      const pctStr = s.pctChange !== null ? ` (${fmtPctMag(s.pctChange)})` : ''
       const dir = s.delta >= 0 ? 'up' : 'down'
       const amt = formatDollar(Math.abs(s.delta))
 
@@ -378,7 +378,7 @@ export function computeBudgetStory(
     if (athPrimary > 0) {
       const athDir = athDelta >= 0 ? 'up' : 'down'
       const athAmt = formatDollar(Math.abs(athDelta))
-      const athPctStr = athPct !== null ? ` (${formatPct(Math.abs(athPct))})` : ''
+      const athPctStr = athPct !== null ? ` (${fmtPctMag(athPct)})` : ''
       if (Math.abs(athDelta) < 1_000) {
         parts.push(
           `For families of student-athletes, the athletics budget is holding essentially flat at ${formatDollar(athPrimary)} — programs and coaching positions are expected to remain stable.`
@@ -399,7 +399,7 @@ export function computeBudgetStory(
     if (artsPrimary > 0 || artsCompare > 0) {
       const artsDir = artsDelta >= 0 ? 'up' : 'down'
       const artsAmt = formatDollar(Math.abs(artsDelta))
-      const artsPctStr = artsPct !== null ? ` (${formatPct(Math.abs(artsPct))})` : ''
+      const artsPctStr = artsPct !== null ? ` (${fmtPctMag(artsPct)})` : ''
 
       if (Math.abs(artsDelta) < 500 && Math.abs(athDelta) < 1_000) {
         // Both essentially flat
@@ -440,7 +440,7 @@ export function computeBudgetStory(
     if (spedPrimary > 0) {
       const spedDir = spedDelta >= 0 ? 'up' : 'down'
       const spedAmt = formatDollar(Math.abs(spedDelta))
-      const spedPctStr = spedPct !== null ? ` (${formatPct(Math.abs(spedPct))})` : ''
+      const spedPctStr = spedPct !== null ? ` (${fmtPctMag(spedPct)})` : ''
 
       parts.push(
         `For the many Lunenburg families navigating special education — students with IEPs, 504 plans, speech services, occupational therapy, or paraprofessional support — the district's special education budget is ${spedDir} ${spedAmt}${spedPctStr} to ${formatDollar(spedPrimary)}.`
@@ -780,6 +780,12 @@ export interface InsightSection {
 function pct(a: number, b: number): number | null {
   if (Math.abs(a) < 0.005) return null
   return (b - a) / a
+}
+
+// Formats a percentage magnitude without a sign — for use in prose where
+// the direction is already expressed in words ("up", "down", "increased", etc.)
+function fmtPctMag(value: number): string {
+  return `${(Math.abs(value) * 100).toFixed(1)}%`
 }
 
 function cleanLabel(label: string): string {
