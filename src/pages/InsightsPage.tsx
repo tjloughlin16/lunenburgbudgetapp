@@ -462,10 +462,10 @@ function DetailedSection({ section }: { section: InsightSection }) {
 // ── Prop 2½ banner ────────────────────────────────────────────────────────────
 
 function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: string }) {
-  if (m.budgetPctChange === null) return null
+  if (m.levyPctChange === null && m.budgetPctChange === null) return null
 
   const isAbove = m.isAboveCap
-  const pctChange = m.budgetPctChange
+  const hasFreeCash = m.freeCashAdjust < 0
 
   const accentBorder = isAbove ? 'border-amber-300' : 'border-green-300'
   const accentBg     = isAbove ? 'bg-amber-50'      : 'bg-green-50'
@@ -485,21 +485,37 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
         </svg>
         <h2 className={`text-sm font-bold ${accentText}`}>Proposition 2½ Context</h2>
         <span className={`ml-auto text-xs ${accentSub}`}>
-          {isAbove ? 'School budget increase exceeds the 2.5% annual cap' : 'School budget increase is within the 2.5% annual cap'}
+          {isAbove ? 'Levy increase exceeds the 2.5% annual cap' : 'Levy increase is within the 2.5% annual cap'}
         </span>
       </div>
 
+      {/* Free cash callout */}
+      {hasFreeCash && (
+        <div className="px-6 py-2 bg-white/70 border-b border-amber-100 flex items-start gap-2">
+          <span className="text-amber-500 mt-0.5 flex-shrink-0">ⓘ</span>
+          <p className="text-xs text-gray-600 leading-relaxed">
+            <span className="font-semibold">{compareLabel} used {formatDollar(Math.abs(m.freeCashAdjust))} in one-time free cash</span>{' '}
+            to offset that year's budget. Since that relief doesn't carry over, the Prop 2½ cap is calculated from the actual levy base of {formatDollar(m.adjustedBase)} — not the gross line-item total of {formatDollar(m.totalCompare)}.
+          </p>
+        </div>
+      )}
+
       {/* Metrics row */}
       <div className="grid grid-cols-3 divide-x divide-amber-100 bg-white/60">
-        {/* Actual increase */}
+        {/* Levy increase (Prop 2½ basis) */}
         <div className="px-5 py-4 text-center">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Budget Increase</p>
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Levy Increase</p>
           <p className={`text-3xl font-bold tabular-nums ${statColor}`}>
-            {formatPct(pctChange)}
+            {m.levyPctChange !== null ? formatPct(m.levyPctChange) : formatPct(m.budgetPctChange ?? 0)}
           </p>
           <p className="text-xs text-gray-500 mt-1 tabular-nums">
-            {m.totalDelta >= 0 ? '+' : ''}{formatDollar(m.totalDelta)} vs {compareLabel}
+            +{formatDollar(m.levyDelta)} from actual {compareLabel} levy
           </p>
+          {hasFreeCash && m.budgetPctChange !== null && (
+            <p className="text-xs text-gray-400 mt-0.5 tabular-nums">
+              (line-item growth: {formatPct(m.budgetPctChange)})
+            </p>
+          )}
         </div>
 
         {/* Cap */}

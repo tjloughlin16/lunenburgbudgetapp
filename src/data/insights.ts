@@ -138,7 +138,7 @@ export function computeBudgetStory(
   const athPct     = pct(athCompare, athPrimary)
 
   // ── Arts / music totals (line items matching arts keywords) ───────────────
-  const artsRx = /music|band|chorus|orchestra|choir|\bart\b|\barts\b|drama|theater|theatre|dance|perform/i
+  const artsRx = /music|band|chorus|orchestra|choir|\bart\b|\barts\b|drama|theater|theatre|\bdance\b|perform/i
   const artsItems = lineItems.filter(i =>
     !i.isGroupHeader && i.section !== 'summary' && artsRx.test(i.description)
   )
@@ -189,28 +189,46 @@ export function computeBudgetStory(
   }
 
   // ── Paragraph 1b: Prop 2½ context ────────────────────────────────────────────
-  if (totalPctChange !== null) {
-    const capAmount    = totalCompare * 0.025
-    const dollarAbove  = totalDelta - capAmount
-    const pptAbove     = totalPctChange - 0.025
+  {
+    const freeCashAdjust = data.freeCash[compareYear] ?? 0
+    const adjustedBase   = totalCompare + freeCashAdjust   // actual prior-year levy
+    const levyDelta      = totalPrimary - adjustedBase
+    const levyPctChange  = adjustedBase > 0.005 ? levyDelta / adjustedBase : totalPctChange
+    const capAmount      = adjustedBase * 0.025
+    const dollarAbove    = levyDelta - capAmount
+    const pptAbove       = levyPctChange !== null ? levyPctChange - 0.025 : null
+    const hasFreeCarry   = freeCashAdjust < 0
 
-    if (totalPctChange > 0.025) {
-      const abovePpts = fmtPctMag(pptAbove)
+    if (levyPctChange !== null && levyPctChange > 0.025) {
+      const abovePpts    = pptAbove !== null ? fmtPctMag(pptAbove) : ''
       const aboveDollars = formatDollar(dollarAbove)
-      paragraphs.push(
-        `Under Massachusetts' Proposition 2½, a town's property tax levy can only grow by 2.5% per year without a voter-approved override. ` +
-        `The proposed school budget is up ${formatPct(totalPctChange)} — ${abovePpts} above that cap, representing roughly ${aboveDollars} more than the 2.5% threshold would allow. ` +
-        `This does not automatically mean an override is required: Prop 2½ applies to the entire town levy, not the school budget alone, and increases in state aid can offset some of the pressure. ` +
-        `However, it signals that school spending may be putting upward pressure on the town's levy limit, and residents should watch for override discussion at Town Meeting.`
-      )
-    } else if (totalPctChange >= 0) {
-      paragraphs.push(
-        `Under Massachusetts' Proposition 2½, a town's property tax levy can only grow by 2.5% per year without a voter-approved override. ` +
-        `The proposed school budget increase of ${formatPct(totalPctChange)} falls within that cap, meaning the school budget growth alone does not appear to create override pressure this year — ` +
-        `though the full picture depends on the rest of the town budget and any changes in state aid.`
-      )
+      let para = `Under Massachusetts' Proposition 2½, a town's property tax levy can only grow by 2.5% per year without a voter-approved override. `
+
+      if (hasFreeCarry) {
+        // Explain the free cash complication first
+        para += `${compareLabel} benefited from ${formatDollar(Math.abs(freeCashAdjust))} in one-time free cash that offset that year's budget, reducing what taxpayers were actually charged. ` +
+          `Since free cash is a one-time source, it does not carry forward — meaning the ${compareLabel} levy base for Prop 2½ purposes is ${formatDollar(adjustedBase)}, not the gross budget of ${formatDollar(totalCompare)}. ` +
+          `When measured from that actual levy base, the school budget is asking for a ${fmtPctMag(levyPctChange)} increase — ${abovePpts} above the cap — representing roughly ${aboveDollars} more than Prop 2½ would allow from the prior levy. ` +
+          `Of that total levy increase, ${formatDollar(Math.abs(freeCashAdjust))} simply replaces the free cash that can no longer be used, and ${formatDollar(levyDelta - Math.abs(freeCashAdjust))} reflects genuinely new spending.`
+      } else {
+        para += `The proposed school budget is up ${levyPctChange !== null ? formatPct(levyPctChange) : ''} — ${abovePpts} above that cap, representing roughly ${aboveDollars} more than the 2.5% threshold would allow. `
+      }
+
+      para += ` This does not automatically mean an override is required: Prop 2½ applies to the entire town levy, not the school budget alone, and increases in state aid can offset some of the pressure. However, it signals that school spending may be putting upward pressure on the town's levy limit, and residents should watch for override discussion at Town Meeting.`
+      paragraphs.push(para)
+
+    } else if (levyPctChange !== null && levyPctChange >= 0) {
+      let para = `Under Massachusetts' Proposition 2½, a town's property tax levy can only grow by 2.5% per year without a voter-approved override. `
+      if (hasFreeCarry) {
+        para += `${compareLabel} used ${formatDollar(Math.abs(freeCashAdjust))} in one-time free cash, so the actual levy base for Prop 2½ purposes is ${formatDollar(adjustedBase)}. ` +
+          `Even accounting for that adjustment, the proposed levy increase of ${fmtPctMag(levyPctChange)} remains within the 2.5% cap — the school budget growth does not appear to create override pressure this year. `
+      } else {
+        para += `The proposed school budget increase of ${formatPct(levyPctChange)} falls within that cap, meaning the school budget growth alone does not appear to create override pressure this year. `
+      }
+      para += `The full picture depends on the rest of the town budget and any changes in state aid.`
+      paragraphs.push(para)
     }
-    // If totalDelta < 0 (budget is shrinking), skip this paragraph entirely
+    // If budget is shrinking, skip this paragraph entirely
   }
 
   // ── Paragraph 2: Personnel costs — always the dominant story ────────────────
@@ -1252,15 +1270,19 @@ export function computeInsightSections(
 // alone is above or below the cap threshold.
 
 export interface Prop25Metrics {
-  budgetPctChange: number | null   // actual YoY % change (decimal, e.g. 0.042)
+  budgetPctChange: number | null   // gross line-item YoY % change
+  levyPctChange: number | null     // actual levy % change (free-cash-adjusted)
   capPct: number                   // always 0.025
   isAboveCap: boolean
-  pptAboveCap: number | null       // percentage points above cap (negative = under cap)
-  dollarAboveCap: number           // $ above what 2.5% would allow (negative = under)
-  capAmount: number                // what a 2.5% increase on prior year would be
-  totalDelta: number
+  pptAboveCap: number | null       // ppts above cap (levy basis; negative = under cap)
+  dollarAboveCap: number           // $ above what 2.5% would allow (levy basis)
+  capAmount: number                // what 2.5% growth on the adjusted levy base equals
+  totalDelta: number               // gross line-item delta
+  levyDelta: number                // actual levy delta (totalPrimary - adjustedBase)
   totalPrimary: number
-  totalCompare: number
+  totalCompare: number             // gross compare-year total
+  adjustedBase: number             // compare-year levy after free cash (Prop 2½ base)
+  freeCashAdjust: number           // free cash used in compare year (≤ 0)
 }
 
 export function computeProp25(
@@ -1268,25 +1290,35 @@ export function computeProp25(
   primaryYear: FiscalYear,
   compareYear: FiscalYear,
 ): Prop25Metrics {
-  const totalPrimary = data.grandTotals[primaryYear] ?? 0
-  const totalCompare = data.grandTotals[compareYear] ?? 0
-  const totalDelta   = totalPrimary - totalCompare
+  const totalPrimary    = data.grandTotals[primaryYear] ?? 0
+  const totalCompare    = data.grandTotals[compareYear] ?? 0
+  const freeCashAdjust  = data.freeCash[compareYear] ?? 0   // negative value or 0
+  // The actual levy base is the gross total minus the one-time free cash offset
+  const adjustedBase    = totalCompare + freeCashAdjust     // e.g. 26,287,474 + (-500,000)
+  const totalDelta      = totalPrimary - totalCompare
+  const levyDelta       = totalPrimary - adjustedBase
   const budgetPctChange = totalCompare > 0.005 ? totalDelta / totalCompare : null
-  const capAmount    = totalCompare * 0.025
-  const dollarAboveCap = totalDelta - capAmount
-  const pptAboveCap  = budgetPctChange !== null ? budgetPctChange - 0.025 : null
-  const isAboveCap   = pptAboveCap !== null && pptAboveCap > 0
+  const levyPctChange   = adjustedBase > 0.005 ? levyDelta / adjustedBase : null
+  // Prop 2½ cap is measured on the actual levy (adjustedBase), not the gross line-item total
+  const capAmount       = adjustedBase * 0.025
+  const dollarAboveCap  = levyDelta - capAmount
+  const pptAboveCap     = levyPctChange !== null ? levyPctChange - 0.025 : null
+  const isAboveCap      = pptAboveCap !== null && pptAboveCap > 0
 
   return {
     budgetPctChange,
+    levyPctChange,
     capPct: 0.025,
     isAboveCap,
     pptAboveCap,
     dollarAboveCap,
     capAmount,
     totalDelta,
+    levyDelta,
     totalPrimary,
     totalCompare,
+    adjustedBase,
+    freeCashAdjust,
   }
 }
 

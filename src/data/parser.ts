@@ -366,6 +366,23 @@ export async function parseBudgetFile(url: string): Promise<BudgetData> {
   const groups = buildGroups(lineItems, years)
   const grandTotals = computeGrandTotals(lineItems, years)
 
+  // Scan all rows for "FREE CASH" text (may appear in any column in the summary area)
+  const freeCash: Partial<Record<FiscalYear, number>> = {}
+  for (let r = 0; r < rawRows.length; r++) {
+    const row = rawRows[r]
+    if (!row) continue
+    let found = false
+    for (let c = 0; c < row.length; c++) {
+      if (cellToString(row[c]).trim().toUpperCase() === 'FREE CASH') { found = true; break }
+    }
+    if (found) {
+      for (const y of years) {
+        const val = parseValue(row[y.col])
+        if (val !== null && val !== 0) freeCash[y.key] = val
+      }
+    }
+  }
+
   return {
     lineItems,
     groups,
@@ -375,6 +392,7 @@ export async function parseBudgetFile(url: string): Promise<BudgetData> {
       salaries: lineItems.filter(i => i.section === 'salaries'),
     },
     years,
+    freeCash,
     parseWarnings: warnings,
   }
 }

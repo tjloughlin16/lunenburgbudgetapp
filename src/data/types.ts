@@ -81,5 +81,6 @@ export interface BudgetData {
     salaries: LineItem[]
   }
   years: YearColumn[]        // discovered year columns in sheet order
+  freeCash: Partial<Record<FiscalYear, number>>  // one-time free cash offsets keyed by year (negative = reduces levy)
   parseWarnings: string[]
 }
