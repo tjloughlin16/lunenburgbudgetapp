@@ -6,22 +6,21 @@ export function CategoryFilter() {
   const { activeCategories, toggleCategory } = useBudgetStore()
 
   return (
-    <div className="space-y-1">
-      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide px-2 mb-2">
-        Categories
-      </p>
+    <div className="flex flex-wrap items-center gap-1.5">
       {CATEGORY_CODES.map(code => {
         const active = activeCategories.length === 0 || activeCategories.includes(code)
         return (
           <button
             key={code}
             onClick={() => toggleCategory(code as CategoryCode)}
-            className={`flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm transition-colors text-left ${
-              active ? 'text-gray-800' : 'text-gray-400'
-            } hover:bg-gray-100`}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs border transition-colors ${
+              active
+                ? 'border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200'
+                : 'border-gray-200 text-gray-400 hover:bg-gray-50'
+            }`}
           >
             <span
-              className="w-3 h-3 rounded-sm flex-shrink-0"
+              className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
               style={{ backgroundColor: active ? CATEGORY_COLORS[code as CategoryCode] : '#d1d5db' }}
             />
             {CATEGORY_LABELS[code as CategoryCode]}
@@ -31,9 +30,9 @@ export function CategoryFilter() {
       {activeCategories.length > 0 && (
         <button
           onClick={() => activeCategories.forEach(c => toggleCategory(c))}
-          className="text-xs text-blue-500 hover:text-blue-700 px-2 py-1"
+          className="text-xs text-blue-500 hover:text-blue-700 px-1.5 py-1"
         >
-          Clear filter
+          Clear
         </button>
       )}
     </div>

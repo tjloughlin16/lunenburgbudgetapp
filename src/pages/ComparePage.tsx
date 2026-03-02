@@ -15,6 +15,8 @@ import { ErrorBanner } from '../components/ui/ErrorBanner'
 import { CATEGORY_COLORS, CATEGORY_DESCRIPTIONS } from '../data/types'
 import type { CategoryCode } from '../data/types'
 import { InfoTooltip } from '../components/ui/InfoTooltip'
+import { SectionToggle } from '../components/filters/SectionToggle'
+import { CategoryFilter } from '../components/filters/CategoryFilter'
 
 const PAGE_SIZE = 50
 
@@ -130,12 +132,16 @@ export function ComparePage() {
             {compareLabel} → {primaryLabel}
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
           <YearSelector mode="compare" />
           <span className="text-gray-400">→</span>
           <YearSelector mode="primary" />
+          <SectionToggle />
         </div>
       </div>
+
+      {/* ── Filters ────────────────────────────────────────────────────────── */}
+      <CategoryFilter />
 
       {/* ── Totals banner ──────────────────────────────────────────────────── */}
       <div className="bg-white rounded-xl border border-gray-200 p-4 grid grid-cols-3 gap-4">

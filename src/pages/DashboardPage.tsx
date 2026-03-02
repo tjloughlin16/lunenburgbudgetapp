@@ -10,6 +10,8 @@ import { SummaryTable } from '../components/tables/SummaryTable'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
 import { DeltaBadge } from '../components/charts/DeltaBadge'
+import { SectionToggle } from '../components/filters/SectionToggle'
+import { CategoryFilter } from '../components/filters/CategoryFilter'
 
 export function DashboardPage() {
   const { data, loading, error } = useBudgetData()
@@ -46,10 +48,16 @@ export function DashboardPage() {
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Lunenburg Public Schools</h1>
-        <p className="text-gray-500 mt-0.5">{primaryYearLabel} — Public Dashboard</p>
+      <div className="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Lunenburg Public Schools</h1>
+          <p className="text-gray-500 mt-0.5">{primaryYearLabel} — Public Dashboard</p>
+        </div>
+        <SectionToggle />
       </div>
+
+      {/* Category filter */}
+      <CategoryFilter />
 
       {/* KPI cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

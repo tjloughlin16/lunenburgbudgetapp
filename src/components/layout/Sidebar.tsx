@@ -1,6 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { CategoryFilter } from '../filters/CategoryFilter'
-import { SectionToggle } from '../filters/SectionToggle'
 
 const NAV_ITEMS = [
   {
@@ -85,7 +83,7 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="px-3 py-4 space-y-1">
+      <nav className="px-3 py-4 space-y-1 flex-1">
         {NAV_ITEMS.map(item => (
           <NavLink
             key={item.to}
@@ -104,19 +102,6 @@ export function Sidebar() {
           </NavLink>
         ))}
       </nav>
-
-      <div className="border-t border-gray-200 mx-3" />
-
-      {/* Filters */}
-      <div className="px-3 py-4 space-y-4 flex-1 overflow-y-auto">
-        <div>
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide px-2 mb-2">
-            Section
-          </p>
-          <SectionToggle />
-        </div>
-        <CategoryFilter />
-      </div>
 
       {/* Footer */}
       <div className="px-4 py-3 border-t border-gray-200">

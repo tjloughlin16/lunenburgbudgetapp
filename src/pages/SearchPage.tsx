@@ -6,6 +6,8 @@ import { LineItemTable } from '../components/tables/LineItemTable'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
 import { ExportButton } from '../components/ui/ExportButton'
+import { SectionToggle } from '../components/filters/SectionToggle'
+import { CategoryFilter } from '../components/filters/CategoryFilter'
 
 export function SearchPage() {
   const { data, loading, error } = useBudgetData()
@@ -24,7 +26,7 @@ export function SearchPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <div className="flex items-center justify-between flex-wrap gap-4">
+      <div className="flex items-start justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Search Results</h1>
           {searchQuery ? (
@@ -38,8 +40,13 @@ export function SearchPage() {
             </p>
           )}
         </div>
-        <ExportButton />
+        <div className="flex items-center gap-3">
+          <SectionToggle />
+          <ExportButton />
+        </div>
       </div>
+
+      <CategoryFilter />
 
       {!data ? null : results.length === 0 ? (
         <div className="text-center py-16 text-gray-400">
