@@ -52,6 +52,12 @@ export const DEPARTMENTS: DepartmentDef[] = [
     colorClass: 'green',
   },
   {
+    id: 'music', label: 'Music & Performing Arts', abbrev: 'Music',
+    group: 'program',
+    description: 'Music teachers, band directors, chorus, orchestra, and related instructional materials and instruments across all school buildings.',
+    colorClass: 'pink',
+  },
+  {
     id: 'admin', label: 'Administration', abbrev: 'Admin',
     group: 'program',
     description: "District-wide administration: school committee, superintendent's office, business office, legal services, HR, and administrative technology.",
@@ -158,6 +164,9 @@ export function filterItemsForDepartment(
                parentCode.startsWith('9400')     // collaborative tuitions
       case 'athletics':
         return parentCode.startsWith('3510') || parentCode.startsWith('3520')
+      case 'music':
+        return has(item.description, 'music', 'band', 'chorus', 'orchestra', 'choir') ||
+               has(parentLabel,      'music', 'band', 'chorus', 'orchestra', 'choir')
       case 'admin':
         return parentCat === '1'
       case 'guidance':
