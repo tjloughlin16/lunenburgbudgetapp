@@ -230,7 +230,7 @@ export function DepartmentsPage() {
       {/* ── Active dept header + summary ──────────────────────────────────── */}
       <div className={`bg-white rounded-xl border-l-4 border border-gray-200 overflow-hidden ${BORDER_COLOR[color]}`}>
         {/* Name + description */}
-        <div className="px-6 py-4 border-b border-gray-100">
+        <div className="px-4 sm:px-6 py-4 border-b border-gray-100">
           <div className="flex items-center gap-2 mb-1">
             <span className={`text-xs font-bold px-2 py-0.5 rounded ${BADGE_COLOR[color]}`}>
               {activeDept.abbrev}
@@ -240,8 +240,25 @@ export function DepartmentsPage() {
           <p className="text-sm text-gray-500">{activeDept.description}</p>
         </div>
 
+        {/* ── Big picture metric ────────────────────────────────────────────── */}
+        <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between gap-4 flex-wrap">
+          <div>
+            <p className="text-xs text-gray-400 uppercase tracking-wide mb-0.5">{primaryLabel} Budget</p>
+            <p className="text-3xl font-bold text-gray-900 tabular-nums">{formatDollar(totalPrimary)}</p>
+          </div>
+          <div className="text-right">
+            <p className="text-xs text-gray-400 uppercase tracking-wide mb-0.5">vs {compareLabel}</p>
+            <p className={`text-2xl font-bold tabular-nums ${totalDelta >= 0 ? 'text-red-600' : 'text-green-600'}`}>
+              {totalDelta >= 0 ? '+' : ''}{formatDollar(totalDelta)}
+            </p>
+            <div className="mt-1">
+              <DeltaBadge value={totalPct} size="sm" />
+            </div>
+          </div>
+        </div>
+
         {/* Expenses / Salaries / Total breakdown */}
-        <div className="border-b border-gray-100">
+        <div className="border-b border-gray-100 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-gray-50 border-b border-gray-100">
