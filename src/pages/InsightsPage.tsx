@@ -599,9 +599,9 @@ function AnomalyRow({ anomaly }: { anomaly: Anomaly }) {
           </div>
         </div>
 
-        {/* Values: prev → current */}
-        <div className="text-right flex-shrink-0 text-xs tabular-nums space-y-0.5 min-w-[120px]">
-          <div className="text-gray-400">
+        {/* Values: prev → current (hide the from→to line on mobile, always show delta) */}
+        <div className="text-right flex-shrink-0 text-xs tabular-nums space-y-0.5">
+          <div className="hidden sm:block text-gray-400">
             {va != null ? formatDollar(va) : <span className="italic">not budgeted</span>}
             {' → '}
             {vb != null ? (
@@ -645,33 +645,33 @@ function PublicReviewSection({ anomalies, primaryLabel, compareLabel }: {
   return (
     <div className="bg-white rounded-xl border border-amber-200 overflow-hidden">
       {/* Header */}
-      <div className="px-6 py-4 border-b border-amber-100 bg-amber-50">
+      <div className="px-4 sm:px-6 py-4 border-b border-amber-100 bg-amber-50">
         <div className="flex items-start gap-3">
           <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <h2 className="text-base font-bold text-amber-900">Worth a Closer Look</h2>
             <p className="text-xs text-amber-700 mt-0.5">
-              {anomalies.length} line item{anomalies.length !== 1 ? 's' : ''} from {compareLabel} → {primaryLabel} that fall outside normal year-over-year patterns.
-              {highCount > 0 && <span className="font-semibold"> {highCount} flagged high-significance (● marker).</span>}
+              {anomalies.length} line item{anomalies.length !== 1 ? 's' : ''} from {compareLabel} → {primaryLabel} outside normal year-over-year patterns.
+              {highCount > 0 && <span className="font-semibold"> {highCount} high-significance (● marker).</span>}
             </p>
-          </div>
-          {/* Summary chips */}
-          <div className="flex flex-wrap gap-1.5 justify-end flex-shrink-0">
-            {byType('new').length > 0 && (
-              <span className="text-xs font-semibold px-2 py-0.5 bg-blue-100 text-blue-700 rounded">{byType('new').length} new</span>
-            )}
-            {byType('eliminated').length > 0 && (
-              <span className="text-xs font-semibold px-2 py-0.5 bg-orange-100 text-orange-700 rounded">{byType('eliminated').length} removed</span>
-            )}
-            {byType('spike').length > 0 && (
-              <span className="text-xs font-semibold px-2 py-0.5 bg-red-100 text-red-700 rounded">{byType('spike').length} spike{byType('spike').length !== 1 ? 's' : ''}</span>
-            )}
-            {byType('sharp-cut').length > 0 && (
-              <span className="text-xs font-semibold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">{byType('sharp-cut').length} sharp cut{byType('sharp-cut').length !== 1 ? 's' : ''}</span>
-            )}
+            {/* Summary chips — below description so they don't crowd mobile */}
+            <div className="flex flex-wrap gap-1.5 mt-2">
+              {byType('new').length > 0 && (
+                <span className="text-xs font-semibold px-2 py-0.5 bg-blue-100 text-blue-700 rounded">{byType('new').length} new</span>
+              )}
+              {byType('eliminated').length > 0 && (
+                <span className="text-xs font-semibold px-2 py-0.5 bg-orange-100 text-orange-700 rounded">{byType('eliminated').length} removed</span>
+              )}
+              {byType('spike').length > 0 && (
+                <span className="text-xs font-semibold px-2 py-0.5 bg-red-100 text-red-700 rounded">{byType('spike').length} spike{byType('spike').length !== 1 ? 's' : ''}</span>
+              )}
+              {byType('sharp-cut').length > 0 && (
+                <span className="text-xs font-semibold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">{byType('sharp-cut').length} sharp cut{byType('sharp-cut').length !== 1 ? 's' : ''}</span>
+              )}
+            </div>
           </div>
         </div>
       </div>
