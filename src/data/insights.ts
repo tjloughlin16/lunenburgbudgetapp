@@ -280,7 +280,7 @@ export function computeBudgetStory(
       const parent = groups.find(g => g.code === lineSpotlight.parentCode)
       const parentName = parent ? ` within ${cleanLabel(parent.label)}` : ''
       parts.push(
-        `One item worth highlighting: "${lineSpotlight.description}"${parentName} has increased ${fmtPctMag(lineSpotlight.pctChange)} — from ${formatDollar(lineSpotlight.a)} to ${formatDollar(lineSpotlight.b)} — a change that warrants attention and reflects ${lineSpotlight.delta > 50_000 ? 'a significant new commitment' : 'a targeted adjustment'} in this area.`
+        `One item worth highlighting: "${lineSpotlight.description}"${parentName} jumped from ${formatDollar(lineSpotlight.a)} to ${formatDollar(lineSpotlight.b)} — an increase of ${formatDollar(lineSpotlight.delta)} — a change that warrants attention and reflects ${lineSpotlight.delta > 50_000 ? 'a significant new commitment' : 'a targeted adjustment'} in this area.`
       )
     }
     paragraphs.push(parts.join(' '))
