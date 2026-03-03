@@ -72,6 +72,13 @@ export interface BudgetGroup {
   totals: Record<FiscalYear, number>
 }
 
+// Rows parsed from supplemental.csv — generic key/value pairs.
+// Labels are left as-is so consumers can match by year name or keyword.
+export interface SupplementalRow {
+  label: string
+  value: number
+}
+
 export interface BudgetData {
   lineItems: LineItem[]
   groups: BudgetGroup[]
@@ -82,5 +89,6 @@ export interface BudgetData {
   }
   years: YearColumn[]        // discovered year columns in sheet order
   freeCash: Partial<Record<FiscalYear, number>>  // one-time free cash offsets keyed by year (negative = reduces levy)
+  supplemental: SupplementalRow[]  // rows from supplemental.csv (empty if file absent)
   parseWarnings: string[]
 }

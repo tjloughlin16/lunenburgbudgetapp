@@ -7,6 +7,7 @@ import type {
   YearColumn,
   CategoryCode,
   Section,
+  SupplementalRow,
 } from './types'
 import { CATEGORY_LABELS } from './types'
 
@@ -270,6 +271,34 @@ function computeGrandTotals(items: LineItem[], years: YearColumn[]): Record<Fisc
   return totals
 }
 
+// ── Supplemental CSV loader ───────────────────────────────────────────────────
+//
+// Parses a simple two-column CSV (label, dollar-value) from an adjacent file.
+// Fails gracefully — returns [] if the file is missing or unparseable so the
+// rest of the app continues working without it.
+
+async function loadSupplemental(url: string): Promise<SupplementalRow[]> {
+  try {
+    const resp = await fetch(url)
+    if (!resp.ok) return []
+    const text = await resp.text()
+    const rows: SupplementalRow[] = []
+    for (const rawLine of text.split('\n')) {
+      const line = rawLine.trim()
+      if (!line) continue
+      const commaIdx = line.indexOf(',')
+      if (commaIdx < 0) continue
+      const label = line.substring(0, commaIdx).trim()
+      const rawVal = line.substring(commaIdx + 1).trim()
+      const num = parseFloat(rawVal.replace(/[$,\s]/g, ''))
+      if (label && isFinite(num)) rows.push({ label, value: num })
+    }
+    return rows
+  } catch {
+    return []
+  }
+}
+
 // ── Main entry point ──────────────────────────────────────────────────────────
 
 export async function parseBudgetFile(url: string): Promise<BudgetData> {
@@ -383,6 +412,10 @@ export async function parseBudgetFile(url: string): Promise<BudgetData> {
     }
   }
 
+  // Load supplemental.csv from the same directory as the budget file
+  const budgetBaseUrl = url.substring(0, url.lastIndexOf('/') + 1)
+  const supplemental = await loadSupplemental(budgetBaseUrl + 'supplemental.csv')
+
   return {
     lineItems,
     groups,
@@ -393,6 +426,7 @@ export async function parseBudgetFile(url: string): Promise<BudgetData> {
     },
     years,
     freeCash,
+    supplemental,
     parseWarnings: warnings,
   }
 }

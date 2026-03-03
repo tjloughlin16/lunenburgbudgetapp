@@ -466,6 +466,7 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
 
   const isAbove = m.isAboveCap
   const hasFreeCash = m.freeCashAdjust < 0
+  const hasTMOverride = m.townManagerTotal !== null
 
   const accentBorder = isAbove ? 'border-amber-300' : 'border-green-300'
   const accentBg     = isAbove ? 'bg-amber-50'      : 'bg-green-50'
@@ -488,6 +489,20 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
           {isAbove ? 'Levy increase exceeds the 2.5% annual cap' : 'Levy increase is within the 2.5% annual cap'}
         </span>
       </div>
+
+      {/* Town manager override callout */}
+      {hasTMOverride && (
+        <div className="px-6 py-2 bg-blue-50 border-b border-blue-100 flex items-start gap-2">
+          <span className="text-blue-500 mt-0.5 flex-shrink-0">ⓘ</span>
+          <p className="text-xs text-gray-700 leading-relaxed">
+            <span className="font-semibold">Town Manager's approved budget: {formatDollar(m.townManagerTotal!)}</span>{' '}
+            — used here for Prop 2½ analysis.
+            {m.requestedTotal !== m.townManagerTotal && (
+              <> The school's requested total from the budget spreadsheet was {formatDollar(m.requestedTotal)}.</>
+            )}
+          </p>
+        </div>
+      )}
 
       {/* Free cash callout */}
       {hasFreeCash && (

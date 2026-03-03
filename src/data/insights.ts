@@ -1289,10 +1289,31 @@ export interface Prop25Metrics {
   capAmount: number                // what 2.5% growth on the adjusted levy base equals
   totalDelta: number               // gross line-item delta
   levyDelta: number                // actual levy delta (totalPrimary - adjustedBase)
-  totalPrimary: number
+  totalPrimary: number             // budget used for Prop 2½ (town manager override if present)
+  requestedTotal: number           // school's own spreadsheet grand total
+  townManagerTotal: number | null  // non-null when supplemental.csv provided an override
   totalCompare: number             // gross compare-year total
   adjustedBase: number             // compare-year levy after free cash (Prop 2½ base)
   freeCashAdjust: number           // free cash used in compare year (≤ 0)
+}
+
+// Find a supplemental value whose label contains the given year short name and all
+// required keywords, and none of the excluded keywords (all case-insensitive).
+function findSupplemental(
+  supplemental: Array<{ label: string; value: number }>,
+  yearShort: string,
+  include: string[],
+  exclude: string[] = [],
+): number | null {
+  const entry = supplemental.find(s => {
+    const l = s.label.toLowerCase()
+    return (
+      l.includes(yearShort.toLowerCase()) &&
+      include.every(k => l.includes(k.toLowerCase())) &&
+      exclude.every(k => !l.includes(k.toLowerCase()))
+    )
+  })
+  return entry?.value ?? null
 }
 
 export function computeProp25(
@@ -1300,11 +1321,18 @@ export function computeProp25(
   primaryYear: FiscalYear,
   compareYear: FiscalYear,
 ): Prop25Metrics {
-  const totalPrimary    = data.grandTotals[primaryYear] ?? 0
+  const requestedTotal  = data.grandTotals[primaryYear] ?? 0
   const totalCompare    = data.grandTotals[compareYear] ?? 0
   const freeCashAdjust  = data.freeCash[compareYear] ?? 0   // negative value or 0
   // The actual levy base is the gross total minus the one-time free cash offset
   const adjustedBase    = totalCompare + freeCashAdjust     // e.g. 26,287,474 + (-500,000)
+
+  // Use the town manager's approved budget from supplemental.csv when available;
+  // otherwise fall back to the school's own spreadsheet grand total.
+  const yearShort        = data.years.find(y => y.key === primaryYear)?.short ?? ''
+  const townManagerTotal = findSupplemental(data.supplemental, yearShort, ['budget'], ['increase'])
+  const totalPrimary     = townManagerTotal ?? requestedTotal
+
   const totalDelta      = totalPrimary - totalCompare
   const levyDelta       = totalPrimary - adjustedBase
   const budgetPctChange = totalCompare > 0.005 ? totalDelta / totalCompare : null
@@ -1326,6 +1354,8 @@ export function computeProp25(
     totalDelta,
     levyDelta,
     totalPrimary,
+    requestedTotal,
+    townManagerTotal,
     totalCompare,
     adjustedBase,
     freeCashAdjust,
