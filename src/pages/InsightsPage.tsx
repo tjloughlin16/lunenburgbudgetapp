@@ -487,7 +487,9 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
         </svg>
         <h2 className={`text-sm font-bold ${accentText}`}>Proposition 2½ Context</h2>
         <span className={`ml-auto text-xs ${accentSub}`}>
-          {isAbove ? 'TM levy increase exceeds the 2.5% annual cap' : 'TM levy increase is within the 2.5% annual cap'}
+          {isAbove
+            ? (hasTMData ? "School request exceeds Town Manager's approved budget" : 'Levy increase exceeds the 2.5% annual cap')
+            : (hasTMData ? "School request is within Town Manager's approved budget" : 'Levy increase is within the 2.5% annual cap')}
         </span>
       </div>
 
@@ -519,59 +521,52 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
         </div>
       )}
 
-      {/* Metrics row — TM levy analysis */}
-      <div className={`grid ${hasTMData ? 'grid-cols-4' : 'grid-cols-3'} divide-x divide-amber-100 bg-white/60`}>
+      {/* Metrics row */}
+      <div className="grid grid-cols-3 divide-x divide-amber-100 bg-white/60">
 
-        {/* School's requested total */}
-        {hasTMData && (
-          <div className="px-4 py-4 text-center">
-            <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">School Request</p>
-            <p className="text-2xl font-bold tabular-nums text-gray-700">
-              {formatDollar(m.requestedTotal)}
-            </p>
-            <p className="text-xs text-gray-500 mt-1 tabular-nums">
-              +{formatDollar(m.totalDelta)} vs {compareLabel}
-            </p>
-            {m.budgetPctChange !== null && (
-              <p className="text-xs text-gray-400 mt-0.5">{formatPct(m.budgetPctChange)} increase</p>
-            )}
-          </div>
-        )}
-
-        {/* TM levy increase */}
+        {/* School's requested budget */}
         <div className="px-4 py-4 text-center">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
-            {hasTMData ? 'TM Approved Levy ↑' : 'Levy Increase'}
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">School Request</p>
+          <p className="text-2xl font-bold tabular-nums text-gray-700">
+            {formatDollar(m.requestedTotal)}
           </p>
-          <p className={`text-2xl font-bold tabular-nums ${statColor}`}>
-            {m.levyPctChange !== null ? formatPct(m.levyPctChange) : formatPct(m.budgetPctChange ?? 0)}
-          </p>
-          <p className="text-xs text-gray-500 mt-1 tabular-nums">
-            +{formatDollar(m.levyDelta)} over prior levy
-          </p>
+          {m.budgetPctChange !== null && (
+            <p className="text-xs text-gray-500 mt-1">
+              {formatPct(m.budgetPctChange)} vs {compareLabel}
+            </p>
+          )}
         </div>
 
-        {/* Cap */}
-        <div className="px-4 py-4 text-center">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Prop 2½ Cap</p>
-          <p className="text-2xl font-bold tabular-nums text-gray-500">2.5%</p>
-          <p className="text-xs text-gray-500 mt-1 tabular-nums">
-            +{formatDollar(m.capAmount)} allowed
-          </p>
-        </div>
-
-        {/* Above / below cap */}
+        {/* TM allowed / cap */}
         <div className="px-4 py-4 text-center">
           <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
-            {isAbove ? 'TM Above Cap' : 'TM Below Cap'}
+            {hasTMData ? 'TM Allowed' : 'Prop 2½ Cap'}
+          </p>
+          <p className="text-2xl font-bold tabular-nums text-gray-500">
+            {hasTMData ? formatDollar(m.totalPrimary) : '2.5%'}
+          </p>
+          <p className="text-xs text-gray-500 mt-1 tabular-nums">
+            {hasTMData
+              ? `+${formatDollar(m.levyDelta)} over prior levy`
+              : `+${formatDollar(m.capAmount)} limit`}
+          </p>
+          {hasTMData && m.levyPctChange !== null && (
+            <p className="text-xs text-gray-400 mt-0.5">{formatPct(m.levyPctChange)} increase</p>
+          )}
+        </div>
+
+        {/* Override / above cap */}
+        <div className="px-4 py-4 text-center">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
+            {isAbove ? (hasTMData ? 'Override Needed' : 'Above Cap') : 'Under Cap'}
           </p>
           <p className={`text-2xl font-bold tabular-nums ${statColor}`}>
-            {m.pptAboveCap !== null
-              ? `${isAbove ? '+' : ''}${(Math.abs(m.pptAboveCap) * 100).toFixed(1)} pts`
-              : '—'}
+            {formatDollar(Math.abs(m.dollarAboveCap))}
           </p>
-          <p className={`text-xs mt-1 tabular-nums font-medium ${statColor}`}>
-            {isAbove ? '+' : ''}{formatDollar(Math.abs(m.dollarAboveCap))} {isAbove ? 'over limit' : 'under limit'}
+          <p className={`text-xs mt-1 font-medium ${statColor}`}>
+            {isAbove
+              ? (hasTMData ? 'school above TM allowed' : 'above 2.5% threshold')
+              : 'below threshold'}
           </p>
         </div>
       </div>

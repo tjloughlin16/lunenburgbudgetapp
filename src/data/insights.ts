@@ -1353,9 +1353,13 @@ export function computeProp25(
   const budgetPctChange = totalCompare > 0.005 ? totalDelta / totalCompare : null
   const levyPctChange   = adjustedBase > 0.005 ? levyDelta / adjustedBase : null
   const capAmount       = adjustedBase * 0.025
-  const dollarAboveCap  = levyDelta - capAmount
+
+  // When TM data is present: "above cap" means the school request exceeds the TM allowed budget.
+  // The override amount IS the dollar amount above the cap.
+  // Without TM data: fall back to comparing the levy delta against the 2.5% threshold.
+  const dollarAboveCap  = overrideAmount !== null ? overrideAmount : levyDelta - capAmount
+  const isAboveCap      = overrideAmount !== null ? overrideAmount > 0 : levyDelta > capAmount
   const pptAboveCap     = levyPctChange !== null ? levyPctChange - 0.025 : null
-  const isAboveCap      = pptAboveCap !== null && pptAboveCap > 0
 
   return {
     budgetPctChange,
