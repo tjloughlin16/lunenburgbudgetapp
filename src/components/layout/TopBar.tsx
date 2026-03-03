@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBudgetStore } from '../../store/budgetStore'
 import { YearSelector } from '../filters/YearSelector'
-import { ExportButton } from '../ui/ExportButton'
 import { DownloadsMenu } from '../ui/DownloadsMenu'
 
 export function TopBar() {
@@ -73,7 +72,6 @@ export function TopBar() {
       <div className="flex items-center gap-3 ml-auto">
         <YearSelector mode="primary" />
         <DownloadsMenu />
-        <ExportButton />
       </div>
     </div>
   )
