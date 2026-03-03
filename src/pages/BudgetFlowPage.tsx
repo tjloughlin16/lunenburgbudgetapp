@@ -23,6 +23,7 @@ type SummaryRow = {
   label: string
   value: number
   color: string
+  sublabel?: string
 }
 
 export function BudgetFlowPage() {
@@ -50,7 +51,6 @@ export function BudgetFlowPage() {
 
   const hasTMData = m.townManagerTotal !== null
   const hasFreeCash = m.freeCashAdjust < 0
-  const hasOverride = m.overrideAmount !== null && m.overrideAmount > 0
 
   const steps: Step[] = [
     // Step 1 — Prior Year Levy
@@ -132,21 +132,34 @@ export function BudgetFlowPage() {
       explanation: `The school district submitted its proposed budget — what it believes is needed. This is ${formatPct(m.budgetPctChange)} more than ${compareLabel}.`,
     },
 
-    // Step 5 — Override (only if overrideAmount > 0)
-    ...(hasOverride
+    // Step 5 — Above cap / override (shown whenever the budget exceeded the 2.5% limit)
+    ...(m.isAboveCap
       ? [
           {
             color: 'bg-red-600',
-            title: 'Override Needed',
-            headline: full$(m.overrideAmount!),
-            formula: (
-              <>
-                {full$(m.requestedTotal)} school request &minus; {full$(m.totalPrimary)} TM approved ={' '}
-                <strong>{full$(m.overrideAmount!)}</strong>
-              </>
-            ),
-            explanation:
-              "This is the gap between the school's request and the Town Manager's allocation. Funding the full school budget requires voters to approve a Prop 2½ override at Town Meeting — a ballot vote that permanently raises the town's levy limit.",
+            title: hasTMData ? 'Override Needed' : 'Amount Above Prop 2½ Cap',
+            headline: full$(hasTMData ? m.overrideAmount! : m.dollarAboveCap),
+            badge: m.levyPctChange !== null ? (
+              <span className="text-xs font-semibold px-2 py-0.5 rounded bg-red-100 text-red-700">
+                {formatPct(m.levyPctChange)} actual increase vs +2.5% cap
+              </span>
+            ) : undefined,
+            formula: hasTMData
+              ? (
+                <>
+                  {full$(m.requestedTotal)} school request &minus; {full$(m.totalPrimary)} TM approved ={' '}
+                  <strong>{full$(m.overrideAmount!)}</strong>
+                </>
+              )
+              : (
+                <>
+                  {full$(m.levyDelta)} actual increase &minus; {full$(m.capAmount)} allowed (2.5%) ={' '}
+                  <strong>{full$(m.dollarAboveCap)}</strong>
+                </>
+              ),
+            explanation: hasTMData
+              ? "This is the gap between the school's request and the Town Manager's allocation. Funding the full school budget requires voters to approve a Prop 2½ override at Town Meeting — a ballot vote that permanently raises the town's levy limit."
+              : `The actual school budget increase of ${formatPct(m.levyPctChange)} exceeded the Prop 2½ cap of +2.5%. In prior years this gap was funded through a voter-approved override or accommodated via new growth in the town levy.`,
           } satisfies Step,
         ]
       : []),
@@ -159,8 +172,15 @@ export function BudgetFlowPage() {
       ? [{ label: "Town Manager's Approved Budget", value: m.totalPrimary, color: 'text-emerald-700' }]
       : []),
     { label: "School's Proposed Budget", value: m.requestedTotal, color: 'text-amber-700' },
-    ...(hasOverride
-      ? [{ label: 'Override Gap', value: m.overrideAmount!, color: 'text-red-700' }]
+    ...(m.isAboveCap
+      ? [{
+          label: hasTMData ? 'Override Gap' : 'Amount Above Cap',
+          value: hasTMData ? m.overrideAmount! : m.dollarAboveCap,
+          color: 'text-red-700',
+          sublabel: m.levyPctChange !== null
+            ? `${formatPct(m.levyPctChange)} actual vs +2.5% cap`
+            : undefined,
+        }]
       : []),
   ]
 
@@ -230,9 +250,14 @@ export function BudgetFlowPage() {
               <span className="text-sm text-gray-600">
                 {i + 1}. {row.label}
               </span>
-              <span className={`text-sm font-bold tabular-nums text-right ${row.color}`}>
-                {full$(row.value)}
-              </span>
+              <div className="text-right">
+                <span className={`text-sm font-bold tabular-nums ${row.color}`}>
+                  {full$(row.value)}
+                </span>
+                {row.sublabel && (
+                  <p className="text-xs text-gray-400 mt-0.5">{row.sublabel}</p>
+                )}
+              </div>
             </div>
           ))}
         </div>
