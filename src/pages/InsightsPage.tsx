@@ -464,9 +464,10 @@ function DetailedSection({ section }: { section: InsightSection }) {
 function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: string }) {
   if (m.levyPctChange === null && m.budgetPctChange === null) return null
 
-  const isAbove = m.isAboveCap
+  const isAbove    = m.isAboveCap
   const hasFreeCash = m.freeCashAdjust < 0
-  const hasTMOverride = m.townManagerTotal !== null
+  const hasTMData  = m.townManagerTotal !== null
+  const hasOverride = m.overrideAmount !== null && m.overrideAmount > 0
 
   const accentBorder = isAbove ? 'border-amber-300' : 'border-green-300'
   const accentBg     = isAbove ? 'bg-amber-50'      : 'bg-green-50'
@@ -486,21 +487,24 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
         </svg>
         <h2 className={`text-sm font-bold ${accentText}`}>Proposition 2½ Context</h2>
         <span className={`ml-auto text-xs ${accentSub}`}>
-          {isAbove ? 'Levy increase exceeds the 2.5% annual cap' : 'Levy increase is within the 2.5% annual cap'}
+          {isAbove ? 'TM levy increase exceeds the 2.5% annual cap' : 'TM levy increase is within the 2.5% annual cap'}
         </span>
       </div>
 
-      {/* Town manager override callout */}
-      {hasTMOverride && (
-        <div className="px-6 py-2 bg-blue-50 border-b border-blue-100 flex items-start gap-2">
-          <span className="text-blue-500 mt-0.5 flex-shrink-0">ⓘ</span>
-          <p className="text-xs text-gray-700 leading-relaxed">
-            <span className="font-semibold">Town Manager's approved budget: {formatDollar(m.townManagerTotal!)}</span>{' '}
-            — used here for Prop 2½ analysis.
-            {m.requestedTotal !== m.townManagerTotal && (
-              <> The school's requested total from the budget spreadsheet was {formatDollar(m.requestedTotal)}.</>
-            )}
-          </p>
+      {/* Override callout — most important number for residents */}
+      {hasOverride && (
+        <div className="px-6 py-4 bg-red-50 border-b border-red-200 flex items-start gap-3">
+          <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <div>
+            <p className="text-sm font-bold text-red-800 mb-0.5">
+              Potential Override: {formatDollar(m.overrideAmount!)}
+            </p>
+            <p className="text-xs text-red-700 leading-relaxed">
+              The school's budget request ({formatDollar(m.requestedTotal)}) exceeds the Town Manager's approved allocation ({formatDollar(m.townManagerTotal!)}) by {formatDollar(m.overrideAmount!)}. Funding the full school request would require voters to approve a Prop 2½ override at Town Meeting.
+            </p>
+          </div>
         </div>
       )}
 
@@ -510,50 +514,64 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
           <span className="text-amber-500 mt-0.5 flex-shrink-0">ⓘ</span>
           <p className="text-xs text-gray-600 leading-relaxed">
             <span className="font-semibold">{compareLabel} used {formatDollar(Math.abs(m.freeCashAdjust))} in one-time free cash</span>{' '}
-            to offset that year's budget. Since that relief doesn't carry over, the Prop 2½ cap is calculated from the actual levy base of {formatDollar(m.adjustedBase)} — not the gross line-item total of {formatDollar(m.totalCompare)}.
+            to offset that year's budget. Since that relief doesn't carry forward, the Prop 2½ cap is calculated from the actual levy base of {formatDollar(m.adjustedBase)}.
           </p>
         </div>
       )}
 
-      {/* Metrics row */}
-      <div className="grid grid-cols-3 divide-x divide-amber-100 bg-white/60">
-        {/* Levy increase (Prop 2½ basis) */}
-        <div className="px-5 py-4 text-center">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Levy Increase</p>
-          <p className={`text-3xl font-bold tabular-nums ${statColor}`}>
+      {/* Metrics row — TM levy analysis */}
+      <div className={`grid ${hasTMData ? 'grid-cols-4' : 'grid-cols-3'} divide-x divide-amber-100 bg-white/60`}>
+
+        {/* School's requested total */}
+        {hasTMData && (
+          <div className="px-4 py-4 text-center">
+            <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">School Request</p>
+            <p className="text-2xl font-bold tabular-nums text-gray-700">
+              {formatDollar(m.requestedTotal)}
+            </p>
+            <p className="text-xs text-gray-500 mt-1 tabular-nums">
+              +{formatDollar(m.totalDelta)} vs {compareLabel}
+            </p>
+            {m.budgetPctChange !== null && (
+              <p className="text-xs text-gray-400 mt-0.5">{formatPct(m.budgetPctChange)} increase</p>
+            )}
+          </div>
+        )}
+
+        {/* TM levy increase */}
+        <div className="px-4 py-4 text-center">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
+            {hasTMData ? 'TM Approved Levy ↑' : 'Levy Increase'}
+          </p>
+          <p className={`text-2xl font-bold tabular-nums ${statColor}`}>
             {m.levyPctChange !== null ? formatPct(m.levyPctChange) : formatPct(m.budgetPctChange ?? 0)}
           </p>
           <p className="text-xs text-gray-500 mt-1 tabular-nums">
-            +{formatDollar(m.levyDelta)} from actual {compareLabel} levy
+            +{formatDollar(m.levyDelta)} over prior levy
           </p>
-          {hasFreeCash && m.budgetPctChange !== null && (
-            <p className="text-xs text-gray-400 mt-0.5 tabular-nums">
-              (line-item growth: {formatPct(m.budgetPctChange)})
-            </p>
-          )}
         </div>
 
         {/* Cap */}
-        <div className="px-5 py-4 text-center">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Prop 2½ Annual Cap</p>
-          <p className="text-3xl font-bold tabular-nums text-gray-500">2.5%</p>
+        <div className="px-4 py-4 text-center">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Prop 2½ Cap</p>
+          <p className="text-2xl font-bold tabular-nums text-gray-500">2.5%</p>
           <p className="text-xs text-gray-500 mt-1 tabular-nums">
             +{formatDollar(m.capAmount)} allowed
           </p>
         </div>
 
         {/* Above / below cap */}
-        <div className="px-5 py-4 text-center">
+        <div className="px-4 py-4 text-center">
           <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
-            {isAbove ? 'Above Cap By' : 'Below Cap By'}
+            {isAbove ? 'TM Above Cap' : 'TM Below Cap'}
           </p>
-          <p className={`text-3xl font-bold tabular-nums ${statColor}`}>
+          <p className={`text-2xl font-bold tabular-nums ${statColor}`}>
             {m.pptAboveCap !== null
               ? `${isAbove ? '+' : ''}${(Math.abs(m.pptAboveCap) * 100).toFixed(1)} pts`
               : '—'}
           </p>
           <p className={`text-xs mt-1 tabular-nums font-medium ${statColor}`}>
-            {isAbove ? '+' : ''}{formatDollar(m.dollarAboveCap)} {isAbove ? 'above threshold' : 'under threshold'}
+            {isAbove ? '+' : ''}{formatDollar(Math.abs(m.dollarAboveCap))} {isAbove ? 'over limit' : 'under limit'}
           </p>
         </div>
       </div>
@@ -562,10 +580,7 @@ function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: str
       <div className={`px-6 py-3 border-t ${accentBorder}`}>
         <p className={`text-xs ${accentSub} leading-relaxed`}>
           <span className="font-semibold">Note:</span>{' '}
-          {isAbove
-            ? `This reflects the school budget only. Prop 2½ is measured against the entire town levy — not just schools — and state aid increases can offset some of this pressure. Whether a voter override is ultimately needed depends on the full town budget and revenue picture.`
-            : `This reflects the school budget only. The full override determination depends on the entire town levy, including all municipal departments and changes in state aid.`
-          }
+          Prop 2½ is measured against the entire town levy — not just schools — and state aid changes can offset some pressure. The levy analysis above reflects the Town Manager's allocation. The override amount reflects the gap between the school's full request and what the TM approved.
         </p>
       </div>
     </div>

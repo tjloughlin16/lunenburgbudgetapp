@@ -1280,20 +1280,22 @@ export function computeInsightSections(
 // alone is above or below the cap threshold.
 
 export interface Prop25Metrics {
-  budgetPctChange: number | null   // gross line-item YoY % change
-  levyPctChange: number | null     // actual levy % change (free-cash-adjusted)
+  budgetPctChange: number | null   // school's gross YoY % change (requested vs prior year)
+  levyPctChange: number | null     // TM levy % change (TM increase / TM prior-year base)
   capPct: number                   // always 0.025
-  isAboveCap: boolean
-  pptAboveCap: number | null       // ppts above cap (levy basis; negative = under cap)
-  dollarAboveCap: number           // $ above what 2.5% would allow (levy basis)
-  capAmount: number                // what 2.5% growth on the adjusted levy base equals
-  totalDelta: number               // gross line-item delta
-  levyDelta: number                // actual levy delta (totalPrimary - adjustedBase)
-  totalPrimary: number             // budget used for Prop 2½ (town manager override if present)
+  isAboveCap: boolean              // whether the TM levy increase exceeds the cap
+  pptAboveCap: number | null       // ppts above cap (negative = under cap)
+  dollarAboveCap: number           // $ above what 2.5% would allow
+  capAmount: number                // dollar amount 2.5% growth on the levy base equals
+  totalDelta: number               // school's gross request change (requested - prior year)
+  levyDelta: number                // TM levy delta (TM total - TM prior-year base)
+  totalPrimary: number             // TM approved total (or school total if no TM data)
   requestedTotal: number           // school's own spreadsheet grand total
-  townManagerTotal: number | null  // non-null when supplemental.csv provided an override
-  totalCompare: number             // gross compare-year total
-  adjustedBase: number             // compare-year levy after free cash (Prop 2½ base)
+  townManagerTotal: number | null  // from supplemental.csv
+  townManagerIncrease: number | null // TM's stated increase (from supplemental.csv)
+  overrideAmount: number | null    // school requested − TM approved (what voters would fund)
+  totalCompare: number             // prior year gross total from spreadsheet
+  adjustedBase: number             // prior-year levy base used for the cap calculation
   freeCashAdjust: number           // free cash used in compare year (≤ 0)
 }
 
@@ -1321,23 +1323,35 @@ export function computeProp25(
   primaryYear: FiscalYear,
   compareYear: FiscalYear,
 ): Prop25Metrics {
-  const requestedTotal  = data.grandTotals[primaryYear] ?? 0
-  const totalCompare    = data.grandTotals[compareYear] ?? 0
-  const freeCashAdjust  = data.freeCash[compareYear] ?? 0   // negative value or 0
-  // The actual levy base is the gross total minus the one-time free cash offset
-  const adjustedBase    = totalCompare + freeCashAdjust     // e.g. 26,287,474 + (-500,000)
+  const requestedTotal     = data.grandTotals[primaryYear] ?? 0
+  const totalCompare       = data.grandTotals[compareYear] ?? 0
+  const freeCashAdjust     = data.freeCash[compareYear] ?? 0   // negative value or 0
+  const spreadsheetBase    = totalCompare + freeCashAdjust     // school-spreadsheet levy base
 
-  // Use the town manager's approved budget from supplemental.csv when available;
-  // otherwise fall back to the school's own spreadsheet grand total.
-  const yearShort        = data.years.find(y => y.key === primaryYear)?.short ?? ''
-  const townManagerTotal = findSupplemental(data.supplemental, yearShort, ['budget'], ['increase'])
-  const totalPrimary     = townManagerTotal ?? requestedTotal
+  const yearShort          = data.years.find(y => y.key === primaryYear)?.short ?? ''
+  const townManagerTotal   = findSupplemental(data.supplemental, yearShort, ['budget'], ['increase'])
+  const townManagerIncrease = findSupplemental(data.supplemental, yearShort, ['increase'])
 
-  const totalDelta      = totalPrimary - totalCompare
-  const levyDelta       = totalPrimary - adjustedBase
+  // Override = what voters would need to approve beyond the TM's budget
+  const overrideAmount = townManagerTotal !== null ? requestedTotal - townManagerTotal : null
+
+  // Levy base: when the TM supplied both total and increase, derive their prior-year base
+  // as (total − increase) — this matches whatever FY26 base the TM is working from,
+  // which may differ slightly from the spreadsheet's line-item total after free cash.
+  // Fall back to the spreadsheet-derived base when TM data is incomplete.
+  const adjustedBase =
+    townManagerTotal !== null && townManagerIncrease !== null
+      ? townManagerTotal - townManagerIncrease
+      : spreadsheetBase
+
+  // totalPrimary is the TM's approved budget (what they put in the levy).
+  // When no TM data, fall back to the school's spreadsheet total.
+  const totalPrimary = townManagerTotal ?? requestedTotal
+
+  const totalDelta      = requestedTotal - totalCompare  // school's gross request change
+  const levyDelta       = totalPrimary - adjustedBase    // TM's approved increase over prior levy
   const budgetPctChange = totalCompare > 0.005 ? totalDelta / totalCompare : null
   const levyPctChange   = adjustedBase > 0.005 ? levyDelta / adjustedBase : null
-  // Prop 2½ cap is measured on the actual levy (adjustedBase), not the gross line-item total
   const capAmount       = adjustedBase * 0.025
   const dollarAboveCap  = levyDelta - capAmount
   const pptAboveCap     = levyPctChange !== null ? levyPctChange - 0.025 : null
@@ -1356,6 +1370,8 @@ export function computeProp25(
     totalPrimary,
     requestedTotal,
     townManagerTotal,
+    townManagerIncrease,
+    overrideAmount,
     totalCompare,
     adjustedBase,
     freeCashAdjust,
