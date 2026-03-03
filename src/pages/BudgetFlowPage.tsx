@@ -139,11 +139,15 @@ export function BudgetFlowPage() {
             color: 'bg-red-600',
             title: hasTMData ? 'Override Needed' : 'Amount Above Prop 2½ Cap',
             headline: full$(hasTMData ? m.overrideAmount! : m.dollarAboveCap),
-            badge: m.levyPctChange !== null ? (
-              <span className="text-xs font-semibold px-2 py-0.5 rounded bg-red-100 text-red-700">
-                {formatPct(m.levyPctChange)} actual increase vs +2.5% cap
-              </span>
-            ) : undefined,
+            badge: (() => {
+              const pct = hasTMData ? m.budgetPctChange : m.levyPctChange
+              const label = hasTMData ? 'school request vs +2.5% cap' : 'actual increase vs +2.5% cap'
+              return pct !== null ? (
+                <span className="text-xs font-semibold px-2 py-0.5 rounded bg-red-100 text-red-700">
+                  {formatPct(pct)} {label}
+                </span>
+              ) : undefined
+            })(),
             formula: hasTMData
               ? (
                 <>
@@ -177,9 +181,11 @@ export function BudgetFlowPage() {
           label: hasTMData ? 'Override Gap' : 'Amount Above Cap',
           value: hasTMData ? m.overrideAmount! : m.dollarAboveCap,
           color: 'text-red-700',
-          sublabel: m.levyPctChange !== null
-            ? `${formatPct(m.levyPctChange)} actual vs +2.5% cap`
-            : undefined,
+          sublabel: (() => {
+            const pct = hasTMData ? m.budgetPctChange : m.levyPctChange
+            const label = hasTMData ? 'school request vs +2.5% cap' : 'actual increase vs +2.5% cap'
+            return pct !== null ? `${formatPct(pct)} ${label}` : undefined
+          })(),
         }]
       : []),
   ]
