@@ -12,6 +12,16 @@ const NAV_ITEMS = [
     ),
   },
   {
+    to: '/flow',
+    label: 'How It\'s Calculated',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+          d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 13h.01M13 13h.01M9 10h.01M13 10h.01M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+      </svg>
+    ),
+  },
+  {
     to: '/overview',
     label: 'Overview',
     icon: (

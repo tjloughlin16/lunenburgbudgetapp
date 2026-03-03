@@ -7,6 +7,7 @@ import { SearchPage } from './pages/SearchPage'
 import { InsightsPage } from './pages/InsightsPage'
 import { GuidePage } from './pages/GuidePage'
 import { DepartmentsPage } from './pages/DepartmentsPage'
+import { BudgetFlowPage } from './pages/BudgetFlowPage'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="search" element={<SearchPage />} />
           <Route path="guide" element={<GuidePage />} />
           <Route path="departments" element={<DepartmentsPage />} />
+          <Route path="flow" element={<BudgetFlowPage />} />
         </Route>
       </Routes>
     </HashRouter>
