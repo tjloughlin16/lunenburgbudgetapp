@@ -56,7 +56,7 @@ export function BudgetFlowPage() {
     // Step 1 — Prior Year Levy
     {
       color: 'bg-gray-400',
-      title: 'Prior Year Levy',
+      title: 'Prior Year School Funding',
       headline: full$(m.adjustedBase),
       formula: hasFreeCash
         ? (
@@ -93,7 +93,7 @@ export function BudgetFlowPage() {
             headline: full$(m.totalPrimary),
             formula: (
               <>
-                {full$(m.adjustedBase)} prior levy + {full$(m.levyDelta)} approved increase ={' '}
+                {full$(m.adjustedBase)} prior school funding + {full$(m.levyDelta)} approved increase ={' '}
                 <strong>{full$(m.totalPrimary)}</strong> ({formatPct(m.levyPctChange)})
               </>
             ),
@@ -153,7 +153,7 @@ export function BudgetFlowPage() {
   ]
 
   const summaryRows: SummaryRow[] = [
-    { label: 'Prior Year Levy Base', value: m.adjustedBase, color: 'text-gray-700' },
+    { label: 'Prior Year School Funding', value: m.adjustedBase, color: 'text-gray-700' },
     { label: 'Prop 2½ Ceiling (base + 2.5%)', value: m.adjustedBase + m.capAmount, color: 'text-blue-700' },
     ...(hasTMData
       ? [{ label: "Town Manager's Approved Budget", value: m.totalPrimary, color: 'text-emerald-700' }]
