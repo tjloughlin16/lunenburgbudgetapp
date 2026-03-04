@@ -16,8 +16,14 @@ import { ExportButton } from '../components/ui/ExportButton'
 
 export function DashboardPage() {
   const { data, loading, error } = useBudgetData()
-  const { primaryYear, compareYear, activeSection, activeCategories } = useBudgetStore()
+  const { primaryYear, activeSection, activeCategories } = useBudgetStore()
   const [activeTab, setActiveTab] = useState<'treemap' | 'bar' | 'trend'>('treemap')
+
+  const priorYearKey = useMemo(() => {
+    if (!data) return ''
+    const idx = data.years.findIndex(y => y.key === primaryYear)
+    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
+  }, [data, primaryYear])
 
   const treemapData = useMemo(
     () => (data ? buildTreemapData(data.groups, primaryYear, activeSection, activeCategories, data.years) : []),
@@ -39,11 +45,11 @@ export function DashboardPage() {
   if (!data) return null
 
   const primaryYearLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareYearLabel = data.years.find(y => y.key === compareYear)?.label ?? compareYear
+  const compareYearLabel = data.years.find(y => y.key === priorYearKey)?.label ?? priorYearKey
 
   const pctChange =
-    Math.abs(data.grandTotals[compareYear] ?? 0) > 0.005
-      ? ((data.grandTotals[primaryYear] ?? 0) - (data.grandTotals[compareYear] ?? 0)) / (data.grandTotals[compareYear] ?? 0)
+    Math.abs(data.grandTotals[priorYearKey] ?? 0) > 0.005
+      ? ((data.grandTotals[primaryYear] ?? 0) - (data.grandTotals[priorYearKey] ?? 0)) / (data.grandTotals[priorYearKey] ?? 0)
       : null
 
   return (
@@ -74,7 +80,7 @@ export function DashboardPage() {
           },
           {
             label: compareYearLabel,
-            value: formatDollar(data.grandTotals[compareYear] ?? 0),
+            value: formatDollar(data.grandTotals[priorYearKey] ?? 0),
             sub: 'Prior year',
           },
           {
