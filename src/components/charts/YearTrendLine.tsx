@@ -18,13 +18,38 @@ interface Props {
   height?: number
 }
 
+// Merge into a single array with two value keys so both Line components share
+// the same x-axis positions. Passing separate `data` arrays to individual
+// <Line>s maps by array index, not by year label, which puts the projected
+// segment at the wrong positions.
+interface ChartPoint {
+  year: string
+  isProjected: boolean
+  actualValue: number | null
+  projectedValue: number | null
+}
+
+function buildChartPoints(data: TrendDatum[]): ChartPoint[] {
+  const lastActualIdx = [...data].reverse().findIndex(d => !d.isProjected)
+  const bridgeIdx = lastActualIdx >= 0 ? data.length - 1 - lastActualIdx : -1
+
+  return data.map((d, i) => ({
+    year: d.year,
+    isProjected: d.isProjected,
+    // Solid line: all actual years
+    actualValue: !d.isProjected ? d.value : null,
+    // Dashed line: the bridge (last actual) + all projected years
+    projectedValue: (d.isProjected || i === bridgeIdx) ? d.value : null,
+  }))
+}
+
 function CustomTooltip({
   active,
   payload,
   label,
 }: {
   active?: boolean
-  payload?: { value: number; payload: TrendDatum }[]
+  payload?: { value: number; payload: ChartPoint }[]
   label?: string
 }) {
   if (!active || !payload?.length) return null
@@ -43,23 +68,16 @@ function CustomTooltip({
 export function YearTrendLine({ data, color = '#3b82f6', title, height = 260 }: Props) {
   if (!data.length) return null
 
-  // Split into actual vs projected
-  const actuals = data.filter(d => !d.isProjected)
-  const projected = data.filter(d => d.isProjected)
+  const hasProjected = data.some(d => d.isProjected)
+  const chartPoints = buildChartPoints(data)
 
-  // For the dashed projected segment, include the last actual point as the start
-  const lastActual = actuals[actuals.length - 1]
-  const projectedWithBridge = lastActual
-    ? [lastActual, ...projected]
-    : projected
-
-  // Reference line at the boundary between actuals and projected
+  // Reference line at the last actual year
   const refYear = [...data].reverse().find(d => !d.isProjected)?.year
 
   return (
     <div>
       {title && <p className="text-sm font-medium text-gray-700 mb-2">{title}</p>}
-      {projected.length > 0 && (
+      {hasProjected && (
         <div className="flex items-center gap-5 mb-3 text-xs text-gray-400">
           <div className="flex items-center gap-1.5">
             <svg width="24" height="10">
@@ -76,7 +94,7 @@ export function YearTrendLine({ data, color = '#3b82f6', title, height = 260 }: 
         </div>
       )}
       <ResponsiveContainer width="100%" height={height}>
-        <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
+        <LineChart data={chartPoints} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
           <XAxis dataKey="year" tick={{ fontSize: 12 }} />
           <YAxis
@@ -95,29 +113,29 @@ export function YearTrendLine({ data, color = '#3b82f6', title, height = 260 }: 
           )}
           {/* Solid line for actuals */}
           <Line
-            data={actuals}
             type="monotone"
-            dataKey="value"
+            dataKey="actualValue"
             stroke={color}
             strokeWidth={2.5}
             dot={{ r: 5, fill: color, strokeWidth: 0 }}
             activeDot={{ r: 7 }}
-            name="Actuals"
-            legendType="line"
+            connectNulls={false}
+            name="Actual"
+            legendType="none"
           />
-          {/* Dashed line for projected */}
-          {projectedWithBridge.length > 1 && (
+          {/* Dashed line for proposed — shares the same x-axis so positions are correct */}
+          {hasProjected && (
             <Line
-              data={projectedWithBridge}
               type="monotone"
-              dataKey="value"
+              dataKey="projectedValue"
               stroke={color}
               strokeWidth={2.5}
               strokeDasharray="6 4"
               dot={{ r: 5, fill: '#fff', stroke: color, strokeWidth: 2.5 }}
               activeDot={{ r: 7 }}
+              connectNulls={false}
               name="Proposed"
-              legendType="plainline"
+              legendType="none"
             />
           )}
         </LineChart>
