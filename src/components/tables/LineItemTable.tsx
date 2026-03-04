@@ -119,12 +119,16 @@ export function LineItemTable({ items }: Props) {
               <tr
                 key={row.id}
                 onClick={() => {
-                  if (item.budgetCode) navigate(`/category/${encodeURIComponent(item.budgetCode)}`)
+                  if (isHeader && item.budgetCode) {
+                    navigate(`/category/${encodeURIComponent(item.budgetCode)}`)
+                  } else if (!isHeader) {
+                    navigate(`/item/${encodeURIComponent(item.id)}`)
+                  }
                 }}
-                className={`border-b border-gray-100 transition-colors ${
+                className={`border-b border-gray-100 transition-colors cursor-pointer ${
                   isHeader
-                    ? 'bg-gray-50 font-semibold'
-                    : 'hover:bg-blue-50 cursor-pointer'
+                    ? 'bg-gray-50 font-semibold hover:bg-blue-50'
+                    : 'hover:bg-blue-50'
                 }`}
               >
                 {row.getVisibleCells().map(cell => (

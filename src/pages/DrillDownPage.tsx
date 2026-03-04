@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useBudgetStore } from '../store/budgetStore'
 import { useBudgetData } from '../hooks/useBudgetData'
 import { buildTrendData, formatDollar } from '../data/transforms'
@@ -13,6 +13,7 @@ export function DrillDownPage() {
   const { code } = useParams<{ code: string }>()
   const { data, loading, error } = useBudgetData()
   const { primaryYear } = useBudgetStore()
+  const navigate = useNavigate()
 
   const group = useMemo(
     () => data?.groups.find(g => g.code === decodeURIComponent(code ?? '')),
@@ -53,6 +54,17 @@ export function DrillDownPage() {
 
   return (
     <div className="p-6 space-y-6">
+      {/* Back button */}
+      <button
+        onClick={() => navigate(-1)}
+        className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-blue-600 transition-colors"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-500">
         <Link to="/" className="hover:text-blue-600">Dashboard</Link>

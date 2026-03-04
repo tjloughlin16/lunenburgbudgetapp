@@ -59,6 +59,22 @@ export function YearTrendLine({ data, color = '#3b82f6', title, height = 260 }: 
   return (
     <div>
       {title && <p className="text-sm font-medium text-gray-700 mb-2">{title}</p>}
+      {projected.length > 0 && (
+        <div className="flex items-center gap-5 mb-3 text-xs text-gray-400">
+          <div className="flex items-center gap-1.5">
+            <svg width="24" height="10">
+              <line x1="0" y1="5" x2="24" y2="5" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+            <span>Actual</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <svg width="24" height="10">
+              <line x1="0" y1="5" x2="24" y2="5" stroke={color} strokeWidth="2.5" strokeDasharray="6 4" strokeLinecap="round" />
+            </svg>
+            <span>Proposed</span>
+          </div>
+        </div>
+      )}
       <ResponsiveContainer width="100%" height={height}>
         <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />

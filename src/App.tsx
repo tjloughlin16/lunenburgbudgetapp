@@ -8,6 +8,7 @@ import { InsightsPage } from './pages/InsightsPage'
 import { GuidePage } from './pages/GuidePage'
 import { DepartmentsPage } from './pages/DepartmentsPage'
 import { BudgetFlowPage } from './pages/BudgetFlowPage'
+import { LineItemDetailPage } from './pages/LineItemDetailPage'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="guide" element={<GuidePage />} />
           <Route path="departments" element={<DepartmentsPage />} />
           <Route path="flow" element={<BudgetFlowPage />} />
+          <Route path="item/:id" element={<LineItemDetailPage />} />
         </Route>
       </Routes>
     </HashRouter>
