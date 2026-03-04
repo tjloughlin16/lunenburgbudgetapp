@@ -730,6 +730,15 @@ export function InsightsPage() {
   const { data, loading, error } = useBudgetData()
   const { primaryYear, compareYear } = useBudgetStore()
 
+  // Prop 2½ and the budget story are year-over-year calculations — the cap is
+  // 2.5% of the immediately prior levy, so they must use the adjacent year
+  // regardless of which global compare year is selected.
+  const adjacentYear = useMemo(() => {
+    if (!data) return compareYear
+    const idx = data.years.findIndex(y => y.key === primaryYear)
+    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
+  }, [data, primaryYear, compareYear])
+
   const cards = useMemo(
     () => (data ? computeInsights(data, primaryYear, compareYear) : []),
     [data, primaryYear, compareYear]
@@ -756,8 +765,8 @@ export function InsightsPage() {
   )
 
   const story = useMemo(
-    () => (data ? computeBudgetStory(data, primaryYear, compareYear) : null),
-    [data, primaryYear, compareYear]
+    () => (data ? computeBudgetStory(data, primaryYear, adjacentYear) : null),
+    [data, primaryYear, adjacentYear]
   )
 
   const anomalies = useMemo(
@@ -766,8 +775,8 @@ export function InsightsPage() {
   )
 
   const prop25 = useMemo(
-    () => (data ? computeProp25(data, primaryYear, compareYear) : null),
-    [data, primaryYear, compareYear]
+    () => (data ? computeProp25(data, primaryYear, adjacentYear) : null),
+    [data, primaryYear, adjacentYear]
   )
 
   if (loading) return <LoadingSpinner />
@@ -778,6 +787,7 @@ export function InsightsPage() {
   const rest = cards.filter(c => c.id !== 'hero')
   const primaryLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
   const compareLabel = data.years.find(y => y.key === compareYear)?.label ?? compareYear
+  const adjacentLabel = data.years.find(y => y.key === adjacentYear)?.label ?? adjacentYear
 
   return (
     <div className="p-6 space-y-6">
@@ -792,7 +802,7 @@ export function InsightsPage() {
       </div>
 
       {/* Prop 2½ banner */}
-      {prop25 && <Prop25Banner m={prop25} compareLabel={compareLabel} />}
+      {prop25 && <Prop25Banner m={prop25} compareLabel={adjacentLabel} />}
 
       {/* Story */}
       {story && <BudgetStorySection story={story} />}

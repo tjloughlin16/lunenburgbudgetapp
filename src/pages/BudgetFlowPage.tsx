@@ -27,11 +27,18 @@ type SummaryRow = {
 
 export function BudgetFlowPage() {
   const { data, loading, error } = useBudgetData()
-  const { primaryYear, compareYear } = useBudgetStore()
+  const { primaryYear } = useBudgetStore()
+
+  // Prop 2½ is always year-over-year — use the year immediately before primaryYear.
+  const adjacentYear = useMemo(() => {
+    if (!data) return ''
+    const idx = data.years.findIndex(y => y.key === primaryYear)
+    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
+  }, [data, primaryYear])
 
   const m = useMemo(
-    () => (data && compareYear ? computeProp25(data, primaryYear, compareYear) : null),
-    [data, primaryYear, compareYear],
+    () => (data && adjacentYear ? computeProp25(data, primaryYear, adjacentYear) : null),
+    [data, primaryYear, adjacentYear],
   )
 
   if (loading) return <LoadingSpinner />
@@ -39,7 +46,7 @@ export function BudgetFlowPage() {
   if (!data || !m) return null
 
   const primaryLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareLabel = data.years.find(y => y.key === compareYear)?.label ?? compareYear
+  const compareLabel = data.years.find(y => y.key === adjacentYear)?.label ?? adjacentYear
 
   const hasTMData = m.townManagerTotal !== null
   const hasFreeCash = m.freeCashAdjust < 0
