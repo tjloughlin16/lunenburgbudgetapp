@@ -729,46 +729,56 @@ function PublicReviewSection({ anomalies, primaryLabel, compareLabel }: {
 
 export function InsightsPage() {
   const { data, loading, error } = useBudgetData()
-  const { primaryYear, compareYear } = useBudgetStore()
+  const { primaryYear } = useBudgetStore()
+
+  // Always compare against the year immediately before primaryYear.
+  // The global compareYear store value is not used here because the page
+  // only shows a primary year selector — leaving compareYear stuck at the
+  // default would produce backwards comparisons when browsing prior years.
+  const priorYearKey = useMemo(() => {
+    if (!data) return ''
+    const idx = data.years.findIndex(y => y.key === primaryYear)
+    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
+  }, [data, primaryYear])
 
   const cards = useMemo(
-    () => (data ? computeInsights(data, primaryYear, compareYear) : []),
-    [data, primaryYear, compareYear]
+    () => (data ? computeInsights(data, primaryYear, priorYearKey) : []),
+    [data, primaryYear, priorYearKey]
   )
 
   const chartData = useMemo(
-    () => (data ? computeCostDriversChart(data, primaryYear, compareYear) : []),
-    [data, primaryYear, compareYear]
+    () => (data ? computeCostDriversChart(data, primaryYear, priorYearKey) : []),
+    [data, primaryYear, priorYearKey]
   )
 
   const categoryDrivers = useMemo(
-    () => (data ? computeCategoryDriversChart(data, primaryYear, compareYear) : null),
-    [data, primaryYear, compareYear]
+    () => (data ? computeCategoryDriversChart(data, primaryYear, priorYearKey) : null),
+    [data, primaryYear, priorYearKey]
   )
 
   const sections = useMemo(
-    () => (data ? computeInsightSections(data, primaryYear, compareYear) : []),
-    [data, primaryYear, compareYear]
+    () => (data ? computeInsightSections(data, primaryYear, priorYearKey) : []),
+    [data, primaryYear, priorYearKey]
   )
 
   const schools = useMemo(
-    () => (data ? computeSchoolBreakdown(data, primaryYear, compareYear) : []),
-    [data, primaryYear, compareYear]
+    () => (data ? computeSchoolBreakdown(data, primaryYear, priorYearKey) : []),
+    [data, primaryYear, priorYearKey]
   )
 
   const story = useMemo(
-    () => (data ? computeBudgetStory(data, primaryYear, compareYear) : null),
-    [data, primaryYear, compareYear]
+    () => (data ? computeBudgetStory(data, primaryYear, priorYearKey) : null),
+    [data, primaryYear, priorYearKey]
   )
 
   const anomalies = useMemo(
-    () => (data ? computeAnomalies(data, primaryYear, compareYear) : []),
-    [data, primaryYear, compareYear]
+    () => (data ? computeAnomalies(data, primaryYear, priorYearKey) : []),
+    [data, primaryYear, priorYearKey]
   )
 
   const prop25 = useMemo(
-    () => (data ? computeProp25(data, primaryYear, compareYear) : null),
-    [data, primaryYear, compareYear]
+    () => (data ? computeProp25(data, primaryYear, priorYearKey) : null),
+    [data, primaryYear, priorYearKey]
   )
 
   if (loading) return <LoadingSpinner />
@@ -778,7 +788,7 @@ export function InsightsPage() {
   const hero = cards.find(c => c.id === 'hero')
   const rest = cards.filter(c => c.id !== 'hero')
   const primaryLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareLabel = data.years.find(y => y.key === compareYear)?.label ?? compareYear
+  const compareLabel = data.years.find(y => y.key === priorYearKey)?.label ?? priorYearKey
 
   return (
     <div className="p-6 space-y-6">
