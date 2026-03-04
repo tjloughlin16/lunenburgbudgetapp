@@ -293,7 +293,7 @@ function SchoolCard({ school, compareLabel, primaryLabel }: {
             </p>
             {school.pctChange !== null && (
               <p className={`text-xs tabular-nums ${school.delta >= 0 ? 'text-red-400' : 'text-green-500'}`}>
-                {school.pctChange >= 0 ? '+' : ''}{formatPct(school.pctChange)}
+                {formatPct(school.pctChange)}
               </p>
             )}
           </div>
@@ -403,7 +403,7 @@ function SectionItemRow({ item }: { item: InsightItem }) {
         </div>
         {item.pctChange !== null && Math.abs(item.pctChange) > 0.005 && (
           <div className={`text-xs tabular-nums ${isIncrease ? 'text-red-400' : 'text-green-500'}`}>
-            {item.pctChange >= 0 ? '+' : ''}{formatPct(item.pctChange)}
+            {formatPct(item.pctChange)}
           </div>
         )}
         {item.yearA !== null && item.yearB !== null && (
