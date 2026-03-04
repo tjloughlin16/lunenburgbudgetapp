@@ -601,7 +601,7 @@ function AnomalyRow({ anomaly }: { anomaly: Anomaly }) {
   const { compareValue: va, primaryValue: vb, pctChange, type, section, severity } = anomaly
 
   const badgeLabel = (type === 'spike' || type === 'sharp-cut') && pctChange !== null
-    ? `${pctChange >= 0 ? '+' : ''}${formatPct(pctChange)}`
+    ? formatPct(pctChange)
     : cfg.label
 
   return (
