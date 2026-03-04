@@ -23,7 +23,7 @@ const NAV_ITEMS = [
   },
   {
     to: '/flow',
-    label: 'How It\'s Calculated',
+    label: 'Prop 2½ & Override',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
