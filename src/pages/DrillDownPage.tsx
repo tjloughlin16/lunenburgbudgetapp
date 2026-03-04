@@ -12,7 +12,7 @@ import { ErrorBanner } from '../components/ui/ErrorBanner'
 export function DrillDownPage() {
   const { code } = useParams<{ code: string }>()
   const { data, loading, error } = useBudgetData()
-  const { primaryYear } = useBudgetStore()
+  const { primaryYear, compareYear } = useBudgetStore()
   const navigate = useNavigate()
 
   const group = useMemo(
@@ -44,11 +44,8 @@ export function DrillDownPage() {
     )
   }
 
-  const primaryIdx = data.years.findIndex(y => y.key === primaryYear)
-  const priorYearKey = primaryIdx > 0 ? data.years[primaryIdx - 1].key : data.years[0].key
-
   const primaryYearLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareVal = group.totals[priorYearKey] ?? 0
+  const compareVal = group.totals[compareYear] ?? 0
   const primaryVal = group.totals[primaryYear] ?? 0
   const pctChange = Math.abs(compareVal) > 0.005 ? (primaryVal - compareVal) / compareVal : null
 

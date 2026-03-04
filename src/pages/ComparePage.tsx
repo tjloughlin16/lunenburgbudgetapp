@@ -8,7 +8,6 @@ import {
   formatDollar,
 } from '../data/transforms'
 import type { LineItemComparisonRow } from '../data/transforms'
-import { YearSelector } from '../components/filters/YearSelector'
 import { DeltaBadge } from '../components/charts/DeltaBadge'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
@@ -133,9 +132,6 @@ export function ComparePage() {
           </p>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
-          <YearSelector mode="compare" />
-          <span className="text-gray-400">→</span>
-          <YearSelector mode="primary" />
           <SectionToggle />
         </div>
       </div>

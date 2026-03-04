@@ -13,7 +13,6 @@ import {
   downloadDepartmentCSV,
 } from '../data/departments'
 import type { DeptLineItem } from '../data/departments'
-
 // ── Color maps ────────────────────────────────────────────────────────────────
 
 const BORDER_COLOR: Record<string, string> = {
@@ -77,13 +76,7 @@ function SortTh({
 
 export function DepartmentsPage() {
   const { data, loading, error } = useBudgetData()
-  const { primaryYear } = useBudgetStore()
-
-  const priorYearKey = useMemo(() => {
-    if (!data) return ''
-    const idx = data.years.findIndex(y => y.key === primaryYear)
-    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
-  }, [data, primaryYear])
+  const { primaryYear, compareYear } = useBudgetStore()
   const [searchParams, setSearchParams] = useSearchParams()
   const [sort, setSort] = useState<{ key: string; dir: 'asc' | 'desc' }>({ key: 'delta', dir: 'desc' })
 
@@ -104,8 +97,8 @@ export function DepartmentsPage() {
   }
 
   const items = useMemo(
-    () => data ? filterItemsForDepartment(activeDeptId, data, primaryYear, priorYearKey) : [],
-    [data, activeDeptId, primaryYear, priorYearKey]
+    () => data ? filterItemsForDepartment(activeDeptId, data, primaryYear, compareYear) : [],
+    [data, activeDeptId, primaryYear, compareYear]
   )
 
   const sortedItems = useMemo(() => {
@@ -138,7 +131,7 @@ export function DepartmentsPage() {
 
   const years = data.years
   const primaryLabel = years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareLabel = years.find(y => y.key === priorYearKey)?.label ?? priorYearKey
+  const compareLabel = years.find(y => y.key === compareYear)?.label ?? compareYear
 
   const expItems = items.filter(i => i.section === 'expenses')
   const salItems = items.filter(i => i.section === 'salaries')
@@ -146,9 +139,9 @@ export function DepartmentsPage() {
   const sum = (arr: DeptLineItem[], yr: string) => arr.reduce((s, i) => s + (i.values[yr] ?? 0), 0)
 
   const expPrimary = sum(expItems, primaryYear)
-  const expCompare = sum(expItems, priorYearKey)
+  const expCompare = sum(expItems, compareYear)
   const salPrimary = sum(salItems, primaryYear)
-  const salCompare = sum(salItems, priorYearKey)
+  const salCompare = sum(salItems, compareYear)
 
   const totalPrimary = expPrimary + salPrimary
   const totalCompare = expCompare + salCompare
@@ -171,17 +164,19 @@ export function DepartmentsPage() {
             Line-by-line breakdown for each school and program — download as CSV
           </p>
         </div>
-        <button
-          onClick={() => downloadDepartmentCSV(activeDept.label, items, years, primaryYear, priorYearKey)}
-          className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 shadow-sm"
-        >
-          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Download {activeDept.abbrev} CSV
-          <span className="text-xs text-gray-400 font-normal">({items.length} rows)</span>
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => downloadDepartmentCSV(activeDept.label, items, years, primaryYear, compareYear)}
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 shadow-sm"
+          >
+            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download {activeDept.abbrev} CSV
+            <span className="text-xs text-gray-400 font-normal">({items.length} rows)</span>
+          </button>
+        </div>
       </div>
 
       {/* ── Department selector ───────────────────────────────────────────── */}
@@ -334,7 +329,7 @@ export function DepartmentsPage() {
                       right
                     />
                   ))}
-                  <SortTh col="delta"     label={`Δ (${priorYearKey.replace('fy','FY')}→${primaryYear.replace('fy','FY')})`} sort={sort} onSort={handleSort} right />
+                  <SortTh col="delta"     label={`Δ (${compareYear.replace('fy','FY')}→${primaryYear.replace('fy','FY')})`} sort={sort} onSort={handleSort} right />
                   <SortTh col="pctChange" label="% Chg"  sort={sort} onSort={handleSort} right />
                 </tr>
               </thead>
@@ -344,7 +339,7 @@ export function DepartmentsPage() {
                     key={item.id}
                     item={item}
                     years={years}
-                    priorYearKey={priorYearKey}
+                    compareYear={compareYear}
                     primaryYear={primaryYear}
                   />
                 ))}
@@ -356,7 +351,7 @@ export function DepartmentsPage() {
                   </td>
                   {years.map(y => {
                     const sum = items.reduce((s, i) => s + (i.values[y.key] ?? 0), 0)
-                    const isCompare  = y.key === priorYearKey
+                    const isCompare  = y.key === compareYear
                     const isPrimary  = y.key === primaryYear
                     return (
                       <td key={y.key} className={`px-3 py-3 text-right tabular-nums ${isPrimary ? 'font-bold text-gray-900' : isCompare ? 'font-semibold text-gray-600' : 'text-gray-400'}`}>
@@ -413,10 +408,10 @@ function SummaryRow({ label, badge, compare, primary }: {
 
 // ── Line item row ─────────────────────────────────────────────────────────────
 
-function DeptRow({ item, years, priorYearKey, primaryYear }: {
+function DeptRow({ item, years, compareYear, primaryYear }: {
   item: DeptLineItem
   years: YearColumn[]
-  priorYearKey: string
+  compareYear: string
   primaryYear: string
 }) {
   const navigate   = useNavigate()
@@ -448,7 +443,7 @@ function DeptRow({ item, years, priorYearKey, primaryYear }: {
       {/* Year values */}
       {years.map(y => {
         const v = item.values[y.key]
-        const isCompare = y.key === priorYearKey
+        const isCompare = y.key === compareYear
         const isPrimary = y.key === primaryYear
         return (
           <td key={y.key} className={`px-3 py-2 text-right tabular-nums whitespace-nowrap ${

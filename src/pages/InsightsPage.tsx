@@ -7,7 +7,6 @@ import { useBudgetStore } from '../store/budgetStore'
 import { useBudgetData } from '../hooks/useBudgetData'
 import { computeInsights, computeCostDriversChart, computeCategoryDriversChart, computeInsightSections, computeBudgetStory, computeSchoolBreakdown, computeAnomalies, computeProp25 } from '../data/insights'
 import type { InsightCard, InsightType, InsightSection, InsightItem, CategoryDriversResult, SchoolBudget, Anomaly, AnomalyType, Prop25Metrics } from '../data/insights'
-import { YearSelector } from '../components/filters/YearSelector'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
 import { formatDollar, formatPct } from '../data/transforms'
@@ -729,56 +728,46 @@ function PublicReviewSection({ anomalies, primaryLabel, compareLabel }: {
 
 export function InsightsPage() {
   const { data, loading, error } = useBudgetData()
-  const { primaryYear } = useBudgetStore()
-
-  // Always compare against the year immediately before primaryYear.
-  // The global compareYear store value is not used here because the page
-  // only shows a primary year selector — leaving compareYear stuck at the
-  // default would produce backwards comparisons when browsing prior years.
-  const priorYearKey = useMemo(() => {
-    if (!data) return ''
-    const idx = data.years.findIndex(y => y.key === primaryYear)
-    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
-  }, [data, primaryYear])
+  const { primaryYear, compareYear } = useBudgetStore()
 
   const cards = useMemo(
-    () => (data ? computeInsights(data, primaryYear, priorYearKey) : []),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeInsights(data, primaryYear, compareYear) : []),
+    [data, primaryYear, compareYear]
   )
 
   const chartData = useMemo(
-    () => (data ? computeCostDriversChart(data, primaryYear, priorYearKey) : []),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeCostDriversChart(data, primaryYear, compareYear) : []),
+    [data, primaryYear, compareYear]
   )
 
   const categoryDrivers = useMemo(
-    () => (data ? computeCategoryDriversChart(data, primaryYear, priorYearKey) : null),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeCategoryDriversChart(data, primaryYear, compareYear) : null),
+    [data, primaryYear, compareYear]
   )
 
   const sections = useMemo(
-    () => (data ? computeInsightSections(data, primaryYear, priorYearKey) : []),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeInsightSections(data, primaryYear, compareYear) : []),
+    [data, primaryYear, compareYear]
   )
 
   const schools = useMemo(
-    () => (data ? computeSchoolBreakdown(data, primaryYear, priorYearKey) : []),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeSchoolBreakdown(data, primaryYear, compareYear) : []),
+    [data, primaryYear, compareYear]
   )
 
   const story = useMemo(
-    () => (data ? computeBudgetStory(data, primaryYear, priorYearKey) : null),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeBudgetStory(data, primaryYear, compareYear) : null),
+    [data, primaryYear, compareYear]
   )
 
   const anomalies = useMemo(
-    () => (data ? computeAnomalies(data, primaryYear, priorYearKey) : []),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeAnomalies(data, primaryYear, compareYear) : []),
+    [data, primaryYear, compareYear]
   )
 
   const prop25 = useMemo(
-    () => (data ? computeProp25(data, primaryYear, priorYearKey) : null),
-    [data, primaryYear, priorYearKey]
+    () => (data ? computeProp25(data, primaryYear, compareYear) : null),
+    [data, primaryYear, compareYear]
   )
 
   if (loading) return <LoadingSpinner />
@@ -788,7 +777,7 @@ export function InsightsPage() {
   const hero = cards.find(c => c.id === 'hero')
   const rest = cards.filter(c => c.id !== 'hero')
   const primaryLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareLabel = data.years.find(y => y.key === priorYearKey)?.label ?? priorYearKey
+  const compareLabel = data.years.find(y => y.key === compareYear)?.label ?? compareYear
 
   return (
     <div className="p-6 space-y-6">
@@ -800,7 +789,6 @@ export function InsightsPage() {
             {primaryLabel} — plain-English analysis for the general public
           </p>
         </div>
-        <YearSelector mode="primary" />
       </div>
 
       {/* Prop 2½ banner */}

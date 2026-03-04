@@ -5,7 +5,6 @@ import { useBudgetStore } from '../store/budgetStore'
 import { useBudgetData } from '../hooks/useBudgetData'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
-import { YearSelector } from '../components/filters/YearSelector'
 
 const full$ = (n: number) =>
   n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
@@ -28,18 +27,11 @@ type SummaryRow = {
 
 export function BudgetFlowPage() {
   const { data, loading, error } = useBudgetData()
-  const { primaryYear } = useBudgetStore()
-
-  // Derive the prior year as the year immediately before primaryYear in the years list.
-  const priorYearKey = useMemo(() => {
-    if (!data) return ''
-    const idx = data.years.findIndex(y => y.key === primaryYear)
-    return idx > 0 ? data.years[idx - 1].key : data.years[0].key
-  }, [data, primaryYear])
+  const { primaryYear, compareYear } = useBudgetStore()
 
   const m = useMemo(
-    () => (data && priorYearKey ? computeProp25(data, primaryYear, priorYearKey) : null),
-    [data, primaryYear, priorYearKey],
+    () => (data && compareYear ? computeProp25(data, primaryYear, compareYear) : null),
+    [data, primaryYear, compareYear],
   )
 
   if (loading) return <LoadingSpinner />
@@ -47,7 +39,7 @@ export function BudgetFlowPage() {
   if (!data || !m) return null
 
   const primaryLabel = data.years.find(y => y.key === primaryYear)?.label ?? primaryYear
-  const compareLabel = data.years.find(y => y.key === priorYearKey)?.label ?? priorYearKey
+  const compareLabel = data.years.find(y => y.key === compareYear)?.label ?? compareYear
 
   const hasTMData = m.townManagerTotal !== null
   const hasFreeCash = m.freeCashAdjust < 0
@@ -200,7 +192,6 @@ export function BudgetFlowPage() {
             Step-by-step walkthrough of how the {primaryLabel} school budget is set — from prior levy to override
           </p>
         </div>
-        <YearSelector mode="primary" />
       </div>
 
       {/* Timeline */}
