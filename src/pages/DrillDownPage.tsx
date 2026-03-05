@@ -5,6 +5,8 @@ import { useBudgetData } from '../hooks/useBudgetData'
 import { buildTrendData, formatDollar } from '../data/transforms'
 import { LineItemTable } from '../components/tables/LineItemTable'
 import { YearTrendLine } from '../components/charts/YearTrendLine'
+import { BudgetShareChart } from '../components/charts/BudgetShareChart'
+import type { ShareDatum } from '../components/charts/BudgetShareChart'
 import { DeltaBadge } from '../components/charts/DeltaBadge'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
@@ -29,6 +31,15 @@ export function DrillDownPage() {
     () => group ? group.lineItems : [],
     [group]
   )
+
+  const shareData = useMemo((): ShareDatum[] => {
+    if (!data || !group) return []
+    return data.years.map(y => {
+      const total = data.grandTotals[y.key] ?? 0
+      const val   = group.totals[y.key]    ?? 0
+      return { year: y.short, share: total > 0 ? (val / total) * 100 : 0, isProjected: y.isProjected }
+    })
+  }, [data, group])
 
   if (loading) return <LoadingSpinner />
   if (error) return <ErrorBanner message={error} />
@@ -87,23 +98,36 @@ export function DrillDownPage() {
 
       {/* KPIs — one card per discovered year */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-        {data.years.map(y => (
-          <div
-            key={y.key}
-            className={`rounded-lg border p-3 ${y.key === primaryYear ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-white'}`}
-          >
-            <p className="text-xs text-gray-500 uppercase tracking-wide">{y.short}</p>
-            <p className={`font-semibold mt-1 ${y.key === primaryYear ? 'text-blue-700' : 'text-gray-800'}`}>
-              {formatDollar(group.totals[y.key] ?? 0)}
-            </p>
-          </div>
-        ))}
+        {data.years.map(y => {
+          const total = data.grandTotals[y.key] ?? 0
+          const val   = group.totals[y.key] ?? 0
+          const share = total > 0 ? (val / total) * 100 : 0
+          return (
+            <div
+              key={y.key}
+              className={`rounded-lg border p-3 ${y.key === primaryYear ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-white'}`}
+            >
+              <p className="text-xs text-gray-500 uppercase tracking-wide">{y.short}</p>
+              <p className={`font-semibold mt-1 ${y.key === primaryYear ? 'text-blue-700' : 'text-gray-800'}`}>
+                {formatDollar(val)}
+              </p>
+              <p className="text-xs text-gray-400 mt-0.5">{share.toFixed(1)}% of budget</p>
+            </div>
+          )
+        })}
       </div>
 
-      {/* Trend chart */}
-      <div className="bg-white rounded-xl border border-gray-200 p-4">
-        <h2 className="font-semibold text-gray-900 mb-4">Budget Trend</h2>
-        <YearTrendLine data={trendData} />
+      {/* Charts — side by side */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
+          <h2 className="font-semibold text-gray-900 mb-4">Budget Trend</h2>
+          <YearTrendLine data={trendData} />
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-4">
+          <h2 className="font-semibold text-gray-900 mb-1">% of Total Budget</h2>
+          <p className="text-xs text-gray-400 mb-3">Share of the overall school budget each year</p>
+          <BudgetShareChart data={shareData} />
+        </div>
       </div>
 
       {/* Line items */}
