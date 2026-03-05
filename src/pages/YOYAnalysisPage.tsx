@@ -70,7 +70,6 @@ const MIN_PATTERN  = 15_000  // min |delta| for a transition to trigger pattern 
 const HEADLINE_MIN = 20_000  // min |netDelta| to appear as a headline callout
 
 const MIN_SHARE_PP      = 1.0   // min absolute pp change to flag a share pattern
-const MIN_SHARE_REL     = 0.15  // min relative change in share (15%)
 const HEADLINE_SHARE_PP = 2.0   // min pp change to appear as a share headline
 
 function computeTransitions(data: BudgetData): YearTransition[] {
@@ -190,7 +189,6 @@ function computeSharePatterns(data: BudgetData): { gainers: SharePattern[]; lose
       const shareRelChange = firstShare > 0.001 ? shareDelta / firstShare : 0
 
       if (Math.abs(shareDelta) < MIN_SHARE_PP) return []
-      if (Math.abs(shareRelChange) < MIN_SHARE_REL) return []
 
       return [{
         code: g.code, label: g.label, categoryLabel: g.categoryLabel, section: g.section,
