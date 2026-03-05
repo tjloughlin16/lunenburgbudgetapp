@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useBudgetData } from '../hooks/useBudgetData'
 import { formatDollar } from '../data/transforms'
@@ -49,11 +49,29 @@ type MultiYearPattern = {
   worstCutDelta: number
 }
 
+type SharePattern = {
+  code: string
+  label: string
+  categoryLabel: string | null
+  section: string
+  firstShare: number    // % of total in first year (0-100)
+  latestShare: number   // % of total in last year (0-100)
+  shareDelta: number    // latestShare - firstShare in pp
+  shareRelChange: number // shareDelta / firstShare
+  yearlyShares: { yearShort: string; share: number; amount: number }[]
+  firstYear: string
+  latestYear: string
+}
+
 // ── Computation ────────────────────────────────────────────────────────────────
 
 const MIN_SHOW     = 5_000   // min |delta| to show in a transition list
 const MIN_PATTERN  = 15_000  // min |delta| for a transition to trigger pattern detection
 const HEADLINE_MIN = 20_000  // min |netDelta| to appear as a headline callout
+
+const MIN_SHARE_PP      = 1.0   // min absolute pp change to flag a share pattern
+const MIN_SHARE_REL     = 0.15  // min relative change in share (15%)
+const HEADLINE_SHARE_PP = 2.0   // min pp change to appear as a share headline
 
 function computeTransitions(data: BudgetData): YearTransition[] {
   return data.years.slice(0, -1).map((fromYear, i) => {
@@ -146,7 +164,50 @@ function computePatterns(data: BudgetData): MultiYearPattern[] {
     .sort((a, b) => Math.abs(b.netDelta) - Math.abs(a.netDelta))
 }
 
-type HeadlineKind = 'unrecovered-cut' | 'restoration' | 'recovery-gap' | 'growth-driver'
+function computeSharePatterns(data: BudgetData): { gainers: SharePattern[]; losers: SharePattern[] } {
+  if (data.years.length < 2) return { gainers: [], losers: [] }
+
+  const firstYear = data.years[0]
+  const lastYear  = data.years[data.years.length - 1]
+
+  const all = data.groups
+    .filter(g => g.lineItems.some(li => !li.isGroupHeader))
+    .flatMap(g => {
+      const yearlyShares = data.years.map(y => {
+        const amount = g.totals[y.key] ?? 0
+        const total  = data.grandTotals[y.key] ?? 0
+        const share  = total > 0 ? (amount / total) * 100 : 0
+        return { yearShort: y.short, share, amount }
+      })
+
+      const firstShare  = yearlyShares[0].share
+      const latestShare = yearlyShares[yearlyShares.length - 1].share
+
+      // Skip trivially small groups (< 0.5% share in both years)
+      if (firstShare < 0.5 && latestShare < 0.5) return []
+
+      const shareDelta     = latestShare - firstShare
+      const shareRelChange = firstShare > 0.001 ? shareDelta / firstShare : 0
+
+      if (Math.abs(shareDelta) < MIN_SHARE_PP) return []
+      if (Math.abs(shareRelChange) < MIN_SHARE_REL) return []
+
+      return [{
+        code: g.code, label: g.label, categoryLabel: g.categoryLabel, section: g.section,
+        firstShare, latestShare, shareDelta, shareRelChange,
+        yearlyShares,
+        firstYear: firstYear.short,
+        latestYear: lastYear.short,
+      }] as SharePattern[]
+    })
+
+  return {
+    gainers: all.filter(p => p.shareDelta > 0).sort((a, b) => b.shareDelta - a.shareDelta),
+    losers:  all.filter(p => p.shareDelta < 0).sort((a, b) => a.shareDelta - b.shareDelta),
+  }
+}
+
+type HeadlineKind = 'unrecovered-cut' | 'restoration' | 'recovery-gap' | 'growth-driver' | 'share-gainer' | 'share-loser'
 
 type Headline = {
   kind: HeadlineKind
@@ -234,6 +295,36 @@ function computeHeadlines(patterns: MultiYearPattern[]): Headline[] {
   return out
 }
 
+function buildShareHeadlines(sharePatterns: { gainers: SharePattern[]; losers: SharePattern[] }): Headline[] {
+  const out: Headline[] = []
+
+  sharePatterns.gainers
+    .filter(p => p.shareDelta >= HEADLINE_SHARE_PP)
+    .forEach(p => {
+      out.push({
+        kind: 'share-gainer',
+        code: p.code, label: p.label,
+        stat: p.shareDelta,
+        statLabel: `pp more of budget vs ${p.firstYear}`,
+        detail: `Has grown from ${p.firstShare.toFixed(1)}% to ${p.latestShare.toFixed(1)}% of the total budget — a ${(p.shareRelChange * 100).toFixed(0)}% relative increase in its share.`,
+      })
+    })
+
+  sharePatterns.losers
+    .filter(p => p.shareDelta <= -HEADLINE_SHARE_PP)
+    .forEach(p => {
+      out.push({
+        kind: 'share-loser',
+        code: p.code, label: p.label,
+        stat: p.shareDelta,
+        statLabel: `pp less of budget vs ${p.firstYear}`,
+        detail: `Has shrunk from ${p.firstShare.toFixed(1)}% to ${p.latestShare.toFixed(1)}% of the total budget — a ${(Math.abs(p.shareRelChange) * 100).toFixed(0)}% relative decrease in its share.`,
+      })
+    })
+
+  return out
+}
+
 // ── Sub-components ─────────────────────────────────────────────────────────────
 
 const HEADLINE_STYLE: Record<HeadlineKind, {
@@ -259,11 +350,24 @@ const HEADLINE_STYLE: Record<HeadlineKind, {
     badge: 'bg-gray-100 text-gray-700', valueColor: 'text-gray-700',
     title: 'Consistent Growth',
   },
+  'share-gainer': {
+    border: 'border-purple-400', headerBg: 'bg-purple-50',
+    badge: 'bg-purple-100 text-purple-700', valueColor: 'text-purple-700',
+    title: 'Growing Share',
+  },
+  'share-loser': {
+    border: 'border-slate-400', headerBg: 'bg-slate-50',
+    badge: 'bg-slate-100 text-slate-700', valueColor: 'text-slate-700',
+    title: 'Shrinking Share',
+  },
 }
 
 function HeadlineCard({ h }: { h: Headline }) {
   const s = HEADLINE_STYLE[h.kind]
-  const statStr = `${h.stat >= 0 ? '+' : ''}${formatDollar(h.stat)}`
+  const isShare = h.kind === 'share-gainer' || h.kind === 'share-loser'
+  const statStr = isShare
+    ? `${h.stat >= 0 ? '+' : ''}${h.stat.toFixed(1)}pp`
+    : `${h.stat >= 0 ? '+' : ''}${formatDollar(h.stat)}`
   return (
     <Link to={`/category/${encodeURIComponent(h.code)}`} className="block h-full">
       <div className={`bg-white rounded-xl border-l-4 border border-gray-200 p-5 h-full hover:shadow-md transition-shadow cursor-pointer ${s.border}`}>
@@ -482,14 +586,117 @@ function PatternCard({ p }: { p: MultiYearPattern }) {
   )
 }
 
+function SharePatternCard({ p }: { p: SharePattern }) {
+  const isGainer   = p.shareDelta > 0
+  const relStr     = `${isGainer ? '+' : ''}${(p.shareRelChange * 100).toFixed(0)}% relative`
+  const borderCls  = isGainer ? 'border-purple-400' : 'border-slate-400'
+  const headerBg   = isGainer ? 'bg-purple-50'      : 'bg-slate-50'
+  const badgeCls   = isGainer ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-700'
+  const deltaColor = isGainer ? 'text-purple-700'   : 'text-slate-700'
+  const badgeLabel = isGainer ? 'Growing Share'     : 'Shrinking Share'
+  const barColor   = isGainer ? 'bg-purple-300'     : 'bg-slate-300'
+
+  const maxShare   = Math.max(...p.yearlyShares.map(y => y.share))
+
+  return (
+    <div className={`bg-white rounded-xl border-l-4 border border-gray-200 overflow-hidden ${borderCls}`}>
+      <div className={`px-4 py-3 border-b border-gray-100 ${headerBg}`}>
+        <div className="flex items-start justify-between gap-3 flex-wrap">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 mb-0.5">
+              <span className={`text-xs font-bold px-2 py-0.5 rounded whitespace-nowrap ${badgeCls}`}>
+                {badgeLabel}
+              </span>
+              {p.categoryLabel && (
+                <span className="text-xs text-gray-400 truncate">{p.categoryLabel}</span>
+              )}
+            </div>
+            <Link
+              to={`/category/${encodeURIComponent(p.code)}`}
+              className="text-sm font-bold text-gray-900 hover:text-blue-600 leading-snug block"
+            >
+              {p.label}
+            </Link>
+          </div>
+          <div className="text-right flex-shrink-0">
+            <p className="text-xs text-gray-400 uppercase tracking-wide">Share Change</p>
+            <p className={`text-lg font-bold tabular-nums ${deltaColor}`}>
+              {isGainer ? '+' : ''}{p.shareDelta.toFixed(1)}pp
+            </p>
+            <p className="text-xs text-gray-400">{relStr}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Share bar chart timeline */}
+      <div className="px-4 py-3 flex items-end gap-4 flex-wrap">
+        {p.yearlyShares.map(ys => (
+          <div key={ys.yearShort} className="flex flex-col items-center gap-1">
+            <span className="text-xs font-semibold text-gray-700 tabular-nums">{ys.share.toFixed(1)}%</span>
+            <div
+              className={`w-10 rounded-t ${barColor} transition-all`}
+              style={{ height: `${Math.max(4, (ys.share / maxShare) * 48)}px` }}
+            />
+            <span className="text-xs text-gray-400 font-mono">{ys.yearShort}</span>
+          </div>
+        ))}
+        <p className="text-xs text-gray-500 ml-2 self-center">
+          {p.firstShare.toFixed(1)}% → {p.latestShare.toFixed(1)}% of total budget
+        </p>
+      </div>
+    </div>
+  )
+}
+
+// ── Collapsible group ─────────────────────────────────────────────────────────
+
+function CollapsibleGroup({ label, description, count, labelColor, children }: {
+  label: string
+  description: string
+  count: number
+  labelColor: string
+  children: React.ReactNode
+}) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="border border-gray-200 rounded-xl overflow-hidden">
+      <button
+        onClick={() => setOpen(v => !v)}
+        className="w-full flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-colors text-left"
+      >
+        <svg
+          className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${open ? 'rotate-90' : ''}`}
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+        <span className={`text-sm font-semibold ${labelColor}`}>{label}</span>
+        <span className="text-xs text-gray-400 font-normal">{description}</span>
+        <span className="ml-auto text-xs font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+          {count}
+        </span>
+      </button>
+      {open && (
+        <div className="border-t border-gray-100 p-3 space-y-3 bg-gray-50">
+          {children}
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export function YOYAnalysisPage() {
   const { data, loading, error } = useBudgetData()
 
-  const transitions = useMemo(() => data ? computeTransitions(data) : [], [data])
-  const patterns    = useMemo(() => data ? computePatterns(data)    : [], [data])
-  const headlines   = useMemo(() => computeHeadlines(patterns),             [patterns])
+  const transitions   = useMemo(() => data ? computeTransitions(data)   : [],                           [data])
+  const patterns      = useMemo(() => data ? computePatterns(data)      : [],                           [data])
+  const sharePatterns = useMemo(() => data ? computeSharePatterns(data) : { gainers: [], losers: [] },  [data])
+  const headlines     = useMemo(() => [
+    ...computeHeadlines(patterns),
+    ...buildShareHeadlines(sharePatterns),
+  ], [patterns, sharePatterns])
 
   if (loading) return <LoadingSpinner />
   if (error)   return <ErrorBanner message={error} />
@@ -529,63 +736,77 @@ export function YOYAnalysisPage() {
           <div>
             <h2 className="text-base font-bold text-gray-900">What Stands Out</h2>
             <p className="text-sm text-gray-500 mt-0.5">
-              The most significant multi-year budget stories — cuts, restorations, and growth drivers
+              The most significant multi-year budget stories — cuts, restorations, growth drivers, and shifting budget shares
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {headlines.map(h => <HeadlineCard key={h.code} h={h} />)}
+            {headlines.map(h => <HeadlineCard key={`${h.kind}-${h.code}`} h={h} />)}
           </div>
         </div>
       )}
 
       {/* ── Multi-year patterns ────────────────────────────────────────────── */}
-      {patterns.length > 0 && (
+      {(patterns.length > 0 || sharePatterns.gainers.length > 0 || sharePatterns.losers.length > 0) && (
         <div className="space-y-6">
           <div>
             <h2 className="text-base font-bold text-gray-900">The Cumulative Picture</h2>
             <p className="text-sm text-gray-500 mt-0.5">
-              Budget lines with notable multi-year arcs — restorations, ongoing cuts, and consistent growth since {firstShort}
+              Budget lines with notable multi-year arcs — restorations, ongoing cuts, consistent growth, and shifting budget shares since {firstShort}
             </p>
           </div>
 
           {restorations.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <p className="text-sm font-semibold text-blue-700">Restored</p>
-                <p className="text-xs text-gray-400">Cut in a prior year, brought back to or above baseline</p>
-              </div>
+            <CollapsibleGroup
+              label="Restored" labelColor="text-blue-700" count={restorations.length}
+              description="Cut in a prior year, brought back to or above baseline"
+            >
               {restorations.map(p => <PatternCard key={p.code} p={p} />)}
-            </div>
+            </CollapsibleGroup>
           )}
 
           {recoveries.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <p className="text-sm font-semibold text-amber-700">Recovering</p>
-                <p className="text-xs text-gray-400">Was cut, partially added back — still below the original level</p>
-              </div>
+            <CollapsibleGroup
+              label="Recovering" labelColor="text-amber-700" count={recoveries.length}
+              description="Was cut, partially added back — still below the original level"
+            >
               {recoveries.map(p => <PatternCard key={p.code} p={p} />)}
-            </div>
+            </CollapsibleGroup>
           )}
 
           {sustainedCuts.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <p className="text-sm font-semibold text-orange-700">Sustained Cuts</p>
-                <p className="text-xs text-gray-400">Budget reduced and has not come back</p>
-              </div>
+            <CollapsibleGroup
+              label="Sustained Cuts" labelColor="text-orange-700" count={sustainedCuts.length}
+              description="Budget reduced and has not come back"
+            >
               {sustainedCuts.map(p => <PatternCard key={p.code} p={p} />)}
-            </div>
+            </CollapsibleGroup>
           )}
 
           {growthItems.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <p className="text-sm font-semibold text-gray-600">Consistent Growth</p>
-                <p className="text-xs text-gray-400">Meaningful increases each year</p>
-              </div>
+            <CollapsibleGroup
+              label="Consistent Growth" labelColor="text-gray-600" count={growthItems.length}
+              description="Meaningful increases each year"
+            >
               {growthItems.map(p => <PatternCard key={p.code} p={p} />)}
-            </div>
+            </CollapsibleGroup>
+          )}
+
+          {sharePatterns.gainers.length > 0 && (
+            <CollapsibleGroup
+              label="Growing Budget Share" labelColor="text-purple-700" count={sharePatterns.gainers.length}
+              description={`Taking a larger slice of the total budget vs ${firstShort}`}
+            >
+              {sharePatterns.gainers.map(p => <SharePatternCard key={p.code} p={p} />)}
+            </CollapsibleGroup>
+          )}
+
+          {sharePatterns.losers.length > 0 && (
+            <CollapsibleGroup
+              label="Shrinking Budget Share" labelColor="text-slate-600" count={sharePatterns.losers.length}
+              description={`Taking a smaller slice of the total budget vs ${firstShort}`}
+            >
+              {sharePatterns.losers.map(p => <SharePatternCard key={p.code} p={p} />)}
+            </CollapsibleGroup>
           )}
         </div>
       )}
