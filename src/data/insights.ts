@@ -1100,9 +1100,16 @@ export function computeInsightSections(
     }))
   }
 
-  function find(keywords: string[], minAbsDelta = 100): ComputedLineItem[] {
+  function find(keywords: string[]): ComputedLineItem[] {
     return allItems
-      .filter(i => Math.abs(i.delta) >= minAbsDelta && matchesAny(i.description, keywords))
+      .filter(i => {
+        if (!matchesAny(i.description, keywords)) return false
+        const absDelta = Math.abs(i.delta)
+        if (absDelta < 1_000) return false // noise floor
+        // Include if large absolute change OR meaningful % on a real-sized item
+        const pctLarge = i.pctChange !== null && Math.abs(i.pctChange) >= 0.20 && Math.abs(i.a) >= 5_000
+        return absDelta >= 10_000 || pctLarge
+      })
       .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
   }
 
@@ -1121,7 +1128,7 @@ export function computeInsightSections(
           parentLabel: null, yearA: a, yearB: b, delta, pctChange: pct(a, b),
           href: `/category/${encodeURIComponent(g.code)}` }
       })
-      .filter(g => Math.abs(g.delta) > 500)
+      .filter(g => Math.abs(g.delta) > 5_000)
       .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
 
     const salPrimary = sections.salaries.filter(i => !i.isGroupHeader).reduce((s, i) => s + (i.values[primaryYear] ?? 0), 0)
@@ -1242,7 +1249,7 @@ export function computeInsightSections(
           parentLabel: null, yearA: a, yearB: b, delta, pctChange: pct(a, b),
           href: `/category/${encodeURIComponent(g.code)}` }
       })
-      .filter(g => Math.abs(g.delta) > 500)
+      .filter(g => Math.abs(g.delta) > 5_000)
       .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
 
     result.push({

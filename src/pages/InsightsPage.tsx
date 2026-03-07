@@ -5,8 +5,8 @@ import {
 } from 'recharts'
 import { useBudgetStore } from '../store/budgetStore'
 import { useBudgetData } from '../hooks/useBudgetData'
-import { computeInsights, computeCostDriversChart, computeCategoryDriversChart, computeInsightSections, computeBudgetStory, computeSchoolBreakdown, computeAnomalies, computeProp25 } from '../data/insights'
-import type { InsightCard, InsightType, InsightSection, InsightItem, CategoryDriversResult, SchoolBudget, Anomaly, AnomalyType, Prop25Metrics } from '../data/insights'
+import { computeInsights, computeCostDriversChart, computeCategoryDriversChart, computeBudgetStory, computeSchoolBreakdown, computeAnomalies, computeProp25 } from '../data/insights'
+import type { InsightCard, InsightType, CategoryDriversResult, SchoolBudget, Anomaly, AnomalyType, Prop25Metrics } from '../data/insights'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
 import { formatDollar, formatPct } from '../data/transforms'
@@ -371,93 +371,6 @@ function SchoolImpactSection({ schools, compareLabel, primaryLabel }: {
   )
 }
 
-// ── Detailed section ──────────────────────────────────────────────────────────
-
-function SectionItemRow({ item }: { item: InsightItem }) {
-  const isIncrease = item.delta > 0
-  const isDecrease = item.delta < 0
-
-  const row = (
-    <div className={`flex items-start gap-3 py-2.5 px-4 border-b border-gray-50 last:border-0 ${item.href ? 'hover:bg-gray-50 cursor-pointer' : ''}`}>
-      {/* Delta indicator */}
-      <div className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isIncrease ? 'bg-red-400' : isDecrease ? 'bg-green-500' : 'bg-gray-300'}`} />
-
-      {/* Description + parent */}
-      <div className="flex-1 min-w-0">
-        <p className="text-sm text-gray-800 leading-snug">{item.description}</p>
-        {item.parentLabel && (
-          <p className="text-xs text-gray-400 mt-0.5">
-            {item.parentLabel}
-            <span className={`ml-1.5 text-xs px-1 rounded ${item.section === 'salaries' ? 'bg-purple-100 text-purple-600' : 'bg-blue-100 text-blue-600'}`}>
-              {item.section}
-            </span>
-          </p>
-        )}
-      </div>
-
-      {/* Year values */}
-      <div className="text-right flex-shrink-0 space-y-0.5">
-        <div className={`text-sm font-semibold tabular-nums ${isIncrease ? 'text-red-600' : isDecrease ? 'text-green-600' : 'text-gray-500'}`}>
-          {item.delta !== 0 ? `${isIncrease ? '+' : ''}${formatDollar(item.delta)}` : '—'}
-        </div>
-        {item.pctChange !== null && Math.abs(item.pctChange) > 0.005 && (
-          <div className={`text-xs tabular-nums ${isIncrease ? 'text-red-400' : 'text-green-500'}`}>
-            {formatPct(item.pctChange)}
-          </div>
-        )}
-        {item.yearA !== null && item.yearB !== null && (
-          <div className="text-xs text-gray-400 tabular-nums">
-            {formatDollar(item.yearA)} → {formatDollar(item.yearB)}
-          </div>
-        )}
-      </div>
-    </div>
-  )
-
-  return item.href ? <Link to={item.href}>{row}</Link> : row
-}
-
-function DetailedSection({ section }: { section: InsightSection }) {
-  const increases = section.items.filter(i => i.delta > 0)
-  const decreases = section.items.filter(i => i.delta < 0)
-
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-      <div className="px-6 py-4 border-b border-gray-100 bg-gray-50">
-        <div className="flex items-center gap-2">
-          <span className="text-lg">{section.emoji}</span>
-          <h2 className="text-base font-bold text-gray-900">{section.title}</h2>
-          <span className="ml-auto text-xs text-gray-400">{section.items.length} line items</span>
-        </div>
-        <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">{section.intro}</p>
-      </div>
-
-      {section.items.length === 0 ? (
-        <p className="px-6 py-4 text-sm text-gray-400">{section.noItemsText}</p>
-      ) : (
-        <div>
-          {increases.length > 0 && (
-            <div>
-              <p className="px-4 py-2 text-xs font-semibold text-red-500 uppercase tracking-wide bg-red-50 border-b border-red-100">
-                ▲ Increases ({increases.length})
-              </p>
-              {increases.map(item => <SectionItemRow key={item.id} item={item} />)}
-            </div>
-          )}
-          {decreases.length > 0 && (
-            <div>
-              <p className="px-4 py-2 text-xs font-semibold text-green-600 uppercase tracking-wide bg-green-50 border-b border-green-100">
-                ▼ Decreases ({decreases.length})
-              </p>
-              {decreases.map(item => <SectionItemRow key={item.id} item={item} />)}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
-
 // ── Prop 2½ banner ────────────────────────────────────────────────────────────
 
 function Prop25Banner({ m, compareLabel }: { m: Prop25Metrics; compareLabel: string }) {
@@ -754,11 +667,6 @@ export function InsightsPage() {
     [data, primaryYear, compareYear]
   )
 
-  const sections = useMemo(
-    () => (data ? computeInsightSections(data, primaryYear, compareYear) : []),
-    [data, primaryYear, compareYear]
-  )
-
   const schools = useMemo(
     () => (data ? computeSchoolBreakdown(data, primaryYear, compareYear) : []),
     [data, primaryYear, compareYear]
@@ -836,20 +744,6 @@ export function InsightsPage() {
           primaryLabel={primaryLabel}
         />
       )}
-
-      {/* Divider */}
-      {sections.length > 0 && (
-        <div className="flex items-center gap-4 pt-2">
-          <div className="flex-1 h-px bg-gray-200" />
-          <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Deeper Dive</p>
-          <div className="flex-1 h-px bg-gray-200" />
-        </div>
-      )}
-
-      {/* Detailed thematic sections */}
-      {sections.map(section => (
-        <DetailedSection key={section.id} section={section} />
-      ))}
 
       <p className="text-xs text-gray-400 text-center pt-2">
         Figures computed from the published budget spreadsheet. Click any row to explore the underlying department.
