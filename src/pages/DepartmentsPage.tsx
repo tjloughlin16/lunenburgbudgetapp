@@ -251,6 +251,7 @@ export function DepartmentsPage() {
           deptStats={deptStats}
           primaryLabel={primaryLabel}
           compareLabel={compareLabel}
+          grandTotal={data.grandTotals[primaryYear] ?? 0}
         />
       )}
 
@@ -323,6 +324,11 @@ export function DepartmentsPage() {
             <p className="text-2xl font-bold text-gray-900 tabular-nums">
               {formatDollar(totalPrimary)}
             </p>
+            {data.grandTotals[primaryYear] > 0 && (
+              <p className="text-sm text-gray-500 mt-0.5 tabular-nums">
+                {formatPct(totalPrimary / data.grandTotals[primaryYear])} of district
+              </p>
+            )}
           </div>
           <div className="px-4 sm:px-6 py-4">
             <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Total Increases</p>
@@ -343,7 +349,7 @@ export function DepartmentsPage() {
             </p>
             {totalPct !== null && (
               <p className={`text-sm font-semibold tabular-nums mt-0.5 ${totalDelta >= 0 ? 'text-red-500' : 'text-green-500'}`}>
-                {formatPct(totalPct)} of budget
+                {formatPct(totalPct)} changed
               </p>
             )}
           </div>
@@ -702,9 +708,9 @@ const BAR_BG: Record<string, string> = {
 
 function churnImpactBadge(pct: number | null): { label: string; className: string } | null {
   if (pct === null) return null
-  if (pct >= 0.20) return { label: `${formatPct(pct)} of budget`, className: 'bg-orange-100 text-orange-700' }
-  if (pct >= 0.08) return { label: `${formatPct(pct)} of budget`, className: 'bg-amber-100 text-amber-700' }
-  if (pct >= 0.02) return { label: `${formatPct(pct)} of budget`, className: 'bg-gray-100 text-gray-500' }
+  if (pct >= 0.20) return { label: `${formatPct(pct)} changed`, className: 'bg-orange-100 text-orange-700' }
+  if (pct >= 0.08) return { label: `${formatPct(pct)} changed`, className: 'bg-amber-100 text-amber-700' }
+  if (pct >= 0.02) return { label: `${formatPct(pct)} changed`, className: 'bg-gray-100 text-gray-500' }
   return null // below 2% — noise, not worth showing
 }
 
@@ -812,7 +818,7 @@ function PropBarGroup({ label, stats, staggerLabels = false }: {
   )
 }
 
-function DeptBarRow({ d, maxBar }: { d: DeptStat; maxBar: number }) {
+function DeptBarRow({ d, maxBar, grandTotal }: { d: DeptStat; maxBar: number; grandTotal: number }) {
   const cutPx    = maxBar > 0 ? Math.round((d.cuts      / maxBar) * BAR_HALF_PX) : 0
   const incPx    = maxBar > 0 ? Math.round((d.increases / maxBar) * BAR_HALF_PX) : 0
   const netColor = d.net > 0 ? 'text-red-600' : d.net < 0 ? 'text-green-600' : 'text-gray-400'
@@ -829,6 +835,18 @@ function DeptBarRow({ d, maxBar }: { d: DeptStat; maxBar: number }) {
       <div className="w-24 flex-shrink-0 text-right text-sm tabular-nums text-gray-600 font-medium">
         {formatDollar(d.primaryTotal)}
       </div>
+
+      {/* % of district — prominent callout */}
+      {grandTotal > 0 && (
+        <div className="w-20 flex-shrink-0 hidden sm:flex justify-center">
+          <div className="bg-indigo-50 rounded-lg px-2 py-1 text-center min-w-[56px]">
+            <div className="text-base font-bold text-indigo-700 tabular-nums leading-tight">
+              {formatPct(d.primaryTotal / grandTotal)}
+            </div>
+            <div className="text-xs text-indigo-400 leading-tight whitespace-nowrap">of district</div>
+          </div>
+        </div>
+      )}
 
       {/* Diverging bar */}
       <div className="flex items-center flex-shrink-0">
@@ -873,10 +891,11 @@ function DeptBarRow({ d, maxBar }: { d: DeptStat; maxBar: number }) {
   )
 }
 
-function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel }: {
+function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel, grandTotal }: {
   deptStats: DeptStat[]
   primaryLabel: string
   compareLabel: string
+  grandTotal: number
 }) {
   const maxBar = Math.max(...deptStats.map(d => Math.max(d.increases, d.cuts)), 1)
 
@@ -987,6 +1006,7 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel }: {
       <div className="flex items-center gap-3 px-4 py-1.5 border-b border-gray-100 bg-gray-50">
         <div className="w-28 flex-shrink-0" />
         <div className="w-24 flex-shrink-0 text-right text-xs font-semibold text-gray-400 uppercase tracking-wide">Total Budget</div>
+        <div className="w-20 flex-shrink-0 hidden sm:block text-center text-xs font-semibold text-indigo-400 uppercase tracking-wide">District %</div>
         <div className="flex items-center flex-shrink-0">
           <div style={{ width: BAR_HALF_PX }} className="text-right pr-1">
             <span className="text-xs font-semibold text-green-600 uppercase tracking-wide">◄ Cuts</span>
@@ -997,7 +1017,7 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel }: {
           </div>
         </div>
         <div className="w-20 flex-shrink-0 text-right text-xs font-semibold text-gray-400 uppercase tracking-wide">Net</div>
-        <div className="w-32 flex-shrink-0 hidden sm:block text-xs font-semibold text-gray-400 uppercase tracking-wide">% of Budget</div>
+        <div className="w-32 flex-shrink-0 hidden sm:block text-xs font-semibold text-gray-400 uppercase tracking-wide">% Changed</div>
       </div>
 
       {/* Schools */}
@@ -1005,7 +1025,7 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel }: {
         <div className="px-4 py-1 bg-gray-50 border-b border-gray-100">
           <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Schools</span>
         </div>
-        {schools.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} />)}
+        {schools.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} grandTotal={grandTotal} />)}
       </div>
 
       {/* Programs — sorted by churn so most turbulent float up */}
@@ -1014,7 +1034,7 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel }: {
           <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Programs</span>
           <span className="ml-2 text-xs text-gray-400 normal-case">sorted by total movement</span>
         </div>
-        {programs.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} />)}
+        {programs.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} grandTotal={grandTotal} />)}
       </div>
     </div>
   )
