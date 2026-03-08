@@ -731,6 +731,7 @@ const BAR_BG: Record<string, string> = {
   blue:    'bg-blue-500',   yellow:  'bg-yellow-400',
   red:     'bg-red-500',    lime:    'bg-lime-500',
   gray:    'bg-gray-400',   fuchsia: 'bg-fuchsia-500',
+  zinc:    'bg-zinc-500',
 }
 
 function churnImpactBadge(pct: number | null): { label: string; className: string } | null {

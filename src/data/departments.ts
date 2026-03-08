@@ -135,6 +135,12 @@ export const DEPARTMENTS: DepartmentDef[] = [
     description: 'Athletic director, trainer, coaches, and after-school activity advisors. Non-salary athletic expenses (equipment, transportation, insurance) are counted under Athletics & Activities.',
     colorClass: 'fuchsia',
   },
+  {
+    id: 'contracted', label: 'Contracted Services', abbrev: 'Contracted',
+    group: 'program',
+    description: 'Spending on outside vendors and contracted services: IT/computer contracts, building and grounds maintenance contracts, networking, purchased professional services, and student transportation (almost entirely outsourced to a bus vendor).',
+    colorClass: 'zinc',
+  },
 ]
 
 // ── School key detection (shared with insights.ts) ─────────────────────────
@@ -232,6 +238,11 @@ export function filterItemsForDepartment(
         return parentCode.startsWith('2325')
       case 'coaches':
         return (parentCode.startsWith('3510') || parentCode.startsWith('3520')) && item.section === 'salaries'
+      case 'contracted': {
+        const d = item.description.toLowerCase()
+        return d.includes('contract') || d.includes('contrct') || d.includes('purchased service') ||
+               parentCode.startsWith('3300')  // transportation — fully outsourced bus vendor
+      }
       default:
         return false
     }

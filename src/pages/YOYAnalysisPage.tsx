@@ -4,7 +4,7 @@ import { useBudgetData } from '../hooks/useBudgetData'
 import { formatDollar } from '../data/transforms'
 import { LoadingSpinner } from '../components/ui/LoadingSpinner'
 import { ErrorBanner } from '../components/ui/ErrorBanner'
-import type { BudgetData } from '../data/types'
+import type { BudgetData, FiscalYear } from '../data/types'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -646,6 +646,198 @@ function SharePatternCard({ p }: { p: SharePattern }) {
   )
 }
 
+// ── Contracted services ───────────────────────────────────────────────────────
+
+type ContractedItem = {
+  description: string
+  parentLabel: string
+  isTransportation: boolean
+  values: Record<string, number>
+  firstValue: number
+  latestValue: number
+  netDelta: number
+  pctChange: number | null
+}
+
+function computeContractedTrend(data: BudgetData): {
+  items: ContractedItem[]
+  totalsByYear: Record<string, number>
+  netDelta: number
+  pctChange: number | null
+} {
+  const groupLabelByCode = new Map(data.groups.map(g => [g.code, g.label]))
+  const firstYear = data.years[0]
+  const lastYear  = data.years[data.years.length - 1]
+
+  const matched = data.lineItems.filter(item => {
+    if (item.isGroupHeader || item.section === 'summary') return false
+    const d = item.description.toLowerCase()
+    const p = item.parentCode ?? ''
+    return d.includes('contract') || d.includes('contrct') ||
+           d.includes('purchased service') || p.startsWith('3300')
+  })
+
+  const items: ContractedItem[] = matched.map(item => {
+    const values: Record<string, number> = {}
+    for (const y of data.years) values[y.key] = (item.values[y.key as FiscalYear] ?? 0)
+    const firstValue  = values[firstYear.key] ?? 0
+    const latestValue = values[lastYear.key]  ?? 0
+    const netDelta    = latestValue - firstValue
+    const parentLabel = item.parentCode
+      ? (groupLabelByCode.get(item.parentCode) ?? '').replace(/^\d+\s*[-–]\s*/, '').trim()
+      : ''
+    return {
+      description: item.description,
+      parentLabel,
+      isTransportation: (item.parentCode ?? '').startsWith('3300'),
+      values,
+      firstValue,
+      latestValue,
+      netDelta,
+      pctChange: firstValue > 0.005 ? netDelta / firstValue : null,
+    }
+  }).sort((a, b) => b.latestValue - a.latestValue)
+
+  const totalsByYear: Record<string, number> = {}
+  for (const y of data.years) totalsByYear[y.key] = items.reduce((s, i) => s + i.values[y.key], 0)
+
+  const totalFirst  = totalsByYear[firstYear.key] ?? 0
+  const totalLatest = totalsByYear[lastYear.key]  ?? 0
+  const netDelta    = totalLatest - totalFirst
+  return { items, totalsByYear, netDelta, pctChange: totalFirst > 0.005 ? netDelta / totalFirst : null }
+}
+
+function ContractedTrendSection({ data }: { data: BudgetData }) {
+  const { items, totalsByYear, netDelta, pctChange } = useMemo(() => computeContractedTrend(data), [data])
+  const years    = data.years
+  const maxTotal = Math.max(...Object.values(totalsByYear), 1)
+  const netUp    = netDelta >= 0
+  const pctStr   = pctChange !== null ? ` (${pctChange >= 0 ? '+' : ''}${(pctChange * 100).toFixed(1)}%)` : ''
+
+  const [showAll, setShowAll] = useState(false)
+  const SHOW_LIMIT = 10
+  const visibleItems = showAll ? items : items.slice(0, SHOW_LIMIT)
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      {/* Header */}
+      <div className="px-5 py-4 border-b border-gray-100 bg-zinc-50">
+        <div className="flex items-start justify-between flex-wrap gap-3">
+          <div>
+            <h2 className="text-base font-bold text-gray-900">Contracted &amp; Outsourced Services</h2>
+            <p className="text-sm text-gray-500 mt-0.5">
+              Spending on external vendors — IT contracts, maintenance, transportation, and other purchased services.
+              Transportation (~${Math.round((items.filter(i => i.isTransportation).reduce((s, i) => s + i.latestValue, 0)) / 1000)}k) is the largest single outsourced cost.
+            </p>
+          </div>
+          <div className="text-right flex-shrink-0">
+            <p className="text-xs text-gray-400 uppercase tracking-wide">Net change {years[0].short}→{years[years.length - 1].short}</p>
+            <p className={`text-2xl font-bold tabular-nums ${netUp ? 'text-red-600' : 'text-green-600'}`}>
+              {netUp ? '+' : ''}{formatDollar(netDelta)}
+            </p>
+            <p className="text-xs text-gray-400">{pctStr}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Year totals bar chart */}
+      <div className="px-5 py-4 border-b border-gray-100">
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Total Contracted Spend by Year</p>
+        <div className="flex items-end gap-4">
+          {years.map(y => {
+            const total = totalsByYear[y.key] ?? 0
+            const isLast = y.key === years[years.length - 1].key
+            return (
+              <div key={y.key} className="flex flex-col items-center gap-1">
+                <span className="text-xs font-semibold text-gray-700 tabular-nums">{formatDollar(total)}</span>
+                <div
+                  className={`w-14 rounded-t transition-all ${isLast ? 'bg-zinc-500' : 'bg-zinc-200'}`}
+                  style={{ height: `${Math.max(4, (total / maxTotal) * 64)}px` }}
+                />
+                <span className="text-xs text-gray-400 font-mono">{y.short}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Line items table */}
+      <div>
+        {/* Column headers */}
+        <div className="flex items-center gap-2 px-4 py-1.5 bg-gray-50 border-b border-gray-100 text-xs font-semibold text-gray-400 uppercase tracking-wide">
+          <span className="flex-1">Line Item</span>
+          {years.map(y => (
+            <span key={y.key} className="w-24 text-right flex-shrink-0">{y.short}</span>
+          ))}
+          <span className="w-24 text-right flex-shrink-0">Net Change</span>
+        </div>
+
+        {visibleItems.map((item, idx) => {
+          const isUp = item.netDelta > 0
+          const isNew = item.firstValue < 500 && item.latestValue > 500
+          const isGone = item.firstValue > 500 && item.latestValue < 500
+          return (
+            <div
+              key={idx}
+              className={`flex items-center gap-2 px-4 py-2 border-b border-gray-50 hover:bg-gray-50 ${item.isTransportation ? 'bg-blue-50/40' : ''}`}
+            >
+              <div className="flex-1 min-w-0">
+                <p className="text-sm text-gray-800 leading-snug truncate">{item.description}</p>
+                {item.parentLabel && (
+                  <p className="text-xs text-gray-400 truncate">{item.parentLabel}</p>
+                )}
+              </div>
+              {years.map(y => (
+                <span key={y.key} className="w-24 text-right text-sm tabular-nums text-gray-600 flex-shrink-0">
+                  {item.values[y.key] > 0 ? formatDollar(item.values[y.key]) : <span className="text-gray-300">—</span>}
+                </span>
+              ))}
+              <div className="w-24 text-right flex-shrink-0">
+                {isNew ? (
+                  <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">New</span>
+                ) : isGone ? (
+                  <span className="text-xs font-semibold text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Gone</span>
+                ) : item.netDelta !== 0 ? (
+                  <span className={`text-sm font-semibold tabular-nums ${isUp ? 'text-red-600' : 'text-green-600'}`}>
+                    {isUp ? '+' : ''}{formatDollar(item.netDelta)}
+                  </span>
+                ) : (
+                  <span className="text-gray-300 text-sm">—</span>
+                )}
+              </div>
+            </div>
+          )
+        })}
+
+        {/* Total row */}
+        <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50 border-t border-gray-200">
+          <span className="flex-1 text-sm font-bold text-gray-700">Total Contracted</span>
+          {years.map(y => (
+            <span key={y.key} className="w-24 text-right text-sm font-bold tabular-nums text-gray-800 flex-shrink-0">
+              {formatDollar(totalsByYear[y.key] ?? 0)}
+            </span>
+          ))}
+          <span className={`w-24 text-right text-sm font-bold tabular-nums flex-shrink-0 ${netUp ? 'text-red-600' : 'text-green-600'}`}>
+            {netUp ? '+' : ''}{formatDollar(netDelta)}
+          </span>
+        </div>
+
+        {/* Show more toggle */}
+        {items.length > SHOW_LIMIT && (
+          <div className="px-4 py-2 border-t border-gray-100">
+            <button
+              onClick={() => setShowAll(v => !v)}
+              className="text-xs text-blue-600 hover:text-blue-700 font-medium"
+            >
+              {showAll ? 'Show less' : `Show ${items.length - SHOW_LIMIT} more items`}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 // ── Collapsible group ─────────────────────────────────────────────────────────
 
 function CollapsibleGroup({ label, description, count, labelColor, children }: {
@@ -808,6 +1000,17 @@ export function YOYAnalysisPage() {
           )}
         </div>
       )}
+
+      {/* ── Contracted services ────────────────────────────────────────────── */}
+      <div className="space-y-4">
+        <div>
+          <h2 className="text-base font-bold text-gray-900">Contracted &amp; Outsourced Services</h2>
+          <p className="text-sm text-gray-500 mt-0.5">
+            How outside vendor spending has shifted over time — new contracts added, old ones dropped, and cost growth
+          </p>
+        </div>
+        <ContractedTrendSection data={data} />
+      </div>
 
       <p className="text-xs text-gray-400 text-center pt-2">
         Figures computed from published budget spreadsheets. Click any item to explore the full department.
