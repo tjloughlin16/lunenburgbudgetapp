@@ -350,7 +350,7 @@ export function DepartmentsPage() {
             </p>
             {data.grandTotals[primaryYear] > 0 && (
               <p className="text-sm text-gray-500 mt-0.5 tabular-nums">
-                {formatPct(totalPrimary / data.grandTotals[primaryYear])} of district
+                {((totalPrimary / data.grandTotals[primaryYear]) * 100).toFixed(1)}% of district
               </p>
             )}
           </div>
@@ -889,7 +889,7 @@ function DeptBarRow({ d, maxBar, grandTotal }: { d: DeptStat; maxBar: number; gr
         <div className="w-20 flex-shrink-0 hidden sm:flex justify-center">
           <div className="bg-indigo-50 rounded-lg px-2 py-1 text-center min-w-[56px]">
             <div className="text-base font-bold text-indigo-700 tabular-nums leading-tight">
-              {formatPct(d.primaryTotal / grandTotal)}
+              {((d.primaryTotal / grandTotal) * 100).toFixed(1)}%
             </div>
             <div className="text-xs text-indigo-400 leading-tight whitespace-nowrap">of district</div>
           </div>
