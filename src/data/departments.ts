@@ -6,7 +6,7 @@ export interface DepartmentDef {
   id: string
   label: string
   abbrev: string       // short label for tab pills
-  group: 'school' | 'program'
+  group: 'school' | 'program' | 'staff'
   description: string
   colorClass: string   // tailwind border/badge color key (used in component)
 }
@@ -59,13 +59,13 @@ export const DEPARTMENTS: DepartmentDef[] = [
   },
   {
     id: 'admin', label: 'Administration', abbrev: 'Admin',
-    group: 'program',
-    description: "District-wide administration: school committee, superintendent's office, business office, legal services, HR, and administrative technology.",
+    group: 'staff',
+    description: "District-wide administration: school committee, superintendent's office, business office, legal services, HR, administrative technology, and building principals.",
     colorClass: 'slate',
   },
   {
     id: 'guidance', label: 'Guidance & Student Support', abbrev: 'Guidance',
-    group: 'program',
+    group: 'staff',
     description: 'Guidance counselors, psychologists, social workers, and school nurses — the student support and mental health infrastructure.',
     colorClass: 'teal',
   },
@@ -98,6 +98,42 @@ export const DEPARTMENTS: DepartmentDef[] = [
     group: 'program',
     description: 'Employee health insurance, retirement contributions, workers compensation, and crossing guard costs. These are largely non-discretionary fixed obligations.',
     colorClass: 'indigo',
+  },
+  {
+    id: 'teachers', label: 'Classroom Teachers', abbrev: 'Teachers',
+    group: 'staff',
+    description: 'General education classroom teachers across all school buildings — the core instructional staff. Does not include special education teachers (counted under Special Education) or specialists like music, guidance, or librarians.',
+    colorClass: 'blue',
+  },
+  {
+    id: 'paras', label: 'Paraprofessionals', abbrev: 'Paras',
+    group: 'staff',
+    description: 'Paraprofessional staff across all buildings, including both general education and special education paraprofessionals. Sped paras are also counted under Special Education.',
+    colorClass: 'yellow',
+  },
+  {
+    id: 'nurses', label: 'School Nurses', abbrev: 'Nurses',
+    group: 'staff',
+    description: 'School nursing staff salaries across all buildings plus a district nurse coordinator. Non-salary health expenses are counted under Health Services.',
+    colorClass: 'red',
+  },
+  {
+    id: 'librarians', label: 'Librarians', abbrev: 'Library',
+    group: 'staff',
+    description: 'School librarians at the Primary, Elementary, Middle, and High Schools.',
+    colorClass: 'lime',
+  },
+  {
+    id: 'substitutes', label: 'Substitutes', abbrev: 'Subs',
+    group: 'staff',
+    description: 'Substitute teacher salaries across all buildings, including both general education and special education substitutes.',
+    colorClass: 'gray',
+  },
+  {
+    id: 'coaches', label: 'Coaches & Advisors', abbrev: 'Coaches',
+    group: 'staff',
+    description: 'Athletic director, trainer, coaches, and after-school activity advisors. Non-salary athletic expenses (equipment, transportation, insurance) are counted under Athletics & Activities.',
+    colorClass: 'fuchsia',
   },
 ]
 
@@ -168,7 +204,7 @@ export function filterItemsForDepartment(
         return has(item.description, 'music', 'band', 'chorus', 'orchestra', 'choir') ||
                has(parentLabel,      'music', 'band', 'chorus', 'orchestra', 'choir')
       case 'admin':
-        return parentCat === '1'
+        return parentCat === '1' || parentCode.startsWith('2210')
       case 'guidance':
         return parentCode.startsWith('2710') ||  // guidance expenses + salaries
                parentCode.startsWith('2800') ||  // psych services
@@ -184,6 +220,18 @@ export function filterItemsForDepartment(
                !parentCode.startsWith('4400')  // 4400 is telecom → goes to technology
       case 'benefits':
         return parentCode.startsWith('5200')
+      case 'teachers':
+        return parentCode.startsWith('2305')
+      case 'paras':
+        return parentCode.startsWith('2330')
+      case 'nurses':
+        return parentCode.startsWith('3200') && item.section === 'salaries'
+      case 'librarians':
+        return parentCode.startsWith('2340')
+      case 'substitutes':
+        return parentCode.startsWith('2325')
+      case 'coaches':
+        return (parentCode.startsWith('3510') || parentCode.startsWith('3520')) && item.section === 'salaries'
       default:
         return false
     }

@@ -193,6 +193,7 @@ export function DepartmentsPage() {
 
   const schools  = DEPARTMENTS.filter(d => d.group === 'school')
   const programs = DEPARTMENTS.filter(d => d.group === 'program')
+  const staff    = DEPARTMENTS.filter(d => d.group === 'staff')
 
   const color = activeDept.colorClass
 
@@ -285,6 +286,29 @@ export function DepartmentsPage() {
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Programs</p>
           <div className="flex flex-wrap gap-2">
             {programs.map(dept => {
+              const isActive = dept.id === activeDeptId
+              return (
+                <button
+                  key={dept.id}
+                  onClick={() => handleSelect(dept.id)}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
+                    isActive
+                      ? ACTIVE_BG[dept.colorClass]
+                      : `bg-white text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-50`
+                  }`}
+                >
+                  {dept.abbrev}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Staff row */}
+        <div>
+          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Staff</p>
+          <div className="flex flex-wrap gap-2">
+            {staff.map(dept => {
               const isActive = dept.id === activeDeptId
               return (
                 <button
@@ -682,7 +706,7 @@ interface DeptStat {
   id: string
   label: string
   abbrev: string
-  group: 'school' | 'program'
+  group: 'school' | 'program' | 'staff'
   colorClass: string
   increases: number
   cuts: number
@@ -703,7 +727,10 @@ const BAR_BG: Record<string, string> = {
   rose:    'bg-rose-500',   purple:  'bg-purple-500', green:   'bg-green-500',
   slate:   'bg-slate-400',  teal:    'bg-teal-400',   emerald: 'bg-emerald-500',
   orange:  'bg-orange-400', cyan:    'bg-cyan-400',   stone:   'bg-stone-400',
-  indigo:  'bg-indigo-400',
+  indigo:  'bg-indigo-400', pink:    'bg-pink-400',
+  blue:    'bg-blue-500',   yellow:  'bg-yellow-400',
+  red:     'bg-red-500',    lime:    'bg-lime-500',
+  gray:    'bg-gray-400',   fuchsia: 'bg-fuchsia-500',
 }
 
 function churnImpactBadge(pct: number | null): { label: string; className: string } | null {
@@ -818,6 +845,27 @@ function PropBarGroup({ label, stats, staggerLabels = false }: {
   )
 }
 
+function TableColumnHeaders() {
+  return (
+    <div className="flex items-center gap-3 px-4 py-1.5 border-b border-gray-100 bg-gray-50">
+      <div className="w-28 flex-shrink-0" />
+      <div className="w-24 flex-shrink-0 text-right text-xs font-semibold text-gray-400 uppercase tracking-wide">Total Budget</div>
+      <div className="w-20 flex-shrink-0 hidden sm:block text-center text-xs font-semibold text-indigo-400 uppercase tracking-wide">District %</div>
+      <div className="flex items-center flex-shrink-0">
+        <div style={{ width: BAR_HALF_PX }} className="text-right pr-1">
+          <span className="text-xs font-semibold text-green-600 uppercase tracking-wide">◄ Cuts</span>
+        </div>
+        <div className="w-px mx-0.5" />
+        <div style={{ width: BAR_HALF_PX }} className="pl-1">
+          <span className="text-xs font-semibold text-red-500 uppercase tracking-wide">Adds ►</span>
+        </div>
+      </div>
+      <div className="w-20 flex-shrink-0 text-right text-xs font-semibold text-gray-400 uppercase tracking-wide">Net</div>
+      <div className="w-32 flex-shrink-0 hidden sm:block text-xs font-semibold text-gray-400 uppercase tracking-wide">% Changed</div>
+    </div>
+  )
+}
+
 function DeptBarRow({ d, maxBar, grandTotal }: { d: DeptStat; maxBar: number; grandTotal: number }) {
   const cutPx    = maxBar > 0 ? Math.round((d.cuts      / maxBar) * BAR_HALF_PX) : 0
   const incPx    = maxBar > 0 ? Math.round((d.increases / maxBar) * BAR_HALF_PX) : 0
@@ -906,15 +954,26 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel, grandTotal
   // "Most impacted" = highest churn as % of base budget
   const topImpacted = [...deptStats].filter(d => d.churnPct !== null).sort((a, b) => (b.churnPct ?? 0) - (a.churnPct ?? 0))[0] ?? null
 
-  const schools  = deptStats.filter(d => d.group === 'school')
-  const programs = [...deptStats.filter(d => d.group === 'program')].sort((a, b) => b.churn - a.churn)
+  const schools    = deptStats.filter(d => d.group === 'school')
+  const programs   = [...deptStats.filter(d => d.group === 'program')].sort((a, b) => b.churn - a.churn)
+  const staffStats = [...deptStats.filter(d => d.group === 'staff')].sort((a, b) => b.churn - a.churn)
+
+  const groupSummary = (stats: DeptStat[]) => ({
+    total:     stats.reduce((s, d) => s + d.primaryTotal, 0),
+    increases: stats.reduce((s, d) => s + d.increases, 0),
+    cuts:      stats.reduce((s, d) => s + d.cuts, 0),
+    net:       stats.reduce((s, d) => s + d.net, 0),
+  })
+  const schoolsSummary   = groupSummary(schools)
+  const programsSummary  = groupSummary(programs)
+  const staffSummary     = groupSummary(staffStats)
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
 
       {/* Header */}
       <div className="px-6 py-4 border-b border-gray-100">
-        <h2 className="text-base font-bold text-gray-900">Budget Movement by Department</h2>
+        <h2 className="text-base font-bold text-gray-900">Budget Changes by Department</h2>
         <p className="text-xs text-gray-400 mt-0.5">
           {primaryLabel} vs {compareLabel} — bars show dollars added
           <span className="inline-block w-3 h-2.5 bg-red-400 rounded-sm opacity-80 mx-1 align-middle" />
@@ -928,6 +987,7 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel, grandTotal
       <div className="px-6 py-5 border-b border-gray-100 space-y-8">
         <PropBarGroup label="Schools" stats={deptStats.filter(d => d.group === 'school')} />
         <PropBarGroup label="Programs" stats={deptStats.filter(d => d.group === 'program')} staggerLabels />
+        <PropBarGroup label="Staff" stats={deptStats.filter(d => d.group === 'staff')} staggerLabels />
       </div>
 
       {/* Spotlight row */}
@@ -1002,39 +1062,64 @@ function DeptComparisonPanel({ deptStats, primaryLabel, compareLabel, grandTotal
         </div>
       )}
 
-      {/* Column headers */}
-      <div className="flex items-center gap-3 px-4 py-1.5 border-b border-gray-100 bg-gray-50">
-        <div className="w-28 flex-shrink-0" />
-        <div className="w-24 flex-shrink-0 text-right text-xs font-semibold text-gray-400 uppercase tracking-wide">Total Budget</div>
-        <div className="w-20 flex-shrink-0 hidden sm:block text-center text-xs font-semibold text-indigo-400 uppercase tracking-wide">District %</div>
-        <div className="flex items-center flex-shrink-0">
-          <div style={{ width: BAR_HALF_PX }} className="text-right pr-1">
-            <span className="text-xs font-semibold text-green-600 uppercase tracking-wide">◄ Cuts</span>
-          </div>
-          <div className="w-px mx-0.5" />
-          <div style={{ width: BAR_HALF_PX }} className="pl-1">
-            <span className="text-xs font-semibold text-red-500 uppercase tracking-wide">Adds ►</span>
-          </div>
-        </div>
-        <div className="w-20 flex-shrink-0 text-right text-xs font-semibold text-gray-400 uppercase tracking-wide">Net</div>
-        <div className="w-32 flex-shrink-0 hidden sm:block text-xs font-semibold text-gray-400 uppercase tracking-wide">% Changed</div>
-      </div>
-
       {/* Schools */}
       <div>
-        <div className="px-4 py-1 bg-gray-50 border-b border-gray-100">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Schools</span>
+        <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
+          <div className="flex items-start justify-between flex-wrap gap-y-1">
+            <div>
+              <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Schools</span>
+              <span className="ml-2 text-xs text-gray-400">Lunenburg Public Schools · {primaryLabel} vs {compareLabel}</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+              <span className="text-gray-500">Budget <span className="font-semibold text-gray-800">{formatDollar(schoolsSummary.total)}</span></span>
+              <span className="text-gray-500">Added <span className="font-semibold text-red-600">+{formatDollar(schoolsSummary.increases)}</span></span>
+              <span className="text-gray-500">Cut <span className="font-semibold text-green-700">−{formatDollar(schoolsSummary.cuts)}</span></span>
+              <span className="text-gray-500">Net <span className={`font-semibold ${schoolsSummary.net >= 0 ? 'text-red-600' : 'text-green-700'}`}>{schoolsSummary.net >= 0 ? '+' : '−'}{formatDollar(Math.abs(schoolsSummary.net))}</span></span>
+            </div>
+          </div>
         </div>
+        <TableColumnHeaders />
         {schools.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} grandTotal={grandTotal} />)}
       </div>
 
       {/* Programs — sorted by churn so most turbulent float up */}
       <div>
-        <div className="px-4 py-1 bg-gray-50 border-b border-gray-100">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Programs</span>
-          <span className="ml-2 text-xs text-gray-400 normal-case">sorted by total movement</span>
+        <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
+          <div className="flex items-start justify-between flex-wrap gap-y-1">
+            <div>
+              <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Programs</span>
+              <span className="ml-2 text-xs text-gray-400">Lunenburg Public Schools · {primaryLabel} vs {compareLabel} · sorted by total movement</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+              <span className="text-gray-500">Budget <span className="font-semibold text-gray-800">{formatDollar(programsSummary.total)}</span></span>
+              <span className="text-gray-500">Added <span className="font-semibold text-red-600">+{formatDollar(programsSummary.increases)}</span></span>
+              <span className="text-gray-500">Cut <span className="font-semibold text-green-700">−{formatDollar(programsSummary.cuts)}</span></span>
+              <span className="text-gray-500">Net <span className={`font-semibold ${programsSummary.net >= 0 ? 'text-red-600' : 'text-green-700'}`}>{programsSummary.net >= 0 ? '+' : '−'}{formatDollar(Math.abs(programsSummary.net))}</span></span>
+            </div>
+          </div>
         </div>
+        <TableColumnHeaders />
         {programs.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} grandTotal={grandTotal} />)}
+      </div>
+
+      {/* Staff — sorted by churn */}
+      <div>
+        <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
+          <div className="flex items-start justify-between flex-wrap gap-y-1">
+            <div>
+              <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Staff</span>
+              <span className="ml-2 text-xs text-gray-400">Lunenburg Public Schools · {primaryLabel} vs {compareLabel} · sorted by total movement</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+              <span className="text-gray-500">Budget <span className="font-semibold text-gray-800">{formatDollar(staffSummary.total)}</span></span>
+              <span className="text-gray-500">Added <span className="font-semibold text-red-600">+{formatDollar(staffSummary.increases)}</span></span>
+              <span className="text-gray-500">Cut <span className="font-semibold text-green-700">−{formatDollar(staffSummary.cuts)}</span></span>
+              <span className="text-gray-500">Net <span className={`font-semibold ${staffSummary.net >= 0 ? 'text-red-600' : 'text-green-700'}`}>{staffSummary.net >= 0 ? '+' : '−'}{formatDollar(Math.abs(staffSummary.net))}</span></span>
+            </div>
+          </div>
+        </div>
+        <TableColumnHeaders />
+        {staffStats.map(d => <DeptBarRow key={d.id} d={d} maxBar={maxBar} grandTotal={grandTotal} />)}
       </div>
     </div>
   )
