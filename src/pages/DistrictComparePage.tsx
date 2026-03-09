@@ -549,6 +549,10 @@ function BreakdownTab({ data, selectedYear, onYearChange }: {
             <thead>
               <tr className="border-b border-gray-100">
                 <th className="py-2 px-4 text-left text-gray-400 font-semibold">Category</th>
+                {/* Average column first, then Lunenburg, then peers */}
+                <th className="py-2 px-3 text-right text-xs font-semibold text-gray-400 whitespace-nowrap bg-gray-50">
+                  9-District<br />Avg
+                </th>
                 {[...chartData].sort((a, b) => {
                   if (a.district === 'Lunenburg') return -1
                   if (b.district === 'Lunenburg') return 1
@@ -569,20 +573,42 @@ function BreakdownTab({ data, selectedYear, onYearChange }: {
                   if (b.district === 'Lunenburg') return 1
                   return b.total - a.total
                 })
+                // Average share for this category across all districts
+                const avgShare = chartData.length > 0
+                  ? chartData.reduce((s, r) => s + (r.total > 0 ? (r[cat.key] as number) / r.total * 100 : 0), 0) / chartData.length
+                  : 0
                 return (
                   <tr key={cat.key as string} className="hover:bg-gray-50">
                     <td className="py-2 px-4 text-gray-700 flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: cat.color }} />
                       {cat.label}
                     </td>
+                    {/* Average column */}
+                    <td className="py-2 px-3 text-right font-mono text-gray-500 bg-gray-50">
+                      {avgShare.toFixed(1)}%
+                    </td>
                     {sortedRows.map(row => {
                       const share = row.total > 0 ? ((row[cat.key] as number) / row.total * 100) : 0
                       const isLunenburg = row.district === 'Lunenburg'
+                      const diff = share - avgShare
                       return (
                         <td key={row.district} className={`py-2 px-3 text-right font-mono ${
-                          isLunenburg ? 'text-blue-700 font-semibold' : 'text-gray-600'
+                          isLunenburg ? 'font-semibold' : 'text-gray-600'
                         }`}>
-                          {share.toFixed(1)}%
+                          {isLunenburg ? (
+                            <span className="inline-flex items-center gap-1">
+                              <span className={diff > 0.15 ? 'text-red-600' : diff < -0.15 ? 'text-green-700' : 'text-gray-600'}>
+                                {share.toFixed(1)}%
+                              </span>
+                              {Math.abs(diff) > 0.15 && (
+                                <span className={`text-xs ${diff > 0 ? 'text-red-400' : 'text-green-500'}`}>
+                                  {diff > 0 ? '▲' : '▼'}{Math.abs(diff).toFixed(1)}pp
+                                </span>
+                              )}
+                            </span>
+                          ) : (
+                            <span>{share.toFixed(1)}%</span>
+                          )}
                         </td>
                       )
                     })}
@@ -592,6 +618,10 @@ function BreakdownTab({ data, selectedYear, onYearChange }: {
               {/* Total row */}
               <tr className="border-t-2 border-gray-200 font-semibold">
                 <td className="py-2 px-4 text-gray-700">Total per pupil</td>
+                {/* Avg total */}
+                <td className="py-2 px-3 text-right font-mono text-gray-500 bg-gray-50">
+                  {fmtFull$(Math.round(chartData.reduce((s, r) => s + r.total, 0) / (chartData.length || 1)))}
+                </td>
                 {[...chartData].sort((a, b) => {
                   if (a.district === 'Lunenburg') return -1
                   if (b.district === 'Lunenburg') return 1
@@ -607,6 +637,278 @@ function BreakdownTab({ data, selectedYear, onYearChange }: {
             </tbody>
           </table>
         </div>
+        <div className="px-4 py-2 border-t border-gray-100 bg-gray-50 flex flex-wrap gap-4 text-xs text-gray-400">
+          <span>Lunenburg only: <span className="text-red-500 font-semibold">red ▲</span> = higher share than 9-district avg</span>
+          <span><span className="text-green-600 font-semibold">green ▼</span> = lower share than avg</span>
+          <span className="text-gray-300">· Threshold: &gt;0.15 percentage points difference</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Overview Tab ──────────────────────────────────────────────────────────────
+
+function OverviewTab({ data, latestYear }: { data: DeseData; latestYear: string }) {
+  const lunRow     = getRow(data.rows, 'Lunenburg', latestYear)
+  const allRows    = data.rows.filter(r => r.year === latestYear)
+  const n          = allRows.length
+  const avg        = districtAverage(data.rows, latestYear)
+  const rank       = rankDistrict(data.rows, 'Lunenburg', latestYear)
+  const firstYear  = data.years[0]
+  const lunFirst   = getRow(data.rows, 'Lunenburg', firstYear)
+
+  // Per-category stats for Lunenburg
+  const catStats = DESE_CATEGORIES.map(cat => {
+    const lunAmt    = (lunRow?.[cat.key] as number) ?? 0
+    const lunShare  = lunRow && lunRow.total > 0 ? lunAmt / lunRow.total * 100 : 0
+    const avgAmt    = n > 0 ? Math.round(allRows.reduce((s, r) => s + (r[cat.key] as number), 0) / n) : 0
+    const avgShare  = n > 0 ? allRows.reduce((s, r) => s + (r.total > 0 ? (r[cat.key] as number) / r.total * 100 : 0), 0) / n : 0
+    const diffPp    = lunShare - avgShare
+    const diffAmt   = lunAmt - avgAmt
+    // rank by per-pupil $ (1 = lowest spender)
+    const sortedAmt = [...allRows].sort((a, b) => (a[cat.key] as number) - (b[cat.key] as number))
+    const catRank   = sortedAmt.findIndex(r => r.district === 'Lunenburg') + 1
+    return { ...cat, lunAmt, lunShare, avgAmt, avgShare, diffPp, diffAmt, catRank }
+  })
+
+  // 7-year trend for Lunenburg
+  const trendData = data.years.map(y => {
+    const r = getRow(data.rows, 'Lunenburg', y)
+    return { year: shortYear(y), total: r?.total ?? 0 }
+  })
+
+  // Biggest deviations from average (sorted by |diffPp|)
+  const deviations = [...catStats].sort((a, b) => Math.abs(b.diffPp) - Math.abs(a.diffPp))
+  const above = deviations.filter(c => c.diffPp > 0.1).slice(0, 3)
+  const below = deviations.filter(c => c.diffPp < -0.1).slice(0, 3)
+
+  const lunGrowth = lunRow && lunFirst && lunFirst.total > 0
+    ? ((lunRow.total - lunFirst.total) / lunFirst.total * 100)
+    : null
+
+  return (
+    <div className="space-y-6">
+      {/* ── Callout cards: biggest deviations ─────────────────────────────── */}
+      <div className="grid sm:grid-cols-2 gap-4">
+        {/* Above average */}
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-4 py-3 border-b border-red-100 bg-red-50">
+            <p className="text-sm font-semibold text-red-700">
+              Lunenburg spends proportionally <em>more</em> on…
+            </p>
+            <p className="text-xs text-red-400 mt-0.5">vs. 9-district average, {latestYear}</p>
+          </div>
+          <div className="divide-y divide-gray-50">
+            {above.map(cat => (
+              <div key={cat.key as string} className="px-4 py-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: cat.color }} />
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-800">{cat.label}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">
+                    {fmtFull$(cat.lunAmt)}/pupil vs. avg {fmtFull$(cat.avgAmt)}
+                  </p>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <p className="text-sm font-bold text-red-600">{cat.lunShare.toFixed(1)}%</p>
+                  <p className="text-xs text-red-400">
+                    ▲ {cat.diffPp.toFixed(1)}pp above avg
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Below average */}
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="px-4 py-3 border-b border-green-100 bg-green-50">
+            <p className="text-sm font-semibold text-green-700">
+              Lunenburg spends proportionally <em>less</em> on…
+            </p>
+            <p className="text-xs text-green-400 mt-0.5">vs. 9-district average, {latestYear}</p>
+          </div>
+          <div className="divide-y divide-gray-50">
+            {below.map(cat => (
+              <div key={cat.key as string} className="px-4 py-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: cat.color }} />
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-800">{cat.label}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">
+                    {fmtFull$(cat.lunAmt)}/pupil vs. avg {fmtFull$(cat.avgAmt)}
+                  </p>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <p className="text-sm font-bold text-green-700">{cat.lunShare.toFixed(1)}%</p>
+                  <p className="text-xs text-green-500">
+                    ▼ {Math.abs(cat.diffPp).toFixed(1)}pp below avg
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Full category scorecard ─────────────────────────────────────────── */}
+      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div className="px-4 py-3 border-b border-gray-100 bg-gray-50">
+          <p className="text-sm font-semibold text-gray-700">Lunenburg Category Scorecard — {latestYear}</p>
+          <p className="text-xs text-gray-400 mt-0.5">Per-pupil spending and share of budget vs. 9-district average</p>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-100 text-gray-400 font-semibold">
+                <th className="py-2 px-4 text-left">Category</th>
+                <th className="py-2 px-3 text-right">Lunenburg $/pupil</th>
+                <th className="py-2 px-3 text-right">Avg $/pupil</th>
+                <th className="py-2 px-3 text-right">Δ $</th>
+                <th className="py-2 px-3 text-right">Lun. % of budget</th>
+                <th className="py-2 px-3 text-right">Avg %</th>
+                <th className="py-2 px-3 text-right">Δ pp</th>
+                <th className="py-2 px-3 text-right">Rank</th>
+                <th className="py-2 px-4 text-left">vs. Peers</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {catStats.map(cat => {
+                const aboveAvg = cat.diffPp > 0.15
+                const belowAvg = cat.diffPp < -0.15
+                // bar fill: proportion from 0 to max across all districts for this category
+                const maxAmt = Math.max(...allRows.map(r => r[cat.key] as number))
+                const barPct = maxAmt > 0 ? (cat.lunAmt / maxAmt) * 100 : 0
+                const avgBarPct = maxAmt > 0 ? (cat.avgAmt / maxAmt) * 100 : 0
+                return (
+                  <tr key={cat.key as string} className="hover:bg-blue-50/30">
+                    <td className="py-2.5 px-4">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: cat.color }} />
+                        <span className="font-medium text-gray-800">{cat.label}</span>
+                      </div>
+                    </td>
+                    <td className="py-2.5 px-3 text-right font-mono font-semibold text-blue-700">
+                      {fmtFull$(cat.lunAmt)}
+                    </td>
+                    <td className="py-2.5 px-3 text-right font-mono text-gray-500">
+                      {fmtFull$(cat.avgAmt)}
+                    </td>
+                    <td className={`py-2.5 px-3 text-right font-mono font-semibold ${
+                      cat.diffAmt > 0 ? 'text-red-500' : cat.diffAmt < 0 ? 'text-green-600' : 'text-gray-400'
+                    }`}>
+                      {cat.diffAmt >= 0 ? '+' : ''}{fmtFull$(cat.diffAmt)}
+                    </td>
+                    <td className={`py-2.5 px-3 text-right font-mono font-bold ${
+                      aboveAvg ? 'text-red-600' : belowAvg ? 'text-green-700' : 'text-gray-700'
+                    }`}>
+                      {cat.lunShare.toFixed(1)}%
+                    </td>
+                    <td className="py-2.5 px-3 text-right font-mono text-gray-400">
+                      {cat.avgShare.toFixed(1)}%
+                    </td>
+                    <td className={`py-2.5 px-3 text-right font-mono font-semibold ${
+                      aboveAvg ? 'text-red-500' : belowAvg ? 'text-green-600' : 'text-gray-400'
+                    }`}>
+                      {cat.diffPp >= 0 ? '+' : ''}{cat.diffPp.toFixed(1)}pp
+                    </td>
+                    <td className={`py-2.5 px-3 text-right font-mono ${
+                      cat.catRank <= 3 ? 'text-green-600 font-semibold' : cat.catRank >= 7 ? 'text-red-500 font-semibold' : 'text-gray-500'
+                    }`}>
+                      #{cat.catRank}/9
+                    </td>
+                    {/* Inline bar: Lunenburg (blue) vs avg (gray) */}
+                    <td className="py-2.5 px-4 w-32">
+                      <div className="relative h-4 flex items-center">
+                        <div className="absolute inset-y-1 left-0 right-0 bg-gray-100 rounded" />
+                        <div
+                          className="absolute inset-y-1 left-0 bg-gray-300 rounded"
+                          style={{ width: `${avgBarPct}%` }}
+                        />
+                        <div
+                          className="absolute inset-y-0.5 left-0 rounded"
+                          style={{ width: `${barPct}%`, backgroundColor: cat.color, opacity: 0.8 }}
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                )
+              })}
+              {/* Totals row */}
+              <tr className="border-t-2 border-gray-200 font-semibold bg-gray-50">
+                <td className="py-2.5 px-4 text-gray-700">Total</td>
+                <td className="py-2.5 px-3 text-right font-mono text-blue-700">
+                  {lunRow ? fmtFull$(lunRow.total) : '—'}
+                </td>
+                <td className="py-2.5 px-3 text-right font-mono text-gray-500">
+                  {fmtFull$(avg)}
+                </td>
+                <td className={`py-2.5 px-3 text-right font-mono ${
+                  lunRow && lunRow.total > avg ? 'text-red-500' : 'text-green-600'
+                }`}>
+                  {lunRow ? `${lunRow.total > avg ? '+' : ''}${fmtFull$(lunRow.total - avg)}` : '—'}
+                </td>
+                <td className="py-2.5 px-3 text-right font-mono text-gray-400">100.0%</td>
+                <td className="py-2.5 px-3 text-right font-mono text-gray-400">100.0%</td>
+                <td className="py-2.5 px-3 text-right font-mono text-gray-400">—</td>
+                <td className={`py-2.5 px-3 text-right font-mono ${
+                  rank <= 3 ? 'text-green-600' : rank >= 7 ? 'text-red-500' : 'text-gray-500'
+                }`}>
+                  #{rank}/9
+                </td>
+                <td className="py-2.5 px-4" />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="px-4 py-2 border-t border-gray-100 bg-gray-50 flex flex-wrap gap-4 text-xs text-gray-400">
+          <span>Rank: #1 = lowest per-pupil spend in that category · #9 = highest</span>
+          <span className="text-gray-300">·</span>
+          <span><span className="text-green-600">Green</span> = below avg · <span className="text-red-500">Red</span> = above avg (threshold: ±0.15pp or ±$1)</span>
+        </div>
+      </div>
+
+      {/* ── Lunenburg 7-year trend mini chart ──────────────────────────────── */}
+      <div className="bg-white rounded-xl border border-gray-200 p-4">
+        <div className="flex items-start justify-between mb-3">
+          <div>
+            <p className="text-sm font-semibold text-gray-700">Lunenburg Spending Trend</p>
+            <p className="text-xs text-gray-400 mt-0.5">
+              Per-pupil total · {firstYear} – {latestYear}
+              {lunGrowth !== null && (
+                <span className="ml-2 text-red-500 font-medium">+{lunGrowth.toFixed(1)}% over 7 years</span>
+              )}
+            </p>
+          </div>
+          {lunRow && (
+            <div className="text-right">
+              <p className="text-lg font-bold text-blue-700">{fmtFull$(lunRow.total)}</p>
+              <p className="text-xs text-gray-400">{latestYear} per pupil</p>
+            </div>
+          )}
+        </div>
+        <ResponsiveContainer width="100%" height={160}>
+          <LineChart data={trendData} margin={{ top: 4, right: 16, left: 0, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <XAxis dataKey="year" tick={{ fontSize: 10, fill: '#94a3b8' }} />
+            <YAxis
+              tickFormatter={v => `$${(v / 1000).toFixed(0)}K`}
+              tick={{ fontSize: 10, fill: '#94a3b8' }}
+              domain={['auto', 'auto']}
+              width={44}
+            />
+            <Tooltip
+              formatter={(v: number | undefined) => [v != null ? fmtFull$(v) : '—', 'Per-pupil spending']}
+              contentStyle={{ fontSize: 11, borderRadius: 8 }}
+            />
+            <Line
+              dataKey="total"
+              stroke="#2563eb"
+              strokeWidth={2.5}
+              dot={{ r: 3, fill: '#2563eb' }}
+              activeDot={{ r: 5 }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </div>
   )
@@ -614,13 +916,13 @@ function BreakdownTab({ data, selectedYear, onYearChange }: {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
-type Tab = 'trend' | 'snapshot' | 'breakdown'
+type Tab = 'overview' | 'trend' | 'snapshot' | 'breakdown'
 
 export function DistrictComparePage() {
   const [deseData, setDeseData]       = useState<DeseData | null>(null)
   const [loading, setLoading]         = useState(true)
   const [error, setError]             = useState<string | null>(null)
-  const [activeTab, setActiveTab]     = useState<Tab>('trend')
+  const [activeTab, setActiveTab]     = useState<Tab>('overview')
   const [selectedYear, setSelectedYear] = useState<string>('')
   const [visibleDistricts, setVisibleDistricts] = useState<string[]>([])
 
@@ -725,6 +1027,9 @@ export function DistrictComparePage() {
 
       {/* Tabs */}
       <div className="flex gap-2 border-b border-gray-200 pb-3">
+        <TabBtn active={activeTab === 'overview'} onClick={() => setActiveTab('overview')}>
+          Overview
+        </TabBtn>
         <TabBtn active={activeTab === 'trend'} onClick={() => setActiveTab('trend')}>
           Spending Trend
         </TabBtn>
@@ -737,6 +1042,9 @@ export function DistrictComparePage() {
       </div>
 
       {/* Tab content */}
+      {activeTab === 'overview' && (
+        <OverviewTab data={deseData} latestYear={latestYear} />
+      )}
       {activeTab === 'trend' && (
         <TrendTab
           data={deseData}
