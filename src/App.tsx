@@ -12,6 +12,7 @@ import { BudgetFlowPage } from './pages/BudgetFlowPage'
 import { YOYAnalysisPage } from './pages/YOYAnalysisPage'
 import { LineItemDetailPage } from './pages/LineItemDetailPage'
 import { UserDocsPage } from './pages/UserDocsPage'
+import { DistrictComparePage } from './pages/DistrictComparePage'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="yoy" element={<YOYAnalysisPage />} />
           <Route path="item/:id" element={<LineItemDetailPage />} />
           <Route path="user-docs" element={<UserDocsPage />} />
+          <Route path="district-compare" element={<DistrictComparePage />} />
         </Route>
       </Routes>
     </HashRouter>
