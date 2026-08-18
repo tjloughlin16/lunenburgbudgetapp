@@ -13,6 +13,7 @@ import { YOYAnalysisPage } from './pages/YOYAnalysisPage'
 import { LineItemDetailPage } from './pages/LineItemDetailPage'
 import { UserDocsPage } from './pages/UserDocsPage'
 import { DistrictComparePage } from './pages/DistrictComparePage'
+import { CutLinePage } from './pages/CutLinePage'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="item/:id" element={<LineItemDetailPage />} />
           <Route path="user-docs" element={<UserDocsPage />} />
           <Route path="district-compare" element={<DistrictComparePage />} />
+          <Route path="cut-line" element={<CutLinePage />} />
         </Route>
       </Routes>
     </HashRouter>
