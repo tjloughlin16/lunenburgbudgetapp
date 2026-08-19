@@ -80,12 +80,12 @@ HEADLINES = [
           f'that survived AND get them to away games. Against the '
           f'${PROGRAM_TOTAL_ADOPTED:,} the budget actually funds — which pays for no '
           f'transportation at all — it is ${_self_fund_nobus}. Restoring the full '
-          f'${PROGRAM_TOTAL_LEVEL_SERVICE:,} programme is out of reach at any fee',
+          f'${PROGRAM_TOTAL_LEVEL_SERVICE:,} program is out of reach at any fee',
       anchor='fees', tone='critical'),
 
  dict(id='band_fee', label='Activity fee to make band, music and clubs self-funding',
       value=f'${_act_fee}',
-      sub=f'per student per activity, covering the ${_ACT_CAP:,} those programmes cost. '
+      sub=f'per student per activity, covering the ${_ACT_CAP:,} those programs cost. '
           f'Reachable — but a steep charge for a school club',
       anchor='fees', tone='neutral'),
 ]

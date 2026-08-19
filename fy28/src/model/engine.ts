@@ -6,6 +6,10 @@ export type Status = 'cut' | 'restoring' | 'unfunded' | 'funded'
 export interface Sport {
   name: string; level: string; students: number; cost: number; deckCost: number
 }
+/** One nameable thing a ladder lever gives up, in the order it would be given up. */
+export interface LeverRung {
+  id: string; label: string; amount: number; fte: number; note: string; blocked: boolean
+}
 export interface Lever {
   id: string; name: string; kind: 'revenue' | 'saving'; unit: string
   max: number; step: number; default: number; basis: number; basisKnown?: boolean
@@ -14,6 +18,9 @@ export interface Lever {
   peakFee?: number; peakYield?: number; currentYield?: number
   /** Share of the gross saving the district actually keeps (statutory giveback). */
   mitigation?: number
+  /** Cut a named line at a time rather than a percentage of an aggregate. */
+  isLadder?: boolean
+  rungs?: LeverRung[]
 }
 
 /** One rolled-up figure, rebuilt from the lines that make it up. */
@@ -37,7 +44,7 @@ export interface ScenarioTotal {
   salaryReserve: number; rebuilt: number; delta: number; reconciled: boolean
 }
 
-/** One rung on the ladder from "what was funded" to "what the whole programme costs". */
+/** One rung on the ladder from "what was funded" to "what the whole program costs". */
 export interface LadderRung {
   id: string; label: string; sub: string; scenario: string
   add: number | null; addLabel?: string; total: number
@@ -173,6 +180,7 @@ export const LEVER_DROPOFF: Record<string, number> = {
  *  The app opens here so that "found so far" starts at $0 and every dollar on the panel is
  *  a dollar the user chose. */
 export function leverStart(l: Lever): number {
+  if (l.isLadder) return 0
   if (l.isPercentPoint) return l.current ?? 0
   if (l.isPercent) return 0
   return l.current ?? 0
@@ -181,6 +189,9 @@ export function leverStart(l: Lever): number {
 /** What one lever is worth at value `v`. Shared by the workbench, the running total and
  *  the floating panel so the three cannot disagree. */
 export function leverYield(l: Lever, v: number, payers?: number): number {
+  // A ladder is worth the sum of the rungs actually taken. Blocked rungs are displayed
+  // so the wall is visible, but they are never reachable and never counted.
+  if (l.isLadder) return ladderTaken(l, v).reduce((s, r) => s + r.amount, 0)
   if (l.isPercentPoint) {
     const gross = l.basis * ((v - (l.current ?? 0)) / 100)
     return Math.min(gross * (l.mitigation ?? 1), l.cap)
@@ -195,6 +206,51 @@ export function leverYield(l: Lever, v: number, payers?: number): number {
   }
   return Math.min(Math.max(0, rev(v) - rev(cur)), l.cap)
 }
+
+/** Every rung, in order — including the ones it is not lawful to take.
+ *
+ *  Blocking those in the interface was the wrong call: "what would cutting the
+ *  superintendent even save?" is a question a resident is entitled to a number for, and
+ *  refusing to compute it reads as evasion rather than as rigour. So they are selectable,
+ *  they are counted, and they are flagged everywhere they appear. */
+export const ladderRungs = (l: Lever): LeverRung[] => l.rungs ?? []
+
+/** The rungs a budget the district could actually adopt can reach. */
+export const ladderLawful = (l: Lever): LeverRung[] =>
+  (l.rungs ?? []).filter(r => !r.blocked)
+
+/** Selected rungs that a lawful budget could not include. */
+export const ladderUnlawful = (l: Lever, mask: number): LeverRung[] =>
+  ladderTaken(l, mask).filter(r => r.blocked)
+
+/* A ladder lever's value is a bit set over its cuttable rungs, not a depth.
+ *
+ * Two things have to be true at once: the slider has to keep working as a slider —
+ * drag it and you walk down the list in order — and each position has to be
+ * independently cuttable, because "cut the HR specialist but keep the middle school
+ * clerk" is a real position somebody holds. Storing the selection as a bit set gives
+ * both, at the cost of the slider being lossy: drag it after hand-picking and it
+ * overwrites your picks with the first N in order. That trade is deliberate. */
+export const ladderTaken = (l: Lever, mask: number): LeverRung[] =>
+  ladderRungs(l).filter((_, i) => (mask >> i) & 1)
+
+/** The mask the slider produces at depth `n` — the first n rungs, in order. */
+export const ladderMask = (n: number) => n <= 0 ? 0 : (1 << Math.round(n)) - 1
+
+/** Flip one rung on or off without disturbing the others. */
+export const ladderToggle = (mask: number, i: number) => mask ^ (1 << i)
+
+/** How many rungs are taken — what the slider shows. */
+export const ladderCount = (mask: number) => {
+  let n = 0
+  for (let m = mask; m; m >>= 1) n += m & 1
+  return n
+}
+
+/** True when the taken rungs are exactly the first N, i.e. the slider still describes
+ *  the selection. Once it is false the UI has to say so. */
+export const ladderContiguous = (mask: number) =>
+  mask === ladderMask(ladderCount(mask))
 
 /** One line on the floating panel: something the reader has actually changed. */
 export interface AppliedItem {

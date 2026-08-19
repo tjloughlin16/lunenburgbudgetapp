@@ -4,34 +4,59 @@ import { FeeCurve, feeRevenue, type CurveArgs } from './FeeCurve'
 
 const A = MODEL.athletics
 
+/** The rung on which every team exists — high school and middle school alike. Middle
+ *  school sports were cut in the FY27 balanced budget, so this is the only version of
+ *  athletics that is a whole program rather than the part of one that survived. */
+const WHOLE = 'restoration'
+const WHOLE_TOTAL = A.ladder.find(r => r.id === WHOLE)?.total ?? A.levelService
+
 /** Fee scenarios against the whole athletics program. */
-export function AthleticsFees({ fee, setFee }: {
+export function AthleticsFees({ fee, setFee, payers, teamsCut = 0, costOf }: {
   fee: number; setFee: (n: number) => void
+  /** Chargeable participations left after any teams the reader has cut. */
+  payers?: number
+  teamsCut?: number
+  /** What each version of the program costs given the teams that survive. Cutting teams
+   *  has to shrink the target as well as the pool — otherwise the fee is asked to fund
+   *  teams that no longer exist, and cost per athlete climbs as you cut. */
+  costOf?: (rungId: string) => number
 }) {
   const CURRENT = MODEL.currentFees.effectiveAthletic
+  const POOL = Math.max(0, payers ?? A.chargeableParticipations)
   const [dropoff, setDropoff] = useState(5)   // % participation lost per $100 of fee
   const [waiver, setWaiver] = useState(12)    // % of athletes granted a hardship waiver
-  // Which athletics are we asking the fee to pay for? The adopted budget funds no
-  // transportation at all, so "self-funding" against it is a trick question — default to
-  // the rung that puts the buses back.
-  const [basisId, setBasisId] = useState('travel')
+  // Which athletics are we asking the fee to pay for? The rungs are built bottom-up, from
+  // what survived to what a whole program is — but the whole program is the thing the
+  // district is trying to get back to, and it is the only rung on which middle school
+  // teams exist at all. So it leads the list and is where this opens, rather than being
+  // the afterthought at the end of a ladder.
+  const LADDER = [
+    ...A.ladder.filter(r => r.id === WHOLE),
+    ...A.ladder.filter(r => r.id !== WHOLE),
+  ]
+  const [basisId, setBasisId] = useState(WHOLE)
   const basis = A.ladder.find(r => r.id === basisId) ?? A.ladder[0]
+  const costFor = (id: string) => costOf
+    ? costOf(id)
+    : A.ladder.find(r => r.id === id)?.total ?? 0
+  const basisTotal = costFor(basis.id)
 
   // Only high-school participations are chargeable: middle school teams are unfunded in
   // the adopted budget, so there is no team to charge for.
   const args: CurveArgs = {
-    current: CURRENT, payers: A.chargeableParticipations, dropoff, waiver,
-    target: basis.total, max: 1400,
+    current: CURRENT, payers: POOL, dropoff, waiver,
+    target: basisTotal, max: 1400,
   }
   const increase = Math.max(0, fee - CURRENT)
   const retained = Math.max(0, 1 - (increase / 100) * (dropoff / 100))
-  const paying = A.chargeableParticipations * retained * (1 - waiver / 100)
+  const paying = POOL * retained * (1 - waiver / 100)
   const raised = feeRevenue(fee, args)
   const baseline = feeRevenue(CURRENT, args)
   const newMoney = raised - baseline
-  const pctProgram = (raised / basis.total) * 100
+  const pctProgram = basisTotal > 0 ? (raised / basisTotal) * 100 : 0
 
-  const SCENARIOS = A.ladder.map(r => ({ label: r.label, target: r.total, sub: r.scenario }))
+  const SCENARIOS = LADDER.map(r => ({ id: r.id, label: r.label, target: costFor(r.id),
+                                      published: r.total, sub: r.scenario }))
   // Revenue is NOT monotonic in the fee: it rises, peaks, then falls as participation
   // drops away. So scan for the cheapest fee that reaches the target rather than
   // bisecting, and report the peak when no fee reaches it.
@@ -51,25 +76,51 @@ export function AthleticsFees({ fee, setFee }: {
     <div className="grid gap-4 lg:grid-cols-2">
       <div className="card p-5">
         <h3 className="text-sm font-bold mb-1">Set a fee, see what it raises</h3>
+        {teamsCut > 0 && (
+          <p className="text-[12px] leading-relaxed mb-2 pl-2 border-l-2"
+            style={{ color: 'var(--status-serious)', borderColor: 'var(--status-serious)' }}>
+            You have cut {teamsCut} {teamsCut === 1 ? 'team' : 'teams'}, so{' '}
+            {A.chargeableParticipations - POOL} of the{' '}
+            {A.chargeableParticipations} chargeable participations no longer exist.
+            Everything below is charged on the <strong>{POOL}</strong> that remain
+            {POOL === 0 && ' — which is none, so the fee raises nothing'}.
+          </p>
+        )}
 
         <p className="text-[12px] mb-2" style={{ color: 'var(--text-secondary)' }}>
           Pay for itself <em>against what?</em> The adopted budget funds no athletic
           transportation at all, so measuring against it flatters the answer.
         </p>
         <div className="flex flex-wrap gap-1 mb-4">
-          {A.ladder.map(r => (
-            <button key={r.id} onClick={() => setBasisId(r.id)}
-              aria-pressed={basisId === r.id}
-              className="px-2 py-1 rounded-md text-[11px] font-semibold border text-left"
-              style={{
-                borderColor: basisId === r.id ? 'var(--series-cost)' : 'var(--grid)',
-                background: basisId === r.id ? 'var(--series-cost)' : 'var(--surface-1)',
-                color: basisId === r.id ? '#fff' : 'var(--text-secondary)',
-              }}>
-              {r.label}
-              <span className="block font-normal tnum opacity-80">{usd(r.total)}</span>
-            </button>
-          ))}
+          {LADDER.map(r => {
+            const on = basisId === r.id
+            const whole = r.id === WHOLE
+            return (
+              <button key={r.id} onClick={() => setBasisId(r.id)} aria-pressed={on}
+                className="px-2 py-1 rounded-md text-[11px] font-semibold border text-left"
+                style={{
+                  borderColor: on ? 'var(--series-cost)'
+                    : whole ? 'var(--status-good)' : 'var(--grid)',
+                  borderWidth: whole ? 2 : 1,
+                  background: on ? 'var(--series-cost)' : 'var(--surface-1)',
+                  color: on ? '#fff' : 'var(--text-secondary)',
+                }}>
+                {whole && (
+                  <span className="block text-[9px] uppercase tracking-widest font-bold"
+                    style={{ color: on ? '#fff' : 'var(--status-good)' }}>
+                    Every team · what we are trying to get back
+                  </span>
+                )}
+                {r.label}
+                <span className="block font-normal tnum opacity-80">
+                  {usd(costFor(r.id))}
+                  {costFor(r.id) < r.total - 1 && (
+                    <span className="line-through ml-1 opacity-60">{usd(r.total)}</span>
+                  )}
+                </span>
+              </button>
+            )
+          })}
         </div>
         <p className="text-[11px] mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
           {basis.sub}{' '}
@@ -137,11 +188,13 @@ export function AthleticsFees({ fee, setFee }: {
           <div className="h-4 rounded-full overflow-hidden flex"
             style={{ background: 'var(--surface-3)' }}>
             <div className="h-full"
-              style={{ width: `${Math.min(100, (baseline / basis.total) * 100)}%`,
+              style={{ width: `${basisTotal > 0
+                                 ? Math.min(100, (baseline / basisTotal) * 100) : 0}%`,
                        background: 'var(--series-cost)' }} />
             <div className="h-full"
-              style={{ width: `${Math.min(100 - (baseline / basis.total) * 100,
-                                 (newMoney / basis.total) * 100)}%`,
+              style={{ width: `${basisTotal > 0
+                                 ? Math.min(100 - (baseline / basisTotal) * 100,
+                                   (newMoney / basisTotal) * 100) : 0}%`,
                        background: 'var(--status-good)' }} />
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-[11px] mt-1.5"
@@ -155,22 +208,24 @@ export function AthleticsFees({ fee, setFee }: {
               added by the increase {usd(newMoney)}
             </span>
             <span>
-              still unfunded {usd(Math.max(0, basis.total - raised))}
+              still unfunded {usd(Math.max(0, basisTotal - raised))}
             </span>
           </div>
           <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            {usd(raised)} of the {usd(basis.total)} that <strong>{basis.label.toLowerCase()}</strong>{' '}
-            costs.{' '}
+            {usd(raised)} of the {usd(basisTotal)} that{' '}
+            <strong>{basis.label.toLowerCase()}</strong> costs{teamsCut > 0
+              ? ` with ${teamsCut} ${teamsCut === 1 ? 'team' : 'teams'} cut`
+              : ''}.{' '}
             {pctProgram >= 100
               ? 'Athletics pays for itself entirely at this fee.'
-              : <>The remaining <strong>{usd(basis.total - raised)}</strong> still comes
+              : <>The remaining <strong>{usd(basisTotal - raised)}</strong> still comes
                 out of the school budget &mdash; competing with classrooms.</>}
           </p>
         </div>
 
         <div className="pt-4 mt-4 border-t space-y-2" style={{ borderColor: 'var(--grid)' }}>
           <Line k="Athletes still playing"
-            v={`${Math.round(A.chargeableParticipations * retained).toLocaleString()} of ${A.chargeableParticipations}`} />
+            v={`${Math.round(POOL * retained).toLocaleString()} of ${POOL}`} />
           <Line k="Paying after waivers" v={Math.round(paying).toLocaleString()} />
           <Line k="Total raised each year" v={usd(raised)} bold />
           <Line k="New money vs today" v={usd(newMoney)} bold />
@@ -188,39 +243,80 @@ export function AthleticsFees({ fee, setFee }: {
 
       <div>
         <div className="card p-5 mb-4">
-          <h3 className="text-sm font-bold mb-3">What each goal costs a family</h3>
-          <ul className="space-y-2.5">
+          <h3 className="text-sm font-bold mb-1">
+            The fee that would fully fund each version
+          </h3>
+          <p className="text-[11px] leading-relaxed mb-3" style={{ color: 'var(--text-muted)' }}>
+            This runs the arithmetic backwards, so the fee slider does not move these
+            figures — they answer &ldquo;what would it take?&rdquo;, not &ldquo;what does my
+            setting raise?&rdquo;. The bars <em>do</em> follow the slider: they show how far
+            {' '}{usd(fee)} a season actually gets. Drop-off and waivers move both.
+          </p>
+          <ul className="space-y-3">
             {SCENARIOS.map(s => {
               const f = feeFor(s.target)
+              const covered = Math.min(100, (yieldAt(fee) / s.target) * 100)
               return (
-                <li key={s.label} className="flex items-baseline justify-between gap-3">
-                  <span className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-                    {s.label}
-                    <span className="block text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
-                      costs {usd(s.target)} · {s.sub}
+                <li key={s.label} className={s.id === WHOLE ? 'rounded-lg p-2 -m-2' : ''}
+                  style={s.id === WHOLE
+                    ? { background: 'color-mix(in srgb, var(--status-good) 8%, transparent)' }
+                    : undefined}>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>
+                      {s.id === WHOLE && (
+                        <span className="block text-[9px] uppercase tracking-widest font-bold"
+                          style={{ color: 'var(--status-good)' }}>
+                          Every team, high school and middle school
+                        </span>
+                      )}
+                      {s.label}
+                      <span className="block text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
+                        costs {usd(s.target)} · {s.sub}
+                        {s.target < s.published - 1 && (
+                          <span className="block" style={{ color: 'var(--status-serious)' }}>
+                            was {usd(s.published)} before the teams you cut
+                          </span>
+                        )}
+                      </span>
                     </span>
-                  </span>
-                  <span className="text-lg font-bold tnum shrink-0 text-right">
-                    {f === null
-                      ? <span style={{ color: 'var(--status-critical)' }}>out of reach</span>
-                      : usd(f)}
-                    <span className="text-[11px] font-normal block"
-                      style={{ color: 'var(--text-muted)' }}>
-                      {f === null ? 'no fee raises this much' : 'per season'}
+                    <span className="text-lg font-bold tnum shrink-0 text-right">
+                      {f === null
+                        ? <span style={{ color: 'var(--status-critical)' }}>No fee reaches it</span>
+                        : usd(f)}
+                      <span className="text-[11px] font-normal block"
+                        style={{ color: 'var(--text-muted)' }}>
+                        {f === null
+                          ? `revenue peaks at ${usd(peakFee)}, raising ${usd(peakYield)}`
+                          : 'per season, per athlete'}
+                      </span>
                     </span>
-                  </span>
+                  </div>
+                  <div className="h-1.5 rounded-full overflow-hidden mt-1.5"
+                    style={{ background: 'var(--surface-3)' }}>
+                    <div className="h-full rounded-full"
+                      style={{ width: `${covered}%`,
+                               background: covered >= 100 ? 'var(--status-good)'
+                                 : 'var(--series-cost)' }} />
+                  </div>
+                  <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                    your {usd(fee)} fee covers {covered.toFixed(0)}%
+                    {f !== null && fee < f && <> — {usd(f - fee)} a season short</>}
+                  </p>
                 </li>
               )
             })}
           </ul>
           <p className="text-[11px] mt-3 pt-3 border-t" style={{ color: 'var(--text-muted)', borderColor: 'var(--grid)' }}>
-            At your current drop-off and waiver settings. Revenue peaks at{' '}
-            <strong>{usd(peakFee)} per season</strong>, raising <strong>{usd(peakYield)}</strong>{' '}
-            — charge more than that and so many families drop out that the district
-            collects <em>less</em>, not more. That ceiling is why full self-funding can be
-            out of reach for anything above {usd(A.travel)} — including the full{' '}
-            {usd(A.levelService)} programme, even though the flat arithmetic says{' '}
-            {usd(A.levelService / A.participations)} would cover it.
+            <strong>Why some of these cannot be reached at any price.</strong> A fee is
+            not free money. On the settings above, every extra $100 drives {dropoff}% of
+            families out of the program — so revenue climbs, peaks at{' '}
+            <strong>{usd(peakFee)} a season</strong> raising <strong>{usd(peakYield)}</strong>,
+            and then <em>falls</em>. Charge past the peak and the district collects less,
+            not more. That ceiling is why anything above {usd(costFor('travel'))} is
+            unreachable, including the {usd(costFor('restoration'))} whole program, even
+            though the flat arithmetic says{' '}
+            {usd(POOL > 0 ? costFor('restoration') / POOL : 0)} a head would cover it.
+            Lower the drop-off or the waiver rate and the ceiling rises.
           </p>
         </div>
 
@@ -259,7 +355,7 @@ export function SportTable({ fee }: { fee: number }) {
   const [sort, setSort] = useState<'perAthlete' | 'cost' | 'students' | 'coverage'>('perAthlete')
   const [loaded, setLoaded] = useState(false)
 
-  // Per-sport figures are direct programme costs only. Loading them up spreads the
+  // Per-sport figures are direct program costs only. Loading them up spreads the
   // athletic director, trainer, secretary, insurance, dues and transport across sports
   // in proportion to their direct cost.
   const OVERHEAD = A.levelService / A.perSportTotal
@@ -359,9 +455,11 @@ export function SportTable({ fee }: { fee: number }) {
         &ldquo;Athletic Program Costs by Sport.&rdquo; Athletes are participations, not
         unique students &mdash; a three-sport athlete counts three times, which is also how
         a per-season fee would be charged. These per-sport costs total{' '}
-        {usd(MODEL.athletics.perSportTotal)}; the full budgeted program is{' '}
+        {usd(MODEL.athletics.perSportTotal)}; the full high school program is{' '}
         {usd(MODEL.athletics.levelService)}, the difference being the athletic director,
-        trainer, secretary, insurance, dues and district-wide transportation.
+        trainer, secretary, insurance, dues and district-wide transportation. Add the
+        middle school and freshman teams back and a whole athletics program is{' '}
+        {usd(WHOLE_TOTAL)}.
       </p>
     </div>
   )
@@ -526,7 +624,7 @@ export function CurrentFees() {
 }
 
 
-/** Fee-to-cost coverage for one sport. Never colour alone — always a figure and a word. */
+/** Fee-to-cost coverage for one sport. Never color alone — always a figure and a word. */
 function Coverage({ pct }: { pct: number }) {
   const p = Math.max(0, pct)
   // Classify on the figure actually shown, so a rounded 100% never reads "Part-funded".

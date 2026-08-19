@@ -22,7 +22,7 @@ CONCLUSIONS = [
            'cuts had to come from personnel. There is no other place large enough.'),
 
  dict(n=3, anchor='neighbors',
-      headline='Lunenburg\'s schools grew 1.08% while every neighbour grew 2.9-6.5%.',
+      headline='Lunenburg\'s schools grew 1.08% while every neighbor grew 2.9-6.5%.',
       figure='1.08%',
       body='In a year when health insurance rose 8-14% and Chapter 70 aid rose 1.5-2% for '
            'everyone. Groton-Dunstable, Ayer-Shirley, North Middlesex, Wachusett and '
@@ -30,7 +30,7 @@ CONCLUSIONS = [
            'and theirs is the cut list.'),
 
  dict(n=4, anchor='priorities',
-      headline='Priorities are a genuine choice — a neighbour made the opposite one.',
+      headline='Priorities are a genuine choice — a neighbor made the opposite one.',
       figure='2.0 FTE',
       body='Ashburnham-Westminster wrote "preserve athletics, arts and music" into its '
            'district goals, raised athletics 2.7% and marching band 4.8%, reinstated girls '
@@ -133,7 +133,7 @@ CONCLUSIONS = [
       headline='Nothing closes the gap without either an override or teachers.',
       figure='68%',
       body='Our own package — higher fees, a technology audit, an administration trim — '
-           'finds about two thirds of FY28 without cutting a programme. The remaining third '
+           'finds about two thirds of FY28 without cutting a program. The remaining third '
            'is roughly two teaching positions. Anyone claiming a painless third option has '
            'not added up the line items.'),
 ]
@@ -141,5 +141,5 @@ CONCLUSIONS = [
 HEADLINE = (
     'Lunenburg is not facing a one-year problem that can be solved by cutting sports. '
     'It is facing a structural gap of roughly $580,000 a year, every year, in a town whose '
-    'school budget grew 1.08% while its neighbours grew three to six times faster.'
+    'school budget grew 1.08% while its neighbors grew three to six times faster.'
 )

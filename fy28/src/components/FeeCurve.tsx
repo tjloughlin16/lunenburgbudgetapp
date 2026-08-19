@@ -9,7 +9,7 @@ export interface CurveArgs {
   payers: number         // participants before waivers
   dropoff: number        // % of participation lost per $100 of INCREASE
   waiver: number         // % granted a hardship waiver
-  target?: number        // programme cost to self-fund
+  target?: number        // program cost to self-fund
   max: number
 }
 
@@ -32,7 +32,7 @@ export function FeeCurve({ args, fee, label }: {
   }
   let peak = data[0]
   for (const d of data) if (d.revenue > peak.revenue) peak = d
-  // Keep the programme-cost line on screen: the visible gap between the curve's peak
+  // Keep the program-cost line on screen: the visible gap between the curve's peak
   // and that line IS the finding when self-funding is unreachable.
   const yMax = Math.max(peak.revenue, args.target ?? 0) * 1.12
 
@@ -70,7 +70,7 @@ export function FeeCurve({ args, fee, label }: {
             {args.target !== undefined && (
               <ReferenceLine y={args.target} stroke="var(--status-critical)"
                 strokeDasharray="4 4"
-                label={{ value: `Cost of the programme — ${usdShort(args.target)}`,
+                label={{ value: `Cost of the program — ${usdShort(args.target)}`,
                          position: 'insideTopRight',
                          fill: 'var(--status-critical)', fontSize: 10 }} />
             )}
@@ -98,9 +98,9 @@ export function FeeCurve({ args, fee, label }: {
         <p className="text-[12px] leading-relaxed mt-3"
           style={{ color: reachable ? 'var(--text-secondary)' : 'var(--status-critical)' }}>
           {reachable
-            ? <>The programme costs {usd(args.target)}, which the curve does clear — full
+            ? <>The program costs {usd(args.target)}, which the curve does clear — full
               self-funding is achievable, though not cheaply.</>
-            : <><strong>Self-funding is not reachable.</strong> The programme costs{' '}
+            : <><strong>Self-funding is not reachable.</strong> The program costs{' '}
               {usd(args.target)}, but no fee raises more than {usd(peak.revenue)} because
               participation collapses faster than the fee climbs. The gap of{' '}
               {usd(args.target - peak.revenue)} has to come from somewhere else no matter

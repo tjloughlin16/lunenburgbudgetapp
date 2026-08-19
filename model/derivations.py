@@ -193,7 +193,7 @@ TRANSPORT_NOTE = 'Budgeted well above what athletics has ever actually spent. Ac
 LINE_RULES = [
  dict(id='athletics_total',
       question='How did you calculate total athletics cost?',
-      label='Athletics — the full program',
+      label='Athletics — the full high school program',
       column='fy27_level_service', expected=451_830,
       selector=by_groups(*_ATHLETICS_GROUPS),
       lineNotes={'Athletic Transportation': TRANSPORT_NOTE,
@@ -203,8 +203,12 @@ LINE_RULES = [
              'secretary, all coaching stipends). Nothing else is counted.',
       notes=['We use the Level Service column — what it costs to run athletics as it '
              'was, before the FY27 cuts. That is the honest denominator for "can fees '
-             'pay for athletics", because a fee has to fund the programme you want, not '
+             'pay for athletics", because a fee has to fund the program you want, not '
              'the one that survived.',
+             'Level Service is high school only. It cut middle school and freshman '
+             'teams too, so $451,830 is not a whole athletics program — adding the '
+             '$14,415 of freshman and middle school coaching stipends in the '
+             'Restoration and Core columns gives $466,245, which is.',
              'Club and after-school advisor stipends (3520, $11,731) are NOT in this '
              'figure. They are activities, not athletics, and are counted separately.',
              'This is gross cost. Fee income is invisible in the budget document, which '
@@ -359,7 +363,7 @@ ARITHMETIC_RULES = [
       terms=[('athletics_total', 1, 'Athletics at level service'),
              ('athletics_remaining', -1, 'Athletics in the adopted budget')],
       answer='The difference between the two athletics figures above.',
-      notes=['More than half the athletics programme, by dollars, is already gone.']),
+      notes=['More than half the athletics program, by dollars, is already gone.']),
 
  dict(id='admin_total',
       question='How did you calculate total administration?',
@@ -391,7 +395,7 @@ CATALOG_RULES = [
       question='How did you calculate the cost of all arts and music?',
       label='Every band, chorus, art supply and music program',
       answer='The arts entries in the program catalog. Unlike athletics, this one is '
-             'NOT purely published: teaching positions are not itemised by subject in '
+             'NOT purely published: teaching positions are not itemized by subject in '
              'the budget, so the high school music position is our estimate.',
       notes=['The $72,440 high school band and chorus position is our estimate of a 1.0 '
              'FTE music salary. The district has never published a price for cutting it. '
@@ -473,7 +477,7 @@ def build(catalog_programs=None, ladder=None):
             id='athletics_ladder', kind='ladder',
             question='What does athletics actually cost — and which number should a fee '
                      'be measured against?',
-            label='Athletics, from what was funded to the whole programme',
+            label='Athletics, from what was funded to the whole program',
             answer='Town Meeting passed only the Balanced budget, which funds $217,908 of '
                    'athletics — and zero athletic transportation. A team that cannot get '
                    'to an away game is not a team, so that figure cannot be the test of '

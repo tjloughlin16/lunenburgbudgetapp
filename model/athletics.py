@@ -41,7 +41,7 @@ SPORTS = [
 
 # Programs beyond athletics that a fee could in principle support. Participation for
 # these is NOT published by the district -- the figures below are placeholders the user
-# adjusts in the app, and are labelled as such.
+# adjusts in the app, and are labeled as such.
 OTHER_PROGRAMS = [
  dict(id='hs_music', name='High School Band & Chorus', cost=72440,
       participants=95, participantsKnown=False,
@@ -58,7 +58,7 @@ OTHER_PROGRAMS = [
       note='Published line-item cost, cut in the FY27 balanced budget.'),
 ]
 
-# What neighbouring and comparable districts charge, for calibration.
+# What neighboring and comparable districts charge, for calibration.
 FEE_BENCHMARKS = [
  dict(district='Lunenburg', fee=400, note='Raised for 2026-27: $400 first child, $300 second, $225 third, $1,500 family cap. Was $250/$140/$85 with a $475 cap.', local=True),
  dict(district='Duxbury', fee=300, note='Per season; hockey $500. Rising from $250.', local=False),
@@ -75,7 +75,7 @@ FEE_BENCHMARKS = [
 # transportation, and a team that cannot reach an away game is not a team -- so the
 # adopted figure is not an honest answer to "can athletics pay for itself". Hence the
 # ladder below: each rung is a real budget line or scenario delta, and the reader can
-# climb from what was funded to what the whole programme costs, one step at a time.
+# climb from what was funded to what the whole program costs, one step at a time.
 PROGRAM_TOTAL_LEVEL_SERVICE = 451830
 PROGRAM_TOTAL_ADOPTED = 217908     # FY27 Balanced, as adopted 2 May 2026
 PROGRAM_TOTAL_REMAINING = PROGRAM_TOTAL_ADOPTED   # older name, kept for callers
@@ -87,7 +87,7 @@ COACHING_RESTORE = 72113                # coaching cut from $159,444 to $87,331
 FRESHMAN_MS_COACHES = 14415             # the middle school and freshman teams themselves
 
 # The rung that matters for the self-funding question: the teams that survived, able to
-# travel. Not a scenario the district published -- our construction, and labelled as such.
+# travel. Not a scenario the district published -- our construction, and labeled as such.
 PROGRAM_TOTAL_TRAVEL = PROGRAM_TOTAL_ADOPTED + ATHLETIC_TRANSPORTATION   # 345,458
 
 # Each step's `add` is what that rung puts back on top of the one before it.
@@ -109,18 +109,21 @@ PROGRAM_LADDER = [
       addLabel='The other half of the athletic trainer',
       sub='The adopted budget halves the athletic trainer. Restoring the other half is '
           'the next rung, and arguably a safety floor rather than an enhancement.'),
- dict(id='level_service', label='Full programme', add=COACHING_RESTORE, total=451830.00,
+ dict(id='level_service', label='Full high school program', add=COACHING_RESTORE,
+      total=451830.00,
       scenario='FY27 Level Service', published=True,
       addLabel='Full coaching stipends',
       sub='The district\'s own Level Service column: athletics run as it was, with full '
           'coaching stipends restored. Still no middle school or freshman teams — Level '
           'Service cut those too.'),
- dict(id='restoration', label='Full programme, middle school back',
+ dict(id='restoration', label='The full program',
       add=FRESHMAN_MS_COACHES, total=466245.00,
       scenario='FY27 Restoration / Core', published=True,
       addLabel='Freshman & middle school coaches',
-      sub='The district\'s Restoration and Core columns. The only scenarios in which '
-          'middle school and freshman teams exist at all.'),
+      sub='The district\'s Restoration and Core columns — every team the schools used to '
+          'field, high school and middle school alike. This is the only rung on which '
+          'middle school and freshman sports exist at all, so it is the only one that is '
+          'honestly a whole athletics program rather than a surviving piece of one.'),
 ]
 
 if __name__ == '__main__':
@@ -281,7 +284,7 @@ ESTIMATED_FY26_ATHLETIC_REVENUE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICI
 
 # Fee revenue does not appear in the FY27 budget document at all -- that document is
 # expenditures only. Athletic and bus fees flow through revolving accounts, so the
-# programme costs shown elsewhere in this app are GROSS, before fee offset.
+# program costs shown elsewhere in this app are GROSS, before fee offset.
 FEE_REVENUE_IN_BUDGET = False
 
 
@@ -304,7 +307,7 @@ FEE_ACCOUNTING = dict(
     established=[
         'The LPS FY27 budget document is expenditures only — 351 line items, no revenue '
         'side at all. Fee income is invisible in it either way, so nothing in that '
-        'document tells you whether programme costs are shown gross or net of fees.',
+        'document tells you whether program costs are shown gross or net of fees.',
         'The Town\'s revolving funds are authorised annually at Town Meeting under '
         'M.G.L. c.44 §53E½. The May 2026 warrant (Article 6) lists twelve of them — '
         'ambulance billing, library, parks, technology, and so on. Neither athletics nor '

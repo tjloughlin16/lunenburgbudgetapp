@@ -3,16 +3,16 @@
 Reasoning, in order:
 
 1. The gap compounds. Groton-Dunstable cut in FY24, FY25 and FY26 and still starts FY27
-   below level service. Cutting programmes to close a structural gap buys one year and
+   below level service. Cutting programs to close a structural gap buys one year and
    makes the next year's arithmetic worse.
 
-2. Personnel is ~90% of the budget, so any large programme cut is a teacher cut whatever
-   it is labelled. Easthampton: 93% of its cuts were personnel.
+2. Personnel is ~90% of the budget, so any large program cut is a teacher cut whatever
+   it is labeled. Easthampton: 93% of its cuts were personnel.
 
 3. Athletics has already moved. The district raised the fee to $400/$300/$225 for
    2026-27, worth about $78,000 a year across the 582 high-school participations that
    remain chargeable. That covers 54% of what it costs to field the surviving teams AND
-   bus them to away games -- not the whole programme, and nothing like the full $451,830
+   bus them to away games -- not the whole program, and nothing like the full $451,830
    one. The remaining fee headroom is small and the returns fall away fast.
 
 4. Fees must come with real waivers, or they become a tax on the families least able to
@@ -73,7 +73,7 @@ PACKAGE = [
           'coverage from about 32% to 54% of what it costs to field the surviving teams '
           'with transport. Going further is possible but the returns fall away fast: '
           'self-funding that basis needs $960 a season and revenue peaks near $1,185, so '
-          'the full programme cannot be bought back at any price. The open task is not a '
+          'the full program cannot be bought back at any price. The open task is not a '
           'bigger fee — it is publishing the schedule, the waiver policy and the '
           'collections, none of which is posted today.',
       difficulty='Already in force. What is missing is publication: the athletics FAQ '
@@ -109,7 +109,7 @@ PACKAGE = [
       value=round(ADMIN_TOTAL * 0.03),
       why='Enough to answer voters who ask for it, small enough not to trigger reporting '
           'failures. Deeper cuts here cost more than they save.',
-      difficulty='Attrition and reorganisation, not layoffs.'),
+      difficulty='Attrition and reorganization, not layoffs.'),
  dict(id='health_design', name='Health insurance redesign — start now, bank it for FY30',
       value=0,
       why=f'${HEALTH_TOTAL:,}, 15% of the budget, growing 8–9% a year. The only lever big '
@@ -137,7 +137,7 @@ PRIORITY_WHY = (
 # here would contradict the panel the moment anyone touched a slider.
 CLOSING = (
     'This package finds roughly half the FY28 gap without cutting a single '
-    'programme — the exact share is above, and it moves as you change assumptions. The '
+    'program — the exact share is above, and it moves as you change assumptions. The '
     'rest is the honest part: it is either an override, or '
     'classroom positions. Anyone who tells you there is a painless third option has not '
     'added up the line items.'

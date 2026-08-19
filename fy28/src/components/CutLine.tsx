@@ -100,7 +100,7 @@ export function CutLine({ order, target, setTarget, ticks, max }: {
       {/* ---- everything at a glance, then the detail on demand ---- */}
       <div className="flex items-center justify-between gap-3 mb-3">
         <h3 className="text-sm font-bold">
-          {rows.filter(r => r.state === 'cut').length} of {rows.length} programmes below the line
+          {rows.filter(r => r.state === 'cut').length} of {rows.length} programs below the line
         </h3>
         <div className="flex gap-1">
           {(['chips', 'list'] as const).map(v => (

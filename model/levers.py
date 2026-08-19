@@ -20,6 +20,103 @@ from athletics import (EFFECTIVE_ATHLETIC_FEE as ATHLETIC_FEE_NOW,
                        CHARGEABLE_PARTICIPATIONS, PROGRAM_TOTAL_ADOPTED,
                        PROGRAM_TOTAL_TRAVEL)
 
+# ---------------------------------------------------------------------------
+# The administration ladder.
+#
+# Every amount is the FY27 balanced column of the district's line-item budget
+# (sources/data/lps-budget-lines.csv). The ORDER is our judgement about what a district
+# can absorb before it stops being able to do the job, and nothing else. Rungs marked
+# blocked are shown so the wall is visible: they are the roles a Massachusetts district
+# must actually have.
+# ---------------------------------------------------------------------------
+
+def _rung(id, label, amount, fte, note, blocked=False):
+    return dict(id=id, label=label, amount=amount, fte=fte, note=note, blocked=blocked)
+
+ADMIN_RUNGS = [
+ _rung('office', 'Dues, meetings, postage, ads and office supplies', 53_110, 0,
+       'School Committee, superintendent and business office discretionary lines plus '
+       'the four schools\' office supplies. The first thing every budget review takes, '
+       'and 2% of administration.'),
+ _rung('stipends', 'Stipends and secretarial overtime', 14_919, 0,
+       'The Remote Coordinator ($5,000), curriculum leadership stipends ($6,719) and '
+       '$800 of overtime in each of the four principals\' offices.'),
+ _rung('legal', 'Half the legal budget', 25_000, 0,
+       'Legal spending is mostly special education disputes and personnel matters — '
+       'neither of which the district controls the timing of. Halving it is a bet; '
+       'zeroing it is not available.'),
+ _rung('transition', 'Transition / Leadership Team', 32_001, 0,
+       'District-wide administration line 1230. Not a person — a budgeted allowance for '
+       'leadership transition work.'),
+ _rung('clerk_ms', 'Middle School clerk typist', 19_275, 1.0,
+       'Attendance, scheduling and records for the middle school.'),
+ _rung('clerk_hs', 'High School clerk typist', 19_275, 1.0,
+       'Attendance, scheduling, transcripts and records for the high school.'),
+ _rung('hr', 'Human Resource Specialist', 73_485, 1.0,
+       'One person does hiring, contracts, benefits, licensure and evaluation tracking '
+       'for the whole district. There is no second one.'),
+ _rung('sped_clerical', 'Special Education clerical', 69_382, 1.0,
+       'IEP scheduling, notices and compliance paperwork run to statutory deadlines. '
+       'The work does not disappear with the post — it lands on the teachers and the '
+       'special education administrator instead.'),
+ _rung('curriculum', 'Instructional Services Director (Curriculum)', 132_480, 1.0,
+       'Curriculum adoption, professional development and state assessment coordination '
+       'for four schools.'),
+ _rung('business_clerical', 'Business office clerical', 110_270, 1.0,
+       'Payroll, accounts payable and purchasing for roughly 250 employees.'),
+ _rung('sec_ms', 'Middle School administrative secretary', 31_764, 1.0,
+       'With the clerk typist gone too, this is the entire middle school front office.'),
+ _rung('sec_hs', 'High School administrative secretary', 31_764, 1.0,
+       'With the clerk typist gone too, this is the entire high school front office.'),
+ _rung('sec_ps', 'Primary School administrative secretary', 62_066, 1.0,
+       'The Primary School has one office person. This is her.'),
+ _rung('sec_es', 'Turkey Hill administrative secretary', 61_677, 1.0,
+       'Turkey Hill has one office person. This is her.'),
+
+ # --- the wall: roles a Massachusetts district is required to have. Cutting these is
+ # --- not lawful, and the app lets you do it anyway, flagged, because "what would it
+ # --- even save?" is a question people are entitled to an answer to.
+ _rung('sped_admin', 'Student Services Coordinator (Special Education)', 155_418, 1.0,
+       'Massachusetts requires a district special education administrator. This post '
+       'cannot simply not exist.', blocked=True),
+ _rung('business_mgr', 'Business Manager', 124_200, 1.0,
+       'The district must keep books, file with DESE and run a payroll. There is one.',
+       blocked=True),
+ _rung('superintendent', 'Superintendent', 178_350, 1.0,
+       'Statutorily required. A district without one is not a district.', blocked=True),
+ # The four school leadership lines. Each is ONE budget line covering the principal and
+ # the assistant principal together — the district does not publish the split, and the
+ # figure is identical in all four FY27 scenarios, so there is no delta to infer it from.
+ # Assistant principals are cut and rehired often enough in Lunenburg that they deserve
+ # their own switch, and they have one: the district prices them in its cut and
+ # restoration lists rather than in the salary lines, and both of those are separate
+ # controls elsewhere on this page. Inventing a per-school split here would be a number
+ # we made up sitting next to numbers we did not.
+ _rung('principal_ps', 'Primary School principal and assistant principal', 218_279, 0,
+       'One budget line covering both posts; the district does not publish the split. '
+       'Every school must have a principal. The FY27 budget cut one assistant principal '
+       'by attrition, so the Primary School and Turkey Hill now share the one that is '
+       'left — priced at $152,829 in the district\'s own cut list, and available to put '
+       'back on the board below.', blocked=True),
+ _rung('principal_es', 'Turkey Hill principal and assistant principal', 224_500, 0,
+       'One budget line covering both posts; the district does not publish the split. '
+       'Turkey Hill shares its assistant principal with the Primary School after the '
+       'FY27 cut.', blocked=True),
+ _rung('principal_ms', 'Middle School principal and assistant principal', 195_929, 0,
+       'One budget line covering both posts. The district has never published a separate '
+       'price for the middle school assistant principal, so this tool does not offer one.',
+       blocked=True),
+ _rung('principal_hs', 'High School principal and assistant principal', 283_766, 0,
+       'One budget line covering both posts. The high school assistant principal was cut '
+       'to half time and is being restored to full time with one-time state money — the '
+       'district prices that half at $90,450, and it is its own switch in the September '
+       'restorations below.', blocked=True),
+]
+
+ADMIN_RUNGS_CUTTABLE = [r for r in ADMIN_RUNGS if not r['blocked']]
+ADMIN_LADDER_CAP = sum(r['amount'] for r in ADMIN_RUNGS_CUTTABLE)
+ADMIN_LADDER_POOL = sum(r['amount'] for r in ADMIN_RUNGS)
+
 LEVERS = [
  dict(id='athletic_fees', name='Athletics user fees', kind='revenue',
       unit='new fee per season, per athlete', max=1400, step=25,
@@ -53,7 +150,7 @@ LEVERS = [
            'and club advisors — $106,244 in total. We could not confirm whether the '
            'district charges an activity fee today; the default here assumes none.',
       caveat='Participation is a placeholder: the district does not publish it. At $465 '
-             'these programmes self-fund on paper, but that is a steep charge for a club, '
+             'these programs self-fund on paper, but that is a steep charge for a club, '
              'and the students who quit first are the ones for whom the club is the reason '
              'they come to school.',
       benchmark='Ashburnham-Westminster collects $215,000/yr in student fees overall'),
@@ -90,21 +187,41 @@ LEVERS = [
              'Public Employee Committee under M.G.L. c.32B §§21-23 and 25% of first-year '
              'savings must go back to employees as mitigation. The Town, not the district, '
              'controls the insurance group. Multi-year, and bargained.',
-      benchmark='Health insurance rose 8–14% across every neighbouring district in FY27; '
+      benchmark='Health insurance rose 8–14% across every neighboring district in FY27; '
                 'Lunenburg premiums rose 5.38% for FY27'),
 
- dict(id='admin_cut', name='Administration reduction', kind='saving',
-      unit='% of all administration', max=25, step=1, default=0, isPercent=True,
-      basis=ADMIN_TOTAL,
-      cap=ADMIN_TOTAL * 0.25,
-      what=f'All administration totals ${ADMIN_TOTAL:,} — 9.9% of the budget. That splits '
-           f'into ${ADMIN_CENTRAL:,} central office and ${ADMIN_BUILDING:,} for the four '
-           'principals\' offices and their secretaries.',
-      caveat='The most commonly suggested cut, and smaller than people expect. Lunenburg '
-             'already runs one superintendent, one business manager and one HR specialist '
-             'for four schools, and the FY27 budget cut an Assistant Principal so the '
-             'Primary School and Turkey Hill now share one. State reporting is a legal '
-             'obligation with financial penalties attached.',
+ # Administration, cut one nameable thing at a time.
+ #
+ # A percentage of administration is not a decision anybody can take. Nobody votes to
+ # reduce administration 14%; they vote to stop funding a Human Resource Specialist, or
+ # they don't. So this lever is a ladder of real budget lines from the FY27 balanced
+ # column, ordered from what a district can genuinely absorb to what it legally cannot
+ # give up. The ordering is OUR judgement and is stated as such; the amounts are not.
+ #
+ # The two 1450 technology lines ($154,981 contracted services, $145,884 technology
+ # personnel) are deliberately absent — they belong to the technology lever, and counting
+ # them in both is how a model quietly closes a gap twice.
+ dict(id='admin_cut', name='Administration', kind='saving',
+      unit='cut one position or line at a time', max=len(ADMIN_RUNGS), step=1,
+      default=0, isLadder=True, rungs=ADMIN_RUNGS,
+      basis=ADMIN_LADDER_POOL,
+      cap=ADMIN_LADDER_CAP,
+      what=f'Administration totals ${ADMIN_TOTAL:,} — 9.9% of the budget — split into '
+           f'${ADMIN_CENTRAL:,} of central office and ${ADMIN_BUILDING:,} for the four '
+           f'principals\' offices. Everything in the ladder is a line in the district\'s '
+           f'FY27 balanced budget. Taking every rung a lawful budget can '
+           f'reach saves ${ADMIN_LADDER_CAP:,}, which is '
+           f'{ADMIN_LADDER_CAP / ADMIN_TOTAL:.0%} of administration. Past that point sit a '
+           f'superintendent, a business manager, a special education administrator and '
+           f'four principals — roles the Commonwealth requires. You can cut those here '
+           f'too, flagged, because seeing what it would save is the fastest way to '
+           f'understand why it is not the answer.',
+      caveat='The most commonly suggested cut, and much smaller than people expect. '
+             'Lunenburg already runs one superintendent, one business manager and one HR '
+             'specialist for four schools, and the FY27 budget already cut an Assistant '
+             'Principal so the Primary School and Turkey Hill now share one. Clerical work '
+             'does not vanish when the clerk does — IEP paperwork, payroll and state '
+             'reporting are legal obligations with penalties attached.',
       benchmark='DESE puts Lunenburg administration at $1,158,507 in FY24 — below every '
                 'peer district except Ashburnham-Westminster'),
 
