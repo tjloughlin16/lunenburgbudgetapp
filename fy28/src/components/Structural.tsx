@@ -117,6 +117,13 @@ export function Structural() {
   const contractItems = MODEL.programs
     .filter(p => (p.status === 'funded' || p.status === 'restoring')
       && p.mandate === 'contract')
+  // Staff the FY27 balanced budget already eliminated. Proof that salaries are cuttable,
+  // and the reason "never on the table" was the wrong phrase for the residual.
+  const alreadyCut = MODEL.programs.filter(p => p.status === 'cut' && p.fte > 0)
+  const alreadyCutFte = alreadyCut.reduce((s2, p) => s2 + p.fte, 0)
+  const teacher = MODEL.programs.find(p => p.id === 'core_teachers_more')
+  const teacherCost = teacher?.cost ?? 102_510
+  const teachersInList = teacher?.repeatable ?? 6
   const expenseTotal = Object.values(expense).reduce((a, b) => a + b, 0)
   const mandatedInCatalogue = mandatedItems
     .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
@@ -304,36 +311,41 @@ export function Structural() {
 
       {/* ---- the floor: what can never be cut at all ---- */}
       <h3 className="text-sm font-bold mb-1">
-        What must always be funded, no matter what
+        What is on the list, and what the list leaves out
       </h3>
       <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        The reason the cut list runs out so fast is that it was never very long. Almost all
-        of a school budget is not available to cut in the first place, and what the cutting
-        route really does is spend the small part that is.
+        The reason the cut list runs out so fast is that it was never very long. But be
+        careful with the word &ldquo;untouchable&rdquo;: the FY27 balanced budget cut{' '}
+        {alreadyCutFte.toFixed(1)} staff positions including four classroom teachers, so
+        salaries are demonstrably cuttable. What the {((floor / approp) * 100).toFixed(0)}%
+        below really means is <em>not enumerated in this model</em> &mdash; and that
+        distinction is what makes FY{exhausted?.fy ?? 33} a limit of the list rather than a
+        limit of reality.
       </p>
       <div className="grid gap-3 sm:grid-cols-3 mb-4">
         <div className="card p-4">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>Never on the table</p>
+            style={{ color: 'var(--text-muted)' }}>Not enumerated here</p>
           <p className="text-2xl font-bold tnum leading-none"
             style={{ color: 'var(--status-warning)' }}>
             {((floor / approp) * 100).toFixed(0)}%
           </p>
           <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            {usd(floor)} of the {usd(approp)} appropriation — core teaching staff, most
-            special education, transport, utilities and benefits, plus the mandated items
-            below
+            {usd(floor)} of the {usd(approp)} appropriation. Mostly the teaching staff this
+            model does not price individually, plus health insurance, transport and
+            out-of-district tuition. <strong>Cuttable — the town just did it.</strong>
           </p>
         </div>
         <div className="card p-4">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>Genuinely discretionary</p>
+            style={{ color: 'var(--text-muted)' }}>On this model&rsquo;s list</p>
           <p className="text-2xl font-bold tnum leading-none">
             {(((inCatalogue - mandatedInCatalogue) / approp) * 100).toFixed(0)}%
           </p>
           <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            {usd(inCatalogue - mandatedInCatalogue)} — every athletic team, club, library,
-            elective, art supply and administrative line this tool offers, added together
+            {usd(inCatalogue - mandatedInCatalogue)} — every team, club, library, elective
+            and administrative line, <em>plus</em> {teachersInList} classroom teachers and
+            three custodians. Staff are on the list; there are just not many of them on it.
           </p>
         </div>
         <div className="card p-4" style={{ background: 'var(--surface-3)' }}>
@@ -406,15 +418,28 @@ export function Structural() {
 
         <div className="card p-4">
           <h4 className="text-[13px] font-bold mb-1">
-            And the rest of the {((floor / approp) * 100).toFixed(0)}%, honestly
+            Staff already cut, and staff still on the list
           </h4>
+          <p className="text-[12px] leading-relaxed mb-2"
+            style={{ color: 'var(--text-secondary)' }}>
+            The FY27 balanced budget eliminated {alreadyCutFte.toFixed(1)} positions. This
+            is the answer to &ldquo;why not just cut teachers&rdquo;: the town already did.
+          </p>
+          <ul className="text-[12px] space-y-1 mb-3">
+            {alreadyCut.map(p => (
+              <li key={p.id} className="flex justify-between gap-2"
+                style={{ color: 'var(--text-secondary)' }}>
+                <span className="truncate">{p.name}</span>
+                <span className="tnum shrink-0">{usd(p.cost)}</span>
+              </li>
+            ))}
+          </ul>
           <p className="text-[12px] leading-relaxed mb-3"
             style={{ color: 'var(--text-secondary)' }}>
-            <strong>This model does not itemise it.</strong> The{' '}
-            {usd(approp - inCatalogue)} outside the catalogue is a residual &mdash; the
-            appropriation less everything the tool prices &mdash; not a list anybody has
-            published as &ldquo;untouchable&rdquo;. Its shape, from the district&rsquo;s
-            own expense base:
+            <strong>This model does not itemise the rest.</strong> The{' '}
+            {usd(approp - inCatalogue)} outside the list is a residual, and it is mostly
+            more of the same teaching staff. Its shape, from the district&rsquo;s own
+            expense base:
           </p>
           <ul className="space-y-1.5">
             {Object.entries(expense).sort((a, b) => b[1] - a[1]).map(([k, v]) => (
@@ -435,12 +460,12 @@ export function Structural() {
           </ul>
           <p className="text-[11px] leading-relaxed mt-3"
             style={{ color: 'var(--text-muted)' }}>
-            Salaries are two thirds of it, and the catalogue reaches only a slice of those
-            &mdash; the teachers, paraprofessionals and custodians it names. The rest is
-            staff nobody has proposed cutting, plus health insurance, transport and
-            out-of-district tuition, which are set by contract, by the insurance market, or
-            by law. Treat {((floor / approp) * 100).toFixed(0)}% as &ldquo;never put on a
-            cut list&rdquo;, which is what it is, rather than as a legal finding.
+            Salaries are two thirds of it. The list reaches a slice of those &mdash;{' '}
+            {teachersInList} classroom teachers, three custodians, three paraprofessionals
+            and the named specialists &mdash; and stops, which is a choice about how far to
+            model, not a legal boundary. Health insurance, transport and out-of-district
+            tuition are the genuinely fixed part, set by contract, by the insurance market
+            or by law.
           </p>
         </div>
       </div>
@@ -451,13 +476,47 @@ export function Structural() {
         adding mandates, but by removing everything else around them.
       </p>
       <LockChart rows={budgetMix} />
-      <p className="text-[11px] mt-1 mb-8" style={{ color: 'var(--text-muted)' }}>
+      <p className="text-[11px] mt-1 mb-4" style={{ color: 'var(--text-muted)' }}>
         A budget that is {budgetMix[0].locked.toFixed(0)}% locked in FY{budgetMix[0].fy}{' '}
-        is {budgetMix[5].locked.toFixed(0)}% locked by FY{budgetMix[5].fy}. At that point every dollar the
-        district spends is a dollar it has no choice about, and the only remaining
-        responses are an override or cutting things nobody has ever put on a list &mdash;
-        classroom teachers, and the mandated services themselves.
+        is {budgetMix[5].locked.toFixed(0)}% locked by FY{budgetMix[5].fy} &mdash; locked
+        meaning &ldquo;not on this list any more&rdquo;, not &ldquo;legally
+        untouchable&rdquo;.
       </p>
+
+      {/* ---- what the wall really is ---- */}
+      <div className="card p-5 mb-8">
+        <h4 className="text-[13px] font-bold mb-2">
+          What FY{exhausted?.fy ?? 33} actually means &mdash; the district does not stop
+        </h4>
+        <p className="text-[13px] leading-relaxed mb-3"
+          style={{ color: 'var(--text-secondary)' }}>
+          When the model says the list is empty, that is <strong>this tool</strong> running
+          out of things it has priced, not Lunenburg running out of things it can cut. A
+          real district keeps going, and what it goes into is classroom teachers &mdash;
+          exactly as it did in FY27. So the honest way to read the unclosed years is in
+          teachers, at {usd(teacherCost)} each, against {MODEL.taxBase.enrollment} students:
+        </p>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {casc.filter(y => y.unclosed > 0).map(y => (
+            <li key={y.fy} className="flex items-baseline justify-between gap-3 text-[13px]
+              px-3 py-2 rounded" style={{ background: 'var(--surface-3)' }}>
+              <span>FY{y.fy} &mdash; {usd(y.unclosed)} unfunded</span>
+              <span className="font-bold tnum shrink-0"
+                style={{ color: 'var(--status-critical)' }}>
+                {(y.unclosed / teacherCost).toFixed(0)} more teachers
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="text-[12px] leading-relaxed mt-3"
+          style={{ color: 'var(--text-secondary)' }}>
+          Which is the real ending, and it is worse than a wall: there is no year where
+          cutting becomes impossible, only years where it stops being survivable. By
+          FY{casc[9].fy} the district would be {cumFte} positions down from the cut list{' '}
+          <em>and</em> another {(casc[9].unclosed / teacherCost).toFixed(0)} classroom
+          teachers beyond it.
+        </p>
+      </div>
 
       {/* ---- how to read the number, because it is easy to read it wrong ---- */}
       <div className="card p-5 mb-8">
