@@ -1,16 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { MODEL, runCascade } from './model/engine'
+import { MODEL, project, runCascade, newGrowthPerDollar } from './model/engine'
 import { seedFromCuts, type CutState } from './model/cuts'
 import { Context, CONTEXT_NAV } from './pages/Context'
 import { Priorities } from './pages/Priorities'
 import { Adjust } from './pages/Adjust'
+import { Development } from './pages/Development'
 
-type Tab = 'context' | 'priorities' | 'adjust'
+type Tab = 'context' | 'priorities' | 'adjust' | 'development'
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
   { id: 'adjust', label: 'Adjust', sub: 'Every dial that moves the gap, on one page' },
+  { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
 ]
 
 /** Three pages, three jobs.
@@ -24,6 +26,10 @@ export default function App() {
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
+  // The commercial build rate is the same decision on two pages, so it lives here rather
+  // than being duplicated. Housing is modelled on Development only.
+  const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
+  const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
   const pending = useRef<string | null>(null)
 
   // Deep links into the context page work from any tab: switch first, scroll once the
@@ -96,7 +102,17 @@ export default function App() {
           onSendToAdjust={sendToAdjust} />
       )}
 
-      {tab === 'adjust' && <Adjust seed={seed} onJump={jump} />}
+      {tab === 'adjust' && (
+        <Adjust seed={seed} onJump={jump} onDevelopment={() => go('development')}
+          newValue={newValue} setNewValue={setNewValue} />
+      )}
+
+      {tab === 'development' && (
+        <Development commercial={newValue} setCommercial={setNewValue}
+          homes={homes} setHomes={setHomes}
+          gap={project(5, MODEL.assumptions)[0].deficit}
+          share={newGrowthPerDollar(MODEL.assumptions)} />
+      )}
 
       <footer className="border-t py-10" style={{ borderColor: 'var(--grid)' }}>
         <div className="mx-auto max-w-6xl px-5 text-xs" style={{ color: 'var(--text-muted)' }}>

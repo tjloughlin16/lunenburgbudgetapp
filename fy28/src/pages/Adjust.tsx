@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import {
   MODEL, project, runCascade, usd, leverYield, leverStart, ladderTaken, ladderUnlawful,
+  newGrowthPerDollar, newGrowthToClose,
   type Assumptions, type AppliedItem,
 } from '../model/engine'
 import {
@@ -13,6 +14,7 @@ import { LeverWorkbench } from '../components/Levers'
 import { HealthInsurance } from '../components/HealthInsurance'
 import { AthleticsFees } from '../components/Athletics'
 import { GrowthCalculator } from '../components/TaxBase'
+import { GrowthDial } from '../components/GrowthDial'
 import { AssumptionsPanel } from '../components/Assumptions'
 import { TeamSlider, TeamBoard } from '../components/SportCutter'
 import { CutBoard } from '../components/CutBoard'
@@ -26,18 +28,21 @@ const startBasis = () => Object.fromEntries(MODEL.levers.map(l => [l.id, l.basis
  *  This page owns its own scenario. It never reads from, and never writes to, the
  *  priorities page — a ranking can be loaded in as a starting point, but from that moment
  *  it is just a set of switches somebody chose, not a ranking any more. */
-export function Adjust({ seed, onJump }: {
+export function Adjust({ seed, onJump, onDevelopment, newValue, setNewValue }: {
   /** A cut list handed over from the priorities page, with a nonce so the same list can
    *  be sent twice. */
   seed: { state: CutState; nonce: number } | null
   onJump: (anchor: string) => void
+  onDevelopment: () => void
+  /** The commercial build rate is one control in two places — here and on Development. */
+  newValue: number
+  setNewValue: (n: number) => void
 }) {
   const [a, setA] = useState<Assumptions>({ ...MODEL.assumptions })
   const [leverVals, setLeverVals] = useState<Record<string, number>>(startVals)
   const [leverBasis, setLeverBasis] = useState<Record<string, number>>(startBasis)
   const [movers, setMovers] = useState(0)
   const [migrationSaving, setMigrationSaving] = useState(0)
-  const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
   const [cuts, setCuts] = useState<CutState>({})
   const [loadedFrom, setLoadedFrom] = useState<string | null>(null)
 
@@ -95,7 +100,18 @@ export function Adjust({ seed, onJump }: {
   })).filter(i => i.amount > 0), [leverVals, leverBasis, athleticPool, athleticCap])
 
   const newGrowthRevenue = (newValue * MODEL.taxBase.rate) / 1000
-  const growthDelta = Math.round(newGrowthRevenue - MODEL.taxBase.currentNewGrowthRevenue)
+  // New growth lifts the TOWN's levy limit; the schools receive their share of town
+  // revenue, not the whole of it. Counting the gross figure against the school gap — as
+  // this page used to — roughly doubles what development appears to be worth.
+  const growthShare = useMemo(() => newGrowthPerDollar(aGross), [aGross])
+  const growthDelta = Math.round(
+    (newGrowthRevenue - MODEL.taxBase.currentNewGrowthRevenue) * growthShare)
+  const growthClosesAt = useMemo(
+    () => MODEL.taxBase.currentNewGrowthValue
+      + (newGrowthToClose(aGross) - MODEL.taxBase.currentNewGrowthRevenue)
+        * 1000 / MODEL.taxBase.rate,
+    [aGross])
+  const growthMax = Math.ceil((growthClosesAt * 1.1) / 10_000_000) * 10_000_000
 
   const found: AppliedItem[] = [
     ...leverItems,
@@ -108,8 +124,9 @@ export function Adjust({ seed, onJump }: {
     ...(growthDelta !== 0 ? [{
       id: 'new_growth', kind: 'lever' as const,
       label: growthDelta > 0 ? 'Extra commercial growth' : 'Less growth than assumed',
-      detail: `${usd(newValue)} of new value a year, vs `
-        + `${usd(MODEL.taxBase.currentNewGrowthValue)} assumed`,
+      detail: `${usd(newValue)} of new value a year vs `
+        + `${usd(MODEL.taxBase.currentNewGrowthValue)} assumed — `
+        + `${(growthShare * 100).toFixed(0)}% of it reaches the schools`,
       amount: growthDelta,
     }] : []),
   ]
@@ -287,7 +304,11 @@ export function Adjust({ seed, onJump }: {
           <LeverWorkbench gap={gap} vals={leverVals} setVals={setLeverVals}
             basis={leverBasis} setBasis={setLeverBasis} showTotal={false}
             zeroed={athleticPool <= 0 ? ['athletic_fees'] : []} payers={feePayers}
-            after={{ athletic_fees: <TeamSlider state={cuts} setState={setCuts} /> }} />
+            after={{
+              athletic_fees: <TeamSlider state={cuts} setState={setCuts} />,
+              tech_cut: <GrowthDial value={newValue} setValue={setNewValue} gap={gap}
+                share={growthShare} max={growthMax} />,
+            }} />
 
           <div className="grid gap-3 mt-3">
             <Disclose title="Athletics fees, in detail"
@@ -326,7 +347,15 @@ export function Adjust({ seed, onJump }: {
 
             <Disclose title="Commercial growth"
               sub="How much new commercial development the town adds each year, and what it is worth now and in ten years.">
-              <GrowthCalculator gap={gap} newValue={newValue} setNewValue={setNewValue} />
+              <GrowthCalculator gap={gap} newValue={newValue} setNewValue={setNewValue}
+                share={growthShare} compact />
+              <Note>
+                What this rate produces year after year, what housing does on both sides of
+                the ledger, and how the two shift the balance between homeowners and
+                business are all on the{' '}
+                <button onClick={onDevelopment} className="underline font-semibold"
+                  style={{ color: 'var(--series-cost)' }}>Development</button> page.
+              </Note>
               <Note>
                 <button onClick={() => onJump('tax-base')} className="underline font-semibold"
                   style={{ color: 'var(--series-cost)' }}>

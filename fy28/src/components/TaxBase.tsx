@@ -95,8 +95,18 @@ export function TaxStructure() {
 }
 
 /** How much commercial development would it actually take? */
-export function GrowthCalculator({ gap, newValue, setNewValue }: {
+export function GrowthCalculator({ gap, newValue, setNewValue, share = 1,
+  compact = false }: {
   gap: number; newValue: number; setNewValue: (n: number) => void
+  /** On the adjustments page this is a dial with an explanation. The ten-year chart and
+   *  the how-new-growth-works essay belong on the development page, not in a panel
+   *  beside the athletics fee. */
+  compact?: boolean
+  /** Fraction of new-growth revenue that reaches the SCHOOL gap. New growth lifts the
+   *  town's levy limit; the schools get their share of the town's revenue, not all of
+   *  it. Treating it as a dollar for a dollar roughly doubles what development appears
+   *  to be worth. */
+  share?: number
 }) {
   const [archetype, setArchetype] = useState('mix')
   const arch = T.archetypes.find(a => a.id === archetype)!
@@ -107,15 +117,30 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
   // the gap counts the same $400,000 twice.
   const baseline = T.currentNewGrowthRevenue
   const extra = annual - baseline
+  // What actually lands on the school side of the ledger.
+  const toSchools = extra * share
   const buildings = newValue / arch.value
+  // Buildings and businesses are not the same count, and conflating them is how "we just
+  // need a few more developments" becomes convincing. A development is a structure; the
+  // town's average commercial PARCEL is worth $658,001, and a single plaza holds several.
+  // The parcel figure is the one number here that is not our estimate — it comes off the
+  // tax rolls.
+  const businesses = newValue / T.avgCommercialValue
   const shareOfBase = (newValue / T.totalValue) * 100
-  const valueForGap = (gap * 1000) / T.rate
+  // Value needed ON TOP of today's new growth, grossed up for the town's share.
+  const valueForGap = ((gap / share) * 1000) / T.rate
+  const businessesForGap = valueForGap / T.avgCommercialValue
+  // Where the slider has to reach for growth alone to close the gap: today's new growth
+  // plus the extra the gap needs. The slider used to stop at a hardcoded $60M, below
+  // this figure — so the one thing this control exists to show could not be reached.
+  const closesAt = T.currentNewGrowthValue + valueForGap
+  const sliderMax = Math.ceil((closesAt * 1.1) / 10_000_000) * 10_000_000
 
   // Ten years: extra new growth compounding vs a one-off override of the same gap.
   const data: { year: number; growth: number; override: number }[] = []
   let g = 0
   for (let i = 0; i < 10; i++) {
-    g = g * (1 + T.levyGrowth) + annual
+    g = g * (1 + T.levyGrowth) + annual * share
     data.push({ year: i + 1, growth: Math.round(g),
                 override: Math.round(gap * Math.pow(1 + T.levyGrowth, i)) })
   }
@@ -143,22 +168,43 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
             </div>
             <p className="text-[10px] mb-1" style={{ color: 'var(--text-muted)' }}>
               Today: <strong>{usdShort(T.currentNewGrowthValue)}</strong> a year, worth{' '}
-              {usd(T.currentNewGrowthRevenue)} — already assumed in the projection.
+              {usd(T.currentNewGrowthRevenue)} — already assumed in the projection. New
+              growth lifts the <em>town&rsquo;s</em> levy limit, and the schools get their
+              share of town revenue, so only about{' '}
+              <strong>{(share * 100).toFixed(0)}&cent; of each dollar</strong> reaches this
+              gap. Growth alone closes it at{' '}
+              <strong>{usdShort(closesAt)} a year, every year</strong> &mdash;{' '}
+              {(closesAt / T.currentNewGrowthValue).toFixed(1)}× what the town has been
+              managing.
             </p>
-            <input id="newval" type="range" min={0} max={60_000_000} step={1_000_000}
-              value={newValue} onChange={e => setNewValue(Number(e.target.value))}
+            <input id="newval" type="range" min={0} max={sliderMax} step={1_000_000}
+              value={Math.min(newValue, sliderMax)}
+              onChange={e => setNewValue(Number(e.target.value))}
               className="w-full" />
-            <div className="flex items-start justify-between text-[10px] mb-3"
-              style={{ color: 'var(--text-muted)' }}>
-              <span className="leading-tight">
+            <div className="relative h-8 mb-2">
+              <span className="absolute left-0 top-0 text-[10px] leading-tight"
+                style={{ color: 'var(--text-muted)' }}>
                 <span className="block w-px h-1.5 mb-0.5" style={{ background: 'var(--axis)' }}
                   aria-hidden="true" />
                 none
               </span>
-              <span className="text-right leading-tight">
+              {/* The only mark on this slider that means anything: where growth alone
+                  closes the gap. */}
+              <button onClick={() => setNewValue(Math.round(closesAt / 1e6) * 1e6)}
+                className="absolute top-0 text-[10px] leading-tight text-center hover:opacity-70"
+                style={{ left: `${(closesAt / sliderMax) * 100}%`,
+                         transform: 'translateX(-50%)', color: 'var(--status-good)' }}>
+                <span className="block w-px h-1.5 mb-0.5 mx-auto"
+                  style={{ background: 'var(--status-good)' }} aria-hidden="true" />
+                <span className="whitespace-nowrap font-semibold">
+                  {usdShort(closesAt)} closes it
+                </span>
+              </button>
+              <span className="absolute right-0 top-0 text-[10px] leading-tight text-right"
+                style={{ color: 'var(--text-muted)' }}>
                 <span className="block w-px h-1.5 mb-0.5 ml-auto"
                   style={{ background: 'var(--axis)' }} aria-hidden="true" />
-                $60M
+                {usdShort(sliderMax)}
               </span>
             </div>
 
@@ -195,16 +241,16 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
                     Share of the FY28 school gap
                   </p>
                   <p className="text-4xl font-bold tnum leading-none"
-                    style={{ color: extra >= gap ? 'var(--status-good)'
-                      : extra >= gap / 2 ? 'var(--status-serious)' : 'var(--status-critical)' }}>
-                    {extra <= 0 ? '0%' : `${((extra / gap) * 100).toFixed(0)}%`}
+                    style={{ color: toSchools >= gap ? 'var(--status-good)'
+                      : toSchools >= gap / 2 ? 'var(--status-serious)' : 'var(--status-critical)' }}>
+                    {toSchools <= 0 ? '0%' : `${((toSchools / gap) * 100).toFixed(0)}%`}
                   </p>
                 </div>
                 <div className="text-right">
                   <p className="text-[11px] font-semibold uppercase tracking-widest mb-0.5"
                     style={{ color: 'var(--text-muted)' }}>New money every year</p>
                   <p className="text-2xl font-bold tnum leading-none">
-                    {usd(Math.max(0, extra))}
+                    {usd(Math.max(0, toSchools))}
                   </p>
                   <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
                     {usd(annual)} raised, less {usd(baseline)} already assumed
@@ -214,24 +260,24 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
               <div className="h-2.5 rounded-full overflow-hidden"
                 style={{ background: 'var(--surface-3)' }}>
                 <div className="h-full rounded-full"
-                  style={{ width: `${Math.min(100, Math.max(0, extra / gap) * 100)}%`,
-                           background: extra >= gap ? 'var(--status-good)'
+                  style={{ width: `${Math.min(100, Math.max(0, toSchools / gap) * 100)}%`,
+                           background: toSchools >= gap ? 'var(--status-good)'
                              : 'var(--series-cost)' }} />
               </div>
               <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-                {extra <= 0
+                {toSchools <= 0
                   ? <>The town already adds about {usd(baseline)} a year of new growth, and
                     the projection assumes it. At this level nothing is gained &mdash; and
                     below it, the gap gets <em>worse</em>.</>
-                  : extra >= gap
+                  : toSchools >= gap
                     ? <>Covers the whole {usd(gap)} gap in year one, on top of the growth
                       already assumed.</>
-                    : <>Leaves <strong>{usd(gap - extra)}</strong> of the {usd(gap)} gap
+                    : <>Leaves <strong>{usd(gap - toSchools)}</strong> of the {usd(gap)} gap
                       still to find in year one &mdash; though this compounds and the gap
                       does not grow as fast.</>}
               </p>
 
-              <div className="grid grid-cols-2 gap-3 mt-4 pt-3 border-t"
+              <div className="grid grid-cols-3 gap-3 mt-4 pt-3 border-t"
                 style={{ borderColor: 'var(--grid)' }}>
                 <div>
                   <p className="text-2xl font-bold tnum leading-none">
@@ -241,7 +287,17 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
                     × {arch.name.split('(')[0].trim().toLowerCase()}
                   </p>
                   <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
-                    every year, at {usdShort(arch.value)} each
+                    buildings, not businesses — {usdShort(arch.value)} each
+                  </p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold tnum leading-none">
+                    {businesses.toFixed(businesses < 10 ? 1 : 0)}
+                  </p>
+                  <p className="text-[11px] font-semibold mt-1">× businesses</p>
+                  <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
+                    at the town&rsquo;s {usdShort(T.avgCommercialValue)} average commercial
+                    parcel — from the tax rolls
                   </p>
                 </div>
                 <div>
@@ -258,16 +314,22 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
             </div>
 
             <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
-              Except for the average existing business, which comes from the tax rolls,
-              these values are our order-of-magnitude estimates rather than Lunenburg
-              assessments. They exist so you can think in buildings instead of millions.
+              <strong>Buildings and businesses are different counts.</strong> One retail
+              plaza is a single development but several businesses, so the two figures
+              above answer different questions and neither is wrong. The{' '}
+              {usdShort(T.avgCommercialValue)} average commercial parcel comes from the tax
+              rolls; the building values are our order-of-magnitude estimates rather than
+              Lunenburg assessments. They exist so you can think in buildings instead of
+              millions.
             </p>
           </div>
 
           <div className="space-y-2.5">
             <Row k="In buildings" v={`${buildings.toFixed(1)} × ${arch.name.split('(')[0].trim()}`} />
+            <Row k="In businesses" v={`${businesses.toFixed(0)} at ${usdShort(T.avgCommercialValue)} each`} />
             <Row k="To close FY28 in one year"
-              v={`${(valueForGap / arch.value).toFixed(1)} × ${arch.name.split('(')[0].trim()}`} />
+              v={`${(valueForGap / arch.value).toFixed(1)} buildings, or `
+                 + `${businessesForGap.toFixed(0)} businesses`} />
             <Row k="Share of the whole tax base" v={`${shareOfBase.toFixed(2)}%`} />
             <Row k="Versus the town's recent new growth"
               v={`${(newValue / MODEL.taxBase.fy23NewValue).toFixed(1)}×`} />
@@ -277,11 +339,55 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
             <p className="text-[12px] leading-relaxed pt-2 border-t"
               style={{ borderColor: 'var(--grid)', color: 'var(--text-secondary)' }}>
               Every $1M of new value is worth <strong>{usd((1_000_000 * T.rate) / 1000)}</strong>{' '}
-              a year — and it never goes away. It joins the levy limit permanently and grows
-              2.5% a year on top.
+              a year to the town — and it never goes away. It joins the levy limit
+              permanently and grows 2.5% a year on top. About{' '}
+              {usd(((1_000_000 * T.rate) / 1000) * share)} of that reaches the schools.
             </p>
           </div>
         </div>
+      </div>
+
+      {!compact && <>
+      {/* The question everybody asks second: if a building is permanent, why do we need
+          new ones every year? */}
+      <div className="card p-5 mb-4">
+        <h3 className="text-sm font-bold mb-2">
+          Built once, or built again every year?
+        </h3>
+        <div className="grid gap-4 md:grid-cols-2 text-[13px] leading-relaxed"
+          style={{ color: 'var(--text-secondary)' }}>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--text-muted)' }}>What a building does forever</p>
+            <p>
+              A development added this year raises the levy limit by its tax value{' '}
+              <strong>permanently</strong>. It does not have to be rebuilt, and the town
+              does not lose it next year. From then on it is simply part of the base, and
+              the whole base rises 2.5% a year.
+            </p>
+          </div>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--text-muted)' }}>What it stops doing</p>
+            <p>
+              It only counts as <em>new growth</em> once &mdash; in the year it is added.
+              After that it grows 2.5% like every other property. So &ldquo;
+              {(closesAt / arch.value).toFixed(0)} developments a year&rdquo; means{' '}
+              {(closesAt / arch.value).toFixed(0)} <strong>more</strong> each year, on top
+              of last year&rsquo;s, standing and cumulative.
+            </p>
+          </div>
+        </div>
+        <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
+          style={{ color: 'var(--text-secondary)', borderColor: 'var(--grid)' }}>
+          <strong>Why once is not enough.</strong> The gap grows by roughly $600,000 to
+          $760,000 every year, because costs rise faster than Proposition 2&frac12; lets
+          revenue rise. A one-off wave of building lifts the base permanently, but that
+          lift then grows only 2.5% a year &mdash; about $20,000 &mdash; while the gap
+          grows thirty times faster. So a single good year of development closes the gap
+          once and then watches it reopen. Only a <em>sustained</em> rate keeps pace, which
+          is what the slider above sets.
+        </p>
       </div>
 
       <div className="card p-5 mb-4">
@@ -362,6 +468,7 @@ export function GrowthCalculator({ gap, newValue, setNewValue }: {
           </li>
         </ul>
       </div>
+      </>}
     </div>
   )
 }

@@ -313,6 +313,29 @@ export function project(
   return out
 }
 
+/** How much of the schools' first-year gap one dollar of new-growth revenue closes.
+ *
+ *  Not one dollar. New growth is added to the TOWN's levy limit; the schools then get
+ *  their share of the town's total available revenue, which is a bit over half. Comparing
+ *  gross new-growth revenue against the school gap — as this tool used to — credits the
+ *  schools with money that goes to the fire department, and roughly doubles what
+ *  commercial development appears to be worth.
+ *
+ *  The first year's deficit is linear in new growth, so two points give the slope
+ *  exactly. */
+export function newGrowthPerDollar(a: Assumptions): number {
+  const d0 = project(1, { ...a, new_growth: 0 })[0].deficit
+  const d1 = project(1, { ...a, new_growth: 1_000_000 })[0].deficit
+  return (d0 - d1) / 1_000_000
+}
+
+/** Annual new-growth revenue at which the first year's gap closes on its own. */
+export function newGrowthToClose(a: Assumptions): number {
+  const per = newGrowthPerDollar(a)
+  if (per <= 0) return Infinity
+  return project(1, { ...a, new_growth: 0 })[0].deficit / per
+}
+
 /** Repeatable programs become numbered instances. */
 export function expand(programs: Program[]): Program[] {
   const out: Program[] = []
