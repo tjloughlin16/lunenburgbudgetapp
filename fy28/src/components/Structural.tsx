@@ -111,6 +111,13 @@ export function Structural() {
   const mandatedItems = MODEL.programs
     .filter(p => (p.status === 'funded' || p.status === 'restoring')
       && p.mandate === 'legal')
+  // Legally required and NOT currently funded — the sharpest fact on this page.
+  const mandatedUnfunded = MODEL.programs
+    .filter(p => p.status === 'unfunded' && p.mandate === 'legal')
+  const contractItems = MODEL.programs
+    .filter(p => (p.status === 'funded' || p.status === 'restoring')
+      && p.mandate === 'contract')
+  const expenseTotal = Object.values(expense).reduce((a, b) => a + b, 0)
   const mandatedInCatalogue = mandatedItems
     .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
   const floor = approp - inCatalogue + mandatedInCatalogue
@@ -333,15 +340,108 @@ export function Structural() {
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
             style={{ color: 'var(--text-muted)' }}>Mandated by law, in the catalogue</p>
           <p className="text-2xl font-bold tnum leading-none">{usd(mandatedInCatalogue)}</p>
-          <ul className="text-[12px] mt-1.5 space-y-0.5"
-            style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            The only mandated items this tool prices individually. Named in full below.
+          </p>
+        </div>
+      </div>
+
+      {/* ---- name them, because "87% is mandated" is not a checkable claim ---- */}
+      <div className="grid gap-3 lg:grid-cols-2 mb-4">
+        <div className="card p-4">
+          <h4 className="text-[13px] font-bold mb-2">
+            The mandated services this model names
+          </h4>
+          <ul className="space-y-2.5">
             {mandatedItems.map(p => (
-              <li key={p.id} className="flex justify-between gap-2">
-                <span className="truncate">{p.name.replace(/ \(.*\)$/, '')}</span>
-                <span className="tnum shrink-0">{usdShort(p.cost * (p.repeatable ?? 1))}</span>
+              <li key={p.id} className="flex gap-2.5">
+                <span aria-hidden="true" className="shrink-0 text-[13px]"
+                  style={{ color: 'var(--status-warning)' }}>⚖</span>
+                <span className="flex-1 min-w-0">
+                  <span className="flex items-baseline justify-between gap-2">
+                    <span className="text-[13px] font-medium">{p.name}</span>
+                    <span className="text-[13px] tnum font-bold shrink-0">
+                      {usd(p.cost * (p.repeatable ?? 1))}
+                    </span>
+                  </span>
+                  <span className="block text-[11px] leading-relaxed"
+                    style={{ color: 'var(--text-secondary)' }}>
+                    {p.fte > 0 && (
+                      <span className="tnum">{p.fte * (p.repeatable ?? 1)} FTE · </span>
+                    )}
+                    {p.impact}
+                  </span>
+                </span>
+              </li>
+            ))}
+            {mandatedUnfunded.map(p => (
+              <li key={p.id} className="flex gap-2.5 pt-2.5 border-t"
+                style={{ borderColor: 'var(--grid)' }}>
+                <span aria-hidden="true" className="shrink-0 text-[13px]"
+                  style={{ color: 'var(--status-critical)' }}>✕</span>
+                <span className="flex-1 min-w-0">
+                  <span className="flex items-baseline justify-between gap-2">
+                    <span className="text-[13px] font-medium">{p.name}</span>
+                    <span className="text-[13px] tnum font-bold shrink-0"
+                      style={{ color: 'var(--status-critical)' }}>
+                      {usd(p.cost * (p.repeatable ?? 1))}
+                    </span>
+                  </span>
+                  <span className="block text-[11px] leading-relaxed"
+                    style={{ color: 'var(--status-critical)' }}>
+                    <strong>Legally required and not currently funded.</strong> {p.impact}
+                  </span>
+                </span>
               </li>
             ))}
           </ul>
+          <p className="text-[11px] leading-relaxed mt-3 pt-2 border-t"
+            style={{ color: 'var(--text-muted)', borderColor: 'var(--grid)' }}>
+            Also effectively fixed: {contractItems.length} collectively bargained lines
+            worth {usd(contractItems.reduce((a, p) => a + p.cost * (p.repeatable ?? 1), 0))}{' '}
+            &mdash; {contractItems.map(p => p.name.replace(/ \(.*\)$/, '')).join(' and ')}.
+            Cuttable in principle, only by reopening a contract.
+          </p>
+        </div>
+
+        <div className="card p-4">
+          <h4 className="text-[13px] font-bold mb-1">
+            And the rest of the {((floor / approp) * 100).toFixed(0)}%, honestly
+          </h4>
+          <p className="text-[12px] leading-relaxed mb-3"
+            style={{ color: 'var(--text-secondary)' }}>
+            <strong>This model does not itemise it.</strong> The{' '}
+            {usd(approp - inCatalogue)} outside the catalogue is a residual &mdash; the
+            appropriation less everything the tool prices &mdash; not a list anybody has
+            published as &ldquo;untouchable&rdquo;. Its shape, from the district&rsquo;s
+            own expense base:
+          </p>
+          <ul className="space-y-1.5">
+            {Object.entries(expense).sort((a, b) => b[1] - a[1]).map(([k, v]) => (
+              <li key={k} className="flex items-center gap-2.5">
+                <span className="w-32 shrink-0 text-[12px] capitalize">
+                  {k.replace('sped_tuition', 'SPED tuition').replace('_', ' ')}
+                </span>
+                <span className="flex-1 h-3 rounded" style={{ background: 'var(--surface-3)' }}>
+                  <span className="block h-full rounded"
+                    style={{ width: `${(v / expenseTotal) * 100}%`,
+                             background: 'var(--status-warning)', opacity: 0.6 }} />
+                </span>
+                <span className="w-24 shrink-0 text-right text-[12px] tnum">
+                  {usdShort(v)}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[11px] leading-relaxed mt-3"
+            style={{ color: 'var(--text-muted)' }}>
+            Salaries are two thirds of it, and the catalogue reaches only a slice of those
+            &mdash; the teachers, paraprofessionals and custodians it names. The rest is
+            staff nobody has proposed cutting, plus health insurance, transport and
+            out-of-district tuition, which are set by contract, by the insurance market, or
+            by law. Treat {((floor / approp) * 100).toFixed(0)}% as &ldquo;never put on a
+            cut list&rdquo;, which is what it is, rather than as a legal finding.
+          </p>
         </div>
       </div>
 
