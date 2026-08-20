@@ -78,8 +78,13 @@ export function Structural() {
 
   // The gap is a rate; the cuts are a stock. Holding one flat is what makes the other
   // climb, and that inverse is the thing residents actually live through.
+  // The denominator has to be what the cascade can ACTUALLY reach. Counting the school
+  // nurse, special education above the legal minimum and SPED paraprofessionals — which
+  // are mandate 'legal' and never cut — inflated it by $439,203 and quietly understated
+  // how complete the damage is.
   const pool = MODEL.programs
-    .filter(p => p.status === 'funded' || p.status === 'restoring')
+    .filter(p => (p.status === 'funded' || p.status === 'restoring')
+      && p.mandate !== 'legal')
     .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
   const degradation = casc.map((y, i) => ({
     fy: y.fy,
@@ -209,13 +214,14 @@ export function Structural() {
           body={<>Each year the district cuts the fresh shortfall instead &mdash; about{' '}
             {usdShort(recurring)}. Because a cut permanently lowers the base, the ask does
             not grow either. What accumulates here is the <strong>service side</strong>:{' '}
-            {usd(cumCut)} of programs and {cumFte} positions. And unlike revenue, the list
-            is finite &mdash; it runs out in FY{exhausted?.fy ?? 33}, after which the gap
+            {usd(cumCut)} of programs and {cumFte} positions &mdash;{' '}
+            <strong>every discretionary thing in the catalogue</strong>. Unlike revenue the
+            list is finite, and it is empty in FY{exhausted?.fy ?? 33}, after which the gap
             reopens with nothing left to close it.</>}
           chart={<Degradation rows={degradation} />}
           rows={[
             ['Fresh cuts each year', usdShort(recurring)],
-            ['Programs gone by FY' + (exhausted?.fy ?? 33), usd(cumCut)],
+            ['Programs gone by FY' + (exhausted?.fy ?? 33), `${usd(cumCut)} — all of them`],
             ['Unclosed by FY' + funding[9].fy, usd(casc[9].unclosed)],
           ]} />
       </div>
@@ -237,8 +243,8 @@ export function Structural() {
           <p className="text-2xl font-bold tnum leading-none"
             style={{ color: 'var(--status-critical)' }}>{atWall.pct}%</p>
           <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            of every program the model is able to cut &mdash; {usd(atWall.spent)} of a{' '}
-            {usdShort(pool)} pool
+            of every program the model is able to cut &mdash; the whole{' '}
+            {usd(pool)} of it, with only legally mandated staff left standing
           </p>
         </div>
         <div className="card p-4">
