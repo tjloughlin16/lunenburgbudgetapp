@@ -86,12 +86,19 @@ export function Structural() {
     .filter(p => (p.status === 'funded' || p.status === 'restoring')
       && p.mandate !== 'legal')
     .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
-  const degradation = casc.map((y, i) => ({
-    fy: y.fy,
-    gap: Math.round(y.deficit),
-    spent: Math.round(casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0)),
-    pct: Math.round((casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0) / pool) * 100),
-  }))
+  // Deliberately in dollars, not percentages. Every percentage available here has a
+  // denominator that is this model's own list, and a bar reaching "100%" reads as "all
+  // services gone" no matter what caption sits under it.
+  const degradation = casc.map((y, i) => {
+    const spent = Math.round(casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0))
+    return {
+      fy: y.fy,
+      gap: Math.round(y.deficit),
+      spent,
+      listLeft: Math.max(0, Math.round(pool - spent)),
+      rest: Math.round(base[i].levelService - Math.max(0, pool - spent)),
+    }
+  })
   const atWall = degradation[(exhausted
     ? casc.findIndex(y => y.unclosed > 0) : 5)] ?? degradation[5]
   // What the funded route costs a homeowner: the whole accumulated levy increase, spread
@@ -128,16 +135,12 @@ export function Structural() {
     .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
   const floor = approp - inCatalogue + mandatedInCatalogue
   // Discretionary share of the budget, year by year, as the cuts land.
-  const budgetMix = casc.map((y, i) => {
-    const left = Math.max(0, inCatalogue - mandatedInCatalogue
-      - casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0))
-    const budget = base[i].levelService
-    return {
-      fy: y.fy,
-      discretionary: +((left / budget) * 100).toFixed(1),
-      locked: +(100 - (left / budget) * 100).toFixed(1),
-    }
-  })
+  const budgetMix = degradation.map((d, i) => ({
+    fy: d.fy,
+    onList: d.listLeft,
+    rest: d.rest,
+    share: (d.listLeft / base[i].levelService) * 100,
+  }))
 
   return (
     <div>
@@ -257,7 +260,7 @@ export function Structural() {
             not grow either. What accumulates here is the <strong>service side</strong>:
             every team, club, library, elective and named position this tool prices. That
             is {((cumCut / approp) * 100).toFixed(0)}% of the budget, not all of it
-            &mdash; but it is 100% of what anyone has written down as optional. After
+            &mdash; but it is every optional thing anyone has written down. After
             FY{exhausted?.fy ?? 33} the cutting continues into classroom teachers, which
             is where it always ends.</>}
           chart={<Degradation rows={degradation} />}
@@ -284,12 +287,12 @@ export function Structural() {
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
             style={{ color: 'var(--text-muted)' }}>Cut by FY{atWall.fy}</p>
           <p className="text-2xl font-bold tnum leading-none"
-            style={{ color: 'var(--status-critical)' }}>{atWall.pct}%</p>
+            style={{ color: 'var(--status-critical)' }}>{usd(atWall.spent)}</p>
           <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            of <strong>this model&rsquo;s cut list</strong> &mdash; the whole {usd(pool)} of
-            it. That list is only {((pool / approp) * 100).toFixed(0)}% of the budget, so
-            this is not &ldquo;all services gone&rdquo;; it is every optional thing anyone
-            has written down.
+            every optional thing anyone has written down &mdash;{' '}
+            {((atWall.spent / approp) * 100).toFixed(0)}% of the budget. Not &ldquo;all
+            services&rdquo;: the rest is teaching staff nobody has priced, and the cutting
+            carries on into it.
           </p>
         </div>
         <div className="card p-4">
@@ -476,16 +479,19 @@ export function Structural() {
       </div>
 
       <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        So the budget starts barely flexible and ends completely rigid. Every year of
-        cutting converts discretionary spending into mandatory spending &mdash; not by
-        adding mandates, but by removing everything else around them.
+        Drawn in dollars rather than shares, because every percentage available here has
+        this model&rsquo;s own list as its denominator. The blue sliver is what is left on
+        that list; the band above it is the rest of the budget, growing the whole time. The
+        squeeze is real and it is that shape &mdash; a shrinking set of options inside a
+        rising cost base.
       </p>
       <LockChart rows={budgetMix} />
       <p className="text-[11px] mt-1 mb-4" style={{ color: 'var(--text-muted)' }}>
-        A budget that is {budgetMix[0].locked.toFixed(0)}% locked in FY{budgetMix[0].fy}{' '}
-        is {budgetMix[5].locked.toFixed(0)}% locked by FY{budgetMix[5].fy} &mdash; locked
-        meaning &ldquo;not on this list any more&rdquo;, not &ldquo;legally
-        untouchable&rdquo;.
+        The list is {usd(budgetMix[0].onList)} of a {usd(base[0].levelService)} budget in
+        FY{budgetMix[0].fy} &mdash; {budgetMix[0].share.toFixed(0)}% &mdash; and{' '}
+        {usd(budgetMix[5].onList)} of {usd(base[5].levelService)} by FY{budgetMix[5].fy}.
+        What that does <em>not</em> mean is that the rest cannot be cut: it means nobody has
+        priced it here, and the district would be into classroom teachers by then.
       </p>
 
       {/* ---- what the wall really is ---- */}
@@ -631,7 +637,7 @@ export function Structural() {
 
 /** A flat gap beside a climbing loss. The inverse nobody names out loud. */
 function Degradation({ rows }: {
-  rows: { fy: number; gap: number; spent: number; pct: number }[]
+  rows: { fy: number; gap: number; spent: number }[]
 }) {
   return (
     <div style={{ width: '100%', height: 240 }}>
@@ -644,22 +650,21 @@ function Degradation({ rows }: {
             tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
             stroke="var(--axis)" tickLine={false} axisLine={false}
             tickFormatter={v => usdShort(v as number)} />
-          <YAxis yAxisId="right" orientation="right" width={44} domain={[0, 100]}
+          <YAxis yAxisId="right" orientation="right" width={52}
             tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
             stroke="var(--axis)" tickLine={false} axisLine={false}
-            tickFormatter={v => `${v}%`} />
+            tickFormatter={v => usdShort(v as number)} />
           <Tooltip
             contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
                             borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
             labelFormatter={v => `FY${v}`}
-            formatter={(v, n) => n === 'pct'
-              ? [`${v}% of this model's cut list`, 'Given up, cumulative']
-              : [usd(v as number), 'Gap that year']} />
+            formatter={(v, n) => [usd(v as number),
+              n === 'spent' ? 'Cut so far, cumulative' : 'Gap that year']} />
           <Legend verticalAlign="top" height={26}
             wrapperStyle={{ fontSize: 11, color: 'var(--text-secondary)' }}
-            formatter={v => v === 'pct'
-              ? 'Cut list spent, cumulative' : 'The gap, each year'} />
-          <Bar yAxisId="right" dataKey="pct" fill="var(--status-critical)"
+            formatter={v => v === 'spent'
+              ? 'Programs cut, running total' : 'The gap, each year'} />
+          <Bar yAxisId="right" dataKey="spent" fill="var(--status-critical)"
             fillOpacity={0.35} isAnimationActive={false} />
           <Line yAxisId="left" type="monotone" dataKey="gap" stroke="var(--series-cost)"
             strokeWidth={2} dot={false} isAnimationActive={false} />
@@ -671,31 +676,31 @@ function Degradation({ rows }: {
 
 /** Discretionary spending as a share of the budget, collapsing year by year. */
 function LockChart({ rows }: {
-  rows: { fy: number; discretionary: number; locked: number }[]
+  rows: { fy: number; onList: number; rest: number; share: number }[]
 }) {
   return (
-    <div style={{ width: '100%', height: 220 }}>
+    <div style={{ width: '100%', height: 240 }}>
       <ResponsiveContainer>
-        <ComposedChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}
-          stackOffset="expand">
+        <ComposedChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
           <CartesianGrid stroke="var(--grid)" vertical={false} />
           <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
             stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
-          <YAxis width={44} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+          <YAxis width={52} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
             stroke="var(--axis)" tickLine={false} axisLine={false}
-            tickFormatter={v => `${Math.round((v as number) * 100)}%`} />
+            tickFormatter={v => usdShort(v as number)} />
           <Tooltip
             contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
                             borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
             labelFormatter={v => `FY${v}`}
-            formatter={(v, n) => [`${(v as number).toFixed(1)}%`,
-              n === 'locked' ? 'Cannot be cut' : 'Still discretionary']} />
+            formatter={(v, n) => [usd(v as number),
+              n === 'onList' ? 'Still on the cut list' : 'Everything else in the budget']} />
           <Legend verticalAlign="top" height={26} iconType="square"
             wrapperStyle={{ fontSize: 11, color: 'var(--text-secondary)' }}
-            formatter={v => v === 'locked' ? 'Cannot be cut' : 'Still discretionary'} />
-          <Bar dataKey="locked" stackId="a" fill="var(--status-warning)"
-            fillOpacity={0.45} isAnimationActive={false} />
-          <Bar dataKey="discretionary" stackId="a" fill="var(--series-cost)"
+            formatter={v => v === 'onList'
+              ? 'Still on the cut list' : 'Everything else in the budget'} />
+          <Bar dataKey="rest" stackId="a" fill="var(--status-warning)"
+            fillOpacity={0.35} isAnimationActive={false} />
+          <Bar dataKey="onList" stackId="a" fill="var(--series-cost)"
             isAnimationActive={false} />
         </ComposedChart>
       </ResponsiveContainer>
