@@ -94,7 +94,6 @@ export function Structural() {
   }))
   const atWall = degradation[(exhausted
     ? casc.findIndex(y => y.unclosed > 0) : 5)] ?? degradation[5]
-  const atWallPct = atWall.pct
   // What the funded route costs a homeowner: the whole accumulated levy increase, spread
   // over the tax base, on an average assessment.
   const billImpact = Math.round(
@@ -248,21 +247,25 @@ export function Structural() {
           ]} />
         <Scenario
           title="If we cut it every year"
-          lead={`${atWallPct}%`}
-          leadNote={`of every cuttable program gone by FY${exhausted?.fy ?? 33}`}
+          lead={usdShort(cumCut)}
+          leadNote={`of programs and ${cumFte} positions gone by FY${exhausted?.fy ?? 33}`
+            + ` — everything this model lists, but only `
+            + `${((cumCut / approp) * 100).toFixed(0)}% of the budget`}
           tone="var(--status-critical)"
           body={<>Each year the district cuts the fresh shortfall instead &mdash; about{' '}
             {usdShort(recurring)}. Because a cut permanently lowers the base, the ask does
-            not grow either. What accumulates here is the <strong>service side</strong>:{' '}
-            {usd(cumCut)} of programs and {cumFte} positions &mdash;{' '}
-            <strong>every discretionary thing in the catalogue</strong>. Unlike revenue the
-            list is finite, and it is empty in FY{exhausted?.fy ?? 33}, after which the gap
-            reopens with nothing left to close it.</>}
+            not grow either. What accumulates here is the <strong>service side</strong>:
+            every team, club, library, elective and named position this tool prices. That
+            is {((cumCut / approp) * 100).toFixed(0)}% of the budget, not all of it
+            &mdash; but it is 100% of what anyone has written down as optional. After
+            FY{exhausted?.fy ?? 33} the cutting continues into classroom teachers, which
+            is where it always ends.</>}
           chart={<Degradation rows={degradation} />}
           rows={[
             ['Fresh cuts each year', usdShort(recurring)],
-            ['Programs gone by FY' + (exhausted?.fy ?? 33), `${usd(cumCut)} — all of them`],
-            ['Unclosed by FY' + funding[9].fy, usd(casc[9].unclosed)],
+            ['Share of the budget it reaches', `${((cumCut / approp) * 100).toFixed(0)}%`],
+            ['Then, by FY' + funding[9].fy,
+              `${(casc[9].unclosed / teacherCost).toFixed(0)} more teachers`],
           ]} />
       </div>
 
@@ -283,8 +286,10 @@ export function Structural() {
           <p className="text-2xl font-bold tnum leading-none"
             style={{ color: 'var(--status-critical)' }}>{atWall.pct}%</p>
           <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            of every program the model is able to cut &mdash; the whole{' '}
-            {usd(pool)} of it, with only legally mandated staff left standing
+            of <strong>this model&rsquo;s cut list</strong> &mdash; the whole {usd(pool)} of
+            it. That list is only {((pool / approp) * 100).toFixed(0)}% of the budget, so
+            this is not &ldquo;all services gone&rdquo;; it is every optional thing anyone
+            has written down.
           </p>
         </div>
         <div className="card p-4">
@@ -648,12 +653,12 @@ function Degradation({ rows }: {
                             borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
             labelFormatter={v => `FY${v}`}
             formatter={(v, n) => n === 'pct'
-              ? [`${v}% of everything cuttable`, 'Given up, cumulative']
+              ? [`${v}% of this model's cut list`, 'Given up, cumulative']
               : [usd(v as number), 'Gap that year']} />
           <Legend verticalAlign="top" height={26}
             wrapperStyle={{ fontSize: 11, color: 'var(--text-secondary)' }}
             formatter={v => v === 'pct'
-              ? 'Services given up, cumulative' : 'The gap, each year'} />
+              ? 'Cut list spent, cumulative' : 'The gap, each year'} />
           <Bar yAxisId="right" dataKey="pct" fill="var(--status-critical)"
             fillOpacity={0.35} isAnimationActive={false} />
           <Line yAxisId="left" type="monotone" dataKey="gap" stroke="var(--series-cost)"
