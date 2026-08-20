@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import {
-  ComposedChart, LineChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  ReferenceArea, ResponsiveContainer,
+  ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer,
 } from 'recharts'
 import {
   MODEL, project, runCascade, usd, usdShort, type Assumptions,
@@ -59,11 +59,16 @@ export function Structural() {
   // arithmetic.
   const casc = useMemo(
     () => runCascade(MODEL.presets.school_committee.order, A, 10), [])
-  const trajectory = base.slice(0, 10).map((y, i) => ({
+  // The projection's "deficit" is NOT that year's fresh shortfall — it is the total
+  // permanent new revenue that must be in place by then, because level service is
+  // measured against a revenue line that never rose. The fresh amount is the year-on-year
+  // increment, net of the growth the previously-funded money already provides.
+  const funding = base.slice(0, 10).map((y, i) => ({
     fy: y.fy,
-    nothingCut: y.deficit,
-    afterCuts: casc[i].deficit,
-    unclosed: casc[i].unclosed,
+    cumulative: y.deficit,
+    fresh: Math.round(i === 0
+      ? y.deficit
+      : y.deficit - base[i - 1].deficit * (1 + y.growthRate)),
   }))
   const exhausted = casc.find(y => y.unclosed > 0)
   const cutting = casc.filter(y => y.cutTotal > 0)
@@ -84,6 +89,11 @@ export function Structural() {
   }))
   const atWall = degradation[(exhausted
     ? casc.findIndex(y => y.unclosed > 0) : 5)] ?? degradation[5]
+  const atWallPct = atWall.pct
+  // What the funded route costs a homeowner: the whole accumulated levy increase, spread
+  // over the tax base, on an average assessment.
+  const billImpact = Math.round(
+    (T.avgHomeValue * ((base[9].deficit * 1000) / T.totalValue)) / 1000)
 
   return (
     <div>
@@ -161,49 +171,53 @@ export function Structural() {
         })}
       </ul>
 
-      {/* ---- what it compounds to, and what cutting does to that ---- */}
-      <h3 className="text-sm font-bold mb-1">What 2.44 points a year turns into</h3>
-      <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        Two different futures, and the difference matters more than either number. Leave
-        everything funded and the shortfall compounds to {usdShort(base[9].deficit)} by
-        FY{base[9].fy}. Close each year by cutting and it does <em>not</em> compound
-        &mdash; because every cut permanently lowers the base the next year grows from.
-        What you get instead is a gap that lands again every single year, at roughly{' '}
-        {usdShort(recurring)}, forever.
+      {/* ---- the two scenarios, kept apart on purpose ---- */}
+      <h3 className="text-sm font-bold mb-1">
+        Two ways to live with 2.44 points, priced separately
+      </h3>
+      <p className="text-[13px] mb-5 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        A gap is not something a town can have &mdash; Massachusetts budgets must balance,
+        so every year it is either funded or cut. Those are two genuinely different futures
+        and mixing them on one chart made both unreadable. Here they are apart. Notice that
+        the <em>fresh</em> pain is almost identical either way, around{' '}
+        {usdShort(recurring)} a year. What differs completely is what accumulates.
       </p>
-      <Compounding rows={trajectory} exhausted={exhausted} />
-      <div className="grid gap-3 sm:grid-cols-3 mt-4 mb-8">
-        <div className="card p-4">
-          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>The gap you actually face</p>
-          <p className="text-2xl font-bold tnum leading-none"
-            style={{ color: 'var(--status-critical)' }}>{usdShort(recurring)}</p>
-          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            of <strong>fresh</strong> cuts a year once you are cutting — not a growing
-            number, a repeating one
-          </p>
-        </div>
-        <div className="card p-4">
-          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>What that costs by FY{exhausted?.fy ?? 33}</p>
-          <p className="text-2xl font-bold tnum leading-none"
-            style={{ color: 'var(--status-critical)' }}>{cumFte} FTE</p>
-          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            and {usd(cumCut)} of programs — the damage compounds even though the gap does
-            not
-          </p>
-        </div>
-        <div className="card p-4" style={{ background: 'var(--surface-3)' }}>
-          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>Then the list runs out</p>
-          <p className="text-2xl font-bold tnum leading-none"
-            style={{ color: 'var(--status-critical)' }}>FY{exhausted?.fy ?? 33}</p>
-          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            every discretionary program in the model is gone, and the gap starts
-            compounding for real &mdash; {usdShort(base[9].deficit - cumCut)} unclosed by
-            FY{base[9].fy}
-          </p>
-        </div>
+      <div className="grid gap-4 lg:grid-cols-2 mb-8">
+        <Scenario
+          title="If we fund it every year"
+          lead={usdShort(funding[9].cumulative)}
+          leadNote={`of permanent new revenue in place by FY${funding[9].fy}`}
+          body={<>Each year the town finds the fresh shortfall &mdash;{' '}
+            {usd(funding[0].fresh)} in FY{funding[0].fy}, rising to{' '}
+            {usd(funding[9].fresh)} by FY{funding[9].fy} &mdash; and that money stays in
+            the base, growing 2&frac12;% a year with everything else. Nothing is lost, so
+            the fresh ask never explodes. What accumulates is the <strong>tax
+            side</strong>: {usdShort(funding[9].cumulative)} a year of revenue that does
+            not exist today, which is about{' '}
+            <strong>{usd(billImpact)} a year on the average tax bill</strong>.</>}
+          chart={<FundingChart rows={funding} />}
+          rows={[
+            ['Fresh money, FY' + funding[0].fy, usd(funding[0].fresh)],
+            ['Fresh money, FY' + funding[9].fy, usd(funding[9].fresh)],
+            ['Total in place by FY' + funding[9].fy, usd(funding[9].cumulative)],
+          ]} />
+        <Scenario
+          title="If we cut it every year"
+          lead={`${atWallPct}%`}
+          leadNote={`of every cuttable program gone by FY${exhausted?.fy ?? 33}`}
+          tone="var(--status-critical)"
+          body={<>Each year the district cuts the fresh shortfall instead &mdash; about{' '}
+            {usdShort(recurring)}. Because a cut permanently lowers the base, the ask does
+            not grow either. What accumulates here is the <strong>service side</strong>:{' '}
+            {usd(cumCut)} of programs and {cumFte} positions. And unlike revenue, the list
+            is finite &mdash; it runs out in FY{exhausted?.fy ?? 33}, after which the gap
+            reopens with nothing left to close it.</>}
+          chart={<Degradation rows={degradation} />}
+          rows={[
+            ['Fresh cuts each year', usdShort(recurring)],
+            ['Programs gone by FY' + (exhausted?.fy ?? 33), usd(cumCut)],
+            ['Unclosed by FY' + funding[9].fy, usd(casc[9].unclosed)],
+          ]} />
       </div>
 
       {/* ---- the inverse: flat gap, falling services ---- */}
@@ -211,14 +225,12 @@ export function Structural() {
         The gap stays the same size. The district does not.
       </h3>
       <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        This is the part that is easy to miss and hardest to live with. Closing the same
-        gap every year does not shrink the gap &mdash; it shrinks the school district. The
-        shortfall is a <em>rate</em>, so it renews; the cuts are a <em>stock</em>, so they
-        accumulate. One line below is flat and the other is a staircase, and that is the
-        whole experience of the last decade compressed into one picture.
+        Whichever way it is settled, the fresh ask stays about the same size every year.
+        That is what makes the cutting route so misleading: closing the same gap annually
+        does not shrink the gap, it shrinks the school district. The shortfall is a{' '}
+        <em>rate</em>, so it renews; the cuts are a <em>stock</em>, so they accumulate.
       </p>
-      <Degradation rows={degradation} />
-      <div className="grid gap-3 sm:grid-cols-3 mt-4 mb-8">
+      <div className="grid gap-3 sm:grid-cols-3 mb-8">
         <div className="card p-4">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
             style={{ color: 'var(--text-muted)' }}>Cut by FY{atWall.fy}</p>
@@ -362,9 +374,9 @@ function Degradation({ rows }: {
   rows: { fy: number; gap: number; spent: number; pct: number }[]
 }) {
   return (
-    <div style={{ width: '100%', height: 300 }}>
+    <div style={{ width: '100%', height: 240 }}>
       <ResponsiveContainer>
-        <ComposedChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
+        <ComposedChart data={rows} margin={{ top: 8, right: 8, bottom: 4, left: 4 }}>
           <CartesianGrid stroke="var(--grid)" vertical={false} />
           <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
             stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
@@ -383,8 +395,8 @@ function Degradation({ rows }: {
             formatter={(v, n) => n === 'pct'
               ? [`${v}% of everything cuttable`, 'Given up, cumulative']
               : [usd(v as number), 'Gap that year']} />
-          <Legend verticalAlign="top" height={28}
-            wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
+          <Legend verticalAlign="top" height={26}
+            wrapperStyle={{ fontSize: 11, color: 'var(--text-secondary)' }}
             formatter={v => v === 'pct'
               ? 'Services given up, cumulative' : 'The gap, each year'} />
           <Bar yAxisId="right" dataKey="pct" fill="var(--status-critical)"
@@ -397,52 +409,64 @@ function Degradation({ rows }: {
   )
 }
 
-/** The two trajectories, and the point where one of them stops being available. */
-function Compounding({ rows, exhausted }: {
-  rows: { fy: number; nothingCut: number; afterCuts: number; unclosed: number }[]
-  exhausted?: { fy: number }
+/** One future, priced on its own terms. */
+function Scenario({ title, lead, leadNote, body, chart, rows, tone }: {
+  title: string; lead: string; leadNote: string
+  body: React.ReactNode; chart: React.ReactNode
+  rows: [string, string][]; tone?: string
 }) {
   return (
-    <div>
-      <div style={{ width: '100%', height: 280 }}>
-        <ResponsiveContainer>
-          <LineChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
-            <CartesianGrid stroke="var(--grid)" vertical={false} />
-            {exhausted && (
-              <ReferenceArea x1={exhausted.fy} x2={rows[rows.length - 1].fy}
-                fill="var(--status-critical)" fillOpacity={0.07} />
-            )}
-            <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
-              stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
-            <YAxis width={56} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
-              stroke="var(--axis)" tickLine={false} axisLine={false}
-              tickFormatter={v => usdShort(v as number)} />
-            <Tooltip
-              contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
-                              borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
-              labelFormatter={v => `FY${v}`}
-              formatter={(v, n) => [usd(v as number),
-                n === 'nothingCut' ? 'If nothing is cut' : 'Fresh gap after cutting']} />
-            <Legend verticalAlign="top" height={28} iconType="plainline"
-              wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
-              formatter={v => v === 'nothingCut'
-                ? 'If nothing is cut' : 'Fresh gap each year, after cutting'} />
-            <Line type="monotone" dataKey="nothingCut" stroke="var(--status-critical)"
-              strokeWidth={2} dot={false} isAnimationActive={false} />
-            <Line type="monotone" dataKey="afterCuts" stroke="var(--series-cost)"
-              strokeWidth={2} dot={false} isAnimationActive={false} />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      {exhausted && (
-        <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
-          The shaded years are after the model has run out of programs to cut. The blue
-          line rejoins the red one because there is nothing left to hold it down &mdash;
-          cutting bought time, not a solution. Which programs go, and in what order, comes
-          from the School Committee&rsquo;s own revealed ranking; a different ranking
-          changes what is lost, not the arithmetic.
-        </p>
-      )}
+    <div className="card p-5 flex flex-col">
+      <h4 className="text-[15px] font-bold mb-2">{title}</h4>
+      <p className="text-3xl font-bold tnum leading-none"
+        style={{ color: tone ?? 'var(--series-cost)' }}>{lead}</p>
+      <p className="text-[11px] mt-1 mb-3" style={{ color: 'var(--text-muted)' }}>
+        {leadNote}
+      </p>
+      <p className="text-[13px] leading-relaxed mb-4"
+        style={{ color: 'var(--text-secondary)' }}>{body}</p>
+      <div className="flex-1">{chart}</div>
+      <dl className="mt-3 pt-3 border-t space-y-1.5" style={{ borderColor: 'var(--grid)' }}>
+        {rows.map(([k, v]) => (
+          <div key={k} className="flex items-baseline justify-between gap-3 text-[12px]">
+            <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
+            <dd className="font-bold tnum shrink-0">{v}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+
+/** Fresh money each year against the permanent total it builds up to. */
+function FundingChart({ rows }: {
+  rows: { fy: number; cumulative: number; fresh: number }[]
+}) {
+  return (
+    <div style={{ width: '100%', height: 240 }}>
+      <ResponsiveContainer>
+        <ComposedChart data={rows} margin={{ top: 8, right: 8, bottom: 4, left: 4 }}>
+          <CartesianGrid stroke="var(--grid)" vertical={false} />
+          <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
+          <YAxis width={52} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} axisLine={false}
+            tickFormatter={v => usdShort(v as number)} />
+          <Tooltip
+            contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
+                            borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
+            labelFormatter={v => `FY${v}`}
+            formatter={(v, n) => [usd(v as number),
+              n === 'fresh' ? 'Fresh money that year' : 'Permanent revenue in place']} />
+          <Legend verticalAlign="top" height={26}
+            wrapperStyle={{ fontSize: 11, color: 'var(--text-secondary)' }}
+            formatter={v => v === 'fresh' ? 'Fresh money that year' : 'Permanent total'} />
+          <Bar dataKey="cumulative" fill="var(--series-cost)" fillOpacity={0.3}
+            isAnimationActive={false} />
+          <Line type="monotone" dataKey="fresh" stroke="var(--series-cost)"
+            strokeWidth={2} dot={false} isAnimationActive={false} />
+        </ComposedChart>
+      </ResponsiveContainer>
     </div>
   )
 }
