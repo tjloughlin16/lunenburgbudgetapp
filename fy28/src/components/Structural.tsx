@@ -100,6 +100,32 @@ export function Structural() {
   const billImpact = Math.round(
     (T.avgHomeValue * ((base[9].deficit * 1000) / T.totalValue)) / 1000)
 
+  // The floor. Only a sliver of a school budget is ever genuinely on the table: the
+  // catalogue this tool can cut is 14.8% of the appropriation, and a piece of even that
+  // is legally mandated. Everything else — core teaching, most special education,
+  // transport, utilities, benefits — is never offered as a cut by anyone.
+  const approp = MODEL.fy27.lps_appropriation + MODEL.fy27.stm_appropriation
+  const inCatalogue = MODEL.programs
+    .filter(p => p.status === 'funded' || p.status === 'restoring')
+    .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
+  const mandatedItems = MODEL.programs
+    .filter(p => (p.status === 'funded' || p.status === 'restoring')
+      && p.mandate === 'legal')
+  const mandatedInCatalogue = mandatedItems
+    .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
+  const floor = approp - inCatalogue + mandatedInCatalogue
+  // Discretionary share of the budget, year by year, as the cuts land.
+  const budgetMix = casc.map((y, i) => {
+    const left = Math.max(0, inCatalogue - mandatedInCatalogue
+      - casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0))
+    const budget = base[i].levelService
+    return {
+      fy: y.fy,
+      discretionary: +((left / budget) * 100).toFixed(1),
+      locked: +(100 - (left / budget) * 100).toFixed(1),
+    }
+  })
+
   return (
     <div>
       {/* ---- the two rates ---- */}
@@ -269,6 +295,70 @@ export function Structural() {
         </div>
       </div>
 
+      {/* ---- the floor: what can never be cut at all ---- */}
+      <h3 className="text-sm font-bold mb-1">
+        What must always be funded, no matter what
+      </h3>
+      <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        The reason the cut list runs out so fast is that it was never very long. Almost all
+        of a school budget is not available to cut in the first place, and what the cutting
+        route really does is spend the small part that is.
+      </p>
+      <div className="grid gap-3 sm:grid-cols-3 mb-4">
+        <div className="card p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Never on the table</p>
+          <p className="text-2xl font-bold tnum leading-none"
+            style={{ color: 'var(--status-warning)' }}>
+            {((floor / approp) * 100).toFixed(0)}%
+          </p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            {usd(floor)} of the {usd(approp)} appropriation — core teaching staff, most
+            special education, transport, utilities and benefits, plus the mandated items
+            below
+          </p>
+        </div>
+        <div className="card p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Genuinely discretionary</p>
+          <p className="text-2xl font-bold tnum leading-none">
+            {(((inCatalogue - mandatedInCatalogue) / approp) * 100).toFixed(0)}%
+          </p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            {usd(inCatalogue - mandatedInCatalogue)} — every athletic team, club, library,
+            elective, art supply and administrative line this tool offers, added together
+          </p>
+        </div>
+        <div className="card p-4" style={{ background: 'var(--surface-3)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Mandated by law, in the catalogue</p>
+          <p className="text-2xl font-bold tnum leading-none">{usd(mandatedInCatalogue)}</p>
+          <ul className="text-[12px] mt-1.5 space-y-0.5"
+            style={{ color: 'var(--text-secondary)' }}>
+            {mandatedItems.map(p => (
+              <li key={p.id} className="flex justify-between gap-2">
+                <span className="truncate">{p.name.replace(/ \(.*\)$/, '')}</span>
+                <span className="tnum shrink-0">{usdShort(p.cost * (p.repeatable ?? 1))}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        So the budget starts barely flexible and ends completely rigid. Every year of
+        cutting converts discretionary spending into mandatory spending &mdash; not by
+        adding mandates, but by removing everything else around them.
+      </p>
+      <LockChart rows={budgetMix} />
+      <p className="text-[11px] mt-1 mb-8" style={{ color: 'var(--text-muted)' }}>
+        A budget that is {budgetMix[0].locked.toFixed(0)}% locked in FY{budgetMix[0].fy}{' '}
+        is {budgetMix[5].locked.toFixed(0)}% locked by FY{budgetMix[5].fy}. At that point every dollar the
+        district spends is a dollar it has no choice about, and the only remaining
+        responses are an override or cutting things nobody has ever put on a list &mdash;
+        classroom teachers, and the mandated services themselves.
+      </p>
+
       {/* ---- how to read the number, because it is easy to read it wrong ---- */}
       <div className="card p-5 mb-8">
         <h3 className="text-sm font-bold mb-2">
@@ -409,6 +499,40 @@ function Degradation({ rows }: {
             fillOpacity={0.35} isAnimationActive={false} />
           <Line yAxisId="left" type="monotone" dataKey="gap" stroke="var(--series-cost)"
             strokeWidth={2} dot={false} isAnimationActive={false} />
+        </ComposedChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
+/** Discretionary spending as a share of the budget, collapsing year by year. */
+function LockChart({ rows }: {
+  rows: { fy: number; discretionary: number; locked: number }[]
+}) {
+  return (
+    <div style={{ width: '100%', height: 220 }}>
+      <ResponsiveContainer>
+        <ComposedChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}
+          stackOffset="expand">
+          <CartesianGrid stroke="var(--grid)" vertical={false} />
+          <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
+          <YAxis width={44} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} axisLine={false}
+            tickFormatter={v => `${Math.round((v as number) * 100)}%`} />
+          <Tooltip
+            contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
+                            borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
+            labelFormatter={v => `FY${v}`}
+            formatter={(v, n) => [`${(v as number).toFixed(1)}%`,
+              n === 'locked' ? 'Cannot be cut' : 'Still discretionary']} />
+          <Legend verticalAlign="top" height={26} iconType="square"
+            wrapperStyle={{ fontSize: 11, color: 'var(--text-secondary)' }}
+            formatter={v => v === 'locked' ? 'Cannot be cut' : 'Still discretionary'} />
+          <Bar dataKey="locked" stackId="a" fill="var(--status-warning)"
+            fillOpacity={0.45} isAnimationActive={false} />
+          <Bar dataKey="discretionary" stackId="a" fill="var(--series-cost)"
+            isAnimationActive={false} />
         </ComposedChart>
       </ResponsiveContainer>
     </div>

@@ -11,13 +11,11 @@ import { CommercialTrend, HomeValueParadox } from '../components/CommercialTrend
 import { BusinessFormation, BusinessCategories } from '../components/BusinessFormation'
 import { Conclusions } from '../components/Conclusions'
 import { Derivations } from '../components/Derivations'
-import { Structural } from '../components/Structural'
 
 export const CONTEXT_NAV = [
   ['conclusions', 'What we found'],
   ['where-we-are', 'Where we are'],
   ['the-money', 'The money'],
-  ['structural', 'Why it repeats'],
   ['neighbors', 'Neighbors'],
   ['fees', 'Fees today'],
   ['tax-base', 'Business growth'],
@@ -184,15 +182,6 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
             </Note>
           </div>
         </div>
-      </Section>
-
-      <Section id="structural" eyebrow="The root cause"
-        title="Why this keeps happening"
-        lede={<>Lunenburg closed a budget gap last year and is facing a bigger one this
-          year. That is not mismanagement and it is not bad luck &mdash; it is arithmetic
-          that was always going to produce this, and it will produce it again next year.
-          Here is the mechanism, and what it would genuinely take to stop it.</>}>
-        <Structural />
       </Section>
 
       <Section id="neighbors" eyebrow="Local comparison"

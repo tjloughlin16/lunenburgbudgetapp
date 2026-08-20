@@ -5,11 +5,13 @@ import { Context, CONTEXT_NAV } from './pages/Context'
 import { Priorities } from './pages/Priorities'
 import { Adjust } from './pages/Adjust'
 import { Development } from './pages/Development'
+import { WhyItRepeats } from './pages/WhyItRepeats'
 
-type Tab = 'context' | 'priorities' | 'adjust' | 'development'
+type Tab = 'context' | 'why' | 'priorities' | 'adjust' | 'development'
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
+  { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
   { id: 'adjust', label: 'Adjust', sub: 'Every dial that moves the gap, on one page' },
   { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
@@ -96,6 +98,8 @@ export default function App() {
         setPreset('our_recommendation')
         go('priorities')
       }} />}
+
+      {tab === 'why' && <WhyItRepeats />}
 
       {tab === 'priorities' && (
         <Priorities order={order} setOrder={setOrder} preset={preset} setPreset={setPreset}
