@@ -1,5 +1,11 @@
 import { useMemo } from 'react'
-import { MODEL, project, usd, usdShort, type Assumptions } from '../model/engine'
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceArea,
+  ResponsiveContainer,
+} from 'recharts'
+import {
+  MODEL, project, runCascade, usd, usdShort, type Assumptions,
+} from '../model/engine'
 
 const A = MODEL.assumptions
 const T = MODEL.taxBase
@@ -46,6 +52,24 @@ export function Structural() {
   }
   const mix = T.archetypes.find(a => a.id === 'mix')?.value ?? 3_005_000
   const bentHealth = project(10, { ...A, health: 0.04 })
+
+  // Cutting does not slow the gap — it converts a compounding number into a recurring
+  // one, and spends the program catalog doing it. The cascade uses the School
+  // Committee's own revealed ranking; a different ranking changes what is lost, not the
+  // arithmetic.
+  const casc = useMemo(
+    () => runCascade(MODEL.presets.school_committee.order, A, 10), [])
+  const trajectory = base.slice(0, 10).map((y, i) => ({
+    fy: y.fy,
+    nothingCut: y.deficit,
+    afterCuts: casc[i].deficit,
+    unclosed: casc[i].unclosed,
+  }))
+  const exhausted = casc.find(y => y.unclosed > 0)
+  const cutting = casc.filter(y => y.cutTotal > 0)
+  const recurring = cutting.reduce((s2, y) => s2 + y.deficit, 0) / cutting.length
+  const cumCut = casc.reduce((s2, y) => s2 + y.cutTotal, 0)
+  const cumFte = casc[casc.length - 1].cumFte
 
   return (
     <div>
@@ -123,23 +147,98 @@ export function Structural() {
         })}
       </ul>
 
-      {/* ---- what it compounds to ---- */}
+      {/* ---- what it compounds to, and what cutting does to that ---- */}
       <h3 className="text-sm font-bold mb-1">What 2.44 points a year turns into</h3>
-      <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        This is why closing one year&rsquo;s gap does not fix anything: the shortfall is not
-        a one-off, it is a rate, and rates compound.
+      <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        Two different futures, and the difference matters more than either number. Leave
+        everything funded and the shortfall compounds to {usdShort(base[9].deficit)} by
+        FY{base[9].fy}. Close each year by cutting and it does <em>not</em> compound
+        &mdash; because every cut permanently lowers the base the next year grows from.
+        What you get instead is a gap that lands again every single year, at roughly{' '}
+        {usdShort(recurring)}, forever.
       </p>
-      <div className="flex flex-wrap gap-2 mb-8">
-        {[0, 2, 4, 6, 9].map(i => (
-          <div key={i} className="card px-4 py-3 flex-1 min-w-[7rem]">
-            <p className="text-[11px] font-semibold uppercase tracking-widest"
-              style={{ color: 'var(--text-muted)' }}>FY{base[i].fy}</p>
-            <p className="text-xl font-bold tnum leading-none mt-1"
-              style={{ color: 'var(--status-critical)' }}>
-              {usdShort(base[i].deficit)}
+      <Compounding rows={trajectory} exhausted={exhausted} />
+      <div className="grid gap-3 sm:grid-cols-3 mt-4 mb-8">
+        <div className="card p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>The gap you actually face</p>
+          <p className="text-2xl font-bold tnum leading-none"
+            style={{ color: 'var(--status-critical)' }}>{usdShort(recurring)}</p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            of <strong>fresh</strong> cuts a year once you are cutting — not a growing
+            number, a repeating one
+          </p>
+        </div>
+        <div className="card p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>What that costs by FY{exhausted?.fy ?? 33}</p>
+          <p className="text-2xl font-bold tnum leading-none"
+            style={{ color: 'var(--status-critical)' }}>{cumFte} FTE</p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            and {usd(cumCut)} of programs — the damage compounds even though the gap does
+            not
+          </p>
+        </div>
+        <div className="card p-4" style={{ background: 'var(--surface-3)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Then the list runs out</p>
+          <p className="text-2xl font-bold tnum leading-none"
+            style={{ color: 'var(--status-critical)' }}>FY{exhausted?.fy ?? 33}</p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            every discretionary program in the model is gone, and the gap starts
+            compounding for real &mdash; {usdShort(base[9].deficit - cumCut)} unclosed by
+            FY{base[9].fy}
+          </p>
+        </div>
+      </div>
+
+      {/* ---- how to read the number, because it is easy to read it wrong ---- */}
+      <div className="card p-5 mb-8">
+        <h3 className="text-sm font-bold mb-2">
+          How to read &ldquo;{usdShort(base[9].deficit)} by FY{base[9].fy}&rdquo;
+        </h3>
+        <div className="grid gap-4 md:grid-cols-3 text-[13px] leading-relaxed"
+          style={{ color: 'var(--text-secondary)' }}>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--text-muted)' }}>It is an annual figure</p>
+            <p>
+              Not a running total. In FY{base[9].fy} alone, running FY27&rsquo;s services
+              would cost {usd(base[9].levelService)} against {usd(base[9].available)} of
+              revenue. The next year it starts again, larger.
             </p>
           </div>
-        ))}
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--text-muted)' }}>It is in future dollars</p>
+            <p>
+              {usdShort(base[9].deficit)} of FY{base[9].fy} money, ten fiscal years out.
+              In today&rsquo;s purchasing power that is roughly{' '}
+              <strong>{usd(Math.round(base[9].deficit / Math.pow(1 + LEVY_CAP, 10)))}</strong>{' '}
+              &mdash; still enormous, but not as enormous as it looks.
+            </p>
+          </div>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--status-critical)' }}>Nobody will ever see it</p>
+            <p>
+              Massachusetts budgets must balance, so this shortfall never appears on a
+              statement. It is not a prediction of a deficit &mdash; it is{' '}
+              <strong>the annual price, in FY{base[9].fy}, of still having what the
+              district has today</strong>.
+            </p>
+          </div>
+        </div>
+        <p className="text-[13px] leading-relaxed mt-4 pt-4 border-t"
+          style={{ borderColor: 'var(--grid)' }}>
+          <strong>What you would actually see in FY{base[9].fy}</strong> is that figure
+          paid in two currencies instead of one: about <strong>{usd(cumCut)}</strong> of
+          programs and {cumFte} staff positions already gone, so the district is no longer
+          buying them &mdash; plus roughly <strong>{usdShort(casc[9].unclosed)}</strong>{' '}
+          still unfunded in that year, with nothing left on the list to cut. The two do not
+          add exactly to {usdShort(base[9].deficit)}, because a cut made early also stops
+          inflating; cutting sooner is worth more than cutting later.
+        </p>
       </div>
 
       {/* ---- the three ways out ---- */}
@@ -189,10 +288,62 @@ export function Structural() {
           {usdShort(106.9e6)} a year, and passing {usd(613_238)} of override covers the
           whole fifteen years. Any one of them alone does not. That is the honest shape of
           the problem &mdash; not a single decision anybody can take at a Town Meeting, but
-          three sustained ones, and the cuts on the other pages are what happens in the
-          years before they arrive.
+          three sustained ones. Cutting is not a fourth option so much as what happens
+          while none of them is chosen: it holds the line for about{' '}
+          {cutting.length} years, at {cumFte} staff positions and {usd(cumCut)} of
+          programs, and then there is nothing left to cut and the arithmetic resumes.
         </p>
       </div>
+    </div>
+  )
+}
+
+/** The two trajectories, and the point where one of them stops being available. */
+function Compounding({ rows, exhausted }: {
+  rows: { fy: number; nothingCut: number; afterCuts: number; unclosed: number }[]
+  exhausted?: { fy: number }
+}) {
+  return (
+    <div>
+      <div style={{ width: '100%', height: 280 }}>
+        <ResponsiveContainer>
+          <LineChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            {exhausted && (
+              <ReferenceArea x1={exhausted.fy} x2={rows[rows.length - 1].fy}
+                fill="var(--status-critical)" fillOpacity={0.07} />
+            )}
+            <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+              stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
+            <YAxis width={56} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+              stroke="var(--axis)" tickLine={false} axisLine={false}
+              tickFormatter={v => usdShort(v as number)} />
+            <Tooltip
+              contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
+                              borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
+              labelFormatter={v => `FY${v}`}
+              formatter={(v, n) => [usd(v as number),
+                n === 'nothingCut' ? 'If nothing is cut' : 'Fresh gap after cutting']} />
+            <Legend verticalAlign="top" height={28} iconType="plainline"
+              wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
+              formatter={v => v === 'nothingCut'
+                ? 'If nothing is cut' : 'Fresh gap each year, after cutting'} />
+            <Line type="monotone" dataKey="nothingCut" stroke="var(--status-critical)"
+              strokeWidth={2} dot={false} isAnimationActive={false} />
+            <Line type="monotone" dataKey="afterCuts" stroke="var(--series-cost)"
+              strokeWidth={2} dot={false} isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      {exhausted && (
+        <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
+          The shaded years are after the model has run out of programs to cut. The blue
+          line rejoins the red one because there is nothing left to hold it down &mdash;
+          cutting bought time, not a solution. Which programs go, and in what order, comes
+          from the School Committee&rsquo;s own revealed ranking; a different ranking
+          changes what is lost, not the arithmetic.
+        </p>
+      )}
     </div>
   )
 }
