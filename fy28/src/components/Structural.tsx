@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceArea,
-  ResponsiveContainer,
+  ComposedChart, LineChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ReferenceArea, ResponsiveContainer,
 } from 'recharts'
 import {
   MODEL, project, runCascade, usd, usdShort, type Assumptions,
@@ -70,6 +70,20 @@ export function Structural() {
   const recurring = cutting.reduce((s2, y) => s2 + y.deficit, 0) / cutting.length
   const cumCut = casc.reduce((s2, y) => s2 + y.cutTotal, 0)
   const cumFte = casc[casc.length - 1].cumFte
+
+  // The gap is a rate; the cuts are a stock. Holding one flat is what makes the other
+  // climb, and that inverse is the thing residents actually live through.
+  const pool = MODEL.programs
+    .filter(p => p.status === 'funded' || p.status === 'restoring')
+    .reduce((s2, p) => s2 + p.cost * (p.repeatable ?? 1), 0)
+  const degradation = casc.map((y, i) => ({
+    fy: y.fy,
+    gap: Math.round(y.deficit),
+    spent: Math.round(casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0)),
+    pct: Math.round((casc.slice(0, i + 1).reduce((s2, c) => s2 + c.cutTotal, 0) / pool) * 100),
+  }))
+  const atWall = degradation[(exhausted
+    ? casc.findIndex(y => y.unclosed > 0) : 5)] ?? degradation[5]
 
   return (
     <div>
@@ -192,6 +206,51 @@ export function Structural() {
         </div>
       </div>
 
+      {/* ---- the inverse: flat gap, falling services ---- */}
+      <h3 className="text-sm font-bold mb-1">
+        The gap stays the same size. The district does not.
+      </h3>
+      <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        This is the part that is easy to miss and hardest to live with. Closing the same
+        gap every year does not shrink the gap &mdash; it shrinks the school district. The
+        shortfall is a <em>rate</em>, so it renews; the cuts are a <em>stock</em>, so they
+        accumulate. One line below is flat and the other is a staircase, and that is the
+        whole experience of the last decade compressed into one picture.
+      </p>
+      <Degradation rows={degradation} />
+      <div className="grid gap-3 sm:grid-cols-3 mt-4 mb-8">
+        <div className="card p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Cut by FY{atWall.fy}</p>
+          <p className="text-2xl font-bold tnum leading-none"
+            style={{ color: 'var(--status-critical)' }}>{atWall.pct}%</p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            of every program the model is able to cut &mdash; {usd(atWall.spent)} of a{' '}
+            {usdShort(pool)} pool
+          </p>
+        </div>
+        <div className="card p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Against a gap of</p>
+          <p className="text-2xl font-bold tnum leading-none">{usdShort(atWall.gap)}</p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            that year &mdash; so you will have given up{' '}
+            <strong>{(atWall.spent / atWall.gap).toFixed(1)}&times; the size of the
+            problem</strong> and still have the problem
+          </p>
+        </div>
+        <div className="card p-4" style={{ background: 'var(--surface-3)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>And it never closes</p>
+          <p className="text-2xl font-bold tnum leading-none"
+            style={{ color: 'var(--status-critical)' }}>FY{atWall.fy + 1}</p>
+          <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+            opens with a gap like every year before it, only now there is nothing left on
+            the list to close it with
+          </p>
+        </div>
+      </div>
+
       {/* ---- how to read the number, because it is easy to read it wrong ---- */}
       <div className="card p-5 mb-8">
         <h3 className="text-sm font-bold mb-2">
@@ -294,6 +353,46 @@ export function Structural() {
           programs, and then there is nothing left to cut and the arithmetic resumes.
         </p>
       </div>
+    </div>
+  )
+}
+
+/** A flat gap beside a climbing loss. The inverse nobody names out loud. */
+function Degradation({ rows }: {
+  rows: { fy: number; gap: number; spent: number; pct: number }[]
+}) {
+  return (
+    <div style={{ width: '100%', height: 300 }}>
+      <ResponsiveContainer>
+        <ComposedChart data={rows} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
+          <CartesianGrid stroke="var(--grid)" vertical={false} />
+          <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} tickFormatter={v => `FY${v}`} />
+          <YAxis yAxisId="left" width={56}
+            tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} axisLine={false}
+            tickFormatter={v => usdShort(v as number)} />
+          <YAxis yAxisId="right" orientation="right" width={44} domain={[0, 100]}
+            tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+            stroke="var(--axis)" tickLine={false} axisLine={false}
+            tickFormatter={v => `${v}%`} />
+          <Tooltip
+            contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
+                            borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
+            labelFormatter={v => `FY${v}`}
+            formatter={(v, n) => n === 'pct'
+              ? [`${v}% of everything cuttable`, 'Given up, cumulative']
+              : [usd(v as number), 'Gap that year']} />
+          <Legend verticalAlign="top" height={28}
+            wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
+            formatter={v => v === 'pct'
+              ? 'Services given up, cumulative' : 'The gap, each year'} />
+          <Bar yAxisId="right" dataKey="pct" fill="var(--status-critical)"
+            fillOpacity={0.35} isAnimationActive={false} />
+          <Line yAxisId="left" type="monotone" dataKey="gap" stroke="var(--series-cost)"
+            strokeWidth={2} dot={false} isAnimationActive={false} />
+        </ComposedChart>
+      </ResponsiveContainer>
     </div>
   )
 }
