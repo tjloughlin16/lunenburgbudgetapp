@@ -148,8 +148,16 @@ export const ADMIN = {
   lawful: Math.round(lawfulRungs.reduce((s, r) => s + r.amount, 0)),
   lawfulCount: lawfulRungs.length,
   lawfulFte: lawfulRungs.reduce((s, r) => s + r.fte, 0),
-  /** The rungs that are lines rather than people — the cut everybody assumes is there. */
+  /** The rungs that do not eliminate a job — the cut everybody assumes is there.
+   *  Note that "not a job" is not the same as "not anybody's money": stipends and
+   *  overtime inside this figure are pay, they just are not a position. */
   paperOnly: Math.round(lawfulRungs.filter(r => r.fte === 0)
+    .reduce((s, r) => s + r.amount, 0)),
+  /** The part of that which genuinely costs nobody anything: supplies, dues, postage. */
+  invisible: Math.round(lawfulRungs.filter(r => r.id === 'office')
+    .reduce((s, r) => s + r.amount, 0)),
+  /** Stipends and overtime — inside paperOnly, but somebody's pay all the same. */
+  stipends: Math.round(lawfulRungs.filter(r => r.id === 'stipends')
     .reduce((s, r) => s + r.amount, 0)),
   benchmark: admin.benchmark,
 }
@@ -500,9 +508,14 @@ export interface Option {
 /** Every idea on the page, priced the same way, so they can be read against each other.
  *  `growth` is the rate the saved thing would itself have grown at — see yearsCovered. */
 export const OPTIONS: Option[] = [
-  { id: 'paper', harm: 'none', anchor: 'q4', label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
+  { id: 'paper', harm: 'real', anchor: 'q4',
+    label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
     saves: ADMIN.paperOnly, growth: A.other,
-    costs: 'Nothing anybody would see' },
+    // Called "nothing anybody would see" here until it was read properly. Only the
+    // $53,110 of supplies and dues is invisible; the rest is a stipend somebody is paid
+    // and a legal budget the district does not control the timing of.
+    costs: `Only ${usdShort(ADMIN.invisible)} of it is invisible — the rest is stipends `
+      + `somebody is paid, and a bet that no special-education dispute lands` },
   { id: 'extras', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },

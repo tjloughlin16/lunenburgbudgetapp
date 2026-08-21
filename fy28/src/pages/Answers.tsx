@@ -67,6 +67,16 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         </Note>
       </Section>
 
+      <Section id="works" eyebrow="What actually works"
+        title="The only two things that actually fix it"
+        lede={<>Every row on that table buys time &mdash; a year, in most cases. Two
+          things change the arithmetic itself rather than paying for one more year of it,
+          and both are slow, which is why neither gets raised at the meeting where next
+          April has to be settled. Everything below this is the working: why the hole
+          exists, what each answer above is really worth, and where it came from.</>}>
+        <WhatWorks onJump={onJump} />
+      </Section>
+
       <Section id="short" eyebrow="Why any of this is necessary"
         title="The whole thing in four sentences">
         <FourSentences />
@@ -98,12 +108,6 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         <Lookback />
       </Section>
 
-      <Section id="works" eyebrow="The honest ending"
-        title="The only two things that actually fix it"
-        lede={<>Everything above buys time. Two things change the arithmetic itself, and
-          both are slow.</>}>
-        <WhatWorks onJump={onJump} />
-      </Section>
     </div>
   )
 }
@@ -396,8 +400,8 @@ function Q4() {
           sub={`${ADMIN.lawfulFte} full-time positions`}
           rows={ADMIN.people} tone="var(--status-critical)" />
         <div className="space-y-3">
-          <Roster title={`The ${ADMIN.lines.length} lines that are not people`}
-            sub="Paper, not staff — the cut everyone assumes is the whole answer"
+          <Roster title={`The ${ADMIN.lines.length} lines that are not a job`}
+            sub="Which is not the same as costing nobody anything — see below"
             rows={ADMIN.lines} tone="var(--text-secondary)" />
           <Roster title="What it cannot touch, because the state requires it"
             sub={`${usd(ADMIN.protectedTotal)} that stays no matter what`}
@@ -425,9 +429,17 @@ function Q4() {
           tone: 'var(--status-good)' },
       ]} />
       <Note>
-        If you take only the four paper lines and leave every job alone, that is{' '}
-        {usd(ADMIN.paperOnly)} &mdash; about {pct(ADMIN.paperOnly / GAP)} of the hole. For
-        scale on the whole question: {ADMIN.benchmark}.
+        <strong>The four lines that are not a job are not free either.</strong> Taking all
+        of them saves {usd(ADMIN.paperOnly)}, about {pct(ADMIN.paperOnly / GAP)} of the
+        hole &mdash; but only the {usd(ADMIN.invisible)} of dues, postage, advertising and
+        the four schools&rsquo; office supplies is genuinely invisible.{' '}
+        {usd(ADMIN.stipends)} of it is stipends and overtime: the curriculum leadership
+        work teachers are paid extra to do, and the hours the principals&rsquo; secretaries
+        work beyond their day. That is a pay cut to named people; it just does not delete a
+        position. And halving the legal budget is not a saving at all, it is a bet &mdash;
+        legal spending here is mostly special education disputes and personnel matters, and
+        the district does not control when either arrives. For scale on the whole question:{' '}
+        {ADMIN.benchmark}.
       </Note>
     </QA>
   )
