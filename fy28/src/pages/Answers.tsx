@@ -4,7 +4,7 @@ import {
   GAPS, GAP, COST_GROWTH, REVENUE_CAP, RATE_GAP, yearsCovered, shortfallAfter,
   EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL,
   CONTRACT, SETTLEMENT, COUNTERFACTUAL, FEASIBILITY, FEES, RELIEF, BENT_HEALTH,
-  OPTIONS, BEARERS, scaleAfterCut,
+  OPTIONS, BEARERS, HEALTH_LEVERS, scaleAfterCut,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
 
@@ -79,16 +79,19 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
       </Section>
 
       <Section id="works" eyebrow="What actually works"
-        title="The only two that fix it without cutting anything"
+        title="The only two that fix it without cutting a service"
         lede={<>Look again at how that table is grouped. Almost every row takes something
           from somebody &mdash; a programme from students, pay from staff, a fee from a
-          family &mdash; and buys about a year for it. <strong>Two things are different in
-          kind: no programme ends, no job goes, and nobody who works in the schools is paid
-          less.</strong> They are also the only two that are still working the year after
-          next. Both are slow, which is exactly why neither gets raised at the meeting
-          where next April has to be settled &mdash; and why next April will be settled out
-          of the groups above instead. Everything below this is the working: why the hole
-          exists, what each answer is really worth, and where it came from.</>}>
+          family &mdash; and buys about a year for it. <strong>Two are different in kind:
+          no programme ends, no job goes, and nothing a student touches is cut.</strong>{' '}
+          They are also the only two still working the year after next. That is not the
+          same as free, and neither card below pretends otherwise: an override raises the
+          tax bill, development changes what the town is, and every route to cheaper
+          insurance runs through somebody&rsquo;s coverage. What none of them does is take
+          something away from a classroom. Both are slow, which is exactly why neither gets
+          raised at the meeting where next April has to be settled &mdash; and why next
+          April will be settled out of the groups above instead. Everything below this is
+          the working.</>}>
         <WhatWorks onJump={onJump} />
       </Section>
 
@@ -1316,8 +1319,9 @@ function Lever({ n, name, head, href, children }: {
 function WhatWorks({ onJump }: {
   onJump: (tab: 'why' | 'development' | 'adjust') => void
 }) {
+  const hl = HEALTH_LEVERS
   return (
-    <div className="grid gap-4 lg:grid-cols-2">
+    <div className="grid gap-4 lg:grid-cols-2 items-start">
       <div className="card p-5">
         <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
           style={{ color: 'var(--text-muted)' }}>Fix one</p>
@@ -1362,15 +1366,68 @@ function WhatWorks({ onJump }: {
           style={{ color: 'var(--text-muted)' }}>Fix two</p>
         <h3 className="text-lg font-bold mb-2">Make something stop rising at 9%</h3>
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          The other permanent answer takes nothing from anybody &mdash; not a service, not
-          a job, not a paycheck, not a tax bill. Health insurance is{' '}
-          {pct(BENT_HEALTH.from)} a year and the biggest single driver in the budget. Hold
-          it to {pct(BENT_HEALTH.to)} &mdash; through the Town&rsquo;s insurance group, plan
-          design, or joining a larger pool &mdash; and next year&rsquo;s hole falls from{' '}
-          {usd(GAPS[0].cumulative)} to {usd(BENT_HEALTH.gaps[0].cumulative)}, and
+          Health insurance rises {pct(BENT_HEALTH.from)} a year and is the biggest single
+          driver in the budget. Hold it to {pct(BENT_HEALTH.to)} and next year&rsquo;s hole
+          falls from {usd(GAPS[0].cumulative)} to {usd(BENT_HEALTH.gaps[0].cumulative)},
           FY{GAPS[4].fy}&rsquo;s from {usd(GAPS[4].cumulative)} to{' '}
-          {usd(BENT_HEALTH.gaps[4].cumulative)}. That is {usd(BENT_HEALTH.savedByFy32)} a
-          year, without cutting a single thing a student touches.
+          {usd(BENT_HEALTH.gaps[4].cumulative)} &mdash; {usd(BENT_HEALTH.savedByFy32)} a
+          year, and not one student loses anything.
+        </p>
+        <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+          <strong>But nobody can simply decide that.</strong> The insurance market sets the
+          premium. All the town can change is which plans it buys and who is in the pool,
+          and there are three ways to do it &mdash; each of which lands on somebody, just
+          not on a student.
+        </p>
+        <ol className="space-y-3 mb-3">
+          <Lever n={1} name="Move people to cheaper plans" href="#q8"
+            head={`About ${usd(hl.migration.kept)} a year for each person who moves`}>
+            {hl.migration.onBroadest} employees are on {hl.migration.from} &mdash; the{' '}
+            {hl.migration.fromNetwork.toLowerCase()}. {hl.migration.to} costs{' '}
+            {usd(hl.migration.familyGap)} a year less at the family tier. Move everyone on
+            the broadest plan and it is about {usd(hl.migration.ifAll)} a year.{' '}
+            <strong>What it costs:</strong> a narrower network &mdash; the saving <em>is</em>{' '}
+            the narrower network. Your doctor may not be in it. Push it further and the
+            only cheaper thing on offer is the {hl.highDeductible} deductible plan, which
+            moves the cost to whoever gets sick.
+          </Lever>
+          <Lever n={2} name="Pay people to take other coverage" href="#q8"
+            head={`About ${usd(hl.optOut.net)} a year for each person who opts out`}>
+            The one genuinely cheap lever, and the town has already pulled it: in March
+            2026 the School Committee approved a better opt-out &mdash; eligible after{' '}
+            {hl.optOut.waitYears} year instead of {hl.optOut.priorWaitYears}, and the
+            incentive raised from ${hl.optOut.priorIndividual.toLocaleString()}/$
+            {hl.optOut.priorFamily.toLocaleString()} to $
+            {hl.optOut.individual.toLocaleString()}/${hl.optOut.family.toLocaleString()}.
+            The town stops paying a {usd(hl.optOut.premium)} premium and pays{' '}
+            {usd(hl.optOut.incentive)} instead. <strong>What it costs:</strong> very
+            little, and that is also its limit &mdash; only people who already have
+            coverage somewhere else can take it, and the district does not publish how many
+            that is.
+          </Lever>
+          <Lever n={3} name="Join a bigger pool" href="#q8"
+            head="Not priced here, because the town has not put a number on it">
+            The state&rsquo;s Group Insurance Commission, or a regional collaborative. It is
+            the standard Massachusetts move and it is the only one of the three that changes
+            the <em>rate</em> rather than the bill. <strong>What it costs:</strong> local
+            control of plan design, and everybody&rsquo;s plan changes at once, not just the
+            people who volunteer.
+          </Lever>
+        </ol>
+        <p className="text-[12px] leading-relaxed mb-3" style={{ color: 'var(--text-muted)' }}>
+          Two things govern all three. Plan design changes go through the Public Employee
+          Committee under M.G.L. c.32B &sect;&sect;21&ndash;23, and a quarter of the
+          first-year saving goes back to employees &mdash; already netted out of the figures
+          above. And <strong>the Town, not the school district, owns the insurance
+          group</strong>, so this is the one answer on the page the schools cannot reach by
+          themselves.
+        </p>
+        <p className="text-[12px] leading-relaxed mb-3" style={{ color: 'var(--text-muted)' }}>
+          Worth saying against our own model: {pct(hl.assumed)} is an assumption, not a
+          measurement. Lunenburg&rsquo;s FY27 premiums actually rose{' '}
+          {pct(hl.actualFy27, 2)}, while neighbouring districts saw 8&ndash;14%. If the
+          real number is nearer the low end, the gap on this page is smaller than shown
+          &mdash; and so is everything this lever appears to save.
         </p>
         <button onClick={() => onJump('why')}
           className="text-[12px] font-semibold" style={{ color: 'var(--series-cost)' }}>

@@ -558,6 +558,56 @@ export const COUNTERFACTUAL = {
   sample: CONTRACT.samples[1],
 }
 
+/** The three things that could actually bend the health curve, and what each costs.
+ *
+ *  "Hold health insurance to 4%" was written here as though a cost curve bends because
+ *  somebody decides it should, and it reads as magic: a million dollars a year and
+ *  nobody pays. Nobody sets the premium. What the town can change is which plans it buys
+ *  and who is in the pool, and every one of those routes lands on somebody's coverage.
+ *
+ *  This is still the least painful column on the page. It is not a painless one, and the
+ *  difference matters. */
+const plan = (id: string) => MODEL.health.plans.find(p => p.id === id)!
+/** Annual premium for one enrollee, blended across the family/individual mix. */
+const blended = (id: string) => {
+  const p = plan(id), f = MODEL.health.familyShare
+  return p.family * 12 * f + p.individual * 12 * (1 - f)
+}
+
+export const HEALTH_LEVERS = (() => {
+  const broadest = plan('bce'), narrower = plan('bs')
+  const perMover = blended('bce') - blended('bs')
+  const incentive = 6000 * MODEL.health.familyShare + 3000 * (1 - MODEL.health.familyShare)
+  return {
+    /** Moving one person off the broadest plan onto the narrower one. */
+    migration: {
+      from: broadest.name, to: narrower.name,
+      fromNetwork: broadest.network, toNetwork: narrower.network,
+      gross: Math.round(perMover),
+      /** 25% of first-year savings go back to employees under c.32B §§21-23. */
+      kept: Math.round(perMover * MODEL.health.townShare * 0.75),
+      onBroadest: MODEL.health.enrolment.bce,
+      ifAll: Math.round(perMover * MODEL.health.townShare * 0.75
+        * MODEL.health.enrolment.bce),
+      familyGap: Math.round((broadest.family - narrower.family) * 12),
+    },
+    /** The opt-out the School Committee actually voted in March 2026. */
+    optOut: {
+      incentive: Math.round(incentive),
+      premium: Math.round(blended('bce') * MODEL.health.townShare),
+      net: Math.round(blended('bce') * MODEL.health.townShare - incentive),
+      family: 6000, individual: 3000, waitYears: 1,
+      priorFamily: 4000, priorIndividual: 2000, priorWaitYears: 2,
+    },
+    /** The rate this all turns on, and the reason to treat it as an assumption. */
+    assumed: A.health,
+    actualFy27: MODEL.health.rateIncrease,
+    /** The highest-deductible plan on offer, for what "plan design" means in practice. */
+    highDeductible: plan('abs').deductible,
+    constraints: MODEL.health.constraints,
+  }
+})()
+
 /* ---- the scoreboard ------------------------------------------------------ */
 
 export interface Option {
