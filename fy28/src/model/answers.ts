@@ -250,6 +250,10 @@ function feeCase(id: string, label: string, what: string) {
      *  already being collected. Fees do not save what is not being spent. */
     gain: Math.round(Math.min(selfFund !== null ? l.cap : (l.peakYield ?? 0),
                               l.peakYield ?? 0) - now),
+    /** Same figure, named for the bar it draws: the segment between what fees bring in
+     *  now and the most they could. */
+    headroom: Math.round(Math.min(selfFund !== null ? l.cap : (l.peakYield ?? 0),
+                                  l.peakYield ?? 0) - now),
     payers: l.basis,
     payersKnown: l.basisKnown !== false,
     caveat: l.caveat,
@@ -576,11 +580,21 @@ export const OPTIONS: Option[] = [
     // and a legal budget the district does not control the timing of.
     costs: `Only ${usdShort(ADMIN.invisible)} of it is invisible — the rest is stipends `
       + `somebody is paid, and a bet that no special-education dispute lands` },
-  { id: 'fees', harm: 'severe', anchor: 'q4',
+  { id: 'fee_ath', harm: 'severe', anchor: 'q4',
     label: 'Charge athletics fees until sports pay for themselves',
     saves: FEES.cases[0].gain, growth: A.salaries,
     costs: `$${FEES.cases[0].selfFund} a season per sport, per child — up from `
       + `$${FEES.cases[0].currentFee} on a fee that just rose 60%` },
+  { id: 'fee_act', harm: 'severe', anchor: 'q4',
+    label: 'Charge for band, music and every club until they pay for themselves',
+    saves: FEES.cases[1].gain, growth: A.salaries,
+    costs: `$${FEES.cases[1].selfFund} per student per activity, from nothing today — and `
+      + `the students who quit first are the ones the club keeps in school` },
+  { id: 'fee_bus', harm: 'severe', anchor: 'q4',
+    label: 'Raise bus fares to the most they could ever raise',
+    saves: FEES.cases[2].gain, growth: A.transport,
+    costs: `$${FEES.cases[2].peakFee} a rider, up from $${FEES.cases[2].currentFee} — and `
+      + `it still covers only ${Math.round(FEES.cases[2].peakCoverage * 100)}% of what buses cost` },
   { id: 'extras', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },

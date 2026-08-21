@@ -66,6 +66,12 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
           faster, from a much larger base &mdash; which is the reason the column reads the
           way it does, and the subject of the rest of this page.
         </Note>
+        <Note>
+          Each row is priced on its own, and several can be done at once. The three fee
+          rows together are worth {usd(FEES.total)} &mdash; {pct(FEES.shareOfGap)} of next
+          year&rsquo;s hole, and the most the district can raise without the Town, a union
+          or a ballot.
+        </Note>
       </Section>
 
       <Section id="works" eyebrow="What actually works"
@@ -430,6 +436,22 @@ function Q4() {
   )
 }
 
+/** One entry in a bar's key. The bars were three unlabelled segments until somebody
+ *  reasonably asked what they were showing. */
+function Key({ color, label, value, faded, outline }: {
+  color: string; label: string; value: string; faded?: boolean; outline?: boolean
+}) {
+  return (
+    <li className="flex items-baseline gap-1.5">
+      <span className="w-2.5 h-2.5 rounded-sm shrink-0 translate-y-px"
+        style={{ background: color, opacity: faded ? 0.55 : 1,
+                 border: outline ? '1px solid var(--axis)' : 'none' }} aria-hidden="true" />
+      <span style={{ color: 'var(--text-secondary)' }}>{label}</span>
+      <span className="font-semibold tnum">{value}</span>
+    </li>
+  )
+}
+
 /** One programme's fee arithmetic: what it costs, what fees cover now, and the ceiling. */
 function FeeCase({ c }: { c: typeof FEES.cases[number] }) {
   const width = (n: number) => `${Math.min(100, (n / c.cost) * 100)}%`
@@ -447,24 +469,30 @@ function FeeCase({ c }: { c: typeof FEES.cases[number] }) {
         </span>
       </div>
 
-      <div className="mt-3 mb-1.5 h-5 rounded-sm relative"
+      <p className="text-[11px] mt-3 mb-1" style={{ color: 'var(--text-muted)' }}>
+        The whole bar is the {usd(c.cost)} a year this costs to run. Who pays it:
+      </p>
+      <div className="mb-2 h-6 rounded-sm relative overflow-hidden flex"
         style={{ background: 'var(--surface-3)' }}>
-        <span className="absolute inset-y-0 left-0 rounded-sm"
-          style={{ width: width(c.peakYield), background: 'var(--surface-3)',
-                   borderRight: c.reachable ? 'none' : '2px dashed var(--status-critical)' }} />
-        <span className="absolute inset-y-0 left-0 rounded-sm"
-          style={{ width: width(c.currentYield), background: 'var(--series-cost)' }} />
+        <span style={{ width: width(c.currentYield), background: 'var(--series-cost)' }} />
+        <span style={{ width: width(Math.max(0, c.headroom)),
+                       background: 'var(--status-warning)', opacity: 0.55 }} />
       </div>
-      <div className="flex justify-between text-[11px]" style={{ color: 'var(--text-muted)' }}>
-        <span>
-          Fees cover <strong style={{ color: 'var(--series-cost)' }}>
-            {pct(c.coverageNow)}</strong> today
-          {c.currentFee > 0
-            ? <> at {usd(c.currentFee)}</>
-            : <> &mdash; we could not confirm any fee exists</>}
-        </span>
-        <span>{usd(c.cost)} to run it</span>
-      </div>
+      <ul className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] mb-1">
+        <Key color="var(--series-cost)"
+          label={`Fees today, at ${c.currentFee > 0 ? usd(c.currentFee) : 'no fee we could confirm'}`}
+          value={`${usd(c.currentYield)} · ${pct(c.coverageNow)}`} />
+        <Key color="var(--status-warning)" faded
+          label={c.reachable
+            ? `What raising the fee to ${usd(c.selfFund ?? 0)} adds`
+            : `The most a higher fee could ever add`}
+          value={`${usd(Math.max(0, c.headroom))} · ${pct(Math.max(0, c.headroom) / c.cost)}`} />
+        {!c.reachable && (
+          <Key color="var(--surface-3)" outline
+            label="What no fee can ever reach — the taxpayer pays this"
+            value={`${usd(c.cost - c.peakYield)} · ${pct(1 - c.peakCoverage)}`} />
+        )}
+      </ul>
 
       <p className="text-[12px] leading-relaxed mt-2.5"
         style={{ color: 'var(--text-secondary)' }}>
