@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { MODEL, usd, usdShort } from '../model/engine'
 import {
   GAPS, GAP, COST_GROWTH, REVENUE_CAP, RATE_GAP, yearsCovered, shortfallAfter,
-  EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL, CONTRACT, SETTLEMENT, scaleAfterCut,
+  EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL, CONTRACT, SETTLEMENT, COUNTERFACTUAL, scaleAfterCut,
   RELIEF, BENT_HEALTH, OPTIONS,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
@@ -51,7 +51,12 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
           can give them. Here is every answer anyone has proposed, priced the same way:
           what it saves, whether that closes next year, and how long it lasts before the
           question comes back. <strong>Nothing on this list lasts more than one year on its
-          own.</strong> Each row links to the arithmetic behind it.</>}>
+          own.</strong> Each row links to the arithmetic behind it.
+          <br /><br />
+          Closing the gap and being a good idea are different questions, so they are kept
+          in different columns. Whether an option closes FY{GAPS[0].fy} is arithmetic and
+          is printed plainly. The only colour in the table is on the last column, which is
+          what it costs the people it lands on.</>}>
         <Scoreboard />
         <Note>
           &ldquo;Years it lasts&rdquo; assumes the saving is permanent and grows a little
@@ -79,6 +84,17 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         <div className="space-y-4">
           <Q1 /><Q2 /><Q3 /><Q4 /><Q5 /><Q6 /><Q7 /><Q8 /><Q9 />
         </div>
+      </Section>
+
+      <Section id="lookback" eyebrow="Looking backwards"
+        title="How much of this was the raises?"
+        lede={<>A fair question, and one this page can answer rather than argue about.
+          The teachers&rsquo; scale rose {CONTRACT.cola.map(c => pct(c.pct, 1)).join(', ')}{' '}
+          over the last three years. If those years had been smaller, where would the
+          hole be now? This is a measurement, not a proposal &mdash; none of it can be
+          undone, and the answer turns out to disappoint both of the loud
+          positions.</>}>
+        <Lookback />
       </Section>
 
       <Section id="works" eyebrow="The honest ending"
@@ -772,6 +788,154 @@ function Q9() {
 
 /* ------------------------------------------------------------------ */
 
+/** What a smaller settlement in the last three years would have left behind.
+ *
+ *  The interesting number is not either column on its own but the difference between
+ *  them: a lower base moves next year a great deal and FY32 very little, because it
+ *  changes the level and not one of the rates. That is the same lesson as the rest of the
+ *  page arriving from the opposite direction, which is the best reason to show it. */
+function Lookback() {
+  const c = COUNTERFACTUAL
+  const cap = c.atCap
+  const rows = [{ ...c.actual, actual: true }, ...c.scenarios.map(x => ({ ...x, actual: false }))]
+  return (
+    <div>
+      <div className="card overflow-x-auto mb-4">
+        <table className="w-full text-[13px] min-w-[640px]">
+          <thead>
+            <tr style={{ background: 'var(--surface-3)' }}>
+              <th className="text-left px-4 py-2.5 font-semibold">
+                If the scale had risen&hellip;
+              </th>
+              <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">
+                Teacher payroll today
+              </th>
+              <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">
+                FY{GAPS[0].fy} hole
+              </th>
+              <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">
+                FY{GAPS[4].fy} hole
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r => (
+              <tr key={String(r.rate)} className="border-t"
+                style={{ borderColor: 'var(--grid)',
+                         background: r.actual ? 'var(--surface-3)' : undefined }}>
+                <td className={`px-4 py-2.5 ${r.actual ? 'font-bold' : ''}`}>
+                  {r.actual
+                    ? <>What actually happened &mdash;{' '}
+                        {CONTRACT.cola.map(x => pct(x.pct, 1)).join(', ')}</>
+                    : <>{pct(r.rate ?? 0, 1)} a year
+                        {r.rate === REVENUE_CAP && ' — the levy cap'}
+                        {r.rate === 0 && ' — no raise at all'}</>}
+                </td>
+                <td className="px-4 py-2.5 text-right tnum">{usd(r.payroll)}</td>
+                <td className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
+                  {r.fy28 <= 0
+                    ? <>{usd(-r.fy28)}<span style={{ color: 'var(--text-muted)' }}>
+                        {' '}to spare</span></>
+                    : usd(r.fy28)}
+                </td>
+                <td className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
+                  {usd(r.fy32)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2">
+        <div className="card p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Next year</p>
+          <p className="text-4xl font-bold tnum leading-none">
+            {pct(1 - cap.fy28 / GAPS[0].cumulative)}
+          </p>
+          <p className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+            smaller. Held to the {pct(REVENUE_CAP, 1)} the town may collect, the scale
+            would be {pct(cap.perCent, 1)} lower today &mdash; {usd(cap.lower)} of payroll
+            &mdash; and FY{GAPS[0].fy}&rsquo;s hole would be {usd(cap.fy28)} instead of{' '}
+            {usd(GAPS[0].cumulative)}. <strong>Half the problem, gone.</strong>
+          </p>
+        </div>
+        <div className="card p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>By FY{GAPS[4].fy}</p>
+          <p className="text-4xl font-bold tnum leading-none">
+            {pct(1 - cap.fy32 / GAPS[4].cumulative)}
+          </p>
+          <p className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+            smaller. The same decision, five years out: {usd(cap.fy32)} against{' '}
+            {usd(GAPS[4].cumulative)}. <strong>Almost the whole problem is still
+            there</strong> &mdash; and even three years of no raise at all leaves{' '}
+            {usd(c.scenarios[c.scenarios.length - 1].fy32)}.
+          </p>
+        </div>
+      </div>
+
+      <div className="card p-5 mt-3" style={{ background: 'var(--surface-3)' }}>
+        <p className="text-[14px] leading-relaxed">
+          <strong>Why those two numbers differ is the answer.</strong> A smaller settlement
+          is a <em>level</em> &mdash; it makes the payroll permanently lower, so it lifts
+          every year at once. It is not a <em>rate</em>: it does not slow anything down.
+          Health insurance still rises {pct(MODEL.assumptions.health)} a year,
+          out-of-district special education {pct(MODEL.assumptions.sped_tuition)}, and the
+          levy is still capped at {pct(REVENUE_CAP, 1)}. So restraint on pay buys a great
+          deal next April and very little by {GAPS[4].fy}. Both of the things people say
+          about this are half right: the last three settlements <em>did</em> make
+          FY{GAPS[0].fy} materially worse, and they are <em>not</em> why this keeps
+          happening.
+        </p>
+      </div>
+
+      <Note>
+        Teacher payroll here is {usd(c.payroll)} &mdash; the {pct(c.shareOfSalaries)} of the
+        salary line covered by the teachers&rsquo; agreement, summed from the FY27
+        budget&rsquo;s own lines for teaching, special education, therapeutic services,
+        library, guidance, psychology, social work, nursing and the athletic and activity
+        stipends. Administrators, substitutes, aides and custodians bargain separately and
+        settled at different numbers, so they are left alone here; applying the
+        teachers&rsquo; percentages to all of payroll would overstate this by nearly half.
+        Step and lane movement is also left alone, because it is built into the scale
+        rather than negotiated in these three rounds.
+      </Note>
+      <Note>
+        And the reading that has to go with it. {pct(CONTRACT.cola[0].pct, 1)},{' '}
+        {pct(CONTRACT.cola[1].pct, 1)} and {pct(CONTRACT.cola[2].pct, 1)} is roughly
+        inflation over those years, and the neighbouring districts settled in the same
+        range. The {pct(REVENUE_CAP, 1)} column is not a mild alternative &mdash; it is
+        three years of falling behind the cost of living, at{' '}
+        {usd(Math.round(c.sample.pay * cap.perCent))} a year to a teacher in the middle of
+        the scale, in a market where the next town over was not asking that. This is what
+        the trade actually was, priced. It is not an argument that anybody chose wrong.
+      </Note>
+    </div>
+  )
+}
+
+/** What an option does to people, said in a word and a colour together.
+ *
+ *  This is the table's only colour. An earlier version painted "closes FY28" green, which
+ *  put a tick of approval beside cutting every school secretary in town and a 39% pay cut
+ *  — the arithmetic working is not the same as the idea being good, and colour is read as
+ *  a verdict no matter what the header says. So the arithmetic columns are plain, and the
+ *  colour sits on the cost, where the judgement actually belongs. */
+function Harm({ level }: { level: 'none' | 'real' | 'severe' }) {
+  const map = {
+    none: { word: 'Little', color: 'var(--status-good)' },
+    real: { word: 'Real', color: 'var(--status-warning)' },
+    severe: { word: 'Severe', color: 'var(--status-critical)' },
+  }[level]
+  return (
+    <span className="font-bold whitespace-nowrap" style={{ color: map.color }}>
+      {map.word} &middot;{' '}
+    </span>
+  )
+}
+
 function Scoreboard() {
   return (
     <div className="card overflow-x-auto">
@@ -807,17 +971,16 @@ function Scoreboard() {
                 <td className="px-4 py-3 text-right tnum font-semibold whitespace-nowrap">
                   {usd(o.saves)}
                 </td>
-                <td className="px-4 py-3 text-center whitespace-nowrap font-semibold"
-                  style={{ color: ok ? 'var(--status-good)' : 'var(--status-critical)' }}>
-                  {ok ? '✓ Yes' : `✕ ${pct(o.saves / GAP)}`}
+                <td className="px-4 py-3 text-center whitespace-nowrap font-semibold">
+                  {ok ? 'Yes' : <>No <span style={{ color: 'var(--text-muted)' }}>
+                    &mdash; {pct(o.saves / GAP)}</span></>}
                 </td>
-                <td className="px-4 py-3 text-center tnum font-bold"
-                  style={{ color: yrs >= 5 ? 'var(--status-good)'
-                    : yrs >= 1 ? 'var(--status-warning)' : 'var(--status-critical)' }}>
-                  {yrs === 0 ? '—' : o.permanent ? `${yrs}+` : yrs}
+                <td className="px-4 py-3 text-center tnum font-bold">
+                  {yrs === 0 ? <span style={{ color: 'var(--text-muted)' }}>&mdash;</span>
+                    : o.permanent ? `${yrs}+` : yrs}
                 </td>
                 <td className="px-4 py-3" style={{ color: 'var(--text-secondary)' }}>
-                  {o.costs}
+                  <Harm level={o.harm} />{o.costs}
                 </td>
               </tr>
             )

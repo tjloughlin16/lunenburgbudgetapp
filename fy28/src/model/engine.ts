@@ -272,10 +272,14 @@ export interface YearProjection {
  *  `cutsByYear` permanently reduces the salary base from the following year on. */
 export function project(
   years: number, a: Assumptions, cutsByYear: Record<number, number> = {},
+  salaryBase?: number,
 ): YearProjection[] {
   const f = MODEL.fy27
   const buckets: Record<Bucket, number> = { ...MODEL.expenseBase } as Record<Bucket, number>
   buckets.salaries += f.stm_addbacks
+  // Counterfactuals need to ask what the projection looks like from a different starting
+  // payroll — not a cut applied later, but a base that was never as high.
+  if (salaryBase !== undefined) buckets.salaries = salaryBase
 
   let levy = f.levy_limit
   let aid = f.state_aid

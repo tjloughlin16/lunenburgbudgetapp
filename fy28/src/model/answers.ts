@@ -385,6 +385,60 @@ export const SETTLEMENT = {
     - project(1, { ...A, salaries: A.salaries })[0].deficit),
 }
 
+/* ---- looking backwards --------------------------------------------------- */
+
+/** Payroll covered by the teachers' agreement, summed from the FY27 balanced budget's
+ *  own salary lines: DESE function codes 2305, 2310, 2315, 2320, 2340, 2710, 2800, 2900,
+ *  3200, 3510 and 3520 — teaching, therapeutic services, library, guidance, psychology,
+ *  social work, nursing, and the athletic and activity stipend schedules the contract
+ *  names in Appendix B. Source: sources/data/lps-budget-lines.csv, 45 lines.
+ *
+ *  Deliberately NOT the whole salary line. Administration, substitutes, paraprofessionals
+ *  (AFSCME 503) and custodians (AFSCME 93) bargain separately and settled at different
+ *  numbers, so applying the teachers' percentages to all of payroll would overstate this
+ *  by nearly half. */
+const LEA_PAYROLL = 12_514_952
+
+/** What the gap would look like now if the last three years of scale increases had been
+ *  smaller.
+ *
+ *  This is a level shift, not a slope change, and the distinction is the whole point. A
+ *  smaller settlement leaves a permanently smaller base, so it lowers every year at once
+ *  — but it does not slow anything down. Health insurance still rises 9%, out-of-district
+ *  tuition 8%, and the levy is still capped at 2.5%. Which is why the effect is dramatic
+ *  next year and modest by FY32, and why the honest conclusion cuts against both of the
+ *  loud positions.
+ *
+ *  Step and lane movement is left alone: it is structural to the scale, not a term
+ *  anybody negotiated in these three rounds. */
+export function ifRaisesHadBeen(rate: number) {
+  const actual = CONTRACT.cola.reduce((x, c) => x * (1 + c.pct), 1)
+  const counter = (1 + rate) ** CONTRACT.cola.length
+  const lower = LEA_PAYROLL * (1 - counter / actual)
+  const years = project(6, A, {}, (expense.salaries + F.stm_addbacks) - lower)
+  return {
+    rate,
+    /** How much less the district would be paying these people today. */
+    lower: Math.round(lower),
+    perCent: 1 - counter / actual,
+    payroll: Math.round(LEA_PAYROLL - lower),
+    fy28: Math.round(years[0].deficit),
+    fy32: Math.round(years[4].deficit),
+  }
+}
+
+export const COUNTERFACTUAL = {
+  payroll: LEA_PAYROLL,
+  shareOfSalaries: LEA_PAYROLL / (expense.salaries + F.stm_addbacks),
+  actual: { rate: null as number | null, lower: 0, perCent: 0, payroll: LEA_PAYROLL,
+            fy28: GAPS[0].cumulative, fy32: GAPS[4].cumulative },
+  scenarios: [0.03, 0.025, 0.02, 0.01, 0].map(ifRaisesHadBeen),
+  /** The comparison the section exists to make. */
+  atCap: ifRaisesHadBeen(LEVY_CAP),
+  /** One real teacher, at the middle of the scale, under the capped path. */
+  sample: CONTRACT.samples[1],
+}
+
 /* ---- the scoreboard ------------------------------------------------------ */
 
 export interface Option {
@@ -392,37 +446,39 @@ export interface Option {
   costs: string; permanent?: boolean
   /** The question that works this one out, so the summary can be read as a way in. */
   anchor?: string
+  /** What it does to people. The table's only colour axis — see the note in Scoreboard. */
+  harm: 'none' | 'real' | 'severe'
 }
 
 /** Every idea on the page, priced the same way, so they can be read against each other.
  *  `growth` is the rate the saved thing would itself have grown at — see yearsCovered. */
 export const OPTIONS: Option[] = [
-  { id: 'paper', anchor: 'q4', label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
+  { id: 'paper', harm: 'none', anchor: 'q4', label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
     saves: ADMIN.paperOnly, growth: A.other,
     costs: 'Nothing anybody would see' },
-  { id: 'extras', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
+  { id: 'extras', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },
-  { id: 'tech', label: 'Cut 60% of all software, licences and student devices',
+  { id: 'tech', harm: 'real', label: 'Cut 60% of all software, licences and student devices',
     saves: TECH.atMax, growth: A.other,
     costs: 'State testing, IEP and payroll systems run on these' },
-  { id: 'health', anchor: 'q7', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
+  { id: 'health', harm: 'severe', anchor: 'q7', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
     saves: HEALTH.maxModelled, growth: A.health,
     costs: `About ${usd(Math.round((HEALTH.maxShare - HEALTH.employeeShare) * 100
       * familyPremium * 0.01))} a year out of a family’s pay` },
-  { id: 'admin', anchor: 'q4', label: 'Cut every administrator and school secretary the law allows',
+  { id: 'admin', harm: 'severe', anchor: 'q4', label: 'Cut every administrator and school secretary the law allows',
     saves: ADMIN.lawful, growth: A.salaries,
     costs: `${ADMIN.lawfulFte} jobs · no front office in any of the four schools` },
-  { id: 'leaders', anchor: 'q5', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
+  { id: 'leaders', harm: 'severe', anchor: 'q5', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
     saves: GAP, growth: A.salaries,
     costs: 'Every one of them is below market the next morning' },
-  { id: 'pay', anchor: 'q6', label: 'A 5% pay cut for everyone who works in the schools',
+  { id: 'pay', harm: 'severe', anchor: 'q6', label: 'A 5% pay cut for everyone who works in the schools',
     saves: PAYROLL.fivePercent, growth: A.salaries,
     costs: 'Roughly 250 employees, and a bargaining fight for each' },
-  { id: 'override', anchor: 'q9', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
+  { id: 'override', harm: 'real', anchor: 'q9', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
     saves: GAP, growth: 0.03,
     costs: `$${BILL.overrideCost[0].cost} a year on the average home` },
-  { id: 'build', anchor: 'q8', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
+  { id: 'build', harm: 'none', anchor: 'q8', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
     saves: GAP, growth: 0.06, permanent: true,
     costs: `${usdShort(DEVELOPMENT.fiveYear.value)} of new business a year — `
       + `${DEVELOPMENT.fiveYear.vsBest.toFixed(1)}× the town’s best year since FY${DEVELOPMENT.history[0].fy}` },
