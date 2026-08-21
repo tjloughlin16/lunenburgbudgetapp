@@ -75,6 +75,14 @@ input[type="range"] { accent-color: var(--series-cost); }
 }
 :root[data-theme="dark"] .cta { color: #0d0d0d; }
 
+/* iOS Safari zooms the page in when a text field smaller than 16px takes focus, and it
+   does not zoom back out again — leaving every page needing horizontal scrolling until
+   the reader pinches out by hand. Below the sm breakpoint the fields are 16px, which is
+   the only thing that stops it. Range and checkbox inputs never trigger it. */
+@media (max-width: 639px) {
+  input:not([type="range"]):not([type="checkbox"]), select, textarea { font-size: 16px; }
+}
+
 /* The chapter strip scrolls, and a scrollbar drawn across it reads as a rule under the
    header rather than as a control. The pill cut off at the right edge is the affordance. */
 .no-scrollbar { scrollbar-width: none; }
