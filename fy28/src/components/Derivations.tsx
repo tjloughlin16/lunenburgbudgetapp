@@ -156,7 +156,7 @@ function LineTable({ d }: { d: Derivation }) {
   }
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-xs tnum min-w-[420px]">
+      <table className="w-full text-xs tnum sm:min-w-[420px]">
         <caption className="sr-only">
           Budget lines making up {d.label}, {d.scenario}
         </caption>
@@ -304,7 +304,7 @@ function EntryTable({ d }: { d: Derivation }) {
 function LadderTable({ d }: { d: Derivation }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-xs tnum min-w-[520px]">
+      <table className="stack w-full text-xs tnum sm:min-w-[520px]">
         <caption className="sr-only">
           Athletics cost by basis, with the fee that would self-fund each
         </caption>
@@ -323,7 +323,7 @@ function LadderTable({ d }: { d: Derivation }) {
             return (
               <tr key={r.id} className="border-t align-top"
                 style={{ borderColor: 'var(--grid)' }}>
-                <td className="py-2">
+                <td className="rowhead py-2">
                   {r.label}
                   {!r.published && (
                     <span className="ml-2 text-[10px] font-bold uppercase tracking-widest"
@@ -332,7 +332,8 @@ function LadderTable({ d }: { d: Derivation }) {
                   <span className="block text-[11px] font-normal"
                     style={{ color: 'var(--text-muted)' }}>{r.scenario}</span>
                 </td>
-                <td className="py-2 text-right" style={{ color: 'var(--text-muted)' }}>
+                <td data-label="Adds" className="py-2 text-right"
+                  style={{ color: 'var(--text-muted)' }}>
                   {r.add === null ? '—' : (
                     <>
                       +{money(r.add)}
@@ -340,9 +341,11 @@ function LadderTable({ d }: { d: Derivation }) {
                     </>
                   )}
                 </td>
-                <td className="py-2 text-right font-semibold">{money(r.running)}</td>
-                <td className="py-2 text-right">{Math.round(r.coverageNow * 100)}%</td>
-                <td className="py-2 text-right font-bold"
+                <td data-label="Costs"
+                  className="py-2 text-right font-semibold">{money(r.running)}</td>
+                <td data-label="Fees cover"
+                  className="py-2 text-right">{Math.round(r.coverageNow * 100)}%</td>
+                <td data-label="Self-funds at" className="py-2 text-right font-bold"
                   style={{ color: reach ? 'var(--text-primary)' : 'var(--status-critical)' }}>
                   {reach ? usd(r.selfFundFee as number) : 'out of reach'}
                 </td>
@@ -385,7 +388,7 @@ function ScenarioTotals() {
   return (
     <div className="card p-5">
       <div className="overflow-x-auto">
-        <table className="w-full text-xs tnum min-w-[540px]">
+        <table className="stack w-full text-xs tnum sm:min-w-[540px]">
           <caption className="sr-only">
             FY27 budget scenario totals, stated versus rebuilt from the detail lines
           </caption>
@@ -402,12 +405,15 @@ function ScenarioTotals() {
           <tbody>
             {M.scenarioTotals.map(s => (
               <tr key={s.column} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                <td className="py-1.5 font-medium">{s.label}</td>
-                <td className="py-1.5 text-right">{money(s.detailLines)}</td>
-                <td className="py-1.5 text-right">{money(s.salaryReserve)}</td>
-                <td className="py-1.5 text-right font-semibold">{money(s.rebuilt)}</td>
-                <td className="py-1.5 text-right">{money(s.stated)}</td>
-                <td className="py-1.5 text-right"
+                <td className="rowhead py-1.5 font-medium">{s.label}</td>
+                <td data-label="Detail lines"
+                  className="py-1.5 text-right">{money(s.detailLines)}</td>
+                <td data-label="Salary reserve"
+                  className="py-1.5 text-right">{money(s.salaryReserve)}</td>
+                <td data-label="Rebuilt"
+                  className="py-1.5 text-right font-semibold">{money(s.rebuilt)}</td>
+                <td data-label="Stated" className="py-1.5 text-right">{money(s.stated)}</td>
+                <td data-label="Difference" className="py-1.5 text-right"
                   style={{ color: s.reconciled ? 'var(--status-good)' : 'var(--status-critical)' }}>
                   {s.delta === 0 ? 'exact' : money(Math.abs(s.delta))}
                 </td>

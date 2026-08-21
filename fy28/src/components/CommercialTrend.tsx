@@ -143,7 +143,7 @@ export function HomeValueParadox() {
         </ResponsiveContainer>
       </div>
       <div className="overflow-x-auto mt-3">
-        <table className="w-full text-xs tnum min-w-[380px]">
+        <table className="stack w-full text-xs tnum sm:min-w-[380px]">
           <caption className="sr-only">
             Average single-family assessment, tax rate and tax bill by fiscal year
           </caption>
@@ -158,19 +158,22 @@ export function HomeValueParadox() {
           <tbody>
             {h.map(x => (
               <tr key={x.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                <td className="py-1.5 font-semibold">FY{x.fy}</td>
-                <td className="py-1.5 text-right">${x.rate.toFixed(2)}</td>
-                <td className="py-1.5 text-right">{usd(x.value)}</td>
-                <td className="py-1.5 text-right">{usd(x.bill)}</td>
+                <td className="rowhead py-1.5 font-semibold">FY{x.fy}</td>
+                <td data-label="Tax rate" className="py-1.5 text-right">${x.rate.toFixed(2)}</td>
+                <td data-label="Average home" className="py-1.5 text-right">{usd(x.value)}</td>
+                <td data-label="Average bill" className="py-1.5 text-right">{usd(x.bill)}</td>
               </tr>
             ))}
             <tr className="border-t-2 font-bold" style={{ borderColor: 'var(--axis)' }}>
-              <td className="py-2">Five-year change</td>
-              <td className="py-2 text-right" style={{ color: 'var(--status-good)' }}>
+              <td className="rowhead py-2">Five-year change</td>
+              <td data-label="Tax rate" className="py-2 text-right"
+                style={{ color: 'var(--status-good)' }}>
                 {((b.rate / a.rate - 1) * 100).toFixed(0)}%
               </td>
-              <td className="py-2 text-right">+{((b.value / a.value - 1) * 100).toFixed(0)}%</td>
-              <td className="py-2 text-right">+{((b.bill / a.bill - 1) * 100).toFixed(0)}%</td>
+              <td data-label="Average home"
+                className="py-2 text-right">+{((b.value / a.value - 1) * 100).toFixed(0)}%</td>
+              <td data-label="Average bill"
+                className="py-2 text-right">+{((b.bill / a.bill - 1) * 100).toFixed(0)}%</td>
             </tr>
           </tbody>
         </table>

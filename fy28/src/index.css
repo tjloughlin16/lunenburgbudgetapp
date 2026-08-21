@@ -46,6 +46,11 @@
   --series-revenue: #d95926;
 }
 
+/* Anything that pins itself below the header needs to know how tall the header is,
+   and that changed with the breakpoint at which the nav stops being two rows. */
+:root { --header-h: 85px; }
+@media (min-width: 1024px) { :root { --header-h: 49px; } }
+
 html { scroll-behavior: smooth; }
 body {
   background: var(--surface-2);
@@ -69,3 +74,63 @@ input[type="range"] { accent-color: var(--series-cost); }
   :root:not([data-theme="light"]) .cta { color: #0d0d0d; }
 }
 :root[data-theme="dark"] .cta { color: #0d0d0d; }
+
+/* The chapter strip scrolls, and a scrollbar drawn across it reads as a rule under the
+   header rather than as a control. The pill cut off at the right edge is the affordance. */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ---- Tables on a phone -------------------------------------------------
+   A five-column money table cannot be read at 390px by scrolling it
+   sideways: the row's name leaves the screen at exactly the moment the
+   figure you are reading needs it. Below the sm breakpoint a table marked
+   .stack drops its header row and re-lays each record as a block — the
+   column name, taken from the cell's data-label, on the left; the figure on
+   the right. Above sm nothing here applies and the table is a table again.
+
+   These rules sit outside Tailwind's layers, so they win over the utility
+   classes already on the cells without needing !important. Only the
+   vertical padding is taken over; each cell keeps whatever horizontal
+   padding it was given. */
+@media (max-width: 639px) {
+  table.stack, table.stack tbody, table.stack tr, table.stack td, table.stack tbody th {
+    display: block;
+  }
+  table.stack { width: 100%; }
+  table.stack thead { display: none; }
+  table.stack tr { border-top: 1px solid var(--grid); padding-block: 0.5rem; }
+  table.stack td { padding-block: 0.125rem; text-align: right; }
+
+  /* The label floats so the figure sets beside it and any second line —
+     a share, an FTE count, a note — wraps underneath on its own. */
+  table.stack td[data-label]::before {
+    content: attr(data-label);
+    float: left;
+    clear: left;
+    margin-right: 1rem;
+    max-width: 55%;
+    text-align: left;
+    font-weight: 600;
+    font-variant-numeric: normal;
+    color: var(--text-muted);
+  }
+
+  /* The first cell is the record's name, not a value: it heads the block. */
+  table.stack td.rowhead {
+    text-align: left;
+    font-weight: 600;
+    padding-bottom: 0.375rem;
+  }
+  /* A cell holding a bar or a sentence rather than a figure gets the full width,
+     so its label sits on its own line above it instead of alongside. */
+  table.stack td.rowfull { text-align: left; }
+  table.stack td.rowfull[data-label]::before {
+    float: none;
+    display: block;
+    max-width: none;
+    margin: 0 0 0.25rem;
+  }
+  /* Group headings inside the body stay where they are. */
+  table.stack tbody th { text-align: left; padding-top: 0.75rem; }
+  table.stack tbody tr:first-child { border-top: none; }
+}
