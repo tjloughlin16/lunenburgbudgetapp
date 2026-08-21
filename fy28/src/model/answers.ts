@@ -217,6 +217,66 @@ export const TECH = {
   pctToClose: GAP / tech.basis,
 }
 
+/** What user fees can and cannot pay for.
+ *
+ *  The one lever the School Committee can pull without the Town, a union or a ballot,
+ *  which is why it comes up first at every meeting and why it deserves a straight answer
+ *  rather than a slogan. The answer differs completely by programme: athletics can reach
+ *  self-funding at a price, music probably can on paper, and transport cannot get close
+ *  at any price. Same idea, three different verdicts.
+ *
+ *  Every figure is the lever's own, so this cannot drift from the Adjust page. */
+const feeLever = (id: string) => MODEL.levers.find(l => l.id === id)!
+
+function feeCase(id: string, label: string, what: string) {
+  const l = feeLever(id)
+  const now = l.currentYield ?? 0
+  const selfFund = l.selfFunding ?? null
+  return {
+    id, label, what,
+    /** What the programme costs — the denominator the fee is chasing. */
+    cost: l.cap,
+    currentFee: l.current ?? 0,
+    currentYield: now,
+    coverageNow: now / l.cap,
+    /** The fee at which it pays for itself, where that exists at all. */
+    selfFund,
+    /** The most the fee can ever raise, and the price at which it happens. */
+    peakFee: l.peakFee ?? 0,
+    peakYield: l.peakYield ?? 0,
+    peakCoverage: (l.peakYield ?? 0) / l.cap,
+    reachable: selfFund !== null,
+    /** Extra money against the budget: what a self-funding fee raises, less what is
+     *  already being collected. Fees do not save what is not being spent. */
+    gain: Math.round(Math.min(selfFund !== null ? l.cap : (l.peakYield ?? 0),
+                              l.peakYield ?? 0) - now),
+    payers: l.basis,
+    payersKnown: l.basisKnown !== false,
+    caveat: l.caveat,
+    benchmark: l.benchmark,
+  }
+}
+
+export const FEES = (() => {
+  const cases = [
+    feeCase('athletic_fees', 'Athletics',
+      'Every sport, its coaches, the trainer and the buses'),
+    feeCase('activity_fees', 'Band, music and clubs',
+      'The high school music position, supplies, band transport and club advisors'),
+    feeCase('bus_fees', 'School buses',
+      'General education transport — special education transport cannot be charged for'),
+  ]
+  return {
+    cases,
+    /** Everything the three could add against the appropriation, at once, at the top. */
+    total: cases.reduce((s2, c) => s2 + Math.max(0, c.gain), 0),
+    shareOfGap: cases.reduce((s2, c) => s2 + Math.max(0, c.gain), 0) / GAP,
+    /** Special education transport, which no fee may touch. */
+    spedTransport: MODEL.buckets.transportSpEd,
+    unresolved: MODEL.feeAccounting.unresolved[0],
+  }
+})()
+
 /* ---- development --------------------------------------------------------- */
 
 /** Least new-growth revenue per year that keeps the gap closed for `years` running.
@@ -508,7 +568,7 @@ export interface Option {
 /** Every idea on the page, priced the same way, so they can be read against each other.
  *  `growth` is the rate the saved thing would itself have grown at — see yearsCovered. */
 export const OPTIONS: Option[] = [
-  { id: 'paper', harm: 'real', anchor: 'q4',
+  { id: 'paper', harm: 'real', anchor: 'q5',
     label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
     saves: ADMIN.paperOnly, growth: A.other,
     // Called "nothing anybody would see" here until it was read properly. Only the
@@ -516,29 +576,34 @@ export const OPTIONS: Option[] = [
     // and a legal budget the district does not control the timing of.
     costs: `Only ${usdShort(ADMIN.invisible)} of it is invisible — the rest is stipends `
       + `somebody is paid, and a bet that no special-education dispute lands` },
+  { id: 'fees', harm: 'severe', anchor: 'q4',
+    label: 'Charge athletics fees until sports pay for themselves',
+    saves: FEES.cases[0].gain, growth: A.salaries,
+    costs: `$${FEES.cases[0].selfFund} a season per sport, per child — up from `
+      + `$${FEES.cases[0].currentFee} on a fee that just rose 60%` },
   { id: 'extras', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },
   { id: 'tech', harm: 'real', label: 'Cut 60% of all software, licences and student devices',
     saves: TECH.atMax, growth: A.other,
     costs: 'State testing, IEP and payroll systems run on these' },
-  { id: 'health', harm: 'severe', anchor: 'q7', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
+  { id: 'health', harm: 'severe', anchor: 'q8', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
     saves: HEALTH.maxModelled, growth: A.health,
     costs: `About ${usd(Math.round((HEALTH.maxShare - HEALTH.employeeShare) * 100
       * familyPremium * 0.01))} a year out of a family’s pay` },
-  { id: 'admin', harm: 'severe', anchor: 'q4', label: 'Cut every administrator and school secretary the law allows',
+  { id: 'admin', harm: 'severe', anchor: 'q5', label: 'Cut every administrator and school secretary the law allows',
     saves: ADMIN.lawful, growth: A.salaries,
     costs: `${ADMIN.lawfulFte} jobs · no front office in any of the four schools` },
-  { id: 'leaders', harm: 'severe', anchor: 'q5', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
+  { id: 'leaders', harm: 'severe', anchor: 'q6', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
     saves: GAP, growth: A.salaries,
     costs: 'Every one of them is below market the next morning' },
-  { id: 'pay', harm: 'severe', anchor: 'q6', label: 'A 5% pay cut for everyone who works in the schools',
+  { id: 'pay', harm: 'severe', anchor: 'q7', label: 'A 5% pay cut for everyone who works in the schools',
     saves: PAYROLL.fivePercent, growth: A.salaries,
     costs: 'Roughly 250 employees, and a bargaining fight for each' },
-  { id: 'override', harm: 'real', anchor: 'q9', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
+  { id: 'override', harm: 'real', anchor: 'q10', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
     saves: GAP, growth: 0.03,
     costs: `$${BILL.overrideCost[0].cost} a year on the average home` },
-  { id: 'build', harm: 'character', anchor: 'q8', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
+  { id: 'build', harm: 'character', anchor: 'q9', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
     saves: GAP, growth: 0.06, permanent: true,
     costs: `Nobody’s pay — but a development every ${FEASIBILITY.everyDays} days forever, `
       + `and business goes from ${(FEASIBILITY.businessShareNow * 100).toFixed(0)}% of the `

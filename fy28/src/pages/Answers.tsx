@@ -3,7 +3,8 @@ import { MODEL, usd, usdShort } from '../model/engine'
 import {
   GAPS, GAP, COST_GROWTH, REVENUE_CAP, RATE_GAP, yearsCovered, shortfallAfter,
   EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL,
-  CONTRACT, SETTLEMENT, COUNTERFACTUAL, FEASIBILITY, RELIEF, BENT_HEALTH, OPTIONS,
+  CONTRACT, SETTLEMENT, COUNTERFACTUAL, FEASIBILITY, FEES, RELIEF, BENT_HEALTH,
+  OPTIONS,
   scaleAfterCut,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
@@ -34,7 +35,7 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
-          Nine questions people in Lunenburg actually ask about the school budget, each
+          Ten questions people in Lunenburg actually ask about the school budget, each
           answered with a number and the arithmetic that produced it. No jargon, no
           adjectives, and nothing you have to take on trust &mdash; the sums are small
           enough to check.
@@ -93,7 +94,7 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
 
       <Section id="questions" eyebrow="The questions" title="Answers, one at a time">
         <div className="space-y-4">
-          <Q1 /><Q2 /><Q3 /><Q4 /><Q5 /><Q6 /><Q7 /><Q8 /><Q9 />
+          <Q1 /><Q2 /><Q3 /><Q4 /><Q5 /><Q6 /><Q7 /><Q8 /><Q9 /><Q10 />
         </div>
       </Section>
 
@@ -375,11 +376,126 @@ function Q3() {
   )
 }
 
+/** Fees, which is the first thing anybody suggests and the only lever the district owns.
+ *
+ *  Grouped as one question rather than three because the interesting thing is that the
+ *  same idea gets three different answers depending on what it is pointed at, and you only
+ *  see that by putting them beside each other. */
 function Q4() {
+  const [ath, act] = FEES.cases
+  return (
+    <QA n={4} q="Can raising fees make these things pay for themselves?"
+      verdict="Sports yes, buses no" tone="partly"
+      answer={<>Sometimes &mdash; and this is the one lever the School Committee can pull
+        on its own, without the Town, a union or a ballot. But the answer is completely
+        different for each thing. <strong>Sports can reach self-funding</strong>, at{' '}
+        {usd(ath.selfFund ?? 0)} a season. <strong>Band, music and clubs can too on
+        paper</strong>, at {usd(act.selfFund ?? 0)}. <strong>Buses cannot, at any
+        price</strong> &mdash; not at $1,000 a rider, not at $5,000.</>}
+      next={<>Fees are the one answer here that does not get worse next year on its own
+        &mdash; but it does not get better either. Costs keep rising{' '}
+        {pct(MODEL.assumptions.salaries)} a year and the fee has to rise with them, so
+        self-funding is not a place you arrive at, it is a treadmill you get on.</>}>
+      <div className="space-y-3">
+        {FEES.cases.map(c => <FeeCase key={c.id} c={c} />)}
+      </div>
+
+      <Ledger rows={[
+        ...FEES.cases.map(c => ({
+          k: `${c.label} — extra money a top fee would actually bring in`,
+          v: usd(c.gain),
+        })),
+        { k: 'All three, at once, at the very top', v: usd(FEES.total),
+          rule: true, strong: true },
+        { k: `Next year's hole`, v: usd(GAP) },
+        { k: 'Share of it that fees can reach', v: pct(FEES.shareOfGap),
+          rule: true, strong: true, tone: 'var(--status-warning)' },
+      ]} />
+      <Note>
+        &ldquo;Extra money&rdquo; is the point of that table. Athletics fees already raise{' '}
+        {usd(ath.currentYield)}, so charging the self-funding {usd(ath.selfFund ?? 0)}{' '}
+        adds {usd(ath.gain)}, not {usd(ath.cost)} &mdash; a fee cannot save what the town
+        is not currently spending. Even so, fees are the largest thing on this page the
+        district can do by itself, and they reach {pct(FEES.shareOfGap)} of next
+        year&rsquo;s hole.
+      </Note>
+      <Note>
+        Two honest holes in this. The district does not publish how many students play,
+        take band or ride the bus, so the payer counts behind the music and bus figures are
+        estimates and are labelled as such. And: &ldquo;{FEES.unresolved}&rdquo; If the
+        athletics budget is already net of fees, every athletics figure here is worth less
+        than it looks. That is a question for the Business Manager.
+      </Note>
+    </QA>
+  )
+}
+
+/** One programme's fee arithmetic: what it costs, what fees cover now, and the ceiling. */
+function FeeCase({ c }: { c: typeof FEES.cases[number] }) {
+  const width = (n: number) => `${Math.min(100, (n / c.cost) * 100)}%`
+  return (
+    <div className="card p-4">
+      <div className="flex items-start justify-between gap-3 mb-1">
+        <div>
+          <p className="text-[15px] font-bold leading-snug">{c.label}</p>
+          <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{c.what}</p>
+        </div>
+        <span className="text-[12px] font-bold whitespace-nowrap shrink-0 px-2 py-1 rounded-md"
+          style={{ color: c.reachable ? 'var(--status-warning)' : 'var(--status-critical)',
+                   background: 'color-mix(in srgb, currentColor 12%, transparent)' }}>
+          {c.reachable ? `Pays for itself at ${usd(c.selfFund ?? 0)}` : 'Never pays for itself'}
+        </span>
+      </div>
+
+      <div className="mt-3 mb-1.5 h-5 rounded-sm relative"
+        style={{ background: 'var(--surface-3)' }}>
+        <span className="absolute inset-y-0 left-0 rounded-sm"
+          style={{ width: width(c.peakYield), background: 'var(--surface-3)',
+                   borderRight: c.reachable ? 'none' : '2px dashed var(--status-critical)' }} />
+        <span className="absolute inset-y-0 left-0 rounded-sm"
+          style={{ width: width(c.currentYield), background: 'var(--series-cost)' }} />
+      </div>
+      <div className="flex justify-between text-[11px]" style={{ color: 'var(--text-muted)' }}>
+        <span>
+          Fees cover <strong style={{ color: 'var(--series-cost)' }}>
+            {pct(c.coverageNow)}</strong> today
+          {c.currentFee > 0
+            ? <> at {usd(c.currentFee)}</>
+            : <> &mdash; we could not confirm any fee exists</>}
+        </span>
+        <span>{usd(c.cost)} to run it</span>
+      </div>
+
+      <p className="text-[12px] leading-relaxed mt-2.5"
+        style={{ color: 'var(--text-secondary)' }}>
+        {c.reachable
+          ? <>Charging {usd(c.selfFund ?? 0)} covers the whole {usd(c.cost)}. Past that,
+              raising the fee <em>loses</em> money: revenue peaks around{' '}
+              {usd(c.peakFee)} at {usd(c.peakYield)}, because families stop signing up
+              faster than the price goes up.</>
+          : <>The ceiling is {pct(c.peakCoverage)}. Revenue peaks near {usd(c.peakFee)} a
+              rider at {usd(c.peakYield)} against {usd(c.cost)} of cost, and past that
+              higher fees push families into cars, which raises the cost per rider on the
+              routes that are left. Special education transport &mdash;{' '}
+              {usd(FEES.spedTransport)} of it &mdash; cannot be charged for at all.</>}
+      </p>
+      <p className="text-[11px] leading-relaxed mt-2" style={{ color: 'var(--text-muted)' }}>
+        {c.caveat}
+      </p>
+      <p className="text-[11px] leading-relaxed mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        <strong>For comparison:</strong> {c.benchmark}
+        {!c.payersKnown && <> &middot; The {c.payers} payers behind this figure are an
+          estimate; the district does not publish participation.</>}
+      </p>
+    </div>
+  )
+}
+
+function Q5() {
   const left = ADMIN.lawful - GAP
   const after = shortfallAfter(ADMIN.lawful, MODEL.assumptions.salaries)
   return (
-    <QA n={4} q="Will cutting the “extra” administrators close it?"
+    <QA n={5} q="Will cutting the “extra” administrators close it?"
       verdict="One year" tone="partly"
       answer={<>For next year, yes &mdash; but only if &ldquo;extra&rdquo; means{' '}
         <em>every single administrator and school secretary the law allows the town to
@@ -445,11 +561,11 @@ function Q4() {
   )
 }
 
-function Q5() {
+function Q6() {
   const c = LEADERSHIP.cutFor
   const over = c.find(x => x.pct > 1)
   return (
-    <QA n={5} q="If the overpaid administrators take a pay cut, how deep does it go?"
+    <QA n={6} q="If the overpaid administrators take a pay cut, how deep does it go?"
       verdict={`${pct(c[0].pct)} — once`} tone="no"
       answer={<>Every administrator in the district &mdash; the superintendent, the business
         manager, the special education director, the curriculum director, the human
@@ -478,10 +594,10 @@ function Q5() {
   )
 }
 
-function Q6() {
+function Q7() {
   const left = PAYROLL.fivePercent - GAP
   return (
-    <QA n={6} q="If teachers take a 5% pay cut, does that close it?"
+    <QA n={7} q="If teachers take a 5% pay cut, does that close it?"
       verdict="One year" tone="partly"
       answer={<>Yes for next year, and only next year. A 5% cut across everyone who works
         in the schools saves {usd(PAYROLL.fivePercent)}, which covers the {usd(GAP)} hole
@@ -651,9 +767,9 @@ function Bars() {
   )
 }
 
-function Q7() {
+function Q8() {
   return (
-    <QA n={7} q="How much would we have to cut health insurance?"
+    <QA n={8} q="How much would we have to cut health insurance?"
       verdict={`${pct(HEALTH.employeeShare)} → ${pct(HEALTH.shareNeeded, 1)}`} tone="partly"
       answer={<>You cannot really cut health insurance &mdash; the premium costs what it
         costs. All you can change is <em>who pays it</em>. Today the town pays{' '}
@@ -691,14 +807,14 @@ function Q7() {
   )
 }
 
-function Q8() {
+function Q9() {
   const one = DEVELOPMENT.oneYear
   const five = DEVELOPMENT.fiveYear
   const ten = DEVELOPMENT.tenYear
   const first = DEVELOPMENT.history[0]
   const last = DEVELOPMENT.history[DEVELOPMENT.history.length - 1]
   return (
-    <QA n={8} q="How much new business do we have to build to close the gap?"
+    <QA n={9} q="How much new business do we have to build to close the gap?"
       verdict={`~${five.developments.toFixed(0)} a year`} tone="no"
       answer={<>There is good news first. Buildings stay on the tax roll, so the amount that
         closes next year is almost exactly the amount that holds the line for five years
@@ -755,12 +871,12 @@ function Q8() {
   )
 }
 
-function Q9() {
+function Q10() {
   const net = RELIEF.total - BILL.overrideCost[0].cost
   const h = T.avgHomeHistory
   const first = h[0], last = h[h.length - 1]
   return (
-    <QA n={9} q="Can we fund the schools and lower our tax bill at the same time?"
+    <QA n={10} q="Can we fund the schools and lower our tax bill at the same time?"
       verdict="Yes, for a while" tone="yes"
       answer={<>Yes &mdash; and this is the least understood thing in the whole
         conversation. Two levers lower the average tax bill without taking a dollar from
@@ -1128,6 +1244,27 @@ function Scoreboard() {
   )
 }
 
+/** One of the two things the town can actually do, named rather than buried in a
+ *  sentence. They were prose until somebody reasonably asked which two they were. */
+function Lever({ n, name, head, href, children }: {
+  n: number; name: string; head: string; href: string; children: ReactNode
+}) {
+  return (
+    <li className="rounded-lg p-3" style={{ background: 'var(--surface-3)' }}>
+      <div className="flex items-baseline gap-2 mb-1">
+        <span className="text-[11px] font-bold tnum shrink-0"
+          style={{ color: 'var(--text-muted)' }}>{n}</span>
+        <a href={href} className="text-[15px] font-bold hover:underline"
+          style={{ color: 'var(--series-cost)' }}>{name}</a>
+      </div>
+      <p className="text-[13px] font-semibold leading-snug mb-1">{head}</p>
+      <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+        {children}
+      </p>
+    </li>
+  )
+}
+
 function WhatWorks({ onJump }: {
   onJump: (tab: 'why' | 'development' | 'adjust') => void
 }) {
@@ -1138,13 +1275,32 @@ function WhatWorks({ onJump }: {
           style={{ color: 'var(--text-muted)' }}>Fix one</p>
         <h3 className="text-lg font-bold mb-2">Income that grows as fast as costs</h3>
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          There are only two forms of it. Build enough new business that the tax roll grows
-          at the same speed as the cost of running schools &mdash; about{' '}
-          {DEVELOPMENT.fiveYear.developments.toFixed(0)} developments a year, which is real
-          and slow and worth starting. Or vote to raise taxes above the cap, repeatedly:{' '}
-          {usd(BILL.overrideCost[0].cost)} on the average home for FY{GAPS[0].fy},{' '}
-          {usd(BILL.overrideCost[4].cost)} to cover through FY{GAPS[4].fy}. The town said no
-          twice in 2026, to much larger questions.
+          The town controls exactly two of these. Both are permanent, which is the whole
+          point &mdash; they raise the line the schools are funded from rather than paying
+          for one more year off it.
+        </p>
+        <ol className="space-y-3 mb-3">
+          <Lever n={1} name="Development" href="#q9"
+            head={`About ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`}>
+            Real, slow, and worth starting now precisely because it is slow. It closes
+            nothing next April &mdash; the buildings that pay FY{GAPS[0].fy}&rsquo;s taxes
+            would have to be standing today &mdash; and it asks the town to accept{' '}
+            {FEASIBILITY.buildings5} new buildings in five years and a business share of
+            the tax base going from {pct(FEASIBILITY.businessShareNow, 1)} to{' '}
+            {pct(FEASIBILITY.businessShareAfter, 1)}.
+          </Lever>
+          <Lever n={2} name="An override" href="#q10"
+            head={`${usd(BILL.overrideCost[0].cost)} on the average home for FY${GAPS[0].fy}, ${usd(BILL.overrideCost[4].cost)} to cover through FY${GAPS[4].fy}`}>
+            The only answer available on the timescale the problem actually runs on, and
+            the only one that needs no cut at all. It also has to be voted, and repeatedly,
+            because the gap grows &mdash; and the town said no twice in 2026, though to
+            questions several times larger than {usd(BILL.overrideCost[0].cost)}.
+          </Lever>
+        </ol>
+        <p className="text-[12px] leading-relaxed mb-3" style={{ color: 'var(--text-muted)' }}>
+          There is a third source and the town does not set it: Chapter 70 state aid, which
+          this projection grows at {pct(MODEL.assumptions.state_aid_growth, 1)} a year.
+          Lunenburg can argue for more of it, but it cannot decide it.
         </p>
         <button onClick={() => onJump('development')}
           className="text-[12px] font-semibold" style={{ color: 'var(--series-cost)' }}>
