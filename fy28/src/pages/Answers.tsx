@@ -4,7 +4,7 @@ import {
   GAPS, GAP, COST_GROWTH, REVENUE_CAP, RATE_GAP, yearsCovered, shortfallAfter,
   EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL,
   CONTRACT, SETTLEMENT, COUNTERFACTUAL, FEASIBILITY, FEES, RELIEF, BENT_HEALTH,
-  OPTIONS, BEARERS, HEALTH_LEVERS, scaleAfterCut,
+  OPTIONS, BEARERS, HEALTH_LEVERS, ATTRIBUTION, scaleAfterCut,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
 
@@ -124,6 +124,18 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
           undone, and the answer turns out to disappoint both of the loud
           positions.</>}>
         <Lookback />
+      </Section>
+
+      <Section id="drivers" eyebrow="Looking sideways"
+        title="How much of this is insurance?"
+        lede={<>The twin of the question above, and the more surprising one. It is present
+          tense because nobody decided this &mdash; no committee voted for health insurance
+          to rise {pct(ATTRIBUTION.health.rate)} a year. Each line below is priced by
+          holding it to the {pct(ATTRIBUTION.cap, 1)} the town may collect and re-running
+          the whole projection: what drops out of the hole is what that line is putting
+          into it. Size and blame turn out to have very little to do with each
+          other.</>}>
+        <Drivers />
       </Section>
 
     </div>
@@ -1062,6 +1074,132 @@ function BuildOut() {
           </p>
         </div>
       </div>
+    </div>
+  )
+}
+
+/** Every cost driver, sized and blamed, with the two that matter called out.
+ *
+ *  A budget conversation defaults to arguing about the biggest number in the room. This
+ *  is the chart that says the biggest number is not the problem in proportion to its
+ *  size, and a much smaller one is. */
+function Drivers() {
+  const a = ATTRIBUTION
+  const max = Math.max(...a.lines.map(l => l.shareOfGap))
+  return (
+    <div>
+      <div className="grid gap-3 md:grid-cols-2 mb-4">
+        <div className="card p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>Health insurance is</p>
+          <p className="text-4xl font-bold tnum leading-none">
+            {pct(a.health.shareOfBudget, 1)}
+            <span className="text-lg font-semibold"
+              style={{ color: 'var(--text-secondary)' }}> of what the schools buy</span>
+          </p>
+          <p className="text-4xl font-bold tnum leading-none mt-3"
+            style={{ color: 'var(--status-critical)' }}>
+            {pct(a.health.shareOfGap)}
+            <span className="text-lg font-semibold"
+              style={{ color: 'var(--text-secondary)' }}> of next year&rsquo;s hole</span>
+          </p>
+          <p className="text-[13px] mt-3" style={{ color: 'var(--text-secondary)' }}>
+            {usd(a.health.amount)} of spending producing {usd(a.health.contributes)} of the
+            problem &mdash; <strong>{a.weight(a.health).toFixed(1)} times its
+            weight.</strong> Hold it to {pct(a.cap, 1)} and next year&rsquo;s hole is{' '}
+            {usd(a.health.fy28)} instead of {usd(GAPS[0].cumulative)}.
+          </p>
+        </div>
+        <div className="card p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>And for comparison, salaries</p>
+          <p className="text-4xl font-bold tnum leading-none">
+            {pct(a.salaries.shareOfBudget, 1)}
+            <span className="text-lg font-semibold"
+              style={{ color: 'var(--text-secondary)' }}> of what the schools buy</span>
+          </p>
+          <p className="text-4xl font-bold tnum leading-none mt-3">
+            {pct(a.salaries.shareOfGap)}
+            <span className="text-lg font-semibold"
+              style={{ color: 'var(--text-secondary)' }}> of next year&rsquo;s hole</span>
+          </p>
+          <p className="text-[13px] mt-3" style={{ color: 'var(--text-secondary)' }}>
+            Payroll is <strong>{a.sizeRatio.toFixed(1)} times larger</strong> than the
+            insurance bill and contributes almost exactly the same amount of the gap. Every
+            argument in this town is about the {pct(a.salaries.shareOfBudget, 1)}. Almost
+            none of it is about the {pct(a.health.shareOfBudget, 1)}.
+          </p>
+        </div>
+      </div>
+
+      <div className="card overflow-x-auto mb-4">
+        <table className="w-full text-[13px] min-w-[680px]">
+          <thead>
+            <tr style={{ background: 'var(--surface-3)' }}>
+              <th className="text-left px-4 py-2.5 font-semibold">What the schools buy</th>
+              <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">Costs</th>
+              <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">Rises</th>
+              <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">
+                Puts into the hole
+              </th>
+              <th className="px-4 py-2.5 w-1/4" />
+            </tr>
+          </thead>
+          <tbody>
+            {a.lines.map(l => (
+              <tr key={String(l.key)} className="border-t align-top"
+                style={{ borderColor: 'var(--grid)' }}>
+                <td className="px-4 py-2.5">
+                  <span className="font-medium">{l.label}</span>
+                  <span className="block text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                    {l.note}
+                  </span>
+                </td>
+                <td className="px-4 py-2.5 text-right tnum whitespace-nowrap">
+                  {usd(l.amount)}
+                  <span className="block text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                    {pct(l.shareOfBudget, 1)}
+                  </span>
+                </td>
+                <td className="px-4 py-2.5 text-right tnum whitespace-nowrap"
+                  style={{ color: l.rate > a.cap ? 'var(--status-critical)' : undefined }}>
+                  {pct(l.rate, 1)}
+                </td>
+                <td className="px-4 py-2.5 text-right tnum font-bold whitespace-nowrap">
+                  {usd(l.contributes)}
+                  <span className="block text-[11px] font-normal"
+                    style={{ color: 'var(--text-muted)' }}>{pct(l.shareOfGap)}</span>
+                </td>
+                <td className="px-4 py-2.5">
+                  <span className="block h-3 rounded-sm mt-1"
+                    style={{ width: `${(l.shareOfGap / max) * 100}%`,
+                             background: l.key === 'health' ? 'var(--status-critical)'
+                               : 'var(--series-cost)' }} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="card p-5" style={{ background: 'var(--surface-3)' }}>
+        <p className="text-[14px] leading-relaxed">
+          <strong>And the bottom of the table is the proof of the whole page.</strong> If
+          nothing the schools buy outran the {pct(a.cap, 1)} the town is allowed to collect
+          &mdash; if every line held to the cap &mdash; there would be no hole next year at
+          all. Not a smaller one: {usd(Math.abs(a.ifNothingOutran.fy28))} to spare, and{' '}
+          {usd(Math.abs(a.ifNothingOutran.fy32))} to spare in FY{GAPS[4].fy}. Nothing here
+          was overspent, mismanaged or voted through carelessly. The gap is the distance
+          between one number the state fixed in 1980 and six numbers nobody in Lunenburg
+          gets to set.
+        </p>
+      </div>
+      <Note>
+        Each line is priced on its own, so the contributions do not add to exactly 100%
+        &mdash; holding two things at once is worth slightly less than the two separately,
+        because the projection compounds. The ranking and the size of the differences are
+        unaffected.
+      </Note>
     </div>
   )
 }

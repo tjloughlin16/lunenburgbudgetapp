@@ -608,6 +608,66 @@ export const HEALTH_LEVERS = (() => {
   }
 })()
 
+/** Which costs actually produce the gap, as opposed to which are simply large.
+ *
+ *  The twin of the raises question, and the more surprising of the two. "How much was the
+ *  raises" asks about a decision somebody made; this asks about rates nobody chose, so it
+ *  is present tense throughout. Nobody voted for health insurance to rise 9%.
+ *
+ *  Each line is priced by holding its growth to the levy cap and re-running the whole
+ *  projection: what falls out of the gap is what that line is putting into it. Sizes and
+ *  contributions turn out to have almost nothing to do with each other, which is the
+ *  point of doing it at all. */
+const DRIVERS: { key: keyof Assumptions; label: string; note: string }[] = [
+  { key: 'health', label: 'Health insurance', note: 'A contract, set by the insurance market' },
+  { key: 'salaries', label: 'Salaries', note: 'Bargained, three years at a time' },
+  { key: 'sped_tuition', label: 'Out-of-district special education',
+    note: 'Set by law and by which children enrol' },
+  { key: 'transport', label: 'Transportation', note: 'Contracted, fuel-exposed' },
+  { key: 'utilities', label: 'Utilities', note: 'Market' },
+  { key: 'other', label: 'Everything else', note: 'The genuinely discretionary part' },
+]
+
+export const ATTRIBUTION = (() => {
+  const base = expense.salaries + F.stm_addbacks
+  const size = (k: keyof Assumptions) =>
+    k === 'salaries' ? base : (expense[k as string] as number)
+  const total = (Object.keys(expense) as string[])
+    .reduce((s2, k) => s2 + (expense[k] as number), 0) + F.stm_addbacks
+
+  const lines = DRIVERS.map(d => {
+    const held = project(6, { ...A, [d.key]: LEVY_CAP })
+    return {
+      ...d,
+      amount: size(d.key),
+      shareOfBudget: size(d.key) / total,
+      rate: A[d.key] as number,
+      fy28: Math.round(held[0].deficit),
+      fy32: Math.round(held[4].deficit),
+      /** What this line alone is putting into next year's gap. */
+      contributes: Math.round(GAPS[0].cumulative - held[0].deficit),
+      shareOfGap: (GAPS[0].cumulative - held[0].deficit) / GAPS[0].cumulative,
+    }
+  }).sort((a, b) => b.contributes - a.contributes)
+
+  const all = project(6, {
+    ...A, salaries: LEVY_CAP, health: LEVY_CAP, transport: LEVY_CAP,
+    sped_tuition: LEVY_CAP, utilities: LEVY_CAP, other: LEVY_CAP,
+  })
+  const health = lines.find(l => l.key === 'health')!
+  const salaries = lines.find(l => l.key === 'salaries')!
+  return {
+    lines, health, salaries,
+    /** Contribution divided by size. Above 1 means it punches above its weight. */
+    weight: (l: typeof health) => l.shareOfGap / l.shareOfBudget,
+    /** Health and salaries contribute almost the same despite this size ratio. */
+    sizeRatio: salaries.amount / health.amount,
+    /** If nothing in the budget outran the levy cap, there would be no gap at all. */
+    ifNothingOutran: { fy28: Math.round(all[0].deficit), fy32: Math.round(all[4].deficit) },
+    cap: LEVY_CAP,
+  }
+})()
+
 /* ---- the scoreboard ------------------------------------------------------ */
 
 export interface Option {
