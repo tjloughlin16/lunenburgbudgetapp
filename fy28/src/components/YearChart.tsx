@@ -76,7 +76,7 @@ export function YearChart({ years }: { years: YearProjection[] }) {
         </ResponsiveContainer>
       </div>
 
-      <table className="w-full text-xs mt-4 tnum">
+      <table className="stack w-full text-xs mt-4 tnum">
         <caption className="sr-only">
           Projected cost of maintaining current services, revenue available, and the resulting gap, by fiscal year, assuming no cuts are made
         </caption>
@@ -91,10 +91,12 @@ export function YearChart({ years }: { years: YearProjection[] }) {
         <tbody>
           {years.map(y => (
             <tr key={y.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-              <td className="py-1.5 font-semibold">FY{y.fy}</td>
-              <td className="py-1.5 text-right">{usd(y.levelService)}</td>
-              <td className="py-1.5 text-right">{usd(y.available)}</td>
-              <td className="py-1.5 text-right font-semibold"
+              <td className="rowhead py-1.5 font-semibold">FY{y.fy}</td>
+              <td data-label="Cost of today&rsquo;s services"
+                className="py-1.5 text-right">{usd(y.levelService)}</td>
+              <td data-label="Revenue available"
+                className="py-1.5 text-right">{usd(y.available)}</td>
+              <td data-label="Gap" className="py-1.5 text-right font-semibold"
                 style={{ color: 'var(--status-critical)' }}>{usd(y.deficit)}</td>
             </tr>
           ))}

@@ -372,6 +372,11 @@ export function SportTable({ fee }: { fee: number }) {
 
   const selfFunding = sports.filter(sp => Math.round(coverage(sp) * 100) >= 100).length
 
+  const COLS: [typeof sort, string][] = [
+    ['students', 'Athletes'], ['cost', 'Cost'],
+    ['perAthlete', 'Per athlete'], ['coverage', 'Covered by the fee'],
+  ]
+
   const H = ({ k, label }: { k: typeof sort; label: string }) => (
     <th className="font-semibold py-1.5 text-right">
       <button onClick={() => setSort(k)}
@@ -402,8 +407,24 @@ export function SportTable({ fee }: { fee: number }) {
           ))}
         </div>
       </div>
+      {/* The header row carries the sort control, and the stacked phone layout drops
+          the header row, so on a phone the same control is a strip of chips instead. */}
+      <div className="sm:hidden flex items-center gap-1.5 flex-wrap mb-3">
+        <span className="text-[11px] font-semibold" style={{ color: 'var(--text-muted)' }}>
+          Sort by
+        </span>
+        {COLS.map(([k, label]) => (
+          <button key={k} onClick={() => setSort(k)} aria-pressed={sort === k}
+            className="px-2 py-1 rounded-md text-[11px] font-semibold border"
+            style={{ borderColor: sort === k ? 'var(--series-cost)' : 'var(--grid)',
+                     background: sort === k ? 'var(--series-cost)' : 'var(--surface-1)',
+                     color: sort === k ? '#fff' : 'var(--text-secondary)' }}>
+            {label}
+          </button>
+        ))}
+      </div>
       <div className="overflow-x-auto">
-        <table className="w-full text-xs tnum min-w-[560px]">
+        <table className="stack w-full text-xs tnum sm:min-w-[560px]">
           <caption className="sr-only">
             Lunenburg athletics: participations and programmatic cost per sport, FY24
           </caption>
@@ -419,25 +440,28 @@ export function SportTable({ fee }: { fee: number }) {
           <tbody>
             {sports.map(s => (
               <tr key={s.name} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                <td className="py-1.5">
+                <td className="rowhead py-1.5">
                   {s.name}
                   {s.level === 'MS' && <span className="ml-1.5 text-[9px] uppercase
                     tracking-widest font-bold" style={{ color: 'var(--text-muted)' }}>middle</span>}
                 </td>
-                <td className="py-1.5 text-right">{s.students}</td>
-                <td className="py-1.5 text-right">{usd(costOf(s))}</td>
-                <td className="py-1.5 text-right font-semibold">{usd(perAthlete(s))}</td>
-                <td className="py-1.5 pl-3"><Coverage pct={coverage(s)} /></td>
+                <td data-label="Athletes" className="py-1.5 text-right">{s.students}</td>
+                <td data-label="Cost" className="py-1.5 text-right">{usd(costOf(s))}</td>
+                <td data-label="Per athlete"
+                  className="py-1.5 text-right font-semibold">{usd(perAthlete(s))}</td>
+                <td data-label="Covered by the fee" className="rowfull py-1.5 sm:pl-3">
+                  <Coverage pct={coverage(s)} /></td>
               </tr>
             ))}
             <tr className="border-t-2 font-bold" style={{ borderColor: 'var(--axis)' }}>
-              <td className="py-2">All sports</td>
-              <td className="py-2 text-right">{A.participations}</td>
-              <td className="py-2 text-right">{usd(A.perSportTotal * mult)}</td>
-              <td className="py-2 text-right">
+              <td className="rowhead py-2">All sports</td>
+              <td data-label="Athletes" className="py-2 text-right">{A.participations}</td>
+              <td data-label="Cost"
+                className="py-2 text-right">{usd(A.perSportTotal * mult)}</td>
+              <td data-label="Per athlete" className="py-2 text-right">
                 {usd((A.perSportTotal * mult) / A.participations)}
               </td>
-              <td className="py-2 pl-3">
+              <td data-label="Covered by the fee" className="rowfull py-2 sm:pl-3">
                 <Coverage pct={fee / ((A.perSportTotal * mult) / A.participations)} />
               </td>
             </tr>

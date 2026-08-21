@@ -4,7 +4,7 @@ export function Section({ id, eyebrow, title, lede, children }: {
   id: string; eyebrow?: string; title: string; lede?: ReactNode; children: ReactNode
 }) {
   return (
-    <section id={id} className="scroll-mt-16 py-14 border-t"
+    <section id={id} className="scroll-mt-32 lg:scroll-mt-16 py-14 border-t"
       style={{ borderColor: 'var(--grid)' }}>
       <div className="mx-auto max-w-6xl px-5">
         {eyebrow && (

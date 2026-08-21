@@ -49,7 +49,7 @@ export function ChipGrid({ rows }: { rows: Row[] }) {
         <span><span aria-hidden="true" style={{ color: 'var(--status-good)' }}>✓ </span>Kept</span>
         <span><span aria-hidden="true" style={{ color: 'var(--status-critical)' }}>✕ </span>Cut</span>
         <span><span aria-hidden="true" style={{ color: 'var(--status-warning)' }}>⚖ </span>Protected by law — skipped, not cut</span>
-        <span>Click any program for the detail.</span>
+        <span>Open any program for the detail.</span>
       </p>
 
       {open && <Detail row={open} onClose={() => setOpen(null)} />}

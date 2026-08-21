@@ -83,7 +83,7 @@ export function HealthInsurance({ empShare, setEmpShare, movers, setMovers, onSa
         <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
           style={{ color: 'var(--status-serious)' }}>What it costs each employee, per year</p>
         <div className="overflow-x-auto">
-          <table className="w-full text-xs tnum">
+          <table className="stack w-full text-xs tnum">
             <thead>
               <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
                 <th className="font-semibold py-1">Plan</th>
@@ -98,10 +98,11 @@ export function HealthInsurance({ empShare, setEmpShare, movers, setMovers, onSa
                 const after = yr(p.family) * empShare
                 return (
                   <tr key={p.id} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                    <td className="py-1.5">{p.name}</td>
-                    <td className="py-1.5 text-right">{usd(now)}</td>
-                    <td className="py-1.5 text-right font-semibold">{usd(after)}</td>
-                    <td className="py-1.5 text-right font-bold"
+                    <td className="rowhead py-1.5">{p.name}</td>
+                    <td data-label="Family now" className="py-1.5 text-right">{usd(now)}</td>
+                    <td data-label="Family after"
+                      className="py-1.5 text-right font-semibold">{usd(after)}</td>
+                    <td data-label="Change" className="py-1.5 text-right font-bold"
                       style={{ color: after > now ? 'var(--status-critical)' : 'var(--text-muted)' }}>
                       {after > now ? '+' : ''}{usd(after - now)}
                     </td>
@@ -210,8 +211,8 @@ export function HealthInsurance({ empShare, setEmpShare, movers, setMovers, onSa
 function Row({ k, v }: { k: string; v: string }) {
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
-      <dd className="font-semibold shrink-0">{v}</dd>
+      <dt className="min-w-0" style={{ color: 'var(--text-secondary)' }}>{k}</dt>
+      <dd className="font-semibold text-right">{v}</dd>
     </div>
   )
 }

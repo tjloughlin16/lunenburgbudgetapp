@@ -88,7 +88,7 @@ export function CutLine({ order, target, setTarget, ticks, max }: {
                 : `cumulatively through FY${reached.fy}`}</strong> — {usd(cutTotal)} of
               programs fall below the cut line, costing {fteLost.toFixed(1)} staff
               positions.</>
-            : <>Below the first projected shortfall. Drag right, or click a year marker.</>}
+            : <>Below the first projected shortfall. Drag right, or pick a year marker.</>}
           {unclosed > 0 && (
             <> <strong style={{ color: 'var(--status-critical)' }}>
               {usd(unclosed)} cannot be closed</strong> — everything legally cuttable is

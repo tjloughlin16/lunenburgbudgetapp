@@ -38,6 +38,14 @@ export default function App() {
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
   const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
   const pending = useRef<string | null>(null)
+  const strip = useRef<HTMLDivElement>(null)
+
+  // On a phone the chapter strip scrolls, so arriving on a tab whose pill is off to the
+  // right would leave nothing marked as current. Bring it into view when the tab changes.
+  useEffect(() => {
+    const pill = strip.current?.querySelector<HTMLElement>(`[data-tab="${tab}"]`)
+    pill?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+  }, [tab])
 
   // Deep links into the context page work from any tab: switch first, scroll once the
   // section actually exists.
@@ -71,35 +79,50 @@ export default function App() {
       <header className="sticky top-0 z-30 backdrop-blur border-b"
         style={{ background: 'color-mix(in srgb, var(--surface-2) 92%, transparent)',
                  borderColor: 'var(--grid)' }}>
-        <nav className="mx-auto max-w-6xl px-5 h-12 flex items-center gap-1">
-          <span className="font-bold text-sm mr-3 shrink-0">Lunenburg FY28</span>
-          {TABS.map(t => (
-            <button key={t.id} onClick={() => go(t.id)} title={t.sub}
-              aria-current={tab === t.id ? 'page' : undefined}
-              className="text-xs font-semibold px-2.5 py-1 rounded-md whitespace-nowrap shrink-0"
-              style={{
-                background: tab === t.id ? 'var(--surface-3)' : 'transparent',
-                color: tab === t.id ? 'var(--text-primary)' : 'var(--text-secondary)',
-              }}>
-              {t.label}
+        {/* Seven controls do not fit across a phone, and forcing them to try was what
+            made the whole page scroll sideways. The single row wants 836px, so below lg
+            the brand and the one button take the top line and the chapters get a strip of
+            their own that scrolls inside itself. */}
+        <nav aria-label="Sections"
+          className="mx-auto max-w-6xl px-5 lg:h-12 lg:flex lg:items-center lg:gap-1">
+          <div className="flex items-center gap-3 h-12 lg:contents">
+            <span className="font-bold text-sm shrink-0 lg:mr-3">Lunenburg FY28</span>
+            {/* The one page you use rather than read, so it does not sit in the reading
+                order pretending to be another chapter. */}
+            <button onClick={() => go(ADJUST.id)} title={ADJUST.sub}
+              aria-current={tab === ADJUST.id ? 'page' : undefined}
+              className="cta ml-auto lg:order-last flex items-center gap-1.5 text-xs font-bold
+                         px-3 py-2 rounded-md whitespace-nowrap shrink-0
+                         transition-opacity hover:opacity-90"
+              style={tab === ADJUST.id
+                ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
+                : undefined}>
+              <span aria-hidden="true">&#9881;</span>
+              {ADJUST.label}
             </button>
-          ))}
-          {/* The one page you use rather than read, so it does not sit in the reading
-              order pretending to be another chapter. */}
-          <button onClick={() => go(ADJUST.id)} title={ADJUST.sub}
-            aria-current={tab === ADJUST.id ? 'page' : undefined}
-            className="cta ml-auto flex items-center gap-1.5 text-xs font-bold px-3 py-1.5
-                       rounded-md whitespace-nowrap shrink-0 transition-opacity hover:opacity-90"
-            style={tab === ADJUST.id
-              ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
-              : undefined}>
-            <span aria-hidden="true">&#9881;</span>
-            {ADJUST.label}
-          </button>
+          </div>
+          <div ref={strip}
+            className="no-scrollbar flex items-center gap-1 overflow-x-auto
+                       overscroll-x-contain pb-2 -mx-5 px-5 lg:contents">
+            {TABS.map(t => (
+              <button key={t.id} onClick={() => go(t.id)} title={t.sub}
+                data-tab={t.id}
+                aria-current={tab === t.id ? 'page' : undefined}
+                className="text-xs font-semibold px-2.5 py-1.5 lg:py-1 rounded-md
+                           whitespace-nowrap shrink-0"
+                style={{
+                  background: tab === t.id ? 'var(--surface-3)' : 'transparent',
+                  color: tab === t.id ? 'var(--text-primary)' : 'var(--text-secondary)',
+                }}>
+                {t.label}
+              </button>
+            ))}
+          </div>
         </nav>
         {tab === 'context' && (
           <div className="border-t" style={{ borderColor: 'var(--grid)' }}>
-            <div className="mx-auto max-w-6xl px-5 h-9 flex items-center gap-1 overflow-x-auto">
+            <div className="no-scrollbar mx-auto max-w-6xl px-5 h-9 flex items-center
+                            gap-1 overflow-x-auto overscroll-x-contain">
               {CONTEXT_NAV.map(([id, label]) => (
                 <a key={id} href={`#${id}`}
                   className="text-[11px] px-2 py-1 rounded whitespace-nowrap shrink-0 opacity-70 hover:opacity-100"

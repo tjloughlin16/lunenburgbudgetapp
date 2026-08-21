@@ -168,9 +168,9 @@ function QA({ n, q, verdict, tone, answer, children, next }: {
   answer: ReactNode; children: ReactNode; next: ReactNode
 }) {
   return (
-    <article id={`q${n}`} className="card p-5 sm:p-6 scroll-mt-20">
+    <article id={`q${n}`} className="card p-5 sm:p-6 scroll-mt-24 lg:scroll-mt-20">
       <div className="flex items-start justify-between gap-4 mb-3">
-        <div className="flex items-baseline gap-3">
+        <div className="flex items-baseline gap-3 min-w-0">
           <span className="text-[11px] font-bold tnum tracking-widest shrink-0"
             style={{ color: 'var(--text-muted)' }}>{String(n).padStart(2, '0')}</span>
           <h3 className="text-[17px] sm:text-xl font-bold leading-snug">{q}</h3>
@@ -281,7 +281,7 @@ function GapTable() {
   return (
     <div>
       <div className="card overflow-hidden">
-        <table className="w-full text-[13px]">
+        <table className="stack w-full text-[13px]">
           <thead>
             <tr style={{ background: 'var(--surface-3)' }}>
               <th className="text-left px-4 py-2.5 font-semibold">Year</th>
@@ -297,12 +297,12 @@ function GapTable() {
           <tbody>
             {GAPS.map(g => (
               <tr key={g.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                <td className="px-4 py-2.5 font-semibold">FY{g.fy}</td>
-                <td className="px-4 py-2.5 text-right tnum font-bold"
+                <td className="rowhead px-4 py-2.5 font-semibold">FY{g.fy}</td>
+                <td data-label="Running total needed" className="px-4 py-2.5 text-right tnum font-bold"
                   style={{ color: 'var(--status-critical)' }}>{usd(g.cumulative)}</td>
-                <td className="px-4 py-2.5 text-right tnum"
+                <td data-label="New that year" className="px-4 py-2.5 text-right tnum"
                   style={{ color: 'var(--text-secondary)' }}>+{usd(g.fresh)}</td>
-                <td className="px-4 py-2.5">
+                <td className="rowfull px-4 py-2.5">
                   <span className="block h-3 rounded-sm"
                     style={{ width: `${(g.cumulative / max) * 100}%`,
                              background: 'var(--series-cost)' }} />
@@ -1134,7 +1134,7 @@ function Drivers() {
       </div>
 
       <div className="card overflow-x-auto mb-4">
-        <table className="w-full text-[13px] min-w-[680px]">
+        <table className="stack w-full text-[13px] sm:min-w-[680px]">
           <thead>
             <tr style={{ background: 'var(--surface-3)' }}>
               <th className="text-left px-4 py-2.5 font-semibold">What the schools buy</th>
@@ -1150,28 +1150,28 @@ function Drivers() {
             {a.lines.map(l => (
               <tr key={String(l.key)} className="border-t align-top"
                 style={{ borderColor: 'var(--grid)' }}>
-                <td className="px-4 py-2.5">
+                <td className="rowhead px-4 py-2.5">
                   <span className="font-medium">{l.label}</span>
                   <span className="block text-[11px]" style={{ color: 'var(--text-muted)' }}>
                     {l.note}
                   </span>
                 </td>
-                <td className="px-4 py-2.5 text-right tnum whitespace-nowrap">
+                <td data-label="Costs" className="px-4 py-2.5 text-right tnum whitespace-nowrap">
                   {usd(l.amount)}
                   <span className="block text-[11px]" style={{ color: 'var(--text-muted)' }}>
                     {pct(l.shareOfBudget, 1)}
                   </span>
                 </td>
-                <td className="px-4 py-2.5 text-right tnum whitespace-nowrap"
+                <td data-label="Rises" className="px-4 py-2.5 text-right tnum whitespace-nowrap"
                   style={{ color: l.rate > a.cap ? 'var(--status-critical)' : undefined }}>
                   {pct(l.rate, 1)}
                 </td>
-                <td className="px-4 py-2.5 text-right tnum font-bold whitespace-nowrap">
+                <td data-label="Puts into the hole" className="px-4 py-2.5 text-right tnum font-bold whitespace-nowrap">
                   {usd(l.contributes)}
                   <span className="block text-[11px] font-normal"
                     style={{ color: 'var(--text-muted)' }}>{pct(l.shareOfGap)}</span>
                 </td>
-                <td className="px-4 py-2.5">
+                <td className="rowfull px-4 py-2.5">
                   <span className="block h-3 rounded-sm mt-1"
                     style={{ width: `${(l.shareOfGap / max) * 100}%`,
                              background: l.key === 'health' ? 'var(--status-critical)'
@@ -1225,7 +1225,7 @@ function Lookback() {
   return (
     <div>
       <div className="card overflow-x-auto mb-4">
-        <table className="w-full text-[13px] min-w-[640px]">
+        <table className="stack w-full text-[13px] sm:min-w-[640px]">
           <thead>
             <tr style={{ background: 'var(--surface-3)' }}>
               <th className="text-left px-4 py-2.5 font-semibold">
@@ -1247,7 +1247,7 @@ function Lookback() {
               <tr key={String(r.rate)} className="border-t"
                 style={{ borderColor: 'var(--grid)',
                          background: r.actual ? 'var(--surface-3)' : undefined }}>
-                <td className={`px-4 py-2.5 ${r.actual ? 'font-bold' : ''}`}>
+                <td className={`rowhead px-4 py-2.5 ${r.actual ? 'font-bold' : ''}`}>
                   {r.actual
                     ? <>{CONTRACT.cola.map(x => pct(x.pct, 1)).join(', ')}{' '}
                         <span style={{ color: 'var(--text-secondary)' }}>
@@ -1258,14 +1258,17 @@ function Lookback() {
                         {r.rate === 0 && <span style={{ color: 'var(--text-secondary)' }}>
                           {' '}&mdash; no raise at all</span>}</>}
                 </td>
-                <td className="px-4 py-2.5 text-right tnum">{usd(r.payroll)}</td>
-                <td className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
+                <td data-label="Teacher payroll today"
+                  className="px-4 py-2.5 text-right tnum">{usd(r.payroll)}</td>
+                <td data-label={`FY${GAPS[0].fy} hole`}
+                  className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
                   {r.fy28 <= 0
                     ? <>{usd(-r.fy28)}<span style={{ color: 'var(--text-muted)' }}>
                         {' '}to spare</span></>
                     : usd(r.fy28)}
                 </td>
-                <td className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
+                <td data-label={`FY${GAPS[4].fy} hole`}
+                  className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
                   {usd(r.fy32)}
                 </td>
               </tr>
@@ -1377,7 +1380,7 @@ function Harm({ level }: { level: 'none' | 'real' | 'severe' | 'character' }) {
 function Scoreboard() {
   return (
     <div className="card overflow-x-auto">
-      <table className="w-full text-[13px] min-w-[720px]">
+      <table className="stack w-full text-[13px] sm:min-w-[720px]">
         <thead>
           <tr style={{ background: 'var(--surface-3)' }}>
             <th className="text-left px-4 py-2.5 font-semibold">What you would do</th>
@@ -1412,24 +1415,27 @@ function Scoreboard() {
             return (
               <tr key={o.id} className="border-t align-top"
                 style={{ borderColor: 'var(--grid)' }}>
-                <td className="px-4 py-3 font-medium">
+                <td className="rowhead px-4 py-3 font-medium">
                   {o.anchor
                     ? <a href={`#${o.anchor}`} className="hover:underline"
                         style={{ color: 'var(--series-cost)' }}>{o.label}</a>
                     : o.label}
                 </td>
-                <td className="px-4 py-3 text-right tnum font-semibold whitespace-nowrap">
+                <td data-label="Saves a year"
+                  className="px-4 py-3 text-right tnum font-semibold whitespace-nowrap">
                   {usd(o.saves)}
                 </td>
-                <td className="px-4 py-3 text-center whitespace-nowrap font-semibold">
+                <td data-label={`Closes FY${GAPS[0].fy}?`}
+                  className="px-4 py-3 text-center sm:text-center whitespace-nowrap font-semibold">
                   {ok ? 'Yes' : <>No <span style={{ color: 'var(--text-muted)' }}>
                     &mdash; {pct(o.saves / GAP)}</span></>}
                 </td>
-                <td className="px-4 py-3 text-center tnum font-bold">
+                <td data-label="Years it lasts" className="px-4 py-3 text-center tnum font-bold">
                   {yrs === 0 ? <span style={{ color: 'var(--text-muted)' }}>&mdash;</span>
                     : o.permanent ? `${yrs}+` : yrs}
                 </td>
-                <td className="px-4 py-3" style={{ color: 'var(--text-secondary)' }}>
+                <td data-label="What it costs" className="rowfull px-4 py-3 pt-2"
+                  style={{ color: 'var(--text-secondary)' }}>
                   <Harm level={o.harm} />{o.costs}
                 </td>
               </tr>

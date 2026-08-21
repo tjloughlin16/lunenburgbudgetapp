@@ -437,7 +437,7 @@ export function Structural() {
             {alreadyCut.map(p => (
               <li key={p.id} className="flex justify-between gap-2"
                 style={{ color: 'var(--text-secondary)' }}>
-                <span className="truncate">{p.name}</span>
+                <span className="min-w-0 sm:truncate">{p.name}</span>
                 <span className="tnum shrink-0">{usd(p.cost)}</span>
               </li>
             ))}
@@ -728,8 +728,8 @@ function Scenario({ title, lead, leadNote, body, chart, rows, tone }: {
       <dl className="mt-3 pt-3 border-t space-y-1.5" style={{ borderColor: 'var(--grid)' }}>
         {rows.map(([k, v]) => (
           <div key={k} className="flex items-baseline justify-between gap-3 text-[12px]">
-            <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
-            <dd className="font-bold tnum shrink-0">{v}</dd>
+            <dt className="min-w-0" style={{ color: 'var(--text-secondary)' }}>{k}</dt>
+            <dd className="font-bold tnum text-right">{v}</dd>
           </div>
         ))}
       </dl>
@@ -785,8 +785,8 @@ function Way({ title, lead, sub, body, rows }: {
       <dl className="mt-3 pt-3 border-t space-y-1.5" style={{ borderColor: 'var(--grid)' }}>
         {rows.map(([k, v]) => (
           <div key={k} className="flex items-baseline justify-between gap-3 text-[12px]">
-            <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
-            <dd className="font-bold tnum shrink-0">{v}</dd>
+            <dt className="min-w-0" style={{ color: 'var(--text-secondary)' }}>{k}</dt>
+            <dd className="font-bold tnum text-right">{v}</dd>
           </div>
         ))}
       </dl>
