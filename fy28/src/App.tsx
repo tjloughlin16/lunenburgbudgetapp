@@ -10,12 +10,15 @@ import { Answers } from './pages/Answers'
 
 type Tab = 'answers' | 'context' | 'why' | 'priorities' | 'adjust' | 'development'
 
+const ADJUST: { id: Tab; label: string; sub: string } =
+  { id: 'adjust', label: 'Build your own budget',
+    sub: 'The interactive one — every dial that moves the gap, on one page' }
+
 const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'answers', label: 'Straight answers', sub: 'The questions people actually ask, in plain English, with the arithmetic' },
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
-  { id: 'adjust', label: 'Adjust', sub: 'Every dial that moves the gap, on one page' },
   { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
 ]
 
@@ -81,6 +84,18 @@ export default function App() {
               {t.label}
             </button>
           ))}
+          {/* The one page you use rather than read, so it does not sit in the reading
+              order pretending to be another chapter. */}
+          <button onClick={() => go(ADJUST.id)} title={ADJUST.sub}
+            aria-current={tab === ADJUST.id ? 'page' : undefined}
+            className="cta ml-auto flex items-center gap-1.5 text-xs font-bold px-3 py-1.5
+                       rounded-md whitespace-nowrap shrink-0 transition-opacity hover:opacity-90"
+            style={tab === ADJUST.id
+              ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
+              : undefined}>
+            <span aria-hidden="true">&#9881;</span>
+            {ADJUST.label}
+          </button>
         </nav>
         {tab === 'context' && (
           <div className="border-t" style={{ borderColor: 'var(--grid)' }}>

@@ -46,10 +46,14 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         </Note>
       </div>
 
+      <Section id="short" eyebrow="Start here"
+        title="The whole thing in four sentences">
+        <FourSentences />
+      </Section>
+
       <Section id="scoreboard" eyebrow="Every idea, side by side"
         title="Every idea on one page"
-        lede={<>Next year the schools need <strong>{usd(GAP)}</strong> more than the town
-          can give them. Here is every answer anyone has proposed, priced the same way:
+        lede={<>Every answer anyone has proposed to that {usd(GAP)}, priced the same way:
           what it saves, whether that closes next year, and how long it lasts before the
           question comes back. <strong>Nothing on this list lasts more than one year on its
           own.</strong> Each row links to the arithmetic behind it.
@@ -106,11 +110,6 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
           committee voted for health insurance to rise{' '}
           {pct(ATTRIBUTION.health.rate)} a year.</>}>
         <Drivers />
-      </Section>
-
-      <Section id="short" eyebrow="Why any of this is necessary"
-        title="The whole thing in four sentences">
-        <FourSentences />
       </Section>
 
       <Section id="repeat" eyebrow="The pattern"
@@ -258,9 +257,9 @@ function FourSentences() {
     { fig: usdShort(GAPS[1].fresh), body: <>That difference opens a <strong>brand new
       hole every year</strong>, of roughly {usd(GAPS[1].fresh)} to {usd(GAPS[5].fresh)},
       whether or not you closed the last one.</> },
-    { fig: '1 yr', body: <>So no single cut fixes this. Every cut on the table &mdash;
-      sports, administrators, pay, insurance &mdash; buys <strong>one year</strong> at
-      most, and then the question comes back larger.</> },
+    { fig: '1 yr', body: <>So no single cut fixes this. Every answer in the table below
+      &mdash; sports, fees, administrators, pay, insurance &mdash; buys{' '}
+      <strong>one year</strong> at most, and then the question comes back larger.</> },
   ]
   return (
     <ol className="grid gap-3 sm:grid-cols-2">

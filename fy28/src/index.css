@@ -60,3 +60,12 @@ body {
   border-radius: 12px;
 }
 input[type="range"] { accent-color: var(--series-cost); }
+
+/* The one call-to-action in the header. Its label has to clear 4.5:1 against the blue in
+   both themes, and no single ink does that: white is 4.6:1 on the light-theme blue but
+   only 3.5:1 on the lighter dark-theme one, so the ink flips with the theme. */
+.cta { background: var(--series-cost); color: #ffffff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .cta { color: #0d0d0d; }
+}
+:root[data-theme="dark"] .cta { color: #0d0d0d; }
