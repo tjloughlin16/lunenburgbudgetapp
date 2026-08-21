@@ -95,6 +95,19 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         <WhatWorks onJump={onJump} />
       </Section>
 
+      <Section id="drivers" eyebrow="Where it actually comes from"
+        title="How much of this is insurance?"
+        lede={<>Before any of the detail: of all the things the schools buy, which ones
+          actually produce this? Each line is priced by holding it to the{' '}
+          {pct(ATTRIBUTION.cap, 1)} the town may collect and re-running the whole
+          projection &mdash; whatever drops out of the hole is what that line was putting
+          into it. <strong>Size and blame turn out to have very little to do with each
+          other.</strong> Present tense, deliberately: nobody decided any of this. No
+          committee voted for health insurance to rise{' '}
+          {pct(ATTRIBUTION.health.rate)} a year.</>}>
+        <Drivers />
+      </Section>
+
       <Section id="short" eyebrow="Why any of this is necessary"
         title="The whole thing in four sentences">
         <FourSentences />
@@ -117,25 +130,14 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
 
       <Section id="lookback" eyebrow="Looking backwards"
         title="How much of this was the raises?"
-        lede={<>A fair question, and one this page can answer rather than argue about.
-          The teachers&rsquo; scale rose {CONTRACT.cola.map(c => pct(c.pct, 1)).join(', ')}{' '}
-          over the last three years. If those years had been smaller, where would the
-          hole be now? This is a measurement, not a proposal &mdash; none of it can be
-          undone, and the answer turns out to disappoint both of the loud
+        lede={<>Salaries put {pct(ATTRIBUTION.salaries.shareOfGap)} of next year&rsquo;s
+          hole into it, and unlike the other five drivers, that one was decided &mdash; the
+          scale rose {CONTRACT.cola.map(c => pct(c.pct, 1)).join(', ')} over the last three
+          years, by agreement, in a room. So it is fair to ask: if those years had been
+          smaller, where would the hole be now? A measurement, not a proposal &mdash; none
+          of it can be undone, and the answer disappoints both of the loud
           positions.</>}>
         <Lookback />
-      </Section>
-
-      <Section id="drivers" eyebrow="Looking sideways"
-        title="How much of this is insurance?"
-        lede={<>The twin of the question above, and the more surprising one. It is present
-          tense because nobody decided this &mdash; no committee voted for health insurance
-          to rise {pct(ATTRIBUTION.health.rate)} a year. Each line below is priced by
-          holding it to the {pct(ATTRIBUTION.cap, 1)} the town may collect and re-running
-          the whole projection: what drops out of the hole is what that line is putting
-          into it. Size and blame turn out to have very little to do with each
-          other.</>}>
-        <Drivers />
       </Section>
 
     </div>
@@ -1199,6 +1201,13 @@ function Drivers() {
         &mdash; holding two things at once is worth slightly less than the two separately,
         because the projection compounds. The ranking and the size of the differences are
         unaffected.
+      </Note>
+      <Note>
+        One of these six is different from the other five: the salary line is the only one
+        set by people in a room, three years at a time. That makes it the only one it is
+        fair to ask a backwards question about, and{' '}
+        <a href="#lookback" style={{ color: 'var(--series-cost)' }}>
+          the last section on this page does</a>.
       </Note>
     </div>
   )
