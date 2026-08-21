@@ -1364,20 +1364,27 @@ function WhatWorks({ onJump }: {
       <div className="card p-5">
         <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
           style={{ color: 'var(--text-muted)' }}>Fix two</p>
-        <h3 className="text-lg font-bold mb-2">Make something stop rising at 9%</h3>
+        <h3 className="text-lg font-bold mb-2">Pay less for health insurance</h3>
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          Health insurance rises {pct(BENT_HEALTH.from)} a year and is the biggest single
-          driver in the budget. Hold it to {pct(BENT_HEALTH.to)} and next year&rsquo;s hole
-          falls from {usd(GAPS[0].cumulative)} to {usd(BENT_HEALTH.gaps[0].cumulative)},
-          FY{GAPS[4].fy}&rsquo;s from {usd(GAPS[4].cumulative)} to{' '}
-          {usd(BENT_HEALTH.gaps[4].cumulative)} &mdash; {usd(BENT_HEALTH.savedByFy32)} a
-          year, and not one student loses anything.
+          Almost every large number in this budget is a person or a programme. Cut it and
+          something stops happening to a child. <strong>Health insurance is the biggest
+          thing the district buys that is neither &mdash; it is a contract.</strong>{' '}
+          {usd(HEALTH.budget)} a year, rising {pct(BENT_HEALTH.from)}, the fastest-growing
+          thing on the list. Which makes it the one place left to take real money out
+          without taking anything away from a student.
         </p>
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          <strong>But nobody can simply decide that.</strong> The insurance market sets the
-          premium. All the town can change is which plans it buys and who is in the pool,
-          and there are three ways to do it &mdash; each of which lands on somebody, just
-          not on a student.
+          What it is worth: hold the rise to {pct(BENT_HEALTH.to)} and next year&rsquo;s
+          hole falls from {usd(GAPS[0].cumulative)} to {usd(BENT_HEALTH.gaps[0].cumulative)},
+          FY{GAPS[4].fy}&rsquo;s from {usd(GAPS[4].cumulative)} to{' '}
+          {usd(BENT_HEALTH.gaps[4].cumulative)} &mdash; {usd(BENT_HEALTH.savedByFy32)} a
+          year by then.
+        </p>
+        <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+          <strong>But nobody can simply decide the rise is {pct(BENT_HEALTH.to)}.</strong>{' '}
+          The insurance market sets the premium. All the town can change is which plans it
+          buys and who is in the pool &mdash; three ways to do that, each landing on
+          somebody, none of them on a student.
         </p>
         <ol className="space-y-3 mb-3">
           <Lever n={1} name="Move people to cheaper plans" href="#q8"
