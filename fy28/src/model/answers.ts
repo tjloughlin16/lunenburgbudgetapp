@@ -567,12 +567,32 @@ export interface Option {
   anchor?: string
   /** What it does to people. The table's only colour axis — see the note in Scoreboard. */
   harm: 'none' | 'real' | 'severe' | 'character'
+  /** Who the money actually comes out of. Every answer to this budget takes it from
+   *  somewhere, and grouping by where turns a list of twelve ideas into a choice between
+   *  five kinds of thing — which is the choice the town is really making. */
+  bears: 'overhead' | 'families' | 'services' | 'staff' | 'taxpayers' | 'town'
 }
+
+/** The groups, in the order the table shows them: least contested first. */
+export const BEARERS: { id: Option['bears']; label: string; sub: string }[] = [
+  { id: 'overhead', label: 'Overhead is trimmed',
+    sub: 'No programme ends and no job goes — but see what is actually in it' },
+  { id: 'families', label: 'Families pay more',
+    sub: 'User fees. The only lever the district can pull without the Town, a union or a ballot' },
+  { id: 'services', label: 'Services are cut',
+    sub: 'Something students have today stops existing' },
+  { id: 'staff', label: 'Staff are paid less',
+    sub: 'Bargained, every one of them, and a pay cut in everything but name' },
+  { id: 'taxpayers', label: 'Everyone’s taxes rise',
+    sub: 'Nothing is cut; the bill goes up instead' },
+  { id: 'town', label: 'The town itself changes',
+    sub: 'Nobody pays and nothing is cut — the place becomes something else' },
+]
 
 /** Every idea on the page, priced the same way, so they can be read against each other.
  *  `growth` is the rate the saved thing would itself have grown at — see yearsCovered. */
 export const OPTIONS: Option[] = [
-  { id: 'paper', harm: 'real', anchor: 'q5',
+  { id: 'paper', bears: 'overhead', harm: 'real', anchor: 'q5',
     label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
     saves: ADMIN.paperOnly, growth: A.other,
     // Called "nothing anybody would see" here until it was read properly. Only the
@@ -580,44 +600,46 @@ export const OPTIONS: Option[] = [
     // and a legal budget the district does not control the timing of.
     costs: `Only ${usdShort(ADMIN.invisible)} of it is invisible — the rest is stipends `
       + `somebody is paid, and a bet that no special-education dispute lands` },
-  { id: 'fee_ath', harm: 'severe', anchor: 'q4',
+  { id: 'fee_ath', bears: 'families', harm: 'severe', anchor: 'q4',
     label: 'Charge athletics fees until sports pay for themselves',
     saves: FEES.cases[0].gain, growth: A.salaries,
     costs: `$${FEES.cases[0].selfFund} a season per sport, per child — up from `
       + `$${FEES.cases[0].currentFee} on a fee that just rose 60%` },
-  { id: 'fee_act', harm: 'severe', anchor: 'q4',
+  { id: 'fee_act', bears: 'families', harm: 'severe', anchor: 'q4',
     label: 'Charge for band, music and every club until they pay for themselves',
     saves: FEES.cases[1].gain, growth: A.salaries,
     costs: `$${FEES.cases[1].selfFund} per student per activity, from nothing today — and `
       + `the students who quit first are the ones the club keeps in school` },
-  { id: 'fee_bus', harm: 'severe', anchor: 'q4',
+  { id: 'fee_bus', bears: 'families', harm: 'severe', anchor: 'q4',
     label: 'Raise bus fares to the most they could ever raise',
     saves: FEES.cases[2].gain, growth: A.transport,
     costs: `$${FEES.cases[2].peakFee} a rider, up from $${FEES.cases[2].currentFee} — and `
       + `it still covers only ${Math.round(FEES.cases[2].peakCoverage * 100)}% of what buses cost` },
-  { id: 'extras', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
+  { id: 'extras', bears: 'services', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },
-  { id: 'tech', harm: 'real', label: 'Cut 60% of all software, licences and student devices',
+  { id: 'tech', bears: 'services', harm: 'real', label: 'Cut 60% of all software, licences and student devices',
     saves: TECH.atMax, growth: A.other,
     costs: 'State testing, IEP and payroll systems run on these' },
-  { id: 'health', harm: 'severe', anchor: 'q8', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
+  { id: 'health', bears: 'staff', harm: 'severe', anchor: 'q8', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
     saves: HEALTH.maxModelled, growth: A.health,
+    // "a family" was ambiguous once this row sat under a heading about families paying
+    // fees — it is a school employee's family, not a student's.
     costs: `About ${usd(Math.round((HEALTH.maxShare - HEALTH.employeeShare) * 100
-      * familyPremium * 0.01))} a year out of a family’s pay` },
-  { id: 'admin', harm: 'severe', anchor: 'q5', label: 'Cut every administrator and school secretary the law allows',
+      * familyPremium * 0.01))} a year out of a school employee’s pay` },
+  { id: 'admin', bears: 'services', harm: 'severe', anchor: 'q5', label: 'Cut every administrator and school secretary the law allows',
     saves: ADMIN.lawful, growth: A.salaries,
     costs: `${ADMIN.lawfulFte} jobs · no front office in any of the four schools` },
-  { id: 'leaders', harm: 'severe', anchor: 'q6', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
+  { id: 'leaders', bears: 'staff', harm: 'severe', anchor: 'q6', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
     saves: GAP, growth: A.salaries,
     costs: 'Every one of them is below market the next morning' },
-  { id: 'pay', harm: 'severe', anchor: 'q7', label: 'A 5% pay cut for everyone who works in the schools',
+  { id: 'pay', bears: 'staff', harm: 'severe', anchor: 'q7', label: 'A 5% pay cut for everyone who works in the schools',
     saves: PAYROLL.fivePercent, growth: A.salaries,
     costs: 'Roughly 250 employees, and a bargaining fight for each' },
-  { id: 'override', harm: 'real', anchor: 'q10', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
+  { id: 'override', bears: 'taxpayers', harm: 'real', anchor: 'q10', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
     saves: GAP, growth: 0.03,
     costs: `$${BILL.overrideCost[0].cost} a year on the average home` },
-  { id: 'build', harm: 'character', anchor: 'q9', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
+  { id: 'build', bears: 'town', harm: 'character', anchor: 'q9', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
     saves: GAP, growth: 0.06, permanent: true,
     costs: `Nobody’s pay — but a development every ${FEASIBILITY.everyDays} days forever, `
       + `and business goes from ${(FEASIBILITY.businessShareNow * 100).toFixed(0)}% of the `

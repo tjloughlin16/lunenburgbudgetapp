@@ -4,8 +4,7 @@ import {
   GAPS, GAP, COST_GROWTH, REVENUE_CAP, RATE_GAP, yearsCovered, shortfallAfter,
   EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL,
   CONTRACT, SETTLEMENT, COUNTERFACTUAL, FEASIBILITY, FEES, RELIEF, BENT_HEALTH,
-  OPTIONS,
-  scaleAfterCut,
+  OPTIONS, BEARERS, scaleAfterCut,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
 
@@ -58,7 +57,12 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
           Closing the gap and being a good idea are different questions, so they are kept
           in different columns. Whether an option closes FY{GAPS[0].fy} is arithmetic and
           is printed plainly. The only colour in the table is on the last column, which is
-          what it costs the people it lands on.</>}>
+          what it costs the people it lands on.
+          <br /><br />
+          They are grouped by <strong>who the money comes out of</strong>, because that is
+          the choice actually being made. Every one of these takes it from somewhere
+          &mdash; a family, a member of staff, a student, or a taxpayer &mdash; except the
+          last group, which takes it from nobody and changes what the town is instead.</>}>
         <Scoreboard />
         <Note>
           &ldquo;Years it lasts&rdquo; assumes the saving is permanent and grows a little
@@ -75,12 +79,16 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
       </Section>
 
       <Section id="works" eyebrow="What actually works"
-        title="The only two things that actually fix it"
-        lede={<>Every row on that table buys time &mdash; a year, in most cases. Two
-          things change the arithmetic itself rather than paying for one more year of it,
-          and both are slow, which is why neither gets raised at the meeting where next
-          April has to be settled. Everything below this is the working: why the hole
-          exists, what each answer above is really worth, and where it came from.</>}>
+        title="The only two that fix it without cutting anything"
+        lede={<>Look again at how that table is grouped. Almost every row takes something
+          from somebody &mdash; a programme from students, pay from staff, a fee from a
+          family &mdash; and buys about a year for it. <strong>Two things are different in
+          kind: no programme ends, no job goes, and nobody who works in the schools is paid
+          less.</strong> They are also the only two that are still working the year after
+          next. Both are slow, which is exactly why neither gets raised at the meeting
+          where next April has to be settled &mdash; and why next April will be settled out
+          of the groups above instead. Everything below this is the working: why the hole
+          exists, what each answer is really worth, and where it came from.</>}>
         <WhatWorks onJump={onJump} />
       </Section>
 
@@ -1237,7 +1245,19 @@ function Scoreboard() {
           </tr>
         </thead>
         <tbody>
-          {OPTIONS.map(o => {
+          {BEARERS.flatMap(g => [
+            <tr key={g.id} style={{ background: 'var(--surface-3)' }}>
+              <th colSpan={5} scope="colgroup"
+                className="text-left px-4 pt-3 pb-2 border-t"
+                style={{ borderColor: 'var(--axis)' }}>
+                <span className="text-[12px] font-bold uppercase tracking-wider">
+                  {g.label}
+                </span>
+                <span className="block text-[11px] font-normal"
+                  style={{ color: 'var(--text-secondary)' }}>{g.sub}</span>
+              </th>
+            </tr>,
+            ...OPTIONS.filter(o => o.bears === g.id).map(o => {
             const yrs = o.permanent ? 5 : yearsCovered(o.saves, o.growth)
             const ok = o.saves >= GAP
             return (
@@ -1265,7 +1285,7 @@ function Scoreboard() {
                 </td>
               </tr>
             )
-          })}
+          })])}
         </tbody>
       </table>
     </div>
@@ -1305,7 +1325,8 @@ function WhatWorks({ onJump }: {
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
           The town controls exactly two of these. Both are permanent, which is the whole
           point &mdash; they raise the line the schools are funded from rather than paying
-          for one more year off it.
+          for one more year off it. Neither cuts a service. The second one does raise the
+          tax bill, and says by how much.
         </p>
         <ol className="space-y-3 mb-3">
           <Lever n={1} name="Development" href="#q9"
@@ -1341,7 +1362,8 @@ function WhatWorks({ onJump }: {
           style={{ color: 'var(--text-muted)' }}>Fix two</p>
         <h3 className="text-lg font-bold mb-2">Make something stop rising at 9%</h3>
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          The other permanent answer needs nobody&rsquo;s dollar. Health insurance is{' '}
+          The other permanent answer takes nothing from anybody &mdash; not a service, not
+          a job, not a paycheck, not a tax bill. Health insurance is{' '}
           {pct(BENT_HEALTH.from)} a year and the biggest single driver in the budget. Hold
           it to {pct(BENT_HEALTH.to)} &mdash; through the Town&rsquo;s insurance group, plan
           design, or joining a larger pool &mdash; and next year&rsquo;s hole falls from{' '}
