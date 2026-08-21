@@ -6,10 +6,12 @@ import { Priorities } from './pages/Priorities'
 import { Adjust } from './pages/Adjust'
 import { Development } from './pages/Development'
 import { WhyItRepeats } from './pages/WhyItRepeats'
+import { Answers } from './pages/Answers'
 
-type Tab = 'context' | 'why' | 'priorities' | 'adjust' | 'development'
+type Tab = 'answers' | 'context' | 'why' | 'priorities' | 'adjust' | 'development'
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
+  { id: 'answers', label: 'Straight answers', sub: 'The questions people actually ask, in plain English, with the arithmetic' },
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
@@ -24,7 +26,7 @@ const TABS: { id: Tab; label: string; sub: string }[] = [
  *  increase on one quietly rescue the other would hide the point of both. The only thing
  *  that crosses between them is a starting list of cuts, sent one way, on request. */
 export default function App() {
-  const [tab, setTab] = useState<Tab>('context')
+  const [tab, setTab] = useState<Tab>('answers')
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
@@ -92,6 +94,8 @@ export default function App() {
           </div>
         )}
       </header>
+
+      {tab === 'answers' && <Answers onJump={go} />}
 
       {tab === 'context' && <Context onRecommend={() => {
         setOrder(MODEL.presets.our_recommendation.order)
