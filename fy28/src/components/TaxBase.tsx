@@ -546,8 +546,8 @@ export function ResidentialParadox() {
 function Row({ k, v, bold }: { k: string; v: string; bold?: boolean }) {
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
-      <dd className={`tnum shrink-0 ${bold ? 'font-bold text-base' : 'font-semibold'}`}>{v}</dd>
+      <dt className="min-w-0" style={{ color: 'var(--text-secondary)' }}>{k}</dt>
+      <dd className={`tnum text-right ${bold ? 'font-bold text-base' : 'font-semibold'}`}>{v}</dd>
     </div>
   )
 }

@@ -37,11 +37,14 @@ export function ScenarioBar({ gap, found, cuts, restored, fte, years, warnings,
   const pctCut = Math.max(0, Math.min(100 - pctFound, (cutTotal / hole) * 100))
 
   return (
-    <div className="sticky top-12 z-20 border-b print:static"
-      style={{ background: 'var(--surface-1)', borderColor: 'var(--grid)' }}>
+    <div className="sticky z-20 border-b print:static"
+      style={{ top: 'var(--header-h)',
+               background: 'var(--surface-1)', borderColor: 'var(--grid)' }}>
       <div className="mx-auto max-w-6xl px-5 py-3">
         <div className="flex flex-wrap items-end gap-x-6 gap-y-2">
-          <Figure label="FY28 gap" value={usd(gap)} tone="var(--text-primary)" />
+          <span className="hidden lg:block">
+            <Figure label="FY28 gap" value={usd(gap)} tone="var(--text-primary)" />
+          </span>
           {restoreTotal > 0 && <>
             <Op>+</Op>
             <Figure label="Put back" value={usd(restoreTotal)}
@@ -87,7 +90,9 @@ export function ScenarioBar({ gap, found, cuts, restored, fte, years, warnings,
               </strong>
             </span>
           ))}
-          <span>— what is still open each year if you hold these same choices</span>
+          <span className="hidden lg:inline">
+            — what is still open each year if you hold these same choices
+          </span>
         </div>
 
         {warnings.map(w => (

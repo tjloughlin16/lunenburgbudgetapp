@@ -149,8 +149,8 @@ export function BusinessCategories() {
 function Row({ k, v }: { k: string; v: string }) {
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
-      <dd className="font-semibold tnum shrink-0">{v}</dd>
+      <dt className="min-w-0" style={{ color: 'var(--text-secondary)' }}>{k}</dt>
+      <dd className="font-semibold tnum text-right">{v}</dd>
     </div>
   )
 }
