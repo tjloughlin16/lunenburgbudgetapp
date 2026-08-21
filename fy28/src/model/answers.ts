@@ -262,6 +262,53 @@ export const DEVELOPMENT = {
   best: T.newGrowthHistory.reduce((a, b) => (b.amount > a.amount ? b : a)),
 }
 
+/** What the required build rate is, as buildings rather than as dollars.
+ *
+ *  Everywhere else this tool prices development in value, which is the honest unit for a
+ *  budget and a useless one for a resident: $79.9M a year is a number nobody can picture,
+ *  and it reads as painless because nobody's pay is cut to get it. Broken into the mix the
+ *  model itself uses for a "typical Lunenburg development", it stops reading as painless.
+ *
+ *  The composition is the model's own — see the `mix` archetype note. */
+const MIX: { label: string; share: number; id: string }[] = [
+  { label: 'Small shop or office', share: 0.35, id: 'small_biz' },
+  { label: 'Restaurant', share: 0.15, id: 'restaurant' },
+  { label: 'Retail plaza', share: 0.15, id: 'plaza' },
+  { label: 'Light industrial or warehouse', share: 0.15, id: 'light_ind' },
+  { label: 'Self-storage facility', share: 0.10, id: 'storage' },
+  { label: 'Solar array, about 5 MW', share: 0.10, id: 'solar' },
+]
+
+export const FEASIBILITY = (() => {
+  const value = DEVELOPMENT.fiveYear.value
+  const each = MIX.map(m => {
+    const arch = T.archetypes.find(a => a.id === m.id)!
+    const perYear = (value * m.share) / arch.value
+    return { label: m.label, unit: arch.value, perYear, over5: Math.round(perYear * 5) }
+  })
+  const cip5 = T.fy23.cipValue + value * 5
+  const res = T.fy23.residentialValue
+  return {
+    each,
+    buildings5: each.reduce((s2, e) => s2 + e.over5, 0),
+    developmentsPerYear: DEVELOPMENT.fiveYear.developments,
+    developments5: Math.round(DEVELOPMENT.fiveYear.developments * 5),
+    /** One every this many days, without stopping. */
+    everyDays: Math.round(365 / DEVELOPMENT.fiveYear.developments),
+    parcelsToday: T.businesses,
+    /** Where the town's tax base ends up if it is actually done. */
+    businessShareNow: T.fy23.cipShare,
+    businessShareAfter: cip5 / (res + cip5),
+    multipleOfBase: cip5 / T.fy23.cipValue,
+    corridors: T.commercialContext.corridors,
+    constraint: T.commercialContext.constraint,
+    /** The recent direction of travel, which is the opposite one. */
+    trend: T.valueByClass.filter(v => v.cls !== 'Residential'),
+    /** The model's own verdict on the one building type big enough to shortcut this. */
+    notRealistic: T.archetypes.find(a => a.id === 'distribution'),
+  }
+})()
+
 /* ---- the tax bill -------------------------------------------------------- */
 
 const perThousand = (levyDollars: number) => (levyDollars * 1000) / T.totalValue
@@ -447,7 +494,7 @@ export interface Option {
   /** The question that works this one out, so the summary can be read as a way in. */
   anchor?: string
   /** What it does to people. The table's only colour axis — see the note in Scoreboard. */
-  harm: 'none' | 'real' | 'severe'
+  harm: 'none' | 'real' | 'severe' | 'character'
 }
 
 /** Every idea on the page, priced the same way, so they can be read against each other.
@@ -478,8 +525,9 @@ export const OPTIONS: Option[] = [
   { id: 'override', harm: 'real', anchor: 'q9', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
     saves: GAP, growth: 0.03,
     costs: `$${BILL.overrideCost[0].cost} a year on the average home` },
-  { id: 'build', harm: 'none', anchor: 'q8', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
+  { id: 'build', harm: 'character', anchor: 'q8', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
     saves: GAP, growth: 0.06, permanent: true,
-    costs: `${usdShort(DEVELOPMENT.fiveYear.value)} of new business a year — `
-      + `${DEVELOPMENT.fiveYear.vsBest.toFixed(1)}× the town’s best year since FY${DEVELOPMENT.history[0].fy}` },
+    costs: `Nobody’s pay — but a development every ${FEASIBILITY.everyDays} days forever, `
+      + `and business goes from ${(FEASIBILITY.businessShareNow * 100).toFixed(0)}% of the `
+      + `town’s value to ${(FEASIBILITY.businessShareAfter * 100).toFixed(0)}%` },
 ]

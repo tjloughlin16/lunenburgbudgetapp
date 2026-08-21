@@ -2,8 +2,9 @@ import type { ReactNode } from 'react'
 import { MODEL, usd, usdShort } from '../model/engine'
 import {
   GAPS, GAP, COST_GROWTH, REVENUE_CAP, RATE_GAP, yearsCovered, shortfallAfter,
-  EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL, CONTRACT, SETTLEMENT, COUNTERFACTUAL, scaleAfterCut,
-  RELIEF, BENT_HEALTH, OPTIONS,
+  EXTRACURRICULAR, ADMIN, LEADERSHIP, PAYROLL, HEALTH, DEVELOPMENT, BILL,
+  CONTRACT, SETTLEMENT, COUNTERFACTUAL, FEASIBILITY, RELIEF, BENT_HEALTH, OPTIONS,
+  scaleAfterCut,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
 
@@ -709,6 +710,20 @@ function Q8() {
         { k: 'So, as a share of that, added every year',
           v: pct(five.shareOfBase), strong: true, tone: 'var(--status-critical)' },
       ]} />
+      <h4 className="text-[15px] font-bold mt-6 mb-2">
+        What that is, if you build it instead of adding it up
+      </h4>
+      <p className="text-[14px] leading-relaxed mb-3">
+        This is the one answer on the page that takes nothing from anybody&rsquo;s pay,
+        which is exactly why it needs saying out loud: <strong>it is not free, the price is
+        just not money.</strong> Broken into the mix this tool uses for a typical
+        development, {five.developments.toFixed(0)} a year is{' '}
+        <strong>{FEASIBILITY.buildings5} new buildings in five years</strong> &mdash; one
+        opening every {FEASIBILITY.everyDays} days, without a gap, for as long as you want
+        the schools funded this way.
+      </p>
+      <BuildOut />
+
       <Note>
         Two things make this harder than it sounds. First, only about{' '}
         {(DEVELOPMENT.share * 100).toFixed(0)} cents of each new tax dollar reaches the
@@ -788,6 +803,102 @@ function Q9() {
 
 /* ------------------------------------------------------------------ */
 
+/** The build rate as buildings, corridors and a changed tax base.
+ *
+ *  Kept visual rather than in the ledger the rest of the answer uses, because the point is
+ *  not arithmetic — the arithmetic is a few rows up and it checks out. The point is that
+ *  the arithmetic describes a different town, and a column of dollars will not tell you
+ *  that. Sixty-seven restaurants will. */
+function BuildOut() {
+  const f = FEASIBILITY
+  const max = Math.max(...f.each.map(e => e.over5))
+  return (
+    <div className="grid gap-3 lg:grid-cols-2 items-start">
+      <div className="card p-4">
+        <p className="text-[13px] font-bold mb-1">
+          {f.buildings5} buildings, in five years
+        </p>
+        <p className="text-[11px] mb-3" style={{ color: 'var(--text-muted)' }}>
+          Against the {f.parcelsToday} commercial parcels the whole town has today
+        </p>
+        <ul className="space-y-2">
+          {f.each.map(e => (
+            <li key={e.label}>
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="text-[13px]">{e.label}</span>
+                <span className="text-[13px] font-bold tnum shrink-0">{e.over5}</span>
+              </div>
+              <span className="block h-2 rounded-sm mt-1"
+                style={{ width: `${(e.over5 / max) * 100}%`,
+                         background: 'var(--status-serious)' }} />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="space-y-3">
+        <div className="card p-4">
+          <p className="text-[13px] font-bold mb-2">And they all go in the same places</p>
+          <p className="text-[12px] leading-relaxed mb-2"
+            style={{ color: 'var(--text-secondary)' }}>
+            {f.constraint} There are three:
+          </p>
+          <ul className="text-[12px] space-y-1 mb-2">
+            {f.corridors.map(c => (
+              <li key={c} className="flex gap-2">
+                <span aria-hidden="true" style={{ color: 'var(--status-serious)' }}>&bull;</span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            {f.buildings5} buildings onto three roads, or the town pays to put sewer
+            somewhere new first. And the biggest single thing that could shortcut the
+            arithmetic &mdash; a distribution centre &mdash; this tool already rules out:{' '}
+            &ldquo;{f.notRealistic?.note.replace(/^Not realistic for Lunenburg — /, '')}&rdquo;.
+          </p>
+        </div>
+
+        <div className="card p-4">
+          <p className="text-[13px] font-bold mb-2">What the town would then be</p>
+          <div className="flex items-end gap-4 mb-2">
+            <div>
+              <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Business is</p>
+              <p className="text-2xl font-bold tnum leading-none">
+                {pct(f.businessShareNow, 1)}
+              </p>
+              <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                of the town&rsquo;s value today
+              </p>
+            </div>
+            <span className="text-xl pb-4" style={{ color: 'var(--status-serious)' }}>&rarr;</span>
+            <div>
+              <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>It becomes</p>
+              <p className="text-2xl font-bold tnum leading-none"
+                style={{ color: 'var(--status-serious)' }}>
+                {pct(f.businessShareAfter, 1)}
+              </p>
+              <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                {f.multipleOfBase.toFixed(1)}&times; today&rsquo;s commercial base
+              </p>
+            </div>
+          </div>
+          <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            That is the honest cost of this column, and it is a real one. It is not a cut,
+            nobody loses a job and no family pays more &mdash; but a town that triples its
+            commercial base in five years is not the town people moved to, and that is a
+            thing residents are entitled to weigh rather than have counted as zero. Worth
+            saying plainly: the town has to decide it <em>wants</em> this, and the last
+            measured year it went the other way &mdash;{' '}
+            {f.trend.map(t => `${t.cls.toLowerCase()} ${t.pct > 0 ? '+' : ''}${t.pct}%`)
+              .join(', ')}.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /** What a smaller settlement in the last three years would have left behind.
  *
  *  The interesting number is not either column on its own but the difference between
@@ -805,7 +916,7 @@ function Lookback() {
           <thead>
             <tr style={{ background: 'var(--surface-3)' }}>
               <th className="text-left px-4 py-2.5 font-semibold">
-                If the scale had risen&hellip;
+                Scale increase, FY{CONTRACT.cola[0].fy}&ndash;FY{CONTRACT.cola[2].fy}
               </th>
               <th className="text-right px-4 py-2.5 font-semibold whitespace-nowrap">
                 Teacher payroll today
@@ -825,11 +936,14 @@ function Lookback() {
                          background: r.actual ? 'var(--surface-3)' : undefined }}>
                 <td className={`px-4 py-2.5 ${r.actual ? 'font-bold' : ''}`}>
                   {r.actual
-                    ? <>What actually happened &mdash;{' '}
-                        {CONTRACT.cola.map(x => pct(x.pct, 1)).join(', ')}</>
+                    ? <>{CONTRACT.cola.map(x => pct(x.pct, 1)).join(', ')}{' '}
+                        <span style={{ color: 'var(--text-secondary)' }}>
+                          &mdash; what actually happened</span></>
                     : <>{pct(r.rate ?? 0, 1)} a year
-                        {r.rate === REVENUE_CAP && ' — the levy cap'}
-                        {r.rate === 0 && ' — no raise at all'}</>}
+                        {r.rate === REVENUE_CAP && <span style={{ color: 'var(--text-secondary)' }}>
+                          {' '}&mdash; the levy cap</span>}
+                        {r.rate === 0 && <span style={{ color: 'var(--text-secondary)' }}>
+                          {' '}&mdash; no raise at all</span>}</>}
                 </td>
                 <td className="px-4 py-2.5 text-right tnum">{usd(r.payroll)}</td>
                 <td className={`px-4 py-2.5 text-right tnum ${r.actual ? 'font-bold' : ''}`}>
@@ -850,27 +964,35 @@ function Lookback() {
       <div className="grid gap-3 md:grid-cols-2">
         <div className="card p-5">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>Next year</p>
+            style={{ color: 'var(--text-muted)' }}>
+            FY{GAPS[0].fy}&rsquo;s hole would be
+          </p>
           <p className="text-4xl font-bold tnum leading-none">
             {pct(1 - cap.fy28 / GAPS[0].cumulative)}
+            <span className="text-lg font-semibold"
+              style={{ color: 'var(--text-secondary)' }}> smaller</span>
           </p>
           <p className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            smaller. Held to the {pct(REVENUE_CAP, 1)} the town may collect, the scale
-            would be {pct(cap.perCent, 1)} lower today &mdash; {usd(cap.lower)} of payroll
-            &mdash; and FY{GAPS[0].fy}&rsquo;s hole would be {usd(cap.fy28)} instead of{' '}
-            {usd(GAPS[0].cumulative)}. <strong>Half the problem, gone.</strong>
+            Held to the {pct(REVENUE_CAP, 1)} the town may collect, the scale would be{' '}
+            {pct(cap.perCent, 1)} lower today &mdash; {usd(cap.lower)} of payroll &mdash;
+            and next year&rsquo;s hole would be <strong>{usd(cap.fy28)}</strong> instead
+            of <strong>{usd(GAPS[0].cumulative)}</strong>. Half the problem, gone.
           </p>
         </div>
         <div className="card p-5">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'var(--text-muted)' }}>By FY{GAPS[4].fy}</p>
+            style={{ color: 'var(--text-muted)' }}>
+            But FY{GAPS[4].fy}&rsquo;s would be only
+          </p>
           <p className="text-4xl font-bold tnum leading-none">
             {pct(1 - cap.fy32 / GAPS[4].cumulative)}
+            <span className="text-lg font-semibold"
+              style={{ color: 'var(--text-secondary)' }}> smaller</span>
           </p>
           <p className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            smaller. The same decision, five years out: {usd(cap.fy32)} against{' '}
-            {usd(GAPS[4].cumulative)}. <strong>Almost the whole problem is still
-            there</strong> &mdash; and even three years of no raise at all leaves{' '}
+            The same decision, five years out: <strong>{usd(cap.fy32)}</strong> against{' '}
+            <strong>{usd(GAPS[4].cumulative)}</strong>. Almost the whole problem is still
+            there &mdash; and even three years of no raise at all leaves{' '}
             {usd(c.scenarios[c.scenarios.length - 1].fy32)}.
           </p>
         </div>
@@ -884,7 +1006,7 @@ function Lookback() {
           Health insurance still rises {pct(MODEL.assumptions.health)} a year,
           out-of-district special education {pct(MODEL.assumptions.sped_tuition)}, and the
           levy is still capped at {pct(REVENUE_CAP, 1)}. So restraint on pay buys a great
-          deal next April and very little by {GAPS[4].fy}. Both of the things people say
+          deal next April and very little by FY{GAPS[4].fy}. Both of the things people say
           about this are half right: the last three settlements <em>did</em> make
           FY{GAPS[0].fy} materially worse, and they are <em>not</em> why this keeps
           happening.
@@ -923,11 +1045,14 @@ function Lookback() {
  *  — the arithmetic working is not the same as the idea being good, and colour is read as
  *  a verdict no matter what the header says. So the arithmetic columns are plain, and the
  *  colour sits on the cost, where the judgement actually belongs. */
-function Harm({ level }: { level: 'none' | 'real' | 'severe' }) {
+function Harm({ level }: { level: 'none' | 'real' | 'severe' | 'character' }) {
   const map = {
     none: { word: 'Little', color: 'var(--status-good)' },
     real: { word: 'Real', color: 'var(--status-warning)' },
     severe: { word: 'Severe', color: 'var(--status-critical)' },
+    // Development takes nothing from anybody's pay, which made it read as free. What it
+    // costs is not on a payslip: it is what the place turns into.
+    character: { word: 'Town-changing', color: 'var(--status-serious)' },
   }[level]
   return (
     <span className="font-bold whitespace-nowrap" style={{ color: map.color }}>
