@@ -390,37 +390,39 @@ export const SETTLEMENT = {
 export interface Option {
   id: string; label: string; saves: number; growth: number
   costs: string; permanent?: boolean
+  /** The question that works this one out, so the summary can be read as a way in. */
+  anchor?: string
 }
 
 /** Every idea on the page, priced the same way, so they can be read against each other.
  *  `growth` is the rate the saved thing would itself have grown at — see yearsCovered. */
 export const OPTIONS: Option[] = [
-  { id: 'paper', label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
+  { id: 'paper', anchor: 'q4', label: 'Cut the office lines only — dues, legal, postage, supplies, stipends',
     saves: ADMIN.paperOnly, growth: A.other,
     costs: 'Nothing anybody would see' },
-  { id: 'extras', label: 'Cut every sport, club, band, chorus and art supply',
+  { id: 'extras', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },
   { id: 'tech', label: 'Cut 60% of all software, licences and student devices',
     saves: TECH.atMax, growth: A.other,
     costs: 'State testing, IEP and payroll systems run on these' },
-  { id: 'health', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
+  { id: 'health', anchor: 'q7', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
     saves: HEALTH.maxModelled, growth: A.health,
     costs: `About ${usd(Math.round((HEALTH.maxShare - HEALTH.employeeShare) * 100
       * familyPremium * 0.01))} a year out of a family’s pay` },
-  { id: 'admin', label: 'Cut every administrator and school secretary the law allows',
+  { id: 'admin', anchor: 'q4', label: 'Cut every administrator and school secretary the law allows',
     saves: ADMIN.lawful, growth: A.salaries,
     costs: `${ADMIN.lawfulFte} jobs · no front office in any of the four schools` },
-  { id: 'leaders', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
+  { id: 'leaders', anchor: 'q5', label: `A ${(LEADERSHIP.cutFor[0].pct * 100).toFixed(0)}% pay cut for every administrator`,
     saves: GAP, growth: A.salaries,
     costs: 'Every one of them is below market the next morning' },
-  { id: 'pay', label: 'A 5% pay cut for everyone who works in the schools',
+  { id: 'pay', anchor: 'q6', label: 'A 5% pay cut for everyone who works in the schools',
     saves: PAYROLL.fivePercent, growth: A.salaries,
     costs: 'Roughly 250 employees, and a bargaining fight for each' },
-  { id: 'override', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
+  { id: 'override', anchor: 'q9', label: `A townwide vote to raise taxes by ${usdShort(GAP)}`,
     saves: GAP, growth: 0.03,
     costs: `$${BILL.overrideCost[0].cost} a year on the average home` },
-  { id: 'build', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
+  { id: 'build', anchor: 'q8', label: `Build ${DEVELOPMENT.fiveYear.developments.toFixed(0)} new commercial developments a year, every year`,
     saves: GAP, growth: 0.06, permanent: true,
     costs: `${usdShort(DEVELOPMENT.fiveYear.value)} of new business a year — `
       + `${DEVELOPMENT.fiveYear.vsBest.toFixed(1)}× the town’s best year since FY${DEVELOPMENT.history[0].fy}` },

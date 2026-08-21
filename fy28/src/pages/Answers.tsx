@@ -45,7 +45,24 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         </Note>
       </div>
 
-      <Section id="short" eyebrow="Start here" title="The whole thing in four sentences">
+      <Section id="scoreboard" eyebrow="Every idea, side by side"
+        title="Every idea on one page"
+        lede={<>Next year the schools need <strong>{usd(GAP)}</strong> more than the town
+          can give them. Here is every answer anyone has proposed, priced the same way:
+          what it saves, whether that closes next year, and how long it lasts before the
+          question comes back. <strong>Nothing on this list lasts more than one year on its
+          own.</strong> Each row links to the arithmetic behind it.</>}>
+        <Scoreboard />
+        <Note>
+          &ldquo;Years it lasts&rdquo; assumes the saving is permanent and grows a little
+          each year, because a job you never fill never gets its raise. The gap grows
+          faster, from a much larger base &mdash; which is the reason the column reads the
+          way it does, and the subject of the rest of this page.
+        </Note>
+      </Section>
+
+      <Section id="short" eyebrow="Why any of this is necessary"
+        title="The whole thing in four sentences">
         <FourSentences />
       </Section>
 
@@ -62,15 +79,6 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         <div className="space-y-4">
           <Q1 /><Q2 /><Q3 /><Q4 /><Q5 /><Q6 /><Q7 /><Q8 /><Q9 />
         </div>
-      </Section>
-
-      <Section id="scoreboard" eyebrow="Side by side"
-        title="Every idea on one page"
-        lede={<>The same nine ideas, priced the same way. &ldquo;Years it lasts&rdquo;
-          assumes the saving is permanent and grows a little each year, because a job you
-          never fill never gets its raise. Nothing on this list lasts more than one year on
-          its own.</>}>
-        <Scoreboard />
       </Section>
 
       <Section id="works" eyebrow="The honest ending"
@@ -108,7 +116,7 @@ function QA({ n, q, verdict, tone, answer, children, next }: {
   answer: ReactNode; children: ReactNode; next: ReactNode
 }) {
   return (
-    <article className="card p-5 sm:p-6">
+    <article id={`q${n}`} className="card p-5 sm:p-6 scroll-mt-20">
       <div className="flex items-start justify-between gap-4 mb-3">
         <div className="flex items-baseline gap-3">
           <span className="text-[11px] font-bold tnum tracking-widest shrink-0"
@@ -790,7 +798,12 @@ function Scoreboard() {
             return (
               <tr key={o.id} className="border-t align-top"
                 style={{ borderColor: 'var(--grid)' }}>
-                <td className="px-4 py-3 font-medium">{o.label}</td>
+                <td className="px-4 py-3 font-medium">
+                  {o.anchor
+                    ? <a href={`#${o.anchor}`} className="hover:underline"
+                        style={{ color: 'var(--series-cost)' }}>{o.label}</a>
+                    : o.label}
+                </td>
                 <td className="px-4 py-3 text-right tnum font-semibold whitespace-nowrap">
                   {usd(o.saves)}
                 </td>
