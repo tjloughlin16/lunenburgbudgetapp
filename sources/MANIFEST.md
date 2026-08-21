@@ -187,3 +187,77 @@ whether band or club fees exist at all. Three good questions for the Business Ma
 - Enacted FY27 state budget aid: https://www.lunenburgma.gov/m/newsflash/Home/Detail/261 (+$471,121)
 - Sept 3, 2026 Special Town Meeting call: https://www.lunenburgma.gov/CivicAlerts.aspx?AID=262
 - Budget sandbox site: https://sites.google.com/lunenburgschools.net/budget-sandbox (near-empty shell)
+
+---
+
+# Added 2026-08-20
+
+## Union contracts (`contracts/`)
+
+Full write-up, including the verification method and what is still missing:
+**`contracts/CONTRACTS.md`**. Ten PDFs in `contracts/pdf/`, text in `contracts/txt/`.
+
+The headline: the **Lunenburg Education Association agreement runs 1 July 2024 to 30 June
+2027** and raised the salary scale **2.5% (FY25), 4.0% (FY26), 3.5% (FY27)** — 10.33%
+compounded — with **step increases worth about 3.32% a year on top**, plus lane changes.
+That is where the model's 4% salary growth assumption comes from, and it is the reason a
+"5% pay cut" is best understood next to the raises it would take back. **It expires at the
+end of FY27**, so FY28 is the first year of an agreement nobody has negotiated yet.
+
+| Unit | Term | Raises | Expires |
+|---|---|---|---|
+| Teachers (LEA) | FY25–FY27 | 2.5 · 4.0 · 3.5% | 2027-06-30 |
+| Paraprofessionals (AFSCME 503) | FY26–FY28 | 3.0 · 2.0 · 2.0% | 2028-06-30 |
+| Custodians (AFSCME 93) | FY27–FY29 | 3.5 · 2.5 · 2.5% | 2029-06-30 |
+| Secretaries | 2025–2028 | not public | 2028-06-30 |
+| Cafeteria | 2023–2026 | not public | 2026-06-30 |
+
+`contracts/data/lea-teacher-salary-schedule.csv` — 13 steps × 10 lanes × FY25/26/27, built
+from the printed FY25 grid and the contract's own multipliers (OCR of the FY26/FY27 grids
+interleaves columns and was not trusted). FY25 Bachelor step 1 $50,790 → FY27 $54,671;
+Doctorate step 13 $102,459 → $110,287.
+
+Administrators are a gap: DESE publishes only expired templates (superintendent 2018–21,
+principal 2019–22 at 2%/yr). No current agreement for the superintendent, business manager,
+principals or directors is public.
+
+Most of these are page scans. `scripts/ocr_pdf.swift` reads them with the macOS Vision
+framework — no third-party install, no network:
+
+    swift scripts/ocr_pdf.swift in.pdf out.txt [scale]
+
+## Meeting archive, 2025– (`minutes/`)
+
+Every agenda and set of minutes the Town publishes, across all boards.
+
+    python3 scripts/fetch_agendas.py --from 2025 [--to YYYY] [--inventory]
+    python3 scripts/extract_minutes.py
+
+**51 boards · 1,422 documents listed · 1,383 fetched · 2025-01-06 → 2026-11-17 · 408MB.**
+928 agendas, 455 sets of minutes. 39 are listed by the town but return an error page
+instead of a file (11 of them Sewer Commission); they are in the index with an empty
+`path`.
+
+- `minutes/index.csv` — board, date, kind, file id, local path, source URL
+- `minutes/<board-slug>/YYYY-MM-DD-{agenda,minutes}-<id>.pdf`
+- `minutes/text/<board-slug>/….txt` — extracted text, mirroring the PDF tree
+- `minutes/text/_needs-ocr.txt` — files with no text layer, for `ocr_pdf.swift`
+
+Heaviest boards: Select Board 141 · School Committee 119 · Finance Committee 84 · Sewer
+Commission 80 · Planning Board 79 (+42 public hearings) · Board of Assessors 63.
+
+**Why a scraper rather than the site search.** CivicEngage renders one board-year at a
+time; the year tabs are an AJAX `POST /AgendaCenter/UpdateCategoryList {year, catID}`. Its
+own search endpoint under-returns older years badly — 20 hits for 2025 where the School
+Committee's own tab has 80 — so the script walks board × year directly. It is resumable
+and skips files already on disk.
+
+### Already found in here
+
+- **2026-03-18 School Committee** — approved an enhanced health insurance opt-out
+  negotiated with the Public Employee Committee: eligible after **1 year** instead of 2,
+  incentive up from **$2,000/$4,000** to **$3,000/$6,000** (individual/family). A decided
+  cost-containment measure on the health line.
+- **2026-04-15** — negotiating reps assigned for cafeteria and custodial. None for the
+  teacher unit, consistent with LEA talks not opening until after 1 November 2026.
+- **2026-07-29** — executive session noticed for collective bargaining.

@@ -48,3 +48,9 @@ Lunenburg-FY28-Budget/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Meeting archive: 400MB of scanned agendas and minutes, rebuildable from the town's
+# site with `python3 scripts/fetch_agendas.py --from 2025`. The extracted text and the
+# index are committed instead — those are what anything actually reads.
+sources/minutes/**/*.pdf
+!sources/minutes/index.csv
