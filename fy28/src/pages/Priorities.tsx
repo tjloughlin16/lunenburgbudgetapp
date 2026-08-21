@@ -63,7 +63,7 @@ export function Priorities({ order, setOrder, preset, setPreset, onSendToAdjust 
       </Section>
 
       <Section id="cut-line" eyebrow="The consequence" title="Where the cut line falls"
-        lede={<>Drag the slider to set how big a hole has to be closed, or click a year
+        lede={<>Drag the slider to set how big a hole has to be closed, or pick a year
           marker. Everything below the line is gone. The order comes from the priorities you
           set above &mdash; so if you dislike this outcome, the fix is upstream.</>}>
         <ActiveRanking order={order} presetName={presetName} />
