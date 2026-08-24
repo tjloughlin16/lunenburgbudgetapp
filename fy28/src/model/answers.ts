@@ -203,7 +203,7 @@ export const HEALTH = {
    *  reader this page is for. */
   pointsToClose: GAP / perPoint,
   shareNeeded: (1 - MODEL.health.townShare) + (GAP / perPoint) / 100,
-  maxModelled: health.cap,
+  maxModeled: health.cap,
   maxShare: health.max / 100,
   costPerFamily: Math.round((GAP / perPoint) * familyPremium * 0.01),
   familyPremium: Math.round(familyPremium),
@@ -221,7 +221,7 @@ export const TECH = {
  *
  *  The one lever the School Committee can pull without the Town, a union or a ballot,
  *  which is why it comes up first at every meeting and why it deserves a straight answer
- *  rather than a slogan. The answer differs completely by programme: athletics can reach
+ *  rather than a slogan. The answer differs completely by program: athletics can reach
  *  self-funding at a price, music probably can on paper, and transport cannot get close
  *  at any price. Same idea, three different verdicts.
  *
@@ -234,7 +234,7 @@ function feeCase(id: string, label: string, what: string) {
   const selfFund = l.selfFunding ?? null
   return {
     id, label, what,
-    /** What the programme costs — the denominator the fee is chasing. */
+    /** What the program costs — the denominator the fee is chasing. */
     cost: l.cap,
     currentFee: l.current ?? 0,
     currentYield: now,
@@ -458,7 +458,7 @@ export const CONTRACT = {
   noticeBy: 'November 1, 2026',
   bottom: 50_790, top: 102_459,   // FY25 Bachelor step 1 · Doctorate step 13
   /** A handful of real cells at FY27 rates, so "5%" can be said in dollars a person
-   *  would recognise as their own pay. From the schedule CSV. */
+   *  would recognize as their own pay. From the schedule CSV. */
   samples: [
     { label: 'A new teacher, bachelor’s, step 1', pay: 54_670 },
     { label: 'Master’s, step 5', pay: 72_441 },
@@ -675,7 +675,7 @@ export interface Option {
   costs: string; permanent?: boolean
   /** The question that works this one out, so the summary can be read as a way in. */
   anchor?: string
-  /** What it does to people. The table's only colour axis — see the note in Scoreboard. */
+  /** What it does to people. The table's only color axis — see the note in Scoreboard. */
   harm: 'none' | 'real' | 'severe' | 'character'
   /** Who the money actually comes out of. Every answer to this budget takes it from
    *  somewhere, and grouping by where turns a list of twelve ideas into a choice between
@@ -686,7 +686,7 @@ export interface Option {
 /** The groups, in the order the table shows them: least contested first. */
 export const BEARERS: { id: Option['bears']; label: string; sub: string }[] = [
   { id: 'overhead', label: 'Overhead is trimmed',
-    sub: 'No programme ends and no job goes — but see what is actually in it' },
+    sub: 'No program ends and no job goes — but see what is actually in it' },
   { id: 'families', label: 'Families pay more',
     sub: 'User fees. The only lever the district can pull without the Town, a union or a ballot' },
   { id: 'services', label: 'Services are cut',
@@ -728,11 +728,11 @@ export const OPTIONS: Option[] = [
   { id: 'extras', bears: 'services', harm: 'severe', anchor: 'q3', label: 'Cut every sport, club, band, chorus and art supply',
     saves: EXTRACURRICULAR.total, growth: A.salaries,
     costs: `${EXTRACURRICULAR.fte} jobs · no teams, no band, no clubs` },
-  { id: 'tech', bears: 'services', harm: 'real', label: 'Cut 60% of all software, licences and student devices',
+  { id: 'tech', bears: 'services', harm: 'real', label: 'Cut 60% of all software, licenses and student devices',
     saves: TECH.atMax, growth: A.other,
     costs: 'State testing, IEP and payroll systems run on these' },
   { id: 'health', bears: 'staff', harm: 'severe', anchor: 'q8', label: `Employees pay ${(HEALTH.maxShare * 100).toFixed(0)}% of the health premium instead of ${(HEALTH.employeeShare * 100).toFixed(0)}%`,
-    saves: HEALTH.maxModelled, growth: A.health,
+    saves: HEALTH.maxModeled, growth: A.health,
     // "a family" was ambiguous once this row sat under a heading about families paying
     // fees — it is a school employee's family, not a student's.
     costs: `About ${usd(Math.round((HEALTH.maxShare - HEALTH.employeeShare) * 100

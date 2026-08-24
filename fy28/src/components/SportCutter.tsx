@@ -419,7 +419,7 @@ export function TeamBoard({ state, setState }: {
       </div>
 
       <p className="text-[10px] leading-relaxed mt-3" style={{ color: 'var(--text-muted)' }}>
-        The numbered order the slider follows is <strong>our judgement</strong>, not the
+        The numbered order the slider follows is <strong>our judgment</strong>, not the
         district&rsquo;s: teams are given up in order of cost per athlete, highest first,
         so each step displaces as few students as the money allows. No ranking of teams is
         neutral &mdash; tick them individually if you disagree with ours.{' '}

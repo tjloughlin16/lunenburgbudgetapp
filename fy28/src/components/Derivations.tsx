@@ -58,8 +58,8 @@ export function Derivations() {
           <strong style={{ color: 'var(--text-primary)' }}>{M.sourceDoc}</strong> and
           checked against the number the rest of this app uses. Open one to see the
           individual budget lines and add them up yourself. Where a roll-up depends on a
-          judgement call — which lines count as &ldquo;administration&rdquo;, which
-          scenario column to read — the judgement is stated rather than buried.
+          judgment call — which lines count as &ldquo;administration&rdquo;, which
+          scenario column to read — the judgment is stated rather than buried.
         </p>
       </div>
 

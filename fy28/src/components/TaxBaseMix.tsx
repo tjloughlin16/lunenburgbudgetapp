@@ -13,7 +13,7 @@ const F = T.fy23
  *  commercial growth shifts that burden is right in principle — but only if commercial
  *  value grows faster than residential, and it has been doing the opposite.
  *
- *  Appreciation is deliberately not modelled: if both classes appreciate at the same
+ *  Appreciation is deliberately not modeled: if both classes appreciate at the same
  *  rate it cancels out of a share calculation entirely. What moves the mix is new
  *  construction in each class, which is what this chart takes as its two inputs. When
  *  homes appreciate FASTER than commercial — as they did 23.3% to -0.25% in FY23 — the

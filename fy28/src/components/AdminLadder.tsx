@@ -47,7 +47,7 @@ export function LadderDetail({ id, value, setValue }: {
         <div className="max-w-sm">
           <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             Tick any position to cut it. They are independent &mdash; keep the middle
-            school clerk and cut the curriculum director if that is your judgement.
+            school clerk and cut the curriculum director if that is your judgment.
           </p>
           <p className="text-[11px] leading-relaxed mt-1.5"
             style={{ color: inOrder ? 'var(--text-muted)' : 'var(--status-serious)' }}>
@@ -195,7 +195,7 @@ export function LadderDetail({ id, value, setValue }: {
 
         <p className="text-[11px] leading-relaxed mt-2" style={{ color: 'var(--text-muted)' }}>
           Every amount is a line in the FY27 balanced column of the district&rsquo;s
-          line-item budget, 23 March 2026. <strong>The order is our judgement</strong>,
+          line-item budget, 23 March 2026. <strong>The order is our judgment</strong>,
           not the district&rsquo;s &mdash; drag past a rung you would have protected and
           you are accepting our ranking, not theirs. The two administrative technology
           lines ($154,981 of contracted services and $145,884 of technology personnel) are

@@ -282,7 +282,7 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
           budget?&rdquo; is a fair question, and it deserves an answer you can check rather
           than a number you have to trust. Every figure in this app that is a roll-up of
           several budget lines is rebuilt here from the district&rsquo;s own line-item
-          budget &mdash; every line named, every total added back up, and the judgement
+          budget &mdash; every line named, every total added back up, and the judgment
           calls stated out loud.</>}>
         <Derivations />
       </Section>
@@ -315,7 +315,7 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
             </h3>
             <ul className="space-y-2 list-disc pl-4">
               <li><strong>There is no FY28 budget yet.</strong> That work starts in
-                January 2027. Everything after FY27 here is modelled.</li>
+                January 2027. Everything after FY27 here is modeled.</li>
               <li>Costs are grown from the FY27 adopted budget using the growth rates on
                 the adjustments page &mdash; defaulted to the district&rsquo;s own FY27
                 assumptions.</li>

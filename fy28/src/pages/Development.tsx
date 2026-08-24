@@ -10,7 +10,7 @@ import { TaxBaseMix } from '../components/TaxBaseMix'
 
 const T = MODEL.taxBase
 
-/** Development, modelled properly.
+/** Development, modeled properly.
  *
  *  The adjustments page needs one commercial dial and a straight answer about what it is
  *  worth against the gap. Everything else about development — what a build rate produces
@@ -28,7 +28,7 @@ export function Development({ commercial, setCommercial, homes, setHomes, gap, s
     <div>
       <div className="mx-auto max-w-6xl px-5 pt-12 pb-2">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-          style={{ color: 'var(--text-muted)' }}>The revenue side, modelled</p>
+          style={{ color: 'var(--text-muted)' }}>The revenue side, modeled</p>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.1] max-w-3xl">
           What building changes
         </h1>
@@ -42,7 +42,7 @@ export function Development({ commercial, setCommercial, homes, setHomes, gap, s
         </p>
         <Note>
           Nothing on this page changes the adjustments page except the commercial rate,
-          which is the same control in both places. Housing is modelled here only.
+          which is the same control in both places. Housing is modeled here only.
         </Note>
       </div>
 
@@ -288,7 +288,7 @@ function Residential({ homes, setHomes }: {
           {usd(T.ch70.aid)} of Chapter 70 aid over {T.enrollment} students ={' '}
           {usd(T.localCostPerPupil)}. A home&rsquo;s school taxes are{' '}
           {usd(T.schoolShareOfBill)} — {(T.schoolShareOfBudget * 100).toFixed(0)}% of the{' '}
-          {usd(T.avgHomeBill)} average bill. State aid does rise with enrolment, but far
+          {usd(T.avgHomeBill)} average bill. State aid does rise with enrollment, but far
           more slowly than local cost.
         </Note>
       </div>

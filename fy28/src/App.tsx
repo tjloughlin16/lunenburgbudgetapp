@@ -7,8 +7,9 @@ import { Adjust } from './pages/Adjust'
 import { Development } from './pages/Development'
 import { WhyItRepeats } from './pages/WhyItRepeats'
 import { Answers } from './pages/Answers'
+import { FindTheMoney } from './pages/FindTheMoney'
 
-type Tab = 'answers' | 'context' | 'why' | 'priorities' | 'adjust' | 'development'
+type Tab = 'answers' | 'money' | 'context' | 'why' | 'priorities' | 'adjust' | 'development'
 
 const ADJUST: { id: Tab; label: string; sub: string } =
   { id: 'adjust', label: 'Build your own budget',
@@ -16,6 +17,7 @@ const ADJUST: { id: Tab; label: string; sub: string } =
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'answers', label: 'Straight answers', sub: 'The questions people actually ask, in plain English, with the arithmetic' },
+  { id: 'money', label: 'Find the money', sub: 'Pick a number. See what raising it costs on every lever, with no projection involved' },
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
@@ -34,7 +36,7 @@ export default function App() {
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
   // The commercial build rate is the same decision on two pages, so it lives here rather
-  // than being duplicated. Housing is modelled on Development only.
+  // than being duplicated. Housing is modeled on Development only.
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
   const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
   const pending = useRef<string | null>(null)
@@ -134,6 +136,8 @@ export default function App() {
       </header>
 
       {tab === 'answers' && <Answers onJump={go} />}
+
+      {tab === 'money' && <FindTheMoney onJump={go} />}
 
       {tab === 'context' && <Context onRecommend={() => {
         setOrder(MODEL.presets.our_recommendation.order)

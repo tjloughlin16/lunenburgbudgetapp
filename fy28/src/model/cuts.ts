@@ -134,7 +134,7 @@ export function sportSaving(s: Sport): number {
  * because no ranking of teams is neutral — every one of them is somebody's kid. The
  * least-bad available ordering is arithmetic rather than sentiment: give up the teams
  * that serve the fewest athletes per dollar first, so each step down displaces as few
- * students as the money allows. It is still a judgement, and the app says so.
+ * students as the money allows. It is still a judgment, and the app says so.
  * ------------------------------------------------------------------------- */
 
 export const perAthlete = (s: Sport) => sportSaving(s) / Math.max(1, s.students)

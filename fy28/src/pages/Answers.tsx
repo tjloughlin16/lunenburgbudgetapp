@@ -7,6 +7,7 @@ import {
   OPTIONS, BEARERS, HEALTH_LEVERS, ATTRIBUTION, scaleAfterCut,
 } from '../model/answers'
 import { Section, Note } from '../components/primitives'
+import { TARGETS, verdict } from '../model/price'
 
 const T = MODEL.taxBase
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
@@ -23,7 +24,9 @@ const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
  *  The rule for this page: no sentence that needs a glossary, and no figure without its
  *  denominator visible. Where the honest answer is "we cannot know that from published
  *  documents", it says so rather than reaching for a plausible number. */
-export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adjust') => void }) {
+export function Answers({ onJump }: {
+  onJump: (tab: 'why' | 'development' | 'adjust' | 'money') => void
+}) {
   return (
     <div>
       <div className="mx-auto max-w-6xl px-5 pt-12 pb-2">
@@ -51,6 +54,33 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
         <FourSentences />
       </Section>
 
+      <Section id="price" eyebrow="If you only read one thing"
+        title="Find the money"
+        lede={<>Everything below this asks what happens over six years, and that asks you
+          to trust a projection &mdash; rates compounding out to FY{GAPS[GAPS.length - 1].fy},
+          which is not something you can check at a kitchen table. There is now a page that
+          has no projection in it at all.</>}>
+        <div className="card p-5 sm:p-6">
+          <p className="text-[15px] leading-relaxed">
+            It asks one flat question &mdash; <strong>you have to find {usd(GAP)} next
+            year; what does that take?</strong> &mdash; and answers it once for every
+            lever anybody has proposed, with the division printed underneath. Nothing
+            compounds. Nothing is a forecast.
+          </p>
+          <p className="text-[15px] leading-relaxed mt-3">
+            The finding is not in any one lever. It is how many of them{' '}
+            <strong>cannot reach the number at any price</strong>: administration,
+            technology and all three fees at their absolute ceilings, all at once, come
+            to {usd(verdict(TARGETS[0]).overheadAndFees)} &mdash; and that ceiling does not
+            grow from year to year. The hole does.
+          </p>
+          <button onClick={() => onJump('money')}
+            className="text-[12px] font-semibold mt-3" style={{ color: 'var(--series-cost)' }}>
+            Price it yourself &rarr;
+          </button>
+        </div>
+      </Section>
+
       <Section id="scoreboard" eyebrow="Every idea, side by side"
         title="Every idea on one page"
         lede={<>Every answer anyone has proposed to that {usd(GAP)}, priced the same way:
@@ -60,7 +90,7 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
           <br /><br />
           Closing the gap and being a good idea are different questions, so they are kept
           in different columns. Whether an option closes FY{GAPS[0].fy} is arithmetic and
-          is printed plainly. The only colour in the table is on the last column, which is
+          is printed plainly. The only color in the table is on the last column, which is
           what it costs the people it lands on.
           <br /><br />
           They are grouped by <strong>who the money comes out of</strong>, because that is
@@ -85,9 +115,9 @@ export function Answers({ onJump }: { onJump: (tab: 'why' | 'development' | 'adj
       <Section id="works" eyebrow="What actually works"
         title="The only two that fix it without cutting a service"
         lede={<>Look again at how that table is grouped. Almost every row takes something
-          from somebody &mdash; a programme from students, pay from staff, a fee from a
+          from somebody &mdash; a program from students, pay from staff, a fee from a
           family &mdash; and buys about a year for it. <strong>Two are different in kind:
-          no programme ends, no job goes, and nothing a student touches is cut.</strong>{' '}
+          no program ends, no job goes, and nothing a student touches is cut.</strong>{' '}
           They are also the only two still working the year after next. That is not the
           same as free, and neither card below pretends otherwise: an override raises the
           tax bill, development changes what the town is, and every route to cheaper
@@ -452,7 +482,7 @@ function Q4() {
       <Note>
         Two honest holes in this. The district does not publish how many students play,
         take band or ride the bus, so the payer counts behind the music and bus figures are
-        estimates and are labelled as such. And: &ldquo;{FEES.unresolved}&rdquo; If the
+        estimates and are labeled as such. And: &ldquo;{FEES.unresolved}&rdquo; If the
         athletics budget is already net of fees, every athletics figure here is worth less
         than it looks. That is a question for the Business Manager.
       </Note>
@@ -460,7 +490,7 @@ function Q4() {
   )
 }
 
-/** One entry in a bar's key. The bars were three unlabelled segments until somebody
+/** One entry in a bar's key. The bars were three unlabeled segments until somebody
  *  reasonably asked what they were showing. */
 function Key({ color, label, value, faded, outline }: {
   color: string; label: string; value: string; faded?: boolean; outline?: boolean
@@ -476,7 +506,7 @@ function Key({ color, label, value, faded, outline }: {
   )
 }
 
-/** One programme's fee arithmetic: what it costs, what fees cover now, and the ceiling. */
+/** One program's fee arithmetic: what it costs, what fees cover now, and the ceiling. */
 function FeeCase({ c }: { c: typeof FEES.cases[number] }) {
   const width = (n: number) => `${Math.min(100, (n / c.cost) * 100)}%`
   return (
@@ -791,7 +821,7 @@ const at = (vs: { fy: number; delta: number }[], fy: number) =>
 /** The salary scale across the contract, and where a 5% cut lands on it.
  *
  *  Indexed to the year before the contract rather than to dollars: the point is the
- *  distance travelled, and a dollar axis starting at $50,000 would flatten it. */
+ *  distance traveled, and a dollar axis starting at $50,000 would flatten it. */
 function Bars() {
   const { years, after, vs } = scaleAfterCut(0.05)
   const rows = [{ fy: 24, index: 1 }, ...years]
@@ -832,7 +862,7 @@ function Q8() {
         <strong>{usd(HEALTH.costPerFamily)} a year</strong> out of their pay.</>}
       next={<>Further still, and there is a ceiling. Even at a {pct(HEALTH.maxShare)}{' '}
         employee share &mdash; the most this tool models &mdash; the shift raises{' '}
-        {usd(HEALTH.maxModelled)}, which is {usd(GAP - HEALTH.maxModelled)} short of next
+        {usd(HEALTH.maxModeled)}, which is {usd(GAP - HEALTH.maxModeled)} short of next
         year&rsquo;s hole on its own.</>}>
       <Ledger rows={[
         { k: 'What the schools spend on health insurance', v: usd(HEALTH.budget) },
@@ -1034,7 +1064,7 @@ function BuildOut() {
           <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             {f.buildings5} buildings onto three roads, or the town pays to put sewer
             somewhere new first. And the biggest single thing that could shortcut the
-            arithmetic &mdash; a distribution centre &mdash; this tool already rules out:{' '}
+            arithmetic &mdash; a distribution center &mdash; this tool already rules out:{' '}
             &ldquo;{f.notRealistic?.note.replace(/^Not realistic for Lunenburg — /, '')}&rdquo;.
           </p>
         </div>
@@ -1354,13 +1384,13 @@ function Lookback() {
   )
 }
 
-/** What an option does to people, said in a word and a colour together.
+/** What an option does to people, said in a word and a color together.
  *
- *  This is the table's only colour. An earlier version painted "closes FY28" green, which
+ *  This is the table's only color. An earlier version painted "closes FY28" green, which
  *  put a tick of approval beside cutting every school secretary in town and a 39% pay cut
- *  — the arithmetic working is not the same as the idea being good, and colour is read as
+ *  — the arithmetic working is not the same as the idea being good, and color is read as
  *  a verdict no matter what the header says. So the arithmetic columns are plain, and the
- *  colour sits on the cost, where the judgement actually belongs. */
+ *  color sits on the cost, where the judgment actually belongs. */
 function Harm({ level }: { level: 'none' | 'real' | 'severe' | 'character' }) {
   const map = {
     none: { word: 'Little', color: 'var(--status-good)' },
@@ -1518,7 +1548,7 @@ function WhatWorks({ onJump }: {
           style={{ color: 'var(--text-muted)' }}>Fix two</p>
         <h3 className="text-lg font-bold mb-2">Pay less for health insurance</h3>
         <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          Almost every large number in this budget is a person or a programme. Cut it and
+          Almost every large number in this budget is a person or a program. Cut it and
           something stops happening to a child. <strong>Health insurance is the biggest
           thing the district buys that is neither &mdash; it is a contract.</strong>{' '}
           {usd(HEALTH.budget)} a year, rising {pct(BENT_HEALTH.from)}, the fastest-growing
