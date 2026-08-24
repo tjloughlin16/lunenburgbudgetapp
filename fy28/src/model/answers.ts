@@ -1,5 +1,5 @@
 import { MODEL, project, newGrowthPerDollar, newGrowthToClose, usd, usdShort,
-         type Assumptions } from './engine'
+         COST_GROWTH_BLENDED, type Assumptions } from './engine'
 
 /** Every figure the plain-language answers page states, derived once.
  *
@@ -35,11 +35,10 @@ export const GAPS = raw.map((y, i) => ({
 
 export const GAP = GAPS[0].cumulative
 
-/** Blended rate at which everything the district buys gets more expensive. */
+/** Blended rate at which everything the district buys gets more expensive.
+ *  Defined in engine.ts so that every page quoting it quotes the same number. */
 const expense = MODEL.expenseBase as Record<string, number>
-const expenseTotal = Object.values(expense).reduce((s, v) => s + v, 0)
-export const COST_GROWTH = (Object.keys(expense) as (keyof Assumptions)[])
-  .reduce((s, k) => s + (expense[k] / expenseTotal) * (A[k] as number), 0)
+export const COST_GROWTH = COST_GROWTH_BLENDED
 export const REVENUE_CAP = LEVY_CAP
 export const RATE_GAP = COST_GROWTH - LEVY_CAP
 

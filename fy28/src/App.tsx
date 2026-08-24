@@ -8,8 +8,9 @@ import { Development } from './pages/Development'
 import { WhyItRepeats } from './pages/WhyItRepeats'
 import { Answers } from './pages/Answers'
 import { FindTheMoney } from './pages/FindTheMoney'
+import { BendTheCurve } from './pages/BendTheCurve'
 
-type Tab = 'answers' | 'money' | 'context' | 'why' | 'priorities' | 'adjust' | 'development'
+type Tab = 'answers' | 'money' | 'context' | 'why' | 'curve' | 'priorities' | 'adjust' | 'development'
 
 const ADJUST: { id: Tab; label: string; sub: string } =
   { id: 'adjust', label: 'Build your own budget',
@@ -20,6 +21,7 @@ const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'money', label: 'Find the money', sub: 'Pick a number. See what raising it costs on every lever, with no projection involved' },
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
+  { id: 'curve', label: 'Bend the curve', sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
   { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
 ]
@@ -146,6 +148,8 @@ export default function App() {
       }} />}
 
       {tab === 'why' && <WhyItRepeats />}
+
+      {tab === 'curve' && <BendTheCurve onJump={go} />}
 
       {tab === 'priorities' && (
         <Priorities order={order} setOrder={setOrder} preset={preset} setPreset={setPreset}

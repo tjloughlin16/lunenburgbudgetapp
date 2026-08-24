@@ -4,7 +4,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import {
-  MODEL, project, runCascade, usd, usdShort, type Assumptions,
+  MODEL, project, runCascade, usd, usdShort, COST_GROWTH_BLENDED, type Assumptions,
 } from '../model/engine'
 
 const A = MODEL.assumptions
@@ -30,8 +30,8 @@ export function Structural() {
   const base = useMemo(() => project(15, A), [])
   const expense = MODEL.expenseBase as Record<string, number>
   const total = Object.values(expense).reduce((s, v) => s + v, 0)
-  const blended = BUCKETS.reduce(
-    (s, b) => s + (expense[b.key] / total) * (A[b.key] as number), 0)
+  // Same definition as every other page, from engine.ts — see COST_GROWTH_BLENDED.
+  const blended = COST_GROWTH_BLENDED
   const maxRate = Math.max(...BUCKETS.map(b => A[b.key] as number))
 
   /** Years fully covered by ONE override — a permanent lift that then grows with the

@@ -170,6 +170,30 @@ export const MODEL = raw as unknown as {
   meta: Record<string, string>
 }
 
+/** The cost base the projection actually runs on.
+ *
+ *  Not `MODEL.expenseBase` — project() folds the special town meeting add-backs into
+ *  salaries before it grows anything, so a blended rate computed off the raw buckets
+ *  understates the weight of the fastest-moving two thirds of the budget. Three different
+ *  pages were computing this three times; they now all read it from here, because a site
+ *  whose tabs quote different growth rates for the same budget has no business telling
+ *  anybody the arithmetic is checkable. */
+export const COST_BASE: Record<string, number> = (() => {
+  const b = { ...MODEL.expenseBase } as Record<string, number>
+  b.salaries += MODEL.fy27.stm_addbacks
+  return b
+})()
+
+/** Blended rate at which everything the district buys gets more expensive, weighted by
+ *  how much of the budget each line is. The number the whole structural argument turns
+ *  on: set it against what the town's revenue may grow at and the difference is the gap. */
+export const COST_GROWTH_BLENDED: number = (() => {
+  const total = Object.values(COST_BASE).reduce((s, v) => s + v, 0)
+  return Object.keys(COST_BASE).reduce(
+    (s, k) => s + (COST_BASE[k] / total)
+      * (MODEL.assumptions[k as keyof Assumptions] as number), 0)
+})()
+
 /** Drop-off in participation per $100 charged ABOVE what is already charged, by lever.
  *  Fee levers are not interchangeable: a bus rider quits sooner than an athlete. */
 export const LEVER_DROPOFF: Record<string, number> = {
