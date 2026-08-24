@@ -33,23 +33,27 @@ export function TheRaise() {
   return (
     <div>
       <div className="grid gap-3 sm:grid-cols-3 mb-4">
-        <Fact label={`What FY${N.fy} adds`} value={usdShort(N.allowed)}
-          sub={`${pct(N.growthRate, 2)} more than the ${usdShort(N.appropFy27)} appropriated this year — every extra dollar the schools have`} />
-        <Fact label="What the six lines want" value={usdShort(N.costTotal)} tone="critical"
-          sub="To buy exactly what the district buys today, for the same children" />
-        <Fact label="Left to spend" value={usdShort(N.leftOver)} tone="critical"
-          sub={`The lines consume ${pct(N.consumed)} of the raise. Nothing is added, nothing improves, and it is still short.`} />
+        <Fact label="The increase for next year" value={usdShort(N.allowed)}
+          sub={`The town gave the schools ${usd(N.appropFy27)} this year. Town revenue rises `
+            + `${pct(N.growthRate, 2)}, so next year it can give ${usd(N.allowed)} more than `
+            + `it did. That is the entire increase.`} />
+        <Fact label="What standing still costs" value={usdShort(N.costTotal)} tone="critical"
+          sub={`What the same staff, the same buses and the same buildings cost next year, `
+            + `one year older. Nobody is hired and nothing is added.`} />
+        <Fact label="The shortfall" value={usdShort(N.leftOver)} tone="critical"
+          sub={`Standing still costs ${pct(N.consumed)} of the increase. The rest has to be `
+            + `cut from somewhere, charged to somebody, or voted for.`} />
       </div>
 
       {/* ---- the bar ---- */}
       <div className="card p-4">
         <h3 className="text-[15px] font-bold">
-          What next year&rsquo;s raise has to cover
+          What the increase has to cover
         </h3>
         <p className="text-[12px] mt-1 mb-4" style={{ color: 'var(--text-secondary)' }}>
-          The full width is what the six lines want. The mark is everything the town is
-          able to give. There is no version of this bar where the segments are rearranged
-          into something that fits.
+          The full width is what next year costs if nothing changes. The mark is how far
+          the money goes. Everything past the mark has to come from somewhere else, and no
+          rearranging of the segments makes it fit.
         </p>
 
         <div className="relative">
@@ -70,7 +74,7 @@ export function TheRaise() {
           <span className="absolute -translate-x-1/2 text-center leading-tight w-32"
             style={{ left: `${allowedPct * 100}%`, color: 'var(--text-primary)' }}>
             <strong>{usdShort(N.allowed)}</strong><br />
-            <span style={{ color: 'var(--text-muted)' }}>all the town can give</span>
+            <span style={{ color: 'var(--text-muted)' }}>where the money runs out</span>
           </span>
           <span className="absolute right-0 text-right leading-tight"
             style={{ color: 'var(--status-critical)' }}>
@@ -89,7 +93,7 @@ export function TheRaise() {
               <th className="font-semibold py-1.5">Line</th>
               <th className="font-semibold py-1.5 text-right">Grows</th>
               <th className="font-semibold py-1.5 text-right">Costs more</th>
-              <th className="font-semibold py-1.5 text-right">Of the raise</th>
+              <th className="font-semibold py-1.5 text-right">Share of the increase</th>
               <th className="font-semibold py-1.5 text-right">Running</th>
             </tr>
           </thead>
@@ -109,7 +113,7 @@ export function TheRaise() {
                   <td data-label="Costs more" className="py-1.5 text-right">
                     +{usd(c.amount)}
                   </td>
-                  <td data-label="Of the raise" className="py-1.5 text-right font-semibold">
+                  <td data-label="Share of the increase" className="py-1.5 text-right font-semibold">
                     {pct(c.shareOfAllowed)}
                   </td>
                   <td data-label="Running" className="py-1.5 text-right font-semibold"
@@ -135,11 +139,11 @@ export function TheRaise() {
         <p className="text-[13px] leading-relaxed mt-4 pt-3 border-t"
           style={{ borderColor: 'var(--grid)' }}>
           <strong>Health insurance alone takes {pct(N.costs[1].shareOfAllowed)} of the
-          raise</strong> while being{' '}
+          increase</strong> while being{' '}
           {pct(RATE_LINES.find(l => l.key === N.costs[1].key)!.weight, 0)} of the budget.
           Salaries take{' '}
-          {pct(N.costs[0].shareOfAllowed)} on their own. By the third line the raise is
-          gone, and there are three more lines. Nothing in this table is new spending
+          {pct(N.costs[0].shareOfAllowed)} on their own. By the third line the money has
+          run out, and there are three more lines. Nothing in this table is new spending
           &mdash; it is the same staff, the same buses and the same buildings, a year older.
         </p>
       </div>
@@ -182,7 +186,7 @@ export function TheRaise() {
             {[
               ['Already behind', N.startingBehind],
               ['What the six lines add', N.costTotal],
-              ['Less the raise', -N.allowed],
+              ['Less the increase', -N.allowed],
             ].map(([k, v]) => (
               <div key={k as string} className="flex justify-between gap-3 px-3 py-1.5">
                 <dt style={{ color: 'var(--text-secondary)' }}>{k}</dt>
