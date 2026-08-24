@@ -9,8 +9,8 @@ import { WhyItRepeats } from './pages/WhyItRepeats'
 import { Answers } from './pages/Answers'
 import { FindTheMoney } from './pages/FindTheMoney'
 import { BendTheCurve } from './pages/BendTheCurve'
+import { pathFor, tabFromPath, type Tab } from './routes'
 
-type Tab = 'answers' | 'money' | 'context' | 'why' | 'curve' | 'priorities' | 'adjust' | 'development'
 
 const ADJUST: { id: Tab; label: string; sub: string } =
   { id: 'adjust', label: 'Build your own budget',
@@ -33,7 +33,7 @@ const TABS: { id: Tab; label: string; sub: string }[] = [
  *  increase on one quietly rescue the other would hide the point of both. The only thing
  *  that crosses between them is a starting list of cuts, sent one way, on request. */
 export default function App() {
-  const [tab, setTab] = useState<Tab>('answers')
+  const [tab, setTab] = useState<Tab>(() => tabFromPath(window.location.pathname))
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
@@ -43,6 +43,22 @@ export default function App() {
   const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
   const pending = useRef<string | null>(null)
   const strip = useRef<HTMLDivElement>(null)
+
+  // The back button has to work, or a shared link is a trap: follow one, look around,
+  // and there is no way back to where you came from.
+  useEffect(() => {
+    const onPop = () => setTab(tabFromPath(window.location.pathname))
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  // A link may carry a section as well as a tab — /bend-the-curve#leverage. Tabs render
+  // their own sections, so the element only exists after the tab has switched.
+  useEffect(() => {
+    const id = window.location.hash.slice(1)
+    if (!id) return
+    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView())
+  }, [tab])
 
   // On a phone the chapter strip scrolls, so arriving on a tab whose pill is off to the
   // right would leave nothing marked as current. Bring it into view when the tab changes.
@@ -61,7 +77,16 @@ export default function App() {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }))
   }, [tab])
 
+  /** Push the URL for a tab, optionally with a section on it. Skipped when it would be
+   *  a no-op, so the back button does not collect duplicate entries. */
+  const navigate = (t: Tab, anchor?: string) => {
+    const url = pathFor(t) + (anchor ? `#${anchor}` : '')
+    if (url !== window.location.pathname + window.location.hash)
+      window.history.pushState(null, '', url)
+  }
+
   const jump = useCallback((anchor: string) => {
+    navigate('context', anchor)
     if (tab === 'context') {
       document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
       return
@@ -70,7 +95,7 @@ export default function App() {
     setTab('context')
   }, [tab])
 
-  const go = (t: Tab) => { setTab(t); window.scrollTo({ top: 0 }) }
+  const go = (t: Tab) => { setTab(t); navigate(t); window.scrollTo({ top: 0 }) }
 
   const sendToAdjust = () => {
     const result = runCascade(order, MODEL.assumptions, 1)
