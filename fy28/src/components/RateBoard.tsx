@@ -5,7 +5,7 @@ import {
 import { usd, usdShort } from '../model/engine'
 import {
   RATE_LINES, DEFAULT_RATES, DEFAULT_SCENARIO, CUT_OPTIONS, LEVY_CAP,
-  blendedOf, run, revenueGrowthOf, longRunRevenueGrowth, verdictOf, consequenceOf, SHARE,
+  blendedOf, run, revenueGrowthOf, longRunRevenueGrowth, verdictOf, consequenceOf,
   type Bucket, type Scenario, type Verdict,
 } from '../model/rates'
 
@@ -31,7 +31,9 @@ export function RateBoard() {
 
   const cut = CUT_OPTIONS.filter(c => cuts.has(c.id)).reduce((s, c) => s + c.amount, 0)
   const scenario: Scenario = useMemo(
-    () => ({ rates, newGrowth, cut, overrideLevy }), [rates, newGrowth, cut, overrideLevy])
+    () => ({ rates, newGrowth, cut, overrideLevy,
+              stateAidGrowth: DEFAULT_SCENARIO.stateAidGrowth }),
+    [rates, newGrowth, cut, overrideLevy])
 
   const years = useMemo(() => run(YEARS, scenario), [scenario])
   const baseline = useMemo(() => run(YEARS, DEFAULT_SCENARIO), [])
@@ -101,12 +103,17 @@ export function RateBoard() {
             <Slider label="A one-time override" value={overrideLevy}
               min={0} max={6_000_000} step={100_000} onChange={setOverrideLevy}
               display={overrideLevy === 0 ? 'None'
-                : `${usdShort(overrideLevy)} on the levy — ${usdShort(overrideLevy * SHARE)} of it reaches the schools`} />
+                : `${usdShort(overrideLevy)}, all of it to the schools`} />
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              A school-only question, so the schools keep every dollar. The townwide ask
+              that failed covered every department, which is why it had to be so much
+              larger to do the same work here.
+            </p>
           </div>
 
           <p className="text-[12px] mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
             <span style={{ color: 'var(--text-secondary)' }}>Found once: </span>
-            <strong className="tnum">{usd(cut + overrideLevy * SHARE)}</strong>
+            <strong className="tnum">{usd(cut + overrideLevy)}</strong>
           </p>
           <p className="text-[13px] mt-1">
             <span style={{ color: 'var(--text-secondary)' }}>Cost growth rate: </span>

@@ -1,6 +1,6 @@
 import { usd, usdShort } from '../model/engine'
 import {
-  DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, ALL_CUTS, SHARE,
+  DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, ALL_CUTS,
   run, blendedOf, longRunRevenueGrowth, overrideTreadmill, type Scenario,
 } from '../model/rates'
 
@@ -25,9 +25,8 @@ const CASES: Case[] = [
       + `administrative line — ${usdShort(ALL_CUTS)} at once`,
     s: { ...DEFAULT_SCENARIO, cut: ALL_CUTS } },
   { label: 'Pass one override', kind: 'level',
-    sub: `${usdShort(2_300_000)} on the levy, of which ${usdShort(2_300_000 * SHARE)} `
-      + `reaches the schools`,
-    s: { ...DEFAULT_SCENARIO, overrideLevy: 2_300_000 } },
+    sub: `${usdShort(1_250_000)}, school-only, so the schools keep all of it`,
+    s: { ...DEFAULT_SCENARIO, overrideLevy: 1_250_000 } },
   { label: 'Bend health insurance', sub: 'From 9% a year to 4%', kind: 'slope',
     s: { ...DEFAULT_SCENARIO, rates: rates({ health: 0.04 }) } },
   { label: 'Bend salaries and health', kind: 'slope',
@@ -121,9 +120,14 @@ const Kind = ({ kind }: { kind: Case['kind'] }) => {
  *
  *  An override is heard as one ballot question. Because it lifts the base once and the
  *  base then grows at 2½% while costs grow at nearly 5%, the arithmetic asks for a fresh
- *  one every spring — each roughly twice the school shortfall, because the schools keep
- *  only about half of a levy dollar. Printed as a tax bill, which is the form a voter
- *  actually meets it in. */
+ *  one every spring, forever.
+ *
+ *  Sized as a school-only question, which is the honest way to put it: an override may be
+ *  written for a single department, and then the schools keep every dollar. The townwide
+ *  column beside it is the same job done by a general override — nearly twice the money
+ *  for the same result here, because the schools take only their share of it — and that
+ *  is the shape of the ask the town actually voted on and lost. Printed as a tax bill,
+ *  which is the form a voter meets it in. */
 export function OverrideTreadmill() {
   const t = overrideTreadmill(run(6, DEFAULT_SCENARIO))
   const total = t.reduce((s, r) => s + r.onAverageHome, 0)
@@ -136,35 +140,42 @@ export function OverrideTreadmill() {
         <thead>
           <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
             <th className="font-semibold py-1.5">Year</th>
-            <th className="font-semibold py-1.5 text-right">Schools need</th>
-            <th className="font-semibold py-1.5 text-right">Ballot question</th>
+            <th className="font-semibold py-1.5 text-right">School-only ballot</th>
             <th className="font-semibold py-1.5 text-right">On the average home</th>
+            <th className="font-semibold py-1.5 text-right">If it were townwide</th>
           </tr>
         </thead>
         <tbody>
           {t.map(r => (
             <tr key={r.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
               <td className="rowhead py-1.5 font-semibold">FY{r.fy}</td>
-              <td data-label="Schools need" className="py-1.5 text-right">{usd(r.schools)}</td>
-              <td data-label="Ballot question" className="py-1.5 text-right">{usd(r.levy)}</td>
+              <td data-label="School-only ballot" className="py-1.5 text-right">{usd(r.levy)}</td>
               <td data-label="On the average home" className="py-1.5 text-right font-semibold">
                 ${r.onAverageHome}
+              </td>
+              <td data-label="If it were townwide" className="py-1.5 text-right"
+                style={{ color: 'var(--text-muted)' }}>
+                {usd(r.townwide)} · ${r.townwideOnAverageHome}
               </td>
             </tr>
           ))}
           <tr className="border-t-2" style={{ borderColor: 'var(--text-primary)' }}>
             <td className="rowhead py-1.5 font-bold">Six years</td>
             <td className="py-1.5" />
-            <td className="py-1.5" />
             <td data-label="Added to the average bill" className="py-1.5 text-right font-bold">
               +${total} a year
             </td>
+            <td className="py-1.5" />
           </tr>
         </tbody>
       </table>
-      <p className="text-[12px] mt-3" style={{ color: 'var(--text-muted)' }}>
-        Each row is a separate townwide vote, and each one is permanent — the last column
-        accumulates. Lunenburg has not passed one of these since the two that failed.
+      <p className="text-[12px] mt-3 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        Each row is a separate vote, and each one is permanent &mdash; the tax column
+        accumulates. A <strong>school-only</strong> question gives the schools every dollar
+        it raises. The last column is the same job done by a general override covering all
+        departments: it has to be nearly twice the size, and costs the average homeowner
+        nearly twice as much, to leave the schools in the same place. That is the shape of
+        the ask Lunenburg put on the ballot and lost.
       </p>
     </div>
   )

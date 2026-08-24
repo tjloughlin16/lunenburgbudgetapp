@@ -1,9 +1,10 @@
 import { usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
-  BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run,
+  BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
 } from '../model/rates'
 import { RateBoard } from '../components/RateBoard'
 import { LevelVsSlope, OverrideTreadmill } from '../components/LevelVsSlope'
+import { Forever, StateAid } from '../components/Forever'
 import { Section, Note } from '../components/primitives'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -181,6 +182,28 @@ export function BendTheCurve({ onJump }: {
           one to be the last one. An override closes a level; it does not change a rate,
           which is why the row below it is nearly as large.
         </Note>
+      </Section>
+
+      <Section id="forever" eyebrow="The actual question"
+        title="What stable looks like — not for a year, forever"
+        lede={<>Everything above is about closing a gap. This is about never having one
+          again, which is a different and much harder question, and it has exactly one
+          condition: <strong>the weighted average of everything the district buys has to
+          grow no faster than the town&rsquo;s revenue</strong>. Four of the six lines are
+          fixed by contract, state law or the market. So salaries are the residual &mdash;
+          and the honest question is not whether the town can hold them to any particular
+          number, but what is left for them once insurance has taken its share.</>}>
+        <Forever />
+      </Section>
+
+      <Section id="state" eyebrow="The other way out"
+        title="What the state would have to do"
+        lede={<>Every route above takes it from somebody in Lunenburg. There is one that
+          does not: the Commonwealth pays {pct(STATE_AID.shareOfSchoolBudget, 0)} of this
+          school budget through
+          Chapter 70, and if that grew faster than the things it buys, none of the rest of
+          this page would be necessary. So it is worth a number rather than a wish.</>}>
+        <StateAid />
       </Section>
 
       <Section id="honest" eyebrow="Being straight about it"

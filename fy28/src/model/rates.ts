@@ -125,12 +125,16 @@ export interface Scenario {
   newGrowth: number
   /** A permanent reduction in what the district spends, adopted for FY28. A level. */
   cut: number
-  /** A one-time Prop 2½ override: the levy base rises once, then grows at the cap. */
+  /** A one-time Prop 2½ override earmarked for the schools: the levy base rises once,
+   *  the whole of it goes to the school department, and it then grows at the cap. */
   overrideLevy: number
+  /** What state aid grows at. Normally an assumption; a lever in the state-aid section. */
+  stateAidGrowth: number
 }
 
 export const DEFAULT_SCENARIO: Scenario = {
   rates: { ...DEFAULT_RATES }, newGrowth: A.new_growth, cut: 0, overrideLevy: 0,
+  stateAidGrowth: A.state_aid_growth,
 }
 
 export interface RateYear {
@@ -155,14 +159,21 @@ export function run(years: number, s: Scenario): RateYear[] {
   let levy = F.levy_limit + s.overrideLevy
   let aid = F.state_aid
   let receipts = F.local_receipts
-  let approp = F.lps_appropriation + F.stm_appropriation + SHARE * s.overrideLevy
+  // The whole override reaches the schools, not the schools' share of it.
+  //
+  // This was modeled at SHARE, which is right for new growth and wrong for a ballot
+  // question: an override may be written for a single department, and a school override
+  // gives the schools all of it. The distinction is not academic in Lunenburg — the ask
+  // that failed was a townwide one covering every department, and the arithmetic for a
+  // school-only question is close to twice as good per dollar on the tax bill.
+  let approp = F.lps_appropriation + F.stm_appropriation + s.overrideLevy
   const wedge = F.levy_limit + F.excluded_debt + F.state_aid + F.local_receipts - F.omnibus
   let prev = F.omnibus + s.overrideLevy
 
   const out: RateYear[] = []
   for (let i = 0; i < years; i++) {
     levy = levy * (1 + A.levy_growth) + s.newGrowth
-    aid *= 1 + A.state_aid_growth
+    aid *= 1 + s.stateAidGrowth
     receipts *= 1 + A.local_receipts_growth
     const townAvailable = levy + F.excluded_debt + aid + receipts - wedge
     const growth = townAvailable / prev - 1
@@ -231,10 +242,17 @@ export const freshGap = (years: RateYear[]) =>
  *  dollar. Printed as a tax bill because that is the form a voter meets it in. */
 export const overrideTreadmill = (years: RateYear[]) =>
   freshGap(years).map(g => {
-    const levy = g.fresh / SHARE
+    // School-only, so the ballot question is exactly what the schools need. The townwide
+    // figure is carried alongside because it is the one Lunenburg actually voted on and
+    // lost: a general override has to be nearly twice the size to do the same work here,
+    // since the schools only take their share of it.
+    const levy = g.fresh
+    const townwide = g.fresh / SHARE
     return {
-      fy: g.fy, schools: g.fresh, levy: Math.round(levy),
+      fy: g.fy, schools: g.fresh, levy: Math.round(levy), townwide: Math.round(townwide),
       onAverageHome: Math.round((T.avgHomeValue * ((levy * 1000) / T.totalValue)) / 1000),
+      townwideOnAverageHome:
+        Math.round((T.avgHomeValue * ((townwide * 1000) / T.totalValue)) / 1000),
     }
   })
 
@@ -263,6 +281,11 @@ export function matchesEngine(engineGaps: number[]): { ok: boolean; detail: stri
 const POSITIONS = expand(MODEL.programs).filter(p => p.fte > 0)
 export const COST_PER_FTE = Math.round(
   POSITIONS.reduce((s, p) => s + p.cost, 0) / POSITIONS.reduce((s, p) => s + p.fte, 0))
+
+/** Roughly how many people the salary line pays, at the catalogue's own cost per
+ *  position. An estimate, and labelled as one wherever it appears — the district does not
+ *  publish a headcount, and salary lines cover part-time and stipended roles too. */
+export const HEADCOUNT = Math.round(BASE.salaries / COST_PER_FTE)
 
 /** The year the consequences are quoted at. Six years out: far enough that compounding
  *  is visible, near enough that a person can picture still working here. */
@@ -369,3 +392,103 @@ export function consequenceOf(key: Bucket, rate: number): Consequence | null {
 }
 
 const pctOf = (x: number) => `${(x * 100).toFixed(2)}%`
+
+/* ---- what "forever" actually requires ------------------------------------ */
+
+/** Long enough that nothing temporary survives it. A rate fix that only holds for a
+ *  decade is a slower version of the same problem. */
+export const LONG = 30
+
+/** The revenue rate a cost rate has to live under, measured far enough out that the
+ *  decaying contribution of a flat new-growth figure has finished decaying. */
+export const longRunTarget = (s: Scenario) =>
+  longRunRevenueGrowth(run(LONG, s))
+
+/** Does this hold forever, rather than for a while?
+ *
+ *  Two conditions, and they are different. The rate condition is what makes it permanent:
+ *  costs must compound no faster than revenue, or the two pull apart again eventually no
+ *  matter how good the starting position is. The level condition is whether there is
+ *  still a hole once the rates are right. */
+export function stability(s: Scenario) {
+  const y = run(LONG, s)
+  const blended = blendedOf(s.rates)
+  const target = longRunRevenueGrowth(y)
+  return {
+    blended, target,
+    rateOk: blended <= target + 0.0002,
+    /** The worst year in three decades — what a one-time fix would have to cover. */
+    worst: Math.round(Math.max(...y.map(x => x.gap))),
+    finalGap: y[y.length - 1].gap,
+    years: y,
+  }
+}
+
+/** The salary rate that balances the blend, given what every other line is doing.
+ *
+ *  Salaries are solved for rather than chosen because they are two thirds of the budget:
+ *  whatever the other lines do, this is the number that has to absorb it. Returns a
+ *  negative rate when no salary rate can balance — which is itself the answer. */
+export function salaryRateToBalance(rates: Record<Bucket, number>, target: number): number {
+  const wSal = BASE.salaries / TOTAL
+  const others = BUCKETS.filter(k => k !== 'salaries')
+    .reduce((s, k) => s + (BASE[k] / TOTAL) * rates[k], 0)
+  return (target - others) / wSal
+}
+
+/** Holding the salary LINE below the rate the contract pays means employing fewer people.
+ *
+ *  The two are not alternatives, they are the same equation read from either end. If
+ *  everyone still gets the bargained increase, the only way the line grows more slowly is
+ *  that there are fewer of them each year — and it compounds, which is why this is the
+ *  question that decides whether "hold salaries to 2½%" is a policy or a fantasy. */
+export function workforceShrink(lineRate: number, contractRate: number) {
+  const perYear = (1 + contractRate) / (1 + lineRate) - 1
+  const after = (n: number) => 1 - ((1 + lineRate) / (1 + contractRate)) ** n
+  return {
+    perYear,
+    positionsPerYear: (BASE.salaries * perYear) / COST_PER_FTE,
+    after10: after(10), after20: after(20), after30: after(30),
+  }
+}
+
+/** What the state would have to do instead.
+ *
+ *  Chapter 70 is the one number in this budget that could fix the rate without anybody in
+ *  Lunenburg giving anything up, so it deserves a figure rather than a wish. Bisects for
+ *  the aid growth rate at which the projection never falls behind, holding everything
+ *  else at today's assumptions. Returns null when no rate inside a sane range does it. */
+export function aidGrowthToSustain(s: Scenario): number | null {
+  let lo = s.stateAidGrowth, hi = 0.30
+  if (stability({ ...s, stateAidGrowth: hi }).finalGap > 0) return null
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2
+    const st = stability({ ...s, stateAidGrowth: mid })
+    if (st.rateOk && st.finalGap <= 0) hi = mid; else lo = mid
+  }
+  return hi
+}
+
+/** The extra state money that rate implies, year by year, against what today's assumption
+ *  delivers. A rate is not a number anybody can lobby for; a dollar figure is. */
+export function aidSchedule(s: Scenario, rate: number, years = 10) {
+  let atRate = F.state_aid, atBase = F.state_aid
+  const out: { fy: number; atRate: number; atBase: number; extra: number }[] = []
+  for (let i = 0; i < years; i++) {
+    atRate *= 1 + rate
+    atBase *= 1 + s.stateAidGrowth
+    out.push({ fy: 28 + i, atRate: Math.round(atRate), atBase: Math.round(atBase),
+               extra: Math.round(atRate - atBase) })
+  }
+  return out
+}
+
+/** State aid today, for scale. */
+export const STATE_AID = {
+  total: F.state_aid,
+  chapter70: T.ch70.aid,
+  shareOfTownRevenue: F.state_aid / F.omnibus,
+  shareOfSchoolBudget: T.ch70.aid / F.lps_appropriation,
+  foundationBudget: T.ch70.foundationBudget,
+  aboveFoundation: F.lps_appropriation - T.ch70.foundationBudget,
+}
