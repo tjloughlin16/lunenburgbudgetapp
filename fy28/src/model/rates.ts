@@ -483,12 +483,111 @@ export function aidSchedule(s: Scenario, rate: number, years = 10) {
   return out
 }
 
+/** If the whole increase had to come from Chapter 70 alone.
+ *
+ *  The projection carries one state aid line — the cherry sheet total — and grows it as a
+ *  unit, so `aidGrowthToSustain` is a rate on ALL state aid. Chapter 70 is 79% of that,
+ *  and the rest (charter reimbursement, transport, lottery) is not school money the state
+ *  would move for this reason. So the rate anybody would actually have to lobby for is
+ *  higher than the headline one, and this is it: the constant Chapter 70 growth that
+ *  delivers the same total, with everything else held at the assumed rate. Binding in the
+ *  first year and easier after, so the maximum across the horizon is the honest figure. */
+export function ch70OnlyGrowth(totalRate: number, baseRate = A.state_aid_growth): number {
+  const other = F.state_aid - T.ch70.aid
+  let g = 0
+  for (let n = 1; n <= LONG; n++) {
+    const need = F.state_aid * (1 + totalRate) ** n - other * (1 + baseRate) ** n
+    if (need > 0) g = Math.max(g, (need / T.ch70.aid) ** (1 / n) - 1)
+  }
+  return g
+}
+
 /** State aid today, for scale. */
 export const STATE_AID = {
+  /** The cherry sheet total — what the projection actually grows. */
   total: F.state_aid,
+  /** The school part of it. Named separately because the two get conflated constantly. */
   chapter70: T.ch70.aid,
+  other: F.state_aid - T.ch70.aid,
+  ch70Share: T.ch70.aid / F.state_aid,
   shareOfTownRevenue: F.state_aid / F.omnibus,
   shareOfSchoolBudget: T.ch70.aid / F.lps_appropriation,
   foundationBudget: T.ch70.foundationBudget,
   aboveFoundation: F.lps_appropriation - T.ch70.foundationBudget,
+}
+
+/* ---- the raise, and what eats it ----------------------------------------- */
+
+/** Next year priced as a budget of the increase rather than a budget of the total.
+ *
+ *  This is the same arithmetic as everything else on the page, said in the form people
+ *  actually argue in. Nobody at a meeting disputes the total budget; they dispute whether
+ *  a 2½% raise ought to be enough. So put the raise on the table as a fixed number of
+ *  dollars, then let each cost line take its bite out of it in order, and the answer stops
+ *  being a matter of opinion: the six lines want 162% of it, health insurance alone wants
+ *  44%, and there is nothing left over because there was never enough to begin with.
+ *
+ *  Reconciles to engine.project()'s FY28 gap to the dollar — asserted in `reconciles`. */
+export function nextYear() {
+  const g = run(1, DEFAULT_SCENARIO)[0]
+
+  // Where the town's extra money comes from. Excluded debt and the wedge are constant, so
+  // the whole increase is these three, and the schools take a proportional share.
+  const dLevy = F.levy_limit * A.levy_growth
+  const dNewGrowth = DEFAULT_SCENARIO.newGrowth
+  const dAid = F.state_aid * DEFAULT_SCENARIO.stateAidGrowth
+  const dReceipts = F.local_receipts * A.local_receipts_growth
+  const dTown = dLevy + dNewGrowth + dAid + dReceipts
+
+  const appropFy27 = F.lps_appropriation + F.stm_appropriation
+  /** Every extra dollar the schools have to spend next year. */
+  const allowed = g.revenue - appropFy27
+
+  const source = (label: string, amount: number, note: string) => ({
+    label, note,
+    share: amount / dTown,
+    toSchools: Math.round((amount / dTown) * allowed),
+  })
+
+  const costs = RATE_LINES.map(l => {
+    const amount = BASE[l.key] * l.rate
+    return {
+      key: l.key, label: l.label, rate: l.rate, amount: Math.round(amount),
+      /** The share of the entire raise that this one line consumes. */
+      shareOfAllowed: amount / allowed,
+    }
+  }).sort((a, b) => b.amount - a.amount)
+
+  const costTotal = costs.reduce((s2, c) => s2 + c.amount, 0)
+  /** The schools are already spending more than they were appropriated before anything
+   *  grows — the town meeting add-backs cost more than the town meeting appropriation. */
+  const startingBehind = Math.round(TOTAL - appropFy27)
+
+  return {
+    fy: g.fy,
+    growthRate: g.revenueGrowth,
+    allowed: Math.round(allowed),
+    appropFy27: Math.round(appropFy27),
+    sources: [
+      source('The 2½% levy increase', dLevy, 'What Proposition 2½ allows on the existing base'),
+      source('New growth', dNewGrowth, 'New construction added to the levy, at the assumed rate'),
+      source('State aid', dAid, `Chapter 70 and the rest, at ${(DEFAULT_SCENARIO.stateAidGrowth * 100).toFixed(1)}%`),
+      source('Local receipts', dReceipts, 'Fees, excise, permits'),
+    ],
+    costs,
+    costTotal,
+    startingBehind,
+    /** What is left of the raise once the six lines have taken their share. Negative. */
+    leftOver: Math.round(allowed - costTotal),
+    /** Everything the six lines want, as a multiple of everything there is. */
+    consumed: costTotal / allowed,
+    gap: g.gap,
+  }
+}
+
+/** The decomposition has to add up to the projection, or it is a nice picture of nothing. */
+export function reconciles() {
+  const n = nextYear()
+  const rebuilt = n.startingBehind + n.costTotal - n.allowed
+  return { rebuilt, actual: n.gap, ok: Math.abs(rebuilt - n.gap) <= 2 }
 }

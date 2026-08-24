@@ -1,10 +1,12 @@
 import { usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
+  nextYear, HEADCOUNT,
 } from '../model/rates'
 import { RateBoard } from '../components/RateBoard'
 import { LevelVsSlope, OverrideTreadmill } from '../components/LevelVsSlope'
 import { Forever, StateAid } from '../components/Forever'
+import { TheRaise } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -20,6 +22,8 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  The distinction it is built to teach, in one line: a cut changes how much is spent, a
  *  rate changes how fast that grows, and only the second one can end a problem that is
  *  itself a rate. */
+const RAISE = nextYear()
+
 export function BendTheCurve({ onJump }: {
   onJump: (tab: 'why' | 'money' | 'answers' | 'adjust') => void
 }) {
@@ -57,6 +61,21 @@ export function BendTheCurve({ onJump }: {
           default settings it reproduces the main model to the dollar.
         </Note>
       </div>
+
+      <Section id="raise" eyebrow="Start here"
+        title={`Next year the schools get ${usdShort(RAISE.allowed)} more. Here is who spends it.`}
+        lede={<>Nobody at a meeting argues about the size of the school budget. They argue
+          about whether a {pct(LEVY_CAP, 1)} raise ought to be enough. So put the raise on
+          the table as one fixed number of dollars, and let each cost line take its bite in
+          the order it takes it.
+          <br /><br />
+          <strong>Health insurance alone wants {pct(RAISE.costs[1].shareOfAllowed)} of
+          it.</strong> By the third line there is nothing left, and there are three more
+          lines. None of this is new spending &mdash; it is the same staff, the same buses
+          and the same buildings, one year older. That is what &ldquo;the rate problem&rdquo;
+          means before any of the arithmetic below.</>}>
+        <TheRaise />
+      </Section>
 
       <Section id="two" eyebrow="The whole thing in two numbers"
         title={`Costs grow ${pct(COST_GROWTH_BLENDED)}. Revenue grows ${pct(BASELINE_REVENUE_GROWTH)}.`}
@@ -199,9 +218,9 @@ export function BendTheCurve({ onJump }: {
       <Section id="state" eyebrow="The other way out"
         title="What the state would have to do"
         lede={<>Every route above takes it from somebody in Lunenburg. There is one that
-          does not: the Commonwealth pays {pct(STATE_AID.shareOfSchoolBudget, 0)} of this
-          school budget through
-          Chapter 70, and if that grew faster than the things it buys, none of the rest of
+          does not: Chapter 70 pays {pct(STATE_AID.shareOfSchoolBudget, 0)} of this school
+          budget, and all state aid together is {usdShort(STATE_AID.total)} of what the
+          town collects. If that grew faster than the things it buys, none of the rest of
           this page would be necessary. So it is worth a number rather than a wish.</>}>
         <StateAid />
       </Section>
@@ -214,7 +233,7 @@ export function BendTheCurve({ onJump }: {
         <div className="grid gap-3 lg:grid-cols-3 items-start">
           <Caveat title="Rates are not set by sliders"
             body={<>Dragging salaries to {pct(LEVY_CAP, 1)} is a bargaining position, not a
-              decision, and it is a real-terms pay cut for about 250 people. Health
+              decision, and it is a real-terms pay cut for roughly {HEADCOUNT} people. Health
               insurance is bought by the Town, not the district. Out-of-district special
               education is set by state rates and by which children enroll.</>} />
           <Caveat title="The rates themselves are assumptions"

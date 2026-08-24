@@ -3,7 +3,7 @@ import { usd, usdShort } from '../model/engine'
 import {
   DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, LONG, RATE_LINES, STATE_AID,
   longRunTarget, salaryRateToBalance, workforceShrink, stability, HEADCOUNT,
-  aidGrowthToSustain, aidSchedule, type Bucket,
+  aidGrowthToSustain, aidSchedule, ch70OnlyGrowth, type Bucket,
 } from '../model/rates'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -202,13 +202,13 @@ export function StateAid() {
   return (
     <div>
       <div className="grid gap-3 sm:grid-cols-3 mb-4">
-        <Stat label="Chapter 70 aid today" value={usdShort(STATE_AID.chapter70)}
-          sub={`${pct(STATE_AID.shareOfSchoolBudget, 0)} of the school budget. All state aid together is ${usdShort(STATE_AID.total)}, ${pct(STATE_AID.shareOfTownRevenue, 0)} of town revenue.`} />
+        <Stat label="All state aid today" value={usdShort(STATE_AID.total)}
+          sub={`${pct(STATE_AID.shareOfTownRevenue, 0)} of town revenue. Chapter 70 school aid is ${usdShort(STATE_AID.chapter70)} of it — ${pct(STATE_AID.ch70Share, 0)} — and covers ${pct(STATE_AID.shareOfSchoolBudget, 0)} of the school budget.`} />
         <Stat label="It is assumed to grow" value={pct(S.stateAidGrowth, 1)}
           sub="Below the rate of almost everything it pays for" />
         <Stat label="It would have to grow" value={aidRate === null ? 'no rate works' : pct(aidRate)}
           tone="critical"
-          sub={`Every year, forever, with nothing else in this model changing`} />
+          sub="Every year, forever, with nothing else in this model changing" />
       </div>
 
       {aidRate !== null && (
@@ -220,8 +220,8 @@ export function StateAid() {
             <thead>
               <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
                 <th className="font-semibold py-1.5">Year</th>
-                <th className="font-semibold py-1.5 text-right">Aid as assumed</th>
-                <th className="font-semibold py-1.5 text-right">Aid required</th>
+                <th className="font-semibold py-1.5 text-right">All state aid, as assumed</th>
+                <th className="font-semibold py-1.5 text-right">All state aid, required</th>
                 <th className="font-semibold py-1.5 text-right">Extra from the state</th>
               </tr>
             </thead>
@@ -229,8 +229,8 @@ export function StateAid() {
               {sched.slice(0, 6).map(r => (
                 <tr key={r.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
                   <td className="rowhead py-1.5 font-semibold">FY{r.fy}</td>
-                  <td data-label="Aid as assumed" className="py-1.5 text-right">{usd(r.atBase)}</td>
-                  <td data-label="Aid required" className="py-1.5 text-right">{usd(r.atRate)}</td>
+                  <td data-label="All state aid, as assumed" className="py-1.5 text-right">{usd(r.atBase)}</td>
+                  <td data-label="All state aid, required" className="py-1.5 text-right">{usd(r.atRate)}</td>
                   <td data-label="Extra from the state" className="py-1.5 text-right font-semibold"
                     style={{ color: 'var(--status-critical)' }}>{usd(r.extra)}</td>
                 </tr>
@@ -254,7 +254,17 @@ export function StateAid() {
             the formula sends its money.
           </p>
           <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-            The reason the rate has to be so high is that aid is only{' '}
+            These figures are the whole cherry sheet, because the projection carries state
+            aid as one line and grows it as one. Chapter 70 is{' '}
+            {pct(STATE_AID.ch70Share, 0)} of it, and the remaining{' '}
+            {usdShort(STATE_AID.other)} — charter reimbursement, transport, lottery — is
+            not money the state would move for this reason. So if the increase had to come
+            from <strong>Chapter 70 alone</strong>, it would have to grow{' '}
+            <strong>{pct(ch70OnlyGrowth(aidRate))}</strong> a year rather than{' '}
+            {pct(aidRate)}.
+          </p>
+          <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+            The reason any of these rates is so high is that aid is only{' '}
             {pct(STATE_AID.shareOfTownRevenue, 0)} of the town&rsquo;s revenue. Fixing a
             blended cost rate of nearly 5% by moving a quarter of the revenue means moving
             that quarter very hard. Worth asking the delegation for; not worth planning
