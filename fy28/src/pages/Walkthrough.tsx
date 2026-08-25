@@ -60,37 +60,59 @@ export function Walkthrough({ onJump }: {
           answers a single question and hands you one sentence. You can stop after any of
           them and the thing you took away will still be true.
         </p>
+        <p className="mt-3 text-[16px] leading-relaxed max-w-2xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          <strong style={{ color: 'var(--text-primary)' }}>This is a projection of a year
+          nobody has argued about yet.</strong> FY{N.fy} has not been decided, presented or
+          debated. What follows is what the district&rsquo;s own published growth rates
+          produce when you run them forward &mdash; which is the point of doing it now
+          rather than in January.
+        </p>
         <Note>
-          Every figure comes from the town&rsquo;s published FY27 budget and tax records.
-          FY28 onward are projections. Nothing here is rounded to flatter an argument.
+          Figures for FY27 and earlier are from the town&rsquo;s published budget and tax
+          records. FY{N.fy} onward are this model&rsquo;s arithmetic, shown in full at every
+          step so you can disagree with it precisely. Nothing here is rounded to flatter an
+          argument.
         </Note>
       </div>
 
       {/* ------------------------------------------------ 01 */}
-      <Room n={1} tag="Where you already are"
-        title="You have already been told the number"
-        leave={<>Everyone agrees on the number, the town has already given real things up,
-          and nobody has explained why it keeps happening.</>}>
+      <Room n={1} tag="Where the town actually is"
+        title="What has already happened, and what has not been said yet"
+        leave={<>The town has already given real things up, and the next round has not
+          started. This is what the arithmetic says is coming before anybody announces
+          it.</>}>
         <Say>
-          The schools are short <strong>{usd(LEVEL_SERVICE.gap)}</strong> next year. You
-          have probably heard that. You may also have heard that the schools always need
-          more, that the problem is administration, or that nothing has been tightened.
+          Two things have happened, and they are matters of record. Two override questions
+          went to the ballot and both were defeated. And the budget that was adopted cut{' '}
+          <strong>{cuts.fte} positions</strong> and {usd(cuts.cost)}.
         </Say>
         <Say>
-          Start with what the town has already done about it. Two override questions, both
-          defeated. And a budget that cut <strong>{cuts.fte} positions</strong>.
+          <strong>Nothing about FY{N.fy} has been decided or announced.</strong>{' '}
+          No committee has published a figure and no meeting has argued about one. The{' '}
+          {usd(LEVEL_SERVICE.gap)} below is not a number somebody handed the town &mdash;
+          it is what this projection produces by running the district&rsquo;s own published
+          growth rates forward one year, and the next ten rooms are the working.
         </Say>
-        <Plate label="On the wall" figures={[
-          { v: usdShort(LEVEL_SERVICE.gap), k: 'short in FY28', tone: 'critical' },
-          { v: `${cuts.fte} FTE`, k: 'positions already cut last year', tone: 'critical' },
+        <Say>
+          Which is the reason to read it now rather than in January. Everything in the
+          record column already happened. Everything in the projection column is still a
+          choice.
+        </Say>
+        <Plate label="On the record — this already happened" figures={[
+          { v: `${cuts.fte} FTE`, k: 'positions cut from the adopted budget', tone: 'critical' },
           { v: '0 of 2', k: 'override questions passed' },
           { v: `$${ALREADY_SAID.overrides[0].cost} · $${ALREADY_SAID.overrides[1].cost}`,
             k: 'what each would have added to the average tax bill' },
         ]} />
+        <Plate label="Projected — nobody has announced this" figures={[
+          { v: usdShort(LEVEL_SERVICE.gap), k: 'what FY28 is short, on this model’s arithmetic',
+            tone: 'critical' },
+        ]} />
         <AlreadyCut />
         <Say>
-          That list matters before anything else does. The rest of this explains why the
-          hole came back anyway &mdash; which is a different question from whether anybody
+          That list matters before anything else does. The rest of this explains why a hole
+          opens again anyway &mdash; which is a different question from whether anybody
           tried.
         </Say>
       </Room>
@@ -147,9 +169,9 @@ export function Walkthrough({ onJump }: {
         corrects={<>&ldquo;There must be waste in there somewhere.&rdquo;</>}
         leave={<>The deficit is a subtraction, and you have now watched it being done.</>}>
         <Say>
-          Now the number you were handed in room one stops being handed down and starts
-          being derived. Put the increase on the table as a fixed quantity, and let each
-          cost line take its bite in the order it takes it.
+          Now the projected figure from room one stops being asserted and starts being
+          derived. Put the increase on the table as a fixed quantity, and let each cost line
+          take its bite in the order it takes it.
         </Say>
         <TheRaise />
       </Room>
