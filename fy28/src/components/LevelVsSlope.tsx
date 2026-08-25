@@ -256,7 +256,19 @@ export function OverrideSizing() {
      * at the cap, and the table should say so rather than make a reader ask. */
     throughFy: base[y - 1].fy,
     thatYearsGap: base[y - 1].gap,
-  }))
+  })).map(r => {
+    /* What it collects over and above what the schools need, while it waits to become
+     * adequate. This is the practical objection that kills the longer options: to be
+     * exactly enough in the last year, an override has to be far too much in the first,
+     * and "tax yourselves $2.3M more than the schools need next April" is not a ballot
+     * question anybody writes. */
+    const path = run(r.years, { ...DEFAULT_SCENARIO, overrideLevy: r.levy })
+    return {
+      ...r,
+      firstYearSurplus: Math.max(0, Math.round(-path[0].gap)),
+      totalSurplus: Math.round(path.reduce((s2, y) => s2 + Math.max(0, -y.gap), 0)),
+    }
+  })
   return (
     <div className="card p-4">
       <h3 className="text-[15px] font-bold">Or one vote, sized to last</h3>
@@ -285,6 +297,11 @@ export function OverrideSizing() {
             </th>
             <th className="font-semibold py-1.5 text-right">That year&rsquo;s gap</th>
             <th className="font-semibold py-1.5 text-right">On the average home, every year</th>
+            <th className="font-semibold py-1.5 text-right">
+              Over-collected in FY28
+              <span className="block text-[10px] font-normal"
+                style={{ color: 'var(--text-muted)' }}>more than the schools need</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -305,6 +322,10 @@ export function OverrideSizing() {
               </td>
               <td data-label="On the average home, every year"
                 className="py-1.5 text-right font-semibold">${r.onAverageHome}</td>
+              <td data-label="Over-collected in FY28" className="py-1.5 text-right"
+                style={{ color: r.firstYearSurplus > 0 ? 'var(--status-warning)' : 'var(--text-muted)' }}>
+                {r.firstYearSurplus > 0 ? usd(r.firstYearSurplus) : '—'}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -322,6 +343,27 @@ export function OverrideSizing() {
       <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         Run the model at exactly {usd(rows[3].levy)} and FY{rows[3].throughFy} lands with
         nothing to spare. Two thousand dollars less and it fails.
+      </p>
+
+      {/* The last column is the one that decides whether any of this is real. */}
+      <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
+        style={{ borderColor: 'var(--grid)' }}>
+        <strong>And this is where the long options die.</strong> To be exactly enough in
+        its last year, an override has to be far too much in its first. The five-year
+        question collects {usd(rows[3].firstYearSurplus)} more than the schools need next
+        April, and {usd(rows[3].totalSurplus)} more than they need across the five years
+        altogether. &ldquo;Tax yourselves {usdShort(rows[3].firstYearSurplus)} more than the
+        schools are short&rdquo; is not a ballot question anybody writes, which is the
+        practical reason these rows are not the plan they look like.
+      </p>
+      <p className="text-[13px] leading-relaxed mt-2">
+        There is one way out of it, and it is the reason it matters that an override raises
+        a <em>ceiling</em> rather than a bill. The town can pass the larger question and
+        then levy under the limit in the early years &mdash; taking what the schools
+        actually need and leaving the rest uncollected until the gap grows into it.
+        Lunenburg has left capacity unlevied before, though never on this scale. It asks
+        voters to approve a number far larger than the one they will be charged, and to
+        trust that the difference stays uncollected.
       </p>
       <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         Each extra year costs more than the last: the override compounds at 2&frac12;% and
