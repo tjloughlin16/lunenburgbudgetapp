@@ -212,7 +212,7 @@ export function Walkthrough({ onJump }: {
           the growth rate underneath that column refuse to move, and watch the year squares
           go green and then red again. Then drag one rate on the right instead.
         </Say>
-        <RateBoard />
+        <RateBoard stickyTop="top-[136px]" defaultPinned={false} />
       </Room>
 
       {/* ------------------------------------------------ 07 */}

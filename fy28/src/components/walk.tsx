@@ -25,47 +25,53 @@ export function Room({ n, tag, handsOn, title, corrects, children, leave }: {
   leave: ReactNode
 }) {
   return (
-    <section id={`room-${n}`} className="scroll-mt-32 lg:scroll-mt-16 border-t py-12"
+    <section id={`room-${n}`} className="scroll-mt-12 border-t"
       style={{ borderColor: 'var(--grid)' }}>
-      <div className="mx-auto max-w-6xl px-5 lg:grid lg:grid-cols-[132px_1fr] lg:gap-10">
-        <div className="flex items-baseline gap-3 lg:block mb-4 lg:mb-0">
-          <p className="text-3xl font-bold tnum leading-none"
-            style={{ color: 'var(--series-cost)' }}>
-            {String(n).padStart(2, '0')}
-          </p>
-          <p className="text-[10px] font-semibold uppercase tracking-widest lg:mt-2.5"
-            style={{ color: 'var(--text-muted)' }}>{tag}</p>
-        </div>
-
-        <div className="min-w-0">
-          {/* Above the title rather than in the rail. A small tag beside a room number is
-              read as a category; a filled one over the heading is read as an instruction,
-              and these three rooms are the ones people should not scroll past. */}
-          {handsOn && (
-            <p className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-md
-                          text-[11px] font-bold uppercase tracking-widest"
-              style={{ background: 'var(--series-cost)', color: '#fff' }}>
-              <span aria-hidden="true" className="text-[13px] leading-none">&#9758;</span>
-              Hands on &mdash; try this one yourself
-            </p>
-          )}
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-[1.15] mb-3
-                         max-w-3xl">{title}</h2>
-          {corrects && (
-            <p className="text-[13px] leading-relaxed pl-3.5 mb-5 max-w-2xl"
-              style={{ borderLeft: '2px solid var(--status-critical)',
-                       color: 'var(--text-secondary)' }}>
-              <span className="block text-[10px] font-bold uppercase tracking-widest mb-1"
-                style={{ color: 'var(--status-critical)' }}>Corrects</span>
-              {corrects}
-            </p>
-          )}
-          <div className="space-y-4">{children}</div>
-          <div className="card p-4 sm:p-5 mt-6 max-w-3xl">
-            <p className="text-[10px] font-bold uppercase tracking-widest mb-2"
-              style={{ color: 'var(--text-muted)' }}>You leave knowing</p>
-            <p className="text-[17px] leading-snug font-medium">{leave}</p>
+      {/* The heading stays put for as long as you are in the room.
+       *
+       * Rooms are long — several of them carry a whole chart — and a reader who scrolls
+       * into the middle of one has no way of telling which of eleven they are in or what
+       * question it was answering. Sticky inside the section rather than on the page, so
+       * it releases at the room boundary and the next room's heading takes over: the
+       * behaviour of a wall label you walk past, which is the thing this is imitating. */}
+      <div className="sticky top-12 z-10 backdrop-blur border-b"
+        style={{ background: 'color-mix(in srgb, var(--surface-2) 93%, transparent)',
+                 borderColor: 'var(--grid)' }}>
+        <div className="mx-auto max-w-6xl px-5 py-2.5">
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <span className="text-[13px] font-bold tnum leading-none"
+              style={{ color: 'var(--series-cost)' }}>{String(n).padStart(2, '0')}</span>
+            <span className="text-[10px] font-semibold uppercase tracking-widest leading-none"
+              style={{ color: 'var(--text-muted)' }}>{tag}</span>
+            {handsOn && (
+              <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-1
+                               rounded leading-none"
+                style={{ background: 'var(--series-cost)', color: '#fff' }}>
+                <span aria-hidden="true" className="mr-1">&#9758;</span>
+                Hands on
+              </span>
+            )}
           </div>
+          <h2 className="text-[17px] sm:text-2xl font-bold tracking-tight leading-snug
+                         mt-1 line-clamp-2">{title}</h2>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-5 py-9">
+        {corrects && (
+          <p className="text-[13px] leading-relaxed pl-3.5 mb-5 max-w-2xl"
+            style={{ borderLeft: '2px solid var(--status-critical)',
+                     color: 'var(--text-secondary)' }}>
+            <span className="block text-[10px] font-bold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--status-critical)' }}>Corrects</span>
+            {corrects}
+          </p>
+        )}
+        <div className="space-y-4">{children}</div>
+        <div className="card p-4 sm:p-5 mt-6 max-w-3xl">
+          <p className="text-[10px] font-bold uppercase tracking-widest mb-2"
+            style={{ color: 'var(--text-muted)' }}>You leave knowing</p>
+          <p className="text-[17px] leading-snug font-medium">{leave}</p>
         </div>
       </div>
     </section>

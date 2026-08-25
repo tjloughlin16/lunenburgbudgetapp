@@ -20,7 +20,14 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  blended cost growth underneath them, and the left one never moves — that refusal is
  *  the entire teaching device, and it is why the columns are laid out as a pair rather
  *  than as one list of controls. */
-export function RateBoard() {
+export function RateBoard({ stickyTop = 'top-12', defaultPinned = true }: {
+  /** How far down the pinned block sits. The walkthrough puts a sticky room heading above
+   *  it, so the board has to clear that rather than stack underneath it. */
+  stickyTop?: string
+  /** Off inside the walkthrough: a sticky room heading plus a pinned chart plus the site
+   *  header is more than half a phone screen before any controls are visible. */
+  defaultPinned?: boolean
+} = {}) {
   const [rates, setRates] = useState<Record<Bucket, number>>({ ...DEFAULT_RATES })
   const [cuts, setCuts] = useState<Set<string>>(new Set())
   const [overrideLevy, setOverrideLevy] = useState(0)
@@ -28,7 +35,7 @@ export function RateBoard() {
   // The controls are long and the chart is the feedback, so by default the chart follows
   // you down the page. Pinning is a preference, not a mode — some readers want the whole
   // curve and the table space back.
-  const [pinned, setPinned] = useState(true)
+  const [pinned, setPinned] = useState(defaultPinned)
 
   const cut = CUT_OPTIONS.filter(c => cuts.has(c.id)).reduce((s, c) => s + c.amount, 0)
   const scenario: Scenario = useMemo(
@@ -64,7 +71,7 @@ export function RateBoard() {
       <Verdicts verdict={verdict} blended={blended} revGrowth={revGrowth}
         longRun={longRun} years={years} cut={cut} overrideLevy={overrideLevy} />
 
-      <div className={pinned ? 'sticky z-20 top-12 -mx-1 px-1 pb-2' : ''}
+      <div className={pinned ? `sticky z-20 ${stickyTop} -mx-1 px-1 pb-2` : ''}
         style={pinned ? { background: 'var(--surface-2)' } : undefined}>
         <YearStatus years={years} compact={pinned} />
         <Curves years={years} baseline={baseline} touched={touched} compact={pinned}
