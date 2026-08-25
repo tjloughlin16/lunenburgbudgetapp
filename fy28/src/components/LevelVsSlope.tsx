@@ -48,7 +48,11 @@ export function LevelVsSlope() {
     // The long-run revenue rate, not today's: new growth is a fixed dollar amount, so its
     // contribution decays and comparing against year one flatters every row here.
     const rev = longRunRevenueGrowth(r)
-    return { ...c, r, blended, rev, fails: failsIn(r), widening: blended > rev + 0.0002 }
+    /** Consecutive years funded from the start — the question every one of these cards
+     *  is really being asked, and the one three sampled columns could not answer. */
+    const funded = r.findIndex(y => y.gap > 0)
+    return { ...c, r, blended, rev, fails: failsIn(r), widening: blended > rev + 0.0002,
+             funded: funded === -1 ? r.length : funded }
   })
 
   return (
@@ -64,19 +68,44 @@ export function LevelVsSlope() {
               {row.sub}
             </p>
 
-            <dl className="grid grid-cols-3 gap-2 mt-3 text-center">
-              {[0, 2, 5].map(i => (
-                <div key={i} className="rounded-lg py-2" style={{ background: 'var(--surface-3)' }}>
-                  <dt className="text-[10px] font-semibold uppercase tracking-wider"
-                    style={{ color: 'var(--text-muted)' }}>FY{row.r[i].fy}</dt>
-                  <dd className="text-[15px] font-bold tnum mt-0.5" style={{
-                    color: row.r[i].gap > 0 ? 'var(--status-critical)' : 'var(--status-good)',
-                  }}>
-                    {row.r[i].gap > 0 ? usdShort(row.r[i].gap) : 'clear'}
-                  </dd>
-                </div>
+            {/* Every year, not three of them.
+                This was three boxes at FY28, FY30 and FY33, which hid FY29 — so a $1.25M
+                override that funds two years looked like it funded one, and the card
+                could not answer the question it exists to answer. Same squares and same
+                words as the board above. */}
+            <ol className="grid grid-cols-10 gap-0.5 mt-3"
+              aria-label="Whether each year is funded">
+              {row.r.map(y => (
+                <li key={y.fy} className="rounded-sm text-center py-1"
+                  title={y.gap > 0 ? `FY${y.fy}: short by ${usd(y.gap)}` : `FY${y.fy}: funded`}
+                  style={{ background: y.gap > 0 ? 'var(--status-critical)' : 'var(--status-good)',
+                           color: '#fff' }}>
+                  <span className="block text-[9px] font-bold leading-none">{y.fy}</span>
+                  <span className="sr-only">
+                    {y.gap > 0 ? `not funded, short by ${usd(y.gap)}` : 'funded'}
+                  </span>
+                </li>
               ))}
-            </dl>
+            </ol>
+
+            <p className="text-[12px] mt-2 font-semibold">
+              {row.funded === 0
+                ? <span style={{ color: 'var(--status-critical)' }}>
+                    Short in every year, starting with {usdShort(row.r[0].gap)} next year
+                  </span>
+                : row.funded === row.r.length
+                  ? <span style={{ color: 'var(--status-good)' }}>
+                      Funded in all {row.r.length} years
+                    </span>
+                  : <span>
+                      <span style={{ color: 'var(--status-good)' }}>
+                        Funded for {row.funded} {row.funded === 1 ? 'year' : 'years'}
+                      </span>
+                      <span style={{ color: 'var(--text-secondary)' }}>, then short again
+                        from FY{row.fails} — {usdShort(row.r[row.r.length - 1].gap)} by
+                        FY{row.r[row.r.length - 1].fy}</span>
+                    </span>}
+            </p>
 
             <p className="text-[12px] mt-3 pt-2.5 border-t leading-relaxed"
               style={{ borderColor: 'var(--grid)' }}>
@@ -94,7 +123,7 @@ export function LevelVsSlope() {
                       held, and a small residue returns in FY{row.fails}
                     </span>
                   : <span style={{ color: 'var(--status-good)' }}>
-                      held, and clear for {YEARS} years
+                      held, and funded for {YEARS} years
                     </span>}
             </p>
           </div>

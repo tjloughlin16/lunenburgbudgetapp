@@ -40,9 +40,10 @@ export function TheRaise() {
         <Fact label="What standing still costs" value={usdShort(N.costTotal)} tone="critical"
           sub={`What the same staff, the same buses and the same buildings cost next year, `
             + `one year older. Nobody is hired and nothing is added.`} />
-        <Fact label="The shortfall" value={usdShort(N.leftOver)} tone="critical"
-          sub={`Standing still costs ${pct(N.consumed)} of the increase. The rest has to be `
-            + `cut from somewhere, charged to somebody, or voted for.`} />
+        <Fact label={'Next year\u2019s gap'} value={usdShort(N.gap)} tone="critical"
+          sub={`${usd(-N.leftOver)} of it is costs outrunning the increase — standing still `
+            + `takes ${pct(N.consumed)} of it. The other ${usd(N.startingBehind)} is what `
+            + `the district was already behind before anything grew.`} />
       </div>
 
       {/* ---- the bar ---- */}
@@ -55,6 +56,8 @@ export function TheRaise() {
           wants the money; the band underneath is the same span coloured only by whether
           there is money for it. The mark is where it runs out. Everything past the mark
           has to come from somewhere else, and no rearranging of the segments makes it fit.
+          This bar is about the increase only &mdash; next year&rsquo;s full gap is{' '}
+          {usd(N.gap)}, because the district also starts {usd(N.startingBehind)} behind.
         </p>
 
         <div className="relative">
@@ -323,7 +326,8 @@ function WithinShare() {
         is &ldquo;everything else&rdquo; &mdash; supplies, materials, technology, athletics,
         clubs &mdash; the only line the School Committee fully controls, the only one it has
         actually been cutting, and the only one that was never the problem. The red segments
-        add up to {usd(-N.leftOver)}, which is next year&rsquo;s gap exactly.
+        add up to {usd(-N.leftOver)} &mdash; exactly the part of next year&rsquo;s{' '}
+        {usd(N.gap)} gap that comes from costs outrunning the increase.
       </p>
     </div>
   )
