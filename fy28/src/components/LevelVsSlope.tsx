@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import { usd, usdShort } from '../model/engine'
 import {
   DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, ALL_CUTS,
   run, blendedOf, longRunRevenueGrowth, overrideTreadmill, overrideForYears,
-  type Scenario,
+  overrideStops, type Scenario,
 } from '../model/rates'
 
 const YEARS = 10
@@ -426,6 +427,81 @@ export function OverrideSizing() {
         and FY{38} arrives anyway. That is the same rate problem the rest of this page is
         about, met from the revenue side.
       </p>
+    </div>
+  )
+}
+
+/** Move an override and watch how far it reaches.
+ *
+ *  The override room had two tables and nothing to touch, which is the wrong way round for
+ *  the one decision on this site a resident actually gets a vote on. One notch per year of
+ *  coverage, the same year squares as everywhere else, and the over-collection printed
+ *  underneath — because the size and the surplus are the two halves of the choice and
+ *  showing either alone is misleading. */
+export function OverrideExplorer() {
+  const stops = overrideStops(DEFAULT_SCENARIO)
+  const [i, setI] = useState(2)
+  const levy = i === 0 ? 0 : stops[i - 1].levy
+  const at = i === 0 ? null : stops[i - 1]
+  const years = run(10, { ...DEFAULT_SCENARIO, overrideLevy: levy })
+  const onHome = i === 0 ? 0 : overrideForYears(at!.years).onAverageHome
+  const firstYearExtra = Math.max(0, Math.round(-years[0].gap))
+
+  return (
+    <div className="card p-4 sm:p-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-3">
+        <p className="text-[15px] font-bold">Move the override</p>
+        <p className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>
+          {at
+            ? <>Funds through <strong>FY{at.fy}</strong> &mdash; {at.years}{' '}
+                {at.years === 1 ? 'year' : 'years'}</>
+            : <>No override</>}
+        </p>
+      </div>
+
+      <p className="text-3xl font-bold tnum leading-none mt-3">
+        {at ? usd(at.levy) : 'None'}
+      </p>
+      <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-secondary)' }}>
+        {at ? <>on the ballot &mdash; <strong>${onHome}</strong> a year on the average
+          home, every year, permanently</> : <>Slide right. Each notch is the smallest
+          override that funds one more year.</>}
+      </p>
+
+      <input type="range" min={0} max={stops.length} step={1} value={i}
+        aria-label="Override size, in years of coverage"
+        onChange={e => setI(Number(e.target.value))} className="w-full mt-4" />
+
+      <ol className="grid grid-cols-10 gap-1 mt-3" aria-label="Whether each year is funded">
+        {years.map(y => {
+          const short = y.gap > 0
+          return (
+            <li key={y.fy} className="rounded text-center py-1"
+              title={short ? `FY${y.fy}: short by ${usd(y.gap)}` : `FY${y.fy}: funded`}
+              style={{ background: short ? 'var(--status-critical)' : 'var(--status-good)',
+                       color: '#fff' }}>
+              <span className="block text-[9px] font-bold leading-none">FY{y.fy}</span>
+              <span className="block text-[10px] font-bold leading-none mt-0.5"
+                aria-hidden="true">{short ? '\u2715' : '\u2713'}</span>
+              <span className="sr-only">
+                {short ? `not funded, short by ${usd(y.gap)}` : 'funded'}
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+
+      {at && (
+        <p className="text-[12px] leading-relaxed mt-3 pl-3"
+          style={{ borderLeft: '2px solid var(--status-warning)', color: 'var(--text-secondary)' }}>
+          {firstYearExtra > 0
+            ? <>Collects <strong>{usd(firstYearExtra)}</strong> more than the schools are
+                short next April, falling to nothing by FY{at.fy} as the gap grows into it.
+                That surplus is the price of buying more than one year at a time.</>
+            : <>Sized to next year exactly &mdash; no over-collection, and back on the
+                ballot the following spring.</>}
+        </p>
+      )}
     </div>
   )
 }

@@ -9,11 +9,12 @@ import {
 } from '../model/rates'
 import { ADMIN, DEVELOPMENT } from '../model/answers'
 import { MODEL } from '../model/engine'
-import { Room, Say, Plate, AlreadyCut, OneTimeAnswers } from '../components/walk'
+import { Room, Say, Plate, AlreadyCut, OneTimeAnswers, WhatIsADevelopment } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
 import { RateBoard } from '../components/RateBoard'
-import { OverrideSizing, OverrideTreadmill } from '../components/LevelVsSlope'
+import { OverrideSizing, OverrideTreadmill, OverrideExplorer } from '../components/LevelVsSlope'
 import { PriceList } from '../components/PriceList'
+import { Forever } from '../components/Forever'
 import { Note } from '../components/primitives'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -267,19 +268,23 @@ export function Walkthrough({ onJump }: {
         </Say>
         <OverrideSizing />
         <Say>
-          <strong>Try it.</strong> On the rate board in room six, the override slider moves
-          one notch per year of coverage &mdash; and if you cut something in the left column
-          first, every notch gets smaller.
+          <strong>Try it.</strong> Each notch is the smallest override that funds one more
+          year. Watch the ballot figure, the tax bill and the over-collection move together
+          &mdash; they are three views of one decision.
+        </Say>
+        <OverrideExplorer />
+        <Say>
+          And the alternative to one big question: a smaller one, every spring, for ever.
         </Say>
         <OverrideTreadmill />
       </Room>
 
       {/* ------------------------------------------------ 09 */}
       <Room n={9} tag="The growth answer"
-        title="What building would actually have to look like"
+        title="What commercial development would have to look like"
         corrects={<>&ldquo;Commercial development will grow us out of this.&rdquo;</>}
-        leave={<>Development is real money and the wrong order of magnitude &mdash; and it
-          has to accelerate, not just continue.</>}>
+        leave={<>Commercial development is real money and the wrong order of magnitude
+          &mdash; and it has to accelerate, not merely continue.</>}>
         <Say>
           The right instinct, priced honestly. Two facts do all the work here, and neither
           is in general circulation.
@@ -289,22 +294,24 @@ export function Walkthrough({ onJump }: {
           { v: usdShort(DEVELOPMENT.fiveYear.value),
             k: 'of new commercial value a year to hold the gap for five years' },
           { v: DEVELOPMENT.fiveYear.developments.toFixed(0),
-            k: 'developments a year, every year, to do it' },
+            k: 'developments a year — see below for what one of those is' },
           { v: `${usd(HOME_PAYS)} · ${usd(HOME_COSTS)}`,
             k: 'what an average home pays toward schools, and the school cost it brings' },
         ]} />
+        <WhatIsADevelopment />
         <Say>
           The first is that <strong>the schools keep {(SHARE * 100).toFixed(0)}&cent; of
           each new-growth dollar</strong>. New growth goes to the town&rsquo;s levy, and the
           schools get their share of what the town collects. Pricing development against the
-          school gap without that roughly doubles what a building appears to be worth.
+          school gap without that roughly doubles what a new development appears to be worth.
         </Say>
         <Say>
           The second has not been said out loud anywhere in town: <strong>a flat build rate
           decays as a rate.</strong> A fixed number of dollars of new growth each year is a
           shrinking share of a growing town, which is exactly why{' '}
           {pct(BASELINE_REVENUE_GROWTH)} drifts back toward {pct(LEVY_CAP, 1)}. To work as a
-          rate rather than as a one-off, the build rate has to keep rising.
+          rate rather than as a one-off, the rate of new commercial construction has to
+          keep rising.
         </Say>
         <Say>
           And the housing half, which settles a separate argument: the average home pays
@@ -368,10 +375,13 @@ export function Walkthrough({ onJump }: {
           { v: pct(salaryAt4), k: 'what salaries could grow at instead, if insurance came to 4%', tone: 'good' },
         ]} />
         <Say>
-          Read the other way, nobody loses a job and the settlement itself lands near{' '}
-          {pct(salaryAt4)} &mdash; roughly flat pay, permanently, for about {HEADCOUNT}{' '}
-          people. Any mix of the two works. What does not work is neither.
+          <strong>Try it.</strong> Move the health insurance assumption down the table below
+          and watch what it leaves for salaries &mdash; and tick the box to hold the four
+          small lines to the cap as well. Read the other way, nobody loses a job and the
+          settlement itself lands near {pct(salaryAt4)}: roughly flat pay, permanently, for
+          about {HEADCOUNT} people. Any mix of the two works. What does not work is neither.
         </Say>
+        <Forever />
         <div className="card p-5">
           <p className="text-[15px] leading-relaxed">
             <strong>So the choice is not between a good option and a bad one.</strong> It is

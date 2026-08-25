@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react'
 import { usd } from '../model/engine'
 import { ALREADY_CUT, ONE_TIME_ANSWERS, SPREAD } from '../model/walk'
+import { MODEL, usdShort } from '../model/engine'
+import { DEVELOPMENT, FEASIBILITY } from '../model/answers'
 
 /** The exhibit's structural language, as components.
  *
@@ -33,17 +35,20 @@ export function Room({ n, tag, handsOn, title, corrects, children, leave }: {
           </p>
           <p className="text-[10px] font-semibold uppercase tracking-widest lg:mt-2.5"
             style={{ color: 'var(--text-muted)' }}>{tag}</p>
-          {handsOn && (
-            <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-1
-                             rounded lg:inline-block lg:mt-2.5"
-              style={{ color: 'var(--series-cost)',
-                       background: 'color-mix(in srgb, var(--series-cost) 12%, transparent)' }}>
-              Hands on
-            </span>
-          )}
         </div>
 
         <div className="min-w-0">
+          {/* Above the title rather than in the rail. A small tag beside a room number is
+              read as a category; a filled one over the heading is read as an instruction,
+              and these three rooms are the ones people should not scroll past. */}
+          {handsOn && (
+            <p className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-md
+                          text-[11px] font-bold uppercase tracking-widest"
+              style={{ background: 'var(--series-cost)', color: '#fff' }}>
+              <span aria-hidden="true" className="text-[13px] leading-none">&#9758;</span>
+              Hands on &mdash; try this one yourself
+            </p>
+          )}
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-[1.15] mb-3
                          max-w-3xl">{title}</h2>
           {corrects && (
@@ -176,6 +181,58 @@ export function OneTimeAnswers() {
         The last column is the whole page. Everything the town actually argues about sits in
         the rows that say <strong>none</strong>, and the two rows that change anything are
         the two nobody is arguing about.
+      </p>
+    </div>
+  )
+}
+
+/** What a "development" is, because otherwise the count is meaningless.
+ *
+ *  "27 developments a year" is a number without a unit: a reader cannot tell whether that
+ *  is a strip mall or a shed, and the honest answer changes the argument completely. The
+ *  model's unit is a $3M mixed archetype, and unpacking it into actual buildings produces
+ *  the scale fact this room needs — 228 buildings in five years against the 234 commercial
+ *  properties the town has managed to accumulate in its entire history. */
+export function WhatIsADevelopment() {
+  const mix = MODEL.taxBase.archetypes.find(a => a.id === 'mix')!
+  const T = MODEL.taxBase
+  return (
+    <div className="card p-4 sm:p-5">
+      <p className="text-[15px] font-bold">What one &ldquo;development&rdquo; means here</p>
+      <p className="text-[13px] mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}>
+        The model&rsquo;s unit is <strong>{usd(mix.value)}</strong> of new assessed value
+        &mdash; a mix, not one building type, because that is what actually gets built. So{' '}
+        {DEVELOPMENT.fiveYear.developments.toFixed(0)} a year is, in real buildings:
+      </p>
+      <ul className="rounded-lg overflow-hidden" style={{ background: 'var(--surface-3)' }}>
+        {FEASIBILITY.each.slice().sort((a, b) => b.perYear - a.perYear).map((e, i) => (
+          <li key={e.label} className="flex items-baseline justify-between gap-3 px-3 py-2"
+            style={i ? { borderTop: '1px solid var(--grid)' } : undefined}>
+            <span className="text-[13px] leading-snug min-w-0">
+              {e.label}
+              <span className="ml-1.5 text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                {usd(e.unit)} each
+              </span>
+            </span>
+            <span className="text-[13px] font-semibold tnum shrink-0">
+              {e.perYear.toFixed(1)}<span className="font-normal text-[11px]"> a year</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
+        style={{ borderColor: 'var(--grid)' }}>
+        <strong>That is {FEASIBILITY.buildings5} new commercial buildings over five
+        years.</strong> Lunenburg has {T.businesses} commercial properties today, worth{' '}
+        {usdShort(T.fy23.cipValue)} in total &mdash; accumulated over the whole life of the
+        town. This asks for very nearly that many again, in five years, one every{' '}
+        {FEASIBILITY.everyDays} days.
+      </p>
+      <p className="text-[12px] leading-relaxed mt-2" style={{ color: 'var(--text-muted)' }}>
+        It would take commercial property from{' '}
+        {(FEASIBILITY.businessShareNow * 100).toFixed(0)}% of the town&rsquo;s value to{' '}
+        {(FEASIBILITY.businessShareAfter * 100).toFixed(0)}%. And it has somewhere to go
+        or it does not happen: {MODEL.taxBase.commercialContext.constraint.toLowerCase()}
       </p>
     </div>
   )
