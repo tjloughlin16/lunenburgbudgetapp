@@ -148,6 +148,9 @@ export function TheRaise() {
         </p>
       </div>
 
+      {/* ---- the same money, asked as a fairness question ---- */}
+      <WithinShare />
+
       {/* ---- where the raise came from, and the piece nobody counts ---- */}
       <div className="grid gap-3 lg:grid-cols-2 items-start mt-4">
         <div className="card p-4">
@@ -207,6 +210,93 @@ export function TheRaise() {
           </p>
         </div>
       </div>
+    </div>
+  )
+}
+
+/** Who is living within the increase and who is not.
+ *
+ *  The bar above answers "is there enough" — no — but it cannot say whose fault that is,
+ *  because a big line naturally takes a big share and looks guilty for being big. This
+ *  asks the fair version instead: split the increase in proportion to what each line
+ *  already costs, and see who still comes up short.
+ *
+ *  It changes the ranking completely, and it produces the fact this whole page has been
+ *  circling. Everything else — supplies, materials, technology, athletics, clubs, the one
+ *  line the School Committee genuinely controls and the only one it has actually been
+ *  cutting — is the sole line in the budget that lives inside its means. Health insurance
+ *  takes three times its share. The town has been cutting the one thing that was not the
+ *  problem. */
+function WithinShare() {
+  const rows = N.costs.slice().sort((a, b) => b.overdraft - a.overdraft)
+  const max = Math.max(...rows.map(r => Math.abs(r.overdraft)))
+  const width = (r: typeof rows[number]) =>
+    `${Math.max((Math.abs(r.overdraft) / max) * 100, 1.5)}%`
+
+  return (
+    <div className="card p-4 mt-4">
+      <h3 className="text-[15px] font-bold">Which lines live within the increase</h3>
+      <p className="text-[12px] mt-1 mb-4" style={{ color: 'var(--text-secondary)' }}>
+        The bar above shows that the money runs out, but a large line takes a large share
+        of any increase and looks guilty simply for being large. So split the{' '}
+        {usdShort(N.allowed)} in proportion to what each line <em>already</em> costs
+        &mdash; the fairest division there is &mdash; and ask who still comes up short.
+      </p>
+
+      <ul className="space-y-1.5">
+        {rows.map(r => (
+          <li key={r.key} className="flex items-center gap-2">
+            <span className="text-[11px] sm:text-[12px] w-[34%] sm:w-[28%] shrink-0 truncate"
+              title={r.label}>{r.label}</span>
+            <span className="flex-1 flex items-stretch h-5">
+              <span className="w-1/2 flex justify-end">
+                {r.fits && (
+                  <span className="rounded-l" aria-hidden="true"
+                    style={{ width: width(r), background: 'var(--status-good)' }} />
+                )}
+              </span>
+              <span aria-hidden="true" style={{ width: 1, background: 'var(--axis)' }} />
+              <span className="w-1/2">
+                {!r.fits && (
+                  <span className="block h-full rounded-r" aria-hidden="true"
+                    style={{ width: width(r), background: 'var(--status-critical)' }} />
+                )}
+              </span>
+            </span>
+            <span className="text-[11px] sm:text-[12px] tnum w-[30%] sm:w-[26%] text-right
+                             shrink-0 font-semibold"
+              style={{ color: r.fits ? 'var(--status-good)' : 'var(--status-critical)' }}>
+              {r.fits
+                ? `fits, by ${usd(-r.overdraft)}`
+                : `+${usd(r.overdraft)}`}
+              {!r.fits && (
+                <span className="block text-[10px] font-normal"
+                  style={{ color: 'var(--text-muted)' }}>
+                  {r.multiple.toFixed(2)}&times; its share
+                </span>
+              )}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="flex justify-between text-[10px] mt-1 px-[34%] sm:px-[28%]"
+        style={{ color: 'var(--text-muted)' }}>
+        <span>lives within its share</span>
+        <span>takes more than its share</span>
+      </div>
+
+      <p className="text-[13px] leading-relaxed mt-4 pt-3 border-t"
+        style={{ borderColor: 'var(--grid)' }}>
+        <strong>One line out of six fits, and it fits by {usd(-rows[rows.length - 1].overdraft)}.</strong>{' '}
+        It is &ldquo;everything else&rdquo; &mdash; supplies, materials, technology,
+        athletics, clubs &mdash; the only line the School Committee fully controls, and
+        the only one it has actually been cutting. Health insurance takes{' '}
+        {rows[0].multiple.toFixed(2)} times its share and accounts for{' '}
+        {Math.round((rows[0].overdraft / -N.leftOver) * 100)}% of the whole shortfall on
+        its own. The overdrafts add up to {usd(-N.leftOver)}, which is next year&rsquo;s
+        problem exactly.
+      </p>
     </div>
   )
 }

@@ -551,10 +551,21 @@ export function nextYear() {
 
   const costs = RATE_LINES.map(l => {
     const amount = BASE[l.key] * l.rate
+    /** What this line would get if the increase were split in proportion to what each
+     *  line already costs — the fairest possible division, and the one that shows which
+     *  lines are living inside their means and which are not. The shares sum to the whole
+     *  increase exactly, so the overdrafts sum to exactly the shortfall. */
+    const share = allowed * (BASE[l.key] / TOTAL)
     return {
       key: l.key, label: l.label, rate: l.rate, amount: Math.round(amount),
-      /** The share of the entire raise that this one line consumes. */
+      /** The share of the entire increase that this one line consumes. */
       shareOfAllowed: amount / allowed,
+      share: Math.round(share),
+      /** Positive means the line takes more than its share. Negative means it fits. */
+      overdraft: Math.round(amount - share),
+      /** How many times its own share the line takes. */
+      multiple: amount / share,
+      fits: amount <= share,
     }
   }).sort((a, b) => b.amount - a.amount)
 
