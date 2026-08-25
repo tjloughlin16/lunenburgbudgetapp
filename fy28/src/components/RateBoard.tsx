@@ -237,34 +237,39 @@ function Verdicts({ verdict, blended, revGrowth, longRun, years, cut, overrideLe
   )
 }
 
-/** Five years, each one either paid for or not.
+/** Every year the chart covers, each one funded or not.
  *
- *  This replaced a meter showing the blended cost growth rate against two threshold marks.
- *  It was accurate and nobody could read it: a rate is an abstraction about a rate, and
- *  what a person wants to know is whether the year is funded. So the pinned strip now answers
- *  exactly that, one square per year, and the rate itself is left to the columns below
- *  where it has a label and a sentence attached.
+ *  Was five squares against a twelve-year chart, which needed a cutoff line on the chart
+ *  to explain the mismatch. Covering the same span instead removes the question: the
+ *  squares and the curve are the same years, read two ways, and the strip is the index to
+ *  the chart above it.
  *
- *  Never colour alone — each square carries a glyph and the number as well, and the year
- *  is the row header for a screen reader. */
+ *  Deliberately small. It is the pinned element, so every pixel it takes is a pixel of
+ *  controls the reader cannot see at the same time as the result — the year and the glyph
+ *  carry it, and the amount appears only where there is room for it.
+ *
+ *  Never colour alone: glyph, amount where it fits, and full text for a screen reader. */
 function YearStatus({ years, compact }: {
   years: ReturnType<typeof run>; compact?: boolean
 }) {
   return (
-    <div className={compact ? 'mb-2' : 'mb-4'}>
-      <ol className="grid grid-cols-5 gap-1.5" aria-label="Whether each year is funded">
-        {years.slice(0, 5).map(y => {
+    <div className={compact ? 'mb-2' : 'mb-3'}>
+      <ol className="grid grid-cols-6 sm:grid-cols-12 gap-1"
+        aria-label="Whether each year is funded">
+        {years.map(y => {
           const short = y.gap > 0
           return (
-            <li key={y.fy} className={`rounded-lg text-center ${compact ? 'py-1.5' : 'py-3'}`}
+            <li key={y.fy} className="rounded text-center py-1 px-0.5"
+              title={short ? `FY${y.fy}: short by ${usd(y.gap)}` : `FY${y.fy}: funded`}
               style={{ background: short ? 'var(--status-critical)' : 'var(--status-good)',
                        color: '#fff' }}>
-              <p className="text-[10px] font-bold uppercase tracking-wider opacity-90">
-                FY{y.fy}
+              <p className="text-[10px] font-bold leading-none opacity-90">FY{y.fy}</p>
+              <p className="text-[11px] font-bold leading-none mt-0.5" aria-hidden="true">
+                {short ? '\u2715' : '\u2713'}
               </p>
-              <p className={`font-bold tnum leading-tight ${compact ? 'text-[13px]' : 'text-[17px]'}`}>
-                <span aria-hidden="true" className="mr-1">{short ? '\u2715' : '\u2713'}</span>
-                {short ? usdShort(y.gap) : 'Funded'}
+              <p className="hidden sm:block text-[10px] font-semibold tnum leading-none mt-0.5
+                            truncate" aria-hidden="true">
+                {short ? usdShort(y.gap) : 'ok'}
               </p>
               <span className="sr-only">
                 {short ? `not funded, short by ${usd(y.gap)}` : 'funded'}
@@ -277,8 +282,9 @@ function YearStatus({ years, compact }: {
         <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
           A green check means the year is <strong>funded</strong> &mdash; what the schools
           buy costs no more than the town can give them. Red means it is not, and by how
-          much. Turning the first square green is easy; keeping the last one green is the
-          hard part, and it is the difference between the two columns below.
+          much. Same years as the chart. Turning the first square green is easy; keeping
+          the last one green is the hard part, and it is the difference between the two
+          columns below.
         </p>
       )}
     </div>
@@ -304,7 +310,7 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
           {pinned ? '\u25BC Unpin chart' : '\u25B2 Pin chart'}
         </button>
       </div>
-      <div style={{ width: '100%', height: compact ? 190 : 300 }}>
+      <div style={{ width: '100%', height: compact ? 168 : 300 }}>
         <ResponsiveContainer>
           <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
