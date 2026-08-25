@@ -10,6 +10,7 @@ import { Answers } from './pages/Answers'
 import { FindTheMoney } from './pages/FindTheMoney'
 import { BendTheCurve } from './pages/BendTheCurve'
 import { Override } from './pages/Override'
+import { Walkthrough } from './pages/Walkthrough'
 import { pathFor, tabFromPath, type Tab } from './routes'
 
 
@@ -28,6 +29,7 @@ const CTAS: { id: Tab; label: string; short: string; glyph: string; sub: string 
 ]
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
+  { id: 'walk', label: 'Start here', sub: 'Eleven steps, in order, assuming you know nothing about the budget' },
   { id: 'answers', label: 'Straight answers', sub: 'The questions people actually ask, in plain English, with the arithmetic' },
   { id: 'money', label: 'Find the money', sub: 'Pick a number. See what raising it costs on every lever, with no projection involved' },
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
@@ -180,6 +182,8 @@ export default function App() {
           </div>
         )}
       </header>
+
+      {tab === 'walk' && <Walkthrough onJump={go} />}
 
       {tab === 'answers' && <Answers onJump={go} />}
 

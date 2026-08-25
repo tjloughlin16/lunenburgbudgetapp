@@ -9,11 +9,12 @@
  *  /bend-the-curve#leverage means what it looks like it means. Both hosts are configured
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
-export type Tab = 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
+export type Tab = 'walk' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
+  walk: 'walkthrough',
   answers: '',
   money: 'find-the-money',
   context: 'the-situation',
@@ -29,6 +30,7 @@ export const SLUG: Record<Tab, string> = {
  *  accepted — a link that has been shared once is out of your hands forever. */
 const ALIASES: Record<string, Tab> = {
   'straight-answers': 'answers', answers: 'answers',
+  walk: 'walk', start: 'walk', 'start-here': 'walk',
   money: 'money', context: 'context', situation: 'context',
   why: 'why', rates: 'curve', curve: 'curve',
   override: 'override', 'the-override': 'override',
