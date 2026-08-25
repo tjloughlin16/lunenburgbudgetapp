@@ -118,7 +118,7 @@ export function AlreadyCut() {
   return (
     <div className="card p-4 sm:p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-3 mb-1">
-        <p className="text-[15px] font-bold">What last year&rsquo;s budget already cut</p>
+        <p className="text-[15px] font-bold">What this year&rsquo;s budget already cut</p>
         <p className="text-[13px] tnum font-semibold" style={{ color: 'var(--status-critical)' }}>
           {ALREADY_CUT.fte} FTE &middot; {usd(ALREADY_CUT.cost)}
         </p>
@@ -139,8 +139,8 @@ export function AlreadyCut() {
       </ul>
       <p className="text-[12px] mt-3" style={{ color: 'var(--text-muted)' }}>
         A further {ALREADY_CUT.unfunded.fte} FTE and {usd(ALREADY_CUT.unfunded.cost)} was
-        asked for and never funded &mdash; a cut by another name. This is the FY27 cycle
-        only; earlier years are not in this model.
+        asked for and never funded &mdash; a cut by another name. This is the FY27 budget
+        the town is running on now; earlier years are not in this model.
       </p>
     </div>
   )

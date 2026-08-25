@@ -84,8 +84,9 @@ export function Walkthrough({ onJump }: {
           it.</>}>
         <Say>
           Two things have happened, and they are matters of record. Two override questions
-          went to the ballot and both were defeated. And the budget that was adopted cut{' '}
-          <strong>{cuts.fte} positions</strong> and {usd(cuts.cost)}.
+          went to the ballot and both were defeated. And the FY{N.fy - 1} budget the town
+          is running on right now cut <strong>{cuts.fte} positions</strong> and{' '}
+          {usd(cuts.cost)}.
         </Say>
         <Say>
           <strong>Nothing about FY{N.fy} has been decided or announced.</strong>{' '}
@@ -100,7 +101,7 @@ export function Walkthrough({ onJump }: {
           choice.
         </Say>
         <Plate label="On the record — this already happened" figures={[
-          { v: `${cuts.fte} FTE`, k: 'positions cut from the adopted budget', tone: 'critical' },
+          { v: `${cuts.fte} FTE`, k: 'positions cut from the budget now in force', tone: 'critical' },
           { v: '0 of 2', k: 'override questions passed' },
           { v: `$${ALREADY_SAID.overrides[0].cost} · $${ALREADY_SAID.overrides[1].cost}`,
             k: 'what each would have added to the average tax bill' },
@@ -194,7 +195,8 @@ export function Walkthrough({ onJump }: {
           And the only line that fits is &ldquo;everything else&rdquo; &mdash; supplies,
           materials, technology, athletics, clubs. The one line the School Committee fully
           controls. <strong>Both things are true at once:</strong> the district has cut
-          deeply, including {cuts.fte} positions last year, and the line it fully controls
+          deeply, including {cuts.fte} positions in the budget it is running on now, and
+          the line it fully controls
           is the one already living within its means.
         </Say>
       </Room>
@@ -202,24 +204,24 @@ export function Walkthrough({ onJump }: {
       {/* ------------------------------------------------ 06 */}
       <Room n={6} tag="The centrepiece" handsOn
         title="Two rates, and they were never going to meet"
-        corrects={<>&ldquo;We cut last year. Why are we back?&rdquo;</>}
-        leave={<>Cuts change the amount. Only rates change the direction. Last year&rsquo;s
-          cut was never going to stop this year&rsquo;s hole.</>}>
+        corrects={<>&ldquo;We just cut. Why is there a hole again?&rdquo;</>}
+        leave={<>Cuts change the amount. Only rates change the direction. This year&rsquo;s
+          cut was never going to stop next year&rsquo;s hole.</>}>
         <div className="card p-5 sm:p-6" style={{ borderColor: 'var(--status-critical)',
                                                   borderWidth: 2 }}>
           <p className="text-[17px] sm:text-xl leading-snug font-medium">
-            Last year Lunenburg cut <strong>{cuts.fte} positions</strong> and{' '}
-            <strong>{usd(cuts.cost)}</strong> &mdash; four classroom teachers, an
-            interventionist and a half, an assistant principal, a custodian, half the
-            athletic trainer. Next year the schools are short{' '}
+            The budget Lunenburg is running on right now cut{' '}
+            <strong>{cuts.fte} positions</strong> and <strong>{usd(cuts.cost)}</strong>{' '}
+            &mdash; four classroom teachers, an interventionist and a half, an assistant
+            principal, a custodian, half the athletic trainer. Next year the schools are
+            projected short{' '}
             <strong style={{ color: 'var(--status-critical)' }}>
               {usd(LEVEL_SERVICE.gap)}</strong>.
           </p>
         </div>
         <Say>
-          The town has already run this experiment. The painful thing was done and the hole
-          came back bigger, and that is better evidence than any chart. What follows is
-          why.
+          The town is living inside this experiment right now. The painful thing has been
+          done, and a bigger hole opens the year after it. What follows is why.
         </Say>
         <Say>
           Costs compound at {pct(COST_GROWTH_BLENDED)} a year. Revenue compounds at{' '}
