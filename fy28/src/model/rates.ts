@@ -632,11 +632,13 @@ export function reconciles() {
  *  while the gap compounds at nearly 5% from a base that is already growing, so buying
  *  each extra year costs disproportionately more than the last — and no finite override
  *  holds forever, because the two rates never cross. */
-export function overrideForYears(years: number): { levy: number; onAverageHome: number } {
+export function overrideForYears(
+  years: number, base: Scenario = DEFAULT_SCENARIO,
+): { levy: number; onAverageHome: number } {
   let lo = 0, hi = 80_000_000
   for (let i = 0; i < 80; i++) {
     const mid = (lo + hi) / 2
-    const y = run(Math.max(years + 2, 12), { ...DEFAULT_SCENARIO, overrideLevy: mid })
+    const y = run(Math.max(years + 2, 12), { ...base, overrideLevy: mid })
     const funded = y.findIndex(x => x.gap > 0)
     if ((funded === -1 ? y.length : funded) >= years) hi = mid; else lo = mid
   }
@@ -644,4 +646,28 @@ export function overrideForYears(years: number): { levy: number; onAverageHome: 
     levy: Math.round(hi),
     onAverageHome: Math.round((T.avgHomeValue * ((hi * 1000) / T.totalValue)) / 1000),
   }
+}
+
+/** The override amounts that are actually worth landing on: one per year of coverage.
+ *
+ *  A continuous slider running to some round number invites a reader to stop at $2,000,000
+ *  and wonder what it bought. These are the only values with an answer — the smallest
+ *  override that funds through FY28, through FY29, and so on — so the control snaps to
+ *  them and can say what each one buys.
+ *
+ *  Computed against whatever else is set on the board rather than against the default
+ *  projection: cut $1.5M first and every one of these gets smaller, which is the point of
+ *  having the two columns on the same page. */
+export function overrideStops(base: Scenario, upTo = 8) {
+  const out: { years: number; fy: number; levy: number }[] = []
+  for (let n = 1; n <= upTo; n++) {
+    const { levy } = overrideForYears(n, { ...base, overrideLevy: 0 })
+    // Once the scenario funds a year on its own the stop is degenerate; and rounding to
+    // the nearest thousand keeps the readout from printing false precision on a slider.
+    const rounded = Math.ceil(levy / 1000) * 1000
+    if (rounded <= 0) continue
+    if (out.length && rounded <= out[out.length - 1].levy) continue
+    out.push({ years: n, fy: 27 + n, levy: rounded })
+  }
+  return out
 }

@@ -6,6 +6,7 @@ import { usd, usdShort } from '../model/engine'
 import {
   RATE_LINES, DEFAULT_RATES, DEFAULT_SCENARIO, CUT_OPTIONS, LEVY_CAP,
   blendedOf, run, revenueGrowthOf, longRunRevenueGrowth, verdictOf, consequenceOf,
+  overrideStops,
   type Bucket, type Scenario, type Verdict,
 } from '../model/rates'
 
@@ -36,6 +37,14 @@ export function RateBoard() {
     [rates, newGrowth, cut, overrideLevy])
 
   const years = useMemo(() => run(YEARS, scenario), [scenario])
+  /* Recomputed only when something OTHER than the override moves, so dragging the
+   * override itself does not make its own tick marks jump around underneath it. */
+  const stops = useMemo(
+    () => overrideStops({ rates, newGrowth, cut, overrideLevy: 0,
+                          stateAidGrowth: DEFAULT_SCENARIO.stateAidGrowth }),
+    [rates, newGrowth, cut])
+  const stopIndex = stops.findIndex(st => st.levy === overrideLevy) + 1
+  const atStop = stopIndex > 0 ? stops[stopIndex - 1] : null
   const baseline = useMemo(() => run(YEARS, DEFAULT_SCENARIO), [])
   const blended = blendedOf(rates)
   const revGrowth = revenueGrowthOf(newGrowth)
@@ -100,10 +109,24 @@ export function RateBoard() {
           </div>
 
           <div className="mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
-            <Slider label="A one-time override" value={overrideLevy}
-              min={0} max={6_000_000} step={100_000} onChange={setOverrideLevy}
-              display={overrideLevy === 0 ? 'None'
-                : `${usdShort(overrideLevy)}, all of it to the schools`} />
+            {/* Indexed over the stops rather than over dollars: the only override amounts
+                worth landing on are the ones that fund through a particular year, and a
+                slider that can stop at $2,300,000 invites the question "and that buys?" */}
+            <Slider label="A one-time override" value={stopIndex}
+              min={0} max={stops.length} step={1}
+              onChange={i => setOverrideLevy(i === 0 ? 0 : stops[i - 1].levy)}
+              display={atStop ? `${usd(atStop.levy)}` : 'None'} />
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              {atStop
+                ? <>Funds through <strong>FY{atStop.fy}</strong> &mdash; {atStop.years}{' '}
+                    {atStop.years === 1 ? 'year' : 'years'}. A school-only question, so the
+                    schools keep every dollar; the townwide ask that failed covered every
+                    department, which is why it had to be so much larger to do the same
+                    work here.</>
+                : <>Each notch is the smallest override that funds through one more year,
+                    given everything else set on this page. Cut something first and they
+                    all get smaller.</>}
+            </p>
             <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
               A school-only question, so the schools keep every dollar. The townwide ask
               that failed covered every department, which is why it had to be so much

@@ -13,16 +13,25 @@ import { Override } from './pages/Override'
 import { pathFor, tabFromPath, type Tab } from './routes'
 
 
-const ADJUST: { id: Tab; label: string; sub: string } =
-  { id: 'adjust', label: 'Build your own budget',
-    sub: 'The interactive one — every dial that moves the gap, on one page' }
+/** The pages you use rather than read.
+ *
+ *  Kept out of the chapter strip on purpose, so they do not sit in the reading order
+ *  pretending to be another chapter, and given the same weight as each other because
+ *  they are the same kind of thing: a board of controls with a result attached. One
+ *  moves amounts, the other moves rates, and between them they are what the rest of the
+ *  site is written to prepare somebody for. */
+const CTAS: { id: Tab; label: string; short: string; glyph: string; sub: string }[] = [
+  { id: 'curve', label: 'Bend the curve', short: 'Bend the curve', glyph: '\u2197',
+    sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
+  { id: 'adjust', label: 'Build your own budget', short: 'Build a budget', glyph: '\u2699',
+    sub: 'The interactive one — every dial that moves the gap, on one page' },
+]
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'answers', label: 'Straight answers', sub: 'The questions people actually ask, in plain English, with the arithmetic' },
   { id: 'money', label: 'Find the money', sub: 'Pick a number. See what raising it costs on every lever, with no projection involved' },
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
-  { id: 'curve', label: 'Bend the curve', sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
   { id: 'override', label: 'Overrides', sub: 'How big, for how long, and written for whom — the arithmetic of a ballot question' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
   { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
@@ -117,20 +126,28 @@ export default function App() {
         <nav aria-label="Sections"
           className="mx-auto max-w-6xl px-5 lg:h-12 lg:flex lg:items-center lg:gap-1">
           <div className="flex items-center gap-3 h-12 lg:contents">
-            <span className="font-bold text-sm shrink-0 lg:mr-3">Lunenburg FY28</span>
-            {/* The one page you use rather than read, so it does not sit in the reading
-                order pretending to be another chapter. */}
-            <button onClick={() => go(ADJUST.id)} title={ADJUST.sub}
-              aria-current={tab === ADJUST.id ? 'page' : undefined}
-              className="cta ml-auto lg:order-last flex items-center gap-1.5 text-xs font-bold
-                         px-3 py-2 rounded-md whitespace-nowrap shrink-0
-                         transition-opacity hover:opacity-90"
-              style={tab === ADJUST.id
-                ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
-                : undefined}>
-              <span aria-hidden="true">&#9881;</span>
-              {ADJUST.label}
-            </button>
+            {/* Two buttons and a wordmark do not fit across a phone, and the chapter strip
+                below already says which site this is. */}
+            <span className="font-bold text-sm shrink-0 lg:mr-3">
+              <span className="hidden sm:inline">Lunenburg FY28</span>
+              <span className="sm:hidden">FY28</span>
+            </span>
+            <div className="flex items-center gap-1.5 ml-auto lg:order-last shrink-0">
+              {CTAS.map(c => (
+                <button key={c.id} onClick={() => go(c.id)} title={c.sub}
+                  aria-current={tab === c.id ? 'page' : undefined}
+                  className="cta flex items-center gap-1.5 text-xs font-bold
+                             px-3 py-2 rounded-md whitespace-nowrap shrink-0
+                             transition-opacity hover:opacity-90"
+                  style={tab === c.id
+                    ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
+                    : undefined}>
+                  <span aria-hidden="true">{c.glyph}</span>
+                  <span className="hidden sm:inline">{c.label}</span>
+                  <span className="sm:hidden">{c.short}</span>
+                </button>
+              ))}
+            </div>
           </div>
           <div ref={strip}
             className="no-scrollbar flex items-center gap-1 overflow-x-auto
