@@ -594,6 +594,8 @@ export function nextYear() {
      *  below what any line except one actually grows at. */
     affordableRate: allowed / TOTAL,
     appropFy27: Math.round(appropFy27),
+    /** What level service costs at FY27 prices — the row the projection starts from. */
+    costFy27: Math.round(TOTAL),
     sources: [
       source('The 2½% levy increase', dLevy, 'What Proposition 2½ allows on the existing base'),
       source('New growth', dNewGrowth, 'New construction added to the levy, at the assumed rate'),
@@ -616,4 +618,30 @@ export function reconciles() {
   const n = nextYear()
   const rebuilt = n.startingBehind + n.costTotal - n.allowed
   return { rebuilt, actual: n.gap, ok: Math.abs(rebuilt - n.gap) <= 2 }
+}
+
+/** The one-vote alternative to the treadmill: how big must a single override be to hold
+ *  for N years?
+ *
+ *  Worth computing because the obvious objection to "an override only buys a year" is
+ *  correct — an override is not a one-off payment, it is a permanent lift to the levy
+ *  limit that compounds at 2½% like the rest of it. So a big enough one really does cover
+ *  many years, and saying otherwise would be as misleading as the thing it corrects.
+ *
+ *  What the arithmetic then shows is the price of that. The override compounds at 2½%
+ *  while the gap compounds at nearly 5% from a base that is already growing, so buying
+ *  each extra year costs disproportionately more than the last — and no finite override
+ *  holds forever, because the two rates never cross. */
+export function overrideForYears(years: number): { levy: number; onAverageHome: number } {
+  let lo = 0, hi = 80_000_000
+  for (let i = 0; i < 80; i++) {
+    const mid = (lo + hi) / 2
+    const y = run(Math.max(years + 2, 12), { ...DEFAULT_SCENARIO, overrideLevy: mid })
+    const funded = y.findIndex(x => x.gap > 0)
+    if ((funded === -1 ? y.length : funded) >= years) hi = mid; else lo = mid
+  }
+  return {
+    levy: Math.round(hi),
+    onAverageHome: Math.round((T.avgHomeValue * ((hi * 1000) / T.totalValue)) / 1000),
+  }
 }

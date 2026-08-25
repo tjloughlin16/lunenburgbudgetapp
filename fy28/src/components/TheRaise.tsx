@@ -1,5 +1,6 @@
 import { usd, usdShort } from '../model/engine'
-import { nextYear, RATE_LINES, type Bucket } from '../model/rates'
+import { nextYear, RATE_LINES, run, freshGap, DEFAULT_SCENARIO,
+         type Bucket } from '../model/rates'
 
 const N = nextYear()
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
@@ -345,6 +346,103 @@ function Fact({ label, value, sub, tone }: {
         {value}
       </p>
       <p className="text-xs mt-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{sub}</p>
+    </div>
+  )
+}
+
+/** The whole projection as one table, with the Prop 2½ increase already taken off.
+ *
+ *  Added because a reader who had followed everything else still asked the most reasonable
+ *  question on the page — "what is the deficit AFTER you subtract the 2½% allowance?" —
+ *  and nothing here answered it directly. Every figure existed; none of them were beside
+ *  each other. Revenue rises in its own column so it is visibly not being ignored, and
+ *  the last two columns separate the two things that both get called the gap.
+ *
+ *  The running total is what the rest of the site quotes and it is cumulative: FY29's
+ *  $1.18M includes FY28's $613k rather than sitting on top of it. The last column is the
+ *  money that is genuinely new that year, and it is the one to read — roughly $600,000
+ *  every year, for ever, and rising. */
+export function YearLedger() {
+  const years = run(10, DEFAULT_SCENARIO)
+  const fresh = freshGap(years)
+  const avg = Math.round(fresh.reduce((s2, f) => s2 + f.fresh, 0) / fresh.length)
+
+  return (
+    <div className="card p-4">
+      <h3 className="text-[15px] font-bold">Every year, with the increase already taken off</h3>
+      <p className="text-[12px] mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}>
+        Revenue does rise every year, and it rises here &mdash; third column. The gap is
+        what is left <em>after</em> it. The last two columns are the two different things
+        people call &ldquo;the gap&rdquo;, and the difference between them is the single
+        most common misreading of this budget.
+      </p>
+      <table className="stack w-full text-[13px] tnum">
+        <caption className="sr-only">
+          Cost of level service, revenue available after growth, and the resulting gap by
+          fiscal year, shown both as a running total and as the amount new in each year
+        </caption>
+        <thead>
+          <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
+            <th className="font-semibold py-1.5">Year</th>
+            <th className="font-semibold py-1.5 text-right">Cost of today&rsquo;s services</th>
+            <th className="font-semibold py-1.5 text-right">Revenue available</th>
+            <th className="font-semibold py-1.5 text-right">Revenue rose by</th>
+            <th className="font-semibold py-1.5 text-right">Gap, running total</th>
+            <th className="font-semibold py-1.5 text-right">New that year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-t" style={{ borderColor: 'var(--grid)' }}>
+            <td className="rowhead py-1.5 font-semibold">
+              FY27 <span className="text-[11px] font-normal"
+                style={{ color: 'var(--text-muted)' }}>today</span>
+            </td>
+            <td data-label="Cost of today&rsquo;s services" className="py-1.5 text-right">
+              {usd(N.costFy27)}
+            </td>
+            <td data-label="Revenue available" className="py-1.5 text-right">
+              {usd(N.appropFy27)}
+            </td>
+            <td data-label="Revenue rose by" className="py-1.5 text-right"
+              style={{ color: 'var(--text-muted)' }}>&mdash;</td>
+            <td data-label="Gap, running total" className="py-1.5 text-right">
+              {usd(N.startingBehind)}
+            </td>
+            <td data-label="New that year" className="py-1.5 text-right"
+              style={{ color: 'var(--text-muted)' }}>&mdash;</td>
+          </tr>
+          {years.map((y, i) => (
+            <tr key={y.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+              <td className="rowhead py-1.5 font-semibold">FY{y.fy}</td>
+              <td data-label="Cost of today&rsquo;s services" className="py-1.5 text-right">
+                {usd(y.cost)}
+              </td>
+              <td data-label="Revenue available" className="py-1.5 text-right">
+                {usd(y.revenue)}
+              </td>
+              <td data-label="Revenue rose by" className="py-1.5 text-right"
+                style={{ color: 'var(--status-good)' }}>
+                +{usd(y.revenue - (i === 0 ? N.appropFy27 : years[i - 1].revenue))}
+              </td>
+              <td data-label="Gap, running total" className="py-1.5 text-right font-semibold"
+                style={{ color: 'var(--status-critical)' }}>{usd(y.gap)}</td>
+              <td data-label="New that year" className="py-1.5 text-right font-bold">
+                {usd(fresh[i].fresh)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
+        style={{ borderColor: 'var(--grid)' }}>
+        <strong>Read the last column.</strong> The running total looks explosive because it
+        is cumulative &mdash; FY{years[1].fy}&rsquo;s {usdShort(years[1].gap)}{' '}
+        <em>includes</em> FY{years[0].fy}&rsquo;s {usdShort(years[0].gap)} rather than
+        sitting on top of it. What is actually happening is steadier and worse: about{' '}
+        <strong>{usd(avg)} of new money is needed every single year</strong>, for ever, and
+        the figure rises. Close it once and the same ask returns the following spring,
+        slightly larger.
+      </p>
     </div>
   )
 }

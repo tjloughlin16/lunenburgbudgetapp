@@ -1,7 +1,8 @@
 import { usd, usdShort } from '../model/engine'
 import {
   DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, ALL_CUTS,
-  run, blendedOf, longRunRevenueGrowth, overrideTreadmill, type Scenario,
+  run, blendedOf, longRunRevenueGrowth, overrideTreadmill, overrideForYears,
+  type Scenario,
 } from '../model/rates'
 
 const YEARS = 10
@@ -224,6 +225,64 @@ export function OverrideTreadmill() {
         departments: it has to be nearly twice the size, and costs the average homeowner
         nearly twice as much, to leave the schools in the same place. That is the shape of
         the ask Lunenburg put on the ballot and lost.
+      </p>
+    </div>
+  )
+}
+
+/** The other way to do it: one vote, sized to last.
+ *
+ *  The treadmill above is honest and incomplete on its own. An override is not a one-off
+ *  payment — it lifts the levy limit permanently and compounds at 2½% — so a big enough
+ *  one genuinely does cover years rather than a year, and a page that only showed the
+ *  treadmill would be arguing rather than informing.
+ *
+ *  Setting the two side by side is the fair version, and the price of the second is the
+ *  thing worth seeing: each extra year costs more than the last, because the override
+ *  compounds at 2½% and the gap compounds at nearly 5% from a base already larger. */
+export function OverrideSizing() {
+  const rows = [1, 2, 3, 5, 8, 10].map(y => ({ years: y, ...overrideForYears(y) }))
+  return (
+    <div className="card p-4">
+      <h3 className="text-[15px] font-bold">Or one vote, sized to last</h3>
+      <p className="text-[12px] mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}>
+        An override is not a one-off payment. It raises the levy limit permanently and
+        compounds at 2&frac12;% a year like the rest of it, so a large enough one really
+        does cover years rather than a year. This is what each length costs.
+      </p>
+      <table className="stack w-full text-[13px] tnum">
+        <caption className="sr-only">
+          Size of a single school override required to cover a given number of years
+        </caption>
+        <thead>
+          <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
+            <th className="font-semibold py-1.5">To cover</th>
+            <th className="font-semibold py-1.5 text-right">The ballot question</th>
+            <th className="font-semibold py-1.5 text-right">On the average home, every year</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(r => (
+            <tr key={r.years} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+              <td className="rowhead py-1.5 font-semibold">
+                {r.years} {r.years === 1 ? 'year' : 'years'}
+              </td>
+              <td data-label="The ballot question" className="py-1.5 text-right">
+                {usd(r.levy)}
+              </td>
+              <td data-label="On the average home, every year"
+                className="py-1.5 text-right font-semibold">${r.onAverageHome}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="text-[12px] mt-3 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        Each extra year costs more than the last: the override compounds at 2&frac12;% and
+        the gap compounds at nearly 5% from a base that is already bigger. The two rates
+        never cross, so <strong>no override of any size holds forever</strong> — buying a
+        decade costs {usd(rows[rows.length - 1].onAverageHome)} a year on the average home,
+        and FY{38} arrives anyway. That is the same rate problem the rest of this page is
+        about, met from the revenue side.
       </p>
     </div>
   )

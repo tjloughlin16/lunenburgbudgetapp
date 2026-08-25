@@ -4,9 +4,9 @@ import {
   nextYear, HEADCOUNT,
 } from '../model/rates'
 import { RateBoard } from '../components/RateBoard'
-import { LevelVsSlope, OverrideTreadmill } from '../components/LevelVsSlope'
+import { LevelVsSlope, OverrideTreadmill, OverrideSizing } from '../components/LevelVsSlope'
 import { Forever, StateAid } from '../components/Forever'
-import { TheRaise } from '../components/TheRaise'
+import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -96,6 +96,7 @@ export function BendTheCurve({ onJump }: {
             sub="Starting from $613k next year, with nothing going wrong"
             tone="critical" />
         </div>
+        <div className="mt-4"><YearLedger /></div>
         <Note>
           Neither number is a decision anybody made. No committee voted for health
           insurance to rise 9% a year, and no town official chose 2½% — that came from a
@@ -195,6 +196,7 @@ export function BendTheCurve({ onJump }: {
           about {(0.54 * 100).toFixed(0)}&cent; of a levy dollar and the rest goes to the
           town.</>}>
         <OverrideTreadmill />
+        <div className="mt-4"><OverrideSizing /></div>
         <Note>
           This is not an argument against an override. It is an argument against expecting
           one to be the last one. An override closes a level; it does not change a rate,
