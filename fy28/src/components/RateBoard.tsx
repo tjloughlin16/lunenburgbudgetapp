@@ -198,12 +198,19 @@ function Verdicts({ verdict, blended, revGrowth, longRun, years, cut, overrideLe
   verdict: Verdict; blended: number; revGrowth: number; longRun: number
   years: ReturnType<typeof run>; cut: number; overrideLevy: number
 }) {
-  const spread = blended - revGrowth
-  const widening = Math.round(spread * years[0].cost)
+  // How much bigger the hole actually gets, read straight off the two squares above.
+  //
+  // This was the spread times the first year's cost, which is a rate approximation and
+  // matched nothing else on the page: it applies the spread to the COST base while
+  // revenue grows on the appropriation, so it printed $531,297 next to a $613,238 gap and
+  // a $509,515 shortfall and invited exactly the question it got. A difference between
+  // two numbers the reader can see is worth more than a more elegant derivation.
+  const widening = Math.round(years[1].gap - years[0].gap)
   const map: Record<Verdict, { tone: string; head: string; body: string }> = {
     widening: {
       tone: 'var(--status-critical)',
-      head: `Still widening — by about ${usd(widening)} in the first year alone`,
+      head: `Still widening — ${usd(widening)} bigger in FY${years[1].fy} than in `
+        + `FY${years[0].fy}`,
       body: `Costs grow ${pct(blended)}. Revenue grows ${pct(revGrowth)} today, but that `
         + `decays to ${pct(longRun)} by FY${years[years.length - 1].fy} as a flat `
         + `new-growth figure becomes a smaller share of a bigger town — so `

@@ -82,11 +82,10 @@ export function BendTheCurve({ onJump }: {
         lede={<>That is the entire problem, and everything else on this site is downstream
           of it. Two things compounding at different speeds pull apart forever, and the
           distance between them grows on its own whether or not anybody does anything
-          wrong. Applied to a {usdShort(base[0].cost)} budget, those{' '}
-          {(spread * 100).toFixed(2)} points open about{' '}
-          <strong>{usd(Math.round(spread * base[0].cost))} of new hole in the first
-          year</strong> — and more in each year after, because it is a percentage of a
-          number that keeps getting bigger.</>}>
+          wrong. Those {(spread * 100).toFixed(2)} points are why the hole is{' '}
+          <strong>{usd(base[1].gap - base[0].gap)} bigger in FY{base[1].fy} than in
+          FY{base[0].fy}</strong> — and bigger again every year after, because it is a
+          percentage of a number that keeps getting bigger.</>}>
         <div className="grid gap-3 sm:grid-cols-3">
           <Fact label="Costs grow at" value={pct(COST_GROWTH_BLENDED)}
             sub="Weighted across salaries, insurance, transport, special education, utilities and supplies"

@@ -578,6 +578,12 @@ export function nextYear() {
     fy: g.fy,
     growthRate: g.revenueGrowth,
     allowed: Math.round(allowed),
+    /** The rate at which every line could grow if the increase were exactly used up.
+     *
+     *  This is what a line's "share" is, said as a rate: share = base x this. Slightly
+     *  above the 2.5% levy cap because new growth, state aid and receipts top it up, and
+     *  below what any line except one actually grows at. */
+    affordableRate: allowed / TOTAL,
     appropFy27: Math.round(appropFy27),
     sources: [
       source('The 2½% levy increase', dLevy, 'What Proposition 2½ allows on the existing base'),
