@@ -9,6 +9,7 @@ import { WhyItRepeats } from './pages/WhyItRepeats'
 import { Answers } from './pages/Answers'
 import { FindTheMoney } from './pages/FindTheMoney'
 import { BendTheCurve } from './pages/BendTheCurve'
+import { Override } from './pages/Override'
 import { pathFor, tabFromPath, type Tab } from './routes'
 
 
@@ -22,6 +23,7 @@ const TABS: { id: Tab; label: string; sub: string }[] = [
   { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
   { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
   { id: 'curve', label: 'Bend the curve', sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
+  { id: 'override', label: 'Overrides', sub: 'How big, for how long, and written for whom — the arithmetic of a ballot question' },
   { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
   { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
 ]
@@ -175,6 +177,8 @@ export default function App() {
       {tab === 'why' && <WhyItRepeats />}
 
       {tab === 'curve' && <BendTheCurve onJump={go} />}
+
+      {tab === 'override' && <Override onJump={go} />}
 
       {tab === 'priorities' && (
         <Priorities order={order} setOrder={setOrder} preset={preset} setPreset={setPreset}

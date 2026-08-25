@@ -4,7 +4,7 @@ import {
   nextYear, HEADCOUNT,
 } from '../model/rates'
 import { RateBoard } from '../components/RateBoard'
-import { LevelVsSlope, OverrideTreadmill, OverrideSizing } from '../components/LevelVsSlope'
+import { LevelVsSlope } from '../components/LevelVsSlope'
 import { Forever, StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
@@ -23,11 +23,9 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  rate changes how fast that grows, and only the second one can end a problem that is
  *  itself a rate. */
 const RAISE = nextYear()
-/** The override the six-futures card uses, so the two agree. */
-const OVERRIDE = 1_250_000
 
 export function BendTheCurve({ onJump }: {
-  onJump: (tab: 'why' | 'money' | 'answers' | 'adjust') => void
+  onJump: (tab: 'why' | 'money' | 'answers' | 'adjust' | 'override') => void
 }) {
   const base = run(12, DEFAULT_SCENARIO)
   const spread = COST_GROWTH_BLENDED - BASELINE_REVENUE_GROWTH
@@ -118,50 +116,6 @@ export function BendTheCurve({ onJump }: {
               </p>
             )} />
         </div>
-
-        {/* the same table with one override in it, because the difference between the two
-            is the answer to "why size an override against the running total" */}
-        <div className="mt-4">
-          <YearLedger overrideLevy={OVERRIDE}
-            title={`The same table, with a ${usdShort(OVERRIDE)} override passed in FY${RAISE.fy}`}
-            intro={<>Identical arithmetic, one thing added: a school-only override of{' '}
-              {usd(OVERRIDE)} passed once, in the first year, and carried forward at{' '}
-              {pct(LEVY_CAP, 1)} like the rest of the levy limit. It is never voted on
-              again. The revenue column is built up so the addition is visible: what the
-              town could give without an override, plus the override, equals what the
-              schools actually have. Watch that total, and then watch the last
-              column.</>}
-            footer={({ grew }) => (
-              <>
-                <p>
-                  <strong>Two years funded, then it fails</strong> &mdash; and the reason is
-                  in the last column. The override adds{' '}
-                  {usd(OVERRIDE * LEVY_CAP)} of growth in its second year, because{' '}
-                  {pct(LEVY_CAP, 1)} of {usdShort(OVERRIDE)} is{' '}
-                  {usd(OVERRIDE * LEVY_CAP)}. The gap grows{' '}
-                  {usd(grew[1] + OVERRIDE * LEVY_CAP)} that same year. The override is
-                  covering about{' '}
-                  {Math.round((OVERRIDE * LEVY_CAP / (grew[1] + OVERRIDE * LEVY_CAP)) * 100)}%
-                  of the annual growth, so the rest accumulates until it swallows the
-                  override whole.
-                </p>
-                <p className="mt-2">
-                  Which answers the question the first table raises. An override is sized
-                  against the <strong>running total</strong>, not the growth, because it
-                  replaces a revenue line that never rose &mdash; it has to cover
-                  everything missing from that line in the year you care about, not just
-                  that year&rsquo;s increment. The increment is the right measure only for
-                  the other strategy: a new override every year, each one topping up the
-                  ones already passed.
-                </p>
-              </>
-            )} />
-        </div>
-        <Note>
-          Neither number is a decision anybody made. No committee voted for health
-          insurance to rise 9% a year, and no town official chose 2½% — that came from a
-          1980 ballot question and was never indexed to what municipal costs actually do.
-        </Note>
       </Section>
 
       <Section id="board" eyebrow="The experiment"
@@ -247,21 +201,18 @@ export function BendTheCurve({ onJump }: {
         </Note>
       </Section>
 
-      <Section id="override" eyebrow="Why an override is not one vote"
-        title="The ballot question you would have to pass every year"
-        lede={<>An override is heard as a single ask. It lifts the levy base once, and
-          that base then grows at {pct(LEVY_CAP, 1)} while costs grow at{' '}
-          {pct(COST_GROWTH_BLENDED)} &mdash; so the arithmetic asks for a fresh one every
-          spring. Each is roughly twice the school shortfall, because the schools keep
-          about {(0.54 * 100).toFixed(0)}&cent; of a levy dollar and the rest goes to the
-          town.</>}>
-        <OverrideTreadmill />
-        <div className="mt-4"><OverrideSizing /></div>
-        <Note>
-          This is not an argument against an override. It is an argument against expecting
-          one to be the last one. An override closes a level; it does not change a rate,
-          which is why the row below it is nearly as large.
-        </Note>
+      <Section id="override" eyebrow="The revenue side"
+        title="Overrides have a page of their own"
+        lede={<>An override is the one answer here that takes nothing from a classroom, and
+          the arithmetic of it &mdash; how big, for how long, and whether the question is
+          written for the schools or for the whole town &mdash; needs more room than a
+          section. The short version: it compounds at {pct(LEVY_CAP, 1)} while the gap
+          compounds at {pct(COST_GROWTH_BLENDED)}, so a {usdShort(1_250_000)} school
+          override funds two years, and no override of any size holds for ever.</>}>
+        <button onClick={() => onJump('override')}
+          className="text-[13px] font-semibold" style={{ color: 'var(--series-cost)' }}>
+          See the override arithmetic &rarr;
+        </button>
       </Section>
 
       <Section id="forever" eyebrow="The actual question"
