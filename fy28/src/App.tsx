@@ -50,9 +50,10 @@ export default function App() {
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
-  /** The page they clicked from, so a breadcrumb can show the route actually taken. Null
-   *  after a deep link or a back button, where the honest answer is that we do not know
-   *  and the structural parent is used instead. */
+  /** The last page navigated from. Not for display — the breadcrumb is structural, and a
+   *  crumb that changed depending on how you arrived would be a history trail wearing
+   *  breadcrumb clothes. This exists only so that going up can pop the stack instead of
+   *  growing it. */
   const [from, setFrom] = useState<Tab | null>(null)
   // The commercial build rate is the same decision on two pages, so it lives here rather
   // than being duplicated. Housing is modeled on Development only.
@@ -107,6 +108,25 @@ export default function App() {
   const go = (t: Tab) => {
     if (t !== tab) setFrom(tab)
     setTab(t); navigate(t); window.scrollTo({ top: 0 })
+  }
+
+  /** Going up a level. Never grows the history stack.
+   *
+   *  A breadcrumb is a statement about where a page sits, not about how you got to it, so
+   *  clicking one should feel like going back rather than like travelling somewhere new.
+   *  Pushing an entry meant that after Start -> Go deeper -> Straight answers, clicking
+   *  "Go deeper" left four entries and the back button walked forwards through them.
+   *
+   *  If the crumb is the page we just came from, actually go back and let popstate do the
+   *  work. Otherwise replace the current entry rather than adding one. */
+  const goUp = (t: Tab) => {
+    if (from === t) { window.history.back(); return }
+    setFrom(null)
+    setTab(t)
+    const url = pathFor(t)
+    if (url !== window.location.pathname + window.location.hash)
+      window.history.replaceState(null, '', url)
+    window.scrollTo({ top: 0 })
   }
 
   const sendToAdjust = () => {
@@ -171,7 +191,7 @@ export default function App() {
         )}
       </header>
 
-      {tab !== 'walk' && <Breadcrumb tab={tab} from={from} go={go} />}
+      {tab !== 'walk' && <Breadcrumb tab={tab} goUp={goUp} />}
 
       {tab === 'walk' && <Walkthrough onJump={go} />}
 
@@ -228,30 +248,27 @@ export default function App() {
   )
 }
 
-/** Where you are, and the way back.
+/** Where the page sits, and the way up.
  *
- *  Every page except the walkthrough is now a drill-in, and several are reachable from
- *  more than one place — Straight answers from Go deeper, from the walkthrough's exit, and
- *  from a link somebody was sent. So the trail prefers the route actually taken and falls
- *  back to the structural parent when the page was opened cold, which is the only honest
- *  thing it can do.
+ *  Structural, not historical. It always reads the same for a given page no matter how
+ *  somebody reached it, because that is what a breadcrumb is for: a claim about the shape
+ *  of the site, which a reader can learn once and rely on. The route actually taken is the
+ *  back button's job and it already does it.
  *
  *  Not sticky. The header above it already is, and two stacked bars would push every
  *  page's own pinned content down for the sake of a line that is only read on arrival. */
-function Breadcrumb({ tab, from, go }: {
-  tab: Tab; from: Tab | null; go: (t: Tab) => void
-}) {
-  const via = from && from !== 'walk' && from !== tab ? from : PARENT[tab] ?? null
-  const trail: Tab[] = via ? ['walk', via] : ['walk']
+function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
+  const trail: Tab[] = []
+  for (let up = PARENT[tab]; up; up = PARENT[up]) trail.unshift(up)
+  trail.unshift('walk')
 
   return (
-    <nav aria-label="Breadcrumb"
-      className="border-b" style={{ borderColor: 'var(--grid)' }}>
+    <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: 'var(--grid)' }}>
       <ol className="mx-auto max-w-6xl px-5 py-2.5 flex items-center gap-1.5 flex-wrap
                      text-[12px]">
         {trail.map(t => (
           <li key={t} className="flex items-center gap-1.5">
-            <button onClick={() => go(t)} className="font-semibold hover:underline"
+            <button onClick={() => goUp(t)} className="font-semibold hover:underline"
               style={{ color: 'var(--series-cost)' }}>{LABEL[t]}</button>
             <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
           </li>
