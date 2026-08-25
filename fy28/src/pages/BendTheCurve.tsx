@@ -23,6 +23,8 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  rate changes how fast that grows, and only the second one can end a problem that is
  *  itself a rate. */
 const RAISE = nextYear()
+/** The override the six-futures card uses, so the two agree. */
+const OVERRIDE = 1_250_000
 
 export function BendTheCurve({ onJump }: {
   onJump: (tab: 'why' | 'money' | 'answers' | 'adjust') => void
@@ -96,7 +98,62 @@ export function BendTheCurve({ onJump }: {
             sub="Starting from $613k next year, with nothing going wrong"
             tone="critical" />
         </div>
-        <div className="mt-4"><YearLedger /></div>
+        <div className="mt-4">
+          <YearLedger
+            title="Every year, with the increase already taken off"
+            intro={<>Revenue does rise every year, and it rises here &mdash; third column.
+              The gap is what is left <em>after</em> it. The last column is the difference
+              between the row above and the row below, so it can be checked by
+              subtraction.</>}
+            footer={({ years, grew, avg }) => (
+              <p>
+                <strong>Read the last column.</strong> The running total looks explosive
+                because it is cumulative &mdash; FY{years[1].fy}&rsquo;s{' '}
+                {usdShort(years[1].gap)} <em>includes</em> FY{years[0].fy}&rsquo;s{' '}
+                {usdShort(years[0].gap)} rather than sitting on top of it. What is actually
+                happening is steadier and worse: the hole gets{' '}
+                <strong>{usd(grew[0])} bigger next year and more every year after</strong>{' '}
+                &mdash; {usd(avg)} a year on average across the decade, and never once
+                smaller.
+              </p>
+            )} />
+        </div>
+
+        {/* the same table with one override in it, because the difference between the two
+            is the answer to "why size an override against the running total" */}
+        <div className="mt-4">
+          <YearLedger overrideLevy={OVERRIDE}
+            title={`The same table, with a ${usdShort(OVERRIDE)} override passed in FY${RAISE.fy}`}
+            intro={<>Identical arithmetic, one thing added: a school-only override of{' '}
+              {usd(OVERRIDE)} passed once, in the first year, and carried forward at{' '}
+              {pct(LEVY_CAP, 1)} like the rest of the levy limit. It is never voted on
+              again. Watch the fourth column, and then watch the last one.</>}
+            footer={({ grew }) => (
+              <>
+                <p>
+                  <strong>Two years funded, then it fails</strong> &mdash; and the reason is
+                  in the last column. The override adds{' '}
+                  {usd(OVERRIDE * LEVY_CAP)} of growth in its second year, because{' '}
+                  {pct(LEVY_CAP, 1)} of {usdShort(OVERRIDE)} is{' '}
+                  {usd(OVERRIDE * LEVY_CAP)}. The gap grows{' '}
+                  {usd(grew[1] + OVERRIDE * LEVY_CAP)} that same year. The override is
+                  covering about{' '}
+                  {Math.round((OVERRIDE * LEVY_CAP / (grew[1] + OVERRIDE * LEVY_CAP)) * 100)}%
+                  of the annual growth, so the rest accumulates until it swallows the
+                  override whole.
+                </p>
+                <p className="mt-2">
+                  Which answers the question the first table raises. An override is sized
+                  against the <strong>running total</strong>, not the growth, because it
+                  replaces a revenue line that never rose &mdash; it has to cover
+                  everything missing from that line in the year you care about, not just
+                  that year&rsquo;s increment. The increment is the right measure only for
+                  the other strategy: a new override every year, each one topping up the
+                  ones already passed.
+                </p>
+              </>
+            )} />
+        </div>
         <Note>
           Neither number is a decision anybody made. No committee voted for health
           insurance to rise 9% a year, and no town official chose 2½% — that came from a

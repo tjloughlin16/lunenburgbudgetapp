@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react'
 import { usd, usdShort } from '../model/engine'
-import { nextYear, RATE_LINES, run, DEFAULT_SCENARIO, type Bucket } from '../model/rates'
+import { nextYear, RATE_LINES, run, DEFAULT_SCENARIO, LEVY_CAP,
+         type Bucket } from '../model/rates'
 
 const N = nextYear()
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
@@ -361,8 +363,16 @@ function Fact({ label, value, sub, tone }: {
  *  $1.18M includes FY28's $613k rather than sitting on top of it. The last column is the
  *  money that is genuinely new that year, and it is the one to read — roughly $600,000
  *  every year, for ever, and rising. */
-export function YearLedger() {
-  const years = run(10, DEFAULT_SCENARIO)
+export function YearLedger({ overrideLevy = 0, title, intro, footer }: {
+  /** A school override passed in the first year, carried forward at the levy cap. */
+  overrideLevy?: number
+  title: string
+  intro: ReactNode
+  /** Given the numbers the table just computed, so the prose cannot drift from them. */
+  footer: (ctx: { years: ReturnType<typeof run>; grew: number[]; avg: number }) => ReactNode
+}) {
+  const years = run(10, { ...DEFAULT_SCENARIO, overrideLevy })
+  const overrideAt = (i: number) => overrideLevy * (1 + LEVY_CAP) ** i
   /* Simple difference between adjacent rows, starting from what FY27 is already behind.
    *
    * The obvious thing, and it was not what this column did. It used the "fresh" measure —
@@ -380,13 +390,10 @@ export function YearLedger() {
 
   return (
     <div className="card p-4">
-      <h3 className="text-[15px] font-bold">Every year, with the increase already taken off</h3>
-      <p className="text-[12px] mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}>
-        Revenue does rise every year, and it rises here &mdash; third column. The gap is
-        what is left <em>after</em> it. The last two columns are the two different things
-        people call &ldquo;the gap&rdquo;, and the difference between them is the single
-        most common misreading of this budget.
-      </p>
+      <h3 className="text-[15px] font-bold">{title}</h3>
+      <div className="text-[12px] mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}>
+        {intro}
+      </div>
       <table className="stack w-full text-[13px] tnum">
         <caption className="sr-only">
           Cost of level service, revenue available after growth, and the resulting gap by
@@ -397,6 +404,9 @@ export function YearLedger() {
             <th className="font-semibold py-1.5">Year</th>
             <th className="font-semibold py-1.5 text-right">Cost of today&rsquo;s services</th>
             <th className="font-semibold py-1.5 text-right">Revenue available</th>
+            {overrideLevy > 0 && (
+              <th className="font-semibold py-1.5 text-right">of which, the override</th>
+            )}
             <th className="font-semibold py-1.5 text-right">Revenue rose by</th>
             <th className="font-semibold py-1.5 text-right">Gap, running total</th>
             <th className="font-semibold py-1.5 text-right">Grew by</th>
@@ -414,6 +424,10 @@ export function YearLedger() {
             <td data-label="Revenue available" className="py-1.5 text-right">
               {usd(N.appropFy27)}
             </td>
+            {overrideLevy > 0 && (
+              <td data-label="of which, the override" className="py-1.5 text-right"
+                style={{ color: 'var(--text-muted)' }}>&mdash;</td>
+            )}
             <td data-label="Revenue rose by" className="py-1.5 text-right"
               style={{ color: 'var(--text-muted)' }}>&mdash;</td>
             <td data-label="Gap, running total" className="py-1.5 text-right">
@@ -431,29 +445,30 @@ export function YearLedger() {
               <td data-label="Revenue available" className="py-1.5 text-right">
                 {usd(y.revenue)}
               </td>
+              {overrideLevy > 0 && (
+                <td data-label="of which, the override" className="py-1.5 text-right"
+                  style={{ color: 'var(--series-cost)' }}>{usd(overrideAt(i))}</td>
+              )}
               <td data-label="Revenue rose by" className="py-1.5 text-right"
                 style={{ color: 'var(--status-good)' }}>
                 +{usd(y.revenue - (i === 0 ? N.appropFy27 : years[i - 1].revenue))}
               </td>
               <td data-label="Gap, running total" className="py-1.5 text-right font-semibold"
-                style={{ color: 'var(--status-critical)' }}>{usd(y.gap)}</td>
-              <td data-label="Grew by" className="py-1.5 text-right font-bold">
+                style={{ color: y.gap > 0 ? 'var(--status-critical)' : 'var(--status-good)' }}>
+                {y.gap > 0 ? usd(y.gap) : `funded, ${usd(-y.gap)} spare`}
+              </td>
+              <td data-label="Grew by" className="py-1.5 text-right font-bold"
+                style={{ color: grew[i] < 0 ? 'var(--status-good)' : undefined }}>
                 {usd(grew[i])}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
+      <div className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
         style={{ borderColor: 'var(--grid)' }}>
-        <strong>Read the last column.</strong> The running total looks explosive because it
-        is cumulative &mdash; FY{years[1].fy}&rsquo;s {usdShort(years[1].gap)}{' '}
-        <em>includes</em> FY{years[0].fy}&rsquo;s {usdShort(years[0].gap)} rather than
-        sitting on top of it. What is actually happening is steadier and worse: the hole
-        gets <strong>{usd(grew[0])} bigger next year and more every year after</strong>{' '}
-        &mdash; {usd(avg)} a year on average across the decade, and never once smaller.
-        Close it and the same ask returns the following spring, larger.
-      </p>
+        {footer({ years, grew, avg })}
+      </div>
     </div>
   )
 }
