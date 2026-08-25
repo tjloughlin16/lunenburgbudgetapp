@@ -385,6 +385,21 @@ export function OverrideSizing() {
         </ol>
       </div>
 
+      {/* Why the surplus exists at all, which is a better explanation than the fact of it. */}
+      <p className="text-[13px] leading-relaxed mt-3">
+        <strong>The surplus is a prepayment, not a windfall.</strong> Take the two-year
+        question. It has to reach {usd(rows[1].thatYearsGap)} by FY{rows[1].throughFy}, and
+        compounding carries it from {usd(rows[1].levy)} to there &mdash; a gain of{' '}
+        {usd(Math.round(rows[1].levy * LEVY_CAP))}. But the gap grows{' '}
+        {usd(rows[1].thatYearsGap - base[0].gap)} over that same year. So compounding
+        supplies{' '}
+        {Math.round((rows[1].levy * LEVY_CAP / (rows[1].thatYearsGap - base[0].gap)) * 100)}%
+        of what is needed and the other{' '}
+        {100 - Math.round((rows[1].levy * LEVY_CAP / (rows[1].thatYearsGap - base[0].gap)) * 100)}%
+        has to be collected a year early, before anybody needs it. That is what the{' '}
+        {usd(rows[1].firstYearSurplus)} is.
+      </p>
+
       <p className="text-[13px] leading-relaxed mt-3">
         <strong>And this is where the long options die.</strong> To be exactly enough in
         its last year, an override has to be far too much in its first. The five-year
