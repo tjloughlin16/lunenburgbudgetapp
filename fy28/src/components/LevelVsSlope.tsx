@@ -297,10 +297,15 @@ export function OverrideSizing() {
             </th>
             <th className="font-semibold py-1.5 text-right">That year&rsquo;s gap</th>
             <th className="font-semibold py-1.5 text-right">On the average home, every year</th>
+            {/* Reads as inverted unless the axis is spelled out: this compares DIFFERENT
+                overrides in the SAME year, while the obvious reading — one override across
+                its own years — runs the other way and is shown underneath. */}
             <th className="font-semibold py-1.5 text-right">
-              Over-collected in FY28
+              If passed, its FY28 surplus
               <span className="block text-[10px] font-normal"
-                style={{ color: 'var(--text-muted)' }}>more than the schools need</span>
+                style={{ color: 'var(--text-muted)' }}>
+                over-collected in the first year alone
+              </span>
             </th>
           </tr>
         </thead>
@@ -322,7 +327,7 @@ export function OverrideSizing() {
               </td>
               <td data-label="On the average home, every year"
                 className="py-1.5 text-right font-semibold">${r.onAverageHome}</td>
-              <td data-label="Over-collected in FY28" className="py-1.5 text-right"
+              <td data-label="If passed, its FY28 surplus" className="py-1.5 text-right"
                 style={{ color: r.firstYearSurplus > 0 ? 'var(--status-warning)' : 'var(--text-muted)' }}>
                 {r.firstYearSurplus > 0 ? usd(r.firstYearSurplus) : '—'}
               </td>
@@ -346,13 +351,44 @@ export function OverrideSizing() {
       </p>
 
       {/* The last column is the one that decides whether any of this is real. */}
-      <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
-        style={{ borderColor: 'var(--grid)' }}>
+      <div className="mt-4 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+        <p className="text-[13px] font-bold">
+          One {usdShort(rows[3].levy)} override, across its own five years
+        </p>
+        <p className="text-[12px] mt-0.5 mb-2" style={{ color: 'var(--text-secondary)' }}>
+          The column above compares different overrides in the same year. This is the other
+          direction, and the one people picture: a single override over-collects most in
+          its first year and least in its last, because the gap is growing into it.
+        </p>
+        <ol className="grid grid-cols-5 gap-1.5">
+          {run(5, { ...DEFAULT_SCENARIO, overrideLevy: rows[3].levy }).map(y => {
+            const surplus = Math.max(0, -y.gap)
+            return (
+              <li key={y.fy} className="rounded-lg text-center py-2"
+                style={{ background: surplus > 0
+                  ? 'color-mix(in srgb, var(--status-warning) 20%, var(--surface-1))'
+                  : 'var(--surface-3)',
+                  border: '1px solid var(--grid)' }}>
+                <p className="text-[10px] font-bold uppercase tracking-wider"
+                  style={{ color: 'var(--text-muted)' }}>FY{y.fy}</p>
+                <p className="text-[13px] font-bold tnum mt-0.5">
+                  {surplus > 0 ? usdShort(surplus) : 'exactly enough'}
+                </p>
+                <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
+                  {surplus > 0 ? 'over-collected' : 'nothing spare'}
+                </p>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
+
+      <p className="text-[13px] leading-relaxed mt-3">
         <strong>And this is where the long options die.</strong> To be exactly enough in
         its last year, an override has to be far too much in its first. The five-year
         question collects {usd(rows[3].firstYearSurplus)} more than the schools need next
-        April, and {usd(rows[3].totalSurplus)} more than they need across the five years
-        altogether. &ldquo;Tax yourselves {usdShort(rows[3].firstYearSurplus)} more than the
+        April, falling to nothing by FY{rows[3].throughFy} as the gap catches up &mdash;{' '}
+        {usd(rows[3].totalSurplus)} over-collected across the five years altogether. &ldquo;Tax yourselves {usdShort(rows[3].firstYearSurplus)} more than the
         schools are short&rdquo; is not a ballot question anybody writes, which is the
         practical reason these rows are not the plan they look like.
       </p>
