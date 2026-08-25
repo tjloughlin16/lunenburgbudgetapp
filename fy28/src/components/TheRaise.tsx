@@ -51,19 +51,45 @@ export function TheRaise() {
           What the increase has to cover
         </h3>
         <p className="text-[12px] mt-1 mb-4" style={{ color: 'var(--text-secondary)' }}>
-          The full width is what next year costs if nothing changes. The mark is how far
-          the money goes. Everything past the mark has to come from somewhere else, and no
-          rearranging of the segments makes it fit.
+          The full width is what next year costs if nothing changes. The top band is who
+          wants the money; the band underneath is the same span coloured only by whether
+          there is money for it. The mark is where it runs out. Everything past the mark
+          has to come from somewhere else, and no rearranging of the segments makes it fit.
         </p>
 
         <div className="relative">
-          <div className="flex h-10 rounded-lg overflow-hidden"
+          {/* who wants the money */}
+          <div className="flex h-9 rounded-t-lg overflow-hidden"
             style={{ background: 'var(--surface-3)' }}>
             {N.costs.map(c => (
               <div key={c.key} style={{ width: scale(c.amount), background: COLOR[c.key] }}
                 title={`${c.label} +${usd(c.amount)}`} />
             ))}
           </div>
+
+          {/* the same span again, coloured only by whether it is paid for.
+              The segmented bar answers "who spends it" and cannot answer "where does this
+              stop working", because the eye has to find a thin mark among six colours.
+              This one carries the verdict and nothing else. */}
+          <div className="flex h-6 rounded-b-lg overflow-hidden">
+            <div className="flex items-center justify-start pl-2"
+              style={{ width: `${allowedPct * 100}%`, background: 'var(--status-good)' }}
+              title={`Paid for by the increase: ${usd(N.allowed)}`}>
+              <span className="hidden sm:block text-[10px] font-bold whitespace-nowrap"
+                style={{ color: '#fff' }}>
+                {usdShort(N.allowed)} the town can pay for
+              </span>
+            </div>
+            <div className="flex-1 flex items-center justify-end pr-2"
+              style={{ background: 'var(--status-critical)' }}
+              title={`Not paid for: ${usd(-N.leftOver)}`}>
+              <span className="hidden sm:block text-[10px] font-bold whitespace-nowrap"
+                style={{ color: '#fff' }}>
+                {usdShort(-N.leftOver)} it cannot
+              </span>
+            </div>
+          </div>
+
           {/* everything to the right of this is what has to come from somewhere else */}
           <div className="absolute inset-y-0 pointer-events-none"
             style={{ left: `${allowedPct * 100}%`, width: 3, marginLeft: -1.5,
@@ -76,10 +102,10 @@ export function TheRaise() {
             <strong>{usdShort(N.allowed)}</strong><br />
             <span style={{ color: 'var(--text-muted)' }}>where the money runs out</span>
           </span>
+          {/* the amount lives in the red band itself now; this says what happens to it */}
           <span className="absolute right-0 text-right leading-tight"
-            style={{ color: 'var(--status-critical)' }}>
-            <strong>{usdShort(-N.leftOver)} over</strong><br />
-            <span style={{ color: 'var(--text-muted)' }}>cut, charge, or vote for it</span>
+            style={{ color: 'var(--text-muted)' }}>
+            cut it, charge for it,<br />or vote for it
           </span>
         </div>
 
