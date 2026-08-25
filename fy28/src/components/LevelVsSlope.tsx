@@ -7,7 +7,11 @@ import {
 const YEARS = 10
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 
-interface Case { label: string; sub: string; kind: 'level' | 'slope' | 'both'; s: Scenario }
+interface Case {
+  label: string; sub: string; kind: 'level' | 'slope' | 'both'; s: Scenario
+  /** Something about this option a reader would otherwise reasonably get wrong. */
+  note?: string
+}
 
 const rates = (o: Partial<typeof DEFAULT_RATES>) => ({ ...DEFAULT_RATES, ...o })
 
@@ -26,6 +30,13 @@ const CASES: Case[] = [
     s: { ...DEFAULT_SCENARIO, cut: ALL_CUTS } },
   { label: 'Pass one override', kind: 'level',
     sub: `${usdShort(1_250_000)}, school-only, so the schools keep all of it`,
+    // The surplus in the covered years is a fair thing to ask about, and the answer is
+    // not "it is wasted": an override raises a ceiling, it does not compel collection.
+    note: 'An override raises the levy limit; it does not oblige the town to collect it. '
+      + 'In a year the schools need less than it raises, the town can levy under the limit '
+      + '— Lunenburg has left as much as $53,706 unlevied — or appropriate the difference '
+      + 'elsewhere. The override then compounds at 2½% like the rest of the limit, which '
+      + 'is why it falls behind a gap growing faster than that.',
     s: { ...DEFAULT_SCENARIO, overrideLevy: 1_250_000 } },
   { label: 'Bend health insurance', sub: 'From 9% a year to 4%', kind: 'slope',
     s: { ...DEFAULT_SCENARIO, rates: rates({ health: 0.04 }) } },
@@ -106,6 +117,14 @@ export function LevelVsSlope() {
                         FY{row.r[row.r.length - 1].fy}</span>
                     </span>}
             </p>
+
+            {row.note && (
+              <p className="text-[11px] leading-relaxed mt-2 pl-2.5"
+                style={{ borderLeft: '2px solid var(--status-warning)',
+                         color: 'var(--text-secondary)' }}>
+                {row.note}
+              </p>
+            )}
 
             <p className="text-[12px] mt-3 pt-2.5 border-t leading-relaxed"
               style={{ borderColor: 'var(--grid)' }}>

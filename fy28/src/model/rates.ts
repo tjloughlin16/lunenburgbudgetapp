@@ -156,19 +156,12 @@ export function run(years: number, s: Scenario): RateYear[] {
   const b: Record<Bucket, number> = { ...BASE }
   b.salaries -= s.cut
 
-  let levy = F.levy_limit + s.overrideLevy
+  let levy = F.levy_limit
   let aid = F.state_aid
   let receipts = F.local_receipts
-  // The whole override reaches the schools, not the schools' share of it.
-  //
-  // This was modeled at SHARE, which is right for new growth and wrong for a ballot
-  // question: an override may be written for a single department, and a school override
-  // gives the schools all of it. The distinction is not academic in Lunenburg — the ask
-  // that failed was a townwide one covering every department, and the arithmetic for a
-  // school-only question is close to twice as good per dollar on the tax bill.
-  let approp = F.lps_appropriation + F.stm_appropriation + s.overrideLevy
+  let approp = F.lps_appropriation + F.stm_appropriation
   const wedge = F.levy_limit + F.excluded_debt + F.state_aid + F.local_receipts - F.omnibus
-  let prev = F.omnibus + s.overrideLevy
+  let prev = F.omnibus
 
   const out: RateYear[] = []
   for (let i = 0; i < years; i++) {
@@ -180,7 +173,23 @@ export function run(years: number, s: Scenario): RateYear[] {
     prev = townAvailable
 
     approp = approp * (1 + growth) + A.override_amount
-    const revenue = approp + A.athletic_fee_revenue
+
+    /* A school override is earmarked money that grows with the levy limit, not with the
+     * town's blended revenue rate.
+     *
+     * It used to be folded into the appropriation, which grows at whatever the town's
+     * revenue does — about 3.05% while new growth is propping that up. But an override
+     * raises the LEVY LIMIT, and the levy limit rises 2½% a year; new growth is separate
+     * dollars that do not attach to the override. Folding it in also quietly inflated the
+     * town's growth rate, so the override was helping twice. Kept outside the base
+     * projection now: the whole of it reaches the schools in the first year, because a
+     * ballot question may be written for a single department, and it compounds at the cap
+     * after that.
+     *
+     * It matters for exactly the question people ask about overrides — how many years does
+     * one buy — and it was making the answer slightly too generous. */
+    const override = s.overrideLevy * (1 + A.levy_growth) ** i
+    const revenue = approp + override + A.athletic_fee_revenue
     for (const k of BUCKETS) b[k] *= 1 + s.rates[k]
     const cost = BUCKETS.reduce((sum, k) => sum + b[k], 0)
 
