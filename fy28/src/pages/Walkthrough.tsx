@@ -212,7 +212,12 @@ export function Walkthrough({ onJump }: {
           the growth rate underneath that column refuse to move, and watch the year squares
           go green and then red again. Then drag one rate on the right instead.
         </Say>
-        <RateBoard stickyTop="top-[136px]" defaultPinned={false} />
+        {/* Pinned, and sitting under the room heading rather than beside it. The curve
+            and the funded-year squares are the room's whole argument: a reader dragging a
+            slider has to be able to see them move without scrolling away from the control
+            doing the moving. The offset is taller at sm and up because the heading's title
+            sets larger there and can take two lines. */}
+        <RateBoard stickyTop="top-[136px] sm:top-[156px]" />
       </Room>
 
       {/* ------------------------------------------------ 07 */}
@@ -353,7 +358,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 11 */}
-      <Room n={11} tag="The exit" handsOn
+      <Room n={11} tag="What it would take" handsOn
         title="What &ldquo;solved&rdquo; would actually require"
         corrects={<>&ldquo;There must be a version of this where nobody gets hurt.&rdquo;</>}
         leave={<>There is no painless version. There is a choice between kinds of pain, and
@@ -383,33 +388,48 @@ export function Walkthrough({ onJump }: {
           about {HEADCOUNT} people. Any mix of the two works. What does not work is neither.
         </Say>
         <Forever />
-        <div className="card p-5">
-          <p className="text-[15px] leading-relaxed">
-            <strong>So the choice is not between a good option and a bad one.</strong> It is
-            between funding next April and being back here in twelve months, or changing one
-            of two rates that nobody in this town sets alone &mdash; a health insurance
-            contract the Town buys, and an agreement bargained three years at a time.
+      </Room>
+
+      {/* The exit, which is not a room.
+       *
+       * It was inside room 11, which made that room both an exploration and a conclusion
+       * and put a "hands on" badge over a heading whose tag read "the exit". A room that
+       * ends the walkthrough should not also open a new question. */}
+      <section id="exit" className="scroll-mt-12 border-t py-14"
+        style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
+        <div className="mx-auto max-w-6xl px-5">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3"
+            style={{ color: 'var(--text-muted)' }}>The way out</p>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-[1.15]
+                         mb-4 max-w-3xl">
+            So the choice is not between a good option and a bad one
+          </h2>
+          <p className="text-[16px] leading-relaxed max-w-2xl mb-6"
+            style={{ color: 'var(--text-secondary)' }}>
+            It is between funding next April and being back here in twelve months, or
+            changing one of two rates that nobody in this town sets alone &mdash; a health
+            insurance contract the Town buys, and an agreement bargained three years at a
+            time. Everything else on this site is a way of checking that for yourself.
           </p>
-          <div className="flex flex-wrap gap-4 mt-4">
-            <button onClick={() => onJump('adjust')} className="text-[13px] font-semibold"
-              style={{ color: 'var(--series-cost)' }}>
-              Build your own budget &rarr;
-            </button>
-            <button onClick={() => onJump('answers')} className="text-[13px] font-semibold"
-              style={{ color: 'var(--series-cost)' }}>
-              The questions people ask, answered one at a time &rarr;
-            </button>
-            <button onClick={() => onJump('context')} className="text-[13px] font-semibold"
-              style={{ color: 'var(--series-cost)' }}>
-              Where these numbers come from &rarr;
-            </button>
-            <button onClick={() => onJump('deeper')} className="text-[13px] font-semibold"
-              style={{ color: 'var(--series-cost)' }}>
-              Everything this walkthrough left out &rarr;
-            </button>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {([
+              ['adjust', 'Build your own budget', 'Every dial that moves the gap, on one page'],
+              ['curve', 'Bend the curve', 'Cut things, then change a rate, and watch which one works'],
+              ['answers', 'Straight answers', 'The questions people ask, answered one at a time'],
+              ['deeper', 'Go deeper', 'Everything this walkthrough left out, and where the numbers come from'],
+            ] as const).map(([id, label, what]) => (
+              <button key={id} onClick={() => onJump(id)}
+                className="card p-4 text-left transition-opacity hover:opacity-90">
+                <span className="block text-[14px] font-bold">{label}</span>
+                <span className="block text-[12px] leading-snug mt-1"
+                  style={{ color: 'var(--text-secondary)' }}>{what}</span>
+                <span className="block text-[12px] font-semibold mt-2"
+                  style={{ color: 'var(--series-cost)' }}>Open &rarr;</span>
+              </button>
+            ))}
           </div>
         </div>
-      </Room>
+      </section>
 
       <div className="mx-auto max-w-6xl px-5 py-12">
         <Note>
