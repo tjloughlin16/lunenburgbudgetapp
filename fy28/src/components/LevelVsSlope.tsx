@@ -246,7 +246,17 @@ export function OverrideTreadmill() {
  *  thing worth seeing: each extra year costs more than the last, because the override
  *  compounds at 2½% and the gap compounds at nearly 5% from a base already larger. */
 export function OverrideSizing() {
-  const rows = [1, 2, 3, 5, 8, 10].map(y => ({ years: y, ...overrideForYears(y) }))
+  const base = run(12, DEFAULT_SCENARIO)
+  const rows = [1, 2, 3, 5, 8, 10].map(y => ({
+    years: y,
+    ...overrideForYears(y),
+    /* The binding year is the LAST one covered, and its running total is the number the
+     * override has to reach. Shown because "5 years costs $2,949,209" is otherwise a
+     * figure out of nowhere: it is FY32's $3,255,375 divided by four years of compounding
+     * at the cap, and the table should say so rather than make a reader ask. */
+    throughFy: base[y - 1].fy,
+    thatYearsGap: base[y - 1].gap,
+  }))
   return (
     <div className="card p-4">
       <h3 className="text-[15px] font-bold">Or one vote, sized to last</h3>
@@ -262,6 +272,13 @@ export function OverrideSizing() {
         <thead>
           <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
             <th className="font-semibold py-1.5">To cover</th>
+            <th className="font-semibold py-1.5 text-right">Through</th>
+            <th className="font-semibold py-1.5 text-right">That year&rsquo;s gap</th>
+            <th className="font-semibold py-1.5 text-right">
+              &divide; compounding
+              <span className="block text-[10px] font-normal"
+                style={{ color: 'var(--text-muted)' }}>2&frac12;% a year since FY28</span>
+            </th>
             <th className="font-semibold py-1.5 text-right">The ballot question</th>
             <th className="font-semibold py-1.5 text-right">On the average home, every year</th>
           </tr>
@@ -272,7 +289,15 @@ export function OverrideSizing() {
               <td className="rowhead py-1.5 font-semibold">
                 {r.years} {r.years === 1 ? 'year' : 'years'}
               </td>
-              <td data-label="The ballot question" className="py-1.5 text-right">
+              <td data-label="Through" className="py-1.5 text-right">FY{r.throughFy}</td>
+              <td data-label="That year&rsquo;s gap" className="py-1.5 text-right">
+                {usd(r.thatYearsGap)}
+              </td>
+              <td data-label="Divided by compounding" className="py-1.5 text-right"
+                style={{ color: 'var(--text-muted)' }}>
+                &divide; {((1 + LEVY_CAP) ** (r.years - 1)).toFixed(3)}
+              </td>
+              <td data-label="The ballot question" className="py-1.5 text-right font-semibold">
                 {usd(r.levy)}
               </td>
               <td data-label="On the average home, every year"
@@ -282,6 +307,14 @@ export function OverrideSizing() {
         </tbody>
       </table>
       <p className="text-[12px] mt-3 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        Read a row across and the figure is not a mystery. Five years means through
+        FY{rows[3].throughFy}, whose gap is {usd(rows[3].thatYearsGap)}; an override passed
+        four years earlier has compounded at 2&frac12;% in the meantime, so it only has to
+        start at {usd(rows[3].thatYearsGap)} &divide;{' '}
+        {((1 + LEVY_CAP) ** 4).toFixed(3)} = {usd(rows[3].levy)}. Run the model at exactly
+        that number and FY{rows[3].throughFy} lands with nothing to spare.
+      </p>
+      <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         Each extra year costs more than the last: the override compounds at 2&frac12;% and
         the gap compounds at nearly 5% from a base that is already bigger. The two rates
         never cross, so <strong>no override of any size holds forever</strong> — buying a
