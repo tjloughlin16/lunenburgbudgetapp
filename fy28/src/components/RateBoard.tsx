@@ -57,7 +57,7 @@ export function RateBoard() {
 
       <div className={pinned ? 'sticky z-20 top-[84px] lg:top-12 -mx-1 px-1 pb-2' : ''}
         style={pinned ? { background: 'var(--surface-2)' } : undefined}>
-        <Meter blended={blended} revGrowth={revGrowth} longRun={longRun} compact={pinned} />
+        <YearStatus years={years} compact={pinned} />
         <Curves years={years} baseline={baseline} touched={touched} compact={pinned}
           pinned={pinned} onTogglePin={() => setPinned(p => !p)} />
       </div>
@@ -237,64 +237,53 @@ function Verdicts({ verdict, blended, revGrowth, longRun, years, cut, overrideLe
   )
 }
 
-/** The rate line, as a thing you can be above or below.
+/** Five years, each one either paid for or not.
  *
- *  Two marks, because they are different facts and people conflate them. 2½% is what the
- *  law lets the levy rise. The higher mark is what the town's revenue actually grows at
- *  once new growth is counted, and it is the one a cost rate has to get under. */
-function Meter({ blended, revGrowth, longRun, compact }: {
-  blended: number; revGrowth: number; longRun: number; compact?: boolean
+ *  This replaced a meter showing the blended cost growth rate against two threshold marks.
+ *  It was accurate and nobody could read it: a rate is an abstraction about a rate, and
+ *  what a person wants to know is whether the year is funded. So the pinned strip now answers
+ *  exactly that, one square per year, and the rate itself is left to the columns below
+ *  where it has a label and a sentence attached.
+ *
+ *  Never colour alone — each square carries a glyph and the number as well, and the year
+ *  is the row header for a screen reader. */
+function YearStatus({ years, compact }: {
+  years: ReturnType<typeof run>; compact?: boolean
 }) {
-  const MAX = 0.06
-  const x = (v: number) => `${Math.min(100, (v / MAX) * 100)}%`
-  const over = blended > longRun
   return (
-    <div className={`card ${compact ? 'p-3 mb-2' : 'p-4 mb-4'}`}>
-      <div className="flex items-baseline justify-between gap-3 mb-3">
-        <p className="text-[13px] font-bold">Blended cost growth</p>
-        <p className="text-2xl font-bold tnum leading-none"
-          style={{ color: over ? 'var(--status-critical)' : 'var(--status-good)' }}>
-          {pct(blended)}
+    <div className={compact ? 'mb-2' : 'mb-4'}>
+      <ol className="grid grid-cols-5 gap-1.5" aria-label="Whether each year is funded">
+        {years.slice(0, 5).map(y => {
+          const short = y.gap > 0
+          return (
+            <li key={y.fy} className={`rounded-lg text-center ${compact ? 'py-1.5' : 'py-3'}`}
+              style={{ background: short ? 'var(--status-critical)' : 'var(--status-good)',
+                       color: '#fff' }}>
+              <p className="text-[10px] font-bold uppercase tracking-wider opacity-90">
+                FY{y.fy}
+              </p>
+              <p className={`font-bold tnum leading-tight ${compact ? 'text-[13px]' : 'text-[17px]'}`}>
+                <span aria-hidden="true" className="mr-1">{short ? '\u2715' : '\u2713'}</span>
+                {short ? usdShort(y.gap) : 'Funded'}
+              </p>
+              <span className="sr-only">
+                {short ? `not funded, short by ${usd(y.gap)}` : 'funded'}
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+      {!compact && (
+        <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+          A green check means the year is <strong>funded</strong> &mdash; what the schools
+          buy costs no more than the town can give them. Red means it is not, and by how
+          much. Turning the first square green is easy; keeping the last one green is the
+          hard part, and it is the difference between the two columns below.
         </p>
-      </div>
-      <div className={`relative ${compact ? 'h-5' : 'h-8'} rounded-lg`}
-        style={{ background: 'var(--surface-3)' }}>
-        <div className="absolute inset-y-0 left-0 rounded-lg transition-all"
-          style={{ width: x(blended),
-                   background: over ? 'var(--status-critical)' : 'var(--status-good)',
-                   opacity: 0.85 }} />
-        {/* the two marks, drawn over the bar so they read as thresholds, not segments */}
-        <Mark at={x(LEVY_CAP)} />
-        <Mark at={x(revGrowth)} bold />
-      </div>
-      <div className="relative h-9 mt-1 text-[10px]" style={{ color: 'var(--text-muted)' }}>
-        <span className="absolute -translate-x-1/2 text-center leading-tight w-24"
-          style={{ left: x(LEVY_CAP) }}>
-          {pct(LEVY_CAP, 1)}<br />Prop 2&frac12;, the long-run floor
-        </span>
-        <span className="absolute -translate-x-1/2 text-center leading-tight w-24"
-          style={{ left: x(revGrowth), color: 'var(--text-secondary)' }}>
-          <strong>{pct(revGrowth)}</strong><br />today, with new growth
-        </span>
-      </div>
-      {!compact && <p className="text-[12px] mt-1" style={{ color: 'var(--text-secondary)' }}>
-        Get the bar under the marks and the gap stops growing. Under the right-hand one it
-        stops for now; under {pct(LEVY_CAP, 1)} it stops for good &mdash; because new
-        growth is a fixed number of dollars, not a percentage, so its contribution shrinks
-        as the town gets bigger and the right-hand mark drifts back toward the left one
-        unless the build rate keeps rising. That is the only thing on this page that ends
-        the problem rather than postponing it.
-      </p>}
+      )}
     </div>
   )
 }
-
-const Mark = ({ at, bold }: { at: string; bold?: boolean }) => (
-  <div className="absolute inset-y-0" style={{
-    left: at, width: bold ? 3 : 2, marginLeft: bold ? -1.5 : -1,
-    background: bold ? 'var(--text-primary)' : 'var(--axis)',
-  }} />
-)
 
 /** Cost against revenue, over long enough that an angle is visible as an angle. */
 function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
