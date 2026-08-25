@@ -419,7 +419,19 @@ export function YearLedger({ overrideLevy = 0, title, intro, footer }: {
                 <th className="font-semibold py-1.5 text-right">Revenue rose by</th>
               </>
             )}
-            <th className="font-semibold py-1.5 text-right">Gap, running total</th>
+            {/* The column is the override figure, and saying so is the whole reason the
+                running total is the one an override is sized against. Worded as "passed
+                that year" because it is exact only then: pass it earlier and it can be
+                smaller, since it compounds at the cap in the meantime. */}
+            <th className="font-semibold py-1.5 text-right">
+              Gap, running total
+              <span className="block text-[10px] font-normal normal-case"
+                style={{ color: 'var(--text-muted)' }}>
+                {overrideLevy > 0
+                  ? '= a further override passed that year'
+                  : '= an override passed that year'}
+              </span>
+            </th>
             <th className="font-semibold py-1.5 text-right">Grew by</th>
           </tr>
         </thead>
@@ -501,6 +513,15 @@ export function YearLedger({ overrideLevy = 0, title, intro, footer }: {
           ))}
         </tbody>
       </table>
+      <p className="text-[12px] leading-relaxed mt-3" style={{ color: 'var(--text-muted)' }}>
+        An override passed in a given year has to match that year&rsquo;s running total
+        exactly, which is what makes the running total the figure an override is sized
+        against. Passed <em>earlier</em> it can be smaller, because it compounds at{' '}
+        {(LEVY_CAP * 100).toFixed(1)}% in the meantime: covering FY{years[2].fy}&rsquo;s{' '}
+        {usd(years[2].gap)} costs {usd(Math.round(years[2].gap / (1 + LEVY_CAP) ** 2))} if
+        the vote happens in FY{years[0].fy} instead.
+      </p>
+
       <div className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
         style={{ borderColor: 'var(--grid)' }}>
         {footer({ years, grew, avg })}
