@@ -403,11 +403,22 @@ export function YearLedger({ overrideLevy = 0, title, intro, footer }: {
           <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
             <th className="font-semibold py-1.5">Year</th>
             <th className="font-semibold py-1.5 text-right">Cost of today&rsquo;s services</th>
-            <th className="font-semibold py-1.5 text-right">Revenue available</th>
-            {overrideLevy > 0 && (
-              <th className="font-semibold py-1.5 text-right">of which, the override</th>
+            {/* When there is an override, the revenue column is built up in front of the
+                reader instead of being asserted with a breakdown hung off the end. A
+                column headed "of which, the override" sitting AFTER the total reads as
+                something still to be added, and was taken that way. */}
+            {overrideLevy > 0 ? (
+              <>
+                <th className="font-semibold py-1.5 text-right">Revenue without an override</th>
+                <th className="font-semibold py-1.5 text-right">plus the override</th>
+                <th className="font-semibold py-1.5 text-right">= revenue available</th>
+              </>
+            ) : (
+              <>
+                <th className="font-semibold py-1.5 text-right">Revenue available</th>
+                <th className="font-semibold py-1.5 text-right">Revenue rose by</th>
+              </>
             )}
-            <th className="font-semibold py-1.5 text-right">Revenue rose by</th>
             <th className="font-semibold py-1.5 text-right">Gap, running total</th>
             <th className="font-semibold py-1.5 text-right">Grew by</th>
           </tr>
@@ -421,15 +432,26 @@ export function YearLedger({ overrideLevy = 0, title, intro, footer }: {
             <td data-label="Cost of today&rsquo;s services" className="py-1.5 text-right">
               {usd(N.costFy27)}
             </td>
-            <td data-label="Revenue available" className="py-1.5 text-right">
-              {usd(N.appropFy27)}
-            </td>
-            {overrideLevy > 0 && (
-              <td data-label="of which, the override" className="py-1.5 text-right"
-                style={{ color: 'var(--text-muted)' }}>&mdash;</td>
+            {overrideLevy > 0 ? (
+              <>
+                <td data-label="Revenue without an override" className="py-1.5 text-right">
+                  {usd(N.appropFy27)}
+                </td>
+                <td data-label="plus the override" className="py-1.5 text-right"
+                  style={{ color: 'var(--text-muted)' }}>&mdash;</td>
+                <td data-label="= revenue available" className="py-1.5 text-right">
+                  {usd(N.appropFy27)}
+                </td>
+              </>
+            ) : (
+              <>
+                <td data-label="Revenue available" className="py-1.5 text-right">
+                  {usd(N.appropFy27)}
+                </td>
+                <td data-label="Revenue rose by" className="py-1.5 text-right"
+                  style={{ color: 'var(--text-muted)' }}>&mdash;</td>
+              </>
             )}
-            <td data-label="Revenue rose by" className="py-1.5 text-right"
-              style={{ color: 'var(--text-muted)' }}>&mdash;</td>
             <td data-label="Gap, running total" className="py-1.5 text-right">
               {usd(N.startingBehind)}
             </td>
@@ -442,17 +464,31 @@ export function YearLedger({ overrideLevy = 0, title, intro, footer }: {
               <td data-label="Cost of today&rsquo;s services" className="py-1.5 text-right">
                 {usd(y.cost)}
               </td>
-              <td data-label="Revenue available" className="py-1.5 text-right">
-                {usd(y.revenue)}
-              </td>
-              {overrideLevy > 0 && (
-                <td data-label="of which, the override" className="py-1.5 text-right"
-                  style={{ color: 'var(--series-cost)' }}>{usd(overrideAt(i))}</td>
+              {overrideLevy > 0 ? (
+                <>
+                  <td data-label="Revenue without an override" className="py-1.5 text-right"
+                    style={{ color: 'var(--text-secondary)' }}>
+                    {usd(y.revenue - overrideAt(i))}
+                  </td>
+                  <td data-label="plus the override" className="py-1.5 text-right"
+                    style={{ color: 'var(--series-cost)' }}>
+                    +{usd(overrideAt(i))}
+                  </td>
+                  <td data-label="= revenue available" className="py-1.5 text-right font-semibold">
+                    {usd(y.revenue)}
+                  </td>
+                </>
+              ) : (
+                <>
+                  <td data-label="Revenue available" className="py-1.5 text-right">
+                    {usd(y.revenue)}
+                  </td>
+                  <td data-label="Revenue rose by" className="py-1.5 text-right"
+                    style={{ color: 'var(--status-good)' }}>
+                    +{usd(y.revenue - (i === 0 ? N.appropFy27 : years[i - 1].revenue))}
+                  </td>
+                </>
               )}
-              <td data-label="Revenue rose by" className="py-1.5 text-right"
-                style={{ color: 'var(--status-good)' }}>
-                +{usd(y.revenue - (i === 0 ? N.appropFy27 : years[i - 1].revenue))}
-              </td>
               <td data-label="Gap, running total" className="py-1.5 text-right font-semibold"
                 style={{ color: y.gap > 0 ? 'var(--status-critical)' : 'var(--status-good)' }}>
                 {y.gap > 0 ? usd(y.gap) : `funded, ${usd(-y.gap)} spare`}

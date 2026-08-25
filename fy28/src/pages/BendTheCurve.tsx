@@ -127,7 +127,10 @@ export function BendTheCurve({ onJump }: {
             intro={<>Identical arithmetic, one thing added: a school-only override of{' '}
               {usd(OVERRIDE)} passed once, in the first year, and carried forward at{' '}
               {pct(LEVY_CAP, 1)} like the rest of the levy limit. It is never voted on
-              again. Watch the fourth column, and then watch the last one.</>}
+              again. The revenue column is built up so the addition is visible: what the
+              town could give without an override, plus the override, equals what the
+              schools actually have. Watch that total, and then watch the last
+              column.</>}
             footer={({ grew }) => (
               <>
                 <p>
