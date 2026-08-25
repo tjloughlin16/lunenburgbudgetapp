@@ -6,6 +6,9 @@ import { Magnitude } from '../components/Magnitude'
 import { PeerGrowth, PeerTable, PeerLessons } from '../components/Peers'
 import { SportTable, FeeAccounting, CurrentFees } from '../components/Athletics'
 import { Recommendation } from '../components/Recommendation'
+
+/** Set true to put our own recommendation back on the situation page. */
+const SHOW_OUR_RECOMMENDATION = false
 import { TaxStructure, ResidentialParadox } from '../components/TaxBase'
 import { CommercialTrend, HomeValueParadox } from '../components/CommercialTrend'
 import { BusinessFormation, BusinessCategories } from '../components/BusinessFormation'
@@ -19,7 +22,6 @@ export const CONTEXT_NAV = [
   ['neighbors', 'Neighbors'],
   ['fees', 'Fees today'],
   ['tax-base', 'Business growth'],
-  ['recommendation', 'What we’d do'],
   ['derivations', 'Show the math'],
   ['method', 'Sources'],
 ] as const
@@ -270,11 +272,23 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
         <ResidentialParadox />
       </Section>
 
-      <Section id="recommendation" eyebrow="Our answer" title="What we’d actually do"
-        lede={<>Everything else in this tool is for reaching your own conclusion. This is
-          ours, with the reasoning exposed so you can disagree with it precisely.</>}>
-        <Recommendation gap={gap} onApply={onRecommend} />
-      </Section>
+      {/* Our own recommendation, kept and not shown.
+       *
+       * The rest of this site works by handing somebody the arithmetic and getting out of
+       * the way, and a section headed "what we'd actually do" spends the credit that
+       * earns. A reader who finds a prescription stops checking the sums and starts
+       * agreeing or disagreeing with the author, which is a worse conversation and not the
+       * one this tool is for.
+       *
+       * Deliberately still here, wired and rendering, one flag from returning. The
+       * reasoning in it is sound; it is the position on the page that was wrong. */}
+      {SHOW_OUR_RECOMMENDATION && (
+        <Section id="recommendation" eyebrow="Our answer" title="What we’d actually do"
+          lede={<>Everything else in this tool is for reaching your own conclusion. This is
+            ours, with the reasoning exposed so you can disagree with it precisely.</>}>
+          <Recommendation gap={gap} onApply={onRecommend} />
+        </Section>
+      )}
 
       <Section id="derivations" eyebrow="Show the math"
         title="How every rolled-up number was calculated"

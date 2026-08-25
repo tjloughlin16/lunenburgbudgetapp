@@ -10,12 +10,14 @@ import { Answers } from './pages/Answers'
 import { FindTheMoney } from './pages/FindTheMoney'
 import { BendTheCurve } from './pages/BendTheCurve'
 import { Override } from './pages/Override'
-import { pathFor, tabFromPath, type Tab } from './routes'
+import { Walkthrough } from './pages/Walkthrough'
+import { GoDeeper } from './pages/GoDeeper'
+import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 
 
 /** The pages you use rather than read.
  *
- *  Kept out of the chapter strip on purpose, so they do not sit in the reading order
+ *  Kept out of the reading order on purpose, so they do not sit among the chapters
  *  pretending to be another chapter, and given the same weight as each other because
  *  they are the same kind of thing: a board of controls with a result attached. One
  *  moves amounts, the other moves rates, and between them they are what the rest of the
@@ -27,15 +29,15 @@ const CTAS: { id: Tab; label: string; short: string; glyph: string; sub: string 
     sub: 'The interactive one — every dial that moves the gap, on one page' },
 ]
 
-const TABS: { id: Tab; label: string; sub: string }[] = [
-  { id: 'answers', label: 'Straight answers', sub: 'The questions people actually ask, in plain English, with the arithmetic' },
-  { id: 'money', label: 'Find the money', sub: 'Pick a number. See what raising it costs on every lever, with no projection involved' },
-  { id: 'context', label: 'The situation', sub: 'What happened, what it costs, where the numbers come from' },
-  { id: 'why', label: 'Why it repeats', sub: 'The two growth rates behind every year of this' },
-  { id: 'override', label: 'Overrides', sub: 'How big, for how long, and written for whom — the arithmetic of a ballot question' },
-  { id: 'priorities', label: 'Priorities', sub: 'Set the order things are given up in, and watch it happen' },
-  { id: 'development', label: 'Development', sub: 'What building commercial and residential actually changes' },
-]
+/** The chapter strip is gone.
+ *
+ *  Seven pills competing for a phone's width was the site telling a first-time reader that
+ *  it had seven equally good beginnings, which was never true. The walkthrough is the way
+ *  in, the two boards are the things you use, and everything else keeps its address and
+ *  its content behind one quiet door. Nothing has been removed — see pages/GoDeeper. */
+const DEEPER: { id: Tab; label: string; sub: string } =
+  { id: 'deeper', label: 'Go deeper',
+    sub: 'Every other page — the questions, the levers priced in full, and where the numbers come from' }
 
 /** Three pages, three jobs.
  *
@@ -48,17 +50,21 @@ export default function App() {
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
+  /** The last page navigated from. Not for display — the breadcrumb is structural, and a
+   *  crumb that changed depending on how you arrived would be a history trail wearing
+   *  breadcrumb clothes. This exists only so that going up can pop the stack instead of
+   *  growing it. */
+  const [from, setFrom] = useState<Tab | null>(null)
   // The commercial build rate is the same decision on two pages, so it lives here rather
   // than being duplicated. Housing is modeled on Development only.
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
   const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
   const pending = useRef<string | null>(null)
-  const strip = useRef<HTMLDivElement>(null)
 
   // The back button has to work, or a shared link is a trap: follow one, look around,
   // and there is no way back to where you came from.
   useEffect(() => {
-    const onPop = () => setTab(tabFromPath(window.location.pathname))
+    const onPop = () => { setFrom(null); setTab(tabFromPath(window.location.pathname)) }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
@@ -69,13 +75,6 @@ export default function App() {
     const id = window.location.hash.slice(1)
     if (!id) return
     requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView())
-  }, [tab])
-
-  // On a phone the chapter strip scrolls, so arriving on a tab whose pill is off to the
-  // right would leave nothing marked as current. Bring it into view when the tab changes.
-  useEffect(() => {
-    const pill = strip.current?.querySelector<HTMLElement>(`[data-tab="${tab}"]`)
-    pill?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
   }, [tab])
 
   // Deep links into the context page work from any tab: switch first, scroll once the
@@ -106,7 +105,29 @@ export default function App() {
     setTab('context')
   }, [tab])
 
-  const go = (t: Tab) => { setTab(t); navigate(t); window.scrollTo({ top: 0 }) }
+  const go = (t: Tab) => {
+    if (t !== tab) setFrom(tab)
+    setTab(t); navigate(t); window.scrollTo({ top: 0 })
+  }
+
+  /** Going up a level. Never grows the history stack.
+   *
+   *  A breadcrumb is a statement about where a page sits, not about how you got to it, so
+   *  clicking one should feel like going back rather than like travelling somewhere new.
+   *  Pushing an entry meant that after Start -> Go deeper -> Straight answers, clicking
+   *  "Go deeper" left four entries and the back button walked forwards through them.
+   *
+   *  If the crumb is the page we just came from, actually go back and let popstate do the
+   *  work. Otherwise replace the current entry rather than adding one. */
+  const goUp = (t: Tab) => {
+    if (from === t) { window.history.back(); return }
+    setFrom(null)
+    setTab(t)
+    const url = pathFor(t)
+    if (url !== window.location.pathname + window.location.hash)
+      window.history.replaceState(null, '', url)
+    window.scrollTo({ top: 0 })
+  }
 
   const sendToAdjust = () => {
     const result = runCascade(order, MODEL.assumptions, 1)
@@ -119,50 +140,39 @@ export default function App() {
       <header className="sticky top-0 z-30 backdrop-blur border-b"
         style={{ background: 'color-mix(in srgb, var(--surface-2) 92%, transparent)',
                  borderColor: 'var(--grid)' }}>
-        {/* Seven controls do not fit across a phone, and forcing them to try was what
-            made the whole page scroll sideways. The single row wants 836px, so below lg
-            the brand and the one button take the top line and the chapters get a strip of
-            their own that scrolls inside itself. */}
         <nav aria-label="Sections"
-          className="mx-auto max-w-6xl px-5 lg:h-12 lg:flex lg:items-center lg:gap-1">
-          <div className="flex items-center gap-3 h-12 lg:contents">
-            {/* Two buttons and a wordmark do not fit across a phone, and the chapter strip
-                below already says which site this is. */}
-            <span className="font-bold text-sm shrink-0 lg:mr-3">
-              <span className="hidden sm:inline">Lunenburg FY28</span>
-              <span className="sm:hidden">FY28</span>
-            </span>
-            <div className="flex items-center gap-1.5 ml-auto lg:order-last shrink-0">
-              {CTAS.map(c => (
-                <button key={c.id} onClick={() => go(c.id)} title={c.sub}
-                  aria-current={tab === c.id ? 'page' : undefined}
-                  className="cta flex items-center gap-1.5 text-xs font-bold
-                             px-3 py-2 rounded-md whitespace-nowrap shrink-0
-                             transition-opacity hover:opacity-90"
-                  style={tab === c.id
-                    ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
-                    : undefined}>
-                  <span aria-hidden="true">{c.glyph}</span>
-                  <span className="hidden sm:inline">{c.label}</span>
-                  <span className="sm:hidden">{c.short}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-          <div ref={strip}
-            className="no-scrollbar flex items-center gap-1 overflow-x-auto
-                       overscroll-x-contain pb-2 -mx-5 px-5 lg:contents">
-            {TABS.map(t => (
-              <button key={t.id} onClick={() => go(t.id)} title={t.sub}
-                data-tab={t.id}
-                aria-current={tab === t.id ? 'page' : undefined}
-                className="text-xs font-semibold px-2.5 py-1.5 lg:py-1 rounded-md
-                           whitespace-nowrap shrink-0"
-                style={{
-                  background: tab === t.id ? 'var(--surface-3)' : 'transparent',
-                  color: tab === t.id ? 'var(--text-primary)' : 'var(--text-secondary)',
-                }}>
-                {t.label}
+          className="mx-auto max-w-6xl px-5 h-12 flex items-center gap-3">
+          <button onClick={() => go('walk')}
+            className="font-bold text-sm shrink-0 mr-1"
+            title="Back to the start of the walkthrough">
+            <span className="hidden sm:inline">Lunenburg FY28</span>
+            <span className="sm:hidden">FY28</span>
+          </button>
+
+          {/* Reachable on a phone from the walkthrough's last room and the footer, so it
+              gives up its place in the bar rather than squeezing the two boards. */}
+          <button onClick={() => go(DEEPER.id)} title={DEEPER.sub}
+            aria-current={tab === DEEPER.id ? 'page' : undefined}
+            className="hidden sm:inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
+                       whitespace-nowrap shrink-0"
+            style={{ background: tab === DEEPER.id ? 'var(--surface-3)' : 'transparent',
+                     color: tab === DEEPER.id ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+            {DEEPER.label}
+          </button>
+
+          <div className="flex items-center gap-1.5 ml-auto shrink-0">
+            {CTAS.map(c => (
+              <button key={c.id} onClick={() => go(c.id)} title={c.sub}
+                aria-current={tab === c.id ? 'page' : undefined}
+                className="cta flex items-center gap-1.5 text-xs font-bold
+                           px-3 py-2 rounded-md whitespace-nowrap shrink-0
+                           transition-opacity hover:opacity-90"
+                style={tab === c.id
+                  ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
+                  : undefined}>
+                <span aria-hidden="true">{c.glyph}</span>
+                <span className="hidden sm:inline">{c.label}</span>
+                <span className="sm:hidden">{c.short}</span>
               </button>
             ))}
           </div>
@@ -180,6 +190,12 @@ export default function App() {
           </div>
         )}
       </header>
+
+      {tab !== 'walk' && <Breadcrumb tab={tab} goUp={goUp} />}
+
+      {tab === 'walk' && <Walkthrough onJump={go} />}
+
+      {tab === 'deeper' && <GoDeeper onJump={go} />}
 
       {tab === 'answers' && <Answers onJump={go} />}
 
@@ -216,11 +232,49 @@ export default function App() {
 
       <footer className="border-t py-10" style={{ borderColor: 'var(--grid)' }}>
         <div className="mx-auto max-w-6xl px-5 text-xs" style={{ color: 'var(--text-muted)' }}>
+          {/* The only route to the other pages on a phone, where the header gives up its
+              Go deeper button to fit the two boards. */}
+          <button onClick={() => go('deeper')}
+            className="text-xs font-semibold mb-3 block"
+            style={{ color: 'var(--series-cost)' }}>
+            Go deeper &mdash; every other page &rarr;
+          </button>
           Lunenburg FY28 budget projection &mdash; an independent tool for residents.
           Figures for FY27 and earlier are from published documents; FY28 onward are
           projections. Last updated August 2026.
         </div>
       </footer>
     </div>
+  )
+}
+
+/** Where the page sits, and the way up.
+ *
+ *  Structural, not historical. It always reads the same for a given page no matter how
+ *  somebody reached it, because that is what a breadcrumb is for: a claim about the shape
+ *  of the site, which a reader can learn once and rely on. The route actually taken is the
+ *  back button's job and it already does it.
+ *
+ *  Not sticky. The header above it already is, and two stacked bars would push every
+ *  page's own pinned content down for the sake of a line that is only read on arrival. */
+function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
+  const trail: Tab[] = []
+  for (let up = PARENT[tab]; up; up = PARENT[up]) trail.unshift(up)
+  trail.unshift('walk')
+
+  return (
+    <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: 'var(--grid)' }}>
+      <ol className="mx-auto max-w-6xl px-5 py-2.5 flex items-center gap-1.5 flex-wrap
+                     text-[12px]">
+        {trail.map(t => (
+          <li key={t} className="flex items-center gap-1.5">
+            <button onClick={() => goUp(t)} className="font-semibold hover:underline"
+              style={{ color: 'var(--series-cost)' }}>{LABEL[t]}</button>
+            <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
+          </li>
+        ))}
+        <li aria-current="page" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
+      </ol>
+    </nav>
   )
 }
