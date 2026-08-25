@@ -6,7 +6,7 @@ import { Structural } from '../components/Structural'
  *
  *  It sat as one section inside the situation page and nobody found it, which is a fair
  *  verdict on burying the explanation for everything else three screens down. This is the
- *  answer to "why did we close a gap last year and have a bigger one now", and it is the
+ *  answer to "why did we close a gap this year and have a bigger one coming", and it is the
  *  argument the other three tabs are downstream of. */
 export function WhyItRepeats() {
   const gap = project(5, MODEL.assumptions)[0].deficit
@@ -21,7 +21,8 @@ export function WhyItRepeats() {
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
-          Lunenburg closed a budget gap last year and is facing a bigger one this year.
+          Lunenburg closed a budget gap for the year it is in, and a bigger one opens next
+          year.
           That is not mismanagement and it is not bad luck &mdash; it is arithmetic that
           was always going to produce this, and it will produce it again next year, and the
           year after. Here is the mechanism, what each way out is genuinely worth, and why

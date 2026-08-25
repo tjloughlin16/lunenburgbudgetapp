@@ -9,7 +9,7 @@ import { ADMIN, EXTRACURRICULAR, HEALTH_LEVERS, CONTRACT } from './answers'
  *  diverge forever no matter what you subtract from one of them.
  *
  *  That is the sentence residents cannot get to from a budget document, and it is the
- *  reason "we cut $600,000 last year and the hole is bigger this year" sounds like
+ *  reason "we just cut and the hole is bigger next year" sounds like
  *  incompetence rather than arithmetic. A cut is a LEVEL change: it drops the cost curve
  *  once and leaves its angle alone, so the curves resume diverging at exactly the rate
  *  they were diverging before. Only a change in a growth RATE changes the angle.

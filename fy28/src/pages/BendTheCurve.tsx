@@ -3,6 +3,7 @@ import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
   nextYear, HEADCOUNT,
 } from '../model/rates'
+import { ALREADY_CUT } from '../model/walk'
 import { RateBoard } from '../components/RateBoard'
 import { LevelVsSlope } from '../components/LevelVsSlope'
 import { Forever, StateAid } from '../components/Forever'
@@ -11,7 +12,7 @@ import { Section, Note } from '../components/primitives'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 
-/** The rate problem, made adjustable — the answer to "why didn't last year's cut fix it".
+/** The rate problem, made adjustable — the answer to "why doesn't this year's cut fix it".
  *
  *  "Why it repeats" already proves that the gap comes back, and proves it well. What it
  *  cannot do, because it is a static page, is let somebody discover the mechanism with
@@ -50,8 +51,10 @@ export function BendTheCurve({ onJump }: {
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
-          Lunenburg cut {usdShort(613_238)} last year and the hole is bigger this year. That
-          sounds like somebody failed. It is not &mdash;{' '}
+          The budget Lunenburg is running on right now cut{' '}
+          {usdShort(ALREADY_CUT.cost)} and {ALREADY_CUT.fte} positions, and next year the
+          hole is bigger than the one that bought. That sounds like somebody failed. It is
+          not &mdash;{' '}
           <strong style={{ color: 'var(--text-primary)' }}>it is what happens when you
           answer a rate problem with an amount</strong>. This page lets you do both and
           watch the difference.
@@ -128,8 +131,8 @@ export function BendTheCurve({ onJump }: {
           the clubs, most of technology, every administrator the law allows you to lose.
           The chart drops. Now look at the growth rate under that column:{' '}
           <strong>it has not moved</strong>, and the curve you just lowered is climbing at
-          exactly the angle it was before. That is why last year&rsquo;s cut did not stop
-          this year&rsquo;s hole, and it is the thing that is almost impossible to say in
+          exactly the angle it was before. That is why this year&rsquo;s cut does not stop
+          next year&rsquo;s hole, and it is the thing that is almost impossible to say in
           words.
           <br /><br />
           Then drag one rate on the right and watch the line change angle instead.</>}>
