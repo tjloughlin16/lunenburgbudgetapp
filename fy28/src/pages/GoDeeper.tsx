@@ -1,5 +1,5 @@
 import type { Tab } from '../routes'
-import { pathFor } from '../routes'
+import { LABEL, pathFor } from '../routes'
 import { Note } from '../components/primitives'
 
 /** Everything that is no longer in the reading order, kept and findable.
@@ -11,12 +11,12 @@ import { Note } from '../components/primitives'
  *  becomes unfindable either.
  *
  *  Grouped by the question somebody would be holding when they came looking. */
-const GROUPS: { title: string; sub: string; items: { id: Tab; name: string; what: string }[] }[] = [
+const GROUPS: { title: string; sub: string; items: { id: Tab; what: string }[] }[] = [
   {
     title: 'If you arrived with one particular question',
     sub: 'The walkthrough answers in sequence. These answer on demand.',
     items: [
-      { id: 'answers', name: 'Straight answers',
+      { id: 'answers',
         what: 'Ten questions people in Lunenburg actually ask, each answered with a number and the arithmetic that produced it. The best page here if you already know what you want to know.' },
     ],
   },
@@ -24,11 +24,11 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; name: string; what
     title: 'If you want a lever priced in full',
     sub: 'The walkthrough shows one chart from each of these. This is the rest of the argument.',
     items: [
-      { id: 'money', name: 'Find the money',
+      { id: 'money',
         what: 'Pick a number — $500,000, $1M, $2M — and see what raising it takes on every lever at once, with no projection involved. Including the several that cannot reach it at any price.' },
-      { id: 'override', name: 'Overrides',
+      { id: 'override',
         what: 'How big, for how long, and written for whom. What an override actually is, what one buys, why it is not one vote, and what a single question sized to last would cost.' },
-      { id: 'development', name: 'Development',
+      { id: 'development',
         what: 'Commercial and residential build rates as dials, with what each does to the town’s revenue, the school gap and the balance between homeowners and business.' },
     ],
   },
@@ -36,9 +36,9 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; name: string; what
     title: 'If you want the mechanism',
     sub: 'Why the gap reopens every year, and what it would take to stop it.',
     items: [
-      { id: 'why', name: 'Why it repeats',
+      { id: 'why',
         what: 'The original written version of the two-rates argument, before it became something you could operate. Longer, more detailed, and the place where the cut cascade is worked out to its end.' },
-      { id: 'curve', name: 'Bend the curve',
+      { id: 'curve',
         what: 'The full rate page. Everything in the walkthrough’s middle rooms, plus the leverage ranking, six futures priced side by side, what permanent balance requires, and what the state would have to do.' },
     ],
   },
@@ -46,9 +46,9 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; name: string; what
     title: 'If you want to decide it yourself',
     sub: 'The walkthrough refuses to say what should go. These do not.',
     items: [
-      { id: 'priorities', name: 'Priorities',
+      { id: 'priorities',
         what: 'Set the order things are given up in, and watch the cascade run year by year until the list runs out. Answers “in what order”, which the walkthrough leaves open on purpose.' },
-      { id: 'adjust', name: 'Build your own budget',
+      { id: 'adjust',
         what: 'Every dial that moves the gap, on one page, with a running total. The page to bring to a meeting.' },
     ],
   },
@@ -56,7 +56,7 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; name: string; what
     title: 'If you do not believe a number',
     sub: 'Which is the right instinct, and the reason this page exists.',
     items: [
-      { id: 'context', name: 'The situation',
+      { id: 'context',
         what: 'What happened, what it costs, and where every figure comes from — the published documents, the line-by-line derivations, and the reconciliations that show the model rebuilding the town’s own totals.' },
     ],
   },
@@ -93,7 +93,7 @@ export function GoDeeper({ onJump }: { onJump: (t: Tab) => void }) {
                 <button key={it.id} onClick={() => onJump(it.id)}
                   className="card p-4 text-left w-full transition-opacity hover:opacity-90">
                   <div className="flex items-baseline justify-between gap-3">
-                    <span className="text-[15px] font-bold">{it.name}</span>
+                    <span className="text-[15px] font-bold">{LABEL[it.id]}</span>
                     <span className="text-[11px] tnum shrink-0"
                       style={{ color: 'var(--text-muted)' }}>{pathFor(it.id)}</span>
                   </div>

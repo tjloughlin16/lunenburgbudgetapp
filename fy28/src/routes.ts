@@ -48,6 +48,32 @@ const BY_SLUG: Record<string, Tab> = {
       .filter(([, v]) => v).map(([k, v]) => [v, k])),
 }
 
+/** What each page is called, in one place.
+ *
+ *  Was duplicated between the nav, the Go deeper index and the breadcrumb, which is three
+ *  chances for a page to be called two things. */
+export const LABEL: Record<Tab, string> = {
+  walk: 'Start here',
+  deeper: 'Go deeper',
+  answers: 'Straight answers',
+  money: 'Find the money',
+  context: 'The situation',
+  why: 'Why it repeats',
+  curve: 'Bend the curve',
+  override: 'Overrides',
+  priorities: 'Priorities',
+  adjust: 'Build your own budget',
+  development: 'Development',
+}
+
+/** Which page a drill-in sits under, for the trail back when somebody arrives by link
+ *  rather than by clicking. The two boards hang off the walkthrough because they are in
+ *  its header; everything else is behind the one door. */
+export const PARENT: Partial<Record<Tab, Tab>> = {
+  answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
+  override: 'deeper', priorities: 'deeper', development: 'deeper',
+}
+
 export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')
 
 /** Whichever tab owns the root, derived rather than named.

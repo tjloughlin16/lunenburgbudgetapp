@@ -12,7 +12,7 @@ import { BendTheCurve } from './pages/BendTheCurve'
 import { Override } from './pages/Override'
 import { Walkthrough } from './pages/Walkthrough'
 import { GoDeeper } from './pages/GoDeeper'
-import { pathFor, tabFromPath, type Tab } from './routes'
+import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 
 
 /** The pages you use rather than read.
@@ -50,6 +50,10 @@ export default function App() {
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
+  /** The page they clicked from, so a breadcrumb can show the route actually taken. Null
+   *  after a deep link or a back button, where the honest answer is that we do not know
+   *  and the structural parent is used instead. */
+  const [from, setFrom] = useState<Tab | null>(null)
   // The commercial build rate is the same decision on two pages, so it lives here rather
   // than being duplicated. Housing is modeled on Development only.
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
@@ -59,7 +63,7 @@ export default function App() {
   // The back button has to work, or a shared link is a trap: follow one, look around,
   // and there is no way back to where you came from.
   useEffect(() => {
-    const onPop = () => setTab(tabFromPath(window.location.pathname))
+    const onPop = () => { setFrom(null); setTab(tabFromPath(window.location.pathname)) }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
@@ -100,7 +104,10 @@ export default function App() {
     setTab('context')
   }, [tab])
 
-  const go = (t: Tab) => { setTab(t); navigate(t); window.scrollTo({ top: 0 }) }
+  const go = (t: Tab) => {
+    if (t !== tab) setFrom(tab)
+    setTab(t); navigate(t); window.scrollTo({ top: 0 })
+  }
 
   const sendToAdjust = () => {
     const result = runCascade(order, MODEL.assumptions, 1)
@@ -164,6 +171,8 @@ export default function App() {
         )}
       </header>
 
+      {tab !== 'walk' && <Breadcrumb tab={tab} from={from} go={go} />}
+
       {tab === 'walk' && <Walkthrough onJump={go} />}
 
       {tab === 'deeper' && <GoDeeper onJump={go} />}
@@ -216,5 +225,39 @@ export default function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+/** Where you are, and the way back.
+ *
+ *  Every page except the walkthrough is now a drill-in, and several are reachable from
+ *  more than one place — Straight answers from Go deeper, from the walkthrough's exit, and
+ *  from a link somebody was sent. So the trail prefers the route actually taken and falls
+ *  back to the structural parent when the page was opened cold, which is the only honest
+ *  thing it can do.
+ *
+ *  Not sticky. The header above it already is, and two stacked bars would push every
+ *  page's own pinned content down for the sake of a line that is only read on arrival. */
+function Breadcrumb({ tab, from, go }: {
+  tab: Tab; from: Tab | null; go: (t: Tab) => void
+}) {
+  const via = from && from !== 'walk' && from !== tab ? from : PARENT[tab] ?? null
+  const trail: Tab[] = via ? ['walk', via] : ['walk']
+
+  return (
+    <nav aria-label="Breadcrumb"
+      className="border-b" style={{ borderColor: 'var(--grid)' }}>
+      <ol className="mx-auto max-w-6xl px-5 py-2.5 flex items-center gap-1.5 flex-wrap
+                     text-[12px]">
+        {trail.map(t => (
+          <li key={t} className="flex items-center gap-1.5">
+            <button onClick={() => go(t)} className="font-semibold hover:underline"
+              style={{ color: 'var(--series-cost)' }}>{LABEL[t]}</button>
+            <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
+          </li>
+        ))}
+        <li aria-current="page" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
+      </ol>
+    </nav>
   )
 }
