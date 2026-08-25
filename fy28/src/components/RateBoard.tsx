@@ -64,7 +64,7 @@ export function RateBoard() {
       <Verdicts verdict={verdict} blended={blended} revGrowth={revGrowth}
         longRun={longRun} years={years} cut={cut} overrideLevy={overrideLevy} />
 
-      <div className={pinned ? 'sticky z-20 top-[84px] lg:top-12 -mx-1 px-1 pb-2' : ''}
+      <div className={pinned ? 'sticky z-20 top-12 -mx-1 px-1 pb-2' : ''}
         style={pinned ? { background: 'var(--surface-2)' } : undefined}>
         <YearStatus years={years} compact={pinned} />
         <Curves years={years} baseline={baseline} touched={touched} compact={pinned}

@@ -35,7 +35,8 @@ const HOME_COSTS = Math.round(MODEL.taxBase.localCostPerPupil / MODEL.taxBase.ho
  *  Built alongside the tabs rather than instead of them, so nothing that works breaks while
  *  this is still wrong in places. */
 export function Walkthrough({ onJump }: {
-  onJump: (tab: 'money' | 'override' | 'curve' | 'adjust' | 'context' | 'answers') => void
+  onJump: (tab: 'money' | 'override' | 'curve' | 'adjust' | 'context' | 'answers'
+    | 'deeper') => void
 }) {
   const cuts = ALREADY_CUT
   const ranked = RATE_LINES.slice().sort((a, b) => b.swing - a.swing)
@@ -401,6 +402,10 @@ export function Walkthrough({ onJump }: {
             <button onClick={() => onJump('context')} className="text-[13px] font-semibold"
               style={{ color: 'var(--series-cost)' }}>
               Where these numbers come from &rarr;
+            </button>
+            <button onClick={() => onJump('deeper')} className="text-[13px] font-semibold"
+              style={{ color: 'var(--series-cost)' }}>
+              Everything this walkthrough left out &rarr;
             </button>
           </div>
         </div>
