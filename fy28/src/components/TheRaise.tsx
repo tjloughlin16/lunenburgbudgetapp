@@ -1,6 +1,5 @@
 import { usd, usdShort } from '../model/engine'
-import { nextYear, RATE_LINES, run, freshGap, DEFAULT_SCENARIO,
-         type Bucket } from '../model/rates'
+import { nextYear, RATE_LINES, run, DEFAULT_SCENARIO, type Bucket } from '../model/rates'
 
 const N = nextYear()
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
@@ -364,8 +363,20 @@ function Fact({ label, value, sub, tone }: {
  *  every year, for ever, and rising. */
 export function YearLedger() {
   const years = run(10, DEFAULT_SCENARIO)
-  const fresh = freshGap(years)
-  const avg = Math.round(fresh.reduce((s2, f) => s2 + f.fresh, 0) / fresh.length)
+  /* Simple difference between adjacent rows, starting from what FY27 is already behind.
+   *
+   * The obvious thing, and it was not what this column did. It used the "fresh" measure —
+   * net of the growth last year's fix would itself have produced — which is the right
+   * concept for the override treadmill and the wrong one here, because its first year is
+   * computed differently from all the others: it counts the whole $613,238 as new,
+   * ignoring the $103,724 the district was already behind. That inflated FY28 and made
+   * FY29 look like a fall in a series that only ever rises.
+   *
+   * This version can be checked by subtracting the column beside it, and its first year
+   * is the same $509,515 the top of the section already names. */
+  const grew = years.map((y, i) =>
+    y.gap - (i === 0 ? N.startingBehind : years[i - 1].gap))
+  const avg = Math.round(grew.reduce((a, b) => a + b, 0) / grew.length)
 
   return (
     <div className="card p-4">
@@ -388,7 +399,7 @@ export function YearLedger() {
             <th className="font-semibold py-1.5 text-right">Revenue available</th>
             <th className="font-semibold py-1.5 text-right">Revenue rose by</th>
             <th className="font-semibold py-1.5 text-right">Gap, running total</th>
-            <th className="font-semibold py-1.5 text-right">New that year</th>
+            <th className="font-semibold py-1.5 text-right">Grew by</th>
           </tr>
         </thead>
         <tbody>
@@ -408,7 +419,7 @@ export function YearLedger() {
             <td data-label="Gap, running total" className="py-1.5 text-right">
               {usd(N.startingBehind)}
             </td>
-            <td data-label="New that year" className="py-1.5 text-right"
+            <td data-label="Grew by" className="py-1.5 text-right"
               style={{ color: 'var(--text-muted)' }}>&mdash;</td>
           </tr>
           {years.map((y, i) => (
@@ -426,8 +437,8 @@ export function YearLedger() {
               </td>
               <td data-label="Gap, running total" className="py-1.5 text-right font-semibold"
                 style={{ color: 'var(--status-critical)' }}>{usd(y.gap)}</td>
-              <td data-label="New that year" className="py-1.5 text-right font-bold">
-                {usd(fresh[i].fresh)}
+              <td data-label="Grew by" className="py-1.5 text-right font-bold">
+                {usd(grew[i])}
               </td>
             </tr>
           ))}
@@ -438,10 +449,10 @@ export function YearLedger() {
         <strong>Read the last column.</strong> The running total looks explosive because it
         is cumulative &mdash; FY{years[1].fy}&rsquo;s {usdShort(years[1].gap)}{' '}
         <em>includes</em> FY{years[0].fy}&rsquo;s {usdShort(years[0].gap)} rather than
-        sitting on top of it. What is actually happening is steadier and worse: about{' '}
-        <strong>{usd(avg)} of new money is needed every single year</strong>, for ever, and
-        the figure rises. Close it once and the same ask returns the following spring,
-        slightly larger.
+        sitting on top of it. What is actually happening is steadier and worse: the hole
+        gets <strong>{usd(grew[0])} bigger next year and more every year after</strong>{' '}
+        &mdash; {usd(avg)} a year on average across the decade, and never once smaller.
+        Close it and the same ask returns the following spring, larger.
       </p>
     </div>
   )

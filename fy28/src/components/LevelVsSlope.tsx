@@ -219,6 +219,11 @@ export function OverrideTreadmill() {
         </tbody>
       </table>
       <p className="text-[12px] mt-3 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        These are smaller than the year-on-year growth in the gap shown earlier, and
+        deliberately so: last year&rsquo;s override is still there and has itself grown
+        2&frac12;%, so each row is only the new money needed on top of it.
+      </p>
+      <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         Each row is a separate vote, and each one is permanent &mdash; the tax column
         accumulates. A <strong>school-only</strong> question gives the schools every dollar
         it raises. The last column is the same job done by a general override covering all
