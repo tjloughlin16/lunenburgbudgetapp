@@ -273,13 +273,17 @@ export function OverrideSizing() {
           <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
             <th className="font-semibold py-1.5">To cover</th>
             <th className="font-semibold py-1.5 text-right">Through</th>
-            <th className="font-semibold py-1.5 text-right">That year&rsquo;s gap</th>
             <th className="font-semibold py-1.5 text-right">
-              &divide; compounding
+              The ballot question
               <span className="block text-[10px] font-normal"
-                style={{ color: 'var(--text-muted)' }}>2&frac12;% a year since FY28</span>
+                style={{ color: 'var(--text-muted)' }}>voted in FY28</span>
             </th>
-            <th className="font-semibold py-1.5 text-right">The ballot question</th>
+            <th className="font-semibold py-1.5 text-right">
+              Worth by then
+              <span className="block text-[10px] font-normal"
+                style={{ color: 'var(--text-muted)' }}>after compounding at 2&frac12;%</span>
+            </th>
+            <th className="font-semibold py-1.5 text-right">That year&rsquo;s gap</th>
             <th className="font-semibold py-1.5 text-right">On the average home, every year</th>
           </tr>
         </thead>
@@ -290,15 +294,14 @@ export function OverrideSizing() {
                 {r.years} {r.years === 1 ? 'year' : 'years'}
               </td>
               <td data-label="Through" className="py-1.5 text-right">FY{r.throughFy}</td>
+              <td data-label="The ballot question, voted in FY28"
+                className="py-1.5 text-right font-semibold">{usd(r.levy)}</td>
+              <td data-label="Worth by then" className="py-1.5 text-right"
+                style={{ color: 'var(--series-cost)' }}>
+                {usd(Math.round(r.levy * (1 + LEVY_CAP) ** (r.years - 1)))}
+              </td>
               <td data-label="That year&rsquo;s gap" className="py-1.5 text-right">
                 {usd(r.thatYearsGap)}
-              </td>
-              <td data-label="Divided by compounding" className="py-1.5 text-right"
-                style={{ color: 'var(--text-muted)' }}>
-                &divide; {((1 + LEVY_CAP) ** (r.years - 1)).toFixed(3)}
-              </td>
-              <td data-label="The ballot question" className="py-1.5 text-right font-semibold">
-                {usd(r.levy)}
               </td>
               <td data-label="On the average home, every year"
                 className="py-1.5 text-right font-semibold">${r.onAverageHome}</td>
@@ -306,13 +309,19 @@ export function OverrideSizing() {
           ))}
         </tbody>
       </table>
-      <p className="text-[12px] mt-3 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        Read a row across and the figure is not a mystery. Five years means through
-        FY{rows[3].throughFy}, whose gap is {usd(rows[3].thatYearsGap)}; an override passed
-        four years earlier has compounded at 2&frac12;% in the meantime, so it only has to
-        start at {usd(rows[3].thatYearsGap)} &divide;{' '}
-        {((1 + LEVY_CAP) ** 4).toFixed(3)} = {usd(rows[3].levy)}. Run the model at exactly
-        that number and FY{rows[3].throughFy} lands with nothing to spare.
+      <p className="text-[13px] mt-3 leading-relaxed">
+        <strong>Why {usdShort(rows[3].levy)} covers a {usdShort(rows[3].thatYearsGap)}{' '}
+        gap.</strong> Because {usd(rows[3].levy)} is what the ballot says in FY28, not what
+        it delivers in FY{rows[3].throughFy}. The levy limit it lifted compounds at
+        2&frac12;% like the rest of the limit, so by FY{rows[3].throughFy} that same
+        override is handing the schools{' '}
+        {usd(Math.round(rows[3].levy * (1 + LEVY_CAP) ** 4))} &mdash; which is
+        FY{rows[3].throughFy}&rsquo;s gap to the dollar. Read the last two columns of any
+        row and they match; that is the sizing rule, not a coincidence.
+      </p>
+      <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        Run the model at exactly {usd(rows[3].levy)} and FY{rows[3].throughFy} lands with
+        nothing to spare. Two thousand dollars less and it fails.
       </p>
       <p className="text-[12px] mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         Each extra year costs more than the last: the override compounds at 2&frac12;% and
