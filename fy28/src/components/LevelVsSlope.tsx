@@ -301,10 +301,10 @@ export function OverrideSizing() {
                 overrides in the SAME year, while the obvious reading — one override across
                 its own years — runs the other way and is shown underneath. */}
             <th className="font-semibold py-1.5 text-right">
-              If passed, its FY28 surplus
+              Extra collected next year
               <span className="block text-[10px] font-normal"
                 style={{ color: 'var(--text-muted)' }}>
-                over-collected in the first year alone
+                above the {usd(base[0].gap)} the schools are short in FY{base[0].fy}
               </span>
             </th>
           </tr>
@@ -327,7 +327,7 @@ export function OverrideSizing() {
               </td>
               <td data-label="On the average home, every year"
                 className="py-1.5 text-right font-semibold">${r.onAverageHome}</td>
-              <td data-label="If passed, its FY28 surplus" className="py-1.5 text-right"
+              <td data-label="Extra collected next year" className="py-1.5 text-right"
                 style={{ color: r.firstYearSurplus > 0 ? 'var(--status-warning)' : 'var(--text-muted)' }}>
                 {r.firstYearSurplus > 0 ? usd(r.firstYearSurplus) : '—'}
               </td>
@@ -356,9 +356,11 @@ export function OverrideSizing() {
           One {usdShort(rows[3].levy)} override, across its own five years
         </p>
         <p className="text-[12px] mt-0.5 mb-2" style={{ color: 'var(--text-secondary)' }}>
-          The column above compares different overrides in the same year. This is the other
-          direction, and the one people picture: a single override over-collects most in
-          its first year and least in its last, because the gap is growing into it.
+          The column above is next year only: pick a row, and that is how much more than
+          the {usd(base[0].gap)} shortfall it would collect in FY{base[0].fy}. This is the
+          other direction &mdash; one override followed through its own five years. It
+          collects most above the need in its first year and least in its last, because
+          the gap grows into it.
         </p>
         <ol className="grid grid-cols-5 gap-1.5">
           {run(5, { ...DEFAULT_SCENARIO, overrideLevy: rows[3].levy }).map(y => {
