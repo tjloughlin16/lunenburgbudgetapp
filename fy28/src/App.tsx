@@ -282,9 +282,20 @@ export default function App() {
             style={{ color: 'var(--series-cost)' }}>
             Go deeper &mdash; every other page &rarr;
           </button>
-          Lunenburg FY28 budget projection &mdash; an independent tool for residents.
-          Figures for FY27 and earlier are from published documents; FY28 onward are
-          projections. Last updated August 2026.
+          {/* Said plainly and near the top of the block, because it is the sentence
+              somebody quotes when they are asked "is this the Town's site?" — and because
+              a site that looks official and is not would cost the Town something it did
+              not agree to. */}
+          <p className="mb-2">
+            <strong style={{ color: 'var(--text-secondary)' }}>
+              An independent tool for residents.
+            </strong>{' '}
+            Not affiliated with the Town of Lunenburg, the School Committee or the school
+            district, and nothing here speaks for any of them. Everything on it is
+            arithmetic anybody can check against the documents it cites.
+          </p>
+          Lunenburg FY28 budget projection. Figures for FY27 and earlier are from published
+          documents; FY28 onward are projections. Last updated August 2026.
         </div>
       </footer>
     </div>
