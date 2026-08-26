@@ -350,23 +350,33 @@ function YearStatus({ years, compact }: {
 }) {
   return (
     <div className={compact ? 'mb-2' : 'mb-3'}>
+      {/* One line each, because it is one fact each.
+       *
+       * These were three stacked lines and vertical padding — the year, a glyph and a
+       * figure, one above the other, twelve times — which made the strip about as tall as
+       * the chart it sits above and spent the room's screen on layout rather than on
+       * controls. Laid out along the line it reads the same and costs a third of the
+       * height. The glyph stays: status is never carried by the colour alone. */}
       <ol className="grid grid-cols-6 sm:grid-cols-12 gap-1"
         aria-label="Whether each year is funded">
         {years.map(y => {
           const short = y.gap > 0
           return (
-            <li key={y.fy} className="rounded text-center py-1 px-0.5"
+            <li key={y.fy}
+              className="rounded px-1 py-0.5 flex items-baseline justify-center gap-1"
               title={short ? `FY${y.fy}: short by ${usd(y.gap)}` : `FY${y.fy}: funded`}
               style={{ background: short ? 'var(--status-critical)' : 'var(--status-good)',
                        color: '#fff' }}>
-              <p className="text-[10px] font-bold leading-none opacity-90">FY{y.fy}</p>
-              <p className="text-[11px] font-bold leading-none mt-0.5" aria-hidden="true">
+              <span className="text-[10px] font-bold leading-tight opacity-90">
+                FY{y.fy}
+              </span>
+              <span className="text-[10px] font-bold leading-tight" aria-hidden="true">
                 {short ? '\u2715' : '\u2713'}
-              </p>
-              <p className="hidden sm:block text-[10px] font-semibold tnum leading-none mt-0.5
-                            truncate" aria-hidden="true">
+              </span>
+              <span className="hidden sm:inline text-[10px] font-semibold tnum leading-tight
+                               truncate" aria-hidden="true">
                 {short ? usdShort(y.gap) : 'ok'}
-              </p>
+              </span>
               <span className="sr-only">
                 {short ? `not funded, short by ${usd(y.gap)}` : 'funded'}
               </span>
@@ -399,9 +409,21 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
   const hi = Math.max(...data.map(d => Math.max(d.base, d.cost))) * 1.02
   return (
     <div className={`card ${compact ? 'p-3' : 'p-4'}`}>
-      <div className="flex items-center justify-end -mb-1">
+      {/* Pinned, the key moves out of the chart and into the row the pin button was
+          already occupying alone. Recharts' legend costs thirty vertical pixels inside a
+          plot that is only a hundred and twenty tall — a quarter of the chart spent
+          naming two lines — and that row was empty apart from one button on the right. */}
+      <div className="flex items-baseline justify-between gap-2 -mb-1">
+        {compact ? (
+          <span className="flex items-baseline gap-2.5 flex-wrap min-w-0 text-[10px]
+                           leading-none" style={{ color: 'var(--text-secondary)' }}>
+            <Key colour="var(--series-cost)" label="Cost" />
+            <Key colour="var(--series-revenue)" label="Revenue" />
+            {touched && <Key colour="var(--axis)" label="As projected" dashed />}
+          </span>
+        ) : <span />}
         <button onClick={onTogglePin} aria-pressed={pinned}
-          className="text-[11px] font-semibold px-2 py-1 rounded"
+          className="text-[11px] font-semibold px-2 py-1 rounded shrink-0"
           style={{ color: pinned ? 'var(--series-cost)' : 'var(--text-muted)' }}>
           {pinned ? '\u25BC Unpin chart' : '\u25B2 Pin chart'}
         </button>
@@ -409,7 +431,8 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
       <div className={compact ? 'h-[124px] sm:h-[168px]' : 'h-[300px]'}
         style={{ width: '100%' }}>
         <ResponsiveContainer>
-          <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
+          <LineChart data={data}
+            margin={{ top: compact ? 2 : 8, right: 12, bottom: 4, left: 4 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
               stroke="var(--axis)" tickLine={false} interval="preserveStartEnd" />
@@ -423,10 +446,12 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
               formatter={(v, n) => [usd(v as number),
                 n === 'cost' ? 'Cost of today’s services'
                   : n === 'revenue' ? 'Revenue available' : 'Cost, as projected']} />
-            <Legend verticalAlign="top" height={30} iconType="plainline"
-              wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
-              formatter={v => v === 'cost' ? 'Cost of today’s services'
-                : v === 'revenue' ? 'Revenue available' : 'Cost, as projected'} />
+            {!compact && (
+              <Legend verticalAlign="top" height={30} iconType="plainline"
+                wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
+                formatter={v => v === 'cost' ? 'Cost of today’s services'
+                  : v === 'revenue' ? 'Revenue available' : 'Cost, as projected'} />
+            )}
             {touched && (
               <Line type="monotone" dataKey="base" stroke="var(--axis)" strokeWidth={1.5}
                 strokeDasharray="4 4" dot={false} isAnimationActive={false} />
@@ -445,6 +470,21 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
         </p>
       )}
     </div>
+  )
+}
+
+/** One line of the chart, named where there is room to name it. */
+function Key({ colour, label, dashed }: {
+  colour: string; label: string; dashed?: boolean
+}) {
+  return (
+    <span className="inline-flex items-center gap-1 whitespace-nowrap">
+      <span aria-hidden="true" className="inline-block w-3 h-[2px]"
+        style={dashed
+          ? { backgroundImage: `repeating-linear-gradient(to right, ${colour} 0 3px, transparent 3px 5px)` }
+          : { background: colour }} />
+      {label}
+    </span>
   )
 }
 
