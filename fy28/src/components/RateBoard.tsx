@@ -123,7 +123,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
        * that answers "did the angle change", which is the entire room — and the strip
        * drops out of the pinned block and sits above it instead, still visible, just not
        * following you. Wide screens keep both. */}
-      <div className={pinned ? `sticky z-20 ${stickyTop} -mx-1 px-1 pb-2` : ''}
+      <div className={pinned ? `sticky z-20 ${stickyTop} -mx-1 px-1 pb-1` : ''}
         style={pinned ? { background: 'var(--surface-2)' } : undefined}>
         <div className={pinned ? 'hidden sm:block' : ''}>
           <YearStatus years={years} compact={pinned} />
@@ -349,7 +349,7 @@ function YearStatus({ years, compact }: {
   years: ReturnType<typeof run>; compact?: boolean
 }) {
   return (
-    <div className={compact ? 'mb-2' : 'mb-3'}>
+    <div className={compact ? 'mb-1.5' : 'mb-3'}>
       {/* One line each, because it is one fact each.
        *
        * These were three stacked lines and vertical padding — the year, a glyph and a
@@ -407,62 +407,82 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
   }))
   const lo = Math.min(...data.map(d => Math.min(d.revenue, d.cost))) * 0.97
   const hi = Math.max(...data.map(d => Math.max(d.base, d.cost))) * 1.02
+  const plot = (
+    <ResponsiveContainer>
+      <LineChart data={data}
+        margin={{ top: compact ? 2 : 8, right: compact ? 6 : 12, bottom: 4, left: 4 }}>
+        <CartesianGrid stroke="var(--grid)" vertical={false} />
+        <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+          stroke="var(--axis)" tickLine={false} interval="preserveStartEnd" />
+        <YAxis domain={[lo, hi]} width={compact ? 44 : 58}
+          tick={{ fill: 'var(--text-muted)', fontSize: compact ? 10 : 11 }}
+          stroke="var(--axis)" tickLine={false} axisLine={false}
+          tickFormatter={v => usdShort(v as number)} />
+        <Tooltip
+          contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
+                          borderRadius: 10, fontSize: 12 }}
+          formatter={(v, n) => [usd(v as number),
+            n === 'cost' ? 'Cost of today’s services'
+              : n === 'revenue' ? 'Revenue available' : 'Cost, as projected']} />
+        {!compact && (
+          <Legend verticalAlign="top" height={30} iconType="plainline"
+            wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
+            formatter={v => v === 'cost' ? 'Cost of today’s services'
+              : v === 'revenue' ? 'Revenue available' : 'Cost, as projected'} />
+        )}
+        {touched && (
+          <Line type="monotone" dataKey="base" stroke="var(--axis)" strokeWidth={1.5}
+            strokeDasharray="4 4" dot={false} isAnimationActive={false} />
+        )}
+        <Line type="monotone" dataKey="cost" stroke="var(--series-cost)"
+          strokeWidth={2.5} dot={false} isAnimationActive={false} />
+        <Line type="monotone" dataKey="revenue" stroke="var(--series-revenue)"
+          strokeWidth={2.5} dot={false} isAnimationActive={false} />
+      </LineChart>
+    </ResponsiveContainer>
+  )
+
+  /* Pinned, everything that is not the plot goes into a rail beside it.
+   *
+   * A key and a pin button are each one line of text and were each taking a full row
+   * across the whole card — sixty vertical pixels, in a block whose entire problem is
+   * vertical pixels, to hold about two hundred horizontal ones of content. Stood up in a
+   * column to the right of the chart they cost nothing at all: that width was empty
+   * either way. The plot gets the height back and a little of the padding besides. */
+  if (compact) {
+    return (
+      <div className="card p-2">
+        <div className="flex items-stretch gap-2">
+          <div className="flex-1 min-w-0 h-[132px] sm:h-[184px]">{plot}</div>
+          <div className="w-[76px] sm:w-[104px] shrink-0 flex flex-col justify-between
+                          py-0.5">
+            <div className="flex flex-col gap-1.5 text-[10px] leading-none"
+              style={{ color: 'var(--text-secondary)' }}>
+              <Key colour="var(--series-cost)" label="Cost" />
+              <Key colour="var(--series-revenue)" label="Revenue" />
+              {touched && <Key colour="var(--axis)" label="As projected" dashed />}
+            </div>
+            <button onClick={onTogglePin} aria-pressed={pinned}
+              className="text-[10px] font-semibold text-left leading-tight"
+              style={{ color: 'var(--series-cost)' }}>
+              &#9660; Unpin<span className="hidden sm:inline"> chart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className={`card ${compact ? 'p-3' : 'p-4'}`}>
-      {/* Pinned, the key moves out of the chart and into the row the pin button was
-          already occupying alone. Recharts' legend costs thirty vertical pixels inside a
-          plot that is only a hundred and twenty tall — a quarter of the chart spent
-          naming two lines — and that row was empty apart from one button on the right. */}
-      <div className="flex items-baseline justify-between gap-2 -mb-1">
-        {compact ? (
-          <span className="flex items-baseline gap-2.5 flex-wrap min-w-0 text-[10px]
-                           leading-none" style={{ color: 'var(--text-secondary)' }}>
-            <Key colour="var(--series-cost)" label="Cost" />
-            <Key colour="var(--series-revenue)" label="Revenue" />
-            {touched && <Key colour="var(--axis)" label="As projected" dashed />}
-          </span>
-        ) : <span />}
+    <div className="card p-4">
+      <div className="flex items-center justify-end -mb-1">
         <button onClick={onTogglePin} aria-pressed={pinned}
-          className="text-[11px] font-semibold px-2 py-1 rounded shrink-0"
+          className="text-[11px] font-semibold px-2 py-1 rounded"
           style={{ color: pinned ? 'var(--series-cost)' : 'var(--text-muted)' }}>
           {pinned ? '\u25BC Unpin chart' : '\u25B2 Pin chart'}
         </button>
       </div>
-      <div className={compact ? 'h-[124px] sm:h-[168px]' : 'h-[300px]'}
-        style={{ width: '100%' }}>
-        <ResponsiveContainer>
-          <LineChart data={data}
-            margin={{ top: compact ? 2 : 8, right: 12, bottom: 4, left: 4 }}>
-            <CartesianGrid stroke="var(--grid)" vertical={false} />
-            <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
-              stroke="var(--axis)" tickLine={false} interval="preserveStartEnd" />
-            <YAxis domain={[lo, hi]} width={58}
-              tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
-              stroke="var(--axis)" tickLine={false} axisLine={false}
-              tickFormatter={v => usdShort(v as number)} />
-            <Tooltip
-              contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)',
-                              borderRadius: 10, fontSize: 12 }}
-              formatter={(v, n) => [usd(v as number),
-                n === 'cost' ? 'Cost of today’s services'
-                  : n === 'revenue' ? 'Revenue available' : 'Cost, as projected']} />
-            {!compact && (
-              <Legend verticalAlign="top" height={30} iconType="plainline"
-                wrapperStyle={{ fontSize: 12, color: 'var(--text-secondary)' }}
-                formatter={v => v === 'cost' ? 'Cost of today’s services'
-                  : v === 'revenue' ? 'Revenue available' : 'Cost, as projected'} />
-            )}
-            {touched && (
-              <Line type="monotone" dataKey="base" stroke="var(--axis)" strokeWidth={1.5}
-                strokeDasharray="4 4" dot={false} isAnimationActive={false} />
-            )}
-            <Line type="monotone" dataKey="cost" stroke="var(--series-cost)"
-              strokeWidth={2.5} dot={false} isAnimationActive={false} />
-            <Line type="monotone" dataKey="revenue" stroke="var(--series-revenue)"
-              strokeWidth={2.5} dot={false} isAnimationActive={false} />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
+      <div className="h-[300px]" style={{ width: '100%' }}>{plot}</div>
       {!compact && (
         <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
           Cutting drops the blue line and leaves its angle alone, so it climbs back to the

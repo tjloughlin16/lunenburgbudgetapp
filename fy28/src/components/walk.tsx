@@ -79,13 +79,16 @@ export function Room({ n, slug, tag, handsOn, title, corrects, children, leave }
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-5 py-9">
+      {/* Reading rooms get the generous vertical rhythm; hands-on rooms get their
+          controls on screen. Thirty-six pixels of breathing room above and below is right
+          for a page you read and is just distance to scroll on a page you operate. */}
+      <div className={`mx-auto max-w-6xl px-5 ${handsOn ? 'pt-5 pb-7' : 'py-9'}`}>
         {handsOn && (
           <h2 className="text-[19px] sm:text-2xl font-bold tracking-tight leading-snug
-                         mb-5 max-w-3xl">{title}</h2>
+                         mb-3 max-w-3xl">{title}</h2>
         )}
         {corrects && (
-          <p className="text-[13px] leading-relaxed pl-3.5 mb-5 max-w-2xl"
+          <p className="text-[13px] leading-relaxed pl-3.5 mb-4 max-w-2xl"
             style={{ borderLeft: '2px solid var(--status-critical)',
                      color: 'var(--text-secondary)' }}>
             <span className="block text-[10px] font-bold uppercase tracking-widest mb-1"
