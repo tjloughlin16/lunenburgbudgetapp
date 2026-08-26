@@ -249,7 +249,9 @@ export function Walkthrough({ onJump }: {
             slider has to be able to see them move without scrolling away from the control
             doing the moving. The offset is taller at sm and up because the heading's title
             sets larger there and can take two lines. */}
-        <RateBoard stickyTop="top-[136px] sm:top-[156px]" />
+        {/* 48px of site header plus the ~38px identity strip above. It was 136 when the
+            strip carried a two-line title as well. */}
+        <RateBoard stickyTop="top-[86px]" />
       </Room>
 
       {/* ------------------------------------------------ 07 */}

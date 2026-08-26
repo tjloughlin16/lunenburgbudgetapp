@@ -41,12 +41,19 @@ export function Room({ n, slug, tag, handsOn, title, corrects, children, leave }
       <span id={`room-${n}`} aria-hidden="true" className="block scroll-mt-12" />
       {/* The heading stays put for as long as you are in the room.
        *
-       * Rooms are long — several of them carry a whole chart — and a reader who scrolls
-       * into the middle of one has no way of telling which of eleven they are in or what
-       * question it was answering. Sticky inside the section rather than on the page, so
-       * it releases at the room boundary and the next room's heading takes over: the
-       * behaviour of a wall label you walk past, which is the thing this is imitating. */}
-      <div className="sticky top-12 z-10 backdrop-blur border-b"
+       * Rooms are long — several carry a whole chart — and a reader who scrolls into the
+       * middle of one has no way of telling which of eleven they are in or what question
+       * it was answering. Sticky inside the section rather than on the page, so it
+       * releases at the room boundary and the next room's heading takes over: the
+       * behaviour of a wall label you walk past, which is the thing this imitates.
+       *
+       * In a hands-on room only the identity strip stays. Three sticky layers were
+       * stacking there — site header, room heading, pinned chart — and a two-line title
+       * is the least useful of the three to a reader who is trying to drag a slider and
+       * watch a curve at the same time. You already know which room you are in; what you
+       * need on screen is the thing that moves when you move something. The strip keeps
+       * the orientation and gives the chart back its fifty pixels. */}
+      <div className={`sticky top-12 z-10 backdrop-blur border-b`}
         style={{ background: 'color-mix(in srgb, var(--surface-2) 93%, transparent)',
                  borderColor: 'var(--grid)' }}>
         <div className="mx-auto max-w-6xl px-5 py-2.5">
@@ -65,12 +72,18 @@ export function Room({ n, slug, tag, handsOn, title, corrects, children, leave }
             )}
             <SectionLink id={slug} what={`room ${n}`} />
           </div>
-          <h2 className="text-[17px] sm:text-2xl font-bold tracking-tight leading-snug
-                         mt-1 line-clamp-2">{title}</h2>
+          {!handsOn && (
+            <h2 className="text-[17px] sm:text-2xl font-bold tracking-tight leading-snug
+                           mt-1 line-clamp-2">{title}</h2>
+          )}
         </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-5 py-9">
+        {handsOn && (
+          <h2 className="text-[19px] sm:text-2xl font-bold tracking-tight leading-snug
+                         mb-5 max-w-3xl">{title}</h2>
+        )}
         {corrects && (
           <p className="text-[13px] leading-relaxed pl-3.5 mb-5 max-w-2xl"
             style={{ borderLeft: '2px solid var(--status-critical)',

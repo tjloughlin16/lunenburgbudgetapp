@@ -24,8 +24,13 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
   /** How far down the pinned block sits. The walkthrough puts a sticky room heading above
    *  it, so the board has to clear that rather than stack underneath it. */
   stickyTop?: string
-  /** Off inside the walkthrough: a sticky room heading plus a pinned chart plus the site
-   *  header is more than half a phone screen before any controls are visible. */
+  /** Whether the chart follows you down the page to begin with.
+   *
+   *  This once said "off inside the walkthrough", and the walkthrough never passed it —
+   *  the intention was written down and not wired up, which is worse than either choice,
+   *  because the reason it was written down was real. It is solved above instead, by
+   *  pinning less rather than by pinning nothing: unpinning entirely would take away the
+   *  curve, and watching the curve change is what the room is for. */
   defaultPinned?: boolean
   /** One of the packages, sent here from the board that names them.
    *
@@ -109,12 +114,28 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
       <Verdicts verdict={verdict} blended={blended} revGrowth={revGrowth}
         longRun={longRun} years={years} cut={cut} overrideLevy={overrideLevy} />
 
+      {/* What follows you down the page, and what does not.
+       *
+       * On a phone the pinned block was the year strip and the chart together, which with
+       * the site header and the room label above it left about a third of the screen for
+       * the controls it is supposed to be giving feedback about. Both halves are real
+       * feedback and only one of them can be afforded, so the curve stays — it is the one
+       * that answers "did the angle change", which is the entire room — and the strip
+       * drops out of the pinned block and sits above it instead, still visible, just not
+       * following you. Wide screens keep both. */}
       <div className={pinned ? `sticky z-20 ${stickyTop} -mx-1 px-1 pb-2` : ''}
         style={pinned ? { background: 'var(--surface-2)' } : undefined}>
-        <YearStatus years={years} compact={pinned} />
+        <div className={pinned ? 'hidden sm:block' : ''}>
+          <YearStatus years={years} compact={pinned} />
+        </div>
         <Curves years={years} baseline={baseline} touched={touched} compact={pinned}
           pinned={pinned} onTogglePin={() => setPinned(p => !p)} />
       </div>
+      {pinned && (
+        <div className="sm:hidden mt-2">
+          <YearStatus years={years} compact />
+        </div>
+      )}
 
       <div className="grid gap-4 lg:grid-cols-2 items-start mt-4">
         {/* ---- the level column: everything people actually propose ---- */}
@@ -385,7 +406,8 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
           {pinned ? '\u25BC Unpin chart' : '\u25B2 Pin chart'}
         </button>
       </div>
-      <div style={{ width: '100%', height: compact ? 168 : 300 }}>
+      <div className={compact ? 'h-[124px] sm:h-[168px]' : 'h-[300px]'}
+        style={{ width: '100%' }}>
         <ResponsiveContainer>
           <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
