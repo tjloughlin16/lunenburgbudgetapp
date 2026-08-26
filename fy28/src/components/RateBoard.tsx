@@ -123,7 +123,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
        * that answers "did the angle change", which is the entire room — and the strip
        * drops out of the pinned block and sits above it instead, still visible, just not
        * following you. Wide screens keep both. */}
-      <div className={pinned ? `sticky z-20 ${stickyTop} -mx-1 px-1 pb-1` : ''}
+      <div className={pinned ? `sticky z-20 ${stickyTop} -mx-1 px-1 pb-0.5` : ''}
         style={pinned ? { background: 'var(--surface-2)' } : undefined}>
         <div className={pinned ? 'hidden sm:block' : ''}>
           <YearStatus years={years} compact={pinned} />
@@ -410,7 +410,8 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
   const plot = (
     <ResponsiveContainer>
       <LineChart data={data}
-        margin={{ top: compact ? 2 : 8, right: compact ? 6 : 12, bottom: 4, left: 4 }}>
+        margin={{ top: compact ? 2 : 8, right: compact ? 6 : 12,
+                 bottom: compact ? 0 : 4, left: 4 }}>
         <CartesianGrid stroke="var(--grid)" vertical={false} />
         <XAxis dataKey="fy" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
           stroke="var(--axis)" tickLine={false} interval="preserveStartEnd" />
@@ -451,11 +452,15 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
    * either way. The plot gets the height back and a little of the padding besides. */
   if (compact) {
     return (
-      <div className="card p-2">
-        <div className="flex items-stretch gap-2">
+      <div className="card p-1.5">
+        <div className="flex items-start gap-2">
           <div className="flex-1 min-w-0 h-[132px] sm:h-[184px]">{plot}</div>
-          <div className="w-[76px] sm:w-[104px] shrink-0 flex flex-col justify-between
-                          py-0.5">
+          {/* Top-aligned rather than spread. Pushing the button to the foot of a rail as
+              tall as the chart put it a hundred pixels below the thing it belongs to and
+              read as bottom padding on the whole card — the one kind of space this block
+              cannot afford to look like it has. The rail's leftover height is invisible;
+              a gap under the plot is not. */}
+          <div className="w-[76px] sm:w-[104px] shrink-0 flex flex-col gap-2 pt-1">
             <div className="flex flex-col gap-1.5 text-[10px] leading-none"
               style={{ color: 'var(--text-secondary)' }}>
               <Key colour="var(--series-cost)" label="Cost" />
