@@ -5,16 +5,17 @@ import {
 import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, STATE_AID,
   nextYear, overrideForYears, longRunTarget, salaryRateToBalance, workforceShrink,
-  DEFAULT_RATES, ch70OnlyGrowth, aidGrowthToSustain, SHARE, HEADCOUNT,
+  DEFAULT_RATES, ch70OnlyGrowth, aidGrowthToSustain, SHARE, PACKAGES,
+  overrideOnAverageHome,
 } from '../model/rates'
 import { ADMIN, DEVELOPMENT } from '../model/answers'
 import { MODEL } from '../model/engine'
-import { Room, Say, Plate, AlreadyCut, OneTimeAnswers, WhatIsADevelopment } from '../components/walk'
+import { Room, Say, Plate, SectionLink, AlreadyCut, OneTimeAnswers,
+         WhatIsADevelopment } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
 import { RateBoard } from '../components/RateBoard'
 import { OverrideSizing, OverrideTreadmill, OverrideExplorer } from '../components/LevelVsSlope'
 import { PriceList } from '../components/PriceList'
-import { Forever } from '../components/Forever'
 import { Note } from '../components/primitives'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -36,8 +37,15 @@ const HOME_COSTS = Math.round(MODEL.taxBase.localCostPerPupil / MODEL.taxBase.ho
  *  this is still wrong in places. */
 export function Walkthrough({ onJump }: {
   onJump: (tab: 'money' | 'override' | 'curve' | 'adjust' | 'context' | 'answers'
-    | 'deeper') => void
+    | 'deeper' | 'solved') => void
 }) {
+  /** The cheapest ballot question on the packages page, which is the one figure from it
+   *  worth carrying into the room — an override an order of magnitude below the one the
+   *  town has already refused is the fact that makes somebody click through. */
+  const CHEAPEST = PACKAGES
+    .filter(p => (p.firstYears.overrideTownwide ?? 0) > 1000)
+    .reduce((a, b) => ((a.firstYears.overrideTownwide ?? 0)
+      <= (b.firstYears.overrideTownwide ?? 0) ? a : b))
   const cuts = ALREADY_CUT
   const ranked = RATE_LINES.slice().sort((a, b) => b.swing - a.swing)
   const salaryAt4 = salaryRateToBalance({ ...DEFAULT_RATES, health: 0.04 }, T)
@@ -77,7 +85,7 @@ export function Walkthrough({ onJump }: {
       </div>
 
       {/* ------------------------------------------------ 01 */}
-      <Room n={1} tag="Where the town actually is"
+      <Room n={1} slug="where-the-town-is" tag="Where the town actually is"
         title="What has already happened, and what has not been said yet"
         leave={<>The town has already given real things up, and the next round has not
           started. This is what the arithmetic says is coming before anybody announces
@@ -119,7 +127,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 02 */}
-      <Room n={2} tag="What the ask is"
+      <Room n={2} slug="the-ask" tag="What the ask is"
         title="&ldquo;More money&rdquo; means the same schools, one year older"
         corrects={<>&ldquo;The schools keep asking for more.&rdquo;</>}
         leave={<>The ask is not for more schooling. It is for the same schooling at next
@@ -144,7 +152,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 03 */}
-      <Room n={3} tag="What the town can give"
+      <Room n={3} slug="what-the-town-can-give" tag="What the town can give"
         title={<>The town can give {usd(N.allowed)} more, and that is the ceiling</>}
         corrects={<>&ldquo;The town is choosing not to fund the schools.&rdquo;</>}
         leave={<>The limit is a law from 1980, not a decision by anybody currently in the
@@ -165,7 +173,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 04 */}
-      <Room n={4} tag="The subtraction"
+      <Room n={4} slug="the-subtraction" tag="The subtraction"
         title={<>Costs want {usd(N.costTotal)}. Revenue offers {usd(N.allowed)}.</>}
         corrects={<>&ldquo;There must be waste in there somewhere.&rdquo;</>}
         leave={<>The deficit is a subtraction, and you have now watched it being done.</>}>
@@ -178,7 +186,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 05 */}
-      <Room n={5} tag="Whose fault it is"
+      <Room n={5} slug="whose-fault-it-is" tag="Whose fault it is"
         title="Only one line in the budget lives within its means"
         corrects={<>&ldquo;Salaries are eating the budget&rdquo; &mdash; the biggest line
           looks guiltiest, and is not.</>}
@@ -202,7 +210,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 06 */}
-      <Room n={6} tag="The centrepiece" handsOn
+      <Room n={6} slug="two-rates" tag="The centrepiece" handsOn
         title="Two rates, and they were never going to meet"
         corrects={<>&ldquo;We just cut. Why is there a hole again?&rdquo;</>}
         leave={<>Cuts change the amount. Only rates change the direction. This year&rsquo;s
@@ -245,7 +253,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 07 */}
-      <Room n={7} tag="The cuts you feel" handsOn
+      <Room n={7} slug="the-cuts" tag="The cuts you feel" handsOn
         title="What the things you would cut are actually worth"
         corrects={<>&ldquo;Cut the administrators.&rdquo; &middot; &ldquo;Cut sports before
           you cut classrooms.&rdquo;</>}
@@ -273,7 +281,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 08 */}
-      <Room n={8} tag="The revenue answer" handsOn
+      <Room n={8} slug="the-override" tag="The revenue answer" handsOn
         title="What one override actually buys"
         corrects={<>&ldquo;An override would fix this&rdquo; &middot; &ldquo;Overrides are
           just the schools coming back again.&rdquo;</>}
@@ -310,7 +318,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 09 */}
-      <Room n={9} tag="The growth answer"
+      <Room n={9} slug="commercial-development" tag="The growth answer"
         title="What commercial development would have to look like"
         corrects={<>&ldquo;Commercial development will grow us out of this.&rdquo;</>}
         leave={<>Commercial development is real money and the wrong order of magnitude
@@ -351,7 +359,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 10 */}
-      <Room n={10} tag="The advocacy answer"
+      <Room n={10} slug="the-state-house" tag="The advocacy answer"
         title="What winning at the State House would have to mean"
         corrects={<>&ldquo;Fix Chapter 70 and we&rsquo;re fine.&rdquo;</>}
         leave={<>Worth asking the delegation for. Not worth planning around.</>}>
@@ -382,11 +390,13 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 11 */}
-      <Room n={11} tag="What it would take" handsOn
+      <Room n={11} slug="what-it-takes" tag="What it would take" handsOn
         title="What &ldquo;solved&rdquo; would actually require"
         corrects={<>&ldquo;There must be a version of this where nobody gets hurt.&rdquo;</>}
-        leave={<>There is no painless version. There is a choice between kinds of pain, and
-          only one of the kinds ends the conversation.</>}>
+        leave={<>There is no painless version, and there are several that work. Five
+          quiet years is a smaller ask than thirty; every one of them moves both
+          salaries and insurance; and the packages that share the change cost a
+          fraction of the ones that spare either side.</>}>
         <Say>
           Permanent balance has exactly one condition: everything the district buys has to
           grow no faster than <strong>{pct(T)}</strong> a year, which is where the
@@ -398,20 +408,57 @@ export function Walkthrough({ onJump }: {
           are the residual, and the honest question is not whether the town can hold them to
           a number, but what is left for them once insurance has taken its share.
         </Say>
-        <Plate label="Leave insurance where it is, and balance on headcount alone" figures={[
-          { v: pct(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0)), k: 'the salary line would have to grow this slowly', tone: 'critical' },
-          { v: `${shrink.positionsPerYear.toFixed(1)}`, k: 'positions shed in the first year, and more every year after' },
+        <Say>
+          Start with the version of that nobody has to agree to, because it is the one
+          already happening. Leave insurance where it is, leave the bargained increase
+          where it is, and hold the salary line down by employing fewer people:
+        </Say>
+        <Plate label="The default — what happens if nobody decides anything" figures={[
+          { v: pct(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0)), k: 'all the salary line can grow, while insurance rises 9% a year', tone: 'critical' },
+          { v: `${shrink.positionsPerYear.toFixed(1)}`, k: 'positions gone in the first year, and more every year after' },
           { v: `−${pct(shrink.after20, 0)}`, k: 'of the workforce after twenty years', tone: 'critical' },
-          { v: pct(salaryAt4), k: 'what salaries could grow at instead, if insurance came to 4%', tone: 'good' },
+          { v: pct(salaryAt4), k: 'what the salary line could grow at instead, if insurance came to 4%', tone: 'good' },
         ]} />
         <Say>
-          <strong>Try it.</strong> Move the health insurance assumption down the table below
-          and watch what it leaves for salaries &mdash; and tick the box to hold the four
-          small lines to the cap as well. Read the other way, nobody loses a job and the
-          settlement itself lands near {pct(salaryAt4)}: roughly flat pay, permanently, for
-          about {HEADCOUNT} people. Any mix of the two works. What does not work is neither.
+          <strong>That is not a recommendation.</strong> It is what the arithmetic does on
+          its own when nobody chooses: every position left unfilled is an instalment on it,
+          and the town has been paying them for years without ever voting for the total.
+          It appears below as <strong>option five of seven</strong>, priced beside the
+          rest rather than standing on its own &mdash; and the last figure above is the
+          reason it is not the only option. What insurance does decides what is left for
+          salaries.
         </Say>
-        <Forever />
+        <Say>
+          So the one condition sounds like a single locked door, and it is not. There are
+          {' '}{PACKAGES.length} combinations that actually keep the gap shut &mdash; for
+          five years, for ten, for a generation, and {PACKAGES.filter(p => p.forEver).length}{' '}
+          that never reopen at all &mdash; and none of them pulls a single lever. The
+          cheapest of them costs an override of about{' '}
+          {usd(overrideOnAverageHome(CHEAPEST.firstYears.overrideTownwide ?? 0))} a year on
+          the average home, against the {usd(Math.round(MODEL.facts.tier1TaxIncrease))} one
+          the town turned down.
+        </Say>
+        <Say>
+          Each one names the rates it needs, the four interchangeable ways to cover the
+          first years &mdash; build, one override, user fees, or one permanent cut &mdash;
+          and who has to say yes. That is more arithmetic than a room can hold, so it has a
+          page of its own.
+        </Say>
+        <div className="card p-4 sm:p-5">
+          <p className="text-[15px] font-bold mb-1">
+            What &ldquo;solved&rdquo; would actually require
+          </p>
+          <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+            {PACKAGES.length} priced combinations, why every one of them moves at least two
+            lines, what a moderate result at the State House is worth to each, and the
+            table they were all drawn from. Any of them can be loaded straight into the
+            curve or the budget builder.
+          </p>
+          <button onClick={() => onJump('solved')} className="text-[13px] font-semibold"
+            style={{ color: 'var(--series-cost)' }}>
+            See what actually holds, and for how long &rarr;
+          </button>
+        </div>
       </Room>
 
       {/* The exit, which is not a room.
@@ -422,8 +469,11 @@ export function Walkthrough({ onJump }: {
       <section id="exit" className="scroll-mt-12 border-t py-14"
         style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
         <div className="mx-auto max-w-6xl px-5">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: 'var(--text-muted)' }}>The way out</p>
+          <div className="flex items-center gap-2.5 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: 'var(--text-muted)' }}>The way out</p>
+            <SectionLink id="exit" what="the way out" />
+          </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-[1.15]
                          mb-4 max-w-3xl">
             So the choice is not between a good option and a bad one
@@ -437,9 +487,9 @@ export function Walkthrough({ onJump }: {
           </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {([
+              ['solved', 'What solved requires', `${PACKAGES.length} combinations that keep the gap shut, priced and filed by how long they hold`],
               ['adjust', 'Build your own budget', 'Every dial that moves the gap, on one page'],
               ['curve', 'Bend the curve', 'Cut things, then change a rate, and watch which one works'],
-              ['answers', 'Straight answers', 'The questions people ask, answered one at a time'],
               ['deeper', 'Go deeper', 'Everything this walkthrough left out, and where the numbers come from'],
             ] as const).map(([id, label, what]) => (
               <button key={id} onClick={() => onJump(id)}

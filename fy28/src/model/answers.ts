@@ -341,7 +341,7 @@ export const DEVELOPMENT = {
  *  model itself uses for a "typical Lunenburg development", it stops reading as painless.
  *
  *  The composition is the model's own — see the `mix` archetype note. */
-const MIX: { label: string; share: number; id: string }[] = [
+export const DEVELOPMENT_MIX: { label: string; share: number; id: string }[] = [
   { label: 'Small shop or office', share: 0.35, id: 'small_biz' },
   { label: 'Restaurant', share: 0.15, id: 'restaurant' },
   { label: 'Retail plaza', share: 0.15, id: 'plaza' },
@@ -352,7 +352,7 @@ const MIX: { label: string; share: number; id: string }[] = [
 
 export const FEASIBILITY = (() => {
   const value = DEVELOPMENT.fiveYear.value
-  const each = MIX.map(m => {
+  const each = DEVELOPMENT_MIX.map(m => {
     const arch = T.archetypes.find(a => a.id === m.id)!
     const perYear = (value * m.share) / arch.value
     return { label: m.label, unit: arch.value, perYear, over5: Math.round(perYear * 5) }

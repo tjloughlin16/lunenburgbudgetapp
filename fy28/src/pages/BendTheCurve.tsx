@@ -1,12 +1,13 @@
 import { usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
-  nextYear, HEADCOUNT,
+  nextYear, HEADCOUNT, PACKAGES,
 } from '../model/rates'
 import { ALREADY_CUT } from '../model/walk'
 import { RateBoard } from '../components/RateBoard'
+import { type Package } from '../model/rates'
 import { LevelVsSlope } from '../components/LevelVsSlope'
-import { Forever, StateAid } from '../components/Forever'
+import { StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
 
@@ -25,8 +26,10 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  itself a rate. */
 const RAISE = nextYear()
 
-export function BendTheCurve({ onJump }: {
-  onJump: (tab: 'why' | 'money' | 'answers' | 'adjust' | 'override') => void
+export function BendTheCurve({ onJump, option = null }: {
+  onJump: (tab: 'why' | 'money' | 'answers' | 'adjust' | 'override' | 'solved') => void
+  /** An option loaded into this page's own board, from here or from the walkthrough. */
+  option?: { route: Package; nonce: number } | null
 }) {
   const base = run(12, DEFAULT_SCENARIO)
   const spread = COST_GROWTH_BLENDED - BASELINE_REVENUE_GROWTH
@@ -136,7 +139,7 @@ export function BendTheCurve({ onJump }: {
           words.
           <br /><br />
           Then drag one rate on the right and watch the line change angle instead.</>}>
-        <RateBoard />
+        <RateBoard seed={option} />
       </Section>
 
       <Section id="leverage" eyebrow="Where the leverage actually is"
@@ -220,14 +223,27 @@ export function BendTheCurve({ onJump }: {
 
       <Section id="forever" eyebrow="The actual question"
         title="What stable looks like — not for a year, forever"
-        lede={<>Everything above is about closing a gap. This is about never having one
-          again, which is a different and much harder question, and it has exactly one
-          condition: <strong>the weighted average of everything the district buys has to
-          grow no faster than the town&rsquo;s revenue</strong>. Four of the six lines are
-          fixed by contract, state law or the market. So salaries are the residual &mdash;
-          and the honest question is not whether the town can hold them to any particular
-          number, but what is left for them once insurance has taken its share.</>}>
-        <Forever />
+        lede={<>Everything above is about closing a gap. Never having one again is a
+          different and much harder question, and it has exactly one condition: the
+          weighted average of everything the district buys has to grow no faster than the
+          town&rsquo;s revenue. That sounds like one locked door and it is not &mdash;
+          there are {PACKAGES.length} combinations that keep the gap shut, filed by how
+          long they hold for, each with the rates it needs and the four interchangeable
+          ways to cover the first years. It outgrew this page and has one of its own.</>}>
+        <div className="card p-4 sm:p-5">
+          <p className="text-[15px] font-bold mb-1">What &ldquo;solved&rdquo; would actually require</p>
+          <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+            {PACKAGES.length} priced combinations &mdash; five years, ten, a generation, and{' '}
+            {PACKAGES.filter(p => p.forEver).length} that never reopen &mdash; plus why
+            every one of them moves at least two lines, what a moderate result at the State
+            House is worth to each, and the trade table they were drawn from. Any of them
+            loads straight back into the board above.
+          </p>
+          <button onClick={() => onJump('solved')} className="text-[13px] font-semibold"
+            style={{ color: 'var(--series-cost)' }}>
+            See what actually holds, and for how long &rarr;
+          </button>
+        </div>
       </Section>
 
       <Section id="state" eyebrow="The other way out"

@@ -10,7 +10,7 @@
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
-  | 'priorities' | 'adjust' | 'development'
+  | 'priorities' | 'adjust' | 'development' | 'solved'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -27,6 +27,7 @@ export const SLUG: Record<Tab, string> = {
   priorities: 'priorities',
   adjust: 'build-your-own-budget',
   development: 'development',
+  solved: 'what-solved-requires',
 }
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
@@ -39,6 +40,7 @@ const ALIASES: Record<string, Tab> = {
   why: 'why', rates: 'curve', curve: 'curve',
   override: 'override', 'the-override': 'override',
   adjust: 'adjust', budget: 'adjust', build: 'adjust',
+  solved: 'solved', packages: 'solved', sustainable: 'solved', forever: 'solved',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -64,6 +66,7 @@ export const LABEL: Record<Tab, string> = {
   priorities: 'Priorities',
   adjust: 'Build your own budget',
   development: 'Development',
+  solved: 'What solved would require',
 }
 
 /** Which page a drill-in sits under, for the trail back when somebody arrives by link
@@ -71,7 +74,7 @@ export const LABEL: Record<Tab, string> = {
  *  its header; everything else is behind the one door. */
 export const PARENT: Partial<Record<Tab, Tab>> = {
   answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
-  override: 'deeper', priorities: 'deeper', development: 'deeper',
+  override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
 }
 
 export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')

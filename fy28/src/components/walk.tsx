@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { usd } from '../model/engine'
 import { ALREADY_CUT, ONE_TIME_ANSWERS, SPREAD } from '../model/walk'
 import { MODEL, usdShort } from '../model/engine'
@@ -15,8 +15,17 @@ import { DEVELOPMENT, FEASIBILITY } from '../model/answers'
 
 /** One room. Everything about it is singular on purpose: one belief, one object, one
  *  sentence out. If a room needs two of any of those it is two rooms. */
-export function Room({ n, tag, handsOn, title, corrects, children, leave }: {
-  n: number; tag: string; handsOn?: boolean
+export function Room({ n, slug, tag, handsOn, title, corrects, children, leave }: {
+  n: number
+  /** The room's address, and the thing a shared link actually points at.
+   *
+   *  Named rather than numbered because the number is a position in a sequence and the
+   *  sequence has already changed once. Insert a room and every link anybody has sent
+   *  since starts opening the room next door — which is the failure mode a permanent URL
+   *  exists to prevent. `room-N` is kept alive below as an alias for links already out
+   *  there, and never generated again. */
+  slug: string
+  tag: string; handsOn?: boolean
   title: ReactNode
   /** The belief this room exists to dislodge. */
   corrects?: ReactNode
@@ -25,8 +34,11 @@ export function Room({ n, tag, handsOn, title, corrects, children, leave }: {
   leave: ReactNode
 }) {
   return (
-    <section id={`room-${n}`} className="scroll-mt-12 border-t"
+    <section id={slug} className="scroll-mt-12 border-t"
       style={{ borderColor: 'var(--grid)' }}>
+      {/* The old numbered anchor, kept working. A link that has been shared once is out
+          of your hands forever. */}
+      <span id={`room-${n}`} aria-hidden="true" className="block scroll-mt-12" />
       {/* The heading stays put for as long as you are in the room.
        *
        * Rooms are long — several of them carry a whole chart — and a reader who scrolls
@@ -51,6 +63,7 @@ export function Room({ n, tag, handsOn, title, corrects, children, leave }: {
                 Hands on
               </span>
             )}
+            <SectionLink id={slug} what={`room ${n}`} />
           </div>
           <h2 className="text-[17px] sm:text-2xl font-bold tracking-tight leading-snug
                          mt-1 line-clamp-2">{title}</h2>
@@ -75,6 +88,55 @@ export function Room({ n, tag, handsOn, title, corrects, children, leave }: {
         </div>
       </div>
     </section>
+  )
+}
+
+/** A permanent address for one section, offered rather than hidden.
+ *
+ *  Every room on this page has been quietly linkable the whole time and nothing said so,
+ *  which means the only people who could share a particular argument were the ones who
+ *  thought to read the DOM. This site is written to be quoted at a meeting — "the part
+ *  about what an override actually buys" should be a link somebody can send, not an
+ *  instruction to scroll.
+ *
+ *  Copies the absolute URL and updates the address bar, so the browser's own share and
+ *  bookmark controls agree with what was copied. `replaceState` rather than `pushState`:
+ *  collecting a history entry per heading would turn the back button into a tour of the
+ *  headings somebody clicked. */
+export function SectionLink({ id, what }: { id: string; what: string }) {
+  const [said, setSaid] = useState<'copied' | 'linked' | null>(null)
+
+  useEffect(() => {
+    if (!said) return
+    const t = setTimeout(() => setSaid(null), 1900)
+    return () => clearTimeout(t)
+  }, [said])
+
+  const onClick = (e: React.MouseEvent) => {
+    // Modified clicks are the reader opening it in a new tab, which already works.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+    e.preventDefault()
+    const here = `${window.location.pathname}#${id}`
+    window.history.replaceState(null, '', here)
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    // Clipboard access fails on insecure origins and wherever permission is refused. The
+    // link still works — the address bar has it — so say which of the two happened.
+    navigator.clipboard?.writeText(window.location.origin + here)
+      .then(() => setSaid('copied'), () => setSaid('linked')) ?? setSaid('linked')
+  }
+
+  return (
+    <a href={`#${id}`} onClick={onClick}
+      aria-label={`Copy a link to ${what}`}
+      className="ml-auto flex items-center gap-1 text-[10px] font-semibold uppercase
+                 tracking-widest leading-none shrink-0 opacity-60 hover:opacity-100
+                 focus-visible:opacity-100 transition-opacity"
+      style={{ color: said ? 'var(--status-good)' : 'var(--text-muted)' }}>
+      <span aria-hidden="true">#</span>
+      <span aria-live="polite">
+        {said === 'copied' ? 'Copied' : said === 'linked' ? 'In the bar' : 'Link'}
+      </span>
+    </a>
   )
 }
 

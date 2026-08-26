@@ -39,7 +39,9 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; what: string }[] }
       { id: 'why',
         what: 'The original written version of the two-rates argument, before it became something you could operate. Longer, more detailed, and the place where the cut cascade is worked out to its end.' },
       { id: 'curve',
-        what: 'The full rate page. Everything in the walkthrough’s middle rooms, plus the leverage ranking, six futures priced side by side, what permanent balance requires, and what the state would have to do.' },
+        what: 'The full rate page. Everything in the walkthrough’s middle rooms, plus the leverage ranking, six futures priced side by side, and what the state would have to do.' },
+      { id: 'solved',
+        what: 'Twelve combinations that actually keep the gap shut — for five years, ten, a generation, or permanently — each with the rates it needs, the four interchangeable ways to cover the first years, and who has to say yes. Plus why every one of them moves at least two lines.' },
     ],
   },
   {

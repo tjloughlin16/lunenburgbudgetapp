@@ -1,5 +1,6 @@
 import { MODEL, newGrowthPerDollar, expand, usd, usdShort } from './engine'
-import { ADMIN, EXTRACURRICULAR, HEALTH_LEVERS, CONTRACT } from './answers'
+import { ADMIN, DEVELOPMENT_MIX, EXTRACURRICULAR, HEALTH_LEVERS,
+         CONTRACT } from './answers'
 
 /** The rate problem, made adjustable.
  *
@@ -130,11 +131,19 @@ export interface Scenario {
   overrideLevy: number
   /** What state aid grows at. Normally an assumption; a lever in the state-aid section. */
   stateAidGrowth: number
+  /** New user-fee revenue per year, above what the town already charges.
+   *
+   *  A level, like a cut, and a weaker one: a cut lands on the salary base so the money
+   *  saved never gets its raise either, while a fee is a flat number of dollars that does
+   *  not grow at all unless somebody raises it again. It is here because it is the one
+   *  answer that asks nothing of the union, the Town or a developer — and because it has
+   *  a hard ceiling, which is the thing worth knowing about it. */
+  feeRevenue: number
 }
 
 export const DEFAULT_SCENARIO: Scenario = {
   rates: { ...DEFAULT_RATES }, newGrowth: A.new_growth, cut: 0, overrideLevy: 0,
-  stateAidGrowth: A.state_aid_growth,
+  stateAidGrowth: A.state_aid_growth, feeRevenue: 0,
 }
 
 export interface RateYear {
@@ -189,7 +198,7 @@ export function run(years: number, s: Scenario): RateYear[] {
      * It matters for exactly the question people ask about overrides — how many years does
      * one buy — and it was making the answer slightly too generous. */
     const override = s.overrideLevy * (1 + A.levy_growth) ** i
-    const revenue = approp + override + A.athletic_fee_revenue
+    const revenue = approp + override + A.athletic_fee_revenue + s.feeRevenue
     for (const k of BUCKETS) b[k] *= 1 + s.rates[k]
     const cost = BUCKETS.reduce((sum, k) => sum + b[k], 0)
 
@@ -521,9 +530,580 @@ export const STATE_AID = {
   ch70Share: T.ch70.aid / F.state_aid,
   shareOfTownRevenue: F.state_aid / F.omnibus,
   shareOfSchoolBudget: T.ch70.aid / F.lps_appropriation,
+  /** What the projection assumes Chapter 70 grows at — the same rate it grows the whole
+   *  cherry sheet at, since it carries state aid as one line. The comparison point for any
+   *  package that asks the State House for more. */
+  ch70Assumed: A.state_aid_growth,
   foundationBudget: T.ch70.foundationBudget,
   aboveFoundation: F.lps_appropriation - T.ch70.foundationBudget,
 }
+
+/* ---- what it takes, priced ------------------------------------------------ */
+
+/** The rate a cost curve has to get under to be safe *for ever*, as opposed to for a
+ *  generation.
+ *
+ *  `longRunTarget` measures revenue growth at year thirty, and at year thirty a flat
+ *  new-growth figure has not finished decaying — so 2.69% is the honest bar for a
+ *  lifetime and a generous one for eternity. Push the same projection out far enough and
+ *  the levy dominates everything else, state aid and local receipts shrink to nothing as
+ *  a share of it, and revenue growth converges on the one number nobody can vote away:
+ *  Proposition 2½ itself.
+ *
+ *  So there are two bars, and a route can clear one and fail the other. That is not
+ *  pedantry — it is the difference between "we stop cutting for thirty years" and "we
+ *  stop cutting", and it is what decides whether development is a solution or a reprieve. */
+export const FOREVER_BAR = LEVY_CAP
+
+/** Long enough that an option which merely defers the problem is seen deferring it.
+ *  Thirty years is the bar; sixty is the clock. Exported so the board and the arithmetic
+ *  cannot quietly disagree about what "for ever" was tested against. */
+export const ROUTE_CLOCK = 60
+
+/** The gap in the first year if nothing is done — the hole the town is arguing about
+ *  right now, and the yardstick for how long a route buys. A route that puts the gap back
+ *  to this size in FY29 has bought one year. */
+export const TODAY_GAP = run(1, DEFAULT_SCENARIO)[0].gap
+
+/** Doing nothing, for the whole clock. Every lever is worth what it takes off this. */
+const BASELINE_YEARS = run(ROUTE_CLOCK, DEFAULT_SCENARIO)
+/** The window a resident can actually picture, and the one the rest of the site uses. */
+const DECADE = 10
+
+/** What moving one line is worth, even when it does not close anything.
+ *
+ *  Insurance at 4% takes sixteen million dollars out of the next ten years and never
+ *  shuts the gap for a single April, and a page that scores it only on whether the gap
+ *  shut reports the most valuable uncontested move available as worth nothing. Both facts
+ *  belong to it. */
+export function decadeWorth(rates: Record<Bucket, number>) {
+  const years = run(DECADE, { ...DEFAULT_SCENARIO, rates })
+  const removed = BASELINE_YEARS.slice(0, DECADE)
+    .reduce((sum, b, i) => sum + (b.gap - years[i].gap), 0)
+  return {
+    removed,
+    firstYear: BASELINE_YEARS[0].gap - years[0].gap,
+    gapAtDecade: years[DECADE - 1].gap,
+    baselineAtDecade: BASELINE_YEARS[DECADE - 1].gap,
+    smallerBy: 1 - years[DECADE - 1].gap / BASELINE_YEARS[DECADE - 1].gap,
+  }
+}
+
+/** New growth expressed as buildings rather than as levy dollars.
+ *
+ *  A build rate quoted in levy dollars is unfalsifiable to a resident; quoted in
+ *  developments a year it can be argued with, which is the point. Uses the same $3.005M
+ *  mixed archetype the development page uses, so the two can never disagree. */
+const MIX_VALUE = T.archetypes.find(a => a.id === 'mix')?.value ?? T.mixValue
+/** Assessed value behind a figure of new growth, which is the unit the budget builder
+ *  and the development page both hold their build rate in. */
+export const newGrowthValueFor = (levyDollars: number) => (levyDollars * 1000) / T.rate
+export const developmentsFor = (levyDollars: number) =>
+  newGrowthValueFor(levyDollars) / MIX_VALUE
+
+/** The smallest flat build rate that keeps the gap shut for the whole thirty years, with
+ *  every cost rate left exactly where it is. The honest price of the answer everybody
+ *  reaches for first. */
+export function buildRateToHold(rates = DEFAULT_RATES, years = LONG): number | null {
+  let lo = 0, hi = 30_000_000
+  const holds = (ng: number) =>
+    run(years, { ...DEFAULT_SCENARIO, newGrowth: ng, rates }).every(y => y.gap <= 0)
+  if (!holds(hi)) return null
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2
+    if (holds(mid)) hi = mid; else lo = mid
+  }
+  return hi
+}
+
+/** Whether insurance is optional, answered rather than asserted.
+ *
+ *  "Insurance alone is never enough" is true and gets heard as "insurance is a sideshow",
+ *  which is the opposite of true. Both halves need the same treatment: five points off a
+ *  seventh of the budget is three quarters of a point off a blend that has to come down
+ *  two and a quarter, so it cannot finish the job — and every arrangement that skips it
+ *  has to buy those three quarters of a point from somebody else, at a price this prices.
+ *
+ *  Strictly, no: a town that held its settlement to 1.3% for ever would get there with
+ *  insurance untouched. The claim that survives being argued with is narrower and
+ *  stronger — skipping it costs roughly five times as much building, or a point off
+ *  everybody's pay, for the identical outcome. */
+export function insuranceLeverage(rate: number) {
+  const capped = { ...DEFAULT_RATES, health: rate, transport: LEVY_CAP,
+                   sped_tuition: LEVY_CAP, utilities: LEVY_CAP, other: LEVY_CAP }
+  const target = longRunTarget(DEFAULT_SCENARIO)
+  const salary = salaryRateToBalance(capped, target)
+  /** The other way to hold the same line: same contract, fewer people on it. */
+  const shrink = workforceShrink(Math.max(salary, 0), DEFAULT_RATES.salaries)
+  /** And the third: settle at the cap and buy the difference in development. */
+  const build = buildRateToHold({ ...capped, salaries: LEVY_CAP })
+  return {
+    rate, salary, positionsPerYear: shrink.positionsPerYear,
+    blendedAtCap: blendedOf({ ...capped, salaries: LEVY_CAP }),
+    build,
+    buildings: build === null ? null : buildScale(build).buildingsPerYear,
+  }
+}
+
+/** Today's rate and the one a serious plan-design or insurer change might reach. */
+export const INSURANCE_CASE = [DEFAULT_RATES.health, 0.04].map(insuranceLeverage)
+
+/** Which lines can be left out of the answer, tested rather than asserted.
+ *
+ *  "Insurance alone is never enough" and "the settlement alone is never enough" are both
+ *  true, and a reader who hears only that concludes neither is where the answer lives.
+ *  The opposite is the case, and the test that shows it is the one nobody runs: leave the
+ *  line exactly where it is, pin every other line in the budget to the levy cap, and see
+ *  whether anything reaches.
+ *
+ *  For salaries the answer is arithmetic rather than judgement. The line is two thirds of
+ *  the budget, so at a 4% settlement it consumes the whole of the revenue rate on its own
+ *  — every other line would have to grow at nothing at all, for ever, and the town would
+ *  still start the period behind. There is no arrangement of the other five that reaches
+ *  the bar. For insurance the answer is softer and still decisive: it can be skipped, at
+ *  roughly five times the building. */
+export const CANNOT_SKIP = (() => {
+  const bar = longRunTarget(DEFAULT_SCENARIO)
+  const others = (key: Bucket, r: number) => Object.fromEntries(
+    BUCKETS.map(k => [k, k === key ? DEFAULT_RATES[k] : r])) as Record<Bucket, number>
+
+  const line = (key: Bucket) => {
+    const l = RATE_LINES.find(x => x.key === key)!
+    const othersAtCap = others(key, LEVY_CAP)
+    const build = buildRateToHold(othersAtCap)
+    return {
+      key, label: l.label, weight: l.weight, rate: l.rate,
+      /** What this line alone takes out of the revenue rate, before anything else is
+       *  bought. Above the bar means nothing else in the budget may grow at all. */
+      consumes: l.weight * l.rate,
+      /** The best the other five can do while this one is left alone. */
+      blendedOthersAtCap: blendedOf(othersAtCap),
+      /** And if they were frozen outright, which nobody is proposing. */
+      blendedOthersFrozen: blendedOf(others(key, 0)),
+      /** What it would take in development to hold anyway, with the others at the cap. */
+      buildIfOthersAtCap: build,
+      buildingsIfOthersAtCap: build === null ? null : buildScale(build).buildingsPerYear,
+    }
+  }
+  return { bar, salaries: line('salaries'), health: line('health') }
+})()
+
+/** What a build rate is, in buildings and against what the town has actually managed.
+ *
+ *  Every option that leans on development quotes its ask in levy dollars, which is the
+ *  right unit for a budget and a useless one for judging whether it could happen. The
+ *  same figure in developments a year, against the best year the town has ever had and
+ *  against the whole commercial base it has accumulated since it was founded, is what
+ *  makes an ask arguable — and in one case here, what makes it obviously impossible.
+ *
+ *  Uses the development page's own archetype and its own history, so the two pages cannot
+ *  end up quoting different sizes for the same building. */
+export function buildScale(newGrowth: number) {
+  const best = (T.newGrowthHistory as { fy: number; amount: number }[])
+    .reduce((a, b) => (b.amount > a.amount ? b : a))
+  const developments = developmentsFor(newGrowth)
+  const value = newGrowthValueFor(newGrowth)
+  /* "81 developments a year" is a number without a unit — a reader cannot tell whether
+   * that is a strip mall or a shed, and the answer changes the argument completely. The
+   * development page makes exactly this point and then unpacks the archetype into real
+   * buildings; the same unpacking belongs here, because this is where somebody decides
+   * whether an option is possible. Same mix, same archetype values, one source. */
+  const each = DEVELOPMENT_MIX.map(m => {
+    const arch = T.archetypes.find(a => a.id === m.id)!
+    const perYear = (value * m.share) / arch.value
+    return { label: arch.name, short: m.label, unit: arch.value, perYear,
+             overFive: Math.round(perYear * 5) }
+  }).sort((a, b) => b.perYear - a.perYear)
+  /** A "development" is $3.0M of mixed value, which is more than one building — so the
+   *  building count is roughly 1.7× the development count, and printing the two side by
+   *  side without saying so reads as an arithmetic error. */
+  const buildingsPerYear = each.reduce((n, e) => n + e.perYear, 0)
+  return {
+    each, buildingsPerYear,
+    /** The buildings, counted rather than estimated: the archetype total rounds, so the
+     *  five-year figure is the sum of the rounded types rather than a rounded sum. */
+    buildingsInFive: each.reduce((n, e) => n + e.overFive, 0),
+    newGrowth,
+    extra: newGrowth - DEFAULT_SCENARIO.newGrowth,
+    timesToday: newGrowth / DEFAULT_SCENARIO.newGrowth,
+    timesBest: newGrowth / best.amount,
+    bestFy: best.fy, bestAmount: best.amount,
+    developments,
+    extraDevelopments: developmentsFor(newGrowth - DEFAULT_SCENARIO.newGrowth),
+    /** One new building every this many days, without stopping. Buildings rather than
+     *  developments, because a building is the thing somebody watches go up. */
+    everyDays: Math.max(1, Math.round(365 / buildingsPerYear)),
+    valuePerYear: value,
+    /** Everything commercial, industrial and personal the town has, accumulated over its
+     *  entire history. The thing an annual figure has to be read against. */
+    existingBase: T.fy23.cipValue,
+    existingCount: T.businesses,
+  }
+}
+
+/* ---- the combinations that hold, priced ---------------------------------- */
+
+/** How long a package keeps the gap shut. Not a verdict — a horizon somebody chooses.
+ *
+ *  A five-year answer is not a failed thirty-year answer. It is a smaller ask, bought
+ *  with a smaller settlement concession and a smaller cheque, and a town that wants ten
+ *  quiet years to negotiate in is entitled to know exactly what ten costs. */
+export type Horizon = 5 | 10 | 30 | typeof ROUTE_CLOCK
+
+/** The three interchangeable ways to cover the early years.
+ *
+ *  Fixing the rates stops the gap growing; it does not refund the year the town is
+ *  already behind in. Something has to cover that, and there are exactly three somethings
+ *  — cut once, pass one override, or build. They are alternatives rather than a list: any
+ *  one of them does it, and printing all three is the difference between a plan and a
+ *  demand. Null means no amount of that kind would do it. */
+export interface FirstYears {
+  /** A permanent reduction adopted once. It compounds with the salary line thereafter,
+   *  which is why it stays closed instead of buying twelve months. */
+  cut: number | null
+  /** A school-only override, and the townwide question that delivers it — the schools
+   *  keep only their share of a general one. */
+  override: number | null
+  overrideTownwide: number | null
+  /** Or no cheque at all, and a build rate instead. */
+  build: number | null
+  buildings: number | null
+  /** Or user fees, which have a ceiling — null where no reachable fee level does it. */
+  fees: number | null
+  /** How much of everything the three fees could ever raise this would use up. */
+  feeShareOfCeiling: number | null
+}
+
+const holdsWith = (rates: Record<Bucket, number>, years: number,
+                   over: Partial<Scenario>, stateAidGrowth = DEFAULT_SCENARIO.stateAidGrowth) =>
+  run(years, { ...DEFAULT_SCENARIO, rates, stateAidGrowth, ...over })
+    .every(y => y.gap <= 0)
+
+/** Smallest x that works, or null if the largest sane x does not. */
+function least(ok: (x: number) => boolean, hi: number): number | null {
+  if (!ok(hi)) return null
+  let lo = 0
+  for (let i = 0; i < 50; i++) {
+    const mid = (lo + hi) / 2
+    if (ok(mid)) hi = mid; else lo = mid
+  }
+  return hi
+}
+
+export function firstYearsFor(rates: Record<Bucket, number>, years: number,
+                              aid = DEFAULT_SCENARIO.stateAidGrowth): FirstYears {
+  const cut = least(x => holdsWith(rates, years, { cut: x }, aid), 8_000_000)
+  const override = least(x => holdsWith(rates, years, { overrideLevy: x }, aid), 12_000_000)
+  const build = least(x => holdsWith(rates, years, { newGrowth: x }, aid), 30_000_000)
+  /* Capped at the ceiling rather than solved without one: a fee figure above what the
+   * fees can raise is not a smaller answer, it is a different answer. */
+  const fees = least(x => holdsWith(rates, years, { feeRevenue: x }, aid), FEE_CEILING.total)
+  return {
+    cut, override, fees,
+    feeShareOfCeiling: fees === null ? null : fees / FEE_CEILING.total,
+    overrideTownwide: override === null ? null : override / SHARE,
+    build: build === null ? null : Math.max(build, DEFAULT_SCENARIO.newGrowth),
+    buildings: build === null ? null : buildScale(Math.max(build,
+      DEFAULT_SCENARIO.newGrowth)).buildingsPerYear,
+  }
+}
+
+/** Everything the three user fees could add, at the fee level that raises the most.
+ *
+ *  Not a policy proposal — a ceiling. Each lever's own peak is the point past which
+ *  raising the fee loses more participants than it gains dollars, and the district
+ *  already charges on two of the three. What is left is the headroom, and it is small
+ *  enough that knowing the number settles the argument: fees are a real answer to a
+ *  few hundred thousand and no answer at all to a few million.
+ *
+ *  The fee levels behind it are steep — the athletics peak is over a thousand dollars a
+ *  season — which is why the ceiling is quoted with them rather than on its own. */
+export const FEE_CEILING = (() => {
+  const each = MODEL.levers
+    .filter(l => l.kind === 'revenue' && l.peakYield != null)
+    .map(l => ({
+      id: l.id, name: l.name, unit: l.unit,
+      peakFee: l.peakFee ?? null, currentFee: l.current ?? 0,
+      headroom: Math.max(0, (l.peakYield ?? 0) - (l.currentYield ?? 0)),
+    }))
+  return { each, total: each.reduce((n, e) => n + e.headroom, 0) }
+})()
+
+/** What one more dollar on the levy does to the average tax bill.
+ *
+ *  An override is the only one of the three first-year answers whose cost lands on people
+ *  who do not work in the schools, and quoting it in levy dollars hides that completely.
+ *  Same arithmetic as the override treadmill above, so the two can never disagree. */
+export const overrideOnAverageHome = (levyDollars: number) =>
+  Math.round((T.avgHomeValue * ((levyDollars * 1000) / T.totalValue)) / 1000)
+
+/** A cut, in the things a cut is made of.
+ *
+ *  "$1.21M, once" is a number a reader cannot argue with because they cannot picture it,
+ *  and the word "once" makes it sound like a bad month rather than what it is: a
+ *  reduction adopted in one budget that stays out of every budget after it. Three
+ *  comparisons fix that, and the third is the one that matters — past a certain size
+ *  there is nothing discretionary left to take it from, and the balance comes out of
+ *  classrooms whatever anybody intended. */
+export function cutInThings(amount: number) {
+  return {
+    amount,
+    positions: amount / COST_PER_FTE,
+    /* The comparison against the cut the town has just lived through is made where it is
+     * printed: `ALREADY_CUT` lives in the walkthrough model, which imports this file, and
+     * reaching back for it here would close the loop. */
+    /** Against everything outside the classroom that could be cut at all: every sport,
+     *  the band and the clubs, most of technology, and every administrator the law
+     *  allows the district to lose. */
+    shareOfDiscretionary: amount / ALL_CUTS,
+    beyondDiscretionary: amount > ALL_CUTS,
+    discretionaryTotal: ALL_CUTS,
+    shareOfBudget: amount / F.lps_appropriation,
+  }
+}
+
+export interface Package {
+  id: string
+  horizon: Horizon
+  /** What this package is, in the terms somebody would argue about it in. */
+  label: string
+  /** Why you would pick this one over its siblings in the same band. */
+  angle: string
+  rates: Record<Bucket, number>
+  /** What all state aid grows at under this package. Equal to the assumed rate except on
+   *  the ones that ask the State House for something, where it is the whole point. */
+  stateAid: number
+  /** The same ask expressed as Chapter 70 alone, which is what a delegation is actually
+   *  lobbied for — the rest of the cherry sheet is not money the state would move for
+   *  this reason. Null where the package asks nothing of the state. */
+  ch70: number | null
+  whoSaysYes: string
+  note: string
+  blended: number
+  firstYears: FirstYears
+  /** The scenario the two boards load: the build version, since that is the one with no
+   *  cheque in it and the one whose curve can be watched going flat. */
+  scenario: Scenario
+  /** True where the cost rate is under the levy cap, so nothing has to keep going right
+   *  afterwards for it to keep working. */
+  forEver: boolean
+}
+
+const mix = (over: Partial<Record<Bucket, number>>): Record<Bucket, number> =>
+  ({ ...DEFAULT_RATES, transport: LEVY_CAP, sped_tuition: LEVY_CAP,
+     utilities: LEVY_CAP, other: LEVY_CAP, ...over })
+
+/** The packages that actually hold, arranged by how long they hold for.
+ *
+ *  This board used to be seven single levers, five of which did not work, which answered
+ *  a question nobody had: it takes a lot of space to say that pulling one lever is not
+ *  enough, and a reader who wants to know what to do is left with nothing to do. What
+ *  belongs on a menu is things you could order.
+ *
+ *  So every entry here is a combination that keeps the gap shut for the horizon it is
+ *  filed under, and the bands are horizons rather than verdicts. Within each band the
+ *  entries differ in who is asked for what — one spares the settlement, one spares
+ *  insurance, one shares it — because that is the actual decision, and because the
+ *  comparison makes its own argument: sharing costs a fraction of what sparing either
+ *  side costs, every time, at every horizon.
+ *
+ *  Why single levers are gone is answered underneath rather than here. It is analysis,
+ *  and this is a menu. */
+export const PACKAGES: Package[] = ([
+  {
+    id: 'five-shared', horizon: 5, label: 'Share it',
+    angle: 'Everybody gives a little, and it costs a fraction of the alternatives',
+    over: { salaries: 0.03, health: 0.05 },
+    whoSaysYes: 'The union settles at 3%, the Town gets insurance to 5% through plan '
+      + 'design or the GIC, and the district holds transport, special education, '
+      + 'utilities and supplies to the levy cap',
+    note: 'Look at what the other two cards in this band cost. Half a point off salary '
+      + 'growth and four points off insurance, split between two parties, buys the same five '
+      + 'years for roughly a third of the money.',
+  },
+  {
+    id: 'five-spare-pay', horizon: 5, label: 'Leave pay alone',
+    angle: 'No concession at the bargaining table at all',
+    over: { health: 0.05 },
+    whoSaysYes: 'The Town alone, on insurance, plus the district on its own four lines. '
+      + 'Nothing is asked of the union',
+    note: 'Salaries go on rising 4% and somebody else covers it. This is the version '
+      + 'that can be agreed without reopening a contract, and it is the most expensive '
+      + 'five years on the board.',
+  },
+  {
+    id: 'five-spare-insurance', horizon: 5, label: 'Leave insurance alone',
+    angle: 'Nothing asked of the Public Employee Committee',
+    over: { salaries: 0.03 },
+    whoSaysYes: 'The union settles at 3% and the district holds its own four lines to the '
+      + 'cap. Insurance goes on rising 9% a year',
+    note: 'The mirror image of the card above, and it costs almost exactly the same — '
+      + 'which is the clearest evidence on this page that the two lines are '
+      + 'interchangeable as arithmetic and only different as politics.',
+  },
+  {
+    id: 'ten-shared', horizon: 10, label: 'Share it',
+    angle: 'Salaries at the levy cap is what makes the cheque almost disappear',
+    over: { salaries: LEVY_CAP, health: 0.05 },
+    whoSaysYes: 'The union settles at the levy cap, the Town gets insurance to 5%, the '
+      + 'district holds its own four lines',
+    note: 'Half a point further on salaries than the five-year cards above, and the '
+      + 'one-time money falls by more than nine tenths while the quiet doubles. This is '
+      + 'the best-value package on the board.',
+  },
+  {
+    id: 'ten-gentler', horizon: 10, label: 'Gentler on pay',
+    angle: 'Salaries at 3%, paid for once',
+    over: { salaries: 0.03, health: 0.05 },
+    whoSaysYes: 'The same three parties, with half a point more left on the table for '
+      + 'staff and the difference found once instead',
+    note: 'The same rates as the five-year card, held for twice as long by covering more '
+      + 'of the early years up front. Nothing about the rates changed — only how much of '
+      + 'the head start was bought.',
+  },
+  {
+    id: 'ten-spare-pay', horizon: 10, label: 'Leave pay alone',
+    angle: 'Ten years without reopening the contract',
+    over: { health: 0.05 },
+    whoSaysYes: 'The Town on insurance and the district on its own lines. Nothing asked '
+      + 'of the union',
+    note: 'It can be done, and the price of not asking is on the card: several times the '
+      + 'one-time money of the shared version, for the same ten years.',
+  },
+  {
+    id: 'thirty-shared', horizon: 30, label: 'Share it, and build a little',
+    angle: 'A generation, with no cheque at all',
+    over: { salaries: 0.03, health: 0.05 },
+    whoSaysYes: 'The union at 3%, the Town at 5% on insurance, the district on its four '
+      + 'lines, and the Planning Board on a build rate the town has managed before',
+    note: 'The same rates as the five and ten-year cards. What buys the extra twenty '
+      + 'years is not holding salaries lower — it is development, at a rate roughly twice '
+      + 'what the town does now. Note what the one-time column says instead: a cheque '
+      + 'would have to be several million.',
+  },
+  {
+    id: 'thirty-cheap', horizon: 30, label: 'Hold salaries harder, and almost nothing else',
+    angle: 'The cheapest generation on the board, if salaries can carry it',
+    over: { salaries: LEVY_CAP, health: 0.04 },
+    whoSaysYes: 'The union at the levy cap, the Town at 4% on insurance, the district on '
+      + 'its four lines',
+    note: 'Half a point of salary growth and one point of insurance below the card above, '
+      + 'and thirty years arrives with a token cheque or a handful of buildings. This is '
+      + 'the shape of the whole problem in one comparison.',
+  },
+  {
+    id: 'thirty-spare-pay', horizon: 30, label: 'Leave pay alone for a generation',
+    angle: 'Salaries never move, and development pays for it',
+    over: { health: LEVY_CAP },
+    whoSaysYes: 'The Town holds insurance to the levy cap — the hardest version of that '
+      + 'ask — the district holds its four lines, and the town builds',
+    note: 'It is possible, and this is what it takes: every other line in the budget at '
+      + 'the cap, insurance included, and a build rate the town has never come near. The '
+      + 'salary line is the one no arrangement of the others can work around cheaply.',
+  },
+  {
+    id: 'state-halfway', horizon: ROUTE_CLOCK, aid: 0.052,
+    label: 'Meet the state halfway',
+    angle: 'A gentler local agreement, and Chapter 70 doing the other half',
+    over: { salaries: 0.03, health: 0.05 },
+    whoSaysYes: 'The union at 3%, the Town at 5% on insurance, the district on its four '
+      + 'lines — and the Legislature, in every budget from now on. Four of those five are '
+      + 'in this town and the fifth is not',
+    note: 'The same local agreement as the five and ten-year cards above, which needed a '
+      + 'cheque to reach even five years. With Chapter 70 growing at a rate a good year '
+      + 'already looks like, it needs nothing and never reopens. This is the honest form '
+      + 'of the ask to take to the delegation — not "fix it", but "make this agreement '
+      + 'enough".',
+  },
+  {
+    id: 'state-spares-pay', horizon: ROUTE_CLOCK, aid: 0.072,
+    label: 'The state carries it, and pay never moves',
+    angle: 'Nothing asked at the bargaining table, and a great deal asked at the State House',
+    over: { health: 0.05 },
+    whoSaysYes: 'The Town on insurance, the district on its four lines, and the '
+      + 'Legislature for very much more than the card above asks',
+    note: 'Every point of settlement left on the table has to be found somewhere, and here '
+      + 'it is found at the State House. Chapter 70 has not grown at this rate in any '
+      + 'recent year, which is the point of putting the two cards side by side: the local '
+      + 'agreement is what makes the state ask reasonable.',
+  },
+  {
+    id: 'for-ever', horizon: ROUTE_CLOCK, label: 'The one that never reopens',
+    angle: 'Under the levy cap on the cost side, so nothing has to keep going right',
+    over: { salaries: 0.02, health: 0.04 },
+    whoSaysYes: 'The union at 2%, the Town at 4% on insurance, the district on its four '
+      + 'lines. Nobody else — no developer, no legislature, no decade of luck',
+    note: 'No cheque, no override, no building. It is the hardest ask on the page and the '
+      + 'only one that ends the conversation, and those two facts are the same fact: '
+      + 'every cheaper package leans on something outside the town continuing to behave.',
+  },
+] as (Omit<Package, 'rates' | 'blended' | 'firstYears' | 'scenario' | 'forEver'
+  | 'stateAid' | 'ch70'>
+  & { over: Partial<Record<Bucket, number>>; aid?: number })[])
+  .map(({ over, aid, ...p }) => {
+    const rates = mix(over)
+    const stateAid = aid ?? DEFAULT_SCENARIO.stateAidGrowth
+    const firstYears = firstYearsFor(rates, p.horizon, stateAid)
+    return {
+      ...p, rates, firstYears, stateAid,
+      ch70: aid === undefined ? null : ch70OnlyGrowth(aid),
+      blended: blendedOf(rates),
+      /* With the state carrying part of the revenue side, "for ever" is no longer a
+       * question about the levy cap alone — the package holds because aid compounds
+       * faster than the gap does, which the horizon it was solved for already records. */
+      forEver: p.horizon === ROUTE_CLOCK
+        || blendedOf(rates) <= FOREVER_BAR + 0.0002,
+      scenario: { ...DEFAULT_SCENARIO, rates, stateAidGrowth: stateAid,
+                  newGrowth: firstYears.build ?? DEFAULT_SCENARIO.newGrowth },
+    }
+  })
+
+/** What a moderate improvement at the State House is worth to a local package.
+ *
+ *  State aid was on the old board as a lever of its own and came off with the rest of
+ *  them, which lost the finding rather than the option. Alone it does nothing — the town
+ *  is short in the early years while the aid ramps, so at any rate you like the gap is
+ *  open next April. Paired with a package it is the strongest thing on the page: the same
+ *  local agreement that needs a $372k cut at today's aid growth needs nothing at all if
+ *  Chapter 70 grows at the rate a good year already looks like.
+ *
+ *  Quoted against one reference package rather than all of them, because the shape is the
+ *  same for every package and ten copies of it would bury the point. Chapter 70 rates
+ *  alongside the cherry-sheet rate the projection actually grows, since the delegation is
+ *  asked for the first and the model moves the second. */
+export const STATE_AID_TRADE = (() => {
+  const reference = PACKAGES.find(p => p.id === 'five-shared')!
+  const rows = [DEFAULT_SCENARIO.stateAidGrowth, 0.03, 0.04, 0.05, 0.06].map(aid => {
+    const at = (over: Partial<Scenario>) =>
+      run(reference.horizon, { ...DEFAULT_SCENARIO, rates: reference.rates,
+                               stateAidGrowth: aid, ...over }).every(y => y.gap <= 0)
+    let cut: number | null = null
+    if (at({ cut: 8_000_000 })) {
+      let lo = 0, hi = 8_000_000
+      for (let i = 0; i < 50; i++) {
+        const mid = (lo + hi) / 2
+        if (at({ cut: mid })) hi = mid; else lo = mid
+      }
+      cut = hi
+    }
+    /** How long the package holds on the rates alone, with no cheque of any kind. */
+    let free = 0
+    for (const y of run(ROUTE_CLOCK, { ...DEFAULT_SCENARIO, rates: reference.rates,
+                                       stateAidGrowth: aid })) {
+      if (y.gap <= 0) free++; else break
+    }
+    return { aid, ch70: ch70OnlyGrowth(aid), cut, freeYears: free }
+  })
+  return { reference, rows, baseline: DEFAULT_SCENARIO.stateAidGrowth }
+})()
+
+/** The bands, in the order somebody meets them: the smallest ask first. */
+export const HORIZONS: { h: Horizon; title: string; sub: string }[] = [
+  { h: 5, title: 'Five years', sub: 'No cuts through FY32' },
+  { h: 10, title: 'Ten years', sub: 'No cuts through FY37' },
+  { h: 30, title: 'A generation', sub: 'No cuts for thirty years' },
+  { h: ROUTE_CLOCK, title: 'For ever', sub: 'It never reopens, and nothing has to keep going right' },
+]
 
 /* ---- the raise, and what eats it ----------------------------------------- */
 

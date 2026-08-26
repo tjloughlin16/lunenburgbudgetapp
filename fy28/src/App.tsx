@@ -11,19 +11,28 @@ import { FindTheMoney } from './pages/FindTheMoney'
 import { BendTheCurve } from './pages/BendTheCurve'
 import { Override } from './pages/Override'
 import { Walkthrough } from './pages/Walkthrough'
+import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
+import { type Package } from './model/rates'
 
 
-/** The pages you use rather than read.
+/** The three pages you use rather than read.
  *
  *  Kept out of the reading order on purpose, so they do not sit among the chapters
- *  pretending to be another chapter, and given the same weight as each other because
- *  they are the same kind of thing: a board of controls with a result attached. One
- *  moves amounts, the other moves rates, and between them they are what the rest of the
- *  site is written to prepare somebody for. */
+ *  pretending to be another chapter. Two of them are boards of controls with a result
+ *  attached — one moves amounts, one moves rates — and between them they are what the
+ *  rest of the site is written to prepare somebody for.
+ *
+ *  The third is the answer, and it goes first. It spent its life inside the walkthrough's
+ *  last room and then behind the Go deeper door, which is where a site puts the things it
+ *  is not sure anybody wants: a quiet index entry is the right shape for a derivation and
+ *  the wrong shape for the conclusion. Somebody who arrives already knowing the problem —
+ *  which by now is most of this town — should be one click from what would fix it. */
 const CTAS: { id: Tab; label: string; short: string; glyph: string; sub: string }[] = [
-  { id: 'curve', label: 'Bend the curve', short: 'Bend the curve', glyph: '\u2197',
+  { id: 'solved', label: 'What would fix it', short: 'What fixes it', glyph: '\u2713',
+    sub: 'Combinations that keep the gap shut — for five years, ten, a generation, or permanently' },
+  { id: 'curve', label: 'Bend the curve', short: 'The curve', glyph: '\u2197',
     sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
   { id: 'adjust', label: 'Build your own budget', short: 'Build a budget', glyph: '\u2699',
     sub: 'The interactive one — every dial that moves the gap, on one page' },
@@ -50,6 +59,11 @@ export default function App() {
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
+  /** One of the seven options, sent from the board that names them to a board that draws
+   *  it. Lives here because the two destinations are different pages, and because an
+   *  option loaded on the walkthrough has to survive the navigation to reach them. */
+  const [option, setOption] = useState<
+    { route: Package; nonce: number; to: Tab } | null>(null)
   /** The last page navigated from. Not for display — the breadcrumb is structural, and a
    *  crumb that changed depending on how you arrived would be a history trail wearing
    *  breadcrumb clothes. This exists only so that going up can pop the stack instead of
@@ -74,7 +88,14 @@ export default function App() {
   useEffect(() => {
     const id = window.location.hash.slice(1)
     if (!id) return
-    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView())
+    // Twice, because the first pass is often wrong. A room lands as soon as the tab has
+    // rendered, and then the charts inside it measure themselves and push everything
+    // below them down the page — so a link to a late section arrives at the right
+    // element and the wrong place. The second pass corrects it once layout has settled.
+    const scroll = () => document.getElementById(id)?.scrollIntoView()
+    requestAnimationFrame(scroll)
+    const settled = setTimeout(scroll, 400)
+    return () => clearTimeout(settled)
   }, [tab])
 
   // Deep links into the context page work from any tab: switch first, scroll once the
@@ -105,9 +126,15 @@ export default function App() {
     setTab('context')
   }, [tab])
 
-  const go = (t: Tab) => {
+  const go = (t: Tab, anchor?: string) => {
     if (t !== tab) setFrom(tab)
-    setTab(t); navigate(t); window.scrollTo({ top: 0 })
+    setTab(t); navigate(t, anchor)
+    // The hash effect above scrolls once the target tab has rendered. It only fires on a
+    // tab change, so a jump inside the page you are already on has to scroll itself.
+    if (!anchor) window.scrollTo({ top: 0 })
+    else if (t === tab)
+      requestAnimationFrame(() =>
+        document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' }))
   }
 
   /** Going up a level. Never grows the history stack.
@@ -128,6 +155,15 @@ export default function App() {
       window.history.replaceState(null, '', url)
     window.scrollTo({ top: 0 })
   }
+
+  /** Send an option to a board. The curve draws it; the builder prices it in things. */
+  const loadOption = (route: Package, to: 'curve' | 'adjust') => {
+    setOption({ route, nonce: Date.now(), to })
+    go(to, to === 'curve' ? 'board' : undefined)
+  }
+  /* Only the board it was sent to picks it up. Otherwise walking onto the other board
+   * later would silently rewrite a scenario the reader had been building by hand. */
+  const optionFor = (t: Tab) => (option?.to === t ? option : null)
 
   const sendToAdjust = () => {
     const result = runCascade(order, MODEL.assumptions, 1)
@@ -160,12 +196,16 @@ export default function App() {
             {DEEPER.label}
           </button>
 
-          <div className="flex items-center gap-1.5 ml-auto shrink-0">
+          {/* Scrolls rather than wraps or truncates: three buttons plus the brand is
+              wider than a small phone, and a nav that reflows to two rows moves the page
+              under the reader's thumb. */}
+          <div className="no-scrollbar flex items-center gap-1.5 ml-auto min-w-0
+                          overflow-x-auto overscroll-x-contain">
             {CTAS.map(c => (
               <button key={c.id} onClick={() => go(c.id)} title={c.sub}
                 aria-current={tab === c.id ? 'page' : undefined}
                 className="cta flex items-center gap-1.5 text-xs font-bold
-                           px-3 py-2 rounded-md whitespace-nowrap shrink-0
+                           px-2.5 py-2 rounded-md whitespace-nowrap shrink-0
                            transition-opacity hover:opacity-90"
                 style={tab === c.id
                   ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
@@ -209,7 +249,9 @@ export default function App() {
 
       {tab === 'why' && <WhyItRepeats />}
 
-      {tab === 'curve' && <BendTheCurve onJump={go} />}
+      {tab === 'curve' && <BendTheCurve onJump={go} option={optionFor('curve')} />}
+
+      {tab === 'solved' && <Solved onLoadPackage={loadOption} />}
 
       {tab === 'override' && <Override onJump={go} />}
 
@@ -219,7 +261,8 @@ export default function App() {
       )}
 
       {tab === 'adjust' && (
-        <Adjust seed={seed} onJump={jump} onDevelopment={() => go('development')}
+        <Adjust seed={seed} option={optionFor('adjust')} onJump={jump}
+          onDevelopment={() => go('development')}
           newValue={newValue} setNewValue={setNewValue} />
       )}
 
