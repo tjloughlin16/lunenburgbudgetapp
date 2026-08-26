@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { usd, usdShort } from '../model/engine'
 import {
-  DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, LONG, RATE_LINES, STATE_AID,
-  longRunTarget, salaryRateToBalance, workforceShrink, stability, HEADCOUNT,
+  DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, STATE_AID,
+  longRunTarget, salaryRateToBalance, workforceShrink, HEADCOUNT,
   aidGrowthToSustain, aidSchedule, ch70OnlyGrowth, type Bucket,
 } from '../model/rates'
 
@@ -28,7 +28,7 @@ const HEALTH_STEPS = [0.09, 0.07, 0.06, 0.05, 0.04, LEVY_CAP]
  *  and then, because a salary LINE and a salary RATE are different things, what that means
  *  in people. It is a harder set of numbers than anybody quotes, and it does not improve
  *  by being left unsaid. */
-export function Forever() {
+export function HealthSalaryTrade() {
   const [othersAtCap, setOthersAtCap] = useState(false)
 
   const ratesFor = (health: number): Record<Bucket, number> => othersAtCap
@@ -44,29 +44,11 @@ export function Forever() {
 
   return (
     <div>
-      <div className="card p-4 sm:p-5 mb-4">
-        <p className="text-[15px] leading-relaxed">
-          <strong>There is only one condition, and it is a rate.</strong> The weighted
-          average of everything the district buys has to grow no faster than{' '}
-          <strong className="tnum">{pct(TARGET)}</strong> a year &mdash; what the
-          town&rsquo;s revenue settles at over {LONG} years, once the fixed{' '}
-          {usdShort(S.newGrowth)} of new growth has finished shrinking as a share of a
-          bigger town. Above that line the gap reopens forever. Below it, it never does.
-        </p>
-        <p className="text-[13px] leading-relaxed mt-2" style={{ color: 'var(--text-secondary)' }}>
-          This is a stricter test than the board above, which judges over 12 years. A build
-          rate or a settlement that looks sustainable for a decade often is not: the
-          decisive question is which of the two curves is steeper at the end, not where
-          they sit at the start.
-        </p>
-      </div>
-
-      {/* ---- the trade, which is the actual answer ---- */}
       <div className="card p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-3 mb-1">
-          <h3 className="text-[15px] font-bold">
+          <h4 className="text-[14px] font-bold">
             What health insurance does decides what is left for salaries
-          </h3>
+          </h4>
           <label className="flex items-center gap-2 text-[12px] cursor-pointer"
             style={{ color: 'var(--text-secondary)' }}>
             <input type="checkbox" checked={othersAtCap}
@@ -76,8 +58,8 @@ export function Forever() {
         </div>
         <p className="text-[12px] mb-3" style={{ color: 'var(--text-secondary)' }}>
           Salaries are two thirds of the budget, so whatever the other lines do, salaries
-          are what absorbs it. The last two columns assume the settlement stays at{' '}
-          {pct(CONTRACT_RATE, 1)} and the line is held down by employing fewer people
+          are what absorbs it. The last two columns assume the bargained increase stays
+          at {pct(CONTRACT_RATE, 1)} and the line is held down by employing fewer people
           instead &mdash; which is one of the two ways to get there, and the one nobody
           says out loud.
         </p>
@@ -134,57 +116,29 @@ export function Forever() {
         </p>
       </div>
 
-      {/* ---- the same number, read the other way ---- */}
-      <div className="grid gap-3 lg:grid-cols-2 items-start mt-4">
-        <div className="card p-4">
-          <h4 className="text-[14px] font-bold mb-2">Or nobody loses a job</h4>
+      {/* ---- the same number, read the other way ----
+       *
+       * This card used to sit beside a four-line checklist of combinations that hold for
+       * thirty years. The routes board above does that job properly now — priced, with
+       * who has to agree to each — so the checklist went rather than say the same thing
+       * twice and less well. */}
+      <div className="card p-4 mt-4">
+        <h4 className="text-[14px] font-bold mb-2">Or nobody loses a job</h4>
+        <div className="grid gap-x-5 gap-y-2 lg:grid-cols-2">
           <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             A salary <em>line</em> and a salary <em>rate</em> are different things, and the
             table above only shows one way to reconcile them. The other is that the
-            settlement itself lands at that number: everyone keeps their job, and with
+            salary rate itself lands at that number: everyone keeps their job, and with
             insurance at {pct(0.04, 1)} the scale rises {pct(rows[4].salary)} a year
             instead of {pct(CONTRACT_RATE, 1)}. Against inflation that is roughly flat pay,
             permanently, for roughly {HEADCOUNT} people &mdash; and it is bargained, three
             years at a time, by people who can decline.
           </p>
-          <p className="text-[13px] leading-relaxed mt-2" style={{ color: 'var(--text-secondary)' }}>
-            Any mix of the two works. What does not work is neither.
-          </p>
-        </div>
-
-        <div className="card p-4">
-          <h4 className="text-[14px] font-bold mb-2">What actually holds for {LONG} years</h4>
-          <ul className="space-y-2">
-            {[
-              { label: `Every line at ${pct(LEVY_CAP, 1)}`,
-                s: { ...S, rates: Object.fromEntries(
-                  RATE_LINES.map(l => [l.key, LEVY_CAP])) as Record<Bucket, number> } },
-              { label: 'Salaries 2%, health 4%, the rest at the cap',
-                s: { ...S, rates: { ...DEFAULT_RATES, salaries: 0.02, health: 0.04,
-                  transport: LEVY_CAP, sped_tuition: LEVY_CAP, utilities: LEVY_CAP,
-                  other: LEVY_CAP } } },
-              { label: `Build ${usdShort(1_600_000)} of new growth a year, rates untouched`,
-                s: { ...S, newGrowth: 1_600_000 } },
-              { label: 'Salaries 2.5%, health 4%, the rest untouched',
-                s: { ...S, rates: { ...DEFAULT_RATES, salaries: LEVY_CAP, health: 0.04 } } },
-            ].map(c => {
-              const st = stability(c.s)
-              return (
-                <li key={c.label} className="flex items-start justify-between gap-3
-                  border-t pt-2" style={{ borderColor: 'var(--grid)' }}>
-                  <span className="text-[13px] leading-snug min-w-0">{c.label}</span>
-                  <span className="text-[12px] font-bold tnum whitespace-nowrap shrink-0"
-                    style={{ color: st.rateOk ? 'var(--status-good)' : 'var(--status-critical)' }}>
-                    {pct(st.blended)} {st.rateOk ? '✓' : '✕'}
-                  </span>
-                </li>
-              )
-            })}
-          </ul>
-          <p className="text-[11px] mt-3" style={{ color: 'var(--text-muted)' }}>
-            Against the {pct(TARGET)} bar. Note the third: building is a real answer to the
-            level and a poor one to the rate, because a flat dollar figure of new growth is
-            a shrinking share of a growing town. To hold as a rate it has to keep rising.
+          <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            Any mix of the two works, and that is the point of the board above rather than
+            a footnote to it: every option that reaches is a mixture of things nobody wants
+            to do, and a mixture asks less of each person than any single one of them does
+            on its own. What does not work is neither.
           </p>
         </div>
       </div>

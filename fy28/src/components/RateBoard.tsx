@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts'
@@ -7,7 +7,7 @@ import {
   RATE_LINES, DEFAULT_RATES, DEFAULT_SCENARIO, CUT_OPTIONS, LEVY_CAP,
   blendedOf, run, revenueGrowthOf, longRunRevenueGrowth, verdictOf, consequenceOf,
   overrideStops,
-  type Bucket, type Scenario, type Verdict,
+  type Bucket, type Package, type Scenario, type Verdict,
 } from '../model/rates'
 
 const YEARS = 12
@@ -20,18 +20,29 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  blended cost growth underneath them, and the left one never moves — that refusal is
  *  the entire teaching device, and it is why the columns are laid out as a pair rather
  *  than as one list of controls. */
-export function RateBoard({ stickyTop = 'top-12', defaultPinned = true }: {
+export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = null }: {
   /** How far down the pinned block sits. The walkthrough puts a sticky room heading above
    *  it, so the board has to clear that rather than stack underneath it. */
   stickyTop?: string
   /** Off inside the walkthrough: a sticky room heading plus a pinned chart plus the site
    *  header is more than half a phone screen before any controls are visible. */
   defaultPinned?: boolean
+  /** One of the packages, sent here from the board that names them.
+   *
+   *  Reading that a package holds and watching its curve go flat are different kinds of
+   *  knowing, and the second one is the reason this page exists. The nonce is what lets
+   *  the same package be sent twice after the reader has dragged something. */
+  seed?: { route: Package; nonce: number } | null
 } = {}) {
   const [rates, setRates] = useState<Record<Bucket, number>>({ ...DEFAULT_RATES })
   const [cuts, setCuts] = useState<Set<string>>(new Set())
   const [overrideLevy, setOverrideLevy] = useState(0)
   const [newGrowth, setNewGrowth] = useState(DEFAULT_SCENARIO.newGrowth)
+  /* Not a control on this board — the only thing that sets it is option one, whose whole
+   * point is that it moves the revenue line and nothing else. Carried anyway so that
+   * loading that option shows what it actually does rather than showing nothing. */
+  const [stateAidGrowth, setStateAidGrowth] = useState(DEFAULT_SCENARIO.stateAidGrowth)
+  const [loaded, setLoaded] = useState<Package | null>(null)
   // The controls are long and the chart is the feedback, so by default the chart follows
   // you down the page. Pinning is a preference, not a mode — some readers want the whole
   // curve and the table space back.
@@ -39,17 +50,16 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true }: {
 
   const cut = CUT_OPTIONS.filter(c => cuts.has(c.id)).reduce((s, c) => s + c.amount, 0)
   const scenario: Scenario = useMemo(
-    () => ({ rates, newGrowth, cut, overrideLevy,
-              stateAidGrowth: DEFAULT_SCENARIO.stateAidGrowth }),
-    [rates, newGrowth, cut, overrideLevy])
+    () => ({ rates, newGrowth, cut, overrideLevy, stateAidGrowth, feeRevenue: 0 }),
+    [rates, newGrowth, cut, overrideLevy, stateAidGrowth])
 
   const years = useMemo(() => run(YEARS, scenario), [scenario])
   /* Recomputed only when something OTHER than the override moves, so dragging the
    * override itself does not make its own tick marks jump around underneath it. */
   const stops = useMemo(
-    () => overrideStops({ rates, newGrowth, cut, overrideLevy: 0,
-                          stateAidGrowth: DEFAULT_SCENARIO.stateAidGrowth }),
-    [rates, newGrowth, cut])
+    () => overrideStops({ rates, newGrowth, cut, overrideLevy: 0, stateAidGrowth,
+                          feeRevenue: 0 }),
+    [rates, newGrowth, cut, stateAidGrowth])
   const stopIndex = stops.findIndex(st => st.levy === overrideLevy) + 1
   const atStop = stopIndex > 0 ? stops[stopIndex - 1] : null
   const baseline = useMemo(() => run(YEARS, DEFAULT_SCENARIO), [])
@@ -59,15 +69,43 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true }: {
   const verdict = verdictOf(years, blended)
   const touched = cut > 0 || overrideLevy > 0
     || newGrowth !== DEFAULT_SCENARIO.newGrowth
+    || stateAidGrowth !== DEFAULT_SCENARIO.stateAidGrowth
     || (Object.keys(rates) as Bucket[]).some(k => rates[k] !== DEFAULT_RATES[k])
 
   const reset = () => {
     setRates({ ...DEFAULT_RATES }); setCuts(new Set())
     setOverrideLevy(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
+    setStateAidGrowth(DEFAULT_SCENARIO.stateAidGrowth); setLoaded(null)
   }
+
+  /* Loading a package replaces the whole scenario rather than merging into it: a
+   * half-applied package is not one of the packages, and would be scored as though it
+   * were. */
+  useEffect(() => {
+    if (!seed) return
+    const { rates: r, newGrowth: ng, stateAidGrowth: aid } = seed.route.scenario
+    setRates({ ...r }); setNewGrowth(ng); setStateAidGrowth(aid)
+    setOverrideLevy(0); setCuts(new Set()); setLoaded(seed.route)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [seed?.nonce])
 
   return (
     <div>
+      {loaded && (
+        <div className="card p-3 mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+          style={{ borderColor: 'var(--series-cost)' }}>
+          <p className="text-[13px] leading-snug">
+            <span className="font-bold">
+              {loaded.forEver ? 'Holds for ever' : `Holds ${loaded.horizon} years`}: {loaded.label}
+            </span>{' '}
+            <span style={{ color: 'var(--text-secondary)' }}>
+              is loaded into the controls below. Drag anything and it becomes yours instead.
+            </span>
+          </p>
+          <button onClick={reset} className="text-[12px] font-semibold shrink-0"
+            style={{ color: 'var(--series-cost)' }}>Clear it</button>
+        </div>
+      )}
       <Verdicts verdict={verdict} blended={blended} revGrowth={revGrowth}
         longRun={longRun} years={years} cut={cut} overrideLevy={overrideLevy} />
 

@@ -8,6 +8,7 @@ import {
   HS_SPORTS, participationsCut, programCost, scoreCuts, seedFromCuts, sportId, teamsCut,
   type CutState,
 } from '../model/cuts'
+import { newGrowthValueFor, type Package } from '../model/rates'
 import { Disclose, Note } from '../components/primitives'
 import { ScenarioBar, type YearRemainder } from '../components/ScenarioBar'
 import { LeverWorkbench } from '../components/Levers'
@@ -28,10 +29,16 @@ const startBasis = () => Object.fromEntries(MODEL.levers.map(l => [l.id, l.basis
  *  This page owns its own scenario. It never reads from, and never writes to, the
  *  priorities page — a ranking can be loaded in as a starting point, but from that moment
  *  it is just a set of switches somebody chose, not a ranking any more. */
-export function Adjust({ seed, onJump, onDevelopment, newValue, setNewValue }: {
+export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
+                         setNewValue }: {
   /** A cut list handed over from the priorities page, with a nonce so the same list can
    *  be sent twice. */
   seed: { state: CutState; nonce: number } | null
+  /** One of the packages, sent from the board that names them. It sets the growth rates
+   *  and the build rate and touches nothing else — the cuts and levers stay whatever the
+   *  reader has already chosen, because a package is a statement about rates and this
+   *  page is where you find out what that costs in things. */
+  option?: { route: Package; nonce: number } | null
   onJump: (anchor: string) => void
   onDevelopment: () => void
   /** The commercial build rate is one control in two places — here and on Development. */
@@ -45,12 +52,22 @@ export function Adjust({ seed, onJump, onDevelopment, newValue, setNewValue }: {
   const [migrationSaving, setMigrationSaving] = useState(0)
   const [cuts, setCuts] = useState<CutState>({})
   const [loadedFrom, setLoadedFrom] = useState<string | null>(null)
+  const [loadedOption, setLoadedOption] = useState<Package | null>(null)
 
   useEffect(() => {
     if (!seed) return
     setCuts(seed.state)
     setLoadedFrom('the ranking you set on the priorities page')
   }, [seed?.nonce])
+
+  useEffect(() => {
+    if (!option) return
+    const { rates, newGrowth, stateAidGrowth } = option.route.scenario
+    setA(prev => ({ ...prev, ...rates, state_aid_growth: stateAidGrowth }))
+    setNewValue(Math.round(newGrowthValueFor(newGrowth)))
+    setLoadedOption(option.route)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [option?.nonce])
 
   /* ---- the hole, before anything the reader has done ---- */
   const aGross = useMemo<Assumptions>(() => ({
@@ -253,6 +270,35 @@ export function Adjust({ seed, onJump, onDevelopment, newValue, setNewValue }: {
             touches the priorities page, and nothing is saved or sent anywhere.
           </p>
         </div>
+
+        {/* ---------- an option, loaded from the board that names them ----------
+         *
+         * The seven options are statements about growth RATES, and this page is the only
+         * one that answers the question they leave open: what does living at that rate
+         * cost in named things, next April. So the banner says what was loaded and where
+         * to look, rather than pretending the whole page changed. */}
+        {loadedOption && (
+          <div className="card p-4" style={{ borderColor: 'var(--series-cost)' }}>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h2 className="text-[13px] font-bold">
+                {loadedOption.forEver ? 'Holds for ever'
+                  : `Holds ${loadedOption.horizon} years`}: {loadedOption.label}
+              </h2>
+              <button onClick={() => setLoadedOption(null)}
+                className="text-[11px] font-semibold" style={{ color: 'var(--text-muted)' }}>
+                dismiss
+              </button>
+            </div>
+            <p className="text-[12px] leading-relaxed mt-1"
+              style={{ color: 'var(--text-secondary)' }}>
+              Its growth rates are loaded into this page&rsquo;s assumptions and its build
+              rate into the development dial, so the gap at the top is what this option
+              leaves for FY28 &mdash; its first year, not its thirty-year verdict. Whatever
+              is still short is what has to be found once, in the dials below.
+              {' '}{loadedOption.angle}.
+            </p>
+          </div>
+        )}
 
         {/* ---------- start from a ranking ---------- */}
         <div className="card p-4">
