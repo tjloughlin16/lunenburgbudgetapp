@@ -1,4 +1,9 @@
-# Lunenburg FY28 — school budget projection
+# The Lunenburg Budget Project
+
+lunenburgbudgetproject.org — an independent, checkable look at the Lunenburg
+Public Schools budget: how big the FY28 gap is, why it comes back every year,
+and the combinations that would actually keep it shut. Not affiliated with the
+Town of Lunenburg, the School Committee or the school district.
 
 An interactive projection of the Lunenburg Public Schools budget for FY28 and the four
 years after, built for residents. Set your own priorities, then see where the cut line

@@ -178,11 +178,27 @@ export default function App() {
                  borderColor: 'var(--grid)' }}>
         <nav aria-label="Sections"
           className="mx-auto max-w-6xl px-5 h-12 flex items-center gap-3">
+          {/* The site outgrew its name. It was "Lunenburg FY28" when it was a projection
+              of one budget year; it is now an argument about why the year keeps
+              recurring and what would stop it, and the address people will type is
+              lunenburgbudgetproject.org. A brand that disagrees with the domain is a
+              small tax on everybody who tries to tell somebody else about it.
+              FY28 has not gone anywhere — it is all over the walkthrough, where it is a
+              fact rather than a title. */}
           <button onClick={() => go('walk')}
-            className="font-bold text-sm shrink-0 mr-1"
+            className="font-bold shrink-0 mr-1 leading-none text-left"
             title="Back to the start of the walkthrough">
-            <span className="hidden sm:inline">Lunenburg FY28</span>
-            <span className="sm:hidden">FY28</span>
+            {/* Two lines on a phone rather than a shorter name. "Budget Project" alone
+                saved thirty pixels and dropped the only word that says which town this
+                is about — which is the one word a link shared into a Lunenburg Facebook
+                group cannot do without. */}
+            <span className="hidden sm:inline text-sm">
+              <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project
+            </span>
+            <span className="sm:hidden block text-[11px]">
+              <span className="block" style={{ color: 'var(--brand)' }}>Lunenburg</span>
+              <span className="block">Budget Project</span>
+            </span>
           </button>
 
           {/* Reachable on a phone from the walkthrough's last room and the footer, so it
@@ -294,7 +310,8 @@ export default function App() {
             district, and nothing here speaks for any of them. Everything on it is
             arithmetic anybody can check against the documents it cites.
           </p>
-          Lunenburg FY28 budget projection. Figures for FY27 and earlier are from published
+          <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project &mdash;
+          lunenburgbudgetproject.org. Figures for FY27 and earlier are from published
           documents; FY28 onward are projections. Last updated August 2026.
         </div>
       </footer>

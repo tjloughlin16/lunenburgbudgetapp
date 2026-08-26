@@ -12,6 +12,10 @@
   --axis: #c3c2b7;
   --series-cost: #2a78d6;
   --series-revenue: #eb6834;
+  /* Lunenburg blue — the Blue Knights' royal, kept apart from --series-cost so that
+     branding and data never borrow each other's meaning. A reader who learns that this
+     blue means "cost" on a chart should not meet it again as decoration. */
+  --brand: #12428f;
   --status-good: #0ca30c;
   --status-warning: #fab219;
   --status-serious: #ec835a;
@@ -30,6 +34,9 @@
     --axis: #383835;
     --series-cost: #3987e5;
     --series-revenue: #d95926;
+    /* Lifted well off the navy: the same royal at 4.5:1 against a near-black surface is
+       unreadable, and a wordmark nobody can read is not branding. */
+    --brand: #7aabf2;
   }
 }
 :root[data-theme="dark"] {
@@ -44,6 +51,7 @@
   --axis: #383835;
   --series-cost: #3987e5;
   --series-revenue: #d95926;
+  --brand: #7aabf2;
 }
 
 /* Anything that pins itself below the header needs to know how tall the header is,
