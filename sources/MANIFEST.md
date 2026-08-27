@@ -40,7 +40,8 @@ Dead link on the school site: "FAQ – November Town Meeting"
 
 | File | Notes |
 |---|---|
-| `xlsx/fy27-proposals.xlsx` | **Richest single artifact.** 1,197 rows. FY23/24/25 actuals, FY25 budget, FY26 final + actuals-to-date + encumbrances, all four FY27 scenarios, an out-year forecast column (sheet labels it "FY29"), and a 2/24/26 restoration snapshot. Same file as `public/data/proposals.xlsx`. |
+| `xlsx/fy27-proposals.xlsx` | **Richest single artifact.** The 3/25/26 workbook. 1,197 rows. FY23/24/25 actuals, FY25 budget, FY26 final + actuals-to-date + encumbrances, all four FY27 scenarios, an out-year forecast column (sheet labels it "FY29"), and a 2/24/26 restoration snapshot. Same file as `public/data/proposals.xlsx`. Source of `data/lps-budget-lines.csv`. |
+| `xlsx/fy27-budget-projection-3-25-26.xlsx` | The same 3/25/26 workbook as circulated to the Finance Committee (received 2026-08-27). **Data-identical** to `fy27-proposals.xlsx` across every budget column — the 51 differing cells are all in an unused scratch column (col X, full of `#VALUE!` in our copy) plus a YoY ratio row under TOTAL EXPENSES. Kept as the clean canonical save and as the copy others are working from. |
 | `xlsx/fy27-budget-projection-2-24-26.xlsx` | Earlier, thinner version (`public/data/budget.xlsx`) |
 | `xlsx/dese-all-districts.xlsx` | DESE per-pupil + total expenditures by category, FY2017-18 → FY2023-24, Lunenburg vs 11 peer districts, w/ enrollment |
 | `supplemental.csv` | Town Manager FY27 target: $26,476,533.21 (+$689,059.28) — a pre-Balanced figure |

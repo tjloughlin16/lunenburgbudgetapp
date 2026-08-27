@@ -54,3 +54,11 @@ __pycache__/
 # index are committed instead — those are what anything actually reads.
 sources/minutes/**/*.pdf
 !sources/minutes/index.csv
+
+# Same bare "data" rule in the global gitignore also swallowed these. A directory that is
+# excluded is never descended into, so re-including the files alone does nothing — the
+# directory has to be un-excluded first.
+!sources/data/
+!sources/data/*.csv
+!sources/contracts/data/
+!sources/contracts/data/*.csv
