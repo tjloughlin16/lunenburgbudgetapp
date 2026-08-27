@@ -17,6 +17,7 @@ import { RateBoard } from '../components/RateBoard'
 import { OverrideSizing, OverrideTreadmill, OverrideExplorer } from '../components/LevelVsSlope'
 import { PriceList } from '../components/PriceList'
 import { Note } from '../components/primitives'
+import { Upshot } from '../components/Upshot'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 const N = nextYear()
@@ -56,19 +57,21 @@ export function Walkthrough({ onJump }: {
 
   return (
     <div>
+      {/* The conclusions come before the working.
+        *
+        * This page used to open by announcing that it was eleven steps long and then
+        * being eleven steps long, which is the shape of a proof rather than of an
+        * argument. Readers told us so: there is a lot of it, and the point arrives last.
+        * The material is not the problem — it is the reason any of this is checkable —
+        * so nothing has been cut. What has changed is the order: four claims and two
+        * pictures first, and the rooms below relabelled as what they always were. */}
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-10">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-          style={{ color: 'var(--text-muted)' }}>Start here &middot; eleven steps</p>
+          style={{ color: 'var(--text-muted)' }}>Start here</p>
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
           Why the school budget keeps doing this
         </h1>
         <p className="mt-5 text-[16px] leading-relaxed max-w-2xl"
-          style={{ color: 'var(--text-secondary)' }}>
-          Eleven steps, in order, assuming you know nothing about the budget. Each one
-          answers a single question and hands you one sentence. You can stop after any of
-          them and the thing you took away will still be true.
-        </p>
-        <p className="mt-3 text-[16px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
           <strong style={{ color: 'var(--text-primary)' }}>This is a projection of a year
           nobody has argued about yet.</strong> FY{N.fy} has not been decided, presented or
@@ -82,6 +85,23 @@ export function Walkthrough({ onJump }: {
           step so you can disagree with it precisely. Nothing here is rounded to flatter an
           argument.
         </Note>
+      </div>
+
+      <Upshot onJump={onJump} />
+
+      <div className="mx-auto max-w-6xl px-5 pt-12 pb-8">
+        <p className="text-xs font-semibold uppercase tracking-widest mb-3"
+          style={{ color: 'var(--text-muted)' }}>The working &middot; eleven steps</p>
+        <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-[1.1] max-w-3xl">
+          Now the same thing slowly, with every number shown
+        </h2>
+        <p className="mt-4 text-[16px] leading-relaxed max-w-2xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          Eleven steps, in order, assuming you know nothing about the budget. Each one
+          answers a single question, corrects one thing people believe, and hands you one
+          sentence. You can stop after any of them and the thing you took away will still
+          be true.
+        </p>
       </div>
 
       {/* ------------------------------------------------ 01 */}
