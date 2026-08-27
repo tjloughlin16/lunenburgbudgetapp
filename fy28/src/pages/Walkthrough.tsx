@@ -68,8 +68,15 @@ export function Walkthrough({ onJump }: {
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-10">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: 'var(--text-muted)' }}>Start here</p>
+        {/* Named, because this page gets shared as a link with no context around it.
+          *
+          * "The school budget" is whichever one the reader is already angry about, and a
+          * headline that could be any town's is the wrong first sentence for an argument
+          * that only holds for this one. The brand colour is the same one the wordmark
+          * uses, so the town's name reads as the town's name and not as a link. */}
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
-          Why the school budget keeps doing this
+          Why <span style={{ color: 'var(--brand)' }}>Lunenburg&rsquo;s</span> school
+          budget keeps doing this
         </h1>
         <p className="mt-5 text-[16px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
