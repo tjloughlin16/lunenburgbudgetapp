@@ -89,7 +89,10 @@ export function Walkthrough({ onJump }: {
 
       <Upshot onJump={onJump} />
 
-      <div className="mx-auto max-w-6xl px-5 pt-12 pb-8">
+      {/* The summary's primary button lands here rather than on room one, so the reader
+          arrives at the handover — "now the same thing slowly" — instead of dropping into
+          the middle of an argument that has just been summarised at them. */}
+      <div id="the-working" className="scroll-mt-12 mx-auto max-w-6xl px-5 pt-12 pb-8">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: 'var(--text-muted)' }}>The working &middot; eleven steps</p>
         <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-[1.1] max-w-3xl">

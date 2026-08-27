@@ -307,17 +307,25 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
             {usd(Math.round(MODEL.facts.tier1TaxIncrease as number))} the town turned down
             in May.
           </p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            <button onClick={() => onJump('solved')}
-              className="text-[13px] font-bold px-3 py-2 rounded-md"
+          {/* Reading on is the ask, not clicking away.
+            *
+            * The filled button used to be "see what would fix it", which sends somebody
+            * who has just been told there is no painless answer straight to a page of
+            * priced combinations — before they have any reason to believe the pricing.
+            * The summary earns its credibility from the rooms below it, so the primary
+            * action is to go and read them; the answer keeps its place as the second
+            * button, for the reader who already knows all this. */}
+          <div className="flex flex-wrap gap-2 mt-5">
+            <a href="#the-working"
+              className="text-[13px] font-bold px-3.5 py-2.5 rounded-md"
               style={{ background: 'var(--text-primary)', color: 'var(--surface-1)' }}>
-              See what would actually fix it &rarr;
-            </button>
-            <a href="#where-the-town-is"
-              className="text-[13px] font-semibold px-3 py-2 rounded-md"
-              style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
-              Or start the eleven steps &darr;
+              Keep reading to see why &darr;
             </a>
+            <button onClick={() => onJump('solved')}
+              className="text-[13px] font-semibold px-3.5 py-2.5 rounded-md"
+              style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
+              Or skip to what would fix it &rarr;
+            </button>
           </div>
         </div>
       </div>
