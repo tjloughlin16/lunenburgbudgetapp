@@ -88,23 +88,30 @@ export function UpdatedBar({ onOpen }: { onOpen: () => void }) {
   return (
     <div className="border-b" style={{ borderColor: 'var(--grid)',
       background: isNew ? 'var(--surface-2)' : 'transparent' }}>
-      <div className="mx-auto max-w-6xl px-5 flex items-start gap-3 text-[12px]
-                      leading-relaxed py-2">
-        <p className="flex-1" style={{ color: 'var(--text-muted)' }}>
-          <strong style={{ color: isNew ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-            Updated {updatedLong()}
-          </strong>
-          {isNew && <> &mdash; <span style={{ color: 'var(--text-secondary)' }}>
-            {rel.headline}</span></>}{' '}
-          <button onClick={() => { settle(); onOpen() }}
-            className="font-semibold hover:underline whitespace-nowrap"
-            style={{ color: 'var(--series-cost)' }}>
-            {isNew ? 'What changed' : `${LABEL} — what changed`} &rarr;
-          </button>
-        </p>
+      {/* One row, always. The date and the way in are fixed width and never shrink; the
+          only flexible part is the short note, which truncates rather than wrapping. A
+          bar that becomes two rows on a phone is furniture above the actual page. */}
+      <div className="mx-auto max-w-6xl px-5 flex items-center gap-2 text-[12px] py-2
+                      whitespace-nowrap">
+        <span className="shrink-0"
+          style={{ color: isNew ? 'var(--text-primary)' : 'var(--text-secondary)',
+                   fontWeight: isNew ? 600 : 400 }}>
+          Updated {updatedLong()}
+        </span>
+        <span className="min-w-0 truncate" style={{ color: 'var(--text-secondary)' }}>
+          &mdash; {isNew ? rel.short : LABEL}
+        </span>
+        {/* The same words in both states. A link whose label changes with the state is a
+            link somebody has to read before they know whether they have clicked it
+            before. */}
+        <button onClick={() => { settle(); onOpen() }}
+          className="shrink-0 font-semibold hover:underline ml-auto"
+          style={{ color: 'var(--series-cost)' }}>
+          What changed &rarr;
+        </button>
         {isNew && (
           <button onClick={settle} aria-label="Dismiss"
-            className="shrink-0 px-1.5 leading-none text-[15px]"
+            className="shrink-0 px-1 leading-none text-[15px]"
             style={{ color: 'var(--text-muted)' }}>&times;</button>
         )}
       </div>
@@ -136,9 +143,15 @@ export function ReleaseNotesDialog({ open, onClose }: {
   return (
     <dialog ref={ref} onClose={onClose}
       onClick={e => { if (e.target === ref.current) onClose() }}
-      className="w-[min(46rem,92vw)] max-h-[85vh] p-0 rounded-xl border backdrop:bg-black/50"
+      className="p-0 rounded-xl border backdrop:bg-black/50"
+      /* A modal <dialog> is centred by the user agent with `inset: 0; margin: auto` --
+         which the CSS reset drops along with every other margin, landing it top left.
+         Restored explicitly rather than relying on a default that a reset is entitled
+         to remove. */
       style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)',
-               color: 'var(--text-primary)' }}>
+               color: 'var(--text-primary)', width: 'min(46rem, 92vw)',
+               maxWidth: 'none', maxHeight: '85vh',
+               position: 'fixed', inset: 0, margin: 'auto' }}>
       <div className="flex items-baseline justify-between gap-3 px-5 py-3.5 border-b
                       sticky top-0" style={{ borderColor: 'var(--grid)',
                                              background: 'var(--surface-1)' }}>

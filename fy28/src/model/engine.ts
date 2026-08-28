@@ -87,8 +87,8 @@ export const MODEL = raw as unknown as {
   releases: {
     current: string
     updated: string
-    items: { tag: string; date: string; title: string; headline: string
-             changes: string[] }[]
+    items: { tag: string; date: string; title: string; short: string
+             headline: string; changes: string[] }[]
   }
   scenarios: Record<string, number>
   peers: Peer[]

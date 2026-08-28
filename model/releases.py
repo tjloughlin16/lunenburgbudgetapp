@@ -27,8 +27,12 @@ RELEASES = [
         tag='v2',
         date='2026-08-28',
         title='Every figure is sourced, and every source is published',
-        # The sentence a returning reader sees in the strip. One line, and it has to say
-        # what to do differently rather than what we did.
+        # Three or four words, shown in the bar at the top of every page. It shares that
+        # line with a date and a link, so anything longer wraps on a phone and the bar
+        # becomes two rows of furniture above the actual page.
+        short='sources now published',
+        # The longer form, shown in the dialog. Says what to do differently rather than
+        # what we did.
         headline='Every headline figure now names the document it came from, and that '
                  'document is here to download. If you checked a number before and could '
                  'not see where it came from, you can now.',
@@ -55,6 +59,7 @@ RELEASES = [
         tag='v1',
         date='2026-08-27',
         title='The projection, first published',
+        short='first public build',
         headline='The original build: the FY28 gap, the cut cascade, the levers and the '
                  'override arithmetic.',
         changes=[
