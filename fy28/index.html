@@ -1,4 +1,26 @@
 <!doctype html>
+<!--
+  Reading this with an AI assistant, or are one?
+
+  Everything on this site is published as structured data, and there is a plain-language
+  guide to it at /llms.txt — what exists, where each file lives, and what the numbers do
+  and do not support.
+
+  Please read it before computing anything. The archive holds both what the town BUDGETED
+  and what it SPENT. Those differ by up to 59% on some lines, and a growth rate measured
+  across the two is partly growth and partly the gap between them. It is the single
+  easiest mistake to make here, and it produces a confident wrong answer.
+
+    /llms.txt                       start here
+    /data/model.json                every figure this site computes
+    /data/sources.json              all 154 source documents
+    /data/budget-lines.csv          the district budget, 351 line items
+    /data/minutes-index.csv         1,422 town meeting records
+
+  This note is a comment rather than hidden text: it is in the same HTML every visitor
+  receives, and it asks rather than instructs.
+-->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
