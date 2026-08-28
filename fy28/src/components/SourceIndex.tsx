@@ -24,7 +24,7 @@ type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
   textUrl?: string; offsite?: boolean; byRequest?: boolean
-  upstream?: string; alsoUsed?: string
+  upstream?: string; alsoUsed?: string; heldOnly?: boolean
 }
 type Group = { id: string; section?: string; title: string; blurb: string
                origin: string; items: Item[] }
@@ -64,12 +64,16 @@ function Row({ it }: { it: Item }) {
         {/* The title is the download. Nothing here is a preview or a summary of a
             document held somewhere else — this is the file, exactly as it was
             published. */}
-        <a href={it.url} download
-          {...(it.offsite ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          className="text-[14px] font-semibold leading-snug underline
-          decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
-          {it.title}
-        </a>
+        {it.url ? (
+          <a href={it.url} download
+            {...(it.offsite ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="text-[14px] font-semibold leading-snug underline
+            decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
+            {it.title}
+          </a>
+        ) : (
+          <span className="text-[14px] font-semibold leading-snug">{it.title}</span>
+        )}
         <span className="inline-flex items-center gap-1 text-[10.5px] font-semibold
           uppercase tracking-wider whitespace-nowrap" style={{ color: w.color }}>
           <span aria-hidden="true">{w.glyph}</span>{w.word}
@@ -115,6 +119,13 @@ function Row({ it }: { it: Item }) {
         <span aria-hidden="true">&middot;</span>
         <code style={{ color: 'var(--text-muted)' }}>sources/{it.path}</code>
       </p>
+      {it.heldOnly && (
+        <p className="mt-1 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+          Held in the archive but not served here &mdash; too large for this site&rsquo;s
+          host, and far enough outside the budget to not be worth a second home. The
+          publisher&rsquo;s own copy is linked above.
+        </p>
+      )}
       {it.offsite && (
         <p className="mt-1 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
           Served from separate storage because it is too large for this site&rsquo;s host.

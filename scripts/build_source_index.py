@@ -397,7 +397,8 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarised as a corpus instead.
-SKIP_DIRS = {'minutes', 'txt', 'contracts/txt', 'district-budget-page'}
+SKIP_DIRS = {'minutes', 'txt', 'contracts/txt', 'district-budget-page',
+             'town-site', 'dese'}
 SKIP_FILES = {'supplemental.csv'}
 
 
@@ -445,6 +446,53 @@ def publish(rel):
     if not os.path.exists(dst) or os.path.getsize(dst) != size:
         shutil.copy2(src, dst)
     return size, None
+
+
+def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
+    """A crawled mirror, described from its own manifest rather than by hand.
+
+    Curating a blurb for every one of these would go stale faster than it could be
+    written, and the label the publisher gave each file is the honest description.
+    Anything byte-identical to a document the analysis is built on is marked, so the
+    overlap between "held" and "used" is visible rather than implied.
+    """
+    idx = os.path.join(SRC, sub, 'index.csv')
+    if not os.path.exists(idx):
+        return None
+    items = []
+    with open(idx, newline='') as fh:
+        for r in csv.DictReader(fh):
+            if not r['local']:
+                continue
+            rel = os.path.relpath(os.path.join(ROOT, r['local']), SRC)
+            size = int(r['bytes'])
+            used = catalogued_hashes.get(r['sha256'])
+            text_rel = (os.path.relpath(os.path.join(ROOT, r['text']), SRC)
+                        if r['text'] else None)
+            # Over the host's per-file cap and not worth a second home: kept in the
+            # archive, named here, but not served. Said rather than silently dropped.
+            oversize = size > MAX_BYTES
+            if not oversize:
+                publish(rel)
+            if text_rel:
+                publish(text_rel)
+            ext = os.path.splitext(rel)[1].lower()
+            items.append({
+                'path': rel, 'title': r['label'], 'stars': 2 if used else 1,
+                'what': (f'Also catalogued above as a source this analysis is built on '
+                         f'({used}). Same file, byte for byte.' if used else
+                         'Mirrored from the publisher. Not used in any figure on this site.'),
+                'kind': KIND.get(ext, ext.lstrip('.').upper()),
+                'bytes': size,
+                'url': ('' if oversize else '/docs/' + rel),
+                **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
+                'upstream': r['upstream'],
+                **({'alsoUsed': used} if used else {}),
+                **({'heldOnly': True} if oversize else {}),
+            })
+    items.sort(key=lambda i: (-i['stars'], i['title']))
+    return {'section': 'reference', 'id': gid, 'origin': origin,
+            'title': title, 'blurb': blurb.format(n=len(items)), 'items': items}
 
 
 def district_page_group(catalogued_hashes):
@@ -614,10 +662,26 @@ def main():
             fp = os.path.join(SRC, i['path'])
             if os.path.exists(fp):
                 catalogued_hashes[sha(fp)] = i['path']
-    dpg = district_page_group(catalogued_hashes)
-    if dpg:
-        groups.append(dpg)
-        catalogued.update(i['path'] for i in dpg['items'])
+    for g in [
+        district_page_group(catalogued_hashes),
+        mirror_group('town-site', 'town-site',
+                     'The town’s budget and finance documents, mirrored',
+                     'Every budget-relevant document linked from the town’s finance pages '
+                     '— {n} of them, including the audited financial statements and the '
+                     'year-end reports. Reached by walking the budget hub, town meetings '
+                     'and finances, and the finance-adjacent department pages rather than '
+                     'by enumerating the document store, which would have meant thousands '
+                     'of files about dog licences.', 'town', catalogued_hashes),
+        mirror_group('dese', 'dese', 'State enrolment data',
+                     'Lunenburg’s selected-population counts from the state, FY19 to FY26 '
+                     '— {n} files. The count of students with disabilities is the one '
+                     'quantity the budget cannot supply: special education spending is '
+                     'staff numbers times contract rates, and a budget only shows the '
+                     'product.', 'dese', catalogued_hashes),
+    ]:
+        if g and g['items']:
+            groups.append(g)
+            catalogued.update(i['path'] for i in g['items'])
 
     all_items = [i for g in groups for i in g['items']]
     # No commit stamp. Writing the current HEAD into the file guaranteed it was dirty the

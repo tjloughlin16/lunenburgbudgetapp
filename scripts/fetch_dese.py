@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""Pull Lunenburg's state enrolment and selected-population figures from DESE.
+
+The count of students with disabilities is the quantity term the budget cannot supply.
+Special education spending is staff numbers times contract rates, and the budget only ever
+shows the product; DESE publishes the students.
+
+The report is an ASP.NET page whose year selector is a postback, not a URL parameter, so
+fetching a series means replaying the form: GET for the viewstate, POST per year. Doing
+that once and saving the result is the point -- nothing here should need the network to
+answer a question twice.
+
+    python3 scripts/fetch_dese.py [--from 2019] [--to 2026]
+
+Writes sources/dese/selected-populations.csv and the raw HTML per year beside it.
+"""
+import argparse
+import csv
+import os
+import re
+import time
+import urllib.parse
+import urllib.request
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, 'sources', 'dese')
+URL = 'https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx'
+UA = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
+                    'AppleWebKit/537.36 Chrome/120 Safari/537.36'}
+TOWN = 'Lunenburg'
+
+
+def get(url, data=None):
+    body = urllib.parse.urlencode(data).encode() if data else None
+    h = dict(UA)
+    if data:
+        h['Content-Type'] = 'application/x-www-form-urlencoded'
+    req = urllib.request.Request(url, data=body, headers=h)
+    with urllib.request.urlopen(req, timeout=90) as r:
+        return r.read().decode('utf8', 'ignore')
+
+
+def hidden(html):
+    """ASP.NET carries its state in hidden inputs; a postback without them is refused."""
+    out = {}
+    for m in re.finditer(r'<input[^>]+type="hidden"[^>]*>', html, re.I):
+        tag = m.group(0)
+        n = re.search(r'name="([^"]+)"', tag)
+        v = re.search(r'value="([^"]*)"', tag)
+        if n:
+            out[n.group(1)] = v.group(1) if v else ''
+    return out
+
+
+def year_control(html):
+    """Whatever the year dropdown is called this week."""
+    m = re.search(r'<select[^>]+name="([^"]*[Yy]ear[^"]*)"', html)
+    return m.group(1) if m else None
+
+
+def row_for(html, town):
+    """The town's row, as a list of cell texts."""
+    for m in re.finditer(r'<tr[^>]*>(.*?)</tr>', html, re.S | re.I):
+        tr = m.group(1)
+        if f'>{town}<' not in tr and f'>{town} ' not in tr:
+            continue
+        cells = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', c)).strip()
+                 for c in re.findall(r'<t[dh][^>]*>(.*?)</t[dh]>', tr, re.S | re.I)]
+        if cells and town in cells[0]:
+            return cells
+    return None
+
+
+# The table has a two-row header: category names across the top, then a # and a % under
+# each. Flattened naively they collapse into a run of anonymous '#' and '%' columns, so
+# the pairs are rebuilt here from the category list.
+CATEGORIES = ['High Needs', 'English Learners', 'First Language Not English',
+              'Low Income', 'Students with Disabilities']
+
+
+def headers(html):
+    del html
+    cols = ['district', 'district_code']
+    for c in CATEGORIES:
+        key = re.sub(r'[^a-z]+', '_', c.lower()).strip('_')
+        cols += [f'{key}_n', f'{key}_pct']
+    return cols
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--from', dest='lo', type=int, default=2019)
+    ap.add_argument('--to', dest='hi', type=int, default=2026)
+    a = ap.parse_args()
+    os.makedirs(OUT, exist_ok=True)
+
+    first = get(URL)
+    ctrl = year_control(first)
+    if not ctrl:
+        raise SystemExit('could not find the year control; the page has changed')
+    cols = headers(first)
+    print(f'year control: {ctrl}')
+
+    rows = []
+    for y in range(a.lo, a.hi + 1):
+        raw = os.path.join(OUT, f'selected-populations-{y}.html')
+        if os.path.exists(raw) and os.path.getsize(raw) > 50_000:
+            html = open(raw, encoding='utf8').read()
+            note = 'cached'
+        else:
+            state = hidden(first)
+            state[ctrl] = str(y)
+            state['__EVENTTARGET'] = ctrl
+            state['__EVENTARGUMENT'] = ''
+            try:
+                html = get(URL, state)
+            except Exception as e:
+                print(f'  {y}  FAILED {type(e).__name__}')
+                continue
+            open(raw, 'w', encoding='utf8').write(html)
+            note = 'fetched'
+            time.sleep(1.0)
+        r = row_for(html, TOWN)
+        if not r:
+            print(f'  {y}  {note} — no {TOWN} row')
+            continue
+        rec = {'fy': y}
+        rec.update(dict(zip(cols, r)))
+        rows.append(rec)
+        print(f"  {y}  {note}  students with disabilities "
+              f"{rec.get('students_with_disabilities_n','?'):>4} "
+              f"({rec.get('students_with_disabilities_pct','?')}%)")
+
+    if rows:
+        keys = ['fy'] + cols
+        with open(os.path.join(OUT, 'selected-populations.csv'), 'w', newline='') as fh:
+            w = csv.DictWriter(fh, fieldnames=keys)
+            w.writeheader()
+            w.writerows(rows)
+        print(f'\nwrote {len(rows)} years to sources/dese/selected-populations.csv')
+
+
+if __name__ == '__main__':
+    main()
