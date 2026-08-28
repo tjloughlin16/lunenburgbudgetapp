@@ -17,69 +17,24 @@ ESCALATOR_GROUPS = {          # DESE function-code prefix -> escalator key
     '9400': 'sped_tuition', '4120': 'utilities', '4130': 'utilities',
 }
 
-# Special education needs its own escalator, and the function-code prefix cannot give it
-# one. Two prefixes carry both kinds of cost: 2330 is paraprofessionals, general education
-# and special education alike, and 3300 is transportation, where the special education
-# runs are a separate line from the yellow-bus routes.
-#
-# Bucketing on the prefix therefore put about $5.7M of special education staffing inside
-# 'salaries' at the teachers' contract rate. That hid no money -- the total was always
-# right -- but it averaged together two lines that behave nothing alike. Teaching salaries
-# move when the School Committee bargains a contract. Special education staffing moves
-# when a child arrives needing an aide, and no negotiation touches that.
-SPED_GROUPS = {
-    '2110 - Special Education',
-    '2110 - Special Education Clerical',
-    '2310 - Teachers Specialists - Special Education',
-    '2320 - Therapeutic Services',
-    '2325 - Special Education Substitutes',
-    '2330 - Paraprofessionals Special Education *** (LTP notes)',
-    '2800 - Psych. Services',
-    '2800 - Psychological Services',
-}
-
-
-def is_sped(row):
-    """Whether a budget line is special education, tuition aside.
-
-    Group membership first, then the line itself for the ones inside a mixed group --
-    special education transport among the bus routes, special education instructional
-    materials among each school's supplies. Out-of-district tuition is deliberately
-    excluded: it keeps its own escalator because it is set by placement, not payroll.
-    """
-    group = (row['function_group'] or '').strip()
-    if group.startswith(('9300', '9400')):
-        return False
-    if group in SPED_GROUPS:
-        return True
-    item = (row['line_item'] or '').lower()
-    return 'special ed' in item or 'specl ed' in item
+# Special education is bucketed and escalated in model/sped.py, which owns the whole of
+# it -- the group membership, the decomposition, the contracts that govern the line, and
+# the rate. It is separated out because the state's function codes cannot do it: 2330 is
+# paraprofessionals of both kinds and 3300 is transportation of both, so bucketing on the
+# code put about $5.7M of special education staffing inside `salaries` at the teachers'
+# contract rate. That hid no money -- the total was always right -- but it averaged
+# together two lines that behave nothing alike.
+from sped import is_sped, RATE as SPED_RATE
 
 DEFAULT_ASSUMPTIONS = dict(
     salaries=0.040,        # contractual steps + lanes + COLA
     health=0.090,          # district assumed 9% for FY27
     transport=0.060,       # district assumed 10% for FY27; 6% is the softer default
-    # Special education, in district. The only rate here the district does not publish,
-    # because nobody has separated the line before.
-    #
-    # 5.9% is a MEASUREMENT, not an explanation. It is what this line did budget to
-    # budget, FY25 adopted to FY27 level service: 5,038,594 -> 5,158,207 -> 5,649,284,
-    # a near-flat year (+2.4%) and a steep one (+9.5%). The model projects what the line
-    # has done. It makes no claim about why, because the budget shows dollars per line and
-    # never shows people, and the district does not publish staff counts.
-    #
-    # It is worth being clear why the alternative is NOT the safer choice. Escalating this
-    # line at 2.48% -- the blended rate of the contracts that actually govern these staff,
-    # teachers at 3.5% and aides at 2.0% -- would assume that nothing but bargained pay
-    # moves it. Two years of the district's own budgets contradict that. A lower number
-    # that assumes something the data denies is not caution; it is an unsupported
-    # assumption that happens to be smaller.
-    #
-    # The honest range, all three from budget columns:
-    #     2.48%  contracts alone, if headcount and classification never change
-    #     5.90%  what the line did, two years            <- used
-    #     9.52%  what it did in FY27 alone
-    sped=0.059,
+    # Special education, in district. Derived in sped.py and NOT the rate the line did:
+    # 5.89% is one hiring decision averaged over two years, and the aides it paid for are
+    # already inside this model's starting amount. See sped.py for the whole argument and
+    # for the range published beside it.
+    sped=SPED_RATE,
     sped_tuition=0.080,    # out-of-district placements
     utilities=0.050,
     other=0.030,

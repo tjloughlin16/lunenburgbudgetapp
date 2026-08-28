@@ -30,6 +30,7 @@ from taxbase import (TAX_RATE, LEVY, TOTAL_VALUE, RESIDENTIAL_SHARE, CIP_SHARE,
 import derivations
 import citations
 import releases
+import sped
 from levers import LEVERS, ADMIN_TOTAL, ADMIN_CENTRAL, ADMIN_BUILDING, TECH_TOTAL, HEALTH_TOTAL, TRANSPORT_GENED, TRANSPORT_SPED
 
 data_ladder = [dict(r, selfFundFee=self_funding_fee(r['total']),
@@ -52,6 +53,7 @@ data = dict(
     floorNote=FLOOR_NOTE,
     citations=citations.export(),
     releases=releases.export(),
+    sped=sped.export(),
     scenarios=scen,
     peers=PEERS,
     sports=SPORTS,

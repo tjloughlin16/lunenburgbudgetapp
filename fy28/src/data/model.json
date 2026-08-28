@@ -789,7 +789,7 @@
   "salaries": 0.04,
   "health": 0.09,
   "transport": 0.06,
-  "sped": 0.059,
+  "sped": 0.04279822567003433,
   "sped_tuition": 0.08,
   "utilities": 0.05,
   "other": 0.03,
@@ -923,11 +923,11 @@
    {
     "id": "sped",
     "metric": "Special education growth, in district",
-    "value": "5.9% a year",
+    "value": "4.28% a year",
     "kind": "ours",
-    "basis": "OURS, and a measurement rather than an explanation. It is what this line did in the district\u2019s own budgets: FY25 adopted $5,038,594, FY26 adopted $5,158,207, FY27 level service $5,649,284 \u2014 a near-flat year and a steep one, averaging 5.9%. We do not model why it moved. The budget shows dollars per line and never shows people, and staff counts are not published. The contracts governing these staff would give 2.48% on their own; the line rose faster, and what accounts for the difference is not something we can establish.",
+    "basis": "OURS. It is what the staff in this line are contracted to receive, weighted by how much of the line each group is: professional staff at 3.5% across 54% of it, paraprofessionals at 2.0% across 33% of it, transport at 14.9% across 12% of it. The bus contract publishes no escalator, so its figure is what the budgets show that line doing. It is deliberately NOT the rate the line itself did. That figure is 5.89%, and it is one hiring decision rather than a trend: paraprofessionals rose 39% in FY27, which was 108% of the whole year\u2019s increase, while every other part of special education fell. Those aides are already inside the amount this model starts from, so escalating it at 5.89% would assume they are hired again every year. The assumption this rate does make is that the FY27 hiring was a step and not the first year of a climb. Nothing in a budget can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
     "doc": "xlsx/fy27-proposals.xlsx",
-    "source": "FY27 budget workbook, columns fy25_budget and fy27_level_service",
+    "source": "FY27 budget workbook, columns fy25_budget, fy26_final and fy27_level_service, with the LEA and AFSCME agreements",
     "n": 10
    },
    {
@@ -1029,6 +1029,212 @@
     ]
    }
   ]
+ },
+ "sped": {
+  "rate": 0.04279822567003433,
+  "units": [
+   {
+    "id": "professional",
+    "label": "Professional staff",
+    "basis": "Teachers\u2019 agreement (LEA)",
+    "rate": 0.035,
+    "amount": 3072420.0,
+    "share": 0.5438600714710041
+   },
+   {
+    "id": "paras",
+    "label": "Paraprofessionals",
+    "basis": "Paraprofessionals\u2019 agreement (AFSCME 503)",
+    "rate": 0.02,
+    "amount": 1874411.0,
+    "share": 0.3317962063865085
+   },
+   {
+    "id": "transport",
+    "label": "Transport",
+    "basis": "Vendor contract; no published escalator",
+    "rate": 0.14886678191517566,
+    "amount": 649953.0,
+    "share": 0.11505050905566086
+   },
+   {
+    "id": "unbargained",
+    "label": "Substitutes and supplies",
+    "basis": "Not bargained",
+    "rate": 0.0,
+    "amount": 52500.0,
+    "share": 0.009293213086826579
+   }
+  ],
+  "range": [
+   {
+    "id": "ex_paras",
+    "rate": 0.0153358790789202,
+    "label": "Special education apart from the aides, two budgets",
+    "what": "What every other part of the line did while the aides were being hired. Below the levy cap."
+   },
+   {
+    "id": "contracts",
+    "rate": 0.04279822567003433,
+    "used": true,
+    "label": "What the staff are contracted to receive",
+    "what": "The two agreements at their published rates and the buses at what the budgets did, each weighted by its share of the line. Assumes the FY27 hiring was a step rather than the first year of a climb."
+   },
+   {
+    "id": "whole",
+    "rate": 0.05886848212276696,
+    "label": "The whole line, two budgets",
+    "what": "Includes the one-time 39% increase in aides, which was 108% of that year\u2019s rise. Compounding it assumes the hiring repeats."
+   },
+   {
+    "id": "fy27",
+    "rate": 0.0952031167653975,
+    "label": "FY27 by itself",
+    "what": "The single year the hiring happened. One observation."
+   }
+  ],
+  "decomposition": [
+   {
+    "id": "paras",
+    "label": "Paraprofessionals",
+    "fy25": 1376893.0,
+    "fy26": 1344373.0,
+    "fy27": 1874411.0
+   },
+   {
+    "id": "transport",
+    "label": "Special education transport",
+    "fy25": 445328.0,
+    "fy26": 565734.0,
+    "fy27": 649953.0
+   },
+   {
+    "id": "therapy",
+    "label": "Speech, OT and summer services",
+    "fy25": 768573.0,
+    "fy26": 753555.0,
+    "fy27": 784444.0
+   },
+   {
+    "id": "subs",
+    "label": "Substitutes",
+    "fy25": 52500.0,
+    "fy26": 52500.0,
+    "fy27": 52500.0
+   },
+   {
+    "id": "psych",
+    "label": "Psychologists and testing",
+    "fy25": 270675.0,
+    "fy26": 295355.0,
+    "fy27": 207723.0
+   },
+   {
+    "id": "teachers",
+    "label": "Special education teachers",
+    "fy25": 1990158.0,
+    "fy26": 1993848.0,
+    "fy27": 1963512.0
+   },
+   {
+    "id": "other",
+    "label": "Administration, legal, supplies and contracted work",
+    "fy25": 134467.0,
+    "fy26": 152841.65,
+    "fy27": 116741.0
+   }
+  ],
+  "year": {
+   "fy26": 26287475.93,
+   "fy27": 27333289.0,
+   "published": 0.03978370052662572,
+   "underlying": 0.06227163362351762,
+   "bend": 0.022487933096892045,
+   "tuition_fy26": 1291293.0,
+   "tuition_fy27": 700142.0,
+   "tuition_change": -591151.0,
+   "tuition_rate": -0.4577977267746359
+  },
+  "tuitionRisk": [
+   {
+    "id": "budgeted",
+    "label": "As the district budgeted it for FY27",
+    "tuition": 700142,
+    "gap": 617091,
+    "delta": 0
+   },
+   {
+    "id": "midway",
+    "label": "Midway back",
+    "tuition": 1000000,
+    "gap": 940938,
+    "delta": 323847
+   },
+   {
+    "id": "fy25",
+    "label": "Back to the FY25 budget",
+    "tuition": 1164824,
+    "gap": 1118948,
+    "delta": 501857
+   },
+   {
+    "id": "fy26",
+    "label": "Back to the FY26 budget",
+    "tuition": 1291293,
+    "gap": 1255534,
+    "delta": 638443
+   }
+  ],
+  "students": [
+   {
+    "fy": 2019,
+    "n": 277,
+    "pct": 16.7
+   },
+   {
+    "fy": 2020,
+    "n": 255,
+    "pct": 15.4
+   },
+   {
+    "fy": 2021,
+    "n": 261,
+    "pct": 16.3
+   },
+   {
+    "fy": 2022,
+    "n": 227,
+    "pct": 14.1
+   },
+   {
+    "fy": 2023,
+    "n": 234,
+    "pct": 14.9
+   },
+   {
+    "fy": 2024,
+    "n": 233,
+    "pct": 14.7
+   },
+   {
+    "fy": 2025,
+    "n": 248,
+    "pct": 15.8
+   },
+   {
+    "fy": 2026,
+    "n": 258,
+    "pct": 16.3
+   }
+  ],
+  "base": 5745543.0,
+  "tuitionBase": 700142.0,
+  "appropriation": 26572289.5,
+  "transportRates": {
+   "recent": 0.14886678191517566,
+   "twoYear": 0.2080946893172848,
+   "districtAssumption": 0.1
+  }
  },
  "scenarios": {
   "restoration": 28520816,
@@ -1971,7 +2177,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$600,414",
+   "value": "$560,437",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -1979,8 +2185,8 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$41.7M",
-   "sub": "of new commercial value every year \u2014 about 63 more average businesses a year, on top of the 234 the town has, or 14 typical developments",
+   "value": "$38.9M",
+   "sub": "of new commercial value every year \u2014 about 59 more average businesses a year, on top of the 234 the town has, or 13 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },

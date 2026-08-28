@@ -19,6 +19,7 @@ taking our word for it.
 
 Verify with:  python3 scripts/audit_provenance.py
 """
+import sped
 
 # kind: 'budget'    a number somebody voted or proposed
 #       'published' a figure stated in a document, not computed by us
@@ -88,18 +89,29 @@ CITATIONS = [
          source='FY27 budget workbook, lines 9300 and 9400'),
 
     dict(id='sped', metric='Special education growth, in district',
-         value='5.9% a year',
+         value=f'{sped.RATE:.2%} a year',
          kind='ours',
-         basis='OURS, and a measurement rather than an explanation. It is what this line '
-               'did in the district\u2019s own budgets: FY25 adopted $5,038,594, FY26 '
-               'adopted $5,158,207, FY27 level service $5,649,284 \u2014 a near-flat year '
-               'and a steep one, averaging 5.9%. We do not model why it moved. The budget '
-               'shows dollars per line and never shows people, and staff counts are not '
-               'published. The contracts governing these staff would give 2.48% on their '
-               'own; the line rose faster, and what accounts for the difference is not '
-               'something we can establish.',
+         basis=('OURS. It is what the staff in this line are contracted to receive, '
+                'weighted by how much of the line each group is: '
+                + ', '.join(f"{u['label'].lower()} at {u['rate']:.1%} across "
+                            f"{u['share']:.0%} of it" for u in sped.UNITS
+                            if u['id'] != 'unbargained')
+                + '. The bus contract publishes no escalator, so its figure is what the '
+                'budgets show that line doing. '
+               f'It is deliberately NOT the rate the line itself did. That figure is '
+               f'{sped.WHOLE_LINE_RATE:.2%}, and it is one hiring decision rather than a '
+               f'trend: paraprofessionals rose {sped.PARA_FY27_RATE:.0%} in FY27, which was '
+               f'{sped.PARA_SHARE_OF_RISE:.0%} of the whole year\u2019s increase, while '
+               f'every other part of special education fell. Those aides are already inside '
+               f'the amount this model starts from, so escalating it at '
+               f'{sped.WHOLE_LINE_RATE:.2%} would assume they are hired again every year. '
+               'The assumption this rate does make is that the FY27 hiring was a step and '
+               'not the first year of a climb. Nothing in a budget can test that \u2014 a '
+               'budget shows dollars per line and never shows people, and the district does '
+               'not publish staff counts. The full range is published beside the rate.'),
          doc='xlsx/fy27-proposals.xlsx',
-         source='FY27 budget workbook, columns fy25_budget and fy27_level_service'),
+         source='FY27 budget workbook, columns fy25_budget, fy26_final and '
+                'fy27_level_service, with the LEA and AFSCME agreements'),
 
     dict(id='ch70', metric='Chapter 70 aid and the foundation budget',
          value='$9,349,335',
