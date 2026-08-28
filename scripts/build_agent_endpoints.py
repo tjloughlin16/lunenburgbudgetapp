@@ -27,6 +27,43 @@ DATA = os.path.join(PUB, 'data')
 SITE = 'https://lunenburgbudgetproject.org'
 
 
+
+# Which escalators to name, and what to call them. Iterated rather than written out so
+# that a bucket the model does not carry is omitted instead of printed as 0.0% -- the
+# special education bucket exists on some builds and not others, and a published endpoint
+# stating "special education 0.0%" is a figure that is simply false.
+RATE_LABELS = [
+    ('salaries', 'salaries'),
+    ('health', 'health insurance'),
+    ('sped', 'special education'),
+    ('sped_tuition', 'out-of-district tuition'),
+    ('transport', 'transport'),
+    ('utilities', 'utilities'),
+    ('other', 'everything else'),
+]
+
+
+def rate_list(a):
+    """The escalators this build actually carries, in reading order."""
+    return ', '.join(f'{label} {a[k]:.1%}' for k, label in RATE_LABELS if k in a)
+
+
+def ours_note(a):
+    """Which of the rates above we set ourselves.
+
+    Only claimable when the build separates special education; without that bucket every
+    rate printed comes from the district, a contract or statute, and saying which is ours
+    would be naming a rate that is not there.
+    """
+    if 'sped' in a:
+        return ('Only the special education rate is ours. The rest are the district\u2019s '
+                'own stated assumptions, a signed contract, or statute. `model.json` '
+                '\u2192 `citations` says which is which for every headline figure.')
+    return ('`model.json` \u2192 `citations` says, for every headline figure, whether it '
+            'was published by somebody, set by contract, fixed by statute, or estimated '
+            'by us.')
+
+
 def usd(n):
     return f'${round(n):,}'
 
@@ -101,15 +138,10 @@ def main():
         f'- FY27 school appropriation: {usd(f["lps_appropriation"])} (the adopted '
         f'"Balanced" budget)',
         f'- Projected FY28 gap: {gap["value"]} — {gap["sub"]}',
-        f'- Growth assumptions: salaries {a["salaries"]:.1%}, health insurance '
-        f'{a["health"]:.1%}, special education {a.get("sped", 0):.1%}, out-of-district '
-        f'tuition {a["sped_tuition"]:.1%}, transport {a["transport"]:.1%}, utilities '
-        f'{a["utilities"]:.1%}, everything else {a["other"]:.1%}',
+        f'- Growth assumptions: {rate_list(a)}',
         f'- Levy growth: {a["levy_growth"]:.1%} (Proposition 2½, statutory)',
         '',
-        'Only the special education rate is ours. The rest are the district’s own '
-        'stated assumptions, a signed contract, or statute. `model.json` → `citations` '
-        'says which is which for every headline figure.',
+        ours_note(a),
         '',
         '## Data',
         '',
