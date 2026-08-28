@@ -149,7 +149,7 @@ The cost reappears later, larger, and outside the appropriation.
 
 `xlsx/dese-all-districts.xlsx` is **Total In-District Expenditures**. DESE's in-district
 measure excludes out-of-district tuition — a separate reporting category. So the app's
-conclusion #3, comparing Lunenburg's growth to its neighbours, is computed on a basis
+conclusion #3, comparing Lunenburg's growth to its neighbors, is computed on a basis
 that omits the line that quadrupled.
 
 The claim survives — in-district Lunenburg grew +21% FY18→FY24 against Groton-Dunstable
@@ -426,7 +426,7 @@ from "impossible" to "possible but self-defeating," which is a different argumen
 Requires proper recomputation in `price.ts` — the 1.308 scaling is indicative, not exact,
 because the demand-dropoff curve interacts with it.
 
-**#3 — "Grew 1.08% while neighbours grew 2.9–6.5%."** Survives, needs a footnote: DESE
+**#3 — "Grew 1.08% while neighbors grew 2.9–6.5%."** Survives, needs a footnote: DESE
 in-district expenditure excludes out-of-district tuition by construction (§1.6).
 
 **#14 — "Nothing closes the gap without either an override or teachers" (68%).** Holds

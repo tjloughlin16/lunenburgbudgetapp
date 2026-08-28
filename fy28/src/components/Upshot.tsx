@@ -22,7 +22,7 @@ import { ALREADY_CUT, LEVEL_SERVICE } from '../model/walk'
  *  So this block is allowed exactly four claims, two pictures and one door out. Every
  *  figure in it is derived from the same model as the rooms below, and every card links to
  *  the room that shows its arithmetic, so nothing here can drift away from what it
- *  summarises. If you find yourself adding a fifth claim, it belongs in a room. */
+ *  summarizes. If you find yourself adding a fifth claim, it belongs in a room. */
 
 const YEARS = 12
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -174,7 +174,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
           {/* Short on purpose.
             *
             * These cards were three and four sentences each, which is a summary that has
-            * to be read the way the thing it summarises does. A claim card owes the
+            * to be read the way the thing it summarizes does. A claim card owes the
             * reader the claim, the number and the door to the working — the qualifying
             * clauses belong behind that door, and every one of them is there. */}
 
@@ -415,7 +415,7 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
  *  who scrolls that far should recognize the shape rather than meet a new one. What it
  *  drops is every control, both axes' clutter and the tooltip: a reader who has not yet
  *  agreed that there is a problem is not going to discover it by hovering. The two lines
- *  are labelled where they end, and the only two numbers on it are the gap at each end of
+ *  are labeled where they end, and the only two numbers on it are the gap at each end of
  *  the wedge. */
 function TheWedge() {
   const w = 720, h = 300
@@ -594,7 +594,7 @@ function LevelOrSlope({ panels, lo, hi }: {
           The same chart four times, on one scale. Cutting and an override drop the blue
           line and leave its angle alone, so it climbs back to the orange one at the speed
           it was climbing before. Changing a rate bends the blue line. Building lifts the
-          orange one. The grey dashes are what costs do if nothing is done.
+          orange one. The gray dashes are what costs do if nothing is done.
         </p>
       </figcaption>
       <div className="grid gap-3 sm:grid-cols-2">

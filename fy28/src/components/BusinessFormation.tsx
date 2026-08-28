@@ -56,7 +56,7 @@ export function BusinessFormation() {
           </ResponsiveContainer>
         </div>
         <p className="text-[11px] mt-2" style={{ color: 'var(--text-muted)' }}>
-          {data.at(-1)!.year} is a partial year (grey). Records before 2018 are incomplete,
+          {data.at(-1)!.year} is a partial year (gray). Records before 2018 are incomplete,
           because certificates run four years and older ones drop off the file.
         </p>
       </div>

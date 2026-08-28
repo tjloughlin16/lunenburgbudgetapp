@@ -87,12 +87,12 @@ export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')
 /** Whichever tab owns the root, derived rather than named.
  *
  *  This was hardcoded to 'answers', and moving the front door to the walkthrough left it
- *  quietly pointing at the old one — so the root and every unrecognised path still resolved
+ *  quietly pointing at the old one — so the root and every unrecognized path still resolved
  *  to Straight answers while every test of the nav said otherwise. Derived, it cannot
  *  drift the next time the front door moves. */
 const ROOT: Tab = (Object.entries(SLUG) as [Tab, string][]).find(([, v]) => v === '')![0]
 
-/** Anything unrecognised falls back to the first tab rather than to an error page.
+/** Anything unrecognized falls back to the first tab rather than to an error page.
  *  A stale link should land somebody on the site, not on a 404 they will not report. */
 export function tabFromPath(pathname: string): Tab {
   const seg = pathname.replace(/^\/+|\/+$/g, '').toLowerCase()

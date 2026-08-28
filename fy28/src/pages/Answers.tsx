@@ -783,7 +783,7 @@ function Q7() {
       </Note>
       <Note>
         The fair reading, which cuts both ways. Lunenburg&rsquo;s settlements are ordinary
-        &mdash; 2.5%, 4% and 3.5% is roughly inflation, and the neighbouring districts
+        &mdash; 2.5%, 4% and 3.5% is roughly inflation, and the neighboring districts
         settled in the same range. A settlement below inflation is a real pay cut, and the
         district competes for teachers with towns that are not offering one. But the town
         may only collect {pct(REVENUE_CAP, 1)} more each year. <strong>A 2.5% revenue cap
@@ -1004,7 +1004,7 @@ function Q10() {
         {last.rate.toFixed(2)} in FY{last.fy}, and ${BILL.rate.toFixed(2)} today. Bills went up anyway, from{' '}
         {usd(first.bill)} to {usd(last.bill)} to {usd(BILL.average)}, because assessments
         rose faster than the rate fell. The rate is not the number that decides what you
-        pay; the bill is. This tool holds no data on neighbouring towns&rsquo; rates or
+        pay; the bill is. This tool holds no data on neighboring towns&rsquo; rates or
         bills, so it makes no comparison to them.
       </Note>
     </QA>
@@ -1373,7 +1373,7 @@ function Lookback() {
       <Note>
         And the reading that has to go with it. {pct(CONTRACT.cola[0].pct, 1)},{' '}
         {pct(CONTRACT.cola[1].pct, 1)} and {pct(CONTRACT.cola[2].pct, 1)} is roughly
-        inflation over those years, and the neighbouring districts settled in the same
+        inflation over those years, and the neighboring districts settled in the same
         range. The {pct(REVENUE_CAP, 1)} column is not a mild alternative &mdash; it is
         three years of falling behind the cost of living, at{' '}
         {usd(Math.round(c.sample.pay * cap.perCent))} a year to a teacher in the middle of
@@ -1614,7 +1614,7 @@ function WhatWorks({ onJump }: {
         <p className="text-[12px] leading-relaxed mb-3" style={{ color: 'var(--text-muted)' }}>
           Worth saying against our own model: {pct(hl.assumed)} is an assumption, not a
           measurement. Lunenburg&rsquo;s FY27 premiums actually rose{' '}
-          {pct(hl.actualFy27, 2)}, while neighbouring districts saw 8&ndash;14%. If the
+          {pct(hl.actualFy27, 2)}, while neighboring districts saw 8&ndash;14%. If the
           real number is nearer the low end, the gap on this page is smaller than shown
           &mdash; and so is everything this lever appears to save.
         </p>

@@ -86,6 +86,12 @@ export const MODEL = raw as unknown as {
     kindLabels: Record<string, string>
     note: string
   }
+  releases: {
+    current: string
+    updated: string
+    items: { tag: string; date: string; title: string; short: string
+             headline: string; changes: string[] }[]
+  }
   scenarios: Record<string, number>
   peers: Peer[]
   sports: Sport[]

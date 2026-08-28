@@ -7,7 +7,7 @@ const N = nextYear()
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
 
 /** Distinct enough to tell apart, and never the only carrier of meaning — every segment
- *  is also a labelled row in the table underneath. */
+ *  is also a labeled row in the table underneath. */
 const COLOR: Record<Bucket, string> = {
   salaries: 'var(--series-cost)',
   health: 'var(--series-revenue)',
@@ -56,7 +56,7 @@ export function TheRaise() {
         </h3>
         <p className="text-[12px] mt-1 mb-4" style={{ color: 'var(--text-secondary)' }}>
           The full width is what next year costs if nothing changes. The top band is who
-          wants the money; the band underneath is the same span coloured only by whether
+          wants the money; the band underneath is the same span colored only by whether
           there is money for it. The mark is where it runs out. Everything past the mark
           has to come from somewhere else, and no rearranging of the segments makes it fit.
           This bar is about the increase only &mdash; next year&rsquo;s full gap is{' '}
@@ -73,7 +73,7 @@ export function TheRaise() {
             ))}
           </div>
 
-          {/* the same span again, coloured only by whether it is paid for.
+          {/* the same span again, colored only by whether it is paid for.
               The segmented bar answers "who spends it" and cannot answer "where does this
               stop working", because the eye has to find a thin mark among six colors.
               This one carries the verdict and nothing else. */}

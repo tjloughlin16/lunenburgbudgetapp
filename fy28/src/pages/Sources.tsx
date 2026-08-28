@@ -30,7 +30,7 @@ export function Sources({ onJump }: { onJump: (t: Tab) => void }) {
         <p className="mt-4 text-[15px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
           Nothing here was obtained by request or paid for. All of it is published by the
-          school district, the town, the state, or a neighbouring district, and every one
+          school district, the town, the state, or a neighboring district, and every one
           can be found again from the links below. If a number on this site does not match
           a document here, the document is right.
         </p>

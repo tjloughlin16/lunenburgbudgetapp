@@ -16,6 +16,7 @@ import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
+import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
 
 
 /** The three pages you use rather than read.
@@ -74,6 +75,10 @@ export default function App() {
   // than being duplicated. Housing is modeled on Development only.
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
   const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
+  /** The release notes, over the page rather than instead of it. Held here because
+   *  two things open it — the bar at the top and the footer stamp — and they are on
+   *  opposite ends of every page. */
+  const [notesOpen, setNotesOpen] = useState(false)
   const pending = useRef<string | null>(null)
 
   // The back button has to work, or a shared link is a trap: follow one, look around,
@@ -141,7 +146,7 @@ export default function App() {
   /** Going up a level. Never grows the history stack.
    *
    *  A breadcrumb is a statement about where a page sits, not about how you got to it, so
-   *  clicking one should feel like going back rather than like travelling somewhere new.
+   *  clicking one should feel like going back rather than like traveling somewhere new.
    *  Pushing an entry meant that after Start -> Go deeper -> Straight answers, clicking
    *  "Go deeper" left four entries and the back button walked forwards through them.
    *
@@ -261,6 +266,10 @@ export default function App() {
         )}
       </header>
 
+      {/* Under the header rather than inside it: the header is sticky and this is not
+          worth the vertical space on every scroll, but it has to be seen on arrival. */}
+      <UpdatedBar onOpen={() => setNotesOpen(true)} />
+
       {tab !== 'walk' && <Breadcrumb tab={tab} goUp={goUp} />}
 
       {tab === 'walk' && <Walkthrough onJump={go} />}
@@ -336,9 +345,12 @@ export default function App() {
           </p>
           <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project &mdash;
           lunenburgbudgetproject.org. Figures for FY27 and earlier are from published
-          documents; FY28 onward are projections. Last updated August 2026.
+          documents; FY28 onward are projections.{' '}
+          <VersionStamp onOpen={() => setNotesOpen(true)} />
         </div>
       </footer>
+
+      <ReleaseNotesDialog open={notesOpen} onClose={() => setNotesOpen(false)} />
     </div>
   )
 }

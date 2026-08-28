@@ -123,7 +123,7 @@ function Row({ row, target }: { row: PriceRow; target: number }) {
 
       {/* Not a footnote. A card that overlaps another one, or that quietly loses revenue
           when you take the saving, is misleading at a glance — so this sits in the body
-          with a rule beside it rather than in muted grey underneath. */}
+          with a rule beside it rather than in muted gray underneath. */}
       {row.caveat && (
         <p className="text-[12px] leading-relaxed mt-3 pl-3"
           style={{ borderLeft: '3px solid var(--status-warning)',

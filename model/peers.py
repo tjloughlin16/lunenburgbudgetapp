@@ -78,7 +78,7 @@ LESSONS = [
            'athletics or arts to matter.'),
  dict(title='Priorities really are a choice',
       body='Ashburnham-Westminster wrote "preserve athletics, arts and music" into its '
-           'district goals and cut two elementary teachers to honour it. Lunenburg cut '
+           'district goals and cut two elementary teachers to honor it. Lunenburg cut '
            'athletics first and defended classroom staffing. Same pressures, opposite '
            'answers — which is why the ranking in this tool is yours to set.'),
  dict(title='Everyone charges fees — the question is how far they stretch',

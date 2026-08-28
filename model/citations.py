@@ -125,7 +125,7 @@ CITATIONS = [
          doc='pdf/lhs-athletics-faq.pdf',
          source='High school athletics fee schedule'),
 
-    dict(id='peers', metric='How neighbouring districts compare',
+    dict(id='peers', metric='How neighboring districts compare',
          value='11 districts',
          kind='published', basis='In-district expenditure per pupil, FY2018–FY2024',
          doc='xlsx/dese-all-districts.xlsx',
