@@ -142,6 +142,15 @@ Verify a deploy by hashing a document from production against the archive.
 
 ---
 
+## Picking up mid-stream
+
+`notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
+the working branch and not yet deployed, the open decision, and — most importantly — the
+list of claims that are NOT established, so they do not get restated as fact by somebody
+arriving fresh.
+
+---
+
 ## Running the checks
 
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh

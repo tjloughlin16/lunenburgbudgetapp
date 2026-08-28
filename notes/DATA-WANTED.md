@@ -1,5 +1,9 @@
 # Data wanted
 
+
+> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
+> decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
+
 Things I cannot get, ranked by how much they would change. Internal working list.
 
 Three reasons something is on here: it is behind a login or bot protection, it is a

@@ -1,5 +1,9 @@
 # Analysis passes
 
+
+> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
+> decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
+
 Internal working log. **Not published** — `sources/` is served to the public through
 `/sources`, this is not. One entry per substantive pass over the material: what changed,
 what it broke, and what we now know we did not know.

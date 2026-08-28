@@ -1,5 +1,9 @@
 # Budget versus actual
 
+
+> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
+> decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
+
 Analysis, August 2026. Published here as part of the source archive, and deliberately
 **not** part of the app's projection — see the interface rule below for why those are
 different things.
