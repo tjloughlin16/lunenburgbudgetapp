@@ -18,6 +18,7 @@ document it comes from — which is the artefact a reader should be able to chec
 import ast
 import csv
 import os
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +36,13 @@ BUDGETS = {'fy25_budget', 'fy26_final', 'fy27_restoration', 'fy27_core',
 PROJECTION_MODULES = ['finance.py', 'cascade.py', 'sped.py', 'levers.py', 'athletics.py',
                       'catalog.py', 'health.py', 'taxbase.py', 'recommendation.py',
                       'headlines.py', 'conclusions.py', 'business.py', 'peers.py',
-                      'derivations.py', 'export.py']
+                      'citations.py', 'export.py']
+# Allowed to read actuals, because showing them IS the job. derivations.py builds the
+# "show the math" page, which prints each budget line beside what the town actually spent
+# on it in earlier years -- that history is displayed, never summed. The amounts it totals
+# come from budget columns. Listed separately rather than exempted quietly, because "this
+# one is fine" is exactly the sentence that hides the next real violation.
+DISPLAY_MODULES = ['derivations.py']
 # Reconciliation is allowed — and required — to read both.
 RECONCILIATION_MODULES = ['backtest_rates.py']
 
@@ -71,6 +78,16 @@ def audit():
             print(f"{name:<24}{', '.join(b) or '—':<44}{', '.join(a) or '—'}")
 
     print()
+    for name in DISPLAY_MODULES:
+        p = os.path.join(ROOT, 'model', name)
+        if os.path.exists(p):
+            used = columns_used(p)
+            print(f"{name:<24}(display — prints actuals as history beside each line;")
+            print(f"{'':<24} the amounts it totals come from budget columns)")
+            print(f"{'':<24}budgets: {', '.join(sorted(used & BUDGETS)) or '—'}")
+            print(f"{'':<24}actuals: {', '.join(sorted(used & ACTUALS)) or '—'}")
+
+    print()
     for name in RECONCILIATION_MODULES:
         p = os.path.join(ROOT, 'scripts', name)
         if os.path.exists(p):
@@ -94,6 +111,34 @@ def base_check():
     return abs(total - published) < 5
 
 
+def freshness_check():
+    """model.json must be what model/export.py currently produces.
+
+    It was not. Six strings in the committed file differed from what the code generated —
+    someone fixed spellings in the Python and never re-ran the export, so the app shipped a
+    JSON that no longer matched its own source. Nothing analytical had drifted that time.
+    Next time it might.
+    """
+    import hashlib
+    import shutil
+    import tempfile
+    out = os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json')
+    before = hashlib.sha256(open(out, 'rb').read()).hexdigest()
+    with tempfile.TemporaryDirectory() as tmp:
+        keep = os.path.join(tmp, 'model.json')
+        shutil.copy2(out, keep)
+        subprocess.run([sys.executable, 'model/export.py'], cwd=ROOT,
+                       capture_output=True, check=True)
+        after = hashlib.sha256(open(out, 'rb').read()).hexdigest()
+        if before != after:
+            shutil.copy2(keep, out)      # leave the tree as we found it
+    print('\nFRESHNESS')
+    print(f"  model.json matches model/export.py: {'yes' if before == after else 'NO'}")
+    if before != after:
+        print('  committed model.json is stale — run: python3 model/export.py')
+    return before == after
+
+
 def provenance_table():
     """Every headline metric, and the column and document behind it."""
     import json
@@ -103,10 +148,11 @@ def provenance_table():
          'published total', 'FY27 budget doc 3/25/26'),
         ('Expense base, all buckets', f"${sum(m['expenseBase'].values()):,.0f}",
          'fy27_balanced', 'FY27 budget workbook'),
-        ('Special education base', f"${m['expenseBase']['sped']:,.0f}",
-         'fy27_balanced', 'FY27 budget workbook'),
-        ('Special education rate', f"{m['assumptions']['sped'] * 100:.1f}%",
-         'fy25_budget -> fy27_level_service', 'FY27 budget workbook'),
+        *([('Special education base', f"${m['expenseBase']['sped']:,.0f}",
+            'fy27_balanced', 'FY27 budget workbook'),
+           ('Special education rate', f"{m['assumptions']['sped'] * 100:.1f}%",
+            'fy25_budget -> fy27_level_service', 'FY27 budget workbook')]
+          if 'sped' in m['expenseBase'] else []),
         ('Salary rate', f"{m['assumptions']['salaries'] * 100:.1f}%",
          'not from the CSV', 'LEA agreement FY25-FY27'),
         ('Health rate', f"{m['assumptions']['health'] * 100:.1f}%",
@@ -117,14 +163,11 @@ def provenance_table():
          'not from the CSV', 'Proposition 2½, statutory'),
         ('New growth', f"${m['assumptions']['new_growth']:,}",
          'not from the CSV', "town's own FY27 estimate"),
-        ('SPED share of budget', f"{m['sped']['composition'][-1]['share'] * 100:.1f}%",
-         'fy27_balanced', 'FY27 budget workbook'),
-        ('SPED share of growth', f"{m['sped']['growth']['spedShareOfGrowth'] * 100:.0f}%",
-         'fy23_actual -> fy26_final', 'RECONCILIATION — not used in any projection'),
-        ('Circuit breaker balance', f"${m['sped']['circuitBreaker']['balance']:,}",
-         'balance sheet', 'Town special revenue funds FY26 Q3'),
-        ('Out-of-district committed', f"${m['sped']['outOfDistrict']['fy26Committed']:,}",
-         'fy26_actual_td + fy26_encumb_td', 'RECONCILIATION — descriptive only'),
+        ('Out-of-district SPED rate', f"{m['assumptions']['sped_tuition'] * 100:.1f}%",
+         'not from the CSV', 'Our estimate; the district publishes no rate'),
+        *([(f"Citation {c['n']}: {c['metric'][:38]}", c['value'],
+            c['basis'][:36], c['source'])
+           for c in m.get('citations', {}).get('items', [])]),
     ]
     print('\n\nPROVENANCE — every headline metric and where it comes from\n')
     print(f"{'metric':<28}{'value':>14}   {'column(s)':<38}{'document'}")
@@ -138,6 +181,7 @@ def provenance_table():
 if __name__ == '__main__':
     violations = audit()
     ok = base_check()
+    fresh = freshness_check()
     provenance_table()
     print()
     if violations:
@@ -147,5 +191,8 @@ if __name__ == '__main__':
         sys.exit(1)
     if not ok:
         print('FAILED — the expense base does not rebuild the published appropriation.')
+        sys.exit(1)
+    if not fresh:
+        print('FAILED — model.json is not what model/export.py produces.')
         sys.exit(1)
     print('PASSED — every projection is computed from budget columns only.')
