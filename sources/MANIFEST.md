@@ -48,7 +48,7 @@ Dead link on the school site: "FAQ – November Town Meeting"
 
 ## Local peer districts (`peers/`)
 
-Primary-source FY27 budget documents from neighbouring districts. All downloaded
+Primary-source FY27 budget documents from neighboring districts. All downloaded
 2026-08-17; `.txt` alongside each `.pdf`.
 
 | File | District | What it gives |
@@ -100,7 +100,7 @@ them). FY24–FY26 new growth and class values would extend every series above.
 | File | What it gives |
 |---|---|
 | `pdf/town-revenue-prop25-presentation` | Finance Committee deck on Prop 2½ mechanics — levy ceiling vs limit vs levy, and the DOR analysis showing assessed value outpacing the levy since 2017 ("less available revenue during more growth") |
-| `xlsx/ch70-fy27-summary` | DESE FY27 preliminary Chapter 70. Lunenburg: foundation enrolment 1,599; foundation budget $23,089,580; required contribution $14,135,611; **Chapter 70 aid $9,349,335**; required NSS $23,484,946 |
+| `xlsx/ch70-fy27-summary` | DESE FY27 preliminary Chapter 70. Lunenburg: foundation enrollment 1,599; foundation budget $23,089,580; required contribution $14,135,611; **Chapter 70 aid $9,349,335**; required NSS $23,484,946 |
 
 Tax structure, FY26: single rate **$14.39/$1,000**; levy **$35,819,996**; total taxable
 value **$2.489B** (levy ÷ rate); **residential ~91%**, commercial + industrial + personal

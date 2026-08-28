@@ -7,7 +7,7 @@ const N = nextYear()
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
 
 /** Distinct enough to tell apart, and never the only carrier of meaning — every segment
- *  is also a labelled row in the table underneath. */
+ *  is also a labeled row in the table underneath. */
 const COLOR: Record<Bucket, string> = {
   salaries: 'var(--series-cost)',
   health: 'var(--series-revenue)',

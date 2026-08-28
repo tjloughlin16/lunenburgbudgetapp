@@ -535,7 +535,7 @@ function Option({ n, k, v, sub, last, tone, flag }: {
 /** How much building a package is actually asking for.
  *
  *  A build rate in levy dollars is unarguable, which is the problem: dollars a year sound
- *  like a budget line rather than like a construction programme. In buildings, against
+ *  like a budget line rather than like a construction program. In buildings, against
  *  the best year the town has ever had and against everything commercial it has
  *  accumulated in its entire history, the ask sizes itself.
  *

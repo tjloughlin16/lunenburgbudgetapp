@@ -29,6 +29,7 @@ from taxbase import (TAX_RATE, LEVY, TOTAL_VALUE, RESIDENTIAL_SHARE, CIP_SHARE,
     EXCESS_LEVY_CAPACITY, GAP_IN_BUSINESSES, MIX_VALUE)
 import derivations
 import citations
+import releases
 from levers import LEVERS, ADMIN_TOTAL, ADMIN_CENTRAL, ADMIN_BUILDING, TECH_TOTAL, HEALTH_TOTAL, TRANSPORT_GENED, TRANSPORT_SPED
 
 data_ladder = [dict(r, selfFundFee=self_funding_fee(r['total']),
@@ -49,6 +50,7 @@ data = dict(
     fy27=FY27,
     expenseBase=expense_base(),
     citations=citations.export(),
+    releases=releases.export(),
     scenarios=scen,
     peers=PEERS,
     sports=SPORTS,
@@ -86,7 +88,7 @@ data = dict(
     business=dict(formationHistory=FORMATION_HISTORY, summary=BIZ_SUMMARY,
                   categories=TOP_CATEGORIES),
     health=dict(plans=HEALTH_PLANS, townShare=TOWN_SHARE,
-                rateIncrease=RATE_INCREASE_FY27, enrolment=DEFAULT_ENROLMENT,
+                rateIncrease=RATE_INCREASE_FY27, enrollment=DEFAULT_ENROLMENT,
                 familyShare=DEFAULT_FAMILY_SHARE, constraints=HEALTH_CONSTRAINTS,
                 budget=SCHOOL_HEALTH_BUDGET),
     headlines=HEADLINES,

@@ -245,7 +245,7 @@ export function SourceIndex() {
                   style={{ color: ours ? 'var(--status-warning)'
                     : g.section === 'reference' ? 'var(--text-secondary)' : 'var(--text-muted)' }}>
                   {ours ? 'Not town information'
-                    : g.section === 'reference' ? 'Held, not used' : 'Primary documents'}
+                    : g.section === 'reference' ? 'Held for reference' : 'Primary documents'}
                 </p>
                 <h3 className="text-lg sm:text-xl font-bold tracking-tight mb-2">{sec.title}</h3>
                 <p className="text-[13.5px] leading-relaxed max-w-3xl"

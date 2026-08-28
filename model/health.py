@@ -25,7 +25,7 @@ PLANS = [
       network='High deductible', family=2602.28, individual=989.46),
 ]
 
-# Enrolment by plan and tier is NOT published. These are placeholders the user adjusts.
+# Enrollment by plan and tier is NOT published. These are placeholders the user adjusts.
 # They are calibrated so that the town's 75% share reconciles to the $3,994,071 health
 # insurance line in the FY27 school budget -- roughly 194 enrollees across ~253 FTE,
 # which is a plausible take-up rate. The plan mix within that total is our assumption.
@@ -39,16 +39,16 @@ def annual(monthly):
 
 
 def plan_cost(plan, enrolled, family_share=DEFAULT_FAMILY_SHARE):
-    """Annual town and employee cost for one plan at a given enrolment."""
+    """Annual town and employee cost for one plan at a given enrollment."""
     fam, ind = enrolled * family_share, enrolled * (1 - family_share)
     total = annual(plan['family']) * fam + annual(plan['individual']) * ind
     return dict(total=total, town=total * TOWN_SHARE, employee=total * (1 - TOWN_SHARE))
 
 
-def split_change(new_town_share, enrolment=None, family_share=DEFAULT_FAMILY_SHARE):
+def split_change(new_town_share, enrollment=None, family_share=DEFAULT_FAMILY_SHARE):
     """Shifting the contribution split. Saves the town exactly what it costs employees."""
-    enrolment = enrolment or DEFAULT_ENROLMENT
-    total = sum(plan_cost(p, enrolment.get(p['id'], 0), family_share)['total'] for p in PLANS)
+    enrollment = enrollment or DEFAULT_ENROLMENT
+    total = sum(plan_cost(p, enrollment.get(p['id'], 0), family_share)['total'] for p in PLANS)
     shift = TOWN_SHARE - new_town_share
     per_plan = []
     for p in PLANS:
@@ -84,7 +84,7 @@ CONSTRAINTS = [
  'change this on their own.',
  'Contribution splits are bargained with each union. A shift is a pay cut in everything '
  'but name, to staff who have already absorbed position reductions.',
- 'Enrolment by plan and tier is not published. The figures here move with the counts you '
+ 'Enrollment by plan and tier is not published. The figures here move with the counts you '
  'set, and should be replaced with real ones before anybody relies on them.',
 ]
 

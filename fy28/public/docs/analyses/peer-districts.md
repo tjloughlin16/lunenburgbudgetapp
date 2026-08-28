@@ -80,7 +80,7 @@ text are in `sources/peers/`.
 | Ayer-Shirley | 1,704 | $36,743,801 | +5.50% | +14.4% | +1.5% |
 | Groton-Dunstable | 2,324 | $54,187,751 | +6.46% | +8.9% | — |
 
-**Lunenburg's schools grew 1.08% while every neighbour grew 2.9%–6.5%**, in a year when
+**Lunenburg's schools grew 1.08% while every neighbor grew 2.9%–6.5%**, in a year when
 health insurance rose 8–14% and Chapter 70 aid rose 1.5–2% everywhere. That gap is the
 whole story.
 

@@ -301,7 +301,7 @@ export const COST_PER_FTE = Math.round(
   POSITIONS.reduce((s, p) => s + p.cost, 0) / POSITIONS.reduce((s, p) => s + p.fte, 0))
 
 /** Roughly how many people the salary line pays, at the catalogue's own cost per
- *  position. An estimate, and labelled as one wherever it appears — the district does not
+ *  position. An estimate, and labeled as one wherever it appears — the district does not
  *  publish a headcount, and salary lines cover part-time and stipended roles too. */
 export const HEADCOUNT = Math.round(BASE.salaries / COST_PER_FTE)
 

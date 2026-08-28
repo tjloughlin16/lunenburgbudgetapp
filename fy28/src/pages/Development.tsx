@@ -868,7 +868,7 @@ function BillModel({ commercial, homes, gap, share }: {
         scale the state&rsquo;s published maximum-shift rates for Lunenburg
         ({usd(T.splitRate.residential)} residential, {usd(T.splitRate.commercial)} business).
         <strong> There is no peer comparison here yet</strong> — the model has no tax rates
-        for neighbouring towns, so &ldquo;competitive with nearby towns&rdquo; needs a
+        for neighboring towns, so &ldquo;competitive with nearby towns&rdquo; needs a
         source before this page can answer it.
       </Note>
     </div>

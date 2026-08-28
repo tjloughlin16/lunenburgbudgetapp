@@ -45,7 +45,7 @@ SEEDS = [
     '/168/Treasurer-Collector',
     '/DocumentCenter',
 ]
-# Budget words. A town site holds thousands of documents and most are dog licences.
+# Budget words. A town site holds thousands of documents and most are dog licenses.
 WANTED = re.compile(
     r'budget|financ|audit|appropriat|warrant|town.?meeting|capital|levy|tax|assess|'
     r'free.?cash|stabiliz|revenue|expenditure|override|omnibus|school|reserve|'

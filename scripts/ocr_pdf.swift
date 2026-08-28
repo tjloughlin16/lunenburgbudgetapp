@@ -2,7 +2,7 @@
 //
 // The district's union contracts are posted as page scans, so pypdf gets nothing out of
 // them. Rather than add a Python OCR dependency, this uses what macOS already ships:
-// PDFKit to rasterise each page and Vision's text recogniser to read it. No network, no
+// PDFKit to rasterize each page and Vision's text recognizer to read it. No network, no
 // third-party install, and the output lands next to the other extracted text.
 //
 //   swift scripts/ocr_pdf.swift <in.pdf> <out.txt> [scale]

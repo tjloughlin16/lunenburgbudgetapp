@@ -65,7 +65,7 @@ export function Walkthrough({ onJump }: {
         * argument. Readers told us so: there is a lot of it, and the point arrives last.
         * The material is not the problem — it is the reason any of this is checkable —
         * so nothing has been cut. What has changed is the order: four claims and two
-        * pictures first, and the rooms below relabelled as what they always were. */}
+        * pictures first, and the rooms below relabeled as what they always were. */}
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-10">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: 'var(--text-muted)' }}>Start here</p>
@@ -99,7 +99,7 @@ export function Walkthrough({ onJump }: {
 
       {/* The summary's primary button lands here rather than on room one, so the reader
           arrives at the handover — "now the same thing slowly" — instead of dropping into
-          the middle of an argument that has just been summarised at them. */}
+          the middle of an argument that has just been summarized at them. */}
       <div id="the-working" className="scroll-mt-12 mx-auto max-w-6xl px-5 pt-12 pb-8">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: 'var(--text-muted)' }}>The working &middot; eleven steps</p>
@@ -167,7 +167,7 @@ export function Walkthrough({ onJump }: {
           Everything here turns on one phrase that budget documents use and nobody
           explains. <strong>Level service</strong> means the same staff, the same buses,
           the same buildings, the same {LEVEL_SERVICE.enrollment.toLocaleString()} children.
-          Nobody is hired. Nothing is added. No programme comes back.
+          Nobody is hired. Nothing is added. No program comes back.
         </Say>
         <Plate label="What standing still costs" figures={[
           { v: usdShort(LEVEL_SERVICE.fy27), k: 'the town gave the schools this year', cite: 'fy27-approp' },
@@ -241,7 +241,7 @@ export function Walkthrough({ onJump }: {
       </Room>
 
       {/* ------------------------------------------------ 06 */}
-      <Room n={6} slug="two-rates" tag="The centrepiece" handsOn
+      <Room n={6} slug="two-rates" tag="The centerpiece" handsOn
         title="Two rates, and they were never going to meet"
         corrects={<>&ldquo;We just cut. Why is there a hole again?&rdquo;</>}
         leave={<>Cuts change the amount. Only rates change the direction. This year&rsquo;s

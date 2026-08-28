@@ -14,9 +14,9 @@ export function HealthInsurance({ empShare, setEmpShare, movers, setMovers, onSa
   const [toId, setToId] = useState('bs')
 
   const famShare = H.familyShare
-  const enrolled = Object.values(H.enrolment).reduce((a, b) => a + b, 0)
+  const enrolled = Object.values(H.enrollment).reduce((a, b) => a + b, 0)
   const totalPremium = H.plans.reduce((s, p) => {
-    const n = H.enrolment[p.id] ?? 0
+    const n = H.enrollment[p.id] ?? 0
     return s + yr(p.family) * n * famShare + yr(p.individual) * n * (1 - famShare)
   }, 0)
 
@@ -163,11 +163,11 @@ export function HealthInsurance({ empShare, setEmpShare, movers, setMovers, onSa
             )}
           </span>
         </div>
-        <input id="movers" type="range" min={0} max={H.enrolment[fromId] ?? 50} step={1}
-          value={Math.min(movers, H.enrolment[fromId] ?? 50)}
+        <input id="movers" type="range" min={0} max={H.enrollment[fromId] ?? 50} step={1}
+          value={Math.min(movers, H.enrollment[fromId] ?? 50)}
           onChange={e => setMovers(Number(e.target.value))} className="w-full mb-1" />
         <p className="text-[10px] mb-4" style={{ color: 'var(--text-muted)' }}>
-          about {H.enrolment[fromId] ?? 0} are on {from.name} today (our estimate)
+          about {H.enrollment[fromId] ?? 0} are on {from.name} today (our estimate)
         </p>
 
         <p className="text-[11px] font-semibold uppercase tracking-widest"

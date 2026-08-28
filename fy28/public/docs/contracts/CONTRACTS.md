@@ -9,7 +9,7 @@ Sources:
   <https://profiles.doe.mass.edu/profiles/general.aspx?orgcode=01620000&orgtypecode=5&leftNavId=16862>
 
 Most of these are page scans with no text layer. They were read with the macOS Vision
-text recogniser via `scripts/ocr_pdf.swift` — no network, no third-party install. **OCR
+text recognizer via `scripts/ocr_pdf.swift` — no network, no third-party install. **OCR
 output is not a transcript.** Numeric grids in particular come back with columns
 interleaved. Every figure quoted below was checked against the contract's own stated
 arithmetic before being used; see "Verification" at the end.
@@ -125,7 +125,7 @@ Agendas and minutes for calendar 2026 are archived in `../minutes/`. Relevant to
 benefits:
 
 - **2026-03-18** — Committee approved an **enhanced health insurance opt-out**, negotiated
-  with the Public Employee Committee: eligibility after **1 year** of enrolment instead of
+  with the Public Employee Committee: eligibility after **1 year** of enrollment instead of
   2, and the incentive rises from **$2,000/$4,000** (individual/family) to
   **$3,000/$6,000**. This is a real cost-containment measure on the health line and it is
   already decided.

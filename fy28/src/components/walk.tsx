@@ -46,7 +46,7 @@ export function Room({ n, slug, tag, handsOn, title, corrects, children, leave }
        * middle of one has no way of telling which of eleven they are in or what question
        * it was answering. Sticky inside the section rather than on the page, so it
        * releases at the room boundary and the next room's heading takes over: the
-       * behaviour of a wall label you walk past, which is the thing this imitates.
+       * behavior of a wall label you walk past, which is the thing this imitates.
        *
        * In a hands-on room only the identity strip stays. Three sticky layers were
        * stacking there — site header, room heading, pinned chart — and a two-line title

@@ -15,7 +15,7 @@ describing it is the normal way an index goes stale, so it is an error rather th
 silent omission.
 
 The meeting archive is handled separately. 1,383 documents cannot be a list a person
-reads, so it is summarised as a corpus with per-board counts, built from minutes/index.csv.
+reads, so it is summarized as a corpus with per-board counts, built from minutes/index.csv.
 
     python3 scripts/build_source_index.py
 
@@ -62,7 +62,7 @@ ORIGINS = [
     {'id': 'school', 'name': 'Lunenburg Public Schools', 'url': SCHOOL_HUB},
     {'id': 'town', 'name': 'Town of Lunenburg', 'url': TOWN_HUB},
     {'id': 'dese', 'name': 'Massachusetts DESE', 'url': 'https://www.doe.mass.edu/'},
-    {'id': 'peers', 'name': 'Neighbouring districts', 'url': None},
+    {'id': 'peers', 'name': 'Neighboring districts', 'url': None},
     {'id': 'request', 'name': 'Obtained from the Town by records request', 'url': None},
     {'id': 'us', 'name': 'Built by this project', 'url': None},
 ]
@@ -74,22 +74,25 @@ ORIGINS = [
 BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
-# the line was published by the town, the district, the state or a neighbouring district.
+# the line was published by the town, the district, the state or a neighboring district.
 # Everything below it we made. A reader who cannot tell those apart cannot judge either.
 SECTIONS = {
     'theirs': dict(
         title='Published by the town, the district and the state',
-        blurb='Primary documents. We did not write any of these, we did not commission '
-              'them, and none of them was obtained by request — every one was already '
-              'public. Where a document is unreadable or says something inconvenient, it '
-              'is here anyway.'),
+        blurb='Primary documents. We did not write any of these and we did not commission '
+              'them. {byrequest} came from the Town by records request and say so on their '
+              'row; the rest were already public. Where a document is unreadable or says '
+              'something inconvenient, it is here anyway.'),
     'reference': dict(
-        title='Held for reference, not used in the analysis',
-        blurb='Everything else the district and the town have published, mirrored here so '
-              'it is available and so no figure has to be looked up over the network. '
-              'Nothing in this section feeds a number on this site. It is here because a '
-              'document nobody kept is a document nobody can check, and because we would '
-              'rather hold what we did not use than be asked why we did not look.'),
+        title='Everything else the district and the town publish',
+        blurb='Mirrored here so it is available and so no figure has to be looked up over '
+              'the network. {unused} of these {total} feed no number on this site. The '
+              'other {overlap} are byte-identical copies of primary sources listed above — '
+              'kept, and marked as such on their row, because a mirror with the '
+              'load-bearing documents quietly removed is no longer a copy of the '
+              'publisher’s page. It is all here because a document nobody kept is a '
+              'document nobody can check, and because we would rather hold what we did '
+              'not use than be asked why we did not look.'),
     'ours': dict(
         title='Written by this project, not by the town',
         blurb='Everything below this line is ours. It is not town information, it carries '
@@ -157,7 +160,7 @@ GROUPS = [
              'The omnibus by department under all three funding scenarios — what each '
              'override tier would have bought, department by department.'),
             ('pdf/town-fy27-detailed-budget.pdf', 'Detailed town budget by line', 2,
-             'Line-item town budget by organisation and object code, including the Monty '
+             'Line-item town budget by organization and object code, including the Monty '
              'Tech assessment.'),
             ('pdf/town-atm-2026-booklet-warrant.pdf', 'Annual Town Meeting booklet and warrant, 2026', 2,
              'The full 52-page warrant, including the revolving fund authorisations under '
@@ -229,18 +232,18 @@ GROUPS = [
         'section': 'theirs', 'id': 'tax-base', 'origin': 'town',
         'title': 'Tax base, Chapter 70 and peers',
         'blurb': 'Where the town’s money comes from, what the state contributes, and how '
-                 'Lunenburg’s spending compares to its neighbours.',
+                 'Lunenburg’s spending compares to its neighbors.',
         'items': [
             ('pdf/tax-classification-fy23.pdf', 'Tax Classification Hearing, FY2023', 3,
              'The single most valuable town document found. Carries year-by-year new growth '
              'FY18–FY23, assessed value by class, average single-family bills back to '
              'FY19, and excess levy capacity — series that appear nowhere else.'),
             ('xlsx/ch70-fy27-summary.xlsx', 'DESE Chapter 70 summary, FY27', 3,
-             'Foundation enrolment, foundation budget, required local contribution, Chapter '
+             'Foundation enrollment, foundation budget, required local contribution, Chapter '
              '70 aid and required net school spending, for every district in the state.'),
             ('xlsx/dese-all-districts.xlsx', 'DESE per-pupil expenditures, FY2018–FY2024', 3,
              'Spending by category and per pupil, Lunenburg against eleven peer districts, '
-             'with enrolment. Note: this is in-district expenditure, which by DESE’s '
+             'with enrollment. Note: this is in-district expenditure, which by DESE’s '
              'definition excludes out-of-district tuition.'),
             ('pdf/town-revenue-prop25-presentation.pdf', 'Finance Committee deck on Proposition 2½', 2,
              'Levy ceiling against levy limit against actual levy, and the state analysis '
@@ -286,7 +289,7 @@ GROUPS = [
     },
     {
         'section': 'theirs', 'id': 'peers', 'origin': 'peers',
-        'title': 'What neighbouring districts did',
+        'title': 'What neighboring districts did',
         'blurb': 'Primary FY27 budget documents from comparable districts. The comparison is '
                  'only fair if it comes from their own books rather than from reporting.',
         'items': [
@@ -307,7 +310,7 @@ GROUPS = [
              'A $64,000 deficit at 3% growth against $1.5M at 5%. Roughly 30% of students '
              'receive special education, far above the state average.'),
             ('peers/wachusett-fy27-budget-presentation.pdf', 'Wachusett FY27 budget presentation', 2,
-             'Member-town assessments, enrolment by town, and a discretionary contribution '
+             'Member-town assessments, enrollment by town, and a discretionary contribution '
              'up 9.21%.'),
         ],
     },
@@ -368,7 +371,7 @@ GROUPS = [
              'appropriation. Carries a correction notice at the top \u2014 two growth figures '
              'in it were derived on a basis we no longer stand behind.'),
             ('analyses/peer-districts.md', 'What other districts did', 2,
-             'The comparison across neighbouring districts, and the order in which things '
+             'The comparison across neighboring districts, and the order in which things '
              'actually get cut when an override fails.'),
         ],
     },
@@ -396,7 +399,7 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
         '.docx': 'Document', '.pptx': 'Slides', '.txt': 'Text'}
 
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
-# own source, and the meeting archive is summarised as a corpus instead.
+# own source, and the meeting archive is summarized as a corpus instead.
 SKIP_DIRS = {'minutes', 'txt', 'contracts/txt', 'district-budget-page',
              'town-site', 'dese'}
 SKIP_FILES = {'supplemental.csv'}
@@ -549,7 +552,7 @@ def district_page_group(catalogued_hashes):
 
 
 def build_corpus():
-    """The meeting archive, summarised. index.csv is the record of what was fetched."""
+    """The meeting archive, summarized. index.csv is the record of what was fetched."""
     idx = os.path.join(SRC, 'minutes', 'index.csv')
     if not os.path.exists(idx):
         return None
@@ -671,8 +674,8 @@ def main():
                      'year-end reports. Reached by walking the budget hub, town meetings '
                      'and finances, and the finance-adjacent department pages rather than '
                      'by enumerating the document store, which would have meant thousands '
-                     'of files about dog licences.', 'town', catalogued_hashes),
-        mirror_group('dese', 'dese', 'State enrolment data',
+                     'of files about dog licenses.', 'town', catalogued_hashes),
+        mirror_group('dese', 'dese', 'State enrollment data',
                      'Lunenburg’s selected-population counts from the state, FY19 to FY26 '
                      '— {n} files. The count of students with disabilities is the one '
                      'quantity the budget cannot supply: special education spending is '
@@ -684,6 +687,19 @@ def main():
             catalogued.update(i['path'] for i in g['items'])
 
     all_items = [i for g in groups for i in g['items']]
+
+    # Every claim the page makes about its own composition is measured here and formatted
+    # into the section blurbs below, so that adding a document cannot leave a sentence
+    # describing an archive that no longer exists.
+    by_request_count = sum(1 for i in all_items if i.get('byRequest'))
+    ref_items = [i for g in groups if g['section'] == 'reference' for i in g['items']]
+    ref_overlap = sum(1 for i in ref_items if i.get('alsoUsed'))
+    sections = {
+        k: dict(v, blurb=v['blurb'].format(
+            byrequest=by_request_count, total=len(ref_items),
+            overlap=ref_overlap, unused=len(ref_items) - ref_overlap))
+        for k, v in SECTIONS.items()
+    }
     # No commit stamp. Writing the current HEAD into the file guaranteed it was dirty the
     # moment it was committed, so every commit needed a follow-up commit for the stamp,
     # for ever. The generated date is enough, and a file that cannot be clean is a file
@@ -698,7 +714,7 @@ def main():
     doc = {
         'generated': date.today().isoformat(),
         'origins': ORIGINS,
-        'sections': SECTIONS,
+        'sections': sections,
         'groups': groups,
         'corpus': build_corpus(),
         'corpusIndexUrl': '/docs/' + corpus_index,
@@ -708,11 +724,16 @@ def main():
             'bytes': sum(i['bytes'] for i in all_items),
             'loadBearing': sum(1 for i in all_items if i['stars'] == 3),
         },
-        'note': 'Every document this analysis is built on. Nothing here is private, paid for, '
-                'or obtained by request — all of it is published by the district, the town, '
-                'the state or a neighbouring district, and can be found again at the links '
-                'above. Where a document was unreadable, or says something inconvenient, it '
-                'is listed anyway.',
+        # Counts interpolated, never typed. A categorical claim about the corpus goes
+        # stale exactly the way a dollar figure does, and this one already had: the page
+        # said nothing was obtained by request while carrying fifteen documents that were,
+        # one group of which says so in its own blurb.
+        'note': f'Every document this analysis is built on. Nothing here is private or paid '
+                f'for. {by_request_count} came from the Town by records request and are '
+                f'marked; the rest were published by the district, the town, the state or a '
+                f'neighboring district, and can be found again at the links above. Where a '
+                f'document was unreadable, or says something inconvenient, it is listed '
+                f'anyway.',
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

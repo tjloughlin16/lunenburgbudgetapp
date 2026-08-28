@@ -78,14 +78,14 @@ showing the district saving *and* what it costs a family per year. Year-one savi
 of headline because M.G.L. c.32B §§21-23 requires 25% of first-year savings go back to
 employees as mitigation.
 
-Default enrolment (194 across four plans) is calibrated so the town's 75% share reconciles
+Default enrollment (194 across four plans) is calibrated so the town's 75% share reconciles
 to the $3,994,071 school health line, within 0.1%. The plan *mix* within that total is an
 assumption and is flagged as such in the UI.
 
 ## Local peer comparison
 
 Six North Central Massachusetts districts, all from their own published FY27 budgets
-(`../sources/peers/`). The headline: Lunenburg's schools grew **1.08%** while neighbours
+(`../sources/peers/`). The headline: Lunenburg's schools grew **1.08%** while neighbors
 grew 2.9%–6.5%, against health insurance up 8–14% and Chapter 70 up 1.5–2% everywhere.
 
 Ashburnham-Westminster is the key contrast — it wrote "preserve athletics, arts and
@@ -97,7 +97,7 @@ Data lives in `model/peers.py`; edit there and re-run `model/export.py`.
 
 ## Fees, levers and the recommendation
 
-Three later sections model everything *other* than cutting programmes:
+Three later sections model everything *other* than cutting programs:
 
 - **Fees & self-funding** (`components/Athletics.tsx`, `components/FeeCurve.tsx`) —
   per-sport costs and participation from the district's own "Athletic Program Costs by
@@ -111,17 +111,17 @@ Three later sections model everything *other* than cutting programmes:
   Revenue is **non-monotonic** in the fee — it rises, peaks, then falls as families are
   priced out. Do not replace the scan in `feeFor` with a bisection; bisection is wrong on
   this curve and silently returns "unreachable" for everything. `FeeCurve` plots the whole
-  curve with the peak and the programme-cost line, and the y-domain deliberately includes
+  curve with the peak and the program-cost line, and the y-domain deliberately includes
   the target so the shortfall is visible.
 
   Result: **full self-funding is unreachable for athletics and buses.** Athletics peaks
-  near $1,105/season raising ~$371k against a $452k programme; buses peak near $715 raising
+  near $1,105/season raising ~$371k against a $452k program; buses peak near $715 raising
   ~$146k against $1.05M of general-education transport.
 - **Close the gap** (`components/Levers.tsx`, `model/levers.py`) — athletics/activity/bus
   fees, health-insurance plan design, administration reduction and technology cuts, each
   with a running total against the FY28 gap and an honest caveat.
 - **What we'd do** (`components/Recommendation.tsx`, `model/recommendation.py`) — our own
-  package. Finds ~$415k of the $613k gap without cutting a programme; the rest is an
+  package. Finds ~$415k of the $613k gap without cutting a program; the rest is an
   override or classroom positions. Reasoning is in the module docstring.
 
 Key figures: all administration $2,633,246 · technology $638,675 · health insurance
@@ -135,7 +135,7 @@ A section on business growth as an alternative to overrides. Three parts:
    Explains the Prop 2½ paradox: rising assessments do *not* raise revenue, because the
    rate falls to keep the levy under the cap. Only new growth adds to the limit.
 2. **Growth calculator** — new commercial value per year → revenue now and in ten years,
-   expressed in buildings via labelled archetype estimates. Charts business growth against
+   expressed in buildings via labeled archetype estimates. Charts business growth against
    an override of the same size; at $15M/yr of new value, growth overtakes a $613k override
    in **year 3** and keeps compounding.
 3. **Residential paradox** — local cost per pupil is $10,894 after Chapter 70; the school
@@ -144,7 +144,7 @@ A section on business growth as an alternative to overrides. Three parts:
    building of equal value pays the same and sends nobody.
 
 Archetype assessed values are our order-of-magnitude estimates, not Lunenburg assessments,
-and are labelled as such in the UI. The model counts commercial revenue but not the
+and are labeled as such in the UI. The model counts commercial revenue but not the
 municipal costs commercial development brings.
 
 ## Business registrations (`model/business.py`)

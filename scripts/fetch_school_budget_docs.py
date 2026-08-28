@@ -3,7 +3,7 @@
 
 The page is a wall of Google Drive links going back to FY18 — roughly ninety documents,
 none of them hosted by the district itself. Drive links rot, get re-shared, or quietly
-change permissions, and analysing from them means an HTTP call every time somebody asks a
+change permissions, and analyzing from them means an HTTP call every time somebody asks a
 question. So this pulls the lot down once.
 
 Two things it does beyond downloading:

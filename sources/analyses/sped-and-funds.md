@@ -149,7 +149,7 @@ The cost reappears later, larger, and outside the appropriation.
 
 `xlsx/dese-all-districts.xlsx` is **Total In-District Expenditures**. DESE's in-district
 measure excludes out-of-district tuition — a separate reporting category. So the app's
-conclusion #3, comparing Lunenburg's growth to its neighbours, is computed on a basis
+conclusion #3, comparing Lunenburg's growth to its neighbors, is computed on a basis
 that omits the line that quadrupled.
 
 The claim survives — in-district Lunenburg grew +21% FY18→FY24 against Groton-Dunstable
@@ -370,7 +370,7 @@ Recorded, not yet implemented — deliberately.
 - Out-of-district **placement counts** by year, not just dollars. Dollars ÷ count gives
   the average tuition, which is what actually escalates.
 - FY26 year-end actuals on 9300/9400 — did the $1.53M committed hold?
-- In-district SPED enrolment and the district SPED rate against the Chapter 70
+- In-district SPED enrollment and the district SPED rate against the Chapter 70
   foundation budget's assumed rate. Where actual exceeds the assumption the town eats
   100% of the difference, and a hold-harmless district never catches up.
 - Whether the FY27 tuition line is gross or net of circuit breaker (§2.1).
@@ -426,7 +426,7 @@ from "impossible" to "possible but self-defeating," which is a different argumen
 Requires proper recomputation in `price.ts` — the 1.308 scaling is indicative, not exact,
 because the demand-dropoff curve interacts with it.
 
-**#3 — "Grew 1.08% while neighbours grew 2.9–6.5%."** Survives, needs a footnote: DESE
+**#3 — "Grew 1.08% while neighbors grew 2.9–6.5%."** Survives, needs a footnote: DESE
 in-district expenditure excludes out-of-district tuition by construction (§1.6).
 
 **#14 — "Nothing closes the gap without either an override or teachers" (68%).** Holds
@@ -468,7 +468,7 @@ which the model does not currently show either way.
 **Deep — engine-level, everything downstream moves:**
 `model/rates.ts` (the six-bucket escalator), `model/engine.ts`. SPED currently splits
 across `salaries` / `transport` / `sped_tuition` at three rates none of which match its
-behaviour. Either a seventh bucket or a SPED-specific rate. Touching this moves
+behavior. Either a seventh bucket or a SPED-specific rate. Touching this moves
 `YearChart`, `Magnitude`, `CutLine`, `Forever`, `LevelVsSlope`, `Walkthrough` and the
 headline automatically.
 
