@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import Papa from 'papaparse'
 import raw from '../data/sources.json'
 
 /** Every document this analysis is built on, listed.
@@ -210,6 +211,8 @@ export function SourceIndex() {
           const ours = g.section === 'ours'
           return (
             <div key={`s-${g.id}`} className="contents">
+            {/* Closes the town's half, before the line saying what follows is ours. */}
+            {sec && g.section === 'ours' && !needle && <MeetingArchive />}
             {sec && (
               <div className={gi === 0 ? 'mb-1' : 'mt-8 mb-1 pt-7 border-t-2'}
                 style={gi === 0 ? undefined : { borderColor: ours ? 'var(--status-warning)' : 'var(--grid)' }}>
@@ -271,9 +274,48 @@ export function SourceIndex() {
         )}
       </div>
 
-      {/* ---------- the meeting archive ---------- */}
-      {S.corpus && !needle && (
-        <div className="card p-5 mt-2.5">
+      <p className="text-xs leading-relaxed mt-5 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
+        {S.note} Index generated {S.generated}
+        {S.commit ? ` from commit ${S.commit}` : ''}.
+      </p>
+    </div>
+  )
+}
+
+/** The town's own agendas and minutes.
+ *
+ *  Rendered inside the town's half of the archive rather than after everything, where it
+ *  sat beneath a heading announcing that what followed was written by us. Of all the
+ *  things this page could mislead a reader about, who wrote a document is the one it
+ *  exists to get right. */
+type Row = { board: string; date: string; kind: string; file_id: string
+             path: string; url: string }
+
+function MeetingArchive() {
+  const [board, setBoard] = useState<string | null>(null)
+  const [rows, setRows] = useState<Row[] | null>(null)
+  const [failed, setFailed] = useState(false)
+
+  /* 1,383 rows are too many to ship in the bundle for a panel most readers never open, and
+     the index is already published as a download. So it is fetched once, on the first
+     expand, from the same file the download button hands over. */
+  const load = async () => {
+    if (rows || failed) return
+    try {
+      const text = await fetch(S.corpusIndexUrl).then(r => {
+        if (!r.ok) throw new Error(String(r.status))
+        return r.text()
+      })
+      const parsed = Papa.parse<Row>(text, { header: true, skipEmptyLines: true })
+      setRows(parsed.data.filter(r => r.board))
+    } catch {
+      setFailed(true)
+    }
+  }
+
+  if (!S.corpus) return null
+  return (
+        <div className="card p-5 mb-9">
           <h3 className="text-[15px] font-bold">The meeting archive</h3>
           <p className="mt-1 text-[13px] leading-relaxed max-w-3xl"
             style={{ color: 'var(--text-secondary)' }}>{S.corpus.note}</p>
@@ -291,38 +333,62 @@ export function SourceIndex() {
             {S.corpus.fetched.toLocaleString()} retrieved &middot; {S.corpus.agendas} agendas
             and {S.corpus.minutes} sets of minutes &middot; {S.corpus.from} to {S.corpus.to}
           </p>
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full text-[12.5px]">
-              <caption className="sr-only">Documents held per town board</caption>
-              <thead>
-                <tr style={{ color: 'var(--text-muted)' }}>
-                  <th className="text-left font-semibold pb-1.5">Board</th>
-                  <th className="text-right font-semibold pb-1.5">Documents</th>
-                </tr>
-              </thead>
-              <tbody>
-                {S.corpus.boards.slice(0, 12).map(b => (
-                  <tr key={b.name} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                    <td className="py-1.5">{b.name}</td>
-                    <td className="py-1.5 text-right tnum">{b.documents}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          {S.corpus.boards.length > 12 && (
-            <p className="mt-2 text-[12px]" style={{ color: 'var(--text-muted)' }}>
-              and {S.corpus.boards.length - 12} more boards, down to committees that met
-              twice.
-            </p>
-          )}
-        </div>
-      )}
+          <ul className="mt-4 flex flex-col">
+            {S.corpus.boards.map(b => {
+              const isOpen = board === b.name
+              const docs = rows?.filter(r => r.board === b.name) ?? []
+              return (
+                <li key={b.name} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                  <button
+                    onClick={() => { setBoard(isOpen ? null : b.name); void load() }}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-baseline justify-between gap-3 py-2 text-left">
+                    <span className="text-[12.5px] flex items-baseline gap-2 min-w-0">
+                      <span aria-hidden="true" className="shrink-0"
+                        style={{ color: 'var(--text-muted)' }}>{isOpen ? '−' : '+'}</span>
+                      <span className="truncate">{b.name}</span>
+                    </span>
+                    <span className="text-[12.5px] tnum shrink-0"
+                      style={{ color: 'var(--text-muted)' }}>{b.documents}</span>
+                  </button>
 
-      <p className="text-xs leading-relaxed mt-5 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
-        {S.note} Index generated {S.generated}
-        {S.commit ? ` from commit ${S.commit}` : ''}.
-      </p>
-    </div>
+                  {isOpen && (
+                    <div className="pb-3 pl-5">
+                      {!rows && !failed && (
+                        <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                          Loading the index&hellip;
+                        </p>
+                      )}
+                      {failed && (
+                        <p className="text-[12px]" style={{ color: 'var(--status-critical)' }}>
+                          The index did not load. It is downloadable above.
+                        </p>
+                      )}
+                      {rows && (
+                        <ul className="flex flex-col gap-0.5">
+                          {docs.map(d => (
+                            <li key={d.file_id} className="text-[12px] flex gap-2.5">
+                              <span className="tnum shrink-0 w-[5.5rem]"
+                                style={{ color: 'var(--text-muted)' }}>{d.date}</span>
+                              <span className="shrink-0 w-[4.2rem] capitalize"
+                                style={{ color: 'var(--text-secondary)' }}>{d.kind}</span>
+                              {/* Straight to the town's own copy. Ours are scans we did not
+                                  commit; theirs is the authoritative one and it is free. */}
+                              <a href={d.url} target="_blank" rel="noopener noreferrer"
+                                className="underline min-w-0"
+                                style={{ color: 'var(--series-cost)' }}>
+                                {d.path ? 'Open at the Town' : 'Listed, but the Town returns an error'}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
   )
 }
