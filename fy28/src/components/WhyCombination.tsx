@@ -18,7 +18,7 @@ const SPREAD = BASELINE_BLENDED - TARGET
  *  analysis rather than on it as a choice.
  *
  *  Two findings, and they are not symmetrical. Salaries cannot be worked around at all:
- *  the line is two thirds of the budget, so growing at 4% it consumes the entire
+ *  the line is the largest in the budget, so growing at 4% it consumes the entire
  *  revenue rate on its own and every other line in the budget would have to grow at
  *  nothing. Insurance can be worked around, at roughly five times the building for the
  *  identical outcome. Neither finishes the job alone, and neither can be left out of it. */

@@ -57,8 +57,9 @@ export function HealthSalaryTrade() {
           </label>
         </div>
         <p className="text-[12px] mb-3" style={{ color: 'var(--text-secondary)' }}>
-          Salaries are two thirds of the budget, so whatever the other lines do, salaries
-          are what absorbs it. The last two columns assume the bargained increase stays
+          Salaries are the largest line, so whatever the other lines do, salaries are what
+          absorbs it &mdash; though a share of what the account codes call salaries is
+          special education staffing, which no settlement reaches. The last two columns assume the bargained increase stays
           at {pct(CONTRACT_RATE, 1)} and the line is held down by employing fewer people
           instead &mdash; which is one of the two ways to get there, and the one nobody
           says out loud.

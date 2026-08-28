@@ -24,7 +24,7 @@ const raw = project(6, A)
  *  `cumulative` is what the projection produces: how much more the schools need in that
  *  year than today's revenue line delivers. `fresh` is the part that is NEW that year —
  *  the cumulative figure less what last year's shortfall would already have grown to.
- *  A resident hearing "$1.2M in FY29" reasonably assumes it is on top of FY28's $613k.
+ *  A resident hearing a later year's figure reasonably assumes it sits on top of the first year's.
  *  It is not; it includes it. */
 export const GAPS = raw.map((y, i) => ({
   fy: y.fy,

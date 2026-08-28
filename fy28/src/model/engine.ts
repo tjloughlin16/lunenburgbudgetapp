@@ -182,7 +182,7 @@ export const MODEL = raw as unknown as {
  *
  *  Not `MODEL.expenseBase` — project() folds the special town meeting add-backs into
  *  salaries before it grows anything, so a blended rate computed off the raw buckets
- *  understates the weight of the fastest-moving two thirds of the budget. Three different
+ *  understates the weight of the fastest-moving lines in the budget. Three different
  *  pages were computing this three times; they now all read it from here, because a site
  *  whose tabs quote different growth rates for the same budget has no business telling
  *  anybody the arithmetic is checkable. */

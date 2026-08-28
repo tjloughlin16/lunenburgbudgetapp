@@ -319,7 +319,7 @@ function WithinShare() {
         <strong>Salaries have the longest bar and health insurance has the reddest one.</strong>{' '}
         That is the difference between costing a lot and being the problem: salaries take{' '}
         {rows.find(r => r.key === 'salaries')!.multiple.toFixed(2)}&times; their share
-        because they are two thirds of the budget, while health insurance takes{' '}
+        because of their share of the budget, while health insurance takes{' '}
         {rows[0].multiple.toFixed(2)}&times; theirs and is{' '}
         {Math.round((rows[0].overdraft / -N.leftOver) * 100)}% of the whole shortfall on
         its own.
@@ -361,7 +361,7 @@ function Fact({ label, value, sub, tone }: {
  *  the last two columns separate the two things that both get called the gap.
  *
  *  The running total is what the rest of the site quotes and it is cumulative: FY29's
- *  $1.18M includes FY28's $613k rather than sitting on top of it. The last column is the
+ *  each year's figure includes the one before rather than sitting on top of it. The last column is the
  *  money that is genuinely new that year, and it is the one to read — roughly $600,000
  *  every year, for ever, and rising. */
 export function YearLedger({ overrideLevy = 0, title, intro, footer }: {

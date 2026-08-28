@@ -99,7 +99,7 @@ export function BendTheCurve({ onJump, option = null }: {
           <Fact label="Revenue grows at" value={pct(BASELINE_REVENUE_GROWTH)}
             sub={`Proposition 2½ caps the levy at ${pct(LEVY_CAP, 1)}; new growth adds the rest`} />
           <Fact label="The gap by FY33" value={usdShort(base[5].gap)}
-            sub="Starting from $613k next year, with nothing going wrong"
+            sub={`Starting from ${usdShort(base[0].gap)} next year, with nothing going wrong`}
             tone="critical" />
         </div>
         <div className="mt-4">

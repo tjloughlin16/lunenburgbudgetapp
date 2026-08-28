@@ -5,7 +5,7 @@ import { ADMIN, DEVELOPMENT_MIX, EXTRACURRICULAR, HEALTH_LEVERS,
 /** The rate problem, made adjustable.
  *
  *  Every other page in this tool moves amounts. This one moves rates, because the amounts
- *  were never the problem: the district's costs compound at 4.94% a year and the town's
+ *  were never the problem: the district's costs compound faster than the levy cap and the town's
  *  revenue compounds at about 3.05%, and two exponentials with different exponents
  *  diverge forever no matter what you subtract from one of them.
  *
@@ -456,7 +456,7 @@ export function stability(s: Scenario) {
 
 /** The salary rate that balances the blend, given what every other line is doing.
  *
- *  Salaries are solved for rather than chosen because they are two thirds of the budget:
+ *  Salaries are solved for rather than chosen because they are the largest line:
  *  whatever the other lines do, this is the number that has to absorb it. Returns a
  *  negative rate when no salary rate can balance — which is itself the answer. */
 export function salaryRateToBalance(rates: Record<Bucket, number>, target: number): number {
