@@ -87,6 +87,20 @@ CITATIONS = [
          doc='xlsx/fy27-proposals.xlsx',
          source='FY27 budget workbook, lines 9300 and 9400'),
 
+    dict(id='sped', metric='Special education growth, in district',
+         value='5.9% a year',
+         kind='ours',
+         basis='OURS, and a measurement rather than an explanation. It is what this line '
+               'did in the district\u2019s own budgets: FY25 adopted $5,038,594, FY26 '
+               'adopted $5,158,207, FY27 level service $5,649,284 \u2014 a near-flat year '
+               'and a steep one, averaging 5.9%. We do not model why it moved. The budget '
+               'shows dollars per line and never shows people, and staff counts are not '
+               'published. The contracts governing these staff would give 2.48% on their '
+               'own; the line rose faster, and what accounts for the difference is not '
+               'something we can establish.',
+         doc='xlsx/fy27-proposals.xlsx',
+         source='FY27 budget workbook, columns fy25_budget and fy27_level_service'),
+
     dict(id='ch70', metric='Chapter 70 aid and the foundation budget',
          value='$9,349,335',
          kind='published', basis='DESE preliminary FY27 Chapter 70',

@@ -60,9 +60,25 @@ DEFAULT_ASSUMPTIONS = dict(
     health=0.090,          # district assumed 9% for FY27
     transport=0.060,       # district assumed 10% for FY27; 6% is the softer default
     # Special education, in district. The only rate here the district does not publish,
-    # because nobody has separated the line before. Derived budget to budget: FY25 adopted
-    # to FY27 level service, two years. Level service is the district's own arithmetic for
-    # the same services at next year's prices, which is what an escalator is.
+    # because nobody has separated the line before.
+    #
+    # 5.9% is a MEASUREMENT, not an explanation. It is what this line did budget to
+    # budget, FY25 adopted to FY27 level service: 5,038,594 -> 5,158,207 -> 5,649,284,
+    # a near-flat year (+2.4%) and a steep one (+9.5%). The model projects what the line
+    # has done. It makes no claim about why, because the budget shows dollars per line and
+    # never shows people, and the district does not publish staff counts.
+    #
+    # It is worth being clear why the alternative is NOT the safer choice. Escalating this
+    # line at 2.48% -- the blended rate of the contracts that actually govern these staff,
+    # teachers at 3.5% and aides at 2.0% -- would assume that nothing but bargained pay
+    # moves it. Two years of the district's own budgets contradict that. A lower number
+    # that assumes something the data denies is not caution; it is an unsupported
+    # assumption that happens to be smaller.
+    #
+    # The honest range, all three from budget columns:
+    #     2.48%  contracts alone, if headcount and classification never change
+    #     5.90%  what the line did, two years            <- used
+    #     9.52%  what it did in FY27 alone
     sped=0.059,
     sped_tuition=0.080,    # out-of-district placements
     utilities=0.050,

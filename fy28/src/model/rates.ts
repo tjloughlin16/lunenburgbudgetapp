@@ -69,7 +69,7 @@ export const RATE_LINES: RateLine[] = ([
    'The highest-leverage line in the budget relative to its size. Plan design and the contribution split go through the Public Employee Committee under c.32B §§21-23; joining the state GIC is the other route. None of it is a School Committee vote.'],
   ['sped', 'Special education, in district',
    'Each child’s plan, and the law behind it',
-   'About a fifth of the budget, and the second-largest driver of the gap after insurance. Almost none of it is a choice: staffing follows what plans require. It was invisible until now because the state’s account codes file it under salaries, where it inherited the teachers’ contract rate and behaved nothing like it.'],
+   'About a fifth of the budget, and the second-largest driver of the gap after insurance. It was invisible until now because the state’s account codes file it under salaries, where it inherited the teachers’ contract rate. The rate here is not a contract rate — it is what the line has actually done in the district’s own budgets. The contracts covering these staff, the same ones covering everyone else, would give about 2.5%. The line has risen faster than that, and the budget cannot say why: it shows dollars per line and never shows people.'],
   ['transport', 'Transportation',
    'Contracted, and exposed to fuel',
    'Movable at contract renewal, and by routing. Special education transport inside it is required by law and cannot be reduced by choice.'],

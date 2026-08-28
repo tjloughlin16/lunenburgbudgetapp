@@ -49,7 +49,8 @@ Ties to the published $26,572,288 within $2. This part is solid and worth keepin
 saying so. The town cut a school psychologist from $98,784 to zero between FY26 and FY27,
 so there is no established floor.
 
-**The special education rate is set to 5.9% — and that is wrong.** See §4.
+**The special education rate is set to 5.9%**, and §4 explains why that is the right
+choice rather than the cautious-looking one.
 
 ---
 
@@ -137,29 +138,37 @@ different things and cannot be reconciled from what is published.
 
 ---
 
-## 4. The open decision — this is where to pick up
+## 4. The rate decision — settled 28 August
 
-The model needs one growth rate for special education. Three candidates, all defensible,
-$403,337 apart in the FY28 gap:
+**Special education is modeled at 5.9%.** Settled after TJ made the argument that reframed
+it, and the reframing is the part worth keeping.
 
-| assume | because | FY28 gap |
-|---|---|---:|
-| **2.48%** | It is what the contracts give. Provable. | $513,681 |
-| **5.9%** *(current)* | It is what two years of budgets did | $710,179 |
-| **9.5%** | It is what the most recent year did | $917,018 |
+5.9% is a **measurement**: what the line did in the district's own budgets, FY25 adopted
+$5,038,594 → FY26 adopted $5,158,207 → FY27 level service $5,649,284. A near-flat year
+(+2.4%) and a steep one (+9.5%), averaging 5.9%. It already sits between the two extremes
+rather than needing to be blended toward them.
 
-**Why 5.9% is wrong as it stands:** it is one step rather than a trend (paras fell 2.4%
-then rose 39.4%; everything else went +4.2% then −1.0%), and it merges the bargained part
-with an unexplained part into one number that looks measured.
+The model projects **what the line has done**. It claims nothing about why.
 
-**Proposal put to TJ, not yet decided:** default to **2.48%** — the number a contract can
-be pointed at — and put the remainder on a visible dial starting at zero, labeled that the
-budget grew faster than the contracts explain, that we do not know why, and what it costs
-if it continues. Cost of that choice: the headline gap drops to about $514k, lower than
-the app shows today, and someone could reasonably say we are understating.
+**Why 2.48% was not the safer option**, which is where I had it wrong. Escalating at the
+blended contract rate would assume nothing but bargained pay moves this line — and two
+years of the district's own budgets contradict that. A lower number that assumes something
+the data denies is not caution. It is an unsupported assumption that happens to be smaller.
 
-**TJ's last message said the framing was still unclear. The decision is his and is
-outstanding.**
+The range is documented in `model/finance.py`, in the citation, and on the rate page:
+
+| | |
+|---|---:|
+| contracts alone, if nothing else changes | 2.48% |
+| **what the line did, two years** | **5.90%** |
+| what it did in FY27 alone | 9.52% |
+
+FY28 gap at 5.9%: **$710,179**.
+
+Note for whoever picks this up: TJ believes headcount rose, and that is very likely the
+explanation. It is deliberately **not** written anywhere as a finding, because staff counts
+are not published and rule 7 applies. The model does not need the explanation to be right —
+it projects the line, not the cause.
 
 ---
 
