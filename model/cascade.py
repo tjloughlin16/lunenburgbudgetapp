@@ -50,7 +50,37 @@ PRESETS = {
     },
 }
 
+# How far a cascade will cut into each kind of programme before it stops.
+#
+# This is OUR assumption, not a fact in any document, and it should be read as one. A
+# cascade needs somewhere to stop, so we gave it somewhere. Nothing we hold establishes
+# where the real floor is.
+#
+# The town's own budgets contradict the idea that there is a hard one. Between FY26 and
+# FY27 the district cut ten special education lines, $224,049 in total, including an
+# entire Elementary School Psychologist from $98,784 to zero and $66,538 off the high
+# school resource room teacher. Services a plan requires are still owed after a position
+# is cut, so what those reductions bought was not a saving but a deferral -- and none of
+# that appears in a budget.
+#
+# So the honest statement is not "here is the floor". It is that every year the district
+# has taken a little more out of something it is legally obliged to provide, and nobody
+# has established where that stops.
 MANDATE_FLOOR = {'legal': 1000, 'contract': 100, 'discretionary': 0}
+
+# Published so the app can say the floor is an assumption rather than presenting it as a
+# boundary in the law, and so a reader can see what the town has already cut past.
+FLOOR_NOTE = dict(
+    isOurs=True,
+    what='A cascade has to stop somewhere, so we made it stop. No document we hold '
+         'establishes a legal minimum for any of these programmes.',
+    evidence='Between the FY26 and FY27 budgets the district cut ten special education '
+             'lines totalling $224,049 — including an entire Elementary School '
+             'Psychologist, from $98,784 to nothing.',
+    implication='Cutting a service that is still owed does not save the money. It moves '
+                'the cost somewhere a budget cannot see it.',
+    source='xlsx/fy27-proposals.xlsx, columns fy26_final and fy27_balanced',
+)
 
 
 def expand(programs):

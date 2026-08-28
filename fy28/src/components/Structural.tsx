@@ -15,6 +15,7 @@ const BUCKETS: { key: keyof Assumptions; label: string; note: string }[] = [
   { key: 'salaries', label: 'Salaries', note: 'Collectively bargained' },
   { key: 'health', label: 'Health insurance', note: 'Set by the insurance market' },
   { key: 'transport', label: 'Transportation', note: 'Contracted, fuel-exposed' },
+  { key: 'sped', label: 'Special education, in district', note: 'Set by each child’s plan' },
   { key: 'sped_tuition', label: 'Out-of-district SPED', note: 'Set by law and by placement' },
   { key: 'utilities', label: 'Utilities', note: 'Market' },
   { key: 'other', label: 'Everything else', note: 'The only genuinely discretionary part' },
@@ -453,7 +454,8 @@ export function Structural() {
             {Object.entries(expense).sort((a, b) => b[1] - a[1]).map(([k, v]) => (
               <li key={k} className="flex items-center gap-2.5">
                 <span className="w-32 shrink-0 text-[12px] capitalize">
-                  {k.replace('sped_tuition', 'SPED tuition').replace('_', ' ')}
+                  {k.replace('sped_tuition', 'SPED tuition')
+                    .replace(/^sped$/, 'Special education').replace('_', ' ')}
                 </span>
                 <span className="flex-1 h-3 rounded" style={{ background: 'var(--surface-3)' }}>
                   <span className="block h-full rounded"

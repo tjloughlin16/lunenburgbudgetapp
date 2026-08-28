@@ -67,8 +67,9 @@ export function Solved({ onLoadPackage }: { onLoadPackage?: LoadPackage }) {
       <Section id="why" eyebrow="The reason there is no single lever"
         title="Why every one of them moves at least two lines"
         lede={<>Not one package on the board above pulls one lever, and that is arithmetic
-          rather than taste. Salaries are two thirds of the budget and insurance is the
-          highest-leverage line in it relative to its size; neither finishes the job alone,
+          rather than taste. Salaries and special education staffing are two thirds of the
+          budget between them &mdash; but only one of those is bargained, and insurance is
+          the highest-leverage line relative to its size. No one of them finishes the job,
           and the price of leaving either one out is on this page in the currency it is
           actually paid in.</>}>
         <WhyCombination />

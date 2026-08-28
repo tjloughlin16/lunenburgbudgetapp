@@ -17,10 +17,53 @@ ESCALATOR_GROUPS = {          # DESE function-code prefix -> escalator key
     '9400': 'sped_tuition', '4120': 'utilities', '4130': 'utilities',
 }
 
+# Special education needs its own escalator, and the function-code prefix cannot give it
+# one. Two prefixes carry both kinds of cost: 2330 is paraprofessionals, general education
+# and special education alike, and 3300 is transportation, where the special education
+# runs are a separate line from the yellow-bus routes.
+#
+# Bucketing on the prefix therefore put about $5.7M of special education staffing inside
+# 'salaries' at the teachers' contract rate. That hid no money -- the total was always
+# right -- but it averaged together two lines that behave nothing alike. Teaching salaries
+# move when the School Committee bargains a contract. Special education staffing moves
+# when a child arrives needing an aide, and no negotiation touches that.
+SPED_GROUPS = {
+    '2110 - Special Education',
+    '2110 - Special Education Clerical',
+    '2310 - Teachers Specialists - Special Education',
+    '2320 - Therapeutic Services',
+    '2325 - Special Education Substitutes',
+    '2330 - Paraprofessionals Special Education *** (LTP notes)',
+    '2800 - Psych. Services',
+    '2800 - Psychological Services',
+}
+
+
+def is_sped(row):
+    """Whether a budget line is special education, tuition aside.
+
+    Group membership first, then the line itself for the ones inside a mixed group --
+    special education transport among the bus routes, special education instructional
+    materials among each school's supplies. Out-of-district tuition is deliberately
+    excluded: it keeps its own escalator because it is set by placement, not payroll.
+    """
+    group = (row['function_group'] or '').strip()
+    if group.startswith(('9300', '9400')):
+        return False
+    if group in SPED_GROUPS:
+        return True
+    item = (row['line_item'] or '').lower()
+    return 'special ed' in item or 'specl ed' in item
+
 DEFAULT_ASSUMPTIONS = dict(
     salaries=0.040,        # contractual steps + lanes + COLA
     health=0.090,          # district assumed 9% for FY27
     transport=0.060,       # district assumed 10% for FY27; 6% is the softer default
+    # Special education, in district. The only rate here the district does not publish,
+    # because nobody has separated the line before. Derived budget to budget: FY25 adopted
+    # to FY27 level service, two years. Level service is the district's own arithmetic for
+    # the same services at next year's prices, which is what an escalator is.
+    sped=0.059,
     sped_tuition=0.080,    # out-of-district placements
     utilities=0.050,
     other=0.030,
@@ -56,7 +99,10 @@ def expense_base(csv_path='sources/data/lps-budget-lines.csv'):
         if not v:
             continue
         code = (r['function_group'] or '')[:4]
-        if r['section'] == 'SALARIES' and code not in ESCALATOR_GROUPS:
+        # Tested before the prefix map, which is exactly what cannot see it.
+        if is_sped(r):
+            buckets['sped'] += v
+        elif r['section'] == 'SALARIES' and code not in ESCALATOR_GROUPS:
             buckets['salaries'] += v
         else:
             buckets[ESCALATOR_GROUPS.get(code, 'other')] += v

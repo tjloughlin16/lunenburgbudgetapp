@@ -5,6 +5,7 @@ const PCT: { key: keyof A; label: string; note: string; max: number }[] = [
   { key: 'salaries', label: 'Salary growth', note: 'Contractual steps, lanes and cost-of-living', max: 0.08 },
   { key: 'health', label: 'Health insurance', note: 'District assumed 9% building FY27', max: 0.18 },
   { key: 'transport', label: 'Transportation', note: 'District assumed 10% building FY27', max: 0.15 },
+  { key: 'sped', label: 'Special education, in district', note: 'No published rate exists; 5.9% is what the budgets did', max: 0.15 },
   { key: 'sped_tuition', label: 'Out-of-district tuition', note: 'Driven by placement count, not rates', max: 0.20 },
   { key: 'utilities', label: 'Utilities', note: 'Electricity rose 19% in FY27', max: 0.15 },
   { key: 'other', label: 'All other expenses', note: 'Supplies, contracts, materials', max: 0.08 },

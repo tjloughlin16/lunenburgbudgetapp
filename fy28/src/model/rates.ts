@@ -28,13 +28,14 @@ export const LEVY_CAP = 0.025
 /** What the schools keep of a dollar added to the town's levy. */
 export const SHARE = newGrowthPerDollar(A)
 
-export type Bucket = 'salaries' | 'health' | 'transport' | 'sped_tuition' | 'utilities' | 'other'
-export const BUCKETS: Bucket[] = ['salaries', 'health', 'transport', 'sped_tuition',
+export type Bucket = 'salaries' | 'health' | 'transport' | 'sped' | 'sped_tuition'
+  | 'utilities' | 'other'
+export const BUCKETS: Bucket[] = ['salaries', 'health', 'transport', 'sped', 'sped_tuition',
                                   'utilities', 'other']
 
 const BASE: Record<Bucket, number> = {
   salaries: E.salaries + F.stm_addbacks,
-  health: E.health, transport: E.transport, sped_tuition: E.sped_tuition,
+  health: E.health, transport: E.transport, sped: E.sped, sped_tuition: E.sped_tuition,
   utilities: E.utilities, other: E.other,
 }
 const TOTAL = BUCKETS.reduce((s, k) => s + BASE[k], 0)
@@ -62,10 +63,13 @@ export interface RateLine {
 export const RATE_LINES: RateLine[] = ([
   ['salaries', 'Salaries',
    'Bargained with the unions, three years at a time',
-   'The largest single lever, because two thirds of the budget moves with it. The current teachers’ agreement expires June 30, 2027 — inside the first year of this problem.'],
+   'The largest line, but a smaller lever than it looks. Nearly a third of what the state’s account codes call salaries is special education staffing, set by children’s plans rather than by any negotiation — it is counted separately below. What a contract actually reaches is the rest. The current teachers’ agreement expires June 30, 2027, inside the first year of this problem.'],
   ['health', 'Health insurance',
    'The Town buys the insurance, not the school district',
    'The highest-leverage line in the budget relative to its size. Plan design and the contribution split go through the Public Employee Committee under c.32B §§21-23; joining the state GIC is the other route. None of it is a School Committee vote.'],
+  ['sped', 'Special education, in district',
+   'Each child’s plan, and the law behind it',
+   'About a fifth of the budget, and the second-largest driver of the gap after insurance. Almost none of it is a choice: staffing follows what plans require. It was invisible until now because the state’s account codes file it under salaries, where it inherited the teachers’ contract rate and behaved nothing like it.'],
   ['transport', 'Transportation',
    'Contracted, and exposed to fuel',
    'Movable at contract renewal, and by routing. Special education transport inside it is required by law and cannot be reduced by choice.'],
@@ -376,6 +380,14 @@ export function consequenceOf(key: Bucket, rate: number): Consequence | null {
           + `insurance, not the school district.`,
       }
     }
+    case 'sped':
+      return {
+        text: `In-district special education is ${usdShort(delta)} lower by FY${fy}.`,
+        limit: 'Staffing follows what each child’s plan requires, so moving this is a '
+          + 'forecast about caseload rather than a decision anybody gets to make. And '
+          + 'holding it below what plans require does not save the money — the service is '
+          + 'still owed, which moves the cost somewhere the budget cannot see it.',
+      }
     case 'sped_tuition':
       return {
         text: `Out-of-district tuition is ${usdShort(delta)} lower by FY${fy}.`,
@@ -630,7 +642,7 @@ export function buildRateToHold(rates = DEFAULT_RATES, years = LONG): number | n
  *  everybody's pay, for the identical outcome. */
 export function insuranceLeverage(rate: number) {
   const capped = { ...DEFAULT_RATES, health: rate, transport: LEVY_CAP,
-                   sped_tuition: LEVY_CAP, utilities: LEVY_CAP, other: LEVY_CAP }
+                   sped: LEVY_CAP, sped_tuition: LEVY_CAP, utilities: LEVY_CAP, other: LEVY_CAP }
   const target = longRunTarget(DEFAULT_SCENARIO)
   const salary = salaryRateToBalance(capped, target)
   /** The other way to hold the same line: same contract, fewer people on it. */
@@ -890,7 +902,7 @@ export interface Package {
 }
 
 const mix = (over: Partial<Record<Bucket, number>>): Record<Bucket, number> =>
-  ({ ...DEFAULT_RATES, transport: LEVY_CAP, sped_tuition: LEVY_CAP,
+  ({ ...DEFAULT_RATES, transport: LEVY_CAP, sped: LEVY_CAP, sped_tuition: LEVY_CAP,
      utilities: LEVY_CAP, other: LEVY_CAP, ...over })
 
 /** The packages that actually hold, arranged by how long they hold for.

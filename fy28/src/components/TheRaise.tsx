@@ -12,6 +12,7 @@ const COLOR: Record<Bucket, string> = {
   salaries: 'var(--series-cost)',
   health: 'var(--series-revenue)',
   transport: 'var(--status-warning)',
+  sped: 'var(--brand)',
   sped_tuition: 'var(--status-serious)',
   other: 'var(--axis)',
   utilities: 'var(--text-muted)',

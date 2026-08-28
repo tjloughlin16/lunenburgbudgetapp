@@ -32,7 +32,7 @@ export function HealthSalaryTrade() {
   const [othersAtCap, setOthersAtCap] = useState(false)
 
   const ratesFor = (health: number): Record<Bucket, number> => othersAtCap
-    ? { ...DEFAULT_RATES, health, transport: LEVY_CAP, sped_tuition: LEVY_CAP,
+    ? { ...DEFAULT_RATES, health, transport: LEVY_CAP, sped: LEVY_CAP, sped_tuition: LEVY_CAP,
         utilities: LEVY_CAP, other: LEVY_CAP }
     : { ...DEFAULT_RATES, health }
 

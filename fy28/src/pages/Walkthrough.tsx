@@ -53,6 +53,12 @@ export function Walkthrough({ onJump }: {
   const salaryAt4 = salaryRateToBalance({ ...DEFAULT_RATES, health: 0.04 }, T)
   const shrink = workforceShrink(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0), 0.04)
   const aidRate = aidGrowthToSustain(DEFAULT_SCENARIO)!
+  // Derived, not typed. Both of these moved when special education got its own escalator
+  // and neither noticed, which is rule 2 in CLAUDE.md and the reason it is written down.
+  const ch70Rate = ch70OnlyGrowth(aidRate)
+  const ch70Year1 = STATE_AID.chapter70 * ch70Rate
+  const ch70TenYear = Array.from({ length: 10 }, (_, i) =>
+    STATE_AID.chapter70 * ((1 + ch70Rate) ** (i + 1) - 1)).reduce((a, b) => a + b, 0)
   const five = overrideForYears(5)
   const two = overrideForYears(2)
 
@@ -404,9 +410,9 @@ export function Walkthrough({ onJump }: {
         </Say>
         <Plate label="On the wall" figures={[
           { v: pct(STATE_AID.shareOfTownRevenue, 0), k: 'of town revenue is state aid — which is why the rate has to be so high', cite: 'levy' },
-          { v: pct(ch70OnlyGrowth(aidRate)), k: 'annual growth Chapter 70 alone would need, for ever', cite: 'ch70', tone: 'critical' },
-          { v: '+$833,340', k: 'extra in the first year' },
-          { v: '$64.2M', k: 'extra over ten years' },
+          { v: pct(ch70Rate), k: 'annual growth Chapter 70 alone would need, for ever', cite: 'ch70', tone: 'critical' },
+          { v: `+${usd(Math.round(ch70Year1))}`, k: 'extra in the first year', cite: 'ch70' },
+          { v: usdShort(ch70TenYear), k: 'extra over ten years', cite: 'ch70' },
         ]} />
         <Say>
           The reason the rate has to be so steep is that aid is only{' '}

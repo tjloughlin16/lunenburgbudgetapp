@@ -789,6 +789,7 @@
   "salaries": 0.04,
   "health": 0.09,
   "transport": 0.06,
+  "sped": 0.059,
   "sped_tuition": 0.08,
   "utilities": 0.05,
   "other": 0.03,
@@ -812,12 +813,20 @@
   "stm_appropriation": 350000
  },
  "expenseBase": {
-  "other": 1837836.0,
-  "transport": 1703313.0,
+  "other": 1760351.0,
+  "sped": 5745543.0,
+  "transport": 1053360.0,
   "utilities": 605511.0,
   "health": 4019071.0,
   "sped_tuition": 700142.0,
-  "salaries": 17706416.5
+  "salaries": 12688311.5
+ },
+ "floorNote": {
+  "isOurs": true,
+  "what": "A cascade has to stop somewhere, so we made it stop. No document we hold establishes a legal minimum for any of these programmes.",
+  "evidence": "Between the FY26 and FY27 budgets the district cut ten special education lines totalling $224,049 \u2014 including an entire Elementary School Psychologist, from $98,784 to nothing.",
+  "implication": "Cutting a service that is still owed does not save the money. It moves the cost somewhere a budget cannot see it.",
+  "source": "xlsx/fy27-proposals.xlsx, columns fy26_final and fy27_balanced"
  },
  "citations": {
   "items": [
@@ -1922,7 +1931,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$552,621",
+   "value": "$600,414",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -1930,8 +1939,8 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$38.4M",
-   "sub": "of new commercial value every year \u2014 about 58 more average businesses a year, on top of the 234 the town has, or 13 typical developments",
+   "value": "$41.7M",
+   "sub": "of new commercial value every year \u2014 about 63 more average businesses a year, on top of the 234 the town has, or 14 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },

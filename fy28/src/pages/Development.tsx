@@ -3,7 +3,7 @@ import {
   BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer,
 } from 'recharts'
-import { MODEL, usd, usdShort } from '../model/engine'
+import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import { Section, Note } from '../components/primitives'
 import { GrowthCalculator } from '../components/TaxBase'
 import { TaxBaseMix } from '../components/TaxBaseMix'
@@ -369,6 +369,8 @@ function WhyTheGap({ gap, share }: { gap: number; share: number }) {
 
 /** The conclusions, stated before the sliders rather than discovered inside them. */
 function Findings({ gap, share }: { gap: number; share: number }) {
+  const g = MODEL.assumptions
+  const p1 = (n: number) => `${(n * 100).toFixed(0)}%`
   const mix = T.archetypes.find(a => a.id === 'mix')?.value ?? 3_005_000
   const oneDev = (mix * T.rate) / 1000
   const closesAt = T.currentNewGrowthValue
@@ -428,11 +430,14 @@ function Findings({ gap, share }: { gap: number; share: number }) {
         + `because there is so little business to shift onto.`,
     },
     {
-      n: 6, anchor: 'bills', figure: '2.44 pts',
+      n: 6, anchor: 'bills',
+      figure: `${((COST_GROWTH_BLENDED - 0.025) * 100).toFixed(2)} pts`,
       head: 'The gap is a growth-rate problem, so it reopens every year no matter what is built.',
-      body: `School costs rise 4.94% a year blended — salaries 4%, health insurance 9%, `
-        + `out-of-district special education 8% — while the levy is capped at 2½%. That `
-        + `2.44-point difference compounds into ${usd(gap)} next year and $8.3M by FY37. `
+      body: `School costs rise ${(COST_GROWTH_BLENDED * 100).toFixed(2)}% a year blended `
+        + `— salaries ${p1(g.salaries)}, health insurance ${p1(g.health)}, in-district `
+        + `special education ${p1(g.sped)} — while the levy is capped at 2½%. That `
+        + `${((COST_GROWTH_BLENDED - 0.025) * 100).toFixed(2)}-point difference compounds `
+        + `into ${usd(gap)} next year, and keeps compounding. `
         + `A dollar of new growth can be spent once: on a lower tax bill or on a classroom. `
         + `There is no version where a large bill cut and a funded school budget both `
         + `happen.`,

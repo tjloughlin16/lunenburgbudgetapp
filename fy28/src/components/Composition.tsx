@@ -6,7 +6,8 @@ const RAMP = ['#0d366b', '#184f95', '#256abf', '#2a78d6', '#5598e7', '#86b6ef']
 const LABELS: Record<string, { label: string; note: string }> = {
   salaries: { label: 'Salaries & wages', note: 'Set by collective bargaining agreements' },
   health: { label: 'Health insurance', note: 'Rate set by the town’s insurance trust' },
-  transport: { label: 'Transportation', note: 'Special-ed routes are legally required' },
+  transport: { label: 'Transportation', note: 'General education routes; special education routes are counted below' },
+  sped: { label: 'Special education, in district', note: 'Staffing set by each child’s plan, not by a vote' },
   sped_tuition: { label: 'Out-of-district tuition', note: 'Court- and IEP-mandated placements' },
   utilities: { label: 'Heat, power & water', note: 'Market rates' },
   other: { label: 'Everything else', note: 'Supplies, materials, contracts, equipment' },

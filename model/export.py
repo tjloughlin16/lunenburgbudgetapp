@@ -2,7 +2,7 @@ import sys, json, csv
 sys.path.insert(0, 'model')
 from catalog import PROGRAMS, CATEGORIES
 from finance import DEFAULT_ASSUMPTIONS, FY27, expense_base
-from cascade import PRESETS
+from cascade import PRESETS, FLOOR_NOTE
 from peers import PEERS, LESSONS
 from athletics import (SPORTS, OTHER_PROGRAMS, FEE_BENCHMARKS, PROGRAM_TOTAL_LEVEL_SERVICE,
     PROGRAM_TOTAL_REMAINING, CURRENT_ATHLETIC_FEES, CURRENT_BUS_FEES, FEE_ACCOUNTING,
@@ -48,6 +48,7 @@ data = dict(
     assumptions=DEFAULT_ASSUMPTIONS,
     fy27=FY27,
     expenseBase=expense_base(),
+    floorNote=FLOOR_NOTE,
     citations=citations.export(),
     scenarios=scen,
     peers=PEERS,

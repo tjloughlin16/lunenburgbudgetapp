@@ -64,7 +64,7 @@ export interface Program {
   impact: string; repeatable?: number
 }
 export interface Assumptions {
-  salaries: number; health: number; transport: number; sped_tuition: number
+  salaries: number; health: number; transport: number; sped: number; sped_tuition: number
   utilities: number; other: number
   levy_growth: number; new_growth: number; state_aid_growth: number
   local_receipts_growth: number; school_share: number
@@ -78,6 +78,8 @@ export const MODEL = raw as unknown as {
   assumptions: Assumptions
   fy27: Record<string, number>
   expenseBase: Record<string, number>
+  floorNote: { isOurs: boolean; what: string; evidence: string
+               implication: string; source: string }
   citations: {
     items: { id: string; n: number; metric: string; value: string
              kind: string; basis: string; doc: string; source: string }[]
@@ -290,7 +292,16 @@ export interface AppliedItem {
   anchor?: string
 }
 
-const BUCKETS = ['salaries', 'health', 'transport', 'sped_tuition', 'utilities', 'other'] as const
+/** Special education is its own bucket rather than part of salaries.
+ *
+ *  Bucketing by state function code put it inside salaries at the teachers' contract
+ *  rate, because two codes carry both kinds of cost — paraprofessionals and
+ *  transportation are coded the same whether they serve a general classroom or a child's
+ *  plan. That hid no money; it averaged together two lines that behave nothing alike.
+ *  Teaching salaries move when a contract is bargained. This moves when a child arrives
+ *  needing an aide. */
+const BUCKETS = ['salaries', 'health', 'transport', 'sped', 'sped_tuition',
+  'utilities', 'other'] as const
 type Bucket = typeof BUCKETS[number]
 
 export interface YearProjection {
