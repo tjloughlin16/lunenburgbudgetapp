@@ -1,0 +1,59 @@
+# Lunenburg Budget Project
+
+> An independent projection of the Lunenburg, Massachusetts school budget, built from documents the town and district published. Not affiliated with either. Every figure is traceable to a source in the archive below.
+
+Data current as of 2026-08-28. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
+
+## Read this before computing anything
+
+The archive contains two kinds of number and they must never be mixed in one calculation:
+
+- **Budget columns** (`fy25_budget`, `fy26_final`, `fy27_level_service`, `fy27_balanced`) are what somebody voted or proposed.
+- **Actual columns** (`fy23_actual`, `fy24_actual`, `fy25_actual`, `fy26_actual_td`, `fy26_encumb_td`) are what was spent.
+
+They differ by up to 59% on some lines. A growth rate measured from an actual to a budget is partly growth and partly the step between the two, and produces a confident wrong answer. Every projection on this site uses budget columns only.
+
+`fy27_level_service` is the district’s own arithmetic for what the same services cost the following year. It is the correct endpoint for a cost-growth rate. `fy27_balanced` is what was actually adopted, and contains cuts, so a rate ending there measures policy rather than escalation.
+
+## The headline figures
+
+- FY27 school appropriation: $26,572,288 (the adopted "Balanced" budget)
+- Projected FY28 gap: $600,414 — Average annual shortfall FY28–FY30, after each year’s cuts compound
+- Growth assumptions: salaries 4.0%, health insurance 9.0%, special education 5.9%, out-of-district tuition 8.0%, transport 6.0%, utilities 5.0%, everything else 3.0%
+- Levy growth: 2.5% (Proposition 2½, statutory)
+
+Only the special education rate is ours. The rest are the district’s own stated assumptions, a signed contract, or statute. `model.json` → `citations` says which is which for every headline figure.
+
+## Data
+
+- [model.json](https://lunenburgbudgetproject.org/data/model.json) (0.1MB): Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the programme catalogue, the conclusions, and the citations.
+- [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.1MB): The document archive: every source, its group, its size, and the URL it is served from.
+- [budget-lines.csv](https://lunenburgbudgetproject.org/data/budget-lines.csv) (0.1MB): The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.
+- [district-page-index.csv](https://lunenburgbudgetproject.org/data/district-page-index.csv) (0.0MB): The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district’s original URL, and a sha256.
+- [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) (0.2MB): Every agenda and set of minutes the town publishes: board, date, kind, and the town’s own URL. 1,422 rows.
+
+## Documents
+
+154 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+
+- **Published by the town, the district and the state** — 58 documents. Primary sources.
+- **Held for reference, not used in the analysis** — 87 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
+- **Written by this project** — 9 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+
+Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
+
+Text has been extracted from nearly every document, including scans that had no text layer. Where a document has extracted text, `sources.json` gives a `textUrl`. Reading the text is usually faster than the PDF.
+
+## Meeting archive
+
+1,383 agendas and sets of minutes across 40 town boards, 2025-01-06 to 2026-11-17. The scanned originals are not mirrored; [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) carries the town’s own URL for each. Extracted text of all of them is in the repository.
+
+## What this site does not know
+
+- Out-of-district special education **placement counts** by year. Dollars cannot distinguish fewer children from a more honest estimate.
+- FY26 **year-end** figures. Everything held for FY26 stops at 31 March 2026.
+- Whether budgeted positions were **filled**. A budget line is an intention.
+
+## Provenance
+
+Source: https://github.com/tjloughlin16/lunenburgbudgetapp. Documents are served byte-identical to the archive; the build verifies this by hash. One file, a 53MB scan of the teachers’ agreement, is served from separate storage because it exceeds the host’s per-file limit, and its `url` in `sources.json` is absolute.
