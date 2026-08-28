@@ -133,10 +133,10 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As modeled, $700,142 + 8% | $613,238 | — |
-| Midway, $1,000,000 | $857,084 | **+$243,846** |
-| Back to the FY25 budget, $1,164,824 | $1,021,908 | **+$408,670** |
-| Back to the FY26 budget, $1,291,293 | $1,148,377 | **+$535,139** |
+| As the district budgeted it for FY27, $700,142 | $617,091 | — |
+| Midway back, $1,000,000 | $940,938 | **+$323,847** |
+| Back to the FY25 budget, $1,164,824 | $1,118,948 | **+$501,857** |
+| Back to the FY26 budget, $1,291,293 | $1,255,534 | **+$638,443** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
@@ -179,8 +179,34 @@ Weighting each part of the line by the contract that governs it:
 | Transport (vendor) | 12% | vendor contract |
 | Substitutes, supplies, legal | 3% | not bargained |
 
-**If every one of them rose only by its contract percentage, the line would rise 2.48%.**
-It rose more than that.
+**Weighted, those contracts come to 4.28%** — and that is the rate this model
+now uses, because the alternative turned out to be worse.
+
+> **Correction, 28 August 2026.** This file previously reported **2.48%** as the
+> contracts-only figure and used **5.89%**, what the whole line did, as the model's rate.
+> Both were wrong, in opposite directions.
+>
+> The 2.48% priced **special education transport at zero**. That is 11.5% of the line, it
+> is a vendor contract, and it moved +14.9% between the two budgets. A 0% that appears in
+> no contract is an assumption wearing a contract's clothes. The bus line has no published
+> escalator, so it has to be measured, and the measurement is sensitive: the blend is
+> 3.72% at the district's own transport assumption of 10%, 4.28% at the most
+> recent year, and 4.96% at the two-year rate. The middle one is used.
+>
+> The 5.89% was the larger error. Decompose the two years and the line is one decision
+> moving once: paraprofessionals rose 39.4% in FY27, $530,038,
+> which is **108% of the whole year's increase** — every other part of special
+> education fell that year. Take the aides out and the rest of the line grew
+> 1.53% a year across the two budgets, below the levy cap.
+>
+> So 5.89% was not a growth rate. It was a hiring decision averaged over two years and
+> then compounded forever — which is the same error this file accuses the district's
+> 3.98% of making, pointed the other way. Those aides were hired; their cost is already
+> inside the amount the model starts from. Escalating it at 5.89% assumes they are hired
+> again every year.
+>
+> What the new rate assumes, and it is not nothing: that the FY27 hiring was a step rather
+> than the first year of a climb. Nothing in a budget column can test that.
 
 **What that establishes:** the increase cannot be explained by the bargained pay rates
 alone. Something other than the contract percentages accounts for the rest.
@@ -201,13 +227,22 @@ The state publishes the count. Lunenburg, students with disabilities as of 1 Oct
 
 | FY | students | % of enrollment |
 |---|---:|---:|
-| 2019 | 277 | 16.7% |
-| 2022 | 227 | 14.1% |
+| 2019 | **277** | **16.7%** |
+| 2020 | 255 | 15.4% |
+| 2021 | 261 | 16.3% |
+| 2022 | 227 *(low)* | 14.1% |
+| 2023 | 234 | 14.9% |
+| 2024 | 233 | 14.7% |
+| 2025 | 248 | 15.8% |
 | 2026 | **258** | **16.3%** |
 
-Over seven years the count **fell 6.9%**, and the share of enrollment is essentially where
-it was in FY19. Over the last three years it rose 10.3%, so the direction depends entirely
-on where you start.
+All 8 years the state publishes, not a chosen three — an earlier version of this
+file quoted FY2019, FY2022 and FY2026, and FY2022 is the low point of the series.
+
+Over the whole series the count **fell 6.9%** — 277 to 258 — and the share of
+enrollment is close to where it started, 16.7% against 16.3%. Measured from the
+FY2022 low of 227 it is up 13.7%. Any three of these years can be picked to
+show a rise or a fall, which is the reason for printing all of them.
 
 That cuts against a simple "caseload is growing" reading. But the district's own FY27
 presentation to the Finance Committee shows, for FY23 to FY26, full inclusion 156 to 174

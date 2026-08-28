@@ -86,6 +86,22 @@ export const MODEL = raw as unknown as {
     kindLabels: Record<string, string>
     note: string
   }
+  sped: {
+    rate: number
+    base: number; tuitionBase: number; appropriation: number
+    units: { id: string; label: string; basis: string; rate: number
+             amount: number; share: number }[]
+    range: { id: string; rate: number; label: string; what: string; used?: boolean }[]
+    decomposition: { id: string; label: string
+                     fy25: number; fy26: number; fy27: number }[]
+    year: { fy26: number; fy27: number; published: number; underlying: number
+            bend: number; tuition_fy26: number; tuition_fy27: number
+            tuition_change: number; tuition_rate: number }
+    tuitionRisk: { id: string; label: string; tuition: number
+                   gap: number; delta: number }[]
+    students: { fy: number; n: number; pct: number }[]
+    transportRates: { recent: number; twoYear: number; districtAssumption: number }
+  }
   releases: {
     current: string
     updated: string

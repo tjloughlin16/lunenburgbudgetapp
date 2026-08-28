@@ -2,14 +2,30 @@
 
 These are OUR conclusions from the published data, not the district's or the town's.
 Each one points at the section of the tool that shows the working.
+
+Figures here are interpolated, never typed. This file is prose that ships, so rule 2
+applies to it exactly as it applies to the app: three figures were once found here
+stating amounts the model no longer produced, one of them out by $313,000. The headline
+below was another -- it claimed a gap of "roughly $580,000" that no version of the model
+has produced in some time.
 """
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+from catalog import PROGRAMS
+from headlines import AVG_GAP_3YR
+
+# Every sport, every band, every club, every art supply. Summed from the catalogue rather
+# than written down, so that adding a program cannot leave this figure describing a
+# district that no longer exists.
+EXTRAS_TOTAL = sum(p['cost'] or 0 for p in PROGRAMS
+                   if p['cat'] in ('athletics', 'arts', 'activities'))
 
 CONCLUSIONS = [
  dict(n=1, anchor='the-money',
       headline='Cutting every extra in the district buys exactly one year.',
-      figure='$644,031',
-      body='Every sport, every band, every club and every art supply, eliminated entirely, '
-           'comes to $644,031. The gap over the next five years is about $2.9 million. So '
+      figure=f'${EXTRAS_TOTAL:,.0f}',
+      body=f'Every sport, every band, every club and every art supply, eliminated entirely, '
+           f'comes to ${EXTRAS_TOTAL:,.0f}. The gap over the next five years is about $2.9 million. So '
            'the whole "cut the frills" argument covers FY28 and then the column is empty '
            'forever, while the gap returns every single year.'),
 
@@ -140,6 +156,7 @@ CONCLUSIONS = [
 
 HEADLINE = (
     'Lunenburg is not facing a one-year problem that can be solved by cutting sports. '
-    'It is facing a structural gap of roughly $580,000 a year, every year, in a town whose '
-    'school budget grew 1.08% while its neighbors grew three to six times faster.'
+    f'It is facing a structural gap of roughly ${round(AVG_GAP_3YR, -4):,} a year, every '
+    'year, in a town whose school budget grew 1.08% while its neighbors grew three to six '
+    'times faster.'
 )

@@ -1,4 +1,4 @@
-import { usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
+import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
   nextYear, HEADCOUNT, PACKAGES,
@@ -10,6 +10,8 @@ import { LevelVsSlope } from '../components/LevelVsSlope'
 import { StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
+import { TheOneOff, TheTrade, TheRate, TuitionRisk, StudentCounts }
+  from '../components/SpecialEducation'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 
@@ -189,6 +191,61 @@ export function BendTheCurve({ onJump, option = null }: {
           {(rest[rest.length - 1].swing * 100).toFixed(2)} points. Athletics, clubs, art
           supplies and devices all live inside it.
         </Note>
+      </Section>
+
+      {/* Between the ranking and the six futures on purpose. The ranking has just put
+          special education second, and the reader's next question is what that line is
+          doing -- which turns out to be the same level-versus-rate argument the next
+          section makes in general, with the site's own number on the wrong side of it
+          until this pass. */}
+      <Section id="sped" eyebrow="The second line on that list"
+        title={`The rate the district published is ${pct(MODEL.sped.year.published)}. `
+          + `The rate that recurs is ${pct(MODEL.sped.year.underlying)}.`}
+        lede={<>Special education is about a fifth of what the schools spend and the
+          second-largest thing on the list above. It is also where the published cost of
+          next year comes from — and that published figure has a one-time event inside it.
+          <br /><br />
+          None of what follows is a lever. Nothing here can be cut, and this section does
+          not suggest it. It is about the <strong>rate</strong>, and about which parts of
+          it can happen twice.</>}>
+        <TheOneOff />
+
+        <h3 className="text-lg font-bold mt-10 mb-2">The year is one trade</h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          Split the year into its parts and it is not a general increase. Two entries move
+          in opposite directions and everything else is noise around them.
+        </p>
+        <TheTrade />
+
+        <h3 className="text-lg font-bold mt-10 mb-2">
+          What we escalate this line at, and why it is not what the line did
+        </h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          This is the one rate on the site the district does not publish, so it is ours,
+          and the argument for it is set out in full rather than asserted. It is also an
+          argument against a figure this project published for a day.
+        </p>
+        <TheRate />
+
+        <h3 className="text-lg font-bold mt-10 mb-2">
+          The one line nobody outside the district can check
+        </h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          The FY27 tuition figure is a budget, and budgets for this line have been wrong in
+          both directions before. Priced at every level it could plausibly land.
+        </p>
+        <TuitionRisk />
+
+        <h3 className="text-lg font-bold mt-10 mb-2">And the number of children</h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          Dollars are not children. The state publishes the count, so here it is — all of
+          it.
+        </p>
+        <StudentCounts />
       </Section>
 
       <Section id="proof" eyebrow="Level against slope"

@@ -13,6 +13,12 @@ from health import split_change
 from athletics import (PROGRAM_TOTAL_LEVEL_SERVICE, PROGRAM_TOTAL_ADOPTED,
                        PROGRAM_TOTAL_TRAVEL, EFFECTIVE_ATHLETIC_FEE,
                        CHARGEABLE_PARTICIPATIONS, SPORTS)
+from catalog import PROGRAMS
+
+# Summed from the catalogue, not written down. Stated in two places -- here and in
+# conclusions -- and a figure written twice is a figure that will disagree with itself.
+EXTRAS_TOTAL = sum(p['cost'] or 0 for p in PROGRAMS
+                   if p['cat'] in ('athletics', 'arts', 'activities'))
 
 _years = run(PRESETS['school_committee']['order'], DEFAULT_ASSUMPTIONS, 5)
 _gaps = [y['deficit'] for y in _years]
@@ -62,7 +68,7 @@ HEADLINES = [
       anchor='tax-base', tone='neutral'),
 
  dict(id='extras', label='Cutting every sport, band and club',
-      value='$644,031',
+      value=f'${EXTRAS_TOTAL:,.0f}',
       sub='All athletics, all arts and music, all clubs — eliminated entirely. Covers one '
           'year, once, and then the column is empty',
       anchor='the-money', tone='neutral'),
