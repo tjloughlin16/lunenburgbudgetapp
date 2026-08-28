@@ -101,6 +101,11 @@ def main():
         os.path.getsize(sped_csv)))
 
     for src, name, what in [
+        (os.path.join(ROOT, 'sources', 'data', 'sped-teacher-history.csv'),
+         'sped-teacher-history.csv',
+         'Special education teachers as budgeted, FY20 to FY27, by school. Eight budgets '
+         'growing 2.67% a year against a 3.5% contract — below it, because headcount here '
+         'has drifted down.'),
         (os.path.join(ROOT, 'sources', 'data', 'sped-para-history.csv'),
          'sped-para-history.csv',
          'Special education paraprofessionals as budgeted, FY18 to FY27, by school. Ten '

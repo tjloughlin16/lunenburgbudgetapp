@@ -174,6 +174,7 @@ HISTORY = {
     'tuition': 'ood-tuition-history.csv',
     'paras': 'sped-para-history.csv',
     'transport': 'sped-transport-history.csv',
+    'teachers': 'sped-teacher-history.csv',
 }
 
 
@@ -220,8 +221,10 @@ def trend(series):
     sst = sum((y - my) ** 2 for y in v)
     ssr = sum((y - (inter + slope * x)) ** 2 for x, y in zip(xs, v))
     end, endfy = v[-1], series[-1]['fy']
+    # A zero year would make a compound rate undefined; there are none in these series,
+    # and if one ever appears it should be looked at rather than divided by.
     starts = [dict(fy=d['fy'], rate=(end / d['total']) ** (1 / (endfy - d['fy'])) - 1)
-              for d in series[:-1] if d['fy'] != endfy]
+              for d in series[:-1] if d['fy'] != endfy and d['total'] > 0]
     rates = [c['rate'] for c in starts]
     return dict(
         n=n, firstFy=series[0]['fy'], lastFy=endfy,
@@ -257,6 +260,19 @@ TRANSPORT_SERIES = history('transport', _workbook(_part_pred('transport')))
 TRANSPORT_TREND = trend(TRANSPORT_SERIES)
 
 
+# The five school teacher lines, matching what the documents itemise. The workbook's 2310
+# group also carries hospital tutoring and contracted evaluations, which are purchased
+# services rather than staff and do not belong in a test of what staff cost.
+def _teacher_schools(r):
+    item = (r['line_item'] or '').lower()
+    return ('2310' in _g(r) and is_sped(r)
+            and ('teacher' in item or 'tchr' in item or 'teach' in item))
+
+
+TEACHER_SERIES = history('teachers', _workbook(_teacher_schools))
+TEACHER_TREND = trend(TEACHER_SERIES)
+
+
 # ------------------------------------------------------------------ the contracts
 # There is no special education bargaining unit. Professional staff are on the teachers'
 # agreement and aides on the paraprofessionals'; the buses are a vendor contract and the
@@ -280,9 +296,10 @@ TRANSPORT_TREND = trend(TRANSPORT_SERIES)
 # accordingly, and at what it has MEASURABLY DONE where it does not. Which of those
 # applies is decided by the trend test above, not by preference:
 #
-#   professional staff  the teachers' agreement, 3.5%. The special education teacher lines
-#                       have run flat to slightly down across the budgets held, i.e. below
-#                       contract, so this is if anything generous.
+#   professional staff  NOT their 3.5% agreement. Eight budgets, FY20 to FY27, growing
+#                       2.67% a year with an R-squared of 0.84 -- below contract, which
+#                       means headcount here has been drifting DOWN. Using the contract
+#                       rate assumed it holds, and overstated this component.
 #   paraprofessionals   NOT their 2.0% contract. Ten budgets, FY18 to FY27, $634,513 to
 #                       $1,872,411 -- 2.95x, R-squared 0.89, eight of nine years up, and a
 #                       compound rate between +11.5% and +17.0% wherever you start it.
@@ -298,15 +315,19 @@ TRANSPORT_TREND = trend(TRANSPORT_SERIES)
 # that FY27's 39% increase was a one-time step already sitting in the base. The argument
 # was sound and its premise was false: with two budget years there is no way to tell a step
 # from a climb, and the archive reaches far enough to show it is a climb.
-LEA_RATE = 0.035                          # teachers' agreement, FY27
+LEA_RATE = 0.035                          # teachers' agreement, FY27 -- shown, not used
+PROFESSIONAL_RATE = TEACHER_TREND['cagr']  # measured, eight budgets, R^2 = 0.84
 AFSCME_RATE = 0.020                       # aides' agreement -- deliberately NOT used
 PARA_RATE = PARA_TREND['cagr']            # measured, ten budgets, R^2 = 0.89
 TRANSPORT_RATE = TRANSPORT_TREND['cagr']  # measured, nine budgets, R^2 = 0.33
 UNBARGAINED_RATE = 0.0
 
 CONTRACT_UNITS = [
-    ('professional', 'Professional staff', 'Teachers\u2019 agreement (LEA), 3.5%',
-     LEA_RATE,
+    ('professional', 'Professional staff',
+     f'Measured over {TEACHER_TREND["n"]} budgets. Their agreement gives '
+     f'{LEA_RATE:.1%} and the line has run below it \u2014 headcount drifting down, not '
+     f'a smaller pay rise',
+     PROFESSIONAL_RATE,
      lambda r: is_sped(r) and not any(f(r) for f in (
          _part_pred('paras'), _part_pred('transport'), _part_pred('subs')))),
     ('paras', 'Paraprofessionals',
@@ -471,6 +492,8 @@ def export():
         tuitionRate=TUITION_RATE,
         tuitionHistory=tuition_history(), tuitionTrend=tuition_trend(),
         paraSeries=PARA_SERIES, paraTrend=PARA_TREND,
+        professionalSeries=TEACHER_SERIES, professionalTrend=TEACHER_TREND,
+        leaRate=LEA_RATE, afscmeRate=AFSCME_RATE,
         transportSeries=TRANSPORT_SERIES, transportTrend=TRANSPORT_TREND,
     )
 

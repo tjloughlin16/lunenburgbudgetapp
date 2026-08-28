@@ -65,6 +65,24 @@ GROUPS = {
                 re.I)
             for school in ('P.S.', 'E.S.', 'M.S.', 'H.S.', 'ACE')
         }),
+    'sped-teachers': dict(
+        out='sped-teacher-history.csv',
+        what='special education teachers',
+        # The district's own spelling of these lines moves year to year -- Specl, Specil,
+        # Speci, Resourse, Resource, Teacher, Teach, Tchr, Tea -- so the pattern is built
+        # to survive that rather than to match one document. What it must NOT catch is
+        # everything else filed under the same schools: paraprofessionals, speech
+        # pathologists, substitutes and instructional materials are separate lines with
+        # separate behaviour, and folding them in would produce a "teacher" series that is
+        # really a special education total.
+        parts={
+            key: re.compile(
+                rf'^{pat}\s+Spec[a-z]*\s+Ed(?:ucation)?\s+'
+                rf'(?:R[a-z]*\s+Rm\s+)?T(?:ea|ch)[a-z.]*(?=\s|$)', re.I)
+            for key, pat in (('ps', r'P\.?S\.?'), ('es', r'E\.?S\.?'),
+                             ('ms', r'M\.?S\.?'), ('hs', r'H\.?S\.?'),
+                             ('ace', r'ACE'))
+        }),
     'sped-transport': dict(
         out='sped-transport-history.csv',
         what='special education transportation',
@@ -84,10 +102,19 @@ KINDS = re.compile(r'\b(FINAL BUDGET|Actuals|Actual|Budgeted|Budget|Proposed|Req
                    r'Recommended|Recommend|Adopted|Final|Approved)\b', re.I)
 BUDGET_KINDS = {'budgeted', 'budget', 'final budget', 'proposed', 'requested',
                 'recommended', 'recommend', 'adopted', 'final', 'approved'}
+# Numbers only. A bare "-" in these sheets means zero, and reading it as one was tried and
+# reverted: several of the district's own line labels contain a dash ("Special Education
+# Transportation - System"), so the rule fired inside the name and shifted every figure on
+# the row one place along. That is a silent corruption -- the series still looks like a
+# series -- and it broke a series that had already been validated against the workbook.
+# The cost of leaving it out is that a row using a dash for zero has one fewer number than
+# it has columns, so the row is skipped. A skipped row is visible; a shifted one is not.
 NUM = re.compile(r'\(?\$?\s?(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?\)?')
 
 
 def money(tok):
+    if not tok:
+        return 0.0
     return float(tok.replace(',', ''))
 
 
@@ -143,12 +170,19 @@ def scan(path, parts):
     out = []
     for i, ln in enumerate(lines):
         for key, pat in parts.items():
-            if not pat.match(ln.strip()):
+            m = pat.match(ln.strip())
+            if not m:
                 continue
             cols = columns(lines, i)
             if not cols:
                 continue
-            nums = [money(m.group(1)) for m in NUM.finditer(ln)]
+            # Numbers are read from AFTER the line's name, never from the whole row. Some
+            # of these labels contain their own punctuation -- "Special Education
+            # Transportation - System" -- and a dash inside a name is not a zero in a
+            # column. Reading the whole row put a phantom value at the front and shifted
+            # every real figure one place along, which is a silent corruption: the series
+            # still looks like a series.
+            nums = [money(mm.group(1)) for mm in NUM.finditer(ln.strip()[m.end():])]
             if len(nums) < len(cols):
                 continue
             for (fy, kind), v in zip(cols, nums[:len(cols)]):

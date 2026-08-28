@@ -107,6 +107,12 @@ print('\nSpecial education transport, nine budgets')
 present('compound rate', f"{TR['cagr']*100:+.2f}%")
 present('R-squared', f"R\u00b2 = {TR['r2']:.2f}")
 
+print('\nSpecial education teachers, eight budgets')
+TE = sped.TEACHER_TREND
+present('compound rate', f"{TE['cagr']*100:+.2f}%")
+present('R-squared', f"R\u00b2 = {TE['r2']:.2f}")
+present('below contract', f"{sped.LEA_RATE*100:.1f}%")
+
 print('\nOut-of-district tuition, eleven budgets')
 T = sped.tuition_trend()
 h = sped.tuition_history()

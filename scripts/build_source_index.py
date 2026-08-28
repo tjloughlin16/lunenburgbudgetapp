@@ -391,6 +391,13 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/sped-teacher-history.csv',
+             'Special education teachers, eight budgets', 3,
+             'What the district budgeted for special education teachers, FY20 to FY27, by '
+             'school. Grew 2.67% a year against a 3.5% agreement — below contract, which '
+             'means fewer of them each year. The largest component of the in-district '
+             'escalator, and the last one to stop being taken from a contract. Rebuild '
+             'with scripts/extract_budget_history.py.'),
             ('data/sped-para-history.csv',
              'Special education paraprofessionals, ten budgets', 3,
              'What the district budgeted for special education aides, FY18 to FY27, by '

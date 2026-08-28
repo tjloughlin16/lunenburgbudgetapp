@@ -192,10 +192,10 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $705,694 | — |
-| Midway back, $1,000,000 | $1,005,552 | **+$299,858** |
-| Back to the FY25 budget, $1,164,824 | $1,170,376 | **+$464,682** |
-| Back to the FY26 budget, $1,291,293 | $1,296,845 | **+$591,151** |
+| As the district budgeted it for FY27, $700,142 | $679,914 | — |
+| Midway back, $1,000,000 | $979,772 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,144,596 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,271,065 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
@@ -248,6 +248,37 @@ single blended rate taken from the settlements gets it wrong.
 budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
 adding them, which it has not done in 8 of the last 9 budgets.
 
+### Special education teachers, tested the same way
+
+The largest part of the line — 54% of it — and the last one still priced from a
+contract rather than measured.
+
+| FY | teachers | change | stage |
+|---|---:|---:|---|
+| 2020 | $1,617,268 | — | settled |
+| 2021 | $1,723,153 | +6.5% | settled |
+| 2022 | $1,795,020 | +4.2% | settled |
+| 2023 | $1,890,708 | +5.3% | settled |
+| 2024 | $1,828,571 | -3.3% | proposed |
+| 2025 | $1,979,158 | +8.2% | workbook |
+| 2026 | $1,978,848 | -0.0% | workbook |
+| 2027 | $1,945,512 | -1.7% | workbook |
+
+| | |
+|---|---:|
+| FY20 to FY27 | $1,617,268 → $1,945,512 |
+| Compound rate | **+2.67% a year** |
+| Straight-line fit | R² = 0.84 |
+| Their contract gives | 3.5% |
+
+**Below contract.** These staff get their bargained increase like everyone else, so a line
+growing more slowly than the agreement means there are fewer of them each year. Escalating
+this component at 3.5% assumed headcount held, and overstated it.
+
+That is the same lesson as the aides, pointing the other way. **A contract sets what one
+person is paid. It says nothing about how many people are employed** — and on this line
+that is where the movement is, in both directions.
+
 ### Special education transportation, tested the same way
 
 | | |
@@ -268,7 +299,7 @@ argument that FY27's increase in aides was a step already sitting in the base. *
 argument was sound and its premise was false.** With two budget years there is no way to
 tell a step from a climb; with ten there is, and it is a climb.
 
-The rate is now **6.80%**, and the projected gap went up rather than down. That is what
+The rate is now **6.35%**, and the projected gap went up rather than down. That is what
 the evidence says, and the direction it moves the answer is not a reason to prefer the
 other one.
 
@@ -404,12 +435,13 @@ in every budget we hold.
 
 That gap is the whole question, and it is answered in *Is the increase in aides a step, or
 a climb?* above: the aides' line has grown 12.8% a year across 10 budgets while their
-contract gives 2.0%. So the model escalates each part of this line at its contract where
-a contract governs it and at what it has measurably done where none does, which comes to
-**6.80%**.
+contract gives 2.0%. So the model escalates
+every part of it at what its own budgets show it doing, measured across eight to ten
+years of them, which comes to **6.35%**.
 
-> **Correction, 28 August 2026.** This file has now carried three different rates for this
-> line in one day, and the sequence is worth keeping because each step was a real error.
+> **Correction, 28 August 2026.** This file has carried five different rates for this line
+> in one day. The sequence is kept because each step was a real error and the last one is
+> only trustworthy to the extent the others are visible.
 >
 > **2.48%**, described as "contracts alone", priced special education transport at zero.
 > That is 12% of the line and a vendor contract. A 0% that appears in no contract is
@@ -418,11 +450,18 @@ a contract governs it and at what it has measurably done where none does, which 
 > **5.89%**, what the whole line did over two budgets, was replaced because it looked like
 > one hiring decision averaged and compounded.
 >
-> **2.57%**, the settlements weighted by share, was the correction to that — and it was
-> wrong for a reason none of the three budget years could show. It assumed FY27's increase
-> in aides was a step whose cost already sat in the base. Ten budgets say it is a climb.
+> **2.57%**, the two settlements weighted by share, assumed FY27's increase in aides was
+> a step already sitting in the base. Ten budgets say it is a climb.
 >
-> **6.80%** is what replaces it. The lesson is not about any of the four numbers. It is
+> **6.80%** measured the aides and the buses but still took the largest component — the
+> teachers, 54% of the line — from their contract, on three years showing it flat.
+>
+> **6.35%** measures all three. The teachers turn out to have grown 2.67% against a
+> 3.5% agreement, so the contract rate had been overstating them.
+>
+> The lesson is not about any of the five numbers. It is that a contract sets what one
+> person is paid and says nothing about how many people are employed, and that on this
+> line the second thing moves more than the first — in both directions. And
 > that a rate measured over two years cannot distinguish a step from a trend, and that
 > "use the contract rate" is only conservative for a line a contract actually governs.
 

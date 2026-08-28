@@ -161,11 +161,14 @@ export function TheRate() {
       </div>
 
       <Note>
-        <strong style={{ color: 'var(--text-primary)' }}>Most of this line follows a
-        contract. One part of it does not, and that part is the story.</strong>{' '}
-        Professional staff are on the teachers’ agreement and escalate at{' '}
-        {pct(S.units[0].rate, 1)}. The aides are on the paraprofessionals’ agreement, which
-        gives {pct(2 / 100, 1)} — and their budget line has done nothing of the kind.
+        <strong style={{ color: 'var(--text-primary)' }}>A contract sets what one person
+        is paid. It says nothing about how many people are employed — and on this line,
+        that is where the movement is.</strong>{' '}
+        Both bargained groups here have run away from their agreements, in opposite
+        directions. Special education teachers are on a contract giving 3.5% and their line
+        has grown {pct(S.professionalTrend.cagr, 2)} across {S.professionalTrend.n}{' '}
+        budgets — headcount drifting down. The aides are on a contract giving{' '}
+        {pct(2 / 100, 1)} and their line has grown {pct(P.cagr, 1)}.
         <div className="mt-3 grid gap-3 sm:grid-cols-3">
           <MiniStat label="Aides, FY{P.firstFy} to FY{P.lastFy}"
             value={`${P.ratio.toFixed(2)}×`}
@@ -589,9 +592,14 @@ export function TuitionHistory() {
  *  used with a warning. */
 export function MeasuredLines() {
   const sets = [
+    { id: 'prof', title: 'Special education teachers',
+      series: S.professionalSeries, t: S.professionalTrend,
+      contract: `Their contract gives ${pct(S.leaRate, 1)} a year.`,
+      verdict: 'Below contract, and a good fit. Headcount here has drifted down, so the '
+             + 'contract rate would overstate it.' },
     { id: 'paras', title: 'Special education paraprofessionals',
       series: S.paraSeries, t: S.paraTrend,
-      contract: 'Their contract gives 2.0% a year.',
+      contract: `Their contract gives ${pct(S.afscmeRate, 1)} a year.`,
       verdict: 'A trend, and a strong one. Escalated at what it has done.' },
     { id: 'transport', title: 'Special education transportation',
       series: S.transportSeries, t: S.transportTrend,
@@ -600,7 +608,7 @@ export function MeasuredLines() {
              + 'the smallest of the three components.' },
   ]
   return (
-    <div className="grid gap-4 lg:grid-cols-2">
+    <div className="grid gap-4 md:grid-cols-3">
       {sets.map(({ id, title, series, t, contract, verdict }) => {
         if (!series?.length) return null
         const max = Math.max(...series.map(d => d.total))

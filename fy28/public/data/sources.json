@@ -845,9 +845,9 @@
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 20133,
+     "bytes": 23372,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 431,
+     "count": 505,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -933,6 +933,18 @@
      "textUrl": "/docs/data/lps-budget-lines.csv"
     },
     {
+     "path": "data/sped-para-history.csv",
+     "title": "Special education paraprofessionals, ten budgets",
+     "stars": 3,
+     "what": "What the district budgeted for special education aides, FY18 to FY27, by school, read out of its own budget documents in the mirror above. Budget columns only, one budget stage held constant. The line grew 12.8% a year with an R-squared of 0.89 while the contract governing these staff gives 2.0% — which is the evidence the in-district escalator rests on. Rebuild with scripts/extract_budget_history.py.",
+     "kind": "Data",
+     "bytes": 856,
+     "url": "/docs/data/sped-para-history.csv",
+     "count": 14,
+     "unit": "rows",
+     "textUrl": "/docs/data/sped-para-history.csv"
+    },
+    {
      "path": "data/ood-tuition-history.csv",
      "title": "Out-of-district tuition, eleven budgets",
      "stars": 3,
@@ -967,6 +979,18 @@
      "count": 168,
      "unit": "lines",
      "textUrl": "/docs/contracts/CONTRACTS.md"
+    },
+    {
+     "path": "data/sped-transport-history.csv",
+     "title": "Special education transportation, nine budgets",
+     "stars": 2,
+     "what": "The same extraction for the special education bus line, FY19 to FY27. A much weaker trend than the aides — R-squared 0.33 — and said to be one.",
+     "kind": "Data",
+     "bytes": 470,
+     "url": "/docs/data/sped-transport-history.csv",
+     "count": 14,
+     "unit": "rows",
+     "textUrl": "/docs/data/sped-transport-history.csv"
     }
    ]
   },
@@ -3050,10 +3074,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 238,
+  "documents": 240,
   "groups": 14,
-  "bytes": 353517774,
-  "loadBearing": 26
+  "bytes": 353522339,
+  "loadBearing": 27
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district, and can be found again at the links above. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

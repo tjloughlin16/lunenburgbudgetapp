@@ -71,6 +71,19 @@ export interface Assumptions {
   athletic_fee_revenue: number; override_amount: number
 }
 
+/** The shape every measured line reports: the series' own statistics, and the tests that
+ *  say whether it has a trend at all. `r2` near zero means there is no rate to measure,
+ *  and `cagrLow`/`cagrHigh` say how much the answer depends on where you start counting —
+ *  which is the check that caught two wrong rates on this line. */
+export interface TrendStat {
+  n: number; firstFy: number; lastFy: number; first: number; last: number
+  low: number; high: number; ratio: number; lowFy: number; highFy: number
+  mean: number; vsMean: number; slope: number; r2: number
+  up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
+  cagrByStart: { fy: number; rate: number }[]
+  biggestFall: [number, number]; biggestRise: [number, number]
+}
+
 export const MODEL = raw as unknown as {
   categories: Record<string, { label: string; color: string }>
   programs: Program[]
@@ -109,26 +122,14 @@ export const MODEL = raw as unknown as {
     tuitionRate: number
     tuitionHistory: { fy: number; private: number; collaborative: number
                       total: number; stage: string }[]
-    tuitionTrend: { n: number; firstFy: number; lastFy: number; first: number; last: number
-               low: number; high: number; ratio: number; lowFy: number; highFy: number
-               mean: number; vsMean: number; slope: number; r2: number
-               up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
-               cagrByStart: { fy: number; rate: number }[]
-               biggestFall: [number, number]; biggestRise: [number, number] }
+    tuitionTrend: TrendStat
+    leaRate: number; afscmeRate: number
+    professionalSeries: { fy: number; total: number; stage: string }[]
+    professionalTrend: TrendStat
     paraSeries: { fy: number; total: number; stage: string }[]
-    paraTrend: { n: number; firstFy: number; lastFy: number; first: number; last: number
-               low: number; high: number; ratio: number; lowFy: number; highFy: number
-               mean: number; vsMean: number; slope: number; r2: number
-               up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
-               cagrByStart: { fy: number; rate: number }[]
-               biggestFall: [number, number]; biggestRise: [number, number] }
+    paraTrend: TrendStat
     transportSeries: { fy: number; total: number; stage: string }[]
-    transportTrend: { n: number; firstFy: number; lastFy: number; first: number; last: number
-               low: number; high: number; ratio: number; lowFy: number; highFy: number
-               mean: number; vsMean: number; slope: number; r2: number
-               up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
-               cagrByStart: { fy: number; rate: number }[]
-               biggestFall: [number, number]; biggestRise: [number, number] }
+    transportTrend: TrendStat
   }
   releases: {
     current: string

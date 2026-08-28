@@ -789,7 +789,7 @@
   "salaries": 0.04,
   "health": 0.09,
   "transport": 0.06,
-  "sped": 0.06796806904931668,
+  "sped": 0.06348102870581682,
   "sped_tuition": 0.0,
   "utilities": 0.05,
   "other": 0.03,
@@ -923,9 +923,9 @@
    {
     "id": "sped",
     "metric": "Special education growth, in district",
-    "value": "6.80% a year",
+    "value": "6.35% a year",
     "kind": "ours",
-    "basis": "OURS. Each part of this line is escalated at its contract where a contract governs it, and at what it has measurably done where none does, weighted by its share: professional staff 3.5% across 54%, paraprofessionals 12.8% across 33%, transport 5.7% across 12%. The aides are the reason this is not simply the sum of the pay settlements. Their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. This figure previously stood at 4.28%, which priced the aides at their contract on the argument that FY27\u2019s increase was a one-time step already inside the base. Two budget years could not tell a step from a climb; ten can, and it is a climb. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
+    "basis": "OURS. Every part of this line is escalated at what its own budgets show it doing, measured across eight to ten years of them, weighted by its share of the line: professional staff 2.7% across 54%, paraprofessionals 12.8% across 33%, transport 5.7% across 12%. Not one of those is a contract rate, and the two that have contracts show why. Special education teachers are on an agreement giving 3.5% and their line has grown 2.67% across 8 budgets \u2014 below it, because headcount there has drifted down. The aides run the other way: their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. A contract sets what one person is paid. It says nothing about how many people are employed, and on this line that is where the movement is \u2014 in both directions. This figure has previously stood at 2.48%, 4.28% and 6.80%; each was built on fewer budget years than the archive turned out to hold. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
     "doc": "xlsx/fy27-proposals.xlsx",
     "source": "FY27 budget workbook with the district\u2019s budget documents FY17\u2013FY27, extracted by scripts/extract_budget_history.py; published at /data/sped-para-history.csv",
     "n": 10
@@ -1044,13 +1044,13 @@
   ]
  },
  "sped": {
-  "rate": 0.06796806904931668,
+  "rate": 0.06348102870581682,
   "units": [
    {
     "id": "professional",
     "label": "Professional staff",
-    "basis": "Teachers\u2019 agreement (LEA), 3.5%",
-    "rate": 0.035,
+    "basis": "Measured over 8 budgets. Their agreement gives 3.5% and the line has run below it \u2014 headcount drifting down, not a smaller pay rise",
+    "rate": 0.026749641904463495,
     "amount": 3072420.0,
     "share": 0.5438600714710041
    },
@@ -1100,7 +1100,7 @@
    },
    {
     "id": "contracts",
-    "rate": 0.06796806904931668,
+    "rate": 0.06348102870581682,
     "used": true,
     "label": "Each part at its contract, or at what it has measurably done",
     "what": "Professional staff at the teachers\u2019 agreement; aides and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part\u2019s share of the line."
@@ -1179,28 +1179,28 @@
     "id": "budgeted",
     "label": "As the district budgeted it for FY27",
     "tuition": 700142,
-    "gap": 705694,
+    "gap": 679914,
     "delta": 0
    },
    {
     "id": "midway",
     "label": "Midway back",
     "tuition": 1000000,
-    "gap": 1005552,
+    "gap": 979772,
     "delta": 299858
    },
    {
     "id": "fy25",
     "label": "Back to the FY25 budget",
     "tuition": 1164824,
-    "gap": 1170376,
+    "gap": 1144596,
     "delta": 464682
    },
    {
     "id": "fy26",
     "label": "Back to the FY26 budget",
     "tuition": 1291293,
-    "gap": 1296845,
+    "gap": 1271065,
     "delta": 591151
    }
   ],
@@ -1890,6 +1890,109 @@
     2027
    ]
   },
+  "professionalSeries": [
+   {
+    "fy": 2020,
+    "total": 1617268.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2021,
+    "total": 1723153.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2022,
+    "total": 1795020.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2023,
+    "total": 1890708.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2024,
+    "total": 1828571.0,
+    "stage": "proposed"
+   },
+   {
+    "fy": 2025,
+    "total": 1979158.0,
+    "stage": "workbook"
+   },
+   {
+    "fy": 2026,
+    "total": 1978848.0,
+    "stage": "workbook"
+   },
+   {
+    "fy": 2027,
+    "total": 1945512.0,
+    "stage": "workbook"
+   }
+  ],
+  "professionalTrend": {
+   "n": 8,
+   "firstFy": 2020,
+   "lastFy": 2027,
+   "first": 1617268.0,
+   "last": 1945512.0,
+   "low": 1617268.0,
+   "high": 1979158.0,
+   "ratio": 1.223766252717546,
+   "lowFy": 2020,
+   "highFy": 2025,
+   "mean": 1844779.75,
+   "vsMean": 0.05460394391254564,
+   "slope": 48410.23809523809,
+   "r2": 0.8371133956252258,
+   "up": 4,
+   "down": 3,
+   "cagr": 0.026749641904463495,
+   "cagrByStart": [
+    {
+     "fy": 2020,
+     "rate": 0.026749641904463495
+    },
+    {
+     "fy": 2021,
+     "rate": 0.020434215534609557
+    },
+    {
+     "fy": 2022,
+     "rate": 0.016232136141497877
+    },
+    {
+     "fy": 2023,
+     "rate": 0.007169030187019754
+    },
+    {
+     "fy": 2024,
+     "rate": 0.020878432160124083
+    },
+    {
+     "fy": 2025,
+     "rate": -0.008536515374028664
+    },
+    {
+     "fy": 2026,
+     "rate": -0.016846165041478733
+    }
+   ],
+   "cagrLow": -0.016846165041478733,
+   "cagrHigh": 0.026749641904463495,
+   "biggestFall": [
+    -0.03286440846497718,
+    2024
+   ],
+   "biggestRise": [
+    0.08235228492631674,
+    2025
+   ]
+  },
+  "leaRate": 0.035,
+  "afscmeRate": 0.02,
   "transportSeries": [
    {
     "fy": 2019,
@@ -2942,7 +3045,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$594,281",
+   "value": "$631,751",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -2950,8 +3053,8 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$41.3M",
-   "sub": "of new commercial value every year \u2014 about 63 more average businesses a year, on top of the 234 the town has, or 14 typical developments",
+   "value": "$43.9M",
+   "sub": "of new commercial value every year \u2014 about 67 more average businesses a year, on top of the 234 the town has, or 15 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },
@@ -3088,7 +3191,7 @@
    "body": "Our own package \u2014 higher fees, a technology audit, an administration trim \u2014 finds about two thirds of FY28 without cutting a program. The remaining third is roughly two teaching positions. Anyone claiming a painless third option has not added up the line items."
   }
  ],
- "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $590,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
+ "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $630,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
  "levers": [
   {
    "id": "athletic_fees",

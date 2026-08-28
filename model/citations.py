@@ -113,14 +113,18 @@ CITATIONS = [
     dict(id='sped', metric='Special education growth, in district',
          value=f'{sped.RATE:.2%} a year',
          kind='ours',
-         basis=('OURS. Each part of this line is escalated at its contract where a '
-                'contract governs it, and at what it has measurably done where none does, '
-                'weighted by its share: '
+         basis=('OURS. Every part of this line is escalated at what its own budgets show '
+                'it doing, measured across eight to ten years of them, weighted by its '
+                'share of the line: '
                 + ', '.join(f"{u['label'].lower()} {u['rate']:.1%} across {u['share']:.0%}"
                             for u in sped.UNITS if u['id'] != 'unbargained')
                 + '. '
-                f"The aides are the reason this is not simply the sum of the pay "
-                f"settlements. Their contract gives {sped.AFSCME_RATE:.1%}; across "
+                f"Not one of those is a contract rate, and the two that have contracts "
+                f"show why. Special education teachers are on an agreement giving "
+                f"{sped.LEA_RATE:.1%} and their line has grown "
+                f"{sped.TEACHER_TREND['cagr']:.2%} across {sped.TEACHER_TREND['n']} "
+                f"budgets \u2014 below it, because headcount there has drifted down. The "
+                f"aides run the other way: their contract gives {sped.AFSCME_RATE:.1%}; across "
                 f"{sped.PARA_TREND['n']} budgets, FY{sped.PARA_TREND['firstFy'] % 100} to "
                 f"FY{sped.PARA_TREND['lastFy'] % 100}, the line went from "
                 f"${sped.PARA_TREND['first']:,.0f} to ${sped.PARA_TREND['last']:,.0f} "
@@ -131,10 +135,11 @@ CITATIONS = [
                 f"{max(c['rate'] for c in sped.PARA_TREND['cagrByStart'][:-1]):+.1%} "
                 'wherever you start it. That is headcount, and no pay settlement reaches '
                 'it. '
-                'This figure previously stood at 4.28%, which priced the aides at their '
-                'contract on the argument that FY27\u2019s increase was a one-time step '
-                'already inside the base. Two budget years could not tell a step from a '
-                'climb; ten can, and it is a climb. '
+                'A contract sets what one person is paid. It says nothing about how many '
+                'people are employed, and on this line that is where the movement is \u2014 '
+                'in both directions. This figure has previously stood at 2.48%, 4.28% and '
+                '6.80%; each was built on fewer budget years than the archive turned out '
+                'to hold. '
                 'What it still assumes is that the climb continues at roughly the rate it '
                 'has held. Nothing in a budget column can test that \u2014 a budget shows '
                 'dollars per line and never shows people, and the district does not '
