@@ -3,11 +3,14 @@ import { MODEL, usd } from '../model/engine'
 // Ordinal ramp on one hue (blue), lightest step no lighter than 250 on light surface.
 const RAMP = ['#0d366b', '#184f95', '#256abf', '#2a78d6', '#5598e7', '#86b6ef']
 
-const LABELS: Record<string, { label: string; note: string }> = {
+/** `more` is optional and set on one line only: a bucket that has an argument of its own
+ *  somewhere else on the site links to it from here, rather than leaving the reader to
+ *  find that page and scroll it. */
+const LABELS: Record<string, { label: string; note: string; more?: string }> = {
   salaries: { label: 'Salaries & wages', note: 'Set by collective bargaining agreements' },
   health: { label: 'Health insurance', note: 'Rate set by the town’s insurance trust' },
   transport: { label: 'Transportation', note: 'General education routes; special education routes are counted below' },
-  sped: { label: 'Special education, in district', note: 'Staffing set by each child’s plan, not by a vote' },
+  sped: { label: 'Special education, in district', note: 'Staffing set by each child’s plan, not by a vote', more: '/bend-the-curve#sped' },
   sped_tuition: { label: 'Out-of-district tuition', note: 'Court- and IEP-mandated placements' },
   utilities: { label: 'Heat, power & water', note: 'Market rates' },
   other: { label: 'Everything else', note: 'Supplies, materials, contracts, equipment' },
@@ -39,6 +42,14 @@ export function Composition() {
               </div>
               <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
                 {LABELS[k]?.note}
+                {/* A line with an argument of its own says so here. Without it the only
+                    way to that argument is to scroll a different page and find it. */}
+                {LABELS[k]?.more && <>{' '}
+                  <a href={LABELS[k].more} className="font-semibold"
+                    style={{ color: 'var(--series-cost)' }}>
+                    Why this line drives the rate &rarr;
+                  </a>
+                </>}
               </p>
             </li>
           )

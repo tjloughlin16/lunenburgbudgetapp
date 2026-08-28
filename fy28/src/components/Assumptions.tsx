@@ -1,12 +1,13 @@
 import type { Assumptions as A } from '../model/engine'
 import { MODEL, usd } from '../model/engine'
 
-const PCT: { key: keyof A; label: string; note: string; max: number }[] = [
+const PCT: { key: keyof A; label: string; note: string; max: number
+              more?: string }[] = [
   { key: 'salaries', label: 'Salary growth', note: 'Contractual steps, lanes and cost-of-living', max: 0.08 },
   { key: 'health', label: 'Health insurance', note: 'District assumed 9% building FY27', max: 0.18 },
   { key: 'transport', label: 'Transportation', note: 'District assumed 10% building FY27', max: 0.15 },
-  { key: 'sped', label: 'Special education, in district', note: 'No published rate exists; this is the contracts covering these staff, weighted', max: 0.15 },
-  { key: 'sped_tuition', label: 'Out-of-district tuition', note: 'Driven by placement count, not rates', max: 0.20 },
+  { key: 'sped', label: 'Special education, in district', note: 'No published rate exists; measured across eight to eleven of the district’s own budgets', max: 0.15, more: '/bend-the-curve#sped' },
+  { key: 'sped_tuition', label: 'Out-of-district tuition', note: 'Eleven budgets show no trend at all, so the model holds it flat', max: 0.20, more: '/bend-the-curve#sped' },
   { key: 'utilities', label: 'Utilities', note: 'Electricity rose 19% in FY27', max: 0.15 },
   { key: 'other', label: 'All other expenses', note: 'Supplies, contracts, materials', max: 0.08 },
   { key: 'state_aid_growth', label: 'State aid growth', note: 'Chapter 70 and other cherry-sheet aid', max: 0.06 },
@@ -21,7 +22,7 @@ export function AssumptionsPanel({ a, setA, leverTotal }: {
       <div className="card p-5">
         <h3 className="text-sm font-bold mb-4">Cost and revenue growth</h3>
         <ul className="space-y-4">
-          {PCT.map(({ key, label, note, max }) => (
+          {PCT.map(({ key, label, note, max, more }) => (
             <li key={key}>
               <div className="flex items-baseline justify-between mb-1">
                 <label htmlFor={`a-${key}`} className="text-[13px] font-medium">{label}</label>
@@ -33,7 +34,13 @@ export function AssumptionsPanel({ a, setA, leverTotal }: {
                 value={a[key] as number}
                 onChange={e => set(key, Number(e.target.value))}
                 className="w-full" />
-              <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{note}</p>
+              <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                {note}
+                {more && <>{' '}
+                  <a href={more} className="font-semibold"
+                    style={{ color: 'var(--series-cost)' }}>how we got it &rarr;</a>
+                </>}
+              </p>
             </li>
           ))}
         </ul>
