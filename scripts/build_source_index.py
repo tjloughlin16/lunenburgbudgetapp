@@ -350,6 +350,11 @@ GROUPS = [
              'A line-by-line bridge between them, and the three places the district\u2019s '
              'own documents disagree with each other. Includes a correction to an earlier '
              'version of this analysis.'),
+            ('analyses/sped-and-the-curve.md', 'Special education and the curve', 3,
+             'The FY27 level-service budget rises 3.98%. Strip out one line \u2014 '
+             'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '
+             'one-off is doing to the rate, and what it risks for FY28. Budget columns '
+             'only; no actual spending is used anywhere in it.'),
             ('analyses/budget-vs-actual.md', 'Budget versus actual', 2,
              'Did what the town budgeted match what it spent? Written for two readers \u2014 '
              'plain terms and the evidence, side by side. Deliberately separate from the '
