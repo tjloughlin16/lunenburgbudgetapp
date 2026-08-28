@@ -893,9 +893,9 @@
      "stars": 2,
      "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
      "kind": "Notes",
-     "bytes": 15214,
+     "bytes": 17516,
      "url": "/docs/analyses/budget-vs-actual.md",
-     "count": 352,
+     "count": 395,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
@@ -920,6 +920,18 @@
    "title": "Built by this project",
    "blurb": "Machine-readable extracts. Derived from the documents above and rebuildable from them.",
    "items": [
+    {
+     "path": "data/line-history.csv",
+     "title": "Every budget line, budget and actual, year by year",
+     "stars": 3,
+     "what": "19,453 readings from 24 of the district’s budget documents, normalised to 417 distinct lines, each column mapped to the fiscal year and kind the document itself states. Both budget and actual columns are kept, which is what analyses/budget-vs-actual.md needs and what no projection may read. The lines do not sum back to the district totals, so the analysis asks which lines miss and how often rather than apportioning the total. Rebuild with scripts/extract_line_history.py.",
+     "kind": "Data",
+     "bytes": 993289,
+     "url": "/docs/data/line-history.csv",
+     "count": 8600,
+     "unit": "rows",
+     "textUrl": "/docs/data/line-history.csv"
+    },
     {
      "path": "data/lps-budget-lines.csv",
      "title": "Budget lines, tidy CSV",
@@ -3110,10 +3122,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 243,
+  "documents": 244,
   "groups": 14,
-  "bytes": 353533621,
-  "loadBearing": 30
+  "bytes": 354529212,
+  "loadBearing": 31
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district, and can be found again at the links above. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

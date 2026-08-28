@@ -391,6 +391,15 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/line-history.csv',
+             'Every budget line, budget and actual, year by year', 3,
+             '19,453 readings from 24 of the district\u2019s budget documents, normalised '
+             'to 417 distinct lines, each column mapped to the fiscal year and kind the '
+             'document itself states. Both budget and actual columns are kept, which is '
+             'what analyses/budget-vs-actual.md needs and what no projection may read. '
+             'The lines do not sum back to the district totals, so the analysis asks '
+             'which lines miss and how often rather than apportioning the total. Rebuild '
+             'with scripts/extract_line_history.py.'),
             ('data/total-salaries-history.csv',
              'District total salaries, budget and actual by year', 3,
              'What the district budgeted for salaries and what it spent, FY14 to FY27, '
