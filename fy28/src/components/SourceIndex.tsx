@@ -24,6 +24,7 @@ type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
   textUrl?: string; offsite?: boolean; byRequest?: boolean
+  upstream?: string; alsoUsed?: string
 }
 type Group = { id: string; section?: string; title: string; blurb: string
                origin: string; items: Item[] }
@@ -73,6 +74,14 @@ function Row({ it }: { it: Item }) {
           uppercase tracking-wider whitespace-nowrap" style={{ color: w.color }}>
           <span aria-hidden="true">{w.glyph}</span>{w.word}
         </span>
+        {it.alsoUsed && (
+          <span className="inline-flex items-center gap-1 text-[10.5px] font-semibold
+            uppercase tracking-wider whitespace-nowrap"
+            style={{ color: 'var(--brand)' }}
+            title={`Byte-identical to ${it.alsoUsed}, which the analysis is built on`}>
+            <span aria-hidden="true">&#9679;</span>Used above
+          </span>
+        )}
         {it.byRequest && (
           <span className="inline-flex items-center gap-1 text-[10.5px] font-semibold
             uppercase tracking-wider whitespace-nowrap"
@@ -97,6 +106,11 @@ function Row({ it }: { it: Item }) {
           <span aria-hidden="true">&middot;</span>
           <a href={it.textUrl} download className="underline"
             style={{ color: 'var(--text-secondary)' }}>extracted text</a>
+        </>)}
+        {it.upstream && (<>
+          <span aria-hidden="true">&middot;</span>
+          <a href={it.upstream} target="_blank" rel="noopener noreferrer" className="underline"
+            style={{ color: 'var(--text-secondary)' }}>the district&rsquo;s original</a>
         </>)}
         <span aria-hidden="true">&middot;</span>
         <code style={{ color: 'var(--text-muted)' }}>sources/{it.path}</code>
@@ -215,10 +229,12 @@ export function SourceIndex() {
             {sec && g.section === 'ours' && !needle && <MeetingArchive />}
             {sec && (
               <div className={gi === 0 ? 'mb-1' : 'mt-8 mb-1 pt-7 border-t-2'}
-                style={gi === 0 ? undefined : { borderColor: ours ? 'var(--status-warning)' : 'var(--grid)' }}>
+                style={gi === 0 ? undefined : { borderColor: ours ? 'var(--status-warning)' : 'var(--axis)' }}>
                 <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5"
-                  style={{ color: ours ? 'var(--status-warning)' : 'var(--text-muted)' }}>
-                  {ours ? 'Not town information' : 'Primary documents'}
+                  style={{ color: ours ? 'var(--status-warning)'
+                    : g.section === 'reference' ? 'var(--text-secondary)' : 'var(--text-muted)' }}>
+                  {ours ? 'Not town information'
+                    : g.section === 'reference' ? 'Held, not used' : 'Primary documents'}
                 </p>
                 <h3 className="text-lg sm:text-xl font-bold tracking-tight mb-2">{sec.title}</h3>
                 <p className="text-[13.5px] leading-relaxed max-w-3xl"

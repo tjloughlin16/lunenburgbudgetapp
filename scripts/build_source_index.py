@@ -83,6 +83,13 @@ SECTIONS = {
               'them, and none of them was obtained by request — every one was already '
               'public. Where a document is unreadable or says something inconvenient, it '
               'is here anyway.'),
+    'reference': dict(
+        title='Held for reference, not used in the analysis',
+        blurb='Everything else the district and the town have published, mirrored here so '
+              'it is available and so no figure has to be looked up over the network. '
+              'Nothing in this section feeds a number on this site. It is here because a '
+              'document nobody kept is a document nobody can check, and because we would '
+              'rather hold what we did not use than be asked why we did not look.'),
     'ours': dict(
         title='Written by this project, not by the town',
         blurb='Everything below this line is ours. It is not town information, it carries '
@@ -390,7 +397,7 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarised as a corpus instead.
-SKIP_DIRS = {'minutes', 'txt', 'contracts/txt'}
+SKIP_DIRS = {'minutes', 'txt', 'contracts/txt', 'district-budget-page'}
 SKIP_FILES = {'supplemental.csv'}
 
 
@@ -438,6 +445,59 @@ def publish(rel):
     if not os.path.exists(dst) or os.path.getsize(dst) != size:
         shutil.copy2(src, dst)
     return size, None
+
+
+def district_page_group(catalogued_hashes):
+    """The district's whole budget page, mirrored.
+
+    Eighty-seven documents going back to FY18, all of them Google Drive links on a page
+    that could change tomorrow. Generated from the crawler's own manifest rather than
+    described by hand -- eighty-seven curated blurbs would go stale faster than they could
+    be written, and the label the district gave each file is the honest description.
+
+    Anything byte-identical to a document we actually build on is marked, so a reader can
+    see at a glance which of these are load-bearing and which are just held.
+    """
+    idx = os.path.join(SRC, 'district-budget-page', 'index.csv')
+    if not os.path.exists(idx):
+        return None
+    items = []
+    with open(idx, newline='') as fh:
+        for r in csv.DictReader(fh):
+            if not r['local']:
+                continue
+            rel = os.path.relpath(os.path.join(ROOT, r['local']), SRC)
+            used = catalogued_hashes.get(r['sha256'])
+            text_rel = (os.path.relpath(os.path.join(ROOT, r['text']), SRC)
+                        if r['text'] else None)
+            publish(rel)
+            if text_rel:
+                publish(text_rel)
+            ext = os.path.splitext(rel)[1].lower()
+            items.append({
+                'path': rel, 'title': r['label'], 'stars': 2 if used else 1,
+                'what': (f'Also catalogued above as the source for part of this analysis '
+                         f'({used}). Same file, byte for byte.' if used else
+                         'Mirrored from the district budget page. Not used in any figure '
+                         'on this site.'),
+                'kind': KIND.get(ext, ext.lstrip('.').upper()),
+                'bytes': int(r['bytes']),
+                'url': '/docs/' + rel,
+                **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
+                'upstream': r['upstream'],
+                **({'alsoUsed': used} if used else {}),
+            })
+    items.sort(key=lambda i: (-i['stars'], i['title']))
+    return {
+        'section': 'reference', 'id': 'district-page', 'origin': 'school',
+        'title': 'The district budget page, mirrored in full',
+        'blurb': f'Every document linked from the district\u2019s budget information page '
+                 f'\u2014 {len(items)} of them, back to FY18. Each row links to our copy '
+                 f'and to the district\u2019s original. Text has been extracted from all '
+                 f'but one, including eleven scans that had no text layer until we read '
+                 f'them.',
+        'items': items,
+    }
 
 
 def build_corpus():
@@ -537,6 +597,27 @@ def main():
     if uncatalogued:
         sys.exit('on disk but not catalogued — describe it in GROUPS or add it to SKIP:\n  '
                  + '\n  '.join(sorted(uncatalogued)))
+
+    # Hash what we already build on, so the mirror can mark its own duplicates.
+    import hashlib
+
+    def sha(path):
+        m = hashlib.sha256()
+        with open(path, 'rb') as fh:
+            for chunk in iter(lambda: fh.read(1 << 20), b''):
+                m.update(chunk)
+        return m.hexdigest()
+
+    catalogued_hashes = {}
+    for g in groups:
+        for i in g['items']:
+            fp = os.path.join(SRC, i['path'])
+            if os.path.exists(fp):
+                catalogued_hashes[sha(fp)] = i['path']
+    dpg = district_page_group(catalogued_hashes)
+    if dpg:
+        groups.append(dpg)
+        catalogued.update(i['path'] for i in dpg['items'])
 
     all_items = [i for g in groups for i in g['items']]
     # No commit stamp. Writing the current HEAD into the file guaranteed it was dirty the
