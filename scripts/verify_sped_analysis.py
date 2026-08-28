@@ -60,7 +60,16 @@ present('tuition FY26', money(y['tuition_fy26']))
 present('tuition FY27', money(y['tuition_fy27']))
 present('tuition change', money(-y['tuition_change']))
 
-print('What counts as special education')
+# The short version is the first thing anybody reads and the last thing anybody
+# re-checks, so its figures are verified like the rest.
+print('The short version')
+present('published rate', pct(y['published']))
+present('underlying rate', pct(y['underlying']))
+present('rate in use', f"{sped.RATE:.2%}")
+present('aides, compound', f"{sped.PARA_TREND['cagr']:.2%}")
+present('teachers, compound', f"{sped.TEACHER_TREND['cagr']:.2%}")
+
+print('\nWhat counts as special education')
 c = sped.classified()
 present('lines counted', f"{len(c['counted'])} lines")
 present('classification total', money(c['total']))

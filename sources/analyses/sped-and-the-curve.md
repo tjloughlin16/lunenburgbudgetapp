@@ -18,14 +18,22 @@ is a separate question, in `budget-vs-actual.md`.
 
 ## The short version
 
-The FY27 level-service budget rises **3.98%**. Strip out one line and it rises **6.23%**.
+The FY27 level-service budget rises **3.98%**. Hold one line where the year before had
+it, and the same budget rises **6.23%**.
 
-That line is out-of-district tuition, which the district budgeted **down 46%** — a fall of
-$591,151 in a single year. It masks a **9.5% increase in in-district special education**,
-which is the second-largest contributor to cost growth in the whole budget.
+That line is out-of-district tuition — what the town pays other schools to educate children
+it cannot serve here — budgeted **down 46%**, a fall of $591,151 in a single year.
+Eleven budgets show it as low as $489,918 and as high as $1,291,293 with no direction to
+it at all. So the fall is a **level** change rather than a slower rate of growth: it can
+happen again, but it cannot keep happening, and the published 3.98% describes a year
+whose arithmetic does not carry forward.
 
-A 46% fall in purchased placements is a **level** change. It can happen once. The 9.5% is
-a **rate**, and rates keep going.
+Underneath it, in-district special education escalates at **6.49%** — and the reason is
+not pay. The aides are on a contract giving 2.0%; their budget line has grown **12.78% a
+year across 10 budgets**, up in 8 of 9. The teachers are on a contract giving 3.5% and
+theirs has grown 2.67%. **A contract sets what one person is paid. It says nothing
+about how many people are employed**, and on this line that is where the movement is — in
+both directions.
 
 ---
 
@@ -113,12 +121,12 @@ Against a 2.5% levy cap, a 1.48-point gap.
 
 | bucket | FY26 | FY27 level service | change | rate | share of the increase |
 |---|---:|---:|---:|---:|---:|
-| Salaries | 12,615,467 | 13,308,517 | +693,050 | 5.5% | 66% |
-| **Special education, in district** | **5,158,207** | **5,649,284** | **+491,077** | **9.5%** | **47%** |
-| Health insurance | 3,752,258 | 4,068,166 | +315,908 | 8.4% | 30% |
-| Transportation | 965,500 | 1,053,360 | +87,860 | 9.1% | 8% |
-| Utilities | 548,450 | 605,511 | +57,061 | 10.4% | 5% |
-| Everything else | 1,956,301 | 1,948,309 | −7,992 | −0.4% | −1% |
+| Salaries | 12,801,345 | 13,503,716 | +702,371 | +5.5% | 67% |
+| **Special education, in district** | **4,964,329** | **5,442,383** | **+478,054** | **+9.6%** | **46%** |
+| Health insurance | 3,752,258 | 4,068,166 | +315,908 | +8.4% | 30% |
+| Transportation | 965,500 | 1,053,360 | +87,860 | +9.1% | 8% |
+| Utilities | 548,450 | 605,511 | +57,061 | +10.4% | 5% |
+| Everything else | 1,964,301 | 1,960,011 | −4,290 | −0.2% | ~0% |
 | **Out-of-district tuition** | **1,291,293** | **700,142** | **−591,151** | **−45.8%** | **−57%** |
 
 Shares exceed 100% because one line runs the other way.
