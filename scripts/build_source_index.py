@@ -539,11 +539,10 @@ def main():
                  + '\n  '.join(sorted(uncatalogued)))
 
     all_items = [i for g in groups for i in g['items']]
-    try:
-        rev = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'],
-                                      cwd=ROOT, text=True).strip()
-    except Exception:
-        rev = None
+    # No commit stamp. Writing the current HEAD into the file guaranteed it was dirty the
+    # moment it was committed, so every commit needed a follow-up commit for the stamp,
+    # for ever. The generated date is enough, and a file that cannot be clean is a file
+    # nobody trusts the diff of.
 
     # The town's own URL for all 1,383 meeting documents lives in this one file, so it is
     # the thing worth handing a reader who wants the archive rather than our summary of it.
@@ -553,7 +552,6 @@ def main():
 
     doc = {
         'generated': date.today().isoformat(),
-        'commit': rev,
         'origins': ORIGINS,
         'sections': SECTIONS,
         'groups': groups,

@@ -32,7 +32,7 @@ type Origin = { id: string; name: string; url: string | null }
 type Board = { name: string; documents: number }
 
 const S = raw as unknown as {
-  generated: string; commit: string | null; origins: Origin[]; groups: Group[]
+  generated: string; origins: Origin[]; groups: Group[]
   sections: Record<string, Section>
   corpusIndexUrl: string
   corpus: {
@@ -275,8 +275,7 @@ export function SourceIndex() {
       </div>
 
       <p className="text-xs leading-relaxed mt-5 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
-        {S.note} Index generated {S.generated}
-        {S.commit ? ` from commit ${S.commit}` : ''}.
+        {S.note} Index generated {S.generated}.
       </p>
     </div>
   )
