@@ -1,3 +1,4 @@
+import { Cite } from './Citations'
 import { useEffect, useState, type ReactNode } from 'react'
 import { usd } from '../model/engine'
 import { ALREADY_CUT, ONE_TIME_ANSWERS, SPREAD } from '../model/walk'
@@ -165,7 +166,7 @@ export const Say = ({ children }: { children: ReactNode }) => (
 /** The object on the wall: a few figures, captioned, nothing else. */
 export function Plate({ label, figures }: {
   label: string
-  figures: { v: string; k: string; tone?: 'critical' | 'good' }[]
+  figures: { v: string; k: string; tone?: 'critical' | 'good'; cite?: string }[]
 }) {
   return (
     <div className="card p-4 sm:p-5">
@@ -180,7 +181,9 @@ export function Plate({ label, figures }: {
               {f.v}
             </p>
             <p className="text-xs mt-2 leading-snug max-w-[26ch]"
-              style={{ color: 'var(--text-secondary)' }}>{f.k}</p>
+              style={{ color: 'var(--text-secondary)' }}>
+              {f.k}{f.cite && <Cite id={f.cite} />}
+            </p>
           </div>
         ))}
       </div>

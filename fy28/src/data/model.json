@@ -819,6 +819,168 @@
   "sped_tuition": 700142.0,
   "salaries": 17706416.5
  },
+ "citations": {
+  "items": [
+   {
+    "id": "fy27-approp",
+    "metric": "The FY27 school budget",
+    "value": "$26,572,288",
+    "kind": "published",
+    "basis": "Total, Balanced scenario",
+    "doc": "pdf/fy27-final-budget-doc.pdf",
+    "source": "FY27 proposed budget document, 25 March 2026",
+    "n": 1
+   },
+   {
+    "id": "expense-base",
+    "metric": "What the schools spend, by line",
+    "value": "351 line items",
+    "kind": "budget",
+    "basis": "column fy27_balanced \u2014 the adopted budget, not actual spending",
+    "doc": "xlsx/fy27-proposals.xlsx",
+    "source": "FY27 budget workbook, 25 March 2026",
+    "n": 2
+   },
+   {
+    "id": "cuts",
+    "metric": "Positions cut from the budget now in force",
+    "value": "9.2 FTE",
+    "kind": "published",
+    "basis": "Scenario D reduction list",
+    "doc": "pdf/fy27-multi-scenario-addendum.pdf",
+    "source": "Multi-Scenario Financial Analysis, \u00a75",
+    "n": 3
+   },
+   {
+    "id": "override",
+    "metric": "Override questions passed, and what they would have cost",
+    "value": "0 of 2",
+    "kind": "published",
+    "basis": "Precinct tallies; tax impact from the Town Manager",
+    "doc": "pdf/town-2026-election-unofficial-results.pdf",
+    "source": "Town election results, 16 May 2026",
+    "n": 4
+   },
+   {
+    "id": "levy",
+    "metric": "Revenue: levy limit, new growth, excluded debt, state aid",
+    "value": "$49,963,990 omnibus",
+    "kind": "published",
+    "basis": "The revenue formula as the Town published it",
+    "doc": "pdf/town-fy27-budget-press-release.pdf",
+    "source": "Town Manager's FY27 budget release, 17 April 2026",
+    "n": 5
+   },
+   {
+    "id": "prop25",
+    "metric": "Proposition 2\u00bd levy growth",
+    "value": "2.5%",
+    "kind": "statute",
+    "basis": "Massachusetts General Laws c.59 \u00a721C",
+    "doc": "pdf/town-revenue-prop25-presentation.pdf",
+    "source": "Finance Committee deck on Proposition 2\u00bd",
+    "n": 6
+   },
+   {
+    "id": "salaries",
+    "metric": "Salary growth",
+    "value": "4.0% a year",
+    "kind": "contract",
+    "basis": "2.5 / 4.0 / 3.5% scale increases plus steps worth ~3.3%",
+    "doc": "contracts/pdf/dese-teacher-contract.pdf",
+    "source": "Lunenburg Education Association agreement, FY25\u2013FY27",
+    "n": 7
+   },
+   {
+    "id": "health",
+    "metric": "Health insurance growth",
+    "value": "9.0% a year",
+    "kind": "published",
+    "basis": "The district's own stated FY27 assumption",
+    "doc": "pdf/health-insurance-rates-2025.pdf",
+    "source": "Health insurance rates 2025, and the FY27 budget narrative",
+    "n": 8
+   },
+   {
+    "id": "sped-tuition",
+    "metric": "Out-of-district special education growth",
+    "value": "8.0% a year",
+    "kind": "ours",
+    "basis": "Our estimate. The district publishes no rate for this line.",
+    "doc": "xlsx/fy27-proposals.xlsx",
+    "source": "FY27 budget workbook, lines 9300 and 9400",
+    "n": 9
+   },
+   {
+    "id": "ch70",
+    "metric": "Chapter 70 aid and the foundation budget",
+    "value": "$9,349,335",
+    "kind": "published",
+    "basis": "DESE preliminary FY27 Chapter 70",
+    "doc": "xlsx/ch70-fy27-summary.xlsx",
+    "source": "DESE Chapter 70 summary, FY27",
+    "n": 10
+   },
+   {
+    "id": "taxbase",
+    "metric": "New growth, assessed value by class, average tax bill",
+    "value": "FY18\u2013FY23 series",
+    "kind": "published",
+    "basis": "The Assessors' own year-by-year tables",
+    "doc": "pdf/tax-classification-fy23.pdf",
+    "source": "Tax Classification Hearing, FY2023",
+    "n": 11
+   },
+   {
+    "id": "athletics",
+    "metric": "What each sport costs, and how many play it",
+    "value": "25 sports",
+    "kind": "published",
+    "basis": "Cost and participation per sport, FY24",
+    "doc": "pdf/athletic-program-costs-by-sport.pdf",
+    "source": "Athletic program costs by sport",
+    "n": 12
+   },
+   {
+    "id": "fees",
+    "metric": "What families pay in athletic and bus fees",
+    "value": "$400 first child",
+    "kind": "published",
+    "basis": "Superintendent's email, August 2026; prior schedule from the FAQ",
+    "doc": "pdf/lhs-athletics-faq.pdf",
+    "source": "High school athletics fee schedule",
+    "n": 13
+   },
+   {
+    "id": "peers",
+    "metric": "How neighbouring districts compare",
+    "value": "11 districts",
+    "kind": "published",
+    "basis": "In-district expenditure per pupil, FY2018\u2013FY2024",
+    "doc": "xlsx/dese-all-districts.xlsx",
+    "source": "DESE per-pupil expenditures",
+    "n": 14
+   },
+   {
+    "id": "gap",
+    "metric": "The projected FY28 gap",
+    "value": "our projection",
+    "kind": "ours",
+    "basis": "Computed from the FY27 adopted budget and the growth rates above. There is no FY28 budget yet \u2014 that work starts in January 2027.",
+    "doc": "xlsx/fy27-proposals.xlsx",
+    "source": "Built by this project from the FY27 budget workbook",
+    "n": 15
+   }
+  ],
+  "kindLabels": {
+   "budget": "Budget document",
+   "published": "Published figure",
+   "contract": "Signed agreement",
+   "statute": "Set by law",
+   "ours": "Our projection"
+  },
+  "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
+ },
  "scenarios": {
   "restoration": 28520816,
   "core": 28172289,
@@ -1398,7 +1560,7 @@
    },
    {
     "id": "distribution",
-    "name": "Distribution center (150k sq ft)",
+    "name": "Distribution centre (150k sq ft)",
     "value": 20000000,
     "plausible": false,
     "note": "Not realistic for Lunenburg \u2014 no site, sewer or market for it"
@@ -1752,7 +1914,7 @@
    "Plan design changes go through the Public Employee Committee under M.G.L. c.32B \u00a7\u00a721-23, and the district must share 25% of first-year savings with employees as mitigation. The saving in year one is therefore 75% of the headline figure.",
    "The Town, not the school district, controls the insurance group. The schools cannot change this on their own.",
    "Contribution splits are bargained with each union. A shift is a pay cut in everything but name, to staff who have already absorbed position reductions.",
-   "Enrollment by plan and tier is not published. The figures here move with the counts you set, and should be replaced with real ones before anybody relies on them."
+   "Enrolment by plan and tier is not published. The figures here move with the counts you set, and should be replaced with real ones before anybody relies on them."
   ],
   "budget": 3994071
  },
@@ -2171,7 +2333,7 @@
   },
   {
    "id": "tech_cut",
-   "name": "Software, licenses & devices",
+   "name": "Software, licences & devices",
    "kind": "saving",
    "unit": "% of technology spend",
    "max": 60,
@@ -2181,7 +2343,7 @@
    "basis": 638675,
    "cap": 383205.0,
    "what": "Technology totals $638,675: $185,065 device leases, $154,981 administrative contracts, $55,230 networking, $13,800 guidance software, plus per-school contracts and tech staff.",
-   "caveat": "Real money and genuinely reviewable \u2014 duplicate licenses are common. But state testing, IEP management, student information and payroll all run on these systems, and devices that are not replaced still have to be repaired. Ashburnham-Westminster cut technology 5.8%, not 60%.",
+   "caveat": "Real money and genuinely reviewable \u2014 duplicate licences are common. But state testing, IEP management, student information and payroll all run on these systems, and devices that are not replaced still have to be repaired. Ashburnham-Westminster cut technology 5.8%, not 60%.",
    "benchmark": "Ashburnham-Westminster reduced technology 5.8% in FY27"
   }
  ],
@@ -2210,9 +2372,9 @@
    },
    {
     "id": "tech_cut",
-    "name": "Technology & license audit \u2014 12%",
+    "name": "Technology & licence audit \u2014 12%",
     "value": 76641,
-    "why": "Duplicate and unused licenses are common and nobody loses a teacher. Ashburnham-Westminster took 5.8%; 12% assumes a real audit, not a trim.",
+    "why": "Duplicate and unused licences are common and nobody loses a teacher. Ashburnham-Westminster took 5.8%; 12% assumes a real audit, not a trim.",
     "difficulty": "Administrative. Needs someone with time to run it \u2014 itself an argument against gutting the business office."
    },
    {
@@ -2551,7 +2713,7 @@
     "id": "tech_total",
     "kind": "lines",
     "question": "How did you calculate total technology spend?",
-    "label": "Technology \u2014 contracts, licenses, devices and staff",
+    "label": "Technology \u2014 contracts, licences, devices and staff",
     "answer": "Technology is not one function group \u2014 it is scattered across eight of them. These are the individual lines that are technology spending, named one by one.",
     "notes": [
      "Device leases ($185,065) sit under 7400 Replace Equipment; the guidance software lease ($13,800) sits under Guidance. Neither would be found by looking at a \"technology\" heading.",

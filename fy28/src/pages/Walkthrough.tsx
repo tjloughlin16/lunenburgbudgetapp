@@ -10,6 +10,7 @@ import {
 } from '../model/rates'
 import { ADMIN, DEVELOPMENT } from '../model/answers'
 import { MODEL } from '../model/engine'
+import { CitationList } from '../components/Citations'
 import { Room, Say, Plate, SectionLink, AlreadyCut, OneTimeAnswers,
          WhatIsADevelopment } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
@@ -139,13 +140,13 @@ export function Walkthrough({ onJump }: {
           choice.
         </Say>
         <Plate label="On the record — this already happened" figures={[
-          { v: `${cuts.fte} FTE`, k: 'positions cut from the budget now in force', tone: 'critical' },
-          { v: '0 of 2', k: 'override questions passed' },
+          { v: `${cuts.fte} FTE`, k: 'positions cut from the budget now in force', cite: 'cuts', tone: 'critical' },
+          { v: '0 of 2', k: 'override questions passed', cite: 'override' },
           { v: `$${ALREADY_SAID.overrides[0].cost} · $${ALREADY_SAID.overrides[1].cost}`,
-            k: 'what each would have added to the average tax bill' },
+            k: 'what each would have added to the average tax bill', cite: 'override' },
         ]} />
         <Plate label="Projected — nobody has announced this" figures={[
-          { v: usdShort(LEVEL_SERVICE.gap), k: 'what FY28 is short, on this model’s arithmetic',
+          { v: usdShort(LEVEL_SERVICE.gap), k: 'what FY28 is short, on this model’s arithmetic', cite: 'gap',
             tone: 'critical' },
         ]} />
         <AlreadyCut />
@@ -169,8 +170,8 @@ export function Walkthrough({ onJump }: {
           Nobody is hired. Nothing is added. No programme comes back.
         </Say>
         <Plate label="What standing still costs" figures={[
-          { v: usdShort(LEVEL_SERVICE.fy27), k: 'the town gave the schools this year' },
-          { v: `+${usd(LEVEL_SERVICE.increase)}`, k: 'what the identical thing costs next year',
+          { v: usdShort(LEVEL_SERVICE.fy27), k: 'the town gave the schools this year', cite: 'fy27-approp' },
+          { v: `+${usd(LEVEL_SERVICE.increase)}`, k: 'what the identical thing costs next year', cite: 'gap',
             tone: 'critical' },
         ]} />
         <Say>
@@ -360,9 +361,9 @@ export function Walkthrough({ onJump }: {
           is in general circulation.
         </Say>
         <Plate label="On the wall" figures={[
-          { v: `${(SHARE * 100).toFixed(0)}¢`, k: 'of each new-growth dollar reaches the schools — the rest is the town’s' },
+          { v: `${(SHARE * 100).toFixed(0)}¢`, k: 'of each new-growth dollar reaches the schools — the rest is the town’s', cite: 'levy' },
           { v: usdShort(DEVELOPMENT.fiveYear.value),
-            k: 'of new commercial value a year to hold the gap for five years' },
+            k: 'of new commercial value a year to hold the gap for five years', cite: 'taxbase' },
           { v: DEVELOPMENT.fiveYear.developments.toFixed(0),
             k: 'developments a year — see below for what one of those is' },
           { v: `${usd(HOME_PAYS)} · ${usd(HOME_COSTS)}`,
@@ -402,8 +403,8 @@ export function Walkthrough({ onJump }: {
           {usdShort(STATE_AID.chapter70)} of it.
         </Say>
         <Plate label="On the wall" figures={[
-          { v: pct(STATE_AID.shareOfTownRevenue, 0), k: 'of town revenue is state aid — which is why the rate has to be so high' },
-          { v: pct(ch70OnlyGrowth(aidRate)), k: 'annual growth Chapter 70 alone would need, for ever', tone: 'critical' },
+          { v: pct(STATE_AID.shareOfTownRevenue, 0), k: 'of town revenue is state aid — which is why the rate has to be so high', cite: 'levy' },
+          { v: pct(ch70OnlyGrowth(aidRate)), k: 'annual growth Chapter 70 alone would need, for ever', cite: 'ch70', tone: 'critical' },
           { v: '+$833,340', k: 'extra in the first year' },
           { v: '$64.2M', k: 'extra over ten years' },
         ]} />
@@ -446,10 +447,10 @@ export function Walkthrough({ onJump }: {
           where it is, and hold the salary line down by employing fewer people:
         </Say>
         <Plate label="The default — what happens if nobody decides anything" figures={[
-          { v: pct(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0)), k: 'all the salary line can grow, while insurance rises 9% a year', tone: 'critical' },
+          { v: pct(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0)), k: 'all the salary line can grow, while insurance rises 9% a year', cite: 'salaries', tone: 'critical' },
           { v: `${shrink.positionsPerYear.toFixed(1)}`, k: 'positions gone in the first year, and more every year after' },
           { v: `−${pct(shrink.after20, 0)}`, k: 'of the workforce after twenty years', tone: 'critical' },
-          { v: pct(salaryAt4), k: 'what the salary line could grow at instead, if insurance came to 4%', tone: 'good' },
+          { v: pct(salaryAt4), k: 'what the salary line could grow at instead, if insurance came to 4%', cite: 'health', tone: 'good' },
         ]} />
         <Say>
           <strong>That is not a recommendation.</strong> It is what the arithmetic does on
@@ -544,6 +545,10 @@ export function Walkthrough({ onJump }: {
           count would be the most persuasive figure on this page.
         </Note>
       </div>
+
+      {/* Last thing on the page on purpose. A reader who has followed the argument this
+          far has earned the right to check it, and should not have to go looking. */}
+      <CitationList />
     </div>
   )
 }

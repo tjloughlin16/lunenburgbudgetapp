@@ -78,6 +78,12 @@ export const MODEL = raw as unknown as {
   assumptions: Assumptions
   fy27: Record<string, number>
   expenseBase: Record<string, number>
+  citations: {
+    items: { id: string; n: number; metric: string; value: string
+             kind: string; basis: string; doc: string; source: string }[]
+    kindLabels: Record<string, string>
+    note: string
+  }
   scenarios: Record<string, number>
   peers: Peer[]
   sports: Sport[]
