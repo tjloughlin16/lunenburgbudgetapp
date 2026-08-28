@@ -6,6 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Lunenburg Budget Project — FY28 and beyond</title>
     <meta name="description" content="An independent, checkable look at the Lunenburg Public Schools budget — how big the FY28 gap is, why it comes back every year, and the combinations that would actually keep it shut. Not affiliated with the Town of Lunenburg or the school district." />
+      <!-- Structured data for agents and anyone checking our arithmetic. llms.txt is a
+         convention rather than a standard, so it is announced here as well as in
+         robots.txt and the sitemap — nothing goes looking for it unprompted. -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Data guide for agents">
+    <link rel="alternate" type="application/json" href="/data/model.json" title="Every figure this site computes">
+    <link rel="alternate" type="application/json" href="/data/sources.json" title="The document archive">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://lunenburgbudgetproject.org/#site",
+      "url": "https://lunenburgbudgetproject.org",
+      "name": "Lunenburg Budget Project",
+      "description": "An independent projection of the Lunenburg, Massachusetts school budget, built from documents the town and district published. Not affiliated with either.",
+      "publisher": {
+        "@type": "Person",
+        "name": "An independent Lunenburg resident"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://lunenburgbudgetproject.org/#dataset",
+      "name": "Lunenburg school budget projection and source archive",
+      "description": "The FY27 Lunenburg school budget (26,572,288 adopted) with a projection to FY32, and 154 source documents. IMPORTANT FOR ANALYSIS: the archive contains budget columns (what was voted or proposed) and actual columns (what was spent). They differ by up to 59% on some lines and must never be combined in one growth-rate calculation. Every projection here uses budget columns only. See /llms.txt before computing anything.",
+      "url": "https://lunenburgbudgetproject.org/sources",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@id": "https://lunenburgbudgetproject.org/#site"
+      },
+      "temporalCoverage": "2018/2032",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Lunenburg, Massachusetts"
+      },
+      "keywords": [
+        "municipal budget",
+        "school finance",
+        "Proposition 2 1/2",
+        "Massachusetts",
+        "special education",
+        "Chapter 70",
+        "override"
+      ],
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Guide for agents and analysts",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://lunenburgbudgetproject.org/llms.txt"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Every figure the site computes",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://lunenburgbudgetproject.org/data/model.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "The document archive",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://lunenburgbudgetproject.org/data/sources.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "District budget, 351 line items",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://lunenburgbudgetproject.org/data/budget-lines.csv"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "87 mirrored district documents",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://lunenburgbudgetproject.org/data/district-page-index.csv"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "1,422 town meeting records",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://lunenburgbudgetproject.org/data/minutes-index.csv"
+        }
+      ]
+    },
+    {
+      "@type": "Claim",
+      "@id": "https://lunenburgbudgetproject.org/#gap",
+      "text": "Projected FY28 shortfall $600,414: Average annual shortfall FY28–FY30, after each year’s cuts compound",
+      "appearance": {
+        "@type": "WebPage",
+        "url": "https://lunenburgbudgetproject.org"
+      },
+      "citation": "https://lunenburgbudgetproject.org/sources"
+    }
+  ]
+}
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,3743 @@
+{
+ "meta": {
+  "generated": "2026-08-18",
+  "base_year": "FY27",
+  "note": "FY28+ figures are projections built from published FY27 mechanics, not published FY28 numbers."
+ },
+ "categories": {
+  "core_classroom": {
+   "label": "Core Classroom & Class Size",
+   "color": "blue"
+  },
+  "literacy": {
+   "label": "Early Literacy & Intervention",
+   "color": "violet"
+  },
+  "sped": {
+   "label": "Special Education",
+   "color": "teal"
+  },
+  "wellness": {
+   "label": "Student Mental Health & Health",
+   "color": "green"
+  },
+  "advanced": {
+   "label": "Advanced & Elective Academics",
+   "color": "indigo"
+  },
+  "arts": {
+   "label": "Arts & Music",
+   "color": "pink"
+  },
+  "athletics": {
+   "label": "Athletics",
+   "color": "orange"
+  },
+  "activities": {
+   "label": "Clubs & Activities",
+   "color": "amber"
+  },
+  "leadership": {
+   "label": "School Leadership & Admin",
+   "color": "slate"
+  },
+  "operations": {
+   "label": "Operations & Facilities",
+   "color": "stone"
+  },
+  "technology": {
+   "label": "Technology",
+   "color": "cyan"
+  }
+ },
+ "programs": [
+  {
+   "id": "es_teachers_2fte",
+   "name": "2.0 Classroom Teachers \u2014 Turkey Hill (gr 3-5)",
+   "cat": "core_classroom",
+   "cost": 171811,
+   "fte": 2.0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 9,
+   "source": "ADD",
+   "impact": "Class sizes at Turkey Hill rise toward 27-30 students."
+  },
+  {
+   "id": "ps_teachers_2fte",
+   "name": "2.0 Classroom Teachers \u2014 Primary (gr 1-2)",
+   "cat": "core_classroom",
+   "cost": 205019,
+   "fte": 2.0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 9,
+   "source": "ADD",
+   "impact": "Class sizes at the Primary School rise toward 27-30 students."
+  },
+  {
+   "id": "interventionist_ps",
+   "name": "1.0 Interventionist \u2014 Primary",
+   "cat": "literacy",
+   "cost": 135930,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 6,
+   "source": "ADD",
+   "impact": "Small-group reading and math intervention capacity cut at K-2."
+  },
+  {
+   "id": "interventionist_thes",
+   "name": "0.5 Interventionist \u2014 Turkey Hill",
+   "cat": "literacy",
+   "cost": 53674,
+   "fte": 0.5,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 6,
+   "source": "ADD",
+   "impact": "Halves targeted intervention for grades 3-5."
+  },
+  {
+   "id": "asst_principal",
+   "name": "1.0 Assistant Principal (attrition)",
+   "cat": "leadership",
+   "cost": 152829,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 7,
+   "source": "ADD",
+   "impact": "Primary and Turkey Hill now share a single Assistant Principal."
+  },
+  {
+   "id": "cota",
+   "name": "1.0 Certified Occupational Therapy Assistant (attrition)",
+   "cat": "sped",
+   "cost": 74147,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 5,
+   "source": "ADD",
+   "impact": "Occupational Therapist absorbs a higher caseload."
+  },
+  {
+   "id": "custodian",
+   "name": "1.0 Custodian \u2014 High School (attrition)",
+   "cat": "operations",
+   "cost": 48630,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 4,
+   "source": "ADD",
+   "impact": "Daily upkeep of the high school handled by a smaller team."
+  },
+  {
+   "id": "music_thes_02",
+   "name": "0.2 Music Teacher \u2014 Turkey Hill",
+   "cat": "arts",
+   "cost": 14488,
+   "fte": 0.2,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 2,
+   "source": "ADD",
+   "impact": "Eliminates Grade 5 Band; larger arts class sizes."
+  },
+  {
+   "id": "athletic_transport",
+   "name": "All Athletic Transportation",
+   "cat": "athletics",
+   "cost": 127550,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 1,
+   "source": "LINE",
+   "impact": "Families must drive athletes to every away contest."
+  },
+  {
+   "id": "athletic_coaches_partial",
+   "name": "Athletic Coaching Stipends (partial)",
+   "cat": "athletics",
+   "cost": 72113,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 1,
+   "source": "LINE",
+   "impact": "Reduced coaching across the varsity program."
+  },
+  {
+   "id": "athletic_trainer_half",
+   "name": "0.5 Athletic Trainer",
+   "cat": "athletics",
+   "cost": 34258,
+   "fte": 0.5,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 1,
+   "source": "LINE",
+   "impact": "Certified trainer coverage halved at practices and games."
+  },
+  {
+   "id": "ms_freshman_coaches",
+   "name": "Middle School & Freshman Sports",
+   "cat": "athletics",
+   "cost": 14415,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 1,
+   "source": "ADD",
+   "impact": "No school-sponsored sports below the varsity level."
+  },
+  {
+   "id": "curriculum_adoption",
+   "name": "Curriculum Adoption Cycle",
+   "cat": "core_classroom",
+   "cost": 40408,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 3,
+   "source": "LINE",
+   "impact": "Textbooks and core materials age another year without replacement."
+  },
+  {
+   "id": "band_transport",
+   "name": "Band & Music Transportation",
+   "cat": "arts",
+   "cost": 5000,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 1,
+   "source": "LINE",
+   "impact": "No district transport to festivals, competitions, or performances."
+  },
+  {
+   "id": "custodial_supplies",
+   "name": "Custodial Supplies (reduction)",
+   "cat": "operations",
+   "cost": 15000,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 3,
+   "source": "LINE",
+   "impact": "Reduced cleaning supply stock."
+  },
+  {
+   "id": "ms_custodian_partial",
+   "name": "Middle School Custodial Hours",
+   "cat": "operations",
+   "cost": 9661,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "cut",
+   "tier": 4,
+   "source": "LINE",
+   "impact": "Reduced custodial coverage at LMS."
+  },
+  {
+   "id": "reading_spec_ps",
+   "name": "1.0 Reading Specialist \u2014 Primary",
+   "cat": "literacy",
+   "cost": 103722,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "restoring",
+   "tier": 6,
+   "source": "ATRP",
+   "impact": "Tier 2/3 phonics intervention for K-2. One-time funded in FY27."
+  },
+  {
+   "id": "reading_spec_thes",
+   "name": "1.0 Reading Specialist \u2014 Turkey Hill",
+   "cat": "literacy",
+   "cost": 103722,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "restoring",
+   "tier": 6,
+   "source": "ATRP",
+   "impact": "Addresses the \"fourth-grade slump\" in grades 3-5. One-time funded."
+  },
+  {
+   "id": "lhs_ap_half",
+   "name": "0.5 -> 1.0 Assistant Principal \u2014 High School",
+   "cat": "leadership",
+   "cost": 90450,
+   "fte": 0.5,
+   "mandate": "discretionary",
+   "status": "restoring",
+   "tier": 7,
+   "source": "ATRP",
+   "impact": "Full-time AP for discipline, climate, and staff support. One-time funded."
+  },
+  {
+   "id": "ignite_seats",
+   "name": "52 Ignite Tutoring Seats \u2014 Primary",
+   "cat": "literacy",
+   "cost": 129458,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "restoring",
+   "tier": 6,
+   "source": "ATRP",
+   "impact": "1:1 high-dosage reading tutoring for 52 K-2 students. One-time funded."
+  },
+  {
+   "id": "music_lhs_04",
+   "name": "0.6 -> 1.0 Music Teacher \u2014 High School",
+   "cat": "arts",
+   "cost": 26370,
+   "fte": 0.4,
+   "mandate": "discretionary",
+   "status": "restoring",
+   "tier": 2,
+   "source": "ATRP",
+   "impact": "New music electives; frees a PE section for seniors. One-time funded."
+  },
+  {
+   "id": "bridge_teacher",
+   "name": "1.0 Bridge Program Teacher \u2014 LHS",
+   "cat": "wellness",
+   "cost": 107347,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 8,
+   "source": "ADD",
+   "impact": "Would restore transitional support for students in crisis."
+  },
+  {
+   "id": "bridge_para",
+   "name": "1.0 Bridge Paraprofessional \u2014 LHS",
+   "cat": "wellness",
+   "cost": 57111,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 8,
+   "source": "ADD",
+   "impact": "Staffs the Bridge program."
+  },
+  {
+   "id": "para_k",
+   "name": "1.0 Paraprofessional \u2014 Kindergarten",
+   "cat": "core_classroom",
+   "cost": 57111,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 9,
+   "source": "ADD",
+   "impact": "Adult support in kindergarten rooms approaching 30 students."
+  },
+  {
+   "id": "interventionist_lms",
+   "name": "1.0 Interventionist \u2014 Middle School",
+   "cat": "literacy",
+   "cost": 107347,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 6,
+   "source": "ADD",
+   "impact": "Only tier restored under a Tier 2 override."
+  },
+  {
+   "id": "world_language_lhs",
+   "name": "1.0 World Language Teacher \u2014 LHS",
+   "cat": "advanced",
+   "cost": 107347,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 10,
+   "source": "ADD",
+   "impact": "Preserves Latin, Spanish and French offerings."
+  },
+  {
+   "id": "ell_teacher",
+   "name": "1.0 English Language Learning Teacher",
+   "cat": "sped",
+   "cost": 107347,
+   "fte": 1.0,
+   "mandate": "legal",
+   "status": "unfunded",
+   "tier": 12,
+   "source": "ADD",
+   "impact": "Legally required services for multilingual learners."
+  },
+  {
+   "id": "asst_business_mgr",
+   "name": "1.0 Assistant Business Manager",
+   "cat": "leadership",
+   "cost": 10000,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 11,
+   "source": "ADD",
+   "impact": "State reporting compliance; avoids financial penalties."
+  },
+  {
+   "id": "state_reporting_sec",
+   "name": "0.5 State Reporting Secretary",
+   "cat": "leadership",
+   "cost": 31000,
+   "fte": 0.5,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 11,
+   "source": "ADD",
+   "impact": "DESE reporting compliance."
+  },
+  {
+   "id": "interventionist_lhs",
+   "name": "1.0 Interventionist \u2014 High School",
+   "cat": "literacy",
+   "cost": 161064,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "unfunded",
+   "tier": 6,
+   "source": "ADD",
+   "impact": "First position sacrificed when Restoration steps down to Core."
+  },
+  {
+   "id": "athletics_remaining",
+   "name": "Remaining Athletics Program (all sports)",
+   "cat": "athletics",
+   "cost": 217908,
+   "fte": 1.5,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 1,
+   "source": "LINE",
+   "impact": "Ends all school-sponsored sports: coaches, trainer, AD, officials, equipment."
+  },
+  {
+   "id": "hs_advisors",
+   "name": "High School Clubs & After-School Advisors",
+   "cat": "activities",
+   "cost": 11731,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 1,
+   "source": "LINE",
+   "impact": "Ends every advised club at the high school."
+  },
+  {
+   "id": "art_supplies",
+   "name": "Art Supplies \u2014 all four schools",
+   "cat": "arts",
+   "cost": 30685,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 2,
+   "source": "LINE",
+   "impact": "Art classes run without consumable materials."
+  },
+  {
+   "id": "music_supplies",
+   "name": "Band & Music Supplies, Equipment, Repair",
+   "cat": "arts",
+   "cost": 17073,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 2,
+   "source": "LINE",
+   "impact": "Instruments go unrepaired; no sheet music or reeds."
+  },
+  {
+   "id": "hs_dept_heads",
+   "name": "High School Department Head Stipends",
+   "cat": "leadership",
+   "cost": 29950,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 3,
+   "source": "LINE",
+   "impact": "No curriculum leadership by subject at LHS."
+  },
+  {
+   "id": "prof_dev",
+   "name": "Professional Development \u2014 district-wide",
+   "cat": "core_classroom",
+   "cost": 41800,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 3,
+   "source": "LINE",
+   "impact": "No training on new curriculum, literacy practice, or student mental health."
+  },
+  {
+   "id": "libraries",
+   "name": "Library Staff & Materials \u2014 all four schools",
+   "cat": "advanced",
+   "cost": 221546,
+   "fte": 4.0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 5,
+   "source": "LINE",
+   "impact": "Closes staffed libraries district-wide."
+  },
+  {
+   "id": "instr_materials",
+   "name": "Classroom Instructional Materials & Workbooks",
+   "cat": "core_classroom",
+   "cost": 120677,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 4,
+   "source": "LINE",
+   "impact": "Teachers buy their own consumables or go without."
+  },
+  {
+   "id": "hs_electives_ap",
+   "name": "Advanced Placement & Upper-Level Electives",
+   "cat": "advanced",
+   "cost": 290000,
+   "fte": 2.8,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 10,
+   "source": "EST",
+   "impact": "Collapses the AP course catalog; students lose college-credit pathways."
+  },
+  {
+   "id": "hs_music_program",
+   "name": "High School Band & Chorus Program",
+   "cat": "arts",
+   "cost": 72440,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 2,
+   "source": "EST",
+   "impact": "Ends band and chorus at Lunenburg High School."
+  },
+  {
+   "id": "ms_electives",
+   "name": "Middle School Exploratory & Elective Block",
+   "cat": "advanced",
+   "cost": 185000,
+   "fte": 2.0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 10,
+   "source": "EST",
+   "impact": "Middle school reduced to core academics only."
+  },
+  {
+   "id": "guidance_partial",
+   "name": "Guidance Counselors (1.0 reduction)",
+   "cat": "wellness",
+   "cost": 110000,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 13,
+   "source": "EST",
+   "impact": "Caseloads rise above 300:1; college counseling curtailed."
+  },
+  {
+   "id": "social_workers",
+   "name": "Social Workers (1.0 reduction)",
+   "cat": "wellness",
+   "cost": 99007,
+   "fte": 1.0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 13,
+   "source": "EST",
+   "impact": "A school loses its full-time mental-health clinician."
+  },
+  {
+   "id": "nurses_partial",
+   "name": "School Nurse (1.0 reduction)",
+   "cat": "wellness",
+   "cost": 87870,
+   "fte": 1.0,
+   "mandate": "legal",
+   "status": "funded",
+   "tier": 15,
+   "source": "EST",
+   "impact": "Buildings share nursing coverage; medication administration at risk."
+  },
+  {
+   "id": "core_teachers_more",
+   "name": "Additional Classroom Teachers (each 1.0)",
+   "cat": "core_classroom",
+   "cost": 102510,
+   "fte": 1.0,
+   "mandate": "contract",
+   "status": "funded",
+   "tier": 14,
+   "source": "EST",
+   "repeatable": 6,
+   "impact": "Every further cut pushes average class size up by roughly one student."
+  },
+  {
+   "id": "sped_beyond_mandate",
+   "name": "Special Education Above Legal Minimum",
+   "cat": "sped",
+   "cost": 180000,
+   "fte": 2.0,
+   "mandate": "legal",
+   "status": "funded",
+   "tier": 16,
+   "source": "EST",
+   "impact": "Would invite state findings and compensatory-services liability."
+  },
+  {
+   "id": "device_refresh",
+   "name": "Student Device Refresh & Computer Leases",
+   "cat": "technology",
+   "cost": 265316,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 3,
+   "source": "LINE",
+   "impact": "Chromebook replacement cycle stops; devices age past repair."
+  },
+  {
+   "id": "network_services",
+   "name": "Network & Telecommunications Contracts",
+   "cat": "technology",
+   "cost": 55230,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 6,
+   "source": "LINE",
+   "impact": "Reduced bandwidth and support; state testing capacity at risk."
+  },
+  {
+   "id": "instr_tech",
+   "name": "Instructional Technology Contracts (per school)",
+   "cat": "technology",
+   "cost": 87924,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 5,
+   "source": "LINE",
+   "impact": "Loses licensed classroom software and platforms."
+  },
+  {
+   "id": "building_maint",
+   "name": "Building Maintenance Contracted Services",
+   "cat": "operations",
+   "cost": 257000,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 4,
+   "source": "LINE",
+   "impact": "Deferred maintenance accumulates; small failures become capital projects."
+  },
+  {
+   "id": "grounds_maint",
+   "name": "Grounds Maintenance & Supplies",
+   "cat": "operations",
+   "cost": 79458,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 2,
+   "source": "LINE",
+   "impact": "Fields and grounds degrade; athletic surfaces become unsafe."
+  },
+  {
+   "id": "equipment_replace",
+   "name": "Equipment Replacement & Capital Maintenance",
+   "cat": "operations",
+   "cost": 75045,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 3,
+   "source": "LINE",
+   "impact": "Boilers, kitchen and classroom equipment run to failure."
+  },
+  {
+   "id": "custodial_more",
+   "name": "Custodial Staff (each further 1.0)",
+   "cat": "operations",
+   "cost": 48630,
+   "fte": 1.0,
+   "mandate": "contract",
+   "status": "funded",
+   "tier": 7,
+   "source": "LINE",
+   "repeatable": 3,
+   "impact": "Cleaning frequency drops below health-code comfort in some buildings."
+  },
+  {
+   "id": "substitutes",
+   "name": "Substitute Teacher Budget (reduction)",
+   "cat": "core_classroom",
+   "cost": 74500,
+   "fte": 0,
+   "mandate": "discretionary",
+   "status": "funded",
+   "tier": 8,
+   "source": "LINE",
+   "impact": "Classes combined or supervised by non-teachers when staff are absent."
+  },
+  {
+   "id": "sped_paras_more",
+   "name": "Special Education Paraprofessionals (each 1.0)",
+   "cat": "sped",
+   "cost": 57111,
+   "fte": 1.0,
+   "mandate": "legal",
+   "status": "funded",
+   "tier": 14,
+   "source": "LINE",
+   "repeatable": 3,
+   "impact": "IEP-mandated 1:1 and small-group support; cutting invites state findings."
+  }
+ ],
+ "presets": {
+  "school_committee": {
+   "name": "School Committee's revealed priorities",
+   "why": "The order Lunenburg itself sacrificed things across its own four FY27 scenarios. Athletics and arts went first; special education, mandated services and classroom teachers were defended longest.",
+   "order": [
+    "sped",
+    "core_classroom",
+    "literacy",
+    "wellness",
+    "leadership",
+    "advanced",
+    "operations",
+    "technology",
+    "activities",
+    "arts",
+    "athletics"
+   ]
+  },
+  "peer_districts": {
+   "name": "What comparable districts actually do",
+   "why": "Observed sequence across Easthampton, Bridgewater-Raynham, South Hadley, Groton-Dunstable and Winchester: revenue levers and non-personnel first, then enrichment, then support staff, then classroom teachers last.",
+   "order": [
+    "sped",
+    "wellness",
+    "core_classroom",
+    "literacy",
+    "advanced",
+    "leadership",
+    "technology",
+    "operations",
+    "arts",
+    "activities",
+    "athletics"
+   ]
+  },
+  "our_recommendation": {
+   "name": "What we\u2019d do",
+   "why": "Early literacy first, because it is the one loss that cannot be made up later. Classrooms next, because class size is what makes families leave. Athletics and arts sit at the bottom NOT because they matter least, but because they are the only things here that can pay for themselves \u2014 fund them with fees and they never reach the cut line at all.",
+   "order": [
+    "literacy",
+    "core_classroom",
+    "sped",
+    "wellness",
+    "advanced",
+    "leadership",
+    "technology",
+    "operations",
+    "arts",
+    "activities",
+    "athletics"
+   ]
+  },
+  "academics_first": {
+   "name": "Academics above all",
+   "why": "Protect instruction and advanced coursework at any cost to everything else. Shows how far enrichment alone can carry you -- and where it stops.",
+   "order": [
+    "core_classroom",
+    "advanced",
+    "literacy",
+    "sped",
+    "wellness",
+    "technology",
+    "leadership",
+    "operations",
+    "activities",
+    "arts",
+    "athletics"
+   ]
+  }
+ },
+ "assumptions": {
+  "salaries": 0.04,
+  "health": 0.09,
+  "transport": 0.06,
+  "sped": 0.059,
+  "sped_tuition": 0.08,
+  "utilities": 0.05,
+  "other": 0.03,
+  "levy_growth": 0.025,
+  "new_growth": 400000,
+  "state_aid_growth": 0.02,
+  "local_receipts_growth": 0.01,
+  "school_share": 0.562,
+  "athletic_fee_revenue": 0,
+  "override_amount": 0
+ },
+ "fy27": {
+  "levy_limit": 34133581.28,
+  "excluded_debt": 2199352.52,
+  "state_aid": 11876038,
+  "local_receipts": 3508024,
+  "omnibus": 49963990.19,
+  "lps_appropriation": 26572288,
+  "stm_addbacks": 453722,
+  "monty_tech": 1452426,
+  "stm_appropriation": 350000
+ },
+ "expenseBase": {
+  "other": 1760351.0,
+  "sped": 5745543.0,
+  "transport": 1053360.0,
+  "utilities": 605511.0,
+  "health": 4019071.0,
+  "sped_tuition": 700142.0,
+  "salaries": 12688311.5
+ },
+ "floorNote": {
+  "isOurs": true,
+  "what": "A cascade has to stop somewhere, so we made it stop. No document we hold establishes a legal minimum for any of these programmes.",
+  "evidence": "Between the FY26 and FY27 budgets the district cut ten special education lines totalling $224,049 \u2014 including an entire Elementary School Psychologist, from $98,784 to nothing.",
+  "implication": "Cutting a service that is still owed does not save the money. It moves the cost somewhere a budget cannot see it.",
+  "source": "xlsx/fy27-proposals.xlsx, columns fy26_final and fy27_balanced"
+ },
+ "citations": {
+  "items": [
+   {
+    "id": "fy27-approp",
+    "metric": "The FY27 school budget",
+    "value": "$26,572,288",
+    "kind": "published",
+    "basis": "Total, Balanced scenario",
+    "doc": "pdf/fy27-final-budget-doc.pdf",
+    "source": "FY27 proposed budget document, 25 March 2026",
+    "n": 1
+   },
+   {
+    "id": "expense-base",
+    "metric": "What the schools spend, by line",
+    "value": "351 line items",
+    "kind": "budget",
+    "basis": "column fy27_balanced \u2014 the adopted budget, not actual spending",
+    "doc": "xlsx/fy27-proposals.xlsx",
+    "source": "FY27 budget workbook, 25 March 2026",
+    "n": 2
+   },
+   {
+    "id": "cuts",
+    "metric": "Positions cut from the budget now in force",
+    "value": "9.2 FTE, $1,174,933",
+    "kind": "published",
+    "basis": "The district\u2019s own Scenario D reduction list, plus the program lines the workbook shows falling between Level Service and Balanced. Two items make up the difference from the addendum\u2019s own subtotal: Middle School custodial hours ($9,661, from the workbook) and the 0.2 Music Teacher at Turkey Hill ($14,488) \u2014 the district listed that post with no dollar figure, so the amount is OURS, priced from the high school music position.",
+    "doc": "pdf/fy27-multi-scenario-addendum.pdf",
+    "source": "Multi-Scenario Financial Analysis, \u00a75, with the FY27 workbook",
+    "n": 3
+   },
+   {
+    "id": "override",
+    "metric": "Override questions passed, and what they would have cost",
+    "value": "0 of 2",
+    "kind": "published",
+    "basis": "Precinct tallies; tax impact from the Town Manager",
+    "doc": "pdf/town-2026-election-unofficial-results.pdf",
+    "source": "Town election results, 16 May 2026",
+    "n": 4
+   },
+   {
+    "id": "levy",
+    "metric": "Revenue: levy limit, new growth, excluded debt, state aid",
+    "value": "$49,963,990 omnibus",
+    "kind": "published",
+    "basis": "The revenue formula as the Town published it",
+    "doc": "pdf/town-fy27-budget-press-release.pdf",
+    "source": "Town Manager's FY27 budget release, 17 April 2026",
+    "n": 5
+   },
+   {
+    "id": "prop25",
+    "metric": "Proposition 2\u00bd levy growth",
+    "value": "2.5%",
+    "kind": "statute",
+    "basis": "Massachusetts General Laws c.59 \u00a721C",
+    "doc": "pdf/town-revenue-prop25-presentation.pdf",
+    "source": "Finance Committee deck on Proposition 2\u00bd",
+    "n": 6
+   },
+   {
+    "id": "salaries",
+    "metric": "Salary growth",
+    "value": "4.0% a year",
+    "kind": "contract",
+    "basis": "2.5 / 4.0 / 3.5% scale increases plus steps worth ~3.3%",
+    "doc": "contracts/pdf/dese-teacher-contract.pdf",
+    "source": "Lunenburg Education Association agreement, FY25\u2013FY27",
+    "n": 7
+   },
+   {
+    "id": "health",
+    "metric": "Health insurance growth",
+    "value": "9.0% a year",
+    "kind": "published",
+    "basis": "The district's own stated FY27 assumption",
+    "doc": "pdf/health-insurance-rates-2025.pdf",
+    "source": "Health insurance rates 2025, and the FY27 budget narrative",
+    "n": 8
+   },
+   {
+    "id": "sped-tuition",
+    "metric": "Out-of-district special education growth",
+    "value": "8.0% a year",
+    "kind": "ours",
+    "basis": "Our estimate. The district publishes no rate for this line.",
+    "doc": "xlsx/fy27-proposals.xlsx",
+    "source": "FY27 budget workbook, lines 9300 and 9400",
+    "n": 9
+   },
+   {
+    "id": "ch70",
+    "metric": "Chapter 70 aid and the foundation budget",
+    "value": "$9,349,335",
+    "kind": "published",
+    "basis": "DESE preliminary FY27 Chapter 70",
+    "doc": "xlsx/ch70-fy27-summary.xlsx",
+    "source": "DESE Chapter 70 summary, FY27",
+    "n": 10
+   },
+   {
+    "id": "taxbase",
+    "metric": "New growth, assessed value by class, average tax bill",
+    "value": "FY18\u2013FY23 series",
+    "kind": "published",
+    "basis": "The Assessors' own year-by-year tables",
+    "doc": "pdf/tax-classification-fy23.pdf",
+    "source": "Tax Classification Hearing, FY2023",
+    "n": 11
+   },
+   {
+    "id": "athletics",
+    "metric": "What each sport costs, and how many play it",
+    "value": "25 sports",
+    "kind": "published",
+    "basis": "Cost and participation per sport, FY24",
+    "doc": "pdf/athletic-program-costs-by-sport.pdf",
+    "source": "Athletic program costs by sport",
+    "n": 12
+   },
+   {
+    "id": "fees",
+    "metric": "What families pay in athletic and bus fees",
+    "value": "$400 first child",
+    "kind": "published",
+    "basis": "Superintendent's email, August 2026; prior schedule from the FAQ",
+    "doc": "pdf/lhs-athletics-faq.pdf",
+    "source": "High school athletics fee schedule",
+    "n": 13
+   },
+   {
+    "id": "peers",
+    "metric": "How neighbouring districts compare",
+    "value": "11 districts",
+    "kind": "published",
+    "basis": "In-district expenditure per pupil, FY2018\u2013FY2024",
+    "doc": "xlsx/dese-all-districts.xlsx",
+    "source": "DESE per-pupil expenditures",
+    "n": 14
+   },
+   {
+    "id": "gap",
+    "metric": "The projected FY28 gap",
+    "value": "our projection",
+    "kind": "ours",
+    "basis": "Computed from the FY27 adopted budget and the growth rates above. There is no FY28 budget yet \u2014 that work starts in January 2027.",
+    "doc": "xlsx/fy27-proposals.xlsx",
+    "source": "Built by this project from the FY27 budget workbook",
+    "n": 15
+   }
+  ],
+  "kindLabels": {
+   "budget": "Budget document",
+   "published": "Published figure",
+   "contract": "Signed agreement",
+   "statute": "Set by law",
+   "ours": "Our projection"
+  },
+  "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
+ },
+ "scenarios": {
+  "restoration": 28520816,
+  "core": 28172289,
+  "level_service": 27333289,
+  "balanced": 26572288
+ },
+ "peers": [
+  {
+   "id": "lunenburg",
+   "name": "Lunenburg",
+   "subject": true,
+   "enrollment": 1581,
+   "budget": 26572288,
+   "changePct": 1.08,
+   "healthPct": 7.9,
+   "chapter70Pct": null,
+   "overrideStatus": "failed",
+   "protected": [
+    "Special education",
+    "Classroom teachers (partly)"
+   ],
+   "sacrificed": [
+    "All athletic transportation",
+    "Middle school & freshman sports",
+    "Grade 5 band",
+    "4.0 classroom teachers",
+    "1.5 interventionists",
+    "Assistant Principal",
+    "Custodian"
+   ],
+   "note": "Both override questions failed on 16 May 2026, 33% and 29% yes. The town adopted the balanced budget: 253 staff, down from 256.5 at level service.",
+   "source": "LPS FY27 budget documents; town election tally"
+  },
+  {
+   "id": "groton-dunstable",
+   "name": "Groton-Dunstable",
+   "subject": false,
+   "enrollment": 2324,
+   "budget": 54187751,
+   "changePct": 6.46,
+   "healthPct": 8.9,
+   "chapter70Pct": null,
+   "overrideStatus": "needed",
+   "protected": [
+    "Nothing \u2014 the budget is below level service"
+   ],
+   "sacrificed": [
+    "3.0 FTE unfilled in FY26",
+    "Class offerings reduced",
+    "Staff and student support reduced",
+    "Athletic/K/preschool fees under review"
+   ],
+   "note": "Budget reductions in FY24, FY25 and FY26 produced personnel cuts across all job classifications. The FY27 proposal is deliberately below level service. The district says an operational override is needed \"now and in the foreseeable future.\"",
+   "source": "GDRSD FY27 Budget Book, 28 Jan 2026"
+  },
+  {
+   "id": "ashburnham-westminster",
+   "name": "Ashburnham-Westminster",
+   "subject": false,
+   "enrollment": 2184,
+   "budget": 40233975,
+   "changePct": 2.9,
+   "healthPct": 13.1,
+   "chapter70Pct": 2.05,
+   "overrideStatus": "none",
+   "protected": [
+    "Athletics (+2.7%)",
+    "Marching band (+4.8%)",
+    "Class size",
+    "Girls ice hockey reinstated, funded by user fees"
+   ],
+   "sacrificed": [
+    "2.0 elementary teachers",
+    "Technology budget (-5.8%)",
+    "Out-of-district tuition budget (-$100k)",
+    "$600k drawn from reserves"
+   ],
+   "note": "District goals explicitly state: \"Maintain Class Size\" and \"Ensure that co-curricular, arts, music and athletic budgets are preserved.\" To do it they cut two elementary teachers and drew $600,000 from reserves.",
+   "source": "AWRSD Superintendent FY27 Preliminary Operating Budget, 5 Feb 2026"
+  },
+  {
+   "id": "ayer-shirley",
+   "name": "Ayer-Shirley",
+   "subject": false,
+   "enrollment": 1704,
+   "budget": 36743801,
+   "changePct": 5.5,
+   "healthPct": 14.4,
+   "chapter70Pct": 1.5,
+   "overrideStatus": "unknown",
+   "protected": [],
+   "sacrificed": [
+    "Central office budget offsets and reductions"
+   ],
+   "note": "Level-service budget rose 5.5% while Chapter 70 aid rose 1.5%. Health insurance rose 14.4% \u2014 the steepest in this group.",
+   "source": "Ayer-Shirley RSD Proposed FY27 Budget, 17 Mar 2026"
+  },
+  {
+   "id": "north-middlesex",
+   "name": "North Middlesex",
+   "subject": false,
+   "enrollment": 3900,
+   "budget": 38381000,
+   "changePct": 3.0,
+   "healthPct": null,
+   "chapter70Pct": null,
+   "overrideStatus": "unlikely",
+   "protected": [],
+   "sacrificed": [
+    "Soft spending freeze",
+    "Capital and technology projects deferred",
+    "Positions shifted onto grants",
+    "Vacancies held unfilled"
+   ],
+   "note": "Projected a $64,000 deficit at 3% budget growth versus $1.5 million at 5%. Roughly 30% of students receive special education services. Townsend has not passed an override in 20 years.",
+   "source": "NMRSD FY27 Budget Summit notes, 27 Oct 2025"
+  },
+  {
+   "id": "wachusett",
+   "name": "Wachusett",
+   "subject": false,
+   "enrollment": 6507,
+   "budget": 134809232,
+   "changePct": 4.44,
+   "healthPct": null,
+   "chapter70Pct": null,
+   "overrideStatus": "none",
+   "protected": [],
+   "sacrificed": [
+    "Member-town discretionary assessments raised 9.21%"
+   ],
+   "note": "Closed its gap by charging member towns more: the discretionary assessment rose 9.21% while enrollment fell in four of five towns.",
+   "source": "WRSD FY27 Budget Book, School Committee approved 9 Mar 2026"
+  }
+ ],
+ "sports": [
+  {
+   "name": "Football",
+   "level": "HS",
+   "students": 32,
+   "cost": 19805.28,
+   "deckCost": 25774.45
+  },
+  {
+   "name": "Cheer",
+   "level": "HS",
+   "students": 14,
+   "cost": 5909.0,
+   "deckCost": 4960.5
+  },
+  {
+   "name": "Field Hockey",
+   "level": "HS",
+   "students": 30,
+   "cost": 10458.5,
+   "deckCost": 9865.99
+  },
+  {
+   "name": "Cross Country",
+   "level": "HS",
+   "students": 22,
+   "cost": 10585.9,
+   "deckCost": 6818.5
+  },
+  {
+   "name": "Golf",
+   "level": "HS",
+   "students": 13,
+   "cost": 7859.4,
+   "deckCost": 5930.97
+  },
+  {
+   "name": "Boys' Soccer",
+   "level": "HS",
+   "students": 35,
+   "cost": 18950.33,
+   "deckCost": 9336.5
+  },
+  {
+   "name": "Girls' Soccer",
+   "level": "HS",
+   "students": 34,
+   "cost": 15250.33,
+   "deckCost": 14983.5
+  },
+  {
+   "name": "Unified Basketball",
+   "level": "HS",
+   "students": 14,
+   "cost": 3032.82,
+   "deckCost": 1907.82
+  },
+  {
+   "name": "Softball",
+   "level": "HS",
+   "students": 39,
+   "cost": 17431.0,
+   "deckCost": 4895.0
+  },
+  {
+   "name": "Girls' Lacrosse",
+   "level": "HS",
+   "students": 31,
+   "cost": 12350.16,
+   "deckCost": 1492.29
+  },
+  {
+   "name": "Boys' Lacrosse",
+   "level": "HS",
+   "students": 35,
+   "cost": 10496.18,
+   "deckCost": 612.79
+  },
+  {
+   "name": "Baseball",
+   "level": "HS",
+   "students": 15,
+   "cost": 17777.36,
+   "deckCost": 2573.5
+  },
+  {
+   "name": "Outdoor Track",
+   "level": "HS",
+   "students": 86,
+   "cost": 15221.5,
+   "deckCost": 1146.0
+  },
+  {
+   "name": "Indoor Track",
+   "level": "HS",
+   "students": 70,
+   "cost": 32456.0,
+   "deckCost": 17532.5
+  },
+  {
+   "name": "Unified Track",
+   "level": "HS",
+   "students": 12,
+   "cost": 1593.0,
+   "deckCost": 353.0
+  },
+  {
+   "name": "Girls' Basketball",
+   "level": "HS",
+   "students": 23,
+   "cost": 9881.0,
+   "deckCost": 14959.0
+  },
+  {
+   "name": "Boys' Basketball",
+   "level": "HS",
+   "students": 21,
+   "cost": 13518.0,
+   "deckCost": 20717.96
+  },
+  {
+   "name": "Boys' Ice Hockey",
+   "level": "HS",
+   "students": 40,
+   "cost": 11994.27,
+   "deckCost": 15069.7
+  },
+  {
+   "name": "Girls' Ice Hockey",
+   "level": "HS",
+   "students": 2,
+   "cost": 1100.0,
+   "deckCost": 1100.0
+  },
+  {
+   "name": "Alpine Skiing",
+   "level": "HS",
+   "students": 14,
+   "cost": 9825.0,
+   "deckCost": 9825.0
+  },
+  {
+   "name": "MS Cross Country",
+   "level": "MS",
+   "students": 30,
+   "cost": 6134.85,
+   "deckCost": 2428.65
+  },
+  {
+   "name": "MS Field Hockey",
+   "level": "MS",
+   "students": 25,
+   "cost": 7180.25,
+   "deckCost": 3407.5
+  },
+  {
+   "name": "MS Track",
+   "level": "MS",
+   "students": 25,
+   "cost": 4000.0,
+   "deckCost": 4000.0
+  },
+  {
+   "name": "MS Girls' Basketball",
+   "level": "MS",
+   "students": 14,
+   "cost": 6764.25,
+   "deckCost": 2365.75
+  },
+  {
+   "name": "MS Boys' Basketball",
+   "level": "MS",
+   "students": 15,
+   "cost": 6373.25,
+   "deckCost": 3298.75
+  }
+ ],
+ "otherPrograms": [
+  {
+   "id": "hs_music",
+   "name": "High School Band & Chorus",
+   "cost": 72440,
+   "participants": 95,
+   "participantsKnown": false,
+   "note": "Cost is our estimate of the 1.0 FTE music position. Participation is a placeholder \u2014 adjust it."
+  },
+  {
+   "id": "music_supplies",
+   "name": "Band & Music Supplies, Equipment, Repair",
+   "cost": 17073,
+   "participants": 160,
+   "participantsKnown": false,
+   "note": "Published line-item cost across all four schools. Participation is a placeholder."
+  },
+  {
+   "id": "clubs",
+   "name": "Clubs & After-School Advisors (HS)",
+   "cost": 11731,
+   "participants": 120,
+   "participantsKnown": false,
+   "note": "Published line-item cost. Participation is a placeholder."
+  },
+  {
+   "id": "band_transport",
+   "name": "Band & Music Transportation",
+   "cost": 5000,
+   "participants": 160,
+   "participantsKnown": false,
+   "note": "Published line-item cost, cut in the FY27 balanced budget."
+  }
+ ],
+ "feeBenchmarks": [
+  {
+   "district": "Lunenburg",
+   "fee": 400,
+   "note": "Raised for 2026-27: $400 first child, $300 second, $225 third, $1,500 family cap. Was $250/$140/$85 with a $475 cap.",
+   "local": true
+  },
+  {
+   "district": "Duxbury",
+   "fee": 300,
+   "note": "Per season; hockey $500. Rising from $250.",
+   "local": false
+  },
+  {
+   "district": "Winchester",
+   "fee": 600,
+   "note": "Up from $400, plus $845 hockey / $385 golf / $185 swim.",
+   "local": false
+  },
+  {
+   "district": "Bridgewater-Raynham",
+   "fee": 950,
+   "note": "Considered $900\u2013$1,000 to self-fund athletics entirely.",
+   "local": false
+  },
+  {
+   "district": "Ashburnham-Westminster",
+   "fee": null,
+   "note": "Collects $215,000/yr in student fees; reinstated girls ice hockey funded entirely by fees.",
+   "local": true
+  },
+  {
+   "district": "Groton-Dunstable",
+   "fee": null,
+   "note": "Reviewing athletic, kindergarten, preschool and activity fees.",
+   "local": true
+  }
+ ],
+ "currentFees": {
+  "athletic": {
+   "effectiveFrom": "2026-27 school year",
+   "tiers": [
+    [
+     "1st child",
+     400
+    ],
+    [
+     "2nd child",
+     300
+    ],
+    [
+     "3rd child",
+     225
+    ]
+   ],
+   "familyCap": 1500,
+   "prior": {
+    "hs": [
+     [
+      "1st student",
+      250
+     ],
+     [
+      "2nd student",
+      140
+     ],
+     [
+      "3rd student",
+      85
+     ]
+    ],
+    "hsCap": 475,
+    "ms": [
+     [
+      "1st student",
+      200
+     ],
+     [
+      "2nd student",
+      150
+     ]
+    ],
+    "source": "LHS Athletics FAQ (rschoolteams.com) \u2014 still the posted schedule"
+   },
+   "source": "Superintendent's email to families, August 2026",
+   "sourcePublished": false,
+   "sourceNote": "We could not find the new schedule posted publicly. The LHS athletics FAQ still shows the old $250/$140/$85 fees and a $475 cap, so a family checking the website today gets the wrong number.",
+   "notes": [
+    "A 60% increase on the first child ($250 to $400), and a family cap more than three times the old one ($475 to $1,500).",
+    "Unified Track was $100 under the old schedule; the email does not say whether that still holds.",
+    "Boys ice hockey carries an additional booster-club fee for ice time.",
+    "Girls ice hockey co-op players are billed a per-player assessment after the season.",
+    "Students on free lunch have the fee waived; reduced-lunch families pay a reduced fee. The district does not publish how many waivers are granted."
+   ],
+   "unresolved": [
+    "Whether middle school keeps a separate, lower schedule. The old FAQ charged $200/$150 for middle school and said middle and high school fees do not combine toward the sibling discount. The email announces one schedule and one cap and does not mention middle school at all \u2014 so we model it as a single district-wide schedule.",
+    "Whether the $1,500 family cap is per season or per year. The old $475 cap was explicitly per season; the email says only \"a family cap of $1,500\".",
+    "Whether the increase was voted by the School Committee and when. We found no agenda item or minutes recording it."
+   ]
+  },
+  "bus": {
+   "full_single": 180,
+   "full_family": 270,
+   "reduced_single": 50,
+   "reduced_family": 75,
+   "notes": [
+    "Grades K-6: charged only if the student lives under 2 miles from school. At 2 miles or more transport is free, as state law requires.",
+    "Grades 7-12: all riders are charged.",
+    "Free for families qualifying through the free/reduced application.",
+    "Paid to the Town of Lunenburg; students unpaid by 1 June are removed from the roster."
+   ]
+  },
+  "hsParticipations": 582,
+  "msParticipations": 109,
+  "effectiveAthletic": 366,
+  "estimatedAthleticRevenue": 187451,
+  "priorEffectiveAthletic": 214,
+  "estimatedPriorAthleticRevenue": 109602,
+  "feeIncreaseValue": 77849,
+  "siblingMix": [
+   [
+    "1st child",
+    0.7
+   ],
+   [
+    "2nd child",
+    0.25
+   ],
+   [
+    "3rd child",
+    0.05
+   ]
+  ],
+  "waiverAssumption": 0.12,
+  "chargeableParticipations": 582,
+  "estimatedFy26Revenue": 130129
+ },
+ "feeAccounting": {
+  "established": [
+   "The LPS FY27 budget document is expenditures only \u2014 351 line items, no revenue side at all. Fee income is invisible in it either way, so nothing in that document tells you whether program costs are shown gross or net of fees.",
+   "The Town's revolving funds are authorised annually at Town Meeting under M.G.L. c.44 \u00a753E\u00bd. The May 2026 warrant (Article 6) lists twelve of them \u2014 ambulance billing, library, parks, technology, and so on. Neither athletics nor student transportation is among them. The only school entry is Custodial Special Details at $13,000.",
+   "Athletic and student-activity fees in Massachusetts are normally held under M.G.L. c.71 \u00a747, a separate statute that lets school committees run athletic and activity accounts outside the \u00a753E\u00bd regime. Their absence from Article 6 is consistent with that.",
+   "Bus fees are paid to the \"Town of Lunenburg\", not to the school department \u2014 so they most likely land as a town local receipt rather than offsetting the school transportation line directly.",
+   "The district does use revolving money to offset appropriated costs: the FY27 addendum reallocates \"$50,000 from school choice revolving/transportation to offset transportation costs.\""
+  ],
+  "unresolved": [
+   "Whether the athletics figures in the budget are gross, or already net of fee income. This changes what a fee increase is actually worth, and we could not settle it from published documents.",
+   "How much fee revenue is actually collected, and how many waivers are granted. The district publishes the fee schedule but not the collections.",
+   "Whether band, music or club fees exist at all.",
+   "Gate receipts are real money and invisible in everything here. The School Committee was told roughly $16,000 came in from ticket sales in the fall season alone. The budget document carries no revenue side at all, so ticket income sits outside every figure in this app.",
+   "The $20,000 athletic director line appears to be out of date. After the FY27 budget was set the previous director left and the role was returned to full time \u2014 a change we can find in no published document. It would add something like $65,000-$75,000 to what athletics actually costs, which moves every fee coverage figure on this page."
+  ],
+  "ask": "These are three good questions for the Business Manager at a School Committee meeting. The answers would materially sharpen every fee figure in this tool."
+ },
+ "taxBase": {
+  "rate": 14.39,
+  "levy": 35819996,
+  "totalValue": 2489228353,
+  "residentialShare": 0.91,
+  "cipShare": 0.09,
+  "avgHomeValue": 517296,
+  "avgHomeBill": 7444,
+  "splitRate": {
+   "residential": 13.7,
+   "commercial": 21.58,
+   "avgCommercialIncrease": 2300.36
+  },
+  "ch70": {
+   "foundationEnrollment": 1599,
+   "foundationBudget": 23089580,
+   "requiredContribution": 14135611,
+   "aid": 9349335,
+   "requiredNSS": 23484946
+  },
+  "archetypes": [
+   {
+    "id": "mix",
+    "name": "Typical Lunenburg development (mixed)",
+    "value": 3005000,
+    "plausible": true,
+    "note": "35% small shop or office \u00b7 15% restaurant \u00b7 10% self-storage facility \u00b7 15% retail plaza \u00b7 10% solar array \u00b7 15% light industrial / warehouse"
+   },
+   {
+    "id": "avg_existing",
+    "name": "Average existing Lunenburg business",
+    "value": 658001,
+    "plausible": true,
+    "note": "The real figure from the tax rolls: $153,972,120 of commercial, industrial and personal property across 234 establishments."
+   },
+   {
+    "id": "small_biz",
+    "name": "Small shop or office (5,000 sq ft)",
+    "value": 1200000,
+    "plausible": true,
+    "note": ""
+   },
+   {
+    "id": "restaurant",
+    "name": "Restaurant",
+    "value": 900000,
+    "plausible": true,
+    "note": ""
+   },
+   {
+    "id": "storage",
+    "name": "Self-storage facility",
+    "value": 3000000,
+    "plausible": true,
+    "note": ""
+   },
+   {
+    "id": "plaza",
+    "name": "Retail plaza (20,000 sq ft)",
+    "value": 4000000,
+    "plausible": true,
+    "note": ""
+   },
+   {
+    "id": "solar",
+    "name": "Solar array (~5 MW)",
+    "value": 5000000,
+    "plausible": true,
+    "note": ""
+   },
+   {
+    "id": "light_ind",
+    "name": "Light industrial / warehouse (50k sq ft)",
+    "value": 7000000,
+    "plausible": true,
+    "note": ""
+   },
+   {
+    "id": "distribution",
+    "name": "Distribution centre (150k sq ft)",
+    "value": 20000000,
+    "plausible": false,
+    "note": "Not realistic for Lunenburg \u2014 no site, sewer or market for it"
+   },
+   {
+    "id": "house",
+    "name": "Single-family home (town average)",
+    "value": 517296,
+    "plausible": false,
+    "note": "Residential: pays the same tax but sends children to school"
+   }
+  ],
+  "localCostPerPupil": 10894,
+  "schoolShareOfBill": 3959,
+  "schoolShareOfBudget": 0.5318,
+  "homesPerPupil": 2.75,
+  "enrollment": 1581,
+  "currentNewGrowthRevenue": 400000,
+  "currentNewGrowthValue": 27797081,
+  "levyGrowth": 0.025,
+  "fy23": {
+   "residentialValue": 1957462820,
+   "residentialShare": 0.927077,
+   "cipValue": 153972120,
+   "cipShare": 0.072923,
+   "totalValue": 2111434940,
+   "newGrowth": 234383,
+   "levyLimit": 28043723,
+   "splitRateResidential": 14.05,
+   "splitRateCIP": 21.93,
+   "maxShiftResidentialSaving": 0.039,
+   "maxShiftCIPIncrease": 0.5
+  },
+  "businesses": 234,
+  "employees": 2172,
+  "payroll": 126716000,
+  "avgCommercialValue": 658001,
+  "fy23NewValue": 17348853,
+  "commercialContext": {
+   "corridors": [
+    "Route 2A (Massachusetts Avenue)",
+    "Route 13 (Chase Road)",
+    "Leominster-Shirley Road and Route 70, near Fitchburg/Leominster sewer"
+   ],
+   "anchor": "The Route 2A retail strip is shadow-anchored by Walmart and Hannaford, with over 20,000 vehicles a day and roughly 2.6 million annual visits.",
+   "targets": [
+    "Advanced manufacturing",
+    "Healthcare and social assistance"
+   ],
+   "constraint": "Commercial development clusters where municipal sewer reaches, which is why the same three corridors come up in every economic development conversation."
+  },
+  "newGrowthHistory": [
+   {
+    "fy": 2018,
+    "amount": 481496
+   },
+   {
+    "fy": 2019,
+    "amount": 472536
+   },
+   {
+    "fy": 2020,
+    "amount": 366231
+   },
+   {
+    "fy": 2021,
+    "amount": 308732
+   },
+   {
+    "fy": 2022,
+    "amount": 430254
+   },
+   {
+    "fy": 2023,
+    "amount": 234383
+   }
+  ],
+  "valueByClass": [
+   {
+    "cls": "Residential",
+    "fy23": 1957462820,
+    "fy22": 1587173648,
+    "change": 370289172,
+    "pct": 23.33
+   },
+   {
+    "cls": "Commercial",
+    "fy23": 74992410,
+    "fy22": 75178002,
+    "change": -185592,
+    "pct": -0.25
+   },
+   {
+    "cls": "Industrial",
+    "fy23": 23827000,
+    "fy22": 24608600,
+    "change": -781600,
+    "pct": -3.18
+   },
+   {
+    "cls": "Personal property",
+    "fy23": 55152710,
+    "fy22": 55708580,
+    "change": -555870,
+    "pct": -1.0
+   }
+  ],
+  "avgHomeHistory": [
+   {
+    "fy": 2019,
+    "rate": 18.68,
+    "value": 308900,
+    "bill": 5770.25
+   },
+   {
+    "fy": 2020,
+    "rate": 18.12,
+    "value": 332400,
+    "bill": 6023.09
+   },
+   {
+    "fy": 2021,
+    "rate": 17.74,
+    "value": 351400,
+    "bill": 6233.84
+   },
+   {
+    "fy": 2022,
+    "rate": 17.19,
+    "value": 374400,
+    "bill": 6435.94
+   },
+   {
+    "fy": 2023,
+    "rate": 14.62,
+    "value": 470164,
+    "bill": 6873.8
+   }
+  ],
+  "excessLevyCapacity": [
+   {
+    "fy": 2019,
+    "amount": 53705.72
+   },
+   {
+    "fy": 2020,
+    "amount": 3.12
+   },
+   {
+    "fy": 2021,
+    "amount": 4112.57
+   },
+   {
+    "fy": 2022,
+    "amount": 6488.03
+   },
+   {
+    "fy": 2023,
+    "amount": 6477.18
+   }
+  ],
+  "gapInBusinesses": {
+   "fy28": {
+    "value": 42615566,
+    "developments": 14.2,
+    "businesses": 65,
+    "pctOfToday": 28,
+    "vsActualNewGrowth": 2.5,
+    "fiveYearAdded": 324,
+    "fiveYearTotal": 558,
+    "fiveYearPct": 138
+   },
+   "sustained": {
+    "value": 40244962,
+    "developments": 13.4,
+    "businesses": 61,
+    "pctOfToday": 26,
+    "vsActualNewGrowth": 2.3,
+    "fiveYearAdded": 306,
+    "fiveYearTotal": 540,
+    "fiveYearPct": 131
+   }
+  },
+  "mixValue": 3005000
+ },
+ "business": {
+  "formationHistory": [
+   {
+    "year": 2018,
+    "new": 34,
+    "renewals": 0,
+    "partial": false
+   },
+   {
+    "year": 2019,
+    "new": 32,
+    "renewals": 0,
+    "partial": false
+   },
+   {
+    "year": 2020,
+    "new": 110,
+    "renewals": 0,
+    "partial": false
+   },
+   {
+    "year": 2021,
+    "new": 102,
+    "renewals": 1,
+    "partial": false
+   },
+   {
+    "year": 2022,
+    "new": 114,
+    "renewals": 1,
+    "partial": false
+   },
+   {
+    "year": 2023,
+    "new": 70,
+    "renewals": 8,
+    "partial": false
+   },
+   {
+    "year": 2024,
+    "new": 58,
+    "renewals": 44,
+    "partial": false
+   },
+   {
+    "year": 2025,
+    "new": 61,
+    "renewals": 25,
+    "partial": false
+   },
+   {
+    "year": 2026,
+    "new": 15,
+    "renewals": 12,
+    "partial": true
+   }
+  ],
+  "summary": {
+   "activeCertificates": 363,
+   "totalRecords": 711,
+   "onCorridor": 129,
+   "onResidentialStreet": 234,
+   "corridorPct": 35.5,
+   "multiTenantAddresses": 39,
+   "businessesAtMultiTenant": 104,
+   "needsPremises": 89,
+   "peakYear": 2022,
+   "peakNew": 114,
+   "latestFull": {
+    "year": 2025,
+    "new": 61,
+    "renewals": 25,
+    "partial": false
+   },
+   "declineFromPeak": -46.5,
+   "needsPremisesPct": 25
+  },
+  "categories": [
+   {
+    "category": "other_uncategorized",
+    "count": 97
+   },
+   {
+    "category": "construction_trades",
+    "count": 68
+   },
+   {
+    "category": "automotive_transport",
+    "count": 37
+   },
+   {
+    "category": "health_wellness",
+    "count": 25
+   },
+   {
+    "category": "food_beverage",
+    "count": 20
+   },
+   {
+    "category": "arts_creative",
+    "count": 19
+   },
+   {
+    "category": "agriculture",
+    "count": 19
+   },
+   {
+    "category": "technology_consulting",
+    "count": 16
+   },
+   {
+    "category": "retail",
+    "count": 12
+   },
+   {
+    "category": "personal_services",
+    "count": 10
+   }
+  ]
+ },
+ "health": {
+  "plans": [
+   {
+    "id": "bce",
+    "name": "Blue Care Elect",
+    "deductible": "$500",
+    "network": "Broadest network",
+    "family": 3662.52,
+    "individual": 1392.63
+   },
+   {
+    "id": "nbne",
+    "name": "Network Blue New England",
+    "deductible": "$500",
+    "network": "Regional network",
+    "family": 2988.41,
+    "individual": 1136.28
+   },
+   {
+    "id": "bs",
+    "name": "Blue Select",
+    "deductible": "$500",
+    "network": "Narrower network",
+    "family": 2599.92,
+    "individual": 988.56
+   },
+   {
+    "id": "abs",
+    "name": "Access Blue Saver",
+    "deductible": "$2,000 / $4,000",
+    "network": "High deductible",
+    "family": 2602.28,
+    "individual": 989.46
+   }
+  ],
+  "townShare": 0.75,
+  "rateIncrease": 0.0538,
+  "enrolment": {
+   "bce": 85,
+   "nbne": 55,
+   "bs": 42,
+   "abs": 12
+  },
+  "familyShare": 0.55,
+  "constraints": [
+   "Plan design changes go through the Public Employee Committee under M.G.L. c.32B \u00a7\u00a721-23, and the district must share 25% of first-year savings with employees as mitigation. The saving in year one is therefore 75% of the headline figure.",
+   "The Town, not the school district, controls the insurance group. The schools cannot change this on their own.",
+   "Contribution splits are bargained with each union. A shift is a pay cut in everything but name, to staff who have already absorbed position reductions.",
+   "Enrolment by plan and tier is not published. The figures here move with the counts you set, and should be replaced with real ones before anybody relies on them."
+  ],
+  "budget": 3994071
+ },
+ "headlines": [
+  {
+   "id": "gap",
+   "label": "The hole, every year",
+   "value": "$600,414",
+   "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
+   "anchor": "years",
+   "tone": "critical"
+  },
+  {
+   "id": "business",
+   "label": "What business growth would have to deliver",
+   "value": "$41.7M",
+   "sub": "of new commercial value every year \u2014 about 63 more average businesses a year, on top of the 234 the town has, or 14 typical developments",
+   "anchor": "tax-base",
+   "tone": "neutral"
+  },
+  {
+   "id": "extras",
+   "label": "Cutting every sport, band and club",
+   "value": "$644,031",
+   "sub": "All athletics, all arts and music, all clubs \u2014 eliminated entirely. Covers one year, once, and then the column is empty",
+   "anchor": "the-money",
+   "tone": "neutral"
+  },
+  {
+   "id": "health",
+   "label": "Health insurance, shifted 75/25 \u2192 70/30",
+   "value": "$199,923",
+   "sub": "in year one after the 25% owed back to employees ($266,564 headline) \u2014 and it costs a family on the broadest plan $2,198 a year",
+   "anchor": "levers",
+   "tone": "good"
+  },
+  {
+   "id": "athletics_fee",
+   "label": "Athletic fee that would make sports self-funding",
+   "value": "$960",
+   "sub": "a season, against the $345,458 it costs to field the teams that survived AND get them to away games. Against the $217,908 the budget actually funds \u2014 which pays for no transportation at all \u2014 it is $445. Restoring the full $451,830 program is out of reach at any fee",
+   "anchor": "fees",
+   "tone": "critical"
+  },
+  {
+   "id": "band_fee",
+   "label": "Activity fee to make band, music and clubs self-funding",
+   "value": "$465",
+   "sub": "per student per activity, covering the $106,244 those programs cost. Reachable \u2014 but a steep charge for a school club",
+   "anchor": "fees",
+   "tone": "neutral"
+  }
+ ],
+ "conclusions": [
+  {
+   "n": 1,
+   "anchor": "the-money",
+   "headline": "Cutting every extra in the district buys exactly one year.",
+   "figure": "$644,031",
+   "body": "Every sport, every band, every club and every art supply, eliminated entirely, comes to $644,031. The gap over the next five years is about $2.9 million. So the whole \"cut the frills\" argument covers FY28 and then the column is empty forever, while the gap returns every single year."
+  },
+  {
+   "n": 2,
+   "anchor": "the-money",
+   "headline": "After that, only classroom positions are big enough to cut.",
+   "figure": "~90%",
+   "body": "Salaries, health insurance, transportation and out-of-district tuition are roughly nine of every ten dollars, and each is set by contract, by the insurance market, or by law. When Easthampton's override failed, 93% of its cuts had to come from personnel. There is no other place large enough."
+  },
+  {
+   "n": 3,
+   "anchor": "neighbors",
+   "headline": "Lunenburg's schools grew 1.08% while every neighbor grew 2.9-6.5%.",
+   "figure": "1.08%",
+   "body": "In a year when health insurance rose 8-14% and Chapter 70 aid rose 1.5-2% for everyone. Groton-Dunstable, Ayer-Shirley, North Middlesex, Wachusett and Ashburnham-Westminster all faced the same squeeze. That gap between our bar and theirs is the cut list."
+  },
+  {
+   "n": 4,
+   "anchor": "priorities",
+   "headline": "Priorities are a genuine choice \u2014 a neighbor made the opposite one.",
+   "figure": "2.0 FTE",
+   "body": "Ashburnham-Westminster wrote \"preserve athletics, arts and music\" into its district goals, raised athletics 2.7% and marching band 4.8%, reinstated girls ice hockey on user fees \u2014 and cut two elementary teachers to pay for it. Lunenburg cut athletics first and defended classroom staffing. Same pressures, opposite answers."
+  },
+  {
+   "n": 5,
+   "anchor": "fees",
+   "headline": "Athletics cannot pay for itself once you put the buses back.",
+   "figure": "$960",
+   "body": "For 2026-27 Lunenburg charges $400 for a first child, $300 for a second and $225 for a third, with a $1,500 family cap \u2014 up from $250/$140/$85 and a $475 cap. Blended that is about $366 per participation, an estimated $187,000. Measured against the $217,908 the adopted budget funds, that is 86% covered and $445 a season would finish the job \u2014 but the adopted budget funds ZERO athletic transportation, and a team that cannot reach an away game is not a team. Put the $127,550 of buses back and the real cost is $345,458: fees cover 54%, and self-funding needs $960 a season. Every rung above that \u2014 a full-time trainer, full coaching stipends, middle school teams \u2014 is unreachable at any fee, because revenue peaks near $1,185 at $358,380."
+  },
+  {
+   "n": 6,
+   "anchor": "tax-base",
+   "headline": "When your house is worth more, the schools get nothing.",
+   "figure": "+52% / +19%",
+   "body": "Proposition 2\u00bd caps what the town may collect in total, not what you pay. The Assessors' own five-year table proves it: the average home rose 52% in value while the tax rate fell 22%, so the average bill rose only 19%. Rising assessments do not fund schools. Only genuinely new construction does."
+  },
+  {
+   "n": 7,
+   "anchor": "tax-base",
+   "headline": "The commercial tax base is not stalling. It is shrinking.",
+   "figure": "-51%",
+   "body": "Between FY22 and FY23 residential value rose 23.3% while commercial fell 0.25%, industrial fell 3.2% and personal property fell 1.0% \u2014 in absolute dollars. Meanwhile new growth, the only thing that raises the levy limit without an override, fell from $481,496 in FY18 to $234,383 in FY23, a 51% decline. The town budgets $400,000 of new growth for FY27; it has not hit that since FY22."
+  },
+  {
+   "n": 8,
+   "anchor": "tax-base",
+   "headline": "Lunenburg is not short of businesses. It is short of buildings.",
+   "figure": "64%",
+   "body": "The town has 363 active business certificates and registered about 60 new ones last year. But 64% of them are at addresses on residential streets, only 25% are in trades that need commercial premises, and just 39 addresses in town host more than one business. Lunenburg has plenty of entrepreneurs and almost no new commercial square footage \u2014 which is exactly why registrations hold up while the commercial tax base shrinks. A consultant working from a spare room pays residential tax."
+  },
+  {
+   "n": 9,
+   "anchor": "tax-base",
+   "headline": "Building houses makes the school budget worse, not better.",
+   "figure": "2.75 homes",
+   "body": "After Chapter 70 aid, one student costs the levy $10,894 a year. The school share of an average tax bill is $3,959. So it takes the school taxes of 2.75 average homes to educate one child \u2014 and a two-child house runs about $17,800 a year in the red. A business of the same value pays the same tax and sends nobody."
+  },
+  {
+   "n": 10,
+   "anchor": "tax-base",
+   "headline": "The break-even is $42.6 million of new taxable value \u2014 in one year.",
+   "figure": "$42.6M",
+   "body": "That is what closing the FY28 gap through commercial growth alone requires, because $613,238 \u00f7 the $14.39 tax rate is fixed arithmetic. In buildings that is about 11 retail plazas, or 14 typical Lunenburg developments, or 6 light-industrial warehouses, or 47 restaurants \u2014 permitted, built and assessed inside twelve months. For scale, all of Lunenburg's commercial, industrial and personal property together is worth $154 million, so this is adding 28% to the entire commercial base in a single year."
+  },
+  {
+   "n": 11,
+   "anchor": "tax-base",
+   "headline": "Measured in ordinary businesses, it means 65 more \u2014 then 61 again, every year.",
+   "figure": "+131%",
+   "body": "Lunenburg's existing businesses average $658,001 of assessed value, so $42.6 million is about 65 more of them \u2014 a 28% increase in twelve months, and 2.5 times the new growth the town actually recorded in FY23. And the gap returns annually: sustaining it takes roughly 61 new businesses a year, which over five years carries the town from 234 businesses to about 540. That is not an argument against commercial development. It is an argument against treating it as the whole answer."
+  },
+  {
+   "n": 12,
+   "anchor": "tax-base",
+   "headline": "Business growth genuinely works \u2014 and it is a ten-year answer, not a next-year one.",
+   "figure": "Year 3",
+   "body": "At $15M of new commercial value a year, growth overtakes a $613,000 override in year three and keeps compounding, with nobody's bill going up. But $15M a year means about 23 more average businesses every year \u2014 a 10% increase in the commercial base annually, sustained. And no building permitted in 2027 helps the FY28 budget."
+  },
+  {
+   "n": 13,
+   "anchor": "where-we-are",
+   "headline": "One-time money is being spent on recurring costs.",
+   "figure": "$453,722",
+   "body": "The September town meeting restores two reading specialists, a full-time assistant principal, 52 tutoring seats and a music position \u2014 with one-time state money. Keeping them in FY28 is a brand-new cost the district has to absorb. Ashburnham-Westminster is doing the same with $600,000 of reserves; Groton-Dunstable is deliberately weaning off it. It works once."
+  },
+  {
+   "n": 14,
+   "anchor": "recommendation",
+   "headline": "Nothing closes the gap without either an override or teachers.",
+   "figure": "68%",
+   "body": "Our own package \u2014 higher fees, a technology audit, an administration trim \u2014 finds about two thirds of FY28 without cutting a program. The remaining third is roughly two teaching positions. Anyone claiming a painless third option has not added up the line items."
+  }
+ ],
+ "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $580,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
+ "levers": [
+  {
+   "id": "athletic_fees",
+   "name": "Athletics user fees",
+   "kind": "revenue",
+   "unit": "new fee per season, per athlete",
+   "max": 1400,
+   "step": 25,
+   "current": 366,
+   "default": 960,
+   "selfFunding": 960,
+   "peakFee": 1185,
+   "peakYield": 358380,
+   "currentYield": 187451,
+   "basis": 582,
+   "cap": 345458,
+   "what": "Lunenburg ALREADY charges, and just raised the fee. For 2026-27 it is $400 for a first child, $300 for a second and $225 for a third, with a $1,500 family cap \u2014 up from $250/$140/$85 and a $475 cap. Blended across sibling discounts that is roughly $366 per chargeable participation, raising an estimated $187,000. That is 86% of the $217,908 the adopted budget funds \u2014 but the adopted budget funds no athletic transportation at all. Add the $127,550 of buses back and the real cost of fielding these teams is $345,458, fees cover 54%, and self-funding takes $960 a season.",
+   "caveat": "$960 a season is roughly a 140% increase on a fee that just rose 60%, and it buys only the teams that survived \u2014 no full-time trainer, no restored coaching stipends, no middle school. Everything above $345,458 is unreachable at any price: revenue peaks near $1,185 at about $358,000. And the budgeted athletic director line is a $20,000 stipend that no longer reflects a full-time role, so even these targets are understated.",
+   "benchmark": "Lunenburg $400 (was $250) \u00b7 Duxbury $300 \u00b7 Winchester $600 \u00b7 Bridgewater-Raynham considered $950"
+  },
+  {
+   "id": "activity_fees",
+   "name": "Band, music & club fees",
+   "kind": "revenue",
+   "unit": "fee per student, per activity",
+   "max": 900,
+   "step": 10,
+   "current": 0,
+   "default": 465,
+   "selfFunding": 465,
+   "peakFee": 835,
+   "peakYield": 132812,
+   "currentYield": 0,
+   "basis": 375,
+   "basisKnown": false,
+   "cap": 106244,
+   "what": "Covers the high school music position, music supplies, band transportation and club advisors \u2014 $106,244 in total. We could not confirm whether the district charges an activity fee today; the default here assumes none.",
+   "caveat": "Participation is a placeholder: the district does not publish it. At $465 these programs self-fund on paper, but that is a steep charge for a club, and the students who quit first are the ones for whom the club is the reason they come to school.",
+   "benchmark": "Ashburnham-Westminster collects $215,000/yr in student fees overall"
+  },
+  {
+   "id": "bus_fees",
+   "name": "School bus fees",
+   "kind": "revenue",
+   "unit": "new fee per rider, per year",
+   "max": 900,
+   "step": 25,
+   "current": 180,
+   "default": 715,
+   "selfFunding": null,
+   "peakFee": 715,
+   "peakYield": 146006,
+   "currentYield": 64260,
+   "basis": 420,
+   "basisKnown": false,
+   "cap": 1053360,
+   "what": "Lunenburg ALREADY charges: $180 per student, $270 family cap, with $50/$75 reduced rates and free transport for qualifying families. Grades 7\u201312 all pay; K\u20136 pay only if they live under two miles from school, since state law requires free transport beyond that.",
+   "caveat": "Self-funding transport is not remotely reachable \u2014 general-education transport costs $1,053,360 and revenue peaks near $146,000. Special education transport ($649,953) cannot be charged for at all. Higher fees also push families into cars, which raises per-rider cost on the routes that remain.",
+   "benchmark": "Common across Massachusetts at $200\u2013$500 per rider, usually with a family cap"
+  },
+  {
+   "id": "health_design",
+   "name": "Health insurance \u2014 employee share",
+   "kind": "saving",
+   "unit": "employee share of the premium",
+   "max": 40,
+   "step": 1,
+   "default": 25,
+   "current": 25,
+   "isPercentPoint": true,
+   "basis": 5331280,
+   "cap": 599769.0,
+   "mitigation": 0.75,
+   "what": "The Town pays 75% of the premium and the employee 25%. Every point shifted to employees moves about $53,300 of premium \u2014 but 25% of first-year savings must go back to employees as mitigation, so the district keeps roughly $40,000 a point. It costs a family on the broadest plan about $440 a year.",
+   "caveat": "This is a pay cut in everything but name. Plan design changes go through the Public Employee Committee under M.G.L. c.32B \u00a7\u00a721-23 and 25% of first-year savings must go back to employees as mitigation. The Town, not the district, controls the insurance group. Multi-year, and bargained.",
+   "benchmark": "Health insurance rose 8\u201314% across every neighboring district in FY27; Lunenburg premiums rose 5.38% for FY27"
+  },
+  {
+   "id": "admin_cut",
+   "name": "Administration",
+   "kind": "saving",
+   "unit": "cut one position or line at a time",
+   "max": 21,
+   "step": 1,
+   "default": 0,
+   "isLadder": true,
+   "rungs": [
+    {
+     "id": "office",
+     "label": "Dues, meetings, postage, ads and office supplies",
+     "amount": 53110,
+     "fte": 0,
+     "note": "School Committee, superintendent and business office discretionary lines plus the four schools' office supplies. The first thing every budget review takes, and 2% of administration.",
+     "blocked": false
+    },
+    {
+     "id": "stipends",
+     "label": "Stipends and secretarial overtime",
+     "amount": 14919,
+     "fte": 0,
+     "note": "The Remote Coordinator ($5,000), curriculum leadership stipends ($6,719) and $800 of overtime in each of the four principals' offices.",
+     "blocked": false
+    },
+    {
+     "id": "legal",
+     "label": "Half the legal budget",
+     "amount": 25000,
+     "fte": 0,
+     "note": "Legal spending is mostly special education disputes and personnel matters \u2014 neither of which the district controls the timing of. Halving it is a bet; zeroing it is not available.",
+     "blocked": false
+    },
+    {
+     "id": "transition",
+     "label": "Transition / Leadership Team",
+     "amount": 32001,
+     "fte": 0,
+     "note": "District-wide administration line 1230. Not a person \u2014 a budgeted allowance for leadership transition work.",
+     "blocked": false
+    },
+    {
+     "id": "clerk_ms",
+     "label": "Middle School clerk typist",
+     "amount": 19275,
+     "fte": 1.0,
+     "note": "Attendance, scheduling and records for the middle school.",
+     "blocked": false
+    },
+    {
+     "id": "clerk_hs",
+     "label": "High School clerk typist",
+     "amount": 19275,
+     "fte": 1.0,
+     "note": "Attendance, scheduling, transcripts and records for the high school.",
+     "blocked": false
+    },
+    {
+     "id": "hr",
+     "label": "Human Resource Specialist",
+     "amount": 73485,
+     "fte": 1.0,
+     "note": "One person does hiring, contracts, benefits, licensure and evaluation tracking for the whole district. There is no second one.",
+     "blocked": false
+    },
+    {
+     "id": "sped_clerical",
+     "label": "Special Education clerical",
+     "amount": 69382,
+     "fte": 1.0,
+     "note": "IEP scheduling, notices and compliance paperwork run to statutory deadlines. The work does not disappear with the post \u2014 it lands on the teachers and the special education administrator instead.",
+     "blocked": false
+    },
+    {
+     "id": "curriculum",
+     "label": "Instructional Services Director (Curriculum)",
+     "amount": 132480,
+     "fte": 1.0,
+     "note": "Curriculum adoption, professional development and state assessment coordination for four schools.",
+     "blocked": false
+    },
+    {
+     "id": "business_clerical",
+     "label": "Business office clerical",
+     "amount": 110270,
+     "fte": 1.0,
+     "note": "Payroll, accounts payable and purchasing for roughly 250 employees.",
+     "blocked": false
+    },
+    {
+     "id": "sec_ms",
+     "label": "Middle School administrative secretary",
+     "amount": 31764,
+     "fte": 1.0,
+     "note": "With the clerk typist gone too, this is the entire middle school front office.",
+     "blocked": false
+    },
+    {
+     "id": "sec_hs",
+     "label": "High School administrative secretary",
+     "amount": 31764,
+     "fte": 1.0,
+     "note": "With the clerk typist gone too, this is the entire high school front office.",
+     "blocked": false
+    },
+    {
+     "id": "sec_ps",
+     "label": "Primary School administrative secretary",
+     "amount": 62066,
+     "fte": 1.0,
+     "note": "The Primary School has one office person. This is her.",
+     "blocked": false
+    },
+    {
+     "id": "sec_es",
+     "label": "Turkey Hill administrative secretary",
+     "amount": 61677,
+     "fte": 1.0,
+     "note": "Turkey Hill has one office person. This is her.",
+     "blocked": false
+    },
+    {
+     "id": "sped_admin",
+     "label": "Student Services Coordinator (Special Education)",
+     "amount": 155418,
+     "fte": 1.0,
+     "note": "Massachusetts requires a district special education administrator. This post cannot simply not exist.",
+     "blocked": true
+    },
+    {
+     "id": "business_mgr",
+     "label": "Business Manager",
+     "amount": 124200,
+     "fte": 1.0,
+     "note": "The district must keep books, file with DESE and run a payroll. There is one.",
+     "blocked": true
+    },
+    {
+     "id": "superintendent",
+     "label": "Superintendent",
+     "amount": 178350,
+     "fte": 1.0,
+     "note": "Statutorily required. A district without one is not a district.",
+     "blocked": true
+    },
+    {
+     "id": "principal_ps",
+     "label": "Primary School principal and assistant principal",
+     "amount": 218279,
+     "fte": 0,
+     "note": "One budget line covering both posts; the district does not publish the split. Every school must have a principal. The FY27 budget cut one assistant principal by attrition, so the Primary School and Turkey Hill now share the one that is left \u2014 priced at $152,829 in the district's own cut list, and available to put back on the board below.",
+     "blocked": true
+    },
+    {
+     "id": "principal_es",
+     "label": "Turkey Hill principal and assistant principal",
+     "amount": 224500,
+     "fte": 0,
+     "note": "One budget line covering both posts; the district does not publish the split. Turkey Hill shares its assistant principal with the Primary School after the FY27 cut.",
+     "blocked": true
+    },
+    {
+     "id": "principal_ms",
+     "label": "Middle School principal and assistant principal",
+     "amount": 195929,
+     "fte": 0,
+     "note": "One budget line covering both posts. The district has never published a separate price for the middle school assistant principal, so this tool does not offer one.",
+     "blocked": true
+    },
+    {
+     "id": "principal_hs",
+     "label": "High School principal and assistant principal",
+     "amount": 283766,
+     "fte": 0,
+     "note": "One budget line covering both posts. The high school assistant principal was cut to half time and is being restored to full time with one-time state money \u2014 the district prices that half at $90,450, and it is its own switch in the September restorations below.",
+     "blocked": true
+    }
+   ],
+   "basis": 2116910,
+   "cap": 736468,
+   "what": "Administration totals $2,633,246 \u2014 9.9% of the budget \u2014 split into $1,040,389 of central office and $1,183,773 for the four principals' offices. Everything in the ladder is a line in the district's FY27 balanced budget. Taking every rung a lawful budget can reach saves $736,468, which is 28% of administration. Past that point sit a superintendent, a business manager, a special education administrator and four principals \u2014 roles the Commonwealth requires. You can cut those here too, flagged, because seeing what it would save is the fastest way to understand why it is not the answer.",
+   "caveat": "The most commonly suggested cut, and much smaller than people expect. Lunenburg already runs one superintendent, one business manager and one HR specialist for four schools, and the FY27 budget already cut an Assistant Principal so the Primary School and Turkey Hill now share one. Clerical work does not vanish when the clerk does \u2014 IEP paperwork, payroll and state reporting are legal obligations with penalties attached.",
+   "benchmark": "DESE puts Lunenburg administration at $1,158,507 in FY24 \u2014 below every peer district except Ashburnham-Westminster"
+  },
+  {
+   "id": "tech_cut",
+   "name": "Software, licences & devices",
+   "kind": "saving",
+   "unit": "% of technology spend",
+   "max": 60,
+   "step": 5,
+   "default": 0,
+   "isPercent": true,
+   "basis": 638675,
+   "cap": 383205.0,
+   "what": "Technology totals $638,675: $185,065 device leases, $154,981 administrative contracts, $55,230 networking, $13,800 guidance software, plus per-school contracts and tech staff.",
+   "caveat": "Real money and genuinely reviewable \u2014 duplicate licences are common. But state testing, IEP management, student information and payroll all run on these systems, and devices that are not replaced still have to be repaired. Ashburnham-Westminster cut technology 5.8%, not 60%.",
+   "benchmark": "Ashburnham-Westminster reduced technology 5.8% in FY27"
+  }
+ ],
+ "recommendation": {
+  "package": [
+   {
+    "id": "athletic_fees",
+    "name": "Athletics fee \u2014 already raised to $400 for 2026-27",
+    "value": 77849,
+    "why": "This one is done. The district raised the first-child fee from $250 to $400 ($300 second, $225 third, $1,500 family cap) for 2026-27 \u2014 worth roughly $78,000 a year if participation holds. We count it here because it is real money already committed, not because we are proposing it. It takes fee coverage from about 32% to 54% of what it costs to field the surviving teams with transport. Going further is possible but the returns fall away fast: self-funding that basis needs $960 a season and revenue peaks near $1,185, so the full program cannot be bought back at any price. The open task is not a bigger fee \u2014 it is publishing the schedule, the waiver policy and the collections, none of which is posted today.",
+    "difficulty": "Already in force. What is missing is publication: the athletics FAQ still shows the old $250 schedule."
+   },
+   {
+    "id": "activity_fees",
+    "name": "Band, music & club fee \u2014 $100 per activity",
+    "value": 29962,
+    "why": "We could not confirm that any activity fee exists today, so this is treated as a new charge and the whole amount is new money. Small, but it protects the music position and club advisors \u2014 cheap, and disproportionately visible to families deciding whether to stay in town.",
+    "difficulty": "School Committee vote. Participation is a PLACEHOLDER \u2014 375 students is our guess, not a district figure, so this value is the softest in the package. Publish participation first."
+   },
+   {
+    "id": "bus_fees",
+    "name": "Bus fee, grades 7\u201312 \u2014 $300 per rider (from $180)",
+    "value": 32558,
+    "why": "Lunenburg ALREADY charges $180 a year per rider with a $270 family cap, so only the increase above that is new money \u2014 this figure is the increase, not the whole fee. $300 sits mid-range for Massachusetts, where $200\u2013$500 with a family cap is common. Massachusetts only requires free transport for K\u20136 beyond two miles, and transport is one of the fastest-growing lines in the budget.",
+    "difficulty": "School Committee vote. Expect more car traffic at the secondary campus. Rider counts are not published, so the yield is our estimate."
+   },
+   {
+    "id": "tech_cut",
+    "name": "Technology & licence audit \u2014 12%",
+    "value": 76641,
+    "why": "Duplicate and unused licences are common and nobody loses a teacher. Ashburnham-Westminster took 5.8%; 12% assumes a real audit, not a trim.",
+    "difficulty": "Administrative. Needs someone with time to run it \u2014 itself an argument against gutting the business office."
+   },
+   {
+    "id": "admin_cut",
+    "name": "Administration trim \u2014 3%",
+    "value": 78997,
+    "why": "Enough to answer voters who ask for it, small enough not to trigger reporting failures. Deeper cuts here cost more than they save.",
+    "difficulty": "Attrition and reorganization, not layoffs."
+   },
+   {
+    "id": "health_design",
+    "name": "Health insurance redesign \u2014 start now, bank it for FY30",
+    "value": 0,
+    "why": "$3,994,071, 15% of the budget, growing 8\u20139% a year. The only lever big enough to change the trajectory \u2014 and it cannot be delivered by next July.",
+    "difficulty": "Public Employee Committee bargaining under M.G.L. c.32B \u00a7\u00a721\u201323, and the town controls the insurance group. Multi-year."
+   }
+  ],
+  "priorityWhy": "Early literacy first, because it is the one loss that cannot be made up later and the district has already funded it with money that runs out. Classrooms next, because class size is what makes families leave. Special education and mental health follow because they are mandated, needed, or both. Athletics, arts and clubs sit at the bottom NOT because they matter least \u2014 but because they are the only things on this list that can pay for themselves. Fund them with fees and they never reach the cut line at all.",
+  "closing": "This package finds roughly half the FY28 gap without cutting a single program \u2014 the exact share is above, and it moves as you change assumptions. The rest is the honest part: it is either an override, or classroom positions. Anyone who tells you there is a painless third option has not added up the line items."
+ },
+ "athletics": {
+  "levelService": 451830,
+  "adopted": 217908,
+  "travel": 345458,
+  "ladder": [
+   {
+    "id": "adopted",
+    "label": "As adopted",
+    "add": null,
+    "total": 217908.5,
+    "scenario": "FY27 Balanced",
+    "published": true,
+    "sub": "The athletics Town Meeting funded on 2 May 2026. No athletic transportation, a half-time trainer, coaching stipends cut by 45%, and no middle school or freshman teams.",
+    "selfFundFee": 445,
+    "coverageNow": 0.8602
+   },
+   {
+    "id": "travel",
+    "label": "As adopted, able to travel",
+    "add": 127550,
+    "total": 345458.5,
+    "scenario": "FY27 Balanced + transportation",
+    "published": false,
+    "addLabel": "Athletic transportation",
+    "sub": "The same teams, with the buses put back. The adopted budget zeroed athletic transportation, but a team that cannot get to an away game is not a team. This is the honest floor for \"does athletics pay for itself\" \u2014 and it is our construction, not a budget the district published.",
+    "selfFundFee": 960,
+    "coverageNow": 0.5426
+   },
+   {
+    "id": "trainer",
+    "label": "\u2026plus a full-time trainer",
+    "add": 34258.5,
+    "total": 379717.0,
+    "scenario": "FY27 Balanced + transport + trainer",
+    "published": false,
+    "addLabel": "The other half of the athletic trainer",
+    "sub": "The adopted budget halves the athletic trainer. Restoring the other half is the next rung, and arguably a safety floor rather than an enhancement.",
+    "selfFundFee": null,
+    "coverageNow": 0.4937
+   },
+   {
+    "id": "level_service",
+    "label": "Full high school program",
+    "add": 72113,
+    "total": 451830.0,
+    "scenario": "FY27 Level Service",
+    "published": true,
+    "addLabel": "Full coaching stipends",
+    "sub": "The district's own Level Service column: athletics run as it was, with full coaching stipends restored. Still no middle school or freshman teams \u2014 Level Service cut those too.",
+    "selfFundFee": null,
+    "coverageNow": 0.4149
+   },
+   {
+    "id": "restoration",
+    "label": "The full program",
+    "add": 14415,
+    "total": 466245.0,
+    "scenario": "FY27 Restoration / Core",
+    "published": true,
+    "addLabel": "Freshman & middle school coaches",
+    "sub": "The district's Restoration and Core columns \u2014 every team the schools used to field, high school and middle school alike. This is the only rung on which middle school and freshman sports exist at all, so it is the only one that is honestly a whole athletics program rather than a surviving piece of one.",
+    "selfFundFee": null,
+    "coverageNow": 0.402
+   }
+  ],
+  "peakFee": 1185,
+  "peakRevenue": 358380,
+  "dropoffPer100": 5.0,
+  "remaining": 217908,
+  "participations": 691,
+  "chargeableParticipations": 582,
+  "msParticipations": 109,
+  "perSportTotal": 275947.63
+ },
+ "extras": [
+  {
+   "cat": "athletics",
+   "label": "Every sport, coach, trainer and athletic bus",
+   "total": 466244,
+   "items": [
+    "All 25 sports and their coaches",
+    "Athletic transportation",
+    "Athletic trainer",
+    "Middle school & freshman sports",
+    "Athletic director, insurance, dues, equipment"
+   ]
+  },
+  {
+   "cat": "arts",
+   "label": "Every band, chorus, art supply and music program",
+   "total": 166056,
+   "items": [
+    "High school band & chorus",
+    "Art supplies, all four schools",
+    "Music teachers at the high school and Turkey Hill",
+    "Instruments, repairs and sheet music",
+    "Band transportation"
+   ]
+  },
+  {
+   "cat": "activities",
+   "label": "Every club and after-school advisor",
+   "total": 11731,
+   "items": [
+    "All advised clubs at the high school"
+   ]
+  }
+ ],
+ "buckets": {
+  "admin": 2633246,
+  "adminCentral": 1040389,
+  "adminBuilding": 1183773,
+  "tech": 638675,
+  "health": 3994071,
+  "transportGenEd": 1053360,
+  "transportSpEd": 649953
+ },
+ "peerLessons": [
+  {
+   "title": "Nobody closed a gap this size with extras",
+   "body": "Every district in this group covered its shortfall with personnel, reserves, deferrals or higher assessments. None of them found enough in supplies, athletics or arts to matter."
+  },
+  {
+   "title": "Priorities really are a choice",
+   "body": "Ashburnham-Westminster wrote \"preserve athletics, arts and music\" into its district goals and cut two elementary teachers to honour it. Lunenburg cut athletics first and defended classroom staffing. Same pressures, opposite answers \u2014 which is why the ranking in this tool is yours to set."
+  },
+  {
+   "title": "Everyone charges fees \u2014 the question is how far they stretch",
+   "body": "Lunenburg already charges, and raised the athletic fee for 2026-27 to $400 for a first child ($300 second, $225 third, $1,500 family cap), plus $180 a year for the bus. That is an estimated $187,000 \u2014 54% of what it costs to field the teams that survived and get them to away games. Ashburnham-Westminster collects $215,000 overall and funds a whole team from fees; Groton-Dunstable is reviewing four fee categories. Because Lunenburg already charges, the easy headroom is gone: only the increase above today's fee is new money."
+  },
+  {
+   "title": "One-time money runs out",
+   "body": "Ashburnham-Westminster balanced with $600,000 from reserves. Groton-Dunstable is deliberately weaning off $400,000 of one-time revenue. Lunenburg is doing the same thing with $453,722 in September. It works once."
+  },
+  {
+   "title": "The squeeze is structural, not local",
+   "body": "Health insurance rose 8\u201314% across every district here while Chapter 70 aid rose 1.5\u20132%. No district in this group solved that; they only chose who absorbs it."
+  }
+ ],
+ "method": {
+  "derivations": [
+   {
+    "id": "athletics_total",
+    "kind": "lines",
+    "question": "How did you calculate total athletics cost?",
+    "label": "Athletics \u2014 the full high school program",
+    "answer": "Two DESE function groups, added up: 3510 Athletic Expenses (transport, insurance, dues, equipment) and 3510 Athletics Salaries (director, trainer, secretary, all coaching stipends). Nothing else is counted.",
+    "notes": [
+     "We use the Level Service column \u2014 what it costs to run athletics as it was, before the FY27 cuts. That is the honest denominator for \"can fees pay for athletics\", because a fee has to fund the program you want, not the one that survived.",
+     "Level Service is high school only. It cut middle school and freshman teams too, so $451,830 is not a whole athletics program \u2014 adding the $14,415 of freshman and middle school coaching stipends in the Restoration and Core columns gives $466,245, which is.",
+     "Club and after-school advisor stipends (3520, $11,731) are NOT in this figure. They are activities, not athletics, and are counted separately.",
+     "This is gross cost. Fee income is invisible in the budget document, which is expenditures only \u2014 so we cannot tell you whether $451,830 is before or after the fees families already pay.",
+     "Two lines in this total do not mean what their labels suggest, and they pull in opposite directions: athletic transportation is budgeted far above what athletics has ever spent, and the athletic director line is a $20,000 stipend where a ~$90,000 salaried position used to be. Both are flagged in the table. $451,830 is what the district budgeted, which is the right basis for a budget argument \u2014 but it is not a measurement of what athletics costs to run."
+    ],
+    "scenario": "FY27 Level Service",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Transportation",
+      "amount": 127550.0,
+      "note": "Budgeted well above what athletics has ever actually spent. Actuals were $39,880 (FY23), $40,000 (FY24) and $87,822 (FY25); the line was then rebased to $127,550 for FY26 and level-funded into FY27. As of the 23 March 2026 budget, FY26 had spent $47,847 with $13,169 encumbered \u2014 $61,016 committed against $127,550, with only the spring season left to run. The district asked itself this exact question in the spreadsheet margin (\"Actuals in munis are tracking well below FY26 budget, can FY27 be reduced?\") and answered \"Yes, level funded\". Treat it as a budget figure, not a spending figure.",
+      "history": {
+       "fy23_actual": 39880.0,
+       "fy24_actual": 40000.0,
+       "fy25_actual": 87822.0,
+       "fy26_final": 127550.0,
+       "fy26_actual_td": 47847.0,
+       "fy26_encumb_td": 13169.0
+      }
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Insurance",
+      "amount": 9000.0
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Dues & Fees",
+      "amount": 20000.0
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Equipment/Reconditioning",
+      "amount": 10000.0
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic New Equipment",
+      "amount": 6000.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Director",
+      "amount": 20000.0,
+      "note": "Not the cost of an athletic director, and probably out of date. As budgeted this is a STIPEND: the salaried position ran $85,977 / $90,200 / $96,044 in FY23-FY25 actuals and $74,406 in FY26, then drops to $20,000 in ALL FOUR FY27 scenarios \u2014 including Restoration, the district's own ideal budget. The Multi-Scenario Addendum books a $10,000 Athletic Director Stipend under \"Changes since 2/24/26\", alongside a $110,195 reduction from High School Principal / Assistant Principal. SINCE THEN, and not reflected in any published budget: the athletic director who held the role left, and the position was returned to full time. The School Committee had debated exactly this, with the shared teaching-and-athletics arrangement described as unsustainable. The budget still says $20,000. On the FY23-FY25 actuals a full-time director runs $86,000-$96,000, so athletics plausibly costs $65,000-$75,000 more than the adopted line shows. That range is OUR estimate \u2014 no published document records the change or its cost, and it is the first thing to ask the Business Manager about.",
+      "history": {
+       "fy23_actual": 85977.0,
+       "fy24_actual": 90200.0,
+       "fy25_actual": 96044.06,
+       "fy26_final": 74406.0,
+       "fy26_actual_td": 49604.09
+      }
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Trainer",
+      "amount": 68517.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Secretary",
+      "amount": 20407.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Special Detail/Athletic Events",
+      "amount": 7100.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Coaches",
+      "amount": 159444.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Unified Sports,Track/Basketball Coach",
+      "amount": 3812.0
+     }
+    ],
+    "lineCount": 11,
+    "total": 451830.0,
+    "expected": 451830,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "athletics_remaining",
+    "kind": "lines",
+    "question": "What survives of athletics in the adopted budget?",
+    "label": "Athletics \u2014 what the adopted FY27 budget funds",
+    "answer": "The same two function groups, read in the Balanced column \u2014 the budget Town Meeting actually adopted after both overrides failed.",
+    "notes": [
+     "The exact sum is $217,908.50. The app rounds to $217,908.",
+     "All athletic transportation ($127,550) and the middle school / freshman coaching stipends ($14,415) fall to zero here. Coaching stipends drop from $159,444 to $87,331 and the trainer is halved."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Insurance",
+      "amount": 9000.0
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Dues & Fees",
+      "amount": 20000.0
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic Equipment/Reconditioning",
+      "amount": 10000.0
+     },
+     {
+      "group": "3510 - Athletic Expenses",
+      "item": "Athletic New Equipment",
+      "amount": 6000.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Director",
+      "amount": 20000.0,
+      "note": "Not the cost of an athletic director, and probably out of date. As budgeted this is a STIPEND: the salaried position ran $85,977 / $90,200 / $96,044 in FY23-FY25 actuals and $74,406 in FY26, then drops to $20,000 in ALL FOUR FY27 scenarios \u2014 including Restoration, the district's own ideal budget. The Multi-Scenario Addendum books a $10,000 Athletic Director Stipend under \"Changes since 2/24/26\", alongside a $110,195 reduction from High School Principal / Assistant Principal. SINCE THEN, and not reflected in any published budget: the athletic director who held the role left, and the position was returned to full time. The School Committee had debated exactly this, with the shared teaching-and-athletics arrangement described as unsustainable. The budget still says $20,000. On the FY23-FY25 actuals a full-time director runs $86,000-$96,000, so athletics plausibly costs $65,000-$75,000 more than the adopted line shows. That range is OUR estimate \u2014 no published document records the change or its cost, and it is the first thing to ask the Business Manager about.",
+      "history": {
+       "fy23_actual": 85977.0,
+       "fy24_actual": 90200.0,
+       "fy25_actual": 96044.06,
+       "fy26_final": 74406.0,
+       "fy26_actual_td": 49604.09
+      }
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Trainer",
+      "amount": 34258.5
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Secretary",
+      "amount": 20407.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Special Detail/Athletic Events",
+      "amount": 7100.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Athletic Coaches",
+      "amount": 87331.0
+     },
+     {
+      "group": "3510 - Athletics Salaries",
+      "item": "Unified Sports,Track/Basketball Coach",
+      "amount": 3812.0
+     }
+    ],
+    "lineCount": 10,
+    "total": 217908.5,
+    "expected": 217908,
+    "delta": 0.5,
+    "reconciled": true
+   },
+   {
+    "id": "tech_total",
+    "kind": "lines",
+    "question": "How did you calculate total technology spend?",
+    "label": "Technology \u2014 contracts, licences, devices and staff",
+    "answer": "Technology is not one function group \u2014 it is scattered across eight of them. These are the individual lines that are technology spending, named one by one.",
+    "notes": [
+     "Device leases ($185,065) sit under 7400 Replace Equipment; the guidance software lease ($13,800) sits under Guidance. Neither would be found by looking at a \"technology\" heading.",
+     "Webmaster and tech-support stipends ($11,670) are excluded \u2014 they are stipends paid to staff, not technology purchasing. Including them would make the figure $650,345."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "1410 - Business Office",
+      "item": "Admin Contr'd Technology Support (TSA)",
+      "amount": 1600.0
+     },
+     {
+      "group": "1450 - Info Management & Tech Expense",
+      "item": "Admin Tech Contracted Services",
+      "amount": 154981.0
+     },
+     {
+      "group": "2110 - Special Education",
+      "item": "Specl Ed Computer Contracted Services",
+      "amount": 4573.0
+     },
+     {
+      "group": "2415 - E.S. Other Instr. Materials",
+      "item": "E.S. Audio Visual/ Technology Supplies",
+      "amount": 1288.0
+     },
+     {
+      "group": "2451 - Instructional Tech.",
+      "item": "P.S. Computer Contractual Services",
+      "amount": 28252.0
+     },
+     {
+      "group": "2451 - Instructional Tech.",
+      "item": "E.S. Computer Contractual Services",
+      "amount": 22775.0
+     },
+     {
+      "group": "2451 - Instructional Tech.",
+      "item": "M.S. Computer Contractual Services",
+      "amount": 2074.0
+     },
+     {
+      "group": "2451 - Instructional Tech.",
+      "item": "H.S. Computer Contractual Services",
+      "amount": 25323.0
+     },
+     {
+      "group": "2451 - Instructional Tech.",
+      "item": "Computer Supplies/District Wide",
+      "amount": 9500.0
+     },
+     {
+      "group": "2710 - Guidance Exp.",
+      "item": "H.S. Lease of Guidance Software",
+      "amount": 13800.0
+     },
+     {
+      "group": "4400 - Networking / Telecommunications",
+      "item": "Networking Contracted Service",
+      "amount": 55230.0
+     },
+     {
+      "group": "7400 - Replace Equipment",
+      "item": "COMPUTERS - Purchase & Lease",
+      "amount": 185065.0
+     },
+     {
+      "group": "1450 - Administrative Technology",
+      "item": "Technology Personnel",
+      "amount": 134214.0
+     }
+    ],
+    "lineCount": 13,
+    "total": 638675.0,
+    "expected": 638675,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "admin_central",
+    "kind": "lines",
+    "question": "What counts as central office administration?",
+    "label": "Administration \u2014 central office",
+    "answer": "Every 1000-series function group: School Committee, Superintendent, District-Wide Administration, Business Office, Human Resources, Legal, and Information Management / Administrative Technology \u2014 salaries and expenses both.",
+    "notes": [
+     "This is one superintendent, one business manager and one HR specialist for four schools."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "1110 - School Committee",
+      "item": "Staff Orientation Expenses",
+      "amount": 1000.0
+     },
+     {
+      "group": "1110 - School Committee",
+      "item": "Dues/Meetings",
+      "amount": 6500.0
+     },
+     {
+      "group": "1110 - School Committee",
+      "item": "Classified Ads",
+      "amount": 1000.0
+     },
+     {
+      "group": "1110 - School Committee",
+      "item": "School Committee Gen Supplies",
+      "amount": 100.0
+     },
+     {
+      "group": "1210 - Superintendent Office",
+      "item": "Postage - System Wide",
+      "amount": 6000.0
+     },
+     {
+      "group": "1210 - Superintendent Office",
+      "item": "Dues/Meetings",
+      "amount": 8000.0
+     },
+     {
+      "group": "1210 - Superintendent Office",
+      "item": "Supt. General Supplies",
+      "amount": 1590.0
+     },
+     {
+      "group": "1410 - Business Office",
+      "item": "Business Office/Contracted Services",
+      "amount": 8000.0
+     },
+     {
+      "group": "1410 - Business Office",
+      "item": "Admin Contr'd Technology Support (TSA)",
+      "amount": 1600.0
+     },
+     {
+      "group": "1410 - Business Office",
+      "item": "Business Office General Supplies",
+      "amount": 2120.0
+     },
+     {
+      "group": "1430 - Legal",
+      "item": "School Committee Legal Expenses",
+      "amount": 50000.0
+     },
+     {
+      "group": "1450 - Info Management & Tech Expense",
+      "item": "Admin Tech Contracted Services",
+      "amount": 154981.0
+     },
+     {
+      "group": "1210 - Superintendent Office Salaries",
+      "item": "Superintendent",
+      "amount": 178350.0
+     },
+     {
+      "group": "1210 - Superintendent Office Salaries",
+      "item": "Executive Secretaries/Supt.",
+      "amount": 129508.0
+     },
+     {
+      "group": "1210 - Superintendent Office Salaries",
+      "item": "Remote Coordinator",
+      "amount": 5000.0
+     },
+     {
+      "group": "1210 - Superintendent Office Salaries",
+      "item": "Overtime",
+      "amount": 800.0
+     },
+     {
+      "group": "1230-District Wide Administration",
+      "item": "Transition/Leadership Team",
+      "amount": 32001.0
+     },
+     {
+      "group": "1410 - Business Office Salaries",
+      "item": "Business Manager",
+      "amount": 124200.0
+     },
+     {
+      "group": "1410 - Business Office Salaries",
+      "item": "Business Office/Clerical",
+      "amount": 110270.0
+     },
+     {
+      "group": "1420 - Human Resources Salaries",
+      "item": "Human Resource Specialist",
+      "amount": 73485.0
+     },
+     {
+      "group": "1450 - Administrative Technology",
+      "item": "Technology Personnel",
+      "amount": 134214.0
+     },
+     {
+      "group": "1450 - Administrative Technology",
+      "item": "Webmaster Stipends/Tech Support",
+      "amount": 11670.0
+     }
+    ],
+    "lineCount": 22,
+    "total": 1040389.0,
+    "expected": 1040389,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "admin_building",
+    "kind": "lines",
+    "question": "What counts as building administration?",
+    "label": "Administration \u2014 the four principals\u2019 offices",
+    "answer": "All eight 2210 Principals\u2019 Office groups \u2014 the four schools\u2019 principals, assistant principals and office secretaries, salaries and expenses.",
+    "notes": [
+     "Unchanged across all four FY27 scenarios: no principal\u2019s office was cut or restored in any version of the budget.",
+     "The FY27 budget did cut an Assistant Principal through attrition, so the Primary School and Turkey Hill now share one."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "2210 - P.S. Principals Office",
+      "item": "P.S. Office Supplies & Matrls",
+      "amount": 3800.0
+     },
+     {
+      "group": "2210 - E.S. Principals Office",
+      "item": "E.S. Office Supplies & Matrls",
+      "amount": 3400.0
+     },
+     {
+      "group": "2210 - M.S. Principals Office",
+      "item": "M.S. Office Supplies & Matrls",
+      "amount": 3800.0
+     },
+     {
+      "group": "2210 - H.S. Principals Office",
+      "item": "H.S. Office Supplies & Matrls",
+      "amount": 3800.0
+     },
+     {
+      "group": "2210 - H.S. Principals Office",
+      "item": "H.S. Graduation Expenses",
+      "amount": 10378.0
+     },
+     {
+      "group": "2210 - H.S. Principals Office",
+      "item": "H.S. Accreditation",
+      "amount": 4700.0
+     },
+     {
+      "group": "2210 - H.S. Principals Office",
+      "item": "H.S. Memberships",
+      "amount": 2400.0
+     },
+     {
+      "group": "2210 - P.S. Principal Office Salaries",
+      "item": "P.S. Principal/Asst. Prin.",
+      "amount": 218279.0
+     },
+     {
+      "group": "2210 - P.S. Principal Office Salaries",
+      "item": "P.S. Administrative Secretary",
+      "amount": 62066.0
+     },
+     {
+      "group": "2210 - P.S. Principal Office Salaries",
+      "item": "P.S. Secretarial Overtime",
+      "amount": 800.0
+     },
+     {
+      "group": "2210 - E.S. Principal Office Salaries",
+      "item": "E.S. Principal/Asst. Prin.",
+      "amount": 224500.0
+     },
+     {
+      "group": "2210 - E.S. Principal Office Salaries",
+      "item": "E.S. Administrative Secretary",
+      "amount": 61677.0
+     },
+     {
+      "group": "2210 - E.S. Principal Office Salaries",
+      "item": "E.S. Secretarial Overtime",
+      "amount": 800.0
+     },
+     {
+      "group": "2210 - Middle School Principal Office Salaries",
+      "item": "M.S. Principal/Asst. Prin.",
+      "amount": 195929.0
+     },
+     {
+      "group": "2210 - Middle School Principal Office Salaries",
+      "item": "M.S. Adminstrative Secretary",
+      "amount": 31764.0
+     },
+     {
+      "group": "2210 - Middle School Principal Office Salaries",
+      "item": "M.S. Clerk Typist",
+      "amount": 19275.0
+     },
+     {
+      "group": "2210 - Middle School Principal Office Salaries",
+      "item": "M.S. Secretarial Overtime",
+      "amount": 800.0
+     },
+     {
+      "group": "2210 - H.S. Principal Office Salaries",
+      "item": "H.S. Principal/Asst. Prin.",
+      "amount": 283766.0
+     },
+     {
+      "group": "2210 - H.S. Principal Office Salaries",
+      "item": "H.S. Administrative Secretary",
+      "amount": 31764.0
+     },
+     {
+      "group": "2210 - H.S. Principal Office Salaries",
+      "item": "H.S. Clerk Typist",
+      "amount": 19275.0
+     },
+     {
+      "group": "2210 - H.S. Principal Office Salaries",
+      "item": "H.S. Secretarial Overtime",
+      "amount": 800.0
+     }
+    ],
+    "lineCount": 21,
+    "total": 1183773.0,
+    "expected": 1183773,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "admin_curriculum",
+    "kind": "lines",
+    "question": "What else is in the administration total?",
+    "label": "Administration \u2014 curriculum & special education administration",
+    "answer": "The 2110 groups: the Curriculum and Special Education Directors, special education clerical staff, and the district curriculum adoption line.",
+    "notes": [
+     "Reasonable people put these on either side of the line. They are administrators, not teachers \u2014 but special education administration is largely a legal compliance function, not a discretionary one."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "2110 - Special Education",
+      "item": "Special Ed Genrl Office Suppls",
+      "amount": 800.0
+     },
+     {
+      "group": "2110 - Special Education",
+      "item": "Special Ed Legal Services",
+      "amount": 10000.0
+     },
+     {
+      "group": "2110 - Special Education",
+      "item": "Specl Ed Computer Contracted Services",
+      "amount": 4573.0
+     },
+     {
+      "group": "2110 - Special Education",
+      "item": "Specl Ed Collabrtv Admin Fees",
+      "amount": 2500.0
+     },
+     {
+      "group": "2110 - Special Education",
+      "item": "ELL General Supplies",
+      "amount": 11702.0
+     },
+     {
+      "group": "2110 - Special Education",
+      "item": "ACE General Supplies",
+      "amount": 6000.0
+     },
+     {
+      "group": "2110 - System Curriculum Adop",
+      "item": "District Wide Curriculum Materials",
+      "amount": 9510.0
+     },
+     {
+      "group": "2110 - Curriculum/Spec Ed Directors",
+      "item": "Student Services Coordinator (Spec Ed)",
+      "amount": 155418.0
+     },
+     {
+      "group": "2110 - Curriculum/Spec Ed Directors",
+      "item": "Instructional Services Director (Curriculum)",
+      "amount": 132480.0
+     },
+     {
+      "group": "2110 - Curriculum/Spec Ed Directors",
+      "item": "CCLT and CCL",
+      "amount": 6719.0
+     },
+     {
+      "group": "2110 - Special Education Clerical",
+      "item": "Special Ed Clerical",
+      "amount": 69382.0
+     }
+    ],
+    "lineCount": 11,
+    "total": 409084.0,
+    "expected": 409084,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "health_total",
+    "kind": "lines",
+    "question": "How did you calculate the health insurance figure?",
+    "label": "Health insurance",
+    "answer": "A single budget line. No roll-up involved.",
+    "notes": [
+     "This is the school department\u2019s share only. The Town, not the district, controls the insurance group and negotiates plan design.",
+     "It fell from $4,389,135 in the Restoration scenario to $3,994,071 in the adopted budget \u2014 because fewer positions means fewer people to insure."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "5200 - Insurance Programs",
+      "item": "Health Insurance",
+      "amount": 3994071.0
+     }
+    ],
+    "lineCount": 1,
+    "total": 3994071.0,
+    "expected": 3994071,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "transport_gened",
+    "kind": "lines",
+    "question": "How much is general education transportation?",
+    "label": "Transportation \u2014 general education",
+    "answer": "A single budget line.",
+    "notes": [
+     "Unchanged across all four scenarios."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "3300 - Student Transportation",
+      "item": "General Education Transportation",
+      "amount": 1053360.0
+     }
+    ],
+    "lineCount": 1,
+    "total": 1053360.0,
+    "expected": 1053360,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "transport_sped",
+    "kind": "lines",
+    "question": "How much is special education transportation?",
+    "label": "Transportation \u2014 special education",
+    "answer": "A single budget line.",
+    "notes": [
+     "Cannot be charged for. Special education transport is an IEP entitlement under federal law, so no fee can be applied to it."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "3300 - Student Transportation",
+      "item": "Special Education Transportation - System",
+      "amount": 649953.0
+     }
+    ],
+    "lineCount": 1,
+    "total": 649953.0,
+    "expected": 649953,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "art_supplies",
+    "kind": "lines",
+    "question": "How did you calculate art supplies across all four schools?",
+    "label": "Art supplies \u2014 all four schools",
+    "answer": "One art supply line per school, added together.",
+    "notes": [],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "2415 - P.S. Other Instr. Materials",
+      "item": "P.S. Art Supplies",
+      "amount": 500.0
+     },
+     {
+      "group": "2415 - E.S. Other Instr. Materials",
+      "item": "E.S. Art Supplies",
+      "amount": 1225.0
+     },
+     {
+      "group": "2415 - M.S. Other Instr. Materials",
+      "item": "M.S. Art Supplies",
+      "amount": 8960.0
+     },
+     {
+      "group": "2415 - H.S. Other Instr. Materials",
+      "item": "H.S. Art Supplies",
+      "amount": 20000.0
+     }
+    ],
+    "lineCount": 4,
+    "total": 30685.0,
+    "expected": 30685,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "music_supplies",
+    "kind": "lines",
+    "question": "How did you calculate band and music supplies?",
+    "label": "Band & music supplies, equipment and repair",
+    "answer": "Every music line that is supplies, equipment, dues or instrument repair, across all four schools. Instrument repair sits under building Repairs, not under Instructional Equipment, so it is easy to miss.",
+    "notes": [
+     "Band and music transportation is NOT in this figure \u2014 it is counted separately, because the adopted budget cut it to zero."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "2415 - E.S. Other Instr. Materials",
+      "item": "E.S. Music",
+      "amount": 500.0
+     },
+     {
+      "group": "2420 - M.S. Instr.Equipment",
+      "item": "M.S. Band/Music Supplies",
+      "amount": 4495.0
+     },
+     {
+      "group": "2420 - H.S. Instr. Equipment",
+      "item": "H.S. Band/Music Dues and Fees",
+      "amount": 1300.0
+     },
+     {
+      "group": "2420 - H.S. Instr. Equipment",
+      "item": "BAND/MUSIC SUPPLIES",
+      "amount": 2000.0
+     },
+     {
+      "group": "2420 - H.S. Instr. Equipment",
+      "item": "MUSIC MARCHING BAND",
+      "amount": 748.0
+     },
+     {
+      "group": "2420 - H.S. Instr. Equipment",
+      "item": "MUSIC EQUIPMENT",
+      "amount": 5230.0
+     },
+     {
+      "group": "4230 - M.S. Repairs",
+      "item": "M.S. Repair Music Equipment",
+      "amount": 1800.0
+     },
+     {
+      "group": "4230 - H.S. Repairs",
+      "item": "H.S. Repair Music Equipment",
+      "amount": 1000.0
+     }
+    ],
+    "lineCount": 8,
+    "total": 17073.0,
+    "expected": 17073,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "band_transport",
+    "kind": "lines",
+    "question": "How much was band and music transportation?",
+    "label": "Band & music transportation",
+    "answer": "Two lines \u2014 middle school and high school. Shown at Level Service because the adopted budget cut both to zero.",
+    "notes": [
+     "$5,000 buys every band and chorus trip in the district. It was cut."
+    ],
+    "scenario": "FY27 Level Service",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "2440 - Other Instr.Services",
+      "item": "M.S. Band/Music Transportation",
+      "amount": 2000.0
+     },
+     {
+      "group": "2440 - Other Instr.Services",
+      "item": "H.S. Band/Music Transportation",
+      "amount": 3000.0
+     }
+    ],
+    "lineCount": 2,
+    "total": 5000.0,
+    "expected": 5000,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "clubs",
+    "kind": "lines",
+    "question": "How did you calculate the cost of all clubs?",
+    "label": "Clubs & after-school advisors",
+    "answer": "A single line: 3520 After School Advisor Salaries. It covers every advised club at the high school.",
+    "notes": [
+     "There is no equivalent line for the other three schools."
+    ],
+    "scenario": "FY27 Balanced (adopted)",
+    "source": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+    "lines": [
+     {
+      "group": "3520 - After School Advisor Salaries",
+      "item": "H.S. After School Advisors",
+      "amount": 11731.0
+     }
+    ],
+    "lineCount": 1,
+    "total": 11731.0,
+    "expected": 11731,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "athletics_cut",
+    "kind": "arithmetic",
+    "question": "How much athletics has already been cut?",
+    "label": "Athletics \u2014 already cut to reach the adopted budget",
+    "answer": "The difference between the two athletics figures above.",
+    "notes": [
+     "More than half the athletics program, by dollars, is already gone."
+    ],
+    "scenario": "Derived",
+    "source": "Computed from the roll-ups above",
+    "terms": [
+     {
+      "ref": "athletics_total",
+      "label": "Athletics at level service",
+      "sign": 1,
+      "amount": 451830.0
+     },
+     {
+      "ref": "athletics_remaining",
+      "label": "Athletics in the adopted budget",
+      "sign": -1,
+      "amount": 217908.5
+     }
+    ],
+    "total": 233921.5,
+    "expected": 233922,
+    "delta": -0.5,
+    "reconciled": true
+   },
+   {
+    "id": "admin_total",
+    "kind": "arithmetic",
+    "question": "How did you calculate total administration?",
+    "label": "Administration \u2014 everything",
+    "answer": "The three administration roll-ups above, added together.",
+    "notes": [
+     "9.9% of the school budget \u2014 smaller than most people guess when they propose \"cut administration\" as the answer.",
+     "DESE independently puts Lunenburg administration at $1,158,507 in FY24, below every peer district except Ashburnham-Westminster. DESE counts a narrower set of functions than this total does."
+    ],
+    "scenario": "Derived",
+    "source": "Computed from the roll-ups above",
+    "terms": [
+     {
+      "ref": "admin_central",
+      "label": "Central office",
+      "sign": 1,
+      "amount": 1040389.0
+     },
+     {
+      "ref": "admin_building",
+      "label": "The four principals\u2019 offices",
+      "sign": 1,
+      "amount": 1183773.0
+     },
+     {
+      "ref": "admin_curriculum",
+      "label": "Curriculum & special education administration",
+      "sign": 1,
+      "amount": 409084.0
+     }
+    ],
+    "total": 2633246.0,
+    "expected": 2633246,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "athletics_ladder",
+    "kind": "ladder",
+    "question": "What does athletics actually cost \u2014 and which number should a fee be measured against?",
+    "label": "Athletics, from what was funded to the whole program",
+    "answer": "Town Meeting passed only the Balanced budget, which funds $217,908 of athletics \u2014 and zero athletic transportation. A team that cannot get to an away game is not a team, so that figure cannot be the test of whether athletics pays for itself. Each rung below adds one real budget line or scenario delta on top of the one before it, so you can pick the basis you think is honest and see what it costs.",
+    "notes": [
+     "The rungs are exact. $217,908.50 + $127,550 + $34,258.50 + $72,113 + $14,415 = $466,245, which is the district's own Restoration and Core column to the dollar.",
+     "Two rungs are OUR construction, not budgets the district published: \"able to travel\" and \"plus a full-time trainer\". Both are built from published line items, but no scenario in the budget document looks like them.",
+     "Level Service is not the top rung. Level Service cut freshman and middle school coaching too \u2014 only Restoration and Core fund those teams.",
+     "The self-funding fee for each rung assumes 5% of participation lost per $100 above today's fee and a 12% waiver rate. Both are our assumptions, adjustable on the Fees tab. \"Out of reach\" means revenue peaks below that rung at any fee."
+    ],
+    "scenario": "Multiple",
+    "source": "FY27 line-item budget, rung by rung",
+    "rungs": [
+     {
+      "id": "adopted",
+      "label": "As adopted",
+      "addLabel": null,
+      "add": null,
+      "running": 217908.5,
+      "scenario": "FY27 Balanced",
+      "published": true,
+      "selfFundFee": 445,
+      "coverageNow": 0.8602,
+      "sub": "The athletics Town Meeting funded on 2 May 2026. No athletic transportation, a half-time trainer, coaching stipends cut by 45%, and no middle school or freshman teams."
+     },
+     {
+      "id": "travel",
+      "label": "As adopted, able to travel",
+      "addLabel": "Athletic transportation",
+      "add": 127550,
+      "running": 345458.5,
+      "scenario": "FY27 Balanced + transportation",
+      "published": false,
+      "selfFundFee": 960,
+      "coverageNow": 0.5426,
+      "sub": "The same teams, with the buses put back. The adopted budget zeroed athletic transportation, but a team that cannot get to an away game is not a team. This is the honest floor for \"does athletics pay for itself\" \u2014 and it is our construction, not a budget the district published."
+     },
+     {
+      "id": "trainer",
+      "label": "\u2026plus a full-time trainer",
+      "addLabel": "The other half of the athletic trainer",
+      "add": 34258.5,
+      "running": 379717.0,
+      "scenario": "FY27 Balanced + transport + trainer",
+      "published": false,
+      "selfFundFee": null,
+      "coverageNow": 0.4937,
+      "sub": "The adopted budget halves the athletic trainer. Restoring the other half is the next rung, and arguably a safety floor rather than an enhancement."
+     },
+     {
+      "id": "level_service",
+      "label": "Full high school program",
+      "addLabel": "Full coaching stipends",
+      "add": 72113,
+      "running": 451830.0,
+      "scenario": "FY27 Level Service",
+      "published": true,
+      "selfFundFee": null,
+      "coverageNow": 0.4149,
+      "sub": "The district's own Level Service column: athletics run as it was, with full coaching stipends restored. Still no middle school or freshman teams \u2014 Level Service cut those too."
+     },
+     {
+      "id": "restoration",
+      "label": "The full program",
+      "addLabel": "Freshman & middle school coaches",
+      "add": 14415,
+      "running": 466245.0,
+      "scenario": "FY27 Restoration / Core",
+      "published": true,
+      "selfFundFee": null,
+      "coverageNow": 0.402,
+      "sub": "The district's Restoration and Core columns \u2014 every team the schools used to field, high school and middle school alike. This is the only rung on which middle school and freshman sports exist at all, so it is the only one that is honestly a whole athletics program rather than a surviving piece of one."
+     }
+    ],
+    "total": 466245.0,
+    "expected": 466245,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "id": "extras_athletics",
+    "kind": "catalog",
+    "question": "What does \"cutting every sport\" actually mean?",
+    "label": "Every sport, coach, trainer and athletic bus",
+    "answer": "The athletics entries in the program catalog \u2014 the same money as the athletics roll-up above, but broken into the things a voter can name.",
+    "notes": [
+     "This totals $466,244 against the FY27 Restoration column\u2019s $466,245. The $1 is rounding: the surviving athletics figure is $217,908.50 and the catalog carries it as $217,908."
+    ],
+    "scenario": "Program catalog",
+    "source": "catalog.py, sourced entry by entry",
+    "entries": [
+     {
+      "name": "All Athletic Transportation",
+      "amount": 127550,
+      "status": "cut",
+      "source": "LINE",
+      "estimated": false
+     },
+     {
+      "name": "Athletic Coaching Stipends (partial)",
+      "amount": 72113,
+      "status": "cut",
+      "source": "LINE",
+      "estimated": false
+     },
+     {
+      "name": "0.5 Athletic Trainer",
+      "amount": 34258,
+      "status": "cut",
+      "source": "LINE",
+      "estimated": false
+     },
+     {
+      "name": "Middle School & Freshman Sports",
+      "amount": 14415,
+      "status": "cut",
+      "source": "ADD",
+      "estimated": false
+     },
+     {
+      "name": "Remaining Athletics Program (all sports)",
+      "amount": 217908,
+      "status": "funded",
+      "source": "LINE",
+      "estimated": false
+     }
+    ],
+    "estimatedAmount": 0,
+    "total": 466244,
+    "expected": 466244,
+    "delta": 0,
+    "reconciled": true
+   },
+   {
+    "id": "extras_arts",
+    "kind": "catalog",
+    "question": "How did you calculate the cost of all arts and music?",
+    "label": "Every band, chorus, art supply and music program",
+    "answer": "The arts entries in the program catalog. Unlike athletics, this one is NOT purely published: teaching positions are not itemized by subject in the budget, so the high school music position is our estimate.",
+    "notes": [
+     "The $72,440 high school band and chorus position is our estimate of a 1.0 FTE music salary. The district has never published a price for cutting it. Everything else in this list is a published line."
+    ],
+    "scenario": "Program catalog",
+    "source": "catalog.py, sourced entry by entry",
+    "entries": [
+     {
+      "name": "0.2 Music Teacher \u2014 Turkey Hill",
+      "amount": 14488,
+      "status": "cut",
+      "source": "ADD",
+      "estimated": false
+     },
+     {
+      "name": "Band & Music Transportation",
+      "amount": 5000,
+      "status": "cut",
+      "source": "LINE",
+      "estimated": false
+     },
+     {
+      "name": "0.6 -> 1.0 Music Teacher \u2014 High School",
+      "amount": 26370,
+      "status": "restoring",
+      "source": "ATRP",
+      "estimated": false
+     },
+     {
+      "name": "Art Supplies \u2014 all four schools",
+      "amount": 30685,
+      "status": "funded",
+      "source": "LINE",
+      "estimated": false
+     },
+     {
+      "name": "Band & Music Supplies, Equipment, Repair",
+      "amount": 17073,
+      "status": "funded",
+      "source": "LINE",
+      "estimated": false
+     },
+     {
+      "name": "High School Band & Chorus Program",
+      "amount": 72440,
+      "status": "funded",
+      "source": "EST",
+      "estimated": true
+     }
+    ],
+    "estimatedAmount": 72440,
+    "total": 166056,
+    "expected": 166056,
+    "delta": 0,
+    "reconciled": true
+   },
+   {
+    "id": "extras_activities",
+    "kind": "catalog",
+    "question": "How did you calculate the cost of all clubs?",
+    "label": "Every club and after-school advisor",
+    "answer": "One catalog entry, backed by one budget line.",
+    "notes": [],
+    "scenario": "Program catalog",
+    "source": "catalog.py, sourced entry by entry",
+    "entries": [
+     {
+      "name": "High School Clubs & After-School Advisors",
+      "amount": 11731,
+      "status": "funded",
+      "source": "LINE",
+      "estimated": false
+     }
+    ],
+    "estimatedAmount": 0,
+    "total": 11731,
+    "expected": 11731,
+    "delta": 0,
+    "reconciled": true
+   }
+  ],
+  "scenarioTotals": [
+   {
+    "column": "fy26_final",
+    "label": "FY26 final",
+    "stated": 26287473.93,
+    "detailLines": 26196705.93,
+    "salaryReserve": 90770.0,
+    "rebuilt": 26287475.93,
+    "delta": 2.0,
+    "reconciled": true
+   },
+   {
+    "column": "fy27_restoration",
+    "label": "FY27 Restoration",
+    "stated": 28520815.6,
+    "detailLines": 28446324.0,
+    "salaryReserve": 74491.6,
+    "rebuilt": 28520815.6,
+    "delta": 0.0,
+    "reconciled": true
+   },
+   {
+    "column": "fy27_core",
+    "label": "FY27 Core",
+    "stated": 28172288.0,
+    "detailLines": 28097797.0,
+    "salaryReserve": 74492.0,
+    "rebuilt": 28172289.0,
+    "delta": 1.0,
+    "reconciled": true
+   },
+   {
+    "column": "fy27_level_service",
+    "label": "FY27 Level Service",
+    "stated": 27333288.0,
+    "detailLines": 27258797.0,
+    "salaryReserve": 74492.0,
+    "rebuilt": 27333289.0,
+    "delta": 1.0,
+    "reconciled": true
+   },
+   {
+    "column": "fy27_balanced",
+    "label": "FY27 Balanced (adopted)",
+    "stated": 26572287.5,
+    "detailLines": 26497797.5,
+    "salaryReserve": 74492.0,
+    "rebuilt": 26572289.5,
+    "delta": 2.0,
+    "reconciled": true
+   }
+  ],
+  "scenarioNote": "Rebuilt = every detail line in that column, plus the salary reserve. Stated = the spreadsheet's own \"TOTAL ACTUALS & BUDGET\" row. The two differ by up to $2 in a $28 million budget, which is rounding inside the district's own file, not a missing line.",
+  "sourceDoc": "FY27 line-item budget, Lunenburg Public Schools, 23 March 2026 (sources/data/lps-budget-lines.csv)",
+  "sourceCodes": {
+   "ADD": "Budget Addendum: Multi-Scenario Financial Analysis, 13 March 2026",
+   "LINE": "FY27 line-item budget",
+   "ATRP": "Additional Town Revenue Spending Plan (September 2026 Special Town Meeting)",
+   "PR": "Town Manager press release, 17 April 2026",
+   "EST": "Our estimate \u2014 NOT published by the district"
+  },
+  "scenarios": {
+   "fy26_final": "FY26 final",
+   "fy27_restoration": "FY27 Restoration",
+   "fy27_core": "FY27 Core",
+   "fy27_level_service": "FY27 Level Service",
+   "fy27_balanced": "FY27 Balanced (adopted)"
+  }
+ },
+ "facts": {
+  "overrideQ1": {
+   "amount": 2400000,
+   "yes": 867,
+   "no": 1753
+  },
+  "overrideQ2": {
+   "amount": 3300000,
+   "yes": 760,
+   "no": 1862
+  },
+  "ballotsCast": 2638,
+  "registered": 9565,
+  "fy26TaxRate": 14.39,
+  "avgHomeValue": 517296,
+  "avgTaxBill": 7444,
+  "levyOnlyIncrease": 175.88,
+  "tier1TaxIncrease": 506.95,
+  "tier2TaxIncrease": 689.35,
+  "stmDate": "2026-09-03",
+  "stmAmount": 350000,
+  "stmPlanTotal": 453722,
+  "enactedStateAid": 471121,
+  "athleticsTotal": 451830,
+  "athleticsRemaining": 217908,
+  "athleticsAlreadyCut": 233922,
+  "musicSupplies": 17073,
+  "artSupplies": 30685,
+  "clubs": 11731
+ }
+}
