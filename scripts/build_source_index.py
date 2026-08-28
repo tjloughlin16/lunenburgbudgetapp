@@ -24,6 +24,7 @@ Writes fy28/src/data/sources.json.
 import csv
 import json
 import os
+import shutil
 import subprocess
 import sys
 from collections import Counter
@@ -32,6 +33,13 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'sources')
 OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')
+DOCS = os.path.join(ROOT, 'fy28', 'public', 'docs')
+
+# Cloudflare Pages refuses a single asset over 25MB. Files above it are published anyway
+# and flagged, never altered: a source document that has been resampled to fit a host is
+# no longer the document, and a reader who diffs our copy against the town's is exactly
+# the reader this page is for. Where a file exceeds this, the host has to change.
+MAX_BYTES = 25 * 1024 * 1024
 
 SCHOOL_HUB = ('https://www.lunenburgschools.net/department-directory/'
               'superintendent-of-schools/school-budget-information')
@@ -351,6 +359,24 @@ def page_count(path):
     return None, None
 
 
+def publish(rel):
+    """Copy a source file, byte for byte, to where the site can serve it.
+
+    Verbatim is the whole point. These are primary documents, and the reader this page
+    exists for is the one who downloads ours and compares it to the town's -- so a copy
+    that differs by a single byte would be a worse failure than not publishing at all.
+    Returns the served size and whether it is too large for the current host.
+    """
+    src = os.path.join(SRC, rel)
+    dst = os.path.join(DOCS, rel)
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    size = os.path.getsize(src)
+    # Re-copy only when it would actually differ, so a rebuild is not 128MB of writes.
+    if not os.path.exists(dst) or os.path.getsize(dst) != size:
+        shutil.copy2(src, dst)
+    return size, size > MAX_BYTES
+
+
 def build_corpus():
     """The meeting archive, summarised. index.csv is the record of what was fetched."""
     idx = os.path.join(SRC, 'minutes', 'index.csv')
@@ -399,15 +425,24 @@ def main():
             catalogued.add(rel)
             ext = os.path.splitext(rel)[1].lower()
             count, unit = page_count(path)
+            served, oversize = publish(rel)
+
             txt = os.path.splitext(rel)[0] + '.txt'
             txt_alt = rel.replace('pdf/', 'txt/').replace('.pdf', '.txt')
-            has_text = any(os.path.exists(os.path.join(SRC, t)) for t in (txt, txt_alt))
+            text_rel = next((t for t in (txt, txt_alt)
+                             if os.path.exists(os.path.join(SRC, t))), None)
+            if text_rel:
+                publish(text_rel)
+
             items.append({
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
-                'bytes': os.path.getsize(path),
+                'bytes': served,
+                'url': '/docs/' + rel,
                 **({'count': count, 'unit': unit} if count else {}),
-                **({'text': True} if has_text else {}),
+                **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
+                # Flagged rather than fixed. The file is published exactly as received.
+                **({'oversize': True} if oversize else {}),
             })
         # Load-bearing first, then largest — a reader scanning a group should meet the
         # documents a conclusion actually rests on before the ones kept for completeness.
@@ -444,12 +479,19 @@ def main():
     except Exception:
         rev = None
 
+    # The town's own URL for all 1,383 meeting documents lives in this one file, so it is
+    # the thing worth handing a reader who wants the archive rather than our summary of it.
+    corpus_index = 'minutes/index.csv'
+    if os.path.exists(os.path.join(SRC, corpus_index)):
+        publish(corpus_index)
+
     doc = {
         'generated': date.today().isoformat(),
         'commit': rev,
         'origins': ORIGINS,
         'groups': groups,
         'corpus': build_corpus(),
+        'corpusIndexUrl': '/docs/' + corpus_index,
         'totals': {
             'documents': len(all_items),
             'groups': len(groups),
@@ -469,6 +511,11 @@ def main():
         fh.write('\n')
     mb = doc['totals']['bytes'] / 1e6
     print(f"{OUT}: {doc['totals']['documents']} documents in {len(groups)} groups, {mb:.0f}MB")
+    print(f"  published verbatim to {DOCS}")
+    for i in all_items:
+        if i.get('oversize'):
+            print(f"    OVERSIZE {i['path']} is {i['bytes']/1e6:.0f}MB — over the "
+                  f"{MAX_BYTES/1024/1024:.0f}MiB Cloudflare Pages per-file limit")
     if doc['corpus']:
         c = doc['corpus']
         print(f"  + meeting archive: {c['fetched']} documents across {c['boardCount']} boards")

@@ -21,7 +21,8 @@ import raw from '../data/sources.json'
 
 type Item = {
   path: string; title: string; stars: number; what: string; kind: string
-  bytes: number; count?: number; unit?: string; text?: boolean
+  bytes: number; url: string; count?: number; unit?: string
+  textUrl?: string; oversize?: boolean
 }
 type Group = { id: string; title: string; blurb: string; origin: string; items: Item[] }
 type Origin = { id: string; name: string; url: string | null }
@@ -29,6 +30,7 @@ type Board = { name: string; documents: number }
 
 const S = raw as unknown as {
   generated: string; commit: string | null; origins: Origin[]; groups: Group[]
+  corpusIndexUrl: string
   corpus: {
     boards: Board[]; boardCount: number; listed: number; fetched: number
     agendas: number; minutes: number; from: string | null; to: string | null
@@ -54,7 +56,13 @@ function Row({ it }: { it: Item }) {
   return (
     <li className="py-3.5 border-t" style={{ borderColor: 'var(--grid)' }}>
       <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-        <span className="text-[14px] font-semibold leading-snug">{it.title}</span>
+        {/* The title is the download. Nothing here is a preview or a summary of a
+            document held somewhere else — this is the file, exactly as it was
+            published. */}
+        <a href={it.url} download className="text-[14px] font-semibold leading-snug underline
+          decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
+          {it.title}
+        </a>
         <span className="inline-flex items-center gap-1 text-[10.5px] font-semibold
           uppercase tracking-wider whitespace-nowrap" style={{ color: w.color }}>
           <span aria-hidden="true">{w.glyph}</span>{w.word}
@@ -71,13 +79,21 @@ function Row({ it }: { it: Item }) {
           <span aria-hidden="true">&middot;</span>
           <span>{it.count.toLocaleString()} {it.unit}</span>
         </>)}
-        {it.text && (<>
+        {it.textUrl && (<>
           <span aria-hidden="true">&middot;</span>
-          <span>text extracted</span>
+          <a href={it.textUrl} download className="underline"
+            style={{ color: 'var(--text-secondary)' }}>extracted text</a>
         </>)}
         <span aria-hidden="true">&middot;</span>
         <code style={{ color: 'var(--text-muted)' }}>sources/{it.path}</code>
       </p>
+      {it.oversize && (
+        <p className="mt-1 text-[11.5px]" style={{ color: 'var(--status-warning)' }}>
+          Large file. It is published exactly as the district released it — a page scan we
+          have not re-encoded, because a source document altered to fit a web host is no
+          longer the source document. The extracted text beside it is far smaller.
+        </p>
+      )}
     </li>
   )
 }
@@ -224,6 +240,15 @@ export function SourceIndex() {
           <h3 className="text-[15px] font-bold">The meeting archive</h3>
           <p className="mt-1 text-[13px] leading-relaxed max-w-3xl"
             style={{ color: 'var(--text-secondary)' }}>{S.corpus.note}</p>
+          <p className="mt-2 text-[13px]">
+            <a href={S.corpusIndexUrl} download className="font-semibold underline"
+              style={{ color: 'var(--series-cost)' }}>
+              Download the archive index (CSV) &rarr;
+            </a>
+            <span className="ml-2" style={{ color: 'var(--text-muted)' }}>
+              board, date, kind, and the town&rsquo;s own URL for every one of them
+            </span>
+          </p>
           <p className="mt-2 text-[12px] tnum" style={{ color: 'var(--text-muted)' }}>
             {S.corpus.listed.toLocaleString()} documents listed by the town &middot;{' '}
             {S.corpus.fetched.toLocaleString()} retrieved &middot; {S.corpus.agendas} agendas
