@@ -63,13 +63,39 @@ ORIGINS = [
     {'id': 'town', 'name': 'Town of Lunenburg', 'url': TOWN_HUB},
     {'id': 'dese', 'name': 'Massachusetts DESE', 'url': 'https://www.doe.mass.edu/'},
     {'id': 'peers', 'name': 'Neighbouring districts', 'url': None},
+    {'id': 'request', 'name': 'Obtained from the Town by records request', 'url': None},
     {'id': 'us', 'name': 'Built by this project', 'url': None},
 ]
+
+# Which documents came to us because somebody asked for them, rather than because they
+# were posted. Worth marking for two reasons: it is the honest answer to "is all of this
+# public", and a reader who wants these for themselves needs to know the route is a
+# request rather than a link.
+BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx'}
+
+# Two halves, and the divide matters more than any grouping inside them. Everything above
+# the line was published by the town, the district, the state or a neighbouring district.
+# Everything below it we made. A reader who cannot tell those apart cannot judge either.
+SECTIONS = {
+    'theirs': dict(
+        title='Published by the town, the district and the state',
+        blurb='Primary documents. We did not write any of these, we did not commission '
+              'them, and none of them was obtained by request — every one was already '
+              'public. Where a document is unreadable or says something inconvenient, it '
+              'is here anyway.'),
+    'ours': dict(
+        title='Written by this project, not by the town',
+        blurb='Everything below this line is ours. It is not town information, it carries '
+              'no official standing, and nobody at the district or the Town has reviewed '
+              'or approved it. It is one resident’s reading of the documents above, '
+              'published so it can be argued with — which means checked against those '
+              'documents, and disagreed with where the reading is wrong.'),
+}
 
 # stars: 3 = load-bearing, a conclusion rests on it · 2 = corroborating · 1 = context
 GROUPS = [
     {
-        'id': 'district-budget', 'origin': 'school',
+        'section': 'theirs', 'id': 'district-budget', 'origin': 'school',
         'title': 'The district budget, line by line',
         'blurb': 'The FY27 budget in every published version. Nearly every figure in this '
                  'analysis traces to one of these five documents.',
@@ -108,7 +134,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'town-budget', 'origin': 'town',
+        'section': 'theirs', 'id': 'town-budget', 'origin': 'town',
         'title': 'Town budget, revenue and the override',
         'blurb': 'How much money the town has, where the Proposition 2½ formula puts the '
                  'ceiling, and what happened at the ballot in May 2026.',
@@ -136,7 +162,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'quarterly', 'origin': 'town',
+        'section': 'theirs', 'id': 'quarterly', 'origin': 'town',
         'title': 'Quarterly financial reports, FY26 Q3',
         'blurb': 'The town’s financial position as of 31 March 2026, reported in August 2026 '
                  '— the first quarterly report after a near-complete turnover of the finance '
@@ -180,10 +206,11 @@ GROUPS = [
         ],
     },
     {
-        'id': 'school-funds', 'origin': 'town',
+        'section': 'theirs', 'id': 'school-funds', 'origin': 'request',
         'title': 'School funds held outside the budget',
         'blurb': 'Revolving and gift accounts that belong to the schools but never appear in '
-                 'the operating appropriation.',
+                 'the operating appropriation. Obtained by records request, and a record of '
+                 'money actually received and spent rather than budgeted.',
         'items': [
             ('xlsx/school-funds-fy26.xlsx', 'School gift, athletics and choice funds, FY26 year-end', 3,
              'Full-year reconciliation of three funds: opening balance, revenue by source, '
@@ -192,7 +219,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'tax-base', 'origin': 'town',
+        'section': 'theirs', 'id': 'tax-base', 'origin': 'town',
         'title': 'Tax base, Chapter 70 and peers',
         'blurb': 'Where the town’s money comes from, what the state contributes, and how '
                  'Lunenburg’s spending compares to its neighbours.',
@@ -216,7 +243,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'contracts', 'origin': 'school',
+        'section': 'theirs', 'id': 'contracts', 'origin': 'school',
         'title': 'Union contracts and salary schedules',
         'blurb': 'Where the 4% salary growth assumption comes from. Most are page scans, read '
                  'with optical character recognition.',
@@ -251,7 +278,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'peers', 'origin': 'peers',
+        'section': 'theirs', 'id': 'peers', 'origin': 'peers',
         'title': 'What neighbouring districts did',
         'blurb': 'Primary FY27 budget documents from comparable districts. The comparison is '
                  'only fair if it comes from their own books rather than from reporting.',
@@ -278,7 +305,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'fees', 'origin': 'school',
+        'section': 'theirs', 'id': 'fees', 'origin': 'school',
         'title': 'Fees and program costs',
         'blurb': 'What families pay, and what the programs cost to run.',
         'items': [
@@ -292,7 +319,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'business', 'origin': 'town',
+        'section': 'theirs', 'id': 'business', 'origin': 'town',
         'title': 'Business registrations',
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '
                  'commercial growth argument.',
@@ -307,7 +334,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'analyses', 'origin': 'us',
+        'section': 'ours', 'id': 'analyses', 'origin': 'us',
         'title': 'Our analyses',
         'blurb': 'What we concluded, written up so it can be argued with. These are the '
                  'only documents here we wrote — everything else in this archive was '
@@ -339,7 +366,7 @@ GROUPS = [
         ],
     },
     {
-        'id': 'derived', 'origin': 'us',
+        'section': 'ours', 'id': 'derived', 'origin': 'us',
         'title': 'Built by this project',
         'blurb': 'Machine-readable extracts. Derived from the documents above and '
                  'rebuildable from them.',
@@ -470,8 +497,10 @@ def main():
             if text_rel:
                 publish(text_rel)
 
+            by_request = any(rel.startswith(pfx) for pfx in BY_REQUEST)
             items.append({
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
+                **({'byRequest': True} if by_request else {}),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': served,
                 'url': elsewhere or ('/docs/' + rel),
@@ -526,6 +555,7 @@ def main():
         'generated': date.today().isoformat(),
         'commit': rev,
         'origins': ORIGINS,
+        'sections': SECTIONS,
         'groups': groups,
         'corpus': build_corpus(),
         'corpusIndexUrl': '/docs/' + corpus_index,

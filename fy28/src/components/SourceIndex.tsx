@@ -22,14 +22,17 @@ import raw from '../data/sources.json'
 type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
-  textUrl?: string; offsite?: boolean
+  textUrl?: string; offsite?: boolean; byRequest?: boolean
 }
-type Group = { id: string; title: string; blurb: string; origin: string; items: Item[] }
+type Group = { id: string; section?: string; title: string; blurb: string
+               origin: string; items: Item[] }
+type Section = { title: string; blurb: string }
 type Origin = { id: string; name: string; url: string | null }
 type Board = { name: string; documents: number }
 
 const S = raw as unknown as {
   generated: string; commit: string | null; origins: Origin[]; groups: Group[]
+  sections: Record<string, Section>
   corpusIndexUrl: string
   corpus: {
     boards: Board[]; boardCount: number; listed: number; fetched: number
@@ -69,6 +72,14 @@ function Row({ it }: { it: Item }) {
           uppercase tracking-wider whitespace-nowrap" style={{ color: w.color }}>
           <span aria-hidden="true">{w.glyph}</span>{w.word}
         </span>
+        {it.byRequest && (
+          <span className="inline-flex items-center gap-1 text-[10.5px] font-semibold
+            uppercase tracking-wider whitespace-nowrap"
+            style={{ color: 'var(--status-warning)' }}
+            title="Obtained from the Town by records request, not published online">
+            <span aria-hidden="true">&#9993;</span>By request
+          </span>
+        )}
       </div>
       <p className="mt-1 text-[13px] leading-relaxed max-w-3xl"
         style={{ color: 'var(--text-secondary)' }}>{it.what}</p>
@@ -123,6 +134,8 @@ export function SourceIndex() {
   }, [needle])
 
   const hits = groups.reduce((n, g) => n + g.items.length, 0)
+  const byRequest = S.groups.reduce(
+    (n, g) => n + g.items.filter(i => i.byRequest).length, 0)
 
   return (
     <div>
@@ -156,11 +169,12 @@ export function SourceIndex() {
         </div>
         <div className="card p-4">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-            style={{ color: 'var(--text-muted)' }}>Behind a paywall</p>
+            style={{ color: 'var(--text-muted)' }}>By records request</p>
           <p className="text-2xl font-bold tnum leading-none"
-            style={{ color: 'var(--status-good)' }}>0</p>
+            style={{ color: 'var(--status-warning)' }}>{byRequest}</p>
           <p className="text-xs mt-1.5" style={{ color: 'var(--text-secondary)' }}>
-            All of it is published. None of it was obtained by request
+            The rest was already public. These had to be asked for &mdash; and they are the
+            only ones recording money actually spent
           </p>
         </div>
       </div>
@@ -185,11 +199,30 @@ export function SourceIndex() {
 
       {/* ---------- the groups ---------- */}
       <div className="flex flex-col gap-2.5">
-        {groups.map(g => {
+        {groups.map((g, gi) => {
           const o = origin[g.origin]
           const isOpen = !!needle || open === g.id
+          // The divide between what the town published and what we wrote is the most
+          // important thing on this page — more important than any grouping inside either
+          // half — so it gets a header rather than an ordering the reader has to infer.
+          const sec = !needle && g.section && g.section !== groups[gi - 1]?.section
+            ? S.sections[g.section] : null
+          const ours = g.section === 'ours'
           return (
-            <div key={g.id} className="card overflow-hidden">
+            <div key={`s-${g.id}`} className="contents">
+            {sec && (
+              <div className={gi === 0 ? 'mb-1' : 'mt-8 mb-1 pt-7 border-t-2'}
+                style={gi === 0 ? undefined : { borderColor: ours ? 'var(--status-warning)' : 'var(--grid)' }}>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5"
+                  style={{ color: ours ? 'var(--status-warning)' : 'var(--text-muted)' }}>
+                  {ours ? 'Not town information' : 'Primary documents'}
+                </p>
+                <h3 className="text-lg sm:text-xl font-bold tracking-tight mb-2">{sec.title}</h3>
+                <p className="text-[13.5px] leading-relaxed max-w-3xl"
+                  style={{ color: 'var(--text-secondary)' }}>{sec.blurb}</p>
+              </div>
+            )}
+            <div className="card overflow-hidden">
               <button
                 onClick={() => setOpen(open === g.id ? null : g.id)}
                 aria-expanded={isOpen}
@@ -226,6 +259,7 @@ export function SourceIndex() {
                   <ul>{g.items.map(it => <Row key={it.path} it={it} />)}</ul>
                 </div>
               )}
+            </div>
             </div>
           )
         })}

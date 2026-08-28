@@ -1,6 +1,6 @@
 {
  "generated": "2026-08-28",
- "commit": "e1f25d3",
+ "commit": "dbd4ce8",
  "origins": [
   {
    "id": "school",
@@ -23,13 +23,29 @@
    "url": null
   },
   {
+   "id": "request",
+   "name": "Obtained from the Town by records request",
+   "url": null
+  },
+  {
    "id": "us",
    "name": "Built by this project",
    "url": null
   }
  ],
+ "sections": {
+  "theirs": {
+   "title": "Published by the town, the district and the state",
+   "blurb": "Primary documents. We did not write any of these, we did not commission them, and none of them was obtained by request — every one was already public. Where a document is unreadable or says something inconvenient, it is here anyway."
+  },
+  "ours": {
+   "title": "Written by this project, not by the town",
+   "blurb": "Everything below this line is ours. It is not town information, it carries no official standing, and nobody at the district or the Town has reviewed or approved it. It is one resident’s reading of the documents above, published so it can be argued with — which means checked against those documents, and disagreed with where the reading is wrong."
+  }
+ },
  "groups": [
   {
+   "section": "theirs",
    "id": "district-budget",
    "origin": "school",
    "title": "The district budget, line by line",
@@ -154,6 +170,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "town-budget",
    "origin": "town",
    "title": "Town budget, revenue and the override",
@@ -246,6 +263,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "quarterly",
    "origin": "town",
    "title": "Quarterly financial reports, FY26 Q3",
@@ -256,6 +274,7 @@
      "title": "Special revenue funds, 31 March 2026",
      "stars": 3,
      "what": "Every special revenue and revolving fund the town holds, with opening balance, receipts, spending and closing balance. Includes the special education circuit breaker account, which appears in no budget document.",
+     "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 56447,
      "url": "/docs/q3-fy26/town-special-revenue-fy26-q3.xlsx",
@@ -268,6 +287,7 @@
      "title": "Trust, agency and stabilization funds, 31 March 2026",
      "stars": 3,
      "what": "All stabilization and trust fund balances — general stabilization, OPEB, vehicle and equipment, conservation, and the rest.",
+     "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 27464,
      "url": "/docs/q3-fy26/town-trust-agency-fy26-q3.xlsx",
@@ -280,6 +300,7 @@
      "title": "Finance Director’s memo to the Finance Committee",
      "stars": 3,
      "what": "The covering memo, dated 11 August 2026. Reports revenue and expenditure against budget, and gives the finance department’s own account of why quarterly reporting had lapsed.",
+     "byRequest": true,
      "kind": "Document",
      "bytes": 20003,
      "url": "/docs/q3-fy26/fincom-memo-fy26-q3.docx",
@@ -290,6 +311,7 @@
      "title": "General fund revenue, 31 March 2026",
      "stars": 2,
      "what": "Revenue collected against budget by account. Local receipts came in at 116% of budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 305433,
      "url": "/docs/q3-fy26/town-general-fund-revenue-fy26-q3.pdf",
@@ -302,6 +324,7 @@
      "title": "General fund expenditures, 31 March 2026",
      "stars": 2,
      "what": "Spending against budget by department, including the school department line.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 238914,
      "url": "/docs/q3-fy26/town-general-fund-expenditures-fy26-q3.pdf",
@@ -314,6 +337,7 @@
      "title": "Sewer enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 1453079,
      "url": "/docs/q3-fy26/ef-sewer-expenditures-fy26-q3.pdf",
@@ -326,6 +350,7 @@
      "title": "Sewer enterprise fund — revenue",
      "stars": 1,
      "what": "Enterprise funds are self-supporting and separate from the general fund. Included for completeness.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 1097935,
      "url": "/docs/q3-fy26/ef-sewer-revenue-fy26-q3.pdf",
@@ -338,6 +363,7 @@
      "title": "Cable and broadband enterprise fund — revenue",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 826872,
      "url": "/docs/q3-fy26/ef-peg-access-revenue-fy26-q3.pdf",
@@ -350,6 +376,7 @@
      "title": "Solid waste enterprise fund — revenue",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 824584,
      "url": "/docs/q3-fy26/ef-solid-waste-revenue-fy26-q3.pdf",
@@ -362,6 +389,7 @@
      "title": "Cable and broadband enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 240106,
      "url": "/docs/q3-fy26/ef-peg-access-expenditures-fy26-q3.pdf",
@@ -374,6 +402,7 @@
      "title": "Water enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 233773,
      "url": "/docs/q3-fy26/ef-water-expenditures-fy26-q3.pdf",
@@ -386,6 +415,7 @@
      "title": "Water enterprise fund — revenue",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 233666,
      "url": "/docs/q3-fy26/ef-water-revenue-fy26-q3.pdf",
@@ -398,6 +428,7 @@
      "title": "Solid waste enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
+     "byRequest": true,
      "kind": "PDF",
      "bytes": 233543,
      "url": "/docs/q3-fy26/ef-solid-waste-expenditures-fy26-q3.pdf",
@@ -410,6 +441,7 @@
      "title": "Finance Committee presentation, 13 August 2026",
      "stars": 1,
      "what": "The slides that accompanied the memo.",
+     "byRequest": true,
      "kind": "Slides",
      "bytes": 51640,
      "url": "/docs/q3-fy26/fincom-deck-fy26-q3.pptx",
@@ -418,16 +450,18 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "school-funds",
-   "origin": "town",
+   "origin": "request",
    "title": "School funds held outside the budget",
-   "blurb": "Revolving and gift accounts that belong to the schools but never appear in the operating appropriation.",
+   "blurb": "Revolving and gift accounts that belong to the schools but never appear in the operating appropriation. Obtained by records request, and a record of money actually received and spent rather than budgeted.",
    "items": [
     {
      "path": "xlsx/school-funds-fy26.xlsx",
      "title": "School gift, athletics and choice funds, FY26 year-end",
      "stars": 3,
      "what": "Full-year reconciliation of three funds: opening balance, revenue by source, spending by category, closing balance. The only place actual athletics fee collections appear — $188,944 in FY26.",
+     "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 17069,
      "url": "/docs/xlsx/school-funds-fy26.xlsx",
@@ -438,6 +472,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "tax-base",
    "origin": "town",
    "title": "Tax base, Chapter 70 and peers",
@@ -506,6 +541,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "contracts",
    "origin": "school",
    "title": "Union contracts and salary schedules",
@@ -647,6 +683,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "peers",
    "origin": "peers",
    "title": "What neighbouring districts did",
@@ -727,6 +764,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "fees",
    "origin": "school",
    "title": "Fees and program costs",
@@ -759,6 +797,7 @@
    ]
   },
   {
+   "section": "theirs",
    "id": "business",
    "origin": "town",
    "title": "Business registrations",
@@ -791,6 +830,7 @@
    ]
   },
   {
+   "section": "ours",
    "id": "analyses",
    "origin": "us",
    "title": "Our analyses",
@@ -859,6 +899,7 @@
    ]
   },
   {
+   "section": "ours",
    "id": "derived",
    "origin": "us",
    "title": "Built by this project",
