@@ -71,7 +71,7 @@ transport) ran $3,844,889 → $4,592,473 FY23→FY26 = **6.1%/yr**. SPED transpo
 $320,244 → $649,953 = **+103% in four years**; the district itself budgeted it at +10%
 for FY27 while the model blends all transport at 6%.
 
-The concept: the six buckets are modelled as **cash-limited** — you set an amount and
+The concept: the six buckets are modeled as **cash-limited** — you set an amount and
 that is what gets spent. SPED is **demand-led**: the entitlement sets the cost and the
 appropriation only records it. A demand-led line inside a cash-limited model always
 understates, because the model cannot represent caseload, which is the thing that
@@ -128,7 +128,7 @@ mention it.
 
 It is fragile in one specific way: it only works if placements genuinely come back
 in-district and stay. If a parent rejects the in-district program at a Team meeting, the
-district pays the tuition **and** keeps the paras. Downside-only. Worth modelling as a
+district pays the tuition **and** keeps the paras. Downside-only. Worth modeling as a
 scenario.
 
 ### 1.5 Compliance exposure is already on the public record
@@ -370,7 +370,7 @@ Recorded, not yet implemented — deliberately.
 - Out-of-district **placement counts** by year, not just dollars. Dollars ÷ count gives
   the average tuition, which is what actually escalates.
 - FY26 year-end actuals on 9300/9400 — did the $1.53M committed hold?
-- In-district SPED enrolment and the district SPED rate against the Chapter 70
+- In-district SPED enrollment and the district SPED rate against the Chapter 70
   foundation budget's assumed rate. Where actual exceeds the assumption the town eats
   100% of the difference, and a hold-harmless district never catches up.
 - Whether the FY27 tuition line is gross or net of circuit breaker (§2.1).
@@ -468,7 +468,7 @@ which the model does not currently show either way.
 **Deep — engine-level, everything downstream moves:**
 `model/rates.ts` (the six-bucket escalator), `model/engine.ts`. SPED currently splits
 across `salaries` / `transport` / `sped_tuition` at three rates none of which match its
-behaviour. Either a seventh bucket or a SPED-specific rate. Touching this moves
+behavior. Either a seventh bucket or a SPED-specific rate. Touching this moves
 `YearChart`, `Magnitude`, `CutLine`, `Forever`, `LevelVsSlope`, `Walkthrough` and the
 headline automatically.
 

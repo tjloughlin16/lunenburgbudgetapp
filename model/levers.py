@@ -7,7 +7,7 @@ Dollar figures are from the FY27 adopted budget unless noted.
 ADMIN_TOTAL = 2_633_246          # every administration line, FY27 balanced
 ADMIN_CENTRAL = 1_040_389        # superintendent, business, HR, legal, admin tech, directors
 ADMIN_BUILDING = 1_183_773       # the four principals' offices and their secretaries
-TECH_TOTAL = 638_675             # contracts, licences, device leases, tech personnel
+TECH_TOTAL = 638_675             # contracts, licenses, device leases, tech personnel
 HEALTH_TOTAL = 3_994_071         # FY27 balanced
 TRANSPORT_GENED = 1_053_360
 TRANSPORT_SPED = 649_953
@@ -225,14 +225,14 @@ LEVERS = [
       benchmark='DESE puts Lunenburg administration at $1,158,507 in FY24 — below every '
                 'peer district except Ashburnham-Westminster'),
 
- dict(id='tech_cut', name='Software, licences & devices', kind='saving',
+ dict(id='tech_cut', name='Software, licenses & devices', kind='saving',
       unit='% of technology spend', max=60, step=5, default=0, isPercent=True,
       basis=TECH_TOTAL,
       cap=TECH_TOTAL * 0.6,
       what=f'Technology totals ${TECH_TOTAL:,}: ${185_065:,} device leases, '
            f'${154_981:,} administrative contracts, ${55_230:,} networking, '
            f'${13_800:,} guidance software, plus per-school contracts and tech staff.',
-      caveat='Real money and genuinely reviewable — duplicate licences are common. But '
+      caveat='Real money and genuinely reviewable — duplicate licenses are common. But '
              'state testing, IEP management, student information and payroll all run on '
              'these systems, and devices that are not replaced still have to be repaired. '
              'Ashburnham-Westminster cut technology 5.8%, not 60%.',

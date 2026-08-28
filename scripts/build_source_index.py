@@ -157,7 +157,7 @@ GROUPS = [
              'The omnibus by department under all three funding scenarios — what each '
              'override tier would have bought, department by department.'),
             ('pdf/town-fy27-detailed-budget.pdf', 'Detailed town budget by line', 2,
-             'Line-item town budget by organisation and object code, including the Monty '
+             'Line-item town budget by organization and object code, including the Monty '
              'Tech assessment.'),
             ('pdf/town-atm-2026-booklet-warrant.pdf', 'Annual Town Meeting booklet and warrant, 2026', 2,
              'The full 52-page warrant, including the revolving fund authorisations under '
@@ -236,11 +236,11 @@ GROUPS = [
              'FY18–FY23, assessed value by class, average single-family bills back to '
              'FY19, and excess levy capacity — series that appear nowhere else.'),
             ('xlsx/ch70-fy27-summary.xlsx', 'DESE Chapter 70 summary, FY27', 3,
-             'Foundation enrolment, foundation budget, required local contribution, Chapter '
+             'Foundation enrollment, foundation budget, required local contribution, Chapter '
              '70 aid and required net school spending, for every district in the state.'),
             ('xlsx/dese-all-districts.xlsx', 'DESE per-pupil expenditures, FY2018–FY2024', 3,
              'Spending by category and per pupil, Lunenburg against eleven peer districts, '
-             'with enrolment. Note: this is in-district expenditure, which by DESE’s '
+             'with enrollment. Note: this is in-district expenditure, which by DESE’s '
              'definition excludes out-of-district tuition.'),
             ('pdf/town-revenue-prop25-presentation.pdf', 'Finance Committee deck on Proposition 2½', 2,
              'Levy ceiling against levy limit against actual levy, and the state analysis '
@@ -307,7 +307,7 @@ GROUPS = [
              'A $64,000 deficit at 3% growth against $1.5M at 5%. Roughly 30% of students '
              'receive special education, far above the state average.'),
             ('peers/wachusett-fy27-budget-presentation.pdf', 'Wachusett FY27 budget presentation', 2,
-             'Member-town assessments, enrolment by town, and a discretionary contribution '
+             'Member-town assessments, enrollment by town, and a discretionary contribution '
              'up 9.21%.'),
         ],
     },
@@ -676,8 +676,8 @@ def main():
                      'year-end reports. Reached by walking the budget hub, town meetings '
                      'and finances, and the finance-adjacent department pages rather than '
                      'by enumerating the document store, which would have meant thousands '
-                     'of files about dog licences.', 'town', catalogued_hashes),
-        mirror_group('dese', 'dese', 'State enrolment data',
+                     'of files about dog licenses.', 'town', catalogued_hashes),
+        mirror_group('dese', 'dese', 'State enrollment data',
                      'Lunenburg’s selected-population counts from the state, FY19 to FY26 '
                      '— {n} files. The count of students with disabilities is the one '
                      'quantity the budget cannot supply: special education spending is '

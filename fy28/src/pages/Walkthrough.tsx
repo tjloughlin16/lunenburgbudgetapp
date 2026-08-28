@@ -79,7 +79,7 @@ export function Walkthrough({ onJump }: {
           *
           * "The school budget" is whichever one the reader is already angry about, and a
           * headline that could be any town's is the wrong first sentence for an argument
-          * that only holds for this one. The brand colour is the same one the wordmark
+          * that only holds for this one. The brand color is the same one the wordmark
           * uses, so the town's name reads as the town's name and not as a link. */}
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
           Why <span style={{ color: 'var(--brand)' }}>Lunenburg&rsquo;s</span> school
@@ -173,7 +173,7 @@ export function Walkthrough({ onJump }: {
           Everything here turns on one phrase that budget documents use and nobody
           explains. <strong>Level service</strong> means the same staff, the same buses,
           the same buildings, the same {LEVEL_SERVICE.enrollment.toLocaleString()} children.
-          Nobody is hired. Nothing is added. No programme comes back.
+          Nobody is hired. Nothing is added. No program comes back.
         </Say>
         <Plate label="What standing still costs" figures={[
           { v: usdShort(LEVEL_SERVICE.fy27), k: 'the town gave the schools this year', cite: 'fy27-approp' },

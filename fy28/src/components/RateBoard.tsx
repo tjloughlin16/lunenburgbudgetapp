@@ -344,7 +344,7 @@ function Verdicts({ verdict, blended, revGrowth, longRun, years, cut, overrideLe
  *  controls the reader cannot see at the same time as the result — the year and the glyph
  *  carry it, and the amount appears only where there is room for it.
  *
- *  Never colour alone: glyph, amount where it fits, and full text for a screen reader. */
+ *  Never color alone: glyph, amount where it fits, and full text for a screen reader. */
 function YearStatus({ years, compact }: {
   years: ReturnType<typeof run>; compact?: boolean
 }) {
@@ -356,7 +356,7 @@ function YearStatus({ years, compact }: {
        * figure, one above the other, twelve times — which made the strip about as tall as
        * the chart it sits above and spent the room's screen on layout rather than on
        * controls. Laid out along the line it reads the same and costs a third of the
-       * height. The glyph stays: status is never carried by the colour alone. */}
+       * height. The glyph stays: status is never carried by the color alone. */}
       <ol className="grid grid-cols-6 sm:grid-cols-12 gap-1"
         aria-label="Whether each year is funded">
         {years.map(y => {
@@ -463,9 +463,9 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
           <div className="w-[76px] sm:w-[104px] shrink-0 flex flex-col gap-2 pt-1">
             <div className="flex flex-col gap-1.5 text-[10px] leading-none"
               style={{ color: 'var(--text-secondary)' }}>
-              <Key colour="var(--series-cost)" label="Cost" />
-              <Key colour="var(--series-revenue)" label="Revenue" />
-              {touched && <Key colour="var(--axis)" label="As projected" dashed />}
+              <Key color="var(--series-cost)" label="Cost" />
+              <Key color="var(--series-revenue)" label="Revenue" />
+              {touched && <Key color="var(--axis)" label="As projected" dashed />}
             </div>
             <button onClick={onTogglePin} aria-pressed={pinned}
               className="text-[10px] font-semibold text-left leading-tight"
@@ -499,15 +499,15 @@ function Curves({ years, baseline, touched, compact, pinned, onTogglePin }: {
 }
 
 /** One line of the chart, named where there is room to name it. */
-function Key({ colour, label, dashed }: {
-  colour: string; label: string; dashed?: boolean
+function Key({ color, label, dashed }: {
+  color: string; label: string; dashed?: boolean
 }) {
   return (
     <span className="inline-flex items-center gap-1 whitespace-nowrap">
       <span aria-hidden="true" className="inline-block w-3 h-[2px]"
         style={dashed
-          ? { backgroundImage: `repeating-linear-gradient(to right, ${colour} 0 3px, transparent 3px 5px)` }
-          : { background: colour }} />
+          ? { backgroundImage: `repeating-linear-gradient(to right, ${color} 0 3px, transparent 3px 5px)` }
+          : { background: color }} />
       {label}
     </span>
   )

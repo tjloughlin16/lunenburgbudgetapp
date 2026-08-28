@@ -58,7 +58,7 @@ variable in every scenario the model produces.
 Neither the FY27 budget documents nor the addendum mention **athletic user fees**. At
 Winchester/Bridgewater-Raynham rates ($600–$1,000/sport) and a plausible 300–400
 participations, fees could offset **$180k–$400k** of the $451,830 athletics cost. This
-is worth modelling as an explicit lever, since it materially changes whether athletics
+is worth modeling as an explicit lever, since it materially changes whether athletics
 survives the first two years of cuts.
 
 ---

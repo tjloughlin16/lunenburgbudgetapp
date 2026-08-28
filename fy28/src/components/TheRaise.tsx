@@ -75,7 +75,7 @@ export function TheRaise() {
 
           {/* the same span again, coloured only by whether it is paid for.
               The segmented bar answers "who spends it" and cannot answer "where does this
-              stop working", because the eye has to find a thin mark among six colours.
+              stop working", because the eye has to find a thin mark among six colors.
               This one carries the verdict and nothing else. */}
           <div className="flex h-6 rounded-b-lg overflow-hidden">
             <div className="flex items-center justify-start pl-2"
@@ -254,7 +254,7 @@ export function TheRaise() {
  *
  *  Now every line gets the same picture the whole budget got — green up to what it can
  *  afford, red past it, with a tick where the affordable amount ends. Bars share one
- *  dollar scale, so length is what the line costs and colour is whether it fits. Health
+ *  dollar scale, so length is what the line costs and color is whether it fits. Health
  *  insurance is the shorter bar and the redder one, which is the entire point and was
  *  invisible in the ranking. */
 function WithinShare() {

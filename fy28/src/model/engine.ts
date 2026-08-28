@@ -152,7 +152,7 @@ export const MODEL = raw as unknown as {
     plans: { id: string; name: string; deductible: string; network: string
              family: number; individual: number }[]
     townShare: number; rateIncrease: number
-    enrolment: Record<string, number>; familyShare: number
+    enrollment: Record<string, number>; familyShare: number
     constraints: string[]; budget: number
   }
   headlines: { id: string; label: string; value: string; sub: string

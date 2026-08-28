@@ -48,7 +48,7 @@ const S = raw as unknown as {
 const size = (b: number) =>
   b >= 1e6 ? `${(b / 1e6).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1e3))} KB`
 
-/** Weight is stated in words, never by colour or a row of stars alone — the whole point
+/** Weight is stated in words, never by color or a row of stars alone — the whole point
  *  of the label is that somebody deciding what to read can act on it. */
 const WEIGHT: Record<number, { word: string; glyph: string; color: string }> = {
   3: { word: 'Load-bearing', glyph: '●', color: 'var(--brand)' },

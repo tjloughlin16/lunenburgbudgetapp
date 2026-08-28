@@ -32,7 +32,7 @@ Proposition 2½ caps the levy at 2.5%, costs rise faster, and two things compoun
 different speeds pull apart for ever.
 
 The cleanest measure of the cost rate is the district's own. **Level service** is its
-arithmetic for what the same staff, the same programmes and the same children cost one
+arithmetic for what the same staff, the same programs and the same children cost one
 year later. That is the definition of an escalator, and it needs no assumption from us.
 
 | | |
@@ -123,7 +123,7 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As modelled, $700,142 + 8% | $613,238 | — |
+| As modeled, $700,142 + 8% | $613,238 | — |
 | Midway, $1,000,000 | $857,084 | **+$243,846** |
 | Back to the FY25 budget, $1,164,824 | $1,021,908 | **+$408,670** |
 | Back to the FY26 budget, $1,291,293 | $1,148,377 | **+$535,139** |
@@ -152,6 +152,55 @@ recurring rate is 6.23%, not 3.98%.
 
 ---
 
+## Two things learned after this was written
+
+### The pay rise is not the story. There is no special education contract.
+
+Special education staff are paid under the **same two agreements as everyone else** —
+professional staff under the teachers' contract, aides under the paraprofessionals'. There
+is no special education unit and no special education pay rate.
+
+Weighting each part of the line by the contract that governs it:
+
+| bargaining unit | share of the line | their contract |
+|---|---:|---|
+| Professional staff (LEA) | 52% | 3.5% FY27, plus steps |
+| Paraprofessionals (AFSCME 503) | 33% | 2.0% FY28, plus steps |
+| Transport (vendor) | 12% | vendor contract |
+| Substitutes, supplies, legal | 3% | not bargained |
+
+**If every one of them rose only by its contract percentage, the line would rise 2.48%.**
+It rose more than that. The difference is not a pay rise — it is more staff.
+
+So describing this as a single growth rate conflates price with quantity. Special education
+staff do not get bigger raises than anyone else. They are in the same units.
+
+### And the number of students has not grown
+
+The state publishes the count. Lunenburg, students with disabilities as of 1 October:
+
+| FY | students | % of enrollment |
+|---|---:|---:|
+| 2019 | 277 | 16.7% |
+| 2022 | 227 | 14.1% |
+| 2026 | **258** | **16.3%** |
+
+Over seven years the count **fell 6.9%**, and the share of enrollment is essentially where
+it was in FY19. Over the last three years it rose 10.3%, so the direction depends entirely
+on where you start.
+
+That cuts against a simple "caseload is growing" reading. But the district's own FY27
+presentation to the Finance Committee shows, for FY23 to FY26, full inclusion 156 to 174
+and **sub-separate programs 30 to 43 — up 43%**. Sub-separate is the intensive end.
+
+Those can both be true if the **mix shifted toward intensity** rather than the count
+growing: roughly the same number of children, more of them needing more support. That
+would explain a staffing line rising faster than a student count. It is the most likely
+reading and it is not proven — the two sources count different things and neither
+publishes staff per student.
+
+---
+
 ## What would settle it
 
 1. **The FY28 out-of-district tuition line**, when the district publishes it. If it holds
@@ -161,11 +210,18 @@ recurring rate is 6.23%, not 3.98%.
    placed out of district, year by year, would say whether the reduction is a change in
    need, a change in provision, or a change in budgeting.
 3. **Whether the paraprofessional positions were filled.** A budget line is an intention.
+4. **Special education enrollment by program type, as numbers rather than a chart image.**
+   The count is flat over seven years while intensive placements appear to be up 43%. If
+   the mix really is shifting, that is the mechanism behind the whole thing, and it is
+   currently readable only off a picture.
 
 ---
 
 ## Sources
 
-All from `xlsx/fy27-proposals.xlsx`, the FY27 budget workbook, columns `fy25_budget`,
-`fy26_final`, `fy27_level_service` and `fy27_balanced`. The paraprofessional escalation
-rate is from `contracts/pdf/paraprofessional-fy26-fy28.pdf`.
+Budget figures from `xlsx/fy27-proposals.xlsx`, the FY27 budget workbook, columns
+`fy25_budget`, `fy26_final`, `fy27_level_service` and `fy27_balanced`. Contract rates from
+`contracts/pdf/paraprofessional-fy26-fy28.pdf` and `contracts/pdf/dese-teacher-contract.pdf`.
+Student counts from `dese/selected-populations.csv`, pulled from the state's own report,
+and from the FY27 presentation to the Finance Committee in the mirrored district budget
+page — which carries them as a chart image, read by optical character recognition.

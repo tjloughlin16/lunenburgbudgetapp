@@ -181,7 +181,7 @@ Whether FY26's overrun held through June, or whether a placement ended and it ca
 into line. The year-end figures would settle it.
 
 **CROSSES.** This is the best evidence we have that out-of-district tuition should be
-modelled as a *range* rather than one number, and it supports the argument on the special
+modeled as a *range* rather than one number, and it supports the argument on the special
 education page from a completely different direction than the growth rate does.
 
 *What to change:* give the tuition line a plausible band instead of a single rate, and say

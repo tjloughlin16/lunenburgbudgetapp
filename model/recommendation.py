@@ -99,9 +99,9 @@ PACKAGE = [
           'fastest-growing lines in the budget.',
       difficulty='School Committee vote. Expect more car traffic at the secondary campus. '
                  'Rider counts are not published, so the yield is our estimate.'),
- dict(id='tech_cut', name='Technology & licence audit — 12%',
+ dict(id='tech_cut', name='Technology & license audit — 12%',
       value=round(TECH_TOTAL * 0.12),
-      why='Duplicate and unused licences are common and nobody loses a teacher. '
+      why='Duplicate and unused licenses are common and nobody loses a teacher. '
           'Ashburnham-Westminster took 5.8%; 12% assumes a real audit, not a trim.',
       difficulty='Administrative. Needs someone with time to run it — itself an argument '
                  'against gutting the business office.'),

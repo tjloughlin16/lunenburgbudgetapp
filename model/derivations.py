@@ -237,7 +237,7 @@ LINE_RULES = [
 
  dict(id='tech_total',
       question='How did you calculate total technology spend?',
-      label='Technology — contracts, licences, devices and staff',
+      label='Technology — contracts, licenses, devices and staff',
       column='fy27_balanced', expected=638_675,
       selector=by_lines(*_TECH_LINES),
       answer='Technology is not one function group — it is scattered across eight of '

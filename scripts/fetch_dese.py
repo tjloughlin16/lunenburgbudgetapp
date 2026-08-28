@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pull Lunenburg's state enrolment and selected-population figures from DESE.
+"""Pull Lunenburg's state enrollment and selected-population figures from DESE.
 
 The count of students with disabilities is the quantity term the budget cannot supply.
 Special education spending is staff numbers times contract rates, and the budget only ever

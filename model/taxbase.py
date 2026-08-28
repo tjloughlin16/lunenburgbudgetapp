@@ -4,7 +4,7 @@ Everything here is derived from published figures:
   FY26 tax rate $14.39 / $1,000, single rate (Select Board declined a split rate)
   FY26 levy $35,819,996  -> total taxable value = levy / rate
   Residential ~91% of value; commercial + industrial + personal under 10%
-  DESE FY27 Chapter 70: foundation enrolment 1,599; foundation budget $23,089,580;
+  DESE FY27 Chapter 70: foundation enrollment 1,599; foundation budget $23,089,580;
     required local contribution $14,135,611; Chapter 70 aid $9,349,335;
     required net school spending $23,484,946
 """
@@ -51,7 +51,7 @@ HOMES_PER_PUPIL = round(LOCAL_COST_PER_PUPIL / SCHOOL_SHARE_OF_BILL, 2)
 #
 # The MIX is the default. It is a weighted blend of the plausible types, so one
 # "typical development" is what the town might realistically permit -- rather than
-# implying the answer is a distribution centre nobody is going to build here.
+# implying the answer is a distribution center nobody is going to build here.
 MIX_RECIPE = [
     ('small_biz', 0.35), ('restaurant', 0.15), ('storage', 0.10),
     ('plaza', 0.15), ('solar', 0.10), ('light_ind', 0.15),
@@ -64,7 +64,7 @@ _BASE = {
     'plaza':        dict(name='Retail plaza (20,000 sq ft)', value=4_000_000, plausible=True),
     'solar':        dict(name='Solar array (~5 MW)', value=5_000_000, plausible=True),
     'light_ind':    dict(name='Light industrial / warehouse (50k sq ft)', value=7_000_000, plausible=True),
-    'distribution': dict(name='Distribution centre (150k sq ft)', value=20_000_000, plausible=False),
+    'distribution': dict(name='Distribution center (150k sq ft)', value=20_000_000, plausible=False),
     'house':        dict(name='Single-family home (town average)', value=AVG_HOME_VALUE, plausible=False),
 }
 

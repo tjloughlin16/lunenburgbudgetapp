@@ -39,7 +39,7 @@ Every figure is one of: published by somebody, set by contract, fixed by statute
 estimate. A reader cannot judge the argument without knowing which.
 
 - `model/citations.py` carries the document and the basis for each headline figure.
-- Anything we estimated says so, in the app, in the citation, in that colour.
+- Anything we estimated says so, in the app, in the citation, in that color.
 - The source archive is split: published by others above the line, written by us below it,
   in those words.
 

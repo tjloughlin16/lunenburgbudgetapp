@@ -412,7 +412,7 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
 /** The projection as one still image, with nothing to drag.
  *
  *  It is the same two series the board in step six draws, and deliberately so — somebody
- *  who scrolls that far should recognise the shape rather than meet a new one. What it
+ *  who scrolls that far should recognize the shape rather than meet a new one. What it
  *  drops is every control, both axes' clutter and the tooltip: a reader who has not yet
  *  agreed that there is a problem is not going to discover it by hovering. The two lines
  *  are labelled where they end, and the only two numbers on it are the gap at each end of
@@ -489,8 +489,8 @@ function TheWedge() {
         </svg>
         <div className="sm:hidden flex flex-wrap gap-x-4 gap-y-1 pt-1 text-[12px]"
           style={{ color: 'var(--text-secondary)' }}>
-          <Key colour="var(--series-cost)" label="Cost of today’s services" />
-          <Key colour="var(--series-revenue)" label="Revenue the town may raise" />
+          <Key color="var(--series-cost)" label="Cost of today’s services" />
+          <Key color="var(--series-revenue)" label="Revenue the town may raise" />
         </div>
         {/* The two figures live under the plot rather than in it.
           *
@@ -659,7 +659,7 @@ function PanelCard({ panel, lo, hi }: {
       </div>
 
       {/* The site's own vocabulary for funded and not, so the three panels can be compared
-          with the board in step six without translating. Never colour alone. */}
+          with the board in step six without translating. Never color alone. */}
       <ol className="grid gap-0.5 mt-2"
         style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}
         aria-label="Whether each year is funded">
@@ -722,7 +722,7 @@ function PanelCard({ panel, lo, hi }: {
 /** Which of the three things an option is. The badge is the point of the panel.
  *
  *  Level and slope are both about the cost line. Building is neither: it is the only
- *  option here that moves the revenue line instead, which is why it gets its own colour
+ *  option here that moves the revenue line instead, which is why it gets its own color
  *  rather than being filed under one of the other two. */
 function Kind({ kind }: { kind: 'level' | 'slope' | 'revenue' }) {
   const map = {
@@ -740,11 +740,11 @@ function Kind({ kind }: { kind: 'level' | 'slope' | 'revenue' }) {
 }
 
 /** One line of a chart, named where the drawing itself cannot carry the name. */
-function Key({ colour, label }: { colour: string; label: string }) {
+function Key({ color, label }: { color: string; label: string }) {
   return (
     <span className="inline-flex items-center gap-1.5">
       <span aria-hidden="true" className="inline-block w-4 h-[2px] shrink-0"
-        style={{ background: colour }} />
+        style={{ background: color }} />
       {label}
     </span>
   )

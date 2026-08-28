@@ -50,7 +50,7 @@ PRESETS = {
     },
 }
 
-# How far a cascade will cut into each kind of programme before it stops.
+# How far a cascade will cut into each kind of program before it stops.
 #
 # This is OUR assumption, not a fact in any document, and it should be read as one. A
 # cascade needs somewhere to stop, so we gave it somewhere. Nothing we hold establishes
@@ -73,7 +73,7 @@ MANDATE_FLOOR = {'legal': 1000, 'contract': 100, 'discretionary': 0}
 FLOOR_NOTE = dict(
     isOurs=True,
     what='A cascade has to stop somewhere, so we made it stop. No document we hold '
-         'establishes a legal minimum for any of these programmes.',
+         'establishes a legal minimum for any of these programs.',
     evidence='Between the FY26 and FY27 budgets the district cut ten special education '
              'lines totalling $224,049 — including an entire Elementary School '
              'Psychologist, from $98,784 to nothing.',

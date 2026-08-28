@@ -89,7 +89,7 @@ def main():
     rows = [r for r in csv.DictReader(open(CSV)) if r['kind'] == 'line'
             and 'TOTAL' not in (r['line_item'] or '').upper()]
 
-    # ---- 1. every modelled bucket against its own history -------------------
+    # ---- 1. every modeled bucket against its own history -------------------
     agg = defaultdict(lambda: defaultdict(float))
     for r in rows:
         k = bucket_of(r)
@@ -113,7 +113,7 @@ def main():
             mark = '  UNDER-MODELLED'
             flags.append((k, assumed, obs))
         elif d is not None and d < -0.02:
-            mark = '  over-modelled'
+            mark = '  over-modeled'
             flags.append((k, assumed, obs))
         print(f'{k:<14}{assumed * 100:>8.1f}%'
               + (f'{obs * 100:>9.1f}%{d * 100:>8.1f}' if obs is not None else f"{'--':>9}{'--':>9}")

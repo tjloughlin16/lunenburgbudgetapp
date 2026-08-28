@@ -500,11 +500,11 @@ function Option({ n, k, v, sub, last, tone, flag }: {
   n: number
   k: string; v: string | null; sub: string; last?: boolean
   /** Marked where the choice costs somebody their job, so it is never mistaken for a
-   *  neutral third of a list. Colour is never the only signal — the flag says it too. */
+   *  neutral third of a list. Color is never the only signal — the flag says it too. */
   tone?: 'critical'
   flag?: string
 }) {
-  const colour = v === null ? 'var(--text-muted)'
+  const color = v === null ? 'var(--text-muted)'
     : tone === 'critical' ? 'var(--status-critical)' : 'var(--text-primary)'
   return (
     <li className={`py-1.5 ${last ? '' : 'border-b'}`} style={{ borderColor: 'var(--grid)' }}>
@@ -521,7 +521,7 @@ function Option({ n, k, v, sub, last, tone, flag }: {
             </span>
           )}
         </span>
-        <span className="font-bold tnum shrink-0" style={{ color: colour }}>
+        <span className="font-bold tnum shrink-0" style={{ color: color }}>
           {v ?? 'not possible'}
         </span>
       </span>
@@ -535,7 +535,7 @@ function Option({ n, k, v, sub, last, tone, flag }: {
 /** How much building a package is actually asking for.
  *
  *  A build rate in levy dollars is unarguable, which is the problem: dollars a year sound
- *  like a budget line rather than like a construction programme. In buildings, against
+ *  like a budget line rather than like a construction program. In buildings, against
  *  the best year the town has ever had and against everything commercial it has
  *  accumulated in its entire history, the ask sizes itself.
  *

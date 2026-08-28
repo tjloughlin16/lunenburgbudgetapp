@@ -318,7 +318,7 @@ const grow = (x: number, r: number, n = HORIZON) => x * (1 + r) ** n
 export interface Consequence {
   /** What the change is, in something other than a percentage. */
   text: string
-  /** The part that makes it hard, or impossible. Rendered in warning colour. */
+  /** The part that makes it hard, or impossible. Rendered in warning color. */
   limit?: string
 }
 

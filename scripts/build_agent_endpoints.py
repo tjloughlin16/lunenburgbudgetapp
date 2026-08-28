@@ -41,7 +41,7 @@ def main():
     for src, name, what in [
         (os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json'), 'model.json',
          'Every figure the site computes: the FY27 base by bucket, the growth assumptions, '
-         'the projection, the programme catalogue, the conclusions, and the citations.'),
+         'the projection, the program catalogue, the conclusions, and the citations.'),
         (os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json'), 'sources.json',
          'The document archive: every source, its group, its size, and the URL it is '
          'served from.'),

@@ -65,9 +65,13 @@ FY27 budgets $1,874,411 for special education paraprofessionals, up 39.4% from F
 $1,344,373. **A budget line is an intention.** If the positions went unfilled, the money
 was not spent and the whole make-or-buy reading needs revisiting.
 
-- **Ask:** Business Manager or HR
+- **Ask:** Business Manager or HR (Penney Borneman, pborneman@lunenburgschools.net)
 - **Wording:** *"How many special education paraprofessional FTEs were budgeted and how
   many were actually filled, for FY26 and FY27?"*
+- **Checked and not useful:** the district posts openings on SchoolSpring with no
+  district-specific URL, and a job board is a snapshot of what is open now rather than a
+  record of what was filled two years ago. A standing list of vacancies would hint at
+  difficulty hiring, but it cannot answer this. It has to be asked.
 
 ---
 
@@ -125,7 +129,7 @@ We hold in-district only, which by DESE's definition excludes out-of-district tu
 the fastest-growing special education cost. The peer comparison is therefore narrower than
 it looks, and the app now says so, but the fuller series would remove the caveat entirely.
 
-### 11. Special education enrolment by disability type and program
+### 11. Special education enrollment by disability type and program
 
 The FY27 FinCom deck has this as a chart image: full inclusion 156→174, sub-separate
 30→43, FY23 to FY26. **The underlying numbers, not the picture**, and ideally back further.
@@ -138,7 +142,7 @@ we cannot demonstrate it from a chart.
 
 ### 12. Chapter 70 foundation budget detail — the special education increment
 
-The state's foundation formula assumes a special education enrolment rate and funds it. If
+The state's foundation formula assumes a special education enrollment rate and funds it. If
 Lunenburg's actual rate exceeds the assumption, the town pays 100% of the difference and,
 as a hold-harmless district, never catches up.
 

@@ -87,7 +87,7 @@ data = dict(
     business=dict(formationHistory=FORMATION_HISTORY, summary=BIZ_SUMMARY,
                   categories=TOP_CATEGORIES),
     health=dict(plans=HEALTH_PLANS, townShare=TOWN_SHARE,
-                rateIncrease=RATE_INCREASE_FY27, enrolment=DEFAULT_ENROLMENT,
+                rateIncrease=RATE_INCREASE_FY27, enrollment=DEFAULT_ENROLMENT,
                 familyShare=DEFAULT_FAMILY_SHARE, constraints=HEALTH_CONSTRAINTS,
                 budget=SCHOOL_HEALTH_BUDGET),
     headlines=HEADLINES,

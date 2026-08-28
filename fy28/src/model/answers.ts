@@ -585,9 +585,9 @@ export const HEALTH_LEVERS = (() => {
       gross: Math.round(perMover),
       /** 25% of first-year savings go back to employees under c.32B §§21-23. */
       kept: Math.round(perMover * MODEL.health.townShare * 0.75),
-      onBroadest: MODEL.health.enrolment.bce,
+      onBroadest: MODEL.health.enrollment.bce,
       ifAll: Math.round(perMover * MODEL.health.townShare * 0.75
-        * MODEL.health.enrolment.bce),
+        * MODEL.health.enrollment.bce),
       familyGap: Math.round((broadest.family - narrower.family) * 12),
     },
     /** The opt-out the School Committee actually voted in March 2026. */

@@ -20,7 +20,7 @@ it matter?" It matters more than anything else we have looked at.
 Four things came out of it, in the order they were found:
 
 1. **Special education is ~24% of the budget and was 51% of all growth FY23→FY26**, while
-   enrolment fell. It had no line in the model and no page in the app.
+   enrollment fell. It had no line in the model and no page in the app.
 2. **The model could not see it.** Costs were bucketed by DESE function-code prefix, and
    two prefixes carry both kinds of cost — `2330` is paraprofessionals general *and*
    special education, `3300` is transportation of both. So ~$5.7M of caseload-driven
@@ -127,7 +127,7 @@ That single unknown is worth more than everything else in this pass:
 
 | circuit breaker drawn | FY28 gap |
 |---|---:|
-| $0 (as modelled) | $796,362 |
+| $0 (as modeled) | $796,362 |
 | $325,970 (FY26 receipts) | $470,392 |
 | ~$600,000 (FY27 projected) | ~$196,362 |
 
@@ -158,7 +158,7 @@ data" should have been "not in the columns I bothered to identify".
 
 **The athletics fee model is calibrated on a base that is 45% too low.** FY26 actual fee
 revenue was **$188,944** against `estimatedFy26Revenue: 130129`. Effective collection was
-$279.85 per high-school participation against a modelled $214. Scaling through, the
+$279.85 per high-school participation against a modeled $214. Scaling through, the
 self-funding fee falls $960 → ~$734 and peak revenue rises to ~$468,652 against a full
 program cost of $451,830 — which would flip conclusion 5 from "out of reach at any fee" to
 "reachable but self-defeating". **Not yet done.** It is the next self-contained piece and
@@ -188,9 +188,9 @@ every assumption to history and separately ranks every function group by size an
   in `salaries` at the contract rate — *structurally the identical error to special
   education*, one order of magnitude smaller. Student mental health is the second
   demand-led line hiding in a cash-limited bucket. FY27 already trims it to $334,965.
-- **`other` assumed 3%, observed 6.8%.** Under-modelled.
+- **`other` assumed 3%, observed 6.8%.** Under-modeled.
 - **Utilities assumed 5%, observed 13.8%,** and the year-by-year is a steady climb rather
-  than a spike: 372,516 → 442,328 → 491,581 → 548,450 → 605,511. Under-modelled.
+  than a spike: 372,516 → 442,328 → 491,581 → 548,450 → 605,511. Under-modeled.
 - **New growth revenue is assumed at $400,000 a year for ever** while the actual series
   runs 481,496 · 472,536 · 366,231 · 308,732 · 430,254 · **234,383**. The app concludes the
   commercial base is *shrinking* and simultaneously projects $400k of new growth annually;
