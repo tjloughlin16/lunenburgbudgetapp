@@ -26,35 +26,39 @@ RELEASES = [
     dict(
         tag='v3',
         date='2026-08-28',
-        title='Special education, separated out and argued properly',
-        short='special education separated out',
-        headline='About a fifth of the school budget was folded into salaries at the '
-                 'teachers’ contract rate. It now has its own section, its own rate, '
-                 'and the argument for that rate set out in full — including against a '
-                 'figure this project itself published.',
+        title='Special education, separated out and measured',
+        short='special education measured',
+        headline='About a fifth of the school budget was folded in with salaries and '
+                 'escalated at the teachers’ contract rate. It now has its own section, '
+                 'and a rate measured across eight to eleven of the district’s own '
+                 'budgets rather than taken from a contract.',
         changes=[
-            'A section on Bend the Curve. The district’s published cost increase for '
-            'next year is 3.98%; hold out-of-district tuition where FY26 had it and the '
-            'same arithmetic gives 6.23%. One line, budgeted down 46% in a single year, '
-            'bends the published rate down 2.25 points — and that fall can only '
-            'happen once.',
+            'A section on Bend the Curve, and two findings on the front page. The '
+            'district’s published cost increase for next year is 3.98%. Inside it, '
+            'out-of-district tuition falls 46% in a single year — a one-time drop, '
+            'not a slower rate of growth. Hold that line where FY26 had it and the same '
+            'budget rises 6.23%. That is the rate to plan against.',
 
-            'The year decomposed. Paraprofessionals up $530,038 against purchased '
-            'placements down $591,151, with everything else flat. Stated as what the '
-            'budget shows, alongside what it does not: that any child moved, or that the '
-            'two decisions were connected.',
+            'A contract sets what one person is paid. It says nothing about how many '
+            'people are employed — and on this line, that is where the movement is. '
+            'Special education aides are on an agreement giving 2.0% a year and their '
+            'budget has grown 12.78% for 10 budgets. Teachers are on one giving 3.5% and '
+            'theirs has grown 2.67%. Both bargained, both wrong, in opposite directions.',
 
-            'A rate that is ours, and an argument against our own earlier one. This line '
-            'was briefly escalated at 5.89% — what it did across two budgets. That '
-            'figure is one hiring decision: aides rose 39% in FY27, 108% of the whole '
-            'year’s increase, while every other part of special education fell. Those '
-            'aides are already inside the amount the model starts from, so the rate is now '
-            'what their contracts give, and the full range is printed beside it.',
+            'Out-of-district tuition is no longer escalated at all. Eleven budgets run '
+            'from $489,918 to $1,291,293 with no direction — the compound rate swings '
+            'from -46% to +12% depending only on which year you start counting. '
+            'There is no rate to measure, so the line is held flat and what it would cost '
+            'to be wrong is published as a table of priced scenarios.',
 
-            'The out-of-district tuition line priced at every level it could land at, as a '
-            'table rather than a slider, because nobody outside the district knows which '
-            'is right. And the state’s student counts for every year published, not '
-            'three chosen from eight.',
+            'Every budget line counted as special education is now listed, with the reason '
+            'each was counted, because the state has no account code for it and the total '
+            'is therefore ours. Publishing that list found English Language Learner costs '
+            'inside it, which are now removed.',
+
+            'The rate this line carries has changed four times in a day, and every version '
+            'is on the page with the reason it was wrong. A number whose history you '
+            'cannot see is one you have to take on trust.',
         ],
     ),
     dict(

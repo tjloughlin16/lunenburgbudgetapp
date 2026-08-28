@@ -14,6 +14,17 @@ not on the list.
 
 ---
 
+## What the archive answered on 28 August, and what it did not
+
+The mirrored budget documents turned three of these from "not obtainable" into "measured".
+Out-of-district tuition now has 11 budgets behind it, the aides 10, the teachers
+8 — all budget columns, one stage held constant, in
+`/data/*-history.csv`.
+
+**What that did not answer is the same thing it never could.** Every one of those series is
+dollars. None of them is children, and none is staff. The questions below are still the
+questions, and item 4 has become the most important of them.
+
 ## Tier 1 — these change conclusions
 
 ### 1. Out-of-district placement counts, by year, FY23 to FY27
@@ -65,9 +76,15 @@ Everything we hold for FY26 stops at **31 March 2026**. Four specific numbers:
 
 ### 4. Were the budgeted paraprofessional positions filled?
 
-FY27 budgets $1,874,411 for special education paraprofessionals, up 39.4% from FY26's
-$1,344,373. **A budget line is an intention.** If the positions went unfilled, the money
-was not spent and the whole make-or-buy reading needs revisiting.
+**Now the highest-value question in this file.** Since 28 August the whole in-district
+special education escalator rests on this line: it is 34% of the component and it is
+modelled at **12.78% a year**, measured across 10 budgets — $634,513 in FY18 to
+$1,872,411 in FY27, up in 8 of 9 years, R² 0.89.
+
+That is a headcount trend inferred entirely from dollars, because **a budget shows dollars
+per line and never shows people.** Everything the model does with this line assumes the
+budgeted money bought the budgeted staff. If a meaningful share of those positions went
+unfilled, the line is not measuring headcount at all and the rate needs revisiting.
 
 - **Ask:** Business Manager or HR (Penney Borneman, pborneman@lunenburgschools.net)
 - **Wording:** *"How many special education paraprofessional FTEs were budgeted and how

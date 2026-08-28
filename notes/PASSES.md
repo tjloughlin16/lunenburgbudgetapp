@@ -242,3 +242,100 @@ conservative. It over-states two lines and under-states three.
 **The habit worth keeping:** a figure typed into prose is the only thing here that can be
 silently wrong. Interpolate every number that comes from the model, and when a pass moves
 the model, grep the prose.
+
+
+---
+
+# Pass 3 — special education, measured instead of assumed
+
+28 August 2026. Branch `sped-v3`, targeting `v3`. Not deployed.
+
+## 3.1 What started it
+
+Special education was about a fifth of what the schools spend and had no section, while
+athletics — 1.7% — had three. Rule 5 exists because of that: follow magnitude, not
+actionability. "The district must place a child where the plan requires" reads like nothing
+to model, and a line nobody controls still sets the size of the problem.
+
+## 3.2 The thing that made the rest possible
+
+The archive shipped that morning — the district's whole budget page mirrored back to FY17.
+Nothing was built on it for a day. Then the question "is the FY27 jump in aides a step or a
+climb?" turned out to be answerable, and everything after that came from one script reading
+old budget PDFs.
+
+**`scripts/extract_budget_history.py`.** Budget columns only, and one budget stage held
+constant, which is the part that took the longest to see: a fiscal year does not have ONE
+budget figure for a line. Collaborative tuitions for FY25 were proposed at $369,415 in
+April 2024 and approved at $460,952 that June; FY26 was approved at $782,867 in March 2025
+and reported as a final budget of $302,663 a year later. A series that takes whichever
+number each document leads with is a walk across stages, not a trend.
+
+Validated by overlapping the FY27 workbook at three points per series and matching to the
+dollar. That is what makes the years the workbook does not reach worth trusting.
+
+## 3.3 What the series said
+
+| line | budgets | compound | R² | verdict |
+|---|---:|---:|---:|---|
+| Paraprofessionals | 10 | +12.78% | 0.89 | a climb, and their contract gives 2.0% |
+| Special education teachers | 8 | +2.67% | 0.84 | below their 3.5% contract |
+| Special education transport | 9 | +5.69% | 0.33 | weak; used as the least bad figure |
+| Out-of-district tuition | 11 | +0.66% | 0.10 | **no trend** — held flat |
+
+**The finding that generalises: a contract sets what one person is paid and says nothing
+about how many people are employed.** Both bargained groups have run away from their
+agreements, in opposite directions, and no settlement anywhere reaches the difference.
+
+**The test that did the work** is the compound rate by start year. Aides stay between
++11.5% and +17% wherever you begin. Tuition swings -45.8% to +11.8% on the same test —
+which is how you tell a trend from a scatter, and why one line is escalated and the other
+is not.
+
+## 3.4 The rate moved four times in a day
+
+2.48% → 5.89% → 2.57% → 6.80% → **6.49%**. Every version and its error is published.
+The compressed lesson: **two budget years cannot distinguish a step from a climb**, and
+"use the contract rate" is only conservative for a line a contract actually governs.
+
+Twice the correction moved the gap UP. That is not a reason to prefer the other answer,
+and the pages say so.
+
+## 3.5 What publishing the classification found
+
+The state has no account code for special education, so the total is ours. Listing all
+54 lines to make it checkable turned up **English Language Learner costs inside it** —
+"District Wide Specials (ELL)" sits in function 2320, which is otherwise therapeutic
+services. The rule took the group at its word and never read the line. Removed, and named
+in the excluded list.
+
+The lesson is rule 3's: a classification that is ours has to be visible enough to argue
+with, and the act of making it visible is what catches it.
+
+## 3.6 A bug worth remembering
+
+A bare "-" is how these sheets write zero, so reading it as one looked like an
+improvement. Several of the district's own labels contain a dash — "Special Education
+Transportation - System" — the rule fired inside the name, and every figure on the row
+shifted one place along. It silently corrupted a series that had already been validated.
+Reverted rather than patched. **A skipped row is visible; a shifted one is not.**
+
+## 3.7 Still open
+
+1. **The deploy decision.** Headline $552,621 → $634,068, a 15% move on a public number.
+2. **$920,007 of the line, 16.9% of it, is not measured** — therapeutic services,
+   psychologists, clerical. The speech lines gave three settled years, which is not enough.
+3. **Whether the budgeted aide positions were filled.** The whole in-district rate rests on
+   a headcount trend that no budget shows directly. `notes/DATA-WANTED.md` item 4, now the
+   highest-value question in that file.
+
+## 3.8 Standing checks added
+
+- `scripts/verify_sped_analysis.py` — recomputes every figure in the analysis and fails on
+  drift. Caught stale prose four times in one day, including a risk table priced against a
+  model that had moved under it by $200,245 on one row.
+- `scripts/extract_budget_history.py` — the series, rebuildable from the archive.
+
+**The habit worth keeping from this pass:** when an assumption is written down with "nothing
+can test this", check whether that is still true. It was true of three budget years. The
+archive made it false, and nobody noticed for a day.
