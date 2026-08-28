@@ -16,6 +16,7 @@ import { Disclose, Note } from './primitives'
  *  the reason the last block is as long as it is. */
 
 const S = MODEL.sped
+const T = S.tuitionTrend
 const pct = (v: number, d = 2) => `${(v * 100).toFixed(d)}%`
 const LEVY_CAP = 0.025
 
@@ -41,13 +42,20 @@ export function TheOneOff() {
         <strong>{usd(y.tuition_fy27)}</strong> for FY27 — down {usd(-y.tuition_change)},{' '}
         {pct(-y.tuition_rate, 0)}, in one year.
         <br /><br />
-        <strong style={{ color: 'var(--text-primary)' }}>That fall can happen once.</strong>{' '}
-        Placements can be brought home; there is no second {pct(-y.tuition_rate, 0)},
-        because there is not another {usd(-y.tuition_change)} left in the line to lose. It
-        is a <em>level</em> change — it drops the cost once and leaves the angle of the
-        curve alone. The published {pct(y.published)} therefore describes a year that
-        cannot repeat, and the rate a resident should plan against is{' '}
-        {pct(y.underlying)}.
+        <strong style={{ color: 'var(--text-primary)' }}>That fall is a level change, not
+        a rate.</strong> It drops the cost once and leaves the angle of the curve alone, so
+        the published {pct(y.published)} describes a year whose arithmetic does not carry
+        forward. The rate a resident should plan against is {pct(y.underlying)}.
+        <br /><br />
+        <strong style={{ color: 'var(--text-primary)' }}>What it is not is unprecedented.</strong>{' '}
+        An earlier version of this page said there could be no second{' '}
+        {pct(-y.tuition_rate, 0)}. Eleven budgets say otherwise: this line fell{' '}
+        {pct(-T.biggestFall[0], 1)} in FY{T.biggestFall[1] % 100} and then rose{' '}
+        {pct(T.biggestRise[0], 0)} in FY{T.biggestRise[1] % 100}. It has been as low as{' '}
+        {usd(T.low)} and as high as {usd(T.high)}, and {usd(y.tuition_fy27)} is{' '}
+        {pct(-T.vsMean, 0)} <em>below</em> its eleven-budget average of {usd(T.mean)} —
+        an ordinary year for this line rather than a floor. The section below draws the
+        whole series.
       </Note>
     </>
   )
@@ -447,6 +455,95 @@ export function WhatCounts() {
         The eight groups taken whole: {c.groups.join(' · ')}.
         The {named.length} lines caught by name: {named.map(l => l.item).join(' · ')}.
       </div>
+    </>
+  )
+}
+
+/** Eleven budgets for one line, and the reason no rate is drawn through them.
+ *
+ *  This exists because the model escalated this line at 8% a year on no stated basis at
+ *  all, and the archive turned out to reach far enough back to ask what it had really
+ *  done. The answer is that it has done nothing in particular, very loudly -- and a chart
+ *  is the only honest way to say that, because a single number cannot.
+ *
+ *  The R-squared is on the page deliberately. It is the one figure that turns "we could
+ *  not find a trend" into "there is no trend", and a reader who wants to check that we
+ *  did not simply give up can. */
+export function TuitionHistory() {
+  const h = S.tuitionHistory
+  if (!h.length) return null
+  const max = Math.max(...h.map(d => d.total))
+  const spread = S.tuitionTrend.cagrByStart.map(c => c.rate)
+
+  return (
+    <>
+      <div className="card p-4">
+        <div className="flex items-end gap-1.5" style={{ height: 160 }}>
+          {h.map(d => {
+            const extreme = d.total === T.low || d.total === T.high
+            return (
+              <div key={d.fy}
+                className="flex-1 flex flex-col items-center justify-end h-full">
+                <span className="text-[9.5px] tnum mb-1"
+                  style={{ color: 'var(--text-muted)' }}>
+                  {Math.round(d.total / 1000)}k
+                </span>
+                <div className="w-full rounded-t" style={{
+                  height: `${(d.total / max) * 100}%`,
+                  background: extreme ? 'var(--status-critical)' : 'var(--series-cost)',
+                  opacity: extreme ? 1 : 0.7 }} />
+                <span className="text-[9.5px] tnum mt-1"
+                  style={{ color: 'var(--text-muted)' }}>
+                  {`’${String(d.fy).slice(2)}`}
+                </span>
+              </div>
+            )
+          })}
+        </div>
+        {/* The mean as a stated number rather than a drawn line: a rule across bars
+            reads as a target, and this is not one. */}
+        <p className="text-[11px] mt-2" style={{ color: 'var(--text-muted)' }}>
+          Budgeted out-of-district tuition, {h.length} budgets, one budget stage held
+          constant throughout. Average {usd(T.mean)}. The extremes are marked.
+        </p>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-3 mt-4">
+        <Card label="The range it has run in" value={`${T.ratio.toFixed(2)}×`}
+          sub={`${usd(T.low)} in FY${T.lowFy % 100} to ${usd(T.high)} in FY${T.highFy % 100}.`} />
+        <Card label="Direction" value={`${T.up} up · ${T.down} down`}
+          sub={`A straight line through the ${T.n} has an R² of ${T.r2.toFixed(2)} — for
+                practical purposes, no relationship between the year and the amount.`} />
+        <Card label="Where FY27 sits" value={pct(T.vsMean, 0)}
+          sub={`Against the ${T.n}-budget average of ${usd(T.mean)}. Not a floor, and not
+                an outlier — an ordinary year for this line.`} />
+      </div>
+
+      <Note>
+        <strong style={{ color: 'var(--text-primary)' }}>So this line is held flat, and the
+        absence of a rate is the point.</strong> It used to be escalated at 8% a year, which
+        had no stated basis; the back-test flagged it as the worst-calibrated assumption in
+        the model. The obvious repair is to measure the rate instead — and the measurement
+        will not hold still:
+        <div className="mt-3 grid gap-x-6 gap-y-1 sm:grid-cols-2 text-[12px] tnum">
+          {S.tuitionTrend.cagrByStart.map(c => (
+            <div key={c.fy} className="flex justify-between">
+              <span style={{ color: 'var(--text-secondary)' }}>
+                starting from FY{c.fy % 100}
+              </span>
+              <span style={{ color: 'var(--text-muted)' }}>{pct(c.rate, 2)} a year</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3">
+          The same line, the same endpoint, {pct(Math.min(...spread), 1)} to{' '}
+          {pct(Math.max(...spread), 1)} depending only on which year you start counting.
+          A figure that moves that far on an arbitrary choice is not a measurement, and
+          publishing one would repeat the error corrected further up this page. What is
+          known about this line is its range, so the range is what gets published — priced,
+          below, at every level it has actually reached.
+        </div>
+      </Note>
     </>
   )
 }

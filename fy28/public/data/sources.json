@@ -845,9 +845,9 @@
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 13748,
+     "bytes": 20133,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 287,
+     "count": 431,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -931,6 +931,18 @@
      "count": 356,
      "unit": "rows",
      "textUrl": "/docs/data/lps-budget-lines.csv"
+    },
+    {
+     "path": "data/ood-tuition-history.csv",
+     "title": "Out-of-district tuition, eleven budgets",
+     "stars": 3,
+     "what": "What the district budgeted for out-of-district special education tuition, FY17 to FY27, read out of its own budget documents in the mirror above. Budget columns only, and one budget stage held constant throughout — a fiscal year has several budget figures for this line at different stages and they are far apart, so a series that took whichever number each document led with would be a walk across stages rather than a trend. Three of its years reproduce the FY27 workbook exactly. Rebuild with scripts/extract_tuition_history.py.",
+     "kind": "Data",
+     "bytes": 732,
+     "url": "/docs/data/ood-tuition-history.csv",
+     "count": 18,
+     "unit": "rows",
+     "textUrl": "/docs/data/ood-tuition-history.csv"
     },
     {
      "path": "MANIFEST.md",
@@ -3038,10 +3050,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 237,
+  "documents": 238,
   "groups": 14,
-  "bytes": 353510657,
-  "loadBearing": 25
+  "bytes": 353517774,
+  "loadBearing": 26
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district, and can be found again at the links above. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

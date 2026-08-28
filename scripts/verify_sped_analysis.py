@@ -94,8 +94,23 @@ for d in st:
     present(f'FY{d["fy"]} count', f"| {d['n']} ")
 present('series length', f'All {len(st)} years')
 
+print('\nOut-of-district tuition, eleven budgets')
+T = sped.tuition_trend()
+h = sped.tuition_history()
+present('budget count', f"{T['n']}, FY{h[0]['fy'] % 100} to FY{h[-1]['fy'] % 100}")
+present('low', money(T['low']))
+present('high', money(T['high']))
+present('ratio', f"{T['ratio']:.2f}")
+present('average', money(T['mean']))
+present('R-squared', f"R² = {T['r2']:.2f}")
+present('biggest fall', f"{-T['biggestFall'][0]*100:.1f}% in FY{T['biggestFall'][1] % 100}")
+present('biggest rise', f"{T['biggestRise'][0]*100:.0f}% in FY{T['biggestRise'][1] % 100}")
+for d in h:
+    present(f'FY{d["fy"]} budgeted', money(d['total']))
+
 print('\nFigures the document must NOT still contain')
-RETIRED = ['2.48%.', '$613,238', '$857,084', '$1,021,908', '$1,148,377']
+RETIRED = ['2.48%.', '$613,238', '$857,084', '$1,021,908', '$1,148,377',
+           'there is no second 46%']
 for r in RETIRED:
     # 2.48% survives inside the correction note, which explains why it is retired; what
     # must not survive is the sentence that used it as the model's floor.

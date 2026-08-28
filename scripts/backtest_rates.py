@@ -67,6 +67,11 @@ def num(row, col):
         return 0.0
 
 
+# Buckets whose assumption is deliberately not a measured rate, and why a short window
+# cannot assess them.
+NO_TREND = {'sped_tuition'}
+
+
 def cagr(a, b, years):
     return (b / a) ** (1 / years) - 1 if a > 0 and b > 0 else None
 
@@ -109,6 +114,17 @@ def main():
         obs = cagr(v[TRAIL[0]], v[TRAIL[1]], TRAIL_YEARS)
         d = None if obs is None else obs - assumed
         mark = ''
+        # A three-year window cannot judge a line with no trend in it. Out-of-district
+        # tuition is held flat on the strength of eleven budgets that range 2.6x with an
+        # R-squared of 0.10 (model/sped.py); comparing that to whichever direction the
+        # last three years happened to run would flag it for ever and mean nothing.
+        if k in NO_TREND:
+            mark = '  no trend to model — see sped.py and /data/ood-tuition-history.csv'
+            print(f'{k:<14}{assumed * 100:>8.1f}%'
+                  + (f'{obs * 100:>9.1f}%{d * 100:>8.1f}' if obs is not None
+                     else f"{'--':>9}{'--':>9}")
+                  + '   ' + ''.join(f'{v[c]:>12,.0f}' for c in YEARS) + mark)
+            continue
         if d is not None and d > 0.02:
             mark = '  UNDER-MODELLED'
             flags.append((k, assumed, obs))

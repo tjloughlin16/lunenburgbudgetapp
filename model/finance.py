@@ -24,7 +24,7 @@ ESCALATOR_GROUPS = {          # DESE function-code prefix -> escalator key
 # code put about $5.7M of special education staffing inside `salaries` at the teachers'
 # contract rate. That hid no money -- the total was always right -- but it averaged
 # together two lines that behave nothing alike.
-from sped import is_sped, RATE as SPED_RATE
+from sped import is_sped, RATE as SPED_RATE, TUITION_RATE
 
 DEFAULT_ASSUMPTIONS = dict(
     salaries=0.040,        # contractual steps + lanes + COLA
@@ -35,7 +35,13 @@ DEFAULT_ASSUMPTIONS = dict(
     # already inside this model's starting amount. See sped.py for the whole argument and
     # for the range published beside it.
     sped=SPED_RATE,
-    sped_tuition=0.080,    # out-of-district placements
+    # Out-of-district placements. Held FLAT, and that is a finding rather than a
+    # default: eleven budgets from FY17 to FY27 range from $489,918 to $1,291,293 with
+    # six years up and four down and a straight-line fit of R^2 = 0.10. The compound
+    # rate to FY27 runs from -45.78% to +11.78% depending only on which year you start
+    # it, so there is no rate here to measure. The risk is the range, and the range is
+    # priced scenario by scenario rather than hidden inside an escalator. See sped.py.
+    sped_tuition=TUITION_RATE,
     utilities=0.050,
     other=0.030,
     # revenue

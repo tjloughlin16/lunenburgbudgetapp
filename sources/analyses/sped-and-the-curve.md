@@ -192,13 +192,98 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $617,091 | — |
-| Midway back, $1,000,000 | $940,938 | **+$323,847** |
-| Back to the FY25 budget, $1,164,824 | $1,118,948 | **+$501,857** |
-| Back to the FY26 budget, $1,291,293 | $1,255,534 | **+$638,443** |
+| As the district budgeted it for FY27, $700,142 | $561,080 | — |
+| Midway back, $1,000,000 | $860,938 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,025,762 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,152,231 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
+
+---
+
+## What out-of-district tuition has actually done
+
+The model escalated this line at **8% a year** and nothing supported that number — its
+citation said only "our estimate", and the back-test flagged it as the worst-calibrated
+assumption in the model. Three budget years is not enough to do better. The archive's
+mirror of the district's budget page reaches back to FY17, and those documents carry lines
+9300 and 9400.
+
+**The extraction, and the trap in it.** Every one of those documents prints five or six
+columns and most are actual spending, so nothing here is taken by position: each document
+states its own columns and the script reads that header. Worse, and only visible once you
+look, **a fiscal year does not have one budget figure for this line**. Collaborative
+tuitions for FY25 were proposed at $369,415 in April 2024 and approved at $460,952 that
+June; FY26 was approved at $782,867 in March 2025 and reported as a final budget of
+$302,663 a year later. So the budget *stage* is held constant too. Three of the years below
+reproduce the FY27 workbook exactly, which is what makes the other eight worth trusting.
+
+| FY | budgeted | change | stage |
+|---|---:|---:|---|
+| 2017 | $655,534 | — | proposed |
+| 2018 | $760,270 | +16.0% | settled |
+| 2019 | $754,480 | -0.8% | settled |
+| 2020 | $865,746 | +14.7% | settled |
+| 2021 | $719,269 | -16.9% | settled |
+| 2022 | $818,716 | +13.8% | settled |
+| 2023 | $489,918 | -40.2% | settled |
+| 2024 | $501,239 | +2.3% | proposed |
+| 2025 | $1,164,824 | +132.4% | proposed |
+| 2026 | $1,291,293 | +10.9% | settled |
+| 2027 | $700,142 | -45.8% | proposed |
+
+### There is no trend. There is a range.
+
+| | |
+|---|---:|
+| Budgets | 11, FY17 to FY27 |
+| Low | $489,918 (FY23) |
+| High | $1,291,293 (FY26) |
+| Ratio | **2.64×** |
+| Average | $792,857 |
+| Years up / down | 6 / 4 |
+| Straight-line fit | **R² = 0.10** |
+
+The obvious repair for an unsupported 8% is to measure the rate instead. The measurement
+will not hold still:
+
+| compound rate to FY27 | |
+|---|---:|
+| from FY17 | +0.66% |
+| from FY18 | -0.91% |
+| from FY19 | -0.93% |
+| from FY20 | -2.99% |
+| from FY21 | -0.45% |
+| from FY22 | -3.08% |
+| from FY23 | +9.34% |
+| from FY24 | +11.78% |
+| from FY25 | -22.47% |
+| from FY26 | -45.78% |
+
+**-45.8% to +11.8% on the same line, with the same endpoint, depending only on
+which year you start counting.** A figure that moves that far on an arbitrary choice
+measures nothing. Publishing +0.66% because FY17 happens to be the first year the archive
+reaches would be the same error as escalating in-district special education at 5.89%.
+
+**So the line is held flat**, and the risk is published as a range of priced scenarios
+instead. That is the honest shape of what is known: nobody can say which direction this
+line moves next, and the useful thing to publish is what it costs to be wrong either way.
+
+### A correction this series forces
+
+An earlier version of this file said the FY27 fall was a level change that **could not
+repeat** — "there is no second 46%". That does not survive eleven budgets. This line fell
+**45.8% in FY27** and then rose **132% in FY25**. And
+$700,142 is **11.7% below** the 11-budget average of $792,857 — an ordinary
+year for this line, not a floor.
+
+What survives is the narrower claim, which is the one that matters to the curve: the fall
+is a **level** change, so the published 3.98% does not describe a recurring rate.
+What does not survive is the suggestion that the line has nowhere left to go.
+
+The series is published at `/data/ood-tuition-history.csv`, and
+`scripts/extract_tuition_history.py` regenerates it from the archive.
 
 ---
 

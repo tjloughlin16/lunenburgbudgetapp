@@ -330,6 +330,8 @@ def export():
         base=total(FY27BAL, is_sped), tuitionBase=total(FY27BAL, is_tuition),
         appropriation=total(FY27BAL),
         classified=classified(),
+        tuitionRate=TUITION_RATE,
+        tuitionHistory=tuition_history(), tuitionTrend=tuition_trend(),
         transportRates=dict(
             recent=TRANSPORT_RATE, twoYear=(649_953 / 445_328) ** 0.5 - 1,
             districtAssumption=0.10),
@@ -424,3 +426,86 @@ def classified():
                 total=sum(c['amount'] for c in counted),
                 byGroup=len([c for c in counted if c['basis'] == 'group']),
                 byName=len([c for c in counted if c['basis'] == 'name']))
+
+
+# ------------------------------------------------- out-of-district tuition, over time
+# The model escalated this line at 8% a year and nothing supported the number. Its
+# citation said only "our estimate", and the back-test flagged it as the worst-calibrated
+# assumption in the model -- assumed 8.0%, observed -22.5%.
+#
+# The archive's mirror of the district's budget page reaches back to FY17, and those
+# documents carry lines 9300 and 9400. `scripts/extract_tuition_history.py` reads them,
+# taking the column each document itself labels as a budget and holding the budget STAGE
+# constant -- a year has several budget figures at different stages and they are far
+# apart, so a series that takes whichever number each document leads with is a walk across
+# stages rather than a trend. Three of its years reproduce the FY27 workbook exactly,
+# which is what makes the other eight worth trusting.
+#
+# WHAT IT SHOWS: no trend. Eleven budgets ranging from $489,918 to $1,291,293 -- a factor
+# of 2.64 -- with six years up and four down and a straight-line fit of R^2 = 0.10.
+#
+# There is no rate here to measure, and that is the finding rather than a gap in it:
+#
+#     compound rate to FY27, by where you start it
+#         from FY17   +0.66%      from FY22   -3.08%
+#         from FY18   -0.91%      from FY23   +9.34%
+#         from FY20   -2.99%      from FY26  -45.78%
+#
+# A figure that swings from -45.78% to +11.78% on the choice of start year is not a
+# measurement of anything. Publishing 0.66% because FY17 happens to be the first year the
+# archive reaches would be the same error as escalating the in-district line at 5.89% --
+# an arbitrary choice wearing a measurement's clothes.
+#
+# So the line is held flat, and the risk is carried by the range instead, which is priced
+# in TUITION_SCENARIOS above. That is the honest shape of what is known: nobody can say
+# which direction this line moves next, and the useful thing to publish is how much it
+# would cost to be wrong in either.
+TUITION_RATE = 0.0
+TUITION_HISTORY_CSV = os.path.join(ROOT, 'sources/data/ood-tuition-history.csv')
+
+
+def tuition_history():
+    """The series, settled figures where a later document reports one."""
+    if not os.path.exists(TUITION_HISTORY_CSV):
+        return []
+    by_year = {}
+    for r in csv.DictReader(open(TUITION_HISTORY_CSV)):
+        by_year.setdefault(int(r['fy']), {})[r['stage']] = r
+    out = []
+    for fy in sorted(by_year):
+        r = by_year[fy].get('settled') or by_year[fy]['proposed']
+        out.append(dict(fy=fy, private=float(r['private']),
+                        collaborative=float(r['collaborative']),
+                        total=float(r['total']),
+                        stage='settled' if 'settled' in by_year[fy] else 'proposed'))
+    return out
+
+
+def tuition_trend():
+    """Whether the series has a direction. It does not, and this says so with numbers."""
+    h = tuition_history()
+    if len(h) < 3:
+        return {}
+    v = [d['total'] for d in h]
+    n = len(v)
+    xs = list(range(n))
+    mx, my = sum(xs) / n, sum(v) / n
+    slope = (sum((x - mx) * (y - my) for x, y in zip(xs, v))
+             / sum((x - mx) ** 2 for x in xs))
+    inter = my - slope * mx
+    sst = sum((y - my) ** 2 for y in v)
+    ssr = sum((y - (inter + slope * x)) ** 2 for x, y in zip(xs, v))
+    end = v[-1]
+    starts = [dict(fy=d['fy'], rate=(end / d['total']) ** (1 / (h[-1]['fy'] - d['fy'])) - 1)
+              for d in h[:-1] if h[-1]['fy'] != d['fy']]
+    return dict(
+        n=n, low=min(v), high=max(v), ratio=max(v) / min(v),
+        lowFy=h[v.index(min(v))]['fy'], highFy=h[v.index(max(v))]['fy'],
+        mean=my, current=end, vsMean=end / my - 1,
+        slope=slope, r2=1 - ssr / sst,
+        up=sum(1 for i in range(n - 1) if v[i + 1] > v[i]),
+        down=sum(1 for i in range(n - 1) if v[i + 1] < v[i]),
+        cagrByStart=starts,
+        biggestFall=min((v[i + 1] / v[i] - 1, h[i + 1]['fy']) for i in range(n - 1)),
+        biggestRise=max((v[i + 1] / v[i] - 1, h[i + 1]['fy']) for i in range(n - 1)),
+    )

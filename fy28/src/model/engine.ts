@@ -106,6 +106,16 @@ export const MODEL = raw as unknown as {
                   fy25: number; fy26: number; amount: number }[]
       groups: string[]; total: number; byGroup: number; byName: number
     }
+    tuitionRate: number
+    tuitionHistory: { fy: number; private: number; collaborative: number
+                      total: number; stage: string }[]
+    tuitionTrend: {
+      n: number; low: number; high: number; ratio: number
+      lowFy: number; highFy: number; mean: number; current: number; vsMean: number
+      slope: number; r2: number; up: number; down: number
+      cagrByStart: { fy: number; rate: number }[]
+      biggestFall: [number, number]; biggestRise: [number, number]
+    }
     transportRates: { recent: number; twoYear: number; districtAssumption: number }
   }
   releases: {

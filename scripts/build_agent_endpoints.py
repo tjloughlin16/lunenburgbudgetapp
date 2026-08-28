@@ -101,6 +101,12 @@ def main():
         os.path.getsize(sped_csv)))
 
     for src, name, what in [
+        (os.path.join(ROOT, 'sources', 'data', 'ood-tuition-history.csv'),
+         'ood-tuition-history.csv',
+         'Out-of-district special education tuition as budgeted, FY17 to FY27, extracted '
+         'from the district’s own budget documents with the budget stage held constant. '
+         'Eleven budgets ranging 2.6x with no trend — which is why the model holds this '
+         'line flat rather than escalating it.'),
         (os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json'), 'model.json',
          'Every figure the site computes: the FY27 base by bucket, the growth assumptions, '
          'the projection, the program catalogue, the conclusions, and the citations.'),

@@ -391,6 +391,16 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/ood-tuition-history.csv',
+             'Out-of-district tuition, eleven budgets', 3,
+             'What the district budgeted for out-of-district special education tuition, '
+             'FY17 to FY27, read out of its own budget documents in the mirror above. '
+             'Budget columns only, and one budget stage held constant throughout — a '
+             'fiscal year has several budget figures for this line at different stages '
+             'and they are far apart, so a series that took whichever number each '
+             'document led with would be a walk across stages rather than a trend. Three '
+             'of its years reproduce the FY27 workbook exactly. Rebuild with '
+             'scripts/extract_tuition_history.py.'),
             ('contracts/CONTRACTS.md', 'Research notes: union contracts', 2,
              'What each agreement pays, when it expires, how the figures were verified, and '
              'what is still missing.'),

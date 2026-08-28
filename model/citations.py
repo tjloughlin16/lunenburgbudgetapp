@@ -83,10 +83,32 @@ CITATIONS = [
          source='Health insurance rates 2025, and the FY27 budget narrative'),
 
     dict(id='sped-tuition', metric='Out-of-district special education growth',
-         value='8.0% a year',
-         kind='ours', basis='Our estimate. The district publishes no rate for this line.',
+         value='held flat',
+         kind='ours',
+         basis=('OURS, and the absence of a rate is the finding. The district publishes '
+                'no escalator for this line, and the archive reaches back far enough to '
+                'ask what it has actually done: '
+                f"{sped.tuition_trend()['n']} budgets from FY"
+                f"{sped.tuition_history()[0]['fy'] % 100} to FY"
+                f"{sped.tuition_history()[-1]['fy'] % 100}, ranging from "
+                f"${sped.tuition_trend()['low']:,.0f} to ${sped.tuition_trend()['high']:,.0f} "
+                f"\u2014 a factor of {sped.tuition_trend()['ratio']:.2f} \u2014 with "
+                f"{sped.tuition_trend()['up']} years up and {sped.tuition_trend()['down']} "
+                f"down. A straight line through them has an R\u00b2 of "
+                f"{sped.tuition_trend()['r2']:.2f}, and the compound rate to FY"
+                f"{sped.tuition_history()[-1]['fy'] % 100} runs from "
+                f"{min(c['rate'] for c in sped.tuition_trend()['cagrByStart']):+.1%} to "
+                f"{max(c['rate'] for c in sped.tuition_trend()['cagrByStart']):+.1%} "
+                'depending only on which year you start it. A figure that moves that far '
+                'on the choice of a start year measures nothing, so the line is held flat '
+                'and the risk is published as a range of priced scenarios instead. '
+                'This replaces an 8% escalator that had no stated basis at all. '
+                'The series is drawn from the district\u2019s own budget documents, one '
+                'budget stage held constant throughout, and three of its years reproduce '
+                'the FY27 workbook exactly.'),
          doc='xlsx/fy27-proposals.xlsx',
-         source='FY27 budget workbook, lines 9300 and 9400'),
+         source='The district\u2019s budget documents FY17\u2013FY27, extracted by '
+                'scripts/extract_tuition_history.py; published at /data/ood-tuition-history.csv'),
 
     dict(id='sped', metric='Special education growth, in district',
          value=f'{sped.RATE:.2%} a year',

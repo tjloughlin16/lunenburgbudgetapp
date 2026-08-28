@@ -10,8 +10,8 @@ import { LevelVsSlope } from '../components/LevelVsSlope'
 import { StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
-import { TheOneOff, TheTrade, TheRate, TuitionRisk, StudentCounts, WhatCounts }
-  from '../components/SpecialEducation'
+import { TheOneOff, TheTrade, TheRate, TuitionRisk, TuitionHistory, StudentCounts,
+         WhatCounts } from '../components/SpecialEducation'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 
@@ -245,12 +245,23 @@ export function BendTheCurve({ onJump, option = null }: {
         <TheRate />
 
         <h3 className="text-lg font-bold mt-10 mb-2">
-          The one line nobody outside the district can check
+          The line that bends the rate, over eleven budgets
         </h3>
         <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
           style={{ color: 'var(--text-secondary)' }}>
-          The FY27 tuition figure is a budget, and budgets for this line have been wrong in
-          both directions before. Priced at every level it could plausibly land.
+          One line does most of the work above, so it is worth asking what it has actually
+          done. The district's budget documents go back to FY17 and carry it, which is far
+          enough to answer.
+        </p>
+        <TuitionHistory />
+
+        <h3 className="text-lg font-bold mt-10 mb-2">
+          What it costs to be wrong about it
+        </h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          Since the range is what is known, the range is what gets priced — at every level
+          this line has actually reached.
         </p>
         <TuitionRisk />
 

@@ -790,7 +790,7 @@
   "health": 0.09,
   "transport": 0.06,
   "sped": 0.04279822567003433,
-  "sped_tuition": 0.08,
+  "sped_tuition": 0.0,
   "utilities": 0.05,
   "other": 0.03,
   "levy_growth": 0.025,
@@ -913,11 +913,11 @@
    {
     "id": "sped-tuition",
     "metric": "Out-of-district special education growth",
-    "value": "8.0% a year",
+    "value": "held flat",
     "kind": "ours",
-    "basis": "Our estimate. The district publishes no rate for this line.",
+    "basis": "OURS, and the absence of a rate is the finding. The district publishes no escalator for this line, and the archive reaches back far enough to ask what it has actually done: 11 budgets from FY17 to FY27, ranging from $489,918 to $1,291,293 \u2014 a factor of 2.64 \u2014 with 6 years up and 4 down. A straight line through them has an R\u00b2 of 0.10, and the compound rate to FY27 runs from -45.8% to +11.8% depending only on which year you start it. A figure that moves that far on the choice of a start year measures nothing, so the line is held flat and the risk is published as a range of priced scenarios instead. This replaces an 8% escalator that had no stated basis at all. The series is drawn from the district\u2019s own budget documents, one budget stage held constant throughout, and three of its years reproduce the FY27 workbook exactly.",
     "doc": "xlsx/fy27-proposals.xlsx",
-    "source": "FY27 budget workbook, lines 9300 and 9400",
+    "source": "The district\u2019s budget documents FY17\u2013FY27, extracted by scripts/extract_tuition_history.py; published at /data/ood-tuition-history.csv",
     "n": 9
    },
    {
@@ -1173,29 +1173,29 @@
     "id": "budgeted",
     "label": "As the district budgeted it for FY27",
     "tuition": 700142,
-    "gap": 617091,
+    "gap": 561080,
     "delta": 0
    },
    {
     "id": "midway",
     "label": "Midway back",
     "tuition": 1000000,
-    "gap": 940938,
-    "delta": 323847
+    "gap": 860938,
+    "delta": 299858
    },
    {
     "id": "fy25",
     "label": "Back to the FY25 budget",
     "tuition": 1164824,
-    "gap": 1118948,
-    "delta": 501857
+    "gap": 1025762,
+    "delta": 464682
    },
    {
     "id": "fy26",
     "label": "Back to the FY26 budget",
     "tuition": 1291293,
-    "gap": 1255534,
-    "delta": 638443
+    "gap": 1152231,
+    "delta": 591151
    }
   ],
   "students": [
@@ -1613,6 +1613,151 @@
    "total": 5745543.0,
    "byGroup": 48,
    "byName": 8
+  },
+  "tuitionRate": 0.0,
+  "tuitionHistory": [
+   {
+    "fy": 2017,
+    "private": 581345.0,
+    "collaborative": 74189.0,
+    "total": 655534.0,
+    "stage": "proposed"
+   },
+   {
+    "fy": 2018,
+    "private": 700270.0,
+    "collaborative": 60000.0,
+    "total": 760270.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2019,
+    "private": 694480.0,
+    "collaborative": 60000.0,
+    "total": 754480.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2020,
+    "private": 600016.0,
+    "collaborative": 265730.0,
+    "total": 865746.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2021,
+    "private": 589156.0,
+    "collaborative": 130113.0,
+    "total": 719269.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2022,
+    "private": 639156.0,
+    "collaborative": 179560.0,
+    "total": 818716.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2023,
+    "private": 303364.0,
+    "collaborative": 186554.0,
+    "total": 489918.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2024,
+    "private": 310260.0,
+    "collaborative": 190979.0,
+    "total": 501239.0,
+    "stage": "proposed"
+   },
+   {
+    "fy": 2025,
+    "private": 703872.0,
+    "collaborative": 460952.0,
+    "total": 1164824.0,
+    "stage": "proposed"
+   },
+   {
+    "fy": 2026,
+    "private": 988630.0,
+    "collaborative": 302663.0,
+    "total": 1291293.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2027,
+    "private": 536400.0,
+    "collaborative": 163742.0,
+    "total": 700142.0,
+    "stage": "proposed"
+   }
+  ],
+  "tuitionTrend": {
+   "n": 11,
+   "low": 489918.0,
+   "high": 1291293.0,
+   "ratio": 2.635732918570046,
+   "lowFy": 2023,
+   "highFy": 2026,
+   "mean": 792857.3636363636,
+   "current": 700142.0,
+   "vsMean": -0.116938263915635,
+   "slope": 23816.354545454546,
+   "r2": 0.10313135181358934,
+   "up": 6,
+   "down": 4,
+   "cagrByStart": [
+    {
+     "fy": 2017,
+     "rate": 0.006605017646882816
+    },
+    {
+     "fy": 2018,
+     "rate": -0.009112720924992157
+    },
+    {
+     "fy": 2019,
+     "rate": -0.009299687755691344
+    },
+    {
+     "fy": 2020,
+     "rate": -0.029874437705969092
+    },
+    {
+     "fy": 2021,
+     "rate": -0.004481967019146604
+    },
+    {
+     "fy": 2022,
+     "rate": -0.030806326443455267
+    },
+    {
+     "fy": 2023,
+     "rate": 0.09336629961790477
+    },
+    {
+     "fy": 2024,
+     "rate": 0.11784200577957549
+    },
+    {
+     "fy": 2025,
+     "rate": -0.22471227076895683
+    },
+    {
+     "fy": 2026,
+     "rate": -0.4577977267746359
+    }
+   ],
+   "biggestFall": [
+    -0.4577977267746359,
+    2027
+   ],
+   "biggestRise": [
+    1.323889402061691,
+    2025
+   ]
   },
   "transportRates": {
    "recent": 0.14886678191517566,
@@ -2561,7 +2706,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$560,437",
+   "value": "$442,320",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -2569,8 +2714,8 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$38.9M",
-   "sub": "of new commercial value every year \u2014 about 59 more average businesses a year, on top of the 234 the town has, or 13 typical developments",
+   "value": "$30.7M",
+   "sub": "of new commercial value every year \u2014 about 47 more average businesses a year, on top of the 234 the town has, or 10 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },
@@ -2707,7 +2852,7 @@
    "body": "Our own package \u2014 higher fees, a technology audit, an administration trim \u2014 finds about two thirds of FY28 without cutting a program. The remaining third is roughly two teaching positions. Anyone claiming a painless third option has not added up the line items."
   }
  ],
- "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $560,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
+ "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $440,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
  "levers": [
   {
    "id": "athletic_fees",
