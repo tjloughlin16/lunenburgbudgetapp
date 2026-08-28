@@ -13,6 +13,7 @@ import { Override } from './pages/Override'
 import { Walkthrough } from './pages/Walkthrough'
 import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
+import { Sources } from './pages/Sources'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
 
@@ -212,6 +213,19 @@ export default function App() {
             {DEEPER.label}
           </button>
 
+          {/* Kept on a phone where Go deeper is not. The claim this whole site rests on is
+              that a resident can check it, and evidence that only appears on a desktop is
+              a weaker claim than it sounds. Two words, so it costs the CTAs almost
+              nothing. */}
+          <button onClick={() => go('sources')} title="Every document this is built on"
+            aria-current={tab === 'sources' ? 'page' : undefined}
+            className="inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
+                       whitespace-nowrap shrink-0"
+            style={{ background: tab === 'sources' ? 'var(--surface-3)' : 'transparent',
+                     color: tab === 'sources' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+            Sources
+          </button>
+
           {/* Scrolls rather than wraps or truncates: three buttons plus the brand is
               wider than a small phone, and a nav that reflows to two rows moves the page
               under the reader's thumb. */}
@@ -253,11 +267,13 @@ export default function App() {
 
       {tab === 'deeper' && <GoDeeper onJump={go} />}
 
+      {tab === 'sources' && <Sources onJump={go} />}
+
       {tab === 'answers' && <Answers onJump={go} />}
 
       {tab === 'money' && <FindTheMoney onJump={go} />}
 
-      {tab === 'context' && <Context onRecommend={() => {
+      {tab === 'context' && <Context onSources={() => go('sources')} onRecommend={() => {
         setOrder(MODEL.presets.our_recommendation.order)
         setPreset('our_recommendation')
         go('priorities')
@@ -293,6 +309,14 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-5 text-xs" style={{ color: 'var(--text-muted)' }}>
           {/* The only route to the other pages on a phone, where the header gives up its
               Go deeper button to fit the two boards. */}
+          {/* First line of the footer on every page. The sentence below promises the
+              reader can check this against the documents it cites; a promise with no link
+              under it is decoration. */}
+          <button onClick={() => go('sources')}
+            className="text-xs font-semibold mb-2 block"
+            style={{ color: 'var(--series-cost)' }}>
+            Sources &mdash; every document this is built on &rarr;
+          </button>
           <button onClick={() => go('deeper')}
             className="text-xs font-semibold mb-3 block"
             style={{ color: 'var(--series-cost)' }}>

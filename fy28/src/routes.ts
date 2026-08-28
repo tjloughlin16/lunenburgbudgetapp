@@ -10,7 +10,7 @@
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
-  | 'priorities' | 'adjust' | 'development' | 'solved'
+  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -28,6 +28,9 @@ export const SLUG: Record<Tab, string> = {
   adjust: 'build-your-own-budget',
   development: 'development',
   solved: 'what-solved-requires',
+  // Top level, and a short address. This is the page somebody is sent to when they say
+  // they do not believe a number, and the link has to survive being read aloud.
+  sources: 'sources',
 }
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
@@ -41,6 +44,7 @@ const ALIASES: Record<string, Tab> = {
   override: 'override', 'the-override': 'override',
   adjust: 'adjust', budget: 'adjust', build: 'adjust',
   solved: 'solved', packages: 'solved', sustainable: 'solved', forever: 'solved',
+  sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -67,6 +71,7 @@ export const LABEL: Record<Tab, string> = {
   adjust: 'Build your own budget',
   development: 'Development',
   solved: 'What solved would require',
+  sources: 'Sources',
 }
 
 /** Which page a drill-in sits under, for the trail back when somebody arrives by link

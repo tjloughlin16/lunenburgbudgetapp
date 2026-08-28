@@ -58,8 +58,10 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; what: string }[] }
     title: 'If you do not believe a number',
     sub: 'Which is the right instinct, and the reason this page exists.',
     items: [
+      { id: 'sources',
+        what: 'Every document this site is built on — 64 of them, grouped, plus the 1,383 agendas and minutes. Including the two the district published as images that nobody can read, and the ones that say something inconvenient. Start here if you want to check a number rather than read an argument.' },
       { id: 'context',
-        what: 'What happened, what it costs, and where every figure comes from — the published documents, the line-by-line derivations, and the reconciliations that show the model rebuilding the town’s own totals.' },
+        what: 'What happened, what it costs, and where every figure comes from — the line-by-line derivations and the reconciliations that show the model rebuilding the town’s own totals.' },
     ],
   },
 ]

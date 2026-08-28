@@ -14,7 +14,6 @@ import { CommercialTrend, HomeValueParadox } from '../components/CommercialTrend
 import { BusinessFormation, BusinessCategories } from '../components/BusinessFormation'
 import { Conclusions } from '../components/Conclusions'
 import { Derivations } from '../components/Derivations'
-import { SourceIndex } from '../components/SourceIndex'
 
 export const CONTEXT_NAV = [
   ['conclusions', 'What we found'],
@@ -24,7 +23,6 @@ export const CONTEXT_NAV = [
   ['fees', 'Fees today'],
   ['tax-base', 'Business growth'],
   ['derivations', 'Show the math'],
-  ['documents', 'The documents'],
   ['method', 'Sources'],
 ] as const
 
@@ -32,7 +30,9 @@ export const CONTEXT_NAV = [
  *
  *  Nothing on this page changes a number anywhere else. It exists so that every dial on
  *  the adjustments page has somewhere to point when a reader asks "says who?". */
-export function Context({ onRecommend }: { onRecommend: () => void }) {
+export function Context({ onRecommend, onSources }: {
+  onRecommend: () => void; onSources: () => void
+}) {
   // The context page argues from the district's own published assumptions, untouched by
   // anything the reader has done elsewhere — otherwise the prose and the chart disagree.
   const base = useMemo(() => runCascade(
@@ -303,14 +303,6 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
         <Derivations />
       </Section>
 
-      <Section id="documents" eyebrow="Sources" title="Every document this is built on"
-        lede={<>The section below says which figures are published fact and which are our
-          projection. This one says where the published facts came from &mdash; every
-          document, grouped, with the weak ones left in. Two of the district&rsquo;s own
-          slide decks are here marked unreadable, because they are.</>}>
-        <SourceIndex />
-      </Section>
-
       <Section id="method" eyebrow="Method" title="Where these numbers come from">
         <div className="grid gap-4 md:grid-cols-2 text-[13px] leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}>
@@ -352,6 +344,12 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
             </ul>
           </div>
         </div>
+        <p className="mt-6 text-[13px]">
+          <button onClick={onSources} className="font-semibold underline"
+            style={{ color: 'var(--series-cost)' }}>
+            See every document this is built on &rarr;
+          </button>
+        </p>
         <Note>
           Built from public documents published by Lunenburg Public Schools and the Town of
           Lunenburg. Peer comparisons drawn from reporting on Easthampton,
