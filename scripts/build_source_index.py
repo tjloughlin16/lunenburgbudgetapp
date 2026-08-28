@@ -1,0 +1,478 @@
+"""Build the public source catalogue the app renders under "The documents".
+
+Why a script rather than a hand-written JSON: the catalogue makes a public claim — "here
+is every document this analysis is built on". A hand-maintained list drifts the moment a
+file is renamed, and a source index that lies is worse than no source index. So the
+descriptions are curated here (they are editorial judgement, not derivable), and
+everything checkable is checked:
+
+  * every catalogued file must exist, or the build fails
+  * sizes and page-or-row counts come from the files themselves
+  * every primary file on disk must be catalogued, or the build fails
+
+That second check is the one that matters. Adding a document to sources/ without
+describing it is the normal way an index goes stale, so it is an error rather than a
+silent omission.
+
+The meeting archive is handled separately. 1,383 documents cannot be a list a person
+reads, so it is summarised as a corpus with per-board counts, built from minutes/index.csv.
+
+    python3 scripts/build_source_index.py
+
+Writes fy28/src/data/sources.json.
+"""
+import csv
+import json
+import os
+import subprocess
+import sys
+from collections import Counter
+from datetime import date
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, 'sources')
+OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')
+
+SCHOOL_HUB = ('https://www.lunenburgschools.net/department-directory/'
+              'superintendent-of-schools/school-budget-information')
+TOWN_HUB = 'https://www.lunenburgma.gov/835/2026-Annual-Town-Meeting-FY27-Budget-Hub'
+
+# Origins are cited per group rather than per file: the town and district publish through
+# document hubs and portals that do not give stable per-document URLs, so a per-file link
+# would rot faster than the archive it points at.
+ORIGINS = [
+    {'id': 'school', 'name': 'Lunenburg Public Schools', 'url': SCHOOL_HUB},
+    {'id': 'town', 'name': 'Town of Lunenburg', 'url': TOWN_HUB},
+    {'id': 'dese', 'name': 'Massachusetts DESE', 'url': 'https://www.doe.mass.edu/'},
+    {'id': 'peers', 'name': 'Neighbouring districts', 'url': None},
+    {'id': 'us', 'name': 'Built by this project', 'url': None},
+]
+
+# stars: 3 = load-bearing, a conclusion rests on it · 2 = corroborating · 1 = context
+GROUPS = [
+    {
+        'id': 'district-budget', 'origin': 'school',
+        'title': 'The district budget, line by line',
+        'blurb': 'The FY27 budget in every published version. Nearly every figure in this '
+                 'analysis traces to one of these five documents.',
+        'items': [
+            ('xlsx/fy27-proposals.xlsx', 'FY27 budget workbook, 25 March 2026', 3,
+             'The richest single document here. 1,197 rows: FY23–FY25 actuals, FY26 final '
+             'budget plus actuals-to-date and encumbrances, and all four FY27 scenarios. '
+             'Every budget-line figure on this site comes from this workbook.'),
+            ('xlsx/fy27-budget-projection-3-25-26.xlsx', 'The same workbook, as circulated to the Finance Committee', 2,
+             'Data-identical to the file above across every budget column; the differences '
+             'are an unused scratch column and one ratio row. Kept so anyone working from '
+             'the Finance Committee copy can confirm they match.'),
+            ('xlsx/fy27-budget-projection-2-24-26.xlsx', 'Earlier budget workbook, 24 February 2026', 1,
+             'The 24 February version, before the restoration list was revised. Useful only '
+             'for tracking what changed between drafts.'),
+            ('pdf/fy27-final-budget-doc.pdf', 'FY27 proposed budget document, 25 March 2026', 3,
+             'The printed line-item budget: FY26 final against the Restoration, Core and '
+             'Balanced scenarios. 351 line items.'),
+            ('pdf/fy27-projections-3-23-26.pdf', 'FY27 line-item projections, 23 March 2026', 3,
+             'The version that carries the Level Service column, so all five scenarios sit '
+             'side by side. This is the document that settles what "level service" cost.'),
+            ('pdf/fy27-projections-3-16-26.pdf', 'FY27 line-item projections, 16 March 2026', 1,
+             'An earlier draft with the restoration figures still in.'),
+            ('pdf/fy27-multi-scenario-addendum.pdf', 'Multi-Scenario Financial Analysis', 3,
+             'The narrative behind the four scenarios: what each one is, the cut and '
+             'restoration lists, headcounts, impact statements, and the comparative '
+             'summary. The source of every FTE count quoted here.'),
+            ('pdf/town-additional-revenue-plan.pdf', 'Additional Town Revenue Spending Plan', 3,
+             'The $453,722 of positions added back at the September 2026 Special Town '
+             'Meeting, with the district’s reasoning for each.'),
+            ('pdf/fy27-balanced-slides-3-23-26.pdf', 'Balanced budget slide deck, 23 March 2026', 1,
+             'Presented to the School Committee. Image-only — no text layer, so nothing '
+             'in it could be quoted or checked.'),
+            ('pdf/fy27-sc-slidedeck-3-23-26.pdf', 'School Committee deck, 23 March 2026', 1,
+             'Also image-only, and also unreadable without optical character recognition.'),
+        ],
+    },
+    {
+        'id': 'town-budget', 'origin': 'town',
+        'title': 'Town budget, revenue and the override',
+        'blurb': 'How much money the town has, where the Proposition 2½ formula puts the '
+                 'ceiling, and what happened at the ballot in May 2026.',
+        'items': [
+            ('pdf/town-fy27-budget-press-release.pdf', 'Town Manager’s FY27 budget release, 17 April 2026', 3,
+             'The revenue formula in full — levy limit, new growth, excluded debt, state '
+             'aid, local receipts — plus all three budget scenarios by category, the cut '
+             'lists and the tax impact per household. The backbone of the revenue model.'),
+            ('pdf/town-2026-election-unofficial-results.pdf', 'Election results, 16 May 2026', 3,
+             'Both override questions defeated roughly two to one, in every precinct. '
+             'Precinct-by-precinct tallies.'),
+            ('pdf/town-fy27-operating-budgets-balanced-tier1-tier2.pdf', 'Operating budgets: Balanced, Tier 1, Tier 2', 3,
+             'The omnibus by department under all three funding scenarios — what each '
+             'override tier would have bought, department by department.'),
+            ('pdf/town-fy27-detailed-budget.pdf', 'Detailed town budget by line', 2,
+             'Line-item town budget by organisation and object code, including the Monty '
+             'Tech assessment.'),
+            ('pdf/town-atm-2026-booklet-warrant.pdf', 'Annual Town Meeting booklet and warrant, 2026', 2,
+             'The full 52-page warrant, including the revolving fund authorisations under '
+             'Article 6.'),
+            ('pdf/town-2026-election-warrant.pdf', 'Ballot question language', 1,
+             'The exact wording voters saw for both override questions.'),
+            ('pdf/town-article13-fy27-capital-plan.pdf', 'FY27 capital plan, Article 13', 1,
+             'Capital requests, separate from the operating budget.'),
+        ],
+    },
+    {
+        'id': 'quarterly', 'origin': 'town',
+        'title': 'Quarterly financial reports, FY26 Q3',
+        'blurb': 'The town’s financial position as of 31 March 2026, reported in August 2026 '
+                 '— the first quarterly report after a near-complete turnover of the finance '
+                 'office. This is where the funds held outside the operating budget appear.',
+        'items': [
+            ('q3-fy26/town-special-revenue-fy26-q3.xlsx', 'Special revenue funds, 31 March 2026', 3,
+             'Every special revenue and revolving fund the town holds, with opening balance, '
+             'receipts, spending and closing balance. Includes the special education circuit '
+             'breaker account, which appears in no budget document.'),
+            ('q3-fy26/town-trust-agency-fy26-q3.xlsx', 'Trust, agency and stabilization funds, 31 March 2026', 3,
+             'All stabilization and trust fund balances — general stabilization, OPEB, '
+             'vehicle and equipment, conservation, and the rest.'),
+            ('q3-fy26/fincom-memo-fy26-q3.docx', 'Finance Director’s memo to the Finance Committee', 3,
+             'The covering memo, dated 11 August 2026. Reports revenue and expenditure '
+             'against budget, and gives the finance department’s own account of why '
+             'quarterly reporting had lapsed.'),
+            ('q3-fy26/town-general-fund-revenue-fy26-q3.pdf', 'General fund revenue, 31 March 2026', 2,
+             'Revenue collected against budget by account. Local receipts came in at 116% '
+             'of budget.'),
+            ('q3-fy26/town-general-fund-expenditures-fy26-q3.pdf', 'General fund expenditures, 31 March 2026', 2,
+             'Spending against budget by department, including the school department line.'),
+            ('q3-fy26/fincom-deck-fy26-q3.pptx', 'Finance Committee presentation, 13 August 2026', 1,
+             'The slides that accompanied the memo.'),
+            ('q3-fy26/ef-sewer-revenue-fy26-q3.pdf', 'Sewer enterprise fund — revenue', 1,
+             'Enterprise funds are self-supporting and separate from the general fund. '
+             'Included for completeness.'),
+            ('q3-fy26/ef-sewer-expenditures-fy26-q3.pdf', 'Sewer enterprise fund — expenditures', 1,
+             'Self-supporting; does not bear on the school budget.'),
+            ('q3-fy26/ef-water-revenue-fy26-q3.pdf', 'Water enterprise fund — revenue', 1,
+             'Self-supporting; does not bear on the school budget.'),
+            ('q3-fy26/ef-water-expenditures-fy26-q3.pdf', 'Water enterprise fund — expenditures', 1,
+             'Self-supporting; does not bear on the school budget.'),
+            ('q3-fy26/ef-solid-waste-revenue-fy26-q3.pdf', 'Solid waste enterprise fund — revenue', 1,
+             'Self-supporting; does not bear on the school budget.'),
+            ('q3-fy26/ef-solid-waste-expenditures-fy26-q3.pdf', 'Solid waste enterprise fund — expenditures', 1,
+             'Self-supporting; does not bear on the school budget.'),
+            ('q3-fy26/ef-peg-access-revenue-fy26-q3.pdf', 'Cable and broadband enterprise fund — revenue', 1,
+             'Self-supporting; does not bear on the school budget.'),
+            ('q3-fy26/ef-peg-access-expenditures-fy26-q3.pdf', 'Cable and broadband enterprise fund — expenditures', 1,
+             'Self-supporting; does not bear on the school budget.'),
+        ],
+    },
+    {
+        'id': 'school-funds', 'origin': 'town',
+        'title': 'School funds held outside the budget',
+        'blurb': 'Revolving and gift accounts that belong to the schools but never appear in '
+                 'the operating appropriation.',
+        'items': [
+            ('xlsx/school-funds-fy26.xlsx', 'School gift, athletics and choice funds, FY26 year-end', 3,
+             'Full-year reconciliation of three funds: opening balance, revenue by source, '
+             'spending by category, closing balance. The only place actual athletics fee '
+             'collections appear — $188,944 in FY26.'),
+        ],
+    },
+    {
+        'id': 'tax-base', 'origin': 'town',
+        'title': 'Tax base, Chapter 70 and peers',
+        'blurb': 'Where the town’s money comes from, what the state contributes, and how '
+                 'Lunenburg’s spending compares to its neighbours.',
+        'items': [
+            ('pdf/tax-classification-fy23.pdf', 'Tax Classification Hearing, FY2023', 3,
+             'The single most valuable town document found. Carries year-by-year new growth '
+             'FY18–FY23, assessed value by class, average single-family bills back to '
+             'FY19, and excess levy capacity — series that appear nowhere else.'),
+            ('xlsx/ch70-fy27-summary.xlsx', 'DESE Chapter 70 summary, FY27', 3,
+             'Foundation enrolment, foundation budget, required local contribution, Chapter '
+             '70 aid and required net school spending, for every district in the state.'),
+            ('xlsx/dese-all-districts.xlsx', 'DESE per-pupil expenditures, FY2018–FY2024', 3,
+             'Spending by category and per pupil, Lunenburg against eleven peer districts, '
+             'with enrolment. Note: this is in-district expenditure, which by DESE’s '
+             'definition excludes out-of-district tuition.'),
+            ('pdf/town-revenue-prop25-presentation.pdf', 'Finance Committee deck on Proposition 2½', 2,
+             'Levy ceiling against levy limit against actual levy, and the state analysis '
+             'showing assessed value outpacing the levy since 2017.'),
+            ('pdf/assessors-agenda-11-19-2025.pdf', 'Board of Assessors agenda, 19 November 2025', 1,
+             'Context on the classification process.'),
+        ],
+    },
+    {
+        'id': 'contracts', 'origin': 'school',
+        'title': 'Union contracts and salary schedules',
+        'blurb': 'Where the 4% salary growth assumption comes from. Most are page scans, read '
+                 'with optical character recognition.',
+        'items': [
+            ('contracts/data/lea-teacher-salary-schedule.csv', 'Teacher salary schedule, FY25–FY27', 3,
+             'Thirteen steps by ten lanes by three years, rebuilt from the printed FY25 grid '
+             'and the contract’s own multipliers.'),
+            ('contracts/pdf/dese-teacher-contract.pdf', 'Lunenburg Education Association agreement', 3,
+             'Runs 1 July 2024 to 30 June 2027. Raises of 2.5%, 4.0% and 3.5%, plus step '
+             'increases worth about 3.32% a year. Expires at the end of FY27, so FY28 is '
+             'the first year of an agreement nobody has negotiated.'),
+            ('contracts/pdf/paraprofessional-fy26-fy28.pdf', 'Paraprofessional agreement, FY26–FY28', 2,
+             'Raises of 3.0%, 2.0% and 2.0%. Runs to 30 June 2028.'),
+            ('contracts/pdf/paraprofessional-salary-fy26-fy28.pdf', 'Paraprofessional salary schedule', 2,
+             'The rate grid behind the agreement.'),
+            ('contracts/pdf/custodial-2023-2026.pdf', 'Custodial agreement, 2023–2026', 2,
+             'The expiring custodial contract.'),
+            ('contracts/pdf/custodial-moa-2026.pdf', 'Custodial memorandum of agreement, 2026', 2,
+             'Successor terms: 3.5%, 2.5%, 2.5% through FY29.'),
+            ('contracts/pdf/nonaffiliated-salary-schedule.pdf', 'Non-affiliated salary schedule', 1,
+             'Staff outside any bargaining unit.'),
+            ('contracts/pdf/nonaffiliated-benefits.pdf', 'Non-affiliated benefits', 1,
+             'Benefit terms for the same group.'),
+            ('contracts/pdf/dese-superintendent-contract.pdf', 'Superintendent contract template', 1,
+             'A DESE template from 2018–21, not a current Lunenburg agreement. No current '
+             'administrator contract is public — a real gap.'),
+            ('contracts/pdf/dese-administrator-contract.pdf', 'Administrator contract template', 1,
+             'Also an expired DESE template, 2019–22.'),
+            ('pdf/health-insurance-rates-2025.pdf', 'Health insurance rates, 2025', 3,
+             'Plan-by-plan premiums and the town’s 75/25 contribution split — the basis '
+             'for every health insurance figure here.'),
+        ],
+    },
+    {
+        'id': 'peers', 'origin': 'peers',
+        'title': 'What neighbouring districts did',
+        'blurb': 'Primary FY27 budget documents from comparable districts. The comparison is '
+                 'only fair if it comes from their own books rather than from reporting.',
+        'items': [
+            ('peers/groton-dunstable-fy27-budget-book.pdf', 'Groton-Dunstable FY27 budget book', 3,
+             '132 pages. Three consecutive years of cuts, a budget below level service, and '
+             'an override the district says is needed "now and in the foreseeable future". '
+             'Also states plainly that it plans to offset $2M of costs with circuit breaker '
+             'funding.'),
+            ('peers/ashburnham-westminster-fy27-presentation.pdf', 'Ashburnham-Westminster FY27 budget', 3,
+             'The district that made the opposite choice — explicitly preserved athletics, '
+             'arts and music, and cut two elementary teaching positions instead.'),
+            ('peers/ashburnham-westminster-fy27-detail.pdf', 'Ashburnham-Westminster line detail', 2,
+             'The line-item version of the same budget.'),
+            ('peers/ayer-shirley-fy27-expenses.pdf', 'Ayer-Shirley FY27 expenses', 2,
+             'Level-service budget by function. Health insurance up 14.4% — the steepest '
+             'in the group.'),
+            ('peers/north-middlesex-finance-subcommittee.pdf', 'North Middlesex budget summit notes', 2,
+             'A $64,000 deficit at 3% growth against $1.5M at 5%. Roughly 30% of students '
+             'receive special education, far above the state average.'),
+            ('peers/wachusett-fy27-budget-presentation.pdf', 'Wachusett FY27 budget presentation', 2,
+             'Member-town assessments, enrolment by town, and a discretionary contribution '
+             'up 9.21%.'),
+        ],
+    },
+    {
+        'id': 'fees', 'origin': 'school',
+        'title': 'Fees and program costs',
+        'blurb': 'What families pay, and what the programs cost to run.',
+        'items': [
+            ('pdf/athletic-program-costs-by-sport.pdf', 'Athletic program costs by sport', 3,
+             'Cost and participation for all 25 sports. The basis for every fee calculation '
+             'on this site.'),
+            ('pdf/lhs-athletics-faq.pdf', 'High school athletics fee schedule', 2,
+             'The superseded schedule — $250, $140 and $85 with a $475 family cap. Still '
+             'the only fee table published anywhere, though the fee rose to $400 for '
+             '2026-27. A family checking the website today gets the wrong number.'),
+        ],
+    },
+    {
+        'id': 'business', 'origin': 'town',
+        'title': 'Business registrations',
+        'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '
+                 'commercial growth argument.',
+        'items': [
+            ('business/merged_dataset.csv', 'Business certificate records', 2,
+             '711 records — certificate number, dates, name, owner, address, status and '
+             'renewal chain. Note these are sole proprietor and partnership filings only; '
+             'corporations register with the state and are not here.'),
+            ('business/categorized.csv', 'Business records by industry', 2,
+             '554 records tagged by industry category, which is what shows that most new '
+             'registrations are at residential addresses.'),
+        ],
+    },
+    {
+        'id': 'derived', 'origin': 'us',
+        'title': 'Built by this project',
+        'blurb': 'Machine-readable extracts and the written research notes. Everything here is '
+                 'derived from the documents above and can be rebuilt from them.',
+        'items': [
+            ('data/lps-budget-lines.csv', 'Budget lines, tidy CSV', 3,
+             '356 rows extracted from the district workbook — section, function group, '
+             'line item, and one column per fiscal year and scenario. Line sums tie to the '
+             'printed totals within about $2 for FY25–FY27. Rebuild with '
+             'scripts/extract_lps_budget.py.'),
+            ('FINDINGS.md', 'Research notes: the FY27 budget and the override', 3,
+             'What the source documents say about where things stand — the adopted budget, '
+             'the cut lists, the override result, the revenue mechanics, and the first-cut '
+             'FY28 arithmetic.'),
+            ('FINDINGS-SPED-AND-FUNDS.md', 'Research notes: special education and the funds outside the budget', 3,
+             'Special education as a cost driver, the out-of-district tuition trend, the '
+             'circuit breaker account, and the school and town funds held outside the '
+             'operating appropriation.'),
+            ('PEER-PRECEDENT.md', 'Research notes: what other districts did', 2,
+             'The extracted comparison across neighbouring districts, and the observed order '
+             'in which things get cut.'),
+            ('contracts/CONTRACTS.md', 'Research notes: union contracts', 2,
+             'What each agreement pays, when it expires, how the figures were verified, and '
+             'what is still missing.'),
+            ('MANIFEST.md', 'Source manifest', 2,
+             'The working index of every file here, with provenance and known gaps.'),
+        ],
+    },
+]
+
+KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
+        '.docx': 'Document', '.pptx': 'Slides', '.txt': 'Text'}
+
+# Catalogued by group above, or deliberately not a "document": extracted text mirrors its
+# own source, and the meeting archive is summarised as a corpus instead.
+SKIP_DIRS = {'minutes', 'txt', 'contracts/txt'}
+SKIP_FILES = {'supplemental.csv'}
+
+
+def page_count(path):
+    """Pages for a PDF, rows for a spreadsheet or CSV. Best effort — a count that cannot
+    be read is simply absent rather than fatal, because it is decoration, not evidence."""
+    ext = os.path.splitext(path)[1].lower()
+    try:
+        if ext == '.pdf':
+            import pypdf
+            return len(pypdf.PdfReader(path).pages), 'pages'
+        if ext == '.xlsx':
+            import openpyxl
+            wb = openpyxl.load_workbook(path, read_only=True)
+            return max(ws.max_row for ws in wb.worksheets), 'rows'
+        if ext == '.csv':
+            with open(path, newline='') as fh:
+                return sum(1 for _ in fh) - 1, 'rows'
+        if ext == '.md':
+            with open(path) as fh:
+                return sum(1 for _ in fh), 'lines'
+    except Exception:
+        pass
+    return None, None
+
+
+def build_corpus():
+    """The meeting archive, summarised. index.csv is the record of what was fetched."""
+    idx = os.path.join(SRC, 'minutes', 'index.csv')
+    if not os.path.exists(idx):
+        return None
+    boards, kinds, dates, fetched = Counter(), Counter(), [], 0
+    with open(idx, newline='') as fh:
+        for row in csv.DictReader(fh):
+            board = row.get('board') or row.get('board_slug') or ''
+            boards[board] += 1
+            kinds[(row.get('kind') or '').lower()] += 1
+            if (row.get('path') or '').strip():
+                fetched += 1
+            d = (row.get('date') or '').strip()
+            if d:
+                dates.append(d)
+    pretty = lambda s: s.replace('-', ' ').title().replace('Pacc', 'PACC')
+    return {
+        'boards': [{'name': pretty(b), 'documents': n} for b, n in boards.most_common()],
+        'boardCount': len(boards),
+        'listed': sum(boards.values()),
+        'fetched': fetched,
+        'agendas': kinds.get('agenda', 0),
+        'minutes': kinds.get('minutes', 0),
+        'from': min(dates) if dates else None,
+        'to': max(dates) if dates else None,
+        'textFiles': sum(len(f) for _, _, f in os.walk(os.path.join(SRC, 'minutes', 'text'))),
+        'note': 'Every agenda and set of minutes the town publishes, across all boards. The '
+                'scanned originals are not committed to the repository — they run to about '
+                '400MB and are re-fetchable — but the extracted text of all of them is, and '
+                'that is what the analysis actually reads.',
+        'rebuild': 'python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py',
+    }
+
+
+def main():
+    catalogued, groups, missing = set(), [], []
+
+    for g in GROUPS:
+        items = []
+        for rel, title, stars, what in g['items']:
+            path = os.path.join(SRC, rel)
+            if not os.path.exists(path):
+                missing.append(rel)
+                continue
+            catalogued.add(rel)
+            ext = os.path.splitext(rel)[1].lower()
+            count, unit = page_count(path)
+            txt = os.path.splitext(rel)[0] + '.txt'
+            txt_alt = rel.replace('pdf/', 'txt/').replace('.pdf', '.txt')
+            has_text = any(os.path.exists(os.path.join(SRC, t)) for t in (txt, txt_alt))
+            items.append({
+                'path': rel, 'title': title, 'stars': stars, 'what': what,
+                'kind': KIND.get(ext, ext.lstrip('.').upper()),
+                'bytes': os.path.getsize(path),
+                **({'count': count, 'unit': unit} if count else {}),
+                **({'text': True} if has_text else {}),
+            })
+        # Load-bearing first, then largest — a reader scanning a group should meet the
+        # documents a conclusion actually rests on before the ones kept for completeness.
+        items.sort(key=lambda i: (-i['stars'], -i['bytes']))
+        groups.append({**{k: v for k, v in g.items() if k != 'items'}, 'items': items})
+
+    if missing:
+        sys.exit('catalogued but not on disk:\n  ' + '\n  '.join(missing))
+
+    # The check that keeps this honest: anything primary on disk must be described.
+    uncatalogued = []
+    for dirpath, dirnames, filenames in os.walk(SRC):
+        rel_dir = os.path.relpath(dirpath, SRC)
+        rel_dir = '' if rel_dir == '.' else rel_dir
+        dirnames[:] = [d for d in dirnames
+                       if os.path.join(rel_dir, d).replace(os.sep, '/') not in SKIP_DIRS]
+        if rel_dir.split('/')[0] in SKIP_DIRS:
+            continue
+        for fn in filenames:
+            rel = os.path.join(rel_dir, fn).replace(os.sep, '/')
+            if fn.startswith('.') or fn in SKIP_FILES or rel in catalogued:
+                continue
+            if os.path.splitext(fn)[1].lower() in ('.txt',):
+                continue
+            uncatalogued.append(rel)
+    if uncatalogued:
+        sys.exit('on disk but not catalogued — describe it in GROUPS or add it to SKIP:\n  '
+                 + '\n  '.join(sorted(uncatalogued)))
+
+    all_items = [i for g in groups for i in g['items']]
+    try:
+        rev = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'],
+                                      cwd=ROOT, text=True).strip()
+    except Exception:
+        rev = None
+
+    doc = {
+        'generated': date.today().isoformat(),
+        'commit': rev,
+        'origins': ORIGINS,
+        'groups': groups,
+        'corpus': build_corpus(),
+        'totals': {
+            'documents': len(all_items),
+            'groups': len(groups),
+            'bytes': sum(i['bytes'] for i in all_items),
+            'loadBearing': sum(1 for i in all_items if i['stars'] == 3),
+        },
+        'note': 'Every document this analysis is built on. Nothing here is private, paid for, '
+                'or obtained by request — all of it is published by the district, the town, '
+                'the state or a neighbouring district, and can be found again at the links '
+                'above. Where a document was unreadable, or says something inconvenient, it '
+                'is listed anyway.',
+    }
+
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, 'w') as fh:
+        json.dump(doc, fh, indent=1, ensure_ascii=False)
+        fh.write('\n')
+    mb = doc['totals']['bytes'] / 1e6
+    print(f"{OUT}: {doc['totals']['documents']} documents in {len(groups)} groups, {mb:.0f}MB")
+    if doc['corpus']:
+        c = doc['corpus']
+        print(f"  + meeting archive: {c['fetched']} documents across {c['boardCount']} boards")
+
+
+if __name__ == '__main__':
+    main()

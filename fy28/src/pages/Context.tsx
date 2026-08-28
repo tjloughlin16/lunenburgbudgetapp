@@ -14,6 +14,7 @@ import { CommercialTrend, HomeValueParadox } from '../components/CommercialTrend
 import { BusinessFormation, BusinessCategories } from '../components/BusinessFormation'
 import { Conclusions } from '../components/Conclusions'
 import { Derivations } from '../components/Derivations'
+import { SourceIndex } from '../components/SourceIndex'
 
 export const CONTEXT_NAV = [
   ['conclusions', 'What we found'],
@@ -23,6 +24,7 @@ export const CONTEXT_NAV = [
   ['fees', 'Fees today'],
   ['tax-base', 'Business growth'],
   ['derivations', 'Show the math'],
+  ['documents', 'The documents'],
   ['method', 'Sources'],
 ] as const
 
@@ -299,6 +301,14 @@ export function Context({ onRecommend }: { onRecommend: () => void }) {
           budget &mdash; every line named, every total added back up, and the judgment
           calls stated out loud.</>}>
         <Derivations />
+      </Section>
+
+      <Section id="documents" eyebrow="Sources" title="Every document this is built on"
+        lede={<>The section below says which figures are published fact and which are our
+          projection. This one says where the published facts came from &mdash; every
+          document, grouped, with the weak ones left in. Two of the district&rsquo;s own
+          slide decks are here marked unreadable, because they are.</>}>
+        <SourceIndex />
       </Section>
 
       <Section id="method" eyebrow="Method" title="Where these numbers come from">
