@@ -194,8 +194,20 @@ HISTORY = {
 }
 
 
+# The history files now carry actual-spending rows as well as budget rows, because
+# analyses/budget-vs-actual.md needs both. Nothing in this module may read them: every
+# figure here feeds a projection, and a rate measured from an actual to a budget is partly
+# growth and partly the step between the two. Rule 1, and audit_provenance.py fails the
+# build if a projection module touches an actuals column.
+BUDGET_STAGES = ('settled', 'proposed')
+
+
 def history(name, workbook=None):
-    """One line, budget by budget. `workbook` fills years the documents do not reach."""
+    """One line, budget by budget. `workbook` fills years the documents do not reach.
+
+    Actual-spending rows in the source file are skipped, not preferred-against: a year
+    that has only an actual is a year this function does not have.
+    """
     path = os.path.join(ROOT, 'sources/data', HISTORY[name])
     if not os.path.exists(path):
         return []
@@ -205,7 +217,7 @@ def history(name, workbook=None):
     years = sorted(set(by_year) | set(workbook or {}))
     out = []
     for fy in years:
-        stages = by_year.get(fy, {})
+        stages = {k: v for k, v in by_year.get(fy, {}).items() if k in BUDGET_STAGES}
         # A settled figure -- one reported after the year was over -- beats a proposal,
         # and the workbook beats both where it has the year, because it is the tidy
         # extract everything else on this site is computed from.
@@ -654,10 +666,14 @@ def tuition_history():
         return []
     by_year = {}
     for r in csv.DictReader(open(TUITION_HISTORY_CSV)):
+        if r['stage'] not in BUDGET_STAGES:
+            continue                      # actual spending; not for a projection
         by_year.setdefault(int(r['fy']), {})[r['stage']] = r
     out = []
     for fy in sorted(by_year):
-        r = by_year[fy].get('settled') or by_year[fy]['proposed']
+        r = by_year[fy].get('settled') or by_year[fy].get('proposed')
+        if r is None:
+            continue
         out.append(dict(fy=fy, private=float(r['private']),
                         collaborative=float(r['collaborative']),
                         total=float(r['total']),

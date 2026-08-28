@@ -38,66 +38,124 @@ this page).
 
 ## What we are working from, and what we are missing
 
-One complete year where both halves exist: **what FY25 was budgeted, against what FY25
-actually cost** — 351 line items from the district's own workbook
-(`sources/xlsx/fy27-proposals.xlsx`).
+**Two sources, and they do not always agree.**
 
-Also FY26, but only eight months of it, because the workbook was printed in late February
-2026. Eight months of a twelve-month year is two-thirds, so a line that has spent about
-**67%** of its budget is on pace. That is a weaker test and is flagged wherever it is used.
+The **FY27 workbook** (`sources/xlsx/fy27-proposals.xlsx`) gives 351 line items with both
+halves for FY25, and eight months of FY26. That is what the first version of this document
+worked from.
 
-Two words that appear below, in plain terms:
+The **mirrored budget documents** (`sources/district-budget-page/`) go back to FY17 and
+print actual columns beside budget columns, with each document stating its own column
+kinds. `scripts/extract_budget_history.py` reads them, taking only the column a document
+itself labels, and the series are published at `/data/total-salaries-history.csv` and
+`/data/total-expenses-history.csv`.
+
+Where the two overlap they agree closely: FY25 actuals are identical to the dollar, and
+FY23 and FY24 differ by $10,000 and $5,000 on roughly $15.6M of salaries — 0.06% and 0.03%.
+
+### The limit that bounds everything below
+
+**The documents disagree with themselves, by more than the effect this document is trying
+to measure.**
+
+Four times in the corpus, a single document prints the same total for the same year twice
+and gives two different numbers:
+
+| | year | | | |
+|---|---|---:|---:|---:|
+| Expenses | FY19 | $6,299,651 | $6,388,738 | $89,087 (1.41%) |
+| Expenses | FY22 | $5,920,581 | $6,008,705 | $88,124 (1.49%) |
+| Salaries | FY14 | $10,976,481 | $11,044,481 | $68,000 (0.62%) |
+
+In `fy24-approved-budget.txt` the two FY22 expense totals sit 257 lines apart, one after
+the salary tables and one after the expense tables, in the same file.
+
+The budget-versus-actual variances measured below run between **0.1% and 0.5%**. The
+documents' disagreement with themselves runs to **1.5%**. So a year where a document
+contradicts itself cannot be used, and the three years that survive are the three where
+nothing does.
+
+This is not an accusation. Summary blocks printed at two points in a long document, one of
+them updated and one not, is the most ordinary thing in the world. It is a limit on what
+can be concluded, and it is the reason this document is careful about small percentages.
+
+### Two words used below
 
 - **Appropriation** — the amount Town Meeting votes. Not the same as what gets spent.
-- **Encumbered** — money already promised under a signed contract but not yet paid out. It
-  is committed; it just has not left the account.
+- **Encumbered** — money promised under a signed contract but not yet paid out.
 
-**What we do not have, and it matters:** the town's actual accounting records, the
-individual payments, and the votes that move money between lines mid-year. Everything here
-comes from comparing two columns in a budget spreadsheet. That is enough to see *that* a
-number moved. It is not enough to say *why*, and in several cases below there is an
-ordinary explanation we simply cannot see from here.
+**What we still do not have:** the town's accounting records, the individual payments, and
+the votes that move money between lines mid-year. Everything here compares columns in
+budget documents. That is enough to see *that* a number moved. It is not enough to say
+*why*, and in several cases below there is an ordinary explanation we cannot see.
 
 **Nothing in this document should be described as anything stronger than a gap that has
 not been explained yet.**
 
 ---
 
-## 1. The town spends less than it votes — every year
+## 1. "The town spends less than it votes, every year" — that is not what the record shows
 
 ### In plain terms
 
-When Town Meeting votes a school budget, that is a ceiling, not a receipt. In FY25 the
-schools were given about $25.3 million and spent about $24.6 million. The difference is
-roughly **three-quarters of a million dollars** that was voted and not used.
+The earlier version of this document said the town votes more than it spends, every year,
+and rested it on **one year**. FY25 was the only year where both halves existed.
 
-This is not a scandal. Jobs stay empty for part of a year, a contract comes in cheaper
-than expected, and any sensible district keeps a little slack. But it is worth saying
-plainly, because almost every conversation about the school budget assumes the number
-voted is the number spent, and it never is.
+The archive changed that. The district's own budget documents go back to FY17 and print
+actual columns beside budget columns, so the comparison can now be made for several years.
+It does not hold.
 
 ### The evidence
 
-| FY25 | budgeted | actually spent | difference |
+Three years where the district's documents give both figures and no document contradicts
+itself about either:
+
+| FY | voted | spent | difference | |
+|---|---:|---:|---:|---:|
+| FY20 | $20,795,863 | $20,724,828 | −$71,035 | **-0.34%** |
+| FY21 | $21,123,603 | $21,100,143 | −$23,460 | **-0.11%** |
+| FY23 | $22,325,309 | $22,436,810 | +$111,501 | **+0.50%** |
+
+Two of the three land within a third of a percent. One is **over**. Against FY25's −3.01%,
+these are a different order of magnitude entirely, and they do not point the same way.
+
+### And most of the FY25 figure is not an underspend at all
+
+FY25 is the year the original claim rested on: budgeted $25,321,760, spent
+$24,560,511, a shortfall of $761,249. That budget figure comes from the FY27
+workbook.
+
+**The district's own FY26 budget document states a different FY25 budget.**
+
+| FY25 budgeted | workbook | FY26 budget document | difference |
 |---|---:|---:|---:|
-| Salaries | $17,156,461 | $16,835,183 | **−$321,278** (−1.9%) |
-| Everything else | $8,165,299 | $7,725,328 | **−$439,971** (−5.4%) |
-| **Total** | **$25,321,760** | **$24,560,511** | **−$761,249 (−3.0%)** |
+| Salaries | $17,156,461 | $17,188,342 | +$31,881 |
+| Expenses | $8,165,299 | $7,695,034 | **−$470,265** |
+| **Total** | **$25,321,760** | **$24,883,376** | **−$438,384** |
 
-Salaries come in under mostly through unfilled positions; non-salary lines are budgeted
-more cautiously and show the larger percentage.
+The FY26 document is internally consistent: it prints FY26 expenses as $9,117,566 and an
+18.49% increase, and $7,695,034 × 1.1849 reproduces that. So this is not a typo we can
+resolve by inspection. Two of the district's own documents state different FY25 budgets.
 
-That −$761,249 is almost exactly the size of the FY27 budget reduction ($761,000). **This
-is a coincidence** and must not be presented as anything else — two unrelated numbers that
-happen to land in the same place.
+Measured against the other one, FY25's underspend is **$322,865, −1.30%** — in line
+with the other years rather than an outlier.
+
+**$438,384 of the $761,249 headline — 58% of it — is two sources disagreeing about what
+was budgeted, not money voted and left unspent.**
 
 ### What we cannot tell
 
-Whether the underspend is deliberate margin, unfilled jobs, or delayed purchases. The
-split between those three would need payroll records we do not have.
+Which figure is right. Both are the district's own. The likeliest ordinary explanation is
+that they are drawn at different moments — an appropriation as voted against one revised
+during the year — but nothing published says so, and we are not going to guess at it.
 
-**STAYS.** How a district provisions its budget is a practice question. It changes nothing
-in the model, because the gap the app measures is a gap in what gets *voted*.
+### What this means for the app
+
+Nothing, and that is worth stating. Every projection on the site is computed from budget
+columns only, and this is a question about the distance between two columns rather than
+about how fast a line grows. **It does mean the earlier "three-quarters of a million a
+year" framing should not be repeated.** It was one year, measured against one of two
+sources that disagree.
 
 ---
 
@@ -280,8 +338,15 @@ about the *rate the cost is climbing*, not about competence.
 
 ## Still to do
 
-- Re-run all of it against FY26 year-end.
-- Ask the Business Manager how coaching pay was handled in FY25 against a $0 line.
-- Check the athletics general-fund lines against the athletics revolving fund — some of
-  what looks like an overspend may be revolving-fund money recorded across.
-- Compare the other analyst's list against this method when it is available.
+- **Re-run findings 2 to 5 against the multi-year series.** Only finding 1 has been
+  redone. Everything below it is still measured on FY25 alone plus eight months of FY26,
+  which is exactly the weakness finding 1 turned out to have.
+- **Ask which FY25 budget figure is right.** One question to the Business Manager settles
+  §1: the FY27 workbook says $25,321,760 and the FY26 budget document says $24,883,376,
+  and $438,384 of a $761,249 headline turns on it.
+- Extend the extraction below the totals. Salaries and expenses are done; a line-by-line
+  budget-versus-actual across ten years would say *which* lines carry the variance, which
+  is the question findings 2 to 5 are really asking.
+- FY26 year-end, which nothing here reaches.
+- Ask how coaching pay was handled in FY25 against a $0 line (finding 4).
+- Check the athletics general-fund lines against the athletics revolving fund.

@@ -65,6 +65,19 @@ GROUPS = {
                 re.I)
             for school in ('P.S.', 'E.S.', 'M.S.', 'H.S.', 'ACE')
         }),
+    # The district totals. Every one of these documents prints them, with the column
+    # kinds stated, which is what makes a multi-year budget-versus-actual comparison
+    # possible at all. Salaries and expenses separately, because they behave differently:
+    # salaries come in under mostly through posts that sat empty, and non-salary lines are
+    # provisioned more cautiously to begin with.
+    'total-salaries': dict(
+        out='total-salaries-history.csv',
+        what='district total, salaries',
+        parts={'total': re.compile(r'^TOTAL SALARIES:', re.I)}),
+    'total-expenses': dict(
+        out='total-expenses-history.csv',
+        what='district total, expenses',
+        parts={'total': re.compile(r'^TOTAL EXPENSES:', re.I)}),
     'sped-teachers': dict(
         out='sped-teacher-history.csv',
         what='special education teachers',
@@ -104,10 +117,13 @@ YEARS = re.compile(r'\bFY\s?(\d{2})\b')
 # computed change rather than a year, so the kinds are truncated to the number of years.
 # "FINAL BUDGET" first, so it is read as one kind rather than as Final then Budget --
 # the FY27 documents label their prior-year column that way and it is the settled figure.
-KINDS = re.compile(r'\b(FINAL BUDGET|Actuals|Actual|Budgeted|Budget|Proposed|Requested|'
-                   r'Recommended|Recommend|Adopted|Final|Approved)\b', re.I)
+KINDS = re.compile(r'\b(FINAL BUDGET|Actuals|Actual|Expended|Budgeted|Budget|Proposed|'
+                   r'Requested|Recommended|Recommend|Adopted|Final|Approved)\b', re.I)
 BUDGET_KINDS = {'budgeted', 'budget', 'final budget', 'proposed', 'requested',
                 'recommended', 'recommend', 'adopted', 'final', 'approved'}
+# What was actually spent. Recorded for the budget-versus-actual question and for nothing
+# else: no projection may read these, and the audit fails the build if one does.
+ACTUAL_KINDS = {'actual', 'actuals', 'expended'}
 # Numbers only. A bare "-" in these sheets means zero, and reading it as one was tried and
 # reverted: several of the district's own line labels contain a dash ("Special Education
 # Transportation - System"), so the rule fired inside the name and shifted every figure on
@@ -192,10 +208,19 @@ def scan(path, parts):
             if len(nums) < len(cols):
                 continue
             for (fy, kind), v in zip(cols, nums[:len(cols)]):
+                # Actuals are kept as well as budgets, and labelled. Nothing that feeds a
+                # projection may read them -- rule 1, enforced by audit_provenance.py --
+                # but the question "did what was voted match what was spent" cannot be
+                # asked without both, and it is a different question from how fast a line
+                # is growing.
                 if kind in BUDGET_KINDS:
-                    out.append(dict(fy=fy, line=key, kind=kind, value=v,
-                                    stage=stage_of(fy, kind, dy),
-                                    doc=os.path.basename(path), docYear=dy))
+                    stage = stage_of(fy, kind, dy)
+                elif kind in ACTUAL_KINDS:
+                    stage = 'actual'
+                else:
+                    continue
+                out.append(dict(fy=fy, line=key, kind=kind, value=v, stage=stage,
+                                doc=os.path.basename(path), docYear=dy))
     return out
 
 
@@ -216,11 +241,11 @@ def run(name, spec):
     years = sorted({o['fy'] for o in obs})
     parts = list(spec['parts'])
     print(f"\n{spec['what'].upper()} — budget columns only, one stage at a time")
-    print(f"{'FY':<6}{'settled':>14}{'proposed':>14}   parts present")
+    print(f"{'FY':<6}{'actual':>14}{'settled':>14}{'proposed':>14}")
     rows = []
     for fy in years:
         cell, vals = {}, {}
-        for stage in ('settled', 'proposed'):
+        for stage in ('actual', 'settled', 'proposed'):
             got = {k: pick(fy, k, stage) for k in parts}
             have = [k for k in parts if got[k][0] is not None]
             # A partial year is not a total. Summing three of five schools and calling it
@@ -230,7 +255,8 @@ def run(name, spec):
                                disagree=any(got[k][1] for k in have), have=len(have))
             cell[stage] = f"{total:,.0f}" + ('*' if vals[stage]['disagree'] else '') \
                 if total is not None else f'({len(have)}/{len(parts)})'
-        print(f"FY{fy % 100:<4}{cell['settled']:>14}{cell['proposed']:>14}")
+        print(f"FY{fy % 100:<4}{cell['actual']:>14}{cell['settled']:>14}"
+              f"{cell['proposed']:>14}")
         rows.append((fy, vals))
 
     out = os.path.join(DATA, spec['out'])

@@ -893,9 +893,9 @@
      "stars": 2,
      "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
      "kind": "Notes",
-     "bytes": 12058,
+     "bytes": 15214,
      "url": "/docs/analyses/budget-vs-actual.md",
-     "count": 287,
+     "count": 352,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
@@ -938,9 +938,9 @@
      "stars": 3,
      "what": "What the district budgeted for special education aides, FY18 to FY27, by school, read out of its own budget documents in the mirror above. Budget columns only, one budget stage held constant. The line grew 12.8% a year with an R-squared of 0.89 while the contract governing these staff gives 2.0% — which is the evidence the in-district escalator rests on. Rebuild with scripts/extract_budget_history.py.",
      "kind": "Data",
-     "bytes": 856,
+     "bytes": 1491,
      "url": "/docs/data/sped-para-history.csv",
-     "count": 14,
+     "count": 26,
      "unit": "rows",
      "textUrl": "/docs/data/sped-para-history.csv"
     },
@@ -950,9 +950,9 @@
      "stars": 3,
      "what": "What the district budgeted for special education teachers, FY20 to FY27, by school. Grew 2.67% a year against a 3.5% agreement — below contract, which means fewer of them each year. The largest component of the in-district escalator, and the last one to stop being taken from a contract. Rebuild with scripts/extract_budget_history.py.",
      "kind": "Data",
-     "bytes": 754,
+     "bytes": 1259,
      "url": "/docs/data/sped-teacher-history.csv",
-     "count": 12,
+     "count": 21,
      "unit": "rows",
      "textUrl": "/docs/data/sped-teacher-history.csv"
     },
@@ -962,11 +962,35 @@
      "stars": 3,
      "what": "What the district budgeted for out-of-district special education tuition, FY17 to FY27, read out of its own budget documents in the mirror above. Budget columns only, and one budget stage held constant throughout — a fiscal year has several budget figures for this line at different stages and they are far apart, so a series that took whichever number each document led with would be a walk across stages rather than a trend. Three of its years reproduce the FY27 workbook exactly. Rebuild with scripts/extract_tuition_history.py.",
      "kind": "Data",
-     "bytes": 732,
+     "bytes": 1166,
      "url": "/docs/data/ood-tuition-history.csv",
-     "count": 18,
+     "count": 30,
      "unit": "rows",
      "textUrl": "/docs/data/ood-tuition-history.csv"
+    },
+    {
+     "path": "data/total-salaries-history.csv",
+     "title": "District total salaries, budget and actual by year",
+     "stars": 3,
+     "what": "What the district budgeted for salaries and what it spent, FY14 to FY27, read out of its own budget documents in the mirror above. Both kinds of column are kept and labelled, which is what makes a budget-versus-actual comparison possible — and no projection reads the actual columns; scripts/audit_provenance.py fails the build if one does. Rebuild with scripts/extract_budget_history.py.",
+     "kind": "Data",
+     "bytes": 990,
+     "url": "/docs/data/total-salaries-history.csv",
+     "count": 28,
+     "unit": "rows",
+     "textUrl": "/docs/data/total-salaries-history.csv"
+    },
+    {
+     "path": "data/total-expenses-history.csv",
+     "title": "District total expenses, budget and actual by year",
+     "stars": 3,
+     "what": "The same for non-salary expenses. Read alongside the salary series in analyses/budget-vs-actual.md, which also records where the documents disagree with themselves.",
+     "kind": "Data",
+     "bytes": 934,
+     "url": "/docs/data/total-expenses-history.csv",
+     "count": 28,
+     "unit": "rows",
+     "textUrl": "/docs/data/total-expenses-history.csv"
     },
     {
      "path": "MANIFEST.md",
@@ -998,9 +1022,9 @@
      "stars": 2,
      "what": "The same extraction for the special education bus line, FY19 to FY27. A much weaker trend than the aides — R-squared 0.33 — and said to be one.",
      "kind": "Data",
-     "bytes": 470,
+     "bytes": 789,
      "url": "/docs/data/sped-transport-history.csv",
-     "count": 14,
+     "count": 25,
      "unit": "rows",
      "textUrl": "/docs/data/sped-transport-history.csv"
     }
@@ -3086,10 +3110,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 241,
+  "documents": 243,
   "groups": 14,
-  "bytes": 353526648,
-  "loadBearing": 28
+  "bytes": 353533621,
+  "loadBearing": 30
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district, and can be found again at the links above. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

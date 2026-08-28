@@ -391,6 +391,19 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/total-salaries-history.csv',
+             'District total salaries, budget and actual by year', 3,
+             'What the district budgeted for salaries and what it spent, FY14 to FY27, '
+             'read out of its own budget documents in the mirror above. Both kinds of '
+             'column are kept and labelled, which is what makes a budget-versus-actual '
+             'comparison possible \u2014 and no projection reads the actual columns; '
+             'scripts/audit_provenance.py fails the build if one does. Rebuild with '
+             'scripts/extract_budget_history.py.'),
+            ('data/total-expenses-history.csv',
+             'District total expenses, budget and actual by year', 3,
+             'The same for non-salary expenses. Read alongside the salary series in '
+             'analyses/budget-vs-actual.md, which also records where the documents '
+             'disagree with themselves.'),
             ('data/sped-teacher-history.csv',
              'Special education teachers, eight budgets', 3,
              'What the district budgeted for special education teachers, FY20 to FY27, by '
