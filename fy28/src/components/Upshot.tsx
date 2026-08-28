@@ -362,8 +362,11 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
 }) {
   return (
     <li className={wide ? 'sm:col-span-2' : undefined}>
-      <a href={href} className="card p-5 h-full flex flex-col hover:opacity-90
-                                transition-opacity">
+      {/* Stretched link rather than a wrapping anchor. The card still clicks through to
+          the working, but the citation markers beside the figure are real links, and a
+          link inside a link is invalid — browsers drop one of them. */}
+      <div className="card p-5 h-full flex flex-col relative hover:opacity-90
+                      transition-opacity">
         {/* Top-aligned and allowed to wrap. The label and the figure are each as long as
             their own content needs to be, and on a narrow card the eyebrow gives way
             first rather than the number being pushed over the edge. */}
@@ -382,6 +385,11 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
             <span className="block text-xl sm:text-2xl font-bold tnum leading-none"
               style={{ color: tone === 'critical' ? 'var(--status-critical)'
                                                   : 'var(--text-primary)' }}>{figure}</span>
+            {cites && cites.length > 0 && (
+              <span className="block mt-1 relative z-10 whitespace-nowrap">
+                {cites.map(id => <Cite key={id} id={id} />)}
+              </span>
+            )}
             {figureNote && (
               <span className="block text-[11px] font-semibold tnum mt-1 leading-none"
                 style={{ color: 'var(--text-muted)' }}>{figureNote}</span>
@@ -391,15 +399,10 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
         <h3 className="text-[16px] font-bold leading-snug mb-2">{head}</h3>
         <p className="text-[13px] leading-relaxed flex-1"
           style={{ color: 'var(--text-secondary)' }}>{children}</p>
-        <span className="text-[11px] font-semibold mt-3"
-          style={{ color: 'var(--series-cost)' }}>See the working &rarr;</span>
-      </a>
-      {cites && cites.length > 0 && (
-        <p className="text-[11px] mt-1.5 px-1" style={{ color: 'var(--text-muted)' }}>
-          Sources:{' '}
-          {cites.map(id => <Cite key={id} id={id} />)}
-        </p>
-      )}
+        <a href={href} className="text-[11px] font-semibold mt-3 no-underline
+                                  before:absolute before:inset-0 before:content-['']"
+          style={{ color: 'var(--series-cost)' }}>See the working &rarr;</a>
+      </div>
     </li>
   )
 }

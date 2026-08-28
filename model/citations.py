@@ -39,10 +39,17 @@ CITATIONS = [
          source='FY27 budget workbook, 25 March 2026'),
 
     dict(id='cuts', metric='Positions cut from the budget now in force',
-         value='9.2 FTE',
-         kind='published', basis='Scenario D reduction list',
+         value='9.2 FTE, $1,174,933',
+         kind='published',
+         basis='The district\u2019s own Scenario D reduction list, plus the program lines '
+               'the workbook shows falling between Level Service and Balanced. Two items '
+               'make up the difference from the addendum\u2019s own subtotal: Middle '
+               'School custodial hours ($9,661, from the workbook) and the 0.2 Music '
+               'Teacher at Turkey Hill ($14,488) \u2014 the district listed that post with '
+               'no dollar figure, so the amount is OURS, priced from the high school '
+               'music position.',
          doc='pdf/fy27-multi-scenario-addendum.pdf',
-         source='Multi-Scenario Financial Analysis, §5'),
+         source='Multi-Scenario Financial Analysis, §5, with the FY27 workbook'),
 
     dict(id='override', metric='Override questions passed, and what they would have cost',
          value='0 of 2',
