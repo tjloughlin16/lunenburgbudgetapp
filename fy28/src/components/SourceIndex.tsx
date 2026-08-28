@@ -22,7 +22,7 @@ import raw from '../data/sources.json'
 type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
-  textUrl?: string; oversize?: boolean
+  textUrl?: string; offsite?: boolean
 }
 type Group = { id: string; title: string; blurb: string; origin: string; items: Item[] }
 type Origin = { id: string; name: string; url: string | null }
@@ -59,7 +59,9 @@ function Row({ it }: { it: Item }) {
         {/* The title is the download. Nothing here is a preview or a summary of a
             document held somewhere else — this is the file, exactly as it was
             published. */}
-        <a href={it.url} download className="text-[14px] font-semibold leading-snug underline
+        <a href={it.url} download
+          {...(it.offsite ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="text-[14px] font-semibold leading-snug underline
           decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
           {it.title}
         </a>
@@ -87,11 +89,12 @@ function Row({ it }: { it: Item }) {
         <span aria-hidden="true">&middot;</span>
         <code style={{ color: 'var(--text-muted)' }}>sources/{it.path}</code>
       </p>
-      {it.oversize && (
-        <p className="mt-1 text-[11.5px]" style={{ color: 'var(--status-warning)' }}>
-          Large file. It is published exactly as the district released it — a page scan we
-          have not re-encoded, because a source document altered to fit a web host is no
-          longer the source document. The extracted text beside it is far smaller.
+      {it.offsite && (
+        <p className="mt-1 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+          Served from separate storage because it is too large for this site&rsquo;s host.
+          Same file, unaltered — a page scan we have not re-encoded, because a source
+          document changed to fit a web host is no longer the source document. The
+          extracted text beside it is a great deal smaller.
         </p>
       )}
     </li>

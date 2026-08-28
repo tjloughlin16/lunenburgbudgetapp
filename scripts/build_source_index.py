@@ -41,6 +41,16 @@ DOCS = os.path.join(ROOT, 'fy28', 'public', 'docs')
 # the reader this page is for. Where a file exceeds this, the host has to change.
 MAX_BYTES = 25 * 1024 * 1024
 
+# Files too large for the site's own host are served from R2, which has no per-file cap
+# and, more to the point, no egress charge -- a public archive should not have a bill that
+# scales with how much the public reads it. Keyed by path so the exception is visible here
+# rather than hidden in the catalogue.
+ELSEWHERE = {
+    'contracts/pdf/dese-teacher-contract.pdf':
+        'https://pub-5baef0f2604545c398a39a176e400e34.r2.dev/'
+        'contracts/pdf/dese-teacher-contract.pdf',
+}
+
 SCHOOL_HUB = ('https://www.lunenburgschools.net/department-directory/'
               'superintendent-of-schools/school-budget-information')
 TOWN_HUB = 'https://www.lunenburgma.gov/835/2026-Annual-Town-Meeting-FY27-Budget-Hub'
@@ -368,13 +378,18 @@ def publish(rel):
     Returns the served size and whether it is too large for the current host.
     """
     src = os.path.join(SRC, rel)
+    size = os.path.getsize(src)
+    if rel in ELSEWHERE:
+        # Hosted off-site. Copying it into the build as well would ship 53MB the host
+        # refuses to serve, so the local copy is deliberately absent.
+        return size, ELSEWHERE[rel]
+
     dst = os.path.join(DOCS, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
-    size = os.path.getsize(src)
     # Re-copy only when it would actually differ, so a rebuild is not 128MB of writes.
     if not os.path.exists(dst) or os.path.getsize(dst) != size:
         shutil.copy2(src, dst)
-    return size, size > MAX_BYTES
+    return size, None
 
 
 def build_corpus():
@@ -425,7 +440,7 @@ def main():
             catalogued.add(rel)
             ext = os.path.splitext(rel)[1].lower()
             count, unit = page_count(path)
-            served, oversize = publish(rel)
+            served, elsewhere = publish(rel)
 
             txt = os.path.splitext(rel)[0] + '.txt'
             txt_alt = rel.replace('pdf/', 'txt/').replace('.pdf', '.txt')
@@ -438,11 +453,12 @@ def main():
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': served,
-                'url': '/docs/' + rel,
+                'url': elsewhere or ('/docs/' + rel),
                 **({'count': count, 'unit': unit} if count else {}),
                 **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
-                # Flagged rather than fixed. The file is published exactly as received.
-                **({'oversize': True} if oversize else {}),
+                # Said plainly: a reader should know when a file comes from somewhere
+                # other than this site, and it is still the same bytes either way.
+                **({'offsite': True} if elsewhere else {}),
             })
         # Load-bearing first, then largest — a reader scanning a group should meet the
         # documents a conclusion actually rests on before the ones kept for completeness.
@@ -513,9 +529,11 @@ def main():
     print(f"{OUT}: {doc['totals']['documents']} documents in {len(groups)} groups, {mb:.0f}MB")
     print(f"  published verbatim to {DOCS}")
     for i in all_items:
-        if i.get('oversize'):
+        if i.get('offsite'):
+            print(f"    offsite  {i['path']} ({i['bytes']/1e6:.0f}MB) -> {i['url']}")
+        elif i['bytes'] > MAX_BYTES:
             print(f"    OVERSIZE {i['path']} is {i['bytes']/1e6:.0f}MB — over the "
-                  f"{MAX_BYTES/1024/1024:.0f}MiB Cloudflare Pages per-file limit")
+                  f"{MAX_BYTES/1024/1024:.0f}MiB per-file limit and has no ELSEWHERE entry")
     if doc['corpus']:
         c = doc['corpus']
         print(f"  + meeting archive: {c['fetched']} documents across {c['boardCount']} boards")
