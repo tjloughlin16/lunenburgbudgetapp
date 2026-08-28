@@ -321,10 +321,12 @@ GROUPS = [
              'What the source documents say about where things stand — the adopted budget, '
              'the cut lists, the override result, the revenue mechanics, and the first-cut '
              'FY28 arithmetic.'),
-            ('FINDINGS-SPED-AND-FUNDS.md', 'Research notes: special education and the funds outside the budget', 3,
+            ('FINDINGS-SPED-AND-FUNDS.md', 'Research notes: special education and the funds outside the budget', 2,
              'Special education as a cost driver, the out-of-district tuition trend, the '
              'circuit breaker account, and the school and town funds held outside the '
-             'operating appropriation.'),
+             'operating appropriation. Carries a correction notice — two growth figures in '
+             'it were derived on a basis we no longer stand behind, and the note at the top '
+             'says which and why.'),
             ('PEER-PRECEDENT.md', 'Research notes: what other districts did', 2,
              'The extracted comparison across neighbouring districts, and the observed order '
              'in which things get cut.'),

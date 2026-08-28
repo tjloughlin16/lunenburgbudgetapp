@@ -1,5 +1,33 @@
 # Special education, and the money outside the operating budget
 
+> ## Correction, 28 August 2026 — read this first
+>
+> Two growth figures below were derived by comparing **actual spending** in FY23 to a
+> **budget** in FY26. Those are different quantities — budgets for some lines run about 7%
+> above what is actually spent — so part of what is described here as growth is really the
+> step from spent to budgeted.
+>
+> On a like-for-like basis, comparing budgets to budgets (FY25 adopted to FY27 level
+> service), the picture is materially different:
+>
+> | claim below | as written | budget to budget |
+> |---|---:|---:|
+> | Special education growth | 13.0%/yr | **1.9%/yr** |
+> | Everything else | 3.4%/yr | **2.6%/yr** |
+> | Special education share of all growth | 51% | **19%** |
+>
+> **What still holds:** special education is about 24.5% of the budget on every basis
+> tested; out-of-district tuition is budgeted down 46% for FY27; the circuit breaker
+> account and its balances come from the town's own balance sheet and are unaffected; and
+> the paraprofessional-for-tuition swap is budget-to-budget throughout.
+>
+> **What does not:** any statement here that special education is growing far faster than
+> the rest of the budget. On appropriations it is not.
+>
+> The underlying question — whether actual spending has been rising faster than the
+> appropriations that fund it — is real and is being worked separately. It is not settled,
+> and nothing here should be read as though it were.
+
 Research notes, 27 Aug 2026. Companion to `FINDINGS.md`, which covers the FY27
 appropriation and the override. This file covers two things that document does not:
 **special education as a cost driver**, and **the school and town funds that sit
