@@ -1,7 +1,7 @@
 # Handoff
 
-Written 28 August 2026, to survive a context reset. Read `CLAUDE.md` first — it holds the
-ten rules, and every one of them exists because it was broken here.
+Last updated 28 August 2026, evening. Written to survive a context reset. Read `CLAUDE.md`
+first — it holds the ten rules, and every one of them exists because it was broken here.
 
 ---
 
@@ -9,27 +9,52 @@ ten rules, and every one of them exists because it was broken here.
 
 | | |
 |---|---|
-| **Live site** | `lunenburgbudgetproject.org`, asset `index-CyEVczOb.js`, built from tag **`v2`** |
-| **`main`** | `d9ec52c` — identical to `v2`. Pushed. |
-| **Working branch** | **`sped-curve`**, 10 commits ahead of `v2`. Never deployed, never pushed. |
+| **Live site** | `lunenburgbudgetproject.org`, built from tag **`v2`** = `e5332e6` |
+| **`main`** | `e5332e6` — identical to `v2`. Pushed. |
+| **Working branch** | **`sped-curve`**, `4450ffa`. Pushed. `main` merged in, so it is not behind. |
 | **`v1`** | `a0051c9` — the build before the source archive existed. The fallback. |
-| **Archive** | 237 documents: 58 primary sources, 170 held for reference, 9 written by us |
+| **Archive, live** | 236 documents in 14 groups, 354 MB, plus 1,383 meeting documents |
 
-**Nothing deploys without being asked.** To put the site back to `v1`, Cloudflare kept the
-build:
+**The archive shipped on the evening of 28 August.** The `v2` tag was force-moved from the
+66-document build of that morning, which the public never saw, and pushed with `--force`.
+That earlier build is no longer named by any tag; it remains addressable only as Cloudflare
+deployment `a3d2f394-103d-44e8-bad0-f6e0a59b40c0`, which is also the rollback:
 
     wrangler pages deployment rollback a3d2f394-103d-44e8-bad0-f6e0a59b40c0 --project-name lunenburg-fy28
 
-Other branches in the repo (`sped`, `sources-only`, `review-a0051c9`, and four older ones)
-are history. **`sped` is superseded** — it carries a 7.4% special education rate derived by
-comparing an actual to a budget, which is the error rule 1 exists to prevent. Do not merge
-it.
+Deploying needs **Node 22 via nvm**; the system Node is 20 and wrangler fails on it.
+Verified after deploy by hashing one document from each archive section off production
+against `sources/` — all three byte-identical.
+
+**What went live that was not there before**
+
+- The district's budget page and the town's finance pages mirrored in full, back to FY18,
+  and the state enrollment series. 66 → 236 documents.
+- A third archive section, *Everything else the district and the town publish*, for the
+  mirrored material that feeds no figure.
+- `/llms.txt` and `/data/{model,sources,budget-lines,district-page-index,minutes-index}`.
+- **An Updated bar** on every page and a release-notes dialog. `model/releases.py` holds
+  the history; `RELEASES[0]` is the current build and its `tag` must match the git tag
+  actually deployed. Release notes are the one place in this project where a figure is
+  typed rather than derived, and the module says why.
+
+**Three false claims fixed on the way out**, all of the same shape — a categorical
+statement about the corpus that a member of the corpus contradicted:
+
+- The sources page said none of its documents was obtained by request while carrying 15
+  that were, one group of which said so in its own blurb.
+- The reference section was titled *not used in the analysis* over 15 files that are
+  byte-identical copies of primary sources listed above.
+- `llms.txt` published "special education 0.0%" on any build without that bucket.
+
+Every count the sources page now states about itself is computed at build time. Rule 2 was
+written about figures; a categorical claim goes stale the same way.
 
 ---
 
 ## 2. What is on `sped-curve` and not yet live
 
-Three things, all uncommitted to `main`:
+Three things, none of them yet on `main`:
 
 **Special education split out of salaries.** The state's function codes could not separate
 it — 2330 is paraprofessionals of both kinds, 3300 is transportation of both — so about
@@ -234,5 +259,37 @@ transportation for OOD placements"* — that shows what it meant to do, not what
 
 ## 8. If you do only one thing next
 
-Settle §4 with TJ, then rebuild the rate as two terms — contract escalation as a sourced
-fact, the residual as a labeled unknown. Everything else on this branch is ready.
+**Integrate the special education analysis into the app.** `sources/analyses/sped-and-the-curve.md`
+is finished and now catalogued; the app carries special education as a *bucket* — in the
+composition chart, the assumptions dial, the structural chart and the `#leverage` ranking
+on Bend the Curve, where it correctly sits second behind health — but carries none of the
+*analysis*. Four findings, all budget-only, none of them in the app:
+
+1. **The published rate is flattered by a one-off.** FY27 level service rises 3.98%; hold
+   out-of-district tuition flat and it rises 6.23%. One line bends the published rate down
+   2.25 points. Most load-bearing of the four: 3.98% is the number residents are quoted,
+   and the site's whole thesis is that this is a rate problem. The named concept is a
+   **base effect**, and the standard treatment is to quote both — headline 3.98%,
+   underlying 6.23%.
+2. **The year is one trade.** Paraprofessionals +$530,038 against placements −$591,151,
+   everything else flat. Ships only with the rule 7 split: two lines moved opposite ways by
+   similar amounts, and that is *all* the budget shows.
+3. **The tuition risk.** $700,142 as budgeted → $1,291,293 back at FY26 moves the FY28 gap
+   $613,238 → $1,148,377. The widest single-assumption range in the model.
+4. **The rate has bookends.** 2.48% contracts-only / 5.90% used / 9.52% FY27-alone, visible
+   next to the dial rather than only in a `finance.py` comment and a citation string.
+
+**Placement, and the shape of #3, are decided.** TJ's steer, 28 August: a slider that lets
+a reader pick their own tuition number is worse than a range we can defend. So #3 is not a
+control — it is an analysis of **how the district has budgeted out-of-district placements
+across its own past budgets**, from which a projection is chosen with a stated confidence,
+or a range and its problems flagged. Budget columns only. That analysis has not been done.
+
+Placement on the page was still open when the archive shipped: a section on Bend the Curve
+between `#leverage` and `#proof` is the recommendation, since the finding *is* a curve
+finding, but TJ had not picked.
+
+**Not this yet:** the athletics fee re-base on FY26 actual collections. It is real — the
+model is calibrated on $130,129 against $188,944 actually collected, and conclusion #5 may
+flip from *impossible* to *possible but self-defeating* — but it runs on actuals, and
+budget-versus-actual is its own conversation that has not happened.
