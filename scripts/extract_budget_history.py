@@ -83,6 +83,12 @@ GROUPS = {
                              ('ms', r'M\.?S\.?'), ('hs', r'H\.?S\.?'),
                              ('ace', r'ACE'))
         }),
+    # Therapeutic services -- speech, OT, summer -- was attempted and is not here.
+    # The four school speech lines plus the two district-wide ones yielded only three
+    # settled years, and a trend test on three points says nothing. The component is
+    # about 11% of the in-district line and it rides on the rate measured from the
+    # teacher lines, which is stated as a limitation on the page rather than hidden.
+    # If more documents are mirrored, this is the next group worth adding.
     'sped-transport': dict(
         out='sped-transport-history.csv',
         what='special education transportation',

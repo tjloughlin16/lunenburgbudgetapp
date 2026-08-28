@@ -66,7 +66,12 @@ present('lines counted', f"{len(c['counted'])} lines")
 present('classification total', money(c['total']))
 present('groups taken whole', f"**{len(c['groups'])} function groups")
 present('lines caught by name', f"{c['byName']} lines")
-present('general-ed aides, FY25', money(c['excluded'][0]['fy25']))
+# By name, not by position: the excluded list grows, and an index silently starts
+# checking a different row rather than failing.
+_ge = next(e for e in c['excluded'] if e['group'].startswith('2330'))
+present('general-ed aides, FY25', money(_ge['fy25']))
+_ell = next(e for e in c['excluded'] if e['group'].startswith('English Language'))
+present('ELL removed from the line', money(_ell['amount']))
 if abs(c['total'] - sped.total(sped.FY27BAL, sped.is_sped)) > 1:
     FAILS.append('the classified lines do not sum to the projection base')
 

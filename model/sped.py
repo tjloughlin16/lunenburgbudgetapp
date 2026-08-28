@@ -54,7 +54,7 @@ line and never shows people, and the district does not publish staff counts.
 
 The range below is published beside the rate for that reason. It is not decoration.
 """
-import csv, os
+import csv, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LINES = os.path.join(ROOT, 'sources/data/lps-budget-lines.csv')
@@ -80,15 +80,31 @@ SPED_GROUPS = {
 }
 
 
+# English Language Learners. The district files these lines inside groups that are
+# otherwise special education -- "District Wide Specials (ELL)" sits in 2320 Therapeutic
+# Services, and ELL supplies sit in 2110 -- so a rule that takes those groups wholesale
+# counts them, and this one did. ELL is a different entitlement, serving different
+# children, under a different part of the law. Taking the group at its word put $206,901
+# of it inside a special education figure.
+#
+# This is the cost of the classification being ours: the state's account codes cannot draw
+# the line, so we draw it, and every place we draw it differently from the district has to
+# be visible. It is named in the excluded list on the page for that reason.
+NOT_SPED = re.compile(r'\bELL\b|\bEnglish Language\b', re.I)
+
+
 def is_sped(row):
     """Whether a budget line is special education, tuition aside.
 
     Group membership first, then the line itself for the ones inside a mixed group --
     special education transport among the bus routes, special education materials among
-    each school's supplies.
+    each school's supplies. English Language Learner lines are excluded wherever they
+    appear, including inside groups that are otherwise special education.
     """
     group = (row['function_group'] or '').strip()
     if group.startswith(('9300', '9400')):
+        return False
+    if NOT_SPED.search(row['line_item'] or ''):
         return False
     if group in SPED_GROUPS:
         return True
@@ -538,6 +554,11 @@ if __name__ == '__main__':
 # is the boundary most likely to be got wrong in either direction.
 
 EXCLUDED = [
+    ('English Language Learner lines, wherever they appear',
+     'A different entitlement, serving different children, under a different part of the '
+     'law — but the district files some of it inside groups that are otherwise special '
+     'education, so a rule that took those groups at their word counted it. It did, until '
+     'this was found.'),
     ('2330 - Paraprofessionals General Education',
      'General education aides. The group next to the special education one, and the '
      'single boundary most likely to be crossed by accident in either direction.'),
@@ -568,7 +589,10 @@ def classified():
     # but they were $121,233 in FY25, which is the base year of the two-year rates above.
     excluded = []
     for group, why in EXCLUDED:
-        pred = lambda r, g=group: (r['function_group'] or '').strip() == g
+        if group.startswith('English Language'):
+            pred = lambda r: bool(NOT_SPED.search(r['line_item'] or ''))
+        else:
+            pred = lambda r, g=group: (r['function_group'] or '').strip() == g
         excluded.append(dict(
             group=group, why=why, lines=sum(1 for r in rs if pred(r)),
             fy25=total(FY25, pred, rs), fy26=total(FY26, pred, rs),

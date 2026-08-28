@@ -789,7 +789,7 @@
   "salaries": 0.04,
   "health": 0.09,
   "transport": 0.06,
-  "sped": 0.06348102870581682,
+  "sped": 0.06487743183668555,
   "sped_tuition": 0.0,
   "utilities": 0.05,
   "other": 0.03,
@@ -813,13 +813,13 @@
   "stm_appropriation": 350000
  },
  "expenseBase": {
-  "other": 1760351.0,
-  "sped": 5745543.0,
+  "other": 1772053.0,
+  "sped": 5466201.0,
   "transport": 1053360.0,
   "utilities": 605511.0,
   "health": 4019071.0,
   "sped_tuition": 700142.0,
-  "salaries": 12688311.5
+  "salaries": 12955951.5
  },
  "floorNote": {
   "isOurs": true,
@@ -923,9 +923,9 @@
    {
     "id": "sped",
     "metric": "Special education growth, in district",
-    "value": "6.35% a year",
+    "value": "6.49% a year",
     "kind": "ours",
-    "basis": "OURS. Every part of this line is escalated at what its own budgets show it doing, measured across eight to ten years of them, weighted by its share of the line: professional staff 2.7% across 54%, paraprofessionals 12.8% across 33%, transport 5.7% across 12%. Not one of those is a contract rate, and the two that have contracts show why. Special education teachers are on an agreement giving 3.5% and their line has grown 2.67% across 8 budgets \u2014 below it, because headcount there has drifted down. The aides run the other way: their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. A contract sets what one person is paid. It says nothing about how many people are employed, and on this line that is where the movement is \u2014 in both directions. This figure has previously stood at 2.48%, 4.28% and 6.80%; each was built on fewer budget years than the archive turned out to hold. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
+    "basis": "OURS. Every part of this line is escalated at what its own budgets show it doing, measured across eight to ten years of them, weighted by its share of the line: professional staff 2.7% across 53%, paraprofessionals 12.8% across 34%, transport 5.7% across 12%. Not one of those is a contract rate, and the two that have contracts show why. Special education teachers are on an agreement giving 3.5% and their line has grown 2.67% across 8 budgets \u2014 below it, because headcount there has drifted down. The aides run the other way: their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. A contract sets what one person is paid. It says nothing about how many people are employed, and on this line that is where the movement is \u2014 in both directions. This figure has previously stood at 2.48%, 4.28% and 6.80%; each was built on fewer budget years than the archive turned out to hold. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
     "doc": "xlsx/fy27-proposals.xlsx",
     "source": "FY27 budget workbook with the district\u2019s budget documents FY17\u2013FY27, extracted by scripts/extract_budget_history.py; published at /data/sped-para-history.csv",
     "n": 10
@@ -1044,15 +1044,15 @@
   ]
  },
  "sped": {
-  "rate": 0.06348102870581682,
+  "rate": 0.06487743183668555,
   "units": [
    {
     "id": "professional",
     "label": "Professional staff",
     "basis": "Measured over 8 budgets. Their agreement gives 3.5% and the line has run below it \u2014 headcount drifting down, not a smaller pay rise",
     "rate": 0.026749641904463495,
-    "amount": 3072420.0,
-    "share": 0.5438600714710041
+    "amount": 2865519.0,
+    "share": 0.5265191736781479
    },
    {
     "id": "paras",
@@ -1060,7 +1060,7 @@
     "basis": "Measured over 10 budgets rather than taken from the 2.0% contract \u2014 this line is headcount, and no settlement reaches it",
     "rate": 0.12776302345076007,
     "amount": 1874411.0,
-    "share": 0.3317962063865085
+    "share": 0.3444099762916355
    },
    {
     "id": "transport",
@@ -1068,7 +1068,7 @@
     "basis": "Vendor contract with no published escalator; measured over 9 budgets",
     "rate": 0.05685920126814903,
     "amount": 649953.0,
-    "share": 0.11505050905566086
+    "share": 0.11942434040382678
    },
    {
     "id": "unbargained",
@@ -1076,38 +1076,38 @@
     "basis": "Not bargained; identical in every budget held",
     "rate": 0.0,
     "amount": 52500.0,
-    "share": 0.009293213086826579
+    "share": 0.009646509626389764
    }
   ],
   "range": [
    {
     "id": "ex_paras",
-    "rate": 0.0153358790789202,
+    "rate": 0.01137788676066176,
     "label": "Special education apart from the aides, two budgets",
     "what": "What the rest of the line did while the aides were being added. Below the levy cap \u2014 and it is the aides, not the rest, that make this line a driver."
    },
    {
     "id": "contracts_only",
-    "rate": 0.02567102662921532,
+    "rate": 0.025316370604567887,
     "label": "If every settlement were the whole story",
     "what": "The two bargained agreements at their published rates and nothing else \u2014 no bus increase, no change in how many people are employed. Published here because it is what this model used to assume, and because the gap between it and the rate above is the part of this line that pay settlements do not explain."
    },
    {
     "id": "whole",
-    "rate": 0.05886848212276696,
+    "rate": 0.05767303492560738,
     "label": "The whole line, two budgets",
     "what": "What the in-district line did between the last two budgets. Close to the rate used, and reached a different way."
    },
    {
     "id": "contracts",
-    "rate": 0.06348102870581682,
+    "rate": 0.06487743183668555,
     "used": true,
     "label": "Each part at its contract, or at what it has measurably done",
     "what": "Professional staff at the teachers\u2019 agreement; aides and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part\u2019s share of the line."
    },
    {
     "id": "fy27",
-    "rate": 0.0952031167653975,
+    "rate": 0.09629788511282378,
     "label": "FY27 by itself",
     "what": "The single steepest year. One observation, and the top of the range."
    }
@@ -1130,9 +1130,9 @@
    {
     "id": "therapy",
     "label": "Speech, OT and summer services",
-    "fy25": 768573.0,
-    "fy26": 753555.0,
-    "fy27": 784444.0
+    "fy25": 603017.0,
+    "fy26": 567677.0,
+    "fy27": 589245.0
    },
    {
     "id": "subs",
@@ -1158,9 +1158,9 @@
    {
     "id": "other",
     "label": "Administration, legal, supplies and contracted work",
-    "fy25": 134467.0,
-    "fy26": 152841.65,
-    "fy27": 116741.0
+    "fy25": 126467.0,
+    "fy26": 144841.65,
+    "fy27": 105039.0
    }
   ],
   "year": {
@@ -1179,28 +1179,28 @@
     "id": "budgeted",
     "label": "As the district budgeted it for FY27",
     "tuition": 700142,
-    "gap": 679914,
+    "gap": 680870,
     "delta": 0
    },
    {
     "id": "midway",
     "label": "Midway back",
     "tuition": 1000000,
-    "gap": 979772,
+    "gap": 980728,
     "delta": 299858
    },
    {
     "id": "fy25",
     "label": "Back to the FY25 budget",
     "tuition": 1164824,
-    "gap": 1144596,
+    "gap": 1145552,
     "delta": 464682
    },
    {
     "id": "fy26",
     "label": "Back to the FY26 budget",
     "tuition": 1291293,
-    "gap": 1271065,
+    "gap": 1272021,
     "delta": 591151
    }
   ],
@@ -1246,7 +1246,7 @@
     "pct": 16.3
    }
   ],
-  "base": 5745543.0,
+  "base": 5466201.0,
   "tuitionBase": 700142.0,
   "appropriation": 26572289.5,
   "classified": {
@@ -1303,12 +1303,6 @@
      "group": "2330 - Paraprofessionals Special Education *** (LTP notes)",
      "item": "H.S. Special Ed Paraprofessionals",
      "amount": 320534.0,
-     "basis": "group"
-    },
-    {
-     "group": "2320 - Therapeutic Services",
-     "item": "District Wide Specials (ELL)",
-     "amount": 267640.0,
      "basis": "group"
     },
     {
@@ -1399,12 +1393,6 @@
      "group": "2800 - Psych. Services",
      "item": "Psychological Testing/Supplies",
      "amount": 12126.0,
-     "basis": "group"
-    },
-    {
-     "group": "2110 - Special Education",
-     "item": "ELL General Supplies",
-     "amount": 11702.0,
      "basis": "group"
     },
     {
@@ -1590,6 +1578,14 @@
    ],
    "excluded": [
     {
+     "group": "English Language Learner lines, wherever they appear",
+     "why": "A different entitlement, serving different children, under a different part of the law \u2014 but the district files some of it inside groups that are otherwise special education, so a rule that took those groups at their word counted it. It did, until this was found.",
+     "lines": 2,
+     "fy25": 173556.0,
+     "fy26": 193878.0,
+     "amount": 279342.0
+    },
+    {
      "group": "2330 - Paraprofessionals General Education",
      "why": "General education aides. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction.",
      "lines": 4,
@@ -1616,8 +1612,8 @@
     "2800 - Psych. Services",
     "2800 - Psychological Services"
    ],
-   "total": 5745543.0,
-   "byGroup": 48,
+   "total": 5466201.0,
+   "byGroup": 46,
    "byName": 8
   },
   "tuitionRate": 0.0,
@@ -3045,7 +3041,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$631,751",
+   "value": "$634,068",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -3053,7 +3049,7 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$43.9M",
+   "value": "$44.1M",
    "sub": "of new commercial value every year \u2014 about 67 more average businesses a year, on top of the 234 the town has, or 15 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"

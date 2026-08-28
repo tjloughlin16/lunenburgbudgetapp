@@ -40,11 +40,12 @@ below therefore rests on a classification somebody made. This one is ours.
 The rule has two parts:
 
 1. **8 function groups are special education outright**, and every line inside them
-   counts — 48 lines.
+   counts — except English Language Learner lines, which are excluded wherever they
+   appear — 46 lines.
 2. **Inside the mixed groups, a line counts when the district's own label says so** —
    8 lines.
 
-Together, **56 lines totalling $5,745,543**, which is the amount every projection
+Together, **54 lines totalling $5,466,201**, which is the amount every projection
 here starts from.
 
 The groups taken whole:
@@ -192,10 +193,10 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $679,914 | — |
-| Midway back, $1,000,000 | $979,772 | **+$299,858** |
-| Back to the FY25 budget, $1,164,824 | $1,144,596 | **+$464,682** |
-| Back to the FY26 budget, $1,291,293 | $1,271,065 | **+$591,151** |
+| As the district budgeted it for FY27, $700,142 | $680,870 | — |
+| Midway back, $1,000,000 | $980,728 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,145,552 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,272,021 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
@@ -238,9 +239,9 @@ wherever you start it — the opposite of out-of-district tuition, whose rate sw
 steepest year of a trend running since FY18, not a departure from one.
 
 **And it is the aides, not the rest of the line, that make special education a driver.**
-In FY27 the paraprofessional increase was **108% of the whole year's rise** in in-district
+In FY27 the paraprofessional increase was **111% of the whole year's rise** in in-district
 special education — every other part of the line fell. Take the aides out and the
-remainder grew **1.53% a year** across the two most recent budgets, below the levy cap. One
+remainder grew **1.14% a year** across the two most recent budgets, below the levy cap. One
 part of this line is climbing and the rest is close to flat, which is precisely why a
 single blended rate taken from the settlements gets it wrong.
 
@@ -292,6 +293,25 @@ A far weaker fit — it fell for two years and then climbed for four. 5.69% is u
 is the least bad figure available for a vendor contract that publishes no escalator, not
 because the line is well behaved, and it is 12% of the total.
 
+### Two things this does not cover, said plainly
+
+**$920,007 of the line — 16.9% of it — is not measured.** The rate for professional
+staff was measured on the teacher lines, $1,945,512 of a $2,865,519 component. The rest is
+therapeutic services, psychologists, clerical and supplies, and it rides on the teachers'
+rate. Extracting the speech and therapy lines was attempted and yielded three settled
+years, which is not enough to test a trend on. It is the next thing worth doing if more of
+the district's documents are mirrored.
+
+**English Language Learner costs were being counted as special education, and are not any
+more.** The district files "District Wide Specials (ELL)" inside function 2320, which is
+otherwise therapeutic services, and ELL supplies inside 2110. A rule that takes those
+groups at their word counted them — ours did, until this pass. ELL is a different
+entitlement serving different children under a different part of the law. Removing it
+takes the in-district line down by $279,342, and it is named in the excluded
+list on the page. This is the cost of the classification being ours: the state's account
+codes cannot draw this line, so we draw it, and everywhere we draw it differently from the
+district has to be visible.
+
 ### What this forces
 
 The line was escalated at **2.57%** — the two pay settlements weighted by share — on the
@@ -299,7 +319,7 @@ argument that FY27's increase in aides was a step already sitting in the base. *
 argument was sound and its premise was false.** With two budget years there is no way to
 tell a step from a climb; with ten there is, and it is a climb.
 
-The rate is now **6.35%**, and the projected gap went up rather than down. That is what
+The rate is now **6.49%**, and the projected gap went up rather than down. That is what
 the evidence says, and the direction it moves the answer is not a reason to prefer the
 other one.
 
@@ -437,7 +457,7 @@ That gap is the whole question, and it is answered in *Is the increase in aides 
 a climb?* above: the aides' line has grown 12.8% a year across 10 budgets while their
 contract gives 2.0%. So the model escalates
 every part of it at what its own budgets show it doing, measured across eight to ten
-years of them, which comes to **6.35%**.
+years of them, which comes to **6.49%**.
 
 > **Correction, 28 August 2026.** This file has carried five different rates for this line
 > in one day. The sequence is kept because each step was a real error and the last one is
@@ -447,7 +467,7 @@ years of them, which comes to **6.35%**.
 > That is 12% of the line and a vendor contract. A 0% that appears in no contract is
 > an assumption wearing a contract's clothes.
 >
-> **5.89%**, what the whole line did over two budgets, was replaced because it looked like
+> **5.77%**, what the whole line did over two budgets, was replaced because it looked like
 > one hiring decision averaged and compounded.
 >
 > **2.57%**, the two settlements weighted by share, assumed FY27's increase in aides was
@@ -456,7 +476,7 @@ years of them, which comes to **6.35%**.
 > **6.80%** measured the aides and the buses but still took the largest component — the
 > teachers, 54% of the line — from their contract, on three years showing it flat.
 >
-> **6.35%** measures all three. The teachers turn out to have grown 2.67% against a
+> **6.49%** measures all three. The teachers turn out to have grown 2.67% against a
 > 3.5% agreement, so the contract rate had been overstating them.
 >
 > The lesson is not about any of the five numbers. It is that a contract sets what one
