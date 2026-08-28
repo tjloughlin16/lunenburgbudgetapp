@@ -10,7 +10,7 @@ import { LevelVsSlope } from '../components/LevelVsSlope'
 import { StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
-import { TheOneOff, TheTrade, TheRate, TuitionRisk, StudentCounts }
+import { TheOneOff, TheTrade, TheRate, TuitionRisk, StudentCounts, WhatCounts }
   from '../components/SpecialEducation'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -209,6 +209,21 @@ export function BendTheCurve({ onJump, option = null }: {
           not suggest it. It is about the <strong>rate</strong>, and about which parts of
           it can happen twice.</>}>
         <TheOneOff />
+
+        {/* Before anything that depends on it. Somebody asked how the figure was
+            calculated and could not find out, and every number in this section rests on
+            the answer -- so the definition goes above the arguments rather than in a
+            footnote under them. */}
+        <h3 className="text-lg font-bold mt-10 mb-2">
+          First: what counts as special education here
+        </h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          Every figure below rests on which budget lines we counted, and that is a
+          judgement rather than a published total. So it is set out first, in full, with
+          the lines listed and the boundary cases named.
+        </p>
+        <WhatCounts />
 
         <h3 className="text-lg font-bold mt-10 mb-2">The year is one trade</h3>
         <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"

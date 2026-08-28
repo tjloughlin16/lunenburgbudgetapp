@@ -75,6 +75,31 @@ def main():
 
     # ---- the data itself, at addresses that will not move -------------------
     published = []
+    # The special education classification, as its own file.
+    #
+    # It is NOT a column added to budget-lines.csv: that file is copied byte for byte from
+    # the archive, and a reader who hashes our copy against the source has to get a match.
+    # Adding a column would break that for the sake of saving a join.
+    #
+    # There is no account code for special education -- two of the district's groups carry
+    # both kinds of cost -- so this total is a classification of ours rather than a
+    # published quantity, and anybody checking the figure needs the list, not the rule.
+    sped_csv = os.path.join(DATA, 'sped-lines.csv')
+    with open(sped_csv, 'w', newline='') as fh:
+        w = csv.writer(fh)
+        w.writerow(['function_group', 'line_item', 'fy27_balanced', 'counted_because'])
+        for line in model['sped']['classified']['counted']:
+            w.writerow([line['group'], line['item'], f"{line['amount']:.2f}",
+                        'function group is special education' if line['basis'] == 'group'
+                        else 'the district’s own name for the line'])
+    published.append((
+        'sped-lines.csv',
+        'Every budget line this project counts as special education, and which of the two '
+        'rules caught it. They sum to the amount the projection starts from. Published '
+        'because the state has no account code for special education, so the total is our '
+        'classification rather than a figure anybody published.',
+        os.path.getsize(sped_csv)))
+
     for src, name, what in [
         (os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json'), 'model.json',
          'Every figure the site computes: the FY27 base by bucket, the growth assumptions, '

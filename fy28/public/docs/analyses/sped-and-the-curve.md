@@ -29,6 +29,65 @@ a **rate**, and rates keep going.
 
 ---
 
+## What counts as special education here
+
+**There is no account code for it.** The state's chart of accounts has no special
+education total, and two of the groups the district reports carry both kinds of cost at
+once: 2330 is paraprofessionals, general and special education together, and 3300 is
+transportation, where the special education runs sit beside the yellow buses. Every figure
+below therefore rests on a classification somebody made. This one is ours.
+
+The rule has two parts:
+
+1. **8 function groups are special education outright**, and every line inside them
+   counts — 48 lines.
+2. **Inside the mixed groups, a line counts when the district's own label says so** —
+   8 lines.
+
+Together, **56 lines totalling $5,745,543**, which is the amount every projection
+here starts from.
+
+The groups taken whole:
+
+- `2110 - Special Education`
+- `2110 - Special Education Clerical`
+- `2310 - Teachers Specialists - Special Education`
+- `2320 - Therapeutic Services`
+- `2325 - Special Education Substitutes`
+- `2330 - Paraprofessionals Special Education *** (LTP notes)`
+- `2800 - Psych. Services`
+- `2800 - Psychological Services`
+
+The 8 lines caught by their name rather than their group, one of which is most of the
+money:
+
+| line | FY27 |
+|---|---:|
+| Special Education Transportation - System | $649,953 |
+| Special Ed Hospital Tutoring | $10,000 |
+| Special Ed Contrctd Evaluations | $8,000 |
+| Special Ed Equipment | $4,000 |
+| E.S. Special Education Instr. Materials | $3,317 |
+| H.S. Special Education Instr. Materials | $2,215 |
+| P.S. Special Education Instr. Materials | $1,800 |
+| M.S. Special Education Instr. Materials | $452 |
+
+**What was deliberately left out.** A classification is defined as much by its edges as by
+its middle.
+
+- **2330 - Paraprofessionals General Education** — General education aides. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction. FY25 $121,233, FY26 $0, FY27 $0.
+- **9300 / 9400 — out-of-district tuition** — Special education, but escalated on its own because it is set by placement rather than by payroll, and it behaves nothing like staffing. FY25 $1,164,824, FY26 $1,291,293, FY27 $700,142.
+
+The general education aides are worth a second look. They are budgeted at nothing from
+FY26 onward, so in FY27 that boundary costs nothing either way — but they were
+$121,233 in FY25, which is the base year of the two-year rates below. A boundary can
+be irrelevant in the year you show and matter in the year you are comparing against.
+
+Every line is published as a spreadsheet at `/data/sped-lines.csv`, with the reason each
+was counted, so the total can be added up without taking any of this on trust.
+
+---
+
 ## What "the curve" means here
 
 The site's central argument is that Lunenburg has a rate problem rather than a bad year:

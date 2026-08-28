@@ -1,5 +1,5 @@
 import { MODEL, usd } from '../model/engine'
-import { Note } from './primitives'
+import { Disclose, Note } from './primitives'
 
 /** Special education, and what it does to the rate.
  *
@@ -336,5 +336,117 @@ function Card({ label, value, sub, tone }: {
       <p className="text-xs mt-2 leading-relaxed"
         style={{ color: 'var(--text-secondary)' }}>{sub}</p>
     </div>
+  )
+}
+
+/** Every budget line counted as special education, and the two that were not.
+ *
+ *  This exists because somebody asked how the figure was calculated, and the honest
+ *  answer was that they could not find out. Special education has no account code of its
+ *  own: two of the groups the district reports carry both kinds of cost, so any total for
+ *  it is somebody's classification rather than a published quantity. This one is ours,
+ *  which under rule 3 means it has to be visible enough to argue with.
+ *
+ *  Open by default would bury the argument above it under fifty-six rows. Closed with the
+ *  count and the total on the outside is a promise that the working is here, which is the
+ *  part that matters -- a reader who wants it opens it, and one who does not can still see
+ *  that it exists. */
+export function WhatCounts() {
+  const c = S.classified
+  const named = c.counted.filter(l => l.basis === 'name')
+  return (
+    <>
+      <Note>
+        <strong style={{ color: 'var(--text-primary)' }}>There is no account code for
+        special education.</strong> The state’s chart of accounts does not have one, and
+        two of the groups the district reports carry both kinds of cost at once — 2330 is
+        paraprofessionals, general education and special education together, and 3300 is
+        transportation, where the special education runs sit beside the yellow buses. So
+        every figure on this page rests on a classification somebody made. This one is
+        ours, and it has two parts:
+        <br /><br />
+        <strong style={{ color: 'var(--text-primary)' }}>One.</strong> {c.groups.length}{' '}
+        function groups are special education outright, and every line inside them counts
+        — {c.byGroup} lines.{' '}
+        <strong style={{ color: 'var(--text-primary)' }}>Two.</strong> Inside the mixed
+        groups, a line counts when the district’s own label for it says special education
+        — {c.byName} lines, of which one, special education transportation, is most of the
+        money.
+        <br /><br />
+        They come to <strong>{usd(c.total)}</strong>, which is the amount every projection
+        on this page starts from. The list is below and it adds up; the underlying file is{' '}
+        <a href="/data/budget-lines.csv" className="font-semibold"
+          style={{ color: 'var(--series-cost)' }}>published as a spreadsheet</a>, with a
+        column marking which lines these are, so the sum can be checked without taking our
+        word for any of it.
+      </Note>
+
+      <Disclose title={`Every line counted — ${c.counted.length} of them, ${usd(c.total)}`}
+        sub="The district’s own group and line names, and which of the two rules caught each">
+        <div className="overflow-x-auto">
+          <table className="w-full text-[12px]">
+            <thead>
+              <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
+                <th className="text-left font-semibold px-3 py-2">Function group</th>
+                <th className="text-left font-semibold px-3 py-2">Line</th>
+                <th className="text-right font-semibold px-3 py-2 tnum">FY27</th>
+                <th className="text-left font-semibold px-3 py-2">Counted because</th>
+              </tr>
+            </thead>
+            <tbody>
+              {c.counted.map((l, i) => (
+                <tr key={i} className="border-b last:border-b-0"
+                  style={{ borderColor: 'var(--grid)' }}>
+                  <td className="px-3 py-1.5" style={{ color: 'var(--text-muted)' }}>
+                    {l.group}</td>
+                  <td className="px-3 py-1.5">{l.item}</td>
+                  <td className="px-3 py-1.5 text-right tnum">{usd(l.amount)}</td>
+                  <td className="px-3 py-1.5" style={{ color: 'var(--text-muted)' }}>
+                    {l.basis === 'group' ? 'the group is special education'
+                      : 'the district’s own name for the line'}</td>
+                </tr>
+              ))}
+              <tr className="font-bold">
+                <td className="px-3 py-2" colSpan={2}>Total</td>
+                <td className="px-3 py-2 text-right tnum">{usd(c.total)}</td>
+                <td />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </Disclose>
+
+      <Note>
+        <strong style={{ color: 'var(--text-primary)' }}>And what was deliberately left
+        out.</strong> A classification is defined as much by its edges as by its middle.
+        <div className="mt-3 space-y-3">
+          {c.excluded.map(e => (
+            <div key={e.group}>
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="text-[12.5px] font-semibold">{e.group}</p>
+                <p className="text-[12px] tnum shrink-0" style={{ color: 'var(--text-muted)' }}>
+                  FY25 {usd(e.fy25)} · FY26 {usd(e.fy26)} · FY27 {usd(e.amount)}
+                </p>
+              </div>
+              <p className="text-[12px] leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}>{e.why}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 text-[12px]" style={{ color: 'var(--text-muted)' }}>
+          The general education aides are worth a second look. They are budgeted at nothing
+          from FY26 onward, so in FY27 that boundary costs nothing either way — but they
+          were {usd(c.excluded[0].fy25)} in FY25, which is the base year of the two-year
+          rates above. A boundary can be irrelevant in the year you show and matter in the
+          year you are comparing against.
+        </div>
+      </Note>
+
+      <div className="mt-4 text-[12px] leading-relaxed"
+        style={{ color: 'var(--text-muted)' }}>
+        The eight groups taken whole: {c.groups.join(' · ')}.
+        The {named.length} lines caught by name: {named.map(l => l.item).join(' · ')}.
+      </div>
+    </>
   )
 }

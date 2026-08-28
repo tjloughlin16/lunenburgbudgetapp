@@ -100,6 +100,12 @@ export const MODEL = raw as unknown as {
     tuitionRisk: { id: string; label: string; tuition: number
                    gap: number; delta: number }[]
     students: { fy: number; n: number; pct: number }[]
+    classified: {
+      counted: { group: string; item: string; amount: number; basis: 'group' | 'name' }[]
+      excluded: { group: string; why: string; lines: number
+                  fy25: number; fy26: number; amount: number }[]
+      groups: string[]; total: number; byGroup: number; byName: number
+    }
     transportRates: { recent: number; twoYear: number; districtAssumption: number }
   }
   releases: {

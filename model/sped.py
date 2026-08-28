@@ -329,6 +329,7 @@ def export():
         year=y, tuitionRisk=tuition_risk(), students=students(),
         base=total(FY27BAL, is_sped), tuitionBase=total(FY27BAL, is_tuition),
         appropriation=total(FY27BAL),
+        classified=classified(),
         transportRates=dict(
             recent=TRANSPORT_RATE, twoYear=(649_953 / 445_328) ** 0.5 - 1,
             districtAssumption=0.10),
@@ -351,3 +352,75 @@ if __name__ == '__main__':
     for r in tuition_risk():
         delta = f"+${r['delta']:,}" if r['delta'] else '—'
         print(f"  ${r['tuition']:>10,}  FY28 gap ${r['gap']:>10,}  {delta}")
+
+
+# ------------------------------------------------------- what counts, and why
+# The one number on this page that is entirely ours.
+#
+# The state's account codes do not have a special education total. Two of the groups the
+# district reports carry both kinds of cost -- 2330 is paraprofessionals general and
+# special, 3300 is transportation general and special -- so any figure for "special
+# education" is somebody's classification rather than a published quantity. This is ours,
+# and a reader is entitled to see every line in it and add them up.
+#
+# The rule has exactly two parts:
+#
+#   1. Eight function groups are special education outright, and every line inside them
+#      counts. These are listed in SPED_GROUPS.
+#   2. Inside groups that carry both kinds, individual lines count when the district's own
+#      label for them says special education. Eight lines, and one of them -- special
+#      education transportation -- is most of the money.
+#
+# Out-of-district tuition is deliberately excluded and escalated separately: it is set by
+# placement rather than payroll. General education paraprofessionals are excluded, which
+# is the boundary most likely to be got wrong in either direction.
+
+EXCLUDED = [
+    ('2330 - Paraprofessionals General Education',
+     'General education aides. The group next to the special education one, and the '
+     'single boundary most likely to be crossed by accident in either direction.'),
+]
+
+
+def classified():
+    """Every line counted, with the reason it was counted, and what sits just outside.
+
+    Published so the total can be added up by hand. `basis` is either the function group
+    -- the district's own account code -- or the district's own label for the line.
+    """
+    rs = rows()
+    counted = []
+    for r in rs:
+        if not is_sped(r):
+            continue
+        g = (r['function_group'] or '').strip()
+        counted.append(dict(
+            group=g, item=(r['line_item'] or '').strip(),
+            amount=_n(r, FY27BAL),
+            basis='group' if g in SPED_GROUPS else 'name'))
+    counted.sort(key=lambda x: -x['amount'])
+
+    # Excluded lines carry all three budget years, not just FY27. A boundary can look
+    # irrelevant in the year you happen to show and matter a great deal in the year you
+    # are comparing against: general education aides are budgeted at nothing from FY26 on,
+    # but they were $121,233 in FY25, which is the base year of the two-year rates above.
+    excluded = []
+    for group, why in EXCLUDED:
+        pred = lambda r, g=group: (r['function_group'] or '').strip() == g
+        excluded.append(dict(
+            group=group, why=why, lines=sum(1 for r in rs if pred(r)),
+            fy25=total(FY25, pred, rs), fy26=total(FY26, pred, rs),
+            amount=total(FY27BAL, pred, rs)))
+    excluded.append(dict(
+        group='9300 / 9400 — out-of-district tuition',
+        why='Special education, but escalated on its own because it is set by placement '
+            'rather than by payroll, and it behaves nothing like staffing.',
+        lines=sum(1 for r in rs if is_tuition(r)),
+        fy25=total(FY25, is_tuition, rs), fy26=total(FY26, is_tuition, rs),
+        amount=total(FY27BAL, is_tuition, rs)))
+
+    return dict(counted=counted, excluded=excluded,
+                groups=sorted(SPED_GROUPS),
+                total=sum(c['amount'] for c in counted),
+                byGroup=len([c for c in counted if c['basis'] == 'group']),
+                byName=len([c for c in counted if c['basis'] == 'name']))

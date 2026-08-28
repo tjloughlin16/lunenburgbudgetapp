@@ -60,6 +60,16 @@ present('tuition FY26', money(y['tuition_fy26']))
 present('tuition FY27', money(y['tuition_fy27']))
 present('tuition change', money(-y['tuition_change']))
 
+print('What counts as special education')
+c = sped.classified()
+present('lines counted', f"{len(c['counted'])} lines")
+present('classification total', money(c['total']))
+present('groups taken whole', f"**{len(c['groups'])} function groups")
+present('lines caught by name', f"{c['byName']} lines")
+present('general-ed aides, FY25', money(c['excluded'][0]['fy25']))
+if abs(c['total'] - sped.total(sped.FY27BAL, sped.is_sped)) > 1:
+    FAILS.append('the classified lines do not sum to the projection base')
+
 print('\nThe decomposition')
 for part in sped.decomposition():
     if part['id'] in ('paras',):
