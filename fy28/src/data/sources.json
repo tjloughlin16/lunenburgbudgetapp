@@ -1,6 +1,6 @@
 {
  "generated": "2026-08-28",
- "commit": "0a10130",
+ "commit": "e1f25d3",
  "origins": [
   {
    "id": "school",
@@ -791,10 +791,78 @@
    ]
   },
   {
+   "id": "analyses",
+   "origin": "us",
+   "title": "Our analyses",
+   "blurb": "What we concluded, written up so it can be argued with. These are the only documents here we wrote — everything else in this archive was published by somebody else. Where one of them turned out to be wrong, the correction is in the document rather than quietly removed.",
+   "items": [
+    {
+     "path": "analyses/fy27-and-the-override.md",
+     "title": "The FY27 budget and the override",
+     "stars": 3,
+     "what": "Where things stand: the adopted budget, the four scenarios, what the balanced budget cut, the override result, the town’s revenue mechanics, and the first-cut FY28 arithmetic. The foundation the rest of this rests on.",
+     "kind": "Notes",
+     "bytes": 9034,
+     "url": "/docs/analyses/fy27-and-the-override.md",
+     "count": 183,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/fy27-and-the-override.md"
+    },
+    {
+     "path": "analyses/fy27-cut-reconciliation.md",
+     "title": "Two right numbers: reconciling the FY27 cut",
+     "stars": 3,
+     "what": "The FY27 budget was cut by $1,174,933 and by $761,000, and both are correct. A line-by-line bridge between them, and the three places the district’s own documents disagree with each other. Includes a correction to an earlier version of this analysis.",
+     "kind": "Notes",
+     "bytes": 5049,
+     "url": "/docs/analyses/fy27-cut-reconciliation.md",
+     "count": 130,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/fy27-cut-reconciliation.md"
+    },
+    {
+     "path": "analyses/sped-and-funds.md",
+     "title": "Special education and the funds outside the budget",
+     "stars": 2,
+     "what": "Special education as a cost driver, out-of-district tuition, the circuit breaker account, and the school and town money held outside the operating appropriation. Carries a correction notice at the top — two growth figures in it were derived on a basis we no longer stand behind.",
+     "kind": "Notes",
+     "bytes": 25282,
+     "url": "/docs/analyses/sped-and-funds.md",
+     "count": 497,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/sped-and-funds.md"
+    },
+    {
+     "path": "analyses/budget-vs-actual.md",
+     "title": "Budget versus actual",
+     "stars": 2,
+     "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
+     "kind": "Notes",
+     "bytes": 11897,
+     "url": "/docs/analyses/budget-vs-actual.md",
+     "count": 283,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/budget-vs-actual.md"
+    },
+    {
+     "path": "analyses/peer-districts.md",
+     "title": "What other districts did",
+     "stars": 2,
+     "what": "The comparison across neighbouring districts, and the order in which things actually get cut when an override fails.",
+     "kind": "Notes",
+     "bytes": 9017,
+     "url": "/docs/analyses/peer-districts.md",
+     "count": 150,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/peer-districts.md"
+    }
+   ]
+  },
+  {
    "id": "derived",
    "origin": "us",
    "title": "Built by this project",
-   "blurb": "Machine-readable extracts and the written research notes. Everything here is derived from the documents above and can be rebuilt from them.",
+   "blurb": "Machine-readable extracts. Derived from the documents above and rebuildable from them.",
    "items": [
     {
      "path": "data/lps-budget-lines.csv",
@@ -809,52 +877,16 @@
      "textUrl": "/docs/data/lps-budget-lines.csv"
     },
     {
-     "path": "FINDINGS.md",
-     "title": "Research notes: the FY27 budget and the override",
-     "stars": 3,
-     "what": "What the source documents say about where things stand — the adopted budget, the cut lists, the override result, the revenue mechanics, and the first-cut FY28 arithmetic.",
-     "kind": "Notes",
-     "bytes": 9034,
-     "url": "/docs/FINDINGS.md",
-     "count": 183,
-     "unit": "lines",
-     "textUrl": "/docs/FINDINGS.md"
-    },
-    {
-     "path": "FINDINGS-SPED-AND-FUNDS.md",
-     "title": "Research notes: special education and the funds outside the budget",
-     "stars": 2,
-     "what": "Special education as a cost driver, the out-of-district tuition trend, the circuit breaker account, and the school and town funds held outside the operating appropriation. Carries a correction notice — two growth figures in it were derived on a basis we no longer stand behind, and the note at the top says which and why.",
-     "kind": "Notes",
-     "bytes": 25282,
-     "url": "/docs/FINDINGS-SPED-AND-FUNDS.md",
-     "count": 497,
-     "unit": "lines",
-     "textUrl": "/docs/FINDINGS-SPED-AND-FUNDS.md"
-    },
-    {
      "path": "MANIFEST.md",
      "title": "Source manifest",
      "stars": 2,
      "what": "The working index of every file here, with provenance and known gaps.",
      "kind": "Notes",
-     "bytes": 16463,
+     "bytes": 16472,
      "url": "/docs/MANIFEST.md",
      "count": 264,
      "unit": "lines",
      "textUrl": "/docs/MANIFEST.md"
-    },
-    {
-     "path": "PEER-PRECEDENT.md",
-     "title": "Research notes: what other districts did",
-     "stars": 2,
-     "what": "The extracted comparison across neighbouring districts, and the observed order in which things get cut.",
-     "kind": "Notes",
-     "bytes": 9017,
-     "url": "/docs/PEER-PRECEDENT.md",
-     "count": 150,
-     "unit": "lines",
-     "textUrl": "/docs/PEER-PRECEDENT.md"
     },
     {
      "path": "contracts/CONTRACTS.md",
@@ -1047,10 +1079,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 64,
-  "groups": 10,
-  "bytes": 128402234,
-  "loadBearing": 23
+  "documents": 66,
+  "groups": 11,
+  "bytes": 128419189,
+  "loadBearing": 24
  },
  "note": "Every document this analysis is built on. Nothing here is private, paid for, or obtained by request — all of it is published by the district, the town, the state or a neighbouring district, and can be found again at the links above. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

@@ -168,7 +168,7 @@ the current year is partial. `FORMATION_HISTORY` starts at 2018 and flags the pa
 ## Sources
 
 See `../sources/` — `MANIFEST.md` lists every document, `FINDINGS.md` is the research
-write-up, `PEER-PRECEDENT.md` covers what other districts did.
+write-up, `analyses/peer-districts.md` covers what other districts did.
 
 ## Caveats to keep visible
 

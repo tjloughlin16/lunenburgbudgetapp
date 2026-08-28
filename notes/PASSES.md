@@ -52,7 +52,7 @@ never audited it against its own past.
 choice — they are the state's chart of accounts — but they are the wrong grain for this
 question, and no amount of care *inside* the model would have surfaced it.
 
-**It was noticed, written down, and dropped.** `sources/FINDINGS.md` §6, weeks ago:
+**It was noticed, written down, and dropped.** `sources/analyses/fy27-and-the-override.md` §6, weeks ago:
 
 > Out-of-district SpEd placement count/cost trend (FY26 $988,630 → FY27 $536,400 is a
 > large drop that needs explaining)
@@ -115,7 +115,7 @@ a figure is the only thing on this site that can be silently wrong.
 
 Two files arrived mid-pass: the FY26 year-end school funds workbook, and the town's Q3
 FY26 financial packet. Both are now in `sources/` and catalogued. Full analysis in
-`sources/FINDINGS-SPED-AND-FUNDS.md`; what matters here is what they *changed*.
+`sources/analyses/sped-and-funds.md`; what matters here is what they *changed*.
 
 **The circuit breaker turns the gap into a range.** Fund 2640 held **$615,301** at
 31 March 2026 — 81% of the entire $761,000 FY27 budget reduction — with **$4,005** drawn

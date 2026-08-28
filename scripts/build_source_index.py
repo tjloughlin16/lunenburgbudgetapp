@@ -307,29 +307,48 @@ GROUPS = [
         ],
     },
     {
+        'id': 'analyses', 'origin': 'us',
+        'title': 'Our analyses',
+        'blurb': 'What we concluded, written up so it can be argued with. These are the '
+                 'only documents here we wrote — everything else in this archive was '
+                 'published by somebody else. Where one of them turned out to be wrong, the '
+                 'correction is in the document rather than quietly removed.',
+        'items': [
+            ('analyses/fy27-and-the-override.md', 'The FY27 budget and the override', 3,
+             'Where things stand: the adopted budget, the four scenarios, what the balanced '
+             'budget cut, the override result, the town\u2019s revenue mechanics, and the '
+             'first-cut FY28 arithmetic. The foundation the rest of this rests on.'),
+            ('analyses/fy27-cut-reconciliation.md', 'Two right numbers: reconciling the FY27 cut', 3,
+             'The FY27 budget was cut by $1,174,933 and by $761,000, and both are correct. '
+             'A line-by-line bridge between them, and the three places the district\u2019s '
+             'own documents disagree with each other. Includes a correction to an earlier '
+             'version of this analysis.'),
+            ('analyses/budget-vs-actual.md', 'Budget versus actual', 2,
+             'Did what the town budgeted match what it spent? Written for two readers \u2014 '
+             'plain terms and the evidence, side by side. Deliberately separate from the '
+             'app\u2019s projection, and it says why. Unfinished: it names what it cannot '
+             'see without the town\u2019s accounting records.'),
+            ('analyses/sped-and-funds.md', 'Special education and the funds outside the budget', 2,
+             'Special education as a cost driver, out-of-district tuition, the circuit '
+             'breaker account, and the school and town money held outside the operating '
+             'appropriation. Carries a correction notice at the top \u2014 two growth figures '
+             'in it were derived on a basis we no longer stand behind.'),
+            ('analyses/peer-districts.md', 'What other districts did', 2,
+             'The comparison across neighbouring districts, and the order in which things '
+             'actually get cut when an override fails.'),
+        ],
+    },
+    {
         'id': 'derived', 'origin': 'us',
         'title': 'Built by this project',
-        'blurb': 'Machine-readable extracts and the written research notes. Everything here is '
-                 'derived from the documents above and can be rebuilt from them.',
+        'blurb': 'Machine-readable extracts. Derived from the documents above and '
+                 'rebuildable from them.',
         'items': [
             ('data/lps-budget-lines.csv', 'Budget lines, tidy CSV', 3,
              '356 rows extracted from the district workbook — section, function group, '
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
-            ('FINDINGS.md', 'Research notes: the FY27 budget and the override', 3,
-             'What the source documents say about where things stand — the adopted budget, '
-             'the cut lists, the override result, the revenue mechanics, and the first-cut '
-             'FY28 arithmetic.'),
-            ('FINDINGS-SPED-AND-FUNDS.md', 'Research notes: special education and the funds outside the budget', 2,
-             'Special education as a cost driver, the out-of-district tuition trend, the '
-             'circuit breaker account, and the school and town funds held outside the '
-             'operating appropriation. Carries a correction notice — two growth figures in '
-             'it were derived on a basis we no longer stand behind, and the note at the top '
-             'says which and why.'),
-            ('PEER-PRECEDENT.md', 'Research notes: what other districts did', 2,
-             'The extracted comparison across neighbouring districts, and the observed order '
-             'in which things get cut.'),
             ('contracts/CONTRACTS.md', 'Research notes: union contracts', 2,
              'What each agreement pays, when it expires, how the figures were verified, and '
              'what is still missing.'),

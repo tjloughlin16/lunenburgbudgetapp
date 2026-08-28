@@ -60,7 +60,7 @@ Primary-source FY27 budget documents from neighbouring districts. All downloaded
 | `north-middlesex-finance-subcommittee` | North Middlesex | FY27 Budget Summit notes — $64k vs $1.5M deficit at 3% vs 5% growth |
 | `wachusett-fy27-budget-presentation` | Wachusett | Assessments, enrollment by town, discretionary contribution +9.21% |
 
-See `PEER-PRECEDENT.md` Part 2 for the extracted comparison.
+See `analyses/peer-districts.md` Part 2 for the extracted comparison.
 
 ## Derived
 
