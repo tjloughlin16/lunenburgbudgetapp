@@ -1,3 +1,4 @@
+import { Cite } from './Citations'
 import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
   ALL_CUTS, CUT_OPTIONS, DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, PACKAGES, RATE_LINES,
@@ -179,6 +180,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
 
           <Claim n={1} figure={usdShort(LEVEL_SERVICE.gap)} tone="critical"
             eyebrow="Projected" href="#where-the-town-is"
+            cites={['gap', 'expense-base', 'salaries', 'health']}
             head="Projections show a deficit next year, and in every year after it.">
             No FY{BASE[0].fy} budget exists yet. Run the district&rsquo;s own published growth
             rates forward one year &mdash; same staff, same{' '}
@@ -188,6 +190,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
 
           <Claim n={2} figure={`${ALREADY_CUT.fte} FTE`} tone="critical"
             eyebrow="On the record" href="#two-rates"
+            cites={['cuts', 'fy27-approp']}
             head="The town has already cut deeply, and the projection reopens anyway.">
             The budget now in force cut {ALREADY_CUT.fte} positions and{' '}
             {usd(ALREADY_CUT.cost)} &mdash; four classroom teachers, an interventionist and
@@ -198,6 +201,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
           <Claim n={3} figure={pct(COST_GROWTH_BLENDED)}
             figureNote={`against ${pct(LONG_RUN)} revenue`}
             tone="critical" eyebrow="Projected" href="#two-rates"
+            cites={['prop25', 'salaries', 'health']}
             head="It is a rate problem, not a bad year.">
             Proposition 2&frac12; caps what the town may collect. Nothing caps insurance.
             Two things compounding at different speeds pull apart for ever, and the
@@ -206,6 +210,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
 
           <Claim n={4} figure={pct(SALARY_AND_HEALTH, 0)} eyebrow="On the record"
             href="#the-cuts"
+            cites={['expense-base', 'salaries', 'health']}
             head="Only two lines can change the direction — and neither is a School Committee vote.">
             Salaries and health insurance are {pct(SALARY_AND_HEALTH, 0)} of the budget:
             one bargained with the unions, one bought by the Town. Sports, clubs and
@@ -224,7 +229,8 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
             head={`State aid is already in these charts, and would have to grow `
               + `${CH70_MULTIPLE !== null && CH70_MULTIPLE < SPELLED.length
                     ? SPELLED[CH70_MULTIPLE] : CH70_MULTIPLE}`
-              + ` times faster.`}>
+              + ` times faster.`}
+            cites={['ch70', 'levy']}>
             Chapter 70 and the rest are {usdShort(STATE_AID.total)} a year,{' '}
             {pct(STATE_AID.shareOfTownRevenue, 0)} of everything the town collects. It is
             not missing from the charts below &mdash; it is inside the orange line, growing
@@ -237,7 +243,8 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
             <Claim n={6} figure={`${BUILD.multiple.toFixed(1)}×`}
               figureNote="today’s build rate, for ever"
               tone="critical" eyebrow="Record and projection" href="#commercial-development"
-              head="Commercial development is real money and the wrong order of magnitude.">
+              cites={['taxbase', 'levy']}
+            head="Commercial development is real money and the wrong order of magnitude.">
               New building raises that same orange line, and the schools keep{' '}
               {(SHARE * 100).toFixed(0)}&cent; of each dollar. Holding the projection from
               that side alone takes {usdShort(BUILD.value)} of new value a year &mdash;{' '}
@@ -340,7 +347,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
  *  The eyebrow is not decoration. Two of these four cards are the town's published record
  *  and two are this model's arithmetic, and a reader who cannot tell which is which will
  *  either believe the projection too much or the record too little. */
-function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, children }: {
+function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, children }: {
   n: number; figure: string; head: string; href: string; eyebrow?: string
   /** A second, smaller quantity the headline figure is only meaningful against. Kept out
    *  of `figure` because anything long enough to need two numbers cannot be set at
@@ -348,6 +355,9 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, childre
   figureNote?: string
   /** Runs the width of the grid. For the one claim that is about the other four. */
   wide?: boolean
+  /** Which sources this claim rests on. Rendered under the card rather than inside it,
+   *  because the whole card is already a link and a link inside a link is not a thing. */
+  cites?: string[]
   tone?: 'critical'; children: React.ReactNode
 }) {
   return (
@@ -384,6 +394,12 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, childre
         <span className="text-[11px] font-semibold mt-3"
           style={{ color: 'var(--series-cost)' }}>See the working &rarr;</span>
       </a>
+      {cites && cites.length > 0 && (
+        <p className="text-[11px] mt-1.5 px-1" style={{ color: 'var(--text-muted)' }}>
+          Sources:{' '}
+          {cites.map(id => <Cite key={id} id={id} />)}
+        </p>
+      )}
     </li>
   )
 }
