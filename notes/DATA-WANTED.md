@@ -135,8 +135,9 @@ The FY27 FinCom deck has this as a chart image: full inclusion 156→174, sub-se
 30→43, FY23 to FY26. **The underlying numbers, not the picture**, and ideally back further.
 
 This matters because the DESE total count *fell* 6.9% over seven years while the district's
-own chart shows intensive placements up 43%. Those can both be true if the mix shifted, but
-we cannot demonstrate it from a chart.
+own chart shows intensive placements up 43%. The two count different things and their
+totals do not match, so we cannot reconcile them at all from what is published — let alone
+explain the difference.
 
 - **Ask:** Director of Student Services, or DESE's special education data pages
 

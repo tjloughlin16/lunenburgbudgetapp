@@ -87,8 +87,14 @@ Teachers are flat. Therapists are near flat. Substitutes are identical. The year
 **+$530,038 of paraprofessionals against −$591,151 of purchased placements**, and
 everything else is noise around it.
 
-That is a make-or-buy decision: the district is producing in house what it used to buy.
-The minutes say that is the intent, but the budget says it on its own.
+**What the budget shows:** those two lines moved by nearly the same amount, in opposite
+directions, in the same year. That is all the budget shows. It does not show that any
+child moved, that the two decisions were connected, or that one caused the other.
+
+**What a document says:** the district's FY27 presentation to the Finance Committee states
+its own reasoning — *"Investing in internal staff is significantly more cost-effective
+than tuition and transportation for OOD placements."* That is the district describing its
+intent, in writing. It is evidence of intent. It is not evidence of what happened.
 
 ---
 
@@ -170,10 +176,20 @@ Weighting each part of the line by the contract that governs it:
 | Substitutes, supplies, legal | 3% | not bargained |
 
 **If every one of them rose only by its contract percentage, the line would rise 2.48%.**
-It rose more than that. The difference is not a pay rise — it is more staff.
+It rose more than that.
 
-So describing this as a single growth rate conflates price with quantity. Special education
-staff do not get bigger raises than anyone else. They are in the same units.
+**What that establishes:** the increase cannot be explained by the bargained pay rates
+alone. Something other than the contract percentages accounts for the rest.
+
+**What it does not establish:** what that something is. It could be more staff, staff at
+higher classifications or further along the step scale, more hours, or a change in which
+account a position is coded to. The budget shows dollars per line and never people, and
+the district does not publish staff counts. We cannot say which.
+
+What does follow is narrower and still useful: describing this line with a single growth
+rate conflates the bargained part with the unexplained part, and it wrongly implies
+special education staff receive larger increases than other staff. They do not — they are
+in the same bargaining units as everyone else.
 
 ### And the number of students has not grown
 
@@ -193,11 +209,16 @@ That cuts against a simple "caseload is growing" reading. But the district's own
 presentation to the Finance Committee shows, for FY23 to FY26, full inclusion 156 to 174
 and **sub-separate programs 30 to 43 — up 43%**. Sub-separate is the intensive end.
 
-Those can both be true if the **mix shifted toward intensity** rather than the count
-growing: roughly the same number of children, more of them needing more support. That
-would explain a staffing line rising faster than a student count. It is the most likely
-reading and it is not proven — the two sources count different things and neither
-publishes staff per student.
+These two are not directly comparable. DESE counts every student with a disability;
+the district's chart splits students by program type and its totals do not match DESE's
+for the same years. We cannot reconcile them from what is published.
+
+**A possible explanation, offered as a hypothesis and nothing more:** the number of
+children could be roughly flat while more of them require intensive support, which would
+let a staffing line rise faster than a headcount. Nothing here tests that. It would need
+the program-type counts as numbers rather than a chart image, and staff assigned per
+program, neither of which is published. It is written down so it can be checked, not
+because it is established.
 
 ---
 

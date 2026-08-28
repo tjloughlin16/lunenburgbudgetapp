@@ -73,15 +73,49 @@ never once tested against its own later budgets. Four years of data sat in the s
   concluding — three of six flagged lines turned out to be one-time step changes.
 - Lines that go to zero and reappear renamed produce −100% rates that look like findings.
 
-## 7. Do not assert a floor, a cause, or a motive the documents do not contain
+## 7. Only facts are stated as facts. A proxy is never a fact
 
-Two lines moving in opposite directions by similar amounts is a coincidence in a
-spreadsheet. It is not evidence that anybody did anything, and it was written up here as
-though it were.
+**A number computed from the data is a fact. An explanation for why that number moved is
+not.** The second is a hypothesis, however obvious it feels, and it must be labeled as one
+every single time.
 
-- If the data cannot distinguish two explanations, give both.
+This rule has been broken here repeatedly and always the same way: a real measurement gets
+one plausible cause attached, and a sentence later the cause is being restated as though it
+were the measurement.
+
+Three that shipped before being caught:
+
+| written as fact | actually established |
+|---|---|
+| "The district brought children back in district" | Two budget lines moved in opposite directions by similar amounts |
+| "The difference is not a pay rise — it is more staff" | The increase exceeds what the contract percentages alone produce |
+| "The mix shifted toward intensity" | Two sources report different student counts and cannot be reconciled |
+
+Each of those has other explanations that fit the same data equally well: the tuition line
+may simply have been over-budgeted for years; the staffing residual could be
+classifications, steps, hours, or recoding; the counts differ because they count different
+things.
+
+**How to write it instead.** Separate the two, explicitly, in the text:
+
+- *What the data shows* — the measurement, and only the measurement.
+- *What it does not show* — the alternatives that fit equally well.
+- *A possible explanation, offered as a hypothesis* — if it is worth recording, say plainly
+  that nothing here tests it, and name what would.
+
+**Do not use a proxy as if it were the thing.** Dollars are not students. A budget line is
+not a filled position. A count of documents is not a count of decisions. If the actual
+quantity is not published, the honest sentence is that we cannot say — not a number
+inferred from something adjacent to it.
+
+Specifics that follow from this:
+
+- If the data cannot distinguish two explanations, give both, and say it cannot.
 - `MANDATE_FLOOR` is an assumption we invented because a cascade needs somewhere to stop.
   The town has cut a school psychologist to zero. There is no established floor.
+- A document stating intent is evidence of intent, not of outcome. The district writing
+  that in-district staff are cheaper than placements shows what it meant to do. It does
+  not show what happened.
 - Name what would settle it. Usually one number nobody publishes.
 
 ## 8. This app explains how to fix the problem. It is not an audit
