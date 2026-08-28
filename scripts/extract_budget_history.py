@@ -38,13 +38,41 @@ import os, re, sys, glob, csv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEXT = os.path.join(ROOT, 'sources/district-budget-page/text')
-OUT = os.path.join(ROOT, 'sources/data/ood-tuition-history.csv')
+DATA = os.path.join(ROOT, 'sources/data')
 
-# The two lines that make up out-of-district tuition, under the district's own names.
-LINES = {
-    'private': re.compile(r'^Special Ed Tuitions?/Private\b', re.I),
-    'collaborative': re.compile(r'^Collaborative Tuitions?\b', re.I),
+# The line groups worth a history, each summed from the district's own line names.
+#
+# Out-of-district tuition came first, because the model escalated it at 8% on no basis at
+# all. The other two are here because the rate that replaced it rests on them: the
+# in-district rate assumes the FY27 jump in aides was a step rather than the start of a
+# climb, and it prices the bus contract off a single year. Both are assumptions the
+# archive can now test, and an assumption that can be tested and has not been is just an
+# assumption somebody has decided not to look at.
+GROUPS = {
+    'ood-tuition': dict(
+        out='ood-tuition-history.csv',
+        what='out-of-district tuition',
+        parts={
+            'private': re.compile(r'^Special Ed Tuitions?/Private\b', re.I),
+            'collaborative': re.compile(r'^Collaborative Tuitions?\b', re.I),
+        }),
+    'paraprofessionals': dict(
+        out='sped-para-history.csv',
+        what='special education paraprofessionals',
+        parts={
+            school.lower().replace('.', ''): re.compile(
+                rf'^{re.escape(school)}\s+Special Ed(?:ucation)? Paraprofessionals?\*{{0,3}}',
+                re.I)
+            for school in ('P.S.', 'E.S.', 'M.S.', 'H.S.', 'ACE')
+        }),
+    'sped-transport': dict(
+        out='sped-transport-history.csv',
+        what='special education transportation',
+        parts={
+            'system': re.compile(r'^Special Ed(?:ucation)? Transportation\b', re.I),
+        }),
 }
+
 YEARS = re.compile(r'\bFY\s?(\d{2})\b')
 # What the document calls each column. Only the budget kinds are kept. The layout is
 # always a row of fiscal years followed by a row of column kinds, and both rows usually
@@ -109,12 +137,12 @@ def document_year(lines):
     return 2000 + int(m.group(1)) if m else None
 
 
-def scan(path):
+def scan(path, parts):
     lines = open(path, encoding='utf-8', errors='replace').read().split('\n')
     dy = document_year(lines)
     out = []
     for i, ln in enumerate(lines):
-        for key, pat in LINES.items():
+        for key, pat in parts.items():
             if not pat.match(ln.strip()):
                 continue
             cols = columns(lines, i)
@@ -131,53 +159,60 @@ def scan(path):
     return out
 
 
-def main():
+def run(name, spec):
     obs = []
     for path in sorted(glob.glob(os.path.join(TEXT, '*.txt'))):
-        obs += scan(path)
+        obs += scan(path, spec['parts'])
 
     def pick(fy, line, stage):
-        """The observations for one year, one line, one stage -- and whether they agree."""
         vals = [o for o in obs if o['fy'] == fy and o['line'] == line
                 and o['stage'] == stage]
         if not vals:
-            return None, 0, False
-        # Latest document wins where several report the same settled year: a later
-        # document is reporting a figure that has had longer to stop moving.
+            return None, False
+        # A later document reporting the same settled year has had longer to stop moving.
         vals.sort(key=lambda o: (o['docYear'] or 0), reverse=True)
-        distinct = {v['value'] for v in vals}
-        return vals[0]['value'], len(vals), len(distinct) > 1
+        return vals[0]['value'], len({v['value'] for v in vals}) > 1
 
     years = sorted({o['fy'] for o in obs})
-    print('Out-of-district tuition, budget columns only, one stage at a time\n')
-    print(f"{'FY':<6}{'settled':>34}{'proposed':>34}")
-    print(f"{'':<6}{'private':>11}{'collab':>11}{'total':>12}"
-          f"{'private':>11}{'collab':>11}{'total':>12}")
+    parts = list(spec['parts'])
+    print(f"\n{spec['what'].upper()} — budget columns only, one stage at a time")
+    print(f"{'FY':<6}{'settled':>14}{'proposed':>14}   parts present")
     rows = []
     for fy in years:
-        cells, vals = [], {}
+        cell, vals = {}, {}
         for stage in ('settled', 'proposed'):
-            p, _, pd = pick(fy, 'private', stage)
-            c, _, cd = pick(fy, 'collaborative', stage)
-            t = (p + c) if (p is not None and c is not None) else None
-            vals[stage] = (p, c, t, pd or cd)
-            cells += [f"{p:,.0f}" if p else '—', f"{c:,.0f}" if c else '—',
-                      (f"{t:,.0f}" + ('*' if (pd or cd) else '')) if t else '—']
-        print(f"FY{fy % 100:<4}" + ''.join(f'{x:>11}' if i % 3 != 2 else f'{x:>12}'
-                                          for i, x in enumerate(cells)))
+            got = {k: pick(fy, k, stage) for k in parts}
+            have = [k for k in parts if got[k][0] is not None]
+            # A partial year is not a total. Summing three of five schools and calling it
+            # the line is how a series acquires a fake collapse.
+            total = sum(got[k][0] for k in have) if len(have) == len(parts) else None
+            vals[stage] = dict(total=total, parts={k: got[k][0] for k in have},
+                               disagree=any(got[k][1] for k in have), have=len(have))
+            cell[stage] = f"{total:,.0f}" + ('*' if vals[stage]['disagree'] else '') \
+                if total is not None else f'({len(have)}/{len(parts)})'
+        print(f"FY{fy % 100:<4}{cell['settled']:>14}{cell['proposed']:>14}")
         rows.append((fy, vals))
-    print('\n* documents disagree at that stage; the latest one is used')
 
-    with open(OUT, 'w', newline='') as fh:
+    out = os.path.join(DATA, spec['out'])
+    with open(out, 'w', newline='') as fh:
         w = csv.writer(fh)
-        w.writerow(['fy', 'stage', 'private', 'collaborative', 'total', 'documents_disagree'])
+        w.writerow(['fy', 'stage'] + parts + ['total', 'documents_disagree'])
         for fy, vals in rows:
-            for stage, (p, c, t, dis) in vals.items():
-                if t is None:
+            for stage, v in vals.items():
+                if v['total'] is None:
                     continue
-                w.writerow([fy, stage, f'{p:.0f}', f'{c:.0f}', f'{t:.0f}', int(dis)])
-    print(f'wrote {OUT}')
+                w.writerow([fy, stage] + [f"{v['parts'].get(k, 0):.0f}" for k in parts]
+                           + [f"{v['total']:.0f}", int(v['disagree'])])
+    print(f"wrote {out}")
     return rows
+
+
+def main():
+    print('Budget history from the mirrored district budget documents.')
+    print('Budget columns only. Stage held constant. * = documents disagree at that '
+          'stage; the latest is used.')
+    for name, spec in GROUPS.items():
+        run(name, spec)
 
 
 if __name__ == '__main__':

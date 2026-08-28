@@ -18,8 +18,8 @@ They differ by up to 59% on some lines. A growth rate measured from an actual to
 ## The headline figures
 
 - FY27 school appropriation: $26,572,288 (the adopted "Balanced" budget)
-- Projected FY28 gap: $442,320 — Average annual shortfall FY28–FY30, after each year’s cuts compound
-- Growth assumptions: salaries 4.0%, health insurance 9.0%, special education 4.3%, out-of-district tuition 0.0%, transport 6.0%, utilities 5.0%, everything else 3.0%
+- Projected FY28 gap: $594,281 — Average annual shortfall FY28–FY30, after each year’s cuts compound
+- Growth assumptions: salaries 4.0%, health insurance 9.0%, special education 6.8%, out-of-district tuition 0.0%, transport 6.0%, utilities 5.0%, everything else 3.0%
 - Levy growth: 2.5% (Proposition 2½, statutory)
 
 Only the special education rate is ours. The rest are the district’s own stated assumptions, a signed contract, or statute. `model.json` → `citations` says which is which for every headline figure.
@@ -27,8 +27,10 @@ Only the special education rate is ours. The rest are the district’s own state
 ## Data
 
 - [sped-lines.csv](https://lunenburgbudgetproject.org/data/sped-lines.csv) (0.0MB): Every budget line this project counts as special education, and which of the two rules caught it. They sum to the amount the projection starts from. Published because the state has no account code for special education, so the total is our classification rather than a figure anybody published.
+- [sped-para-history.csv](https://lunenburgbudgetproject.org/data/sped-para-history.csv) (0.0MB): Special education paraprofessionals as budgeted, FY18 to FY27, by school. Ten budgets growing 12.8% a year with an R-squared of 0.89 — which is why this line is escalated at what it has done rather than at the 2.0% its contract gives.
+- [sped-transport-history.csv](https://lunenburgbudgetproject.org/data/sped-transport-history.csv) (0.0MB): Special education transportation as budgeted, FY19 to FY27. Nine budgets, 5.7% a year, R-squared 0.33 — a weak trend, used because the vendor contract publishes no escalator.
 - [ood-tuition-history.csv](https://lunenburgbudgetproject.org/data/ood-tuition-history.csv) (0.0MB): Out-of-district special education tuition as budgeted, FY17 to FY27, extracted from the district’s own budget documents with the budget stage held constant. Eleven budgets ranging 2.6x with no trend — which is why the model holds this line flat rather than escalating it.
-- [model.json](https://lunenburgbudgetproject.org/data/model.json) (0.1MB): Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.
+- [model.json](https://lunenburgbudgetproject.org/data/model.json) (0.2MB): Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.
 - [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.1MB): The document archive: every source, its group, its size, and the URL it is served from.
 - [budget-lines.csv](https://lunenburgbudgetproject.org/data/budget-lines.csv) (0.1MB): The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.
 - [district-page-index.csv](https://lunenburgbudgetproject.org/data/district-page-index.csv) (0.0MB): The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district’s original URL, and a sha256.

@@ -11,7 +11,7 @@ import { StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
 import { TheOneOff, TheTrade, TheRate, TuitionRisk, TuitionHistory, StudentCounts,
-         WhatCounts } from '../components/SpecialEducation'
+         WhatCounts, MeasuredLines } from '../components/SpecialEducation'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 
@@ -243,6 +243,17 @@ export function BendTheCurve({ onJump, option = null }: {
           argument against a figure this project published for a day.
         </p>
         <TheRate />
+
+        <h3 className="text-lg font-bold mt-10 mb-2">
+          The two parts no contract governs
+        </h3>
+        <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          Nobody signs an agreement saying how many aides a district will employ. So for
+          these two the rate has to be measured — and drawn, because whether a line has a
+          trend at all is the thing that decides how much weight its number can carry.
+        </p>
+        <MeasuredLines />
 
         <h3 className="text-lg font-bold mt-10 mb-2">
           The line that bends the rate, over eleven budgets

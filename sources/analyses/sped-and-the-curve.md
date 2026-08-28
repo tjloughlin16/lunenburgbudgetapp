@@ -192,13 +192,88 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $561,080 | — |
-| Midway back, $1,000,000 | $860,938 | **+$299,858** |
-| Back to the FY25 budget, $1,164,824 | $1,025,762 | **+$464,682** |
-| Back to the FY26 budget, $1,291,293 | $1,152,231 | **+$591,151** |
+| As the district budgeted it for FY27, $700,142 | $705,694 | — |
+| Midway back, $1,000,000 | $1,005,552 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,170,376 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,296,845 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
+
+---
+
+## Is the increase in aides a step, or a climb?
+
+The whole in-district rate turns on this. If FY27's 39% increase in paraprofessionals was
+a one-time step, its cost already sits in the $5,745,543 the model starts from and the
+line should escalate at what the contracts give. If it is the latest year of a climb, it
+should escalate at what the climb has been doing.
+
+Two budget years cannot tell those apart. They look identical. Ten can.
+
+| FY | paraprofessionals | change | stage |
+|---|---:|---:|---|
+| 2018 | $634,513 | — | settled |
+| 2019 | $657,492 | +3.6% | settled |
+| 2020 | $871,903 | +32.6% | settled |
+| 2021 | $920,345 | +5.6% | settled |
+| 2022 | $946,233 | +2.8% | settled |
+| 2023 | $1,014,759 | +7.2% | settled |
+| 2024 | $1,170,941 | +15.4% | proposed |
+| 2025 | $1,366,893 | +16.7% | workbook |
+| 2026 | $1,342,373 | -1.8% | workbook |
+| 2027 | $1,872,411 | +39.5% | workbook |
+
+| | |
+|---|---:|
+| FY18 to FY27 | $634,513 → $1,872,411 (**2.95×**) |
+| Compound rate | **+12.78% a year** |
+| Straight-line fit | **R² = 0.89** |
+| Years up / down | **8 / 1** |
+| Compound rate by start year | +11.5% to +17.0% |
+
+**It is a climb.** 8 of 9 years up, an R² of 0.89, and a compound rate that barely moves
+wherever you start it — the opposite of out-of-district tuition, whose rate swings from
+-45.8% to +11.8% on the same test with an R² of 0.10. The FY27 increase is the
+steepest year of a trend running since FY18, not a departure from one.
+
+**And it is the aides, not the rest of the line, that make special education a driver.**
+In FY27 the paraprofessional increase was **108% of the whole year's rise** in in-district
+special education — every other part of the line fell. Take the aides out and the
+remainder grew **1.53% a year** across the two most recent budgets, below the levy cap. One
+part of this line is climbing and the rest is close to flat, which is precisely why a
+single blended rate taken from the settlements gets it wrong.
+
+**That is headcount, and no settlement reaches it.** The aides' contract gives 2.0%. Their
+budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
+adding them, which it has not done in 8 of the last 9 budgets.
+
+### Special education transportation, tested the same way
+
+| | |
+|---|---:|
+| FY19 to FY27 | $417,585 → $649,953 |
+| Compound rate | +5.69% a year |
+| Straight-line fit | R² = 0.33 |
+| Years up / down | 6 / 2 |
+
+A far weaker fit — it fell for two years and then climbed for four. 5.69% is used because it
+is the least bad figure available for a vendor contract that publishes no escalator, not
+because the line is well behaved, and it is 12% of the total.
+
+### What this forces
+
+The line was escalated at **2.57%** — the two pay settlements weighted by share — on the
+argument that FY27's increase in aides was a step already sitting in the base. **The
+argument was sound and its premise was false.** With two budget years there is no way to
+tell a step from a climb; with ten there is, and it is a climb.
+
+The rate is now **6.80%**, and the projected gap went up rather than down. That is what
+the evidence says, and the direction it moves the answer is not a reason to prefer the
+other one.
+
+Published at `/data/sped-para-history.csv` and `/data/sped-transport-history.csv`;
+`scripts/extract_budget_history.py` regenerates both from the archive.
 
 ---
 
@@ -264,7 +339,8 @@ will not hold still:
 **-45.8% to +11.8% on the same line, with the same endpoint, depending only on
 which year you start counting.** A figure that moves that far on an arbitrary choice
 measures nothing. Publishing +0.66% because FY17 happens to be the first year the archive
-reaches would be the same error as escalating in-district special education at 5.89%.
+reaches would be the same error as pricing the aides at their 2.0% contract:
+a number with a citation and no meaning for the line it is attached to.
 
 **So the line is held flat**, and the risk is published as a range of priced scenarios
 instead. That is the honest shape of what is known: nobody can say which direction this
@@ -323,34 +399,32 @@ Weighting each part of the line by the contract that governs it:
 | Transport (vendor) | 12% | vendor contract |
 | Substitutes, supplies, legal | 3% | not bargained |
 
-**Weighted, those contracts come to 4.28%** — and that is the rate this model
-now uses, because the alternative turned out to be worse.
+**Weighted, those two settlements come to 2.57%** — and the line has risen faster than that
+in every budget we hold.
 
-> **Correction, 28 August 2026.** This file previously reported **2.48%** as the
-> contracts-only figure and used **5.89%**, what the whole line did, as the model's rate.
-> Both were wrong, in opposite directions.
+That gap is the whole question, and it is answered in *Is the increase in aides a step, or
+a climb?* above: the aides' line has grown 12.8% a year across 10 budgets while their
+contract gives 2.0%. So the model escalates each part of this line at its contract where
+a contract governs it and at what it has measurably done where none does, which comes to
+**6.80%**.
+
+> **Correction, 28 August 2026.** This file has now carried three different rates for this
+> line in one day, and the sequence is worth keeping because each step was a real error.
 >
-> The 2.48% priced **special education transport at zero**. That is 11.5% of the line, it
-> is a vendor contract, and it moved +14.9% between the two budgets. A 0% that appears in
-> no contract is an assumption wearing a contract's clothes. The bus line has no published
-> escalator, so it has to be measured, and the measurement is sensitive: the blend is
-> 3.72% at the district's own transport assumption of 10%, 4.28% at the most
-> recent year, and 4.96% at the two-year rate. The middle one is used.
+> **2.48%**, described as "contracts alone", priced special education transport at zero.
+> That is 12% of the line and a vendor contract. A 0% that appears in no contract is
+> an assumption wearing a contract's clothes.
 >
-> The 5.89% was the larger error. Decompose the two years and the line is one decision
-> moving once: paraprofessionals rose 39.4% in FY27, $530,038,
-> which is **108% of the whole year's increase** — every other part of special
-> education fell that year. Take the aides out and the rest of the line grew
-> 1.53% a year across the two budgets, below the levy cap.
+> **5.89%**, what the whole line did over two budgets, was replaced because it looked like
+> one hiring decision averaged and compounded.
 >
-> So 5.89% was not a growth rate. It was a hiring decision averaged over two years and
-> then compounded forever — which is the same error this file accuses the district's
-> 3.98% of making, pointed the other way. Those aides were hired; their cost is already
-> inside the amount the model starts from. Escalating it at 5.89% assumes they are hired
-> again every year.
+> **2.57%**, the settlements weighted by share, was the correction to that — and it was
+> wrong for a reason none of the three budget years could show. It assumed FY27's increase
+> in aides was a step whose cost already sat in the base. Ten budgets say it is a climb.
 >
-> What the new rate assumes, and it is not nothing: that the FY27 hiring was a step rather
-> than the first year of a climb. Nothing in a budget column can test that.
+> **6.80%** is what replaces it. The lesson is not about any of the four numbers. It is
+> that a rate measured over two years cannot distinguish a step from a trend, and that
+> "use the contract rate" is only conservative for a line a contract actually governs.
 
 **What that establishes:** the increase cannot be explained by the bargained pay rates
 alone. Something other than the contract percentages accounts for the rest.

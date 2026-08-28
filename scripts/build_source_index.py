@@ -391,6 +391,18 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/sped-para-history.csv',
+             'Special education paraprofessionals, ten budgets', 3,
+             'What the district budgeted for special education aides, FY18 to FY27, by '
+             'school, read out of its own budget documents in the mirror above. Budget '
+             'columns only, one budget stage held constant. The line grew 12.8% a year '
+             'with an R-squared of 0.89 while the contract governing these staff gives '
+             '2.0% — which is the evidence the in-district escalator rests on. Rebuild '
+             'with scripts/extract_budget_history.py.'),
+            ('data/sped-transport-history.csv',
+             'Special education transportation, nine budgets', 2,
+             'The same extraction for the special education bus line, FY19 to FY27. A '
+             'much weaker trend than the aides — R-squared 0.33 — and said to be one.'),
             ('data/ood-tuition-history.csv',
              'Out-of-district tuition, eleven budgets', 3,
              'What the district budgeted for out-of-district special education tuition, '

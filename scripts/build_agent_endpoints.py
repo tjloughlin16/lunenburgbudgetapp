@@ -101,6 +101,16 @@ def main():
         os.path.getsize(sped_csv)))
 
     for src, name, what in [
+        (os.path.join(ROOT, 'sources', 'data', 'sped-para-history.csv'),
+         'sped-para-history.csv',
+         'Special education paraprofessionals as budgeted, FY18 to FY27, by school. Ten '
+         'budgets growing 12.8% a year with an R-squared of 0.89 — which is why this line '
+         'is escalated at what it has done rather than at the 2.0% its contract gives.'),
+        (os.path.join(ROOT, 'sources', 'data', 'sped-transport-history.csv'),
+         'sped-transport-history.csv',
+         'Special education transportation as budgeted, FY19 to FY27. Nine budgets, 5.7% '
+         'a year, R-squared 0.33 — a weak trend, used because the vendor contract '
+         'publishes no escalator.'),
         (os.path.join(ROOT, 'sources', 'data', 'ood-tuition-history.csv'),
          'ood-tuition-history.csv',
          'Out-of-district special education tuition as budgeted, FY17 to FY27, extracted '

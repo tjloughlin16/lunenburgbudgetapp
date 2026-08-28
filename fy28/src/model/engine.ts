@@ -109,14 +109,26 @@ export const MODEL = raw as unknown as {
     tuitionRate: number
     tuitionHistory: { fy: number; private: number; collaborative: number
                       total: number; stage: string }[]
-    tuitionTrend: {
-      n: number; low: number; high: number; ratio: number
-      lowFy: number; highFy: number; mean: number; current: number; vsMean: number
-      slope: number; r2: number; up: number; down: number
-      cagrByStart: { fy: number; rate: number }[]
-      biggestFall: [number, number]; biggestRise: [number, number]
-    }
-    transportRates: { recent: number; twoYear: number; districtAssumption: number }
+    tuitionTrend: { n: number; firstFy: number; lastFy: number; first: number; last: number
+               low: number; high: number; ratio: number; lowFy: number; highFy: number
+               mean: number; vsMean: number; slope: number; r2: number
+               up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
+               cagrByStart: { fy: number; rate: number }[]
+               biggestFall: [number, number]; biggestRise: [number, number] }
+    paraSeries: { fy: number; total: number; stage: string }[]
+    paraTrend: { n: number; firstFy: number; lastFy: number; first: number; last: number
+               low: number; high: number; ratio: number; lowFy: number; highFy: number
+               mean: number; vsMean: number; slope: number; r2: number
+               up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
+               cagrByStart: { fy: number; rate: number }[]
+               biggestFall: [number, number]; biggestRise: [number, number] }
+    transportSeries: { fy: number; total: number; stage: string }[]
+    transportTrend: { n: number; firstFy: number; lastFy: number; first: number; last: number
+               low: number; high: number; ratio: number; lowFy: number; highFy: number
+               mean: number; vsMean: number; slope: number; r2: number
+               up: number; down: number; cagr: number; cagrLow: number; cagrHigh: number
+               cagrByStart: { fy: number; rate: number }[]
+               biggestFall: [number, number]; biggestRise: [number, number] }
   }
   releases: {
     current: string

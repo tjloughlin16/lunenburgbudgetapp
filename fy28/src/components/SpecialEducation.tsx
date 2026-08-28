@@ -17,6 +17,7 @@ import { Disclose, Note } from './primitives'
 
 const S = MODEL.sped
 const T = S.tuitionTrend
+const P = S.paraTrend
 const pct = (v: number, d = 2) => `${(v * 100).toFixed(d)}%`
 const LEVY_CAP = 0.025
 
@@ -133,10 +134,6 @@ export function TheTrade() {
 /** The rate, and the argument against the number this project used to publish. */
 export function TheRate() {
   const used = S.range.find(r => r.used)!
-  const whole = S.range.find(r => r.id === 'whole')!
-  const paras = S.decomposition.find(r => r.id === 'paras')!
-  const step = paras.fy27 - paras.fy26
-  const yearRise = S.decomposition.reduce((s, r) => s + (r.fy27 - r.fy26), 0)
 
   return (
     <>
@@ -164,30 +161,61 @@ export function TheRate() {
       </div>
 
       <Note>
-        <strong style={{ color: 'var(--text-primary)' }}>Why not simply use what the line
-        did?</strong> Because {pct(whole.rate)} is not a growth rate. It is one hiring
-        decision. Paraprofessionals rose {pct(paras.fy27 / paras.fy26 - 1, 1)} in FY27 —{' '}
-        {usd(step)} — which is <strong>{pct(step / yearRise, 0)} of the whole year’s
-        increase in special education</strong>, because every other part of the line fell
-        that year. Take the aides out and the rest grew{' '}
-        {pct(S.range.find(r => r.id === 'ex_paras')!.rate)} a year across the two budgets,
-        below the {pct(LEVY_CAP, 1)} levy cap.
+        <strong style={{ color: 'var(--text-primary)' }}>Most of this line follows a
+        contract. One part of it does not, and that part is the story.</strong>{' '}
+        Professional staff are on the teachers’ agreement and escalate at{' '}
+        {pct(S.units[0].rate, 1)}. The aides are on the paraprofessionals’ agreement, which
+        gives {pct(2 / 100, 1)} — and their budget line has done nothing of the kind.
+        <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <MiniStat label="Aides, FY{P.firstFy} to FY{P.lastFy}"
+            value={`${P.ratio.toFixed(2)}×`}
+            sub={`${usd(P.first)} to ${usd(P.last)}`} />
+          <MiniStat label="Compound rate" value={pct(P.cagr, 1)}
+            sub={`${P.up} of ${P.n - 1} years up. Stays between ${pct(P.cagrLow, 1)} and
+                  ${pct(P.cagrByStart[P.cagrByStart.length - 2].rate, 1)} wherever you
+                  start it.`} />
+          <MiniStat label="Is it a trend?" value={`R² ${P.r2.toFixed(2)}`}
+            sub="Near 1 means the years explain the amount. This is a climb, not a scatter." />
+        </div>
+        <div className="mt-3">
+          That is <em>headcount</em>, and no pay settlement reaches it. Escalating the aides
+          at their {pct(2 / 100, 1)} contract would assume the district stops adding them —
+          which it has not done in {P.n - 1} of the last {P.n} budgets.
+        </div>
+      </Note>
+
+      <Note>
+        <strong style={{ color: 'var(--text-primary)' }}>This page argued the opposite a
+        day ago, and the correction is worth stating rather than quietly editing.</strong>{' '}
+        This line was escalated at {pct(S.range.find(r => r.id === 'contracts_only')!.rate)}{' '}
+        — the settlements alone — on the argument that FY27’s{' '}
+        {pct(S.decomposition.find(d => d.id === 'paras')!.fy27
+          / S.decomposition.find(d => d.id === 'paras')!.fy26 - 1, 0)} increase in aides was
+        a one-time step whose cost already sat in the amount the model starts from. That
+        argument was sound. Its premise was false.
         <br /><br />
-        Those aides were hired. Their cost is already inside the {usd(S.base)} this model
-        starts from. Escalating that amount at {pct(whole.rate)} would say the district
-        hires {pct(paras.fy27 / paras.fy26 - 1, 0)} more aides again next year, and again
-        the year after — which is the same error as reading the district’s{' '}
-        {pct(S.year.published)} as a recurring rate, pointed the other way. A one-time
-        step belongs in the amount, not in the angle.
+        With two budget years there is no way to tell a step from a climb — they look
+        identical. The archive now reaches back {P.n} budgets, and it is a climb: the FY27
+        rise is the steepest year of a trend that has been running since FY{P.firstFy % 100},
+        not a departure from one. The rate went from{' '}
+        {pct(S.range.find(r => r.id === 'contracts_only')!.rate)} to {pct(used.rate)}, and
+        the projected gap went up rather than down.
+      </Note>
+
+      <Note>
+        <strong style={{ color: 'var(--text-primary)' }}>What this rate still assumes.</strong>{' '}
+        That the climb continues at roughly the rate it has held. That is an assumption and
+        not a measurement, and nothing in a budget column can test it: a budget shows
+        dollars per line and never shows people, and the district does not publish staff
+        counts. What can be said is narrower and firmer — that pricing this line at the pay
+        settlements alone has been wrong in every one of the last {P.n - 1} budgets.
         <br /><br />
-        <strong style={{ color: 'var(--text-primary)' }}>What this rate assumes, and it is
-        not nothing.</strong> That the FY27 hiring was a step rather than the first year of
-        a climb. If more aides are needed every year — because more children arrive
-        requiring one, or because the children here require more — then{' '}
-        {pct(used.rate)} is too low and this model understates the gap. Nothing in a budget
-        column can settle that. A budget shows dollars per line and never shows people, and
-        the district does not publish staff counts. That is why the whole range is printed
-        above rather than only the number we chose.
+        The buses are the weakest input. There is no published vendor escalator, so the
+        figure is measured, and over {S.transportTrend.n} budgets it fits far less
+        convincingly than the aides do — R² of {S.transportTrend.r2.toFixed(2)} against{' '}
+        {P.r2.toFixed(2)}. It is {pct(S.transportTrend.cagr, 1)} because that is the least
+        bad number available, not because the line is well behaved. It is{' '}
+        {pct(S.units[2].share, 0)} of the total.
       </Note>
 
       <Note>
@@ -211,24 +239,14 @@ export function TheRate() {
           ))}
         </div>
         <div className="mt-3 text-[12px]" style={{ color: 'var(--text-muted)' }}>
-          The bus contract is the one input nobody publishes a rate for, so it is measured
-          — and the measurement moves the blend. At the district’s own transport assumption
-          of {pct(S.transportRates.districtAssumption, 0)} the blend is{' '}
-          {pct(blendAt(S.transportRates.districtAssumption))}; at the most recent year,{' '}
-          {pct(S.transportRates.recent, 1)}, it is {pct(used.rate)}; at the two-year rate
-          of {pct(S.transportRates.twoYear, 1)} it is{' '}
-          {pct(blendAt(S.transportRates.twoYear))}. The middle one is used.
+          Only the first of those is a contract rate. The aides and the buses are measured,
+          because no agreement says how many people a district employs or what a bus vendor
+          will charge at renewal — and a rate copied from a settlement for a line that does
+          not follow one is a number with a citation and no meaning.
         </div>
       </Note>
     </>
   )
-}
-
-/** The blend with the bus line priced differently — so the page can show its own
- *  sensitivity instead of asserting that the chosen figure is the only one available. */
-function blendAt(transportRate: number): number {
-  return S.units.reduce((sum, u) =>
-    sum + u.share * (u.id === 'transport' ? transportRate : u.rate), 0)
 }
 
 /** The one line whose value nobody can check, priced at every plausible level.
@@ -327,6 +345,20 @@ export function StudentCounts() {
         cannot be squared from anything published.
       </Note>
     </>
+  )
+}
+
+function MiniStat({ label, value, sub }: {
+  label: string; value: string; sub: string
+}) {
+  return (
+    <div>
+      <p className="text-[11px] font-semibold uppercase tracking-widest"
+        style={{ color: 'var(--text-muted)' }}>{label}</p>
+      <p className="text-xl font-bold tnum leading-none mt-0.5">{value}</p>
+      <p className="text-[11.5px] mt-1 leading-relaxed"
+        style={{ color: 'var(--text-secondary)' }}>{sub}</p>
+    </div>
   )
 }
 
@@ -545,5 +577,73 @@ export function TuitionHistory() {
         </div>
       </Note>
     </>
+  )
+}
+
+/** The two lines whose rates are measured rather than taken from a contract.
+ *
+ *  Drawn rather than asserted, because the difference between them is the whole argument
+ *  and it is visible at a glance: the aides climb, the buses wander. The R-squared under
+ *  each is the number that turns "it looks like a trend" into a claim somebody can check,
+ *  and it is why one of these lines is escalated at what it has done and the other is
+ *  used with a warning. */
+export function MeasuredLines() {
+  const sets = [
+    { id: 'paras', title: 'Special education paraprofessionals',
+      series: S.paraSeries, t: S.paraTrend,
+      contract: 'Their contract gives 2.0% a year.',
+      verdict: 'A trend, and a strong one. Escalated at what it has done.' },
+    { id: 'transport', title: 'Special education transportation',
+      series: S.transportSeries, t: S.transportTrend,
+      contract: 'A vendor contract with no published escalator.',
+      verdict: 'A weak fit. Used because it is the least bad figure available, and it is '
+             + 'the smallest of the three components.' },
+  ]
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      {sets.map(({ id, title, series, t, contract, verdict }) => {
+        if (!series?.length) return null
+        const max = Math.max(...series.map(d => d.total))
+        return (
+          <div key={id} className="card p-4">
+            <p className="text-[13.5px] font-semibold">{title}</p>
+            <p className="text-[11.5px] mb-3" style={{ color: 'var(--text-muted)' }}>
+              {contract}
+            </p>
+            <div className="flex items-end gap-1" style={{ height: 110 }}>
+              {series.map(d => (
+                <div key={d.fy}
+                  className="flex-1 flex flex-col items-center justify-end h-full">
+                  <div className="w-full rounded-t" style={{
+                    height: `${(d.total / max) * 100}%`,
+                    background: 'var(--series-cost)',
+                    opacity: d.stage === 'proposed' ? 0.55 : 0.85 }} />
+                  <span className="text-[9px] tnum mt-1"
+                    style={{ color: 'var(--text-muted)' }}>
+                    {`’${String(d.fy).slice(2)}`}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-3 gap-2 mt-3 text-center">
+              <div>
+                <p className="text-[15px] font-bold tnum">{pct(t.cagr, 1)}</p>
+                <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>a year</p>
+              </div>
+              <div>
+                <p className="text-[15px] font-bold tnum">{t.r2.toFixed(2)}</p>
+                <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>R²</p>
+              </div>
+              <div>
+                <p className="text-[15px] font-bold tnum">{t.up}/{t.n - 1}</p>
+                <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>years up</p>
+              </div>
+            </div>
+            <p className="text-[11.5px] mt-3 leading-relaxed"
+              style={{ color: 'var(--text-secondary)' }}>{verdict}</p>
+          </div>
+        )
+      })}
+    </div>
   )
 }

@@ -113,27 +113,36 @@ CITATIONS = [
     dict(id='sped', metric='Special education growth, in district',
          value=f'{sped.RATE:.2%} a year',
          kind='ours',
-         basis=('OURS. It is what the staff in this line are contracted to receive, '
-                'weighted by how much of the line each group is: '
-                + ', '.join(f"{u['label'].lower()} at {u['rate']:.1%} across "
-                            f"{u['share']:.0%} of it" for u in sped.UNITS
-                            if u['id'] != 'unbargained')
-                + '. The bus contract publishes no escalator, so its figure is what the '
-                'budgets show that line doing. '
-               f'It is deliberately NOT the rate the line itself did. That figure is '
-               f'{sped.WHOLE_LINE_RATE:.2%}, and it is one hiring decision rather than a '
-               f'trend: paraprofessionals rose {sped.PARA_FY27_RATE:.0%} in FY27, which was '
-               f'{sped.PARA_SHARE_OF_RISE:.0%} of the whole year\u2019s increase, while '
-               f'every other part of special education fell. Those aides are already inside '
-               f'the amount this model starts from, so escalating it at '
-               f'{sped.WHOLE_LINE_RATE:.2%} would assume they are hired again every year. '
-               'The assumption this rate does make is that the FY27 hiring was a step and '
-               'not the first year of a climb. Nothing in a budget can test that \u2014 a '
-               'budget shows dollars per line and never shows people, and the district does '
-               'not publish staff counts. The full range is published beside the rate.'),
+         basis=('OURS. Each part of this line is escalated at its contract where a '
+                'contract governs it, and at what it has measurably done where none does, '
+                'weighted by its share: '
+                + ', '.join(f"{u['label'].lower()} {u['rate']:.1%} across {u['share']:.0%}"
+                            for u in sped.UNITS if u['id'] != 'unbargained')
+                + '. '
+                f"The aides are the reason this is not simply the sum of the pay "
+                f"settlements. Their contract gives {sped.AFSCME_RATE:.1%}; across "
+                f"{sped.PARA_TREND['n']} budgets, FY{sped.PARA_TREND['firstFy'] % 100} to "
+                f"FY{sped.PARA_TREND['lastFy'] % 100}, the line went from "
+                f"${sped.PARA_TREND['first']:,.0f} to ${sped.PARA_TREND['last']:,.0f} "
+                f"\u2014 {sped.PARA_TREND['ratio']:.2f} times, "
+                f"{sped.PARA_TREND['up']} of {sped.PARA_TREND['n'] - 1} years up, an "
+                f"R\u00b2 of {sped.PARA_TREND['r2']:.2f}, and a compound rate that stays "
+                f"between {sped.PARA_TREND['cagrLow']:+.1%} and "
+                f"{max(c['rate'] for c in sped.PARA_TREND['cagrByStart'][:-1]):+.1%} "
+                'wherever you start it. That is headcount, and no pay settlement reaches '
+                'it. '
+                'This figure previously stood at 4.28%, which priced the aides at their '
+                'contract on the argument that FY27\u2019s increase was a one-time step '
+                'already inside the base. Two budget years could not tell a step from a '
+                'climb; ten can, and it is a climb. '
+                'What it still assumes is that the climb continues at roughly the rate it '
+                'has held. Nothing in a budget column can test that \u2014 a budget shows '
+                'dollars per line and never shows people, and the district does not '
+                'publish staff counts. The full range is published beside the rate.'),
          doc='xlsx/fy27-proposals.xlsx',
-         source='FY27 budget workbook, columns fy25_budget, fy26_final and '
-                'fy27_level_service, with the LEA and AFSCME agreements'),
+         source='FY27 budget workbook with the district\u2019s budget documents '
+                'FY17\u2013FY27, extracted by scripts/extract_budget_history.py; '
+                'published at /data/sped-para-history.csv'),
 
     dict(id='ch70', metric='Chapter 70 aid and the foundation budget',
          value='$9,349,335',

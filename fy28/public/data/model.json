@@ -789,7 +789,7 @@
   "salaries": 0.04,
   "health": 0.09,
   "transport": 0.06,
-  "sped": 0.04279822567003433,
+  "sped": 0.06796806904931668,
   "sped_tuition": 0.0,
   "utilities": 0.05,
   "other": 0.03,
@@ -923,11 +923,11 @@
    {
     "id": "sped",
     "metric": "Special education growth, in district",
-    "value": "4.28% a year",
+    "value": "6.80% a year",
     "kind": "ours",
-    "basis": "OURS. It is what the staff in this line are contracted to receive, weighted by how much of the line each group is: professional staff at 3.5% across 54% of it, paraprofessionals at 2.0% across 33% of it, transport at 14.9% across 12% of it. The bus contract publishes no escalator, so its figure is what the budgets show that line doing. It is deliberately NOT the rate the line itself did. That figure is 5.89%, and it is one hiring decision rather than a trend: paraprofessionals rose 39% in FY27, which was 108% of the whole year\u2019s increase, while every other part of special education fell. Those aides are already inside the amount this model starts from, so escalating it at 5.89% would assume they are hired again every year. The assumption this rate does make is that the FY27 hiring was a step and not the first year of a climb. Nothing in a budget can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
+    "basis": "OURS. Each part of this line is escalated at its contract where a contract governs it, and at what it has measurably done where none does, weighted by its share: professional staff 3.5% across 54%, paraprofessionals 12.8% across 33%, transport 5.7% across 12%. The aides are the reason this is not simply the sum of the pay settlements. Their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. This figure previously stood at 4.28%, which priced the aides at their contract on the argument that FY27\u2019s increase was a one-time step already inside the base. Two budget years could not tell a step from a climb; ten can, and it is a climb. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
     "doc": "xlsx/fy27-proposals.xlsx",
-    "source": "FY27 budget workbook, columns fy25_budget, fy26_final and fy27_level_service, with the LEA and AFSCME agreements",
+    "source": "FY27 budget workbook with the district\u2019s budget documents FY17\u2013FY27, extracted by scripts/extract_budget_history.py; published at /data/sped-para-history.csv",
     "n": 10
    },
    {
@@ -1044,12 +1044,12 @@
   ]
  },
  "sped": {
-  "rate": 0.04279822567003433,
+  "rate": 0.06796806904931668,
   "units": [
    {
     "id": "professional",
     "label": "Professional staff",
-    "basis": "Teachers\u2019 agreement (LEA)",
+    "basis": "Teachers\u2019 agreement (LEA), 3.5%",
     "rate": 0.035,
     "amount": 3072420.0,
     "share": 0.5438600714710041
@@ -1057,23 +1057,23 @@
    {
     "id": "paras",
     "label": "Paraprofessionals",
-    "basis": "Paraprofessionals\u2019 agreement (AFSCME 503)",
-    "rate": 0.02,
+    "basis": "Measured over 10 budgets rather than taken from the 2.0% contract \u2014 this line is headcount, and no settlement reaches it",
+    "rate": 0.12776302345076007,
     "amount": 1874411.0,
     "share": 0.3317962063865085
    },
    {
     "id": "transport",
     "label": "Transport",
-    "basis": "Vendor contract; no published escalator",
-    "rate": 0.14886678191517566,
+    "basis": "Vendor contract with no published escalator; measured over 9 budgets",
+    "rate": 0.05685920126814903,
     "amount": 649953.0,
     "share": 0.11505050905566086
    },
    {
     "id": "unbargained",
     "label": "Substitutes and supplies",
-    "basis": "Not bargained",
+    "basis": "Not bargained; identical in every budget held",
     "rate": 0.0,
     "amount": 52500.0,
     "share": 0.009293213086826579
@@ -1084,26 +1084,32 @@
     "id": "ex_paras",
     "rate": 0.0153358790789202,
     "label": "Special education apart from the aides, two budgets",
-    "what": "What every other part of the line did while the aides were being hired. Below the levy cap."
+    "what": "What the rest of the line did while the aides were being added. Below the levy cap \u2014 and it is the aides, not the rest, that make this line a driver."
    },
    {
-    "id": "contracts",
-    "rate": 0.04279822567003433,
-    "used": true,
-    "label": "What the staff are contracted to receive",
-    "what": "The two agreements at their published rates and the buses at what the budgets did, each weighted by its share of the line. Assumes the FY27 hiring was a step rather than the first year of a climb."
+    "id": "contracts_only",
+    "rate": 0.02567102662921532,
+    "label": "If every settlement were the whole story",
+    "what": "The two bargained agreements at their published rates and nothing else \u2014 no bus increase, no change in how many people are employed. Published here because it is what this model used to assume, and because the gap between it and the rate above is the part of this line that pay settlements do not explain."
    },
    {
     "id": "whole",
     "rate": 0.05886848212276696,
     "label": "The whole line, two budgets",
-    "what": "Includes the one-time 39% increase in aides, which was 108% of that year\u2019s rise. Compounding it assumes the hiring repeats."
+    "what": "What the in-district line did between the last two budgets. Close to the rate used, and reached a different way."
+   },
+   {
+    "id": "contracts",
+    "rate": 0.06796806904931668,
+    "used": true,
+    "label": "Each part at its contract, or at what it has measurably done",
+    "what": "Professional staff at the teachers\u2019 agreement; aides and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part\u2019s share of the line."
    },
    {
     "id": "fy27",
     "rate": 0.0952031167653975,
     "label": "FY27 by itself",
-    "what": "The single year the hiring happened. One observation."
+    "what": "The single steepest year. One observation, and the top of the range."
    }
   ],
   "decomposition": [
@@ -1173,28 +1179,28 @@
     "id": "budgeted",
     "label": "As the district budgeted it for FY27",
     "tuition": 700142,
-    "gap": 561080,
+    "gap": 705694,
     "delta": 0
    },
    {
     "id": "midway",
     "label": "Midway back",
     "tuition": 1000000,
-    "gap": 860938,
+    "gap": 1005552,
     "delta": 299858
    },
    {
     "id": "fy25",
     "label": "Back to the FY25 budget",
     "tuition": 1164824,
-    "gap": 1025762,
+    "gap": 1170376,
     "delta": 464682
    },
    {
     "id": "fy26",
     "label": "Back to the FY26 budget",
     "tuition": 1291293,
-    "gap": 1152231,
+    "gap": 1296845,
     "delta": 591151
    }
   ],
@@ -1696,18 +1702,22 @@
   ],
   "tuitionTrend": {
    "n": 11,
+   "firstFy": 2017,
+   "lastFy": 2027,
+   "first": 655534.0,
+   "last": 700142.0,
    "low": 489918.0,
    "high": 1291293.0,
    "ratio": 2.635732918570046,
    "lowFy": 2023,
    "highFy": 2026,
    "mean": 792857.3636363636,
-   "current": 700142.0,
    "vsMean": -0.116938263915635,
    "slope": 23816.354545454546,
    "r2": 0.10313135181358934,
    "up": 6,
    "down": 4,
+   "cagr": 0.006605017646882816,
    "cagrByStart": [
     {
      "fy": 2017,
@@ -1750,6 +1760,8 @@
      "rate": -0.4577977267746359
     }
    ],
+   "cagrLow": -0.4577977267746359,
+   "cagrHigh": 0.11784200577957549,
    "biggestFall": [
     -0.4577977267746359,
     2027
@@ -1759,10 +1771,234 @@
     2025
    ]
   },
-  "transportRates": {
-   "recent": 0.14886678191517566,
-   "twoYear": 0.2080946893172848,
-   "districtAssumption": 0.1
+  "paraSeries": [
+   {
+    "fy": 2018,
+    "total": 634513.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2019,
+    "total": 657492.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2020,
+    "total": 871903.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2021,
+    "total": 920345.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2022,
+    "total": 946233.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2023,
+    "total": 1014759.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2024,
+    "total": 1170941.0,
+    "stage": "proposed"
+   },
+   {
+    "fy": 2025,
+    "total": 1366893.0,
+    "stage": "workbook"
+   },
+   {
+    "fy": 2026,
+    "total": 1342373.0,
+    "stage": "workbook"
+   },
+   {
+    "fy": 2027,
+    "total": 1872411.0,
+    "stage": "workbook"
+   }
+  ],
+  "paraTrend": {
+   "n": 10,
+   "firstFy": 2018,
+   "lastFy": 2027,
+   "first": 634513.0,
+   "last": 1872411.0,
+   "low": 634513.0,
+   "high": 1872411.0,
+   "ratio": 2.950941903475579,
+   "lowFy": 2018,
+   "highFy": 2027,
+   "mean": 1079786.3,
+   "vsMean": 0.7340570073911847,
+   "slope": 116548.56363636363,
+   "r2": 0.8927673141459562,
+   "up": 8,
+   "down": 1,
+   "cagr": 0.12776302345076007,
+   "cagrByStart": [
+    {
+     "fy": 2018,
+     "rate": 0.12776302345076007
+    },
+    {
+     "fy": 2019,
+     "rate": 0.13976112211272285
+    },
+    {
+     "fy": 2020,
+     "rate": 0.11537010930885794
+    },
+    {
+     "fy": 2021,
+     "rate": 0.12566307730817727
+    },
+    {
+     "fy": 2022,
+     "rate": 0.14625335217695823
+    },
+    {
+     "fy": 2023,
+     "rate": 0.16549272770704593
+    },
+    {
+     "fy": 2024,
+     "rate": 0.16937926902235256
+    },
+    {
+     "fy": 2025,
+     "rate": 0.1703973564822865
+    },
+    {
+     "fy": 2026,
+     "rate": 0.3948515055055488
+    }
+   ],
+   "cagrLow": 0.11537010930885794,
+   "cagrHigh": 0.3948515055055488,
+   "biggestFall": [
+    -0.017938492625245717,
+    2026
+   ],
+   "biggestRise": [
+    0.3948515055055488,
+    2027
+   ]
+  },
+  "transportSeries": [
+   {
+    "fy": 2019,
+    "total": 417585.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2020,
+    "total": 446658.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2021,
+    "total": 380409.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2022,
+    "total": 297843.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2023,
+    "total": 329360.0,
+    "stage": "settled"
+   },
+   {
+    "fy": 2024,
+    "total": 335947.0,
+    "stage": "proposed"
+   },
+   {
+    "fy": 2025,
+    "total": 445328.0,
+    "stage": "workbook"
+   },
+   {
+    "fy": 2026,
+    "total": 565734.0,
+    "stage": "workbook"
+   },
+   {
+    "fy": 2027,
+    "total": 649953.0,
+    "stage": "workbook"
+   }
+  ],
+  "transportTrend": {
+   "n": 9,
+   "firstFy": 2019,
+   "lastFy": 2027,
+   "first": 417585.0,
+   "last": 649953.0,
+   "low": 297843.0,
+   "high": 649953.0,
+   "ratio": 2.182200018130357,
+   "lowFy": 2022,
+   "highFy": 2027,
+   "mean": 429868.55555555556,
+   "vsMean": 0.511980794129058,
+   "slope": 24244.033333333333,
+   "r2": 0.3315489617314372,
+   "up": 6,
+   "down": 2,
+   "cagr": 0.05685920126814903,
+   "cagrByStart": [
+    {
+     "fy": 2019,
+     "rate": 0.05685920126814903
+    },
+    {
+     "fy": 2020,
+     "rate": 0.055048453190823965
+    },
+    {
+     "fy": 2021,
+     "rate": 0.09338185299318513
+    },
+    {
+     "fy": 2022,
+     "rate": 0.16890417821461856
+    },
+    {
+     "fy": 2023,
+     "rate": 0.18523037951050147
+    },
+    {
+     "fy": 2024,
+     "rate": 0.24605456854432228
+    },
+    {
+     "fy": 2025,
+     "rate": 0.2080946893172848
+    },
+    {
+     "fy": 2026,
+     "rate": 0.14886678191517566
+    }
+   ],
+   "cagrLow": 0.055048453190823965,
+   "cagrHigh": 0.24605456854432228,
+   "biggestFall": [
+    -0.21704533804405257,
+    2022
+   ],
+   "biggestRise": [
+    0.3255900484302583,
+    2025
+   ]
   }
  },
  "scenarios": {
@@ -2706,7 +2942,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$442,320",
+   "value": "$594,281",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -2714,8 +2950,8 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$30.7M",
-   "sub": "of new commercial value every year \u2014 about 47 more average businesses a year, on top of the 234 the town has, or 10 typical developments",
+   "value": "$41.3M",
+   "sub": "of new commercial value every year \u2014 about 63 more average businesses a year, on top of the 234 the town has, or 14 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },
@@ -2852,7 +3088,7 @@
    "body": "Our own package \u2014 higher fees, a technology audit, an administration trim \u2014 finds about two thirds of FY28 without cutting a program. The remaining third is roughly two teaching positions. Anyone claiming a painless third option has not added up the line items."
   }
  ],
- "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $440,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
+ "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $590,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
  "levers": [
   {
    "id": "athletic_fees",

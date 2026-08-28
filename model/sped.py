@@ -160,6 +160,103 @@ def decomposition():
     return out
 
 
+# ---------------------------------------------------- the long series, and trend tests
+# Three budget years cannot tell a step from a climb. The archive's mirror of the
+# district's budget page reaches FY17, and `scripts/extract_budget_history.py` reads the
+# lines out of it -- budget columns only, one budget stage held constant, validated
+# against the FY27 workbook where the two overlap.
+#
+# What it is for: every rate below is now measured over nine or ten budgets instead of
+# two, and each one carries the test of whether it is a trend at all. That test is the
+# difference between out-of-district tuition, which has an R-squared of 0.10 and is
+# therefore held flat, and paraprofessionals, which have 0.89 and are not.
+HISTORY = {
+    'tuition': 'ood-tuition-history.csv',
+    'paras': 'sped-para-history.csv',
+    'transport': 'sped-transport-history.csv',
+}
+
+
+def history(name, workbook=None):
+    """One line, budget by budget. `workbook` fills years the documents do not reach."""
+    path = os.path.join(ROOT, 'sources/data', HISTORY[name])
+    if not os.path.exists(path):
+        return []
+    by_year = {}
+    for r in csv.DictReader(open(path)):
+        by_year.setdefault(int(r['fy']), {})[r['stage']] = float(r['total'])
+    years = sorted(set(by_year) | set(workbook or {}))
+    out = []
+    for fy in years:
+        stages = by_year.get(fy, {})
+        # A settled figure -- one reported after the year was over -- beats a proposal,
+        # and the workbook beats both where it has the year, because it is the tidy
+        # extract everything else on this site is computed from.
+        if workbook and fy in workbook:
+            v, src = workbook[fy], 'workbook'
+        elif 'settled' in stages:
+            v, src = stages['settled'], 'settled'
+        elif 'proposed' in stages:
+            v, src = stages['proposed'], 'proposed'
+        else:
+            continue
+        out.append(dict(fy=fy, total=v, stage=src))
+    return out
+
+
+def trend(series):
+    """Whether a series has a direction, and how much that answer depends on where you
+    start. R-squared near zero means there is no rate to measure and saying one anyway is
+    a choice dressed as a measurement."""
+    v = [d['total'] for d in series]
+    n = len(v)
+    if n < 3:
+        return {}
+    xs = list(range(n))
+    mx, my = sum(xs) / n, sum(v) / n
+    slope = (sum((x - mx) * (y - my) for x, y in zip(xs, v))
+             / sum((x - mx) ** 2 for x in xs))
+    inter = my - slope * mx
+    sst = sum((y - my) ** 2 for y in v)
+    ssr = sum((y - (inter + slope * x)) ** 2 for x, y in zip(xs, v))
+    end, endfy = v[-1], series[-1]['fy']
+    starts = [dict(fy=d['fy'], rate=(end / d['total']) ** (1 / (endfy - d['fy'])) - 1)
+              for d in series[:-1] if d['fy'] != endfy]
+    rates = [c['rate'] for c in starts]
+    return dict(
+        n=n, firstFy=series[0]['fy'], lastFy=endfy,
+        first=v[0], last=end, low=min(v), high=max(v), ratio=max(v) / min(v),
+        lowFy=series[v.index(min(v))]['fy'], highFy=series[v.index(max(v))]['fy'],
+        mean=my, vsMean=end / my - 1, slope=slope, r2=1 - ssr / sst,
+        up=sum(1 for i in range(n - 1) if v[i + 1] > v[i]),
+        down=sum(1 for i in range(n - 1) if v[i + 1] < v[i]),
+        cagr=(end / v[0]) ** (1 / (endfy - series[0]['fy'])) - 1,
+        cagrByStart=starts, cagrLow=min(rates), cagrHigh=max(rates),
+        biggestFall=min((v[i + 1] / v[i] - 1, series[i + 1]['fy']) for i in range(n - 1)),
+        biggestRise=max((v[i + 1] / v[i] - 1, series[i + 1]['fy']) for i in range(n - 1)),
+    )
+
+
+def _workbook(pred):
+    rs = rows()
+    return {2025: total(FY25, pred, rs), 2026: total(FY26, pred, rs),
+            2027: total(FY27LS, pred, rs)}
+
+
+# The five school paraprofessional lines only, which is what the documents itemise. The
+# workbook's 2330 group carries $2,000 more in contracted services; matching the basis is
+# what makes the two agree to the dollar where they overlap.
+def _para_schools(r):
+    return ('2330' in _g(r) and is_sped(r)
+            and 'paraprofessional' in (r['line_item'] or '').lower())
+
+
+PARA_SERIES = history('paras', _workbook(_para_schools))
+PARA_TREND = trend(PARA_SERIES)
+TRANSPORT_SERIES = history('transport', _workbook(_part_pred('transport')))
+TRANSPORT_TREND = trend(TRANSPORT_SERIES)
+
+
 # ------------------------------------------------------------------ the contracts
 # There is no special education bargaining unit. Professional staff are on the teachers'
 # agreement and aides on the paraprofessionals'; the buses are a vendor contract and the
@@ -179,20 +276,48 @@ def decomposition():
 # The most recent year is used because it is the one measured on the same pair of budgets
 # as everything else here, and because it is the middle of the three rather than the
 # convenient end. A reader who prefers either of the others can see what it costs.
-LEA_RATE = 0.035          # teachers' agreement, FY27
-AFSCME_RATE = 0.020       # paraprofessionals' agreement, FY28
-TRANSPORT_RATE = (649_953 / 565_734) - 1     # measured; no published vendor escalator
-UNBARGAINED_RATE = 0.0    # substitutes and supplies, flat in all three budgets
+# A component escalates at its CONTRACT where a contract governs it and the line behaves
+# accordingly, and at what it has MEASURABLY DONE where it does not. Which of those
+# applies is decided by the trend test above, not by preference:
+#
+#   professional staff  the teachers' agreement, 3.5%. The special education teacher lines
+#                       have run flat to slightly down across the budgets held, i.e. below
+#                       contract, so this is if anything generous.
+#   paraprofessionals   NOT their 2.0% contract. Ten budgets, FY18 to FY27, $634,513 to
+#                       $1,872,411 -- 2.95x, R-squared 0.89, eight of nine years up, and a
+#                       compound rate between +11.5% and +17.0% wherever you start it.
+#                       This is headcount, and no pay settlement reaches it. Pricing it at
+#                       2.0% assumes the district stops adding aides.
+#   transport           no published vendor escalator, so measured -- but over the whole
+#                       nine years rather than the most recent one. R-squared is 0.33: a
+#                       weak trend, used because it is the least bad figure available and
+#                       not because the line is well behaved.
+#   unbargained         substitutes and supplies, identical in every budget held.
+#
+# An earlier version of this file priced the aides at their contract rate, on the argument
+# that FY27's 39% increase was a one-time step already sitting in the base. The argument
+# was sound and its premise was false: with two budget years there is no way to tell a step
+# from a climb, and the archive reaches far enough to show it is a climb.
+LEA_RATE = 0.035                          # teachers' agreement, FY27
+AFSCME_RATE = 0.020                       # aides' agreement -- deliberately NOT used
+PARA_RATE = PARA_TREND['cagr']            # measured, ten budgets, R^2 = 0.89
+TRANSPORT_RATE = TRANSPORT_TREND['cagr']  # measured, nine budgets, R^2 = 0.33
+UNBARGAINED_RATE = 0.0
 
 CONTRACT_UNITS = [
-    ('professional', 'Professional staff', 'Teachers’ agreement (LEA)', LEA_RATE,
+    ('professional', 'Professional staff', 'Teachers\u2019 agreement (LEA), 3.5%',
+     LEA_RATE,
      lambda r: is_sped(r) and not any(f(r) for f in (
          _part_pred('paras'), _part_pred('transport'), _part_pred('subs')))),
-    ('paras', 'Paraprofessionals', 'Paraprofessionals’ agreement (AFSCME 503)',
-     AFSCME_RATE, _part_pred('paras')),
-    ('transport', 'Transport', 'Vendor contract; no published escalator',
-     TRANSPORT_RATE, _part_pred('transport')),
-    ('unbargained', 'Substitutes and supplies', 'Not bargained', UNBARGAINED_RATE,
+    ('paras', 'Paraprofessionals',
+     f'Measured over {PARA_TREND["n"]} budgets rather than taken from the 2.0% contract '
+     f'\u2014 this line is headcount, and no settlement reaches it',
+     PARA_RATE, _part_pred('paras')),
+    ('transport', 'Transport',
+     f'Vendor contract with no published escalator; measured over '
+     f'{TRANSPORT_TREND["n"]} budgets', TRANSPORT_RATE, _part_pred('transport')),
+    ('unbargained', 'Substitutes and supplies',
+     'Not bargained; identical in every budget held', UNBARGAINED_RATE,
      _part_pred('subs')),
 ]
 
@@ -210,6 +335,10 @@ def contract_blend():
 
 
 UNITS, RATE = contract_blend()
+
+
+def _share(unit_id):
+    return next(u['share'] for u in UNITS if u['id'] == unit_id)
 
 
 # ------------------------------------------------------------------- the range
@@ -239,21 +368,30 @@ PARA_SHARE_OF_RISE = PARA_FY27_CHANGE / (_whole[2] - _whole[1])
 RANGE = [
     dict(id='ex_paras', rate=EX_PARAS_RATE,
          label='Special education apart from the aides, two budgets',
-         what='What every other part of the line did while the aides were being hired. '
-              'Below the levy cap.'),
-    dict(id='contracts', rate=RATE, used=True,
-         label='What the staff are contracted to receive',
-         what='The two agreements at their published rates and the buses at what the '
-              'budgets did, each weighted by its share of the line. Assumes the FY27 '
-              'hiring was a step rather than the first year of a climb.'),
+         what='What the rest of the line did while the aides were being added. Below the '
+              'levy cap — and it is the aides, not the rest, that make this line a driver.'),
+    dict(id='contracts_only', rate=(LEA_RATE * _share('professional')
+                                    + AFSCME_RATE * _share('paras')),
+         label='If every settlement were the whole story',
+         what='The two bargained agreements at their published rates and nothing else — '
+              'no bus increase, no change in how many people are employed. Published here '
+              'because it is what this model used to assume, and because the gap between '
+              'it and the rate above is the part of this line that pay settlements do '
+              'not explain.'),
     dict(id='whole', rate=WHOLE_LINE_RATE,
          label='The whole line, two budgets',
-         what='Includes the one-time 39% increase in aides, which was 108% of that '
-              'year’s rise. Compounding it assumes the hiring repeats.'),
+         what='What the in-district line did between the last two budgets. Close to the '
+              'rate used, and reached a different way.'),
+    dict(id='contracts', rate=RATE, used=True,
+         label='Each part at its contract, or at what it has measurably done',
+         what='Professional staff at the teachers’ agreement; aides and buses at what ten '
+              'and nine budgets show them doing, because no contract governs how many '
+              'people are employed. Weighted by each part’s share of the line.'),
     dict(id='fy27', rate=FY27_ALONE_RATE,
          label='FY27 by itself',
-         what='The single year the hiring happened. One observation.'),
+         what='The single steepest year. One observation, and the top of the range.'),
 ]
+RANGE.sort(key=lambda r: r['rate'])
 
 
 # --------------------------------------------------- the year, and the one-off in it
@@ -332,9 +470,8 @@ def export():
         classified=classified(),
         tuitionRate=TUITION_RATE,
         tuitionHistory=tuition_history(), tuitionTrend=tuition_trend(),
-        transportRates=dict(
-            recent=TRANSPORT_RATE, twoYear=(649_953 / 445_328) ** 0.5 - 1,
-            districtAssumption=0.10),
+        paraSeries=PARA_SERIES, paraTrend=PARA_TREND,
+        transportSeries=TRANSPORT_SERIES, transportTrend=TRANSPORT_TREND,
     )
 
 
@@ -482,30 +619,11 @@ def tuition_history():
 
 
 def tuition_trend():
-    """Whether the series has a direction. It does not, and this says so with numbers."""
-    h = tuition_history()
-    if len(h) < 3:
-        return {}
-    v = [d['total'] for d in h]
-    n = len(v)
-    xs = list(range(n))
-    mx, my = sum(xs) / n, sum(v) / n
-    slope = (sum((x - mx) * (y - my) for x, y in zip(xs, v))
-             / sum((x - mx) ** 2 for x in xs))
-    inter = my - slope * mx
-    sst = sum((y - my) ** 2 for y in v)
-    ssr = sum((y - (inter + slope * x)) ** 2 for x, y in zip(xs, v))
-    end = v[-1]
-    starts = [dict(fy=d['fy'], rate=(end / d['total']) ** (1 / (h[-1]['fy'] - d['fy'])) - 1)
-              for d in h[:-1] if h[-1]['fy'] != d['fy']]
-    return dict(
-        n=n, low=min(v), high=max(v), ratio=max(v) / min(v),
-        lowFy=h[v.index(min(v))]['fy'], highFy=h[v.index(max(v))]['fy'],
-        mean=my, current=end, vsMean=end / my - 1,
-        slope=slope, r2=1 - ssr / sst,
-        up=sum(1 for i in range(n - 1) if v[i + 1] > v[i]),
-        down=sum(1 for i in range(n - 1) if v[i + 1] < v[i]),
-        cagrByStart=starts,
-        biggestFall=min((v[i + 1] / v[i] - 1, h[i + 1]['fy']) for i in range(n - 1)),
-        biggestRise=max((v[i + 1] / v[i] - 1, h[i + 1]['fy']) for i in range(n - 1)),
-    )
+    """Whether the series has a direction. It does not, and this says so with numbers.
+
+    The same trend test every other line here gets, so the R-squared of 0.10 on this line
+    and the 0.89 on paraprofessionals are the same measurement and can be read against
+    each other. That comparison is the argument: one of these lines is escalated at what
+    it has done and the other is held flat, and this is why.
+    """
+    return trend(tuition_history())

@@ -76,7 +76,6 @@ for part in sped.decomposition():
         present(part['label'], money(part['fy27'] - part['fy26']))
 
 print('\nThe rate and its range')
-present('rate in use', pct(sped.RATE))
 present('whole line, two budgets', pct(sped.WHOLE_LINE_RATE))
 present('line apart from the aides', pct(sped.EX_PARAS_RATE))
 present('paraprofessional step', money(sped.PARA_FY27_CHANGE))
@@ -94,6 +93,20 @@ for d in st:
     present(f'FY{d["fy"]} count', f"| {d['n']} ")
 present('series length', f'All {len(st)} years')
 
+print('\nParaprofessionals, ten budgets — step or climb')
+P = sped.PARA_TREND
+present('first / last', f"${P['first']:,.0f} \u2192 ${P['last']:,.0f}")
+present('ratio', f"{P['ratio']:.2f}")
+present('compound rate', f"{P['cagr']*100:+.2f}%")
+present('R-squared', f"R\u00b2 = {P['r2']:.2f}")
+present('years up/down', f"{P['up']} / {P['down']}")
+present('rate in use', f"{sped.RATE:.2%}")
+
+TR = sped.TRANSPORT_TREND
+print('\nSpecial education transport, nine budgets')
+present('compound rate', f"{TR['cagr']*100:+.2f}%")
+present('R-squared', f"R\u00b2 = {TR['r2']:.2f}")
+
 print('\nOut-of-district tuition, eleven budgets')
 T = sped.tuition_trend()
 h = sped.tuition_history()
@@ -109,7 +122,7 @@ for d in h:
     present(f'FY{d["fy"]} budgeted', money(d['total']))
 
 print('\nFigures the document must NOT still contain')
-RETIRED = ['2.48%.', '$613,238', '$857,084', '$1,021,908', '$1,148,377',
+RETIRED = ['$613,238', '$857,084', '$1,021,908', '$1,148,377',
            'there is no second 46%']
 for r in RETIRED:
     # 2.48% survives inside the correction note, which explains why it is retired; what
