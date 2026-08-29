@@ -222,6 +222,70 @@ paid out. That is the same conflation as the line above, one level up.
 
 ---
 
+## 4a. The FY25 deficit — reported, corroborated in outline, not established
+
+**In plain terms.** Several people said in 2025 that the athletics fee account had run into
+trouble, and that costs landed on the town budget as a result. The account's own year-end
+figures do not show that, but we do not hold the year they are talking about. This is the
+most likely explanation on offer and it is not yet a fact.
+
+**The evidence, all of it.** Three references, in one six-month window:
+
+**School Committee, 3 September 2025**, public comment — the only place the account is
+named:
+
+> "in the past 6 months or so there have been things that have come up, athletic revolving
+> fund was running in a deficit, I was told over $100,000"
+
+This is a resident reporting what she was told. It is not a district statement, and no
+document we hold contains the figure.
+
+**Finance Committee, 8 July 2025** — a committee member, on the record, not naming
+athletics:
+
+> "Ms. Lockwood ... emphasized the need for all revolving accounts to have a budget, even
+> if they are not town meeting revolving accounts, **to prevent negative balances from
+> going unnoticed**."
+
+Corroborates that a revolving account went negative and was not caught. Does not say which.
+
+**School Committee, 12 March 2025** — the day the FY26 budget was approved, public comment
+from a resident identifying as a finance professional:
+
+> "Splitting everything into revolving funds is not a good way to manage finances. We need
+> to lay out all revenues and all expenses."
+
+**What the fund's own figures say.** The athletics fund opened FY26 at **+$110,247.89** on
+1 July 2025 — which is its closing balance for FY25. So at FY25 year-end the account was
+positive, not $100,000 down. And FY26 ended at **+$152,280.91** after a **$42,033** surplus.
+
+**These are not necessarily in conflict.** A fund can run a deficit mid-year on cash flow —
+seasons are paid for before fees are collected — and close positive. It can also be made
+whole by a transfer. We hold the endpoint and not the path: **there is no FY25 fund report
+in the archive**, only FY26's, which reports FY25's closing balance as its own opening one.
+
+**On the sequence, offered as a hypothesis.** The dates fit a story, and only a story:
+
+| when | what the documents show |
+|---|---|
+| 12 March 2025 | FY26 budget approved. Athletic transportation goes 40,000 → 102,550, and the budget overview says it was *"reduced from Level Service with anticipation that athletic revolving may be enough to offset this reduction in the budget line"* |
+| spring–summer 2025 | the deficit is reportedly discovered |
+| 8 July 2025 | Finance Committee raises negative balances going unnoticed |
+| by 16 March 2026 | the FY26 final budget for the line is 127,550, up 25,000 from what was approved |
+| 30 June 2026 | fund closes at +152,281, having gained 42,033 |
+
+**What this does not show, and it is the important part.** The large rebase — 40,000 to
+102,550, a 156% increase — happened in **March 2025, before** the deficit was reportedly
+discovered, and the district's own stated reason for the number it chose was that it
+expected the fund to carry *more*, not less. So the deficit cannot explain the rebase; at
+most it explains the later $25,000. A cost shift caused by a drained account is a coherent
+reading of some of this and is contradicted by the timing of most of it.
+
+**What would settle it:** the FY25 special revenue report or fund balance sheet for fund
+1301 — one document, and the same records request that produced the FY26 one.
+
+---
+
 ## 5. Is $127,550 defensible?
 
 **In plain terms.** It looks indefensible against the old budget line and ordinary against
@@ -245,6 +309,98 @@ year, compounded from the FY17 all-in figure, lands on $127,550.
 **What this does not show.** The 6.24% is solved for, not sourced — we found the rate that
 reaches the number, we did not find it in a document. That it falls near the one published
 rate increase is corroboration, not proof.
+
+---
+
+## How to reproduce every figure in this document
+
+Nothing here rests on a step that is not written down. Each source is named by its path in
+the published archive, its sha256, and — where a figure comes from a spreadsheet — the sheet
+and cell or column it comes from.
+
+**Run the verifier first.** It recomputes every figure below from the sources and fails if
+one drifted:
+
+    python3 scripts/verify_athletics.py
+
+### The sources
+
+| file | sha256 (first 16) | what is taken from it |
+|---|---|---|
+| `district-budget-page/docs/fy19-proposed-athletics-budget.pdf` | `e0a7c5baa041112c` | §1, §2 — the FY19 split, all six years, both columns |
+| `xlsx/fy27-proposals.xlsx` | `94184d3b167a6e80` | §2, §3, §5 — FY26 general fund athletics; the transportation line |
+| `xlsx/school-funds-fy26.xlsx` | `2662ca779de6170d` | §2, §3, §4a — the fund's FY26 year-end reconciliation and vendors |
+| `q3-fy26/town-special-revenue-fy26-q3.xlsx` | `4b9777d83c747c1c` | §4a — fund 1301 as the town books it |
+| `district-budget-page/docs/fy23-quarterly-budget-update.pdf` | `6fb1e3a1b304e64d` | §4 — the only ledger view of a school line |
+| `q3-fy26/town-general-fund-expenditures-fy26-q3.pdf` | `5875562be5ee615f` | §4 — the ledger behind the Finance Committee memo |
+
+Minutes cited in §4a: `minutes/school-committee/2025-09-03-minutes-7385`,
+`minutes/finance-committee/2025-07-08-minutes-7295`,
+`minutes/school-committee/2025-03-12-minutes-7098`.
+
+### Where each figure lives
+
+**§1, the FY19 split.** Text extraction of the PDF, lines 16 and 17. The line labelled
+`Athletic Transportation` is the appropriation; the line labelled `Athletic Transportation
+(685)` is the revolving fund — `(685)` is a typo for `(658)`, consistent with the same
+document's `plus TOTAL Revolving Fund 658` on line 31. Column headers are on lines 4 and 5:
+`FY14 FY15 FY16 FY17 FY18 FY19` over `Actual Actual Actual Actual Budgeted Requested`.
+Transcribed into `model/athletics.py → SPLIT_REPORTING` and rendered in the app.
+
+    grep -n 'Athletic Transportation' \
+      sources/district-budget-page/text/fy19-proposed-athletics-budget.txt
+
+**§2 and §3, FY26 general fund athletics.** `xlsx/fy27-proposals.xlsx`, sheet
+`FY27 Budget Projection`, **column G** (`FY26` over `FINAL BUDGET`, cells `G4`/`G5`), summed
+over every row whose function header in column A begins `3510` — that is both
+`3510 - Athletic Expenses` and `3510 - Athletics Salaries`. Function headers are rows where
+column A matches `^\d{4}\s*-`.
+
+**Read the workbook by cell reference, not by opening it.** Nine columns are hidden —
+`C, H, I, N, O, P, T, U, V` — including `C` (FY23 ACTUALS), `H` (FY26 actuals to date) and
+`I` (FY26 encumbrances to date). They do not appear on screen. Our second copy,
+`xlsx/fy27-budget-projection-3-25-26.xlsx`, is data-identical and hides a *different* set,
+so the two files show a reader different tables. `data/document-basis.csv` records the
+hidden set for every workbook in the archive.
+
+**§2 and §3, the fund.** `xlsx/school-funds-fy26.xlsx`, sheet `Athletics Revolving`.
+Vendors are a single text cell, `A23`. The expenditure categories are `A19`–`A22`; note
+that `A20` names transportation inside purchase of service. The roll-forward is `B5`–`B8`.
+
+**§3, the FY19 programme totals.** Lines 30–32 of the same text extraction. Its stated
+grand totals are $1 off its own two columns in FY14 and FY15 and exact in the other four
+years; the verifier asserts that rather than hiding it.
+
+**§4, the ledger view.** Text extraction, the row beginning `S3066672  535016`. `S3066672`
+is the athletics expense org; `535016` is the transportation object code. The same object
+appears under three other orgs in that report, which is why the org code matters.
+
+**§4, the memo's arithmetic.** `q3-fy26/town-general-fund-expenditures-fy26-q3.txt`, the
+`GRAND TOTAL` line. Extracted by `scripts/extract_town_ledger.py`, which reconciles its
+output to that printed total before it will write.
+
+**§5, the implied rates.** Solved, not sourced: the compound rate that carries each base to
+$127,550 over the years between. `(127550 / base) ** (1 / years) - 1`.
+
+### The classification behind the method
+
+    python3 scripts/classify_document_basis.py     # writes data/document-basis.csv
+
+Every document in the archive by what produced its figures — `ledger`, `restatement`,
+`forward`, `narrative` — each row quoting the raw header text the call rests on, with its
+line number or cell reference. The counts in "The approach" above come from it.
+
+### A caution about method, learned here
+
+Every serious error in building this document was the same one: **reading a rendering
+instead of the source.** A concatenated header quoted as though the sheet said it. A hidden
+column read as though a reader could see it. A budget workbook's `ACTUALS` column described
+as an actuals document. A verifier that checked a sentence was present rather than that its
+count was right, and passed while the count was wrong.
+
+So: quote cell references and raw text, never a rendered label; check what a reader
+actually sees, not only what the file contains; and make a check assert the number, not the
+prose around it.
 
 ---
 
@@ -284,6 +440,11 @@ rate increase is corroboration, not proof.
   Nothing between FY19 and FY25 shows the split.
 - Whether the FY19 split format continued and simply stopped being published. Nine
   department-level submissions exist for FY19 and none for any other year.
+- **Whether the athletics fund ran a deficit in FY25, and how large.** Reported in public
+  comment as "over $100,000" and corroborated in outline by the Finance Committee, but the
+  fund closed FY25 at +$110,248 and no FY25 fund report exists in the archive. See §4a.
+  This is the single most likely explanation for a cost shift onto the town and it is not
+  established. **The FY25 special revenue report for fund 1301 would settle it.**
 
 **On cost**
 

@@ -74,6 +74,22 @@ Everything we hold for FY26 stops at **31 March 2026**. Four specific numbers:
 - **Note:** she said in the 11 August memo that she hopes to report quarterly. The Q4 or
   year-end packet may simply exist by now.
 
+### 3c. FY25 for the athletics revolving fund, and the vendor warrant
+
+Two requests, both cheap, both from the same office, and between them they close the
+athletics analysis — see `sources/analyses/athletics.md` §4a and §5.
+
+| | why |
+|---|---|
+| **FY25 special revenue report / balance sheet for fund 1301** | The athletics fund was reported in public comment (School Committee, 3 September 2025) to have run "over $100,000" in deficit, and the Finance Committee raised negative balances going unnoticed on 8 July 2025. The fund closed FY25 at **+$110,248**, so the year-end figure does not show it. We hold the endpoint and not the path: there is no FY25 fund report in the archive. This is the single most likely explanation for athletics costs shifting onto the town, and it is currently a hypothesis. |
+| **Vendor warrants covering FY23–FY26**, or account detail history for object `535016` | No document in the archive names a carrier beside a dollar figure for athletics. The only actual payment to Dee Bus recorded anywhere is **$731.50**, for one field trip. The warrant is the list of bills the Select Board approves for payment, itemised by vendor — it is produced roughly weekly and it is the only thing that would show what athletic transportation actually cost, as opposed to what was budgeted or encumbered. |
+
+- **Ask:** Finance Director / Town Accountant, same channel as item 3
+- **Wording:** *"The FY2025 special revenue report or fund balance sheet for fund 1301
+  (Chapter 658 / athletics revolving), in the same format as the FY2026 one already
+  provided; and the vendor warrants approved by the Select Board for fiscal years 2023
+  through 2026, or in the alternative the account detail history for object code 535016."*
+
 ### 3b. How grants and state funding map onto the budget lines
 
 **Now tied with item 4 as the highest-value question here, and it is the same question

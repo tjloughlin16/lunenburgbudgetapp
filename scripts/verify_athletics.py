@@ -120,6 +120,20 @@ present('excluding FY21', f'three of {WORDS[len(usable) - 1]}')
 if len(ex21) != 3:
     FAILS.append(f'expected 3 exact years excluding FY21, found {len(ex21)}')
 
+# --- the FY25 deficit question ----------------------------------------------------
+head('The fund across FY25/FY26 -- what is actually known')
+OPEN26, REV, EXP, CLOSE26 = 110247.89, 188944.46, 146911.44, 152280.91
+present('FY26 opening = FY25 closing', f'{OPEN26:,.2f}')
+present('FY26 closing', f'{CLOSE26:,.2f}')
+present('FY26 surplus', f'{REV - EXP:,.0f}')
+if abs((OPEN26 + REV - EXP) - CLOSE26) > 0.01:
+    FAILS.append('the fund roll-forward does not reconcile')
+print(f'  OK    roll-forward reconciles                    '
+      f'{OPEN26:,.2f} + {REV:,.2f} - {EXP:,.2f} = {OPEN26 + REV - EXP:,.2f}')
+present('FY26 approved March 2025', f'{102550:,}')
+present('FY26 final', f'{127550:,}')
+present('the later increase', f'{127550 - 102550:,}')
+
 # --- is $127,550 defensible ------------------------------------------------------
 head('$127,550 against every documented base')
 LINE = 127550
