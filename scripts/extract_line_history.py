@@ -76,11 +76,26 @@ ABBREV = [
 
 
 def norm(label):
+    """A label reduced to something that matches itself across years.
+
+    Parentheticals go first: the workbook writes "P.S. Teachers/Regular (1-2)" and the
+    presentations write "P.S. Teachers/Regular", and those are one line. Then the school
+    word is dropped where an abbreviation already carries it -- "Middle School Teachers"
+    and "M.S. Teachers" are also one line, and leaving them apart put the three largest
+    lines in the budget, $19M of teaching salary, into an unattributed bucket.
+    """
     s = label.lower().strip().rstrip('*.')
+    s = re.sub(r'\([^)]*\)', ' ', s)
     s = re.sub(r'[^a-z0-9 ]', ' ', s)
     s = re.sub(r'\s+', ' ', s).strip()
+    # "M.S." loses its dots before the abbreviations are applied and arrives as two
+    # tokens, so \bms\b never fires and "M.S. Teachers" never meets "Middle School
+    # Teachers". That one gap held $7.4M of teaching salary, four psychologists and the
+    # guidance lines out of every function group.
+    s = re.sub(r'\b([pemh]) s\b', r'\1s', s)
     for pat, rep in ABBREV:
         s = re.sub(pat, rep, s)
+    s = re.sub(r'\b(ps|es|ms|hs) school\b', r'\1', s)
     return re.sub(r'\s+', ' ', s).strip()
 
 

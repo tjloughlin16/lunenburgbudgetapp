@@ -310,74 +310,141 @@ overspent may have been topped up legitimately, and we cannot see those votes.
 
 ---
 
-## 2b. Which lines miss, across the whole budget
+## 2b. The whole budget, every group, every year
 
-Findings 2 and 3 look at particular lines. This is the sweep: 546 usable line-years, every
-function group, no hypothesis.
+An earlier version of this section ranked groups by pooled dollar variance, looked at the
+top six and called it a sweep. That is the method this very document shows does not work:
+a group whose overspends and underspends cancel reads as quiet when nothing inside it is,
+and athletics — which §4 is entirely about — never appeared. `scripts/analyze_variance.py`
+replaces it and reports every group, every year, four ways.
 
-**Salaries come in under. Everything else comes in over.**
+### Coverage first
+
+**548 usable line-years, 141 distinct lines, FY18 to FY23** — covering **93% to 97% of the
+district's budget in FY18–FY22 and 82% in FY23**, which is thinner and is marked wherever
+it matters.
+
+3,255 line-years were excluded and each exclusion has a stated reason: 2,205 have only one
+of the two figures, 715 are under $10,000, 305 are FY21, 29 are cells two documents
+disagree about, 3 are parse artifacts. **212 lines in the FY27 workbook are never measured
+here at all** — mostly lines the older documents do not carry.
+
+### The four measures, because one hides what another shows
+
+- **net** — pooled variance, what a treasurer feels
+- **gross** — over and under added as absolutes, what a budget officer feels
+- **churn** — gross over net. 1.0 means every year misses the same way; high means the
+  group only looks calm because its years offset
+- **spread** — worst year to best
+
+### The whole budget, by year
+
+| FY | lines | budgeted | spent | |
+|---|---:|---:|---:|---:|
+| FY18 | 103 | $18,140,671 | $18,063,818 | −0.42% |
+| FY19 | 108 | $19,155,686 | $19,113,746 | −0.22% |
+| FY20 | 113 | $19,817,293 | $19,634,059 | −0.92% |
+| FY22 | 120 | $20,904,212 | $20,767,649 | −0.65% |
+| FY23 | 104 | $18,277,149 | $18,374,311 | **+0.53%** |
+
+Never more than one percent off in either direction, and one year over.
+
+### Salaries come in under. Everything else comes in over.
 
 | | line-years | budgeted | spent | |
 |---|---:|---:|---:|---:|
-| Salaries | 310 | $45,743,891 | $45,161,523 | **−1.27%** |
+| Salaries | 347 | $66,430,107 | $65,857,010 | **−0.86%** |
 | Everything else | 164 | $26,999,924 | $27,235,167 | **+0.87%** |
 
-That is the shape of a district that provisions payroll for a full roster it does not
-always fill, and provisions everything else about right. It is also small: both are within
-about one percent.
+(The two do not sum to 548: 37 line-years are on lines the FY27 workbook no longer carries,
+so they have no section to be filed under.)
 
-**The groups that miss, ranked by dollars:**
+The shape of a district provisioning payroll for a roster it does not always fill, and
+provisioning everything else about right. Both are within one percent, and they very
+nearly cancel — which is why the whole-budget figures above are so quiet.
 
-| overspent | pooled variance | | underspent | pooled variance |
-|---|---:|---|---|---:|
-| Replace Equipment | **+$470,566 (+102%)** | | Private tuitions | **−$439,905 (−15%)** |
-| Insurance Programs | +$334,767 (+2.4%) | | Student transportation | −$322,842 (−6.8%) |
-| Collaborative tuitions | +$149,735 (+20%) | | Special education teachers | −$183,301 (−2.7%) |
-| Info management & tech | +$101,889 (+21%) | | Custodial services | −$145,579 (−3.7%) |
+### Almost nothing misses the same way twice
 
-### Three of these are worth naming
+Of every group with four or more measured years, **exactly one is over in every year**
+(custodial supplies, +$83,408) and **exactly one is under in every year** (general
+education paraprofessionals, −$49,298). Both are small.
 
-**Replace Equipment is not over-spending. It is under-budgeting, and getting worse.**
+At line level it is the same: **7 lines out of 141 miss the same way every year**, the
+largest averaging $20,754.
+
+**There is no systematic padding in this budget.** That is the single most important
+finding in this section and it is a negative one.
+
+### What there is instead is drift
+
+27 groups moved materially between their first two measured years and their last two:
+
+| group | first two | last two | |
+|---|---:|---:|---:|
+| Collaborative tuitions | +251% | −9% | −260 pts |
+| **Replace equipment** | **+1%** | **+232%** | **+231 pts** |
+| After school advisors | −26% | +116% | +142 pts |
+| District-wide administration | +3% | +97% | +95 pts |
+| Private tuitions | +1% | −61% | −62 pts |
+| Info management & tech | −5% | +51% | +56 pts |
+
+### The clearest case: a line that stopped being maintained, and was then fixed
+
+`COMPUTERS — Purchase & Lease`:
 
 | FY18 | FY19 | FY20 | FY22 | FY23 |
 |---:|---:|---:|---:|---:|
-| +4% | −1% | +94% | +156% | **+309%** |
+| −3% | −1% | +141% | +323% | **+379%** |
 
-It was budgeted about right for two years and is now budgeted at roughly a quarter of what
-it costs. The dollars are small — under $200,000 a year — but a line that misses by a
-factor of four is not a forecast, and it is the clearest case in the budget of a number
-that has stopped being maintained.
+The budget sat at $39,000 while spending ran $165,107 and $186,722. **Then the FY26 budget
+is $243,450.** Equipment leases did the same thing — $30,420 budgeted against $96,907
+spent, then $85,000 in FY26.
 
-**Insurance is small in percentage and large in dollars, and it is drifting.** +1%, +1%,
-−1%, +3%, +7%. On a $13.8M pooled base, a 2.4% average overspend is $334,767 — the largest
-dollar overspend in the budget after equipment, and the only one attached to a line big
-enough to matter to the gap.
+**So this is not a district that cannot budget. It is a line that drifted for four years
+and was then corrected**, which is the same shape as the athletics coaching line in §4.
+Both are worth saying because a reader looking only at the middle years would conclude
+something else.
 
-**Custodial supplies is the one line that is over every single year** — 5 of 5, by 4%, 2%,
-157%, 33%, 8%. Small money, but it is the only genuinely systematic overspend found.
+### By function group, the largest net movers
 
-**And transportation is the mirror**: under in 4 of 5 years, −$322,842 pooled. Budgeted
-generously and consistently comes in below.
+| overspent | net | | underspent | net |
+|---|---:|---|---|---:|
+| Replace equipment (7400) | **+$470,566** (+102.3%) | | Private tuitions (9300) | **−$439,905** (−15.0%) |
+| Insurance programs (5200) | +$334,767 (+2.4%) | | Student transportation (3300) | −$322,842 (−6.8%) |
+| Collaborative tuitions (9400) | +$149,735 (+19.9%) | | Special education teachers (2310) | −$183,301 (−2.7%) |
+| Custodial supplies (4110) | +$83,408 (+40.4%) | | Custodial services (4110) | −$145,579 (−3.7%) |
 
-### The out-of-district split is unpredictable even when the total is not
+### And the largest movers, line by line
 
-The two halves of out-of-district tuition move independently and violently:
+| overspent | | underspent | |
+|---|---:|---|---:|
+| Computers — purchase & lease | +$380,070 | Private tuitions | −$439,905 |
+| **Health insurance** | **+$293,023** | General education transport | −$161,735 |
+| Collaborative tuitions | +$149,735 | Special education transport | −$161,107 |
+| Admin tech contracted services | +$99,729 | H.S. resource room teacher | −$106,964 |
+| Equipment, maintenance & lease | +$90,496 | Maintenance salaries | −$103,769 |
 
-| FY | private | collaborative | the total |
-|---|---:|---:|---:|
-| FY18 | −0% | **+184%** | +14% |
-| FY19 | +2% | **+319%** | +27% |
-| FY20 | +21% | −45% | +0% |
-| FY22 | **−61%** | −18% | −51% |
-| FY23 | **−61%** | +0% | −38% |
+**Health insurance is the one that matters to the gap.** Only +1%, +0%, −1%, +3%, +7% —
+but on the largest non-salary line in the budget that is $293,023, and it is drifting
+upward. It is the only overspend attached to a line big enough to move the projection, and
+the model already escalates it at 9%.
 
-The district over-provided collaborative placements early and private placements later,
-and the two do not offset each other so much as happen to be smaller together. Pooled, the
-total is −7.9%.
+### And the groups that cancel themselves out
 
-**This is the same conclusion §3 reaches and the same one the special education work
-reached from budget columns: nobody can forecast this line.** Three methods, three data
-sources, one answer.
+Ranked by churn — these look calm in the net and are not:
+
+| group | net | gross | churn | by year |
+|---|---:|---:|---:|---|
+| Networking / telecoms | +$3,494 | $37,778 | 10.8× | +17% −30% −13% −19% +76% |
+| School nurses | +$6,189 | $33,323 | 5.4× | −0% +0% +0% +6% −5% |
+| **Athletic expenses** | **−$6,787** | **$28,895** | **4.3×** | −11% +29% −14% −0% −8% |
+| Special education substitutes | −$48,128 | $153,472 | 3.2× | +98% −35% −66% −35% −7% |
+| Collaborative tuitions | +$149,735 | $453,727 | 3.0× | +184% +319% −45% −18% +0% |
+| Heating of buildings | +$37,906 | $114,006 | 3.0× | −29% +3% +28% +25% +25% |
+
+**Athletics is in that table, and that is why the first attempt missed it.** Its net is
+−$6,787 on athletic expenses and −$69,968 on athletic salaries — unremarkable numbers
+hiding years that run from −19% to +29%. §4 is about the year those swings were largest.
 
 ---
 

@@ -453,6 +453,13 @@ GROUPS = [
              'Drive or Docs link, while the town\u2019s own web server answered 81 of 81. '
              'This is the archive\u2019s reason for existing, measured. Rebuild with '
              'scripts/check_source_links.py.'),
+            ('data/variance-by-group.csv',
+             'Budget against actual, every group and year', 3,
+             'The whole-budget sweep behind analyses/budget-vs-actual.md \u00a72b: every '
+             'function group, every year, with net and gross variance, churn and spread. '
+             'Churn is what the first attempt at this lacked \u2014 ranking groups by net '
+             'hides any group whose over- and under-spends cancel, which is how athletics '
+             'was missed. Rebuild with scripts/analyze_variance.py.'),
             ('data/line-history.csv',
              'Every budget line, budget and actual, year by year', 3,
              '19,453 readings from 24 of the district\u2019s budget documents, normalised '
