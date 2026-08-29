@@ -697,7 +697,7 @@ function Q7() {
       ]} />
       <Note>
         The budget publishes one salary total, not a teachers-only line, so this is every
-        employee &mdash; teachers, aides, custodians, secretaries and administrators alike.
+        employee &mdash; teachers, paras, custodians, secretaries and administrators alike.
         Teachers are most of it.
       </Note>
       <Note>
@@ -1364,7 +1364,7 @@ function Lookback() {
         salary line covered by the teachers&rsquo; agreement, summed from the FY27
         budget&rsquo;s own lines for teaching, special education, therapeutic services,
         library, guidance, psychology, social work, nursing and the athletic and activity
-        stipends. Administrators, substitutes, aides and custodians bargain separately and
+        stipends. Administrators, substitutes, paras and custodians bargain separately and
         settled at different numbers, so they are left alone here; applying the
         teachers&rsquo; percentages to all of payroll would overstate this by nearly half.
         Step and lane movement is also left alone, because it is built into the scale

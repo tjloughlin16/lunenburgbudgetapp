@@ -167,10 +167,10 @@ export function TheRate() {
         Both bargained groups here have run away from their agreements, in opposite
         directions. Special education teachers are on a contract giving 3.5% and their line
         has grown {pct(S.professionalTrend.cagr, 2)} across {S.professionalTrend.n}{' '}
-        budgets — headcount drifting down. The aides are on a contract giving{' '}
+        budgets — headcount drifting down. The paras are on a contract giving{' '}
         {pct(2 / 100, 1)} and their line has grown {pct(P.cagr, 1)}.
         <div className="mt-3 grid gap-3 sm:grid-cols-3">
-          <MiniStat label="Aides, FY{P.firstFy} to FY{P.lastFy}"
+          <MiniStat label="Paras, FY{P.firstFy} to FY{P.lastFy}"
             value={`${P.ratio.toFixed(2)}×`}
             sub={`${usd(P.first)} to ${usd(P.last)}`} />
           <MiniStat label="Compound rate" value={pct(P.cagr, 1)}
@@ -181,7 +181,7 @@ export function TheRate() {
             sub="Near 1 means the years explain the amount. This is a climb, not a scatter." />
         </div>
         <div className="mt-3">
-          That is <em>headcount</em>, and no pay settlement reaches it. Escalating the aides
+          That is <em>headcount</em>, and no pay settlement reaches it. Escalating the paras
           at their {pct(2 / 100, 1)} contract would assume the district stops adding them —
           which it has not done in {P.n - 1} of the last {P.n} budgets.
         </div>
@@ -193,7 +193,7 @@ export function TheRate() {
         This line was escalated at {pct(S.range.find(r => r.id === 'contracts_only')!.rate)}{' '}
         — the settlements alone — on the argument that FY27’s{' '}
         {pct(S.decomposition.find(d => d.id === 'paras')!.fy27
-          / S.decomposition.find(d => d.id === 'paras')!.fy26 - 1, 0)} increase in aides was
+          / S.decomposition.find(d => d.id === 'paras')!.fy26 - 1, 0)} increase in paras was
         a one-time step whose cost already sat in the amount the model starts from. That
         argument was sound. Its premise was false.
         <br /><br />
@@ -215,7 +215,7 @@ export function TheRate() {
         <br /><br />
         The buses are the weakest input. There is no published vendor escalator, so the
         figure is measured, and over {S.transportTrend.n} budgets it fits far less
-        convincingly than the aides do — R² of {S.transportTrend.r2.toFixed(2)} against{' '}
+        convincingly than the paras do — R² of {S.transportTrend.r2.toFixed(2)} against{' '}
         {P.r2.toFixed(2)}. It is {pct(S.transportTrend.cagr, 1)} because that is the least
         bad number available, not because the line is well behaved. It is{' '}
         {pct(S.units[2].share, 0)} of the total.
@@ -224,7 +224,7 @@ export function TheRate() {
       <Note>
         <strong style={{ color: 'var(--text-primary)' }}>There is no special education
         contract.</strong> These staff are paid under the same agreements as everybody
-        else — professional staff on the teachers’ contract, aides on the
+        else — professional staff on the teachers’ contract, paras on the
         paraprofessionals’. There is no special education bargaining unit and no special
         education pay rate, so describing this line with a single number of its own risks
         implying its staff receive larger increases than other staff. They do not.
@@ -242,7 +242,7 @@ export function TheRate() {
           ))}
         </div>
         <div className="mt-3 text-[12px]" style={{ color: 'var(--text-muted)' }}>
-          Only the first of those is a contract rate. The aides and the buses are measured,
+          Only the first of those is a contract rate. The paras and the buses are measured,
           because no agreement says how many people a district employs or what a bus vendor
           will charge at renewal — and a rate copied from a settlement for a line that does
           not follow one is a number with a citation and no meaning.
@@ -477,7 +477,7 @@ export function WhatCounts() {
           ))}
         </div>
         <div className="mt-3 text-[12px]" style={{ color: 'var(--text-muted)' }}>
-          The general education aides are worth a second look. They are budgeted at nothing
+          The general education paras are worth a second look. They are budgeted at nothing
           from FY26 onward, so in FY27 that boundary costs nothing either way — but they
           were {usd(c.excluded[0].fy25)} in FY25, which is the base year of the two-year
           rates above. A boundary can be irrelevant in the year you show and matter in the
@@ -586,7 +586,7 @@ export function TuitionHistory() {
 /** The two lines whose rates are measured rather than taken from a contract.
  *
  *  Drawn rather than asserted, because the difference between them is the whole argument
- *  and it is visible at a glance: the aides climb, the buses wander. The R-squared under
+ *  and it is visible at a glance: the paras climb, the buses wander. The R-squared under
  *  each is the number that turns "it looks like a trend" into a claim somebody can check,
  *  and it is why one of these lines is escalated at what it has done and the other is
  *  used with a warning. */

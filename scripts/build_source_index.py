@@ -246,8 +246,8 @@ GROUPS = [
              'paraprofessional FTE, in-district pupils, per-pupil expenditure by function '
              'and student demographics, every year since 2009. The paraprofessional count '
              'is the one figure that lets a budget line be read as staffing rather than as '
-             'dollars \u2014 and it says the aide budget has grown roughly six times '
-             'faster than the number of aides. Rebuild with scripts/fetch_dese.py.'),
+             'dollars \u2014 and it says the para budget has grown roughly six times '
+             'faster than the number of paras. Rebuild with scripts/fetch_dese.py.'),
         ]},
     {
         'section': 'theirs', 'id': 'tax-base', 'origin': 'town',
@@ -465,7 +465,7 @@ GROUPS = [
              'with scripts/extract_budget_history.py.'),
             ('data/sped-para-history.csv',
              'Special education paraprofessionals, ten budgets', 3,
-             'What the district budgeted for special education aides, FY18 to FY27, by '
+             'What the district budgeted for special education paras, FY18 to FY27, by '
              'school, read out of its own budget documents in the mirror above. Budget '
              'columns only, one budget stage held constant. The line grew 12.8% a year '
              'with an R-squared of 0.89 while the contract governing these staff gives '
@@ -474,7 +474,7 @@ GROUPS = [
             ('data/sped-transport-history.csv',
              'Special education transportation, nine budgets', 2,
              'The same extraction for the special education bus line, FY19 to FY27. A '
-             'much weaker trend than the aides — R-squared 0.33 — and said to be one.'),
+             'much weaker trend than the paras — R-squared 0.33 — and said to be one.'),
             ('data/ood-tuition-history.csv',
              'Out-of-district tuition, eleven budgets', 3,
              'What the district budgeted for out-of-district special education tuition, '

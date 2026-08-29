@@ -31,7 +31,7 @@ DEFAULT_ASSUMPTIONS = dict(
     health=0.090,          # district assumed 9% for FY27
     transport=0.060,       # district assumed 10% for FY27; 6% is the softer default
     # Special education, in district. Derived in sped.py and NOT the rate the line did:
-    # 5.89% is one hiring decision averaged over two years, and the aides it paid for are
+    # 5.89% is one hiring decision averaged over two years, and the paras it paid for are
     # already inside this model's starting amount. See sped.py for the whole argument and
     # for the range published beside it.
     sped=SPED_RATE,

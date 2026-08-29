@@ -27,7 +27,7 @@ educational last.
 4. **Sub-varsity and enrichment** — middle school sports, freshman teams, clubs, advisors.
 5. **Attrition only** — hold vacancies open rather than lay off. Cheap politically,
    arbitrary educationally: you lose whichever role happens to retire.
-6. **Support staff** — paraprofessionals, custodians, secretaries, aides.
+6. **Support staff** — paras, custodians, secretaries, classroom assistants.
 7. **Specialists** — interventionists, reading specialists, librarians, coaches/mentors.
 8. **Electives and arts staff** — music, art, world language, upper-level electives.
 9. **Classroom teachers** — where the money actually is, so this is where large deficits

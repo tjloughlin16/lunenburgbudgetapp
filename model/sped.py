@@ -33,9 +33,9 @@ then compounded forever. Rule 6 exists for exactly this: a short rate off a step
 is not a trend, and three of the six lines the back-test flagged turned out to be steps.
 
 The distinction is the one the whole site is built on. A **level** change moves the curve
-once and leaves its angle alone. A **rate** changes the angle. Those aides were hired;
+once and leaves its angle alone. A **rate** changes the angle. Those paras were hired;
 their cost is already inside the $5,745,543 the model starts from. Escalating that base
-at 5.89% says the district will hire 39% more aides again next year, and again the year
+at 5.89% says the district will hire 39% more paras again next year, and again the year
 after. Nothing supports that.
 
 What the model uses instead is what the people in this line are contracted to receive,
@@ -47,7 +47,7 @@ WHAT THIS RATE IS NOT
 
 It is not a claim that special education is under control, and it is not a forecast. It
 assumes one specific thing: that the FY27 hiring was a step and not the first year of a
-climb. If more aides are hired every year -- because more children arrive needing one,
+climb. If more paras are hired every year -- because more children arrive needing one,
 or because the ones here need more -- this rate is too low and the model understates the
 gap. Nothing in a budget column can distinguish those, because a budget shows dollars per
 line and never shows people, and the district does not publish staff counts.
@@ -303,7 +303,7 @@ TEACHER_TREND = trend(TEACHER_SERIES)
 
 # ------------------------------------------------------------------ the contracts
 # There is no special education bargaining unit. Professional staff are on the teachers'
-# agreement and aides on the paraprofessionals'; the buses are a vendor contract and the
+# agreement and paras on the paraprofessionals'; the buses are a vendor contract and the
 # substitutes and supplies are not bargained at all. So the rate this line escalates at
 # is a weighted average of contracts that were signed for other reasons.
 #
@@ -332,20 +332,20 @@ TEACHER_TREND = trend(TEACHER_SERIES)
 #                       $1,872,411 -- 2.95x, R-squared 0.89, eight of nine years up, and a
 #                       compound rate between +11.5% and +17.0% wherever you start it.
 #                       This is headcount, and no pay settlement reaches it. Pricing it at
-#                       2.0% assumes the district stops adding aides.
+#                       2.0% assumes the district stops adding paras.
 #   transport           no published vendor escalator, so measured -- but over the whole
 #                       nine years rather than the most recent one. R-squared is 0.33: a
 #                       weak trend, used because it is the least bad figure available and
 #                       not because the line is well behaved.
 #   unbargained         substitutes and supplies, identical in every budget held.
 #
-# An earlier version of this file priced the aides at their contract rate, on the argument
+# An earlier version of this file priced the paras at their contract rate, on the argument
 # that FY27's 39% increase was a one-time step already sitting in the base. The argument
 # was sound and its premise was false: with two budget years there is no way to tell a step
 # from a climb, and the archive reaches far enough to show it is a climb.
 LEA_RATE = 0.035                          # teachers' agreement, FY27 -- shown, not used
 PROFESSIONAL_RATE = TEACHER_TREND['cagr']  # measured, eight budgets, R^2 = 0.84
-AFSCME_RATE = 0.020                       # aides' agreement -- deliberately NOT used
+AFSCME_RATE = 0.020                       # paras' agreement -- deliberately NOT used
 PARA_RATE = PARA_TREND['cagr']            # measured, ten budgets, R^2 = 0.89
 TRANSPORT_RATE = TRANSPORT_TREND['cagr']  # measured, nine budgets, R^2 = 0.33
 UNBARGAINED_RATE = 0.0
@@ -416,9 +416,9 @@ PARA_SHARE_OF_RISE = PARA_FY27_CHANGE / (_whole[2] - _whole[1])
 
 RANGE = [
     dict(id='ex_paras', rate=EX_PARAS_RATE,
-         label='Special education apart from the aides, two budgets',
-         what='What the rest of the line did while the aides were being added. Below the '
-              'levy cap — and it is the aides, not the rest, that make this line a driver.'),
+         label='Special education apart from the paras, two budgets',
+         what='What the rest of the line did while the paras were being added. Below the '
+              'levy cap — and it is the paras, not the rest, that make this line a driver.'),
     dict(id='contracts_only', rate=(LEA_RATE * _share('professional')
                                     + AFSCME_RATE * _share('paras')),
          label='If every settlement were the whole story',
@@ -433,7 +433,7 @@ RANGE = [
               'rate used, and reached a different way.'),
     dict(id='contracts', rate=RATE, used=True,
          label='Each part at its contract, or at what it has measurably done',
-         what='Professional staff at the teachers’ agreement; aides and buses at what ten '
+         what='Professional staff at the teachers’ agreement; paras and buses at what ten '
               'and nine budgets show them doing, because no contract governs how many '
               'people are employed. Weighted by each part’s share of the line.'),
     dict(id='fy27', rate=FY27_ALONE_RATE,
@@ -572,7 +572,7 @@ EXCLUDED = [
      'education, so a rule that took those groups at their word counted it. It did, until '
      'this was found.'),
     ('2330 - Paraprofessionals General Education',
-     'General education aides. The group next to the special education one, and the '
+     'General education paras. The group next to the special education one, and the '
      'single boundary most likely to be crossed by accident in either direction.'),
 ]
 
@@ -597,7 +597,7 @@ def classified():
 
     # Excluded lines carry all three budget years, not just FY27. A boundary can look
     # irrelevant in the year you happen to show and matter a great deal in the year you
-    # are comparing against: general education aides are budgeted at nothing from FY26 on,
+    # are comparing against: general education paras are budgeted at nothing from FY26 on,
     # but they were $121,233 in FY25, which is the base year of the two-year rates above.
     excluded = []
     for group, why in EXCLUDED:

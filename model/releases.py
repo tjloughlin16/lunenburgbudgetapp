@@ -41,7 +41,7 @@ RELEASES = [
 
             'A contract sets what one person is paid. It says nothing about how many '
             'people are employed — and on this line, that is where the movement is. '
-            'Special education aides are on an agreement giving 2.0% a year and their '
+            'Special education paras are on an agreement giving 2.0% a year and their '
             'budget has grown 12.78% for 10 budgets. Teachers are on one giving 3.5% and '
             'theirs has grown 2.67%. Both bargained, both wrong, in opposite directions.',
 

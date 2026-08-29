@@ -44,7 +44,7 @@ DATA = os.path.join(ROOT, 'sources/data')
 #
 # Out-of-district tuition came first, because the model escalated it at 8% on no basis at
 # all. The other two are here because the rate that replaced it rests on them: the
-# in-district rate assumes the FY27 jump in aides was a step rather than the start of a
+# in-district rate assumes the FY27 jump in paras was a step rather than the start of a
 # climb, and it prices the bus contract off a single year. Both are assumptions the
 # archive can now test, and an assumption that can be tested and has not been is just an
 # assumption somebody has decided not to look at.

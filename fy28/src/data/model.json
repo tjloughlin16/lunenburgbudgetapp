@@ -925,7 +925,7 @@
     "metric": "Special education growth, in district",
     "value": "6.49% a year",
     "kind": "ours",
-    "basis": "OURS. Every part of this line is escalated at what its own budgets show it doing, measured across eight to ten years of them, weighted by its share of the line: professional staff 2.7% across 53%, paraprofessionals 12.8% across 34%, transport 5.7% across 12%. Not one of those is a contract rate, and the two that have contracts show why. Special education teachers are on an agreement giving 3.5% and their line has grown 2.67% across 8 budgets \u2014 below it, because headcount there has drifted down. The aides run the other way: their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. A contract sets what one person is paid. It says nothing about how many people are employed, and on this line that is where the movement is \u2014 in both directions. This figure has previously stood at 2.48%, 4.28% and 6.80%; each was built on fewer budget years than the archive turned out to hold. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
+    "basis": "OURS. Every part of this line is escalated at what its own budgets show it doing, measured across eight to ten years of them, weighted by its share of the line: professional staff 2.7% across 53%, paraprofessionals 12.8% across 34%, transport 5.7% across 12%. Not one of those is a contract rate, and the two that have contracts show why. Special education teachers are on an agreement giving 3.5% and their line has grown 2.67% across 8 budgets \u2014 below it, because headcount there has drifted down. The paras run the other way: their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. A contract sets what one person is paid. It says nothing about how many people are employed, and on this line that is where the movement is \u2014 in both directions. This figure has previously stood at 2.48%, 4.28% and 6.80%; each was built on fewer budget years than the archive turned out to hold. What it still assumes is that the climb continues at roughly the rate it has held. Nothing in a budget column can test that \u2014 a budget shows dollars per line and never shows people, and the district does not publish staff counts. The full range is published beside the rate.",
     "doc": "xlsx/fy27-proposals.xlsx",
     "source": "FY27 budget workbook with the district\u2019s budget documents FY17\u2013FY27, extracted by scripts/extract_budget_history.py; published at /data/sped-para-history.csv",
     "n": 10
@@ -1012,7 +1012,7 @@
     "headline": "About a fifth of the school budget was folded in with salaries and escalated at the teachers\u2019 contract rate. It now has its own section, and a rate measured across eight to eleven of the district\u2019s own budgets rather than taken from a contract.",
     "changes": [
      "A section on Bend the Curve, and two findings on the front page. The district\u2019s published cost increase for next year is 3.98%. Inside it, out-of-district tuition falls 46% in a single year \u2014 a one-time drop, not a slower rate of growth. Hold that line where FY26 had it and the same budget rises 6.23%. That is the rate to plan against.",
-     "A contract sets what one person is paid. It says nothing about how many people are employed \u2014 and on this line, that is where the movement is. Special education aides are on an agreement giving 2.0% a year and their budget has grown 12.78% for 10 budgets. Teachers are on one giving 3.5% and theirs has grown 2.67%. Both bargained, both wrong, in opposite directions.",
+     "A contract sets what one person is paid. It says nothing about how many people are employed \u2014 and on this line, that is where the movement is. Special education paras are on an agreement giving 2.0% a year and their budget has grown 12.78% for 10 budgets. Teachers are on one giving 3.5% and theirs has grown 2.67%. Both bargained, both wrong, in opposite directions.",
      "Out-of-district tuition is no longer escalated at all. Eleven budgets run from $489,918 to $1,291,293 with no direction \u2014 the compound rate swings from -46% to +12% depending only on which year you start counting. There is no rate to measure, so the line is held flat and what it would cost to be wrong is published as a table of priced scenarios.",
      "Every budget line counted as special education is now listed, with the reason each was counted, because the state has no account code for it and the total is therefore ours. Publishing that list found English Language Learner costs inside it, which are now removed.",
      "The rate this line carries has changed four times in a day, and every version is on the page with the reason it was wrong. A number whose history you cannot see is one you have to take on trust."
@@ -1084,8 +1084,8 @@
    {
     "id": "ex_paras",
     "rate": 0.01137788676066176,
-    "label": "Special education apart from the aides, two budgets",
-    "what": "What the rest of the line did while the aides were being added. Below the levy cap \u2014 and it is the aides, not the rest, that make this line a driver."
+    "label": "Special education apart from the paras, two budgets",
+    "what": "What the rest of the line did while the paras were being added. Below the levy cap \u2014 and it is the paras, not the rest, that make this line a driver."
    },
    {
     "id": "contracts_only",
@@ -1104,7 +1104,7 @@
     "rate": 0.06487743183668555,
     "used": true,
     "label": "Each part at its contract, or at what it has measurably done",
-    "what": "Professional staff at the teachers\u2019 agreement; aides and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part\u2019s share of the line."
+    "what": "Professional staff at the teachers\u2019 agreement; paras and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part\u2019s share of the line."
    },
    {
     "id": "fy27",
@@ -1588,7 +1588,7 @@
     },
     {
      "group": "2330 - Paraprofessionals General Education",
-     "why": "General education aides. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction.",
+     "why": "General education paras. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction.",
      "lines": 4,
      "fy25": 121233.0,
      "fy26": 0.0,
@@ -3115,7 +3115,7 @@
    "anchor": "/bend-the-curve#sped",
    "headline": "The line nobody bargains over is the one that is growing.",
    "figure": "12.8%",
-   "body": "Special education aides are on a contract giving 2.0% a year. Their budget line has grown 12.78% a year for 10 budgets \u2014 $634,513 to $1,872,411, up in 8 of 9 years. Special education teachers run the other way: a 3.5% agreement and a line growing 2.67%. A contract sets what one person is paid; it says nothing about how many people are employed, and on this line that is where the movement is. Special education is about 21% of what the schools spend and the second-largest driver of the gap after health insurance."
+   "body": "Special education paras are on a contract giving 2.0% a year. Their budget line has grown 12.78% a year for 10 budgets \u2014 $634,513 to $1,872,411, up in 8 of 9 years. Special education teachers run the other way: a 3.5% agreement and a line growing 2.67%. A contract sets what one person is paid; it says nothing about how many people are employed, and on this line that is where the movement is. Special education is about 21% of what the schools spend and the second-largest driver of the gap after health insurance."
   },
   {
    "n": 5,

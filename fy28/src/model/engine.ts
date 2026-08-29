@@ -350,7 +350,7 @@ export interface AppliedItem {
  *  transportation are coded the same whether they serve a general classroom or a child's
  *  plan. That hid no money; it averaged together two lines that behave nothing alike.
  *  Teaching salaries move when a contract is bargained. This moves when a child arrives
- *  needing an aide. */
+ *  needing an para. */
 const BUCKETS = ['salaries', 'health', 'transport', 'sped', 'sped_tuition',
   'utilities', 'other'] as const
 type Bucket = typeof BUCKETS[number]

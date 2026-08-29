@@ -1,6 +1,6 @@
 """Every budget line the district's documents print, budget and actual, year by year.
 
-`extract_budget_history.py` pulls named groups -- the aides, the buses, the totals. This
+`extract_budget_history.py` pulls named groups -- the paras, the buses, the totals. This
 pulls EVERYTHING: each row of each table, keyed by the district's own label for it, with
 each column mapped to the fiscal year and kind the document states in its own header.
 

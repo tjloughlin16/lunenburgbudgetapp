@@ -249,7 +249,7 @@ export function BendTheCurve({ onJump, option = null }: {
         </h3>
         <p className="text-[14px] leading-relaxed mb-5 max-w-3xl"
           style={{ color: 'var(--text-secondary)' }}>
-          Nobody signs an agreement saying how many aides a district will employ. So for
+          Nobody signs an agreement saying how many paras a district will employ. So for
           these two the rate has to be measured — and drawn, because whether a line has a
           trend at all is the thing that decides how much weight its number can carry.
         </p>

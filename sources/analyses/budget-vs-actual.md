@@ -216,7 +216,7 @@ The 17 September minutes list, among the issues discovered, "**double booking of
 salaries**". That phrase appears once in 1,383 meeting documents and is never explained,
 and it points at the exact line the in-district special education rate is built on.
 
-So it was tested. **It cannot move that rate.** The aide escalator is a compound rate
+So it was tested. **It cannot move that rate.** The para escalator is a compound rate
 anchored on FY18 and FY27, and FY25 is an interior point: dropping FY25 entirely leaves
 the rate at 12.78%, and so does assuming FY25 was overstated by 15%. The straight-line fit
 moves from R² 0.89 to 0.85. The rate is what it was.
@@ -434,10 +434,10 @@ comes in close to budget, and the app should never describe those lines as overr
 Whether the FY22 and FY23 underspends are unfilled positions, delayed placements, or
 money moved elsewhere with approval. The three look identical from here.
 
-## 6. The one year the aide budget did not match what was spent
+## 6. The one year the para budget did not match what was spent
 
 The FY25 minutes name "double booking of the para salaries" as one of the things the
-district found. It is never explained anywhere else. But it is testable, because the aide
+district found. It is never explained anywhere else. But it is testable, because the para
 lines have a budget and an actual for six years:
 
 | FY | budgeted | spent | |
@@ -449,7 +449,7 @@ lines have a budget and an actual for six years:
 | FY23 | $1,014,759 | $1,018,072 | +0.3% |
 | **FY25** | **$1,498,126** | **$1,338,477** | **−10.7%** |
 
-For five years the aide budget and the aide spending track within about three percent, and
+For five years the para budget and the para spending track within about three percent, and
 the actual usually comes in slightly *above*. **FY25 is the only year that breaks it**, and
 it breaks it by $159,649 — a quarter of the $603,886 surplus the district reported for
 exactly that year.

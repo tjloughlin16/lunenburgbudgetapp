@@ -29,7 +29,7 @@ happen again, but it cannot keep happening, and the published 3.98% describes a 
 whose arithmetic does not carry forward.
 
 Underneath it, in-district special education escalates at **6.49%** — and the reason is
-not pay. The aides are on a contract giving 2.0%; their budget line has grown **12.78% a
+not pay. The paras are on a contract giving 2.0%; their budget line has grown **12.78% a
 year across 10 budgets**, up in 8 of 9. The teachers are on a contract giving 3.5% and
 theirs has grown 2.67%. **A contract sets what one person is paid. It says nothing
 about how many people are employed**, and on this line that is where the movement is — in
@@ -84,10 +84,10 @@ money:
 **What was deliberately left out.** A classification is defined as much by its edges as by
 its middle.
 
-- **2330 - Paraprofessionals General Education** — General education aides. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction. FY25 $121,233, FY26 $0, FY27 $0.
+- **2330 - Paraprofessionals General Education** — General education paras. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction. FY25 $121,233, FY26 $0, FY27 $0.
 - **9300 / 9400 — out-of-district tuition** — Special education, but escalated on its own because it is set by placement rather than by payroll, and it behaves nothing like staffing. FY25 $1,164,824, FY26 $1,291,293, FY27 $700,142.
 
-The general education aides are worth a second look. They are budgeted at nothing from
+The general education paras are worth a second look. They are budgeted at nothing from
 FY26 onward, so in FY27 that boundary costs nothing either way — but they were
 $121,233 in FY25, which is the base year of the two-year rates below. A boundary can
 be irrelevant in the year you show and matter in the year you are comparing against.
@@ -211,7 +211,7 @@ range is wider than any other single assumption in the model.
 
 ---
 
-## Is the increase in aides a step, or a climb?
+## Is the increase in paras a step, or a climb?
 
 The whole in-district rate turns on this. If FY27's 39% increase in paraprofessionals was
 a one-time step, its cost already sits in the $5,745,543 the model starts from and the
@@ -246,14 +246,14 @@ wherever you start it — the opposite of out-of-district tuition, whose rate sw
 -45.8% to +11.8% on the same test with an R² of 0.10. The FY27 increase is the
 steepest year of a trend running since FY18, not a departure from one.
 
-**And it is the aides, not the rest of the line, that make special education a driver.**
+**And it is the paras, not the rest of the line, that make special education a driver.**
 In FY27 the paraprofessional increase was **111% of the whole year's rise** in in-district
-special education — every other part of the line fell. Take the aides out and the
+special education — every other part of the line fell. Take the paras out and the
 remainder grew **1.14% a year** across the two most recent budgets, below the levy cap. One
 part of this line is climbing and the rest is close to flat, which is precisely why a
 single blended rate taken from the settlements gets it wrong.
 
-**That is headcount, and no settlement reaches it.** The aides' contract gives 2.0%. Their
+**That is headcount, and no settlement reaches it.** The paras' contract gives 2.0%. Their
 budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
 adding them, which it has not done in 8 of the last 9 budgets.
 
@@ -373,27 +373,27 @@ paraprofessional FTE, so the two measure the same population:
 |---|---:|---:|---:|
 | Budgeted | $707,139 | $1,498,126 | **+9.84%** |
 | Employed | 59.5 | 67.0 | **+1.50%** |
-| Budgeted per aide | $11,885 | $22,360 | **+8.22%** |
+| Budgeted per para | $11,885 | $22,360 | **+8.22%** |
 
 Their contract gives **2.0%**.
 
-**What this establishes.** The aide budget has grown roughly six times faster than the
-number of aides. Most of the increase is not more people, and it is not bargained pay
-either — dollars per counted aide rose 8.22% a year against a 2.0% agreement.
+**What this establishes.** The para budget has grown roughly six times faster than the
+number of paras. Most of the increase is not more people, and it is not bargained pay
+either — dollars per counted para rose 8.22% a year against a 2.0% agreement.
 
 **What it does not establish.** Why. The obvious explanation was that the town used to pay
 only part of these costs and now pays more of them — and **that was checked and it is not
 what happened.** The town's share of the function group these staff sit in is 78% in FY17
 and 78% in FY25 (see above). There is no handover.
 
-What is left fits aides moving from part-time to full-time hours, aides at higher
+What is left fits paras moving from part-time to full-time hours, paras at higher
 classifications or further up the step scale, or DESE counting heads on a different basis
 from the one the budget pays against. Nothing published separates them, and none of them
 is established here.
 
 The same pattern holds on **actual spending**, not just budgets, which rules out a
-budgeting artifact: FY18 to FY25, aide spending grew 9.07% a year — 3.98% more aides
-multiplied by 4.90% more per aide — against a contract giving 2%.
+budgeting artifact: FY18 to FY25, para spending grew 9.07% a year — 3.98% more paras
+multiplied by 4.90% more per para — against a contract giving 2%.
 
 **What it means for the rate, and this is unresolved.** The escalator projects the budget
 line at 12.78%. If that growth is a cost migrating onto the general fund, it must
@@ -405,7 +405,7 @@ It is left at 12.78% because nothing establishes when or whether the migration e
 and because the figure is honestly described: **it is what the town has appropriated.**
 But a reader should know the alternative and what it is worth, so here it is:
 
-| aide component | blended rate | FY28 gap |
+| para component | blended rate | FY28 gap |
 |---|---:|---:|
 | What the budget line did — **used** | 12.78% | $680,870 |
 | Headcount growth plus their contract | 5.98% | $552,922 |
@@ -416,7 +416,7 @@ Report separates spending by fund. See `notes/DATA-WANTED.md`.
 
 ### The one thing that could undermine this rate, and we cannot see it
 
-The aide series is a **general-fund budget** line. It is not a record of what the aides
+The para series is a **general-fund budget** line. It is not a record of what the paras
 cost or of how many there are — it is what the town appropriated for them. If some of
 those positions were paid for from somewhere else, the line does not mean what it appears
 to.
@@ -432,7 +432,7 @@ between funding sources rather than a district employing more people, and the ra
 high.
 
 **What the timing does and does not support.** Federal pandemic money ran out during FY25.
-The aide line rose 16.7% in FY25 and then *fell* 1.8% in FY26, and its steepest year is
+The para line rose 16.7% in FY25 and then *fell* 1.8% in FY26, and its steepest year is
 FY27 — a year after the cliff. So the simplest version of this, a single federal
 grant ending and its positions landing on the general fund, does not fit the shape. State
 grants have their own timing and we cannot see any of them, so this is weak evidence and
@@ -446,7 +446,7 @@ recorded in `notes/DATA-WANTED.md`.
 **Until then, the rate stands as what it is: what the town has appropriated for this line,
 measured over ten of its own budgets.** That is the right quantity for a model that
 projects appropriations, which is what this one does. It is not a claim about how many
-aides the district employs, and this page should never be read as making one.
+paras the district employs, and this page should never be read as making one.
 
 ### Special education teachers, tested the same way
 
@@ -475,7 +475,7 @@ contract rather than measured.
 growing more slowly than the agreement means there are fewer of them each year. Escalating
 this component at 3.5% assumed headcount held, and overstated it.
 
-That is the same lesson as the aides, pointing the other way. **A contract sets what one
+That is the same lesson as the paras, pointing the other way. **A contract sets what one
 person is paid. It says nothing about how many people are employed** — and on this line
 that is where the movement is, in both directions.
 
@@ -514,7 +514,7 @@ district has to be visible.
 ### What this forces
 
 The line was escalated at **2.57%** — the two pay settlements weighted by share — on the
-argument that FY27's increase in aides was a step already sitting in the base. **The
+argument that FY27's increase in paras was a step already sitting in the base. **The
 argument was sound and its premise was false.** With two budget years there is no way to
 tell a step from a climb; with ten there is, and it is a climb.
 
@@ -589,7 +589,7 @@ will not hold still:
 **-45.8% to +11.8% on the same line, with the same endpoint, depending only on
 which year you start counting.** A figure that moves that far on an arbitrary choice
 measures nothing. Publishing +0.66% because FY17 happens to be the first year the archive
-reaches would be the same error as pricing the aides at their 2.0% contract:
+reaches would be the same error as pricing the paras at their 2.0% contract:
 a number with a citation and no meaning for the line it is attached to.
 
 **So the line is held flat**, and the risk is published as a range of priced scenarios
@@ -637,7 +637,7 @@ recurring rate is 6.23%, not 3.98%.
 ### The pay rise is not the story. There is no special education contract.
 
 Special education staff are paid under the **same two agreements as everyone else** —
-professional staff under the teachers' contract, aides under the paraprofessionals'. There
+professional staff under the teachers' contract, paras under the paraprofessionals'. There
 is no special education unit and no special education pay rate.
 
 Weighting each part of the line by the contract that governs it:
@@ -652,8 +652,8 @@ Weighting each part of the line by the contract that governs it:
 **Weighted, those two settlements come to 2.57%** — and the line has risen faster than that
 in every budget we hold.
 
-That gap is the whole question, and it is answered in *Is the increase in aides a step, or
-a climb?* above: the aides' line has grown 12.8% a year across 10 budgets while their
+That gap is the whole question, and it is answered in *Is the increase in paras a step, or
+a climb?* above: the paras' line has grown 12.8% a year across 10 budgets while their
 contract gives 2.0%. So the model escalates
 every part of it at what its own budgets show it doing, measured across eight to ten
 years of them, which comes to **6.49%**.
@@ -669,10 +669,10 @@ years of them, which comes to **6.49%**.
 > **5.77%**, what the whole line did over two budgets, was replaced because it looked like
 > one hiring decision averaged and compounded.
 >
-> **2.57%**, the two settlements weighted by share, assumed FY27's increase in aides was
+> **2.57%**, the two settlements weighted by share, assumed FY27's increase in paras was
 > a step already sitting in the base. Ten budgets say it is a climb.
 >
-> **6.80%** measured the aides and the buses but still took the largest component — the
+> **6.80%** measured the paras and the buses but still took the largest component — the
 > teachers, 54% of the line — from their contract, on three years showing it flat.
 >
 > **6.49%** measures all three. The teachers turn out to have grown 2.67% against a

@@ -124,7 +124,7 @@ CITATIONS = [
                 f"{sped.LEA_RATE:.1%} and their line has grown "
                 f"{sped.TEACHER_TREND['cagr']:.2%} across {sped.TEACHER_TREND['n']} "
                 f"budgets \u2014 below it, because headcount there has drifted down. The "
-                f"aides run the other way: their contract gives {sped.AFSCME_RATE:.1%}; across "
+                f"paras run the other way: their contract gives {sped.AFSCME_RATE:.1%}; across "
                 f"{sped.PARA_TREND['n']} budgets, FY{sped.PARA_TREND['firstFy'] % 100} to "
                 f"FY{sped.PARA_TREND['lastFy'] % 100}, the line went from "
                 f"${sped.PARA_TREND['first']:,.0f} to ${sped.PARA_TREND['last']:,.0f} "

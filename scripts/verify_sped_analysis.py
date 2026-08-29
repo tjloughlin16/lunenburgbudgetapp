@@ -66,7 +66,7 @@ print('The short version')
 present('published rate', pct(y['published']))
 present('underlying rate', pct(y['underlying']))
 present('rate in use', f"{sped.RATE:.2%}")
-present('aides, compound', f"{sped.PARA_TREND['cagr']:.2%}")
+present('paras, compound', f"{sped.PARA_TREND['cagr']:.2%}")
 present('teachers, compound', f"{sped.TEACHER_TREND['cagr']:.2%}")
 
 print('\nWhat counts as special education')
@@ -78,7 +78,7 @@ present('lines caught by name', f"{c['byName']} lines")
 # By name, not by position: the excluded list grows, and an index silently starts
 # checking a different row rather than failing.
 _ge = next(e for e in c['excluded'] if e['group'].startswith('2330'))
-present('general-ed aides, FY25', money(_ge['fy25']))
+present('general-ed paras, FY25', money(_ge['fy25']))
 _ell = next(e for e in c['excluded'] if e['group'].startswith('English Language'))
 present('ELL removed from the line', money(_ell['amount']))
 if abs(c['total'] - sped.total(sped.FY27BAL, sped.is_sped)) > 1:
@@ -91,7 +91,7 @@ for part in sped.decomposition():
 
 print('\nThe rate and its range')
 present('whole line, two budgets', pct(sped.WHOLE_LINE_RATE))
-present('line apart from the aides', pct(sped.EX_PARAS_RATE))
+present('line apart from the paras', pct(sped.EX_PARAS_RATE))
 present('paraprofessional step', money(sped.PARA_FY27_CHANGE))
 present('para share of the year', f'{sped.PARA_SHARE_OF_RISE*100:.0f}%')
 

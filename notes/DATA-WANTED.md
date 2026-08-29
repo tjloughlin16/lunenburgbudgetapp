@@ -17,7 +17,7 @@ not on the list.
 ## What the archive answered on 28 August, and what it did not
 
 The mirrored budget documents turned three of these from "not obtainable" into "measured".
-Out-of-district tuition now has 11 budgets behind it, the aides 10, the teachers
+Out-of-district tuition now has 11 budgets behind it, the paras 10, the teachers
 8 — all budget columns, one stage held constant, in
 `/data/*-history.csv`.
 
@@ -93,11 +93,23 @@ is too high.
 - **Ask:** Business Manager, or DESE directly
 - **Wording:** *"For FY18 to FY27, what share of special education paraprofessional costs
   was funded by grants rather than the general fund appropriation?"*
-- **Or, without asking anyone:** DESE's **End of Year Financial Report** separates district
-  spending by funding source. It is public. It is also on mass.gov, which returns 403 to
-  anything automated — see Tier 2.
+- **Checked and NOT available online, 29 August 2026.** DESE's End of Year Financial
+  Report does separate spending by fund, but it is a filing, not a publication. The page
+  at `doe.mass.edu/finance/accounting/eoy/` is a shell — districts submit through the
+  Security Portal at `gateway.edu.state.ma.us` and nothing district-level comes back out.
+  The public extract is the per-pupil report at
+  `profiles.doe.mass.edu/statereport/ppx.aspx`, which is explicitly titled **All Funds**
+  and offers no fund selector. The state open-data portal carries only the two
+  spending-category datasets, neither of which splits by fund.
+- **So it has to be asked for**, and there are three people who could answer:
+  the district's Business Manager, who files it; DESE's School Finance unit, who receive
+  it; or the Town Accountant, whose records carry the school department's grant funds.
+  **The district is the shortest route** — they file it, so they hold it.
+- **Wording:** *"Could you share the district's End of Year Financial Report schedules for
+  FY18 through FY25 — specifically the expenditure detail by fund, so general fund and
+  grant-funded spending can be told apart?"*
 - **Settles:** whether the paraprofessional trend is staffing or accounting.
-- **Does not settle:** how many aides there are. That is item 4, and the two together are
+- **Does not settle:** how many paras there are. That is item 4, and the two together are
   what this line actually needs.
 
 ---

@@ -55,7 +55,7 @@ CONCLUSIONS = [
  dict(n=4, anchor='/bend-the-curve#sped',
       headline='The line nobody bargains over is the one that is growing.',
       figure=f'{sped.PARA_TREND["cagr"]:.1%}',
-      body=f'Special education aides are on a contract giving '
+      body=f'Special education paras are on a contract giving '
            f'{sped.AFSCME_RATE:.1%} a year. Their budget line has grown {sped.PARA_TREND["cagr"]:.2%} a '
            f'year for {sped.PARA_TREND["n"]} budgets \u2014 ${sped.PARA_TREND["first"]:,.0f} to ${sped.PARA_TREND["last"]:,.0f}, up in '
            f'{sped.PARA_TREND["up"]} of {sped.PARA_TREND["n"]-1} years. Special education teachers run the other way: a '
