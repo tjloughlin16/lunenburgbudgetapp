@@ -113,13 +113,15 @@ supporting §1, which is the sort of thing that only shows up when you go line b
 **And one thing we DO have, which an earlier version of this document said we did not.**
 The Town Accountant's own year-to-date budget report for FY26 through 31 March, obtained by
 records request. It is the ledger rather than a budget document: original appropriation,
-transfers and adjustments, revised budget, expended, encumbrances, for all 51 general fund
-departments. Extracted to `/data/town-ledger-fy26-q3.csv`.
+transfers and adjustments, revised budget, expended, encumbrances, for all 67 general fund
+departments. Extracted to `/data/town-ledger-fy26-q3.csv`, which reconciles to the report's
+own GRAND TOTAL before it will write.
 
 It matters because this document repeatedly says money moved between lines mid-year is
-invisible from here. At department level it is not. In FY26, **25 of the 51 departments had
-money moved into or out of them, $452,971 in total, of which $76,394 went to the schools.**
-Transfers are real, ordinary and routine, and now they can be pointed at.
+invisible from here. At department level it is not. In FY26, **28 of the 67 departments had
+money moved into or out of them: $489,411 in, $148,177 out, of which $76,394 went to the
+school department** — while school non-recurring expenses gave up $4,223. Transfers are
+real, ordinary and routine, and now they can be pointed at.
 
 What it does not do is settle which school LINES moved: the whole school department is a
 single row. And it is one snapshot of one year.

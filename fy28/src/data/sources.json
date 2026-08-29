@@ -923,9 +923,9 @@
      "stars": 2,
      "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
      "kind": "Notes",
-     "bytes": 32557,
+     "bytes": 32701,
      "url": "/docs/analyses/budget-vs-actual.md",
-     "count": 687,
+     "count": 689,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
@@ -975,6 +975,18 @@
      "textUrl": "/docs/data/line-history.csv"
     },
     {
+     "path": "data/document-basis.csv",
+     "title": "What produced each document’s figures",
+     "stars": 3,
+     "what": "Every document in this archive classified by SOURCE TYPE: ledger (the accounting system — a figure exists because a transaction did), restatement (a prior year re-presented inside a document written by the party that spent it), forward (proposed, requested, level service, balanced), or narrative. Each row quotes the raw header text the classification rests on, with its line number or cell reference, so any row can be checked in one grep; workbook rows also record which columns are HIDDEN. Of 216 documents, 15 are ledger-basis and exactly one of those reaches school budget lines. Rebuild with scripts/classify_document_basis.py.",
+     "kind": "Data",
+     "bytes": 55979,
+     "url": "/docs/data/document-basis.csv",
+     "count": 216,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-basis.csv"
+    },
+    {
      "path": "data/lps-budget-lines.csv",
      "title": "Budget lines, tidy CSV",
      "stars": 3,
@@ -999,6 +1011,18 @@
      "textUrl": "/docs/data/grants-history.csv"
     },
     {
+     "path": "data/town-ledger-fy26-q3.csv",
+     "title": "The town’s own ledger, FY26 to 31 March",
+     "stars": 3,
+     "what": "All 67 general fund departments as the Town Accountant’s system prints them: original appropriation, transfers and adjustments, revised budget, year-to-date expended, encumbrances. Extracted from q3-fy26/town-general-fund-expenditures-fy26-q3.pdf, which came from the Town by records request rather than off a website. This is the only source here that shows money MOVING between lines during a year — 28 of the 67 departments had some, $489,411 in and $148,177 out, of which $76,394 went to the school department. The extract reconciles to the report’s own GRAND TOTAL before it will write; an earlier version silently dropped 16 departments whose figures printed as “.00”. Rebuild with scripts/extract_town_ledger.py.",
+     "kind": "Data",
+     "bytes": 5079,
+     "url": "/docs/data/town-ledger-fy26-q3.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-ledger-fy26-q3.csv"
+    },
+    {
      "path": "data/variance-by-group.csv",
      "title": "Budget against actual, every group and year",
      "stars": 3,
@@ -1009,18 +1033,6 @@
      "count": 57,
      "unit": "rows",
      "textUrl": "/docs/data/variance-by-group.csv"
-    },
-    {
-     "path": "data/town-ledger-fy26-q3.csv",
-     "title": "The town’s own ledger, FY26 to 31 March",
-     "stars": 3,
-     "what": "All 51 general fund departments as the Town Accountant’s system prints them: original appropriation, transfers and adjustments, revised budget, year-to-date expended, encumbrances. Extracted from q3-fy26/town-general-fund-expenditures-fy26-q3.pdf, which came from the Town by records request rather than off a website. This is the only source here that shows money MOVING between lines during a year — 25 of the 51 departments had some, $452,971 in total, of which $76,394 went to the schools. Rebuild with scripts/extract_town_ledger.py.",
-     "kind": "Data",
-     "bytes": 3991,
-     "url": "/docs/data/town-ledger-fy26-q3.csv",
-     "count": 51,
-     "unit": "rows",
-     "textUrl": "/docs/data/town-ledger-fy26-q3.csv"
     },
     {
      "path": "data/school-special-revenue-fy26-q3.csv",
@@ -1112,9 +1124,9 @@
      "stars": 2,
      "what": "The working index of every file here, with provenance and known gaps.",
      "kind": "Notes",
-     "bytes": 16472,
+     "bytes": 17661,
      "url": "/docs/MANIFEST.md",
-     "count": 264,
+     "count": 273,
      "unit": "lines",
      "textUrl": "/docs/MANIFEST.md"
     },
@@ -3277,10 +3289,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 250,
+  "documents": 251,
   "groups": 15,
-  "bytes": 354675161,
-  "loadBearing": 36
+  "bytes": 354733561,
+  "loadBearing": 37
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

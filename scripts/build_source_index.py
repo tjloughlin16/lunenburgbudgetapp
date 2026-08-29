@@ -423,14 +423,29 @@ GROUPS = [
              'scripts/extract_special_revenue.py.'),
             ('data/town-ledger-fy26-q3.csv',
              'The town\u2019s own ledger, FY26 to 31 March', 3,
-             'All 51 general fund departments as the Town Accountant\u2019s system prints '
+             'All 67 general fund departments as the Town Accountant\u2019s system prints '
              'them: original appropriation, transfers and adjustments, revised budget, '
              'year-to-date expended, encumbrances. Extracted from '
              'q3-fy26/town-general-fund-expenditures-fy26-q3.pdf, which came from the Town '
              'by records request rather than off a website. This is the only source here '
-             'that shows money MOVING between lines during a year \u2014 25 of the 51 '
-             'departments had some, $452,971 in total, of which $76,394 went to the '
-             'schools. Rebuild with scripts/extract_town_ledger.py.'),
+             'that shows money MOVING between lines during a year \u2014 28 of the 67 '
+             'departments had some, $489,411 in and $148,177 out, of which $76,394 went to '
+             'the school department. The extract reconciles to the report\u2019s own GRAND '
+             'TOTAL before it will write; an earlier version silently dropped 16 '
+             'departments whose figures printed as \u201c.00\u201d. Rebuild with '
+             'scripts/extract_town_ledger.py.'),
+            ('data/document-basis.csv',
+             'What produced each document\u2019s figures', 3,
+             'Every document in this archive classified by SOURCE TYPE: ledger (the '
+             'accounting system \u2014 a figure exists because a transaction did), '
+             'restatement (a prior year re-presented inside a document written by the '
+             'party that spent it), forward (proposed, requested, level service, '
+             'balanced), or narrative. Each row quotes the raw header text the '
+             'classification rests on, with its line number or cell reference, so any row '
+             'can be checked in one grep; workbook rows also record which columns are '
+             'HIDDEN. Of 216 documents, 15 are ledger-basis and exactly one of those '
+             'reaches school budget lines. Rebuild with '
+             'scripts/classify_document_basis.py.'),
             ('data/grants-history.csv',
              'Grant income by grant, FY20\u2013FY24', 3,
              'Every entitlement and competitive grant the district reports receiving, by '
