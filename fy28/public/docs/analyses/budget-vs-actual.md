@@ -310,6 +310,77 @@ overspent may have been topped up legitimately, and we cannot see those votes.
 
 ---
 
+## 2b. Which lines miss, across the whole budget
+
+Findings 2 and 3 look at particular lines. This is the sweep: 546 usable line-years, every
+function group, no hypothesis.
+
+**Salaries come in under. Everything else comes in over.**
+
+| | line-years | budgeted | spent | |
+|---|---:|---:|---:|---:|
+| Salaries | 310 | $45,743,891 | $45,161,523 | **−1.27%** |
+| Everything else | 164 | $26,999,924 | $27,235,167 | **+0.87%** |
+
+That is the shape of a district that provisions payroll for a full roster it does not
+always fill, and provisions everything else about right. It is also small: both are within
+about one percent.
+
+**The groups that miss, ranked by dollars:**
+
+| overspent | pooled variance | | underspent | pooled variance |
+|---|---:|---|---|---:|
+| Replace Equipment | **+$470,566 (+102%)** | | Private tuitions | **−$439,905 (−15%)** |
+| Insurance Programs | +$334,767 (+2.4%) | | Student transportation | −$322,842 (−6.8%) |
+| Collaborative tuitions | +$149,735 (+20%) | | Special education teachers | −$183,301 (−2.7%) |
+| Info management & tech | +$101,889 (+21%) | | Custodial services | −$145,579 (−3.7%) |
+
+### Three of these are worth naming
+
+**Replace Equipment is not over-spending. It is under-budgeting, and getting worse.**
+
+| FY18 | FY19 | FY20 | FY22 | FY23 |
+|---:|---:|---:|---:|---:|
+| +4% | −1% | +94% | +156% | **+309%** |
+
+It was budgeted about right for two years and is now budgeted at roughly a quarter of what
+it costs. The dollars are small — under $200,000 a year — but a line that misses by a
+factor of four is not a forecast, and it is the clearest case in the budget of a number
+that has stopped being maintained.
+
+**Insurance is small in percentage and large in dollars, and it is drifting.** +1%, +1%,
+−1%, +3%, +7%. On a $13.8M pooled base, a 2.4% average overspend is $334,767 — the largest
+dollar overspend in the budget after equipment, and the only one attached to a line big
+enough to matter to the gap.
+
+**Custodial supplies is the one line that is over every single year** — 5 of 5, by 4%, 2%,
+157%, 33%, 8%. Small money, but it is the only genuinely systematic overspend found.
+
+**And transportation is the mirror**: under in 4 of 5 years, −$322,842 pooled. Budgeted
+generously and consistently comes in below.
+
+### The out-of-district split is unpredictable even when the total is not
+
+The two halves of out-of-district tuition move independently and violently:
+
+| FY | private | collaborative | the total |
+|---|---:|---:|---:|
+| FY18 | −0% | **+184%** | +14% |
+| FY19 | +2% | **+319%** | +27% |
+| FY20 | +21% | −45% | +0% |
+| FY22 | **−61%** | −18% | −51% |
+| FY23 | **−61%** | +0% | −38% |
+
+The district over-provided collaborative placements early and private placements later,
+and the two do not offset each other so much as happen to be smaller together. Pooled, the
+total is −7.9%.
+
+**This is the same conclusion §3 reaches and the same one the special education work
+reached from budget columns: nobody can forecast this line.** Three methods, three data
+sources, one answer.
+
+---
+
 ## 3. One cost cannot be predicted — and it misses in BOTH directions
 
 ### In plain terms

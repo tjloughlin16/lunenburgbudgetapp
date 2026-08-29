@@ -25,14 +25,20 @@ EXCLUDED_YEARS = {2021}
 
 
 def present(label, needle):
-    ok = needle in TEXT or needle in PLAIN
+    # Prose uses the typographic minus, code emits the ASCII hyphen, and they are the same
+    # number. Normalising both sides beats reporting drift that is only a character.
+    def norm(t):
+        return t.replace('\u2212', '-').replace('\u2013', '-')
+    ok = (needle in TEXT or needle in PLAIN
+          or norm(needle) in norm(TEXT) or norm(needle) in norm(PLAIN))
     if not ok:
         FAILS.append(f'{label}: "{needle}" not in the document')
     print(f"  {'OK  ' if ok else 'GONE'}  {label:<44} {needle}")
 
 
 def money(v):
-    return f'${v:,.0f}'
+    """Prose puts the sign outside the currency symbol -- −$439,905, not $-439,905."""
+    return f'-${abs(v):,.0f}' if v < 0 else f'${v:,.0f}'
 
 
 rows = list(csv.DictReader(open(os.path.join(DATA, 'line-history.csv'))))
@@ -81,6 +87,35 @@ for name, pred in (
     for fy in sorted(g):
         b, a = g[fy]
         present(f'{name} FY{fy % 100}', f'{(a / b - 1) * 100:+.1f}%')
+
+print('\nThe whole-budget sweep')
+import importlib.util
+_sp = importlib.util.spec_from_file_location('elh', os.path.join(ROOT, 'scripts/extract_line_history.py'))
+_elh = importlib.util.module_from_spec(_sp); _sp.loader.exec_module(_elh)
+_wb = [r for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv')))
+       if r['kind'] == 'line']
+_sec = {_elh.norm(r['line_item']): r['section'] for r in _wb}
+_fn = {_elh.norm(r['line_item']): (r['function_group'] or '').strip() for r in _wb}
+_recs = []
+for (k, fy), v in cell.items():
+    b, a = v.get('settled'), v.get('actual')
+    if usable(fy, b, a):
+        _recs.append((k, fy, b[0], a[0]))
+present('usable line-years', f'{len(_recs)} usable line-years')
+for name, want in (('SALARIES', 'Salaries'), ('EXPENSES', 'Everything else')):
+    rr = [r for r in _recs if _sec.get(r[0]) == name]
+    tb, ta = sum(r[2] for r in rr), sum(r[3] for r in rr)
+    present(f'{want} variance', f'{(ta / tb - 1) * 100:+.2f}%')
+_grp = collections.defaultdict(lambda: [0, 0])
+for k, fy, b, a in _recs:
+    g = _fn.get(k) or '?'
+    _grp[g][0] += b
+    _grp[g][1] += a
+for g in ('7400 - Replace Equipment', '5200 - Insurance Programs',
+          '9300 - Private Tuitions', '3300 - Student Transportation'):
+    if g in _grp:
+        b, a = _grp[g]
+        present(g[:30], money(a - b))
 
 print('\nThe consistency test')
 per = collections.defaultdict(list)
