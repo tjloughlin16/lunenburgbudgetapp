@@ -498,6 +498,95 @@ function Line({ k, v, bold }: { k: string; v: string; bold?: boolean }) {
   )
 }
 
+/** The one year the district published athletics against the revolving fund.
+ *
+ *  Every other figure in this app is an appropriation, because an appropriation is all
+ *  the district publishes. This document is the exception, and it is the reason we can
+ *  say an athletics line is net rather than merely suspect it. Credit belongs on the
+ *  page beside the finding, not in a footnote — the schools published this themselves.
+ *
+ *  Every figure here is computed from the document's own two columns. Nothing is typed. */
+export function SplitReporting() {
+  const s = MODEL.splitReporting
+  const rows = s.transportation.map(r => ({
+    ...r, total: r.general + r.revolving,
+    share: (r.revolving / (r.general + r.revolving)) * 100,
+  }))
+  const actuals = rows.filter(r => r.basis === 'actual')
+  const lo = Math.min(...actuals.map(r => r.share))
+  const hi = Math.max(...actuals.map(r => r.share))
+
+  return (
+    <div className="card p-5" style={{ borderColor: 'var(--status-good)' }}>
+      <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+        <h3 className="text-sm font-bold">
+          <span aria-hidden="true" style={{ color: 'var(--status-good)' }}>★ </span>
+          The one year the schools showed both sides
+        </h3>
+        <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded"
+          style={{ background: 'var(--status-good)', color: '#fff' }}>
+          worth reading
+        </span>
+      </div>
+      <p className="text-[12px] mb-4" style={{ color: 'var(--text-secondary)' }}>
+        <a href={`/docs/${s.doc}`} className="underline">{s.title}</a> — {s.subtitle}.
+        It lists Athletic Transportation twice: once as an appropriation, once as the{' '}
+        {s.fund}.
+      </p>
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-[13px] tnum">
+          <thead>
+            <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
+              <th className="font-bold uppercase tracking-widest text-[10px] pb-1">FY</th>
+              <th className="font-bold uppercase tracking-widest text-[10px] pb-1 text-right">Appropriated</th>
+              <th className="font-bold uppercase tracking-widest text-[10px] pb-1 text-right">Revolving fund</th>
+              <th className="font-bold uppercase tracking-widest text-[10px] pb-1 text-right">Total</th>
+              <th className="font-bold uppercase tracking-widest text-[10px] pb-1 text-right">Fund&nbsp;share</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r => (
+              <tr key={r.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                <td className="py-1.5">
+                  FY{String(r.fy).slice(2)}
+                  {r.basis !== 'actual' && (
+                    <span className="ml-1.5 text-[10px] uppercase tracking-wide"
+                      style={{ color: 'var(--text-muted)' }}>{r.basis}</span>
+                  )}
+                </td>
+                <td className="text-right">{usd(r.general)}</td>
+                <td className="text-right font-bold">{usd(r.revolving)}</td>
+                <td className="text-right">{usd(r.total)}</td>
+                <td className="text-right">{r.share.toFixed(0)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className="text-[13px] leading-relaxed mt-4">
+        <strong>In every year it reports as actual, the revolving fund paid more of
+        athletic transportation than the town did</strong> — between {lo.toFixed(0)}% and{' '}
+        {hi.toFixed(0)}%. {s.establishes}
+      </p>
+
+      <div className="grid gap-3 sm:grid-cols-2 mt-4 pt-4 border-t text-[13px] leading-relaxed"
+        style={{ borderColor: 'var(--grid)', color: 'var(--text-secondary)' }}>
+        <p><span className="font-bold" style={{ color: 'var(--text-primary)' }}>
+          What it does not show. </span>{s.doesNotEstablish}</p>
+        <p><span className="font-bold" style={{ color: 'var(--text-primary)' }}>
+          What would settle it. </span>{s.wouldSettle}</p>
+      </div>
+
+      <p className="text-[12px] leading-relaxed mt-3 pt-3 border-t"
+        style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>
+        {s.credit} {s.roundingNote}
+      </p>
+    </div>
+  )
+}
+
 /** Where the fee money goes — what we could establish, and what we could not. */
 export function FeeAccounting() {
   const a = MODEL.feeAccounting

@@ -288,6 +288,65 @@ ESTIMATED_FY26_ATHLETIC_REVENUE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICI
 FEE_REVENUE_IN_BUDGET = False
 
 
+# ---------------------------------------------------------------------------
+# The one document that showed both sides
+# ---------------------------------------------------------------------------
+# Everything else in this app measures the general fund appropriation, because that is
+# all the district publishes. Once -- for FY19, submitted by the athletic director to the
+# superintendent -- it published athletics with the revolving fund set beside the
+# appropriation, line by line. It is the only document in the archive that does, and it
+# shows that the appropriated athletics lines were NET of a large revolving contribution.
+#
+# This is worth pointing a reader at rather than burying. It is the district doing the
+# thing that would make every other year legible, and the format has not appeared since.
+#
+# Provenance: sources/district-budget-page/index.csv. Off the district's own budget page,
+# link live as of 2026-08-29. sha256 e0a7c5baa041112c484f4059130f2ec2348325d1fe29b01e52af42d549430858
+SPLIT_REPORTING = dict(
+    title='Proposed FY19 MSHS Athletic Budget',
+    subtitle='Submitted to the Superintendent of Schools, amended proposed budget',
+    doc='district-budget-page/docs/fy19-proposed-athletics-budget.pdf',
+    link='https://drive.google.com/file/d/1UYTAQzmTbbv2kBVus4zR8lN3i0jqzaTn/view?usp=sharing',
+    fund='Chapter 658 revolving fund — the same fund the town books as 1301',
+    # Athletic Transportation appears twice in this document: once as an appropriated line
+    # and once as "(658)", the revolving fund. Both are reproduced here exactly.
+    transportation=[
+        dict(fy=2014, general=17000, revolving=30085, basis='actual'),
+        dict(fy=2015, general=21600, revolving=40742, basis='actual'),
+        dict(fy=2016, general=23000, revolving=33308, basis='actual'),
+        dict(fy=2017, general=23000, revolving=50986, basis='actual'),
+        dict(fy=2018, general=33500, revolving=27450, basis='budgeted'),
+        dict(fy=2019, general=24975, revolving=40000, basis='requested'),
+    ],
+    # The whole programme on the same basis, as the document totals it.
+    programme=[
+        dict(fy=2014, general=194316, revolving=108147, stated=302462, revenue=110474),
+        dict(fy=2015, general=224799, revolving=111938, stated=336738, revenue=140748),
+        dict(fy=2016, general=210911, revolving=113819, stated=324730, revenue=121555),
+        dict(fy=2017, general=222695, revolving=156550, stated=379245, revenue=109351),
+        dict(fy=2018, general=326478, revolving=103001, stated=429479, revenue=108000),
+        dict(fy=2019, general=307931, revolving=87902,  stated=395833, revenue=108000),
+    ],
+    revenueLabel='Fees and gate receipts',
+    # The document's own grand totals are $1 off its own columns in FY14 and FY15 and
+    # exact in the other four years. Stated here so the app can say so rather than look
+    # as though it disagrees with the source.
+    roundingNote='In FY14 and FY15 the document\u2019s stated grand total differs by $1 '
+                 'from the sum of its own two columns. The other four years tie exactly.',
+    credit='The district published this. It is the clearest account of how athletics is '
+           'actually paid for that exists anywhere in the record, and it came off the '
+           'schools\u2019 own budget page.',
+    establishes='For these years the appropriated athletics lines were net of a large '
+                'revolving-fund contribution, and the appropriation alone understates '
+                'what athletics cost.',
+    doesNotEstablish='Whether the split continued after FY19. No document published '
+                     'since shows both sides, so the ratio cannot be seen for any later '
+                     'year — including every year this app projects from.',
+    wouldSettle='An athletics budget in this format for any year after FY19, or the '
+                'revolving fund\u2019s account detail history.',
+)
+
+
 CURRENT_BUS_FEES = dict(
     full_single=180, full_family=270,
     reduced_single=50, reduced_family=75,
@@ -323,11 +382,19 @@ FEE_ACCOUNTING = dict(
         'The district does use revolving money to offset appropriated costs: the FY27 '
         'addendum reallocates "$50,000 from school choice revolving/transportation to '
         'offset transportation costs."',
+        'For FY14 through FY17 the appropriated athletics lines were NET of a large '
+        'revolving-fund contribution, and the district showed both sides itself. Its '
+        'FY19 athletics budget lists Athletic Transportation twice \u2014 once as an '
+        'appropriation and once as the Chapter 658 revolving fund \u2014 and the '
+        'revolving side is the larger of the two in every year it reports as actual. '
+        'So an appropriated athletics line is not what athletics costs.',
     ],
     unresolved=[
-        'Whether the athletics figures in the budget are gross, or already net of fee '
-        'income. This changes what a fee increase is actually worth, and we could not '
-        'settle it from published documents.',
+        'Whether today\u2019s athletics figures are gross, or already net of fee income. '
+        'For FY14\u2013FY17 the district\u2019s own FY19 athletics budget settles it \u2014 they '
+        'were net, and the revolving fund paid the larger share of transportation. No '
+        'document published since shows both sides, so for every year this app projects '
+        'from, the question is open again. This changes what a fee increase is worth.',
         'How much fee revenue is actually collected, and how many waivers are granted. '
         'The district publishes the fee schedule but not the collections.',
         'Whether band, music or club fees exist at all.',

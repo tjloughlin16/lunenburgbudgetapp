@@ -4,7 +4,7 @@ import { Section, Stat, Note } from '../components/primitives'
 import { Composition, FrillsCheck } from '../components/Composition'
 import { Magnitude } from '../components/Magnitude'
 import { PeerGrowth, PeerTable, PeerLessons } from '../components/Peers'
-import { SportTable, FeeAccounting, CurrentFees } from '../components/Athletics'
+import { SportTable, FeeAccounting, CurrentFees, SplitReporting } from '../components/Athletics'
 import { Recommendation } from '../components/Recommendation'
 
 /** Set true to put our own recommendation back on the situation page. */
@@ -232,6 +232,7 @@ export function Context({ onRecommend, onSources }: {
         <SportTable fee={MODEL.currentFees.effectiveAthletic} />
 
         <h3 className="text-sm font-bold mt-10 mb-3">Where does the fee money actually go?</h3>
+        <div className="mb-4"><SplitReporting /></div>
         <FeeAccounting />
       </Section>
 

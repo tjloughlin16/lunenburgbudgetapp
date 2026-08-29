@@ -176,6 +176,13 @@ export const MODEL = raw as unknown as {
     chargeableParticipations: number; estimatedFy26Revenue: number
   }
   feeAccounting: { established: string[]; unresolved: string[]; ask: string }
+  splitReporting: {
+    title: string; subtitle: string; doc: string; link: string; fund: string
+    transportation: { fy: number; general: number; revolving: number; basis: string }[]
+    programme: { fy: number; general: number; revolving: number; stated: number; revenue: number }[]
+    revenueLabel: string; roundingNote: string
+    credit: string; establishes: string; doesNotEstablish: string; wouldSettle: string
+  }
   taxBase: {
     rate: number; levy: number; totalValue: number
     residentialShare: number; cipShare: number
