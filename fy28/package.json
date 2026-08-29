@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prerender": "node scripts/prerender.mjs",
+    "check:agents": "node scripts/check-agents.mjs",
+    "check:interactive": "node scripts/check-interactive.mjs",
+    "build:site": "npm run build && npm run prerender"
   },
   "dependencies": {
     "react": "^19.2.8",

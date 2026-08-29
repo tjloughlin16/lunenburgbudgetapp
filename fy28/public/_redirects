@@ -1,3 +1,25 @@
-# Single-page app: every path resolves to index.html.
-# Mirrors the netlify.toml redirect so the two hosts behave identically.
-/*  /index.html  200
+# Cloudflare Pages IGNORES every rule this file has ever contained.
+#
+# `wrangler pages dev` reports `Parsed 0 valid redirect rules` for it, and says why:
+#
+#   Valid status codes are 200, 301, 302 (default), 303, 307, or 308. Got 404.
+#   Infinite loop detected in this rule and has been ignored.
+#       at _redirects | /*  /index.html  200
+#
+# So the SPA fallback that this file, netlify.toml and src/routes.ts all describe as
+# load-bearing was never coming from here. It is the Cloudflare Pages DEFAULT: with no
+# root 404.html present, an unmatched path is served index.html with a 200. That default
+# is the behaviour we want for app routes, and it is why adding a file literally named
+# 404.html breaks stale shared links -- the convention takes precedence and every
+# unrecognized path becomes a hard 404. The error page is therefore not-found.html.
+#
+# The one thing that DOES need overriding -- a real 404 for a missing archive document
+# rather than the app shell with a 200 -- cannot be expressed here at all, and lives in
+# functions/docs/[[path]].js and functions/data/[[path]].js. That file has the full
+# reasoning.
+#
+# Netlify is different: it does honour a 404 status in netlify.toml, so the equivalent
+# rules are written there directly. Two hosts, two mechanisms, same behaviour.
+#
+# Kept as documentation rather than deleted, because "there is a _redirects file so
+# redirects must be configured" is the assumption that hid this for as long as it did.

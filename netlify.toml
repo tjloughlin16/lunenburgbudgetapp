@@ -5,7 +5,23 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# All routes fall through to index.html (HashRouter handles the rest)
+# Mirrors fy28/public/_redirects. Order matters and the specific rules come first.
+
+# The archive and the data endpoints are files, not routes. A request for one that does not
+# exist must fail, not fall through to the app shell with a 200 -- see _redirects for why
+# that mattered enough to fix.
+[[redirects]]
+  from = "/docs/*"
+  to = "/not-found.html"
+  status = 404
+
+[[redirects]]
+  from = "/data/*"
+  to = "/not-found.html"
+  status = 404
+
+# Everything else is an app route. routes.ts resolves an unrecognized path to the front
+# page rather than erroring, so a stale shared link still lands somebody on the site.
 [[redirects]]
   from = "/*"
   to = "/index.html"

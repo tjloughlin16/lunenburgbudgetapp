@@ -9,6 +9,92 @@ verified. It is a claim about the repo. Check anything load-bearing against the 
 
 ---
 
+## 0. What arrived on 29 August 2026, and what it settled
+
+**A records request was answered.** Five files from the Town, dated 17 June 2026, filed by
+a resident and forwarded to us. They are ingested, catalogued, hashed and read.
+
+**Do not name the requester** — in the archive, in an analysis, in a commit message or in the
+app. TJ asked for this explicitly on 29 August 2026. The request and its date are the
+document's address; the person who asked is not.
+
+- `sources/records-request-2026-06/` — the documents, with `PROVENANCE.md` beside them
+- `sources/analyses/athletics-ledger.md` — the analysis
+- `python3 scripts/verify_records_request_2026_06.py` — **165 checks, 0 failed**
+
+**This is the first ledger this project has held for a complete fiscal year of school money.**
+Three MUNIS journal exports give the athletics revolving fund's cashbook for FY2024, FY2025 and
+FY2026 (to 12 June 2026), every receipt and payment with a date. `document-basis.csv` went from
+15 ledger documents to 18. The general fund still rests on one quarter of FY23 — these are a
+revolving fund.
+
+The four things most likely to be got wrong by somebody arriving fresh:
+
+1. **The three files named `Account_Detail` are not account detail.** Every row in all three is
+   one account, `1301-…-104000`, `CASH`. There is no object code, no transportation object, and
+   **no vendor name on any payment row**. Request item 1 was not filled.
+2. **$254,121.18 — 65% of FY2025's receipts — is four journal entries labelled `ADJ EXP` and
+   described only as "per memo".** Take them away and the year closes at −$122,882.09. **What
+   they were for is not established**, and three readings fit. Getting those five memos is now
+   the highest-value ask in the project.
+3. **The citizen workbook's figures reproduce to the cent** — $117,555.00 for FY24 athletic
+   transportation and $91,066.06 for FY25 — from a workbook **the Town supplied**. What changed
+   is the provenance, not the arithmetic. `athletics-history.csv` still says `basis=unproven`
+   and `model/export.py` still keys off that string; **that was deliberately not changed**,
+   because it changes published figures.
+4. **The high school athletic fee in 2025-26 was $325, not $250** (`Spring!G3`, against
+   `E3=250` and `F3=250`). The model prices FY26 at $250 and that is the main thing
+   `FEE_CALIBRATION` has been absorbing. The middle school rate for that year is stated
+   nowhere we hold.
+
+---
+
+## 0b. The site was invisible to anything that does not run JavaScript
+
+Fixed on 29 August 2026, after a report that an assistant could not read the site.
+
+**It was true.** Every one of the fourteen routes returned a byte-identical 6,122-byte
+shell whose entire body was `<div id="root"></div>`. `/athletics` returned the home page
+skeleton. The content only existed after React ran, so a fetch — an assistant checking a
+figure, a crawler, a link preview — got an empty div.
+
+`fy28/scripts/prerender.mjs` now renders each route in headless Chrome (via Chrome's own
+`--dump-dom`; no Puppeteer, nothing added to `package.json`) and writes `dist/<slug>.html`.
+Routes come from `src/routes.ts` so a new page cannot be missed.
+
+**The interactivity is untouched, and this is checked rather than asserted.** `main.tsx`
+uses `createRoot`, not `hydrateRoot`, so React discards the prerendered markup and renders
+its own — there is no hydration contract to break. `npm run check:interactive` proves it on
+the real build by stamping the prerendered nodes during parsing, then confirming React
+removed them, attached, and responds to a click.
+
+**Three things found while doing it, each of which had been wrong for a long time:**
+
+1. **`_redirects` has never worked.** `wrangler pages dev` reports `Parsed 0 valid redirect
+   rules` — Cloudflare rejects a 404 status outright, and rejects `/* /index.html 200` as
+   an infinite loop. The SPA fallback that `_redirects`, `netlify.toml` and `routes.ts` all
+   describe as load-bearing comes from the **Pages default**: with no root `404.html`, an
+   unmatched path gets `index.html` with a 200. The file is kept, filled with this
+   explanation, because "there is a `_redirects` file so redirects must be configured" is
+   what hid it.
+2. **The site answered 200 for archive documents that do not exist** — a soft 404. Nothing
+   reading status codes could tell a missing source document from a present one. Now fixed
+   by `fy28/functions/docs/[[path]].js` and `.../data/[[path]].js`, which return a real 404.
+   **This makes the deployment a Pages Functions deployment rather than pure static**; if
+   that is unwanted, deleting `fy28/functions/` reverts it and nothing else breaks.
+   The error page must **not** be named `404.html` — that filename is a platform convention
+   that overrides the SPA default and turns every stale shared link into a hard 404. It is
+   `not-found.html`.
+3. **`/athletics` was missing from `sitemap.xml`.** `prerender.mjs` now fails if a route in
+   `routes.ts` is absent from the sitemap.
+
+Verify the whole thing against a local Pages runtime, or against production:
+
+    npm run build:site && npm run check:agents
+    npm run check:agents -- --url https://lunenburgbudgetproject.org
+
+---
+
 ## 1. Where everything is
 
 | | |
@@ -19,9 +105,18 @@ verified. It is a claim about the repo. Check anything load-bearing against the 
 | `main` | untouched today — the branch has not been merged |
 
 Deploy needs **Node 22 via nvm** (system node is 20 and fails). Cloudflare Pages,
-`npx wrangler pages deploy` from `fy28/`. Verify a deploy by hashing a document from
-production against `sources/` using curl with a browser user-agent (the domain 403s
-otherwise).
+`npx wrangler pages deploy` from `fy28/`.
+
+**Build with `npm run build:site`, not `npm run build`.** `build` alone produces the
+un-prerendered SPA, and deploying that silently undoes the agent-accessibility work — every
+route goes back to serving the same empty shell. `build:site` is `build` followed by
+`prerender`. Then run `npm run check:agents`, which fails loudly if the prerender was
+skipped (it catches routes serving identical text).
+
+~~Verify a deploy with a browser user-agent, the domain 403s otherwise.~~ **Not true, and
+it was in this file for a while.** Every user-agent gets 200 — plain `curl`,
+`python-requests`, `ClaudeBot`, no UA at all. Verify a deploy by hashing a document from
+production against `sources/`; no special headers are needed.
 
 **A deploy is queued and was explicitly NOT run.** See §8.
 
@@ -88,7 +183,15 @@ day (12 March 2025) on splitting everything into revolving funds. The fund close
 
 ---
 
-## 4. The citizen workbook — UNPROVEN, and acted on nowhere
+## 4. The citizen workbook — its numbers are now sourced; the app is unchanged
+
+> **Superseded in part on 29 August 2026.** The district's own sport-by-sport workbook arrived
+> from the Town by records request and reproduces both central figures to the cent. The section
+> below is kept because the reasoning in it is still how the workbook should be read — two of
+> its four year-columns really are model output — but "we hold the analysis, not the ledger
+> under it" is no longer true of the underlying data. See `analyses/athletics-ledger.md` §6.
+
+## 4a. The original record — UNPROVEN, and acted on nowhere
 
 `Athletics_v10.xlsx`, sha256 `63fc34d428ea09d9…`. A resident's analysis built on a
 c.66 request that produced three years of the athletics GL plus the district's sport-by-sport
@@ -180,11 +283,22 @@ a range.
    Recommended: deploy — what is live is wrong in ways this fixes (§5, §6), and none of it
    depends on the unproven workbook. **TJ was asked and had not answered when context was
    cleared. Do not deploy without asking again.**
-2. **Send `notes/REQUEST-3c.md`.** Written and ready. Five items; the two to keep if the
-   office pushes back are the FY25 fund report and the fund 1301 ledger.
-3. **Process the raw GL when it arrives.** TJ has asked the originator. `REQUEST-3c.md`
-   ends with what to do with it, in order — and the last step is *then* decide whether it
-   changes a published figure, not before.
+2. **Send `notes/REQUEST-3c.md`, narrowed.** Item 2 (fund 1301 ledger) is now partly filled —
+   the cashbook arrived, the object detail did not. **Add a sixth item: the five memos** behind
+   the `ADJ EXP` journal entries, dated 08/12/24, 01/30/25, 05/02/25, 07/02/25 and 08/20/2025.
+   Those decide whether $304,046.18 across two years was a reclassification, a transfer or a
+   correction — which is the difference between "the town's share rose" and "the cost rose".
+   Items 1 (general fund athletics orgs), 3 (FY25 fund balance sheet) and 4 (vendor warrants)
+   are untouched and all three are still needed.
+3. **Decide what reaches the app.** This is the step `REQUEST-3c.md` says comes last, and it
+   is now the open one. Three candidates, none of them made:
+   - `athletics-history.csv` still marks the FY24/FY25 revolving figures `basis=unproven`.
+     `model/export.py:61` keys the app's "partial fund data" marking off that exact string, so
+     changing the label changes the published page.
+   - `model/athletics.py` prices FY26 at $250 when the workbook says $325. Fixing it changes
+     every fee figure on the site, and probably narrows the two-sided range.
+   - The 44% appropriation-to-cost measurement is the sharpest statement of rule 11 the project
+     has, and the app says nothing like it.
 4. **The para question** still needs DESE's End of Year Financial Report — `DATA-WANTED.md`
    §3b.
 
@@ -196,13 +310,21 @@ a range.
 |---|---|
 | The revolving fund does not pay athletic transportation | Contradicted. It paid 59–69% of it in FY14–17 |
 | The fund was drained and the town picked up the cost | The fund was at break-even and given officials to pay for. Same arithmetic, different blame |
-| Athletic transportation cost $117,555 in FY24 | One unsourced spreadsheet, two of whose four year-columns are model output |
-| The app double-counts athletics fees | The previous handoff's claim. The error appears to run the other way |
+| Athletic transportation cost $117,555 in FY24 | **Settled as to source.** It sums to the cent from the district's own workbook, supplied by the Town. The split between fund and town is still our subtraction |
+| The app double-counts athletics fees | **Settled.** It runs the other way: the line was never the cost |
 | $127,550 is over-budgeted | Not against the all-in cost. Only against an appropriation that was never the cost |
 | The fund's 22% share is stable | Two observations, seven years apart. Two points cannot show a line |
 | Athletics fees sit under c.71 §47 | The town books the fund as **1301 CHAPTER 658 REVOLVING FUND** |
 | The town gives back money every year | Two clean years: one −0.34%, one **+0.50%** |
 | The para line measures staffing | It measures the town's share of staffing (rule 11) |
+| The athletics fund ran a $123,000 deficit in FY2025 | Its cash would have closed there without four journal entries. The entries are real and are the town's |
+| The fund was overdrawn from November to May | That is *our* ordering of backdated rows. MUNIS gives no intra-day order and posts months late |
+| The `ADJ EXP` entries moved costs to the general fund | An expense adjustment raising cash. Reclassification, transfer and correction all fit. We hold no memo |
+| The fund's payroll was coaches | No name, position or object code on any payroll row |
+| Athletics costs $384,135.65 | That is what the district's *operating workbook* totals for FY2024. It is not a ledger and does not reconcile to one |
+| The general fund pays 44% of athletics | One year, one program, comparable categories only |
+| Middle school fees exceed the middle school rate | The 2025-26 middle school rate is stated in no document we hold |
+| 593 students played sports in 2025-26 | Two town documents say 593 and 649 and count different things |
 
 ---
 

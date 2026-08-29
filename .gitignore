@@ -65,3 +65,11 @@ sources/minutes/**/*.pdf
 
 # Was covered by the global gitignore, which is gone.
 .claude/settings.local.json
+incoming/
+
+# wrangler local state (pages dev)
+fy28/.wrangler/
+
+# Build comparison artifacts (scripts/compare-experience.mjs)
+fy28/dist-plain/
+fy28/scratch/
