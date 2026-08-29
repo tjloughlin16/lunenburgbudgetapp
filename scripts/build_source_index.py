@@ -233,6 +233,22 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'dese-staffing', 'origin': 'dese',
+        'title': 'State staffing and spending counts',
+        'blurb': 'What the state records Lunenburg employing and spending, by year. It '
+                 'carries the quantity the district\u2019s own budget documents cannot '
+                 'give: how many paraprofessionals there are.',
+        'items': [
+            ('dese/district-spending-categories.csv',
+             'Staffing and spending by category, FY09\u2013FY25', 3,
+             'Massachusetts DESE, via the state open-data portal. Teacher FTE, '
+             'paraprofessional FTE, in-district pupils, per-pupil expenditure by function '
+             'and student demographics, every year since 2009. The paraprofessional count '
+             'is the one figure that lets a budget line be read as staffing rather than as '
+             'dollars \u2014 and it says the aide budget has grown roughly six times '
+             'faster than the number of aides. Rebuild with scripts/fetch_dese.py.'),
+        ]},
+    {
         'section': 'theirs', 'id': 'tax-base', 'origin': 'town',
         'title': 'Tax base, Chapter 70 and peers',
         'blurb': 'Where the town’s money comes from, what the state contributes, and how '

@@ -151,3 +151,16 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# ---------------------------------------------------------------------------
+# The state's own spending-and-staffing dataset, which turned out to hold the one
+# quantity this project had spent a session saying nobody publishes: how many
+# paraprofessionals the district employs.
+#
+# It is on the state's open-data portal rather than behind the DESE report pages, and it
+# answers with a plain HTTP request -- unlike mass.gov, which 403s everything automated.
+# Lunenburg's district code is 01620000.
+SPENDING = ('https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv'
+            '?DIST_CODE=01620000&$limit=5000')
+SPENDING_OUT = 'dese/district-spending-categories.csv'

@@ -257,6 +257,65 @@ single blended rate taken from the settlements gets it wrong.
 budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
 adding them, which it has not done in 8 of the last 9 budgets.
 
+### The state publishes the headcount after all, and it changes the reading
+
+Everything above assumes a budget line is the only thing available, because the district's
+budget documents show dollars and never people. **That was wrong.** Massachusetts DESE
+publishes paraprofessional FTE for every district, every year, on the state open-data
+portal, and it answers a plain HTTP request.
+
+| FY | paraprofessionals, FTE |
+|---|---:|
+| 2017 | 59.5 |
+| 2018 | 51.0 |
+| 2019 | 53.0 |
+| 2020 | 57.0 |
+| 2021 | 59.5 |
+| 2022 | 55.5 |
+| 2023 | 59.0 |
+| 2024 | 66.0 |
+| 2025 | 67.0 |
+
+Set that beside the budget. Taking **all** paraprofessional lines against **all**
+paraprofessional FTE, so the two measure the same population:
+
+| | FY17 | FY25 | a year |
+|---|---:|---:|---:|
+| Budgeted | $707,139 | $1,498,126 | **+9.84%** |
+| Employed | 59.5 | 67.0 | **+1.50%** |
+| Budgeted per aide | $11,885 | $22,360 | **+8.22%** |
+
+Their contract gives **2.0%**.
+
+**What this establishes.** The aide budget has grown roughly six times faster than the
+number of aides. Most of the increase is not more people, and it is not bargained pay
+either — dollars per counted aide rose 8.22% a year against a 2.0% agreement.
+
+**What it does not establish.** Why. A general-fund line of $11,885 per aide in FY17 is
+well below what one aide costs, so the town was plainly not paying the whole bill then and
+is paying more of it now. That fits the grant hypothesis exactly. It also fits aides moving
+from part-time to full-time hours, or reclassification, or DESE counting on a different
+basis from the budget. Nothing published separates them.
+
+**What it means for the rate, and this is unresolved.** The escalator projects the budget
+line at 12.78%. If that growth is a cost migrating onto the general fund, it must
+eventually stop — a cost can only move onto the town's books once — and the line would
+then grow at headcount plus contract, somewhere near 3.5% to 6%. That is the same shape as
+the out-of-district tuition finding: a level shift being read as a rate.
+
+It is left at 12.78% because nothing establishes when or whether the migration ends,
+and because the figure is honestly described: **it is what the town has appropriated.**
+But a reader should know the alternative and what it is worth, so here it is:
+
+| aide component | blended rate | FY28 gap |
+|---|---:|---:|
+| What the budget line did — **used** | 12.78% | $680,870 |
+| Headcount growth plus their contract | 5.98% | $552,922 |
+| Their contract alone | 2.00% | $477,994 |
+
+**What would settle it** is unchanged and now more valuable: DESE's End of Year Financial
+Report separates spending by fund. See `notes/DATA-WANTED.md`.
+
 ### The one thing that could undermine this rate, and we cannot see it
 
 The aide series is a **general-fund budget** line. It is not a record of what the aides

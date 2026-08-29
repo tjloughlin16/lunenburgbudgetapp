@@ -492,6 +492,27 @@
   },
   {
    "section": "theirs",
+   "id": "dese-staffing",
+   "origin": "dese",
+   "title": "State staffing and spending counts",
+   "blurb": "What the state records Lunenburg employing and spending, by year. It carries the quantity the district’s own budget documents cannot give: how many paraprofessionals there are.",
+   "items": [
+    {
+     "path": "dese/district-spending-categories.csv",
+     "title": "Staffing and spending by category, FY09–FY25",
+     "stars": 3,
+     "what": "Massachusetts DESE, via the state open-data portal. Teacher FTE, paraprofessional FTE, in-district pupils, per-pupil expenditure by function and student demographics, every year since 2009. The paraprofessional count is the one figure that lets a budget line be read as staffing rather than as dollars — and it says the aide budget has grown roughly six times faster than the number of aides. Rebuild with scripts/fetch_dese.py.",
+     "kind": "Data",
+     "bytes": 48294,
+     "url": "/docs/dese/district-spending-categories.csv",
+     "count": 497,
+     "unit": "rows",
+     "textUrl": "/docs/dese/district-spending-categories.csv"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
    "id": "tax-base",
    "origin": "town",
    "title": "Tax base, Chapter 70 and peers",
@@ -864,9 +885,9 @@
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 28989,
+     "bytes": 31668,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 606,
+     "count": 665,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -3206,10 +3227,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 245,
-  "groups": 14,
-  "bytes": 354565315,
-  "loadBearing": 31
+  "documents": 246,
+  "groups": 15,
+  "bytes": 354616288,
+  "loadBearing": 32
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
