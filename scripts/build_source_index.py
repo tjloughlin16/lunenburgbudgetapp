@@ -23,6 +23,7 @@ Writes fy28/src/data/sources.json.
 """
 import csv
 import hashlib
+import re
 import json
 import os
 import shutil
@@ -574,6 +575,39 @@ def link_status():
 LINKS = None            # populated once in main(); see link_status()
 
 
+
+# Rule 12: a source link must reach the FILE, not the page that lists it. An index gets
+# reorganised and the document a figure rests on stops being findable from it.
+#
+# Checked on every build rather than trusted, because the failure is silent -- a link that
+# still resolves, to a page that no longer holds what it used to.
+FILE_LINK = re.compile(
+    r'(/file/d/[\w-]+|open\?id=[\w-]+|/(document|spreadsheets|presentation)/d/[\w-]+'
+    r'|/DocumentCenter/View/\d+|\.(pdf|xlsx|xls|csv|docx|txt)(\?|$)'
+    r'|/resource/[\w-]{9}\.|/d/[\w-]{9}$)', re.I)
+
+# Addresses that are as deep as they go. DESE builds these reports on form submission, so
+# there is no file URL to give; the page plus the parameters is the whole answer. Anything
+# excused here needs a reason written beside it.
+FORM_ONLY = {
+    'https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx':
+        'DESE generates this on submission — district 01620000, one year per request. '
+        'No direct file URL exists.',
+}
+
+
+def check_links(groups):
+    """Warn about any source link that points at an index rather than a document."""
+    bad = [(g['title'], i['title'], i['upstream'])
+           for g in groups for i in g['items']
+           if i.get('upstream') and not FILE_LINK.search(i['upstream'])
+           and i['upstream'] not in FORM_ONLY]
+    for gt, it, u in bad:
+        print(f'    INDEX LINK  {it[:44]} -> {u[:60]}')
+        print(f'                link the file, not the page that lists it (rule 12)')
+    return len(bad)
+
+
 def sha(path):
     """A file's sha256. The archive's unit of identity: two files with the same hash are
     the same document however they were named or wherever they were found."""
@@ -608,8 +642,11 @@ SOURCE_URLS = {
     'dese/district-spending-categories.csv':
         'https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv'
         '?DIST_CODE=01620000&$limit=5000',
+    # Not the portal's front door, which is an index and tells a reader nothing. This is
+    # the dataset the per-pupil figures come out of; the workbook was generated from it by
+    # hand on 9 March 2026, which is why the link is to the data rather than to a file.
     'xlsx/dese-all-districts.xlsx':
-        'https://educationtocareer.data.mass.gov/',
+        'https://educationtocareer.data.mass.gov/d/er3w-dyti',
 }
 
 
@@ -924,6 +961,8 @@ def main():
                 f'document was unreadable, or says something inconvenient, it is listed '
                 f'anyway.',
     }
+
+    check_links(groups)
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w') as fh:

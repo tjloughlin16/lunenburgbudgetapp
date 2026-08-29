@@ -268,12 +268,13 @@ Update**, whose *Grants History* section gives one page per year:
 
 | | |
 |---|---|
-| Document | FY25 Superintendent's Budget Update |
-| Pages | 31–36 (ESSER on 31, then one page per year) |
-| Listed on | [the district's school budget information page](https://www.lunenburgschools.net/department-directory/superintendent-of-schools/school-budget-information) |
-| District's copy | [Google Drive](https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view) — **asks for a sign-in as of 29 August 2026** |
-| Our copy | [`/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf`](https://lunenburgbudgetproject.org/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf) |
+| **The file, at the district** | https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view — **asks for a Google sign-in as of 29 August 2026** |
+| **The district's name for it** | *FY25 Superintendent's Budget Update* — ask for it by this name if the link will not open |
+| **Our copy, downloadable** | https://lunenburgbudgetproject.org/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf |
+| **The extract we read** | https://lunenburgbudgetproject.org/data/grants-history.csv |
+| Pages | 31–36 — ESSER on 31, then one page per year |
 | sha256 | `9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a7354657f4d804c017af5dc7c` |
+| Where it is listed | the district's school budget information page, under Superintendent of Schools — an index, and indexes get reorganised, which is why the file link is above it |
 
 Two other decks add years and are recorded per row: the **FY24** and **FY23**
 superintendent's recommended budget presentations. Every row in
@@ -346,11 +347,12 @@ budget documents show dollars and never people. **That was wrong.** Massachusett
 publishes paraprofessional FTE for every district, every year, on the state open-data
 portal, and it answers a plain HTTP request.
 
-The file is in this archive and downloadable at
-`/docs/dese/district-spending-categories.csv`. Its address at the state is
-`https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv?DIST_CODE=01620000`, and
-`scripts/fetch_dese.py` records it so the pull can be repeated. Lunenburg is district
-01620000.
+| | |
+|---|---|
+| **The file, at the state** | https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv?DIST_CODE=01620000 — open, no sign-in |
+| **The state's name for it** | *District Expenditures by Spending Category*, dataset `er3w-dyti` |
+| **Our copy, downloadable** | https://lunenburgbudgetproject.org/docs/dese/district-spending-categories.csv |
+| Rebuild | `scripts/fetch_dese.py`; Lunenburg is district code 01620000 |
 
 | FY | paraprofessionals, FTE |
 |---|---:|

@@ -172,6 +172,42 @@ staffing, of caseload, or of what the schools cost all in.
 
 ---
 
+## 12. Every source carries its address, its filename, and our copy
+
+A figure is only checkable if somebody can get back to the document it came from. Three
+things make that possible, and the first two are never optional.
+
+**1. Where it came from, as deeply as it goes.** The direct link to the file itself, not
+the page that lists it. `.../school-budget-information` is an index; it will be
+reorganised, and the document a figure rests on will not be findable from it in two years.
+Link the file.
+
+Where there is no link because the document did not come off a website, say what did
+produce it: a records request and its date, an email and who sent it, a meeting packet.
+"Obtained from the Town by records request" is an address. "Public" is not.
+
+**2. The publisher's own filename.** Links die — 57 of ours did in a single day, and every
+one was a Google Drive link the district still holds. When that happens the only way a
+resident gets the document is to ask the town for it by name, so record the name the
+publisher used, not just the one we saved it under.
+
+**3. Our processed copy, downloadable.** Whatever we actually read: the PDF, and the
+extracted CSV or text if a figure was computed from one. If a number came out of a
+spreadsheet we built, that spreadsheet is a source too and it gets published like any
+other.
+
+And a sha256 on all of it, because a Drive file can be replaced in place without its URL
+changing.
+
+**When adding a source, add all of this at the same time.** Retrofitting provenance is how
+43 of our primary documents ended up with no address at all: they were gathered before the
+mirror existed and nobody wrote down where they came from. The count is on the sources
+page and it is meant to be uncomfortable.
+
+**Cite the sources.** In the analyses, beside the figure, not in a footer.
+
+---
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
