@@ -887,9 +887,9 @@
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 34455,
+     "bytes": 37493,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 721,
+     "count": 761,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -990,11 +990,11 @@
      "path": "data/grants-history.csv",
      "title": "Grant income by grant, FY20–FY24",
      "stars": 3,
-     "what": "Every entitlement and competitive grant the district reports receiving, by name and amount, read out of the Grants History pages of the FY25 superintendent’s budget update. This is the only place in anything Lunenburg publishes where the funding streams outside the general fund are named and priced — which is what rule 11 says the budget documents cannot do. Read from one deck deliberately: several presentations carry grant pages, they overlap and disagree, and merging them produced duplicates. Rebuild with scripts/extract_grants.py.",
+     "what": "Every entitlement and competitive grant the district reports receiving, by name and amount, read out of the Grants History pages of the FY25 superintendent’s budget update. This is the only place in anything Lunenburg publishes where the funding streams outside the general fund are named and priced — which is what rule 11 says the budget documents cannot do. Read from one deck deliberately: several presentations carry grant pages, so all three are read and every row names its document, its page, the district’s own link, our copy and the file’s sha256 — which matters because the district’s copy of the main source now asks for a Google sign-in and ours is the one a resident can open. Where two decks state a grant differently both statements are kept and marked. Rebuild with scripts/extract_grants.py.",
      "kind": "Data",
-     "bytes": 8504,
+     "bytes": 33291,
      "url": "/docs/data/grants-history.csv",
-     "count": 70,
+     "count": 79,
      "unit": "rows",
      "textUrl": "/docs/data/grants-history.csv"
     },
@@ -3243,7 +3243,7 @@
  "totals": {
   "documents": 247,
   "groups": 15,
-  "bytes": 354629253,
+  "bytes": 354657078,
   "loadBearing": 33
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -419,8 +419,12 @@ GROUPS = [
              'Lunenburg publishes where the funding streams outside the general fund are '
              'named and priced \u2014 which is what rule 11 says the budget documents '
              'cannot do. Read from one deck deliberately: several presentations carry '
-             'grant pages, they overlap and disagree, and merging them produced '
-             'duplicates. Rebuild with scripts/extract_grants.py.'),
+             'grant pages, so all three are read and every row names its document, its '
+             'page, the district\u2019s own link, our copy and the file\u2019s sha256 \u2014 '
+             'which matters because the district\u2019s copy of the main source now asks '
+             'for a Google sign-in and ours is the one a resident can open. Where two '
+             'decks state a grant differently both statements are kept and marked. '
+             'Rebuild with scripts/extract_grants.py.'),
             ('data/link-status.csv',
              'Whether each source document is still public', 2,
              'For every archived document that records where its publisher put it, '

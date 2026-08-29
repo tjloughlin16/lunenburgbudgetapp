@@ -259,45 +259,85 @@ adding them, which it has not done in 8 of the last 9 budgets.
 
 ### What the district actually gets in grants, and what it lost
 
-Rule 11 says the budget shows one funding stream and the others are invisible. That is
-true of the budget documents. It is not quite true of the presentations: the FY25
-superintendent's update carries a **Grants History** section, one page per year, naming
-every entitlement and competitive grant and its amount. It is archived at
-`/docs/data/grants-history.csv`.
+Rule 11 says the budget shows one funding stream and the others are invisible. That is true
+of the budget documents. It is not true of the presentations: three of them carry grant
+pages naming every entitlement and competitive grant with its amount.
 
-| FY | federal | state | total |
-|---|---:|---:|---:|
-| FY20 | $797,604 | $82,583 | $880,187 |
-| FY21 | $814,232 | $89,463 | $903,695 |
-| FY22 | $746,337 | $466,971 | $1,213,308 |
-| FY23 | $668,467 | $383,237 | $1,051,704 |
-| FY24 | $706,238 | $430,170 | $1,136,408 |
+**Where every figure below comes from.** Principally the **FY25 Superintendent's Budget
+Update**, whose *Grants History* section gives one page per year:
 
-**Regular grant income did not collapse.** It runs between $880,187 and $1,213,308 across
-five years with no trend. Special education grants specifically are flatter still:
+| | |
+|---|---|
+| Document | FY25 Superintendent's Budget Update |
+| Pages | 31–36 (ESSER on 31, then one page per year) |
+| Listed on | [the district's school budget information page](https://www.lunenburgschools.net/department-directory/superintendent-of-schools/school-budget-information) |
+| District's copy | [Google Drive](https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view) — **asks for a sign-in as of 29 August 2026** |
+| Our copy | [`/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf`](https://lunenburgbudgetproject.org/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf) |
+| sha256 | `9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a7354657f4d804c017af5dc7c` |
+
+Two other decks add years and are recorded per row: the **FY24** and **FY23**
+superintendent's recommended budget presentations. Every row in
+[`/data/grants-history.csv`](https://lunenburgbudgetproject.org/data/grants-history.csv)
+names its document, its page, the district's link, our link and the hash, so any single
+figure can be checked without taking the table on trust.
+
+**Because the district's own copy now needs a sign-in, ours is the one a resident can
+open.** The hash is how anybody who still has access confirms they are the same file.
+
+| FY | federal | state | ordinary grants | ESSER |
+|---|---:|---:|---:|---:|
+| FY20 | $797,604 | $82,583 | **$880,187** | — |
+| FY21 | $814,232 | $89,463 | **$903,695** | — |
+| FY22 | $971,514 | $598,671 | **$1,570,185** | — |
+| FY23 | $991,690 | $453,237 | **$1,444,927** | $588,834 |
+| FY24 | $706,238 | $430,170 | **$1,136,408** | — |
+| FY21–24 | | | | **$2,137,941** |
+
+**Ordinary grant income did not collapse.** Special education grants specifically are
+steadier still:
 
 | FY | special education grants |
 |---|---:|
 | FY20 | $502,272 |
 | FY21 | $520,296 |
 | FY22 | $520,845 |
-| FY23 | $432,335 |
+| FY23 | $520,223 |
 | FY24 | $445,912 |
 
-**What was lost was ESSER, and only ESSER.** The same deck prices it: ESSER 1 $198,073,
-ESSER 2 $588,834, ESSER 3 $1,351,034 — **$2,137,941 across FY21 to FY24**, on top of the
-grants above, and then nothing. Roughly half a million a year, gone.
+**What was lost was ESSER, and only ESSER.** ESSER 1 $198,073, ESSER 2 $588,834, ESSER 3
+$1,351,034 — **$2,137,941 across FY21 to FY24** (p31), on top of everything above, then
+nothing. Roughly half a million a year.
 
 That matches what the town was told. A resident told the School Committee on 3 September
 2025 that "the cuts that were made were ESSER cuts. So we didn't cut beyond ESSER."
 
-**And it means an earlier version of this section was wrong.** It reported that the town's
-share of these staff had gone from 52% to 84% — a handover from grants to the general
-fund. That was an artifact of measuring the early years one way and the later years
-another. Measured consistently, the town's share of "Other Teaching Services" is **78% in
-FY17 and 78% in FY25**, dipping to 65% in FY24 when ESSER money was at its peak. There is
-no handover. The correction is recorded because the wrong version was more interesting
-than the right one, which is exactly when a number needs checking hardest.
+### Where the district's own decks disagree
+
+Six grants are stated at two different amounts by two of its presentations. All are small
+and all look like a grant reported as awarded in one year's deck and as finally received in
+a later one. They are kept and marked rather than averaged; the FY25 deck is preferred
+because its Grants History pages are a deliberate retrospective.
+
+| FY | grant | the two statements |
+|---|---|---|
+| FY22 | Special Education, 240 Grant | fy23-superintendent-recommended-budget-presentation p17: $397,343; fy25-superintendent-39-s-budget-update p34: $399,152 |
+| FY22 | School Health Grant | fy25-superintendent-39-s-budget-update p34: $100,000; fy25-superintendent-39-s-budget-update p34: $14,000 |
+| FY23 | Special Education, 240 Grant | fy24-superintendent-39-s-recommended-budget-presentation p16: $402,967; fy25-superintendent-39-s-budget-update p33: $404,772 |
+| FY23 | Special Education, Early Childhood, 262 Gran | fy24-superintendent-39-s-recommended-budget-presentation p16: $13,033; fy25-superintendent-39-s-budget-update p33: $13,133 |
+| FY23 | School Health Grant | fy24-superintendent-39-s-recommended-budget-presentation p16: $30,000; fy25-superintendent-39-s-budget-update p33: $100,000; fy25-superintendent-39-s- |
+| FY23 | Family & Community Grant | fy24-superintendent-39-s-recommended-budget-presentation p16: $47,500; fy25-superintendent-39-s-budget-update p33: $45,700 |
+
+**One caveat on coverage.** The FY25 deck supplies 67 of the 79 rows and is the only
+consistent year-by-year series. FY22 and FY23 look higher than their neighbours partly
+because the other two decks list grants for those years that the FY25 retrospective does
+not. Compare years within the FY25 series before comparing across the whole table.
+
+**And a retraction.** An earlier version of this section said the town's share of these
+staff had gone from 52% to 84% — a handover from grants to the general fund. That was an
+artifact of measuring early years by matching line names and later years by function code.
+Measured consistently the share is **78% in FY17 and 78% in FY25**, dipping to 65% in FY24
+when ESSER was at its peak. There is no handover. It is recorded because the wrong version
+was the more interesting one, which is when a number needs checking hardest.
 
 ### The state publishes the headcount after all, and it changes the reading
 
