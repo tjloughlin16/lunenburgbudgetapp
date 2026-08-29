@@ -110,10 +110,24 @@ supporting §1, which is the sort of thing that only shows up when you go line b
 - **Appropriation** — the amount Town Meeting votes. Not the same as what gets spent.
 - **Encumbered** — money promised under a signed contract but not yet paid out.
 
-**What we still do not have:** the town's accounting records, the individual payments, and
-the votes that move money between lines mid-year. Everything here compares columns in
+**And one thing we DO have, which an earlier version of this document said we did not.**
+The Town Accountant's own year-to-date budget report for FY26 through 31 March, obtained by
+records request. It is the ledger rather than a budget document: original appropriation,
+transfers and adjustments, revised budget, expended, encumbrances, for all 51 general fund
+departments. Extracted to `/data/town-ledger-fy26-q3.csv`.
+
+It matters because this document repeatedly says money moved between lines mid-year is
+invisible from here. At department level it is not. In FY26, **25 of the 51 departments had
+money moved into or out of them, $452,971 in total, of which $76,394 went to the schools.**
+Transfers are real, ordinary and routine, and now they can be pointed at.
+
+What it does not do is settle which school LINES moved: the whole school department is a
+single row. And it is one snapshot of one year.
+
+**What we still do not have:** the individual payments, the school department's own
+line-level ledger, and any year but FY26. Most of what follows still compares columns in
 budget documents. That is enough to see *that* a number moved. It is not enough to say
-*why*, and in several cases below there is an ordinary explanation we cannot see.
+*why*.
 
 **Nothing in this document should be described as anything stronger than a gap that has
 not been explained yet.**

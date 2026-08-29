@@ -312,6 +312,41 @@ nothing. Roughly half a million a year.
 That matches what the town was told. A resident told the School Committee on 3 September
 2025 that "the cuts that were made were ESSER cuts. So we didn't cut beyond ESSER."
 
+### And the town's ledger closes it
+
+The grant question had one thing missing: whether grant money was actually **paying para
+salaries**. The presentations give grant totals, not what the money bought. The town's
+special revenue ledger does — obtained by records request, FY26 through 31 March, every
+one of the 62 grant and revolving accounts the school department holds, with salaries as
+its own column.
+
+Across all 62 funds, **$558,571 of salaries** was paid outside the general fund in nine
+months. Only four funds paid any:
+
+| fund | salaries, 9 months |
+|---|---:|
+| Extended Day Revolving | $227,221 |
+| School Lunch Revolving | $217,676 |
+| **FY25 #240 — the special education entitlement grant** | **$89,184** |
+| Chapter 658 Revolving | $24,490 |
+
+Extended day and lunch are self-funding programs, not substitutes for an appropriation.
+**The special education grant paid $89,184 of salaries in nine months — annualised about
+$119,000, against a para line of $1,874,411.** Roughly six percent.
+
+**So grants are not paying for the paras, and the general fund is.** The hypothesis that
+this line grows because a grant stopped paying is answered, from the town's own books
+rather than inferred from a budget: there was never enough grant money in it for that to
+be the explanation.
+
+What that leaves is the thing measured earlier and still unexplained: paras grew 3.98% a
+year in headcount and 9.07% a year in actual spending, which is 4.90% a year more per
+para against a contract giving 2%. Not grants. Not double-booking. Hours, classification
+or steps — and nothing published separates them.
+
+The ledger also confirms the circuit breaker figures used elsewhere: $325,970 received,
+$4,005 spent, $615,301 held at 31 March.
+
 ### Where the district's own decks disagree
 
 Six grants are stated at two different amounts by two of its presentations. All are small

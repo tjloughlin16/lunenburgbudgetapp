@@ -412,6 +412,25 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/school-special-revenue-fy26-q3.csv',
+             'The school\u2019s funds outside the appropriation', 3,
+             'All 62 grant and revolving accounts the school department holds, from the '
+             'town\u2019s special revenue ledger \u2014 obtained by records request, FY26 to '
+             '31 March 2026. Fund number, the town\u2019s own name, revenue, salaries paid, '
+             'expenditure and balance. The only source here showing GRANT MONEY PAYING '
+             'SALARIES, which is what settles whether a general fund line is growing '
+             'because the district grew or because a grant stopped paying. Rebuild with '
+             'scripts/extract_special_revenue.py.'),
+            ('data/town-ledger-fy26-q3.csv',
+             'The town\u2019s own ledger, FY26 to 31 March', 3,
+             'All 51 general fund departments as the Town Accountant\u2019s system prints '
+             'them: original appropriation, transfers and adjustments, revised budget, '
+             'year-to-date expended, encumbrances. Extracted from '
+             'q3-fy26/town-general-fund-expenditures-fy26-q3.pdf, which came from the Town '
+             'by records request rather than off a website. This is the only source here '
+             'that shows money MOVING between lines during a year \u2014 25 of the 51 '
+             'departments had some, $452,971 in total, of which $76,394 went to the '
+             'schools. Rebuild with scripts/extract_town_ledger.py.'),
             ('data/grants-history.csv',
              'Grant income by grant, FY20\u2013FY24', 3,
              'Every entitlement and competitive grant the district reports receiving, by '

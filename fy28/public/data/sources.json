@@ -887,9 +887,9 @@
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 37750,
+     "bytes": 39491,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 763,
+     "count": 798,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -935,9 +935,9 @@
      "stars": 2,
      "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
      "kind": "Notes",
-     "bytes": 22481,
+     "bytes": 23307,
      "url": "/docs/analyses/budget-vs-actual.md",
-     "count": 488,
+     "count": 502,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
@@ -997,6 +997,30 @@
      "count": 79,
      "unit": "rows",
      "textUrl": "/docs/data/grants-history.csv"
+    },
+    {
+     "path": "data/town-ledger-fy26-q3.csv",
+     "title": "The town’s own ledger, FY26 to 31 March",
+     "stars": 3,
+     "what": "All 51 general fund departments as the Town Accountant’s system prints them: original appropriation, transfers and adjustments, revised budget, year-to-date expended, encumbrances. Extracted from q3-fy26/town-general-fund-expenditures-fy26-q3.pdf, which came from the Town by records request rather than off a website. This is the only source here that shows money MOVING between lines during a year — 25 of the 51 departments had some, $452,971 in total, of which $76,394 went to the schools. Rebuild with scripts/extract_town_ledger.py.",
+     "kind": "Data",
+     "bytes": 3991,
+     "url": "/docs/data/town-ledger-fy26-q3.csv",
+     "count": 51,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-ledger-fy26-q3.csv"
+    },
+    {
+     "path": "data/school-special-revenue-fy26-q3.csv",
+     "title": "The school’s funds outside the appropriation",
+     "stars": 3,
+     "what": "All 62 grant and revolving accounts the school department holds, from the town’s special revenue ledger — obtained by records request, FY26 to 31 March 2026. Fund number, the town’s own name, revenue, salaries paid, expenditure and balance. The only source here showing GRANT MONEY PAYING SALARIES, which is what settles whether a general fund line is growing because the district grew or because a grant stopped paying. Rebuild with scripts/extract_special_revenue.py.",
+     "kind": "Data",
+     "bytes": 3693,
+     "url": "/docs/data/school-special-revenue-fy26-q3.csv",
+     "count": 62,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-special-revenue-fy26-q3.csv"
     },
     {
      "path": "data/sped-para-history.csv",
@@ -3241,10 +3265,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 247,
+  "documents": 249,
   "groups": 15,
-  "bytes": 354657338,
-  "loadBearing": 33
+  "bytes": 354667589,
+  "loadBearing": 35
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
