@@ -1015,7 +1015,8 @@
      "A contract sets what one person is paid. It says nothing about how many people are employed \u2014 and on this line, that is where the movement is. Special education paras are on an agreement giving 2.0% a year and their budget has grown 12.78% for 10 budgets. Teachers are on one giving 3.5% and theirs has grown 2.67%. Both bargained, both wrong, in opposite directions.",
      "Out-of-district tuition is no longer escalated at all. Eleven budgets run from $489,918 to $1,291,293 with no direction \u2014 the compound rate swings from -46% to +12% depending only on which year you start counting. There is no rate to measure, so the line is held flat and what it would cost to be wrong is published as a table of priced scenarios.",
      "Every budget line counted as special education is now listed, with the reason each was counted, because the state has no account code for it and the total is therefore ours. Publishing that list found English Language Learner costs inside it, which are now removed.",
-     "The rate this line carries has changed four times in a day, and every version is on the page with the reason it was wrong. A number whose history you cannot see is one you have to take on trust."
+     "The rate this line carries has changed four times in a day, and every version is on the page with the reason it was wrong. A number whose history you cannot see is one you have to take on trust.",
+     "And the decision to hold out-of-district tuition flat now shows its working. It was reached three separate times from sources with nothing in common \u2014 eleven budgets, five years of actual spending, and the two halves of the line measured apart \u2014 and all three say the same thing: no rate describes it."
     ]
    },
    {
@@ -2100,6 +2101,49 @@
     2025
    ]
   }
+ },
+ "corroboration": {
+  "tuition": {
+   "headline": "Three ways of asking, three sources, one answer.",
+   "methods": [
+    {
+     "id": "budgets",
+     "what": "Eleven budgets, FY17 to FY27",
+     "source": "The district\u2019s own budget documents",
+     "finding": "The line runs from $489,918 to $1,291,293 \u2014 2.64 times \u2014 with 6 years up and 4 down. A straight line through them has an R\u00b2 of 0.10, and the compound rate swings from -46% to +12% depending only on which year you start counting."
+    },
+    {
+     "id": "actuals",
+     "what": "Five years of budget against actual spending",
+     "source": "The district\u2019s budget documents, actual columns",
+     "finding": "The line missed by +27.0%, +14.3%, +0.4%, \u221251.5% and \u221237.8%. Three years over, two under. Not systematically under-provided \u2014 unforecastable in both directions."
+    },
+    {
+     "id": "split",
+     "what": "The two halves of the line, separately",
+     "source": "Private and collaborative tuitions, line by line",
+     "finding": "Private and collaborative miss by 60% to 300% in opposite directions. Pooled they come to \u22127.9%, not because they cancel but because they happen to be smaller together."
+    }
+   ],
+   "conclusion": "No rate describes this line. The model holds it flat and prices the range instead, because a range is what is actually known."
+  },
+  "tuitionActuals": [
+   {
+    "fy": 2023,
+    "budget": null,
+    "actual": 304747.5
+   },
+   {
+    "fy": 2024,
+    "budget": null,
+    "actual": 588508.04
+   },
+   {
+    "fy": 2025,
+    "budget": 1164824.0,
+    "actual": 732298.26
+   }
+  ]
  },
  "scenarios": {
   "restoration": 28520816,

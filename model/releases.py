@@ -59,6 +59,11 @@ RELEASES = [
             'The rate this line carries has changed four times in a day, and every version '
             'is on the page with the reason it was wrong. A number whose history you '
             'cannot see is one you have to take on trust.',
+
+            'And the decision to hold out-of-district tuition flat now shows its working. '
+            'It was reached three separate times from sources with nothing in common — '
+            'eleven budgets, five years of actual spending, and the two halves of the line '
+            'measured apart — and all three say the same thing: no rate describes it.',
         ],
     ),
     dict(

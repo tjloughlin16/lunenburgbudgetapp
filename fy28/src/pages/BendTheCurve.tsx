@@ -11,7 +11,8 @@ import { StateAid } from '../components/Forever'
 import { TheRaise, YearLedger } from '../components/TheRaise'
 import { Section, Note } from '../components/primitives'
 import { TheOneOff, TheTrade, TheRate, TuitionRisk, TuitionHistory, StudentCounts,
-         WhatCounts, MeasuredLines } from '../components/SpecialEducation'
+         WhatCounts, MeasuredLines, Corroboration }
+  from '../components/SpecialEducation'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 
@@ -265,6 +266,7 @@ export function BendTheCurve({ onJump, option = null }: {
           enough to answer.
         </p>
         <TuitionHistory />
+        <Corroboration />
 
         <h3 className="text-lg font-bold mt-10 mb-2">
           What it costs to be wrong about it

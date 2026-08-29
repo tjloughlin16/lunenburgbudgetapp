@@ -655,3 +655,45 @@ export function MeasuredLines() {
     </div>
   )
 }
+
+/** Three ways of asking, three sources, one answer.
+ *
+ *  Holding a line flat is the most questionable-looking thing this model does, and a
+ *  reader is right to push on it. What makes it defensible is not the argument above but
+ *  the fact that it was reached three separate times from data that has nothing in common
+ *  -- and a reader cannot see that unless it is shown.
+ *
+ *  Deliberately placed under the tuition history rather than in a methods appendix. The
+ *  objection lands where the claim is made. */
+export function Corroboration() {
+  const c = MODEL.corroboration.tuition
+  return (
+    <div className="card p-5 mt-4">
+      <p className="text-[15px] font-bold mb-1">{c.headline}</p>
+      <p className="text-[12.5px] mb-4" style={{ color: 'var(--text-muted)' }}>
+        The model holding this line flat is its most consequential single decision. It was
+        not arrived at once.
+      </p>
+      <ol className="space-y-3">
+        {c.methods.map((m, i) => (
+          <li key={m.id} className="flex gap-3">
+            <span className="text-[11px] font-bold tnum shrink-0 mt-0.5"
+              style={{ color: 'var(--series-cost)' }}>{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <p className="text-[13.5px] font-semibold">{m.what}</p>
+              <p className="text-[11px] mb-1" style={{ color: 'var(--text-muted)' }}>
+                {m.source}
+              </p>
+              <p className="text-[12.5px] leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}>{m.finding}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p className="text-[13px] leading-relaxed mt-4 pt-3 border-t font-semibold"
+        style={{ borderColor: 'var(--grid)' }}>
+        {c.conclusion}
+      </p>
+    </div>
+  )
+}

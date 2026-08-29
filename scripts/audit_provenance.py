@@ -42,7 +42,11 @@ PROJECTION_MODULES = ['finance.py', 'cascade.py', 'sped.py', 'levers.py', 'athle
 # on it in earlier years -- that history is displayed, never summed. The amounts it totals
 # come from budget columns. Listed separately rather than exempted quietly, because "this
 # one is fine" is exactly the sentence that hides the next real violation.
-DISPLAY_MODULES = ['derivations.py']
+# corroboration.py is the other one: it sets a finding computed from budgets beside a
+# finding computed from actuals and observes that they match. Rule 1 forbids mixing the
+# two in a calculation; comparing two separately computed answers is the opposite of that,
+# and is the whole reason the file exists.
+DISPLAY_MODULES = ['derivations.py', 'corroboration.py']
 # Reconciliation is allowed — and required — to read both.
 RECONCILIATION_MODULES = ['backtest_rates.py']
 

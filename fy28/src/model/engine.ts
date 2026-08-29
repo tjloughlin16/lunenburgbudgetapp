@@ -131,6 +131,14 @@ export const MODEL = raw as unknown as {
     transportSeries: { fy: number; total: number; stage: string }[]
     transportTrend: TrendStat
   }
+  corroboration: {
+    tuition: {
+      headline: string
+      methods: { id: string; what: string; source: string; finding: string }[]
+      conclusion: string
+    }
+    tuitionActuals: { fy: number; budget: number | null; actual: number }[]
+  }
   releases: {
     current: string
     updated: string

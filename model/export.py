@@ -31,6 +31,7 @@ import derivations
 import citations
 import releases
 import sped
+import corroboration
 from levers import LEVERS, ADMIN_TOTAL, ADMIN_CENTRAL, ADMIN_BUILDING, TECH_TOTAL, HEALTH_TOTAL, TRANSPORT_GENED, TRANSPORT_SPED
 
 data_ladder = [dict(r, selfFundFee=self_funding_fee(r['total']),
@@ -54,6 +55,7 @@ data = dict(
     citations=citations.export(),
     releases=releases.export(),
     sped=sped.export(),
+    corroboration=corroboration.export(),
     scenarios=scen,
     peers=PEERS,
     sports=SPORTS,
