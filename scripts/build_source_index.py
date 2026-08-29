@@ -391,6 +391,15 @@ GROUPS = [
              'plain terms and the evidence, side by side. Deliberately separate from the '
              'app\u2019s projection, and it says why. Unfinished: it names what it cannot '
              'see without the town\u2019s accounting records.'),
+            ('analyses/athletics.md', 'Athletics: what it costs and who pays', 2,
+             'The one program where both sides of the money are visible, and therefore a '
+             'test case for the whole budget: how far is an appropriation from what a '
+             'thing costs? Very far. The district published athletics against the '
+             'revolving fund once, for FY19, and in every year that document reports as '
+             'actual the fund paid more of athletic transportation than the town did. '
+             'Also what an "actual" on this line really is \u2014 in the one ledger view we '
+             'have, a purchase order with nothing yet paid. Verify with '
+             'scripts/verify_athletics.py.'),
             ('analyses/sped-and-funds.md', 'Special education and the funds outside the budget', 2,
              'Special education as a cost driver, out-of-district tuition, the circuit '
              'breaker account, and the school and town money held outside the operating '
