@@ -76,6 +76,17 @@ Everything we hold for FY26 stops at **31 March 2026**. Four specific numbers:
 
 ### 3c. FY25 for the athletics revolving fund, and the vendor warrant
 
+> **Partly answered, 17 June 2026.** A records request produced the fund's **cashbook** for
+> FY2024, FY2025 and FY2026 — every receipt and payment with a date. It did not produce the
+> object detail, the FY25 balance sheet, or any vendor name: column `VDR NAME/ITEM DESC` is
+> populated on receipts and empty on every payment row. What it did produce is a new and
+> sharper question, **3d** below. Read `sources/analyses/athletics-ledger.md` first.
+>
+> One correction it forces here: the fund closed FY25 with **$131,239.09 of cash** and a
+> **fund balance of $110,247.89**. The row below quotes the second and calls it the closing
+> figure. Both numbers are right and they are not the same quantity — the $20,991.20 between
+> them is invoices recorded and not yet paid.
+
 Two requests, both cheap, both from the same office, and between them they close the
 athletics analysis — see `sources/analyses/athletics.md` §4a and §5.
 
@@ -89,6 +100,37 @@ athletics analysis — see `sources/analyses/athletics.md` §4a and §5.
   (Chapter 658 / athletics revolving), in the same format as the FY2026 one already
   provided; and the vendor warrants approved by the Select Board for fiscal years 2023
   through 2026, or in the alternative the account detail history for object code 535016."*
+
+### 3d. The five memos behind the `ADJ EXP` journal entries
+
+**The highest-value single ask in the project.** Five general journal entries move
+**$304,046.18** into the athletics revolving fund across FY2024 and FY2025 — $254,121.18 of it
+in FY2025 alone, 65% of that year's receipts. Every one is referenced `ADJ EXP` and commented
+only *"per memo"*, with a date:
+
+| effective | posted | journal | amount | comment |
+|---|---|---:|---:|---|
+| 2024-06-30 | 2024-09-18 | 1576 | 49,925.00 | `ADJ PER MEMO 08/12/24` |
+| 2025-02-12 | 2025-02-12 | 157 | 1,282.57 | `PER MEMO 01/30/25` |
+| 2025-05-02 | 2025-05-06 | 54 | 113,559.00 | `PER MEMO 05/02/25` |
+| 2025-06-30 | 2025-07-02 | 709 | 19,271.08 | `PER MEMO 7/02/25` |
+| 2025-06-30 | 2025-08-27 | 1339 | 120,008.53 | `PER MEMO 08/20/2025` |
+
+An entry raising cash in a fund and labelled as an expense adjustment fits at least three
+different things: expenses charged here and later moved to another fund, a transfer in, or a
+correction of mis-posted charges. **Those are different facts about the world and identical
+facts on the page.** Which one it is decides whether the athletics story is "the town took on a
+cost" or "the accounting moved" — and, more generally, whether a budget line's prior-year
+"actual" can be adjusted by memo months after the year it describes and after the next budget
+was voted. Journal 1339 was posted on 27 August 2025.
+
+- **Ask:** Town Accountant
+- **Wording:** *"Copies of the memoranda referenced in the following general journal entries
+  to fund 1301: journal 1576 dated 08/12/24; journals 157, 54, 709 and 1339 dated 01/30/25,
+  05/02/25, 07/02/25 and 08/20/2025 respectively. If a memorandum does not exist as a separate
+  document, the journal entry's full detail showing the offsetting account."*
+- **What settles it:** the offsetting side. These exports show one leg — cash in fund 1301.
+  The other leg names the fund the money came from.
 
 ### 3b. How grants and state funding map onto the budget lines
 

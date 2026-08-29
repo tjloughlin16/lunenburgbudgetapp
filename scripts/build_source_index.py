@@ -73,7 +73,7 @@ ORIGINS = [
 # were posted. Worth marking for two reasons: it is the honest answer to "is all of this
 # public", and a reader who wants these for themselves needs to know the route is a
 # request rather than a link.
-BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx'}
+BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx', 'records-request-2026-06/'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
 # the line was published by the town, the district, the state or a neighboring district.
@@ -365,6 +365,53 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'athletics-ledger', 'origin': 'request',
+        'title': 'The athletics ledger, obtained by records request',
+        'blurb': 'Answered by the Town on 17 June 2026, to a request by a resident. These '
+                 'are the first documents in this archive that record money moving on a '
+                 'date — the cashbook of the athletics revolving fund for three full '
+                 'fiscal years — rather than a prior year re-presented inside next year’s '
+                 'budget argument. The request form is not published: it carries the '
+                 'requester’s home address and telephone number, and no figure depends on '
+                 'them. Provenance, the town’s own filenames and a sha256 for each file '
+                 'are in PROVENANCE.md, listed below.',
+        'items': [
+            ('records-request-2026-06/fund-1301-journal-detail-fy25.xlsx',
+             'Athletics revolving fund, journal detail, FY2025', 3,
+             'Every receipt and payment in fund 1301 for FY2025, with effective and posting '
+             'dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it '
+             'is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general '
+             'journal entries described only as an adjustment "per memo" account for '
+             '$254,121.18 of the $390,299.87 that came in.'),
+            ('records-request-2026-06/fund-1301-journal-detail-fy24.xlsx',
+             'Athletics revolving fund, journal detail, FY2024', 3,
+             'The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its '
+             'opening balance is a row the town prints, which is what lets the three years '
+             'be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.'),
+            ('records-request-2026-06/fund-1301-journal-detail-fy26.xlsx',
+             'Athletics revolving fund, journal detail, FY2026', 2,
+             'FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed '
+             'year. Its payroll total ties to the cent to the salary line in the fund’s own '
+             'year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.'),
+            ('records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx',
+             'Athletics by sport, three school years', 3,
+             'The district’s own operating workbook: one row per sport, with participation '
+             'counts by fee category and cost lines for officials, coaches, transportation, '
+             'uniforms and the rest, for 23/24, 24/25 and 25/26. The only document here that '
+             'puts a cost against a sport. It also states the high school fee for each year, '
+             'which is how we learned the 2025-26 rate was $325 and not the $250 the model '
+             'assumed. Its own totals do not all tie, and which ones do not is published '
+             'alongside it. The town’s filename is Copy of Athletics 24.25 (1).xlsx.'),
+            ('records-request-2026-06/athletic-fee-counts-2025-2026.docx',
+             'Athletic fee counts, 2025-2026', 2,
+             'One page: participation counts by fee category for each season of 2025-26 — '
+             'full pay, reduced fee, sibling discounts and full waivers. The only source '
+             'giving those counts for that year; the workbook’s columns for it are empty. '
+             '79 full waivers against 455 full-pay. The town’s filename is '
+             'ATHLETIC FEES 2025.docx.'),
+        ],
+    },
+    {
         'section': 'ours', 'id': 'analyses', 'origin': 'us',
         'title': 'Our analyses',
         'blurb': 'What we concluded, written up so it can be argued with. These are the '
@@ -400,6 +447,17 @@ GROUPS = [
              'Also what an "actual" on this line really is \u2014 in the one ledger view we '
              'have, a purchase order with nothing yet paid. Verify with '
              'scripts/verify_athletics.py.'),
+            ('analyses/athletics-ledger.md',
+             'The athletics ledger: what a cashbook shows that a budget line cannot', 3,
+             'Written from the records request answered on 17 June 2026 — the first dated '
+             'record of money moving that this project has held for anything touching the '
+             'school budget. The fund’s cash for three years, tied end to end against the '
+             'opening balances the town itself prints. Four journal entries, described only '
+             'as an adjustment made per a memo we do not hold, carry 65% of one year’s '
+             'receipts. What the district’s own workbook says athletics cost, against what '
+             'the town appropriated for it: 44% in FY2024. And why none of that measures '
+             'special education, while still changing what we should believe about it. '
+             'Every figure recomputed by scripts/verify_records_request_2026_06.py.'),
             ('analyses/sped-and-funds.md', 'Special education and the funds outside the budget', 2,
              'Special education as a cost driver, out-of-district tuition, the circuit '
              'breaker account, and the school and town money held outside the operating '
@@ -421,6 +479,38 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('records-request-2026-06/PROVENANCE.md',
+             'Provenance for the 17 June 2026 records request', 2,
+             'Written by us, filed with the documents it describes: where each one came '
+             'from, the town’s own filename for it, a sha256, and what each file '
+             'actually contains as opposed to what its name suggests. Rule 12 asks for all '
+             'of that at the same time as the document rather than retrofitted, and this '
+             'is what that looks like. It also records what is deliberately not published '
+             'and why.'),
+            ('data/fund-1301-cash-journal.csv',
+             'The athletics revolving fund’s cashbook, three years', 3,
+             '277 rows — every receipt and payment in fund 1301 for FY2024, FY2025 and '
+             'FY2026 to 12 June 2026, with dates, warrant references and the town’s own '
+             'comments. One column, running_balance_derived, is ours and not the town’s: '
+             'MUNIS exports rows, not a balance, and many rows are backdated, so the order '
+             'is a reconstruction and is named as one. Rebuild with '
+             'scripts/extract_fund1301_ledger.py, which refuses to write unless each '
+             'year’s closing balance equals the opening balance the town prints for the '
+             'next.'),
+            ('data/athletics-by-sport.csv',
+             'Athletics by sport, long form', 3,
+             '960 rows: season, level, sport, year, metric, value — and the cell each value '
+             'came from, so any figure can be checked against the workbook without '
+             'trusting this file. The three season sheets do not share a column layout, so '
+             'the extractor reads the header rows rather than assuming positions. Rebuild '
+             'with scripts/extract_athletics_by_sport.py.'),
+            ('data/athletics-by-sport-reconciliation.csv',
+             'Where the district’s workbook does not add up', 2,
+             'Every total the sport workbook prints, against the sum of the rows above it: '
+             '342 checks, of which 271 tie and 71 do not. Published rather than quietly '
+             'handled, because whether a column ties is a property of the document and '
+             'anyone resting a figure on one needs to know. The Spring 2024-25 '
+             'transportation total is blank while the rows beneath it hold $18,242.50.'),
             ('data/school-special-revenue-fy26-q3.csv',
              'The school\u2019s funds outside the appropriation', 3,
              'All 62 grant and revolving accounts the school department holds, from the '

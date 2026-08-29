@@ -35,7 +35,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 15 came from the Town by records request and say so on their row; the rest were already public. 17 of them link back to where the publisher put them — the others were gathered before the mirror existed and their original address was not recorded, which is a gap on our side and not the town’s. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 21 came from the Town by records request and say so on their row; the rest were already public. 17 of them link back to where the publisher put them — the others were gathered before the mirror existed and their original address was not recorded, which is a gap on our side and not the town’s. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -875,6 +875,78 @@
    ]
   },
   {
+   "section": "theirs",
+   "id": "athletics-ledger",
+   "origin": "request",
+   "title": "The athletics ledger, obtained by records request",
+   "blurb": "Answered by the Town on 17 June 2026, to a request by a resident. These are the first documents in this archive that record money moving on a date — the cashbook of the athletics revolving fund for three full fiscal years — rather than a prior year re-presented inside next year’s budget argument. The request form is not published: it carries the requester’s home address and telephone number, and no figure depends on them. Provenance, the town’s own filenames and a sha256 for each file are in PROVENANCE.md, listed below.",
+   "items": [
+    {
+     "path": "records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx",
+     "title": "Athletics by sport, three school years",
+     "stars": 3,
+     "what": "The district’s own operating workbook: one row per sport, with participation counts by fee category and cost lines for officials, coaches, transportation, uniforms and the rest, for 23/24, 24/25 and 25/26. The only document here that puts a cost against a sport. It also states the high school fee for each year, which is how we learned the 2025-26 rate was $325 and not the $250 the model assumed. Its own totals do not all tie, and which ones do not is published alongside it. The town’s filename is Copy of Athletics 24.25 (1).xlsx.",
+     "byRequest": true,
+     "kind": "Spreadsheet",
+     "bytes": 557501,
+     "url": "/docs/records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx",
+     "count": 1002,
+     "unit": "rows",
+     "textUrl": "/docs/records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx"
+    },
+    {
+     "path": "records-request-2026-06/fund-1301-journal-detail-fy24.xlsx",
+     "title": "Athletics revolving fund, journal detail, FY2024",
+     "stars": 3,
+     "what": "The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its opening balance is a row the town prints, which is what lets the three years be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.",
+     "byRequest": true,
+     "kind": "Spreadsheet",
+     "bytes": 21816,
+     "url": "/docs/records-request-2026-06/fund-1301-journal-detail-fy24.xlsx",
+     "count": 111,
+     "unit": "rows",
+     "textUrl": "/docs/records-request-2026-06/fund-1301-journal-detail-fy24.xlsx"
+    },
+    {
+     "path": "records-request-2026-06/fund-1301-journal-detail-fy25.xlsx",
+     "title": "Athletics revolving fund, journal detail, FY2025",
+     "stars": 3,
+     "what": "Every receipt and payment in fund 1301 for FY2025, with effective and posting dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general journal entries described only as an adjustment \"per memo\" account for $254,121.18 of the $390,299.87 that came in.",
+     "byRequest": true,
+     "kind": "Spreadsheet",
+     "bytes": 19901,
+     "url": "/docs/records-request-2026-06/fund-1301-journal-detail-fy25.xlsx",
+     "count": 94,
+     "unit": "rows",
+     "textUrl": "/docs/records-request-2026-06/fund-1301-journal-detail-fy25.xlsx"
+    },
+    {
+     "path": "records-request-2026-06/fund-1301-journal-detail-fy26.xlsx",
+     "title": "Athletics revolving fund, journal detail, FY2026",
+     "stars": 2,
+     "what": "FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed year. Its payroll total ties to the cent to the salary line in the fund’s own year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.",
+     "byRequest": true,
+     "kind": "Spreadsheet",
+     "bytes": 17919,
+     "url": "/docs/records-request-2026-06/fund-1301-journal-detail-fy26.xlsx",
+     "count": 78,
+     "unit": "rows",
+     "textUrl": "/docs/records-request-2026-06/fund-1301-journal-detail-fy26.xlsx"
+    },
+    {
+     "path": "records-request-2026-06/athletic-fee-counts-2025-2026.docx",
+     "title": "Athletic fee counts, 2025-2026",
+     "stars": 2,
+     "what": "One page: participation counts by fee category for each season of 2025-26 — full pay, reduced fee, sibling discounts and full waivers. The only source giving those counts for that year; the workbook’s columns for it are empty. 79 full waivers against 455 full-pay. The town’s filename is ATHLETIC FEES 2025.docx.",
+     "byRequest": true,
+     "kind": "Document",
+     "bytes": 11996,
+     "url": "/docs/records-request-2026-06/athletic-fee-counts-2025-2026.docx",
+     "textUrl": "/docs/records-request-2026-06/athletic-fee-counts-2025-2026.docx"
+    }
+   ]
+  },
+  {
    "section": "ours",
    "id": "analyses",
    "origin": "us",
@@ -892,6 +964,18 @@
      "count": 798,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
+    },
+    {
+     "path": "analyses/athletics-ledger.md",
+     "title": "The athletics ledger: what a cashbook shows that a budget line cannot",
+     "stars": 3,
+     "what": "Written from the records request answered on 17 June 2026 — the first dated record of money moving that this project has held for anything touching the school budget. The fund’s cash for three years, tied end to end against the opening balances the town itself prints. Four journal entries, described only as an adjustment made per a memo we do not hold, carry 65% of one year’s receipts. What the district’s own workbook says athletics cost, against what the town appropriated for it: 44% in FY2024. And why none of that measures special education, while still changing what we should believe about it. Every figure recomputed by scripts/verify_records_request_2026_06.py.",
+     "kind": "Notes",
+     "bytes": 26301,
+     "url": "/docs/analyses/athletics-ledger.md",
+     "count": 445,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/athletics-ledger.md"
     },
     {
      "path": "analyses/fy27-and-the-override.md",
@@ -923,9 +1007,9 @@
      "stars": 2,
      "what": "The one program where both sides of the money are visible, and therefore a test case for the whole budget: how far is an appropriation from what a thing costs? Very far. The district published athletics against the revolving fund once, for FY19, and in every year that document reports as actual the fund paid more of athletic transportation than the town did. Also what an \"actual\" on this line really is — in the one ledger view we have, a purchase order with nothing yet paid. Verify with scripts/verify_athletics.py.",
      "kind": "Notes",
-     "bytes": 41672,
+     "bytes": 42142,
      "url": "/docs/analyses/athletics.md",
-     "count": 742,
+     "count": 748,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics.md"
     },
@@ -992,11 +1076,23 @@
      "stars": 3,
      "what": "Every document in this archive classified by SOURCE TYPE: ledger (the accounting system — a figure exists because a transaction did), restatement (a prior year re-presented inside a document written by the party that spent it), forward (proposed, requested, level service, balanced), or narrative. Each row quotes the raw header text the classification rests on, with its line number or cell reference, so any row can be checked in one grep; workbook rows also record which columns are HIDDEN. Of 216 documents, 15 are ledger-basis and exactly one of those reaches school budget lines. Rebuild with scripts/classify_document_basis.py.",
      "kind": "Data",
-     "bytes": 55979,
+     "bytes": 57102,
      "url": "/docs/data/document-basis.csv",
-     "count": 216,
+     "count": 220,
      "unit": "rows",
      "textUrl": "/docs/data/document-basis.csv"
+    },
+    {
+     "path": "data/athletics-by-sport.csv",
+     "title": "Athletics by sport, long form",
+     "stars": 3,
+     "what": "960 rows: season, level, sport, year, metric, value — and the cell each value came from, so any figure can be checked against the workbook without trusting this file. The three season sheets do not share a column layout, so the extractor reads the header rows rather than assuming positions. Rebuild with scripts/extract_athletics_by_sport.py.",
+     "kind": "Data",
+     "bytes": 56058,
+     "url": "/docs/data/athletics-by-sport.csv",
+     "count": 960,
+     "unit": "rows",
+     "textUrl": "/docs/data/athletics-by-sport.csv"
     },
     {
      "path": "data/lps-budget-lines.csv",
@@ -1009,6 +1105,18 @@
      "count": 356,
      "unit": "rows",
      "textUrl": "/docs/data/lps-budget-lines.csv"
+    },
+    {
+     "path": "data/fund-1301-cash-journal.csv",
+     "title": "The athletics revolving fund’s cashbook, three years",
+     "stars": 3,
+     "what": "277 rows — every receipt and payment in fund 1301 for FY2024, FY2025 and FY2026 to 12 June 2026, with dates, warrant references and the town’s own comments. One column, running_balance_derived, is ours and not the town’s: MUNIS exports rows, not a balance, and many rows are backdated, so the order is a reconstruction and is named as one. Rebuild with scripts/extract_fund1301_ledger.py, which refuses to write unless each year’s closing balance equals the opening balance the town prints for the next.",
+     "kind": "Data",
+     "bytes": 34927,
+     "url": "/docs/data/fund-1301-cash-journal.csv",
+     "count": 277,
+     "unit": "rows",
+     "textUrl": "/docs/data/fund-1301-cash-journal.csv"
     },
     {
      "path": "data/grants-history.csv",
@@ -1143,6 +1251,18 @@
      "textUrl": "/docs/data/link-status.csv"
     },
     {
+     "path": "data/athletics-by-sport-reconciliation.csv",
+     "title": "Where the district’s workbook does not add up",
+     "stars": 2,
+     "what": "Every total the sport workbook prints, against the sum of the rows above it: 342 checks, of which 271 tie and 71 do not. Published rather than quietly handled, because whether a column ties is a property of the document and anyone resting a figure on one needs to know. The Spring 2024-25 transportation total is blank while the rows beneath it hold $18,242.50.",
+     "kind": "Data",
+     "bytes": 19451,
+     "url": "/docs/data/athletics-by-sport-reconciliation.csv",
+     "count": 342,
+     "unit": "rows",
+     "textUrl": "/docs/data/athletics-by-sport-reconciliation.csv"
+    },
+    {
      "path": "MANIFEST.md",
      "title": "Source manifest",
      "stars": 2,
@@ -1165,6 +1285,19 @@
      "count": 168,
      "unit": "lines",
      "textUrl": "/docs/contracts/CONTRACTS.md"
+    },
+    {
+     "path": "records-request-2026-06/PROVENANCE.md",
+     "title": "Provenance for the 17 June 2026 records request",
+     "stars": 2,
+     "what": "Written by us, filed with the documents it describes: where each one came from, the town’s own filename for it, a sha256, and what each file actually contains as opposed to what its name suggests. Rule 12 asks for all of that at the same time as the document rather than retrofitted, and this is what that looks like. It also records what is deliberately not published and why.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 6293,
+     "url": "/docs/records-request-2026-06/PROVENANCE.md",
+     "count": 104,
+     "unit": "lines",
+     "textUrl": "/docs/records-request-2026-06/PROVENANCE.md"
     },
     {
      "path": "data/sped-transport-history.csv",
@@ -3313,10 +3446,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 253,
-  "groups": 15,
-  "bytes": 354793499,
-  "loadBearing": 38
+  "documents": 263,
+  "groups": 16,
+  "bytes": 355567255,
+  "loadBearing": 44
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 21 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

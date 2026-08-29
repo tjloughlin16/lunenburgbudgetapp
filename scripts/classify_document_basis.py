@@ -61,6 +61,13 @@ ACTUAL_NOT = re.compile(r'actual\s+(tax\s+)?billing', re.I)
 # does not, and neither does the Finance Committee memo, which reports expended plus
 # encumbered under the word "expenditures".
 LEDGER_HDR = [
+    # The strongest ledger signature in the archive, and the only one that is per
+    # transaction rather than per account: a journal export heads its rows with the
+    # journal number and both an effective and a posting date. Nothing that restates a
+    # prior year inside a budget document carries a posting date, because a restatement
+    # has no posting -- it has a paragraph.
+    (re.compile(r'\bJOURNAL\b.*\bEFF\s+DATE\b.*\bPOST\s+DATE\b', re.I | re.S),
+                                                           'journal detail export'),
     (re.compile(r'YEAR-TO-DATE\s+BUDGET\s+REPORT', re.I), 'MUNIS year-to-date budget report'),
     (re.compile(r'\bglytdbud\b', re.I),                    'MUNIS program id glytdbud'),
     # Account codes alone are not proof: the town's FY27 detailed budget is laid out by
