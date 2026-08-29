@@ -1,7 +1,11 @@
 # Handoff
 
-Written 29 August 2026 to survive a context reset. Read `CLAUDE.md` first — it has twelve
-rules now, and every one exists because it was broken here.
+Written to survive a context reset. Read `CLAUDE.md` first — thirteen rules now, and every
+one exists because it was broken here. **Rule 13 is new and is about how to read a source
+without fooling yourself; it was written from four errors made in one day.**
+
+**Nothing in this file is a source.** After a reset it reads exactly like something already
+verified. It is a claim about the repo. Check anything load-bearing against the repo.
 
 ---
 
@@ -9,255 +13,208 @@ rules now, and every one exists because it was broken here.
 
 | | |
 |---|---|
-| **Live site** | `lunenburgbudgetproject.org`, tag **`v3`** = `79b194c` |
-| **`main`** | `ab3142e`, pushed. **14 commits ahead of what is deployed.** |
-| **Live headline** | $634,068. FY28 gap $680,870. Unchanged since v3. |
-| `v2` | `e5332e6` — the archive build |
-| `v1` | `a0051c9` — before the archive existed |
+| **Live site** | `lunenburgbudgetproject.org`, tag **`v3`** = `6fb5e2c` |
+| **Working branch** | **`source-basis-classification`**, `2ab62f6` |
+| **Ahead of production** | **27 commits.** Verify: `git rev-list --count v3..HEAD` |
+| `main` | untouched today — the branch has not been merged |
 
-Deploy needs **Node 22 via nvm**. Verify by hashing a document from production against
-`sources/` using curl with a browser user-agent (the domain 403s otherwise).
+Deploy needs **Node 22 via nvm** (system node is 20 and fails). Cloudflare Pages,
+`npx wrangler pages deploy` from `fy28/`. Verify a deploy by hashing a document from
+production against `sources/` using curl with a browser user-agent (the domain 403s
+otherwise).
 
-**Nothing since v3 is deployed.** That includes everything below.
-
----
-
-## 2. THE ONE THING THAT MATTERS MOST
-
-**There is a live error in the deployed app. The athletics fee analysis counts fees twice.**
-
-`model/athletics.py` asserts `FEE_REVENUE_IN_BUDGET = False`, on the reasoning that fees
-flow through revolving accounts so the budget figures are gross. **That is backwards.**
-
-Proof, from two documents that agree:
-
-- In the general fund, `ATHLETIC OFFICIALS` and `REPLACEMENT OF UNIFORMS` are budgeted
-  **$0** from FY26 on. They used to be funded ($1,510 and $12,672 in FY22).
-- The athletics revolving fund — entirely fee-funded — pays **ArbiterSports $59,400**
-  (officials) and **Prime Time Sports $25,421** (uniforms), inside $113,602 of purchase of
-  service, plus $30,514 of salaries for four staff.
-
-The same costs left one pot and arrived in the other. So `PROGRAM_TOTAL_ADOPTED = 217,908`
-**excludes $146,911 of fee-funded athletics spending**, and the app then asks what fee
-would cover $345,458 — while today's fee already covers $146,911 that is not in that
-number.
-
-**Consequences, all published and all wrong to some degree:** the $960 self-funding fee,
-peak revenue $358,380, "fees cover 54%", and conclusion 5 ("athletics cannot pay for itself
-once you put the buses back"). Gross athletics is about **$364,819** (general fund $217,908
-+ revolving $146,911) and fees already pay ~40% of it.
-
-**Not yet fixed.** Fixing it means rebuilding the fee curve on a gross base, and gross has
-to be established first — $146,911 is a floor, not the answer. This is the highest-priority
-item in the project.
+**A deploy is queued and was explicitly NOT run.** See §8.
 
 ---
 
-## 3. The rule that generated that finding, and generalises well beyond it
+## 2. What this session actually established
 
-**Rule 11 — a budget line is NET, and is not what the thing costs.** If paras cost $1.5M
-and the state gives $500,000, the line says $1M. Nothing marks it as net.
+The session began intending to fix an athletics fee double-count. It found something else,
+and the correction runs the **opposite way** from what the previous handoff said.
 
-The district does this deliberately. In `fy27-proposals.xlsx`, comments column, beside
-General Education Transportation: *"Does this reflect a reduction of $50K to accound for
-the money planned to come from the busing fees?"*
+**The archive called restatements "actuals".** An "actual" in a school budget document is a
+prior year re-presented by the party that spent it, inside the argument for next year's
+budget. That is not a ledger figure and the two are not interchangeable.
 
-So a line can rise because the thing got more expensive, because a grant stopped covering
-part of it, or because a fee stopped being collected — **and all three look identical**. A
-rate measured off a net line is a rate of change in the **town's share**, not in the cost.
-Above all of it sits Chapter 70, $11.4M of a $26.6M budget, set in the Governor's budget.
+`sources/data/document-basis.csv` now classifies all 216 financial documents:
 
-**Rule 12 — every source carries its address, its filename and our copy.** The direct link
-to the file, not the index page. The publisher's own name for it, because links die. Our
-downloadable copy. `build_source_index.py` now fails any source link that points at an
-index rather than a document.
+```
+ledger        15     a figure exists because a transaction did
+restatement   46     a prior year re-presented by the spender
+forward      103     proposed / requested / level service / balanced
+narrative     52     money discussed, no figure table
+```
 
----
-
-## 4. Budget versus actuals — what the sweep found
-
-`sources/analyses/budget-vs-actual.md`, six findings, all rebuilt on five to six years.
-`scripts/analyze_variance.py` is the sweep; `/data/variance-by-group.csv` is its output.
-
-**548 usable line-years, 141 lines, FY18–FY23, covering 93–97% of the budget (82% in
-FY23).** All 3,255 exclusions have a stated reason.
-
-- **The whole budget is quiet**: −0.42%, −0.22%, −0.92%, −0.65%, **+0.53%**. Never 1% off.
-- **Salaries −0.86%, everything else +0.87%.** They nearly cancel.
-- **Almost nothing misses the same way twice.** Of groups with 4+ years, exactly one is
-  over every year and one under. At line level, 7 of 141. **There is no systematic padding
-  in this budget** — the most important finding, and a negative one.
-- **What there is instead is drift** — 27 groups moved materially first-two-years to
-  last-two.
-- **The clearest case**: `COMPUTERS — Purchase & Lease` budgeted at $39,000 while spending
-  ran $165,107 and $186,722 (+141%, +323%, +379%) — **and the FY26 budget is $243,450.**
-  A line that drifted and was corrected, like athletics coaching in §4.
-- **Health insurance is the one that matters to the gap**: +$293,023, on the only line big
-  enough to move a projection, and drifting upward.
-- **FY21 is not a usable year** — 117 of 120 lines have "actual" identical to budget. The
-  books were not closed. Excluded everywhere.
-- **The documents disagree with themselves** four times, up to $89,087 and 1.49% — larger
-  than the effect being measured. That bounds everything.
-
-**"The town spends less than it votes, every year" does not survive.** FY20 −0.34%, FY23
-**+0.50%**. And FY25's figure is unresolvable: three published salary totals and two
-expense totals give six possible budgets. The town's own minutes settle it at
-**$603,885.97** (School Committee, 17 September 2025) — that is the figure to quote.
+**Of the fifteen ledger documents, exactly one reaches school budget lines** —
+`district-budget-page/text/fy23-quarterly-budget-update.txt`, one quarter of FY23.
+Everything else the school analysis rests on is restatement. Regenerate with
+`scripts/classify_document_basis.py`; every row quotes the raw header text it rests on.
 
 ---
 
-## 5. Special education — deployed as v3, and where it stands
+## 3. Athletics — the whole finding
 
-Rate is **6.49%**, every component measured rather than assumed:
+`sources/analyses/athletics.md`, 742 lines, seven sections, verified by
+`scripts/verify_athletics.py`. `sources/data/athletics-history.csv` is the data spine.
+There is a page in the app at **`/athletics`**.
 
-| component | share | rate | measured over | fit |
-|---|---:|---:|---:|---:|
-| Professional staff | 54% | 2.67% | 8 budgets | R² 0.84 |
-| Paras | 33% | 12.78% | 10 budgets | R² 0.89 |
-| Transport | 12% | 5.69% | 9 budgets | R² 0.33 |
+**The district published athletics against the Chapter 658 revolving fund once**, for FY19,
+line by line. It is the only document in 3,230 that shows both sides. In every year it
+reports as actual the fund paid **more** of athletic transportation than the town did —
+59% to 69%. The FY26 budget overview says the same in words: the athletics line was
+*"reduced from Level Service with anticipation that athletic revolving may be enough to
+offset this reduction in the budget line"*.
 
-Out-of-district tuition is **held flat**, and that decision is corroborated three ways from
-sources with nothing in common — eleven budgets (R² 0.10), five years of actuals (+27% to
-−51%), and the private/collaborative split (60–300% misses in opposite directions). That
-corroboration is now shown in the app.
+**The fund's share of all athletics is unchanged where we can compare it** — 22.2% (FY19)
+against 22.1% (FY26). It did not withdraw. Transportation moved fund → town; officials and
+uniforms moved town → fund, within about $8,000 of each other at the trade.
 
-**The rate changed four times in a day: 2.48% → 5.89% → 2.57% → 6.80% → 6.49%.** Every
-version and its error is on the page. Do not "restore" an earlier one.
+**The reported actuals on the transportation line are encumbrances.** The one ledger view
+shows `Expended 0.00 / Encumbrances 40,000.00` — the whole year committed as one purchase
+order. Four of nine usable years have an "actual" equal to the budget to the dollar.
 
-**The para question, still open.** Paras grew 3.98%/yr in headcount and 9.07%/yr in actual
-spending — 4.90%/yr more per para against a 2% contract. Ruled out: grants (the town ledger
-shows special education grants paid only $89,184 of salaries in nine months, ~6% of the
-line), double-booking (FY25 only), and a funding handover (the town's share of the function
-group is 78% in FY17 and 78% in FY25). **What remains is hours, classification or steps,
-and nothing published separates them.** Note rule 11: 9.07% is growth in the town's share.
+**The fund never had slack.** FY14–17 margins ran +$3,217, +$28,810, +$7,736, **−$22,200**.
+It went negative in FY17 and shed coaches entirely in FY18 to recover. FY24 it took on
+officials (~$51,000, roughly its whole margin) and landed at **−$872** on a $128,000 fund.
+FY25 it shed transportation. **Nothing about transportation changed; what changed is what
+else the fund was asked to carry.**
 
----
-
-## 6. Grants — ESSER was the whole of what was lost
-
-From the FY25 Superintendent's Budget Update, *Grants History* pages, and two other decks.
-`/data/grants-history.csv`, every row carrying its document, page, the district's link, our
-copy and the hash.
-
-| FY | ordinary grants | ESSER |
-|---|---:|---:|
-| 2020 | $880,187 | — |
-| 2021 | $903,695 | — |
-| 2022 | $1,570,185 | — |
-| 2023 | $1,444,927 | $588,834 |
-| 2024 | $1,136,408 | — |
-| FY21–24 | | **$2,137,941** |
-
-**Ordinary grants never collapsed.** Special education grants are flat at $432,335–$520,845.
-ESSER was $2,137,941 across four years, on top, then nothing — about half a million a year.
-
-**Coverage caveat that must travel with this table:** the FY25 deck supplies 67 of 79 rows
-and is the only consistent series. FY22 and FY23 read high because other decks add grants
-the retrospective omits. FY22→FY24 looks like a $434k fall; much of that is coverage.
+**The FY25 deficit is reported, not established.** Three references in one window — a
+resident telling School Committee (3 Sept 2025) the fund "was running in a deficit, I was
+told over $100,000"; the Finance Committee (8 July 2025) wanting revolving accounts
+budgeted "to prevent negative balances from going unnoticed"; a resident on budget approval
+day (12 March 2025) on splitting everything into revolving funds. The fund closed FY25 at
+**+$110,248**. We hold the endpoint and not the path — there is no FY25 fund report.
 
 ---
 
-## 7. Athletic transportation — the thread that was live at the reset
+## 4. The citizen workbook — UNPROVEN, and acted on nowhere
 
-General fund, function **3510 Athletic Expenses** (not 3300). Actuals are recorded in MUNIS
-like any other general fund line, and we have them:
+`Athletics_v10.xlsx`, sha256 `63fc34d428ea09d9…`. A resident's analysis built on a
+c.66 request that produced three years of the athletics GL plus the district's sport-by-sport
+file. **We hold the analysis, not the ledger under it. It is not published in the archive**
+— it is someone else's work product and permission has not been asked. TJ has requested the
+raw GL from the originator.
 
-| FY | budget | actual |
-|---|---:|---:|
-| FY23 | 40,000 | 39,880 |
-| FY24 | 40,000 | **40,000 exactly** |
-| FY25 | 40,000 | **87,822** |
-| FY26 | 127,550 | $47,847 spent + $13,169 encumbered at Q3 |
-| FY27 adopted | **0** | cut |
+Two of its four year-columns are model output: 25/26 is 24/25 escalated 6.5%, which its own
+cell `A2` declares and the arithmetic confirms to the cent. **Only 23/24 and 24/25 are
+observations.**
 
-Two things unresolved: **FY24's actual is exactly the budget**, which real bus charters do
-not do; and the district's own workbook comment on that row says *"Actuals in munis are
-tracking well below FY26 budget, can FY27 be reduced? Yes, level funded"* — so the
-$127,550 the app uses as the cost of putting buses back may be too high.
+Those say athletic transportation cost **$117,555 in FY24** against a general fund line of
+**$40,000**, and **$91,066 in FY25** against **$87,822**. If it holds, the migration dates
+to FY25 and three anomalies resolve at once. It is internally inconsistent in ways recorded
+in `athletics.md` §6 — a duplicated Spring revenue cell, incomplete total rows, inconsistent
+column layouts across its three season sheets.
 
-The revolving fund does **not** pay for athletic transportation — its $109,503 of named
-vendors are officials, uniforms, video, race days and co-op fees, no bus company.
+**Direction matters, and it is the thing most likely to be got wrong on a fresh read.** The
+previous handoff said the app *overstates* athletics costs by double-counting fees. This
+says the app *understates* the transportation line. Both cannot be the shape of the error,
+and neither is settled.
 
 ---
 
-## 8. Claims that are NOT established — do not restate as fact
+## 5. What is live and wrong right now
+
+Shipped in the deployed `v3` build, and fixed on this branch but not deployed:
+
+> *"Budgeted well above what athletics has ever actually spent. Actuals were $39,880 (FY23),
+> $40,000 (FY24) and $87,822 (FY25)…"*
+
+That takes the town's share, calls it what athletics spent, and concludes the budget is
+padded. It is rule 11 broken in one sentence, in public.
+
+---
+
+## 6. The fee model — rewritten, and why it is a range
+
+`model.json` carried `estimatedFy26Revenue = $130,129`. The fund's own year-end
+reconciliation reports **$188,944 net** ($194,609 gross). The model was 31% low.
+
+The gap has two candidate causes and **they imply different curves**, so both are carried
+rather than one being chosen. Both reproduce FY26 exactly by construction:
+
+- `scaled` — participations undercounted, so the gap grows with the fee
+- `flat` — surcharges outside the published schedule, which do not rise with the base fee
+
+```
+                          published    now
+self-funding, buses back       $960    $500–$695
+coverage at today's fee         54%    71%–79%
+```
+
+`FEE_REVENUE_IN_BUDGET` was `False` on backwards reasoning and is now `True`: fees pay for
+officials and uniforms, those lines are budgeted **$0** in the general fund, so the cost
+never appears and the appropriation is already net of them.
+
+**Conclusion 7 was rewritten.** It said *"Athletics cannot pay for itself once you put the
+buses back."* On the measured base it can. Its figures are interpolated now, not typed.
+
+**Still unresolved:** the measurement implies $287.82 per high school participation against
+a $250 first-child fee. A blended rate cannot exceed its top tier. Either participations are
+undercounted or there are surcharges in no schedule we hold. That is why every fee figure is
+a range.
+
+---
+
+## 7. Defects found and fixed in the tooling
+
+- **`extract_town_ledger.py` silently dropped 16 of 67 departments** — MUNIS prints zero as
+  `.00` and the regex required a digit before the point. $4,074,773 of revised budget,
+  invisible, including a $2.4M assessment. It now reconciles to the report's own GRAND
+  TOTAL before it will write. Three figures in `budget-vs-actual.md` were wrong as a result
+  and are corrected: 51 → **67** departments, 25 → **28** with transfers, $452,971 →
+  **$489,411 in / $148,177 out**.
+- **Two copies of the same workbook hide different columns.** `fy27-proposals.xlsx` hides
+  `C` (FY23 actuals); `fy27-budget-projection-3-25-26.xlsx` hides `F` instead. `MANIFEST.md`
+  called them identical — corrected. Both hide `H` and `I`, the FY26 actuals-to-date and
+  encumbrances.
+- **`verify_athletics.py` passed on a false claim** because it checked a sentence was
+  present rather than that its count was right. Hardened; it immediately caught "four of
+  eight usable years" when there are nine.
+
+---
+
+## 8. What to do next, in order
+
+1. **Deploy, or decide not to.** 27 commits, all checks pass, production build clean.
+   Recommended: deploy — what is live is wrong in ways this fixes (§5, §6), and none of it
+   depends on the unproven workbook. **TJ was asked and had not answered when context was
+   cleared. Do not deploy without asking again.**
+2. **Send `notes/REQUEST-3c.md`.** Written and ready. Five items; the two to keep if the
+   office pushes back are the FY25 fund report and the fund 1301 ledger.
+3. **Process the raw GL when it arrives.** TJ has asked the originator. `REQUEST-3c.md`
+   ends with what to do with it, in order — and the last step is *then* decide whether it
+   changes a published figure, not before.
+4. **The para question** still needs DESE's End of Year Financial Report — `DATA-WANTED.md`
+   §3b.
+
+---
+
+## 9. Claims that are NOT established — do not restate as fact
 
 | tempting | actually established |
 |---|---|
+| The revolving fund does not pay athletic transportation | Contradicted. It paid 59–69% of it in FY14–17 |
+| The fund was drained and the town picked up the cost | The fund was at break-even and given officials to pay for. Same arithmetic, different blame |
+| Athletic transportation cost $117,555 in FY24 | One unsourced spreadsheet, two of whose four year-columns are model output |
+| The app double-counts athletics fees | The previous handoff's claim. The error appears to run the other way |
+| $127,550 is over-budgeted | Not against the all-in cost. Only against an appropriation that was never the cost |
+| The fund's 22% share is stable | Two observations, seven years apart. Two points cannot show a line |
+| Athletics fees sit under c.71 §47 | The town books the fund as **1301 CHAPTER 658 REVOLVING FUND** |
 | The town gives back money every year | Two clean years: one −0.34%, one **+0.50%** |
-| Grants drying up drove the para line | Ruled out. Town's share 78% → 78% |
 | The para line measures staffing | It measures the town's share of staffing (rule 11) |
-| The state is squeezing the district | Ordinary grants flat; ESSER was federal and scheduled |
-| Athletics costs $345,458 | That excludes $146,911 the fees already pay |
-| The district cannot budget | Almost nothing misses the same way twice |
 
 ---
 
-## 9. Data and scripts added this session
-
-**Data** — all catalogued, all under `/data/`:
-`line-history.csv` (19,453 readings, 417 lines), `variance-by-group.csv`,
-`grants-history.csv`, `school-special-revenue-fy26-q3.csv`, `town-ledger-fy26-q3.csv`,
-`total-salaries-history.csv`, `total-expenses-history.csv`, `sped-para-history.csv`,
-`sped-teacher-history.csv`, `sped-transport-history.csv`, `ood-tuition-history.csv`,
-`sped-lines.csv`, `link-status.csv`, `dese/district-spending-categories.csv`.
-
-**Scripts**
-
-    python3 scripts/audit_provenance.py          # no projection reads actuals
-    python3 scripts/backtest_rates.py            # assumptions vs later budgets
-    python3 scripts/verify_sped_analysis.py      # every figure in the SPED analysis
-    python3 scripts/verify_budget_vs_actual.py   # every figure in the actuals analysis
-    python3 scripts/build_source_index.py        # catalogue; fails on index-page links
-    python3 scripts/analyze_variance.py          # the whole-budget sweep
-    python3 scripts/extract_line_history.py      # every line, budget and actual
-    python3 scripts/extract_budget_history.py    # named series and district totals
-    python3 scripts/extract_grants.py            # grants by name
-    python3 scripts/extract_special_revenue.py   # school funds outside the appropriation
-    python3 scripts/extract_town_ledger.py       # the Town Accountant's ledger
-    python3 scripts/check_source_links.py        # whether publisher copies still open
-    python3 model/export.py                      # after ANY model/ change
-    python3 scripts/build_agent_endpoints.py     # llms.txt and /data/*
-
-**Run the verifiers before any commit touching an analysis.** They have caught stale prose
-six times, including a risk table $200,245 out and two figures I typed rather than derived.
-
----
-
-## 10. Records-request documents — three of fourteen used
-
-Used: `town-general-fund-expenditures-fy26-q3.pdf`, `town-special-revenue-fy26-q3.xlsx`,
-`school-funds-fy26.xlsx`.
-
-**Not yet opened**: `town-general-fund-revenue-fy26-q3.pdf`, `town-trust-agency-fy26-q3.xlsx`
-(stabilisation and reserves — bears on the override argument), `fincom-memo-fy26-q3.docx`,
-`fincom-deck-fy26-q3.pptx`.
-
-Not school-related: the four enterprise funds (sewer, water, solid waste, PEG).
-
-**And the workbook's comments column (S) is 351 rows of district commentary that has not
-been read systematically.** It is where the transportation netting question and the "can
-FY27 be reduced?" note came from. It is the single richest unread source held.
-
----
-
-## 11. What to do next, in order
-
-1. **Fix the athletics fee double-count** (§2). It is live and wrong.
-2. **Read the workbook comments column** (§10). Cheap, and already produced two findings.
-3. **Deploy or don't** — 14 commits are ahead of production, including the corroboration
-   block and every budget-versus-actual finding. Nothing in them changes a projection.
-4. **The para question** (§5) needs DESE's End of Year Financial Report, which is a filing
-   and not downloadable — see `notes/DATA-WANTED.md` §3b for who to ask.
-5. **FY26 year-end** settles athletic transportation, the circuit breaker, and the tuition
-   line at once.
-
----
-
-## 12. How to work with TJ
+## 10. How to work with TJ
 
 He will ask for a full analysis and mean it. Ranking by one measure and reporting the top
-few is not a sweep — that method missed athletics entirely and he caught it. State coverage
-alongside findings, always, so he can see what was not looked at. When a finding is
-surprising, check it harder rather than reporting it faster: the 52%→84% "handover" was
-wrong and was the most interesting thing said all day. And say "paras", not "aides".
+few is not a sweep. State coverage alongside findings, always, so he can see what was not
+looked at. When a finding is surprising, check it harder rather than reporting it faster.
+Say "paras", not "aides".
+
+**And he will catch you.** Three times in one session he pointed at something I had quoted
+as observed that was actually derived — a stitched column header, a hidden column, a budget
+workbook called an actuals sheet. Each time he was right. That is what rule 13 is for. When
+he says a document does not say what you claim it says, **open it by cell reference before
+defending the claim.**

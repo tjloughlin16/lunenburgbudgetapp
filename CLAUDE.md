@@ -238,6 +238,47 @@ page and it is meant to be uncomfortable.
 
 ---
 
+## 13. Quote the source, never your rendering of it
+
+Every serious error in this project's analysis has the same shape: **something derived got
+quoted as though it were observed.** Not invented — derived. There was always a real thing
+underneath, which is exactly why it survives review.
+
+Four that happened in a single day:
+
+| quoted as | actually was |
+|---|---|
+| "the sheet's columns are headed `FY23 ACTUALS`" | `C4='FY23'` and `C5='ACTUALS'` — two cells, stitched together by our own script |
+| "the actuals sheet" | a forward budget workbook with a column headed ACTUALS |
+| "`main` is 15 commits ahead" | a number read off a summary, never off the repo |
+| a verifier passing on "four of eight usable years" | the string was present; there are nine |
+
+**The rules.**
+
+- **Cite a coordinate and the raw value.** `A20 = 'Purchase of Service (officials,
+  uniforms, transportation, ice time, dues)'`. A rendered table is for reading, never for
+  quoting. If you cannot give the cell or the line number, you have not checked it.
+- **Check what a reader sees, not only what the file holds.** `fy27-proposals.xlsx` hides
+  nine columns including FY23 actuals; our second copy of the same data hides a different
+  set. Both statements "the workbook contains FY23 actuals" and "there is no FY23 column"
+  were true at once. `data/document-basis.csv` records the hidden set for every workbook.
+- **A check must assert the number, not the prose around it.** `verify_athletics.py` first
+  checked that a sentence existed and passed while the sentence was wrong. Derive the value
+  from the data and compare.
+- **A summary in this conversation is not a source.** After a context reset the handoff
+  reads exactly like something already verified. It is a claim about the repo, not the
+  repo.
+- **When an extract has a total the source itself prints, reconcile to it.**
+  `extract_town_ledger.py` silently dropped 16 of 67 departments — MUNIS prints zero as
+  `.00` and the regex wanted a digit before the point. Nothing noticed for weeks because
+  nothing compared the extract to the report's own GRAND TOTAL. It does now, and refuses
+  to write if it does not tie.
+
+The general form: **an instrument that reformats before you see it is part of the finding,
+and it has to be checked like one.**
+
+---
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
@@ -253,6 +294,9 @@ arriving fresh.
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present
     python3 model/export.py                 # regenerate model.json after any model/ change
+    python3 scripts/classify_document_basis.py   # what produced each document's figures
+    python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source
+    python3 scripts/verify_athletics.py          # every figure in the athletics analysis
 
 ## The standing questions
 
