@@ -264,6 +264,12 @@ budget documents show dollars and never people. **That was wrong.** Massachusett
 publishes paraprofessional FTE for every district, every year, on the state open-data
 portal, and it answers a plain HTTP request.
 
+The file is in this archive and downloadable at
+`/docs/dese/district-spending-categories.csv`. Its address at the state is
+`https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv?DIST_CODE=01620000`, and
+`scripts/fetch_dese.py` records it so the pull can be repeated. Lunenburg is district
+01620000.
+
 | FY | paraprofessionals, FTE |
 |---|---:|
 | 2017 | 59.5 |

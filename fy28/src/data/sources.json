@@ -35,7 +35,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 15 came from the Town by records request and say so on their row; the rest were already public. 15 of them link back to where the publisher put them — the others were gathered before the mirror existed and their original address was not recorded, which is a gap on our side and not the town’s. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 15 came from the Town by records request and say so on their row; the rest were already public. 17 of them link back to where the publisher put them — the others were gathered before the mirror existed and their original address was not recorded, which is a gap on our side and not the town’s. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -502,6 +502,7 @@
      "title": "Staffing and spending by category, FY09–FY25",
      "stars": 3,
      "what": "Massachusetts DESE, via the state open-data portal. Teacher FTE, paraprofessional FTE, in-district pupils, per-pupil expenditure by function and student demographics, every year since 2009. The paraprofessional count is the one figure that lets a budget line be read as staffing rather than as dollars — and it says the aide budget has grown roughly six times faster than the number of aides. Rebuild with scripts/fetch_dese.py.",
+     "upstream": "https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv?DIST_CODE=01620000&$limit=5000",
      "kind": "Data",
      "bytes": 48294,
      "url": "/docs/dese/district-spending-categories.csv",
@@ -535,6 +536,7 @@
      "title": "DESE per-pupil expenditures, FY2018–FY2024",
      "stars": 3,
      "what": "Spending by category and per pupil, Lunenburg against eleven peer districts, with enrollment. Note: this is in-district expenditure, which by DESE’s definition excludes out-of-district tuition.",
+     "upstream": "https://educationtocareer.data.mass.gov/",
      "kind": "Spreadsheet",
      "bytes": 94824,
      "url": "/docs/xlsx/dese-all-districts.xlsx",
@@ -885,9 +887,9 @@
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 31668,
+     "bytes": 31977,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 665,
+     "count": 671,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -1050,9 +1052,9 @@
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens — checked 29 August 2026. It mostly does not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. This is the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 30494,
+     "bytes": 30750,
      "url": "/docs/data/link-status.csv",
-     "count": 185,
+     "count": 187,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -3229,7 +3231,7 @@
  "totals": {
   "documents": 246,
   "groups": 15,
-  "bytes": 354616288,
+  "bytes": 354616853,
   "loadBearing": 32
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

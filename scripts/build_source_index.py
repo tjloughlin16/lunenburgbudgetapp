@@ -580,6 +580,25 @@ def sha(path):
 # This matters more than it looks. The archive's whole claim is that a reader can check a
 # figure against the document it came from, and until now the 170 documents that feed
 # nothing carried a link home while the 58 that feed everything did not.
+
+# Where a primary source came from, when we know and the mirrors do not.
+#
+# Most primary sources get their link by hash-matching against a mirror -- see
+# upstream_by_hash. That only works for documents the mirror also holds. Anything fetched
+# straight from a publisher, like the state's open-data endpoints, has no mirror row to
+# match against, so its address is recorded here by hand.
+#
+# This is the place to add a link for any of the primary sources that still lack one. The
+# blurb on the sources page counts them, so the number goes down as entries are added.
+SOURCE_URLS = {
+    'dese/district-spending-categories.csv':
+        'https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv'
+        '?DIST_CODE=01620000&$limit=5000',
+    'xlsx/dese-all-districts.xlsx':
+        'https://educationtocareer.data.mass.gov/',
+}
+
+
 def upstream_by_hash():
     known = {}
     for sub in ('district-budget-page', 'town-site', 'dese'):
@@ -759,7 +778,9 @@ def main():
                 publish(text_rel)
 
             by_request = any(rel.startswith(pfx) for pfx in BY_REQUEST)
-            link = known_upstream.get(sha(path))
+            # A hand-recorded address wins: it is the endpoint we actually
+            # fetched, not a copy of the same bytes found somewhere else.
+            link = SOURCE_URLS.get(rel) or known_upstream.get(sha(path))
             st = LINKS.get(rel)
             items.append({
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
