@@ -22,6 +22,7 @@ reads, so it is summarized as a corpus with per-board counts, built from minutes
 Writes fy28/src/data/sources.json.
 """
 import csv
+import hashlib
 import json
 import os
 import shutil
@@ -81,8 +82,11 @@ SECTIONS = {
         title='Published by the town, the district and the state',
         blurb='Primary documents. We did not write any of these and we did not commission '
               'them. {byrequest} came from the Town by records request and say so on their '
-              'row; the rest were already public. Where a document is unreadable or says '
-              'something inconvenient, it is here anyway.'),
+              'row; the rest were already public. {linked} of them link back to where the '
+              'publisher put them \u2014 the others were gathered before the mirror existed '
+              'and their original address was not recorded, which is a gap on our side and '
+              'not the town\u2019s. Where a document is unreadable or says something '
+              'inconvenient, it is here anyway.'),
     'reference': dict(
         title='Everything else the district and the town publish',
         blurb='Mirrored here so it is available and so no figure has to be looked up over '
@@ -507,6 +511,40 @@ def publish(rel):
     return size, None
 
 
+
+def sha(path):
+    """A file's sha256. The archive's unit of identity: two files with the same hash are
+    the same document however they were named or wherever they were found."""
+    m = hashlib.sha256()
+    with open(path, 'rb') as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b''):
+            m.update(chunk)
+    return m.hexdigest()
+
+
+# Where a primary source can be linked back to the publisher's own page.
+#
+# The mirrors record an upstream URL and a sha256 for every file they hold. A primary
+# source that is byte-identical to one of them is the same document, so its link is
+# already known and does not have to be maintained by hand -- which is the only kind of
+# link that stays right.
+#
+# This matters more than it looks. The archive's whole claim is that a reader can check a
+# figure against the document it came from, and until now the 170 documents that feed
+# nothing carried a link home while the 58 that feed everything did not.
+def upstream_by_hash():
+    known = {}
+    for sub in ('district-budget-page', 'town-site', 'dese'):
+        idx = os.path.join(SRC, sub, 'index.csv')
+        if not os.path.exists(idx):
+            continue
+        with open(idx, newline='') as fh:
+            for r in csv.DictReader(fh):
+                if r.get('sha256') and r.get('upstream'):
+                    known[r['sha256']] = r['upstream']
+    return known
+
+
 def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
     """A crawled mirror, described from its own manifest rather than by hand.
 
@@ -645,6 +683,8 @@ def build_corpus():
 def main():
     catalogued, groups, missing = set(), [], []
 
+    known_upstream = upstream_by_hash()
+
     for g in GROUPS:
         items = []
         for rel, title, stars, what in g['items']:
@@ -665,9 +705,11 @@ def main():
                 publish(text_rel)
 
             by_request = any(rel.startswith(pfx) for pfx in BY_REQUEST)
+            link = known_upstream.get(sha(path))
             items.append({
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
                 **({'byRequest': True} if by_request else {}),
+                **({'upstream': link} if link else {}),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': served,
                 'url': elsewhere or ('/docs/' + rel),
@@ -705,16 +747,7 @@ def main():
         sys.exit('on disk but not catalogued — describe it in GROUPS or add it to SKIP:\n  '
                  + '\n  '.join(sorted(uncatalogued)))
 
-    # Hash what we already build on, so the mirror can mark its own duplicates.
-    import hashlib
-
-    def sha(path):
-        m = hashlib.sha256()
-        with open(path, 'rb') as fh:
-            for chunk in iter(lambda: fh.read(1 << 20), b''):
-                m.update(chunk)
-        return m.hexdigest()
-
+    # Hashes: the mirror marks its own duplicates, and a primary source finds its link.
     catalogued_hashes = {}
     for g in groups:
         for i in g['items']:
@@ -748,11 +781,15 @@ def main():
     # into the section blurbs below, so that adding a document cannot leave a sentence
     # describing an archive that no longer exists.
     by_request_count = sum(1 for i in all_items if i.get('byRequest'))
+    # Stated rather than left to be noticed: the documents every figure rests on are the
+    # ones least able to be traced back, which is the wrong way round.
+    linked = sum(1 for g in groups if g['section'] == 'theirs'
+                 for i in g['items'] if i.get('upstream'))
     ref_items = [i for g in groups if g['section'] == 'reference' for i in g['items']]
     ref_overlap = sum(1 for i in ref_items if i.get('alsoUsed'))
     sections = {
         k: dict(v, blurb=v['blurb'].format(
-            byrequest=by_request_count, total=len(ref_items),
+            byrequest=by_request_count, total=len(ref_items), linked=linked,
             overlap=ref_overlap, unused=len(ref_items) - ref_overlap))
         for k, v in SECTIONS.items()
     }
