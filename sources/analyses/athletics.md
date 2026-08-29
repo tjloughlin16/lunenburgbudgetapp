@@ -312,6 +312,178 @@ rate increase is corroboration, not proof.
 
 ---
 
+## 6. UNPROVEN — a citizen's workbook, and what it would mean if it holds
+
+> **Nothing in this section is acted on anywhere.** No figure here feeds the model, the
+> app, or any other section of this document. It is recorded because it is the only
+> evidence that bears on the central question, and because if it holds it points the
+> *opposite* way from what this project has been publishing.
+
+**In plain terms.** A resident filed a public records request and got three years of the
+athletics general ledger, plus the district's own sport-by-sport file. They built a
+spreadsheet from it. That spreadsheet says athletic transportation cost about $117,000 in
+FY24 — a year the town's budget recorded $40,000. If that is right, the town's line was
+never the cost, and everything this project has said about that line being over-budgeted is
+backwards.
+
+### What the document is
+
+`Athletics_v10.xlsx`, sha256 `63fc34d428ea09d9db8129597666e0de02adc84a315223028a0430c2c76780d1`.
+Workbook metadata: single author, created and last modified `2026-07-04 17:35:35`.
+
+**It is not a town document.** It is a third party's analysis built on two things obtained
+under M.G.L. c.66 — the athletics GL for three years, and a sport-by-sport file the
+district already held. That makes it a fourth kind of source, outside the three in
+`data/document-basis.csv`: not `ledger`, not a district `restatement`, not `forward`, but a
+derived model built on a ledger we do not hold.
+
+We hold a copy. **It is not published in the archive**, because it is someone else's work
+product and permission has not been asked.
+
+### What in it is measurement and what is arithmetic
+
+Its own cell `A2` declares the answer, and the arithmetic confirms it exactly:
+
+    Fall     43,446.06 x 1.065 = 46,270.05    workbook says 46,270.05
+    Winter   29,377.50 x 1.065 = 31,287.04    workbook says 31,287.03
+    Spring   18,242.50 x 1.065 = 19,428.26    workbook says 19,428.24
+
+The 25/26 column is the prior year escalated 6.5%. So is 26/27. **Only 23/24 and 24/25 are
+observations** — two of its four year-columns are model output, and they must never be
+quoted as data.
+
+### The finding
+
+| FY | general fund | fund / other | total | fund share | source |
+|---|---:|---:|---:|---:|---|
+| 2014 | 17,000 | 30,085 | 47,085 | 63.9% | FY19 split doc |
+| 2015 | 21,600 | 40,742 | 62,342 | 65.4% | FY19 split doc |
+| 2016 | 23,000 | 33,308 | 56,308 | 59.2% | FY19 split doc |
+| 2017 | 23,000 | 50,986 | 73,986 | 68.9% | FY19 split doc |
+| 2018 | 33,500 | 27,450 | 60,950 | 45.0% | FY19 split doc, budgeted |
+| 2019 | 24,975 | 40,000 | 64,975 | 61.6% | FY19 split doc, requested |
+| 2020–2023 | — | — | — | not published | |
+| **2024** | **40,000** | **77,555** | **117,555** | **66.0%** | **workbook — unproven** |
+| **2025** | **87,822** | **3,244** | **91,066** | **3.6%** | **workbook — unproven** |
+
+Two documents with nothing in common, a decade apart, agree that the fund carried about
+two-thirds: 59.2%–68.9% across FY14–17, and 66.0% in FY24. Then FY25 is **3.6%**.
+
+Not a drift and not the trade described in §2 — **a single-year transfer of roughly $77,000
+of annual cost from fee payers onto the town.**
+
+### What it would resolve
+
+Three things this document could not otherwise explain, all resolved by the same fact:
+
+- **FY25's $87,822 against a $40,000 budget.** §4 records that as the one real miss on this
+  line. It would not be a miss. It would be the town paying the whole bill for the first
+  time, against a budget sized for its share.
+- **FY24's actual being exactly $40,000.** §4 offers lump-sum encumbrance as a hypothesis.
+  This does not compete with it — it completes it. The appropriation was capped at its
+  purchase order and the remaining $77,555 was carried elsewhere.
+- **Why $127,550.** §5 finds the line defensible against the all-in cost and absurd against
+  the appropriation. This says the all-in cost was $91,066–$117,555 in the two observed
+  years, and the line is the first one sized to it.
+
+### What it would mean for the app — and why that matters most
+
+The FY27 line-item note on athletic transportation, shipped in the deployed `v3` build,
+reads:
+
+> "Budgeted well above what athletics has ever actually spent. Actuals were $39,880 (FY23),
+> $40,000 (FY24) and $87,822 (FY25)…"
+
+If the workbook holds, **$40,000 in FY24 was 34% of what athletics actually spent.** That
+sentence takes the town's share, calls it what athletics spent, and concludes the budget is
+padded. It is rule 11 broken in one sentence, in public, and it accuses the district of
+over-budgeting a line that may be the only honestly sized one in the section.
+
+Note the direction. `notes/HANDOFF.md` §2 says the app *overstates* athletics costs by
+double-counting fee revenue. On this evidence the app **understates** the cost of athletic
+transportation. Both cannot be the shape of the error, and neither is settled.
+
+### Why this is not acted on
+
+- **It is one unsourced spreadsheet.** We hold the analysis, not the ledger under it.
+- **It is internally inconsistent.** `Summary!I41` (Spring 25/26 revenue) is `75,275.00`,
+  identical to the cent to `I17` (Fall) — two seasons cannot match exactly. The season
+  sheets' own `Total` rows are incomplete: Fall's 25/26 fee total reads 0, Spring's
+  transportation totals read 0 in two years, and summing the sport rows gives different
+  answers than the total rows do. Column layouts and header names differ across the three
+  sheets — `Total Received` on Fall against `Total Fees Received` on Spring, Transportation
+  at `AR` on Fall and `AS` on the others.
+- **We cannot tell which figures came from the GL and which from the district's
+  sport-by-sport file.** They are fused in one workbook and have different reliability.
+- **It does not say why the fund stopped paying.** A fund that ran out looks different in a
+  ledger from one that was redirected, and §4a's reported FY25 deficit is only one of the
+  readings. The others are a deliberate policy change, or a change in what Town Meeting
+  authorised the fund to spend on.
+
+### Why FY25 and not the seven years before — the fund never had slack
+
+The obvious objection to the table above is that a fund which carried two-thirds of
+transportation for a decade does not simply stop. The FY19 document answers it: **the fund
+was never comfortable.** It ran within a few percent of break-even every year, and it has
+shed a major obligation once before under exactly this pressure.
+
+Fund 658's own costs and revenue, from the FY19 split document:
+
+| FY | coaches | secretary | supplies | transport | fund cost | fees + gates | margin |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 2014 | 45,278 | — | 31,894 | 30,085 | 107,257 | 110,474 | +3,217 |
+| 2015 | 27,221 | 5,245 | 38,730 | 40,742 | 111,938 | 140,748 | +28,810 |
+| 2016 | 40,092 | 7,796 | 32,623 | 33,308 | 113,819 | 121,555 | +7,736 |
+| 2017 | 34,815 | 8,594 | 37,156 | 50,986 | 131,551 | 109,351 | **−22,200** |
+| 2018 | **0** | 5,437 | 27,114 | 27,450 | 60,001 | 108,000 | +47,999 |
+| 2019 | **0** | 5,593 | 28,309 | 40,000 | 73,902 | 108,000 | +34,098 |
+
+**The fund went negative in FY17, and in FY18 it dropped coaches entirely** — from $34,815
+to zero — and the margin went from −$22,200 to +$47,999. That is the same move as FY25, a
+decade earlier, in a document the district published itself.
+
+And the workbook, if it holds, shows the same shape:
+
+| FY | officials | transport | fund cost | fees | margin |
+|---|---:|---:|---:|---:|---:|
+| 2024 | 51,570 | 77,555 | 129,125 | 128,252 | **−872** |
+| 2025 | 50,696 | 3,244 | 53,940 | 117,069 | +63,129 |
+
+Officials cost the fund about $51,000 a year, and the general fund budgeted **$0** for
+officials from FY24 on. So FY24 is the year the fund took on a new obligation roughly the
+size of its entire margin. It landed at **−$872** — break-even to within a thousand
+dollars, on a $128,000 fund. FY25 it shed transportation and the margin returned.
+
+**So the answer to "why that year" is that nothing about transportation changed. What
+changed is what else the fund was asked to carry.** A fund with no margin absorbs a new
+obligation only by dropping an old one, and this fund has now done that twice: coaches in
+FY18, transportation in FY25.
+
+**A possible trigger, offered as a hypothesis.** FY24 is the first year in the grants record
+with no ESSER money — `data/grants-history.csv` shows ESSER running through FY23 and
+stopping, about half a million a year. The general fund was under pressure in exactly the
+year officials moved off it. **Nothing here tests that**, and the correlation is one year
+against one event. **What would settle it:** the FY24 general fund athletics detail showing
+where the officials line went, which is in the GL already requested.
+
+**And it reframes "drained".** A fund sitting at −$872 on $128,000 of revenue is one late
+invoice or one slow collection month away from a visible negative balance. "The fund was
+drained" and "the fund was at break-even and given something new to pay for" are the same
+arithmetic described with different blame attached. The second is what the numbers show.
+Neither is established.
+
+### What would settle it
+
+The raw GL, requested 29 August 2026: the general fund athletics org `S3066672` (especially
+object `535016`) and fund `1301`, both as native export rather than PDF, plus the RevTrak
+receipts detail and the district's original sport-by-sport file. Recorded in
+`notes/DATA-WANTED.md` §3c.
+
+**If it arrives and holds, the first work is not to publish the new number.** It is to stop
+the deployed note asserting the old one.
+
+---
+
 ## How to reproduce every figure in this document
 
 Nothing here rests on a step that is not written down. Each source is named by its path in

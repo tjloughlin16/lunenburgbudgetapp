@@ -22,8 +22,13 @@ FAILS = []
 
 
 def present(label, needle):
+    # Prose uses the typographic minus and en dash; code emits the ASCII hyphen, and they
+    # are the same number. Normalising both sides beats reporting drift that is only a
+    # character -- the same fix verify_budget_vs_actual.py carries.
+    def norm(t):
+        return t.replace('\u2212', '-').replace('\u2013', '-')
     n = str(needle)
-    ok = n in TEXT or n in PLAIN
+    ok = (n in TEXT or n in PLAIN or norm(n) in norm(TEXT) or norm(n) in norm(PLAIN))
     if not ok:
         FAILS.append(f'{label}: "{n}" not in the document')
     print(f"  {'OK  ' if ok else 'GONE'}  {label:<46} {n}")
@@ -158,6 +163,24 @@ present('FY19 uniforms', f'{8000:,}')
 present('officials + uniforms', f'{40117 + 8000:,}')
 present('ArbiterSports', f'{59400:,}')
 present('Prime Time Sports', f'{25421:,}')
+
+# --- section 6: the unproven workbook ---------------------------------------------
+head('Section 6 -- the citizen workbook, recorded as unproven')
+# The 25/26 column is the prior year escalated 6.5%. Asserted so a future edit cannot
+# quietly promote a modelled column to a measurement.
+for y2425, y2526 in ((43446.06, 46270.05), (29377.50, 31287.03), (18242.50, 19428.24)):
+    if abs(y2425 * 1.065 - y2526) > 0.05:
+        FAILS.append(f'{y2425} x 1.065 != {y2526}; the 25/26 escalation claim is wrong')
+print('  OK    25/26 is 24/25 escalated 6.5% (three seasons checked)')
+for label, gf_, tot in (('FY24', 40000.0, 117555.00), ('FY25', 87822.0, 91066.06)):
+    present(f'{label} workbook total', f'{tot:,.0f}')
+    present(f'{label} implied fund share', f'{(tot - gf_) / tot * 100:.1f}%')
+# The fund's margin, both eras
+head('Section 6 -- the fund never had slack')
+for fy, cost, rev in ((2014, 107257, 110474), (2017, 131551, 109351), (2018, 60001, 108000)):
+    present(f'FY{fy} margin', f'{rev - cost:+,}')
+for fy, cost, rev in ((2024, 129125, 128252.50), (2025, 53940, 117069.00)):
+    present(f'FY{fy} margin', f'{rev - cost:+,.0f}')
 
 # --- document basis counts --------------------------------------------------------
 head('Source-type counts, from document-basis.csv')
