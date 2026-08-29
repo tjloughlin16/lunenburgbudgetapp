@@ -616,6 +616,53 @@ same growth appears in actual spending as in budgets: 9.07% a year against 10.89
 
 ---
 
+## 7. The athletics budget is net of fees, and the app does not know it
+
+Found while sweeping, and it is the one finding here that changes something published.
+
+**In the general fund**, two athletics lines are budgeted at nothing from FY26 on:
+
+| line | FY22 actual | FY25 actual | FY26 | FY27 |
+|---|---:|---:|---:|---:|
+| ATHLETIC OFFICIALS | $1,510 | $0 | **$0** | **$0** |
+| REPLACEMENT OF UNIFORMS | $12,672 | $6,650 | **$0** | **$0** |
+
+**In the athletics revolving fund**, which is funded entirely by user fees, the same two
+costs appear by vendor: **ArbiterSports $59,400** for officials and scheduling, and
+**Prime Time Sports $25,421** for uniforms — within $113,602 of purchase of service, on top
+of $30,514 of salaries for four staff. Total fee-funded athletics spending: **$146,911**.
+
+The costs left one pot and arrived in the other. That is rule 11 in its plainest form: the
+general fund line is **net** of what fees pay for, and nothing marks it as net.
+
+**What that does to the app.** `PROGRAM_TOTAL_ADOPTED` is $217,908 and the fee model asks
+what fee would cover $345,458 — while today's fee already covers $146,911 that is not
+inside either figure. Gross athletics is about **$364,819** and fees already pay roughly
+40% of it. The published $960 self-funding fee, the $358,380 revenue peak, "fees cover 54%"
+and conclusion 5 are all built on a base that excludes what the fee already buys.
+
+`model/athletics.py` states the opposite in a comment — `FEE_REVENUE_IN_BUDGET = False`,
+because "fees flow through revolving accounts, so the program costs shown are GROSS". Fees
+flowing through a revolving account is precisely how the general fund line ends up net.
+
+**Not corrected yet**, because correcting it means rebuilding the fee curve on a gross base
+and $146,911 is a floor rather than an established total.
+
+### And athletic transportation, which is not the same story
+
+Athletic transportation sits in the general fund under 3510, and its actuals are recorded
+there like any other line — $39,880, $40,000, **$87,822**, then $127,550 budgeted for FY26
+and cut to nothing in the FY27 adopted budget.
+
+It is **not** fee-funded: none of the revolving fund's $109,503 of named vendors is a bus
+company. But two things about it are unresolved. FY24's actual is **exactly** its $40,000
+budget, which charter invoices do not do. And the district's own comment on that row reads
+*"Actuals in munis are tracking well below FY26 budget, can FY27 be reduced? Yes, level
+funded"* — with $47,847 spent and $13,169 encumbered at three quarters through, against
+$127,550. The app treats $127,550 as the cost of putting the buses back.
+
+---
+
 ## What would change any of this
 
 1. **Which FY25 budget figure is right.** $25,321,760 or $24,883,376. One question, and
