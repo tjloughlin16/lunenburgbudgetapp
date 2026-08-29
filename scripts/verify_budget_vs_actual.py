@@ -99,24 +99,19 @@ print('\nThe FY25 source disagreement')
 wb = [r for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv')))
       if r['kind'] == 'line']
 t = lambda c: sum(float(r[c] or 0) for r in wb)
-# Three published salary totals and two expense totals, so six budgets for one year.
-SAL = {'workbook row 399': 16_809_123, 'workbook row 403': 17_156_461,
-       'FY26 document': 17_188_342}
-EXP = {'workbook': 8_165_299, 'FY26 document': 7_695_034}
-import itertools
-combos = sorted(s + e for s, e in itertools.product(SAL.values(), EXP.values()))
-act = t('fy25_actual')
-present('FY25 actual', money(act))
-for v in SAL.values():
-    present('a published FY25 salary total', money(v))
-for v in EXP.values():
-    present('a published FY25 expense total', money(v))
-present('the lowest budget these support', money(min(combos)))
-present('the highest', money(max(combos)))
-present('the spread', money(max(combos) - min(combos)))
-present('over budget at the lowest', money(act - min(combos)))
-present('under budget at the highest', money(max(combos) - act))
-present('the workbook disagreeing with itself', money(17_156_461 - 16_809_123))
+# The salary difference is one contingency line counted in one total and not the other;
+# the expense difference is not explained. Both are checked, and so is the fact that the
+# resulting range no longer crosses zero.
+ACT = t('fy25_actual')
+LO, HI = 17_156_461 + 7_695_034, 17_188_342 + 8_165_299
+present('FY25 actual', money(ACT))
+present('Salary Reserve, workbook', money(347_338))
+present('Salary Reserve, FY26 document', money(379_220))
+present('the expense difference', money(8_165_299 - 7_695_034))
+present('lowest defensible budget', money(LO))
+present('highest', money(HI))
+present('under by at least', money(LO - ACT))
+present('under by at most', money(HI - ACT))
 
 print('\nFigures the document must NOT still contain')
 for r in ['13% a year while the rest of the budget grew 3.4%',

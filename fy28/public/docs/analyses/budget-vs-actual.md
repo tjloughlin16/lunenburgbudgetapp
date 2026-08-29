@@ -145,50 +145,50 @@ One lands within a third of a percent and the other is **over**. Against FY25's 
 they are a different order of magnitude, and they do not point the same way. Read the
 line-by-line totals in §2 alongside them: five years there, never more than 0.9% off.
 
-### And nobody can say what FY25's budget was
+### The FY25 budget is stated two ways, and one of them is explicable
 
-FY25 is the year the original claim rested on. It reported a shortfall of $761,249 against
-a budget of $25,321,760.
+FY25 is the year the original claim rested on: a shortfall of $761,249 against a budget of
+$25,321,760.
 
-**That budget figure is one of at least six the district's own documents support.** There
-are three published totals for FY25 salaries and two for FY25 expenses:
+There are two published totals for FY25 salaries in the workbook and a third in the FY26
+approved budget document, and **a line-by-line comparison explains the salary side
+entirely**. Of 117 FY25 lines both sources state, **115 are identical**. Two are not:
 
-| FY25 salaries | |
-|---|---:|
-| The workbook's salaries-section total (row 399) | $16,809,123 |
-| The workbook's own summary block, 4 rows later (row 403) | $17,156,461 |
-| The FY26 approved budget document | $17,188,342 |
+| line | workbook | FY26 document | |
+|---|---:|---:|---:|
+| Salary Reserve | $347,338 | $379,220 | +$31,882 |
+| Dues/Meetings | $10,971 | $5,000 | −$5,971 |
 
-| FY25 expenses | |
-|---|---:|
-| The workbook | $8,165,299 |
-| The FY26 approved budget document | $7,695,034 |
+**Salary Reserve is $347,338 — exactly the workbook's internal salary difference.** Its
+function group is literally `TOTAL SALARIES`; it is a contingency line that sits in the
+totals block, and one of the workbook's two totals counts it while the other does not.
+That is not two sources disagreeing. It is one total struck before a contingency and one
+struck after, which is ordinary, and the earlier version of this section was wrong to
+present it as a contradiction.
 
-The workbook disagrees with **itself** about salaries by $347,338, in two rows four apart.
-The FY26 document, which is internally consistent — it prints FY26 expenses at $9,117,566
-and an 18.49% increase, and $7,695,034 × 1.1849 reproduces that — disagrees with the
-workbook about expenses by $470,265.
+**The expenses are a different matter and are not explained.** The workbook says
+$8,165,299 and the FY26 document $7,695,034 — $470,265 apart. Matching the expense lines
+between the two sources by name, 142 line up and **only three differ, by about $1,000
+between them.** The lines agree and the totals do not, and nothing published resolves it.
 
-Every combination, against actual spending of $24,560,511:
+So the range on FY25's budget is narrower than this document previously claimed, and it
+does not cross zero:
 
-| budget | salaries from | expenses from | difference | |
-|---:|---|---|---:|---:|
-| $24,504,157 | the workbook’s salaries section total | the FY26 approved budget document | +$56,354 | **+0.23%** |
-| $24,851,495 | the workbook’s summary block | the FY26 approved budget document | −$290,984 | **-1.17%** |
-| $24,883,376 | the FY26 approved budget document | the FY26 approved budget document | −$322,865 | **-1.30%** |
-| $24,974,422 | the workbook’s salaries section total | the workbook | −$413,911 | **-1.66%** |
-| $25,321,760 | the workbook’s summary block | the workbook | −$761,249 | **-3.01%** |
-| $25,353,641 | the FY26 approved budget document | the workbook | −$793,130 | **-3.13%** |
+| | budget | against $24,560,511 spent |
+|---|---:|---:|
+| Lowest defensible | $24,851,495 | −$290,984 (−1.17%) |
+| Highest | $25,353,641 | −$793,130 (−3.13%) |
 
-**FY25 was either $56,354 over budget or $793,130 under, depending entirely on which of
-the district's own published totals you pick.** The spread is $849,484 — larger than the
-underspend the original finding reported.
+**FY25 came in under budget by somewhere between $290,984 and $793,130.** The
+original $761,249 sits inside that range at the top of it. What cannot be said is which
+end is right, and the $470,265 of it that turns on the expense total is unresolved.
 
-This is not a claim that anything is wrong. Budget documents get revised, summary blocks
-get regenerated at different moments, and a spreadsheet carrying both a running total and
-a printed summary is ordinary. **It is a claim that the question "did the town spend what
-it voted in FY25" cannot be answered from published documents**, and that any figure
-quoted for it — including the one this project quoted — is a choice among several.
+### What this does not affect
+
+**Nothing the app computes.** Every projection starts from the FY27 adopted column, and
+the two lines that differ — a salary contingency and a dues line — are not special
+education and appear in none of the FY25 figures the model reads. Checked line by line
+rather than assumed.
 
 ### What we cannot tell
 
