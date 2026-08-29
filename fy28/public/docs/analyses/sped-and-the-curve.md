@@ -257,6 +257,40 @@ single blended rate taken from the settlements gets it wrong.
 budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
 adding them, which it has not done in 8 of the last 9 budgets.
 
+### The one thing that could undermine this rate, and we cannot see it
+
+The aide series is a **general-fund budget** line. It is not a record of what the aides
+cost or of how many there are — it is what the town appropriated for them. If some of
+those positions were paid for from somewhere else, the line does not mean what it appears
+to.
+
+**A hypothesis, and it is only that.** Paraprofessional positions may be budgeted in the
+general fund while being paid, in whole or part, by state or federal grants. When such a
+grant ends the same people appear as a general-fund increase, and a budget series reads
+that as growth when nothing about the staffing changed. The district's budget documents do
+not show grant funding at all, so the two cases look identical from here.
+
+If that is happening, some part of the 12.78% measured across 10 budgets is money moving
+between funding sources rather than a district employing more people, and the rate is too
+high.
+
+**What the timing does and does not support.** Federal pandemic money ran out during FY25.
+The aide line rose 16.7% in FY25 and then *fell* 1.8% in FY26, and its steepest year is
+FY27 — a year after the cliff. So the simplest version of this, a single federal
+grant ending and its positions landing on the general fund, does not fit the shape. State
+grants have their own timing and we cannot see any of them, so this is weak evidence and
+not a refutation.
+
+**What would settle it.** DESE's End of Year Financial Report separates district spending
+by funding source, which is exactly the mapping the district's own budget documents omit.
+The district's grant budgets would do it too. Neither is in this archive; both are
+recorded in `notes/DATA-WANTED.md`.
+
+**Until then, the rate stands as what it is: what the town has appropriated for this line,
+measured over ten of its own budgets.** That is the right quantity for a model that
+projects appropriations, which is what this one does. It is not a claim about how many
+aides the district employs, and this page should never be read as making one.
+
 ### Special education teachers, tested the same way
 
 The largest part of the line — 54% of it — and the last one still priced from a

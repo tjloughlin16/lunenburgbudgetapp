@@ -183,6 +183,48 @@ does not cross zero:
 original $761,249 sits inside that range at the top of it. What cannot be said is which
 end is right, and the $470,265 of it that turns on the expense total is unresolved.
 
+### The town has its own number for this, and it is $603,885.97
+
+None of the arithmetic above was necessary to establish that FY25 came in under. The
+district said so itself, in public, and the figure is in its own minutes.
+
+**School Committee, 3 September 2025.** The Chair read a statement about a memo from the
+Superintendent to himself, the Town Manager and the Chair of the Finance Committee
+"regarding a budget surplus that was recently discovered in the amount of **$582,115.44**",
+and described "the unhappy discovery of this surplus".
+
+**School Committee, 17 September 2025.** "the surplus number has gone up to
+**$603,885.97**, the change is due to closing out purchase orders from FY25."
+
+The minutes record what that meant in the room: a member describing "an unknown surplus of
+money that was not spent and instead was given back to the town", another that "we had
+drastic reductions in services to students. We really could have used those funds to keep
+some of the positions."
+
+**$603,885.97 sits inside the range this analysis derived** — $290,984 to $793,130 — and
+nearer the top of it. It is also the better figure to quote, for a reason that has nothing
+to do with arithmetic: it is the town's own, arrived at by closing the books rather than
+by subtracting two columns, and it is what the people who voted the budget were told.
+
+**What this project should say about FY25 is that figure.** Not $761,249, which is one
+subtraction among several, and not a range, which invites an argument the town has already
+settled.
+
+### One thing named in those minutes that we cannot check
+
+The 17 September minutes list, among the issues discovered, "**double booking of the para
+salaries**". That phrase appears once in 1,383 meeting documents and is never explained,
+and it points at the exact line the in-district special education rate is built on.
+
+So it was tested. **It cannot move that rate.** The aide escalator is a compound rate
+anchored on FY18 and FY27, and FY25 is an interior point: dropping FY25 entirely leaves
+the rate at 12.78%, and so does assuming FY25 was overstated by 15%. The straight-line fit
+moves from R² 0.89 to 0.85. The rate is what it was.
+
+**What we cannot say** is what was double-booked, in which year, or by how much. The
+phrase is evidence that the district found something and said so. It is not a quantity,
+and it is not treated as one here.
+
 ### What this does not affect
 
 **Nothing the app computes.** Every projection starts from the FY27 adopted column, and

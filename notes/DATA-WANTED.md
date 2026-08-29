@@ -74,6 +74,34 @@ Everything we hold for FY26 stops at **31 March 2026**. Four specific numbers:
 - **Note:** she said in the 11 August memo that she hopes to report quarterly. The Q4 or
   year-end packet may simply exist by now.
 
+### 3b. How grants and state funding map onto the budget lines
+
+**Now tied with item 4 as the highest-value question here, and it is the same question
+from the other side.**
+
+The district's budget documents show general-fund appropriations and nothing else. They do
+not show which positions are wholly or partly paid by state or federal grants. So a line
+can rise because the district employs more people, or because a grant that was paying for
+those people ended and the cost landed on the town — and the two are indistinguishable in
+everything published.
+
+This bears directly on a number now on the site: the in-district special education
+escalator is built on a paraprofessional line measured at 12.78% a year across ten
+budgets. If part of that is grant money unwinding rather than staffing growing, the rate
+is too high.
+
+- **Ask:** Business Manager, or DESE directly
+- **Wording:** *"For FY18 to FY27, what share of special education paraprofessional costs
+  was funded by grants rather than the general fund appropriation?"*
+- **Or, without asking anyone:** DESE's **End of Year Financial Report** separates district
+  spending by funding source. It is public. It is also on mass.gov, which returns 403 to
+  anything automated — see Tier 2.
+- **Settles:** whether the paraprofessional trend is staffing or accounting.
+- **Does not settle:** how many aides there are. That is item 4, and the two together are
+  what this line actually needs.
+
+---
+
 ### 4. Were the budgeted paraprofessional positions filled?
 
 **Now the highest-value question in this file.** Since 28 August the whole in-district

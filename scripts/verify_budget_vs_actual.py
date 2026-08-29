@@ -113,6 +113,13 @@ present('highest', money(HI))
 present('under by at least', money(LO - ACT))
 present('under by at most', money(HI - ACT))
 
+# The town's own figure, from its own minutes. Checked so it cannot drift, and because
+# it is the number this project should quote for FY25.
+print('\nThe surplus, as the district stated it')
+present('as first reported, 3 September 2025', '$582,115.44')
+present('as revised, 17 September 2025', '$603,885.97')
+present('inside the derived range', money(LO - ACT))
+
 print('\nFigures the document must NOT still contain')
 for r in ['13% a year while the rest of the budget grew 3.4%',
           'roughly three-quarters of a million']:

@@ -142,6 +142,36 @@ Verify a deploy by hashing a document from production against the archive.
 
 ---
 
+## 11. A budget line is one funding stream in, and dollars per line out
+
+The hardest thing about this data is that **you cannot see all the inputs or all the
+outputs**, and a budget line looks exactly the same either way.
+
+**On the way in**, the district's budget documents show the general fund appropriation and
+nothing else. Grants, circuit breaker reimbursement, school choice, revolving funds and
+gifts pay for real staff and real programs and appear nowhere in them. So a line that rises
+may mean the district employs more people, or may mean a grant that was paying for those
+people ended and the cost landed on the town. Those are different facts about the world and
+identical facts on the page.
+
+**On the way out**, a budget shows dollars against a line and never people, children or
+services. That is rule 7's territory and it is the same problem pointed the other way.
+
+Both are why this project measures **appropriations** and says so. That is a real quantity,
+it is what residents vote on, and it is what the model projects. It is not a measure of
+staffing, of caseload, or of what the schools cost all in.
+
+- Never let "the line went up" become "the district hired people". Write the first.
+- When a rate rests on a line, ask what else could be paying for that line, and say so
+  next to the rate if you cannot rule it out.
+- Name what would settle it. For funding sources that is usually DESE's End of Year
+  Financial Report, which separates spending by fund; for people it is a headcount nobody
+  publishes.
+- The archive holding 245 documents does not fix this. Lunenburg publishes a great deal
+  and still does not publish the mapping between the two.
+
+---
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
@@ -166,3 +196,8 @@ Some numbers would settle more than any further analysis. They are not published
   from a more honest estimate.
 - The FY26 **year-end** figures. Everything we hold for FY26 stops at 31 March.
 - Whether budgeted positions were **filled**. A budget line is an intention.
+- **How grants and state funding map onto the budget lines.** The budget shows the general
+  fund and nothing else, so a line rising because a grant ended looks exactly like a line
+  rising because the district grew. This one is load-bearing: the in-district special
+  education escalator is built on a paraprofessional line, and it cannot currently be
+  distinguished from grant money unwinding.
