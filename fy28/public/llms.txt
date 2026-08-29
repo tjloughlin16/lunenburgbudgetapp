@@ -24,6 +24,14 @@ They differ by up to 59% on some lines. A growth rate measured from an actual to
 
 Only the special education rate is ours. The rest are the district’s own stated assumptions, a signed contract, or statute. `model.json` → `citations` says which is which for every headline figure.
 
+## About the crawler
+
+Documents here were fetched by a crawler identifying itself as `Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; +https://lunenburgbudgetproject.org)`. It requests one file at a time with a pause between requests, backs off on failure, and takes only documents already linked from a public page.
+
+It exists because published documents stop being published. On 29 August 2026, 57 of the 184 source addresses this archive records had stopped opening to the public — every one of them a Google Drive or Docs link, while the town’s own web server answered 81 of 81. Among them was the FY27 proposed budget document, which is where this project’s central figure comes from.
+
+If you administer one of these sites and would rather this stopped, or would rather it fetched differently, the contact details are on the site. Nothing here is taken from behind a login, and every file is republished with a sha256 so it can be checked against yours.
+
 ## Data
 
 - [sped-lines.csv](https://lunenburgbudgetproject.org/data/sped-lines.csv) (0.0MB): Every budget line this project counts as special education, and which of the two rules caught it. They sum to the amount the projection starts from. Published because the state has no account code for special education, so the total is our classification rather than a figure anybody published.

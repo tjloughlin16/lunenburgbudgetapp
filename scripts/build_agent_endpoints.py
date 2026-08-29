@@ -189,7 +189,27 @@ def main():
         '',
         ours_note(a),
         '',
+        '## About the crawler',
+        '',
+        'Documents here were fetched by a crawler identifying itself as '
+        '`Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; '
+        '+https://lunenburgbudgetproject.org)`. It requests one file at a time with a '
+        'pause between requests, backs off on failure, and takes only documents already '
+        'linked from a public page.',
+        '',
+        'It exists because published documents stop being published. On 29 August 2026, '
+        '57 of the 184 source addresses this archive records had stopped opening to the '
+        'public \u2014 every one of them a Google Drive or Docs link, while the town\u2019s '
+        'own web server answered 81 of 81. Among them was the FY27 proposed budget '
+        'document, which is where this project\u2019s central figure comes from.',
+        '',
+        'If you administer one of these sites and would rather this stopped, or would '
+        'rather it fetched differently, the contact details are on the site. Nothing here '
+        'is taken from behind a login, and every file is republished with a sha256 so it '
+        'can be checked against yours.',
+        '',
         '## Data',
+
         '',
     ]
     for name, what, size in published:

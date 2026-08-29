@@ -21,8 +21,11 @@ import os, sys, csv, json, subprocess, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INDEX = os.path.join(ROOT, 'fy28/src/data/sources.json')
 OUT = os.path.join(ROOT, 'sources/data/link-status.csv')
-UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
-      '(KHTML, like Gecko) Chrome/126 Safari/537.36')
+# Same identity as the crawlers. Checking whether a link is public is a request like any
+# other, and a checker that disguises itself as a browser would be measuring what a
+# disguised request gets rather than what a resident gets.
+UA = ('Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; '
+      '+https://lunenburgbudgetproject.org)')
 
 
 def status(url):

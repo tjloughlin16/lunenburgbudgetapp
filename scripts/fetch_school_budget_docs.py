@@ -38,7 +38,17 @@ OUT = os.path.join(ROOT, 'sources', 'district-budget-page')
 DOCS = os.path.join(OUT, 'docs')
 TEXT = os.path.join(OUT, 'text')
 MANIFEST = os.path.join(OUT, 'index.csv')
-UA = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) lunenburgbudgets/1.0'}
+# Who this is, in a form somebody can look up.
+#
+# A crawler that will not say what it is gives an administrator seeing a burst of requests
+# nothing to do but block it. Naming the site means the request is attributable, the
+# +URL leads to a page explaining what the project is, and anybody who wants it to stop
+# has an obvious way to ask.
+#
+# It is also the honest form. This is not a browser and should not claim to be one; the
+# "Mozilla/5.0 (compatible; ...)" prefix is the convention every well-behaved crawler
+# uses, and the rest of it is true.
+UA = {'User-Agent': ('Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; +https://lunenburgbudgetproject.org)')}
 
 EXT = {b'%PDF': '.pdf', b'PK\x03\x04': '.zip'}   # zip refined later by its own contents
 
