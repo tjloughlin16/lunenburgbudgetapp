@@ -24,7 +24,8 @@ type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
   textUrl?: string; offsite?: boolean; byRequest?: boolean
-  upstream?: string; alsoUsed?: string; heldOnly?: boolean
+  upstream?: string; upstreamRestricted?: boolean
+  alsoUsed?: string; heldOnly?: boolean
 }
 type Group = { id: string; section?: string; title: string; blurb: string
                origin: string; items: Item[] }
@@ -111,10 +112,25 @@ function Row({ it }: { it: Item }) {
           <a href={it.textUrl} download className="underline"
             style={{ color: 'var(--text-secondary)' }}>extracted text</a>
         </>)}
+        {/* The publisher's address is kept even where it no longer opens to the public --
+            somebody inside the district can still use it, and removing it would hide that
+            the document was published rather than obtained. What changes is what the link
+            promises: an unmarked link to a sign-in wall reads as though this project is
+            citing something it cannot show, which is the opposite of true. */}
         {it.upstream && (<>
           <span aria-hidden="true">&middot;</span>
-          <a href={it.upstream} target="_blank" rel="noopener noreferrer" className="underline"
-            style={{ color: 'var(--text-secondary)' }}>the district&rsquo;s original</a>
+          {it.upstreamRestricted ? (
+            <span style={{ color: 'var(--text-muted)' }}>
+              <a href={it.upstream} target="_blank" rel="noopener noreferrer"
+                className="underline" style={{ color: 'var(--text-muted)' }}>
+                the publisher&rsquo;s copy</a>{' '}
+              needs sign-in as of 29 Aug 2026 &mdash; ours is the open one
+            </span>
+          ) : (
+            <a href={it.upstream} target="_blank" rel="noopener noreferrer"
+              className="underline"
+              style={{ color: 'var(--text-secondary)' }}>the publisher&rsquo;s original</a>
+          )}
         </>)}
         <span aria-hidden="true">&middot;</span>
         <code style={{ color: 'var(--text-muted)' }}>sources/{it.path}</code>

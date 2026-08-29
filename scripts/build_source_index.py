@@ -395,6 +395,14 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/link-status.csv',
+             'Whether each source document is still public', 2,
+             'For every archived document that records where its publisher put it, '
+             'whether that address still opens \u2014 checked 29 August 2026. It mostly '
+             'does not: 57 of 184 returned a Google sign-in wall, every one of them a '
+             'Drive or Docs link, while the town\u2019s own web server answered 81 of 81. '
+             'This is the archive\u2019s reason for existing, measured. Rebuild with '
+             'scripts/check_source_links.py.'),
             ('data/line-history.csv',
              'Every budget line, budget and actual, year by year', 3,
              '19,453 readings from 24 of the district\u2019s budget documents, normalised '
@@ -512,6 +520,30 @@ def publish(rel):
 
 
 
+
+# Whether the publisher's own copy still opens.
+#
+# Checked by scripts/check_source_links.py and read here rather than tested during the
+# build -- one request per document is slow and the answer does not change hourly.
+#
+# It changes what a link on the sources page MEANS. On 29 August 2026, 57 of 184 upstream
+# links returned a Google sign-in wall, including the FY27 proposed budget document that
+# the site's central figure comes from. A link that opens a login screen reads to a
+# resident as though this project is citing something it cannot show. So a restricted
+# document keeps its address, for anyone who has access, and is marked: our copy is the
+# public one.
+def link_status():
+    path = os.path.join(SRC, 'data/link-status.csv')
+    if not os.path.exists(path):
+        return {}
+    with open(path, newline='') as fh:
+        return {r['path']: (r['public'] == '1', r['code'], r['checked'])
+                for r in csv.DictReader(fh)}
+
+
+LINKS = None            # populated once in main(); see link_status()
+
+
 def sha(path):
     """A file's sha256. The archive's unit of identity: two files with the same hash are
     the same document however they were named or wherever they were found."""
@@ -584,6 +616,8 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
                 'url': ('' if oversize else '/docs/' + rel),
                 **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
                 'upstream': r['upstream'],
+                **({'upstreamRestricted': True}
+                   if (LINKS or {}).get(rel, (True,))[0] is False else {}),
                 **({'alsoUsed': used} if used else {}),
                 **({'heldOnly': True} if oversize else {}),
             })
@@ -630,6 +664,8 @@ def district_page_group(catalogued_hashes):
                 'url': '/docs/' + rel,
                 **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
                 'upstream': r['upstream'],
+                **({'upstreamRestricted': True}
+                   if (LINKS or {}).get(rel, (True,))[0] is False else {}),
                 **({'alsoUsed': used} if used else {}),
             })
     items.sort(key=lambda i: (-i['stars'], i['title']))
@@ -683,6 +719,8 @@ def build_corpus():
 def main():
     catalogued, groups, missing = set(), [], []
 
+    global LINKS
+    LINKS = link_status()
     known_upstream = upstream_by_hash()
 
     for g in GROUPS:
@@ -706,10 +744,12 @@ def main():
 
             by_request = any(rel.startswith(pfx) for pfx in BY_REQUEST)
             link = known_upstream.get(sha(path))
+            st = LINKS.get(rel)
             items.append({
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
                 **({'byRequest': True} if by_request else {}),
                 **({'upstream': link} if link else {}),
+                **({'upstreamRestricted': True} if st and not st[0] else {}),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': served,
                 'url': elsewhere or ('/docs/' + rel),
@@ -783,6 +823,7 @@ def main():
     by_request_count = sum(1 for i in all_items if i.get('byRequest'))
     # Stated rather than left to be noticed: the documents every figure rests on are the
     # ones least able to be traced back, which is the wrong way round.
+    restricted = sum(1 for i in all_items if i.get('upstreamRestricted'))
     linked = sum(1 for g in groups if g['section'] == 'theirs'
                  for i in g['items'] if i.get('upstream'))
     ref_items = [i for g in groups if g['section'] == 'reference' for i in g['items']]
@@ -824,7 +865,11 @@ def main():
         'note': f'Every document this analysis is built on. Nothing here is private or paid '
                 f'for. {by_request_count} came from the Town by records request and are '
                 f'marked; the rest were published by the district, the town, the state or a '
-                f'neighboring district, and can be found again at the links above. Where a '
+                f'neighboring district. {restricted} of them are no longer open at the '
+                f'address their publisher used \u2014 checked 29 August 2026, and all but a '
+                f'handful were Google Drive links that now ask for a sign-in. Our copies '
+                f'stay open, and every row carries a sha256 so anyone who still has access '
+                f'can check them against the originals. Where a '
                 f'document was unreadable, or says something inconvenient, it is listed '
                 f'anyway.',
     }

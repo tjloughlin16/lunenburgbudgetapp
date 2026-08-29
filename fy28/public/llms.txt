@@ -32,18 +32,18 @@ Only the special education rate is ours. The rest are the district’s own state
 - [sped-transport-history.csv](https://lunenburgbudgetproject.org/data/sped-transport-history.csv) (0.0MB): Special education transportation as budgeted, FY19 to FY27. Nine budgets, 5.7% a year, R-squared 0.33 — a weak trend, used because the vendor contract publishes no escalator.
 - [ood-tuition-history.csv](https://lunenburgbudgetproject.org/data/ood-tuition-history.csv) (0.0MB): Out-of-district special education tuition as budgeted, FY17 to FY27, extracted from the district’s own budget documents with the budget stage held constant. Eleven budgets ranging 2.6x with no trend — which is why the model holds this line flat rather than escalating it.
 - [model.json](https://lunenburgbudgetproject.org/data/model.json) (0.2MB): Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.
-- [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.1MB): The document archive: every source, its group, its size, and the URL it is served from.
+- [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.2MB): The document archive: every source, its group, its size, and the URL it is served from.
 - [budget-lines.csv](https://lunenburgbudgetproject.org/data/budget-lines.csv) (0.1MB): The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.
 - [district-page-index.csv](https://lunenburgbudgetproject.org/data/district-page-index.csv) (0.0MB): The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district’s original URL, and a sha256.
 - [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) (0.2MB): Every agenda and set of minutes the town publishes: board, date, kind, and the town’s own URL. 1,422 rows.
 
 ## Documents
 
-244 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+245 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
 - **Published by the town, the district and the state** — 58 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 170 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 16 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 17 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 

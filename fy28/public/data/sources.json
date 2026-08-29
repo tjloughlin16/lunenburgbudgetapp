@@ -73,6 +73,7 @@
      "stars": 3,
      "what": "The printed line-item budget: FY26 final against the Restoration, Core and Balanced scenarios. 351 line items.",
      "upstream": "https://drive.google.com/file/d/1wlHAD2YJ1gJ7zQ_F_1n3PiPecEytQdaM/view",
+     "upstreamRestricted": true,
      "kind": "PDF",
      "bytes": 363122,
      "url": "/docs/pdf/fy27-final-budget-doc.pdf",
@@ -99,6 +100,7 @@
      "stars": 3,
      "what": "The $453,722 of positions added back at the September 2026 Special Town Meeting, with the district’s reasoning for each.",
      "upstream": "https://drive.google.com/file/d/1siNOaM58z3fUYGOK2F5OWiEzl9wgBfNM/view?usp=drive_link",
+     "upstreamRestricted": true,
      "kind": "PDF",
      "bytes": 131840,
      "url": "/docs/pdf/town-additional-revenue-plan.pdf",
@@ -134,6 +136,7 @@
      "stars": 1,
      "what": "Also image-only, and also unreadable without optical character recognition.",
      "upstream": "https://drive.google.com/file/d/13ofJRpTJWaJ7lZN1ZLjXk8TkhiPt10aZ/view",
+     "upstreamRestricted": true,
      "kind": "PDF",
      "bytes": 2490257,
      "url": "/docs/pdf/fy27-sc-slidedeck-3-23-26.pdf",
@@ -793,6 +796,7 @@
      "stars": 3,
      "what": "Cost and participation for all 25 sports. The basis for every fee calculation on this site.",
      "upstream": "https://drive.google.com/file/d/1KNp5CK-CELcwLjPDQPpgk1aagkSHC-Du/view?usp=drive_link",
+     "upstreamRestricted": true,
      "kind": "PDF",
      "bytes": 54143,
      "url": "/docs/pdf/athletic-program-costs-by-sport.pdf",
@@ -1020,6 +1024,18 @@
      "textUrl": "/docs/data/total-expenses-history.csv"
     },
     {
+     "path": "data/link-status.csv",
+     "title": "Whether each source document is still public",
+     "stars": 2,
+     "what": "For every archived document that records where its publisher put it, whether that address still opens — checked 29 August 2026. It mostly does not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. This is the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
+     "kind": "Data",
+     "bytes": 30494,
+     "url": "/docs/data/link-status.csv",
+     "count": 185,
+     "unit": "rows",
+     "textUrl": "/docs/data/link-status.csv"
+    },
+    {
      "path": "MANIFEST.md",
      "title": "Source manifest",
      "stars": 2,
@@ -1074,6 +1090,7 @@
      "url": "/docs/district-budget-page/docs/additional-town-revenue-spending-plan.pdf",
      "textUrl": "/docs/district-budget-page/text/additional-town-revenue-spending-plan.txt",
      "upstream": "https://drive.google.com/file/d/1siNOaM58z3fUYGOK2F5OWiEzl9wgBfNM/view?usp=drive_link",
+     "upstreamRestricted": true,
      "alsoUsed": "pdf/town-additional-revenue-plan.pdf"
     },
     {
@@ -1086,6 +1103,7 @@
      "url": "/docs/district-budget-page/docs/athletic-program-costs-by-sport.pdf",
      "textUrl": "/docs/district-budget-page/text/athletic-program-costs-by-sport.txt",
      "upstream": "https://drive.google.com/file/d/1KNp5CK-CELcwLjPDQPpgk1aagkSHC-Du/view?usp=drive_link",
+     "upstreamRestricted": true,
      "alsoUsed": "pdf/athletic-program-costs-by-sport.pdf"
     },
     {
@@ -1146,6 +1164,7 @@
      "url": "/docs/district-budget-page/docs/final-budget-document.pdf",
      "textUrl": "/docs/district-budget-page/text/final-budget-document.txt",
      "upstream": "https://drive.google.com/file/d/1wlHAD2YJ1gJ7zQ_F_1n3PiPecEytQdaM/view",
+     "upstreamRestricted": true,
      "alsoUsed": "pdf/fy27-final-budget-doc.pdf"
     },
     {
@@ -1158,6 +1177,7 @@
      "url": "/docs/district-budget-page/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf",
      "textUrl": "/docs/district-budget-page/text/slide-deck-from-the-sc-meeting-3-23-26.txt",
      "upstream": "https://drive.google.com/file/d/13ofJRpTJWaJ7lZN1ZLjXk8TkhiPt10aZ/view",
+     "upstreamRestricted": true,
      "alsoUsed": "pdf/fy27-sc-slidedeck-3-23-26.pdf"
     },
     {
@@ -1169,7 +1189,8 @@
      "bytes": 244571,
      "url": "/docs/district-budget-page/docs/3-12-25-town-manager-39-s-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/3-12-25-town-manager-39-s-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1-VhsxRDJaU2Hq_NWkbDBWy4Gxy6zq8hu/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1-VhsxRDJaU2Hq_NWkbDBWy4Gxy6zq8hu/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/budget-hearing-fy20-proposed-lps-budget.pdf",
@@ -1191,7 +1212,8 @@
      "bytes": 533197,
      "url": "/docs/district-budget-page/docs/budget-hearing-fy22-superintendent-39-s-recommended-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/budget-hearing-fy22-superintendent-39-s-recommended-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1qXW14jN62_E__OK2V2B5rI7_bgsi91z-/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1qXW14jN62_E__OK2V2B5rI7_bgsi91z-/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/budget-hearing-superintendent-fy22-recommended-budget.pdf",
@@ -1202,7 +1224,8 @@
      "bytes": 4492143,
      "url": "/docs/district-budget-page/docs/budget-hearing-superintendent-fy22-recommended-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/budget-hearing-superintendent-fy22-recommended-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1LuW8loCIeY7VcHgj5NDh8gfY_mpSm4jR/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1LuW8loCIeY7VcHgj5NDh8gfY_mpSm4jR/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/budget-message-for-families-2-27-26.pdf",
@@ -1213,7 +1236,8 @@
      "bytes": 229823,
      "url": "/docs/district-budget-page/docs/budget-message-for-families-2-27-26.pdf",
      "textUrl": "/docs/district-budget-page/text/budget-message-for-families-2-27-26.txt",
-     "upstream": "https://drive.google.com/file/d/1629406huLmh7uEw-owRL-9bu2KEdFwLt/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1629406huLmh7uEw-owRL-9bu2KEdFwLt/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/community-forums-scheduled-on-school-department-budget.docx",
@@ -1224,7 +1248,8 @@
      "bytes": 195290,
      "url": "/docs/district-budget-page/docs/community-forums-scheduled-on-school-department-budget.docx",
      "textUrl": "/docs/district-budget-page/text/community-forums-scheduled-on-school-department-budget.txt",
-     "upstream": "https://docs.google.com/document/d/1NrKTOrbVYEEt5tb_WGS3caDkM42oX8ik93RWg26fakE/edit?usp=sharing"
+     "upstream": "https://docs.google.com/document/d/1NrKTOrbVYEEt5tb_WGS3caDkM42oX8ik93RWg26fakE/edit?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/faq-fy25-budget.pdf",
@@ -1235,7 +1260,8 @@
      "bytes": 94576,
      "url": "/docs/district-budget-page/docs/faq-fy25-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/faq-fy25-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1MAq26ixldhSnZ9i6Bh7rjPLUmQBRDDTD/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1MAq26ixldhSnZ9i6Bh7rjPLUmQBRDDTD/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/final-fy26-town-manager-39-s-target-budget-approved-3-12-25.pdf",
@@ -1246,7 +1272,8 @@
      "bytes": 597719,
      "url": "/docs/district-budget-page/docs/final-fy26-town-manager-39-s-target-budget-approved-3-12-25.pdf",
      "textUrl": "/docs/district-budget-page/text/final-fy26-town-manager-39-s-target-budget-approved-3-12-25.txt",
-     "upstream": "https://drive.google.com/file/d/1oMrWV7-_K-EYq8ZYxAmoBmU2mSM1XQOJ/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1oMrWV7-_K-EYq8ZYxAmoBmU2mSM1XQOJ/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/frequently-asked-questions-november-town-meeting.pdf",
@@ -1257,7 +1284,8 @@
      "bytes": 572848,
      "url": "/docs/district-budget-page/docs/frequently-asked-questions-november-town-meeting.pdf",
      "textUrl": "/docs/district-budget-page/text/frequently-asked-questions-november-town-meeting.txt",
-     "upstream": "https://drive.google.com/file/d/1ntDb3MeOIRRLosIF1GqdNMJz6wB5sB68/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1ntDb3MeOIRRLosIF1GqdNMJz6wB5sB68/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy-24-budget-update.pdf",
@@ -1268,7 +1296,8 @@
      "bytes": 742753,
      "url": "/docs/district-budget-page/docs/fy-24-budget-update.pdf",
      "textUrl": "/docs/district-budget-page/text/fy-24-budget-update.txt",
-     "upstream": "https://drive.google.com/file/d/1NVY9BY9c_Q0R9uw1w2_S0pUrlHcr8nQJ/view?usp=share_link"
+     "upstream": "https://drive.google.com/file/d/1NVY9BY9c_Q0R9uw1w2_S0pUrlHcr8nQJ/view?usp=share_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy18-non-personnel-supt-recommended-budget-revised-6-6-17.pdf",
@@ -1499,7 +1528,8 @@
      "bytes": 638940,
      "url": "/docs/district-budget-page/docs/fy21-approved-school-budget-6-13-20.pdf",
      "textUrl": "/docs/district-budget-page/text/fy21-approved-school-budget-6-13-20.txt",
-     "upstream": "https://drive.google.com/file/d/1PWvp7zV7GQZOgyHGUbtCOBkYqfjvgGL2/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1PWvp7zV7GQZOgyHGUbtCOBkYqfjvgGL2/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy21-proposed-budget-april-29-2020.pdf",
@@ -1510,7 +1540,8 @@
      "bytes": 639790,
      "url": "/docs/district-budget-page/docs/fy21-proposed-budget-april-29-2020.pdf",
      "textUrl": "/docs/district-budget-page/text/fy21-proposed-budget-april-29-2020.txt",
-     "upstream": "https://drive.google.com/file/d/1tDxM8D2oQ7BuKt5gGiBzxOQkVJl4Xv_g/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1tDxM8D2oQ7BuKt5gGiBzxOQkVJl4Xv_g/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy21-recommended-budget-presentation-4-22-20.pdf",
@@ -1521,7 +1552,8 @@
      "bytes": 1673623,
      "url": "/docs/district-budget-page/docs/fy21-recommended-budget-presentation-4-22-20.pdf",
      "textUrl": "/docs/district-budget-page/text/fy21-recommended-budget-presentation-4-22-20.txt",
-     "upstream": "https://drive.google.com/file/d/10nNbD6OYmngwxKH-pk-6k2Ukg3dDQeAs/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/10nNbD6OYmngwxKH-pk-6k2Ukg3dDQeAs/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy22-budget-schedule.pdf",
@@ -1532,7 +1564,8 @@
      "bytes": 413358,
      "url": "/docs/district-budget-page/docs/fy22-budget-schedule.pdf",
      "textUrl": "/docs/district-budget-page/text/fy22-budget-schedule.txt",
-     "upstream": "https://drive.google.com/file/d/1Glo6BCEQDJaeadnyyLUQ2kU3V4BTZfzI/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1Glo6BCEQDJaeadnyyLUQ2kU3V4BTZfzI/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy23-approved-budget.pdf",
@@ -1543,7 +1576,8 @@
      "bytes": 519281,
      "url": "/docs/district-budget-page/docs/fy23-approved-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/fy23-approved-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1yfaOxs0XQQXVYqzbNcUUW2VjRs3tuU1s/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1yfaOxs0XQQXVYqzbNcUUW2VjRs3tuU1s/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy23-quarterly-budget-update.pdf",
@@ -1554,7 +1588,8 @@
      "bytes": 566218,
      "url": "/docs/district-budget-page/docs/fy23-quarterly-budget-update.pdf",
      "textUrl": "/docs/district-budget-page/text/fy23-quarterly-budget-update.txt",
-     "upstream": "https://drive.google.com/file/d/1nPw70g2flOz0puiMHr6VF9uFKGXadx3V/view?usp=share_link"
+     "upstream": "https://drive.google.com/file/d/1nPw70g2flOz0puiMHr6VF9uFKGXadx3V/view?usp=share_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy23-superintendent-recommended-budget.pdf",
@@ -1565,7 +1600,8 @@
      "bytes": 632459,
      "url": "/docs/district-budget-page/docs/fy23-superintendent-recommended-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/fy23-superintendent-recommended-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1jfrcOR8NPIC2oGzaqljQfT1SWk5j-aiy/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1jfrcOR8NPIC2oGzaqljQfT1SWk5j-aiy/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy23-superintendent-recommended-budget-presentation.pdf",
@@ -1576,7 +1612,8 @@
      "bytes": 522547,
      "url": "/docs/district-budget-page/docs/fy23-superintendent-recommended-budget-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/fy23-superintendent-recommended-budget-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1at7iih46R1xhKWdkt4hCj7p_kYEHQiAf/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1at7iih46R1xhKWdkt4hCj7p_kYEHQiAf/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy24-approved-budget.pdf",
@@ -1587,7 +1624,8 @@
      "bytes": 635113,
      "url": "/docs/district-budget-page/docs/fy24-approved-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/fy24-approved-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1oa9cOCN1sII1tuN54HBQsSaRQLEztPU1/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1oa9cOCN1sII1tuN54HBQsSaRQLEztPU1/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy24-superintendent-39-s-recommended-budget-presentation.pdf",
@@ -1598,7 +1636,8 @@
      "bytes": 495271,
      "url": "/docs/district-budget-page/docs/fy24-superintendent-39-s-recommended-budget-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/fy24-superintendent-39-s-recommended-budget-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1fC_PanG7-TaLR84WdJpi1P1_ujSqEnvZ/view?usp=share_link"
+     "upstream": "https://drive.google.com/file/d/1fC_PanG7-TaLR84WdJpi1P1_ujSqEnvZ/view?usp=share_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy25-final-approved-budget-expenses-6-5-24.pdf",
@@ -1609,7 +1648,8 @@
      "bytes": 77601,
      "url": "/docs/district-budget-page/docs/fy25-final-approved-budget-expenses-6-5-24.pdf",
      "textUrl": "/docs/district-budget-page/text/fy25-final-approved-budget-expenses-6-5-24.txt",
-     "upstream": "https://drive.google.com/file/d/1wNnSwruB8KuJ4S3hlYucLSU4AXSViKYe/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1wNnSwruB8KuJ4S3hlYucLSU4AXSViKYe/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy25-final-approved-budget-salaries-6-5-24.pdf",
@@ -1620,7 +1660,8 @@
      "bytes": 45645,
      "url": "/docs/district-budget-page/docs/fy25-final-approved-budget-salaries-6-5-24.pdf",
      "textUrl": "/docs/district-budget-page/text/fy25-final-approved-budget-salaries-6-5-24.txt",
-     "upstream": "https://drive.google.com/file/d/1nOiywE7p55WfOFbfXnGRP1yxX52wuppG/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1nOiywE7p55WfOFbfXnGRP1yxX52wuppG/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy25-recommended-budget-5-52.pdf",
@@ -1631,7 +1672,8 @@
      "bytes": 11957356,
      "url": "/docs/district-budget-page/docs/fy25-recommended-budget-5-52.pdf",
      "textUrl": "/docs/district-budget-page/text/fy25-recommended-budget-5-52.txt",
-     "upstream": "https://drive.google.com/file/d/10jitFzL5x1sKBYeZswgFLgdsX4Wnj3Rz/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/10jitFzL5x1sKBYeZswgFLgdsX4Wnj3Rz/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy25-recommended-budget-update-with-needs-based-budget.pdf",
@@ -1642,7 +1684,8 @@
      "bytes": 169093,
      "url": "/docs/district-budget-page/docs/fy25-recommended-budget-update-with-needs-based-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/fy25-recommended-budget-update-with-needs-based-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1UhZyJd2AZhAQY4kzrZuSMAyEknZVWR9q/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1UhZyJd2AZhAQY4kzrZuSMAyEknZVWR9q/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf",
@@ -1653,7 +1696,8 @@
      "bytes": 798650,
      "url": "/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf",
      "textUrl": "/docs/district-budget-page/text/fy25-superintendent-39-s-budget-update.txt",
-     "upstream": "https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-level-service-budget-presentation.pdf",
@@ -1664,7 +1708,8 @@
      "bytes": 311904,
      "url": "/docs/district-budget-page/docs/fy26-level-service-budget-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-level-service-budget-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1hJagPg9F_zZJ813J5IiiXnkBnsAxswl6/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1hJagPg9F_zZJ813J5IiiXnkBnsAxswl6/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-school-department-budget-fincomm.pdf",
@@ -1675,7 +1720,8 @@
      "bytes": 726805,
      "url": "/docs/district-budget-page/docs/fy26-school-department-budget-fincomm.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-school-department-budget-fincomm.txt",
-     "upstream": "https://drive.google.com/file/d/10559_Enqo5Aps8Th04CpWu--1d9VC5It/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/10559_Enqo5Aps8Th04CpWu--1d9VC5It/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-school-dept-approved-budget-3-12-25.pdf",
@@ -1686,7 +1732,8 @@
      "bytes": 107706,
      "url": "/docs/district-budget-page/docs/fy26-school-dept-approved-budget-3-12-25.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-school-dept-approved-budget-3-12-25.txt",
-     "upstream": "https://drive.google.com/file/d/1ivO3-ZAKXtu0VEJuI7qDv8xEagit_jRq/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1ivO3-ZAKXtu0VEJuI7qDv8xEagit_jRq/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.pdf",
@@ -1697,7 +1744,8 @@
      "bytes": 178173,
      "url": "/docs/district-budget-page/docs/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.txt",
-     "upstream": "https://drive.google.com/file/d/14AXiUuLT-jLkmR7YxlzWwjVBzsxK8i_h/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/14AXiUuLT-jLkmR7YxlzWwjVBzsxK8i_h/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.pdf",
@@ -1708,7 +1756,8 @@
      "bytes": 178173,
      "url": "/docs/district-budget-page/docs/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.txt",
-     "upstream": "https://drive.google.com/file/d/1sqlWrNsH43AE8JqAAnqNPpOt1mi3gCDU/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1sqlWrNsH43AE8JqAAnqNPpOt1mi3gCDU/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-superintendent-39-s-proposed-budget-presentation-1-22-25.pdf",
@@ -1719,7 +1768,8 @@
      "bytes": 836679,
      "url": "/docs/district-budget-page/docs/fy26-superintendent-39-s-proposed-budget-presentation-1-22-25.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-superintendent-39-s-proposed-budget-presentation-1-22-25.txt",
-     "upstream": "https://drive.google.com/file/d/1NIFFAn6bpI5cKGdoQokdDhPQo3XyG8X4/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1NIFFAn6bpI5cKGdoQokdDhPQo3XyG8X4/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy26-town-manager-39-s-target-budget-2-5-25-presentation.pdf",
@@ -1730,7 +1780,8 @@
      "bytes": 217836,
      "url": "/docs/district-budget-page/docs/fy26-town-manager-39-s-target-budget-2-5-25-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/fy26-town-manager-39-s-target-budget-2-5-25-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1OK-Zvco1_7bAswJc2uejSOhYhh3sBcu2/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1OK-Zvco1_7bAswJc2uejSOhYhh3sBcu2/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy27-budget-presentation-to-finance-committee-2-26-26.pdf",
@@ -1741,7 +1792,8 @@
      "bytes": 3437575,
      "url": "/docs/district-budget-page/docs/fy27-budget-presentation-to-finance-committee-2-26-26.pdf",
      "textUrl": "/docs/district-budget-page/text/fy27-budget-presentation-to-finance-committee-2-26-26.txt",
-     "upstream": "https://drive.google.com/file/d/1pIqD4oqA7b7XyX0MmzUQbh69eHHpRKob/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1pIqD4oqA7b7XyX0MmzUQbh69eHHpRKob/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy27-budget-projections-as-of-2-16-26-with-restorations.pdf",
@@ -1752,7 +1804,8 @@
      "bytes": 306646,
      "url": "/docs/district-budget-page/docs/fy27-budget-projections-as-of-2-16-26-with-restorations.pdf",
      "textUrl": "/docs/district-budget-page/text/fy27-budget-projections-as-of-2-16-26-with-restorations.txt",
-     "upstream": "https://drive.google.com/file/d/1xuHmqyZwjzmPJhaBdhCa-w7Ztcl-SHjP/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1xuHmqyZwjzmPJhaBdhCa-w7Ztcl-SHjP/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/fy27-budget-projections-as-of-2-24-26-with-restorations.pdf",
@@ -1785,7 +1838,8 @@
      "bytes": 127529,
      "url": "/docs/district-budget-page/docs/final-fy25-budget-4-3-24.pdf",
      "textUrl": "/docs/district-budget-page/text/final-fy25-budget-4-3-24.txt",
-     "upstream": "https://drive.google.com/file/d/1zSAyQgXF8M99F-bgkgpG94rHF26-Y4IZ/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1zSAyQgXF8M99F-bgkgpG94rHF26-Y4IZ/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/final-fy26-sc-approved-budget-3-12-25-with-level-service-budget.pdf",
@@ -1796,7 +1850,8 @@
      "bytes": 671435,
      "url": "/docs/district-budget-page/docs/final-fy26-sc-approved-budget-3-12-25-with-level-service-budget.pdf",
      "textUrl": "/docs/district-budget-page/text/final-fy26-sc-approved-budget-3-12-25-with-level-service-budget.txt",
-     "upstream": "https://drive.google.com/file/d/1rJRsQvLZtRqw5-KHvQb4jlCuZCm_nj1e/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1rJRsQvLZtRqw5-KHvQb4jlCuZCm_nj1e/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/final-fy26-town-manager-39-s-target-budget.pdf",
@@ -1818,7 +1873,8 @@
      "bytes": 633231,
      "url": "/docs/district-budget-page/docs/free-cash-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/free-cash-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1rdtrb2Llu5ILfKDY-4pV3Haz0_BqgRwT/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1rdtrb2Llu5ILfKDY-4pV3Haz0_BqgRwT/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/lunenburg-school-committee-override-statement.pdf",
@@ -1829,7 +1885,8 @@
      "bytes": 1493674,
      "url": "/docs/district-budget-page/docs/lunenburg-school-committee-override-statement.pdf",
      "textUrl": "/docs/district-budget-page/text/lunenburg-school-committee-override-statement.txt",
-     "upstream": "https://drive.google.com/file/d/1pR-jBGbi7SFv2ZEdYRE1BTejU37PeqnK/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1pR-jBGbi7SFv2ZEdYRE1BTejU37PeqnK/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/notice-of-public-budget-hearing-2-25.pdf",
@@ -1851,7 +1908,8 @@
      "bytes": 6628,
      "url": "/docs/district-budget-page/docs/notice-of-budget-hearing-3-16-22.pdf",
      "textUrl": "/docs/district-budget-page/text/notice-of-budget-hearing-3-16-22.txt",
-     "upstream": "https://drive.google.com/file/d/16Fi9dvsxHJORgAqgsIBjchsQGD8_XKHR/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/16Fi9dvsxHJORgAqgsIBjchsQGD8_XKHR/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/notice-of-budget-hearing-april-29-2020.bin",
@@ -1861,7 +1919,8 @@
      "kind": "BIN",
      "bytes": 931490,
      "url": "/docs/district-budget-page/docs/notice-of-budget-hearing-april-29-2020.bin",
-     "upstream": "https://drive.google.com/file/d/10ks_7K772Qevdw6oEJeSQvQlMAD5k2uW/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/10ks_7K772Qevdw6oEJeSQvQlMAD5k2uW/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/notice-of-public-hearing-fy20-budget.pdf",
@@ -1883,7 +1942,8 @@
      "bytes": 111590,
      "url": "/docs/district-budget-page/docs/school-committee-approved-fy26-budget-personnel-cuts.pdf",
      "textUrl": "/docs/district-budget-page/text/school-committee-approved-fy26-budget-personnel-cuts.txt",
-     "upstream": "https://drive.google.com/file/d/1ncK3VLbUe0Cr7d92ePey7uDS3r8wQr37/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1ncK3VLbUe0Cr7d92ePey7uDS3r8wQr37/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/school-department-fy26-budget-overview.pdf",
@@ -1894,7 +1954,8 @@
      "bytes": 615467,
      "url": "/docs/district-budget-page/docs/school-department-fy26-budget-overview.pdf",
      "textUrl": "/docs/district-budget-page/text/school-department-fy26-budget-overview.txt",
-     "upstream": "https://drive.google.com/file/d/1XrQR-5AfKCXeg6Hhv_pGg9Wf38_jvzYq/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1XrQR-5AfKCXeg6Hhv_pGg9Wf38_jvzYq/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/summary-page-tm-target-budget-needs-based-level-service.pdf",
@@ -1916,7 +1977,8 @@
      "bytes": 1003682,
      "url": "/docs/district-budget-page/docs/superintendent-39-s-fy21-budget-identified-needs.pdf",
      "textUrl": "/docs/district-budget-page/text/superintendent-39-s-fy21-budget-identified-needs.txt",
-     "upstream": "https://drive.google.com/file/d/1gySzdcYy5vJO1BDTR2F3rHOXFMEbQqUc/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1gySzdcYy5vJO1BDTR2F3rHOXFMEbQqUc/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/superintendent-39-s-proposed-budget.docx",
@@ -1938,7 +2000,8 @@
      "bytes": 8226,
      "url": "/docs/district-budget-page/docs/superintendent-s-budget-recommendations.docx",
      "textUrl": "/docs/district-budget-page/text/superintendent-s-budget-recommendations.txt",
-     "upstream": "https://docs.google.com/document/d/1RsIjaplMSrIRN1mqLEmDZGgHdLbh_oEkGc0CIl-qO8w/edit?usp=sharing"
+     "upstream": "https://docs.google.com/document/d/1RsIjaplMSrIRN1mqLEmDZGgHdLbh_oEkGc0CIl-qO8w/edit?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/superintendent-s-proposed-fy21-budget-presentation.pdf",
@@ -1960,7 +2023,8 @@
      "bytes": 1436186,
      "url": "/docs/district-budget-page/docs/superintendent-s-recommended-fy20-budget-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/superintendent-s-recommended-fy20-budget-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1TzaN2O5zfqtpxcFNyWvg0Xq-oMpfxQm2/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1TzaN2O5zfqtpxcFNyWvg0Xq-oMpfxQm2/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/tm-budget-side-by-side-view.pdf",
@@ -1982,7 +2046,8 @@
      "bytes": 650518,
      "url": "/docs/district-budget-page/docs/tm-budget-updated-3-12-25.pdf",
      "textUrl": "/docs/district-budget-page/text/tm-budget-updated-3-12-25.txt",
-     "upstream": "https://drive.google.com/file/d/1gnnCgpWTL0HptwK1tG8EF1DoqYOeDSWf/view?usp=drive_link"
+     "upstream": "https://drive.google.com/file/d/1gnnCgpWTL0HptwK1tG8EF1DoqYOeDSWf/view?usp=drive_link",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/the-tale-of-our-ten-districts.pdf",
@@ -1993,7 +2058,8 @@
      "bytes": 2972031,
      "url": "/docs/district-budget-page/docs/the-tale-of-our-ten-districts.pdf",
      "textUrl": "/docs/district-budget-page/text/the-tale-of-our-ten-districts.txt",
-     "upstream": "https://drive.google.com/file/d/1gxlUL-yGdEjmSxcxIXplpjEu17UeI598/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1gxlUL-yGdEjmSxcxIXplpjEu17UeI598/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/town-meeting-budget-presentation.pdf",
@@ -2004,7 +2070,8 @@
      "bytes": 548492,
      "url": "/docs/district-budget-page/docs/town-meeting-budget-presentation.pdf",
      "textUrl": "/docs/district-budget-page/text/town-meeting-budget-presentation.txt",
-     "upstream": "https://drive.google.com/file/d/1ciEXB4jOhnQ4pIpMwHtQnKm0b-AeM9Ay/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1ciEXB4jOhnQ4pIpMwHtQnKm0b-AeM9Ay/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/town-meeting-fy20-budget-documents.pdf",
@@ -2015,7 +2082,8 @@
      "bytes": 9867652,
      "url": "/docs/district-budget-page/docs/town-meeting-fy20-budget-documents.pdf",
      "textUrl": "/docs/district-budget-page/text/town-meeting-fy20-budget-documents.txt",
-     "upstream": "https://drive.google.com/file/d/1CLVdMtkGvtvtHoNJPBL6YEulsEh4OhHO/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1CLVdMtkGvtvtHoNJPBL6YEulsEh4OhHO/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget-page/docs/updated-town-manager-39-s-budget-sheets-2-66-2-5-25.xlsx",
@@ -2026,7 +2094,8 @@
      "bytes": 25580,
      "url": "/docs/district-budget-page/docs/updated-town-manager-39-s-budget-sheets-2-66-2-5-25.xlsx",
      "textUrl": "/docs/district-budget-page/text/updated-town-manager-39-s-budget-sheets-2-66-2-5-25.txt",
-     "upstream": "https://docs.google.com/spreadsheets/d/1-51ZwN7Bb9qrnM3bPrMMdXveWfrxJq5c/edit?usp=drive_link&amp;ouid=115866774118931112779&amp;rtpof=true&amp;sd=true"
+     "upstream": "https://docs.google.com/spreadsheets/d/1-51ZwN7Bb9qrnM3bPrMMdXveWfrxJq5c/edit?usp=drive_link&amp;ouid=115866774118931112779&amp;rtpof=true&amp;sd=true",
+     "upstreamRestricted": true
     }
    ]
   },
@@ -3137,10 +3206,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 244,
+  "documents": 245,
   "groups": 14,
-  "bytes": 354530515,
+  "bytes": 354561009,
   "loadBearing": 31
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district, and can be found again at the links above. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
