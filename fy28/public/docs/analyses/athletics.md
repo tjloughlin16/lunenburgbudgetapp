@@ -576,6 +576,87 @@ prose around it.
 
 ---
 
+## 7. Both sides, every year we can see either one
+
+**In plain terms.** This is the whole picture in one place: what the town appropriated for
+athletics, and what the fee-funded revolving account paid, line by line, for every year
+either is visible. The blank stretch in the middle is the point — for four years nobody
+published the fund side at all.
+
+**The evidence.** Generated from `data/athletics-history.csv` by
+`scripts/extract_athletics_history.py`. The FY14–FY19 reconstruction is checked rather than
+asserted: the itemised rows are summed against the document's own stated column totals, and
+five of six years tie to the dollar on each side. The two that do not are the document's own
+rounding — FY16 general by $2, FY17 revolving by $1 — and the script fails if any year is
+off by more than that.
+
+**General fund appropriation**
+
+FY14–FY19 from the FY19 athletics document; FY20–FY25 actuals from `data/line-history.csv`; FY26 is the FY26 FINAL BUDGET column.
+
+| line | FY14 | FY15 | FY16 | FY17 | FY18 | FY19 | FY20 | FY21 | FY22 | FY23 | FY24 | FY25 | FY26 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Athletic Coaches | 114,636 | 130,661 | 120,646 | 130,020 | 163,146 | 150,636 | 91,601 | 139,492 | 145,991 | 100,351 | 46,733 | 155,614 | 159,444 |
+| Athletic Director | — | — | — | — | 48,000 | 49,440 | 90,000 | 91,800 | 103,752 | 85,977 | 90,200 | 96,044 | 74,406 |
+| Athletic Transportation | 17,000 | 21,600 | 23,000 | 23,000 | 33,500 | 24,975 | 38,795 | 45,000 | 48,755 | 39,880 | 40,000 | 87,822 | 127,550 |
+| Athletic Officials | 39,875 | 40,469 | 38,997 | 38,059 | 39,221 | 40,117 | 201 | 21,148 | 47,967 | — | — | — | — |
+| Athletic Trainer | — | — | — | — | — | — | — | — | — | 51,660 | 61,800 | 63,900 | 66,200 |
+| Athletic Dues & Fees | 9,519 | 9,759 | 9,751 | 10,782 | 12,499 | 12,529 | 22,290 | 20,623 | 20,789 | 22,251 | 18,486 | 31,995 | 20,000 |
+| Special Detail/Athletic Events | 444 | 5,559 | 139 | 1,592 | 5,900 | 5,344 | 9,773 | 5,000 | 5,897 | 3,705 | 5,807 | 72,864 | 7,100 |
+| Athletic Insurance | 5,990 | 5,990 | 5,990 | 5,990 | 5,990 | 5,990 | 5,990 | 5,990 | 8,980 | 8,980 | 8,980 | 8,980 | 9,000 |
+| Athletic Equipment/Reconditioning | 3,065 | 4,361 | 5,265 | 157 | 4,500 | 4,500 | 5,898 | 10,000 | 4,897 | 1,932 | 7,602 | 7,190 | 10,000 |
+| Athletic New Equipment | — | 1,440 | 5,456 | 5,151 | 5,850 | 6,400 | 4,498 | 5,850 | 5,188 | 5,648 | 5,673 | 9,055 | 6,000 |
+| Athletic Replacement of Uniforms | 3,787 | 4,960 | 1,669 | 7,944 | 7,872 | 8,000 | 10,560 | 7,872 | 1,690 | — | 10,698 | — | — |
+| Athletic Secretary | — | — | — | — | — | — | — | — | — | — | — | — | 20,407 |
+| Freshman & MS Coaches | — | — | — | — | — | — | — | — | — | — | 14,415 | — | — |
+| Freshman & Ms Coaches | — | — | — | — | — | — | — | — | — | — | — | — | 14,415 |
+| Athletic Expenses/Supplies | — | — | — | — | — | — | 11,243 | — | 834 | — | — | — | — |
+| Unified Sports Coach | — | — | — | — | — | — | 1,200 | 3,925 | 1,200 | — | 3,925 | — | — |
+| Unified Sports,Track/Basketball Coach | — | — | — | — | — | — | — | — | — | — | — | — | 3,812 |
+| **total** | **194,316** | **224,799** | **210,913** | **222,695** | **326,478** | **307,931** | **292,049** | **356,700** | **395,940** | **320,384** | **314,319** | **533,464** | **518,334** |
+
+**Chapter 658 revolving fund — where the fees go**
+
+**FY20–FY23 is blank because nothing was published, not because the fund paid nothing.** FY24 and FY25 carry only two lines, both from the unproven workbook of §6 — the fund certainly paid for more than officials and transportation in those years. FY26 is the fund’s own year-end reconciliation.
+
+| line | FY14 | FY15 | FY16 | FY17 | FY18 | FY19 | FY20 | FY21 | FY22 | FY23 | FY24 | FY25 | FY26 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Athletic Transportation | 30,085 | 40,742 | 33,308 | 50,986 | 27,450 | 40,000 | — | — | — | — | 77,555 | 3,244 | — |
+| Athletic Expenses/Supplies | 31,894 | 38,730 | 32,623 | 37,156 | 27,114 | 28,309 | — | — | — | — | — | — | — |
+| Athletic Coaches | 45,278 | 27,221 | 40,092 | 34,815 | — | — | — | — | — | — | — | — | — |
+| Purchase of service (officials, uniforms, transportation, ice time, dues) | — | — | — | — | — | — | — | — | — | — | — | — | 113,602 |
+| Athletic Officials | — | — | — | — | — | — | — | — | — | — | 51,570 | 50,696 | — |
+| Track and Field Payment | — | — | — | 25,000 | 40,000 | — | — | — | — | — | — | — | — |
+| Athletic Secretary | — | 5,245 | 7,796 | 8,594 | 5,437 | 5,593 | — | — | — | — | — | — | — |
+| Salaries (4 revolving-fund staff) | — | — | — | — | — | — | — | — | — | — | — | — | 30,514 |
+| Field upgrades / turf | — | — | — | — | — | 10,000 | — | — | — | — | — | — | — |
+| Athletic New Equipment | 890 | — | — | — | 3,000 | 4,000 | — | — | — | — | — | — | — |
+| General supplies | — | — | — | — | — | — | — | — | — | — | — | — | 2,795 |
+| **total** | **108,147** | **111,938** | **113,819** | **156,551** | **103,001** | **87,902** | **—** | **—** | **—** | **—** | **129,125** | **53,940** | **146,911** |
+
+**Both sides, and the distribution**
+
+| | FY14 | FY15 | FY16 | FY17 | FY18 | FY19 | FY20 | FY21 | FY22 | FY23 | FY24 | FY25 | FY26 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| general fund | 194,316 | 224,799 | 210,913 | 222,695 | 326,478 | 307,931 | 292,049 | 356,700 | 395,940 | 320,384 | 314,319 | 533,464 | 518,334 |
+| revolving fund | 108,147 | 111,938 | 113,819 | 156,551 | 103,001 | 87,902 | *not published* | *not published* | *not published* | *not published* | 129,125 *partial* | 53,940 *partial* | 146,911 |
+| all in | **302,463** | **336,737** | **324,732** | **379,246** | **429,479** | **395,833** | ≥ 292,049 | ≥ 356,700 | ≥ 395,940 | ≥ 320,384 | ≥ 443,444 | ≥ 587,404 | **665,245** |
+| fund share of all-in | **36%** | **33%** | **35%** | **41%** | **24%** | **22%** | — | — | — | — | ≥ 29% | ≥ 9% | **22%** |
+| fund revenue (fees, gates) | — | 135,767 | 121,456 | 108,551 | 108,000 | 108,000 | — | — | — | — | — | — | 188,944 |
+
+**Read the blanks as the finding.** FY20–FY23 shows no fund side because no document
+published one, not because the fund paid nothing — it certainly did. FY24 and FY25 carry
+two lines only, both from the unproven workbook. So the all-in row is a floor for six of
+thirteen years, and the fund's share is understated wherever it is marked ≥.
+
+**What the visible years show.** Where both sides are published — FY14–FY19 and FY26 — the
+fund carries between 22% and 41% of all-in athletics, and it is the *composition* that
+moves rather than the share: coaches and supplies early, transportation throughout, and by
+FY26 officials, uniforms and video. The one thing that does not appear on the general fund
+side in any year is the fund itself.
+
+---
+
 ## Conclusions
 
 1. **An athletics appropriation is not what athletics costs, and the district has said so

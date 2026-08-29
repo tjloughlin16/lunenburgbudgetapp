@@ -62,6 +62,8 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; what: string }[] }
         what: 'Every document this site is built on — 64 of them, grouped, plus the 1,383 agendas and minutes. Including the two the district published as images that nobody can read, and the ones that say something inconvenient. Start here if you want to check a number rather than read an argument.' },
       { id: 'context',
         what: 'What happened, what it costs, and where every figure comes from — the line-by-line derivations and the reconciliations that show the model rebuilding the town’s own totals.' },
+      { id: 'athletics',
+        what: 'Athletics with both sides of the money — the town’s appropriation and the fee-funded revolving fund that pays for a fifth to two-fifths of it, thirteen years, line by line. The only page here that shows actual spending, and the only part of the budget where both halves were ever published. Four of those years are blank because nobody published the fund at all.' },
     ],
   },
 ]

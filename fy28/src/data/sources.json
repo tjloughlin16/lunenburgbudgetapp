@@ -923,9 +923,9 @@
      "stars": 2,
      "what": "The one program where both sides of the money are visible, and therefore a test case for the whole budget: how far is an appropriation from what a thing costs? Very far. The district published athletics against the revolving fund once, for FY19, and in every year that document reports as actual the fund paid more of athletic transportation than the town did. Also what an \"actual\" on this line really is — in the one ledger view we have, a purchase order with nothing yet paid. Verify with scripts/verify_athletics.py.",
      "kind": "Notes",
-     "bytes": 34417,
+     "bytes": 41672,
      "url": "/docs/analyses/athletics.md",
-     "count": 661,
+     "count": 742,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics.md"
     },
@@ -1021,6 +1021,18 @@
      "count": 79,
      "unit": "rows",
      "textUrl": "/docs/data/grants-history.csv"
+    },
+    {
+     "path": "data/athletics-history.csv",
+     "title": "Athletics, both sides of the money, FY14–FY26",
+     "stars": 3,
+     "what": "Every line of the town’s athletics appropriation and every line of the fee-funded Chapter 658 revolving fund, for each year either was published. The FY14–FY19 half is reconstructed from the district’s own FY19 athletics budget and CHECKED against that document’s stated column totals — five of six years tie to the dollar on each side, and the script refuses to write if any year is off by more than the document’s own rounding. FY20–FY23 has no fund side because nobody published one, which is the finding rather than a gap in our reading. Feeds the athletics page and no projection. Rebuild with scripts/extract_athletics_history.py.",
+     "kind": "Data",
+     "bytes": 18266,
+     "url": "/docs/data/athletics-history.csv",
+     "count": 178,
+     "unit": "rows",
+     "textUrl": "/docs/data/athletics-history.csv"
     },
     {
      "path": "data/town-ledger-fy26-q3.csv",
@@ -3301,10 +3313,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 252,
+  "documents": 253,
   "groups": 15,
-  "bytes": 354767978,
-  "loadBearing": 37
+  "bytes": 354793499,
+  "loadBearing": 38
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 15 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

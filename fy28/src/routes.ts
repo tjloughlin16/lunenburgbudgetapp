@@ -10,7 +10,7 @@
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
-  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources'
+  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -31,6 +31,8 @@ export const SLUG: Record<Tab, string> = {
   // Top level, and a short address. This is the page somebody is sent to when they say
   // they do not believe a number, and the link has to survive being read aloud.
   sources: 'sources',
+  // A drill-in, not a chapter. Linked from the situation page and from Go deeper.
+  athletics: 'athletics',
 }
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
@@ -45,6 +47,7 @@ const ALIASES: Record<string, Tab> = {
   adjust: 'adjust', budget: 'adjust', build: 'adjust',
   solved: 'solved', packages: 'solved', sustainable: 'solved', forever: 'solved',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
+  athletics: 'athletics', sports: 'athletics', athletic: 'athletics',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -72,6 +75,7 @@ export const LABEL: Record<Tab, string> = {
   development: 'Development',
   solved: 'What solved would require',
   sources: 'Sources',
+  athletics: 'Athletics, both sides of the money',
 }
 
 /** Which page a drill-in sits under, for the trail back when somebody arrives by link
@@ -80,6 +84,7 @@ export const LABEL: Record<Tab, string> = {
 export const PARENT: Partial<Record<Tab, Tab>> = {
   answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
   override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
+  athletics: 'context',
 }
 
 export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')

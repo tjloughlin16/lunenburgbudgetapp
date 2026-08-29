@@ -14,6 +14,7 @@ import { Walkthrough } from './pages/Walkthrough'
 import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
+import { Athletics } from './pages/Athletics'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
@@ -277,12 +278,14 @@ export default function App() {
       {tab === 'deeper' && <GoDeeper onJump={go} />}
 
       {tab === 'sources' && <Sources onJump={go} />}
+      {tab === 'athletics' && <Athletics onJump={go} />}
 
       {tab === 'answers' && <Answers onJump={go} />}
 
       {tab === 'money' && <FindTheMoney onJump={go} />}
 
-      {tab === 'context' && <Context onSources={() => go('sources')} onRecommend={() => {
+      {tab === 'context' && <Context onSources={() => go('sources')}
+        onAthletics={() => go('athletics')} onRecommend={() => {
         setOrder(MODEL.presets.our_recommendation.order)
         setPreset('our_recommendation')
         go('priorities')

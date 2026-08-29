@@ -443,6 +443,17 @@ GROUPS = [
              'TOTAL before it will write; an earlier version silently dropped 16 '
              'departments whose figures printed as \u201c.00\u201d. Rebuild with '
              'scripts/extract_town_ledger.py.'),
+            ('data/athletics-history.csv',
+             'Athletics, both sides of the money, FY14\u2013FY26', 3,
+             'Every line of the town\u2019s athletics appropriation and every line of the '
+             'fee-funded Chapter 658 revolving fund, for each year either was published. '
+             'The FY14\u2013FY19 half is reconstructed from the district\u2019s own FY19 '
+             'athletics budget and CHECKED against that document\u2019s stated column '
+             'totals \u2014 five of six years tie to the dollar on each side, and the script '
+             'refuses to write if any year is off by more than the document\u2019s own '
+             'rounding. FY20\u2013FY23 has no fund side because nobody published one, which '
+             'is the finding rather than a gap in our reading. Feeds the athletics page '
+             'and no projection. Rebuild with scripts/extract_athletics_history.py.'),
             ('data/document-basis.csv',
              'What produced each document\u2019s figures', 3,
              'Every document in this archive classified by SOURCE TYPE: ledger (the '

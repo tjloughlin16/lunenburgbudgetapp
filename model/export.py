@@ -11,6 +11,8 @@ from athletics import (SPORTS, OTHER_PROGRAMS, FEE_BENCHMARKS, PROGRAM_TOTAL_LEV
     ESTIMATED_CURRENT_ATHLETIC_REVENUE, PRIOR_EFFECTIVE_ATHLETIC_FEE,
     PROGRAM_TOTAL_ADOPTED, CHARGEABLE_PARTICIPATIONS, ESTIMATED_FY26_ATHLETIC_REVENUE,
     PROGRAM_TOTAL_TRAVEL, PROGRAM_LADDER, self_funding_fee, fee_revenue,
+    self_funding_range, FEE_CALIBRATION, FEE_SURCHARGE_GAP, MEASURED_FY26_FEE_REVENUE,
+    MEASURED_FY26_FEE_REVENUE_GROSS, MODELLED_FY26_FEE_REVENUE, ALL_IN_FY26, FUND_SHARE_FY26,
     PEAK_FEE, PEAK_REVENUE, FEE_DROPOFF_PER_100,
     ESTIMATED_PRIOR_ATHLETIC_REVENUE, ESTIMATED_FEE_INCREASE_VALUE, SIBLING_MIX,
     WAIVER_ASSUMPTION)
@@ -35,8 +37,35 @@ import sped
 import corroboration
 from levers import LEVERS, ADMIN_TOTAL, ADMIN_CENTRAL, ADMIN_BUILDING, TECH_TOTAL, HEALTH_TOTAL, TRANSPORT_GENED, TRANSPORT_SPED
 
+def _athletics_history():
+    """Athletics with both sides of the money, for the context page.
+
+    This is the ONE place in the export that carries actual spending. It feeds a page that
+    explains where athletics money comes from and nothing else — no projection reads it,
+    and audit_provenance.py enforces that. Rule 1 keeps budgets and actuals out of the same
+    CALCULATION; this puts them in the same TABLE, clearly labelled, which is the thing the
+    district never published for any year after FY19.
+    """
+    import csv as _csv, os as _os
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         'sources/data/athletics-history.csv')
+    out = [dict(fy=int(r['fy']), side=r['side'], item=r['item'],
+                amount=float(r['amount']), basis=r['basis'], source=r['source'])
+           for r in _csv.DictReader(open(path))]
+    years = sorted({r['fy'] for r in out})
+    sides = {fy: {r['side'] for r in out if r['fy'] == fy} for fy in years}
+    # A blank that means "not published" and a blank that means "zero" look identical, and
+    # only one of them is true here, so the page is told which years are which.
+    return dict(rows=out, years=years,
+                fundUnpublished=[fy for fy in years if 'revolving' not in sides[fy]],
+                fundPartial=sorted({r['fy'] for r in out if r['basis'] == 'unproven'}))
+
+
 data_ladder = [dict(r, selfFundFee=self_funding_fee(r['total']),
-                    coverageNow=round(fee_revenue(EFFECTIVE_ATHLETIC_FEE) / r['total'], 4))
+                    selfFundRange=self_funding_range(r['total']),
+                    coverageNow=round(fee_revenue(EFFECTIVE_ATHLETIC_FEE) / r['total'], 4),
+                    coverageHigh=round(
+                        fee_revenue(EFFECTIVE_ATHLETIC_FEE, mode='scaled') / r['total'], 4))
                for r in PROGRAM_LADDER]
 
 scen = {'restoration': 28520816, 'core': 28172289,
@@ -74,6 +103,11 @@ data = dict(
                      estimatedFy26Revenue=ESTIMATED_FY26_ATHLETIC_REVENUE),
     feeAccounting=FEE_ACCOUNTING,
     splitReporting=SPLIT_REPORTING,
+    athleticsHistory=_athletics_history(),
+    feeCalibration=dict(
+        measured=MEASURED_FY26_FEE_REVENUE, measuredGross=MEASURED_FY26_FEE_REVENUE_GROSS,
+        modelled=MODELLED_FY26_FEE_REVENUE, factor=FEE_CALIBRATION,
+        surchargeGap=FEE_SURCHARGE_GAP, allInFy26=ALL_IN_FY26, fundShareFy26=FUND_SHARE_FY26),
     taxBase=dict(
         rate=TAX_RATE, levy=LEVY, totalValue=TOTAL_VALUE,
         residentialShare=RESIDENTIAL_SHARE, cipShare=CIP_SHARE,

@@ -14,6 +14,17 @@ sys.path.insert(0, os.path.dirname(__file__))
 from catalog import PROGRAMS
 from headlines import AVG_GAP_3YR
 import sped
+import athletics as _ath
+
+# Rule 2: the fee figures below are computed, never typed. They moved materially once the
+# model was anchored on what the athletics revolving fund reports collecting rather than on
+# our estimate of it, and a typed figure would still be quoting the old answer.
+_TRAVEL = _ath.PROGRAM_TOTAL_TRAVEL
+_SF = _ath.self_funding_range(_TRAVEL)
+_COV_LO = _ath.fee_revenue(_ath.EFFECTIVE_ATHLETIC_FEE, mode='flat') / _TRAVEL
+_COV_HI = _ath.fee_revenue(_ath.EFFECTIVE_ATHLETIC_FEE, mode='scaled') / _TRAVEL
+_LS_FLAT = _ath.self_funding_fee(_ath.PROGRAM_TOTAL_LEVEL_SERVICE, mode='flat')
+_LS_SCALED = _ath.self_funding_fee(_ath.PROGRAM_TOTAL_LEVEL_SERVICE, mode='scaled')
 
 # Every sport, every band, every club, every art supply. Summed from the catalogue rather
 # than written down, so that adding a program cannot leave this figure describing a
@@ -87,18 +98,25 @@ CONCLUSIONS = [
            'opposite answers.'),
 
  dict(n=7, anchor='fees',
-      headline='Athletics cannot pay for itself once you put the buses back.',
-      figure='$960',
+      headline='Fees already cover most of athletics — and the town has never counted them.',
+      figure=f'${_SF["low"]}\u2013${_SF["high"]}',
       body='For 2026-27 Lunenburg charges $400 for a first child, $300 for a second and '
-           '$225 for a third, with a $1,500 family cap — up from $250/$140/$85 and a $475 '
-           'cap. Blended that is about $366 per participation, an estimated $187,000. '
-           'Measured against the $217,908 the adopted budget funds, that is 86% covered '
-           'and $445 a season would finish the job — but the adopted budget funds ZERO '
-           'athletic transportation, and a team that cannot reach an away game is not a '
-           'team. Put the $127,550 of buses back and the real cost is $345,458: fees '
-           'cover 54%, and self-funding needs $960 a season. Every rung above that — a '
-           'full-time trainer, full coaching stipends, middle school teams — is '
-           'unreachable at any fee, because revenue peaks near $1,185 at $358,380.'),
+           '$225 for a third, with a $1,500 family cap. Those fees do not appear in the '
+           'school budget at all: they go into a revolving account, and that account pays '
+           'for officials, uniforms and video that the general fund budgets at ZERO. So '
+           'the budget is already net of them. '
+           f'In FY26 the account collected ${_ath.MEASURED_FY26_FEE_REVENUE:,.0f} and '
+           f'spent ${146911:,.0f}, about a fifth of what athletics actually cost. '
+           'Put the buses back — the adopted budget funds none, and a team that cannot '
+           f'reach an away game is not a team — and the cost is ${_TRAVEL:,.0f}. '
+           f'Today\u2019s fee covers {_COV_LO:.0%}\u2013{_COV_HI:.0%} of that, and '
+           f'${_SF["low"]}\u2013${_SF["high"]} a season would cover all of it. '
+           'It is a range and not a number because the account collects more than the '
+           'published fee schedule can explain, and nothing published says whether that '
+           'is more players than we counted or surcharges we cannot see. '
+           f'The fuller programme is further off: level service needs ${_LS_SCALED} a '
+           'season on the generous reading of that gap and is out of reach at any fee on '
+           'the cautious one.'),
 
  dict(n=8, anchor='tax-base',
       headline='When your house is worth more, the schools get nothing.',

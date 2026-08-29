@@ -176,6 +176,15 @@ export const MODEL = raw as unknown as {
     chargeableParticipations: number; estimatedFy26Revenue: number
   }
   feeAccounting: { established: string[]; unresolved: string[]; ask: string }
+  feeCalibration: {
+    measured: number; measuredGross: number; modelled: number
+    factor: number; surchargeGap: number; allInFy26: number; fundShareFy26: number
+  }
+  athleticsHistory: {
+    rows: { fy: number; side: 'general' | 'revolving'; item: string
+            amount: number; basis: string; source: string }[]
+    years: number[]; fundUnpublished: number[]; fundPartial: number[]
+  }
   splitReporting: {
     title: string; subtitle: string; doc: string; link: string; fund: string
     transportation: { fy: number; general: number; revolving: number; basis: string }[]

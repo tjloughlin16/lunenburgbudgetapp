@@ -30,8 +30,8 @@ export const CONTEXT_NAV = [
  *
  *  Nothing on this page changes a number anywhere else. It exists so that every dial on
  *  the adjustments page has somewhere to point when a reader asks "says who?". */
-export function Context({ onRecommend, onSources }: {
-  onRecommend: () => void; onSources: () => void
+export function Context({ onRecommend, onSources, onAthletics }: {
+  onRecommend: () => void; onSources: () => void; onAthletics: () => void
 }) {
   // The context page argues from the district's own published assumptions, untouched by
   // anything the reader has done elsewhere — otherwise the prose and the chart disagree.
@@ -234,6 +234,15 @@ export function Context({ onRecommend, onSources }: {
         <h3 className="text-sm font-bold mt-10 mb-3">Where does the fee money actually go?</h3>
         <div className="mb-4"><SplitReporting /></div>
         <FeeAccounting />
+
+        <button onClick={onAthletics}
+          className="card p-4 mt-4 w-full text-left text-[13px]"
+          style={{ color: 'var(--text-secondary)' }}>
+          <strong style={{ color: 'var(--text-primary)' }}>Athletics, both sides of the
+          money &rarr;</strong> Every line of the town&rsquo;s athletics budget and every
+          line of the fee-funded revolving fund, thirteen years, side by side &mdash;
+          including the four years nobody published the fund at all.
+        </button>
       </Section>
 
       <Section id="tax-base" eyebrow="The revenue side"

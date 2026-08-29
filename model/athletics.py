@@ -252,6 +252,55 @@ ESTIMATED_FEE_INCREASE_VALUE = (
     ESTIMATED_CURRENT_ATHLETIC_REVENUE - ESTIMATED_PRIOR_ATHLETIC_REVENUE)
 
 # ---------------------------------------------------------------------------
+# The measurement, and the calibration it forces
+# ---------------------------------------------------------------------------
+# What the old fee ACTUALLY raised in FY26, from the athletics revolving fund's own
+# year-end reconciliation (xlsx/school-funds-fy26.xlsx, sheet "Athletics Revolving",
+# period 1-13). This is a measured figure from a ledger-derived source, not an estimate.
+MEASURED_FY26_FEE_REVENUE = 188944.46        # net of $5,664.99 of refunds
+MEASURED_FY26_FEE_REVENUE_GROSS = 194609.45  # HS 167,511.49 + MS 27,097.96
+
+# What this model produces for the same fee and the same year.
+MODELLED_FY26_FEE_REVENUE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICIPATIONS)
+
+# And they do not agree. The model is 31% low, or equivalently the fund collected 45%
+# more than the published schedule and our sibling/waiver assumptions can account for.
+#
+# WHY IS NOT ESTABLISHED. The measurement implies $287.82 per high school participation
+# and $248.60 per middle school participation, against a published first-child fee of
+# $250 falling to $85 for a third child. A blended rate cannot exceed the undiscounted
+# top tier, so at least one input is wrong: either participations are undercounted, or
+# there are sport surcharges -- hockey and skiing normally carry them -- that are not in
+# any fee schedule we hold. We cannot tell which, and the two have different consequences
+# for what a fee increase is worth.
+#
+# So the model is CALIBRATED to the measurement rather than corrected, and the factor is
+# named rather than buried. Anchoring on the measured figure is right because it is the
+# only observed one; carrying the factor forward to a fee this town has never charged is
+# an assumption, and it is labelled as one everywhere it is used.
+FEE_CALIBRATION = round(MEASURED_FY26_FEE_REVENUE / MODELLED_FY26_FEE_REVENUE, 4)
+
+# Kept under its old name because callers and the app both read it, but it is now the
+# measurement rather than our estimate of it.
+ESTIMATED_FY26_ATHLETIC_REVENUE = MEASURED_FY26_FEE_REVENUE
+
+# The whole athletics program in FY26, both sides: the general fund 3510 functions plus
+# what the fee-funded revolving fund spent. Every other total in this module is the
+# general fund portion only, which is what the district publishes and is not what
+# athletics costs. Used for context, not as a fee target -- the ladder is built on FY27
+# scenarios and this is FY26, so they must not be mixed in one calculation.
+ALL_IN_FY26 = 665245.44          # general fund 518,334.00 + revolving fund 146,911.44
+FUND_SHARE_FY26 = round(146911.44 / ALL_IN_FY26, 4)
+
+# Fee revenue does not appear in the FY27 budget document, which is expenditures only.
+# But that does NOT make the program figures gross, which is what this constant used to
+# assert. The mechanism runs the other way: fees land in the revolving fund, the fund
+# pays for officials and uniforms, and those lines are budgeted $0 in the general fund
+# from FY26 on. The costs are absent, so the appropriation is already net of them.
+FEE_REVENUE_IN_BUDGET = True
+
+
+# ---------------------------------------------------------------------------
 # The fee curve, in Python, so the narrative figures and the interactive chart in the
 # app cannot drift apart. Both use the same formula: raising the fee above today's
 # raises more per family but prices some families out, so revenue peaks and then falls.
@@ -259,33 +308,62 @@ ESTIMATED_FEE_INCREASE_VALUE = (
 FEE_DROPOFF_PER_100 = 5.0     # % of participation lost per $100 ABOVE today's fee
 
 
-def fee_revenue(fee, payers=None, dropoff=FEE_DROPOFF_PER_100, waiver=None):
+# The gap between model and measurement has two candidate causes, and THEY IMPLY
+# DIFFERENT CURVES. The data cannot distinguish them, so both are carried:
+#
+#   'scaled'  the fee base is bigger than we think -- participations undercounted. Then
+#             the gap scales with the fee, and revenue is the model times FEE_CALIBRATION.
+#   'flat'    there are surcharges outside the published schedule -- hockey and skiing
+#             normally carry them. A surcharge does not rise when the base fee rises, so
+#             the gap is a constant and revenue is the model plus FEE_SURCHARGE_GAP.
+#
+# Both reproduce the FY26 measurement exactly, by construction. They diverge as the fee
+# rises, and 'flat' is the conservative one, so it is what the app leads with.
+FEE_SURCHARGE_GAP = round(MEASURED_FY26_FEE_REVENUE - MODELLED_FY26_FEE_REVENUE, 2)
+FEE_MODES = ('flat', 'scaled')
+
+
+def fee_revenue(fee, payers=None, dropoff=FEE_DROPOFF_PER_100, waiver=None, mode='flat'):
+    """Revenue at a given fee, anchored on what the fund actually collected.
+
+    `mode` picks which reading of the model-to-measurement gap to apply -- see FEE_MODES.
+    Pass mode=None for the uncalibrated model, which reproduces a figure we know to be
+    31% below what the fund reports collecting.
+    """
     payers = CHARGEABLE_PARTICIPATIONS if payers is None else payers
     waiver = WAIVER_ASSUMPTION if waiver is None else waiver
     increase = max(0.0, fee - EFFECTIVE_ATHLETIC_FEE)
     retained = max(0.0, 1 - (increase / 100) * (dropoff / 100))
-    return fee * payers * (1 - waiver) * retained
+    raw = fee * payers * (1 - waiver) * retained
+    if mode == 'scaled':
+        return raw * FEE_CALIBRATION
+    if mode == 'flat':
+        # The surcharge travels with participation, so it falls off with the same
+        # retention the base fee does. It does not rise with the fee.
+        return raw + FEE_SURCHARGE_GAP * retained
+    return raw
 
 
-def self_funding_fee(target, step=5, ceiling=4000):
+def self_funding_fee(target, step=5, ceiling=4000, mode='flat'):
     """Cheapest fee that covers `target`, or None if no fee ever reaches it."""
     return next((f for f in range(0, ceiling + 1, step)
-                 if fee_revenue(f) >= target), None)
+                 if fee_revenue(f, mode=mode) >= target), None)
+
+
+def self_funding_range(target):
+    """The fee that covers `target` under each reading of the gap, cheapest first.
+
+    Two numbers rather than one, because the data cannot say which reading is right and
+    a single figure here would be a false precision on a page asking families to pay it.
+    """
+    fees = sorted(f for f in (self_funding_fee(target, mode=m) for m in FEE_MODES)
+                  if f is not None)
+    return dict(low=fees[0] if fees else None, high=fees[-1] if fees else None)
 
 
 PEAK_FEE, PEAK_REVENUE = max(
     ((f, fee_revenue(f)) for f in range(0, 4001, 5)), key=lambda x: x[1])
 
-
-# What the old fee raised in FY26, when middle school teams still ran. The gap between
-# this and ESTIMATED_PRIOR_ATHLETIC_REVENUE is the loss of 109 MS participations, not a
-# change in the fee.
-ESTIMATED_FY26_ATHLETIC_REVENUE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICIPATIONS)
-
-# Fee revenue does not appear in the FY27 budget document at all -- that document is
-# expenditures only. Athletic and bus fees flow through revolving accounts, so the
-# program costs shown elsewhere in this app are GROSS, before fee offset.
-FEE_REVENUE_IN_BUDGET = False
 
 
 # ---------------------------------------------------------------------------
@@ -382,6 +460,15 @@ FEE_ACCOUNTING = dict(
         'The district does use revolving money to offset appropriated costs: the FY27 '
         'addendum reallocates "$50,000 from school choice revolving/transportation to '
         'offset transportation costs."',
+        'How much fee revenue is collected is no longer a guess. The athletics revolving '
+        'fund reports $194,609 gross and $188,944 net for FY26 in its own year-end '
+        'reconciliation, against $146,911 of spending \u2014 so the fees already pay about a '
+        'fifth of what athletics costs all in, and the fund ended the year holding '
+        '$152,281. The fee model in this app is anchored on that measurement rather than '
+        'on our estimate of it.',
+        'The fund is the one the town books as 1301, CHAPTER 658 REVOLVING FUND. That is '
+        'the statute, from the town\u2019s own ledger \u2014 not an inference from its absence '
+        'from the annual \u00a753E\u00bd warrant article.',
         'For FY14 through FY17 the appropriated athletics lines were NET of a large '
         'revolving-fund contribution, and the district showed both sides itself. Its '
         'FY19 athletics budget lists Athletic Transportation twice \u2014 once as an '
@@ -390,13 +477,18 @@ FEE_ACCOUNTING = dict(
         'So an appropriated athletics line is not what athletics costs.',
     ],
     unresolved=[
+        'WHY the fund collects more than the published fee schedule can explain. It took '
+        'in $188,944 net in FY26, which is 45% above what the schedule and our sibling and '
+        'waiver assumptions produce, and implies $287.82 per high school participation '
+        'against a $250 first-child fee. A blended rate cannot exceed its top tier, so '
+        'either participations are undercounted or there are surcharges outside any '
+        'schedule we hold. The two imply different answers to what a fee rise is worth, '
+        'so every fee figure here is a range rather than a number.',
         'Whether today\u2019s athletics figures are gross, or already net of fee income. '
         'For FY14\u2013FY17 the district\u2019s own FY19 athletics budget settles it \u2014 they '
         'were net, and the revolving fund paid the larger share of transportation. No '
         'document published since shows both sides, so for every year this app projects '
         'from, the question is open again. This changes what a fee increase is worth.',
-        'How much fee revenue is actually collected, and how many waivers are granted. '
-        'The district publishes the fee schedule but not the collections.',
         'Whether band, music or club fees exist at all.',
         'Gate receipts are real money and invisible in everything here. The School '
         'Committee was told roughly $16,000 came in from ticket sales in the fall season '
