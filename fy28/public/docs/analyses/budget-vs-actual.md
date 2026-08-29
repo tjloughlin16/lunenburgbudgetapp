@@ -434,6 +434,36 @@ comes in close to budget, and the app should never describe those lines as overr
 Whether the FY22 and FY23 underspends are unfilled positions, delayed placements, or
 money moved elsewhere with approval. The three look identical from here.
 
+## 6. The one year the aide budget did not match what was spent
+
+The FY25 minutes name "double booking of the para salaries" as one of the things the
+district found. It is never explained anywhere else. But it is testable, because the aide
+lines have a budget and an actual for six years:
+
+| FY | budgeted | spent | |
+|---|---:|---:|---:|
+| FY18 | $726,734 | $728,898 | +0.3% |
+| FY19 | $768,625 | $781,314 | +1.7% |
+| FY20 | $988,455 | $993,419 | +0.5% |
+| FY22 | $1,069,410 | $1,104,945 | +3.3% |
+| FY23 | $1,014,759 | $1,018,072 | +0.3% |
+| **FY25** | **$1,498,126** | **$1,338,477** | **−10.7%** |
+
+For five years the aide budget and the aide spending track within about three percent, and
+the actual usually comes in slightly *above*. **FY25 is the only year that breaks it**, and
+it breaks it by $159,649 — a quarter of the $603,886 surplus the district reported for
+exactly that year.
+
+That is what a double-booked line looks like from outside: money budgeted twice, spent
+once. It does not prove the district's account, but it is consistent with it in the right
+year and in no other, which is about as much as an outside check can offer.
+
+**What it does not do is move any rate.** The escalator on this line is anchored on FY18
+and FY27, so FY25 is an interior point — removing it entirely changes nothing. And the
+same growth appears in actual spending as in budgets: 9.07% a year against 10.89%.
+
+---
+
 ## What would change any of this
 
 1. **Which FY25 budget figure is right.** $25,321,760 or $24,883,376. One question, and

@@ -257,6 +257,48 @@ single blended rate taken from the settlements gets it wrong.
 budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
 adding them, which it has not done in 8 of the last 9 budgets.
 
+### What the district actually gets in grants, and what it lost
+
+Rule 11 says the budget shows one funding stream and the others are invisible. That is
+true of the budget documents. It is not quite true of the presentations: the FY25
+superintendent's update carries a **Grants History** section, one page per year, naming
+every entitlement and competitive grant and its amount. It is archived at
+`/docs/data/grants-history.csv`.
+
+| FY | federal | state | total |
+|---|---:|---:|---:|
+| FY20 | $797,604 | $82,583 | $880,187 |
+| FY21 | $814,232 | $89,463 | $903,695 |
+| FY22 | $746,337 | $466,971 | $1,213,308 |
+| FY23 | $668,467 | $383,237 | $1,051,704 |
+| FY24 | $706,238 | $430,170 | $1,136,408 |
+
+**Regular grant income did not collapse.** It runs between $880,187 and $1,213,308 across
+five years with no trend. Special education grants specifically are flatter still:
+
+| FY | special education grants |
+|---|---:|
+| FY20 | $502,272 |
+| FY21 | $520,296 |
+| FY22 | $520,845 |
+| FY23 | $432,335 |
+| FY24 | $445,912 |
+
+**What was lost was ESSER, and only ESSER.** The same deck prices it: ESSER 1 $198,073,
+ESSER 2 $588,834, ESSER 3 $1,351,034 — **$2,137,941 across FY21 to FY24**, on top of the
+grants above, and then nothing. Roughly half a million a year, gone.
+
+That matches what the town was told. A resident told the School Committee on 3 September
+2025 that "the cuts that were made were ESSER cuts. So we didn't cut beyond ESSER."
+
+**And it means an earlier version of this section was wrong.** It reported that the town's
+share of these staff had gone from 52% to 84% — a handover from grants to the general
+fund. That was an artifact of measuring the early years one way and the later years
+another. Measured consistently, the town's share of "Other Teaching Services" is **78% in
+FY17 and 78% in FY25**, dipping to 65% in FY24 when ESSER money was at its peak. There is
+no handover. The correction is recorded because the wrong version was more interesting
+than the right one, which is exactly when a number needs checking hardest.
+
 ### The state publishes the headcount after all, and it changes the reading
 
 Everything above assumes a budget line is the only thing available, because the district's
@@ -297,11 +339,19 @@ Their contract gives **2.0%**.
 number of aides. Most of the increase is not more people, and it is not bargained pay
 either — dollars per counted aide rose 8.22% a year against a 2.0% agreement.
 
-**What it does not establish.** Why. A general-fund line of $11,885 per aide in FY17 is
-well below what one aide costs, so the town was plainly not paying the whole bill then and
-is paying more of it now. That fits the grant hypothesis exactly. It also fits aides moving
-from part-time to full-time hours, or reclassification, or DESE counting on a different
-basis from the budget. Nothing published separates them.
+**What it does not establish.** Why. The obvious explanation was that the town used to pay
+only part of these costs and now pays more of them — and **that was checked and it is not
+what happened.** The town's share of the function group these staff sit in is 78% in FY17
+and 78% in FY25 (see above). There is no handover.
+
+What is left fits aides moving from part-time to full-time hours, aides at higher
+classifications or further up the step scale, or DESE counting heads on a different basis
+from the one the budget pays against. Nothing published separates them, and none of them
+is established here.
+
+The same pattern holds on **actual spending**, not just budgets, which rules out a
+budgeting artifact: FY18 to FY25, aide spending grew 9.07% a year — 3.98% more aides
+multiplied by 4.90% more per aide — against a contract giving 2%.
 
 **What it means for the rate, and this is unresolved.** The escalator projects the budget
 line at 12.78%. If that growth is a cost migrating onto the general fund, it must

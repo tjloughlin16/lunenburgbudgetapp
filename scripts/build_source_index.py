@@ -411,6 +411,16 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/grants-history.csv',
+             'Grant income by grant, FY20\u2013FY24', 3,
+             'Every entitlement and competitive grant the district reports receiving, by '
+             'name and amount, read out of the Grants History pages of the FY25 '
+             'superintendent\u2019s budget update. This is the only place in anything '
+             'Lunenburg publishes where the funding streams outside the general fund are '
+             'named and priced \u2014 which is what rule 11 says the budget documents '
+             'cannot do. Read from one deck deliberately: several presentations carry '
+             'grant pages, they overlap and disagree, and merging them produced '
+             'duplicates. Rebuild with scripts/extract_grants.py.'),
             ('data/link-status.csv',
              'Whether each source document is still public', 2,
              'For every archived document that records where its publisher put it, '
