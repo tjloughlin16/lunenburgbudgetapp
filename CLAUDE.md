@@ -142,10 +142,37 @@ Verify a deploy by hashing a document from production against the archive.
 
 ---
 
-## 11. A budget line is one funding stream in, and dollars per line out
+## 11. A budget line is NET, and it is dollars — it is not what the thing costs
 
-The hardest thing about this data is that **you cannot see all the inputs or all the
-outputs**, and a budget line looks exactly the same either way.
+**A budget line is what the town has to raise, after everything else that pays for the
+thing has been subtracted.** If paras cost $1.5M and the state gives $500,000, the line
+says $1M. Nothing in the document says $1.5M anywhere, and nothing marks the line as net.
+
+The district does this deliberately and says so in its own workbook. Beside general
+education transportation, in the comments column: *"Does this reflect a reduction of $50K
+to accound for the money planned to come from the busing fees?"* That is a budget line
+being netted down by expected fee revenue, asked about by the people writing it.
+
+So a line can rise because the thing got more expensive, or because a grant stopped
+covering part of it, or because a fee stopped being collected — and all three look
+identical. **A rate measured off a net line is a rate of change in the town's share, not
+in the cost.** Say which one you mean, every time.
+
+The same trap runs the other way for anything fee-funded: modelling "what fee would make
+this self-funding" against a line that is already net of fees counts the fees twice.
+
+**And above all of it sits state aid.** Chapter 70 is roughly $11.4M of a $26.6M school
+budget, and it is set in the Governor's budget rather than by anything Lunenburg does. So
+even the appropriation is not the town's bill: the town's bill is what is left after
+Chapter 70, and that can move without a single cost changing. A year where aid rises and
+the appropriation rises with it is not the same year as one where aid is flat and the town
+covers the difference, and the expense side of the budget cannot tell them apart.
+
+The model handles this on the revenue side -- Chapter 70 is projected separately at 2% --
+which is right. What must not happen is an expense line being described as "what the town
+pays" when three layers sit between the two.
+
+And you cannot see all the inputs or all the outputs, which is the general form of it.
 
 **On the way in**, the district's budget documents show the general fund appropriation and
 nothing else. Grants, circuit breaker reimbursement, school choice, revolving funds and
@@ -162,6 +189,9 @@ it is what residents vote on, and it is what the model projects. It is not a mea
 staffing, of caseload, or of what the schools cost all in.
 
 - Never let "the line went up" become "the district hired people". Write the first.
+- Never call a budget line a cost. It is a net appropriation. If you need the cost, you
+  need the grants, the fees and the revolving funds too, and they are in different
+  documents.
 - When a rate rests on a line, ask what else could be paying for that line, and say so
   next to the rate if you cannot rule it out.
 - Name what would settle it. For funding sources that is usually DESE's End of Year
