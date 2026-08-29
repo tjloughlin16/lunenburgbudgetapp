@@ -99,12 +99,24 @@ print('\nThe FY25 source disagreement')
 wb = [r for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv')))
       if r['kind'] == 'line']
 t = lambda c: sum(float(r[c] or 0) for r in wb)
-present('workbook FY25 budget', money(t('fy25_budget')))
-present('FY26 document FY25 budget', money(24_883_376))
-present('the difference', money(t('fy25_budget') - 24_883_376))
-present('FY25 actual', money(t('fy25_actual')))
-present('underspend against the workbook', money(t('fy25_budget') - t('fy25_actual')))
-present('underspend against the FY26 document', money(24_883_376 - t('fy25_actual')))
+# Three published salary totals and two expense totals, so six budgets for one year.
+SAL = {'workbook row 399': 16_809_123, 'workbook row 403': 17_156_461,
+       'FY26 document': 17_188_342}
+EXP = {'workbook': 8_165_299, 'FY26 document': 7_695_034}
+import itertools
+combos = sorted(s + e for s, e in itertools.product(SAL.values(), EXP.values()))
+act = t('fy25_actual')
+present('FY25 actual', money(act))
+for v in SAL.values():
+    present('a published FY25 salary total', money(v))
+for v in EXP.values():
+    present('a published FY25 expense total', money(v))
+present('the lowest budget these support', money(min(combos)))
+present('the highest', money(max(combos)))
+present('the spread', money(max(combos) - min(combos)))
+present('over budget at the lowest', money(act - min(combos)))
+present('under budget at the highest', money(max(combos) - act))
+present('the workbook disagreeing with itself', money(17_156_461 - 16_809_123))
 
 print('\nFigures the document must NOT still contain')
 for r in ['13% a year while the rest of the budget grew 3.4%',

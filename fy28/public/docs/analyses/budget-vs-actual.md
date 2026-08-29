@@ -145,29 +145,50 @@ One lands within a third of a percent and the other is **over**. Against FY25's 
 they are a different order of magnitude, and they do not point the same way. Read the
 line-by-line totals in §2 alongside them: five years there, never more than 0.9% off.
 
-### And most of the FY25 figure is not an underspend at all
+### And nobody can say what FY25's budget was
 
-FY25 is the year the original claim rested on: budgeted $25,321,760, spent
-$24,560,511, a shortfall of $761,249. That budget figure comes from the FY27
-workbook.
+FY25 is the year the original claim rested on. It reported a shortfall of $761,249 against
+a budget of $25,321,760.
 
-**The district's own FY26 budget document states a different FY25 budget.**
+**That budget figure is one of at least six the district's own documents support.** There
+are three published totals for FY25 salaries and two for FY25 expenses:
 
-| FY25 budgeted | workbook | FY26 budget document | difference |
-|---|---:|---:|---:|
-| Salaries | $17,156,461 | $17,188,342 | +$31,881 |
-| Expenses | $8,165,299 | $7,695,034 | **−$470,265** |
-| **Total** | **$25,321,760** | **$24,883,376** | **−$438,384** |
+| FY25 salaries | |
+|---|---:|
+| The workbook's salaries-section total (row 399) | $16,809,123 |
+| The workbook's own summary block, 4 rows later (row 403) | $17,156,461 |
+| The FY26 approved budget document | $17,188,342 |
 
-The FY26 document is internally consistent: it prints FY26 expenses as $9,117,566 and an
-18.49% increase, and $7,695,034 × 1.1849 reproduces that. So this is not a typo we can
-resolve by inspection. Two of the district's own documents state different FY25 budgets.
+| FY25 expenses | |
+|---|---:|
+| The workbook | $8,165,299 |
+| The FY26 approved budget document | $7,695,034 |
 
-Measured against the other one, FY25's underspend is **$322,865, −1.30%** — in line
-with the other years rather than an outlier.
+The workbook disagrees with **itself** about salaries by $347,338, in two rows four apart.
+The FY26 document, which is internally consistent — it prints FY26 expenses at $9,117,566
+and an 18.49% increase, and $7,695,034 × 1.1849 reproduces that — disagrees with the
+workbook about expenses by $470,265.
 
-**$438,384 of the $761,249 headline — 58% of it — is two sources disagreeing about what
-was budgeted, not money voted and left unspent.**
+Every combination, against actual spending of $24,560,511:
+
+| budget | salaries from | expenses from | difference | |
+|---:|---|---|---:|---:|
+| $24,504,157 | the workbook’s salaries section total | the FY26 approved budget document | +$56,354 | **+0.23%** |
+| $24,851,495 | the workbook’s summary block | the FY26 approved budget document | −$290,984 | **-1.17%** |
+| $24,883,376 | the FY26 approved budget document | the FY26 approved budget document | −$322,865 | **-1.30%** |
+| $24,974,422 | the workbook’s salaries section total | the workbook | −$413,911 | **-1.66%** |
+| $25,321,760 | the workbook’s summary block | the workbook | −$761,249 | **-3.01%** |
+| $25,353,641 | the FY26 approved budget document | the workbook | −$793,130 | **-3.13%** |
+
+**FY25 was either $56,354 over budget or $793,130 under, depending entirely on which of
+the district's own published totals you pick.** The spread is $849,484 — larger than the
+underspend the original finding reported.
+
+This is not a claim that anything is wrong. Budget documents get revised, summary blocks
+get regenerated at different moments, and a spreadsheet carrying both a running total and
+a printed summary is ordinary. **It is a claim that the question "did the town spend what
+it voted in FY25" cannot be answered from published documents**, and that any figure
+quoted for it — including the one this project quoted — is a choice among several.
 
 ### What we cannot tell
 
