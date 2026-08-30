@@ -23,7 +23,7 @@
  *
  * Needs Node 22 for wrangler:  source ~/.nvm/nvm.sh && nvm use 22
  */
-import { spawn } from 'node:child_process'
+import { spawn, execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
@@ -145,6 +145,33 @@ async function main() {
     if (!same) {
       fails.push('/data/model.json is stale — run `python3 scripts/build_agent_endpoints.py` ' +
         'after model/export.py, or agents read different figures from the ones the site shows')
+    }
+  }
+
+  // model/releases.py says in its own docstring that CURRENT "has to match the git tag
+  // actually deployed". Nothing enforced that, so v4 and v5 both shipped while the footer
+  // still read v3 -- the site telling returning readers it was a build from two deploys
+  // ago. Checked here because it is the one version string a reader actually sees.
+  console.log('\nthe version the site shows must be the tag that was deployed')
+  {
+    const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))
+    const shown = model.releases?.current ?? null
+    let tagged = null
+    try {
+      tagged = execFileSync('git', ['describe', '--tags', '--abbrev=0'],
+        { cwd: APP, encoding: 'utf8' }).trim()
+    } catch { /* not a checkout, or no tags */ }
+    if (!shown) {
+      console.log('  note  the model carries no release tag; nothing to compare')
+    } else if (!tagged) {
+      console.log(`  note  site shows ${shown}; no git tag found to compare against`)
+    } else {
+      const ok = shown === tagged
+      console.log(`  ${ok ? ' ok ' : 'FAIL'} site shows ${shown}, newest git tag is ${tagged}`)
+      if (!ok) {
+        fails.push(`the site shows ${shown} but the newest git tag is ${tagged} — add a ` +
+          'release note in model/releases.py, or the footer tells readers this is an older build')
+      }
     }
   }
 

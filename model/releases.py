@@ -24,6 +24,86 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v5',
+        date='2026-08-30',
+        title='Every rate now carries the year it applies to',
+        short='rates dated and corrected',
+        headline='Athletic fees for FY26 were modelled at $250 a season when the district '
+                 'had voted $325. Not a wrong number — a right number from the wrong year, '
+                 'taken from a fee schedule that states its rates and never states which '
+                 'year they cover. Every fee figure on the site has moved.',
+        changes=[
+            'A new page, Rates, fees and contracts, listing every rate this analysis knows '
+            'about with the fiscal year it applies to, the document that set it and the '
+            'date it was set. 62 rates; 37 of them checked against a spreadsheet cell or a '
+            'direct quotation. It deliberately includes the ten rates we cannot state at '
+            'all, because a fee the town charges and does not publish is a finding rather '
+            'than a blank.',
+
+            'The correction came from a School Committee vote nobody had connected to the '
+            'model. On 26 February 2025 the committee approved athletic fees of $325 for '
+            'high school and $275 for middle school, a 25% sibling discount, reduced fees '
+            'of $50 and $40, and a $1,500 family cap. A fee voted in February 2025 applies '
+            'to the following school year, which is FY26. The schedule the model was using '
+            'was correct — for FY24 and FY25.',
+
+            'Two figures that had been recorded as unexplained turn out to be the same '
+            'error. $314.28 per high school participation is impossible under a $250 fee '
+            'and unremarkable under $325; $233.60 per middle school participation is '
+            'impossible under $200 and fine under $275. The model needed a 1.452x '
+            'calibration constant to reconcile its own arithmetic with what the fund '
+            'actually collected. That constant is now 1.132x, and the remaining gap is '
+            'stated rather than absorbed.',
+
+            'The note on athletic transportation said the line was "budgeted well above '
+            'what athletics has ever actually spent". That was wrong, and it is the error '
+            'this project is most careful about elsewhere: those figures are the town’s net '
+            'appropriation, not what athletics spent. The district’s own workbook puts FY24 '
+            'athletic transportation at $117,555.00 against a $40,000 line — budgeted BELOW '
+            'the cost, with the revolving fund carrying the difference.',
+
+            'Bus fees are published here for the first time, from the Superintendent’s own '
+            'emails: $180 for one student, $270 for a family, with reduced and waived '
+            'tiers. These are fees for getting to school, not to games. They matter to the '
+            'budget because a bus fee nets down the general education transportation line — '
+            'so that line can fall without any cost falling.',
+        ],
+    ),
+    dict(
+        tag='v4',
+        date='2026-08-29',
+        title='A ledger, and a site a machine can read',
+        short='the athletics ledger',
+        headline='Three years of the athletics revolving fund’s cashbook arrived from the '
+                 'Town — the first complete fiscal years of ledger data this project has '
+                 'held for anything touching school money. Every receipt and payment, with '
+                 'a date.',
+        changes=[
+            'A new analysis, The athletics ledger, reading the fund’s cash for FY2024, '
+            'FY2025 and FY2026. The years chain end to end against the opening balances '
+            'the town itself prints. In FY2025, four general journal entries described only '
+            'as an adjustment "per memo" account for $254,121.18 — 65% of everything that '
+            'came into the fund that year. What they were for is not established, and the '
+            'analysis says so rather than guessing.',
+
+            'Figures that had been carried as unproven are now sourced. Athletic '
+            'transportation cost $117,555.00 in FY24 and $91,066.06 in FY25, and both '
+            'reproduce to the cent from a workbook the Town supplied. What changed is the '
+            'provenance, not the arithmetic.',
+
+            'A missing document now returns a real error instead of quietly showing the '
+            'home page. Until this build, asking for a source document that was not there '
+            'answered as though it were — so nothing, and nobody, could tell a document '
+            'that exists from one that does not. For an archive whose promise is "here is '
+            'our copy, check it yourself", that was the worst available failure.',
+
+            'Every page now sends its content as HTML rather than building it in the '
+            'browser. A reader with JavaScript sees no difference. A search engine, a link '
+            'preview, or somebody pointing an assistant at a page to check a figure now '
+            'gets the page instead of an empty shell.',
+        ],
+    ),
+    dict(
         tag='v3',
         date='2026-08-28',
         title='Special education, separated out and measured',
