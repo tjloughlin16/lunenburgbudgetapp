@@ -146,9 +146,7 @@ diverge from spending and could only answer it for the school side, from restate
 2. **Operating budget or total general fund revenue for the eight peers**, so the ratio can
    be compared rather than just computed. DLS Schedule A would carry it —
    `DATA-WANTED.md` §6, also behind bot protection.
-3. **Abington's free cash proof**, correctly exported. The file supplied under that name
-   contains Lunenburg's data.
-4. **The department-level detail behind the $2,457,761.** The proof gives a town-wide total
+3. **The department-level detail behind the $2,457,761.** The proof gives a town-wide total
    and no breakdown. Which departments turned money back, and whether it is the same ones
    each year, is the difference between a structural pattern and a run of one-offs.
 

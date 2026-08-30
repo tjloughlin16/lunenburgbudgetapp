@@ -216,9 +216,7 @@ of these are freely available to a person with a browser. Downloading and droppi
 > 3. **Which departments turned back the $2,457,761** that makes up two thirds of
 >    Lunenburg's 2025 free cash. The proof gives a town-wide total and no breakdown, so a
 >    structural pattern and a run of one-offs look identical.
->
-> Also wanted: **Abington's proof, correctly exported.** The file supplied under that name
-> contains Lunenburg's data in all 102 cells.
+
 
 #### The original ask
 

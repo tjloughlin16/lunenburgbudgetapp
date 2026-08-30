@@ -36,9 +36,10 @@ town's name and dragged every comparison toward Lunenburg's own figures.
 
 The only thing that said Abington was the filename, which is rule 13 in its plainest form.
 `extract_free_cash.py` asserts `A1` against the filename for every town and refuses to write
-if they disagree, so this cannot pass silently again. **Abington is still worth having** —
-it is the only one of the ten outside the Nashoba and Montachusett cluster, so it is the one
-that would test whether a pattern is regional.
+if they disagree, so this cannot pass silently again.
+
+**Abington is not wanted and is not a gap.** It was downloaded by mistake, and the peer set
+is nine towns by choice. Nothing here is waiting on it.
 
 ## What the file is
 
