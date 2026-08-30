@@ -15,17 +15,29 @@ fixed anywhere. That second one got repeated to TJ as a reason to deploy.
 
 | | |
 |---|---|
-| **Live site** | `lunenburgbudgetproject.org` — tag **`v9`** |
-| **`main`** | **5 commits past `v10`**, pushed to GitHub, NOT deployed |
+| **Live site** | `lunenburgbudgetproject.org` — commit **`58890b7`**, formerly tagged `v9` |
+| **`main`** | 3 commits past that, pushed to GitHub, NOT deployed |
+| **Newest tag** | **`v6`** (`56d7d37`). The site's own version says **`v7`** |
 | **Deployed ≠ HEAD** | deliberately. TJ reviews on localhost before anything ships |
 | **Dev server** | `cd fy28 && npm run dev` → localhost:5173 |
 
-**Two process rules, both learned the hard way today:**
+**The release numbering was closed up on 30 August, and four tags were deleted.** Five
+builds shipped the free cash work over two days; they are one release note now, and the
+numbering went with them so the panel would not read v11 then v6. `v7` will be re-created
+at the deploying commit. What the retired tags pointed at, so no build becomes unfindable:
 
-1. **Never deploy without asking, every single time.** Early in the session TJ approved
-   `v4`–`v7` individually; I then shipped `v8`, `v9` and `v10` treating that as standing
-   permission. It is not. `v10` went out while TJ was still specifying the design — he had
-   corrected the model twice in the same exchange. It was rolled back at his request.
+| retired tag | commit | what it was |
+|---|---|---|
+| `v7` | `5c76af5` | the town already published both sides of the free cash argument |
+| `v8` | `083ff3a` | model free cash at any level, including spending it all |
+| `v9` | `58890b7` | free cash as an opt-in model factor — **this is what is live** |
+| `v10` | `f35b70d` | free cash as a standing policy lever |
+
+**Two process rules, both learned the hard way:**
+
+1. **Never deploy without asking, every single time.** Early on TJ approved `v4`–`v7`
+   individually; the next three shipped on that as though it were standing permission. It
+   is not. One went out while TJ was still specifying the design and was rolled back.
    The mechanical cause was bundling commit + deploy + push into one command so there was
    no natural pause. Do not do that.
 2. **Push before deploying, not after.** For three deploys the built output was public
@@ -36,11 +48,9 @@ Deploy needs **Node 22 via nvm**. Build with **`npm run build:site`**, never `np
 — the latter ships the un-prerendered SPA. Then `npm run check:agents`, which fails if the
 prerender was skipped, if `/data/model.json` is stale, or if HEAD is past the newest tag.
 
-**`npm run check:agents` currently fails on purpose:** HEAD is past `v10` and the five
-commits since have no release note. Write one in `model/releases.py` and move the tag before
-deploying.
-
----
+**`npm run check:agents` currently fails on purpose:** the site says `v7` and the newest tag
+is `v6`. Tagging HEAD `v7` is the deploy's first step, not something to do in advance — the
+failure is the guard that stops untagged work shipping.
 
 ## 0a. What this session did
 
@@ -116,7 +126,7 @@ can be spent in. They are one year apart.** Confirmed, not assumed.
    line names a count and the largest project; he wants the full list of what falls off.
    The data is already exported — `MODEL.freeCash.capital.atDraw[i].projects` has rank,
    dept, project and cost for every item at every stop. It is a UI job only.
-2. **Write the `v11` release note and move the tag**, then deploy — with TJ's explicit say-so.
+2. **Tag HEAD `v7` and deploy** — with TJ's explicit say-so. The release note is written.
 3. **The five `ADJ EXP` memos.** `DATA-WANTED §3d`.
 4. **DLS's own free cash guidance.** The 5–7% band is one sentence written by one party to
    the argument.

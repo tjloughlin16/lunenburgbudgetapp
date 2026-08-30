@@ -28,8 +28,14 @@ RELEASES = [
     # release note, not five. A reader coming back does not care which afternoon a piece of
     # it landed, and five entries describing one body of work is a commit log wearing a
     # release note's clothes -- which is the thing the docstring above says not to do.
+    #
+    # The five builds carried the tags v7 to v11. Collapsing the notes without collapsing
+    # the numbering would have left the panel reading v11 then v6, so the tags went with
+    # them: v7 through v10 were deleted and this build is tagged v7. What each retired tag
+    # pointed at is recorded in notes/HANDOFF.md, because "tag what is live" is a rule here
+    # and a deleted tag is a deleted answer to "which build is that".
     dict(
-        tag='v11',
+        tag='v7',
         date='2026-08-30',
         title='Free cash — what it is, what it would buy, and what it costs',
         short='free cash, end to end',
@@ -89,9 +95,9 @@ RELEASES = [
             'so does the free cash you were going to close it with. You cannot bank on '
             'both.',
 
-            'This note covers the builds tagged v7 to v11. They shipped over two days and '
-            'are one piece of work, so they are one entry — which is why the version '
-            'above jumps.',
+            'Five builds over two days carried this work, and they are one entry here '
+            'rather than five. The version numbering was closed up to match, so this is '
+            'v7 rather than v11.',
         ],
     ),
     dict(
