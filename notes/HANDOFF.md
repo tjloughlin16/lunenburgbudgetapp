@@ -118,6 +118,19 @@ it was in this file for a while.** Every user-agent gets 200 — plain `curl`,
 `python-requests`, `ClaudeBot`, no UA at all. Verify a deploy by hashing a document from
 production against `sources/`; no special headers are needed.
 
+**Use a cache-busting query param, and check it survived.** On 30 August an agent reported
+the site was client-side rendered and had no body content, hours after it was prerendered
+and deployed. It was reading a cached response. Its own `?nocache=` attempt was
+*normalised away* — the param stripped and the request folded onto the same cache entry —
+so it looked like a fresh fetch and was not. `?v=4` was left alone and came through clean.
+A cache-buster that gets normalised is worse than none, because it produces a confident
+wrong answer. Prefer `?v=<n>` over `?nocache=`, and confirm the param is still on the URL
+that actually got fetched.
+
+The site is **prerendered (SSG)**, not server-rendered (SSR): `prerender.mjs` writes static
+HTML at build time. There is no server rendering per request, so there is nothing to fall
+over and no hydration contract — see §0b.
+
 **A deploy is queued and was explicitly NOT run.** See §8.
 
 ---
