@@ -43,9 +43,15 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
   const [rates, setRates] = useState<Record<Bucket, number>>({ ...DEFAULT_RATES })
   const [cuts, setCuts] = useState<Set<string>>(new Set())
   const [overrideLevy, setOverrideLevy] = useState(0)
-  const [fcPct, setFcPct] = useState(0)
   const FC = MODEL.freeCash
-  const freeCash = Math.round(FC.budgetBase * fcPct / 100)
+  /* How much of each year's certified free cash is redirected to the schools. Zero by
+     default, so the board is untouched until somebody moves it. */
+  const [fcShare, setFcShare] = useState(0)
+  const fcKept = Math.round(FC.certified * (1 - fcShare / 100))
+  const fcKeptPct = (fcKept / FC.budgetBase) * 100
+  const fcBreakeven = Math.round((1 - (FC.bandLow * FC.budgetBase) / FC.certified) * 100)
+  const fcInBand = fcKeptPct >= FC.bandLow * 100 && fcKeptPct <= FC.bandHigh * 100
+  const freeCash = Math.round(FC.certified * fcShare / 100)
   const [newGrowth, setNewGrowth] = useState(DEFAULT_SCENARIO.newGrowth)
   /* Not a control on this board — the only thing that sets it is option one, whose whole
    * point is that it moves the revenue line and nothing else. Carried anyway so that
@@ -84,7 +90,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
 
   const reset = () => {
     setRates({ ...DEFAULT_RATES }); setCuts(new Set())
-    setOverrideLevy(0); setFcPct(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
+    setOverrideLevy(0); setFcShare(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
     setStateAidGrowth(DEFAULT_SCENARIO.stateAidGrowth); setLoaded(null)
   }
 
@@ -95,7 +101,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
     if (!seed) return
     const { rates: r, newGrowth: ng, stateAidGrowth: aid } = seed.route.scenario
     setRates({ ...r }); setNewGrowth(ng); setStateAidGrowth(aid)
-    setOverrideLevy(0); setFcPct(0); setCuts(new Set()); setLoaded(seed.route)
+    setOverrideLevy(0); setFcShare(0); setCuts(new Set()); setLoaded(seed.route)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seed?.nonce])
 
@@ -147,7 +153,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
            the site publishes; if the two stop agreeing, saying so is the only honest
            option, and hiding it would make the board worse than not having one. */
         <p className="text-[12px] mt-3 p-2.5 rounded-lg"
-           style={{ background: 'var(--surface-3)', color: 'var(--bad, #a03232)' }}>
+           style={{ background: 'var(--surface-3)', color: 'var(--status-bad)' }}>
           <strong>This board currently disagrees with the published projection.</strong>{' '}
           {ENGINE_AGREEMENT.detail} Treat the numbers here as unreliable until it is fixed.
         </p>
@@ -217,38 +223,51 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
           </div>
 
           <div className="mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
-            {/* Expressed as a PERCENTAGE of the operating budget, because that is the unit
-                the guideline is written in — the Town quotes DLS at 5-7% and judges itself
-                against it. A dollar figure makes you do that arithmetic in your head. */}
-            <Slider label="Free cash appropriated every year" value={fcPct}
-              min={0} max={7} step={0.25} onChange={setFcPct}
-              display={fcPct ? `${fcPct.toFixed(2)}%` : 'None'} />
-            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
-              {fcPct === 0
-                ? <>The town holds {(FC.currentShare * 100).toFixed(2)}% today. The guideline
-                    it measures itself against is {(FC.bandLow * 100).toFixed(0)}&ndash;
-                    {(FC.bandHigh * 100).toFixed(0)}% of the operating budget.</>
-                : <>
-                    <strong className="tnum">{usd(freeCash)}</strong> a year.{' '}
-                    {fcPct <= FC.normalShare * 100
-                      ? <span style={{ color: 'var(--ok, #2f7d4f)' }}>
-                          Within what an ordinary year generates ({(FC.normalShare * 100).toFixed(2)}%),
-                          so the balance holds.
-                        </span>
-                      : <span style={{ color: 'var(--bad, #a03232)' }}>
-                          Above what an ordinary year generates ({(FC.normalShare * 100).toFixed(2)}%)
-                          by {usd(freeCash - FC.normalCertified)} &mdash; the balance falls every
-                          year, and inside{' '}
-                          {Math.max(1, Math.ceil((FC.certified - FC.bandLow * FC.budgetBase)
-                                                 / (freeCash - FC.normalCertified)))} year(s)
-                          it drops below the {(FC.bandLow * 100).toFixed(0)}% guideline.
-                        </span>}
-                  </>}
+            {/* The slider is the share of each year's certified free cash redirected to the
+                schools. The guideline is written about the amount the town GENERATES each
+                year as a share of its total budget — "strive to generate free cash in an
+                amount equal to 5-7% of its annual budget" — so what is retained can be
+                measured against it directly, which is the second readout. */}
+            <Slider label="Free cash redirected to the schools" value={fcShare}
+              min={0} max={100} step={5} onChange={setFcShare}
+              display={`${fcShare}% of it`} />
+            {/* The two numbers this control actually moves, said once and large: what the
+                schools get, and what that leaves in free cash measured the way the guideline
+                measures it. Red when it falls outside the band, because that is the moment
+                the policy stops being defensible on the Town's own terms. */}
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mt-2">
+              <span className="text-[15px] font-bold tnum">
+                {usd(freeCash)} <span className="font-medium text-[12px]"
+                  style={{ color: 'var(--text-secondary)' }}>a year to the schools</span>
+              </span>
+              <span className="text-[15px] font-bold tnum"
+                style={{ color: fcInBand ? 'var(--text-primary)' : 'var(--status-bad)' }}>
+                {fcKeptPct.toFixed(2)}% <span className="font-medium text-[12px]">
+                  of the annual budget left in free cash
+                </span>
+              </span>
+            </div>
+            <p className="text-[11px] mt-1"
+               style={{ color: fcInBand ? 'var(--text-muted)' : 'var(--status-bad)' }}>
+              {fcInBand
+                ? <>Within the {(FC.bandLow * 100).toFixed(0)}&ndash;{(FC.bandHigh * 100).toFixed(0)}%
+                    the Town measures itself against. {usd(fcKept)} retained, out of the{' '}
+                    {usd(FC.certified)} certified this year.</>
+                : <><strong>Outside the {(FC.bandLow * 100).toFixed(0)}&ndash;
+                    {(FC.bandHigh * 100).toFixed(0)}% guideline</strong> &mdash;{' '}
+                    {fcKeptPct < FC.bandLow * 100 ? 'below the floor' : 'above the ceiling'} by{' '}
+                    {usd(Math.round(Math.abs(fcKeptPct < FC.bandLow * 100
+                      ? FC.bandLow * FC.budgetBase - fcKept
+                      : fcKept - FC.bandHigh * FC.budgetBase)))}. {usd(fcKept)} retained.</>}
             </p>
             <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
-              Not permanent, and that is the difference from the override above. It is also
-              produced by the same under-spending a tighter budget would remove, so it
-              cannot be counted on twice.
+              About <strong>{fcBreakeven}%</strong> &mdash;{' '}
+              <strong className="tnum">{usd(Math.round(FC.certified - FC.bandLow * FC.budgetBase))}</strong>
+              {' '}a year &mdash; can be redirected while staying inside the guideline.
+              Assumes the town keeps certifying at this year's level, which was a record: an
+              ordinary year produces {usd(FC.normalCertified)}, or{' '}
+              {(FC.normalShare * 100).toFixed(2)}% &mdash; already below the floor, with
+              nothing to redirect at all.
             </p>
           </div>
 

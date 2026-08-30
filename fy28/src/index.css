@@ -18,6 +18,10 @@
   --brand: #12428f;
   --status-good: #0ca30c;
   --status-warning: #fab219;
+  /* For a figure that has gone outside a stated guideline. Distinct from --status-warning,
+     which is amber and means "look at this"; this means "this breaches the standard the
+     Town measures itself against". Contrast-checked against --surface-1. */
+  --status-bad: #c02626;
   --status-serious: #ec835a;
   --status-critical: #d03b3b;
 }
@@ -34,6 +38,9 @@
     --axis: #383835;
     --series-cost: #3987e5;
     --series-revenue: #d95926;
+    /* Same reason as --brand below: #c02626 against a near-black surface fails contrast,
+       so the dark theme takes a lighter red rather than the same one. */
+    --status-bad: #ff6b6b;
     /* Lifted well off the navy: the same royal at 4.5:1 against a near-black surface is
        unreadable, and a wordmark nobody can read is not branding. */
     --brand: #7aabf2;
@@ -51,7 +58,8 @@
   --axis: #383835;
   --series-cost: #3987e5;
   --series-revenue: #d95926;
-  --brand: #7aabf2;
+  --status-bad: #ff6b6b;
+    --brand: #7aabf2;
 }
 
 /* Anything that pins itself below the header needs to know how tall the header is,
