@@ -15,6 +15,16 @@ from catalog import PROGRAMS
 from headlines import AVG_GAP_3YR
 import sped
 import athletics as _ath
+import freecash as _fc
+
+# Rule 2 again. Free cash figures move whenever the DLS proof or the budget base moves, and
+# the headline number here -- what could be redirected without breaching the Town's own
+# guideline -- is a subtraction between two of them. Typed, it would be wrong the first time
+# either changed.
+_FC_REDIRECT = round(_fc.CERTIFIED - _fc.BAND_LOW * _fc.BUDGET_BASE)
+_FC_SHARE = _fc.CERTIFIED / _fc.BUDGET_BASE
+_FC_REDIRECT_PCT = round(_FC_REDIRECT / _fc.CERTIFIED * 100)
+
 
 # Rule 2: the fee figures below are computed, never typed. They moved materially once the
 # model was anchored on what the athletics revolving fund reports collecting rather than on
@@ -202,6 +212,20 @@ CONCLUSIONS = [
            'finds about two thirds of FY28 without cutting a program. The remaining third '
            'is roughly two teaching positions. Anyone claiming a painless third option has '
            'not added up the line items.'),
+ dict(n=17, anchor='the-money',
+      headline='Free cash could pay for about three quarters of a million a year — in a '
+               'year like this one.',
+      figure=f'${_FC_REDIRECT:,}',
+      body=f'The town certified ${_fc.CERTIFIED:,} this year, {_FC_SHARE:.2%} of its '
+           f'operating budget, and says it aims for {_fc.BAND_LOW:.0%}-{_fc.BAND_HIGH:.0%}. '
+           f'So about {_FC_REDIRECT_PCT}% of it — ${_FC_REDIRECT:,} — could go to the '
+           f'schools every year without breaching that standard. The catch is the condition: '
+           f'this year was a record, driven by unspent appropriations at 2.49 times their '
+           f'own four-year average. An ordinary year certifies ${_fc.NORMAL_CERTIFIED:,}, or '
+           f'{_fc.NORMAL_SHARE:.2%} — already below the floor, with nothing to redirect at '
+           f'all. Both arguments in town are right about different years: a record balance, '
+           f'and below the recommendation in seven of the last ten.'),
+
 ]
 
 HEADLINE = (

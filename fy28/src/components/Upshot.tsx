@@ -96,6 +96,12 @@ const BUILD = BUILD_RATE === null ? null : {
  *  The rate is steep for a reason that is not obvious and is worth carrying: aid is under
  *  a quarter of what the town collects, so moving a quarter of the revenue enough to fix a
  *  4.93% cost rate means moving that quarter very hard. */
+const FC = MODEL.freeCash
+/** What could be redirected to the schools each year while the retained balance stays
+ *  inside the band the Town measures itself against. Derived: it is a subtraction between
+ *  two figures that both move. */
+const FC_REDIRECT = Math.round(FC.certified - FC.bandLow * FC.budgetBase)
+
 const AID_RATE = aidGrowthToSustain(DEFAULT_SCENARIO)
 const CH70_RATE = AID_RATE === null ? null : ch70OnlyGrowth(AID_RATE)
 /** Said as a multiple because a rate on its own is not shocking and this one should be.
@@ -252,6 +258,23 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
               added again every year.
             </Claim>
           )}
+
+          {/* Added because two arguments in town point at this number and both are right
+              about a different year. The card carries the condition as well as the
+              headline, because the headline alone is the more persuasive half and the
+              condition is the load-bearing one. */}
+          <Claim n={7} figure={usdShort(FC_REDIRECT)}
+            figureNote="a year, in a year like this one"
+            tone="critical" eyebrow="Record and projection" href="/free-cash"
+            head="Free cash could pay for some of this, and it is one-time money.">
+            The town certified {usdShort(FC.certified)} this year,{' '}
+            {(FC.currentShare * 100).toFixed(2)}% of its budget against a stated aim of{' '}
+            {(FC.bandLow * 100).toFixed(0)}&ndash;{(FC.bandHigh * 100).toFixed(0)}%. About{' '}
+            {usdShort(FC_REDIRECT)} of it could go to the schools each year without breaching
+            that. But this year was a record: an ordinary one certifies{' '}
+            {usdShort(FC.normalCertified)} &mdash; {(FC.normalShare * 100).toFixed(2)}%,
+            already below the floor, with nothing to redirect.
+          </Claim>
         </ol>
 
         <TheWedge />
