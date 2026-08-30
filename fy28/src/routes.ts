@@ -10,7 +10,7 @@
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
-  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates'
+  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -37,6 +37,8 @@ export const SLUG: Record<Tab, string> = {
   // the document that set it — built after FY26 athletic fees were priced on FY25's
   // schedule for months because the source stated rates and never stated a year.
   rates: 'rate-register',
+  // One-time money, and the page exists to show that it cannot bend the curve.
+  freecash: 'free-cash',
 }
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
@@ -55,6 +57,7 @@ const ALIASES: Record<string, Tab> = {
   // NOT 'rates' -- that alias already means the curve page, and has since before this
   // page existed. A shared link must not change where it lands.
   'rate-register': 'rates', fees: 'rates', 'fee-schedule': 'rates', register: 'rates',
+  'free-cash': 'freecash', freecash: 'freecash', reserves: 'freecash', 'certified-free-cash': 'freecash',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -84,6 +87,7 @@ export const LABEL: Record<Tab, string> = {
   sources: 'Sources',
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
+  freecash: 'Free cash — how much is actually spendable',
 }
 
 /** Which page a drill-in sits under, for the trail back when somebody arrives by link
@@ -94,6 +98,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
   athletics: 'context',
   rates: 'deeper',
+  freecash: 'money',
 }
 
 export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')

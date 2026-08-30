@@ -16,6 +16,7 @@ import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
 import { Athletics } from './pages/Athletics'
 import { Rates } from './pages/Rates'
+import { FreeCash } from './pages/FreeCash'
 import { DataFooter } from './components/DataFooter'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
@@ -282,6 +283,7 @@ export default function App() {
       {tab === 'sources' && <Sources onJump={go} />}
       {tab === 'athletics' && <Athletics onJump={go} />}
       {tab === 'rates' && <Rates />}
+      {tab === 'freecash' && <FreeCash />}
 
       {tab === 'answers' && <Answers onJump={go} />}
 

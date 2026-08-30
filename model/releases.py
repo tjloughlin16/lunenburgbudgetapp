@@ -24,6 +24,37 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v8',
+        date='2026-08-30',
+        title='Free cash, and what spending it would actually buy',
+        short='free cash modelled',
+        headline='A new page lets you draw the town’s free cash down to any level and see '
+                 'what it covers. Emptying the reserve entirely — which nobody proposes — '
+                 'defers the school budget gap two years and leaves the town with nothing.',
+        changes=[
+            'The state’s certified free cash for Lunenburg and eight comparable towns, 2021 '
+            'to 2025, is published with the line-by-line calculation behind it. Lunenburg '
+            'certified a record $3,354,370 for this year, 6.55% of the operating budget on '
+            'our figures and 6.65% on the Town’s.',
+
+            'Two claims are argued about locally — that the town is too conservative, and '
+            'that free cash is not up to standard so the town is rebuilding. The Town’s own '
+            'budget release contains both and both are true: a record year, and below the '
+            'recommendation in seven of the last ten. They describe different windows.',
+
+            'What the data adds is that a normal year does not refill it. The record exists '
+            'because unspent appropriations were $2,457,761 against a four-year average of '
+            '$986,340 — 2.49 times, the largest jump of nine towns, while two of them fell. '
+            'Put that one line back at its own average and the town certifies 3.96%, below '
+            'the bottom of the band it is measured against.',
+
+            'And free cash cannot bend the curve. It is one-time money: a level, not a rate. '
+            'Drawing down to the 5% floor releases $794,872, which covers FY28 and nothing '
+            'after it. The page shows the whole ladder, including below the floor, because '
+            '"what if we spent it all" is the question people actually ask.',
+        ],
+    ),
+    dict(
         tag='v7',
         date='2026-08-30',
         title='Free cash, and what it can and cannot tell you',

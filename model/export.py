@@ -1,7 +1,7 @@
 import sys, json, csv
 sys.path.insert(0, 'model')
 from catalog import PROGRAMS, CATEGORIES
-from finance import DEFAULT_ASSUMPTIONS, FY27, expense_base
+from finance import DEFAULT_ASSUMPTIONS, FY27, expense_base, project
 from cascade import PRESETS, FLOOR_NOTE
 from peers import PEERS, LESSONS
 from athletics import (SPORTS, OTHER_PROGRAMS, FEE_BENCHMARKS, PROGRAM_TOTAL_LEVEL_SERVICE,
@@ -33,6 +33,7 @@ from taxbase import (TAX_RATE, LEVY, TOTAL_VALUE, RESIDENTIAL_SHARE, CIP_SHARE,
 import derivations
 import citations
 import releases
+import freecash
 import sped
 import corroboration
 from levers import LEVERS, ADMIN_TOTAL, ADMIN_CENTRAL, ADMIN_BUILDING, TECH_TOTAL, HEALTH_TOTAL, TRANSPORT_GENED, TRANSPORT_SPED
@@ -139,6 +140,12 @@ data = dict(
     splitReporting=SPLIT_REPORTING,
     athleticsHistory=_athletics_history(),
     rateRegister=_rate_register(),
+    # Free cash, kept OUT of the projection. It is derived from actuals and the projection
+    # is budget columns only; rule 1 forbids them meeting inside a calculation. The
+    # deficits are handed in so the page can place the two side by side and subtract,
+    # which is arithmetic and labelled as deferral rather than as a closed gap.
+    freeCash=freecash.export([(r['fy'], r['deficit'])
+                              for r in project(6, DEFAULT_ASSUMPTIONS)]),
     feeCalibration=dict(
         measured=MEASURED_FY26_FEE_REVENUE, measuredGross=MEASURED_FY26_FEE_REVENUE_GROSS,
         modelled=MODELLED_FY26_FEE_REVENUE, factor=FEE_CALIBRATION,

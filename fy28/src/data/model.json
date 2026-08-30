@@ -1001,9 +1001,22 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v7",
+  "current": "v8",
   "updated": "2026-08-30",
   "items": [
+   {
+    "tag": "v8",
+    "date": "2026-08-30",
+    "title": "Free cash, and what spending it would actually buy",
+    "short": "free cash modelled",
+    "headline": "A new page lets you draw the town\u2019s free cash down to any level and see what it covers. Emptying the reserve entirely \u2014 which nobody proposes \u2014 defers the school budget gap two years and leaves the town with nothing.",
+    "changes": [
+     "The state\u2019s certified free cash for Lunenburg and eight comparable towns, 2021 to 2025, is published with the line-by-line calculation behind it. Lunenburg certified a record $3,354,370 for this year, 6.55% of the operating budget on our figures and 6.65% on the Town\u2019s.",
+     "Two claims are argued about locally \u2014 that the town is too conservative, and that free cash is not up to standard so the town is rebuilding. The Town\u2019s own budget release contains both and both are true: a record year, and below the recommendation in seven of the last ten. They describe different windows.",
+     "What the data adds is that a normal year does not refill it. The record exists because unspent appropriations were $2,457,761 against a four-year average of $986,340 \u2014 2.49 times, the largest jump of nine towns, while two of them fell. Put that one line back at its own average and the town certifies 3.96%, below the bottom of the band it is measured against.",
+     "And free cash cannot bend the curve. It is one-time money: a level, not a rate. Drawing down to the 5% floor releases $794,872, which covers FY28 and nothing after it. The page shows the whole ladder, including below the floor, because \"what if we spent it all\" is the question people actually ask."
+    ]
+   },
    {
     "tag": "v7",
     "date": "2026-08-30",
@@ -5200,6 +5213,491 @@
    "not_published": "the rate demonstrably exists and we have no figure for it",
    "not_adopted": "proposed and not voted, so there is no rate to have"
   }
+ },
+ "freeCash": {
+  "certified": 3354370,
+  "identified": 3716282,
+  "budgetBase": 51189961,
+  "budgetRevised": 51531199,
+  "townImpliedBase": 50441654,
+  "townPublishedShare": 0.0665,
+  "currentShare": 0.0655,
+  "bandLow": 0.05,
+  "bandHigh": 0.07,
+  "bandSource": "Town of Lunenburg, FY27 budget press release, page 6, quoting DLS. This is the only source in the archive for the 5-7% band, and it is the Town quoting the state rather than the state itself.",
+  "townHistory": "In the last 10 years, Lunenburg has been below DLS free cash recommendations for seven years, only meeting this recommendation in 2022, 2023, and 2026.",
+  "yearOffsetNote": "DLS dates free cash to the 1 July it is certified; the Town dates it to the fiscal year it can be spent in. They are one year apart.",
+  "history": [
+   {
+    "year": 2021,
+    "certified": 2666962
+   },
+   {
+    "year": 2022,
+    "certified": 2923290
+   },
+   {
+    "year": 2023,
+    "certified": 1870612
+   },
+   {
+    "year": 2024,
+    "certified": 2270060
+   },
+   {
+    "year": 2025,
+    "certified": 3354370
+   }
+  ],
+  "unspent2025": 2457761,
+  "unspentAvg": 986340,
+  "certifiedRatio": 0.9026,
+  "normalCertified": 2026212,
+  "normalShare": 0.0396,
+  "peerMultiples": [
+   {
+    "town": "Lunenburg",
+    "multiple": 2.49
+   },
+   {
+    "town": "Ayer",
+    "multiple": 1.44
+   },
+   {
+    "town": "Groton",
+    "multiple": 1.37
+   },
+   {
+    "town": "Littleton",
+    "multiple": 1.13
+   },
+   {
+    "town": "Westford",
+    "multiple": 1.13
+   },
+   {
+    "town": "Shirley",
+    "multiple": 1.14
+   },
+   {
+    "town": "Townsend",
+    "multiple": 1.31
+   },
+   {
+    "town": "Upton",
+    "multiple": 0.72
+   },
+   {
+    "town": "Uxbridge",
+    "multiple": 0.4
+   }
+  ],
+  "deficits": [
+   {
+    "fy": 28,
+    "amount": 680870
+   },
+   {
+    "fy": 29,
+    "amount": 1322303
+   },
+   {
+    "fy": 30,
+    "amount": 2033179
+   },
+   {
+    "fy": 31,
+    "amount": 2819056
+   },
+   {
+    "fy": 32,
+    "amount": 3685928
+   },
+   {
+    "fy": 33,
+    "amount": 4640257
+   }
+  ],
+  "ladder": [
+   {
+    "target": 0.0,
+    "released": 3354370,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": true,
+      "remaining": 2673500
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": true,
+      "remaining": 1351197
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -681982
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -3501038
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -7186966
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -11827223
+     }
+    ]
+   },
+   {
+    "target": 0.01,
+    "released": 2842470,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": true,
+      "remaining": 2161600
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": true,
+      "remaining": 839297
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -1193882
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -4012938
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -7698866
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -12339123
+     }
+    ]
+   },
+   {
+    "target": 0.02,
+    "released": 2330571,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": true,
+      "remaining": 1649701
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": true,
+      "remaining": 327398
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -1705781
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -4524837
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -8210765
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -12851022
+     }
+    ]
+   },
+   {
+    "target": 0.03,
+    "released": 1818671,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": true,
+      "remaining": 1137801
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": false,
+      "remaining": -184502
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -2217681
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -5036737
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -8722665
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -13362922
+     }
+    ]
+   },
+   {
+    "target": 0.04,
+    "released": 1306772,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": true,
+      "remaining": 625902
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": false,
+      "remaining": -696401
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -2729580
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -5548636
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -9234564
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -13874821
+     }
+    ]
+   },
+   {
+    "target": 0.05,
+    "released": 794872,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": true,
+      "remaining": 114002
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": false,
+      "remaining": -1208301
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -3241480
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -6060536
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -9746464
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -14386721
+     }
+    ]
+   },
+   {
+    "target": 0.06,
+    "released": 282972,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": false,
+      "remaining": -397898
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": false,
+      "remaining": -1720201
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -3753380
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -6572436
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -10258364
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -14898621
+     }
+    ]
+   },
+   {
+    "target": 0.07,
+    "released": -228927,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": false,
+      "remaining": -909797
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": false,
+      "remaining": -2232100
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -4265279
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -7084335
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -10770263
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -15410520
+     }
+    ]
+   },
+   {
+    "target": 0.08,
+    "released": -740827,
+    "covers": [
+     {
+      "fy": 28,
+      "deficit": 680870,
+      "covered": false,
+      "remaining": -1421697
+     },
+     {
+      "fy": 29,
+      "deficit": 1322303,
+      "covered": false,
+      "remaining": -2744000
+     },
+     {
+      "fy": 30,
+      "deficit": 2033179,
+      "covered": false,
+      "remaining": -4777179
+     },
+     {
+      "fy": 31,
+      "deficit": 2819056,
+      "covered": false,
+      "remaining": -7596235
+     },
+     {
+      "fy": 32,
+      "deficit": 3685928,
+      "covered": false,
+      "remaining": -11282163
+     },
+     {
+      "fy": 33,
+      "deficit": 4640257,
+      "covered": false,
+      "remaining": -15922420
+     }
+    ]
+   }
+  ]
  },
  "feeCalibration": {
   "measured": 188944.46,

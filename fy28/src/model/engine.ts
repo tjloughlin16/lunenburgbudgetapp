@@ -180,6 +180,19 @@ export const MODEL = raw as unknown as {
     measured: number; measuredGross: number; modelled: number
     factor: number; surchargeGap: number; allInFy26: number; fundShareFy26: number
   }
+  freeCash: {
+    certified: number; identified: number; budgetBase: number; budgetRevised: number
+    townImpliedBase: number; townPublishedShare: number; currentShare: number
+    bandLow: number; bandHigh: number; bandSource: string
+    townHistory: string; yearOffsetNote: string
+    history: { year: number; certified: number }[]
+    unspent2025: number; unspentAvg: number; certifiedRatio: number
+    normalCertified: number; normalShare: number
+    peerMultiples: { town: string; multiple: number }[]
+    deficits: { fy: string; amount: number }[]
+    ladder: { target: number; released: number
+              covers: { fy: string; deficit: number; covered: boolean; remaining: number }[] }[]
+  }
   rateRegister: {
     rows: { fy: number | null; category: string; unit: string; item: string
             value: number | null; valueType: string; setOn: string; expires: string
