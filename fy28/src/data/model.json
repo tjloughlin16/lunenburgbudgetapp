@@ -1002,9 +1002,25 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v10",
+  "current": "v11",
   "updated": "2026-08-30",
   "items": [
+   {
+    "tag": "v11",
+    "date": "2026-08-30",
+    "title": "What redirecting free cash actually costs the capital programme",
+    "short": "the capital consequence, honestly",
+    "headline": "Free cash is the capital programme\u2019s largest source, so redirecting it to the schools stops capital work. How much is arithmetic; WHICH projects stop is a guess about a committee, and the site was reporting the guess as though it were the arithmetic. Both ends are now given, a third of the programme turns out not to be school money at all, and you can defer projects yourself and watch the gap move.",
+    "changes": [
+     "A third of the FY27 capital programme could never have gone to the schools. $594,000 of the $1,830,203 is the Vehicle Use Special Purpose Stabilization Fund, restricted to vehicles and equipment \u2014 the plan footnotes two projects as funded from it and they sum to exactly that figure. Not spending it there releases it to nothing. A redirect can reach $1,236,203, and the earlier version of this stranded a $259,000 front end loader with free cash that never paid for it.",
+     "What a redirect costs capital is now given as a range rather than a number. Taken strictly off the bottom of the committee\u2019s own ranking, $300,000 removed stops $693,949 of work, because rank 7 is a $494,500 roof and only $199,449 of items sit below it. Re-sequenced against the $1,437,005 of ranked work already unfunded, the same $300,000 stops $301,703. Nothing published says which the committee would do, and the site no longer picks.",
+     "A button on the free cash control opens the capital plan itself: all 22 ranked projects, what stops at the amount you have chosen, and what is already below the line. It is the strict reading, so a reader can check it against the published plan line by line, with the other reading beside it.",
+     "On Build your own budget, a new section for money you can only spend once. Defer capital projects by hand and the released money goes against FY28 \u2014 then comes straight back in FY29, because that is what one-time money does. The restricted projects are shown and cannot be picked.",
+     "The headline free cash card now says where the money already is: free cash funded $655,424 of last year\u2019s $1,225,000 capital plan, so the $794,872 ceiling is more than the whole of that year\u2019s contribution \u2014 as it is in seven of the ten years the plan publishes.",
+     "Two years missing from our capital funding extract, FY2019 and FY2020, are restored. With them the extract reproduces both of the capital plan\u2019s own printed averages to the cent, and the model now refuses to publish if either stops tying.",
+     "Release notes are collapsed by default, including this one. The panel was a wall of changes; it is now one sentence each until you ask for more."
+    ]
+   },
    {
     "tag": "v10",
     "date": "2026-08-30",
@@ -7412,180 +7428,276 @@
    "programmeTotal": 1830203,
    "plannedFromFreeCash": 991627,
    "averageFromFreeCash": 591286,
+   "history": [
+    {
+     "fy": 2017,
+     "total": 619475,
+     "freeCash": 250000
+    },
+    {
+     "fy": 2018,
+     "total": 633317,
+     "freeCash": 290019
+    },
+    {
+     "fy": 2019,
+     "total": 1455214,
+     "freeCash": 215736
+    },
+    {
+     "fy": 2020,
+     "total": 1684100,
+     "freeCash": 582732
+    },
+    {
+     "fy": 2021,
+     "total": 1142213,
+     "freeCash": 647880
+    },
+    {
+     "fy": 2022,
+     "total": 1597825,
+     "freeCash": 804041
+    },
+    {
+     "fy": 2023,
+     "total": 2162849,
+     "freeCash": 983034
+    },
+    {
+     "fy": 2024,
+     "total": 1039010,
+     "freeCash": 467269
+    },
+    {
+     "fy": 2025,
+     "total": 1317120,
+     "freeCash": 1016722
+    },
+    {
+     "fy": 2026,
+     "total": 1225000,
+     "freeCash": 655424
+    }
+   ],
+   "lastYear": {
+    "fy": 2026,
+    "total": 1225000,
+    "freeCash": 655424,
+    "redirectAsMultiple": 1.21
+   },
+   "yearsRedirectExceedsFreeCash": 7,
+   "yearsCovered": 10,
+   "redirectCeiling": 794872,
+   "queueValue": 1437005,
+   "queueCount": 10,
    "items": [
     {
      "rank": 1,
      "dept": "DPW",
      "project": "Flat Hill Rd Bridge Completion (Engineering and Construction)",
      "cost": 350000,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 2,
      "dept": "Police",
      "project": "Patrol Cruiser (replacement)",
      "cost": 68627,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 3,
      "dept": "Fire",
      "project": "Engine 2 - 4x4 Brush Truck (replacement)",
      "cost": 335000,
-     "funded": true
+     "funded": true,
+     "funding": "stabilization"
     },
     {
      "rank": 4,
      "dept": "Schools",
      "project": "Primary School Entry and Driveway Expansion (Design)",
      "cost": 25000,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 5,
      "dept": "Schools",
      "project": "Primary School Playground (Design)",
      "cost": 30000,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 6,
      "dept": "Police",
      "project": "Supervisor Cruiser (replacement)",
      "cost": 68627,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 7,
      "dept": "Facilities",
      "project": "Public Safety Building Roof Repair",
      "cost": 494500,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 8,
      "dept": "Facilities",
      "project": "Public Safety Building Boiler Upgrades",
      "cost": 115000,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 9,
      "dept": "Schools",
      "project": "School Door Security Intercoms at Turkey Hill and Primary (replacement)",
      "cost": 29044,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 10,
      "dept": "Facilities",
      "project": "Public Safety Controls Upgrade",
      "cost": 35000,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 11,
      "dept": "DPW",
      "project": "Front End Loader with Snow Plow (replacement, retain spare)",
      "cost": 259000,
-     "funded": true
+     "funded": true,
+     "funding": "stabilization"
     },
     {
      "rank": 12,
      "dept": "IT",
      "project": "Adult Activity Center Network Upgrade",
      "cost": 20405,
-     "funded": true
+     "funded": true,
+     "funding": "free_cash_or_taxation"
     },
     {
      "rank": 13,
      "dept": "DPW",
      "project": "6 Wheel Dump/Spreader/Plow (replacement)",
      "cost": 401000,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 14,
      "dept": "Schools",
      "project": "Primary School Window Safety Film",
      "cost": 29005,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 15,
      "dept": "Schools",
      "project": "Mower (replacement)",
      "cost": 49800,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 16,
      "dept": "DPW",
      "project": "One Ton Dump / Plow Truck (replacement)",
      "cost": 93000,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 17,
      "dept": "DPW",
      "project": "Fabric Salt Shed & Anti-Icing Chemicals Equipment (Design & Permit)",
      "cost": 200000,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 18,
      "dept": "Facilities",
      "project": "Fitzgerald Field Improvements",
      "cost": 55600,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 19,
      "dept": "Schools",
      "project": "Heat for THES Maintenance Garage",
      "cost": 60000,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 20,
      "dept": "Facilities",
      "project": "Public Safety VCT Flooring Replacement",
      "cost": 38600,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 21,
      "dept": "DPW",
      "project": "New West Townsend Rd. Drainage Improvements (Design)",
      "cost": 125000,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     },
     {
      "rank": 22,
      "dept": "Facilities",
      "project": "TC Passios Hazmat Abatement",
      "cost": 385000,
-     "funded": false
+     "funded": false,
+     "funding": "unfunded"
     }
    ],
-   "queueValue": 1437005,
-   "queueCount": 10,
+   "plannedFromTaxation": 244576,
+   "restrictedTotal": 594000,
+   "convertibleTotal": 1236203,
+   "restrictedItems": [
+    {
+     "rank": 3,
+     "dept": "Fire",
+     "project": "Engine 2 - 4x4 Brush Truck (replacement)",
+     "cost": 335000
+    },
+    {
+     "rank": 11,
+     "dept": "DPW",
+     "project": "Front End Loader with Snow Plow (replacement, retain spare)",
+     "cost": 259000
+    }
+   ],
    "atDraw": [
     {
      "redirect": 3354370,
-     "lost": 1830203,
+     "lost": 1236203,
+     "strictLost": 1236203,
+     "resequencedLost": 1236203,
      "projects": [
       {
        "rank": 12,
        "dept": "IT",
        "project": "Adult Activity Center Network Upgrade",
        "cost": 20405
-      },
-      {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
       },
       {
        "rank": 10,
@@ -7628,12 +7740,6 @@
        "dept": "Schools",
        "project": "Primary School Entry and Driveway Expansion (Design)",
        "cost": 25000
-      },
-      {
-       "rank": 3,
-       "dept": "Fire",
-       "project": "Engine 2 - 4x4 Brush Truck (replacement)",
-       "cost": 335000
       },
       {
        "rank": 2,
@@ -7651,19 +7757,15 @@
     },
     {
      "redirect": 2842470,
-     "lost": 1830203,
+     "lost": 1236203,
+     "strictLost": 1236203,
+     "resequencedLost": 1236203,
      "projects": [
       {
        "rank": 12,
        "dept": "IT",
        "project": "Adult Activity Center Network Upgrade",
        "cost": 20405
-      },
-      {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
       },
       {
        "rank": 10,
@@ -7706,12 +7808,6 @@
        "dept": "Schools",
        "project": "Primary School Entry and Driveway Expansion (Design)",
        "cost": 25000
-      },
-      {
-       "rank": 3,
-       "dept": "Fire",
-       "project": "Engine 2 - 4x4 Brush Truck (replacement)",
-       "cost": 335000
       },
       {
        "rank": 2,
@@ -7729,19 +7825,15 @@
     },
     {
      "redirect": 2330571,
-     "lost": 1830203,
+     "lost": 1236203,
+     "strictLost": 1236203,
+     "resequencedLost": 1236203,
      "projects": [
       {
        "rank": 12,
        "dept": "IT",
        "project": "Adult Activity Center Network Upgrade",
        "cost": 20405
-      },
-      {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
       },
       {
        "rank": 10,
@@ -7784,12 +7876,6 @@
        "dept": "Schools",
        "project": "Primary School Entry and Driveway Expansion (Design)",
        "cost": 25000
-      },
-      {
-       "rank": 3,
-       "dept": "Fire",
-       "project": "Engine 2 - 4x4 Brush Truck (replacement)",
-       "cost": 335000
       },
       {
        "rank": 2,
@@ -7807,19 +7893,15 @@
     },
     {
      "redirect": 1818671,
-     "lost": 1830203,
+     "lost": 1236203,
+     "strictLost": 1236203,
+     "resequencedLost": 1236203,
      "projects": [
       {
        "rank": 12,
        "dept": "IT",
        "project": "Adult Activity Center Network Upgrade",
        "cost": 20405
-      },
-      {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
       },
       {
        "rank": 10,
@@ -7862,12 +7944,6 @@
        "dept": "Schools",
        "project": "Primary School Entry and Driveway Expansion (Design)",
        "cost": 25000
-      },
-      {
-       "rank": 3,
-       "dept": "Fire",
-       "project": "Engine 2 - 4x4 Brush Truck (replacement)",
-       "cost": 335000
       },
       {
        "rank": 2,
@@ -7885,19 +7961,15 @@
     },
     {
      "redirect": 1306772,
-     "lost": 1411576,
+     "lost": 1236203,
+     "strictLost": 1236203,
+     "resequencedLost": 1236203,
      "projects": [
       {
        "rank": 12,
        "dept": "IT",
        "project": "Adult Activity Center Network Upgrade",
        "cost": 20405
-      },
-      {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
       },
       {
        "rank": 10,
@@ -7942,16 +8014,24 @@
        "cost": 25000
       },
       {
-       "rank": 3,
-       "dept": "Fire",
-       "project": "Engine 2 - 4x4 Brush Truck (replacement)",
-       "cost": 335000
+       "rank": 2,
+       "dept": "Police",
+       "project": "Patrol Cruiser (replacement)",
+       "cost": 68627
+      },
+      {
+       "rank": 1,
+       "dept": "DPW",
+       "project": "Flat Hill Rd Bridge Completion (Engineering and Construction)",
+       "cost": 350000
       }
      ]
     },
     {
      "redirect": 794872,
-     "lost": 952949,
+     "lost": 794872,
+     "strictLost": 817576,
+     "resequencedLost": 796203,
      "projects": [
       {
        "rank": 12,
@@ -7960,10 +8040,60 @@
        "cost": 20405
       },
       {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
+       "rank": 10,
+       "dept": "Facilities",
+       "project": "Public Safety Controls Upgrade",
+       "cost": 35000
+      },
+      {
+       "rank": 9,
+       "dept": "Schools",
+       "project": "School Door Security Intercoms at Turkey Hill and Primary (replacement)",
+       "cost": 29044
+      },
+      {
+       "rank": 8,
+       "dept": "Facilities",
+       "project": "Public Safety Building Boiler Upgrades",
+       "cost": 115000
+      },
+      {
+       "rank": 7,
+       "dept": "Facilities",
+       "project": "Public Safety Building Roof Repair",
+       "cost": 494500
+      },
+      {
+       "rank": 6,
+       "dept": "Police",
+       "project": "Supervisor Cruiser (replacement)",
+       "cost": 68627
+      },
+      {
+       "rank": 5,
+       "dept": "Schools",
+       "project": "Primary School Playground (Design)",
+       "cost": 30000
+      },
+      {
+       "rank": 4,
+       "dept": "Schools",
+       "project": "Primary School Entry and Driveway Expansion (Design)",
+       "cost": 25000
+      }
+     ]
+    },
+    {
+     "redirect": 282972,
+     "lost": 282972,
+     "strictLost": 693949,
+     "resequencedLost": 287254,
+     "projects": [
+      {
+       "rank": 12,
+       "dept": "IT",
+       "project": "Adult Activity Center Network Upgrade",
+       "cost": 20405
       },
       {
        "rank": 10,
@@ -7992,37 +8122,17 @@
      ]
     },
     {
-     "redirect": 282972,
-     "lost": 314405,
-     "projects": [
-      {
-       "rank": 12,
-       "dept": "IT",
-       "project": "Adult Activity Center Network Upgrade",
-       "cost": 20405
-      },
-      {
-       "rank": 11,
-       "dept": "DPW",
-       "project": "Front End Loader with Snow Plow (replacement, retain spare)",
-       "cost": 259000
-      },
-      {
-       "rank": 10,
-       "dept": "Facilities",
-       "project": "Public Safety Controls Upgrade",
-       "cost": 35000
-      }
-     ]
-    },
-    {
      "redirect": -228927,
      "lost": 0,
+     "strictLost": 0,
+     "resequencedLost": 0,
      "projects": []
     },
     {
      "redirect": -740827,
      "lost": 0,
+     "strictLost": 0,
+     "resequencedLost": 0,
      "projects": []
     }
    ]

@@ -297,6 +297,7 @@ arriving fresh.
     python3 scripts/classify_document_basis.py   # what produced each document's figures
     python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source
     python3 scripts/verify_athletics.py          # every figure in the athletics analysis
+    python3 scripts/verify_free_cash_capital.py  # the capital section of the free cash analysis
 
 ## The standing questions
 

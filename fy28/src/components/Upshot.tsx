@@ -101,6 +101,10 @@ const FC = MODEL.freeCash
  *  inside the band the Town measures itself against. Derived: it is a subtraction between
  *  two figures that both move. */
 const FC_REDIRECT = Math.round(FC.certified - FC.bandLow * FC.budgetBase)
+/** Free cash is the capital programme's largest funding source, so the redirect is not
+ *  spare money — it is measured here against what free cash has actually given capital,
+ *  year by year, in the capital plan's own funding table. */
+const FC_CAP = FC.capital
 
 const AID_RATE = aidGrowthToSustain(DEFAULT_SCENARIO)
 const CH70_RATE = AID_RATE === null ? null : ch70OnlyGrowth(AID_RATE)
@@ -262,7 +266,13 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
           {/* Added because two arguments in town point at this number and both are right
               about a different year. The card carries the condition as well as the
               headline, because the headline alone is the more persuasive half and the
-              condition is the load-bearing one. */}
+              condition is the load-bearing one.
+              There are two conditions, and the second was missing: the money is already
+              spent on something. Free cash is the capital programme's largest source, and
+              the ceiling is larger than the whole of what it gave capital in seven of the
+              ten years the plan publishes — so "available within the guideline" and
+              "available" are not the same sentence. What it costs capital in PROJECTS is a
+              range and not a number; that argument is on the rate board, not here. */}
           <Claim n={7} figure={usdShort(FC_REDIRECT)}
             figureNote="a year, in a year like this one"
             tone="critical" eyebrow="Record and projection" href="/free-cash"
@@ -274,6 +284,12 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
             that. But this year was a record: an ordinary one certifies{' '}
             {usdShort(FC.normalCertified)} &mdash; {(FC.normalShare * 100).toFixed(2)}%,
             already below the floor, with nothing to redirect.
+            {FC_CAP?.lastYear && <> And it is the capital programme&rsquo;s money: free cash
+              funded {usdShort(FC_CAP.lastYear.freeCash)} of last year&rsquo;s{' '}
+              {usdShort(FC_CAP.lastYear.total)} capital plan, so {usdShort(FC_REDIRECT)} is
+              more than that whole year&rsquo;s share of it &mdash; as it is in{' '}
+              {FC_CAP.yearsRedirectExceedsFreeCash} of the {FC_CAP.yearsCovered} years the
+              plan publishes.</>}
           </Claim>
         </ol>
 

@@ -199,9 +199,28 @@ export const MODEL = raw as unknown as {
                  years: { fy: string; deficit: number; applied: number; after: number }[] }[]
     capital: {
       programmeTotal: number; plannedFromFreeCash: number; averageFromFreeCash: number
-      queueValue: number; queueCount: number
-      items: { rank: number; dept: string; project: string; cost: number; funded: boolean }[]
-      atDraw: { redirect: number; lost: number
+      queueValue: number; queueCount: number; redirectCeiling: number
+      /** $594,000 of the FY27 programme is the Vehicle Use Special Purpose Stabilization
+       *  Fund, restricted to vehicles and equipment. Cancelling what it pays for frees
+       *  nothing for the schools, so `convertibleTotal` — not `programmeTotal` — is what a
+       *  draw can strand, and `restrictedItems` never appear in any `atDraw.projects`. */
+      plannedFromTaxation: number; restrictedTotal: number; convertibleTotal: number
+      restrictedItems: { rank: number; dept: string; project: string; cost: number }[]
+      /** The capital plan's own ten-year funding table, and how the redirect ceiling
+       *  measures against it. `yearsRedirectExceedsFreeCash` is the count of years in
+       *  which the ceiling is larger than the WHOLE free cash contribution to capital. */
+      history: { fy: number; total: number; freeCash: number }[]
+      lastYear: { fy: number; total: number; freeCash: number
+                  redirectAsMultiple: number } | null
+      yearsRedirectExceedsFreeCash: number; yearsCovered: number
+      items: { rank: number; dept: string; project: string; cost: number; funded: boolean
+               funding: 'free_cash_or_taxation' | 'stabilization' | 'unfunded' }[]
+      /** `lost` is dollars out of the programme and is exact. `strictLost` and
+       *  `resequencedLost` bracket what that costs in PROJECTS — the first holds the
+       *  committee to its published ranking and overshoots because items are indivisible,
+       *  the second lets it re-sequence against the unfunded queue. Nothing establishes
+       *  which happens, so both travel together. */
+      atDraw: { redirect: number; lost: number; strictLost: number; resequencedLost: number
                 projects: { rank: number; dept: string; project: string; cost: number }[] }[]
     } | null
     sustainableDraw: number
@@ -406,7 +425,10 @@ export const ladderContiguous = (mask: number) =>
 /** One line on the floating panel: something the reader has actually changed. */
 export interface AppliedItem {
   id: string; label: string; detail: string; amount: number
-  kind: 'lever' | 'cut' | 'override'
+  /** `onetime` is money that closes one year and is gone: capital deferred, or any other
+   *  one-time source. It counts against FY28 exactly like a lever and must NOT be carried
+   *  into the later years of a remainder — the page adds it straight back in FY29. */
+  kind: 'lever' | 'cut' | 'override' | 'onetime'
   /** Section id of the control that produced this, so the panel can jump you to it. */
   anchor?: string
 }

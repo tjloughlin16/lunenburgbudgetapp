@@ -19,6 +19,8 @@ import { GrowthDial } from '../components/GrowthDial'
 import { AssumptionsPanel } from '../components/Assumptions'
 import { TeamSlider, TeamBoard } from '../components/SportCutter'
 import { CutBoard } from '../components/CutBoard'
+import { CapitalLever } from '../components/CapitalLever'
+import { CONVERTIBLE } from '../model/capital'
 import { LadderDetail } from '../components/AdminLadder'
 
 const startVals = () => Object.fromEntries(MODEL.levers.map(l => [l.id, leverStart(l)]))
@@ -51,6 +53,9 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
   const [movers, setMovers] = useState(0)
   const [migrationSaving, setMigrationSaving] = useState(0)
   const [cuts, setCuts] = useState<CutState>({})
+  /** Capital projects the reader has deferred, by CPC rank. One-time money, and the only
+   *  control on this page that produces any — see the `onetime` handling in `years`. */
+  const [capitalPicks, setCapitalPicks] = useState<Set<number>>(new Set())
   const [loadedFrom, setLoadedFrom] = useState<string | null>(null)
   const [loadedOption, setLoadedOption] = useState<Package | null>(null)
 
@@ -130,6 +135,9 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
     [aGross])
   const growthMax = Math.ceil((growthClosesAt * 1.1) / 10_000_000) * 10_000_000
 
+  const capitalPicked = CONVERTIBLE.filter(i => capitalPicks.has(i.rank))
+  const capitalTotal = Math.round(capitalPicked.reduce((s, i) => s + i.cost, 0))
+
   const found: AppliedItem[] = [
     ...leverItems,
     ...(migrationSaving > 0 ? [{
@@ -145,6 +153,18 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
         + `${usd(MODEL.taxBase.currentNewGrowthValue)} assumed — `
         + `${(growthShare * 100).toFixed(0)}% of it reaches the schools`,
       amount: growthDelta,
+    }] : []),
+    // Deferred capital. One-time by construction: the money exists once, the project is
+    // still unbuilt, and `years` below adds it back in FY29 rather than letting it look
+    // like a rate. Restricted stabilization money can never appear here — CONVERTIBLE
+    // excludes it, and the card disables those rows.
+    ...(capitalTotal > 0 ? [{
+      id: 'capital_deferred', kind: 'onetime' as const,
+      label: 'Capital projects deferred',
+      detail: `${capitalPicked.length} `
+        + `${capitalPicked.length === 1 ? 'project' : 'projects'} from the FY27 capital `
+        + `plan — one-time money, and the gap returns in FY29`,
+      amount: capitalTotal,
     }] : []),
   ]
   const cutItems: AppliedItem[] = cutScore.items
@@ -166,9 +186,17 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
   const cutTotal = cutItems.reduce((s, i) => s + i.amount, 0)
   const restoreTotal = cutScore.restoreTotal
 
-  const years: YearRemainder[] = grossYears.map(y => ({
+  // One-time money closes the year it is spent in and nothing after it. Subtracting it
+  // from every year — which is what happens if it is left inside foundTotal — turns a
+  // single draw into a permanent revenue stream, which is the whole error this site
+  // exists to argue against.
+  const oneTimeTotal = found
+    .filter(i => i.kind === 'onetime')
+    .reduce((s, i) => s + i.amount, 0)
+  const years: YearRemainder[] = grossYears.map((y, i) => ({
     fy: y.fy, gap: y.deficit,
-    remaining: y.deficit + restoreTotal - foundTotal - cutTotal,
+    remaining: y.deficit + restoreTotal - foundTotal - cutTotal
+      + (i > 0 ? oneTimeTotal : 0),
   }))
 
   /* ---- things that would otherwise be counted twice ---- */
@@ -187,6 +215,21 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
       + `${unlawfulCount === 1 ? 'thing' : 'things'} the Commonwealth requires the `
       + 'district to have. The arithmetic is real; the budget is not one that could be '
       + 'adopted. Look for the ⚖ marks.')
+  if (oneTimeTotal > 0)
+    warnings.push(`${usd(oneTimeTotal)} of this is one-time money — deferred capital. It `
+      + 'closes part of FY28 and then it is gone: the same hole opens again in FY29, and '
+      + 'the projects are still unbuilt. The year-by-year figures below add it back.')
+  // Past the redirect ceiling the money can only come from somewhere the Town's own
+  // guideline says it should not. Free cash and taxation both fund the programme and the
+  // plan does not break the split out by project, so this is stated as the range it is.
+  const fcCeiling = MODEL.freeCash.capital?.redirectCeiling ?? 0
+  if (fcCeiling > 0 && capitalTotal > fcCeiling)
+    warnings.push(`${usd(capitalTotal)} is more than the ${usd(fcCeiling)} that can be `
+      + 'redirected while the retained free cash stays inside the 5–7% the Town measures '
+      + 'itself against. Part of the capital programme is funded by taxation rather than '
+      + 'free cash and that part does not count against the balance — but the plan does '
+      + 'not say which projects, so past this point some of this money is coming from '
+      + 'below the floor.')
   const cutIn = (cat: string) =>
     cutScore.items.some(i => i.cat === cat && i.amount > 0)
   if ((leverVals.tech_cut ?? 0) > 0 && cutIn('technology'))
@@ -208,6 +251,7 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
   const resetItem = (id: string) => {
     if (id === 'new_growth') return setNewValue(MODEL.taxBase.currentNewGrowthValue)
     if (id === 'health_migration') { setMovers(0); return setMigrationSaving(0) }
+    if (id === 'capital_deferred') return setCapitalPicks(new Set())
     if (id.startsWith('restore:')) {
       const next = { ...cuts }
       delete next[id]
@@ -240,6 +284,7 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
     setMovers(0); setMigrationSaving(0)
     setNewValue(MODEL.taxBase.currentNewGrowthValue)
     setCuts({}); setLoadedFrom(null)
+    setCapitalPicks(new Set())
   }
 
   /** Seed the board from one of the published rankings, then let it be argued with. */
@@ -410,6 +455,24 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
               </Note>
             </Disclose>
           </div>
+        </div>
+
+        {/* ---------- one-time money ----------
+         *
+         * Its own section rather than a card inside "Fees, savings and cuts", because
+         * one-time money is a different KIND of answer and the page should not let it sit
+         * in a list of recurring ones. Everything above closes the gap every year;
+         * everything here closes it once. */}
+        <div>
+          <h2 className="text-lg font-bold mb-1">Money you can only spend once</h2>
+          <p className="text-[13px] mb-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+            Free cash and the capital programme are the same money, and it is the one
+            source in this whole tool that does not come back next year. Deferring a
+            project releases what it cost &mdash; and the project is still there, still
+            ranked, still needed, in a queue that is already {usd(MODEL.freeCash.capital
+              ? MODEL.freeCash.capital.queueValue : 0)} long.
+          </p>
+          <CapitalLever picked={capitalPicks} setPicked={setCapitalPicks} />
         </div>
 
         {/* ---------- cuts ---------- */}

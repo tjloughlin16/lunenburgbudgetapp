@@ -83,8 +83,27 @@ returns a real 404 instead of the app shell. `/rate-register` and `/free-cash` a
   balance stays inside the band. That is the number on the slider.
 - **Free cash is the capital programme's money.** Departments ranked $3,267,208 of projects
   against $1,830,203 funded, so **$1,437,005 is already below the line**. A dollar out is a
-  dollar of ranked work not done. In projects it is not one-for-one: $500,000 redirected
-  removes $952,949, because #7 is a $494,500 roof.
+  dollar of ranked work not done — in DOLLARS, exactly, which is the only part that is
+  arithmetic.
+- **A third of the capital programme is not school money and never could have been.**
+  $594,000 of the $1,830,203 is the Vehicle Use Special Purpose Stabilization Fund,
+  restricted to vehicles and equipment. The plan footnotes two projects as funded from it —
+  Engine 2 ($335,000) and the front end loader ($259,000) — and they sum to exactly the
+  $594,000 its funding page shows, which is how the assignment is known. **A draw can strand
+  $1,236,203, not the whole programme.** The first version of this model took items off the
+  bottom of the full funded list and stranded the loader with free cash that never paid for
+  it.
+- **Which projects stop is a range, not a number, and the site now says so.** Rank 7 is a
+  $494,500 roof with only $199,449 of items below it, so held to the published ranking a
+  $300,000 draw and a $500,000 draw both remove $693,949. Re-sequenced against the
+  $1,437,005 queue, $300,000 removes $301,703. The rigid reading overstates a $300,000 draw
+  by 131%, and the overshoot is an artifact of assuming indivisible items in a fixed order,
+  not a cost of the policy. **We hold no instance of the committee re-ranking after a cut**
+  — `DATA-WANTED §3e`.
+- **The ceiling is larger than what free cash has usually given capital.** It funded
+  $655,424 of last year's $1,225,000 capital plan, and averages $591,286 over the plan's own
+  ten-year table, so $794,872 exceeds the whole year's contribution in seven of ten years.
+  The capital-side twin of the normal-year finding.
 
 **DLS dates free cash to the 1 July it is certified; the Town dates it to the fiscal year it
 can be spent in. They are one year apart.** Confirmed, not assumed.
@@ -114,7 +133,8 @@ can be spent in. They are one year apart.** Confirmed, not assumed.
 | Lunenburg is hoarding free cash | Below the recommendation seven of ten years, on the Town's own account |
 | Lunenburg is rebuilding | This year is a record and inside the band. Both claims are about different windows |
 | The `ADJ EXP` entries moved costs to the general fund | Three readings fit. No memo held |
-| Redirecting free cash costs capital one-for-one | In dollars yes, because of the queue. In projects no — the list is lumpy |
+| Redirecting free cash costs capital one-for-one | In dollars yes, because of the queue. In projects it is a range: a $300,000 draw costs $693,949 if the CPC holds its ranking and $301,703 if it re-sequences, and nothing published says which |
+| The two stabilization-funded projects are ranks 3 and 11 | They are the only two the plan footnotes and they sum to exactly the $594,000 its funding page shows. That is a reconciliation, not a published assignment — no project-by-project funding table exists |
 | Tighter budgeting would free money AND keep free cash | The flow is produced by the underspending. It cannot be counted twice |
 | The teaching board agrees with the model | It does — but `matchesEngine` was uncalled for months. It now runs and shows a visible warning |
 

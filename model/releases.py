@@ -24,6 +24,57 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v11',
+        date='2026-08-30',
+        title='What redirecting free cash actually costs the capital programme',
+        short='the capital consequence, honestly',
+        headline='Free cash is the capital programme’s largest source, so redirecting it '
+                 'to the schools stops capital work. How much is arithmetic; WHICH '
+                 'projects stop is a guess about a committee, and the site was reporting '
+                 'the guess as though it were the arithmetic. Both ends are now given, a '
+                 'third of the programme turns out not to be school money at all, and you '
+                 'can defer projects yourself and watch the gap move.',
+        changes=[
+            'A third of the FY27 capital programme could never have gone to the schools. '
+            '$594,000 of the $1,830,203 is the Vehicle Use Special Purpose Stabilization '
+            'Fund, restricted to vehicles and equipment — the plan footnotes two projects '
+            'as funded from it and they sum to exactly that figure. Not spending it there '
+            'releases it to nothing. A redirect can reach $1,236,203, and the earlier '
+            'version of this stranded a $259,000 front end loader with free cash that '
+            'never paid for it.',
+
+            'What a redirect costs capital is now given as a range rather than a number. '
+            'Taken strictly off the bottom of the committee’s own ranking, $300,000 '
+            'removed stops $693,949 of work, because rank 7 is a $494,500 roof and only '
+            '$199,449 of items sit below it. Re-sequenced against the $1,437,005 of ranked '
+            'work already unfunded, the same $300,000 stops $301,703. Nothing published '
+            'says which the committee would do, and the site no longer picks.',
+
+            'A button on the free cash control opens the capital plan itself: all 22 '
+            'ranked projects, what stops at the amount you have chosen, and what is '
+            'already below the line. It is the strict reading, so a reader can check it '
+            'against the published plan line by line, with the other reading beside it.',
+
+            'On Build your own budget, a new section for money you can only spend once. '
+            'Defer capital projects by hand and the released money goes against FY28 — '
+            'then comes straight back in FY29, because that is what one-time money does. '
+            'The restricted projects are shown and cannot be picked.',
+
+            'The headline free cash card now says where the money already is: free cash '
+            'funded $655,424 of last year’s $1,225,000 capital plan, so the $794,872 '
+            'ceiling is more than the whole of that year’s contribution — as it is in '
+            'seven of the ten years the plan publishes.',
+
+            'Two years missing from our capital funding extract, FY2019 and FY2020, are '
+            'restored. With them the extract reproduces both of the capital plan’s own '
+            'printed averages to the cent, and the model now refuses to publish if either '
+            'stops tying.',
+
+            'Release notes are collapsed by default, including this one. The panel was a '
+            'wall of changes; it is now one sentence each until you ask for more.',
+        ],
+    ),
+    dict(
         tag='v10',
         date='2026-08-30',
         title='Free cash as a standing policy — and why the level you hold barely matters',

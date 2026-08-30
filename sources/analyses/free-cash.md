@@ -163,6 +163,95 @@ Lunenburg's 2025 proof in full:
 spend** — $2,457,761, against $1,225,720 from local receipts coming in above estimate. That
 share has risen from 31% in 2023 to 60% and then 66%.
 
+## Where the money already goes: the capital programme
+
+Free cash is not spare. It is the capital programme's largest single funding source, and the
+FY27 capital plan publishes its own ten-year table saying so.
+
+| | free cash into capital | whole capital plan |
+|---|---:|---:|
+| FY2026 | $655,424 | $1,225,000 |
+| FY2025 | $1,016,722 | $1,317,120 |
+| FY2024 | $467,269 | $1,039,010 |
+| **ten-year average** | **$591,286** | $1,287,612 |
+| FY2027 (planned) | $991,627 | $1,830,203 |
+
+*Source: `sources/txt/town-article13-fy27-capital-plan.txt`, funding history table, and ATM
+2026 warrant Article 13. Extracted to `sources/data/capital-funding-history.csv`, which
+reproduces the plan's own printed Average row to the cent — `model/freecash.py` refuses to
+export if it does not.*
+
+**The redirect ceiling is larger than the whole of what free cash gave capital in seven of
+those ten years**, and 1.21× what it gave last year. FY27 is the outlier on both sides at
+once: the record certification and the record contribution to capital are the same money.
+This is the capital-side twin of the normal-year finding — the draw is affordable in this
+year, and in few others.
+
+### A third of the programme is not money the schools could have had
+
+The FY27 programme has three funding sources and they are not interchangeable:
+
+| source | amount | can it become school money? |
+|---|---:|---|
+| Free cash | $991,627 | yes |
+| Raise and appropriate | $244,576 | yes — it is levy money |
+| Vehicle Use Special Purpose Stabilization Fund | $594,000 | **no** |
+| **total** | **$1,830,203** | |
+
+The stabilization fund was adopted at the 2017 Annual Town Meeting for *"Funding Future
+Capital Needs for Vehicles and Equipment"*, requires a two-thirds vote, and holds
+$2,641,397.10. Money not spent from it stays in it. Cancelling a project it pays for frees
+nothing for the schools, and a model that lets a reader cut those projects for money back
+is inventing dollars.
+
+The plan does not publish a project-by-project funding table, but it footnotes exactly two
+projects *"\*Funded from Vehicle Use Special Purpose Stabilization Fund"* — Engine 2 at
+$335,000 (p.15) and the Front End Loader at $259,000 (p.23). Those two sum to $594,000,
+which is the figure the plan's own funding page shows against that fund. **That is how the
+assignment is known rather than guessed**, and `model/freecash.py` reconciles it in both
+directions before it will compute anything: the marked projects must total the stabilization
+line, and the rest of the funded programme must total free cash plus taxation.
+
+So the programme a free cash redirect can actually strand is **$1,236,203**, not $1,830,203
+— and rank 11, the $259,000 front end loader, is not in it. An earlier version of this
+model took projects off the bottom of the whole funded list, which stranded the loader with
+free cash that never paid for it.
+
+### What it costs capital is two questions, and only one of them is arithmetic
+
+Redirect $500,000 and the programme is funded by $500,000 less. That needs no assumption.
+
+Which projects stop does. The plan ranks 22 projects, funds the first 12, and leaves
+**$1,437,005 of ranked, costed work below the line**. So there is a queue: nothing gains
+slack, and a dollar removed is a dollar of requested work not done. But *which* dollar
+depends on how the Capital Planning Committee behaves, and the two readings are far apart:
+
+| redirected | held to the published ranking | re-sequenced against the queue |
+|---:|---:|---:|
+| $300,000 | $693,949 | $301,703 |
+| $500,000 | $693,949 | $500,000 |
+| $794,872 | $817,576 | $796,203 |
+
+The rigid reading overshoots because the items are indivisible and rank 7 is a $494,500
+roof: taking anything at all off the bottom reaches that roof by the fifth item, so a
+$300,000 draw and a $500,000 draw produce the same $693,949. At $300,000 that overstates
+the loss by **131%**.
+
+**That overshoot is an artifact of the assumption, not a cost of the policy.** A committee
+losing $300,000 of funding and holding ten unfunded projects in front of it can defer the
+roof and fund $393,949 of smaller queued items instead, or take the four items above the
+roof and stop. Nothing published says whether it would. The site reports both ends and calls
+neither the answer; `notes/DATA-WANTED.md` §3e names the one document that would settle it —
+any prior year's recommended list beside its funded list.
+
+**What this does not show.** It does not show that capital work is lost forever: a project
+deferred is not a project cancelled, and this project holds no evidence either way about
+what happens to items that fall below the line in one year. It also says nothing about the
+merit of any project against any school dollar. It establishes only that the money is
+already committed to something ranked, that a third of the programme could not have gone to
+the schools under any vote, and that "available within the guideline" is not the same
+sentence as "available".
+
 ## What this does and does not establish
 
 **It does not mean waste, and it is not the schools.** Every town turns money back;

@@ -241,37 +241,122 @@ def override_contrast(project_fn, levy_cap, amount, years=6):
                 cumulativeOverride=sum(r['afterOverride'] for r in out))
 
 
+# --- the capital programme, and what a redirect actually costs it --------------------
+# The FY27 capital plan prints ten years of its own funding sources and an Average row
+# under them. Both are read from `sources/data/capital-funding-history.csv` and the average
+# is reconciled to the figure the plan itself prints, because rule 13's failure is an
+# extract that quietly disagrees with the total its own source shows. The extract was two
+# rows short of that for a while -- FY19 and FY20 were missing -- and nothing noticed,
+# because the average beside them was typed rather than computed.
+PLAN_PRINTED_AVG_FREE_CASH = 591_285.74   # town-article13-fy27-capital-plan.txt, "Average" row
+PLAN_PRINTED_AVG_TOTAL = 1_287_612.33     # the same row, whole-programme column
+PLANNED_FROM_FREE_CASH = 991_627          # ATM 2026 warrant, Article 13, FY27
+PLANNED_FROM_TAXATION = 244_576           # capital plan p.9, "Raise and Appropriate"
+# The Vehicle Use Special Purpose Stabilization Fund. Adopted at the 2017 Annual Town
+# Meeting for "Funding Future Capital Needs for Vehicles and Equipment", it requires a 2/3
+# vote and it cannot become school money -- so a third of the FY27 capital programme is
+# NOT convertible into anything else, and a model that lets the reader cut it for money
+# back is inventing dollars.
+#
+# The plan footnotes exactly two projects "*Funded from Vehicle Use Special Purpose
+# Stabilization Fund": Engine 2 at $335,000 (p.15) and the Front End Loader at $259,000
+# (p.23). They sum to the $594,000 the plan's own funding page shows against that fund,
+# which is how the assignment is known rather than guessed -- no project-by-project
+# funding table is published.
+PLANNED_FROM_STABILIZATION = 594_000      # capital plan p.9, Special Purpose Stabilization
+
+
+def _funding_history():
+    """Free cash into the capital programme, year by year, from the plan's own table."""
+    import csv as _csv
+    import os as _os
+    root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    path = _os.path.join(root, 'sources', 'data', 'capital-funding-history.csv')
+    if not _os.path.exists(path):
+        return []
+    return [dict(fy=int(r['fy']), total=float(r['total']), freeCash=float(r['free_cash']))
+            for r in _csv.DictReader(open(path))]
+
+
 def capital_consequence():
-    """What redirecting free cash costs the capital programme, item by item.
+    """What redirecting free cash costs the capital programme.
 
-    Free cash is the capital programme's largest funding source -- the town has averaged
-    $591,286 a year of it and plans $991,627 for FY27 -- so a dollar redirected to the
-    schools is a dollar capital does not have. Saying "$794,872 is available within the
-    guideline" without saying that is half the story.
+    Free cash is the capital programme's largest funding source -- averaging $591,286 a
+    year over the plan's own ten-year table and $991,627 planned for FY27 -- so a dollar
+    redirected to the schools is a dollar capital does not have. Saying "$794,872 is
+    available within the guideline" without saying that is half the story.
 
-    The order is the town's own. The FY27 plan is published with a CPC Rank column and a
-    running total, so projects come off the bottom of the Capital Planning Committee's
-    ranking and nobody here decides which ones matter.
+    **Two different quantities, and the page must not merge them.**
 
-    **The loss is not one for one, and that is the point.** The list is lumpy: redirecting
-    $500,000 removes $952,949 of projects, because the next item down is a $494,500 roof
-    and half a roof is not a thing. The ratio is reported so the page can say so.
+    *Dollars* is arithmetic and needs no assumption: redirect $R and the programme is
+    funded by $R less. That is the honest headline and it is exact.
+
+    *Which projects stop* is not arithmetic. It is a claim about how the Capital Planning
+    Committee would behave, and this module reports it as a RANGE between two behaviours
+    rather than as a number:
+
+    - `strictLost` -- the committee holds its published ranking rigid and takes items off
+      the bottom until the money is found. Because the list is lumpy this OVERSHOOTS: rank
+      7 is a $494,500 roof and the four items below it come to $199,449, so ANY draw over
+      that reaches the roof and removes $693,949 whether it needed $300,000 or $500,000.
+    - `resequencedLost` -- the committee re-sequences, dropping whatever combination comes
+      closest to the money removed. At $500,000 that is $500,000 exactly.
+
+    The overshoot between them is not a cost. It is the **integrality gap** -- the price of
+    assuming indivisible items in a fixed order -- and reporting it as the loss overstates a
+    $300,000 redirect by 131%. There is $1,437,005 of ranked, costed, unfunded work in the
+    queue to substitute into, so the rigid reading is the less likely of the two.
+
+    **And only part of the programme is in play at all.** $594,000 of the $1,830,203 is the
+    Vehicle Use Special Purpose Stabilization Fund, restricted to vehicles and equipment, so
+    cancelling what it pays for frees nothing for the schools. A draw can strand $1,236,203,
+    not the whole programme. An earlier version of this took items off the bottom of the
+    full funded list and stranded a $259,000 front end loader with free cash that never paid
+    for it.
+
+    **Nothing here establishes which one happens.** We hold no instance of the committee
+    re-ranking after a funding cut; the ranking is evidence of preference, not of
+    procedure. `notes/DATA-WANTED.md` §3e names what would settle it.
+
+    What survives either way, and is the reason the section exists at all: there is a
+    queue, so no dollar removed gains slack anywhere.
     """
     import csv as _csv
+    import itertools as _it
     import os as _os
     root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     path = _os.path.join(root, 'sources', 'data', 'capital-plan-fy27.csv')
     if not _os.path.exists(path):
         return None
     items = [dict(rank=int(r['rank']), dept=r['dept'], project=r['project'],
-                  cost=float(r['cost']), funded=r.get('funded', 'yes'))
+                  cost=float(r['cost']), funded=r.get('funded', 'yes'),
+                  funding=r.get('funding', 'free_cash_or_taxation'))
              for r in _csv.DictReader(open(path))]
     funded = [i for i in items if i.get('funded', 'yes') == 'yes']
     unfunded = [i for i in items if i.get('funded', 'yes') != 'yes']
     total = sum(i['cost'] for i in funded)
-    by_rank_desc = sorted(funded, key=lambda i: -i['rank'])
+
+    # Restricted money cannot be redirected and cannot be freed by redirecting something
+    # else, so it is not in the set a draw can strand. Reconciled to the plan's own funding
+    # page in both directions before anything is computed from it.
+    restricted = [i for i in funded if i['funding'] == 'stabilization']
+    convertible = [i for i in funded if i['funding'] != 'stabilization']
+    restricted_total = sum(i['cost'] for i in restricted)
+    convertible_total = sum(i['cost'] for i in convertible)
+    if abs(restricted_total - PLANNED_FROM_STABILIZATION) > 0.01:
+        raise AssertionError(
+            f'the projects marked stabilization total {restricted_total:,.2f}; the capital '
+            f'plan shows {PLANNED_FROM_STABILIZATION:,.2f} against that fund')
+    if abs(convertible_total - (PLANNED_FROM_FREE_CASH + PLANNED_FROM_TAXATION)) > 0.01:
+        raise AssertionError(
+            f'the rest of the funded programme totals {convertible_total:,.2f}; free cash '
+            f'plus taxation is '
+            f'{PLANNED_FROM_FREE_CASH + PLANNED_FROM_TAXATION:,.2f}')
+
+    by_rank_desc = sorted(convertible, key=lambda i: -i['rank'])
 
     def falls(redirect):
+        """Off the bottom of the published ranking, in order, until the money is found."""
         lost, names = 0.0, []
         for it in by_rank_desc:
             if lost >= redirect:
@@ -281,19 +366,80 @@ def capital_consequence():
                               cost=round(it['cost'])))
         return round(lost), names
 
+    costs = [i['cost'] for i in convertible]
+
+    def closest_fit(redirect):
+        """The least the programme can lose and still find `redirect`, re-sequencing freely.
+
+        Twelve funded items, so this enumerates all 4,096 subsets rather than approximating.
+        """
+        if redirect <= 0:
+            return 0
+        best = None
+        for k in range(1, len(costs) + 1):
+            for combo in _it.combinations(costs, k):
+                s = sum(combo)
+                if s >= redirect and (best is None or s < best):
+                    best = s
+        return round(best) if best is not None else round(convertible_total)
+
+    history = _funding_history()
+    avg = (sum(h['freeCash'] for h in history) / len(history)) if history else None
+    # Rule 13. The plan prints its own Average; if ours does not reproduce it the extract
+    # is missing rows, which is exactly how this was wrong before.
+    avg_total = (sum(h['total'] for h in history) / len(history)) if history else None
+    for got, printed, what in ((avg, PLAN_PRINTED_AVG_FREE_CASH, 'free cash into capital'),
+                               (avg_total, PLAN_PRINTED_AVG_TOTAL, 'the whole programme')):
+        if got is not None and abs(got - printed) > 0.01:
+            raise AssertionError(
+                f'capital-funding-history.csv averages {got:,.2f} for {what}; the FY27 '
+                f'capital plan prints {printed:,.2f} in its own Average row. The extract '
+                f'does not tie to its source.')
+
+    redirect_ceiling = spendable(BAND_LOW)
+    last = history[-1] if history else None
+
     return dict(
         programmeTotal=round(total),
-        plannedFromFreeCash=991_627,
-        averageFromFreeCash=591_286,
-        items=[dict(rank=i['rank'], dept=i['dept'], project=i['project'],
-                    cost=round(i['cost']), funded=i['funded'] == 'yes') for i in items],
+        plannedFromFreeCash=PLANNED_FROM_FREE_CASH,
+        averageFromFreeCash=round(avg) if avg is not None else None,
+        # The plan's own ten-year funding table. It is what makes the redirect ceiling
+        # measurable against something other than this one exceptional year.
+        history=[dict(fy=h['fy'], total=round(h['total']), freeCash=round(h['freeCash']))
+                 for h in history],
+        lastYear=(dict(fy=last['fy'], total=round(last['total']),
+                       freeCash=round(last['freeCash']),
+                       redirectAsMultiple=round(redirect_ceiling / last['freeCash'], 2))
+                  if last and last['freeCash'] else None),
+        # In how many of the plan's own years the ceiling exceeds the WHOLE free cash
+        # contribution to capital. This is the capital-side twin of the normal-year
+        # finding: the draw is affordable in this year and in few others.
+        yearsRedirectExceedsFreeCash=sum(1 for h in history
+                                         if redirect_ceiling > h['freeCash']),
+        yearsCovered=len(history),
+        redirectCeiling=round(redirect_ceiling),
         # Ranked, costed, and already below the funding line before free cash is touched.
         # This is what makes a dollar removed a dollar of requested work not done: there is
         # a queue, so nothing gains slack.
         queueValue=round(sum(i['cost'] for i in unfunded)),
         queueCount=len(unfunded),
+        items=[dict(rank=i['rank'], dept=i['dept'], project=i['project'],
+                    cost=round(i['cost']), funded=i['funded'] == 'yes',
+                    funding=i['funding']) for i in items],
+        # A third of the programme is the Vehicle Use Special Purpose Stabilization Fund,
+        # which is restricted to vehicles and equipment. It is not money the schools could
+        # have had, so it is not in what a draw can strand.
+        plannedFromTaxation=PLANNED_FROM_TAXATION,
+        restrictedTotal=round(restricted_total),
+        convertibleTotal=round(convertible_total),
+        restrictedItems=[dict(rank=i['rank'], dept=i['dept'], project=i['project'],
+                              cost=round(i['cost'])) for i in restricted],
         atDraw=[dict(redirect=round(spendable(t / 100)),
-                     lost=falls(max(spendable(t / 100), 0))[0],
+                     # Dollars out of the programme. Exact, and equal to the redirect --
+                     # capped at the programme, which cannot lose more than it holds.
+                     lost=round(min(max(spendable(t / 100), 0), convertible_total)),
+                     strictLost=falls(max(spendable(t / 100), 0))[0],
+                     resequencedLost=closest_fit(max(spendable(t / 100), 0)),
                      projects=falls(max(spendable(t / 100), 0))[1])
                 for t in range(0, 9)],
     )

@@ -132,6 +132,55 @@ was voted. Journal 1339 was posted on 27 August 2025.
 - **What settles it:** the offsetting side. These exports show one leg — cash in fund 1301.
   The other leg names the fund the money came from.
 
+### 3e. What the Capital Planning Committee does when the funding is cut
+
+The FY27 capital plan publishes a CPC rank, a cost and a running total, and the funding line
+falls between rank 12 and rank 13. That much is published. **What is not published is whether
+that ranking survives a change in the money.**
+
+It matters because the site now models redirecting free cash to the schools, and free cash is
+the capital programme's largest single source — $991,627 of the $1,830,203 FY27 programme, and
+an average of $591,286 a year across the plan's own ten-year table. Redirect $300,000 and the
+programme is funded by $300,000 less. That part is arithmetic. Which projects stop is not:
+
+- **Held to the published ranking**, items come off the bottom until the money is found. Rank
+  7 is a $494,500 roof with only $199,449 of items below it, so any draw past that reaches the
+  roof: $300,000 and $500,000 both remove $693,949.
+- **Re-sequenced**, the committee drops whatever combination comes closest and there is
+  $1,437,005 of ranked, costed, unfunded work below the line to substitute into. At $300,000
+  the closest combination is $301,703.
+
+The gap between the two is 131% of a $300,000 draw, and it is a **modelling artifact rather
+than a cost** — it exists because one reading assumes indivisible items in a fixed order. The
+site reports both ends and says nothing establishes which. It is the difference between
+"cutting $300,000 costs capital $694,000" and "cutting $300,000 costs capital $300,000", and
+only the second is arithmetic.
+
+**A related gap, and it is the one that would change a number rather than a range.** The plan
+publishes three funding sources for FY27 — free cash $991,627, raise and appropriate $244,576,
+and $594,000 from the Vehicle Use Special Purpose Stabilization Fund — but **no
+project-by-project funding table.** Two projects are footnoted as stabilization-funded (Engine
+2, $335,000; Front End Loader, $259,000) and they happen to sum to exactly $594,000, which is
+how the assignment is currently known. That is a reconciliation, not a statement: the plan
+never says those two are the whole of it. If a third project were partly stabilization-funded
+and one of those two partly free-cash-funded, the totals would still tie and the assignment
+would be wrong.
+
+- **Ask:** Capital Planning Committee, or the Town Administrator
+- **Wording:** *"For any fiscal year in which the capital programme was funded below the
+  committee's recommendation, the minutes or memoranda showing how the funded list was
+  revised — specifically whether projects were removed in rank order or the ranking was
+  re-worked against the available amount. Also the FY27 capital programme showing the funding
+  source for each project, and the committee's FY26 and FY25 recommended lists showing rank,
+  cost and which items were ultimately funded."*
+- **What settles it:** one prior year's recommended list beside its funded list. If the funded
+  set is a strict prefix of the ranking, the rigid reading is the right one; if it is not, the
+  committee re-sequences and the overshoot is ours, not the town's. For the funding split, any
+  document assigning a source to each project.
+- **Second-best:** the FY26 and FY25 capital plans at project level. We hold only the funding
+  totals for those years, from the FY27 plan's own history table — no project lists, so there
+  is nothing to test the question against.
+
 ### 3b. How grants and state funding map onto the budget lines
 
 **Now tied with item 4 as the highest-value question here, and it is the same question

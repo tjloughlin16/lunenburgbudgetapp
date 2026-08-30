@@ -4,6 +4,8 @@ import {
 } from 'recharts'
 import { MODEL, usd, usdShort } from '../model/engine'
 import { ENGINE_AGREEMENT } from '../model/rates'
+import { resequencedAt, strandedAt } from '../model/capital'
+import { CapitalPlanDialog } from './CapitalPlan'
 import {
   RATE_LINES, DEFAULT_RATES, DEFAULT_SCENARIO, CUT_OPTIONS, LEVY_CAP,
   blendedOf, run, revenueGrowthOf, longRunRevenueGrowth, verdictOf, consequenceOf,
@@ -62,6 +64,10 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
       .filter(v => v >= 0 && v <= FC.certified).sort((a, b) => a - b)
   }, [])
   const [fcIdx, setFcIdx] = useState(0)
+  /** The capital plan, opened over the board. It reads the slider's own dollar value
+   *  rather than the model's nine draw stops, which are $511,900 apart — a popup that
+   *  snapped to those would show the wrong projects at almost every notch. */
+  const [capOpen, setCapOpen] = useState(false)
   const freeCashRaw = FC_STOPS[fcIdx] ?? 0
   const fcShare = FC.certified ? (freeCashRaw / FC.certified) * 100 : 0
   const fcAtBoundary = freeCashRaw === Math.round(FC.certified - FC.bandLow * FC.budgetBase)
@@ -295,27 +301,68 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
             </p>
 
             {CAP && freeCashRaw > 0 && (() => {
-              /* Where the money comes from. Free cash is the capital programme's largest
-                 source, and the departments have already ranked $3.27m of projects against
-                 $1.83m of funding — so there is a queue, and a dollar removed is a dollar of
-                 ranked work that does not happen. Projects come off the bottom of the
-                 Capital Planning Committee's OWN ranking; nothing here picks them. */
-              const step = CAP.atDraw.reduce((best, d) =>
-                Math.abs(d.redirect - freeCashRaw) < Math.abs(best.redirect - freeCashRaw)
-                  ? d : best, CAP.atDraw[0])
-              const pctLost = (step.lost / CAP.programmeTotal) * 100
-              const biggest = [...step.projects].sort((a, b) => b.cost - a.cost)[0]
+              /* Where the money comes from, and two quantities that must not be merged.
+               *
+               * DOLLARS is arithmetic: free cash is the capital programme's largest source,
+               * so a dollar redirected is a dollar the programme does not have. Exact, no
+               * assumption.
+               *
+               * WHICH PROJECTS STOP is a claim about how the Capital Planning Committee
+               * would behave, and this used to be stated as though it were the first. Taken
+               * strictly off the bottom of the published ranking the list is lumpy and
+               * OVERSHOOTS — rank 7 is a $494,500 roof with only $199,449 of items below
+               * it, so a $300,000 draw and a $500,000 draw both remove $693,949. But there
+               * is $1.44m of ranked unfunded work to substitute into, and a committee that
+               * re-sequences loses $500,000 exactly. The rigid figure alone overstates a
+               * $300,000 draw by 131%.
+               *
+               * Note also that only $1,236,203 of the $1,830,203 programme is in play:
+               * $594,000 is restricted stabilization money that could not have gone to the
+               * schools under any vote, and is excluded from what a draw can strand.
+               *
+               * So both ends are given and neither is called the answer. We hold no instance
+               * of the committee re-ranking after a cut — DATA-WANTED §3e.
+               *
+               * Computed at the slider's own value, not at the nearest exported stop, so
+               * this line and the dialog behind the button cannot disagree. */
+              const strict = strandedAt(freeCashRaw)
+              const reseq = resequencedAt(freeCashRaw)
+              const dollars = Math.min(freeCashRaw, CAP.convertibleTotal)
+              const pctLost = (dollars / CAP.programmeTotal) * 100
+              const biggest = [...strict.projects].sort((a, b) => b.cost - a.cost)[0]
+              const spread = strict.lost - reseq > 1000
               return (
-                <p className="text-[11px] mt-2 pt-2 border-t"
-                   style={{ borderColor: 'var(--grid)', color: 'var(--status-bad)' }}>
-                  <strong>Capital loses {usd(step.lost)} &mdash; {pctLost.toFixed(0)}% of the
-                  FY27 programme</strong>, {step.projects.length}{' '}
-                  {step.projects.length === 1 ? 'project' : 'projects'} off the bottom of the
-                  town&rsquo;s own ranking{biggest ? <>, the largest being {biggest.project}{' '}
-                  ({usd(biggest.cost)})</> : null}. Not one for one, because the list is
-                  lumpy &mdash; and {usd(CAP.queueValue)} of ranked projects sit unfunded
-                  before any of this.
-                </p>
+                <>
+                  <p className="text-[11px] mt-2 pt-2 border-t"
+                     style={{ borderColor: 'var(--grid)', color: 'var(--status-bad)' }}>
+                    <strong>Capital loses {usd(dollars)} &mdash; {pctLost.toFixed(0)}% of the
+                    FY27 programme.</strong> Free cash is its largest source, and{' '}
+                    {usd(CAP.queueValue)} of ranked projects already sit below the funding
+                    line, so nothing gains slack.{' '}
+                    <span style={{ color: 'var(--text-muted)' }}>
+                      Which projects stop is the committee&rsquo;s call and not ours. Held to
+                      its published ranking it takes {strict.projects.length}{' '}
+                      {strict.projects.length === 1 ? 'project' : 'projects'} off the bottom
+                      {biggest ? <>, the largest being {biggest.project}{' '}
+                        ({usd(biggest.cost)})</> : null}
+                      {spread ? <> &mdash; {usd(strict.lost)} of work for {usd(dollars)}{' '}
+                        taken, because the items are indivisible. Re-sequenced against the
+                        queue instead, it is {usd(reseq)}</> : null}. Nothing published says
+                      which of those the committee would do.
+                    </span>
+                  </p>
+                  {/* The list itself, on request. A reader who does not believe "eight
+                      projects" should be able to read the eight, and the plan is published
+                      with a rank against every one of them. */}
+                  <button type="button" onClick={() => setCapOpen(true)}
+                    className="mt-2 text-[11px] font-semibold rounded px-2 py-1 border
+                               hover:underline"
+                    style={{ borderColor: 'var(--grid)', color: 'var(--series-cost)' }}>
+                    See which projects stop &rarr;
+                  </button>
+                  <CapitalPlanDialog open={capOpen} onClose={() => setCapOpen(false)}
+                    redirect={freeCashRaw} />
+                </>
               )
             })()}
           </div>

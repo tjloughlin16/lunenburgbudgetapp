@@ -174,35 +174,65 @@ export function ReleaseNotesDialog({ open, onClose }: {
   )
 }
 
-/** The list itself, so it can also be read inline where a page wants it. */
+/** The list itself, so it can also be read inline where a page wants it.
+ *
+ *  Every release is collapsed, including the newest one. Open, the panel was a wall: a
+ *  dozen releases each listing every change, which is a changelog for whoever wrote it
+ *  and an obstacle for everybody else. What a reader wants first is whether anything
+ *  changed and roughly what — the title, the tag, the date and one sentence. The itemised
+ *  list is what they want second, and only for one release at a time.
+ *
+ *  The newest is not opened by default either. Making one row behave differently from the
+ *  rest costs more in surprise than it saves in clicks, and the headline it would reveal
+ *  is already on screen. */
 export function ReleaseNotes() {
   return (
     <div className="space-y-4">
       {R.items.map((r, i) => (
-        <div key={r.tag} className="card p-4">
-          <div className="flex items-baseline justify-between gap-3 mb-1">
-            <p className="text-[15px] font-bold">{r.title}</p>
-            <p className="text-[11px] font-semibold tnum shrink-0"
-              style={{ color: i === 0 ? 'var(--series-cost)' : 'var(--text-muted)' }}>
-              {r.tag}{i === 0 && ' · current'}
-            </p>
-          </div>
-          <p className="text-[11px] mb-2" style={{ color: 'var(--text-muted)' }}>
-            {longDate(r.date)}
-          </p>
-          <p className="text-[13px] leading-relaxed mb-2.5"
-            style={{ color: 'var(--text-secondary)' }}>{r.headline}</p>
-          <ul className="space-y-1.5">
-            {r.changes.map((c, j) => (
-              <li key={j} className="text-[12.5px] leading-relaxed flex gap-2"
-                style={{ color: 'var(--text-secondary)' }}>
-                <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&mdash;</span>
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Release key={r.tag} r={r} current={i === 0} />
       ))}
+    </div>
+  )
+}
+
+function Release({ r, current }: { r: typeof R.items[number]; current: boolean }) {
+  const [open, setOpen] = useState(false)
+  const n = r.changes.length
+
+  return (
+    <div className="card p-4">
+      {/* The whole header is the control, not just the word on the right — a heading that
+          looks clickable and is not is worse than one that never looked it. */}
+      <button onClick={() => setOpen(o => !o)} aria-expanded={open}
+        className="w-full text-left">
+        <span className="flex items-baseline justify-between gap-3 mb-1">
+          <span className="text-[15px] font-bold">{r.title}</span>
+          <span className="text-[11px] font-semibold tnum shrink-0"
+            style={{ color: current ? 'var(--series-cost)' : 'var(--text-muted)' }}>
+            {r.tag}{current && ' · current'}
+          </span>
+        </span>
+        <span className="block text-[11px] mb-2" style={{ color: 'var(--text-muted)' }}>
+          {longDate(r.date)}
+        </span>
+        <span className="block text-[13px] leading-relaxed"
+          style={{ color: 'var(--text-secondary)' }}>{r.headline}</span>
+        <span className="block text-[11px] font-semibold mt-2"
+          style={{ color: 'var(--series-cost)' }}>
+          {open ? 'Hide' : `${n} ${n === 1 ? 'change' : 'changes'}`} {open ? '\u2191' : '\u2193'}
+        </span>
+      </button>
+      {open && (
+        <ul className="space-y-1.5 mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+          {r.changes.map((c, j) => (
+            <li key={j} className="text-[12.5px] leading-relaxed flex gap-2"
+              style={{ color: 'var(--text-secondary)' }}>
+              <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&mdash;</span>
+              <span>{c}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
