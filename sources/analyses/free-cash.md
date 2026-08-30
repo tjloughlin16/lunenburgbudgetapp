@@ -50,35 +50,78 @@ What the table does support is reading **across**. Lunenburg's balance fell 36% 
 2022 and 2023, and has risen every year since to its highest point in the five. Shirley
 (−61% over the period) and Townsend (−48%) went the other way.
 
-## The one ratio we can compute, and its limits
+## The standard, and who says so
+
+The Town states it, in its own FY27 budget press release
+(`txt/town-fy27-budget-press-release.txt`, page 6):
+
+> "DLS also recommends that communities understand the role free cash plays in sustaining a
+> strong credit rating and strive to generate free cash in an amount equal to **5-7% of its
+> annual budget**. This year, Lunenburg certified a record $3.354 million in free cash -
+> **6.65% of the operating budget** - well within DLS recommendations. **In the last 10
+> years, Lunenburg has been below DLS free cash recommendations for seven years**, only
+> meeting this recommendation in 2022, 2023, and 2026."
+
+**That single paragraph contains both sides of the disagreement, and both are true.**
+
+- *This year is strong.* A record balance, 6.65%, inside the range.
+- *The record is weak.* Below the recommendation in seven of the last ten years.
+
+They are not in conflict. They describe different windows. Somebody saying the town is
+sitting on money is describing 2026; somebody saying the town is rebuilding is describing
+2017–2025. Neither has to be wrong for the other to be right.
+
+### The standard itself is single-sourced, and it matters
+
+The 5-7% figure appears in exactly one document in this archive — that press release, and
+its copy on the town site. **It is the Town quoting DLS. We hold no DLS publication saying
+it**, and this project does not restate a threshold it has not read.
+
+That is not pedantry, because the threshold is load-bearing in a way the balance is not:
+
+- At **5-7%**, 6.65% is comfortably inside, and the ten-year record is as described.
+- At any **lower** band, 6.65% is *above* the range rather than within it, and the count of
+  years the town fell short would fall too — because that count is entirely a function of
+  where the line is drawn.
+
+So the conclusion "this year is healthy" survives either way. The conclusion "we have been
+short for seven of ten years" does not survive independently of the threshold, and the
+threshold is currently one sentence in a document written by one party to the argument.
+**Reading DLS's own guidance is the single highest-value thing left to do here.**
+
+### Three denominators, three answers
 
 Free cash is certified as of 1 July, so the balance identified 1 July 2025 is what was
-available at the **start of FY26** — which makes FY26's own budget the correct denominator.
+available at the **start of FY26** — which makes FY26's budget the denominator.
 
-For Lunenburg we hold that denominator: the Town Accountant's own year-to-date general fund
-report, obtained by records request, showing a revised FY26 budget of **$51,531,199** across
-67 departments. No enterprise funds are in it, which is what makes it the right base.
+| basis | denominator | ratio |
+|---|---:|---:|
+| Town's published figure | implies $50,441,654 | **6.65%** |
+| FY26 original appropriation | $51,189,961 | 6.55% |
+| FY26 revised budget at Q3 | $51,531,199 | 6.51% |
 
-> **$3,354,370 certified ÷ $51,531,199 = 6.51%**
+All three are "the operating budget" and none of them is the same number. The spread does
+not change any conclusion — every version is inside 5-7% — but it is worth knowing that the
+denominator is soft before quoting a ratio to two decimal places. We cannot reproduce the
+Town's $50.44M from anything we hold.
 
-**We cannot compute this for any peer**, because we hold no equivalent budget figure for
-them. So the ratio places Lunenburg against a standard; it does not place Lunenburg against
-its neighbours.
+**We still cannot compute this for any peer**, because we hold no budget figure for them. So
+the ratio places Lunenburg against a standard; it does not place Lunenburg against its
+neighbours.
 
-**And we do not hold the standard.** The Town Manager's claim invokes one, and the honest
-position is that we have not read it. Two documents would settle it and neither is in the
-archive:
+### A year-labelling trap
 
-1. **Lunenburg's Financial Policies Manual, April 2024** — `DATA-WANTED.md` §9. A town's own
-   policy normally sets its free cash target explicitly. If Lunenburg's manual sets a
-   target, that number is the standard being referred to, and 6.51% either meets it or does
-   not. This is the single document that would resolve the disagreement.
-2. **DLS's own guidance on free cash levels.** It is commonly summarised as a percentage of
-   the operating budget, but this project has not read the source and will not quote a
-   threshold it cannot cite.
+DLS labels the proof by the **calendar year of the 1 July certification**. The Town labels
+the same money by the **fiscal year it can be spent in**. They are off by one.
 
-So: the arithmetic is done and the benchmark is missing. That is a one-document gap, not an
-analytical one.
+This is checkable rather than assumed. Lunenburg's three largest certified balances in the
+DLS file are 2021, 2022 and 2025. Add one to each and you get 2022, 2023 and 2026 — exactly
+the three years the Town says it met the recommendation. The mapping is confirmed by the
+data rather than by reading the labels.
+
+**So the table above and the Town's statements are one year apart.** The record year is
+"2025" here and "2026" in the press release. Anyone setting the two side by side without
+noticing will conclude they disagree when they agree.
 
 ## What the composition shows, and this part does compare
 
@@ -140,13 +183,49 @@ different remedies, and Lunenburg's is increasingly the first.
 That is directly relevant to `budget-vs-actual.md`, which asks how far appropriations
 diverge from spending and could only answer it for the school side, from restatements.
 
+### And the Town explains part of it, in a sentence that belongs to another argument
+
+The paragraph immediately after the free cash figures in that same press release:
+
+> "At the end of FY25, the LPS District experienced a larger-than-normal budget surplus
+> (more than double the historical average of $200,000). The surplus was primarily caused by
+> two factors: significant turnover and unfilled positions in the facilities department
+> resulted in unspent salaries and stalled maintenance projects and **several
+> paraprofessional salaries were ultimately covered by newly identified grants**. However,
+> the previous administration did not adjust the general operating budget to reflect these
+> savings. These unspent funds become part of the town's certified 'free cash'."
+
+Two things follow, and the second is bigger than free cash.
+
+**On free cash:** the Town names a mechanism for its own underspending — budget lines that
+were not adjusted when the money stopped being needed. That is a statement of cause by one
+party, not a measurement, and nothing here tests it. But it is the Town's own account of why
+its free cash looks the way it does.
+
+**On special education:** *"several paraprofessional salaries were ultimately covered by
+newly identified grants"* is the Town stating, in a published document, the exact mechanism
+`notes/DATA-WANTED.md` §3b calls load-bearing and says the budget cannot distinguish. The
+in-district special education escalator is built on a paraprofessional line, and that line
+rising or falling because a grant appeared or ended looks identical, in the budget, to the
+district employing more or fewer people.
+
+This does **not** settle it. It is one sentence, it names no amount, no year beyond FY25 and
+no number of positions, and it concerns the general operating budget rather than the
+special education line specifically. What it does is move "a grant could be doing this" from
+a hypothesis this project raised to a thing the Town has said happened. `sped-and-funds.md`
+should carry it.
+
 **What would settle the disagreement, in order:**
 
-1. **Lunenburg's Financial Policies Manual (April 2024).** The target. One document.
-2. **Operating budget or total general fund revenue for the eight peers**, so the ratio can
+1. **DLS's own published guidance on free cash levels.** The 5-7% band is the hinge of the
+   whole argument and we have it only as the Town's paraphrase. One document.
+2. **Lunenburg's Financial Policies Manual (April 2024).** The Town says it "has its own
+   policies regarding how Free Cash should be spent and prioritized". Those policies are not
+   in the archive.
+3. **Operating budget or total general fund revenue for the eight peers**, so the ratio can
    be compared rather than just computed. DLS Schedule A would carry it —
    `DATA-WANTED.md` §6, also behind bot protection.
-3. **The department-level detail behind the $2,457,761.** The proof gives a town-wide total
+4. **The department-level detail behind the $2,457,761.** The proof gives a town-wide total
    and no breakdown. Which departments turned money back, and whether it is the same ones
    each year, is the difference between a structural pattern and a run of one-offs.
 

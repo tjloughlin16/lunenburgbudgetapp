@@ -23,6 +23,13 @@ FC = os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv')
 LEDGER = os.path.join(ROOT, 'sources', 'data', 'town-ledger-fy26-q3.csv')
 
 TEXT = open(DOC).read().replace('−', '-').replace('$', '')
+# For checking QUOTATIONS: markdown wraps lines and adds emphasis markers, so a verbatim
+# quote from a source is never byte-identical in the document even when it is correct.
+# Collapse whitespace and drop bold/italic markers, then compare.
+# Blockquote markers survive whitespace collapsing and break a verbatim match in the
+# middle of a wrapped quotation, which is exactly where quotations live. Strip them first.
+FLAT = re.sub(r'\s+', ' ',
+              re.sub(r'^>\s?', '', TEXT.replace('**', '').replace('*', ''), flags=re.M))
 FAILS, CHECKS = [], 0
 
 UNEX = 'Add Unencumbered/Unexpended Appropriations (CL#11)'
@@ -77,7 +84,42 @@ says('departments in it', str(len(list(csv.DictReader(open(LEDGER))))))
 ratio = cert[('Lunenburg', 2025)] / budget * 100
 says('free cash as a share of that budget', f'{ratio:.2f}%')
 
-print('\n5. the movements the prose claims')
+print('\n5. the town’s own statement, quoted from its press release')
+PR = os.path.join(ROOT, 'sources', 'txt', 'town-fy27-budget-press-release.txt')
+pr = re.sub(r'\s+', ' ', open(PR, encoding='utf-8', errors='ignore').read())
+for quote in ['5-7% of its annual budget',
+              'certified a record $3.354 million in free cash',
+              '6.65% of the operating budget',
+              'been below DLS free cash recommendations for',
+              'only meeting this recommendation in 2022, 2023, and 2026',
+              'paraprofessional salaries were ultimately covered by newly identified grants']:
+    CHECKS += 1
+    q = re.sub(r'\s+', ' ', quote)
+    inpr = q in pr
+    intext = re.sub(r'\\s+', ' ', q.replace('$', '')) in FLAT
+    if inpr and intext:
+        print(f'  ok    quoted verbatim from the press release: {q[:52]}')
+    else:
+        print(f'  FAIL  {q[:52]}  in press release={inpr} in document={intext}')
+        FAILS.append(f'quote: {q[:32]}')
+
+print('\n5b. the denominators')
+orig = sum(float(r['original'] or 0) for r in csv.DictReader(open(LEDGER)))
+says('FY26 original appropriation', orig)
+says('ratio on the original appropriation', f'{cert[("Lunenburg", 2025)] / orig * 100:.2f}%')
+says("the denominator the town's 6.65% implies", cert[('Lunenburg', 2025)] / 0.0665)
+
+print('\n5c. the year-label mapping, derived not assumed')
+CHECKS += 1
+top3 = sorted(sorted(years, key=lambda y: -cert[('Lunenburg', y)])[:3])
+mapped = [y + 1 for y in top3]
+if mapped == [2022, 2023, 2026]:
+    print(f'  ok    three largest DLS years {top3} +1 = {mapped}, the town’s own three')
+else:
+    print(f'  FAIL  three largest {top3} +1 = {mapped}, town says [2022, 2023, 2026]')
+    FAILS.append('year mapping')
+
+print('\n6. the movements the prose claims')
 CHECKS += 1
 fall = (cert[('Lunenburg', 2023)] / cert[('Lunenburg', 2022)] - 1) * 100
 if f'{abs(fall):.0f}%' in TEXT:
@@ -105,7 +147,7 @@ else:
     print(f'  FAIL  the lowest 2025 unspent share is {lowest}, not Uxbridge')
     FAILS.append('uxbridge claim')
 
-print('\n6. the reconciliations the document claims')
+print('\n7. the reconciliations the document claims')
 CHECKS += 1
 n = len(towns) * len(years) + len(towns) * (len(years) - 1)
 if str(n) in TEXT:
