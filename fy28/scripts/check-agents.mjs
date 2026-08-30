@@ -44,6 +44,13 @@ const PRESENT = [
   '/llms.txt', '/robots.txt', '/sitemap.xml',
   '/data/model.json', '/data/sources.json', '/data/budget-lines.csv',
   '/docs/analyses/sped-and-the-curve.md',
+  // The meeting archive. Its text went unpublished for months while llms.txt said it was
+  // "in the repository", and an assistant asked for the School Committee's discussion of
+  // the para contract concluded from this site that we hold no minutes at all. Checked
+  // here so that cannot recur silently.
+  '/minutes/INDEX.txt',
+  '/minutes/school-committee.txt',
+  '/docs/minutes/text/school-committee/2025-02-26-minutes-7076.txt',
 ]
 // Must 404. Deliberately plausible-looking, because the failure being tested for is a
 // missing document that answers exactly like a present one.

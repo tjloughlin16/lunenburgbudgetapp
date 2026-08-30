@@ -135,6 +135,20 @@ def main():
          'district-page-index.csv',
          'The 87 documents mirrored from the district budget page: label, our copy, the '
          'extracted text, the district’s original URL, and a sha256.'),
+        (os.path.join(ROOT, 'sources', 'data', 'rate-register.csv'), 'rate-register.csv',
+         'Every rate this project knows about — athletic and bus fees, collective '
+         'bargaining raises, facilities — each carrying the fiscal year it applies to, the '
+         'document that set it and the date. 62 rates. It exists because FY26 athletic fees '
+         'were modelled on FY25’s schedule for months: a right number from the wrong year, '
+         'taken from a fee page that states its rates and never states which year they '
+         'cover. It deliberately includes the rates the model does NOT use and the ones we '
+         'cannot state at all, because a fee the town charges and does not publish is a '
+         'finding rather than a blank.'),
+        (os.path.join(ROOT, 'sources', 'data', 'athletic-fee-schedule.csv'),
+         'athletic-fee-schedule.csv',
+         'Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport '
+         'per season. 27 of 31 figures verified against a spreadsheet cell or a direct '
+         'quotation from the School Committee vote that set them.'),
         (os.path.join(ROOT, 'sources', 'minutes', 'index.csv'), 'minutes-index.csv',
          'Every agenda and set of minutes the town publishes: board, date, kind, and the '
          'town’s own URL. 1,422 rows.'),
@@ -242,9 +256,28 @@ def main():
         '',
         f'{sources["corpus"]["fetched"]:,} agendas and sets of minutes across '
         f'{sources["corpus"]["boardCount"]} town boards, '
-        f'{sources["corpus"]["from"]} to {sources["corpus"]["to"]}. The scanned originals '
-        f'are not mirrored; [minutes-index.csv]({SITE}/data/minutes-index.csv) carries the '
-        f'town’s own URL for each. Extracted text of all of them is in the repository.',
+        f'{sources["corpus"]["from"]} to {sources["corpus"]["to"]}. '
+        f'**The full text of every one of them is published here and is readable without '
+        f'JavaScript.** This is where the town argues about fees, contracts, staffing and '
+        f'overrides, and it is not in any budget document.',
+        '',
+        f'- **To search a board, fetch one file.** [{SITE}/minutes/INDEX.txt]'
+        f'({SITE}/minutes/INDEX.txt) lists a bundle per board — every document for that '
+        f'board concatenated, largest 1MB. The School Committee is '
+        f'[{SITE}/minutes/school-committee.txt]({SITE}/minutes/school-committee.txt). '
+        f'You cannot grep a website; you can read one file.',
+        f'- **To cite, use the individual document.** Each is at '
+        f'`{SITE}/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`, and every bundle '
+        f'entry carries that address in its header alongside the town’s scanned original.',
+        f'- **To filter by date or board first**, [minutes-index.csv]'
+        f'({SITE}/data/minutes-index.csv) has board, date, kind and the town’s own URL.',
+        '',
+        'An earlier version of this file said the extracted text was "in the repository", '
+        'which was true and no use to anybody who was not holding the repository. An '
+        'assistant asked to find the School Committee’s discussion of the paraprofessional '
+        'contract read this site and concluded it holds "budget documents, not School '
+        'Committee minutes". It was wrong, and nothing it could reach showed otherwise. '
+        'That is why the text is served now.',
         '',
         '## What this site does not know',
         '',

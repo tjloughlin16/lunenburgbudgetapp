@@ -43,6 +43,8 @@ If you administer one of these sites and would rather this stopped, or would rat
 - [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.2MB): The document archive: every source, its group, its size, and the URL it is served from.
 - [budget-lines.csv](https://lunenburgbudgetproject.org/data/budget-lines.csv) (0.1MB): The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.
 - [district-page-index.csv](https://lunenburgbudgetproject.org/data/district-page-index.csv) (0.0MB): The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district’s original URL, and a sha256.
+- [rate-register.csv](https://lunenburgbudgetproject.org/data/rate-register.csv) (0.0MB): Every rate this project knows about — athletic and bus fees, collective bargaining raises, facilities — each carrying the fiscal year it applies to, the document that set it and the date. 62 rates. It exists because FY26 athletic fees were modelled on FY25’s schedule for months: a right number from the wrong year, taken from a fee page that states its rates and never states which year they cover. It deliberately includes the rates the model does NOT use and the ones we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank.
+- [athletic-fee-schedule.csv](https://lunenburgbudgetproject.org/data/athletic-fee-schedule.csv) (0.0MB): Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them.
 - [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) (0.2MB): Every agenda and set of minutes the town publishes: board, date, kind, and the town’s own URL. 1,422 rows.
 
 ## Documents
@@ -59,7 +61,13 @@ Text has been extracted from nearly every document, including scans that had no 
 
 ## Meeting archive
 
-1,383 agendas and sets of minutes across 40 town boards, 2025-01-06 to 2026-11-17. The scanned originals are not mirrored; [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) carries the town’s own URL for each. Extracted text of all of them is in the repository.
+1,383 agendas and sets of minutes across 40 town boards, 2025-01-06 to 2026-11-17. **The full text of every one of them is published here and is readable without JavaScript.** This is where the town argues about fees, contracts, staffing and overrides, and it is not in any budget document.
+
+- **To search a board, fetch one file.** [https://lunenburgbudgetproject.org/minutes/INDEX.txt](https://lunenburgbudgetproject.org/minutes/INDEX.txt) lists a bundle per board — every document for that board concatenated, largest 1MB. The School Committee is [https://lunenburgbudgetproject.org/minutes/school-committee.txt](https://lunenburgbudgetproject.org/minutes/school-committee.txt). You cannot grep a website; you can read one file.
+- **To cite, use the individual document.** Each is at `https://lunenburgbudgetproject.org/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`, and every bundle entry carries that address in its header alongside the town’s scanned original.
+- **To filter by date or board first**, [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) has board, date, kind and the town’s own URL.
+
+An earlier version of this file said the extracted text was "in the repository", which was true and no use to anybody who was not holding the repository. An assistant asked to find the School Committee’s discussion of the paraprofessional contract read this site and concluded it holds "budget documents, not School Committee minutes". It was wrong, and nothing it could reach showed otherwise. That is why the text is served now.
 
 ## What this site does not know
 
