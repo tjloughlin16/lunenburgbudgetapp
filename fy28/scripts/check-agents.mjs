@@ -163,21 +163,32 @@ async function main() {
   {
     const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))
     const shown = model.releases?.current ?? null
-    let tagged = null
+    // `git describe --abbrev=0` returns the nearest tag REACHABLE from HEAD, which is not
+    // the same as HEAD being that tag. Production once ran three commits past v5 while
+    // calling itself v5, and comparing names alone said that was fine. Compare commits.
+    let tagged = null, atTag = true
     try {
       tagged = execFileSync('git', ['describe', '--tags', '--abbrev=0'],
         { cwd: APP, encoding: 'utf8' }).trim()
+      const head = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: APP, encoding: 'utf8' }).trim()
+      const tip = execFileSync('git', ['rev-list', '-n', '1', tagged],
+        { cwd: APP, encoding: 'utf8' }).trim()
+      atTag = head === tip
     } catch { /* not a checkout, or no tags */ }
     if (!shown) {
       console.log('  note  the model carries no release tag; nothing to compare')
     } else if (!tagged) {
       console.log(`  note  site shows ${shown}; no git tag found to compare against`)
     } else {
-      const ok = shown === tagged
-      console.log(`  ${ok ? ' ok ' : 'FAIL'} site shows ${shown}, newest git tag is ${tagged}`)
-      if (!ok) {
+      const ok = shown === tagged && atTag
+      console.log(`  ${ok ? ' ok ' : 'FAIL'} site shows ${shown}, newest git tag is ${tagged}` +
+        `${atTag ? '' : ' — and HEAD is PAST that tag'}`)
+      if (shown !== tagged) {
         fails.push(`the site shows ${shown} but the newest git tag is ${tagged} — add a ` +
           'release note in model/releases.py, or the footer tells readers this is an older build')
+      } else if (!atTag) {
+        fails.push(`HEAD is past ${tagged}, so this build ships changes the tag does not ` +
+          'cover — add a release note and move the tag before deploying')
       }
     }
   }

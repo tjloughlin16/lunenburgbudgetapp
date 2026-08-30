@@ -24,6 +24,39 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v6',
+        date='2026-08-30',
+        title='Every public meeting, in full, and a site an assistant can actually use',
+        short='the meeting archive, published',
+        headline='Two years of every town board’s agendas and minutes — 1,383 documents '
+                 'across 40 boards — are now published as full text rather than as an index '
+                 'of dates. Zoning, conservation, health, planning, cemeteries, the library, '
+                 'housing, the schools. It is where the town argues, and none of it appears '
+                 'in a budget document.',
+        changes=[
+            'The text of every agenda and set of minutes is readable and downloadable. '
+            'Until this build the site published only an index pointing at the town’s '
+            'scanned PDFs, which meant that somebody searching this site for what the '
+            'School Committee said about a contract, or what the Zoning Board decided about '
+            'a property, found nothing and reasonably concluded it was not here.',
+
+            'Each board is also published as a single file — the whole School Committee in '
+            'one 0.9MB document — because you cannot search a website but you can read one '
+            'file. Every document inside carries its own permanent address, so anything '
+            'found there can be cited to the document rather than to the bundle.',
+
+            'The site now states, on every page, what it holds and which file answers which '
+            'question. That is for anybody pointing an AI assistant at it: the assistant '
+            'gets the inventory, the download addresses, and the one warning that matters — '
+            'that this archive holds both what the town budgeted and what it spent, and '
+            'mixing them produces a confident wrong answer.',
+
+            'It also says plainly that this is not only a budget site. An assistant told '
+            'otherwise will answer "this cannot help you" to a question about zoning or '
+            'conservation that the archive answers completely.',
+        ],
+    ),
+    dict(
         tag='v5',
         date='2026-08-30',
         title='Every rate now carries the year it applies to',
