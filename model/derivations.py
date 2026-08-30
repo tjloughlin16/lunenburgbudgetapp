@@ -24,6 +24,12 @@ import os
 CSV_PATH = os.path.join(os.path.dirname(__file__), '..',
                         'sources', 'data', 'lps-budget-lines.csv')
 
+# The district's own athletics workbook, sport by sport, from the 17 June 2026 records
+# request. It is the only source that gives what a sport COST as opposed to what the town
+# appropriated for it, which is the distinction the transportation note turns on.
+BY_SPORT_PATH = os.path.join(os.path.dirname(__file__), '..',
+                             'sources', 'data', 'athletics-by-sport.csv')
+
 SCENARIOS = {
     'fy26_final':         'FY26 final',
     'fy27_restoration':   'FY27 Restoration',
@@ -188,7 +194,83 @@ AD_NOTE = (
     'line shows. That range is OUR estimate — no published document records the change or '
     'its cost, and it is the first thing to ask the Business Manager about.')
 
-TRANSPORT_NOTE = 'Budgeted well above what athletics has ever actually spent. Actuals were $39,880 (FY23), $40,000 (FY24) and $87,822 (FY25); the line was then rebased to $127,550 for FY26 and level-funded into FY27. As of the 23 March 2026 budget, FY26 had spent $47,847 with $13,169 encumbered — $61,016 committed against $127,550, with only the spring season left to run. The district asked itself this exact question in the spreadsheet margin ("Actuals in munis are tracking well below FY26 budget, can FY27 be reduced?") and answered "Yes, level funded". Treat it as a budget figure, not a spending figure.'
+def _transport_note():
+    """The athletic transportation note, built from the data rather than typed.
+
+    This sentence shipped for months reading "Budgeted well above what athletics has ever
+    actually spent", followed by three figures. Every part of that was wrong in the way
+    rule 11 exists to prevent:
+
+      * The figures are the town's NET APPROPRIATION, not what athletics spent. The
+        district's own sport-by-sport workbook -- obtained from the Town on 17 June 2026
+        and now in the archive -- puts FY24 athletic transportation at $117,555.00 against
+        a $40,000 line. The line was budgeted BELOW the cost, not above it. The note
+        asserted the opposite of what the evidence shows.
+      * "Actuals" is wrong twice: the one ledger view we have of this line shows $0
+        expended against $40,000 encumbered, the whole year committed as a single purchase
+        order. It is not a payment.
+      * And all three figures were typed into prose, which is rule 2, and is exactly why
+        nothing caught the first two problems.
+
+    Rebuilt here so the figures move when the data moves. The district's own question in
+    the spreadsheet margin is quoted from the `comments` column rather than retyped.
+    """
+    line = next((r for r in _rows() if r['line_item'].strip() == 'Athletic Transportation'),
+                None)
+    if line is None:
+        return ('Athletic Transportation is not in the line-item budget under that name, '
+                'so this note could not be rebuilt.')
+
+    gf = {y: _num(line.get(f'fy{y}_actual')) for y in (23, 24, 25)}
+    final26 = _num(line.get('fy26_final'))
+    spent26 = _num(line.get('fy26_actual_td'))
+    enc26 = _num(line.get('fy26_encumb_td'))
+    margin = (line.get('comments') or '').strip()
+
+    # What the district's own workbook says the sport-by-sport cost was, against those
+    # same years. Absent on a clean checkout that has not run the extractor, in which case
+    # the note simply omits the comparison rather than inventing one.
+    allin = {}
+    try:
+        with open(BY_SPORT_PATH, newline='') as fh:
+            for r in csv.DictReader(fh):
+                if r['metric'] == 'Transportation' and r['value'] not in ('', 'None'):
+                    allin[int(r['fy'])] = allin.get(int(r['fy']), 0.0) + float(r['value'])
+    except OSError:
+        pass
+
+    parts = [
+        'A NET APPROPRIATION, not a cost. This line is what the town raises for athletic '
+        'transportation after everything else that pays for it has been taken off, and for '
+        'most of these years the Chapter 658 revolving fund was paying a large part of the '
+        'bill. So it cannot be read as what athletics spent.',
+    ]
+    if allin.get(2024) and gf[24]:
+        parts.append(
+            f'The district\'s own sport-by-sport workbook puts athletic transportation at '
+            f'${allin[2024]:,.2f} in FY24 against a ${gf[24]:,.0f} line, and '
+            f'${allin.get(2025, 0):,.2f} in FY25 against ${gf[25]:,.0f}. On those figures '
+            f'the line was budgeted BELOW what the sport cost, not above it, and the '
+            f'difference was carried by the fund.')
+    parts.append(
+        f'The general fund line itself reads ${gf[23]:,.0f} (FY23), ${gf[24]:,.0f} (FY24) '
+        f'and ${gf[25]:,.0f} (FY25), rebased to ${final26:,.0f} for FY26 and level-funded '
+        f'into FY27. Treat those as the town\'s share, and not as payments: the one ledger '
+        f'view we hold of this line shows the year committed as a single purchase order '
+        f'with nothing yet expended.')
+    if spent26 or enc26:
+        parts.append(
+            f'As of the 23 March 2026 budget, FY26 showed ${spent26:,.0f} spent and '
+            f'${enc26:,.0f} encumbered \u2014 ${spent26 + enc26:,.0f} committed against '
+            f'${final26:,.0f}, with only the spring season left to run.')
+    if margin:
+        parts.append(f'The district asked itself about this line in the spreadsheet margin '
+                     f'("{margin}").')
+    parts.append('Treat it as a budget figure, not a spending figure.')
+    return ' '.join(parts)
+
+
+TRANSPORT_NOTE = _transport_note()
 
 LINE_RULES = [
  dict(id='athletics_total',
