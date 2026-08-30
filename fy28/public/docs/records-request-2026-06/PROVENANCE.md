@@ -28,12 +28,14 @@ reads, verbatim:
 >
 > I am looking for a series of spreadsheets and general ledger entries.
 
-**The request form itself is not published here.** It carries the requester's home address,
-telephone number and personal email in form fields. Those are not needed to check any figure,
-and publishing them is not something a public-interest archive should do to a private
-resident. The form is held offline; its sha256 is
-`449d5cdb450a69570fad394f4cddb72901dbae1fa24b5c9c7b98af4a9bd00be5`. If it is wanted on the
-site, it should go up redacted. That is an open decision, not an oversight.
+**The request form itself is neither published nor kept.** It carries the requester's home
+address, telephone number and personal email in form fields. None of that is needed to check
+any figure, and holding it is not something a public-interest archive should do to a private
+resident who asked the town a question. Our copy has been deleted. Its sha256 was
+`449d5cdb450a69570fad394f4cddb72901dbae1fa24b5c9c7b98af4a9bd00be5`, recorded so that a copy
+obtained from the Town can still be checked against the one this analysis was written from.
+The wording of the request survives in the quotation above, which is the part that bears on
+what the Town was asked for. This is a decision, not an oversight.
 
 ## What arrived, under which name
 
