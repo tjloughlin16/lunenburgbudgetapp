@@ -73,33 +73,47 @@ def free_cash_is_inert():
     boundary. But "allowed as a one-time subtraction" is only safe if it really is one, so
     it is checked rather than trusted:
 
-      * the default output is byte-identical to passing an explicit zero
-      * at ANY draw, no bucket, growth rate, level service, available or deficit moves
-      * only the two additional fields respond, and they respond consistently
+      * with the lever at its default of zero, output is byte-identical to before
+      * at ANY draw, no bucket, growth rate, level service, available or appropriation
+        moves — the entire rate side of the projection is untouched
+      * the gap MAY move, because moving it is the lever's job, and it moves by exactly
+        the amount applied and never by more than the gap itself
 
-    If any of that stops being true, free cash has started behaving like a rate.
+    The rate side is the boundary rule 1 protects. A one-time subtraction after every rate
+    has run does not cross it; anything that shifted a bucket or an escalator would have.
+    If that stops being true this fails the build.
     """
     sys.path.insert(0, os.path.join(ROOT, 'model'))
     from finance import project
+
+    from finance import DEFAULT_ASSUMPTIONS
 
     base = project(6)
     problems = []
     if base != project(6, free_cash=dict(amount=0, years=1)):
         problems.append('default output differs from an explicit zero draw')
+    if base != project(6, {**DEFAULT_ASSUMPTIONS, 'free_cash_annual': 0}):
+        problems.append('the lever at zero differs from the default projection')
 
-    for amount in (500_000, 3_354_370, 10_000_000):
-        for spread in (1, 2, 3):
-            got = project(6, free_cash=dict(amount=amount, years=spread))
-            for b, g in zip(base, got):
-                for field in ('level_service', 'available', 'appropriation',
-                              'growth_rate', 'deficit', 'buckets'):
-                    if b[field] != g[field]:
-                        problems.append(
-                            f'draw {amount:,}/{spread}y moved {field} in FY{b["fy"]}')
-                if g['deficit_after_free_cash'] != g['deficit'] - g['free_cash_applied']:
-                    problems.append(f'FY{b["fy"]}: after-figure is not deficit minus applied')
-                if g['free_cash_applied'] > g['deficit']:
-                    problems.append(f'FY{b["fy"]}: applied more free cash than there was gap')
+    draws = [dict(amount=a, years=y) for a in (500_000, 3_354_370, 10_000_000)
+             for y in (1, 2, 3)]
+    draws += [dict(annual=a) for a in (250_000, 1_000_000, 2_026_212, 9_000_000)]
+
+    for d in draws:
+        got = project(6, free_cash=d)
+        for b, g in zip(base, got):
+            # The rate side must be untouched. This is the rule 1 boundary.
+            for field in ('level_service', 'available', 'appropriation',
+                          'growth_rate', 'buckets'):
+                if b[field] != g[field]:
+                    problems.append(f'draw {d} moved {field} in FY{b["fy"]}')
+            # The gap may move, but only by what was applied, and never below zero.
+            if g['deficit'] != g['deficit_before_free_cash'] - g['free_cash_applied']:
+                problems.append(f'FY{b["fy"]}: gap did not move by the amount applied')
+            if g['deficit_before_free_cash'] != b['deficit_before_free_cash']:
+                problems.append(f'draw {d} moved the pre-free-cash gap in FY{b["fy"]}')
+            if g['free_cash_applied'] > g['deficit_before_free_cash']:
+                problems.append(f'FY{b["fy"]}: applied more free cash than there was gap')
     return problems
 
 

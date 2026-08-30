@@ -19,23 +19,14 @@ import { MODEL, usd } from '../model/engine'
 const F = MODEL.freeCash
 const pct = (x: number) => `${(x * 100).toFixed(2)}%`
 const OC = MODEL.freeCash.overrideContrast!
+const LADDER = MODEL.freeCash.policyLadder
 
 export function FreeCash() {
   // OFF by default. Nothing on this page or anywhere else changes until somebody asks.
   const [on, setOn] = useState(false)
-  const [target, setTarget] = useState(0.05)
-  const [spread, setSpread] = useState(1)
-
-  const pick = (t: number, sp: number) =>
-    F.scenarios.find(s => Math.abs(s.target - t) < 1e-9 && s.spread === sp)
-  const sc = pick(Math.round(target * 100) / 100, spread) ?? F.scenarios[0]
-  const released = on ? sc.released : 0
-  const walk = sc.years.map(y => ({
-    fy: y.fy, amount: y.deficit,
-    applied: on ? y.applied : 0,
-    after: on ? y.after : y.deficit,
-  }))
-  const lastCovered = on ? [...walk].reverse().find(w => w.after === 0) : undefined
+  // LADDER runs high target -> low. Default to the bottom of the recommended band.
+  const [idx, setIdx] = useState(LADDER.findIndex(l => Math.abs(l.target - 0.05) < 1e-9))
+  const P = LADDER[idx] ?? LADDER[0]
 
   return (
     <div style={{ padding: '1.5rem 0 4rem' }}>
@@ -71,96 +62,116 @@ export function FreeCash() {
 
       <section style={{ border: '1px solid var(--border, rgba(128,128,128,.25))',
                         borderRadius: '.5rem', padding: '1.25rem', margin: '1.5rem 0',
-                        maxWidth: '46rem' }}>
+                        maxWidth: '48rem' }}>
         <label style={{ display: 'flex', gap: '.5rem', alignItems: 'center',
-                        fontWeight: 600, marginBottom: '.85rem' }}>
+                        fontWeight: 600, marginBottom: '.75rem' }}>
           <input type="checkbox" checked={on} onChange={e => setOn(e.target.checked)} />
-          Apply free cash to the projected gap
+          Try it as a policy
         </label>
-        <p style={{ margin: '-.5rem 0 .9rem', fontSize: '.85rem',
+        <p style={{ margin: '-.35rem 0 1rem', fontSize: '.85rem',
                     color: 'var(--text-secondary)' }}>
-          Off by default, and off everywhere else on this site. Free cash is one-time money
-          and the projection is built without it; this shows what spending it would defer,
-          not a plan.
+          Off by default, and off everywhere else on this site. The published projection is
+          built without free cash.
         </p>
 
         <div style={{ opacity: on ? 1 : .45, pointerEvents: on ? 'auto' : 'none' }}>
-        <label htmlFor="fc" style={{ display: 'block', fontWeight: 600, marginBottom: '.5rem' }}>
-          Draw the balance down to {(target * 100).toFixed(0)}% of the budget
-        </label>
-        <input id="fc" type="range" min={0} max={0.08} step={0.01} value={target}
-               onChange={e => setTarget(parseFloat(e.target.value))}
-               style={{ width: '100%' }} />
-        <div style={{ display: 'flex', justifyContent: 'space-between',
-                      fontSize: '.8rem', color: 'var(--text-secondary)' }}>
-          <span>0% — spend it all</span>
-          <span>5% floor</span>
-          <span>8%</span>
+          <label htmlFor="fc" style={{ display: 'block', fontWeight: 600 }}>
+            Hold the balance at {(P.target * 100).toFixed(0)}% of the budget
+          </label>
+          <div style={{ fontSize: '.85rem', color: P.inBand ? 'var(--ok, #2f7d4f)'
+                                                            : 'var(--text-secondary)',
+                        margin: '.15rem 0 .5rem' }}>
+            {P.label}
+          </div>
+          <input id="fc" type="range" min={0} max={LADDER.length - 1} step={1}
+                 value={LADDER.length - 1 - idx}
+                 onChange={e => setIdx(LADDER.length - 1 - Number(e.target.value))}
+                 style={{ width: '100%' }} />
+          <div style={{ display: 'flex', justifyContent: 'space-between',
+                        fontSize: '.78rem', color: 'var(--text-secondary)' }}>
+            <span>0% — nothing held</span><span>5–7% band</span><span>8%</span>
+          </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '.6rem', alignItems: 'center',
-                      margin: '.75rem 0 0', fontSize: '.9rem' }}>
-          <span style={{ fontWeight: 600 }}>spread over</span>
-          {[1, 2, 3].map(n => (
-            <button key={n} onClick={() => setSpread(n)}
-              style={{ padding: '.2rem .6rem', cursor: 'pointer', borderRadius: '.3rem',
-                       border: '1px solid var(--border)', color: 'inherit',
-                       background: spread === n ? 'var(--surface-3)' : 'transparent' }}>
-              {n} year{n > 1 ? 's' : ''}
-            </button>
-          ))}
-        </div>
-        </div>
+        {on && (
+          <div style={{ marginTop: '1.25rem' }}>
+            <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap',
+                          marginBottom: '1rem' }}>
+              <div>
+                <div style={{ fontSize: '1.3rem', fontWeight: 600 }}>{usd(P.oneTime)}</div>
+                <div style={{ fontSize: '.85rem', color: 'var(--text-secondary)' }}>
+                  released once, by moving to this level
+                </div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.3rem', fontWeight: 600 }}>{usd(P.annual)}</div>
+                <div style={{ fontSize: '.85rem', color: 'var(--text-secondary)' }}>
+                  every year, by holding it there instead of accumulating
+                </div>
+              </div>
+            </div>
 
-        <p style={{ margin: '1rem 0 .5rem', fontSize: '1.1rem' }}>
-          {released >= 0
-            ? <>That releases <strong>{usd(released)}</strong>{' '}
-                {target < F.bandLow
-                  ? <span style={{ color: 'var(--bad, #a03232)' }}>— below the bottom of the band</span>
-                  : null}</>
-            : <>The balance is <strong>{usd(-released)}</strong> short of that target — this
-                would mean adding money, not releasing it.</>}
-        </p>
-
-        {on && released > 0 && (
-          <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '.9rem',
-                          marginTop: '.75rem' }}>
-            <thead>
-              <tr style={{ textAlign: 'left', borderBottom: '1px solid var(--border)' }}>
-                <th style={{ padding: '.3rem 0' }}>year</th>
-                <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>projected gap</th>
-                <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>free cash</th>
-                <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>gap after</th>
-              </tr>
-            </thead>
-            <tbody>
-              {walk.map(w => (
-                <tr key={w.fy} style={{ opacity: w.applied > 0 ? 1 : .5 }}>
-                  <td style={{ padding: '.25rem 0' }}>FY{w.fy}</td>
-                  <td style={{ padding: '.25rem .8rem', textAlign: 'right',
-                               fontVariantNumeric: 'tabular-nums' }}>{usd(w.amount)}</td>
-                  <td style={{ padding: '.25rem .8rem', textAlign: 'right',
-                               fontVariantNumeric: 'tabular-nums',
-                               color: w.applied > 0 ? 'var(--ok, #2f7d4f)' : 'inherit' }}>
-                    {w.applied > 0 ? `−${usd(w.applied)}` : '—'}
-                  </td>
-                  <td style={{ padding: '.25rem .8rem', textAlign: 'right',
-                               fontVariantNumeric: 'tabular-nums' }}>{usd(w.after)}</td>
+            <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '.9rem' }}>
+              <thead>
+                <tr style={{ textAlign: 'left', borderBottom: '1px solid var(--border)' }}>
+                  <th style={{ padding: '.3rem 0' }}>year</th>
+                  <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>gap</th>
+                  <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>free cash used</th>
+                  <th style={{ padding: '.3rem 0 .3rem .8rem', textAlign: 'right' }}>gap after</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {P.years.map(y => (
+                  <tr key={y.fy} style={{ borderBottom: '1px solid var(--border-subtle, rgba(128,128,128,.15))' }}>
+                    <td style={{ padding: '.28rem 0' }}>FY{y.fy}</td>
+                    <td style={{ padding: '.28rem .8rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(y.before)}</td>
+                    <td style={{ padding: '.28rem .8rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums',
+                                 color: y.applied > 0 ? 'var(--ok, #2f7d4f)' : 'inherit' }}>
+                      {y.applied > 0 ? `−${usd(y.applied)}` : '—'}
+                    </td>
+                    <td style={{ padding: '.28rem 0 .28rem .8rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(y.after)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
-
-        <p style={{ margin: '.9rem 0 0', fontWeight: 600 }}>
-          {!on
-            ? 'Turn it on to see what drawing the balance down would defer.'
-            : lastCovered
-              ? `Defers the gap through FY${lastCovered.fy}. Then it is gone, and the gap `
-                + 'returns larger because the base kept growing.'
-              : 'Releases nothing that fully covers even the first year of the gap.'}
-        </p>
       </section>
+
+      <h3>The level you hold barely matters. The policy is everything.</h3>
+      <p style={{ maxWidth: '46rem' }}>
+        Move the slider and watch the second number stay still. That is the finding, and it
+        is the opposite of how the argument is usually made.
+      </p>
+      <ul style={{ maxWidth: '46rem' }}>
+        <li>
+          <strong>Holding a lower balance is a one-off.</strong> Going from today's{' '}
+          {pct(F.currentShare)} to the bottom of the band releases {usd(LADDER.find(l => Math.abs(l.target - F.bandLow) < 1e-9)!.oneTime)}{' '}
+          — once. Going below that releases more on paper and achieves nothing, because you
+          cannot apply more free cash to a year than that year's gap, and FY{F.deficits[0].fy}'s
+          gap is only {usd(F.deficits[0].amount)}.
+        </li>
+        <li>
+          <strong>Appropriating the flow every year is the policy</strong>, and it is worth
+          far more: it takes the six-year gap from {usd(LADDER[0].gapLeftOneTimeOnly)} to{' '}
+          {usd(LADDER[0].gapLeftWithPolicy)}. <strong>And it does not depend on the target
+          at all.</strong> A lower target does not generate more money. It releases the
+          accumulated stock sooner, and then you are living on the flow either way.
+        </li>
+      </ul>
+
+      <h3>The catch, and it is the whole argument</h3>
+      <p style={{ maxWidth: '46rem' }}>
+        That {usd(F.sustainableDraw)} a year is what an ordinary year generates —{' '}
+        {pct(F.normalShare)} of the budget, <strong>below the bottom of the band</strong>.
+        And two thirds of it is money that was appropriated and never spent.
+      </p>
+      <p style={{ maxWidth: '46rem', fontWeight: 600 }}>
+        So the policy is self-cancelling at the edges: the flow you would spend every year
+        is produced by the over-appropriating you would be trying to stop. Budget more
+        tightly and the gap shrinks — but so does the free cash you were going to close it
+        with. You cannot bank on both.
+      </p>
 
       <h3>It changes the amount, not the direction</h3>
       <p style={{ maxWidth: '46rem' }}>

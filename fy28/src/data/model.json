@@ -799,7 +799,8 @@
   "local_receipts_growth": 0.01,
   "school_share": 0.562,
   "athletic_fee_revenue": 0,
-  "override_amount": 0
+  "override_amount": 0,
+  "free_cash_annual": 0
  },
  "fy27": {
   "levy_limit": 34133581.28,
@@ -1001,9 +1002,22 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v9",
+  "current": "v10",
   "updated": "2026-08-30",
   "items": [
+   {
+    "tag": "v10",
+    "date": "2026-08-30",
+    "title": "Free cash as a standing policy \u2014 and why the level you hold barely matters",
+    "short": "free cash as a lever",
+    "headline": "\"Be less conservative\" is a policy, not a windfall. Modelled as one, it is worth about $10 million of the next six years\u2019 gap \u2014 and the balance you choose to hold makes almost no difference to that. What matters is appropriating the flow every year, and the flow is produced by the over-appropriating a tighter budget would remove.",
+    "changes": [
+     "A new lever, off by default and available on the free cash page and in the assumptions panel: appropriate this much free cash every year rather than accumulating it. The slider steps through the recommended band \u2014 above it, top, middle, bottom \u2014 then below it and down to holding nothing at all.",
+     "Holding a lower balance turns out to be a one-off worth surprisingly little. Moving from 6.55% to the bottom of the band releases $794,872, once, and going lower than that releases more on paper and achieves nothing, because no year can absorb more free cash than its own gap and FY28\u2019s gap is $680,870.",
+     "Appropriating the annual flow is the policy, and it is worth far more: it takes the six-year gap from $15.2 million to $5.1 million. It also does not depend on the level you hold at all, which is the opposite of how the argument is usually made. A lower target does not generate more money.",
+     "And the catch is the whole argument. That flow is about $2.0 million a year, which is 3.96% of the budget \u2014 below the bottom of the recommended band \u2014 and two thirds of it is money appropriated and never spent. Budget more tightly and the gap shrinks, but so does the free cash you were going to close it with. You cannot bank on both."
+    ]
+   },
    {
     "tag": "v9",
     "date": "2026-08-30",
@@ -5718,7 +5732,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
@@ -5761,13 +5775,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 0,
       "applied": 1322303,
       "after": 0
      },
@@ -5804,19 +5818,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 204180,
       "applied": 1118123,
       "after": 204180
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 915056,
       "applied": 1118123,
       "after": 915056
      },
@@ -5847,7 +5861,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
@@ -5890,13 +5904,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 0,
       "applied": 1322303,
       "after": 0
      },
@@ -5933,19 +5947,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 374813,
       "applied": 947490,
       "after": 374813
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1085689,
       "applied": 947490,
       "after": 1085689
      },
@@ -5976,7 +5990,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
@@ -6019,13 +6033,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 157018,
       "applied": 1165285,
       "after": 157018
      },
@@ -6062,19 +6076,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 545446,
       "applied": 776857,
       "after": 545446
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1256322,
       "applied": 776857,
       "after": 1256322
      },
@@ -6105,7 +6119,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
@@ -6148,13 +6162,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 412967,
       "applied": 909336,
       "after": 412967
      },
@@ -6191,19 +6205,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 74646,
       "applied": 606224,
       "after": 74646
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 716079,
       "applied": 606224,
       "after": 716079
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1426955,
       "applied": 606224,
       "after": 1426955
      },
@@ -6234,7 +6248,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
@@ -6277,13 +6291,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 27484,
       "applied": 653386,
       "after": 27484
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 668917,
       "applied": 653386,
       "after": 668917
      },
@@ -6320,19 +6334,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 245279,
       "applied": 435591,
       "after": 245279
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 886712,
       "applied": 435591,
       "after": 886712
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1597588,
       "applied": 435591,
       "after": 1597588
      },
@@ -6363,7 +6377,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 0,
       "applied": 680870,
       "after": 0
      },
@@ -6406,13 +6420,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 283434,
       "applied": 397436,
       "after": 283434
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 924867,
       "applied": 397436,
       "after": 924867
      },
@@ -6449,19 +6463,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 415913,
       "applied": 264957,
       "after": 415913
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1057346,
       "applied": 264957,
       "after": 1057346
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1768222,
       "applied": 264957,
       "after": 1768222
      },
@@ -6492,7 +6506,7 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 397898,
       "applied": 282972,
       "after": 397898
      },
@@ -6535,13 +6549,13 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 539384,
       "applied": 141486,
       "after": 539384
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1180817,
       "applied": 141486,
       "after": 1180817
      },
@@ -6578,19 +6592,19 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 586546,
       "applied": 94324,
       "after": 586546
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1227979,
       "applied": 94324,
       "after": 1227979
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1938855,
       "applied": 94324,
       "after": 1938855
      },
@@ -6929,7 +6943,471 @@
    "cumulativeNone": 15181593,
    "cumulativeFreeCash": 14500723,
    "cumulativeOverride": 10104160
-  }
+  },
+  "sustainableDraw": 2026212,
+  "policyStops": [
+   {
+    "target": 0.08,
+    "label": "above the recommended range"
+   },
+   {
+    "target": 0.07,
+    "label": "top of the recommended range"
+   },
+   {
+    "target": 0.06,
+    "label": "middle of the recommended range"
+   },
+   {
+    "target": 0.05,
+    "label": "bottom of the recommended range"
+   },
+   {
+    "target": 0.04,
+    "label": "below the range \u2014 and about what a normal year generates"
+   },
+   {
+    "target": 0.03,
+    "label": "well below the range"
+   },
+   {
+    "target": 0.02,
+    "label": "well below the range"
+   },
+   {
+    "target": 0.01,
+    "label": "nearly nothing held back"
+   },
+   {
+    "target": 0.0,
+    "label": "spend everything, hold no reserve"
+   }
+  ],
+  "policyLadder": [
+   {
+    "target": 0.08,
+    "label": "above the recommended range",
+    "oneTime": 0,
+    "annual": 2026212,
+    "inBand": false,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 15181593,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.07,
+    "label": "top of the recommended range",
+    "oneTime": 0,
+    "annual": 2026212,
+    "inBand": true,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 15181593,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.06,
+    "label": "middle of the recommended range",
+    "oneTime": 282972,
+    "annual": 2026212,
+    "inBand": true,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14898621,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.05,
+    "label": "bottom of the recommended range",
+    "oneTime": 794872,
+    "annual": 2026212,
+    "inBand": true,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14500723,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.04,
+    "label": "below the range \u2014 and about what a normal year generates",
+    "oneTime": 1306772,
+    "annual": 2026212,
+    "inBand": false,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14500723,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.03,
+    "label": "well below the range",
+    "oneTime": 1818671,
+    "annual": 2026212,
+    "inBand": false,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14500723,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.02,
+    "label": "well below the range",
+    "oneTime": 2330571,
+    "annual": 2026212,
+    "inBand": false,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14500723,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.01,
+    "label": "nearly nothing held back",
+    "oneTime": 2842470,
+    "annual": 2026212,
+    "inBand": false,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14500723,
+    "gapLeftWithPolicy": 5073572
+   },
+   {
+    "target": 0.0,
+    "label": "spend everything, hold no reserve",
+    "oneTime": 3354370,
+    "annual": 2026212,
+    "inBand": false,
+    "years": [
+     {
+      "fy": 28,
+      "before": 680870,
+      "applied": 680870,
+      "after": 0
+     },
+     {
+      "fy": 29,
+      "before": 1322303,
+      "applied": 1322303,
+      "after": 0
+     },
+     {
+      "fy": 30,
+      "before": 2033179,
+      "applied": 2026212,
+      "after": 6967
+     },
+     {
+      "fy": 31,
+      "before": 2819056,
+      "applied": 2026212,
+      "after": 792844
+     },
+     {
+      "fy": 32,
+      "before": 3685928,
+      "applied": 2026212,
+      "after": 1659716
+     },
+     {
+      "fy": 33,
+      "before": 4640257,
+      "applied": 2026212,
+      "after": 2614045
+     }
+    ],
+    "gapLeftOneTimeOnly": 14500723,
+    "gapLeftWithPolicy": 5073572
+   }
+  ]
  },
  "feeCalibration": {
   "measured": 188944.46,

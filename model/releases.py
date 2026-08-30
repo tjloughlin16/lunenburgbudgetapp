@@ -24,6 +24,39 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v10',
+        date='2026-08-30',
+        title='Free cash as a standing policy — and why the level you hold barely matters',
+        short='free cash as a lever',
+        headline='"Be less conservative" is a policy, not a windfall. Modelled as one, it '
+                 'is worth about $10 million of the next six years’ gap — and the balance '
+                 'you choose to hold makes almost no difference to that. What matters is '
+                 'appropriating the flow every year, and the flow is produced by the '
+                 'over-appropriating a tighter budget would remove.',
+        changes=[
+            'A new lever, off by default and available on the free cash page and in the '
+            'assumptions panel: appropriate this much free cash every year rather than '
+            'accumulating it. The slider steps through the recommended band — above it, '
+            'top, middle, bottom — then below it and down to holding nothing at all.',
+
+            'Holding a lower balance turns out to be a one-off worth surprisingly little. '
+            'Moving from 6.55% to the bottom of the band releases $794,872, once, and '
+            'going lower than that releases more on paper and achieves nothing, because no '
+            'year can absorb more free cash than its own gap and FY28’s gap is $680,870.',
+
+            'Appropriating the annual flow is the policy, and it is worth far more: it '
+            'takes the six-year gap from $15.2 million to $5.1 million. It also does not '
+            'depend on the level you hold at all, which is the opposite of how the argument '
+            'is usually made. A lower target does not generate more money.',
+
+            'And the catch is the whole argument. That flow is about $2.0 million a year, '
+            'which is 3.96% of the budget — below the bottom of the recommended band — and '
+            'two thirds of it is money appropriated and never spent. Budget more tightly '
+            'and the gap shrinks, but so does the free cash you were going to close it '
+            'with. You cannot bank on both.',
+        ],
+    ),
+    dict(
         tag='v9',
         date='2026-08-30',
         title='Free cash against an override — the same dollars, opposite effects',

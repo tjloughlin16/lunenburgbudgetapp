@@ -69,6 +69,9 @@ export interface Assumptions {
   levy_growth: number; new_growth: number; state_aid_growth: number
   local_receipts_growth: number; school_share: number
   athletic_fee_revenue: number; override_amount: number
+  /** A standing policy of appropriating free cash every year. Zero by default, and the
+   *  published projection is built without it. */
+  free_cash_annual: number
 }
 
 /** The shape every measured line reports: the series' own statistics, and the tests that
@@ -194,6 +197,11 @@ export const MODEL = raw as unknown as {
               covers: { fy: string; deficit: number; covered: boolean; remaining: number }[] }[]
     scenarios: { target: number; spread: number; released: number
                  years: { fy: string; deficit: number; applied: number; after: number }[] }[]
+    sustainableDraw: number
+    policyStops: { target: number; label: string }[]
+    policyLadder: { target: number; label: string; oneTime: number; annual: number
+                    inBand: boolean; gapLeftOneTimeOnly: number; gapLeftWithPolicy: number
+                    years: { fy: string; before: number; applied: number; after: number }[] }[]
     overrideContrast: {
       amount: number; levyCap: number
       cumulativeNone: number; cumulativeFreeCash: number; cumulativeOverride: number
@@ -411,6 +419,7 @@ type Bucket = typeof BUCKETS[number]
 export interface YearProjection {
   fy: number; levelService: number; available: number
   appropriation: number; deficit: number; growthRate: number
+  deficitBeforeFreeCash?: number; freeCashApplied?: number
 }
 
 /** Project level-service cost and available revenue, year by year.

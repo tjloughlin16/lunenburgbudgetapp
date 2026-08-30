@@ -75,6 +75,28 @@ export function AssumptionsPanel({ a, setA, leverTotal }: {
                 {usd(leverTotal)}
               </span>
             </div>
+          {/* Free cash as a standing policy, not a windfall. Zero by default: the published
+              projection is built without it, and audit_provenance.py proves that moving
+              this touches no bucket and no growth rate. */}
+          <div className="mt-4">
+            <div className="flex items-baseline justify-between">
+              <label htmlFor="a-freecash" className="text-[13px] font-medium">
+                Free cash appropriated every year
+              </label>
+              <span className="text-sm font-bold tnum">{usd(a.free_cash_annual ?? 0)}</span>
+            </div>
+            <input id="a-freecash" type="range" min={0} max={3_400_000} step={50_000}
+              value={a.free_cash_annual ?? 0}
+              onChange={e => set('free_cash_annual', Number(e.target.value))}
+              className="w-full" />
+            <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
+              A standing policy of being less conservative, not a one-off. An ordinary year
+              generates about {usd(MODEL.freeCash.sustainableDraw)} — above that this is not
+              sustainable, and the flow itself is produced by the underspending a tighter
+              budget would remove. See Free cash.
+            </p>
+          </div>
+
             <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
               Set on the <a href="#levers" className="underline">Close the gap</a> tab, not
               here &mdash; there used to be a second fee slider on this panel and it was
