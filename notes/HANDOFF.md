@@ -15,22 +15,22 @@ fixed anywhere. That second one got repeated to TJ as a reason to deploy.
 
 | | |
 |---|---|
-| **Live site** | `lunenburgbudgetproject.org` — commit **`58890b7`**, formerly tagged `v9` |
-| **`main`** | 3 commits past that, pushed to GitHub, NOT deployed |
-| **Newest tag** | **`v6`** (`56d7d37`). The site's own version says **`v7`** |
-| **Deployed ≠ HEAD** | deliberately. TJ reviews on localhost before anything ships |
+| **Live site** | `lunenburgbudgetproject.org` — tag **`v7`**, deployed 30 August 2026 |
+| **`main`** | is the deployed commit, tagged and pushed. Nothing ahead of production |
+| **Newest tag** | **`v7`**, and it is what is live. `check:agents` passes against production |
 | **Dev server** | `cd fy28 && npm run dev` → localhost:5173 |
 
 **The release numbering was closed up on 30 August, and four tags were deleted.** Five
 builds shipped the free cash work over two days; they are one release note now, and the
-numbering went with them so the panel would not read v11 then v6. `v7` will be re-created
-at the deploying commit. What the retired tags pointed at, so no build becomes unfindable:
+numbering went with them so the panel would not read v11 then v6. `v7` was re-created at the
+deploying commit and is live. What the retired tags pointed at, so no build becomes
+unfindable — and note that the old `v9` is the build this one replaced in production:
 
 | retired tag | commit | what it was |
 |---|---|---|
 | `v7` | `5c76af5` | the town already published both sides of the free cash argument |
 | `v8` | `083ff3a` | model free cash at any level, including spending it all |
-| `v9` | `58890b7` | free cash as an opt-in model factor — **this is what is live** |
+| `v9` | `58890b7` | free cash as an opt-in model factor — **what was live until now** |
 | `v10` | `f35b70d` | free cash as a standing policy lever |
 
 **Two process rules, both learned the hard way:**
@@ -48,9 +48,9 @@ Deploy needs **Node 22 via nvm**. Build with **`npm run build:site`**, never `np
 — the latter ships the un-prerendered SPA. Then `npm run check:agents`, which fails if the
 prerender was skipped, if `/data/model.json` is stale, or if HEAD is past the newest tag.
 
-**`npm run check:agents` currently fails on purpose:** the site says `v7` and the newest tag
-is `v6`. Tagging HEAD `v7` is the deploy's first step, not something to do in advance — the
-failure is the guard that stops untagged work shipping.
+**`npm run check:agents` passes**, locally and against production. It failed on purpose
+until the deploy — the site said `v7` while the newest tag was `v6` — and that failure is the
+guard that stops untagged work shipping. Tag at deploy time, never in advance.
 
 ## 0a. What this session did
 
@@ -126,7 +126,8 @@ can be spent in. They are one year apart.** Confirmed, not assumed.
    line names a count and the largest project; he wants the full list of what falls off.
    The data is already exported — `MODEL.freeCash.capital.atDraw[i].projects` has rank,
    dept, project and cost for every item at every stop. It is a UI job only.
-2. **Tag HEAD `v7` and deploy** — with TJ's explicit say-so. The release note is written.
+2. ~~Tag and deploy.~~ **Done.** `v7` shipped 30 August 2026 with TJ's say-so, pushed
+   before deploying, and verified against production.
 3. **The five `ADJ EXP` memos.** `DATA-WANTED §3d`.
 4. **DLS's own free cash guidance.** The 5–7% band is one sentence written by one party to
    the argument.
