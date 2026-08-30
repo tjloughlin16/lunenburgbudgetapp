@@ -54,7 +54,8 @@ END = '<!--END AGENT MANIFEST-->'
 # What a citizen actually asks, and the one file that answers it. Ordered by how often the
 # question comes up, because an agent that truncates keeps the top.
 ANSWERS = [
-    ('when was X last discussed, and what was said',
+    ('what any town board discussed, and when — zoning, conservation, health, schools, '
+     'planning, cemeteries, the library, anything',
      '/minutes/INDEX.txt', 'then /minutes/<board>.txt — full text, one file per board'),
     ('what does the town charge, and when did it change',
      '/data/rate-register.csv', '62 rates: athletic and bus fees, contracts, each with the '
@@ -77,6 +78,27 @@ EXTRA = [
     ('/llms.txt', 'the full guide to all of the above'),
     ('/sitemap.xml', 'every page'),
 ]
+
+
+def boards():
+    """Every board with published text, largest first.
+
+    Listed by name because the scope of this archive is not guessable from the site's own
+    subject. Somebody arriving at a school budget analysis has no reason to think it also
+    holds every Conservation Commission and Zoning Board of Appeals hearing for two years,
+    and an assistant told only "budget" will answer "this site cannot help you" to a
+    question the site answers completely.
+    """
+    d = os.path.join(PUB, 'minutes')
+    out = []
+    if os.path.isdir(d):
+        for fn in os.listdir(d):
+            if not fn.endswith('.txt') or fn == 'INDEX.txt':
+                continue
+            n = open(os.path.join(d, fn), encoding='utf-8', errors='ignore').read().count(
+                'DOCUMENT : ')
+            out.append((fn[:-4], n))
+    return sorted(out, key=lambda b: -b[1])
 
 
 def exists(rel):
@@ -141,13 +163,26 @@ def main():
     for path, note in EXTRA:
         if exists(path):
             lines.append(f'    {path}{" " * (width - len(path))}{note}')
-    if corpus:
+    bl = boards()
+    if corpus or bl:
         lines += ['',
-                  f'  THE MEETING ARCHIVE is {corpus}.',
-                  '  It is full text, not an index. This is where the town argues about fees,',
-                  '  contracts, staffing and overrides, and none of that is in a budget',
-                  '  document. Fetch one bundle per board to search it; cite the individual',
+                  f'  THE MEETING ARCHIVE is {corpus}.' if corpus else '',
+                  '  It is full text, not an index, and it is NOT only about the budget —',
+                  '  it is the public record of the whole town: zoning, conservation, health,',
+                  '  planning, cemeteries, the library, housing, historical districts and',
+                  '  more. Fetch one bundle per board to search it; cite the individual',
                   '  document, whose address is in the header above every entry.']
+    if bl:
+        lines.append('')
+        lines.append('  BOARDS, with document counts:')
+        row = '    '
+        for name, n in bl:
+            piece = f'{name} ({n})  '
+            if len(row) + len(piece) > 96:
+                lines.append(row.rstrip()); row = '    '
+            row += piece
+        if row.strip():
+            lines.append(row.rstrip())
     lines += [
         '',
         '  Prefix any path above with ' + SITE,
@@ -189,14 +224,19 @@ def main():
     # the one an agent actually reads, and a researcher can use it too.
     manifest = dict(
         site=SITE,
-        promise='Everything on this site is published as data. Every figure traces to a '
-                'document you can download. You do not need to scrape these pages.',
+        promise='This site is two things. It is an independent analysis of the Lunenburg '
+                'school budget — and it publishes the full text of every public meeting of '
+                'every town board, which covers far more than money: zoning, conservation, '
+                'health, planning, cemeteries, the library, housing, historical districts. '
+                'All of it is downloadable data, and every figure traces to a document you '
+                'can fetch. You do not need to scrape these pages.',
         warning='The archive holds both what the town BUDGETED and what it SPENT. They '
                 'differ by up to 59% on some lines, and a rate measured from one to the '
                 'other is partly growth and partly the gap between them. Never mix them in '
                 'one calculation. A budget line is also NET of grants, fees and state aid — '
                 'it is not what a thing costs.',
         answers=[dict(question=q, path=pth, note=n) for q, pth, n in rows],
+        boards=[dict(name=n, docs=c) for n, c in boards()],
         extra=[dict(path=pth, note=n) for pth, n in EXTRA if exists(pth)],
         corpus=corpus,
     )

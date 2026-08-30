@@ -1,10 +1,10 @@
 {
  "site": "https://lunenburgbudgetproject.org",
- "promise": "Everything on this site is published as data. Every figure traces to a document you can download. You do not need to scrape these pages.",
+ "promise": "This site is two things. It is an independent analysis of the Lunenburg school budget \u2014 and it publishes the full text of every public meeting of every town board, which covers far more than money: zoning, conservation, health, planning, cemeteries, the library, housing, historical districts. All of it is downloadable data, and every figure traces to a document you can fetch. You do not need to scrape these pages.",
  "warning": "The archive holds both what the town BUDGETED and what it SPENT. They differ by up to 59% on some lines, and a rate measured from one to the other is partly growth and partly the gap between them. Never mix them in one calculation. A budget line is also NET of grants, fees and state aid \u2014 it is not what a thing costs.",
  "answers": [
   {
-   "question": "when was X last discussed, and what was said",
+   "question": "what any town board discussed, and when \u2014 zoning, conservation, health, schools, planning, cemeteries, the library, anything",
    "path": "/minutes/INDEX.txt",
    "note": "then /minutes/<board>.txt \u2014 full text, one file per board"
   },
@@ -42,6 +42,168 @@
    "question": "special education as a cost driver",
    "path": "/docs/analyses/sped-and-the-curve.md",
    "note": ""
+  }
+ ],
+ "boards": [
+  {
+   "name": "select-board",
+   "docs": 141
+  },
+  {
+   "name": "school-committee",
+   "docs": 118
+  },
+  {
+   "name": "conservation-commission",
+   "docs": 95
+  },
+  {
+   "name": "finance-committee",
+   "docs": 84
+  },
+  {
+   "name": "planning-board",
+   "docs": 79
+  },
+  {
+   "name": "sewer-commission",
+   "docs": 69
+  },
+  {
+   "name": "board-of-assessors",
+   "docs": 62
+  },
+  {
+   "name": "board-of-health",
+   "docs": 48
+  },
+  {
+   "name": "lunenburg-municipal-building-design-committee",
+   "docs": 47
+  },
+  {
+   "name": "cemetery-commission",
+   "docs": 45
+  },
+  {
+   "name": "public-access-cable-committee-pacc",
+   "docs": 41
+  },
+  {
+   "name": "planning-board-public-hearing",
+   "docs": 41
+  },
+  {
+   "name": "library-board-of-trustees",
+   "docs": 36
+  },
+  {
+   "name": "parks-commission",
+   "docs": 36
+  },
+  {
+   "name": "council-on-aging",
+   "docs": 35
+  },
+  {
+   "name": "zoning-board-of-appeals",
+   "docs": 34
+  },
+  {
+   "name": "agricultural-commission",
+   "docs": 33
+  },
+  {
+   "name": "school-advisory-councils-committees",
+   "docs": 33
+  },
+  {
+   "name": "historical-commission",
+   "docs": 31
+  },
+  {
+   "name": "architectural-preservation-district-commission",
+   "docs": 30
+  },
+  {
+   "name": "trust-fund-commission",
+   "docs": 29
+  },
+  {
+   "name": "stormwater-task-force",
+   "docs": 25
+  },
+  {
+   "name": "open-space-committee",
+   "docs": 22
+  },
+  {
+   "name": "master-plan-steering-committee",
+   "docs": 18
+  },
+  {
+   "name": "economic-development-committee",
+   "docs": 17
+  },
+  {
+   "name": "green-communities-committee",
+   "docs": 16
+  },
+  {
+   "name": "lunenburg-300th-anniversary-committee",
+   "docs": 16
+  },
+  {
+   "name": "lunenburg-housing-authority",
+   "docs": 15
+  },
+  {
+   "name": "conservation-commission-public-hearing",
+   "docs": 14
+  },
+  {
+   "name": "select-board-public-hearing",
+   "docs": 12
+  },
+  {
+   "name": "capital-planning-committee",
+   "docs": 12
+  },
+  {
+   "name": "by-law-committee",
+   "docs": 10
+  },
+  {
+   "name": "cultural-council",
+   "docs": 9
+  },
+  {
+   "name": "board-of-registrars",
+   "docs": 7
+  },
+  {
+   "name": "finance-committee-appointing-committee",
+   "docs": 6
+  },
+  {
+   "name": "finance-committee-public-hearing",
+   "docs": 5
+  },
+  {
+   "name": "north-central-climate-change-coalition",
+   "docs": 4
+  },
+  {
+   "name": "cable-advisory-committee",
+   "docs": 3
+  },
+  {
+   "name": "personnel-committee",
+   "docs": 3
+  },
+  {
+   "name": "athletic-advisory-council",
+   "docs": 2
   }
  ],
  "extra": [

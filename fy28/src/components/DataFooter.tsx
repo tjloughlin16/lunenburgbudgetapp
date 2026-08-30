@@ -26,7 +26,7 @@ export function DataFooter() {
         fontSize: '.88rem', color: 'var(--text-secondary)',
       }}>
       <h2 style={{ fontSize: '1rem', margin: '0 0 .4rem', color: 'var(--text-primary)' }}>
-        Ask an AI about this budget — it has everything it needs here
+        Ask an AI about Lunenburg — this site has what it needs
       </h2>
       <p style={{ margin: '0 0 .9rem', maxWidth: '48rem' }}>
         {MANIFEST.promise} Point an assistant at <strong>{host}</strong> and ask it
@@ -63,14 +63,27 @@ export function DataFooter() {
       </p>
 
       {MANIFEST.corpus && (
-        <p style={{ margin: 0, maxWidth: '48rem' }}>
+        <p style={{ margin: '0 0 .75rem', maxWidth: '48rem' }}>
           <strong>The meeting archive</strong> is {MANIFEST.corpus} — published as full
-          text, not as an index. This is where the town argues about fees, contracts,
-          staffing and overrides, and none of that appears in a budget document. Fetch one
-          bundle per board to search it; each document inside carries its own permanent
-          address so a finding can be cited to the document rather than the bundle.
+          text, not as an index. It is <strong>not only about the budget</strong>: it is the
+          public record of the whole town. Fetch one bundle per board to search it; each
+          document inside carries its own permanent address, so a finding can be cited to
+          the document rather than to the bundle.
         </p>
       )}
+
+      {MANIFEST.boards?.length ? (
+        <p style={{ margin: 0, maxWidth: '48rem', lineHeight: 1.7 }}>
+          <strong>Boards covered</strong> (documents each):{' '}
+          {MANIFEST.boards.map((b, i) => (
+            <span key={b.name}>
+              {i > 0 ? ', ' : ''}
+              <a href={`/minutes/${b.name}.txt`}>{b.name.replace(/-/g, ' ')}</a>
+              {' '}({b.docs})
+            </span>
+          ))}.
+        </p>
+      ) : null}
     </section>
   )
 }
