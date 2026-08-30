@@ -160,11 +160,40 @@ if __name__ == '__main__':
 
 # The schedule that was in force through 2025-26, still published on the LHS
 # athletics FAQ. Kept so the app can show what changed.
+# The schedule in force in FY24 and FY25 -- NOT FY26. It was applied to FY26 for months,
+# which is the error this module now guards against: the LHS athletics FAQ states these
+# rates and states no year anywhere in the document, so nothing stopped a stale schedule
+# being used for a year it had never covered. See sources/data/athletic-fee-schedule.csv,
+# where every rate carries the year it applies to and the document that set it.
 PRIOR_ATHLETIC_FEES = dict(
     hs=[('1st student', 250), ('2nd student', 140), ('3rd student', 85)],
     hsCap=475,
     ms=[('1st student', 200), ('2nd student', 150)],
-    source='LHS Athletics FAQ (rschoolteams.com) — still the posted schedule',
+    appliesTo=['FY24', 'FY25'],
+    source='LHS Athletics FAQ (rschoolteams.com) — still the posted schedule, and undated',
+)
+
+# The schedule actually in force in FY26, voted by the School Committee on 26 February 2025
+# under "Increasing New & Existing Revenues" and approved by roll call:
+#
+#   "increase fee for high school up to $325 and $275 for Middle School. A 25% discount for
+#    siblings. Reduced fee for high school to $50 and $40 for middle school with a family
+#    cap of $1500."
+#
+# Three of those figures are independently confirmed cell by cell in the district's own
+# athletics workbook (Spring!G3 = 325, Spring!S3 = 50, Spring!V3 = 40). The middle school
+# rate appears only in the vote.
+FY26_ATHLETIC_FEES = dict(
+    effectiveFrom='2025-26 school year (FY26)',
+    hsFullPay=325,
+    msFullPay=275,
+    siblingDiscountPct=25,
+    hsReduced=50,
+    msReduced=40,
+    familyCap=1500,
+    appliesTo=['FY26'],
+    source='School Committee minutes, 26 February 2025 (voted, roll call)',
+    sourcePublished=True,
 )
 
 CURRENT_ATHLETIC_FEES = dict(
@@ -260,8 +289,27 @@ ESTIMATED_FEE_INCREASE_VALUE = (
 MEASURED_FY26_FEE_REVENUE = 188944.46        # net of $5,664.99 of refunds
 MEASURED_FY26_FEE_REVENUE_GROSS = 194609.45  # HS 167,511.49 + MS 27,097.96
 
-# What this model produces for the same fee and the same year.
-MODELLED_FY26_FEE_REVENUE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICIPATIONS)
+# Participations in FY26 itself, from the district's own workbook. The SPORTS list above
+# is the FY27 planning roster and is the wrong denominator for a FY26 measurement.
+FY26_HS_PARTICIPATIONS = 533
+FY26_MS_PARTICIPATIONS = 116
+FY26_PARTICIPATIONS = FY26_HS_PARTICIPATIONS + FY26_MS_PARTICIPATIONS
+
+# A flat 25% sibling discount, not the old tiered $140/$85, so the blend is the full rate
+# reduced by 25% on whatever share of participations are siblings under SIBLING_MIX.
+_SIBLING_SHARE = sum(w for rank, w in SIBLING_MIX if rank != '1st child')
+_FY26_BLEND = 1 - _SIBLING_SHARE * (FY26_ATHLETIC_FEES['siblingDiscountPct'] / 100)
+
+FY26_EFFECTIVE_HS_FEE = round(FY26_ATHLETIC_FEES['hsFullPay'] * _FY26_BLEND, 2)
+FY26_EFFECTIVE_MS_FEE = round(FY26_ATHLETIC_FEES['msFullPay'] * _FY26_BLEND, 2)
+
+# What this model produces for the fee actually charged, in the year it was charged.
+MODELLED_FY26_FEE_REVENUE = round(
+    (FY26_EFFECTIVE_HS_FEE * FY26_HS_PARTICIPATIONS
+     + FY26_EFFECTIVE_MS_FEE * FY26_MS_PARTICIPATIONS) * (1 - WAIVER_ASSUMPTION))
+
+# Kept for comparison: what the model used to produce, pricing FY26 on the FY25 schedule.
+MODELLED_FY26_ON_STALE_SCHEDULE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICIPATIONS)
 
 # And they do not agree. The model is 31% low, or equivalently the fund collected 45%
 # more than the published schedule and our sibling/waiver assumptions can account for.
