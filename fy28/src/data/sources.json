@@ -1143,6 +1143,30 @@
      "textUrl": "/docs/data/athletics-history.csv"
     },
     {
+     "path": "data/rate-register.csv",
+     "title": "Every rate, with the year it applies to and who set it",
+     "stars": 3,
+     "what": "Athletic fees, bus fees, collective bargaining raises, facilities and the fees the district’s payment portal sells — 62 rates, each carrying the fiscal year it applies to, the document that set it and the date. Built after FY26 athletic fees were modelled at $250 a season when the district had voted $325: not a wrong number, a right number from the wrong year, taken from a schedule that states its rates and never states which year they cover. It deliberately includes rates we do NOT use and the ten we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank. Rebuild with scripts/build_rate_register.py.",
+     "kind": "Data",
+     "bytes": 14237,
+     "url": "/docs/data/rate-register.csv",
+     "count": 63,
+     "unit": "rows",
+     "textUrl": "/docs/data/rate-register.csv"
+    },
+    {
+     "path": "data/athletic-fee-schedule.csv",
+     "title": "Athletic fees, by fiscal year, with their sources",
+     "stars": 3,
+     "what": "The detail behind the register: every athletic fee tier for FY24 to FY27, 27 of the 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them. The script refuses to write if any figure stops matching its source. Rebuild with scripts/extract_fee_schedule.py.",
+     "kind": "Data",
+     "bytes": 6752,
+     "url": "/docs/data/athletic-fee-schedule.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/athletic-fee-schedule.csv"
+    },
+    {
      "path": "data/town-ledger-fy26-q3.csv",
      "title": "The town’s own ledger, FY26 to 31 March",
      "stars": 3,
@@ -3446,10 +3470,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 263,
+  "documents": 265,
   "groups": 16,
-  "bytes": 355567468,
-  "loadBearing": 44
+  "bytes": 355588457,
+  "loadBearing": 46
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 21 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 57 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

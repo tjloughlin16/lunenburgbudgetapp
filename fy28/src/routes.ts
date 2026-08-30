@@ -10,7 +10,7 @@
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
-  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics'
+  | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -33,6 +33,10 @@ export const SLUG: Record<Tab, string> = {
   sources: 'sources',
   // A drill-in, not a chapter. Linked from the situation page and from Go deeper.
   athletics: 'athletics',
+  // Reference, not argument. Every rate the model uses, with the year it applies to and
+  // the document that set it — built after FY26 athletic fees were priced on FY25's
+  // schedule for months because the source stated rates and never stated a year.
+  rates: 'rate-register',
 }
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
@@ -48,6 +52,9 @@ const ALIASES: Record<string, Tab> = {
   solved: 'solved', packages: 'solved', sustainable: 'solved', forever: 'solved',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
   athletics: 'athletics', sports: 'athletics', athletic: 'athletics',
+  // NOT 'rates' -- that alias already means the curve page, and has since before this
+  // page existed. A shared link must not change where it lands.
+  'rate-register': 'rates', fees: 'rates', 'fee-schedule': 'rates', register: 'rates',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -76,6 +83,7 @@ export const LABEL: Record<Tab, string> = {
   solved: 'What solved would require',
   sources: 'Sources',
   athletics: 'Athletics, both sides of the money',
+  rates: 'Rates, fees and contracts — the register',
 }
 
 /** Which page a drill-in sits under, for the trail back when somebody arrives by link
@@ -85,6 +93,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
   override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
   athletics: 'context',
+  rates: 'deeper',
 }
 
 export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')

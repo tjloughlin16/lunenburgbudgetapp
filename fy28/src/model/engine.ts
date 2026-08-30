@@ -180,6 +180,14 @@ export const MODEL = raw as unknown as {
     measured: number; measuredGross: number; modelled: number
     factor: number; surchargeGap: number; allInFy26: number; fundShareFy26: number
   }
+  rateRegister: {
+    rows: { fy: number | null; category: string; unit: string; item: string
+            value: number | null; valueType: string; setOn: string; expires: string
+            source: string; sourceFile: string; sourceRef: string
+            status: string; inModel: string }[]
+    counts: Record<string, number>
+    statusMeaning: Record<string, string>
+  }
   athleticsHistory: {
     rows: { fy: number; side: 'general' | 'revolving'; item: string
             amount: number; basis: string; source: string }[]

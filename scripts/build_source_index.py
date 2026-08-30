@@ -487,6 +487,24 @@ GROUPS = [
              'of that at the same time as the document rather than retrofitted, and this '
              'is what that looks like. It also records what is deliberately not published '
              'and why.'),
+            ('data/rate-register.csv',
+             'Every rate, with the year it applies to and who set it', 3,
+             'Athletic fees, bus fees, collective bargaining raises, facilities and the '
+             'fees the district’s payment portal sells — 62 rates, each carrying the fiscal '
+             'year it applies to, the document that set it and the date. Built after FY26 '
+             'athletic fees were modelled at $250 a season when the district had voted '
+             '$325: not a wrong number, a right number from the wrong year, taken from a '
+             'schedule that states its rates and never states which year they cover. It '
+             'deliberately includes rates we do NOT use and the ten we cannot state at all, '
+             'because a fee the town charges and does not publish is a finding rather than '
+             'a blank. Rebuild with scripts/build_rate_register.py.'),
+            ('data/athletic-fee-schedule.csv',
+             'Athletic fees, by fiscal year, with their sources', 3,
+             'The detail behind the register: every athletic fee tier for FY24 to FY27, '
+             '27 of the 31 figures verified against a spreadsheet cell or a direct '
+             'quotation from the School Committee vote that set them. The script refuses '
+             'to write if any figure stops matching its source. Rebuild with '
+             'scripts/extract_fee_schedule.py.'),
             ('data/fund-1301-cash-journal.csv',
              'The athletics revolving fund’s cashbook, three years', 3,
              '277 rows — every receipt and payment in fund 1301 for FY2024, FY2025 and '

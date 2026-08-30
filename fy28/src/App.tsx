@@ -15,6 +15,7 @@ import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
 import { Athletics } from './pages/Athletics'
+import { Rates } from './pages/Rates'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
@@ -279,6 +280,7 @@ export default function App() {
 
       {tab === 'sources' && <Sources onJump={go} />}
       {tab === 'athletics' && <Athletics onJump={go} />}
+      {tab === 'rates' && <Rates />}
 
       {tab === 'answers' && <Answers onJump={go} />}
 

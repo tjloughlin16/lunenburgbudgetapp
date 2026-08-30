@@ -37,6 +37,40 @@ import sped
 import corroboration
 from levers import LEVERS, ADMIN_TOTAL, ADMIN_CENTRAL, ADMIN_BUILDING, TECH_TOTAL, HEALTH_TOTAL, TRANSPORT_GENED, TRANSPORT_SPED
 
+def _rate_register():
+    """Every rate the project knows about, with the year it applies to and who set it.
+
+    Exported whole, including the rates the model does NOT use and the ones we cannot
+    state at all. That is the point of it: this register exists because FY26 athletic fees
+    were priced on FY25's schedule for months, and the reason nothing caught it was that a
+    rate with no date attached is indistinguishable from a rate with the right date. A
+    reader should be able to see every rate, its year, its source, and whether we are using
+    it — including the ones where the honest answer is "the town charges this and does not
+    publish what it is".
+    """
+    import csv as _csv, os as _os
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         'sources/data/rate-register.csv')
+    rows = [dict(fy=int(r['fy']) if r['fy'] else None, category=r['category'],
+                 unit=r['unit'], item=r['item'],
+                 value=float(r['value']) if r['value'] else None,
+                 valueType=r['value_type'], setOn=r['set_on'], expires=r['expires'],
+                 source=r['source'], sourceFile=r['source_file'],
+                 sourceRef=r['source_ref'], status=r['status'], inModel=r['in_model'])
+            for r in _csv.DictReader(open(path))]
+    counts = {}
+    for r in rows:
+        counts[r['status']] = counts.get(r['status'], 0) + 1
+    return dict(rows=rows, counts=counts,
+                statusMeaning={
+                    'verified': 'checked against a spreadsheet cell or a direct quotation',
+                    'recorded': 'from a document we hold, not machine-checkable',
+                    'reported': 'we have the figure; the source is not public and we do not hold it',
+                    'not_published': 'the rate demonstrably exists and we have no figure for it',
+                    'not_adopted': 'proposed and not voted, so there is no rate to have',
+                })
+
+
 def _athletics_history():
     """Athletics with both sides of the money, for the context page.
 
@@ -104,6 +138,7 @@ data = dict(
     feeAccounting=FEE_ACCOUNTING,
     splitReporting=SPLIT_REPORTING,
     athleticsHistory=_athletics_history(),
+    rateRegister=_rate_register(),
     feeCalibration=dict(
         measured=MEASURED_FY26_FEE_REVENUE, measuredGross=MEASURED_FY26_FEE_REVENUE_GROSS,
         modelled=MODELLED_FY26_FEE_REVENUE, factor=FEE_CALIBRATION,
