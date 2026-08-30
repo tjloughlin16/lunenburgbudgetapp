@@ -526,6 +526,24 @@ GROUPS = [
              'of that at the same time as the document rather than retrofitted, and this '
              'is what that looks like. It also records what is deliberately not published '
              'and why.'),
+            ('data/capital-plan-fy27.csv',
+             'The FY27 capital programme, ranked by the town', 3,
+             'All 22 projects the departments requested, in the Capital Planning '
+             'Committee’s own rank order, with cost and the running total the town prints '
+             'beside it — and a flag for the twelve that got funded. $3,267,208 requested '
+             'against $1,830,203 funded, so $1,437,005 of ranked work is already below the '
+             'line. That queue is why taking a dollar out of free cash costs a dollar of '
+             'capital: nothing gains slack, the line just moves up. Rebuild with '
+             'scripts/extract_capital_plan.py, which checks every row against the '
+             'document’s own cumulative column and refuses to write if one disagrees.'),
+            ('data/capital-funding-history.csv',
+             'How the capital programme has been paid for', 2,
+             'Eight years of capital funding split by source — free cash, taxation, '
+             'unexpended prior-year capital — each row reconciled to the total it prints. '
+             'Free cash is the largest and steadiest source, averaging $591,286 a year on '
+             'the town’s own figures, which is what makes redirecting it a trade rather '
+             'than a saving. Two of the ten published years are deliberately excluded: '
+             'they carry footnoted figures whose column cannot be told reliably.'),
             ('data/free-cash-proof.csv',
              'Free cash, nine towns, five years, line by line', 3,
              '630 rows: town, year, proof line, amount, the role that line plays in the '

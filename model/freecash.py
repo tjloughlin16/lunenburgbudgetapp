@@ -241,6 +241,64 @@ def override_contrast(project_fn, levy_cap, amount, years=6):
                 cumulativeOverride=sum(r['afterOverride'] for r in out))
 
 
+def capital_consequence():
+    """What redirecting free cash costs the capital programme, item by item.
+
+    Free cash is the capital programme's largest funding source -- the town has averaged
+    $591,286 a year of it and plans $991,627 for FY27 -- so a dollar redirected to the
+    schools is a dollar capital does not have. Saying "$794,872 is available within the
+    guideline" without saying that is half the story.
+
+    The order is the town's own. The FY27 plan is published with a CPC Rank column and a
+    running total, so projects come off the bottom of the Capital Planning Committee's
+    ranking and nobody here decides which ones matter.
+
+    **The loss is not one for one, and that is the point.** The list is lumpy: redirecting
+    $500,000 removes $952,949 of projects, because the next item down is a $494,500 roof
+    and half a roof is not a thing. The ratio is reported so the page can say so.
+    """
+    import csv as _csv
+    import os as _os
+    root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    path = _os.path.join(root, 'sources', 'data', 'capital-plan-fy27.csv')
+    if not _os.path.exists(path):
+        return None
+    items = [dict(rank=int(r['rank']), dept=r['dept'], project=r['project'],
+                  cost=float(r['cost']), funded=r.get('funded', 'yes'))
+             for r in _csv.DictReader(open(path))]
+    funded = [i for i in items if i.get('funded', 'yes') == 'yes']
+    unfunded = [i for i in items if i.get('funded', 'yes') != 'yes']
+    total = sum(i['cost'] for i in funded)
+    by_rank_desc = sorted(funded, key=lambda i: -i['rank'])
+
+    def falls(redirect):
+        lost, names = 0.0, []
+        for it in by_rank_desc:
+            if lost >= redirect:
+                break
+            lost += it['cost']
+            names.append(dict(rank=it['rank'], dept=it['dept'], project=it['project'],
+                              cost=round(it['cost'])))
+        return round(lost), names
+
+    return dict(
+        programmeTotal=round(total),
+        plannedFromFreeCash=991_627,
+        averageFromFreeCash=591_286,
+        items=[dict(rank=i['rank'], dept=i['dept'], project=i['project'],
+                    cost=round(i['cost']), funded=i['funded'] == 'yes') for i in items],
+        # Ranked, costed, and already below the funding line before free cash is touched.
+        # This is what makes a dollar removed a dollar of requested work not done: there is
+        # a queue, so nothing gains slack.
+        queueValue=round(sum(i['cost'] for i in unfunded)),
+        queueCount=len(unfunded),
+        atDraw=[dict(redirect=round(spendable(t / 100)),
+                     lost=falls(max(spendable(t / 100), 0))[0],
+                     projects=falls(max(spendable(t / 100), 0))[1])
+                for t in range(0, 9)],
+    )
+
+
 def export(deficits, project_fn=None, levy_cap=0.025):
     return dict(
         certified=CERTIFIED, identified=IDENTIFIED,
@@ -266,4 +324,5 @@ def export(deficits, project_fn=None, levy_cap=0.025):
         sustainableDraw=SUSTAINABLE_DRAW,
         policyStops=[dict(target=t, label=l) for t, l in POLICY_STOPS],
         policyLadder=policy_ladder(project_fn) if project_fn else [],
+        capital=capital_consequence(),
     )

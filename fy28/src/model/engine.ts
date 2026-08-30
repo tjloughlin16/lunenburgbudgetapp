@@ -197,6 +197,13 @@ export const MODEL = raw as unknown as {
               covers: { fy: string; deficit: number; covered: boolean; remaining: number }[] }[]
     scenarios: { target: number; spread: number; released: number
                  years: { fy: string; deficit: number; applied: number; after: number }[] }[]
+    capital: {
+      programmeTotal: number; plannedFromFreeCash: number; averageFromFreeCash: number
+      queueValue: number; queueCount: number
+      items: { rank: number; dept: string; project: string; cost: number; funded: boolean }[]
+      atDraw: { redirect: number; lost: number
+                projects: { rank: number; dept: string; project: string; cost: number }[] }[]
+    } | null
     sustainableDraw: number
     policyStops: { target: number; label: string }[]
     policyLadder: { target: number; label: string; oneTime: number; annual: number

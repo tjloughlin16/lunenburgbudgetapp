@@ -44,14 +44,32 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
   const [cuts, setCuts] = useState<Set<string>>(new Set())
   const [overrideLevy, setOverrideLevy] = useState(0)
   const FC = MODEL.freeCash
-  /* How much of each year's certified free cash is redirected to the schools. Zero by
-     default, so the board is untouched until somebody moves it. */
-  const [fcShare, setFcShare] = useState(0)
-  const fcKept = Math.round(FC.certified * (1 - fcShare / 100))
+  const CAP = MODEL.freeCash.capital
+  /* Stops rather than a continuous slider, for the reason the override control above uses
+     stops: the amount worth landing on is the one where the retained balance crosses the
+     guideline, and a slider stepping in round numbers can never land on it. Round $100k
+     figures give the granularity for exploring; the boundary is inserted as its own stop so
+     it is always reachable exactly, and the whole certified amount closes the range. */
+  const FC_STOPS = useMemo(() => {
+    const boundary = Math.round(FC.certified - FC.bandLow * FC.budgetBase)
+    const round100k: number[] = []
+    for (let v = 100_000; v < FC.certified; v += 100_000) round100k.push(v)
+    // Drop any round stop that sits within $50k of the boundary: a notch that moves the
+    // number by five thousand dollars is a notch nobody wants and it buries the one stop
+    // that matters.
+    const kept = round100k.filter(v => Math.abs(v - boundary) > 50_000)
+    return [...new Set([0, boundary, ...kept, Math.round(FC.certified)])]
+      .filter(v => v >= 0 && v <= FC.certified).sort((a, b) => a - b)
+  }, [])
+  const [fcIdx, setFcIdx] = useState(0)
+  const freeCashRaw = FC_STOPS[fcIdx] ?? 0
+  const fcShare = FC.certified ? (freeCashRaw / FC.certified) * 100 : 0
+  const fcAtBoundary = freeCashRaw === Math.round(FC.certified - FC.bandLow * FC.budgetBase)
+  const fcKept = Math.round(FC.certified - freeCashRaw)
   const fcKeptPct = (fcKept / FC.budgetBase) * 100
   const fcBreakeven = Math.round((1 - (FC.bandLow * FC.budgetBase) / FC.certified) * 100)
   const fcInBand = fcKeptPct >= FC.bandLow * 100 && fcKeptPct <= FC.bandHigh * 100
-  const freeCash = Math.round(FC.certified * fcShare / 100)
+  const freeCash = freeCashRaw
   const [newGrowth, setNewGrowth] = useState(DEFAULT_SCENARIO.newGrowth)
   /* Not a control on this board — the only thing that sets it is option one, whose whole
    * point is that it moves the revenue line and nothing else. Carried anyway so that
@@ -90,7 +108,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
 
   const reset = () => {
     setRates({ ...DEFAULT_RATES }); setCuts(new Set())
-    setOverrideLevy(0); setFcShare(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
+    setOverrideLevy(0); setFcIdx(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
     setStateAidGrowth(DEFAULT_SCENARIO.stateAidGrowth); setLoaded(null)
   }
 
@@ -101,7 +119,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
     if (!seed) return
     const { rates: r, newGrowth: ng, stateAidGrowth: aid } = seed.route.scenario
     setRates({ ...r }); setNewGrowth(ng); setStateAidGrowth(aid)
-    setOverrideLevy(0); setFcShare(0); setCuts(new Set()); setLoaded(seed.route)
+    setOverrideLevy(0); setFcIdx(0); setCuts(new Set()); setLoaded(seed.route)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seed?.nonce])
 
@@ -228,9 +246,10 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
                 year as a share of its total budget — "strive to generate free cash in an
                 amount equal to 5-7% of its annual budget" — so what is retained can be
                 measured against it directly, which is the second readout. */}
-            <Slider label="Free cash redirected to the schools" value={fcShare}
-              min={0} max={100} step={5} onChange={setFcShare}
-              display={`${fcShare}% of it`} />
+            <Slider label="Free cash redirected to the schools" value={fcIdx}
+              min={0} max={FC_STOPS.length - 1} step={1} onChange={setFcIdx}
+              display={freeCashRaw ? `${usd(freeCashRaw)} — ${fcShare.toFixed(0)}% of it`
+                                   : 'None'} />
             {/* The two numbers this control actually moves, said once and large: what the
                 schools get, and what that leaves in free cash measured the way the guideline
                 measures it. Red when it falls outside the band, because that is the moment
@@ -261,14 +280,44 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
                       : fcKept - FC.bandHigh * FC.budgetBase)))}. {usd(fcKept)} retained.</>}
             </p>
             <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
-              About <strong>{fcBreakeven}%</strong> &mdash;{' '}
-              <strong className="tnum">{usd(Math.round(FC.certified - FC.bandLow * FC.budgetBase))}</strong>
-              {' '}a year &mdash; can be redirected while staying inside the guideline.
+              {fcAtBoundary
+                ? <><strong>This is the boundary.</strong> One notch further and the retained
+                    balance falls through the {(FC.bandLow * 100).toFixed(0)}% floor. </>
+                : <>About <strong>{fcBreakeven}%</strong> &mdash;{' '}
+                    <strong className="tnum">
+                      {usd(Math.round(FC.certified - FC.bandLow * FC.budgetBase))}
+                    </strong> a year &mdash; can be redirected while staying inside the
+                    guideline. </>}
               Assumes the town keeps certifying at this year's level, which was a record: an
               ordinary year produces {usd(FC.normalCertified)}, or{' '}
               {(FC.normalShare * 100).toFixed(2)}% &mdash; already below the floor, with
               nothing to redirect at all.
             </p>
+
+            {CAP && freeCashRaw > 0 && (() => {
+              /* Where the money comes from. Free cash is the capital programme's largest
+                 source, and the departments have already ranked $3.27m of projects against
+                 $1.83m of funding — so there is a queue, and a dollar removed is a dollar of
+                 ranked work that does not happen. Projects come off the bottom of the
+                 Capital Planning Committee's OWN ranking; nothing here picks them. */
+              const step = CAP.atDraw.reduce((best, d) =>
+                Math.abs(d.redirect - freeCashRaw) < Math.abs(best.redirect - freeCashRaw)
+                  ? d : best, CAP.atDraw[0])
+              const pctLost = (step.lost / CAP.programmeTotal) * 100
+              const biggest = [...step.projects].sort((a, b) => b.cost - a.cost)[0]
+              return (
+                <p className="text-[11px] mt-2 pt-2 border-t"
+                   style={{ borderColor: 'var(--grid)', color: 'var(--status-bad)' }}>
+                  <strong>Capital loses {usd(step.lost)} &mdash; {pctLost.toFixed(0)}% of the
+                  FY27 programme</strong>, {step.projects.length}{' '}
+                  {step.projects.length === 1 ? 'project' : 'projects'} off the bottom of the
+                  town&rsquo;s own ranking{biggest ? <>, the largest being {biggest.project}{' '}
+                  ({usd(biggest.cost)})</> : null}. Not one for one, because the list is
+                  lumpy &mdash; and {usd(CAP.queueValue)} of ranked projects sit unfunded
+                  before any of this.
+                </p>
+              )
+            })()}
           </div>
 
           <p className="text-[12px] mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
