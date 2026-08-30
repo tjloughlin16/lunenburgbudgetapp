@@ -144,8 +144,11 @@ data = dict(
     # is budget columns only; rule 1 forbids them meeting inside a calculation. The
     # deficits are handed in so the page can place the two side by side and subtract,
     # which is arithmetic and labelled as deferral rather than as a closed gap.
-    freeCash=freecash.export([(r['fy'], r['deficit'])
-                              for r in project(6, DEFAULT_ASSUMPTIONS)]),
+    freeCash=freecash.export(
+        [(r['fy'], r['deficit']) for r in project(6, DEFAULT_ASSUMPTIONS)],
+        project_fn=lambda years, free_cash: project(years, DEFAULT_ASSUMPTIONS,
+                                                   free_cash=free_cash),
+        levy_cap=DEFAULT_ASSUMPTIONS['levy_growth']),
     feeCalibration=dict(
         measured=MEASURED_FY26_FEE_REVENUE, measuredGross=MEASURED_FY26_FEE_REVENUE_GROSS,
         modelled=MODELLED_FY26_FEE_REVENUE, factor=FEE_CALIBRATION,

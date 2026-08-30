@@ -4,12 +4,23 @@ Two claims are argued about locally — that the town is too conservative and si
 money, and that free cash is "not up to standard" so the town is rebuilding. The reading is
 in `sources/analyses/free-cash.md`; this module is the arithmetic behind the page.
 
-**Rule 1 is the constraint that shapes this file.** The projection is built from budget
-columns only. Free cash is derived from ACTUALS — it is, definitionally, the variance
-between what was appropriated and what happened. The two must never meet inside a
-calculation. So nothing here feeds `finance.project`, and nothing here escalates. What it
-does is place two clearly-labelled quantities side by side and do subtraction, which is
-arithmetic rather than a model.
+**Rule 1 is the constraint that shapes this file, and this file deliberately bends it.**
+The projection is built from budget columns only. Free cash is derived from ACTUALS — it is
+definitionally the variance between what was appropriated and what happened. Rule 1 exists
+because a growth RATE measured across that boundary is partly growth and partly the step
+between the two, which is what put the special education escalator 1.5 points high.
+
+Free cash is fed into `finance.project` here, and it is not that error: it is a one-time
+subtraction applied after every rate has run, touching no bucket, no escalator and no growth
+rate, and never carried into the next year's base. The difference between "a rate across the
+boundary" and "a labelled one-time amount subtracted at the end" is the whole of why this is
+allowed.
+
+That distinction is worth nothing as a promise, so it is proven. `project` leaves `deficit`
+untouched and reports free cash in two ADDITIONAL fields, so a caller that knows nothing
+about this gets exactly the numbers it got before — enabling the feature cannot move
+anything else on the site. `scripts/audit_provenance.py` asserts it at nine different draws
+and fails the build if any bucket, rate, level service or deficit ever moves.
 
 **The band is single-sourced and that is stated wherever it is used.** 5-7% appears in one
 document in the archive: the Town's own FY27 budget press release, quoting DLS. We hold no
@@ -115,7 +126,61 @@ def years_covered(deficits, target):
     return out
 
 
-def export(deficits):
+def scenarios(project_fn, years=6):
+    """Every draw the page offers, computed by the REAL projection.
+
+    Precomputed rather than reimplemented in TypeScript. The alternative is the same rule
+    written twice in two languages, which is a drift waiting to happen — and the one number
+    people will quote from this site is "what would spending it buy".
+
+    Targets run from 0% (spend everything, which nobody proposes and everybody asks about)
+    to 8%. Spread is how many years the draw is stretched over.
+    """
+    out = []
+    for t in range(0, 9):
+        target = t / 100
+        amount = max(spendable(target), 0.0)
+        for spread in (1, 2, 3):
+            rows = project_fn(years, free_cash=dict(amount=amount, years=spread))
+            out.append(dict(
+                target=target, spread=spread, released=round(amount),
+                years=[dict(fy=r['fy'], deficit=r['deficit'],
+                            applied=r['free_cash_applied'],
+                            after=r['deficit_after_free_cash']) for r in rows]))
+    return out
+
+
+def override_contrast(project_fn, levy_cap, amount, years=6):
+    """The same dollars once, versus permanently. This is the question people ask.
+
+    Free cash and an override are opposites, and the contrast is the clearest statement of
+    this site's argument that exists: a level against a slope. The override is modelled the
+    way `fy28/src/model/rates.ts` models it and the way a ballot question actually works --
+    the whole amount reaches the schools in year one, then compounds at the levy cap. It is
+    NOT `finance.project`'s `override_amount`, which is added every year and answers a
+    different question.
+
+    Note what the numbers show and the page must not overstate: an override of this size
+    does not close the gap either. It grows at 2.5% while the gap grows faster, so it loses
+    ground every year. Only a change in the cost rates changes direction.
+    """
+    base = project_fn(years, free_cash=None)
+    fc = project_fn(years, free_cash=dict(amount=amount, years=1))
+    out = []
+    for i, (b, f) in enumerate(zip(base, fc)):
+        ov = amount * (1 + levy_cap) ** i
+        out.append(dict(fy=b['fy'], deficit=b['deficit'],
+                        freeCashApplied=f['free_cash_applied'],
+                        afterFreeCash=f['deficit_after_free_cash'],
+                        overrideValue=round(ov),
+                        afterOverride=round(b['deficit'] - ov)))
+    return dict(amount=round(amount), levyCap=levy_cap, years=out,
+                cumulativeNone=sum(r['deficit'] for r in out),
+                cumulativeFreeCash=sum(r['afterFreeCash'] for r in out),
+                cumulativeOverride=sum(r['afterOverride'] for r in out))
+
+
+def export(deficits, project_fn=None, levy_cap=0.025):
     return dict(
         certified=CERTIFIED, identified=IDENTIFIED,
         budgetBase=BUDGET_BASE, budgetRevised=BUDGET_REVISED,
@@ -132,4 +197,9 @@ def export(deficits):
         ladder=[dict(target=t / 100, released=round(spendable(t / 100)),
                      covers=years_covered(deficits, t / 100))
                 for t in range(0, 9)],
+        # Computed by finance.project itself, so what the page shows is what the model
+        # produces rather than a second implementation of the same rule.
+        scenarios=scenarios(project_fn) if project_fn else [],
+        overrideContrast=(override_contrast(project_fn, levy_cap, spendable(BAND_LOW))
+                          if project_fn else None),
     )

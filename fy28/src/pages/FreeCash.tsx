@@ -18,18 +18,24 @@ import { MODEL, usd } from '../model/engine'
 
 const F = MODEL.freeCash
 const pct = (x: number) => `${(x * 100).toFixed(2)}%`
+const OC = MODEL.freeCash.overrideContrast!
 
 export function FreeCash() {
+  // OFF by default. Nothing on this page or anywhere else changes until somebody asks.
+  const [on, setOn] = useState(false)
   const [target, setTarget] = useState(0.05)
+  const [spread, setSpread] = useState(1)
 
-  const released = Math.round(F.certified - F.budgetBase * Math.max(target, 0))
-  let left = released
-  const walk = F.deficits.map(d => {
-    const before = left
-    left -= d.amount
-    return { ...d, covered: before >= d.amount, after: left }
-  })
-  const lastCovered = [...walk].reverse().find(w => w.covered)
+  const pick = (t: number, sp: number) =>
+    F.scenarios.find(s => Math.abs(s.target - t) < 1e-9 && s.spread === sp)
+  const sc = pick(Math.round(target * 100) / 100, spread) ?? F.scenarios[0]
+  const released = on ? sc.released : 0
+  const walk = sc.years.map(y => ({
+    fy: y.fy, amount: y.deficit,
+    applied: on ? y.applied : 0,
+    after: on ? y.after : y.deficit,
+  }))
+  const lastCovered = on ? [...walk].reverse().find(w => w.after === 0) : undefined
 
   return (
     <div style={{ padding: '1.5rem 0 4rem' }}>
@@ -66,10 +72,23 @@ export function FreeCash() {
       <section style={{ border: '1px solid var(--border, rgba(128,128,128,.25))',
                         borderRadius: '.5rem', padding: '1.25rem', margin: '1.5rem 0',
                         maxWidth: '46rem' }}>
+        <label style={{ display: 'flex', gap: '.5rem', alignItems: 'center',
+                        fontWeight: 600, marginBottom: '.85rem' }}>
+          <input type="checkbox" checked={on} onChange={e => setOn(e.target.checked)} />
+          Apply free cash to the projected gap
+        </label>
+        <p style={{ margin: '-.5rem 0 .9rem', fontSize: '.85rem',
+                    color: 'var(--text-secondary)' }}>
+          Off by default, and off everywhere else on this site. Free cash is one-time money
+          and the projection is built without it; this shows what spending it would defer,
+          not a plan.
+        </p>
+
+        <div style={{ opacity: on ? 1 : .45, pointerEvents: on ? 'auto' : 'none' }}>
         <label htmlFor="fc" style={{ display: 'block', fontWeight: 600, marginBottom: '.5rem' }}>
           Draw the balance down to {(target * 100).toFixed(0)}% of the budget
         </label>
-        <input id="fc" type="range" min={0} max={0.08} step={0.005} value={target}
+        <input id="fc" type="range" min={0} max={0.08} step={0.01} value={target}
                onChange={e => setTarget(parseFloat(e.target.value))}
                style={{ width: '100%' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between',
@@ -77,6 +96,20 @@ export function FreeCash() {
           <span>0% — spend it all</span>
           <span>5% floor</span>
           <span>8%</span>
+        </div>
+
+        <div style={{ display: 'flex', gap: '.6rem', alignItems: 'center',
+                      margin: '.75rem 0 0', fontSize: '.9rem' }}>
+          <span style={{ fontWeight: 600 }}>spread over</span>
+          {[1, 2, 3].map(n => (
+            <button key={n} onClick={() => setSpread(n)}
+              style={{ padding: '.2rem .6rem', cursor: 'pointer', borderRadius: '.3rem',
+                       border: '1px solid var(--border)', color: 'inherit',
+                       background: spread === n ? 'var(--surface-3)' : 'transparent' }}>
+              {n} year{n > 1 ? 's' : ''}
+            </button>
+          ))}
+        </div>
         </div>
 
         <p style={{ margin: '1rem 0 .5rem', fontSize: '1.1rem' }}>
@@ -89,27 +122,30 @@ export function FreeCash() {
                 would mean adding money, not releasing it.</>}
         </p>
 
-        {released > 0 && (
+        {on && released > 0 && (
           <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '.9rem',
                           marginTop: '.75rem' }}>
             <thead>
               <tr style={{ textAlign: 'left', borderBottom: '1px solid var(--border)' }}>
                 <th style={{ padding: '.3rem 0' }}>year</th>
                 <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>projected gap</th>
-                <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>left after</th>
+                <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>free cash</th>
+                <th style={{ padding: '.3rem .8rem', textAlign: 'right' }}>gap after</th>
               </tr>
             </thead>
             <tbody>
               {walk.map(w => (
-                <tr key={w.fy} style={{ opacity: w.covered ? 1 : .45 }}>
+                <tr key={w.fy} style={{ opacity: w.applied > 0 ? 1 : .5 }}>
                   <td style={{ padding: '.25rem 0' }}>FY{w.fy}</td>
                   <td style={{ padding: '.25rem .8rem', textAlign: 'right',
                                fontVariantNumeric: 'tabular-nums' }}>{usd(w.amount)}</td>
                   <td style={{ padding: '.25rem .8rem', textAlign: 'right',
                                fontVariantNumeric: 'tabular-nums',
-                               color: w.after < 0 ? 'var(--bad, #a03232)' : 'inherit' }}>
-                    {w.after < 0 ? 'exhausted' : usd(w.after)}
+                               color: w.applied > 0 ? 'var(--ok, #2f7d4f)' : 'inherit' }}>
+                    {w.applied > 0 ? `−${usd(w.applied)}` : '—'}
                   </td>
+                  <td style={{ padding: '.25rem .8rem', textAlign: 'right',
+                               fontVariantNumeric: 'tabular-nums' }}>{usd(w.after)}</td>
                 </tr>
               ))}
             </tbody>
@@ -117,9 +153,12 @@ export function FreeCash() {
         )}
 
         <p style={{ margin: '.9rem 0 0', fontWeight: 600 }}>
-          {lastCovered
-            ? `Defers the gap through FY${lastCovered.fy}. Then it is gone.`
-            : 'Releases nothing that reaches even the first year of the gap.'}
+          {!on
+            ? 'Turn it on to see what drawing the balance down would defer.'
+            : lastCovered
+              ? `Defers the gap through FY${lastCovered.fy}. Then it is gone, and the gap `
+                + 'returns larger because the base kept growing.'
+              : 'Releases nothing that fully covers even the first year of the gap.'}
         </p>
       </section>
 
@@ -131,6 +170,55 @@ export function FreeCash() {
         roughly {usd(Math.round((F.deficits[1].amount - F.deficits[0].amount)))} a year, so
         even <em>emptying the entire reserve</em> — drawing to 0%, which nobody proposes —
         defers the problem two years and leaves the town with no reserve at all.
+      </p>
+
+      <h3>Is this the same as an override? No — they are opposites</h3>
+      <p style={{ maxWidth: '46rem' }}>
+        The same dollars, spent once versus raised permanently. An override lifts the levy
+        limit for good and the schools keep it every year after, growing at the{' '}
+        {(OC.levyCap * 100).toFixed(1)}% cap. Free cash is spent and gone.
+      </p>
+      <div style={{ overflowX: 'auto', maxWidth: '46rem' }}>
+        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '.9rem' }}>
+          <thead>
+            <tr style={{ textAlign: 'left', borderBottom: '1px solid var(--border)' }}>
+              <th style={{ padding: '.35rem .6rem .35rem 0' }}>year</th>
+              <th style={{ padding: '.35rem .6rem', textAlign: 'right' }}>gap</th>
+              <th style={{ padding: '.35rem .6rem', textAlign: 'right' }}>after {usd(OC.amount)} of free cash</th>
+              <th style={{ padding: '.35rem 0 .35rem .6rem', textAlign: 'right' }}>after the same as an override</th>
+            </tr>
+          </thead>
+          <tbody>
+            {OC.years.map(y => (
+              <tr key={y.fy} style={{ borderBottom: '1px solid var(--border-subtle, rgba(128,128,128,.15))' }}>
+                <td style={{ padding: '.3rem .6rem .3rem 0' }}>FY{y.fy}</td>
+                <td style={{ padding: '.3rem .6rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(y.deficit)}</td>
+                <td style={{ padding: '.3rem .6rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(y.afterFreeCash)}</td>
+                <td style={{ padding: '.3rem 0 .3rem .6rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(y.afterOverride)}</td>
+              </tr>
+            ))}
+            <tr style={{ fontWeight: 600 }}>
+              <td style={{ padding: '.45rem .6rem .45rem 0' }}>six-year total</td>
+              <td style={{ padding: '.45rem .6rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(OC.cumulativeNone)}</td>
+              <td style={{ padding: '.45rem .6rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(OC.cumulativeFreeCash)}</td>
+              <td style={{ padding: '.45rem 0 .45rem .6rem', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{usd(OC.cumulativeOverride)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style={{ maxWidth: '46rem' }}>
+        Identical dollars. Over six years the override is worth{' '}
+        <strong>{usd(OC.cumulativeFreeCash - OC.cumulativeOverride)}</strong> more, because
+        it arrives every year and free cash arrives once.
+      </p>
+      <p style={{ maxWidth: '46rem' }}>
+        <strong>But look at the last column, not the total.</strong> Even the override does
+        not close the gap — it leaves {usd(OC.years[OC.years.length - 1].afterOverride)} in
+        FY{OC.years[OC.years.length - 1].fy}, and the shortfall grows every year. An override
+        rises at {(OC.levyCap * 100).toFixed(1)}%; the cost of running the schools rises
+        faster. A permanent revenue increase loses ground more slowly than one-time money
+        does, and still loses ground. That is the whole argument of this site in one table:
+        only a change in the growth rates changes the direction.
       </p>
 
       <h3>And a normal year does not refill it</h3>

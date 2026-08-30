@@ -24,6 +24,32 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v9',
+        date='2026-08-30',
+        title='Free cash against an override — the same dollars, opposite effects',
+        short='free cash vs override',
+        headline='Spending free cash and passing an override are not the same thing. The '
+                 'same $794,872 defers one year as free cash and is worth $4,396,563 more '
+                 'over six as an override — and neither closes the gap, because both grow '
+                 'slower than the cost of running the schools.',
+        changes=[
+            'The free cash page can now apply the money to the projected gap, and it is '
+            'OFF until you switch it on. Nothing anywhere else on this site changes: the '
+            'projection is built without free cash, and the figure it produces is '
+            'unchanged whether the switch is on or off.',
+
+            'Side by side with an override of the same size. Free cash closes FY28 and '
+            'nothing after. An override lifts the levy limit permanently and the schools '
+            'keep it every year, growing at the 2.5% cap. Over six years the override is '
+            'worth $4,396,563 more from identical dollars.',
+
+            'And the row that matters is the last one, not the total. Even the override '
+            'leaves $3,740,932 of gap in FY33 and the shortfall grows every year, because '
+            'an override rises at 2.5% and the cost of the schools rises faster. Permanent '
+            'money loses ground more slowly than one-time money, and still loses ground.',
+        ],
+    ),
+    dict(
         tag='v8',
         date='2026-08-30',
         title='Free cash, and what spending it would actually buy',

@@ -65,8 +65,54 @@ def columns_used(path):
     return found
 
 
+def free_cash_is_inert():
+    """Free cash is actuals-derived, so prove it cannot touch anything rate-driven.
+
+    It is allowed into the projection as a one-time subtraction, which is not the error
+    rule 1 forbids -- that error is a growth RATE measured across the budget/actual
+    boundary. But "allowed as a one-time subtraction" is only safe if it really is one, so
+    it is checked rather than trusted:
+
+      * the default output is byte-identical to passing an explicit zero
+      * at ANY draw, no bucket, growth rate, level service, available or deficit moves
+      * only the two additional fields respond, and they respond consistently
+
+    If any of that stops being true, free cash has started behaving like a rate.
+    """
+    sys.path.insert(0, os.path.join(ROOT, 'model'))
+    from finance import project
+
+    base = project(6)
+    problems = []
+    if base != project(6, free_cash=dict(amount=0, years=1)):
+        problems.append('default output differs from an explicit zero draw')
+
+    for amount in (500_000, 3_354_370, 10_000_000):
+        for spread in (1, 2, 3):
+            got = project(6, free_cash=dict(amount=amount, years=spread))
+            for b, g in zip(base, got):
+                for field in ('level_service', 'available', 'appropriation',
+                              'growth_rate', 'deficit', 'buckets'):
+                    if b[field] != g[field]:
+                        problems.append(
+                            f'draw {amount:,}/{spread}y moved {field} in FY{b["fy"]}')
+                if g['deficit_after_free_cash'] != g['deficit'] - g['free_cash_applied']:
+                    problems.append(f'FY{b["fy"]}: after-figure is not deficit minus applied')
+                if g['free_cash_applied'] > g['deficit']:
+                    problems.append(f'FY{b["fy"]}: applied more free cash than there was gap')
+    return problems
+
+
 def audit():
     print('PROVENANCE AUDIT — does any projection read actual spending?\n')
+    fc = free_cash_is_inert()
+    print('free cash, an actuals-derived input allowed in as a one-time subtraction:')
+    if fc:
+        for p_ in fc:
+            print(f'  FAIL  {p_}')
+    else:
+        print('  ok    inert by default, and at every draw it moves only its own two fields')
+    print()
     print(f"{'module':<24}{'budget columns':<44}{'actuals columns'}")
     print('-' * 100)
     violations = []
@@ -184,6 +230,7 @@ def provenance_table():
 
 if __name__ == '__main__':
     violations = audit()
+    inert = free_cash_is_inert()
     ok = base_check()
     fresh = freshness_check()
     provenance_table()
@@ -199,4 +246,13 @@ if __name__ == '__main__':
     if not fresh:
         print('FAILED — model.json is not what model/export.py produces.')
         sys.exit(1)
-    print('PASSED — every projection is computed from budget columns only.')
+    if inert:
+        # Free cash is allowed into the projection as a one-time subtraction. The moment it
+        # moves anything rate-driven it has stopped being one, and this fails rather than
+        # printing a warning nobody reads.
+        print('FAILED — free cash is no longer inert:')
+        for p_ in inert:
+            print(f'  {p_}')
+        sys.exit(1)
+    print('PASSED — every projection is computed from budget columns only,')
+    print('and free cash, which is not, cannot move any of them.')

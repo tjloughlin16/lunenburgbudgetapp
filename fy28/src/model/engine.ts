@@ -192,6 +192,14 @@ export const MODEL = raw as unknown as {
     deficits: { fy: string; amount: number }[]
     ladder: { target: number; released: number
               covers: { fy: string; deficit: number; covered: boolean; remaining: number }[] }[]
+    scenarios: { target: number; spread: number; released: number
+                 years: { fy: string; deficit: number; applied: number; after: number }[] }[]
+    overrideContrast: {
+      amount: number; levyCap: number
+      cumulativeNone: number; cumulativeFreeCash: number; cumulativeOverride: number
+      years: { fy: string; deficit: number; freeCashApplied: number; afterFreeCash: number
+               overrideValue: number; afterOverride: number }[]
+    } | null
   }
   rateRegister: {
     rows: { fy: number | null; category: string; unit: string; item: string

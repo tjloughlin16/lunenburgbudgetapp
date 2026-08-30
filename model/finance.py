@@ -51,7 +51,16 @@ DEFAULT_ASSUMPTIONS = dict(
     local_receipts_growth=0.010,
     school_share=0.562,    # Education as a share of the FY27 omnibus
     athletic_fee_revenue=0,       # lever: fee revenue ABOVE what the district already collects
-    override_amount=0,            # lever: a successful FY28 override
+    # WARNING: this is added to the appropriation in EVERY projected year, which models a
+    # new override passing annually -- not one ballot question. A real Prop 2½ override
+    # raises the levy limit ONCE and the base then grows at the cap. Using this to answer
+    # "what would an override do" overstates it by roughly the number of years projected:
+    # $1M here closes $6,466,144 of the FY33 gap rather than about $1.16M.
+    # The corrected one-time model is `overrideLevy` in fy28/src/model/rates.ts, and it is
+    # what the Override page uses. This field is kept because removing it would change
+    # published figures, and because "an override every year" is itself a scenario the
+    # Override page discusses.
+    override_amount=0,            # lever: an override passing EVERY year -- see above
 )
 
 # Town revenue facts, FY27 (all from the 4/17/26 press release + enacted state budget)
@@ -86,7 +95,26 @@ def expense_base(csv_path='sources/data/lps-budget-lines.csv'):
     return dict(buckets)
 
 
-def project(years=5, assumptions=None, cuts_by_year=None):
+def project(years=5, assumptions=None, cuts_by_year=None, free_cash=None):
+    """Project the gap. `free_cash` is OFF unless deliberately passed.
+
+    RULE 1 AND WHY THIS IS NOT THE THING IT FORBIDS. Rule 1 exists because a growth rate
+    measured from an actual to a budget is partly growth and partly the step between them —
+    that error put the special education escalator 1.5 points high. Free cash is
+    actuals-derived, so it belongs nowhere near a rate. It is used here as a ONE-TIME
+    SUBTRACTION from a single year's deficit, after every rate has been applied. It touches
+    no bucket, no escalator, no growth rate, and it does not carry into the next year's
+    base. That is arithmetic on two labelled quantities, not a rate across the boundary.
+
+    THE SAFETY PROPERTY, and it is proven rather than promised. `deficit` is never modified.
+    Free cash is reported in two ADDITIONAL fields — `free_cash_applied` and
+    `deficit_after_free_cash` — so a caller that does not know about them gets exactly the
+    numbers it got before, and nothing downstream can shift because somebody enabled this.
+    `scripts/audit_provenance.py` asserts all of it: that the default output is identical,
+    that no bucket or growth rate moves at any draw, and that only the new fields respond.
+
+    `free_cash` is dict(amount=..., years=n) — n spreads the draw over the first n years.
+    """
     a = {**DEFAULT_ASSUMPTIONS, **(assumptions or {})}
     buckets = expense_base()
     # carry the STM restorations forward as salary cost from FY28 on
@@ -118,10 +146,27 @@ def project(years=5, assumptions=None, cuts_by_year=None):
         level_service = sum(buckets.values())
 
         deficit = level_service - available
+
+        # One-time money, applied after everything rate-driven is finished. Reported
+        # alongside the deficit and never inside it.
+        fc_applied = 0.0
+        if free_cash and free_cash.get('amount'):
+            spread = max(1, int(free_cash.get('years', 1)))
+            if i < spread:
+                per = free_cash['amount'] / spread
+                fc_applied = min(per, max(deficit, 0.0))
+
         out.append(dict(fy=fy, level_service=round(level_service),
                         available=round(available), appropriation=round(approp),
                         town_available=town_available, deficit=round(deficit),
                         growth_rate=round(growth_rate, 5),
+                        free_cash_applied=round(fc_applied),
+                        # Rounded from the ALREADY-ROUNDED pair, not from the raw
+                        # difference: round(a) - round(b) is not round(a - b), and a
+                        # published "after" figure that does not equal the two numbers
+                        # printed beside it is the kind of thing somebody screenshots.
+                        # audit_provenance.py caught this within a minute of existing.
+                        deficit_after_free_cash=round(deficit) - round(fc_applied),
                         buckets={k: round(v) for k, v in buckets.items()}))
         # apply cuts -> permanently reduce the salary base
         cut = (cuts_by_year or {}).get(fy, 0)
