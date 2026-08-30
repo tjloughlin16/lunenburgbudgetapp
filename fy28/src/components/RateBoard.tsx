@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts'
-import { usd, usdShort } from '../model/engine'
+import { MODEL, usd, usdShort } from '../model/engine'
+import { ENGINE_AGREEMENT } from '../model/rates'
 import {
   RATE_LINES, DEFAULT_RATES, DEFAULT_SCENARIO, CUT_OPTIONS, LEVY_CAP,
   blendedOf, run, revenueGrowthOf, longRunRevenueGrowth, verdictOf, consequenceOf,
@@ -42,6 +43,9 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
   const [rates, setRates] = useState<Record<Bucket, number>>({ ...DEFAULT_RATES })
   const [cuts, setCuts] = useState<Set<string>>(new Set())
   const [overrideLevy, setOverrideLevy] = useState(0)
+  const [fcPct, setFcPct] = useState(0)
+  const FC = MODEL.freeCash
+  const freeCash = Math.round(FC.budgetBase * fcPct / 100)
   const [newGrowth, setNewGrowth] = useState(DEFAULT_SCENARIO.newGrowth)
   /* Not a control on this board — the only thing that sets it is option one, whose whole
    * point is that it moves the revenue line and nothing else. Carried anyway so that
@@ -55,16 +59,17 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
 
   const cut = CUT_OPTIONS.filter(c => cuts.has(c.id)).reduce((s, c) => s + c.amount, 0)
   const scenario: Scenario = useMemo(
-    () => ({ rates, newGrowth, cut, overrideLevy, stateAidGrowth, feeRevenue: 0 }),
-    [rates, newGrowth, cut, overrideLevy, stateAidGrowth])
+    () => ({ rates, newGrowth, cut, overrideLevy, stateAidGrowth, feeRevenue: 0,
+              freeCashAnnual: freeCash }),
+    [rates, newGrowth, cut, overrideLevy, stateAidGrowth, freeCash])
 
   const years = useMemo(() => run(YEARS, scenario), [scenario])
   /* Recomputed only when something OTHER than the override moves, so dragging the
    * override itself does not make its own tick marks jump around underneath it. */
   const stops = useMemo(
     () => overrideStops({ rates, newGrowth, cut, overrideLevy: 0, stateAidGrowth,
-                          feeRevenue: 0 }),
-    [rates, newGrowth, cut, stateAidGrowth])
+                          feeRevenue: 0, freeCashAnnual: freeCash }),
+    [rates, newGrowth, cut, stateAidGrowth, freeCash])
   const stopIndex = stops.findIndex(st => st.levy === overrideLevy) + 1
   const atStop = stopIndex > 0 ? stops[stopIndex - 1] : null
   const baseline = useMemo(() => run(YEARS, DEFAULT_SCENARIO), [])
@@ -72,14 +77,14 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
   const revGrowth = revenueGrowthOf(newGrowth)
   const longRun = longRunRevenueGrowth(years)
   const verdict = verdictOf(years, blended)
-  const touched = cut > 0 || overrideLevy > 0
+  const touched = cut > 0 || overrideLevy > 0 || freeCash > 0
     || newGrowth !== DEFAULT_SCENARIO.newGrowth
     || stateAidGrowth !== DEFAULT_SCENARIO.stateAidGrowth
     || (Object.keys(rates) as Bucket[]).some(k => rates[k] !== DEFAULT_RATES[k])
 
   const reset = () => {
     setRates({ ...DEFAULT_RATES }); setCuts(new Set())
-    setOverrideLevy(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
+    setOverrideLevy(0); setFcPct(0); setNewGrowth(DEFAULT_SCENARIO.newGrowth)
     setStateAidGrowth(DEFAULT_SCENARIO.stateAidGrowth); setLoaded(null)
   }
 
@@ -90,7 +95,7 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
     if (!seed) return
     const { rates: r, newGrowth: ng, stateAidGrowth: aid } = seed.route.scenario
     setRates({ ...r }); setNewGrowth(ng); setStateAidGrowth(aid)
-    setOverrideLevy(0); setCuts(new Set()); setLoaded(seed.route)
+    setOverrideLevy(0); setFcPct(0); setCuts(new Set()); setLoaded(seed.route)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seed?.nonce])
 
@@ -135,6 +140,17 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
         <div className="sm:hidden mt-2">
           <YearStatus years={years} compact />
         </div>
+      )}
+
+      {!ENGINE_AGREEMENT.ok && (
+        /* Visible on purpose. This board is a teaching tool for the projection the rest of
+           the site publishes; if the two stop agreeing, saying so is the only honest
+           option, and hiding it would make the board worse than not having one. */
+        <p className="text-[12px] mt-3 p-2.5 rounded-lg"
+           style={{ background: 'var(--surface-3)', color: 'var(--bad, #a03232)' }}>
+          <strong>This board currently disagrees with the published projection.</strong>{' '}
+          {ENGINE_AGREEMENT.detail} Treat the numbers here as unreliable until it is fixed.
+        </p>
       )}
 
       <div className="grid gap-4 lg:grid-cols-2 items-start mt-4">
@@ -200,9 +216,45 @@ export function RateBoard({ stickyTop = 'top-12', defaultPinned = true, seed = n
             </p>
           </div>
 
+          <div className="mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+            {/* Expressed as a PERCENTAGE of the operating budget, because that is the unit
+                the guideline is written in — the Town quotes DLS at 5-7% and judges itself
+                against it. A dollar figure makes you do that arithmetic in your head. */}
+            <Slider label="Free cash appropriated every year" value={fcPct}
+              min={0} max={7} step={0.25} onChange={setFcPct}
+              display={fcPct ? `${fcPct.toFixed(2)}%` : 'None'} />
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              {fcPct === 0
+                ? <>The town holds {(FC.currentShare * 100).toFixed(2)}% today. The guideline
+                    it measures itself against is {(FC.bandLow * 100).toFixed(0)}&ndash;
+                    {(FC.bandHigh * 100).toFixed(0)}% of the operating budget.</>
+                : <>
+                    <strong className="tnum">{usd(freeCash)}</strong> a year.{' '}
+                    {fcPct <= FC.normalShare * 100
+                      ? <span style={{ color: 'var(--ok, #2f7d4f)' }}>
+                          Within what an ordinary year generates ({(FC.normalShare * 100).toFixed(2)}%),
+                          so the balance holds.
+                        </span>
+                      : <span style={{ color: 'var(--bad, #a03232)' }}>
+                          Above what an ordinary year generates ({(FC.normalShare * 100).toFixed(2)}%)
+                          by {usd(freeCash - FC.normalCertified)} &mdash; the balance falls every
+                          year, and inside{' '}
+                          {Math.max(1, Math.ceil((FC.certified - FC.bandLow * FC.budgetBase)
+                                                 / (freeCash - FC.normalCertified)))} year(s)
+                          it drops below the {(FC.bandLow * 100).toFixed(0)}% guideline.
+                        </span>}
+                  </>}
+            </p>
+            <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
+              Not permanent, and that is the difference from the override above. It is also
+              produced by the same under-spending a tighter budget would remove, so it
+              cannot be counted on twice.
+            </p>
+          </div>
+
           <p className="text-[12px] mt-3 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
             <span style={{ color: 'var(--text-secondary)' }}>Found once: </span>
-            <strong className="tnum">{usd(cut + overrideLevy)}</strong>
+            <strong className="tnum">{usd(cut + overrideLevy + freeCash)}</strong>
           </p>
           <p className="text-[13px] mt-1">
             <span style={{ color: 'var(--text-secondary)' }}>Cost growth rate: </span>

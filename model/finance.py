@@ -153,7 +153,24 @@ def project(years=5, assumptions=None, cuts_by_year=None, free_cash=None):
         prev = out[-1]['town_available'] if out else FY27['omnibus']
         growth_rate = town_available / prev - 1
         approp = approp * (1 + growth_rate) + a['override_amount']
-        available = approp + a['athletic_fee_revenue']
+        # Free cash is REVENUE in the year it is appropriated -- that is what it is, and
+        # treating it as a gap adjustment instead made the teaching board's chart refuse to
+        # move when the control was dragged. Applied after every rate has run.
+        fc = max(float(a.get('free_cash_annual') or 0), 0.0)
+        if free_cash:
+            fc = max(float(free_cash.get('annual', 0) or 0), 0.0)
+            if i == 0:
+                fc += float(free_cash.get('one_time', 0) or 0)
+            if free_cash.get('amount'):
+                spread = max(1, int(free_cash.get('years', 1)))
+                if i < spread:
+                    fc += free_cash['amount'] / spread
+        # Rounded to whole dollars BEFORE it is added. Adding an integer shifts every
+        # downstream rounding by exactly that integer, so revenue, the gap and the
+        # pre-free-cash gap all stay consistent with each other. Adding the raw float
+        # instead put them off by a dollar, which audit_provenance.py caught.
+        fc = float(round(fc))
+        available = approp + a['athletic_fee_revenue'] + fc
 
         # --- level service cost ---
         for k in list(buckets):
@@ -164,31 +181,7 @@ def project(years=5, assumptions=None, cuts_by_year=None, free_cash=None):
 
         # One-time money, applied after everything rate-driven is finished. Reported
         # alongside the deficit and never inside it.
-        fc_applied = 0.0
-        if not free_cash and a.get('free_cash_annual'):
-            free_cash = dict(annual=a['free_cash_annual'])
-        if free_cash:
-            # A free cash POLICY has two parts and they behave differently.
-            #
-            #   one_time  the accumulated balance released by moving to a lower target.
-            #             Happens once, in the first projected year.
-            #   annual    what the town appropriates every year thereafter by holding the
-            #             balance flat instead of letting it accumulate.
-            #
-            # The second is the one people argue for -- "be less conservative" is a standing
-            # policy, not a windfall -- and it is the one the projection cannot validate,
-            # because it depends on how much free cash a year GENERATES. See
-            # freecash.SUSTAINABLE_DRAW, and the paradox attached to it: the flow is
-            # produced by the underspending that better budgeting would remove.
-            want = float(free_cash.get('annual', 0) or 0)
-            if i == 0:
-                want += float(free_cash.get('one_time', 0) or 0)
-            # legacy: a single pile spread over n years, used by the draw-down ladder
-            if free_cash.get('amount'):
-                spread = max(1, int(free_cash.get('years', 1)))
-                if i < spread:
-                    want += free_cash['amount'] / spread
-            fc_applied = min(want, max(deficit, 0.0))
+        fc_applied = fc
 
         out.append(dict(fy=fy, level_service=round(level_service),
                         available=round(available), appropriation=round(approp),
@@ -197,8 +190,8 @@ def project(years=5, assumptions=None, cuts_by_year=None, free_cash=None):
                         # every other lever on the site. At the default of zero it is the
                         # same number it has always been. The gross figure is kept beside
                         # it so nothing has to be reverse-engineered.
-                        deficit=round(deficit) - round(fc_applied),
-                        deficit_before_free_cash=round(deficit),
+                        deficit=round(deficit),
+                        deficit_before_free_cash=round(deficit) + round(fc_applied),
                         growth_rate=round(growth_rate, 5),
                         free_cash_applied=round(fc_applied),
                         # Rounded from the ALREADY-ROUNDED pair, not from the raw
@@ -206,7 +199,7 @@ def project(years=5, assumptions=None, cuts_by_year=None, free_cash=None):
                         # published "after" figure that does not equal the two numbers
                         # printed beside it is the kind of thing somebody screenshots.
                         # audit_provenance.py caught this within a minute of existing.
-                        deficit_after_free_cash=round(deficit) - round(fc_applied),
+                        deficit_after_free_cash=round(deficit),
                         buckets={k: round(v) for k, v in buckets.items()}))
         # apply cuts -> permanently reduce the salary base
         cut = (cuts_by_year or {}).get(fy, 0)

@@ -133,6 +133,14 @@ export interface Scenario {
   /** A one-time Prop 2½ override earmarked for the schools: the levy base rises once,
    *  the whole of it goes to the school department, and it then grows at the cap. */
   overrideLevy: number
+  /** A standing policy of appropriating this much free cash EVERY year rather than
+   *  accumulating it. A LEVEL, like a cut or an override — it moves the amount and not
+   *  the direction, which is the point of putting it in the left column.
+   *
+   *  Actuals-derived, so it is applied after every rate has run and capped at that year's
+   *  gap. It touches no bucket and no escalator; model/finance.py keeps the same boundary
+   *  and scripts/audit_provenance.py proves it. Zero by default. */
+  freeCashAnnual: number
   /** What state aid grows at. Normally an assumption; a lever in the state-aid section. */
   stateAidGrowth: number
   /** New user-fee revenue per year, above what the town already charges.
@@ -147,11 +155,12 @@ export interface Scenario {
 
 export const DEFAULT_SCENARIO: Scenario = {
   rates: { ...DEFAULT_RATES }, newGrowth: A.new_growth, cut: 0, overrideLevy: 0,
-  stateAidGrowth: A.state_aid_growth, feeRevenue: 0,
+  stateAidGrowth: A.state_aid_growth, feeRevenue: 0, freeCashAnnual: 0,
 }
 
 export interface RateYear {
   fy: number; cost: number; revenue: number; gap: number; revenueGrowth: number
+  gapBeforeFreeCash?: number; freeCashUsed?: number
 }
 
 /** The same projection the rest of the site runs on, opened up at the rates.
@@ -202,12 +211,20 @@ export function run(years: number, s: Scenario): RateYear[] {
      * It matters for exactly the question people ask about overrides — how many years does
      * one buy — and it was making the answer slightly too generous. */
     const override = s.overrideLevy * (1 + A.levy_growth) ** i
-    const revenue = approp + override + A.athletic_fee_revenue + s.feeRevenue
+    /* Free cash is REVENUE in the year it is appropriated — that is what it is. Applied
+     * here, after every rate above has run, so it lifts the revenue line and moves the
+     * chart exactly as an override does. It touches no bucket and no escalator; the
+     * difference from an override is that it is not permanent, which the note under the
+     * control says and the chart cannot. */
+    const freeCash = Math.max(s.freeCashAnnual, 0)
+    const revenue = approp + override + A.athletic_fee_revenue + s.feeRevenue + freeCash
     for (const k of BUCKETS) b[k] *= 1 + s.rates[k]
     const cost = BUCKETS.reduce((sum, k) => sum + b[k], 0)
 
     out.push({ fy: 28 + i, cost: Math.round(cost), revenue: Math.round(revenue),
-               gap: Math.round(cost - revenue), revenueGrowth: growth })
+               gap: Math.round(cost - revenue),
+               gapBeforeFreeCash: Math.round(cost - revenue + freeCash),
+               freeCashUsed: Math.round(freeCash), revenueGrowth: growth })
     }
   return out
 }
@@ -280,6 +297,25 @@ export const overrideTreadmill = (years: RateYear[]) =>
 
 /** Guard rail: at the default scenario this must reproduce engine.project() to the
  *  dollar, or the page is teaching a different model from the one it cites. */
+/** Does the teaching board still agree with the model the site publishes?
+ *
+ *  Evaluated at module load against the projection model.json carries, which comes from
+ *  model/finance.py. The two are separate implementations in separate languages, and the
+ *  moment they disagree the board is teaching something the rest of the site does not
+ *  believe.
+ *
+ *  This existed as a function nobody called for as long as it has existed. A check that
+ *  does not run is not a check — the same failure this project keeps finding in itself —
+ *  so it is now computed here, surfaced in the UI when it fails, and asserted by
+ *  scripts/check-agents.mjs against the prerendered HTML. */
+export const ENGINE_AGREEMENT = (() => {
+  try {
+    return matchesEngine(MODEL.freeCash.deficits.map(d => d.amount))
+  } catch (e) {
+    return { ok: false, detail: `could not compare: ${(e as Error).message}` }
+  }
+})()
+
 export function matchesEngine(engineGaps: number[]): { ok: boolean; detail: string } {
   const mine = run(engineGaps.length, DEFAULT_SCENARIO).map(y => y.gap)
   const bad = mine.map((v, i) => [i, v, engineGaps[i]] as const)

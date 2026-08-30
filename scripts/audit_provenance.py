@@ -74,10 +74,11 @@ def free_cash_is_inert():
     it is checked rather than trusted:
 
       * with the lever at its default of zero, output is byte-identical to before
-      * at ANY draw, no bucket, growth rate, level service, available or appropriation
-        moves — the entire rate side of the projection is untouched
-      * the gap MAY move, because moving it is the lever's job, and it moves by exactly
-        the amount applied and never by more than the gap itself
+      * at ANY draw, no bucket, growth rate, level service or appropriation moves — the
+        entire RATE side of the projection is untouched
+      * revenue and the gap MAY move, because free cash is revenue in the year it is
+        appropriated and moving the gap is the lever's job; the gap moves by exactly the
+        amount applied and by nothing else
 
     The rate side is the boundary rule 1 protects. A one-time subtraction after every rate
     has run does not cross it; anything that shifted a bucket or an escalator would have.
@@ -103,8 +104,9 @@ def free_cash_is_inert():
         got = project(6, free_cash=d)
         for b, g in zip(base, got):
             # The rate side must be untouched. This is the rule 1 boundary.
-            for field in ('level_service', 'available', 'appropriation',
-                          'growth_rate', 'buckets'):
+            # `available` is deliberately NOT in this list: free cash is revenue, so it
+            # lifts the revenue line, which is what makes the teaching chart respond.
+            for field in ('level_service', 'appropriation', 'growth_rate', 'buckets'):
                 if b[field] != g[field]:
                     problems.append(f'draw {d} moved {field} in FY{b["fy"]}')
             # The gap may move, but only by what was applied, and never below zero.
@@ -112,8 +114,8 @@ def free_cash_is_inert():
                 problems.append(f'FY{b["fy"]}: gap did not move by the amount applied')
             if g['deficit_before_free_cash'] != b['deficit_before_free_cash']:
                 problems.append(f'draw {d} moved the pre-free-cash gap in FY{b["fy"]}')
-            if g['free_cash_applied'] > g['deficit_before_free_cash']:
-                problems.append(f'FY{b["fy"]}: applied more free cash than there was gap')
+            if g['available'] != b['available'] + g['free_cash_applied']:
+                problems.append(f'FY{b["fy"]}: revenue did not rise by exactly the free cash')
     return problems
 
 
