@@ -24,6 +24,7 @@
  * Needs Node 22 for wrangler:  source ~/.nvm/nvm.sh && nvm use 22
  */
 import { spawn } from 'node:child_process'
+import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
@@ -125,6 +126,26 @@ async function main() {
     console.log(`  ${String(res.status).padEnd(4)} ${p.padEnd(38)} ${type.split(';')[0]}`)
     if (res.status !== 200) fails.push(`${p}: status ${res.status}, expected 200`)
     else if (type.includes('text/html')) fails.push(`${p}: served as HTML — that is the app shell, not the file`)
+  }
+
+  // /data/model.json is the endpoint llms.txt and the page comment both point agents at,
+  // and it is published by scripts/build_agent_endpoints.py -- a DIFFERENT script from
+  // model/export.py, which writes the copy the app itself renders from. Forget the second
+  // script and the app is right while the endpoint agents read is stale. That happened, and
+  // it shipped to production, so it is checked rather than remembered.
+  console.log('\npublished endpoint must match the model the app renders from')
+  {
+    const local = await readFile(join(APP, 'src', 'data', 'model.json'))
+    const res = await fetch(base + '/data/model.json')
+    const served = Buffer.from(await res.arrayBuffer())
+    const h = (b) => createHash('sha256').update(b).digest('hex').slice(0, 12)
+    const same = h(local) === h(served)
+    console.log(`  ${same ? ' ok ' : 'FAIL'} /data/model.json  served ${h(served)}  ` +
+      `app ${h(local)}  (${served.length.toLocaleString()} vs ${local.length.toLocaleString()} bytes)`)
+    if (!same) {
+      fails.push('/data/model.json is stale — run `python3 scripts/build_agent_endpoints.py` ' +
+        'after model/export.py, or agents read different figures from the ones the site shows')
+    }
   }
 
   console.log('\narchive documents that do not exist — must 404, not 200')
