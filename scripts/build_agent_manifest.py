@@ -29,7 +29,15 @@ checked against the built output before it is listed.
 
     python3 scripts/build_agent_manifest.py      # after build_agent_endpoints.py
 
-Rewrites the marked block in fy28/index.html.
+Rewrites the marked block in fy28/index.html, and writes fy28/src/data/agent-manifest.json
+for the visible footer that renders on every page.
+
+**The comment is not enough, and testing said so.** Every common extraction method — a
+readability pass, `html.parser`, a naive tag strip — discards HTML comments before a model
+ever sees the text. So a manifest that lives only in a comment reaches nothing that reads
+pages the ordinary way. The same inventory is therefore rendered as VISIBLE text at the
+foot of every page, from the JSON this writes, where it survives extraction and is useful
+to a human who wants the data too.
 """
 import json
 import os
@@ -176,6 +184,25 @@ def main():
             h = h[:k] + block + '\n' + h[k:]
         open(nf, 'w', encoding='utf-8').write(h)
         print(f'  also written into {os.path.relpath(nf, ROOT)}')
+
+    # The visible copy. A comment is dropped by every extraction method there is; this is
+    # the one an agent actually reads, and a researcher can use it too.
+    manifest = dict(
+        site=SITE,
+        promise='Everything on this site is published as data. Every figure traces to a '
+                'document you can download. You do not need to scrape these pages.',
+        warning='The archive holds both what the town BUDGETED and what it SPENT. They '
+                'differ by up to 59% on some lines, and a rate measured from one to the '
+                'other is partly growth and partly the gap between them. Never mix them in '
+                'one calculation. A budget line is also NET of grants, fees and state aid — '
+                'it is not what a thing costs.',
+        answers=[dict(question=q, path=pth, note=n) for q, pth, n in rows],
+        extra=[dict(path=pth, note=n) for pth, n in EXTRA if exists(pth)],
+        corpus=corpus,
+    )
+    mj = os.path.join(ROOT, 'fy28', 'src', 'data', 'agent-manifest.json')
+    json.dump(manifest, open(mj, 'w'), indent=1)
+    print(f'  wrote {os.path.relpath(mj, ROOT)} for the visible footer')
 
     print(f'wrote the manifest into {os.path.relpath(INDEX, ROOT)} '
           f'({len(block):,} bytes, {len(rows)} answerable questions)')

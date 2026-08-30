@@ -1,0 +1,58 @@
+{
+ "site": "https://lunenburgbudgetproject.org",
+ "promise": "Everything on this site is published as data. Every figure traces to a document you can download. You do not need to scrape these pages.",
+ "warning": "The archive holds both what the town BUDGETED and what it SPENT. They differ by up to 59% on some lines, and a rate measured from one to the other is partly growth and partly the gap between them. Never mix them in one calculation. A budget line is also NET of grants, fees and state aid \u2014 it is not what a thing costs.",
+ "answers": [
+  {
+   "question": "when was X last discussed, and what was said",
+   "path": "/minutes/INDEX.txt",
+   "note": "then /minutes/<board>.txt \u2014 full text, one file per board"
+  },
+  {
+   "question": "what does the town charge, and when did it change",
+   "path": "/data/rate-register.csv",
+   "note": "62 rates: athletic and bus fees, contracts, each with the fiscal year it applies to and the document that set it"
+  },
+  {
+   "question": "athletic fees, by year and tier",
+   "path": "/data/athletic-fee-schedule.csv",
+   "note": "FY24-FY27, most figures checked against a cell or a vote"
+  },
+  {
+   "question": "any budget line, any year or scenario",
+   "path": "/data/budget-lines.csv",
+   "note": "the district budget, line by line, FY23 actuals to FY27 scenarios"
+  },
+  {
+   "question": "every figure this site computes, and how",
+   "path": "/data/model.json",
+   "note": "including citations saying which figures are ours and which are published"
+  },
+  {
+   "question": "every source document, with a hash",
+   "path": "/data/sources.json",
+   "note": "the full archive catalogue"
+  },
+  {
+   "question": "athletics: what it costs and who pays",
+   "path": "/docs/analyses/athletics-ledger.md",
+   "note": "and /docs/analyses/athletics.md"
+  },
+  {
+   "question": "special education as a cost driver",
+   "path": "/docs/analyses/sped-and-the-curve.md",
+   "note": ""
+  }
+ ],
+ "extra": [
+  {
+   "path": "/llms.txt",
+   "note": "the full guide to all of the above"
+  },
+  {
+   "path": "/sitemap.xml",
+   "note": "every page"
+  }
+ ],
+ "corpus": "1,383 agendas and sets of minutes across 40 town boards, 2025-01-06 to 2026-11-17"
+}

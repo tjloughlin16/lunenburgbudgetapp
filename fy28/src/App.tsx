@@ -16,6 +16,7 @@ import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
 import { Athletics } from './pages/Athletics'
 import { Rates } from './pages/Rates'
+import { DataFooter } from './components/DataFooter'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
@@ -336,6 +337,12 @@ export default function App() {
             style={{ color: 'var(--series-cost)' }}>
             Go deeper &mdash; every other page &rarr;
           </button>
+          {/* The site's own inventory, in visible text, on every page. It is also in an
+              HTML comment at the top of each page -- and that copy reaches nobody, because
+              every extraction method there is drops comments before a model sees the text.
+              This is the one that gets read, by an assistant and by a resident who just
+              wants the spreadsheet. */}
+          <DataFooter />
           {/* Said plainly and near the top of the block, because it is the sentence
               somebody quotes when they are asked "is this the Town's site?" — and because
               a site that looks official and is not would cost the Town something it did
