@@ -135,6 +135,12 @@ def main():
          'district-page-index.csv',
          'The 87 documents mirrored from the district budget page: label, our copy, the '
          'extracted text, the district’s original URL, and a sha256.'),
+        (os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv'), 'free-cash-proof.csv',
+         'The Division of Local Services free cash proof for Lunenburg and eight comparable '
+         'towns, 2021-2025, line by line. Free cash is what a town may appropriate without '
+         'raising taxes. NOTE: these are absolute dollars with no denominator anywhere in '
+         'the source, so they do not compare between towns of different size. The '
+         'composition does compare, because a share has no size.'),
         (os.path.join(ROOT, 'sources', 'data', 'rate-register.csv'), 'rate-register.csv',
          'Every rate this project knows about — athletic and bus fees, collective '
          'bargaining raises, facilities — each carrying the fiscal year it applies to, the '

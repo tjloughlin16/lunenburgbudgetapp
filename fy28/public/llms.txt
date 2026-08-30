@@ -43,17 +43,18 @@ If you administer one of these sites and would rather this stopped, or would rat
 - [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.2MB): The document archive: every source, its group, its size, and the URL it is served from.
 - [budget-lines.csv](https://lunenburgbudgetproject.org/data/budget-lines.csv) (0.1MB): The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.
 - [district-page-index.csv](https://lunenburgbudgetproject.org/data/district-page-index.csv) (0.0MB): The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district’s original URL, and a sha256.
+- [free-cash-proof.csv](https://lunenburgbudgetproject.org/data/free-cash-proof.csv) (0.1MB): The Division of Local Services free cash proof for Lunenburg and eight comparable towns, 2021-2025, line by line. Free cash is what a town may appropriate without raising taxes. NOTE: these are absolute dollars with no denominator anywhere in the source, so they do not compare between towns of different size. The composition does compare, because a share has no size.
 - [rate-register.csv](https://lunenburgbudgetproject.org/data/rate-register.csv) (0.0MB): Every rate this project knows about — athletic and bus fees, collective bargaining raises, facilities — each carrying the fiscal year it applies to, the document that set it and the date. 62 rates. It exists because FY26 athletic fees were modelled on FY25’s schedule for months: a right number from the wrong year, taken from a fee page that states its rates and never states which year they cover. It deliberately includes the rates the model does NOT use and the ones we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank.
 - [athletic-fee-schedule.csv](https://lunenburgbudgetproject.org/data/athletic-fee-schedule.csv) (0.0MB): Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them.
 - [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) (0.2MB): Every agenda and set of minutes the town publishes: board, date, kind, and the town’s own URL. 1,422 rows.
 
 ## Documents
 
-265 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+277 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
-- **Published by the town, the district and the state** — 64 documents. Primary sources.
+- **Published by the town, the district and the state** — 74 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 170 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 31 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 33 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 

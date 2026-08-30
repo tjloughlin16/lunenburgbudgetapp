@@ -11,6 +11,7 @@
     "prerender": "node scripts/prerender.mjs",
     "check:agents": "node scripts/check-agents.mjs",
     "check:interactive": "node scripts/check-interactive.mjs",
+    "check:agent-view": "node scripts/agent-view.mjs",
     "build:site": "npm run build && npm run prerender"
   },
   "dependencies": {

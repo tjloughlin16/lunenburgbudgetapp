@@ -365,6 +365,35 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'dls-free-cash', 'origin': 'dese',
+        'title': 'Free cash, certified — Lunenburg and eight comparable towns',
+        'blurb': 'The Division of Local Services publishes a Free Cash Proof for every '
+                 'community: the year-end calculation of what a town may appropriate '
+                 'without raising taxes, broken into its components. Downloaded 30 August '
+                 '2026. These reconcile to themselves twice over — 81 checks across nine '
+                 'towns and five years, all tying to the dollar. They carry no denominator '
+                 'of any kind, so the absolute figures do not compare between towns of '
+                 'different size; the composition, being a share, does.',
+        'items': [
+            ('dls-free-cash/free-cash-proof-lunenburg.xlsx',
+             'Lunenburg free cash proof, 2021–2025', 3,
+             'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '
+             'Two thirds of the 2025 figure is money appropriated and not spent.'),
+            ('dls-free-cash/PROVENANCE.md', 'Where these came from, and what they cannot do', 2,
+             'Written by us. Records the exclusion of a tenth file supplied as Abington '
+             'which contains Lunenburg’s data in all 102 cells, and states plainly that no '
+             'denominator appears anywhere in these workbooks.'),
+            ('dls-free-cash/free-cash-proof-ayer.xlsx', 'Ayer', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-groton.xlsx', 'Groton', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-littleton.xlsx', 'Littleton', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-shirley.xlsx', 'Shirley', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-townsend.xlsx', 'Townsend', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-upton.xlsx', 'Upton', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-uxbridge.xlsx', 'Uxbridge', 1, 'Peer comparison.'),
+            ('dls-free-cash/free-cash-proof-westford.xlsx', 'Westford', 1, 'Peer comparison.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'athletics-ledger', 'origin': 'request',
         'title': 'The athletics ledger, obtained by records request',
         'blurb': 'Answered by the Town on 17 June 2026, to a request by a resident. These '
@@ -447,6 +476,16 @@ GROUPS = [
              'Also what an "actual" on this line really is \u2014 in the one ledger view we '
              'have, a purchase order with nothing yet paid. Verify with '
              'scripts/verify_athletics.py.'),
+            ('analyses/free-cash.md',
+             'Free cash: is Lunenburg hoarding, or rebuilding?', 3,
+             'Two claims about the same number — that the town is too conservative, and '
+             'that its free cash is not up to standard — set against the DLS proof for nine '
+             'towns. It does not settle the argument, and says why in the first paragraph: '
+             'a standard for free cash is a ratio and these files are a numerator. What it '
+             'does establish is the shape. Two thirds of Lunenburg’s 2025 free cash is money '
+             'appropriated and not spent, up from 31% in 2023 — a balance built from '
+             'underspending is a different thing from one built from revenue beating '
+             'forecast, and they imply different remedies.'),
             ('analyses/athletics-ledger.md',
              'The athletics ledger: what a cashbook shows that a budget line cannot', 3,
              'Written from the records request answered on 17 June 2026 — the first dated '
@@ -487,6 +526,13 @@ GROUPS = [
              'of that at the same time as the document rather than retrofitted, and this '
              'is what that looks like. It also records what is deliberately not published '
              'and why.'),
+            ('data/free-cash-proof.csv',
+             'Free cash, nine towns, five years, line by line', 3,
+             '630 rows: town, year, proof line, amount, the role that line plays in the '
+             'calculation, and the cell it came from. Rebuild with '
+             'scripts/extract_free_cash.py, which reconciles every town-year against two '
+             'totals the source prints itself and refuses to write if any of the 81 checks '
+             'fails.'),
             ('data/rate-register.csv',
              'Every rate, with the year it applies to and who set it', 3,
              'Athletic fees, bus fees, collective bargaining raises, facilities and the '

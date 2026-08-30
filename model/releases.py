@@ -24,6 +24,44 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v7',
+        date='2026-08-30',
+        title='Free cash, and what it can and cannot tell you',
+        short='free cash, nine towns',
+        headline='Two claims are being made about the same number — that the town is too '
+                 'conservative with free cash, and that its free cash is not up to standard '
+                 'and is being rebuilt. The state’s own calculation for Lunenburg and eight '
+                 'comparable towns is now published. It does not settle the argument, and '
+                 'the analysis says why in its first paragraph.',
+        changes=[
+            'The Division of Local Services publishes a free cash proof for every '
+            'community — the year-end calculation of what a town may appropriate without '
+            'raising taxes. Lunenburg’s and eight neighbours’, 2021 to 2025, are now in the '
+            'archive with the line-by-line detail. They reconcile to themselves twice over, '
+            'in 81 checks that all tie to the dollar.',
+
+            'The disagreement cannot be settled from them, because a standard for free cash '
+            'is a ratio and these files are a numerator. There is no population, budget or '
+            'revenue figure anywhere in them. Lunenburg’s balance can be set against '
+            'Lunenburg’s own budget — 6.51% of a $51,531,199 general fund — but not against '
+            'any neighbour’s, and the standard being invoked is in a document this project '
+            'has not read: the town’s own Financial Policies Manual.',
+
+            'What the figures do show is the shape, and the shape has moved. Two thirds of '
+            'Lunenburg’s 2025 free cash is money that was appropriated and never spent — '
+            '$2,457,761, against $1,225,720 from revenue coming in above estimate. That '
+            'share was 31% in 2023. A balance built from underspending is a different thing '
+            'from one built from revenue beating forecast, and the two imply different '
+            'remedies.',
+
+            'None of that means waste, and none of it is the schools: every town turns money '
+            'back, and this is a town-wide figure across all 67 departments with no '
+            'breakdown published. Which departments turned back the money, and whether it is '
+            'the same ones each year, is the difference between a pattern and a run of '
+            'one-offs.',
+        ],
+    ),
+    dict(
         tag='v6',
         date='2026-08-30',
         title='Every public meeting, in full, and a site an assistant can actually use',
