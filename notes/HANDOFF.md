@@ -99,10 +99,10 @@ Verify the whole thing against a local Pages runtime, or against production:
 
 | | |
 |---|---|
-| **Live site** | `lunenburgbudgetproject.org`, tag **`v3`** = `6fb5e2c` |
-| **Working branch** | **`source-basis-classification`**, `2ab62f6` |
-| **Ahead of production** | **27 commits.** Verify: `git rev-list --count v3..HEAD` |
-| `main` | untouched today — the branch has not been merged |
+| **Live site** | `lunenburgbudgetproject.org`, tag **`v6`** |
+| **Working branch** | merged. `main` is the live commit |
+| **Ahead of production** | **nothing.** `main`, the newest tag and the deployed build are the same commit |
+| `main` | pushed to GitHub, and it is what is live |
 
 Deploy needs **Node 22 via nvm** (system node is 20 and fails). Cloudflare Pages,
 `npx wrangler pages deploy` from `fy28/`.
@@ -231,7 +231,11 @@ and neither is settled.
 
 ## 5. What is live and wrong right now
 
-Shipped in the deployed `v3` build, and fixed on this branch but not deployed:
+~~Shipped in the deployed `v3` build, and fixed on this branch but not deployed:~~
+**Fixed and deployed in `v6`.** It was ALSO not fixed when this section claimed it was —
+the sentence lived on in `model/derivations.py` for another day because that claim was read
+out of this file and believed. The note is now built by `_transport_note()` from the data.
+The original wording, for the record:
 
 > *"Budgeted well above what athletics has ever actually spent. Actuals were $39,880 (FY23),
 > $40,000 (FY24) and $87,822 (FY25)…"*
@@ -292,10 +296,10 @@ a range.
 
 ## 8. What to do next, in order
 
-1. **Deploy, or decide not to.** 27 commits, all checks pass, production build clean.
-   Recommended: deploy — what is live is wrong in ways this fixes (§5, §6), and none of it
-   depends on the unproven workbook. **TJ was asked and had not answered when context was
-   cleared. Do not deploy without asking again.**
+1. ~~Deploy, or decide not to.~~ **Done.** v4, v5 and v6 all shipped on 29-30 August 2026.
+   `main` is the deployed commit and is pushed. **Push before deploying, not after** — for
+   three deploys the source existed only on one laptop while the built output was public,
+   which is the wrong way round and TJ said so.
 2. **Send `notes/REQUEST-3c.md`, narrowed.** Item 2 (fund 1301 ledger) is now partly filled —
    the cashbook arrived, the object detail did not. **Add a sixth item: the five memos** behind
    the `ADJ EXP` journal entries, dated 08/12/24, 01/30/25, 05/02/25, 07/02/25 and 08/20/2025.
