@@ -24,33 +24,6 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
-        tag='v9',
-        date='2026-08-30',
-        title='Two pages that were unreadable, and a label that meant nothing',
-        short='free cash and the rate register, legible',
-        headline='The free cash and rate register pages were shipping without the site’s '
-                 'layout at all — text running to the edge of the window and headings '
-                 'rendering as body text. Both now look like every other page.',
-        changes=[
-            'Both pages had been built with inline styles and no class names, so neither '
-            'picked up the container every other page uses. Content ran to the left edge '
-            'with no margin, headings rendered at the browser’s default size so they read '
-            'as ordinary paragraphs, and sections had no space between them. The '
-            'arithmetic was right and nobody could read it. Both are rebuilt in the same '
-            'layout, type and table styling as the rest of the site.',
-
-            'The link on every conclusion card said "See the working", which is not a '
-            'phrase that tells you where it goes. It now says "How this was worked out".',
-
-            'The rate register’s own opening paragraph had gone stale in exactly the way '
-            'the register exists to prevent. It said the FY26 athletic fee mistake cost '
-            '"31% of modelled fee revenue" — true of the model before the fee was '
-            'corrected, and of nothing since. It now states the understatement in the '
-            'rate itself, and derives it from the register rather than from a typed '
-            'figure, so it cannot go stale again.',
-        ],
-    ),
-    dict(
         tag='v8',
         date='2026-08-30',
         title='Show your work — every calculation, and every assumption behind it',
@@ -94,6 +67,14 @@ RELEASES = [
             'adjustment sitting next to it. Nothing in the output looked wrong. The figure '
             'that did improve is the part of the fund’s income the published fee schedule '
             'cannot explain, which is now 6.73% rather than 13.2%.',
+
+            'Two pages — free cash and the rate register — were shipping without the '
+            'site’s layout: text ran to the edge of the window and headings rendered as '
+            'body text. Both are rebuilt. And the rate register’s own introduction had '
+            'gone stale in the way the register exists to prevent, describing the FY26 '
+            'athletic fee error as costing "31% of modelled fee revenue" — true before '
+            'the fee was corrected and of nothing since. It now states the understatement '
+            'in the rate, derived from the register rather than typed.',
 
             'A published conclusion had been rendering the words "$None" where a figure '
             'should have been. No fee reaches the cost of the full athletics programme — '

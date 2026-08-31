@@ -1002,21 +1002,9 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v9",
+  "current": "v8",
   "updated": "2026-08-30",
   "items": [
-   {
-    "tag": "v9",
-    "date": "2026-08-30",
-    "title": "Two pages that were unreadable, and a label that meant nothing",
-    "short": "free cash and the rate register, legible",
-    "headline": "The free cash and rate register pages were shipping without the site\u2019s layout at all \u2014 text running to the edge of the window and headings rendering as body text. Both now look like every other page.",
-    "changes": [
-     "Both pages had been built with inline styles and no class names, so neither picked up the container every other page uses. Content ran to the left edge with no margin, headings rendered at the browser\u2019s default size so they read as ordinary paragraphs, and sections had no space between them. The arithmetic was right and nobody could read it. Both are rebuilt in the same layout, type and table styling as the rest of the site.",
-     "The link on every conclusion card said \"See the working\", which is not a phrase that tells you where it goes. It now says \"How this was worked out\".",
-     "The rate register\u2019s own opening paragraph had gone stale in exactly the way the register exists to prevent. It said the FY26 athletic fee mistake cost \"31% of modelled fee revenue\" \u2014 true of the model before the fee was corrected, and of nothing since. It now states the understatement in the rate itself, and derives it from the register rather than from a typed figure, so it cannot go stale again."
-    ]
-   },
    {
     "tag": "v8",
     "date": "2026-08-30",
@@ -1029,6 +1017,7 @@
      "Section 12 is the one to read if you read nothing else: every assumption in the model, sorted by how much it moves the gap, with a plain statement of what backs each. Two of them are backed by nothing, and are labelled that way. State aid is assumed to grow at 2% and local receipts at 1%, and neither figure has a stated source or a derivation. State aid is worth $63,992 of FY28 gap for every point it moves \u2014 the second largest revenue lever in the model. Nothing about it has been changed; it has been named.",
      "The athletics sibling discount is no longer an assumption. It was 30% of participations, invented and supported by nothing \u2014 the School Committee vote of 26 February 2025 sets the discount RATE at 25% and says nothing about how many families receive it. The district\u2019s own by-sport workbook records the fee category of every participation, and across 1,266 of them it is 9.5%. The average fee per participation moves from $366 to $390, and self-funding athletics with the buses put back moves from $730\u2013$845 a season to $785\u2013$855.",
      "That correction barely moved the revenue figures, and the reason is worth knowing: the fee model is anchored to what the athletics fund actually collected, so an input wrong by a factor of four was being absorbed by the adjustment sitting next to it. Nothing in the output looked wrong. The figure that did improve is the part of the fund\u2019s income the published fee schedule cannot explain, which is now 6.73% rather than 13.2%.",
+     "Two pages \u2014 free cash and the rate register \u2014 were shipping without the site\u2019s layout: text ran to the edge of the window and headings rendered as body text. Both are rebuilt. And the rate register\u2019s own introduction had gone stale in the way the register exists to prevent, describing the FY26 athletic fee error as costing \"31% of modelled fee revenue\" \u2014 true before the fee was corrected and of nothing since. It now states the understatement in the rate, derived from the register rather than typed.",
      "A published conclusion had been rendering the words \"$None\" where a figure should have been. No fee reaches the cost of the full athletics programme \u2014 revenue peaks near $373,322 at about $1,185 a season, against $451,830 \u2014 so the honest sentence is that it is unreachable at any price, and that is what it now says."
     ]
    },
