@@ -1,6 +1,6 @@
 # Handoff
 
-Written to survive a context reset. Read `CLAUDE.md` first — thirteen rules, every one of
+Written to survive a context reset. Read `CLAUDE.md` first — fourteen rules, every one of
 them written because it was broken here.
 
 **Nothing in this file is a source.** After a reset it reads exactly like something already
@@ -20,19 +20,33 @@ fixed anywhere. That second one got repeated to TJ as a reason to deploy.
 | **Newest tag** | **`v8`**, and it is what is live. `check:agents` passes against production |
 | **Dev server** | `cd fy28 && npm run dev` → localhost:5173 |
 
-**The release numbering was closed up on 30 August, and four tags were deleted.** Five
-builds shipped the free cash work over two days; they are one release note now, and the
-numbering went with them so the panel would not read v11 then v6. `v7` was re-created at the
-deploying commit and is live. What the retired tags pointed at, so no build becomes
-unfindable — and note that the old `v9` is the build this one replaced in production:
+**The release numbering has been closed up twice, and tags carry no history of their own,
+so both collapses are recorded here.** A deleted tag is a deleted answer to "which build is
+that".
+
+**First collapse, 30 August.** Five builds shipped the free cash work over two days; they
+became one release note, and the numbering went with them so the panel would not read v11
+then v6. `v7` was re-created at the deploying commit. What those retired tags pointed at:
 
 | retired tag | commit | what it was |
 |---|---|---|
 | `v7` | `5c76af5` | the town already published both sides of the free cash argument |
 | `v8` | `083ff3a` | model free cash at any level, including spending it all |
-| `v9` | `58890b7` | free cash as an opt-in model factor — **what was live until now** |
+| `v9` | `58890b7` | free cash as an opt-in model factor |
 | `v10` | `f35b70d` | free cash as a standing policy lever |
-| `v9` | `43c2462` | the free cash and rate register layout repair — folded into `v8`, which was moved to `7c336e1` |
+
+**Second collapse, same day.** `v8` shipped *Show your work*. Two pages were then found to
+have been rendering without the site's layout at all, and that repair went out as `v9`
+before the rule was applied to it: a release note is for what a reader should interpret
+differently, and a layout fix is not. So `v9` was retired, the one figure correction in it
+was folded into `v8`'s note, and `v8` was moved to the commit that carries the fix.
+
+| retired tag | commit | what it was |
+|---|---|---|
+| `v9` | `43c2462` | free cash and rate register layout repair. Now part of `v8` |
+
+`v8` itself has been moved twice and points at the deployed commit. Its earlier positions
+were `e0ba51d` (the document alone) and `7011e35` (before the handoff was updated).
 
 **Two process rules, both learned the hard way:**
 
@@ -50,7 +64,7 @@ Deploy needs **Node 22 via nvm**. Build with **`npm run build:site`**, never `np
 prerender was skipped, if `/data/model.json` is stale, or if HEAD is past the newest tag.
 
 **`npm run check:agents` passes**, locally and against production. It failed on purpose
-until the deploy — the site said `v7` while the newest tag was `v6` — and that failure is the
+until the deploy — the site said `v8` while the newest tag was `v7` — and that failure is the
 guard that stops untagged work shipping. Tag at deploy time, never in advance.
 
 ## 0a. What this session did
