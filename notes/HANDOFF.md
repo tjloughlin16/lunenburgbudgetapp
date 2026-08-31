@@ -15,9 +15,9 @@ fixed anywhere. That second one got repeated to TJ as a reason to deploy.
 
 | | |
 |---|---|
-| **Live site** | `lunenburgbudgetproject.org` — tag **`v7`**, deployed 30 August 2026 |
+| **Live site** | `lunenburgbudgetproject.org` — tag **`v8`**, deployed 30 August 2026 |
 | **`main`** | is the deployed commit, tagged and pushed. Nothing ahead of production |
-| **Newest tag** | **`v7`**, and it is what is live. `check:agents` passes against production |
+| **Newest tag** | **`v8`**, and it is what is live. `check:agents` passes against production |
 | **Dev server** | `cd fy28 && npm run dev` → localhost:5173 |
 
 **The release numbering was closed up on 30 August, and four tags were deleted.** Five
@@ -32,6 +32,7 @@ unfindable — and note that the old `v9` is the build this one replaced in prod
 | `v8` | `083ff3a` | model free cash at any level, including spending it all |
 | `v9` | `58890b7` | free cash as an opt-in model factor — **what was live until now** |
 | `v10` | `f35b70d` | free cash as a standing policy lever |
+| `v9` | `43c2462` | the free cash and rate register layout repair — folded into `v8`, which was moved to `7c336e1` |
 
 **Two process rules, both learned the hard way:**
 
