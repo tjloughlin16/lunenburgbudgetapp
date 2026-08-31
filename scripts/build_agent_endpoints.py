@@ -214,6 +214,25 @@ def main():
         '',
         ours_note(a),
         '',
+        '## How every one of those figures is computed',
+        '',
+        f'[{SITE}/docs/analyses/show-your-work.md]'
+        f'({SITE}/docs/analyses/show-your-work.md) — **read this before reproducing any '
+        'number on this site.** Fifteen sections, one per calculation: the projection '
+        'itself, where each growth rate comes from, special education, out-of-district '
+        'tuition, health insurance, free cash, athletic fees, the other levers, the cut '
+        'cascade, the tax base and overrides, an assumption register, and what none of it can compute. Each '
+        'section gives the inputs, the formula, a worked example in real dollars, and '
+        'whether each figure is published, contractual, statutory, our measurement or our '
+        'assumption.',
+        '',
+        'It is generated from the same model that produces `model.json`, so it cannot '
+        'disagree with the site. Three things in it are most likely to be got wrong from '
+        'the outside: the schools receive only about half of a dollar added to the town’s '
+        'levy, not all of it; the special education classification is ours because the '
+        'state has no account code for it; and out-of-district tuition is held flat '
+        'deliberately, which is a finding rather than a missing rate.',
+        '',
         '## About the crawler',
         '',
         'Documents here were fetched by a crawler identifying itself as '

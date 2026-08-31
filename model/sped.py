@@ -14,28 +14,34 @@ lines that behave nothing alike.
 THE RATE, AND WHY IT IS NOT WHAT THE LINE DID
 --------------------------------------------------------------------------------------
 
-The obvious number is 5.89% -- what the whole line did across three budgets. It was the
+The obvious number is 5.77% -- what the whole line did across three budgets. It was the
 published choice for a day, and it is wrong, for the same reason this analysis says the
 district's own 3.98% is wrong.
 
 Decompose the two years and the whole thing is one line moving once:
 
-    whole line          5,038,594 -> 5,158,207 -> 5,649,284    +2.4%, +9.5%
+    whole line          4,865,038 -> 4,964,329 -> 5,442,383    +2.0%, +9.6%
     paraprofessionals   1,376,893 -> 1,344,373 -> 1,874,411    -2.4%, +39.4%
-    everything else     3,661,701 -> 3,813,834 -> 3,774,873    +4.2%, -1.0%
+    everything else     3,488,145 -> 3,619,956 -> 3,567,972    +3.8%, -1.4%
 
-The paraprofessional increase is 108% of the FY27 rise -- every other part of special
-education fell that year. Strip it out and the rest of the line grew 1.53% a year across
+(These figures moved once already, and the change was not in the district's budget. They
+were first written before English Language Learner lines were excluded from this
+classification, so the whole line read about $207,000 higher and the rate 5.89%. The
+paraprofessional row was unaffected either way, which is why the argument survived the
+correction unchanged. Recompute rather than quote: `python3 model/sped.py`.)
+
+The paraprofessional increase is 111% of the FY27 rise -- every other part of special
+education fell that year. Strip it out and the rest of the line grew 1.14% a year across
 the two budgets, below the levy cap.
 
-So 5.89% is not a growth rate. It is one hiring decision, averaged over two years and
+So 5.77% is not a growth rate. It is one hiring decision, averaged over two years and
 then compounded forever. Rule 6 exists for exactly this: a short rate off a step change
 is not a trend, and three of the six lines the back-test flagged turned out to be steps.
 
 The distinction is the one the whole site is built on. A **level** change moves the curve
 once and leaves its angle alone. A **rate** changes the angle. Those paras were hired;
-their cost is already inside the $5,745,543 the model starts from. Escalating that base
-at 5.89% says the district will hire 39% more paras again next year, and again the year
+their cost is already inside the $5,466,201 the model starts from. Escalating that base
+at 5.77% says the district will hire 39% more paras again next year, and again the year
 after. Nothing supports that.
 
 What the model uses instead is what the people in this line are contracted to receive,
@@ -404,9 +410,9 @@ _whole = _series(is_sped)
 _paras = _series(_part_pred('paras'))
 _nopara = _series(lambda r: is_sped(r) and not _part_pred('paras')(r))
 
-WHOLE_LINE_RATE = _cagr(_whole)          # 5.89% -- what the line did, step included
-EX_PARAS_RATE = _cagr(_nopara)           # 1.53% -- the line apart from the hiring
-FY27_ALONE_RATE = _whole[2] / _whole[1] - 1   # 9.52%
+WHOLE_LINE_RATE = _cagr(_whole)          # 5.77% -- what the line did, step included
+EX_PARAS_RATE = _cagr(_nopara)           # 1.14% -- the line apart from the hiring
+FY27_ALONE_RATE = _whole[2] / _whole[1] - 1   # 9.63%
 
 # What the FY27 year actually was: one line moving, and moving by more than the whole
 # year's increase, because everything else in special education fell.
@@ -649,7 +655,7 @@ def classified():
 #
 # A figure that swings from -45.78% to +11.78% on the choice of start year is not a
 # measurement of anything. Publishing 0.66% because FY17 happens to be the first year the
-# archive reaches would be the same error as escalating the in-district line at 5.89% --
+# archive reaches would be the same error as escalating the in-district line at 5.77% --
 # an arbitrary choice wearing a measurement's clothes.
 #
 # So the line is held flat, and the risk is carried by the range instead, which is priced

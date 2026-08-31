@@ -448,6 +448,19 @@ GROUPS = [
                  'published by somebody else. Where one of them turned out to be wrong, the '
                  'correction is in the document rather than quietly removed.',
         'items': [
+            ('analyses/show-your-work.md',
+             'Show your work: every calculation, opened up', 3,
+             'The method document. Every figure this project publishes, with its inputs, '
+             'the formula, a worked example in real dollars, and — beside each one — '
+             'whether it is somebody else’s figure, a contract, a statute, our '
+             'measurement or our assumption. Fifteen sections: the projection itself, '
+             'why each escalator is what it is, special education, out-of-district '
+             'tuition, health insurance, free cash, athletic fees, the levers, the cut '
+             'cascade, the tax base and overrides, an assumption register ranked by what each one moves, and what none of it can compute. '
+             'GENERATED from the live model by scripts/build_show_your_work.py, so it '
+             'cannot drift from the code — run it with --check to prove the copy you '
+             'are reading is current. Written to be usable by an assistant checking a '
+             'number as well as by a resident following the argument.'),
             ('analyses/fy27-and-the-override.md', 'The FY27 budget and the override', 3,
              'Where things stand: the adopted budget, the four scenarios, what the balanced '
              'budget cut, the override result, the town\u2019s revenue mechanics, and the '

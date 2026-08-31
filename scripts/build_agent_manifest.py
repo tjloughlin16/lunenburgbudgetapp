@@ -71,6 +71,9 @@ ANSWERS = [
      'the composition and not the totals'),
     ('any budget line, any year or scenario',
      '/data/budget-lines.csv', 'the district budget, line by line, FY23 actuals to FY27 scenarios'),
+    ('HOW a figure was calculated — the formula, the inputs, and what is assumed',
+     '/docs/analyses/show-your-work.md', 'every calculation opened up, generated from the '
+     'model itself; read it before reproducing any number here'),
     ('every figure this site computes, and how',
      '/data/model.json', 'including citations saying which figures are ours and which are published'),
     ('every source document, with a hash',

@@ -1002,9 +1002,24 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v7",
+  "current": "v8",
   "updated": "2026-08-30",
   "items": [
+   {
+    "tag": "v8",
+    "date": "2026-08-30",
+    "title": "Show your work \u2014 every calculation, and every assumption behind it",
+    "short": "the method, written out",
+    "headline": "A single document sets out how every figure on this site is arrived at, names each one as published, contractual, statutory, measured or ours, and ranks every assumption by how much the answer moves if it is wrong.",
+    "changes": [
+     "Show your work is written for the people who have to decide something with it \u2014 Finance Committee, Town Manager, Select Board, School Committee. Fifteen sections and two appendices: the projection worked through line by line, where each growth rate comes from, special education, out-of-district tuition, health insurance, free cash, athletic fees, the cut cascade, the tax base and overrides. Every section ends with what we assumed and what would settle it.",
+     "It is generated from the model rather than written beside it, so it cannot drift from the figures the site publishes. A stale copy fails the build rather than being discovered by a reader.",
+     "Section 12 is the one to read if you read nothing else: every assumption in the model, sorted by how much it moves the gap, with a plain statement of what backs each. Two of them are backed by nothing, and are labelled that way. State aid is assumed to grow at 2% and local receipts at 1%, and neither figure has a stated source or a derivation. State aid is worth $63,992 of FY28 gap for every point it moves \u2014 the second largest revenue lever in the model. Nothing about it has been changed; it has been named.",
+     "The athletics sibling discount is no longer an assumption. It was 30% of participations, invented and supported by nothing \u2014 the School Committee vote of 26 February 2025 sets the discount RATE at 25% and says nothing about how many families receive it. The district\u2019s own by-sport workbook records the fee category of every participation, and across 1,266 of them it is 9.5%. The average fee per participation moves from $366 to $390, and self-funding athletics with the buses put back moves from $730\u2013$845 a season to $785\u2013$855.",
+     "That correction barely moved the revenue figures, and the reason is worth knowing: the fee model is anchored to what the athletics fund actually collected, so an input wrong by a factor of four was being absorbed by the adjustment sitting next to it. Nothing in the output looked wrong. The figure that did improve is the part of the fund\u2019s income the published fee schedule cannot explain, which is now 6.73% rather than 13.2%.",
+     "A published conclusion had been rendering the words \"$None\" where a figure should have been. No fee reaches the cost of the full athletics programme \u2014 revenue peaks near $373,322 at about $1,185 a season, against $451,830 \u2014 so the honest sentence is that it is unreachable at any price, and that is what it now says."
+    ]
+   },
    {
     "tag": "v7",
     "date": "2026-08-30",
@@ -2670,23 +2685,23 @@
   },
   "hsParticipations": 582,
   "msParticipations": 109,
-  "effectiveAthletic": 366,
-  "estimatedAthleticRevenue": 187451,
-  "priorEffectiveAthletic": 214,
-  "estimatedPriorAthleticRevenue": 109602,
-  "feeIncreaseValue": 77849,
+  "effectiveAthletic": 390,
+  "estimatedAthleticRevenue": 199742,
+  "priorEffectiveAthletic": 239,
+  "estimatedPriorAthleticRevenue": 122406,
+  "feeIncreaseValue": 77336,
   "siblingMix": [
    [
     "1st child",
-    0.7
+    0.9052
    ],
    [
     "2nd child",
-    0.25
+    0.0845
    ],
    [
     "3rd child",
-    0.05
+    0.0103
    ]
   ],
   "waiverAssumption": 0.12,
@@ -5287,6 +5302,63 @@
     "multiple": 0.4
    }
   ],
+  "peerComposition": [
+   {
+    "town": "Lunenburg",
+    "identified": 3716282,
+    "unspent": 2457761,
+    "unspentShare": 0.6613
+   },
+   {
+    "town": "Townsend",
+    "identified": 580388,
+    "unspent": 372360,
+    "unspentShare": 0.6416
+   },
+   {
+    "town": "Shirley",
+    "identified": 266093,
+    "unspent": 169495,
+    "unspentShare": 0.637
+   },
+   {
+    "town": "Ayer",
+    "identified": 2980253,
+    "unspent": 1799389,
+    "unspentShare": 0.6038
+   },
+   {
+    "town": "Westford",
+    "identified": 5745751,
+    "unspent": 2674047,
+    "unspentShare": 0.4654
+   },
+   {
+    "town": "Littleton",
+    "identified": 10021469,
+    "unspent": 3292039,
+    "unspentShare": 0.3285
+   },
+   {
+    "town": "Groton",
+    "identified": 2946227,
+    "unspent": 689054,
+    "unspentShare": 0.2339
+   },
+   {
+    "town": "Upton",
+    "identified": 3960677,
+    "unspent": 891135,
+    "unspentShare": 0.225
+   },
+   {
+    "town": "Uxbridge",
+    "identified": 3640259,
+    "unspent": 426490,
+    "unspentShare": 0.1172
+   }
+  ],
+  "peerDenominatorNote": "The Division of Local Services proof carries no denominator \u2014 no population, budget, revenue or levy for any town, including Lunenburg. So free cash as a share of each town\u2019s operating budget cannot be computed from it, and is not shown. Composition is shown instead, because a share compares across towns of different size and an absolute dollar figure does not.",
   "deficits": [
    {
     "fy": 28,
@@ -8094,9 +8166,9 @@
  "feeCalibration": {
   "measured": 188944.46,
   "measuredGross": 194609.45,
-  "modelled": 166970,
-  "factor": 1.1316,
-  "surchargeGap": 21974.46,
+  "modelled": 176233,
+  "factor": 1.0721,
+  "surchargeGap": 12711.46,
   "allInFy26": 665245.44,
   "fundShareFy26": 0.2208
  },
@@ -8573,8 +8645,8 @@
   {
    "id": "athletics_fee",
    "label": "Athletic fee that would make sports self-funding",
-   "value": "$960",
-   "sub": "a season, against the $345,458 it costs to field the teams that survived AND get them to away games. Against the $217,908 the budget actually funds \u2014 which pays for no transportation at all \u2014 it is $445. Restoring the full $451,830 program is out of reach at any fee",
+   "value": "$915",
+   "sub": "a season, against the $345,458 it costs to field the teams that survived AND get them to away games. Against the $217,908 the budget actually funds \u2014 which pays for no transportation at all \u2014 it is $440. Restoring the full $451,830 program is out of reach at any fee",
    "anchor": "fees",
    "tone": "critical"
   },
@@ -8634,8 +8706,8 @@
    "n": 7,
    "anchor": "fees",
    "headline": "Fees already cover most of athletics \u2014 and the town has never counted them.",
-   "figure": "$730\u2013$845",
-   "body": "For 2026-27 Lunenburg charges $400 for a first child, $300 for a second and $225 for a third, with a $1,500 family cap. Those fees do not appear in the school budget at all: they go into a revolving account, and that account pays for officials, uniforms and video that the general fund budgets at ZERO. So the budget is already net of them. In FY26 the account collected $188,944 and spent $146,911, about a fifth of what athletics actually cost. Put the buses back \u2014 the adopted budget funds none, and a team that cannot reach an away game is not a team \u2014 and the cost is $345,458. Today\u2019s fee covers 61%\u201361% of that, and $730\u2013$845 a season would cover all of it. It is a range and not a number because the account collects more than the published fee schedule can explain, and nothing published says whether that is more players than we counted or surcharges we cannot see. The fuller programme is further off: level service needs $None a season on the generous reading of that gap and is out of reach at any fee on the cautious one."
+   "figure": "$785\u2013$855",
+   "body": "For 2026-27 Lunenburg charges $400 for a first child, $300 for a second and $225 for a third, with a $1,500 family cap. Those fees do not appear in the school budget at all: they go into a revolving account, and that account pays for officials, uniforms and video that the general fund budgets at ZERO. So the budget is already net of them. In FY26 the account collected $188,944 and spent $146,911, about a fifth of what athletics actually cost. Put the buses back \u2014 the adopted budget funds none, and a team that cannot reach an away game is not a team \u2014 and the cost is $345,458. Today\u2019s fee covers 61%\u201362% of that, and $785\u2013$855 a season would cover all of it. It is a range and not a number because the account collects more than the published fee schedule can explain, and nothing published says whether that is more players than we counted or surcharges we cannot see. The fuller programme is not further off, it is unreachable: restoring level service costs $451,830 and no fee raises that on either reading, because revenue peaks near $373,322 at about $1,185 and then falls as families drop out."
   },
   {
    "n": 8,
@@ -8717,7 +8789,7 @@
    "unit": "new fee per season, per athlete",
    "max": 1400,
    "step": 25,
-   "current": 366,
+   "current": 390,
    "default": 960,
    "selfFunding": 960,
    "peakFee": 1185,
@@ -8992,7 +9064,7 @@
    {
     "id": "athletic_fees",
     "name": "Athletics fee \u2014 already raised to $400 for 2026-27",
-    "value": 77849,
+    "value": 77336,
     "why": "This one is done. The district raised the first-child fee from $250 to $400 ($300 second, $225 third, $1,500 family cap) for 2026-27 \u2014 worth roughly $78,000 a year if participation holds. We count it here because it is real money already committed, not because we are proposing it. It takes fee coverage from about 32% to 54% of what it costs to field the surviving teams with transport. Going further is possible but the returns fall away fast: self-funding that basis needs $960 a season and revenue peaks near $1,185, so the full program cannot be bought back at any price. The open task is not a bigger fee \u2014 it is publishing the schedule, the waiver policy and the collections, none of which is posted today.",
     "difficulty": "Already in force. What is missing is publication: the athletics FAQ still shows the old $250 schedule."
    },
@@ -9048,13 +9120,13 @@
     "scenario": "FY27 Balanced",
     "published": true,
     "sub": "The athletics Town Meeting funded on 2 May 2026. No athletic transportation, a half-time trainer, coaching stipends cut by 45%, and no middle school or freshman teams.",
-    "selfFundFee": 390,
+    "selfFundFee": 405,
     "selfFundRange": {
-     "low": 380,
-     "high": 390
+     "low": 400,
+     "high": 405
     },
-    "coverageNow": 0.9611,
-    "coverageHigh": 0.9734
+    "coverageNow": 0.975,
+    "coverageHigh": 0.9827
    },
    {
     "id": "travel",
@@ -9065,13 +9137,13 @@
     "published": false,
     "addLabel": "Athletic transportation",
     "sub": "The same teams, with the buses put back. The adopted budget zeroed athletic transportation, but a team that cannot get to an away game is not a team. This is the honest floor for \"does athletics pay for itself\" \u2014 and it is our construction, not a budget the district published.",
-    "selfFundFee": 845,
+    "selfFundFee": 855,
     "selfFundRange": {
-     "low": 730,
-     "high": 845
+     "low": 785,
+     "high": 855
     },
-    "coverageNow": 0.6062,
-    "coverageHigh": 0.614
+    "coverageNow": 0.615,
+    "coverageHigh": 0.6199
    },
    {
     "id": "trainer",
@@ -9084,11 +9156,11 @@
     "sub": "The adopted budget halves the athletic trainer. Restoring the other half is the next rung, and arguably a safety floor rather than an enhancement.",
     "selfFundFee": null,
     "selfFundRange": {
-     "low": 885,
-     "high": 885
+     "low": 985,
+     "high": 985
     },
-    "coverageNow": 0.5515,
-    "coverageHigh": 0.5586
+    "coverageNow": 0.5595,
+    "coverageHigh": 0.564
    },
    {
     "id": "level_service",
@@ -9104,8 +9176,8 @@
      "low": null,
      "high": null
     },
-    "coverageNow": 0.4635,
-    "coverageHigh": 0.4695
+    "coverageNow": 0.4702,
+    "coverageHigh": 0.4739
    },
    {
     "id": "restoration",
@@ -9121,12 +9193,12 @@
      "low": null,
      "high": null
     },
-    "coverageNow": 0.4492,
-    "coverageHigh": 0.455
+    "coverageNow": 0.4557,
+    "coverageHigh": 0.4593
    }
   ],
-  "peakFee": 1160,
-  "peakRevenue": 371496,
+  "peakFee": 1185,
+  "peakRevenue": 373322,
   "dropoffPer100": 5.0,
   "remaining": 217908,
   "participations": 691,
@@ -10099,8 +10171,8 @@
       "running": 217908.5,
       "scenario": "FY27 Balanced",
       "published": true,
-      "selfFundFee": 390,
-      "coverageNow": 0.9611,
+      "selfFundFee": 405,
+      "coverageNow": 0.975,
       "sub": "The athletics Town Meeting funded on 2 May 2026. No athletic transportation, a half-time trainer, coaching stipends cut by 45%, and no middle school or freshman teams."
      },
      {
@@ -10111,8 +10183,8 @@
       "running": 345458.5,
       "scenario": "FY27 Balanced + transportation",
       "published": false,
-      "selfFundFee": 845,
-      "coverageNow": 0.6062,
+      "selfFundFee": 855,
+      "coverageNow": 0.615,
       "sub": "The same teams, with the buses put back. The adopted budget zeroed athletic transportation, but a team that cannot get to an away game is not a team. This is the honest floor for \"does athletics pay for itself\" \u2014 and it is our construction, not a budget the district published."
      },
      {
@@ -10124,7 +10196,7 @@
       "scenario": "FY27 Balanced + transport + trainer",
       "published": false,
       "selfFundFee": null,
-      "coverageNow": 0.5515,
+      "coverageNow": 0.5595,
       "sub": "The adopted budget halves the athletic trainer. Restoring the other half is the next rung, and arguably a safety floor rather than an enhancement."
      },
      {
@@ -10136,7 +10208,7 @@
       "scenario": "FY27 Level Service",
       "published": true,
       "selfFundFee": null,
-      "coverageNow": 0.4635,
+      "coverageNow": 0.4702,
       "sub": "The district's own Level Service column: athletics run as it was, with full coaching stipends restored. Still no middle school or freshman teams \u2014 Level Service cut those too."
      },
      {
@@ -10148,7 +10220,7 @@
       "scenario": "FY27 Restoration / Core",
       "published": true,
       "selfFundFee": null,
-      "coverageNow": 0.4492,
+      "coverageNow": 0.4557,
       "sub": "The district's Restoration and Core columns \u2014 every team the schools used to field, high school and middle school alike. This is the only rung on which middle school and freshman sports exist at all, so it is the only one that is honestly a whole athletics program rather than a surviving piece of one."
      }
     ],

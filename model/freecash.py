@@ -78,6 +78,58 @@ PEER_MULTIPLES = [('Lunenburg', 2.49), ('Ayer', 1.44), ('Groton', 1.37), ('Littl
                   ('Upton', 0.72), ('Uxbridge', 0.40)]
 
 
+# --- comparing nine towns, when the source carries no denominator ----------------
+# The obvious question about the peer table is the one the source cannot answer: how does
+# each town's free cash sit against the 5-7% band? That needs each town's operating budget,
+# and the DLS proof carries no population, budget, revenue or levy for any town -- ours or
+# theirs. So Littleton's $10.0M against Shirley's $266K says nothing about which is closer
+# to its own target, and a percentage-of-budget column would have to be invented.
+#
+# What the proof DOES support is composition, because a share has no size. Unspent
+# appropriations as a fraction of a town's own identified free cash is comparable across
+# towns of any size, and it answers the version of the question that matters here: is
+# Lunenburg's balance built the same way everybody else's is?
+#
+# It is a different measure from PEER_MULTIPLES above and the two disagree in a useful way.
+# On the multiple -- 2025 against a town's own four-year average -- Lunenburg is the clear
+# outlier. On composition it is the highest of nine but inside a cluster. Both belong on
+# the page; neither is the percentage-of-budget figure, and the page must not imply it is.
+UNSPENT_LINE = 'Add Unencumbered/Unexpended Appropriations (CL#11)'
+PEER_DENOMINATOR_NOTE = (
+    'The Division of Local Services proof carries no denominator — no population, budget, '
+    'revenue or levy for any town, including Lunenburg. So free cash as a share of each '
+    'town’s operating budget cannot be computed from it, and is not shown. Composition is '
+    'shown instead, because a share compares across towns of different size and an '
+    'absolute dollar figure does not.')
+
+
+def peer_composition(year='2025'):
+    """Unspent appropriations as a share of each town's own identified free cash.
+
+    Comparable across towns because it is a ratio. Read beside PEER_MULTIPLES, not instead
+    of it: one measures how unusual this year was for that town, the other what the balance
+    is made of.
+    """
+    import csv as _csv, os as _os
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         'sources', 'data', 'free-cash-proof.csv')
+    if not _os.path.exists(path):
+        return []
+    got = {}
+    for r in _csv.DictReader(open(path)):
+        if r['year'] != year:
+            continue
+        d = got.setdefault(r['town'], {})
+        if r['role'] == 'identified_total':
+            d['identified'] = float(r['amount'])
+        elif r['role'] == 'component' and r['line'] == UNSPENT_LINE:
+            d['unspent'] = float(r['amount'])
+    out = [dict(town=t, identified=round(v['identified']), unspent=round(v['unspent']),
+                unspentShare=round(v['unspent'] / v['identified'], 4))
+           for t, v in got.items() if v.get('identified')]
+    return sorted(out, key=lambda x: -x['unspentShare'])
+
+
 def share(amount=CERTIFIED, base=BUDGET_BASE):
     """Free cash as a share of the operating budget."""
     return amount / base
@@ -458,6 +510,8 @@ def export(deficits, project_fn=None, levy_cap=0.025):
         certifiedRatio=CERTIFIED_RATIO,
         normalCertified=NORMAL_CERTIFIED, normalShare=round(NORMAL_SHARE, 4),
         peerMultiples=[dict(town=t, multiple=m) for t, m in PEER_MULTIPLES],
+        peerComposition=peer_composition(),
+        peerDenominatorNote=PEER_DENOMINATOR_NOTE,
         deficits=[dict(fy=fy, amount=a) for fy, a in deficits],
         ladder=[dict(target=t / 100, released=round(spendable(t / 100)),
                      covers=years_covered(deficits, t / 100))

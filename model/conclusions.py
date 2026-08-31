@@ -36,6 +36,34 @@ _COV_HI = _ath.fee_revenue(_ath.EFFECTIVE_ATHLETIC_FEE, mode='scaled') / _TRAVEL
 _LS_FLAT = _ath.self_funding_fee(_ath.PROGRAM_TOTAL_LEVEL_SERVICE, mode='flat')
 _LS_SCALED = _ath.self_funding_fee(_ath.PROGRAM_TOTAL_LEVEL_SERVICE, mode='scaled')
 
+
+def _ls_clause():
+    """What the full programme would take, when it can be reached at all.
+
+    `self_funding_fee` returns None when no fee ever raises the target, and the sentence
+    this feeds asserted a figure on the generous reading without checking. It rendered the
+    literal string "$None" on the live site, in a published conclusion, for as long as the
+    revenue curve has peaked below level service -- which is the whole time. A None is not a
+    missing number here; it is a finding, and it says something stronger than any figure
+    would: the ceiling is real and no price reaches past it.
+    """
+    peak = f'revenue peaks near ${_ath.PEAK_REVENUE:,.0f} at about ${_ath.PEAK_FEE:,}'
+    if _LS_FLAT is None and _LS_SCALED is None:
+        return (f'The fuller programme is not further off, it is unreachable: restoring '
+                f'level service costs ${_ath.PROGRAM_TOTAL_LEVEL_SERVICE:,} and no fee '
+                f'raises that on either reading, because {peak} and then falls as families '
+                f'drop out.')
+    if _LS_SCALED is None:
+        return (f'The fuller programme is further off: level service needs ${_LS_FLAT} a '
+                f'season on the cautious reading and is out of reach at any fee on the '
+                f'generous one, where {peak}.')
+    if _LS_FLAT is None:
+        return (f'The fuller programme is further off: level service needs ${_LS_SCALED} a '
+                f'season on the generous reading and is out of reach at any fee on the '
+                f'cautious one, where {peak}.')
+    return (f'The fuller programme is further off again: level service needs '
+            f'${_LS_SCALED}\u2013${_LS_FLAT} a season.')
+
 # Every sport, every band, every club, every art supply. Summed from the catalogue rather
 # than written down, so that adding a program cannot leave this figure describing a
 # district that no longer exists.
@@ -124,9 +152,7 @@ CONCLUSIONS = [
            'It is a range and not a number because the account collects more than the '
            'published fee schedule can explain, and nothing published says whether that '
            'is more players than we counted or surcharges we cannot see. '
-           f'The fuller programme is further off: level service needs ${_LS_SCALED} a '
-           'season on the generous reading of that gap and is out of reach at any fee on '
-           'the cautious one.'),
+           + _ls_clause()),
 
  dict(n=8, anchor='tax-base',
       headline='When your house is worth more, the schools get nothing.',

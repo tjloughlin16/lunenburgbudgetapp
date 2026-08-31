@@ -279,6 +279,39 @@ and it has to be checked like one.**
 
 ---
 
+## 14. After correcting a large error, re-examine everything it was explaining
+
+**A residual is a slush fund. It silently pays for every input you got wrong, and shrinking
+it presents the bill.**
+
+On 30 August the FY26 athletic fee was corrected from $250 to $325 — a right number from the
+wrong year. The calibration factor fell from 1.4520 to 1.1316 and the surcharge gap from
+$58,815 to $21,974. No published revenue figure needed to change, because the fee model is
+anchored to a measurement and the calibration absorbs the difference either way.
+
+What the correction actually did was make a *second*, older error visible. `SIBLING_MIX`
+assumes 30% of participations take a sibling discount; the district's own fee-category
+counts show about 7%. At a 45% unexplained residual an error that size is invisible. At 13%
+it is the obvious next question. The term for this is **error masking**: a dominant error
+conceals subordinate ones, so fixing the big one does not only improve the number — it
+changes what is *findable*.
+
+Two things follow, and both have already gone wrong here:
+
+- **Anchoring makes outputs robust and inputs untestable.** An input wrong by a factor of
+  four moved the published revenue figure 1.4%, because the calibration moved the other way.
+  Compensating errors. Nothing on the site would ever have flagged it, which is why the
+  inputs have to be checked directly rather than by whether the answer looks right.
+- **The prose that justified a choice outlives the number it rested on.** That commit moved
+  four figures and zero sentences, so the site went on publishing "45%" and an arithmetic
+  impossibility that no longer existed.
+
+So: after any correction, run `python3 scripts/build_show_your_work.py` and read the diff.
+It is computed from the model, so it states what the model now believes rather than what
+somebody wrote when it believed something else. `audit_provenance.py` fails if it is stale.
+
+---
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
@@ -298,6 +331,8 @@ arriving fresh.
     python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source
     python3 scripts/verify_athletics.py          # every figure in the athletics analysis
     python3 scripts/verify_free_cash_capital.py  # the capital section of the free cash analysis
+    python3 scripts/build_show_your_work.py       # regenerate the method document
+    python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
 
 ## The standing questions
 

@@ -294,10 +294,29 @@ Proposition 2½ levy limit, levy ceiling, actual levy, and excess capacity by ye
 - **Settles:** the app asserts the town levies to its limit every year, on the strength of
   one Assessors' hearing document from FY23. A DLS series would confirm or break it.
 
-### 8. Municipal Finance Trend Dashboard, Lunenburg
+### 8. Municipal Finance Trend Dashboard — Lunenburg **and the eight peer towns**
 
 Five-year indicators including free cash as a percentage of budget, which is exactly the
 comparison the reserve argument needs.
+
+**Widened on 30 August 2026, and it is now the most-requested missing figure on the free
+cash page.** The DLS proof we hold for nine towns carries **no denominator** — no
+population, budget, revenue or levy for any of them, ours included. So the one question
+everybody asks of that table, *how does each town sit against the same 5-7% band*, cannot
+be answered from it, and `show-your-work.md` §7 says so in place of a column it would
+otherwise have invented.
+
+What the proof does support is composition, because a share compares and an absolute
+dollar figure does not: unspent appropriations are 66.1% of Lunenburg's identified free
+cash against 11.7% to 64.2% across the other eight. That is published. It is a different
+measure and it must not be presented as the percentage-of-budget one.
+
+- **Where:** the same Databank, per town
+- **Want:** operating budget or total revenue for Ayer, Groton, Littleton, Lunenburg,
+  Shirley, Townsend, Upton, Uxbridge and Westford, 2021 to 2025 — enough to turn nine
+  absolute balances into nine ratios
+- **Settles:** whether Lunenburg is holding more or less than comparable towns relative to
+  what it spends, which is the actual question behind "is the town too conservative"
 
 ### 9. Lunenburg Financial Policies Manual, April 2024
 

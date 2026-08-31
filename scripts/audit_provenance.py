@@ -198,11 +198,21 @@ def freshness_check():
         after = hashlib.sha256(open(out, 'rb').read()).hexdigest()
         if before != after:
             shutil.copy2(keep, out)      # leave the tree as we found it
+    # The method document is generated from the same model, and it is nothing but figures.
+    # A stale copy of it is worse than a stale model.json, because a reader checking a
+    # number goes there first. Checked here rather than in its own remembered command, on
+    # the principle this project keeps re-learning: a check that does not run is not one.
+    doc = subprocess.run([sys.executable, 'scripts/build_show_your_work.py', '--check'],
+                         cwd=ROOT, capture_output=True, text=True)
     print('\nFRESHNESS')
     print(f"  model.json matches model/export.py: {'yes' if before == after else 'NO'}")
     if before != after:
         print('  committed model.json is stale — run: python3 model/export.py')
-    return before == after
+    print(f"  show-your-work.md matches the model: "
+          f"{'yes' if doc.returncode == 0 else 'NO'}")
+    if doc.returncode != 0:
+        print(f"  {doc.stdout.strip() or doc.stderr.strip()}")
+    return before == after, doc.returncode == 0
 
 
 def provenance_table():
@@ -259,8 +269,13 @@ if __name__ == '__main__':
     if not ok:
         print('FAILED — the expense base does not rebuild the published appropriation.')
         sys.exit(1)
-    if not fresh:
+    model_fresh, doc_fresh = fresh
+    if not model_fresh:
         print('FAILED — model.json is not what model/export.py produces.')
+        sys.exit(1)
+    if not doc_fresh:
+        print('FAILED — sources/analyses/show-your-work.md no longer matches the model.')
+        print('         Run: python3 scripts/build_show_your_work.py')
         sys.exit(1)
     if inert:
         # Free cash is allowed into the projection as a one-time subtraction. The moment it

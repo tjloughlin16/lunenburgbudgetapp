@@ -24,6 +24,12 @@ They differ by up to 59% on some lines. A growth rate measured from an actual to
 
 Only the special education rate is ours. The rest are the district’s own stated assumptions, a signed contract, or statute. `model.json` → `citations` says which is which for every headline figure.
 
+## How every one of those figures is computed
+
+[https://lunenburgbudgetproject.org/docs/analyses/show-your-work.md](https://lunenburgbudgetproject.org/docs/analyses/show-your-work.md) — **read this before reproducing any number on this site.** Fifteen sections, one per calculation: the projection itself, where each growth rate comes from, special education, out-of-district tuition, health insurance, free cash, athletic fees, the other levers, the cut cascade, the tax base and overrides, an assumption register, and what none of it can compute. Each section gives the inputs, the formula, a worked example in real dollars, and whether each figure is published, contractual, statutory, our measurement or our assumption.
+
+It is generated from the same model that produces `model.json`, so it cannot disagree with the site. Three things in it are most likely to be got wrong from the outside: the schools receive only about half of a dollar added to the town’s levy, not all of it; the special education classification is ours because the state has no account code for it; and out-of-district tuition is held flat deliberately, which is a finding rather than a missing rate.
+
 ## About the crawler
 
 Documents here were fetched by a crawler identifying itself as `Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; +https://lunenburgbudgetproject.org)`. It requests one file at a time with a pause between requests, backs off on failure, and takes only documents already linked from a public page.
@@ -50,11 +56,11 @@ If you administer one of these sites and would rather this stopped, or would rat
 
 ## Documents
 
-279 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+280 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
 - **Published by the town, the district and the state** — 74 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 170 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 35 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 36 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 

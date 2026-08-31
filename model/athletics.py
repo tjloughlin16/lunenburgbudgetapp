@@ -235,7 +235,75 @@ CURRENT_ATHLETIC_FEES = dict(
 # schedule into a single number per participation we need the mix of participations
 # by sibling rank, which the district does not publish. This is our assumption,
 # stated openly so it can be argued with:
-SIBLING_MIX = [('1st child', 0.70), ('2nd child', 0.25), ('3rd child', 0.05)]
+# MEASURED, from the district's own workbook, and it replaces an assumption that was out
+# by a factor of four.
+#
+# What it used to be: [('1st child', 0.70), ('2nd child', 0.25), ('3rd child', 0.05)] --
+# invented on 18 August, declared openly as ours, and supported by nothing. Searching all
+# 1,383 documents in the meeting archive finds "sibling" in two of them, and the only
+# athletics one is the School Committee vote of 26 February 2025, which sets the DISCOUNT
+# RATE at 25% and says nothing about how many participations receive it. Those are
+# different quantities -- how much comes off, against how many people get it -- and their
+# adjacency is the most likely explanation for where 30% came from. That is a hypothesis;
+# nothing tests it.
+#
+# What it is now: counted. `athletics-by-sport-fy24-fy26.xlsx`, from the Town by records
+# request on 17 June 2026, gives Full Pay / 2nd Sibling / 3rd sibling / Full Waiver /
+# Reduced Fee per sport per year, and the categories partition Total Athletes -- so it is
+# exactly this quantity rather than a proxy for it.
+#
+#     Full pay      993   78.44%
+#     2nd sibling   107    8.45%
+#     3rd sibling    13    1.03%
+#     Reduced fee    20    1.58%
+#     Full waiver   133   10.51%
+#
+# COVERAGE, stated rather than implied. 46 sport-years and 1,266 participations, being
+# every row whose five category cells sum to its own Total Athletes cell. Rows that do not
+# tie are excluded, because where they disagree there is no way to tell which cell is
+# wrong. Three reasons they disagree, and only the first is ours to fix:
+#   * the workbook mixes units -- Fall's total row multiplies counts by the fee and prints
+#     DOLLARS (22 x $140 = 3,080 at H26) while the rows beneath it are counts, and a few
+#     per-sport cells carry dollars in a count column (Field Hockey 24/25 reads 200)
+#   * some of its totals are simply off by one against the rows above them
+#   * the 25/26 fee-category columns are empty throughout, which is why the separate
+#     one-page count sheet had to exist at all
+# `scripts/extract_athletics_by_sport.py` publishes every mismatch to
+# sources/data/athletics-by-sport-reconciliation.csv rather than hiding or refusing them.
+#
+# The answer is stable however it is cut: 10.1% of participations took a sibling discount
+# in 23/24 and 9.1% in 24/25, and the separate FY26 count sheet says 6.9%. Nothing lands
+# near 30%.
+#
+# WHAT THIS DOES NOT ESTABLISH. Two years, and neither is the year the current fee schedule
+# applies to. If the new $400/$300/$225 schedule and the $1,500 family cap change how many
+# families enrol a second child, this mix moves and nothing here would show it.
+SIBLING_MIX = [('1st child', 0.9052), ('2nd child', 0.0845), ('3rd child', 0.0103)]
+# What it was, kept as a constant rather than only in the note above, so anything
+# describing the change interpolates it instead of quoting a number from prose.
+PRIOR_SIBLING_MIX = [('1st child', 0.70), ('2nd child', 0.25), ('3rd child', 0.05)]
+# The counted detail behind SIBLING_MIX, published so the mix can be added up by hand.
+# Every figure is from the tying rows described above.
+MEASURED_SPORT_YEARS = 46
+MEASURED_FEE_CATEGORIES = [
+    ('Full pay', 993), ('2nd sibling', 107), ('3rd sibling', 13),
+    ('Reduced fee', 20), ('Full waiver', 133),
+]
+MEASURED_CATEGORY_TOTAL = sum(v for _, v in MEASURED_FEE_CATEGORIES)
+MEASURED_SIBLING_SHARE = round(
+    sum(v for k, v in MEASURED_FEE_CATEGORIES if 'sibling' in k) / MEASURED_CATEGORY_TOTAL, 4)
+MEASURED_WAIVER_SHARE = round(
+    dict(MEASURED_FEE_CATEGORIES)['Full waiver'] / MEASURED_CATEGORY_TOTAL, 4)
+# The mix must be what the counts say, or one of the two has been edited without the other.
+assert abs(dict(SIBLING_MIX)['2nd child']
+           - dict(MEASURED_FEE_CATEGORIES)['2nd sibling'] / MEASURED_CATEGORY_TOTAL) < 5e-4
+assert abs(dict(SIBLING_MIX)['3rd child']
+           - dict(MEASURED_FEE_CATEGORIES)['3rd sibling'] / MEASURED_CATEGORY_TOTAL) < 5e-4
+
+SIBLING_MIX_BASIS = (
+    'Counted from the district\u2019s own by-sport workbook, FY2024 and FY2025: 46 '
+    'sport-years and 1,266 participations, being every row whose fee categories sum to '
+    'its own Total Athletes cell.')
 
 def _blend(tiers):
     """Weighted average fee per participation under SIBLING_MIX."""
@@ -267,6 +335,51 @@ PRIOR_EFFECTIVE_ATHLETIC_FEE = round(_blend(PRIOR_ATHLETIC_FEES['hs']))   # $214
 
 WAIVER_ASSUMPTION = 0.12
 
+# ---------------------------------------------------------------------------
+# The district's own fee-category counts, and what they say about the two
+# assumptions above. OBSERVED, and used in NO calculation here.
+# ---------------------------------------------------------------------------
+# `athletic-fee-counts-2025-2026.docx`, one page, headed ATHLETIC FEES 2025-2026, from the
+# Town by records request. The only source giving fee-category counts for that year -- the
+# workbook's columns for it are empty.
+#
+# They are published here rather than folded into the model because they do not reconcile
+# with the workbook and should not be silently adopted: they total 593 participations
+# against the workbook's 649 for the same year, they do not separate high school from
+# middle school, and the season labels disagree with each other -- Spring records a
+# "second sibling" where Fall and Winter record a "first".
+#
+# But the comparison they license is not close, and hiding it would be worse than
+# publishing it with its caveats. SIBLING_MIX assumes 30% of participations take a sibling
+# discount. These counts show about 7%. WAIVER_ASSUMPTION assumes 12%; they show about 13%.
+# One of our two invented inputs is nearly right and the other is out by a factor of four.
+FY26_FEE_CATEGORY_COUNTS = [
+    dict(season='Fall',   full_pay=176, reduced=8, sibling=14 + 2, waiver=33),
+    dict(season='Winter', full_pay=149, reduced=4, sibling=8 + 1,  waiver=26),
+    dict(season='Spring', full_pay=130, reduced=6, sibling=15 + 1, waiver=20),
+]
+FY26_COUNTED_PARTICIPATIONS = sum(
+    c['full_pay'] + c['reduced'] + c['sibling'] + c['waiver']
+    for c in FY26_FEE_CATEGORY_COUNTS)
+FY26_COUNTED_SIBLING_SHARE = round(
+    sum(c['sibling'] for c in FY26_FEE_CATEGORY_COUNTS) / FY26_COUNTED_PARTICIPATIONS, 4)
+FY26_COUNTED_WAIVER_SHARE = round(
+    sum(c['waiver'] for c in FY26_FEE_CATEGORY_COUNTS) / FY26_COUNTED_PARTICIPATIONS, 4)
+# Our assumed share of participations taking ANY sibling discount, for comparison.
+# Share of participations taking any sibling discount. Named `ASSUMED_` when it was one;
+# it is measured now, and the old name is kept only because removing it would be a
+# silent break for anything reading it.
+SIBLING_DISCOUNT_SHARE = round(sum(w for r, w in SIBLING_MIX if r != '1st child'), 4)
+ASSUMED_SIBLING_SHARE = SIBLING_DISCOUNT_SHARE   # deprecated alias
+FEE_COUNTS_SOURCE = ('athletic-fee-counts-2025-2026.docx, obtained from the Town by '
+                     'records request, 17 June 2026. The town\u2019s own filename is '
+                     'ATHLETIC FEES 2025.docx.')
+FEE_COUNTS_CAVEAT = (
+    'These counts total {counted} participations against the workbook\u2019s {workbook} for '
+    'the same year, do not separate high school from middle school, and use season labels '
+    'that disagree with each other. They establish the order of magnitude and not the '
+    'figure.')
+
 
 def _revenue(fee, payers=None):
     payers = CHARGEABLE_PARTICIPATIONS if payers is None else payers
@@ -287,7 +400,21 @@ ESTIMATED_FEE_INCREASE_VALUE = (
 # year-end reconciliation (xlsx/school-funds-fy26.xlsx, sheet "Athletics Revolving",
 # period 1-13). This is a measured figure from a ledger-derived source, not an estimate.
 MEASURED_FY26_FEE_REVENUE = 188944.46        # net of $5,664.99 of refunds
-MEASURED_FY26_FEE_REVENUE_GROSS = 194609.45  # HS 167,511.49 + MS 27,097.96
+# The two sides of the gross, named rather than left in a comment, because the per
+# participation figures below are the whole of the argument about what the gap is and a
+# figure that lives only in a comment cannot be recomputed when something moves.
+MEASURED_FY26_HS_GROSS = 167511.49
+MEASURED_FY26_MS_GROSS = 27097.96
+MEASURED_FY26_FEE_REVENUE_GROSS = 194609.45   # as the reconciliation prints it
+# The halves are transcribed from the same sheet as the total, so they must tie to it.
+# Written as an assertion against the PRINTED total rather than by summing the halves into
+# it: floating point makes 167,511.49 + 27,097.96 land a hair under, and a published
+# figure that acquires a tail because of how we stored it is exactly the kind of drift
+# rule 13 is about.
+assert abs((MEASURED_FY26_HS_GROSS + MEASURED_FY26_MS_GROSS)
+           - MEASURED_FY26_FEE_REVENUE_GROSS) < 0.005, (
+    'the high school and middle school receipts no longer sum to the gross the '
+    'reconciliation prints')
 
 # Participations in FY26 itself, from the district's own workbook. The SPORTS list above
 # is the FY27 planning roster and is the wrong denominator for a FY26 measurement.
@@ -311,22 +438,38 @@ MODELLED_FY26_FEE_REVENUE = round(
 # Kept for comparison: what the model used to produce, pricing FY26 on the FY25 schedule.
 MODELLED_FY26_ON_STALE_SCHEDULE = _revenue(PRIOR_EFFECTIVE_ATHLETIC_FEE, PARTICIPATIONS)
 
-# And they do not agree. The model is 31% low, or equivalently the fund collected 45%
-# more than the published schedule and our sibling/waiver assumptions can account for.
+# And they do not agree: the model comes in below what the fund reports collecting, and
+# the shortfall is FEE_CALIBRATION below.
 #
-# WHY IS NOT ESTABLISHED. The measurement implies $287.82 per high school participation
-# and $248.60 per middle school participation, against a published first-child fee of
-# $250 falling to $85 for a third child. A blended rate cannot exceed the undiscounted
-# top tier, so at least one input is wrong: either participations are undercounted, or
-# there are sport surcharges -- hockey and skiing normally carry them -- that are not in
-# any fee schedule we hold. We cannot tell which, and the two have different consequences
-# for what a fee increase is worth.
+# THIS PARAGRAPH USED TO SAY SOMETHING STRONGER AND IT WAS STALE. It said the model was
+# 31% low, and that the measurement implied a per-participation rate ABOVE the
+# undiscounted top tier -- an arithmetic impossibility, and therefore proof that an input
+# was wrong. Both statements were computed when this module priced FY26 at $250, which was
+# the FY25 schedule. With the fee corrected to what the School Committee actually voted,
+# neither holds: the implied rates below sit UNDER their published top tiers, on both
+# sides. Nothing about the fund's figures changed; our own input did. It is written out
+# here rather than deleted because "the model is 31% low" was quoted for a while.
+#
+# WHAT IS ACTUALLY LEFT, AND IT IS NOT ESTABLISHED. The gap is now the ordinary kind: our
+# assumed sibling mix and waiver rate together discount the published schedule by more
+# than the fund's receipts imply. Fewer waivers, fewer siblings, sport surcharges outside
+# the schedule -- hockey and skiing normally carry them -- or participations undercounted
+# all fit, and we cannot tell which. They have different consequences for what a fee
+# increase is worth, which is why two readings are carried below rather than one.
 #
 # So the model is CALIBRATED to the measurement rather than corrected, and the factor is
 # named rather than buried. Anchoring on the measured figure is right because it is the
 # only observed one; carrying the factor forward to a fee this town has never charged is
 # an assumption, and it is labelled as one everywhere it is used.
 FEE_CALIBRATION = round(MEASURED_FY26_FEE_REVENUE / MODELLED_FY26_FEE_REVENUE, 4)
+
+# What the fund's receipts imply each participation paid, against the rate the School
+# Committee voted for that year. Both sit under their top tier, which is what makes the
+# residual an ordinary disagreement about discounts rather than an impossibility.
+MEASURED_FY26_HS_PER_PARTICIPATION = round(
+    MEASURED_FY26_HS_GROSS / FY26_HS_PARTICIPATIONS, 2)
+MEASURED_FY26_MS_PER_PARTICIPATION = round(
+    MEASURED_FY26_MS_GROSS / FY26_MS_PARTICIPATIONS, 2)
 
 # Kept under its old name because callers and the app both read it, but it is now the
 # measurement rather than our estimate of it.

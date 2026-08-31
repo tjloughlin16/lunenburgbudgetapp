@@ -23,6 +23,58 @@ read, and it has to match the git tag actually deployed.
 """
 
 RELEASES = [
+    dict(
+        tag='v8',
+        date='2026-08-30',
+        title='Show your work — every calculation, and every assumption behind it',
+        short='the method, written out',
+        headline='A single document sets out how every figure on this site is arrived at, '
+                 'names each one as published, contractual, statutory, measured or ours, '
+                 'and ranks every assumption by how much the answer moves if it is wrong.',
+        changes=[
+            'Show your work is written for the people who have to decide something with '
+            'it — Finance Committee, Town Manager, Select Board, School Committee. '
+            'Fifteen sections and two appendices: the projection worked through line by '
+            'line, where each growth rate comes from, special education, out-of-district '
+            'tuition, health insurance, free cash, athletic fees, the cut cascade, the tax '
+            'base and overrides. Every section ends with what we assumed and what would '
+            'settle it.',
+
+            'It is generated from the model rather than written beside it, so it cannot '
+            'drift from the figures the site publishes. A stale copy fails the build '
+            'rather than being discovered by a reader.',
+
+            'Section 12 is the one to read if you read nothing else: every assumption in '
+            'the model, sorted by how much it moves the gap, with a plain statement of '
+            'what backs each. Two of them are backed by nothing, and are labelled that '
+            'way. State aid is assumed to grow at 2% and local receipts at 1%, and '
+            'neither figure has a stated source or a derivation. State aid is worth '
+            '$63,992 of FY28 gap for every point it moves — the second largest revenue '
+            'lever in the model. Nothing about it has been changed; it has been named.',
+
+            'The athletics sibling discount is no longer an assumption. It was 30% of '
+            'participations, invented and supported by nothing — the School Committee '
+            'vote of 26 February 2025 sets the discount RATE at 25% and says nothing '
+            'about how many families receive it. The district’s own by-sport workbook '
+            'records the fee category of every participation, and across 1,266 of them it '
+            'is 9.5%. The average fee per participation moves from $366 to $390, and '
+            'self-funding athletics with the buses put back moves from $730–$845 a season '
+            'to $785–$855.',
+
+            'That correction barely moved the revenue figures, and the reason is worth '
+            'knowing: the fee model is anchored to what the athletics fund actually '
+            'collected, so an input wrong by a factor of four was being absorbed by the '
+            'adjustment sitting next to it. Nothing in the output looked wrong. The figure '
+            'that did improve is the part of the fund’s income the published fee schedule '
+            'cannot explain, which is now 6.73% rather than 13.2%.',
+
+            'A published conclusion had been rendering the words "$None" where a figure '
+            'should have been. No fee reaches the cost of the full athletics programme — '
+            'revenue peaks near $373,322 at about $1,185 a season, against $451,830 — so '
+            'the honest sentence is that it is unreachable at any price, and that is what '
+            'it now says.',
+        ],
+    ),
     # Five builds shipped free cash over two days -- the state's proof, the draw-down page,
     # the override contrast, the standing policy, and what it costs capital. They are one
     # release note, not five. A reader coming back does not care which afternoon a piece of
