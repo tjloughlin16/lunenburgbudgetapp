@@ -229,6 +229,13 @@ other.
 And a sha256 on all of it, because a Drive file can be replaced in place without its URL
 changing.
 
+**A link is not checked until something has been downloaded from it.** A URL whose title
+matches, whose folder is right and whose date lines up is a *candidate*. The check is to
+fetch it and match the sha256 against our copy — which is rule 13 applied to addresses,
+because a plausible link is a derived thing being quoted as an observed one. Six district
+documents once looked like they had changed when the only thing wrong was that our fetcher
+did not understand Drive's `open?id=` form and was comparing a sign-in page to a PDF.
+
 **When adding a source, add all of this at the same time.** Retrofitting provenance is how
 43 of our primary documents ended up with no address at all: they were gathered before the
 mirror existed and nobody wrote down where they came from. The count is on the sources
@@ -326,6 +333,9 @@ arriving fresh.
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present
+    python3 scripts/check_source_links.py   # does the publisher's own copy still open
+    python3 scripts/verify_source_copies.py # ...and if it opens, is it still the same bytes
+    python3 scripts/verify_workbook_twins.py # the untraced FY27 workbook against the traced one
     python3 model/export.py                 # regenerate model.json after any model/ change
     python3 scripts/classify_document_basis.py   # what produced each document's figures
     python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source

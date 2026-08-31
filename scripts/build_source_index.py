@@ -64,6 +64,13 @@ ORIGINS = [
     {'id': 'school', 'name': 'Lunenburg Public Schools', 'url': SCHOOL_HUB},
     {'id': 'town', 'name': 'Town of Lunenburg', 'url': TOWN_HUB},
     {'id': 'dese', 'name': 'Massachusetts DESE', 'url': 'https://www.doe.mass.edu/'},
+    # The free cash proofs were filed under DESE, which is the wrong department: they are
+    # the Department of Revenue's, and the distinction is not cosmetic. DESE sets Chapter
+    # 70; DOR certifies free cash. A reader tracing a figure needs to be sent to the right
+    # agency, and the report is one form submission away rather than one link.
+    {'id': 'dls', 'name': 'Massachusetts DOR, Division of Local Services',
+     'url': 'https://dls-gw.dor.state.ma.us/gateway/dlspublic/'
+            'certificationfreecashpublicreport/certificationfreecashpublic'},
     {'id': 'peers', 'name': 'Neighboring districts', 'url': None},
     {'id': 'request', 'name': 'Obtained from the Town by records request', 'url': None},
     {'id': 'us', 'name': 'Built by this project', 'url': None},
@@ -83,11 +90,19 @@ SECTIONS = {
         title='Published by the town, the district and the state',
         blurb='Primary documents. We did not write any of these and we did not commission '
               'them. {byrequest} came from the Town by records request and say so on their '
-              'row; the rest were already public. {linked} of them link back to where the '
-              'publisher put them \u2014 the others were gathered before the mirror existed '
-              'and their original address was not recorded, which is a gap on our side and '
-              'not the town\u2019s. Where a document is unreadable or says something '
-              'inconvenient, it is here anyway.'),
+              'row; {given}; the rest were already public. {linked} of '
+              'them link back to the exact '
+              'file the publisher put up, and {verified} of those addresses have been '
+              'checked the only way an address can be \u2014 by downloading what is there '
+              'now and matching it against our copy, byte for byte. A link that merely '
+              'looks right is not a source. {unlinked} still have no address of their own, '
+              'and they are three different things: state reports built on form '
+              'submission, where the page and the jurisdiction are the whole answer; a '
+              'table we built here from a document that is itself listed above; and '
+              'documents gathered before the mirror existed, where nobody wrote down '
+              'where they came from. Only the last is a gap, it is a gap on our side and '
+              'not the town\u2019s, and it is named in notes/DATA-WANTED.md. Where a '
+              'document is unreadable or says something inconvenient, it is here anyway.'),
     'reference': dict(
         title='Everything else the district and the town publish',
         blurb='Mirrored here so it is available and so no figure has to be looked up over '
@@ -123,6 +138,13 @@ GROUPS = [
              'Data-identical to the file above across every budget column; the differences '
              'are an unused scratch column and one ratio row. Kept so anyone working from '
              'the Finance Committee copy can confirm they match.'),
+            ('xlsx/PROVENANCE.md', 'Where the three FY27 workbooks came from', 2,
+             'Written by us. The workbooks carry the site\u2019s most load-bearing figures '
+             'and the one the model reads has no recorded address. This records what the '
+             'files say about themselves \u2014 all three created by the district\u2019s '
+             'Business Administrator, one last saved by the Finance Committee member who '
+             'sent it \u2014 and, kept separate, what that does not establish: metadata '
+             'says who authored a file, never who gave it to us.'),
             ('xlsx/fy27-budget-projection-2-24-26.xlsx', 'Earlier budget workbook, 24 February 2026', 1,
              'The 24 February version, before the restoration list was revised. Useful only '
              'for tracking what changed between drafts.'),
@@ -303,7 +325,7 @@ GROUPS = [
              'administrator contract is public — a real gap.'),
             ('contracts/pdf/dese-administrator-contract.pdf', 'Administrator contract template', 1,
              'Also an expired DESE template, 2019–22.'),
-            ('pdf/health-insurance-rates-2025.pdf', 'Health insurance rates, 2025', 3,
+            ('pdf/health-insurance-rates-2025.pdf', 'Health insurance rates, 1 July 2026', 3,
              'Plan-by-plan premiums and the town’s 75/25 contribution split — the basis '
              'for every health insurance figure here.'),
         ],
@@ -365,7 +387,7 @@ GROUPS = [
         ],
     },
     {
-        'section': 'theirs', 'id': 'dls-free-cash', 'origin': 'dese',
+        'section': 'theirs', 'id': 'dls-free-cash', 'origin': 'dls',
         'title': 'Free cash, certified — Lunenburg and eight comparable towns',
         'blurb': 'The Division of Local Services publishes a Free Cash Proof for every '
                  'community: the year-end calculation of what a town may appropriate '
@@ -668,11 +690,22 @@ GROUPS = [
             ('data/link-status.csv',
              'Whether each source document is still public', 2,
              'For every archived document that records where its publisher put it, '
-             'whether that address still opens \u2014 checked 29 August 2026. It mostly '
-             'does not: 57 of 184 returned a Google sign-in wall, every one of them a '
-             'Drive or Docs link, while the town\u2019s own web server answered 81 of 81. '
-             'This is the archive\u2019s reason for existing, measured. Rebuild with '
-             'scripts/check_source_links.py.'),
+             'whether that address still opens. On 29 August 2026 it mostly did not: 57 '
+             'of 184 returned a Google sign-in wall, every one of them a Drive or Docs '
+             'link, while the town\u2019s own web server answered 81 of 81. The district '
+             'was asked to reopen them and did \u2014 on 31 August the same 187 came back '
+             '186 open. Both readings are the archive\u2019s reason for existing, '
+             'measured. Rebuild with scripts/check_source_links.py.'),
+            ('data/copy-status.csv',
+             'Whether the publisher\u2019s copy is still our copy', 2,
+             'The question underneath the one above. A link can still open and serve a '
+             'different document \u2014 a Drive file can be replaced in place without its '
+             'URL changing, and nothing in a link check would notice. So every address is '
+             'fetched and the result compared to our copy by sha256. It also separates '
+             'the ways bytes can differ without the document differing: a Google Doc is '
+             're-zipped on every export, and a PDF can be re-saved with a heading\u2019s '
+             'line-break in a new place. Only one of those is a change. Rebuild with '
+             'scripts/verify_source_copies.py.'),
             ('data/variance-by-group.csv',
              'Budget against actual, every group and year', 3,
              'The whole-budget sweep behind analyses/budget-vs-actual.md \u00a72b: every '
@@ -821,15 +854,55 @@ def link_status():
 LINKS = None            # populated once in main(); see link_status()
 
 
+# Whether the publisher's copy is still OUR copy.
+#
+# The link check answers "does it open". This answers the question underneath it: if it
+# opens, are the bytes the same? A Drive file can be replaced in place without its URL
+# changing, and nothing in a link check would notice.
+#
+# Written by scripts/verify_source_copies.py. Read here rather than measured, for the same
+# reason as the link status: it is one download per document.
+def copy_status():
+    path = os.path.join(SRC, 'data/copy-status.csv')
+    if not os.path.exists(path):
+        return {}
+    # Best state per path. A document with two published addresses is verified if either
+    # of them served it -- the question is whether our copy is the publisher's copy, and
+    # one matching address answers that. The CSV keeps every row.
+    rank = ['identical', 'resaved', 'reflowed', 'repackaged', 'differs', 'restricted',
+            'unreachable']
+    best = {}
+    with open(path, newline='') as fh:
+        for r in csv.DictReader(fh):
+            cur = best.get(r['path'])
+            if cur is None or rank.index(r['state']) < rank.index(cur):
+                best[r['path']] = r['state']
+    return best
+
+
+COPIES = None           # populated once in main(); see copy_status()
+
+
 
 # Rule 12: a source link must reach the FILE, not the page that lists it. An index gets
 # reorganised and the document a figure rests on stops being findable from it.
 #
 # Checked on every build rather than trusted, because the failure is silent -- a link that
 # still resolves, to a page that no longer holds what it used to.
+#
+# Two shapes were added on 31 August 2026. Neither is an inference from the URL's look:
+# each was added only after the address was fetched and the bytes it returned matched our
+# copy's sha256, which is the same standard the links themselves are held to.
+#
+#   AgendaCenter/ViewFile/...  the town serves meeting documents from here rather than
+#                              DocumentCenter, and it is a file, not an index
+#   educatorcontractsdownload  DESE returns the contract PDF itself; the org code and the
+#                              contract type are both in the query string
 FILE_LINK = re.compile(
     r'(/file/d/[\w-]+|open\?id=[\w-]+|/(document|spreadsheets|presentation)/d/[\w-]+'
-    r'|/DocumentCenter/View/\d+|\.(pdf|xlsx|xls|csv|docx|txt)(\?|$)'
+    r'|/DocumentCenter/View/\d+|/AgendaCenter/ViewFile/\w+/_[\w-]+'
+    r'|educatorcontractsdownload\.aspx\?[^\s]*orgcode='
+    r'|\.(pdf|xlsx|xls|csv|docx|txt)(\?|$)'
     r'|/resource/[\w-]{9}\.|/d/[\w-]{9}$)', re.I)
 
 # Addresses that are as deep as they go. DESE builds these reports on form submission, so
@@ -839,6 +912,11 @@ FORM_ONLY = {
     'https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx':
         'DESE generates this on submission — district 01620000, one year per request. '
         'No direct file URL exists.',
+    'https://dls-gw.dor.state.ma.us/gateway/dlspublic/'
+    'certificationfreecashpublicreport/certificationfreecashpublic':
+        'The DLS Gateway builds the free cash report on submission — jurisdiction and '
+        'fiscal year chosen from dropdowns, held in session. There is no file URL. '
+        'Lunenburg is 162; the eight comparison towns are all on the same list.',
 }
 
 
@@ -885,6 +963,106 @@ def sha(path):
 # This is the place to add a link for any of the primary sources that still lack one. The
 # blurb on the sources page counts them, so the number goes down as entries are added.
 SOURCE_URLS = {
+    # --- Verified against the publisher, 31 August 2026 -------------------------------
+    #
+    # Every link in this block but two was checked the only way a link can be: the file
+    # was downloaded from it and its sha256 compared to our copy, and every one of those
+    # matched to the byte. The two exceptions are the non-affiliated salary schedule and
+    # benefits, which are still behind a sign-in wall; they are marked where they sit and
+    # they are the only entries here given without the bytes having been matched.
+    #
+    # A link that merely looks right is rule 13's exact failure -- something derived quoted
+    # as though it were observed -- so nothing else goes in here on the strength of a
+    # matching title. `scripts/verify_source_copies.py` re-runs the comparison.
+    #
+    # The occasion for adding them: the district reopened its Google Drive. On 29 August
+    # 2026, 57 of 187 upstream links returned a sign-in wall; on 31 August, 1 did. What
+    # had been unverifiable became checkable, and 82 of the 87 mirrored district documents
+    # came back byte-identical to the copies archived on 17 August. (Of the other five,
+    # three are Google Docs that re-zip on export, one is the same presentation re-saved
+    # under a second Drive id, and one is the 2020 hearing notice that is still walled.)
+
+    # School employee contracts, from the district's HR page. The anchor text on that
+    # page is the label; the file is what the sha matched.
+    'contracts/pdf/custodial-2023-2026.pdf':
+        'https://drive.google.com/file/d/1TEAfls-FpbxdztLzjlmUIuXYdO-DUcOp/view',
+    'contracts/pdf/custodial-moa-2026.pdf':
+        'https://drive.google.com/file/d/1sQpGjV0WqURuhcmde6C8qZkrsVoOMJCn/view',
+    'contracts/pdf/paraprofessional-fy26-fy28.pdf':
+        'https://drive.google.com/file/d/1RIXSUui7D-dSglzXg_yhQRrdXooNRVsc/view',
+    'contracts/pdf/paraprofessional-salary-fy26-fy28.pdf':
+        'https://drive.google.com/file/d/1NCXXh3kcYwWamsZu4sJkg6BKSbnJrD2J/view',
+    # Posted by the district under "Non-affiliated Employees:" and still behind a Drive
+    # sign-in wall on 31 August, when everything on the budget page had reopened. So the
+    # address is recorded and the bytes are NOT claimed to have been checked: these two
+    # are the only sources here whose link we give without having matched it. Our copies
+    # were taken from these links on 20 August 2026.
+    'contracts/pdf/nonaffiliated-salary-schedule.pdf':
+        'https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view',
+    'contracts/pdf/nonaffiliated-benefits.pdf':
+        'https://drive.google.com/file/d/0B-TXWy9uLFrVZlRWd0ctTjg0ZWs/view',
+    # DESE publishes the contracts districts file with it. Generated per org code and
+    # type, but the URL carries both, so it is a file address and not a form.
+    'contracts/pdf/dese-teacher-contract.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01620000&type=T',
+    'contracts/pdf/dese-administrator-contract.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01620000&type=A',
+    'contracts/pdf/dese-superintendent-contract.pdf':
+        'https://profiles.doe.mass.edu/statereport/'
+        'educatorcontractsdownload.aspx?orgcode=01620000&type=S',
+
+    # Neighboring districts. Four of the six are hosted by somebody other than the
+    # district -- two content networks and two member towns' own document centres --
+    # which is why none of these could be found from a district budget page.
+    'peers/groton-dunstable-fy27-budget-book.pdf':
+        'https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/'
+        '2198/Gdrsd/a9c839f0-1ed0-4e9a-b125-32a1c58ca85d/Budget-Book-FY27-01.28.26.pdf',
+    'peers/ashburnham-westminster-fy27-presentation.pdf':
+        'https://files.smartsites.parentsquare.com/6739/'
+        'ashburnham_westminster_budget27_presentation_1.pdf',
+    'peers/ashburnham-westminster-fy27-detail.pdf':
+        'https://files.smartsites.parentsquare.com/6739/fy27_budget_detail.pdf',
+    'peers/ayer-shirley-fy27-expenses.pdf':
+        'https://www.ayer.ma.us/DocumentCenter/View/13478',
+    'peers/wachusett-fy27-budget-presentation.pdf':
+        'https://www.rutlandma.gov/DocumentCenter/View/3583',
+    'peers/north-middlesex-finance-subcommittee.pdf':
+        'https://resources.finalsite.net/images/v1764774508/nmrsdorg/'
+        'bregkjqfing6b9eyfqzz/2025-12-01-FinancePacket.pdf',
+
+    # The town's own web server, which has never lost a link: 81 of 81 on 29 August and
+    # again on 31 August.
+    'pdf/town-2026-election-unofficial-results.pdf':
+        'https://www.lunenburgma.gov/DocumentCenter/View/4193',
+    'pdf/tax-classification-fy23.pdf':
+        'https://www.lunenburgma.gov/DocumentCenter/View/138',
+    # The town publishes this in AgendaCenter rather than DocumentCenter, and our own
+    # meeting archive holds the identical file at the same address.
+    'pdf/assessors-agenda-11-19-2025.pdf':
+        'https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11192025-7512',
+    # The town's own name for this file is "Health Insurance Rates July 1, 2026". Ours
+    # says 2025 and is wrong; the memo inside is dated 21 April 2026 and sets the rates
+    # for the plan year beginning 1 July 2026. The catalogue title has been corrected;
+    # the filename is left alone because it is what every prior figure was read from.
+    'pdf/health-insurance-rates-2025.pdf':
+        'https://www.lunenburgma.gov/DocumentCenter/View/225',
+
+    # DESE's preliminary FY27 Chapter 70 summary -- the Governor's budget figures, not a
+    # final appropriation. Which matters: rule 11 turns on Chapter 70 being set in the
+    # Governor's budget rather than by anything Lunenburg does.
+    'xlsx/ch70-fy27-summary.xlsx':
+        'https://www.doe.mass.edu/finance/chapter70/fy2027/p-summary-district.xlsx',
+
+    # The superseded athletics fee schedule, still the only one posted publicly. Hosted
+    # by the schedule vendor rather than the school -- an address that outlives no
+    # reorganisation, which is exactly why our copy exists.
+    'pdf/lhs-athletics-faq.pdf':
+        'https://tts-livesite.rschooltoday.com/sites/lunenburghs.rschoolteams.com/'
+        'files/files/Private_User/jbunnell/Frequently%20Asked%20Questions.pdf',
+
+    # --- Recorded earlier ------------------------------------------------------------
     'dese/district-spending-categories.csv':
         'https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv'
         '?DIST_CODE=01620000&$limit=5000',
@@ -893,6 +1071,28 @@ SOURCE_URLS = {
     # hand on 9 March 2026, which is why the link is to the data rather than to a file.
     'xlsx/dese-all-districts.xlsx':
         'https://educationtocareer.data.mass.gov/d/er3w-dyti',
+}
+
+
+# An address that is not a URL.
+#
+# Rule 12 asks for "where it came from, as deeply as it goes", and is explicit that a
+# document which did not come off a website still has an address: a records request and
+# its date, an email and who sent it, a meeting packet. So these are not gaps waiting for
+# a link. They are the answer, in the form the answer takes.
+#
+# **On naming a person.** The records request in sources/records-request-2026-06/
+# deliberately does NOT name the resident who made it, and that is not inconsistent with
+# naming somebody here. The distinction is the capacity they acted in. A private resident
+# asking the town a question is not part of any address a reader needs; a member of the
+# Finance Committee circulating a budget workbook is acting as a town official, and which
+# official is exactly the thing that tells a reader what the document is. Where the
+# capacity is private, the role goes in and the name stays out.
+PROVIDED_BY = {
+    'xlsx/fy27-budget-projection-3-25-26.xlsx':
+        'Sent directly to this project by Ana Lockwood, a member of the Lunenburg Finance '
+        'Committee, under her own filename \u201cFY27 School Department Budget Projection '
+        'as of 3.25.26\u201d. Not downloaded from a public page.',
 }
 
 
@@ -1051,8 +1251,9 @@ def build_corpus():
 def main():
     catalogued, groups, missing = set(), [], []
 
-    global LINKS
+    global LINKS, COPIES
     LINKS = link_status()
+    COPIES = copy_status()
     known_upstream = upstream_by_hash()
 
     for g in GROUPS:
@@ -1078,12 +1279,19 @@ def main():
             # A hand-recorded address wins: it is the endpoint we actually
             # fetched, not a copy of the same bytes found somewhere else.
             link = SOURCE_URLS.get(rel) or known_upstream.get(sha(path))
+            given = PROVIDED_BY.get(rel)
             st = LINKS.get(rel)
             items.append({
                 'path': rel, 'title': title, 'stars': stars, 'what': what,
                 **({'byRequest': True} if by_request else {}),
                 **({'upstream': link} if link else {}),
                 **({'upstreamRestricted': True} if st and not st[0] else {}),
+                # When the link was last tried, from the check itself rather than typed
+                # into the component. The page used to say "as of 29 Aug 2026" in JSX; it
+                # was still saying it after the district reopened everything on 31 August,
+                # which is rule 2 in the smallest possible form.
+                **({'upstreamCheckedOn': st[2]} if st and not st[0] else {}),
+                **({'providedBy': given} if given else {}),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': served,
                 'url': elsewhere or ('/docs/' + rel),
@@ -1160,11 +1368,40 @@ def main():
     restricted = sum(1 for i in all_items if i.get('upstreamRestricted'))
     linked = sum(1 for g in groups if g['section'] == 'theirs'
                  for i in g['items'] if i.get('upstream'))
+    # The remainder, counted rather than described. On 31 August 2026 this dropped from 57
+    # to 16 in one pass, and the sentence that used to explain the 57 -- "gathered before
+    # the mirror existed" -- had stopped being true of most of what was left. A count that
+    # moves under a fixed explanation is rule 14 in miniature.
+    # A document handed over by a named official has an address; it just is not a URL.
+    # Counting it as unlinked would report a gap that has been closed.
+    # Built as a phrase rather than a number dropped into a fixed sentence, because the
+    # sentence has to read either way and there is currently exactly one of these.
+    n_given = sum(1 for g in groups if g['section'] == 'theirs'
+                  for i in g['items'] if i.get('providedBy'))
+    given_count = (
+        'one more was handed over by somebody acting in a town role, and they are named '
+        'on its row' if n_given == 1 else
+        f'{n_given} more were handed over by people acting in a town role, each named on '
+        'the row')
+    unlinked = sum(1 for g in groups if g['section'] == 'theirs'
+                   for i in g['items']
+                   if not i.get('upstream') and not i.get('byRequest')
+                   and not i.get('providedBy'))
+    # Counted, not claimed. "Repackaged", "resaved" and "reflowed" are the same document
+    # arriving in a different container -- a Google Doc re-zipped on export, a PDF re-saved
+    # by another producer, a text run split in a different place -- and they count as
+    # verified because the content matched. "Differs" does not, and neither does a link
+    # nobody has been able to fetch.
+    verified = sum(1 for g in groups if g['section'] == 'theirs'
+                   for i in g['items']
+                   if COPIES.get(i['path']) in ('identical', 'repackaged', 'resaved',
+                                                'reflowed'))
     ref_items = [i for g in groups if g['section'] == 'reference' for i in g['items']]
     ref_overlap = sum(1 for i in ref_items if i.get('alsoUsed'))
     sections = {
         k: dict(v, blurb=v['blurb'].format(
             byrequest=by_request_count, total=len(ref_items), linked=linked,
+            unlinked=unlinked, verified=verified, given=given_count,
             overlap=ref_overlap, unused=len(ref_items) - ref_overlap))
         for k, v in SECTIONS.items()
     }

@@ -16,6 +16,40 @@ arithmetic before being used; see "Verification" at the end.
 
 ---
 
+## Where each file came from, one address each
+
+The two pages above are indexes. Rule 12 asks for the file, so on **31 August 2026** every
+contract here was re-fetched from its own address and the result compared to our copy by
+sha256. Seven matched to the byte. Two could not be fetched at all, and that is recorded
+rather than papered over.
+
+| our copy | the publisher's address | checked |
+|---|---|---|
+| `pdf/custodial-2023-2026.pdf` | [Custodial 2023-2026](https://drive.google.com/file/d/1TEAfls-FpbxdztLzjlmUIuXYdO-DUcOp/view) | byte-identical |
+| `pdf/custodial-moa-2026.pdf` | [MOA Custodial AFMCSE Council 93 7-29-26](https://drive.google.com/file/d/1sQpGjV0WqURuhcmde6C8qZkrsVoOMJCn/view) | byte-identical |
+| `pdf/paraprofessional-fy26-fy28.pdf` | [Paraprofessional Contract FY26-FY28](https://drive.google.com/file/d/1RIXSUui7D-dSglzXg_yhQRrdXooNRVsc/view) | byte-identical |
+| `pdf/paraprofessional-salary-fy26-fy28.pdf` | [Paraprofessional Salary Schedule FY26-FY28](https://drive.google.com/file/d/1NCXXh3kcYwWamsZu4sJkg6BKSbnJrD2J/view) | byte-identical |
+| `pdf/dese-teacher-contract.pdf` | [DESE educator contracts, org 01620000, type T](https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=T) | byte-identical |
+| `pdf/dese-administrator-contract.pdf` | [same, type A](https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=A) | byte-identical |
+| `pdf/dese-superintendent-contract.pdf` | [same, type S](https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=S) | byte-identical |
+| `pdf/nonaffiliated-salary-schedule.pdf` | [Salary Schedule](https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view) | **not checked — sign-in wall** |
+| `pdf/nonaffiliated-benefits.pdf` | [Benefits](https://drive.google.com/file/d/0B-TXWy9uLFrVZlRWd0ctTjg0ZWs/view) | **not checked — sign-in wall** |
+| `data/lea-teacher-salary-schedule.csv` | built by us from the FY25 grid and the contract's own multipliers — see Verification | n/a |
+
+**The two non-affiliated files are the weakest provenance in this directory and should be
+read as such.** They are posted under the heading "Non-affiliated Employees:" on the HR
+page, and both are legacy Drive files that returned a Google sign-in page on 31 August —
+the same day the district's budget page reopened 57 documents that had been walled. So
+their address is what the HR page links, and the claim that our copy is what that address
+serves rests on the download made on 20 August and on nothing since. Nobody has been able
+to re-check it.
+
+The district copy of the teachers' agreement is
+[Lunenburg Education Association 2024-2027](https://drive.google.com/file/d/19IaKYDVtYXgJ63J0MOod-8Io6F3oZ6dw/view),
+70pp. We keep DESE's 72pp filing instead because it is the same document plus the stipend
+appendix; the district copy survives here only as `txt/lea-teachers-2024-2027.txt`.
+
+
 ## The headline: what teachers were actually given
 
 **Lunenburg Education Association (teachers, nurses, athletics & stipends)**

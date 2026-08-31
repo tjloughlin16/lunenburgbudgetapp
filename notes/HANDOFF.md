@@ -163,6 +163,108 @@ can be spent in. They are one year apart.** Confirmed, not assumed.
 | The two stabilization-funded projects are ranks 3 and 11 | They are the only two the plan footnotes and they sum to exactly the $594,000 its funding page shows. That is a reconciliation, not a published assignment — no project-by-project funding table exists |
 | Tighter budgeting would free money AND keep free cash | The flow is produced by the underspending. It cannot be counted twice |
 | The teaching board agrees with the model | It does — but `matchesEngine` was uncalled for months. It now runs and shows a visible warning |
+| The free cash proofs came from the DLS Gateway report | The gateway is the right department and the deepest page there is. **Which export produced `FCPCompare<Town>.xlsx` is not established** — driving the report from outside a browser session returns "not available for years prior to FY 2014" |
+| Our copy of the non-affiliated salary schedule is what that Drive link serves | It was on 20 August. The link has been walled since, so nobody has re-checked it |
+| The FY27 workbooks came off the district's budget page | That page publishes one spreadsheet — FY26 Town Manager's sheets, 5 Feb 2025 — and it is not any of them. Where `fy27-proposals.xlsx` came from is **not recorded**; "found online" is a recollection, not a finding |
+| Ana Lockwood sent `fy27-proposals.xlsx` | She sent `fy27-budget-projection-3-25-26.xlsx`. The two are near-twins and this was recorded backwards for part of 31 August |
+| `fy27-proposals.xlsx` is a rename of what Ana Lockwood sent | Different sizes, different hashes, one of twelve shared zip members identical. Two saves of one workbook, two routes |
+| The workbooks came from Christopher McNamara | He **created** them; that is docProps metadata. Nothing records who gave any of them to us |
+| The two workbooks are "data-identical apart from 51 cells in column X" | MANIFEST said so and none of it reproduces. The scratch column is **Y**, it holds `=Jn-Kn` rather than `#VALUE!`, and the count is 410 at formula level. What is true, and now measured: **0 differences in columns E–M** |
+
+---
+
+## 0e. The district reopened its Drive, and every source got an address checked by fetching it
+
+**31 August 2026.** On 29 August, 57 of 187 upstream links returned a Google sign-in wall —
+60% of the district's, including the FY27 proposed budget document the site's central
+appropriation figure comes from. TJ asked the district to reopen them. They did. Re-checked,
+those same 187 came back **186 open**; the one still walled is a notice of a budget hearing
+from April 2020. Twenty-one addresses were then added over the course of this session, two
+of them walled, so the archive now stands at **205 of 208 open** and **195 of 198 fetchable
+copies verified byte-identical to the publisher's, with none differing.**
+
+**That made two things possible that had not been possible before.**
+
+**One: the mirror could be checked against the publisher.** Rule 12 says a Drive file can be
+replaced in place without its URL changing, and nothing in a link check would notice. Every
+document in the district mirror was re-downloaded and compared by sha256. **82 of 87 came
+back byte-identical to the copies taken on 17 August.** The other five are not changes:
+three are Google Docs whose every zip member matched (Google re-packages a Doc on each
+export, so the hash moves and the document does not), one is the same 26-page presentation
+the budget page publishes twice under two different Drive ids — identical text, with one
+heading's line-break falling in a different place — and one is the 2020 notice.
+**Nothing the district publishes had changed underneath us.**
+
+`scripts/verify_source_copies.py` is that check, kept. It writes
+`sources/data/copy-status.csv` and distinguishes `identical` / `repackaged` / `resaved` /
+`reflowed` / `differs` / `restricted`, because four of those five ways of differing are the
+instrument and only one is a finding.
+
+**Two: 21 primary sources got an address, and every one was verified by downloading it.**
+The count of primary documents with no route home fell from 57 to 16. What was added:
+
+| what | where it turned out to live |
+|---|---|
+| 7 union contracts and DESE filings | the district's HR page, and DESE's educator-contracts endpoint, which takes the org code in the URL |
+| all 6 peer district budgets | **four of the six are not hosted by the district that wrote them** — two content networks, and two *member towns'* document centres |
+| FY27 Chapter 70 summary | DESE's **preliminary** file — the Governor's budget figures, which is rule 11's point |
+| election results, FY23 tax classification, assessors agenda, health insurance rates | the town's own server, which has never lost a link: 81 of 81, twice |
+| the athletics fee FAQ | a third-party sports-scheduling platform, inside a staff member's private-user folder |
+
+**No link went in on the strength of a matching title.** Each was fetched and its sha256
+matched against our copy — a plausible link is rule 13's exact failure, something derived
+quoted as though observed. Six district documents *looked* like they had changed until the
+cause turned out to be our fetcher not understanding Drive's `open?id=` form and comparing
+a sign-in page to a PDF. `CLAUDE.md` §12 now says this.
+
+**What did not get an address, and it is now the whole of the gap:**
+
+- **The FY27 workbooks — and read which file, because this got recorded backwards once.**
+  The one with an address is **`fy27-budget-projection-3-25-26.xlsx`**, sent to TJ by **Ana
+  Lockwood, a member of the Finance Committee**, under her own filename *"FY27 School
+  Department Budget Projection as of 3.25.26"*. That is a rule 12 address — an email and who
+  sent it — recorded in `PROVIDED_BY` and shown on the row. Her membership is checked against
+  the Committee's own agenda letterhead, 27 August 2026. **She is named where the records
+  requester is not, because she was acting in a town role and he was not.**
+
+  **`fy27-proposals.xlsx` still has no address, and it is the load-bearing one** — nearly
+  every budget-line figure on the site comes out of it. Two guesses were tested on 31 August
+  and neither closed it: it is **not** a renamed copy of the Lockwood file (97,035 against
+  122,265 bytes, different hashes, one of twelve shared zip members identical), and the
+  school budget page *as mirrored on 17 August* publishes one spreadsheet which is not this.
+  Whether that page carried it on 2 April 2026 — the day this file's bytes were written —
+  **cannot be checked; the Internet Archive holds no snapshot of the page.**
+
+  **The files' own metadata is now recorded** (`sources/xlsx/PROVENANCE.md`, asserted by
+  `verify_workbook_twins.py`): all three were created by **Christopher McNamara, the
+  district's Business Administrator**, at one timestamp, so they are one workbook saved three
+  times; the 25 March copy's `cp:lastModifiedBy` reads **Ana Lockwood**, corroborating from
+  inside the file how it reached us; `fy27-proposals.xlsx` has no last modifier at all.
+  **Metadata says who authored a file, never who gave it to us** — do not let "created by the
+  Business Administrator" become "obtained from the Business Administrator".
+
+  `fy27-budget-projection-2-24-26.xlsx` has no route either, though its publisher filename
+  survives on a byte-identical copy in the repo root.
+
+  **What reduces the damage, stated as exactly what it is.** Every budget figure in the
+  untraced workbook is reproduced cell for cell in the traced one:
+  `scripts/verify_workbook_twins.py` finds **0 differences across columns E–M** at formula
+  level. A reader can therefore check any published figure against a document traceable to a
+  named official. The file the pipeline reads still has no provenance. `DATA-WANTED §15`.
+
+- **Two non-affiliated salary/benefit files.** Their address is known and still walled, so
+  they are the only sources here whose link is given without the bytes having been checked.
+  Recorded as such in `CONTRACTS.md`.
+
+**Two corrections fell out of the pass.** `pdf/health-insurance-rates-2025.pdf` is the
+town's *"Health Insurance Rates July 1, 2026"*, and the memo inside is dated 21 April 2026 —
+the filename is a year wrong, and `model/citations.py` was citing our filename rather than
+the publisher's name. The citation now quotes the publisher; the filename is left alone
+because every figure was read from it under that name. And `fetch_school_budget_docs.py`
+was overwriting the `read` column — the record of which documents have no text layer and
+needed OCR — with `already had it` on every re-run. A crawler advertised as safe to re-run
+was losing information by being re-run. Fixed, and a re-run now leaves the manifest
+byte-unchanged.
 
 ---
 

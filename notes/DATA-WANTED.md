@@ -265,6 +265,17 @@ of these are freely available to a person with a browser. Downloading and droppi
 > 3. **Which departments turned back the $2,457,761** that makes up two thirds of
 >    Lunenburg's 2025 free cash. The proof gives a town-wide total and no breakdown, so a
 >    structural pattern and a run of one-offs look identical.
+>
+> **A fourth, added 31 August 2026: which export produced these files.** The report itself
+> turns out to be reachable without a browser — the DLS Gateway's City & Town Free Cash
+> Report answered a plain request, and all nine towns are on its jurisdiction list
+> (Lunenburg is 162). But it is built from two dropdowns held in session, and driving it
+> from outside one returns "Free Cash/Excess & Deficiency is not available for years prior
+> to FY 2014", which is the report declining rather than answering. So the address is now
+> the gateway page rather than "the databank", and **our copies still have not been
+> re-derived from it.** The filename `FCPCompare<Town>.xlsx` and the five-year layout say
+> the export was a multi-year comparison; which control produced it is not established.
+> `sources/dls-free-cash/PROVENANCE.md` carries this.
 
 
 #### The original ask
@@ -369,6 +380,64 @@ base argument.
 - Secretaries (2025–2028) and cafeteria (2023–2026) — terms not published
 - A **current** superintendent or administrator agreement. We only hold expired DESE
   templates, which the citation says plainly, but it is a real gap in the salary picture.
+
+---
+
+## Provenance gaps — nothing to obtain, only to write down
+
+These are not documents we are missing. We hold every one of them. What is missing is the
+address, and the person who can supply it is us.
+
+### 15. Where the FY27 workbooks came from
+
+> **PARTLY ANSWERED, 31 August 2026 — and note which file.**
+> `xlsx/fy27-budget-projection-3-25-26.xlsx` was **sent directly to this project by Ana
+> Lockwood, a member of the Lunenburg Finance Committee**, under her own filename *"FY27
+> School Department Budget Projection as of 3.25.26"*. That is its address: rule 12 counts
+> an email and who sent it as one. Recorded in `PROVIDED_BY` in `build_source_index.py` and
+> shown on its row. Her membership is checkable against the Committee's own agenda
+> letterhead, most recently 27 August 2026.
+>
+> **This was first recorded against the wrong file** — `fy27-proposals.xlsx` — and corrected
+> the same day. Worth leaving on the record because the two are near-twins and getting them
+> the wrong way round attributes the site's most load-bearing document to somebody who did
+> not send it.
+
+**Still open, and this is the one that matters: `xlsx/fy27-proposals.xlsx`.** Nearly every
+budget-line figure on the site comes out of it and no route to it is recorded.
+
+Two guesses were tested and neither closes it. It is **not** a renamed copy of the Lockwood
+file — different sizes, different hashes, one of twelve shared zip members identical. And the
+school budget page **as mirrored on 17 August 2026** publishes exactly one spreadsheet, the
+FY26 Town Manager's budget sheets of 5 February 2025, which is not this; whether that page
+carried it on 2 April 2026, the day this file's bytes were written, **cannot be checked** —
+the Internet Archive holds no snapshot of the page. The town's FY27 Budget Hub links thirteen
+documents and all thirteen are PDFs by content type.
+
+`sources/xlsx/PROVENANCE.md` records what the file says about itself, and what that does not
+establish.
+
+**Also open:** `xlsx/fy27-budget-projection-2-24-26.xlsx` has no recorded route. We do have
+the publisher's filename for it, from a byte-identical copy sitting in the repository root:
+*"FY27 Budget Projection as of 2.24.26 with restorations.xlsx"*.
+
+**What reduces the damage.** Every figure the site publishes from `fy27-proposals.xlsx` is
+reproduced cell for cell in the Lockwood copy, which does have an address —
+`scripts/verify_workbook_twins.py` finds **0 differences across columns E through M**, the
+FY25 budget, FY26 final, FY26 actuals-to-date and encumbrances, and all four FY27 scenarios.
+So a published figure can be checked against a document traceable to a named town official.
+That is a mitigation, not a substitute: the file the pipeline actually reads still has no
+provenance.
+
+### 16. How the business certificate records were obtained
+
+`business/merged_dataset.csv` and `business/categorized.csv` were copied from a separate
+project (`~/lunenburgbusiness`) that cleaned and categorised the Town Clerk's records.
+Nothing records how the underlying certificates were got — request, counter visit, or
+download — so there is no address, and both files carry a `source` column reading `master`,
+meaning they are our merge rather than the Clerk's records as the Clerk holds them. They
+are also catalogued above the line, among documents published by the town, which on rule 3
+is the wrong side.
 
 ---
 

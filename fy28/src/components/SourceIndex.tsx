@@ -24,7 +24,8 @@ type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
   textUrl?: string; offsite?: boolean; byRequest?: boolean
-  upstream?: string; upstreamRestricted?: boolean
+  upstream?: string; upstreamRestricted?: boolean; upstreamCheckedOn?: string
+  providedBy?: string
   alsoUsed?: string; heldOnly?: boolean
 }
 type Group = { id: string; section?: string; title: string; blurb: string
@@ -48,6 +49,15 @@ const S = raw as unknown as {
 
 const size = (b: number) =>
   b >= 1e6 ? `${(b / 1e6).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1e3))} KB`
+
+/** The date a link was last tried, as the check recorded it. Parsed as a plain date and
+ *  not through the local timezone, which would show the day before for anybody west of
+ *  UTC. */
+const asOf = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number)
+  return `${d} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][m - 1]} ${y}`
+}
 
 /** Weight is stated in words, never by color or a row of stars alone — the whole point
  *  of the label is that somebody deciding what to read can act on it. */
@@ -124,7 +134,8 @@ function Row({ it }: { it: Item }) {
               <a href={it.upstream} target="_blank" rel="noopener noreferrer"
                 className="underline" style={{ color: 'var(--text-muted)' }}>
                 the publisher&rsquo;s copy</a>{' '}
-              needs sign-in as of 29 Aug 2026 &mdash; ours is the open one
+              needs sign-in{it.upstreamCheckedOn && ` as of ${asOf(it.upstreamCheckedOn)}`}
+              {' '}&mdash; ours is the open one
             </span>
           ) : (
             <a href={it.upstream} target="_blank" rel="noopener noreferrer"
@@ -135,6 +146,13 @@ function Row({ it }: { it: Item }) {
         <span aria-hidden="true">&middot;</span>
         <code style={{ color: 'var(--text-muted)' }}>sources/{it.path}</code>
       </p>
+      {/* Some documents have an address that is not a URL. Rule 12 counts an email and
+          who sent it as an address, so it is shown where a link would be rather than
+          left to look like a missing one. */}
+      {it.providedBy && (
+        <p className="mt-1 text-[11.5px] leading-relaxed max-w-3xl"
+          style={{ color: 'var(--text-muted)' }}>{it.providedBy}</p>
+      )}
       {it.heldOnly && (
         <p className="mt-1 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
           Held in the archive but not served here &mdash; too large for this site&rsquo;s

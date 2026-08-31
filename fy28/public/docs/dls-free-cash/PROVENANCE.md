@@ -11,6 +11,30 @@ the address as deeply as it goes, and "the DLS databank" is a hub, not an addres
 filling in from the browser history of whoever pulled them. `notes/DATA-WANTED.md` §5 records
 that DLS pages sit behind bot protection, which is why these could not be fetched by script.
 
+**Two things about that gap were narrowed on 31 August 2026, and one was not.**
+
+*Narrowed: the right department, and the deepest page there is.* These were catalogued under
+DESE, which is the wrong agency — DESE sets Chapter 70, the Department of Revenue certifies
+free cash — and they now sit under DOR's Division of Local Services. The public report is
+the DLS Gateway's **City & Town Free Cash Report**:
+
+<https://dls-gw.dor.state.ma.us/gateway/dlspublic/certificationfreecashpublicreport/certificationfreecashpublic>
+
+It answered a plain request, and all nine towns are on its jurisdiction list — Lunenburg is
+**162**, and Ayer 019, Groton 115, Littleton 158, Shirley 270, Townsend 299, Upton 303,
+Uxbridge 304, Westford 330. The report is built on submission from two dropdowns held in
+session, so **there is no file URL to give**: the page plus the jurisdiction is the whole
+address, the same shape as DESE's selected-populations report. That is recorded in
+`build_source_index.py`'s `FORM_ONLY`, with the reason beside it.
+
+*Not narrowed: which export produced these files.* Driving the report from outside a browser
+session returns "Free Cash/Excess & Deficiency is not available for years prior to FY 2014",
+which is the report declining the request rather than answering it, so **our copies have not
+been re-derived and are not claimed to have been.** The filename `FCPCompare<Town>.xlsx` and
+the five-year layout say the export was a multi-year comparison; nothing here establishes
+which control produced it. Naming the gateway is a better address than naming the databank.
+It is not a check, and it should not be read as one.
+
 ## The files
 
 | our copy | town | sha256 |

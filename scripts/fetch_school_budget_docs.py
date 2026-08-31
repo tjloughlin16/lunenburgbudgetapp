@@ -194,6 +194,18 @@ def main():
     if a.limit:
         items = items[:a.limit]
 
+    # What the previous run recorded about HOW each document was read -- a PDF text layer,
+    # OCR, unzipped XML. Re-running skips extraction for anything already extracted, and
+    # used to write the string "already had it" into the column that was supposed to say
+    # "ocr", destroying the only record of which documents have no text layer at all. A
+    # crawler advertised as idempotent must not lose information by being re-run, so the
+    # earlier answer is carried forward whenever nothing was re-extracted.
+    was_read = {}
+    if os.path.exists(MANIFEST):
+        with open(MANIFEST, newline='') as fh:
+            was_read = {r['label']: r['read'] for r in csv.DictReader(fh)
+                        if r.get('read') and r['read'] != 'already had it'}
+
     rows = []
     for n, it in enumerate(items, 1):
         base = slug(it['label'])
@@ -216,8 +228,10 @@ def main():
             continue
 
         txt = os.path.join(TEXT, base + '.txt')
-        how = 'already had it' if os.path.exists(txt) and os.path.getsize(txt) > 0 \
-            else extract(path, txt)
+        if os.path.exists(txt) and os.path.getsize(txt) > 0:
+            how = was_read.get(it['label'], 'already had it')
+        else:
+            how = extract(path, txt)
         rows.append(dict(
             label=it['label'], upstream=it['url'],
             local=os.path.relpath(path, ROOT), text=os.path.relpath(txt, ROOT)

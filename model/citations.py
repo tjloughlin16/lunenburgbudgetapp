@@ -80,7 +80,12 @@ CITATIONS = [
          value='9.0% a year',
          kind='published', basis="The district's own stated FY27 assumption",
          doc='pdf/health-insurance-rates-2025.pdf',
-         source='Health insurance rates 2025, and the FY27 budget narrative'),
+         # The town's own name for this document is "Health Insurance Rates July 1, 2026"
+         # and the memo inside is dated 21 April 2026. Our filename says 2025 and is
+         # wrong; it is left alone because every figure here was read from it under that
+         # name, but the citation quotes the publisher rather than our rendering of it.
+         source='Health Insurance Rates July 1, 2026 (Town of Lunenburg), and the FY27 '
+                'budget narrative'),
 
     dict(id='sped-tuition', metric='Out-of-district special education growth',
          value='held flat',
