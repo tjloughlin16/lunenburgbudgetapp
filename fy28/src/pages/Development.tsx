@@ -462,7 +462,7 @@ function Findings({ gap, share }: { gap: number; share: number }) {
             <p className="text-[13px] leading-relaxed flex-1"
               style={{ color: 'var(--text-secondary)' }}>{c.body}</p>
             <span className="text-[11px] font-semibold mt-3"
-              style={{ color: 'var(--series-cost)' }}>See the working &rarr;</span>
+              style={{ color: 'var(--series-cost)' }}>How this was worked out &rarr;</span>
           </a>
         </li>
       ))}

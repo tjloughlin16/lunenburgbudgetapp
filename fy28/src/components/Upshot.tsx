@@ -440,7 +440,7 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
           style={{ color: 'var(--text-secondary)' }}>{children}</p>
         <a href={href} className="text-[11px] font-semibold mt-3 no-underline
                                   before:absolute before:inset-0 before:content-['']"
-          style={{ color: 'var(--series-cost)' }}>See the working &rarr;</a>
+          style={{ color: 'var(--series-cost)' }}>How this was worked out &rarr;</a>
       </div>
     </li>
   )

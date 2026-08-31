@@ -17,6 +17,22 @@ const R = MODEL.rateRegister
 
 type Row = (typeof R.rows)[number]
 
+/** The high school full-pay athletic fee in a given year, from the register itself.
+ *
+ *  Used so the sentence describing the mistake this page exists to prevent cannot itself
+ *  go stale. It said "31% of modelled fee revenue" for a while, which was true of the
+ *  model before the fee was corrected and of nothing afterwards — the exact failure this
+ *  register is for. */
+function hsFee(fy: number): number | null {
+  const row = R.rows.find((r: Row) => r.category === 'athletic_fee' && r.unit === 'HS'
+    && r.item === 'full_pay' && r.fy === fy)
+  return row?.value ?? null
+}
+const MODELLED_FEE = hsFee(2025)
+const ACTUAL_FEE = hsFee(2026)
+const UNDERSTATED = MODELLED_FEE && ACTUAL_FEE
+  ? Math.round((ACTUAL_FEE / MODELLED_FEE - 1) * 100) : null
+
 const CATEGORY: Record<string, { label: string; blurb: string }> = {
   athletic_fee: {
     label: 'Athletic user fees',
@@ -46,12 +62,15 @@ const CATEGORY: Record<string, { label: string; blurb: string }> = {
 }
 
 const STATUS: Record<string, { label: string; tone: string }> = {
-  verified:      { label: 'verified',      tone: 'var(--ok, #2f7d4f)' },
+  verified:      { label: 'verified',      tone: 'var(--status-good)' },
   recorded:      { label: 'recorded',      tone: 'var(--text-secondary)' },
-  reported:      { label: 'reported',      tone: 'var(--warn, #a8730a)' },
-  not_published: { label: 'not published', tone: 'var(--bad, #a03232)' },
-  not_adopted:   { label: 'not adopted',   tone: 'var(--text-secondary)' },
+  reported:      { label: 'reported',      tone: 'var(--status-warning)' },
+  not_published: { label: 'not published', tone: 'var(--status-bad)' },
+  not_adopted:   { label: 'not adopted',   tone: 'var(--text-muted)' },
 }
+
+const TH_L = 'text-left font-bold uppercase tracking-widest text-[10px] pb-1'
+const TH_R = 'text-right font-bold uppercase tracking-widest text-[10px] pb-1 pl-3'
 
 function money(r: Row) {
   if (r.value === null) return '—'
@@ -66,45 +85,41 @@ function Group({ cat, rows }: { cat: string; rows: Row[] }) {
   const years = [...new Set(rows.map(r => r.fy))]
     .sort((a, b) => ((a as number) ?? 0) - ((b as number) ?? 0))
   return (
-    <section style={{ marginBottom: '2.5rem' }}>
-      <h3 style={{ margin: '0 0 .25rem' }}>{meta.label}</h3>
-      <p style={{ margin: '0 0 .75rem', color: 'var(--text-secondary)', maxWidth: '46rem' }}>
-        {meta.blurb}
-      </p>
-      <div style={{ overflowX: 'auto' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '.92rem' }}>
+    <section className="mb-12">
+      <h2 className="text-2xl font-bold tracking-tight mb-1">{meta.label}</h2>
+      <p className="text-[15px] leading-relaxed max-w-2xl mb-4"
+        style={{ color: 'var(--text-secondary)' }}>{meta.blurb}</p>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[13px]">
           <thead>
-            <tr style={{ textAlign: 'left', borderBottom: '1px solid var(--border)' }}>
-              <th style={{ padding: '.4rem .6rem .4rem 0' }}>FY</th>
-              <th style={{ padding: '.4rem .6rem' }}>Who</th>
-              <th style={{ padding: '.4rem .6rem' }}>What</th>
-              <th style={{ padding: '.4rem .6rem', textAlign: 'right' }}>Rate</th>
-              <th style={{ padding: '.4rem .6rem' }}>Set on</th>
-              <th style={{ padding: '.4rem .6rem' }}>Status</th>
-              <th style={{ padding: '.4rem 0 .4rem .6rem' }}>Source</th>
+            <tr style={{ color: 'var(--text-muted)' }}>
+              <th className={TH_L}>FY</th>
+              <th className={TH_L + ' pl-3'}>Who</th>
+              <th className={TH_L + ' pl-3'}>What</th>
+              <th className={TH_R}>Rate</th>
+              <th className={TH_L + ' pl-3'}>Set on</th>
+              <th className={TH_L + ' pl-3'}>Status</th>
+              <th className={TH_L + ' pl-3'}>Source</th>
             </tr>
           </thead>
           <tbody>
             {years.flatMap(y => rows.filter(r => r.fy === y).map((r, i) => (
-              <tr key={`${y}-${r.unit}-${r.item}-${i}`}
-                  style={{ borderBottom: '1px solid var(--border-subtle, rgba(128,128,128,.18))' }}>
-                <td style={{ padding: '.35rem .6rem .35rem 0', whiteSpace: 'nowrap' }}>
+              <tr key={`${y}-${r.unit}-${r.item}-${i}`} className="border-t"
+                style={{ borderColor: 'var(--surface-3)' }}>
+                <td className="py-1.5 whitespace-nowrap font-semibold">
                   {r.fy ? `FY${String(r.fy).slice(2)}` : '—'}
                 </td>
-                <td style={{ padding: '.35rem .6rem' }}>{r.unit}</td>
-                <td style={{ padding: '.35rem .6rem' }}>{r.item.replace(/_/g, ' ')}</td>
-                <td style={{ padding: '.35rem .6rem', textAlign: 'right', whiteSpace: 'nowrap',
-                             fontVariantNumeric: 'tabular-nums' }}>
-                  {money(r)}
-                </td>
-                <td style={{ padding: '.35rem .6rem', whiteSpace: 'nowrap',
-                             color: 'var(--text-secondary)' }}>{r.setOn || '—'}</td>
-                <td style={{ padding: '.35rem .6rem', whiteSpace: 'nowrap',
-                             color: STATUS[r.status]?.tone }}>
+                <td className="py-1.5 pl-3">{r.unit}</td>
+                <td className="py-1.5 pl-3">{r.item.replace(/_/g, ' ')}</td>
+                <td className="py-1.5 pl-3 text-right whitespace-nowrap tnum">{money(r)}</td>
+                <td className="py-1.5 pl-3 whitespace-nowrap"
+                  style={{ color: 'var(--text-secondary)' }}>{r.setOn || '—'}</td>
+                <td className="py-1.5 pl-3 whitespace-nowrap font-semibold"
+                  style={{ color: STATUS[r.status]?.tone }}>
                   {STATUS[r.status]?.label ?? r.status}
                 </td>
-                <td style={{ padding: '.35rem 0 .35rem .6rem', color: 'var(--text-secondary)',
-                             maxWidth: '22rem' }}>{r.source}</td>
+                <td className="py-1.5 pl-3 max-w-[22rem]"
+                  style={{ color: 'var(--text-secondary)' }}>{r.source}</td>
               </tr>
             )))}
           </tbody>
@@ -122,47 +137,51 @@ export function Rates() {
   const cats: string[] = [...new Set(rows.map((r: Row) => r.category as string))]
 
   return (
-    <div style={{ padding: '1.5rem 0 4rem' }}>
-      <h2 style={{ marginTop: 0 }}>Rates, fees and contracts</h2>
-      <p style={{ maxWidth: '46rem' }}>
+    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
+      <p className="text-xs font-semibold uppercase tracking-widest mb-3"
+        style={{ color: 'var(--text-muted)' }}>Reference, not argument</p>
+      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+        Rates, fees and contracts
+      </h1>
+      <p className="mt-5 text-lg leading-relaxed max-w-2xl"
+        style={{ color: 'var(--text-secondary)' }}>
         Every rate this analysis knows about, with <strong>the fiscal year it applies to,
-        the document that set it, and the date it was set</strong>. Reference, not argument —
-        nothing here is a projection.
+        the document that set it, and the date it was set</strong>. Nothing here is a
+        projection.
       </p>
-      <p style={{ maxWidth: '46rem', color: 'var(--text-secondary)' }}>
-        It exists because of one mistake. Athletic fees for FY26 were modelled at $250 a
-        season when the district had voted $325. Not a wrong number — a right number from
-        the wrong year, taken from a fee schedule that states its rates and never states
-        which year they cover. It cost 31% of modelled fee revenue and went unnoticed,
-        because a rate with no date attached looks exactly like a rate with the right date
-        attached. Everything below carries its year.
+      <p className="mt-4 text-[15px] leading-relaxed max-w-2xl"
+        style={{ color: 'var(--text-secondary)' }}>
+        It exists because of one mistake. Athletic fees for FY26 were modelled at{' '}
+        ${MODELLED_FEE} a season when the district had voted ${ACTUAL_FEE}
+        {UNDERSTATED ? ` — understating the rate by ${UNDERSTATED}%` : ''}. Not a wrong
+        number, but a right number from the wrong year, taken from a fee schedule that
+        states its rates and never states which year they cover. It went unnoticed because
+        a rate with no date attached looks exactly like a rate with the right date attached.
+        Everything below carries its year.
       </p>
 
-      <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center',
-                    margin: '1.25rem 0 2rem' }}>
+      <div className="flex gap-5 flex-wrap items-center mt-8 mb-6">
         {(Object.entries(R.counts) as [string, number][]).sort().map(([k, n]) => (
-          <span key={k} style={{ fontSize: '.9rem' }}>
-            <strong style={{ color: STATUS[k]?.tone }}>{n}</strong>{' '}
+          <span key={k} className="text-[13px]">
+            <strong className="tnum" style={{ color: STATUS[k]?.tone }}>{n}</strong>{' '}
             <span style={{ color: 'var(--text-secondary)' }}>{STATUS[k]?.label ?? k}</span>
           </span>
         ))}
         <button onClick={() => setOnlyGaps(v => !v)}
-                style={{ marginLeft: 'auto', padding: '.35rem .7rem', cursor: 'pointer',
-                         border: '1px solid var(--border)', borderRadius: '.35rem',
-                         background: onlyGaps ? 'var(--surface-3)' : 'transparent',
-                         color: 'inherit' }}>
+          className="ml-auto text-xs font-semibold px-3 py-2 rounded-md"
+          style={{ background: onlyGaps ? 'var(--series-cost)' : 'var(--surface-3)',
+                   color: onlyGaps ? '#fff' : 'var(--text-primary)' }}>
           {onlyGaps ? 'Show every rate' : 'Show only what we cannot state'}
         </button>
       </div>
 
-      <dl style={{ margin: '0 0 2.5rem', fontSize: '.9rem', color: 'var(--text-secondary)',
-                   maxWidth: '46rem' }}>
+      <dl className="card p-4 mb-10 max-w-2xl text-[13px] leading-relaxed"
+        style={{ color: 'var(--text-secondary)' }}>
         {(Object.entries(R.statusMeaning) as [string, string][]).map(([k, v]) => (
-          <div key={k} style={{ display: 'flex', gap: '.6rem', marginBottom: '.3rem' }}>
-            <dt style={{ minWidth: '7.5rem', color: STATUS[k]?.tone }}>
-              {STATUS[k]?.label ?? k}
-            </dt>
-            <dd style={{ margin: 0 }}>{v}</dd>
+          <div key={k} className="flex gap-3 py-0.5">
+            <dt className="shrink-0 w-[7.5rem] font-semibold"
+              style={{ color: STATUS[k]?.tone }}>{STATUS[k]?.label ?? k}</dt>
+            <dd className="m-0">{v}</dd>
           </div>
         ))}
       </dl>
@@ -171,7 +190,8 @@ export function Rates() {
         <Group key={c} cat={c} rows={rows.filter((r: Row) => r.category === c)} />
       ))}
 
-      <p style={{ maxWidth: '46rem', color: 'var(--text-secondary)', fontSize: '.9rem' }}>
+      <p className="text-[13px] leading-relaxed max-w-2xl"
+        style={{ color: 'var(--text-secondary)' }}>
         The whole register is published as
         {' '}<a href="/docs/data/rate-register.csv">rate-register.csv</a>, with the athletic
         fee detail in{' '}
