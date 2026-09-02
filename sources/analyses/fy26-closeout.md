@@ -98,6 +98,16 @@ tuition, utilities — $25.7 million between them, all of it close. That is a bu
 about right, and it is four fifths of the underspend. The dollars are big because the
 bases are big, not because anything went wrong.
 
+**But the people line is not quiet underneath.** Its 1.1% is two role groups pulling hard
+in opposite directions: **paraprofessionals $210,082 over** with not one of seven accounts
+under, and **psychologists and social workers $194,718 under** with not one of eight
+accounts over. They land $15,363 apart. Teachers — $12.3 million, the largest and least
+discretionary payroll in the town — came in at 1.3%.
+
+That pair is the most striking thing in the year and the document does **not** read it as
+one substituting for the other. Two lines moving opposite ways by similar amounts is the
+exact inference this project has got wrong before.
+
 **One small category missed by 15%, and it is the discretionary one.** Supplies,
 materials, maintenance and equipment: 67 of its 78 accounts came in under. The median
 salary account spent **100%** of its budget; the median supply account spent **88%**. A
@@ -214,6 +224,63 @@ when people are told to be careful about what they buy.
 | Tuition, transport, contracted services | 42 | $3,915,262 | +$78,556 | **2.0%** | 16% |
 | Utilities and communications | 18 | $958,493 | +$17,924 | **1.9%** | 4% |
 | | **258** | **$26,332,564** | **+$482,101** | **1.8%** | |
+
+### Inside the people line, one layer down
+
+$192,211 on a $17.1 million payroll is 1.1%, which is the kind of number that looks like
+rounding. It is not. It is **two role groups moving hard in opposite directions**, and the
+small net is what is left when they nearly cancel.
+
+| role group | accounts | budget | left | % of its own budget |
+|---|---:|---:|---:|---:|
+| Paraprofessionals | 7 | $1,415,449 | **−$210,082** | **−14.8%** |
+| Teachers and professional salaries | 29 | $12,347,689 | +$157,791 | 1.3% |
+| Social workers | 4 | $369,029 | **+$99,060** | **26.8%** |
+| School psychologists | 4 | $287,780 | **+$95,658** | **33.2%** |
+| Everything else in the people line | 10 | $324,622 | +$29,244 | 9.0% |
+| Stipends and coaching | 8 | $208,525 | +$16,433 | 7.9% |
+| Overtime | 10 | $43,073 | +$14,626 | 34.0% |
+| Substitutes, long-term and daily | 29 | $1,467,971 | −$8,011 | −0.5% |
+| Secretarial and clerical | 11 | $646,951 | −$2,507 | −0.4% |
+| **the people line** | **112** | **$17,111,089** | **+$192,211** | **1.1%** |
+
+**Three things in that table are worth reading twice.**
+
+**Teachers — the largest payroll in the town — landed at 1.3%.** $12.3 million budgeted
+across 29 accounts, $157,791 left. On the biggest and least discretionary thing the
+district buys, the budget was set almost exactly right.
+
+**Every paraprofessional line overspent, and none underspent.** Seven accounts, $1.4
+million budgeted, **$210,082 over** — including the $93,691 kindergarten line that had no
+budget at all (§3). This is the only role group in the district where not one account came
+in under.
+
+**Student support posts underspent by a third.** Psychologists at 33.2% and social workers
+at 26.8%, eight accounts between them, **not one of which went over.** §4 shows what that
+looks like account by account: three of four psychologist lines paid in full and the
+fourth paid nothing.
+
+### The two that nearly cancel — and what that does not mean
+
+| | |
+|---|---:|
+| Student support staff — psychologists and social workers | **+$194,718** |
+| Paraprofessionals, including kindergarten | **−$210,082** |
+| **together** | **−$15,363** |
+
+Two role groups, moving in opposite directions, within $15,363 of each other on a combined
+budget of $2.07 million.
+
+**It is very tempting to read that as one thing substituting for another** — support posts
+unfilled while paraprofessional hours grew to cover the same children. **Nothing here
+establishes that**, and this is the third time in this document the same trap has appeared:
+two lines moving in opposite directions by similar amounts is precisely the inference
+`CLAUDE.md` records as having shipped from this project before and been wrong.
+
+What is established is four numbers. Other readings fit them equally well — the support
+posts may have been budgeted for a full year and filled late, the paraprofessional
+overrun may be contractual step increases or hours, and the two may have nothing to do
+with each other at all. Dollars are not people, and no headcount is published.
 
 ### The number that separates the two stories
 

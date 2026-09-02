@@ -17,6 +17,7 @@ import { Sources } from './pages/Sources'
 import { Athletics } from './pages/Athletics'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
+import { AgentsIndex } from './components/AgentsIndex'
 import { FreeCash } from './pages/FreeCash'
 import { DataRoom } from './pages/DataRoom'
 import { Reports } from './pages/Reports'
@@ -287,6 +288,7 @@ export default function App() {
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
       {tab === 'reports' && <Reports />}
+      {tab === 'agents' && <AgentsIndex />}
       {/* Unlisted. Nothing on the site links here -- see UNLISTED in routes.ts. */}
       {tab === 'dataroom' && <DataRoom />}
 

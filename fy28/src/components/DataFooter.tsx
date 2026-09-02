@@ -14,7 +14,14 @@ import MANIFEST from '../data/agent-manifest.json'
  *  ones.
  *
  *  So the paths sit in plain text, where an assistant, a journalist and a resident who
- *  just wants the spreadsheet all find the same thing. */
+ *  just wants the spreadsheet all find the same thing.
+ *
+ *  THESE MUST BE FILES, NOT DIRECTORIES. This footer linked `/data/` and `/minutes/` for
+ *  months. Both are directory paths, both correctly 404, and between them they were the
+ *  only `/minutes` link anywhere on the site -- so the one site-wide pointer at the
+ *  meeting archive led an assistant to a 404 whose body it then could not act on, because
+ *  that body is text/plain and a URL in plain text is not a link. Every entry here now
+ *  resolves to a real file, and `/agents` carries the long tail. See AgentsIndex.tsx. */
 export function DataFooter() {
   const host = MANIFEST.site.replace(/^https?:\/\//, '')
   const corpus = MANIFEST.corpus || ''
@@ -27,7 +34,8 @@ export function DataFooter() {
     <p className="mb-2" style={{ color: 'var(--text-muted)' }}>
       <strong style={{ color: 'var(--text-secondary)' }}>Data.</strong>{' '}
       Every figure here is downloadable, and every source document with it.{' '}
-      {link('/llms.txt')} · {link('/data/')} · {link('/minutes/')}
+      {link('/llms.txt')} · {link('/minutes/INDEX.txt')} · {link('/data/minutes-index.csv')}
+      {' · '}{link('/api/index')} · {link('/agents')}
       {corpus ? ` — full text of ${corpus.split(' across ')[0]}, across every town board.` : '.'}
     </p>
   )

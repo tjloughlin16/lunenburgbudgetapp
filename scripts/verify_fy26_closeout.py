@@ -135,6 +135,46 @@ def main():
         FAILS.append('salary accounts no longer spend a higher share than supply '
                      'accounts; §1a\'s whole argument rests on that ordering')
 
+    print('\n§1a  Inside the people line, by role')
+    ROLES = {
+        'paraprofessionals': ('511203', '511103'),
+        'teachers': ('511001',),
+        'social workers': ('511024',),
+        'psychologists': ('511023',),
+        'stipends': ('519003', '519104', '519015', '519016', '519105'),
+        'overtime': ('513002', '513003', '513000'),
+        'substitutes': ('511003', '512103', '512203', '512003'),
+        'secretarial': ('511002', '511102', '511101'),
+    }
+    for label, objs in ROLES.items():
+        marks = ','.join('?' * len(objs))
+        r_ = one(f"""SELECT COUNT(*) n, SUM(revised) rv, SUM(available) av
+                     FROM ledger_snapshot l JOIN account a USING (account_id)
+                     WHERE l.fy=2026 AND l.period=12 AND a.dept='300'
+                       AND a.object IN ({marks})""", *objs)
+        present(f'{label}: budget', float(r_['rv']), dp=0)
+        present(f'{label}: left', float(r_['av']), dp=0)
+
+    # The pair that nearly cancels, and the claim that neither group has a single account
+    # moving the other way -- which is what makes them worth naming as groups at all.
+    pair = one("""SELECT
+        SUM(CASE WHEN a.object IN ('511023','511024') THEN l.available END) sup,
+        SUM(CASE WHEN a.object IN ('511203','511103') THEN l.available END) para
+        FROM ledger_snapshot l JOIN account a USING (account_id)
+        WHERE l.fy=2026 AND l.period=12 AND a.dept='300'""")
+    present('student support staff, left', float(pair['sup']), dp=0)
+    present('paraprofessionals, over', float(pair['para']), dp=0)
+    present('the two together', float(pair['sup']) + float(pair['para']), dp=0)
+    wrong_way = one("""SELECT
+        SUM(CASE WHEN a.object IN ('511023','511024') AND l.available < -0.5 THEN 1 ELSE 0 END) sup_over,
+        SUM(CASE WHEN a.object IN ('511203','511103') AND l.available > 0.5 THEN 1 ELSE 0 END) para_under
+        FROM ledger_snapshot l JOIN account a USING (account_id)
+        WHERE l.fy=2026 AND l.period=12 AND a.dept='300'""")
+    if wrong_way['sup_over'] or wrong_way['para_under']:
+        FAILS.append('§1a says not one support account went over and not one para account '
+                     'came in under; that is no longer true')
+    print('  OK    neither group has an account moving the other way')
+
     print('\n§2  The biggest movers')
     # An org holds SEVERAL accounts -- S3991742 alone carries six, from ELEC CHGS to
     # TELE MTC -- so a lookup keyed on org returns whichever comes first and silently

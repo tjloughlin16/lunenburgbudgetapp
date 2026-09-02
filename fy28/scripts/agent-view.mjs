@@ -33,6 +33,7 @@
  *   node scripts/agent-view.mjs --route /athletics    # a route other than the front page
  *   node scripts/agent-view.mjs --browser             # add headless Chrome as ground truth
  *   node scripts/agent-view.mjs --cache               # the cache-buster probe, §4
+ *   node scripts/agent-view.mjs --links               # §6: is every published URL LINKED
  *
  * Needs Node 22 (WebSocket, for --browser):  source ~/.nvm/nvm.sh && nvm use 22
  */
@@ -362,7 +363,100 @@ async function browserTruth(rows) {
   } finally { chrome.proc.kill() }
 }
 
+/* ---------------------------------------------------------------- §6 the link graph */
+
+/**
+ * Every URL this site publishes must be reachable by following LINKS from the home page.
+ *
+ * `llms.txt` names them all and that turned out not to be enough, for a reason that took
+ * three separate incidents to see. Assistants commonly refuse to fetch a URL that has not
+ * appeared in something they already fetched -- a provenance guardrail, and a sound one.
+ * `llms.txt` is text/plain, so the URLs in it are TEXT. An assistant read it, found the
+ * bundle it needed named there, and was not permitted to request it: "my fetcher will only
+ * take URLs it's already seen in a page or search result."
+ *
+ * So llms.txt DESCRIBES the archive and the link graph AUTHORIZES it, and only the second
+ * one was ever checked -- by nothing. When this was written, `/minutes/school-committee.txt`
+ * and `/minutes/INDEX.txt` appeared in no anchor anywhere on the site, and the only
+ * `/minutes` link that existed pointed at `/minutes/`, a directory that correctly 404s.
+ *
+ * Two hops, because that is the shape the site is built to: the footer carries the handful
+ * that matter and links `/agents`, which carries the rest. A third hop would mean an index
+ * pointing at an index, which is a fetch an agent has to spend and a place it can give up.
+ *
+ * Exits non-zero, so it can gate a deploy.
+ */
+async function linkGraph() {
+  const base = arg('--url', null)
+  const dist = join(APP, 'dist')
+  let server, root = base
+  if (!base) {
+    if (!existsSync(join(dist, 'index.html'))) {
+      console.error('no dist/ — run `npm run build:site` first')
+      process.exit(1)
+    }
+    server = await serveDir(dist, 8830)
+    root = 'http://127.0.0.1:8830'
+  }
+
+  const hrefs = async (path) => {
+    const res = await fetch(root + path)
+    if (!res.status || res.status >= 400) return []
+    const html = await res.text()
+    if (!(res.headers.get('content-type') || '').includes('text/html')) return []
+    return [...html.matchAll(/href="([^"]+)"/g)]
+      .map(m => m[1].replace(/^\.\//, '/'))
+      .filter(u => u.startsWith('/'))
+  }
+
+  // Hop 1: the home page. Hop 2: everything it links that is itself a page.
+  const hop1 = await hrefs('/')
+  const reachable = new Set(hop1)
+  for (const u of hop1) {
+    if (/\.[a-z0-9]+$/i.test(u)) continue      // a file, not a page to expand
+    for (const v of await hrefs(u)) reachable.add(v)
+  }
+
+  // What llms.txt promises. Its own text is the specification of what must be linked.
+  const llms = await (await fetch(root + '/llms.txt')).text()
+  const promised = [...new Set(
+    [...llms.matchAll(/https:\/\/lunenburgbudgetproject\.org(\/[^\s)\]<>"']+)/g)]
+      .map(m => m[1].replace(/[.,]$/, '')))]
+    // A pattern with a placeholder in it is documentation, not an address.
+    .filter(u => !u.includes('<') && !u.includes('*'))
+
+  console.log(`\nlink graph — ${promised.length} URLs named in llms.txt, ` +
+    `${reachable.size} reachable in two hops from /\n`)
+
+  const orphans = promised.filter(u => !reachable.has(u))
+  for (const u of promised.slice(0, 0)) void u
+  if (orphans.length) {
+    console.log(`${orphans.length} named in llms.txt and linked from nowhere:`)
+    for (const u of orphans) console.log(`  ${u}`)
+    console.log('\nAn assistant that only fetches URLs it has seen in a page cannot reach')
+    console.log('these. Add them to src/components/AgentsIndex.tsx, which is generated from')
+    console.log('agent-manifest.json — the same file llms.txt is built from.')
+  } else {
+    console.log('every URL llms.txt names is reachable by following links. ' +
+      'Nothing is described but unlinked.')
+  }
+
+  // The inverse failure, and the one that put the only /minutes link on a 404: a link that
+  // goes nowhere is worse than a missing one, because it looks like an answer.
+  const dead = []
+  for (const u of [...reachable].filter(u => !u.startsWith('/#'))) {
+    const res = await fetch(root + u, { redirect: 'manual' })
+    if (res.status >= 400) dead.push(`${u} → ${res.status}`)
+  }
+  console.log(dead.length ? `\n${dead.length} link(s) on the site lead to an error:` : '\nno linked URL 404s.')
+  for (const d of dead) console.log(`  ${d}`)
+
+  server?.close()
+  if (orphans.length || dead.length) process.exit(1)
+}
+
 async function main() {
+  if (flag('--links')) return linkGraph()
   if (flag('--cache')) return cacheProbe()
   const single = arg('--url')
   if (single) SURFACES.splice(0, SURFACES.length, { name: 'given', url: single, note: single })

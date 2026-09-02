@@ -1,0 +1,67 @@
+[
+ {
+  "name": "sped-lines.csv",
+  "note": "Every budget line this project counts as special education, and which of the two rules caught it. They sum to the amount the projection starts from. Published because the state has no account code for special education, so the total is our classification rather than a figure anybody published.",
+  "bytes": 6077
+ },
+ {
+  "name": "sped-teacher-history.csv",
+  "note": "Special education teachers as budgeted, FY20 to FY27, by school. Eight budgets growing 2.67% a year against a 3.5% contract \u2014 below it, because headcount here has drifted down.",
+  "bytes": 1259
+ },
+ {
+  "name": "sped-para-history.csv",
+  "note": "Special education paraprofessionals as budgeted, FY18 to FY27, by school. Ten budgets growing 12.8% a year with an R-squared of 0.89 \u2014 which is why this line is escalated at what it has done rather than at the 2.0% its contract gives.",
+  "bytes": 1491
+ },
+ {
+  "name": "sped-transport-history.csv",
+  "note": "Special education transportation as budgeted, FY19 to FY27. Nine budgets, 5.7% a year, R-squared 0.33 \u2014 a weak trend, used because the vendor contract publishes no escalator.",
+  "bytes": 789
+ },
+ {
+  "name": "ood-tuition-history.csv",
+  "note": "Out-of-district special education tuition as budgeted, FY17 to FY27, extracted from the district\u2019s own budget documents with the budget stage held constant. Eleven budgets ranging 2.6x with no trend \u2014 which is why the model holds this line flat rather than escalating it.",
+  "bytes": 1166
+ },
+ {
+  "name": "model.json",
+  "note": "Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.",
+  "bytes": 303730
+ },
+ {
+  "name": "sources.json",
+  "note": "The document archive: every source, its group, its size, and the URL it is served from.",
+  "bytes": 196807
+ },
+ {
+  "name": "budget-lines.csv",
+  "note": "The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.",
+  "bytes": 55376
+ },
+ {
+  "name": "district-page-index.csv",
+  "note": "The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district\u2019s original URL, and a sha256.",
+  "bytes": 32304
+ },
+ {
+  "name": "free-cash-proof.csv",
+  "note": "The Division of Local Services free cash proof for Lunenburg and eight comparable towns, 2021-2025, line by line. Free cash is what a town may appropriate without raising taxes. NOTE: these are absolute dollars with no denominator anywhere in the source, so they do not compare between towns of different size. The composition does compare, because a share has no size.",
+  "bytes": 79594
+ },
+ {
+  "name": "rate-register.csv",
+  "note": "Every rate this project knows about \u2014 athletic and bus fees, collective bargaining raises, facilities \u2014 each carrying the fiscal year it applies to, the document that set it and the date. 62 rates. It exists because FY26 athletic fees were modelled on FY25\u2019s schedule for months: a right number from the wrong year, taken from a fee page that states its rates and never states which year they cover. It deliberately includes the rates the model does NOT use and the ones we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank.",
+  "bytes": 14237
+ },
+ {
+  "name": "athletic-fee-schedule.csv",
+  "note": "Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them.",
+  "bytes": 6752
+ },
+ {
+  "name": "minutes-index.csv",
+  "note": "Every agenda and set of minutes the town publishes: board, date, kind, and the town\u2019s own URL. 1,422 rows.",
+  "bytes": 242881
+ }
+]

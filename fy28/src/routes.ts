@@ -11,7 +11,7 @@
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
-  | 'dataroom' | 'reports'
+  | 'dataroom' | 'reports' | 'agents'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -42,6 +42,11 @@ export const SLUG: Record<Tab, string> = {
   freecash: 'free-cash',
   // What this project WROTE, as opposed to what it mirrors. Public and linked.
   reports: 'reports',
+  // Every machine-readable address on the site, as LINKS. `llms.txt` names all of these
+  // already, but it is text/plain, and assistants that only fetch URLs seen in a prior
+  // page could read the name of a file and not be allowed to request it. See
+  // components/AgentsIndex.tsx -- this page exists to put them in the link graph.
+  agents: 'agents',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -79,6 +84,10 @@ const ALIASES: Record<string, Tab> = {
   'rate-register': 'rates', fees: 'rates', 'fee-schedule': 'rates', register: 'rates',
   'free-cash': 'freecash', freecash: 'freecash', reserves: 'freecash', 'certified-free-cash': 'freecash',
   reports: 'reports', analyses: 'reports', analysis: 'reports', 'our-analyses': 'reports',
+  // NOT 'api' or 'data' -- both are live Function prefixes serving real files, and an
+  // alias would shadow the archive with an app route.
+  agents: 'agents', 'for-agents': 'agents', ai: 'agents', llms: 'agents',
+  'machine-readable': 'agents', downloads: 'agents',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -110,6 +119,7 @@ export const LABEL: Record<Tab, string> = {
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
   reports: 'Reports and analyses',
+  agents: 'Every address on this site, as links',
   dataroom: 'The data room',
 }
 
@@ -122,6 +132,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   athletics: 'context',
   rates: 'deeper',
   reports: 'deeper',
+  agents: 'sources',
   freecash: 'money',
 }
 

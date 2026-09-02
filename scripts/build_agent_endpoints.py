@@ -400,6 +400,18 @@ def main():
     with open(os.path.join(PUB, 'llms.txt'), 'w') as fh:
         fh.write('\n'.join(lines) + '\n')
 
+    # The same list, for the /agents page to render as LINKS.
+    #
+    # llms.txt names every one of these and that was not enough: it is text/plain, and
+    # assistants commonly refuse to fetch a URL that has not appeared as a link in
+    # something they already loaded. So the descriptions written above have to reach the
+    # link graph too, and they are written once, here, rather than retyped in a component
+    # that would then drift from what llms.txt says these files are.
+    df = os.path.join(ROOT, 'fy28', 'src', 'data', 'agent-data-files.json')
+    json.dump([dict(name=n, note=w, bytes=b) for n, w, b in published],
+              open(df, 'w'), indent=1)
+    print(f'  wrote {os.path.relpath(df, ROOT)} for the /agents page')
+
     print(f'wrote {os.path.relpath(os.path.join(PUB, "llms.txt"), ROOT)}')
     for name, _, size in published:
         print(f'  data/{name:<28}{size / 1e6:>7.1f}MB')
