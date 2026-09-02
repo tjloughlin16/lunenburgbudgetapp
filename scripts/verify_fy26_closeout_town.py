@@ -203,6 +203,18 @@ def main():
     print('  OK    no offsetting credit anywhere in the school department')
 
 
+    print('\n§close  How far the year-end close can move the figure')
+    # The hedge "these are not final" was doing more work than the evidence supports.
+    # The move is BOUNDED by what is still encumbered, so the ceiling is asserted rather
+    # than left as an open-ended caveat -- an unbounded hedge reads as "this might be
+    # nothing", and it is not.
+    cl = one("""SELECT SUM(available) av, SUM(encumbered) en
+                FROM ledger_snapshot l JOIN account a USING (account_id)
+                WHERE l.fy=2026 AND l.period=12 AND a.fund='0100' AND a.dept NOT IN ('300','301')""")
+    present('encumbered, the only money in play at the close', float(cl['en']))
+    present('the ceiling if every purchase order is released',
+            float(cl['av']) + float(cl['en']), dp=0)
+
     print('\n§codes  Every ledger code this document names has a recorded expansion')
     names = {r[0] for r in db.execute(
         """SELECT DISTINCT a.name FROM ledger_snapshot l JOIN account a USING (account_id)

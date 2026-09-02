@@ -24,12 +24,28 @@ a description.
 
 **Three limits travel with every figure below, and none of them is a technicality.**
 
-**It is period 12, not period 13.** Period 12 is June. Period 13 is the year-end close,
-after purchase orders are cleared in the lapse period. The Town Manager said so in the
-covering note: the figures *"are likely to continue to adjust as we continue the year-end
-reconciliation process."* In FY25 that step moved the school figure by $21,770.53 between
-two School Committee meetings a fortnight apart. **So nothing here is a surplus. It is a
-position.**
+**It is period 12, not period 13** — June, before purchase orders are cleared in the
+lapse period. The Town Manager put it exactly right in her covering note, and this
+document borrows her framing rather than inventing a more anxious one:
+
+> "This is the current FY26 report — figures likely to continue to adjust as we continue
+> the year-end reconciliation process."
+
+**Current, not final. Both halves of that matter.** An earlier draft of this document
+leaned on the second half and let it imply the first was in doubt, which is its own kind of
+error: a hedge stretched past what the evidence supports reads as "this might be nothing",
+and it is not.
+
+**What can change is bounded.** The only money in play is the **$236,783.89 still
+encumbered**: at the close each purchase order is either paid, which leaves the unspent
+figure where it is, or released, which raises it. The department's final figure lands
+between **$482,101 and $718,885**, and only late invoices posted against period 13 could
+push it lower. In FY25 the same step moved the school figure **up**, from $582,115.44 to
+$603,885.97 — 3.7%, which here would be about $18,000.
+
+**So nothing here is a surplus, and nothing here is provisional in the sense of being
+doubtful.** It is a position, it is a large one, and the close settles the last few
+percent.
 
 **Zero-balance accounts are suppressed.** The report was run with `Suppress zero bal
 accts: Y`. An account absent from it is not necessarily absent from the ledger, and
@@ -49,9 +65,18 @@ sitting in a drawer — it is what is left after $1,683,534 of underspending acr
 accounts is netted against $1,201,434 of overspending across 56. Roughly $2.9 million of
 variance in a $26.3 million budget, cancelling down to 1.8%.
 
-**And it is not a surplus.** These are the books as they stood in June, before purchase
-orders are cleared at the year-end close. In FY25 that step alone moved the school figure
-by $21,770.53.
+**These figures are current rather than final, and this document holds them the way the
+Town Manager did when she sent them:** *"This is the current FY26 report — figures likely
+to continue to adjust as we continue the year-end reconciliation process."* That is the
+right register. They will change. They are also what there is.
+
+What can change is bounded: the **$236,783.89 still encumbered**. Each purchase order is
+either paid, leaving the figure where it is, or released, raising it — so the department's
+final unspent figure lands between **$482,101 and $718,885**. In FY25 the same step moved
+the school figure *up*, by 3.7%.
+
+So "not final" here does not mean "possibly nothing". Around half a million dollars was
+not spent.
 
 **The district spent 97.3% of what it was given.** That is the first thing a reader should
 take from the chart at the top, and it is the ordinary result of a budget that was set

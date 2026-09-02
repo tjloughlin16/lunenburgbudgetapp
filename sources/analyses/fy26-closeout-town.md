@@ -19,7 +19,13 @@ account level: 376 accounts across 67 departments, everything except the school 
 (300) and school non-recurring (301).
 
 **The same three limits apply as on the school side.** It is **period 12, not 13** — June,
-with the books open, before purchase orders are cleared. **Zero-balance accounts are
+with the books open, before purchase orders are cleared. The Town Manager's own framing is
+the one to use: *"figures likely to continue to adjust as we continue the year-end
+reconciliation process."* Current, not final — and not doubtful either.
+
+The amount that step can move is bounded by the **$282,541.80 still encumbered**: each
+purchase order is either paid, which leaves the figure where it is, or released, which
+raises it. The town's final unspent figure lands between **$858,462 and $1,141,003**. **Zero-balance accounts are
 suppressed**, so nothing here reasons from what is absent. And it is **expenditures only,
 Fund 0100** — no enterprise funds, no grants, no revolving funds.
 
@@ -59,7 +65,11 @@ staff; the accounts do not separate town from school. This is the first time thi
 has been able to point in the ledger at any of the gap between the state's all-funds
 figure for Lunenburg and the appropriation.
 
-**Nothing here is a surplus.** Period 12, books open.
+**These figures are current rather than final**, and this document holds them the way the
+Town Manager did when she sent them: *"figures likely to continue to adjust as we continue
+the year-end reconciliation process."* What can change is bounded by the $282,542 still
+encumbered, so the town's final unspent figure lands between $858,462 and $1,141,003.
+Current, not doubtful.
 
 ---
 
