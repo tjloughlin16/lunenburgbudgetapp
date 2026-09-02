@@ -761,6 +761,19 @@ GROUPS = [
              'no solid waste expenditure report is held at all; and the sewer report '
              'covers four funds whose headers our text extraction runs together, so a fund '
              'is positional rather than per-row.'),
+            ('data/account-names.csv',
+             'What the ledger\u2019s account codes mean \u2014 our readings', 3,
+             'The town\u2019s ledger prints ten-character abbreviations and stops: '
+             '`SCHRETHLTH`, `COLL TUITI`, `KINDAIDREG`. Nothing published expands them. '
+             'So these 80 readings are OURS, and each records the basis it rests on: '
+             '**district document** where the district\u2019s own budget prints the full '
+             'line name (7), **department name** where the department it sits in settles '
+             'it (17), **department context** where the org or object code does (16), and '
+             '**plain reading** where the abbreviation is unambiguous English (40). Keyed '
+             'on department, because the same code means different things in different '
+             'places \u2014 `REG TRANS` is school busing in department 300 and a regional '
+             'transit assessment in department 825. The verifiers fail if either closeout '
+             'analysis names a code with no entry here.'),
             ('data/stated-figures.csv',
              'Figures the town stated about itself, with the quote', 3,
              'Not ours and not computed from anything here. The FY25 school surplus as the '

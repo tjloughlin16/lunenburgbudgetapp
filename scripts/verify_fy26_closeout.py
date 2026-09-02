@@ -241,6 +241,29 @@ def main():
     if 'through 31 March' not in PLAIN:
         FAILS.append('§6 must state that its figures are a different period from §1')
 
+
+    print('\n§codes  Every ledger code this document names has a recorded expansion')
+    names = {r[0] for r in db.execute(
+        """SELECT DISTINCT a.name FROM ledger_snapshot l JOIN account a USING (account_id)
+           WHERE l.fy=2026 AND l.period=12""")}
+    import csv as _csv
+    expanded = set()
+    NAMES_CSV = os.path.join(ROOT, 'sources', 'data', 'account-names.csv')
+    if os.path.exists(NAMES_CSV):
+        with open(NAMES_CSV, encoding='utf-8') as fh:
+            for r in _csv.DictReader(fh):
+                expanded.add(r['code'])
+    used = sorted(n for n in names
+                  if re.search(r'(?<![A-Z])' + re.escape(n) + r'(?![A-Z])', TEXT))
+    missing = [n for n in used if n not in expanded]
+    print(f'  ..    {len(used)} ledger codes named, {len(used) - len(missing)} expanded')
+    for m in missing:
+        FAILS.append(f'`{m}` is named in the document with no entry in '
+                     f'sources/data/account-names.csv — the reading is ours and has to '
+                     f'say so')
+    if not missing:
+        print('  OK    every code carries a recorded reading and its basis')
+
     print('\n§0  The document must not call any of this a surplus')
     for banned in (r'\bthe surplus was\b', r'\bFY26 surplus of\b'):
         if re.search(banned, PLAIN, re.I):

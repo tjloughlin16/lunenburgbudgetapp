@@ -40,6 +40,7 @@ THESE RENDER TO PRINT, so there is no hover layer and every bar is directly labe
 The analysis text underneath each chart is the table view.
 """
 import argparse
+import csv
 import os
 import sqlite3
 import sys
@@ -59,6 +60,63 @@ GRID = '#e1e0d9'
 AXIS = '#c3c2b7'
 SURFACE = '#fcfcfb'
 FONT = ('system-ui, -apple-system, "Segoe UI", sans-serif')
+
+# Readable titles for the ledger's ten-character codes.
+#
+# **These expansions are OURS.** Nothing published maps `SCHRETHLTH` to "school retiree
+# health insurance"; the ledger prints the abbreviation and stops. So each one is recorded
+# in sources/data/account-names.csv with the basis it rests on -- a district budget line
+# that prints the full name, the department's own name, the object code's meaning, or a
+# plain reading of the abbreviation -- and anything without a defensible basis keeps the
+# code and gets no title at all.
+#
+# Keyed on DEPARTMENT, because the same code means different things in different places:
+# `REG TRANS` is school busing in department 300 and a regional transit assessment in
+# department 825. A lookup on the code alone would have silently mislabelled one of them.
+NAMES_CSV = os.path.join(ROOT, 'sources', 'data', 'account-names.csv')
+
+
+def load_names():
+    by_org, by_obj = {}, {}
+    if not os.path.exists(NAMES_CSV):
+        return by_org, by_obj
+    with open(NAMES_CSV, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if r['org']:
+                # Keyed on the CODE as well as the org. Org S2066651 carries BOTH
+                # HS GUIDANC and SOCWORKSAL, so a lookup on (dept, org) alone returned
+                # the guidance title for the social worker line and printed it under the
+                # wrong bar. Caught by rendering the chart and reading it.
+                by_org[(r['dept'], r['org'], r['code'])] = r['readable']
+            else:
+                by_obj[(r['dept'], r['object'], r['code'])] = r['readable']
+    return by_org, by_obj
+
+
+BY_ORG, BY_OBJ = load_names()
+
+
+def readable(dept, org, obj, code):
+    """The title, or None. An unexpanded code shows as itself rather than as a guess."""
+    return BY_ORG.get((dept, org, code)) or BY_OBJ.get((dept, obj, code))
+
+
+def label(b, x, y, dept, org, obj, code, anchor='end'):
+    """Two lines: our title above, the ledger's own code beneath it in muted ink.
+
+    Both, always. The title is what a reader can follow; the code is what they would type
+    into a records request, and it is the thing the town would recognise.
+    """
+    r = readable(dept, org, obj, code)
+    if r:
+        b.append(f'<text x="{x}" y="{y - 3}" font-size="9.5" text-anchor="{anchor}" '
+                 f'fill="{SECOND}">{esc(r)}</text>')
+        b.append(f'<text x="{x}" y="{y + 7}" font-size="7.5" text-anchor="{anchor}" '
+                 f'fill="{MUTED}" font-family="Menlo, monospace">{esc(code)}</text>')
+    else:
+        b.append(f'<text x="{x}" y="{y + 2}" font-size="9.5" text-anchor="{anchor}" '
+                 f'fill="{SECOND}" font-family="Menlo, monospace">{esc(code)}</text>')
+
 
 SIDES = {
     'school': dict(where="a.dept = '300'", label='School department'),
@@ -150,8 +208,8 @@ def chart_variance(db, side, meta, n=7):
     def top(sign, limit):
         cmp = '<' if sign < 0 else '>'
         order = 'ASC' if sign < 0 else 'DESC'
-        return [dict(zip(('name', 'org', 'v'), r)) for r in db.execute(
-            f"""SELECT a.name, a.org, l.available
+        return [dict(zip(('name', 'org', 'obj', 'dept', 'v'), r)) for r in db.execute(
+            f"""SELECT a.name, a.org, a.object, a.dept, l.available
                 FROM ledger_snapshot l JOIN account a USING (account_id)
                 WHERE l.fy=2026 AND l.period=12 AND {meta['where']}
                   AND l.available {cmp} 0.5
@@ -173,7 +231,7 @@ def chart_variance(db, side, meta, n=7):
     NAME_W, GUT, LABEL_W = 196, 8, 58
     HALF = (W - NAME_W - GUT - 2 * LABEL_W) / 2
     MID = NAME_W + GUT + LABEL_W + HALF
-    ROW, TOP = 19, 58
+    ROW, TOP = 23, 58
     H = TOP + ROW * len(items) + 42
     b = [f'<line x1="{MID}" y1="{TOP - 8}" x2="{MID}" y2="{TOP + ROW * len(items)}" '
          f'stroke="{AXIS}" stroke-width="1"/>']
@@ -184,8 +242,7 @@ def chart_variance(db, side, meta, n=7):
         x = MID + 1 if pos else MID - w - 1
         b.append(f'<rect x="{x:.1f}" y="{y + 3}" width="{max(w, 1.5):.1f}" height="11" '
                  f'fill="{UNDER if pos else OVER}" rx="2"/>')
-        b.append(f'<text x="{NAME_W}" y="{y + 12}" font-size="10" text-anchor="end" '
-                 f'fill="{SECOND}">{esc(r["name"])}</text>')
+        label(b, NAME_W, y + 11, r['dept'], r['org'], r['obj'], r['name'])
         lx = x + w + 6 if pos else x - 6
         b.append(f'<text x="{lx:.1f}" y="{y + 12}" font-size="10" font-weight="700" '
                  f'text-anchor="{"start" if pos else "end"}" fill="{INK}">'
@@ -222,8 +279,8 @@ def chart_variance(db, side, meta, n=7):
 
 def chart_spend(db, side, meta, n=10):
     """Horizontal bars: where the money actually went."""
-    rows = [dict(zip(('name', 'v'), r)) for r in db.execute(
-        f"""SELECT a.name, SUM(l.expended) e
+    rows = [dict(zip(('name', 'dept', 'org', 'obj', 'v'), r)) for r in db.execute(
+        f"""SELECT a.name, MIN(a.dept), MIN(a.org), MIN(a.object), SUM(l.expended) e
             FROM ledger_snapshot l JOIN account a USING (account_id)
             WHERE l.fy=2026 AND l.period=12 AND {meta['where']} AND l.expended > 0
             GROUP BY a.name ORDER BY e DESC LIMIT ?""", (n,))]
@@ -231,11 +288,12 @@ def chart_spend(db, side, meta, n=10):
         f"""SELECT SUM(expended) FROM ledger_snapshot l JOIN account a USING (account_id)
             WHERE l.fy=2026 AND l.period=12 AND {meta['where']}""").fetchone()[0])
     shown = sum(r['v'] for r in rows)
-    rows.append(dict(name=f'everything else', v=total - shown, rest=True))
+    rows.append(dict(name='everything else', dept='', org='', obj='',
+                     v=total - shown, rest=True))
 
-    W, NAME_W, RIGHT = 640, 200, 92
+    W, NAME_W, RIGHT = 640, 248, 92
     LEFT = NAME_W + 10
-    ROW, TOP = 19, 56
+    ROW, TOP = 23, 56
     H = TOP + ROW * len(rows) + 20
     span = max(r['v'] for r in rows)
     b = []
@@ -246,8 +304,11 @@ def chart_spend(db, side, meta, n=10):
         col = SEQ[2] if r.get('rest') else SEQ[1]
         b.append(f'<rect x="{LEFT}" y="{y + 3}" width="{max(w, 1.5):.1f}" height="11" '
                  f'fill="{col}" rx="2"/>')
-        b.append(f'<text x="{NAME_W}" y="{y + 12}" font-size="10" text-anchor="end" '
-                 f'fill="{SECOND}">{esc(r["name"])}</text>')
+        if r.get('rest'):
+            b.append(f'<text x="{NAME_W}" y="{y + 13}" font-size="9.5" text-anchor="end" '
+                     f'fill="{SECOND}">everything else</text>')
+        else:
+            label(b, NAME_W, y + 11, r['dept'], r['org'], r['obj'], r['name'])
         b.append(f'<text x="{LEFT + w + 6:.1f}" y="{y + 12}" font-size="10" '
                  f'font-weight="700" fill="{INK}">{usdk(r["v"])}</text>')
     return svg(W, H, ''.join(b),
