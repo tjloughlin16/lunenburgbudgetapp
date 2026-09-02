@@ -1,5 +1,8 @@
 # Who reads this, and what they need from it
 
+**Step 6 of `notes/WRITING-AN-ANALYSIS.md`.** That file is the whole sequence for producing
+an analysis; this one is the readers it gets checked against.
+
 A review process, and the six readers it runs against. Applied to every analysis before it
 is published, and re-applied when one is substantially changed.
 

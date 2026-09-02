@@ -319,7 +319,19 @@ somebody wrote when it believed something else. `audit_provenance.py` fails if i
 
 ---
 
-## 15. A verifier checks the figures. It cannot check that anybody's question was answered
+## 15. There is a written process for producing an analysis. Follow it in order
+
+`notes/WRITING-AN-ANALYSIS.md` — eight steps, and the order is the point. Data in before
+a sentence is written; decompose by what the money buys before looking for a headline;
+both halves of every section including what it does not show; the document that would
+settle each open question; the verifier written before publishing rather than after; the
+persona review; charts only where the finding is visual; then publish.
+
+The table at the end says why each step cannot move. The short version: a sentence written
+before the query gets defended instead of tested, and a verifier written after the prose
+asserts what you wrote rather than what is true.
+
+## 15a. A verifier checks the figures. It cannot check that anybody's question was answered
 
 Every figure in a finished analysis is recomputed by a script. Nothing checks whether the
 document answers what the reader came with -- and a report that is entirely correct and
