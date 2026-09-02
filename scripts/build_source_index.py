@@ -650,6 +650,52 @@ GROUPS = [
              'TOTAL before it will write; an earlier version silently dropped 16 '
              'departments whose figures printed as \u201c.00\u201d. Rebuild with '
              'scripts/extract_town_ledger.py.'),
+            ('data/munis-ledger.csv',
+             'Every MUNIS budget report we hold, one table', 3,
+             'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '
+             'and revenues, general fund and enterprise funds \u2014 parsed into one '
+             'normalised table by scripts/extract_munis_report.py, which reads the format '
+             'rather than one file, so reports for other years load with no new code. '
+             'Each report reconciles to its own printed GRAND TOTAL before it is written. '
+             'Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: '
+             'ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report \u2014 '
+             'it declares Account type Revenue and duplicates the file named -revenue-, so '
+             'no solid waste expenditure report is held at all; and the sewer report '
+             'covers four funds whose headers our text extraction runs together, so a fund '
+             'is positional rather than per-row.'),
+            ('data/stated-figures.csv',
+             'Figures the town stated about itself, with the quote', 3,
+             'Not ours and not computed from anything here. The FY25 school surplus as the '
+             'district stated it \u2014 $582,115.44 on 3 September 2025 and $603,885.97 on '
+             '17 September after purchase orders were closed \u2014 each with who said it, '
+             'the minutes it is quoted from and the line number. Recorded separately from '
+             'everything we derive, because the town\u2019s closing figure is arrived at '
+             'by closing its books and we cannot do that arithmetic from what we hold.'),
+            ('data/dese-radar.csv',
+             'DESE\u2019s own figures, every district, FY2009\u2013FY2025', 3,
+             'The state\u2019s RADAR district comparison: enrollment, demographics, '
+             'staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, '
+             'for all 421 Massachusetts districts. The first view of Lunenburg school '
+             'spending here that is neither the town\u2019s general fund nor written by '
+             'the district, so it bounds from outside the money the budget document cannot '
+             'see. Three cautions travel with it: DESE counts costs the school budget does '
+             'not carry, so its total must never be subtracted from the town\u2019s '
+             'appropriation to produce \u201chidden money\u201d; it says all funds and '
+             'gives one number, so it cannot say which dollar came from a grant; and its '
+             'paraprofessional figure is FTE from the state\u2019s staffing collection, '
+             'not a headcount. Each district-year is checked against DESE\u2019s own '
+             'printed in-district total \u2014 16 fail, all charter schools, and Lunenburg '
+             'ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.'),
+            ('data/lunenburg.db',
+             'The whole analysis database, SQLite', 3,
+             'Every figure on this site in one queryable file, built by '
+             'scripts/build_db.py from the CSVs above, which remain the source of truth. '
+             'It is a derived read model: dropped and rebuilt from scratch on every run, '
+             'never edited by hand, because a row in a database has no address, no '
+             'publisher filename and no checksum. Every fact row carries the document it '
+             'came from. Also served as a read-only JSON API at /api/index, with '
+             '/api/schema stating the grain of each table and the four ways to get a '
+             'confident wrong answer out of it.'),
             ('data/athletics-history.csv',
              'Athletics, both sides of the money, FY14\u2013FY26', 3,
              'Every line of the town\u2019s athletics appropriation and every line of the '
@@ -917,6 +963,14 @@ FORM_ONLY = {
         'The DLS Gateway builds the free cash report on submission — jurisdiction and '
         'fiscal year chosen from dropdowns, held in session. There is no file URL. '
         'Lunenburg is 162; the eight comparison towns are all on the same list.',
+    'https://profiles.doe.mass.edu/profiles/finance.aspx?orgcode=01620000&orgtypecode=5'
+    '&dropDownOrgCode=2':
+        'This IS the per-district page, not an index of them \u2014 the org code is in '
+        'the URL and 01620000 is Lunenburg, checked against the educator-contract '
+        'endpoints already verified here. DESE renders it rather than serving a file, so '
+        'there is nothing deeper to link. The underlying figures are also in '
+        'doe.mass.edu/research/radar/district-comparison.xlsx, which IS a file and is '
+        'linked as one.',
 }
 
 

@@ -23,8 +23,18 @@ import { Section, Note } from '../components/primitives'
  *  ledger has no business in the bundle every other page pays for.
  */
 
-type Cell = { state: 'obtained' | 'partial' | 'missing'; n?: number; docs?: number; note?: string }
-type RowDef = { id: string; group: string; label: string; why: string }
+type DocRef = {
+  citedAs: string; path: string; basis: string | null; url: string | null
+  sha256: string | null; hiddenColumns: string | null
+}
+type Cell = {
+  state: 'obtained' | 'partial' | 'missing'
+  n?: number; note?: string; documents: DocRef[]; unresolvedDocuments?: string[]
+}
+type RowDef = {
+  id: string; group: string; label: string; why: string
+  publisher: string; howToGet: string; effort: 'public' | 'records request'
+}
 type YearRow = {
   fy: number; budget?: number; stage?: string; actual?: number
   variance?: number; sameDoc?: boolean; disagree?: boolean
@@ -156,7 +166,21 @@ export function DataRoom() {
 
 /* ---------------------------------------------------------------- coverage matrix */
 
+/** The coverage matrix, and the thing that makes it useful: every cell opens.
+ *
+ *  A grid of coloured squares tells a reader we have gaps. It does not tell them where a
+ *  figure came from, or what to do about a gap, and the honest complaint is that the
+ *  sources blur together -- some are the district's, some the town's, some the state's,
+ *  and the grid flattens that distinction away.
+ *
+ *  So three things open:
+ *    a cell     -> the documents behind it, with address and sha256, OR what to obtain
+ *    a year     -> everything that year still needs, grouped by who to ask
+ *    a row      -> what that document is, who publishes it, and how it is obtained
+ */
 function Coverage({ cov }: { cov: Ledger['coverage'] }) {
+  const [open, setOpen] = useState<{ fy: number | null; row: string | null } | null>(null)
+
   const groups = useMemo(() => {
     const g: { name: string; rows: RowDef[] }[] = []
     for (const r of cov.rowDefs) {
@@ -170,56 +194,69 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
   const tally = useMemo(() => {
     let obtained = 0, partial = 0, missing = 0
     for (const fy of cov.years) for (const rd of cov.rowDefs) {
-      const s = cov.cells[String(fy)]?.[rd.id]?.state
-      if (s === 'obtained') obtained++
-      else if (s === 'partial') partial++
+      const st = cov.cells[String(fy)]?.[rd.id]?.state
+      if (st === 'obtained') obtained++
+      else if (st === 'partial') partial++
       else missing++
     }
     return { obtained, partial, missing, total: cov.years.length * cov.rowDefs.length }
   }, [cov])
+
+  const at = (fy: number, id: string): Cell =>
+    cov.cells[String(fy)]?.[id] ?? { state: 'missing', documents: [] }
+  const def = (id: string) => cov.rowDefs.find(r => r.id === id)!
 
   return (
     <Section id="coverage" eyebrow="1 — What we actually hold"
       title="Completeness, by fiscal year"
       lede={<>
         <p className="mb-3">
-          The same twelve rows for every year, so a gap is visible rather than argued
-          about. This matrix is computed from the database — it asks what is present
-          rather than reading a list somebody maintains, so a document that arrives shows
-          up here without anybody remembering to tick a box.
+          The same {cov.rowDefs.length} rows for every year, computed from the database
+          rather than read off a list somebody maintains — so a document that arrives
+          shows up here without anybody ticking a box, and one that is missing cannot be
+          quietly marked present.
         </p>
         <p>
-          <strong style={{ color: 'var(--text-primary)' }}>Partial is its own state and it
-          matters.</strong> The FY26 quarterly spend report exists, but it was run as a
-          department rollup: the whole school district is one row. That cannot be traced
-          to a line, so it is not the same document as a line-level report and is not
-          marked as one.
+          <strong style={{ color: 'var(--text-primary)' }}>Everything here opens.</strong>{' '}
+          Click a square to see the documents behind it, or what to obtain if it is empty.
+          Click a year to get everything that year still needs, grouped by who to ask.
+          Click a row label for what that document is and who publishes it.
         </p>
       </>}>
 
       <div className="flex flex-wrap gap-4 mb-5 text-xs">
         {(Object.keys(STATE) as (keyof typeof STATE)[]).map(k => (
-          <span key={k} className="inline-flex items-center gap-1.5"
-            style={{ color: STATE[k].color }}>
+          <span key={k} className="inline-flex items-center gap-1.5" style={{ color: STATE[k].color }}>
             <span aria-hidden="true" className="text-base leading-none">{STATE[k].glyph}</span>
             {STATE[k].word}
           </span>
         ))}
         <span style={{ color: 'var(--text-muted)' }}>
           {tally.obtained} obtained · {tally.partial} partial · {tally.missing} not held,
-          of {tally.total} cells
+          of {tally.total}
         </span>
       </div>
 
       <div className="overflow-x-auto -mx-5 px-5">
-        <table className="w-full text-[13px] border-collapse min-w-[860px]">
+        <table className="w-full text-[13px] border-collapse min-w-[900px]">
           <thead>
             <tr>
-              <th className="text-left font-semibold pb-2 pr-3 sticky left-0"
+              <th className="text-left font-semibold pb-2 pr-3 sticky left-0 z-10"
                 style={{ background: 'var(--surface-1)' }}>Document</th>
               {cov.years.map(y => (
-                <th key={y} className="pb-2 px-1 font-semibold tnum text-center whitespace-nowrap"
-                  style={{ color: 'var(--text-secondary)' }}>FY{String(y).slice(2)}</th>
+                <th key={y} className="pb-2 px-1 font-semibold">
+                  <button onClick={() => setOpen(
+                    open?.fy === y && !open?.row ? null : { fy: y, row: null })}
+                    aria-expanded={open?.fy === y && !open?.row}
+                    className="tnum whitespace-nowrap px-1 py-0.5 rounded"
+                    style={{
+                      color: open?.fy === y ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      background: open?.fy === y && !open?.row ? 'var(--surface-3)' : 'transparent',
+                    }}
+                    title={`Everything FY${y} still needs`}>
+                    FY{String(y).slice(2)}
+                  </button>
+                </th>
               ))}
             </tr>
           </thead>
@@ -233,22 +270,35 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
                 </tr>
                 {g.rows.map(rd => (
                   <tr key={rd.id} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                    <td className="py-2 pr-3 align-top sticky left-0"
+                    <td className="py-2 pr-3 align-top sticky left-0 z-10"
                       style={{ background: 'var(--surface-1)' }}>
-                      <div className="font-medium">{rd.label}</div>
-                      <div className="text-[11px] leading-snug max-w-[22rem]"
-                        style={{ color: 'var(--text-muted)' }}>{rd.why}</div>
+                      <button onClick={() => setOpen(
+                        open?.row === rd.id && !open?.fy ? null : { fy: null, row: rd.id })}
+                        aria-expanded={open?.row === rd.id && !open?.fy}
+                        className="text-left">
+                        <span className="font-medium underline decoration-dotted underline-offset-2">
+                          {rd.label}
+                        </span>
+                        <span className="block text-[11px] leading-snug max-w-[22rem]"
+                          style={{ color: 'var(--text-muted)' }}>{rd.why}</span>
+                      </button>
                     </td>
                     {cov.years.map(y => {
-                      const c = cov.cells[String(y)]?.[rd.id] ?? { state: 'missing' as const }
-                      const s = STATE[c.state]
-                      const title = [rd.label, `FY${y}`, s.word, c.note,
-                        c.n ? `${c.n} rows` : null, c.docs ? `${c.docs} documents` : null]
-                        .filter(Boolean).join(' · ')
+                      const c = at(y, rd.id)
+                      const st = STATE[c.state]
+                      const on = open?.fy === y && open?.row === rd.id
                       return (
-                        <td key={y} className="text-center py-2 px-1" title={title}>
-                          <span aria-label={`FY${y}: ${s.word}`} className="text-lg leading-none"
-                            style={{ color: s.color }}>{s.glyph}</span>
+                        <td key={y} className="text-center py-1 px-1">
+                          <button
+                            onClick={() => setOpen(on ? null : { fy: y, row: rd.id })}
+                            aria-expanded={on}
+                            aria-label={`FY${y}, ${rd.label}: ${st.word}`}
+                            className="w-7 h-7 rounded leading-none text-lg"
+                            style={{ color: st.color,
+                                     background: on ? 'var(--surface-3)' : 'transparent',
+                                     outline: on ? '1px solid var(--grid)' : 'none' }}>
+                            {st.glyph}
+                          </button>
                         </td>
                       )
                     })}
@@ -259,13 +309,240 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
           </tbody>
         </table>
       </div>
-      <Note>
-        Hover any cell for the row count and the number of documents behind it. Every
-        &ldquo;purchase orders closed after close&rdquo; cell is empty for every year: that
-        step is what moved the FY25 surplus from $582,115.44 on 3 September 2025 to
-        $603,885.97 on 17 September, and it cannot be recovered from a single report run.
-      </Note>
+
+      {open && (
+        <div className="mt-5">
+          {open.fy !== null && open.row !== null && (
+            <CellDetail fy={open.fy} rd={def(open.row)} cell={at(open.fy, open.row)}
+              onClose={() => setOpen(null)} />
+          )}
+          {open.fy !== null && open.row === null && (
+            <YearReport fy={open.fy} cov={cov} onClose={() => setOpen(null)}
+              onPick={(row) => setOpen({ fy: open.fy, row })} />
+          )}
+          {open.fy === null && open.row !== null && (
+            <RowDetail rd={def(open.row)} cov={cov} onClose={() => setOpen(null)}
+              onPick={(fy) => setOpen({ fy, row: open.row })} />
+          )}
+        </div>
+      )}
     </Section>
+  )
+}
+
+function Panel({ eyebrow, title, onClose, children }: {
+  eyebrow: string; title: string; onClose: () => void; children: React.ReactNode
+}) {
+  return (
+    <div className="card p-4">
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-0.5"
+            style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
+          <h3 className="text-lg font-bold leading-tight">{title}</h3>
+        </div>
+        <button onClick={onClose} className="text-sm px-2 py-1 rounded shrink-0"
+          style={{ color: 'var(--text-muted)' }} aria-label="Close">✕</button>
+      </div>
+      {children}
+    </div>
+  )
+}
+
+function EffortTag({ effort }: { effort: RowDef['effort'] }) {
+  const pub = effort === 'public'
+  return (
+    <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-1.5 py-0.5 rounded"
+      style={{ color: pub ? 'var(--status-good)' : 'var(--status-warning)',
+               background: 'var(--surface-2)' }}>
+      {pub ? '↓ public download' : '✉ records request'}
+    </span>
+  )
+}
+
+/** One cell. Either the files it rests on, or what to obtain. */
+function CellDetail({ fy, rd, cell, onClose }: {
+  fy: number; rd: RowDef; cell: Cell; onClose: () => void
+}) {
+  const st = STATE[cell.state]
+  return (
+    <Panel eyebrow={`FY${fy} · ${st.word}`} title={rd.label} onClose={onClose}>
+      {cell.note && (
+        <p className="text-sm mb-3 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          {cell.note}
+        </p>
+      )}
+
+      {cell.documents.length > 0 ? (
+        <>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+            style={{ color: 'var(--text-muted)' }}>
+            {cell.documents.length === 1 ? 'The document behind this'
+              : `The ${cell.documents.length} documents behind this`}
+            {cell.n ? ` · ${cell.n.toLocaleString()} figures` : ''}
+          </p>
+          <ul className="space-y-2 mb-3">
+            {cell.documents.map(d => <DocLine key={d.citedAs} d={d} />)}
+          </ul>
+        </>
+      ) : (
+        <p className="text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
+          Nothing in the archive supplies this for FY{fy}.
+        </p>
+      )}
+
+      {cell.unresolvedDocuments && (
+        <p className="text-xs mb-3" style={{ color: 'var(--status-critical)' }}>
+          {cell.unresolvedDocuments.length} cited document(s) could not be resolved to an
+          address: {cell.unresolvedDocuments.join(', ')}. Figures resting on them are
+          uncheckable.
+        </p>
+      )}
+
+      {cell.state !== 'obtained' && (
+        <div className="pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+            style={{ color: 'var(--text-muted)' }}>
+            What would make this green
+          </p>
+          <p className="text-sm leading-relaxed mb-2">{rd.howToGet}</p>
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+            Published by <strong>{rd.publisher}</strong> <EffortTag effort={rd.effort} />
+          </p>
+        </div>
+      )}
+    </Panel>
+  )
+}
+
+function DocLine({ d }: { d: DocRef }) {
+  return (
+    <li className="text-[13px]">
+      <span className="font-mono text-[12px] break-all">{d.path}</span>
+      <span className="block text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+        {d.basis && <>basis: {d.basis} · </>}
+        {d.sha256 ? <>sha256 {d.sha256.slice(0, 16)}…</> : 'no checksum recorded'}
+        {d.url && <> · <a href={d.url} target="_blank" rel="noreferrer"
+          className="underline" style={{ color: 'var(--series-cost)' }}>publisher’s copy</a></>}
+      </span>
+      {d.hiddenColumns && (
+        <span className="block text-[11px]" style={{ color: 'var(--status-warning)' }}>
+          hides columns a reader does not see: {d.hiddenColumns}
+        </span>
+      )}
+    </li>
+  )
+}
+
+/** One year: everything still needed, grouped by who to ask. */
+function YearReport({ fy, cov, onClose, onPick }: {
+  fy: number; cov: Ledger['coverage']; onClose: () => void; onPick: (row: string) => void
+}) {
+  const cells = cov.cells[String(fy)] ?? {}
+  const rows = cov.rowDefs.map(rd => ({
+    rd, cell: (cells[rd.id] ?? { state: 'missing', documents: [] }) as Cell,
+  }))
+  const have = rows.filter(r => r.cell.state === 'obtained')
+  const gaps = rows.filter(r => r.cell.state !== 'obtained')
+  const byPublisher = new Map<string, typeof gaps>()
+  for (const g of gaps) {
+    const k = `${g.rd.publisher}|${g.rd.effort}`
+    byPublisher.set(k, [...(byPublisher.get(k) ?? []), g])
+  }
+
+  return (
+    <Panel eyebrow={`FY${fy}`} onClose={onClose}
+      title={gaps.length === 0 ? `FY${fy} is complete`
+        : `FY${fy} needs ${gaps.length} more document${gaps.length === 1 ? '' : 's'}`}>
+      {[...byPublisher.entries()].map(([k, items]) => {
+        const [publisher, effort] = k.split('|')
+        return (
+          <div key={k} className="mb-5">
+            <p className="text-sm font-semibold mb-2">
+              Ask {publisher} <EffortTag effort={effort as RowDef['effort']} />
+            </p>
+            <ul className="space-y-2.5">
+              {items.map(({ rd, cell }) => (
+                <li key={rd.id} className="text-[13px]">
+                  <button onClick={() => onPick(rd.id)} className="text-left">
+                    <span className="font-medium underline decoration-dotted underline-offset-2">
+                      {rd.label}
+                    </span>
+                    <span className="ml-1.5" style={{ color: STATE[cell.state].color }}>
+                      {STATE[cell.state].glyph} {STATE[cell.state].word}
+                    </span>
+                  </button>
+                  <span className="block text-[12px] leading-relaxed mt-0.5"
+                    style={{ color: 'var(--text-secondary)' }}>{rd.howToGet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      })}
+
+      {have.length > 0 && (
+        <div className="pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+            style={{ color: 'var(--text-muted)' }}>
+            Already held for FY{fy} — {have.length} of {rows.length}
+          </p>
+          <ul className="space-y-1">
+            {have.map(({ rd, cell }) => (
+              <li key={rd.id} className="text-[13px]">
+                <button onClick={() => onPick(rd.id)}
+                  className="underline decoration-dotted underline-offset-2 text-left">
+                  {rd.label}
+                </button>
+                <span style={{ color: 'var(--text-muted)' }}>
+                  {' '}— {cell.documents.length} document
+                  {cell.documents.length === 1 ? '' : 's'}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </Panel>
+  )
+}
+
+/** One row: what this document is, who publishes it, and which years we hold. */
+function RowDetail({ rd, cov, onClose, onPick }: {
+  rd: RowDef; cov: Ledger['coverage']; onClose: () => void; onPick: (fy: number) => void
+}) {
+  const held = cov.years.filter(y => cov.cells[String(y)]?.[rd.id]?.state === 'obtained')
+  const partial = cov.years.filter(y => cov.cells[String(y)]?.[rd.id]?.state === 'partial')
+  return (
+    <Panel eyebrow={rd.group} title={rd.label} onClose={onClose}>
+      <p className="text-sm mb-3 leading-relaxed">{rd.why}</p>
+      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+        style={{ color: 'var(--text-muted)' }}>How it is obtained</p>
+      <p className="text-sm leading-relaxed mb-2">{rd.howToGet}</p>
+      <p className="text-xs mb-4" style={{ color: 'var(--text-secondary)' }}>
+        Published by <strong>{rd.publisher}</strong> <EffortTag effort={rd.effort} />
+      </p>
+      <p className="text-[13px]">
+        <strong>Held for {held.length} of {cov.years.length} years.</strong>{' '}
+        {held.length > 0 && (
+          <span>
+            {held.map((y, i) => (
+              <Fragment key={y}>
+                {i > 0 && ', '}
+                <button onClick={() => onPick(y)} className="underline decoration-dotted"
+                  style={{ color: 'var(--series-cost)' }}>FY{y}</button>
+              </Fragment>
+            ))}
+            .
+          </span>
+        )}
+        {partial.length > 0 && (
+          <span style={{ color: 'var(--status-warning)' }}>
+            {' '}Partial in {partial.map(y => `FY${y}`).join(', ')}.
+          </span>
+        )}
+      </p>
+    </Panel>
   )
 }
 

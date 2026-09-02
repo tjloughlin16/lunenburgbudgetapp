@@ -43,6 +43,7 @@ and back out of any query. A figure that cannot name its document does not get l
 """
 import argparse
 import csv
+import hashlib
 import os
 import sqlite3
 import sys
@@ -191,6 +192,26 @@ CREATE TABLE fund_activity (
     closing_balance     REAL,
     doc_id              TEXT NOT NULL,
     PRIMARY KEY (fund, fy, period, doc_id)
+);
+
+-- DESE's own figures for every Massachusetts district: enrollment, staffing FTE, and
+-- per-pupil expenditure by function, ACROSS ALL FUNDS. The first view of Lunenburg's
+-- school spending in this archive that is neither the town's general fund nor written by
+-- the district.
+--
+-- `reconciles` is DESE's ten printed function components against DESE's own printed
+-- in-district total. 16 district-years do not tie -- all charter schools. Lunenburg ties
+-- in all 17 years.
+CREATE TABLE dese_measure (
+    lea                 TEXT NOT NULL,      -- DESE org code; Lunenburg is 01620000
+    district            TEXT,
+    fy                  INTEGER NOT NULL,
+    "group"             TEXT,               -- 'Expenditures Per Pupil', 'Other Staff', ...
+    measure             TEXT NOT NULL,
+    value               REAL,
+    reconciles          TEXT,               -- 'yes' | 'no' | '' (not checkable)
+    doc_id              TEXT NOT NULL,
+    PRIMARY KEY (lea, fy, "group", measure)
 );
 
 -- Figures the town or district stated about itself, in public, with the quote.
@@ -417,25 +438,76 @@ def key(label):
 
 
 def load_documents(db):
-    """document-basis.csv is the spine; link- and copy-status add the address and bytes."""
+    """Provenance for every document any fact cites.
+
+    Assembled from four places, because no single one has all of it:
+
+      document-basis.csv     what produced a document's figures, and its hidden columns
+      link-status.csv        whether the publisher's copy still opens
+      copy-status.csv        whether our bytes still match the publisher's
+      sources/*/index.csv    the upstream address and sha256 of crawled sources
+
+    Then every remaining gap is filled by HASHING THE FILE ON DISK. A document row
+    without a sha256 is a document a reader cannot verify they have the same copy of,
+    which is most of rule 12's point, and 220 files is a second of compute.
+
+    Finally, any doc_id a fact cites that is still unknown gets a stub rather than being
+    dropped. An orphaned figure must be visible as orphaned.
+    """
     link = {r['path']: r for r in rows('link-status')}
     copy = {r['path']: r for r in rows('copy-status')}
-    out = []
+
+    # The crawlers' own indexes carry the upstream URL and the sha256 taken at fetch time.
+    crawled = {}
+    for name in ('dese', 'district-budget-page', 'town-site'):
+        path = os.path.join(ROOT, 'sources', name, 'index.csv')
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding='utf-8') as fh:
+            for r in csv.DictReader(fh):
+                if r.get('local'):
+                    crawled[r['local']] = r
+
+    out = {}
     for r in rows('document-basis'):
         p = r['path']
-        lk, cp = link.get(p, {}), copy.get(p, {})
-        out.append((p, p, r.get('source_type'), r.get('basis'), r.get('ledger_at'),
-                    r.get('hidden_columns'), lk.get('url') or cp.get('url'),
-                    lk.get('code'), cp.get('state'),
-                    cp.get('remote_sha256'), cp.get('local_sha256')))
-    # Documents that carry figures but are not in document-basis get a stub, so no fact
-    # row is ever orphaned from an address.
-    known = {r[0] for r in out}
-    for stub in (TOWN_LEDGER_DOC, WORKBOOK_DOC):
-        if stub not in known:
-            out.append((stub, stub, 'primary', None, None, None,
-                        None, None, None, None, None))
-    db.executemany('INSERT OR REPLACE INTO document VALUES (?,?,?,?,?,?,?,?,?,?,?)', out)
+        lk, cp, cr = link.get(p, {}), copy.get(p, {}), crawled.get(p, {})
+        out[p] = [p, p, r.get('source_type'), r.get('basis'), r.get('ledger_at'),
+                  r.get('hidden_columns'),
+                  lk.get('url') or cp.get('url') or cr.get('upstream'),
+                  lk.get('code'), cp.get('state'),
+                  cp.get('remote_sha256'),
+                  cp.get('local_sha256') or cr.get('sha256')]
+
+    # Crawled sources that document-basis does not classify are still documents.
+    for p, cr in crawled.items():
+        if p not in out:
+            out[p] = [p, p, 'primary', None, None, None, cr.get('upstream'),
+                      None, None, None, cr.get('sha256')]
+
+    return out
+
+
+def finish_documents(db, docs, cited):
+    """Fill in the sha256 of anything on disk, stub anything still unknown, and write."""
+    for p in sorted(set(cited) - set(docs)):
+        docs[p] = [p, p, 'primary', None, None, None, None, None, None, None, None]
+
+    hashed = 0
+    for p, row in docs.items():
+        if row[10]:
+            continue
+        full = os.path.join(ROOT, p)
+        if os.path.isfile(full):
+            h = hashlib.sha256()
+            with open(full, 'rb') as fh:
+                for chunk in iter(lambda: fh.read(1 << 20), b''):
+                    h.update(chunk)
+            row[10] = h.hexdigest()
+            hashed += 1
+    db.executemany('INSERT OR REPLACE INTO document VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+                   [tuple(v) for v in docs.values()])
+    return len(docs), hashed
 
 
 TOWN_LEDGER_DOC = 'sources/q3-fy26/town-general-fund-expenditures-fy26-q3.txt'
@@ -511,6 +583,12 @@ def load_funds(db):
                     SPECIAL_REV_DOC))
     db.executemany('INSERT OR REPLACE INTO fund_activity VALUES (?,?,?,?,?,?,?,?,?,?)', act)
 
+    dese = []
+    for r in rows('dese-radar'):
+        dese.append((r['lea'], r['district'], int(r['fy']), r['group'], r['measure'],
+                     num(r['value']), r['reconciles'], r['doc_id']))
+    db.executemany('INSERT OR REPLACE INTO dese_measure VALUES (?,?,?,?,?,?,?,?)', dese)
+
     stated = []
     for r in rows('stated-figures'):
         stated.append((int(r['fy']), r['metric'], num(r['amount']), r['stated_on'],
@@ -525,7 +603,7 @@ def load_funds(db):
                        1 if r.get('disagreement') else 0, r.get('doc'),
                        r.get('source_url'), r.get('sha256')))
     db.executemany('INSERT OR REPLACE INTO grant_award VALUES (?,?,?,?,?,?,?,?,?)', grants)
-    return len(act), len(grants), len(stated)
+    return len(act), len(grants), len(stated), len(dese)
 
 
 def load_budget_figures(db):
@@ -708,6 +786,17 @@ def reconcile(db):
                       AND metric='school_surplus' AND supersedes IS NOT NULL)"""),
           157362.73)
 
+    # DESE's all-funds per-pupil total for Lunenburg, asserted against the ten function
+    # components DESE prints beside it. An independent publisher's arithmetic, checked
+    # rather than trusted.
+    check(db, 'DESE FY25 Lunenburg in-district per pupil, components vs total',
+          q("""SELECT (SELECT SUM(value) FROM dese_measure
+                      WHERE lea='01620000' AND fy=2025 AND "group"='Expenditures Per Pupil'
+                        AND measure NOT LIKE 'Total%')
+                   - (SELECT value FROM dese_measure WHERE lea='01620000' AND fy=2025
+                      AND measure='Total In-District Expenditures')"""),
+          0.0, tol=10.0)
+
     # Every fact carries an address.
     check(db, 'ledger rows with no document', q(
         "SELECT COUNT(*) FROM ledger_snapshot WHERE doc_id IS NULL OR doc_id=''"), 0)
@@ -728,9 +817,7 @@ def main():
     db.executemany('INSERT INTO fiscal_period VALUES (?,?,?,?)', PERIODS)
 
     print('Building %s' % os.path.relpath(DB, ROOT))
-    load_documents(db)
-    print('  documents        %5d' % db.execute(
-        'SELECT COUNT(*) FROM document').fetchone()[0])
+    docs = load_documents(db)
     print('  accounts         %5d' % load_munis(db))
     print('  funds            %5d' % db.execute(
         'SELECT COUNT(*) FROM fund').fetchone()[0])
@@ -740,11 +827,23 @@ def main():
     print('  workbook figures %5d' % load_workbook(db))
     print('  budget lines     %5d' % db.execute(
         'SELECT COUNT(*) FROM budget_line').fetchone()[0])
-    fa, gr, st = load_funds(db)
+    fa, gr, st, ds = load_funds(db)
     print('  fund activity    %5d' % fa)
     print('  grant awards     %5d' % gr)
     print('  stated figures   %5d' % st)
+    print('  DESE measures    %5d' % ds)
     print('  reference rows   %5d' % load_reference(db))
+
+    # Documents last: every doc_id any fact cites is known by now, so an orphan can be
+    # stubbed and counted rather than silently producing a figure with no address.
+    cited = [r[0] for r in db.execute(
+        """SELECT DISTINCT doc_id FROM ledger_snapshot
+           UNION SELECT DISTINCT doc_id FROM workbook_figure
+           UNION SELECT DISTINCT doc_id FROM dese_measure
+           UNION SELECT DISTINCT doc_id FROM stated_figure
+           UNION SELECT DISTINCT doc_id FROM fund_activity""")]
+    n_docs, hashed = finish_documents(db, docs, cited)
+    print('  documents        %5d  (%d hashed from disk)' % (n_docs, hashed))
     db.executescript(VIEWS)
     db.commit()
 

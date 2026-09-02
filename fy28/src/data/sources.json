@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-31",
+ "generated": "2026-09-02",
  "origins": [
   {
    "id": "school",
@@ -44,7 +44,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 155 of these 170 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 157 of these 172 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -1251,6 +1251,16 @@
    "blurb": "Machine-readable extracts. Derived from the documents above and rebuildable from them.",
    "items": [
     {
+     "path": "data/lunenburg.db",
+     "title": "The whole analysis database, SQLite",
+     "stars": 3,
+     "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
+     "kind": "DB",
+     "bytes": 4608000,
+     "url": "/docs/data/lunenburg.db",
+     "textUrl": "/docs/data/lunenburg.db"
+    },
+    {
      "path": "data/line-history.csv",
      "title": "Every budget line, budget and actual, year by year",
      "stars": 3,
@@ -1263,6 +1273,18 @@
      "textUrl": "/docs/data/line-history.csv"
     },
     {
+     "path": "data/dese-radar.csv",
+     "title": "DESE’s own figures, every district, FY2009–FY2025",
+     "stars": 3,
+     "what": "The state’s RADAR district comparison: enrollment, demographics, staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, for all 421 Massachusetts districts. The first view of Lunenburg school spending here that is neither the town’s general fund nor written by the district, so it bounds from outside the money the budget document cannot see. Three cautions travel with it: DESE counts costs the school budget does not carry, so its total must never be subtracted from the town’s appropriation to produce “hidden money”; it says all funds and gives one number, so it cannot say which dollar came from a grant; and its paraprofessional figure is FTE from the state’s staffing collection, not a headcount. Each district-year is checked against DESE’s own printed in-district total — 16 fail, all charter schools, and Lunenburg ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.",
+     "kind": "Data",
+     "bytes": 390551,
+     "url": "/docs/data/dese-radar.csv",
+     "count": 2982,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-radar.csv"
+    },
+    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -1273,6 +1295,18 @@
      "count": 630,
      "unit": "rows",
      "textUrl": "/docs/data/free-cash-proof.csv"
+    },
+    {
+     "path": "data/munis-ledger.csv",
+     "title": "Every MUNIS budget report we hold, one table",
+     "stars": 3,
+     "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
+     "kind": "Data",
+     "bytes": 78816,
+     "url": "/docs/data/munis-ledger.csv",
+     "count": 348,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-ledger.csv"
     },
     {
      "path": "data/document-basis.csv",
@@ -1465,6 +1499,18 @@
      "count": 28,
      "unit": "rows",
      "textUrl": "/docs/data/total-salaries-history.csv"
+    },
+    {
+     "path": "data/stated-figures.csv",
+     "title": "Figures the town stated about itself, with the quote",
+     "stars": 3,
+     "what": "Not ours and not computed from anything here. The FY25 school surplus as the district stated it — $582,115.44 on 3 September 2025 and $603,885.97 on 17 September after purchase orders were closed — each with who said it, the minutes it is quoted from and the line number. Recorded separately from everything we derive, because the town’s closing figure is arrived at by closing its books and we cannot do that arithmetic from what we hold.",
+     "kind": "Data",
+     "bytes": 982,
+     "url": "/docs/data/stated-figures.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/stated-figures.csv"
     },
     {
      "path": "data/total-expenses-history.csv",
@@ -3387,8 +3433,28 @@
    "id": "dese",
    "origin": "dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 9 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 11 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
+    {
+     "path": "dese/radar-district-comparison.xlsx",
+     "title": "DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 1426264,
+     "url": "/docs/dese/radar-district-comparison.xlsx",
+     "upstream": "https://www.doe.mass.edu/research/radar/district-comparison.xlsx"
+    },
+    {
+     "path": "dese/lunenburg-finance-profile.html",
+     "title": "DESE school and district profiles — Lunenburg per pupil expenditures, all funds",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 24962,
+     "url": "/docs/dese/lunenburg-finance-profile.html",
+     "upstream": "https://profiles.doe.mass.edu/profiles/finance.aspx?orgcode=01620000&orgtypecode=5&dropDownOrgCode=2"
+    },
     {
      "path": "dese/selected-populations-2019.html",
      "title": "DESE selected populations, state report, FY2019",
@@ -3658,10 +3724,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 282,
+  "documents": 288,
   "groups": 17,
-  "bytes": 355938678,
-  "loadBearing": 51
+  "bytes": 362468253,
+  "loadBearing": 55
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 21 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

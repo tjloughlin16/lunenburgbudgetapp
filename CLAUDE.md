@@ -346,6 +346,8 @@ arriving fresh.
     python3 scripts/extract_munis_report.py --check   # every MUNIS glytdbud report, tied to its own GRAND TOTAL
     python3 scripts/build_db.py --check          # rebuild the analysis database; fail if a reconciliation drifts
     python3 scripts/export_ledger.py             # regenerate the ledger page's data from the database
+    python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
+    python3 scripts/extract_dese_radar.py        # ...checked against DESE's own printed totals
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 

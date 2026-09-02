@@ -41,29 +41,93 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'ledger.json')
 # it is that the empty cells are the argument.
 ROW_DEFS = [
     dict(id='proposed', group='Budget documents', label='Proposed budget, line level',
-         why='The superintendent’s request. Establishes what was asked for.'),
+         why='The superintendent’s request. Establishes what was asked for.',
+         publisher='Lunenburg Public Schools',
+         howToGet='Published on the district’s budget page each winter, and mirrored here '
+                  'when it appears. Older years are in the meeting archive as School '
+                  'Committee packets.',
+         effort='public'),
     dict(id='settled', group='Budget documents', label='Approved budget, line level',
-         why='What the School Committee and Town Meeting settled on. The base every rate is measured from.'),
+         why='What the School Committee and Town Meeting settled on. The base every rate is measured from.',
+         publisher='Lunenburg Public Schools',
+         howToGet='The district’s approved budget document for that year. Where a year is '
+                  'missing it is usually because the document was posted to Google Drive '
+                  'and the link has since been walled.',
+         effort='public'),
     dict(id='restated', group='Budget documents', label='Prior-year actuals, restated',
-         why='A later budget document re-presenting the year. A restatement, not a ledger.'),
+         why='A later budget document re-presenting the year. A restatement, not a ledger.',
+         publisher='Lunenburg Public Schools',
+         howToGet='Appears as an ACTUALS column inside a LATER year’s budget document, so '
+                  'it arrives one to three years after the year it describes. Nothing can '
+                  'make it arrive sooner.',
+         effort='public'),
     dict(id='approp', group='The town’s ledger', label='Appropriation as voted',
-         why='MUNIS original appropriation. What Town Meeting actually voted, before transfers.'),
+         why='MUNIS original appropriation. What Town Meeting actually voted, before transfers.',
+         publisher='Town Accountant',
+         howToGet='The ORIGINAL APPROP column of any MUNIS year-to-date budget report for '
+                  'that year, so it arrives with any of the quarterly reports below.',
+         effort='records request'),
     dict(id='q1', group='The town’s ledger', label='Q1 spend report (period 3)',
-         why='First quarter. Needed for the seasonal baseline that makes a burn rate mean anything.'),
+         why='First quarter. Needed for the seasonal baseline that makes a burn rate mean anything.',
+         publisher='Town Accountant',
+         howToGet='MUNIS YEAR-TO-DATE BUDGET REPORT (program `glytdbud`), Fund 0100, '
+                  'Account type Expense, Year/Period YYYY/3, run with '
+                  '**Print totals only: N** and **Suppress zero bal accts: N**.',
+         effort='records request'),
     dict(id='q2', group='The town’s ledger', label='Q2 spend report (period 6)',
-         why='Half year.'),
+         why='Half year.',
+         publisher='Town Accountant',
+         howToGet='The same report at Year/Period YYYY/6.',
+         effort='records request'),
     dict(id='q3', group='The town’s ledger', label='Q3 spend report (period 9)',
-         why='Three quarters. The last point at which a surplus could still be redirected.'),
+         why='Three quarters. The last point at which a surplus could still be redirected.',
+         publisher='Town Accountant',
+         howToGet='The same report at Year/Period YYYY/9. We hold FY26 at this period, but '
+                  'run as a department rollup rather than at account level.',
+         effort='records request'),
     dict(id='q4', group='The town’s ledger', label='Year-end close (period 13)',
-         why='After the lapse period. The surplus IS the available column on this report.'),
+         why='After the lapse period. The surplus IS the available column on this report.',
+         publisher='Town Accountant',
+         howToGet='The same report at Year/Period YYYY/13. This is the single most '
+                  'valuable missing document in the archive: without it no year’s surplus '
+                  'can be computed here at all.',
+         effort='records request'),
     dict(id='po', group='The town’s ledger', label='Purchase orders closed after close',
-         why='The step that moved FY25 from $582,115.44 to $603,885.97. Not recoverable from one report run.'),
+         why='The step that moved FY25 from $582,115.44 to $603,885.97. Not recoverable from one report run.',
+         publisher='Town Accountant',
+         howToGet='A list of purchase orders closed against the fiscal year after its '
+                  'initial close, with amounts and dates. Not a standard report — it has '
+                  'to be asked for in those words.',
+         effort='records request'),
     dict(id='revenue', group='Funding sources', label='Revenue ledger',
-         why='Chapter 70, local receipts, and transfers in. The expense side cannot see any of it.'),
+         why='Chapter 70, local receipts, and transfers in. The expense side cannot see any of it.',
+         publisher='Town Accountant',
+         howToGet='The same `glytdbud` report with Account type **Revenue**. Our FY26 copy '
+                  'was already run at account level, which is why this row is green where '
+                  'the expense rows beside it are not.',
+         effort='records request'),
     dict(id='funds', group='Funding sources', label='Revolving and grant fund activity',
-         why='What the general fund line is net OF. Rule 11.'),
+         why='What the general fund line is net OF. Rule 11.',
+         publisher='Town Accountant',
+         howToGet='`glytdbud` for the school grant, revolving and school choice funds — '
+                  'not Fund 0100. What we hold for FY26 is a fund-balance summary, one '
+                  'row per fund, which gives totals and not what they bought.',
+         effort='records request'),
     dict(id='grants', group='Funding sources', label='Grant awards listed',
-         why='What was awarded. Not a mapping onto the lines a grant paid for -- nobody publishes that.'),
+         why='What was awarded. Not a mapping onto the lines a grant paid for — nobody publishes that.',
+         publisher='Lunenburg Public Schools',
+         howToGet='Listed inside the district’s own budget documents, so it arrives with '
+                  'them. The award is not the spending and never says which line it paid.',
+         effort='public'),
+    dict(id='dese', group='Independent check', label='DESE all-funds per pupil, by function',
+         why='An outside publisher’s view of the same spending, across every fund. Bounds '
+             'the total the budget document cannot see.',
+         publisher='Massachusetts DESE',
+         howToGet='Public download, no request needed: '
+                  'doe.mass.edu/research/radar/district-comparison.xlsx. Note DESE counts '
+                  'costs the school budget does not carry, so it is a second opinion and '
+                  'not a like-for-like comparison.',
+         effort='public'),
 ]
 
 
@@ -73,64 +137,118 @@ def rows(db, sql, *args):
 
 
 def coverage(db):
-    """Ask the database what exists for each year. Nothing here is hand-maintained."""
-    stage_years = {}
-    for r in rows(db, """SELECT fy, stage, COUNT(*) n, COUNT(DISTINCT doc_id) docs,
-                                SUM(documents_disagree) dis
-                         FROM budget_figure GROUP BY fy, stage"""):
-        stage_years[(r['fy'], r['stage'])] = r
+    """What exists for each year, WHICH DOCUMENTS back it, and what would fill a gap.
 
-    # Ledger presence, and CRUCIALLY the grain: a department rollup is not a line-level
-    # report and the matrix must not say it is.
-    ledger = {}
-    for r in rows(db, """SELECT l.fy, l.period, a.account_type, a.level,
-                                COUNT(*) n, COUNT(DISTINCT l.doc_id) docs
+    Nothing here is hand-maintained: it asks the database what is present. A cell knows
+    three things and a reader needs all three --
+
+      state      obtained / partial / missing
+      documents  the actual files the figure rests on, with their address and sha256
+      needed     what to obtain, from whom, to turn it green
+
+    The third one is the point. "We do not have FY24 Q2" is not useful on its own; "run
+    glytdbud for Fund 0100, Year/Period 2024/6, Print totals only: N, and ask the Town
+    Accountant" is a thing somebody can act on.
+    """
+    docmeta = {r['doc_id']: r for r in rows(
+        db, """SELECT doc_id, path, basis, url, copy_state, local_sha256 AS sha256,
+                      hidden_columns FROM document""")}
+    bybase = {}
+    for d in docmeta.values():
+        bybase.setdefault(os.path.basename(d['path'] or d['doc_id']), d)
+
+    def docs(ids):
+        """Resolve doc_ids to addresses. budget_figure cites bare filenames; the document
+        table is keyed by archive path. Unresolved ones are REPORTED, never dropped."""
+        out, missing = [], []
+        for i in sorted({x for x in ids if x}):
+            d = docmeta.get(i) or bybase.get(os.path.basename(i))
+            if d:
+                out.append(dict(citedAs=i, path=d['path'], basis=d['basis'],
+                                url=d['url'], sha256=d['sha256'],
+                                hiddenColumns=d['hidden_columns'] or None))
+            else:
+                missing.append(i)
+        return out, missing
+
+    stage_docs, stage_years = {}, {}
+    for r in rows(db, """SELECT fy, stage, doc_id, COUNT(*) n,
+                                SUM(documents_disagree) dis
+                         FROM budget_figure GROUP BY fy, stage, doc_id"""):
+        k = (r['fy'], r['stage'])
+        stage_docs.setdefault(k, []).append(r['doc_id'])
+        agg = stage_years.setdefault(k, dict(n=0, dis=0))
+        agg['n'] += r['n']
+        agg['dis'] += r['dis'] or 0
+
+    ledger, ledger_docs = {}, {}
+    for r in rows(db, """SELECT l.fy, l.period, a.account_type, a.level, l.doc_id,
+                                COUNT(*) n
                          FROM ledger_snapshot l JOIN account a USING (account_id)
                          WHERE a.fund = '0100'
-                         GROUP BY l.fy, l.period, a.account_type, a.level"""):
-        ledger[(r['fy'], r['period'], r['account_type'])] = r
+                         GROUP BY l.fy, l.period, a.account_type, a.level, l.doc_id"""):
+        k = (r['fy'], r['period'], r['account_type'])
+        ledger.setdefault(k, dict(n=0, level=r['level']))
+        ledger[k]['n'] += r['n']
+        ledger_docs.setdefault(k, []).append(r['doc_id'])
 
-    funds = {r['fy']: r for r in rows(
-        db, 'SELECT fy, COUNT(*) n FROM fund_activity GROUP BY fy')}
-    grants = {}
-    for r in rows(db, 'SELECT fy, COUNT(*) n FROM grant_award GROUP BY fy'):
+    funds, fund_docs = {}, {}
+    for r in rows(db, 'SELECT fy, doc_id, COUNT(*) n FROM fund_activity GROUP BY fy, doc_id'):
+        funds[r['fy']] = funds.get(r['fy'], 0) + r['n']
+        fund_docs.setdefault(r['fy'], []).append(r['doc_id'])
+
+    grants, grant_docs = {}, {}
+    for r in rows(db, 'SELECT fy, doc_id, COUNT(*) n FROM grant_award GROUP BY fy, doc_id'):
         if str(r['fy']).isdigit():
-            grants[int(r['fy'])] = r
+            fy = int(r['fy'])
+            grants[fy] = grants.get(fy, 0) + r['n']
+            grant_docs.setdefault(fy, []).append(r['doc_id'])
+
+    dese, dese_docs = {}, {}
+    for r in rows(db, """SELECT fy, doc_id, COUNT(*) n FROM dese_measure
+                         WHERE lea='01620000' GROUP BY fy, doc_id"""):
+        dese[r['fy']] = dese.get(r['fy'], 0) + r['n']
+        dese_docs.setdefault(r['fy'], []).append(r['doc_id'])
 
     years = sorted({y for y, _ in stage_years} | {y for y, _, _ in ledger}
-                   | set(funds) | set(grants))
+                   | set(funds) | set(grants) | set(dese))
 
-    def cell(state, n=0, docs=0, note=None):
-        c = dict(state=state)
+    def cell(state, ids=(), n=0, note=None):
+        found, unresolved = docs(ids)
+        c = dict(state=state, documents=found)
         if n:
             c['n'] = n
-        if docs:
-            c['docs'] = docs
         if note:
             c['note'] = note
+        if unresolved:
+            c['unresolvedDocuments'] = unresolved
         return c
 
     def stage_cell(fy, stage):
-        r = stage_years.get((fy, stage))
-        if not r:
+        agg = stage_years.get((fy, stage))
+        if not agg:
             return cell('missing')
-        note = None
-        if r['dis']:
-            note = '%d of %d lines: documents disagree' % (r['dis'], r['n'])
-        return cell('partial' if r['dis'] else 'obtained', r['n'], r['docs'], note)
+        note = ('%d of %d figures: two documents state this differently'
+                % (agg['dis'], agg['n'])) if agg['dis'] else None
+        return cell('partial' if agg['dis'] else 'obtained',
+                    stage_docs[(fy, stage)], agg['n'], note)
 
     def ledger_cell(fy, period, kind='expense'):
         r = ledger.get((fy, period, kind))
         if not r:
             return cell('missing')
         if r['level'] == 'department':
-            return cell('partial', r['n'], r['docs'],
-                        'department rollup only — the district is one row')
-        return cell('obtained', r['n'], r['docs'], 'account level')
+            return cell('partial', ledger_docs[(fy, period, kind)], r['n'],
+                        'Run as a department rollup — the whole school district is one '
+                        'row, so no budget line can be traced into it. Re-running the '
+                        'same report with Print totals only: N would make this green.')
+        return cell('obtained', ledger_docs[(fy, period, kind)], r['n'],
+                    'Account level — full GL detail.')
 
     cells = {}
     for fy in years:
-        c = {
+        approp_ids = [d for (f, _, _), ds in ledger_docs.items() if f == fy for d in ds]
+        cells[str(fy)] = {
             'proposed': stage_cell(fy, 'proposed'),
             'settled': stage_cell(fy, 'settled'),
             'restated': stage_cell(fy, 'actual'),
@@ -139,16 +257,22 @@ def coverage(db):
             'revenue': (ledger_cell(fy, 9, 'revenue')
                         if (fy, 9, 'revenue') in ledger else cell('missing')),
             # The appropriation as voted is the `original` column of any ledger report for
-            # that year, so it exists exactly when some ledger report does.
-            'approp': (cell('obtained', note='from the ledger’s original column')
-                       if any(k[0] == fy for k in ledger) else cell('missing')),
+            # the year, so it exists exactly when some ledger report for that year does.
+            'approp': (cell('obtained', approp_ids,
+                            note='Read from the ORIGINAL APPROP column of the ledger '
+                                 'report below.')
+                       if approp_ids else cell('missing')),
             # Never held for any year. Requested from the Town Manager, 2 September 2026.
             'po': cell('missing'),
-            'funds': (cell('obtained', funds[fy]['n']) if fy in funds else cell('missing')),
-            'grants': (cell('obtained', grants[fy]['n']) if fy in grants
-                       else cell('missing')),
+            'funds': (cell('obtained', fund_docs[fy], funds[fy])
+                      if fy in funds else cell('missing')),
+            'grants': (cell('obtained', grant_docs[fy], grants[fy])
+                       if fy in grants else cell('missing')),
+            'dese': (cell('obtained', dese_docs[fy], dese[fy],
+                          'DESE’s own all-funds figures. An outside check, not a '
+                          'like-for-like comparison with the town’s appropriation.')
+                     if fy in dese else cell('missing')),
         }
-        cells[str(fy)] = c
     return dict(years=years, rowDefs=ROW_DEFS, cells=cells)
 
 
