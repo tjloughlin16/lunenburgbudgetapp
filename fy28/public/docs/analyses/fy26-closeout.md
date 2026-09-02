@@ -135,7 +135,10 @@ February 2026, while that spending was happening, the district asked for a kinde
 paraprofessional back as a **new** staffing request for FY27, at $22,205. It did not make
 the FY27 proposed budget.
 
-Nothing in 1,384 meeting documents mentions either the cut or the spending.
+**No meeting document connects either the cut or the spending to a decision.**
+Kindergarten paraprofessionals do appear in the minutes — twice — and both times as an
+FY27 staffing request, never in relation to FY26. The distinction matters and an earlier
+draft of this section did not make it.
 
 **This is not presented as an impropriety.** Money is routinely spent and reconciled later
 through a year-end transfer, and the FY26 transfer schedule is exactly what we do not

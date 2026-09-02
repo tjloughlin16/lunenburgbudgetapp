@@ -696,6 +696,20 @@ GROUPS = [
              'TOTAL before it will write; an earlier version silently dropped 16 '
              'departments whose figures printed as \u201c.00\u201d. Rebuild with '
              'scripts/extract_town_ledger.py.'),
+            ('data/gross-school-budget-fy2026.xlsx',
+             'The gross school budget, FY26 \u2014 spreadsheet', 5,
+             'The district\u2019s own budget in the district\u2019s own shape \u2014 same '
+             'sections, same 78 function groups, same line names, same order \u2014 with '
+             'two things added that their version cannot show: what was actually spent, '
+             'and what other money paid for the same thing. Where either is not held the '
+             'cell says so in amber rather than being left blank, because a blank reads '
+             'as zero and the whole reason a net budget misleads is that nothing marks it '
+             'net. Five sheets: the budget, the 258 ledger accounts (a DIFFERENT '
+             'structure, kept separate because no published document maps one to the '
+             'other), the funds outside the general fund, what is missing and who has it, '
+             'and a reconciliation proving the net column still ties to the '
+             'district\u2019s published appropriation. Rebuild with '
+             'scripts/build_gross_budget_xlsx.py.'),
             ('data/munis-ledger.csv',
              'Every MUNIS budget report we hold, one table', 3,
              'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '
