@@ -89,8 +89,26 @@ async function readRoutes() {
     throw new Error(`routes.ts: ${tabs.length} tabs in the union but ${slugs.length} in ` +
       'SLUG. One of them has a route the other does not, and this script renders SLUG.')
   }
+  // Unlisted routes are deliberately excluded from the render.
+  //
+  // They are in no sitemap, so the sitemap assertion below would fail on them, and a
+  // prerendered file is exactly what an unlisted page should not leave lying in dist for
+  // a directory listing or a crawler that guesses. The page still WORKS -- the SPA
+  // fallback serves index.html for any path and React routes it -- it simply has no
+  // static twin. A reader without JavaScript does not get it, which for a working page
+  // handed to named people is the right trade.
+  const unlisted = new Set(
+    [...(src.match(/export const UNLISTED[^\n]*\n/) ?? [''])[0]
+      .matchAll(/'([a-z]+)'/g)].map(m => m[1]))
+  const bySlug = [...block[1].matchAll(/^\s*(\w+):\s*'([^']*)',/gm)]
+  const listed = bySlug.filter(m => !unlisted.has(m[1])).map(m => m[2])
+  if (unlisted.size) {
+    console.log(`  skipping ${unlisted.size} unlisted route(s): ` +
+      bySlug.filter(m => unlisted.has(m[1])).map(m => `/${m[2]}`).join(', '))
+  }
+
   // '' is the root. Everything else is a path segment.
-  return slugs.map(s => (s ? `/${s}` : '/'))
+  return listed.map(s => (s ? `/${s}` : '/'))
 }
 
 /** Serve dist, falling back to the PRISTINE shell.

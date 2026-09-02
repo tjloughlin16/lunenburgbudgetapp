@@ -343,6 +343,24 @@ arriving fresh.
     python3 scripts/verify_free_cash_capital.py  # the capital section of the free cash analysis
     python3 scripts/build_show_your_work.py       # regenerate the method document
     python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
+    python3 scripts/extract_munis_report.py --check   # every MUNIS glytdbud report, tied to its own GRAND TOTAL
+    python3 scripts/build_db.py --check          # rebuild the analysis database; fail if a reconciliation drifts
+    python3 scripts/export_ledger.py             # regenerate the ledger page's data from the database
+    python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
+    python3 scripts/extract_dese_radar.py        # ...checked against DESE's own printed totals
+    python3 scripts/verify_fy26_closeout.py      # every figure in the FY26 closeout analysis
+    python3 scripts/verify_fy26_closeout_town.py # ...and in its town-side companion
+    python3 scripts/build_closeout_charts.py     # the charts that head both closeout analyses
+    python3 scripts/build_reports_index.py       # the /reports index, generated from what is on disk
+    python3 scripts/build_analysis_pdf.py --all  # render the analyses to PDF for reading on paper
+    python3 scripts/build_request_doc.py         # regenerate what is still outstanding from the Town
+    python3 scripts/build_gross_budget_xlsx.py   # the gross budget spreadsheet, in the district's own shape
+    python3 scripts/build_api.py                 # publish the database and the read-only JSON API
+    python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
+
+`notes/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
+and the database is a derived read model, rebuilt from scratch every run. Nothing is ever
+edited in it -- a row in a database has no address, no publisher filename and no sha256.
 
 ## The standing questions
 

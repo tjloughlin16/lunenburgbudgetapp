@@ -18,6 +18,8 @@ import { Athletics } from './pages/Athletics'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
 import { FreeCash } from './pages/FreeCash'
+import { DataRoom } from './pages/DataRoom'
+import { Reports } from './pages/Reports'
 import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
@@ -284,6 +286,9 @@ export default function App() {
       {tab === 'athletics' && <Athletics onJump={go} />}
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
+      {tab === 'reports' && <Reports />}
+      {/* Unlisted. Nothing on the site links here -- see UNLISTED in routes.ts. */}
+      {tab === 'dataroom' && <DataRoom />}
 
       {tab === 'answers' && <Answers onJump={go} />}
 

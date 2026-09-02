@@ -1,0 +1,463 @@
+
+
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app xmlns="//www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XR0RNWKW2D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XR0RNWKW2D');
+    </script>
+    <title>
+	Total Expenditure Per Pupil, All Funds, By Function - Lunenburg (01620000)
+</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="search" http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE; Massachusetts Department of Elementary and Secondary Education" /><link href="/css/common.css" title="ESE Main Style Sheet" rel="stylesheet" type="text/css" media="screen" /><link href="/css/ese-print.css" rel="stylesheet" type="text/css" media="print" /><link href="/css/profhome.css" title="ESE Main Style Sheet" rel="stylesheet" type="text/css" /><link href="/css/ese-tables.css" title="ESE Main Style Sheet" rel="stylesheet" type="text/css" media="screen" /><link href="/css/ese-tables.css" title="ESE Main Style Sheet" rel="stylesheet" type="text/css" media="print" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="/css/ese-tables.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://kit.fontawesome.com/2fdc558176.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        @media print {
+            #dvNavSearch {
+                display: none;
+            }
+
+            #dvFeedBack, #footerline {
+                display: none;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
+<body>
+  <nav class="skip-links" aria-label="Skip links">
+    <a id="skipmain" href="#threecolumn" class="skip-link">Skip to main content</a>
+    <a id="skipfooter" href="#footer" class="skip-link">Skip to footer</a>
+</nav>
+    <style>
+.miniNavNew {
+color: #001f6a;
+width: 80px;
+font-size: 1.1em;
+position:absolute;
+top: 20px;
+right: 140px;
+font-weight:bold;
+text-align:right;
+}
+.miniNavNew li {
+display: inline;
+margin:0 0 0 12px;
+}
+
+.miniNavNew li a:link    { color: #001f6a; text-decoration: none; font-weight : bold; }
+.miniNavNew li a:visited { color: #001f6a; text-decoration: none; font-weight : bold; }
+.miniNavNew li a:hover   { color: #003366; text-decoration: underline; font-weight : bold; }
+.miniNavNew li a:active  { color: #001f6a; text-decoration: none; font-weight : bold; }
+
+/* CGI team updated on 06/16/2026 to provide a full visible focus indicator for the Profiles Home logo link. */
+#header a[title="Profiles Home"]:focus {
+    outline: none;
+}
+
+#header a[title="Profiles Home"]:focus img {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
+</style>
+<div id="wrapper">
+    <div id="innerWrapper">
+    <div class="innerContent"> 
+   <!--Start Mass.Gov banner and ESE titlebar-->
+        <div id="header" role="banner">
+        <a href ='/' title='Profiles Home'><img src='/images/massdoelogo_r12v23.png' alt='School and District Profiles home' class='imgleft' /></a>
+        <a href="https://www.doe.mass.edu/" title="ESE Home"><img src="/images/massgovlogo-p12.png" alt="DESE – Massachusetts Department of Elementary and Secondary Education home" class="imgright" /></a>
+        </div>
+    <!--End Mass.Gov banner and ESE titlebar-->
+
+    
+<script src="https://use.fontawesome.com/b2cf74e80a.js"></script>
+<link href="/css/out/search.css" rel="stylesheet" type="text/css" />
+<!-- styles to roughly approximate UW theme -->  
+<link rel="stylesheet" type="text/css" href="/css/uw.css">    
+<!-- styles that make the menu work --> 
+<link rel="stylesheet" type="text/css" href="/css/menu.css"> 
+<style type="text/css">
+    .sr-only {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+</style>
+<script src="/jscripts/jquery-1.12.0.min.js" type="text/javascript"></script>
+<script src="/jscripts/search.js?v=3" type="text/javascript"></script>
+<!-- include the jquery-accessibleMegaMenu plugin script -->
+<script src="/jscripts/jquery-accessibleMegaMenu.js"></script>
+<!-- initialize a selector as an accessibleMegaMenu -->
+<script>
+    $(document).ready(function() { 
+
+    $("nav").accessibleMegaMenu({
+        /* prefix for generated unique id attributes, which are required 
+            to indicate aria-owns, aria-controls and aria-labelledby */
+        uuidPrefix: "accessible-megamenu",
+
+        /* css class used to define the megamenu styling */
+        menuClass: "nav-menu",
+
+        /* css class for a top-level navigation item in the megamenu */
+        topNavItemClass: "nav-item",
+
+        /* css class for a megamenu panel */
+        panelClass: "sub-nav",
+
+        /* css class for a group of items within a megamenu panel */
+        panelGroupClass: "sub-nav-group",
+
+        /* css class for the hover state */
+        hoverClass: "hover",
+
+        /* css class for the focus state */
+        focusClass: "focus",
+
+        /* css class for the open state */
+        openClass: "open"
+        });
+          
+        var $input = $('#searchtext');
+        var $menu = $('#divautocomplete');
+        var $status = $('#search-status');
+        var optionIdPrefix = 'ac-option-';
+        var debounceTimer = null;
+        var DEBOUNCE_DELAY = 500; // ms after the user stops typing
+
+        function announce(message) {
+            $status.text('');
+            setTimeout(function () { $status.text(message); }, 50);
+        }
+
+        function clearActiveDescendant() {
+            $input.removeAttr('aria-activedescendant');
+        }
+
+        function announceCurrentCount() {
+            var count = $menu.find('.tt-suggestion').length;
+            if (count > 0) {
+                announce(count + (count === 1 ? ' suggestion' : ' suggestions') +
+                    ' available. Use Up and Down Arrow keys to review.');
+            } else {
+                announce('No suggestions available.');
+            }
+        }
+
+        $input.on('typeahead:open', function () {
+            $input.attr('aria-expanded', 'true');
+        });
+
+        $input.on('typeahead:close', function () {
+            $input.attr('aria-expanded', 'false');
+            clearActiveDescendant();
+            $status.text('');
+        });
+
+        // Tags each suggestion as it renders — fine that this can fire more than once
+        $input.on('typeahead:render', function () {
+            $menu.find('.tt-suggestion').each(function (index) {
+                $(this).attr({
+                    role: 'option',
+                    id: optionIdPrefix + index,
+                    'aria-selected': 'false'
+                });
+            });
+        });
+
+        // Announce based on the user pausing, not on render/idle —
+        // 500ms is enough for any local or remote source to have finished
+        $input.on('input', function () {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(announceCurrentCount, DEBOUNCE_DELAY);
+        });
+
+        $input.on('typeahead:cursorchange', function () {
+            $menu.find('.tt-suggestion').attr('aria-selected', 'false');
+            var $cursor = $menu.find('.tt-cursor');
+            if ($cursor.length) {
+                $cursor.attr('aria-selected', 'true');
+                $input.attr('aria-activedescendant', $cursor.attr('id'));
+            } else {
+                clearActiveDescendant();
+            }
+        });
+
+        $input.on('typeahead:select typeahead:autocomplete', function () {
+            clearActiveDescendant();
+        });
+    })
+</script> 
+
+ 
+<div id="dvNavSearch" style="width:100%;height:45px;background-color:#264DA7;border-bottom: 1px solid #FFFFFF; border-top: 3px solid #FFFFFF; margin-top: 1px;  box-shadow: 0 1px 4px #9C9C9C;background-image:none;"> 
+
+		<nav id="dawgdrops" style="float:left;" aria-label="Primary"> 
+	    <ul class="nav-menu">
+				<li class="nav-item">
+					<a href="/">Profiles Home</a>
+				</li>
+            	<li class="nav-item">
+					<a href="/search/search.aspx?leftNavId=11238" >Directories</a>								
+					<div class="sub-nav">
+						<ul class="sub-nav-group">
+							<li><a href="/search/search_link.aspx?orgType=5,12&runOrgSearch=Y&leftNavId=11238">Public School Districts</a></li>
+							<li><a href="/search/search_link.aspx?orgType=6,13&runOrgSearch=Y&leftNavId=11238">Public Schools</a></li>
+							<li><a href="/search/search_link.aspx?orgType=13&runOrgSearch=Y&leftNavId=11238">Charter Schools</a></li>
+							<li><a href="/search/search_link.aspx?orgType=3&runOrgSearch=Y&leftNavId=11238">Collaboratives</a></li>
+							<li><a href="/search/search_link.aspx?orgType=11&runOrgSearch=Y&leftNavId=11238">Private Schools</a></li>
+							<li><a href="/search/search_link.aspx?orgType=2&runOrgSearch=Y&leftNavId=11238">Approved Special Education Schools</a></li>
+							<li><a href="/search/search_link.aspx?orgType=95&runOrgSearch=Y&leftNavId=11238">Approved Special Education Programs</a></li>
+							<li><a href="/search/search_link.aspx?orgType=EPPP&runOrgSearch=Y&leftNavId=11238">Educator Preparation Program Providers</a></li>
+                        </ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a href="/statereport/">Statewide Reports</a>							
+					<div class="sub-nav">
+          	<ul class="sub-nav-group">
+            	<li><a href="/statereport/#Assessment%20and%20Accountability">Assessment and Accountability</a></li>
+            	<li><a href="/statereport/#Educator%20Preparation">Educator Preparation</a></li>
+            	<li><a href="/statereport/#Educators">Educators</a></li>
+            	<li><a href="/statereport/#Enrollment">Student Enrollment and Indicators</a></li>
+            	<li><a href="/statereport/#Finance">Finance</a></li>
+            	<li><a href="/statereport/#High%20School%20and%20Beyond">High School and Beyond</a></li>
+                  <li><a href="/statereport/#Curriculum%20Data">Curriculum Data</a></li>
+
+            	<li><a href="/statereport/">All Statewide Reports</a></li>
+          	</ul>
+					</div>
+				</li>
+
+                            <li class="nav-item">
+					<a href="/home.aspx?orgTypeCode=0&orgCode=00000000">State Profile</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="/help/" >Profiles Help</a>								
+    				<div class="sub-nav">
+                        <ul class="sub-nav-group">
+            	            <li><a href="/help/orgs.aspx">Organization Types</a></li>
+							<li><a href="/help/data.aspx">About the Data</a></li>
+							<li><a href="/help/search.aspx?leftNavId=12104">Search, Export and Mailing Labels</a></li>
+							<li><a href="/help/faq.aspx">Frequently Asked Questions</a></li>
+							<li><a href="/help/contact.aspx">Contact Information</a></li>
+                        </ul>
+					</div>
+				</li>
+	    </ul>
+
+	</nav>
+
+
+<div id="divautocompleteouter" style="float:right;background-color:#264DA7;height:45px;text-align:right;border-bottom: 1px solid #FFFFFF; background-image:none;">
+<form method="post" id="search" action="/search/search_link_new.aspx" >
+    <div id="divautocompleteinner" role="search" style="z-index: 9000; position:relative;margin-top:10px;margin-right:10px;">
+        <input name="searchtext" id="searchtext" aria-label="Search organization" type="text" class="typeahead"
+               autocomplete="off"
+               role="combobox"
+               aria-autocomplete="list"
+               aria-expanded="false"
+               aria-controls="divautocomplete"
+               aria-haspopup="listbox" />
+        <div id="divautocomplete" class="tt-menu" role="listbox" style="display:none">
+       </div>
+        <input type="image" src="/images/Search_New1.png" class="go" value="Submit" alt="Search" style="height:22px;"/>
+    </div>
+    
+    <input name="leftNavId" value="11241" type="hidden" />
+    <input name="searchType" id="searchType" value="QUICK" type="hidden" />
+    <input name="runQuickSearch" id="runQuickSearch" value="Y" type="hidden" />
+    <input name="quickSearchValue" id="quickSearchValue" value="" type="hidden" />
+</form>
+<div id="search-status" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+</div>
+
+</div>
+  
+<div class="clear"></div>
+
+    
+    <style type="text/css">
+        @media print {
+            @page {
+                size: landscape;
+            }
+
+            body {
+                overflow: hidden;
+            }
+        }
+    </style>
+    <!--start onecolumn-->
+    <main id="onecolumn">
+        <span id="ctl00_ContentPlaceHolder1_lblPrintHeader"> <div id='headerprint'><h1>Massachusetts School and District Profiles</h1></div> 
+ <div id='orgnameprint'><h1>Lunenburg</h1></div> 
+</span>
+        <span id="ctl00_ContentPlaceHolder1_lblBreadCrumb" class="lblBreadCrumb"> <nav id='breadcrumb' aria-label='Breadcrumb'>      <ol class='nav blu bold inline' style='list-style:none; margin:0; padding:0;'>          <li style='display:inline;'><a href='/search/search.aspx'>Search</a></li>      <li aria-hidden='true' style='display:inline; margin:0 4px;'><img src='/images/orangerightarrowsm.gif' width='5' height='8' alt='' aria-hidden='true' class='crumb' /></li>          <li style='display:inline;'><a href='/home.aspx?orgTypeCode=0&amp;orgCode=00000000'>Massachusetts</a></li>      <li aria-hidden='true' style='display:inline; margin:0 4px;'><img src='/images/orangerightarrowsm.gif' width='5' height='8' alt='' aria-hidden='true' class='crumb' /></li>          <li style='display:inline;'><a href='/search/search_link.aspx?orgType=5,12&amp;runOrgSearch=Y&amp;leftNavId=11238'>Public School Districts</a></li>      <li aria-hidden='true' style='display:inline; margin:0 4px;'><img src='/images/orangerightarrowsm.gif' width='5' height='8' alt='' aria-hidden='true' class='crumb' /></li>          <li class='header1' aria-current='page'>Lunenburg (01620000)</li>      </ol>  </nav> </span>
+        <span id="ctl00_ContentPlaceHolder1_lblOrgDropDown"> <script language='JavaScript'> 
+ <!-- 
+ function changeOrgCode() { 
+     var i = document.profOrgDrop.orgDropDown.selectedIndex; 
+ 	if ( i != 0 ) { 
+ 		window.location.href = document.profOrgDrop.orgDropDown[i].value; 
+ 	} 
+ } 
+ //--> 
+ </script> 
+ <div id='oscontainer'> 
+<div id='orgselector2' aria-label='Org Dropdown selection'> 
+<ul style='list-style:none; padding:0; margin:0;'><li style='display:inline;'><a style='font-size:14px;' href='/profiles/finance.aspx?orgcode=01620000&amp;orgtypecode=5&amp;dropDownOrgCode=1' aria-label='Districts'><img style='padding-right:5px;' src='/images/white-circle.png' alt='' aria-hidden='true'></img>Districts</a></li> 
+<li style='display:inline;'><span style='font-size:14px;' aria-label='Schools, currently selected'><img src='/images/checked.png' style='padding-right:5px;' alt='' aria-hidden='true'></img>Schools</span></li> 
+</ul></div> 
+ 	<form method='post' name='profOrgDrop' id='profOrgDrop' style='vertical-align:middle' class='osdropdown'> 
+     <select id='orgDropDown' aria-label='Organization select' name='orgDropDown' style="font-size: 11px;"> 
+         <option>---Select Organization---</option> 
+<option value='/home.aspx?orgCode=01620605&orgtypecode=6'>Advanced Community Experience Program</option> 
+<option value='/home.aspx?orgCode=01620505&orgtypecode=6'>Lunenburg High</option> 
+<option value='/home.aspx?orgCode=01620305&orgtypecode=6'>Lunenburg Middle School</option> 
+<option value='/home.aspx?orgCode=01620010&orgtypecode=6'>Lunenburg Primary School</option> 
+<option value='/home.aspx?orgCode=01620025&orgtypecode=6'>Turkey Hill Elementary School</option> 
+      </select> 
+      <a href='javascript:changeOrgCode();'><img src='/images/btn.gif' alt='View selected organization' border='0'></a>
+      </form> 
+ </div> 
+</span>
+        <span id="ctl00_ContentPlaceHolder1_lblTopNavHtml"><div class='tabs'>
+ <h2 id='yeartoggle' aria-label='Next Previous Year(s) '>
+  <a id='YTleft' href='/profiles/finance.aspx?orgcode=01620000&amp;orgtypecode=5&amp;dropDownOrgCode=2&fycode=2023' aria-label='Previous Year'><span class='alt'><img alt='View Previous Year' src='/images/yeartogglebgl.gif'></span></a>
+<div style="float:left;font-size:12px;">2024</div>
+ </h2>
+     <ul>
+<li class=''><a href='/profiles/general.aspx?topNavId=1&orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">General</span></a></li>
+<li class=''><a href='/profiles/student.aspx?orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">Students</span></a></li>
+<li class=''><a href='/profiles/teacher.aspx?orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">Teachers</span></a></li>
+<li class='current'><a href='/profiles/finance.aspx?orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">Finance</span></a></li>
+<li class=''><a href='/mcas/achievement_level.aspx?linkid=32&orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">Assessment</span></a></li>
+<li class=''><a href='/accountability/report/district.aspx?linkid=30&orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">Accountability</span></a></li>
+<li class=''><a href='/analysis/default.aspx?orgcode=01620000&orgtypecode=5&'><span style="font-size:11px;">Trends – DART</span></a></li>
+     </ul>
+</div><!--close tabs-->
+<div class='clear'></div>
+</span>
+
+        <!--start whitebox-->
+        <div id="whitebox">
+            <table bgcolor="#ffffff" border="0">
+                <th scope="col" aria-label="main content"></th>
+                <tr>
+                    <td>
+                        <!--start whiteboxleft-->
+                        <div id="whiteboxLeft">
+                            <span id="ctl00_ContentPlaceHolder1_lblSideNavHtml"><ul class='leftNav'><li><a href='/profiles/finance.aspx?orgcode=01620000&orgtypecode=5&leftNavId=501&'>Per Pupil Expenditure and Net School Spending Trends</a></ul></span>
+                            <span id="ctl00_ContentPlaceHolder1_lblRelatedLinksHtml"> <div id='relatedLinks'> 
+ <span class='bold'>Related Links:</span> 
+   <table role='presentation'><th aria-label='Releated Link Details'></th>
+   <tr><td><img src='/images/rbutton.gif' alt='' aria-hidden='true'>&nbsp;&nbsp;<a style='text-decoration:none;' target='_blank' href='/statereport/ppx.aspx'>Per Pupil Expenditures</a></td></tr> 
+   <tr><td><img src='/images/rbutton.gif' alt='' aria-hidden='true'>&nbsp;&nbsp;<a style='text-decoration:none;' target='_blank' href='/statereport/netschoolspendingtrend.aspx'>Chapter 70 Foundation Budget and Net School Spending</a></td></tr> 
+   <tr><td><img src='/images/rbutton.gif' alt='' aria-hidden='true'>&nbsp;&nbsp;<a style='text-decoration:none;' target='_blank' href='/statereport/teachersalaries.aspx'>Average Teacher Salaries</a></td></tr> 
+   <tr><td><img src='/images/rbutton.gif' alt='' aria-hidden='true'>&nbsp;&nbsp;<a style='text-decoration:none;' target='_blank' href='https://www.doe.mass.edu/research/radar/default.html'>Spending Comparisons – School Finance</a></td></tr> 
+   <tr><td><img src='/images/rbutton.gif' alt='' aria-hidden='true'>&nbsp;&nbsp;<a style='text-decoration:none;' target='_blank' href='http://www.doe.mass.edu/finance/chapter70/compliance.html'>Net School Spending Compliance - School Finance</a></td></tr> 
+ </table> 
+ </div> 
+</span>
+                            <span id="ctl00_ContentPlaceHolder1_lblDidYouKnowHtml"></span>
+                        </div>
+                        <!--close whiteboxleft-->
+                    </td>
+                    <td align="left" valign="top">
+                        <span id="ctl00_ContentPlaceHolder1_lblUtilBarHtml"> <script type='text/javascript'> 
+ function printArticle() { 
+     var agt=navigator.userAgent.toLowerCase(); 
+     if (window.print) { 
+         setTimeout('window.print();',200); 
+     } 
+     else if (agt.indexOf("mac") != -1) { 
+         alert("Press 'CMD+P' on your keyboard to print article."); 
+     } 
+     else { 
+         alert("Press 'CTRL+P' on your keyboard to print article."); 
+     } 
+ } 
+ </script> 
+ <div  id='utilbar' class='left' width='100'> 
+ <a id='util_print' aria-label='print' href='javascript:void(printArticle());'><span class='alt'><img src='/images/util_print.gif' alt='print page' role='img' title='print'/></span></a> 
+ <a id='util_video' href=/videos/videos.aspx?name=ppe target='_blank' aria-label='video'><span class='alt'><img src='/images/util_video.gif' alt='show video'/></span></a> 
+ </div> 
+</span>
+                        <div id="whiteboxRight">
+                            <span id="ctl00_ContentPlaceHolder1_lblHomePageContentHtml"><h2 style='padding-left:20px'>Per Pupil Expenditures, All Funds</h2><br /><table width='800' border='1' style='border-color:black' aria-label='Per Pupil Expenditures'> 
+<tr> 
+<th class='center middle bg004386 bold' style='width:70px;height:60px;color:white'>Year</th> 
+<td class='center middle bg004386 bold' style='width:120px;color:white'>In-District Expenditures</td> 
+<td class='center middle bg004386 bold' style='width:120px;color:white'>Total In-district FTEs</td> 
+<td class='center middle bg004386 bold' style='width:120px;color:white'>In-District Expenditures per Pupil</td> 
+<td class='center middle bg004386 bold' style='width:110px;color:white'>Total Expenditures</td> 
+<td class='center middle bg004386 bold' style='width:120px;color:white'>Total Pupil FTEs</td> 
+<td class='center middle bg004386 bold' style='width:110px;color:white'>Total Expenditures per Pupil</td> 
+</tr> 
+<tr style='height:35px'> 
+<td class='center middle'>2024</td> 
+<td class='right middle' style='padding-right:10px'>     $26,914,321.89</td> 
+<td class='center middle'>       1,580.5</td> 
+<td class='right middle' style='padding-right:10px'>         $17,028.81</td> 
+<td class='right middle' style='padding-right:10px'>     $29,576,884.93</td> 
+<td class='center middle'>       1,680.4</td> 
+<td class='right middle' style='padding-right:10px'>         $17,601.06</td> 
+</tr> 
+<tr style='height:35px'> 
+<td class='center middle'>2023</td> 
+<td class='right middle' style='padding-right:10px'>     $27,711,810.32</td> 
+<td class='center middle'>       1,566.1</td> 
+<td class='right middle' style='padding-right:10px'>         $17,694.79</td> 
+<td class='right middle' style='padding-right:10px'>     $29,559,471.89</td> 
+<td class='center middle'>       1,671.5</td> 
+<td class='right middle' style='padding-right:10px'>         $17,684.40</td> 
+</tr> 
+</table> </br></br> 
+</span>
+                        </div>
+                        <!--close whiteboxright-->
+                    </td>
+                </tr>
+            </table>
+
+            <div class="clear"></div>
+        </div>
+        <!--close whitebox-->
+
+    </div>
+    <!--close onecolumn-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".current").attr("aria-current", "page");
+        });
+    </script>
+
+
+      <!--End Main Content-->
+  <div class="clear"></div>  
+    <footer id="footer" data-landmark-index="5">
+        <hr aria-hidden="true" style="height:5px; margin:0px;border:0px; color:orange; Background:linear-gradient(to bottom, darkorange, rgba(255,165,0,0))" />
+        <ul class="miniNav" style="width:630px;right:40px;height:30px">
+                <li> <span style="font-size:14px;font-weight:bold;padding-right:100px;" aria-label="Release version">Release 9.28.0.0</span></li>
+                <li><a style="font-size:14px;" href="https://www.doe.mass.edu/resources/policy.html" target="blank" aria-label="Policies">Policies</a></li>
+                <li><a style="font-size:14px;" href="/help/contact.aspx" aria-label="Contact DESE">Contact DESE</a></li>
+                <li><a id="DASlink" style="font-size:14px;" href="https://www.mass.gov/info-details/enterprise-digital-accessibility-statement?referring_site=dese_profiles&referring_org=departmentofelementaryandsecondaryeducation_org_sec=eoe&referring_url={REF_URL}" target="blank" aria-label="Digital Accessibility Statement">Digital Accessibility Statement</a></li>
+            </ul>
+    </footer>
+    <hr id="footerline" style="height:5px;margin:0px;border:0px; color:orange; Background:linear-gradient(to top, darkorange, rgba(255,165,0,0))" />    
+</div> <!--close innerContent -->
+</div><!--close innerWrapper>-->
+</div><!--close Wrapper-->
+
+    <label for="searchtext" id="leblsearch" style="visibility: hidden">search</label>
+    <h1 style="visibility: hidden; width: 0px; height: 0px">School and District Profiles</h1>
+    <script type="text/javascript" src="/jscripts/common.js"></script>
+</body>
+</html>

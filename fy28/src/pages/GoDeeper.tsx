@@ -58,6 +58,8 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; what: string }[] }
     title: 'If you do not believe a number',
     sub: 'Which is the right instinct, and the reason this page exists.',
     items: [
+      { id: 'reports',
+        what: 'Every analysis this project has written, as opposed to every document it mirrors — twelve of them, each as a web page, a PDF and its source text, most checked by a script that recomputes every figure from the database. Including the two written this week from the town’s first account-level ledger. Nothing on that page is an official document and it says so at the top.' },
       { id: 'sources',
         what: 'Every document this site is built on — 64 of them, grouped, plus the 1,383 agendas and minutes. Including the two the district published as images that nobody can read, and the ones that say something inconvenient. Start here if you want to check a number rather than read an argument.' },
       { id: 'context',

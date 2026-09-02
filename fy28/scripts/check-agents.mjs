@@ -75,7 +75,29 @@ function textOf(html) {
 async function readRoutes() {
   const src = await readFile(join(APP, 'src', 'routes.ts'), 'utf8')
   const block = src.match(/export const SLUG: Record<Tab, string> = \{([\s\S]*?)\n\}/)
-  return [...block[1].matchAll(/^\s*(\w+):\s*'([^']*)',/gm)].map(m => (m[2] ? `/${m[2]}` : '/'))
+  // Unlisted routes are excluded, for the same reason prerender.mjs skips them: they are
+  // deliberately not prerendered, so they serve the app shell and would fail the
+  // "identical text to /" test that catches a genuinely unrouted page. They still work —
+  // the SPA fallback serves index.html and React routes it — they simply have no static
+  // twin for a fetcher to read. Checked separately below.
+  const unlisted = new Set(
+    [...(src.match(/export const UNLISTED[^\n]*\n/) ?? [''])[0]
+      .matchAll(/'([a-z]+)'/g)].map(m => m[1]))
+  return [...block[1].matchAll(/^\s*(\w+):\s*'([^']*)',/gm)]
+    .filter(m => !unlisted.has(m[1]))
+    .map(m => (m[2] ? `/${m[2]}` : '/'))
+}
+
+/** Unlisted routes: must answer 200 with the app shell, and must NOT be in the sitemap. */
+async function readUnlistedRoutes() {
+  const src = await readFile(join(APP, 'src', 'routes.ts'), 'utf8')
+  const block = src.match(/export const SLUG: Record<Tab, string> = \{([\s\S]*?)\n\}/)
+  const unlisted = new Set(
+    [...(src.match(/export const UNLISTED[^\n]*\n/) ?? [''])[0]
+      .matchAll(/'([a-z]+)'/g)].map(m => m[1]))
+  return [...block[1].matchAll(/^\s*(\w+):\s*'([^']*)',/gm)]
+    .filter(m => unlisted.has(m[1]))
+    .map(m => `/${m[2]}`)
 }
 
 async function main() {
@@ -117,6 +139,136 @@ async function main() {
       if (dup) fails.push(`${r}: identical text to ${dup} — the router did not route`)
       else seen.set(text, r)
     }
+  }
+
+  // Unlisted pages: reachable by address, findable by nothing. The three things that
+  // make that true are checked, because "we just didn't link it" is not a mechanism.
+  const unlisted = await readUnlistedRoutes()
+  if (unlisted.length) {
+    console.log('\nunlisted routes — must work by address and appear in no index')
+    const sitemap = await (await fetch(base + '/sitemap.xml')).text()
+    const robots = await (await fetch(base + '/robots.txt')).text()
+    for (const r of unlisted) {
+      const res = await fetch(base + r)
+      const inMap = sitemap.includes(r + '<')
+      // Deliberately absent from robots.txt too: a Disallow line is served publicly to
+      // anyone who asks, so listing the path there advertises the thing it hides.
+      const inRobots = robots.includes(r)
+      console.log(`  ${String(res.status).padEnd(4)} ${r.padEnd(24)} ` +
+        `sitemap:${inMap ? 'LISTED' : 'no'}  robots:${inRobots ? 'LISTED' : 'no'}`)
+      if (res.status !== 200) fails.push(`${r}: status ${res.status} — an unlisted page must still answer`)
+      if (inMap) fails.push(`${r}: is in sitemap.xml, which is the opposite of unlisted`)
+      if (inRobots) fails.push(`${r}: named in robots.txt, which advertises it to anyone who reads that file`)
+      if (existsSync(join(DIST, r.slice(1) + '.html'))) {
+        fails.push(`${r}: was prerendered into dist — an unlisted page should leave no static file`)
+      }
+    }
+  }
+
+  console.log('\nthe API must answer as JSON, and say where its figures came from')
+  for (const p of ['/api/index', '/api/schema', '/api/totals']) {
+    const res = await fetch(base + p)
+    const type = res.headers.get('content-type') || ''
+    console.log(`  ${String(res.status).padEnd(4)} ${p.padEnd(24)} ${type.split(';')[0]}`)
+    if (res.status !== 200) fails.push(`${p}: status ${res.status}, expected 200`)
+    else if (!type.includes('application/json')) fails.push(`${p}: served ${type}, expected JSON`)
+  }
+  {
+    // Rule 12 in API form: a figure with no address is not publishable.
+    //
+    // Checked on more than one resource on purpose. The first version of this check
+    // looked only at /api/ledger, passed, and shipped 415 per-line files whose
+    // provenance was an empty array -- the doc_id in budget_figure is a bare filename
+    // and the document table is keyed by archive path, so the lookup silently matched
+    // nothing. One resource passing says nothing about the others.
+    for (const p of ['/api/ledger', '/api/lines/classified-ads', '/api/workbook/fy2025']) {
+      const res = await fetch(base + p)
+      const body = res.ok ? await res.json() : {}
+      const prov = body.provenance || {}
+      const n = Array.isArray(prov.documents) ? prov.documents.length : 0
+      const unresolved = (prov.unresolved || []).length
+      console.log(`  ${n > 0 ? ' ok ' : 'FAIL'} ${p.padEnd(30)} provenance: ` +
+        `${n} document(s)${unresolved ? `, ${unresolved} UNRESOLVED` : ''}`)
+      if (!n) fails.push(`${p} returned rows with no resolvable provenance`)
+      if (unresolved) fails.push(`${p} cites ${unresolved} document(s) with no address`)
+    }
+  }
+  {
+    // The published database must be the bytes the API says it is.
+    const claimed = (await (await fetch(base + '/api/index')).json())
+      .endpoints.find(e => e.url.endsWith('lunenburg.db'))
+    const buf = Buffer.from(await (await fetch(base + '/data/lunenburg.db')).arrayBuffer())
+    const got = createHash('sha256').update(buf).digest('hex')
+    const same = claimed && claimed.about.includes(got)
+    console.log(`  ${same ? ' ok ' : 'FAIL'} /data/lunenburg.db sha256 ${got.slice(0, 12)} ` +
+      `matches what /api/index claims`)
+    if (!same) fails.push('/data/lunenburg.db does not match the sha256 published in /api/index')
+  }
+  {
+    const res = await fetch(base + '/api/no-such-resource')
+    const type = res.headers.get('content-type') || ''
+    const ok = res.status === 404 && type.includes('application/json')
+    console.log(`  ${ok ? ' ok ' : 'FAIL'} /api/no-such-resource → ${res.status} ${type.split(';')[0]}`)
+    if (!ok) fails.push('/api/<missing> must 404 as JSON, not 200 with the app shell')
+  }
+
+  // llms.txt is the ONE surface built for readers who will not check anything else, so
+  // a figure that drifts there is worse than a figure that drifts on a page. It drifted:
+  // the file published the FY27 appropriation without the Special Town Meeting article
+  // that every page uses, and published the FY28-FY30 average under a label saying FY28.
+  // Both were found by an agent reading the site, not by anything here.
+  console.log('\nllms.txt figures must match the model the app renders from')
+  {
+    const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))
+    const txt = await (await fetch(base + '/llms.txt')).text()
+    const usd = (n) => '$' + Math.round(n).toLocaleString('en-US')
+    // model.fy27.lps_appropriation is the field llms.txt renders. sped.appropriation is
+    // the same quantity rebuilt from line items and differs by $1.50, so checking against
+    // the wrong one fails on rounding and teaches nothing.
+    const appropriation = model.fy27?.lps_appropriation
+    const stm = model.fy27?.stm_appropriation
+    const firstYear = model.freeCash?.deficits?.[0]?.amount
+    const checks = [
+      ['FY27 appropriation as adopted', appropriation && usd(appropriation)],
+      ['FY27 appropriation after the STM', appropriation && stm && usd(appropriation + stm)],
+      ['FY28 shortfall, first year alone', firstYear && usd(firstYear)],
+    ]
+    for (const [label, needle] of checks) {
+      if (!needle) { fails.push(`llms.txt check "${label}": could not derive it from model.json`); continue }
+      const ok = txt.includes(needle)
+      console.log(`  ${ok ? ' ok ' : 'FAIL'} ${label.padEnd(38)} ${needle}`)
+      if (!ok) fails.push(`llms.txt does not carry ${needle} for ${label} — run ` +
+        '`python3 scripts/build_agent_endpoints.py`')
+    }
+    // The label/value mismatch that started this: the three-year average must never be
+    // the only figure offered under an FY28 heading.
+    if (/FY28 gap/i.test(txt) && firstYear && !txt.includes(usd(firstYear))) {
+      fails.push('llms.txt labels a figure "FY28 gap" without also giving the first-year ' +
+        'shortfall — that is the mismatch an agent reported')
+    }
+  }
+
+  // The prefixes an agent guesses first. Each must answer with something a PROGRAM can
+  // act on, never with 200 and the app shell -- which is what /minutes/ did, and is why
+  // two assistants in a row concluded this site does not hold the meeting minutes.
+  console.log('\nguessable archive paths must not answer 200 with the app shell')
+  for (const p of ['/minutes/', '/minutes', '/docs/', '/minutes/school-committee',
+                   '/minutes/index.txt']) {
+    const res = await fetch(base + p)
+    const type = res.headers.get('content-type') || ''
+    const shell = res.status === 200 && type.includes('text/html')
+    console.log(`  ${shell ? 'FAIL' : ' ok '} ${p.padEnd(30)} ${res.status} ${type.split(';')[0]}`)
+    if (shell) fails.push(`${p} answers 200 with the app shell — a program reading this ` +
+      'concludes the archive is not served')
+  }
+  {
+    // And the 404 has to be useful: it is the only message a program will ever read.
+    const res = await fetch(base + '/minutes/')
+    const body = await res.text()
+    const teaches = body.includes('/minutes/school-committee.txt')
+      && body.includes('/docs/minutes/text/')
+    console.log(`  ${teaches ? ' ok ' : 'FAIL'} /minutes/ 404 names the URLs that do work`)
+    if (!teaches) fails.push('/minutes/ returns a 404 that does not say what to fetch instead')
   }
 
   console.log('\nstale and aliased links — must still reach the app')

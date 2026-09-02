@@ -165,6 +165,9 @@ def main():
 
     a, f = model['assumptions'], model['fy27']
     gap = next(h for h in model['headlines'] if h['id'] == 'gap')
+    # The FIRST-YEAR shortfall, taken from the model rather than from the headline block,
+    # because the headline block carries the three-year average under a one-year label.
+    first_year_gap = model['freeCash']['deficits'][0]['amount']
     counts = {}
     for g in sources['groups']:
         counts[g.get('section', 'other')] = counts.get(g.get('section', 'other'), 0) \
@@ -184,6 +187,37 @@ def main():
         '',
         f'Data current as of {date.today().isoformat()}. Base year FY27. There is no FY28 '
         'budget yet; everything after FY27 is a projection.',
+        '',
+        # A START-HERE BLOCK, FIRST.
+        #
+        # Everything below this was already true and already published, and agents still
+        # could not use it. Two in a row concluded the site does not hold the meeting
+        # minutes while the minutes were being served. The failure was never the content;
+        # it was that the first thing a program reads was prose about the project rather
+        # than four URLs it can fetch.
+        #
+        # So: the fetchable things first, with a worked example, before any argument.
+        '## Start here — four URLs that answer most questions',
+        '',
+        f'| to get | fetch |',
+        f'|---|---|',
+        f'| every figure on this site, as data | `{SITE}/data/model.json` |',
+        f'| the same thing queryable, with a schema that warns you | `{SITE}/api/index` |',
+        f'| the whole meeting archive for one board | `{SITE}/minutes/school-committee.txt` |',
+        f'| every source document, with checksums | `{SITE}/data/sources.json` |',
+        '',
+        '**A worked example.** To find what the School Committee said about the FY25 '
+        f'budget surplus: fetch `{SITE}/minutes/school-committee.txt` — one file, about '
+        '900KB, every School Committee document concatenated — and search it for '
+        '"surplus". Each document in the bundle carries its own citable URL in the header '
+        'above it.',
+        '',
+        '**Paths that will NOT work, and what to use instead.** A directory is not a '
+        f'file. `{SITE}/minutes/` and `{SITE}/docs/` are directories and serve nothing; '
+        'they answer with instructions rather than content. The bundles are '
+        '`/minutes/<board>.txt`, and a single document is '
+        '`/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`. If you fetch a path here '
+        'and get HTML back, you have hit an app route, not a document.',
         '',
         '## Read this before computing anything',
         '',
@@ -206,9 +240,25 @@ def main():
         '',
         '## The headline figures',
         '',
-        f'- FY27 school appropriation: {usd(f["lps_appropriation"])} (the adopted '
-        f'"Balanced" budget)',
-        f'- Projected FY28 gap: {gap["value"]} — {gap["sub"]}',
+        # Both appropriation figures, both labelled. The adopted Balanced budget and the
+        # figure after the September Special Town Meeting differ by exactly the STM
+        # article, and the SITE'S OWN PAGES use the larger one for "what the town gave
+        # the schools this year". Publishing only the smaller one under the flat label
+        # "FY27 school appropriation" handed a machine a number $350,000 below what every
+        # page it could also read was using. Reported by an agent, and correct.
+        f'- FY27 school appropriation, as adopted: {usd(f["lps_appropriation"])} '
+        f'(the "Balanced" budget)',
+        f'- FY27 school appropriation, after the 3 September Special Town Meeting: '
+        f'{usd(f["lps_appropriation"] + f["stm_appropriation"])} '
+        f'(the adopted budget plus the {usd(f["stm_appropriation"])} STM article). '
+        f'**This is the figure the site\'s own pages use for what the town gave the '
+        f'schools this year.**',
+        # The label said FY28 and the value was a three-year average, in one line.
+        f'- Projected FY28 shortfall, that year alone: {usd(first_year_gap)}',
+        f'- Projected shortfall, FY28–FY30 average after each year\'s cuts compound: '
+        f'{gap["value"]}',
+        f'  (These are different quantities. The first is one year; the second is the '
+        f'average of three. Do not quote the second under an FY28 label.)',
         f'- Growth assumptions: {rate_list(a)}',
         f'- Levy growth: {a["levy_growth"]:.1%} (Proposition 2½, statutory)',
         '',
@@ -251,6 +301,28 @@ def main():
         'rather it fetched differently, the contact details are on the site. Nothing here '
         'is taken from behind a login, and every file is republished with a sha256 so it '
         'can be checked against yours.',
+        '',
+        '## Query the database directly',
+        '',
+        'Everything on this site is derived from one SQLite database, and it is '
+        f'published: [{SITE}/data/lunenburg.db]({SITE}/data/lunenburg.db). Download it '
+        'and query it. Its sha256 is stated in `/api/index`, so you can check you got '
+        'the bytes we published.',
+        '',
+        f'There is also a read-only JSON API at [{SITE}/api/index]({SITE}/api/index) — '
+        'no key, no rate limit, nothing computed per request. Every response carries the '
+        'documents its rows came from, with URL and sha256, so a figure you take from it '
+        'can be cited to a source rather than to us.',
+        '',
+        f'**Fetch [{SITE}/api/schema]({SITE}/api/schema) before computing anything.** It '
+        'states the grain of every table and the four specific ways to get a confident '
+        'wrong answer out of this data. The two worth repeating here: a STAGE (proposed '
+        '/ settled / actual) is not a PERIOD (1–13), so `budget_figure` and '
+        '`ledger_snapshot` do not join; and no budget line is mapped to a ledger account '
+        '— the crosswalk table is empty on purpose, because district lines are named, '
+        'MUNIS rows are coded, and no published document maps one to the other. '
+        'Budget-to-actual at line level cannot be answered from this data yet, and an '
+        'answer claiming otherwise is wrong.',
         '',
         '## Data',
 

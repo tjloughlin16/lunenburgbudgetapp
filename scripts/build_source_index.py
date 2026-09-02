@@ -80,7 +80,8 @@ ORIGINS = [
 # were posted. Worth marking for two reasons: it is the honest answer to "is all of this
 # public", and a reader who wants these for themselves needs to know the route is a
 # request rather than a link.
-BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx', 'records-request-2026-06/'}
+BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx', 'records-request-2026-06/',
+              'records-request-2026-09/'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
 # the line was published by the town, the district, the state or a neighboring district.
@@ -427,6 +428,41 @@ GROUPS = [
                  'them. Provenance, the town’s own filenames and a sha256 for each file '
                  'are in PROVENANCE.md, listed below.',
         'items': [
+            ('records-request-2026-09/PROVENANCE.md',
+             'Where the FY26 period 12 report came from', 2,
+             'The email, the sender, the date, both filenames as sent, and the sha256 of '
+             'each. Also what the report is NOT: period 12 rather than the year-end close, '
+             'expenditures only, and with zero balance accounts suppressed. And the '
+             'reconciliation that establishes the spreadsheet and the printout are one '
+             'report, since only the printout states a period.'),
+            ('records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx',
+             'FY26 year-to-date budget report, period 12 \u2014 spreadsheet', 3,
+             'The first ACCOUNT-LEVEL general fund expenditure report in this archive. '
+             'Every prior one was run with Print totals only: Y, which renders the whole '
+             'school district as a single row; here it is 258 accounts, each with an org '
+             'code, an object code and a description. Sent by Jennifer Warren, Town '
+             'Manager, on 2 September 2026, produced the evening before by Karen Barrett, '
+             'Town Accountant. The sender\u2019s filename is '
+             '\u201cFY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx\u201d. It carries the '
+             'appropriation columns UN-ROUNDED, which the printed form does not. '
+             '**Period 12, not 13** \u2014 June, with the books not yet closed; the Town '
+             'Manager\u2019s covering note says the figures \u201care likely to continue '
+             'to adjust as we continue the year-end reconciliation process\u201d. Zero '
+             'balance accounts are suppressed, so an account absent here is not '
+             'necessarily absent from the ledger.'),
+            ('records-request-2026-09/town-general-fund-expenditures-fy26-p12.pdf',
+             'FY26 year-to-date budget report, period 12 \u2014 as printed', 28,
+             'The same report as MUNIS prints it, and the only one of the pair that states '
+             'its own parameters: Year/Period 2026/12, Print totals only: N, Suppress zero '
+             'bal accts: Y, Account type Expense, program glytdbud. The spreadsheet states '
+             'no period at all, so the two are asserted to be one report by reconciling '
+             'the spreadsheet\u2019s 635 account rows to this file\u2019s own printed '
+             'GRAND TOTAL \u2014 expended $52,163,984.85 and encumbrances $529,325.69 '
+             'agree to the cent. The three appropriation columns differ by under a dollar '
+             'because this file rounds them and the spreadsheet does not, which settles '
+             'something the project had only been able to back-solve: the rounding is in '
+             'the printing, not in the ledger. The sender\u2019s filename is '
+             '\u201cPrint_ YEAR-TO-DATE BUDGET REPORT.pdf\u201d.'),
             ('records-request-2026-06/fund-1301-journal-detail-fy25.xlsx',
              'Athletics revolving fund, journal detail, FY2025', 3,
              'Every receipt and payment in fund 1301 for FY2025, with effective and posting '
@@ -497,6 +533,54 @@ GROUPS = [
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '
              'one-off is doing to the rate, and what it risks for FY28. Budget columns '
              'only; no actual spending is used anywhere in it.'),
+            ('analyses/charts/fy26-school-budget.svg',
+             'FY26 school department: what happened to the budget', 1,
+             'One stacked bar \u2014 spent, encumbered, unspent \u2014 as parts of the '
+             'revised budget. The unspent slice is 1.8% and is the one the headline '
+             'reports.'),
+            ('analyses/charts/fy26-school-spend.svg',
+             'FY26 school department: where the money went', 1,
+             'The ten largest accounts by spending, with everything else folded into one '
+             'recessive bar.'),
+            ('analyses/charts/fy26-town-budget.svg',
+             'FY26 town: what happened to the budget', 1,
+             'The same stacked bar for the other 67 departments.'),
+            ('analyses/charts/fy26-town-variance.svg',
+             'FY26 town: the biggest misses, both directions', 1,
+             'The same diverging bar for the town side, where 18 accounts overspend '
+             'against the school department\u2019s 56.'),
+            ('analyses/charts/fy26-town-spend.svg',
+             'FY26 town: where the money went', 1,
+             'The ten largest town accounts by spending.'),
+            ('analyses/charts/fy26-school-variance.svg',
+             'FY26 school department: the biggest misses, both directions', 1,
+             'A diverging bar chart, the seven largest overspends and the seven largest '
+             'underspends on one zero line. Deliberately not a pie: two of the three '
+             'questions these charts answer are about VARIANCE, a signed quantity, and a '
+             'pie cannot show a negative. Colours were run through a palette validator '
+             'rather than chosen by eye. Rebuild with scripts/build_closeout_charts.py.'),
+            ('analyses/fy26-closeout-town.md',
+             'FY26 on the town side, as the books stood in June', 2,
+             'The same account-level ledger read for the other 67 departments. Snow '
+             'removal cost $1,038,092 against an appropriation of $355,571 \u2014 292% '
+             '\u2014 while the town\u2019s $185,000 Reserve Fund went entirely unused. '
+             '$3.3M left the operating budget for capital and stabilization. And '
+             '$1,262,376 of school retiree health insurance sits in a town department, '
+             'invisible in the school budget, which is part of why DESE\u2019s all-funds '
+             'figure exceeds the appropriation. The town overspends on 18 of 376 accounts '
+             'where the schools overspend on 57 of 259 \u2014 a fact with four '
+             'explanations and no way here to choose between them. Period 12, so nothing '
+             'in it is a surplus. Verified by scripts/verify_fy26_closeout_town.py.'),
+            ('analyses/fy26-closeout.md', 'FY26, as the books stood in June', 2,
+             'The first account-level ledger this project has held, read line by line. '
+             'The school department was $482,101 under budget at period 12 \u2014 the '
+             'small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 '
+             'overspent across 56. Carries the kindergarten paraprofessional question: the '
+             'FY26 approved budget published a \u2212100% cut to that line, $99,064 was '
+             'spent on it anyway with no appropriation and no transfer, and three readings '
+             'fit the record equally well. Period 12 is NOT the year-end close, so nothing '
+             'in it is a surplus. Every figure is recomputed by '
+             'scripts/verify_fy26_closeout.py; a PDF is published beside it.'),
             ('analyses/budget-vs-actual.md', 'Budget versus actual', 2,
              'Did what the town budgeted match what it spent? Written for two readers \u2014 '
              'plain terms and the evidence, side by side. Deliberately separate from the '
@@ -650,6 +734,79 @@ GROUPS = [
              'TOTAL before it will write; an earlier version silently dropped 16 '
              'departments whose figures printed as \u201c.00\u201d. Rebuild with '
              'scripts/extract_town_ledger.py.'),
+            ('data/gross-school-budget-fy2026.xlsx',
+             'The gross school budget, FY26 \u2014 spreadsheet', 5,
+             'The district\u2019s own budget in the district\u2019s own shape \u2014 same '
+             'sections, same 78 function groups, same line names, same order \u2014 with '
+             'two things added that their version cannot show: what was actually spent, '
+             'and what other money paid for the same thing. Where either is not held the '
+             'cell says so in amber rather than being left blank, because a blank reads '
+             'as zero and the whole reason a net budget misleads is that nothing marks it '
+             'net. Five sheets: the budget, the 258 ledger accounts (a DIFFERENT '
+             'structure, kept separate because no published document maps one to the '
+             'other), the funds outside the general fund, what is missing and who has it, '
+             'and a reconciliation proving the net column still ties to the '
+             'district\u2019s published appropriation. Rebuild with '
+             'scripts/build_gross_budget_xlsx.py.'),
+            ('data/munis-ledger.csv',
+             'Every MUNIS budget report we hold, one table', 3,
+             'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '
+             'and revenues, general fund and enterprise funds \u2014 parsed into one '
+             'normalised table by scripts/extract_munis_report.py, which reads the format '
+             'rather than one file, so reports for other years load with no new code. '
+             'Each report reconciles to its own printed GRAND TOTAL before it is written. '
+             'Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: '
+             'ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report \u2014 '
+             'it declares Account type Revenue and duplicates the file named -revenue-, so '
+             'no solid waste expenditure report is held at all; and the sewer report '
+             'covers four funds whose headers our text extraction runs together, so a fund '
+             'is positional rather than per-row.'),
+            ('data/account-names.csv',
+             'What the ledger\u2019s account codes mean \u2014 our readings', 3,
+             'The town\u2019s ledger prints ten-character abbreviations and stops: '
+             '`SCHRETHLTH`, `COLL TUITI`, `KINDAIDREG`. Nothing published expands them. '
+             'So these 80 readings are OURS, and each records the basis it rests on: '
+             '**district document** where the district\u2019s own budget prints the full '
+             'line name (7), **department name** where the department it sits in settles '
+             'it (17), **department context** where the org or object code does (16), and '
+             '**plain reading** where the abbreviation is unambiguous English (40). Keyed '
+             'on department, because the same code means different things in different '
+             'places \u2014 `REG TRANS` is school busing in department 300 and a regional '
+             'transit assessment in department 825. The verifiers fail if either closeout '
+             'analysis names a code with no entry here.'),
+            ('data/stated-figures.csv',
+             'Figures the town stated about itself, with the quote', 3,
+             'Not ours and not computed from anything here. The FY25 school surplus as the '
+             'district stated it \u2014 $582,115.44 on 3 September 2025 and $603,885.97 on '
+             '17 September after purchase orders were closed \u2014 each with who said it, '
+             'the minutes it is quoted from and the line number. Recorded separately from '
+             'everything we derive, because the town\u2019s closing figure is arrived at '
+             'by closing its books and we cannot do that arithmetic from what we hold.'),
+            ('data/dese-radar.csv',
+             'DESE\u2019s own figures, every district, FY2009\u2013FY2025', 3,
+             'The state\u2019s RADAR district comparison: enrollment, demographics, '
+             'staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, '
+             'for all 421 Massachusetts districts. The first view of Lunenburg school '
+             'spending here that is neither the town\u2019s general fund nor written by '
+             'the district, so it bounds from outside the money the budget document cannot '
+             'see. Three cautions travel with it: DESE counts costs the school budget does '
+             'not carry, so its total must never be subtracted from the town\u2019s '
+             'appropriation to produce \u201chidden money\u201d; it says all funds and '
+             'gives one number, so it cannot say which dollar came from a grant; and its '
+             'paraprofessional figure is FTE from the state\u2019s staffing collection, '
+             'not a headcount. Each district-year is checked against DESE\u2019s own '
+             'printed in-district total \u2014 16 fail, all charter schools, and Lunenburg '
+             'ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.'),
+            ('data/lunenburg.db',
+             'The whole analysis database, SQLite', 3,
+             'Every figure on this site in one queryable file, built by '
+             'scripts/build_db.py from the CSVs above, which remain the source of truth. '
+             'It is a derived read model: dropped and rebuilt from scratch on every run, '
+             'never edited by hand, because a row in a database has no address, no '
+             'publisher filename and no checksum. Every fact row carries the document it '
+             'came from. Also served as a read-only JSON API at /api/index, with '
+             '/api/schema stating the grain of each table and the four ways to get a '
+             'confident wrong answer out of it.'),
             ('data/athletics-history.csv',
              'Athletics, both sides of the money, FY14\u2013FY26', 3,
              'Every line of the town\u2019s athletics appropriation and every line of the '
@@ -917,6 +1074,14 @@ FORM_ONLY = {
         'The DLS Gateway builds the free cash report on submission — jurisdiction and '
         'fiscal year chosen from dropdowns, held in session. There is no file URL. '
         'Lunenburg is 162; the eight comparison towns are all on the same list.',
+    'https://profiles.doe.mass.edu/profiles/finance.aspx?orgcode=01620000&orgtypecode=5'
+    '&dropDownOrgCode=2':
+        'This IS the per-district page, not an index of them \u2014 the org code is in '
+        'the URL and 01620000 is Lunenburg, checked against the educator-contract '
+        'endpoints already verified here. DESE renders it rather than serving a file, so '
+        'there is nothing deeper to link. The underlying figures are also in '
+        'doe.mass.edu/research/radar/district-comparison.xlsx, which IS a file and is '
+        'linked as one.',
 }
 
 
