@@ -369,6 +369,42 @@ def main():
     if not missing:
         print('  OK    every code carries a recorded reading and its basis')
 
+    print('\n§personas  The persona review must have been run')
+    # notes/PERSONAS.md defines six readers and one test each. Three of those tests are
+    # about what a document OMITS, which is what a writer cannot see in their own work,
+    # so the things the first review added are asserted here rather than trusted to stay.
+    NEEDED = [
+        ('the repeatable sentence is the true one',
+         'The district spent 97.3% of its budget'),
+        ('"is this FY25 again?" is answered before it is asked',
+         'Is this FY25 happening again'),
+        ('the open questions are in the first screen, not the last',
+         'three things this report cannot explain'),
+        ('the Finance Committee control question is answered',
+         'what would you have had to see, and when'),
+        ('a concrete thing somebody asked for is looked at',
+         'more heads than we have helmets'),
+        ('the town comparison is not left as a scoreboard',
+         'It is not a scoreboard'),
+    ]
+    # Collapse whitespace before matching. These are PHRASES, and prose wraps -- "It
+    # is not a scoreboard" fell across a line break and the check reported it missing
+    # from a document that contained it. A checker that fails on line wrapping teaches
+    # the writer to avoid wrapping, which is the wrong lesson.
+    flat = ' '.join(PLAIN.split()).lower()
+    for label, needle in NEEDED:
+        ok = ' '.join(needle.split()).lower() in flat
+        print(f"  {'OK  ' if ok else 'GONE'}  {label:<52}")
+        if not ok:
+            FAILS.append(f'persona review: "{label}" — the text that satisfied it is gone')
+    # And the omission test that has to be re-run rather than remembered: if the document
+    # says a category underspent, the archive has to have been searched for what people
+    # said about that category.
+    if 'underspend' in PLAIN.lower() and 'public comment' not in PLAIN.lower() \
+            and 'told the School Committee' not in PLAIN:
+        FAILS.append('the document reports an underspend and quotes nobody from the '
+                     'meeting archive about it — step 3 of the persona review')
+
     print('\n§0  The document must not call any of this a surplus')
     for banned in (r'\bthe surplus was\b', r'\bFY26 surplus of\b'):
         if re.search(banned, PLAIN, re.I):

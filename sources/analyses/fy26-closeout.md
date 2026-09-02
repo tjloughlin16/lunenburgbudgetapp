@@ -59,31 +59,34 @@ paid for part of the thing — so none of this says what anything costs.
 
 ## In one page
 
-**The headline number is real and it does not mean what it sounds like.** The school
-department finished June $482,101 under budget. That is not half a million pounds of slack
-sitting in a drawer — it is what is left after $1,683,534 of underspending across 160
-accounts is netted against $1,201,434 of overspending across 56. Roughly $2.9 million of
-variance in a $26.3 million budget, cancelling down to 1.8%.
+**The district spent 97.3% of its budget.** That is the sentence to carry away, and it is
+the one most likely to be lost. FY26 finished with **$482,101 unspent** of $26.3 million —
+1.8%, and not a pot of money sitting in a drawer.
 
-**These figures are current rather than final, and this document holds them the way the
-Town Manager did when she sent them:** *"This is the current FY26 report — figures likely
-to continue to adjust as we continue the year-end reconciliation process."* That is the
-right register. They will change. They are also what there is.
+**Is this FY25 happening again? No, and the difference is checkable.** The Town's
+explanation for the FY25 surplus was unfilled posts in the facilities department. In FY26
+Facilities & Grounds spent its salary budget **to the dollar** — three accounts, three
+exact matches, nothing left on any of them. Whatever produced this year's underspend, it
+is not last year's mechanism. §7.
 
-What can change is bounded: the **$236,783.89 still encumbered**. Each purchase order is
-either paid, leaving the figure where it is, or released, raising it — so the department's
-final unspent figure lands between **$482,101 and $718,885**. In FY25 the same step moved
-the school figure *up*, by 3.7%.
+**And there are three things this report cannot explain.** They are here, at the top,
+rather than at the bottom:
 
-So "not final" here does not mean "possibly nothing". Around half a million dollars was
-not spent.
+1. **Kindergarten paraprofessionals.** The FY26 approved budget cut the line and published
+   it as a −100% cut, in those words. **$99,064 was spent on them anyway**, with no
+   appropriation and no transfer, while six other zero-budget accounts did get transfers.
+   Three readings fit and nothing here chooses between them. §3.
+2. **$85,090 of budget moved into the department** across 82 accounts, and no document in
+   this archive connects any of it to a decision. §5.
+3. **One of the district's four school psychologist accounts paid nobody all year**, while
+   the other three were paid in full or slightly over. §4.
 
-**The district spent 97.3% of what it was given.** That is the first thing a reader should
-take from the chart at the top, and it is the ordinary result of a budget that was set
-about right in total.
+**Nothing here is an accusation and none of it is hidden.** The district published the
+kindergarten cut itself, at −100%, on page 7 of its own approved budget. The town produced
+the ledger on request within a day. Where the budget worked, this report says so.
 
-**Where the underspend actually comes from — grouped by what the money buys, there are two
-different stories and only one is about anybody's decisions.**
+**Where the underspend actually comes from** — grouped by what the money buys, there are
+two different stories and only one is about anybody's decisions.
 
 | what the money buys | budget | left | % of its own budget |
 |---|---:|---:|---:|
@@ -325,6 +328,38 @@ The largest examples are ordinary and recognisable:
 An emergency line spending 30% of its budget is a contingency that was not needed, which
 is the same shape as the Reserve Fund on the town side. The rest are things somebody chose
 not to order.
+
+
+### One thing somebody asked for, in the same year
+
+A category underspending by 15% is an abstraction until it sits next to something
+concrete. On **24 June 2026** the president of the football boosters told the School
+Committee:
+
+> "Casey, the head coach put in a request to the athletic department to purchase five new
+> helmets earlier this spring, we currently have more heads than we have helmets."
+
+In the same fiscal year, the athletics equipment and uniform lines stood at:
+
+| account | | budget | spent | | left |
+|---|---|---:|---:|---:|---:|
+| `555048` | EQUIP RECO — equipment reconditioning | $8,292 | $3,649 | **44%** | +$4,643 |
+| `519104` | UNIFSPORTS — sports uniforms | $3,812 | $1,103 | **29%** | +$2,709 |
+| `555050` | NEW EQUIP — new equipment | $7,708 | $6,391 | 83% | +$1,317 |
+| | **the three together** | **$19,812** | **$11,143** | **56%** | **+$8,669** |
+
+Athletics as a whole — 14 accounts — finished $51,905 under, including $20,407 for an
+athletics secretary post that paid nobody.
+
+**This is adjacency, and it is not an allegation.** Reconditioning a helmet is not buying
+one; the request was made "earlier this spring" and nothing here dates the decision on it;
+a line can be committed without being spent; and one person's account of one request is
+not a record of what the athletic department decided or why. The report does not say the
+money was there and was refused.
+
+What it does say is that a resident asking why five helmets could not be bought will find
+these numbers, and a report describing a 15% underspend in this category owes them the
+sight of it rather than making them look.
 
 ### So what caused the underspend?
 
@@ -862,13 +897,31 @@ kindergarten paraprofessional case is $99,064 against a line the district itself
 as cut. It deserves an answer; it is not evidence of anything larger, and nothing in this
 document says it is.
 
+**A note for anyone comparing the two sides.** The companion analysis,
+`analyses/fy26-closeout-town.md`, reads the same ledger for the other 67 departments. The
+town overspent on 18 of 376 accounts against the school department's 57 of 259. That
+difference is real and has at least four explanations, and neither document picks one. It
+is not a scoreboard.
+
 ### For the School Committee and the Finance Committee
 
+**The control question, answered directly: what would you have had to see, and when?**
+
+- **By December (period 6)**, the two out-of-district tuition lines would already have
+  been visibly diverging. They finished $522,629 under and $434,108 over. Nothing about
+  that shape appears in a total.
+- **By March (period 9)**, the kindergarten paraprofessional accounts had already spent
+  roughly $59,709 against a zero budget — that figure is in the district's own March
+  workbook. It was visible six months before anybody asked about it.
+- **The transfer schedule, at the time transfers were made** rather than at year end,
+  would have shown the $85,090 while it could still be questioned.
+
+None of those requires a new report. They are the same `glytdbud` run at periods 6 and 9,
+and a schedule the Finance Committee already asks for.
+
 **The total is a poor control instrument.** A department can land within 2% of budget while
-individual lines miss by hundreds of percent, and this one did. If the Committee wants to
-see risk building, it needs the quarterly reports during the year, not the closeout after
-it — and those quarterly reports do not currently reach the archive or, on the evidence of
-11 June, always reach the Committee.
+individual lines miss by hundreds of percent, and this one did. That is not a criticism of
+the budget; it is a statement about what a single number can tell you.
 
 **Two lines carry most of the volatility and both are special education placements.**
 Private and collaborative tuition moved $956,737 between them in opposite directions on a

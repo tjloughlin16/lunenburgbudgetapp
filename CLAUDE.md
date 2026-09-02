@@ -319,6 +319,28 @@ somebody wrote when it believed something else. `audit_provenance.py` fails if i
 
 ---
 
+## 15. A verifier checks the figures. It cannot check that anybody's question was answered
+
+Every figure in a finished analysis is recomputed by a script. Nothing checks whether the
+document answers what the reader came with -- and a report that is entirely correct and
+answers nobody's question is a failure no verifier can catch.
+
+`notes/PERSONAS.md` carries six readers and one test each, and every concern in them is
+quoted from a real public meeting rather than invented. Run it before publishing an
+analysis and again after any substantial change.
+
+The step that matters most is the one a writer cannot do for themselves: **for every
+category a report says underspent or overspent, search the meeting archive for what people
+said about that thing in the same year.** The first run of this found a booster president
+telling the School Committee *"we currently have more heads than we have helmets"* in the
+same year the report described an athletics equipment line spending 44% of its budget. The
+report held both halves and had not put them together.
+
+Three of the six tests are about what a document OMITS. Omissions are exactly what does not
+show up on re-reading your own work.
+
+---
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
@@ -349,6 +371,7 @@ arriving fresh.
     python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
     python3 scripts/extract_dese_radar.py        # ...checked against DESE's own printed totals
     python3 scripts/verify_fy26_closeout.py      # every figure in the FY26 closeout analysis
+                                                 #   ...and that the persona review in notes/PERSONAS.md was run
     python3 scripts/verify_fy26_closeout_town.py # ...and in its town-side companion
     python3 scripts/build_closeout_charts.py     # the charts that head both closeout analyses
     python3 scripts/build_reports_index.py       # the /reports index, generated from what is on disk
