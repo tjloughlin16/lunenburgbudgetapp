@@ -40,7 +40,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 21 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 35 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 16 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 24 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 35 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 16 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1050,6 +1050,19 @@
    "blurb": "Answered by the Town on 17 June 2026, to a request by a resident. These are the first documents in this archive that record money moving on a date — the cashbook of the athletics revolving fund for three full fiscal years — rather than a prior year re-presented inside next year’s budget argument. The request form is not published: it carries the requester’s home address and telephone number, and no figure depends on them. Provenance, the town’s own filenames and a sha256 for each file are in PROVENANCE.md, listed below.",
    "items": [
     {
+     "path": "records-request-2026-09/town-general-fund-expenditures-fy26-p12.pdf",
+     "title": "FY26 year-to-date budget report, period 12 — as printed",
+     "stars": 28,
+     "what": "The same report as MUNIS prints it, and the only one of the pair that states its own parameters: Year/Period 2026/12, Print totals only: N, Suppress zero bal accts: Y, Account type Expense, program glytdbud. The spreadsheet states no period at all, so the two are asserted to be one report by reconciling the spreadsheet’s 635 account rows to this file’s own printed GRAND TOTAL — expended $52,163,984.85 and encumbrances $529,325.69 agree to the cent. The three appropriation columns differ by under a dollar because this file rounds them and the spreadsheet does not, which settles something the project had only been able to back-solve: the rounding is in the printing, not in the ledger. The sender’s filename is “Print_ YEAR-TO-DATE BUDGET REPORT.pdf”.",
+     "byRequest": true,
+     "kind": "PDF",
+     "bytes": 1570730,
+     "url": "/docs/records-request-2026-09/town-general-fund-expenditures-fy26-p12.pdf",
+     "count": 28,
+     "unit": "pages",
+     "textUrl": "/docs/records-request-2026-09/town-general-fund-expenditures-fy26-p12.txt"
+    },
+    {
      "path": "records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx",
      "title": "Athletics by sport, three school years",
      "stars": 3,
@@ -1061,6 +1074,19 @@
      "count": 1002,
      "unit": "rows",
      "textUrl": "/docs/records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx"
+    },
+    {
+     "path": "records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx",
+     "title": "FY26 year-to-date budget report, period 12 — spreadsheet",
+     "stars": 3,
+     "what": "The first ACCOUNT-LEVEL general fund expenditure report in this archive. Every prior one was run with Print totals only: Y, which renders the whole school district as a single row; here it is 258 accounts, each with an org code, an object code and a description. Sent by Jennifer Warren, Town Manager, on 2 September 2026, produced the evening before by Karen Barrett, Town Accountant. The sender’s filename is “FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx”. It carries the appropriation columns UN-ROUNDED, which the printed form does not. **Period 12, not 13** — June, with the books not yet closed; the Town Manager’s covering note says the figures “are likely to continue to adjust as we continue the year-end reconciliation process”. Zero balance accounts are suppressed, so an account absent here is not necessarily absent from the ledger.",
+     "byRequest": true,
+     "kind": "Spreadsheet",
+     "bytes": 73581,
+     "url": "/docs/records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx",
+     "count": 709,
+     "unit": "rows",
+     "textUrl": "/docs/records-request-2026-09/town-general-fund-expenditures-fy26-p12.txt"
     },
     {
      "path": "records-request-2026-06/fund-1301-journal-detail-fy24.xlsx",
@@ -1111,6 +1137,19 @@
      "bytes": 11996,
      "url": "/docs/records-request-2026-06/athletic-fee-counts-2025-2026.docx",
      "textUrl": "/docs/records-request-2026-06/athletic-fee-counts-2025-2026.docx"
+    },
+    {
+     "path": "records-request-2026-09/PROVENANCE.md",
+     "title": "Where the FY26 period 12 report came from",
+     "stars": 2,
+     "what": "The email, the sender, the date, both filenames as sent, and the sha256 of each. Also what the report is NOT: period 12 rather than the year-end close, expenditures only, and with zero balance accounts suppressed. And the reconciliation that establishes the spreadsheet and the printout are one report, since only the printout states a period.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 5629,
+     "url": "/docs/records-request-2026-09/PROVENANCE.md",
+     "count": 106,
+     "unit": "lines",
+     "textUrl": "/docs/records-request-2026-09/PROVENANCE.md"
     }
    ]
   },
@@ -1256,7 +1295,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 4608000,
+     "bytes": 4878336,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1285,6 +1324,18 @@
      "textUrl": "/docs/data/dese-radar.csv"
     },
     {
+     "path": "data/munis-ledger.csv",
+     "title": "Every MUNIS budget report we hold, one table",
+     "stars": 3,
+     "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
+     "kind": "Data",
+     "bytes": 204687,
+     "url": "/docs/data/munis-ledger.csv",
+     "count": 983,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-ledger.csv"
+    },
+    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -1295,18 +1346,6 @@
      "count": 630,
      "unit": "rows",
      "textUrl": "/docs/data/free-cash-proof.csv"
-    },
-    {
-     "path": "data/munis-ledger.csv",
-     "title": "Every MUNIS budget report we hold, one table",
-     "stars": 3,
-     "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
-     "kind": "Data",
-     "bytes": 78816,
-     "url": "/docs/data/munis-ledger.csv",
-     "count": 348,
-     "unit": "rows",
-     "textUrl": "/docs/data/munis-ledger.csv"
     },
     {
      "path": "data/document-basis.csv",
@@ -3724,10 +3763,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 288,
+  "documents": 291,
   "groups": 17,
-  "bytes": 362468253,
-  "loadBearing": 55
+  "bytes": 364514400,
+  "loadBearing": 56
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 21 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

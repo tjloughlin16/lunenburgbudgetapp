@@ -85,6 +85,15 @@ ROW_DEFS = [
          howToGet='The same report at Year/Period YYYY/9. We hold FY26 at this period, but '
                   'run as a department rollup rather than at account level.',
          effort='records request'),
+    dict(id='p12', group='The town’s ledger', label='Year-end position (period 12)',
+         why='June, with the books not yet closed. Shows where a year landed; not what it '
+             'finally turned back.',
+         publisher='Town Accountant',
+         howToGet='The same `glytdbud` report at Year/Period YYYY/12. Held for FY26, sent '
+                  'by the Town Manager on 2 September 2026 in both printed and '
+                  'spreadsheet form — the first account-level expenditure report in this '
+                  'archive.',
+         effort='records request'),
     dict(id='q4', group='The town’s ledger', label='Year-end close (period 13)',
          why='After the lapse period. The surplus IS the available column on this report.',
          publisher='Town Accountant',
@@ -253,7 +262,8 @@ def coverage(db):
             'settled': stage_cell(fy, 'settled'),
             'restated': stage_cell(fy, 'actual'),
             'q1': ledger_cell(fy, 3), 'q2': ledger_cell(fy, 6),
-            'q3': ledger_cell(fy, 9), 'q4': ledger_cell(fy, 13),
+            'q3': ledger_cell(fy, 9), 'p12': ledger_cell(fy, 12),
+            'q4': ledger_cell(fy, 13),
             'revenue': (ledger_cell(fy, 9, 'revenue')
                         if (fy, 9, 'revenue') in ledger else cell('missing')),
             # The appropriation as voted is the `original` column of any ledger report for
@@ -371,6 +381,10 @@ def totals(db, cov):
     # What a year needs before WE could compute a surplus, and whether we hold it.
     NEEDED = [('q4', 'the year-end ledger (period 13)'),
               ('po', 'purchase orders closed after the year closed')]
+    # Period 12 is deliberately NOT in NEEDED. It shows where a year landed in June and
+    # it is not the close: purchase orders are still open, and closing them is what moved
+    # FY25 by $21,770.53. A June report makes the answer visible; it does not make it
+    # final, and the Town Manager said so in the covering note.
 
     out = []
     for r in rows(db, """SELECT fy,

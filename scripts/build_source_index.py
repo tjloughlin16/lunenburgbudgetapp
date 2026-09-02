@@ -80,7 +80,8 @@ ORIGINS = [
 # were posted. Worth marking for two reasons: it is the honest answer to "is all of this
 # public", and a reader who wants these for themselves needs to know the route is a
 # request rather than a link.
-BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx', 'records-request-2026-06/'}
+BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx', 'records-request-2026-06/',
+              'records-request-2026-09/'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
 # the line was published by the town, the district, the state or a neighboring district.
@@ -427,6 +428,41 @@ GROUPS = [
                  'them. Provenance, the town’s own filenames and a sha256 for each file '
                  'are in PROVENANCE.md, listed below.',
         'items': [
+            ('records-request-2026-09/PROVENANCE.md',
+             'Where the FY26 period 12 report came from', 2,
+             'The email, the sender, the date, both filenames as sent, and the sha256 of '
+             'each. Also what the report is NOT: period 12 rather than the year-end close, '
+             'expenditures only, and with zero balance accounts suppressed. And the '
+             'reconciliation that establishes the spreadsheet and the printout are one '
+             'report, since only the printout states a period.'),
+            ('records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx',
+             'FY26 year-to-date budget report, period 12 \u2014 spreadsheet', 3,
+             'The first ACCOUNT-LEVEL general fund expenditure report in this archive. '
+             'Every prior one was run with Print totals only: Y, which renders the whole '
+             'school district as a single row; here it is 258 accounts, each with an org '
+             'code, an object code and a description. Sent by Jennifer Warren, Town '
+             'Manager, on 2 September 2026, produced the evening before by Karen Barrett, '
+             'Town Accountant. The sender\u2019s filename is '
+             '\u201cFY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx\u201d. It carries the '
+             'appropriation columns UN-ROUNDED, which the printed form does not. '
+             '**Period 12, not 13** \u2014 June, with the books not yet closed; the Town '
+             'Manager\u2019s covering note says the figures \u201care likely to continue '
+             'to adjust as we continue the year-end reconciliation process\u201d. Zero '
+             'balance accounts are suppressed, so an account absent here is not '
+             'necessarily absent from the ledger.'),
+            ('records-request-2026-09/town-general-fund-expenditures-fy26-p12.pdf',
+             'FY26 year-to-date budget report, period 12 \u2014 as printed', 28,
+             'The same report as MUNIS prints it, and the only one of the pair that states '
+             'its own parameters: Year/Period 2026/12, Print totals only: N, Suppress zero '
+             'bal accts: Y, Account type Expense, program glytdbud. The spreadsheet states '
+             'no period at all, so the two are asserted to be one report by reconciling '
+             'the spreadsheet\u2019s 635 account rows to this file\u2019s own printed '
+             'GRAND TOTAL \u2014 expended $52,163,984.85 and encumbrances $529,325.69 '
+             'agree to the cent. The three appropriation columns differ by under a dollar '
+             'because this file rounds them and the spreadsheet does not, which settles '
+             'something the project had only been able to back-solve: the rounding is in '
+             'the printing, not in the ledger. The sender\u2019s filename is '
+             '\u201cPrint_ YEAR-TO-DATE BUDGET REPORT.pdf\u201d.'),
             ('records-request-2026-06/fund-1301-journal-detail-fy25.xlsx',
              'Athletics revolving fund, journal detail, FY2025', 3,
              'Every receipt and payment in fund 1301 for FY2025, with effective and posting '

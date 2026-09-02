@@ -37,6 +37,8 @@ import os
 import re
 import sys
 
+import openpyxl
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'sources', 'data', 'munis-ledger.csv')
 
@@ -139,7 +141,8 @@ def parse(path):
                  rounded_columns='original,transfers,revised',
                  doc_id=os.path.relpath(path, ROOT))
     return dict(path=path, rows=rows, stated=stated, fy=fy, period=period,
-                account_type=acct_type, totals_only=totals_only)
+                account_type=acct_type, totals_only=totals_only,
+                suppress_zero=suppress_zero)
 
 
 def reconcile(rep):
@@ -153,11 +156,78 @@ def reconcile(rep):
     for i, c in enumerate(cols):
         got, want = sum(r[c] for r in rep['rows']), rep['stated'][i]
         # Rounded columns get a dollar per row; the cent-bearing ones must be exact.
+        # The printed report rounds the appropriation columns to whole dollars while the
+        # spreadsheet does not, so those three are allowed a dollar per row against a
+        # printed total. Expended and encumbered carry cents on both sides and must be
+        # exact -- that pair is what proves the two files are the same report.
         tol = n if c in ('original', 'transfers', 'revised') else 0.005
         if abs(got - want) > tol:
             ok = False
             notes.append(f'{c}: {got:,.2f} vs stated {want:,.2f}')
     return ('; '.join(notes) if notes else 'ties'), ok
+
+
+# The same report, exported as data instead of printed. Columns are the MUNIS headings.
+# It carries UN-ROUNDED appropriation figures, which the printed form does not, so where
+# both exist the spreadsheet is the better copy of the same report.
+XLSX_COLUMNS = {
+    'FUND': 'fund', 'DEPARTMENT': 'dept', 'ORG': 'org', 'OBJ': 'object',
+    'ACCOUNT DESCRIPTION': 'name', 'ORIGINAL APPROP': 'original',
+    'TRANFRS/ADJSMTS': 'transfers', 'REVISED BUDGET': 'revised',
+    'YTD EXPENDED': 'expended', 'ENCUMBRANCES': 'encumbered',
+}
+
+
+def parse_xlsx(path, fy, period, account_type, totals_only, suppress_zero, twin):
+    """Parse the Excel form of a glytdbud report.
+
+    **The spreadsheet does not state its own period, account type or grain.** Nothing
+    inside it says 2026/12. Those come from the PRINTED twin, which has the options page,
+    and the two are asserted to be one report by reconciling to the printed GRAND TOTAL.
+    Taking the period from a filename would be exactly the derived-quoted-as-observed
+    error rule 13 is about, so the twin is required rather than optional.
+    """
+    ws = openpyxl.load_workbook(path, data_only=True)[
+        openpyxl.load_workbook(path, read_only=True).sheetnames[0]]
+    head = {}
+    for c in range(1, ws.max_column + 1):
+        v = ws.cell(1, c).value
+        if v and str(v).strip() in XLSX_COLUMNS:
+            head[XLSX_COLUMNS[str(v).strip()]] = c
+    need = set(XLSX_COLUMNS.values()) - set(head)
+    if need:
+        raise SystemExit('%s: missing columns %s' % (path, ', '.join(sorted(need))))
+
+    rows = []
+    for r in range(2, ws.max_row + 1):
+        name = str(ws.cell(r, head['name']).value or '')
+        # The sheet carries its own subtotal rows ("Total 122 SELECT BOARD"). They are
+        # the source's own arithmetic, not accounts, and summing them double-counts.
+        if name.startswith('Total') or not ws.cell(r, head['fund']).value:
+            continue
+        def n(k):
+            v = ws.cell(r, head[k]).value
+            return float(v) if isinstance(v, (int, float)) else 0.0
+        rows.append(dict(
+            level='account', org=str(ws.cell(r, head['org']).value or ''),
+            object=str(ws.cell(r, head['object']).value or ''),
+            dept=str(ws.cell(r, head['dept']).value or ''), name=name.strip(),
+            fund=str(ws.cell(r, head['fund']).value).strip(),
+            fund_name='GENERAL FUND' if str(ws.cell(r, head['fund']).value).strip()
+                      == '0100' else '',
+            original=n('original'), transfers=n('transfers'), revised=n('revised'),
+            expended=n('expended'), encumbered=n('encumbered'),
+            available=round(n('revised') - n('expended') - n('encumbered'), 2),
+            pct_used=0.0))
+    for r in rows:
+        r.update(fy=fy, period=period, funds_covered='',
+                 account_type=account_type, totals_only=int(totals_only),
+                 suppress_zero=int(suppress_zero),
+                 # Nothing here is rounded: that is the point of having the spreadsheet.
+                 rounded_columns='',
+                 doc_id=os.path.relpath(path, ROOT))
+    return dict(path=path, rows=rows, stated=twin, fy=fy, period=period,
+                account_type=account_type, totals_only=totals_only)
 
 
 FIELDS = ['doc_id', 'fy', 'period', 'fund', 'fund_name', 'funds_covered', 'account_type',
@@ -171,14 +241,36 @@ def main():
     ap.add_argument('--check', action='store_true')
     args = ap.parse_args()
 
-    src = os.path.join(ROOT, 'sources', 'q3-fy26')
-    paths = sorted(os.path.join(src, f) for f in os.listdir(src) if f.endswith('.txt'))
+    dirs = [os.path.join(ROOT, 'sources', d)
+            for d in ('q3-fy26', 'records-request-2026-09')]
+    paths = sorted(os.path.join(d, f) for d in dirs if os.path.isdir(d)
+                   for f in os.listdir(d) if f.endswith('.txt'))
 
     out, bad = [], []
     print('Parsing MUNIS year-to-date budget reports\n')
     for p in paths:
         rep = parse(p)
         if rep is None or not rep['rows']:
+            continue
+
+        # Where the same report was also sent as a spreadsheet, prefer the spreadsheet:
+        # it carries the appropriation columns un-rounded. It is only trusted after it
+        # reconciles to the PRINTED report's own GRAND TOTAL, which is what establishes
+        # that the two are the same report at all.
+        twin = p[:-4] + '.xlsx'
+        if os.path.exists(twin):
+            xl = parse_xlsx(twin, rep['fy'], rep['period'], rep['account_type'],
+                            rep['totals_only'], rep['suppress_zero'], rep['stated'])
+            note, ok = reconcile(xl)
+            print('  %-4s %-46s %s %4d rows  %s'
+                  % (xl['account_type'][:4], os.path.basename(twin),
+                     f"FY{xl['fy']} P{xl['period']}", len(xl['rows']),
+                     note if ok else 'MISMATCH ' + note))
+            print('       grain: ACCOUNT (spreadsheet; period and options from %s)'
+                  % os.path.basename(p))
+            if not ok:
+                bad.append((twin, note))
+            out.extend(xl['rows'])
             continue
         note, ok = reconcile(rep)
         if not ok:

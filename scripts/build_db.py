@@ -771,6 +771,20 @@ def reconcile(db):
                  WHERE account_id IN ('0100-300','0100-301') AND period=9"""),
           0.0, tol=2.0)
 
+    # The first ACCOUNT-LEVEL general fund expenditure report in the archive: FY26 at
+    # period 12, sent by the Town Manager on 2 September 2026. Asserted against the
+    # printed PDF's own GRAND TOTAL, which is the only thing establishing that the
+    # spreadsheet and the printout are one report -- the spreadsheet states no period.
+    check(db, 'FY26 P12 expended, all departments (spreadsheet vs printed total)',
+          q("""SELECT SUM(expended) FROM ledger_snapshot JOIN account USING (account_id)
+               WHERE fy=2026 AND period=12 AND fund='0100'"""),
+          52163984.85)
+    check(db, 'FY26 P12 school department, 258 accounts, unspent',
+          q("""SELECT ROUND(SUM(available),2) FROM ledger_snapshot
+                 JOIN account USING (account_id)
+               WHERE fy=2026 AND period=12 AND dept='300'"""),
+          482101.12)
+
     # The town's own FY25 closing figure, quoted rather than derived. Asserted because a
     # figure this project quotes must not drift by a cent, and because the gap between it
     # and our own subtraction is the point of the table that shows them together.
