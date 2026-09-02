@@ -1002,9 +1002,27 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v8",
-  "updated": "2026-08-30",
+  "current": "v9",
+  "updated": "2026-09-02",
   "items": [
+   {
+    "tag": "v9",
+    "date": "2026-09-02",
+    "title": "The town\u2019s own ledger, account by account \u2014 and a site an agent can use",
+    "short": "the ledger, read line by line",
+    "headline": "The Town Manager sent the FY26 books at account level, the first time this project has held the school department as anything but a single row. Two analyses read it, a data room shows what is still missing, and the whole database is published and queryable.",
+    "changes": [
+     "The FY26 year-to-date report arrived on 2 September at ACCOUNT level. Every previous copy was a department rollup, which renders the entire school district as one line. This one is 258 school accounts and 376 town accounts, each with what was appropriated, moved, spent and committed.",
+     "Read this before quoting anything from it: the figures are period 12, June, with the books open. The Town Manager\u2019s own framing is the right one \u2014 \"current FY26 report, figures likely to continue to adjust as we continue the year-end reconciliation process.\" What can still move is bounded by what is encumbered: the school department\u2019s final unspent figure lands between $482,101 and $718,885, the town\u2019s between $858,462 and $1,141,003. Current, not final, and not doubtful either.",
+     "The school department was $482,101 under budget \u2014 and that is a residue, not a result. It is $1,683,534 unspent across 160 accounts netted against $1,201,434 overspent across 56. The district spent 97.3% of what it was given. Reading the headline as half a million of slack describes the arithmetic correctly and the year not at all.",
+     "One open question is set out at length and not resolved. The FY26 approved budget cut the kindergarten paraprofessional line and published it as a \u2212100% cut, in those words, on page 7. $99,064 was then spent on kindergarten paraprofessionals with no appropriation and no transfer covering it, while six other zero-budget accounts did receive transfers. Three readings fit the record equally well and the analysis gives all three. It is not presented as an impropriety, and the document that would settle it \u2014 the year-end transfer schedule \u2014 is named.",
+     "On the town side, snow removal cost $1,038,092 against an appropriation of $355,571, and the $185,000 Reserve Fund was never touched. $1,262,376 of school retiree health insurance sits in a town department and appears nowhere in the school budget, which is the first time this project has been able to point in the ledger at any of the gap between the state\u2019s all-funds figure for Lunenburg and the appropriation.",
+     "Reports and analyses is a new page. Twelve documents this project has written, each as a web page, a PDF and its source text with a checksum, most checked by a script that recomputes every figure from the database. It leads with the caveat rather than footnoting it: none of it is official, none of it has been reviewed or endorsed by the town or the district.",
+     "The whole database is published. /data/lunenburg.db is every figure on the site in one SQLite file, and /api/index is the same thing as JSON with no key and no rate limit. /api/schema states the grain of every table and the four ways to get a confident wrong answer out of it.",
+     "Two figures in llms.txt were wrong and were found by an outside agent, not by us. It gave the FY27 appropriation as the adopted budget while every page uses the figure after the September Special Town Meeting \u2014 $350,000 apart \u2014 and it labelled the FY28\u2013FY30 average as the FY28 gap, which is $680,870. Both are fixed, both figures are now published with their definitions, and the build fails if either drifts from the model again.",
+     "And /minutes/ used to answer 200 with the app shell. An agent asked to review the meeting minutes concluded the site did not serve them, while /minutes/school-committee.txt was serving 920KB of exactly what it wanted. It now returns a real 404 whose body names the three URL patterns that work. For a program that message is the only one it will ever read."
+    ]
+   },
    {
     "tag": "v8",
     "date": "2026-08-30",
