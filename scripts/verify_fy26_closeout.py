@@ -89,8 +89,8 @@ def main():
                            ('S2072061', '511023', 'PSYCHSALAR'),
                            ('S2032121', '511103', 'KINDAIDREG'),
                            ('S3991692', '535026', 'SPED TRANS')):
-        row = one("""SELECT revised, expended FROM ledger_snapshot l
-                     JOIN account a USING (account_id)
+        row = one("""SELECT revised, expended, encumbered, available
+                     FROM ledger_snapshot l JOIN account a USING (account_id)
                      WHERE l.fy=2026 AND l.period=12 AND a.org=? AND a.object=?""",
                   org, obj)
         if row is None:
@@ -99,6 +99,14 @@ def main():
             continue
         present(f'{name} revised', float(row['revised']), dp=0)
         present(f'{name} spent', float(row['expended']), dp=0)
+        # The encumbrance too. The document once printed a variance computed from three
+        # figures while showing two of them, so the arithmetic could not be followed and
+        # looked wrong. If a figure is in the subtraction it has to be on the page.
+        present(f'{name} encumbered', float(row['encumbered']), dp=0)
+        got = (float(row['revised']) - float(row['expended'])
+               - float(row['encumbered']))
+        if abs(got - float(row['available'])) > 0.02:
+            FAILS.append(f'{name}: revised - spent - encumbered does not equal available')
 
     ood = one("""SELECT SUM(revised) rv, SUM(expended) e, SUM(available) av
                  FROM ledger_snapshot l JOIN account a USING (account_id)

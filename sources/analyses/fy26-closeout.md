@@ -96,16 +96,27 @@ paraprofessional lines that all ran over.
 
 ### The evidence
 
-| account | | revised | spent | variance |
-|---|---|---:|---:|---:|
-| `S0511062` | SPED PRIVA — out-of-district, private | $988,630 | $466,001 | **+$522,629** |
-| `S5511062` | COLL TUITI — out-of-district, collaborative | $302,663 | $678,062 | **−$434,108** |
-| `S3991742` | ELEC CHGS — electricity | $271,132 | $319,109 | −$110,338 |
-| `S1511062` | CONT SERV — special services contracted | $105,500 | $204,758 | −$100,520 |
-| `S2072061` | PSYCHSALAR — one of four psychologist accounts, §4 | $98,784 | $0 | +$98,784 |
-| `S2032121` | KINDAIDREG — kindergarten paras | **$0** | $93,691 | −$93,691 |
-| `S3991692` | SPED TRANS — special ed transport | $565,735 | $620,025 | −$67,555 |
-| 4 accounts | special education paraprofessionals | $1,352,508 | $1,458,152 | −$105,644 |
+| account | | revised | spent | encumbered | left |
+|---|---|---:|---:|---:|---:|
+| `S0511062` | SPED PRIVA — out-of-district, private | $988,630 | $466,001 | $0 | **+$522,629** |
+| `S5511062` | COLL TUITI — out-of-district, collaborative | $302,663 | $678,062 | $58,708 | **−$434,108** |
+| `S3991742` | ELEC CHGS — electricity | $271,132 | $319,109 | $62,362 | −$110,338 |
+| `S1511062` | CONT SERV — special services contracted | $105,500 | $204,758 | $1,262 | −$100,520 |
+| `S2072061` | PSYCHSALAR — one of four psychologist accounts, §4 | $98,784 | $0 | $0 | +$98,784 |
+| `S2032121` | KINDAIDREG — kindergarten paras | **$0** | $93,691 | $0 | −$93,691 |
+| `S3991692` | SPED TRANS — special ed transport | $565,735 | $620,025 | $13,265 | −$67,555 |
+| 4 accounts | special education paraprofessionals | $1,352,508 | $1,458,152 | $0 | −$105,644 |
+
+**The last column is `revised − spent − encumbered`, not `revised − spent`**, and the
+encumbrance column is printed because without it the arithmetic does not appear to work.
+`COLL TUITI` is the clearest case: $302,663 − $678,062 is $375,399, and the figure is
+$434,108, because $58,708 is committed under purchase orders that have not yet been paid.
+An earlier version of this table showed the variance and omitted the encumbrance it was
+computed from.
+
+**An encumbrance is money promised under a signed contract and not yet paid out.** At the
+year-end close some of it is paid and the rest is released back, which is exactly the step
+this report predates.
 
 **The two out-of-district lines together**: $1,291,293 budgeted, $1,144,063 spent, a net
 of **+$88,522**.
