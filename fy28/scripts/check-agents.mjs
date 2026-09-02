@@ -25,7 +25,7 @@
  */
 import { spawn, execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -217,6 +217,30 @@ async function main() {
   // the file published the FY27 appropriation without the Special Town Meeting article
   // that every page uses, and published the FY28-FY30 average under a label saying FY28.
   // Both were found by an agent reading the site, not by anything here.
+  // The published copy of an analysis is a COPY, made by build_source_index.py. The PDF
+  // and the /reports index are regenerated from source, so both can be current while the
+  // Markdown a reader actually fetches is weeks old. That happened: fy26-closeout.md was
+  // rewritten and shipped stale, and nothing noticed because everything derived from it
+  // was fresh.
+  console.log('\npublished analyses must match their source')
+  {
+    const src = join(APP, '..', 'sources', 'analyses')
+    const pub = join(APP, 'public', 'docs', 'analyses')
+    const names = (await readdir(src)).filter((f) => f.endsWith('.md'))
+    const h = (b) => createHash('sha256').update(b).digest('hex').slice(0, 12)
+    let stale = 0
+    for (const f of names) {
+      let a, b
+      try { a = await readFile(join(src, f)); b = await readFile(join(pub, f)) }
+      catch { fails.push(`${f} is in sources/analyses and not published`); stale++; continue }
+      if (h(a) !== h(b)) {
+        fails.push(`/docs/analyses/${f} is stale — run \`python3 scripts/build_source_index.py\``)
+        stale++
+      }
+    }
+    console.log(`  ${stale ? 'FAIL' : ' ok '} ${names.length} analyses, ${stale} stale`)
+  }
+
   console.log('\nllms.txt figures must match the model the app renders from')
   {
     const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))

@@ -59,33 +59,71 @@ paid for part of the thing — so none of this says what anything costs.
 
 ## In one page
 
-**The headline number is real and it does not mean what it sounds like.** The school
-department finished June $482,101 under budget. That is not half a million pounds of slack
-sitting in a drawer — it is what is left after $1,683,534 of underspending across 160
-accounts is netted against $1,201,434 of overspending across 56. Roughly $2.9 million of
-variance in a $26.3 million budget, cancelling down to 1.8%.
+**The district spent 97.3% of its budget.** That is the sentence to carry away, and it is
+the one most likely to be lost. FY26 finished with **$482,101 unspent** of $26.3 million —
+1.8%, and not a pot of money sitting in a drawer.
 
-**These figures are current rather than final, and this document holds them the way the
-Town Manager did when she sent them:** *"This is the current FY26 report — figures likely
-to continue to adjust as we continue the year-end reconciliation process."* That is the
-right register. They will change. They are also what there is.
+**Is this FY25 happening again? No, and the difference is checkable.** The Town's
+explanation for the FY25 surplus was unfilled posts in the facilities department. In FY26
+Facilities & Grounds spent its salary budget **to the dollar** — three accounts, three
+exact matches, nothing left on any of them. Whatever produced this year's underspend, it
+is not last year's mechanism. §7.
 
-What can change is bounded: the **$236,783.89 still encumbered**. Each purchase order is
-either paid, leaving the figure where it is, or released, raising it — so the department's
-final unspent figure lands between **$482,101 and $718,885**. In FY25 the same step moved
-the school figure *up*, by 3.7%.
+**And there are three things this report cannot explain.** They are here, at the top,
+rather than at the bottom:
 
-So "not final" here does not mean "possibly nothing". Around half a million dollars was
-not spent.
+1. **Kindergarten paraprofessionals.** The FY26 approved budget cut the line and published
+   it as a −100% cut, in those words. **$99,064 was spent on them anyway**, with no
+   appropriation and no transfer, while six other zero-budget accounts did get transfers.
+   Three readings fit and nothing here chooses between them. §3.
+2. **$85,090 of budget moved into the department** across 82 accounts, and no document in
+   this archive connects any of it to a decision. §5.
+3. **One of the district's four school psychologist accounts paid nobody all year**, while
+   the other three were paid in full or slightly over. §4.
 
-**The district spent 97.3% of what it was given.** That is the first thing a reader should
-take from the chart at the top, and it is the ordinary result of a budget that was set
-about right in total.
+**Nothing here is an accusation and none of it is hidden.** The district published the
+kindergarten cut itself, at −100%, on page 7 of its own approved budget. The town produced
+the ledger on request within a day. Where the budget worked, this report says so.
 
-**What moved is more interesting than what was left.** Out-of-district special education
-tuition swung hardest in both directions: private placements $522,629 under, collaborative
-placements $434,108 over, netting to $88,522. Electricity ran $110,338 over. Four special
-education paraprofessional lines ran $105,644 over between them.
+**Where the underspend actually comes from** — grouped by what the money buys, there are
+two different stories and only one is about anybody's decisions.
+
+| what the money buys | budget | left | % of its own budget |
+|---|---:|---:|---:|
+| People — salaries, subs, stipends | $17,111,089 | +$192,211 | **1.1%** |
+| Insurance and unemployment | $3,752,758 | +$104,527 | **2.8%** |
+| Supplies, materials, equipment | $584,728 | +$88,883 | **15.2%** |
+| Tuition, transport, contracted services | $3,915,262 | +$78,556 | **2.0%** |
+| Utilities and communications | $958,493 | +$17,924 | **1.9%** |
+
+**Every large category landed within three percent of budget.** People, insurance,
+tuition, utilities — $25.7 million between them, all of it close. That is a budget set
+about right, and it is four fifths of the underspend. The dollars are big because the
+bases are big, not because anything went wrong.
+
+**But the people line is not quiet underneath.** Its 1.1% is two role groups pulling hard
+in opposite directions: **paraprofessionals $210,082 over**, with every one of seven
+accounts over, and **psychologists and social workers $194,718 under** — though that side
+is three accounts rather than a pattern, one of which paid nobody all year. They land
+$15,363 apart. Teachers — $12.3 million, the largest and least discretionary payroll in
+the town — came in at 1.3%.
+
+That pair is the most striking thing in the year and the document does **not** read it as
+one substituting for the other. Two lines moving opposite ways by similar amounts is the
+exact inference this project has got wrong before.
+
+**One small category missed by 15%, and it is the discretionary one.** Supplies,
+materials, maintenance and equipment: 67 of its 78 accounts came in under. The median
+salary account spent **100%** of its budget; the median supply account spent **88%**. A
+salary is paid or it is not; a supply order is placed or it is not.
+
+**So the cause is not one thing that went wrong.** It is a large budget landing 1.8% off,
+plus about $89,000 of things somebody chose not to buy. Even if every discretionary line
+had been spent in full, the department would still have finished around $393,000 under.
+
+**What moved most is not what was left.** Out-of-district special education tuition swung
+hardest in both directions — private placements $522,629 under, collaborative placements
+$434,108 over — and netted to $88,522.
 
 **Three things this year cannot explain, and each names the document that would.**
 
@@ -159,6 +197,195 @@ Whether any of it survives the close. Encumbrances of $236,783.89 are still open
 clearing purchase orders releases some of that back and commits the rest.
 
 ---
+
+---
+
+## 1a. Where the $482,101 actually comes from
+
+### In plain terms
+
+"Some things overspent, some things underspent" is true and useless. Grouped by what the
+money buys, the year has **two different stories in it**, and only one of them is about
+anybody's decisions.
+
+**Story one: the big categories all landed within 1–3% of budget.** People, insurance,
+tuition and transport, utilities — between them $25.7 million, every one of them within
+three percent. That is a budget set about right. The dollars are large only because the
+bases are large. **Four fifths of the underspend is this.**
+
+**Story two: the small discretionary category missed by 15%.** Supplies, instructional
+materials, building maintenance and equipment — $584,728 budgeted, **$88,883 unspent, and
+67 of its 78 accounts came in under.** That is not a forecasting error. It is what happens
+when people are told to be careful about what they buy.
+
+### The evidence
+
+| what the money buys | accounts | budget | left | % of its own budget | share of the $482,101 |
+|---|---:|---:|---:|---:|---:|
+| People — salaries, subs, stipends | 112 | $17,111,089 | +$192,211 | **1.1%** | 40% |
+| Insurance and unemployment | 3 | $3,752,758 | +$104,527 | **2.8%** | 22% |
+| Supplies, materials, equipment | 81 | $584,728 | +$88,883 | **15.2%** | 18% |
+| Tuition, transport, contracted services | 42 | $3,915,262 | +$78,556 | **2.0%** | 16% |
+| Utilities and communications | 18 | $958,493 | +$17,924 | **1.9%** | 4% |
+| | **258** | **$26,332,564** | **+$482,101** | **1.8%** | |
+
+### Inside the people line, one layer down
+
+$192,211 on a $17.1 million payroll is 1.1%, which is the kind of number that looks like
+rounding. It is not. It is **two role groups moving hard in opposite directions**, and the
+small net is what is left when they nearly cancel.
+
+| role group | accounts | budget | left | % of its own budget |
+|---|---:|---:|---:|---:|
+| Paraprofessionals | 7 | $1,415,449 | **−$210,082** | **−14.8%** |
+| Teachers and professional salaries | 29 | $12,347,689 | +$157,791 | 1.3% |
+| Social workers | 4 | $369,029 | **+$99,060** | **26.8%** |
+| School psychologists | 4 | $287,780 | **+$95,658** | **33.2%** |
+| Everything else in the people line | 10 | $324,622 | +$29,244 | 9.0% |
+| Stipends and coaching | 8 | $208,525 | +$16,433 | 7.9% |
+| Overtime | 10 | $43,073 | +$14,626 | 34.0% |
+| Substitutes, long-term and daily | 29 | $1,467,971 | −$8,011 | −0.5% |
+| Secretarial and clerical | 11 | $646,951 | −$2,507 | −0.4% |
+| **the people line** | **112** | **$17,111,089** | **+$192,211** | **1.1%** |
+
+**Three things in that table are worth reading twice.**
+
+**Teachers — the largest payroll in the town — landed at 1.3%.** $12.3 million budgeted
+across 29 accounts, $157,791 left. On the biggest and least discretionary thing the
+district buys, the budget was set almost exactly right.
+
+**Every paraprofessional line overspent, and none underspent.** Seven accounts, $1.4
+million budgeted, **$210,082 over** — including the $93,691 kindergarten line that had no
+budget at all (§3). This is the only role group in the district where not one account came
+in under.
+
+**The student support underspend is three accounts, not a pattern.** Psychologists at
+33.2% and social workers at 26.8% look like a group effect, and they are not. Of the eight
+accounts, **five spent their budget or slightly over**; the whole $194,718 is:
+
+| account | | budget | spent | left |
+|---|---|---:|---:|---:|
+| `S2072061` | PSYCHSALAR — spent nothing all year | $98,784 | $0 | +$98,784 |
+| `S2066651` | SOCWORKSAL | $90,212 | $20,877 | +$69,335 |
+| `S2055651` | SOCWORKSAL | $92,939 | $63,214 | +$29,725 |
+
+The other five: two social worker lines spent **exactly** their budget to the dollar, and
+three psychologist lines went slightly **over** — by $200, $200 and $2,726. So this is not
+support staffing coming in light across the board. It is one post that paid nobody and two
+that paid somebody for part of a year.
+
+### The two that nearly cancel — and what that does not mean
+
+| | |
+|---|---:|
+| Student support staff — psychologists and social workers | **+$194,718** |
+| Paraprofessionals, including kindergarten | **−$210,082** |
+| **together** | **−$15,363** |
+
+Two role groups, moving in opposite directions, within $15,363 of each other on a combined
+budget of $2.07 million.
+
+**It is very tempting to read that as one thing substituting for another** — support posts
+unfilled while paraprofessional hours grew to cover the same children. **Nothing here
+establishes that**, and this is the third time in this document the same trap has appeared:
+two lines moving in opposite directions by similar amounts is precisely the inference
+`CLAUDE.md` records as having shipped from this project before and been wrong.
+
+What is established is four numbers, and the shapes underneath them are not even
+symmetrical: the paraprofessional overrun is **every account in the group**, while the
+support underspend is **three accounts out of eight** with the other five at or slightly
+over budget. A group-wide movement and three individual lines are not the same kind of
+thing, and reading them as two halves of one trade requires ignoring that.
+
+Other readings fit equally well — the support posts may have been budgeted for a full year
+and filled late, the paraprofessional overrun may be contractual step increases or hours,
+and the two may have nothing to do with each other. Dollars are not people, and no
+headcount is published.
+
+### The number that separates the two stories
+
+Across accounts with a budget over $200:
+
+| | accounts | median share of budget spent |
+|---|---:|---:|
+| Salary accounts | 74 | **100%** |
+| Supply, material and equipment accounts | 72 | **88%** |
+
+A salary is paid or it is not. A supply order is placed or it is not. **The median salary
+account spent its entire budget; the median supply account spent 88% of it**, 14 of them
+spent under half, and 5 spent nothing at all.
+
+The largest examples are ordinary and recognisable:
+
+| account | | budget | spent | |
+|---|---|---:|---:|---:|
+| `545004` | EMERG EXP — emergency expenses | $30,000 | $9,000 | 30% |
+| `541002` | BLDG MTC — building maintenance | $80,229 | $51,534 | 64% |
+| `541001` | CUST SUPPL — custodial supplies | $75,000 | $58,406 | 78% |
+| `545003` | GRNDS SUPP — grounds supplies | $49,937 | $38,555 | 77% |
+| `545001` | ACESUPPLIE — ACE supplies | $12,000 | $3,333 | 28% |
+
+An emergency line spending 30% of its budget is a contingency that was not needed, which
+is the same shape as the Reserve Fund on the town side. The rest are things somebody chose
+not to order.
+
+
+### One thing somebody asked for, in the same year
+
+A category underspending by 15% is an abstraction until it sits next to something
+concrete. On **24 June 2026** the president of the football boosters told the School
+Committee:
+
+> "Casey, the head coach put in a request to the athletic department to purchase five new
+> helmets earlier this spring, we currently have more heads than we have helmets."
+
+In the same fiscal year, the athletics equipment and uniform lines stood at:
+
+| account | | budget | spent | | left |
+|---|---|---:|---:|---:|---:|
+| `555048` | EQUIP RECO — equipment reconditioning | $8,292 | $3,649 | **44%** | +$4,643 |
+| `519104` | UNIFSPORTS — sports uniforms | $3,812 | $1,103 | **29%** | +$2,709 |
+| `555050` | NEW EQUIP — new equipment | $7,708 | $6,391 | 83% | +$1,317 |
+| | **the three together** | **$19,812** | **$11,143** | **56%** | **+$8,669** |
+
+Athletics as a whole — 14 accounts — finished $51,905 under, including $20,407 for an
+athletics secretary post that paid nobody.
+
+**This is adjacency, and it is not an allegation.** Reconditioning a helmet is not buying
+one; the request was made "earlier this spring" and nothing here dates the decision on it;
+a line can be committed without being spent; and one person's account of one request is
+not a record of what the athletic department decided or why. The report does not say the
+money was there and was refused.
+
+What it does say is that a resident asking why five helmets could not be bought will find
+these numbers, and a report describing a 15% underspend in this category owes them the
+sight of it rather than making them look.
+
+### So what caused the underspend?
+
+**Nothing dramatic, and that is the finding.** Roughly:
+
+- **$192,211** is the residue of a $17.1 million payroll landing 1.1% off — which given
+  38 accounts over and 42 under is a payroll budgeted close to right and then reconciled
+  line by line during the year.
+- **$104,527** is health insurance and unemployment coming in 2.8% under a $3.75 million
+  forecast, with nothing over. A rate-times-headcount estimate that landed slightly high.
+- **$88,883** is discretionary purchasing, and it is the one component that reflects
+  choices rather than forecasts.
+- **$78,556** is the residue of $1.34 million of movement in tuition and transport that
+  very nearly cancelled itself out.
+
+### What this does not show
+
+**That the district held back on purpose.** A 15% underspend on supplies is consistent
+with deliberate restraint after a hard budget year, with orders that slipped past 30 June,
+with prices coming in lower, and with lines that were over-budgeted to begin with. The
+ledger shows the pattern. It does not show the reason, and one year cannot separate those
+four.
+
+**And it is not where the money is.** Even if every discretionary line had been spent in
+full, the department would still have finished about $393,000 under. The large categories
+are where the dollars are, and they are the ones that behaved.
 
 ## 2. The biggest movers
 
@@ -670,13 +897,31 @@ kindergarten paraprofessional case is $99,064 against a line the district itself
 as cut. It deserves an answer; it is not evidence of anything larger, and nothing in this
 document says it is.
 
+**A note for anyone comparing the two sides.** The companion analysis,
+`analyses/fy26-closeout-town.md`, reads the same ledger for the other 67 departments. The
+town overspent on 18 of 376 accounts against the school department's 57 of 259. That
+difference is real and has at least four explanations, and neither document picks one. It
+is not a scoreboard.
+
 ### For the School Committee and the Finance Committee
 
+**The control question, answered directly: what would you have had to see, and when?**
+
+- **By December (period 6)**, the two out-of-district tuition lines would already have
+  been visibly diverging. They finished $522,629 under and $434,108 over. Nothing about
+  that shape appears in a total.
+- **By March (period 9)**, the kindergarten paraprofessional accounts had already spent
+  roughly $59,709 against a zero budget — that figure is in the district's own March
+  workbook. It was visible six months before anybody asked about it.
+- **The transfer schedule, at the time transfers were made** rather than at year end,
+  would have shown the $85,090 while it could still be questioned.
+
+None of those requires a new report. They are the same `glytdbud` run at periods 6 and 9,
+and a schedule the Finance Committee already asks for.
+
 **The total is a poor control instrument.** A department can land within 2% of budget while
-individual lines miss by hundreds of percent, and this one did. If the Committee wants to
-see risk building, it needs the quarterly reports during the year, not the closeout after
-it — and those quarterly reports do not currently reach the archive or, on the evidence of
-11 June, always reach the Committee.
+individual lines miss by hundreds of percent, and this one did. That is not a criticism of
+the budget; it is a statement about what a single number can tell you.
 
 **Two lines carry most of the volatility and both are special education placements.**
 Private and collaborative tuition moved $956,737 between them in opposite directions on a
