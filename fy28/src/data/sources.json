@@ -1274,11 +1274,23 @@
      "stars": 2,
      "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
      "kind": "Notes",
-     "bytes": 14674,
+     "bytes": 20736,
      "url": "/docs/analyses/fy26-closeout.md",
-     "count": 328,
+     "count": 435,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout.md"
+    },
+    {
+     "path": "analyses/fy26-closeout-town.md",
+     "title": "FY26 on the town side, as the books stood in June",
+     "stars": 2,
+     "what": "The same account-level ledger read for the other 67 departments. Snow removal cost $1,038,092 against an appropriation of $355,571 — 292% — while the town’s $185,000 Reserve Fund went entirely unused. $3.3M left the operating budget for capital and stabilization. And $1,262,376 of school retiree health insurance sits in a town department, invisible in the school budget, which is part of why DESE’s all-funds figure exceeds the appropriation. The town overspends on 18 of 376 accounts where the schools overspend on 57 of 259 — a fact with four explanations and no way here to choose between them. Period 12, so nothing in it is a surplus. Verified by scripts/verify_fy26_closeout_town.py.",
+     "kind": "Notes",
+     "bytes": 12761,
+     "url": "/docs/analyses/fy26-closeout-town.md",
+     "count": 287,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/fy26-closeout-town.md"
     },
     {
      "path": "analyses/peer-districts.md",
@@ -3787,9 +3799,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 293,
+  "documents": 294,
   "groups": 17,
-  "bytes": 364598893,
+  "bytes": 364617716,
   "loadBearing": 56
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

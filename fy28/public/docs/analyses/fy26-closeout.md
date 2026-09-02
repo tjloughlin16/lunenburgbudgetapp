@@ -96,16 +96,27 @@ paraprofessional lines that all ran over.
 
 ### The evidence
 
-| account | | revised | spent | variance |
-|---|---|---:|---:|---:|
-| `S0511062` | SPED PRIVA — out-of-district, private | $988,630 | $466,001 | **+$522,629** |
-| `S5511062` | COLL TUITI — out-of-district, collaborative | $302,663 | $678,062 | **−$434,108** |
-| `S3991742` | ELEC CHGS — electricity | $271,132 | $319,109 | −$110,338 |
-| `S1511062` | CONT SERV — special services contracted | $105,500 | $204,758 | −$100,520 |
-| `S2072061` | PSYCHSALAR — one of four psychologist accounts, §4 | $98,784 | $0 | +$98,784 |
-| `S2032121` | KINDAIDREG — kindergarten paras | **$0** | $93,691 | −$93,691 |
-| `S3991692` | SPED TRANS — special ed transport | $565,735 | $620,025 | −$67,555 |
-| 4 accounts | special education paraprofessionals | $1,352,508 | $1,458,152 | −$105,644 |
+| account | | revised | spent | encumbered | left |
+|---|---|---:|---:|---:|---:|
+| `S0511062` | SPED PRIVA — out-of-district, private | $988,630 | $466,001 | $0 | **+$522,629** |
+| `S5511062` | COLL TUITI — out-of-district, collaborative | $302,663 | $678,062 | $58,708 | **−$434,108** |
+| `S3991742` | ELEC CHGS — electricity | $271,132 | $319,109 | $62,362 | −$110,338 |
+| `S1511062` | CONT SERV — special services contracted | $105,500 | $204,758 | $1,262 | −$100,520 |
+| `S2072061` | PSYCHSALAR — one of four psychologist accounts, §4 | $98,784 | $0 | $0 | +$98,784 |
+| `S2032121` | KINDAIDREG — kindergarten paras | **$0** | $93,691 | $0 | −$93,691 |
+| `S3991692` | SPED TRANS — special ed transport | $565,735 | $620,025 | $13,265 | −$67,555 |
+| 4 accounts | special education paraprofessionals | $1,352,508 | $1,458,152 | $0 | −$105,644 |
+
+**The last column is `revised − spent − encumbered`, not `revised − spent`**, and the
+encumbrance column is printed because without it the arithmetic does not appear to work.
+`COLL TUITI` is the clearest case: $302,663 − $678,062 is $375,399, and the figure is
+$434,108, because $58,708 is committed under purchase orders that have not yet been paid.
+An earlier version of this table showed the variance and omitted the encumbrance it was
+computed from.
+
+**An encumbrance is money promised under a signed contract and not yet paid out.** At the
+year-end close some of it is paid and the rest is released back, which is exactly the step
+this report predates.
 
 **The two out-of-district lines together**: $1,291,293 budgeted, $1,144,063 spent, a net
 of **+$88,522**.
@@ -271,15 +282,68 @@ spent*, which read as a statement about the district's psychologists in general.
 of four. `scripts/verify_fy26_closeout.py` caught it because the figure it derived from the
 database did not match the figure in the prose.
 
-## 5. $85,090 moved into the schools, and no vote is on the record
+## 5. $85,090 moved into the schools — what that actually looks like
 
 ### In plain terms
 
-The ledger shows $85,090.24 of transfers into the school department during FY26. The
-Finance Committee took up year-end transfers twice and no minutes exist in this archive
-for either meeting.
+"$85,090 of transfers" is not one movement. It is **82 separate account changes**:
+49 accounts had budget added, 33 had budget taken away, and the difference between those
+two piles is $85,090.
+
+Most of it is the department moving its own money around during the year — an overrun
+here covered by an underspend there. The net is what came from outside the department.
+
+**And the ledger cannot tell you what any transfer was from.** It records that an
+account's budget changed. It does not record the counterparty. That is in the transfer
+schedule, and the transfer schedule is what the Finance Committee twice did not have.
 
 ### The evidence
+
+| | accounts | amount |
+|---|---:|---:|
+| Budget added | 49 | $394,928.82 |
+| Budget taken away | 33 | $309,838.58 |
+| **Net into the department** | **82** | **$85,090.24** |
+
+The largest movements in each direction:
+
+| account | | change | original |
+|---|---|---:|---:|
+| `S0990991` SCHSALRESE | school salary reserve | **−$90,769.62** | $90,770 |
+| `S2516061` HS SPED RE | H.S. special ed | −$81,075.96 | $449,087 |
+| `S2066651` HS GUID SE | H.S. guidance | **+$42,966.92** | **$0** |
+| `S2514131` ESSPEDPARA | E.S. special ed paras | +$33,623.36 | $225,152 |
+| `S0011742` CONT SERV | contracted services | +$31,291.13 | $257,000 |
+| `S3066672` DUES/FEES | athletics dues and fees | +$29,965.45 | **$0** |
+| `S2055711` MS REG SUB | M.S. substitutes | +$21,230.45 | $11,000 |
+| `S3066672` ATH INS | athletics insurance | −$20,000.00 | $29,000 |
+| `S2032711` KIND LONG | kindergarten long-term subs | −$15,000.00 | $15,000 |
+
+**What a transfer looks like, read off this table.** `S0990991 SCHSALRESE` is a *salary
+reserve* — a contingency line budgeted at $90,770 and deliberately not attached to any
+job. Over the year it gave up **every dollar**, ending at zero. That is a reserve doing
+exactly what a reserve is for. `S2032711 KIND LONG` gave up its whole $15,000 the same
+way, and `S2516061` gave up $81,076 of a $449,087 special education line.
+
+On the other side, `HS GUID SE` and `DUES/FEES` both started at **$0** and were given
+$42,967 and $29,965 — accounts that had no budget until money was moved into them. Which
+is precisely what did *not* happen for the kindergarten paraprofessional accounts in §3.
+
+### Where the net $85,090 came from
+
+**Not established.** Town-wide, net transfers into the general fund at period 12 are
+$2,826,046.42 — so this is not a closed system in which one department's gain is
+another's loss. The town's `SALARY RESERVE` department gave up $128,953.67, and the
+capital projects and trust fund transfer accounts took in $1,240,820.32 and $795,437.00.
+Whether any of the school department's $85,090 came from the salary reserve, from a Town
+Meeting vote, or from somewhere else **cannot be read off this report**, because the
+report shows each account's net change and never its counterparty.
+
+### What this does not show
+
+That no vote happened. Minutes may not be posted yet, and not every transfer requires a
+Finance Committee vote. What can be said is that **no document in this archive connects
+any of these 82 movements to a decision.**
 
 Finance Committee, 11 June 2026:
 
@@ -287,27 +351,70 @@ Finance Committee, 11 June 2026:
 > should be available for the next meeting."
 
 It returned to the agenda for 14 July 2026. The archive holds Finance Committee **agendas**
-through 27 August 2026 and **minutes** only through 11 June 2026. Four meetings have an
-agenda and no minutes, and the first of them is the one that took up transfers.
-
-### What this does not show
-
-That no vote happened. Minutes may not be posted yet, and not every transfer requires a
-Finance Committee vote. What can be said is that **no document in this archive connects any
-dollar of movement to a decision.**
+through 27 August 2026 and **minutes** only through 11 June 2026.
 
 ---
 
-## 6. What none of this can see
+## 6. The money that never appears in the budget at all
 
-$1,736,376 was spent on the schools in FY26 from 61 funds outside the general fund —
-school lunch, extended day, the IDEA grants, athletics, after-school. **Not one dollar of
-it can be attached to a budget line**, because no published document maps a fund's
-spending onto the district's lines.
+### In plain terms
 
-So every figure above is the **town's share**. A line that fell may mean less service, or
-may mean a grant paid for it. The expense side cannot tell them apart, and neither can
-this document.
+Alongside the general fund, the schools ran **21 other funds that spent money** in FY26 —
+grants, revolving funds fed by fees, and gifts. Together they spent **$1,736,376**, and
+not one dollar of it appears in the district's budget document.
+
+The largest is school lunch, which is a self-contained operation. But the next several
+are not: **$409,035 of IDEA special education grants**, $233,350 of extended day,
+$100,467 of athletics, $95,196 of after-school.
+
+### The evidence
+
+**These figures are period 9 — through 31 March 2026 — not period 12.** They come from a
+different report from everything above, and the two cannot be added into a single
+year-end total. Where §1 says "period 12", this section says "through March".
+
+| fund | | revenue in | spent | balance |
+|---|---|---:|---:|---:|
+| `2200` | School Lunch Revolving | $572,231 | $739,586 | $287,771 |
+| `1312` | Extended Day Revolving | $192,943 | $233,350 | $54,161 |
+| `2813` | FY25 IDEA #240 | $0 | $229,398 | −$88,503 |
+| `2814` | FY26 IDEA #240 | $0 | $179,637 | −$179,637 |
+| `1301` | Chapter 658 (athletics) | $160,164 | $100,467 | $169,945 |
+| `1305` | After School Activities | $111,376 | $95,196 | $148,578 |
+| `2778` | FY25 SOA Evidence-Based | $0 | $68,647 | −$91,220 |
+| `1308` | School Choice Revolving | $83,116 | $30,558 | $299,461 |
+| `2672` | FY26 Family & Community #237 | $48,558 | $13,372 | $35,186 |
+| `1306` | School Facilities Use | $18,670 | $12,354 | $71,559 |
+| `2640` | **Special Ed Circuit Breaker** | **$325,970** | **$4,005** | **$615,301** |
+| `1311` | School Gift Fund | $22,486 | $2,911 | $109,398 |
+| | ten smaller funds | | $26,896 | |
+| | **total** | | **$1,736,376** | |
+
+### Two things in that table worth reading twice
+
+**The IDEA grants spent $409,035 between them and took in nothing**, ending at −$88,503
+and −$179,637. A negative balance here means spending has run ahead of the reimbursement
+drawn down; grants are typically claimed in arrears. It is not an overdraft.
+
+**Special education circuit breaker took in $325,970 and spent $4,005**, holding
+**$615,301**. Circuit breaker is the state's reimbursement toward high-cost out-of-district
+placements — the same thing §2's two tuition lines pay for. That is a large balance
+sitting beside a general fund tuition line that underspent by $522,629.
+
+**Nothing here links them.** No document maps a fund's spending onto a budget line, so it
+cannot be said that circuit breaker money did or did not pay for a placement the general
+fund budgeted. The two facts sit next to each other and that is all.
+
+### What this does not show — and it is the whole of §6
+
+**Where any of this money went.** The fund tells you its purpose, not the line it paid.
+School lunch plainly buys food; the IDEA grants plainly buy special education; but *which*
+special education — which staff, which placement, which of the 258 accounts it would
+otherwise have shown up in — is not published anywhere.
+
+So every figure in sections 1 to 5 is the **town's share**. A line that fell may mean less
+service, or may mean one of these funds paid for it. The expense side cannot tell them
+apart, and neither can this document.
 
 ---
 

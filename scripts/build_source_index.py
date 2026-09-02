@@ -533,6 +533,18 @@ GROUPS = [
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '
              'one-off is doing to the rate, and what it risks for FY28. Budget columns '
              'only; no actual spending is used anywhere in it.'),
+            ('analyses/fy26-closeout-town.md',
+             'FY26 on the town side, as the books stood in June', 2,
+             'The same account-level ledger read for the other 67 departments. Snow '
+             'removal cost $1,038,092 against an appropriation of $355,571 \u2014 292% '
+             '\u2014 while the town\u2019s $185,000 Reserve Fund went entirely unused. '
+             '$3.3M left the operating budget for capital and stabilization. And '
+             '$1,262,376 of school retiree health insurance sits in a town department, '
+             'invisible in the school budget, which is part of why DESE\u2019s all-funds '
+             'figure exceeds the appropriation. The town overspends on 18 of 376 accounts '
+             'where the schools overspend on 57 of 259 \u2014 a fact with four '
+             'explanations and no way here to choose between them. Period 12, so nothing '
+             'in it is a surplus. Verified by scripts/verify_fy26_closeout_town.py.'),
             ('analyses/fy26-closeout.md', 'FY26, as the books stood in June', 2,
              'The first account-level ledger this project has held, read line by line. '
              'The school department was $482,101 under budget at period 12 \u2014 the '

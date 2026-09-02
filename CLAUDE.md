@@ -349,6 +349,7 @@ arriving fresh.
     python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
     python3 scripts/extract_dese_radar.py        # ...checked against DESE's own printed totals
     python3 scripts/verify_fy26_closeout.py      # every figure in the FY26 closeout analysis
+    python3 scripts/verify_fy26_closeout_town.py # ...and in its town-side companion
     python3 scripts/build_analysis_pdf.py --all  # render the analyses to PDF for reading on paper
     python3 scripts/build_request_doc.py         # regenerate what is still outstanding from the Town
     python3 scripts/build_gross_budget_xlsx.py   # the gross budget spreadsheet, in the district's own shape
