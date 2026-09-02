@@ -3,7 +3,8 @@
     python3 scripts/build_gross_budget_xlsx.py
     python3 scripts/build_gross_budget_xlsx.py --fy 2026
 
-Writes `fy28/public/data/gross-school-budget-fy<YY>.xlsx`.
+Writes `sources/data/gross-school-budget-fy<YY>.xlsx`, published by
+`scripts/build_source_index.py` like any other source.
 
 WHY A SPREADSHEET AND NOT ANOTHER PAGE
 
@@ -60,7 +61,12 @@ from openpyxl.utils import get_column_letter
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 LINES = os.path.join(ROOT, 'sources', 'data', 'lps-budget-lines.csv')
-OUT_DIR = os.path.join(ROOT, 'fy28', 'public', 'data')
+# sources/data, not fy28/public: this is a source in its own right. Rule 12 -- "if a
+# number came out of a spreadsheet we built, that spreadsheet is a source too and it gets
+# published like any other". build_source_index.py copies it out to the site and refuses
+# to build if it is catalogued and absent, which is how the first version of this was
+# caught writing to the published directory instead.
+OUT_DIR = os.path.join(ROOT, 'sources', 'data')
 
 INK = '1B1B1B'
 MUTED = '6B6B6B'

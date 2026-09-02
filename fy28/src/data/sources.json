@@ -1274,9 +1274,9 @@
      "stars": 2,
      "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
      "kind": "Notes",
-     "bytes": 14452,
+     "bytes": 14674,
      "url": "/docs/analyses/fy26-closeout.md",
-     "count": 325,
+     "count": 328,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout.md"
     },
@@ -1301,6 +1301,18 @@
    "title": "Built by this project",
    "blurb": "Machine-readable extracts. Derived from the documents above and rebuildable from them.",
    "items": [
+    {
+     "path": "data/gross-school-budget-fy2026.xlsx",
+     "title": "The gross school budget, FY26 — spreadsheet",
+     "stars": 5,
+     "what": "The district’s own budget in the district’s own shape — same sections, same 78 function groups, same line names, same order — with two things added that their version cannot show: what was actually spent, and what other money paid for the same thing. Where either is not held the cell says so in amber rather than being left blank, because a blank reads as zero and the whole reason a net budget misleads is that nothing marks it net. Five sheets: the budget, the 258 ledger accounts (a DIFFERENT structure, kept separate because no published document maps one to the other), the funds outside the general fund, what is missing and who has it, and a reconciliation proving the net column still ties to the district’s published appropriation. Rebuild with scripts/build_gross_budget_xlsx.py.",
+     "kind": "Spreadsheet",
+     "bytes": 69819,
+     "url": "/docs/data/gross-school-budget-fy2026.xlsx",
+     "count": 435,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-school-budget-fy2026.xlsx"
+    },
     {
      "path": "data/lunenburg.db",
      "title": "The whole analysis database, SQLite",
@@ -3775,9 +3787,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 292,
+  "documents": 293,
   "groups": 17,
-  "bytes": 364528852,
+  "bytes": 364598893,
   "loadBearing": 56
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
