@@ -84,6 +84,25 @@ export function AgentsIndex() {
         ))}
       </ul>
 
+      <h2 className="text-lg font-bold mb-3">Finding a word in the minutes</h2>
+      <p className="mb-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
+        Do not start with a bundle — the two largest are around a megabyte, more than many
+        callers can read at once. Look the word up and fetch only the documents it names:
+        three small requests instead of one large one. Everything needed to answer a
+        question about this town is on this site; nothing here requires a repository, an
+        account or a tool.
+      </p>
+      <ul className="mb-8 list-none pl-0">
+        <Row path="/minutes/find/README.txt"
+             note="how the word index works, and what it deliberately does not do" />
+        <Row path="/minutes/find/documents.json"
+             note="the document table the index refers to by position. Fetch once and keep it." />
+        <Row path="/minutes/find/je.json"
+             note='one shard, as an example — every indexed word beginning "je", with the documents containing it' />
+        <Row path="/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt"
+             note="and one document, the end of that worked example" />
+      </ul>
+
       <h2 className="text-lg font-bold mb-3">Every published data file</h2>
       <p className="mb-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
         The same list <Link path="/llms.txt" /> carries, with the same descriptions —

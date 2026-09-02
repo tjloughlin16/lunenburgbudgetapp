@@ -6,7 +6,17 @@ Each bundle below is every document for one board, concatenated, with a
 header per document giving its date, our own permanent address for it, and
 the town's scanned original.
 
-Fetch a bundle to search a board. Cite the individual document.
+Cite the individual document, never a bundle.
+
+TO SEARCH: do not start with a bundle. The two largest are around 1MB,
+which is more than many callers can read at once. Look the word up and
+fetch only the documents it names -- three small requests:
+  https://lunenburgbudgetproject.org/minutes/find/README.txt      how, in twenty lines
+  https://lunenburgbudgetproject.org/minutes/find/<first two letters of the word>.json
+
+The bundles below are still the fastest way to read a board whole, if
+you can hold one. Check the size in this list before fetching.
+
 Individual documents: https://lunenburgbudgetproject.org/docs/minutes/text/<board>/<file>.txt
 Structured index    : https://lunenburgbudgetproject.org/data/minutes-index.csv
 

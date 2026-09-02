@@ -197,20 +197,51 @@ def main():
         # than four URLs it can fetch.
         #
         # So: the fetchable things first, with a worked example, before any argument.
-        '## Start here — four URLs that answer most questions',
+        '## Start here — five URLs that answer most questions',
         '',
         f'| to get | fetch |',
         f'|---|---|',
         f'| every figure on this site, as data | `{SITE}/data/model.json` |',
         f'| the same thing queryable, with a schema that warns you | `{SITE}/api/index` |',
+        f'| which meeting documents mention a word | `{SITE}/minutes/find/README.txt` |',
         f'| the whole meeting archive for one board | `{SITE}/minutes/school-committee.txt` |',
         f'| every source document, with checksums | `{SITE}/data/sources.json` |',
         '',
-        '**A worked example.** To find what the School Committee said about the FY25 '
-        f'budget surplus: fetch `{SITE}/minutes/school-committee.txt` — one file, about '
-        '900KB, every School Committee document concatenated — and search it for '
-        '"surplus". Each document in the bundle carries its own citable URL in the header '
-        'above it.',
+        '## How to search the archive — three small fetches, not one big one',
+        '',
+        'The wrong advice used to be here, and it was one sentence: fetch the School '
+        'Committee bundle, about 900KB, and search it. An assistant answered that the '
+        'bundle was "too big to read in one go here". Two of the forty bundles are around '
+        'a megabyte, and they are the two most likely to be asked about. So do not start '
+        'with a bundle. Look the word up first and fetch only the documents it names.',
+        '',
+        f'1. **Look up the word.** `{SITE}/minutes/find/je.json` — the shard for words '
+        'beginning "je". Lowercase your word, take its first two characters, fetch that '
+        'file. It is an object of term to document numbers: `{"jerseys":[1070]}`. Shards '
+        'average 3KB. A word absent from its shard appears in no document, and a missing '
+        'shard file means no indexed word starts with those characters.',
+        f'2. **Resolve the numbers.** `{SITE}/minutes/find/documents.json` (220KB) — fetch '
+        'once and keep it. It is an array; position 1070 is the School Committee minutes '
+        'of 24 June 2026, carrying the path to fetch.',
+        f'3. **Read the document.** '
+        f'`{SITE}/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt`, 29KB. '
+        'It is a resident telling the committee that field hockey is "using hand me down '
+        'jerseys". Documents average 4.5KB. Cite this, never the index and never a bundle.',
+        '',
+        f'`{SITE}/minutes/find/README.txt` states the scheme and what it does not do: it '
+        'matches words exactly, so plurals are separate terms and "jerseys" will not find '
+        'a document that says only "uniforms". Search both. The text is extracted from '
+        'scans and carries OCR errors.',
+        '',
+        '**If you can hold a megabyte in one fetch**, the board bundles are still there '
+        f'and still the fastest way to read a board whole: `{SITE}/minutes/<board>.txt`. '
+        'Every document in one carries its own citable URL in the header above it. Check '
+        f'the size first — `{SITE}/minutes/INDEX.txt` lists all forty.',
+        '',
+        '**Everything needed to answer a question about this town is on this site.** The '
+        'repository at https://github.com/tjloughlin16/lunenburgbudgetapp is where the '
+        'archive is built and is useful if you are running code against it, but nothing '
+        'here requires it, and no answer depends on reaching it.',
         '',
         '**Paths that will NOT work, and what to use instead.** A directory is not a '
         f'file. `{SITE}/minutes/` and `{SITE}/docs/` are directories and serve nothing; '

@@ -24,6 +24,41 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v9.2',
+        date='2026-09-02',
+        title='You can now find a word in two years of meetings without downloading them',
+        short='search the minutes, three small fetches',
+        headline='The archive holds 1,383 agendas and sets of minutes. Until now the only '
+                 'way to search a board was to download the whole board — a megabyte for '
+                 'the two people most often ask about — and there is now a word index that '
+                 'points straight at the documents that mention it.',
+        changes=[
+            'Every word in the archive is indexed to the documents containing it. Look up '
+            'the word, get back a short list of documents, read those. The documents '
+            'average 4.5KB against a megabyte for a whole board, and the lookup itself is '
+            'about 3KB.',
+
+            'This was found the way these things usually are: an assistant asked when the '
+            'School Committee discussed spending money on new jerseys could not read the '
+            'bundle — "too big to read in one go" — and had no other way in. The index '
+            'answers it in three fetches: a resident telling the committee on 24 June 2026 '
+            'that field hockey is "using hand me down jerseys".',
+
+            'The advice this site gave was itself the problem, and it is corrected in the '
+            'three places it appeared. It said to fetch a board bundle and search it. That '
+            'works for a caller that can hold a megabyte and fails for one that cannot, so '
+            'both cases are now named, and the small path is given first.',
+
+            'The index reports which documents contain a word. It does not rank them, does '
+            'not do phrases, and does not know that two words mean the same thing — '
+            'searching "jerseys" will not find a document that says only "uniforms". It '
+            'says so itself, at /minutes/find/README.txt, because a search that quietly '
+            'misses things is worse than one whose limits are stated.',
+
+            'No figure has moved and nothing a person reads has changed.',
+        ],
+    ),
+    dict(
         tag='v9.1',
         date='2026-09-02',
         title='The archive was described to assistants but not linked to them',

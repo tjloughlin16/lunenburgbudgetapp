@@ -16,11 +16,17 @@ Two things are published here, because an agent needs both and they solve differ
 **1. Every document, individually**, at `/docs/minutes/text/<board>/<file>.txt`. This is
 what a citation needs — a stable address for the one document a figure rests on.
 
-**2. One bundle per board**, at `/minutes/<board>.txt`. This is what a *search* needs.
-An agent cannot grep a website; it can fetch one file and read it. The whole School
-Committee, 118 documents, is 1.1MB — comfortably one fetch. Each document inside carries a
+**2. One bundle per board**, at `/minutes/<board>.txt`. Each document inside carries a
 header with its date, kind, our own path and the town's URL, so anything found in a bundle
 can be cited to a single document rather than to the bundle.
+
+*"The whole School Committee, 118 documents, is 1.1MB — comfortably one fetch"* is what
+this docstring said, and it was wrong for the two boards it matters for. An assistant:
+*"The bundle's 0.88MB — too big to read in one go here."* It recovered by grepping the repo
+from its container; anything holding only a URL could not. **select-board is 1.02MB and
+school-committee 0.92MB — the two most likely to be asked about, and the only two over
+0.5MB.** The bundles remain the right thing for a caller that can hold them, and
+`build_minutes_search.py` publishes an inverted index for every caller that cannot.
 
 The bundles are a convenience layer over the individual files and are byte-derivable from
 them. They are not a source; the individual files are.
@@ -140,7 +146,14 @@ def main():
                  'Each bundle below is every document for one board, concatenated, with a\n'
                  'header per document giving its date, our own permanent address for it, and\n'
                  "the town's scanned original.\n\n"
-                 'Fetch a bundle to search a board. Cite the individual document.\n'
+                 'Cite the individual document, never a bundle.\n\n'
+                 'TO SEARCH: do not start with a bundle. The two largest are around 1MB,\n'
+                 'which is more than many callers can read at once. Look the word up and\n'
+                 'fetch only the documents it names -- three small requests:\n'
+                 f'  {SITE}/minutes/find/README.txt      how, in twenty lines\n'
+                 f'  {SITE}/minutes/find/<first two letters of the word>.json\n\n'
+                 'The bundles below are still the fastest way to read a board whole, if\n'
+                 'you can hold one. Check the size in this list before fetching.\n\n'
                  f'Individual documents: {SITE}/docs/minutes/text/<board>/<file>.txt\n'
                  f'Structured index    : {SITE}/data/minutes-index.csv\n\n')
         for m in sorted(manifest, key=lambda m: -m['docs']):
