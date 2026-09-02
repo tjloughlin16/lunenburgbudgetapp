@@ -212,6 +212,65 @@ async function main() {
     if (!ok) fails.push('/api/<missing> must 404 as JSON, not 200 with the app shell')
   }
 
+  // llms.txt is the ONE surface built for readers who will not check anything else, so
+  // a figure that drifts there is worse than a figure that drifts on a page. It drifted:
+  // the file published the FY27 appropriation without the Special Town Meeting article
+  // that every page uses, and published the FY28-FY30 average under a label saying FY28.
+  // Both were found by an agent reading the site, not by anything here.
+  console.log('\nllms.txt figures must match the model the app renders from')
+  {
+    const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))
+    const txt = await (await fetch(base + '/llms.txt')).text()
+    const usd = (n) => '$' + Math.round(n).toLocaleString('en-US')
+    // model.fy27.lps_appropriation is the field llms.txt renders. sped.appropriation is
+    // the same quantity rebuilt from line items and differs by $1.50, so checking against
+    // the wrong one fails on rounding and teaches nothing.
+    const appropriation = model.fy27?.lps_appropriation
+    const stm = model.fy27?.stm_appropriation
+    const firstYear = model.freeCash?.deficits?.[0]?.amount
+    const checks = [
+      ['FY27 appropriation as adopted', appropriation && usd(appropriation)],
+      ['FY27 appropriation after the STM', appropriation && stm && usd(appropriation + stm)],
+      ['FY28 shortfall, first year alone', firstYear && usd(firstYear)],
+    ]
+    for (const [label, needle] of checks) {
+      if (!needle) { fails.push(`llms.txt check "${label}": could not derive it from model.json`); continue }
+      const ok = txt.includes(needle)
+      console.log(`  ${ok ? ' ok ' : 'FAIL'} ${label.padEnd(38)} ${needle}`)
+      if (!ok) fails.push(`llms.txt does not carry ${needle} for ${label} — run ` +
+        '`python3 scripts/build_agent_endpoints.py`')
+    }
+    // The label/value mismatch that started this: the three-year average must never be
+    // the only figure offered under an FY28 heading.
+    if (/FY28 gap/i.test(txt) && firstYear && !txt.includes(usd(firstYear))) {
+      fails.push('llms.txt labels a figure "FY28 gap" without also giving the first-year ' +
+        'shortfall — that is the mismatch an agent reported')
+    }
+  }
+
+  // The prefixes an agent guesses first. Each must answer with something a PROGRAM can
+  // act on, never with 200 and the app shell -- which is what /minutes/ did, and is why
+  // two assistants in a row concluded this site does not hold the meeting minutes.
+  console.log('\nguessable archive paths must not answer 200 with the app shell')
+  for (const p of ['/minutes/', '/minutes', '/docs/', '/minutes/school-committee',
+                   '/minutes/index.txt']) {
+    const res = await fetch(base + p)
+    const type = res.headers.get('content-type') || ''
+    const shell = res.status === 200 && type.includes('text/html')
+    console.log(`  ${shell ? 'FAIL' : ' ok '} ${p.padEnd(30)} ${res.status} ${type.split(';')[0]}`)
+    if (shell) fails.push(`${p} answers 200 with the app shell — a program reading this ` +
+      'concludes the archive is not served')
+  }
+  {
+    // And the 404 has to be useful: it is the only message a program will ever read.
+    const res = await fetch(base + '/minutes/')
+    const body = await res.text()
+    const teaches = body.includes('/minutes/school-committee.txt')
+      && body.includes('/docs/minutes/text/')
+    console.log(`  ${teaches ? ' ok ' : 'FAIL'} /minutes/ 404 names the URLs that do work`)
+    if (!teaches) fails.push('/minutes/ returns a 404 that does not say what to fetch instead')
+  }
+
   console.log('\nstale and aliased links — must still reach the app')
   for (const p of STALE) {
     const res = await fetch(base + p)
