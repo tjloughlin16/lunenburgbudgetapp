@@ -82,10 +82,34 @@ not spent.
 take from the chart at the top, and it is the ordinary result of a budget that was set
 about right in total.
 
-**What moved is more interesting than what was left.** Out-of-district special education
-tuition swung hardest in both directions: private placements $522,629 under, collaborative
-placements $434,108 over, netting to $88,522. Electricity ran $110,338 over. Four special
-education paraprofessional lines ran $105,644 over between them.
+**Where the underspend actually comes from — grouped by what the money buys, there are two
+different stories and only one is about anybody's decisions.**
+
+| what the money buys | budget | left | % of its own budget |
+|---|---:|---:|---:|
+| People — salaries, subs, stipends | $17,111,089 | +$192,211 | **1.1%** |
+| Insurance and unemployment | $3,752,758 | +$104,527 | **2.8%** |
+| Supplies, materials, equipment | $584,728 | +$88,883 | **15.2%** |
+| Tuition, transport, contracted services | $3,915,262 | +$78,556 | **2.0%** |
+| Utilities and communications | $958,493 | +$17,924 | **1.9%** |
+
+**Every large category landed within three percent of budget.** People, insurance,
+tuition, utilities — $25.7 million between them, all of it close. That is a budget set
+about right, and it is four fifths of the underspend. The dollars are big because the
+bases are big, not because anything went wrong.
+
+**One small category missed by 15%, and it is the discretionary one.** Supplies,
+materials, maintenance and equipment: 67 of its 78 accounts came in under. The median
+salary account spent **100%** of its budget; the median supply account spent **88%**. A
+salary is paid or it is not; a supply order is placed or it is not.
+
+**So the cause is not one thing that went wrong.** It is a large budget landing 1.8% off,
+plus about $89,000 of things somebody chose not to buy. Even if every discretionary line
+had been spent in full, the department would still have finished around $393,000 under.
+
+**What moved most is not what was left.** Out-of-district special education tuition swung
+hardest in both directions — private placements $522,629 under, collaborative placements
+$434,108 over — and netted to $88,522.
 
 **Three things this year cannot explain, and each names the document that would.**
 
@@ -159,6 +183,90 @@ Whether any of it survives the close. Encumbrances of $236,783.89 are still open
 clearing purchase orders releases some of that back and commits the rest.
 
 ---
+
+---
+
+## 1a. Where the $482,101 actually comes from
+
+### In plain terms
+
+"Some things overspent, some things underspent" is true and useless. Grouped by what the
+money buys, the year has **two different stories in it**, and only one of them is about
+anybody's decisions.
+
+**Story one: the big categories all landed within 1–3% of budget.** People, insurance,
+tuition and transport, utilities — between them $25.7 million, every one of them within
+three percent. That is a budget set about right. The dollars are large only because the
+bases are large. **Four fifths of the underspend is this.**
+
+**Story two: the small discretionary category missed by 15%.** Supplies, instructional
+materials, building maintenance and equipment — $584,728 budgeted, **$88,883 unspent, and
+67 of its 78 accounts came in under.** That is not a forecasting error. It is what happens
+when people are told to be careful about what they buy.
+
+### The evidence
+
+| what the money buys | accounts | budget | left | % of its own budget | share of the $482,101 |
+|---|---:|---:|---:|---:|---:|
+| People — salaries, subs, stipends | 112 | $17,111,089 | +$192,211 | **1.1%** | 40% |
+| Insurance and unemployment | 3 | $3,752,758 | +$104,527 | **2.8%** | 22% |
+| Supplies, materials, equipment | 81 | $584,728 | +$88,883 | **15.2%** | 18% |
+| Tuition, transport, contracted services | 42 | $3,915,262 | +$78,556 | **2.0%** | 16% |
+| Utilities and communications | 18 | $958,493 | +$17,924 | **1.9%** | 4% |
+| | **258** | **$26,332,564** | **+$482,101** | **1.8%** | |
+
+### The number that separates the two stories
+
+Across accounts with a budget over $200:
+
+| | accounts | median share of budget spent |
+|---|---:|---:|
+| Salary accounts | 74 | **100%** |
+| Supply, material and equipment accounts | 72 | **88%** |
+
+A salary is paid or it is not. A supply order is placed or it is not. **The median salary
+account spent its entire budget; the median supply account spent 88% of it**, 14 of them
+spent under half, and 5 spent nothing at all.
+
+The largest examples are ordinary and recognisable:
+
+| account | | budget | spent | |
+|---|---|---:|---:|---:|
+| `545004` | EMERG EXP — emergency expenses | $30,000 | $9,000 | 30% |
+| `541002` | BLDG MTC — building maintenance | $80,229 | $51,534 | 64% |
+| `541001` | CUST SUPPL — custodial supplies | $75,000 | $58,406 | 78% |
+| `545003` | GRNDS SUPP — grounds supplies | $49,937 | $38,555 | 77% |
+| `545001` | ACESUPPLIE — ACE supplies | $12,000 | $3,333 | 28% |
+
+An emergency line spending 30% of its budget is a contingency that was not needed, which
+is the same shape as the Reserve Fund on the town side. The rest are things somebody chose
+not to order.
+
+### So what caused the underspend?
+
+**Nothing dramatic, and that is the finding.** Roughly:
+
+- **$192,211** is the residue of a $17.1 million payroll landing 1.1% off — which given
+  38 accounts over and 42 under is a payroll budgeted close to right and then reconciled
+  line by line during the year.
+- **$104,527** is health insurance and unemployment coming in 2.8% under a $3.75 million
+  forecast, with nothing over. A rate-times-headcount estimate that landed slightly high.
+- **$88,883** is discretionary purchasing, and it is the one component that reflects
+  choices rather than forecasts.
+- **$78,556** is the residue of $1.34 million of movement in tuition and transport that
+  very nearly cancelled itself out.
+
+### What this does not show
+
+**That the district held back on purpose.** A 15% underspend on supplies is consistent
+with deliberate restraint after a hard budget year, with orders that slipped past 30 June,
+with prices coming in lower, and with lines that were over-budgeted to begin with. The
+ledger shows the pattern. It does not show the reason, and one year cannot separate those
+four.
+
+**And it is not where the money is.** Even if every discretionary line had been spent in
+full, the department would still have finished about $393,000 under. The large categories
+are where the dollars are, and they are the ones that behaved.
 
 ## 2. The biggest movers
 

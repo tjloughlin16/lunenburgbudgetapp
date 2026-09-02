@@ -94,6 +94,47 @@ def main():
                    ('av', 'town-wide unspent')):
         present(lbl, t[k])
 
+    print('\n§1a  Where the underspend comes from, by what the money buys')
+    GROUPS = {
+        'people': ('511', '512', '513', '517', '519'),
+        'insurance': ('570', '571'),
+        'supplies': ('540', '541', '545', '555', '557', '585'),
+        'contracted': ('531', '532', '535'),
+        'utilities': ('521', '523', '524', '525', '534'),
+    }
+    for label, pres in GROUPS.items():
+        marks = ' OR '.join("a.object LIKE '%s%%'" % p for p in pres)
+        g = one(f"""SELECT COUNT(*) n, SUM(revised) rv, SUM(available) av
+                    FROM ledger_snapshot l JOIN account a USING (account_id)
+                    WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND ({marks})""")
+        present(f'{label}: budget', float(g['rv']), dp=0)
+        present(f'{label}: left', float(g['av']), dp=0)
+        present(f'{label}: share of its own budget',
+                f"{float(g['av']) / float(g['rv']) * 100:.1f}%")
+
+    # The median comparison is the sentence the section turns on, so it is computed
+    # rather than asserted from memory: a salary is paid or it is not, a supply order is
+    # placed or it is not, and the medians are 100% and 88%.
+    import statistics as _st
+    def median_pct(where):
+        vals = [r[0] / r[1] * 100 for r in db.execute(
+            f"""SELECT l.expended, l.revised FROM ledger_snapshot l
+                JOIN account a USING (account_id)
+                WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND l.revised > 200
+                  AND ({where})""")]
+        return _st.median(vals), len(vals)
+    sal, n_sal = median_pct("a.object LIKE '511%'")
+    sup, n_sup = median_pct("a.object LIKE '540%' OR a.object LIKE '541%' "
+                            "OR a.object LIKE '545%' OR a.object LIKE '555%' "
+                            "OR a.object LIKE '557%' OR a.object LIKE '585%'")
+    present('salary accounts compared', n_sal)
+    present('median salary account spends', f'{sal:.0f}%')
+    present('supply accounts compared', n_sup)
+    present('median supply account spends', f'{sup:.0f}%')
+    if sal <= sup:
+        FAILS.append('salary accounts no longer spend a higher share than supply '
+                     'accounts; §1a\'s whole argument rests on that ordering')
+
     print('\n§2  The biggest movers')
     # An org holds SEVERAL accounts -- S3991742 alone carries six, from ELEC CHGS to
     # TELE MTC -- so a lookup keyed on org returns whichever comes first and silently
