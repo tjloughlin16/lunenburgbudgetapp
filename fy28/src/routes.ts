@@ -11,6 +11,7 @@
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
+  | 'dataroom'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -39,7 +40,24 @@ export const SLUG: Record<Tab, string> = {
   rates: 'rate-register',
   // One-time money, and the page exists to show that it cannot bend the curve.
   freecash: 'free-cash',
+  // UNLISTED. See UNLISTED below before adding a link to this anywhere.
+  dataroom: 'data-room',
 }
+
+/** Pages that exist at an address and are reachable from nowhere.
+ *
+ *  Unlisted, NOT private, and the difference is the whole of it: there is no nav entry,
+ *  no index entry, no sitemap entry and no prerendered file, so nothing links here and
+ *  nothing crawls here. Anyone holding the address can read it, and if the address is
+ *  ever posted anywhere it will be indexed like any other page. It is a page you hand to
+ *  somebody, not a page behind a lock.
+ *
+ *  Deliberately NOT added to robots.txt. A Disallow line is served publicly to anybody
+ *  who asks for it, so listing the path there would advertise the thing it is meant to
+ *  keep quiet — the classic own-goal of that file.
+ *
+ *  Give an unlisted page NO alias. An alias is a second guessable address. */
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
@@ -88,6 +106,7 @@ export const LABEL: Record<Tab, string> = {
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
+  dataroom: 'The data room',
 }
 
 /** Which page a drill-in sits under, for the trail back when somebody arrives by link
