@@ -11,7 +11,7 @@
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
-  | 'dataroom'
+  | 'dataroom' | 'reports'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -40,6 +40,8 @@ export const SLUG: Record<Tab, string> = {
   rates: 'rate-register',
   // One-time money, and the page exists to show that it cannot bend the curve.
   freecash: 'free-cash',
+  // What this project WROTE, as opposed to what it mirrors. Public and linked.
+  reports: 'reports',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -76,6 +78,7 @@ const ALIASES: Record<string, Tab> = {
   // page existed. A shared link must not change where it lands.
   'rate-register': 'rates', fees: 'rates', 'fee-schedule': 'rates', register: 'rates',
   'free-cash': 'freecash', freecash: 'freecash', reserves: 'freecash', 'certified-free-cash': 'freecash',
+  reports: 'reports', analyses: 'reports', analysis: 'reports', 'our-analyses': 'reports',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -106,6 +109,7 @@ export const LABEL: Record<Tab, string> = {
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
+  reports: 'Reports and analyses',
   dataroom: 'The data room',
 }
 
@@ -117,6 +121,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
   athletics: 'context',
   rates: 'deeper',
+  reports: 'deeper',
   freecash: 'money',
 }
 

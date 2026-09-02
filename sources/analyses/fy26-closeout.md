@@ -41,6 +41,43 @@ paid for part of the thing — so none of this says what anything costs.
 
 ---
 
+## In one page
+
+**The headline number is real and it does not mean what it sounds like.** The school
+department finished June $482,101 under budget. That is not half a million pounds of slack
+sitting in a drawer — it is what is left after $1,683,534 of underspending across 160
+accounts is netted against $1,201,434 of overspending across 56. Roughly $2.9 million of
+variance in a $26.3 million budget, cancelling down to 1.8%.
+
+**And it is not a surplus.** These are the books as they stood in June, before purchase
+orders are cleared at the year-end close. In FY25 that step alone moved the school figure
+by $21,770.53.
+
+**The district spent 97.3% of what it was given.** That is the first thing a reader should
+take from the chart at the top, and it is the ordinary result of a budget that was set
+about right in total.
+
+**What moved is more interesting than what was left.** Out-of-district special education
+tuition swung hardest in both directions: private placements $522,629 under, collaborative
+placements $434,108 over, netting to $88,522. Electricity ran $110,338 over. Four special
+education paraprofessional lines ran $105,644 over between them.
+
+**Three things this year cannot explain, and each names the document that would.**
+
+1. Kindergarten paraprofessionals were cut to zero in the FY26 approved budget — published
+   openly, at −100% — and $99,064 was spent on them anyway, with no appropriation and no
+   transfer. Three readings fit and nothing here chooses between them.
+2. $85,090 of budget moved into the department across 82 accounts, and no document in the
+   archive connects any of it to a decision.
+3. One of the district's four school psychologist accounts spent nothing all year, while
+   the other three spent theirs in full.
+
+**And $1,736,376 was spent on the schools from funds the budget document cannot see** —
+grants, revolving funds, fees. Not one dollar of it can be attached to a line. Every figure
+in this document is the town's share, not the cost.
+
+---
+
 ![What happened to the FY26 budget. The unspent slice is the one the headline reports, and it is the smallest of the three.](charts/fy26-school-budget.svg)
 
 ![The largest misses in both directions. The net figure is the difference between these two arms, not a description of either.](charts/fy26-school-variance.svg)
@@ -583,6 +620,69 @@ lines. Nothing was over-budgeted; something was renamed.
 turn every row above from an observation into a pattern or a one-off, and it is the same
 request already outstanding for other reasons. This is the strongest argument yet for
 asking for the back years rather than only the current one.
+
+---
+
+## What this means
+
+### For a resident
+
+**Do not read the headline as slack.** "The schools came in $482,101 under" is arithmetically
+true and tells you almost nothing. The department spent 97.3% of its budget; the leftover is
+a residue of much larger movements in both directions, and roughly a third of it is salary
+money on posts that were not filled for all of the year.
+
+**Wait for the close before treating any of it as money.** These figures are from June with
+the books open. The FY25 figure moved twice, publicly, a fortnight apart.
+
+**The budget you vote on is not what the schools cost.** It is the town's share. Another
+$1,736,376 came from grants, fees and revolving funds in the same year, and no published
+document says which lines it paid for. When somebody quotes a budget line as the cost of
+something, that is the gap they are standing in.
+
+**Where there is a real open question, it is a small number and a specific one.** The
+kindergarten paraprofessional case is $99,064 against a line the district itself published
+as cut. It deserves an answer; it is not evidence of anything larger, and nothing in this
+document says it is.
+
+### For the School Committee and the Finance Committee
+
+**The total is a poor control instrument.** A department can land within 2% of budget while
+individual lines miss by hundreds of percent, and this one did. If the Committee wants to
+see risk building, it needs the quarterly reports during the year, not the closeout after
+it — and those quarterly reports do not currently reach the archive or, on the evidence of
+11 June, always reach the Committee.
+
+**Two lines carry most of the volatility and both are special education placements.**
+Private and collaborative tuition moved $956,737 between them in opposite directions on a
+combined budget of $1,291,293. That is the line to watch, and it is the line nobody
+controls — which is a reason to forecast it better, not a reason to skip it.
+
+**The year-end transfer schedule should be a routine published document.** Eighty-two
+school accounts changed budget in FY26 and the ledger never records a counterparty. That
+is not a criticism of anyone's bookkeeping; it is a gap between what the system records and
+what a public body needs in order to approve it.
+
+**Where the budget did its job, it shows.** The salary reserve was budgeted at $90,770,
+attached to no post, and distributed in full — a declared contingency working exactly as
+intended. Facilities spent its salary budget to the dollar. The district's own budget
+document published the kindergarten cut at −100% rather than burying it.
+
+### For whoever runs a department
+
+**A zero-budget line that spends without a transfer will look unexplained from outside,
+however ordinary it was.** Six school accounts in FY26 spent against no appropriation and
+were covered by a transfer; two were not, and those two are the only ones anybody has
+questions about. The difference is a paperwork step, not a spending decision.
+
+**Substitute and reserve lines are read differently from everything else, and should be.**
+A long-term substitute budget releasing most of its money is a forecast that came in low,
+not padding. This document says so explicitly, because the raw ranking would suggest
+otherwise.
+
+**One year cannot show a pattern, in either direction.** Nothing here establishes that any
+line is habitually over- or under-budgeted, and any claim that it does is wrong. Three
+years at this grain would settle it, and the request is already outstanding.
 
 ## What would change these findings
 

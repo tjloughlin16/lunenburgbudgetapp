@@ -27,6 +27,42 @@ Fund 0100** — no enterprise funds, no grants, no revolving funds.
 
 ---
 
+## In one page
+
+**The town finished June $858,462 under budget across 376 accounts** — the residue of
+$1,279,769 of underspending against $421,307 of overspending. Like the school side, the
+total is quiet and the parts are not.
+
+**But the town gets there very differently.** Only 18 of its 376 accounts went over
+budget. On the school side it is 57 of 259 — one account in five, against fewer than one in
+twenty. That difference is a fact with at least four explanations and this document does
+not choose between them.
+
+**Snow removal is the year's outstanding number.** Budgeted at $355,571, given $520,319
+more during the year, and it still finished $162,521 over — **$1,038,092 spent, 292% of
+the appropriation.** The wages line alone spent 539% of its budget with no transfer at all.
+
+**The Reserve Fund was never touched.** $185,000 of declared contingency, $0 spent, in the
+year snow ran $682,521 past its appropriation. With the retirement buy-back reserve that is
+$215,000 of unused contingency — a quarter of the town's entire net underspend. That is
+stated as a fact rather than a criticism: a Reserve Fund transfer needs a Finance Committee
+vote and snow deficit spending does not.
+
+**$3.3 million left the operating budget** for capital projects and stabilization, against
+$1,285,000 appropriated for the purpose. It is the largest single movement in the FY26
+books.
+
+**And $1,262,376 of school retiree health insurance sits in a town department** — a real
+cost of running the schools, invisible in the school budget the School Committee votes on.
+An unknown share of the town's remaining $2,336,409 of insurance is for serving school
+staff; the accounts do not separate town from school. This is the first time this project
+has been able to point in the ledger at any of the gap between the state's all-funds
+figure for Lunenburg and the appropriation.
+
+**Nothing here is a surplus.** Period 12, books open.
+
+---
+
 ![What happened to the FY26 budget. The unspent slice is the one the headline reports, and it is the smallest of the three.](charts/fy26-town-budget.svg)
 
 ![The largest misses in both directions. The net figure is the difference between these two arms, not a description of either.](charts/fy26-town-variance.svg)
@@ -415,6 +451,62 @@ one released by a Finance Committee vote. The ledger does not distinguish them.
 ### What would settle it
 
 FY24 and FY25 at the same grain, and the transfer schedule that names each counterparty.
+
+---
+
+## What this means
+
+### For a resident
+
+**The town's books are tighter than the schools', and that is visible rather than
+asserted.** Eighteen accounts over budget out of 376. Whether that reflects steadier costs,
+readier mid-year transfers, or a different way of coding the same thing is not established
+here — but the pattern is real and it is the clearest structural difference between the two
+sides.
+
+**Snow is the one line a town may lawfully overspend, and Lunenburg used it heavily.** It
+cost nearly three times its appropriation. That is not a failure of control; it is what the
+mechanism exists for. It does mean that when the town budgets $355,571 for snow, the
+figure is a placeholder rather than a forecast.
+
+**Part of what the schools cost is on the town's side of the ledger.** $1,262,376 of
+school retiree health insurance, plus an unmeasured share of active employee insurance.
+Anyone comparing the school budget to what the state says Lunenburg spends on schools is
+looking at that difference, and this is where some of it lives.
+
+### For the Select Board and Finance Committee
+
+**$215,000 of declared contingency went unused in a year with a $682,521 snow overrun.**
+There is a good procedural reason — the Reserve Fund needs a vote, snow deficits do not —
+but it is worth knowing that the town carried an untouched reserve through its most
+expensive weather event of the year.
+
+**The transfer schedule is the missing document, and it is missing for the same reason on
+both sides.** Every "transferred in" figure in this analysis has an unrecorded
+counterparty, including the $2,036,257 that arrived in the two accounts that move money to
+capital and stabilization. The ledger records that a budget changed; only the schedule
+records what it changed against. It was tabled at Finance Committee on 11 June for want of
+documents and has not surfaced since.
+
+**Health insurance should be split between town and school employees in the accounts.**
+It is the single largest unmeasured school cost in the town books, and the split is not a
+new report — it is a coding question about accounts that already exist.
+
+### For a department head
+
+**A line that gives away 100% of its budget looks the same whether it was padded, recoded,
+or genuinely not needed.** The clearest case here is not over-budgeting at all: the Town
+Clerk's salary moved between two lines in different departments, and it appears in the
+ledger as a $78,466 give-up. Where a transfer is a reclassification rather than a release,
+the transfer schedule is the only thing that says so.
+
+**Facilities is the line this document can point to as working.** Three salary accounts,
+three exact matches, nothing left on any of them — and it is also the department the Town
+named as the cause of the FY25 surplus. Whatever happened last year did not happen this
+year.
+
+**One year cannot show a pattern.** Nothing here says any line is habitually
+over-budgeted, and three years at this grain is the only thing that would.
 
 ## What would change these findings
 
