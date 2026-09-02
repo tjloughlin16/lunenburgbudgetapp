@@ -343,6 +343,15 @@ arriving fresh.
     python3 scripts/verify_free_cash_capital.py  # the capital section of the free cash analysis
     python3 scripts/build_show_your_work.py       # regenerate the method document
     python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
+    python3 scripts/extract_munis_report.py --check   # every MUNIS glytdbud report, tied to its own GRAND TOTAL
+    python3 scripts/build_db.py --check          # rebuild the analysis database; fail if a reconciliation drifts
+    python3 scripts/export_ledger.py             # regenerate the ledger page's data from the database
+    python3 scripts/build_api.py                 # publish the database and the read-only JSON API
+    python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
+
+`notes/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
+and the database is a derived read model, rebuilt from scratch every run. Nothing is ever
+edited in it -- a row in a database has no address, no publisher filename and no sha256.
 
 ## The standing questions
 
