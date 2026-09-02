@@ -348,6 +348,9 @@ arriving fresh.
     python3 scripts/export_ledger.py             # regenerate the ledger page's data from the database
     python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
     python3 scripts/extract_dese_radar.py        # ...checked against DESE's own printed totals
+    python3 scripts/verify_fy26_closeout.py      # every figure in the FY26 closeout analysis
+    python3 scripts/build_analysis_pdf.py --all  # render the analyses to PDF for reading on paper
+    python3 scripts/build_request_doc.py         # regenerate what is still outstanding from the Town
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 

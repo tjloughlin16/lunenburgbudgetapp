@@ -573,14 +573,22 @@ def load_munis(db):
 
 def load_funds(db):
     """Fund balance activity, and grants as the budget documents list them."""
-    act = []
+    act, seen_funds = [], {}
     for r in rows('school-special-revenue-fy26-q3'):
         fund = (r['fund'] or '').lstrip("'")     # an Excel text-prefix apostrophe survives
         if not fund:
             continue
+        # The fund's NAME lives only in this report. Without it the request document
+        # lists bare codes, which is not something anybody can act on.
+        seen_funds[fund] = (fund, (r['name'] or '').strip() or None,
+                            FUND_KIND.get(fund, (None, None, None))[1],
+                            FUND_KIND.get(fund, (None, None, None))[2])
         act.append((fund, 2026, 9, None, num(r['revenue']), num(r['salaries']),
                     num(r['expenditure']), num(r['encumbered']), num(r['balance']),
                     SPECIAL_REV_DOC))
+    # Do not overwrite a fund already described from FUND_KIND, which carries the
+    # restriction; fill in only what is not there.
+    db.executemany('INSERT OR IGNORE INTO fund VALUES (?,?,?,?)', list(seen_funds.values()))
     db.executemany('INSERT OR REPLACE INTO fund_activity VALUES (?,?,?,?,?,?,?,?,?,?)', act)
 
     dese = []

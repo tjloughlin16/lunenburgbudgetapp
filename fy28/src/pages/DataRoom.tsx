@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { Section, Note, Stat } from '../components/primitives'
 
 /** The data room — what we hold, line by line and year by year.
@@ -331,7 +331,7 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
       </div>
 
       {open && (
-        <div className="mt-5">
+        <Modal onClose={() => setOpen(null)}>
           {open.fy !== null && open.row !== null && (
             <CellDetail fy={open.fy} rd={def(open.row)} cell={at(open.fy, open.row)}
               onClose={() => setOpen(null)} />
@@ -344,9 +344,50 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
             <RowDetail rd={def(open.row)} cov={cov} onClose={() => setOpen(null)}
               onPick={(fy) => setOpen({ fy, row: open.row })} />
           )}
-        </div>
+        </Modal>
       )}
     </Section>
+  )
+}
+
+/** A real dialog, because the answer has to arrive where the click happened.
+ *
+ *  These panels used to render below a 19-column table, which meant clicking a square
+ *  scrolled the answer somewhere the reader could not see and gave no sign anything had
+ *  happened. A grid that wide has no usable "below".
+ *
+ *  Escape closes, the backdrop closes, focus moves in on open and back to whatever was
+ *  focused before on close, and the page behind does not scroll while it is up.
+ */
+function Modal({ onClose, children }: { onClose: () => void; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const returnTo = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    returnTo.current = document.activeElement as HTMLElement | null
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    ref.current?.focus()
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prev
+      returnTo.current?.focus?.()
+    }
+  }, [onClose])
+
+  return (
+    <div role="dialog" aria-modal="true"
+      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-3 sm:p-6"
+      style={{ background: 'rgba(0,0,0,0.55)' }}
+      onClick={e => { if (e.target === e.currentTarget) onClose() }}>
+      <div ref={ref} tabIndex={-1}
+        className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-lg shadow-2xl outline-none"
+        style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+        {children}
+      </div>
+    </div>
   )
 }
 
@@ -354,7 +395,7 @@ function Panel({ eyebrow, title, onClose, children }: {
   eyebrow: string; title: string; onClose: () => void; children: React.ReactNode
 }) {
   return (
-    <div className="card p-4">
+    <div className="p-4 sm:p-5">
       <div className="flex items-start justify-between gap-4 mb-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-0.5"
