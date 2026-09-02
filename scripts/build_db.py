@@ -193,6 +193,28 @@ CREATE TABLE fund_activity (
     PRIMARY KEY (fund, fy, period, doc_id)
 );
 
+-- Figures the town or district stated about itself, in public, with the quote.
+--
+-- These are NOT ours and are not computed from anything here. They exist because the
+-- most important number about FY25 -- the surplus -- is one the town arrived at by
+-- closing its books, which we cannot do from what we hold. Recording it as a stated
+-- figure, with who said it and the raw sentence, keeps the distinction that rule 13
+-- exists for: this is quoted, not derived.
+CREATE TABLE stated_figure (
+    fy                  INTEGER NOT NULL,
+    metric              TEXT NOT NULL,
+    amount              REAL NOT NULL,
+    stated_on           TEXT,               -- the date it was said
+    stated_by           TEXT,
+    basis               TEXT,               -- 'close' | 'estimate' | 'preliminary'
+    doc_id              TEXT NOT NULL,
+    source_ref          TEXT,               -- the line or cell it is quoted from
+    quote               TEXT NOT NULL,      -- the raw sentence
+    supersedes          REAL,               -- an earlier figure this replaced
+    note                TEXT,
+    PRIMARY KEY (fy, metric, amount)
+);
+
 -- Grants as the district's own budget documents list them, by year and owner.
 -- An amount here is what a document says was awarded. It is NOT a mapping onto the
 -- operating lines the grant paid for -- that mapping is exactly what nobody publishes,
@@ -489,13 +511,21 @@ def load_funds(db):
                     SPECIAL_REV_DOC))
     db.executemany('INSERT OR REPLACE INTO fund_activity VALUES (?,?,?,?,?,?,?,?,?,?)', act)
 
+    stated = []
+    for r in rows('stated-figures'):
+        stated.append((int(r['fy']), r['metric'], num(r['amount']), r['stated_on'],
+                       r['stated_by'], r['basis'], r['doc_id'], r['source_ref'],
+                       r['quote'], num(r['supersedes']), r['note']))
+    db.executemany('INSERT OR REPLACE INTO stated_figure VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+                   stated)
+
     grants = []
     for r in rows('grants-history'):
         grants.append((r['fy'], r['kind'], r['name'], num(r['amount']), r['owner'],
                        1 if r.get('disagreement') else 0, r.get('doc'),
                        r.get('source_url'), r.get('sha256')))
     db.executemany('INSERT OR REPLACE INTO grant_award VALUES (?,?,?,?,?,?,?,?,?)', grants)
-    return len(act), len(grants)
+    return len(act), len(grants), len(stated)
 
 
 def load_budget_figures(db):
@@ -663,6 +693,21 @@ def reconcile(db):
                  WHERE account_id IN ('0100-300','0100-301') AND period=9"""),
           0.0, tol=2.0)
 
+    # The town's own FY25 closing figure, quoted rather than derived. Asserted because a
+    # figure this project quotes must not drift by a cent, and because the gap between it
+    # and our own subtraction is the point of the table that shows them together.
+    check(db, "the town's stated FY25 surplus, as closed",
+          q("""SELECT amount FROM stated_figure
+               WHERE fy=2025 AND metric='school_surplus' AND supersedes IS NOT NULL"""),
+          603885.97)
+    check(db, 'our restatement subtraction, minus the town figure',
+          q("""SELECT (SELECT SUM(CASE WHEN column_kind='budget' THEN value ELSE -value END)
+                      FROM workbook_figure WHERE fy=2025 AND row_kind='line'
+                        AND column_kind IN ('budget','actual'))
+                   - (SELECT amount FROM stated_figure WHERE fy=2025
+                      AND metric='school_surplus' AND supersedes IS NOT NULL)"""),
+          157362.73)
+
     # Every fact carries an address.
     check(db, 'ledger rows with no document', q(
         "SELECT COUNT(*) FROM ledger_snapshot WHERE doc_id IS NULL OR doc_id=''"), 0)
@@ -695,9 +740,10 @@ def main():
     print('  workbook figures %5d' % load_workbook(db))
     print('  budget lines     %5d' % db.execute(
         'SELECT COUNT(*) FROM budget_line').fetchone()[0])
-    fa, gr = load_funds(db)
+    fa, gr, st = load_funds(db)
     print('  fund activity    %5d' % fa)
     print('  grant awards     %5d' % gr)
+    print('  stated figures   %5d' % st)
     print('  reference rows   %5d' % load_reference(db))
     db.executescript(VIEWS)
     db.commit()

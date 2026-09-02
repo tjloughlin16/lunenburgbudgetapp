@@ -225,8 +225,29 @@ def line_series(db):
     return out
 
 
-def totals(db):
-    """Year totals, from the one source that prints both halves of the same year."""
+def totals(db, cov):
+    """Year totals, and -- more importantly -- what we CANNOT say about each year.
+
+    The difference between a budget column and an actual column is not a surplus. It is a
+    subtraction of two columns in a document the district wrote about itself. The town
+    arrives at its surplus by CLOSING THE BOOKS: revised appropriation, less expended,
+    less encumbrances still open after purchase orders are closed in the lapse period.
+    We hold no year-end ledger for any year, so we cannot do that arithmetic for any year.
+
+    An earlier version of this printed the subtraction in a column headed "Under budget"
+    with a dash everywhere else, which said two wrong things at once: that the number was
+    the surplus, and that a dash meant no variance rather than no data. Each row now
+    states what it IS, what is missing, and -- where the town has stated a figure of its
+    own -- that figure beside ours with the gap named.
+    """
+    stated = {}
+    for r in rows(db, 'SELECT * FROM stated_figure ORDER BY fy, stated_on'):
+        stated.setdefault(r['fy'], []).append(r)
+
+    # What a year needs before WE could compute a surplus, and whether we hold it.
+    NEEDED = [('q4', 'the year-end ledger (period 13)'),
+              ('po', 'purchase orders closed after the year closed')]
+
     out = []
     for r in rows(db, """SELECT fy,
                            SUM(CASE WHEN column_kind IN ('budget','final_budget')
@@ -240,20 +261,54 @@ def totals(db):
                          GROUP BY fy ORDER BY fy"""):
         if not any((r['budget'], r['actual'], r['actual_td'])):
             continue                      # a forecast column is not a year of data
-        rec = dict(fy=r['fy'], budget=r['budget'], actual=r['actual'],
-                   actualToDate=r['actual_td'], encumberedToDate=r['encumbered_td'],
-                   source='workbook')
-        if r['budget'] and r['actual']:
-            rec['surplus'] = round(r['budget'] - r['actual'], 2)
-            rec['surplusPct'] = round((r['budget'] - r['actual']) / r['budget'] * 100, 2)
-        elif r['budget'] and r['actual_td'] is not None:
-            # FY26 is incomplete by construction: the workbook's own column is headed
-            # 'Actuals to date'. Committed = spent + encumbered, which is what the
-            # available column would net against -- NOT a surplus.
+        fy = r['fy']
+        cells = cov['cells'].get(str(fy), {})
+        blocked = [label for key, label in NEEDED
+                   if cells.get(key, {}).get('state') != 'obtained']
+
+        rec = dict(
+            fy=fy, budget=r['budget'], actual=r['actual'],
+            actualToDate=r['actual_td'], encumberedToDate=r['encumbered_td'],
+            source='workbook',
+            # Never 'surplus'. This is the distance between two columns of a restatement.
+            canComputeSurplus=not blocked,
+            blockedBy=blocked,
+        )
+
+        if r['budget'] is None:
+            rec['halves'] = 'actual only'
+            rec['whatThisIs'] = ('This workbook prints no budget column for this year, so '
+                                 'there is nothing to subtract from. Not a variance of '
+                                 'zero \u2014 a half we do not hold.')
+        elif r['actual'] is None and r['actual_td'] is not None:
             committed = (r['actual_td'] or 0) + (r['encumbered_td'] or 0)
+            rec['halves'] = 'budget and a part-year actual'
             rec['committed'] = round(committed, 2)
             rec['uncommitted'] = round(r['budget'] - committed, 2)
-            rec['partial'] = True
+            rec['whatThisIs'] = ('An incomplete year. The workbook\'s own column is headed '
+                                 '"Actuals to date". What is left is uncommitted budget at '
+                                 'that moment, not money that came back.')
+        elif r['actual'] is None:
+            rec['halves'] = 'budget only'
+            rec['whatThisIs'] = 'No actual column for this year in this workbook.'
+        else:
+            rec['halves'] = 'both'
+            rec['restatementVariance'] = round(r['budget'] - r['actual'], 2)
+            rec['restatementVariancePct'] = round(
+                (r['budget'] - r['actual']) / r['budget'] * 100, 2)
+            rec['whatThisIs'] = ('The distance between two columns of a document the '
+                                 'district wrote about itself. Not a closing figure.')
+
+        if fy in stated:
+            rec['stated'] = [dict(
+                amount=x['amount'], statedOn=x['stated_on'], statedBy=x['stated_by'],
+                quote=x['quote'], docId=x['doc_id'], sourceRef=x['source_ref'],
+                supersedes=x['supersedes'], note=x['note']) for x in stated[fy]]
+            latest = max(stated[fy], key=lambda x: x['stated_on'])
+            rec['townFigure'] = latest['amount']
+            if 'restatementVariance' in rec:
+                rec['gapToTownFigure'] = round(
+                    rec['restatementVariance'] - latest['amount'], 2)
         out.append(rec)
     return out
 
@@ -295,10 +350,11 @@ def main():
     except Exception:
         commit = None
 
+    cov = coverage(db)
     data = dict(
-        coverage=coverage(db),
+        coverage=cov,
         lines=line_series(db),
-        totals=totals(db),
+        totals=totals(db, cov),
         departments=ledger_departments(db),
         funding=funding(db),
         meta=dict(

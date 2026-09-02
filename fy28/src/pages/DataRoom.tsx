@@ -34,11 +34,18 @@ type Line = {
   years: YearRow[]; sources: string[]; row?: number
   workbook?: Record<string, Record<string, number>>
 }
+type Stated = {
+  amount: number; statedOn: string; statedBy: string; quote: string
+  docId: string; sourceRef: string | null; supersedes: number | null; note: string | null
+}
 type Total = {
   fy: number; budget: number | null; actual: number | null
   actualToDate?: number | null; encumberedToDate?: number | null
-  surplus?: number; surplusPct?: number
-  committed?: number; uncommitted?: number; partial?: boolean
+  halves: string; whatThisIs: string
+  canComputeSurplus: boolean; blockedBy: string[]
+  restatementVariance?: number; restatementVariancePct?: number
+  committed?: number; uncommitted?: number
+  stated?: Stated[]; townFigure?: number; gapToTownFigure?: number
 }
 type Dept = {
   dept: string; name: string; fy: number; period: number; original: number
@@ -264,77 +271,207 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
 
 /* ------------------------------------------------------------------- year totals */
 
+/** Not "here is the surplus". Here is what we can and cannot say about each year.
+ *
+ *  This section used to be a table with a column headed "Under budget", a number in it
+ *  for FY25 and a dash everywhere else. That said two wrong things at once: that the
+ *  number was the surplus, and that a dash meant no variance rather than no data.
+ *
+ *  It is neither. The town arrives at a surplus by CLOSING THE BOOKS -- revised
+ *  appropriation, less expended, less encumbrances still open after purchase orders are
+ *  closed in the lapse period. We hold no year-end ledger for any year, so we cannot do
+ *  that arithmetic for any year. What we can do is subtract two columns of a document the
+ *  district wrote about itself, which is a different quantity that happens to look like
+ *  the same one. */
 function Totals({ totals }: { totals: Total[] }) {
-  const closed = totals.filter(t => t.surplus !== undefined)
+  const [openFy, setOpenFy] = useState<number | null>(null)
+  const anyComputable = totals.some(t => t.canComputeSurplus)
+  const blockers = [...new Set(totals.flatMap(t => t.blockedBy))]
+
   return (
     <Section id="totals" eyebrow="2 — Does it add up"
-      title="Budget against actual, whole years"
+      title="What we can and cannot say about each year"
       lede={<>
         <p className="mb-3">
-          Both halves of a year, from the one source that prints them side by side: the
-          FY27 projection workbook. The line rows sum exactly to the totals the sheet
-          itself prints, which is the check that matters — our sum of the lines is not the
-          same claim as the sheet&rsquo;s own total.
+          A surplus is what a closed set of books says was left: the revised appropriation,
+          less what was spent, less encumbrances still open once purchase orders are closed
+          after year end. That last step is real money — it moved FY25 by $21,770.53
+          between two School Committee meetings a fortnight apart.
         </p>
         <p>
-          <strong style={{ color: 'var(--text-primary)' }}>These are restatements, not
-          ledger figures.</strong> An &ldquo;actual&rdquo; here is a prior year
-          re-presented by the people who spent it, inside the argument for next
-          year&rsquo;s budget. The town&rsquo;s own closing figure for FY25 is
-          $603,885.97, arrived at by closing the books rather than by subtracting two
-          columns, and it is the better number to quote.
+          <strong style={{ color: 'var(--text-primary)' }}>We cannot do that arithmetic for
+          any year, because we hold no year-end ledger for any year.</strong> What follows
+          is the nearest thing the documents allow, clearly labelled as the different
+          quantity it is.
         </p>
       </>}>
 
+      {!anyComputable && (
+        <div className="card p-4 mb-6 max-w-3xl"
+          style={{ borderLeft: '3px solid var(--status-critical)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+            style={{ color: 'var(--status-critical)' }}>
+            Not computable from what we hold — 0 of {totals.length} years
+          </p>
+          <p className="text-sm leading-relaxed mb-2" style={{ color: 'var(--text-secondary)' }}>
+            Two documents are missing for every single year, and both are ordinary reports
+            the Finance Department already produces:
+          </p>
+          <ul className="text-sm space-y-1" style={{ color: 'var(--text-secondary)' }}>
+            {blockers.map(b => (
+              <li key={b} className="flex gap-2">
+                <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>□</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className="overflow-x-auto -mx-5 px-5">
-        <table className="w-full text-sm border-collapse min-w-[680px]">
+        <table className="w-full text-sm border-collapse min-w-[760px]">
           <thead>
             <tr className="text-left" style={{ color: 'var(--text-secondary)' }}>
               <th className="pb-2 font-semibold">Year</th>
-              <th className="pb-2 font-semibold text-right">Budgeted</th>
-              <th className="pb-2 font-semibold text-right">Spent</th>
-              <th className="pb-2 font-semibold text-right">Under budget</th>
-              <th className="pb-2 font-semibold text-right">%</th>
-              <th className="pb-2 font-semibold pl-4">Note</th>
+              <th className="pb-2 font-semibold text-right">Budget column</th>
+              <th className="pb-2 font-semibold text-right">Actual column</th>
+              <th className="pb-2 font-semibold text-right">Difference</th>
+              <th className="pb-2 font-semibold pl-4">What that difference is</th>
             </tr>
           </thead>
           <tbody>
             {totals.map(t => (
-              <tr key={t.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                <td className="py-2.5 font-semibold tnum">FY{t.fy}</td>
-                <td className="py-2.5 text-right tnum">{usd(t.budget)}</td>
-                <td className="py-2.5 text-right tnum">
-                  {t.actual !== null && t.actual !== undefined ? usd(t.actual)
-                    : t.actualToDate ? usd(t.actualToDate) : '—'}
-                </td>
-                <td className="py-2.5 text-right tnum font-semibold"
-                  style={{ color: t.surplus ? 'var(--status-warning)' : 'var(--text-muted)' }}>
-                  {t.surplus !== undefined ? usd(t.surplus) : '—'}
-                </td>
-                <td className="py-2.5 text-right tnum"
-                  style={{ color: 'var(--text-secondary)' }}>
-                  {t.surplusPct !== undefined ? `${t.surplusPct.toFixed(2)}%` : '—'}
-                </td>
-                <td className="py-2.5 pl-4 text-xs" style={{ color: 'var(--text-muted)' }}>
-                  {t.partial
-                    ? `Incomplete year — the column is headed “Actuals to date”. ${usdK(t.committed)} committed, ${usdK(t.uncommitted)} uncommitted.`
-                    : t.budget === null ? 'No budget column in this workbook for this year'
-                      : ''}
-                </td>
-              </tr>
+              <Fragment key={t.fy}>
+                <tr className="border-t align-top" style={{ borderColor: 'var(--grid)' }}>
+                  <td className="py-3 font-semibold tnum">FY{t.fy}</td>
+                  <td className="py-3 text-right tnum">
+                    {t.budget === null ? <NotHeld /> : usd(t.budget)}
+                  </td>
+                  <td className="py-3 text-right tnum">
+                    {t.actual !== null && t.actual !== undefined ? usd(t.actual)
+                      : t.actualToDate
+                        ? <span>{usd(t.actualToDate)}<span className="block text-[11px]"
+                            style={{ color: 'var(--status-warning)' }}>to date only</span></span>
+                        : <NotHeld />}
+                  </td>
+                  <td className="py-3 text-right tnum font-semibold">
+                    {t.restatementVariance !== undefined
+                      ? usd(t.restatementVariance)
+                      : <span className="font-normal text-xs"
+                          style={{ color: 'var(--text-muted)' }}>cannot subtract</span>}
+                    {t.restatementVariancePct !== undefined && (
+                      <span className="block text-[11px] font-normal"
+                        style={{ color: 'var(--text-secondary)' }}>
+                        {t.restatementVariancePct.toFixed(2)}% of budget
+                      </span>
+                    )}
+                  </td>
+                  <td className="py-3 pl-4 text-xs leading-relaxed max-w-[26rem]"
+                    style={{ color: 'var(--text-muted)' }}>
+                    {t.whatThisIs}
+                    {t.committed !== undefined && (
+                      <span className="block mt-1">
+                        {usdK(t.committed)} committed, {usdK(t.uncommitted)} uncommitted at
+                        that point.
+                      </span>
+                    )}
+                    {t.stated && (
+                      <button onClick={() => setOpenFy(openFy === t.fy ? null : t.fy)}
+                        aria-expanded={openFy === t.fy}
+                        className="block mt-1.5 font-semibold text-[12px]"
+                        style={{ color: 'var(--series-cost)' }}>
+                        {openFy === t.fy ? 'Hide' : 'The town states'} {usd(t.townFigure)}{' '}
+                        for this year {openFy === t.fy ? '▲' : '▼'}
+                      </button>
+                    )}
+                  </td>
+                </tr>
+                {openFy === t.fy && t.stated && (
+                  <tr style={{ background: 'var(--surface-2)' }}>
+                    <td colSpan={5} className="px-4 py-4">
+                      <StatedFigures t={t} />
+                    </td>
+                  </tr>
+                )}
+              </Fragment>
             ))}
           </tbody>
         </table>
       </div>
 
-      {closed.length > 0 && (
-        <Note>
-          Only {closed.length} of {totals.length} years here have both halves. The rest
-          have one column or the other, which is the coverage matrix above restated as
-          arithmetic. A year with one half cannot produce a variance, and none is shown.
-        </Note>
-      )}
+      <Note>
+        &ldquo;Cannot subtract&rdquo; means a half is missing, not that the two halves
+        matched. Which half, and for which year, is the coverage matrix above.
+      </Note>
     </Section>
+  )
+}
+
+/** A missing half, said out loud. A dash reads as zero and this must not. */
+function NotHeld() {
+  return (
+    <span className="inline-flex items-center gap-1 text-xs font-normal"
+      style={{ color: 'var(--text-muted)' }}>
+      <span aria-hidden="true">□</span> not held
+    </span>
+  )
+}
+
+/** What the town said, when, and how far it is from our arithmetic.
+ *
+ *  The gap is shown and NOT explained, because nothing we hold explains it. Two
+ *  mechanisms could: transfers into the department during the year, which raise the base
+ *  our subtraction never sees, and encumbrances still open, which lower the surplus. They
+ *  pull in opposite directions and neither is measured for FY25. */
+function StatedFigures({ t }: { t: Total }) {
+  return (
+    <div className="max-w-3xl">
+      <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+        style={{ color: 'var(--text-muted)' }}>
+        Quoted from the town, not computed here
+      </p>
+      <ol className="space-y-3 mb-4">
+        {t.stated!.map(s => (
+          <li key={s.amount} className="text-sm">
+            <span className="tnum font-bold">{usd(s.amount, 2)}</span>
+            <span style={{ color: 'var(--text-muted)' }}> — {s.statedOn}, {s.statedBy}</span>
+            <blockquote className="mt-1 pl-3 text-[13px] italic border-l"
+              style={{ borderColor: 'var(--grid)', color: 'var(--text-secondary)' }}>
+              &ldquo;{s.quote}&rdquo;
+              <span className="not-italic block text-[11px] mt-0.5"
+                style={{ color: 'var(--text-muted)' }}>
+                {s.docId}{s.sourceRef ? `, ${s.sourceRef}` : ''}
+              </span>
+            </blockquote>
+            {s.note && (
+              <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>{s.note}</p>
+            )}
+          </li>
+        ))}
+      </ol>
+
+      {t.gapToTownFigure !== undefined && (
+        <div className="card p-3">
+          <p className="text-sm leading-relaxed">
+            Our subtraction is <strong className="tnum">{usd(t.restatementVariance)}</strong>.
+            The town&rsquo;s closing figure is <strong className="tnum">{usd(t.townFigure, 2)}</strong>.
+            They differ by <strong className="tnum"
+              style={{ color: 'var(--status-warning)' }}>{usd(t.gapToTownFigure, 2)}</strong>.
+          </p>
+          <p className="text-xs mt-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            <strong style={{ color: 'var(--text-primary)' }}>That gap is not explained
+            here.</strong> They are different quantities measured different ways, so they
+            were never going to agree, and neither is wrong. Two mechanisms sit between
+            them and both are unmeasured for this year: transfers into the department
+            during the year, which raise a base our subtraction never sees, and
+            encumbrances still open at the close, which lower a surplus. They pull in
+            opposite directions. The town&rsquo;s figure is the one to quote — it is
+            theirs, it comes from closing the books, and it is what the people who voted
+            the budget were told.
+          </p>
+        </div>
+      )}
+    </div>
   )
 }
 
