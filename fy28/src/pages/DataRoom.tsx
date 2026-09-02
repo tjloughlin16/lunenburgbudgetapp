@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from 'react'
-import { Section, Note } from '../components/primitives'
+import { Section, Note, Stat } from '../components/primitives'
 
 /** The data room — what we hold, line by line and year by year.
  *
@@ -62,11 +62,30 @@ type Dept = {
   transfers: number; revised: number; expended: number; encumbered: number
   available: number; pct_used: number; doc_id: string
 }
+type GrossRow = {
+  org: string; object: string; label: string; accountId: string
+  net: {
+    state: string; appropriated: number; transfers: number; revised: number
+    spent: number; encumbered: number; unspent: number; docId: string
+  }
+  offsets: { state: string; items: unknown[]; blockedBy: string }
+  gross: { state: string; note: string }
+}
+type GrossBudget = {
+  fy: number; period: number; asOf: string
+  rows: GrossRow[]
+  unattributed: { fund: string; name: string | null; kind: string | null
+                  restriction: string | null; spent: number; doc_id: string }[]
+  grants: { name: string; amount: number; kind: string | null; owner: string | null }[]
+  totals: Record<string, number | string>
+  legend: { state: string; means: string }[]
+}
 type Ledger = {
   coverage: { years: number[]; rowDefs: RowDef[]; cells: Record<string, Record<string, Cell>> }
   lines: Line[]
   totals: Total[]
   departments: Dept[]
+  grossBudget: GrossBudget
   funding: {
     revenue: { object: string; name: string; budgeted: number; received: number; pct_received: number }[]
     interfund: { fund: string; object: string; name: string; budgeted: number; received: number }[]
@@ -157,6 +176,7 @@ export function DataRoom() {
       <Coverage cov={data.coverage} />
       <Totals totals={data.totals} />
       <Lines lines={data.lines} meta={data.meta} />
+      <Gross g={data.grossBudget} />
       <Departments rows={data.departments} />
       <Funding funding={data.funding} />
       <Provenance meta={data.meta} />
@@ -947,6 +967,200 @@ function LineDetail({ line }: { line: Line }) {
         the effect a variance would measure.
       </Note>
     </div>
+  )
+}
+
+/* ------------------------------------------------------------- gross budget template */
+
+/** The school budget with every source of money on the page — and the blanks called out.
+ *
+ *  The district publishes a NET budget: each line is what the town must raise after
+ *  grants, fees and reimbursements have paid for part of the thing. A $20,000 line may be
+ *  a $220,000 line. Nothing in the document marks it.
+ *
+ *  So the empty column is the point of this table, and it is styled to be as loud as the
+ *  figures beside it. "Not held" must never be allowed to read as "nothing there" — that
+ *  is the exact reading this whole page exists to prevent.
+ */
+function Gross({ g }: { g: GrossBudget }) {
+  const [q, setQ] = useState('')
+  const [sort, setSort] = useState<'org' | 'spend' | 'variance'>('spend')
+
+  const rows = useMemo(() => {
+    const needle = q.trim().toLowerCase()
+    const r = g.rows.filter(x => !needle
+      || x.label.toLowerCase().includes(needle)
+      || x.org.toLowerCase().includes(needle)
+      || x.object.includes(needle))
+    return [...r].sort((a, b) =>
+      sort === 'org' ? a.org.localeCompare(b.org)
+        : sort === 'spend' ? b.net.spent - a.net.spent
+          : Math.abs(b.net.unspent) - Math.abs(a.net.unspent))
+  }, [g.rows, q, sort])
+
+  const t = g.totals as Record<string, number>
+  return (
+    <Section id="gross" eyebrow="5 — The budget with all the money on it"
+      title={`Gross school budget, FY${g.fy}`}
+      lede={<>
+        <p className="mb-3">
+          The district publishes a <strong style={{ color: 'var(--text-primary)' }}>net
+          </strong> budget: every line is what the town must raise <em>after</em> grants,
+          fees and reimbursements have paid for part of the thing. A line reading $20,000
+          can be a $220,000 line. Nothing in the document marks which.
+        </p>
+        <p className="mb-3">
+          This is the same budget with the other money beside it. Today almost every
+          &ldquo;other money&rdquo; cell is empty — and it is drawn to be as visible as the
+          figures, because <strong style={{ color: 'var(--text-primary)' }}>&ldquo;not
+          held&rdquo; must never be read as &ldquo;nothing there&rdquo;.</strong>
+        </p>
+        <p style={{ color: 'var(--text-muted)' }}>{g.asOf}</p>
+      </>}>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+        <Stat label="Town appropriation" value={usd(t.netAppropriated)}
+          sub="What the district’s own budget document publishes" />
+        <Stat label="Spent from the general fund" value={usd(t.netSpent)}
+          sub={`258 accounts, period ${g.period}`} />
+        <Stat label="Known spent outside it" value={usd(t.knownOutsideGeneralFund)}
+          sub={`${g.unattributed.length} school funds — none attributable to a line`}
+          tone="critical" />
+        <Stat label="Gross floor" value={usd(t.grossFloor)}
+          sub="A floor, never a total" tone="critical" />
+      </div>
+
+      <div className="card p-4 mb-6 max-w-3xl" style={{ borderLeft: '3px solid var(--status-critical)' }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+          style={{ color: 'var(--status-critical)' }}>
+          0 of {g.rows.length} lines have their outside funding attached
+        </p>
+        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          {String(t.attributableNote)} {String(t.grossFloorNote)}
+        </p>
+      </div>
+
+      <div className="flex flex-wrap gap-3 items-center mb-3">
+        <input value={q} onChange={e => setQ(e.target.value)}
+          placeholder="Search an account, org or object code…"
+          className="px-3 py-2 text-sm rounded border w-full sm:w-80"
+          style={{ background: 'var(--surface-2)', borderColor: 'var(--grid)',
+                   color: 'var(--text-primary)' }} />
+        {(['spend', 'variance', 'org'] as const).map(k => (
+          <button key={k} onClick={() => setSort(k)} aria-pressed={sort === k}
+            className="text-xs px-2 py-1 rounded font-semibold"
+            style={{ background: sort === k ? 'var(--surface-3)' : 'transparent',
+                     color: sort === k ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+            {k === 'spend' ? 'by spending' : k === 'variance' ? 'by variance' : 'by account'}
+          </button>
+        ))}
+        <span className="text-xs tnum" style={{ color: 'var(--text-muted)' }}>
+          {rows.length} of {g.rows.length}
+        </span>
+      </div>
+
+      <div className="overflow-x-auto -mx-5 px-5">
+        <table className="w-full text-[13px] border-collapse min-w-[900px]">
+          <thead>
+            <tr className="text-left" style={{ color: 'var(--text-secondary)' }}>
+              <th className="pb-2 font-semibold">Account</th>
+              <th className="pb-2 font-semibold text-right">Town budget</th>
+              <th className="pb-2 font-semibold text-right">Town spent</th>
+              <th className="pb-2 font-semibold text-right">Variance</th>
+              <th className="pb-2 font-semibold text-center">Grants &amp; other funds</th>
+              <th className="pb-2 font-semibold text-right">Gross</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.slice(0, 80).map(r => (
+              <tr key={r.accountId} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                <td className="py-2">
+                  <span className="font-medium">{r.label}</span>
+                  <span className="block text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
+                    {r.org} · {r.object}
+                  </span>
+                </td>
+                <td className="py-2 text-right tnum">{usd(r.net.revised)}</td>
+                <td className="py-2 text-right tnum">{usd(r.net.spent)}</td>
+                <td className="py-2 text-right tnum"
+                  style={{ color: r.net.unspent < -0.5 ? 'var(--status-critical)'
+                    : r.net.unspent > 0.5 ? 'var(--status-good)' : 'var(--text-muted)' }}>
+                  {Math.abs(r.net.unspent) < 0.5 ? '—' : usd(r.net.unspent)}
+                </td>
+                <td className="py-2 text-center">
+                  <NotHeldCell why={r.offsets.blockedBy} />
+                </td>
+                <td className="py-2 text-right text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                  unknown
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {rows.length > 80 && (
+        <Note>Showing the first 80 of {rows.length}. Narrow the search to see others.</Note>
+      )}
+
+      <h3 className="text-sm font-semibold mt-8 mb-2">
+        Money we know was spent on the schools, and cannot attach to any line
+      </h3>
+      <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        These funds paid for real staff and real programmes in FY{g.fy}. Every dollar
+        belongs against one of the lines above and we cannot say which. Spreading it in
+        proportion to line size would look right and be invented.
+      </p>
+      <div className="overflow-x-auto -mx-5 px-5">
+        <table className="w-full text-[13px] border-collapse min-w-[560px]">
+          <thead>
+            <tr className="text-left" style={{ color: 'var(--text-secondary)' }}>
+              <th className="pb-2 font-semibold">Fund</th>
+              <th className="pb-2 font-semibold">Restricted to</th>
+              <th className="pb-2 font-semibold text-right">Spent</th>
+              <th className="pb-2 font-semibold text-center">Which lines</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.unattributed.filter(u => u.spent > 0)
+              .sort((a, b) => b.spent - a.spent).slice(0, 14).map(u => (
+              <tr key={u.fund} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                <td className="py-2">
+                  <span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>
+                    {u.fund}
+                  </span>{u.name}
+                </td>
+                <td className="py-2 text-xs" style={{ color: 'var(--text-muted)' }}>
+                  {u.restriction ?? <span style={{ color: 'var(--status-warning)' }}>
+                    not stated in any document we hold</span>}
+                </td>
+                <td className="py-2 text-right tnum">{usd(u.spent)}</td>
+                <td className="py-2 text-center"><NotHeldCell why="Fund-level spending detail, by account." /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[11px]">
+        {g.legend.map(l => (
+          <span key={l.state} style={{ color: 'var(--text-muted)' }}>
+            <strong style={{ color: 'var(--text-secondary)' }}>{l.state}</strong> — {l.means}
+          </span>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+/** A gap, drawn to be seen. A blank cell reads as zero; this must not. */
+function NotHeldCell({ why }: { why: string }) {
+  return (
+    <span title={why}
+      className="inline-block text-[11px] font-semibold px-2 py-0.5 rounded"
+      style={{ color: 'var(--status-warning)', background: 'var(--surface-2)',
+               border: '1px dashed var(--status-warning)' }}>
+      not held
+    </span>
   )
 }
 

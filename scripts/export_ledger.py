@@ -451,6 +451,111 @@ def totals(db, cov):
     return out
 
 
+def gross_budget(db, fy=2026, period=12):
+    """The school budget as it would look if every source of money were on the page.
+
+    THE POINT OF THIS TABLE IS ITS EMPTY COLUMNS.
+
+    The district publishes a budget that is NET: each line is what the town must raise
+    after grants, fees and reimbursements have paid for part of the thing. A line reading
+    $20,000 may be a $220,000 line with $200,000 of grant behind it, and nothing in the
+    document marks it. So this rebuilds the same budget with the other money beside it --
+    and where that money is not held, says so in the cell rather than leaving a reader to
+    assume the town's share is the whole cost.
+
+    Every row is in one of three states, and they must stay distinguishable:
+
+      known        we hold the figure and can name the document
+      not held     we know money of this kind exists and cannot yet attribute it
+      none found   we looked and there is no other funding for this line
+
+    `none found` is deliberately NOT the default. Defaulting to it would turn "we have not
+    checked" into "there is nothing there", which is the whole error this table exists to
+    prevent. Until the fund-level detail arrives, every offset cell is `not held`.
+
+    The net column reconciles to the district's own published appropriation, so the
+    budget the district publishes is directly derivable from this table -- which is what
+    makes it checkable rather than a parallel invention.
+    """
+    accounts = rows(db, """SELECT a.org, a.object, a.name, a.account_id,
+                                  l.original, l.transfers, l.revised, l.expended,
+                                  l.encumbered, l.available, l.doc_id
+                           FROM ledger_snapshot l JOIN account a USING (account_id)
+                           WHERE l.fy=? AND l.period=? AND a.dept='300'
+                             AND a.level='account'
+                           ORDER BY a.org, a.object""", fy, period)
+
+    # Money we KNOW was spent on the schools outside the general fund, by fund. It cannot
+    # be attributed to a line, so it sits below the table rather than being spread across
+    # it. Spreading it in proportion would look right and be invented.
+    unattributed = rows(db, """SELECT fa.fund, f.name, f.kind, f.restriction,
+                                      fa.revenue, fa.salaries, fa.expenditure,
+                                      fa.closing_balance, fa.doc_id
+                               FROM fund_activity fa LEFT JOIN fund f ON f.fund = fa.fund
+                               WHERE fa.fy = ?
+                               ORDER BY (fa.salaries + fa.expenditure) DESC""", fy)
+    for u in unattributed:
+        u['spent'] = round((u['salaries'] or 0) + (u['expenditure'] or 0), 2)
+
+    grants = rows(db, """SELECT fy, kind, name, amount, owner, doc_id
+                         FROM grant_award WHERE fy = ? ORDER BY amount DESC""", str(fy))
+
+    out = []
+    for a in accounts:
+        out.append(dict(
+            org=a['org'], object=a['object'], label=a['name'],
+            accountId=a['account_id'],
+            # The town's side: held, and reconciling to the published appropriation.
+            net=dict(state='known', appropriated=a['original'], transfers=a['transfers'],
+                     revised=a['revised'], spent=a['expended'],
+                     encumbered=a['encumbered'], unspent=a['available'],
+                     docId=a['doc_id']),
+            # Every other source. Not held for any line, for any year, so far.
+            offsets=dict(state='not held', items=[],
+                         blockedBy='Fund-level spending detail for the school grant, '
+                                   'revolving and school choice funds. The same MUNIS '
+                                   'report at a Fund other than 0100.'),
+            gross=dict(state='unknown',
+                       note='Cannot be computed until the offsets above are held. The '
+                            'town’s share is a floor, never the cost.'),
+        ))
+
+    net_appropriated = sum(a['original'] or 0 for a in accounts)
+    net_spent = sum(a['expended'] or 0 for a in accounts)
+    known_outside = sum(u['spent'] for u in unattributed)
+
+    return dict(
+        fy=fy, period=period,
+        asOf=('Period %d — the books are not closed. Period 13 is the year-end close, '
+              'after purchase orders are cleared.' % period),
+        rows=out,
+        unattributed=unattributed,
+        grants=grants,
+        totals=dict(
+            netAppropriated=round(net_appropriated, 2),
+            netSpent=round(net_spent, 2),
+            knownOutsideGeneralFund=round(known_outside, 2),
+            grossFloor=round(net_spent + known_outside, 2),
+            grossFloorNote=('A FLOOR, not a total. It adds what the town spent to the '
+                            'non-general-fund spending we happen to hold, and we do not '
+                            'hold all of it — grant funds are only partly visible and no '
+                            'year is complete.'),
+            attributableToLines=0,
+            attributableNote=('None of the money outside the general fund can be attached '
+                              'to a budget line. Attributing it in proportion to line '
+                              'size would look right and be invented.'),
+        ),
+        legend=[
+            dict(state='known', means='We hold the figure and can name the document.'),
+            dict(state='not held', means='Money of this kind exists and we cannot yet '
+                                         'attribute it. This is not zero.'),
+            dict(state='none found', means='Checked, and there is no other funding for '
+                                           'this line. Never assumed.'),
+            dict(state='unknown', means='Cannot be computed from what is held.'),
+        ],
+    )
+
+
 def ledger_departments(db):
     return rows(db, """SELECT a.dept, a.name, l.fy, l.period, l.original, l.transfers,
                               l.revised, l.expended, l.encumbered, l.available,
@@ -494,6 +599,7 @@ def main():
         lines=line_series(db),
         totals=totals(db, cov),
         departments=ledger_departments(db),
+        grossBudget=gross_budget(db),
         funding=funding(db),
         meta=dict(
             commit=commit or None,
