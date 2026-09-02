@@ -533,6 +533,16 @@ GROUPS = [
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '
              'one-off is doing to the rate, and what it risks for FY28. Budget columns '
              'only; no actual spending is used anywhere in it.'),
+            ('analyses/fy26-closeout.md', 'FY26, as the books stood in June', 2,
+             'The first account-level ledger this project has held, read line by line. '
+             'The school department was $482,101 under budget at period 12 \u2014 the '
+             'small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 '
+             'overspent across 56. Carries the kindergarten paraprofessional question: the '
+             'FY26 approved budget published a \u2212100% cut to that line, $99,064 was '
+             'spent on it anyway with no appropriation and no transfer, and three readings '
+             'fit the record equally well. Period 12 is NOT the year-end close, so nothing '
+             'in it is a surplus. Every figure is recomputed by '
+             'scripts/verify_fy26_closeout.py; a PDF is published beside it.'),
             ('analyses/budget-vs-actual.md', 'Budget versus actual', 2,
              'Did what the town budgeted match what it spent? Written for two readers \u2014 '
              'plain terms and the evidence, side by side. Deliberately separate from the '
