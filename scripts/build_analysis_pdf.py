@@ -59,6 +59,10 @@ pre { font: 8.5pt/1.4 'SF Mono', Menlo, Consolas, monospace; background: #f4f0e8
       padding: 7pt 9pt; border-radius: 3px; overflow-x: hidden;
       white-space: pre-wrap; word-break: break-word; page-break-inside: avoid; }
 hr { border: 0; border-top: 1px solid #d8cfc0; margin: 16pt 0; }
+figure { margin: 12pt 0 14pt; page-break-inside: avoid; }
+figure svg { width: 100%; height: auto; display: block; }
+figcaption { font-family: -apple-system, Helvetica, sans-serif; font-size: 8pt;
+             color: #6b5f4f; margin-top: 4pt; line-height: 1.45; }
 strong { font-weight: 700; }
 .masthead { border-bottom: 2.5px solid #16130f; padding-bottom: 8pt; margin-bottom: 14pt; }
 .kicker { font-family: -apple-system, Helvetica, sans-serif; font-size: 8pt;
@@ -79,10 +83,27 @@ def inline(t):
     return t
 
 
-def to_html(md, title, stamp):
+def to_html(md, title, stamp, base):
     out, i, lines = [], 0, md.split('\n')
     while i < len(lines):
         ln = lines[i]
+
+        # An image line is inlined, not linked. The PDF has to carry the chart itself:
+        # a <img src> to a relative path resolves against the temp file's directory and
+        # would silently render as nothing at all, which is the worst outcome for a
+        # figure -- a page that looks finished with a hole where the evidence was.
+        m = re.match(r'^!\[([^\]]*)\]\(([^)]+)\)\s*$', ln)
+        if m:
+            alt, src = m.group(1), m.group(2)
+            path = os.path.join(base, src)
+            if src.endswith('.svg') and os.path.exists(path):
+                out.append('<figure>%s%s</figure>' % (
+                    open(path, encoding='utf-8').read(),
+                    '<figcaption>%s</figcaption>' % inline(alt) if alt else ''))
+            else:
+                out.append('<p><em>[missing figure: %s]</em></p>' % html.escape(src))
+            i += 1
+            continue
 
         if ln.startswith('    ') and ln.strip():             # indented code block
             block = []
@@ -195,7 +216,7 @@ def build(name):
     os.makedirs(OUT, exist_ok=True)
     tmp = os.path.join(OUT, name + '.print.html')
     with open(tmp, 'w', encoding='utf-8') as fh:
-        fh.write(to_html(md, title, stamp))
+        fh.write(to_html(md, title, stamp, SRC))
 
     if not CHROME:
         print('no Chrome found; wrote %s only' % os.path.relpath(tmp, ROOT))

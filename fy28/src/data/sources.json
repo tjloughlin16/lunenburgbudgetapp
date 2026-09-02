@@ -1274,9 +1274,9 @@
      "stars": 2,
      "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
      "kind": "Notes",
-     "bytes": 20736,
+     "bytes": 21462,
      "url": "/docs/analyses/fy26-closeout.md",
-     "count": 435,
+     "count": 448,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout.md"
     },
@@ -1286,9 +1286,9 @@
      "stars": 2,
      "what": "The same account-level ledger read for the other 67 departments. Snow removal cost $1,038,092 against an appropriation of $355,571 — 292% — while the town’s $185,000 Reserve Fund went entirely unused. $3.3M left the operating budget for capital and stabilization. And $1,262,376 of school retiree health insurance sits in a town department, invisible in the school budget, which is part of why DESE’s all-funds figure exceeds the appropriation. The town overspends on 18 of 376 accounts where the schools overspend on 57 of 259 — a fact with four explanations and no way here to choose between them. Period 12, so nothing in it is a surplus. Verified by scripts/verify_fy26_closeout_town.py.",
      "kind": "Notes",
-     "bytes": 12761,
+     "bytes": 13481,
      "url": "/docs/analyses/fy26-closeout-town.md",
-     "count": 287,
+     "count": 300,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout-town.md"
     },
@@ -1303,6 +1303,66 @@
      "count": 150,
      "unit": "lines",
      "textUrl": "/docs/analyses/peer-districts.md"
+    },
+    {
+     "path": "analyses/charts/fy26-town-variance.svg",
+     "title": "FY26 town: the biggest misses, both directions",
+     "stars": 1,
+     "what": "The same diverging bar for the town side, where 18 accounts overspend against the school department’s 56.",
+     "kind": "SVG",
+     "bytes": 4686,
+     "url": "/docs/analyses/charts/fy26-town-variance.svg",
+     "textUrl": "/docs/analyses/charts/fy26-town-variance.svg"
+    },
+    {
+     "path": "analyses/charts/fy26-school-variance.svg",
+     "title": "FY26 school department: the biggest misses, both directions",
+     "stars": 1,
+     "what": "A diverging bar chart, the seven largest overspends and the seven largest underspends on one zero line. Deliberately not a pie: two of the three questions these charts answer are about VARIANCE, a signed quantity, and a pie cannot show a negative. Colours were run through a palette validator rather than chosen by eye. Rebuild with scripts/build_closeout_charts.py.",
+     "kind": "SVG",
+     "bytes": 4677,
+     "url": "/docs/analyses/charts/fy26-school-variance.svg",
+     "textUrl": "/docs/analyses/charts/fy26-school-variance.svg"
+    },
+    {
+     "path": "analyses/charts/fy26-town-spend.svg",
+     "title": "FY26 town: where the money went",
+     "stars": 1,
+     "what": "The ten largest town accounts by spending.",
+     "kind": "SVG",
+     "bytes": 3254,
+     "url": "/docs/analyses/charts/fy26-town-spend.svg",
+     "textUrl": "/docs/analyses/charts/fy26-town-spend.svg"
+    },
+    {
+     "path": "analyses/charts/fy26-school-spend.svg",
+     "title": "FY26 school department: where the money went",
+     "stars": 1,
+     "what": "The ten largest accounts by spending, with everything else folded into one recessive bar.",
+     "kind": "SVG",
+     "bytes": 3224,
+     "url": "/docs/analyses/charts/fy26-school-spend.svg",
+     "textUrl": "/docs/analyses/charts/fy26-school-spend.svg"
+    },
+    {
+     "path": "analyses/charts/fy26-town-budget.svg",
+     "title": "FY26 town: what happened to the budget",
+     "stars": 1,
+     "what": "The same stacked bar for the other 67 departments.",
+     "kind": "SVG",
+     "bytes": 1861,
+     "url": "/docs/analyses/charts/fy26-town-budget.svg",
+     "textUrl": "/docs/analyses/charts/fy26-town-budget.svg"
+    },
+    {
+     "path": "analyses/charts/fy26-school-budget.svg",
+     "title": "FY26 school department: what happened to the budget",
+     "stars": 1,
+     "what": "One stacked bar — spent, encumbered, unspent — as parts of the revised budget. The unspent slice is 1.8% and is the one the headline reports.",
+     "kind": "SVG",
+     "bytes": 1835,
+     "url": "/docs/analyses/charts/fy26-school-budget.svg",
+     "textUrl": "/docs/analyses/charts/fy26-school-budget.svg"
     }
    ]
   },
@@ -3799,9 +3859,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 294,
+  "documents": 300,
   "groups": 17,
-  "bytes": 364617716,
+  "bytes": 364638699,
   "loadBearing": 56
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -533,6 +533,32 @@ GROUPS = [
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '
              'one-off is doing to the rate, and what it risks for FY28. Budget columns '
              'only; no actual spending is used anywhere in it.'),
+            ('analyses/charts/fy26-school-budget.svg',
+             'FY26 school department: what happened to the budget', 1,
+             'One stacked bar \u2014 spent, encumbered, unspent \u2014 as parts of the '
+             'revised budget. The unspent slice is 1.8% and is the one the headline '
+             'reports.'),
+            ('analyses/charts/fy26-school-spend.svg',
+             'FY26 school department: where the money went', 1,
+             'The ten largest accounts by spending, with everything else folded into one '
+             'recessive bar.'),
+            ('analyses/charts/fy26-town-budget.svg',
+             'FY26 town: what happened to the budget', 1,
+             'The same stacked bar for the other 67 departments.'),
+            ('analyses/charts/fy26-town-variance.svg',
+             'FY26 town: the biggest misses, both directions', 1,
+             'The same diverging bar for the town side, where 18 accounts overspend '
+             'against the school department\u2019s 56.'),
+            ('analyses/charts/fy26-town-spend.svg',
+             'FY26 town: where the money went', 1,
+             'The ten largest town accounts by spending.'),
+            ('analyses/charts/fy26-school-variance.svg',
+             'FY26 school department: the biggest misses, both directions', 1,
+             'A diverging bar chart, the seven largest overspends and the seven largest '
+             'underspends on one zero line. Deliberately not a pie: two of the three '
+             'questions these charts answer are about VARIANCE, a signed quantity, and a '
+             'pie cannot show a negative. Colours were run through a palette validator '
+             'rather than chosen by eye. Rebuild with scripts/build_closeout_charts.py.'),
             ('analyses/fy26-closeout-town.md',
              'FY26 on the town side, as the books stood in June', 2,
              'The same account-level ledger read for the other 67 departments. Snow '

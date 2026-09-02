@@ -41,6 +41,19 @@ paid for part of the thing — so none of this says what anything costs.
 
 ---
 
+![What happened to the FY26 budget. The unspent slice is the one the headline reports, and it is the smallest of the three.](charts/fy26-school-budget.svg)
+
+![The largest misses in both directions. The net figure is the difference between these two arms, not a description of either.](charts/fy26-school-variance.svg)
+
+![Where the money actually went, largest accounts first.](charts/fy26-school-spend.svg)
+
+**These three pictures are the whole document in outline.** The first shows that almost
+all of the budget was spent. The second shows that the small leftover is the residue of
+large movements in both directions. The third shows what the money bought. Everything
+below is those three facts, itemised and sourced.
+
+---
+
 ## 1. The headline number is a residual, not a result
 
 ### In plain terms
