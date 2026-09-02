@@ -21,8 +21,12 @@ export const VERSION = R.current
 export const UPDATED = R.updated
 
 /** The tag as a reader says it. Git calls it `v2`; a sentence calls it "Version 2", and
- *  "Version v2" is neither. Anything that is not a plain vN tag is printed as it stands. */
-const LABEL = /^v\d+$/.test(R.current) ? `Version ${R.current.slice(1)}` : R.current
+ *  "Version v2" is neither. Anything that is not a plain vN tag is printed as it stands.
+ *
+ *  A point release counts as plain. `v9.1` is a fix to what v9 shipped rather than a new
+ *  build to re-read, and it should read "Version 9.1" like any other -- without this it
+ *  fell through to the raw tag and the footer said `v9.1` beside prose saying Version 9. */
+const LABEL = /^v\d+(\.\d+)?$/.test(R.current) ? `Version ${R.current.slice(1)}` : R.current
 
 /** An ISO date as somebody says it out loud, not as a machine stores it.
  *

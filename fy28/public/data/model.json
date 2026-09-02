@@ -1002,9 +1002,23 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v9",
+  "current": "v9.1",
   "updated": "2026-09-02",
   "items": [
+   {
+    "tag": "v9.1",
+    "date": "2026-09-02",
+    "title": "The archive was described to assistants but not linked to them",
+    "short": "every published address, as a link",
+    "headline": "Every file this site publishes is now reachable by following links from any page. It sounds like nothing and it was the whole reason assistants kept reporting that this site does not hold the meeting minutes.",
+    "changes": [
+     "An assistant asked to look up what a board discussed would read /llms.txt, find the exact file it needed named there, and then not fetch it. Assistants commonly refuse to request a URL that has not appeared in something they already loaded \u2014 a sensible protection, since it is what stops a fetched page from talking one into requesting somewhere else. /llms.txt is plain text, so the addresses in it were text rather than links, and authorised nothing.",
+     "So the site described its archive thoroughly and linked almost none of it. Measured across all eighteen pages before this build: the School Committee bundle and the board index appeared in no link anywhere on the site, and the only /minutes link that existed pointed at a directory, which correctly returns an error. The one site-wide pointer at the meeting archive was a dead end.",
+     "There is now a page \u2014 /agents \u2014 listing every published address as a link: all forty board bundles with their document counts, every data file, the API, and the archive itself. It is linked from the footer of every page, so anything that can read one page can reach all of it in two steps.",
+     "The error page for a mistaken /minutes address now answers in HTML when the caller reads HTML. It said the right thing before and said it in plain text, which meant it told an assistant exactly what to fetch while leaving it unable to act on the answer.",
+     "Nothing a person sees has changed, and no figure has moved. This is a fix to who can read what was already published."
+    ]
+   },
    {
     "tag": "v9",
     "date": "2026-09-02",
