@@ -22,12 +22,27 @@ FAILS = []
 
 
 def present(label, value, dp=2):
-    """Assert a value DERIVED from the database appears in the document."""
+    """Assert a value DERIVED from the database appears in the document.
+
+    Matched on a WORD BOUNDARY, not as a bare substring. A plain `in` check passed the
+    count 61 because the digits sit inside $25,613,679.23 and inside the account code
+    S2072061 -- so a check that was meant to prove a small integer had been written down
+    was passing on any document at all. Small counts are exactly where this matters,
+    which is exactly where the naive check was useless.
+    """
+    # The MAGNITUDE is asserted, not the sign. The document writes a negative as
+    # "−$90,769.62" -- a typographic minus, then a currency symbol -- and a needle of
+    # "-90,769.62" matches none of that. Whether a figure is a loss or a gain is the
+    # prose's job; this checks that the number itself is on the page.
     if isinstance(value, float):
-        needle = f'{value:,.{dp}f}' if dp else f'{value:,.0f}'
+        needle = f'{abs(value):,.{dp}f}' if dp else f'{abs(value):,.0f}'
     else:
-        needle = f'{value:,}' if isinstance(value, int) else str(value)
-    ok = needle in PLAIN
+        needle = f'{abs(value):,}' if isinstance(value, int) else str(value)
+    # Bounded so a small count cannot match inside a bigger figure -- 61 was passing on
+    # the digits inside $25,613,679.23 -- while still allowing the $ that precedes every
+    # money figure in the document.
+    ok = re.search(r'(?<![\d,.])' + re.escape(needle) + r'(?![\d,]*\d)',
+                   PLAIN) is not None
     if not ok:
         FAILS.append(f'{label}: derived {needle} is not in the document')
     print(f"  {'OK  ' if ok else 'GONE'}  {label:<52} {needle}")
@@ -184,11 +199,47 @@ def main():
                     AND a.name IN ('PSYCHSALAR','SOCWORKSAL')""")
     present('all eight accounts, unspent', float(both['u']), dp=0)
 
-    print('\n§6  What none of this can see')
+    print('\n§5  The transfers, itemized')
+    tin = one("""SELECT COUNT(*) n, SUM(transfers) s FROM ledger_snapshot l
+                 JOIN account a USING (account_id)
+                 WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND transfers > 0""")
+    tout = one("""SELECT COUNT(*) n, SUM(-transfers) s FROM ledger_snapshot l
+                  JOIN account a USING (account_id)
+                  WHERE l.fy=2026 AND l.period=12 AND a.dept='300' AND transfers < 0""")
+    present('accounts given budget', tin['n'])
+    present('budget added', float(tin['s']))
+    present('accounts that gave budget up', tout['n'])
+    present('budget taken away', float(tout['s']))
+    present('accounts that moved at all', tin['n'] + tout['n'])
+    # The salary reserve giving up everything is the example the section turns on.
+    res = one("""SELECT original, transfers, revised FROM ledger_snapshot l
+                 JOIN account a USING (account_id)
+                 WHERE l.fy=2026 AND l.period=12 AND a.org='S0990991'""")
+    present('the school salary reserve gave up', float(res['transfers']))
+    if float(res['revised']) != 0:
+        FAILS.append('the salary reserve no longer ends at zero; §5 says it does')
+
+    print('\n§6  The funds outside the general fund')
     outside = one("""SELECT COUNT(*) n, SUM(salaries + expenditure) s
-                     FROM fund_activity WHERE fy=2026""")
-    present('funds outside the general fund', outside['n'])
+                     FROM fund_activity
+                     WHERE fy=2026 AND (salaries + expenditure) > 0""")
+    present('funds that actually spent', outside['n'])
     present('spent outside the general fund', float(outside['s']), dp=0)
+    # Every fund the section itemises, asserted individually.
+    for fund in ('2200', '1312', '2813', '2814', '1301', '1305', '2778', '1308',
+                 '2672', '1306', '2640', '1311'):
+        f = one("""SELECT revenue, salaries + expenditure AS spent, closing_balance
+                   FROM fund_activity WHERE fy=2026 AND fund=?""", fund)
+        if f is None:
+            FAILS.append(f'fund {fund} is no longer in the data; §6 itemises it')
+            continue
+        present(f'fund {fund} spent', float(f['spent']), dp=0)
+    # The period these come from is NOT period 12, and the document has to say so.
+    per = one('SELECT DISTINCT period FROM fund_activity WHERE fy=2026')
+    if per['period'] != 9:
+        FAILS.append('fund_activity is no longer period 9; §6 says "through 31 March"')
+    if 'through 31 March' not in PLAIN:
+        FAILS.append('§6 must state that its figures are a different period from §1')
 
     print('\n§0  The document must not call any of this a surplus')
     for banned in (r'\bthe surplus was\b', r'\bFY26 surplus of\b'):
