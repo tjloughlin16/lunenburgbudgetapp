@@ -421,15 +421,15 @@ async function linkGraph() {
   const llms = await (await fetch(root + '/llms.txt')).text()
   const promised = [...new Set(
     [...llms.matchAll(/https:\/\/lunenburgbudgetproject\.org(\/[^\s)\]<>"']+)/g)]
-      .map(m => m[1].replace(/[.,]$/, '')))]
-    // A pattern with a placeholder in it is documentation, not an address.
-    .filter(u => !u.includes('<') && !u.includes('*'))
+      .map(m => m[1].replace(/[.,`)\]]+$/, '')))]
+    // A pattern with a placeholder is documentation, and a bare prefix ending in `/` is a
+    // directory rather than a file. Neither is an address anything can fetch.
+    .filter(u => !u.includes('<') && !u.includes('*') && !u.endsWith('/'))
 
   console.log(`\nlink graph — ${promised.length} URLs named in llms.txt, ` +
     `${reachable.size} reachable in two hops from /\n`)
 
   const orphans = promised.filter(u => !reachable.has(u))
-  for (const u of promised.slice(0, 0)) void u
   if (orphans.length) {
     console.log(`${orphans.length} named in llms.txt and linked from nowhere:`)
     for (const u of orphans) console.log(`  ${u}`)

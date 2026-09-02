@@ -99,10 +99,11 @@ about right, and it is four fifths of the underspend. The dollars are big becaus
 bases are big, not because anything went wrong.
 
 **But the people line is not quiet underneath.** Its 1.1% is two role groups pulling hard
-in opposite directions: **paraprofessionals $210,082 over** with not one of seven accounts
-under, and **psychologists and social workers $194,718 under** with not one of eight
-accounts over. They land $15,363 apart. Teachers — $12.3 million, the largest and least
-discretionary payroll in the town — came in at 1.3%.
+in opposite directions: **paraprofessionals $210,082 over**, with every one of seven
+accounts over, and **psychologists and social workers $194,718 under** — though that side
+is three accounts rather than a pattern, one of which paid nobody all year. They land
+$15,363 apart. Teachers — $12.3 million, the largest and least discretionary payroll in
+the town — came in at 1.3%.
 
 That pair is the most striking thing in the year and the document does **not** read it as
 one substituting for the other. Two lines moving opposite ways by similar amounts is the
@@ -255,10 +256,20 @@ million budgeted, **$210,082 over** — including the $93,691 kindergarten line 
 budget at all (§3). This is the only role group in the district where not one account came
 in under.
 
-**Student support posts underspent by a third.** Psychologists at 33.2% and social workers
-at 26.8%, eight accounts between them, **not one of which went over.** §4 shows what that
-looks like account by account: three of four psychologist lines paid in full and the
-fourth paid nothing.
+**The student support underspend is three accounts, not a pattern.** Psychologists at
+33.2% and social workers at 26.8% look like a group effect, and they are not. Of the eight
+accounts, **five spent their budget or slightly over**; the whole $194,718 is:
+
+| account | | budget | spent | left |
+|---|---|---:|---:|---:|
+| `S2072061` | PSYCHSALAR — spent nothing all year | $98,784 | $0 | +$98,784 |
+| `S2066651` | SOCWORKSAL | $90,212 | $20,877 | +$69,335 |
+| `S2055651` | SOCWORKSAL | $92,939 | $63,214 | +$29,725 |
+
+The other five: two social worker lines spent **exactly** their budget to the dollar, and
+three psychologist lines went slightly **over** — by $200, $200 and $2,726. So this is not
+support staffing coming in light across the board. It is one post that paid nobody and two
+that paid somebody for part of a year.
 
 ### The two that nearly cancel — and what that does not mean
 
@@ -277,10 +288,16 @@ establishes that**, and this is the third time in this document the same trap ha
 two lines moving in opposite directions by similar amounts is precisely the inference
 `CLAUDE.md` records as having shipped from this project before and been wrong.
 
-What is established is four numbers. Other readings fit them equally well — the support
-posts may have been budgeted for a full year and filled late, the paraprofessional
-overrun may be contractual step increases or hours, and the two may have nothing to do
-with each other at all. Dollars are not people, and no headcount is published.
+What is established is four numbers, and the shapes underneath them are not even
+symmetrical: the paraprofessional overrun is **every account in the group**, while the
+support underspend is **three accounts out of eight** with the other five at or slightly
+over budget. A group-wide movement and three individual lines are not the same kind of
+thing, and reading them as two halves of one trade requires ignoring that.
+
+Other readings fit equally well — the support posts may have been budgeted for a full year
+and filled late, the paraprofessional overrun may be contractual step increases or hours,
+and the two may have nothing to do with each other. Dollars are not people, and no
+headcount is published.
 
 ### The number that separates the two stories
 

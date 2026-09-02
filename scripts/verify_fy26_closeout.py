@@ -165,15 +165,27 @@ def main():
     present('student support staff, left', float(pair['sup']), dp=0)
     present('paraprofessionals, over', float(pair['para']), dp=0)
     present('the two together', float(pair['sup']) + float(pair['para']), dp=0)
-    wrong_way = one("""SELECT
-        SUM(CASE WHEN a.object IN ('511023','511024') AND l.available < -0.5 THEN 1 ELSE 0 END) sup_over,
-        SUM(CASE WHEN a.object IN ('511203','511103') AND l.available > 0.5 THEN 1 ELSE 0 END) para_under
+    # The two groups are NOT symmetrical, and an earlier draft claimed they were --
+    # "not one of eight support accounts went over" was wrong, three of four
+    # psychologist accounts are over. The asymmetry is now the point of the paragraph,
+    # so it is what gets asserted.
+    shape = one("""SELECT
+        SUM(CASE WHEN a.object IN ('511203','511103') AND l.available < -0.5 THEN 1 ELSE 0 END) para_over,
+        SUM(CASE WHEN a.object IN ('511203','511103') THEN 1 ELSE 0 END) para_n,
+        SUM(CASE WHEN a.object IN ('511023','511024') AND l.available > 0.5 THEN 1 ELSE 0 END) sup_under,
+        SUM(CASE WHEN a.object IN ('511023','511024') THEN 1 ELSE 0 END) sup_n
         FROM ledger_snapshot l JOIN account a USING (account_id)
         WHERE l.fy=2026 AND l.period=12 AND a.dept='300'""")
-    if wrong_way['sup_over'] or wrong_way['para_under']:
-        FAILS.append('§1a says not one support account went over and not one para account '
-                     'came in under; that is no longer true')
-    print('  OK    neither group has an account moving the other way')
+    if shape['para_over'] != shape['para_n']:
+        FAILS.append('§1a says every paraprofessional account went over; %d of %d do'
+                     % (shape['para_over'], shape['para_n']))
+    print('  OK    every paraprofessional account (%d of %d) is over'
+          % (shape['para_over'], shape['para_n']))
+    if shape['sup_under'] != 3:
+        FAILS.append('§1a says the support underspend is three accounts of eight; it is '
+                     'now %d of %d' % (shape['sup_under'], shape['sup_n']))
+    print('  OK    the support underspend is %d accounts of %d, not a group pattern'
+          % (shape['sup_under'], shape['sup_n']))
 
     print('\n§2  The biggest movers')
     # An org holds SEVERAL accounts -- S3991742 alone carries six, from ELEC CHGS to

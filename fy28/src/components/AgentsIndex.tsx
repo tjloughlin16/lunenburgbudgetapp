@@ -1,4 +1,5 @@
 import MANIFEST from '../data/agent-manifest.json'
+import DATA_FILES from '../data/agent-data-files.json'
 
 /** Every machine-readable address on this site, as links.
  *
@@ -81,6 +82,21 @@ export function AgentsIndex() {
             <span className="text-sm" style={{ color: 'var(--text-muted)' }}> · {b.docs} documents</span>
           </li>
         ))}
+      </ul>
+
+      <h2 className="text-lg font-bold mb-3">Every published data file</h2>
+      <p className="mb-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
+        The same list <Link path="/llms.txt" /> carries, with the same descriptions —
+        both are generated from <span style={mono}>scripts/build_agent_endpoints.py</span>,
+        so neither can describe a file the other does not.
+      </p>
+      <ul className="mb-8 list-none pl-0">
+        {DATA_FILES.map((d) => (
+          <Row key={d.name} path={`/data/${d.name}`}
+               note={`${d.note} (${(d.bytes / 1e6).toFixed(1)} MB)`} />
+        ))}
+        <Row path="/data/lunenburg.db"
+             note="the SQLite database everything on this site is derived from. Its sha256 is stated in /api/index, so you can check you got the bytes we published." />
       </ul>
 
       <h2 className="text-lg font-bold mb-3">Everything else</h2>
