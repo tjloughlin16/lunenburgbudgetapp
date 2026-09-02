@@ -115,7 +115,48 @@ def main():
       'asked for in those words.')
     w('')
 
-    w('## 3. The back years, in the same form')
+    w('## 3. The ones that answer a specific open question')
+    w('')
+    w('These are narrow and each settles something the analysis currently has to leave '
+      'open. They are different reports from the one above and have to be asked for by '
+      'name.')
+    w('')
+    w('**a. The FY26 year-end transfer schedule**, by department and account, with the '
+      'authority for each.')
+    w('')
+    w('The ledger shows 82 school accounts whose budget changed during FY26 — $394,929 '
+      'added, $309,839 taken away, a net of $85,090 into the department. **It records '
+      'that an account changed and never records the counterparty**, so nothing we hold '
+      'can say what any of it was transferred from. Town-wide net transfers are '
+      "$2,826,046, so this is not a closed system where one department's gain is "
+      "another's loss.")
+    w('')
+    w('**b. Account Detail / journal export for accounts `S2032121` and `S2032131`, '
+      'FY2026** — the kindergarten paraprofessional accounts.')
+    w('')
+    w('The year-to-date report is cumulative: one number per account, no dates, no '
+      'vendors, no warrants. **The Town has already produced exactly this kind of export '
+      'once** — the three `Account_Detail` workbooks for fund 1301 that came back from '
+      'the June 2026 records request, which carry effective date, posting date, journal '
+      'number, purchase order reference, check number, warrant and vendor for every '
+      'posting.')
+    w('')
+    w('These two accounts were budgeted at **$0** in the FY26 approved budget, which '
+      'published the cut as −100%, and then spent **$99,064** with no appropriation and '
+      'no transfer covering it. Two dated snapshots put roughly $59,709 of that by mid '
+      'March and the remainder by 30 June. A journal export would show whether the '
+      'pattern is a payroll running against a real position, or something else.')
+    w('')
+    w('**c. Finance Committee minutes from 14 July 2026 onward.**')
+    w('')
+    w('Year-end transfers were tabled on 11 June for want of documents — *"The documents '
+      'needed on this topic were not provided but should be available for the next '
+      'meeting"* — and returned to the 14 July agenda. The archive holds Finance '
+      'Committee agendas through 27 August and minutes only through 11 June, so four '
+      'meetings have an agenda and no minutes, and the first of them is the one that '
+      'took up transfers.')
+    w('')
+    w('## 4. The back years, in the same form')
     w('')
     w(f'{GLYTDBUD}.')
     w('')
@@ -134,7 +175,7 @@ def main():
 
     w('---')
     w('')
-    w('## Why each one matters, in one line')
+    w('## Why each report matters, in one line')
     w('')
     for rd in town_rows:
         w(f"- **{rd['label']}** — {rd['why']}")
