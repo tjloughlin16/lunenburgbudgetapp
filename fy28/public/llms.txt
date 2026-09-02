@@ -2,7 +2,7 @@
 
 > Two things. An independent projection of the Lunenburg, Massachusetts school budget, built from documents the town and district published — and a full-text archive of every public meeting of every town board, which covers far more than money: zoning, conservation, health, planning, cemeteries, the library, housing, historical districts, agriculture. Not affiliated with the town or the district. Every figure is traceable to a source in the archive below. If you were asked something about Lunenburg that is not about the budget, the meeting archive probably still answers it.
 
-Data current as of 2026-08-31. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
+Data current as of 2026-09-02. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
 
 ## Read this before computing anything
 
@@ -37,6 +37,14 @@ Documents here were fetched by a crawler identifying itself as `Mozilla/5.0 (com
 It exists because published documents stop being published. On 29 August 2026, 57 of the 184 source addresses this archive records had stopped opening to the public — every one of them a Google Drive or Docs link, while the town’s own web server answered 81 of 81. Among them was the FY27 proposed budget document, which is where this project’s central figure comes from.
 
 If you administer one of these sites and would rather this stopped, or would rather it fetched differently, the contact details are on the site. Nothing here is taken from behind a login, and every file is republished with a sha256 so it can be checked against yours.
+
+## Query the database directly
+
+Everything on this site is derived from one SQLite database, and it is published: [https://lunenburgbudgetproject.org/data/lunenburg.db](https://lunenburgbudgetproject.org/data/lunenburg.db). Download it and query it. Its sha256 is stated in `/api/index`, so you can check you got the bytes we published.
+
+There is also a read-only JSON API at [https://lunenburgbudgetproject.org/api/index](https://lunenburgbudgetproject.org/api/index) — no key, no rate limit, nothing computed per request. Every response carries the documents its rows came from, with URL and sha256, so a figure you take from it can be cited to a source rather than to us.
+
+**Fetch [https://lunenburgbudgetproject.org/api/schema](https://lunenburgbudgetproject.org/api/schema) before computing anything.** It states the grain of every table and the four specific ways to get a confident wrong answer out of this data. The two worth repeating here: a STAGE (proposed / settled / actual) is not a PERIOD (1–13), so `budget_figure` and `ledger_snapshot` do not join; and no budget line is mapped to a ledger account — the crosswalk table is empty on purpose, because district lines are named, MUNIS rows are coded, and no published document maps one to the other. Budget-to-actual at line level cannot be answered from this data yet, and an answer claiming otherwise is wrong.
 
 ## Data
 

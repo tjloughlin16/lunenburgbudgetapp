@@ -252,6 +252,28 @@ def main():
         'is taken from behind a login, and every file is republished with a sha256 so it '
         'can be checked against yours.',
         '',
+        '## Query the database directly',
+        '',
+        'Everything on this site is derived from one SQLite database, and it is '
+        f'published: [{SITE}/data/lunenburg.db]({SITE}/data/lunenburg.db). Download it '
+        'and query it. Its sha256 is stated in `/api/index`, so you can check you got '
+        'the bytes we published.',
+        '',
+        f'There is also a read-only JSON API at [{SITE}/api/index]({SITE}/api/index) — '
+        'no key, no rate limit, nothing computed per request. Every response carries the '
+        'documents its rows came from, with URL and sha256, so a figure you take from it '
+        'can be cited to a source rather than to us.',
+        '',
+        f'**Fetch [{SITE}/api/schema]({SITE}/api/schema) before computing anything.** It '
+        'states the grain of every table and the four specific ways to get a confident '
+        'wrong answer out of this data. The two worth repeating here: a STAGE (proposed '
+        '/ settled / actual) is not a PERIOD (1–13), so `budget_figure` and '
+        '`ledger_snapshot` do not join; and no budget line is mapped to a ledger account '
+        '— the crosswalk table is empty on purpose, because district lines are named, '
+        'MUNIS rows are coded, and no published document maps one to the other. '
+        'Budget-to-actual at line level cannot be answered from this data yet, and an '
+        'answer claiming otherwise is wrong.',
+        '',
         '## Data',
 
         '',
