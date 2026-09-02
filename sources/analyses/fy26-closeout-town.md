@@ -285,6 +285,137 @@ half of a recode. In the school department, $99,064 is neither.
 
 ---
 
+---
+
+## 7. Money not spent on people
+
+### In plain terms
+
+The Town's explanation for the FY25 surplus was **unfilled posts**: *"significant turnover
+and unfilled positions in the facilities department resulted in unspent salaries and
+stalled maintenance projects."* Read against FY26, the town side gives a cleaner picture
+than the school side does — and it does not support the same story.
+
+Salary accounts under budget hold **$378,959**, which is the ceiling on unfilled-post
+savings. Salary accounts over budget hold $120,923, so the **net left on personnel is
+$258,036** — about 30% of the town's net underspend.
+
+**Almost none of it is a post that went unfilled all year.** Only two salary accounts
+spent nothing at all, and they hold **$4,440** between them. Everything else is a line
+that paid somebody for part of a year.
+
+### The evidence
+
+| | accounts | amount |
+|---|---:|---:|
+| Salary accounts under budget | 45 | $378,959 |
+| Salary accounts over budget | 7 | $120,923 |
+| **Net left on salaries** | **52** | **$258,036** |
+
+The largest partial spends:
+
+| department | account | budget | spent | | left |
+|---|---|---:|---:|---:|---:|
+| `170` Land Use | PB DIR | $104,911 | $28,793 | 27% | $76,118 |
+| `210` Police | SARG SALAR — sergeant salaries | $329,083 | $267,994 | 81% | $61,089 |
+| `541` Council on Aging | SALASSTMEA | $21,080 | $4,147 | 20% | $16,933 |
+| `170` Land Use | CONS ADMIN | $67,094 | $52,884 | 79% | $14,210 |
+| `541` Council on Aging | MEAL SITE | $44,973 | $30,867 | 69% | $14,106 |
+| `541` Council on Aging | OUT WORKER | $42,629 | $28,910 | 68% | $13,720 |
+| `650` Parks & Recreation | PARK SUPER | $23,208 | $13,029 | 56% | $10,179 |
+
+`PB DIR` at 27% of a $104,911 salary is the largest single personnel underspend in the
+town books, and the Land Use department also holds `CONS ADMIN` at 79%.
+
+### The FY25 explanation does not repeat in FY26
+
+The Town named **the facilities department**, and in FY26 Facilities & Grounds spent its
+salary budget **to the dollar**:
+
+| account | | budget | spent | left |
+|---|---|---:|---:|---:|
+| `SALFACDIRE` | Facilities salaries | $123,250 | $123,250 | $0 |
+| `DIR FAC SA` | Facilities director salary | $68,966 | $68,966 | $0 |
+| `SAL STAFF` | Facilities staff salaries | $46,772 | $46,772 | $0 |
+
+Three accounts, three exact matches, nothing left on any of them. **Whatever produced
+FY26's underspend, it is not the mechanism the Town identified for FY25.**
+
+### The two sides differ here as they do everywhere
+
+| | under | over | net | share of the side's net |
+|---|---:|---:|---:|---:|
+| Town salary accounts | $378,959 | $120,923 | $258,036 | 30% |
+| School salary accounts | $573,623 | $399,162 | $174,460 | 36% |
+
+Personnel is about a third of each side's underspend. But the school department has
+**38 salary accounts over budget against the town's 7**, which is the same pattern §1
+found across all accounts, concentrated in the place where it is most consequential.
+
+### What this does not show
+
+**That any post was vacant.** A partial spend is consistent with a post filled in October,
+a resignation in April, a part-time appointment, or a person appointed at a lower step,
+and nothing here separates them. A budget line is not a position.
+
+### What would settle it
+
+Budgeted positions with their fill dates, or the payroll register by account.
+
+---
+
+## 8. Which lines give their money away
+
+### In plain terms
+
+A line budgeted high and then handed to something else is doing a contingency's job
+without being called one. In FY26, **85 town accounts gave up $758,421** — two and a half
+times what the school department released, across two and a half times as many accounts.
+
+**But one year cannot show whether any of it is habitual**, and the clearest example on
+this side is not over-budgeting at all.
+
+### The evidence
+
+The accounts that gave away the largest share of what they started with:
+
+| department | account | started with | gave up | | left |
+|---|---|---:|---:|---:|---:|
+| `411` Highway | ADAPROW | $30,000 | −$30,000 | 100% | $0 |
+| `425` Traffic signs | LINE PAINT — line painting | $17,500 | −$17,500 | 100% | $0 |
+| `945` | TRAINING | $5,000 | −$5,000 | 100% | $0 |
+| `145` Treasurer | BOND ISSUA — bond issuance costs | $2,500 | −$2,500 | 100% | $0 |
+| `193` Facilities | SAL OVERTI — facilities overtime | $2,083 | −$2,083 | 100% | $0 |
+| `161` Town Clerk | SAL ELECTE — elected officials' salaries | $80,629 | −$78,466 | 97% | $2,163 |
+| `541` Council on Aging | MILEAGE | $3,800 | −$3,000 | 79% | $800 |
+
+### The largest one is a recoding, not a release
+
+`SAL ELECTE` gave up $78,466 — and in a different department, `TN CLK SAL` received
+**$80,629** and spent **$78,466**. The two match: the Town Clerk's salary moved from an
+elected-salaries line in department 161 to a Town Clerk line in department 164. Nothing
+was over-budgeted. Something was renamed, and the ledger shows it as a large transfer out
+of one line and into another.
+
+**That is the caution the whole section needs.** A line at 100% given-up looks identical
+whether it was padded, recoded, or genuinely not needed, and only the transfer schedule —
+which names the counterparty — separates them.
+
+### What this does not show
+
+**That any line is consistently over-budgeted.** Every figure above is one observation.
+The archive holds one year at account level, and `CLAUDE.md` rule 6 is explicit that a
+rate off one or two points is not a trend.
+
+**Nor which of these was a Reserve Fund transfer.** The town has declared contingencies —
+the $185,000 Reserve Fund untouched in §3, the $180,000 salary reserve that gave away
+$128,954 — and a line released by ordinary departmental transfer is a different thing from
+one released by a Finance Committee vote. The ledger does not distinguish them.
+
+### What would settle it
+
+FY24 and FY25 at the same grain, and the transfer schedule that names each counterparty.
+
 ## What would change these findings
 
 1. **The FY26 period 13 report.** Every figure here is a position, not a result.
@@ -293,6 +424,10 @@ half of a recode. In the school department, $99,064 is neither.
 3. **A split of health insurance between town and school employees.** Settles the open
    half of §5, and is the largest single unmeasured school cost in the town books.
 4. **Finance Committee minutes from 14 July 2026.**
+5. **Budgeted positions with their fill dates, or the payroll register by account.**
+   Turns §7's ceiling into a measurement.
+6. **FY24 and FY25 at account level.** §8 can show which lines gave money away once; only
+   three years can show which do it habitually.
 
 ## How to reproduce
 

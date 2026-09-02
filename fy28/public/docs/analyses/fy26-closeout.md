@@ -431,6 +431,159 @@ apart, and neither can this document.
 
 ---
 
+---
+
+## 7. Money not spent on people — the closest we can get
+
+### In plain terms
+
+The Town's own explanation for the FY25 surplus was **unfilled posts**: *"significant
+turnover and unfilled positions in the facilities department resulted in unspent salaries
+and stalled maintenance projects."* So the obvious question for FY26 is how much of the
+underspend is salary money that was budgeted for someone and not paid to anyone.
+
+**The answer is a ceiling, not a measurement, and the two must not be confused.**
+
+Salary accounts that came in under budget hold **$573,623** — that is the most that could
+possibly be unfilled-post savings. But salary accounts that went *over* hold $399,162, so
+the **net** left on personnel is **$174,460**, about 36% of the department's net
+underspend.
+
+Only **three** salary accounts of any size spent nothing at all, and they hold **$125,239**
+between them.
+
+### The evidence
+
+| | accounts | amount |
+|---|---:|---:|
+| Salary accounts under budget | 42 | $573,623 |
+| Salary accounts over budget | 38 | $399,162 |
+| **Net left on salaries** | **80** | **$174,460** |
+
+Salary accounts that spent **nothing all year**, above $5,000:
+
+| account | | budget | spent |
+|---|---|---:|---:|
+| `S2072061` | PSYCHSALAR — school psychologist salaries | $98,784 | $0 |
+| `S3066671` | ATHSEC — athletics secretary | $20,407 | $0 |
+| `S2996101` | CCLT/CCL | $6,048 | $0 |
+
+Seven more spent nothing and hold $4,644 between them. **Five of those seven are $800
+secretarial overtime lines**, where spending nothing means no overtime was worked — not a
+vacancy. That is why the count matters less than it looks.
+
+Salary accounts that spent **less than 85%** of their budget:
+
+| account | | budget | spent | | left |
+|---|---|---:|---:|---:|---:|
+| `S2066651` | SOCWORKSAL — social worker salaries | $90,212 | $20,877 | 23% | $69,335 |
+| `S2055651` | MS GUIDANC — middle school guidance | $131,509 | $97,988 | 75% | $33,521 |
+| `S2055651` | SOCWORKSAL — social worker salaries | $92,939 | $63,214 | 68% | $29,725 |
+| `S2016081` | HS ADM SEC — high school admin secretary | $51,973 | $38,249 | 74% | $13,724 |
+| `S2514711` | ES SPED SU — elementary special ed substitutes | $18,393 | $10,697 | 58% | $7,696 |
+| | six more under 85% | | | | $15,220 |
+
+### The FY25 explanation does not repeat in FY26
+
+The Town named **the facilities department**. Whichever facilities it meant, neither shows
+the pattern in FY26.
+
+The town's Facilities & Grounds salary accounts spent **100% of budget, to the dollar**:
+`DIR FAC SA` $68,966 of $68,966, `SAL STAFF` $46,772 of $46,772, `SALFACDIRE` $123,250 of
+$123,250, nothing left on any of them. The school's own custodial and maintenance salary
+lines are at or **over** budget — `MTC SYSTEM` spent $262,082 against $261,711, primary
+school custodians $102,733 against $99,711.
+
+**So the mechanism the Town identified for FY25 is not what happened in FY26.** Something
+else produced this year's underspend.
+
+### What this does not show, and it is most of what a reader wants
+
+**That any post was vacant.** A salary line spending nothing is *consistent with* a
+vacancy and equally consistent with: the person being paid from a different account, the
+post being grant-funded, the line being left in the budget after the post was eliminated,
+or a coding change. Section 4's four psychologist accounts are the clearest case — three
+paid in full and one paid nothing — and even there the ledger says dollars, not people.
+
+**And a partial spend is weaker evidence still.** 75% of a salary is equally consistent
+with a post filled in October, a resignation in April, a part-time appointment, or a
+person appointed at a lower step. Nothing here separates them.
+
+**A budget line is not a position.** That is rule 7 and it applies with full force here:
+the quantity nobody publishes is a headcount, and the quantity we have is dollars.
+
+### What would settle it
+
+A list of budgeted positions with their fill dates — the standing question
+`notes/DATA-WANTED.md` calls unanswerable. Failing that, the **payroll register by
+account**, which would show whether a line paid a person for part of the year or nobody at
+all. Neither is a report the town publishes.
+
+---
+
+## 8. Which lines give their money away
+
+### In plain terms
+
+A line that is budgeted high and then hands its money to something else is doing the job
+of a contingency without being called one. Whether that is happening here is a fair
+question, and this is the year it first became askable — but **one year cannot answer it.**
+
+In FY26, **33 school accounts gave up $309,839** of budget. Nearly a third of that is one
+account doing exactly what it exists to do.
+
+### The evidence
+
+The accounts that gave away the largest share of what they started with:
+
+| account | | started with | gave up | | left | spent |
+|---|---|---:|---:|---:|---:|---:|
+| `S0990991` | SCHSALRESE — school salary reserve | $90,770 | −$90,770 | 100% | $0 | $0 |
+| `S2032711` | KIND LONG — kindergarten long-term subs | $15,000 | −$15,000 | 100% | $0 | $0 |
+| `S2066711` | HS LONG TE — high school long-term subs | $3,000 | −$2,956 | 99% | $44 | $0 |
+| `S3066672` | ATH INS — athletics insurance | $29,000 | −$20,000 | 69% | $9,000 | $8,980 |
+| `S2022711` | PS LONG SU — primary long-term subs | $15,000 | −$7,075 | 47% | $7,925 | $10,265 |
+| `S1011022` | DUES/MTGS — dues and meetings | $8,000 | −$3,585 | 45% | $4,415 | $3,521 |
+| `S2032711` | KIND SUBS — kindergarten substitutes | $4,000 | −$1,601 | 40% | $2,399 | $2,399 |
+
+### Reading it
+
+**The largest is a declared contingency and should not be counted as padding.**
+`SCHSALRESE` is a salary reserve — budgeted at $90,770, attached to no post, and voted on
+that basis. Giving away every dollar is the whole point of it. It is 29% of everything the
+department gave up.
+
+**Three of the top five are substitute-teacher lines.** `KIND LONG`, `HS LONG TE` and
+`PS LONG SU` are long-term substitute budgets that gave up 100%, 99% and 47%. A
+substitute line is a genuine forecast — you budget for absences you cannot predict — so it
+is the kind of line most likely to be set high and released. It is also the kind of line
+where "set high" and "set honestly" look identical from outside.
+
+**And `ATH INS` gave up $20,000 of a $29,000 insurance budget** and then spent $8,980 of
+the $9,000 left. That is a line that turned out to need a third of what it was given.
+
+### What this does NOT show, and it is the whole limitation
+
+**That any of this is consistent.** Establishing that a line is *habitually* over-budgeted
+takes several years of the same account. **This project holds exactly one year at account
+level** — FY26 at period 12 — so every figure above is a single observation. A line that
+gave away 100% once may do it every year or may have done it once.
+
+`CLAUDE.md` rule 6 exists for this: a rate off one or two points is not a trend. One point
+is not even a rate.
+
+**And a 100% give-up is often a recoding rather than a release.** The town side has the
+clearest example: `SAL ELECTE` gave up 97% of $80,629 while `TN CLK SAL` in a different
+department received $80,629 and spent $78,466. The Town Clerk's salary moved between
+lines. Nothing was over-budgeted; something was renamed.
+
+### What would settle it
+
+**The FY24 and FY25 reports at the same grain.** Three years of the same accounts would
+turn every row above from an observation into a pattern or a one-off, and it is the same
+request already outstanding for other reasons. This is the strongest argument yet for
+asking for the back years rather than only the current one.
+
 ## What would change these findings
 
 In order of how much each would settle:
@@ -441,6 +594,10 @@ In order of how much each would settle:
 4. **Finance Committee minutes from 14 July 2026.**
 5. **Out-of-district placement counts by year.** The only thing that would let §2's two
    tuition lines be read as anything other than two numbers.
+6. **Budgeted positions with their fill dates, or the payroll register by account.**
+   Turns §7's ceiling into a measurement.
+7. **FY24 and FY25 at account level.** §8 can show which lines gave money away once; only
+   three years can show which do it habitually.
 
 ## How to reproduce
 
