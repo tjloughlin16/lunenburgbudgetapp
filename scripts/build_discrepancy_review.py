@@ -40,10 +40,13 @@ from build_code_reconciliation_xlsx import load, match, m  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'notes', 'REVIEW-DISCREPANCIES.md')
 
-LEDGER_FILE = 'FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx'
-LEDGER_WHERE = 'sheet `ACCOUNT DETAIL`, column E'
-BOOK_FILE = 'FY27 budget projection workbook'
-BOOK_WHERE = 'sheet `FY27 Budget Projection`, column B'
+# Named for what each document IS to the reader, not for what it is to this project.
+# "the ledger" and "the workbook" are our words; a Town Manager reads a year-to-date
+# report and a school budget.
+YTD_FILE = 'FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx'
+YTD_WHERE = 'sheet `ACCOUNT DETAIL`, column E'
+BUD_FILE = 'FY27 budget projection workbook, FY26 FINAL BUDGET column'
+BUD_WHERE = 'sheet `FY27 Budget Projection`, column B'
 
 
 def d(v):
@@ -103,6 +106,10 @@ def main():
     basis = [(acc('ATH INS', '3510'), bk('Athletic Insurance')),
              (acc('DUES/FEES', '3510'), bk('Athletic Dues & Fees'))]
     owned_a = {r['account'] for r, _ in basis}
+    # Category D owns these two: both have an appropriation AND a school budget line, so
+    # neither belongs in a category about accounts with nothing appropriated. They were
+    # in both, which double-counted $91,460.
+    owned_a |= {acc('SCHSALRESE', '0300')['account'], acc('REP OFF MA', '4230')['account']}
     owned_b = {r['line_item'].strip() for _, r in basis}
 
     blind, split = [], []
@@ -152,14 +159,14 @@ def main():
     P('')
     P('Comparing two documents for the school department, FY2026:')
     P('')
-    P('- **the ledger** — `%s`, %s' % (LEDGER_FILE, LEDGER_WHERE))
-    P('- **the workbook** — the district’s %s, %s' % (BOOK_FILE, BOOK_WHERE))
+    P('- **the YTD report** — the Town Accountant’s `%s`, %s' % (YTD_FILE, YTD_WHERE))
+    P('- **the school budget** — the district’s %s, %s' % (BUD_FILE, BUD_WHERE))
     P('')
     P('Both state amounts against the same function codes. **%d of %d codes agree.**'
       % (len(codes) - len(off), len(codes)))
     P('')
-    P('Every item below gives the account number and the workbook row, so each one can be')
-    P('opened in both documents without searching. Nothing here is an accusation, and in')
+    P('Every item below gives the account number and the school budget row, so each one')
+    P('can be opened in both documents without searching. Nothing here is an accusation, and in')
     P('most cases the archive cannot say which document is right — only that they cannot')
     P('both be. Where I have a guess it is marked as one.')
     P('')
@@ -174,15 +181,15 @@ def main():
          sum(m(r['expended']) for r in naked), '**How these were authorised**'),
         ('B', '**Budgeted with no account to spend from**', '1 line',
          m(ca['fy26_final']), '**Where this was budgeted**'),
-        ('C', 'Money moved, no budget line', '%d accounts' % len(blind),
-         sum(abs(m(r['transfers'])) for r in blind), 'What each transfer was for'),
+        ('C', 'Nothing appropriated, funded by transfer', '%d accounts' % len(blind),
+         sum(abs(m(r['transfers'])) for r in blind), 'What each transfer paid for'),
         ('D', 'Accounts not aligned', '4 pairs of codes',
          sum(m(r['original']) for r in sw) + abs(m(ell['fy26_final'])
                                                  - m(ace['fy26_final']))
          + m(sr['fy26_final']) + m(rom['original']),
          'Which code is authoritative'),
         ('E', 'Two figures on different bases', '2 accounts',
-         abs(m(basis[0][0]['transfers'])), 'Which basis the workbook column uses'),
+         abs(m(basis[0][0]['transfers'])), 'Which basis the school budget column uses'),
         ('F', 'Same total, different lines', '%d code' % len(split),
          sum(m(b['fy26_final']) for _, ub, _ in split for b in ub),
          'Which line the money sits against'),
@@ -192,10 +199,7 @@ def main():
     P('')
     P('**The sums are the amounts involved, not money missing, and they do not add up.**')
     P('In D and F both documents hold the same total and disagree only about where it')
-    P('sits. In C, %s of the total is one account having its appropriation moved *out*,'
-      % d(abs(m([r for r in blind if r['name'].strip() == 'SCHSALRESE'][0]['transfers']))))
-    P('which is plausibly the source of transfers *into* others — the same dollars at')
-    P('both ends.')
+    P('sits.')
     P('')
     P('---')
     P('')
@@ -204,7 +208,7 @@ def main():
     P('*Nothing appropriated, no transfer in, and money paid out. %d accounts, %s.*'
       % (len(naked), d(sum(m(r['expended']) for r in naked))))
     P('')
-    P('| ledger account | name | spent | in the workbook |')
+    P('| YTD report account | name | spent | in the school budget |')
     P('|---|---|---:|---|')
     for r in sorted(naked, key=lambda r: -m(r['expended'])):
         # NOT 'no line carries this'. The workbook does carry lines under these codes --
@@ -219,31 +223,33 @@ def main():
     P('The two kindergarten accounts are %s of it. The FY26 approved budget published the'
       % d(sum(m(r['expended']) for r in naked if 'KIND' in r['name'].upper())))
     P('kindergarten line as a cut, so the question is where these charges were provided')
-    P('for. The workbook does carry a **Kindergarten Aides/Regular** line, %s, printed'
+    P('for. The school budget does carry a **Kindergarten Aides/Regular** line, %s,'
       % brow('Kindergarten Aides/Regular'))
-    P('at $0, and a **Kindergarten Paraprofessionals** line, %s, left blank.'
+    P('printed at $0, and a **Kindergarten Paraprofessionals** line, %s, left blank.'
       % brow('Kindergarten Paraprofessionals'))
     P('')
     P('# B. Budgeted with no account to spend from')
     P('')
-    P('*In the workbook, with no corresponding account anywhere in the ledger.*')
+    P('*In the school budget, with no corresponding account anywhere in the YTD report.*')
     P('')
-    P('| workbook | code | amount | ledger |')
+    P('| school budget | code | amount | YTD report |')
     P('|---|---|---:|---|')
     P('| **Curriculum Adoption** — %s | `2110` | %s | no account of any amount |'
       % (brow('Curriculum Adoption'), d(m(ca['fy26_final']))))
     P('')
-    P('Taking every line on both sides, the workbook totals %s and the ledger %s. This'
+    P('Taking every line on both sides, the school budget totals %s and the YTD report '
+      '%s. This'
       % (d(bk_tot), d(led_tot)))
     P('single line is all but %s of that difference.'
       % d(bk_tot - led_tot - m(ca['fy26_final'])))
     P('')
-    P('# C. Money moved, with no budget line to match')
+    P('# C. Nothing appropriated, funded entirely by transfer')
     P('')
-    P('*%d accounts had money transferred in or out and match no line in the workbook.*'
+    P('*The school budget appropriates **nothing** to these %d accounts. Each was given'
       % len(blind))
+    P('money by transfer during the year. One is nearly all of it.*')
     P('')
-    P('| ledger account | name | appropriated | moved | spent |')
+    P('| YTD report account | name | appropriated | moved | spent |')
     P('|---|---|---:|---:|---:|')
     for r in sorted(blind, key=lambda r: -abs(m(r['transfers']))):
         P('| `%s` | %s | %s | %s | %s |'
@@ -256,7 +262,7 @@ def main():
     P('hold it; they disagree only about where it sits. The guess is mine, from the')
     P('amounts, and is not established.*')
     P('')
-    P('| codes | in the ledger | in the workbook | amount | my guess |')
+    P('| codes | in the YTD report | in the school budget | amount | my guess |')
     P('|---|---|---|---:|---|')
     P('| `2710` vs `2900` | %s | %s | %s | Same money, filed two ways. Nothing missing |'
       % ('; '.join('`%s`' % r['account'] for r in sorted(sw, key=lambda r: r['account'])),
@@ -281,7 +287,7 @@ def main():
     P('')
     P('**The full code comparison**, for anyone checking:')
     P('')
-    P('| code | workbook group | ledger | workbook | difference |')
+    P('| code | school budget group | YTD report | school budget | difference |')
     P('|---|---|---:|---:|---:|')
     for c in sorted(off, key=lambda c: -abs(tot(c)[0] - tot(c)[1])):
         a, b = tot(c)
@@ -291,14 +297,13 @@ def main():
     P('')
     P('# E. Two figures on different bases')
     P('')
-    P('*Only accounts with a transfer can show which basis the workbook uses, because')
-    P('only there do the appropriation and the revised budget differ. There are %d such'
-      % len(moved))
-    P('accounts: the workbook matches the appropriation on %d, the revised budget on %d,'
-      % (bo, br))
-    P('and %d cannot be told apart because they match no line.*' % bx)
+    P('*Only accounts with a transfer can show which basis the school budget uses,')
+    P('because only there do the appropriation and the revised budget differ.')
+    P('There are %d such accounts: the school budget matches the appropriation on %d,'
+      % (len(moved), bo))
+    P('the revised budget on %d, and %d cannot be told apart.*' % (br, bx))
     P('')
-    P('| ledger account | appropriated | moved | revised | workbook says | workbook |')
+    P('| YTD report account | appropriated | moved | revised | school budget says | school budget line |')
     P('|---|---:|---:|---:|---:|---|')
     for a, b in basis:
         P('| `%s` %s | %s | %s | %s | **%s** | %s, %s |'
@@ -307,15 +312,15 @@ def main():
              brow(b['line_item'].strip())))
     P('')
     P('Insurance matches the revised figure rather than the appropriation; dues and fees')
-    P('matches neither. Which basis does the workbook column use, and for which lines?')
+    P('matches neither. Which basis does the school budget column use, and for which lines?')
     P('')
     P('# F. Same total, different lines')
     P('')
     P('*The code total agrees, so nothing is missing and no dollar is unaccounted for.')
     P('The money sits against different lines inside the code — which is what happens')
-    P('when one ledger account covers what the workbook splits across schools.*')
+    P('when one account covers what the school budget splits across schools.*')
     P('')
-    P('| code | ledger | workbook |')
+    P('| code | YTD report | school budget |')
     P('|---|---|---|')
     for c, ub, sp in split:
         left = '; '.join('`%s` %s %s' % (a['account'], a['name'].strip(),
@@ -331,14 +336,14 @@ def main():
     P('function code and description. **D and F answer themselves from it.**')
     P('')
     P('**A, B, C and E need a word from somebody.** A mapping cannot say how a charge was')
-    P('authorised against an account with no budget, show a line that has no account,')
-    P('say what a transfer was for, or explain which basis a column is on.')
+    P('authorised against an account with no budget, show a budget line that has no')
+    P('account, say what a transfer paid for, or explain which basis a column is on.')
     P('')
     P('## Method, in four lines')
     P('')
     P('The join is the function code in the fourth segment of the MUNIS account string')
-    P('(`0100-3-300-2330-51-2-13-1-511203`), which is the same code the workbook prints')
-    P('over each group. Within a code, lines are paired **by amount**, which is not a')
+    P('(`0100-3-300-2330-51-2-13-1-511203`), which is the same code the school budget')
+    P('prints over each group. Within a code, lines are paired **by amount**, which is not a')
     P('key: it shows a figure of that size exists on both sides, never that the two are')
     P('the same line. Full working in `sources/data/fy26-code-reconciliation.xlsx`.')
     P('')
