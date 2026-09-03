@@ -32,7 +32,7 @@
  {
   "name": "sources.json",
   "note": "The document archive: every source, its group, its size, and the URL it is served from.",
-  "bytes": 196807
+  "bytes": 198082
  },
  {
   "name": "budget-lines.csv",
@@ -61,7 +61,7 @@
  },
  {
   "name": "minutes-index.csv",
-  "note": "Every agenda and set of minutes the town publishes: board, date, kind, and the town\u2019s own URL. 1,422 rows.",
-  "bytes": 242881
+  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, and has_text. 1,422 rows, of which 1,422 have extracted text a search can reach. Check has_text before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
+  "bytes": 247652
  }
 ]

@@ -155,13 +155,40 @@ def main():
          'Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport '
          'per season. 27 of 31 figures verified against a spreadsheet cell or a direct '
          'quotation from the School Committee vote that set them.'),
-        (os.path.join(ROOT, 'sources', 'minutes', 'index.csv'), 'minutes-index.csv',
-         'Every agenda and set of minutes the town publishes: board, date, kind, and the '
-         'town’s own URL. 1,422 rows.'),
     ]:
         if os.path.exists(src):
             shutil.copy2(src, os.path.join(DATA, name))
             published.append((name, what, os.path.getsize(src)))
+
+    # The meeting index gets one column the source file does not have: has_text.
+    #
+    # It is DERIVED here, from what is on disk at publish time, rather than stored
+    # upstream -- a stored coverage flag is a claim, and a claim goes stale silently,
+    # which is the exact failure this column exists to prevent. 39 documents were once
+    # absent from the text tree while every published count said 1,422, so a search
+    # returning nothing could not be distinguished from a subject nobody discussed. A
+    # caller can now compute its own denominator without probing anything.
+    mi_src = os.path.join(ROOT, 'sources', 'minutes', 'index.csv')
+    if os.path.exists(mi_src):
+        mi_out = os.path.join(DATA, 'minutes-index.csv')
+        rows = list(csv.DictReader(open(mi_src)))
+        for r in rows:
+            stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
+            r['has_text'] = 'Y' if stem and os.path.exists(
+                os.path.join(ROOT, 'sources', 'minutes', 'text', stem + '.txt')) else 'N'
+        with open(mi_out, 'w', newline='') as fh:
+            w = csv.DictWriter(fh, list(rows[0].keys()))
+            w.writeheader()
+            w.writerows(rows)
+        readable = sum(1 for r in rows if r['has_text'] == 'Y')
+        published.append((
+            'minutes-index.csv',
+            'Every agenda and set of minutes the town publishes: board, date, kind, the '
+            f'town’s own URL, and has_text. {len(rows):,} rows, of which {readable:,} '
+            'have extracted text a search can reach. Check has_text before concluding '
+            'that something was never discussed: a document nothing can read and a '
+            'subject nobody raised are different facts and produce the same empty result.',
+            os.path.getsize(mi_out)))
 
     a, f = model['assumptions'], model['fy27']
     gap = next(h for h in model['headlines'] if h['id'] == 'gap')

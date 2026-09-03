@@ -1233,6 +1233,18 @@
      "textUrl": "/docs/analyses/fy27-cut-reconciliation.md"
     },
     {
+     "path": "analyses/fy26-closeout.md",
+     "title": "FY26, as the books stood in June",
+     "stars": 2,
+     "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
+     "kind": "Notes",
+     "bytes": 49390,
+     "url": "/docs/analyses/fy26-closeout.md",
+     "count": 975,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/fy26-closeout.md"
+    },
+    {
      "path": "analyses/athletics.md",
      "title": "Athletics: what it costs and who pays",
      "stars": 2,
@@ -1243,18 +1255,6 @@
      "count": 748,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics.md"
-    },
-    {
-     "path": "analyses/fy26-closeout.md",
-     "title": "FY26, as the books stood in June",
-     "stars": 2,
-     "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
-     "kind": "Notes",
-     "bytes": 36317,
-     "url": "/docs/analyses/fy26-closeout.md",
-     "count": 730,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/fy26-closeout.md"
     },
     {
      "path": "analyses/budget-vs-actual.md",
@@ -1386,6 +1386,18 @@
      "textUrl": "/docs/data/gross-school-budget-fy2026.xlsx"
     },
     {
+     "path": "data/fy26-code-reconciliation.xlsx",
+     "title": "FY26 school budget against the town ledger, by function code — spreadsheet",
+     "stars": 5,
+     "what": "The district’s FY26 budget line by line with the Town Accountant’s ledger beside it, summed by function code on both sides. The join is the function code in the fourth segment of the MUNIS account string (0100-3-300-2330-51-2-13-1-511203), which is the same code the district’s workbook prints over each group — the crosswalk the gross budget spreadsheet had to leave empty. THE DISTRICT’S WORKBOOK DOES NOT SUM BY CODE, so every code here carries its own two sums and their difference: 9 of 46 do not agree. Within a code, lines are paired by AMOUNT, which is not a key — it shows a figure of that size exists on both sides, never that the two are the same line — and every row says how it was paired. 23 rows pair with nothing, and 6 accounts were spent against with neither an appropriation nor a transfer. Rebuild with scripts/build_code_reconciliation_xlsx.py.",
+     "kind": "Spreadsheet",
+     "bytes": 42135,
+     "url": "/docs/data/fy26-code-reconciliation.xlsx",
+     "count": 514,
+     "unit": "rows",
+     "textUrl": "/docs/data/fy26-code-reconciliation.xlsx"
+    },
+    {
      "path": "data/lunenburg.db",
      "title": "The whole analysis database, SQLite",
      "stars": 3,
@@ -1425,7 +1437,7 @@
      "stars": 3,
      "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
      "kind": "Data",
-     "bytes": 204687,
+     "bytes": 229530,
      "url": "/docs/data/munis-ledger.csv",
      "count": 983,
      "unit": "rows",
@@ -1533,9 +1545,9 @@
      "stars": 3,
      "what": "The town’s ledger prints ten-character abbreviations and stops: `SCHRETHLTH`, `COLL TUITI`, `KINDAIDREG`. Nothing published expands them. So these 80 readings are OURS, and each records the basis it rests on: **district document** where the district’s own budget prints the full line name (7), **department name** where the department it sits in settles it (17), **department context** where the org or object code does (16), and **plain reading** where the abbreviation is unambiguous English (40). Keyed on department, because the same code means different things in different places — `REG TRANS` is school busing in department 300 and a regional transit assessment in department 825. The verifiers fail if either closeout analysis names a code with no entry here.",
      "kind": "Data",
-     "bytes": 10829,
+     "bytes": 11740,
      "url": "/docs/data/account-names.csv",
-     "count": 114,
+     "count": 124,
      "unit": "rows",
      "textUrl": "/docs/data/account-names.csv"
     },
@@ -3871,9 +3883,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 301,
+  "documents": 302,
   "groups": 17,
-  "bytes": 364682719,
+  "bytes": 364763681,
   "loadBearing": 57
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

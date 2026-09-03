@@ -86,8 +86,40 @@ def documents():
     return out
 
 
+def unsearchable():
+    """Index rows with no readable text — what a search over this index CANNOT see.
+
+    This is published rather than merely counted, and the reason is the audience. An agent
+    with a shell finds a coverage gap by listing the text tree; the callers this index
+    exists for can only fetch URLs, and have no way to discover what is missing by any
+    means available to them. For them the index stating its own denominator is not a
+    convenience -- it is the only route to the caveat.
+
+    It went wrong exactly that way. 39 documents the town published as Word files were
+    absent from the archive, the index reported "1,383 documents" without saying of how
+    many, and a search returning nothing was indistinguishable from a subject nobody
+    raised. The general name for that is coverage bias, and the fix is always to report
+    the denominator.
+    """
+    idx = os.path.join(ROOT, 'sources', 'minutes', 'index.csv')
+    if not os.path.exists(idx):
+        return None, []
+    import csv
+    rows = list(csv.DictReader(open(idx)))
+    missing = []
+    for r in rows:
+        stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
+        ok = stem and os.path.exists(
+            os.path.join(ROOT, 'sources', 'minutes', 'text', stem + '.txt'))
+        if not ok:
+            missing.append(dict(board=r['board'], date=r['date'], kind=r['kind'],
+                                url=r['url']))
+    return len(rows), missing
+
+
 def main():
     docs = documents()
+    published_total, missing = unsearchable()
     if not docs:
         print(f'no documents under {TEXT} -- run publish_minutes.py first', file=sys.stderr)
         return 1
@@ -116,6 +148,19 @@ def main():
     with open(os.path.join(OUT, 'documents.json'), 'w') as fh:
         json.dump(docs, fh, separators=(',', ':'))
 
+    # The denominator, as data, beside the documents it is the denominator of.
+    with open(os.path.join(OUT, 'coverage.json'), 'w') as fh:
+        json.dump(dict(
+            indexed=len(docs),
+            published_by_the_town=published_total,
+            note=('Documents in this index against documents the town has published. A '
+                  'search here can only find something said in the indexed ones. If the '
+                  'two numbers differ, `unsearchable` lists every document that cannot be '
+                  'searched, and an empty result means "not in the indexed set" rather '
+                  'than "never discussed".'),
+            unsearchable=missing,
+        ), fh, indent=1)
+
     sizes = {p: os.path.getsize(os.path.join(OUT, f'{p}.json')) for p in shards}
     biggest = max(sizes.items(), key=lambda kv: kv[1])
     with open(os.path.join(OUT, 'README.txt'), 'w') as fh:
@@ -124,6 +169,20 @@ def main():
 The bundles at /minutes/<board>.txt are the whole text of a board, and the two largest --
 select-board and school-committee -- are around 1MB, which is more than most callers can
 read in one fetch. This index exists so you do not have to.
+
+COVERAGE -- READ THIS BEFORE CONCLUDING ANYTHING FROM AN EMPTY RESULT
+
+This index covers {len(docs):,} documents. The town has published {published_total or len(docs):,}.
+{'Every published document is searchable.' if published_total == len(docs) else f'{published_total - len(docs)} are NOT searchable and are listed in coverage.json.'}
+
+An empty result means the word is not in the {len(docs):,} documents indexed here. That is
+not the same as nobody having said it, and the two are only distinguishable if you know the
+denominator -- so it is published: {SITE}/minutes/find/coverage.json.
+
+This is not hypothetical. 39 documents the town published as Word files were missing from
+this archive while every count said otherwise, one of them School Committee minutes from the
+middle of a fiscal year under analysis. They are here now. The count above is what makes the
+next such gap visible instead of silent.
 
 HOW TO USE IT
 
@@ -159,14 +218,18 @@ separate terms. The text is extracted from scans, so it carries OCR errors.
 
 BUILT FROM
 
-{len(docs):,} documents, {len(kept):,} indexed terms, {len(shards)} shards.
+{len(docs):,} of {published_total or len(docs):,} published documents, {len(kept):,} indexed terms, {len(shards)} shards.
 Rebuild with scripts/build_minutes_search.py. The documents are the source; this is
 derived and can be thrown away.
 """)
 
     total = sum(sizes.values()) + os.path.getsize(os.path.join(OUT, 'documents.json'))
     print(f'wrote {os.path.relpath(OUT, ROOT)}/')
-    print(f'  {len(docs):,} documents, {len(kept):,} terms, {dropped:,} dropped as too common')
+    print(f'  {len(docs):,} of {published_total} published documents '
+          f'({100*len(docs)/(published_total or len(docs)):.1f}%), '
+          f'{len(kept):,} terms, {dropped:,} dropped as too common')
+    if missing:
+        print(f'  {len(missing)} NOT searchable -- listed in coverage.json')
     print(f'  {len(shards)} shards, {total / 1e6:.2f}MB total, '
           f'largest shard {biggest[0]}.json at {biggest[1] / 1e3:.0f}KB')
     return 0

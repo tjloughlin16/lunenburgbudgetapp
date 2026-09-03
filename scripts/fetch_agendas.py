@@ -97,12 +97,53 @@ def listing(cat_id: str, year: int) -> list[tuple[str, str, str]]:
     return sorted(out)
 
 
+def backfill() -> int:
+    """Fetch the rows an earlier run recorded as absent, and correct the index.
+
+    Every one of the 39 rows blanked by the old `%PDF` test was a live document the whole
+    time -- 35 .docx, 3 .doc, 1 .xlsx. This re-fetches those rows only, so the whole
+    board x year walk is not repeated to recover them, and rewrites the index with the
+    paths and extensions that actually arrived.
+    """
+    idx = OUT / 'index.csv'
+    rows = list(csv.DictReader(idx.open()))
+    todo = [r for r in rows if not r['path'].strip()]
+    print(f'{len(todo)} of {len(rows)} index rows have no local file')
+    got, still = 0, []
+    for r in todo:
+        blob = get(r['url'])
+        ext = sniff(blob)
+        if ext is None:
+            still.append(r)
+            print(f'  gone     {r["board"][:32]:<32} {r["date"]} {r["kind"]}')
+            continue
+        rel = f'{slug(r["board"])}/{r["date"]}-{r["kind"]}-{r["file_id"]}{ext}'
+        p = OUT / rel
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(blob)
+        r['path'] = rel
+        got += 1
+        print(f'  {ext:<8} {r["board"][:32]:<32} {r["date"]} {r["kind"]}  {len(blob):,}b')
+        time.sleep(0.15)
+    with idx.open('w', newline='') as f:
+        w = csv.DictWriter(f, ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url'])
+        w.writeheader()
+        w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
+    print(f'\nrecovered {got}; {len(still)} genuinely absent')
+    return 0
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--from', dest='start', type=int, default=2025)
     ap.add_argument('--to', dest='end', type=int, default=dt.date.today().year)
     ap.add_argument('--inventory', action='store_true')
+    ap.add_argument('--backfill', action='store_true',
+                    help='fetch only the index rows that have no local file, and stop')
     a = ap.parse_args()
+
+    if a.backfill:
+        return backfill()
 
     cats = categories()
     print(f'{len(cats)} boards, {a.start}-{a.end}')

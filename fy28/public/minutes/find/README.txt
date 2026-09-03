@@ -4,6 +4,20 @@ The bundles at /minutes/<board>.txt are the whole text of a board, and the two l
 select-board and school-committee -- are around 1MB, which is more than most callers can
 read in one fetch. This index exists so you do not have to.
 
+COVERAGE -- READ THIS BEFORE CONCLUDING ANYTHING FROM AN EMPTY RESULT
+
+This index covers 1,422 documents. The town has published 1,422.
+Every published document is searchable.
+
+An empty result means the word is not in the 1,422 documents indexed here. That is
+not the same as nobody having said it, and the two are only distinguishable if you know the
+denominator -- so it is published: https://lunenburgbudgetproject.org/minutes/find/coverage.json.
+
+This is not hypothetical. 39 documents the town published as Word files were missing from
+this archive while every count said otherwise, one of them School Committee minutes from the
+middle of a fiscal year under analysis. They are here now. The count above is what makes the
+next such gap visible instead of silent.
+
 HOW TO USE IT
 
   1. Lowercase your word. Take its first two characters. Fetch that shard:
@@ -31,13 +45,13 @@ will not find a document that only says "uniforms". Search both.
 
 Terms shorter than 3 characters are not indexed. Terms appearing in more than
 40% of documents are not indexed either: they cannot narrow anything and their
-postings would be most of the index. 77 terms were dropped on that rule.
+postings would be most of the index. 73 terms were dropped on that rule.
 
 Words are matched exactly as they appear in the text, so plurals and possessives are
 separate terms. The text is extracted from scans, so it carries OCR errors.
 
 BUILT FROM
 
-1,383 documents, 16,294 indexed terms, 469 shards.
+1,422 of 1,422 published documents, 16,476 indexed terms, 473 shards.
 Rebuild with scripts/build_minutes_search.py. The documents are the source; this is
 derived and can be thrown away.
