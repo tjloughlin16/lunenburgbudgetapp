@@ -207,30 +207,24 @@ def main():
     P('')
     P('| what breaks | what it prevents | scale |')
     P('|---|---|---:|')
-    P('| **Codes do not match.** %d of %d function codes hold different totals | Asking '
-      'what a whole category cost. Guidance is %s in one document and %s in the other; '
-      'neither is wrong on its own, and any comparison of the two is | **%s**, %.0f%% of '
-      'the appropriation |'
+    P('| **Codes do not match** — %d of %d function codes hold different totals | '
+      'Comparing a whole category. Guidance is %s in one document, %s in the other | '
+      '**%s** · %.0f%% of the appropriation |'
       % (len(off), len(codes), d(munis_of('2710')), d(book_of('2710')),
          d(affected), affected / led_tot * 100))
-    P('| **Lines do not match inside a code.** One account faces two budget lines | '
-      'Saying which school or programme the money is against, even when the total is '
-      'right | %s |'
+    P('| **Lines do not match** — one account against two budget lines | Attributing the '
+      'money to a school, even when the total is right | %s |'
       % d(sum(m(b['fy26_final']) for _, ub, _ in split for b in ub)))
-    P('| **The same line carries two amounts.** One document shows a figure before a '
-      'transfer and the other after | Knowing which number is the budget being tracked '
-      'against | %s |' % d(abs(m(basis[0][0]['transfers']))))
-    P('| **Spending has no budget to match.** %d accounts paid out with nothing '
-      'appropriated and no transfer | Tracing a charge to anything that authorised it | '
-      '%s |' % (len(naked), d(sum(m(r['expended']) for r in naked))))
-    P('| **A budget of zero, and real spending.** %d accounts appropriated nothing and '
-      'funded entirely by transfer during the year | Reading the school budget as what a '
-      'programme has. It shows $0 where %s was moved in | %s |'
-      % (len(blind), d(sum(abs(m(r['transfers'])) for r in blind)),
-         d(sum(abs(m(r['transfers'])) for r in blind))))
-    P('| **A movement has no recorded decision.** Transfers approved without being named '
-      'in the minutes | Reconciling the year against the record of what was voted | '
-      '4 transfers, 24 June 2026 |')
+    P('| **One line, two amounts** — one document before a transfer, one after | Knowing '
+      'which figure is the budget | %s |' % d(abs(m(basis[0][0]['transfers']))))
+    P('| **Spending with no budget** — %d accounts, nothing appropriated, no transfer | '
+      'Tracing a charge to whatever authorised it | %s |'
+      % (len(naked), d(sum(m(r['expended']) for r in naked))))
+    P('| **Zero budget, real spending** — %d accounts funded entirely by transfer | '
+      'Reading the school budget as what a programme has | %s |'
+      % (len(blind), d(sum(abs(m(r['transfers'])) for r in blind))))
+    P('| **Transfers not named** — approved 24 June 2026 | Reconciling the year to what '
+      'was voted | 4 transfers |')
     P('')
     P('The consequence is the same in every case: **the year cannot be checked line by')
     P('line** — not by a resident, not by the Finance Committee, and not by the district')
@@ -242,14 +236,10 @@ def main():
     P('a figure sits and whether it can be found in both places, not about how much there')
     P('is.')
     P('')
-    P('Every item below gives the account number and the school budget row, so each one')
-    P('can be opened in both documents without searching. Nothing here is an accusation, and in')
-    P('most cases the archive cannot say which document is right — only that they cannot')
-    P('both be. Where I have a guess it is marked as one.')
-    P('')
-    P('**Ordered by what needs an answer, not by size.** The largest amount is a')
-    P('classification question where both documents hold the money; the smallest is')
-    P('$1,896 of instructional materials.')
+    P('Each item gives the account number and the school budget row, so it can be opened')
+    P('in both documents without searching. **Ordered by what needs an answer, not by')
+    P('size.** Where the archive cannot say which document is right it says so, and')
+    P('guesses are marked as guesses.')
     P('')
     P('| | category | items | sum involved | what it needs | in the minutes |')
     P('|---|---|---:|---:|---|---|')
@@ -275,9 +265,7 @@ def main():
     for k, cat, n, amt, need, vote in cats:
         P('| **%s** | %s | %s | %s | %s | %s |' % (k, cat, n, d(amt), need, vote))
     P('')
-    P('**The sums are the amounts involved, not money missing, and they do not add up.**')
-    P('In C and E both documents hold the same total and disagree only about where it')
-    P('sits.')
+    P('**The sums are amounts involved, not money missing, and they do not add up.**')
     P('')
     P('---')
     P('')

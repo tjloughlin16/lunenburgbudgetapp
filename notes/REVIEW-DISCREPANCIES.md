@@ -18,12 +18,12 @@ kind breaks it differently:
 
 | what breaks | what it prevents | scale |
 |---|---|---:|
-| **Codes do not match.** 7 of 45 function codes hold different totals | Asking what a whole category cost. Guidance is $753,939 in one document and $384,910 in the other; neither is wrong on its own, and any comparison of the two is | **$4,579,195**, 17% of the appropriation |
-| **Lines do not match inside a code.** One account faces two budget lines | Saying which school or programme the money is against, even when the total is right | $1,896 |
-| **The same line carries two amounts.** One document shows a figure before a transfer and the other after | Knowing which number is the budget being tracked against | $20,000 |
-| **Spending has no budget to match.** 6 accounts paid out with nothing appropriated and no transfer | Tracing a charge to anything that authorised it | $103,674 |
-| **A budget of zero, and real spending.** 4 accounts appropriated nothing and funded entirely by transfer during the year | Reading the school budget as what a programme has. It shows $0 where $44,121 was moved in | $44,121 |
-| **A movement has no recorded decision.** Transfers approved without being named in the minutes | Reconciling the year against the record of what was voted | 4 transfers, 24 June 2026 |
+| **Codes do not match** — 7 of 45 function codes hold different totals | Comparing a whole category. Guidance is $753,939 in one document, $384,910 in the other | **$4,579,195** · 17% of the appropriation |
+| **Lines do not match** — one account against two budget lines | Attributing the money to a school, even when the total is right | $1,896 |
+| **One line, two amounts** — one document before a transfer, one after | Knowing which figure is the budget | $20,000 |
+| **Spending with no budget** — 6 accounts, nothing appropriated, no transfer | Tracing a charge to whatever authorised it | $103,674 |
+| **Zero budget, real spending** — 4 accounts funded entirely by transfer | Reading the school budget as what a programme has | $44,121 |
+| **Transfers not named** — approved 24 June 2026 | Reconciling the year to what was voted | 4 transfers |
 
 The consequence is the same in every case: **the year cannot be checked line by
 line** — not by a resident, not by the Finance Committee, and not by the district
@@ -34,14 +34,10 @@ the two documents reconcile to **$1.93** in total. Every problem here is about w
 a figure sits and whether it can be found in both places, not about how much there
 is.
 
-Every item below gives the account number and the school budget row, so each one
-can be opened in both documents without searching. Nothing here is an accusation, and in
-most cases the archive cannot say which document is right — only that they cannot
-both be. Where I have a guess it is marked as one.
-
-**Ordered by what needs an answer, not by size.** The largest amount is a
-classification question where both documents hold the money; the smallest is
-$1,896 of instructional materials.
+Each item gives the account number and the school budget row, so it can be opened
+in both documents without searching. **Ordered by what needs an answer, not by
+size.** Where the archive cannot say which document is right it says so, and
+guesses are marked as guesses.
 
 | | category | items | sum involved | what it needs | in the minutes |
 |---|---|---:|---:|---|---|
@@ -51,9 +47,7 @@ $1,896 of instructional materials.
 | **D** | Two figures on different bases | 2 accounts | $20,000 | Which basis the school budget column uses | **Voted, and explained** |
 | **E** | Same total, different lines | 1 code | $1,896 | Which line the money sits against | Partly voted |
 
-**The sums are the amounts involved, not money missing, and they do not add up.**
-In C and E both documents hold the same total and disagree only about where it
-sits.
+**The sums are amounts involved, not money missing, and they do not add up.**
 
 ---
 

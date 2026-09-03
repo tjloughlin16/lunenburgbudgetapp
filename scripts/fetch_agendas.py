@@ -29,6 +29,29 @@ OUT = ROOT / 'sources' / 'minutes'
 UA = {'User-Agent': ('Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; +https://lunenburgbudgetproject.org)')}
 
 
+# Magic bytes, because the extension is our guess and the Content-Type header is the
+# server's claim. Neither is the file. OOXML (.docx/.xlsx) and legacy Office (.doc/.xls)
+# share a container with other formats, so the container is resolved further before it is
+# named -- a .docx and a .xlsx are both a zip, and calling one the other produces a file
+# nothing can open and no error saying why.
+def sniff(blob: bytes) -> str | None:
+    """The extension this content actually is, or None if it is not a document at all."""
+    if blob.startswith(b'%PDF'):
+        return '.pdf'
+    if blob.startswith(b'PK\x03\x04'):
+        head = blob[:4000]
+        if b'word/' in head:
+            return '.docx'
+        if b'xl/' in head:
+            return '.xlsx'
+        if b'ppt/' in head:
+            return '.pptx'
+        return '.zip'
+    if blob.startswith(b'\xd0\xcf\x11\xe0'):     # OLE2: pre-2007 Word and Excel
+        return '.doc'
+    return None                                    # an HTML error page, or nothing useful
+
+
 def get(url: str, data: dict | None = None, tries: int = 3) -> bytes:
     body = urllib.parse.urlencode(data).encode() if data else None
     headers = dict(UA)
@@ -110,10 +133,24 @@ def main() -> None:
             continue
         p.parent.mkdir(parents=True, exist_ok=True)
         blob = get(r['url'])
-        # CivicEngage serves an HTML error page rather than a 404 for missing files.
-        if not blob.startswith(b'%PDF'):
+        # What the town actually served. CivicEngage returns an HTML error page rather
+        # than a 404 for a missing file, and this used to test `blob.startswith(b'%PDF')`
+        # and blank the path for anything else -- which was one inference too many. A
+        # response that is not a PDF means the file is missing OR that the town published
+        # it as a Word document, and 39 documents were silently recorded as absent for
+        # being .docx. Every one of them was live and fetchable the whole time.
+        #
+        # A missing file is now the ONLY thing that blanks a path, and it is identified
+        # positively, by the error page's own magic, rather than by not being a PDF.
+        kind_of = sniff(blob)
+        if kind_of is None:
             r['path'] = ''
             continue
+        if kind_of != '.pdf':
+            # The row was written assuming .pdf. Correct it to what arrived.
+            r['path'] = r['path'][:-4] + kind_of
+            p = OUT / r['path']
+            p.parent.mkdir(parents=True, exist_ok=True)
         p.write_bytes(blob)
         got += 1
         if got % 25 == 0:
