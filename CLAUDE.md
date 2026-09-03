@@ -394,8 +394,34 @@ arriving fresh.
     python3 scripts/build_code_reconciliation_xlsx.py  # FY26 budget vs ledger, per line, summed by function code
     python3 scripts/build_discrepancy_review.py   # the categories of discrepancy, for review by the Town
     python3 scripts/minutes_decisions.py         # ...and every quote in it, checked against the minutes
+    python3 scripts/check_sent_documents.py      # has anything we sent the Town drifted from what we hold
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
+
+## Searching what the town said
+
+Rule 15a says to search the meeting archive for what people said about a thing in the same
+year, and for a long time said it without naming anything to search. Use this:
+
+    python3 scripts/search_minutes.py "jersey" --board school-committee --since 2025-07-01
+
+It greps `sources/minutes/text/` -- 1,422 documents, every board, 2025 onward -- and prints
+the board, the date and the citable URL for each hit. **It also prints, on every run, how
+many documents were searched out of how many the town has published, and lists any that
+cannot be searched at all.**
+
+That last part is not decoration. A grep that finds nothing prints nothing, and nothing
+reads as *nobody said it*. It is not: it means nobody said it *in the documents that can be
+read*, and those were different numbers for months. 39 documents the town published as Word
+files were absent from the archive -- the fetcher tested `blob.startswith(b'%PDF')` and
+recorded everything else as missing, and the extractor walked `*.pdf` only, so each half of
+the assumption hid the other. One was School Committee minutes from the middle of FY26.
+`fetch_agendas.py` now identifies the format from its magic bytes and `extract_minutes.py`
+reads Word and Excel too, so coverage is currently 1,422 of 1,422 -- but the reason to print
+the denominator is that nobody will notice the next gap either.
+
+The archive is also published: `/minutes/<board>.txt` per board, `/data/minutes-index.csv`
+with a `has_text` column, and `/minutes/find/` for callers that can only fetch URLs.
 
 `notes/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
 and the database is a derived read model, rebuilt from scratch every run. Nothing is ever
