@@ -29,6 +29,19 @@ anything that could not be paired is written in amber rather than left blank -- 
 cell reads as zero and as agreement, and it is neither.
 
 Read it as: the code sums are the finding; the row pairings are a reading aid.
+
+A ROW THAT PAIRS IS NOT A ROW THAT AGREES
+
+Pass 2 matches against the REVISED budget, which pairs athletic insurance -- the workbook
+carries the $9,000 left after $20,000 was moved out, not the $29,000 appropriated. Pairing
+it makes the correspondence visible and would, on its own, make a real $20,000
+disagreement look settled. So `BUDGET vs APPROP` carries the gap between the workbook
+figure and the appropriation on every paired row, flagged wherever it is not zero. One row
+in the department is flagged.
+
+`check_function_crosswalk.py` deliberately does NOT run pass 2, for the same reason from
+the other side: its job is to fail on things that do not reconcile, and pairing on a
+different column would hide one.
 """
 import csv
 import os
@@ -79,21 +92,38 @@ def load():
 
 
 def match(book_lines, accounts):
-    """Greedy pairing by amount, largest first, within a dollar.
+    """Greedy pairing by amount, within a dollar, in two passes.
 
-    Returns [(book_line, account_or_None)] and the accounts nothing claimed. Largest
-    first so that where several lines share a value the big money is paired first and
-    the ambiguity lands on the small rows, which is where it does least damage.
+    Pass 1 matches the workbook against the ledger's ORIGINAL APPROP. Pass 2 matches
+    whatever is left against the REVISED budget, because the workbook does not state the
+    original appropriation everywhere: athletic insurance is appropriated at $29,000 with
+    $20,000 moved out of it, and the workbook carries the $9,000 that is left. A single
+    pass on `original` left that account reading "no budget line of this amount" while
+    its counterpart sat unpaired three rows below.
+
+    Which pass caught a row is reported, because "matched the revised budget and not the
+    appropriation" is a fact about that line, not a detail of the method.
+
+    Returns [(book_line, account_or_None, how)] and the accounts nothing claimed.
     """
     pool = list(accounts)
     out = []
-    for b in book_lines:
-        v = m(b['fy26_final'])
-        j = None
-        if abs(v) >= 0.5:
-            j = next((i for i, a in enumerate(pool)
-                      if abs(m(a['original']) - v) <= 1.0), None)
-        out.append((b, pool.pop(j) if j is not None else None))
+    for col, tag in (('original', 'amount (approp)'), ('revised', 'amount (revised)')):
+        nxt = []
+        src = book_lines if col == 'original' else [b for b, a, _ in out if a is None]
+        for b in src:
+            v = m(b['fy26_final'])
+            j = None
+            if abs(v) >= 0.5:
+                j = next((k for k, a in enumerate(pool)
+                          if abs(m(a[col]) - v) <= 1.0), None)
+            nxt.append((b, pool.pop(j) if j is not None else None, tag))
+        if col == 'original':
+            out = nxt
+        else:
+            claimed = {id(b): (a, t) for b, a, t in nxt if a is not None}
+            out = [(b, claimed[id(b)][0], claimed[id(b)][1]) if id(b) in claimed
+                   else (b, a, how) for b, a, how in out]
     return out, pool
 
 
@@ -121,6 +151,9 @@ def main():
     ws.cell(2, 1, 'Budget columns are the district\'s FY27 projection workbook. Ledger '
                   'columns are the Town Accountant\'s MUNIS report for FY2026 period 12.'
             ).font = Font(size=9, color=MUTED)
+    ws.cell(4, 1, 'A row that pairs is not a row that agrees: BUDGET vs APPROP carries '
+                  'the gap between the workbook figure and the appropriation, and is '
+                  'flagged wherever it is not zero.').font = Font(size=9, color=GAP_INK)
     ws.cell(3, 1, 'Lines are paired BY AMOUNT within a code, which is not a key: it shows '
                   'a figure of that size exists on both sides, never that the two are the '
                   'same line. The code sums are the finding; the row pairings are a '
@@ -128,8 +161,8 @@ def main():
 
     head = ['CODE', 'LINE ITEM (district)', 'THEIR ROW', 'BUDGET FY26',
             'LEDGER ACCOUNT', 'LEDGER NAME', 'ORIGINAL APPROP', 'TRANSFERS',
-            'REVISED', 'YTD EXPENDED', 'PAIRED BY']
-    hr = 5
+            'REVISED', 'YTD EXPENDED', 'BUDGET vs APPROP', 'PAIRED BY']
+    hr = 6
     for i, h in enumerate(head, 1):
         c = ws.cell(hr, i, h)
         c.font = Font(bold=True, size=8, color='FFFFFF')
@@ -138,7 +171,7 @@ def main():
     ws.row_dimensions[hr].height = 28
 
     r = hr + 1
-    summary = []
+    summary, offbase = [], []
     for code in sorted(set(A) | set(B), key=lambda c: (c == '', c)):
         lines, accts = B.get(code, []), A.get(code, [])
         pairs, spare = match(lines, accts)
@@ -149,7 +182,7 @@ def main():
             ws.cell(r, c).fill = GRP_FILL
         r += 1
 
-        for b, a in pairs:
+        for b, a, how in pairs:
             ws.cell(r, 1, code or '—').font = Font(size=8, color=MUTED)
             ws.cell(r, 2, b['line_item'].strip()).font = Font(size=9)
             ws.cell(r, 3, int(b['row'])).font = Font(size=8, color=MUTED)
@@ -157,20 +190,36 @@ def main():
             ws.cell(r, 4, v).number_format = MONEY
             if a is None:
                 if abs(v) < 0.5:
-                    for c in range(5, 11):
+                    for c in range(5, 13):
                         ws.cell(r, c, '—').font = Font(size=8, color=MUTED)
                         ws.cell(r, c).alignment = Alignment(horizontal='center')
                 else:
-                    for c in range(5, 10):
+                    for c in range(5, 11):
                         gap(ws.cell(r, c), 'no account of this amount' if c == 5 else '')
-                    gap(ws.cell(r, 11), 'UNPAIRED')
+                    gap(ws.cell(r, 12), 'UNPAIRED')
             else:
                 ws.cell(r, 5, a['account']).font = Font(size=8, name='Menlo')
                 ws.cell(r, 6, a['name'].strip()).font = Font(size=9)
                 for c, k in ((7, 'original'), (8, 'transfers'), (9, 'revised'),
                              (10, 'expended')):
                     ws.cell(r, c, m(a[k])).number_format = MONEY
-                ws.cell(r, 11, 'amount').font = Font(size=8, color=MUTED)
+                # Pairing a workbook figure against the REVISED budget makes the row
+                # match while leaving a real disagreement at the appropriation. That is
+                # the smoothing this file exists not to do, so the gap against ORIGINAL
+                # APPROP is carried in its own column and flagged whatever the row
+                # matched on.
+                gapv = v - m(a['original'])
+                if abs(gapv) > 1.0:
+                    ws.cell(r, 11, gapv).number_format = MONEY
+                    ws.cell(r, 11).font = Font(bold=True, size=9, color='B00000')
+                    ws.cell(r, 11).fill = BAD_FILL
+                    offbase.append((code, b['line_item'].strip(), a['name'].strip(),
+                                    v, m(a['original']), gapv))
+                else:
+                    ws.cell(r, 11, '—').font = Font(size=8, color=MUTED)
+                    ws.cell(r, 11).alignment = Alignment(horizontal='center')
+                ws.cell(r, 12, how).font = Font(
+                    size=8, color=GAP_INK if 'revised' in how else MUTED)
                 ws.cell(r, 11).alignment = Alignment(horizontal='center')
             for c in range(1, len(head) + 1):
                 ws.cell(r, c).border = BOX
@@ -201,18 +250,14 @@ def main():
             for c, k in ((7, 'original'), (8, 'transfers'), (9, 'revised'),
                          (10, 'expended')):
                 ws.cell(r, c, m(a[k])).number_format = MONEY
+            # This column answers ONE question -- did the row find a counterpart -- and
+            # nothing else. It previously carried the account's budget state, which is a
+            # different fact, and put 'budgeted by transfer only' where a reader was
+            # looking for a reason the row did not pair. It is not one.
+            gap(ws.cell(r, 12), 'UNPAIRED')
             if naked:
-                gap(ws.cell(r, 11), 'SPENT WITH NO BUDGET')
                 for c in range(1, len(head) + 1):
                     ws.cell(r, c).fill = BAD_FILL
-            elif zero and spent:
-                ws.cell(r, 11, 'transfer only').font = Font(size=8, color=MUTED)
-                ws.cell(r, 11).alignment = Alignment(horizontal='center')
-            elif zero:
-                ws.cell(r, 11, 'zero appropriation').font = Font(size=8, color=MUTED)
-                ws.cell(r, 11).alignment = Alignment(horizontal='center')
-            else:
-                gap(ws.cell(r, 11), 'UNPAIRED')
             for c in range(1, len(head) + 1):
                 ws.cell(r, c).border = BOX
             r += 1
@@ -226,8 +271,8 @@ def main():
         ws.cell(r, 10, et).number_format = MONEY
         diff = lt - bt
         _bad = abs(diff) > max(1.0, len(accts))
-        ws.cell(r, 11, 'differs by %s' % format(diff, ',.0f') if _bad else 'sums agree')
-        ws.cell(r, 11).font = Font(bold=_bad, size=8,
+        ws.cell(r, 12, 'differs by %s' % format(diff, ',.0f') if _bad else 'sums agree')
+        ws.cell(r, 12).font = Font(bold=_bad, size=8,
                                    color='B00000' if _bad else MUTED)
         bad = abs(diff) > max(1.0, len(accts))
         for c in range(1, len(head) + 1):
@@ -238,14 +283,15 @@ def main():
         r += 2
         summary.append((code, ' / '.join(label.get(code, [])), len(lines), len(accts),
                         bt, lt, et, diff,
-                        sum(1 for b, a in pairs if a is None and abs(
+                        sum(1 for b, a, _ in pairs if a is None and abs(
                             m(b['fy26_final'])) >= 0.5)
                         + sum(1 for a in spare if abs(m(a['original'])) >= 0.5),
                         sum(1 for a in spare if abs(m(a['original'])) < 0.5
                             and abs(m(a['expended'])) >= 0.5
                             and abs(m(a['transfers'])) < 0.5)))
 
-    for col, w in zip(range(1, 12), (7, 46, 8, 14, 34, 13, 15, 12, 13, 14, 22)):
+    for col, w in zip(range(1, 13),
+                      (7, 46, 8, 14, 34, 13, 15, 12, 13, 14, 17, 22)):
         ws.column_dimensions[get_column_letter(col)].width = w
     ws.freeze_panes = ws.cell(hr + 1, 5)
 
@@ -297,6 +343,12 @@ def main():
     nbad = sum(1 for x in summary if abs(x[7]) > max(1.0, x[3]))
     nunp = sum(x[8] for x in summary)
     nzs = sum(x[9] for x in summary)
+    if offbase:
+        print('  rows that pair but disagree with the appropriation:')
+        for c, li, nm, v, o, g in offbase:
+            print('    %-6s %-40s workbook %10s  approp %10s  %+10s'
+                  % (c, li[:40], format(v, ',.0f'), format(o, ',.0f'),
+                     format(g, ',.0f')))
     print('wrote %s' % os.path.relpath(OUT, ROOT))
     print('  %d codes; %d with sums that differ; %d rows that did not pair; '
           '%d account(s) spent with neither appropriation nor transfer'
