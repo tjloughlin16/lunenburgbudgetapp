@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**166 of 302 catalogued documents state a fiscal year** in their title or path and appear under `by-fiscal-year/`.
+**186 of 302 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **69 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **136 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **116 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -28,19 +28,22 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | year | documents |
 |---|---:|
 | FY09 | 1 |
-| FY14 | 1 |
-| FY15 | 1 |
-| FY18 | 2 |
-| FY19 | 16 |
-| FY20 | 7 |
-| FY21 | 5 |
-| FY22 | 3 |
-| FY23 | 7 |
-| FY24 | 13 |
-| FY25 | 18 |
-| FY26 | 48 |
-| FY27 | 50 |
+| FY14 | 8 |
+| FY15 | 13 |
+| FY16 | 13 |
+| FY17 | 16 |
+| FY18 | 16 |
+| FY19 | 24 |
+| FY20 | 23 |
+| FY21 | 10 |
+| FY22 | 7 |
+| FY23 | 18 |
+| FY24 | 30 |
+| FY25 | 37 |
+| FY26 | 70 |
+| FY27 | 58 |
 | FY28 | 2 |
+| FY29 | 2 |
 
 ## Documents with no stated fiscal year
 
@@ -100,29 +103,16 @@ Listed so this view cannot look more complete than it is.
 - `dese/selected-populations-2025.html` — DESE selected populations, state report, FY2025
 - `dese/selected-populations-2026.html` — DESE selected populations, state report, FY2026
 - `dese/selected-populations.csv` — Lunenburg selected populations, all years (CSV)
-- `district-budget-page/docs/3-12-25-town-manager-39-s-budget.pdf` — 3/12/25 Town Manager&#39;s Budget
 - `district-budget-page/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget-page/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
 - `district-budget-page/docs/balanced-budget-slides-3-23-26.pdf` — Balanced Budget Slides 3-23-26
 - `district-budget-page/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — BUDGET ADDENDUM MULTI-SCENARIO FINANCIAL ANALYSIS
 - `district-budget-page/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
-- `district-budget-page/docs/community-forums-scheduled-on-school-department-budget.docx` — Community Forums Scheduled on School Department Budget
-- `district-budget-page/docs/final-budget-document.pdf` — Final Budget Document
-- `district-budget-page/docs/free-cash-presentation.pdf` — Free Cash Presentation
 - `district-budget-page/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
 - `district-budget-page/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
-- `district-budget-page/docs/notice-of-budget-hearing-3-16-22.pdf` — Notice of Budget Hearing 3-16-22
 - `district-budget-page/docs/notice-of-budget-hearing-april-29-2020.bin` — Notice of Budget Hearing April 29, 2020
-- `district-budget-page/docs/notice-of-public-budget-hearing-2-25.pdf` — NOTICE OF PUBLIC BUDGET HEARING 2/25
 - `district-budget-page/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — Slide Deck from the SC Meeting 3/23/26
-- `district-budget-page/docs/summary-page-tm-target-budget-needs-based-level-service.pdf` — Summary Page-TM Target Budget, Needs Based, Level Service
-- `district-budget-page/docs/superintendent-39-s-proposed-budget.docx` — Superintendent&#39;s Proposed Budget
 - `district-budget-page/docs/superintendent-s-budget-recommendations.docx` — Superintendent’s Budget Recommendations
-- `district-budget-page/docs/the-tale-of-our-ten-districts.pdf` — The Tale of Our Ten Districts
-- `district-budget-page/docs/tm-budget-side-by-side-view.pdf` — TM Budget Side by Side view
-- `district-budget-page/docs/tm-budget-updated-3-12-25.pdf` — TM Budget Updated 3-12-25
-- `district-budget-page/docs/town-meeting-budget-presentation.pdf` — Town Meeting Budget Presentation
-- `district-budget-page/docs/updated-town-manager-39-s-budget-sheets-2-66-2-5-25.xlsx` — Updated Town Manager&#39;s Budget Sheets 2.66% 2-5-25
 - `dls-free-cash/PROVENANCE.md` — Where these came from, and what they cannot do
 - `dls-free-cash/free-cash-proof-ayer.xlsx` — Ayer
 - `dls-free-cash/free-cash-proof-groton.xlsx` — Groton
@@ -140,9 +130,7 @@ Listed so this view cannot look more complete than it is.
 - `pdf/town-2026-election-unofficial-results.pdf` — Election results, 16 May 2026
 - `pdf/town-2026-election-warrant.pdf` — Ballot question language
 - `pdf/town-additional-revenue-plan.pdf` — Additional Town Revenue Spending Plan
-- `pdf/town-atm-2026-booklet-warrant.pdf` — Annual Town Meeting booklet and warrant, 2026
 - `pdf/town-revenue-prop25-presentation.pdf` — Finance Committee deck on Proposition 2½
-- `peers/north-middlesex-finance-subcommittee.pdf` — North Middlesex budget summit notes
 - `records-request-2026-06/PROVENANCE.md` — Provenance for the 17 June 2026 records request
 - `records-request-2026-06/athletic-fee-counts-2025-2026.docx` — Athletic fee counts, 2025-2026
 - `town-site/docs/1416-senior-tax-work-off-record-hours.pdf` — Senior Tax Work Off- Record Hours
@@ -158,19 +146,14 @@ Listed so this view cannot look more complete than it is.
 - `town-site/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf` — Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024
 - `town-site/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf` — Board of Assessors Code of Conduct (PDF)
 - `town-site/docs/3547-role-of-the-assessing-department.pdf` — Role of the Assessing Department
-- `town-site/docs/373-fy-2023-budget-narrative-pdf.pdf` — FY 2023 Budget Narrative (PDF)
 - `town-site/docs/374-fy-2023-budget-presentation-pdf.pdf` — FY 2023 Budget Presentation (PDF)
-- `town-site/docs/3765-town-meeting-booklet-including-warrant.pdf` — Town Meeting Booklet (including Warrant)
-- `town-site/docs/3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf` — FY 2027 Operating Budgets (Balanced, Tier 1, Tier2)
 - `town-site/docs/394-1-40-school-resource-officer-pdf.pdf` — 1.40 School Resource Officer (PDF)
-- `town-site/docs/4082-fy-2027-detailed-budget.pdf` — FY 2027 Detailed Budget
 - `town-site/docs/4111-article-13-fy-2027-capital-plan.pdf` — Article 13: FY 2027 Capital Plan
 - `town-site/docs/4112-article-32-notice-of-town-meeting.pdf` — Article 32: Notice of Town Meeting
 - `town-site/docs/4113-article-12-capital-program-funding-reauthorization.pdf` — Article 12: Capital Program Funding Reauthorization
 - `town-site/docs/4161-2026-annual-town-election-warrant.pdf` — 2026 Annual Town Election Warrant
 - `town-site/docs/4306-notice-of-tax-taking-lists.pdf` — Notice of Tax Taking Lists
 - `town-site/docs/4365-september-3-2026-special-town-meeting-legal-notice.pdf` — September 3, 2026 Special Town Meeting Legal Notice
-- `town-site/docs/4373-september-3-2026-special-town-meeting-warrant.pdf` — September 3 2026 Special Town Meeting Warrant
 - `town-site/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf` — November 17, 2026 Special Town Meeting Legal Notice
 - `town-site/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf` — 4.38 Reserve Officer Hiring Process (PDF)
 - `town-site/docs/443-4-39-reserve-officer-program-pdf.pdf` — 4.39 Reserve Officer Program (PDF)

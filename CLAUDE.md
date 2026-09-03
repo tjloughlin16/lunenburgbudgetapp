@@ -395,6 +395,8 @@ arriving fresh.
     python3 scripts/build_discrepancy_review.py   # the categories of discrepancy, for review by the Town
     python3 scripts/minutes_decisions.py         # ...and every quote in it, checked against the minutes
     python3 scripts/check_sent_documents.py      # has anything we sent the Town drifted from what we hold
+    python3 scripts/build_views.py               # the browsable views of the archive, by year and by group
+    python3 scripts/build_views.py --check       # ...and every symlink in them still resolves
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 
