@@ -45,8 +45,9 @@ function guidance(requested) {
   const site = 'https://lunenburgbudgetproject.org'
   return `Not found: /minutes/${requested}
 
-The meeting archive IS published as plain text — 1,383 agendas and sets of minutes
-across 40 town boards. You are one URL away. There are three shapes and no others:
+The meeting archive IS published as plain text — every agenda and set of minutes the
+town has published, across 40 town boards. You are one URL away. There are three shapes
+and no others:
 
 1. ONE FILE PER BOARD, every document concatenated. This is the one to fetch if you
    want to search. You cannot grep a website; you can read one file.
@@ -88,7 +89,7 @@ function guidanceHtml(requested) {
 <style>body{font:16px/1.5 system-ui,sans-serif;max-width:44rem;margin:2rem auto;padding:0 1rem}
 code,a{font-family:ui-monospace,Menlo,monospace}li{margin:.35rem 0}</style></head><body>
 <h1>Not found: <code>/minutes/${esc(requested)}</code></h1>
-<p>The meeting archive <strong>is</strong> published as plain text — 1,383 agendas and sets
+<p>The meeting archive <strong>is</strong> published as plain text — every agenda and set
 of minutes across 40 town boards. You are one URL away. There are three shapes and no
 others.</p>
 
