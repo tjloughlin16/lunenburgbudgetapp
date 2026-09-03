@@ -1002,9 +1002,23 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v9.2.2",
+  "current": "v9.3",
   "updated": "2026-09-03",
   "items": [
+   {
+    "tag": "v9.3",
+    "date": "2026-09-03",
+    "title": "What connects the school budget to the town\u2019s books, and what does not",
+    "short": "budget to ledger, and where it stops",
+    "headline": "A new analysis sets out what can be followed from what was budgeted to what was spent. Two levels join. The third cannot, by anybody, and the format a report arrives in decides which.",
+    "changes": [
+     "The department as a whole reconciles between the two documents. By category \u2014 2710 Guidance, 2305 Teachers \u2014 41 of 45 codes match, and only for FY2026 period 12. Below that nothing joins at all: the town\u2019s system shortens account names to ten characters, so the middle school and high school guidance lines are the same string where the budget has a row for each.",
+     "The format of a report decides what can be asked of it. A spreadsheet export carries the whole coded account and the printed PDF carries a label with the code removed \u2014 and that code is the only thing joining the district\u2019s budget to the town\u2019s ledger. One period can be compared because one report arrived as a spreadsheet.",
+     "Whether state aid can be traced to what it paid for is published as a question rather than a finding. No revenue account carries a category code and state aid shares no organisation code with any expense account; the reading of that \u2014 that aid arrives unrestricted and nothing records which dollar paid which bill \u2014 is a claim about the town\u2019s system made from outside it, and is labelled as inference.",
+     "Underneath it, the database now carries the code that makes the category comparison possible. It was in the extracted data all along and was discarded every time the database was built. A check now fails the build if it goes missing again.",
+     "And 8,598 budget figures \u2014 the largest table here, and most of what this site quotes \u2014 pointed at source documents by a name that matched none of them. Every figure now resolves to the document it came from."
+    ]
+   },
    {
     "tag": "v9.2.2",
     "date": "2026-09-03",
