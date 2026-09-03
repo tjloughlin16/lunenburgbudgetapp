@@ -13,6 +13,13 @@ Data current as of 2026-09-03. Base year FY27. There is no FY28 budget yet; ever
 | which meeting documents mention a word | `https://lunenburgbudgetproject.org/minutes/find/README.txt` |
 | the whole meeting archive for one board | `https://lunenburgbudgetproject.org/minutes/school-committee.txt` |
 | every source document, with checksums | `https://lunenburgbudgetproject.org/data/sources.json` |
+| what build you are looking at | `https://lunenburgbudgetproject.org/version.json` |
+
+## If you are unsure whether what you fetched is current
+
+Fetch [https://lunenburgbudgetproject.org/version.json](https://lunenburgbudgetproject.org/version.json) — a few hundred bytes stating this build’s tag, commit and the document counts that several other files here repeat. **Compare it with anything else you hold from this site. If another file disagrees with it, your copy of that file is cached rather than wrong.**
+
+This exists because you cannot tell otherwise, and neither can we. Caching happens in your fetch layer, not in HTTP, and a cache-busting query parameter is not dependable: an assistant sent `?v=923` on eight requests to this site and its tool reported the parameter stripped from seven of them — seven fetches that looked fresh and were not. `version.json` is served `no-store`; nothing else here is.
 
 ## How to search the archive — three small fetches, not one big one
 

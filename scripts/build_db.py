@@ -90,6 +90,21 @@ CREATE TABLE account (
     dept                TEXT,               -- '300' SCHOOL DEPARTMENT
     org                 TEXT,
     object              TEXT,
+    -- The account string as MUNIS prints it in a SPREADSHEET export, and the function
+    -- code carried in its fourth segment. Both were being discarded by the loader.
+    --
+    -- This is the join to the district's budget, and it was sitting in munis-ledger.csv
+    -- the whole time. `function` matches `budget_line.function_group` on its first four
+    -- characters for 41 of the budget's 45 codes. Without these two columns `crosswalk`
+    -- could not be populated by anything, the API could not express the join, and an
+    -- analysis run against this database concluded the two sides shared no key at all.
+    --
+    -- NULL for every row that came from a PDF: the printed report shows ORG and OBJ and
+    -- not the account string, which is why `function` is populated for FY2026 period 12
+    -- and nothing earlier. A null here means the report was a PDF, not that the account
+    -- has no function.
+    account_string      TEXT,
+    function            TEXT,
     name                TEXT,
     account_type        TEXT NOT NULL       -- 'expense' | 'revenue'
         CHECK (account_type IN ('expense', 'revenue')),
@@ -254,6 +269,7 @@ CREATE TABLE grant_award (
     PRIMARY KEY (fy, name)
 );
 
+CREATE INDEX ix_account_function ON account(function);
 CREATE INDEX ix_ledger_fy      ON ledger_snapshot(fy, period);
 CREATE INDEX ix_ledger_account ON ledger_snapshot(account_id);
 CREATE INDEX ix_budget_fy      ON budget_figure(fy, stage);
@@ -302,6 +318,33 @@ REFERENCE = [
 ]
 
 VIEWS = """
+-- Budget against the town's books, by function code. THE ONE JOIN BETWEEN THE TWO SIDES.
+--
+-- A view rather than rows in `crosswalk`, deliberately. The function code joins a
+-- CATEGORY -- 2710 Guidance -- and never a line: MUNIS truncates account names to ten
+-- characters, so `MS GUIDANC` and `HS GUIDANC` are both 2710 and cannot be told apart
+-- from each other, while the budget has a row per school. Writing that into `crosswalk`
+-- would record an inference as a mapping. Here it is computed, and what it is computed
+-- from is visible in the SQL.
+--
+-- Coverage is narrow and does not widen by wanting it to: `account.function` is
+-- populated only where the source was a SPREADSHEET export. That is FY2026 period 12.
+CREATE VIEW v_function_budget_vs_ledger AS
+SELECT  a.function                                  AS function_code,
+        l.fy, l.period,
+        SUM(l.revised)                              AS ledger_revised,
+        SUM(l.expended)                             AS ledger_expended,
+        SUM(l.encumbered)                           AS ledger_encumbered,
+        COUNT(DISTINCT a.account_id)                AS accounts,
+        (SELECT COUNT(*) FROM budget_line b
+          WHERE substr(b.function_group, 1, 4) = a.function) AS budget_lines,
+        l.doc_id
+FROM    ledger_snapshot l
+JOIN    account a USING (account_id)
+WHERE   a.function IS NOT NULL AND a.account_type = 'expense'
+GROUP BY a.function, l.fy, l.period;
+
+
 -- Did we spend what we appropriated? One row per account per closed year.
 -- Only period 13 -- an interim period answers a different question.
 CREATE VIEW v_appropriation_vs_spend AS
@@ -551,8 +594,15 @@ def load_munis(db):
         else:
             aid = '%s-%s' % (fund, r['dept'])
         fy = int(r['fy'])
+        # '0000' is MUNIS's filler for an account with no function -- town departments,
+        # and every row from a printed report. Store NULL rather than a code that looks
+        # real and joins to nothing.
+        fn = (r.get('function') or '').strip() or None
+        if fn == '0000':
+            fn = None
         accounts[aid] = (aid, fund, r['fund_name'], r['dept'] or None,
-                         r['org'] or None, r['object'] or None, r['name'],
+                         r['org'] or None, r['object'] or None,
+                         (r.get('account') or '').strip() or None, fn, r['name'],
                          r['account_type'], r['level'], fy, fy)
         funds.setdefault(fund, (fund, r['fund_name'],
                                 FUND_KIND.get(fund, (None, None, None))[1],
@@ -564,7 +614,7 @@ def load_munis(db):
     for code, (name, kind, restr) in FUND_KIND.items():
         funds.setdefault(code, (code, name, kind, restr))
     db.executemany('INSERT OR REPLACE INTO fund VALUES (?,?,?,?)', list(funds.values()))
-    db.executemany('INSERT OR REPLACE INTO account VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+    db.executemany('INSERT OR REPLACE INTO account VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
                    list(accounts.values()))
     db.executemany('INSERT OR REPLACE INTO ledger_snapshot VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                    facts)
@@ -615,7 +665,20 @@ def load_funds(db):
 
 
 def load_budget_figures(db):
-    """line-history.csv: every line every document prints, with the stage it printed."""
+    """line-history.csv: every line every document prints, with the stage it printed.
+
+    `source` is a BARE FILENAME while `document.doc_id` is a repository path, so the
+    largest fact table in this database -- 8,598 figures, most of what the site quotes --
+    pointed at documents by a name that resolved to none of them. Every row had a doc_id
+    and not one of the twenty distinct values joined. Nothing caught it because the only
+    check ever run was `doc_id IS NOT NULL`, which is a fact about a string rather than
+    about a document, and because `v_provenance` LEFT JOINs, so a total miss renders as
+    blank columns instead of an error.
+
+    Resolved by `resolve_budget_documents()` AFTER the document table is written -- it is
+    not written until `finish_documents`, so doing it here silently matched nothing and
+    dropped all 8,598 rows. The loader stores the filename; the post-pass rewrites it.
+    """
     out, lines = [], {}
     for r in rows('line-history'):
         fy, value = r['fy'], num(r['value'])
@@ -698,6 +761,67 @@ def check(db, label, got, want, tol=0.005):
     CHECKS.append((ok, label, got, want))
     print('  %s  %-52s %s' % ('OK  ' if ok else 'FAIL', label,
                               f'{got:,.2f}' if got is not None else 'None'))
+
+
+def resolve_budget_documents(db):
+    """Rewrite budget_figure.doc_id from a bare filename to the document's real id.
+
+    Runs after `finish_documents`, which is the first moment the document table exists.
+    Anything still unresolved is reported rather than left pointing nowhere: a figure
+    whose address goes to no document is worse than one that admits it has none, because
+    only the second kind can be noticed.
+    """
+    by_base = {}
+    for (doc_id,) in db.execute('SELECT doc_id FROM document'):
+        by_base.setdefault(os.path.basename(doc_id), doc_id)
+    fixed, missing = 0, set()
+    for (raw,) in db.execute('SELECT DISTINCT doc_id FROM budget_figure').fetchall():
+        if not raw or raw in by_base.values():
+            continue
+        full = by_base.get(os.path.basename(raw))
+        if full:
+            db.execute('UPDATE budget_figure SET doc_id = ? WHERE doc_id = ?', (full, raw))
+            fixed += 1
+        else:
+            missing.add(raw)
+    db.commit()
+    unresolved = db.execute(
+        'SELECT COUNT(*) FROM budget_figure b LEFT JOIN document d ON d.doc_id = b.doc_id '
+        'WHERE d.doc_id IS NULL').fetchone()[0]
+    return fixed, sorted(missing), unresolved
+
+
+def check_join_key(db):
+    """The function code must survive the load, and must still meet the budget.
+
+    It did not survive, for as long as this database has existed. `munis-ledger.csv`
+    carried a `function` column and `account` had no column to put it in, so the one join
+    between the district's budget and the town's books was discarded on every build --
+    silently, because nothing compared the loader's output to its input. An analysis run
+    against the database concluded the two sides shared no key at all, which was true of
+    the database and false of the data.
+
+    Two assertions, both cheap:
+      1. Some rows carry a function code. Zero means the column was dropped again.
+      2. Those codes still overlap the budget's. A drift to zero means one side recoded.
+    """
+    coded = db.execute('SELECT COUNT(*) FROM account WHERE function IS NOT NULL').fetchone()[0]
+    if not coded:
+        raise SystemExit(
+            'account.function is empty. The join between the budget and the ledger is '
+            'gone. Check that munis-ledger.csv still has a `function` column and that '
+            'load_munis still carries it.')
+    overlap = db.execute("""
+        SELECT COUNT(*) FROM (
+            SELECT DISTINCT function AS c FROM account WHERE function IS NOT NULL
+            INTERSECT
+            SELECT DISTINCT substr(function_group, 1, 4) FROM budget_line
+             WHERE function_group IS NOT NULL AND function_group != '')""").fetchone()[0]
+    if overlap < 20:
+        raise SystemExit(
+            f'only {overlap} function codes are shared between account and budget_line. '
+            'They were 41. One side has been recoded and the join no longer holds.')
+    return coded, overlap
 
 
 def reconcile(db):
@@ -869,6 +993,16 @@ def main():
     db.executescript(VIEWS)
     db.commit()
 
+    fixed, missing, unresolved = resolve_budget_documents(db)
+    print('  budget provenance      %d source name(s) resolved to a document; '
+          '%d figures still unresolved' % (fixed, unresolved))
+    for m in missing[:5]:
+        print('      no document for %s' % m)
+
+    coded, overlap = check_join_key(db)
+    print('  function codes   %5d accounts carry one; %d shared with the budget' %
+          (coded, overlap))
+
     reconcile(db)
     bad = [c for c in CHECKS if not c[0]]
     print('\n%d of %d reconciliations tie' % (len(CHECKS) - len(bad), len(CHECKS)))
@@ -876,9 +1010,13 @@ def main():
     # The crosswalk is empty and that is the honest state, not an oversight.
     mapped = db.execute('SELECT COUNT(*) FROM crosswalk').fetchone()[0]
     lines = db.execute('SELECT COUNT(*) FROM budget_line').fetchone()[0]
-    print('crosswalk: %d of %d budget lines mapped to an account. The line-level MUNIS\n'
-          'reports are what fills this; until then no line can be traced into the ledger.'
-          % (mapped, lines))
+    print('crosswalk: %d of %d budget lines mapped to a single account.' % (mapped, lines))
+    print('A LINE still cannot be traced into the ledger, and that is a property of the\n'
+          'data rather than a gap in the load: MUNIS truncates account names to ten\n'
+          'characters, so MS GUIDANC and HS GUIDANC are both 2710 where the budget has a\n'
+          'row per school. What CAN be traced is the CATEGORY, through account.function --\n'
+          'see v_function_budget_vs_ledger. Populating crosswalk from that would record an\n'
+          'inference as a mapping, so it stays empty and the view does the joining.')
 
     db.close()
     if args.check and bad:

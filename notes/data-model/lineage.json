@@ -1,0 +1,1548 @@
+{
+ "nodes": [
+  {
+   "id": "table:account",
+   "kind": "table",
+   "label": "account",
+   "rows": 981,
+   "fields": 13,
+   "x": 544,
+   "y": 129,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:munis-ledger",
+   "kind": "extract",
+   "label": "munis-ledger.csv",
+   "x": 757,
+   "y": 196,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:Year-to-date budget report (glytdbud)",
+   "kind": "report",
+   "label": "Year-to-date budget report (glytdbud)",
+   "x": 990,
+   "y": 358,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "key:department",
+   "kind": "key",
+   "label": "dept",
+   "note": "the department code, 300 and 301",
+   "x": 405,
+   "y": 278,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:function",
+   "kind": "key",
+   "label": "function",
+   "note": "the DESE category code, 2710 and 2305",
+   "x": 405,
+   "y": 332,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:account_id",
+   "kind": "key",
+   "label": "account_id",
+   "note": "the MUNIS account number",
+   "x": 405,
+   "y": 358,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:fund",
+   "kind": "key",
+   "label": "fund",
+   "note": "the fund code, 0100 and 1301",
+   "x": 405,
+   "y": 386,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "table:athletic_fee_schedule",
+   "kind": "table",
+   "label": "athletic_fee_schedule",
+   "rows": 31,
+   "fields": 11,
+   "x": 544,
+   "y": 75,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:athletic-fee-schedule",
+   "kind": "extract",
+   "label": "athletic-fee-schedule.csv",
+   "x": 757,
+   "y": 142,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:Records request, June 2026",
+   "kind": "report",
+   "label": "Records request, June 2026",
+   "x": 990,
+   "y": 332,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "table:athletics_by_sport",
+   "kind": "table",
+   "label": "athletics_by_sport",
+   "rows": 960,
+   "fields": 9,
+   "x": 544,
+   "y": 102,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:athletics-by-sport",
+   "kind": "extract",
+   "label": "athletics-by-sport.csv",
+   "x": 757,
+   "y": 170,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:athletics_by_sport_reconciliation",
+   "kind": "table",
+   "label": "athletics_by_sport_reconciliation",
+   "rows": 342,
+   "fields": 10,
+   "x": 544,
+   "y": 507,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:athletics-by-sport-reconciliation",
+   "kind": "extract",
+   "label": "athletics-by-sport-reconciliation.csv",
+   "x": 757,
+   "y": 466,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:athletics_history",
+   "kind": "table",
+   "label": "athletics_history",
+   "rows": 178,
+   "fields": 6,
+   "x": 544,
+   "y": 534,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:athletics-history",
+   "kind": "extract",
+   "label": "athletics-history.csv",
+   "x": 757,
+   "y": 494,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:budget_figure",
+   "kind": "table",
+   "label": "budget_figure",
+   "rows": 8598,
+   "fields": 7,
+   "x": 544,
+   "y": 345,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:line-history",
+   "kind": "extract",
+   "label": "line-history.csv",
+   "x": 757,
+   "y": 304,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:The district budget workbook",
+   "kind": "report",
+   "label": "The district budget workbook",
+   "x": 990,
+   "y": 440,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "key:line_key",
+   "kind": "key",
+   "label": "line_key",
+   "note": "the budget line, by its printed name",
+   "x": 405,
+   "y": 494,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:doc_id",
+   "kind": "key",
+   "label": "doc_id",
+   "note": "the document a figure came from",
+   "x": 405,
+   "y": 548,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "table:budget_line",
+   "kind": "table",
+   "label": "budget_line",
+   "rows": 703,
+   "fields": 5,
+   "x": 544,
+   "y": 318,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:lps-budget-lines",
+   "kind": "extract",
+   "label": "lps-budget-lines.csv",
+   "x": 757,
+   "y": 278,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:capital_funding_history",
+   "kind": "table",
+   "label": "capital_funding_history",
+   "rows": 10,
+   "fields": 6,
+   "x": 544,
+   "y": 561,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:capital-funding-history",
+   "kind": "extract",
+   "label": "capital-funding-history.csv",
+   "x": 757,
+   "y": 520,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:capital_plan_fy27",
+   "kind": "table",
+   "label": "capital_plan_fy27",
+   "rows": 22,
+   "fields": 7,
+   "x": 544,
+   "y": 48,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:capital-plan-fy27",
+   "kind": "extract",
+   "label": "capital-plan-fy27.csv",
+   "x": 757,
+   "y": 116,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:crosswalk",
+   "kind": "table",
+   "label": "crosswalk",
+   "rows": 0,
+   "fields": 6,
+   "x": 544,
+   "y": 804,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:dese_measure",
+   "kind": "table",
+   "label": "dese_measure",
+   "rows": 2982,
+   "fields": 8,
+   "x": 544,
+   "y": 399,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:dese-radar",
+   "kind": "extract",
+   "label": "dese-radar.csv",
+   "x": 757,
+   "y": 358,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:DESE, all funds",
+   "kind": "report",
+   "label": "DESE, all funds",
+   "x": 990,
+   "y": 466,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "table:document",
+   "kind": "table",
+   "label": "document",
+   "rows": 393,
+   "fields": 11,
+   "x": 544,
+   "y": 453,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:document-basis",
+   "kind": "extract",
+   "label": "document-basis.csv",
+   "x": 757,
+   "y": 412,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:Written by this project",
+   "kind": "report",
+   "label": "Written by this project",
+   "x": 990,
+   "y": 520,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "table:fiscal_period",
+   "kind": "table",
+   "label": "fiscal_period",
+   "rows": 13,
+   "fields": 4,
+   "x": 544,
+   "y": 264,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "key:period",
+   "kind": "key",
+   "label": "period",
+   "note": "the fiscal period, 1 to 13",
+   "x": 405,
+   "y": 412,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "table:free_cash_proof",
+   "kind": "table",
+   "label": "free_cash_proof",
+   "rows": 630,
+   "fields": 7,
+   "x": 544,
+   "y": 588,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:free-cash-proof",
+   "kind": "extract",
+   "label": "free-cash-proof.csv",
+   "x": 757,
+   "y": 548,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:fund",
+   "kind": "table",
+   "label": "fund",
+   "rows": 68,
+   "fields": 4,
+   "x": 544,
+   "y": 183,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:school-special-revenue-fy26-q3",
+   "kind": "extract",
+   "label": "school-special-revenue-fy26-q3.csv",
+   "x": 757,
+   "y": 250,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:Special revenue report",
+   "kind": "report",
+   "label": "Special revenue report",
+   "x": 990,
+   "y": 412,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "table:fund_1301_cash_journal",
+   "kind": "table",
+   "label": "fund_1301_cash_journal",
+   "rows": 277,
+   "fields": 19,
+   "x": 544,
+   "y": 210,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:fund-1301-cash-journal",
+   "kind": "extract",
+   "label": "fund-1301-cash-journal.csv",
+   "x": 757,
+   "y": 224,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:Account Detail (athletics only)",
+   "kind": "report",
+   "label": "Account Detail (athletics only)",
+   "x": 990,
+   "y": 386,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "table:fund_activity",
+   "kind": "table",
+   "label": "fund_activity",
+   "rows": 61,
+   "fields": 10,
+   "x": 544,
+   "y": 237,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:grant_award",
+   "kind": "table",
+   "label": "grant_award",
+   "rows": 79,
+   "fields": 9,
+   "x": 544,
+   "y": 372,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:grants-history",
+   "kind": "extract",
+   "label": "grants-history.csv",
+   "x": 757,
+   "y": 332,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:ledger_snapshot",
+   "kind": "table",
+   "label": "ledger_snapshot",
+   "rows": 983,
+   "fields": 12,
+   "x": 544,
+   "y": 156,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:ood_tuition_history",
+   "kind": "table",
+   "label": "ood_tuition_history",
+   "rows": 30,
+   "fields": 6,
+   "x": 544,
+   "y": 615,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:ood-tuition-history",
+   "kind": "extract",
+   "label": "ood-tuition-history.csv",
+   "x": 757,
+   "y": 574,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:rate_register",
+   "kind": "table",
+   "label": "rate_register",
+   "rows": 62,
+   "fields": 13,
+   "x": 544,
+   "y": 642,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:rate-register",
+   "kind": "extract",
+   "label": "rate-register.csv",
+   "x": 757,
+   "y": 602,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:sped_para_history",
+   "kind": "table",
+   "label": "sped_para_history",
+   "rows": 26,
+   "fields": 9,
+   "x": 544,
+   "y": 669,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:sped-para-history",
+   "kind": "extract",
+   "label": "sped-para-history.csv",
+   "x": 757,
+   "y": 628,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:sped_teacher_history",
+   "kind": "table",
+   "label": "sped_teacher_history",
+   "rows": 21,
+   "fields": 9,
+   "x": 544,
+   "y": 696,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:sped-teacher-history",
+   "kind": "extract",
+   "label": "sped-teacher-history.csv",
+   "x": 757,
+   "y": 656,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:sped_transport_history",
+   "kind": "table",
+   "label": "sped_transport_history",
+   "rows": 25,
+   "fields": 5,
+   "x": 544,
+   "y": 723,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:sped-transport-history",
+   "kind": "extract",
+   "label": "sped-transport-history.csv",
+   "x": 757,
+   "y": 682,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:stated_figure",
+   "kind": "table",
+   "label": "stated_figure",
+   "rows": 2,
+   "fields": 11,
+   "x": 544,
+   "y": 426,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:stated-figures",
+   "kind": "extract",
+   "label": "stated-figures.csv",
+   "x": 757,
+   "y": 386,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "report:Meeting minutes and letters",
+   "kind": "report",
+   "label": "Meeting minutes and letters",
+   "x": 990,
+   "y": 494,
+   "col": 4,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 7
+  },
+  {
+   "id": "table:total_expenses_history",
+   "kind": "table",
+   "label": "total_expenses_history",
+   "rows": 28,
+   "fields": 4,
+   "x": 544,
+   "y": 750,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:total-expenses-history",
+   "kind": "extract",
+   "label": "total-expenses-history.csv",
+   "x": 757,
+   "y": 710,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:total_salaries_history",
+   "kind": "table",
+   "label": "total_salaries_history",
+   "rows": 28,
+   "fields": 4,
+   "x": 544,
+   "y": 777,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:total-salaries-history",
+   "kind": "extract",
+   "label": "total-salaries-history.csv",
+   "x": 757,
+   "y": 736,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:variance_by_group",
+   "kind": "table",
+   "label": "variance_by_group",
+   "rows": 57,
+   "fields": 9,
+   "x": 544,
+   "y": 480,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "extract:variance-by-group",
+   "kind": "extract",
+   "label": "variance-by-group.csv",
+   "x": 757,
+   "y": 440,
+   "col": 3,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "table:workbook_figure",
+   "kind": "table",
+   "label": "workbook_figure",
+   "rows": 3261,
+   "fields": 7,
+   "x": 544,
+   "y": 291,
+   "col": 2,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 4.5
+  },
+  {
+   "id": "key:fund-both-sides",
+   "kind": "key",
+   "label": "fund-both-sides",
+   "note": "the fund column is on both sides and the values do not meet",
+   "state": "disjoint",
+   "shared": 0,
+   "missing": true,
+   "x": 405,
+   "y": 304,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:grant-to-account",
+   "kind": "key",
+   "label": "grant-to-account",
+   "note": "no field ties a grant to an account",
+   "state": "none",
+   "shared": null,
+   "missing": true,
+   "x": 405,
+   "y": 520,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:line-to-account",
+   "kind": "key",
+   "label": "line-to-account",
+   "note": "no field ties a budget line to an account",
+   "state": "none",
+   "shared": null,
+   "missing": true,
+   "x": 405,
+   "y": 574,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:fund-to-line",
+   "kind": "key",
+   "label": "fund-to-line",
+   "note": "no field ties a fund to a budget line",
+   "state": "none",
+   "shared": null,
+   "missing": true,
+   "x": 405,
+   "y": 466,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "key:revenue-to-expense",
+   "kind": "key",
+   "label": "revenue-to-expense",
+   "note": "no field ties money in to money out",
+   "state": "none",
+   "shared": null,
+   "missing": true,
+   "x": 405,
+   "y": 440,
+   "col": 1,
+   "anchor": "start",
+   "font": 9.5,
+   "r": 6.5
+  },
+  {
+   "id": "q:What was appropriated for the schools?",
+   "kind": "question",
+   "label": "What was appropriated for the schools?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 264,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:How much state aid came in?",
+   "kind": "question",
+   "label": "How much state aid came in?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 372,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:What did one account spend?",
+   "kind": "question",
+   "label": "What did one account spend?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 399,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:What is in each revolving fund?",
+   "kind": "question",
+   "label": "What is in each revolving fund?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 426,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:What did athletics pay, transaction by transaction?",
+   "kind": "question",
+   "label": "What did athletics pay, transaction by transaction?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 453,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Is a category over budget?",
+   "kind": "question",
+   "label": "Is a category over budget?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 318,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Do the town and the district agree, by category?",
+   "kind": "question",
+   "label": "Do the town and the district agree, by category?",
+   "answerable": true,
+   "state": "joins",
+   "verdict": "the key is carried and the two sides share values",
+   "x": 324,
+   "y": 345,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Do the school revolving funds appear in the ledger?",
+   "kind": "question",
+   "label": "Do the school revolving funds appear in the ledger?",
+   "answerable": false,
+   "state": "disjoint",
+   "verdict": "the column is on both sides and no value appears in both",
+   "x": 324,
+   "y": 291,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:What did state aid pay for?",
+   "kind": "question",
+   "label": "What did state aid pay for?",
+   "answerable": false,
+   "state": "none",
+   "verdict": "no field anywhere carries such a key",
+   "x": 324,
+   "y": 480,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Which categories does state aid pay for?",
+   "kind": "question",
+   "label": "Which categories does state aid pay for?",
+   "answerable": false,
+   "state": "none",
+   "verdict": "no field anywhere carries such a key",
+   "x": 324,
+   "y": 507,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Which budget line does a revolving fund pay for?",
+   "kind": "question",
+   "label": "Which budget line does a revolving fund pay for?",
+   "answerable": false,
+   "state": "none",
+   "verdict": "no field anywhere carries such a key",
+   "x": 324,
+   "y": 534,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Did a grant pay for these staff?",
+   "kind": "question",
+   "label": "Did a grant pay for these staff?",
+   "answerable": false,
+   "state": "none",
+   "verdict": "no field anywhere carries such a key",
+   "x": 324,
+   "y": 561,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "q:Which school does this spending belong to?",
+   "kind": "question",
+   "label": "Which school does this spending belong to?",
+   "answerable": false,
+   "state": "none",
+   "verdict": "no field anywhere carries such a key",
+   "x": 324,
+   "y": 588,
+   "col": 0,
+   "anchor": "end",
+   "font": 11,
+   "r": 7
+  },
+  {
+   "id": "__canvas",
+   "kind": "meta",
+   "label": "",
+   "width": 1215,
+   "height": 865,
+   "columns": [
+    {
+     "kind": "question",
+     "x": 324
+    },
+    {
+     "kind": "key",
+     "x": 405
+    },
+    {
+     "kind": "table",
+     "x": 544
+    },
+    {
+     "kind": "extract",
+     "x": 757
+    },
+    {
+     "kind": "report",
+     "x": 990
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "extract:munis-ledger",
+   "target": "table:account",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Year-to-date budget report (glytdbud)",
+   "target": "extract:munis-ledger",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:account",
+   "target": "key:department",
+   "rel": "keyed by",
+   "rows": 704
+  },
+  {
+   "source": "table:account",
+   "target": "key:function",
+   "rel": "keyed by",
+   "rows": 270
+  },
+  {
+   "source": "table:account",
+   "target": "key:account_id",
+   "rel": "keyed by",
+   "rows": 981
+  },
+  {
+   "source": "table:account",
+   "target": "key:fund",
+   "rel": "keyed by",
+   "rows": 981
+  },
+  {
+   "source": "extract:athletic-fee-schedule",
+   "target": "table:athletic_fee_schedule",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Records request, June 2026",
+   "target": "extract:athletic-fee-schedule",
+   "rel": "extracted from"
+  },
+  {
+   "source": "extract:athletics-by-sport",
+   "target": "table:athletics_by_sport",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Records request, June 2026",
+   "target": "extract:athletics-by-sport",
+   "rel": "extracted from"
+  },
+  {
+   "source": "extract:athletics-by-sport-reconciliation",
+   "target": "table:athletics_by_sport_reconciliation",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:athletics-history",
+   "target": "table:athletics_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:line-history",
+   "target": "table:budget_figure",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:The district budget workbook",
+   "target": "extract:line-history",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:budget_figure",
+   "target": "key:line_key",
+   "rel": "keyed by",
+   "rows": 8598
+  },
+  {
+   "source": "table:budget_figure",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 8598
+  },
+  {
+   "source": "extract:line-history",
+   "target": "table:budget_line",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:The district budget workbook",
+   "target": "extract:line-history",
+   "rel": "extracted from"
+  },
+  {
+   "source": "extract:lps-budget-lines",
+   "target": "table:budget_line",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:The district budget workbook",
+   "target": "extract:lps-budget-lines",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:budget_line",
+   "target": "key:line_key",
+   "rel": "keyed by",
+   "rows": 703
+  },
+  {
+   "source": "extract:capital-funding-history",
+   "target": "table:capital_funding_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:capital-plan-fy27",
+   "target": "table:capital_plan_fy27",
+   "rel": "loads into"
+  },
+  {
+   "source": "table:capital_plan_fy27",
+   "target": "key:department",
+   "rel": "keyed by",
+   "rows": 22
+  },
+  {
+   "source": "extract:dese-radar",
+   "target": "table:dese_measure",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:DESE, all funds",
+   "target": "extract:dese-radar",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:dese_measure",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 2982
+  },
+  {
+   "source": "extract:document-basis",
+   "target": "table:document",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Written by this project",
+   "target": "extract:document-basis",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:document",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 393
+  },
+  {
+   "source": "extract:lps-budget-lines",
+   "target": "table:fiscal_period",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:The district budget workbook",
+   "target": "extract:lps-budget-lines",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:fiscal_period",
+   "target": "key:period",
+   "rel": "keyed by",
+   "rows": 13
+  },
+  {
+   "source": "extract:free-cash-proof",
+   "target": "table:free_cash_proof",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:munis-ledger",
+   "target": "table:fund",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Year-to-date budget report (glytdbud)",
+   "target": "extract:munis-ledger",
+   "rel": "extracted from"
+  },
+  {
+   "source": "extract:school-special-revenue-fy26-q3",
+   "target": "table:fund",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Special revenue report",
+   "target": "extract:school-special-revenue-fy26-q3",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:fund",
+   "target": "key:fund",
+   "rel": "keyed by",
+   "rows": 68
+  },
+  {
+   "source": "extract:fund-1301-cash-journal",
+   "target": "table:fund_1301_cash_journal",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Account Detail (athletics only)",
+   "target": "extract:fund-1301-cash-journal",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:fund_1301_cash_journal",
+   "target": "key:period",
+   "rel": "keyed by",
+   "rows": 277
+  },
+  {
+   "source": "extract:school-special-revenue-fy26-q3",
+   "target": "table:fund_activity",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Special revenue report",
+   "target": "extract:school-special-revenue-fy26-q3",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:fund_activity",
+   "target": "key:fund",
+   "rel": "keyed by",
+   "rows": 61
+  },
+  {
+   "source": "table:fund_activity",
+   "target": "key:period",
+   "rel": "keyed by",
+   "rows": 61
+  },
+  {
+   "source": "table:fund_activity",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 61
+  },
+  {
+   "source": "extract:grants-history",
+   "target": "table:grant_award",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:The district budget workbook",
+   "target": "extract:grants-history",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:grant_award",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 79
+  },
+  {
+   "source": "extract:munis-ledger",
+   "target": "table:ledger_snapshot",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Year-to-date budget report (glytdbud)",
+   "target": "extract:munis-ledger",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:ledger_snapshot",
+   "target": "key:account_id",
+   "rel": "keyed by",
+   "rows": 983
+  },
+  {
+   "source": "table:ledger_snapshot",
+   "target": "key:period",
+   "rel": "keyed by",
+   "rows": 983
+  },
+  {
+   "source": "table:ledger_snapshot",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 983
+  },
+  {
+   "source": "extract:ood-tuition-history",
+   "target": "table:ood_tuition_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:rate-register",
+   "target": "table:rate_register",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:sped-para-history",
+   "target": "table:sped_para_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:sped-teacher-history",
+   "target": "table:sped_teacher_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:sped-transport-history",
+   "target": "table:sped_transport_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:stated-figures",
+   "target": "table:stated_figure",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Meeting minutes and letters",
+   "target": "extract:stated-figures",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:stated_figure",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 2
+  },
+  {
+   "source": "extract:total-expenses-history",
+   "target": "table:total_expenses_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:total-salaries-history",
+   "target": "table:total_salaries_history",
+   "rel": "loads into"
+  },
+  {
+   "source": "extract:variance-by-group",
+   "target": "table:variance_by_group",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:Written by this project",
+   "target": "extract:variance-by-group",
+   "rel": "extracted from"
+  },
+  {
+   "source": "extract:lps-budget-lines",
+   "target": "table:workbook_figure",
+   "rel": "loads into"
+  },
+  {
+   "source": "report:The district budget workbook",
+   "target": "extract:lps-budget-lines",
+   "rel": "extracted from"
+  },
+  {
+   "source": "table:workbook_figure",
+   "target": "key:line_key",
+   "rel": "keyed by",
+   "rows": 3261
+  },
+  {
+   "source": "table:workbook_figure",
+   "target": "key:doc_id",
+   "rel": "keyed by",
+   "rows": 3261
+  },
+  {
+   "source": "q:What was appropriated for the schools?",
+   "target": "key:department",
+   "rel": "needs"
+  },
+  {
+   "source": "q:How much state aid came in?",
+   "target": "key:account_id",
+   "rel": "needs"
+  },
+  {
+   "source": "q:What did one account spend?",
+   "target": "key:account_id",
+   "rel": "needs"
+  },
+  {
+   "source": "q:What is in each revolving fund?",
+   "target": "key:fund",
+   "rel": "needs"
+  },
+  {
+   "source": "q:What did athletics pay, transaction by transaction?",
+   "target": "key:period",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Is a category over budget?",
+   "target": "key:function",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Do the town and the district agree, by category?",
+   "target": "key:function",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Do the school revolving funds appear in the ledger?",
+   "target": "key:fund-both-sides",
+   "rel": "needs"
+  },
+  {
+   "source": "q:What did state aid pay for?",
+   "target": "key:revenue-to-expense",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Which categories does state aid pay for?",
+   "target": "key:revenue-to-expense",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Which budget line does a revolving fund pay for?",
+   "target": "key:fund-to-line",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Did a grant pay for these staff?",
+   "target": "key:grant-to-account",
+   "rel": "needs"
+  },
+  {
+   "source": "q:Which school does this spending belong to?",
+   "target": "key:line-to-account",
+   "rel": "needs"
+  }
+ ]
+}

@@ -39,12 +39,16 @@ ORDER = [
     'fy26-closeout', 'fy26-closeout-town', 'budget-vs-actual', 'free-cash',
     'athletics', 'athletics-ledger', 'sped-and-the-curve', 'sped-and-funds',
     'fy27-and-the-override', 'fy27-cut-reconciliation', 'peer-districts',
-    'show-your-work',
+    'connecting-the-budget', 'show-your-work',
 ]
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
 ABOUT = {
+    'connecting-the-budget':
+        'What can be followed from the school budget to the town’s books, and where it '
+        'stops. Two levels join, the third cannot, and the format a report arrives in '
+        'decides which.',
     'fy26-closeout':
         'The school department’s FY26, read line by line from the town’s own ledger. '
         'What the $482,101 headline actually is, and three things it cannot explain.',

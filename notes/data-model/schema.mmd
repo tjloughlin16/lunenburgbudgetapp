@@ -1,0 +1,347 @@
+erDiagram
+    BUDGET_LINE ||--o{ ACCOUNT : "function 258/270"
+    FUND ||--o{ ACCOUNT : "fund 981/981"
+    BUDGET_LINE ||--o{ BUDGET_FIGURE : "line_key 8,598/8,598"
+    DOCUMENT ||--o{ BUDGET_FIGURE : "doc_id 8,598/8,598"
+    ACCOUNT ||--o{ CROSSWALK : "account_id"
+    BUDGET_LINE ||--o{ CROSSWALK : "line_key"
+    DOCUMENT ||--o{ CROSSWALK : "doc_id"
+    DOCUMENT ||--o{ DESE_MEASURE : "doc_id 2,982/2,982"
+    FISCAL_PERIOD ||--o{ FUND_1301_CASH_JOURNAL : "period 274/277"
+    DOCUMENT ||--o{ FUND_ACTIVITY : "doc_id 61/61"
+    FISCAL_PERIOD ||--o{ FUND_ACTIVITY : "period 61/61"
+    FUND ||--o{ FUND_ACTIVITY : "fund 61/61"
+    ACCOUNT ||--o{ LEDGER_SNAPSHOT : "account_id"
+    DOCUMENT ||--o{ LEDGER_SNAPSHOT : "doc_id"
+    FISCAL_PERIOD ||--o{ LEDGER_SNAPSHOT : "period"
+    DOCUMENT ||--o{ STATED_FIGURE : "doc_id 2/2"
+    BUDGET_LINE ||--o{ WORKBOOK_FIGURE : "line_key 3,205/3,261"
+    DOCUMENT ||--o{ WORKBOOK_FIGURE : "doc_id 3,261/3,261"
+    ACCOUNT {
+        text account_id PK
+        text fund FK
+        text fund_name
+        text dept
+        text org
+        text object
+        text account_string
+        text function FK
+        text name
+        text account_type
+        text level
+        int first_seen_fy
+        int last_seen_fy
+        %% 981 rows
+    }
+    ATHLETIC_FEE_SCHEDULE {
+        text fy
+        text school_year
+        text level
+        text item
+        text amount
+        text unit
+        text set_on
+        text source
+        text source_file
+        text source_ref
+        text verified
+        %% 31 rows
+    }
+    ATHLETICS_BY_SPORT {
+        text season
+        text level
+        text sport
+        text fy
+        text metric
+        text value
+        text raw
+        text is_numeric
+        text cell
+        %% 960 rows
+    }
+    ATHLETICS_BY_SPORT_RECONCILIATION {
+        text season
+        text scope
+        text metric
+        text fy
+        text printed
+        text printed_cell
+        text printed_raw
+        text summed_from_rows
+        text difference
+        text ties
+        %% 342 rows
+    }
+    ATHLETICS_HISTORY {
+        text fy
+        text side
+        text item
+        text amount
+        text basis
+        text source
+        %% 178 rows
+    }
+    BUDGET_FIGURE {
+        text line_key PK
+        text label
+        int fy PK
+        text stage PK
+        real value
+        int documents_disagree
+        text doc_id PK
+        %% 8,598 rows
+    }
+    BUDGET_LINE {
+        text line_key PK
+        text label
+        text section
+        text function_group
+        text kind
+        %% 703 rows
+    }
+    CAPITAL_FUNDING_HISTORY {
+        text fy
+        text total
+        text free_cash
+        text taxation
+        text unexpended_prior_year_capital
+        text other
+        %% 10 rows
+    }
+    CAPITAL_PLAN_FY27 {
+        text rank
+        text dept
+        text project
+        text cost
+        text cumulative
+        text funded
+        text funding
+        %% 22 rows
+    }
+    CROSSWALK {
+        text line_key PK
+        text account_id PK
+        text method
+        text confidence
+        text evidence
+        text doc_id FK
+        %% 0 rows
+    }
+    DESE_MEASURE {
+        text lea PK
+        text district
+        int fy PK
+        text group PK
+        text measure PK
+        real value
+        text reconciles
+        text doc_id FK
+        %% 2,982 rows
+    }
+    DOCUMENT {
+        text doc_id PK
+        text path
+        text source_type
+        text basis
+        text ledger_at
+        text hidden_columns
+        text url
+        text link_state
+        text copy_state
+        text remote_sha256
+        text local_sha256
+        %% 393 rows
+    }
+    FISCAL_PERIOD {
+        int period PK
+        text label
+        real months_elapsed
+        int is_final
+        %% 13 rows
+    }
+    FREE_CASH_PROOF {
+        text town
+        text year
+        text line
+        text amount
+        text role
+        text source_file
+        text source_ref
+        %% 630 rows
+    }
+    FUND {
+        text fund PK
+        text name
+        text kind
+        text restriction
+        %% 68 rows
+    }
+    FUND_1301_CASH_JOURNAL {
+        text fy
+        text source_row
+        text eff_date
+        text post_date
+        text src
+        text src_meaning
+        text period FK
+        text journal
+        text ref1
+        text po_ref2
+        text ref3
+        text reference
+        text amount
+        text running_balance_derived
+        text check_no
+        text warrant
+        text voucher
+        text vendor
+        text comments
+        %% 277 rows
+    }
+    FUND_ACTIVITY {
+        text fund PK
+        int fy PK
+        int period PK
+        real opening_balance
+        real revenue
+        real salaries
+        real expenditure
+        real encumbered
+        real closing_balance
+        text doc_id PK
+        %% 61 rows
+    }
+    GRANT_AWARD {
+        text fy PK
+        text kind
+        text name PK
+        real amount
+        text owner
+        int documents_disagree
+        text doc_id
+        text url
+        text sha256
+        %% 79 rows
+    }
+    LEDGER_SNAPSHOT {
+        text account_id PK
+        int fy PK
+        int period PK
+        real original
+        real transfers
+        real revised
+        real expended
+        real encumbered
+        real available
+        real pct_used
+        text rounded_columns
+        text doc_id PK
+        %% 983 rows
+    }
+    OOD_TUITION_HISTORY {
+        text fy
+        text stage
+        text private
+        text collaborative
+        text total
+        text documents_disagree
+        %% 30 rows
+    }
+    RATE_REGISTER {
+        text fy
+        text category
+        text unit
+        text item
+        text value
+        text value_type
+        text set_on
+        text expires
+        text source
+        text source_file
+        text source_ref
+        text status
+        text in_model
+        %% 62 rows
+    }
+    SPED_PARA_HISTORY {
+        text fy
+        text stage
+        text ps
+        text es
+        text ms
+        text hs
+        text ace
+        text total
+        text documents_disagree
+        %% 26 rows
+    }
+    SPED_TEACHER_HISTORY {
+        text fy
+        text stage
+        text ps
+        text es
+        text ms
+        text hs
+        text ace
+        text total
+        text documents_disagree
+        %% 21 rows
+    }
+    SPED_TRANSPORT_HISTORY {
+        text fy
+        text stage
+        text system
+        text total
+        text documents_disagree
+        %% 25 rows
+    }
+    STATED_FIGURE {
+        int fy PK
+        text metric PK
+        real amount PK
+        text stated_on
+        text stated_by
+        text basis
+        text doc_id FK
+        text source_ref
+        text quote
+        real supersedes
+        text note
+        %% 2 rows
+    }
+    TOTAL_EXPENSES_HISTORY {
+        text fy
+        text stage
+        text total
+        text documents_disagree
+        %% 28 rows
+    }
+    TOTAL_SALARIES_HISTORY {
+        text fy
+        text stage
+        text total
+        text documents_disagree
+        %% 28 rows
+    }
+    VARIANCE_BY_GROUP {
+        text function_group
+        text years
+        text budgeted
+        text spent
+        text net
+        text gross
+        text churn
+        text worst_year
+        text best_year
+        %% 57 rows
+    }
+    WORKBOOK_FIGURE {
+        int row PK
+        text line_key FK
+        int fy PK
+        text column_kind PK
+        real value
+        text row_kind
+        text doc_id PK
+        %% 3,261 rows
+    }
