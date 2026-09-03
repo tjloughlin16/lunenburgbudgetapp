@@ -233,6 +233,20 @@ def main():
         f'| which meeting documents mention a word | `{SITE}/minutes/find/README.txt` |',
         f'| the whole meeting archive for one board | `{SITE}/minutes/school-committee.txt` |',
         f'| every source document, with checksums | `{SITE}/data/sources.json` |',
+        f'| what build you are looking at | `{SITE}/version.json` |',
+        '',
+        '## If you are unsure whether what you fetched is current',
+        '',
+        f'Fetch [{SITE}/version.json]({SITE}/version.json) — a few hundred bytes stating '
+        'this build’s tag, commit and the document counts that several other files here '
+        'repeat. **Compare it with anything else you hold from this site. If another file '
+        'disagrees with it, your copy of that file is cached rather than wrong.**',
+        '',
+        'This exists because you cannot tell otherwise, and neither can we. Caching happens '
+        'in your fetch layer, not in HTTP, and a cache-busting query parameter is not '
+        'dependable: an assistant sent `?v=923` on eight requests to this site and its tool '
+        'reported the parameter stripped from seven of them — seven fetches that looked '
+        'fresh and were not. `version.json` is served `no-store`; nothing else here is.',
         '',
         '## How to search the archive — three small fetches, not one big one',
         '',
@@ -469,6 +483,64 @@ def main():
     json.dump([dict(name=n, note=w, bytes=b) for n, w, b in published],
               open(df, 'w'), indent=1)
     print(f'  wrote {os.path.relpath(df, ROOT)} for the /agents page')
+
+    # /version.json -- what this build is, small enough that nothing truncates it.
+    #
+    # You cannot stop an agent caching. The cache is in its fetch layer, not in HTTP:
+    # Claude Code's own tool documents "responses are cached for 15 minutes per URL" and
+    # does not consult cache-control at all. A cache-busting query parameter is not
+    # reliable either -- an assistant sent `?v=923` on eight requests here and the tool
+    # reported it stripped from seven, so seven looked fresh and were not.
+    #
+    # So staleness is made DETECTABLE rather than prevented. This file states the build
+    # and the counts that other files repeat. One fetch, then compare: if INDEX.txt or
+    # /agents disagrees with this, that copy is cached. It was found exactly that way and
+    # by accident -- INDEX.txt said one document count and the bundle it indexes said
+    # another, and only their overlap made it visible. This makes the check deliberate,
+    # and it works from a single file rather than needing two to happen to overlap.
+    #
+    # It is served no-store by functions/version.js. A cached canary is worse than none:
+    # it confirms a stale view as current.
+    import subprocess
+    def git(*a):
+        try:
+            return subprocess.run(['git', *a], cwd=ROOT, capture_output=True,
+                                  text=True, check=True).stdout.strip()
+        except Exception:
+            return None
+    # The PUBLISHED copy, not the source: has_text is derived when that file is written
+    # a few lines above, so reading the source here reported 0 searchable documents out of
+    # 1,422 -- a canary stating a false count, which is worse than no canary.
+    mi_pub = os.path.join(DATA, 'minutes-index.csv')
+    minutes_rows = list(csv.DictReader(open(mi_pub))) if os.path.exists(mi_pub) else []
+    boards = {}
+    for r in minutes_rows:
+        boards[r['board']] = boards.get(r['board'], 0) + 1
+    version = dict(
+        tag=model.get('releases', {}).get('current'),
+        commit=git('rev-parse', '--short', 'HEAD'),
+        built=date.today().isoformat(),
+        note=('What this build is. Fetch this FIRST and compare it with anything else you '
+              'hold from this site: if another file disagrees with these counts, your copy '
+              'of that file is cached, not wrong. This file is served no-store.'),
+        counts=dict(
+            minutes_documents=len(minutes_rows),
+            minutes_boards=len(boards),
+            minutes_searchable=sum(1 for r in minutes_rows if r.get('has_text') == 'Y'),
+            school_committee_documents=boards.get('School Committee'),
+            source_documents=sources['totals']['documents'],
+        ),
+        elsewhere={
+            f'{SITE}/minutes/INDEX.txt': 'repeats minutes_documents and the per-board counts',
+            f'{SITE}/agents': 'repeats minutes_documents and the per-board counts',
+            f'{SITE}/minutes/find/coverage.json': 'repeats minutes_documents and minutes_searchable',
+            f'{SITE}/data/minutes-index.csv': 'one row per minutes document, with has_text',
+        },
+    )
+    with open(os.path.join(PUB, 'version.json'), 'w') as fh:
+        json.dump(version, fh, indent=1)
+    print(f'  wrote public/version.json  {version["tag"]} {version["commit"]} '
+          f'({version["counts"]["minutes_documents"]} minutes documents)')
 
     print(f'wrote {os.path.relpath(os.path.join(PUB, "llms.txt"), ROOT)}')
     for name, _, size in published:

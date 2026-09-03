@@ -465,6 +465,34 @@ async function linkGraph() {
       'Nothing is described but unlinked.')
   }
 
+  // Files that state the same count must state the SAME count.
+  //
+  // `agent-manifest.json` went stale after 39 documents were added to the archive, so
+  // /agents said 1,383 while INDEX.txt and minutes-index.csv said 1,422 -- one page
+  // contradicting the rest of the site, found by an assistant rather than by anything
+  // here. version.json is the reference because it is rebuilt from the published data
+  // every time; everything else is checked against it.
+  console.log('\nfiles that repeat a count must agree with /version.json')
+  const vres = await fetch(root + '/version.json')
+  const drift = []
+  if (!vres.ok) {
+    drift.push('/version.json is not being served')
+    console.log('  FAIL  /version.json did not answer')
+  } else {
+    const v = JSON.parse(await vres.text())
+    const n = v.counts.minutes_documents
+    const sc = v.counts.school_committee_documents
+    for (const [path, want] of [['/minutes/INDEX.txt', [n, sc]], ['/agents', [n, sc]],
+                                ['/minutes/find/coverage.json', [n]]]) {
+      const body = await (await fetch(root + path)).text()
+      const missing = want.filter(x =>
+        !body.includes(String(x)) && !body.includes(x.toLocaleString('en-US')))
+      console.log(`  ${missing.length ? 'FAIL' : ' ok '}  ${path.padEnd(30)} ` +
+        (missing.length ? `does not state ${missing.join(', ')}` : `states ${want.join(', ')}`))
+      if (missing.length) drift.push(`${path} disagrees with version.json on ${missing.join(', ')}`)
+    }
+  }
+
   // The inverse failure, and the one that put the only /minutes link on a 404: a link that
   // goes nowhere is worse than a missing one, because it looks like an answer.
   const dead = []
@@ -483,7 +511,7 @@ async function linkGraph() {
   }
 
   server?.close()
-  if (orphans.length || dead.length || late.length) process.exit(1)
+  if (orphans.length || dead.length || late.length || drift.length) process.exit(1)
 }
 
 async function main() {

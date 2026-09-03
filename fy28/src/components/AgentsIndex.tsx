@@ -124,6 +124,8 @@ export function AgentsIndex() {
         <Row path="/api/index" note="the read-only JSON API — every endpoint, with what it holds" />
         <Row path="/api/schema" note="read this before the API: grain, conventions, and the four ways to get a confident wrong answer" />
         <Row path="/minutes/INDEX.txt" note="the board list above, as plain text, with sizes" />
+        <Row path="/version.json"
+             note="what build this is, and the counts other files here repeat. Fetch it first: if anything else disagrees with it, your copy is cached rather than wrong. Served no-store." />
       </ul>
     </section>
   )
