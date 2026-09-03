@@ -392,6 +392,7 @@ arriving fresh.
     python3 scripts/build_request_doc.py         # regenerate what is still outstanding from the Town
     python3 scripts/build_gross_budget_xlsx.py   # the gross budget spreadsheet, in the district's own shape
     python3 scripts/build_code_reconciliation_xlsx.py  # FY26 budget vs ledger, per line, summed by function code
+    python3 scripts/build_discrepancy_review.py   # the six categories of discrepancy, for review by the Town
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 

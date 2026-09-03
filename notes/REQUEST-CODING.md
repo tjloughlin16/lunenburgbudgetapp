@@ -2,7 +2,7 @@
 
 **To:** Superintendent of Schools, Lunenburg Public Schools  
 **Subject:** Which function coding is authoritative for the school budget  
-**Generated:** 2026-09-02 by `scripts/build_coding_questions.py`
+**Generated:** 2026-09-03 by `scripts/build_coding_questions.py`
 
 This is a request for clarification, not a finding. Two documents we hold code the
 same school accounts to different function codes. **Nothing here establishes that
