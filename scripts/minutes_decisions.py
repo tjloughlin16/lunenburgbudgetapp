@@ -92,6 +92,17 @@ DECISIONS = {
         'The destinations are not in the minutes: they are "the list provided to the '
         'committee (and available online)". That list is not in this archive and is worth '
         'asking for.'),
+    'november': (
+        'School Committee', '2025-11-05',
+        'school-committee/2025-11-05-minutes-7496.txt', '_11052025-7496',
+        'We want to transfer $13,500 from admin tech contracts to school committee dues, '
+        'to cover superintendent search invoice. Transfer $2000 from school science '
+        'supply line item at Primary School to the reading supply line item at the '
+        'Primary school to cover cost.',
+        'approved',
+        'Both are in the ledger to the dollar: CONT SERV −$13,500, SCI SUPP −$2,000, '
+        'READ SUPPL +$2,000. Neither touches anything in this document — recorded here '
+        'because these minutes were unreadable when this list was first compiled.'),
     'june_four': (
         'School Committee', '2026-06-24',
         'school-committee/2026-06-24-minutes-7869.txt', '_06242026-7869',

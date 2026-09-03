@@ -180,10 +180,12 @@ meeting of the year:
 
 **Voted, destinations not recorded** — School Committee, 2026-06-24 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7869))<br>“Mr. McNamara explains the four line item transfers for this meeting”<br>Approved unanimously at the last meeting of FY26. The four are named nowhere in the archive, so any of the unexplained movements above could be among them.
 
-**And one FY26 record is missing from the archive entirely.** The minutes for the
-5 November 2025 School Committee meeting are indexed but carry no readable text.
-Its agenda lists the standing transfer item with no sub-items, so probably nothing
-was moved, but that cannot be confirmed from what is here.
+**Every FY26 meeting has now been read.** The 5 November 2025 minutes were
+unreadable when this comparison was first made and have since been extracted; they
+record two transfers, both of which tie to the ledger exactly and neither of which
+touches anything in this document:
+
+**Voted and itemised** — School Committee, 2025-11-05 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052025-7496))<br>“We want to transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice. Transfer $2000 from school science supply line item at Primary School to the reading supply line item at the Primary school to cover cost.”<br>Both are in the ledger to the dollar: CONT SERV −$13,500, SCI SUPP −$2,000, READ SUPPL +$2,000. Neither touches anything in this document — recorded here because these minutes were unreadable when this list was first compiled.
 
 **One referenced document is not in the archive.** A March 2026 transfer of
 $54,548.50 was made against a list of destinations that the minutes say was

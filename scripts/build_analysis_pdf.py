@@ -2,6 +2,13 @@
 
     python3 scripts/build_analysis_pdf.py fy26-closeout
     python3 scripts/build_analysis_pdf.py --all
+    python3 scripts/build_analysis_pdf.py --file notes/REVIEW-DISCREPANCIES.md
+
+`--file` renders any Markdown file and writes the PDF BESIDE IT rather than into the
+published site. Correspondence with the Town is not an analysis: it is addressed to named
+officials, it asks questions rather than stating findings, and publishing it by default
+would put a letter on a public URL before it had been sent. So the default path stays
+`sources/analyses` and anything else has to be asked for explicitly.
 
 Writes `fy28/public/docs/analyses/<name>.pdf` beside the Markdown the site already
 publishes, so the address is predictable and the PDF is a published source like any other.
@@ -193,35 +200,48 @@ def to_html(md, title, stamp, base):
                '\n'.join(out[1:] if out and out[0].startswith('<h1') else out)))
 
 
-def build(name):
-    md_path = os.path.join(SRC, name + '.md')
+def build(name, md_path=None, out_dir=None):
+    if md_path is None:
+        md_path = os.path.join(SRC, name + '.md')
     if not os.path.exists(md_path):
-        print('no such analysis: %s' % name)
+        print('no such file: %s' % md_path)
         return 1
+    out_dir = out_dir or OUT
+    src_dir = os.path.dirname(md_path)
     md = open(md_path, encoding='utf-8').read()
     title = md.split('\n', 1)[0].lstrip('# ').strip()
 
+    rel = os.path.relpath(md_path, ROOT)
+    # A generated document names the script that produced it in its own second line; that
+    # is the honest thing to print on a page somebody may quote from months later.
+    gen = re.search(r'Generated:.*?by `(scripts/[\w./-]+)`', md)
     verifier = os.path.join(ROOT, 'scripts', 'verify_%s.py' % name.replace('-', '_'))
-    stamp = (
-        'Generated %s from <b>sources/analyses/%s.md</b>. '
-        'Every figure is recomputed from <b>sources/data/lunenburg.db</b> by '
-        '<b>%s</b>. '
-        'A printed page outlives the numbers on it: re-run that script before quoting '
-        'anything here.'
-        % (date.today().isoformat(), name,
-           'scripts/' + os.path.basename(verifier) if os.path.exists(verifier)
-           else 'no verifier — treat every figure as unchecked')
-    )
+    if gen:
+        stamp = (
+            'Generated %s from <b>%s</b> by <b>%s</b>, which derives every figure from '
+            'the sources it names. A printed page outlives the numbers on it: re-run '
+            'that script before quoting anything here.'
+            % (date.today().isoformat(), rel, gen.group(1)))
+    else:
+        stamp = (
+            'Generated %s from <b>%s</b>. '
+            'Every figure is recomputed from <b>sources/data/lunenburg.db</b> by '
+            '<b>%s</b>. '
+            'A printed page outlives the numbers on it: re-run that script before '
+            'quoting anything here.'
+            % (date.today().isoformat(), rel,
+               'scripts/' + os.path.basename(verifier) if os.path.exists(verifier)
+               else 'no verifier — treat every figure as unchecked'))
 
-    os.makedirs(OUT, exist_ok=True)
-    tmp = os.path.join(OUT, name + '.print.html')
+    os.makedirs(out_dir, exist_ok=True)
+    tmp = os.path.join(out_dir, name + '.print.html')
     with open(tmp, 'w', encoding='utf-8') as fh:
-        fh.write(to_html(md, title, stamp, SRC))
+        fh.write(to_html(md, title, stamp, src_dir))
 
     if not CHROME:
         print('no Chrome found; wrote %s only' % os.path.relpath(tmp, ROOT))
         return 1
-    pdf = os.path.join(OUT, name + '.pdf')
+    pdf = os.path.join(out_dir, name + '.pdf')
     subprocess.run([CHROME, '--headless', '--disable-gpu', '--no-pdf-header-footer',
                     '--print-to-pdf=' + pdf, '--virtual-time-budget=4000',
                     'file://' + tmp], check=True, capture_output=True)
@@ -235,7 +255,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('name', nargs='?')
     ap.add_argument('--all', action='store_true')
+    ap.add_argument('--file', help='render any Markdown file; the PDF is written beside '
+                                   'it, NOT into the published site')
     a = ap.parse_args()
+    if a.file:
+        path = a.file if os.path.isabs(a.file) else os.path.join(ROOT, a.file)
+        return build(os.path.splitext(os.path.basename(path))[0], md_path=path,
+                     out_dir=os.path.dirname(path))
     if a.all:
         names = [f[:-3] for f in sorted(os.listdir(SRC)) if f.endswith('.md')]
     elif a.name:
