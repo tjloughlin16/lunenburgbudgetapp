@@ -24,6 +24,36 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v9.2.1',
+        date='2026-09-03',
+        title='The minutes search now says how much of the archive it searched',
+        short='every document searchable, and the denominator published',
+        headline='v9.2 made the archive searchable. Thirty-nine of its 1,422 documents '
+                 'had no extracted text and so could not be searched, and nothing said '
+                 'so — meaning a search that found nothing could not be told apart from '
+                 'a subject nobody had raised. All 1,422 are now searchable, and the '
+                 'count is published so a null result can be read for what it is.',
+        changes=[
+            'Every document the town has published is now searchable: 1,422 indexed '
+            'against 1,422 published. /minutes/find/coverage.json states both numbers and '
+            'lists anything that cannot be searched, so an empty result means "not said '
+            'in the archive" rather than "not in the part of it we can read".',
+
+            'One of the thirty-nine was School Committee minutes from the middle of '
+            'FY2026. This project had already written, in a document addressed to the '
+            'Town, that those minutes carried no readable text and that "probably nothing '
+            'was moved" — inferred from the agenda. They record two transfers, and both '
+            'tie to the town ledger to the dollar. The claim was an inference standing in '
+            'for a document that could not be read.',
+
+            'A search that cannot state what it covered produces a null result nobody can '
+            'interpret. That is why the denominator is published beside the index rather '
+            'than left for each reader to work out.',
+
+            'No figure has moved and nothing a person reads has changed.',
+        ],
+    ),
+    dict(
         tag='v9.2',
         date='2026-09-02',
         title='You can now find a word in two years of meetings without downloading them',

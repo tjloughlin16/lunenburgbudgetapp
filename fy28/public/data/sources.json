@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-02",
+ "generated": "2026-09-03",
  "origins": [
   {
    "id": "school",
@@ -1391,7 +1391,7 @@
      "stars": 5,
      "what": "The district’s FY26 budget line by line with the Town Accountant’s ledger beside it, summed by function code on both sides. The join is the function code in the fourth segment of the MUNIS account string (0100-3-300-2330-51-2-13-1-511203), which is the same code the district’s workbook prints over each group — the crosswalk the gross budget spreadsheet had to leave empty. THE DISTRICT’S WORKBOOK DOES NOT SUM BY CODE, so every code here carries its own two sums and their difference: 9 of 46 do not agree. Within a code, lines are paired by AMOUNT, which is not a key — it shows a figure of that size exists on both sides, never that the two are the same line — and every row says how it was paired. 23 rows pair with nothing, and 6 accounts were spent against with neither an appropriation nor a transfer. Rebuild with scripts/build_code_reconciliation_xlsx.py.",
      "kind": "Spreadsheet",
-     "bytes": 42135,
+     "bytes": 43925,
      "url": "/docs/data/fy26-code-reconciliation.xlsx",
      "count": 514,
      "unit": "rows",
@@ -3872,12 +3872,12 @@
   ],
   "boardCount": 40,
   "listed": 1422,
-  "fetched": 1383,
+  "fetched": 1422,
   "agendas": 948,
   "minutes": 474,
   "from": "2025-01-06",
   "to": "2026-11-17",
-  "textFiles": 1384,
+  "textFiles": 1423,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The scanned originals are not committed to the repository — they run to about 400MB and are re-fetchable — but the extracted text of all of them is, and that is what the analysis actually reads.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
@@ -3885,7 +3885,7 @@
  "totals": {
   "documents": 302,
   "groups": 17,
-  "bytes": 364763681,
+  "bytes": 364765471,
   "loadBearing": 57
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
