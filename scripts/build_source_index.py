@@ -748,6 +748,22 @@ GROUPS = [
              'and a reconciliation proving the net column still ties to the '
              'district\u2019s published appropriation. Rebuild with '
              'scripts/build_gross_budget_xlsx.py.'),
+            ('data/fy26-code-reconciliation.xlsx',
+             'FY26 school budget against the town ledger, by function code \u2014 '
+             'spreadsheet', 5,
+             'The district\u2019s FY26 budget line by line with the Town Accountant\u2019s '
+             'ledger beside it, summed by function code on both sides. The join is the '
+             'function code in the fourth segment of the MUNIS account string '
+             '(0100-3-300-2330-51-2-13-1-511203), which is the same code the '
+             'district\u2019s workbook prints over each group \u2014 the crosswalk the '
+             'gross budget spreadsheet had to leave empty. THE DISTRICT\u2019S WORKBOOK '
+             'DOES NOT SUM BY CODE, so every code here carries its own two sums and '
+             'their difference: 9 of 46 do not agree. Within a code, lines are paired by '
+             'AMOUNT, which is not a key \u2014 it shows a figure of that size exists on '
+             'both sides, never that the two are the same line \u2014 and every row says '
+             'how it was paired. 23 rows pair with nothing, and 6 accounts were spent '
+             'against with neither an appropriation nor a transfer. Rebuild with '
+             'scripts/build_code_reconciliation_xlsx.py.'),
             ('data/munis-ledger.csv',
              'Every MUNIS budget report we hold, one table', 3,
              'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '

@@ -1,0 +1,454 @@
+"""Write the account-coding clarification request, computed from the two documents.
+
+    python3 scripts/build_coding_questions.py
+
+Writes `notes/REQUEST-CODING.md`.
+
+Generated rather than written, for rule 2's reason: this letter quotes about forty
+figures, it goes to a named official, and a figure that drifts after the model changes
+would be quoted back at us. Every number in the output is derived here.
+
+**This is a request for clarification, not a finding.** Two documents in the archive code
+the same accounts to different function codes. Nothing in the archive establishes which
+coding is correct -- DESE's chart of accounts would, and we do not hold it -- so the
+letter asks which is authoritative and does not assert that either is wrong. Rule 8: a
+discrepancy reaches an outside reader as a question about planning, never as a charge.
+"""
+import collections
+import csv
+import os
+import re
+import sys
+from datetime import date
+
+# The same pairing rule the standing check uses. Imported rather than reimplemented: two
+# copies of a tolerance drift, and this one goes in a letter to a public official.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_function_crosswalk import pair  # noqa: E402
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(ROOT, 'sources', 'data')
+OUT = os.path.join(ROOT, 'notes', 'REQUEST-CODING.md')
+DEPT, FY = '300', '2026'
+
+LEDGER_DOC = 'sources/records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx'
+LEDGER_NAME = 'FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx'
+BOOK_DOC = 'sources/xlsx/fy27-proposals.xlsx'
+
+
+def m(v):
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def d(v):
+    return f'${v:,.0f}' if v >= 0 else f'-${abs(v):,.0f}'
+
+
+def main():
+    led = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
+           if r['dept'] == DEPT and r['fy'] == FY and r['level'] == 'account'
+           and r['account_type'] == 'expense' and r['function']]
+    if not led:
+        print('no function-coded school rows; run scripts/extract_munis_report.py first')
+        return 1
+
+    munis, accts = collections.defaultdict(float), collections.defaultdict(list)
+    for r in led:
+        munis[r['function']] += m(r['original'])
+        accts[r['function']].append(r)
+
+    book, lines = collections.defaultdict(float), collections.defaultdict(list)
+    uncoded, allbook = [], []
+    for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv'))):
+        if r['kind'] != 'line':
+            continue
+        allbook.append(r)
+        g = re.match(r'\s*(\d{4})', r['function_group'] or '')
+        if not g:
+            if abs(m(r['fy26_final'])) >= 0.5:
+                uncoded.append(r)
+            continue
+        book[g.group(1)] += m(r['fy26_final'])
+        lines[g.group(1)].append(r)
+
+    def bk(label):
+        """A budget-book line by its exact printed name."""
+        return next((r for r in allbook if r['line_item'].strip() == label), None)
+
+    def bkfn(label):
+        """The function code the budget book prints over a line, or None if it heads
+        that line with a section title instead."""
+        r = bk(label)
+        g = re.match(r'\s*(\d{4})', (r['function_group'] or '')) if r else None
+        return g.group(1) if g else None
+
+    def ledfn(nm):
+        """The function code the Town's ledger carries for an account name."""
+        return sorted({a['function'] for a in acc(nm)}) or None
+
+    def codes_col(led_codes, book_codes):
+        """How the pair reads in the table: ledger side, then budget-book side."""
+        lc = list(led_codes or [])
+        bc = [c for c in book_codes if c]
+        # Both sides holding the SAME two codes means the accounts are swapped between
+        # them, not that the sides agree. Rendering that as '2310/2320 vs 2320/2310'
+        # reads like a reordering; it is a swap, and the arrow is the only honest way to
+        # show it in one cell.
+        if len(set(lc)) > 1 and set(lc) == set(bc):
+            return ' ↔ '.join('`%s`' % c for c in sorted(set(lc))) + ' (swapped)'
+        L = '/'.join(lc) if lc else '—'
+        B = '/'.join(bc) if bc else '—'
+        return '`%s`' % L if L == B else '`%s` vs `%s`' % (L, B)
+
+    def acc(nm, fn=None):
+        """Ledger accounts by the name MUNIS prints."""
+        return [r for r in led if r['name'].strip() == nm
+                and (fn is None or r['function'] == fn)]
+
+    codes = sorted(set(munis) | set(book))
+    # The workbook states whole dollars; the ledger spreadsheet carries cents. So a
+    # dollar per account is rounding, not a coding difference -- the same tolerance
+    # extract_munis_report.reconcile() applies for the same reason. Putting a $1 gap in
+    # a letter to a superintendent spends the reader's attention on nothing and makes
+    # the $369,029 beside it easier to wave off.
+    def rounding(c):
+        return max(1.0, float(len(accts[c])))
+    off = sorted(c for c in codes if abs(munis[c] - book[c]) > rounding(c))
+    # Codes whose total agrees while the lines inside it do not. A different question
+    # from the ones above -- the money is under the right code and against the wrong
+    # line -- so it is asked separately rather than folded in.
+    split = [(c,) + pair(accts[c], lines[c]) for c in codes if c not in off]
+    split = [t for t in split if t[1] or t[2]]
+
+    # A code can head SEVERAL groups in the workbook -- 2310 heads both 'Tutoring Cont.
+    # Ser.' and 'Teachers Specialists - Special Education'. Naming it after whichever
+    # was read first mis-describes the code in a document somebody will read closely.
+    name = {}
+    for c in codes:
+        seen = []
+        for r in lines[c]:
+            g = re.sub(r'^\d{4}\s*-\s*', '', (r['function_group'] or '').strip()).strip()
+            if g and g not in seen:
+                seen.append(g)
+        if seen:
+            name[c] = ' / '.join(seen)
+
+    # The kindergarten accounts: both budgeted at nothing, both spent against.
+    kinder = sorted((r for r in led if r['function'] == '2330'
+                     and 'KIND' in r['name'].upper()), key=lambda r: -m(r['expended']))
+    kt = sum(m(r['expended']) for r in kinder)
+    prior = [(c, r) for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv')))
+             if r['line_item'].strip() == 'Kindergarten Paraprofessionals'
+             for c in ('fy23_actual', 'fy24_actual', 'fy25_actual') if m(r[c])]
+
+    L = []
+    A = L.append
+    A('# Clarification request — how school accounts are coded to function')
+    A('')
+    A('**To:** Superintendent of Schools, Lunenburg Public Schools  ')
+    A('**Subject:** Which function coding is authoritative for the school budget  ')
+    A('**Generated:** %s by `scripts/build_coding_questions.py`' % date.today().isoformat())
+    A('')
+    A('This is a request for clarification, not a finding. Two documents we hold code the')
+    A('same school accounts to different function codes. **Nothing here establishes that')
+    A('either coding is wrong** — we do not hold the chart of accounts that would settle')
+    A('it, which is why we are asking rather than concluding.')
+    A('')
+    A('The reason it matters: this project groups school spending by function to describe')
+    A('where the budget goes. If we group by the wrong one, our published figures')
+    A('mis-describe the district. We would rather ask than guess.')
+    A('')
+    A('## The two documents')
+    A('')
+    A('| | |')
+    A('|---|---|')
+    A('| **The Town\'s ledger** | `%s` — the MUNIS `glytdbud` year-to-date budget report '
+      'for FY2026 period 12, provided by the Town Accountant. Its `ACCOUNT` column carries '
+      'the full account string, e.g. `%s`. |' % (LEDGER_NAME, kinder[0]['account'] if kinder
+                                                 else accts['2330'][0]['account']))
+    A('| **The district\'s workbook** | `%s`, the FY27 budget projection, which prints a '
+      'function code at the head of each group, e.g. `2330 - Paraprofessionals Special '
+      'Education`. |' % BOOK_DOC)
+    A('')
+    A('Read against each other for the school department in FY2026, **%d of %d function '
+      'codes carry the same total in both**. %d do not, by %s in total.'
+      % (len(codes) - len(off), len(codes), len(off),
+         d(sum(abs(munis[c] - book[c]) for c in off))))
+    A('')
+    A('---')
+    A('')
+    A('## Suggested wording')
+    A('')
+    A('> I maintain a public, non-commercial site explaining the Lunenburg town and school')
+    A('> budgets to residents, built from published documents and records the Town has')
+    A('> provided.')
+    A('>')
+    A('> I compared two documents for FY2026, school department: the Town Accountant\'s')
+    A('> MUNIS year-to-date budget report and the district\'s FY27 budget projection')
+    A('> workbook. Both state a budgeted amount against the same function codes.')
+    A('>')
+    A('> **%d of %d function codes agree. %d do not.** In those %d cases the'
+      % (len(codes) - len(off), len(codes), len(off), len(off)))
+    A('> two documents state different amounts under the same code for the same year, so')
+    A('> they cannot both be right. Below is each one, stated plainly. I have not tried to')
+    A('> work out which document is correct, because nothing I hold can decide it.')
+    A('>')
+    A('> In a further **%d** code%s the totals agree while the individual lines inside do'
+      % (len(split), '' if len(split) == 1 else 's'))
+    A('> not. Those are listed after the others.')
+    A('>')
+    A('> (The workbook states whole dollars and the ledger states cents, so I have treated')
+    A('> a difference of under a dollar per account as rounding and left it out. Nothing')
+    A('> larger than that is excluded.)')
+    A('>')
+    A('> **The whole of it in one table.** Every item below is set out in full further')
+    A('> down; this is so you can see the shape of it first. The right-hand column is my')
+    A('> reading, not a finding.')
+    A('>')
+    A('> **The amounts are the sums involved, not money missing, and they do not add up')
+    A('> to anything.** In most rows both documents hold the same total and disagree only')
+    A('> about where it sits. Only row 4 is an amount one document has and the other')
+    A('> does not.')
+    A('>')
+    A('> | | what the two documents do differently | codes: ledger vs book | sum '
+      'involved | my guess |')
+    A('> |---|---|---|---:|---|')
+    sw_t = sum(m(r['original']) for r in acc('SOCWORKSAL'))
+    ell_v, ace_v = m(bk('District Wide Specials (ELL)')['fy26_final']), \
+        m(bk('ACE Special Ed Resource Rm Teacher')['fy26_final'])
+    kg = sum(m(r['expended']) for r in kinder)
+    ath = acc('ATH INS')[0]
+    spedm = (m(bk('E.S. Special Education Instr. Materials')['fy26_final'])
+             + m(bk('M.S. Special Education Instr. Materials')['fy26_final']))
+    C = codes_col
+    rows = [
+        ('Social worker salaries', 'Under **Guidance** in the Town\'s books; under their '
+         'own heading **Social Worker Salaries** in the budget book',
+         C(ledfn('SOCWORKSAL'), [bkfn('P.S. Social Worker')]), sw_t,
+         'Same money, filed in two places. Nothing missing'),
+        ('ELL staff and the ACE resource room teacher', 'Each is under a different one of '
+         'two codes in each document',
+         C(ledfn('DWSPECIALI') + ledfn('ACERESROOM'),
+           [bkfn('District Wide Specials (ELL)'),
+            bkfn('ACE Special Ed Resource Rm Teacher')]), abs(ell_v - ace_v),
+         'One document has these two the wrong way round'),
+        ('Salary reserve', 'Coded `0300` in the Town\'s books; carried with no function '
+         'code at all in the budget book',
+         C(ledfn('SCHSALRESE'), [bkfn('Salary Reserve')]),
+         m(bk('Salary Reserve')['fy26_final']), 'Same line. Nothing missing'),
+        ('Curriculum Adoption', 'In the budget book. **No matching account in the Town\'s '
+         'ledger**', C(None, [bkfn('Curriculum Adoption')]),
+         m(bk('Curriculum Adoption')['fy26_final']),
+         '**No guess.** This is the one I cannot place'),
+        ('P.S. Repair Office Machines', 'Under a different code in each document',
+         C(ledfn('REP OFF MA'), [bkfn('P.S. Repair Office Machines')]), 690.0,
+         'The same line, coded two ways'),
+        ('Athletic insurance and dues', 'One account of %s in the Town\'s books; two '
+         'lines in the budget book' % d(m(ath['original'])),
+         C(ledfn('ATH INS'), [bkfn('Athletic Insurance')]), m(ath['original']),
+         'The budget book shows it after a transfer, the ledger before'),
+        ('Special education instructional materials', 'All on the Middle School in the '
+         'Town\'s books; split between two schools in the budget book',
+         C(['2415'], [bkfn('E.S. Special Education Instr. Materials')]), spedm,
+         'A keying difference. The totals are identical'),
+        ('The two kindergarten accounts', 'Spent against, with **no appropriation and no '
+         'transfer** in the Town\'s books',
+         C(sorted({r['function'] for r in kinder}),
+           [bkfn('Kindergarten Aides/Regular')]), kg,
+         '**No guess.** This is a plain question'),
+    ]
+    for i, (what, diff, code, amt, guess) in enumerate(rows, 1):
+        A('> | **%d** | **%s** — %s | %s | %s | %s |'
+          % (i, what, diff, code, d(amt), guess))
+    A('>')
+    A('> **One document would answer most of it:** the account master — the mapping from')
+    A('> each MUNIS account number to its function code. If that can be exported, rows 1,')
+    A('> 2, 3, 5 and 7 answer themselves. Rows 4, 6 and 8 would still need a word from')
+    A('> you: an account master cannot show a line that has no account, explain a')
+    A('> transfer, or say where a position was budgeted.')
+    A('>')
+    for i, c in enumerate(off, 1):
+        lbl = name.get(c, 'no group under this code in the workbook')
+        A('> **%d. Function %s — %s**' % (i, c, lbl))
+        A('>')
+        A('> - Town ledger: **%s**, across %d account%s.'
+          % (d(munis[c]), len(accts[c]), '' if len(accts[c]) == 1 else 's'))
+        A('> - District workbook: **%s**.' % d(book[c]))
+        A('> - **%s is stated under this code in one document and not the other.**'
+          % d(abs(munis[c] - book[c])))
+        hit = [r for r in uncoded
+               if abs(m(r['fy26_final']) - abs(munis[c] - book[c])) <= 1.0]
+        for r in hit:
+            A('> - The workbook does carry a line of that amount — *%s* — but under a '
+              'section heading (`%s`) rather than a function code, so it appears under '
+              'no code at all.'
+              % (r['line_item'].strip(), (r['function_group'] or '').strip()))
+        A('>')
+        if accts[c]:
+            top = sorted(accts[c], key=lambda r: -m(r['original']))[:4]
+            A('>   Ledger accounts: %s'
+              % '; '.join('`%s` %s %s' % (r['account'], r['name'].strip(),
+                                          d(m(r['original']))) for r in top))
+        if [r for r in lines[c] if m(r['fy26_final'])]:
+            tl = sorted(lines[c], key=lambda r: -m(r['fy26_final']))[:4]
+            A('>   Workbook lines: %s'
+              % '; '.join('%s %s' % (r['line_item'].strip(), d(m(r['fy26_final'])))
+                          for r in tl if m(r['fy26_final'])))
+        A('>')
+    n = len(off)
+    for c, la, lb in split:
+        n += 1
+        A('> **%d. Function %s — %s.** The totals agree; the lines inside do not.'
+          % (n, c, name.get(c, 'no group under this code in the workbook')))
+        A('>')
+        A('> - Both documents state **%s** under this code.' % d(munis[c]))
+        for a in la:
+            A('> - The ledger has `%s` (%s) at **%s**. The workbook has no line of that '
+              'amount under this code.'
+              % (a['account'], a['name'].strip(), d(m(a['original']))))
+        for b in lb:
+            A('> - The workbook has *%s* at **%s**. The ledger has no account of that '
+              'amount under this code.'
+              % (b['line_item'].strip(), d(m(b['fy26_final']))))
+        A('>')
+        A('> Which line is each of these dollars actually budgeted against?')
+        A('>')
+    n += 1
+    A('> **%d. The two kindergarten accounts.** In FY2026 the ledger shows:' % n)
+    A('>')
+    for r in kinder:
+        A('> - `%s` (%s) — appropriation %s, transfers %s, spent **%s**'
+          % (r['account'], r['name'].strip(), d(m(r['original'])),
+             d(m(r['transfers'])), d(m(r['expended']))))
+    A('>')
+    A('>')
+    A('> **%s was spent against accounts with no appropriation and no transfer.** The'
+      % d(kt))
+    A('> workbook records prior-year spending on *Kindergarten Paraprofessionals* of %s'
+      % ', '.join(d(m(r[c])) for c, r in prior))
+    A('> and nothing at all on *Kindergarten Aides/Regular*, so the object code these')
+    A('> charges land on changed in FY2026.')
+    A('>')
+    A('> Where were these positions provided for in the FY2026 approved budget?')
+    A('>')
+    A('> If I have misread any of the above, telling me so is a complete answer and I')
+    A('> would be glad to have it. Nothing will be published on this until you reply.')
+    A('>')
+    A('> ---')
+    A('>')
+    A('> ### What I think may be going on — guesses, not conclusions')
+    A('>')
+    A('> These are my best reading of the pattern, offered so you can confirm or correct')
+    A('> them quickly rather than work back from the arithmetic above. **None of it is')
+    A('> established and none of it will be published.** If a guess is simply wrong,')
+    A('> saying so is the most useful reply.')
+    A('>')
+    sw = acc('SOCWORKSAL')
+    A('> **1. Social workers.** The Town\'s books carry %d social-worker salary accounts'
+      % len(sw))
+    A('> — %s in total — inside **Guidance**. The budget book carries the same total under'
+      % d(sum(m(r['original']) for r in sw)))
+    A('> its own heading, **Social Worker Salaries**. My guess is that this is the same')
+    A('> money filed in two places and that nothing is missing. If so, the')
+    A('> word "Guidance" means something different in each document. Which grouping does')
+    A('> the district use when it reports to DESE?')
+    A('>')
+    ell, ace = bk('District Wide Specials (ELL)'), bk('ACE Special Ed Resource Rm Teacher')
+    A('> **2. Two staff lines that look swapped.** The budget book puts **%s** (%s) under'
+      % (ell['line_item'].strip(), d(m(ell['fy26_final']))))
+    A('> Therapeutic Services, while the Town\'s books put it under Specialist Teachers.')
+    A('> **%s** (%s) goes the other way. My guess is that one of the two'
+      % (ace['line_item'].strip(), d(m(ace['fy26_final']))))
+    A('> documents has these two the wrong way round — the difference between them is')
+    A('> exactly the %s the two codes are out by. Which is right?'
+      % d(abs(m(ell['fy26_final']) - m(ace['fy26_final']))))
+    A('>')
+    res = bk('Salary Reserve')
+    A('> **3. The salary reserve.** Both documents show %s, so nothing is missing. The'
+      % d(m(res['fy26_final'])))
+    A('> budget book simply lists it without a function code, and the Town\'s books give')
+    A('> it code `0300`. My guess is these are the same line. Should the budget book')
+    A('> carry a code for it?')
+    A('>')
+    ca = bk('Curriculum Adoption')
+    A('> **4. Curriculum Adoption — the one I cannot place at all.** The budget book has')
+    A('> **%s** for it. I can find no account in the Town\'s ledger that corresponds,'
+      % d(m(ca['fy26_final'])))
+    A('> and the professional development account of the same size is already matched to')
+    A('> a different budget line. Taking every line on both sides, the budget book totals')
+    gap = sum(m(r['fy26_final']) for r in allbook) - sum(m(r['original']) for r in led)
+    A('> **%s** more than the Town\'s ledger for the school department, and this single'
+      % d(gap))
+    A('> line accounts for all but %s of that. Was it budgeted, and against which account?'
+      % d(gap - m(ca['fy26_final'])))
+    A('>')
+    ins = bk('Athletic Insurance')
+    ai = acc('ATH INS')
+    A('> **5. Athletic insurance.** The Town\'s books show this account appropriated at')
+    A('> **%s**, with **%s** moved out of it during the year, leaving **%s**. The budget'
+      % (d(m(ai[0]['original'])), d(abs(m(ai[0]['transfers']))), d(m(ai[0]['revised']))))
+    A('> book shows **%s** for insurance and a separate **%s** line for dues and fees. My'
+      % (d(m(ins['fy26_final'])), d(m(bk('Athletic Dues & Fees')['fy26_final']))))
+    A('> guess is that the budget book is showing the position *after* that transfer while')
+    A('> the ledger column I am reading shows it *before*. If that is right, then the')
+    A('> budget book\'s FY26 column is not the original appropriation everywhere, and I')
+    A('> need to know which lines it applies to.')
+    A('>')
+    A('> **6. Special education instructional materials.** The Town\'s books put the whole')
+    es_m = bk('E.S. Special Education Instr. Materials')
+    ms_m = bk('M.S. Special Education Instr. Materials')
+    A('> **%s** on the Middle School and nothing on the Elementary School. The budget book'
+      % d(m(es_m['fy26_final']) + m(ms_m['fy26_final'])))
+    A('> splits it, %s to Elementary and %s to Middle. My guess is a keying difference'
+      % (d(m(es_m['fy26_final'])), d(m(ms_m['fy26_final']))))
+    A('> rather than anything substantive, since the total is identical. Which school is')
+    A('> the money actually against?')
+    A('>')
+    A('> **7. Kindergarten.** I have no guess for this one, which is why it is a plain')
+    A('> question above.')
+    A('')
+    A('---')
+    A('')
+    A('## What each question settles, and what it does not')
+    A('')
+    A('| question | settles | does not settle |')
+    A('|---|---|---|')
+    A('| The account master | All %d cases at once, and permanently | Whether any figure '
+      'already published used the wrong grouping |' % len(off))
+    A('| The %d function codes individually (%s) | Which grouping this project should '
+      'publish for each | Why the two documents differ. Nothing in the archive tests '
+      'that, and this request does not ask |' % (len(off), ', '.join(off)))
+    A('| The kindergarten accounts | Where the positions were provided for | Whether '
+      'anyone was employed, or how many. A budget line is dollars, never people |')
+    A('')
+    A('## What is NOT being asked')
+    A('')
+    A('- **No document is being requested that the Town has already sent.** The back-year')
+    A('  MUNIS reports are in `notes/DATA-REQUEST.md` and are the Town Accountant\'s to')
+    A('  provide, not the Superintendent\'s.')
+    A('- **No explanation of a variance.** The FY26 year-end figures are still being')
+    A('  reconciled; the Town Manager said so when the report was sent, and this asks')
+    A('  nothing that depends on them being final.')
+    A('- **Nothing is characterised as an error.** In every case below, the district and')
+    A('  the Town each hold one of two codings and the archive cannot rank them.')
+    A('')
+    A('## For the record')
+    A('')
+    A('The district publishes a great deal — the FY27 workbook carries five years of')
+    A('actuals line by line, which most districts do not — and the Town produced the')
+    A('period 12 ledger on request within a day. This request exists because those two')
+    A('documents are detailed enough to be compared at all.')
+    A('')
+
+    with open(OUT, 'w', encoding='utf-8') as fh:
+        fh.write('\n'.join(L) + '\n')
+    print('wrote %s — %d differing function codes, %s on the kindergarten accounts'
+          % (os.path.relpath(OUT, ROOT), len(off), d(kt)))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

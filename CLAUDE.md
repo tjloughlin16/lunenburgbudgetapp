@@ -378,6 +378,7 @@ arriving fresh.
     python3 scripts/build_show_your_work.py       # regenerate the method document
     python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
     python3 scripts/extract_munis_report.py --check   # every MUNIS glytdbud report, tied to its own GRAND TOTAL
+    python3 scripts/check_function_crosswalk.py  # the Town's function coding against the district's book
     python3 scripts/build_db.py --check          # rebuild the analysis database; fail if a reconciliation drifts
     python3 scripts/export_ledger.py             # regenerate the ledger page's data from the database
     python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
@@ -390,6 +391,7 @@ arriving fresh.
     python3 scripts/build_analysis_pdf.py --all  # render the analyses to PDF for reading on paper
     python3 scripts/build_request_doc.py         # regenerate what is still outstanding from the Town
     python3 scripts/build_gross_budget_xlsx.py   # the gross budget spreadsheet, in the district's own shape
+    python3 scripts/build_code_reconciliation_xlsx.py  # FY26 budget vs ledger, per line, summed by function code
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 

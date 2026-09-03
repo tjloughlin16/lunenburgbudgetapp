@@ -57,6 +57,15 @@ DEPT = re.compile(r'(?:^|\n)\s*(\d{3})\s+([A-Z][^\n]*?)\s+' + SIX + r'\s+(-?[\d.
 # makes the pattern safe without an anchor.
 FUND = re.compile(r'(\d{4})\s{2,}([A-Z][A-Z /&\'-]+?)\s{2,}APPROP')
 GRAND = re.compile(r'GRAND TOTAL\s+' + SIX)
+# The full MUNIS account string, which ONLY the spreadsheet form carries:
+#   0100-3-300-2330-51-2-13-1-511203
+#   fund  ?  dept FUNC  ? ? ?  ?  object
+# Segment 4 is the function code, and it is the only segment with a meaning published
+# anywhere we can cite: it is the same code the district's own budget book prints at the
+# head of each group ('2330 - Paraprofessionals Special Education'). The other segments
+# are NOT decoded here. Reading meaning into them produced two confident wrong statements
+# before this was written; they are carried verbatim in `account` and left alone.
+ACCOUNT_STRING = re.compile(r'^(\d{4})-(\d)-(\d{3})-(\d{4})-')
 PERIOD = re.compile(r'Year/Period:\s*(\d{4})/\s*(\d+)')
 # The options page prints 'Print totals only: Y' with a colon, but the Find Criteria
 # block prints 'Account type       Revenue' with none. Both forms, one regex.
@@ -135,7 +144,10 @@ def parse(path):
     stated = [money(grand.group(i)) for i in range(1, 7)] if grand else None
 
     for r in rows:
-        r.update(fy=fy, period=period,
+        # The PRINTED report shows ORG and OBJ and not the account string, so these stay
+        # empty for text-sourced rows. That is a fact about the report, not a gap in the
+        # parse: `Print totals only: Y` reports carry no accounts at all.
+        r.update(account='', function='', fy=fy, period=period,
                  funds_covered=all_funds, account_type=acct_type,
                  totals_only=int(totals_only), suppress_zero=int(suppress_zero),
                  rounded_columns='original,transfers,revised',
@@ -172,6 +184,7 @@ def reconcile(rep):
 # both exist the spreadsheet is the better copy of the same report.
 XLSX_COLUMNS = {
     'FUND': 'fund', 'DEPARTMENT': 'dept', 'ORG': 'org', 'OBJ': 'object',
+    'ACCOUNT': 'account',
     'ACCOUNT DESCRIPTION': 'name', 'ORIGINAL APPROP': 'original',
     'TRANFRS/ADJSMTS': 'transfers', 'REVISED BUDGET': 'revised',
     'YTD EXPENDED': 'expended', 'ENCUMBRANCES': 'encumbered',
@@ -198,7 +211,7 @@ def parse_xlsx(path, fy, period, account_type, totals_only, suppress_zero, twin)
     if need:
         raise SystemExit('%s: missing columns %s' % (path, ', '.join(sorted(need))))
 
-    rows = []
+    rows, unparsed = [], []
     for r in range(2, ws.max_row + 1):
         name = str(ws.cell(r, head['name']).value or '')
         # The sheet carries its own subtotal rows ("Total 122 SELECT BOARD"). They are
@@ -208,7 +221,13 @@ def parse_xlsx(path, fy, period, account_type, totals_only, suppress_zero, twin)
         def n(k):
             v = ws.cell(r, head[k]).value
             return float(v) if isinstance(v, (int, float)) else 0.0
+        acct = str(ws.cell(r, head['account']).value or '').strip()
+        seg = ACCOUNT_STRING.match(acct)
+        if not seg:
+            unparsed.append('%s!%s = %r' % (ws.title, ws.cell(r, head['account'])
+                                            .coordinate, acct))
         rows.append(dict(
+            account=acct, function=seg.group(4) if seg else '',
             level='account', org=str(ws.cell(r, head['org']).value or ''),
             object=str(ws.cell(r, head['object']).value or ''),
             dept=str(ws.cell(r, head['dept']).value or ''), name=name.strip(),
@@ -226,12 +245,21 @@ def parse_xlsx(path, fy, period, account_type, totals_only, suppress_zero, twin)
                  # Nothing here is rounded: that is the point of having the spreadsheet.
                  rounded_columns='',
                  doc_id=os.path.relpath(path, ROOT))
+    # A column that is populated for some rows and blank for others turns every
+    # 'sum by function' into 'sum by function, over whatever happened to have one' --
+    # coverage reading as completeness, which is the shape of the bug that once dropped
+    # 16 of 67 departments. So this is loud rather than documented.
+    if unparsed:
+        raise SystemExit('%s: %d ACCOUNT cell(s) do not parse as a MUNIS account '
+                         'string; nothing written:\n   %s'
+                         % (path, len(unparsed), '\n   '.join(unparsed[:10])))
     return dict(path=path, rows=rows, stated=twin, fy=fy, period=period,
                 account_type=account_type, totals_only=totals_only)
 
 
 FIELDS = ['doc_id', 'fy', 'period', 'fund', 'fund_name', 'funds_covered', 'account_type',
-          'level', 'dept', 'org', 'object', 'name', 'original', 'transfers', 'revised',
+          'level', 'dept', 'org', 'object', 'account', 'function', 'name',
+          'original', 'transfers', 'revised',
           'expended', 'encumbered', 'available', 'pct_used', 'totals_only',
           'suppress_zero', 'rounded_columns']
 
