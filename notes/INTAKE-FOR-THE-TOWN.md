@@ -62,6 +62,50 @@ as the name being absent.
 
 ---
 
+## The vendor crosswalk — a second, separate file
+
+Sending the ID instead of the name loses something real: a reader cannot tell a
+collaborative from a bus company. That is recoverable without putting a single name in the
+main export, by sending a **second file** that maps ID to name **for approved vendors only**.
+
+**One row per vendor you have decided may be named. Nothing else in the file.**
+
+    vendor_id,vendor_name,vendor_type,approved_by,approved_date,basis
+    4471,Central Mass Special Education Collaborative,collaborative,<role>,2026-09-15,institutional provider under contract
+    2210,Salter Transportation,transport,<role>,2026-09-15,contracted carrier
+
+`vendor_type` is one of: `school`, `collaborative`, `transport`, `therapy`, `municipal`,
+`state`, `supplier`.
+
+### The one thing that would undo all of this
+
+**Please do not send the MUNIS vendor master table.**
+
+It is the obvious way to answer "map ID to name" and it is the wrong one: the vendor master
+is every vendor the town has ever paid, including every parent ever reimbursed. Exporting it
+would hand over in one file exactly what leaving column X out of the other file was meant to
+prevent — and it would look like cooperation, which is what makes it dangerous.
+
+The crosswalk is a **reviewed list, not an export.** A row exists because somebody decided
+that vendor may be named. That is why the file has an `approved_by` and a `basis` column: a
+row nobody can account for should not be in it.
+
+### Two edge cases to decide rather than guess
+
+- **A business trading under a person's name.** "J. Smith Physical Therapy" is a vendor and
+  is also somebody's name. Your call, and if it is close, leave it out — we lose a label, not
+  a figure.
+- **A parent who is also a vendor.** A family reimbursed for mileage may hold a vendor
+  record like any supplier. Those IDs must never reach the crosswalk, whatever else is true
+  of them.
+
+### What it costs you after the first time
+
+Nothing much. A vendor approved once stays approved. Each later export needs only "are there
+IDs here that are not yet on the list?" — and the answer is usually no.
+
+---
+
 ## Please send one month first
 
 Send a **single month** before the full range. If the field list is wrong, the mistake is one

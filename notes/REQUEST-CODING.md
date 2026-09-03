@@ -20,7 +20,7 @@ mis-describe the district. We would rather ask than guess.
 | **The Town's ledger** | `FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx` — the MUNIS `glytdbud` year-to-date budget report for FY2026 period 12, provided by the Town Accountant. Its `ACCOUNT` column carries the full account string, e.g. `0100-3-300-2330-03-2-12-1-511103`. |
 | **The district's workbook** | `sources/xlsx/fy27-proposals.xlsx`, the FY27 budget projection, which prints a function code at the head of each group, e.g. `2330 - Paraprofessionals Special Education`. |
 
-Read against each other for the school department in FY2026, **37 of 45 function codes carry the same total in both**. 8 do not, by $1,050,646 in total.
+Read against each other for the school department in FY2026, **38 of 45 function codes carry the same total in both**. 7 do not, by $1,010,646 in total.
 
 ---
 
@@ -34,7 +34,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 > MUNIS year-to-date budget report and the district's FY27 budget projection
 > workbook. Both state a budgeted amount against the same function codes.
 >
-> **37 of 45 function codes agree. 8 do not.** In those 8 cases the
+> **38 of 45 function codes agree. 7 do not.** In those 7 cases the
 > two documents state different amounts under the same code for the same year, so
 > they cannot both be right. Below is each one, stated plainly. I have not tried to
 > work out which document is correct, because nothing I hold can decide it.
@@ -81,16 +81,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >
 >   Ledger accounts: `0100-3-300-0300-99-0-99-4-517006` SCHSALRESE $90,770
 >
-> **2. Function 2110 — Special Education / System Curriculum Adop / Curriculum/Spec Ed Directors / Special Education Clerical**
->
-> - Town ledger: **$423,481**, across 11 accounts.
-> - District workbook: **$463,481**.
-> - **$40,000 is stated under this code in one document and not the other.**
->
->   Ledger accounts: `0100-3-300-2110-01-1-05-1-511001` STUD SERV $150,162; `0100-3-300-2110-99-6-10-1-511001` INST SE DI $128,000; `0100-3-300-2110-51-1-05-1-511002` SPED CLERI $68,171; `0100-3-300-2110-51-1-06-2-535004` COUNS/LEGA $25,000
->   Workbook lines: Student Services Coordinator (Spec Ed) $150,162; Instructional Services Director (Curriculum) $128,000; Special Ed Clerical $68,171; Curriculum Adoption $40,000
->
-> **3. Function 2310 — Tutoring Cont. Ser. / Teachers Specialists - Special Education**
+> **2. Function 2310 — Tutoring Cont. Ser. / Teachers Specialists - Special Education**
 >
 > - Town ledger: **$2,187,067**, across 8 accounts.
 > - District workbook: **$2,096,848**.
@@ -99,7 +90,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >   Ledger accounts: `0100-3-300-2310-51-2-06-1-511001` PS SPED TE $635,488; `0100-3-300-2310-51-5-06-1-511001` MS SPED RE $453,676; `0100-3-300-2310-51-6-06-1-511001` HS SPED RE $449,087; `0100-3-300-2310-51-4-06-1-511001` ES SPED RE $344,938
 >   Workbook lines: P.S. Special Ed Teachers $635,488; M.S. Specl Ed Resourse Rm Teacher $453,676; H.S. Specl Ed Resourse Rm Teacher $449,087; ES Special Ed Teachers $344,938
 >
-> **4. Function 2320 — Therapeutic Services**
+> **3. Function 2320 — Therapeutic Services**
 >
 > - Town ledger: **$663,335**, across 7 accounts.
 > - District workbook: **$753,555**.
@@ -108,7 +99,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >   Ledger accounts: `0100-3-300-2320-51-1-06-1-511001` SPEC SAL $195,946; `0100-3-300-2320-51-2-06-1-511001` PS PATH SA $148,028; `0100-3-300-2320-51-1-06-1-511025` ACERESROOM $95,659; `0100-3-300-2320-51-4-06-1-511001` ES SPEECH $81,483
 >   Workbook lines: Special Ed Specialists/System $195,946; District Wide Specials (ELL) $185,878; P.S. Special Ed Speech Pathologists $148,028; E.S. Special Ed Speech Pathologists $81,483
 >
-> **5. Function 2710 — Guidance Exp. / Guidance Salaries**
+> **4. Function 2710 — Guidance Exp. / Guidance Salaries**
 >
 > - Town ledger: **$753,939**, across 13 accounts.
 > - District workbook: **$384,910**.
@@ -117,7 +108,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >   Ledger accounts: `0100-3-300-2710-06-6-65-1-511001` HS GUIDANC $209,884; `0100-3-300-2710-05-5-65-1-511001` MS GUIDANC $147,680; `0100-3-300-2710-04-4-65-1-511024` SOCWORKSAL $92,939; `0100-3-300-2710-05-5-65-1-511024` SOCWORKSAL $92,939
 >   Workbook lines: H.S. Guidance Counselor $209,884; M.S. Guidance Counselor $147,680; H.S. Lease of Guidance Software $13,800; H.S. Guidance Supplies $6,954
 >
-> **6. Function 2900 — Social Worker Salaries**
+> **5. Function 2900 — Social Worker Salaries**
 >
 > - Town ledger: **$0**, across 0 accounts.
 > - District workbook: **$369,029**.
@@ -125,7 +116,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >
 >   Workbook lines: P.S. Social Worker $92,939; E.S. Social Worker $92,939; M.S Social Worker $92,939; H.S. Social Worker $90,212
 >
-> **7. Function 4220 — Maint. of Buildings**
+> **6. Function 4220 — Maint. of Buildings**
 >
 > - Town ledger: **$367,000**, across 3 accounts.
 > - District workbook: **$367,690**.
@@ -134,7 +125,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >   Ledger accounts: `0100-3-300-4220-01-1-74-2-535006` CONT SERV $257,000; `0100-3-300-4220-99-1-74-2-541002` BLDG MTC $80,000; `0100-3-300-4220-99-1-74-2-545004` EMERG EXP $30,000
 >   Workbook lines: Maint. of Buildings/Contracted Services $257,000; Maint. of Bldg Supplies/System $80,000; Emergency Expenditures $30,000; P.S. Repair Office Machines $690
 >
-> **8. Function 4230 — M.S. Repairs / H.S. Repairs / Maintenance Repairs**
+> **7. Function 4230 — M.S. Repairs / H.S. Repairs / Maintenance Repairs**
 >
 > - Town ledger: **$57,145**, across 8 accounts.
 > - District workbook: **$56,455**.
@@ -143,7 +134,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >   Ledger accounts: `0100-3-300-4230-99-1-74-2-525009` FIRE/FURNI $24,005; `0100-3-300-4230-99-1-76-2-524100` VEH MTC $19,000; `0100-3-300-4230-99-1-74-2-525011` REP EQ MTC $5,000; `0100-3-300-4230-99-1-52-2-525008` COMP MTC $4,500
 >   Workbook lines: Fire Safety/Furniture Repair $24,005; Vehicle Maintenance/Repairs $19,000; Repair of Equip/Maintenance $5,000; Computer MTC / Repair System $4,500
 >
-> **9. Function 2415 — P.S. Other Instr. Materials / E.S. Other Instr. Materials / M.S. Other Instr. Materials / H.S. Other Instr. Materials.** The totals agree; the lines inside do not.
+> **8. Function 2415 — P.S. Other Instr. Materials / E.S. Other Instr. Materials / M.S. Other Instr. Materials / H.S. Other Instr. Materials.** The totals agree; the lines inside do not.
 >
 > - Both documents state **$83,931** under this code.
 > - The ledger has `0100-3-300-2415-51-5-05-2-555055` (SPEDINSTRM) at **$1,896**. The workbook has no line of that amount under this code.
@@ -152,7 +143,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >
 > Which line is each of these dollars actually budgeted against?
 >
-> **10. Function 3510 — Athletic Expenses / Athletics Salaries.** The totals agree; the lines inside do not.
+> **9. Function 3510 — Athletic Expenses / Athletics Salaries.** The totals agree; the lines inside do not.
 >
 > - Both documents state **$518,334** under this code.
 > - The ledger has `0100-3-300-3510-06-6-67-2-535018` (ATH INS) at **$29,000**. The workbook has no line of that amount under this code.
@@ -161,7 +152,7 @@ Read against each other for the school department in FY2026, **37 of 45 function
 >
 > Which line is each of these dollars actually budgeted against?
 >
-> **11. The two kindergarten accounts.** In FY2026 the ledger shows:
+> **10. The two kindergarten accounts.** In FY2026 the ledger shows:
 >
 > - `0100-3-300-2330-03-2-12-1-511103` (KINDAIDREG) — appropriation $0, transfers $0, spent **$93,691**
 > - `0100-3-300-2330-03-2-13-1-511203` (KINDPARREG) — appropriation $0, transfers $0, spent **$5,373**
@@ -208,8 +199,8 @@ Read against each other for the school department in FY2026, **37 of 45 function
 > **$40,000** for it. I can find no account in the Town's ledger that corresponds,
 > and the professional development account of the same size is already matched to
 > a different budget line. Taking every line on both sides, the budget book totals
-> **$40,002** more than the Town's ledger for the school department, and this single
-> line accounts for all but $2 of that. Was it budgeted, and against which account?
+> **$2** more than the Town's ledger for the school department, and this single
+> line accounts for all but -$39,998 of that. Was it budgeted, and against which account?
 >
 > **5. Athletic insurance.** The Town's books show this account appropriated at
 > **$29,000**, with **$20,000** moved out of it during the year, leaving **$9,000**. The budget
@@ -234,8 +225,8 @@ Read against each other for the school department in FY2026, **37 of 45 function
 
 | question | settles | does not settle |
 |---|---|---|
-| The account master | All 8 cases at once, and permanently | Whether any figure already published used the wrong grouping |
-| The 8 function codes individually (0300, 2110, 2310, 2320, 2710, 2900, 4220, 4230) | Which grouping this project should publish for each | Why the two documents differ. Nothing in the archive tests that, and this request does not ask |
+| The account master | All 7 cases at once, and permanently | Whether any figure already published used the wrong grouping |
+| The 7 function codes individually (0300, 2310, 2320, 2710, 2900, 4220, 4230) | Which grouping this project should publish for each | Why the two documents differ. Nothing in the archive tests that, and this request does not ask |
 | The kindergarten accounts | Where the positions were provided for | Whether anyone was employed, or how many. A budget line is dollars, never people |
 
 ## What is NOT being asked

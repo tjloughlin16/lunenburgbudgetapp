@@ -29,7 +29,7 @@ from check_function_crosswalk import pair  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT = os.path.join(ROOT, 'notes', 'REQUEST-CODING.md')
-DEPT, FY = '300', '2026'
+DEPTS, FY = ('300', '301'), '2026'
 
 LEDGER_DOC = 'sources/records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx'
 LEDGER_NAME = 'FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx'
@@ -49,7 +49,7 @@ def d(v):
 
 def main():
     led = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
-           if r['dept'] == DEPT and r['fy'] == FY and r['level'] == 'account'
+           if r['dept'] in DEPTS and r['fy'] == FY and r['level'] == 'account'
            and r['account_type'] == 'expense' and r['function']]
     if not led:
         print('no function-coded school rows; run scripts/extract_munis_report.py first')

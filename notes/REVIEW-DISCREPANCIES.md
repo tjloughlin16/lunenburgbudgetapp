@@ -8,7 +8,7 @@ Comparing two documents for the school department, FY2026:
 - **the YTD report** — the Town Accountant’s `FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx`, sheet `ACCOUNT DETAIL`, column E
 - **the school budget** — the district’s FY27 budget projection workbook, FY26 FINAL BUDGET column, sheet `FY27 Budget Projection`, column B
 
-Both state amounts against the same function codes. **37 of 45 codes agree.**
+Both state amounts against the same function codes. **38 of 45 codes agree.**
 
 Every item below gives the account number and the school budget row, so each one
 can be opened in both documents without searching. Nothing here is an accusation, and in
@@ -19,18 +19,19 @@ both be. Where I have a guess it is marked as one.
 classification question where both documents hold the money; the smallest is
 $1,896 of instructional materials.
 
-| | category | items | sum involved | what it needs |
-|---|---|---:|---:|---|
-| **A** | **Spent without budget** | 6 accounts | $103,674 | **How these were authorised** |
-| **B** | **Budgeted with no account to spend from** | 1 line | $40,000 | **Where this was budgeted** |
-| **C** | Nothing appropriated, funded by transfer | 4 accounts | $44,121 | What each transfer paid for |
-| **D** | Accounts not aligned | 4 pairs of codes | $550,708 | Which code is authoritative |
-| **E** | Two figures on different bases | 2 accounts | $20,000 | Which basis the school budget column uses |
-| **F** | Same total, different lines | 1 code | $1,896 | Which line the money sits against |
+| | category | items | sum involved | what it needs | in the minutes |
+|---|---|---:|---:|---|---|
+| **A** | **Spent without budget** | 6 accounts | $103,674 | **How these were authorised** | One contradicted, five silent |
+| **B** | Nothing appropriated, funded by transfer | 4 accounts | $44,121 | What each transfer paid for | One voted, three silent |
+| **C** | Accounts not aligned | 4 pairs of codes | $550,708 | Which code is authoritative | No vote on the coding itself |
+| **D** | Two figures on different bases | 2 accounts | $20,000 | Which basis the school budget column uses | **Voted, and explained** |
+| **E** | Same total, different lines | 1 code | $1,896 | Which line the money sits against | Partly voted |
 
 **The sums are the amounts involved, not money missing, and they do not add up.**
-In D and F both documents hold the same total and disagree only about where it
-sits.
+In C and E both documents hold the same total and disagree only about where it
+sits. Across both school departments (300 and 301) the two documents reconcile to
+**$2** in total — the whole of the difference is where things sit, not how much
+there is.
 
 ---
 
@@ -49,21 +50,21 @@ sits.
 
 The two kindergarten accounts are $99,064 of it. The FY26 approved budget published the
 kindergarten line as a cut, so the question is where these charges were provided
-for. The school budget does carry a **Kindergarten Aides/Regular** line, row 333,
+
+for.
+
+**In the minutes.**
+
+**Said on the record, and it does not fit** — Finance Committee, 2026-01-12 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01122026-7597))<br>“kindergarten classrooms were operating with 25 students and no aides”<br>Said by the School Committee Chair at a Tri-Board meeting in January 2026, in the same year the ledger charges $93,691 to KINDAIDREG and $5,373 to KINDPARREG. Both statements can be true only if those accounts paid for something other than aides in kindergarten classrooms. Nothing in the archive settles which.
+
+**Requested, not a transfer** — Finance Committee, 2026-02-26 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262026-7673))<br>“1 Kindergarten Paraprofessional: $22,205”<br>Not a transfer and not a vote: an FY27 staffing INCREASE request, i.e. a position to be ADDED rather than one already running.
+
+For the other four accounts: No vote in the archive names this account. The School Committee votes on line item transfers at almost every meeting, and several meetings record only that transfers were approved without saying which.
+
+The school budget does carry a **Kindergarten Aides/Regular** line, row 333,
 printed at $0, and a **Kindergarten Paraprofessionals** line, row 332, left blank.
 
-# B. Budgeted with no account to spend from
-
-*In the school budget, with no corresponding account anywhere in the YTD report.*
-
-| school budget | code | amount | YTD report |
-|---|---|---:|---|
-| **Curriculum Adoption** — row 38 | `2110` | $40,000 | no account of any amount |
-
-Taking every line on both sides, the school budget totals $26,287,476 and the YTD report $26,247,474. This
-single line is all but $2 of that difference.
-
-# C. Nothing appropriated, funded entirely by transfer
+# B. Nothing appropriated, funded entirely by transfer
 
 *The school budget appropriates **nothing** to these 4 accounts. Each was given
 money by transfer during the year. One is nearly all of it.*
@@ -75,7 +76,13 @@ money by transfer during the year. One is nearly all of it.*
 | `0100-3-300-2420-04-4-62-2-555005` | PHYS ED SU | $0 | $550 | $527 |
 | `0100-3-300-2420-06-6-63-2-555028` | MUSIC BAND | $0 | $4 | $0 |
 
-# D. Accounts not aligned
+**In the minutes.**
+
+**Voted and itemised** — School Committee, 2025-09-17 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172025-7408))<br>“$550 from the Elementary School art supply to the Elementary Phys Ed line”<br>Matches the $550 moved into PHYS ED SU exactly.
+
+The other three: No vote in the archive names this account. The School Committee votes on line item transfers at almost every meeting, and several meetings record only that transfers were approved without saying which.
+
+# C. Accounts not aligned
 
 *The same money under a different function code in each document. Both documents
 hold it; they disagree only about where it sits. The guess is mine, from the
@@ -97,15 +104,20 @@ amounts, and is not established.*
 | `0300` | *no group under this code* | $90,770 | $0 | **$90,770** |
 | `2320` | Therapeutic Services | $663,335 | $753,555 | **$90,220** |
 | `2310` | Tutoring Cont. Ser. / Teachers Specialists - Special Education | $2,187,067 | $2,096,848 | **$90,219** |
-| `2110` | Special Education / System Curriculum Adop / Curriculum/Spec Ed Directors / Special Education Clerical | $423,481 | $463,481 | **$40,000** |
 | `4220` | Maint. of Buildings | $367,000 | $367,690 | **$690** |
 | `4230` | M.S. Repairs / H.S. Repairs / Maintenance Repairs | $57,145 | $56,455 | **$690** |
 
-# E. Two figures on different bases
+**In the minutes.** No vote in the archive decides which coding is right for any
+of these four. The nearest thing is a March 2026 transfer that names one of the
+accounts as a source, without touching how it is coded:
+
+**Voted and itemised** — School Committee, 2026-03-04 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03042026-7687))<br>“A transfer of $462.07 will be transferring from the supply line items, math, art, periodicals, library, guidance, repair office machines and general supplies to the Primary School special educations instructional material amount for testing supplies.”<br>Names REPAIR OFFICE MACHINES as a source, which is the account whose coding the two documents disagree about.
+
+# D. Two figures on different bases
 
 *Only accounts with a transfer can show which basis the school budget uses,
 because only there do the appropriation and the revised budget differ.
-There are 82 such accounts: the school budget matches the appropriation on 74,
+There are 83 such accounts: the school budget matches the appropriation on 75,
 the revised budget on 1, and 7 cannot be told apart.*
 
 | YTD report account | appropriated | moved | revised | school budget says | school budget line |
@@ -116,7 +128,16 @@ the revised budget on 1, and 7 cannot be told apart.*
 Insurance matches the revised figure rather than the appropriation; dues and fees
 matches neither. Which basis does the school budget column use, and for which lines?
 
-# F. Same total, different lines
+**In the minutes — this is the one item that is settled, and the district explained it itself.**
+
+**Voted and itemised** — School Committee, 2025-10-01 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012025-7432))<br>“We have one transfer it is to move $20,000 from athletic insurance to athletic dues and fees, they were classified in the wrong object and org number”<br>Voted unanimously. The district states the reason itself: the original coding was wrong. This is the $20,000 that makes the two documents differ.
+
+So the $20,000 is a transfer the School Committee approved on the record, for a
+reason it stated on the record. What is left is the narrower question of which
+figure the school budget column is meant to show, because it reflects this
+transfer and not the 75 others tested.
+
+# E. Same total, different lines
 
 *The code total agrees, so nothing is missing and no dollar is unaccounted for.
 The money sits against different lines inside the code — which is what happens
@@ -126,14 +147,47 @@ when one account covers what the school budget splits across schools.*
 |---|---|---|
 | `2415` | `0100-3-300-2415-51-5-05-2-555055` SPEDINSTRM $1,896 | E.S. Special Education Instr. Materials $1,492, row 84; M.S. Special Education Instr. Materials $404, row 97 |
 
+**In the minutes.** A March 2026 vote moved $462.07 into the Primary School
+special education instructional materials line, which is the same family of
+accounts — but it names the Primary School, not the two schools at issue here.
+
+# What the minutes do and do not record
+
+**Every transfer goes to a vote.** `Review & Approve Line Item Transfers, Warrants
+& Donations` is a standing School Committee agenda item, and it appears at every
+meeting in FY26.
+
+**What the minutes then say varies.** Some meetings itemise each transfer with
+both account names and the amount — the athletic insurance vote is a model of it.
+Others record only that transfers were approved. The clearest case is the last
+meeting of the year:
+
+**Voted, destinations not recorded** — School Committee, 2026-06-24 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7869))<br>“Mr. McNamara explains the four line item transfers for this meeting”<br>Approved unanimously at the last meeting of FY26. The four are named nowhere in the archive, so any of the unexplained movements above could be among them.
+
+**And one FY26 record is missing from the archive entirely.** The minutes for the
+5 November 2025 School Committee meeting are indexed but carry no readable text.
+Its agenda lists the standing transfer item with no sub-items, so probably nothing
+was moved, but that cannot be confirmed from what is here.
+
+**One referenced document is not in the archive.** A March 2026 transfer of
+$54,548.50 was made against a list of destinations that the minutes say was
+"provided to the committee (and available online)":
+
+**Voted, destinations not recorded** — School Committee, 2026-03-04 ([minutes](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03042026-7687))<br>“A transfer of $54,548.50 to transfer funds to represent the new allocations for the SOA account, these funds will be going from instructional staff salaries”<br>The destinations are not in the minutes: they are "the list provided to the committee (and available online)". That list is not in this archive and is worth asking for.
+
 ## What would close most of this in one step
 
 **The account master** — the mapping from each MUNIS account number to its
-function code and description. **D and F answer themselves from it.**
+function code and description. **C and E answer themselves from it** — those are
+the two where both documents hold the money and only the coding differs.
 
-**A, B, C and E need a word from somebody.** A mapping cannot say how a charge was
-authorised against an account with no budget, show a budget line that has no
-account, say what a transfer paid for, or explain which basis a column is on.
+**A, B and D need a word from somebody.** A mapping cannot say how a charge was
+authorised against an account with no budget, say what a transfer paid for, or
+explain which basis a column is on.
+
+**And one document would help with all of it:** the list of destinations behind
+the $54,548.50 March transfer, which the minutes say was provided to the committee
+and is not in the public archive.
 
 ## Method, in four lines
 

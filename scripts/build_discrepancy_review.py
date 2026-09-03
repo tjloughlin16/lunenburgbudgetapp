@@ -36,6 +36,7 @@ from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_code_reconciliation_xlsx import load, match, m  # noqa: E402
+from minutes_decisions import DECISIONS, SILENT, url, verify  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'notes', 'REVIEW-DISCREPANCIES.md')
@@ -53,7 +54,24 @@ def d(v):
     return f'${v:,.0f}' if v >= 0 else f'-${abs(v):,.0f}'
 
 
+def dec(key):
+    """One board decision, rendered with its quote and a link to the minutes."""
+    board, date, _p, _u, quote, verdict, note = DECISIONS[key]
+    mark = {'approved': 'Voted and itemised',
+            'approved-partial': 'Voted, destinations not recorded',
+            'requested': 'Requested, not a transfer',
+            'silent': 'No vote recorded',
+            'contradicts': 'Said on the record, and it does not fit'}[verdict]
+    return ('**%s** — %s, %s ([minutes](%s))<br>“%s”<br>%s'
+            % (mark, board, date, url(key), ' '.join(quote.split()), note))
+
+
 def main():
+    bad = verify()
+    if bad:
+        for b in bad:
+            print('FAIL', b)
+        return 1
     led, book = load()
 
     def acc(nm, fn):
@@ -174,32 +192,36 @@ def main():
     P('classification question where both documents hold the money; the smallest is')
     P('$1,896 of instructional materials.')
     P('')
-    P('| | category | items | sum involved | what it needs |')
-    P('|---|---|---:|---:|---|')
+    P('| | category | items | sum involved | what it needs | in the minutes |')
+    P('|---|---|---:|---:|---|---|')
     cats = [
         ('A', '**Spent without budget**', '%d accounts' % len(naked),
-         sum(m(r['expended']) for r in naked), '**How these were authorised**'),
-        ('B', '**Budgeted with no account to spend from**', '1 line',
-         m(ca['fy26_final']), '**Where this was budgeted**'),
-        ('C', 'Nothing appropriated, funded by transfer', '%d accounts' % len(blind),
-         sum(abs(m(r['transfers'])) for r in blind), 'What each transfer paid for'),
-        ('D', 'Accounts not aligned', '4 pairs of codes',
+         sum(m(r['expended']) for r in naked), '**How these were authorised**',
+         'One contradicted, five silent'),
+        ('B', 'Nothing appropriated, funded by transfer', '%d accounts' % len(blind),
+         sum(abs(m(r['transfers'])) for r in blind), 'What each transfer paid for',
+         'One voted, three silent'),
+        ('C', 'Accounts not aligned', '4 pairs of codes',
          sum(m(r['original']) for r in sw) + abs(m(ell['fy26_final'])
                                                  - m(ace['fy26_final']))
          + m(sr['fy26_final']) + m(rom['original']),
-         'Which code is authoritative'),
-        ('E', 'Two figures on different bases', '2 accounts',
-         abs(m(basis[0][0]['transfers'])), 'Which basis the school budget column uses'),
-        ('F', 'Same total, different lines', '%d code' % len(split),
+         'Which code is authoritative', 'No vote on the coding itself'),
+        ('D', 'Two figures on different bases', '2 accounts',
+         abs(m(basis[0][0]['transfers'])), 'Which basis the school budget column uses',
+         '**Voted, and explained**'),
+        ('E', 'Same total, different lines', '%d code' % len(split),
          sum(m(b['fy26_final']) for _, ub, _ in split for b in ub),
-         'Which line the money sits against'),
+         'Which line the money sits against', 'Partly voted'),
     ]
-    for k, cat, n, amt, need in cats:
-        P('| **%s** | %s | %s | %s | %s |' % (k, cat, n, d(amt), need))
+    for k, cat, n, amt, need, vote in cats:
+        P('| **%s** | %s | %s | %s | %s | %s |' % (k, cat, n, d(amt), need, vote))
     P('')
     P('**The sums are the amounts involved, not money missing, and they do not add up.**')
-    P('In D and F both documents hold the same total and disagree only about where it')
-    P('sits.')
+    P('In C and E both documents hold the same total and disagree only about where it')
+    P('sits. Across both school departments (300 and 301) the two documents reconcile to')
+    P('**%s** in total — the whole of the difference is where things sit, not how much'
+      % d(abs(bk_tot - led_tot)))
+    P('there is.')
     P('')
     P('---')
     P('')
@@ -223,27 +245,23 @@ def main():
     P('The two kindergarten accounts are %s of it. The FY26 approved budget published the'
       % d(sum(m(r['expended']) for r in naked if 'KIND' in r['name'].upper())))
     P('kindergarten line as a cut, so the question is where these charges were provided')
-    P('for. The school budget does carry a **Kindergarten Aides/Regular** line, %s,'
+    P('')
+    P('for.')
+    P('')
+    P('**In the minutes.**')
+    P('')
+    P('%s' % dec('kindergarten'))
+    P('')
+    P('%s' % dec('kindergarten_fy27'))
+    P('')
+    P('For the other four accounts: %s' % ' '.join(SILENT.split()))
+    P('')
+    P('The school budget does carry a **Kindergarten Aides/Regular** line, %s,'
       % brow('Kindergarten Aides/Regular'))
     P('printed at $0, and a **Kindergarten Paraprofessionals** line, %s, left blank.'
       % brow('Kindergarten Paraprofessionals'))
     P('')
-    P('# B. Budgeted with no account to spend from')
-    P('')
-    P('*In the school budget, with no corresponding account anywhere in the YTD report.*')
-    P('')
-    P('| school budget | code | amount | YTD report |')
-    P('|---|---|---:|---|')
-    P('| **Curriculum Adoption** — %s | `2110` | %s | no account of any amount |'
-      % (brow('Curriculum Adoption'), d(m(ca['fy26_final']))))
-    P('')
-    P('Taking every line on both sides, the school budget totals %s and the YTD report '
-      '%s. This'
-      % (d(bk_tot), d(led_tot)))
-    P('single line is all but %s of that difference.'
-      % d(bk_tot - led_tot - m(ca['fy26_final'])))
-    P('')
-    P('# C. Nothing appropriated, funded entirely by transfer')
+    P('# B. Nothing appropriated, funded entirely by transfer')
     P('')
     P('*The school budget appropriates **nothing** to these %d accounts. Each was given'
       % len(blind))
@@ -256,7 +274,13 @@ def main():
           % (r['account'], r['name'].strip(), d(m(r['original'])),
              d(m(r['transfers'])), d(m(r['expended']))))
     P('')
-    P('# D. Accounts not aligned')
+    P('**In the minutes.**')
+    P('')
+    P('%s' % dec('phys_ed'))
+    P('')
+    P('The other three: %s' % ' '.join(SILENT.split()))
+    P('')
+    P('# C. Accounts not aligned')
     P('')
     P('*The same money under a different function code in each document. Both documents')
     P('hold it; they disagree only about where it sits. The guess is mine, from the')
@@ -295,7 +319,13 @@ def main():
           % (c, ' / '.join(label.get(c, [])) or '*no group under this code*',
              d(a), d(b), d(abs(a - b))))
     P('')
-    P('# E. Two figures on different bases')
+    P('**In the minutes.** No vote in the archive decides which coding is right for any')
+    P('of these four. The nearest thing is a March 2026 transfer that names one of the')
+    P('accounts as a source, without touching how it is coded:')
+    P('')
+    P('%s' % dec('sped_materials'))
+    P('')
+    P('# D. Two figures on different bases')
     P('')
     P('*Only accounts with a transfer can show which basis the school budget uses,')
     P('because only there do the appropriation and the revised budget differ.')
@@ -312,9 +342,20 @@ def main():
              brow(b['line_item'].strip())))
     P('')
     P('Insurance matches the revised figure rather than the appropriation; dues and fees')
-    P('matches neither. Which basis does the school budget column use, and for which lines?')
+    P('matches neither. Which basis does the school budget column use, and for which '
+      'lines?')
     P('')
-    P('# F. Same total, different lines')
+    P('**In the minutes — this is the one item that is settled, and the district'
+      ' explained it itself.**')
+    P('')
+    P('%s' % dec('athletic_basis'))
+    P('')
+    P('So the $20,000 is a transfer the School Committee approved on the record, for a')
+    P('reason it stated on the record. What is left is the narrower question of which')
+    P('figure the school budget column is meant to show, because it reflects this')
+    P('transfer and not the 75 others tested.')
+    P('')
+    P('# E. Same total, different lines')
     P('')
     P('*The code total agrees, so nothing is missing and no dollar is unaccounted for.')
     P('The money sits against different lines inside the code — which is what happens')
@@ -330,14 +371,47 @@ def main():
              '; '.join('%s %s, %s' % (b['line_item'].strip(), d(m(b['fy26_final'])),
                                       brow(b['line_item'].strip())) for b in ub) or '—'))
     P('')
+    P('**In the minutes.** A March 2026 vote moved $462.07 into the Primary School')
+    P('special education instructional materials line, which is the same family of')
+    P('accounts — but it names the Primary School, not the two schools at issue here.')
+    P('')
+    P('# What the minutes do and do not record')
+    P('')
+    P('**Every transfer goes to a vote.** `Review & Approve Line Item Transfers, Warrants')
+    P('& Donations` is a standing School Committee agenda item, and it appears at every')
+    P('meeting in FY26.')
+    P('')
+    P('**What the minutes then say varies.** Some meetings itemise each transfer with')
+    P('both account names and the amount — the athletic insurance vote is a model of it.')
+    P('Others record only that transfers were approved. The clearest case is the last')
+    P('meeting of the year:')
+    P('')
+    P('%s' % dec('june_four'))
+    P('')
+    P('**And one FY26 record is missing from the archive entirely.** The minutes for the')
+    P('5 November 2025 School Committee meeting are indexed but carry no readable text.')
+    P('Its agenda lists the standing transfer item with no sub-items, so probably nothing')
+    P('was moved, but that cannot be confirmed from what is here.')
+    P('')
+    P('**One referenced document is not in the archive.** A March 2026 transfer of')
+    P('$54,548.50 was made against a list of destinations that the minutes say was')
+    P('"provided to the committee (and available online)":')
+    P('')
+    P('%s' % dec('soa'))
+    P('')
     P('## What would close most of this in one step')
     P('')
     P('**The account master** — the mapping from each MUNIS account number to its')
-    P('function code and description. **D and F answer themselves from it.**')
+    P('function code and description. **C and E answer themselves from it** — those are')
+    P('the two where both documents hold the money and only the coding differs.')
     P('')
-    P('**A, B, C and E need a word from somebody.** A mapping cannot say how a charge was')
-    P('authorised against an account with no budget, show a budget line that has no')
-    P('account, say what a transfer paid for, or explain which basis a column is on.')
+    P('**A, B and D need a word from somebody.** A mapping cannot say how a charge was')
+    P('authorised against an account with no budget, say what a transfer paid for, or')
+    P('explain which basis a column is on.')
+    P('')
+    P('**And one document would help with all of it:** the list of destinations behind')
+    P('the $54,548.50 March transfer, which the minutes say was provided to the committee')
+    P('and is not in the public archive.')
     P('')
     P('## Method, in four lines')
     P('')

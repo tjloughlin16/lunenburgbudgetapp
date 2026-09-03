@@ -79,6 +79,51 @@ a time, and every row records who decided and when.
 
 ---
 
+## 3a. The crosswalk: the town approves vendors, we do not classify them
+
+§3 has the allowlist maintained here, from vendors we recognise. The better arrangement puts
+it at the other end: **the main export carries vendor IDs and no names, and a second, small
+file maps ID to name for approved institutional vendors only.**
+
+It is better for a reason worth stating. Deciding whether a payee may be named is a judgement
+about a person, made under FERPA and the public records exemptions. The Town has the
+knowledge to make it and the standing to be answerable for it; this project has neither. A
+list built here is a guess about who is an institution. A list built there is a decision.
+
+And the two files fail independently. If the crosswalk never arrives, the export is still
+safe and still analysable — labels are lost, figures are not.
+
+**The failure mode that would undo it, and it is the likely one.** Asked to map ID to name,
+the natural thing is to export the MUNIS vendor master. That table is every vendor the town
+has ever paid, families included, and sending it hands over precisely what omitting column X
+prevented — while looking like cooperation. So the crosswalk is specified as a **reviewed
+list with `approved_by`, `approved_date` and `basis` per row**, which a bulk export cannot
+produce. `notes/INTAKE-FOR-THE-TOWN.md` says this in the town's own terms and says it first.
+
+**An unmapped ID is not a family.** It is an ID that is not on the approved list, which may
+be because the vendor is an individual, or because nobody has reviewed it yet. Rule 7 governs
+here exactly as it governs everything else: the data shows *not on the list*, and writing
+*is a family* is a proxy being quoted as the thing. The honest sentence names the mapped
+share and says what the rest is not.
+
+**The mapped/unmapped split is itself a finding**, and a publishable one with no name in it:
+what share of special education spending goes to institutions against individuals is a real
+quantity, and it is one nobody currently publishes.
+
+**Small cells re-identify even with no name.** A single family receiving an unusual
+reimbursement is identifiable from amount, date and account by anybody local, whatever the
+vendor column says. Suppressing a name does not anonymise a population of one. So unmapped
+vendors are published **in aggregate only**, under a stated minimum cell size — and the
+threshold should follow DESE's own suppression rule for this population rather than one
+invented here, so the practice matches the state's for the same children.
+
+**The pseudonym is durable, and that is the trade.** A stable ID is what makes "same payee
+across years" answerable, and it is also what means a single leak identifies every historical
+row for that ID. Rotating the ID per release would fix the second and destroy the first.
+Keep it stable, and say so rather than implying an anonymity that is not there.
+
+---
+
 ## 4. Suppress the field, do not scan the contents
 
 For anything with a schema — a MUNIS export, a warrant, a transfer schedule — you already

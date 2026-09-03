@@ -38,7 +38,12 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
-DEPT = '300'          # the school department
+# The school appropriation spans TWO departments. 301 is SCHOOL NON-RECURRING EXPENSE and
+# in FY26 it holds exactly one account -- CURR ADOPT, $40,000 -- which the district's
+# budget book carries under function 2110 like any other line. Filtering to 300 alone made
+# that line look like a budget with no account behind it, and left the department $40,000
+# apart. audit_provenance.py already reconciled "300+301"; this did not.
+DEPTS = ('300', '301')
 FY = '2026'
 
 
@@ -76,7 +81,7 @@ def main():
                     help='exit non-zero if any function code does not reconcile')
     args = ap.parse_args()
     ledger = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
-              if r['dept'] == DEPT and r['fy'] == FY and r['level'] == 'account'
+              if r['dept'] in DEPTS and r['fy'] == FY and r['level'] == 'account'
               and r['account_type'] == 'expense']
     if not ledger:
         print('no account-grain school rows in the ledger for FY%s' % FY)
@@ -123,7 +128,8 @@ def main():
     # build_coding_questions.py, which must not report a different count from this.
     off = [c for c in codes if abs(munis[c] - book[c]) > max(1.0, float(len(accts[c])))]
 
-    print('FY%s general fund, department %s -- function coding, two documents\n' % (FY, DEPT))
+    print('FY%s general fund, departments %s -- function coding, two documents\n'
+          % (FY, '+'.join(DEPTS)))
     print('  %-6s %6s %14s %16s %13s' % ('func', 'accts', 'MUNIS approp',
                                          'book fy26_final', 'difference'))
     for c in codes:

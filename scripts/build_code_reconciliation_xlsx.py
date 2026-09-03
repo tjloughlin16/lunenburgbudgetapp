@@ -55,7 +55,9 @@ from openpyxl.utils import get_column_letter
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT = os.path.join(DATA, 'fy26-code-reconciliation.xlsx')
-DEPT, FY = '300', '2026'
+# Two departments: 301 is SCHOOL NON-RECURRING EXPENSE and holds the $40,000 curriculum
+# adoption account the district's budget book carries under function 2110.
+DEPTS, FY = ('300', '301'), '2026'
 
 INK, MUTED, RULE = '1B1B1B', '6B6B6B', 'D9D3C7'
 GAP_FILL = PatternFill('solid', fgColor='FDF0D5')
@@ -84,7 +86,7 @@ def gap(cell, label):
 
 def load():
     led = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
-           if r['dept'] == DEPT and r['fy'] == FY and r['level'] == 'account'
+           if r['dept'] in DEPTS and r['fy'] == FY and r['level'] == 'account'
            and r['account_type'] == 'expense']
     book = [r for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv')))
             if r['kind'] == 'line']
