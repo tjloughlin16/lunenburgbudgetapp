@@ -429,6 +429,30 @@ async function linkGraph() {
   console.log(`\nlink graph — ${promised.length} URLs named in llms.txt, ` +
     `${reachable.size} reachable in two hops from /\n`)
 
+  // Reachability is not enough, and assuming it was is what let this ship broken.
+  //
+  // The footer carried every one of these links and the front page is 250KB, so they sat
+  // at 95% of the document -- past where any fetch tool stops. A check that asked "is it
+  // linked?" passed the whole time an assistant was reporting it could not reach /api/index.
+  // `/api/lines`, 121KB, comes back truncated mid-record, so the ceiling is far below the
+  // size of a page. Assert the POSITION, in converted text, the way a reader meets it.
+  const CUTOFF = 50000
+  const home = await (await fetch(root + '/')).text()
+  const asText = home.slice(Math.max(0, home.indexOf('<div id="root"')))
+    .replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+  const KEY = ['/agents', '/llms.txt', '/api/index', '/minutes/INDEX.txt']
+  const late = []
+  console.log(`\nwhere the agent links sit in the front page, as converted text`)
+  for (const u of KEY) {
+    const i = asText.indexOf(`href="${u}"`)
+    const chars = i < 0 ? -1 : asText.slice(0, i).replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ').length
+    console.log(`  ${u.padEnd(22)} ` + (i < 0 ? 'NOT ON THE FRONT PAGE'
+      : `${chars.toLocaleString().padStart(8)} chars in` + (chars > CUTOFF ? '  — PAST THE CUT' : '')))
+    if (i < 0 || chars > CUTOFF) late.push(`${u}: ${i < 0 ? 'absent' : `${chars} chars in`}`)
+  }
+
   const orphans = promised.filter(u => !reachable.has(u))
   if (orphans.length) {
     console.log(`${orphans.length} named in llms.txt and linked from nowhere:`)
@@ -451,8 +475,15 @@ async function linkGraph() {
   console.log(dead.length ? `\n${dead.length} link(s) on the site lead to an error:` : '\nno linked URL 404s.')
   for (const d of dead) console.log(`  ${d}`)
 
+  if (late.length) {
+    console.log(`\n${late.length} agent link(s) are absent or too far into the front page.`)
+    console.log(`A reader that converts and caps never reaches them, so they are linked and`)
+    console.log(`unreachable — which is the state this check exists to catch. Keep them in`)
+    console.log(`DataTopLine.tsx, above the content, not only in the footer.`)
+  }
+
   server?.close()
-  if (orphans.length || dead.length) process.exit(1)
+  if (orphans.length || dead.length || late.length) process.exit(1)
 }
 
 async function main() {

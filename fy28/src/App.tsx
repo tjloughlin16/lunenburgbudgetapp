@@ -17,6 +17,7 @@ import { Sources } from './pages/Sources'
 import { Athletics } from './pages/Athletics'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
+import { DataTopLine } from './components/DataTopLine'
 import { AgentsIndex } from './components/AgentsIndex'
 import { FreeCash } from './pages/FreeCash'
 import { DataRoom } from './pages/DataRoom'
@@ -272,6 +273,11 @@ export default function App() {
           </div>
         )}
       </header>
+
+      {/* FIRST thing under the header, and that position is the whole point -- the same
+          links in the footer sit at 95% of a 250KB page and are cut off before any
+          fetch tool reaches them. See DataTopLine.tsx. */}
+      <DataTopLine />
 
       {/* Under the header rather than inside it: the header is sticky and this is not
           worth the vertical space on every scroll, but it has to be seen on arrival. */}

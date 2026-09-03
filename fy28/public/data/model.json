@@ -1002,9 +1002,23 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v9.2.1",
+  "current": "v9.2.2",
   "updated": "2026-09-03",
   "items": [
+   {
+    "tag": "v9.2.2",
+    "date": "2026-09-03",
+    "title": "The links for machines were at the bottom of the page, where nothing reads",
+    "short": "machine-readable links, at the top",
+    "headline": "v9.1 put every published address into the link graph. It put them in the footer, and the footer of a 250KB page is not delivered to anything that reads a page and stops. They are now the first thing under the header.",
+    "changes": [
+     "An assistant asked to analyse the budget data read this site, was told by llms.txt that a data API exists, and could not fetch it: \"the fetch tool is refusing every URL on the site except the two I already pulled.\" The links were live the whole time. They sat 95% of the way down a 250KB page, and the tools that read pages stop long before that.",
+     "Measured rather than assumed: the front page is 255,823 bytes and the link to the data API was at byte 243,571. For comparison, a 121KB endpoint on this site comes back from the same kind of tool truncated in the middle of a record. The footer was never going to arrive.",
+     "Every page now carries one line under the header naming the four addresses that matter \u2014 the index of everything, the guide, the API and the meeting archive. The footer keeps its copy, because people do read footers.",
+     "The check that was supposed to catch this asked whether a link existed anywhere on the page, which is the assumption that failed. It now measures how far into the page each link sits and fails the build past a threshold. Run against the previous build it fails on all four, which is the only way to know a check works.",
+     "Nothing a person reads has changed except one line of small type, and no figure has moved."
+    ]
+   },
    {
     "tag": "v9.2.1",
     "date": "2026-09-03",
