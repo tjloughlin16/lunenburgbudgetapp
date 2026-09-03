@@ -10,6 +10,30 @@ Comparing two documents for the school department, FY2026:
 
 Both state amounts against the same function codes. **38 of 45 codes agree.**
 
+## Why this matters
+
+Following a single line from what was budgeted to what was spent means finding it
+in both documents. Everything below is a case where that cannot be done, and each
+kind breaks it differently:
+
+| what breaks | what it prevents | scale |
+|---|---|---:|
+| **Codes do not match.** 7 of 45 function codes hold different totals | Asking what a whole category cost. Guidance is $753,939 in one document and $384,910 in the other; neither is wrong on its own, and any comparison of the two is | **$4,579,195**, 17% of the appropriation |
+| **Lines do not match inside a code.** One account faces two budget lines | Saying which school or programme the money is against, even when the total is right | $1,896 |
+| **The same line carries two amounts.** One document shows a figure before a transfer and the other after | Knowing which number is the budget being tracked against | $20,000 |
+| **Spending has no budget to match.** 6 accounts paid out with nothing appropriated and no transfer | Tracing a charge to anything that authorised it | $103,674 |
+| **A budget of zero, and real spending.** 4 accounts appropriated nothing and funded entirely by transfer during the year | Reading the school budget as what a programme has. It shows $0 where $44,121 was moved in | $44,121 |
+| **A movement has no recorded decision.** Transfers approved without being named in the minutes | Reconciling the year against the record of what was voted | 4 transfers, 24 June 2026 |
+
+The consequence is the same in every case: **the year cannot be checked line by
+line** — not by a resident, not by the Finance Committee, and not by the district
+checking its own books against the Town’s.
+
+**No money is missing, and this is not an audit.** Across both school departments
+the two documents reconcile to **$1.93** in total. Every problem here is about where
+a figure sits and whether it can be found in both places, not about how much there
+is.
+
 Every item below gives the account number and the school budget row, so each one
 can be opened in both documents without searching. Nothing here is an accusation, and in
 most cases the archive cannot say which document is right — only that they cannot
@@ -29,9 +53,7 @@ $1,896 of instructional materials.
 
 **The sums are the amounts involved, not money missing, and they do not add up.**
 In C and E both documents hold the same total and disagree only about where it
-sits. Across both school departments (300 and 301) the two documents reconcile to
-**$2** in total — the whole of the difference is where things sit, not how much
-there is.
+sits.
 
 ---
 

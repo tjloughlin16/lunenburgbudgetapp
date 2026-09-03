@@ -54,6 +54,12 @@ def d(v):
     return f'${v:,.0f}' if v >= 0 else f'-${abs(v):,.0f}'
 
 
+def dc(v):
+    """With cents. $1.93 rounded to the dollar prints as "$2", which reads as a
+    suspiciously round number rather than as the rounding it is."""
+    return f'${v:,.2f}' if v >= 0 else f'-${abs(v):,.2f}'
+
+
 def dec(key):
     """One board decision, rendered with its quote and a link to the minutes."""
     board, date, _p, _u, quote, verdict, note = DECISIONS[key]
@@ -163,6 +169,16 @@ def main():
 
     led_tot = sum(m(r['original']) for r in led)
     bk_tot = sum(m(r['fy26_final']) for r in book)
+
+    def munis_of(c):
+        return sum(m(x['original']) for x in A[c])
+
+    def book_of(c):
+        return sum(m(x['fy26_final']) for x in B[c])
+
+    # How much of the appropriation sits in a code the two documents disagree about. Not
+    # money at risk -- money that cannot be compared between the two documents.
+    affected = sum(max(munis_of(c), book_of(c)) for c in off)
     sw = [r for r in led if r['name'].strip() == 'SOCWORKSAL']
     ell, ace = bk('District Wide Specials (ELL)'), bk('ACE Special Ed Resource Rm Teacher')
     ca, sr = bk('Curriculum Adoption'), bk('Salary Reserve')
@@ -182,6 +198,49 @@ def main():
     P('')
     P('Both state amounts against the same function codes. **%d of %d codes agree.**'
       % (len(codes) - len(off), len(codes)))
+    P('')
+    P('## Why this matters')
+    P('')
+    P('Following a single line from what was budgeted to what was spent means finding it')
+    P('in both documents. Everything below is a case where that cannot be done, and each')
+    P('kind breaks it differently:')
+    P('')
+    P('| what breaks | what it prevents | scale |')
+    P('|---|---|---:|')
+    P('| **Codes do not match.** %d of %d function codes hold different totals | Asking '
+      'what a whole category cost. Guidance is %s in one document and %s in the other; '
+      'neither is wrong on its own, and any comparison of the two is | **%s**, %.0f%% of '
+      'the appropriation |'
+      % (len(off), len(codes), d(munis_of('2710')), d(book_of('2710')),
+         d(affected), affected / led_tot * 100))
+    P('| **Lines do not match inside a code.** One account faces two budget lines | '
+      'Saying which school or programme the money is against, even when the total is '
+      'right | %s |'
+      % d(sum(m(b['fy26_final']) for _, ub, _ in split for b in ub)))
+    P('| **The same line carries two amounts.** One document shows a figure before a '
+      'transfer and the other after | Knowing which number is the budget being tracked '
+      'against | %s |' % d(abs(m(basis[0][0]['transfers']))))
+    P('| **Spending has no budget to match.** %d accounts paid out with nothing '
+      'appropriated and no transfer | Tracing a charge to anything that authorised it | '
+      '%s |' % (len(naked), d(sum(m(r['expended']) for r in naked))))
+    P('| **A budget of zero, and real spending.** %d accounts appropriated nothing and '
+      'funded entirely by transfer during the year | Reading the school budget as what a '
+      'programme has. It shows $0 where %s was moved in | %s |'
+      % (len(blind), d(sum(abs(m(r['transfers'])) for r in blind)),
+         d(sum(abs(m(r['transfers'])) for r in blind))))
+    P('| **A movement has no recorded decision.** Transfers approved without being named '
+      'in the minutes | Reconciling the year against the record of what was voted | '
+      '4 transfers, 24 June 2026 |')
+    P('')
+    P('The consequence is the same in every case: **the year cannot be checked line by')
+    P('line** — not by a resident, not by the Finance Committee, and not by the district')
+    P('checking its own books against the Town’s.')
+    P('')
+    P('**No money is missing, and this is not an audit.** Across both school departments')
+    P('the two documents reconcile to **%s** in total. Every problem here is about where'
+      % dc(abs(bk_tot - led_tot)))
+    P('a figure sits and whether it can be found in both places, not about how much there')
+    P('is.')
     P('')
     P('Every item below gives the account number and the school budget row, so each one')
     P('can be opened in both documents without searching. Nothing here is an accusation, and in')
@@ -218,10 +277,7 @@ def main():
     P('')
     P('**The sums are the amounts involved, not money missing, and they do not add up.**')
     P('In C and E both documents hold the same total and disagree only about where it')
-    P('sits. Across both school departments (300 and 301) the two documents reconcile to')
-    P('**%s** in total — the whole of the difference is where things sit, not how much'
-      % d(abs(bk_tot - led_tot)))
-    P('there is.')
+    P('sits.')
     P('')
     P('---')
     P('')
