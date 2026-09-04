@@ -41,6 +41,10 @@ type ContestedLine = {
 }
 type Cell = {
   state: 'obtained' | 'partial' | 'missing' | 'unread'
+  /** A SECOND AXIS. `state` answers whether we hold it; `quality` answers whether what we
+   *  hold agrees with itself. A contested cell is obtained — every document is here — and
+   *  no records request can change that the town revised the year between publications. */
+  quality?: 'documents differ'
   n?: number; note?: string; documents: DocRef[]; unresolvedDocuments?: string[]
   /** Figures two documents state differently, and what each of them says. `partial` on
    *  its own cannot tell one contested line out of 282 from a third of the year. */
@@ -145,7 +149,7 @@ const pct = (n: number | null | undefined, dp = 1) =>
 /** Status is never carried by colour alone: every cell pairs a glyph with a word. */
 const STATE = {
   obtained: { glyph: '■', word: 'Obtained', color: 'var(--status-good)' },
-  partial: { glyph: '▤', word: 'Partial', color: 'var(--status-warning)' },
+  partial: { glyph: '▤', word: 'Held, wrong grain', color: 'var(--status-warning)' },
   missing: { glyph: '□', word: 'Not held', color: 'var(--text-muted)' },
   // Only ever drawn in the `after both requests` view, and never stored on a cell.
   would: { glyph: '◈', word: 'A request covers this', color: 'var(--accent)' },
@@ -159,13 +163,14 @@ const STATE = {
 function hoverText(fy: number, rd: RowDef, c: Cell, view: 'held' | 'after'): string {
   if (view === 'after' && c.wouldFill)
     return `FY${fy} · ${rd.label}\nWould be filled by: ${(c.requestedAs ?? []).map(r => `${r.ref} ${r.report}`).join('; ')}\nAsked of ${(c.requestedBy ?? []).join(' and ')}. Drafted, not sent — a projection, not a holding.`
+  const differ = c.quality
+    ? `\n≠ ${c.contested} of ${(c.n ?? 0).toLocaleString()} figures (${c.contestedShare ?? 0}%) are stated differently by two of the documents. Nothing is missing — the town revised the year between publications, and no request would settle it.`
+    : ''
   const head = `FY${fy} · ${rd.label} · ${STATE[c.state].word} · tier ${rd.tier}`
   if (c.state === 'obtained')
-    return `${head}\n${(c.n ?? 0).toLocaleString()} figures from ${c.documents.length} document(s). Every document that states this year agrees.`
-  if (c.state === 'partial') {
-    const agreed = (c.n ?? 0) - (c.contested ?? 0)
-    return `${head}\n${agreed.toLocaleString()} of ${(c.n ?? 0).toLocaleString()} figures agree across ${c.documents.length} document(s). ${c.contested ?? 0} (${c.contestedShare ?? 0}%) are stated differently by two of them.\nClick to see which lines, and what each document says.`
-  }
+    return `${head}\n${(c.n ?? 0).toLocaleString()} figures from ${c.documents.length} document(s).${differ || ' Every document that states this year agrees.'}`
+  if (c.state === 'partial')
+    return `${head}\n${c.note ?? ''}${differ}`
   if (c.state === 'unread')
     return `${head}\n${c.heldNotRead?.length ?? 0} document(s) for this year are in the archive with their figures never extracted. Nothing to request.`
   return `${head}\nNothing in the archive supplies this for FY${fy}. Click for what would.`
@@ -266,17 +271,18 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
   }, [cov.rowDefs])
 
   const tally = useMemo(() => {
-    let obtained = 0, partial = 0, unread = 0, missing = 0, would = 0
+    let obtained = 0, partial = 0, differ = 0, unread = 0, missing = 0, would = 0
     for (const fy of cov.years) for (const rd of cov.rowDefs) {
       const c = cov.cells[String(fy)]?.[rd.id]
       if (view === 'after' && c?.wouldFill) { would++; continue }
       const st = c?.state
+      if (c?.quality) differ++
       if (st === 'obtained') obtained++
       else if (st === 'partial') partial++
       else if (st === 'unread') unread++
       else missing++
     }
-    return { obtained, partial, unread, missing, would,
+    return { obtained, partial, differ, unread, missing, would,
       total: cov.years.length * cov.rowDefs.length }
   }, [cov, view])
 
@@ -304,13 +310,16 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
           quietly marked present.
         </p>
         <p className="mb-3">
-          <strong style={{ color: 'var(--text-primary)' }}>Partial does not mean
-          incomplete.</strong>{' '}
-          It means the town published the year more than once and two of its documents
-          state at least one line differently — usually because the budget was revised
-          between them. A year can be partial on a single line out of three hundred.
-          Hover a square for the share; click it to see exactly which lines, and what each
-          document says about them.
+          <strong style={{ color: 'var(--text-primary)' }}>Two questions, not one.</strong>{' '}
+          A square says whether we <em>hold</em> the year. A small{' '}
+          <span style={{ color: 'var(--accent)' }}>≠</span> beside it says the documents we
+          hold do not all agree — because the town published the year more than once and
+          revised it in between. Nothing is missing in that case, and no records request
+          would settle it, which is why it is not a shade of “incomplete”. Only{' '}
+          <span style={{ color: 'var(--status-warning)' }}>▤ held, wrong grain</span> is a
+          gap a request can close: we have the report, run as a rollup where account-level
+          detail was needed. Hover for the numbers; click to see which lines differ and
+          what each document says.
         </p>
         <p>
           <strong style={{ color: 'var(--text-primary)' }}>Everything here opens.</strong>{' '}
@@ -342,7 +351,9 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
         )}
       </div>
 
-      <div className="flex flex-wrap gap-4 mb-5 text-xs">
+      <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+        style={{ color: 'var(--text-muted)' }}>Do we hold it</p>
+      <div className="flex flex-wrap gap-4 mb-4 text-xs">
         {(Object.keys(STATE) as (keyof typeof STATE)[])
           .filter(k => k !== 'would' || view === 'after').map(k => (
           <span key={k} className="inline-flex items-center gap-1.5" style={{ color: STATE[k].color }}>
@@ -350,10 +361,29 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
             {STATE[k].word}
           </span>
         ))}
+      </div>
+
+      <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+        style={{ color: 'var(--text-muted)' }}>And does it agree with itself</p>
+      <div className="flex flex-wrap gap-4 mb-5 text-xs">
+        <span className="inline-flex items-center gap-1.5" style={{ color: 'var(--accent)' }}>
+          <span aria-hidden="true" className="text-base leading-none">≠</span>
+          Documents differ
+        </span>
         <span style={{ color: 'var(--text-muted)' }}>
-          {tally.obtained} obtained · {tally.partial} partial · {tally.unread} held but
-          not read · {tally.missing} not held
-          {view === 'after' && ` · ${tally.would} a request would fill`}, of {tally.total}
+          A second axis, and it moves for different reasons. Whether we hold a year is
+          something a records request can change; whether the town’s own documents agree
+          about it is not.
+        </span>
+      </div>
+
+      <div className="flex flex-wrap gap-4 mb-5 text-xs">
+        <span style={{ color: 'var(--text-muted)' }}>
+          {tally.obtained} obtained · {tally.partial} wrong grain ·{' '}
+          {tally.unread} held but not read · {tally.missing} not held, of {tally.total}
+          {' '}— and separately, <span style={{ color: 'var(--accent)' }}>≠</span>{' '}
+          {tally.differ} of the obtained carry a disagreement
+          {view === 'after' && ` · ${tally.would} a request would fill`}
         </span>
       </div>
 
@@ -414,11 +444,16 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
                             aria-expanded={on}
                             title={hoverText(y, rd, c, view)}
                             aria-label={`FY${y}, ${rd.label}: ${st.word}`}
-                            className="w-7 h-7 rounded leading-none text-lg"
+                            className="w-7 h-7 rounded leading-none text-lg relative"
                             style={{ color: st.color,
                                      background: on ? 'var(--surface-3)' : 'transparent',
                                      outline: on ? '1px solid var(--grid)' : 'none' }}>
                             {st.glyph}
+                            {c.quality && (
+                              <span aria-hidden="true"
+                                className="absolute top-0 right-0 text-[9px] leading-none"
+                                style={{ color: 'var(--accent)' }}>≠</span>
+                            )}
                           </button>
                         </td>
                       )
@@ -580,11 +615,11 @@ function CellDetail({ fy, rd, cell, onClose }: {
         </div>
       )}
 
-      {cell.state === 'partial' && cell.contestedLines && cell.contestedLines.length > 0 && (
+      {cell.quality && cell.contestedLines && cell.contestedLines.length > 0 && (
         <div className="mb-4">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
             style={{ color: 'var(--text-muted)' }}>
-            What “partial” means here
+            What “documents differ” means here
           </p>
           <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
             {((cell.n ?? 0) - (cell.contested ?? 0)).toLocaleString()} of{' '}
@@ -735,7 +770,11 @@ function YearReport({ fy, cov, onClose, onPick }: {
   // records request — which is how a request for ten held documents nearly went to the
   // Superintendent. Held-but-unread gets its own block below, addressed to us.
   const unread = rows.filter(r => r.cell.state === 'unread')
-  const gaps = rows.filter(r => r.cell.state !== 'obtained' && r.cell.state !== 'unread')
+  // `contested` joins `unread` in not being a gap: we hold every document, they simply
+  // do not agree, and putting that under "Ask <publisher>" would request a document that
+  // is already on the shelf to fix a thing no document can fix.
+  const differ = rows.filter(r => r.cell.quality)
+  const gaps = rows.filter(r => !['obtained', 'unread'].includes(r.cell.state))
   const byPublisher = new Map<string, typeof gaps>()
   for (const g of gaps) {
     const k = `${g.rd.publisher}|${g.rd.effort}`
@@ -746,6 +785,35 @@ function YearReport({ fy, cov, onClose, onPick }: {
     <Panel eyebrow={`FY${fy}`} onClose={onClose}
       title={gaps.length === 0 ? `FY${fy} is complete`
         : `FY${fy} needs ${gaps.length} more document${gaps.length === 1 ? '' : 's'}`}>
+      {differ.length > 0 && (
+        <div className="mb-5">
+          <p className="text-sm font-semibold mb-2">
+            Held, and the documents differ — {differ.length} row
+            {differ.length === 1 ? '' : 's'}. Nothing to ask anybody
+          </p>
+          <ul className="space-y-2.5">
+            {differ.map(({ rd, cell }) => (
+              <li key={rd.id} className="text-[13px]">
+                <button onClick={() => onPick(rd.id)} className="text-left">
+                  <span className="font-medium underline decoration-dotted underline-offset-2">
+                    {rd.label}
+                  </span>
+                  <span className="ml-1.5" style={{ color: STATE[cell.state].color }}>
+                    {STATE[cell.state].glyph} {STATE[cell.state].word}
+                  </span>
+                </button>
+                <span className="block text-[12px] leading-relaxed mt-0.5"
+                  style={{ color: 'var(--text-secondary)' }}>
+                  Every document is held. {cell.contested} of {cell.n} figures are stated
+                  differently by two of them, because the budget was revised between
+                  publications. Nothing to request — no document would settle it.
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {unread.length > 0 && (
         <div className="mb-5">
           <p className="text-sm font-semibold mb-2">

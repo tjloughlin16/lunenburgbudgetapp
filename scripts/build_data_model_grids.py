@@ -39,6 +39,22 @@ PAGES = [os.path.join(ROOT, 'notes', 'data-model', f)
 # The glyph is never the only signal -- every cell also carries its state in the title
 # attribute, which is what a screen reader and a text search both see.
 GLYPH = {'obtained': '●', 'partial': '◐', 'missing': '·', 'unread': '▨'}
+# WHETHER WE HOLD IT AND WHETHER IT AGREES ARE TWO AXES. The glyph is the first; a
+# trailing marker is the second. A cell can be held in full and still disagree with
+# itself, and no records request changes that -- so it must not read as a shade of
+# incomplete.
+QUALITY_MARK = '≠'
+# A static page has one place to put context and it is the tooltip, so it carries the
+# whole sentence rather than the state word. These pages are opened with file:// and have
+# no javascript; the data room does this properly.
+WHY = {
+    'obtained': 'held',
+    'partial': 'held, but at the wrong grain — a department rollup where account level '
+               'was needed. Asking for the same report with Print totals only: N fixes it',
+    'unread': 'held, and never read. The documents are in the archive with their figures '
+              'not extracted — the gap is ours, not the town’s',
+    'missing': 'nothing in the archive supplies this',
+}
 SHEET = ('.xlsx', '.xls', '.csv')
 
 GRID = '<table class="cov">'
@@ -57,14 +73,30 @@ def cells_for(cov, label, want_format):
         state = cell['state']
         if state == 'obtained':
             have += 1
-        cls, title, glyph = state, state, GLYPH[state]
+        cls, title, glyph = state, '%s — %s' % (state, WHY[state]), GLYPH[state]
+        if cell.get('quality'):
+            cls += ' differs'
+            glyph += QUALITY_MARK
+            title += ('. And the documents DIFFER: %s of %s figures are stated '
+                      'differently by two of them, because the town revised the year '
+                      'between publications. That is a second question — not a gap, and '
+                      'no request would settle it'
+                      % (cell.get('contested'), cell.get('n')))
+        elif state == 'obtained':
+            title += ', and every document that states this year agrees'
         if want_format and state == 'obtained':
             paths = [d.get('path') or '' for d in cell.get('documents', [])]
             if any(p.lower().endswith(SHEET) for p in paths):
-                cls, title, glyph = state + ' f-sheet', 'obtained, spreadsheet', '●'
+                cls, title, glyph = (state + ' f-sheet',
+                                     'obtained, as a SPREADSHEET — it carries the account '
+                                     'string, which is the only thing joining the budget '
+                                     'to the ledger', '●')
             elif paths:
-                cls, title, glyph = state + ' f-pdf', 'obtained, PDF', '◍'
-        out.append('<td class="s %s" title="FY%d — %s">%s</td>' % (cls, fy, title, glyph))
+                cls, title, glyph = (state + ' f-pdf',
+                                     'obtained, as a PDF — the printed form drops the '
+                                     'account string, so it cannot be joined by code', '◍')
+        out.append('<td class="s %s" title="FY%d: %s">%s</td>'
+                   % (cls, fy, title.replace('"', '&quot;'), glyph))
     out.append('<td class="tot">%d<span>/%d</span></td>' % (have, len(cov['years'])))
     return ''.join(out)
 
@@ -72,7 +104,11 @@ def cells_for(cov, label, want_format):
 UNREAD_CSS = """
   /* Held, and not read. A different fact from `not held`, and the opposite action:
      nothing to ask anybody for, the document is already in the archive. */
-  td.s.unread{color:var(--recover);background:var(--recover-soft)}"""
+  td.s.unread{color:var(--recover);background:var(--recover-soft)}
+  /* Held in full, and the documents disagree. Not a gap, and not asked of anybody. */
+  /* The second axis: held in full, and the documents disagree. Never a shade of
+     incomplete -- it is a different question with a different answer. */
+  td.s.differs{box-shadow:inset 0 -2px 0 var(--works)}"""
 
 
 def rebuild(path, cov):

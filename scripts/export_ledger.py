@@ -457,9 +457,24 @@ def coverage(db):
         if not agg['dis']:
             return cell('obtained', stage_docs[(fy, stage)], agg['n'])
         share = agg['dis'] / agg['n'] * 100
-        note = ('%d of %d figures — %.0f%% — are stated differently by two of the '
-                'documents below. The rest agree.' % (agg['dis'], agg['n'], share))
-        c = cell('partial', stage_docs[(fy, stage)], agg['n'], note)
+        # WHETHER WE HOLD IT AND WHETHER IT AGREES ARE TWO DIFFERENT AXES, and this
+        # function spent two revisions conflating them in both directions -- first calling
+        # a disagreement `partial`, as though something were missing, then giving it a
+        # state of its own, which said we did not have the year.
+        #
+        # We have the year. Every document is here. Some of them state a line differently,
+        # because the town published the year more than once and revised it in between.
+        # That is a fact about the QUALITY of what we hold, not about whether we hold it,
+        # and no records request can change it -- so it cannot live on the axis that
+        # requests move.
+        #
+        # `state` answers: do we have it. `quality` answers: does it agree with itself.
+        c = cell('obtained', stage_docs[(fy, stage)], agg['n'])
+        c['quality'] = 'documents differ'
+        c['note'] = ('%d of %d figures — %.0f%% — are stated differently by two of the '
+                     'documents below. Nothing is missing: the town published this year '
+                     'more than once and changed some lines between publications.'
+                     % (agg['dis'], agg['n'], share))
         c['contestedShare'] = round(share, 1)
         c['contested'] = agg['dis']
         # Widest disagreements first: a line two documents put $19,000 apart is worth a

@@ -182,6 +182,32 @@ the two drafted requests are exactly that: `glytdbud` at Print totals only N for
 
 ---
 
+## Two axes, not one
+
+The tiers say **what a document can answer**. They do not say whether we have it, and
+neither of those says whether what we have agrees with itself. Three questions, and the
+completeness matrix spent two revisions collapsing them into one.
+
+| axis | question | who can change it |
+|---|---|---|
+| **tier** | how far can spending be followed in this report | nobody — it is what the report is |
+| **holding** | do we have it, for this year, at the grain we need | a records request |
+| **quality** | do the documents we hold agree with each other | **nobody** |
+
+The third is the one that keeps getting mistaken for the second. 24 cells of the matrix
+are held in full and carry a disagreement, because the town published a year more than
+once and revised lines in between. Nothing is missing. No request would settle it. Drawn
+as a shade of *incomplete* it reads as a gap the requests failed to close — which is how
+it looked until the two axes were separated.
+
+So the matrix draws holding as the square and quality as a small `≠` beside it, and
+counts them separately: **59 obtained, of which 24 carry a disagreement**, against exactly
+one cell that is genuinely partial — Q3 FY2026, held as a department rollup where account
+level was needed. That last one is the only not-green cell in the top half a request can
+actually close.
+
+---
+
 ## Where this lives in the code
 
 - `scripts/export_ledger.py` — `TIERS`, and `tier` / `tierNote` on every row of the
