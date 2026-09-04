@@ -200,11 +200,79 @@ Naming them because a second system that can disagree with the first is the real
 Steps 1–3 are reversible. Step 9 is the first that changes what git holds, and by then the
 bytes exist in three places: the bucket, the local disk, and the backup.
 
-## Open questions
+## Decisions taken — 4 September 2026
 
-1. **Threshold.** 5 MB moves ~600 MB and leaves the repo near 200 MB. Lower it?
-2. **Public or private bucket.** Public is assumed above.
-3. **Do the meeting PDFs move too?** They are 418 MB, already gitignored and already
-   absent from git — so they cost nothing today, but they exist on exactly one disk and
-   `fetch_agendas.py` is the only copy. Putting them in the bucket would be the first real
-   backup they have ever had.
+| question | answer |
+|---|---|
+| size threshold | **None. Everything in `sources/` goes.** |
+| public or private | **Public**, read-only |
+| meeting PDFs, 418 MB | **Yes.** They are gitignored so they cost git nothing today, but they exist on exactly one disk and `fetch_agendas.py` is their only copy — the bucket is the first real backup they have ever had |
+| `minutes/` → `meetings/` | **Settled, leave it.** The folder is `meetings/`, the published URL stays `/docs/minutes/`, and the bucket follows the folder |
+
+## "Safe, non-edit" — what that has to mean concretely
+
+The bucket is public and it is an archive of public records. The risk is not disclosure;
+it is **something changing without anyone noticing**, which is the failure this whole
+project is built against — a Drive file can be replaced in place without its URL changing,
+which is why every source already carries a sha256.
+
+Five properties, each to be verified against current Cloudflare docs before the bucket is
+created rather than assumed:
+
+1. **Read-only to the public.** Anonymous access is GET and HEAD. No anonymous PUT, DELETE
+   or LIST-then-write under any circumstance.
+2. **Versioning on before the first object.** A later enable does not protect what is
+   already there.
+3. **No lifecycle rule that expires anything.** The default should be no rule at all. An
+   expiry policy on an archive is a deletion scheduled in advance.
+4. **Writes from one credential, held in one place**, used by `sync_archive.py --push` and
+   nothing else. Not in the repository.
+5. **`check_archive_storage.py` reconciles both ways** — every manifest row has an object
+   with a matching sha256, and every object appears in a manifest. Drift in either
+   direction is a finding, and it runs as part of the standing checks.
+
+A sixth, which is really the point: **the local disk, the backup and the bucket are three
+copies.** Nothing is untracked from git until the sha256 has been read back out of the
+bucket and matched.
+
+## Does the layout read well to a stranger? — REVIEW BEFORE THE FIRST UPLOAD
+
+The bucket is a public download area, so every folder name is now user-facing, and
+renaming after the first upload costs a redirect for every object under it. This is the
+last cheap moment to change one.
+
+Read as if you had never seen the repository:
+
+| folder | reads as | verdict |
+|---|---|---|
+| `town-budget/` `town-annual-reports/` `district-budget/` | plain English | keep |
+| `meetings/` `contracts/` `correspondence/` `analyses/` | plain English | keep |
+| **`munis-ledgers/`** | MUNIS is the town's accounting software. A resident has no reason to know the word | **rename?** `town-ledgers/` says what it holds |
+| **`dese/`** | a state acronym | **rename?** `state-dese/`, or keep — DESE is what every school document calls it, so a reader who has one has seen it |
+| **`dls/`** | Division of Local Services. Genuinely obscure | **rename?** `state-free-cash/` describes the contents |
+| **`peers/`** | ambiguous out of context | **rename?** `peer-districts/` |
+| **`town-supplementary/`** | supplementary to what? | **rename?** or keep, since it sits beside `town-budget/` and reads in that company |
+| **`data/`** | could mean anything; it is our computed output | **rename?** `derived-data/` |
+| `docs/` + `text/` inside mirrors | `docs` is the original, `text` the extraction — not obvious | **rename?** `original/` + `text/` is self-explaining |
+
+**Recommendation: change `munis-ledgers`, `dls`, `peers` and `data`; leave the rest.**
+Those four are the ones a stranger cannot guess. `dese` earns its keep because every school
+finance document uses the acronym. `docs/`→`original/` is the most defensible of the rest
+but touches every mirror and every published `/docs/<path>` URL, so it is the one to skip.
+
+**None of this is decided.** It is listed because the cost of getting it wrong rises the
+moment the first object is uploaded, and it costs nothing now.
+
+## What a stranger needs in the bucket itself
+
+A folder of PDFs with no explanation is not an archive, it is a pile. Alongside the
+objects:
+
+- **`README.txt` at the root** — what this is, who made it, that it is a mirror of public
+  records rather than an official source, and the one-line rule for what each folder holds
+- **`MANIFEST.csv`** — every object with its path, size, sha256 and the publisher's
+  original URL. This is what makes a download checkable, and it already exists per-folder
+  as `index.csv`
+- **a README in each folder** — one paragraph on what is in it and where it came from
+- **the link back** to lunenburgbudgetproject.org, so somebody who lands on a PDF from a
+  search engine can find the analysis it belongs to
