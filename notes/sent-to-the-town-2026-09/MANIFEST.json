@@ -7,16 +7,18 @@
       "to": "Town Manager and Town Accountant",
       "generator": "scripts/build_discrepancy_review.py",
       "sent": null,
-      "pdf_sha256": "ebde7f6456ab35871c5080e52cc21d9ac5ecfb0ea22f4f61244d64e790888780",
-      "source": "notes/REVIEW-DISCREPANCIES.md",
-      "source_sha256_when_sent": "21c9a852c8141eae1879c0a05efdcd90d504f4491d094816949ab0a8930cc366"
+      "pdf_sha256": "15752bb5aabc2440d1642f7ec60471e77cc0a437e5a3325e17706d717d2d70f6",
+      "source": "notes/generated/REVIEW-DISCREPANCIES.md",
+      "source_sha256_when_sent": "112cde3784257be6c41f9794a80d93ae0838882093366c6efad882817c47a3ba"
     }
   ],
   "not_sent": [
     {
-      "draft": "notes/REQUEST-CODING.pdf",
+      "draft": "notes/outbound/drafts/REQUEST-CODING.pdf",
       "to": "Superintendent (not sent)",
       "why": "Too detailed to send. The account-level version of the same comparison; the review document covers it at the level a reader needs."
     }
-  ]
+  ],
+  "nothing_sent_yet": true,
+  "note": "NOTHING IN THIS FOLDER HAS BEEN SENT. Every document here is a draft. The folder name and README claimed otherwise and were wrong. It is to be renamed notes/outbound/drafts/ -- deferred only because scripts/export_ledger.py references this path and is being edited by another agent. See plans/ARCHIVE-REORG.md step 3."
 }

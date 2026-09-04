@@ -38,7 +38,7 @@ def load():
     cell = collections.defaultdict(dict)
     for r in csv.DictReader(open(os.path.join(DATA, 'line-history.csv'))):
         # variant='' only -- a scenario column is a different proposal for the same year,
-        # not another reading of the same figure. See notes/SCHEMA.md, budget_figure.
+        # not another reading of the same figure. See notes/reference/SCHEMA.md, budget_figure.
         if r.get('variant'):
             continue
         cell[(r['key'], int(r['fy']))][r['stage']] = (float(r['value']),

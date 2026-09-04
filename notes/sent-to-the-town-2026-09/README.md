@@ -1,22 +1,19 @@
-# Sent to the Town for review — September 2026
+# Drafts for the Town — NOTHING HERE HAS BEEN SENT
 
-The PDFs in this folder are the copies that were sent. They are kept because a printed
-copy is what gets quoted from later, and because the Markdown they came from is still
-being edited: the version somebody replies to is the version in here, not the one in
-`notes/`.
+**This folder is misnamed and will be renamed `notes/outbound/drafts/`.** Every document in
+it is a draft. An earlier version of this README said these were "the copies that were
+sent"; that was never true, and the manifest recorded `sent: null` throughout while the
+folder name said otherwise.
 
-| file | to | what it asks |
-|---|---|---|
-| `REVIEW-DISCREPANCIES.pdf` | Town Manager and Town Accountant | Five categories where the Town's year-to-date report and the district's school budget state different things about the same account, what each mismatch prevents, and what the School Committee voted on each |
+The rename is deferred only because `scripts/export_ledger.py` references this path and is
+being edited by another agent. See `plans/ARCHIVE-REORG.md` step 3.
 
-**Only what was actually sent is in this folder.** `notes/REQUEST-CODING.pdf` — the
-account-level version of the same comparison, addressed to the Superintendent — was
-**not sent**: it is too detailed, and the review document covers the same ground at the
-level a reader needs. It stays in `notes/` as a draft.
+**When something is actually sent:** copy it to `notes/outbound/sent-<YYYY-MM>/`, record the
+date and the sha256 in a manifest there, and never edit the copy afterwards — it is the
+only record of what the recipient holds. `scripts/check_sent_documents.py` reports when our
+copy has moved away from it.
 
-**Sent:** _(fill in the date each was actually sent, and to whom)_
-
-**Not published.** Nothing here is on the website.
+---
 
 ## Changing a document after it has been sent
 

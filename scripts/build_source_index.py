@@ -102,7 +102,7 @@ SECTIONS = {
               'table we built here from a document that is itself listed above; and '
               'documents gathered before the mirror existed, where nobody wrote down '
               'where they came from. Only the last is a gap, it is a gap on our side and '
-              'not the town\u2019s, and it is named in notes/DATA-WANTED.md. Where a '
+              'not the town\u2019s, and it is named in notes/findings/DATA-WANTED.md. Where a '
               'document is unreadable or says something inconvenient, it is here anyway.'),
     'reference': dict(
         title='Everything else the district and the town publish',

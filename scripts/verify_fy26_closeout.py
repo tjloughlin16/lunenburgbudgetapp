@@ -409,7 +409,7 @@ def main():
         print('  OK    every code carries a recorded reading and its basis')
 
     print('\n§personas  The persona review must have been run')
-    # notes/PERSONAS.md defines six readers and one test each. Three of those tests are
+    # notes/process/PERSONAS.md defines six readers and one test each. Three of those tests are
     # about what a document OMITS, which is what a writer cannot see in their own work,
     # so the things the first review added are asserted here rather than trusted to stay.
     NEEDED = [

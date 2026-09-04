@@ -612,7 +612,7 @@ def ties_to_a_printed_total(values, lines):
     shape of the text said so; only the total did.
 
     The tolerance is a dollar a row -- this project's standing convention for columns a
-    source prints rounded, notes/SCHEMA.md -- or a quarter of one percent, whichever is
+    source prints rounded, notes/reference/SCHEMA.md -- or a quarter of one percent, whichever is
     larger. It passes the FY25 approved budget, whose expense lines come to $9 over the
     $7,695,034 the document prints at the foot of its own page.
 

@@ -2,7 +2,7 @@
 
     python3 scripts/build_analysis_pdf.py fy26-closeout
     python3 scripts/build_analysis_pdf.py --all
-    python3 scripts/build_analysis_pdf.py --file notes/REVIEW-DISCREPANCIES.md
+    python3 scripts/build_analysis_pdf.py --file notes/generated/REVIEW-DISCREPANCIES.md
 
 `--file` renders any Markdown file and writes the PDF BESIDE IT rather than into the
 published site. Correspondence with the Town is not an analysis: it is addressed to named

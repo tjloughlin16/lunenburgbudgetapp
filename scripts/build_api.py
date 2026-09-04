@@ -496,7 +496,7 @@ def main():
         alsoSee={
             'llms.txt': f'{SITE}/llms.txt',
             'method': f'{SITE}/docs/analyses/show-your-work.md',
-            'schemaNotes': 'notes/SCHEMA.md in the repository',
+            'schemaNotes': 'notes/reference/SCHEMA.md in the repository',
         },
         contact=f'{SITE}/sources',
     ))

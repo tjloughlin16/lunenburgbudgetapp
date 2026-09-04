@@ -321,7 +321,7 @@ somebody wrote when it believed something else. `audit_provenance.py` fails if i
 
 ## 15. There is a written process for producing an analysis. Follow it in order
 
-`notes/WRITING-AN-ANALYSIS.md` — eight steps, and the order is the point. Data in before
+`notes/process/WRITING-AN-ANALYSIS.md` — eight steps, and the order is the point. Data in before
 a sentence is written; decompose by what the money buys before looking for a headline;
 both halves of every section including what it does not show; the document that would
 settle each open question; the verifier written before publishing rather than after; the
@@ -337,7 +337,7 @@ Every figure in a finished analysis is recomputed by a script. Nothing checks wh
 document answers what the reader came with -- and a report that is entirely correct and
 answers nobody's question is a failure no verifier can catch.
 
-`notes/PERSONAS.md` carries six readers and one test each, and every concern in them is
+`notes/process/PERSONAS.md` carries six readers and one test each, and every concern in them is
 quoted from a real public meeting rather than invented. Run it before publishing an
 analysis and again after any substantial change.
 
@@ -384,7 +384,7 @@ arriving fresh.
     python3 scripts/fetch_dese_radar.py          # DESE's all-funds figures, fetched and catalogued
     python3 scripts/extract_dese_radar.py        # ...checked against DESE's own printed totals
     python3 scripts/verify_fy26_closeout.py      # every figure in the FY26 closeout analysis
-                                                 #   ...and that the persona review in notes/PERSONAS.md was run
+                                                 #   ...and that the persona review in notes/process/PERSONAS.md was run
     python3 scripts/verify_fy26_closeout_town.py # ...and in its town-side companion
     python3 scripts/build_closeout_charts.py     # the charts that head both closeout analyses
     python3 scripts/build_reports_index.py       # the /reports index, generated from what is on disk
@@ -427,7 +427,7 @@ the denominator is that nobody will notice the next gap either.
 The archive is also published: `/minutes/<board>.txt` per board, `/data/minutes-index.csv`
 with a `has_text` column, and `/minutes/find/` for callers that can only fetch URLs.
 
-`notes/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
+`notes/reference/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
 and the database is a derived read model, rebuilt from scratch every run. Nothing is ever
 edited in it -- a row in a database has no address, no publisher filename and no sha256.
 

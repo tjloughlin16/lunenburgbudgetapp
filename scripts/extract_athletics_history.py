@@ -126,7 +126,7 @@ def main():
             'freshman ms coaches': 'Freshman & MS Coaches'}
     seen = collections.defaultdict(dict)
     for r in hist:
-        # variant='' only -- see notes/SCHEMA.md, budget_figure.
+        # variant='' only -- see notes/reference/SCHEMA.md, budget_figure.
         if (r['key'] in KEYS and r['stage'] == 'actual' and not r.get('variant')
                 and 2020 <= int(r['fy']) <= 2025):
             v = float(r['value'])
