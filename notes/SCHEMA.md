@@ -31,13 +31,36 @@ to an actual that is not its own.
 | table | one row per | what it answers |
 |---|---|---|
 | `ledger_snapshot` | account × fiscal year × **period** × document | what the books say, at a moment in the year |
-| `budget_figure` | line × fiscal year × **stage** × document | what a budget document said this line would be, or was |
+| `budget_figure` | line × fiscal year × **stage** × **variant** × document | what a budget document said this line would be, or was |
 | `workbook_figure` | worksheet row × fiscal year × **column** × document | the FY27 workbook, unpivoted, cell-quotable |
 
 **A period is not a stage.** A period is a point in time inside a fiscal year — period 3
 is Q1, period 13 is the year-end close after the lapse period. A stage is what a figure
 *is* — proposed, settled, actual. There is no join between them and nothing should invent
 one.
+
+### `budget_figure.variant`, and the filter every query needs
+
+**And a variant is not a stage either.** A budget document may print several columns for
+the same year at the same stage, each a different proposal, each named by the document:
+
+    FY26  FY27         FY27          FY27
+          Restoration  Core Budget   Balanced
+          Proposed     Proposed      Proposed
+
+`variant` carries that name verbatim, and is `''` for the documents — most of them — that
+print one column per stage. **A scenario is not a disagreement**: four FY27 columns are
+four proposals, not four opinions about one figure, and folding them onto one key would
+keep whichever the reader happened to read last while marking the other three as documents
+contradicting each other.
+
+So `budget_figure` is grained on it, and **every query that wants "the" budget for a year
+must say `variant = ''`** or it counts a line five times. That is the same trap as
+`workbook_figure.row_kind = 'line'`, one table along. `v_line_budget_vs_actual` applies the
+filter; `v_budget_scenario` is the other side of it, and shows the named columns only.
+
+Which scenario became the budget is a fact about a vote. It is not in any of these
+documents, and nothing here infers it.
 
 ### `ledger_snapshot` is a periodic snapshot
 

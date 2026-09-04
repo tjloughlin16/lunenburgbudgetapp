@@ -23,8 +23,10 @@ Three things this file is careful about, all of them rule 13:
     per-line series carries the document behind each half, and a year where they differ is
     flagged rather than silently subtracted.
 """
+import csv
 import json
 import os
+import re
 import sqlite3
 import subprocess
 import sys
@@ -35,6 +37,11 @@ DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 # ledger has no business in the main bundle of a page nobody else reads, and keeping it
 # out means the data room is not prerendered into a static file either.
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'ledger.json')
+# What the line reader could and could not read, written by extract_line_history.py. A
+# coverage matrix built on the reader's OUTPUT cannot tell a document nobody gave us from
+# a document nobody read, and it reported both as absent -- which is how a request very
+# nearly went to the Superintendent for ten documents already on disk.
+READER = os.path.join(ROOT, 'sources', 'data', 'line-history-coverage.csv')
 
 # What a fiscal year needs before any of the questions on that page can be answered for
 # it. This is the STANDARD -- the same rows for every year -- and the point of publishing
@@ -140,6 +147,44 @@ ROW_DEFS = [
 ]
 
 
+# `covers` is written as full years -- FY2025, not FY25 -- so a two-digit pattern
+# reads "20" and matches nothing. It did, and every cell went back to saying missing.
+COVERS_FY = re.compile(r'\bFY(\d{4})\b')
+
+
+def unread_documents():
+    """Documents we hold whose figures have never been extracted, by fiscal year.
+
+    Read from `line-history-coverage.csv`, which extract_line_history.py writes on every
+    run: one row per document on the district's budget page, whether or not it yielded a
+    figure, with the reason when it did not.
+
+    The year attribution is the `covers` column, which the extractor computes from the
+    document's own page-top header lines and title block -- see year_candidates() there
+    for why a fourteen-year chart on a slide does not count. The header line is carried
+    into the cell verbatim so a reader can check it against the file.
+
+    That is a weaker claim than an extracted figure and it is labelled as one: the cell
+    state is `unread`, never `obtained`. What it rules out is the only thing it needs to
+    rule out -- calling the year absent when the document is on the shelf.
+    """
+    if not os.path.exists(READER):
+        raise SystemExit('%s is missing. Run:\n'
+                         '    python3 scripts/extract_line_history.py' % READER)
+    by_year, unread = {}, []
+    with open(READER, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if int(r['figures'] or 0) or int(r['data_rows'] or 0) < 20:
+                continue
+            d = dict(document=r['document'], dataRows=int(r['data_rows']),
+                     reason=r['reason'], covers=r['covers'],
+                     statesInItsHeader=r['header_years'])
+            unread.append(d)
+            for fy in (int(y) for y in COVERS_FY.findall(r['covers'])):
+                by_year.setdefault(fy, []).append(d)
+    return by_year, unread
+
+
 def rows(db, sql, *args):
     db.row_factory = sqlite3.Row
     return [dict(r) for r in db.execute(sql, args).fetchall()]
@@ -159,6 +204,8 @@ def coverage(db):
     glytdbud for Fund 0100, Year/Period 2024/6, Print totals only: N, and ask the Town
     Accountant" is a thing somebody can act on.
     """
+    unread_by_year, unread_all = unread_documents()
+
     docmeta = {r['doc_id']: r for r in rows(
         db, """SELECT doc_id, path, basis, url, copy_state, local_sha256 AS sha256,
                       hidden_columns FROM document""")}
@@ -236,6 +283,19 @@ def coverage(db):
     def stage_cell(fy, stage):
         agg = stage_years.get((fy, stage))
         if not agg:
+            # Three questions, and until now they answered as one: is the document on
+            # disk, is it in the document table, are its figures in a fact table? A year
+            # with no figures may still have documents sitting unread in the archive, and
+            # `missing` said the opposite of the truth about them.
+            held = unread_by_year.get(fy)
+            if held:
+                c = cell('unread')
+                c['heldNotRead'] = held
+                c['note'] = ('%d document(s) on the district’s budget page state FY%d in '
+                             'their own header and have never had their figures '
+                             'extracted. Held, not missing — asking for these again would '
+                             'be asking for what is already on disk.' % (len(held), fy))
+                return c
             return cell('missing')
         note = ('%d of %d figures: two documents state this differently'
                 % (agg['dis'], agg['n'])) if agg['dis'] else None
@@ -283,7 +343,7 @@ def coverage(db):
                           'like-for-like comparison with the town’s appropriation.')
                      if fy in dese else cell('missing')),
         }
-    return dict(years=years, rowDefs=ROW_DEFS, cells=cells)
+    return dict(years=years, rowDefs=ROW_DEFS, cells=cells, unread=unread_all)
 
 
 def line_series(db):

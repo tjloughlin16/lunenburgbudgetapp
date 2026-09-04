@@ -54,15 +54,15 @@ Where the two overlap they agree closely: FY25 actuals are identical to the doll
 FY23 and FY24 differ by $10,000 and $5,000 on roughly $15.6M of salaries — 0.06% and 0.03%.
 
 `scripts/extract_line_history.py` does the same for **every line** the documents print,
-not just the totals — 19,453 readings across 24 documents, normalised to 417 distinct
+not just the totals — 24,573 readings across 31 documents, normalised to 401 distinct
 lines, published at `/data/line-history.csv`. That is what makes it possible to ask
 whether the same lines miss every year, which is the question §2 and §3 turn on.
 
 **What that series can and cannot support.** Each line's budget and actual are read from
 the same row of the same document, so a per-line comparison is sound. The lines do NOT sum
-back to the district totals — between 0.1% and 1.6% out, and worse in FY23 where the
-documents report fewer lines. So this file never apportions the total variance between
-lines. It asks which lines miss and how often, and that is all it asks.
+back to the district totals — between 0.11% and 2.68% out, worst in FY19 and closest in
+FY23, measured as the sum of the settled lines against the documents' own TOTAL rows. So
+this file never apportions the total variance between lines. It asks which lines miss and how often, and that is all it asks.
 
 ### The limit that bounds everything below
 
@@ -92,8 +92,8 @@ can be concluded, and it is the reason this document is careful about small perc
 
 ### FY21 is not a usable year
 
-Every document that reports FY21 gives it an "actual" column, and in **117 of 120 lines
-that column is identical to the budget, to the dollar** — 98%. In ordinary years the
+Every document that reports FY21 gives it an "actual" column, and in **116 of 117 lines
+that column is identical to the budget, to the dollar** — 99%. In ordinary years the
 figure is 10% to 21%, and those are lines that genuinely do not move: fixed stipends,
 flat contracts.
 
@@ -278,11 +278,12 @@ individual lines miss by tens and hundreds of percent, in both directions, and c
 
 | FY | budgeted | spent | miss |
 |---|---:|---:|---:|
-| FY18 | $18,140,671 | $18,063,818 | **-0.4%** |
+| FY18 | $17,502,644 | $17,496,413 | **-0.0%** |
 | FY19 | $19,155,686 | $19,113,746 | **-0.2%** |
-| FY20 | $19,817,293 | $19,634,059 | **-0.9%** |
-| FY22 | $20,904,212 | $20,767,649 | **-0.7%** |
-| FY23 | $16,231,239 | $16,307,412 | **+0.5%** |
+| FY20 | $19,748,349 | $19,569,555 | **-0.9%** |
+| FY22 | $20,889,212 | $20,752,649 | **-0.7%** |
+| FY23 | $20,804,700 | $20,917,634 | **+0.5%** |
+| FY25 | $7,662,709 | $7,462,928 | **-2.6%** |
 
 Five years, never more than 0.9% off. Now the lines inside those totals:
 
@@ -296,7 +297,7 @@ Five years, never more than 0.9% off. Now the lines inside those totals:
 
 ### What is new, and it changes the reading
 
-**93 lines have four or more usable years. Seven of them miss the same way every
+**98 lines have four or more usable years. Seven of them miss the same way every
 year, and all seven are small** — the largest averages $20,754 on a $20 million budget.
 
 So the misses are **noise, not padding.** Nobody is quietly over-providing a line year
@@ -322,13 +323,24 @@ replaces it and reports every group, every year, four ways.
 
 ### Coverage first
 
-**548 usable line-years, 141 distinct lines, FY18 to FY23** — covering **93% to 97% of the
-district's budget in FY18–FY22 and 82% in FY23**, which is thinner and is marked wherever
-it matters.
+**576 usable line-years, 143 distinct lines, FY18 to FY25** — covering **89% to 96% of the
+district's budget** in FY18–FY23. **FY25 is new and it is thinner**: 43 lines against 106
+in FY23, because only one document so far restates FY25 line by line. Its −2.61% is
+measured on $7.7M, not on the whole budget, and should be read as a first reading rather
+than as the year's verdict.
 
-3,255 line-years were excluded and each exclusion has a stated reason: 2,205 have only one
-of the two figures, 715 are under $10,000, 305 are FY21, 29 are cells two documents
-disagree about, 3 are parse artifacts. **212 lines in the FY27 workbook are never measured
+FY23 read as 82% until September 2026, and the thinness was ours: `P.S. Teachers/Regular
+(1-2)` and `E.S. Teachers/Regular (3-5)` carry a grade range in the line's name, the
+reader split each row at that opening bracket, and 1 and 2 went in at the front of the
+figures with every real one shifted along behind them. FY23 and FY24 for both lines were
+published as 1, 2, 3 and 5. About $2.5M of FY23 salary fell out of the measured base as a
+result. It is in.
+
+3,250 line-years were excluded and each exclusion has a stated reason: 2,136 have only one
+of the two figures, 751 are under $10,000, 301 are FY21, 52 are cells two documents
+disagree about, 8 are in FY16 and FY17 — four usable lines each, which is not a
+measurement of a budget and is excluded by a stated floor of twenty — and 2 are parse
+artifacts. **212 lines in the FY27 workbook are never measured
 here at all** — mostly lines the older documents do not carry.
 
 ### The four measures, because one hides what another shows
@@ -343,11 +355,12 @@ here at all** — mostly lines the older documents do not carry.
 
 | FY | lines | budgeted | spent | |
 |---|---:|---:|---:|---:|
-| FY18 | 103 | $18,140,671 | $18,063,818 | −0.42% |
+| FY18 | 89 | $17,502,644 | $17,496,413 | −0.04% |
 | FY19 | 108 | $19,155,686 | $19,113,746 | −0.22% |
-| FY20 | 113 | $19,817,293 | $19,634,059 | −0.92% |
-| FY22 | 120 | $20,904,212 | $20,767,649 | −0.65% |
-| FY23 | 104 | $18,277,149 | $18,374,311 | **+0.53%** |
+| FY20 | 111 | $19,748,349 | $19,569,555 | −0.91% |
+| FY22 | 119 | $20,889,212 | $20,752,649 | −0.65% |
+| FY23 | 106 | $20,804,700 | $20,917,634 | **+0.54%** |
+| FY25 | 43 | $7,662,709 | $7,462,928 | **−2.61%** |
 
 Never more than one percent off in either direction, and one year over.
 
@@ -355,10 +368,10 @@ Never more than one percent off in either direction, and one year over.
 
 | | line-years | budgeted | spent | |
 |---|---:|---:|---:|---:|
-| Salaries | 347 | $66,430,107 | $65,857,010 | **−0.86%** |
-| Everything else | 164 | $26,999,924 | $27,235,167 | **+0.87%** |
+| Salaries | 346 | $68,873,714 | $68,320,829 | **−0.80%** |
+| Everything else | 195 | $34,166,827 | $34,244,058 | **+0.23%** |
 
-(The two do not sum to 548: 37 line-years are on lines the FY27 workbook no longer carries,
+(The two do not sum to 576: 35 line-years are on lines the FY27 workbook no longer carries,
 so they have no section to be filed under.)
 
 The shape of a district provisioning payroll for a roster it does not always fill, and
@@ -411,8 +424,8 @@ something else.
 
 | overspent | net | | underspent | net |
 |---|---:|---|---|---:|
-| Replace equipment (7400) | **+$470,566** (+102.3%) | | Private tuitions (9300) | **−$439,905** (−15.0%) |
-| Insurance programs (5200) | +$334,767 (+2.4%) | | Student transportation (3300) | −$322,842 (−6.8%) |
+| Replace equipment (7400) | **+$548,442** (+75.2%) | | Private tuitions (9300) | **−$440,436** (−12.1%) |
+| Insurance programs (5200) | +$444,611 (+2.6%) | | Student transportation (3300) | −$333,248 (−5.5%) |
 | Collaborative tuitions (9400) | +$149,735 (+19.9%) | | Special education teachers (2310) | −$183,301 (−2.7%) |
 | Custodial supplies (4110) | +$83,408 (+40.4%) | | Custodial services (4110) | −$145,579 (−3.7%) |
 
@@ -420,7 +433,7 @@ something else.
 
 | overspent | | underspent | |
 |---|---:|---|---:|
-| Computers — purchase & lease | +$380,070 | Private tuitions | −$439,905 |
+| Computers — purchase & lease | +$380,070 | Private tuitions | −$440,436 |
 | **Health insurance** | **+$293,023** | General education transport | −$161,735 |
 | Collaborative tuitions | +$149,735 | Special education transport | −$161,107 |
 | Admin tech contracted services | +$99,729 | H.S. resource room teacher | −$106,964 |
@@ -476,9 +489,13 @@ Out-of-district tuition, budgeted against spent:
 | FY20 | $865,746 | $869,557 | **+0.4%** |
 | FY22 | $818,716 | $397,233 | **-51.5%** |
 | FY23 | $489,918 | $304,748 | **-37.8%** |
+| FY25 | $1,164,824 | $732,298 | **-37.1%** |
 
-Three years over, two years under, and a range from **+27.0% to −51.5%**. Twice it cost
-a quarter more than budgeted; twice it cost half of what was set aside.
+Three years over, three under, and a range from **+27.0% to −51.5%**. Twice it cost
+a quarter more than budgeted; twice it cost half of what was set aside. FY25, newly
+measurable, lands −37.1% — the third consecutive year it came in far under, which is the
+first thing in this series that looks like a pattern rather than noise. Three years is
+still three years, and rule 6 says so.
 
 Special education staffing over the same years:
 
@@ -489,8 +506,12 @@ Special education staffing over the same years:
 | FY20 | $3,044,407 | $3,005,557 | **-1.3%** |
 | FY22 | $3,685,393 | $3,671,157 | **-0.4%** |
 | FY23 | $3,498,424 | $3,387,386 | **-3.2%** |
+| FY25 | $445,328 | $434,922 | **-2.3%** |
 
-Four of five under, and never by more than 5.9% — modest, and much steadier than tuition.
+Five of six under, and never by more than 5.9% — modest, and much steadier than tuition.
+**FY25 rests on a single line**, $445,328 of it, because only one document restates FY25
+at line level so far. It is consistent with the others and it is not independent evidence
+of anything.
 
 So the shape is real but the language has to change: **this is a line nobody can forecast,
 not a line anybody is short-changing.**
@@ -567,8 +588,11 @@ Special education, staffing and tuition together:
 | FY20 | $3,910,153 | $3,875,114 | **-0.9%** |
 | FY22 | $4,504,109 | $4,068,390 | **-9.7%** |
 | FY23 | $3,988,342 | $3,692,134 | **-7.4%** |
+| FY25 | $1,610,152 | $1,167,220 | **-27.5%** |
 
-Two years over, three under, and the two largest misses are the two most recent. This is
+Two years over, four under, and the three largest misses are the three most recent.
+FY25's −27.5% is measured on a much smaller base than the years above it — $1.6M against
+$4.0M — so it belongs in the direction of travel and not in the magnitude. This is
 not a line consistently provisioned above what it costs; it is a line that moves around,
 mostly because the tuition half of it does.
 

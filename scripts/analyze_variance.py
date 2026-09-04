@@ -37,10 +37,29 @@ def load():
     label = {elh.norm(r['line_item']): r['line_item'].strip() for r in wb}
     cell = collections.defaultdict(dict)
     for r in csv.DictReader(open(os.path.join(DATA, 'line-history.csv'))):
+        # variant='' only -- a scenario column is a different proposal for the same year,
+        # not another reading of the same figure. See notes/SCHEMA.md, budget_figure.
+        if r.get('variant'):
+            continue
         cell[(r['key'], int(r['fy']))][r['stage']] = (float(r['value']),
                                                       r['documents_disagree'] == '1')
         label.setdefault(r['key'], r['label'].strip())
     return wb, fn, sec, label, cell
+
+
+# A YEAR IS NOT A MEASUREMENT UNTIL ENOUGH OF IT IS MEASURED. FY2016 and FY2017 each
+# resolve four usable lines -- out of roughly three hundred and fifty -- because one small
+# FY19 department document happens to print those columns for a handful of technology
+# lines. Four lines is not a budget, and a table that shows `FY16 +0.00%` beside `FY23
+# +0.54%` invites a reader to weigh them the same. Twenty is the floor, stated here rather
+# than left to whoever reads the table.
+MIN_LINES_PER_YEAR = 20
+
+
+def thin_years(recs):
+    """{fy: n} for years with too few usable lines to read, reported rather than hidden."""
+    n = collections.Counter(fy for _, fy, _, _ in recs)
+    return {fy: c for fy, c in n.items() if c < MIN_LINES_PER_YEAR}
 
 
 def usable(fy, b, a):
@@ -68,6 +87,11 @@ def main():
                 dropped[why] += 1
             continue
         recs.append((k, fy, v['settled'][0], v['actual'][0]))
+
+    thin = thin_years(recs)
+    for fy, n in sorted(thin.items()):
+        dropped[f'FY{fy % 100}: only {n} usable lines'] += n
+    recs = [r for r in recs if r[1] not in thin]
 
     print('=' * 78)
     print('COVERAGE — what is being measured, and what is not')

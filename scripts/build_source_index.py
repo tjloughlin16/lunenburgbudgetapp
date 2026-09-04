@@ -124,6 +124,23 @@ SECTIONS = {
 }
 
 # stars: 3 = load-bearing, a conclusion rests on it · 2 = corroborating · 1 = context
+def _line_history_counts():
+    """The counts in the catalogue entry below, read from the file they describe.
+
+    They were typed, and they drifted: the entry said 417 distinct lines while the
+    extractor produced 415, and then 416 when a parsing fix recovered two of the largest
+    salary lines in the budget. A figure typed into prose beside a computed one is the
+    only thing here that can be silently wrong (rule 2), and a catalogue is prose.
+    """
+    path = os.path.join(ROOT, 'sources/data/line-history.csv')
+    if not os.path.exists(path):
+        return (0, 0, 0)
+    rows = list(csv.DictReader(open(path, encoding='utf-8')))
+    return (len(rows), len({r['source'] for r in rows}), len({r['key'] for r in rows}))
+
+
+_LH = _line_history_counts()
+
 GROUPS = [
     {
         'section': 'theirs', 'id': 'district-budget', 'origin': 'school',
@@ -581,6 +598,30 @@ GROUPS = [
              'fit the record equally well. Period 12 is NOT the year-end close, so nothing '
              'in it is a surplus. Every figure is recomputed by '
              'scripts/verify_fy26_closeout.py; a PDF is published beside it.'),
+            ('analyses/connecting-the-budget.md',
+             'What connects the school budget to the Town\u2019s books, and what does not', 2,
+             'How far a dollar can be followed from what was budgeted to what was spent. '
+             'It works for the department as a whole \u2014 both school departments '
+             'reconcile to $1.93 \u2014 and by category, where 41 of the budget\u2019s 45 '
+             'function codes meet the code carried inside the Town\u2019s account numbers. '
+             'It stops below that: MUNIS shortens account names to ten characters, so '
+             'MS GUIDANC and HS GUIDANC are both 2710 where the budget has a row per '
+             'school, and no single line can be followed into the ledger by anyone, inside '
+             'the Town or outside it. The category comparison holds for FY2026 period 12 '
+             'and no other period, because that is the one report that arrived as a '
+             'spreadsheet rather than a PDF \u2014 the printed form drops the account '
+             'string, and the account string is the join.'),
+            ('analyses/connecting-the-budget.pdf',
+             'The same analysis, rendered for reading on paper', 3,
+             'A rendering of analyses/connecting-the-budget.md, not a separate document '
+             'and not a separate source. Built by scripts/build_analysis_pdf.py; a copy '
+             'accompanies the request sent to the Town. If the two ever differ, the '
+             'markdown is the one every figure was verified against.'),
+            ('analyses/fy26-closeout.pdf',
+             'The FY26 closeout analysis, rendered for reading on paper', 3,
+             'A rendering of analyses/fy26-closeout.md, built by '
+             'scripts/build_analysis_pdf.py. The markdown is the source; every figure in '
+             'it is recomputed by scripts/verify_fy26_closeout.py.'),
             ('analyses/budget-vs-actual.md', 'Budget versus actual', 2,
              'Did what the town budgeted match what it spent? Written for two readers \u2014 '
              'plain terms and the evidence, side by side. Deliberately separate from the '
@@ -888,13 +929,24 @@ GROUPS = [
              'was missed. Rebuild with scripts/analyze_variance.py.'),
             ('data/line-history.csv',
              'Every budget line, budget and actual, year by year', 3,
-             '19,453 readings from 24 of the district\u2019s budget documents, normalised '
-             'to 417 distinct lines, each column mapped to the fiscal year and kind the '
+             f'{_LH[0]:,} readings from {_LH[1]} of the district\u2019s budget documents, '
+             f'normalised to {_LH[2]:,} distinct lines, each column mapped to the fiscal '
+             'year and kind the '
              'document itself states. Both budget and actual columns are kept, which is '
              'what analyses/budget-vs-actual.md needs and what no projection may read. '
              'The lines do not sum back to the district totals, so the analysis asks '
              'which lines miss and how often rather than apportioning the total. Rebuild '
              'with scripts/extract_line_history.py.'),
+            ('data/line-history-coverage.csv',
+             'What the line reader could and could not read, document by document', 3,
+             'One row for every document on the district\u2019s budget page, whether or '
+             'not a figure came out of it, with the reason when none did \u2014 quoted '
+             'from that document\u2019s own header line and its line number. It exists '
+             'because the file above reports only what was read, so a document held and '
+             'never parsed was indistinguishable from a document the town never '
+             'published, and the coverage matrix reported both as absent. Most of the '
+             'archive\u2019s budget page is in the second category. Rebuild with '
+             'scripts/extract_line_history.py.'),
             ('data/total-salaries-history.csv',
              'District total salaries, budget and actual by year', 3,
              'What the district budgeted for salaries and what it spent, FY14 to FY27, '

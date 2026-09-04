@@ -27,9 +27,17 @@ type DocRef = {
   citedAs: string; path: string; basis: string | null; url: string | null
   sha256: string | null; hiddenColumns: string | null
 }
+type UnreadDoc = {
+  document: string; dataRows: number; reason: string
+  covers: string; statesInItsHeader: string
+}
 type Cell = {
-  state: 'obtained' | 'partial' | 'missing'
+  state: 'obtained' | 'partial' | 'missing' | 'unread'
   n?: number; note?: string; documents: DocRef[]; unresolvedDocuments?: string[]
+  /** Documents we HOLD whose figures have never been extracted. A cell with these is
+   *  not a gap in the archive; it is a gap in our reading of it, and the two must never
+   *  be shown as the same thing — one is a request to the town, the other is our job. */
+  heldNotRead?: UnreadDoc[]
 }
 type RowDef = {
   id: string; group: string; label: string; why: string
@@ -115,6 +123,9 @@ const STATE = {
   obtained: { glyph: '■', word: 'Obtained', color: 'var(--status-good)' },
   partial: { glyph: '▤', word: 'Partial', color: 'var(--status-warning)' },
   missing: { glyph: '□', word: 'Not held', color: 'var(--text-muted)' },
+  // Held, and not read. Kept visually distinct from 'Not held' because the action is the
+  // opposite: nothing to ask anybody for, the document is already on the shelf.
+  unread: { glyph: '▨', word: 'Held, not read', color: 'var(--status-warning)' },
 } as const
 
 export function DataRoom() {
@@ -212,14 +223,16 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
   }, [cov.rowDefs])
 
   const tally = useMemo(() => {
-    let obtained = 0, partial = 0, missing = 0
+    let obtained = 0, partial = 0, unread = 0, missing = 0
     for (const fy of cov.years) for (const rd of cov.rowDefs) {
       const st = cov.cells[String(fy)]?.[rd.id]?.state
       if (st === 'obtained') obtained++
       else if (st === 'partial') partial++
+      else if (st === 'unread') unread++
       else missing++
     }
-    return { obtained, partial, missing, total: cov.years.length * cov.rowDefs.length }
+    return { obtained, partial, unread, missing,
+      total: cov.years.length * cov.rowDefs.length }
   }, [cov])
 
   const at = (fy: number, id: string): Cell =>
@@ -252,8 +265,8 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
           </span>
         ))}
         <span style={{ color: 'var(--text-muted)' }}>
-          {tally.obtained} obtained · {tally.partial} partial · {tally.missing} not held,
-          of {tally.total}
+          {tally.obtained} obtained · {tally.partial} partial · {tally.unread} held but
+          not read · {tally.missing} not held, of {tally.total}
         </span>
       </div>
 
@@ -452,6 +465,26 @@ function CellDetail({ fy, rd, cell, onClose }: {
         </p>
       )}
 
+      {cell.heldNotRead && cell.heldNotRead.length > 0 && (
+        <div className="mb-3">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+            style={{ color: 'var(--text-muted)' }}>
+            {cell.heldNotRead.length} document(s) held, never read
+          </p>
+          <ul className="space-y-2">
+            {cell.heldNotRead.map(u => (
+              <li key={u.document} className="text-[12px] leading-relaxed">
+                <span className="font-mono">{u.document}</span>
+                <span style={{ color: 'var(--text-muted)' }}> · {u.dataRows} rows</span>
+                <span className="block" style={{ color: 'var(--text-secondary)' }}>
+                  {u.reason}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {cell.unresolvedDocuments && (
         <p className="text-xs mb-3" style={{ color: 'var(--status-critical)' }}>
           {cell.unresolvedDocuments.length} cited document(s) could not be resolved to an
@@ -460,7 +493,18 @@ function CellDetail({ fy, rd, cell, onClose }: {
         </p>
       )}
 
-      {cell.state !== 'obtained' && (
+      {cell.state === 'unread' ? (
+        <div className="pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+            style={{ color: 'var(--text-muted)' }}>
+            What would make this green
+          </p>
+          <p className="text-sm leading-relaxed">
+            Nothing from anybody. The documents above are in the archive and their figures
+            have never been extracted — the gap is ours, not the town’s.
+          </p>
+        </div>
+      ) : cell.state !== 'obtained' && (
         <div className="pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
             style={{ color: 'var(--text-muted)' }}>
@@ -504,7 +548,12 @@ function YearReport({ fy, cov, onClose, onPick }: {
     rd, cell: (cells[rd.id] ?? { state: 'missing', documents: [] }) as Cell,
   }))
   const have = rows.filter(r => r.cell.state === 'obtained')
-  const gaps = rows.filter(r => r.cell.state !== 'obtained')
+  // `unread` is deliberately NOT a gap. This list is grouped into "Ask <publisher>", and
+  // a row that is unread would put a document already sitting in the archive into a
+  // records request — which is how a request for ten held documents nearly went to the
+  // Superintendent. Held-but-unread gets its own block below, addressed to us.
+  const unread = rows.filter(r => r.cell.state === 'unread')
+  const gaps = rows.filter(r => r.cell.state !== 'obtained' && r.cell.state !== 'unread')
   const byPublisher = new Map<string, typeof gaps>()
   for (const g of gaps) {
     const k = `${g.rd.publisher}|${g.rd.effort}`
@@ -515,6 +564,32 @@ function YearReport({ fy, cov, onClose, onPick }: {
     <Panel eyebrow={`FY${fy}`} onClose={onClose}
       title={gaps.length === 0 ? `FY${fy} is complete`
         : `FY${fy} needs ${gaps.length} more document${gaps.length === 1 ? '' : 's'}`}>
+      {unread.length > 0 && (
+        <div className="mb-5">
+          <p className="text-sm font-semibold mb-2">
+            Ask nobody — {unread.length} row{unread.length === 1 ? '' : 's'} held, not read
+          </p>
+          <ul className="space-y-2.5">
+            {unread.map(({ rd, cell }) => (
+              <li key={rd.id} className="text-[13px]">
+                <button onClick={() => onPick(rd.id)} className="text-left">
+                  <span className="font-medium underline decoration-dotted underline-offset-2">
+                    {rd.label}
+                  </span>
+                  <span className="ml-1.5" style={{ color: STATE[cell.state].color }}>
+                    {STATE[cell.state].glyph} {STATE[cell.state].word}
+                  </span>
+                </button>
+                <span className="block text-[12px] leading-relaxed mt-0.5"
+                  style={{ color: 'var(--text-secondary)' }}>
+                  {cell.heldNotRead?.length ?? 0} document(s) for FY{fy} are in the
+                  archive with their figures never extracted. Nothing to request.
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {[...byPublisher.entries()].map(([k, items]) => {
         const [publisher, effort] = k.split('|')
         return (

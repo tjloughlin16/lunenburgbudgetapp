@@ -44,6 +44,10 @@ def money(v):
 rows = list(csv.DictReader(open(os.path.join(DATA, 'line-history.csv'))))
 cell = collections.defaultdict(dict)
 for r in rows:
+    # variant='' only -- a scenario column is a different proposal for the same year,
+    # not another reading of the same figure. See notes/SCHEMA.md, budget_figure.
+    if r.get('variant'):
+        continue
     cell[(r['key'], int(r['fy']))][r['stage']] = (float(r['value']),
                                                   r['documents_disagree'] == '1')
 
@@ -54,10 +58,19 @@ def usable(fy, b, a):
             and b[0] >= 10_000 and a[0] >= 1_000 and 0.02 <= a[0] / b[0] <= 20)
 
 
+# Kept in step with analyze_variance.py, which states the reason: a year with four usable
+# lines out of three hundred and fifty is not a measurement of a budget.
+MIN_LINES_PER_YEAR = 20
+THIN_YEARS = {fy for fy, n in collections.Counter(
+    fy for (k, fy), v in cell.items()
+    if usable(fy, v.get('settled'), v.get('actual'))).items()
+    if n < MIN_LINES_PER_YEAR}
+
+
 def group(pred):
     out = collections.defaultdict(lambda: [0, 0])
     for (k, fy), v in cell.items():
-        if not pred(k):
+        if not pred(k) or fy in THIN_YEARS:
             continue
         b, a = v.get('settled'), v.get('actual')
         if usable(fy, b, a):
@@ -87,6 +100,13 @@ for name, pred in (
     for fy in sorted(g):
         b, a = g[fy]
         present(f'{name} FY{fy % 100}', f'{(a / b - 1) * 100:+.1f}%')
+        if name == 'Everything measured':
+            # The DOLLARS as well as the percentage. The document prints this year twice,
+            # in two tables, and for a long time the two disagreed by $2M while both
+            # rounded to the same +0.5% -- so the only check anybody ran passed on both.
+            # A check must assert the number, not the prose around it (rule 13).
+            present(f'{name} FY{fy % 100} budgeted', f'${b:,.0f}')
+            present(f'{name} FY{fy % 100} spent', f'${a:,.0f}')
 
 print('\nThe whole-budget sweep')
 import importlib.util
@@ -98,14 +118,21 @@ _sec = {_elh.norm(r['line_item']): r['section'] for r in _wb}
 _fn = {_elh.norm(r['line_item']): (r['function_group'] or '').strip() for r in _wb}
 _recs = []
 for (k, fy), v in cell.items():
+    if fy in THIN_YEARS:
+        continue
     b, a = v.get('settled'), v.get('actual')
     if usable(fy, b, a):
         _recs.append((k, fy, b[0], a[0]))
 present('usable line-years', f'{len(_recs)} usable line-years')
+present('distinct lines', f'{len({r[0] for r in _recs})} distinct lines')
 for name, want in (('SALARIES', 'Salaries'), ('EXPENSES', 'Everything else')):
     rr = [r for r in _recs if _sec.get(r[0]) == name]
     tb, ta = sum(r[2] for r in rr), sum(r[3] for r in rr)
     present(f'{want} variance', f'{(ta / tb - 1) * 100:+.2f}%')
+    # Same reason as above: the line count and both totals, not only the ratio.
+    present(f'{want} line-years', f'| {want} | {len(rr)} |')
+    present(f'{want} budgeted', f'${tb:,.0f}')
+    present(f'{want} spent', f'${ta:,.0f}')
 _grp = collections.defaultdict(lambda: [0, 0])
 for k, fy, b, a in _recs:
     g = _fn.get(k) or '?'
@@ -120,6 +147,8 @@ for g in ('7400 - Replace Equipment', '5200 - Insurance Programs',
 print('\nThe consistency test')
 per = collections.defaultdict(list)
 for (k, fy), v in cell.items():
+    if fy in THIN_YEARS:
+        continue
     b, a = v.get('settled'), v.get('actual')
     if usable(fy, b, a):
         per[k].append(a[0] / b[0] - 1)

@@ -25,7 +25,7 @@ Two fact tables, two different grains, one shared dimension.
                     intra-year transfer tracking and burn-rate analysis possible at all.
                     Period 13 is the year-end close, after the lapse period.
 
-  budget_figure     one row per (line, fiscal year, STAGE, document)
+  budget_figure     one row per (line, fiscal year, STAGE, VARIANT, document)
                     Stage is what the figure IS: proposed / settled / actual. A stage is
                     never a period and the two must not be joined as though they were.
 
@@ -172,10 +172,20 @@ CREATE TABLE budget_figure (
     fy                  INTEGER NOT NULL,
     stage               TEXT NOT NULL       -- 'proposed' | 'settled' | 'actual'
         CHECK (stage IN ('proposed', 'settled', 'actual')),
+    -- The document's own name for the column, where it named one: 'Balanced',
+    -- 'Core Budget', 'Level Service', 'Restoration'. Empty for a document that prints
+    -- one column per stage, which is most of them.
+    --
+    -- A SCENARIO IS NOT A DISAGREEMENT. The FY27 budget document prints four FY27
+    -- columns; they are four proposals, not four opinions about one figure, and folding
+    -- them onto one key would keep whichever was read last. Every query that wants "the"
+    -- budget for a year must say `variant = ''` or it will count a line four times --
+    -- the same rule as workbook_figure's row_kind='line'.
+    variant             TEXT NOT NULL DEFAULT '',
     value               REAL NOT NULL,
     documents_disagree  INTEGER NOT NULL DEFAULT 0,
     doc_id              TEXT NOT NULL,
-    PRIMARY KEY (line_key, fy, stage, doc_id)
+    PRIMARY KEY (line_key, fy, stage, variant, doc_id)
 );
 
 -- The FY27 workbook, wide columns unpivoted to one row per (line, fy, column).
@@ -394,7 +404,18 @@ SELECT  b.line_key, b.label, b.fy,
         MAX(CASE WHEN b.stage = 'actual'   THEN b.value END) AS actual,
         MAX(b.documents_disagree)                            AS documents_disagree
 FROM    budget_figure b
+-- variant = '' or a scenario column would win the MAX and be reported as the year's
+-- budget. A document stating four FY27 proposals states four figures, not one.
+WHERE   b.variant = ''
 GROUP BY b.line_key, b.label, b.fy;
+
+-- The scenarios, kept separate and named. `final-budget-document.txt` prints Restoration,
+-- Core Budget and Balanced side by side for FY27, and which of them became the budget is
+-- a fact about a vote rather than about this document.
+CREATE VIEW v_budget_scenario AS
+SELECT  b.line_key, b.label, b.fy, b.stage, b.variant, b.value, b.doc_id
+FROM    budget_figure b
+WHERE   b.variant <> '';
 
 -- The same question off the FY27 workbook, which is the only source with both halves
 -- of FY25. A restatement, not a ledger: `document.basis` says so.
@@ -685,10 +706,10 @@ def load_budget_figures(db):
         if (not fy.isdigit() or value is None
                 or r['stage'] not in ('proposed', 'settled', 'actual')):
             continue
-        out.append((r['key'], r['label'], int(fy), r['stage'], value,
-                    int(r['documents_disagree'] or 0), r['source']))
+        out.append((r['key'], r['label'], int(fy), r['stage'], r.get('variant', ''),
+                    value, int(r['documents_disagree'] or 0), r['source']))
         lines.setdefault(r['key'], r['label'])
-    db.executemany('INSERT OR REPLACE INTO budget_figure VALUES (?,?,?,?,?,?,?)', out)
+    db.executemany('INSERT OR REPLACE INTO budget_figure VALUES (?,?,?,?,?,?,?,?)', out)
     db.executemany('INSERT OR IGNORE INTO budget_line VALUES (?,?,?,?,?)',
                    [(k, v, None, None, None) for k, v in lines.items()])
     return len(out)

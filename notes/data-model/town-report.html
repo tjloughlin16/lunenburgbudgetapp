@@ -164,6 +164,41 @@
   ol.runs em{font-size:.78rem;color:var(--muted);font-style:normal}
 </style>
 
+<style>
+  table.items{width:100%;border-collapse:separate;border-spacing:0 3px;font-size:.85rem}
+  table.items th{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);font-weight:500;padding:0 .6rem .3rem;text-align:left;border:0}
+  table.items td{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:.55rem .6rem;vertical-align:top}
+  table.items td.i{border-left:1px solid var(--rule);border-radius:2px 0 0 2px;
+    font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--works);font-weight:600;width:34px}
+  table.items td.wy{border-right:1px solid var(--rule);border-radius:0 2px 2px 0;color:var(--muted);
+    font-size:.78rem;width:26%}
+  table.items td.fy{font-family:"IBM Plex Mono",monospace;font-size:.76rem;white-space:nowrap;width:15%}
+  table.items td.fy span{display:block;color:var(--muted);font-size:.7rem;margin-top:.15rem}
+  .prog{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--muted)}
+  .par{display:block;font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-2);
+    margin-top:.25rem;line-height:1.45}
+  .hv{display:block;margin-top:.3rem;color:var(--recover);font-size:.74rem}
+  @media print{table.items td{break-inside:avoid} table.items{font-size:8pt}}
+</style>
+
+<style>
+  table.funds{width:100%;border-collapse:separate;border-spacing:0 3px;font-size:.85rem}
+  table.funds th{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);font-weight:500;padding:0 .6rem .3rem;text-align:left;border:0}
+  table.funds th:nth-child(n+4){text-align:right}
+  table.funds td{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:.5rem .6rem;vertical-align:top}
+  table.funds td.i{border-left:1px solid var(--rule);border-radius:2px 0 0 2px;
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--muted);width:28px}
+  table.funds td.fnum{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--works);width:52px}
+  table.funds td.mny{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+    text-align:right;white-space:nowrap;font-size:.78rem}
+  table.funds td.mny:last-child{border-right:1px solid var(--rule);border-radius:0 2px 2px 0}
+  @media print{table.funds td{break-inside:avoid} table.funds{font-size:8pt}}
+</style>
+
 <div class="wrap">
   <p class="eyebrow">Lunenburg Budget Project · for the Town Manager · 3 September 2026</p>
   <h1>What the budget and the books can be connected to, and what is still missing</h1>
@@ -216,85 +251,261 @@
     <p>The one ask directed at the district rather than the Town, and the only thing that would open the line-item level at all. The budget is built in a workbook; whoever builds it may already know which accounts each line draws on.</p></div>
 
 
-  <h2>The full list, FY2023 to FY2026</h2>
-  <p>Everything outstanding, by year, routed to whoever produces it. <strong>36 of these are reports from the Town Accountant</strong> and are the substance of this request; the rest are noted so the picture is complete, not because they are being asked of you.</p>
-
-  <h3>From the Town Accountant — summary by year</h3>
-  <p class="lead2">Each row is one report run once per year. The configuration is as we understand it; corrections welcome.</p>
-  <table class="req"><thead><tr><th>Report</th><th class="y">FY23</th><th class="y">FY24</th><th class="y">FY25</th><th class="y">FY26</th><th class="y">need</th></tr></thead><tbody>
-<tr class=""><td class="rn"><strong>Appropriation as voted</strong><span class="cfg2">arrives with any report below — the ORIGINAL APPROP column</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st have">✓</td><td class="st n">3</td></tr>
-<tr class=""><td class="rn"><strong>Q1 spend report (period 3)</strong><span class="cfg2">glytdbud · Fund 0100 · Account type EXPENSE · Year/Period YYYY/3 · Print totals only N · Suppress zero bal accts N</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st n">4</td></tr>
-<tr class=""><td class="rn"><strong>Q2 spend report (period 6)</strong><span class="cfg2">the same at Year/Period YYYY/6</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st n">4</td></tr>
-<tr class=""><td class="rn"><strong>Q3 spend report (period 9)</strong><span class="cfg2">the same at Year/Period YYYY/9</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st part">~</td><td class="st n">4</td></tr>
-<tr class=""><td class="rn"><strong>Year-end position (period 12)</strong><span class="cfg2">the same at Year/Period YYYY/12</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st have">✓</td><td class="st n">3</td></tr>
-<tr class=""><td class="rn"><strong>Year-end close (period 13)</strong></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st n">4</td></tr>
-<tr class="proposed"><td class="rn"><strong>Account Details, transaction level</strong><span class="cfg2">Account Details · all school-related accounts · WITH the object code</span></td><td class="st need">·</td><td class="st part">~</td><td class="st part">~</td><td class="st part">~</td><td class="st n">4</td></tr>
-<tr class=""><td class="rn"><strong>Purchase orders closed after close</strong><span class="cfg2">purchase orders closed against the year after its initial close, with amounts and dates — not a standard report</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st n">4</td></tr>
-<tr class=""><td class="rn"><strong>Revenue ledger</strong><span class="cfg2">glytdbud · Account type REVENUE · Print totals only N</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st have">✓</td><td class="st n">3</td></tr>
-<tr class=""><td class="rn"><strong>Revolving and grant fund activity</strong><span class="cfg2">glytdbud · the school grant, revolving and school choice funds · Account type EXPENSE · Print totals only N</span></td><td class="st need">·</td><td class="st need">·</td><td class="st need">·</td><td class="st have">✓</td><td class="st n">3</td></tr>
-</tbody></table>
-  <p class="foot2"><strong>Year-end close, period 13, is the one we would take first if only one were possible.</strong> Without it no year&rsquo;s surplus can be computed from the outside at all. Period 12 is the position before the books close; period 13 is the year as it finally stood.</p>
 
 
-  <h3>Itemised — 33 documents from the Town Accountant</h3>
-  <p class="lead2">Each numbered line is one file. Grouped by report so the same settings can be reused and only the period changes. <strong>Spreadsheet for each, and the printed copy alongside if it is no trouble.</strong></p>
-  <div class="docs"><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</p>
-      <ol class="runs"><li><span class="num">1</span><span class="p">Year/Period 2023/3</span></li><li><span class="num">2</span><span class="p">Year/Period 2024/3</span></li><li><span class="num">3</span><span class="p">Year/Period 2025/3</span></li><li><span class="num">4</span><span class="p">Year/Period 2026/3</span></li></ol>
-    </div><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</p>
-      <ol class="runs"><li><span class="num">5</span><span class="p">Year/Period 2023/6</span></li><li><span class="num">6</span><span class="p">Year/Period 2024/6</span></li><li><span class="num">7</span><span class="p">Year/Period 2025/6</span></li><li><span class="num">8</span><span class="p">Year/Period 2026/6</span></li></ol>
-    </div><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</p>
-      <ol class="runs"><li><span class="num">9</span><span class="p">Year/Period 2023/9</span></li><li><span class="num">10</span><span class="p">Year/Period 2024/9</span></li><li><span class="num">11</span><span class="p">Year/Period 2025/9</span></li><li><span class="num">12</span><span class="p">Year/Period 2026/9</span> <em>— we hold a department rollup for this one; the account-level version is what is needed</em></li></ol>
-    </div><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</p>
-      <ol class="runs"><li><span class="num">13</span><span class="p">Year/Period 2023/12</span></li><li><span class="num">14</span><span class="p">Year/Period 2024/12</span></li><li><span class="num">15</span><span class="p">Year/Period 2025/12</span></li></ol>
-    </div><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</p>
-      <ol class="runs"><li><span class="num">16</span><span class="p">Year/Period 2023/13 — the year as finally closed</span></li><li><span class="num">17</span><span class="p">Year/Period 2024/13 — the year as finally closed</span></li><li><span class="num">18</span><span class="p">Year/Period 2025/13 — the year as finally closed</span></li><li><span class="num">19</span><span class="p">Year/Period 2026/13 — the year as finally closed</span></li></ol>
-    </div><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">Fund 0100 · Account type REVENUE · Print totals only N</p>
-      <ol class="runs"><li><span class="num">20</span><span class="p">Year/Period 2023/13, or /12 if 13 is not available</span></li><li><span class="num">21</span><span class="p">Year/Period 2024/13, or /12 if 13 is not available</span></li><li><span class="num">22</span><span class="p">Year/Period 2025/13, or /12 if 13 is not available</span></li></ol>
-    </div><div class="doc">
-      <h4>Year-to-date budget report</h4>
-      <p class="spec">the school grant, revolving and school choice funds · Account type EXPENSE · Print totals only N</p>
-      <ol class="runs"><li><span class="num">23</span><span class="p">Year/Period 2023/13</span></li><li><span class="num">24</span><span class="p">Year/Period 2024/13</span></li><li><span class="num">25</span><span class="p">Year/Period 2025/13</span></li></ol>
-    </div><div class="doc">
-      <h4>Account Details</h4>
-      <p class="spec">all school-related accounts, all funds · WITH the object code</p>
-      <ol class="runs"><li><span class="num">26</span><span class="p">fiscal year 2023, full year</span></li><li><span class="num">27</span><span class="p">fiscal year 2024, full year</span> <em>— we hold athletics only; this is the same report for the rest</em></li><li><span class="num">28</span><span class="p">fiscal year 2025, full year</span> <em>— we hold athletics only; this is the same report for the rest</em></li><li><span class="num">29</span><span class="p">fiscal year 2026, full year</span> <em>— we hold athletics only; this is the same report for the rest</em></li></ol>
-    </div><div class="doc">
-      <h4>Purchase orders closed after the year closed</h4>
-      <p class="spec">amounts and dates · not a standard report, has to be asked for in these words</p>
-      <ol class="runs"><li><span class="num">30</span><span class="p">fiscal year 2023</span></li><li><span class="num">31</span><span class="p">fiscal year 2024</span></li><li><span class="num">32</span><span class="p">fiscal year 2025</span></li><li><span class="num">33</span><span class="p">fiscal year 2026</span></li></ol>
-    </div></div>
+  <h2>Every document, itemised</h2>
+  <p>FY2023 to FY2026. <strong>37 reports from the Town Accountant</strong> and <strong>11 documents from the district</strong>. Each line is one file. Spreadsheet for each; the printed copy alongside where it is no trouble, because the printout carries the options page and the spreadsheet does not.</p>
 
-  <h3>From the district — 10 documents, plus one thing that is not a report</h3>
-  <table class="req"><thead><tr><th>Report</th><th class="y">FY23</th><th class="y">FY24</th><th class="y">FY25</th><th class="y">FY26</th><th class="y">need</th></tr></thead><tbody>
-<tr class=""><td class="rn"><strong>Proposed budget, line level</strong></td><td class="st have">✓</td><td class="st part">~</td><td class="st part">~</td><td class="st part">~</td><td class="st n">3</td></tr>
-<tr class=""><td class="rn"><strong>Approved budget, line level</strong></td><td class="st part">~</td><td class="st need">·</td><td class="st need">·</td><td class="st have">✓</td><td class="st n">3</td></tr>
-<tr class=""><td class="rn"><strong>Prior-year actuals, restated</strong></td><td class="st have">✓</td><td class="st part">~</td><td class="st have">✓</td><td class="st need">·</td><td class="st n">2</td></tr>
-<tr class=""><td class="rn"><strong>Grant awards listed</strong></td><td class="st have">✓</td><td class="st have">✓</td><td class="st need">·</td><td class="st need">·</td><td class="st n">2</td></tr>
-</tbody></table>
-  <p class="foot2">And the crosswalk described earlier: which MUNIS account each school budget line is built from. That is the only thing on either list that would let a single budget line be followed into the ledger.</p>
+  <h3>From the Town Accountant</h3>
+  <div class="scroller"><table class="items">
+    <thead><tr><th>#</th><th>Report and parameters</th><th>Year</th><th>What it opens</th></tr></thead>
+    <tbody><tr><td class="i">1</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/3</span></td>
+          <td class="wy">Q1 position</td></tr><tr><td class="i">2</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/3</span></td>
+          <td class="wy">Q1 position</td></tr><tr><td class="i">3</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/3</span></td>
+          <td class="wy">Q1 position</td></tr><tr><td class="i">4</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2026<span>Year/Period 2026/3</span></td>
+          <td class="wy">Q1 position</td></tr><tr><td class="i">5</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/6</span></td>
+          <td class="wy">Q2 position</td></tr><tr><td class="i">6</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/6</span></td>
+          <td class="wy">Q2 position</td></tr><tr><td class="i">7</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/6</span></td>
+          <td class="wy">Q2 position</td></tr><tr><td class="i">8</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2026<span>Year/Period 2026/6</span></td>
+          <td class="wy">Q2 position</td></tr><tr><td class="i">9</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/9</span></td>
+          <td class="wy">Q3 position</td></tr><tr><td class="i">10</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/9</span></td>
+          <td class="wy">Q3 position</td></tr><tr><td class="i">11</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/9</span></td>
+          <td class="wy">Q3 position</td></tr><tr><td class="i">12</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2026<span>Year/Period 2026/9</span></td>
+          <td class="wy">Q3 position<span class="hv">we hold a department rollup for this one — account level is what is needed</span></td></tr><tr><td class="i">13</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/12</span></td>
+          <td class="wy">year-end position, books open</td></tr><tr><td class="i">14</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/12</span></td>
+          <td class="wy">year-end position, books open</td></tr><tr><td class="i">15</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/12</span></td>
+          <td class="wy">year-end position, books open</td></tr><tr><td class="i">16</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/13</span></td>
+          <td class="wy">the year as finally closed</td></tr><tr><td class="i">17</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/13</span></td>
+          <td class="wy">the year as finally closed</td></tr><tr><td class="i">18</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/13</span></td>
+          <td class="wy">the year as finally closed</td></tr><tr><td class="i">19</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type EXPENSE · Print totals only N · Suppress zero bal accts N</span></td>
+          <td class="fy">FY2026<span>Year/Period 2026/13</span></td>
+          <td class="wy">the year as finally closed</td></tr><tr><td class="i">20</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type REVENUE · Print totals only N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/13</span></td>
+          <td class="wy">state aid and other revenue received</td></tr><tr><td class="i">21</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type REVENUE · Print totals only N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/13</span></td>
+          <td class="wy">state aid and other revenue received</td></tr><tr><td class="i">22</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">Fund 0100 · Account type REVENUE · Print totals only N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/13</span></td>
+          <td class="wy">state aid and other revenue received</td></tr><tr><td class="i">23</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">the 21 school funds listed below · Account type EXPENSE · Print totals only N</span></td>
+          <td class="fy">FY2023<span>Year/Period 2023/13</span></td>
+          <td class="wy">the funds that pay for staff and appear in no budget line</td></tr><tr><td class="i">24</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">the 21 school funds listed below · Account type EXPENSE · Print totals only N</span></td>
+          <td class="fy">FY2024<span>Year/Period 2024/13</span></td>
+          <td class="wy">the funds that pay for staff and appear in no budget line</td></tr><tr><td class="i">25</td>
+          <td><strong>MUNIS Year-to-Date Budget Report</strong> <span class="prog">glytdbud</span>
+              <span class="par">the 21 school funds listed below · Account type EXPENSE · Print totals only N</span></td>
+          <td class="fy">FY2025<span>Year/Period 2025/13</span></td>
+          <td class="wy">the funds that pay for staff and appear in no budget line</td></tr><tr><td class="i">26</td>
+          <td><strong>Account Details</strong> <span class="prog">as supplied for fund 1301 in June 2026</span>
+              <span class="par">all school-related accounts, all funds · <strong>including the object code</strong></span></td>
+          <td class="fy">FY2023<span>full fiscal year 2023</span></td>
+          <td class="wy">every transaction, so a rate change can be told from a volume change</td></tr><tr><td class="i">27</td>
+          <td><strong>Account Details</strong> <span class="prog">as supplied for fund 1301 in June 2026</span>
+              <span class="par">all school-related accounts, all funds · <strong>including the object code</strong></span></td>
+          <td class="fy">FY2024<span>full fiscal year 2024</span></td>
+          <td class="wy">every transaction, so a rate change can be told from a volume change<span class="hv">we hold the athletics fund for this year — this is the same report for the rest</span></td></tr><tr><td class="i">28</td>
+          <td><strong>Account Details</strong> <span class="prog">as supplied for fund 1301 in June 2026</span>
+              <span class="par">all school-related accounts, all funds · <strong>including the object code</strong></span></td>
+          <td class="fy">FY2025<span>full fiscal year 2025</span></td>
+          <td class="wy">every transaction, so a rate change can be told from a volume change<span class="hv">we hold the athletics fund for this year — this is the same report for the rest</span></td></tr><tr><td class="i">29</td>
+          <td><strong>Account Details</strong> <span class="prog">as supplied for fund 1301 in June 2026</span>
+              <span class="par">all school-related accounts, all funds · <strong>including the object code</strong></span></td>
+          <td class="fy">FY2026<span>full fiscal year 2026</span></td>
+          <td class="wy">every transaction, so a rate change can be told from a volume change<span class="hv">we hold the athletics fund for this year — this is the same report for the rest</span></td></tr><tr><td class="i">30</td>
+          <td><strong>A report on line-item transfers</strong> <span class="prog">name unknown to us</span>
+              <span class="par">from-account, to-account, amount, date, and the authority for each — c.44 §33B or the town meeting article</span></td>
+          <td class="fy">FY2023<span>fiscal year 2023</span></td>
+          <td class="wy">what authorised each budget change; the ledger shows the effect, not the counterparty</td></tr><tr><td class="i">31</td>
+          <td><strong>A report on line-item transfers</strong> <span class="prog">name unknown to us</span>
+              <span class="par">from-account, to-account, amount, date, and the authority for each — c.44 §33B or the town meeting article</span></td>
+          <td class="fy">FY2024<span>fiscal year 2024</span></td>
+          <td class="wy">what authorised each budget change; the ledger shows the effect, not the counterparty</td></tr><tr><td class="i">32</td>
+          <td><strong>A report on line-item transfers</strong> <span class="prog">name unknown to us</span>
+              <span class="par">from-account, to-account, amount, date, and the authority for each — c.44 §33B or the town meeting article</span></td>
+          <td class="fy">FY2025<span>fiscal year 2025</span></td>
+          <td class="wy">what authorised each budget change; the ledger shows the effect, not the counterparty</td></tr><tr><td class="i">33</td>
+          <td><strong>A report on line-item transfers</strong> <span class="prog">name unknown to us</span>
+              <span class="par">from-account, to-account, amount, date, and the authority for each — c.44 §33B or the town meeting article</span></td>
+          <td class="fy">FY2026<span>fiscal year 2026</span></td>
+          <td class="wy">what authorised each budget change; the ledger shows the effect, not the counterparty</td></tr><tr><td class="i">34</td>
+          <td><strong>Purchase orders closed after the year closed</strong> <span class="prog">not a standard report</span>
+              <span class="par">amounts and dates</span></td>
+          <td class="fy">FY2023<span>fiscal year 2023</span></td>
+          <td class="wy">spending that lands against a year after it closes</td></tr><tr><td class="i">35</td>
+          <td><strong>Purchase orders closed after the year closed</strong> <span class="prog">not a standard report</span>
+              <span class="par">amounts and dates</span></td>
+          <td class="fy">FY2024<span>fiscal year 2024</span></td>
+          <td class="wy">spending that lands against a year after it closes</td></tr><tr><td class="i">36</td>
+          <td><strong>Purchase orders closed after the year closed</strong> <span class="prog">not a standard report</span>
+              <span class="par">amounts and dates</span></td>
+          <td class="fy">FY2025<span>fiscal year 2025</span></td>
+          <td class="wy">spending that lands against a year after it closes</td></tr><tr><td class="i">37</td>
+          <td><strong>Purchase orders closed after the year closed</strong> <span class="prog">not a standard report</span>
+              <span class="par">amounts and dates</span></td>
+          <td class="fy">FY2026<span>fiscal year 2026</span></td>
+          <td class="wy">spending that lands against a year after it closes</td></tr></tbody>
+  </table></div>
+  <p class="foot2"><strong>If only two are possible:</strong> the period 13 reports and Account Details. Period 12 is the position before the books close; period 13 is the year as it finally stood, and without it no year&rsquo;s surplus can be computed from outside at all. Account Details is the only document that shows whether a line grew because a price rose or because more was bought.</p>
 
-  <h3>We will fetch these ourselves — 1</h3>
-  <table class="req"><thead><tr><th>Report</th><th class="y">FY23</th><th class="y">FY24</th><th class="y">FY25</th><th class="y">FY26</th><th class="y">need</th></tr></thead><tbody>
-<tr class=""><td class="rn"><strong>DESE all-funds per pupil, by function</strong></td><td class="st have">✓</td><td class="st have">✓</td><td class="st have">✓</td><td class="st need">·</td><td class="st n">1</td></tr>
-</tbody></table>
-  <p class="foot2">DESE publishes these. Listed only so that the completeness picture is not mistaken for a request.</p>
+  <h3>From Lunenburg Public Schools</h3>
+  <div class="scroller"><table class="items">
+    <thead><tr><th>#</th><th>Document</th><th>Year</th><th>What it opens</th></tr></thead>
+    <tbody><tr><td class="i">D1</td>
+          <td><strong>Proposed budget, line level</strong><span class="par">the superintendent’s request as presented to the School Committee</span></td>
+          <td class="fy">FY2024</td><td class="wy">what was asked for</td></tr><tr><td class="i">D2</td>
+          <td><strong>Proposed budget, line level</strong><span class="par">the superintendent’s request as presented to the School Committee</span></td>
+          <td class="fy">FY2025</td><td class="wy">what was asked for</td></tr><tr><td class="i">D3</td>
+          <td><strong>Proposed budget, line level</strong><span class="par">the superintendent’s request as presented to the School Committee</span></td>
+          <td class="fy">FY2026</td><td class="wy">what was asked for</td></tr><tr><td class="i">D4</td>
+          <td><strong>Approved budget, line level</strong><span class="par">the budget as adopted</span></td>
+          <td class="fy">FY2023</td><td class="wy">what was voted</td></tr><tr><td class="i">D5</td>
+          <td><strong>Approved budget, line level</strong><span class="par">the budget as adopted</span></td>
+          <td class="fy">FY2024</td><td class="wy">what was voted</td></tr><tr><td class="i">D6</td>
+          <td><strong>Approved budget, line level</strong><span class="par">the budget as adopted</span></td>
+          <td class="fy">FY2025</td><td class="wy">what was voted</td></tr><tr><td class="i">D7</td>
+          <td><strong>Prior-year actuals, restated</strong><span class="par">the ACTUALS column printed inside a later year’s budget document</span></td>
+          <td class="fy">FY2024</td><td class="wy">the district’s own account of the year</td></tr><tr><td class="i">D8</td>
+          <td><strong>Prior-year actuals, restated</strong><span class="par">the ACTUALS column printed inside a later year’s budget document</span></td>
+          <td class="fy">FY2026</td><td class="wy">the district’s own account of the year</td></tr><tr><td class="i">D9</td>
+          <td><strong>Grant awards listed</strong><span class="par">as listed in the district’s budget documents</span></td>
+          <td class="fy">FY2025</td><td class="wy">what was awarded, which is not what was spent</td></tr><tr><td class="i">D10</td>
+          <td><strong>Grant awards listed</strong><span class="par">as listed in the district’s budget documents</span></td>
+          <td class="fy">FY2026</td><td class="wy">what was awarded, which is not what was spent</td></tr><tr><td class="i">D11</td>
+  <td><strong>Budget-to-account crosswalk</strong><span class="par">which MUNIS account each school budget line is built from — the mapping, not the amounts</span></td>
+  <td class="fy">any one year</td>
+  <td class="wy">the only thing that would let a single budget line be followed into the ledger<span class="hv">not a report; the budget is built in a workbook and whoever builds it may already hold this</span></td></tr></tbody>
+  </table></div>
+
+
+  <h2>The school&rsquo;s own funds, by number</h2>
+  <p>Sixty-one funds appear in the FY2026 special revenue report. <strong>21 had activity that year and 40 did not</strong> — the dormant ones are closed grants holding a few hundred dollars each, and we are not asking for those. The 21 below are the request, by fund number, so nothing has to be interpreted.</p>
+
+  <div class="scroller"><table class="funds">
+    <thead><tr><th>#</th><th>Fund</th><th>Name</th><th>FY26 revenue</th><th>FY26 spent</th><th>Balance</th></tr></thead>
+    <tbody><tr><td class="i">1</td><td class="fnum">2200</td>
+      <td><strong>School Lunch Revolving</strong></td>
+      <td class="mny">572,231</td><td class="mny">739,586</td><td class="mny">287,771</td></tr><tr><td class="i">2</td><td class="fnum">1312</td>
+      <td><strong>Extended Day Revolving Fund</strong></td>
+      <td class="mny">192,943</td><td class="mny">233,350</td><td class="mny">54,161</td></tr><tr><td class="i">3</td><td class="fnum">2640</td>
+      <td><strong>Special Ed Circuit Breaker</strong><span class="hv">state reimbursement for high-cost placements — offsets the placement lines directly</span></td>
+      <td class="mny">325,970</td><td class="mny">4,005</td><td class="mny">615,301</td></tr><tr><td class="i">4</td><td class="fnum">1301</td>
+      <td><strong>Chapter 658 Revolving Fund</strong><span class="hv">held for FY24–FY26; listed so the set is complete</span></td>
+      <td class="mny">160,164</td><td class="mny">100,467</td><td class="mny">169,945</td></tr><tr><td class="i">5</td><td class="fnum">2813</td>
+      <td><strong>Fy25 #240</strong><span class="hv">the same grant, prior year</span></td>
+      <td class="mny">-0</td><td class="mny">229,398</td><td class="mny">-88,503</td></tr><tr><td class="i">6</td><td class="fnum">1305</td>
+      <td><strong>After School Activities Fund</strong></td>
+      <td class="mny">111,376</td><td class="mny">95,196</td><td class="mny">148,578</td></tr><tr><td class="i">7</td><td class="fnum">2814</td>
+      <td><strong>Fy26 #240</strong><span class="hv">fund code 240 is the federal special education grant, if we read the code correctly</span></td>
+      <td class="mny">-0</td><td class="mny">179,637</td><td class="mny">-179,637</td></tr><tr><td class="i">8</td><td class="fnum">1308</td>
+      <td><strong>School Choice Revolving Fund</strong></td>
+      <td class="mny">83,116</td><td class="mny">30,558</td><td class="mny">299,461</td></tr><tr><td class="i">9</td><td class="fnum">2778</td>
+      <td><strong>Fy25 117 Soa Evidence Base</strong></td>
+      <td class="mny">-0</td><td class="mny">68,647</td><td class="mny">-91,220</td></tr><tr><td class="i">10</td><td class="fnum">2672</td>
+      <td><strong>Fy26 Family & Community 237</strong></td>
+      <td class="mny">48,558</td><td class="mny">13,372</td><td class="mny">35,186</td></tr><tr><td class="i">11</td><td class="fnum">1306</td>
+      <td><strong>School Facilities Use Revolv</strong></td>
+      <td class="mny">18,670</td><td class="mny">12,354</td><td class="mny">71,559</td></tr><tr><td class="i">12</td><td class="fnum">1311</td>
+      <td><strong>School Gift Fund</strong></td>
+      <td class="mny">22,486</td><td class="mny">2,911</td><td class="mny">109,398</td></tr><tr><td class="i">13</td><td class="fnum">2681</td>
+      <td><strong>Comp School Health Serv Grant</strong></td>
+      <td class="mny">10,775</td><td class="mny">5,120</td><td class="mny">5,655</td></tr><tr><td class="i">14</td><td class="fnum">1302</td>
+      <td><strong>Adult Education Revolving Fund</strong></td>
+      <td class="mny">4,000</td><td class="mny">2,880</td><td class="mny">12,744</td></tr><tr><td class="i">15</td><td class="fnum">2832</td>
+      <td><strong>Fy25 #274  0205202509302025</strong></td>
+      <td class="mny">-0</td><td class="mny">5,427</td><td class="mny">0</td></tr><tr><td class="i">16</td><td class="fnum">1300</td>
+      <td><strong>Lost Books/Tech Rev Fund</strong></td>
+      <td class="mny">2,860</td><td class="mny">661</td><td class="mny">16,665</td></tr><tr><td class="i">17</td><td class="fnum">2690</td>
+      <td><strong>Fy26 #309 Title Iv Part A</strong></td>
+      <td class="mny">-0</td><td class="mny">3,240</td><td class="mny">-3,240</td></tr><tr><td class="i">18</td><td class="fnum">2728</td>
+      <td><strong>Fy24 Title 11 Part A #140</strong></td>
+      <td class="mny">-0</td><td class="mny">3,217</td><td class="mny">5,108</td></tr><tr><td class="i">19</td><td class="fnum">2622</td>
+      <td><strong>Fy25 Family & Community</strong></td>
+      <td class="mny">-0</td><td class="mny">2,477</td><td class="mny">70,800</td></tr><tr><td class="i">20</td><td class="fnum">2800</td>
+      <td><strong>Fy25 140   080524093026</strong></td>
+      <td class="mny">-0</td><td class="mny">2,208</td><td class="mny">-0</td></tr><tr><td class="i">21</td><td class="fnum">2758</td>
+      <td><strong>Fy23 240</strong><span class="hv">the same grant, FY23</span></td>
+      <td class="mny">-0</td><td class="mny">1,666</td><td class="mny">-8,167</td></tr></tbody>
+  </table></div>
+  <p class="foot2">Across all sixty-one, <strong>$1,592,572</strong> sits in balance. These funds pay for staff and programmes and appear in no line of the school budget document, so from outside there is no way to tell a budget line that rose because the district grew from one that rose because a grant stopped paying for part of it.</p>
 
   <div class="note">
-    <p><strong>If it is easier, the order that helps most:</strong> period 13 for each year, then Account Details with the object code, then the revenue and fund reports, then the earlier quarters. The first two open more than the rest combined.</p>
-    <p style="margin-top:.7rem">And one sample first, if that suits — a single year or a single month — so a wrong field list costs a day rather than the whole exchange.</p>
+    <p><strong>Three of these decide questions we cannot otherwise settle.</strong></p>
+    <p style="margin-top:.6rem"><strong>2640, Special Ed Circuit Breaker</strong> — $325,970 received and $615,301 held. State reimbursement for high-cost placements, which is exactly the money that offsets the placement lines where FY26 moved most.</p>
+    <p style="margin-top:.5rem"><strong>2813 and 2814, fund code #240</strong> — $229,398 spent in FY25 and $179,637 in FY26. If we read the code correctly this is the federal special education grant, and it is paying for staff who appear in no budget line. In the same year, every paraprofessional account in the district ran over budget. Those two facts may be unrelated; from outside we cannot tell, and the fund detail is what would say.</p>
+    <p style="margin-top:.5rem"><strong>2200, School Lunch</strong> — $739,586 spent against $572,231 received, the largest single fund in the set.</p>
+    <p style="margin-top:.7rem"><em>A question for the district rather than the Town:</em> is fund code 240 the IDEA special education grant, and are 2813 and 2814 the FY25 and FY26 awards of it? We are reading a code, not a document.</p>
   </div>
+
+  <h3>From DESE — one, and we will fetch it ourselves</h3>
+  <p class="foot2">All-funds per-pupil expenditure by function, FY2026, when published. Listed so the picture is complete, not as a request.</p>
+
+  <h3>Two questions that are not documents</h3>
+  <p class="foot2"><strong>Is there any way to see what state aid paid for?</strong> Set out at the end of this document.<br>
+  <strong>Does anything record whether a budgeted position was filled?</strong> A ledger records dollars and not people, so an unspent salary line and a vacant post are identical from outside. That distinction explains several of the largest variances in the FY26 books, and we cannot make it.</p>
 
   <h2>On format: the spreadsheet is the ask, and both is better</h2>
   <div class="note">

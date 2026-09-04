@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**186 of 302 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **69 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**186 of 306 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **69 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **116 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **120 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -30,17 +30,17 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY09 | 1 |
 | FY14 | 8 |
 | FY15 | 13 |
-| FY16 | 13 |
-| FY17 | 16 |
-| FY18 | 16 |
+| FY16 | 14 |
+| FY17 | 17 |
+| FY18 | 17 |
 | FY19 | 24 |
-| FY20 | 23 |
+| FY20 | 22 |
 | FY21 | 10 |
 | FY22 | 7 |
 | FY23 | 18 |
-| FY24 | 30 |
+| FY24 | 29 |
 | FY25 | 37 |
-| FY26 | 70 |
+| FY26 | 73 |
 | FY27 | 58 |
 | FY28 | 2 |
 | FY29 | 2 |
@@ -53,6 +53,8 @@ Listed so this view cannot look more complete than it is.
 - `analyses/athletics-ledger.md` — The athletics ledger: what a cashbook shows that a budget line cannot
 - `analyses/athletics.md` — Athletics: what it costs and who pays
 - `analyses/budget-vs-actual.md` — Budget versus actual
+- `analyses/connecting-the-budget.md` — What connects the school budget to the Town’s books, and what does not
+- `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
 - `analyses/peer-districts.md` — What other districts did
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
@@ -78,6 +80,7 @@ Listed so this view cannot look more complete than it is.
 - `data/document-basis.csv` — What produced each document’s figures
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
+- `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
 - `data/line-history.csv` — Every budget line, budget and actual, year by year
 - `data/link-status.csv` — Whether each source document is still public
 - `data/lps-budget-lines.csv` — Budget lines, tidy CSV
@@ -108,6 +111,7 @@ Listed so this view cannot look more complete than it is.
 - `district-budget-page/docs/balanced-budget-slides-3-23-26.pdf` — Balanced Budget Slides 3-23-26
 - `district-budget-page/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — BUDGET ADDENDUM MULTI-SCENARIO FINANCIAL ANALYSIS
 - `district-budget-page/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
+- `district-budget-page/docs/community-forums-scheduled-on-school-department-budget.docx` — Community Forums Scheduled on School Department Budget
 - `district-budget-page/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
 - `district-budget-page/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
 - `district-budget-page/docs/notice-of-budget-hearing-april-29-2020.bin` — Notice of Budget Hearing April 29, 2020

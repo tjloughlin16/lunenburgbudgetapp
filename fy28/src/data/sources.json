@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03",
+ "generated": "2026-09-04",
  "origins": [
   {
    "id": "school",
@@ -1161,6 +1161,28 @@
    "blurb": "What we concluded, written up so it can be argued with. These are the only documents here we wrote — everything else in this archive was published by somebody else. Where one of them turned out to be wrong, the correction is in the document rather than quietly removed.",
    "items": [
     {
+     "path": "analyses/fy26-closeout.pdf",
+     "title": "The FY26 closeout analysis, rendered for reading on paper",
+     "stars": 3,
+     "what": "A rendering of analyses/fy26-closeout.md, built by scripts/build_analysis_pdf.py. The markdown is the source; every figure in it is recomputed by scripts/verify_fy26_closeout.py.",
+     "kind": "PDF",
+     "bytes": 836420,
+     "url": "/docs/analyses/fy26-closeout.pdf",
+     "count": 24,
+     "unit": "pages"
+    },
+    {
+     "path": "analyses/connecting-the-budget.pdf",
+     "title": "The same analysis, rendered for reading on paper",
+     "stars": 3,
+     "what": "A rendering of analyses/connecting-the-budget.md, not a separate document and not a separate source. Built by scripts/build_analysis_pdf.py; a copy accompanies the request sent to the Town. If the two ever differ, the markdown is the one every figure was verified against.",
+     "kind": "PDF",
+     "bytes": 173991,
+     "url": "/docs/analyses/connecting-the-budget.pdf",
+     "count": 3,
+     "unit": "pages"
+    },
+    {
      "path": "analyses/show-your-work.md",
      "title": "Show your work: every calculation, opened up",
      "stars": 3,
@@ -1238,9 +1260,9 @@
      "stars": 2,
      "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
      "kind": "Notes",
-     "bytes": 49390,
+     "bytes": 51989,
      "url": "/docs/analyses/fy26-closeout.md",
-     "count": 975,
+     "count": 1021,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout.md"
     },
@@ -1262,9 +1284,9 @@
      "stars": 2,
      "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
      "kind": "Notes",
-     "bytes": 32701,
+     "bytes": 34380,
      "url": "/docs/analyses/budget-vs-actual.md",
-     "count": 689,
+     "count": 713,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
@@ -1303,6 +1325,18 @@
      "count": 150,
      "unit": "lines",
      "textUrl": "/docs/analyses/peer-districts.md"
+    },
+    {
+     "path": "analyses/connecting-the-budget.md",
+     "title": "What connects the school budget to the Town’s books, and what does not",
+     "stars": 2,
+     "what": "How far a dollar can be followed from what was budgeted to what was spent. It works for the department as a whole — both school departments reconcile to $1.93 — and by category, where 41 of the budget’s 45 function codes meet the code carried inside the Town’s account numbers. It stops below that: MUNIS shortens account names to ten characters, so MS GUIDANC and HS GUIDANC are both 2710 where the budget has a row per school, and no single line can be followed into the ledger by anyone, inside the Town or outside it. The category comparison holds for FY2026 period 12 and no other period, because that is the one report that arrived as a spreadsheet rather than a PDF — the printed form drops the account string, and the account string is the join.",
+     "kind": "Notes",
+     "bytes": 5588,
+     "url": "/docs/analyses/connecting-the-budget.md",
+     "count": 104,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/connecting-the-budget.md"
     },
     {
      "path": "analyses/charts/fy26-school-variance.svg",
@@ -1403,7 +1437,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 4878336,
+     "bytes": 6103040,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1411,11 +1445,11 @@
      "path": "data/line-history.csv",
      "title": "Every budget line, budget and actual, year by year",
      "stars": 3,
-     "what": "19,453 readings from 24 of the district’s budget documents, normalised to 417 distinct lines, each column mapped to the fiscal year and kind the document itself states. Both budget and actual columns are kept, which is what analyses/budget-vs-actual.md needs and what no projection may read. The lines do not sum back to the district totals, so the analysis asks which lines miss and how often rather than apportioning the total. Rebuild with scripts/extract_line_history.py.",
+     "what": "9,608 readings from 28 of the district’s budget documents, normalised to 401 distinct lines, each column mapped to the fiscal year and kind the document itself states. Both budget and actual columns are kept, which is what analyses/budget-vs-actual.md needs and what no projection may read. The lines do not sum back to the district totals, so the analysis asks which lines miss and how often rather than apportioning the total. Rebuild with scripts/extract_line_history.py.",
      "kind": "Data",
-     "bytes": 986838,
+     "bytes": 1093089,
      "url": "/docs/data/line-history.csv",
-     "count": 8598,
+     "count": 9608,
      "unit": "rows",
      "textUrl": "/docs/data/line-history.csv"
     },
@@ -1516,6 +1550,18 @@
      "textUrl": "/docs/data/grants-history.csv"
     },
     {
+     "path": "data/line-history-coverage.csv",
+     "title": "What the line reader could and could not read, document by document",
+     "stars": 3,
+     "what": "One row for every document on the district’s budget page, whether or not a figure came out of it, with the reason when none did — quoted from that document’s own header line and its line number. It exists because the file above reports only what was read, so a document held and never parsed was indistinguishable from a document the town never published, and the coverage matrix reported both as absent. Most of the archive’s budget page is in the second category. Rebuild with scripts/extract_line_history.py.",
+     "kind": "Data",
+     "bytes": 22601,
+     "url": "/docs/data/line-history-coverage.csv",
+     "count": 85,
+     "unit": "rows",
+     "textUrl": "/docs/data/line-history-coverage.csv"
+    },
+    {
      "path": "data/athletics-history.csv",
      "title": "Athletics, both sides of the money, FY14–FY26",
      "stars": 3,
@@ -1581,9 +1627,9 @@
      "stars": 3,
      "what": "The whole-budget sweep behind analyses/budget-vs-actual.md §2b: every function group, every year, with net and gross variance, churn and spread. Churn is what the first attempt at this lacked — ranking groups by net hides any group whose over- and under-spends cancel, which is how athletics was missed. Rebuild with scripts/analyze_variance.py.",
      "kind": "Data",
-     "bytes": 4773,
+     "bytes": 4929,
      "url": "/docs/data/variance-by-group.csv",
-     "count": 57,
+     "count": 59,
      "unit": "rows",
      "textUrl": "/docs/data/variance-by-group.csv"
     },
@@ -3883,10 +3929,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 302,
+  "documents": 306,
   "groups": 17,
-  "bytes": 364765471,
-  "loadBearing": 57
+  "bytes": 367139460,
+  "loadBearing": 60
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

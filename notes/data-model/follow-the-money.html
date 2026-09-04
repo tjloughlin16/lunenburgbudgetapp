@@ -1,0 +1,208 @@
+<title>Following the Money in Lunenburg</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#F6F8F4; --band:#E7EEE4; --card:#FFFFFF;
+    --ink:#17251F; --ink-2:#3C4C43; --muted:#68766A;
+    --rule:#C9D4C7; --rule-soft:#DFE7DC;
+    --works:#2C5F7C; --works-soft:#E2EDF3;
+    --broken:#A03A1F; --broken-soft:#F6E5DE;
+    --shadow:0 1px 2px rgba(23,37,31,.06), 0 8px 24px -16px rgba(23,37,31,.28);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#111814; --band:#18211C; --card:#161E19;
+      --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+      --rule:#2C3830; --rule-soft:#222C26;
+      --works:#7FB3D0; --works-soft:#17272F;
+      --broken:#E08B6A; --broken-soft:#2C1D16;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#111814; --band:#18211C; --card:#161E19;
+    --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+    --rule:#2C3830; --rule-soft:#222C26;
+    --works:#7FB3D0; --works-soft:#17272F;
+    --broken:#E08B6A; --broken-soft:#2C1D16;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font:400 16px/1.62 "IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:60rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  h1,h2,h3{font-family:"IBM Plex Serif",Georgia,serif;text-wrap:balance;margin:0}
+  h1{font-size:clamp(1.9rem,4.4vw,2.75rem);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+  h2{font-size:1.4rem;font-weight:600;margin:3.25rem 0 .5rem}
+  h3{font-size:1.02rem;font-weight:600;margin:0 0 .3rem}
+  p{margin:0 0 1rem;max-width:65ch}
+  code,.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem
+  }
+  .lede{font-size:1.16rem;line-height:1.55;color:var(--ink-2);max-width:60ch;margin:1.1rem 0 0}
+  .verdicts{display:grid;gap:.75rem;margin:2.25rem 0 0}
+  @media(min-width:640px){.verdicts{grid-template-columns:1fr 1fr}}
+  .v{
+    background:var(--card);border:1px solid var(--rule);border-radius:2px;
+    padding:1rem 1.1rem;box-shadow:var(--shadow);display:flex;gap:.85rem;align-items:flex-start
+  }
+  .v .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.1em;
+    text-transform:uppercase;padding:.28rem .45rem;border-radius:2px;white-space:nowrap;font-weight:600
+  }
+  .tag.ok{background:var(--works-soft);color:var(--works)}
+  .tag.no{background:var(--broken-soft);color:var(--broken)}
+  .v p{margin:0;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+  .v strong{color:var(--ink)}
+  figure{margin:2rem 0 0;background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:1.5rem 1rem 1.1rem;box-shadow:var(--shadow);overflow-x:auto}
+  figure svg{display:block;max-width:100%;height:auto;margin:0 auto;color:var(--ink)}
+  figcaption{font-size:.86rem;color:var(--muted);margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--rule-soft);max-width:none;line-height:1.5}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0 0}
+  th{
+    text-align:left;font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);font-weight:500;
+    padding:.55rem .7rem;border-bottom:1px solid var(--rule)
+  }
+  td{padding:.62rem .7rem;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  tbody tr:nth-child(odd){background:var(--band)}
+  td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ok{color:var(--works);font-weight:600}
+  .no{color:var(--broken);font-weight:600}
+  .scroller{overflow-x:auto}
+  .layer{border-left:2px solid var(--rule);padding:0 0 0 1.15rem;margin:1.4rem 0 0}
+  .layer.broken{border-left-color:var(--broken)}
+  .layer .k{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
+  .note{background:var(--band);border-left:2px solid var(--rule);padding:1rem 1.15rem;margin:1.5rem 0 0;font-size:.94rem}
+  .note.warn{border-left-color:var(--broken)}
+  .note p:last-child{margin-bottom:0}
+  footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Lunenburg Budget Project · tested 3 September 2026</p>
+  <h1>Can you follow a dollar from the school budget to the Town’s books?</h1>
+  <p class="lede">Yes — for one document, one year, one period. The key that joins the two sides is real, and it is already in the extracted data. It is lost when the database is built, which is why nothing downstream of the database can see it.</p>
+
+  <div class="verdicts">
+    <div class="v"><span class="tag ok">Holds</span><p><strong>Inside the district’s documents.</strong> Budget lines, their figures and the workbook all join on <code>line_key</code>. 8,598 of 8,598.</p></div>
+    <div class="v"><span class="tag ok">Holds</span><p><strong>Inside the Town’s ledger.</strong> Every snapshot resolves to an account, and every account to a fund. 983 of 983.</p></div>
+    <div class="v"><span class="tag ok">Holds</span><p><strong>Provenance.</strong> Every figure in every fact table carries the document it came from. 100%, no exceptions.</p></div>
+    <div class="v"><span class="tag ok">Holds, in the CSV</span><p><strong>Budget line to ledger account.</strong> <code>munis-ledger.csv</code> carries a <code>function</code> column. <strong>41 of the budget’s 45 function codes appear in the ledger.</strong> 270 rows, FY2026 period 12.</p></div>
+    <div class="v"><span class="tag no">Lost in the database</span><p><strong>The <code>account</code> table has no <code>function</code> column.</strong> The key is dropped when <code>lunenburg.db</code> is built, so <code>crosswalk</code> is empty and every API view is blind to a join the data supports.</p></div>
+  </div>
+
+  <h2>Where the chain breaks</h2>
+  <figure>
+    <svg viewBox="0 0 880 430" role="img" aria-label="The Town's spreadsheet export carries a function code in the fourth segment of the account string. The extraction step keeps it in munis-ledger.csv, where 41 of the budget's 45 function codes match. The database build drops the column, so the crosswalk table is empty and the API cannot see the join.">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+        <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#A03A1F"/>
+        </marker>
+      </defs>
+
+      <text x="40" y="28" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="1.4" fill="currentColor" opacity=".6">1 · WHAT THE TOWN SENT</text>
+      <rect x="40" y="38" width="360" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text x="56" y="60" font-family="IBM Plex Mono, monospace" font-size="11.5" font-weight="500" fill="currentColor">town-general-fund-expenditures-fy26-p12.xlsx</text>
+      <text x="56" y="79" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">0100-1-122-<tspan fill="#2C5F7C" font-weight="600">2710</tspan>-04-4-65-1-511024</text>
+      <text x="418" y="62" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".75">The spreadsheet carries the whole</text>
+      <text x="418" y="78" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".75">account string. The PDF does not.</text>
+
+      <line x1="220" y1="98" x2="220" y2="128" stroke="#2C5F7C" stroke-width="1.6" marker-end="url(#a)" color="#2C5F7C"/>
+      <text x="232" y="118" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#2C5F7C">extract_munis_report.py</text>
+
+      <text x="40" y="150" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="1.4" fill="currentColor" opacity=".6">2 · THE EXTRACT — THE KEY IS HERE</text>
+      <rect x="40" y="160" width="360" height="66" rx="2" fill="none" stroke="#2C5F7C" stroke-width="1.6"/>
+      <text x="56" y="182" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="currentColor">munis-ledger.csv</text>
+      <text x="56" y="200" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".8">983 rows · a <tspan font-family="IBM Plex Mono, monospace" fill="#2C5F7C" font-weight="600">function</tspan> column · 270 rows coded</text>
+      <text x="56" y="217" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".8">FY2026 period 12 · 46 distinct codes</text>
+
+      <rect x="480" y="160" width="360" height="66" rx="2" fill="none" stroke="#2C5F7C" stroke-width="1.6"/>
+      <text x="496" y="182" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="currentColor">lps-budget-lines.csv</text>
+      <text x="496" y="200" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".8">the district’s workbook · 45 function codes</text>
+      <text x="496" y="217" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".8">printed over each group</text>
+
+      <line x1="402" y1="193" x2="478" y2="193" stroke="#2C5F7C" stroke-width="2" marker-end="url(#a)" marker-start="url(#a)" color="#2C5F7C"/>
+      <text x="440" y="248" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" font-weight="600" fill="#2C5F7C">41 of 45 codes match</text>
+      <text x="440" y="265" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".78">reconciled in fy26-code-reconciliation.xlsx — 38 of 45 agree on amount</text>
+
+      <line x1="220" y1="228" x2="220" y2="300" stroke="#A03A1F" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ab)"/>
+      <text x="232" y="292" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#A03A1F">build_db.py — drops the column</text>
+
+      <text x="40" y="322" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="1.4" fill="#A03A1F" opacity=".85">3 · THE DATABASE — THE KEY IS GONE</text>
+      <rect x="40" y="332" width="800" height="78" rx="2" fill="none" stroke="#A03A1F" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="56" y="355" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="currentColor">account</text>
+      <text x="120" y="355" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".75">fund · dept · org · object · name —</text>
+      <text x="392" y="355" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#A03A1F">no function column</text>
+      <text x="56" y="376" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="currentColor">crosswalk</text>
+      <text x="132" y="376" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#A03A1F">0 rows</text>
+      <text x="200" y="376" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".75">— the only object joining a budget line to an account</text>
+      <text x="56" y="398" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor" opacity=".75">So <tspan font-family="IBM Plex Mono, monospace">/api/*</tspan>, every view, and anything reading the database cannot see a join the CSV supports.</text>
+    </svg>
+    <figcaption><strong>The join is not missing from the data. It is missing from the database.</strong> The Town’s spreadsheet carries the function code in the fourth segment of the account string; <code>extract_munis_report.py</code> keeps it; <code>build_db.py</code> does not load it into <code>account</code>. Everything downstream — <code>crosswalk</code>, the views, the API — is blind to a link that already reconciles at source.</figcaption>
+  </figure>
+
+  <h2>What was actually tested</h2>
+  <p>Each row is a query against the published database, not a reading of the schema.</p>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>Link</th><th>Key</th><th>Result</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>budget_figure → budget_line</td><td class="num">line_key</td><td class="num">8,598 / 8,598</td><td class="ok">Holds</td></tr>
+      <tr><td>workbook_figure → budget_line</td><td class="num">line_key</td><td class="num">3,205 / 3,261</td><td class="ok">Holds, 98.3%</td></tr>
+      <tr><td>ledger_snapshot → account</td><td class="num">account_id</td><td class="num">983 / 983</td><td class="ok">Holds</td></tr>
+      <tr><td>every fact table → document</td><td class="num">doc_id</td><td class="num">100%</td><td class="ok">Holds</td></tr>
+      <tr><td>ledger function → budget function<br><span style="color:var(--muted);font-size:.85em">in <code>munis-ledger.csv</code></span></td><td class="num">function</td><td class="num">41 / 45 codes</td><td class="ok">Holds</td></tr>
+      <tr><td>ledger function → budget function<br><span style="color:var(--muted);font-size:.85em">in <code>lunenburg.db</code></span></td><td class="num">— none —</td><td class="num">column absent</td><td class="no">Lost</td></tr>
+      <tr><td>budget line → ledger account</td><td class="num">crosswalk</td><td class="num">0 rows</td><td class="no">Empty</td></tr>
+      <tr><td>school org → budget function code</td><td class="num">org substring</td><td class="num">0 / 175</td><td class="no">Never the key</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>“Budget versus actual” already exists — and it is not what it sounds like</h2>
+  <p>Two views carry that name. Both join a table <em>to itself</em>:</p>
+  <div class="layer">
+    <h3>v_line_budget_vs_actual</h3>
+    <p class="k">budget_figure → budget_figure, pivoting <code>stage</code></p>
+    <p>“Actual” here is <code>stage='actual'</code> — a prior year <em>restated by the district</em> inside its own later budget document. 3,453 such rows, FY2014–FY2025.</p>
+  </div>
+  <div class="layer">
+    <h3>v_workbook_budget_vs_actual</h3>
+    <p class="k">workbook_figure → workbook_figure, same <code>row</code>, same <code>doc_id</code></p>
+    <p>Budget and actual columns of the same workbook. The comparison never leaves the document.</p>
+  </div>
+  <div class="layer broken">
+    <h3>v_appropriation_vs_spend</h3>
+    <p class="k">ledger_snapshot → account, <code>WHERE period = 13</code></p>
+    <p><strong>Returns zero rows.</strong> Period 13 is the closing period; the only ledger periods held are 9 and 12. A published endpoint that cannot answer with the data behind it.</p>
+  </div>
+  <p style="margin-top:1.3rem">So the district comparing itself to itself is available and real. The Town’s books compared to the district’s budget is not available at all, and no view attempts it.</p>
+
+  <h2>What would fix it — and it is not a request to the Town</h2>
+  <div class="note">
+    <p><strong>Load the column that is already there.</strong> <code>munis-ledger.csv</code> has a <code>function</code> field; <code>account</code> does not. Carrying it through <code>build_db.py</code> would let <code>crosswalk</code> be populated by code, and would give every API view the join it currently cannot express.</p>
+    <p style="margin:.75rem 0 .6rem"><code style="font-size:.95rem">0100-1-122-<strong style="color:var(--works)">2710</strong>-04-4-65-1-511024</code> &nbsp;— the spreadsheet, fourth segment<br>
+    <code style="font-size:.95rem">0100-S2055101-511001</code> &nbsp;— the printed report, no function anywhere</code></p>
+    <p>Two limits stay real after that. The code joins a <em>category</em>, never a line: MUNIS gives <code>MS GUIDANC</code> and <code>HS GUIDANC</code>, both coded 2710, where the budget has a row per school — and account names are truncated to ten characters, so matching them by name is inference, not tracking. And coverage is one document: <strong>FY2026 period 12 only</strong>. Every earlier year is PDF-derived and carries no code at all.</p>
+  </div>
+
+  <h2>Two things found on the way</h2>
+  <div class="note warn">
+    <p><strong>A published table with no provenance.</strong> <code>variance_by_group</code> holds 57 rows of budget against spend by function group. It has no <code>doc_id</code> column, no script in the repository builds it, and neither fact table can produce its figures. Where those numbers came from is currently not answerable — which is the one thing every other figure here can do.</p>
+  </div>
+  <div class="note warn">
+    <p><strong>Vendor data in the published database.</strong> <code>fund_1301_cash_journal</code> has 57 rows with a populated <code>vendor</code> column and 136 with <code>comments</code>, and <code>lunenburg.db</code> is served from the site. Athletics officials are paid as individuals. The values were deliberately not read while establishing this — checking them is a local job, not one to do through a model.</p>
+  </div>
+
+  <footer>
+    Every count above was produced by querying <code>fy28/public/data/lunenburg.db</code> on 3 September 2026. Re-run before quoting: the database is rebuilt from the source CSVs on every change, and a printed page outlives the numbers on it.
+  </footer>
+</div>
