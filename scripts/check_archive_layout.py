@@ -47,6 +47,7 @@ SRC = os.path.join(ROOT, 'sources')
 TOP = {
     'town-budget':        'lunenburgma.gov, mirrored — budgets, plans, financial statements',
     'town-supplementary': 'lunenburgma.gov, mirrored — everything else the town publishes',
+    'town-annual-reports': 'the town\'s annual reports, one per year, mirrored',
     'district-budget':    'lunenburgschools.net budget page, mirrored',
     'meetings':           'agendas and minutes, by board',
     'dese':               'state district and school profiles',

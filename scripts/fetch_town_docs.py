@@ -63,7 +63,11 @@ SEEDS = [
 WANTED = re.compile(
     r'budget|financ|audit|appropriat|warrant|town.?meeting|capital|levy|tax|assess|'
     r'free.?cash|stabiliz|revenue|expenditure|override|omnibus|school|reserve|'
-    r'classification|debt|acfr|balance.?sheet|forecast|five.?year|fy\d\d', re.I)
+    r'classification|debt|acfr|balance.?sheet|forecast|five.?year|fy\d\d|'
+    # `fy\d\d` does not match `FY 2025` or `FY-2025`, which is how the annual town
+    # reports are titled -- so all sixteen were filtered out by a pattern meant to
+    # catch them. The archive held none of them until this was noticed.
+    r'annual.?town.?report|fy.\d{4}', re.I)
 
 
 def get(url, tries=3):

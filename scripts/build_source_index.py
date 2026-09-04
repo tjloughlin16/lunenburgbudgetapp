@@ -1016,7 +1016,7 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarized as a corpus instead.
 SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
-             'town-budget', 'town-supplementary', 'dese'}
+             'town-budget', 'town-supplementary', 'town-annual-reports', 'dese'}
 SKIP_FILES = {'supplemental.csv'}
 
 
@@ -1364,7 +1364,8 @@ PROVIDED_BY = {
 
 def upstream_by_hash():
     known = {}
-    for sub in ('district-budget', 'town-budget', 'town-supplementary', 'dese'):
+    for sub in ('district-budget', 'town-budget', 'town-supplementary',
+            'town-annual-reports', 'dese'):
         idx = os.path.join(SRC, sub, 'index.csv')
         if not os.path.exists(idx):
             continue
@@ -1626,6 +1627,15 @@ def main():
                      'spreadsheets and plans — and these are supplementary to it. '
                      'Nothing was discarded: they are mirrored on the same terms as '
                      'everything else, and several bear on the budget indirectly.',
+                     'town', catalogued_hashes),
+        mirror_group('town-annual-reports', 'town-annual-reports',
+                     'The town’s annual reports',
+                     'One report per year, {n} of them, mirrored from the town’s own '
+                     'document store. Kept apart from the budget documents because they '
+                     'are a retrospective series rather than a plan: each one carries '
+                     'the year’s audited financial statements alongside department '
+                     'narratives, vital statistics and committee reports, and the money '
+                     'is a part of it rather than the point of it.',
                      'town', catalogued_hashes),
         mirror_group('dese', 'dese', 'State enrollment data',
                      'Lunenburg’s selected-population counts from the state, FY19 to FY26 '
