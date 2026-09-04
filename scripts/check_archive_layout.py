@@ -14,7 +14,7 @@ So the rules are here, executable, and this fails when they are broken. It is de
 narrow: it checks WHERE a file sits and WHAT it is called, and nothing about its contents
 -- `extract_munis_report.py --check` and `build_source_index.py` already own those.
 
-THREE THINGS IT CATCHES
+FOUR THINGS IT CATCHES
 
 1.  **A new top-level folder.** Adding one is a decision about how the archive is
     organised, and it should be made on purpose rather than by dropping a directory in.
@@ -22,6 +22,12 @@ THREE THINGS IT CATCHES
 3.  **A filename that does not carry its fiscal year and period.** Twenty-three reports
     are arriving with near-identical titles; two of them started this whole exercise by
     being indistinguishable except by the folder they happened to land in.
+4.  **The same document in two folders.** `town-budget/` and `town-supplementary/` are one
+    mirror split by subject, so a file in both is a split that came undone. This happens
+    silently: `fetch_town_docs.py` asks "have I got this already?" against one folder, and
+    a re-fetch put 26 supplementary documents back into `town-budget/` within an hour of
+    the split being made. Nothing was structurally wrong -- valid folder, valid name --
+    which is exactly why it needs its own check.
 
 WHAT IT DOES NOT DO
 
@@ -137,6 +143,25 @@ def main():
                     'sources/munis-ledgers/%s/ has documents and no PROVENANCE file.\n'
                     '      Nothing here came off a website, so the request or the email '
                     'IS the address.' % entry)
+
+    # 4. one mirror, split by subject: a document in both halves means the split came
+    # undone, and a re-fetch is the way it happens.
+    a = os.path.join(SRC, 'town-budget', 'docs')
+    b = os.path.join(SRC, 'town-supplementary', 'docs')
+    if os.path.isdir(a) and os.path.isdir(b):
+        both = sorted(set(os.listdir(a)) & set(os.listdir(b)))
+        if both:
+            problems.append(
+                '%d document(s) exist in BOTH town-budget/docs/ and '
+                'town-supplementary/docs/.\n'
+                '      They are one mirror split by subject, so a file in both means the '
+                'split\n      came undone -- usually a re-fetch, because '
+                'fetch_town_docs.py asks\n      "have I got this?" against one folder '
+                'only.\n'
+                '      Check they are identical, then delete the town-budget/ copy:\n%s'
+                % (len(both), '\n'.join('        %s' % f for f in both[:12])
+                   + ('\n        ... and %d more' % (len(both) - 12)
+                      if len(both) > 12 else '')))
 
     if problems:
         print('%d layout problem(s):\n' % len(problems))
