@@ -937,6 +937,19 @@ GROUPS = [
              'The lines do not sum back to the district totals, so the analysis asks '
              'which lines miss and how often rather than apportioning the total. Rebuild '
              'with scripts/extract_line_history.py.'),
+            ('data/line-history-disagreements.csv',
+             'Where two documents state the same budget line differently', 3,
+             'Every figure each document states for a line the archive marks as '
+             'contested, and which statement the ordering kept. It exists because '
+             '`documents_disagree` was a flag, and a flag is the least a reader can be '
+             'told: the completeness matrix called a year partial on the strength of it '
+             'and could not say whether that meant one line out of 282 or a third of the '
+             'year \u2014 while the losing figure had been discarded, so nothing could '
+             'show the dispute even if it wanted to. Nothing here decides which document '
+             'is right. It also separates the cases that are OURS: the district prints '
+             'Dues/Meetings under three function groups, and matching lines by their '
+             'printed name collapses them into a disagreement no document is having. '
+             'Rebuild with scripts/extract_line_history.py.'),
             ('data/line-history-coverage.csv',
              'What the line reader could and could not read, document by document', 3,
              'One row for every document on the district\u2019s budget page, whether or '

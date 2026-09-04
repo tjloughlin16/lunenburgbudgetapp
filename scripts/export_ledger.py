@@ -227,6 +227,24 @@ def coverage(db):
                 missing.append(i)
         return out, missing
 
+    # What each document says about a contested line, so a cell can show the reader the
+    # disagreement instead of just asserting there is one. Capped per cell: the point is
+    # to make the dispute legible, not to publish a second copy of the archive.
+    contested = {}
+    for r in rows(db, """SELECT fy, stage, line_key, label, source, value, is_kept,
+                                spread, kind
+                         FROM v_budget_disagreement WHERE variant = ''
+                         ORDER BY fy, stage, spread DESC, line_key, source"""):
+        # The reference tables are loaded verbatim, every column TEXT, so the year
+        # arrives as a string and would never meet the integer keys used everywhere else.
+        by_cell = contested.setdefault((int(r['fy']), r['stage']), {})
+        line = by_cell.setdefault(r['line_key'], dict(
+            label=r['label'], spread=round(float(r['spread']), 2),
+            kind=r['kind'], statements=[]))
+        line['statements'].append(dict(document=os.path.basename(r['source']),
+                                       value=round(float(r['value']), 2),
+                                       kept=bool(int(r['is_kept']))))
+
     stage_docs, stage_years = {}, {}
     for r in rows(db, """SELECT fy, stage, doc_id, COUNT(*) n,
                                 SUM(documents_disagree) dis
@@ -297,10 +315,21 @@ def coverage(db):
                              'be asking for what is already on disk.' % (len(held), fy))
                 return c
             return cell('missing')
-        note = ('%d of %d figures: two documents state this differently'
-                % (agg['dis'], agg['n'])) if agg['dis'] else None
-        return cell('partial' if agg['dis'] else 'obtained',
-                    stage_docs[(fy, stage)], agg['n'], note)
+        lines = contested.get((fy, stage)) or {}
+        if not agg['dis']:
+            return cell('obtained', stage_docs[(fy, stage)], agg['n'])
+        share = agg['dis'] / agg['n'] * 100
+        note = ('%d of %d figures — %.0f%% — are stated differently by two of the '
+                'documents below. The rest agree.' % (agg['dis'], agg['n'], share))
+        c = cell('partial', stage_docs[(fy, stage)], agg['n'], note)
+        c['contestedShare'] = round(share, 1)
+        c['contested'] = agg['dis']
+        # Widest disagreements first: a line two documents put $19,000 apart is worth a
+        # reader's attention and one they put $12 apart is rounding.
+        c['contestedLines'] = sorted(
+            ({'line': k, **v} for k, v in lines.items()),
+            key=lambda x: -x['spread'])[:12]
+        return c
 
     def ledger_cell(fy, period, kind='expense'):
         r = ledger.get((fy, period, kind))

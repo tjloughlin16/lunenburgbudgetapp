@@ -31,9 +31,20 @@ type UnreadDoc = {
   document: string; dataRows: number; reason: string
   covers: string; statesInItsHeader: string
 }
+type Statement = { document: string; value: number; kept: boolean }
+type ContestedLine = {
+  line: string; label: string; spread: number; statements: Statement[]
+  /** 'documents' — two documents state the line differently. 'same-document' — one
+   *  document prints two different lines under the same name, and normalising the
+   *  printed name collapsed them. The second is ours, not the town's. */
+  kind: 'documents' | 'same-document'
+}
 type Cell = {
   state: 'obtained' | 'partial' | 'missing' | 'unread'
   n?: number; note?: string; documents: DocRef[]; unresolvedDocuments?: string[]
+  /** Figures two documents state differently, and what each of them says. `partial` on
+   *  its own cannot tell one contested line out of 282 from a third of the year. */
+  contested?: number; contestedShare?: number; contestedLines?: ContestedLine[]
   /** Documents we HOLD whose figures have never been extracted. A cell with these is
    *  not a gap in the archive; it is a gap in our reading of it, and the two must never
    *  be shown as the same thing — one is a request to the town, the other is our job. */
@@ -127,6 +138,21 @@ const STATE = {
   // opposite: nothing to ask anybody for, the document is already on the shelf.
   unread: { glyph: '▨', word: 'Held, not read', color: 'var(--status-warning)' },
 } as const
+
+/** What a cell says on hover. `Partial` is the state that most needs it: it covers both
+ *  one contested line out of 282 and a third of the year, and the glyph is the same. */
+function hoverText(fy: number, rd: RowDef, c: Cell): string {
+  const head = `FY${fy} · ${rd.label} · ${STATE[c.state].word}`
+  if (c.state === 'obtained')
+    return `${head}\n${(c.n ?? 0).toLocaleString()} figures from ${c.documents.length} document(s). Every document that states this year agrees.`
+  if (c.state === 'partial') {
+    const agreed = (c.n ?? 0) - (c.contested ?? 0)
+    return `${head}\n${agreed.toLocaleString()} of ${(c.n ?? 0).toLocaleString()} figures agree across ${c.documents.length} document(s). ${c.contested ?? 0} (${c.contestedShare ?? 0}%) are stated differently by two of them.\nClick to see which lines, and what each document says.`
+  }
+  if (c.state === 'unread')
+    return `${head}\n${c.heldNotRead?.length ?? 0} document(s) for this year are in the archive with their figures never extracted. Nothing to request.`
+  return `${head}\nNothing in the archive supplies this for FY${fy}. Click for what would.`
+}
 
 export function DataRoom() {
   const [data, setData] = useState<Ledger | null>(null)
@@ -249,6 +275,15 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
           shows up here without anybody ticking a box, and one that is missing cannot be
           quietly marked present.
         </p>
+        <p className="mb-3">
+          <strong style={{ color: 'var(--text-primary)' }}>Partial does not mean
+          incomplete.</strong>{' '}
+          It means the town published the year more than once and two of its documents
+          state at least one line differently — usually because the budget was revised
+          between them. A year can be partial on a single line out of three hundred.
+          Hover a square for the share; click it to see exactly which lines, and what each
+          document says about them.
+        </p>
         <p>
           <strong style={{ color: 'var(--text-primary)' }}>Everything here opens.</strong>{' '}
           Click a square to see the documents behind it, or what to obtain if it is empty.
@@ -325,6 +360,7 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
                           <button
                             onClick={() => setOpen(on ? null : { fy: y, row: rd.id })}
                             aria-expanded={on}
+                            title={hoverText(y, rd, c)}
                             aria-label={`FY${y}, ${rd.label}: ${st.word}`}
                             className="w-7 h-7 rounded leading-none text-lg"
                             style={{ color: st.color,
@@ -463,6 +499,73 @@ function CellDetail({ fy, rd, cell, onClose }: {
         <p className="text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
           Nothing in the archive supplies this for FY{fy}.
         </p>
+      )}
+
+      {cell.state === 'partial' && cell.contestedLines && cell.contestedLines.length > 0 && (
+        <div className="mb-4">
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+            style={{ color: 'var(--text-muted)' }}>
+            What “partial” means here
+          </p>
+          <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+            {((cell.n ?? 0) - (cell.contested ?? 0)).toLocaleString()} of{' '}
+            {(cell.n ?? 0).toLocaleString()} figures agree across every document that
+            states this year. The {cell.contested} below do not — and nothing here decides
+            which is right. Two documents stating a line differently is a fact about the
+            documents; choosing between them is not a fact at all. The archive keeps the
+            statement from the document its publisher dated latest, and marks it.
+          </p>
+          {cell.contestedLines.some(l => l.kind === 'same-document') && (
+            <p className="text-sm leading-relaxed mb-3"
+              style={{ color: 'var(--text-secondary)' }}>
+              Some of these are <strong>ours, not the town’s</strong>. The district prints
+              <span className="font-mono text-[12px]"> Dues/Meetings </span>
+              under three different function groups and
+              <span className="font-mono text-[12px]"> Curriculum Adoption/System </span>
+              twice on consecutive lines. Matching lines by their printed name collapses
+              them into one, and the collapse then looks like a disagreement no document is
+              having. Those are marked below.
+            </p>
+          )}
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+            style={{ color: 'var(--text-muted)' }}>
+            {cell.contestedLines.length < (cell.contested ?? 0)
+              ? `The ${cell.contestedLines.length} widest of ${cell.contested}`
+              : `All ${cell.contested} of them`}, widest first
+          </p>
+          <ul className="space-y-2.5">
+            {cell.contestedLines.map(l => (
+              <li key={l.line} className="text-[12px] leading-relaxed">
+                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>
+                  {l.label}
+                </span>
+                <span style={{ color: 'var(--text-muted)' }}>
+                  {' '}· {usd(l.spread)} apart
+                </span>
+                {l.kind === 'same-document' && (
+                  <span className="ml-1.5 text-[10px] uppercase tracking-widest"
+                    style={{ color: 'var(--status-warning)' }}>
+                    one document, two lines of this name
+                  </span>
+                )}
+                <ul className="mt-1 space-y-0.5">
+                  {l.statements.map(st => (
+                    <li key={st.document} className="flex gap-2 tabular-nums">
+                      <span className="w-24 text-right shrink-0"
+                        style={{ color: st.kept ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+                        {usd(st.value)}
+                      </span>
+                      <span className="font-mono text-[11px] break-all"
+                        style={{ color: 'var(--text-muted)' }}>
+                        {st.document}{st.kept ? ' ← kept' : ''}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {cell.heldNotRead && cell.heldNotRead.length > 0 && (

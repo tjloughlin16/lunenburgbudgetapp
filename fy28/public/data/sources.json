@@ -1437,7 +1437,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 6103040,
+     "bytes": 6230016,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1445,11 +1445,11 @@
      "path": "data/line-history.csv",
      "title": "Every budget line, budget and actual, year by year",
      "stars": 3,
-     "what": "9,608 readings from 28 of the district’s budget documents, normalised to 401 distinct lines, each column mapped to the fiscal year and kind the document itself states. Both budget and actual columns are kept, which is what analyses/budget-vs-actual.md needs and what no projection may read. The lines do not sum back to the district totals, so the analysis asks which lines miss and how often rather than apportioning the total. Rebuild with scripts/extract_line_history.py.",
+     "what": "9,503 readings from 28 of the district’s budget documents, normalised to 397 distinct lines, each column mapped to the fiscal year and kind the document itself states. Both budget and actual columns are kept, which is what analyses/budget-vs-actual.md needs and what no projection may read. The lines do not sum back to the district totals, so the analysis asks which lines miss and how often rather than apportioning the total. Rebuild with scripts/extract_line_history.py.",
      "kind": "Data",
-     "bytes": 1093089,
+     "bytes": 1079309,
      "url": "/docs/data/line-history.csv",
-     "count": 9608,
+     "count": 9503,
      "unit": "rows",
      "textUrl": "/docs/data/line-history.csv"
     },
@@ -1476,6 +1476,18 @@
      "count": 983,
      "unit": "rows",
      "textUrl": "/docs/data/munis-ledger.csv"
+    },
+    {
+     "path": "data/line-history-disagreements.csv",
+     "title": "Where two documents state the same budget line differently",
+     "stars": 3,
+     "what": "Every figure each document states for a line the archive marks as contested, and which statement the ordering kept. It exists because `documents_disagree` was a flag, and a flag is the least a reader can be told: the completeness matrix called a year partial on the strength of it and could not say whether that meant one line out of 282 or a third of the year — while the losing figure had been discarded, so nothing could show the dispute even if it wanted to. Nothing here decides which document is right. It also separates the cases that are OURS: the district prints Dues/Meetings under three function groups, and matching lines by their printed name collapses them into a disagreement no document is having. Rebuild with scripts/extract_line_history.py.",
+     "kind": "Data",
+     "bytes": 197689,
+     "url": "/docs/data/line-history-disagreements.csv",
+     "count": 1497,
+     "unit": "rows",
+     "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
      "path": "data/free-cash-proof.csv",
@@ -1555,7 +1567,7 @@
      "stars": 3,
      "what": "One row for every document on the district’s budget page, whether or not a figure came out of it, with the reason when none did — quoted from that document’s own header line and its line number. It exists because the file above reports only what was read, so a document held and never parsed was indistinguishable from a document the town never published, and the coverage matrix reported both as absent. Most of the archive’s budget page is in the second category. Rebuild with scripts/extract_line_history.py.",
      "kind": "Data",
-     "bytes": 22601,
+     "bytes": 22512,
      "url": "/docs/data/line-history-coverage.csv",
      "count": 85,
      "unit": "rows",
@@ -1567,9 +1579,9 @@
      "stars": 3,
      "what": "Every line of the town’s athletics appropriation and every line of the fee-funded Chapter 658 revolving fund, for each year either was published. The FY14–FY19 half is reconstructed from the district’s own FY19 athletics budget and CHECKED against that document’s stated column totals — five of six years tie to the dollar on each side, and the script refuses to write if any year is off by more than the document’s own rounding. FY20–FY23 has no fund side because nobody published one, which is the finding rather than a gap in our reading. Feeds the athletics page and no projection. Rebuild with scripts/extract_athletics_history.py.",
      "kind": "Data",
-     "bytes": 18266,
+     "bytes": 17912,
      "url": "/docs/data/athletics-history.csv",
-     "count": 178,
+     "count": 175,
      "unit": "rows",
      "textUrl": "/docs/data/athletics-history.csv"
     },
@@ -3929,10 +3941,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 306,
+  "documents": 307,
   "groups": 17,
-  "bytes": 367139460,
-  "loadBearing": 60
+  "bytes": 367449902,
+  "loadBearing": 61
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 24 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

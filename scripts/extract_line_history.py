@@ -31,6 +31,7 @@ TEXT = os.path.join(ROOT, 'sources/district-budget-page/text')
 INDEX = os.path.join(ROOT, 'sources/district-budget-page/index.csv')
 OUT = os.path.join(ROOT, 'sources/data/line-history.csv')
 COVERAGE = os.path.join(ROOT, 'sources/data/line-history-coverage.csv')
+DISAGREE = os.path.join(ROOT, 'sources/data/line-history-disagreements.csv')
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import importlib.util
@@ -167,15 +168,28 @@ def layouts(lines):
                 ms = kinds_in(lines[k])
                 ks = [x.group(1).lower() for x in ms]
                 if len(ks) >= len(ys):
-                    got = (with_change_column(
-                               [None if TO_DATE.match(lines[k][x.end():])
-                                else (2000 + int(y), x.group(1).lower(), '')
-                                for y, x in zip(ys, ms[:len(ys)])], ln),
-                           lines[k].strip())
+                    # THE KINDS ROW DECLARES THE WIDTH, even where the years row does not.
+                    # `final-fy26-sc-approved-budget-3-12-25` heads two years over eight
+                    # columns -- `Actual Budgeted Budgeted Dollar Change % Change Budgeted
+                    # Dollar Change % Change` -- because only the first two columns are
+                    # labelled with a year. Mapping the two and demanding two numbers let
+                    # any row with a dash in it through, shifted: `Dues/Meetings -$
+                    # 5,971.00$ 6,500.00$ ...` put 5,971 in FY24 and 6,500 in FY25 when
+                    # 5,971 IS the FY25 figure and FY24 is the dash.
+                    #
+                    # Padding to the full declared width means such a row is short and is
+                    # skipped. A skipped row is visible; a shifted one is not, and 133 of
+                    # the FY2025 cells the completeness matrix called contested were two
+                    # documents shifted this way rather than the town disagreeing with
+                    # itself.
+                    cols = [None if TO_DATE.match(lines[k][x.end():])
+                            else (2000 + int(y), x.group(1).lower(), '')
+                            for y, x in zip(ys, ms[:len(ys)])]
+                    cols += [None] * (len(ks) - len(ys))
+                    got = (cols, lines[k].strip())
                     break
                 if partial is None and ks and leading_columns_only(lines[k], ms[0]):
-                    partial = (with_change_column(
-                                   partial_layout(ys, ks, ms, lines[k]), ln),
+                    partial = (partial_layout(ys, ks, ms, lines[k]),
                                lines[k].strip())
             # Only if the document does NOT put its column kinds on one line. The
             # two-line rule reads 24 documents today and must go on reading them
@@ -310,29 +324,42 @@ def header_is_a_row_of_years(text):
     return len([w for w in rest.split() if w not in ('%', '|')]) <= 2
 
 
-# A years line that ends `Increase/` or `Increase/Decrease` is announcing one more column
-# than it has years -- the computed change these sheets carry last. It is not a percentage,
-# so its number survives into the row, and on a row where one figure is blank it slides
-# forward into a money column: `E.S. Library Books 4,000 3,500 -500` has three numbers for
-# four columns, and FY18 was published as -500 when the real reading is 4,000 to 3,500, a
-# decrease of 500. Thirteen FY2018 figures came out negative that way.
-#
-# `%` alone does NOT count: a percentage token is dropped before the row is measured, so a
-# sheet headed `FY14 ... FY19 %` still carries exactly six readable numbers. Nor does
-# `Supt.`, which is half of the column label `Supt. Recommended` and not a change column
-# at all -- counting it demanded seven numbers from a six-column row and threw the FY19
-# superintendent's budgets away.
-CHANGE_COLUMN = re.compile(r'\b(increase|decrease|change|difference)\b', re.I)
 
+def declared_width(lines, lay):
+    """How many numbers a full row of this document carries: the most common count.
 
-def with_change_column(cols, years_line):
-    """`cols` plus a None for the change column the years line announces, if any.
+    The header rows cannot be trusted to say how wide the table is.
+    `final-fy26-sc-approved-budget-3-12-25` names two fiscal years over eight columns --
+    `Actual Budgeted Budgeted Dollar Change % Change Budgeted Dollar Change % Change` --
+    because only the first two carry a year. The FY18 sheets put `Increase/Decrease` on
+    the years row instead. Counting label words to reconcile the two was tried and is a
+    losing game: `% increase` is a percentage whose token is dropped before the row is
+    measured and takes up no room, `Dollar Change` prints a number and does, and the two
+    halves of the label can sit on different rows.
 
-    None means "a column that exists and is not read". It makes the row-length check in
-    scan() demand the full width, so the positions of the columns we DO read are certain,
-    and it costs nothing else: scan() skips None.
+    The rows themselves say it without being asked. Take the count that occurs most often
+    and require it. A document whose full rows carry six numbers has six columns, whatever
+    its header managed to print, and a row carrying five is short -- which is the whole
+    point, because a short row read against the wrong columns is shifted, and a shifted
+    row still looks like a series.
+
+    Never narrower than the years the header names, so this can only ever tighten.
     """
-    return cols + [None] if CHANGE_COLUMN.search(years_line) else cols
+    counts = collections.Counter()
+    for i, ln in enumerate(lines):
+        t = ln.strip()
+        if not t or SKIP.match(t) or GROUP_HEADER.match(t) or not lay[i]:
+            continue
+        parsed = split_row(t)
+        if not parsed:
+            continue
+        n = len([x for x in ebh.NUM.finditer(parsed[1])
+                 if parsed[1][x.end():x.end() + 1] != '%'])
+        if n:
+            counts[n] += 1
+    if not counts:
+        return 0
+    return max(counts.most_common(1)[0][0], max(len(c) for c in lay if c))
 
 
 def leading_columns_only(text, first):
@@ -662,6 +689,11 @@ def scan(path, labels=None):
     dy = ebh.document_year(lines)
     dd = document_date(path, lines, labels or {})
     lay, hdr = layouts(lines)
+    # Pad every layout out to the width the document's own rows show it to have, with
+    # None for the columns the header did not name. scan() skips None; the row-length
+    # check does not, which is the point -- see declared_width().
+    width = declared_width(lines, lay)
+    lay = [c if not c else c + [None] * max(0, width - len(c)) for c in lay]
     data_rows = with_layout = short_rows = 0
     out, seen_group = [], False
     groups = sum(1 for ln in lines if GROUP_HEADER.match(ln.strip()))
@@ -871,7 +903,7 @@ def main():
     # The date comes from the district's own title for the document or its own title
     # block, never from our slug. 60 of 87 documents state one; the rest still fall back
     # to the filename, which is at least now a stated rule rather than an accident.
-    best, disagree = {}, set()
+    best, disagree, stated = {}, set(), collections.defaultdict(list)
     for o in sorted(obs, key=lambda x: ((x['docYear'] or 0),
                                         x['docDate'] or ((x['docYear'] or 0), 1, 1),
                                         x['doc'])):
@@ -879,6 +911,7 @@ def main():
         if k in best and abs(best[k]['value'] - o['value']) > 1:
             disagree.add(k)
         best[k] = o
+        stated[k].append(o)
 
     # A budget line is not negative. Every one of these is either a genuine offset the
     # document prints as a credit -- Circuit Breaker, the ACE paraprofessional
@@ -907,6 +940,44 @@ def main():
             w.writerow([key, o['label'], fy, stage, variant, f"{o['value']:.0f}",
                         int((key, fy, stage, variant) in disagree), o['doc']])
     print(f'wrote {OUT}')
+
+    # EVERY DOCUMENT'S FIGURE FOR A CONTESTED CELL, not just the one that wins.
+    #
+    # `documents_disagree` has always been a flag, and a flag is the least a reader can be
+    # told: the completeness matrix says a year is `partial` and cannot say whether that
+    # means one line out of 282 or a third of the year. Worse, the losing figure and the
+    # document that stated it were thrown away at this exact line, so nothing downstream
+    # could show the disagreement even if it wanted to -- the cell could name the winner
+    # and no more.
+    #
+    # This keeps all of them, marks which one the ordering chose, and says nothing about
+    # which is right. Two documents stating a line differently is a fact about the
+    # documents. Deciding between them is not something this file may do.
+    with open(DISAGREE, 'w', newline='') as fh:
+        w = csv.writer(fh)
+        w.writerow(['key', 'label', 'fy', 'stage', 'variant', 'source', 'value',
+                    'is_kept', 'spread', 'kind'])
+        rows_out = 0
+        for k in sorted(disagree):
+            obs_k = stated[k]
+            vals = [o['value'] for o in obs_k]
+            spread = max(vals) - min(vals)
+            # TWO DOCUMENTS DISAGREEING AND ONE DOCUMENT NAMING TWO LINES THE SAME ARE
+            # NOT THE SAME FACT. `Dues/Meetings` appears under School Committee, the
+            # Superintendent's Office and the Business Office; `Curriculum Adoption/System`
+            # twice on consecutive lines. Normalising the printed name collapses them, and
+            # the cell then reports a disagreement that no document is having -- it is
+            # ours. Saying which kind it is costs one column and stops a reader chasing a
+            # dispute between documents that agree.
+            kind = ('same-document' if len({o['doc'] for o in obs_k}) == 1
+                    else 'documents')
+            for o in sorted(obs_k, key=lambda x: (x['doc'], -x['value'])):
+                w.writerow([k[0], o['label'], k[1], k[2], k[3], o['doc'],
+                            '%.0f' % o['value'],
+                            int(o is best[k]), '%.0f' % spread, kind])
+                rows_out += 1
+    print(f'wrote {DISAGREE} -- {rows_out:,} statements across '
+          f'{len(disagree):,} contested cells')
 
     pairs = [(k, fy) for (k, fy, st, va) in best if st == 'actual' and not va
              and (k, fy, 'settled', '') in best]

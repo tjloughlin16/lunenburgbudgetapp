@@ -322,7 +322,7 @@ REFERENCE = [
     'athletic-fee-schedule', 'athletics-by-sport', 'athletics-by-sport-reconciliation',
     'athletics-history', 'capital-funding-history', 'capital-plan-fy27',
     'free-cash-proof', 'fund-1301-cash-journal', 'ood-tuition-history',
-    'rate-register', 'sped-para-history',
+    'line-history-disagreements', 'rate-register', 'sped-para-history',
     'sped-teacher-history', 'sped-transport-history', 'total-expenses-history',
     'total-salaries-history', 'variance-by-group',
 ]
@@ -408,6 +408,23 @@ FROM    budget_figure b
 -- budget. A document stating four FY27 proposals states four figures, not one.
 WHERE   b.variant = ''
 GROUP BY b.line_key, b.label, b.fy;
+
+-- WHAT EACH DOCUMENT SAYS ABOUT A CONTESTED LINE, and which statement the ordering kept.
+--
+-- `budget_figure.documents_disagree` is a flag, and a flag is the least a reader can be
+-- told. The completeness matrix called a year `partial` on the strength of it and could
+-- not say whether that meant one line out of 282 or a third of the year -- and the losing
+-- figure had been discarded at extraction, so nothing could show the disagreement even if
+-- it wanted to. The cell could name the winner and no more.
+--
+-- Nothing here decides which document is right. Two documents stating a line differently
+-- is a fact about the documents; choosing between them is not a fact at all.
+CREATE VIEW v_budget_disagreement AS
+SELECT  d.fy, d.stage, d.variant, d.key AS line_key, d.label,
+        d.source, CAST(d.value AS REAL) AS value,
+        CAST(d.is_kept AS INTEGER) AS is_kept,
+        CAST(d.spread AS REAL) AS spread, d.kind
+FROM    line_history_disagreements d;
 
 -- The scenarios, kept separate and named. `final-budget-document.txt` prints Restoration,
 -- Core Budget and Balanced side by side for FY27, and which of them became the budget is
