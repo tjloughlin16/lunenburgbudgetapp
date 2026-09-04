@@ -387,6 +387,52 @@ four.
 full, the department would still have finished about $393,000 under. The large categories
 are where the dollars are, and they are the ones that behaved.
 
+### A second pair, on the purchased side
+
+The staffing pair above is not the only one. Two placement lines move against each other by
+a similar amount, and they are a different kind of thing: not posts filled or unfilled, but
+services bought from outside providers.
+
+| | budgeted | spent | |
+|---|---:|---:|---:|
+| Private placements — `SPED PRIVA` | 988,630 | 466,001 | **+$522,629** |
+| Collaborative tuition — `COLL TUITI` | 302,663 | 678,062 | **−$434,108** |
+| **together** | | | **+$88,522** |
+
+Private placement spent **47%** of its budget. Collaborative tuition spent **224%** of its.
+Across all twenty-three special education lines: **$5,150,013** budgeted against
+**$5,091,367** spent, so the group as a whole is within **$58,646** of budget. The total
+barely moves while the composition moves by roughly half a million.
+
+**This is the fourth time this trap appears in this document, and the answer is the same.**
+Two lines moving in opposite directions by similar amounts does not establish that anything
+moved between them. A placement reclassified between provider types, a collaborative rate
+change mid-year, one line habitually over-budgeted and the other under, a coding change, or
+genuinely fewer private placements and more collaborative ones all produce these four
+numbers.
+
+**But this pair can be narrowed further than the staffing one, and without any student
+data.** These are invoices from institutional providers, and an expenditure report at
+transaction level would separate readings that the annual totals cannot:
+
+| what the invoices would show | what it distinguishes |
+|---|---|
+| the same providers, larger amounts | a **rate** change |
+| the same amounts, more invoices | a **volume** change |
+| a provider appearing part-way through the year | a new placement or a new provider |
+| a single amount near the year end | a true-up, not in-year growth |
+
+That is a price-and-volume split, and it needs only the amount, the date and the provider —
+all institutions, none of them a person. It would not say how many children are placed
+where. It would say whether this line grew because the price rose or because more was
+bought, which is the question a budget actually turns on.
+
+**What would settle the rest.** Placement counts by setting and year, which nobody
+publishes, and which is already on this project’s standing list. Between the invoice detail
+and the counts, the invoice detail is both obtainable and sufficient for the budget
+question; the counts answer a different question about children, and should not be treated
+as the only route to this one.
+
 ## 2. The biggest movers
 
 ### In plain terms

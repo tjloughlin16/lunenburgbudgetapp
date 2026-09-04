@@ -187,6 +187,45 @@ def main():
     print('  OK    the support underspend is %d accounts of %d, not a group pattern'
           % (shape['sup_under'], shape['sup_n']))
 
+    # §1a  The placement pair. Asserted by account NAME because these two lines are named
+    # in the document and their variance is the whole of the claim -- and because the pair
+    # is exactly the shape rule 7 warns about, so the numbers had better be the numbers.
+    print('\n§1a  The placement pair, on the purchased side')
+    PAIR = {'SPED PRIVA': 522629.0, 'COLL TUITI': -434108.0}
+    got = {}
+    for name, want in PAIR.items():
+        row = db.execute("""SELECT l.revised, l.expended, l.available
+                            FROM ledger_snapshot l JOIN account a USING (account_id)
+                            WHERE a.dept IN ('300','301') AND a.account_type='expense'
+                              AND l.period = 12 AND a.name = ?""", (name,)).fetchone()
+        if not row:
+            FAILS.append(f'§1a names {name} and no such account is in the ledger')
+            continue
+        got[name] = row[2]
+        present(f'{name} variance', row[2], dp=0)
+        if abs(row[2] - want) > 1:
+            FAILS.append(f'§1a says {name} varies by {want:,.0f}; the ledger says {row[2]:,.0f}')
+    if len(got) == 2:
+        together = sum(got.values())
+        present('the pair together', together, dp=0)
+        if abs(together - 88522) > 2:
+            FAILS.append(f'§1a says the pair nets to 88,522; it is {together:,.0f}')
+
+    # And the group they sit in, because the document leans on the total barely moving
+    # while the composition moves -- which is only interesting if the total really is flat.
+    grp = db.execute("""SELECT SUM(l.revised), SUM(l.expended)
+                        FROM ledger_snapshot l JOIN account a USING (account_id)
+                        WHERE a.dept IN ('300','301') AND a.account_type='expense'
+                          AND l.period = 12
+                          AND (a.name LIKE '%SPED%' OR a.name LIKE '%COLL%'
+                               OR a.name LIKE '%TUITI%' OR a.name LIKE '%PRIVA%')""").fetchone()
+    present('special education group, revised', grp[0], dp=0)
+    present('special education group, spent', grp[1], dp=0)
+    present('special education group, net', grp[0] - grp[1], dp=0)
+    if abs((grp[0] - grp[1]) - 58646) > 2:
+        FAILS.append('§1a says the group is within 58,646 of budget; it is %.0f'
+                     % (grp[0] - grp[1]))
+
     print('\n§2  The biggest movers')
     # An org holds SEVERAL accounts -- S3991742 alone carries six, from ELEC CHGS to
     # TELE MTC -- so a lookup keyed on org returns whichever comes first and silently
