@@ -16,6 +16,13 @@ deleted or untracked.
     ten largest other documents         187 MB
     everything else                     600 MB
 
+**And more is coming than this shows.** The town runs two document stores and only one was
+ever crawled: `/DocumentCenter/` holds what is current, `/ArchiveCenter/` holds what has
+been retired — twelve categories including town meeting and budget documents for FY12
+through FY25. `fetch_town_docs.py` was extended to walk both on 4 September. The archive is
+about to grow by an amount nobody has measured yet, which is the argument for changing the
+storage model now rather than after.
+
 **One series is the whole problem.** The annual reports average 24 MB each and are still
 landing. Twenty years of them is ~500 MB, taking the repository to roughly 800–900 MB —
 GitHub's recommended ceiling is 1 GB, and every clone and CI run pays it.
@@ -70,15 +77,38 @@ right sha256. That is the gate; it does not ship until it passes.
 
 ### What moves, and what does not
 
+**Everything goes, not a size threshold.** An earlier draft of this plan moved only files
+over 5 MB. That is wrong, and the reason is the requirement below: **the bucket is the
+public download area**, and a download area holding only the large half of the archive is
+incoherent — somebody browsing it sees gaps with no rule behind them, and no way to tell a
+missing document from one that was never mirrored.
+
 | | |
 |---|---|
-| **Moves to R2** | binaries over 5 MB — the 17+ annual reports and the 10 largest others, ~600 MB |
-| **Stays in git** | all extracted text, every manifest, all CSVs, analyses, code |
-| **Stays in git for now** | binaries under 5 MB. They are the long tail, they cost little, and a smaller change is a safer one |
+| **In the bucket** | every file in `sources/` — the whole archive, browsable |
+| **In git** | extracted text, every manifest, all CSVs, analyses, scripts, model |
+| **Untracked from git** | the binaries, once verified in the bucket. They stay on disk |
 
-The threshold is a starting point, not a principle. If the repository is still
-uncomfortable afterwards it can come down; moving more later is cheap once the machinery
-exists.
+Git keeps what is small, diffable, and read by everything. The bucket keeps the bytes and
+becomes the thing a person or an agent downloads from.
+
+### The bucket layout IS the public structure
+
+This is why the folder reorganisation had to come first. Keyed on the archive path, an
+object's address describes itself:
+
+    <bucket>/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf
+    <bucket>/munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx
+    <bucket>/meetings/school-committee/2026-06-24-minutes-7869.pdf
+
+A person landing on that URL can tell what they have and where it came from without
+consulting anything. Under the old layout the same object would have been
+`q3-fy26/town-general-fund-expenditures-fy26-q3.pdf` — a folder named for when we filed a
+request, which tells a stranger nothing.
+
+**So the layout is now load-bearing in a second way.** It was internal organisation; it
+becomes a published interface, and renaming a folder afterwards costs a redirect for every
+object under it. `plans/ARCHIVE-REORG.md` should be settled before the first upload.
 
 ## Safety — the part that matters
 
