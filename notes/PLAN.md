@@ -40,7 +40,8 @@ in the order they are:
 | | |
 |---|---|
 | **Live site** | `lunenburgbudgetproject.org` — tag **`v9.3`** |
-| **`main`** | at `v9.3`; substantial uncommitted work in the tree (Track 1) |
+| **`main`** | at `v9.3` |
+| **Branch `read-the-archive`** | `2f7a5ca` — all of Track 1. Not merged, not deployed |
 | **Deploy** | Node 22 via nvm, `npm run build:site`, then `npm run check:agents`. Tag at deploy time. **Nothing deploys without being asked** |
 | **Checks** | 19/19 database reconciliations tie; every verifier and builder exits 0 |
 | **Archive read** | 31 of 85 documents; 26 more held with 20+ rows, each with a recorded reason |
@@ -151,11 +152,14 @@ A budget line is not negative, and these are findable precisely because they are
 | A sentence read as a column header | Both are "two or more FY tokens on a line". Every real header here carries at most two non-year tokens; every false one carries four to a hundred and twenty-one |
 | An enrolment table read as a budget table | The same shape, different numbers. Median figure 9 against 1,750 for the smallest real budget document |
 
-### 1.6 Commit and deploy Track 1 — **next**
+### 1.6 Commit and deploy Track 1 — **committed, not deployed**
 
-Nothing since `v9.3` is committed. The tree holds the reader rewrite, the `variant` column,
-the corrected analysis, the DataRoom state and the newly generated data-model grids.
-**Deploying is a separate decision and has not been asked for.**
+Committed on branch **`read-the-archive`** as `2f7a5ca`, 495 files. The reader rewrite, the
+`variant` column, the corrected analysis, the DataRoom state and the generated data-model
+grids.
+
+**Not deployed, and not merged.** Rule 10: nothing deploys without being asked, every
+single time. Live is still `v9.3`.
 
 ---
 
