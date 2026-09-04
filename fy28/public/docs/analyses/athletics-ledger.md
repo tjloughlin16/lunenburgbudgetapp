@@ -5,7 +5,7 @@ five files. Three are MUNIS journal exports for the athletics revolving fund.
 One is the district's own sport-by-sport athletics workbook, covering three school years.
 One is a page of participation counts by fee category.
 
-Provenance, filenames and hashes: `sources/records-request-2026-06/PROVENANCE.md`.
+Provenance, filenames and hashes: `sources/munis-ledgers/account-details/PROVENANCE-fund1301.md`.
 
 This is the first time this project has held **a dated record of money moving** for anything
 that touches the school budget. The archive holds 3,230 documents and, before these arrived,
@@ -434,7 +434,7 @@ python3 scripts/extract_athletics_by_sport.py    # the sport workbook, and its 3
 python3 scripts/verify_records_request_2026_06.py  # every figure above, recomputed
 ```
 
-The sources are in `sources/records-request-2026-06/`, with `PROVENANCE.md` beside them
+The sources are in `sources/munis-ledgers/account-details/`, with `PROVENANCE.md` beside them
 carrying the town's own filenames and a sha256 for each. The derived tables are
 `sources/data/fund-1301-cash-journal.csv`, `sources/data/athletics-by-sport.csv` and
 `sources/data/athletics-by-sport-reconciliation.csv`.

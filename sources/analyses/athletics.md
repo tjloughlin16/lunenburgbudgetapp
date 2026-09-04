@@ -54,7 +54,7 @@ only one of which is a record of money moving.
 | `narrative` | money discussed, no figure table | 53 |
 
 Of those ledger documents, exactly one reaches school budget **lines** on the general fund:
-`district-budget-page/text/fy23-quarterly-budget-update.txt`, covering one quarter of FY23.
+`district-budget/text/fy23-quarterly-budget-update.txt`, covering one quarter of FY23.
 Everything else the school analysis rests on is restatement.
 
 **Three of the eighteen arrived after this document was written**, on 17 June 2026, and they
@@ -75,7 +75,7 @@ every athletics line twice: once as money from the town, once as money from the 
 fees go into. It is the only document in the archive that does this. It shows that the
 town's athletics lines were never the whole cost.
 
-**The evidence.** `district-budget-page/docs/fy19-proposed-athletics-budget.pdf`, off the
+**The evidence.** `district-budget/docs/fy19-proposed-athletics-budget.pdf`, off the
 district's own budget page, link live as of 2026-08-29,
 sha256 `e0a7c5ba…`. Titled *Proposed FY19 MSHS Athletic Budget (Submitted to the
 Superintendent of Schools) AMENDED PROPOSED BUDGET*.
@@ -141,9 +141,9 @@ In FY19 the general fund carried officials and uniforms together at $48,117 whil
 carried $40,000 of transportation. At the point of the trade the two sides were within
 about $8,000 of each other.
 
-FY26 general fund figures are the `FY26 FINAL BUDGET` column of `xlsx/fy27-proposals.xlsx`;
+FY26 general fund figures are the `FY26 FINAL BUDGET` column of `budget-workbooks/fy27-proposals.xlsx`;
 `ATHLETIC OFFICIALS` and `REPLACEMENT OF UNIFORMS` are budgeted `-` from FY26 on. The fund
-vendors are `xlsx/school-funds-fy26.xlsx`, sheet `Athletics Revolving`, A23.
+vendors are `budget-workbooks/school-funds-fy26.xlsx`, sheet `Athletics Revolving`, A23.
 
 ---
 
@@ -505,12 +505,12 @@ one drifted:
 
 | file | sha256 (first 16) | what is taken from it |
 |---|---|---|
-| `district-budget-page/docs/fy19-proposed-athletics-budget.pdf` | `e0a7c5baa041112c` | §1, §2 — the FY19 split, all six years, both columns |
-| `xlsx/fy27-proposals.xlsx` | `94184d3b167a6e80` | §2, §3, §5 — FY26 general fund athletics; the transportation line |
-| `xlsx/school-funds-fy26.xlsx` | `2662ca779de6170d` | §2, §3, §4a — the fund's FY26 year-end reconciliation and vendors |
-| `q3-fy26/town-special-revenue-fy26-q3.xlsx` | `4b9777d83c747c1c` | §4a — fund 1301 as the town books it |
-| `district-budget-page/docs/fy23-quarterly-budget-update.pdf` | `6fb1e3a1b304e64d` | §4 — the only ledger view of a school line |
-| `q3-fy26/town-general-fund-expenditures-fy26-q3.pdf` | `5875562be5ee615f` | §4 — the ledger behind the Finance Committee memo |
+| `district-budget/docs/fy19-proposed-athletics-budget.pdf` | `e0a7c5baa041112c` | §1, §2 — the FY19 split, all six years, both columns |
+| `budget-workbooks/fy27-proposals.xlsx` | `94184d3b167a6e80` | §2, §3, §5 — FY26 general fund athletics; the transportation line |
+| `budget-workbooks/school-funds-fy26.xlsx` | `2662ca779de6170d` | §2, §3, §4a — the fund's FY26 year-end reconciliation and vendors |
+| `munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` | `4b9777d83c747c1c` | §4a — fund 1301 as the town books it |
+| `district-budget/docs/fy23-quarterly-budget-update.pdf` | `6fb1e3a1b304e64d` | §4 — the only ledger view of a school line |
+| `munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf` | `5875562be5ee615f` | §4 — the ledger behind the Finance Committee memo |
 
 Minutes cited in §4a: `minutes/school-committee/2025-09-03-minutes-7385`,
 `minutes/finance-committee/2025-07-08-minutes-7295`,
@@ -526,9 +526,9 @@ document's `plus TOTAL Revolving Fund 658` on line 31. Column headers are on lin
 Transcribed into `model/athletics.py → SPLIT_REPORTING` and rendered in the app.
 
     grep -n 'Athletic Transportation' \
-      sources/district-budget-page/text/fy19-proposed-athletics-budget.txt
+      sources/district-budget/text/fy19-proposed-athletics-budget.txt
 
-**§2 and §3, FY26 general fund athletics.** `xlsx/fy27-proposals.xlsx`, sheet
+**§2 and §3, FY26 general fund athletics.** `budget-workbooks/fy27-proposals.xlsx`, sheet
 `FY27 Budget Projection`, **column G** (`FY26` over `FINAL BUDGET`, cells `G4`/`G5`), summed
 over every row whose function header in column A begins `3510` — that is both
 `3510 - Athletic Expenses` and `3510 - Athletics Salaries`. Function headers are rows where
@@ -537,11 +537,11 @@ column A matches `^\d{4}\s*-`.
 **Read the workbook by cell reference, not by opening it.** Nine columns are hidden —
 `C, H, I, N, O, P, T, U, V` — including `C` (FY23 ACTUALS), `H` (FY26 actuals to date) and
 `I` (FY26 encumbrances to date). They do not appear on screen. Our second copy,
-`xlsx/fy27-budget-projection-3-25-26.xlsx`, is data-identical and hides a *different* set,
+`budget-workbooks/fy27-budget-projection-3-25-26.xlsx`, is data-identical and hides a *different* set,
 so the two files show a reader different tables. `data/document-basis.csv` records the
 hidden set for every workbook in the archive.
 
-**§2 and §3, the fund.** `xlsx/school-funds-fy26.xlsx`, sheet `Athletics Revolving`.
+**§2 and §3, the fund.** `budget-workbooks/school-funds-fy26.xlsx`, sheet `Athletics Revolving`.
 Vendors are a single text cell, `A23`. The expenditure categories are `A19`–`A22`; note
 that `A20` names transportation inside purchase of service. The roll-forward is `B5`–`B8`.
 
@@ -553,7 +553,7 @@ years; the verifier asserts that rather than hiding it.
 is the athletics expense org; `535016` is the transportation object code. The same object
 appears under three other orgs in that report, which is why the org code matters.
 
-**§4, the memo's arithmetic.** `q3-fy26/town-general-fund-expenditures-fy26-q3.txt`, the
+**§4, the memo's arithmetic.** `munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt`, the
 `GRAND TOTAL` line. Extracted by `scripts/extract_town_ledger.py`, which reconciles its
 output to that printed total before it will write.
 

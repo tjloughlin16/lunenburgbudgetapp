@@ -41,7 +41,7 @@ BUDGET_BASE = 51_189_961          # FY26 original appropriation, town-ledger-fy2
 BUDGET_REVISED = 51_531_199       # the same report's revised column at Q3
 TOWN_IMPLIED_BASE = 50_441_654    # what the Town's published 6.65% implies. Not reproducible
 
-# sources/dls-free-cash/free-cash-proof-lunenburg.xlsx, certified column for 2025
+# sources/dls/free-cash-proof-lunenburg.xlsx, certified column for 2025
 CERTIFIED = 3_354_370
 IDENTIFIED = 3_716_282
 UNSPENT_2025 = 2_457_761

@@ -24,14 +24,14 @@ import os, csv, sys, collections
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'sources/data/athletics-history.csv')
-FY19_DOC = 'district-budget-page/docs/fy19-proposed-athletics-budget.pdf'
-FUND_DOC = 'xlsx/school-funds-fy26.xlsx'
+FY19_DOC = 'district-budget/docs/fy19-proposed-athletics-budget.pdf'
+FUND_DOC = 'budget-workbooks/school-funds-fy26.xlsx'
 WORKBOOK = 'Athletics_v10.xlsx (citizen analysis, unpublished)'
 
 YEARS = [2014, 2015, 2016, 2017, 2018, 2019]
 
 # --- FY14-FY19, transcribed from the FY19 document -------------------------------------
-# Line numbers are of the text extraction, sources/district-budget-page/text/.
+# Line numbers are of the text extraction, sources/district-budget/text/.
 # Column headers are on lines 4 and 5: FY14..FY19 over Actual/Actual/Actual/Actual/
 # Budgeted/Requested. So FY14-FY17 are actuals; FY18 is a budget; FY19 is a request.
 GENERAL = {                                       # line
@@ -143,7 +143,7 @@ def main():
     try:
         import openpyxl, re
         ws = openpyxl.load_workbook(
-            os.path.join(ROOT, 'sources/xlsx/fy27-proposals.xlsx'), data_only=True).active
+            os.path.join(ROOT, 'sources/budget-workbooks/fy27-proposals.xlsx'), data_only=True).active
         cur = None
         for r in range(6, ws.max_row + 1):
             a, b, v = ws.cell(r, 1).value, ws.cell(r, 2).value, ws.cell(r, 7).value
@@ -152,7 +152,7 @@ def main():
             if cur and cur.startswith('3510') and b and isinstance(v, (int, float)) and v:
                 rows.append(dict(fy=2026, side='general', item=b.strip().title(),
                                  amount=round(v, 2), basis='budget',
-                                 source='xlsx/fy27-proposals.xlsx'))
+                                 source='budget-workbooks/fy27-proposals.xlsx'))
     except ImportError:
         print('  openpyxl missing — FY26 general side skipped')
 

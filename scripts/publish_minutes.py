@@ -41,9 +41,14 @@ import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources', 'minutes')
+SRC = os.path.join(ROOT, 'sources', 'meetings')
 TEXT = os.path.join(SRC, 'text')
 PUB = os.path.join(ROOT, 'fy28', 'public')
+# The SOURCE folder is sources/meetings/; the PUBLISHED path stays /docs/minutes/.
+# A folder name is internal and a URL is a contract: llms.txt tells agents to cite
+# /docs/minutes/text/<board>/..., documents.json embeds 1,422 of those paths, and
+# functions/minutes/[[path]].js serves the bundles. Renaming the folder should cost
+# nobody a link.
 DOCS_OUT = os.path.join(PUB, 'docs', 'minutes', 'text')
 BUNDLE_OUT = os.path.join(PUB, 'minutes')
 SITE = 'https://lunenburgbudgetproject.org'

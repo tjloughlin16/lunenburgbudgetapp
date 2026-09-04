@@ -43,7 +43,7 @@ def from_legacy_doc(path: pathlib.Path) -> str:
         raise RuntimeError(r.stderr.decode('utf8', errors='replace').strip() or 'textutil failed')
     return r.stdout.decode('utf8', errors='replace')
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent / 'sources' / 'minutes'
+ROOT = pathlib.Path(__file__).resolve().parent.parent / 'sources' / 'meetings'
 TEXT = ROOT / 'text'
 scanned, done, failed = [], 0, []
 

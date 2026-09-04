@@ -85,7 +85,12 @@ ratio = cert[('Lunenburg', 2025)] / budget * 100
 says('free cash as a share of that budget', f'{ratio:.2f}%')
 
 print('\n5. the town’s own statement, quoted from its press release')
-PR = os.path.join(ROOT, 'sources', 'txt', 'town-fy27-budget-press-release.txt')
+# The curated copy under sources/txt/ was a byte-identical duplicate of the town's
+# own mirrored file and was deleted in the 4 September reorganisation. This is the
+# publisher's copy, under the publisher's own filename, which rule 12 wants anyway.
+PR = os.path.join(ROOT, 'sources', 'town-budget', 'text',
+                  '4090-click-here-for-a-release-on-quot-understanding-lunenburg-'
+                  'apos-s-fy27-budget-how-.txt')
 pr = re.sub(r'\s+', ' ', open(PR, encoding='utf-8', errors='ignore').read())
 for quote in ['5-7% of its annual budget',
               'certified a record $3.354 million in free cash',

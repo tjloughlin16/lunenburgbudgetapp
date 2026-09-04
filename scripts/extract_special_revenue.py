@@ -1,6 +1,6 @@
 """The school department's funds outside the general fund appropriation.
 
-`sources/q3-fy26/town-special-revenue-fy26-q3.xlsx`, obtained from the Town by records
+`sources/munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx`, obtained from the Town by records
 request, FY26 through 31 March 2026. Sixty-two school fund rows: every grant and revolving
 account the district holds, by fund number and by the town's own name for it, with revenue,
 salaries paid, other expenditure, encumbrances and balance.
@@ -17,7 +17,7 @@ negative. They are flipped here to read as money.
 import os, csv, collections
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources/q3-fy26/town-special-revenue-fy26-q3.xlsx')
+SRC = os.path.join(ROOT, 'sources/munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx')
 OUT = os.path.join(ROOT, 'sources/data/school-special-revenue-fy26-q3.csv')
 SCHOOL_ORG = 300
 

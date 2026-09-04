@@ -1,0 +1,618 @@
+<title>Follow The Money</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+
+<style>
+:root{
+  --ground:#F5F6F4; --surface:#FFFFFF; --sunk:#EBEDE9;
+  --ink:#181C18; --body:#39423A; --muted:#6A736B;
+  --rule:#D9DED8; --rule-firm:#B7BFB6;
+  --accent:#2F5D46;      /* appropriated: voted, and inside the budget document */
+  --outside:#9A5B12;     /* the school's own Funds: never voted, never in it */
+  --town:#3A5670;        /* the rest of the town */
+  --measure:68ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#111412; --surface:#191D1A; --sunk:#1F2421;
+    --ink:#E9EDE9; --body:#C3CAC4; --muted:#8B958C;
+    --rule:#2A312C; --rule-firm:#3D453F;
+    --accent:#7DBFA0; --outside:#D9A55E; --town:#8FB0CC;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111412; --surface:#191D1A; --sunk:#1F2421;
+  --ink:#E9EDE9; --body:#C3CAC4; --muted:#8B958C;
+  --rule:#2A312C; --rule-firm:#3D453F;
+  --accent:#7DBFA0; --outside:#D9A55E; --town:#8FB0CC;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--body);
+  font-family:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;font-size:16px;
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:78rem;margin:0 auto;padding:0 1.75rem 6rem}
+
+.masthead{border-bottom:2px solid var(--ink);padding:3.5rem 0 1.3rem;margin-bottom:2rem;
+  max-width:var(--measure)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 1rem}
+h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:clamp(2.3rem,5.6vw,3.4rem);
+  line-height:1.04;letter-spacing:-.018em;color:var(--ink);margin:0;text-wrap:balance}
+.standfirst{font-family:Newsreader,Georgia,serif;font-size:clamp(1.12rem,2.2vw,1.32rem);
+  line-height:1.45;color:var(--ink);margin:1.2rem 0 0;text-wrap:pretty}
+
+.answer{border:1px solid var(--rule);background:var(--surface);margin:0 0 3rem}
+.answer .hd{background:var(--sunk);padding:.7rem 1.1rem;font-family:"IBM Plex Mono",monospace;
+  font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink)}
+.answer table{width:100%;border-collapse:collapse;font-size:.92rem}
+.answer td{padding:.6rem 1.1rem;border-bottom:1px solid var(--rule);vertical-align:baseline}
+.answer tr:last-child td{border-bottom:0}
+.answer td.v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;
+  color:var(--ink);font-weight:500}
+.answer td.b{font-size:.78rem;color:var(--muted);white-space:nowrap}
+.answer tr.sum td{background:var(--sunk);font-weight:600;color:var(--ink)}
+.answer tr.sum td.v{font-size:1.05rem}
+
+figure{margin:0 0 1rem}
+.board{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);
+  padding:1rem;margin:0 0 .9rem}
+.board svg{display:block;width:100%;height:auto;color:var(--ink)}
+.board.wide svg{min-width:1120px}
+figcaption{font-size:.88rem;color:var(--muted);max-width:var(--measure);margin:0 0 2.6rem}
+figcaption b{color:var(--ink);font-weight:600}
+
+h2{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:clamp(1.55rem,3.2vw,2rem);
+  line-height:1.14;color:var(--ink);margin:0 0 .6rem;border-top:2px solid var(--ink);
+  padding-top:.85rem;max-width:var(--measure);text-wrap:balance}
+h3{font-family:"IBM Plex Sans",sans-serif;font-size:1rem;font-weight:600;color:var(--ink);
+  margin:1.6rem 0 .5rem}
+section{margin:0 0 3rem}
+p{max-width:var(--measure)}
+strong{color:var(--ink);font-weight:600}
+code{font-family:"IBM Plex Mono",monospace;font-size:.86em;background:var(--sunk);
+  padding:.08em .32em;border-radius:2px;color:var(--ink)}
+
+.scroller{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);margin:0 0 1rem}
+table.d{border-collapse:collapse;width:100%;min-width:34rem;font-size:.86rem}
+table.d th,table.d td{text-align:left;padding:.5rem .8rem;border-bottom:1px solid var(--rule);
+  vertical-align:top}
+table.d thead th{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--sunk)}
+table.d tbody tr:last-child td{border-bottom:0}
+table.d td.lead{color:var(--ink);font-weight:500}
+table.d td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.d tr.tot td{background:var(--sunk);font-weight:600;color:var(--ink)}
+.fundno{font-family:"IBM Plex Mono",monospace;color:var(--muted)}
+
+.note{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--outside);
+  padding:.95rem 1.1rem;margin:0 0 1rem;max-width:var(--measure);font-size:.93rem}
+.note.hard{border-left-color:var(--accent)}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--rule-firm);padding-top:1.3rem;font-size:.84rem;
+  color:var(--muted);max-width:var(--measure)}
+@media (max-width:34rem){.wrap{padding:0 1.1rem 4rem}}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Lunenburg Budget Project · Data architecture · high level</p>
+  <h1>Follow the money</h1>
+  <p class="standfirst">Every route into Lunenburg’s school budget and out the other side, level by level — and the level at which each trail goes cold.</p>
+</header>
+
+<div class="answer">
+  <div class="hd">The answer, FY2026</div>
+  <table>
+    <tr><td>Town Meeting appropriation — <span class="fundno">dept 300</span> School Department</td><td class="b">budget</td><td class="v">$26,323,868</td></tr>
+    <tr><td>Town Meeting appropriation — <span class="fundno">dept 301</span> non-recurring</td><td class="b">budget</td><td class="v">$35,777</td></tr>
+    <tr class="sum"><td>Appropriated — 51.2% of the town’s whole omnibus</td><td class="b">budget</td><td class="v">$26,359,645</td></tr>
+    <tr><td>The school’s own Funds — money in</td><td class="b">actual</td><td class="v">$1,553,151</td></tr>
+    <tr><td>The school’s own Funds — money out</td><td class="b">actual</td><td class="v">$1,736,376</td></tr>
+    <tr><td>…and held in those Funds at Q3</td><td class="b">actual</td><td class="v">$1,592,572</td></tr>
+    <tr class="sum"><td>Everything the schools spent in FY2026</td><td class="b">mixed basis</td><td class="v">$28,096,021</td></tr>
+  </table>
+</div>
+
+<div class="note hard">
+  <b>That last row adds a budget to an actual, and this project’s first rule forbids it.</b> The appropriation is what was authorised; the Fund figure is what was spent. They are on different bases and there is no document that puts them on the same one — which is the honest form of the answer, not a caveat on it. Read it as “about $28.1M passed through the schools,” never as a figure to compute a rate from.
+</div>
+
+<section>
+  <h2>Everything that comes in, and who spends it</h2>
+  <p>Sources on the left, the departments that spend the money on the right, and between them <strong>one channel</strong>. Everything arriving in that channel stops being what it was; everything on the right draws from it. That single fact is why there is no arrow from Chapter 70 to the school — and the school is only one of the sixty-seven blocks pulling from the same rail.</p>
+  <p>The school’s own Funds are drawn beneath, because they are the one thing that never touches the channel at all.</p>
+  <figure>
+    <div class="board wide">
+      <svg viewBox="0 0 1400 633" role="img"
+        aria-label="Lunenburg FY2026. Sources on the left — state aid for education 9,573,970 dollars comprising Chapter 70, circuit breaker and charter reimbursement; general municipal state aid 1,629,398; property tax 35,276,996; free cash, motor vehicle excise and local receipts — all feed a single channel. From that channel, 67 departments draw: the school department at 26,359,645 dollars, 51.2 percent, then insurance, police, refuse, fire, debt, Monty Tech, capital transfers, state assessments and 57 more. No document records which source paid for which department. Separately, the school's own Funds of 1,736,376 dollars never enter the channel and go straight to the school.">
+        <defs>
+          <marker id="i1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+          <marker id="i2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--outside)"/></marker>
+        </defs>
+        <text x="20" y="22" font-size="11" font-weight="600" letter-spacing="1.3" fill="currentColor" opacity=".6">EACH SOURCE</text>
+        <text x="320" y="22" font-size="11" font-weight="600" letter-spacing="1.3" fill="currentColor" opacity=".6">GROUPED</text>
+        <text x="880" y="22" font-size="11" font-weight="600" letter-spacing="1.3" fill="currentColor" opacity=".6">WHO SPENDS IT</text>
+        <rect x="20" y="42" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <text x="31" y="62" font-size="11.5" fill="currentColor" font-weight="600">Chapter 70</text>
+        <text x="261" y="62" font-size="11.5" text-anchor="end" fill="currentColor" font-weight="600">$9,229,410</text>
+        <rect x="20" y="76" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="96" font-size="11.5" fill="currentColor">Circuit breaker</text>
+        <text x="261" y="96" font-size="11.5" text-anchor="end" fill="currentColor">$318,424</text>
+        <rect x="20" y="110" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="130" font-size="11.5" fill="currentColor">Charter reimbursement</text>
+        <text x="261" y="130" font-size="11.5" text-anchor="end" fill="currentColor">$26,136</text>
+        <rect x="320" y="68.0" width="206" height="46" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <text x="423.0" y="88.0" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor">STATE AID FOR EDUCATION</text>
+        <text x="423.0" y="105.0" font-size="11" text-anchor="middle" fill="currentColor" opacity=".85">$9,573,970</text>
+        <path d="M272,57 C298,57 298,91 320,91" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="0.85"/>
+        <path d="M272,91 C298,91 298,91 320,91" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="0.85"/>
+        <path d="M272,125 C298,125 298,91 320,91" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="0.85"/>
+        <rect x="20" y="158" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="178" font-size="11.5" fill="currentColor">Unrestricted aid (UGGA)</text>
+        <text x="261" y="178" font-size="11.5" text-anchor="end" fill="currentColor">$1,316,438</text>
+        <rect x="20" y="192" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="212" font-size="11.5" fill="currentColor">Meals tax, abatements, land</text>
+        <text x="261" y="212" font-size="11.5" text-anchor="end" fill="currentColor">$312,960</text>
+        <rect x="320" y="167.0" width="206" height="46" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <text x="423.0" y="187.0" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor">STATE AID, GENERAL MUNICIPAL</text>
+        <text x="423.0" y="204.0" font-size="11" text-anchor="middle" fill="currentColor" opacity=".85">$1,629,398</text>
+        <path d="M272,173 C298,173 298,190 320,190" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="0.85"/>
+        <path d="M272,207 C298,207 298,190 320,190" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="0.85"/>
+        <rect x="20" y="240" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <text x="31" y="260" font-size="11.5" fill="currentColor" font-weight="600">Property tax</text>
+        <text x="261" y="260" font-size="11.5" text-anchor="end" fill="currentColor" font-weight="600">$35,276,996</text>
+        <rect x="20" y="274" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="294" font-size="11.5" fill="currentColor">Free cash, transfers in</text>
+        <text x="261" y="294" font-size="11.5" text-anchor="end" fill="currentColor">$2,614,344</text>
+        <rect x="20" y="308" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="328" font-size="11.5" fill="currentColor">Motor vehicle excise</text>
+        <text x="261" y="328" font-size="11.5" text-anchor="end" fill="currentColor">$1,875,000</text>
+        <rect x="20" y="342" width="252" height="30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <text x="31" y="362" font-size="11.5" fill="currentColor">Local receipts (56 kinds)</text>
+        <text x="261" y="362" font-size="11.5" text-anchor="end" fill="currentColor">$1,245,624</text>
+        <rect x="880" y="42" width="330" height="70" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
+        <text x="892" y="64" font-size="13" font-weight="600" fill="var(--accent)">School Department 300 + 301</text>
+        <text x="1198" y="64" font-size="13" text-anchor="end" font-weight="600" fill="var(--accent)">$26,359,645</text>
+        <text x="892" y="82" font-size="10.5" fill="var(--accent)" opacity=".8">51.2% of it — voted in the same article as all the rest</text>
+        <line x1="892" y1="90" x2="1198" y2="90" stroke="var(--outside)" stroke-width="1" opacity=".5"/>
+        <text x="892" y="105" font-size="11.5" font-weight="600" fill="var(--outside)">+ its own Funds, which never touch the rail</text>
+        <text x="1198" y="105" font-size="11.5" text-anchor="end" font-weight="600" fill="var(--outside)">$1,736,376</text>
+        <rect x="880" y="117" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="134" font-size="11" fill="currentColor" opacity=".7">Insurance</text>
+        <text x="1199" y="134" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$3,713,520</text>
+        <rect x="880" y="148" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="165" font-size="11" fill="currentColor" opacity=".7">Police</text>
+        <text x="1199" y="165" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$2,477,841</text>
+        <rect x="880" y="179" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="196" font-size="11" fill="currentColor" opacity=".7">Regional refuse assessment</text>
+        <text x="1199" y="196" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$2,392,572</text>
+        <rect x="880" y="210" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="227" font-size="11" fill="currentColor" opacity=".7">Fire</text>
+        <text x="1199" y="227" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$1,721,086</text>
+        <rect x="880" y="241" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="258" font-size="11" fill="currentColor" opacity=".7">Debt — principal</text>
+        <text x="1199" y="258" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$1,506,369</text>
+        <rect x="880" y="272" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="289" font-size="11" fill="currentColor" opacity=".7">Monty Tech assessment</text>
+        <text x="1199" y="289" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$1,334,521</text>
+        <rect x="880" y="303" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="320" font-size="11" fill="currentColor" opacity=".7">Transfer to capital projects</text>
+        <text x="1199" y="320" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$1,057,117</text>
+        <rect x="880" y="334" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="351" font-size="11" fill="currentColor" opacity=".7">Debt — interest</text>
+        <text x="1199" y="351" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$1,039,840</text>
+        <rect x="880" y="365" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="382" font-size="11" fill="currentColor" opacity=".7">State assessments</text>
+        <text x="1199" y="382" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$1,028,529</text>
+        <rect x="880" y="396" width="330" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <text x="891" y="413" font-size="11" fill="currentColor" opacity=".7">…and 57 more departments</text>
+        <text x="1199" y="413" font-size="11" text-anchor="end" fill="currentColor" opacity=".7">$8,900,159</text>
+        <rect x="633" y="36" width="14" height="395" fill="none" stroke="currentColor" stroke-width="2.2"/>
+        <text x="640" y="22" font-size="11.5" font-weight="600" text-anchor="middle" fill="currentColor">ONE CHANNEL</text>
+        <text x="662" y="451" font-size="11" fill="currentColor" opacity=".7">Everything on the left arrives here and stops being what it was. Everything on the right draws from it.</text>
+        <text x="662" y="469" font-size="11" fill="currentColor" opacity=".7">No document records which arrow on the left paid for which block on the right — that is the whole of it.</text>
+        <path d="M526,91 C585,91 585,91 633,91" fill="none" stroke="currentColor" stroke-width="1.8" marker-end="url(#i1)" opacity="1.0"/>
+        <path d="M526,190 C585,190 585,190 633,190" fill="none" stroke="currentColor" stroke-width="1.8" marker-end="url(#i1)" opacity="1.0"/>
+        <path d="M272,255 C471,255 471,255 633,255" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#i1)" opacity="1.0"/>
+        <path d="M272,289 C471,289 471,289 633,289" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="1.0"/>
+        <path d="M272,323 C471,323 471,323 633,323" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="1.0"/>
+        <path d="M272,357 C471,357 471,357 633,357" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#i1)" opacity="1.0"/>
+        <path d="M647,66 C775,66 775,66 880,66" fill="none" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#i1)" opacity="1"/>
+        <path d="M647,130 C775,130 775,130 880,130" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,161 C775,161 775,161 880,161" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,192 C775,192 775,192 880,192" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,223 C775,223 775,223 880,223" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,254 C775,254 775,254 880,254" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,285 C775,285 775,285 880,285" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,316 C775,316 775,316 880,316" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,347 C775,347 775,347 880,347" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,378 C775,378 775,378 880,378" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <path d="M647,409 C775,409 775,409 880,409" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#i1)" opacity="0.38"/>
+        <rect x="20" y="487" width="252" height="30" fill="none" stroke="var(--outside)" stroke-width="1.1"/>
+        <text x="31" y="507" font-size="11.5" fill="var(--outside)">Fees from families</text>
+        <text x="261" y="507" font-size="11.5" text-anchor="end" fill="var(--outside)">$1,184,493</text>
+        <rect x="20" y="521" width="252" height="30" fill="none" stroke="var(--outside)" stroke-width="1.1"/>
+        <text x="31" y="541" font-size="11.5" fill="var(--outside)">Federal &amp; state grants</text>
+        <text x="261" y="541" font-size="11.5" text-anchor="end" fill="var(--outside)">$514,410</text>
+        <rect x="20" y="555" width="252" height="30" fill="none" stroke="var(--outside)" stroke-width="1.1"/>
+        <text x="31" y="575" font-size="11.5" fill="var(--outside)">Choice, circuit breaker, gifts</text>
+        <text x="261" y="575" font-size="11.5" text-anchor="end" fill="var(--outside)">$37,473</text>
+        <rect x="320" y="513.0" width="206" height="46" fill="none" stroke="var(--outside)" stroke-width="1.8"/>
+        <text x="423.0" y="533.0" font-size="12" font-weight="600" text-anchor="middle" fill="var(--outside)">THE SCHOOL’S OWN FUNDS</text>
+        <text x="423.0" y="550.0" font-size="11" text-anchor="middle" fill="var(--outside)" opacity=".85">$1,736,376</text>
+        <path d="M272,502 C298,502 298,536 320,536" fill="none" stroke="var(--outside)" stroke-width="1.2" marker-end="url(#i2)" opacity="1.0"/>
+        <path d="M272,536 C298,536 298,536 320,536" fill="none" stroke="var(--outside)" stroke-width="1.2" marker-end="url(#i2)" opacity="1.0"/>
+        <path d="M272,570 C298,570 298,536 320,536" fill="none" stroke="var(--outside)" stroke-width="1.2" marker-end="url(#i2)" opacity="1.0"/>
+        <path d="M526,536 C660,536 820,536 850,106 L880,106" fill="none" stroke="var(--outside)" stroke-width="2.4" marker-end="url(#i2)"/>
+        <text x="544" y="524" font-size="11.5" font-weight="600" fill="var(--outside)">never enters the channel — straight to the school</text>
+      </svg>
+    </div>
+    <figcaption><b>One channel, sixty-seven draws.</b> The channel is the town’s general fund; it is drawn as a rail rather than a box because a box invites you to read it as a stage money passes <em>through</em>, when what it does is <em>mix</em>. Sources are FY2026 budgeted revenue, departments the FY2026 revised budget at period 9, and the school’s own Funds actual spending at Q3.</figcaption>
+  </figure>
+  <div class="note hard">
+    <b>Why the state aid does not add on top.</b> $9,573,970 of state aid for education is a <em>source</em> feeding the channel. The school’s $26,359,645 is a <em>draw</em> from it. They are the same money seen at two different points, so adding them would count it twice — which is exactly what an earlier version of this page did, and it inflated the education share.
+    <br><br>
+    State aid for education is <strong>18.3% of what goes into the channel</strong>. The school takes <strong>51.2% of what comes out</strong>. Both are true, neither connects to the other, and the honest total for the schools stays $26,359,645 + $1,736,376 = <strong>$28,096,021</strong>.
+  </div>
+</section>
+
+<section>
+  <h2>How much of it is education money</h2>
+  <p>The diagram above cannot answer this, and the reason is the finding rather than a flaw in the drawing: <strong>Chapter 70 has no arrow to the school budget because there is no such arrow.</strong> It enters the town’s single pot and stops being that money. But the question is a fair one and it does have an answer — just a different <em>kind</em> of answer, so it gets a different kind of mark.</p>
+  <figure>
+    <div class="board">
+      <svg viewBox="0 0 1200 360" role="img"
+        aria-label="Of the 28,096,021 dollars reaching Lunenburg's schools in FY2026, 10,092,385 — 35.9 percent — was computed by the state or federal government for education. Of that, 9,573,970 enters the town's general fund and can never be followed further, and only 518,415 arrives in school Funds where it stays separable. Chapter 70 alone, at 9,229,410, is the same size as 35 percent of the school appropriation, which is a comparison and not a trace.">
+        <text x="20" y="26" font-size="12" font-weight="600" letter-spacing="1.3" fill="currentColor">EVERYTHING REACHING THE SCHOOLS, FY2026</text>
+        <rect x="20" y="40" width="1100" height="46" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="570" y="69" font-size="14" font-weight="600" text-anchor="middle" fill="currentColor">$28,096,021</text>
+
+        <text x="20" y="126" font-size="12" font-weight="600" letter-spacing="1.3" fill="currentColor">…OF WHICH, MONEY THE STATE OR FEDERAL GOVERNMENT COMPUTED FOR EDUCATION</text>
+
+        <rect x="20" y="140" width="375" height="46" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
+        <rect x="395" y="140" width="20" height="46" fill="none" stroke="var(--outside)" stroke-width="2"/>
+        <line x1="415" y1="140" x2="1120" y2="140" stroke="currentColor" stroke-width="1" opacity=".2"/>
+        <line x1="415" y1="186" x2="1120" y2="186" stroke="currentColor" stroke-width="1" opacity=".2"/>
+
+        <text x="30" y="169" font-size="13" font-weight="600" fill="currentColor">$9,573,970 — into the town’s pot</text>
+        <text x="440" y="163" font-size="12" font-weight="600" fill="var(--outside)">$518,415</text>
+        <text x="440" y="180" font-size="11" fill="var(--outside)">into school Funds</text>
+        <text x="700" y="169" font-size="12.5" fill="currentColor" opacity=".65">$10,092,385 of $28,096,021 — 35.9%</text>
+
+        <text x="20" y="216" font-size="11.5" fill="currentColor" opacity=".8">Chapter 70 $9,229,410 · circuit breaker $318,424 · charter reimbursement $26,136</text>
+        <text x="20" y="234" font-size="11.5" fill="currentColor" opacity=".55">dashed because it mixes on arrival and cannot be followed one step further</text>
+        <text x="440" y="216" font-size="11.5" fill="var(--outside)" opacity=".9">#240, SOA, Titles, circuit breaker Fund</text>
+        <text x="440" y="234" font-size="11.5" fill="var(--outside)" opacity=".7">solid because each keeps a Fund of its own</text>
+
+        <line x1="20" y1="264" x2="1120" y2="264" stroke="currentColor" stroke-width="1" opacity=".25"/>
+
+        <text x="20" y="292" font-size="12" font-weight="600" letter-spacing="1.3" fill="var(--accent)">AND THE ONE COMPARISON WORTH MAKING</text>
+        <rect x="20" y="304" width="1032" height="34" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+        <rect x="20" y="304" width="361" height="34" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-dasharray="5 3"/>
+        <text x="30" y="326" font-size="12.5" font-weight="600" fill="var(--accent)">Chapter 70, $9,229,410</text>
+        <text x="400" y="326" font-size="12.5" fill="var(--accent)">is the same size as 35.0% of the $26,359,645 appropriation</text>
+        <text x="1062" y="326" font-size="11" fill="var(--accent)" opacity=".7">appropriation</text>
+
+        <text x="20" y="356" font-size="11.5" fill="currentColor" opacity=".7">That is a RATIO, not a route. It says how big the aid is beside the budget. It does not say the aid paid for any part of it, and no document does.</text>
+      </svg>
+    </div>
+    <figcaption><b>Two different questions, two different marks.</b> Solid boxes are money that can be followed. The dashed box is money that is education money by origin and untraceable by path — computed by DESE from this district’s own foundation budget, then paid to the town, where it becomes indistinguishable from a property tax dollar.</figcaption>
+  </figure>
+  <div class="note">
+    <b>Why this is worth being careful about.</b> Massachusetts sets a minimum the town must spend on its schools, and Chapter 70 is calculated from the district’s foundation budget — so the aid is education money in every sense except the one that would let you trace it. Above that minimum the allocation is the town’s to make, and nothing in the archive establishes what Lunenburg’s requirement is or where it sits against the $26.4M. That is a document we do not have, not a calculation we have not done.
+  </div>
+</section>
+
+<section>
+  <h2>Follow one dollar, six levels down</h2>
+  <p>Four dollars enter the school budget by four different doors. Each passes through the same six levels, and each stops being followable at a different one. <strong>The level where a trail ends is the whole finding of this project</strong> — every standing question is a question about a level below the one we can reach.</p>
+  <figure>
+    <div class="board wide">
+      <svg viewBox="0 0 1400 700" role="img"
+        aria-label="Four dollars traced through six levels: a property tax dollar, a Chapter 70 dollar, a federal grant dollar and a fee dollar paid by a family. Levels are origin, who collects it, which fund it lands in, what authorises spending it, what it appears as in a document, and what it actually buys. The tax dollar and the Chapter 70 dollar both go cold at level three when they enter the general fund and mix. The grant dollar and the fee dollar stay separable to level four but go cold at level six because only one fund's transaction journal has ever been provided.">
+        <defs>
+          <marker id="d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+        </defs>
+
+        <g font-size="11" fill="currentColor" opacity=".75" text-anchor="end">
+          <text x="176" y="92">LEVEL 1 · origin</text>
+          <text x="176" y="182">LEVEL 2 · who collects it</text>
+          <text x="176" y="272">LEVEL 3 · which Fund</text>
+          <text x="176" y="362">LEVEL 4 · what authorises it</text>
+          <text x="176" y="452">LEVEL 5 · what it appears as</text>
+          <text x="176" y="542">LEVEL 6 · what it actually buys</text>
+        </g>
+        <g stroke="currentColor" stroke-width="1" opacity=".18">
+          <line x1="196" y1="112" x2="1380" y2="112"/><line x1="196" y1="202" x2="1380" y2="202"/>
+          <line x1="196" y1="292" x2="1380" y2="292"/><line x1="196" y1="382" x2="1380" y2="382"/>
+          <line x1="196" y1="472" x2="1380" y2="472"/><line x1="196" y1="562" x2="1380" y2="562"/>
+        </g>
+
+        <g font-size="12" text-anchor="middle">
+          <text x="345" y="40" font-size="12.5" font-weight="600" fill="currentColor">A PROPERTY TAX DOLLAR</text>
+          <text x="640" y="40" font-size="12.5" font-weight="600" fill="currentColor">A CHAPTER 70 DOLLAR</text>
+          <text x="935" y="40" font-size="12.5" font-weight="600" fill="var(--outside)">A GRANT DOLLAR</text>
+          <text x="1230" y="40" font-size="12.5" font-weight="600" fill="var(--outside)">A FEE DOLLAR</text>
+
+          <text x="345" y="88" fill="currentColor">A Lunenburg homeowner</text>
+          <text x="640" y="88" fill="currentColor">The Commonwealth</text>
+          <text x="935" y="88" fill="var(--outside)">US Dept of Education</text>
+          <text x="1230" y="88" fill="var(--outside)">A family, for lunch</text>
+
+          <text x="345" y="178" fill="currentColor">Town Collector</text>
+          <text x="640" y="178" fill="currentColor">Cherry sheet, to the Town</text>
+          <text x="935" y="178" fill="var(--outside)">DESE, passed through</text>
+          <text x="1230" y="178" fill="var(--outside)">The school office</text>
+
+          <text x="345" y="262" font-weight="600" fill="currentColor">General Fund 0100</text>
+          <text x="345" y="280" font-size="10.5" fill="currentColor" opacity=".7">mixed with everything</text>
+          <text x="640" y="262" font-weight="600" fill="currentColor">General Fund 0100</text>
+          <text x="640" y="280" font-size="10.5" fill="currentColor" opacity=".7">no Chapter 70 Fund exists</text>
+          <text x="935" y="262" font-weight="600" fill="var(--outside)">Fund 2814</text>
+          <text x="935" y="280" font-size="10.5" fill="var(--outside)" opacity=".8">its own Fund, kept apart</text>
+          <text x="1230" y="262" font-weight="600" fill="var(--outside)">Fund 2200</text>
+          <text x="1230" y="280" font-size="10.5" fill="var(--outside)" opacity=".8">its own Fund, kept apart</text>
+
+          <text x="492" y="352" font-weight="600" fill="currentColor">Town Meeting omnibus vote</text>
+          <text x="492" y="370" font-size="10.5" fill="currentColor" opacity=".7">$26,359,645 to depts 300 and 301</text>
+          <text x="1082" y="352" font-weight="600" fill="var(--outside)">Nothing. No vote at all</text>
+          <text x="1082" y="370" font-size="10.5" fill="var(--outside)" opacity=".8">the Fund’s own statute is the authority</text>
+
+          <text x="492" y="442" font-weight="600" fill="currentColor">One of ~350 budget lines</text>
+          <text x="492" y="460" font-size="10.5" fill="currentColor" opacity=".7">net of fees and reimbursements</text>
+          <text x="1082" y="442" font-weight="600" fill="var(--outside)">Nothing. No line, no document</text>
+          <text x="1082" y="460" font-size="10.5" fill="var(--outside)" opacity=".8">a Fund balance, and no detail under it</text>
+
+          <text x="492" y="532" font-weight="600" fill="currentColor">Payroll and vendors</text>
+          <text x="1082" y="532" font-weight="600" fill="var(--outside)">Payroll and vendors</text>
+        </g>
+
+        <g stroke="currentColor" stroke-width="1.4" fill="none" marker-end="url(#d)" opacity=".8">
+          <line x1="345" y1="96" x2="345" y2="160"/><line x1="640" y1="96" x2="640" y2="160"/>
+          <line x1="345" y1="186" x2="345" y2="244"/><line x1="640" y1="186" x2="640" y2="244"/>
+          <path d="M345,290 C345,320 470,315 490,334"/><path d="M640,290 C640,320 510,315 494,334"/>
+          <line x1="492" y1="378" x2="492" y2="424"/><line x1="492" y1="468" x2="492" y2="514"/>
+        </g>
+        <g stroke="var(--outside)" stroke-width="1.4" fill="none" marker-end="url(#d)">
+          <line x1="935" y1="96" x2="935" y2="160"/><line x1="1230" y1="96" x2="1230" y2="160"/>
+          <line x1="935" y1="186" x2="935" y2="244"/><line x1="1230" y1="186" x2="1230" y2="244"/>
+          <path d="M935,290 C935,320 1060,315 1080,334"/><path d="M1230,290 C1230,320 1104,315 1084,334"/>
+          <line x1="1082" y1="378" x2="1082" y2="424"/><line x1="1082" y1="468" x2="1082" y2="514"/>
+        </g>
+
+        <rect x="200" y="238" width="880" height="58" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" opacity=".55"/>
+        <text x="1092" y="262" font-size="11.5" font-weight="600" fill="currentColor" opacity=".9">◀ TRAIL GOES COLD</text>
+        <text x="1092" y="279" font-size="10.5" fill="currentColor" opacity=".7">both mix into one pot and cannot be told apart again</text>
+
+        <rect x="200" y="508" width="1180" height="54" fill="none" stroke="var(--outside)" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="700" y="588" font-size="12" font-weight="600" text-anchor="middle" fill="var(--outside)">◀ AND HERE EVERY TRAIL GOES COLD ▶</text>
+
+        <line x1="196" y1="606" x2="1380" y2="606" stroke="currentColor" stroke-width="1" opacity=".25"/>
+        <text x="200" y="632" font-size="12" font-weight="600" fill="currentColor">Level 6 needs the Account Detail journal, and we hold it for one Fund out of sixty-two</text>
+        <text x="200" y="654" font-size="11.5" fill="currentColor" opacity=".8">Fund 1301, athletics, 277 rows. For the appropriation, the general fund report reaches accounts once — FY2026 period 12, and only</text>
+        <text x="200" y="674" font-size="11.5" fill="currentColor" opacity=".8">because that one arrived as a spreadsheet. Every other period we hold shows the whole school district as a single row.</text>
+        <text x="200" y="694" font-size="11.5" fill="currentColor" opacity=".6">Nothing anywhere maps a grant, a fee or a reimbursement onto the budget line it paid for. No document does this.</text>
+      </svg>
+    </div>
+    <figcaption><b>Four dollars, six levels, two places the trail ends.</b> A tax dollar and a Chapter 70 dollar stop being distinguishable at level 3 — the general fund is one pot, and no report un-mixes it. Grant and fee dollars stay separable all the way down and then stop at level 6, where the only document that would carry them has been provided once, for athletics.</figcaption>
+  </figure>
+
+  <h3>Which is why the questions are the questions</h3>
+  <p>Every standing question this project has is a request to see one level lower than the archive reaches. <em>Did a grant pay for those paraprofessionals?</em> is level 6 on the grant column. <em>What did Chapter 70 buy?</em> is level 3 on a trail that ended two levels up. <em>Were the budgeted positions filled?</em> is a level below 6 that nothing records at all.</p>
+</section>
+
+<figure>
+  <div class="board wide">
+    <svg viewBox="0 0 1400 660" role="img"
+      aria-label="How money reaches Lunenburg Public Schools in FY2026. Route one: the town's general fund 0100, which mixes 52.2 million dollars of tax, state aid, free cash and local receipts and cannot be separated back into them, is voted at Town Meeting, and 26,359,645 dollars — 51.2 percent of the omnibus — is appropriated to departments 300 and 301. Route two: fees from families, federal and state grants, circuit breaker reimbursement and gifts land in 61 named school Funds and are spent straight out of them without a vote, 1,736,376 dollars across the 21 Funds with FY2026 activity.">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+        <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--outside)"/></marker>
+      </defs>
+
+      <text x="30" y="24" font-size="12" font-weight="600" letter-spacing="1.4" fill="currentColor">WHERE IT COMES FROM</text>
+      <text x="430" y="24" font-size="12" font-weight="600" letter-spacing="1.4" fill="currentColor">WHICH FUND IT LANDS IN</text>
+      <text x="820" y="24" font-size="12" font-weight="600" letter-spacing="1.4" fill="currentColor">HOW IT IS RELEASED</text>
+      <text x="1120" y="24" font-size="12" font-weight="600" letter-spacing="1.4" fill="currentColor">WHAT THE SCHOOL GETS</text>
+      <line x1="30" y1="34" x2="1370" y2="34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+
+      <!-- ROUTE 1 -->
+      <text x="30" y="62" font-size="11" font-weight="600" letter-spacing="1.2" fill="var(--accent)">ROUTE 1 — APPROPRIATED, AND IN THE BUDGET DOCUMENT</text>
+
+      <rect x="30" y="76" width="330" height="112" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".8"/>
+      <text x="44" y="98" font-size="12.5" fill="currentColor">The town’s whole revenue, mixed</text>
+      <text x="44" y="118" font-size="11" fill="currentColor" opacity=".7">property tax · Chapter 70 · excise · UGGA</text>
+      <text x="44" y="135" font-size="11" fill="currentColor" opacity=".7">free cash · local receipts · 222 accounts</text>
+      <text x="44" y="162" font-size="16" font-weight="600" fill="currentColor">$52,215,332</text>
+      <text x="44" y="180" font-size="10.5" fill="currentColor" opacity=".6">budgeted FY2026 — the TOWN’s, not the school’s</text>
+
+      <path d="M362,132 L432,132" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+      <rect x="437" y="86" width="290" height="92" fill="none" stroke="currentColor" stroke-width="2"/>
+      <text x="582" y="118" font-size="15" font-weight="600" text-anchor="middle" fill="currentColor">GENERAL FUND 0100</text>
+      <text x="582" y="140" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".75">one pot for the entire town</text>
+      <text x="582" y="160" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".75">and no longer separable by source</text>
+
+      <path d="M729,132 L800,132" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+      <rect x="805" y="92" width="250" height="80" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <text x="930" y="122" font-size="13.5" font-weight="600" text-anchor="middle" fill="var(--accent)">TOWN MEETING VOTE</text>
+      <text x="930" y="142" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".75">the omnibus article — one vote</text>
+      <text x="930" y="160" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".75">for all 67 departments at once</text>
+
+      <path d="M1057,132 L1115,132" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+      <rect x="1120" y="80" width="250" height="104" fill="none" stroke="currentColor" stroke-width="2"/>
+      <text x="1245" y="106" font-size="12.5" font-weight="600" text-anchor="middle" fill="currentColor">Dept 300 + 301</text>
+      <text x="1245" y="132" font-size="18" font-weight="600" text-anchor="middle" fill="currentColor">$26,359,645</text>
+      <text x="1245" y="152" font-size="11" text-anchor="middle" fill="currentColor" opacity=".7">51.2% of the omnibus</text>
+      <text x="1245" y="170" font-size="11" text-anchor="middle" fill="currentColor" opacity=".55">about 350 named budget lines</text>
+      <rect x="1108" y="66" width="274" height="132" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+      <text x="1245" y="220" font-size="12" font-weight="600" text-anchor="middle" fill="var(--accent)">THE SCHOOL BUDGET DOCUMENT</text>
+      <text x="1245" y="237" font-size="11" text-anchor="middle" fill="var(--accent)" opacity=".85">covers this box and nothing else</text>
+
+      <line x1="30" y1="266" x2="1370" y2="266" stroke="currentColor" stroke-width="1" opacity=".25"/>
+
+      <!-- ROUTE 2 -->
+      <text x="30" y="294" font-size="11" font-weight="600" letter-spacing="1.2" fill="var(--outside)">ROUTE 2 — THE SCHOOL’S OWN FUNDS. NEVER VOTED, NEVER IN THE BUDGET DOCUMENT</text>
+
+      <g font-size="12" fill="var(--outside)">
+        <rect x="30" y="308" width="330" height="40" fill="none" stroke="var(--outside)" stroke-width="1.2"/>
+        <text x="44" y="325">Fees paid by families</text>
+        <text x="44" y="340" font-size="10.5" opacity=".8">lunch · extended day · athletics · after school</text>
+
+        <rect x="30" y="356" width="330" height="40" fill="none" stroke="var(--outside)" stroke-width="1.2"/>
+        <text x="44" y="373">Federal &amp; state grants</text>
+        <text x="44" y="388" font-size="10.5" opacity=".8">#240 SPED · Title I, II, IV · SOA · ESSER</text>
+
+        <rect x="30" y="404" width="330" height="40" fill="none" stroke="var(--outside)" stroke-width="1.2"/>
+        <text x="44" y="421">Circuit breaker reimbursement</text>
+        <text x="44" y="436" font-size="10.5" opacity=".8">the state’s share of high-cost SPED places</text>
+
+        <rect x="30" y="452" width="330" height="40" fill="none" stroke="var(--outside)" stroke-width="1.2"/>
+        <text x="44" y="469">School choice, gifts, facility hire</text>
+        <text x="44" y="484" font-size="10.5" opacity=".8">tuition in from other towns · donations · rent</text>
+      </g>
+
+      <path d="M362,328 C400,328 400,400 432,400" stroke="var(--outside)" stroke-width="1.3" fill="none" marker-end="url(#ao)"/>
+      <path d="M362,376 C400,376 400,400 432,400" stroke="var(--outside)" stroke-width="1.3" fill="none" marker-end="url(#ao)"/>
+      <path d="M362,424 C400,424 400,400 432,400" stroke="var(--outside)" stroke-width="1.3" fill="none" marker-end="url(#ao)"/>
+      <path d="M362,472 C400,472 400,400 432,400" stroke="var(--outside)" stroke-width="1.3" fill="none" marker-end="url(#ao)"/>
+
+      <rect x="437" y="330" width="290" height="140" fill="none" stroke="var(--outside)" stroke-width="2"/>
+      <text x="582" y="356" font-size="14.5" font-weight="600" text-anchor="middle" fill="var(--outside)">61 NAMED SCHOOL FUNDS</text>
+      <text x="582" y="378" font-size="11" text-anchor="middle" fill="var(--outside)" opacity=".9">2200 lunch · 1312 extended day · 1301 athletics</text>
+      <text x="582" y="395" font-size="11" text-anchor="middle" fill="var(--outside)" opacity=".9">1308 choice · 1311 gifts · 1305 after school</text>
+      <text x="582" y="412" font-size="11" text-anchor="middle" fill="var(--outside)" opacity=".9">2813 · 2814 #240 · 2778 SOA · 2640 circuit breaker</text>
+      <text x="582" y="436" font-size="11.5" text-anchor="middle" fill="var(--outside)">21 had FY2026 activity. 40 sat still.</text>
+      <text x="582" y="456" font-size="10.5" text-anchor="middle" fill="var(--outside)" opacity=".7">each Fund keeps its own balance, year to year</text>
+
+      <path d="M729,400 L800,400" stroke="var(--outside)" stroke-width="1.5" fill="none" marker-end="url(#ao)"/>
+
+      <rect x="805" y="360" width="250" height="80" fill="none" stroke="var(--outside)" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="930" y="390" font-size="13.5" font-weight="600" text-anchor="middle" fill="var(--outside)">NO VOTE</text>
+      <text x="930" y="410" font-size="11.5" text-anchor="middle" fill="var(--outside)" opacity=".9">spent straight out of the Fund</text>
+      <text x="930" y="428" font-size="11.5" text-anchor="middle" fill="var(--outside)" opacity=".9">no appropriation, no transfer</text>
+
+      <path d="M1057,400 L1115,400" stroke="var(--outside)" stroke-width="1.5" fill="none" marker-end="url(#ao)"/>
+
+      <rect x="1120" y="348" width="250" height="104" fill="none" stroke="var(--outside)" stroke-width="2"/>
+      <text x="1245" y="374" font-size="12.5" font-weight="600" text-anchor="middle" fill="var(--outside)">Real staff, real programmes</text>
+      <text x="1245" y="400" font-size="18" font-weight="600" text-anchor="middle" fill="var(--outside)">$1,736,376</text>
+      <text x="1245" y="420" font-size="11" text-anchor="middle" fill="var(--outside)" opacity=".85">spent in FY2026</text>
+      <text x="1245" y="438" font-size="11" text-anchor="middle" fill="var(--outside)" opacity=".7">in no budget line, on no ballot</text>
+
+      <line x1="30" y1="516" x2="1370" y2="516" stroke="currentColor" stroke-width="1" opacity=".25"/>
+
+      <rect x="30" y="540" width="655" height="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".7"/>
+      <text x="48" y="566" font-size="13" font-weight="600" fill="currentColor">A budget line is NET of Route 2</text>
+      <text x="48" y="588" font-size="11.5" fill="currentColor" opacity=".8">Fees and reimbursements are subtracted before the line is printed. If paras</text>
+      <text x="48" y="607" font-size="11.5" fill="currentColor" opacity=".8">cost $1.5M and the state pays $500K, the line reads $1M — and nothing on</text>
+      <text x="48" y="626" font-size="11.5" fill="currentColor" opacity=".8">the page says $1.5M, or marks the line as net.</text>
+
+      <rect x="715" y="540" width="655" height="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".7"/>
+      <text x="733" y="566" font-size="13" font-weight="600" fill="currentColor">Chapter 70 cannot be followed to anything</text>
+      <text x="733" y="588" font-size="11.5" fill="currentColor" opacity=".8">$9.2M of education aid enters the general fund and mixes. It has no Fund of</text>
+      <text x="733" y="607" font-size="11.5" fill="currentColor" opacity=".8">its own — unlike every grant, which does — and 0 of 222 revenue accounts</text>
+      <text x="733" y="626" font-size="11.5" fill="currentColor" opacity=".8">carry a function code. No report says what it paid for.</text>
+    </svg>
+  </div>
+  <figcaption><b>Two routes in.</b> Route 1 is a budget figure at FY2026 period 9; Route 2 is actual spending at FY2026 Q3. The general fund box is the <em>town’s</em> revenue, not the school’s — the school’s share of it is decided by the vote, not by which tax paid for what.</figcaption>
+</figure>
+
+<section>
+  <h2>Every Fund the school has, and what moved through it</h2>
+  <p>Twenty-one of the sixty-one had FY2026 activity. A Fund keeps its balance year to year, which is why several spent money without taking any in — and why four end the period negative, awaiting a reimbursement that has not landed.</p>
+  <div class="scroller"><table class="d">
+    <thead><tr><th>Fund</th><th>Name</th><th>What feeds it</th><th class="num">In</th><th class="num">Out</th><th class="num">Balance</th></tr></thead>
+    <tbody>
+      <tr><td class="fundno">2200</td><td class="lead">School lunch revolving</td><td>Meal payments</td><td class="num">$572,231</td><td class="num">$739,586</td><td class="num">$287,771</td></tr>
+      <tr><td class="fundno">2640</td><td class="lead">Special ed circuit breaker</td><td>State reimbursement</td><td class="num">$325,970</td><td class="num">$4,005</td><td class="num">$615,301</td></tr>
+      <tr><td class="fundno">1312</td><td class="lead">Extended day revolving</td><td>Fees from families</td><td class="num">$192,943</td><td class="num">$233,350</td><td class="num">$54,161</td></tr>
+      <tr><td class="fundno">1301</td><td class="lead">Chapter 658 — athletics</td><td>Athletic fees, gate</td><td class="num">$160,164</td><td class="num">$100,467</td><td class="num">$169,945</td></tr>
+      <tr><td class="fundno">1305</td><td class="lead">After school activities</td><td>Fees from families</td><td class="num">$111,376</td><td class="num">$95,196</td><td class="num">$148,578</td></tr>
+      <tr><td class="fundno">1308</td><td class="lead">School choice revolving</td><td>Tuition in from other towns</td><td class="num">$83,116</td><td class="num">$30,558</td><td class="num">$299,461</td></tr>
+      <tr><td class="fundno">2672</td><td class="lead">FY26 Family &amp; Community 237</td><td>State grant</td><td class="num">$48,558</td><td class="num">$13,372</td><td class="num">$35,186</td></tr>
+      <tr><td class="fundno">1311</td><td class="lead">School gift fund</td><td>Donations</td><td class="num">$22,486</td><td class="num">$2,911</td><td class="num">$109,398</td></tr>
+      <tr><td class="fundno">1306</td><td class="lead">School facilities use</td><td>Hall and field hire</td><td class="num">$18,670</td><td class="num">$12,354</td><td class="num">$71,559</td></tr>
+      <tr><td class="fundno">2681</td><td class="lead">Comprehensive school health</td><td>Grant</td><td class="num">$10,775</td><td class="num">$5,120</td><td class="num">$5,655</td></tr>
+      <tr><td class="fundno">1302</td><td class="lead">Adult education revolving</td><td>Course fees</td><td class="num">$4,000</td><td class="num">$2,880</td><td class="num">$12,744</td></tr>
+      <tr><td class="fundno">1300</td><td class="lead">Lost books / technology</td><td>Charges</td><td class="num">$2,860</td><td class="num">$661</td><td class="num">$16,665</td></tr>
+      <tr><td class="fundno">2813</td><td class="lead">FY25 #240 special education</td><td>Federal grant</td><td class="num">$0</td><td class="num">$229,398</td><td class="num">−$88,503</td></tr>
+      <tr><td class="fundno">2814</td><td class="lead">FY26 #240 special education</td><td>Federal grant</td><td class="num">$0</td><td class="num">$179,637</td><td class="num">−$179,637</td></tr>
+      <tr><td class="fundno">2778</td><td class="lead">FY25 Student Opportunity Act</td><td>State grant</td><td class="num">$0</td><td class="num">$68,647</td><td class="num">−$91,220</td></tr>
+      <tr><td class="fundno">2832</td><td class="lead">FY25 #274</td><td>Grant</td><td class="num">$0</td><td class="num">$5,427</td><td class="num">$0</td></tr>
+      <tr><td class="fundno">2690</td><td class="lead">FY26 #309 Title IV part A</td><td>Federal grant</td><td class="num">$0</td><td class="num">$3,240</td><td class="num">−$3,240</td></tr>
+      <tr><td class="fundno">2728</td><td class="lead">FY24 Title II part A #140</td><td>Federal grant</td><td class="num">$0</td><td class="num">$3,217</td><td class="num">$5,108</td></tr>
+      <tr><td class="fundno">2622</td><td class="lead">FY25 Family &amp; Community</td><td>State grant</td><td class="num">$0</td><td class="num">$2,477</td><td class="num">$70,800</td></tr>
+      <tr><td class="fundno">2800</td><td class="lead">FY25 #140</td><td>Grant</td><td class="num">$0</td><td class="num">$2,208</td><td class="num">$0</td></tr>
+      <tr><td class="fundno">2758</td><td class="lead">FY23 #240</td><td>Federal grant</td><td class="num">$0</td><td class="num">$1,666</td><td class="num">−$8,167</td></tr>
+      <tr class="tot"><td></td><td>All 61 Funds</td><td>40 of them dormant in FY2026</td><td class="num">$1,553,151</td><td class="num">$1,736,376</td><td class="num">$1,592,572</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">
+    <b>Two things worth stopping on.</b> Fund 2640 took in $325,970 of circuit breaker reimbursement and spent $4,005 of it, sitting on $615,301 — the state’s share of high-cost special education places, banked rather than spent in-year. And four grant Funds close the period negative, which is what a grant looks like when the district spends first and is reimbursed after.
+  </div>
+</section>
+
+<section>
+  <h2>And the rest of the town</h2>
+  <p>The same vote that gives the school $26.4M gives every other department its money at the same moment, in one article. This is what the omnibus splits into.</p>
+  <figure>
+    <div class="board">
+      <svg viewBox="0 0 1000 250" role="img"
+        aria-label="The FY2026 town omnibus of 51,531,199 dollars splits into Lunenburg Public Schools at 51.2 percent, Monty Tech vocational assessment at 2.6 percent, and all 64 other departments at 46.3 percent.">
+        <text x="20" y="26" font-size="12" font-weight="600" letter-spacing="1.4" fill="currentColor">THE FY2026 OMNIBUS — $51,531,199, ONE VOTE, 67 DEPARTMENTS</text>
+
+        <rect x="20" y="46" width="502" height="54" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <rect x="522" y="46" width="26" height="54" fill="none" stroke="var(--town)" stroke-width="2"/>
+        <rect x="548" y="46" width="432" height="54" fill="none" stroke="var(--town)" stroke-width="2"/>
+
+        <text x="271" y="72" font-size="13" font-weight="600" text-anchor="middle" fill="var(--accent)">Lunenburg Public Schools</text>
+        <text x="271" y="91" font-size="12" text-anchor="middle" fill="var(--accent)">$26,359,645 · 51.2%</text>
+        <text x="535" y="118" font-size="10" text-anchor="middle" fill="var(--town)">2.6%</text>
+        <text x="764" y="72" font-size="13" font-weight="600" text-anchor="middle" fill="var(--town)">Every other department — 64 of them</text>
+        <text x="764" y="91" font-size="12" text-anchor="middle" fill="var(--town)">$23,837,033 · 46.3%</text>
+
+        <line x1="535" y1="100" x2="535" y2="128" stroke="var(--town)" stroke-width="1"/>
+        <text x="548" y="146" font-size="11" fill="var(--town)">Monty Tech assessment, $1,334,521 — vocational school, a separate district</text>
+
+        <text x="20" y="182" font-size="12" font-weight="600" fill="currentColor">The largest of the other 64</text>
+        <text x="20" y="204" font-size="11.5" fill="currentColor" opacity=".8">Insurance $3.71M · Police $2.48M · Wachusett regional refuse $2.39M · Fire $1.72M</text>
+        <text x="20" y="223" font-size="11.5" fill="currentColor" opacity=".8">Debt principal $1.51M · Transfer to capital $1.06M · Debt interest $1.04M · State assessments $1.03M</text>
+        <text x="20" y="242" font-size="11.5" fill="currentColor" opacity=".8">Facilities $730K · Highway $1.29M across two departments · Library $639K</text>
+      </svg>
+    </div>
+    <figcaption><b>One article, 67 departments.</b> A resident voting the omnibus votes all of this at once. Figures are the revised budget at FY2026 period 9.</figcaption>
+  </figure>
+
+  <h3>Other departments have Route 2 money too — and we cannot see it</h3>
+  <p>The enterprise funds are visible because they appear in the same ledger report:</p>
+  <div class="scroller"><table class="d">
+    <thead><tr><th>Fund</th><th>Name</th><th class="num">Revenue</th><th class="num">Expense</th></tr></thead>
+    <tbody>
+      <tr><td class="fundno">6000</td><td class="lead">Sewer enterprise</td><td class="num">$1,454,671</td><td class="num">$1,726,394</td></tr>
+      <tr><td class="fundno">7900</td><td class="lead">Solid waste / recycling enterprise</td><td class="num">$1,000,000</td><td class="num">—</td></tr>
+      <tr><td class="fundno">5000</td><td class="lead">Sewer betterments</td><td class="num">$436,667</td><td class="num">$184,920</td></tr>
+      <tr><td class="fundno">6200</td><td class="lead">PEG access enterprise</td><td class="num">$225,927</td><td class="num">$225,928</td></tr>
+      <tr><td class="fundno">6100 · 5100</td><td class="lead">Water enterprise, water betterments</td><td class="num">$0</td><td class="num">$0</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">
+    <b>But the 61-Fund report we hold is school Funds only.</b> Other departments will have revolving and gift Funds of their own — the library, the council on aging, recreation, cemetery and inspectional services all typically do — and none of them is in anything we have. So the picture above is complete for the schools and demonstrably incomplete for everybody else, and this page says so rather than drawing a tidy diagram over the gap.
+  </div>
+</section>
+
+<footer>
+  <p>Figures from <code>sources/data/lunenburg.db</code>: the omnibus and the enterprise funds are the revised budget at FY2026 period 9; the school Funds are actual activity at FY2026 Q3. Where the two bases are added, the page says so.</p>
+  <p>High level, deliberately. Every box decomposes — the appropriation into 350 lines and 45 function codes, the revenue side into 222 accounts, each Fund into transactions nobody has given us. Those are separate pictures.</p>
+  <p>Nothing here is a source. It is a claim about the archive; anything load-bearing should be checked against the repo.</p>
+</footer>
+
+</div>

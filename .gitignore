@@ -52,8 +52,8 @@ __pycache__/
 # Meeting archive: 400MB of scanned agendas and minutes, rebuildable from the town's
 # site with `python3 scripts/fetch_agendas.py --from 2025`. The extracted text and the
 # index are committed instead — those are what anything actually reads.
-sources/minutes/**/*.pdf
-!sources/minutes/index.csv
+sources/meetings/**/*.pdf
+!sources/meetings/index.csv
 
 # Same bare "data" rule in the global gitignore also swallowed these. A directory that is
 # excluded is never descended into, so re-including the files alone does nothing — the

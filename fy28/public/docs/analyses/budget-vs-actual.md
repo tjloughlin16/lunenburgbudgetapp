@@ -40,11 +40,11 @@ this page).
 
 **Two sources, and they do not always agree.**
 
-The **FY27 workbook** (`sources/xlsx/fy27-proposals.xlsx`) gives 351 line items with both
+The **FY27 workbook** (`sources/budget-workbooks/fy27-proposals.xlsx`) gives 351 line items with both
 halves for FY25, and eight months of FY26. That is what the first version of this document
 worked from.
 
-The **mirrored budget documents** (`sources/district-budget-page/`) go back to FY17 and
+The **mirrored budget documents** (`sources/district-budget/`) go back to FY17 and
 print actual columns beside budget columns, with each document stating its own column
 kinds. `scripts/extract_budget_history.py` reads them, taking only the column a document
 itself labels, and the series are published at `/data/total-salaries-history.csv` and
@@ -54,7 +54,7 @@ Where the two overlap they agree closely: FY25 actuals are identical to the doll
 FY23 and FY24 differ by $10,000 and $5,000 on roughly $15.6M of salaries — 0.06% and 0.03%.
 
 `scripts/extract_line_history.py` does the same for **every line** the documents print,
-not just the totals — 24,573 readings across 31 documents, normalised to 401 distinct
+not just the totals — 24,337 readings across 32 documents, normalised to 397 distinct
 lines, published at `/data/line-history.csv`. That is what makes it possible to ask
 whether the same lines miss every year, which is the question §2 and §3 turn on.
 
@@ -336,8 +336,8 @@ figures with every real one shifted along behind them. FY23 and FY24 for both li
 published as 1, 2, 3 and 5. About $2.5M of FY23 salary fell out of the measured base as a
 result. It is in.
 
-3,250 line-years were excluded and each exclusion has a stated reason: 2,136 have only one
-of the two figures, 751 are under $10,000, 301 are FY21, 52 are cells two documents
+3,158 line-years were excluded and each exclusion has a stated reason: 2,046 have only one
+of the two figures, 750 are under $10,000, 301 are FY21, 51 are cells two documents
 disagree about, 8 are in FY16 and FY17 — four usable lines each, which is not a
 measurement of a budget and is excluded by a stated floor of twenty — and 2 are parse
 artifacts. **212 lines in the FY27 workbook are never measured

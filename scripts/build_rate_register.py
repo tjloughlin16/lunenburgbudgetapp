@@ -52,8 +52,8 @@ FIELDS = ['fy', 'category', 'unit', 'item', 'value', 'value_type', 'set_on', 'ex
 # School Committee decisions that set a rate, or failed to. Quoted so the register can be
 # checked against the minutes rather than believed.
 SC = 'minutes/text/school-committee'
-EMAIL26 = 'email/2025-05-bus-fees-superintendent.txt'
-EMAIL27 = 'email/2026-08-17-bus-routes-and-fees-superintendent.txt'
+EMAIL26 = 'correspondence/2025-05-bus-fees-superintendent.txt'
+EMAIL27 = 'correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt'
 
 # Bus fees, quoted from the Superintendent's own emails. These are for getting to SCHOOL --
 # not to athletic events, which the revolving fund pays for. The distinction matters because

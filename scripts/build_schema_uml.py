@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the database as it actually is, not as its CREATE statements claim.
 
-    python3 scripts/build_schema_uml.py            # writes notes/data-model/schema.mmd
+    python3 scripts/build_schema_uml.py            # writes notes/reference/data-model/schema.mmd
 
 WHY THIS IS GENERATED AND NOT DRAWN
 
@@ -34,7 +34,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
-OUT = os.path.join(ROOT, 'notes', 'data-model', 'schema.mmd')
+OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'schema.mmd')
 
 # Joins this project relies on that no constraint expresses. The last one is the join
 # between the district's budget and the town's books, and it is a SUBSTRING match on a

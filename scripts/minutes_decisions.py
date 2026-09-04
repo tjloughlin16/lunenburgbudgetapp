@@ -29,11 +29,11 @@ are not named anywhere in the archive.
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEXT = os.path.join(ROOT, 'sources', 'minutes', 'text')
+TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text')
 
 BASE = 'https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/'
 
-# key -> (board, date, file under sources/minutes/text, url suffix, quote, verdict, note)
+# key -> (board, date, file under sources/meetings/text, url suffix, quote, verdict, note)
 # `verdict` is one of: approved, approved-partial, requested, silent, contradicts
 DECISIONS = {
     'athletic_basis': (

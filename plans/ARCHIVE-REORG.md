@@ -127,7 +127,58 @@ subject without the tree having to carry those keys.
 
 Nothing moved, so no URL changed.
 
-## Step 2 — move `sources/` — **NOT STARTED**
+## Step 2 — move `sources/` — **DONE**, 4 September
+
+Executed. `sources/` is now: `town-budget/` · `district-budget/` · `meetings/` · `dese/` ·
+`dls/` · `munis-ledgers/{expenses,revenue,account-details,transfers,purchase-orders,fund-balances}` ·
+`budget-workbooks/` · `contracts/` · `peers/` · `correspondence/` · `analyses/` · `data/`.
+`pdf/`, `txt/` and every acquisition-dated folder are gone.
+
+**15 duplicate PDFs deleted** after checking sha256 against the mirror copies. Their 15
+`.txt` companions were checked separately and were NOT byte-identical — the assumption
+that they were would have destroyed 15 unique extractions. Compared with whitespace
+normalised, 13 were the same text and 2 were *worse*: our copy of the balanced-budget
+slides held 472 characters where the mirror holds 7,394. Deleting them fixed a defect
+rather than losing anything.
+
+**A pre-existing publishing bug, found by this work.** `build_source_index.publish()`
+decided whether to re-copy a document by comparing `getsize()` alone, so an edit that
+preserved a file's length was never republished. `analyses/budget-vs-actual.md` was live on
+the site at 34,380 bytes against a source of 34,380 bytes and different sha256, publishing
+"24,573 readings across 31 documents" where the repository said 24,337 across 32. It now
+compares size as a cheap reject and the hash as the answer. All 307 documents verified
+identical afterwards.
+
+### Two failures that are NOT this change
+
+- `verify_athletics.py` — the source-type table it asserts is absent from `athletics.md`
+  at HEAD too. Pre-existing.
+- `npm run build:site` — a TypeScript error in `fy28/src/pages/DataRoom.tsx` (`view` used
+  before declaration, line 302). Another agent's in-progress edit.
+
+### The alias layer — **DONE**
+
+`fy28/functions/docs/_moved.js` maps every old address, and `[[path]].js` answers a miss
+with a **301** rather than a silent rewrite — an agent told to cite `/docs/<path>` should
+learn the new URL, not keep quoting one that works only because of this file. Five prefix
+rules and 131 exact entries, derived from git's own rename detection rather than typed.
+
+**The published minutes URL never moved.** `sources/minutes/` became `sources/meetings/`,
+but `/docs/minutes/text/...` and `/minutes/<board>.txt` stayed exactly where they were.
+A folder name is internal; a URL is a contract that `llms.txt` publishes, 1,422 paths in
+`documents.json` embed, and `functions/minutes/[[path]].js` serves. Renaming the folder
+cost nobody a link, and a blanket rename had briefly changed those constants before this
+was caught.
+
+`scripts/check_moved_docs.py` asserts the only thing that matters: every alias target is a
+file the site actually serves. **A 301 to a 404 is worse than a 404** — it tells a caller
+the document moved, sends them somewhere, and leaves them with nothing.
+
+### Still to do
+
+- Deploy. The build passes and `check:agents` reports only the tag guard.
+
+### What it looked like before — **superseded**
 
 ### Two blockers, both real
 

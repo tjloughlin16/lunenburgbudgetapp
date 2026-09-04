@@ -1,6 +1,6 @@
 """Extract the district's sport-by-sport athletics workbook into long form.
 
-`athletics-by-sport-fy24-fy26.xlsx` came from the Town on 17 June 2026 by records request.
+`athletics-by-sport-fy2024-fy2026.xlsx` came from the Town on 17 June 2026 by records request.
 The publisher's filename is `Copy of Athletics 24.25 (1).xlsx`. It is the only document in
 the archive that puts participation counts and cost lines side by side for one sport in one
 year, and it covers three school years — 23/24, 24/25 and 25/26 — on every sheet.
@@ -47,8 +47,8 @@ import openpyxl
 from openpyxl.utils import get_column_letter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOOK = os.path.join(ROOT, 'sources', 'records-request-2026-06',
-                    'athletics-by-sport-fy24-fy26.xlsx')
+BOOK = os.path.join(ROOT, 'sources', 'munis-ledgers', 'account-details',
+                    'athletics-by-sport-fy2024-fy2026.xlsx')
 OUT = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport.csv')
 RECON = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport-reconciliation.csv')
 

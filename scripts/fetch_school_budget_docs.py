@@ -34,7 +34,7 @@ import zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = ('https://www.lunenburgschools.net/department-directory/'
         'superintendent-of-schools/school-budget-information')
-OUT = os.path.join(ROOT, 'sources', 'district-budget-page')
+OUT = os.path.join(ROOT, 'sources', 'district-budget')
 DOCS = os.path.join(OUT, 'docs')
 TEXT = os.path.join(OUT, 'text')
 MANIFEST = os.path.join(OUT, 'index.csv')

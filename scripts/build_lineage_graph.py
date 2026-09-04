@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The archive as a graph: which report produced which field, and what that lets you ask.
 
-    python3 scripts/build_lineage_graph.py      # writes notes/data-model/lineage.json
+    python3 scripts/build_lineage_graph.py      # writes notes/reference/data-model/lineage.json
 
 WHY A GRAPH AND NOT ANOTHER SCHEMA DIAGRAM
 
@@ -36,7 +36,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
-OUT = os.path.join(ROOT, 'notes', 'data-model', 'lineage.json')
+OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'lineage.json')
 
 # Which report the Town or district runs to produce each extract. Assigned, not derived.
 REPORT = {

@@ -75,7 +75,7 @@ import re
 try:
     import openpyxl
     ws = openpyxl.load_workbook(
-        os.path.join(ROOT, 'sources/xlsx/fy27-proposals.xlsx'), data_only=True).active
+        os.path.join(ROOT, 'sources/budget-workbooks/fy27-proposals.xlsx'), data_only=True).active
     cur, gf = None, 0.0
     for row in range(6, ws.max_row + 1):
         a, b, v = ws.cell(row, 1).value, ws.cell(row, 2).value, ws.cell(row, 7).value

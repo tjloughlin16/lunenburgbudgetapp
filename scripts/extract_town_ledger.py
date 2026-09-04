@@ -1,6 +1,6 @@
 """The town's own year-to-date budget report, as filed by the Town Accountant.
 
-Obtained by records request, not off a website: `sources/q3-fy26/`, FY26 through
+Obtained by records request, not off a website: `sources/munis-ledgers/`, FY26 through
 31 March 2026, printed 11 August 2026 from the town's accounting system.
 
 Why it matters more than its size suggests. Every other budget figure in this project comes
@@ -18,7 +18,7 @@ settle that the school department's appropriation was adjusted, and by how much.
 import os, re, csv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources/q3-fy26/town-general-fund-expenditures-fy26-q3.txt')
+SRC = os.path.join(ROOT, 'sources/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt')
 OUT = os.path.join(ROOT, 'sources/data/town-ledger-fy26-q3.csv')
 
 # "300 SCHOOL DEPARTMENT   26,247,474   76,394   26,323,868   15,736,640.86   1,668,043.22

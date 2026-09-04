@@ -252,7 +252,7 @@ of these are freely available to a person with a browser. Downloading and droppi
 ### 5. DLS free cash, Lunenburg, by fiscal year
 
 > **ANSWERED, 30 August 2026.** The Free Cash Proof for Lunenburg and eight comparable towns,
-> 2021-2025, is in `sources/dls-free-cash/` and read in `sources/analyses/free-cash.md`.
+> 2021-2025, is in `sources/dls/` and read in `sources/analyses/free-cash.md`.
 > Three things it raised, all still open:
 >
 > 1. **Lunenburg's Financial Policies Manual (April 2024)** — item 9 below. It almost
@@ -275,7 +275,7 @@ of these are freely available to a person with a browser. Downloading and droppi
 > the gateway page rather than "the databank", and **our copies still have not been
 > re-derived from it.** The filename `FCPCompare<Town>.xlsx` and the five-year layout say
 > the export was a multi-year comparison; which control produced it is not established.
-> `sources/dls-free-cash/PROVENANCE.md` carries this.
+> `sources/dls/PROVENANCE.md` carries this.
 
 
 #### The original ask
@@ -414,7 +414,7 @@ carried it on 2 April 2026, the day this file's bytes were written, **cannot be 
 the Internet Archive holds no snapshot of the page. The town's FY27 Budget Hub links thirteen
 documents and all thirteen are PDFs by content type.
 
-`sources/xlsx/PROVENANCE.md` records what the file says about itself, and what that does not
+`sources/budget-workbooks/PROVENANCE.md` records what the file says about itself, and what that does not
 establish.
 
 **Also open:** `xlsx/fy27-budget-projection-2-24-26.xlsx` has no recorded route. We do have

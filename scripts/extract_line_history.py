@@ -27,8 +27,8 @@ and is dropped rather than guessed at.
 import os, re, csv, sys, glob, collections
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEXT = os.path.join(ROOT, 'sources/district-budget-page/text')
-INDEX = os.path.join(ROOT, 'sources/district-budget-page/index.csv')
+TEXT = os.path.join(ROOT, 'sources/district-budget/text')
+INDEX = os.path.join(ROOT, 'sources/district-budget/index.csv')
 OUT = os.path.join(ROOT, 'sources/data/line-history.csv')
 COVERAGE = os.path.join(ROOT, 'sources/data/line-history-coverage.csv')
 DISAGREE = os.path.join(ROOT, 'sources/data/line-history-disagreements.csv')

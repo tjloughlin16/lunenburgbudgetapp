@@ -40,11 +40,11 @@ this page).
 
 **Two sources, and they do not always agree.**
 
-The **FY27 workbook** (`sources/xlsx/fy27-proposals.xlsx`) gives 351 line items with both
+The **FY27 workbook** (`sources/budget-workbooks/fy27-proposals.xlsx`) gives 351 line items with both
 halves for FY25, and eight months of FY26. That is what the first version of this document
 worked from.
 
-The **mirrored budget documents** (`sources/district-budget-page/`) go back to FY17 and
+The **mirrored budget documents** (`sources/district-budget/`) go back to FY17 and
 print actual columns beside budget columns, with each document stating its own column
 kinds. `scripts/extract_budget_history.py` reads them, taking only the column a document
 itself labels, and the series are published at `/data/total-salaries-history.csv` and

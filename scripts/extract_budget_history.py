@@ -37,7 +37,7 @@ columns, it is skipped and said so, rather than guessed at.
 import os, re, sys, glob, csv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEXT = os.path.join(ROOT, 'sources/district-budget-page/text')
+TEXT = os.path.join(ROOT, 'sources/district-budget/text')
 DATA = os.path.join(ROOT, 'sources/data')
 
 # The line groups worth a history, each summed from the district's own line names.

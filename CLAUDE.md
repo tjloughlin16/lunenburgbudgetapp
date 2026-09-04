@@ -395,7 +395,7 @@ arriving fresh.
     python3 scripts/build_discrepancy_review.py   # the categories of discrepancy, for review by the Town
     python3 scripts/minutes_decisions.py         # ...and every quote in it, checked against the minutes
     python3 scripts/check_sent_documents.py      # has anything we sent the Town drifted from what we hold
-    python3 scripts/build_data_model_grids.py    # the completeness grids in notes/data-model/*.html
+    python3 scripts/build_data_model_grids.py    # the completeness grids in notes/reference/data-model/*.html
     python3 scripts/build_data_model_grids.py --check   # ...and fail if either has gone stale
     python3 scripts/build_views.py               # the browsable views of the archive, by year and by group
     python3 scripts/build_views.py --check       # ...and every symlink in them still resolves
@@ -409,7 +409,7 @@ year, and for a long time said it without naming anything to search. Use this:
 
     python3 scripts/search_minutes.py "jersey" --board school-committee --since 2025-07-01
 
-It greps `sources/minutes/text/` -- 1,422 documents, every board, 2025 onward -- and prints
+It greps `sources/meetings/text/` -- 1,422 documents, every board, 2025 onward -- and prints
 the board, the date and the citable URL for each hit. **It also prints, on every run, how
 many documents were searched out of how many the town has published, and lists any that
 cannot be searched at all.**

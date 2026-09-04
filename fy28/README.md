@@ -149,7 +149,7 @@ municipal costs commercial development brings.
 
 ## Business registrations (`model/business.py`)
 
-Reads the Town Clerk's business certificate records (copied to `sources/business/`) to
+Reads the Town Clerk's business certificate records (copied to `sources/data/business/`) to
 answer whether businesses are actually leaving. They are not — the surprise is that
 formation is healthy while commercial building is not. Regenerate with `model/export.py`
 like everything else.

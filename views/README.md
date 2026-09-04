@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**186 of 307 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **69 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**177 of 307 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **80 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **121 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **130 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -34,14 +34,14 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY17 | 17 |
 | FY18 | 17 |
 | FY19 | 24 |
-| FY20 | 22 |
+| FY20 | 21 |
 | FY21 | 10 |
 | FY22 | 7 |
-| FY23 | 18 |
-| FY24 | 29 |
+| FY23 | 19 |
+| FY24 | 28 |
 | FY25 | 37 |
-| FY26 | 73 |
-| FY27 | 58 |
+| FY26 | 70 |
+| FY27 | 55 |
 | FY28 | 2 |
 | FY29 | 2 |
 
@@ -60,8 +60,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
 - `analyses/sped-and-funds.md` — Special education and the funds outside the budget
 - `analyses/sped-and-the-curve.md` — Special education and the curve
-- `business/categorized.csv` — Business records by industry
-- `business/merged_dataset.csv` — Business certificate records
+- `budget-workbooks/dese-all-districts.xlsx` — DESE per-pupil expenditures, FY2018–FY2024
 - `contracts/CONTRACTS.md` — Research notes: union contracts
 - `contracts/pdf/custodial-2023-2026.pdf` — Custodial agreement, 2023–2026
 - `contracts/pdf/custodial-moa-2026.pdf` — Custodial memorandum of agreement, 2026
@@ -74,6 +73,8 @@ Listed so this view cannot look more complete than it is.
 - `data/athletic-fee-schedule.csv` — Athletic fees, by fiscal year, with their sources
 - `data/athletics-by-sport-reconciliation.csv` — Where the district’s workbook does not add up
 - `data/athletics-by-sport.csv` — Athletics by sport, long form
+- `data/business/categorized.csv` — Business records by industry
+- `data/business/merged_dataset.csv` — Business certificate records
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
 - `data/copy-status.csv` — Whether the publisher’s copy is still our copy
 - `data/dese-radar.csv` — DESE’s own figures, every district, FY2009–FY2025
@@ -107,66 +108,74 @@ Listed so this view cannot look more complete than it is.
 - `dese/selected-populations-2025.html` — DESE selected populations, state report, FY2025
 - `dese/selected-populations-2026.html` — DESE selected populations, state report, FY2026
 - `dese/selected-populations.csv` — Lunenburg selected populations, all years (CSV)
-- `district-budget-page/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
-- `district-budget-page/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
-- `district-budget-page/docs/balanced-budget-slides-3-23-26.pdf` — Balanced Budget Slides 3-23-26
-- `district-budget-page/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — BUDGET ADDENDUM MULTI-SCENARIO FINANCIAL ANALYSIS
-- `district-budget-page/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
-- `district-budget-page/docs/community-forums-scheduled-on-school-department-budget.docx` — Community Forums Scheduled on School Department Budget
-- `district-budget-page/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
-- `district-budget-page/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
-- `district-budget-page/docs/notice-of-budget-hearing-april-29-2020.bin` — Notice of Budget Hearing April 29, 2020
-- `district-budget-page/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — Slide Deck from the SC Meeting 3/23/26
-- `district-budget-page/docs/superintendent-s-budget-recommendations.docx` — Superintendent’s Budget Recommendations
-- `dls-free-cash/PROVENANCE.md` — Where these came from, and what they cannot do
-- `dls-free-cash/free-cash-proof-ayer.xlsx` — Ayer
-- `dls-free-cash/free-cash-proof-groton.xlsx` — Groton
-- `dls-free-cash/free-cash-proof-littleton.xlsx` — Littleton
-- `dls-free-cash/free-cash-proof-lunenburg.xlsx` — Lunenburg free cash proof, 2021–2025
-- `dls-free-cash/free-cash-proof-shirley.xlsx` — Shirley
-- `dls-free-cash/free-cash-proof-townsend.xlsx` — Townsend
-- `dls-free-cash/free-cash-proof-upton.xlsx` — Upton
-- `dls-free-cash/free-cash-proof-uxbridge.xlsx` — Uxbridge
-- `dls-free-cash/free-cash-proof-westford.xlsx` — Westford
-- `pdf/assessors-agenda-11-19-2025.pdf` — Board of Assessors agenda, 19 November 2025
-- `pdf/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
-- `pdf/health-insurance-rates-2025.pdf` — Health insurance rates, 1 July 2026
-- `pdf/lhs-athletics-faq.pdf` — High school athletics fee schedule
-- `pdf/town-2026-election-unofficial-results.pdf` — Election results, 16 May 2026
-- `pdf/town-2026-election-warrant.pdf` — Ballot question language
-- `pdf/town-additional-revenue-plan.pdf` — Additional Town Revenue Spending Plan
-- `pdf/town-revenue-prop25-presentation.pdf` — Finance Committee deck on Proposition 2½
-- `records-request-2026-06/PROVENANCE.md` — Provenance for the 17 June 2026 records request
-- `records-request-2026-06/athletic-fee-counts-2025-2026.docx` — Athletic fee counts, 2025-2026
-- `town-site/docs/1416-senior-tax-work-off-record-hours.pdf` — Senior Tax Work Off- Record Hours
-- `town-site/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Town Revenue &amp; Proposition 2.5 Presentation
-- `town-site/docs/182-w-4-federal-tax-form-pdf.pdf` — W-4 Federal Tax Form (PDF)
-- `town-site/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf` — Conflict of Interest/Financial Disclosure (PDF)
-- `town-site/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx` — 3/25/2024 Presentation: How Can We Help You- Property Tax Exemptions &amp; Assistance for Seniors
-- `town-site/docs/2086-4-14-sex-offender-audits-pdf.pdf` — 4.14 Sex Offender Audits (PDF)
-- `town-site/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf` — 2/3/25 Assessor Conference Presentation (PDF)
-- `town-site/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf` — Lunenburg Senior Citizen Property Tax Work-Off Program Application 2025 (PDF)
-- `town-site/docs/3378-lunenburg-proposed-roadway-capital-improvement-plan-list-pdf.pdf` — Lunenburg Proposed Roadway Capital Improvement Plan List (PDF)
-- `town-site/docs/344-bencor-financial-wellness-pdf.pdf` — Bencor Financial Wellness (PDF)
-- `town-site/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf` — Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024
-- `town-site/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf` — Board of Assessors Code of Conduct (PDF)
-- `town-site/docs/3547-role-of-the-assessing-department.pdf` — Role of the Assessing Department
-- `town-site/docs/374-fy-2023-budget-presentation-pdf.pdf` — FY 2023 Budget Presentation (PDF)
-- `town-site/docs/394-1-40-school-resource-officer-pdf.pdf` — 1.40 School Resource Officer (PDF)
-- `town-site/docs/4111-article-13-fy-2027-capital-plan.pdf` — Article 13: FY 2027 Capital Plan
-- `town-site/docs/4112-article-32-notice-of-town-meeting.pdf` — Article 32: Notice of Town Meeting
-- `town-site/docs/4113-article-12-capital-program-funding-reauthorization.pdf` — Article 12: Capital Program Funding Reauthorization
-- `town-site/docs/4161-2026-annual-town-election-warrant.pdf` — 2026 Annual Town Election Warrant
-- `town-site/docs/4306-notice-of-tax-taking-lists.pdf` — Notice of Tax Taking Lists
-- `town-site/docs/4365-september-3-2026-special-town-meeting-legal-notice.pdf` — September 3, 2026 Special Town Meeting Legal Notice
-- `town-site/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf` — November 17, 2026 Special Town Meeting Legal Notice
-- `town-site/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf` — 4.38 Reserve Officer Hiring Process (PDF)
-- `town-site/docs/443-4-39-reserve-officer-program-pdf.pdf` — 4.39 Reserve Officer Program (PDF)
-- `town-site/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf` — Senior Citizen Property Tax Work Off Program Application Form (PDF)
-- `town-site/docs/494-senior-tax-work-off-program-brochure-pdf.pdf` — Senior Tax Work Off Program Brochure (PDF)
-- `town-site/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf` — Real Estate & Personal Property Tax Actual Billing (PDF)
-- `town-site/docs/784-real-estate-tax-preliminary-billing-pfd.pdf` — Real Estate Tax Preliminary Billing (PFD)
-- `town-site/docs/785-motor-vehicle-excise-tax-pdf.pdf` — Motor Vehicle Excise Tax (PDF)
-- `town-site/docs/786-tax-lien-sale-auction-notice-pdf.pdf` — Tax Lien Sale Auction Notice (PDF)
-- `town-site/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf` — March 17, 2022 Tax Lien Sale Auction Registration Form (PDF)
-- `xlsx/dese-all-districts.xlsx` — DESE per-pupil expenditures, FY2018–FY2024
+- `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
+- `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
+- `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
+- `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
+- `district-budget/docs/balanced-budget-slides-3-23-26.pdf` — Balanced budget slide deck, 23 March 2026
+- `district-budget/docs/balanced-budget-slides-3-23-26.pdf` — Balanced Budget Slides 3-23-26
+- `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — Multi-Scenario Financial Analysis
+- `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — BUDGET ADDENDUM MULTI-SCENARIO FINANCIAL ANALYSIS
+- `district-budget/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
+- `district-budget/docs/community-forums-scheduled-on-school-department-budget.docx` — Community Forums Scheduled on School Department Budget
+- `district-budget/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
+- `district-budget/docs/lhs-athletics-faq.pdf` — High school athletics fee schedule
+- `district-budget/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
+- `district-budget/docs/notice-of-budget-hearing-april-29-2020.bin` — Notice of Budget Hearing April 29, 2020
+- `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — School Committee deck, 23 March 2026
+- `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — Slide Deck from the SC Meeting 3/23/26
+- `district-budget/docs/superintendent-s-budget-recommendations.docx` — Superintendent’s Budget Recommendations
+- `dls/PROVENANCE.md` — Where these came from, and what they cannot do
+- `dls/free-cash-proof-ayer.xlsx` — Ayer
+- `dls/free-cash-proof-groton.xlsx` — Groton
+- `dls/free-cash-proof-littleton.xlsx` — Littleton
+- `dls/free-cash-proof-lunenburg.xlsx` — Lunenburg free cash proof, 2021–2025
+- `dls/free-cash-proof-shirley.xlsx` — Shirley
+- `dls/free-cash-proof-townsend.xlsx` — Townsend
+- `dls/free-cash-proof-upton.xlsx` — Upton
+- `dls/free-cash-proof-uxbridge.xlsx` — Uxbridge
+- `dls/free-cash-proof-westford.xlsx` — Westford
+- `munis-ledgers/account-details/PROVENANCE-fund1301.md` — Provenance for the 17 June 2026 records request
+- `munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2024
+- `munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2025
+- `munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2026
+- `munis-ledgers/account-details/athletic-fee-counts-fy2026.docx` — Athletic fee counts, 2025-2026
+- `munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx` — Athletics by sport, three school years
+- `munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` — Special revenue funds, 31 March 2026
+- `munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx` — Trust, agency and stabilization funds, 31 March 2026
+- `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Finance Committee deck on Proposition 2½
+- `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Town Revenue &amp; Proposition 2.5 Presentation
+- `town-budget/docs/3378-lunenburg-proposed-roadway-capital-improvement-plan-list-pdf.pdf` — Lunenburg Proposed Roadway Capital Improvement Plan List (PDF)
+- `town-budget/docs/374-fy-2023-budget-presentation-pdf.pdf` — FY 2023 Budget Presentation (PDF)
+- `town-budget/docs/4111-article-13-fy-2027-capital-plan.pdf` — Article 13: FY 2027 Capital Plan
+- `town-budget/docs/4112-article-32-notice-of-town-meeting.pdf` — Article 32: Notice of Town Meeting
+- `town-budget/docs/4113-article-12-capital-program-funding-reauthorization.pdf` — Article 12: Capital Program Funding Reauthorization
+- `town-budget/docs/4161-2026-annual-town-election-warrant.pdf` — Ballot question language
+- `town-budget/docs/4161-2026-annual-town-election-warrant.pdf` — 2026 Annual Town Election Warrant
+- `town-budget/docs/4365-september-3-2026-special-town-meeting-legal-notice.pdf` — September 3, 2026 Special Town Meeting Legal Notice
+- `town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf` — November 17, 2026 Special Town Meeting Legal Notice
+- `town-supplementary/docs/1416-senior-tax-work-off-record-hours.pdf` — Senior Tax Work Off- Record Hours
+- `town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf` — W-4 Federal Tax Form (PDF)
+- `town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf` — Conflict of Interest/Financial Disclosure (PDF)
+- `town-supplementary/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx` — 3/25/2024 Presentation: How Can We Help You- Property Tax Exemptions &amp; Assistance for Seniors
+- `town-supplementary/docs/2086-4-14-sex-offender-audits-pdf.pdf` — 4.14 Sex Offender Audits (PDF)
+- `town-supplementary/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf` — 2/3/25 Assessor Conference Presentation (PDF)
+- `town-supplementary/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf` — Lunenburg Senior Citizen Property Tax Work-Off Program Application 2025 (PDF)
+- `town-supplementary/docs/344-bencor-financial-wellness-pdf.pdf` — Bencor Financial Wellness (PDF)
+- `town-supplementary/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf` — Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024
+- `town-supplementary/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf` — Board of Assessors Code of Conduct (PDF)
+- `town-supplementary/docs/3547-role-of-the-assessing-department.pdf` — Role of the Assessing Department
+- `town-supplementary/docs/394-1-40-school-resource-officer-pdf.pdf` — 1.40 School Resource Officer (PDF)
+- `town-supplementary/docs/4306-notice-of-tax-taking-lists.pdf` — Notice of Tax Taking Lists
+- `town-supplementary/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf` — 4.38 Reserve Officer Hiring Process (PDF)
+- `town-supplementary/docs/443-4-39-reserve-officer-program-pdf.pdf` — 4.39 Reserve Officer Program (PDF)
+- `town-supplementary/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf` — Senior Citizen Property Tax Work Off Program Application Form (PDF)
+- `town-supplementary/docs/494-senior-tax-work-off-program-brochure-pdf.pdf` — Senior Tax Work Off Program Brochure (PDF)
+- `town-supplementary/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf` — Real Estate & Personal Property Tax Actual Billing (PDF)
+- `town-supplementary/docs/784-real-estate-tax-preliminary-billing-pfd.pdf` — Real Estate Tax Preliminary Billing (PFD)
+- `town-supplementary/docs/785-motor-vehicle-excise-tax-pdf.pdf` — Motor Vehicle Excise Tax (PDF)
+- `town-supplementary/docs/786-tax-lien-sale-auction-notice-pdf.pdf` — Tax Lien Sale Auction Notice (PDF)
+- `town-supplementary/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf` — March 17, 2022 Tax Lien Sale Auction Registration Form (PDF)
+- `town-supplementary/docs/assessors-agenda-11-19-2025.pdf` — Board of Assessors agenda, 19 November 2025
+- `town-supplementary/docs/health-insurance-rates-2025.pdf` — Health insurance rates, 1 July 2026
+- `town-supplementary/docs/town-2026-election-unofficial-results.pdf` — Election results, 16 May 2026

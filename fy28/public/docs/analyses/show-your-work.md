@@ -1748,8 +1748,8 @@ somebody who wants to rerun any figure above can find it.
 | 1, 2, 3 — the projection | `model/finance.py` | `sources/data/lps-budget-lines.csv` |
 | 4, 5 — special education | `model/sped.py` | the same file, plus the budget history extracts |
 | 6 — health insurance | `model/health.py` | the Town’s open enrolment notice |
-| 7 — free cash | `model/freecash.py` | `sources/dls-free-cash/`, `sources/data/capital-plan-fy27.csv` |
-| 8 — athletic fees | `model/athletics.py` | `sources/records-request-2026-06/`, `sources/data/athletics-by-sport.csv` |
+| 7 — free cash | `model/freecash.py` | `sources/dls/`, `sources/data/capital-plan-fy27.csv` |
+| 8 — athletic fees | `model/athletics.py` | `sources/munis-ledgers/account-details/`, `sources/data/athletics-by-sport.csv` |
 | 9 — the options | `model/levers.py` | the FY27 line-item budget |
 | 10 — the cut cascade | `model/cascade.py` | `model/catalog.py` |
 | 11 — tax base and overrides | `model/taxbase.py` | the FY2023 Tax Classification Hearing |

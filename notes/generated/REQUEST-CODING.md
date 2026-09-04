@@ -21,7 +21,7 @@ mis-describe the district. We would rather ask than guess.
 | | |
 |---|---|
 | **The Town's ledger** | `FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx` — the MUNIS `glytdbud` year-to-date budget report for FY2026 period 12, provided by the Town Accountant. Its `ACCOUNT` column carries the full account string, e.g. `0100-3-300-2330-03-2-12-1-511103`. |
-| **The district's workbook** | `sources/xlsx/fy27-proposals.xlsx`, the FY27 budget projection, which prints a function code at the head of each group, e.g. `2330 - Paraprofessionals Special Education`. |
+| **The district's workbook** | `sources/budget-workbooks/fy27-proposals.xlsx`, the FY27 budget projection, which prints a function code at the head of each group, e.g. `2330 - Paraprofessionals Special Education`. |
 
 Read against each other for the school department in FY2026, **38 of 45 function codes carry the same total in both**. 7 do not, by $1,010,646 in total.
 

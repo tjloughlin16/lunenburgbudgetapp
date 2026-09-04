@@ -66,7 +66,7 @@ type RowDef = {
   publisher: string; howToGet: string; effort: 'public' | 'records request'
   /** How far actual spending can be followed in this document — not how detailed it
    *  looks. The final school budget is tier 1 despite having line items, because it is
-   *  the plan and carries no actuals. See notes/DATA-ARCHITECTURE.md. */
+   *  the plan and carries no actuals. See notes/reference/DATA-ARCHITECTURE.md. */
   tier: '1' | '2' | '3' | 'supporting'; tierNote: string
 }
 type RequestedAs = {
@@ -285,6 +285,10 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
     return g
   }, [cov.rowDefs])
 
+  /** `held` is what the archive contains. `after` layers the two drafted records
+   *  requests over it — a projection, and labelled as one everywhere it appears. */
+  const [view, setView] = useState<'held' | 'after'>('held')
+
   const tally = useMemo(() => {
     let obtained = 0, partial = 0, differ = 0, unread = 0, missing = 0, would = 0
     for (const fy of cov.years) for (const rd of cov.rowDefs) {
@@ -300,10 +304,6 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
     return { obtained, partial, differ, unread, missing, would,
       total: cov.years.length * cov.rowDefs.length }
   }, [cov, view])
-
-  /** `held` is what the archive contains. `after` layers the two drafted records
-   *  requests over it — a projection, and labelled as one everywhere it appears. */
-  const [view, setView] = useState<'held' | 'after'>('held')
 
   const at = (fy: number, id: string): Cell =>
     cov.cells[String(fy)]?.[id] ?? { state: 'missing', documents: [] }

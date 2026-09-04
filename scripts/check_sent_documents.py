@@ -45,12 +45,17 @@ def main():
                     help='exit non-zero if anything has drifted')
     args = ap.parse_args()
 
+    # Everything outbound lives under notes/outbound/: `drafts/` for what has been
+    # written and not sent, and `sent-<YYYY-MM>/` for what actually went out. Both carry
+    # a MANIFEST.json, and the difference between them is the `sent` field, not the
+    # folder name -- a folder called "sent" that contained only drafts is exactly the
+    # mistake this file exists to stop repeating.
+    out = os.path.join(NOTES, 'outbound')
     folders = sorted(
-        os.path.join(NOTES, d) for d in os.listdir(NOTES)
-        if d.startswith('sent-') and os.path.isfile(
-            os.path.join(NOTES, d, 'MANIFEST.json')))
+        os.path.join(out, d) for d in (os.listdir(out) if os.path.isdir(out) else [])
+        if os.path.isfile(os.path.join(out, d, 'MANIFEST.json')))
     if not folders:
-        print('nothing recorded as sent')
+        print('nothing recorded in notes/outbound/')
         return 0
 
     drifted = stale = 0

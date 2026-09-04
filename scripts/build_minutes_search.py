@@ -53,7 +53,7 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEXT = os.path.join(ROOT, 'fy28', 'public', 'docs', 'minutes', 'text')
-OUT = os.path.join(ROOT, 'fy28', 'public', 'minutes', 'find')
+OUT = os.path.join(ROOT, 'fy28', 'public', 'meetings', 'find')
 SITE = 'https://lunenburgbudgetproject.org'
 
 # A term in nearly every document tells you nothing about which one to read, and its
@@ -101,7 +101,7 @@ def unsearchable():
     raised. The general name for that is coverage bias, and the fix is always to report
     the denominator.
     """
-    idx = os.path.join(ROOT, 'sources', 'minutes', 'index.csv')
+    idx = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
     if not os.path.exists(idx):
         return None, []
     import csv
@@ -110,7 +110,7 @@ def unsearchable():
     for r in rows:
         stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
         ok = stem and os.path.exists(
-            os.path.join(ROOT, 'sources', 'minutes', 'text', stem + '.txt'))
+            os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt'))
         if not ok:
             missing.append(dict(board=r['board'], date=r['date'], kind=r['kind'],
                                 url=r['url']))

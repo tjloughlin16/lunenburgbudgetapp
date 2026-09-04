@@ -15,7 +15,7 @@ import argparse, csv, datetime as dt, pathlib, re, sys, time, urllib.parse, urll
 
 BASE = 'https://www.lunenburgma.gov'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-OUT = ROOT / 'sources' / 'minutes'
+OUT = ROOT / 'sources' / 'meetings'
 # Who this is, in a form somebody can look up.
 #
 # A crawler that will not say what it is gives an administrator seeing a burst of requests

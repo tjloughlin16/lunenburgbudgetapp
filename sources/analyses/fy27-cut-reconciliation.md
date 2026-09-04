@@ -3,8 +3,8 @@
 **How the FY27 school budget was cut by both $1,174,933 and $761,000.**
 
 Analysis, August 2026. Everything below is reproducible from two documents in this
-archive: the FY27 budget workbook (`xlsx/fy27-proposals.xlsx`) and the Multi-Scenario
-Financial Analysis (`pdf/fy27-multi-scenario-addendum.pdf`).
+archive: the FY27 budget workbook (`budget-workbooks/fy27-proposals.xlsx`) and the Multi-Scenario
+Financial Analysis (`district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf`).
 
 ---
 
@@ -121,9 +121,9 @@ reductions.
 
 ## Sources
 
-- `xlsx/fy27-proposals.xlsx` — FY27 budget workbook, 25 March 2026, 1,197 rows
-- `pdf/fy27-multi-scenario-addendum.pdf` — Multi-Scenario Financial Analysis, §5 and §7
-- `xlsx/fy27-budget-projection-3-25-26.xlsx` — the same workbook as circulated to the
+- `budget-workbooks/fy27-proposals.xlsx` — FY27 budget workbook, 25 March 2026, 1,197 rows
+- `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — Multi-Scenario Financial Analysis, §5 and §7
+- `budget-workbooks/fy27-budget-projection-3-25-26.xlsx` — the same workbook as circulated to the
   Finance Committee; data-identical across every budget column
 
 Every figure above uses budget columns only. No actual-spending column is used anywhere in

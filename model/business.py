@@ -1,7 +1,7 @@
 """Lunenburg business certificate (DBA) registrations.
 
 Source: the town's own business certificate records, cleaned and categorised in a
-separate project (~/lunenburgbusiness). Copied to sources/business/.
+separate project (~/lunenburgbusiness). Copied to sources/data/business/.
 
 IMPORTANT about what this is. A business certificate is a d/b/a filing under
 M.G.L. c.110 §5 -- required of sole proprietorships and partnerships trading under a
@@ -17,7 +17,7 @@ earlier is incomplete. 2026 is a partial year (records pulled May 2026).
 """
 import csv, collections, os
 
-DATA = os.path.join(os.path.dirname(__file__), '..', 'sources', 'business')
+DATA = os.path.join(os.path.dirname(__file__), '..', 'sources', 'data', 'business')
 
 def _load(name):
     with open(os.path.join(DATA, name)) as fh:

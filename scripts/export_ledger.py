@@ -43,10 +43,10 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'ledger.json')
 # a document nobody read, and it reported both as absent -- which is how a request very
 # nearly went to the Superintendent for ten documents already on disk.
 READER = os.path.join(ROOT, 'sources', 'data', 'line-history-coverage.csv')
-CHECKLIST = os.path.join(ROOT, 'notes', 'sent-to-the-town-2026-09',
+CHECKLIST = os.path.join(ROOT, 'notes', 'outbound', 'drafts',
                          'REQUEST-CHECKLIST.csv')
 
-# THE TIERS. See notes/DATA-ARCHITECTURE.md, which is the long form.
+# THE TIERS. See notes/reference/DATA-ARCHITECTURE.md, which is the long form.
 #
 # A tier is NOT how detailed a document looks. It is how far actual spending can be
 # followed in it, and that is what decides which questions it can answer at all. The

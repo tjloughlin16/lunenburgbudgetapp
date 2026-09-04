@@ -270,7 +270,7 @@ Update**, whose *Grants History* section gives one page per year:
 |---|---|
 | **The file, at the district** | https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view — **asks for a Google sign-in as of 29 August 2026** |
 | **The district's name for it** | *FY25 Superintendent's Budget Update* — ask for it by this name if the link will not open |
-| **Our copy, downloadable** | https://lunenburgbudgetproject.org/docs/district-budget-page/docs/fy25-superintendent-39-s-budget-update.pdf |
+| **Our copy, downloadable** | https://lunenburgbudgetproject.org/docs/district-budget/docs/fy25-superintendent-39-s-budget-update.pdf |
 | **The extract we read** | https://lunenburgbudgetproject.org/data/grants-history.csv |
 | Pages | 31–36 — ESSER on 31, then one page per year |
 | sha256 | `9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a7354657f4d804c017af5dc7c` |
@@ -790,7 +790,7 @@ because it is established.
 
 ## Sources
 
-Budget figures from `xlsx/fy27-proposals.xlsx`, the FY27 budget workbook, columns
+Budget figures from `budget-workbooks/fy27-proposals.xlsx`, the FY27 budget workbook, columns
 `fy25_budget`, `fy26_final`, `fy27_level_service` and `fy27_balanced`. Contract rates from
 `contracts/pdf/paraprofessional-fy26-fy28.pdf` and `contracts/pdf/dese-teacher-contract.pdf`.
 Student counts from `dese/selected-populations.csv`, pulled from the state's own report,

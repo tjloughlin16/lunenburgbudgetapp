@@ -186,7 +186,7 @@ were requested from the Town Manager.
    against the loader's own output.
 4. Run `python3 scripts/build_db.py --check`.
 
-MUNIS `glytdbud` reports need no new code: drop the file in `sources/q3-fy26/` (or wherever
+MUNIS `glytdbud` reports need no new code: drop the file in `sources/munis-ledgers/` (or wherever
 it belongs) and re-run `extract_munis_report.py`. It reads the report's own options page
 for the period, the account type and the grain, so the FY24, FY25 and FY26 reports
 requested from the Town Manager will load as they arrive.

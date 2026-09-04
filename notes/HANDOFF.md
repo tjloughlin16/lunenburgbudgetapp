@@ -52,7 +52,7 @@ error this whole project is organised against.
 
 ### The FY26 ledger — the thing that made everything else possible
 
-`sources/records-request-2026-09/`, sent by the Town Manager on 2 September, produced by
+`sources/munis-ledgers/expenses/`, sent by the Town Manager on 2 September, produced by
 the Town Accountant the night before. **The first account-level general fund expenditure
 report this project has ever held** — every previous one was a department rollup that
 renders the whole school district as one row. Here it is 258 school accounts and 376 town
@@ -191,7 +191,7 @@ Both are deployed. If you touch `llms.txt` or the minutes surface, check with th
 1. **Nothing is deployed since `v9.2` except a guard and this file.** The persona rewrite
    of `fy26-closeout.md` IS live; it went out inside v9.2.
 2. **When FY24/FY25 arrive**, they load with no new code — drop them in
-   `sources/records-request-2026-09/` and re-run `extract_munis_report.py`. That is when
+   `sources/munis-ledgers/expenses/` and re-run `extract_munis_report.py`. That is when
    §8 of both analyses stops being one observation and becomes a pattern.
 3. **The town-side root-cause decomposition** has not been done the way the school side's
    §1a was. Snow will distort it, so the fixed-versus-discretionary split needs care.

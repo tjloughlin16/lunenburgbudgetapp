@@ -80,8 +80,7 @@ ORIGINS = [
 # were posted. Worth marking for two reasons: it is the honest answer to "is all of this
 # public", and a reader who wants these for themselves needs to know the route is a
 # request rather than a link.
-BY_REQUEST = {'q3-fy26/', 'xlsx/school-funds-fy26.xlsx', 'records-request-2026-06/',
-              'records-request-2026-09/'}
+BY_REQUEST = {'munis-ledgers/', 'budget-workbooks/school-funds-fy26.xlsx'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
 # the line was published by the town, the district, the state or a neighboring district.
@@ -148,43 +147,43 @@ GROUPS = [
         'blurb': 'The FY27 budget in every published version. Nearly every figure in this '
                  'analysis traces to one of these five documents.',
         'items': [
-            ('xlsx/fy27-proposals.xlsx', 'FY27 budget workbook, 25 March 2026', 3,
+            ('budget-workbooks/fy27-proposals.xlsx', 'FY27 budget workbook, 25 March 2026', 3,
              'The richest single document here. 1,197 rows: FY23–FY25 actuals, FY26 final '
              'budget plus actuals-to-date and encumbrances, and all four FY27 scenarios. '
              'Every budget-line figure on this site comes from this workbook.'),
-            ('xlsx/fy27-budget-projection-3-25-26.xlsx', 'The same workbook, as circulated to the Finance Committee', 2,
+            ('budget-workbooks/fy27-budget-projection-3-25-26.xlsx', 'The same workbook, as circulated to the Finance Committee', 2,
              'Data-identical to the file above across every budget column; the differences '
              'are an unused scratch column and one ratio row. Kept so anyone working from '
              'the Finance Committee copy can confirm they match.'),
-            ('xlsx/PROVENANCE.md', 'Where the three FY27 workbooks came from', 2,
+            ('budget-workbooks/PROVENANCE.md', 'Where the three FY27 workbooks came from', 2,
              'Written by us. The workbooks carry the site\u2019s most load-bearing figures '
              'and the one the model reads has no recorded address. This records what the '
              'files say about themselves \u2014 all three created by the district\u2019s '
              'Business Administrator, one last saved by the Finance Committee member who '
              'sent it \u2014 and, kept separate, what that does not establish: metadata '
              'says who authored a file, never who gave it to us.'),
-            ('xlsx/fy27-budget-projection-2-24-26.xlsx', 'Earlier budget workbook, 24 February 2026', 1,
+            ('budget-workbooks/fy27-budget-projection-2-24-26.xlsx', 'Earlier budget workbook, 24 February 2026', 1,
              'The 24 February version, before the restoration list was revised. Useful only '
              'for tracking what changed between drafts.'),
-            ('pdf/fy27-final-budget-doc.pdf', 'FY27 proposed budget document, 25 March 2026', 3,
+            ('district-budget/docs/final-budget-document.pdf', 'FY27 proposed budget document, 25 March 2026', 3,
              'The printed line-item budget: FY26 final against the Restoration, Core and '
              'Balanced scenarios. 351 line items.'),
-            ('pdf/fy27-projections-3-23-26.pdf', 'FY27 line-item projections, 23 March 2026', 3,
+            ('district-budget/docs/fy27-budget-projections-as-of-3-23-26.pdf', 'FY27 line-item projections, 23 March 2026', 3,
              'The version that carries the Level Service column, so all five scenarios sit '
              'side by side. This is the document that settles what "level service" cost.'),
-            ('pdf/fy27-projections-3-16-26.pdf', 'FY27 line-item projections, 16 March 2026', 1,
+            ('district-budget/docs/fy27-budget-projections-as-of-3-16-26-with-restorations.pdf', 'FY27 line-item projections, 16 March 2026', 1,
              'An earlier draft with the restoration figures still in.'),
-            ('pdf/fy27-multi-scenario-addendum.pdf', 'Multi-Scenario Financial Analysis', 3,
+            ('district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf', 'Multi-Scenario Financial Analysis', 3,
              'The narrative behind the four scenarios: what each one is, the cut and '
              'restoration lists, headcounts, impact statements, and the comparative '
              'summary. The source of every FTE count quoted here.'),
-            ('pdf/town-additional-revenue-plan.pdf', 'Additional Town Revenue Spending Plan', 3,
+            ('district-budget/docs/additional-town-revenue-spending-plan.pdf', 'Additional Town Revenue Spending Plan', 3,
              'The $453,722 of positions added back at the September 2026 Special Town '
              'Meeting, with the district’s reasoning for each.'),
-            ('pdf/fy27-balanced-slides-3-23-26.pdf', 'Balanced budget slide deck, 23 March 2026', 1,
+            ('district-budget/docs/balanced-budget-slides-3-23-26.pdf', 'Balanced budget slide deck, 23 March 2026', 1,
              'Presented to the School Committee. Image-only — no text layer, so nothing '
              'in it could be quoted or checked.'),
-            ('pdf/fy27-sc-slidedeck-3-23-26.pdf', 'School Committee deck, 23 March 2026', 1,
+            ('district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf', 'School Committee deck, 23 March 2026', 1,
              'Also image-only, and also unreadable without optical character recognition.'),
         ],
     },
@@ -194,25 +193,25 @@ GROUPS = [
         'blurb': 'How much money the town has, where the Proposition 2½ formula puts the '
                  'ceiling, and what happened at the ballot in May 2026.',
         'items': [
-            ('pdf/town-fy27-budget-press-release.pdf', 'Town Manager’s FY27 budget release, 17 April 2026', 3,
+            ('town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf', 'Town Manager’s FY27 budget release, 17 April 2026', 3,
              'The revenue formula in full — levy limit, new growth, excluded debt, state '
              'aid, local receipts — plus all three budget scenarios by category, the cut '
              'lists and the tax impact per household. The backbone of the revenue model.'),
-            ('pdf/town-2026-election-unofficial-results.pdf', 'Election results, 16 May 2026', 3,
+            ('town-supplementary/docs/town-2026-election-unofficial-results.pdf', 'Election results, 16 May 2026', 3,
              'Both override questions defeated roughly two to one, in every precinct. '
              'Precinct-by-precinct tallies.'),
-            ('pdf/town-fy27-operating-budgets-balanced-tier1-tier2.pdf', 'Operating budgets: Balanced, Tier 1, Tier 2', 3,
+            ('town-budget/docs/3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf', 'Operating budgets: Balanced, Tier 1, Tier 2', 3,
              'The omnibus by department under all three funding scenarios — what each '
              'override tier would have bought, department by department.'),
-            ('pdf/town-fy27-detailed-budget.pdf', 'Detailed town budget by line', 2,
+            ('town-budget/docs/4082-fy-2027-detailed-budget.pdf', 'Detailed town budget by line', 2,
              'Line-item town budget by organization and object code, including the Monty '
              'Tech assessment.'),
-            ('pdf/town-atm-2026-booklet-warrant.pdf', 'Annual Town Meeting booklet and warrant, 2026', 2,
+            ('town-budget/docs/3765-town-meeting-booklet-including-warrant.pdf', 'Annual Town Meeting booklet and warrant, 2026', 2,
              'The full 52-page warrant, including the revolving fund authorisations under '
              'Article 6.'),
-            ('pdf/town-2026-election-warrant.pdf', 'Ballot question language', 1,
+            ('town-budget/docs/4161-2026-annual-town-election-warrant.pdf', 'Ballot question language', 1,
              'The exact wording voters saw for both override questions.'),
-            ('pdf/town-article13-fy27-capital-plan.pdf', 'FY27 capital plan, Article 13', 1,
+            ('town-budget/docs/4111-article-13-fy-2027-capital-plan.pdf', 'FY27 capital plan, Article 13', 1,
              'Capital requests, separate from the operating budget.'),
         ],
     },
@@ -223,40 +222,40 @@ GROUPS = [
                  '— the first quarterly report after a near-complete turnover of the finance '
                  'office. This is where the funds held outside the operating budget appear.',
         'items': [
-            ('q3-fy26/town-special-revenue-fy26-q3.xlsx', 'Special revenue funds, 31 March 2026', 3,
+            ('munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx', 'Special revenue funds, 31 March 2026', 3,
              'Every special revenue and revolving fund the town holds, with opening balance, '
              'receipts, spending and closing balance. Includes the special education circuit '
              'breaker account, which appears in no budget document.'),
-            ('q3-fy26/town-trust-agency-fy26-q3.xlsx', 'Trust, agency and stabilization funds, 31 March 2026', 3,
+            ('munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx', 'Trust, agency and stabilization funds, 31 March 2026', 3,
              'All stabilization and trust fund balances — general stabilization, OPEB, '
              'vehicle and equipment, conservation, and the rest.'),
-            ('q3-fy26/fincom-memo-fy26-q3.docx', 'Finance Director’s memo to the Finance Committee', 3,
+            ('town-budget/docs/fincom-memo-fy26-q3.docx', 'Finance Director’s memo to the Finance Committee', 3,
              'The covering memo, dated 11 August 2026. Reports revenue and expenditure '
              'against budget, and gives the finance department’s own account of why '
              'quarterly reporting had lapsed.'),
-            ('q3-fy26/town-general-fund-revenue-fy26-q3.pdf', 'General fund revenue, 31 March 2026', 2,
+            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf', 'General fund revenue, 31 March 2026', 2,
              'Revenue collected against budget by account. Local receipts came in at 116% '
              'of budget.'),
-            ('q3-fy26/town-general-fund-expenditures-fy26-q3.pdf', 'General fund expenditures, 31 March 2026', 2,
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf', 'General fund expenditures, 31 March 2026', 2,
              'Spending against budget by department, including the school department line.'),
-            ('q3-fy26/fincom-deck-fy26-q3.pptx', 'Finance Committee presentation, 13 August 2026', 1,
+            ('town-budget/docs/fincom-deck-fy26-q3.pptx', 'Finance Committee presentation, 13 August 2026', 1,
              'The slides that accompanied the memo.'),
-            ('q3-fy26/ef-sewer-revenue-fy26-q3.pdf', 'Sewer enterprise fund — revenue', 1,
+            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf', 'Sewer enterprise fund — revenue', 1,
              'Enterprise funds are self-supporting and separate from the general fund. '
              'Included for completeness.'),
-            ('q3-fy26/ef-sewer-expenditures-fy26-q3.pdf', 'Sewer enterprise fund — expenditures', 1,
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf', 'Sewer enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('q3-fy26/ef-water-revenue-fy26-q3.pdf', 'Water enterprise fund — revenue', 1,
+            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf', 'Water enterprise fund — revenue', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('q3-fy26/ef-water-expenditures-fy26-q3.pdf', 'Water enterprise fund — expenditures', 1,
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf', 'Water enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('q3-fy26/ef-solid-waste-revenue-fy26-q3.pdf', 'Solid waste enterprise fund — revenue', 1,
+            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf', 'Solid waste enterprise fund — revenue', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('q3-fy26/ef-solid-waste-expenditures-fy26-q3.pdf', 'Solid waste enterprise fund — expenditures', 1,
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf', 'Solid waste enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('q3-fy26/ef-peg-access-revenue-fy26-q3.pdf', 'Cable and broadband enterprise fund — revenue', 1,
+            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf', 'Cable and broadband enterprise fund — revenue', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('q3-fy26/ef-peg-access-expenditures-fy26-q3.pdf', 'Cable and broadband enterprise fund — expenditures', 1,
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf', 'Cable and broadband enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
         ],
     },
@@ -267,7 +266,7 @@ GROUPS = [
                  'the operating appropriation. Obtained by records request, and a record of '
                  'money actually received and spent rather than budgeted.',
         'items': [
-            ('xlsx/school-funds-fy26.xlsx', 'School gift, athletics and choice funds, FY26 year-end', 3,
+            ('budget-workbooks/school-funds-fy26.xlsx', 'School gift, athletics and choice funds, FY26 year-end', 3,
              'Full-year reconciliation of three funds: opening balance, revenue by source, '
              'spending by category, closing balance. The only place actual athletics fee '
              'collections appear — $188,944 in FY26.'),
@@ -295,21 +294,21 @@ GROUPS = [
         'blurb': 'Where the town’s money comes from, what the state contributes, and how '
                  'Lunenburg’s spending compares to its neighbors.',
         'items': [
-            ('pdf/tax-classification-fy23.pdf', 'Tax Classification Hearing, FY2023', 3,
+            ('town-budget/docs/tax-classification-fy23.pdf', 'Tax Classification Hearing, FY2023', 3,
              'The single most valuable town document found. Carries year-by-year new growth '
              'FY18–FY23, assessed value by class, average single-family bills back to '
              'FY19, and excess levy capacity — series that appear nowhere else.'),
-            ('xlsx/ch70-fy27-summary.xlsx', 'DESE Chapter 70 summary, FY27', 3,
+            ('budget-workbooks/ch70-fy27-summary.xlsx', 'DESE Chapter 70 summary, FY27', 3,
              'Foundation enrollment, foundation budget, required local contribution, Chapter '
              '70 aid and required net school spending, for every district in the state.'),
-            ('xlsx/dese-all-districts.xlsx', 'DESE per-pupil expenditures, FY2018–FY2024', 3,
+            ('budget-workbooks/dese-all-districts.xlsx', 'DESE per-pupil expenditures, FY2018–FY2024', 3,
              'Spending by category and per pupil, Lunenburg against eleven peer districts, '
              'with enrollment. Note: this is in-district expenditure, which by DESE’s '
              'definition excludes out-of-district tuition.'),
-            ('pdf/town-revenue-prop25-presentation.pdf', 'Finance Committee deck on Proposition 2½', 2,
+            ('town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf', 'Finance Committee deck on Proposition 2½', 2,
              'Levy ceiling against levy limit against actual levy, and the state analysis '
              'showing assessed value outpacing the levy since 2017.'),
-            ('pdf/assessors-agenda-11-19-2025.pdf', 'Board of Assessors agenda, 19 November 2025', 1,
+            ('town-supplementary/docs/assessors-agenda-11-19-2025.pdf', 'Board of Assessors agenda, 19 November 2025', 1,
              'Context on the classification process.'),
         ],
     },
@@ -343,7 +342,7 @@ GROUPS = [
              'administrator contract is public — a real gap.'),
             ('contracts/pdf/dese-administrator-contract.pdf', 'Administrator contract template', 1,
              'Also an expired DESE template, 2019–22.'),
-            ('pdf/health-insurance-rates-2025.pdf', 'Health insurance rates, 1 July 2026', 3,
+            ('town-supplementary/docs/health-insurance-rates-2025.pdf', 'Health insurance rates, 1 July 2026', 3,
              'Plan-by-plan premiums and the town’s 75/25 contribution split — the basis '
              'for every health insurance figure here.'),
         ],
@@ -380,10 +379,10 @@ GROUPS = [
         'title': 'Fees and program costs',
         'blurb': 'What families pay, and what the programs cost to run.',
         'items': [
-            ('pdf/athletic-program-costs-by-sport.pdf', 'Athletic program costs by sport', 3,
+            ('district-budget/docs/athletic-program-costs-by-sport.pdf', 'Athletic program costs by sport', 3,
              'Cost and participation for all 25 sports. The basis for every fee calculation '
              'on this site.'),
-            ('pdf/lhs-athletics-faq.pdf', 'High school athletics fee schedule', 2,
+            ('district-budget/docs/lhs-athletics-faq.pdf', 'High school athletics fee schedule', 2,
              'The superseded schedule — $250, $140 and $85 with a $475 family cap. Still '
              'the only fee table published anywhere, though the fee rose to $400 for '
              '2026-27. A family checking the website today gets the wrong number.'),
@@ -395,17 +394,17 @@ GROUPS = [
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '
                  'commercial growth argument.',
         'items': [
-            ('business/merged_dataset.csv', 'Business certificate records', 2,
+            ('data/business/merged_dataset.csv', 'Business certificate records', 2,
              '711 records — certificate number, dates, name, owner, address, status and '
              'renewal chain. Note these are sole proprietor and partnership filings only; '
              'corporations register with the state and are not here.'),
-            ('business/categorized.csv', 'Business records by industry', 2,
+            ('data/business/categorized.csv', 'Business records by industry', 2,
              '554 records tagged by industry category, which is what shows that most new '
              'registrations are at residential addresses.'),
         ],
     },
     {
-        'section': 'theirs', 'id': 'dls-free-cash', 'origin': 'dls',
+        'section': 'theirs', 'id': 'dls', 'origin': 'dls',
         'title': 'Free cash, certified — Lunenburg and eight comparable towns',
         'blurb': 'The Division of Local Services publishes a Free Cash Proof for every '
                  'community: the year-end calculation of what a town may appropriate '
@@ -415,22 +414,22 @@ GROUPS = [
                  'of any kind, so the absolute figures do not compare between towns of '
                  'different size; the composition, being a share, does.',
         'items': [
-            ('dls-free-cash/free-cash-proof-lunenburg.xlsx',
+            ('dls/free-cash-proof-lunenburg.xlsx',
              'Lunenburg free cash proof, 2021–2025', 3,
              'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '
              'Two thirds of the 2025 figure is money appropriated and not spent.'),
-            ('dls-free-cash/PROVENANCE.md', 'Where these came from, and what they cannot do', 2,
+            ('dls/PROVENANCE.md', 'Where these came from, and what they cannot do', 2,
              'Written by us. Records the exclusion of a tenth file supplied as Abington '
              'which contains Lunenburg’s data in all 102 cells, and states plainly that no '
              'denominator appears anywhere in these workbooks.'),
-            ('dls-free-cash/free-cash-proof-ayer.xlsx', 'Ayer', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-groton.xlsx', 'Groton', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-littleton.xlsx', 'Littleton', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-shirley.xlsx', 'Shirley', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-townsend.xlsx', 'Townsend', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-upton.xlsx', 'Upton', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-uxbridge.xlsx', 'Uxbridge', 1, 'Peer comparison.'),
-            ('dls-free-cash/free-cash-proof-westford.xlsx', 'Westford', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-ayer.xlsx', 'Ayer', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-groton.xlsx', 'Groton', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-littleton.xlsx', 'Littleton', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-shirley.xlsx', 'Shirley', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-townsend.xlsx', 'Townsend', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-upton.xlsx', 'Upton', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-uxbridge.xlsx', 'Uxbridge', 1, 'Peer comparison.'),
+            ('dls/free-cash-proof-westford.xlsx', 'Westford', 1, 'Peer comparison.'),
         ],
     },
     {
@@ -445,14 +444,14 @@ GROUPS = [
                  'them. Provenance, the town’s own filenames and a sha256 for each file '
                  'are in PROVENANCE.md, listed below.',
         'items': [
-            ('records-request-2026-09/PROVENANCE.md',
+            ('munis-ledgers/expenses/PROVENANCE-fy2026-p12.md',
              'Where the FY26 period 12 report came from', 2,
              'The email, the sender, the date, both filenames as sent, and the sha256 of '
              'each. Also what the report is NOT: period 12 rather than the year-end close, '
              'expenditures only, and with zero balance accounts suppressed. And the '
              'reconciliation that establishes the spreadsheet and the printout are one '
              'report, since only the printout states a period.'),
-            ('records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx',
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx',
              'FY26 year-to-date budget report, period 12 \u2014 spreadsheet', 3,
              'The first ACCOUNT-LEVEL general fund expenditure report in this archive. '
              'Every prior one was run with Print totals only: Y, which renders the whole '
@@ -467,7 +466,7 @@ GROUPS = [
              'to adjust as we continue the year-end reconciliation process\u201d. Zero '
              'balance accounts are suppressed, so an account absent here is not '
              'necessarily absent from the ledger.'),
-            ('records-request-2026-09/town-general-fund-expenditures-fy26-p12.pdf',
+            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf',
              'FY26 year-to-date budget report, period 12 \u2014 as printed', 28,
              'The same report as MUNIS prints it, and the only one of the pair that states '
              'its own parameters: Year/Period 2026/12, Print totals only: N, Suppress zero '
@@ -480,24 +479,24 @@ GROUPS = [
              'something the project had only been able to back-solve: the rounding is in '
              'the printing, not in the ledger. The sender\u2019s filename is '
              '\u201cPrint_ YEAR-TO-DATE BUDGET REPORT.pdf\u201d.'),
-            ('records-request-2026-06/fund-1301-journal-detail-fy25.xlsx',
+            ('munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx',
              'Athletics revolving fund, journal detail, FY2025', 3,
              'Every receipt and payment in fund 1301 for FY2025, with effective and posting '
              'dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it '
              'is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general '
              'journal entries described only as an adjustment "per memo" account for '
              '$254,121.18 of the $390,299.87 that came in.'),
-            ('records-request-2026-06/fund-1301-journal-detail-fy24.xlsx',
+            ('munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx',
              'Athletics revolving fund, journal detail, FY2024', 3,
              'The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its '
              'opening balance is a row the town prints, which is what lets the three years '
              'be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.'),
-            ('records-request-2026-06/fund-1301-journal-detail-fy26.xlsx',
+            ('munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx',
              'Athletics revolving fund, journal detail, FY2026', 2,
              'FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed '
              'year. Its payroll total ties to the cent to the salary line in the fund’s own '
              'year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.'),
-            ('records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx',
+            ('munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
              'Athletics by sport, three school years', 3,
              'The district’s own operating workbook: one row per sport, with participation '
              'counts by fee category and cost lines for officials, coaches, transportation, '
@@ -506,7 +505,7 @@ GROUPS = [
              'which is how we learned the 2025-26 rate was $325 and not the $250 the model '
              'assumed. Its own totals do not all tie, and which ones do not is published '
              'alongside it. The town’s filename is Copy of Athletics 24.25 (1).xlsx.'),
-            ('records-request-2026-06/athletic-fee-counts-2025-2026.docx',
+            ('munis-ledgers/account-details/athletic-fee-counts-fy2026.docx',
              'Athletic fee counts, 2025-2026', 2,
              'One page: participation counts by fee category for each season of 2025-26 — '
              'full pay, reduced fee, sibling discounts and full waivers. The only source '
@@ -678,7 +677,7 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
-            ('records-request-2026-06/PROVENANCE.md',
+            ('munis-ledgers/account-details/PROVENANCE-fund1301.md',
              'Provenance for the 17 June 2026 records request', 2,
              'Written by us, filed with the documents it describes: where each one came '
              'from, the town’s own filename for it, a sha256, and what each file '
@@ -767,7 +766,7 @@ GROUPS = [
              'All 67 general fund departments as the Town Accountant\u2019s system prints '
              'them: original appropriation, transfers and adjustments, revised budget, '
              'year-to-date expended, encumbrances. Extracted from '
-             'q3-fy26/town-general-fund-expenditures-fy26-q3.pdf, which came from the Town '
+             'munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf, which came from the Town '
              'by records request rather than off a website. This is the only source here '
              'that shows money MOVING between lines during a year \u2014 28 of the 67 '
              'departments had some, $489,411 in and $148,177 out, of which $76,394 went to '
@@ -1016,8 +1015,8 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarized as a corpus instead.
-SKIP_DIRS = {'minutes', 'txt', 'contracts/txt', 'district-budget-page',
-             'town-site', 'dese'}
+SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
+             'town-budget', 'town-supplementary', 'dese'}
 SKIP_FILES = {'supplemental.csv'}
 
 
@@ -1062,9 +1061,30 @@ def publish(rel):
     dst = os.path.join(DOCS, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     # Re-copy only when it would actually differ, so a rebuild is not 128MB of writes.
+    #
+    # SIZE IS NOT CONTENT. This compared getsize() alone and therefore never republished
+    # a document whose edit happened to preserve its length. `budget-vs-actual.md` sat
+    # stale on the site at exactly 34,380 bytes against a source of exactly 34,380 bytes,
+    # publishing "24,573 readings across 31 documents" where the repository said 24,337
+    # across 32. Nothing reported it, because the test could not see it.
+    #
+    # So size is the cheap reject and the hash is the answer. Hashing only when the sizes
+    # already match keeps the rebuild fast and makes a same-length edit impossible to
+    # miss -- which matters here more than most places, because rule 12 promises a reader
+    # that our published copy is the bytes we hold.
     if not os.path.exists(dst) or os.path.getsize(dst) != size:
         shutil.copy2(src, dst)
+    elif _sha(dst) != _sha(src):
+        shutil.copy2(src, dst)
     return size, None
+
+
+def _sha(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as fh:
+        for block in iter(lambda: fh.read(1 << 20), b''):
+            h.update(block)
+    return h.hexdigest()
 
 
 
@@ -1280,31 +1300,31 @@ SOURCE_URLS = {
 
     # The town's own web server, which has never lost a link: 81 of 81 on 29 August and
     # again on 31 August.
-    'pdf/town-2026-election-unofficial-results.pdf':
+    'town-supplementary/docs/town-2026-election-unofficial-results.pdf':
         'https://www.lunenburgma.gov/DocumentCenter/View/4193',
-    'pdf/tax-classification-fy23.pdf':
+    'town-budget/docs/tax-classification-fy23.pdf':
         'https://www.lunenburgma.gov/DocumentCenter/View/138',
     # The town publishes this in AgendaCenter rather than DocumentCenter, and our own
     # meeting archive holds the identical file at the same address.
-    'pdf/assessors-agenda-11-19-2025.pdf':
+    'town-supplementary/docs/assessors-agenda-11-19-2025.pdf':
         'https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11192025-7512',
     # The town's own name for this file is "Health Insurance Rates July 1, 2026". Ours
     # says 2025 and is wrong; the memo inside is dated 21 April 2026 and sets the rates
     # for the plan year beginning 1 July 2026. The catalogue title has been corrected;
     # the filename is left alone because it is what every prior figure was read from.
-    'pdf/health-insurance-rates-2025.pdf':
+    'town-supplementary/docs/health-insurance-rates-2025.pdf':
         'https://www.lunenburgma.gov/DocumentCenter/View/225',
 
     # DESE's preliminary FY27 Chapter 70 summary -- the Governor's budget figures, not a
     # final appropriation. Which matters: rule 11 turns on Chapter 70 being set in the
     # Governor's budget rather than by anything Lunenburg does.
-    'xlsx/ch70-fy27-summary.xlsx':
+    'budget-workbooks/ch70-fy27-summary.xlsx':
         'https://www.doe.mass.edu/finance/chapter70/fy2027/p-summary-district.xlsx',
 
     # The superseded athletics fee schedule, still the only one posted publicly. Hosted
     # by the schedule vendor rather than the school -- an address that outlives no
     # reorganisation, which is exactly why our copy exists.
-    'pdf/lhs-athletics-faq.pdf':
+    'district-budget/docs/lhs-athletics-faq.pdf':
         'https://tts-livesite.rschooltoday.com/sites/lunenburghs.rschoolteams.com/'
         'files/files/Private_User/jbunnell/Frequently%20Asked%20Questions.pdf',
 
@@ -1315,7 +1335,7 @@ SOURCE_URLS = {
     # Not the portal's front door, which is an index and tells a reader nothing. This is
     # the dataset the per-pupil figures come out of; the workbook was generated from it by
     # hand on 9 March 2026, which is why the link is to the data rather than to a file.
-    'xlsx/dese-all-districts.xlsx':
+    'budget-workbooks/dese-all-districts.xlsx':
         'https://educationtocareer.data.mass.gov/d/er3w-dyti',
 }
 
@@ -1327,7 +1347,7 @@ SOURCE_URLS = {
 # its date, an email and who sent it, a meeting packet. So these are not gaps waiting for
 # a link. They are the answer, in the form the answer takes.
 #
-# **On naming a person.** The records request in sources/records-request-2026-06/
+# **On naming a person.** The records request in sources/munis-ledgers/account-details/
 # deliberately does NOT name the resident who made it, and that is not inconsistent with
 # naming somebody here. The distinction is the capacity they acted in. A private resident
 # asking the town a question is not part of any address a reader needs; a member of the
@@ -1335,7 +1355,7 @@ SOURCE_URLS = {
 # official is exactly the thing that tells a reader what the document is. Where the
 # capacity is private, the role goes in and the name stays out.
 PROVIDED_BY = {
-    'xlsx/fy27-budget-projection-3-25-26.xlsx':
+    'budget-workbooks/fy27-budget-projection-3-25-26.xlsx':
         'Sent directly to this project by Ana Lockwood, a member of the Lunenburg Finance '
         'Committee, under her own filename \u201cFY27 School Department Budget Projection '
         'as of 3.25.26\u201d. Not downloaded from a public page.',
@@ -1344,7 +1364,7 @@ PROVIDED_BY = {
 
 def upstream_by_hash():
     known = {}
-    for sub in ('district-budget-page', 'town-site', 'dese'):
+    for sub in ('district-budget', 'town-budget', 'town-supplementary', 'dese'):
         idx = os.path.join(SRC, sub, 'index.csv')
         if not os.path.exists(idx):
             continue
@@ -1415,7 +1435,7 @@ def district_page_group(catalogued_hashes):
     Anything byte-identical to a document we actually build on is marked, so a reader can
     see at a glance which of these are load-bearing and which are just held.
     """
-    idx = os.path.join(SRC, 'district-budget-page', 'index.csv')
+    idx = os.path.join(SRC, 'district-budget', 'index.csv')
     if not os.path.exists(idx):
         return None
     items = []
@@ -1461,7 +1481,7 @@ def district_page_group(catalogued_hashes):
 
 def build_corpus():
     """The meeting archive, summarized. index.csv is the record of what was fetched."""
-    idx = os.path.join(SRC, 'minutes', 'index.csv')
+    idx = os.path.join(SRC, 'meetings', 'index.csv')
     if not os.path.exists(idx):
         return None
     boards, kinds, dates, fetched = Counter(), Counter(), [], 0
@@ -1485,7 +1505,7 @@ def build_corpus():
         'minutes': kinds.get('minutes', 0),
         'from': min(dates) if dates else None,
         'to': max(dates) if dates else None,
-        'textFiles': sum(len(f) for _, _, f in os.walk(os.path.join(SRC, 'minutes', 'text'))),
+        'textFiles': sum(len(f) for _, _, f in os.walk(os.path.join(SRC, 'meetings', 'text'))),
         'note': 'Every agenda and set of minutes the town publishes, across all boards. The '
                 'scanned originals are not committed to the repository — they run to about '
                 '400MB and are re-fetchable — but the extracted text of all of them is, and '
@@ -1514,9 +1534,14 @@ def main():
             count, unit = page_count(path)
             served, elsewhere = publish(rel)
 
+            # Where the extracted text sits beside a document. `docs/` -> `text/` is the
+            # convention every mirror uses; `pdf/` -> `txt/` was the old top-level format
+            # split, kept because a few addresses still refer to it.
             txt = os.path.splitext(rel)[0] + '.txt'
-            txt_alt = rel.replace('pdf/', 'txt/').replace('.pdf', '.txt')
-            text_rel = next((t for t in (txt, txt_alt)
+            cands = (txt,
+                     rel.replace('/docs/', '/text/').replace('.pdf', '.txt'),
+                     rel.replace('pdf/', 'txt/').replace('.pdf', '.txt'))
+            text_rel = next((t for t in cands
                              if os.path.exists(os.path.join(SRC, t))), None)
             if text_rel:
                 publish(text_rel)
@@ -1584,7 +1609,7 @@ def main():
                 catalogued_hashes[sha(fp)] = i['path']
     for g in [
         district_page_group(catalogued_hashes),
-        mirror_group('town-site', 'town-site',
+        mirror_group('town-budget', 'town-budget',
                      'The town’s budget and finance documents, mirrored',
                      'Every budget-relevant document linked from the town’s finance pages '
                      '— {n} of them, including the audited financial statements and the '
@@ -1592,6 +1617,16 @@ def main():
                      'and finances, and the finance-adjacent department pages rather than '
                      'by enumerating the document store, which would have meant thousands '
                      'of files about dog licenses.', 'town', catalogued_hashes),
+        mirror_group('town-supplementary', 'town-supplementary',
+                     'The town’s supplementary documents, mirrored',
+                     'The other {n} documents from the same town pages: tax billing and '
+                     'exemption forms, the senior work-off programme, police policies, '
+                     'HR forms, grant notices and an infrastructure assessment. Split out '
+                     'because a folder called budget should hold budgets — data, '
+                     'spreadsheets and plans — and these are supplementary to it. '
+                     'Nothing was discarded: they are mirrored on the same terms as '
+                     'everything else, and several bear on the budget indirectly.',
+                     'town', catalogued_hashes),
         mirror_group('dese', 'dese', 'State enrollment data',
                      'Lunenburg’s selected-population counts from the state, FY19 to FY26 '
                      '— {n} files. The count of students with disabilities is the one '

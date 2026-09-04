@@ -56,7 +56,7 @@ WANTED = [
     dict(local='radar-district-comparison.xlsx',
          upstream='https://www.doe.mass.edu/research/radar/district-comparison.xlsx',
          publisher_name='district-comparison.xlsx',
-         read='xlsx',
+         read='budget-workbooks',
          label='DESE RADAR district comparison — spending by function, all funds, '
                'every district, FY2021-FY2025'),
     dict(local='lunenburg-finance-profile.html',

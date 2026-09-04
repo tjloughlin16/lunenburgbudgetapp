@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate the completeness grids inside notes/data-model/*.html from the database.
+"""Regenerate the completeness grids inside notes/reference/data-model/*.html from the database.
 
 Those pages were built by hand, and hand-built copies of a computed thing go stale
 silently. Both of them stated the coverage matrix as it stood on 3 September 2026, and by
@@ -33,7 +33,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER = os.path.join(ROOT, 'fy28', 'public', 'data', 'ledger.json')
-PAGES = [os.path.join(ROOT, 'notes', 'data-model', f)
+PAGES = [os.path.join(ROOT, 'notes', 'reference', 'data-model', f)
          for f in ('match-matrix.html', 'after-request.html')]
 
 # The glyph is never the only signal -- every cell also carries its state in the title

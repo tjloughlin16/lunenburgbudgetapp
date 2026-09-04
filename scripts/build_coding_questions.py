@@ -31,9 +31,9 @@ DATA = os.path.join(ROOT, 'sources', 'data')
 OUT = os.path.join(ROOT, 'notes', 'generated', 'REQUEST-CODING.md')
 DEPTS, FY = ('300', '301'), '2026'
 
-LEDGER_DOC = 'sources/records-request-2026-09/town-general-fund-expenditures-fy26-p12.xlsx'
+LEDGER_DOC = 'sources/munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx'
 LEDGER_NAME = 'FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx'
-BOOK_DOC = 'sources/xlsx/fy27-proposals.xlsx'
+BOOK_DOC = 'sources/budget-workbooks/fy27-proposals.xlsx'
 
 
 # A hand edit to the output is lost the next time this runs, and nothing warns

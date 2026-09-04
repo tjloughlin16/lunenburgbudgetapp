@@ -30,13 +30,13 @@ CITATIONS = [
     dict(id='fy27-approp', metric='The FY27 school budget',
          value='$26,572,288',
          kind='published', basis='Total, Balanced scenario',
-         doc='pdf/fy27-final-budget-doc.pdf',
+         doc='district-budget/docs/final-budget-document.pdf',
          source='FY27 proposed budget document, 25 March 2026'),
 
     dict(id='expense-base', metric='What the schools spend, by line',
          value='351 line items',
          kind='budget', basis='column fy27_balanced — the adopted budget, not actual spending',
-         doc='xlsx/fy27-proposals.xlsx',
+         doc='budget-workbooks/fy27-proposals.xlsx',
          source='FY27 budget workbook, 25 March 2026'),
 
     dict(id='cuts', metric='Positions cut from the budget now in force',
@@ -49,25 +49,25 @@ CITATIONS = [
                'Teacher at Turkey Hill ($14,488) \u2014 the district listed that post with '
                'no dollar figure, so the amount is OURS, priced from the high school '
                'music position.',
-         doc='pdf/fy27-multi-scenario-addendum.pdf',
+         doc='district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf',
          source='Multi-Scenario Financial Analysis, §5, with the FY27 workbook'),
 
     dict(id='override', metric='Override questions passed, and what they would have cost',
          value='0 of 2',
          kind='published', basis='Precinct tallies; tax impact from the Town Manager',
-         doc='pdf/town-2026-election-unofficial-results.pdf',
+         doc='town-supplementary/docs/town-2026-election-unofficial-results.pdf',
          source='Town election results, 16 May 2026'),
 
     dict(id='levy', metric='Revenue: levy limit, new growth, excluded debt, state aid',
          value='$49,963,990 omnibus',
          kind='published', basis='The revenue formula as the Town published it',
-         doc='pdf/town-fy27-budget-press-release.pdf',
+         doc='town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf',
          source="Town Manager's FY27 budget release, 17 April 2026"),
 
     dict(id='prop25', metric='Proposition 2½ levy growth',
          value='2.5%',
          kind='statute', basis='Massachusetts General Laws c.59 §21C',
-         doc='pdf/town-revenue-prop25-presentation.pdf',
+         doc='town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf',
          source='Finance Committee deck on Proposition 2½'),
 
     dict(id='salaries', metric='Salary growth',
@@ -79,7 +79,7 @@ CITATIONS = [
     dict(id='health', metric='Health insurance growth',
          value='9.0% a year',
          kind='published', basis="The district's own stated FY27 assumption",
-         doc='pdf/health-insurance-rates-2025.pdf',
+         doc='town-supplementary/docs/health-insurance-rates-2025.pdf',
          # The town's own name for this document is "Health Insurance Rates July 1, 2026"
          # and the memo inside is dated 21 April 2026. Our filename says 2025 and is
          # wrong; it is left alone because every figure here was read from it under that
@@ -111,7 +111,7 @@ CITATIONS = [
                 'The series is drawn from the district\u2019s own budget documents, one '
                 'budget stage held constant throughout, and three of its years reproduce '
                 'the FY27 workbook exactly.'),
-         doc='xlsx/fy27-proposals.xlsx',
+         doc='budget-workbooks/fy27-proposals.xlsx',
          source='The district\u2019s budget documents FY17\u2013FY27, extracted by '
                 'scripts/extract_tuition_history.py; published at /data/ood-tuition-history.csv'),
 
@@ -149,7 +149,7 @@ CITATIONS = [
                 'has held. Nothing in a budget column can test that \u2014 a budget shows '
                 'dollars per line and never shows people, and the district does not '
                 'publish staff counts. The full range is published beside the rate.'),
-         doc='xlsx/fy27-proposals.xlsx',
+         doc='budget-workbooks/fy27-proposals.xlsx',
          source='FY27 budget workbook with the district\u2019s budget documents '
                 'FY17\u2013FY27, extracted by scripts/extract_budget_history.py; '
                 'published at /data/sped-para-history.csv'),
@@ -157,31 +157,31 @@ CITATIONS = [
     dict(id='ch70', metric='Chapter 70 aid and the foundation budget',
          value='$9,349,335',
          kind='published', basis='DESE preliminary FY27 Chapter 70',
-         doc='xlsx/ch70-fy27-summary.xlsx',
+         doc='budget-workbooks/ch70-fy27-summary.xlsx',
          source='DESE Chapter 70 summary, FY27'),
 
     dict(id='taxbase', metric='New growth, assessed value by class, average tax bill',
          value='FY18–FY23 series',
          kind='published', basis="The Assessors' own year-by-year tables",
-         doc='pdf/tax-classification-fy23.pdf',
+         doc='town-budget/docs/tax-classification-fy23.pdf',
          source='Tax Classification Hearing, FY2023'),
 
     dict(id='athletics', metric='What each sport costs, and how many play it',
          value='25 sports',
          kind='published', basis='Cost and participation per sport, FY24',
-         doc='pdf/athletic-program-costs-by-sport.pdf',
+         doc='district-budget/docs/athletic-program-costs-by-sport.pdf',
          source='Athletic program costs by sport'),
 
     dict(id='fees', metric='What families pay in athletic and bus fees',
          value='$400 first child',
          kind='published', basis="Superintendent's email, August 2026; prior schedule from the FAQ",
-         doc='pdf/lhs-athletics-faq.pdf',
+         doc='district-budget/docs/lhs-athletics-faq.pdf',
          source='High school athletics fee schedule'),
 
     dict(id='peers', metric='How neighboring districts compare',
          value='11 districts',
          kind='published', basis='In-district expenditure per pupil, FY2018–FY2024',
-         doc='xlsx/dese-all-districts.xlsx',
+         doc='budget-workbooks/dese-all-districts.xlsx',
          source='DESE per-pupil expenditures'),
 
     dict(id='gap', metric='The projected FY28 gap',
@@ -189,7 +189,7 @@ CITATIONS = [
          kind='ours',
          basis='Computed from the FY27 adopted budget and the growth rates above. '
                'There is no FY28 budget yet — that work starts in January 2027.',
-         doc='xlsx/fy27-proposals.xlsx',
+         doc='budget-workbooks/fy27-proposals.xlsx',
          source='Built by this project from the FY27 budget workbook'),
 ]
 

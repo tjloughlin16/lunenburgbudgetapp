@@ -131,7 +131,7 @@ def main():
         (os.path.join(ROOT, 'sources', 'data', 'lps-budget-lines.csv'), 'budget-lines.csv',
          'The district budget, 351 line items, one column per fiscal year and scenario. '
          'The tidy form of the workbook everything else is derived from.'),
-        (os.path.join(ROOT, 'sources', 'district-budget-page', 'index.csv'),
+        (os.path.join(ROOT, 'sources', 'district-budget', 'index.csv'),
          'district-page-index.csv',
          'The 87 documents mirrored from the district budget page: label, our copy, the '
          'extracted text, the district’s original URL, and a sha256.'),
@@ -168,14 +168,14 @@ def main():
     # absent from the text tree while every published count said 1,422, so a search
     # returning nothing could not be distinguished from a subject nobody discussed. A
     # caller can now compute its own denominator without probing anything.
-    mi_src = os.path.join(ROOT, 'sources', 'minutes', 'index.csv')
+    mi_src = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
     if os.path.exists(mi_src):
         mi_out = os.path.join(DATA, 'minutes-index.csv')
         rows = list(csv.DictReader(open(mi_src)))
         for r in rows:
             stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
             r['has_text'] = 'Y' if stem and os.path.exists(
-                os.path.join(ROOT, 'sources', 'minutes', 'text', stem + '.txt')) else 'N'
+                os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt')) else 'N'
         with open(mi_out, 'w', newline='') as fh:
             w = csv.DictWriter(fh, list(rows[0].keys()))
             w.writeheader()

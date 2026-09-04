@@ -34,7 +34,7 @@ this page).
 
 One complete year where both halves exist: **what FY25 was budgeted, against what FY25
 actually cost** — 351 line items from the district's own workbook
-(`sources/xlsx/fy27-proposals.xlsx`).
+(`sources/budget-workbooks/fy27-proposals.xlsx`).
 
 Also FY26, but only eight months of it, because the workbook was printed in late February
 2026. Eight months of a twelve-month year is two-thirds, so a line that has spent about
