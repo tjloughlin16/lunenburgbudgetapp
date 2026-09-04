@@ -184,7 +184,39 @@ Naming them because a second system that can disagree with the first is the real
 
 ## Order of work
 
-1. **Wait for the annual-report fetch to finish.** Moving bytes while a crawl is writing
+0. **Review what the other agent built. This is more than a download.**
+
+   The crawl was extended to a second document store and it produces derived data as well
+   as files, so the archive has grown in ways a file count does not show. Nothing below
+   should start until this is understood, because **the storage move takes a snapshot and
+   anything wrong at that moment gets copied into the bucket and versioned there.**
+
+   What to check, and why each one:
+
+   - **What is new on disk, and how much.** `sources/` was 1.2 GB before the ArchiveCenter
+     crawl. Re-measure by folder. The threshold decision was "everything", so the number
+     only affects how long the push takes — but a surprise here means something landed
+     that nobody meant to fetch.
+   - **What new scripts exist, and what they write.** A new extractor that produces a CSV
+     is a new thing to keep correct, and it needs the same treatment as the others: does
+     it reconcile to a printed total, does it refuse to write when it does not.
+   - **Every derived CSV it produced.** These are the ones that carry document paths, and
+     the reorg has already shown that stale paths hide in data files long after the code is
+     fixed. Check each against the current layout.
+   - **`check_archive_layout.py`** — did anything land in a folder that does not exist, or
+     under a name that does not carry its year? The town split will certainly have come
+     undone again; that is expected and the repair script handles it.
+   - **`build_source_index.py`** — is every new file catalogued, with an address? A
+     document with no provenance is the thing rule 12 exists to prevent, and a crawl of a
+     retired-documents store is exactly where one appears.
+   - **The full standing suite**, against the baseline. Sixteen checks; anything that moved
+     is either the crawl's doing or ours, and it matters which.
+   - **`notes/findings/TOWN-ARCHIVE.md`** and whatever else they wrote — read it. It is
+     likely to say what the ArchiveCenter contains and what it changes.
+
+   Only when that is understood and green does anything move.
+
+1. **Wait for the crawl to finish.** Moving bytes while it is writing
    is how a half-copied file gets its sha256 taken.
 2. Refresh the backup and verify the manifest.
 3. Re-apply the town split the fetcher flattened — `plans/ARCHIVE-REORG.md`.
