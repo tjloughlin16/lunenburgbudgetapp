@@ -44,11 +44,14 @@ type Cell = {
   /** A SECOND AXIS. `state` answers whether we hold it; `quality` answers whether what we
    *  hold agrees with itself. A contested cell is obtained — every document is here — and
    *  no records request can change that the town revised the year between publications. */
-  quality?: 'documents differ'
+  quality?: 'documents differ'; statedBy?: number
   n?: number; note?: string; documents: DocRef[]; unresolvedDocuments?: string[]
   /** Figures two documents state differently, and what each of them says. `partial` on
    *  its own cannot tell one contested line out of 282 from a third of the year. */
   contested?: number; contestedShare?: number; contestedLines?: ContestedLine[]
+  /** Which documents sit on the minority side, and on how many lines. Ranks by how often
+   *  a document differs — it does not say which is right. */
+  differingDocuments?: { document: string; lines: number; of: number }[]
   /** What the two drafted requests would do for this cell. A PROJECTION, never folded
    *  into `state`: every other state here is computed from documents we hold, and asking
    *  is not receiving. */
@@ -163,8 +166,20 @@ const STATE = {
 function hoverText(fy: number, rd: RowDef, c: Cell, view: 'held' | 'after'): string {
   if (view === 'after' && c.wouldFill)
     return `FY${fy} · ${rd.label}\nWould be filled by: ${(c.requestedAs ?? []).map(r => `${r.ref} ${r.report}`).join('; ')}\nAsked of ${(c.requestedBy ?? []).join(' and ')}. Drafted, not sent — a projection, not a holding.`
+  const odd = c.differingDocuments ?? []
+  const widest = c.contestedLines?.[0]
   const differ = c.quality
-    ? `\n≠ ${c.contested} of ${(c.n ?? 0).toLocaleString()} figures (${c.contestedShare ?? 0}%) are stated differently by two of the documents. Nothing is missing — the town revised the year between publications, and no request would settle it.`
+    ? `\n≠ ${c.contested} of ${(c.n ?? 0).toLocaleString()} figures (${c.contestedShare ?? 0}%) differ across ${c.documents.length} documents.`
+      + (odd.length
+          ? `\nMost often the odd one out: ${odd[0].document} — off the majority on ${odd[0].lines} of the ${odd[0].of} contested lines it states.`
+          + (odd.length > 1
+              ? ` Then ${odd[1].document} on ${odd[1].lines}.`
+              : ' Every other document agrees.')
+          : '')
+      + (widest
+          ? `\nWidest gap: ${widest.label} — ${usd(widest.spread)} between ${widest.statements.length} statements of it.`
+          : '')
+      + '\nNothing is missing. Click for the lines and what each document says.'
     : ''
   const head = `FY${fy} · ${rd.label} · ${STATE[c.state].word} · tier ${rd.tier}`
   if (c.state === 'obtained')
@@ -623,8 +638,8 @@ function CellDetail({ fy, rd, cell, onClose }: {
           </p>
           <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
             {((cell.n ?? 0) - (cell.contested ?? 0)).toLocaleString()} of{' '}
-            {(cell.n ?? 0).toLocaleString()} figures agree across every document that
-            states this year. The {cell.contested} below do not — and nothing here decides
+            {(cell.n ?? 0).toLocaleString()} figures agree across all{' '}
+            {cell.statedBy ?? cell.documents.length} documents that state this year. The {cell.contested} below do not — and nothing here decides
             which is right. Two documents stating a line differently is a fact about the
             documents; choosing between them is not a fact at all. The archive keeps the
             statement from the document its publisher dated latest, and marks it.
@@ -640,6 +655,33 @@ function CellDetail({ fy, rd, cell, onClose }: {
               them into one, and the collapse then looks like a disagreement no document is
               having. Those are marked below.
             </p>
+          )}
+          {cell.differingDocuments && cell.differingDocuments.length > 0 && (
+            <>
+              <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+                style={{ color: 'var(--text-muted)' }}>
+                Which document is the odd one out
+              </p>
+              <ul className="space-y-1 mb-2">
+                {cell.differingDocuments.map(d => (
+                  <li key={d.document} className="text-[12px] flex gap-2 tabular-nums">
+                    <span className="w-16 text-right shrink-0"
+                      style={{ color: 'var(--text-primary)' }}>
+                      {d.lines} of {d.of}
+                    </span>
+                    <span className="font-mono text-[11px] break-all"
+                      style={{ color: 'var(--text-muted)' }}>{d.document}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[12px] leading-relaxed mb-3"
+                style={{ color: 'var(--text-secondary)' }}>
+                Lines where that document sits off the majority, out of the contested lines
+                it states at all. <strong>This ranks how often a document differs. It does
+                not say which is right</strong> — and where only two documents state a
+                line there is no majority to be on the wrong side of.
+              </p>
+            </>
           )}
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
             style={{ color: 'var(--text-muted)' }}>

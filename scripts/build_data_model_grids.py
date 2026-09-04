@@ -77,11 +77,21 @@ def cells_for(cov, label, want_format):
         if cell.get('quality'):
             cls += ' differs'
             glyph += QUALITY_MARK
-            title += ('. And the documents DIFFER: %s of %s figures are stated '
-                      'differently by two of them, because the town revised the year '
-                      'between publications. That is a second question — not a gap, and '
-                      'no request would settle it'
-                      % (cell.get('contested'), cell.get('n')))
+            title += ('. And the documents DIFFER: %s of %s figures, across the %s '
+                      'documents that state this year. '
+                      % (cell.get('contested'), cell.get('n'), cell.get('statedBy')))
+            odd = cell.get('differingDocuments') or []
+            if odd:
+                title += ('Most often the odd one out: %s, off the majority on %d of the '
+                          '%d contested lines it states. '
+                          % (odd[0]['document'], odd[0]['lines'], odd[0]['of']))
+            widest = (cell.get('contestedLines') or [None])[0]
+            if widest:
+                title += ('Widest gap: %s, $%s between %d statements of it. '
+                          % (widest['label'], format(widest['spread'], ',.0f'),
+                             len(widest['statements'])))
+            title += ('That is a second question, not a gap: the town revised the year '
+                      'between publications and no request would settle it')
         elif state == 'obtained':
             title += ', and every document that states this year agrees'
         if want_format and state == 'obtained':

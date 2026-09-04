@@ -23,6 +23,7 @@ Three things this file is careful about, all of them rule 13:
     per-line series carries the document behind each half, and a year where they differ is
     flagged rather than silently subtracted.
 """
+import collections
 import csv
 import json
 import os
@@ -327,6 +328,40 @@ def rows(db, sql, *args):
     return [dict(r) for r in db.execute(sql, args).fetchall()]
 
 
+def odd_ones_out(lines):
+    """Which documents are on the minority side, and on how many lines.
+
+    A count of contested figures is not something anybody can act on. WHICH DOCUMENT
+    disagrees is, and in this archive it is almost always one: 101 of the 103 contested
+    FY2025 lines are `final-fy25-budget-4-3-24.txt` against six later documents, which is
+    not a data problem at all -- it is the April 2024 budget predating a revision.
+
+    The majority value per line wins; every document not on it is counted. Ties are
+    counted against everybody, which is the honest reading of two documents and no third
+    to break it. **This ranks documents by how often they differ. It does not say which
+    is right** -- and where only two documents state a line, there is no majority to be
+    on the wrong side of.
+    """
+    off, seen = collections.Counter(), collections.Counter()
+    for line in lines.values():
+        counts = collections.Counter(st['value'] for st in line['statements'])
+        top = counts.most_common(1)[0][1]
+        winners = {v for v, c in counts.items() if c == top}
+        tied = len(winners) > 1
+        # Count LINES, not statements. One document can state the same line twice, where
+        # two budget lines share a printed name -- `Curriculum Adoption/System` on
+        # consecutive rows -- and counting statements made a document look as though it
+        # differed on 104 of 103 lines.
+        for doc in {st['document'] for st in line['statements']}:
+            seen[doc] += 1
+        for doc in {st['document'] for st in line['statements']
+                    if tied or st['value'] not in winners}:
+            off[doc] += 1
+    return sorted(({'document': d, 'lines': n, 'of': seen[d]}
+                   for d, n in off.items() if n),
+                  key=lambda x: -x['lines'])
+
+
 def coverage(db):
     """What exists for each year, WHICH DOCUMENTS back it, and what would fill a gap.
 
@@ -382,6 +417,7 @@ def coverage(db):
         line['statements'].append(dict(document=os.path.basename(r['source']),
                                        value=round(float(r['value']), 2),
                                        kept=bool(int(r['is_kept']))))
+
 
     stage_docs, stage_years = {}, {}
     for r in rows(db, """SELECT fy, stage, doc_id, COUNT(*) n,
@@ -456,7 +492,16 @@ def coverage(db):
         lines = contested.get((fy, stage)) or {}
         if not agg['dis']:
             return cell('obtained', stage_docs[(fy, stage)], agg['n'])
-        share = agg['dis'] / agg['n'] * 100
+        # Count the contested lines from the disagreement data itself, not from the
+        # `documents_disagree` flag summed over the winning document's rows. The two were
+        # one apart -- 103 against 104 -- because the flag counts rows in whichever
+        # document was kept and this counts cells that are contested at all. One number,
+        # from the place that also supplies the detail beneath it.
+        n_contested = len(lines) or agg['dis']
+        stated_by = sorted({st['document'] for ln in lines.values()
+                            for st in ln['statements']}
+                           | {os.path.basename(d) for d in stage_docs[(fy, stage)]})
+        share = n_contested / agg['n'] * 100
         # WHETHER WE HOLD IT AND WHETHER IT AGREES ARE TWO DIFFERENT AXES, and this
         # function spent two revisions conflating them in both directions -- first calling
         # a disagreement `partial`, as though something were missing, then giving it a
@@ -472,16 +517,18 @@ def coverage(db):
         c = cell('obtained', stage_docs[(fy, stage)], agg['n'])
         c['quality'] = 'documents differ'
         c['note'] = ('%d of %d figures — %.0f%% — are stated differently by two of the '
-                     'documents below. Nothing is missing: the town published this year '
-                     'more than once and changed some lines between publications.'
-                     % (agg['dis'], agg['n'], share))
+                     '%d documents that state this year. Nothing is missing: the town '
+                     'published it more than once and changed some lines in between.'
+                     % (n_contested, agg['n'], share, len(stated_by)))
         c['contestedShare'] = round(share, 1)
-        c['contested'] = agg['dis']
+        c['contested'] = n_contested
+        c['statedBy'] = len(stated_by)
         # Widest disagreements first: a line two documents put $19,000 apart is worth a
         # reader's attention and one they put $12 apart is rounding.
         c['contestedLines'] = sorted(
             ({'line': k, **v} for k, v in lines.items()),
             key=lambda x: -x['spread'])[:12]
+        c['differingDocuments'] = odd_ones_out(lines)
         return c
 
     def ledger_cell(fy, period, kind='expense'):
