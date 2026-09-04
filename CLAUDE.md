@@ -399,6 +399,8 @@ arriving fresh.
     python3 scripts/build_data_model_grids.py --check   # ...and fail if either has gone stale
     python3 scripts/build_views.py               # the browsable views of the archive, by year and by group
     python3 scripts/build_views.py --check       # ...and every symlink in them still resolves
+    python3 scripts/check_archive_layout.py      # is every document where the layout says, under the right name
+    python3 scripts/check_moved_docs.py          # every address published before the reorg still resolves
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 
@@ -430,6 +432,43 @@ with a `has_text` column, and `/minutes/find/` for callers that can only fetch U
 `notes/reference/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
 and the database is a derived read model, rebuilt from scratch every run. Nothing is ever
 edited in it -- a row in a database has no address, no publisher filename and no sha256.
+
+## Ingesting new documents
+
+`sources/` is organised by **how a document reached us** — the one attribute that is
+single-valued and never changes. Everything else (fiscal year, subject, what we use it
+for) is multi-valued, and lives in the catalogue and in `views/`, not in a path.
+
+**Run this before you commit an ingest. It fails on the mistakes that actually happen:**
+
+    python3 scripts/check_archive_layout.py
+
+Four rules it enforces, and why each one is there:
+
+1. **No new top-level folder.** Thirteen exist and each is a way a document arrived. A
+   fourteenth is a decision about the archive, not a place to put a delivery — and
+   `records-request-2026-06/` is the folder name that taught us this, because it could
+   have held literally anything.
+2. **Every MUNIS report goes in the subfolder for what it IS** — `expenses`, `revenue`,
+   `account-details`, `transfers`, `purchase-orders`, `fund-balances` — never in one named
+   for when it was asked for.
+3. **The filename carries the fiscal year and the period**:
+   `<report>-fy<YYYY>-p<PP>-<scope>.<ext>`. Two reports print the identical title
+   `YEAR-TO-DATE BUDGET REPORT` and differ only by period; `p09`, `p12` and `p13` are three
+   different answers and the filename is the only place that survives.
+4. **A delivery carries a PROVENANCE file.** Nothing in `munis-ledgers/` came off a
+   website, so the request or the email IS the address. Where we do not know how something
+   arrived, write that down — see `munis-ledgers/expenses/PROVENANCE-fy2026-p09.md`, which
+   records the gap rather than inventing a route.
+
+Then the usual: `build_source_index.py` fails if a new file is not described,
+`extract_munis_report.py --check` ties every report to its own GRAND TOTAL, and
+`build_views.py` re-indexes it by year and subject.
+
+**Mirrors are the exception to rule 3.** A document under `town-budget/`,
+`town-supplementary/`, `district-budget/`, `meetings/`, `dese/` or `dls/` keeps the
+publisher's own filename, because that is the name a resident asks the town for when the
+link dies.
 
 ## The standing questions
 

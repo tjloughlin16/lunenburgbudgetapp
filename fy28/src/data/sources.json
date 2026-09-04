@@ -1745,9 +1745,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 58085,
+     "bytes": 58633,
      "url": "/docs/data/copy-status.csv",
-     "count": 198,
+     "count": 200,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -3950,7 +3950,7 @@
  "totals": {
   "documents": 307,
   "groups": 18,
-  "bytes": 367406234,
+  "bytes": 367406782,
   "loadBearing": 61
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 22 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

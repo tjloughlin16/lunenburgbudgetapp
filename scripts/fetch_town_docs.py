@@ -52,6 +52,11 @@ SEEDS = [
     '/175/Town-Manager',
     '/162/Board-of-Assessors',
     '/168/Treasurer-Collector',
+    # The annual town reports, FY2011-FY2025. Sixteen of them, and the archive held none
+    # until 4 September 2026 -- they were never discovered because no seed page linked
+    # them. They carry the Town Accountant's year-end statements, which is the only place
+    # revenue by source and appropriation by department are published side by side.
+    '/838/Annual-Town-Reports',
     '/DocumentCenter',
 ]
 # Budget words. A town site holds thousands of documents and most are dog licenses.
