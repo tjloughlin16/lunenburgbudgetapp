@@ -45,6 +45,10 @@ type Cell = {
   /** Figures two documents state differently, and what each of them says. `partial` on
    *  its own cannot tell one contested line out of 282 from a third of the year. */
   contested?: number; contestedShare?: number; contestedLines?: ContestedLine[]
+  /** What the two drafted requests would do for this cell. A PROJECTION, never folded
+   *  into `state`: every other state here is computed from documents we hold, and asking
+   *  is not receiving. */
+  requestedBy?: string[]; requestedAs?: RequestedAs[]; wouldFill?: boolean
   /** Documents we HOLD whose figures have never been extracted. A cell with these is
    *  not a gap in the archive; it is a gap in our reading of it, and the two must never
    *  be shown as the same thing — one is a request to the town, the other is our job. */
@@ -53,6 +57,13 @@ type Cell = {
 type RowDef = {
   id: string; group: string; label: string; why: string
   publisher: string; howToGet: string; effort: 'public' | 'records request'
+  /** How far actual spending can be followed in this document — not how detailed it
+   *  looks. The final school budget is tier 1 despite having line items, because it is
+   *  the plan and carries no actuals. See notes/DATA-ARCHITECTURE.md. */
+  tier: '1' | '2' | '3' | 'supporting'; tierNote: string
+}
+type RequestedAs = {
+  ref: string; report: string; period: string; scope: string; asks: string
 }
 type YearRow = {
   fy: number; budget?: number; stage?: string; actual?: number
@@ -100,7 +111,9 @@ type GrossBudget = {
   legend: { state: string; means: string }[]
 }
 type Ledger = {
-  coverage: { years: number[]; rowDefs: RowDef[]; cells: Record<string, Record<string, Cell>> }
+  coverage: {
+    tiers?: Record<string, string>
+    years: number[]; rowDefs: RowDef[]; cells: Record<string, Record<string, Cell>> }
   lines: Line[]
   totals: Total[]
   departments: Dept[]
@@ -134,6 +147,8 @@ const STATE = {
   obtained: { glyph: '■', word: 'Obtained', color: 'var(--status-good)' },
   partial: { glyph: '▤', word: 'Partial', color: 'var(--status-warning)' },
   missing: { glyph: '□', word: 'Not held', color: 'var(--text-muted)' },
+  // Only ever drawn in the `after both requests` view, and never stored on a cell.
+  would: { glyph: '◈', word: 'A request covers this', color: 'var(--accent)' },
   // Held, and not read. Kept visually distinct from 'Not held' because the action is the
   // opposite: nothing to ask anybody for, the document is already on the shelf.
   unread: { glyph: '▨', word: 'Held, not read', color: 'var(--status-warning)' },
@@ -141,8 +156,10 @@ const STATE = {
 
 /** What a cell says on hover. `Partial` is the state that most needs it: it covers both
  *  one contested line out of 282 and a third of the year, and the glyph is the same. */
-function hoverText(fy: number, rd: RowDef, c: Cell): string {
-  const head = `FY${fy} · ${rd.label} · ${STATE[c.state].word}`
+function hoverText(fy: number, rd: RowDef, c: Cell, view: 'held' | 'after'): string {
+  if (view === 'after' && c.wouldFill)
+    return `FY${fy} · ${rd.label}\nWould be filled by: ${(c.requestedAs ?? []).map(r => `${r.ref} ${r.report}`).join('; ')}\nAsked of ${(c.requestedBy ?? []).join(' and ')}. Drafted, not sent — a projection, not a holding.`
+  const head = `FY${fy} · ${rd.label} · ${STATE[c.state].word} · tier ${rd.tier}`
   if (c.state === 'obtained')
     return `${head}\n${(c.n ?? 0).toLocaleString()} figures from ${c.documents.length} document(s). Every document that states this year agrees.`
   if (c.state === 'partial') {
@@ -249,20 +266,31 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
   }, [cov.rowDefs])
 
   const tally = useMemo(() => {
-    let obtained = 0, partial = 0, unread = 0, missing = 0
+    let obtained = 0, partial = 0, unread = 0, missing = 0, would = 0
     for (const fy of cov.years) for (const rd of cov.rowDefs) {
-      const st = cov.cells[String(fy)]?.[rd.id]?.state
+      const c = cov.cells[String(fy)]?.[rd.id]
+      if (view === 'after' && c?.wouldFill) { would++; continue }
+      const st = c?.state
       if (st === 'obtained') obtained++
       else if (st === 'partial') partial++
       else if (st === 'unread') unread++
       else missing++
     }
-    return { obtained, partial, unread, missing,
+    return { obtained, partial, unread, missing, would,
       total: cov.years.length * cov.rowDefs.length }
-  }, [cov])
+  }, [cov, view])
+
+  /** `held` is what the archive contains. `after` layers the two drafted records
+   *  requests over it — a projection, and labelled as one everywhere it appears. */
+  const [view, setView] = useState<'held' | 'after'>('held')
 
   const at = (fy: number, id: string): Cell =>
     cov.cells[String(fy)]?.[id] ?? { state: 'missing', documents: [] }
+
+  /** The state to draw. In the `after` view a cell a request covers is shown as what it
+   *  would become; nothing is mutated and `state` itself never moves. */
+  const shown = (c: Cell): Cell['state'] | 'would' =>
+    view === 'after' && c.wouldFill ? 'would' : c.state
   const def = (id: string) => cov.rowDefs.find(r => r.id === id)!
 
   return (
@@ -292,8 +320,31 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
         </p>
       </>}>
 
+      <div className="flex flex-wrap items-center gap-2 mb-4">
+        {([['held', 'What we hold'], ['after', 'After both requests']] as const).map(([v, label]) => (
+          <button key={v} onClick={() => setView(v)}
+            aria-pressed={view === v}
+            className="px-3 py-1.5 text-[13px] rounded border"
+            style={{ borderColor: view === v ? 'var(--accent)' : 'var(--grid)',
+                     color: view === v ? 'var(--text-primary)' : 'var(--text-secondary)',
+                     background: view === v ? 'var(--surface-3)' : 'transparent',
+                     fontWeight: view === v ? 600 : 400 }}>
+            {label}
+          </button>
+        ))}
+        {view === 'after' && (
+          <span className="text-[12px] leading-snug" style={{ color: 'var(--text-secondary)' }}>
+            A <strong style={{ color: 'var(--text-primary)' }}>projection</strong>, not a
+            holding. Both requests are drafted and neither has been sent, and asking is not
+            receiving — every other square on this page is computed from a document in the
+            archive.
+          </span>
+        )}
+      </div>
+
       <div className="flex flex-wrap gap-4 mb-5 text-xs">
-        {(Object.keys(STATE) as (keyof typeof STATE)[]).map(k => (
+        {(Object.keys(STATE) as (keyof typeof STATE)[])
+          .filter(k => k !== 'would' || view === 'after').map(k => (
           <span key={k} className="inline-flex items-center gap-1.5" style={{ color: STATE[k].color }}>
             <span aria-hidden="true" className="text-base leading-none">{STATE[k].glyph}</span>
             {STATE[k].word}
@@ -301,7 +352,8 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
         ))}
         <span style={{ color: 'var(--text-muted)' }}>
           {tally.obtained} obtained · {tally.partial} partial · {tally.unread} held but
-          not read · {tally.missing} not held, of {tally.total}
+          not read · {tally.missing} not held
+          {view === 'after' && ` · ${tally.would} a request would fill`}, of {tally.total}
         </span>
       </div>
 
@@ -353,14 +405,14 @@ function Coverage({ cov }: { cov: Ledger['coverage'] }) {
                     </td>
                     {cov.years.map(y => {
                       const c = at(y, rd.id)
-                      const st = STATE[c.state]
+                      const st = STATE[shown(c)]
                       const on = open?.fy === y && open?.row === rd.id
                       return (
                         <td key={y} className="text-center py-1 px-1">
                           <button
                             onClick={() => setOpen(on ? null : { fy: y, row: rd.id })}
                             aria-expanded={on}
-                            title={hoverText(y, rd, c)}
+                            title={hoverText(y, rd, c, view)}
                             aria-label={`FY${y}, ${rd.label}: ${st.word}`}
                             className="w-7 h-7 rounded leading-none text-lg"
                             style={{ color: st.color,
@@ -499,6 +551,33 @@ function CellDetail({ fy, rd, cell, onClose }: {
         <p className="text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
           Nothing in the archive supplies this for FY{fy}.
         </p>
+      )}
+
+      {cell.requestedAs && cell.requestedAs.length > 0 && (
+        <div className="mb-4 p-3 border-l-2"
+          style={{ borderColor: 'var(--accent)', background: 'var(--surface-3)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+            style={{ color: 'var(--accent)' }}>
+            {cell.wouldFill
+              ? 'A drafted request covers this'
+              : 'Already held, and a drafted request also covers it'}
+          </p>
+          <ul className="space-y-1 mb-2">
+            {cell.requestedAs.map(r => (
+              <li key={r.ref} className="text-[12px] leading-relaxed">
+                <span className="font-mono">{r.ref}</span> · {r.report}
+                <span style={{ color: 'var(--text-muted)' }}>
+                  {' '}· {r.period}{r.scope ? ` · ${r.scope}` : ''} · asked of {r.asks}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            {cell.wouldFill
+              ? 'Drafted, not sent. Asking is not receiving, and this is the only thing on the page not computed from a document in the archive.'
+              : 'Worth checking before sending — though not necessarily a duplicate: this row does not record which PERIOD is held, and the request asks for period 13 where what we hold may be period 9. Asking again for something already held spends goodwill the next request needs; asking for a different period of the same report does not.'}
+          </p>
+        </div>
       )}
 
       {cell.state === 'partial' && cell.contestedLines && cell.contestedLines.length > 0 && (
@@ -753,7 +832,12 @@ function RowDetail({ rd, cov, onClose, onPick }: {
   const held = cov.years.filter(y => cov.cells[String(y)]?.[rd.id]?.state === 'obtained')
   const partial = cov.years.filter(y => cov.cells[String(y)]?.[rd.id]?.state === 'partial')
   return (
-    <Panel eyebrow={rd.group} title={rd.label} onClose={onClose}>
+    <Panel eyebrow={`${rd.group} · tier ${rd.tier}`} title={rd.label} onClose={onClose}>
+      <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+        <strong style={{ color: 'var(--text-primary)' }}>
+          Tier {rd.tier}
+        </strong>{' '}— {rd.tierNote}
+      </p>
       <p className="text-sm mb-3 leading-relaxed">{rd.why}</p>
       <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
         style={{ color: 'var(--text-muted)' }}>How it is obtained</p>

@@ -42,57 +42,95 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'ledger.json')
 # a document nobody read, and it reported both as absent -- which is how a request very
 # nearly went to the Superintendent for ten documents already on disk.
 READER = os.path.join(ROOT, 'sources', 'data', 'line-history-coverage.csv')
+CHECKLIST = os.path.join(ROOT, 'notes', 'sent-to-the-town-2026-09',
+                         'REQUEST-CHECKLIST.csv')
+
+# THE TIERS. See notes/DATA-ARCHITECTURE.md, which is the long form.
+#
+# A tier is NOT how detailed a document looks. It is how far actual spending can be
+# followed in it, and that is what decides which questions it can answer at all. The
+# consequence people get wrong -- this file got it wrong first -- is that **the final
+# school budget is tier 1 even though it has line items**, because it is the plan and
+# contains no actuals. Line detail without a spend side buys nothing.
+#
+#   1  Top-level aggregates. The plan, and actual spend at department rollup. The school
+#      is two rows, 300 and 301. Answers "how much", never "which"
+#   2  Categorical totals. Coded accounts per fund, so a coded line in the school budget
+#      meets an expenditure. The same report as tier 1 with Print totals only: N
+#   3  Full resolution. The Account Detail journal -- the only way to match actual spend
+#      to an account, and the only way to see money spent straight out of a fund
+#
+#   supporting  Real, and not joinable to the others. The revenue report, the special
+#               revenue summary, the grant awards, the EOYR. Each fills a gap in the
+#               story and none of them maps onto a school budget line.
+#
+# Tier 1 and tier 2 are the same report with one setting changed, which is why
+# `account.level` records what a report was RUN at rather than what it is called.
+TIERS = {
+    '1': 'Top-level aggregates — the plan, and spend at department rollup',
+    '2': 'Categorical totals — coded accounts, where the budget meets the spend',
+    '3': 'Full resolution — the account journal, transaction by transaction',
+    'supporting': 'Supporting — real, and not joinable to the rest',
+}
 
 # What a fiscal year needs before any of the questions on that page can be answered for
 # it. This is the STANDARD -- the same rows for every year -- and the point of publishing
 # it is that the empty cells are the argument.
 ROW_DEFS = [
-    dict(id='proposed', group='Budget documents', label='Proposed budget, line level',
+    dict(id='proposed',
+         tier='1', tierNote='The plan. It carries line items and function group codes and no actuals at all, and that is what makes it tier 1: line detail with no spend side cannot be followed anywhere.', group='Budget documents', label='Proposed budget, line level',
          why='The superintendent’s request. Establishes what was asked for.',
          publisher='Lunenburg Public Schools',
          howToGet='Published on the district’s budget page each winter, and mirrored here '
                   'when it appears. Older years are in the meeting archive as School '
                   'Committee packets.',
          effort='public'),
-    dict(id='settled', group='Budget documents', label='Approved budget, line level',
+    dict(id='settled',
+         tier='1', tierNote='The plan as voted. Same shape, same limit.', group='Budget documents', label='Approved budget, line level',
          why='What the School Committee and Town Meeting settled on. The base every rate is measured from.',
          publisher='Lunenburg Public Schools',
          howToGet='The district’s approved budget document for that year. Where a year is '
                   'missing it is usually because the document was posted to Google Drive '
                   'and the link has since been walled.',
          effort='public'),
-    dict(id='restated', group='Budget documents', label='Prior-year actuals, restated',
+    dict(id='restated',
+         tier='1', tierNote='A later budget document re-presenting a prior year. The district restating itself, not the ledger, so it inherits the plan tier rather than the ledger one.', group='Budget documents', label='Prior-year actuals, restated',
          why='A later budget document re-presenting the year. A restatement, not a ledger.',
          publisher='Lunenburg Public Schools',
          howToGet='Appears as an ACTUALS column inside a LATER year’s budget document, so '
                   'it arrives one to three years after the year it describes. Nothing can '
                   'make it arrive sooner.',
          effort='public'),
-    dict(id='approp', group='The town’s ledger', label='Appropriation as voted',
+    dict(id='approp',
+         tier='1', tierNote='The ORIGINAL APPROP column of a ledger report -- what Town Meeting voted, at whatever level that report was run.', group='The town’s ledger', label='Appropriation as voted',
          why='MUNIS original appropriation. What Town Meeting actually voted, before transfers.',
          publisher='Town Accountant',
          howToGet='The ORIGINAL APPROP column of any MUNIS year-to-date budget report for '
                   'that year, so it arrives with any of the quarterly reports below.',
          effort='records request'),
-    dict(id='q1', group='The town’s ledger', label='Q1 spend report (period 3)',
+    dict(id='q1',
+         tier='2', tierNote='Tier 2 only with Print totals only: N. Run as a rollup it is tier 1 and the whole school district is two rows, 300 and 301.', group='The town’s ledger', label='Q1 spend report (period 3)',
          why='First quarter. Needed for the seasonal baseline that makes a burn rate mean anything.',
          publisher='Town Accountant',
          howToGet='MUNIS YEAR-TO-DATE BUDGET REPORT (program `glytdbud`), Fund 0100, '
                   'Account type Expense, Year/Period YYYY/3, run with '
                   '**Print totals only: N** and **Suppress zero bal accts: N**.',
          effort='records request'),
-    dict(id='q2', group='The town’s ledger', label='Q2 spend report (period 6)',
+    dict(id='q2',
+         tier='2', tierNote='Tier 2 only with Print totals only: N.', group='The town’s ledger', label='Q2 spend report (period 6)',
          why='Half year.',
          publisher='Town Accountant',
          howToGet='The same report at Year/Period YYYY/6.',
          effort='records request'),
-    dict(id='q3', group='The town’s ledger', label='Q3 spend report (period 9)',
+    dict(id='q3',
+         tier='2', tierNote='What we hold for FY26 is the rollup -- tier 1 -- which is why this cell is amber rather than green.', group='The town’s ledger', label='Q3 spend report (period 9)',
          why='Three quarters. The last point at which a surplus could still be redirected.',
          publisher='Town Accountant',
          howToGet='The same report at Year/Period YYYY/9. We hold FY26 at this period, but '
                   'run as a department rollup rather than at account level.',
          effort='records request'),
-    dict(id='p12', group='The town’s ledger', label='Year-end position (period 12)',
+    dict(id='p12',
+         tier='2', tierNote='FY26 arrived as a spreadsheet at account level. It is the one report carrying the account string, and therefore the only reason a coded budget line can be compared to spending at all.', group='The town’s ledger', label='Year-end position (period 12)',
          why='June, with the books not yet closed. Shows where a year landed; not what it '
              'finally turned back.',
          publisher='Town Accountant',
@@ -101,41 +139,82 @@ ROW_DEFS = [
                   'spreadsheet form — the first account-level expenditure report in this '
                   'archive.',
          effort='records request'),
-    dict(id='q4', group='The town’s ledger', label='Year-end close (period 13)',
+    dict(id='q4',
+         tier='2', tierNote='Tier 2 only with Print totals only: N.', group='The town’s ledger', label='Year-end close (period 13)',
          why='After the lapse period. The surplus IS the available column on this report.',
          publisher='Town Accountant',
          howToGet='The same report at Year/Period YYYY/13. This is the single most '
                   'valuable missing document in the archive: without it no year’s surplus '
                   'can be computed here at all.',
          effort='records request'),
-    dict(id='po', group='The town’s ledger', label='Purchase orders closed after close',
+    dict(id='account_details',
+         tier='3', tierNote='The journal. The only way to match actual spend to an account, and the only way to see money spent straight out of a fund rather than transferred first -- which is how the athletics fund works, and may be how Chapter 70 and school choice work too. Held for fund 1301 alone.', group='The town’s ledger',
+         label='Account Details, transaction level',
+         why='Every transaction against an account, with its date. The only report that '
+             'answers WHEN in the year a line went wrong, and the only one that names a '
+             'vendor.',
+         publisher='Town Accountant',
+         howToGet='The MUNIS Account Detail report for a fiscal year, by account. The two '
+                  'we hold were run for one account each, so whether one run can span '
+                  'accounts is genuinely unknown — the request names thirteen accounts as '
+                  'a place to start.',
+         effort='records request'),
+    dict(id='transfers',
+         tier='3', tierNote='Movement between accounts, with the authority. ledger_snapshot carries the cumulative net and never the movements themselves.', group='The town’s ledger',
+         label='Line-item transfers, with authority',
+         why='What moved between lines during the year and who authorised it. Settles the '
+             'kindergarten paraprofessional question, which three readings currently fit.',
+         publisher='Town Accountant',
+         howToGet='A report on line-item transfers for the year: the from and to accounts, '
+                  'the amount, the date and the authority. `ledger_snapshot` carries a '
+                  'cumulative transfers column, so we see the net movement and never the '
+                  'movements.',
+         effort='records request'),
+    dict(id='po',
+         tier='3', tierNote='Purchase orders closed against the year after its close, by number and amount.', group='The town’s ledger', label='Purchase orders closed after close',
          why='The step that moved FY25 from $582,115.44 to $603,885.97. Not recoverable from one report run.',
          publisher='Town Accountant',
          howToGet='A list of purchase orders closed against the fiscal year after its '
                   'initial close, with amounts and dates. Not a standard report — it has '
                   'to be asked for in those words.',
          effort='records request'),
-    dict(id='revenue', group='Funding sources', label='Revenue ledger',
+    dict(id='revenue',
+         tier='supporting', tierNote='The only view of how the town brings money IN, categorised -- Chapter 70 appears here. Nothing maps it onto a school budget line, and no document does.', group='Funding sources', label='Revenue ledger',
          why='Chapter 70, local receipts, and transfers in. The expense side cannot see any of it.',
          publisher='Town Accountant',
          howToGet='The same `glytdbud` report with Account type **Revenue**. Our FY26 copy '
                   'was already run at account level, which is why this row is green where '
                   'the expense rows beside it are not.',
          effort='records request'),
-    dict(id='funds', group='Funding sources', label='Revolving and grant fund activity',
+    dict(id='funds',
+         tier='supporting', tierNote='The titled grants and revolving funds with balances and totals -- TITLE I, TITLE V, #240. A total report: no items, no lines, no transfers.', group='Funding sources', label='Revolving and grant fund activity',
          why='What the general fund line is net OF. Rule 11.',
          publisher='Town Accountant',
          howToGet='`glytdbud` for the school grant, revolving and school choice funds — '
                   'not Fund 0100. What we hold for FY26 is a fund-balance summary, one '
                   'row per fund, which gives totals and not what they bought.',
          effort='records request'),
-    dict(id='grants', group='Funding sources', label='Grant awards listed',
+    dict(id='grants',
+         tier='supporting', tierNote='Award totals, listed inside the district own budget documents. The award is not the spending and never says which line it paid for.', group='Funding sources', label='Grant awards listed',
          why='What was awarded. Not a mapping onto the lines a grant paid for — nobody publishes that.',
          publisher='Lunenburg Public Schools',
          howToGet='Listed inside the district’s own budget documents, so it arrives with '
                   'them. The award is not the spending and never says which line it paid.',
          effort='public'),
-    dict(id='dese', group='Independent check', label='DESE all-funds per pupil, by function',
+    dict(id='eoyr',
+         tier='supporting', tierNote='Supporting by shape and load-bearing by importance. Totals by fund, which is the one thing separating a grant paying for staff from the town paying for them.', group='Funding sources',
+         label='End of Year Financial Report, by fund',
+         why='Spending separated by fund. THE load-bearing document: the one thing that '
+             'tells a grant paying for staff apart from the town paying for them, which '
+             'is what rule 11 is entirely about.',
+         publisher='Lunenburg Public Schools',
+         howToGet='The district files it with DESE every year. It is not on the district’s '
+                  'website and DESE does not publish the filing, so it is asked for from '
+                  'the Superintendent — the first item in that request, ahead of the '
+                  'budget documents.',
+         effort='records request'),
+    dict(id='dese',
+         tier='supporting', tierNote='An outside publisher all-funds view, per pupil by function. A second opinion, counting costs the school budget does not carry.', group='Independent check', label='DESE all-funds per pupil, by function',
          why='An outside publisher’s view of the same spending, across every fund. Bounds '
              'the total the budget document cannot see.',
          publisher='Massachusetts DESE',
@@ -150,6 +229,64 @@ ROW_DEFS = [
 # `covers` is written as full years -- FY2025, not FY25 -- so a two-digit pattern
 # reads "20" and matches nothing. It did, and every cell went back to saying missing.
 COVERS_FY = re.compile(r'\bFY(\d{4})\b')
+
+
+# Which coverage row each requested report would fill. The checklist names the report and
+# the fiscal year; this says what that buys, and it is the only hand-written half -- so it
+# is written down here rather than drawn into a picture, where nobody could check it.
+#
+# `glytdbud — expenditures` appears twice in the checklist with different fund scopes and
+# they buy different rows, so the scope is part of the key.
+FILLS = {
+    ('glytdbud — expenditures', 'fund 0100'): ('q4', 'approp'),
+    ('glytdbud — expenditures', 'the 61 school funds'): ('funds',),
+    ('Account Details', ''): ('account_details',),
+    ('Report on line-item transfers', ''): ('transfers',),
+    ('glytdbud — revenue', ''): ('revenue',),
+    ('Purchase orders closed after year close', ''): ('po',),
+}
+# The Superintendent request has no checklist -- it is three documents and three questions
+# in prose. Only the first maps onto a row of this matrix at all; the placement counts and
+# the crosswalk are standing questions, not documents the matrix has a line for.
+DISTRICT_ASKS = {'eoyr': (2023, 2024, 2025, 2026)}
+
+
+def requested():
+    """{(row id, fy): [what was asked for]} -- what the two drafted requests would fill.
+
+    **A projection is an argument, not a measurement.** Every other cell state on this
+    page is computed from documents we hold; this one is computed from documents we have
+    asked for, and asking is not receiving. It is kept in a separate field, never folded
+    into `state`, so nothing downstream can mistake one for the other.
+
+    Derived from the checklist that goes to the Town rather than typed a second time,
+    because a request and a picture of a request drifting apart is the failure this whole
+    page exists to prevent.
+    """
+    out = {}
+    if os.path.exists(CHECKLIST):
+        with open(CHECKLIST, encoding='utf-8') as fh:
+            for r in csv.DictReader(fh):
+                scope = ''
+                for key in ('fund 0100', 'the 61 school funds'):
+                    if key in (r.get('fund_scope') or ''):
+                        scope = key
+                        break
+                rows_filled = (FILLS.get((r['report'], scope))
+                               or FILLS.get((r['report'], '')))
+                if not rows_filled or not r['fy'].startswith('FY'):
+                    continue
+                fy = int(r['fy'][2:])
+                for rid in rows_filled:
+                    out.setdefault((rid, fy), []).append(dict(
+                        ref=r['ref'], report=r['report'], period=r['period'],
+                        scope=r.get('fund_scope', ''), asks='Town Accountant'))
+    for rid, years in DISTRICT_ASKS.items():
+        for fy in years:
+            out.setdefault((rid, fy), []).append(dict(
+                ref='S1', report='DESE End of Year Financial Report', period='full year',
+                scope='all funds', asks='Superintendent'))
+    return out
 
 
 def unread_documents():
@@ -205,6 +342,7 @@ def coverage(db):
     Accountant" is a thing somebody can act on.
     """
     unread_by_year, unread_all = unread_documents()
+    asked = requested()
 
     docmeta = {r['doc_id']: r for r in rows(
         db, """SELECT doc_id, path, basis, url, copy_state, local_sha256 AS sha256,
@@ -343,6 +481,20 @@ def coverage(db):
         return cell('obtained', ledger_docs[(fy, period, kind)], r['n'],
                     'Account level — full GL detail.')
 
+    def attach_request(c, rid, fy):
+        """What the drafted requests would do for this cell, if they are answered in full.
+
+        Never touches `state`. A cell that is already green stays green and simply records
+        that a request also covers it -- which is worth seeing, because asking again for
+        something already held is the mistake this page was one step from making.
+        """
+        got = asked.get((rid, fy))
+        if got:
+            c['requestedBy'] = sorted({g['asks'] for g in got})
+            c['requestedAs'] = got
+            c['wouldFill'] = c['state'] in ('missing', 'partial', 'unread')
+        return c
+
     cells = {}
     for fy in years:
         approp_ids = [d for (f, _, _), ds in ledger_docs.items() if f == fy for d in ds]
@@ -363,6 +515,23 @@ def coverage(db):
                        if approp_ids else cell('missing')),
             # Never held for any year. Requested from the Town Manager, 2 September 2026.
             'po': cell('missing'),
+            # Held for ONE FUND and for no year of the school general fund. The athletics
+            # revolving fund's journal is in the archive -- 277 rows, every transaction
+            # with its date -- and it is the only tier-3 document this project has ever
+            # seen. Saying `missing` of the school department is exact; saying it without
+            # the note would imply we have never seen the report at all.
+            'account_details': cell(
+                'missing', note='Held for fund 1301, the athletics revolving fund, and '
+                                'for no year of the school general fund. That one journal '
+                                'is the only tier-3 document in the archive, which is how '
+                                'we know what this report can answer.'),
+            'transfers': cell(
+                'missing', note='Never held for any year. ledger_snapshot carries a '
+                                'cumulative transfers column, so the net movement is '
+                                'visible and the movements themselves are not.'),
+            'eoyr': cell(
+                'missing', note='Never held. The district files it with DESE annually; '
+                                'neither publishes the filing.'),
             'funds': (cell('obtained', fund_docs[fy], funds[fy])
                       if fy in funds else cell('missing')),
             'grants': (cell('obtained', grant_docs[fy], grants[fy])
@@ -372,7 +541,10 @@ def coverage(db):
                           'like-for-like comparison with the town’s appropriation.')
                      if fy in dese else cell('missing')),
         }
-    return dict(years=years, rowDefs=ROW_DEFS, cells=cells, unread=unread_all)
+        for rid, c in cells[str(fy)].items():
+            attach_request(c, rid, fy)
+    return dict(years=years, rowDefs=ROW_DEFS, cells=cells, unread=unread_all,
+                tiers={str(k): v for k, v in TIERS.items()})
 
 
 def line_series(db):
