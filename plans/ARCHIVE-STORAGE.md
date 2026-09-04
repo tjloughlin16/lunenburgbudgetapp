@@ -235,33 +235,59 @@ A sixth, which is really the point: **the local disk, the backup and the bucket 
 copies.** Nothing is untracked from git until the sha256 has been read back out of the
 bucket and matched.
 
-## Does the layout read well to a stranger? — REVIEW BEFORE THE FIRST UPLOAD
+## Folder renames — DECIDED, to be done before the first upload
 
-The bucket is a public download area, so every folder name is now user-facing, and
-renaming after the first upload costs a redirect for every object under it. This is the
-last cheap moment to change one.
+The bucket is a public download area, so every folder name is user-facing and renaming
+after the first upload costs a redirect for every object beneath it. This is the last
+cheap moment.
 
-Read as if you had never seen the repository:
+**A folder name does not have to be self-explaining if the archive teaches its own
+vocabulary** — a reader who explores learns what `town-supplementary/` holds from the
+company it keeps. So this renames only the names that are *opaque* rather than merely
+unfamiliar, and lets the root README carry the rest.
 
-| folder | reads as | verdict |
+| now | becomes | why |
 |---|---|---|
-| `town-budget/` `town-annual-reports/` `district-budget/` | plain English | keep |
-| `meetings/` `contracts/` `correspondence/` `analyses/` | plain English | keep |
-| **`munis-ledgers/`** | MUNIS is the town's accounting software. A resident has no reason to know the word | **rename?** `town-ledgers/` says what it holds |
-| **`dese/`** | a state acronym | **rename?** `state-dese/`, or keep — DESE is what every school document calls it, so a reader who has one has seen it |
-| **`dls/`** | Division of Local Services. Genuinely obscure | **rename?** `state-free-cash/` describes the contents |
-| **`peers/`** | ambiguous out of context | **rename?** `peer-districts/` |
-| **`town-supplementary/`** | supplementary to what? | **rename?** or keep, since it sits beside `town-budget/` and reads in that company |
-| **`data/`** | could mean anything; it is our computed output | **rename?** `derived-data/` |
-| `docs/` + `text/` inside mirrors | `docs` is the original, `text` the extraction — not obvious | **rename?** `original/` + `text/` is self-explaining |
+| `munis-ledgers/` | **`town-ledgers/`** | MUNIS is the vendor's name for the town's accounting software. Nothing in the folder explains it, and "ledgers" is what they are. The subfolders — `expenses/`, `revenue/`, `account-details/`, `transfers/`, `purchase-orders/`, `fund-balances/` — already carry the detail |
+| `dls/` | **`state-dls/`** | Two letters that mean nothing alone. `state-` tells a stranger it is a state agency, which is the fact they need |
+| `dese/` | **`state-dese/`** | So the two state publishers read as a pair. DESE itself stays: every school finance document uses the acronym, so a reader holding one has seen it |
+| `peers/` | **`peer-districts/`** | *optional* — "peers" alone is ambiguous, and it is twelve files |
 
-**Recommendation: change `munis-ledgers`, `dls`, `peers` and `data`; leave the rest.**
-Those four are the ones a stranger cannot guess. `dese` earns its keep because every school
-finance document uses the acronym. `docs/`→`original/` is the most defensible of the rest
-but touches every mirror and every published `/docs/<path>` URL, so it is the one to skip.
+**Named by publisher, not by contents.** `state-free-cash/` was considered for `dls/` and
+rejected: it names what is in the folder today, and the moment DLS publishes something else
+the name is a lie. Provenance is the one attribute that does not change, which is the whole
+reason the tree is keyed on it.
 
-**None of this is decided.** It is listed because the cost of getting it wrong rises the
-moment the first object is uploaded, and it costs nothing now.
+### Deliberately not renamed
+
+| | why |
+|---|---|
+| `data/` | Considered `derived-data/`. Beside `analyses/` it already reads as ours, the root README can say so in a line, and it is referenced as `sources/data/` throughout the code — the most expensive rename for the least gain |
+| `docs/` + `text/` inside mirrors | `original/` + `text/` is genuinely clearer and genuinely not worth it: every mirror, and every published `/docs/<path>` URL |
+| `town-supplementary/` | Vague alone, obvious beside `town-budget/`. The case for letting the archive teach its own vocabulary |
+| `meetings/` `contracts/` | Plain English already, and `meetings/` is 2,846 files |
+
+### What it leaves
+
+Almost every folder then names its publisher, and the prefix is the organising principle
+visible at a glance:
+
+    town-budget/  town-supplementary/  town-annual-reports/  town-ledgers/
+    district-budget/
+    state-dese/  state-dls/
+    peer-districts/
+    meetings/  contracts/  correspondence/
+    analyses/  data/
+
+`meetings/` and `contracts/` break the pattern — both are town or district material filed
+by genre rather than by publisher — and both are left alone because they are already clear.
+
+### Cost
+
+Four renames touch `sources.json`, `fy28/functions/docs/_moved.js`, `views/`,
+`check_archive_layout.py`, and this plan. All mechanical, all covered by the standing
+checks, and every old `/docs/<path>` keeps working because the alias map gains four more
+prefix rules.
 
 ## What a stranger needs in the bucket itself
 
