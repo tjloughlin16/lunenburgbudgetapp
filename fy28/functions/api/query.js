@@ -40,6 +40,8 @@
  * publish. An endpoint that can produce one has to admit when it has.
  */
 
+import { ROWS } from './_tablesizes.js'
+
 const MAX_ROWS = 1000
 const MAX_SQL = 4000
 // How long an identical query is served from cache.
@@ -53,6 +55,39 @@ const MAX_SQL = 4000
 // rows read in a day and starts again tomorrow, it does not bill. Caching is what keeps a
 // day's budget from being spent on repeats.
 const CACHE_SECONDS = 600
+
+// The most rows one query may be ESTIMATED to read.
+//
+// D1 bills on rows read and caps nothing: the free plan stops at 5 million a day. One
+// join across two large tables here reads 19,006, so 263 of them would take the endpoint
+// dark until tomorrow. Cloudflare offers no spending or usage cap, so this is ours.
+//
+// 250,000 leaves room for about twenty of the heaviest legitimate queries a day and
+// refuses the shapes that could not be legitimate. It is an ESTIMATE from table sizes,
+// not a measurement -- a real cost is only known after the fact, and `rowsRead` reports
+// that -- so it errs toward allowing rather than refusing.
+const MAX_ESTIMATED_ROWS = 250000
+
+/**
+ * An upper estimate of what a statement will read, from the tables it names.
+ *
+ * Nothing can know the true cost before running it: an index may make a scan cheap, and a
+ * WHERE may cut it to nothing. What IS known at build time is the row count of every
+ * table, which bounds the worst case -- a full scan of each table named, multiplied for
+ * each join, because a join can in principle pair every row with every row.
+ */
+function estimate(sql) {
+  const names = [...sql.matchAll(/\b(?:from|join)\s+["'`]?([a-z_][a-z0-9_]*)["'`]?/gi)]
+    .map(m => m[1].toLowerCase())
+  if (!names.length) return { rows: 0, tables: [] }
+  const known = names.filter(n => n in ROWS)
+  if (!known.length) return { rows: 0, tables: [] }
+  // First table scanned; each further table is a join, so multiply -- capped so a
+  // three-way join of small tables is not refused for arithmetic reasons alone.
+  let rows = ROWS[known[0]]
+  for (const n of known.slice(1)) rows = Math.min(rows * Math.max(ROWS[n], 1), 1e9)
+  return { rows, tables: known }
+}
 
 const FORBIDDEN =
   /\b(insert|update|delete|drop|alter|create|replace|attach|detach|pragma|vacuum|reindex|analyze)\b/i
@@ -200,6 +235,24 @@ export async function onRequest(context) {
 
   const { sql: finalSql, imposed } = bounded(sql)
 
+  // Refuse what we can see will be too expensive, BEFORE reading anything.
+  const cost = estimate(finalSql)
+  if (cost.rows > MAX_ESTIMATED_ROWS) {
+    return json({
+      error: 'too_expensive',
+      message: `This query could read about ${cost.rows.toLocaleString()} rows, and the `
+        + `limit is ${MAX_ESTIMATED_ROWS.toLocaleString()}. It is an estimate from the `
+        + `size of the tables named (${cost.tables.join(', ')}), so it may be pessimistic `
+        + `— but D1 charges for rows read and caps nothing, and one endpoint should not be `
+        + `able to spend a whole day's budget.`,
+      fix: 'Add a WHERE that narrows it, query one table at a time, or fetch the '
+        + 'pre-built per-year files instead — https://lunenburgbudgetproject.org/api/tables '
+        + 'lists every dataset with the years it covers.',
+      estimatedRows: cost.rows,
+      limit: MAX_ESTIMATED_ROWS,
+    }, 400)
+  }
+
   // Identical question, identical answer: serve it from the edge and read no rows.
   // Keyed on the statement and its parameters, on a URL of our own making so that a POST
   // and a GET of the same query share one entry.
@@ -243,6 +296,7 @@ export async function onRequest(context) {
     // the number of rows you got back: a COUNT over 4,665 rows returns one row and reads
     // all of them. Published so an expensive query is visible as expensive.
     rowsRead: (out.meta && out.meta.rows_read) ?? null,
+    estimatedRows: cost.rows,
     provenance: await provenanceFor(db, rows),
     readFirst: 'https://lunenburgbudgetproject.org/api/schema',
     rows,

@@ -527,7 +527,20 @@ cost availability, not money.
 9,330. A caller cannot tell the difference and should not have to, so every `/api/query`
 response now states `rowsRead`.
 
-Three things keep it bounded, in order of how much they do:
+**The READ limit is the exposure, and it is tight.** 5 million rows a day sounds large and
+is not: one join across two tables here reads 19,006, so **263 of them takes the endpoint
+dark until tomorrow.** One enthusiastic agent could do that in minutes. Cloudflare publishes
+no usage or spending cap for D1, so the cap has to be ours.
+
+Four things keep it bounded, in order of how much they do:
+
+0. **A query estimated to read more than 250,000 rows is refused before it reads
+   anything.** `build_api.py` writes the row count of every table into
+   `functions/api/_tablesizes.js`, and `query.js` reads the tables a statement names and
+   bounds the worst case -- a scan of each, multiplied per join. It is an ESTIMATE and
+   says so; the true cost is only knowable afterwards, which is what `rowsRead` reports.
+   A three-way join across the big tables estimates a billion rows and is refused with the
+   reason and a suggested narrower route.
 
 1. **Identical queries are served from the edge.** The data changes only when the database
    is redeployed, so two identical queries an hour apart must return the same rows.
