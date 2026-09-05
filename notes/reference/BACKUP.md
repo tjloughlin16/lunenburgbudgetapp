@@ -7,36 +7,18 @@ path that exists only in the working tree is one disk failure from gone.
 
 | path | copies | size | files | what it is | cost to lose |
 |---|---|---:|---:|---|---|
-| `sources/town-budget/docs/` | tree; **115 of 194 not in git** | 758 MB | 194 | The town's PDFs. The primary source, and the only thing here that is not a function of something else. | re-download from two published addresses — **if they still resolve** |
-| `sources/town-budget/ocr/` | **working tree only** | 14 MB | 17 | OCR geometry: `page, x, y, w, h, conf, text` per recognised line, Apple Vision at raster scale 6.0 with per-page orientation calibration. | **~2 hours of compute** |
-| `sources/town-budget/pages/` | **working tree only** | 22 MB | 32 | Each page as text, in two renderings — the PDF's own text layer, and the OCR geometry rebuilt into a fixed-width page. | ~5 minutes, given the OCR |
-| `sources/town-budget/text/` | tree; **114 of 189 not in git** | 11 MB | 189 | Extracted plain text per document, what `search_minutes.py` and the classifiers read. | minutes |
-| `sources/data/inventory/` | **working tree only** | 1 MB | 16 | Per-report table catalogues — every table found by reading all sixteen reports end to end, printed heading verbatim. | **many hours of agent reading** |
-| `sources/data/rosters/` | **working tree only** | 1 MB | 200 | Roster page dumps and parsed JSON — 100 pages, every line numbered and accounted for. | **many hours of agent reading** |
-| `sources/data/` | tree; **25 of 55 not in git** | 11 MB | 55 | The datasets themselves, plus provenance and the extraction plan. CSV only — the directory total below includes the two above. | seconds, given everything above |
+| `sources/town-budget/docs/` | tree + git | 284 MB | 151 | The town's PDFs. The primary source, and the only thing here that is not a function of something else. | re-download from two published addresses — **if they still resolve** |
+| `sources/town-budget/ocr/` | tree + git | 14 MB | 17 | OCR geometry: `page, x, y, w, h, conf, text` per recognised line, Apple Vision at raster scale 6.0 with per-page orientation calibration. | **~2 hours of compute** |
+| `sources/town-budget/pages/` | tree + git | 22 MB | 32 | Each page as text, in two renderings — the PDF's own text layer, and the OCR geometry rebuilt into a fixed-width page. | ~5 minutes, given the OCR |
+| `sources/town-budget/text/` | tree + git | 5 MB | 146 | Extracted plain text per document, what `search_minutes.py` and the classifiers read. | minutes |
+| `sources/data/inventory/` | tree + git | 1 MB | 16 | Per-report table catalogues — every table found by reading all sixteen reports end to end, printed heading verbatim. | **many hours of agent reading** |
+| `sources/data/rosters/` | tree + git | 1 MB | 200 | Roster page dumps and parsed JSON — 100 pages, every line numbered and accounted for. | **many hours of agent reading** |
+| `sources/data/` | tree + git | 11 MB | 55 | The datasets themselves, plus provenance and the extraction plan. CSV only — the directory total below includes the two above. | seconds, given everything above |
 | `sources/data/lunenburg.db` | working tree only | 16 MB | 1 | Derived read model. Dropped and rebuilt from the CSVs on every run, never edited. | seconds — `python3 scripts/build_db.py` |
 
 ## The files that exist in exactly one place
 
-**6 of the sixteen annual town reports are on this machine and nowhere else.** They are
-not in git and they are not published with the site, because they are over the 25 MiB
-per-file limit `build_source_index.py` enforces and none has an `ELSEWHERE` entry pointing
-at object storage. Losing this working tree loses them, and the town's links are the only
-other copy.
-
-| report | size |
-|---|---:|
-| `4128-fy-2021-annual-town-report.pdf` | 83 MB |
-| `4118-fy-2012-annual-town-report.pdf` | 57 MB |
-| `4132-fy-2024-annual-town-report.pdf` | 52 MB |
-| `4119-fy-2013-annual-town-report.pdf` | 38 MB |
-| `4124-fy-2017-annual-town-report.pdf` | 37 MB |
-| `4117-fy-2011-annual-town-report.pdf` | 32 MB |
-
-Three ways to give them a second copy, in increasing order of effort: commit them (they are
-under GitHub's 100 MB hard limit, over its 50 MB warning); add an `ELSEWHERE` entry so they
-publish from object storage like `contracts/pdf/dese-teacher-contract.pdf` already does; or
-copy `sources/` somewhere off this machine.
+None — every annual report has at least two copies.
 
 ## What is deliberately NOT stored
 

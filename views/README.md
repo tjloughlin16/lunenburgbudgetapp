@@ -18,32 +18,41 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**177 of 307 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **80 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**248 of 454 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **130 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **206 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
 
 | year | documents |
 |---|---:|
+| FY04 | 1 |
+| FY05 | 1 |
+| FY06 | 1 |
+| FY07 | 1 |
+| FY08 | 1 |
 | FY09 | 1 |
-| FY14 | 8 |
-| FY15 | 13 |
+| FY10 | 1 |
+| FY13 | 1 |
+| FY14 | 9 |
+| FY15 | 14 |
 | FY16 | 14 |
 | FY17 | 17 |
-| FY18 | 17 |
-| FY19 | 24 |
-| FY20 | 21 |
-| FY21 | 10 |
-| FY22 | 7 |
-| FY23 | 19 |
-| FY24 | 28 |
-| FY25 | 37 |
-| FY26 | 70 |
-| FY27 | 55 |
-| FY28 | 2 |
+| FY18 | 19 |
+| FY19 | 30 |
+| FY20 | 45 |
+| FY21 | 15 |
+| FY22 | 12 |
+| FY23 | 29 |
+| FY24 | 57 |
+| FY25 | 52 |
+| FY26 | 75 |
+| FY27 | 56 |
+| FY28 | 3 |
 | FY29 | 2 |
+| FY33 | 6 |
+| FY34 | 8 |
 
 ## Documents with no stated fiscal year
 
@@ -69,16 +78,28 @@ Listed so this view cannot look more complete than it is.
 - `contracts/pdf/dese-teacher-contract.pdf` — Lunenburg Education Association agreement
 - `contracts/pdf/nonaffiliated-benefits.pdf` — Non-affiliated benefits
 - `contracts/pdf/nonaffiliated-salary-schedule.pdf` — Non-affiliated salary schedule
+- `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
+- `data/PROVENANCE-placement-counts.md` — Where the placement counts came from, and what they are not
+- `data/PROVENANCE-report-tables.md` — What the twelve generic extracts are, and what may not be done with them
+- `data/PROVENANCE-special-revenue-funds.md` — Where the special revenue funds came from
+- `data/PROVENANCE-staff-rosters.md` — Where the staff rosters came from, and what a name is not
 - `data/account-names.csv` — What the ledger’s account codes mean — our readings
+- `data/annual-report-catalogue.csv` — Every table in every annual report, catalogued
+- `data/annual-report-contents.csv` — What each report contains, section by section
+- `data/annual-report-receipts.csv` — Town receipts by source, FY2011–FY2023
+- `data/annual-report-survey.csv` — Every page of every report, and how it can be read
 - `data/athletic-fee-schedule.csv` — Athletic fees, by fiscal year, with their sources
 - `data/athletics-by-sport-reconciliation.csv` — Where the district’s workbook does not add up
 - `data/athletics-by-sport.csv` — Athletics by sport, long form
+- `data/ballot-questions.csv` — What the town was asked to fund, and whether it agreed
 - `data/business/categorized.csv` — Business records by industry
 - `data/business/merged_dataset.csv` — Business certificate records
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
 - `data/copy-status.csv` — Whether the publisher’s copy is still our copy
+- `data/dataset-provenance.csv` — Every dataset row joined to the document it came from
 - `data/dese-radar.csv` — DESE’s own figures, every district, FY2009–FY2025
 - `data/document-basis.csv` — What produced each document’s figures
+- `data/extraction-plan.csv` — Which pages each dataset was read from
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
 - `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
@@ -89,10 +110,28 @@ Listed so this view cannot look more complete than it is.
 - `data/lunenburg.db` — The whole analysis database, SQLite
 - `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
 - `data/ood-tuition-history.csv` — Out-of-district tuition, eleven budgets
+- `data/placement-counts.csv` — Out-of-district placements, by year, FY2011–FY2025
 - `data/rate-register.csv` — Every rate, with the year it applies to and who set it
+- `data/report-anomalies.csv` — What looks wrong in the extracts, and where to look
+- `data/report-appropriations.csv` — The general fund appropriations, both tables, FY2011–FY2025
+- `data/report-capital-projects.csv` — Capital project authorisations
+- `data/report-debt.csv` — Debt outstanding, issued and retired
+- `data/report-dept-activity.csv` — What each department reports doing
+- `data/report-elections.csv` — The vote, by candidate and precinct
+- `data/report-enrollment-mcas.csv` — Enrolment and MCAS results
+- `data/report-gross-wages.csv` — Gross wages paid, by employee
+- `data/report-monty-tech.csv` — Montachusett Regional assessment and enrolment
+- `data/report-officials.csv` — Who held which town office
+- `data/report-trust-funds.csv` — Trust and stabilisation funds
+- `data/report-valuation.csv` — Valuation and tax rate history
+- `data/report-vital-records.csv` — Births, marriages and deaths
+- `data/special-revenue-funds.csv` — The special revenue funds, FY2011–FY2025
 - `data/sped-para-history.csv` — Special education paraprofessionals, ten budgets
 - `data/sped-teacher-history.csv` — Special education teachers, eight budgets
 - `data/sped-transport-history.csv` — Special education transportation, nine budgets
+- `data/staff-position-map.csv` — Roster position titles, grouped
+- `data/staff-roster-counts.csv` — Roster headcount by school and year
+- `data/staff-roster-entries.csv` — Every name the town printed on a school staff roster, FY2011–FY2025
 - `data/stated-figures.csv` — Figures the town stated about itself, with the quote
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
 - `data/total-salaries-history.csv` — District total salaries, budget and actual by year
@@ -143,6 +182,21 @@ Listed so this view cannot look more complete than it is.
 - `munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx` — Athletics by sport, three school years
 - `munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` — Special revenue funds, 31 March 2026
 - `munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx` — Trust, agency and stabilization funds, 31 March 2026
+- `town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf` — FY 2011 Annual Town Report
+- `town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf` — FY 2012 Annual Town Report
+- `town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf` — FY 2013 Annual Town Report
+- `town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf` — FY 2015 Annual Town Report
+- `town-annual-reports/docs/4122-fy-2016-annual-town-report-addendum.pdf` — FY 2016 Annual Town Report, Addendum
+- `town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf` — FY 2016 Annual Town Report
+- `town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf` — FY 2017 Annual Town Report
+- `town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf` — FY 2018 Annual Town Report
+- `town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf` — FY 2019 Annual Town Report
+- `town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf` — FY 2020 Annual Town Report
+- `town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf` — FY 2021 Annual Town Report
+- `town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf` — FY 2022 Annual Town Report
+- `town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf` — FY 2025 Annual Town Report
+- `town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf` — FY 2023 Annual Town Report
+- `town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf` — FY 2024 Annual Town Report
 - `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Finance Committee deck on Proposition 2½
 - `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Town Revenue &amp; Proposition 2.5 Presentation
 - `town-budget/docs/3378-lunenburg-proposed-roadway-capital-improvement-plan-list-pdf.pdf` — Lunenburg Proposed Roadway Capital Improvement Plan List (PDF)
@@ -154,6 +208,37 @@ Listed so this view cannot look more complete than it is.
 - `town-budget/docs/4161-2026-annual-town-election-warrant.pdf` — 2026 Annual Town Election Warrant
 - `town-budget/docs/4365-september-3-2026-special-town-meeting-legal-notice.pdf` — September 3, 2026 Special Town Meeting Legal Notice
 - `town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf` — November 17, 2026 Special Town Meeting Legal Notice
+- `town-budget/docs/a112-fiscal-year-2016-preliminary-budget-pdf.pdf` — Fiscal Year 2016 Preliminary Budget (PDF)
+- `town-budget/docs/a114-fiscal-year-2014-budget-as-appropriated-pdf.pdf` — Fiscal Year 2014 Budget As Appropriated (PDF)
+- `town-budget/docs/a115-fiscal-year-2016-budget-presentation-pdf.pdf` — Fiscal Year 2016 Budget Presentation (PDF)
+- `town-budget/docs/a116-fiscal-year-2013-budget-line-item-detail-of-fiscal-year-2013-budget-recommendati.pdf` — Fiscal Year 2013 Budget Line Item Detail of Fiscal Year 2013 Budget Recommendation (PDF)
+- `town-budget/docs/a119-fiscal-year-2013-appendix-document-5-comprehensive-pavement-management-system-pd.pdf` — Fiscal Year 2013 Appendix Document 5 Comprehensive Pavement Management System (PDF)
+- `town-budget/docs/a120-5-year-financial-forecast-16-20-pdf.pdf` — 5-Year Financial Forecast 16.20 (PDF)
+- `town-budget/docs/a157-2024-may-annual-town-meeting-booklet-pdf.pdf` — 2024 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a161-2024-november-special-town-meeting-warrant-booklet-pdf.pdf` — 2024 November Special Town Meeting Warrant Booklet (PDF)
+- `town-budget/docs/a162-2015-may-annual-town-meeting-booklet-pdf.pdf` — 2015 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a163-2016-may-annual-town-meeting-booklet-pdf.pdf` — 2016 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a164-2015-november-special-town-meeting-booklet-pdf.pdf` — 2015 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a165-2016-november-special-town-meeting-booklet-pdf.pdf` — 2016 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a166-2017-november-special-town-meeting-booklet-pdf.pdf` — 2017 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a167-2019-november-special-town-meeting-booklet-pdf.pdf` — 2019 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a168-2021-november-special-town-meeting-booklet-pdf.pdf` — 2021 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a170-2022-may-annual-town-meeting-booklet-pdf.pdf` — 2022 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a171-2022-november-special-town-meeting-booklet-pdf.pdf` — 2022 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a172-2023-may-annual-town-meeting-booklet-pdf.pdf` — 2023 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a173-2023-november-special-town-meeting-booklet-pdf.pdf` — 2023 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a61-2018-may-annual-town-meeting-booklet-pdf.pdf` — 2018 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a62-2019-may-annual-town-meeting-booklet-pdf.pdf` — 2019 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a63-2018-november-special-town-meeting-booklet-pdf.pdf` — 2018 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a64-2020-june-annual-town-meeting-booklet-pdf.pdf` — 2020 June Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a65-2020-november-special-town-meeting-booklet-pdf.pdf` — 2020 November Special Town Meeting Booklet (PDF)
+- `town-budget/docs/a66-2021-may-annual-town-meeting-booklet-pdf.pdf` — 2021 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a67-2017-may-annual-town-meeting-booklet-pdf.pdf` — 2017 May Annual Town Meeting Booklet (PDF)
+- `town-budget/docs/a78-fiscal-year-2022-capital-plan-presentation-pdf.pdf` — Fiscal Year 2022 Capital Plan Presentation (PDF)
+- `town-budget/docs/a81-fiscal-year-2021-capital-plan-presentation-pdf.pdf` — Fiscal Year 2021 Capital Plan Presentation (PDF)
+- `town-budget/docs/a82-fiscal-year-2021-adjustment-worksheet-made-to-budget-due-to-covid-19-pdf.pdf` — Fiscal Year 2021 Adjustment Worksheet Made to Budget due to COVID-19 (PDF)
+- `town-budget/docs/a83-fiscal-year-2021-budget-message-and-preliminary-budget-proposal-pdf.pdf` — Fiscal Year 2021 Budget Message and Preliminary Budget Proposal (PDF)
+- `town-budget/docs/a85-fiscal-year-2021-town-manager-budget-recommendation-revised-due-to-covid-19-pdf.pdf` — Fiscal Year 2021 Town Manager Budget Recommendation, Revised due to COVID-19 (PDF)
 - `town-supplementary/docs/1416-senior-tax-work-off-record-hours.pdf` — Senior Tax Work Off- Record Hours
 - `town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf` — W-4 Federal Tax Form (PDF)
 - `town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf` — Conflict of Interest/Financial Disclosure (PDF)
