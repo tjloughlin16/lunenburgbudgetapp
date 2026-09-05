@@ -49,6 +49,7 @@ export async function fromBucket(context, path) {
     headers.set('content-length', String(head.size))
     headers.set('cache-control', CACHE)
     headers.set('x-archive-source', 'r2')
+    asDocumentNotPage(headers, key)
     return new Response(null, { headers })
   }
 
@@ -75,6 +76,7 @@ export async function fromBucket(context, path) {
   headers.set('cache-control', CACHE)
   headers.set('x-archive-source', 'r2')
   headers.set('accept-ranges', 'bytes')
+  asDocumentNotPage(headers, key)
 
   if (!object.body) {
     // A conditional request whose condition failed: If-None-Match matched, so the caller
@@ -90,6 +92,33 @@ export async function fromBucket(context, path) {
   }
   headers.set('content-length', String(object.size))
   return new Response(object.body, { headers })
+}
+
+/**
+ * Nine documents in this archive are HTML — the state's own school finance profiles,
+ * saved as the page the state served. Handing them back as `text/html` had them modified
+ * in transit: Cloudflare Web Analytics injects a 367-byte beacon script into every HTML
+ * response on this zone, so a reader who downloaded one and hashed it got a different
+ * sha256 from the one we publish. The archive's whole promise is that our copy is the
+ * document and you can check it yourself, and that promise cannot survive the delivery
+ * changing the bytes.
+ *
+ * It was found by `scripts/check_archive_urls.py` fetching every published address and
+ * hashing the answer. It could not have been found by testing the preview deploy, because
+ * `*.pages.dev` is not in the zone and nothing is injected there — the instrument that
+ * reformats before you see it is part of the finding.
+ *
+ * So an archived HTML file is served as an attachment rather than as a page. Three things
+ * that buys, in order of importance: the bytes are the document's bytes; a page somebody
+ * else wrote no longer executes on this origin; and it reads as what it is — a document
+ * we hold, not a page of this site.
+ */
+function asDocumentNotPage(headers, key) {
+  const type = headers.get('content-type') || ''
+  if (!type.includes('text/html')) return
+  headers.set('content-type', 'application/octet-stream')
+  headers.set('content-disposition',
+    `attachment; filename="${key.slice(key.lastIndexOf('/') + 1)}"`)
 }
 
 // A week, and deliberately not `immutable`.
