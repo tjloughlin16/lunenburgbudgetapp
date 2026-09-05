@@ -19,7 +19,39 @@ load-bearing against the repo before acting on it.
 
 ---
 
-## Where it stands
+## Where it stands — 5 September, end of session
+
+**Steps 1–4 of `plans/ARCHIVE-EXECUTION.md` are DONE.** On branch `archive-storage`, clean
+tree, all thirteen checks passing, site builds 18/18.
+
+| | |
+|---|---|
+| 1. Town split finished | 27 duplicates + their index rows; 16 annual reports rehomed |
+| 2. Fetcher routing fixed | `scripts/town_document_home.py` is the one classifier; a full run re-downloads nothing and files nothing wrongly |
+| 3. Four folders renamed | `town-ledgers`, `state-dese`, `state-dls`, `peer-districts`; old URLs aliased |
+| 4. Bucket | **already existed and is already locked** |
+
+### The bucket — nothing to create
+
+    name        lunenburg-budget-project        (ENAM, created 2026-08-28)
+    public URL  https://pub-5baef0f2604545c398a39a176e400e34.r2.dev
+    lock rule   immutable-sources · enabled · ALL prefixes · after 3650 days
+    contents    1 object, 53.4 MB — contracts/pdf/dese-teacher-contract.pdf
+
+The lock is a ten-year retention across every prefix, blocking **delete and overwrite**,
+applying to existing objects as well as new. That is the deletion safety the plan asked
+for, already in place. **Do not remove that rule to "fix" a bad upload** — upload a
+corrected object under a new key and repoint the manifest.
+
+### What is left: steps 5–9
+
+5. `sync_archive.py --push` — upload, **read back, compare sha256**, one file first
+6. `check_archive_storage.py` — reconcile manifest ↔ bucket, both directions
+7. R2 branch in `fy28/functions/docs/[[path]].js`, deployed to a **preview** URL
+8. Fetch every `/docs/<path>` against that preview, assert 200 + sha256. **This is the gate**
+9. Only then `git rm --cached` the 912 MB of binaries, and document the pull step
+
+## Original notes below
 
 | | |
 |---|---|
