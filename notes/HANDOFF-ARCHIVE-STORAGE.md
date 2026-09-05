@@ -138,6 +138,53 @@ and the same for the other binary extensions, then a force-push. The cost is not
 Do it only when one of the three symptoms above is actually being felt, and take a fresh
 backup first — `notes/reference/BACKUP.md` says where the current one is.
 
+### OPEN: 21 pre-reorg addresses are answered from a stale edge cache
+
+**Expected to clear itself around 9 September 2026.** Decided 5 September to wait rather
+than chase it. Written down so the next person to run the gate does not treat it as new.
+
+`check_archive_urls.py` against production reports **117 of 138** old addresses
+redirecting. The other 21 answer `200` with the document itself instead of the `301`.
+
+**The deploy is not the problem, and that was established rather than assumed:**
+
+    lunenburg-fy28.pages.dev/docs/txt/fy27-final-budget-doc.txt        301  correct
+    www.lunenburgbudgetproject.org/…                                  301  correct
+    lunenburgbudgetproject.org/…                                      200  age: 258215
+    lunenburgbudgetproject.org/…?cachebust=1                          301  correct
+
+Same edge, same IPs, same deployment. A query string changes the cache key and the answer
+comes back right, so it is one cache entry per URL, made about three days before the move
+under `cache-control: public, s-maxage=604800`. Two dashboard purges — Purge Everything
+and a Custom Purge of the exact 21 — did not clear them; `age` kept climbing from the same
+origin timestamp. Why is not established. No zone-scoped credential was available to read
+Cloudflare's own answer to the purge.
+
+**What a reader actually gets, measured rather than assumed:**
+
+| | |
+|---|---|
+| 13 of 21 | the **byte-identical current document**. A 200 where a 301 belongs, nothing else |
+| 6 of 21 | a `.txt` extraction 5–10 bytes older |
+| **2 of 21** | genuinely stale: `txt/fy27-balanced-slides-3-23-26.txt` serves **520 bytes** against a current **7,415** — the pre-OCR extraction of an image-only slide deck. `txt/fy27-sc-slidedeck-3-23-26.txt` likewise |
+
+None of the 21 is linked from the site; they are addresses that existed before
+4 September. The list is in `purge-these-21-urls.txt` at the repository root, which can be
+deleted once this clears.
+
+**Re-check with:**
+
+    python3 scripts/check_archive_urls.py --base https://lunenburgbudgetproject.org --limit 1
+
+`--limit 1` fetches one document and then runs the whole alias sweep, which is the part
+this is about. Expect `138 of 138` once the entries expire.
+
+**The durable half is already fixed.** Redirects now carry `cache-control: public,
+max-age=3600`, so the longest this file can be wrong about where a document lives is an
+hour. Something on the zone still caches `/docs/` documents for a week — worth finding in
+Caching → Cache Rules, because it is why a three-day-old asset outlived the deployment
+that created it.
+
 ### What is NOT established
 
 - **That the r2.dev public URL is the right long-term address.** It works and it costs
