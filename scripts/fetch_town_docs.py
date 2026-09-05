@@ -20,6 +20,7 @@ import hashlib
 import os
 import re
 import subprocess
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -27,10 +28,28 @@ import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://www.lunenburgma.gov'
-OUT = os.path.join(ROOT, 'sources', 'town-budget')
-DOCS = os.path.join(OUT, 'docs')
-TEXT = os.path.join(OUT, 'text')
-MANIFEST = os.path.join(OUT, 'index.csv')
+# The town's document store is mirrored into THREE folders, not one, and which folder a
+# document belongs in is decided by scripts/town_document_home.py -- one copy of the rule,
+# imported here and by anything that repairs the split.
+#
+# This used to write everything to town-budget/ and test "have I got this already?" against
+# that one folder. So every document that had been filed as supplementary or as an annual
+# report looked missing, was downloaded again, and landed back in town-budget/ -- undoing
+# the split on every run, four times, manifest as well as files.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from town_document_home import FOLDERS, home  # noqa: E402
+
+def folder(name):
+    return os.path.join(ROOT, 'sources', name)
+
+def docs_dir(name):
+    return os.path.join(folder(name), 'docs')
+
+def text_dir(name):
+    return os.path.join(folder(name), 'text')
+
+def manifest_of(name):
+    return os.path.join(folder(name), 'index.csv')
 # Who this is, in a form somebody can look up.
 #
 # A crawler that will not say what it is gives an administrator seeing a burst of requests
@@ -299,8 +318,9 @@ def main():
     ap.add_argument('--seeds-only', action='store_true')
     ap.add_argument('--limit', type=int)
     a = ap.parse_args()
-    os.makedirs(DOCS, exist_ok=True)
-    os.makedirs(TEXT, exist_ok=True)
+    for _f in FOLDERS:
+        os.makedirs(docs_dir(_f), exist_ok=True)
+        os.makedirs(text_dir(_f), exist_ok=True)
 
     items = discover()
     print(f'{len(items)} budget-relevant documents linked from the town’s finance pages')
@@ -332,30 +352,46 @@ def main():
     rows = []
     for n, it in enumerate(items, 1):
         base = f'{it["id"]}-{slug(it["label"])}'
-        have = [f for f in os.listdir(DOCS) if os.path.splitext(f)[0] == base]
+        want = home(it['label'])
+        # Look in ALL THREE mirrors before deciding we do not have it. A document already
+        # filed as supplementary is not missing just because it is not in town-budget/.
+        have = None
+        for f in FOLDERS:
+            d = docs_dir(f)
+            if not os.path.isdir(d):
+                continue
+            hit = [x for x in os.listdir(d) if os.path.splitext(x)[0] == base]
+            if hit:
+                have = (f, os.path.join(d, hit[0]))
+                break
         try:
             if have:
-                path = os.path.join(DOCS, have[0])
+                found_in, path = have
                 body = open(path, 'rb').read()
-                note = 'had it'
+                note = 'had it' if found_in == want else f'had it ({found_in})'
             else:
                 body, _ = get(it['url'])
                 ext = sniff(body)
                 if ext in ('.html', '.bin'):
                     print(f'  [{n:>3}] skipped (not a document)  {it["label"][:48]}')
                     continue
-                path = os.path.join(DOCS, base + ext)
+                os.makedirs(docs_dir(want), exist_ok=True)
+                path = os.path.join(docs_dir(want), base + ext)
                 open(path, 'wb').write(body)
                 note = 'downloaded'
                 time.sleep(0.4)
         except Exception as e:
             print(f'  [{n:>3}] FAILED {type(e).__name__}  {it["label"][:48]}')
             continue
-        txt = os.path.join(TEXT, base + '.txt')
+        # The text sits beside whichever copy we actually have, not beside where a new
+        # one would have gone.
+        here = have[0] if have else want
+        os.makedirs(text_dir(here), exist_ok=True)
+        txt = os.path.join(text_dir(here), base + '.txt')
         how = 'had it' if os.path.exists(txt) and os.path.getsize(txt) > 0 \
             else extract(path, txt)
         also = aliases.get(it['id'], [])
-        rows.append(dict(label=it['label'],
+        rows.append(dict(_home=here, label=it['label'],
                          upstream=' '.join([it['url']] + also),
                          local=os.path.relpath(path, ROOT),
                          text=os.path.relpath(txt, ROOT) if os.path.exists(txt) else '',
@@ -363,12 +399,29 @@ def main():
         print(f'  [{n:>3}] {note:<11}{os.path.splitext(path)[1]:<6}{len(body)/1000:>7.0f}KB '
               f'{how:<16}{it["label"][:42]}')
 
-    with open(MANIFEST, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=['label', 'upstream', 'local', 'text',
-                                           'bytes', 'sha256', 'read'])
-        w.writeheader()
-        w.writerows(rows)
-    print(f'\n{len(rows)} retrieved · manifest {os.path.relpath(MANIFEST, ROOT)}')
+    # A PARTIAL RUN MUST NOT WRITE A MANIFEST. Each write replaces the whole file, so
+    # `--limit 40` would leave three index.csv files describing forty documents and
+    # silently drop the rest -- and every one of those rows is a document's only recorded
+    # address. Discovered by doing exactly that.
+    if a.limit:
+        print(f'\n{len(rows)} retrieved. Manifests NOT written: --limit makes this a '
+              f'partial run,\nand a manifest write replaces the whole file.')
+        return
+
+    # Each mirror's manifest gets ONLY its own rows. Writing them all to town-budget's
+    # index.csv is how the split came undone in the manifest as well as on disk.
+    fields = ['label', 'upstream', 'local', 'text', 'bytes', 'sha256', 'read']
+    for name in FOLDERS:
+        mine = [r for r in rows if r['_home'] == name]
+        if not mine and not os.path.exists(manifest_of(name)):
+            continue
+        os.makedirs(folder(name), exist_ok=True)
+        with open(manifest_of(name), 'w', newline='') as fh:
+            w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore')
+            w.writeheader()
+            w.writerows(mine)
+        print(f'  {len(mine):>4} rows · {os.path.relpath(manifest_of(name), ROOT)}')
+    print(f'\n{len(rows)} retrieved across {len(FOLDERS)} mirrors')
     if aliases:
         print(f'{len(aliases)} of them carry a second published address in `upstream`')
 
