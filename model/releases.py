@@ -65,6 +65,14 @@ RELEASES = [
             '— while a table of 3,815 roster entries sat behind a name it could see and '
             'not fetch.',
 
+            'Every address this site hands a reader is now a full URL. Thirteen shipped '
+            'as bare paths — `/data/staff-roster-entries.csv`, with no site name in front '
+            'of it. An assistant reading that was told exactly where the data was and '
+            'could not fetch it, because its tool only accepts addresses it has seen as '
+            'real links; it went to the source repository instead. The repository’s front '
+            'page was the framework’s starter template, untouched since the first commit, '
+            'so it landed there too.',
+
             'The list of things this site says it cannot answer was two-thirds wrong. It '
             'still said out-of-district placement counts were unknown, and that whether '
             'budgeted positions were filled was unknown; both had been extracted from the '
@@ -313,7 +321,7 @@ RELEASES = [
 
             'And /minutes/ used to answer 200 with the app shell. An agent asked to '
             'review the meeting minutes concluded the site did not serve them, while '
-            '/minutes/school-committee.txt was serving 920KB of exactly what it wanted. '
+            'the School Committee bundle was serving exactly what it wanted. '
             'It now returns a real 404 whose body names the three URL patterns that work. '
             'For a program that message is the only one it will ever read.',
         ],

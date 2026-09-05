@@ -319,6 +319,35 @@ async function main() {
       `${bad} not answering, ${heavy} too large to read`)
   }
 
+  // The same rule, applied to the prose the MODEL publishes.
+  //
+  // llms.txt is not the only file that hands an agent an address. Citations, release
+  // notes and the method document all name files, and thirteen of those addresses shipped
+  // as bare paths -- `/data/staff-roster-entries.csv` with no host. An assistant's fetcher
+  // accepts only URLs it has seen as real links, so those were instructions it could not
+  // act on; it went to GitHub instead. `model/export.py` now absolutises them at publish
+  // time, and this asserts they resolve, which also catches a URL going dead: the model
+  // was still naming /minutes/school-committee.txt after the bundles were split.
+  console.log('\nevery URL the model publishes in prose must answer')
+  {
+    // Parsed, then re-stringified, so the match is against real strings rather than
+    // against whatever escaping the transport happened to use.
+    const raw = JSON.stringify(await (await fetch(base + '/data/model.json')).json())
+    const urls = [...new Set(
+      [...raw.matchAll(/https:\/\/lunenburgbudgetproject\.org(\/[^\s"'`)\]]*)/g)]
+        .map(m => m[1].replace(/[.,]+$/, ''))
+        .filter(u => u && !u.includes('<') && !u.endsWith('/')))]
+    let bad = 0
+    for (const u of urls) {
+      const res = await fetch(base + u, { redirect: 'follow' })
+      if (res.status !== 200) {
+        bad++
+        fails.push(`model.json prose names ${u} — got ${res.status}`)
+      }
+    }
+    console.log(`  ${bad ? 'FAIL' : ' ok '} ${urls.length} URLs in model prose, ${bad} dead`)
+  }
+
   console.log('\nllms.txt figures must match the model the app renders from')
   {
     const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))

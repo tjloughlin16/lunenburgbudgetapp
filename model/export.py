@@ -1,3 +1,4 @@
+import re
 import sys, json, csv
 sys.path.insert(0, 'model')
 from catalog import PROGRAMS, CATEGORIES
@@ -226,5 +227,38 @@ data = dict(
         musicSupplies=17073, artSupplies=30685, clubs=11731,
     ),
 )
+# EVERY PATH THIS FILE PUBLISHES BECOMES A FETCHABLE URL.
+#
+# An assistant told to fetch `/data/staff-roster-entries.csv` could not: its fetcher only
+# accepts URLs that appeared as real links in something it had already retrieved, and a
+# bare path is not one. So it was handed the exact address of the data it wanted and
+# simultaneously not authorised to use it, and it went to GitHub instead. Thirteen paths
+# shipped that way.
+#
+# The same lesson is already written into `functions/minutes/[[path]].js`, about the 404
+# body -- "it told an agent exactly what to fetch and simultaneously failed to authorize
+# it" -- and it was learned again here because the rule lived in a comment rather than in
+# the code. This is the code.
+#
+# Applied at the point prose becomes published, so the next sentence anybody writes is
+# covered without their having to remember. Placeholders like `/docs/<anything>` are left
+# alone: they are patterns, not addresses.
+SITE = 'https://lunenburgbudgetproject.org'
+_BARE = re.compile(r'(?<!lunenburgbudgetproject\.org)(?<![\w/])(/(?:data|docs|api|minutes)'
+                   r'/[A-Za-z0-9._/-]+)')
+
+
+def absolutise(node):
+    if isinstance(node, str):
+        return _BARE.sub(lambda m: SITE + m.group(1).rstrip('.'), node)
+    if isinstance(node, list):
+        return [absolutise(v) for v in node]
+    if isinstance(node, dict):
+        return {k: (v if k in ('url', 'textUrl', 'path', 'doc') else absolutise(v))
+                for k, v in node.items()}
+    return node
+
+
+data = absolutise(data)
 json.dump(data, open('fy28/src/data/model.json', 'w'), indent=1)
 print('wrote fy28/src/data/model.json', len(json.dumps(data)), 'bytes')
