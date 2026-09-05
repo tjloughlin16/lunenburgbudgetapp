@@ -24,7 +24,20 @@ export async function onRequest(context) {
     url.pathname = '/docs/' + to
     // 301, not a silent rewrite: an agent that got content back with no signal would go
     // on citing an address that works only because of this map.
-    return Response.redirect(url.toString(), 301)
+    //
+    // The explicit cache-control is not decoration. This zone caches /docs/ responses for
+    // a week, and on the day the archive moved, twenty-one old addresses went on being
+    // answered from three-day-old cache entries -- serving the document itself instead of
+    // the redirect, and for two of them a pre-OCR extraction of 520 bytes where the
+    // current file holds 7,415. The deploy was correct; what a reader received was not.
+    // An hour bounds how long this file can be wrong about where a document lives.
+    return new Response(null, {
+      status: 301,
+      headers: {
+        location: url.toString(),
+        'cache-control': 'public, max-age=3600',
+      },
+    })
   }
 
   // Not in the build and not moved. It may still be in the archive: the binaries were
