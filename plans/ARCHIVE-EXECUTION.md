@@ -123,31 +123,64 @@ the reorg pays off twice:
 
 ### What goes where
 
-| | stays in git | goes to the bucket | stays on local disk |
-|---|:--:|:--:|:--:|
-| PDFs, xlsx, pptx, docx | **no** — untracked | **yes** | yes |
-| extracted text (`text/`, `pages/`) | yes | yes | yes |
-| `ocr/` TSVs (14 MB, ~2h to rebuild) | yes | yes | yes |
-| `data/inventory/`, `data/rosters/` — **not regenerable** | yes | yes | yes |
-| every `index.csv`, every `PROVENANCE*.md` | yes | yes | yes |
-| derived CSVs in `sources/data/` | yes | yes | yes |
-| scripts, model, analyses, notes, plans | yes | no | yes |
-| `sources/data/verify/` — scratch | no | no | delete |
-| `meetings/**/*.pdf` — already gitignored | already no | **yes** | yes |
+**Every file in `sources/` is copied to the bucket** — binaries, text, manifests, the lot.
+The bucket is the complete archive and the app points all file access at it, large file or
+small. It is browsable, self-describing, and nothing in it has a gap a visitor could mistake
+for a document that was never mirrored.
 
-**Nothing leaves the local disk.** "Goes to the bucket" is a copy. "Untracked from git" is
-`git rm --cached`, which removes it from tracking and leaves the file where it is.
+**What git keeps a copy of is a separate question**, and the answer is decided by weight:
 
-The whole archive goes to the bucket, not just the large half — it is a public download
-area, and a partial one has gaps a visitor cannot distinguish from documents that were never
-mirrored.
+| tracked under `sources/` | size | files | stays in git? |
+|---|---:|---:|:--|
+| **binaries** — pdf, xlsx, docx, pptx | **912 MB** | 371 | **no — untracked** |
+| extracted text `.txt` | 39 MB | 1,764 | yes |
+| other | 17 MB | 56 | yes |
+| derived data — `sources/data/*.csv`, `.db` | 16 MB | 67 | yes |
+| `data/inventory/` + `data/rosters/` | 2 MB | 216 | yes |
+| manifests — `index.csv`, `PROVENANCE*` | 0.4 MB | 18 | yes |
+| | **986 MB** | **2,492** | **74 MB stays** |
+
+**The binaries are 92% of the weight and 15% of the files.** Untracking those alone takes
+`sources/` in git from 986 MB to 74 MB and the pack from about 1 GB to well under 100 MB.
+That is the whole problem.
+
+Three reasons the remaining 74 MB earns its place, none of which is sentiment:
+
+- **The manifests are the index into the bucket.** 0.4 MB. Held only in R2, learning what
+  exists needs a network round-trip, and a fresh clone has a chicken-and-egg.
+- **The text is what everything reads** — `build_db`, the analyses, every verifier, and
+  agents through `/docs/`. Tracked, an extraction change shows up in a diff; in the bucket
+  alone it changes silently.
+- **`inventory/` and `rosters/` cannot be regenerated.** Hours of agent reading for 2 MB.
+  Version control, not just backup.
+
+Git's copy is for building and reviewing. It is never what gets served.
 
 ### Roughly what moves
 
-    binaries untracked from git      ~440 MB of the 448 MB currently tracked
-    uploaded to the bucket          ~1.5 GB (everything, including the 418 MB of
-                                     gitignored meeting PDFs — their first real backup)
-    git pack afterwards             ~290 MB → well under 100 MB
+    untracked from git     912 MB of binaries, 371 files
+    uploaded to R2         ~1.5 GB — the whole of sources/, including the
+                           418 MB of gitignored meeting PDFs, which have
+                           never had a backup anywhere
+    git pack afterwards    ~1 GB → well under 100 MB
+
+### The eight files that make this urgent
+
+Seven documents are catalogued and **served nowhere**: `build_source_index.py` refuses
+anything over Cloudflare Pages' 25 MiB per-file limit, prints OVERSIZE, and skips it. Six
+are annual reports; the largest is 79 MB, within sight of GitHub's 100 MB hard push limit.
+
+    79 MB  town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf   NOT SERVED
+    54 MB  town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf   NOT SERVED
+    50 MB  town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf   NOT SERVED
+    38 MB  town-supplementary/docs/3463-bridge-assessment-and-ranking…    NOT SERVED
+    36 MB  town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf   NOT SERVED
+    35 MB  town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf   NOT SERVED
+    30 MB  town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf   NOT SERVED
+    51 MB  contracts/pdf/dese-teacher-contract.pdf                        already on R2
+
+The last line is the point: that file proves the mechanism works. The other seven are the
+argument for finishing it.
 
 ## Step 6 — Copy, verify, then untrack. In that order, per file
 
