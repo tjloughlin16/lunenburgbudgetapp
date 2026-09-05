@@ -101,6 +101,40 @@ the trap that committed 1,383 meeting PDFs last time.
 
 ## Step 4 — The bucket
 
+### Why R2 and not S3 — decided 5 September
+
+S3 has object versioning and Object Lock; R2 has neither versioning nor true immutability.
+That looks like it should settle it for S3, and it does not, for two reasons.
+
+**We do not want our copies versioned. We want them frozen.**
+
+A town PDF does not change. If our copy of one ever differs from what we uploaded, that is
+not a revision to roll back to — **it is a defect**, and `verify_source_copies.py` exists to
+catch precisely that. Rule 12 is explicit that *a Drive file can be replaced in place
+without its URL changing*, which is why every source carries a sha256. If the town publishes
+a revised document, that is a **new document with a new sha256 and its own object**, not a
+second version of the old one.
+
+So for the binaries, a bucket lock — which *prevents* the change — fits better than
+versioning, which *records* it. And the things we genuinely do edit (extracted text, derived
+CSVs, the analyses) are the 74 MB staying in git, which versions them properly: atomic
+across files, with a message, reviewable before it merges. S3 versioning would not have
+given any of that.
+
+**And egress.** Checked 5 September: R2 storage is $0.015/GB-month with a 10 GB-month free
+tier — so a 1.5 GB archive is free — and *"egressing directly from R2, including via the
+Workers API, S3 API, and r2.dev domains does not incur data transfer (egress) charges"*. S3
+charges roughly $0.09/GB out. For a **public** archive whose entire purpose is people and
+agents downloading documents, that cost is unbounded and grows with success.
+
+The one honest cost: an R2 bucket lock rule can be removed by an administrator, so this is
+protection against a mistake rather than immutability against intent. A mistake is the risk
+that has actually materialised in this project.
+
+### Configuration
+
+
+
 Confirm against current Cloudflare docs before creating anything, because deletion safety is
 the point and asserting it from memory is the wrong way to earn it:
 
