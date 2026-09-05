@@ -137,6 +137,29 @@ filter on the printed title measures the house style rather than the staffing.
    and it is the only route to knowing what is indexed.
 3. **Add citizen-phrased questions to the bank**, mapped to the queries that answer them.
 4. Consider whether a rate limiting rule can carry a custom JSON body on this plan.
+5. **Markdown mirrors of the app's own pages.** Vercel's agent-readability guide
+   (`vercel.com/kb/guide/make-your-site-readable-by-ai-agents`) recommends serving a
+   `.md` twin of every page and advertising it with
+   `<link rel="alternate" type="text/markdown">` plus `Vary: Accept`. This site has
+   markdown for the ANALYSES but not for the eighteen app routes, which are where the
+   argument actually lives. It is the largest remaining gap on that guide's list.
+
+### Checked against that guide, 5 September
+
+| its recommendation | here |
+|---|---|
+| pages return 200, not 403, to an agent UA | yes — `curl -A Claude-User/1.0` returns 200 |
+| robots.txt permissive, sitemap lists everything | yes, 67 URLs including the endpoints |
+| server-rendered, not JS-only | yes, 18 prerendered routes |
+| real 404s, not soft ones | yes — that is what `functions/_notfound.js` is |
+| 429 with `Retry-After` | **added** — the daily counter resets at UTC midnight and that is the number given |
+| llms.txt, linked rather than guessed | yes: robots.txt, the page head, and the sitemap |
+| `openapi.json` | yes, generated from the endpoint list |
+| `/.well-known/` metadata | yes, `ai-plugin.json` |
+| JSON-LD on the homepage | already present |
+| fenced, language-tagged code blocks | yes, in `questions.md` |
+| **markdown mirrors with `Vary: Accept`** | **no — see item 5 above** |
+| an MCP server at a stable `/mcp` | no. Worth considering: this archive is a better fit for MCP than most sites, because the useful surface is already a small set of typed queries |
 
 ## How to check it still works
 

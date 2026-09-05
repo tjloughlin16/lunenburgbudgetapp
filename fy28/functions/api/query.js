@@ -105,6 +105,11 @@ const HEADERS = {
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body, null, 1) + '\n', { status, headers: HEADERS })
 
+/** Same, with extra headers -- used for Retry-After on a 429. */
+const jsonWith = (extra, body, status = 200) =>
+  new Response(JSON.stringify(body, null, 1) + '\n',
+    { status, headers: { ...HEADERS, ...extra } })
+
 const HELP = {
   endpoint: '/api/query',
   how: 'GET /api/query?sql=<url-encoded SQL> — works with any fetch tool, including one '
@@ -316,8 +321,16 @@ export async function onRequest(context) {
         + 'that the archive lacks the data. It does not.',
     }
     if (quota) {
-      return json({
+      // Retry-After, because a 429 without one tells a caller to stop and not when to
+      // start. The daily counter resets at UTC midnight, so that is what is offered --
+      // an honest number rather than a guess at a few seconds.
+      const now = new Date()
+      const reset = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1)
+      const seconds = Math.max(60, Math.round((reset - now.getTime()) / 1000))
+      return jsonWith({ 'retry-after': String(seconds) }, {
         error: 'daily_limit_reached',
+        retryAfterSeconds: seconds,
+        retryAt: new Date(reset).toISOString(),
         message: 'The query API has reached its daily usage limit and will answer again '
           + 'tomorrow. THIS IS A LIMIT ON THIS ENDPOINT, NOT A GAP IN THE ARCHIVE.',
         detail,
