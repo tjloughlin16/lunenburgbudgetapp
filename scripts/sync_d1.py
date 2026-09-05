@@ -32,6 +32,18 @@ APP = os.path.join(ROOT, 'fy28')
 NAME = 'lunenburg-budget'
 # Wrangler needs Node 22; the system Node is 20 and fails with a version error.
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
+# The sha256 of the database last successfully imported. Tracked in git, so a clone knows
+# whether the live copy is the one this repository describes.
+PUSHED = os.path.join(ROOT, 'sources', 'data', 'd1-pushed.txt')
+
+
+def db_sha256():
+    import hashlib
+    h = hashlib.sha256()
+    with open(DB, 'rb') as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b''):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def wrangler(*args, timeout=1800):
@@ -91,6 +103,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
                     help='compare row counts and fail on any difference')
+    ap.add_argument('--force', action='store_true',
+                    help='import even if this database has already been imported')
     args = ap.parse_args()
 
     if not os.path.exists(DB):
@@ -107,6 +121,18 @@ def main():
         print(f'ok: D1 matches the local database — {len(want)} tables, '
               f'{sum(want.values()):,} rows')
         return 0
+
+    here = db_sha256()
+    last = open(PUSHED).read().strip() if os.path.exists(PUSHED) else ''
+    rows = sum(local_counts().values())
+    if here == last and not args.force:
+        print(f'nothing to do: D1 already holds this database ({here[:12]}).\n'
+              f'  A full replace writes about {rows:,} rows against a free-tier limit of\n'
+              f'  100,000 a day, so it is not run for a database that has not changed.\n'
+              f'  Use --force if you believe the live copy has drifted, or --check to ask it.')
+        return 0
+    print(f'importing {rows:,} rows (~{rows * 2:,} writes with indexes) — the free tier '
+          f'allows 100,000 a day')
 
     src = sqlite3.connect(DB)
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
@@ -165,6 +191,8 @@ def main():
         for b in bad[:12]:
             print('  ' + b)
         return 1
+    with open(PUSHED, 'w') as fh:
+        fh.write(here + '\n')
     print(f'ok: D1 matches — {len(want)} tables, {sum(want.values()):,} rows')
     return 0
 

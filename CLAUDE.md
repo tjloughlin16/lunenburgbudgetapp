@@ -531,7 +531,9 @@ read, so it had been reporting a clean file as stale every time.
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
     python3 scripts/classify_roster_roles.py    # what job each printed roster title is
     python3 scripts/classify_roster_roles.py --check   # ...and fail if it is stale
-    python3 scripts/sync_d1.py                  # push the database to D1, which /api/query reads
+    python3 scripts/sync_d1.py                  # push the database to D1 — SKIPS if unchanged;
+                                                #   a full replace is ~51,000 rows against a
+                                                #   free-tier limit of 100,000 writes a day
     python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree
     python3 scripts/build_question_bank.py      # 107 questions, each run against the database
     python3 scripts/build_question_bank.py --check   # ...and fail if one stops answering
