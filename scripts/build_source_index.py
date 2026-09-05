@@ -710,6 +710,13 @@ GROUPS = [
              'each; no funding source, which is the question that actually matters; and it '
              'is a point in time, undated within the year. A count of names the town '
              'printed is a real quantity and it is not a staffing level.'),
+            ('analyses/what-you-can-ask.md',
+             'What you can ask this archive, in plain English', 3,
+             '107 questions with no query behind them \u2014 the same list as '
+             'questions.md, generated from the same source so the two cannot come to '
+             'offer different things. Where a question has a caveat it is printed under '
+             'it in italics, because what a figure does NOT tell you is the half most '
+             'often dropped when somebody quotes it at a meeting.'),
             ('analyses/questions.md',
              'A hundred questions this archive can answer, each with the query', 3,
              '107 questions across ten subjects, every one executed against the database '

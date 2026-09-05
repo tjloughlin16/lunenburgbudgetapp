@@ -88,6 +88,11 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 
 ## Data
 
+**The annual town reports are TABLES, and flat text is the wrong artefact for them.** 47 of the FY2022 report’s 194 pages are essentially blank in the extracted text, because those pages are scans with no text layer — and they are the pages carrying the figures. Two routes work and this one does not:
+
+1. **The figures, already extracted.** `https://lunenburgbudgetproject.org/api/tables` lists `report_appropriations`, `report_gross_wages`, `report_debt` and the rest, one file per fiscal year. This is what to use for a number.
+2. **The page as printed**, with its columns intact — the OCR geometry rebuilt into a fixed-width page. 853KB for FY2022, so read it in parts: [https://lunenburgbudgetproject.org/docs/town-budget/pages/FY2022.ocr.parts/index.json](https://lunenburgbudgetproject.org/docs/town-budget/pages/FY2022.ocr.parts/index.json). Use this to read a table the way a person would.
+
 **A document too long to read in one fetch is published in parts.** Any `.txt` over 140KB has a folder beside it: append `.parts/index.json` to its address for the list, or `.parts/001.txt` for the first piece. The FY2022 annual town report is 444KB of text and four parts of about 140KB, each split on a page boundary with the pages it covers stated: [https://lunenburgbudgetproject.org/docs/town-annual-reports/text/4129-fy-2022-annual-town-report.parts/index.json](https://lunenburgbudgetproject.org/docs/town-annual-reports/text/4129-fy-2022-annual-town-report.parts/index.json). The scanned PDF behind it is 16.8MB, is not in the git repository, and is served from object storage under the same `/docs/` prefix — fetch it only if you can hold 16.8MB, and read the parts otherwise.
 
 **Ask a question instead of downloading a table.** [https://lunenburgbudgetproject.org/api/query](https://lunenburgbudgetproject.org/api/query) takes one read-only SQL statement and answers it, with the documents its rows came from. [https://lunenburgbudgetproject.org/api/questions](https://lunenburgbudgetproject.org/api/questions) is 107 worked examples — a question, the query that answers it, and the columns it returns — every one executed on each build, so none of them is a claim. Start there and edit one.
@@ -116,11 +121,11 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 
 ## Documents
 
-456 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+457 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
 - **Published by the town, the district and the state** — 78 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 286 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 92 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 93 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 

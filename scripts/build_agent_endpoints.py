@@ -628,6 +628,20 @@ def main():
         '',
         '## Data',
         '',
+        f'**The annual town reports are TABLES, and flat text is the wrong artefact for '
+        f'them.** 47 of the FY2022 report\u2019s 194 pages are essentially blank in the '
+        f'extracted text, because those pages are scans with no text layer \u2014 and '
+        f'they are the pages carrying the figures. Two routes work and this one does not:',
+        '',
+        f'1. **The figures, already extracted.** `{SITE}/api/tables` lists '
+        f'`report_appropriations`, `report_gross_wages`, `report_debt` and the rest, one '
+        f'file per fiscal year. This is what to use for a number.',
+        f'2. **The page as printed**, with its columns intact \u2014 the OCR geometry '
+        f'rebuilt into a fixed-width page. 853KB for FY2022, so read it in parts: '
+        f'[{SITE}/docs/town-budget/pages/FY2022.ocr.parts/index.json]'
+        f'({SITE}/docs/town-budget/pages/FY2022.ocr.parts/index.json). '
+        f'Use this to read a table the way a person would.',
+        '',
         f'**A document too long to read in one fetch is published in parts.** Any '
         f'`.txt` over 140KB has a folder beside it: append `.parts/index.json` to its '
         f'address for the list, or `.parts/001.txt` for the first piece. The FY2022 '

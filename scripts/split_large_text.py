@@ -30,6 +30,9 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import archive_storage as A  # noqa: E402
+
 PUB = os.path.join(ROOT, 'fy28', 'public', 'docs')
 SITE = 'https://lunenburgbudgetproject.org'
 LIMIT = 140 * 1024          # under the 150KB a fetcher holds, with room for the header
@@ -66,17 +69,63 @@ def parts_of(text):
     return chunks
 
 
-def build(write=True):
-    made, skipped = [], 0
+def original_of(rel, manifest):
+    """The publisher's own file behind an extracted text, with its size and sha256.
+
+    An assistant that cannot hold a 16.8MB scan can still hand a PERSON the link to it --
+    citing a URL and fetching it are different acts, and the second is the only one it
+    cannot do. But it has to learn the address without fetching the file, so the index
+    beside the text names it: the URL, the bytes, and the sha256 to check a download
+    against.
+    """
+    stem = os.path.basename(rel)[:-4]
+    folder = rel.split('/')[0]
+    for key, row in manifest.items():
+        if not key.startswith(folder + '/'):
+            continue
+        if '/text/' in key or key.endswith('.txt'):
+            continue
+        if os.path.splitext(os.path.basename(key))[0] == stem:
+            return dict(url=f'{SITE}/docs/{key}', bytes=int(row['bytes']),
+                        sha256=row['sha256'],
+                        note='The publisher\'s own file. You can give this address to a '
+                             'person to download even if it is too large for you to '
+                             'fetch; the sha256 lets them check what they got.')
+    return None
+
+
+# Documents that are published but not copied into the build, and are the RIGHT artefact
+# for what they hold. The annual reports are tables, and a table does not survive being
+# flattened into a line of prose: 47 of the FY2022 report's 194 pages are essentially
+# blank in `text/`, and the OCR rendering has content for 33 of them -- 866k characters
+# against 448k. The fixed-width version keeps the column positions, which is the whole
+# meaning of a financial table, and it was reachable and advertised nowhere.
+EXTRA = [os.path.join(ROOT, 'sources', 'town-budget', 'pages', '*.ocr.txt')]
+
+
+def sources():
+    """(path on disk, published path) for everything worth splitting."""
+    out = []
     for path in sorted(glob.glob(os.path.join(PUB, '**', '*.txt'), recursive=True)):
+        out.append((path, os.path.relpath(path, PUB).replace(os.sep, '/')))
+    for pattern in EXTRA:
+        for path in sorted(glob.glob(pattern)):
+            rel = os.path.relpath(path, os.path.join(ROOT, 'sources')).replace(os.sep, '/')
+            out.append((path, rel))
+    return out
+
+
+def build(write=True):
+    manifest = A.read_manifest()
+    made, skipped = [], 0
+    for path, rel in sources():
         size = os.path.getsize(path)
         if size <= LIMIT:
             skipped += 1
             continue
         text = open(path, encoding='utf-8', errors='replace').read()
         chunks = parts_of(text)
-        rel = os.path.relpath(path, PUB).replace(os.sep, '/')
-        folder = path[:-4] + '.parts'
+        folder = os.path.join(PUB, rel[:-4] + '.parts')
         index = dict(
             resource='text-parts',
             document=f'{SITE}/docs/{rel}',
@@ -86,6 +135,9 @@ def build(write=True):
                  f'you need; the pages each covers are given below.',
             count=len(chunks),
             parts=[])
+        original = original_of(rel, manifest)
+        if original:
+            index['original'] = original
         if write:
             import shutil
             shutil.rmtree(folder, ignore_errors=True)
