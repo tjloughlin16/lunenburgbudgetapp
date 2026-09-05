@@ -12,6 +12,21 @@ boilerplate here, it is the exact failure this workstream spent a day fixing.
 sections *"Reachability"*, *"What /api/query can cost"*, and *"The shape almost every
 defect here has taken"*.
 
+## References
+
+Kept here rather than in a commit message, because a commit message is not somewhere
+anybody looks twice.
+
+| | |
+|---|---|
+| Vercel, *Make your site readable by AI agents* | <https://vercel.com/kb/guide/make-your-site-readable-by-ai-agents> — the checklist this site was audited against on 5 September; the table of what it recommends and where this site stands is below |
+| Is Agentic, an external readiness scan | <https://is-agentic.com/scan/lunenburgbudgetproject.org> — scan is triggered from that page; the result then reads at <https://is-agentic.com/api/v1/report?url=lunenburgbudgetproject.org>. **Not yet run to completion** |
+| IndexNow | <https://www.indexnow.org/documentation> — how the sitemap is pushed to Bing, Yandex, Seznam and Naver. Google does not participate |
+| Cloudflare D1 pricing and limits | <https://developers.cloudflare.com/d1/platform/pricing/> — 5M rows read and 100k written a day on the free plan, and it stops rather than bills |
+| Cloudflare rate limiting rules | <https://developers.cloudflare.com/waf/rate-limiting-rules/> — free plan is one rule and a ten-second period only |
+| Google Search Console | <https://search.google.com/search-console> — the only honest answer to *"is this indexed"*. **Domain not yet verified** |
+| Bing Webmaster Tools | <https://www.bing.com/webmasters> — same, and the one several agent search tools are built on |
+
 ---
 
 ## Why this exists
