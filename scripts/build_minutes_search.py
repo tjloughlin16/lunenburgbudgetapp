@@ -157,6 +157,35 @@ def main():
         with open(os.path.join(OUT, f'{prefix}.json'), 'w') as fh:
             json.dump(dict(sorted(terms.items())), fh, separators=(',', ':'))
 
+    # The document table in blocks of 250, as well as whole.
+    #
+    # It is 221KB, and the README tells a caller to "fetch it ONCE and keep it". A caller
+    # whose fetch truncates at 150KB does not get a short table -- it gets JSON that does
+    # not parse, which is a worse failure than a missing file because it looks like
+    # corruption. A shard is arithmetic the caller already has: document N is in
+    # documents/{N // 250}.json at position N % 250.
+    BLOCK = 250
+    os.makedirs(os.path.join(OUT, 'documents'), exist_ok=True)
+    blocks = []
+    for start in range(0, len(docs), BLOCK):
+        name = f'documents/{start // BLOCK}.json'
+        with open(os.path.join(OUT, name), 'w') as fh:
+            json.dump(dict(block=start // BLOCK, first=start, size=BLOCK,
+                           documents=docs[start:start + BLOCK]),
+                      fh, separators=(',', ':'))
+        blocks.append(dict(block=start // BLOCK, first=start,
+                           last=min(start + BLOCK, len(docs)) - 1,
+                           url=f'{SITE}/minutes/find/{name}',
+                           bytes=os.path.getsize(os.path.join(OUT, name))))
+    with open(os.path.join(OUT, 'documents-index.json'), 'w') as fh:
+        json.dump(dict(
+            count=len(docs), block=BLOCK,
+            note=f'Document N is in block N // {BLOCK}, at position N % {BLOCK} of its '
+                 f'`documents` array. The whole table is at {SITE}/minutes/find/'
+                 f'documents.json if you can hold 221KB.',
+            whole=f'{SITE}/minutes/find/documents.json',
+            blocks=blocks), fh, indent=1)
+
     with open(os.path.join(OUT, 'documents.json'), 'w') as fh:
         json.dump(docs, fh, separators=(',', ':'))
 
@@ -205,9 +234,19 @@ HOW TO USE IT
      A term absent from the shard appears in no document. A missing shard file means no
      term starts with those two characters.
 
-  2. Fetch the document table ONCE and keep it:
-         {SITE}/minutes/find/documents.json
-     An array. Position N is the document that the number N refers to:
+  2. Resolve those numbers to documents. Two ways, and the second is safer:
+
+     a. ONE BLOCK, about 40KB. Document N is in block N // 250, at position
+        N % 250 of its `documents` array. So number 1091 is:
+            {SITE}/minutes/find/documents/4.json     -> documents[91]
+        The list of blocks, if you want it: {SITE}/minutes/find/documents-index.json
+
+     b. THE WHOLE TABLE, 221KB, if you can hold it in one fetch:
+            {SITE}/minutes/find/documents.json
+        If your fetch truncates you get JSON that does not parse rather than a
+        short table, which is why (a) exists.
+
+     Either way an entry looks like:
          {{"board":"school-committee","date":"2025-09-17","kind":"minutes",
            "id":7408,"path":"/docs/minutes/text/school-committee/2025-09-17-minutes-7408.txt"}}
 

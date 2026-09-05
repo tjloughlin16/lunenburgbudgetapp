@@ -46,14 +46,22 @@ function guidance(requested) {
   return `Not found: /minutes/${requested}
 
 The meeting archive IS published as plain text — every agenda and set of minutes the
-town has published, across 40 town boards. You are one URL away. There are three shapes
-and no others:
+town has published, across 40 town boards. You are one URL away.
+
+0. TO FIND A WORD, do not fetch a bundle. Three small requests beat one large one:
+       ${site}/minutes/find/README.txt                 how, in twenty lines
+       ${site}/minutes/find/<first two letters>.json   word -> document numbers
+       ${site}/minutes/find/documents/<n div 250>.json number -> document
+   Document N is in block N // 250 at position N % 250. Each file is a few KB.
+
+The other shapes:
 
 1. ONE FILE PER BOARD, every document concatenated. This is the one to fetch if you
    want to search. You cannot grep a website; you can read one file.
-       ${site}/minutes/school-committee.txt      (920 KB)
-       ${site}/minutes/finance-committee.txt
-       ${site}/minutes/select-board.txt
+       ${site}/minutes/school-committee-2026.txt
+       ${site}/minutes/finance-committee-2026.txt
+   Boards with a lot of documents are split so each file can be read in one
+   fetch, so DO NOT GUESS a bundle name -- take it from the index below.
    The full list of boards, with sizes:
        ${site}/minutes/INDEX.txt
 
@@ -101,13 +109,23 @@ code,a{font-family:ui-monospace,Menlo,monospace}li{margin:.35rem 0}</style></hea
 of minutes across 40 town boards. You are one URL away. There are three shapes and no
 others.</p>
 
+<h2>0. To find a word, do not fetch a bundle</h2>
+<p>Three small requests beat one large one. Look the word up, resolve the numbers, read
+only the documents named.</p>
+<ul>
+  <li>${a('/minutes/find/README.txt')} — how, in twenty lines</li>
+  <li>${a('/minutes/find/je.json')} — the shard for words beginning &ldquo;je&rdquo;</li>
+  <li>${a('/minutes/find/documents-index.json')} — number to document, in blocks of 250</li>
+</ul>
+
 <h2>1. One file per board, every document concatenated</h2>
 <p>This is the one to fetch if you want to search. You cannot grep a website; you can read
 one file.</p>
 <ul>
-  <li>${a('/minutes/school-committee.txt')} (920 KB)</li>
-  <li>${a('/minutes/finance-committee.txt')}</li>
-  <li>${a('/minutes/select-board.txt')}</li>
+  <li>${a('/minutes/school-committee-2026.txt')}</li>
+  <li>${a('/minutes/finance-committee-2026.txt')}</li>
+  <li>Boards with many documents are split so each file fits one fetch &mdash; take the
+      exact name from the index below rather than guessing.</li>
 </ul>
 <p>The full list of boards, with sizes: ${a('/minutes/INDEX.txt')} — or as a page of links,
 ${a('/agents')}.</p>

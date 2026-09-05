@@ -142,6 +142,25 @@ def not_known_lines():
     return [f"- {e['text'].format(SITE=SITE)}" for e in NOT_KNOWN]
 
 
+def a_real_bundle():
+    """A board bundle that exists, with its size — read off disk, never typed.
+
+    `school-committee.txt` was named in three places here and in the /minutes 404 body.
+    Splitting the big boards by year so a caller could finish one deleted that exact file,
+    and every one of those references became a 404 pointing an agent at nothing. The
+    check that caught it is the same one that caught the word index: fetch what you
+    advertise.
+    """
+    import glob as _g
+    files = sorted(_g.glob(os.path.join(PUB, 'minutes', 'school-committee*.txt')))
+    if not files:
+        files = sorted(_g.glob(os.path.join(PUB, 'minutes', '*.txt')))
+    if not files:
+        return dict(name='INDEX.txt', kb=0)
+    f = files[0]
+    return dict(name=os.path.basename(f), kb=round(os.path.getsize(f) / 1024))
+
+
 def worked_example():
     """The three-step search example in llms.txt, read out of the index it describes.
 
@@ -171,6 +190,7 @@ def worked_example():
 def main():
     os.makedirs(DATA, exist_ok=True)
     ex = worked_example()
+    bundle = a_real_bundle()
     model = json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json')))
     sources = json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')))
 
@@ -242,6 +262,9 @@ def main():
          'FY2011 to FY2025 — 3,815 rows across 51 roster blocks, with the school, the '
          'page it came from and the heading it sat under. Published because it is the '
          'only published quantity that bears on whether budgeted positions were filled. '
+         'At 435KB this file is more than some callers can fetch in one piece; '
+         'https://lunenburgbudgetproject.org/api/staff_roster_entries is the same rows '
+         'as one file per fiscal year, about 60KB each. '
          'It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a '
          'full-timer are one row each; there is no funding source, which is the question '
          'that actually matters; and it is a point in time, undated within the year.'),
@@ -292,6 +315,51 @@ def main():
         if os.path.exists(src):
             shutil.copy2(src, os.path.join(DATA, name))
             published.append((name, what, os.path.getsize(src)))
+
+    # NOTHING PUBLISHED HERE MAY BE TOO BIG TO READ.
+    #
+    # `model.json` is 263KB and is the endpoint this very file tells an agent to fetch
+    # first. Three assistants in one day gave up part-way through a published file --
+    # `minutes-index.csv` at 242KB, `school-committee.txt` at 907KB -- and a truncated
+    # JSON fetch is worse than a truncated CSV, because it does not parse at all. So the
+    # big ones are also published in pieces, and the pieces are what gets advertised.
+    #
+    # 38 top-level keys, each a coherent section: the projection, the programme catalogue,
+    # the conclusions, the citations. One file each, plus an index carrying every size so
+    # a caller can choose before fetching. The whole file stays where it is for callers
+    # that can take it.
+    for whole, folder, about in (
+        ('model.json', 'model',
+         'Every figure the site computes, one section per file.'),
+        ('sources.json', 'sources',
+         'The document archive: every source, its group, its size and its URL.'),
+    ):
+        src = os.path.join(DATA, whole)
+        if not os.path.exists(src):
+            continue
+        blob = json.load(open(src))
+        out_dir = os.path.join(DATA, folder)
+        os.makedirs(out_dir, exist_ok=True)
+        parts = []
+        for key, value in blob.items():
+            with open(os.path.join(out_dir, f'{key}.json'), 'w') as fh:
+                json.dump(value, fh, separators=(',', ':'))
+            parts.append(dict(
+                key=key, url=f'{SITE}/data/{folder}/{key}.json',
+                bytes=os.path.getsize(os.path.join(out_dir, f'{key}.json'))))
+        with open(os.path.join(out_dir, 'index.json'), 'w') as fh:
+            json.dump(dict(
+                resource=folder, about=about,
+                note=f'{whole} is {os.path.getsize(src) // 1024}KB, which is more than '
+                     f'some callers can fetch in one piece. Each section below is a '
+                     f'separate file. The whole thing is still at {SITE}/data/{whole}.',
+                whole=dict(url=f'{SITE}/data/{whole}',
+                           bytes=os.path.getsize(src)),
+                count=len(parts),
+                parts=sorted(parts, key=lambda p: p['key'])), fh, indent=1)
+        published.append((f'{folder}/index.json',
+                          about + ' An index; each section is its own file, sized.',
+                          os.path.getsize(os.path.join(out_dir, 'index.json'))))
 
     # The meeting index gets one column the source file does not have: has_text.
     #
@@ -364,7 +432,7 @@ def main():
         f'| every figure on this site, as data | `{SITE}/data/model.json` |',
         f'| the same thing queryable, with a schema that warns you | `{SITE}/api/index` |',
         f'| which meeting documents mention a word | `{SITE}/minutes/find/README.txt` |',
-        f'| the whole meeting archive for one board | `{SITE}/minutes/school-committee.txt` |',
+        f'| the whole meeting archive for one board | `{SITE}/minutes/{bundle["name"]}` |',
         f'| every source document, with checksums | `{SITE}/data/sources.json` |',
         f'| what build you are looking at | `{SITE}/version.json` |',
         '',
@@ -394,9 +462,13 @@ def main():
         f'file. It is an object of term to document numbers: `{{"jerseys":[{ex["n"]}]}}`. '
         'Shards average 3KB. A word absent from its shard appears in no document, and a '
         'missing shard file means no indexed word starts with those characters.',
-        f'2. **Resolve the numbers.** `{SITE}/minutes/find/documents.json` '
-        f'({ex["docs_kb"]}KB) — fetch once and keep it. It is an array; position '
-        f'{ex["n"]} is the {ex["what"]}, carrying the path to fetch.',
+        f'2. **Resolve the numbers.** Document N is in block N // 250 at position '
+        f'N % 250, so {ex["n"]} is `{SITE}/minutes/find/documents/{ex["n"] // 250}.json` '
+        f'at `documents[{ex["n"] % 250}]` — about 40KB — and it is the {ex["what"]}, '
+        f'carrying the path to fetch. The whole table is at '
+        f'`{SITE}/minutes/find/documents.json` ({ex["docs_kb"]}KB) if you can hold it; a '
+        f'truncated fetch of that gives JSON that does not parse, which is why the blocks '
+        f'exist.',
         f'3. **Read the document.** `{SITE}{ex["path"]}`, {ex["kb"]}KB. '
         'It is a resident telling the committee that field hockey is "using hand me down '
         'jerseys". Documents average 4.5KB. Cite this, never the index and never a bundle.',
@@ -589,7 +661,7 @@ def main():
         f'- **To search a board, fetch one file.** [{SITE}/minutes/INDEX.txt]'
         f'({SITE}/minutes/INDEX.txt) lists a bundle per board — every document for that '
         f'board concatenated, largest 1MB. The School Committee is '
-        f'[{SITE}/minutes/school-committee.txt]({SITE}/minutes/school-committee.txt). '
+        f'[{SITE}/minutes/{bundle["name"]}]({SITE}/minutes/{bundle["name"]}). '
         f'You cannot grep a website; you can read one file.',
         f'- **To cite, use the individual document.** Each is at '
         f'`{SITE}/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`, and every bundle '

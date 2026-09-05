@@ -46,7 +46,7 @@
  },
  {
   "name": "staff-roster-entries.csv",
-  "note": "Every name and position the town printed in its per-school staff rosters, FY2011 to FY2025 \u2014 3,815 rows across 51 roster blocks, with the school, the page it came from and the heading it sat under. Published because it is the only published quantity that bears on whether budgeted positions were filled. It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a full-timer are one row each; there is no funding source, which is the question that actually matters; and it is a point in time, undated within the year.",
+  "note": "Every name and position the town printed in its per-school staff rosters, FY2011 to FY2025 \u2014 3,815 rows across 51 roster blocks, with the school, the page it came from and the heading it sat under. Published because it is the only published quantity that bears on whether budgeted positions were filled. At 435KB this file is more than some callers can fetch in one piece; https://lunenburgbudgetproject.org/api/staff_roster_entries is the same rows as one file per fiscal year, about 60KB each. It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a full-timer are one row each; there is no funding source, which is the question that actually matters; and it is a point in time, undated within the year.",
   "bytes": 445869
  },
  {
@@ -78,6 +78,16 @@
   "name": "athletic-fee-schedule.csv",
   "note": "Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them.",
   "bytes": 7018
+ },
+ {
+  "name": "model/index.json",
+  "note": "Every figure the site computes, one section per file. An index; each section is its own file, sized.",
+  "bytes": 5099
+ },
+ {
+  "name": "sources/index.json",
+  "note": "The document archive: every source, its group, its size and its URL. An index; each section is its own file, sized.",
+  "bytes": 1417
  },
  {
   "name": "minutes-index.csv",

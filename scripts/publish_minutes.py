@@ -53,10 +53,17 @@ DOCS_OUT = os.path.join(PUB, 'docs', 'minutes', 'text')
 BUNDLE_OUT = os.path.join(PUB, 'minutes')
 SITE = 'https://lunenburgbudgetproject.org'
 
-# A bundle nobody can fetch is no better than no bundle. Cloudflare Pages caps a single
-# asset at 25MB; well below that, an agent's own fetch limit bites first. Boards over this
-# are split by year.
-MAX_BUNDLE = 4 * 1024 * 1024
+# A bundle nobody can fetch is no better than no bundle.
+#
+# This was 4MB, chosen against Cloudflare's 25MB per-asset cap. The cap was never the
+# binding constraint: the CALLER's is. school-committee.txt is 907KB and an assistant
+# fetching it got January and February 2025 and stopped -- the two boards most often asked
+# about are the two nobody could read. 350KB is set from what fetchers actually truncate
+# at, not from what the host allows: an agent reported its own cutoff at 30-40k tokens,
+# which is 120-160KB of text. 120KB is the bound on TEXT; each document also carries an
+# 88-character header block, so the file lands a little above it -- which is why this is
+# 120 and not 150, and why `check-agents.mjs` asserts the served size rather than this.
+MAX_BUNDLE = 120 * 1024
 
 
 def town_urls():
@@ -120,10 +127,25 @@ def main():
         size = sum(len(d['body']) for d in docs)
         groups = {'': docs}
         if size > MAX_BUNDLE:
-            groups = {}
+            by_year = {}
             for d in docs:
-                y = d['date'][:4] or 'undated'
-                groups.setdefault(y, []).append(d)
+                by_year.setdefault(d['date'][:4] or 'undated', []).append(d)
+            # A year can still be too large -- select-board 2025 is 676KB on its own --
+            # so a year is chunked further, in date order, until every file is under the
+            # limit. Nobody has to guess these names: INDEX.txt lists every one with its
+            # size, and so does the board's own .csv.
+            groups = {}
+            for y, ds in sorted(by_year.items()):
+                ds.sort(key=lambda d: d['date'])
+                chunk, n, run = [], 0, 1
+                for d in ds:
+                    if chunk and n + len(d['body']) > MAX_BUNDLE:
+                        groups[f'{y}-{run}' if run > 1 or n else y] = chunk
+                        chunk, n, run = [], 0, run + 1
+                    chunk.append(d)
+                    n += len(d['body'])
+                if chunk:
+                    groups[f'{y}-{run}' if run > 1 else y] = chunk
 
         for suffix, group in sorted(groups.items()):
             name = f'{board}.txt' if not suffix else f'{board}-{suffix}.txt'

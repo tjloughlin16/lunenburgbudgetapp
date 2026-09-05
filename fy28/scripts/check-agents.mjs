@@ -49,7 +49,10 @@ const PRESENT = [
   // the para contract concluded from this site that we hold no minutes at all. Checked
   // here so that cannot recur silently.
   '/minutes/INDEX.txt',
-  '/minutes/school-committee.txt',
+  // Not `school-committee.txt`: the big boards are split so each file can be read in
+  // one fetch, and naming an unsplit bundle here is how this list goes stale. INDEX.txt
+  // above is the entry point that survives a resplit.
+  '/minutes/school-committee.csv',
   '/docs/minutes/text/school-committee/2025-02-26-minutes-7076.txt',
 ]
 // Must 404. Deliberately plausible-looking, because the failure being tested for is a
@@ -60,6 +63,27 @@ const ABSENT = [
   '/docs/xlsx/no-such-workbook.xlsx',
   '/data/no-such-endpoint.json',
 ]
+// What a caller can actually finish. An agent reported its own fetch truncating at
+// 30-40k tokens, which is roughly 120-160KB of text; 150KB is set from that rather than
+// from any host limit.
+const BIG = 150 * 1024
+// The deliberate exceptions, each of which has a readable form advertised beside it.
+const BULK = new Set([
+  // The whole database, offered as a download and described as one.
+  '/data/lunenburg.db',
+  // Superseded by /data/model/index.json and /data/sources/index.json, both advertised.
+  '/data/model.json', '/data/sources.json',
+  // Superseded by /api/staff_roster_entries, one file per year, advertised beside it.
+  '/data/staff-roster-entries.csv',
+  // Superseded by /minutes/find/documents/<block>.json, advertised beside it.
+  '/minutes/find/documents.json',
+  // Superseded by the per-board /minutes/<board>.csv files, advertised beside it.
+  '/data/minutes-index.csv',
+  // The checkable index of every archived file. It is one row per file by nature; the
+  // thing it indexes is the archive, and there is no smaller honest form of it.
+  '/data/archive-manifest.csv',
+])
+
 // Not routes. Must still land on the app, per routes.ts.
 const STALE = ['/an-old-shared-link', '/sports', '/documents', '/evidence']
 
@@ -262,7 +286,7 @@ async function main() {
         // A trailing slash means llms.txt was naming a folder in prose -- `/docs/minutes/
         // text/<board>/...` -- not handing over an address. Only real files are checked.
         .filter(u => !u.endsWith('/')))]
-    let bad = 0
+    let bad = 0, heavy = 0
     for (const u of urls) {
       const res = await fetch(base + u, { redirect: 'follow' })
       const type = res.headers.get('content-type') || ''
@@ -273,9 +297,26 @@ async function main() {
       if (!ok) {
         bad++
         fails.push(`llms.txt advertises ${u} — got ${res.status} ${type.split(';')[0]}`)
+        continue
+      }
+      // ANSWERING IS NOT THE SAME AS BEING READABLE.
+      //
+      // Three assistants in one day gave up part-way through a file this site handed
+      // them: minutes-index.csv at 242KB, school-committee.txt at 907KB, and the
+      // 221KB document table whose truncation produces JSON that does not parse. One
+      // of them cloned the repository instead; one concluded the archive was empty.
+      // A published file nobody can finish reading is not published, so size is
+      // checked here and not left to the next agent to discover.
+      const bytes = (await res.arrayBuffer()).byteLength
+      if (bytes > BIG && !BULK.has(u)) {
+        heavy++
+        fails.push(`llms.txt advertises ${u} at ${Math.round(bytes / 1024)}KB — over ` +
+          `${BIG / 1024}KB, which truncating fetchers do not finish. Publish it in ` +
+          `pieces and advertise the index, or add it to BULK with a reason.`)
       }
     }
-    console.log(`  ${bad ? 'FAIL' : ' ok '} ${urls.length} advertised URLs, ${bad} not answering`)
+    console.log(`  ${bad || heavy ? 'FAIL' : ' ok '} ${urls.length} advertised URLs, ` +
+      `${bad} not answering, ${heavy} too large to read`)
   }
 
   console.log('\nllms.txt figures must match the model the app renders from')
@@ -326,8 +367,12 @@ async function main() {
     // And the 404 has to be useful: it is the only message a program will ever read.
     const res = await fetch(base + '/minutes/')
     const body = await res.text()
-    const teaches = body.includes('/minutes/school-committee.txt')
+    // Assert the SHAPES it must teach, not one filename. Checking for a specific
+    // bundle name made this fail the moment the big boards were split -- the 404 was
+    // still perfectly useful and the check was testing yesterday's filename.
+    const teaches = body.includes('/minutes/INDEX.txt')
       && body.includes('/docs/minutes/text/')
+      && body.includes('/minutes/find/')
     console.log(`  ${teaches ? ' ok ' : 'FAIL'} /minutes/ 404 names the URLs that do work`)
     if (!teaches) fails.push('/minutes/ returns a 404 that does not say what to fetch instead')
   }

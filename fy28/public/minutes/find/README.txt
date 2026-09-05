@@ -27,9 +27,19 @@ HOW TO USE IT
      A term absent from the shard appears in no document. A missing shard file means no
      term starts with those two characters.
 
-  2. Fetch the document table ONCE and keep it:
-         https://lunenburgbudgetproject.org/minutes/find/documents.json
-     An array. Position N is the document that the number N refers to:
+  2. Resolve those numbers to documents. Two ways, and the second is safer:
+
+     a. ONE BLOCK, about 40KB. Document N is in block N // 250, at position
+        N % 250 of its `documents` array. So number 1091 is:
+            https://lunenburgbudgetproject.org/minutes/find/documents/4.json     -> documents[91]
+        The list of blocks, if you want it: https://lunenburgbudgetproject.org/minutes/find/documents-index.json
+
+     b. THE WHOLE TABLE, 221KB, if you can hold it in one fetch:
+            https://lunenburgbudgetproject.org/minutes/find/documents.json
+        If your fetch truncates you get JSON that does not parse rather than a
+        short table, which is why (a) exists.
+
+     Either way an entry looks like:
          {"board":"school-committee","date":"2025-09-17","kind":"minutes",
            "id":7408,"path":"/docs/minutes/text/school-committee/2025-09-17-minutes-7408.txt"}
 
