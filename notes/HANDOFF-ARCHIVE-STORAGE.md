@@ -19,37 +19,133 @@ load-bearing against the repo before acting on it.
 
 ---
 
-## Where it stands — 5 September, end of session
+## Where it stands — 5 September, second session
 
-**Steps 1–4 of `plans/ARCHIVE-EXECUTION.md` are DONE.** On branch `archive-storage`, clean
-tree, all thirteen checks passing, site builds 18/18.
+**Steps 1–9 of `plans/ARCHIVE-EXECUTION.md` are DONE.** The archive's binaries are in R2,
+served under their own `/docs/` URLs, and out of git.
 
 | | |
 |---|---|
 | 1. Town split finished | 27 duplicates + their index rows; 16 annual reports rehomed |
-| 2. Fetcher routing fixed | `scripts/town_document_home.py` is the one classifier; a full run re-downloads nothing and files nothing wrongly |
-| 3. Four folders renamed | `town-ledgers`, `state-dese`, `state-dls`, `peer-districts`; old URLs aliased |
-| 4. Bucket | **already existed and is already locked** |
+| 2. Fetcher routing fixed | `scripts/town_document_home.py` is the one classifier |
+| 3. Four folders renamed | `town-ledgers`, `state-dese`, `state-dls`, `peer-districts` |
+| 4. Bucket | already existed, already locked |
+| 5. `sync_archive.py` | manifest, push with read-back, pull, lock probe |
+| 6. `check_archive_storage.py` | reconciles manifest ↔ bucket both ways |
+| 7. R2 branch in the Function | `fy28/functions/docs/_bucket.js`, bound in `wrangler.jsonc` |
+| 8. The gate | `check_archive_urls.py`, every address hashed against a preview deploy |
+| 9. Untracked | the binaries left git, and left the site build with them |
 
-### The bucket — nothing to create
+### What was learned, and is not in the plans
+
+**The lock blocks overwriting, and that was confirmed rather than assumed.** Re-uploading
+a file's own bytes over itself returns `HTTP 409 — the object is locked by the bucket
+policy`. `sync_archive.py --verify-lock <key>` is that probe, and it re-uploads the
+object's OWN bytes so that a lock which turned out not to hold would replace an object
+with an identical one rather than damage it.
+
+**So every write is a one-way door**, and that decided the shape of everything else. A
+push reads the object back and compares sha256 before recording it; a key already holding
+different bytes is an error the script refuses to touch, because it cannot be corrected in
+place — only superseded under a new key.
+
+**TJ chose to push the whole archive, ours included** (asked and answered 5 September).
+The consequence, stated so nobody rediscovers it as a bug: the bucket holds a **frozen
+snapshot of our derived files** — extracted text, derived CSVs, the analyses — taken this
+day. When an extractor changes, git has the new version and the bucket cannot take it.
+Nobody reads the stale one, because the site checks build assets before the bucket.
+`check_archive_storage.py` reports those separately, as *an older rendering*, never as a
+failure.
+
+**The binaries were in git TWICE.** 912 MB under `sources/` and the identical bytes again
+under `fy28/public/docs/` — 415 files, 722 MB — because `build_source_index.py` copied
+every document into the build. Untracking one copy and not the other would have saved
+nothing. `build_source_index.py` now publishes only what is ours; `_bucket.js` serves the
+rest.
+
+**`git rm --cached` does not shrink the pack.** The blobs stay in history, so a fresh
+clone still downloads them. What it does is stop the growth. See *The history problem*
+below: it is recorded, not fixed, on purpose.
+
+**The API is rate-limited to about four requests a second** (1,200 per five minutes), and a
+push makes two per file. `archive_storage.RATE` throttles globally; the first attempt at
+eight workers with no limiter died on 429s a third of the way in.
+
+### The bucket
 
     name        lunenburg-budget-project        (ENAM, created 2026-08-28)
     public URL  https://pub-5baef0f2604545c398a39a176e400e34.r2.dev
     lock rule   immutable-sources · enabled · ALL prefixes · after 3650 days
-    contents    1 object, 53.4 MB — contracts/pdf/dese-teacher-contract.pdf
+    contents    3,877 objects, ~1.47 GB
 
-The lock is a ten-year retention across every prefix, blocking **delete and overwrite**,
-applying to existing objects as well as new. That is the deletion safety the plan asked
-for, already in place. **Do not remove that rule to "fix" a bad upload** — upload a
-corrected object under a new key and repoint the manifest.
+**Do not remove that rule to "fix" a bad upload** — upload a corrected object under a new
+key and repoint the manifest.
 
-### What is left: steps 5–9
+### Two things the plan asked for and did not get, deliberately
 
-5. `sync_archive.py --push` — upload, **read back, compare sha256**, one file first
-6. `check_archive_storage.py` — reconcile manifest ↔ bucket, both directions
-7. R2 branch in `fy28/functions/docs/[[path]].js`, deployed to a **preview** URL
-8. Fetch every `/docs/<path>` against that preview, assert 200 + sha256. **This is the gate**
-9. Only then `git rm --cached` the 912 MB of binaries, and document the pull step
+**No `MANIFEST.csv` in the bucket.** An object there cannot be updated once written, so a
+manifest stored beside the objects would be permanently out of date about them — and being
+wrong about what exists is worse than not saying. The manifest is in git and published at
+`/data/archive-manifest.csv`, and `sources/README.txt` (bucket key `README.txt`) points
+there.
+
+**No per-folder READMEs.** A public `r2.dev` bucket does not allow LIST, so nobody browses
+it: a reader arrives at one object's URL, or at the manifest. A README they cannot find is
+not documentation. The root `README.txt` carries one line per folder instead, and the
+browsable index is the site's `/sources` page.
+
+### The history problem — KNOWN, DEFERRED, decided 5 September 2026
+
+**The binaries are out of the working tree and still in the history.** Untracking a file
+removes it from the index, not from the commits that already contain it. So:
+
+    size-pack   291.61 MiB   before this work
+    size-pack   291.61 MiB   after it
+
+That number does not move until somebody rewrites history, and **the decision taken is not
+to.** It is recorded here so that nobody rediscovers it as a surprise and nobody "fixes" it
+casually.
+
+**What this move did fix, which is the thing that mattered:** no new binary enters the pack
+from here. The growth stops. `sources/` was heading past a gigabyte tracked, with a 79 MB
+file inside GitHub's 100 MB hard limit; that trajectory is what made this urgent, and it is
+gone.
+
+**What would make it a real problem**, in the order it would show up:
+
+- a clone that takes long enough that somebody stops doing it
+- CI, or any automated checkout, paying 291 MB per run
+- GitHub warning on repository size
+
+**What to do first, and it is not a rewrite.** A caller who does not need the history's
+blobs can decline to download them:
+
+    git clone --filter=blob:none <url>     # blobless: history, no old file contents
+    git clone --depth 1 <url>              # shallow: one commit, no history at all
+
+That is a **partial clone**, and it solves the symptom — clone size — without touching a
+single hash. Try it before anything destructive.
+
+**The rewrite, if it ever comes to that.** `git filter-repo --path-glob '*.pdf' --invert-paths`
+and the same for the other binary extensions, then a force-push. The cost is not the effort:
+
+- **every commit hash changes.** Anything that cites one — a note, an analysis, a message
+  to the Town — points at a commit that no longer exists
+- **every existing clone must be re-cloned.** A pull cannot reconcile a rewritten history
+- **the old objects survive on GitHub** until their garbage collection runs, so the saving
+  is not immediate even after the force-push
+
+Do it only when one of the three symptoms above is actually being felt, and take a fresh
+backup first — `notes/reference/BACKUP.md` says where the current one is.
+
+### What is NOT established
+
+- **That the r2.dev public URL is the right long-term address.** It works and it costs
+  nothing. A custom domain was deferred, not rejected. Nothing published points at it: the
+  app links `/docs/<path>` and the Function proxies, so changing it later costs one file.
+- **That every object will still be there in ten years.** The lock stops deletion by
+  mistake, not by an administrator who means it, and not the account lapsing.
+- **That the 3.1 GB backup is current.** It was taken 5 September before any of this.
 
 ## Original notes below
 

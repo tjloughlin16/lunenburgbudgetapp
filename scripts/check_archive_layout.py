@@ -60,7 +60,10 @@ TOP = {
     'analyses':           'written here',
     'data':               'computed here',
 }
-TOP_FILES = {'MANIFEST.md', 'supplemental.csv', '.DS_Store'}
+# README.txt is the one a stranger meets first. It is the root object of the public
+# bucket -- which does not allow listing, so it is the only place the archive can explain
+# itself to somebody who arrived holding one document's URL.
+TOP_FILES = {'MANIFEST.md', 'README.txt', 'supplemental.csv', '.DS_Store'}
 
 # What each MUNIS subfolder holds, and the name a file in it must carry. Period is part
 # of the name because p09, p12 and p13 are three different answers to the same question

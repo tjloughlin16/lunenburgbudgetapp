@@ -37,21 +37,27 @@ SRC = os.path.join(ROOT, 'sources')
 OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')
 DOCS = os.path.join(ROOT, 'fy28', 'public', 'docs')
 
-# Cloudflare Pages refuses a single asset over 25MB. Files above it are published anyway
-# and flagged, never altered: a source document that has been resampled to fit a host is
-# no longer the document, and a reader who diffs our copy against the town's is exactly
-# the reader this page is for. Where a file exceeds this, the host has to change.
-MAX_BYTES = 25 * 1024 * 1024
-
-# Files too large for the site's own host are served from R2, which has no per-file cap
-# and, more to the point, no egress charge -- a public archive should not have a bill that
-# scales with how much the public reads it. Keyed by path so the exception is visible here
-# rather than hidden in the catalogue.
-ELSEWHERE = {
-    'contracts/pdf/dese-teacher-contract.pdf':
-        'https://pub-5baef0f2604545c398a39a176e400e34.r2.dev/'
-        'contracts/pdf/dese-teacher-contract.pdf',
-}
+# THE BINARIES ARE NOT IN THE BUILD. They are in R2, and `functions/docs/_bucket.js`
+# serves them under the same `/docs/<path>` URL they have always had.
+#
+# Cloudflare Pages refuses a single asset over 25MB, which left seven documents -- six of
+# them annual town reports, the largest 79MB -- catalogued here and served nowhere. The
+# fix was never to resample them: a source document changed to fit a web host is no longer
+# the source document, and a reader who diffs our copy against the town's is exactly the
+# reader this page is for. The fix was a host with no per-file cap and no egress charge,
+# because a public archive should not have a bill that scales with how much the public
+# reads it.
+#
+# So `publish()` copies our own files into the build and leaves the publishers' alone.
+# `archive_storage.frozen()` draws that line in one place, and it is the same line that
+# decides what stays in git: things we derive change and git versions them; things
+# somebody else published do not change and the bucket freezes them.
+#
+# What a reader sees is unchanged. Every document has a real URL, `heldOnly` is gone
+# because nothing is held-but-not-served any more, and the 53MB teacher contract stopped
+# being a special case.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import archive_storage  # noqa: E402
 
 SCHOOL_HUB = ('https://www.lunenburgschools.net/department-directory/'
               'superintendent-of-schools/school-budget-information')
@@ -1200,7 +1206,12 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # because re-reading them costs many hours, and they are not documents: the
              # citable artefacts are the CSVs they produced, which are catalogued below.
              'data/inventory', 'data/rosters', 'data/verify'}
-SKIP_FILES = {'supplemental.csv'}
+# Bookkeeping about the R2 archive rather than anything read for a figure:
+# `archive-manifest.csv` is every object with its sha256, and `archive-push-state.csv`
+# records what `sync_archive.py` has uploaded and read back. Both are described on the
+# sources page as a group of their own rather than as documents.
+SKIP_FILES = {'supplemental.csv',
+              'data/archive-manifest.csv', 'data/archive-push-state.csv'}
 
 
 def page_count(path):
@@ -1232,14 +1243,23 @@ def publish(rel):
     Verbatim is the whole point. These are primary documents, and the reader this page
     exists for is the one who downloads ours and compares it to the town's -- so a copy
     that differs by a single byte would be a worse failure than not publishing at all.
-    Returns the served size and whether it is too large for the current host.
+    Returns the served size, and None for the second value -- it used to carry an
+    off-site URL for the one file the host would not serve, and nothing is too large to
+    serve any more.
     """
     src = os.path.join(SRC, rel)
     size = os.path.getsize(src)
-    if rel in ELSEWHERE:
-        # Hosted off-site. Copying it into the build as well would ship 53MB the host
-        # refuses to serve, so the local copy is deliberately absent.
-        return size, ELSEWHERE[rel]
+    if archive_storage.frozen(rel):
+        # A publisher's own file. Served from the bucket, so copying it here would ship
+        # 751MB of duplicates -- and put back in git exactly what this move took out.
+        # It has to BE in the bucket, though, and a URL the catalogue promises with
+        # nothing behind it is the failure this whole page exists to prevent.
+        if rel not in _manifest():
+            raise SystemExit(
+                f'{rel} is served from the bucket and is not in the archive manifest.\n'
+                f'  Run: python3 scripts/sync_archive.py --manifest && '
+                f'--push, then check_archive_storage.py')
+        return size, None
 
     dst = os.path.join(DOCS, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
@@ -1260,6 +1280,15 @@ def publish(rel):
     elif _sha(dst) != _sha(src):
         shutil.copy2(src, dst)
     return size, None
+
+
+_MANIFEST = {}
+
+
+def _manifest():
+    if not _MANIFEST:
+        _MANIFEST.update(archive_storage.read_manifest())
+    return _MANIFEST
 
 
 def _sha(path):
@@ -1580,11 +1609,7 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
             used = catalogued_hashes.get(r['sha256'])
             text_rel = (os.path.relpath(os.path.join(ROOT, r['text']), SRC)
                         if r['text'] else None)
-            # Over the host's per-file cap and not worth a second home: kept in the
-            # archive, named here, but not served. Said rather than silently dropped.
-            oversize = size > MAX_BYTES
-            if not oversize:
-                publish(rel)
+            publish(rel)
             if text_rel:
                 publish(text_rel)
             ext = os.path.splitext(rel)[1].lower()
@@ -1595,13 +1620,12 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
                          'Mirrored from the publisher. Not used in any figure on this site.'),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': size,
-                'url': ('' if oversize else '/docs/' + rel),
+                'url': '/docs/' + rel,
                 **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
                 'upstream': r['upstream'],
                 **({'upstreamRestricted': True}
                    if (LINKS or {}).get(rel, (True,))[0] is False else {}),
                 **({'alsoUsed': used} if used else {}),
-                **({'heldOnly': True} if oversize else {}),
             })
     items.sort(key=lambda i: (-i['stars'], i['title']))
     return {'section': 'reference', 'id': gid, 'origin': origin,
@@ -1691,9 +1715,12 @@ def build_corpus():
         'to': max(dates) if dates else None,
         'textFiles': sum(len(f) for _, _, f in os.walk(os.path.join(SRC, 'meetings', 'text'))),
         'note': 'Every agenda and set of minutes the town publishes, across all boards. The '
-                'scanned originals are not committed to the repository — they run to about '
-                '400MB and are re-fetchable — but the extracted text of all of them is, and '
-                'that is what the analysis actually reads.',
+                'extracted text is what the analysis reads and is what this site serves. '
+                'The scanned originals — about 426MB — are archived too, and can be '
+                'downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were '
+                'never in the repository, so until September 2026 they existed on exactly '
+                'one disk; they now have an off-site copy, which for an archive of public '
+                'records that keeps losing its own links is the point.',
         'rebuild': 'python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py',
     }
 
@@ -1716,7 +1743,7 @@ def main():
             catalogued.add(rel)
             ext = os.path.splitext(rel)[1].lower()
             count, unit = page_count(path)
-            served, elsewhere = publish(rel)
+            served, _ = publish(rel)
 
             # Where the extracted text sits beside a document. `docs/` -> `text/` is the
             # convention every mirror uses; `pdf/` -> `txt/` was the old top-level format
@@ -1749,12 +1776,9 @@ def main():
                 **({'providedBy': given} if given else {}),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': served,
-                'url': elsewhere or ('/docs/' + rel),
+                'url': '/docs/' + rel,
                 **({'count': count, 'unit': unit} if count else {}),
                 **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
-                # Said plainly: a reader should know when a file comes from somewhere
-                # other than this site, and it is still the same bytes either way.
-                **({'offsite': True} if elsewhere else {}),
             })
         # Load-bearing first, then largest — a reader scanning a group should meet the
         # documents a conclusion actually rests on before the ones kept for completeness.
@@ -1775,7 +1799,8 @@ def main():
             continue
         for fn in filenames:
             rel = os.path.join(rel_dir, fn).replace(os.sep, '/')
-            if fn.startswith('.') or fn in SKIP_FILES or rel in catalogued:
+            if (fn.startswith('.') or fn in SKIP_FILES or rel in SKIP_FILES
+                    or rel in catalogued):
                 continue
             if os.path.splitext(fn)[1].lower() in ('.txt',):
                 continue
@@ -1927,13 +1952,11 @@ def main():
         fh.write('\n')
     mb = doc['totals']['bytes'] / 1e6
     print(f"{OUT}: {doc['totals']['documents']} documents in {len(groups)} groups, {mb:.0f}MB")
-    print(f"  published verbatim to {DOCS}")
-    for i in all_items:
-        if i.get('offsite'):
-            print(f"    offsite  {i['path']} ({i['bytes']/1e6:.0f}MB) -> {i['url']}")
-        elif i['bytes'] > MAX_BYTES:
-            print(f"    OVERSIZE {i['path']} is {i['bytes']/1e6:.0f}MB — over the "
-                  f"{MAX_BYTES/1024/1024:.0f}MiB per-file limit and has no ELSEWHERE entry")
+    from_bucket = [i for i in all_items if archive_storage.frozen(i['path'])]
+    print(f"  ours published verbatim to {DOCS}")
+    print(f"  {len(from_bucket)} documents "
+          f"({sum(i['bytes'] for i in from_bucket)/1e6:.0f}MB) served from the bucket "
+          f"under the same /docs/ URLs")
     if doc['corpus']:
         c = doc['corpus']
         print(f"  + meeting archive: {c['fetched']} documents across {c['boardCount']} boards")

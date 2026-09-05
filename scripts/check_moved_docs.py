@@ -9,13 +9,22 @@ that every target is a file the site actually serves.
 
 **A 301 to a 404 is worse than a 404.** It tells a caller the document moved, sends them
 somewhere, and leaves them with nothing -- and it looks like the redirect worked.
+
+**"Served" now means two places, not one.** Since 5 September 2026 the publishers' own
+files are not in the build: they are in R2 and `functions/docs/_bucket.js` streams them
+under the same URL. So a target counts as served if it is a build asset OR an object the
+archive manifest lists -- and a target in neither is the broken alias this looks for.
+Checking only the build directory would have started reporting 1,682 false failures the
+day the binaries left it, which is the kind of check that gets switched off.
 """
-import json
 import os
 import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import archive_storage  # noqa: E402
+
 MOVED = os.path.join(ROOT, 'fy28', 'functions', 'docs', '_moved.js')
 DOCS = os.path.join(ROOT, 'fy28', 'public', 'docs')
 
@@ -35,47 +44,38 @@ def main():
         print('could not parse the map — has _moved.js changed shape?')
         return 1
 
+    manifest = archive_storage.read_manifest()
+
+    def served(rel):
+        return os.path.exists(os.path.join(DOCS, rel)) or rel in manifest
+
     bad = []
     for old, new in sorted(exact.items()):
-        if not os.path.exists(os.path.join(DOCS, new)):
+        if not served(new):
             bad.append((old, new))
 
     # A prefix rule is only as good as the tree it points into.
     for frm, to in prefix:
-        if not os.path.isdir(os.path.join(DOCS, to.rstrip('/'))):
+        folder = to.rstrip('/')
+        if not (os.path.isdir(os.path.join(DOCS, folder))
+                or any(k.startswith(folder + '/') for k in manifest)):
             bad.append((frm + '<anything>', to + ' — destination directory missing'))
 
-    # A document deliberately not served -- over the host's per-file cap -- is not a
-    # broken alias. It is unreachable at the old address and the new one alike, and
-    # saying so is the catalogue's job, not this one.
-    oversize = set()
-    cat = os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')
-    if os.path.exists(cat):
-        blob = json.load(open(cat, encoding='utf-8'))
+    # There is no longer any such thing as a document too large to serve. The seven that
+    # were over Cloudflare Pages' 25MiB per-file cap -- six annual town reports and a
+    # bridge assessment -- are in the bucket, which has no cap, so the exemption this
+    # check used to carry has been deleted rather than left to rot into a loophole.
 
-        def walk(node):
-            if isinstance(node, dict):
-                # Either hosted elsewhere, or over the host's per-file cap and
-                # therefore named in the catalogue but not served from here. Both are
-                # unreachable at the old address and the new one alike.
-                if node.get('path') and (node.get('offsite')
-                                         or (node.get('bytes') or 0) > 25 * 1024 * 1024):
-                    oversize.add(node['path'])
-                for v in node.values():
-                    walk(v)
-            elif isinstance(node, list):
-                for v in node:
-                    walk(v)
-        walk(blob)
-    bad = [(o, n) for o, n in bad if n.split(' —')[0] not in oversize]
-
+    n_bucket = sum(1 for _, new in exact.items()
+                   if not os.path.exists(os.path.join(DOCS, new)) and new in manifest)
     print('%d exact aliases, %d prefix rules' % (len(exact), len(prefix)))
     if bad:
         print('\n%d alias(es) point at something that is not served:' % len(bad))
         for old, new in bad[:20]:
             print('   /docs/%s  ->  /docs/%s' % (old, new))
         return 1
-    print('every alias target exists in fy28/public/docs')
+    print('every alias target is served: %d from the build, %d from the bucket'
+          % (len(exact) - n_bucket, n_bucket))
     return 0
 
 

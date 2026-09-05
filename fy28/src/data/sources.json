@@ -615,11 +615,10 @@
      "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01620000&type=T",
      "kind": "PDF",
      "bytes": 53425589,
-     "url": "https://pub-5baef0f2604545c398a39a176e400e34.r2.dev/contracts/pdf/dese-teacher-contract.pdf",
+     "url": "/docs/contracts/pdf/dese-teacher-contract.pdf",
      "count": 72,
      "unit": "pages",
-     "textUrl": "/docs/contracts/txt/dese-teacher-contract.txt",
-     "offsite": true
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract.txt"
     },
     {
      "path": "town-supplementary/docs/health-insurance-rates-2025.pdf",
@@ -1804,7 +1803,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 16113664,
+     "bytes": 16134144,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1838,7 +1837,7 @@
      "stars": 3,
      "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
      "kind": "Data",
-     "bytes": 229448,
+     "bytes": 230432,
      "url": "/docs/data/munis-ledger.csv",
      "count": 983,
      "unit": "rows",
@@ -2151,9 +2150,9 @@
      "stars": 2,
      "what": "The working index of every file here, with provenance and known gaps.",
      "kind": "Notes",
-     "bytes": 26414,
+     "bytes": 29978,
      "url": "/docs/MANIFEST.md",
-     "count": 359,
+     "count": 396,
      "unit": "lines",
      "textUrl": "/docs/MANIFEST.md"
     },
@@ -4935,10 +4934,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 39582437,
-     "url": "",
+     "url": "/docs/town-supplementary/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf",
      "textUrl": "/docs/town-supplementary/text/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3463",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3463"
     },
     {
      "path": "town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
@@ -5154,10 +5152,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 31626604,
-     "url": "",
+     "url": "/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
      "textUrl": "/docs/town-annual-reports/text/4117-fy-2011-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4117 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/121",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4117 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/121"
     },
     {
      "path": "town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
@@ -5166,10 +5163,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 56577710,
-     "url": "",
+     "url": "/docs/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
      "textUrl": "/docs/town-annual-reports/text/4118-fy-2012-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4118 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/124",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4118 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/124"
     },
     {
      "path": "town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
@@ -5178,10 +5174,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 37839397,
-     "url": "",
+     "url": "/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
      "textUrl": "/docs/town-annual-reports/text/4119-fy-2013-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4119 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/125",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4119 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/125"
     },
     {
      "path": "town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
@@ -5234,10 +5229,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 37102314,
-     "url": "",
+     "url": "/docs/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
      "textUrl": "/docs/town-annual-reports/text/4124-fy-2017-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4124 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/128",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4124 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/128"
     },
     {
      "path": "town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
@@ -5279,10 +5273,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 82620223,
-     "url": "",
+     "url": "/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
      "textUrl": "/docs/town-annual-reports/text/4128-fy-2021-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4128 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/122",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4128 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/122"
     },
     {
      "path": "town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
@@ -5313,10 +5306,9 @@
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "PDF",
      "bytes": 52210075,
-     "url": "",
+     "url": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
      "textUrl": "/docs/town-annual-reports/text/4132-fy-2024-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4132 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/211",
-     "heldOnly": true
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4132 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/211"
     },
     {
      "path": "town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
@@ -5622,14 +5614,14 @@
   "from": "2025-01-06",
   "to": "2026-11-17",
   "textFiles": 1423,
-  "note": "Every agenda and set of minutes the town publishes, across all boards. The scanned originals are not committed to the repository — they run to about 400MB and are re-fetchable — but the extracted text of all of them is, and that is what the analysis actually reads.",
+  "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
   "documents": 454,
   "groups": 20,
-  "bytes": 1000061805,
+  "bytes": 1000086833,
   "loadBearing": 71
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

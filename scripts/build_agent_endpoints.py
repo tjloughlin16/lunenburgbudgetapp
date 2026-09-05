@@ -135,6 +135,16 @@ def main():
          'district-page-index.csv',
          'The 87 documents mirrored from the district budget page: label, our copy, the '
          'extracted text, the district’s original URL, and a sha256.'),
+        (os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv'),
+         'archive-manifest.csv',
+         'Every file in the archive — 3,876 of them — with its size, its sha256, and the '
+         'publisher’s own URL where one is recorded. The documents themselves are no '
+         'longer in the repository: they are in a public, locked R2 bucket and are served '
+         'under the /docs/<path> URLs they have always had, so this is the index that '
+         'makes a download checkable and the list a fresh clone works from. The bucket '
+         'holds no copy of this file, deliberately — an object there cannot be updated '
+         'once written, so a manifest inside it would be permanently out of date about '
+         'its own contents.'),
         (os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv'), 'free-cash-proof.csv',
          'The Division of Local Services free cash proof for Lunenburg and eight comparable '
          'towns, 2021-2025, line by line. Free cash is what a town may appropriate without '
@@ -463,10 +473,13 @@ def main():
         '## Provenance',
         '',
         'Source: https://github.com/tjloughlin16/lunenburgbudgetapp. Documents are served '
-        'byte-identical to the archive; the build verifies this by hash. One file, a 53MB '
-        'scan of the teachers’ agreement, is served from separate storage because it '
-        'exceeds the host’s per-file limit, and its `url` in `sources.json` is '
-        'absolute.',
+        'byte-identical to the archive; the build verifies this by hash, and '
+        '`/data/archive-manifest.csv` carries the sha256 of every file so you can check '
+        'a download yourself. Every document is at `/docs/<path>` — there are no '
+        'exceptions and nothing is too large to serve. The published documents are not in '
+        'the git repository: they are in a public, locked object store and streamed under '
+        'those same URLs, so cite the `/docs/` address rather than any storage URL you '
+        'may see in a response header.',
     ]
 
     with open(os.path.join(PUB, 'llms.txt'), 'w') as fh:

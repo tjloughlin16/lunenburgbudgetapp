@@ -1,6 +1,13 @@
 # The archive move — what happens, in order, and where every file ends up
 
-**Status: not started.** Written 5 September 2026, consolidating `plans/ARCHIVE-REORG.md`
+**Status: DONE, 5 September 2026.** All nine steps. What actually happened, and the four
+things this plan got wrong, are in `notes/HANDOFF-ARCHIVE-STORAGE.md` — read that first if
+you are picking this up. The short version: the lock blocks overwriting (confirmed, not
+assumed), so every write is one-way; the binaries turned out to be in git *twice*; and
+`git rm --cached` stops the growth without shrinking the pack, because the blobs stay in
+history.
+
+Written 5 September 2026, consolidating `plans/ARCHIVE-REORG.md`
 (why the layout is what it is), `plans/ARCHIVE-STORAGE.md` (why the bytes leave git) and
 `plans/REORG-HANDOFF.md` (what the annual-report crawl changed underneath both).
 
@@ -214,7 +221,11 @@ Git's copy is for building and reviewing. It is never what gets served.
     uploaded to R2         ~1.5 GB — the whole of sources/, including the
                            418 MB of gitignored meeting PDFs, which have
                            never had a backup anywhere
-    git pack afterwards    ~1 GB → well under 100 MB
+    git pack afterwards    UNCHANGED at 291.61 MiB — this line was wrong. Untracking
+                           removes a file from the index, not from the commits that
+                           already hold it. The growth stops; the pack does not shrink
+                           without a history rewrite. Recorded as a known, deferred
+                           problem in notes/HANDOFF-ARCHIVE-STORAGE.md
 
 ### The eight files that make this urgent
 

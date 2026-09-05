@@ -3,6 +3,7 @@
 // See functions/_notfound.js for why this is a Function and not a _redirects rule.
 import { assetOr404 } from '../_notfound.js'
 import { movedTo } from './_moved.js'
+import { fromBucket } from './_bucket.js'
 
 export async function onRequest(context) {
   const res = await context.next()
@@ -25,6 +26,13 @@ export async function onRequest(context) {
     // on citing an address that works only because of this map.
     return Response.redirect(url.toString(), 301)
   }
+
+  // Not in the build and not moved. It may still be in the archive: the binaries were
+  // taken out of git and out of the build on 5 September 2026, and the bucket is where
+  // they went. Same URL, same bytes, same sha256 -- the only thing that changed is which
+  // machine holds them.
+  const stored = await fromBucket(context, path)
+  if (stored) return stored
 
   return assetOr404(context)
 }

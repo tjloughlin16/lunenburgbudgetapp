@@ -378,6 +378,48 @@ three are written down:
 - **Six of the sixteen source PDFs exist only in this working tree.**
   `notes/reference/BACKUP.md` lists every path with how many copies of it exist.
 
+## Where the bytes are: git holds what changes, R2 holds what must not
+
+**The documents are not in this repository.** Every PDF, spreadsheet, Word file and
+PowerPoint the town, the district and the state published -- 1,762 files, 1.38 GB -- lives
+in a public R2 bucket. A fresh clone gets `sources/` with its manifests and its extracted
+text and holes where the originals should be:
+
+    python3 scripts/sync_archive.py --pull   # fetches what is missing, verifies each sha256
+
+**Nothing about the published addresses changed.** `/docs/<path>` still serves every
+document; `fy28/functions/docs/_bucket.js` streams it out of the bucket under the same URL,
+and sets `x-archive-source: r2` so a test can tell which copy answered. A URL is an
+interface and where the bytes are kept is an implementation detail -- which is also why
+`llms.txt` can keep telling agents to cite those addresses.
+
+**The line between the two is the line rule 12 already drew.** A document somebody else
+published does not change: if our copy ever differed from what we uploaded that is a
+defect, not a revision, and the bucket freezes it -- a lock blocks deletion *and*
+overwriting for ten years across every prefix, confirmed by attempting one and being
+refused (`HTTP 409, the object is locked by the bucket policy`). Everything we derive from
+those documents does change -- the extracted text when an extractor improves, the analyses
+when a rate does -- and git versions that properly: atomic across files, with a message,
+reviewable before it merges. `archive_storage.frozen()` is where that line is drawn, in one
+place, so the manifest, the push, the reconciler and the site build cannot disagree about
+it.
+
+**Two consequences worth knowing before they surprise you.**
+
+- **An object in the bucket cannot be corrected, only superseded under a new key.** A push
+  that finds different bytes already stored under a key stops and says so rather than
+  trying to fix it.
+- **The bucket also holds a frozen snapshot of our derived files**, taken 5 September 2026,
+  because the archive was pushed whole. Nobody reads it -- the site serves the git version,
+  which is checked first -- and `check_archive_storage.py` reports it as *an older
+  rendering*, separately from real failures, so it cannot be mistaken for one.
+
+`sources/data/archive-manifest.csv` is the index into all of it, tracked in git because a
+clone held only in R2 would have to ask the network what exists before it could ask for any
+of it. It is published at `/data/archive-manifest.csv` and deliberately **not** stored in
+the bucket: an object there cannot be updated once written, so a manifest inside it would
+be permanently out of date about its own contents.
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
@@ -434,6 +476,11 @@ arriving fresh.
     python3 scripts/build_dataset_provenance.py  # every dataset row joined to the document it came from
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
+    python3 scripts/sync_archive.py --manifest   # hash every file in sources/; rewrite the manifest
+    python3 scripts/sync_archive.py --push       # upload what is new, read it back, compare sha256
+    python3 scripts/sync_archive.py --pull       # a fresh clone gets the documents themselves
+    python3 scripts/check_archive_storage.py     # manifest vs bucket, reconciled both ways
+    python3 scripts/check_archive_urls.py --base URL  # every /docs/ address, hashed against the manifest
 
 ## Searching what the town said
 

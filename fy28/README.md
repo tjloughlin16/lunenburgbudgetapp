@@ -16,6 +16,19 @@ npm run build            # -> dist/         multi-file build, for hosting
 SINGLE=1 npm run build   # -> dist-single/  ONE self-contained .html, opens offline
 ```
 
+**A fresh clone has no source documents.** The archive's 1,762 published PDFs and
+spreadsheets — 1.38 GB — are not in git. They are in a public R2 bucket and are served
+under the same `/docs/<path>` URLs by `functions/docs/_bucket.js`, so the deployed site
+does not need them locally. Anything that reads a document off disk does:
+
+```bash
+cd ..
+python3 scripts/sync_archive.py --pull   # fetches what is missing, checks every sha256
+```
+
+It is safe to re-run and it downloads only what is absent. `sources/data/archive-manifest.csv`
+is the list it works from and is tracked in git, which is why a clone knows what to ask for.
+
 **Sharing it.** `SINGLE=1 npm run build` inlines the JS, CSS and data into a single
 ~820KB HTML file that runs by double-click, with no server and no internet. A plain
 `dist/` build will *not* open from `file://` — browsers block ES modules over that

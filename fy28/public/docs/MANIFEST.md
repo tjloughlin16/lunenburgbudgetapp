@@ -1,11 +1,39 @@
 # Source data manifest
 
-All files pulled 2026-08-17 from:
+The first documents here were pulled 2026-08-17 from:
 - School: https://www.lunenburgschools.net/department-directory/superintendent-of-schools/school-budget-information
 - Town:   https://www.lunenburgma.gov/835/2026-Annual-Town-Meeting-FY27-Budget-Hub
 
-`pdf/` originals · `txt/` extracted text (pypdf) · `xlsx/` spreadsheets ·
-`data/` machine-readable CSV built by `scripts/extract_lps_budget.py`
+**The archive was reorganised on 4 September 2026 and every path in this file was updated
+with it.** The tree is keyed on *how a document reached us* — the one thing about a
+document that is single-valued and never changes. Fiscal year and subject are not: one
+workbook here carries FY23 to FY27. Those are views, in `views/`, not folders.
+
+    town-budget/         the Town's budget documents, warrants, financial statements
+    town-supplementary/  everything else the Town publishes
+    town-annual-reports/ the annual town reports, FY2011–FY2025
+    town-ledgers/        MUNIS accounting reports, obtained by records request
+    district-budget/     the school district's budget page, mirrored in full
+    budget-workbooks/    the spreadsheets behind the district's budget documents
+    contracts/           collective bargaining agreements
+    meetings/            agendas and minutes for every Town board, 2025 onward
+    state-dese/          Mass. Dept. of Elementary and Secondary Education
+    state-dls/           Mass. Dept. of Revenue, Division of Local Services
+    peer-districts/      budget documents from neighbouring districts
+    correspondence/      letters and emails with officials
+    analyses/            OURS — written here
+    data/                OURS — extracted from the documents above
+
+Inside each mirror, `docs/` holds the publisher's own file and `text/` our extracted text;
+`town-budget/` also has `ocr/` and `pages/` for the scans that had no text layer.
+
+**Where the bytes are, since 5 September 2026.** The published documents are no longer in
+the git repository. They are in a public, locked object store, and are served at
+`https://lunenburgbudgetproject.org/docs/<path>` — the same addresses as before. What
+stays in git is everything that changes: the extracted text, the derived CSVs, the
+analyses. `data/archive-manifest.csv` lists every file with its sha256, is published at
+`/data/archive-manifest.csv`, and `python3 scripts/sync_archive.py --pull` is how a fresh
+clone gets the documents themselves.
 
 **Access, and what it cost to find out.** On 29 August 2026, 60% of the district's own
 links returned a Google sign-in wall — 57 of 187, including the FY27 proposed budget
@@ -31,15 +59,15 @@ nobody can fetch. **Nothing the district publishes had changed underneath us.**
 
 | File | What it is | Value for FY28 |
 |---|---|---|
-| `fy27-final-budget-doc` | FY27 proposed budget, 3/25/26. Line items: FY26 Final, FY27 Restoration/Core/Balanced | ★★★ |
-| `fy27-projections-3-23-26` | Same, 3/23/26, **includes Level Service column** (5 scenarios) | ★★★ |
-| `fy27-projections-3-16-26` | Earlier line-item version w/ restorations | ★★ |
-| `fy27-multi-scenario-addendum` | Narrative defining all 4 scenarios, cut/restore lists, headcount, comparative summary | ★★★ |
-| `town-additional-revenue-plan` | The $453,722 Sept-2026 add-back plan + rationales | ★★★ |
-| `lhs-athletics-faq` | The **superseded** athletic fee schedule — $250/$140/$85 HS with a $475 family cap, $200/$150 MS. Still the only fee schedule posted publicly, though the fee rose to $400/$300/$225 with a $1,500 cap for 2026-27. Address: [rschooltoday, the schedule vendor's file store](https://tts-livesite.rschooltoday.com/sites/lunenburghs.rschoolteams.com/files/files/Private_User/jbunnell/Frequently%20Asked%20Questions.pdf), publisher's name `Frequently Asked Questions.pdf`, verified byte-identical 31 Aug 2026. **Not hosted by the school** — it is on a third-party sports-scheduling platform, under a staff member's private-user folder, which is about as durable as an address gets here. | ★★ |
-| `athletic-program-costs-by-sport` | **Per-sport cost and participation**, 25 sports, FY24. The basis for every fee calculation. | ★★★ |
-| `fy27-balanced-slides-3-23-26` | Slide deck — **image-only, no extractable text** | ★ |
-| `fy27-sc-slidedeck-3-23-26` | SC deck 3/23/26 — **image-only, no extractable text** | ★ |
+| `district-budget/docs/final-budget-document.pdf` | FY27 proposed budget, 3/25/26. Line items: FY26 Final, FY27 Restoration/Core/Balanced | ★★★ |
+| `district-budget/docs/fy27-budget-projections-as-of-3-23-26.pdf` | Same, 3/23/26, **includes Level Service column** (5 scenarios) | ★★★ |
+| `district-budget/docs/fy27-budget-projections-as-of-3-16-26-with-restorations.pdf` | Earlier line-item version w/ restorations | ★★ |
+| `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` | Narrative defining all 4 scenarios, cut/restore lists, headcount, comparative summary | ★★★ |
+| `district-budget/docs/additional-town-revenue-spending-plan.pdf` | The $453,722 Sept-2026 add-back plan + rationales | ★★★ |
+| `district-budget/docs/lhs-athletics-faq.pdf` | The **superseded** athletic fee schedule — $250/$140/$85 HS with a $475 family cap, $200/$150 MS. Still the only fee schedule posted publicly, though the fee rose to $400/$300/$225 with a $1,500 cap for 2026-27. Address: [rschooltoday, the schedule vendor's file store](https://tts-livesite.rschooltoday.com/sites/lunenburghs.rschoolteams.com/files/files/Private_User/jbunnell/Frequently%20Asked%20Questions.pdf), publisher's name `Frequently Asked Questions.pdf`, verified byte-identical 31 Aug 2026. **Not hosted by the school** — it is on a third-party sports-scheduling platform, under a staff member's private-user folder, which is about as durable as an address gets here. | ★★ |
+| `district-budget/docs/athletic-program-costs-by-sport.pdf` | **Per-sport cost and participation**, 25 sports, FY24. The basis for every fee calculation. | ★★★ |
+| `district-budget/docs/balanced-budget-slides-3-23-26.pdf` | Slide deck — **image-only, no extractable text** | ★ |
+| `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` | SC deck 3/23/26 — **image-only, no extractable text** | ★ |
 
 Dead link on the school site: "FAQ – November Town Meeting"
 (drive id `1ntDb3MeOIRRLosIF1GqdDMJz6wB5sB68`) returns 404.
@@ -48,23 +76,23 @@ Dead link on the school site: "FAQ – November Town Meeting"
 
 | File | What it is | Value for FY28 |
 |---|---|---|
-| `town-fy27-budget-press-release` | Town Manager 4/17/26 — **the revenue formula**, all three budgets by category, cut lists, tax impact, free cash | ★★★ |
-| `town-fy27-operating-budgets-balanced-tier1-tier2` | Omnibus by department, 3 scenarios | ★★★ |
-| `town-fy27-detailed-budget` | Line-item town budget by ORG/OBJ, 3 scenarios (incl. Monty Tech assessment) | ★★ |
-| `town-2026-election-unofficial-results` | **Override Q1/Q2 both failed** — precinct tallies. [DocumentCenter/View/4193](https://www.lunenburgma.gov/DocumentCenter/View/4193), the town's own name **"5/16/2026 Annual Town Election Unofficial Results (PDF)"**, verified byte-identical 31 Aug 2026. The town also posts **official** results at [View/4247](https://www.lunenburgma.gov/DocumentCenter/View/4247); we hold the unofficial one, and the word is in its title for a reason | ★★★ |
-| `town-atm-2026-booklet-warrant` | 2026 ATM booklet + warrant, 52pp | ★★ |
-| `town-2026-election-warrant` | Ballot question language | ★ |
-| `town-article13-fy27-capital-plan` | FY27 capital plan | ★ |
+| `town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf` | Town Manager 4/17/26 — **the revenue formula**, all three budgets by category, cut lists, tax impact, free cash | ★★★ |
+| `town-budget/docs/3769-fy-2027-operating-budgets-balanced-tier-1-tier2.pdf` | Omnibus by department, 3 scenarios | ★★★ |
+| `town-budget/docs/4082-fy-2027-detailed-budget.pdf` | Line-item town budget by ORG/OBJ, 3 scenarios (incl. Monty Tech assessment) | ★★ |
+| `town-supplementary/docs/town-2026-election-unofficial-results.pdf` | **Override Q1/Q2 both failed** — precinct tallies. [DocumentCenter/View/4193](https://www.lunenburgma.gov/DocumentCenter/View/4193), the town's own name **"5/16/2026 Annual Town Election Unofficial Results (PDF)"**, verified byte-identical 31 Aug 2026. The town also posts **official** results at [View/4247](https://www.lunenburgma.gov/DocumentCenter/View/4247); we hold the unofficial one, and the word is in its title for a reason | ★★★ |
+| `town-budget/docs/3765-town-meeting-booklet-including-warrant.pdf` | 2026 ATM booklet + warrant, 52pp | ★★ |
+| `town-budget/docs/4161-2026-annual-town-election-warrant.pdf` | Ballot question language | ★ |
+| `town-budget/docs/4111-article-13-fy-2027-capital-plan.pdf` | FY27 capital plan | ★ |
 
 ## Spreadsheets
 
-**`fy27-budget-projection-3-25-26.xlsx` was sent directly to this project by Ana Lockwood, a
+**`budget-workbooks/fy27-budget-projection-3-25-26.xlsx` was sent directly to this project by Ana Lockwood, a
 member of the Lunenburg Finance Committee,** under her own filename *"FY27 School Department
 Budget Projection as of 3.25.26"*. That is its address. Rule 12 counts an email and who sent
 it as an address, and this is one — it was never on a public page, which is why no amount of
 crawling was going to find it.
 
-*Why a name here when the records request names nobody.* `munis-ledgers/account-details/` withholds
+*Why a name here when the records request names nobody.* `town-ledgers/account-details/` withholds
 the resident who filed it on purpose. The difference is the capacity: a private resident
 asking the town a question is not part of any address a reader needs, while a Finance
 Committee member circulating a budget workbook is acting as a town official, and which
@@ -72,16 +100,16 @@ official is exactly what tells a reader what the document is. The role is checka
 Committee's own agenda letterhead lists `Ana Lockwood` among its members, most recently on
 [27 August 2026](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08272026-7970).
 
-**`fy27-proposals.xlsx` — the one nearly every budget-line figure on this site comes out of —
+**`budget-workbooks/fy27-proposals.xlsx` — the one nearly every budget-line figure on this site comes out of —
 still has no address**, and it is not a renamed copy of the Lockwood file: different sizes
 (97,035 against 122,265 bytes), different hashes, and of their twelve shared zip members
 exactly one is byte-identical.
 
-What the files say about themselves is now recorded in `xlsx/PROVENANCE.md`, and it is
+What the files say about themselves is now recorded in `budget-workbooks/PROVENANCE.md`, and it is
 worth reading before guessing: all three were created by **Christopher McNamara, the
 district's Business Administrator**, at the same timestamp to the second, so they are one
 workbook saved three times. The 25 March copy's `cp:lastModifiedBy` reads **Ana Lockwood** —
-the file corroborating the account of how it reached us. `fy27-proposals.xlsx` has no last
+the file corroborating the account of how it reached us. `budget-workbooks/fy27-proposals.xlsx` has no last
 modifier at all and its zip members are stamped **2 April 2026, 05:35**.
 
 **Metadata says who authored a file, never who gave it to us**, so none of that is a route.
@@ -98,23 +126,23 @@ encumbrances, and all four FY27 scenarios — **zero cells differ**. So a reader
 published figure against a document traceable to a named town official. That is not the same
 as the load-bearing file having its own address, and it is not offered as if it were.
 
-`xlsx/fy27-budget-projection-2-24-26.xlsx` has no recorded route either, but we do hold the
+`budget-workbooks/fy27-budget-projection-2-24-26.xlsx` has no recorded route either, but we do hold the
 publisher's own filename: an untouched copy sits in the repository root as *"FY27 Budget
 Projection as of 2.24.26 with restorations (2).xlsx"* and is byte-identical to it. The `(2)`
 is the suffix a browser adds to a second download of the same name, so the published name is
 almost certainly without it — *almost certainly*, not certainly.
 
-`notes/DATA-WANTED.md §15`.
+`notes/findings/DATA-WANTED.md §15`.
 
 | File | Notes |
 |---|---|
-| `xlsx/fy27-proposals.xlsx` | **Richest single artifact.** The 3/25/26 workbook. 1,197 rows. Columns C/D/E are headed `FY23`/`FY24`/`FY25` over `ACTUALS` — the district's **restatement** of those years inside a forward budget, not a ledger extract; the only ledger-basis document for school lines is `district-budget/text/fy23-quarterly-budget-update.txt`. Also FY25 budget, FY26 final + actuals-to-date + encumbrances, all four FY27 scenarios, an out-year forecast column (sheet labels it "FY29"), and a 2/24/26 restoration snapshot. **Columns C, H, I, N, O, P, T, U, V are hidden**, so FY23 actuals and the FY26 actuals-to-date and encumbrances do not appear on screen when the file is opened. Same file as `public/data/proposals.xlsx`. Source of `data/lps-budget-lines.csv`. |
-| `xlsx/fy27-budget-projection-3-25-26.xlsx` | The same 3/25/26 workbook as circulated to the Finance Committee, **sent to us by a member of it on 27 August 2026** under the name *"FY27 School Department Budget Projection as of 3.25.26"* — the only one of these three with a recorded address. **Identical to `fy27-proposals.xlsx` in every budget column**, checked cell by cell at formula level by `scripts/verify_workbook_twins.py`: 0 differences across columns E–M. Everything that does differ is outside the budget: 391 cells of an unheaded scratch column `Y` holding `=Jn-Kn`, which this copy does not carry, and a five-cell year-over-year ratio row (230) under TOTAL EXPENSES, which only this copy has. A further 14 differences are `=sum(` against `=SUM(` — the same sum over the same range. **Not presentation-identical**: this copy hides F and shows C, the other hides C and shows F, so the two files put different columns in front of a reader. |
-| `xlsx/fy27-budget-projection-2-24-26.xlsx` | Earlier, thinner version. Publisher's own filename *"FY27 Budget Projection as of 2.24.26 with restorations.xlsx"*, from a byte-identical copy left in the repository root |
-| `xlsx/dese-all-districts.xlsx` | DESE per-pupil + total expenditures by category, FY2017-18 → FY2023-24, Lunenburg vs 11 peer districts, w/ enrollment |
+| `budget-workbooks/fy27-proposals.xlsx` | **Richest single artifact.** The 3/25/26 workbook. 1,197 rows. Columns C/D/E are headed `FY23`/`FY24`/`FY25` over `ACTUALS` — the district's **restatement** of those years inside a forward budget, not a ledger extract; the only ledger-basis document for school lines is `district-budget/text/fy23-quarterly-budget-update.txt`. Also FY25 budget, FY26 final + actuals-to-date + encumbrances, all four FY27 scenarios, an out-year forecast column (sheet labels it "FY29"), and a 2/24/26 restoration snapshot. **Columns C, H, I, N, O, P, T, U, V are hidden**, so FY23 actuals and the FY26 actuals-to-date and encumbrances do not appear on screen when the file is opened. Source of `data/lps-budget-lines.csv`. |
+| `budget-workbooks/fy27-budget-projection-3-25-26.xlsx` | The same 3/25/26 workbook as circulated to the Finance Committee, **sent to us by a member of it on 27 August 2026** under the name *"FY27 School Department Budget Projection as of 3.25.26"* — the only one of these three with a recorded address. **Identical to `budget-workbooks/fy27-proposals.xlsx` in every budget column**, checked cell by cell at formula level by `scripts/verify_workbook_twins.py`: 0 differences across columns E–M. Everything that does differ is outside the budget: 391 cells of an unheaded scratch column `Y` holding `=Jn-Kn`, which this copy does not carry, and a five-cell year-over-year ratio row (230) under TOTAL EXPENSES, which only this copy has. A further 14 differences are `=sum(` against `=SUM(` — the same sum over the same range. **Not presentation-identical**: this copy hides F and shows C, the other hides C and shows F, so the two files put different columns in front of a reader. |
+| `budget-workbooks/fy27-budget-projection-2-24-26.xlsx` | Earlier, thinner version. Publisher's own filename *"FY27 Budget Projection as of 2.24.26 with restorations.xlsx"*, from a byte-identical copy left in the repository root |
+| `budget-workbooks/dese-all-districts.xlsx` | DESE per-pupil + total expenditures by category, FY2017-18 → FY2023-24, Lunenburg vs 11 peer districts, w/ enrollment |
 | `supplemental.csv` | Town Manager FY27 target: $26,476,533.21 (+$689,059.28) — a pre-Balanced figure |
 
-## Local peer districts (`peers/`)
+## Local peer districts (`peer-districts/`)
 
 Primary-source FY27 budget documents from neighboring districts. All downloaded
 2026-08-17; `.txt` alongside each `.pdf`.
@@ -128,12 +156,12 @@ none of them could be found by looking at a district budget page, and it is a re
 
 | File | District | Address | What it gives |
 |---|---|---|---|
-| `groton-dunstable-fy27-budget-book` | Groton-Dunstable | [thrillshare CDN](https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2198/Gdrsd/a9c839f0-1ed0-4e9a-b125-32a1c58ca85d/Budget-Book-FY27-01.28.26.pdf) — publisher's name `Budget-Book-FY27-01.28.26.pdf` | 132pp full budget book — three straight years of cuts, below level service, override needed |
-| `ashburnham-westminster-fy27-presentation` | Ashburnham-Westminster | [ParentSquare CDN](https://files.smartsites.parentsquare.com/6739/ashburnham_westminster_budget27_presentation_1.pdf), linked from [awrsd.org/budget-information](https://www.awrsd.org/budget-information) | Superintendent's FY27 budget — explicitly preserves athletics/arts/music, cuts 2 elementary FTE |
-| `ashburnham-westminster-fy27-detail` | Ashburnham-Westminster | [ParentSquare CDN](https://files.smartsites.parentsquare.com/6739/fy27_budget_detail.pdf) — publisher's name `fy27_budget_detail.pdf` | Line-item detail |
-| `ayer-shirley-fy27-expenses` | Ayer-Shirley | [Town of **Ayer** document centre](https://www.ayer.ma.us/DocumentCenter/View/13478), not the district's | Level-service budget by function, health insurance +14.4% |
-| `north-middlesex-finance-subcommittee` | North Middlesex | [nmrsd.org via finalsite](https://resources.finalsite.net/images/v1764774508/nmrsdorg/bregkjqfing6b9eyfqzz/2025-12-01-FinancePacket.pdf) — publisher's name `2025-12-01-FinancePacket.pdf`. **It is the Finance Subcommittee packet for 1 December 2025**, not undated summit notes | FY27 Budget Summit notes — $64k vs $1.5M deficit at 3% vs 5% growth |
-| `wachusett-fy27-budget-presentation` | Wachusett | [Town of **Rutland** document centre](https://www.rutlandma.gov/DocumentCenter/View/3583), a member town | Assessments, enrollment by town, discretionary contribution +9.21% |
+| `peer-districts/groton-dunstable-fy27-budget-book.pdf` | Groton-Dunstable | [thrillshare CDN](https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2198/Gdrsd/a9c839f0-1ed0-4e9a-b125-32a1c58ca85d/Budget-Book-FY27-01.28.26.pdf) — publisher's name `Budget-Book-FY27-01.28.26.pdf` | 132pp full budget book — three straight years of cuts, below level service, override needed |
+| `peer-districts/ashburnham-westminster-fy27-presentation.pdf` | Ashburnham-Westminster | [ParentSquare CDN](https://files.smartsites.parentsquare.com/6739/ashburnham_westminster_budget27_presentation_1.pdf), linked from [awrsd.org/budget-information](https://www.awrsd.org/budget-information) | Superintendent's FY27 budget — explicitly preserves athletics/arts/music, cuts 2 elementary FTE |
+| `peer-districts/ashburnham-westminster-fy27-detail.pdf` | Ashburnham-Westminster | [ParentSquare CDN](https://files.smartsites.parentsquare.com/6739/fy27_budget_detail.pdf) — publisher's name `fy27_budget_detail.pdf` | Line-item detail |
+| `peer-districts/ayer-shirley-fy27-expenses.pdf` | Ayer-Shirley | [Town of **Ayer** document centre](https://www.ayer.ma.us/DocumentCenter/View/13478), not the district's | Level-service budget by function, health insurance +14.4% |
+| `peer-districts/north-middlesex-finance-subcommittee.pdf` | North Middlesex | [nmrsd.org via finalsite](https://resources.finalsite.net/images/v1764774508/nmrsdorg/bregkjqfing6b9eyfqzz/2025-12-01-FinancePacket.pdf) — publisher's name `2025-12-01-FinancePacket.pdf`. **It is the Finance Subcommittee packet for 1 December 2025**, not undated summit notes | FY27 Budget Summit notes — $64k vs $1.5M deficit at 3% vs 5% growth |
+| `peer-districts/wachusett-fy27-budget-presentation.pdf` | Wachusett | [Town of **Rutland** document centre](https://www.rutlandma.gov/DocumentCenter/View/3583), a member town | Assessments, enrollment by town, discretionary contribution +9.21% |
 
 See `analyses/peer-districts.md` Part 2 for the extracted comparison.
 
@@ -156,7 +184,7 @@ Regenerate: `python3 scripts/extract_lps_budget.py`
 
 ## Tax base and Chapter 70
 
-**`pdf/tax-classification-fy23` is the single most valuable town document found.**
+**`town-budget/docs/tax-classification-fy23.pdf` is the single most valuable town document found.**
 The FY2023 Tax Classification Hearing (Board of Assessors) carries year-over-year series
 nothing else does. Its address is
 <https://www.lunenburgma.gov/DocumentCenter/View/138>, the town's own file, under the
@@ -186,8 +214,8 @@ them). FY24–FY26 new growth and class values would extend every series above.
 
 | File | What it gives |
 |---|---|
-| `pdf/town-revenue-prop25-presentation` | Finance Committee deck on Prop 2½ mechanics — levy ceiling vs limit vs levy, and the DOR analysis showing assessed value outpacing the levy since 2017 ("less available revenue during more growth") |
-| `xlsx/ch70-fy27-summary` | DESE FY27 **preliminary** Chapter 70 — [`p-summary-district.xlsx`](https://www.doe.mass.edu/finance/chapter70/fy2027/p-summary-district.xlsx), verified byte-identical 31 Aug 2026. Preliminary means the *Governor's* budget figures, which is the point of rule 11: this number is set in Boston and can move without a single Lunenburg cost changing. Lunenburg: foundation enrollment 1,599; foundation budget $23,089,580; required contribution $14,135,611; **Chapter 70 aid $9,349,335**; required NSS $23,484,946 |
+| `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` | Finance Committee deck on Prop 2½ mechanics — levy ceiling vs limit vs levy, and the DOR analysis showing assessed value outpacing the levy since 2017 ("less available revenue during more growth") |
+| `budget-workbooks/ch70-fy27-summary.xlsx` | DESE FY27 **preliminary** Chapter 70 — [`p-summary-district.xlsx`](https://www.doe.mass.edu/finance/chapter70/fy2027/p-summary-district.xlsx), verified byte-identical 31 Aug 2026. Preliminary means the *Governor's* budget figures, which is the point of rule 11: this number is set in Boston and can move without a single Lunenburg cost changing. Lunenburg: foundation enrollment 1,599; foundation budget $23,089,580; required contribution $14,135,611; **Chapter 70 aid $9,349,335**; required NSS $23,484,946 |
 
 Tax structure, FY26: single rate **$14.39/$1,000**; levy **$35,819,996**; total taxable
 value **$2.489B** (levy ÷ rate); **residential ~91%**, commercial + industrial + personal
@@ -198,7 +226,7 @@ Derived: each $1M of new taxable value is worth **$14,390 a year, permanently**.
 cost per pupil after Chapter 70 is **$10,894**; the school share of an average tax bill is
 **$3,959** — so it takes the school taxes of **2.75 average homes to educate one child**.
 
-## Business registrations (`business/`)
+## Business registrations (`data/business/`)
 
 Copied from a separate project on this machine (`~/lunenburgbusiness`), which cleaned and
 categorised the Town Clerk's business certificate records.
@@ -213,8 +241,8 @@ of a document rather than a route to one.
 
 | File | Contents |
 |---|---|
-| `merged_dataset.csv` | 711 certificate records — cert number, issue/expiry, name, owner, address, status, renewal chain |
-| `categorized.csv` | 554 records tagged by industry category |
+| `data/business/merged_dataset.csv` | 711 certificate records — cert number, issue/expiry, name, owner, address, status, renewal chain |
+| `data/business/categorized.csv` | 554 records tagged by industry category |
 
 **What it shows.** 363 active certificates today. New registrations peaked at 114 in 2022
 and fell to 61 in 2025 (−46.5%), still well above the 2018–19 baseline of ~33. But:
@@ -243,7 +271,7 @@ to families, August 2026 — "$400 for your first child, $300 for the second, an
 the third. There is still a family cap of $1,500."
 
 As of 2026-08-18 the new schedule is **not posted anywhere we can find**. The LHS athletics
-FAQ (`txt/lhs-athletics-faq`, re-checked 2026-08-18) still shows the old figures, and
+FAQ (`district-budget/text/lhs-athletics-faq.txt`, re-checked 2026-08-18) still shows the old figures, and
 neither lunenburgschools.net, the LHS athletics page nor the RevTrak portal publishes a fee
 table. Searched: district site, LHS site, LHS athletics page, rschoolteams FAQ PDF, RevTrak
 store, School Committee agendas for 2026, local press (LocalLens, The Tracker). LocalLens
@@ -322,25 +350,34 @@ framework — no third-party install, no network:
 
     swift scripts/ocr_pdf.swift in.pdf out.txt [scale]
 
-## Meeting archive, 2025– (`minutes/`)
+## Meeting archive, 2025– (`meetings/`)
 
-Every agenda and set of minutes the Town publishes, across all boards.
+Every agenda and set of minutes the Town publishes, across all boards. The folder is
+`meetings/`; the **published address stays `/docs/minutes/...`**, because a folder name is
+internal and a URL is a promise this project has already made 1,422 times.
 
     python3 scripts/fetch_agendas.py --from 2025 [--to YYYY] [--inventory]
     python3 scripts/extract_minutes.py
 
-**51 boards · 1,422 documents listed · 1,383 fetched · 2025-01-06 → 2026-11-17 · 408MB.**
-928 agendas, 455 sets of minutes. 39 are listed by the town but return an error page
-instead of a file (11 of them Sewer Commission); they are in the index with an empty
-`path`.
+**40 boards · 1,422 documents listed · 1,422 fetched · 2025-01-06 → 2026-11-17 · 426MB.**
+948 agendas, 474 sets of minutes.
 
-- `minutes/index.csv` — board, date, kind, file id, local path, source URL
-- `minutes/<board-slug>/YYYY-MM-DD-{agenda,minutes}-<id>.pdf`
-- `minutes/text/<board-slug>/….txt` — extracted text, mirroring the PDF tree
-- `minutes/text/_needs-ocr.txt` — files with no text layer, for `ocr_pdf.swift`
+**This paragraph used to say 1,383 of 1,422, with 39 that "return an error page".** They
+did not. They were Word files, and two halves of one assumption hid each other: the fetcher
+tested `blob.startswith(b'%PDF')` and recorded anything else as missing, while the
+extractor walked `*.pdf` only. One of the 39 was School Committee minutes from the middle
+of FY26. The fetcher now identifies a file from its magic bytes and the extractor reads
+Word and Excel too. **`scripts/search_minutes.py` prints the denominator on every run** —
+how many documents were searched out of how many the town has published — because a grep
+that finds nothing prints nothing, and nothing reads as *nobody said it*.
 
-Heaviest boards: Select Board 141 · School Committee 119 · Finance Committee 84 · Sewer
-Commission 80 · Planning Board 79 (+42 public hearings) · Board of Assessors 63.
+- `meetings/index.csv` — board, date, kind, file id, local path, source URL
+- `meetings/<board-slug>/YYYY-MM-DD-{agenda,minutes}-<id>.pdf`
+- `meetings/text/<board-slug>/….txt` — extracted text, mirroring the PDF tree
+- `meetings/text/_needs-ocr.txt` — files with no text layer, for `ocr_pdf.swift`
+
+Heaviest boards: Select Board 141 · School Committee 119 · Conservation Commission 95 ·
+Finance Committee 84 · Sewer Commission 80 · Planning Board 79.
 
 **Why a scraper rather than the site search.** CivicEngage renders one board-year at a
 time; the year tabs are an AJAX `POST /AgendaCenter/UpdateCategoryList {year, catID}`. Its

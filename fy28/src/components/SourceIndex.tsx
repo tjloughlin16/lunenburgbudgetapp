@@ -23,10 +23,10 @@ import raw from '../data/sources.json'
 type Item = {
   path: string; title: string; stars: number; what: string; kind: string
   bytes: number; url: string; count?: number; unit?: string
-  textUrl?: string; offsite?: boolean; byRequest?: boolean
+  textUrl?: string; byRequest?: boolean
   upstream?: string; upstreamRestricted?: boolean; upstreamCheckedOn?: string
   providedBy?: string
-  alsoUsed?: string; heldOnly?: boolean
+  alsoUsed?: string
 }
 type Group = { id: string; section?: string; title: string; blurb: string
                origin: string; items: Item[] }
@@ -77,7 +77,6 @@ function Row({ it }: { it: Item }) {
             published. */}
         {it.url ? (
           <a href={it.url} download
-            {...(it.offsite ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className="text-[14px] font-semibold leading-snug underline
             decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
             {it.title}
@@ -152,21 +151,6 @@ function Row({ it }: { it: Item }) {
       {it.providedBy && (
         <p className="mt-1 text-[11.5px] leading-relaxed max-w-3xl"
           style={{ color: 'var(--text-muted)' }}>{it.providedBy}</p>
-      )}
-      {it.heldOnly && (
-        <p className="mt-1 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
-          Held in the archive but not served here &mdash; too large for this site&rsquo;s
-          host, and far enough outside the budget to not be worth a second home. The
-          publisher&rsquo;s own copy is linked above.
-        </p>
-      )}
-      {it.offsite && (
-        <p className="mt-1 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
-          Served from separate storage because it is too large for this site&rsquo;s host.
-          Same file, unaltered — a page scan we have not re-encoded, because a source
-          document changed to fit a web host is no longer the source document. The
-          extracted text beside it is a great deal smaller.
-        </p>
       )}
     </li>
   )
