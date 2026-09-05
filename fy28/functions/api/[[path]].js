@@ -24,12 +24,40 @@
  * here -- rate limiting a CDN hit costs more than the hit.
  */
 
+// THE MAP MUST NEVER BE STALE. THE TERRITORY MAY BE.
+//
+// Every response here carried `stale-while-revalidate=86400`, which lets a cache hand
+// back a DAY-OLD copy while it refreshes behind the scenes. For a data file that is
+// correct and cheap. For `/api/index` it is the difference between an agent finding a
+// dataset and not.
+//
+// It happened. `/api/tables` -- the list of all 42 datasets, added precisely so an
+// assistant could find the staff rosters -- went live, and an assistant fetched
+// `/api/index` and got a list without it. It then reported, correctly from what it had
+// been given, that the API holds no roster data, and went looking for a 16MB SQLite
+// download it could not fetch. It did exactly the right thing with a map that was a day
+// out of date.
+//
+// So the three discovery documents revalidate every time. They are small -- the index is
+// 4KB, tables 5KB, schema 9KB -- and being wrong about what exists costs more than any
+// number of conditional requests.
+const DISCOVERY = new Set(['index', 'tables', 'schema'])
+
 const JSON_HEADERS = {
   'content-type': 'application/json; charset=utf-8',
   // Static, regenerated only on deploy. Long cache, revalidate in the background.
   'cache-control': 'public, max-age=300, stale-while-revalidate=86400',
   'access-control-allow-origin': '*',
   'access-control-allow-methods': 'GET, HEAD, OPTIONS',
+}
+
+/** Headers for one resource: the map revalidates, the territory caches. */
+function headersFor(name) {
+  if (!DISCOVERY.has(name)) return JSON_HEADERS
+  return {
+    ...JSON_HEADERS,
+    'cache-control': 'public, max-age=0, must-revalidate',
+  }
 }
 
 /** What to say when a program asks for something that is not here. */
@@ -78,5 +106,6 @@ export async function onRequest(context) {
   const type = res.headers.get('content-type') || ''
   if (type.includes('text/html')) return miss(path)
 
-  return new Response(res.body, { status: 200, headers: JSON_HEADERS })
+  return new Response(res.body,
+    { status: 200, headers: headersFor(target.replace(/\.json$/, '')) })
 }

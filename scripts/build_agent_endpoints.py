@@ -620,11 +620,42 @@ def main():
         'answer claiming otherwise is wrong.',
         '',
         '## Data',
-
+        '',
+        f'**Every dataset is in the API, and the API is the route to take.** '
+        f'[{SITE}/api/tables]({SITE}/api/tables) lists all of them with row counts and '
+        f'byte sizes; anything too large for one fetch is published as one file per '
+        f'fiscal year. The CSVs below are the same data as whole files, and several are '
+        f'large enough that a truncating fetcher will stop part-way through them without '
+        f'saying so.',
         '',
     ]
+    # THE API FIRST, THE FILE SECOND.
+    #
+    # This listed the CSV as the link and mentioned the API inside the description. An
+    # assistant scanning the list fetched `staff-roster-entries.csv`, 435KB, and its
+    # response was cut off at about 40% with no marker saying so -- mid-name, mid-2015 --
+    # so it reported ten fiscal years as unreachable. `/api/staff_roster_entries/2022`
+    # is 73KB and was exactly what it wanted. It never saw it, because the line put the
+    # unreadable form in the link position and the readable one in prose.
+    api_dir = os.path.join(PUB, 'api')
     for name, what, size in published:
-        lines.append(f'- [{name}]({SITE}/data/{name}) ({size / 1e6:.1f}MB): {what}')
+        table = os.path.splitext(name)[0].replace('-', '_')
+        split = os.path.isdir(os.path.join(api_dir, table))
+        has_api = os.path.exists(os.path.join(api_dir, table + '.json'))
+        if has_api and split:
+            years = sorted(f[:-5] for f in os.listdir(os.path.join(api_dir, table)))
+            lines.append(
+                f'- [{table}]({SITE}/api/{table}) — **fetch this, not the CSV.** '
+                f'{what} One file per fiscal year, {years[0]}–{years[-1]}, e.g. '
+                f'`{SITE}/api/{table}/{years[-1]}`. The whole thing as one CSV is '
+                f'[{name}]({SITE}/data/{name}) at {size / 1e6:.1f}MB, which truncating '
+                f'fetchers do not finish.')
+        elif has_api:
+            lines.append(
+                f'- [{table}]({SITE}/api/{table}) ({size / 1e6:.1f}MB as CSV): {what} '
+                f'Also at [{name}]({SITE}/data/{name}).')
+        else:
+            lines.append(f'- [{name}]({SITE}/data/{name}) ({size / 1e6:.1f}MB): {what}')
     lines += [
         '',
         '## Documents',
