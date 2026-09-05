@@ -428,6 +428,12 @@ be permanently out of date about its own contents.
 
 ## Picking up mid-stream
 
+`notes/HANDOFF-AGENT-ACCESS.md` covers one workstream on its own: making this archive
+usable by an assistant. What exists, what is not solved, what to do next, and the four
+separate agent failures in one day that prompted it — none of which was the agent's fault.
+
+
+
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
 the working branch and not yet deployed, the open decision, and — most importantly — the
 list of claims that are NOT established, so they do not get restated as fact by somebody
