@@ -1,7 +1,7 @@
 """Local North Central Massachusetts districts, FY27 budget cycle.
 
 Every figure below is taken from the district's own published FY27 budget document
-or meeting minutes -- see sources/peers/. `note` is quoted or closely paraphrased
+or meeting minutes -- see sources/peer-districts/. `note` is quoted or closely paraphrased
 from those documents.
 """
 

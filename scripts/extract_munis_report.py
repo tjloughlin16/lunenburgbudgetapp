@@ -269,11 +269,11 @@ def main():
     ap.add_argument('--check', action='store_true')
     args = ap.parse_args()
 
-    # Every MUNIS report now lives under sources/munis-ledgers/, split by what the
+    # Every MUNIS report now lives under sources/town-ledgers/, split by what the
     # report IS -- expenses, revenue, account-details, transfers, purchase-orders,
     # fund-balances -- so this walks the tree rather than naming the folders a
     # particular delivery happened to arrive in.
-    base = os.path.join(ROOT, 'sources', 'munis-ledgers')
+    base = os.path.join(ROOT, 'sources', 'town-ledgers')
     paths = sorted(os.path.join(dp, f)
                    for dp, _dn, fns in os.walk(base)
                    for f in fns if f.endswith('.txt'))

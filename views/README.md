@@ -136,17 +136,6 @@ Listed so this view cannot look more complete than it is.
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
 - `data/total-salaries-history.csv` — District total salaries, budget and actual by year
 - `data/variance-by-group.csv` — Budget against actual, every group and year
-- `dese/lunenburg-finance-profile.html` — DESE school and district profiles — Lunenburg per pupil expenditures, all funds
-- `dese/radar-district-comparison.xlsx` — DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025
-- `dese/selected-populations-2019.html` — DESE selected populations, state report, FY2019
-- `dese/selected-populations-2020.html` — DESE selected populations, state report, FY2020
-- `dese/selected-populations-2021.html` — DESE selected populations, state report, FY2021
-- `dese/selected-populations-2022.html` — DESE selected populations, state report, FY2022
-- `dese/selected-populations-2023.html` — DESE selected populations, state report, FY2023
-- `dese/selected-populations-2024.html` — DESE selected populations, state report, FY2024
-- `dese/selected-populations-2025.html` — DESE selected populations, state report, FY2025
-- `dese/selected-populations-2026.html` — DESE selected populations, state report, FY2026
-- `dese/selected-populations.csv` — Lunenburg selected populations, all years (CSV)
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
@@ -164,24 +153,27 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — School Committee deck, 23 March 2026
 - `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — Slide Deck from the SC Meeting 3/23/26
 - `district-budget/docs/superintendent-s-budget-recommendations.docx` — Superintendent’s Budget Recommendations
-- `dls/PROVENANCE.md` — Where these came from, and what they cannot do
-- `dls/free-cash-proof-ayer.xlsx` — Ayer
-- `dls/free-cash-proof-groton.xlsx` — Groton
-- `dls/free-cash-proof-littleton.xlsx` — Littleton
-- `dls/free-cash-proof-lunenburg.xlsx` — Lunenburg free cash proof, 2021–2025
-- `dls/free-cash-proof-shirley.xlsx` — Shirley
-- `dls/free-cash-proof-townsend.xlsx` — Townsend
-- `dls/free-cash-proof-upton.xlsx` — Upton
-- `dls/free-cash-proof-uxbridge.xlsx` — Uxbridge
-- `dls/free-cash-proof-westford.xlsx` — Westford
-- `munis-ledgers/account-details/PROVENANCE-fund1301.md` — Provenance for the 17 June 2026 records request
-- `munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2024
-- `munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2025
-- `munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2026
-- `munis-ledgers/account-details/athletic-fee-counts-fy2026.docx` — Athletic fee counts, 2025-2026
-- `munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx` — Athletics by sport, three school years
-- `munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` — Special revenue funds, 31 March 2026
-- `munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx` — Trust, agency and stabilization funds, 31 March 2026
+- `state-dese/lunenburg-finance-profile.html` — DESE school and district profiles — Lunenburg per pupil expenditures, all funds
+- `state-dese/radar-district-comparison.xlsx` — DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025
+- `state-dese/selected-populations-2019.html` — DESE selected populations, state report, FY2019
+- `state-dese/selected-populations-2020.html` — DESE selected populations, state report, FY2020
+- `state-dese/selected-populations-2021.html` — DESE selected populations, state report, FY2021
+- `state-dese/selected-populations-2022.html` — DESE selected populations, state report, FY2022
+- `state-dese/selected-populations-2023.html` — DESE selected populations, state report, FY2023
+- `state-dese/selected-populations-2024.html` — DESE selected populations, state report, FY2024
+- `state-dese/selected-populations-2025.html` — DESE selected populations, state report, FY2025
+- `state-dese/selected-populations-2026.html` — DESE selected populations, state report, FY2026
+- `state-dese/selected-populations.csv` — Lunenburg selected populations, all years (CSV)
+- `state-dls/PROVENANCE.md` — Where these came from, and what they cannot do
+- `state-dls/free-cash-proof-ayer.xlsx` — Ayer
+- `state-dls/free-cash-proof-groton.xlsx` — Groton
+- `state-dls/free-cash-proof-littleton.xlsx` — Littleton
+- `state-dls/free-cash-proof-lunenburg.xlsx` — Lunenburg free cash proof, 2021–2025
+- `state-dls/free-cash-proof-shirley.xlsx` — Shirley
+- `state-dls/free-cash-proof-townsend.xlsx` — Townsend
+- `state-dls/free-cash-proof-upton.xlsx` — Upton
+- `state-dls/free-cash-proof-uxbridge.xlsx` — Uxbridge
+- `state-dls/free-cash-proof-westford.xlsx` — Westford
 - `town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf` — FY 2011 Annual Town Report
 - `town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf` — FY 2012 Annual Town Report
 - `town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf` — FY 2013 Annual Town Report
@@ -239,6 +231,14 @@ Listed so this view cannot look more complete than it is.
 - `town-budget/docs/a82-fiscal-year-2021-adjustment-worksheet-made-to-budget-due-to-covid-19-pdf.pdf` — Fiscal Year 2021 Adjustment Worksheet Made to Budget due to COVID-19 (PDF)
 - `town-budget/docs/a83-fiscal-year-2021-budget-message-and-preliminary-budget-proposal-pdf.pdf` — Fiscal Year 2021 Budget Message and Preliminary Budget Proposal (PDF)
 - `town-budget/docs/a85-fiscal-year-2021-town-manager-budget-recommendation-revised-due-to-covid-19-pdf.pdf` — Fiscal Year 2021 Town Manager Budget Recommendation, Revised due to COVID-19 (PDF)
+- `town-ledgers/account-details/PROVENANCE-fund1301.md` — Provenance for the 17 June 2026 records request
+- `town-ledgers/account-details/account-details-fy2024-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2024
+- `town-ledgers/account-details/account-details-fy2025-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2025
+- `town-ledgers/account-details/account-details-fy2026-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2026
+- `town-ledgers/account-details/athletic-fee-counts-fy2026.docx` — Athletic fee counts, 2025-2026
+- `town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx` — Athletics by sport, three school years
+- `town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` — Special revenue funds, 31 March 2026
+- `town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx` — Trust, agency and stabilization funds, 31 March 2026
 - `town-supplementary/docs/1416-senior-tax-work-off-record-hours.pdf` — Senior Tax Work Off- Record Hours
 - `town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf` — W-4 Federal Tax Form (PDF)
 - `town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf` — Conflict of Interest/Financial Disclosure (PDF)

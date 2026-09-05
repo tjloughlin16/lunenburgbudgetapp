@@ -47,7 +47,7 @@ import openpyxl
 from openpyxl.utils import get_column_letter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOOK = os.path.join(ROOT, 'sources', 'munis-ledgers', 'account-details',
+BOOK = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details',
                     'athletics-by-sport-fy2024-fy2026.xlsx')
 OUT = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport.csv')
 RECON = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport-reconciliation.csv')

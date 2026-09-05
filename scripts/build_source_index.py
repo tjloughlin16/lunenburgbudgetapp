@@ -63,15 +63,15 @@ TOWN_HUB = 'https://www.lunenburgma.gov/835/2026-Annual-Town-Meeting-FY27-Budget
 ORIGINS = [
     {'id': 'school', 'name': 'Lunenburg Public Schools', 'url': SCHOOL_HUB},
     {'id': 'town', 'name': 'Town of Lunenburg', 'url': TOWN_HUB},
-    {'id': 'dese', 'name': 'Massachusetts DESE', 'url': 'https://www.doe.mass.edu/'},
+    {'id': 'state-dese', 'name': 'Massachusetts DESE', 'url': 'https://www.doe.mass.edu/'},
     # The free cash proofs were filed under DESE, which is the wrong department: they are
     # the Department of Revenue's, and the distinction is not cosmetic. DESE sets Chapter
     # 70; DOR certifies free cash. A reader tracing a figure needs to be sent to the right
     # agency, and the report is one form submission away rather than one link.
-    {'id': 'dls', 'name': 'Massachusetts DOR, Division of Local Services',
+    {'id': 'state-dls', 'name': 'Massachusetts DOR, Division of Local Services',
      'url': 'https://dls-gw.dor.state.ma.us/gateway/dlspublic/'
             'certificationfreecashpublicreport/certificationfreecashpublic'},
-    {'id': 'peers', 'name': 'Neighboring districts', 'url': None},
+    {'id': 'peer-districts', 'name': 'Neighboring districts', 'url': None},
     {'id': 'request', 'name': 'Obtained from the Town by records request', 'url': None},
     {'id': 'us', 'name': 'Built by this project', 'url': None},
 ]
@@ -80,7 +80,7 @@ ORIGINS = [
 # were posted. Worth marking for two reasons: it is the honest answer to "is all of this
 # public", and a reader who wants these for themselves needs to know the route is a
 # request rather than a link.
-BY_REQUEST = {'munis-ledgers/', 'budget-workbooks/school-funds-fy26.xlsx'}
+BY_REQUEST = {'town-ledgers/', 'budget-workbooks/school-funds-fy26.xlsx'}
 
 # Two halves, and the divide matters more than any grouping inside them. Everything above
 # the line was published by the town, the district, the state or a neighboring district.
@@ -222,40 +222,40 @@ GROUPS = [
                  '— the first quarterly report after a near-complete turnover of the finance '
                  'office. This is where the funds held outside the operating budget appear.',
         'items': [
-            ('munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx', 'Special revenue funds, 31 March 2026', 3,
+            ('town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx', 'Special revenue funds, 31 March 2026', 3,
              'Every special revenue and revolving fund the town holds, with opening balance, '
              'receipts, spending and closing balance. Includes the special education circuit '
              'breaker account, which appears in no budget document.'),
-            ('munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx', 'Trust, agency and stabilization funds, 31 March 2026', 3,
+            ('town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx', 'Trust, agency and stabilization funds, 31 March 2026', 3,
              'All stabilization and trust fund balances — general stabilization, OPEB, '
              'vehicle and equipment, conservation, and the rest.'),
             ('town-budget/docs/fincom-memo-fy26-q3.docx', 'Finance Director’s memo to the Finance Committee', 3,
              'The covering memo, dated 11 August 2026. Reports revenue and expenditure '
              'against budget, and gives the finance department’s own account of why '
              'quarterly reporting had lapsed.'),
-            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf', 'General fund revenue, 31 March 2026', 2,
+            ('town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf', 'General fund revenue, 31 March 2026', 2,
              'Revenue collected against budget by account. Local receipts came in at 116% '
              'of budget.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf', 'General fund expenditures, 31 March 2026', 2,
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf', 'General fund expenditures, 31 March 2026', 2,
              'Spending against budget by department, including the school department line.'),
             ('town-budget/docs/fincom-deck-fy26-q3.pptx', 'Finance Committee presentation, 13 August 2026', 1,
              'The slides that accompanied the memo.'),
-            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf', 'Sewer enterprise fund — revenue', 1,
+            ('town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf', 'Sewer enterprise fund — revenue', 1,
              'Enterprise funds are self-supporting and separate from the general fund. '
              'Included for completeness.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf', 'Sewer enterprise fund — expenditures', 1,
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf', 'Sewer enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf', 'Water enterprise fund — revenue', 1,
+            ('town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf', 'Water enterprise fund — revenue', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf', 'Water enterprise fund — expenditures', 1,
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf', 'Water enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf', 'Solid waste enterprise fund — revenue', 1,
+            ('town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf', 'Solid waste enterprise fund — revenue', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf', 'Solid waste enterprise fund — expenditures', 1,
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf', 'Solid waste enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf', 'Cable and broadband enterprise fund — revenue', 1,
+            ('town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf', 'Cable and broadband enterprise fund — revenue', 1,
              'Self-supporting; does not bear on the school budget.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf', 'Cable and broadband enterprise fund — expenditures', 1,
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf', 'Cable and broadband enterprise fund — expenditures', 1,
              'Self-supporting; does not bear on the school budget.'),
         ],
     },
@@ -273,13 +273,13 @@ GROUPS = [
         ],
     },
     {
-        'section': 'theirs', 'id': 'dese-staffing', 'origin': 'dese',
+        'section': 'theirs', 'id': 'dese-staffing', 'origin': 'state-dese',
         'title': 'State staffing and spending counts',
         'blurb': 'What the state records Lunenburg employing and spending, by year. It '
                  'carries the quantity the district\u2019s own budget documents cannot '
                  'give: how many paraprofessionals there are.',
         'items': [
-            ('dese/district-spending-categories.csv',
+            ('state-dese/district-spending-categories.csv',
              'Staffing and spending by category, FY09\u2013FY25', 3,
              'Massachusetts DESE, via the state open-data portal. Teacher FTE, '
              'paraprofessional FTE, in-district pupils, per-pupil expenditure by function '
@@ -348,28 +348,28 @@ GROUPS = [
         ],
     },
     {
-        'section': 'theirs', 'id': 'peers', 'origin': 'peers',
+        'section': 'theirs', 'id': 'peer-districts', 'origin': 'peer-districts',
         'title': 'What neighboring districts did',
         'blurb': 'Primary FY27 budget documents from comparable districts. The comparison is '
                  'only fair if it comes from their own books rather than from reporting.',
         'items': [
-            ('peers/groton-dunstable-fy27-budget-book.pdf', 'Groton-Dunstable FY27 budget book', 3,
+            ('peer-districts/groton-dunstable-fy27-budget-book.pdf', 'Groton-Dunstable FY27 budget book', 3,
              '132 pages. Three consecutive years of cuts, a budget below level service, and '
              'an override the district says is needed "now and in the foreseeable future". '
              'Also states plainly that it plans to offset $2M of costs with circuit breaker '
              'funding.'),
-            ('peers/ashburnham-westminster-fy27-presentation.pdf', 'Ashburnham-Westminster FY27 budget', 3,
+            ('peer-districts/ashburnham-westminster-fy27-presentation.pdf', 'Ashburnham-Westminster FY27 budget', 3,
              'The district that made the opposite choice — explicitly preserved athletics, '
              'arts and music, and cut two elementary teaching positions instead.'),
-            ('peers/ashburnham-westminster-fy27-detail.pdf', 'Ashburnham-Westminster line detail', 2,
+            ('peer-districts/ashburnham-westminster-fy27-detail.pdf', 'Ashburnham-Westminster line detail', 2,
              'The line-item version of the same budget.'),
-            ('peers/ayer-shirley-fy27-expenses.pdf', 'Ayer-Shirley FY27 expenses', 2,
+            ('peer-districts/ayer-shirley-fy27-expenses.pdf', 'Ayer-Shirley FY27 expenses', 2,
              'Level-service budget by function. Health insurance up 14.4% — the steepest '
              'in the group.'),
-            ('peers/north-middlesex-finance-subcommittee.pdf', 'North Middlesex budget summit notes', 2,
+            ('peer-districts/north-middlesex-finance-subcommittee.pdf', 'North Middlesex budget summit notes', 2,
              'A $64,000 deficit at 3% growth against $1.5M at 5%. Roughly 30% of students '
              'receive special education, far above the state average.'),
-            ('peers/wachusett-fy27-budget-presentation.pdf', 'Wachusett FY27 budget presentation', 2,
+            ('peer-districts/wachusett-fy27-budget-presentation.pdf', 'Wachusett FY27 budget presentation', 2,
              'Member-town assessments, enrollment by town, and a discretionary contribution '
              'up 9.21%.'),
         ],
@@ -404,7 +404,7 @@ GROUPS = [
         ],
     },
     {
-        'section': 'theirs', 'id': 'dls', 'origin': 'dls',
+        'section': 'theirs', 'id': 'state-dls', 'origin': 'state-dls',
         'title': 'Free cash, certified — Lunenburg and eight comparable towns',
         'blurb': 'The Division of Local Services publishes a Free Cash Proof for every '
                  'community: the year-end calculation of what a town may appropriate '
@@ -414,22 +414,22 @@ GROUPS = [
                  'of any kind, so the absolute figures do not compare between towns of '
                  'different size; the composition, being a share, does.',
         'items': [
-            ('dls/free-cash-proof-lunenburg.xlsx',
+            ('state-dls/free-cash-proof-lunenburg.xlsx',
              'Lunenburg free cash proof, 2021–2025', 3,
              'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '
              'Two thirds of the 2025 figure is money appropriated and not spent.'),
-            ('dls/PROVENANCE.md', 'Where these came from, and what they cannot do', 2,
+            ('state-dls/PROVENANCE.md', 'Where these came from, and what they cannot do', 2,
              'Written by us. Records the exclusion of a tenth file supplied as Abington '
              'which contains Lunenburg’s data in all 102 cells, and states plainly that no '
              'denominator appears anywhere in these workbooks.'),
-            ('dls/free-cash-proof-ayer.xlsx', 'Ayer', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-groton.xlsx', 'Groton', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-littleton.xlsx', 'Littleton', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-shirley.xlsx', 'Shirley', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-townsend.xlsx', 'Townsend', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-upton.xlsx', 'Upton', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-uxbridge.xlsx', 'Uxbridge', 1, 'Peer comparison.'),
-            ('dls/free-cash-proof-westford.xlsx', 'Westford', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-ayer.xlsx', 'Ayer', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-groton.xlsx', 'Groton', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-littleton.xlsx', 'Littleton', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-shirley.xlsx', 'Shirley', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-townsend.xlsx', 'Townsend', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-upton.xlsx', 'Upton', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-uxbridge.xlsx', 'Uxbridge', 1, 'Peer comparison.'),
+            ('state-dls/free-cash-proof-westford.xlsx', 'Westford', 1, 'Peer comparison.'),
         ],
     },
     {
@@ -444,14 +444,14 @@ GROUPS = [
                  'them. Provenance, the town’s own filenames and a sha256 for each file '
                  'are in PROVENANCE.md, listed below.',
         'items': [
-            ('munis-ledgers/expenses/PROVENANCE-fy2026-p12.md',
+            ('town-ledgers/expenses/PROVENANCE-fy2026-p12.md',
              'Where the FY26 period 12 report came from', 2,
              'The email, the sender, the date, both filenames as sent, and the sha256 of '
              'each. Also what the report is NOT: period 12 rather than the year-end close, '
              'expenditures only, and with zero balance accounts suppressed. And the '
              'reconciliation that establishes the spreadsheet and the printout are one '
              'report, since only the printout states a period.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx',
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx',
              'FY26 year-to-date budget report, period 12 \u2014 spreadsheet', 3,
              'The first ACCOUNT-LEVEL general fund expenditure report in this archive. '
              'Every prior one was run with Print totals only: Y, which renders the whole '
@@ -466,7 +466,7 @@ GROUPS = [
              'to adjust as we continue the year-end reconciliation process\u201d. Zero '
              'balance accounts are suppressed, so an account absent here is not '
              'necessarily absent from the ledger.'),
-            ('munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf',
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf',
              'FY26 year-to-date budget report, period 12 \u2014 as printed', 28,
              'The same report as MUNIS prints it, and the only one of the pair that states '
              'its own parameters: Year/Period 2026/12, Print totals only: N, Suppress zero '
@@ -479,24 +479,24 @@ GROUPS = [
              'something the project had only been able to back-solve: the rounding is in '
              'the printing, not in the ledger. The sender\u2019s filename is '
              '\u201cPrint_ YEAR-TO-DATE BUDGET REPORT.pdf\u201d.'),
-            ('munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx',
+            ('town-ledgers/account-details/account-details-fy2025-fund1301.xlsx',
              'Athletics revolving fund, journal detail, FY2025', 3,
              'Every receipt and payment in fund 1301 for FY2025, with effective and posting '
              'dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it '
              'is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general '
              'journal entries described only as an adjustment "per memo" account for '
              '$254,121.18 of the $390,299.87 that came in.'),
-            ('munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx',
+            ('town-ledgers/account-details/account-details-fy2024-fund1301.xlsx',
              'Athletics revolving fund, journal detail, FY2024', 3,
              'The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its '
              'opening balance is a row the town prints, which is what lets the three years '
              'be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.'),
-            ('munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx',
+            ('town-ledgers/account-details/account-details-fy2026-fund1301.xlsx',
              'Athletics revolving fund, journal detail, FY2026', 2,
              'FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed '
              'year. Its payroll total ties to the cent to the salary line in the fund’s own '
              'year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.'),
-            ('munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
+            ('town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
              'Athletics by sport, three school years', 3,
              'The district’s own operating workbook: one row per sport, with participation '
              'counts by fee category and cost lines for officials, coaches, transportation, '
@@ -505,7 +505,7 @@ GROUPS = [
              'which is how we learned the 2025-26 rate was $325 and not the $250 the model '
              'assumed. Its own totals do not all tie, and which ones do not is published '
              'alongside it. The town’s filename is Copy of Athletics 24.25 (1).xlsx.'),
-            ('munis-ledgers/account-details/athletic-fee-counts-fy2026.docx',
+            ('town-ledgers/account-details/athletic-fee-counts-fy2026.docx',
              'Athletic fee counts, 2025-2026', 2,
              'One page: participation counts by fee category for each season of 2025-26 — '
              'full pay, reduced fee, sibling discounts and full waivers. The only source '
@@ -834,7 +834,7 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
-            ('munis-ledgers/expenses/PROVENANCE-fy2026-p09.md',
+            ('town-ledgers/expenses/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 ledgers \u2014 and the gap in it', 3,
              'Written by us. What the reports say about themselves, quoted from their own '
              'printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town '
@@ -846,15 +846,15 @@ GROUPS = [
              'recorded for them. Rule 12 says a document that did not come off a website '
              'still has an address; this one\u2019s is missing, and the note records the '
              'gap rather than inventing a route.'),
-            ('munis-ledgers/revenue/PROVENANCE-fy2026-p09.md',
+            ('town-ledgers/revenue/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 revenue reports', 1,
              'A pointer: these arrived in the same package as the expenditure reports, and '
              'how that package was obtained is not recorded. The full note is in '
-             'munis-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
-            ('munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md',
+             'town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
+            ('town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 fund balance reports', 1,
              'The same pointer, filed with the fund balance reports.'),
-            ('munis-ledgers/account-details/PROVENANCE-fund1301.md',
+            ('town-ledgers/account-details/PROVENANCE-fund1301.md',
              'Provenance for the 17 June 2026 records request', 2,
              'Written by us, filed with the documents it describes: where each one came '
              'from, the town’s own filename for it, a sha256, and what each file '
@@ -943,7 +943,7 @@ GROUPS = [
              'All 67 general fund departments as the Town Accountant\u2019s system prints '
              'them: original appropriation, transfers and adjustments, revised budget, '
              'year-to-date expended, encumbrances. Extracted from '
-             'munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf, which came from the Town '
+             'town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf, which came from the Town '
              'by records request rather than off a website. This is the only source here '
              'that shows money MOVING between lines during a year \u2014 28 of the 67 '
              'departments had some, $489,411 in and $148,177 out, of which $76,394 went to '
@@ -1193,7 +1193,7 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarized as a corpus instead.
 SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
-             'town-budget', 'town-supplementary', 'town-annual-reports', 'dese',
+             'town-budget', 'town-supplementary', 'town-annual-reports', 'state-dese',
              # Working files, one per page, that the catalogue and the datasets summarise.
              # `data/inventory/` is what an agent read off each report page before anything
              # was extracted, and `data/rosters/` the parsed roster blocks. They are kept
@@ -1465,19 +1465,19 @@ SOURCE_URLS = {
     # Neighboring districts. Four of the six are hosted by somebody other than the
     # district -- two content networks and two member towns' own document centres --
     # which is why none of these could be found from a district budget page.
-    'peers/groton-dunstable-fy27-budget-book.pdf':
+    'peer-districts/groton-dunstable-fy27-budget-book.pdf':
         'https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/'
         '2198/Gdrsd/a9c839f0-1ed0-4e9a-b125-32a1c58ca85d/Budget-Book-FY27-01.28.26.pdf',
-    'peers/ashburnham-westminster-fy27-presentation.pdf':
+    'peer-districts/ashburnham-westminster-fy27-presentation.pdf':
         'https://files.smartsites.parentsquare.com/6739/'
         'ashburnham_westminster_budget27_presentation_1.pdf',
-    'peers/ashburnham-westminster-fy27-detail.pdf':
+    'peer-districts/ashburnham-westminster-fy27-detail.pdf':
         'https://files.smartsites.parentsquare.com/6739/fy27_budget_detail.pdf',
-    'peers/ayer-shirley-fy27-expenses.pdf':
+    'peer-districts/ayer-shirley-fy27-expenses.pdf':
         'https://www.ayer.ma.us/DocumentCenter/View/13478',
-    'peers/wachusett-fy27-budget-presentation.pdf':
+    'peer-districts/wachusett-fy27-budget-presentation.pdf':
         'https://www.rutlandma.gov/DocumentCenter/View/3583',
-    'peers/north-middlesex-finance-subcommittee.pdf':
+    'peer-districts/north-middlesex-finance-subcommittee.pdf':
         'https://resources.finalsite.net/images/v1764774508/nmrsdorg/'
         'bregkjqfing6b9eyfqzz/2025-12-01-FinancePacket.pdf',
 
@@ -1512,7 +1512,7 @@ SOURCE_URLS = {
         'files/files/Private_User/jbunnell/Frequently%20Asked%20Questions.pdf',
 
     # --- Recorded earlier ------------------------------------------------------------
-    'dese/district-spending-categories.csv':
+    'state-dese/district-spending-categories.csv':
         'https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv'
         '?DIST_CODE=01620000&$limit=5000',
     # Not the portal's front door, which is an index and tells a reader nothing. This is
@@ -1530,7 +1530,7 @@ SOURCE_URLS = {
 # its date, an email and who sent it, a meeting packet. So these are not gaps waiting for
 # a link. They are the answer, in the form the answer takes.
 #
-# **On naming a person.** The records request in sources/munis-ledgers/account-details/
+# **On naming a person.** The records request in sources/town-ledgers/account-details/
 # deliberately does NOT name the resident who made it, and that is not inconsistent with
 # naming somebody here. The distinction is the capacity they acted in. A private resident
 # asking the town a question is not part of any address a reader needs; a member of the
@@ -1548,7 +1548,7 @@ PROVIDED_BY = {
 def upstream_by_hash():
     known = {}
     for sub in ('district-budget', 'town-budget', 'town-supplementary',
-            'town-annual-reports', 'dese'):
+            'town-annual-reports', 'state-dese'):
         idx = os.path.join(SRC, sub, 'index.csv')
         if not os.path.exists(idx):
             continue
@@ -1820,12 +1820,12 @@ def main():
                      'narratives, vital statistics and committee reports, and the money '
                      'is a part of it rather than the point of it.',
                      'town', catalogued_hashes),
-        mirror_group('dese', 'dese', 'State enrollment data',
+        mirror_group('state-dese', 'state-dese', 'State enrollment data',
                      'Lunenburg’s selected-population counts from the state, FY19 to FY26 '
                      '— {n} files. The count of students with disabilities is the one '
                      'quantity the budget cannot supply: special education spending is '
                      'staff numbers times contract rates, and a budget only shows the '
-                     'product.', 'dese', catalogued_hashes),
+                     'product.', 'state-dese', catalogued_hashes),
     ]:
         if g and g['items']:
             groups.append(g)

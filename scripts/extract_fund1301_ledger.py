@@ -41,12 +41,12 @@ from datetime import datetime
 import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources', 'munis-ledgers', 'account-details')
+SRC = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details')
 OUT = os.path.join(ROOT, 'sources', 'data', 'fund-1301-cash-journal.csv')
 
 # The publisher's own filenames, kept because links die and a resident asking the town for
 # these has to ask by the name the town used (rule 12). Ours on the left, theirs on the
-# right, in sources/munis-ledgers/account-details/PROVENANCE-fund1301.md.
+# right, in sources/town-ledgers/account-details/PROVENANCE-fund1301.md.
 YEARS = [
     (2024, 'account-details-fy2024-fund1301.xlsx'),
     (2025, 'account-details-fy2025-fund1301.xlsx'),

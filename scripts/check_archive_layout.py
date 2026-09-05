@@ -50,11 +50,11 @@ TOP = {
     'town-annual-reports': 'the town\'s annual reports, one per year, mirrored',
     'district-budget':    'lunenburgschools.net budget page, mirrored',
     'meetings':           'agendas and minutes, by board',
-    'dese':               'state district and school profiles',
-    'dls':                'state free cash certifications',
-    'peers':              'other districts, assembled by us from several publishers',
+    'state-dese':               'state district and school profiles',
+    'state-dls':                'state free cash certifications',
+    'peer-districts':              'other districts, assembled by us from several publishers',
     'contracts':          'union contracts, from the district HR page and DESE',
-    'munis-ledgers':      'MUNIS reports — sent to us, never published',
+    'town-ledgers':      'MUNIS reports — sent to us, never published',
     'budget-workbooks':   'budget workbooks, sent to us',
     'correspondence':     'emails and replies',
     'analyses':           'written here',
@@ -108,19 +108,19 @@ def main():
                             'in a folder.' % name)
 
     # 2. and 3. the MUNIS reports
-    base = os.path.join(SRC, 'munis-ledgers')
+    base = os.path.join(SRC, 'town-ledgers')
     if os.path.isdir(base):
         for entry in sorted(os.listdir(base)):
             p = os.path.join(base, entry)
             if os.path.isfile(p):
                 problems.append(
-                    'sources/munis-ledgers/%s sits loose. Every MUNIS report goes in the '
+                    'sources/town-ledgers/%s sits loose. Every MUNIS report goes in the '
                     'subfolder for what it IS: %s.'
                     % (entry, ', '.join(sorted(LEDGER))))
                 continue
             if entry not in LEDGER:
                 problems.append(
-                    'sources/munis-ledgers/%s/ is not a report type. The types are %s.'
+                    'sources/town-ledgers/%s/ is not a report type. The types are %s.'
                     % (entry, ', '.join(sorted(LEDGER))))
                 continue
             pattern, example = LEDGER[entry]
@@ -130,7 +130,7 @@ def main():
                 stem = os.path.splitext(fn)[0]
                 if not pattern.match(stem):
                     problems.append(
-                        'sources/munis-ledgers/%s/%s does not carry its fiscal year and '
+                        'sources/town-ledgers/%s/%s does not carry its fiscal year and '
                         'period.\n      Expected something like %s%s\n'
                         '      Two reports printed the same title and differed only by '
                         'period; the\n      filename is the only place that distinction '
@@ -141,7 +141,7 @@ def main():
             if not any(f.startswith('PROVENANCE') for f in os.listdir(p)) \
                     and any(not f.startswith('.') for f in os.listdir(p)):
                 problems.append(
-                    'sources/munis-ledgers/%s/ has documents and no PROVENANCE file.\n'
+                    'sources/town-ledgers/%s/ has documents and no PROVENANCE file.\n'
                     '      Nothing here came off a website, so the request or the email '
                     'IS the address.' % entry)
 
@@ -171,9 +171,9 @@ def main():
         print('The layout and the reasoning are in plans/ARCHIVE-REORG.md.')
         return 1
     if not args.quiet:
-        n = sum(len(os.listdir(os.path.join(SRC, 'munis-ledgers', d)))
+        n = sum(len(os.listdir(os.path.join(SRC, 'town-ledgers', d)))
                 for d in LEDGER
-                if os.path.isdir(os.path.join(SRC, 'munis-ledgers', d)))
+                if os.path.isdir(os.path.join(SRC, 'town-ledgers', d)))
         print('sources/ layout is correct — %d folders, %d MUNIS files, all named and '
               'placed.' % (len(TOP), n))
     return 0

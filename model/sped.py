@@ -64,7 +64,7 @@ import csv, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LINES = os.path.join(ROOT, 'sources/data/lps-budget-lines.csv')
-DESE = os.path.join(ROOT, 'sources/dese/selected-populations.csv')
+DESE = os.path.join(ROOT, 'sources/state-dese/selected-populations.csv')
 
 # Budget columns, in order. Named here so that nothing downstream has to remember which
 # of the workbook's fifteen columns record an intention and which record a payment.

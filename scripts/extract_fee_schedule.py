@@ -35,7 +35,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'sources', 'data', 'athletic-fee-schedule.csv')
 
-WORKBOOK = os.path.join(ROOT, 'sources', 'munis-ledgers', 'account-details',
+WORKBOOK = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details',
                         'athletics-by-sport-fy2024-fy2026.xlsx')
 FAQ = os.path.join(ROOT, 'sources', 'district-budget', 'text',
                    'lhs-athletics-faq.txt')
@@ -60,7 +60,7 @@ SOURCES = {
              'FY26 middle school rate and the sibling structure.'),
     'workbook': dict(
         title='District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)',
-        path='munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
+        path='town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
         set_on='',
         note='Obtained by records request, 17 June 2026. Carries the rate strip for three '
              'school years side by side, which is what makes each rate datable.'),

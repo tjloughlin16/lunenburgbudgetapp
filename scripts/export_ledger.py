@@ -214,7 +214,7 @@ ROW_DEFS = [
                   'the Superintendent — the first item in that request, ahead of the '
                   'budget documents.',
          effort='records request'),
-    dict(id='dese',
+    dict(id='state-dese',
          tier='supporting', tierNote='An outside publisher all-funds view, per pupil by function. A second opinion, counting costs the school budget does not carry.', group='Independent check', label='DESE all-funds per pupil, by function',
          why='An outside publisher’s view of the same spending, across every fund. Bounds '
              'the total the budget document cannot see.',
@@ -598,7 +598,7 @@ def coverage(db):
                       if fy in funds else cell('missing')),
             'grants': (cell('obtained', grant_docs[fy], grants[fy])
                        if fy in grants else cell('missing')),
-            'dese': (cell('obtained', dese_docs[fy], dese[fy],
+            'state-dese': (cell('obtained', dese_docs[fy], dese[fy],
                           'DESE’s own all-funds figures. An outside check, not a '
                           'like-for-like comparison with the town’s appropriation.')
                      if fy in dese else cell('missing')),

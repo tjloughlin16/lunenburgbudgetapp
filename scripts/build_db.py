@@ -574,7 +574,7 @@ def load_documents(db):
 
     # The crawlers' own indexes carry the upstream URL and the sha256 taken at fetch time.
     crawled = {}
-    for name in ('dese', 'district-budget', 'town-budget'):
+    for name in ('state-dese', 'district-budget', 'town-budget'):
         path = os.path.join(ROOT, 'sources', name, 'index.csv')
         if not os.path.exists(path):
             continue
@@ -625,10 +625,10 @@ def finish_documents(db, docs, cited):
     return len(docs), hashed
 
 
-TOWN_LEDGER_DOC = 'sources/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt'
+TOWN_LEDGER_DOC = 'sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt'
 WORKBOOK_DOC = 'sources/budget-workbooks/fy27-proposals.xlsx'
 FUNDS_DOC = 'sources/budget-workbooks/school-funds-fy26.xlsx'
-SPECIAL_REV_DOC = 'sources/munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'
+SPECIAL_REV_DOC = 'sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'
 
 # Fund kinds, from what the fund's own name and the documents establishing it say. A fund
 # whose purpose is not stated in a document we hold is left NULL rather than guessed.

@@ -1,1 +1,1 @@
-../../../sources/munis-ledgers/account-details/PROVENANCE-fund1301.md
+../../../sources/town-ledgers/account-details/PROVENANCE-fund1301.md

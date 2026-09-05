@@ -2,7 +2,7 @@
 
     python3 scripts/fetch_dese_radar.py
 
-Writes into `sources/dese/`, appends to `sources/dese/index.csv`, and records the sha256
+Writes into `sources/state-dese/`, appends to `sources/state-dese/index.csv`, and records the sha256
 of each file at the moment it was taken.
 
 WHY THESE TWO DOCUMENTS
@@ -42,7 +42,7 @@ import sys
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DESE = os.path.join(ROOT, 'sources', 'dese')
+DESE = os.path.join(ROOT, 'sources', 'state-dese')
 INDEX = os.path.join(DESE, 'index.csv')
 
 UA = {'User-Agent': ('Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; '

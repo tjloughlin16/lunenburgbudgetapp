@@ -191,8 +191,8 @@ def scan_xlsx(path):
 # minutes is a restatement of a document catalogued here.
 DIRS = [
     'sources/district-budget/text', 'sources/town-budget/text',
-    'sources/town-supplementary/text', 'sources/munis-ledgers',
-    'sources/peers', 'sources/contracts/txt',
+    'sources/town-supplementary/text', 'sources/town-ledgers',
+    'sources/peer-districts', 'sources/contracts/txt',
 ]
 
 def main():

@@ -25,7 +25,7 @@ import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = os.path.join(ROOT, 'sources', 'analyses', 'athletics-ledger.md')
-REQ = os.path.join(ROOT, 'sources', 'munis-ledgers', 'account-details')
+REQ = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details')
 JOURNAL = os.path.join(ROOT, 'sources', 'data', 'fund-1301-cash-journal.csv')
 BYSPORT = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport.csv')
 RECON = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport-reconciliation.csv')
@@ -370,14 +370,14 @@ says('documents scanned', str(len(basis)))
 ledger = [p_ for p_, r in basis.items() if r['source_type'] == 'ledger']
 says('ledger documents', str(len(ledger)))
 for y in (24, 25, 26):
-    k = f'sources/munis-ledgers/account-details/account-details-fy20{y}-fund1301.xlsx'
+    k = f'sources/town-ledgers/account-details/account-details-fy20{y}-fund1301.xlsx'
     CHECKS += 1
     if basis.get(k, {}).get('source_type') == 'ledger':
         print(f"  ok    {'FY' + str(y) + ' journal classified ledger':<58} ledger")
     else:
         print(f'  FAIL  {k} is {basis.get(k, {}).get("source_type")!r}, not ledger')
         FAILS.append(f'basis fy{y}')
-k = 'sources/munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx'
+k = 'sources/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx'
 CHECKS += 1
 if basis.get(k, {}).get('source_type') == 'narrative':
     print(f"  ok    {'sport workbook classified narrative, as disclosed':<58} narrative")
@@ -410,13 +410,13 @@ else:
     who = str((fields.get('Name of Requestor') or {}).get('/V') or '').strip()
     surname = [w for w in re.split(r'\s+', who) if len(w) > 2][-1:] or [who]
     OURS = [os.path.join(ROOT, 'sources', 'analyses'),
-            os.path.join(ROOT, 'sources', 'munis-ledgers', 'account-details'),
+            os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details'),
             os.path.join(ROOT, 'sources', 'data'),
             os.path.join(ROOT, 'notes'),
             os.path.join(ROOT, 'scripts'),
             os.path.join(ROOT, 'fy28', 'src'),
             os.path.join(ROOT, 'fy28', 'public', 'docs', 'analyses'),
-            os.path.join(ROOT, 'fy28', 'public', 'docs', 'munis-ledgers', 'account-details'),
+            os.path.join(ROOT, 'fy28', 'public', 'docs', 'town-ledgers', 'account-details'),
             os.path.join(ROOT, 'fy28', 'public', 'docs', 'data')]
     scanned = leaked = 0
     for base in OURS:

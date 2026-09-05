@@ -12,17 +12,17 @@
    "url": "https://www.lunenburgma.gov/835/2026-Annual-Town-Meeting-FY27-Budget-Hub"
   },
   {
-   "id": "dese",
+   "id": "state-dese",
    "name": "Massachusetts DESE",
    "url": "https://www.doe.mass.edu/"
   },
   {
-   "id": "dls",
+   "id": "state-dls",
    "name": "Massachusetts DOR, Division of Local Services",
    "url": "https://dls-gw.dor.state.ma.us/gateway/dlspublic/certificationfreecashpublicreport/certificationfreecashpublic"
   },
   {
-   "id": "peers",
+   "id": "peer-districts",
    "name": "Neighboring districts",
    "url": null
   },
@@ -40,11 +40,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 35 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 298 of these 313 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 271 of these 286 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -305,30 +305,30 @@
    "blurb": "The town’s financial position as of 31 March 2026, reported in August 2026 — the first quarterly report after a near-complete turnover of the finance office. This is where the funds held outside the operating budget appear.",
    "items": [
     {
-     "path": "munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+     "path": "town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
      "title": "Special revenue funds, 31 March 2026",
      "stars": 3,
      "what": "Every special revenue and revolving fund the town holds, with opening balance, receipts, spending and closing balance. Includes the special education circuit breaker account, which appears in no budget document.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 56447,
-     "url": "/docs/munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+     "url": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
      "count": 321,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx"
+     "textUrl": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx"
     },
     {
-     "path": "munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+     "path": "town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
      "title": "Trust, agency and stabilization funds, 31 March 2026",
      "stars": 3,
      "what": "All stabilization and trust fund balances — general stabilization, OPEB, vehicle and equipment, conservation, and the rest.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 27464,
-     "url": "/docs/munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+     "url": "/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
      "count": 91,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx"
+     "textUrl": "/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx"
     },
     {
      "path": "town-budget/docs/fincom-memo-fy26-q3.docx",
@@ -341,134 +341,134 @@
      "textUrl": "/docs/town-budget/docs/fincom-memo-fy26-q3.txt"
     },
     {
-     "path": "munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf",
+     "path": "town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf",
      "title": "General fund revenue, 31 March 2026",
      "stars": 2,
      "what": "Revenue collected against budget by account. Local receipts came in at 116% of budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 305433,
-     "url": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf",
+     "url": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf",
      "count": 8,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt"
+     "textUrl": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt"
     },
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf",
      "title": "General fund expenditures, 31 March 2026",
      "stars": 2,
      "what": "Spending against budget by department, including the school department line.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 238914,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf",
      "count": 5,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt"
     },
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf",
      "title": "Sewer enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 1453079,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf",
      "count": 7,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt"
     },
     {
-     "path": "munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf",
+     "path": "town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf",
      "title": "Sewer enterprise fund — revenue",
      "stars": 1,
      "what": "Enterprise funds are self-supporting and separate from the general fund. Included for completeness.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 1097935,
-     "url": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf",
+     "url": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.pdf",
      "count": 6,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt"
+     "textUrl": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt"
     },
     {
-     "path": "munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf",
+     "path": "town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf",
      "title": "Cable and broadband enterprise fund — revenue",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 826872,
-     "url": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf",
+     "url": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf",
      "count": 4,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt"
+     "textUrl": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt"
     },
     {
-     "path": "munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf",
+     "path": "town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf",
      "title": "Solid waste enterprise fund — revenue",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 824584,
-     "url": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf",
+     "url": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.pdf",
      "count": 4,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt"
+     "textUrl": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt"
     },
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf",
      "title": "Cable and broadband enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 240106,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf",
      "count": 4,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt"
     },
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf",
      "title": "Water enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 233773,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.pdf",
      "count": 4,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt"
     },
     {
-     "path": "munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf",
+     "path": "town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf",
      "title": "Water enterprise fund — revenue",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 233666,
-     "url": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf",
+     "url": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.pdf",
      "count": 4,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt"
+     "textUrl": "/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt"
     },
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf",
      "title": "Solid waste enterprise fund — expenditures",
      "stars": 1,
      "what": "Self-supporting; does not bear on the school budget.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 233543,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.pdf",
      "count": 4,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt"
     },
     {
      "path": "town-budget/docs/fincom-deck-fy26-q3.pptx",
@@ -507,22 +507,22 @@
   {
    "section": "theirs",
    "id": "dese-staffing",
-   "origin": "dese",
+   "origin": "state-dese",
    "title": "State staffing and spending counts",
    "blurb": "What the state records Lunenburg employing and spending, by year. It carries the quantity the district’s own budget documents cannot give: how many paraprofessionals there are.",
    "items": [
     {
-     "path": "dese/district-spending-categories.csv",
+     "path": "state-dese/district-spending-categories.csv",
      "title": "Staffing and spending by category, FY09–FY25",
      "stars": 3,
      "what": "Massachusetts DESE, via the state open-data portal. Teacher FTE, paraprofessional FTE, in-district pupils, per-pupil expenditure by function and student demographics, every year since 2009. The paraprofessional count is the one figure that lets a budget line be read as staffing rather than as dollars — and it says the para budget has grown roughly six times faster than the number of paras. Rebuild with scripts/fetch_dese.py.",
      "upstream": "https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv?DIST_CODE=01620000&$limit=5000",
      "kind": "Data",
      "bytes": 48294,
-     "url": "/docs/dese/district-spending-categories.csv",
+     "url": "/docs/state-dese/district-spending-categories.csv",
      "count": 497,
      "unit": "rows",
-     "textUrl": "/docs/dese/district-spending-categories.csv"
+     "textUrl": "/docs/state-dese/district-spending-categories.csv"
     }
    ]
   },
@@ -731,7 +731,7 @@
      "what": "Benefit terms for the same group.",
      "upstream": "https://drive.google.com/file/d/0B-TXWy9uLFrVZlRWd0ctTjg0ZWs/view",
      "upstreamRestricted": true,
-     "upstreamCheckedOn": "2026-08-31",
+     "upstreamCheckedOn": "2026-09-05",
      "kind": "PDF",
      "bytes": 228477,
      "url": "/docs/contracts/pdf/nonaffiliated-benefits.pdf",
@@ -746,7 +746,7 @@
      "what": "Staff outside any bargaining unit.",
      "upstream": "https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view",
      "upstreamRestricted": true,
-     "upstreamCheckedOn": "2026-08-31",
+     "upstreamCheckedOn": "2026-09-05",
      "kind": "PDF",
      "bytes": 26536,
      "url": "/docs/contracts/pdf/nonaffiliated-salary-schedule.pdf",
@@ -758,88 +758,88 @@
   },
   {
    "section": "theirs",
-   "id": "peers",
-   "origin": "peers",
+   "id": "peer-districts",
+   "origin": "peer-districts",
    "title": "What neighboring districts did",
    "blurb": "Primary FY27 budget documents from comparable districts. The comparison is only fair if it comes from their own books rather than from reporting.",
    "items": [
     {
-     "path": "peers/groton-dunstable-fy27-budget-book.pdf",
+     "path": "peer-districts/groton-dunstable-fy27-budget-book.pdf",
      "title": "Groton-Dunstable FY27 budget book",
      "stars": 3,
      "what": "132 pages. Three consecutive years of cuts, a budget below level service, and an override the district says is needed \"now and in the foreseeable future\". Also states plainly that it plans to offset $2M of costs with circuit breaker funding.",
      "upstream": "https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2198/Gdrsd/a9c839f0-1ed0-4e9a-b125-32a1c58ca85d/Budget-Book-FY27-01.28.26.pdf",
      "kind": "PDF",
      "bytes": 2243574,
-     "url": "/docs/peers/groton-dunstable-fy27-budget-book.pdf",
+     "url": "/docs/peer-districts/groton-dunstable-fy27-budget-book.pdf",
      "count": 132,
      "unit": "pages",
-     "textUrl": "/docs/peers/groton-dunstable-fy27-budget-book.txt"
+     "textUrl": "/docs/peer-districts/groton-dunstable-fy27-budget-book.txt"
     },
     {
-     "path": "peers/ashburnham-westminster-fy27-presentation.pdf",
+     "path": "peer-districts/ashburnham-westminster-fy27-presentation.pdf",
      "title": "Ashburnham-Westminster FY27 budget",
      "stars": 3,
      "what": "The district that made the opposite choice — explicitly preserved athletics, arts and music, and cut two elementary teaching positions instead.",
      "upstream": "https://files.smartsites.parentsquare.com/6739/ashburnham_westminster_budget27_presentation_1.pdf",
      "kind": "PDF",
      "bytes": 478694,
-     "url": "/docs/peers/ashburnham-westminster-fy27-presentation.pdf",
+     "url": "/docs/peer-districts/ashburnham-westminster-fy27-presentation.pdf",
      "count": 17,
      "unit": "pages",
-     "textUrl": "/docs/peers/ashburnham-westminster-fy27-presentation.txt"
+     "textUrl": "/docs/peer-districts/ashburnham-westminster-fy27-presentation.txt"
     },
     {
-     "path": "peers/north-middlesex-finance-subcommittee.pdf",
+     "path": "peer-districts/north-middlesex-finance-subcommittee.pdf",
      "title": "North Middlesex budget summit notes",
      "stars": 2,
      "what": "A $64,000 deficit at 3% growth against $1.5M at 5%. Roughly 30% of students receive special education, far above the state average.",
      "upstream": "https://resources.finalsite.net/images/v1764774508/nmrsdorg/bregkjqfing6b9eyfqzz/2025-12-01-FinancePacket.pdf",
      "kind": "PDF",
      "bytes": 4693211,
-     "url": "/docs/peers/north-middlesex-finance-subcommittee.pdf",
+     "url": "/docs/peer-districts/north-middlesex-finance-subcommittee.pdf",
      "count": 28,
      "unit": "pages",
-     "textUrl": "/docs/peers/north-middlesex-finance-subcommittee.txt"
+     "textUrl": "/docs/peer-districts/north-middlesex-finance-subcommittee.txt"
     },
     {
-     "path": "peers/ashburnham-westminster-fy27-detail.pdf",
+     "path": "peer-districts/ashburnham-westminster-fy27-detail.pdf",
      "title": "Ashburnham-Westminster line detail",
      "stars": 2,
      "what": "The line-item version of the same budget.",
      "upstream": "https://files.smartsites.parentsquare.com/6739/fy27_budget_detail.pdf",
      "kind": "PDF",
      "bytes": 594023,
-     "url": "/docs/peers/ashburnham-westminster-fy27-detail.pdf",
+     "url": "/docs/peer-districts/ashburnham-westminster-fy27-detail.pdf",
      "count": 13,
      "unit": "pages",
-     "textUrl": "/docs/peers/ashburnham-westminster-fy27-detail.txt"
+     "textUrl": "/docs/peer-districts/ashburnham-westminster-fy27-detail.txt"
     },
     {
-     "path": "peers/ayer-shirley-fy27-expenses.pdf",
+     "path": "peer-districts/ayer-shirley-fy27-expenses.pdf",
      "title": "Ayer-Shirley FY27 expenses",
      "stars": 2,
      "what": "Level-service budget by function. Health insurance up 14.4% — the steepest in the group.",
      "upstream": "https://www.ayer.ma.us/DocumentCenter/View/13478",
      "kind": "PDF",
      "bytes": 535761,
-     "url": "/docs/peers/ayer-shirley-fy27-expenses.pdf",
+     "url": "/docs/peer-districts/ayer-shirley-fy27-expenses.pdf",
      "count": 20,
      "unit": "pages",
-     "textUrl": "/docs/peers/ayer-shirley-fy27-expenses.txt"
+     "textUrl": "/docs/peer-districts/ayer-shirley-fy27-expenses.txt"
     },
     {
-     "path": "peers/wachusett-fy27-budget-presentation.pdf",
+     "path": "peer-districts/wachusett-fy27-budget-presentation.pdf",
      "title": "Wachusett FY27 budget presentation",
      "stars": 2,
      "what": "Member-town assessments, enrollment by town, and a discretionary contribution up 9.21%.",
      "upstream": "https://www.rutlandma.gov/DocumentCenter/View/3583",
      "kind": "PDF",
      "bytes": 499847,
-     "url": "/docs/peers/wachusett-fy27-budget-presentation.pdf",
+     "url": "/docs/peer-districts/wachusett-fy27-budget-presentation.pdf",
      "count": 10,
      "unit": "pages",
-     "textUrl": "/docs/peers/wachusett-fy27-budget-presentation.txt"
+     "textUrl": "/docs/peer-districts/wachusett-fy27-budget-presentation.txt"
     }
    ]
   },
@@ -913,130 +913,130 @@
   },
   {
    "section": "theirs",
-   "id": "dls",
-   "origin": "dls",
+   "id": "state-dls",
+   "origin": "state-dls",
    "title": "Free cash, certified — Lunenburg and eight comparable towns",
    "blurb": "The Division of Local Services publishes a Free Cash Proof for every community: the year-end calculation of what a town may appropriate without raising taxes, broken into its components. Downloaded 30 August 2026. These reconcile to themselves twice over — 81 checks across nine towns and five years, all tying to the dollar. They carry no denominator of any kind, so the absolute figures do not compare between towns of different size; the composition, being a share, does.",
    "items": [
     {
-     "path": "dls/free-cash-proof-lunenburg.xlsx",
+     "path": "state-dls/free-cash-proof-lunenburg.xlsx",
      "title": "Lunenburg free cash proof, 2021–2025",
      "stars": 3,
      "what": "Certified free cash rose from $2,666,962 to $3,354,370 over the five years. Two thirds of the 2025 figure is money appropriated and not spent.",
      "kind": "Spreadsheet",
      "bytes": 7938,
-     "url": "/docs/dls/free-cash-proof-lunenburg.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-lunenburg.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-lunenburg.xlsx"
     },
     {
-     "path": "dls/PROVENANCE.md",
+     "path": "state-dls/PROVENANCE.md",
      "title": "Where these came from, and what they cannot do",
      "stars": 2,
      "what": "Written by us. Records the exclusion of a tenth file supplied as Abington which contains Lunenburg’s data in all 102 cells, and states plainly that no denominator appears anywhere in these workbooks.",
      "kind": "Notes",
      "bytes": 5949,
-     "url": "/docs/dls/PROVENANCE.md",
+     "url": "/docs/state-dls/PROVENANCE.md",
      "count": 100,
      "unit": "lines",
-     "textUrl": "/docs/dls/PROVENANCE.md"
+     "textUrl": "/docs/state-dls/PROVENANCE.md"
     },
     {
-     "path": "dls/free-cash-proof-littleton.xlsx",
+     "path": "state-dls/free-cash-proof-littleton.xlsx",
      "title": "Littleton",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7939,
-     "url": "/docs/dls/free-cash-proof-littleton.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-littleton.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-littleton.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-littleton.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-upton.xlsx",
+     "path": "state-dls/free-cash-proof-upton.xlsx",
      "title": "Upton",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7936,
-     "url": "/docs/dls/free-cash-proof-upton.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-upton.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-upton.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-upton.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-ayer.xlsx",
+     "path": "state-dls/free-cash-proof-ayer.xlsx",
      "title": "Ayer",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7935,
-     "url": "/docs/dls/free-cash-proof-ayer.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-ayer.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-ayer.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-ayer.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-townsend.xlsx",
+     "path": "state-dls/free-cash-proof-townsend.xlsx",
      "title": "Townsend",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7924,
-     "url": "/docs/dls/free-cash-proof-townsend.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-townsend.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-townsend.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-townsend.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-westford.xlsx",
+     "path": "state-dls/free-cash-proof-westford.xlsx",
      "title": "Westford",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7924,
-     "url": "/docs/dls/free-cash-proof-westford.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-westford.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-westford.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-westford.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-shirley.xlsx",
+     "path": "state-dls/free-cash-proof-shirley.xlsx",
      "title": "Shirley",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7907,
-     "url": "/docs/dls/free-cash-proof-shirley.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-shirley.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-shirley.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-shirley.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-uxbridge.xlsx",
+     "path": "state-dls/free-cash-proof-uxbridge.xlsx",
      "title": "Uxbridge",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7900,
-     "url": "/docs/dls/free-cash-proof-uxbridge.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-uxbridge.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-uxbridge.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-uxbridge.xlsx"
     },
     {
-     "path": "dls/free-cash-proof-groton.xlsx",
+     "path": "state-dls/free-cash-proof-groton.xlsx",
      "title": "Groton",
      "stars": 1,
      "what": "Peer comparison.",
      "kind": "Spreadsheet",
      "bytes": 7892,
-     "url": "/docs/dls/free-cash-proof-groton.xlsx",
+     "url": "/docs/state-dls/free-cash-proof-groton.xlsx",
      "count": 17,
      "unit": "rows",
-     "textUrl": "/docs/dls/free-cash-proof-groton.xlsx"
+     "textUrl": "/docs/state-dls/free-cash-proof-groton.xlsx"
     }
    ]
   },
@@ -1048,106 +1048,106 @@
    "blurb": "Answered by the Town on 17 June 2026, to a request by a resident. These are the first documents in this archive that record money moving on a date — the cashbook of the athletics revolving fund for three full fiscal years — rather than a prior year re-presented inside next year’s budget argument. The request form is not published: it carries the requester’s home address and telephone number, and no figure depends on them. Provenance, the town’s own filenames and a sha256 for each file are in PROVENANCE.md, listed below.",
    "items": [
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf",
      "title": "FY26 year-to-date budget report, period 12 — as printed",
      "stars": 28,
      "what": "The same report as MUNIS prints it, and the only one of the pair that states its own parameters: Year/Period 2026/12, Print totals only: N, Suppress zero bal accts: Y, Account type Expense, program glytdbud. The spreadsheet states no period at all, so the two are asserted to be one report by reconciling the spreadsheet’s 635 account rows to this file’s own printed GRAND TOTAL — expended $52,163,984.85 and encumbrances $529,325.69 agree to the cent. The three appropriation columns differ by under a dollar because this file rounds them and the spreadsheet does not, which settles something the project had only been able to back-solve: the rounding is in the printing, not in the ledger. The sender’s filename is “Print_ YEAR-TO-DATE BUDGET REPORT.pdf”.",
      "byRequest": true,
      "kind": "PDF",
      "bytes": 1570730,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.pdf",
      "count": 28,
      "unit": "pages",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.txt"
     },
     {
-     "path": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+     "path": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
      "title": "Athletics by sport, three school years",
      "stars": 3,
      "what": "The district’s own operating workbook: one row per sport, with participation counts by fee category and cost lines for officials, coaches, transportation, uniforms and the rest, for 23/24, 24/25 and 25/26. The only document here that puts a cost against a sport. It also states the high school fee for each year, which is how we learned the 2025-26 rate was $325 and not the $250 the model assumed. Its own totals do not all tie, and which ones do not is published alongside it. The town’s filename is Copy of Athletics 24.25 (1).xlsx.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 557501,
-     "url": "/docs/munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+     "url": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
      "count": 1002,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx"
+     "textUrl": "/docs/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx"
     },
     {
-     "path": "munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+     "path": "town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "title": "FY26 year-to-date budget report, period 12 — spreadsheet",
      "stars": 3,
      "what": "The first ACCOUNT-LEVEL general fund expenditure report in this archive. Every prior one was run with Print totals only: Y, which renders the whole school district as a single row; here it is 258 accounts, each with an org code, an object code and a description. Sent by Jennifer Warren, Town Manager, on 2 September 2026, produced the evening before by Karen Barrett, Town Accountant. The sender’s filename is “FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx”. It carries the appropriation columns UN-ROUNDED, which the printed form does not. **Period 12, not 13** — June, with the books not yet closed; the Town Manager’s covering note says the figures “are likely to continue to adjust as we continue the year-end reconciliation process”. Zero balance accounts are suppressed, so an account absent here is not necessarily absent from the ledger.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 73581,
-     "url": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+     "url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "count": 709,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.txt"
+     "textUrl": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.txt"
     },
     {
-     "path": "munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
+     "path": "town-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
      "title": "Athletics revolving fund, journal detail, FY2024",
      "stars": 3,
      "what": "The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its opening balance is a row the town prints, which is what lets the three years be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 21816,
-     "url": "/docs/munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
+     "url": "/docs/town-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
      "count": 111,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/account-details/account-details-fy2024-fund1301.xlsx"
+     "textUrl": "/docs/town-ledgers/account-details/account-details-fy2024-fund1301.xlsx"
     },
     {
-     "path": "munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
+     "path": "town-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
      "title": "Athletics revolving fund, journal detail, FY2025",
      "stars": 3,
      "what": "Every receipt and payment in fund 1301 for FY2025, with effective and posting dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general journal entries described only as an adjustment \"per memo\" account for $254,121.18 of the $390,299.87 that came in.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 19901,
-     "url": "/docs/munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
+     "url": "/docs/town-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
      "count": 94,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/account-details/account-details-fy2025-fund1301.xlsx"
+     "textUrl": "/docs/town-ledgers/account-details/account-details-fy2025-fund1301.xlsx"
     },
     {
-     "path": "munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
+     "path": "town-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
      "title": "Athletics revolving fund, journal detail, FY2026",
      "stars": 2,
      "what": "FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed year. Its payroll total ties to the cent to the salary line in the fund’s own year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.",
      "byRequest": true,
      "kind": "Spreadsheet",
      "bytes": 17919,
-     "url": "/docs/munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
+     "url": "/docs/town-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
      "count": 78,
      "unit": "rows",
-     "textUrl": "/docs/munis-ledgers/account-details/account-details-fy2026-fund1301.xlsx"
+     "textUrl": "/docs/town-ledgers/account-details/account-details-fy2026-fund1301.xlsx"
     },
     {
-     "path": "munis-ledgers/account-details/athletic-fee-counts-fy2026.docx",
+     "path": "town-ledgers/account-details/athletic-fee-counts-fy2026.docx",
      "title": "Athletic fee counts, 2025-2026",
      "stars": 2,
      "what": "One page: participation counts by fee category for each season of 2025-26 — full pay, reduced fee, sibling discounts and full waivers. The only source giving those counts for that year; the workbook’s columns for it are empty. 79 full waivers against 455 full-pay. The town’s filename is ATHLETIC FEES 2025.docx.",
      "byRequest": true,
      "kind": "Document",
      "bytes": 11996,
-     "url": "/docs/munis-ledgers/account-details/athletic-fee-counts-fy2026.docx",
-     "textUrl": "/docs/munis-ledgers/account-details/athletic-fee-counts-fy2026.docx"
+     "url": "/docs/town-ledgers/account-details/athletic-fee-counts-fy2026.docx",
+     "textUrl": "/docs/town-ledgers/account-details/athletic-fee-counts-fy2026.docx"
     },
     {
-     "path": "munis-ledgers/expenses/PROVENANCE-fy2026-p12.md",
+     "path": "town-ledgers/expenses/PROVENANCE-fy2026-p12.md",
      "title": "Where the FY26 period 12 report came from",
      "stars": 2,
      "what": "The email, the sender, the date, both filenames as sent, and the sha256 of each. Also what the report is NOT: period 12 rather than the year-end close, expenditures only, and with zero balance accounts suppressed. And the reconciliation that establishes the spreadsheet and the printout are one report, since only the printout states a period.",
      "byRequest": true,
      "kind": "Notes",
      "bytes": 5629,
-     "url": "/docs/munis-ledgers/expenses/PROVENANCE-fy2026-p12.md",
+     "url": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p12.md",
      "count": 106,
      "unit": "lines",
-     "textUrl": "/docs/munis-ledgers/expenses/PROVENANCE-fy2026-p12.md"
+     "textUrl": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p12.md"
     }
    ]
   },
@@ -1403,7 +1403,7 @@
    "id": "annual-reports",
    "origin": "us",
    "title": "Fifteen years of annual town reports, read into tables",
-   "blurb": "The sixteen annual town reports, FY2011–FY2025, read page by page and turned into machine-readable tables. Two of these answer questions this project had recorded as unanswerable. Most of the rest are transcriptions that arithmetic cannot yet check, and every row says which it is.",
+   "blurb": "The sixteen annual town reports, FY2011–FY2025, read page by page and turned into machine-readable tables. Two of these answer questions this project had recorded as unanswerable. Most of the rest are transcriptions that arithmetic cannot yet check, and every row says which it is. Start with PROVENANCE-report-tables.md below, which says what a figure in these means before you quote one.",
    "items": [
     {
      "path": "data/special-revenue-funds.csv",
@@ -1447,7 +1447,7 @@
      "stars": 3,
      "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
      "kind": "Data",
-     "bytes": 70399,
+     "bytes": 15445,
      "url": "/docs/data/dataset-provenance.csv",
      "count": 225,
      "unit": "rows",
@@ -1471,9 +1471,9 @@
      "stars": 3,
      "what": "Written by us, generated from the data so its figures cannot drift. Why v1 is an ordinal and not a column, what each of the three status words means, what every other column carries, and the four things these tables do not tell you. Read this before quoting any figure out of the tables above.",
      "kind": "Notes",
-     "bytes": 5801,
+     "bytes": 6027,
      "url": "/docs/data/PROVENANCE-report-tables.md",
-     "count": 103,
+     "count": 107,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-report-tables.md"
     },
@@ -1804,7 +1804,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 16080896,
+     "bytes": 16113664,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1826,7 +1826,7 @@
      "stars": 3,
      "what": "The state’s RADAR district comparison: enrollment, demographics, staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, for all 421 Massachusetts districts. The first view of Lunenburg school spending here that is neither the town’s general fund nor written by the district, so it bounds from outside the money the budget document cannot see. Three cautions travel with it: DESE counts costs the school budget does not carry, so its total must never be subtracted from the town’s appropriation to produce “hidden money”; it says all funds and gives one number, so it cannot say which dollar came from a grant; and its paraprofessional figure is FTE from the state’s staffing collection, not a headcount. Each district-year is checked against DESE’s own printed in-district total — 16 fail, all charter schools, and Lunenburg ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.",
      "kind": "Data",
-     "bytes": 390551,
+     "bytes": 405460,
      "url": "/docs/data/dese-radar.csv",
      "count": 2982,
      "unit": "rows",
@@ -1838,7 +1838,7 @@
      "stars": 3,
      "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
      "kind": "Data",
-     "bytes": 231415,
+     "bytes": 229448,
      "url": "/docs/data/munis-ledger.csv",
      "count": 983,
      "unit": "rows",
@@ -1862,7 +1862,7 @@
      "stars": 3,
      "what": "Every document in this archive classified by SOURCE TYPE: ledger (the accounting system — a figure exists because a transaction did), restatement (a prior year re-presented inside a document written by the party that spent it), forward (proposed, requested, level service, balanced), or narrative. Each row quotes the raw header text the classification rests on, with its line number or cell reference, so any row can be checked in one grep; workbook rows also record which columns are HIDDEN. Of 349 documents, 10 are ledger-basis and exactly one of those reaches school budget lines. Rebuild with scripts/classify_document_basis.py.",
      "kind": "Data",
-     "bytes": 85698,
+     "bytes": 85455,
      "url": "/docs/data/document-basis.csv",
      "count": 349,
      "unit": "rows",
@@ -1992,7 +1992,7 @@
      "path": "data/town-ledger-fy26-q3.csv",
      "title": "The town’s own ledger, FY26 to 31 March",
      "stars": 3,
-     "what": "All 67 general fund departments as the Town Accountant’s system prints them: original appropriation, transfers and adjustments, revised budget, year-to-date expended, encumbrances. Extracted from munis-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf, which came from the Town by records request rather than off a website. This is the only source here that shows money MOVING between lines during a year — 28 of the 67 departments had some, $489,411 in and $148,177 out, of which $76,394 went to the school department. The extract reconciles to the report’s own GRAND TOTAL before it will write; an earlier version silently dropped 16 departments whose figures printed as “.00”. Rebuild with scripts/extract_town_ledger.py.",
+     "what": "All 67 general fund departments as the Town Accountant’s system prints them: original appropriation, transfers and adjustments, revised budget, year-to-date expended, encumbrances. Extracted from town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.pdf, which came from the Town by records request rather than off a website. This is the only source here that shows money MOVING between lines during a year — 28 of the 67 departments had some, $489,411 in and $148,177 out, of which $76,394 went to the school department. The extract reconciles to the report’s own GRAND TOTAL before it will write; an earlier version silently dropped 16 departments whose figures printed as “.00”. Rebuild with scripts/extract_town_ledger.py.",
      "kind": "Data",
      "bytes": 5079,
      "url": "/docs/data/town-ledger-fy26-q3.csv",
@@ -2037,17 +2037,17 @@
      "textUrl": "/docs/data/capital-plan-fy27.csv"
     },
     {
-     "path": "munis-ledgers/expenses/PROVENANCE-fy2026-p09.md",
+     "path": "town-ledgers/expenses/PROVENANCE-fy2026-p09.md",
      "title": "Provenance for the FY26 period 9 ledgers — and the gap in it",
      "stars": 3,
      "what": "Written by us. What the reports say about themselves, quoted from their own printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town Accountant whose name the report prints, year/period 2026/9, and the general fund run made with `Print totals only: Y`, which is why it carries 67 department rollups and no accounts. And then the part that matters: NOTHING in this archive records how these files were obtained. They are not on the town’s website and no email, records request or meeting packet is recorded for them. Rule 12 says a document that did not come off a website still has an address; this one’s is missing, and the note records the gap rather than inventing a route.",
      "byRequest": true,
      "kind": "Notes",
      "bytes": 1995,
-     "url": "/docs/munis-ledgers/expenses/PROVENANCE-fy2026-p09.md",
+     "url": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p09.md",
      "count": 41,
      "unit": "lines",
-     "textUrl": "/docs/munis-ledgers/expenses/PROVENANCE-fy2026-p09.md"
+     "textUrl": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p09.md"
     },
     {
      "path": "data/sped-para-history.csv",
@@ -2127,9 +2127,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 58633,
+     "bytes": 99116,
      "url": "/docs/data/copy-status.csv",
-     "count": 200,
+     "count": 342,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -2139,9 +2139,9 @@
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 34320,
+     "bytes": 58184,
      "url": "/docs/data/link-status.csv",
-     "count": 208,
+     "count": 351,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -2182,17 +2182,17 @@
      "textUrl": "/docs/contracts/CONTRACTS.md"
     },
     {
-     "path": "munis-ledgers/account-details/PROVENANCE-fund1301.md",
+     "path": "town-ledgers/account-details/PROVENANCE-fund1301.md",
      "title": "Provenance for the 17 June 2026 records request",
      "stars": 2,
      "what": "Written by us, filed with the documents it describes: where each one came from, the town’s own filename for it, a sha256, and what each file actually contains as opposed to what its name suggests. Rule 12 asks for all of that at the same time as the document rather than retrofitted, and this is what that looks like. It also records what is deliberately not published and why.",
      "byRequest": true,
      "kind": "Notes",
      "bytes": 6506,
-     "url": "/docs/munis-ledgers/account-details/PROVENANCE-fund1301.md",
+     "url": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md",
      "count": 106,
      "unit": "lines",
-     "textUrl": "/docs/munis-ledgers/account-details/PROVENANCE-fund1301.md"
+     "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
     },
     {
      "path": "data/sped-transport-history.csv",
@@ -2219,30 +2219,30 @@
      "textUrl": "/docs/data/capital-funding-history.csv"
     },
     {
-     "path": "munis-ledgers/revenue/PROVENANCE-fy2026-p09.md",
+     "path": "town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
      "title": "Provenance for the FY26 period 9 revenue reports",
      "stars": 1,
-     "what": "A pointer: these arrived in the same package as the expenditure reports, and how that package was obtained is not recorded. The full note is in munis-ledgers/expenses/PROVENANCE-fy2026-p09.md.",
+     "what": "A pointer: these arrived in the same package as the expenditure reports, and how that package was obtained is not recorded. The full note is in town-ledgers/expenses/PROVENANCE-fy2026-p09.md.",
      "byRequest": true,
      "kind": "Notes",
      "bytes": 272,
-     "url": "/docs/munis-ledgers/revenue/PROVENANCE-fy2026-p09.md",
+     "url": "/docs/town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
      "count": 5,
      "unit": "lines",
-     "textUrl": "/docs/munis-ledgers/revenue/PROVENANCE-fy2026-p09.md"
+     "textUrl": "/docs/town-ledgers/revenue/PROVENANCE-fy2026-p09.md"
     },
     {
-     "path": "munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
+     "path": "town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
      "title": "Provenance for the FY26 period 9 fund balance reports",
      "stars": 1,
      "what": "The same pointer, filed with the fund balance reports.",
      "byRequest": true,
      "kind": "Notes",
      "bytes": 272,
-     "url": "/docs/munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
+     "url": "/docs/town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
      "count": 5,
      "unit": "lines",
-     "textUrl": "/docs/munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md"
+     "textUrl": "/docs/town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md"
     }
    ]
   },
@@ -3225,7 +3225,7 @@
    "id": "town-budget",
    "origin": "town",
    "title": "The town’s budget and finance documents, mirrored",
-   "blurb": "Every budget-relevant document linked from the town’s finance pages — 188 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
+   "blurb": "Every budget-relevant document linked from the town’s finance pages — 145 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
    "items": [
     {
      "path": "town-budget/docs/4161-2026-annual-town-election-warrant.pdf",
@@ -3310,28 +3310,6 @@
      "textUrl": "/docs/town-budget/text/1591-town-revenue-amp-proposition-2-5-presentation.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1591",
      "alsoUsed": "town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf"
-    },
-    {
-     "path": "town-budget/docs/394-1-40-school-resource-officer-pdf.pdf",
-     "title": "1.40 School Resource Officer (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 615158,
-     "url": "/docs/town-budget/docs/394-1-40-school-resource-officer-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/394-1-40-school-resource-officer-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/394"
-    },
-    {
-     "path": "town-budget/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf",
-     "title": "2/3/25 Assessor Conference Presentation (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 2521037,
-     "url": "/docs/town-budget/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/2504-2-3-25-assessor-conference-presentation-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2504"
     },
     {
      "path": "town-budget/docs/a162-2015-may-annual-town-meeting-booklet-pdf.pdf",
@@ -3474,7 +3452,8 @@
      "bytes": 1190496,
      "url": "/docs/town-budget/docs/a66-2021-may-annual-town-meeting-booklet-pdf.pdf",
      "textUrl": "/docs/town-budget/text/a66-2021-may-annual-town-meeting-booklet-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/66 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/169"
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/66 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/169",
+     "upstreamRestricted": true
     },
     {
      "path": "town-budget/docs/a168-2021-november-special-town-meeting-booklet-pdf.pdf",
@@ -3554,50 +3533,6 @@
      "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/161"
     },
     {
-     "path": "town-budget/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx",
-     "title": "3/25/2024 Presentation: How Can We Help You- Property Tax Exemptions &amp; Assistance for Seniors",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "Slides",
-     "bytes": 20358869,
-     "url": "/docs/town-budget/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx",
-     "textUrl": "/docs/town-budget/text/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1982"
-    },
-    {
-     "path": "town-budget/docs/2086-4-14-sex-offender-audits-pdf.pdf",
-     "title": "4.14 Sex Offender Audits (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 824224,
-     "url": "/docs/town-budget/docs/2086-4-14-sex-offender-audits-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/2086-4-14-sex-offender-audits-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2086"
-    },
-    {
-     "path": "town-budget/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf",
-     "title": "4.38 Reserve Officer Hiring Process (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 673303,
-     "url": "/docs/town-budget/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/442-4-38-reserve-officer-hiring-process-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/442"
-    },
-    {
-     "path": "town-budget/docs/443-4-39-reserve-officer-program-pdf.pdf",
-     "title": "4.39 Reserve Officer Program (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 882297,
-     "url": "/docs/town-budget/docs/443-4-39-reserve-officer-program-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/443-4-39-reserve-officer-program-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/443"
-    },
-    {
      "path": "town-budget/docs/a120-5-year-financial-forecast-16-20-pdf.pdf",
      "title": "5-Year Financial Forecast 16.20 (PDF)",
      "stars": 1,
@@ -3642,210 +3577,6 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4112"
     },
     {
-     "path": "town-budget/docs/344-bencor-financial-wellness-pdf.pdf",
-     "title": "Bencor Financial Wellness (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 291447,
-     "url": "/docs/town-budget/docs/344-bencor-financial-wellness-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/344-bencor-financial-wellness-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/344"
-    },
-    {
-     "path": "town-budget/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf",
-     "title": "Board of Assessors Code of Conduct (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 7314,
-     "url": "/docs/town-budget/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/3541-board-of-assessors-code-of-conduct-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3541"
-    },
-    {
-     "path": "town-budget/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf",
-     "title": "Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 39582437,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3463",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
-     "title": "Conflict of Interest/Financial Disclosure (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 73329,
-     "url": "/docs/town-budget/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/187-conflict-of-interest-financial-disclosure-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/187"
-    },
-    {
-     "path": "town-budget/docs/4117-fy-2011-annual-town-report.pdf",
-     "title": "FY 2011 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 31626604,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/4117-fy-2011-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4117 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/121",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/4118-fy-2012-annual-town-report.pdf",
-     "title": "FY 2012 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 56577710,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/4118-fy-2012-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4118 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/124",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/4119-fy-2013-annual-town-report.pdf",
-     "title": "FY 2013 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 37839397,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/4119-fy-2013-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4119 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/125",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/4120-fy-2014-annual-town-report.pdf",
-     "title": "FY 2014 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 5718041,
-     "url": "/docs/town-budget/docs/4120-fy-2014-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4120-fy-2014-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4120 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/126"
-    },
-    {
-     "path": "town-budget/docs/4121-fy-2015-annual-town-report.pdf",
-     "title": "FY 2015 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 7590404,
-     "url": "/docs/town-budget/docs/4121-fy-2015-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4121-fy-2015-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4121 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/127"
-    },
-    {
-     "path": "town-budget/docs/4123-fy-2016-annual-town-report.pdf",
-     "title": "FY 2016 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 5456453,
-     "url": "/docs/town-budget/docs/4123-fy-2016-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4123-fy-2016-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4123 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/132"
-    },
-    {
-     "path": "town-budget/docs/4122-fy-2016-annual-town-report-addendum.pdf",
-     "title": "FY 2016 Annual Town Report, Addendum",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 2201189,
-     "url": "/docs/town-budget/docs/4122-fy-2016-annual-town-report-addendum.pdf",
-     "textUrl": "/docs/town-budget/text/4122-fy-2016-annual-town-report-addendum.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4122"
-    },
-    {
-     "path": "town-budget/docs/4124-fy-2017-annual-town-report.pdf",
-     "title": "FY 2017 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 37102314,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/4124-fy-2017-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4124 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/128",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/4125-fy-2018-annual-town-report.pdf",
-     "title": "FY 2018 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 8052398,
-     "url": "/docs/town-budget/docs/4125-fy-2018-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4125-fy-2018-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4125 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/129"
-    },
-    {
-     "path": "town-budget/docs/4126-fy-2019-annual-town-report.pdf",
-     "title": "FY 2019 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 9333883,
-     "url": "/docs/town-budget/docs/4126-fy-2019-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4126-fy-2019-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4126 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/130"
-    },
-    {
-     "path": "town-budget/docs/4127-fy-2020-annual-town-report.pdf",
-     "title": "FY 2020 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 20544500,
-     "url": "/docs/town-budget/docs/4127-fy-2020-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4127-fy-2020-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4127 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/131"
-    },
-    {
-     "path": "town-budget/docs/4128-fy-2021-annual-town-report.pdf",
-     "title": "FY 2021 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 82620223,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/4128-fy-2021-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4128 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/122",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/4129-fy-2022-annual-town-report.pdf",
-     "title": "FY 2022 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 16840445,
-     "url": "/docs/town-budget/docs/4129-fy-2022-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4129-fy-2022-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4129 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/123"
-    },
-    {
-     "path": "town-budget/docs/4131-fy-2023-annual-town-report.pdf",
-     "title": "FY 2023 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 18274143,
-     "url": "/docs/town-budget/docs/4131-fy-2023-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4131-fy-2023-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4131 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/160"
-    },
-    {
      "path": "town-budget/docs/373-fy-2023-budget-narrative-pdf.pdf",
      "title": "FY 2023 Budget Narrative (PDF)",
      "stars": 1,
@@ -3866,29 +3597,6 @@
      "url": "/docs/town-budget/docs/374-fy-2023-budget-presentation-pdf.pdf",
      "textUrl": "/docs/town-budget/text/374-fy-2023-budget-presentation-pdf.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/374"
-    },
-    {
-     "path": "town-budget/docs/4132-fy-2024-annual-town-report.pdf",
-     "title": "FY 2024 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 52210075,
-     "url": "",
-     "textUrl": "/docs/town-budget/text/4132-fy-2024-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4132 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/211",
-     "heldOnly": true
-    },
-    {
-     "path": "town-budget/docs/4130-fy-2025-annual-town-report.pdf",
-     "title": "FY 2025 Annual Town Report",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 7237129,
-     "url": "/docs/town-budget/docs/4130-fy-2025-annual-town-report.pdf",
-     "textUrl": "/docs/town-budget/text/4130-fy-2025-annual-town-report.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4130 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/213"
     },
     {
      "path": "town-budget/docs/a202-fy18-capital-plan-presentation-pdf.pdf",
@@ -4196,7 +3904,8 @@
      "bytes": 1099798,
      "url": "/docs/town-budget/docs/a109-fy24-fire-department-budget-presentation-pdf.pdf",
      "textUrl": "/docs/town-budget/text/a109-fy24-fire-department-budget-presentation-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/109 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/158"
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/109 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/158",
+     "upstreamRestricted": true
     },
     {
      "path": "town-budget/docs/a105-fy24-it-budget-presentation-pdf.pdf",
@@ -4295,7 +4004,8 @@
      "bytes": 1694617,
      "url": "/docs/town-budget/docs/1781-fy24-police-budget-presentation.pdf",
      "textUrl": "/docs/town-budget/text/1781-fy24-police-budget-presentation.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1781 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/102"
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1781 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/102",
+     "upstreamRestricted": true
     },
     {
      "path": "town-budget/docs/a98-fy24-public-access-budget-presentation-pdf.pdf",
@@ -4485,17 +4195,6 @@
      "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/135"
     },
     {
-     "path": "town-budget/docs/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.pdf",
-     "title": "FY25 Governor Awards Lunenburg FD State Firefighter Safety Grant (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 155002,
-     "url": "/docs/town-budget/docs/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2499"
-    },
-    {
      "path": "town-budget/docs/1782-fy25-police-budget-table-of-contents.pdf",
      "title": "FY25 Police Budget Table of Contents",
      "stars": 1,
@@ -4526,17 +4225,6 @@
      "url": "/docs/town-budget/docs/a136-fy25-preliminary-budget-presentation-to-fincomm-and-sb-2-15-24.pdf",
      "textUrl": "/docs/town-budget/text/a136-fy25-preliminary-budget-presentation-to-fincomm-and-sb-2-15-24.txt",
      "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/136"
-    },
-    {
-     "path": "town-budget/docs/1352-fy25-snow-and-ice-vendor-agreement.pdf",
-     "title": "FY25 Snow and Ice Vendor Agreement",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 1269236,
-     "url": "/docs/town-budget/docs/1352-fy25-snow-and-ice-vendor-agreement.pdf",
-     "textUrl": "/docs/town-budget/text/1352-fy25-snow-and-ice-vendor-agreement.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1352"
     },
     {
      "path": "town-budget/docs/a137-fy25-town-manager-s-line-item-detail-and-revenue-expense-worksheet-2-13-24.pdf",
@@ -4814,17 +4502,6 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3613"
     },
     {
-     "path": "town-budget/docs/4284-fy27-real-estate-exemption-flyer.pdf",
-     "title": "FY27 Real Estate Exemption Flyer",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 763491,
-     "url": "/docs/town-budget/docs/4284-fy27-real-estate-exemption-flyer.pdf",
-     "textUrl": "/docs/town-budget/text/4284-fy27-real-estate-exemption-flyer.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4284"
-    },
-    {
      "path": "town-budget/docs/3586-fy27-school-department-budget-presentation-pdf.pdf",
      "title": "FY27 School Department Budget Presentation (PDF)",
      "stars": 1,
@@ -4834,28 +4511,6 @@
      "url": "/docs/town-budget/docs/3586-fy27-school-department-budget-presentation-pdf.pdf",
      "textUrl": "/docs/town-budget/text/3586-fy27-school-department-budget-presentation-pdf.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3586"
-    },
-    {
-     "path": "town-budget/docs/4283-fy27-senior-means-tested-application.pdf",
-     "title": "FY27 Senior Means Tested Application",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 342030,
-     "url": "/docs/town-budget/docs/4283-fy27-senior-means-tested-application.pdf",
-     "textUrl": "/docs/town-budget/text/4283-fy27-senior-means-tested-application.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4283"
-    },
-    {
-     "path": "town-budget/docs/4285-fy27-senior-means-tested-brochure.pdf",
-     "title": "FY27 Senior Means Tested Brochure",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 1504489,
-     "url": "/docs/town-budget/docs/4285-fy27-senior-means-tested-brochure.pdf",
-     "textUrl": "/docs/town-budget/text/4285-fy27-senior-means-tested-brochure.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4285"
     },
     {
      "path": "town-budget/docs/a118-fiscal-year-2012-budget-as-appropriated-a-copy-of-the-fiscal-year-2012-budget-as.pdf",
@@ -5122,50 +4777,6 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3378"
     },
     {
-     "path": "town-budget/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf",
-     "title": "Lunenburg Senior Citizen Property Tax Work-Off Program Application 2025 (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 415235,
-     "url": "/docs/town-budget/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3358"
-    },
-    {
-     "path": "town-budget/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf",
-     "title": "March 17, 2022 Tax Lien Sale Auction Registration Form (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 142429,
-     "url": "/docs/town-budget/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/787"
-    },
-    {
-     "path": "town-budget/docs/785-motor-vehicle-excise-tax-pdf.pdf",
-     "title": "Motor Vehicle Excise Tax (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 253763,
-     "url": "/docs/town-budget/docs/785-motor-vehicle-excise-tax-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/785-motor-vehicle-excise-tax-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/785"
-    },
-    {
-     "path": "town-budget/docs/4306-notice-of-tax-taking-lists.pdf",
-     "title": "Notice of Tax Taking Lists",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 1004409,
-     "url": "/docs/town-budget/docs/4306-notice-of-tax-taking-lists.pdf",
-     "textUrl": "/docs/town-budget/text/4306-notice-of-tax-taking-lists.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4306"
-    },
-    {
      "path": "town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf",
      "title": "November 17, 2026 Special Town Meeting Legal Notice",
      "stars": 1,
@@ -5175,72 +4786,6 @@
      "url": "/docs/town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf",
      "textUrl": "/docs/town-budget/text/4396-november-17-2026-special-town-meeting-legal-notice.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4396"
-    },
-    {
-     "path": "town-budget/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf",
-     "title": "Real Estate & Personal Property Tax Actual Billing (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 251750,
-     "url": "/docs/town-budget/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/783-real-estate-personal-property-tax-actual-billing-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/783"
-    },
-    {
-     "path": "town-budget/docs/784-real-estate-tax-preliminary-billing-pfd.pdf",
-     "title": "Real Estate Tax Preliminary Billing (PFD)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 253051,
-     "url": "/docs/town-budget/docs/784-real-estate-tax-preliminary-billing-pfd.pdf",
-     "textUrl": "/docs/town-budget/text/784-real-estate-tax-preliminary-billing-pfd.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/784"
-    },
-    {
-     "path": "town-budget/docs/3547-role-of-the-assessing-department.pdf",
-     "title": "Role of the Assessing Department",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 1289956,
-     "url": "/docs/town-budget/docs/3547-role-of-the-assessing-department.pdf",
-     "textUrl": "/docs/town-budget/text/3547-role-of-the-assessing-department.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3547"
-    },
-    {
-     "path": "town-budget/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf",
-     "title": "Senior Citizen Property Tax Work Off Program Application Form (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 415235,
-     "url": "/docs/town-budget/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/493-senior-citizen-property-tax-work-off-program-application-form-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/493"
-    },
-    {
-     "path": "town-budget/docs/494-senior-tax-work-off-program-brochure-pdf.pdf",
-     "title": "Senior Tax Work Off Program Brochure (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 438875,
-     "url": "/docs/town-budget/docs/494-senior-tax-work-off-program-brochure-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/494-senior-tax-work-off-program-brochure-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/494"
-    },
-    {
-     "path": "town-budget/docs/1416-senior-tax-work-off-record-hours.pdf",
-     "title": "Senior Tax Work Off- Record Hours",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 250144,
-     "url": "/docs/town-budget/docs/1416-senior-tax-work-off-record-hours.pdf",
-     "textUrl": "/docs/town-budget/text/1416-senior-tax-work-off-record-hours.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1416"
     },
     {
      "path": "town-budget/docs/4373-september-3-2026-special-town-meeting-warrant.pdf",
@@ -5265,17 +4810,6 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4365"
     },
     {
-     "path": "town-budget/docs/786-tax-lien-sale-auction-notice-pdf.pdf",
-     "title": "Tax Lien Sale Auction Notice (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 567326,
-     "url": "/docs/town-budget/docs/786-tax-lien-sale-auction-notice-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/786-tax-lien-sale-auction-notice-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/786"
-    },
-    {
      "path": "town-budget/docs/1787-v-attachment-d-fy25-overtime-costing-out-model.pdf",
      "title": "V. Attachment D - FY25 Overtime Costing Out Model",
      "stars": 1,
@@ -5296,17 +4830,6 @@
      "url": "/docs/town-budget/docs/1788-vii-fy25-police-budget-presentation.pdf",
      "textUrl": "/docs/town-budget/text/1788-vii-fy25-police-budget-presentation.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1788"
-    },
-    {
-     "path": "town-budget/docs/182-w-4-federal-tax-form-pdf.pdf",
-     "title": "W-4 Federal Tax Form (PDF)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "PDF",
-     "bytes": 118030,
-     "url": "/docs/town-budget/docs/182-w-4-federal-tax-form-pdf.pdf",
-     "textUrl": "/docs/town-budget/text/182-w-4-federal-tax-form-pdf.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/182"
     }
    ]
   },
@@ -5619,119 +5142,310 @@
   },
   {
    "section": "reference",
-   "id": "dese",
-   "origin": "dese",
+   "id": "town-annual-reports",
+   "origin": "town",
+   "title": "The town’s annual reports",
+   "blurb": "One report per year, 16 of them, mirrored from the town’s own document store. Kept apart from the budget documents because they are a retrospective series rather than a plan: each one carries the year’s audited financial statements alongside department narratives, vital statistics and committee reports, and the money is a part of it rather than the point of it.",
+   "items": [
+    {
+     "path": "town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+     "title": "FY 2011 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 31626604,
+     "url": "",
+     "textUrl": "/docs/town-annual-reports/text/4117-fy-2011-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4117 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/121",
+     "heldOnly": true
+    },
+    {
+     "path": "town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+     "title": "FY 2012 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 56577710,
+     "url": "",
+     "textUrl": "/docs/town-annual-reports/text/4118-fy-2012-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4118 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/124",
+     "heldOnly": true
+    },
+    {
+     "path": "town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+     "title": "FY 2013 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 37839397,
+     "url": "",
+     "textUrl": "/docs/town-annual-reports/text/4119-fy-2013-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4119 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/125",
+     "heldOnly": true
+    },
+    {
+     "path": "town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+     "title": "FY 2014 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 5718041,
+     "url": "/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4120-fy-2014-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4120 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/126"
+    },
+    {
+     "path": "town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+     "title": "FY 2015 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 7590404,
+     "url": "/docs/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4121-fy-2015-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4121 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/127"
+    },
+    {
+     "path": "town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+     "title": "FY 2016 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 5456453,
+     "url": "/docs/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4123-fy-2016-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4123 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/132"
+    },
+    {
+     "path": "town-annual-reports/docs/4122-fy-2016-annual-town-report-addendum.pdf",
+     "title": "FY 2016 Annual Town Report, Addendum",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2201189,
+     "url": "/docs/town-annual-reports/docs/4122-fy-2016-annual-town-report-addendum.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4122-fy-2016-annual-town-report-addendum.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4122"
+    },
+    {
+     "path": "town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+     "title": "FY 2017 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 37102314,
+     "url": "",
+     "textUrl": "/docs/town-annual-reports/text/4124-fy-2017-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4124 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/128",
+     "heldOnly": true
+    },
+    {
+     "path": "town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+     "title": "FY 2018 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 8052398,
+     "url": "/docs/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4125-fy-2018-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4125 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/129"
+    },
+    {
+     "path": "town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+     "title": "FY 2019 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 9333883,
+     "url": "/docs/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4126-fy-2019-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4126 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/130"
+    },
+    {
+     "path": "town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+     "title": "FY 2020 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 20544500,
+     "url": "/docs/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4127-fy-2020-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4127 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/131"
+    },
+    {
+     "path": "town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+     "title": "FY 2021 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 82620223,
+     "url": "",
+     "textUrl": "/docs/town-annual-reports/text/4128-fy-2021-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4128 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/122",
+     "heldOnly": true
+    },
+    {
+     "path": "town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+     "title": "FY 2022 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 16840445,
+     "url": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4129-fy-2022-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4129 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/123"
+    },
+    {
+     "path": "town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+     "title": "FY 2023 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 18274143,
+     "url": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4131-fy-2023-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4131 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/160"
+    },
+    {
+     "path": "town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+     "title": "FY 2024 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 52210075,
+     "url": "",
+     "textUrl": "/docs/town-annual-reports/text/4132-fy-2024-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4132 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/211",
+     "heldOnly": true
+    },
+    {
+     "path": "town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+     "title": "FY 2025 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 7237129,
+     "url": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+     "textUrl": "/docs/town-annual-reports/text/4130-fy-2025-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4130 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/213"
+    }
+   ]
+  },
+  {
+   "section": "reference",
+   "id": "state-dese",
+   "origin": "state-dese",
    "title": "State enrollment data",
    "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 11 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
     {
-     "path": "dese/radar-district-comparison.xlsx",
+     "path": "state-dese/radar-district-comparison.xlsx",
      "title": "DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "Spreadsheet",
      "bytes": 1426264,
-     "url": "/docs/dese/radar-district-comparison.xlsx",
+     "url": "/docs/state-dese/radar-district-comparison.xlsx",
      "upstream": "https://www.doe.mass.edu/research/radar/district-comparison.xlsx"
     },
     {
-     "path": "dese/lunenburg-finance-profile.html",
+     "path": "state-dese/lunenburg-finance-profile.html",
      "title": "DESE school and district profiles — Lunenburg per pupil expenditures, all funds",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 24962,
-     "url": "/docs/dese/lunenburg-finance-profile.html",
+     "url": "/docs/state-dese/lunenburg-finance-profile.html",
      "upstream": "https://profiles.doe.mass.edu/profiles/finance.aspx?orgcode=01620000&orgtypecode=5&dropDownOrgCode=2"
     },
     {
-     "path": "dese/selected-populations-2019.html",
+     "path": "state-dese/selected-populations-2019.html",
      "title": "DESE selected populations, state report, FY2019",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 263674,
-     "url": "/docs/dese/selected-populations-2019.html",
+     "url": "/docs/state-dese/selected-populations-2019.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2020.html",
+     "path": "state-dese/selected-populations-2020.html",
      "title": "DESE selected populations, state report, FY2020",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 261918,
-     "url": "/docs/dese/selected-populations-2020.html",
+     "url": "/docs/state-dese/selected-populations-2020.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2021.html",
+     "path": "state-dese/selected-populations-2021.html",
      "title": "DESE selected populations, state report, FY2021",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 259955,
-     "url": "/docs/dese/selected-populations-2021.html",
+     "url": "/docs/state-dese/selected-populations-2021.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2022.html",
+     "path": "state-dese/selected-populations-2022.html",
      "title": "DESE selected populations, state report, FY2022",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 259993,
-     "url": "/docs/dese/selected-populations-2022.html",
+     "url": "/docs/state-dese/selected-populations-2022.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2023.html",
+     "path": "state-dese/selected-populations-2023.html",
      "title": "DESE selected populations, state report, FY2023",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 258741,
-     "url": "/docs/dese/selected-populations-2023.html",
+     "url": "/docs/state-dese/selected-populations-2023.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2024.html",
+     "path": "state-dese/selected-populations-2024.html",
      "title": "DESE selected populations, state report, FY2024",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 259338,
-     "url": "/docs/dese/selected-populations-2024.html",
+     "url": "/docs/state-dese/selected-populations-2024.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2025.html",
+     "path": "state-dese/selected-populations-2025.html",
      "title": "DESE selected populations, state report, FY2025",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 257427,
-     "url": "/docs/dese/selected-populations-2025.html",
+     "url": "/docs/state-dese/selected-populations-2025.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations-2026.html",
+     "path": "state-dese/selected-populations-2026.html",
      "title": "DESE selected populations, state report, FY2026",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 256796,
-     "url": "/docs/dese/selected-populations-2026.html",
+     "url": "/docs/state-dese/selected-populations-2026.html",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
-     "path": "dese/selected-populations.csv",
+     "path": "state-dese/selected-populations.csv",
      "title": "Lunenburg selected populations, all years (CSV)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "Data",
      "bytes": 775,
-     "url": "/docs/dese/selected-populations.csv",
+     "url": "/docs/state-dese/selected-populations.csv",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     }
    ]
@@ -5913,10 +5627,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 481,
-  "groups": 19,
-  "bytes": 1075270580,
+  "documents": 454,
+  "groups": 20,
+  "bytes": 1000061800,
   "loadBearing": 71
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
