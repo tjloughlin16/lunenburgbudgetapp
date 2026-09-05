@@ -107,6 +107,11 @@ def sources():
     """(path on disk, published path) for everything worth splitting."""
     out = []
     for path in sorted(glob.glob(os.path.join(PUB, '**', '*.txt'), recursive=True)):
+        # Not the parts themselves. A part is written at just under the limit, and one
+        # that lands a little over it would be split again into parts of parts, forever
+        # deeper. Caught by check_generated.py on its first run.
+        if '.parts' + os.sep in path or path.endswith('.parts'):
+            continue
         out.append((path, os.path.relpath(path, PUB).replace(os.sep, '/')))
     for pattern in EXTRA:
         for path in sorted(glob.glob(pattern)):

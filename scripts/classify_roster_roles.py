@@ -161,6 +161,53 @@ def build():
     return rows, out
 
 
+CAVEAT_OUT = os.path.join(ROOT, 'sources', 'data', 'role-classification-caveat.txt')
+
+
+def caveat(rows, table):
+    """The caveat, with its figures DERIVED rather than typed.
+
+    The first version of this sentence said the kindergarten series reads "0, 5, 4, 4, 0"
+    for FY2011-FY2015. Two of those five numbers were wrong. They came from the old
+    `position` field, and the classification shipped in the same commit already recovered
+    FY2011 (printed "Teaching Asst.") and FY2014 (one row printed "Paraprotessional") --
+    so the caveat repeated the undercount it existed to explain, and an assistant reading
+    the rows caught it.
+
+    That is rule 2 with the stakes at their highest: a figure typed into a sentence is the
+    only thing here that can be silently wrong, and a figure typed into a CAVEAT is wrong
+    in the place a reader is least able to check it. So the series is computed from the
+    same dictionary this script writes, every time.
+    """
+    look = {(r['role_raw'], r['grade_or_dept']): r for r in table}
+    series = {}
+    for r in rows:
+        c = look.get(((r.get('role_raw') or '').strip(),
+                      (r.get('grade_or_dept') or '').strip()))
+        if c and c['role_category'] == 'paraprofessional' and c['role_grade'] == 'K':
+            series[r['fy']] = series.get(r['fy'], 0) + 1
+    years = sorted({r['fy'] for r in rows})
+    counts = [series.get(y, 0) for y in years]
+    zeros = [y for y, n in zip(years, counts) if n == 0]
+    return (
+        'POSITION IS A CLASSIFICATION AND THE PRINTING IT READS CHANGES. The town has '
+        'called the same job Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para) '
+        'and Sped Para across fifteen years, and once "Paraprotessional", an OCR typo. '
+        '`role_category` in `role-classification.csv` absorbs that; the raw `position` '
+        'column does not, and undercounts wherever the house style moved.\n\n'
+        'Counting paraprofessionals in the Kindergarten section by `role_category` gives '
+        + ', '.join(f'FY{y} {n}' for y, n in zip(years, counts)) + '.\n\n'
+        'THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING'
+        + (f' ({", ".join("FY" + y for y in zeros)})' if zeros else '')
+        + '. FY2015 printed the page in two columns and the extractor collapsed it, '
+        'leaving five people with no title and their names shifted by one row against '
+        'their posts. FY2024 lists the Primary School paraprofessionals in one '
+        'undifferentiated column with no section at all, and FY2025 groups them by '
+        'programme rather than grade. A series run to FY2025 will read as a collapse in '
+        'kindergarten support that did not happen. Use `role_raw`, which is what the '
+        'report actually printed, before trusting any of it.')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -179,7 +226,11 @@ def main():
     body = buf.getvalue()
 
     if args.check:
-        current = open(OUT).read() if os.path.exists(OUT) else ''
+        # newline='' : the CSV writer emits \r\n, and reading without this translates it
+        # to \n, so the comparison was off by exactly one byte per line -- 1,031 of them --
+        # and reported a file as stale every single run. A check that always fails is a
+        # check nobody reads.
+        current = (open(OUT, newline='').read() if os.path.exists(OUT) else '')
         if current != body:
             print('STALE  role-classification.csv — run: '
                   'python3 scripts/classify_roster_roles.py')
@@ -189,6 +240,8 @@ def main():
 
     with open(OUT, 'w', newline='') as fh:
         fh.write(body)
+    with open(CAVEAT_OUT, 'w') as fh:
+        fh.write(caveat(rows, table) + '\n')
 
     covered = sum(r['rows'] for r in table if r['role_category'] != 'unknown')
     total = sum(r['rows'] for r in table)

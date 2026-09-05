@@ -435,8 +435,55 @@ arriving fresh.
 
 ---
 
+## The shape almost every defect here has taken
+
+Thirteen were found in a single day, 5 September 2026, and they are one bug wearing
+different clothes: **something derived was written down, the thing it derived from moved,
+and nothing connected the two.**
+
+Three sub-causes. Each has a rule, and the rule is the preventable part:
+
+**1. A LOCATION WAS HARDCODED where location is not identity.** This archive is keyed on
+provenance and re-files documents on purpose -- that is what `views/` is for. So a literal
+`sources/<folder>/` in a script is a latent break with a date on it. It broke
+`build_dataset_provenance.py` (0 of 225 rows resolved, silently), eight annual-report
+pipeline scripts, `document-basis.csv`, and the crawler index list in `build_db.py`.
+
+> Read the manifest, or glob every `sources/*/index.csv`. Never name one folder.
+
+**2. A FIGURE OR A NAME WAS TYPED into prose.** Rule 2 says never type a figure, and it
+was applied to the projection and to nothing else. So llms.txt carried a document number
+that renumbering had moved, the /minutes 404 named a bundle that splitting had deleted, and
+a caveat quoted a series -- `0, 5, 4, 4, 0` -- typed from a field the same commit had
+already fixed, repeating the undercount it existed to explain.
+
+> Rule 2 covers every generated surface, not just the model: llms.txt, the READMEs, the
+> caveats, the worked examples, the fixtures a check asserts against.
+
+**3. A JOIN THAT MATCHES NOTHING LOOKS EXACTLY LIKE DATA THAT IS ABSENT.** Four of the
+thirteen were silent zeros: the provenance join, `link_state`/`copy_state` on 613 of 616
+documents, the roster classification, the crawled-document branch that never consulted the
+status files at all.
+
+> A join whose result is used must assert that it matched. `build_dataset_provenance.py`
+> and `build_db.py` now refuse to write rather than write nothing.
+
+**And the meta-cause: every one was found by a person or an agent, never by a check.**
+
+    python3 scripts/check_generated.py
+
+runs the `--check` of every generator and fails if any output no longer reproduces. It is
+the mechanical half of the answer -- if an input moved, the output stops reproducing and
+this says so. It cannot catch a figure typed into a sentence that nothing regenerates,
+which is why the caveats and the worked examples are now derived rather than written.
+
+It earned itself on its first run: a recursion that was splitting split files into
+further parts, and a staleness check comparing a `\r\n` file against a newline-translated
+read, so it had been reporting a clean file as stale every time.
+
 ## Running the checks
 
+    python3 scripts/check_generated.py      # EVERY generator still reproduces its output
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present

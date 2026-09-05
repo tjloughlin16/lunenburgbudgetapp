@@ -1,0 +1,5 @@
+POSITION IS A CLASSIFICATION AND THE PRINTING IT READS CHANGES. The town has called the same job Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para) and Sped Para across fifteen years, and once "Paraprotessional", an OCR typo. `role_category` in `role-classification.csv` absorbs that; the raw `position` column does not, and undercounts wherever the house style moved.
+
+Counting paraprofessionals in the Kindergarten section by `role_category` gives FY2011 2, FY2012 5, FY2013 4, FY2014 5, FY2015 0, FY2016 6, FY2017 5, FY2018 7, FY2019 6, FY2020 4, FY2021 2, FY2022 3, FY2023 4, FY2024 0, FY2025 1.
+
+THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING (FY2015, FY2024). FY2015 printed the page in two columns and the extractor collapsed it, leaving five people with no title and their names shifted by one row against their posts. FY2024 lists the Primary School paraprofessionals in one undifferentiated column with no section at all, and FY2025 groups them by programme rather than grade. A series run to FY2025 will read as a collapse in kindergarten support that did not happen. Use `role_raw`, which is what the report actually printed, before trusting any of it.
