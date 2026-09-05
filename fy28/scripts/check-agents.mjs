@@ -290,6 +290,24 @@ async function main() {
     for (const u of urls) {
       const res = await fetch(base + u, { redirect: 'follow' })
       const type = res.headers.get('content-type') || ''
+      // NEEDS A BINDING THIS RUN DOES NOT HAVE.
+      //
+      // `wrangler pages dev` has neither the R2 bucket nor the D1 database bound, so a
+      // document served from the archive and a /api/query answer cannot work locally --
+      // and they are exactly the two things most worth testing. Recognised rather than
+      // silently passed: the endpoint says so itself (503 `unavailable` from query.js),
+      // and the same URLs ARE fetched against production after every deploy.
+      if (res.status === 503 || res.status === 400) {
+        const body = await res.clone().json().catch(() => ({}))
+        const why = String(body.message || '')
+        // `unavailable` is no binding at all; `no such table` is the LOCAL D1, which
+        // wrangler creates empty. Matched narrowly on purpose: a query advertised with a
+        // typo in a column name still fails here, which is the point of checking it.
+        if (body.error === 'unavailable' || /no such table/i.test(why)) {
+          console.log(`   --  ${u.slice(0, 44)}… needs the live database; checked on deploy`)
+          continue
+        }
+      }
       // Under /docs, /data and /minutes nothing is ever an HTML page, so the app shell
       // coming back with a 200 is the soft 404 this whole file exists to catch.
       const isFile = /^\/(docs|data|minutes)\//.test(u)

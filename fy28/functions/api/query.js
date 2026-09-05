@@ -60,7 +60,8 @@ const json = (body, status = 200) =>
 
 const HELP = {
   endpoint: '/api/query',
-  how: 'POST {"sql": "SELECT ...", "params": []} or GET /api/query?sql=...',
+  how: 'GET /api/query?sql=<url-encoded SQL> — works with any fetch tool, including one '
+    + 'that cannot POST. Or POST {"sql": "SELECT ...", "params": []} if you can.',
   rules: [
     'One statement. It must start with SELECT or WITH.',
     `A LIMIT is added if you omit one, and capped at ${MAX_ROWS} rows.`,
