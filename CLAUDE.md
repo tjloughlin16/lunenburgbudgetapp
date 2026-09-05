@@ -481,9 +481,38 @@ It earned itself on its first run: a recursion that was splitting split files in
 further parts, and a staleness check comparing a `\r\n` file against a newline-translated
 read, so it had been reporting a clean file as stale every time.
 
+## Reachability: some agents cannot fetch this site at all
+
+Not because anything is wrong with it. It answers in under 300ms, to any user agent, with
+no bot protection — checked. Their sandbox has an egress allowlist and this domain is not
+on it: `x-deny-reason: host_not_allowed`. Nothing published here changes that.
+
+Three things do, and all three are now true:
+
+**1. The GitHub mirror is complete, and said out loud.** Every static API file, the
+extracted text, the manifests and the analysis database are committed, so
+`raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/<path>` serves them.
+1,366 files. `check_github_mirror.py` fails if one stops being committed, because a
+fallback that has quietly gone incomplete is worse than one never promised. The only thing
+that cannot be mirrored is `/api/query`, which needs a database at request time — an agent
+on GitHub queries the committed database instead.
+
+**2. The sitemap carries the endpoints, not just the pages.** An agent reported that its
+fetcher accepts only URLs that came from a prior SEARCH RESULT — not links extracted from a
+page it had already fetched. It had the homepage open, with `/agents` and `/api/index` as
+real anchors, and was still refused. So being a link is not sufficient; being INDEXED is
+what reaches that tool, and the sitemap is where that starts. It now lists 67 URLs: 24
+pages and 43 addresses a program needs.
+
+**3. A URL the user pastes is always fetchable.** That is the immediate unblock when an
+agent is refused, and it is worth telling people: paste `/api/tables` or a query URL into
+the prompt and the tool will take it.
+
 ## Running the checks
 
     python3 scripts/check_generated.py      # EVERY generator still reproduces its output
+    python3 scripts/build_sitemap.py        # the sitemap, generated — pages AND endpoints
+    python3 scripts/check_github_mirror.py  # the fallback for agents that cannot reach the site
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present

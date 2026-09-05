@@ -43,6 +43,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # back fast. `sync_d1` is last because it is the only one that touches the network.
 CHECKS = [
     ('build_readme.py', ['--check']),
+    ('build_sitemap.py', ['--check']),
+    ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),
     ('build_views.py', ['--check']),
     ('build_archive_guide.py', ['--check']),
