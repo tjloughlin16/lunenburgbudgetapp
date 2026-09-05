@@ -189,10 +189,15 @@ def scan_xlsx(path):
 # Directories holding documents that publish figures. Meeting minutes are excluded
 # by design: they are narrative, there are 1,100 of them, and a figure quoted in
 # minutes is a restatement of a document catalogued here.
+# `town-annual-reports/text` was missing after the sixteen annual reports moved there on
+# 5 September, so 43 rows here went on naming files at their old `town-budget/text` paths
+# -- and those addresses reached the analysis database, and would have been handed to
+# callers by /api/query as the place to check a figure. An address that 404s is worse than
+# no address, because it looks like provenance.
 DIRS = [
     'sources/district-budget/text', 'sources/town-budget/text',
-    'sources/town-supplementary/text', 'sources/town-ledgers',
-    'sources/peer-districts', 'sources/contracts/txt',
+    'sources/town-supplementary/text', 'sources/town-annual-reports/text',
+    'sources/town-ledgers', 'sources/peer-districts', 'sources/contracts/txt',
 ]
 
 def main():

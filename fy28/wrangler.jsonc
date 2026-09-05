@@ -16,16 +16,32 @@
   // full. They name the SAME bucket on purpose: a preview deploy that read from a
   // different bucket would prove nothing about the one the public reads, and testing
   // every /docs/ URL against a preview is the gate this whole move has to pass.
+  // The analysis database, for /api/query -- so an agent can ask a question instead of
+  // downloading 16MB to answer it. Read-only in practice: functions/api/query.js refuses
+  // anything that is not a single SELECT, and there is nothing here that is not already
+  // published. Refresh it with `python3 scripts/sync_d1.py` after build_db.py.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "lunenburg-budget",
+      "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+  ],
   "r2_buckets": [
     { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
   ],
   "env": {
     "preview": {
+      "d1_databases": [
+        { "binding": "DB", "database_name": "lunenburg-budget",
+          "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+      ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
       ]
     },
     "production": {
+      "d1_databases": [
+        { "binding": "DB", "database_name": "lunenburg-budget",
+          "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+      ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
       ]

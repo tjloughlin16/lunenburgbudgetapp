@@ -43,6 +43,7 @@ and back out of any query. A figure that cannot name its document does not get l
 """
 import argparse
 import csv
+import glob
 import hashlib
 import os
 import sqlite3
@@ -573,11 +574,13 @@ def load_documents(db):
     copy = {r['path']: r for r in rows('copy-status')}
 
     # The crawlers' own indexes carry the upstream URL and the sha256 taken at fetch time.
+    # Every mirror's index, not a named three. The list read `state-dese`,
+    # `district-budget`, `town-budget` -- written before the town split created
+    # `town-supplementary` and `town-annual-reports`, so the upstream URL and sha256 of
+    # everything that moved stopped being found. A hardcoded folder list is the same bug
+    # that broke build_dataset_provenance.py, in a second place.
     crawled = {}
-    for name in ('state-dese', 'district-budget', 'town-budget'):
-        path = os.path.join(ROOT, 'sources', name, 'index.csv')
-        if not os.path.exists(path):
-            continue
+    for path in sorted(glob.glob(os.path.join(ROOT, 'sources', '*', 'index.csv'))):
         with open(path, encoding='utf-8') as fh:
             for r in csv.DictReader(fh):
                 if r.get('local'):
@@ -825,6 +828,113 @@ def load_reference(db):
     return n
 
 
+def load_role_classification(db):
+    """What kind of job each printed roster title is, and a view that joins it to the rows.
+
+    The town's name for the same job changed five times in fifteen years -- Tutor, Aide,
+    Tutors/Aides, Paraprofessional, Para, (para), Sped Para -- so a filter on the printed
+    title measures the house style rather than the staffing. `role-classification.csv` is
+    a dictionary over the 1,030 distinct (title, heading) pairs; this loads it and defines
+    `v_staff_roster`, which is the table an analysis should actually use.
+
+    `role_category` is OUR inference and `role_raw` is what the town printed. The view
+    carries both, and `classified_by` names the rule, because a classification without its
+    evidence beside it is how the old `position` column came to report 0 kindergarten
+    paraprofessionals in a year that had five.
+    """
+    data = rows('role-classification')
+    if not data:
+        return 0
+    cols = list(data[0].keys())
+    db.execute('CREATE TABLE role_classification (%s)'
+               % ', '.join('"%s" TEXT' % c for c in cols))
+    db.executemany('INSERT INTO role_classification VALUES (%s)'
+                   % ','.join('?' * len(cols)),
+                   [[r[c] for c in cols] for r in data])
+    db.execute('CREATE INDEX ix_role_classification '
+               'ON role_classification(role_raw, grade_or_dept)')
+    db.execute("""
+        CREATE VIEW v_staff_roster AS
+        SELECT e.fy, e.school, e.page, e.name,
+               e.role_raw, e.grade_or_dept, e.position AS position_legacy,
+               c.role_category, c.role_grade, c.classified_by,
+               e.document
+        FROM staff_roster_entries e
+        LEFT JOIN role_classification c
+               ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept
+    """)
+    return len(data)
+
+
+def check_document_paths(db):
+    """No document row may name a file that is not on disk.
+
+    43 of 600 did. Every one was a casualty of the town split -- a document that moved to
+    `town-supplementary/` or `town-annual-reports/` while `document-basis.csv` went on
+    naming its old home -- and the rows sat in the database being cited as the place to
+    check a figure. `/api/query` would have handed those addresses to callers as
+    provenance.
+
+    An address that 404s is worse than no address, because it looks like provenance and
+    fails only for the reader who actually tries it. So this refuses to finish the build.
+    """
+    dead = [(d, p) for d, p in db.execute('SELECT doc_id, path FROM document')
+            if p and not os.path.exists(os.path.join(ROOT, p))]
+    if dead:
+        raise SystemExit(
+            f'{len(dead)} document row(s) name a file that is not on disk:\n  '
+            + '\n  '.join(p for _, p in dead[:8])
+            + (f'\n  ... and {len(dead) - 8} more' if len(dead) > 8 else '')
+            + '\n\n  Run `python3 scripts/classify_document_basis.py` and rebuild. A '
+              'document row is\n  an address a reader is told to check; one that 404s '
+              'looks like provenance and is not.')
+    return len(dead)
+
+
+def load_provenance(db):
+    """The join from a row to the document it was read out of.
+
+    Fifteen tables carry a `doc_id`. Thirty-eight do not, and the annual-report extracts
+    are the ones that matter: `report_appropriations` has 4,665 rows and no route to a
+    document at all. They are loaded verbatim on purpose -- the table is exactly the
+    published CSV, so nothing can be silently changed on the way in -- so the answer is
+    not to mutate them but to publish the join beside them.
+
+    `build_dataset_provenance.py` already resolves every dataset-edition to its document,
+    with the address, the publisher's label and the sha256. This loads that, so a query
+    can reach provenance without leaving SQL:
+
+        SELECT r.*, d.document, d.sha256, d.upstream
+        FROM report_appropriations r
+        JOIN dataset_document d
+          ON d.dataset = 'report-appropriations' AND d.edition = r.edition
+
+    Why it matters more here than anywhere else: a figure is only checkable if somebody
+    can get back to the document it came from. An API that answers arbitrary questions and
+    cannot say where the answer came from is exactly the thing this project is built not
+    to be.
+    """
+    data = rows('dataset-provenance')
+    if not data:
+        return 0
+    cols = list(data[0].keys())
+    db.execute('CREATE TABLE dataset_document (%s)'
+               % ', '.join('"%s" TEXT' % c for c in cols))
+    db.executemany('INSERT INTO dataset_document VALUES (%s)' % ','.join('?' * len(cols)),
+                   [[r[c] for c in cols] for r in data])
+    db.execute('CREATE INDEX ix_dataset_document ON dataset_document(dataset, edition)')
+    # A row with no document is the failure this table exists to prevent, so it is
+    # counted rather than assumed away.
+    blank = db.execute("SELECT COUNT(*) FROM dataset_document "
+                       "WHERE document IS NULL OR document = ''").fetchone()[0]
+    if blank:
+        raise SystemExit(
+            f'dataset_document: {blank} of {len(data)} rows resolve to no document. '
+            f'Run scripts/build_dataset_provenance.py, which fails loudly when the join '
+            f'breaks.')
+    return len(data)
+
+
 CHECKS = []
 
 
@@ -1051,6 +1161,9 @@ def main():
     print('  stated figures   %5d' % st)
     print('  DESE measures    %5d' % ds)
     print('  reference rows   %5d' % load_reference(db))
+    print('  provenance rows  %5d' % load_provenance(db))
+    print('  role vocabulary  %5d' % load_role_classification(db))
+    check_document_paths(db)
 
     # Documents last: every doc_id any fact cites is known by now, so an orphan can be
     # stubbed and counted rather than silently producing a figure with no address.

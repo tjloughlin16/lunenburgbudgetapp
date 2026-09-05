@@ -1573,6 +1573,18 @@
      "textUrl": "/docs/data/report-anomalies.csv"
     },
     {
+     "path": "data/role-classification.csv",
+     "title": "What kind of job each printed roster title is",
+     "stars": 2,
+     "what": "The town’s name for the same job changed five times in fifteen years — Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para), Sped Para — so filtering a roster on its printed title measures the house style rather than the staffing. This is a dictionary over the 1,030 distinct (title, section heading) pairs, giving each a category and, where the page says one, a grade. It is OUR inference, kept in a separate column from `role_raw`, which is what the town actually printed; `classified_by` names the rule that decided each one, and 8% are left `unknown` rather than guessed. Join it, or use the `v_staff_roster` view in the database.",
+     "kind": "Data",
+     "bytes": 56718,
+     "url": "/docs/data/role-classification.csv",
+     "count": 1030,
+     "unit": "rows",
+     "textUrl": "/docs/data/role-classification.csv"
+    },
+    {
      "path": "data/staff-roster-counts.csv",
      "title": "Roster headcount by school and year",
      "stars": 2,
@@ -1803,7 +1815,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 16134144,
+     "bytes": 16351232,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1861,9 +1873,9 @@
      "stars": 3,
      "what": "Every document in this archive classified by SOURCE TYPE: ledger (the accounting system — a figure exists because a transaction did), restatement (a prior year re-presented inside a document written by the party that spent it), forward (proposed, requested, level service, balanced), or narrative. Each row quotes the raw header text the classification rests on, with its line number or cell reference, so any row can be checked in one grep; workbook rows also record which columns are HIDDEN. Of 349 documents, 10 are ledger-basis and exactly one of those reaches school budget lines. Rebuild with scripts/classify_document_basis.py.",
      "kind": "Data",
-     "bytes": 85455,
+     "bytes": 82283,
      "url": "/docs/data/document-basis.csv",
-     "count": 349,
+     "count": 322,
      "unit": "rows",
      "textUrl": "/docs/data/document-basis.csv"
     },
@@ -5619,9 +5631,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 454,
+  "documents": 455,
   "groups": 20,
-  "bytes": 1000142353,
+  "bytes": 1000412987,
   "loadBearing": 71
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

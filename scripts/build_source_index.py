@@ -710,6 +710,17 @@ GROUPS = [
              'each; no funding source, which is the question that actually matters; and it '
              'is a point in time, undated within the year. A count of names the town '
              'printed is a real quantity and it is not a staffing level.'),
+            ('data/role-classification.csv',
+             'What kind of job each printed roster title is', 2,
+             'The town\u2019s name for the same job changed five times in fifteen years '
+             '\u2014 Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para), Sped Para '
+             '\u2014 so filtering a roster on its printed title measures the house style '
+             'rather than the staffing. This is a dictionary over the 1,030 distinct '
+             '(title, section heading) pairs, giving each a category and, where the page '
+             'says one, a grade. It is OUR inference, kept in a separate column from '
+             '`role_raw`, which is what the town actually printed; `classified_by` names '
+             'the rule that decided each one, and 8% are left `unknown` rather than '
+             'guessed. Join it, or use the `v_staff_roster` view in the database.'),
             ('data/staff-roster-counts.csv',
              'Roster headcount by school and year', 2,
              '699 rows: how many names appear on each school\u2019s roster in each year. '
