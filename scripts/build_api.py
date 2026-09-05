@@ -327,10 +327,25 @@ def publish_tables(db, written, already):
         whole = payload(rows)
         size = len(json.dumps(whole, separators=(',', ':')))
         yc = year_column(cols)
+        # WHAT YEARS DOES THIS COVER? -- the question an agent has to answer before it
+        # knows whether to query at all.
+        #
+        # /api/tables listed a name, a row count and a size, and none of those says
+        # whether the data exists for the year being asked about. An assistant asked about
+        # paraprofessionals fell back to quoting our prose, because nothing told it there
+        # were fifteen years of rosters it could query directly. A dataset an agent cannot
+        # tell the shape of is a dataset it will not use.
+        span = None
+        if yc:
+            years = sorted({str(r.get(yc)) for r in rows if r.get(yc) not in (None, '')})
+            if years:
+                span = dict(column=yc, first=years[0], last=years[-1], count=len(years))
         if size <= SHARD_ABOVE or not yc:
             written['api/' + name] = write(name, whole)
             listed.append(dict(url=f'{SITE}/api/{name}', rows=len(rows),
-                               bytes=written['api/' + name]))
+                               bytes=written['api/' + name],
+                               **({'years': span} if span else {}),
+                               **({'about': meta['what']} if meta.get('what') else {})))
             continue
 
         # Too large to hand to a caller in one piece: an index plus one file per year --
@@ -376,7 +391,9 @@ def publish_tables(db, written, already):
                    parts=parts)
         written['api/' + name] = write(name, idx)
         listed.append(dict(url=f'{SITE}/api/{name}', rows=len(rows),
-                           bytes=written['api/' + name], splitBy=yc, parts=len(parts)))
+                           bytes=written['api/' + name], splitBy=yc, parts=len(parts),
+                           **({'years': span} if span else {}),
+                           **({'about': meta['what']} if meta.get('what') else {})))
     return listed
 
 
@@ -587,10 +604,15 @@ def main():
     tables_listed = publish_tables(db, written, curated)
     written['api/tables'] = write('tables', dict(
         resource='tables',
-        about='Every dataset in this project, fetchable. One entry per table in the '
-              'database, with its size in bytes so a caller can decide before fetching. '
-              'The curated endpoints in /api/index are joins and roll-ups over these; '
-              'this is the raw grain.',
+        about='Every dataset in this project, fetchable. One entry per table, with the '
+              'years it covers, its row count and its size in bytes — so you can tell '
+              'whether the data exists for what you are asking BEFORE you decide how to '
+              'answer. The curated endpoints in /api/index are joins and roll-ups over '
+              'these; this is the raw grain.',
+        howToUse='If a question is about a subject, look for it here first. A table with '
+                 'a `years` span covering the year asked about can be queried directly at '
+                 f'{SITE}/api/query, and that is a stronger answer than any prose — '
+                 'including ours.',
         note='A table larger than 400KB is published as an index plus one file per '
              'fiscal year rather than as one blob.',
         count=len(tables_listed),

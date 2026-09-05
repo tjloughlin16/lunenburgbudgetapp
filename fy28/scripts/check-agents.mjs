@@ -285,7 +285,11 @@ async function main() {
         .map(m => m[1].replace(/[.,]$/, ''))
         // A trailing slash means llms.txt was naming a folder in prose -- `/docs/minutes/
         // text/<board>/...` -- not handing over an address. Only real files are checked.
-        .filter(u => !u.endsWith('/')))]
+        // A trailing slash means llms.txt was naming a folder in prose -- `/docs/minutes/
+        // text/<board>/...` -- not handing over an address. `..` is what is left of an
+        // ellipsis after the trailing punctuation is stripped, as in `?sql=...`, which is
+        // a placeholder showing the SHAPE of a call. Neither is a URL to fetch.
+        .filter(u => !u.endsWith('/') && !u.includes('..')))]
     let bad = 0, heavy = 0
     for (const u of urls) {
       const res = await fetch(base + u, { redirect: 'follow' })
