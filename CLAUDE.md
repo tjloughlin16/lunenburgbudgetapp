@@ -515,6 +515,36 @@ measurement.
 agent is refused, and it is worth telling people: paste `/api/tables` or a query URL into
 the prompt and the tool will take it.
 
+## What /api/query can cost, and why it currently cannot cost money
+
+**On the Workers Free plan D1 does not bill. It stops.** 5 million rows read a day, 100,000
+written; past either, queries fail until tomorrow. That is what happened on 5 September --
+four full database re-imports, about 95,000 writes each, and the day's budget was gone. It
+cost availability, not money.
+
+**The billable unit is ROWS READ, and it is not the number of rows you get back.**
+`SELECT fy, COUNT(*) FROM report_appropriations GROUP BY fy` returns 14 rows and reads
+9,330. A caller cannot tell the difference and should not have to, so every `/api/query`
+response now states `rowsRead`.
+
+Three things keep it bounded, in order of how much they do:
+
+1. **Identical queries are served from the edge.** The data changes only when the database
+   is redeployed, so two identical queries an hour apart must return the same rows.
+   `caches.default`, keyed on the statement and its parameters, ten minutes. A public
+   endpoint answering the same question repeatedly is the whole shape of the load, and
+   this removes nearly all of it. `x-query-cache: hit` says when it fired.
+2. **One statement, SELECT only, LIMIT capped at 1,000.** That bounds the response, not
+   the read -- see above -- but it stops the obvious abuses.
+3. **`rowsRead` is published**, so an expensive query is visible as expensive rather than
+   discovered on a bill.
+
+**If this ever moves to Workers Paid the exposure changes**, and it is worth knowing the
+shape before it does: 25 billion rows read a month are included, then $0.001 per million.
+Sustaining an overage needs roughly 9,600 rows read every second for a month. Cloudflare
+publishes no hard spending cap, so the protection is the cache and the query limits rather
+than a budget setting.
+
 ## Running the checks
 
     python3 scripts/check_generated.py      # EVERY generator still reproduces its output

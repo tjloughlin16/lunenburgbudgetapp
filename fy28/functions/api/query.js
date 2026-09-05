@@ -42,6 +42,17 @@
 
 const MAX_ROWS = 1000
 const MAX_SQL = 4000
+// How long an identical query is served from cache.
+//
+// COST CONTROL, and the cheapest kind there is. The billable unit on D1 is ROWS READ, and
+// a public endpoint answering the same question repeatedly pays for it every time. The
+// data changes only when the database is redeployed, so two identical queries an hour
+// apart must return the same rows -- there is nothing to be gained by asking twice.
+//
+// On the free plan this is availability rather than money: D1 stops answering at 5 million
+// rows read in a day and starts again tomorrow, it does not bill. Caching is what keeps a
+// day's budget from being spent on repeats.
+const CACHE_SECONDS = 600
 
 const FORBIDDEN =
   /\b(insert|update|delete|drop|alter|create|replace|attach|detach|pragma|vacuum|reindex|analyze)\b/i
@@ -188,6 +199,23 @@ export async function onRequest(context) {
   if (why) return json({ error: 'refused', message: why, ...HELP }, 400)
 
   const { sql: finalSql, imposed } = bounded(sql)
+
+  // Identical question, identical answer: serve it from the edge and read no rows.
+  // Keyed on the statement and its parameters, on a URL of our own making so that a POST
+  // and a GET of the same query share one entry.
+  const cache = caches.default
+  const cacheKey = new Request(
+    `https://query.invalid/${encodeURIComponent(finalSql)}|${encodeURIComponent(JSON.stringify(params))}`,
+    { method: 'GET' })
+  const hit = await cache.match(cacheKey)
+  if (hit) {
+    const body = await hit.text()
+    return new Response(body, {
+      headers: { ...HEADERS, 'cache-control': `public, max-age=${CACHE_SECONDS}`,
+                 'x-query-cache': 'hit' },
+    })
+  }
+
   const started = Date.now()
   let out
   try {
@@ -203,7 +231,7 @@ export async function onRequest(context) {
   }
 
   const rows = out.results || []
-  return json({
+  const payload = {
     resource: 'query',
     sql: finalSql,
     params,
@@ -211,8 +239,19 @@ export async function onRequest(context) {
     truncated: imposed !== null && rows.length === imposed,
     limitImposed: imposed,
     ms: Date.now() - started,
+    // What this query cost, stated. Rows READ is the billable unit on D1 and it is not
+    // the number of rows you got back: a COUNT over 4,665 rows returns one row and reads
+    // all of them. Published so an expensive query is visible as expensive.
+    rowsRead: (out.meta && out.meta.rows_read) ?? null,
     provenance: await provenanceFor(db, rows),
     readFirst: 'https://lunenburgbudgetproject.org/api/schema',
     rows,
+  }
+  const body = JSON.stringify(payload, null, 1) + '\n'
+  const res = new Response(body, {
+    headers: { ...HEADERS, 'cache-control': `public, max-age=${CACHE_SECONDS}`,
+               'x-query-cache': 'miss' },
   })
+  context.waitUntil(cache.put(cacheKey, res.clone()))
+  return res
 }
