@@ -504,7 +504,14 @@ real anchors, and was still refused. So being a link is not sufficient; being IN
 what reaches that tool, and the sitemap is where that starts. It now lists 67 URLs: 24
 pages and 43 addresses a program needs.
 
-**3. A URL the user pastes is always fetchable.** That is the immediate unblock when an
+**3. Being indexed is pushed, not waited for.** `check_sitemap.py --submit` sends the
+sitemap's URLs to IndexNow, which Bing, Yandex, Seznam and Naver honour — Bing matters
+because several agent search tools are built on it. Google does not participate; for
+Google, **Search Console is the only honest answer** to "has this been indexed", and it
+needs the domain verified. Nothing here scrapes a `site:` query and calls the count a
+measurement.
+
+**4. A URL the user pastes is always fetchable.** That is the immediate unblock when an
 agent is refused, and it is worth telling people: paste `/api/tables` or a query URL into
 the prompt and the tool will take it.
 
@@ -513,6 +520,8 @@ the prompt and the tool will take it.
     python3 scripts/check_generated.py      # EVERY generator still reproduces its output
     python3 scripts/build_sitemap.py        # the sitemap, generated — pages AND endpoints
     python3 scripts/check_github_mirror.py  # the fallback for agents that cannot reach the site
+    python3 scripts/check_sitemap.py        # the live sitemap, and every URL in it, answers
+    python3 scripts/check_sitemap.py --submit    # ...and tell the IndexNow engines it changed
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present
