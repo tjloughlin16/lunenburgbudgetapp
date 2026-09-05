@@ -724,8 +724,12 @@ alone. Something other than the contract percentages accounts for the rest.
 
 **What it does not establish:** what that something is. It could be more staff, staff at
 higher classifications or further along the step scale, more hours, or a change in which
-account a position is coded to. The budget shows dollars per line and never people, and
-the district does not publish staff counts. We cannot say which.
+account a position is coded to. The budget shows dollars per line and never people. Two
+headcount sources exist — DESE's paraprofessional FTE above, and the per-school staff
+rosters the town prints in every annual report, FY2011–FY2025, extracted to
+`sources/data/staff-roster-entries.csv` — and **neither can separate those four
+explanations**, because DESE gives FTE without classification and a roster gives names
+without FTE. We cannot say which.
 
 What does follow is narrower and still useful: describing this line with a single growth
 rate conflates the bargained part with the unexplained part, and it wrongly implies

@@ -55,8 +55,13 @@ It is not a claim that special education is under control, and it is not a forec
 assumes one specific thing: that the FY27 hiring was a step and not the first year of a
 climb. If more paras are hired every year -- because more children arrive needing one,
 or because the ones here need more -- this rate is too low and the model understates the
-gap. Nothing in a budget column can distinguish those, because a budget shows dollars per
-line and never shows people, and the district does not publish staff counts.
+gap. A budget column cannot distinguish those on its own, because it shows dollars per line
+and never people. Two headcount sources exist and neither settles it: DESE publishes
+paraprofessional FTE per district per year, with no classification and no school, and the
+town prints per-school staff rosters by name and position in every annual report from
+FY2011 to FY2025 -- `sources/data/staff-roster-entries.csv` -- with no FTE and no funding
+source. A count of names the town printed is a real quantity and it is not a staffing
+level.
 
 The range below is published beside the rate for that reason. It is not decoration.
 """

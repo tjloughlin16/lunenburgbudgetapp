@@ -1,0 +1,15 @@
+{
+ "schema_version": "v1",
+ "name_for_human": "Lunenburg Budget Project",
+ "name_for_model": "lunenburg_budget",
+ "description_for_human": "An independent, checkable archive of the Lunenburg, Massachusetts town and school budget.",
+ "description_for_model": "Read https://lunenburgbudgetproject.org/llms.txt first \u2014 it is written for you and states what this archive holds and what it does not. Every dataset is fetchable at https://lunenburgbudgetproject.org/api/tables, sized so you can decide before asking. Every figure traces to a published document with a URL and a sha256.",
+ "api": {
+  "type": "openapi",
+  "url": "https://lunenburgbudgetproject.org/openapi.json"
+ },
+ "guide": "https://lunenburgbudgetproject.org/llms.txt",
+ "index": "https://lunenburgbudgetproject.org/api/index",
+ "contact_email": null,
+ "legal_info_url": "https://lunenburgbudgetproject.org/sources"
+}

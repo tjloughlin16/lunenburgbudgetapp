@@ -601,6 +601,77 @@ def main():
         contact=f'{SITE}/sources',
     ))
 
+    # ---- layer 3: the two addresses an agent probes before asking anything ----------
+    #
+    # `/openapi.json` and `/.well-known/ai-plugin.json` are what a program fetches to find
+    # out whether a site has an API at all. Both returned 261KB of the app shell with a
+    # 200 -- the soft 404 that `functions/_notfound.js` was written against, sitting just
+    # outside the three prefixes it covers. An agent that asks the standard question gets
+    # HTML, and either throws or, worse, parses something.
+    #
+    # They are answered properly rather than 404'd, because there IS an API and this is
+    # where a caller looks for it.
+    paths = {}
+    for e in endpoints:
+        if '/api/' not in e['url']:
+            continue
+        p_ = e['url'].split('lunenburgbudgetproject.org', 1)[1]
+        paths[p_] = {'get': {
+            'summary': e['about'],
+            'responses': {'200': {
+                'description': f"{e.get('bytes') or 0} bytes of JSON",
+                'content': {'application/json': {'schema': {'type': 'object'}}}}}}}
+    for t in tables_listed:
+        p_ = t['url'].split('lunenburgbudgetproject.org', 1)[1]
+        note = (f"{t['rows']:,} rows, split by {t['splitBy']} into {t['parts']} files"
+                if t.get('splitBy') else f"{t['rows']:,} rows")
+        paths[p_] = {'get': {
+            'summary': f'The `{p_.rsplit("/", 1)[1]}` table. {note}.',
+            'responses': {'200': {
+                'description': f"{t['bytes']} bytes of JSON",
+                'content': {'application/json': {'schema': {'type': 'object'}}}}}}}
+
+    written['api/openapi'] = write('openapi', dict({
+        'openapi': '3.1.0',
+        'info': dict(
+            title='Lunenburg Budget Project — read-only data API',
+            version=UPDATED if 'UPDATED' in globals() else '1',
+            description='An independent archive of the Lunenburg, Massachusetts town and '
+                        'school budget. Static JSON, no authentication, no rate limit, '
+                        'nothing computed per request. Read /api/schema before computing '
+                        'anything: it states the grain of every table and the specific '
+                        'ways to get a confident wrong answer out of this data.'),
+        'servers': [dict(url=SITE)],
+        'paths': paths,
+    }))
+    shutil.copyfile(os.path.join(API, 'openapi.json'),
+                    os.path.join(PUB, 'openapi.json'))
+    written['openapi.json'] = os.path.getsize(os.path.join(PUB, 'openapi.json'))
+
+    wk = os.path.join(PUB, '.well-known')
+    os.makedirs(wk, exist_ok=True)
+    with open(os.path.join(wk, 'ai-plugin.json'), 'w', encoding='utf-8') as fh:
+        json.dump(dict(
+            schema_version='v1',
+            name_for_human='Lunenburg Budget Project',
+            name_for_model='lunenburg_budget',
+            description_for_human='An independent, checkable archive of the Lunenburg, '
+                                  'Massachusetts town and school budget.',
+            description_for_model='Read ' + SITE + '/llms.txt first — it is written for '
+                                  'you and states what this archive holds and what it '
+                                  'does not. Every dataset is fetchable at '
+                                  + SITE + '/api/tables, sized so you can decide before '
+                                  'asking. Every figure traces to a published document '
+                                  'with a URL and a sha256.',
+            api=dict(type='openapi', url=f'{SITE}/openapi.json'),
+            guide=f'{SITE}/llms.txt',
+            index=f'{SITE}/api/index',
+            contact_email=None,
+            legal_info_url=f'{SITE}/sources',
+        ), fh, indent=1)
+    written['.well-known/ai-plugin.json'] = os.path.getsize(
+        os.path.join(wk, 'ai-plugin.json'))
+
     print('Published the database as an API\n')
     for k in sorted(written):
         print('  %-24s %8.1f KB' % (k, written[k] / 1024))

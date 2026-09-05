@@ -146,9 +146,15 @@ CITATIONS = [
                 '6.80%; each was built on fewer budget years than the archive turned out '
                 'to hold. '
                 'What it still assumes is that the climb continues at roughly the rate it '
-                'has held. Nothing in a budget column can test that \u2014 a budget shows '
-                'dollars per line and never shows people, and the district does not '
-                'publish staff counts. The full range is published beside the rate.'),
+                'has held. A budget column cannot test that by itself \u2014 it shows '
+                'dollars per line and never people. Two headcount sources exist and '
+                'neither closes it: DESE publishes paraprofessional FTE per district '
+                'per year, without classification or school, and the town prints '
+                'per-school staff rosters by name and position in every annual report, '
+                'FY2011\u2013FY2025, without any FTE at all \u2014 published at '
+                '/data/staff-roster-entries.csv and /data/staff-roster-counts.csv. A '
+                'count of names is not a staffing level. The full range is published '
+                'beside the rate.'),
          doc='budget-workbooks/fy27-proposals.xlsx',
          source='FY27 budget workbook with the district\u2019s budget documents '
                 'FY17\u2013FY27, extracted by scripts/extract_budget_history.py; '

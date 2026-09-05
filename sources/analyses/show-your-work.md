@@ -535,7 +535,11 @@ nor the lowest, and anyone who prefers a different one can see what it costs.
   arrive needing one, or because the ones here need more — this rate is too low and
   the projection understates the gap.
 - **A budget line is dollars, not people.** Nothing here shows headcount. The
-  district does not publish staff counts, so "the line grew" cannot be turned into
+  budget shows none. Two sources do and neither settles it: DESE publishes
+  paraprofessional FTE per district and year with no school or classification, and
+  the town prints per-school staff rosters by name in every annual report,
+  FY2011-FY2025, with no FTE (/data/staff-roster-entries.csv). So "the line grew"
+  still cannot be turned into
   "the district employs more paraprofessionals" without inventing the step between.
 - **This is the one that carries the most weight.** This rate rests on a
   paraprofessional line, and a line that rises because a grant ended looks exactly
