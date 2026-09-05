@@ -109,6 +109,14 @@ const HELP = {
   endpoint: '/api/query',
   how: 'GET /api/query?sql=<url-encoded SQL> — works with any fetch tool, including one '
     + 'that cannot POST. Or POST {"sql": "SELECT ...", "params": []} if you can.',
+  limits: {
+    rate: 'About ten requests per ten seconds per IP. A fourth is refused by the edge with '
+      + 'HTTP 429 and a seventeen-byte body reading `error code: 1015` — that is a rate '
+      + 'limit, not an error and not a gap in the data. Wait ten seconds.',
+    daily: 'This endpoint computes on request and has a daily usage limit. Static files '
+      + 'have none.',
+    unlimited: `${SITE}/api/tables and everything it lists are static and never limited.`,
+  },
   rules: [
     'One statement. It must start with SELECT or WITH.',
     `A LIMIT is added if you omit one, and capped at ${MAX_ROWS} rows.`,

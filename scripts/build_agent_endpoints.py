@@ -167,6 +167,25 @@ def a_real_bundle():
     return dict(name=os.path.basename(f), kb=round(os.path.getsize(f) / 1024))
 
 
+def rate_limit():
+    """How many requests per ten seconds reach /api/query, as measured.
+
+    The limit is a Cloudflare zone rule and lives nowhere in this repository, so this is
+    the one number in llms.txt that cannot be derived from the data. It is measured
+    instead, by `scripts/check_rate_limit.py`, and written to a file this reads -- so the
+    published figure is at least something somebody observed rather than something
+    somebody remembered.
+
+    "About", because the counter is per colo and the window rolls: two probes minutes
+    apart measured 8 and 12 against a rule set to 10.
+    """
+    path = os.path.join(ROOT, 'sources', 'data', 'rate-limit.txt')
+    try:
+        return int(open(path).read().strip())
+    except Exception:
+        return 10
+
+
 def worked_example():
     """The three-step search example in llms.txt, read out of the index it describes.
 
@@ -695,6 +714,15 @@ def main():
         f'The scanned PDF behind it is 16.8MB, is not in the git repository, and is '
         f'served from object storage under the same `/docs/` prefix \u2014 fetch it only '
         f'if you can hold 16.8MB, and read the parts otherwise.',
+        '',
+        f'**If you get HTTP 429 and the body `error code: 1015`, that is a per-IP rate '
+        f'limit, not an error and not a gap.** About {rate_limit()} requests per ten '
+        f'seconds reach '
+        f'`/api/query`; a fourth is refused by the edge before this project sees it, which '
+        f'is why the body is seventeen bytes and explains nothing. Wait ten seconds and '
+        f'continue. **Nothing else here is rate limited** \u2014 every static file, every '
+        f'per-year dataset and the whole database are served without any limit at all, so '
+        f'if you are in a hurry use those instead: `{SITE}/api/tables`.',
         '',
         f'**The query API has a daily usage limit, and a limit is not an absence.** If it '
         f'answers `daily_limit_reached`, the archive has not lost anything \u2014 the same '
