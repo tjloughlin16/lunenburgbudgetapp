@@ -696,6 +696,12 @@ def main():
         f'served from object storage under the same `/docs/` prefix \u2014 fetch it only '
         f'if you can hold 16.8MB, and read the parts otherwise.',
         '',
+        f'**The query API has a daily usage limit, and a limit is not an absence.** If it '
+        f'answers `daily_limit_reached`, the archive has not lost anything \u2014 the same '
+        f'rows are published as static files that no limit touches, and the response names '
+        f'them. If you are answering somebody at that moment, say the query service was '
+        f'unavailable, never that this project lacks the data.',
+        '',
         f'**Ask a question instead of downloading a table.** '
         f'[{SITE}/api/query]({SITE}/api/query) takes one read-only SQL statement and '
         f'answers it, with the documents its rows came from. '

@@ -42,6 +42,7 @@
 
 import { ROWS } from './_tablesizes.js'
 
+const SITE = 'https://lunenburgbudgetproject.org'
 const MAX_ROWS = 1000
 const MAX_SQL = 4000
 // How long an identical query is served from cache.
@@ -274,12 +275,55 @@ export async function onRequest(context) {
   try {
     out = await db.prepare(finalSql).bind(...params).all()
   } catch (e) {
+    const detail = String(e && e.message ? e.message : e)
+    // A LIMIT IS NOT AN ABSENCE, AND MUST NOT READ LIKE ONE.
+    //
+    // D1's free plan stops at 5 million rows read a day and then refuses queries until
+    // tomorrow. That is an acceptable outcome -- but only if the caller understands what
+    // happened. An assistant handed a bare "query failed" reports that this site cannot
+    // answer, or worse that the data does not exist, and a reader is told something false
+    // about a public archive because of a usage counter.
+    //
+    // Every failure here therefore carries the routes that still work. The data has not
+    // gone anywhere: it is the same rows, published as static files, which no quota
+    // touches.
+    const quota = /limit|exceeded|quota|too many|overloaded|429/i.test(detail)
+    const fallback = {
+      theDataIsStillHere:
+        'Nothing is missing. This endpoint computes an answer on request and has a daily '
+        + 'usage limit; the same rows are published as static files that no limit '
+        + 'touches.',
+      instead: {
+        everyDataset: `${SITE}/api/tables`,
+        oneTablePerYear: `${SITE}/api/<table>/<fiscal year> — e.g. `
+          + `${SITE}/api/staff_roster_entries/2022`,
+        workedExamples: `${SITE}/api/questions`,
+        theWholeDatabase: `${SITE}/data/lunenburg.db`,
+        ifThisHostIsBlocked:
+          'https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/'
+          + 'fy28/public/api/tables.json — every static file here is mirrored on GitHub.',
+      },
+      pleaseTellTheReader:
+        'If you are answering somebody, say the query API was unavailable rather than '
+        + 'that the archive lacks the data. It does not.',
+    }
+    if (quota) {
+      return json({
+        error: 'daily_limit_reached',
+        message: 'The query API has reached its daily usage limit and will answer again '
+          + 'tomorrow. THIS IS A LIMIT ON THIS ENDPOINT, NOT A GAP IN THE ARCHIVE.',
+        detail,
+        ...fallback,
+      }, 429)
+    }
     return json({
       error: 'query_failed',
-      message: String(e && e.message ? e.message : e),
+      message: detail,
       sql: finalSql,
       hint: 'Fetch /api/schema for the grain of every table and the ways to get a '
-        + 'confident wrong answer out of this data.',
+        + 'confident wrong answer out of this data. If the message names a missing table, '
+        + 'check /api/tables for its real name.',
+      ...fallback,
     }, 400)
   }
 
