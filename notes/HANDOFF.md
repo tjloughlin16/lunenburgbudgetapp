@@ -10,6 +10,18 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 
 ---
 
+## An open decision found on 5 September 2026, not resolved here
+
+`sources/analyses/athletics-ledger.md` §7 no longer recomputes, and the gap moves a published
+headline: the town's appropriation covering **44%** of what the district's workbook says
+athletics cost becomes **35%** on the current data. The cause is which document FY2024
+athletics actuals are read from — `athletics-history.csv` holds three coach lines for
+FY2020–FY2022 and FY2026 and only one for FY2023–FY2025, faithfully, because the source those
+years come from prints a dash in the FY2024 column for the other two.
+
+Deliberately not rewritten. `notes/findings/ATHLETICS-LEDGER-FY2024-DRIFT.md` has the quoted
+source lines and what has to be decided.
+
 ## 0. STATE, as of 2 September 2026
 
 | | |

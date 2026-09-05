@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04",
+ "generated": "2026-09-05",
  "origins": [
   {
    "id": "school",
@@ -40,11 +40,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 22 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 35 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 35 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 157 of these 172 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 298 of these 313 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -1270,7 +1270,7 @@
      "stars": 2,
      "what": "The one program where both sides of the money are visible, and therefore a test case for the whole budget: how far is an appropriation from what a thing costs? Very far. The district published athletics against the revolving fund once, for FY19, and in every year that document reports as actual the fund paid more of athletic transportation than the town did. Also what an \"actual\" on this line really is — in the one ledger view we have, a purchase order with nothing yet paid. Verify with scripts/verify_athletics.py.",
      "kind": "Notes",
-     "bytes": 42241,
+     "bytes": 42236,
      "url": "/docs/analyses/athletics.md",
      "count": 748,
      "unit": "lines",
@@ -1400,6 +1400,375 @@
   },
   {
    "section": "ours",
+   "id": "annual-reports",
+   "origin": "us",
+   "title": "Fifteen years of annual town reports, read into tables",
+   "blurb": "The sixteen annual town reports, FY2011–FY2025, read page by page and turned into machine-readable tables. Two of these answer questions this project had recorded as unanswerable. Most of the rest are transcriptions that arithmetic cannot yet check, and every row says which it is.",
+   "items": [
+    {
+     "path": "data/special-revenue-funds.csv",
+     "title": "The special revenue funds, FY2011–FY2025",
+     "stars": 3,
+     "what": "2,387 rows. These are the funds rule 11 says the budget documents cannot show you — grants, revolving funds and gifts that pay for real staff and appear nowhere in the appropriation. 693 rows prove themselves on the fund’s own identity (forward + receipts − disbursements = carried forward), and 351 lost cells are recovered from it, written into their own column and never into a value column. See data/PROVENANCE-special-revenue-funds.md.",
+     "kind": "Data",
+     "bytes": 952049,
+     "url": "/docs/data/special-revenue-funds.csv",
+     "count": 2387,
+     "unit": "rows",
+     "textUrl": "/docs/data/special-revenue-funds.csv"
+    },
+    {
+     "path": "data/staff-roster-entries.csv",
+     "title": "Every name the town printed on a school staff roster, FY2011–FY2025",
+     "stars": 3,
+     "what": "3,815 entries across 15 years, 7 schools and 100 pages. This BOUNDS the question of whether budgeted positions were filled; it does not settle it. A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row each; no funding source, which is the question that actually matters; and it is a point in time, undated within the year. A count of names the town printed is a real quantity and it is not a staffing level.",
+     "kind": "Data",
+     "bytes": 445869,
+     "url": "/docs/data/staff-roster-entries.csv",
+     "count": 3815,
+     "unit": "rows",
+     "textUrl": "/docs/data/staff-roster-entries.csv"
+    },
+    {
+     "path": "data/annual-report-receipts.csv",
+     "title": "Town receipts by source, FY2011–FY2023",
+     "stars": 3,
+     "what": "1,137 rows, of which 504 tie to the report’s own printed GRAND TOTAL twice over. Never aggregate without splitting on the status column: 85 rows are in years whose check failed and 548 in years that print no total. See data/PROVENANCE-annual-report-receipts.md.",
+     "kind": "Data",
+     "bytes": 94575,
+     "url": "/docs/data/annual-report-receipts.csv",
+     "count": 1137,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-receipts.csv"
+    },
+    {
+     "path": "data/dataset-provenance.csv",
+     "title": "Every dataset row joined to the document it came from",
+     "stars": 3,
+     "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
+     "kind": "Data",
+     "bytes": 70399,
+     "url": "/docs/data/dataset-provenance.csv",
+     "count": 225,
+     "unit": "rows",
+     "textUrl": "/docs/data/dataset-provenance.csv"
+    },
+    {
+     "path": "data/PROVENANCE-staff-rosters.md",
+     "title": "Where the staff rosters came from, and what a name is not",
+     "stars": 3,
+     "what": "Written by us. The 100 pages, the one known defect (a hyphen-wrapped surname), and the three reasons a roster count is not a staffing level.",
+     "kind": "Notes",
+     "bytes": 11673,
+     "url": "/docs/data/PROVENANCE-staff-rosters.md",
+     "count": 235,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-staff-rosters.md"
+    },
+    {
+     "path": "data/PROVENANCE-report-tables.md",
+     "title": "What the twelve generic extracts are, and what may not be done with them",
+     "stars": 3,
+     "what": "Written by us, generated from the data so its figures cannot drift. Why v1 is an ordinal and not a column, what each of the three status words means, what every other column carries, and the four things these tables do not tell you. Read this before quoting any figure out of the tables above.",
+     "kind": "Notes",
+     "bytes": 5801,
+     "url": "/docs/data/PROVENANCE-report-tables.md",
+     "count": 103,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-report-tables.md"
+    },
+    {
+     "path": "data/PROVENANCE-placement-counts.md",
+     "title": "Where the placement counts came from, and what they are not",
+     "stars": 3,
+     "what": "Written by us. Which sentence of which page each year came from, the two checks the source itself supplies, the misprint in the FY2023 report, and why DESE’s Out-of-District FTE series is NOT a cross-check — it runs ten times larger because it counts vocational, choice and charter pupils too. Both series decline, which is easy to mistake for agreement.",
+     "kind": "Notes",
+     "bytes": 4476,
+     "url": "/docs/data/PROVENANCE-placement-counts.md",
+     "count": 97,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-placement-counts.md"
+    },
+    {
+     "path": "data/ballot-questions.csv",
+     "title": "What the town was asked to fund, and whether it agreed",
+     "stars": 3,
+     "what": "7 records. Every tally verified against its own precinct figures. This is the other question the reports answered that nothing else could: an override or debt exclusion is the moment the town decides, and the budget documents record only the outcome’s consequences.",
+     "kind": "Data",
+     "bytes": 2301,
+     "url": "/docs/data/ballot-questions.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/ballot-questions.csv"
+    },
+    {
+     "path": "data/placement-counts.csv",
+     "title": "Out-of-district placements, by year, FY2011–FY2025",
+     "stars": 3,
+     "what": "15 rows, and the answer to a standing question. CLAUDE.md listed out-of-district placement counts among the numbers that would settle more than any further analysis, and recorded them as not published. They are published — in the Special Services report inside each annual town report, sourced to SIMS Report 7 and measured on 1 March, split into collaborative, day and residential. It is two sentences of prose with no heading naming it, which is why fifteen years of it went unread. Two checks come with it: the parts sum to the total, and each year states the previous year’s figure. It is a count of CHILDREN and says nothing about which fund paid or what any placement cost. See data/PROVENANCE-placement-counts.md.",
+     "kind": "Data",
+     "bytes": 2120,
+     "url": "/docs/data/placement-counts.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/placement-counts.csv"
+    },
+    {
+     "path": "data/report-appropriations.csv",
+     "title": "The general fund appropriations, both tables, FY2011–FY2025",
+     "stars": 2,
+     "what": "4,665 rows and the largest of these extracts. It holds TWO different tables — the Town Accountant’s schedule of the year that closed, and the town meeting omnibus budget for the year ahead — told apart by the table_family column, because averaging one against the other would be a confident wrong answer. Read column_meaning before reading a value: the v columns are ordinals, and where the table states an identity that fixes them they are named. No year currently ties to its own printed total.",
+     "kind": "Data",
+     "bytes": 3060276,
+     "url": "/docs/data/report-appropriations.csv",
+     "count": 4665,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-appropriations.csv"
+    },
+    {
+     "path": "data/annual-report-catalogue.csv",
+     "title": "Every table in every annual report, catalogued",
+     "stars": 2,
+     "what": "863 blocks found by reading all sixteen reports end to end rather than by searching them. It carries each table’s PRINTED heading, because the headings differ between years and that is precisely what defeats a search. The cross-year grouping is a hypothesis about which tables are the same table, not a fact.",
+     "kind": "Data",
+     "bytes": 881301,
+     "url": "/docs/data/annual-report-catalogue.csv",
+     "count": 863,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-catalogue.csv"
+    },
+    {
+     "path": "data/report-elections.csv",
+     "title": "The vote, by candidate and precinct",
+     "stars": 2,
+     "what": "2,012 rows. 323 prove themselves — the precinct figures sum to the total the report prints beside them — and where exactly one cell was lost to the scan it is derived from the row’s own total and written into derived_cell, never into a value column, because we know what the missing figure must be and not which column it sat in.",
+     "kind": "Data",
+     "bytes": 409929,
+     "url": "/docs/data/report-elections.csv",
+     "count": 2012,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-elections.csv"
+    },
+    {
+     "path": "data/extraction-plan.csv",
+     "title": "Which pages each dataset was read from",
+     "stars": 2,
+     "what": "553 rows joining a dataset and an edition to the pages it was taken off. This is what makes a figure findable in the original.",
+     "kind": "Data",
+     "bytes": 286235,
+     "url": "/docs/data/extraction-plan.csv",
+     "count": 553,
+     "unit": "rows",
+     "textUrl": "/docs/data/extraction-plan.csv"
+    },
+    {
+     "path": "data/report-anomalies.csv",
+     "title": "What looks wrong in the extracts, and where to look",
+     "stars": 2,
+     "what": "521 rows naming the pages and rows whose reading is not credible — a total smaller than the rows beneath it, a figure larger than the table it sits in, a cell that plainly held money and did not parse. A list of places to look, not a list of the town’s mistakes.",
+     "kind": "Data",
+     "bytes": 160253,
+     "url": "/docs/data/report-anomalies.csv",
+     "count": 521,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-anomalies.csv"
+    },
+    {
+     "path": "data/staff-roster-counts.csv",
+     "title": "Roster headcount by school and year",
+     "stars": 2,
+     "what": "699 rows: how many names appear on each school’s roster in each year. The same caveat governs it — see data/PROVENANCE-staff-rosters.md.",
+     "kind": "Data",
+     "bytes": 23616,
+     "url": "/docs/data/staff-roster-counts.csv",
+     "count": 699,
+     "unit": "rows",
+     "textUrl": "/docs/data/staff-roster-counts.csv"
+    },
+    {
+     "path": "data/PROVENANCE-annual-report-receipts.md",
+     "title": "Where the receipts came from",
+     "stars": 2,
+     "what": "Written by us: the page each year was read from, the two totals each year is checked against, and what the status column means.",
+     "kind": "Notes",
+     "bytes": 12854,
+     "url": "/docs/data/PROVENANCE-annual-report-receipts.md",
+     "count": 134,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
+    },
+    {
+     "path": "data/PROVENANCE-special-revenue-funds.md",
+     "title": "Where the special revenue funds came from",
+     "stars": 2,
+     "what": "Written by us: the identity each row is checked against, what a recovered cell is, and why a recovered value is never written into a value column.",
+     "kind": "Notes",
+     "bytes": 6644,
+     "url": "/docs/data/PROVENANCE-special-revenue-funds.md",
+     "count": 88,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-special-revenue-funds.md"
+    },
+    {
+     "path": "data/report-trust-funds.csv",
+     "title": "Trust and stabilisation funds",
+     "stars": 1,
+     "what": "642 rows. 12 tie; the rest do not, and two years read their own grand total as $7.00 and −$19.00, which is our reading and not the town’s figure.",
+     "kind": "Data",
+     "bytes": 488913,
+     "url": "/docs/data/report-trust-funds.csv",
+     "count": 642,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-trust-funds.csv"
+    },
+    {
+     "path": "data/report-gross-wages.csv",
+     "title": "Gross wages paid, by employee",
+     "stars": 1,
+     "what": "3,545 rows. The town publishes every employee’s gross wage; nothing in it says which fund paid, which is the question rule 11 keeps asking. No arithmetic check is available — these pages print no total.",
+     "kind": "Data",
+     "bytes": 478182,
+     "url": "/docs/data/report-gross-wages.csv",
+     "count": 3545,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-gross-wages.csv"
+    },
+    {
+     "path": "data/report-capital-projects.csv",
+     "title": "Capital project authorisations",
+     "stars": 1,
+     "what": "616 rows. None tie yet.",
+     "kind": "Data",
+     "bytes": 410405,
+     "url": "/docs/data/report-capital-projects.csv",
+     "count": 616,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-capital-projects.csv"
+    },
+    {
+     "path": "data/report-debt.csv",
+     "title": "Debt outstanding, issued and retired",
+     "stars": 1,
+     "what": "354 rows, 74 of which tie to a printed total.",
+     "kind": "Data",
+     "bytes": 268522,
+     "url": "/docs/data/report-debt.csv",
+     "count": 354,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-debt.csv"
+    },
+    {
+     "path": "data/annual-report-survey.csv",
+     "title": "Every page of every report, and how it can be read",
+     "stars": 1,
+     "what": "2,751 rows — one per page — recording which instrument recovers that page and how much of it. The instrument is part of the finding.",
+     "kind": "Data",
+     "bytes": 253142,
+     "url": "/docs/data/annual-report-survey.csv",
+     "count": 2751,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-survey.csv"
+    },
+    {
+     "path": "data/report-dept-activity.csv",
+     "title": "What each department reports doing",
+     "stars": 1,
+     "what": "515 rows of counts departments publish about their own year.",
+     "kind": "Data",
+     "bytes": 158335,
+     "url": "/docs/data/report-dept-activity.csv",
+     "count": 515,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-dept-activity.csv"
+    },
+    {
+     "path": "data/report-enrollment-mcas.csv",
+     "title": "Enrolment and MCAS results",
+     "stars": 1,
+     "what": "337 rows. No arithmetic check available.",
+     "kind": "Data",
+     "bytes": 85533,
+     "url": "/docs/data/report-enrollment-mcas.csv",
+     "count": 337,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-enrollment-mcas.csv"
+    },
+    {
+     "path": "data/report-valuation.csv",
+     "title": "Valuation and tax rate history",
+     "stars": 1,
+     "what": "316 rows. No printed totals, so no arithmetic check.",
+     "kind": "Data",
+     "bytes": 77521,
+     "url": "/docs/data/report-valuation.csv",
+     "count": 316,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-valuation.csv"
+    },
+    {
+     "path": "data/report-officials.csv",
+     "title": "Who held which town office",
+     "stars": 1,
+     "what": "237 rows. A list of names and terms; no total to check it against.",
+     "kind": "Data",
+     "bytes": 76788,
+     "url": "/docs/data/report-officials.csv",
+     "count": 237,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-officials.csv"
+    },
+    {
+     "path": "data/annual-report-contents.csv",
+     "title": "What each report contains, section by section",
+     "stars": 1,
+     "what": "199 rows. The shape of the document rather than the town’s figures.",
+     "kind": "Data",
+     "bytes": 28585,
+     "url": "/docs/data/annual-report-contents.csv",
+     "count": 199,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-contents.csv"
+    },
+    {
+     "path": "data/report-monty-tech.csv",
+     "title": "Montachusett Regional assessment and enrolment",
+     "stars": 1,
+     "what": "70 rows. The vocational assessment is one of the largest single lines the town votes and one of the least discussed.",
+     "kind": "Data",
+     "bytes": 28515,
+     "url": "/docs/data/report-monty-tech.csv",
+     "count": 70,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-monty-tech.csv"
+    },
+    {
+     "path": "data/report-vital-records.csv",
+     "title": "Births, marriages and deaths",
+     "stars": 1,
+     "what": "96 rows from the Town Clerk’s report.",
+     "kind": "Data",
+     "bytes": 19040,
+     "url": "/docs/data/report-vital-records.csv",
+     "count": 96,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-vital-records.csv"
+    },
+    {
+     "path": "data/staff-position-map.csv",
+     "title": "Roster position titles, grouped",
+     "stars": 1,
+     "what": "534 rows mapping the position titles printed on the rosters onto groups. A hypothesis about which titles are the same job, not a fact about the town.",
+     "kind": "Data",
+     "bytes": 15131,
+     "url": "/docs/data/staff-position-map.csv",
+     "count": 534,
+     "unit": "rows",
+     "textUrl": "/docs/data/staff-position-map.csv"
+    }
+   ]
+  },
+  {
+   "section": "ours",
    "id": "derived",
    "origin": "us",
    "title": "Built by this project",
@@ -1435,7 +1804,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 6197248,
+     "bytes": 16080896,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -1488,6 +1857,18 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
+     "path": "data/document-basis.csv",
+     "title": "What produced each document’s figures",
+     "stars": 3,
+     "what": "Every document in this archive classified by SOURCE TYPE: ledger (the accounting system — a figure exists because a transaction did), restatement (a prior year re-presented inside a document written by the party that spent it), forward (proposed, requested, level service, balanced), or narrative. Each row quotes the raw header text the classification rests on, with its line number or cell reference, so any row can be checked in one grep; workbook rows also record which columns are HIDDEN. Of 349 documents, 10 are ledger-basis and exactly one of those reaches school budget lines. Rebuild with scripts/classify_document_basis.py.",
+     "kind": "Data",
+     "bytes": 85698,
+     "url": "/docs/data/document-basis.csv",
+     "count": 349,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-basis.csv"
+    },
+    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -1522,18 +1903,6 @@
      "count": 356,
      "unit": "rows",
      "textUrl": "/docs/data/lps-budget-lines.csv"
-    },
-    {
-     "path": "data/document-basis.csv",
-     "title": "What produced each document’s figures",
-     "stars": 3,
-     "what": "Every document in this archive classified by SOURCE TYPE: ledger (the accounting system — a figure exists because a transaction did), restatement (a prior year re-presented inside a document written by the party that spent it), forward (proposed, requested, level service, balanced), or narrative. Each row quotes the raw header text the classification rests on, with its line number or cell reference, so any row can be checked in one grep; workbook rows also record which columns are HIDDEN. Of 216 documents, 15 are ledger-basis and exactly one of those reaches school budget lines. Rebuild with scripts/classify_document_basis.py.",
-     "kind": "Data",
-     "bytes": 49299,
-     "url": "/docs/data/document-basis.csv",
-     "count": 207,
-     "unit": "rows",
-     "textUrl": "/docs/data/document-basis.csv"
     },
     {
      "path": "data/fund-1301-cash-journal.csv",
@@ -1668,6 +2037,19 @@
      "textUrl": "/docs/data/capital-plan-fy27.csv"
     },
     {
+     "path": "munis-ledgers/expenses/PROVENANCE-fy2026-p09.md",
+     "title": "Provenance for the FY26 period 9 ledgers — and the gap in it",
+     "stars": 3,
+     "what": "Written by us. What the reports say about themselves, quoted from their own printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town Accountant whose name the report prints, year/period 2026/9, and the general fund run made with `Print totals only: Y`, which is why it carries 67 department rollups and no accounts. And then the part that matters: NOTHING in this archive records how these files were obtained. They are not on the town’s website and no email, records request or meeting packet is recorded for them. Rule 12 says a document that did not come off a website still has an address; this one’s is missing, and the note records the gap rather than inventing a route.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 1995,
+     "url": "/docs/munis-ledgers/expenses/PROVENANCE-fy2026-p09.md",
+     "count": 41,
+     "unit": "lines",
+     "textUrl": "/docs/munis-ledgers/expenses/PROVENANCE-fy2026-p09.md"
+    },
+    {
      "path": "data/sped-para-history.csv",
      "title": "Special education paraprofessionals, ten budgets",
      "stars": 3,
@@ -1745,9 +2127,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 58085,
+     "bytes": 58633,
      "url": "/docs/data/copy-status.csv",
-     "count": 198,
+     "count": 200,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -1835,6 +2217,32 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/capital-funding-history.csv"
+    },
+    {
+     "path": "munis-ledgers/revenue/PROVENANCE-fy2026-p09.md",
+     "title": "Provenance for the FY26 period 9 revenue reports",
+     "stars": 1,
+     "what": "A pointer: these arrived in the same package as the expenditure reports, and how that package was obtained is not recorded. The full note is in munis-ledgers/expenses/PROVENANCE-fy2026-p09.md.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 272,
+     "url": "/docs/munis-ledgers/revenue/PROVENANCE-fy2026-p09.md",
+     "count": 5,
+     "unit": "lines",
+     "textUrl": "/docs/munis-ledgers/revenue/PROVENANCE-fy2026-p09.md"
+    },
+    {
+     "path": "munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
+     "title": "Provenance for the FY26 period 9 fund balance reports",
+     "stars": 1,
+     "what": "The same pointer, filed with the fund balance reports.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 272,
+     "url": "/docs/munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
+     "count": 5,
+     "unit": "lines",
+     "textUrl": "/docs/munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md"
     }
    ]
   },
@@ -2817,7 +3225,7 @@
    "id": "town-budget",
    "origin": "town",
    "title": "The town’s budget and finance documents, mirrored",
-   "blurb": "Every budget-relevant document linked from the town’s finance pages — 47 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
+   "blurb": "Every budget-relevant document linked from the town’s finance pages — 188 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
    "items": [
     {
      "path": "town-budget/docs/4161-2026-annual-town-election-warrant.pdf",
@@ -2904,6 +3312,303 @@
      "alsoUsed": "town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf"
     },
     {
+     "path": "town-budget/docs/394-1-40-school-resource-officer-pdf.pdf",
+     "title": "1.40 School Resource Officer (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 615158,
+     "url": "/docs/town-budget/docs/394-1-40-school-resource-officer-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/394-1-40-school-resource-officer-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/394"
+    },
+    {
+     "path": "town-budget/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf",
+     "title": "2/3/25 Assessor Conference Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2521037,
+     "url": "/docs/town-budget/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/2504-2-3-25-assessor-conference-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2504"
+    },
+    {
+     "path": "town-budget/docs/a162-2015-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2015 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 3528401,
+     "url": "/docs/town-budget/docs/a162-2015-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a162-2015-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/162"
+    },
+    {
+     "path": "town-budget/docs/a164-2015-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2015 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 421109,
+     "url": "/docs/town-budget/docs/a164-2015-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a164-2015-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/164"
+    },
+    {
+     "path": "town-budget/docs/a163-2016-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2016 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2408666,
+     "url": "/docs/town-budget/docs/a163-2016-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a163-2016-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/163"
+    },
+    {
+     "path": "town-budget/docs/a165-2016-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2016 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 264143,
+     "url": "/docs/town-budget/docs/a165-2016-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a165-2016-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/165"
+    },
+    {
+     "path": "town-budget/docs/a67-2017-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2017 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1444762,
+     "url": "/docs/town-budget/docs/a67-2017-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a67-2017-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/67"
+    },
+    {
+     "path": "town-budget/docs/a166-2017-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2017 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2310610,
+     "url": "/docs/town-budget/docs/a166-2017-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a166-2017-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/166"
+    },
+    {
+     "path": "town-budget/docs/a61-2018-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2018 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2294492,
+     "url": "/docs/town-budget/docs/a61-2018-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a61-2018-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/61"
+    },
+    {
+     "path": "town-budget/docs/a63-2018-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2018 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 422320,
+     "url": "/docs/town-budget/docs/a63-2018-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a63-2018-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/63"
+    },
+    {
+     "path": "town-budget/docs/a62-2019-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2019 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2968150,
+     "url": "/docs/town-budget/docs/a62-2019-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a62-2019-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/62"
+    },
+    {
+     "path": "town-budget/docs/a167-2019-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2019 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 405762,
+     "url": "/docs/town-budget/docs/a167-2019-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a167-2019-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/167"
+    },
+    {
+     "path": "town-budget/docs/a64-2020-june-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2020 June Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 843513,
+     "url": "/docs/town-budget/docs/a64-2020-june-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a64-2020-june-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/64"
+    },
+    {
+     "path": "town-budget/docs/a65-2020-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2020 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 498057,
+     "url": "/docs/town-budget/docs/a65-2020-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a65-2020-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/65"
+    },
+    {
+     "path": "town-budget/docs/a66-2021-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2021 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1190496,
+     "url": "/docs/town-budget/docs/a66-2021-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a66-2021-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/66 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/169"
+    },
+    {
+     "path": "town-budget/docs/a168-2021-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2021 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1270256,
+     "url": "/docs/town-budget/docs/a168-2021-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a168-2021-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/168"
+    },
+    {
+     "path": "town-budget/docs/a170-2022-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2022 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1196271,
+     "url": "/docs/town-budget/docs/a170-2022-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a170-2022-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/170"
+    },
+    {
+     "path": "town-budget/docs/a171-2022-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2022 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 778129,
+     "url": "/docs/town-budget/docs/a171-2022-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a171-2022-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/171"
+    },
+    {
+     "path": "town-budget/docs/a172-2023-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2023 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1694097,
+     "url": "/docs/town-budget/docs/a172-2023-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a172-2023-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/172"
+    },
+    {
+     "path": "town-budget/docs/a173-2023-november-special-town-meeting-booklet-pdf.pdf",
+     "title": "2023 November Special Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1041651,
+     "url": "/docs/town-budget/docs/a173-2023-november-special-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a173-2023-november-special-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/173"
+    },
+    {
+     "path": "town-budget/docs/a157-2024-may-annual-town-meeting-booklet-pdf.pdf",
+     "title": "2024 May Annual Town Meeting Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 983506,
+     "url": "/docs/town-budget/docs/a157-2024-may-annual-town-meeting-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a157-2024-may-annual-town-meeting-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/157"
+    },
+    {
+     "path": "town-budget/docs/a161-2024-november-special-town-meeting-warrant-booklet-pdf.pdf",
+     "title": "2024 November Special Town Meeting Warrant Booklet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2205406,
+     "url": "/docs/town-budget/docs/a161-2024-november-special-town-meeting-warrant-booklet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a161-2024-november-special-town-meeting-warrant-booklet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/161"
+    },
+    {
+     "path": "town-budget/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx",
+     "title": "3/25/2024 Presentation: How Can We Help You- Property Tax Exemptions &amp; Assistance for Seniors",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Slides",
+     "bytes": 20358869,
+     "url": "/docs/town-budget/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx",
+     "textUrl": "/docs/town-budget/text/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1982"
+    },
+    {
+     "path": "town-budget/docs/2086-4-14-sex-offender-audits-pdf.pdf",
+     "title": "4.14 Sex Offender Audits (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 824224,
+     "url": "/docs/town-budget/docs/2086-4-14-sex-offender-audits-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/2086-4-14-sex-offender-audits-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2086"
+    },
+    {
+     "path": "town-budget/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf",
+     "title": "4.38 Reserve Officer Hiring Process (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 673303,
+     "url": "/docs/town-budget/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/442-4-38-reserve-officer-hiring-process-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/442"
+    },
+    {
+     "path": "town-budget/docs/443-4-39-reserve-officer-program-pdf.pdf",
+     "title": "4.39 Reserve Officer Program (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 882297,
+     "url": "/docs/town-budget/docs/443-4-39-reserve-officer-program-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/443-4-39-reserve-officer-program-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/443"
+    },
+    {
+     "path": "town-budget/docs/a120-5-year-financial-forecast-16-20-pdf.pdf",
+     "title": "5-Year Financial Forecast 16.20 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 4563817,
+     "url": "/docs/town-budget/docs/a120-5-year-financial-forecast-16-20-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a120-5-year-financial-forecast-16-20-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/120"
+    },
+    {
      "path": "town-budget/docs/3781-9-30-25-fy27-preliminary-budget-presentation-pdf.pptx",
      "title": "9.30.25 FY27 Preliminary Budget Presentation (PDF)",
      "stars": 1,
@@ -2937,6 +3642,210 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4112"
     },
     {
+     "path": "town-budget/docs/344-bencor-financial-wellness-pdf.pdf",
+     "title": "Bencor Financial Wellness (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 291447,
+     "url": "/docs/town-budget/docs/344-bencor-financial-wellness-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/344-bencor-financial-wellness-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/344"
+    },
+    {
+     "path": "town-budget/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf",
+     "title": "Board of Assessors Code of Conduct (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 7314,
+     "url": "/docs/town-budget/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/3541-board-of-assessors-code-of-conduct-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3541"
+    },
+    {
+     "path": "town-budget/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf",
+     "title": "Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 39582437,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3463",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
+     "title": "Conflict of Interest/Financial Disclosure (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 73329,
+     "url": "/docs/town-budget/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/187-conflict-of-interest-financial-disclosure-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/187"
+    },
+    {
+     "path": "town-budget/docs/4117-fy-2011-annual-town-report.pdf",
+     "title": "FY 2011 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 31626604,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/4117-fy-2011-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4117 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/121",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/4118-fy-2012-annual-town-report.pdf",
+     "title": "FY 2012 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 56577710,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/4118-fy-2012-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4118 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/124",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/4119-fy-2013-annual-town-report.pdf",
+     "title": "FY 2013 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 37839397,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/4119-fy-2013-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4119 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/125",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/4120-fy-2014-annual-town-report.pdf",
+     "title": "FY 2014 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 5718041,
+     "url": "/docs/town-budget/docs/4120-fy-2014-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4120-fy-2014-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4120 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/126"
+    },
+    {
+     "path": "town-budget/docs/4121-fy-2015-annual-town-report.pdf",
+     "title": "FY 2015 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 7590404,
+     "url": "/docs/town-budget/docs/4121-fy-2015-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4121-fy-2015-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4121 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/127"
+    },
+    {
+     "path": "town-budget/docs/4123-fy-2016-annual-town-report.pdf",
+     "title": "FY 2016 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 5456453,
+     "url": "/docs/town-budget/docs/4123-fy-2016-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4123-fy-2016-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4123 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/132"
+    },
+    {
+     "path": "town-budget/docs/4122-fy-2016-annual-town-report-addendum.pdf",
+     "title": "FY 2016 Annual Town Report, Addendum",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2201189,
+     "url": "/docs/town-budget/docs/4122-fy-2016-annual-town-report-addendum.pdf",
+     "textUrl": "/docs/town-budget/text/4122-fy-2016-annual-town-report-addendum.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4122"
+    },
+    {
+     "path": "town-budget/docs/4124-fy-2017-annual-town-report.pdf",
+     "title": "FY 2017 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 37102314,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/4124-fy-2017-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4124 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/128",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/4125-fy-2018-annual-town-report.pdf",
+     "title": "FY 2018 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 8052398,
+     "url": "/docs/town-budget/docs/4125-fy-2018-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4125-fy-2018-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4125 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/129"
+    },
+    {
+     "path": "town-budget/docs/4126-fy-2019-annual-town-report.pdf",
+     "title": "FY 2019 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 9333883,
+     "url": "/docs/town-budget/docs/4126-fy-2019-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4126-fy-2019-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4126 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/130"
+    },
+    {
+     "path": "town-budget/docs/4127-fy-2020-annual-town-report.pdf",
+     "title": "FY 2020 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 20544500,
+     "url": "/docs/town-budget/docs/4127-fy-2020-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4127-fy-2020-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4127 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/131"
+    },
+    {
+     "path": "town-budget/docs/4128-fy-2021-annual-town-report.pdf",
+     "title": "FY 2021 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 82620223,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/4128-fy-2021-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4128 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/122",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/4129-fy-2022-annual-town-report.pdf",
+     "title": "FY 2022 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 16840445,
+     "url": "/docs/town-budget/docs/4129-fy-2022-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4129-fy-2022-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4129 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/123"
+    },
+    {
+     "path": "town-budget/docs/4131-fy-2023-annual-town-report.pdf",
+     "title": "FY 2023 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 18274143,
+     "url": "/docs/town-budget/docs/4131-fy-2023-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4131-fy-2023-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4131 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/160"
+    },
+    {
      "path": "town-budget/docs/373-fy-2023-budget-narrative-pdf.pdf",
      "title": "FY 2023 Budget Narrative (PDF)",
      "stars": 1,
@@ -2959,6 +3868,216 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/374"
     },
     {
+     "path": "town-budget/docs/4132-fy-2024-annual-town-report.pdf",
+     "title": "FY 2024 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 52210075,
+     "url": "",
+     "textUrl": "/docs/town-budget/text/4132-fy-2024-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4132 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/211",
+     "heldOnly": true
+    },
+    {
+     "path": "town-budget/docs/4130-fy-2025-annual-town-report.pdf",
+     "title": "FY 2025 Annual Town Report",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 7237129,
+     "url": "/docs/town-budget/docs/4130-fy-2025-annual-town-report.pdf",
+     "textUrl": "/docs/town-budget/text/4130-fy-2025-annual-town-report.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4130 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/213"
+    },
+    {
+     "path": "town-budget/docs/a202-fy18-capital-plan-presentation-pdf.pdf",
+     "title": "FY18 Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 511361,
+     "url": "/docs/town-budget/docs/a202-fy18-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a202-fy18-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/202"
+    },
+    {
+     "path": "town-budget/docs/a53-fy19-budget-handout-for-annual-town-meeting-xlsx.xlsx",
+     "title": "FY19 Budget Handout for Annual Town Meeting (XLSX)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 196011,
+     "url": "/docs/town-budget/docs/a53-fy19-budget-handout-for-annual-town-meeting-xlsx.xlsx",
+     "textUrl": "/docs/town-budget/text/a53-fy19-budget-handout-for-annual-town-meeting-xlsx.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/53"
+    },
+    {
+     "path": "town-budget/docs/a182-fy19-capital-plan-presentation-pdf.pdf",
+     "title": "FY19 Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 336853,
+     "url": "/docs/town-budget/docs/a182-fy19-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a182-fy19-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/182"
+    },
+    {
+     "path": "town-budget/docs/a181-fy19-fire-department-budget-presentation-pdf.pdf",
+     "title": "FY19 Fire Department Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2651840,
+     "url": "/docs/town-budget/docs/a181-fy19-fire-department-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a181-fy19-fire-department-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/181"
+    },
+    {
+     "path": "town-budget/docs/a190-fy19-fy23-financial-forecast-presentation-pdf.pdf",
+     "title": "FY19- FY23 Financial Forecast Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1948887,
+     "url": "/docs/town-budget/docs/a190-fy19-fy23-financial-forecast-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a190-fy19-fy23-financial-forecast-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/190"
+    },
+    {
+     "path": "town-budget/docs/a89-fy20-budget-message-and-proposal-pdf.pdf",
+     "title": "FY20 Budget Message and Proposal (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 888636,
+     "url": "/docs/town-budget/docs/a89-fy20-budget-message-and-proposal-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a89-fy20-budget-message-and-proposal-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/89"
+    },
+    {
+     "path": "town-budget/docs/a88-fy20-capital-plan-presentation-pdf.pdf",
+     "title": "FY20 Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1374369,
+     "url": "/docs/town-budget/docs/a88-fy20-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a88-fy20-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/88"
+    },
+    {
+     "path": "town-budget/docs/a183-fy20-land-use-director-symposium-presentation-pdf.pdf",
+     "title": "FY20 Land Use Director Symposium Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1997310,
+     "url": "/docs/town-budget/docs/a183-fy20-land-use-director-symposium-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a183-fy20-land-use-director-symposium-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/183"
+    },
+    {
+     "path": "town-budget/docs/a90-fy20-line-item-budget-pdf.pdf",
+     "title": "FY20 Line Item Budget (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 491807,
+     "url": "/docs/town-budget/docs/a90-fy20-line-item-budget-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a90-fy20-line-item-budget-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/90"
+    },
+    {
+     "path": "town-budget/docs/a87-fy20-preliminary-budget-presentation-pdf.pdf",
+     "title": "FY20 Preliminary Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1195998,
+     "url": "/docs/town-budget/docs/a87-fy20-preliminary-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a87-fy20-preliminary-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/87"
+    },
+    {
+     "path": "town-budget/docs/a91-fy20-preliminary-budget-revenue-expense-sheet-pdf.pdf",
+     "title": "FY20 Preliminary Budget Revenue Expense Sheet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 80694,
+     "url": "/docs/town-budget/docs/a91-fy20-preliminary-budget-revenue-expense-sheet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a91-fy20-preliminary-budget-revenue-expense-sheet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/91"
+    },
+    {
+     "path": "town-budget/docs/a184-fy20-school-superintendent-symposium-presentation-pdf.pdf",
+     "title": "FY20 School Superintendent Symposium Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1264993,
+     "url": "/docs/town-budget/docs/a184-fy20-school-superintendent-symposium-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a184-fy20-school-superintendent-symposium-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/184"
+    },
+    {
+     "path": "town-budget/docs/a185-fy20-town-manager-symposium-presentation-pdf.pdf",
+     "title": "FY20 Town Manager Symposium Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1392471,
+     "url": "/docs/town-budget/docs/a185-fy20-town-manager-symposium-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a185-fy20-town-manager-symposium-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/185"
+    },
+    {
+     "path": "town-budget/docs/a191-fy20-fy24-financial-forecast-presentation-pdf.pdf",
+     "title": "FY20- FY24 Financial Forecast Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1835837,
+     "url": "/docs/town-budget/docs/a191-fy20-fy24-financial-forecast-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a191-fy20-fy24-financial-forecast-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/191"
+    },
+    {
+     "path": "town-budget/docs/a192-fy21-fy25-financial-forecast-presentation-pdf.pdf",
+     "title": "FY21- FY25 Financial Forecast Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2126805,
+     "url": "/docs/town-budget/docs/a192-fy21-fy25-financial-forecast-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a192-fy21-fy25-financial-forecast-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/192"
+    },
+    {
+     "path": "town-budget/docs/a193-fy22-fy26-financial-forecast-presentation-pdf.pdf",
+     "title": "FY22- FY26 Financial Forecast Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2608396,
+     "url": "/docs/town-budget/docs/a193-fy22-fy26-financial-forecast-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a193-fy22-fy26-financial-forecast-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/193"
+    },
+    {
+     "path": "town-budget/docs/a75-fy23-capital-plan-presentation-pdf.pdf",
+     "title": "FY23 Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2764902,
+     "url": "/docs/town-budget/docs/a75-fy23-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a75-fy23-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/75"
+    },
+    {
      "path": "town-budget/docs/2420-fy23-lunenburg-financial-statements.pdf",
      "title": "FY23 Lunenburg Financial Statements",
      "stars": 1,
@@ -2968,6 +4087,160 @@
      "url": "/docs/town-budget/docs/2420-fy23-lunenburg-financial-statements.pdf",
      "textUrl": "/docs/town-budget/text/2420-fy23-lunenburg-financial-statements.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2420"
+    },
+    {
+     "path": "town-budget/docs/a73-fy23-preliminary-budget-message-pdf.pdf",
+     "title": "FY23 Preliminary Budget Message (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 929224,
+     "url": "/docs/town-budget/docs/a73-fy23-preliminary-budget-message-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a73-fy23-preliminary-budget-message-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/73"
+    },
+    {
+     "path": "town-budget/docs/a74-fy23-preliminary-budget-presentation-pdf.pdf",
+     "title": "FY23 Preliminary Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1726064,
+     "url": "/docs/town-budget/docs/a74-fy23-preliminary-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a74-fy23-preliminary-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/74"
+    },
+    {
+     "path": "town-budget/docs/a72-fy23-preliminary-budget-revenue-expense-sheet-pdf.pdf",
+     "title": "FY23 Preliminary Budget Revenue-Expense Sheet (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 84244,
+     "url": "/docs/town-budget/docs/a72-fy23-preliminary-budget-revenue-expense-sheet-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a72-fy23-preliminary-budget-revenue-expense-sheet-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/72"
+    },
+    {
+     "path": "town-budget/docs/a194-fy24-composite-project-ranking-by-capital-planning-committee-pdf.pdf",
+     "title": "FY24 Composite Project Ranking by Capital Planning Committee (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 136219,
+     "url": "/docs/town-budget/docs/a194-fy24-composite-project-ranking-by-capital-planning-committee-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a194-fy24-composite-project-ranking-by-capital-planning-committee-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/194"
+    },
+    {
+     "path": "town-budget/docs/a108-fy24-council-on-aging-budget-presentation-pdf.pdf",
+     "title": "FY24 Council on Aging Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 247335,
+     "url": "/docs/town-budget/docs/a108-fy24-council-on-aging-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a108-fy24-council-on-aging-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/108"
+    },
+    {
+     "path": "town-budget/docs/a104-fy24-dpw-budget-presentation-pdf.pdf",
+     "title": "FY24 DPW Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1134216,
+     "url": "/docs/town-budget/docs/a104-fy24-dpw-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a104-fy24-dpw-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/104"
+    },
+    {
+     "path": "town-budget/docs/a107-fy24-facilities-budget-presentation-pdf.pdf",
+     "title": "FY24 Facilities Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 5367813,
+     "url": "/docs/town-budget/docs/a107-fy24-facilities-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a107-fy24-facilities-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/107"
+    },
+    {
+     "path": "town-budget/docs/a106-fy24-finance-committee-budget-presentation-pdf.pdf",
+     "title": "FY24 Finance Committee Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2599926,
+     "url": "/docs/town-budget/docs/a106-fy24-finance-committee-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a106-fy24-finance-committee-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/106"
+    },
+    {
+     "path": "town-budget/docs/a111-fy24-finance-committee-budget-presentation-schedule-and-public-hearing-date-pdf.pdf",
+     "title": "FY24 Finance Committee Budget Presentation Schedule and Public Hearing Date (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 12835,
+     "url": "/docs/town-budget/docs/a111-fy24-finance-committee-budget-presentation-schedule-and-public-hearing-date-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a111-fy24-finance-committee-budget-presentation-schedule-and-public-hearing-date-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/111"
+    },
+    {
+     "path": "town-budget/docs/a109-fy24-fire-department-budget-presentation-pdf.pdf",
+     "title": "FY24 Fire Department Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1099798,
+     "url": "/docs/town-budget/docs/a109-fy24-fire-department-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a109-fy24-fire-department-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/109 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/158"
+    },
+    {
+     "path": "town-budget/docs/a105-fy24-it-budget-presentation-pdf.pdf",
+     "title": "FY24 IT Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 162735,
+     "url": "/docs/town-budget/docs/a105-fy24-it-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a105-fy24-it-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/105"
+    },
+    {
+     "path": "town-budget/docs/a99-fy24-land-use-budget-presentation-pdf.pdf",
+     "title": "FY24 Land Use Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 202917,
+     "url": "/docs/town-budget/docs/a99-fy24-land-use-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a99-fy24-land-use-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/99"
+    },
+    {
+     "path": "town-budget/docs/a101-fy24-monty-tech-budget-presentation-pdf.pdf",
+     "title": "FY24 Monty Tech Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 826868,
+     "url": "/docs/town-budget/docs/a101-fy24-monty-tech-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a101-fy24-monty-tech-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/101"
+    },
+    {
+     "path": "town-budget/docs/a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf",
+     "title": "FY24 Monty Tech Budget for Public Hearing March 08, 2023 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1644954,
+     "url": "/docs/town-budget/docs/a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/103"
     },
     {
      "path": "town-budget/docs/1777-fy24-police-budget-attachment-a-10-year-additional-officer-plan.pdf",
@@ -3022,7 +4295,29 @@
      "bytes": 1694617,
      "url": "/docs/town-budget/docs/1781-fy24-police-budget-presentation.pdf",
      "textUrl": "/docs/town-budget/text/1781-fy24-police-budget-presentation.txt",
-     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1781"
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1781 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/102"
+    },
+    {
+     "path": "town-budget/docs/a98-fy24-public-access-budget-presentation-pdf.pdf",
+     "title": "FY24 Public Access Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 798366,
+     "url": "/docs/town-budget/docs/a98-fy24-public-access-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a98-fy24-public-access-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/98"
+    },
+    {
+     "path": "town-budget/docs/a189-fy24-revenue-expense-worksheet-february-16-2023-pdf.pdf",
+     "title": "FY24 Revenue-Expense Worksheet, February 16, 2023 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 56479,
+     "url": "/docs/town-budget/docs/a189-fy24-revenue-expense-worksheet-february-16-2023-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a189-fy24-revenue-expense-worksheet-february-16-2023-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/189"
     },
     {
      "path": "town-budget/docs/3003-fy24-state-budget-municipal-investments-by-kp-law-pdf.pdf",
@@ -3036,6 +4331,61 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3003"
     },
     {
+     "path": "town-budget/docs/a100-fy24-superintendent-s-proposed-budget-pdf.pdf",
+     "title": "FY24 Superintendent's Proposed Budget (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 505548,
+     "url": "/docs/town-budget/docs/a100-fy24-superintendent-s-proposed-budget-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a100-fy24-superintendent-s-proposed-budget-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/100"
+    },
+    {
+     "path": "town-budget/docs/a195-fy24-town-manager-capital-plan-presentation-pdf.pdf",
+     "title": "FY24 Town Manager Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2067632,
+     "url": "/docs/town-budget/docs/a195-fy24-town-manager-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a195-fy24-town-manager-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/195"
+    },
+    {
+     "path": "town-budget/docs/a186-fy24-town-manager-preliminary-budget-line-item-detail-pdf.pdf",
+     "title": "FY24 Town Manager Preliminary Budget Line Item Detail (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 566066,
+     "url": "/docs/town-budget/docs/a186-fy24-town-manager-preliminary-budget-line-item-detail-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a186-fy24-town-manager-preliminary-budget-line-item-detail-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/186"
+    },
+    {
+     "path": "town-budget/docs/a187-fy24-town-manager-preliminary-budget-message-and-proposal-pdf.pdf",
+     "title": "FY24 Town Manager Preliminary Budget Message and Proposal (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 592285,
+     "url": "/docs/town-budget/docs/a187-fy24-town-manager-preliminary-budget-message-and-proposal-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a187-fy24-town-manager-preliminary-budget-message-and-proposal-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/187"
+    },
+    {
+     "path": "town-budget/docs/a188-fy24-town-manager-preliminary-budget-presentation-pdf.pdf",
+     "title": "FY24 Town Manager Preliminary Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 829976,
+     "url": "/docs/town-budget/docs/a188-fy24-town-manager-preliminary-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a188-fy24-town-manager-preliminary-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/188"
+    },
+    {
      "path": "town-budget/docs/2419-fy24-year-end-report.pdf",
      "title": "FY24 Year End Report",
      "stars": 1,
@@ -3047,6 +4397,105 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2419"
     },
     {
+     "path": "town-budget/docs/a110-fy24-fy28-superintendent-s-projected-identified-needs-pdf.pdf",
+     "title": "FY24-FY28 Superintendent's Projected Identified Needs (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 282944,
+     "url": "/docs/town-budget/docs/a110-fy24-fy28-superintendent-s-projected-identified-needs-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a110-fy24-fy28-superintendent-s-projected-identified-needs-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/110"
+    },
+    {
+     "path": "town-budget/docs/a196-fy24-fy33-dpw-equipment-capital-plan-presentation-pdf.pdf",
+     "title": "FY24-FY33 DPW Equipment Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 3003711,
+     "url": "/docs/town-budget/docs/a196-fy24-fy33-dpw-equipment-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a196-fy24-fy33-dpw-equipment-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/196"
+    },
+    {
+     "path": "town-budget/docs/a197-fy24-fy33-dpw-infrastructure-capital-plan-presentation-pdf.pdf",
+     "title": "FY24-FY33 DPW Infrastructure Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2155097,
+     "url": "/docs/town-budget/docs/a197-fy24-fy33-dpw-infrastructure-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a197-fy24-fy33-dpw-infrastructure-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/197"
+    },
+    {
+     "path": "town-budget/docs/a198-fy24-fy33-facilities-capital-plan-presentation-pdf.pdf",
+     "title": "FY24-FY33 Facilities Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 896327,
+     "url": "/docs/town-budget/docs/a198-fy24-fy33-facilities-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a198-fy24-fy33-facilities-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/198"
+    },
+    {
+     "path": "town-budget/docs/a199-fy24-fy33-fire-department-capital-plan-presentation-pdf.pdf",
+     "title": "FY24-FY33 Fire Department Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 4912580,
+     "url": "/docs/town-budget/docs/a199-fy24-fy33-fire-department-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a199-fy24-fy33-fire-department-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/199"
+    },
+    {
+     "path": "town-budget/docs/a200-fy24-fy33-police-department-capital-plan-presentation-pdf.pdf",
+     "title": "FY24-FY33 Police Department Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 2472114,
+     "url": "/docs/town-budget/docs/a200-fy24-fy33-police-department-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a200-fy24-fy33-police-department-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/200"
+    },
+    {
+     "path": "town-budget/docs/a201-fy24-fy33-rating-criteria-used-for-capital-plan-requests-pdf.pdf",
+     "title": "FY24-FY33: Rating Criteria Used for Capital Plan Requests (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 120897,
+     "url": "/docs/town-budget/docs/a201-fy24-fy33-rating-criteria-used-for-capital-plan-requests-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a201-fy24-fy33-rating-criteria-used-for-capital-plan-requests-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/201"
+    },
+    {
+     "path": "town-budget/docs/a135-fy25-budget-message-and-proposal-for-bos-and-fc.pdf",
+     "title": "FY25 Budget Message and Proposal for BOS and FC",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 613266,
+     "url": "/docs/town-budget/docs/a135-fy25-budget-message-and-proposal-for-bos-and-fc.pdf",
+     "textUrl": "/docs/town-budget/text/a135-fy25-budget-message-and-proposal-for-bos-and-fc.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/135"
+    },
+    {
+     "path": "town-budget/docs/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.pdf",
+     "title": "FY25 Governor Awards Lunenburg FD State Firefighter Safety Grant (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 155002,
+     "url": "/docs/town-budget/docs/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/2499"
+    },
+    {
      "path": "town-budget/docs/1782-fy25-police-budget-table-of-contents.pdf",
      "title": "FY25 Police Budget Table of Contents",
      "stars": 1,
@@ -3056,6 +4505,148 @@
      "url": "/docs/town-budget/docs/1782-fy25-police-budget-table-of-contents.pdf",
      "textUrl": "/docs/town-budget/text/1782-fy25-police-budget-table-of-contents.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1782"
+    },
+    {
+     "path": "town-budget/docs/a133-fy25-preliminary-budget-documents.zip",
+     "title": "FY25 Preliminary Budget Documents",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "ZIP",
+     "bytes": 2163648,
+     "url": "/docs/town-budget/docs/a133-fy25-preliminary-budget-documents.zip",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/133"
+    },
+    {
+     "path": "town-budget/docs/a136-fy25-preliminary-budget-presentation-to-fincomm-and-sb-2-15-24.pdf",
+     "title": "FY25 Preliminary Budget Presentation to FinComm and SB, 2-15-24",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 885956,
+     "url": "/docs/town-budget/docs/a136-fy25-preliminary-budget-presentation-to-fincomm-and-sb-2-15-24.pdf",
+     "textUrl": "/docs/town-budget/text/a136-fy25-preliminary-budget-presentation-to-fincomm-and-sb-2-15-24.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/136"
+    },
+    {
+     "path": "town-budget/docs/1352-fy25-snow-and-ice-vendor-agreement.pdf",
+     "title": "FY25 Snow and Ice Vendor Agreement",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1269236,
+     "url": "/docs/town-budget/docs/1352-fy25-snow-and-ice-vendor-agreement.pdf",
+     "textUrl": "/docs/town-budget/text/1352-fy25-snow-and-ice-vendor-agreement.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1352"
+    },
+    {
+     "path": "town-budget/docs/a137-fy25-town-manager-s-line-item-detail-and-revenue-expense-worksheet-2-13-24.pdf",
+     "title": "FY25 Town Manager's Line Item Detail and Revenue Expense Worksheet, 2-13-24",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 460463,
+     "url": "/docs/town-budget/docs/a137-fy25-town-manager-s-line-item-detail-and-revenue-expense-worksheet-2-13-24.pdf",
+     "textUrl": "/docs/town-budget/text/a137-fy25-town-manager-s-line-item-detail-and-revenue-expense-worksheet-2-13-24.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/137"
+    },
+    {
+     "path": "town-budget/docs/a138-fy25-town-manager-s-preliminary-budget-recommendation-pdf.pdf",
+     "title": "FY25 Town Manager's Preliminary Budget Recommendation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 190179,
+     "url": "/docs/town-budget/docs/a138-fy25-town-manager-s-preliminary-budget-recommendation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a138-fy25-town-manager-s-preliminary-budget-recommendation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/138"
+    },
+    {
+     "path": "town-budget/docs/a205-fy25-fy34-capital-plan-requests-by-department-pdf.pdf",
+     "title": "FY25-FY34 Capital Plan Requests by Department (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 129212,
+     "url": "/docs/town-budget/docs/a205-fy25-fy34-capital-plan-requests-by-department-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a205-fy25-fy34-capital-plan-requests-by-department-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/205"
+    },
+    {
+     "path": "town-budget/docs/a203-fy25-fy34-dpw-capital-request-presentation-pdf.pdf",
+     "title": "FY25-FY34 DPW Capital Request Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 7828430,
+     "url": "/docs/town-budget/docs/a203-fy25-fy34-dpw-capital-request-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a203-fy25-fy34-dpw-capital-request-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/203"
+    },
+    {
+     "path": "town-budget/docs/a206-fy25-fy34-facilities-and-parks-capital-plan-presentation-pdf.pdf",
+     "title": "FY25-FY34 Facilities and Parks Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 8872968,
+     "url": "/docs/town-budget/docs/a206-fy25-fy34-facilities-and-parks-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a206-fy25-fy34-facilities-and-parks-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/206"
+    },
+    {
+     "path": "town-budget/docs/a204-fy25-fy34-fire-dept-capital-plan-presentation-pdf.pdf",
+     "title": "FY25-FY34 Fire Dept Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 3790200,
+     "url": "/docs/town-budget/docs/a204-fy25-fy34-fire-dept-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a204-fy25-fy34-fire-dept-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/204"
+    },
+    {
+     "path": "town-budget/docs/a207-fy25-fy34-lps-capital-plan-presentation-pdf.pdf",
+     "title": "FY25-FY34 LPS Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 20586000,
+     "url": "/docs/town-budget/docs/a207-fy25-fy34-lps-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a207-fy25-fy34-lps-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/207"
+    },
+    {
+     "path": "town-budget/docs/a208-fy25-fy34-lunenburg-it-capital-plan-presentation-pdf.pdf",
+     "title": "FY25-FY34 Lunenburg IT Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 230189,
+     "url": "/docs/town-budget/docs/a208-fy25-fy34-lunenburg-it-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a208-fy25-fy34-lunenburg-it-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/208"
+    },
+    {
+     "path": "town-budget/docs/a209-fy25-fy34-police-dept-cap-plan-presentation-pdf.pdf",
+     "title": "FY25-FY34 Police Dept Cap Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 6811036,
+     "url": "/docs/town-budget/docs/a209-fy25-fy34-police-dept-cap-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a209-fy25-fy34-police-dept-cap-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/209"
+    },
+    {
+     "path": "town-budget/docs/a210-fy25-fy34-ten-year-capital-plan-by-funding-source-town-manager-recommendation-pd.pdf",
+     "title": "FY25-FY34 Ten Year Capital Plan by Funding Source-Town Manager Recommendation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 136601,
+     "url": "/docs/town-budget/docs/a210-fy25-fy34-ten-year-capital-plan-by-funding-source-town-manager-recommendation-pd.pdf",
+     "textUrl": "/docs/town-budget/text/a210-fy25-fy34-ten-year-capital-plan-by-funding-source-town-manager-recommendation-pd.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/210"
     },
     {
      "path": "town-budget/docs/2862-fy26-select-board-and-town-manager-goals-pdf.pdf",
@@ -3223,6 +4814,17 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3613"
     },
     {
+     "path": "town-budget/docs/4284-fy27-real-estate-exemption-flyer.pdf",
+     "title": "FY27 Real Estate Exemption Flyer",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 763491,
+     "url": "/docs/town-budget/docs/4284-fy27-real-estate-exemption-flyer.pdf",
+     "textUrl": "/docs/town-budget/text/4284-fy27-real-estate-exemption-flyer.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4284"
+    },
+    {
      "path": "town-budget/docs/3586-fy27-school-department-budget-presentation-pdf.pdf",
      "title": "FY27 School Department Budget Presentation (PDF)",
      "stars": 1,
@@ -3232,6 +4834,237 @@
      "url": "/docs/town-budget/docs/3586-fy27-school-department-budget-presentation-pdf.pdf",
      "textUrl": "/docs/town-budget/text/3586-fy27-school-department-budget-presentation-pdf.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3586"
+    },
+    {
+     "path": "town-budget/docs/4283-fy27-senior-means-tested-application.pdf",
+     "title": "FY27 Senior Means Tested Application",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 342030,
+     "url": "/docs/town-budget/docs/4283-fy27-senior-means-tested-application.pdf",
+     "textUrl": "/docs/town-budget/text/4283-fy27-senior-means-tested-application.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4283"
+    },
+    {
+     "path": "town-budget/docs/4285-fy27-senior-means-tested-brochure.pdf",
+     "title": "FY27 Senior Means Tested Brochure",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1504489,
+     "url": "/docs/town-budget/docs/4285-fy27-senior-means-tested-brochure.pdf",
+     "textUrl": "/docs/town-budget/text/4285-fy27-senior-means-tested-brochure.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4285"
+    },
+    {
+     "path": "town-budget/docs/a118-fiscal-year-2012-budget-as-appropriated-a-copy-of-the-fiscal-year-2012-budget-as.pdf",
+     "title": "Fiscal Year 2012 Budget As Appropriated A copy of the Fiscal Year 2012 Budget As Appropriated by Tow",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 10777014,
+     "url": "/docs/town-budget/docs/a118-fiscal-year-2012-budget-as-appropriated-a-copy-of-the-fiscal-year-2012-budget-as.pdf",
+     "textUrl": "/docs/town-budget/text/a118-fiscal-year-2012-budget-as-appropriated-a-copy-of-the-fiscal-year-2012-budget-as.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/118"
+    },
+    {
+     "path": "town-budget/docs/a119-fiscal-year-2013-appendix-document-5-comprehensive-pavement-management-system-pd.pdf",
+     "title": "Fiscal Year 2013 Appendix Document 5 Comprehensive Pavement Management System (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 9348647,
+     "url": "/docs/town-budget/docs/a119-fiscal-year-2013-appendix-document-5-comprehensive-pavement-management-system-pd.pdf",
+     "textUrl": "/docs/town-budget/text/a119-fiscal-year-2013-appendix-document-5-comprehensive-pavement-management-system-pd.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/119"
+    },
+    {
+     "path": "town-budget/docs/a117-fiscal-year-2013-appendix-documents-1-4-pdf.pdf",
+     "title": "Fiscal Year 2013 Appendix Documents 1 - 4 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 5934481,
+     "url": "/docs/town-budget/docs/a117-fiscal-year-2013-appendix-documents-1-4-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a117-fiscal-year-2013-appendix-documents-1-4-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/117"
+    },
+    {
+     "path": "town-budget/docs/a116-fiscal-year-2013-budget-line-item-detail-of-fiscal-year-2013-budget-recommendati.pdf",
+     "title": "Fiscal Year 2013 Budget Line Item Detail of Fiscal Year 2013 Budget Recommendation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 9274923,
+     "url": "/docs/town-budget/docs/a116-fiscal-year-2013-budget-line-item-detail-of-fiscal-year-2013-budget-recommendati.pdf",
+     "textUrl": "/docs/town-budget/text/a116-fiscal-year-2013-budget-line-item-detail-of-fiscal-year-2013-budget-recommendati.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/116"
+    },
+    {
+     "path": "town-budget/docs/a114-fiscal-year-2014-budget-as-appropriated-pdf.pdf",
+     "title": "Fiscal Year 2014 Budget As Appropriated (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 3811114,
+     "url": "/docs/town-budget/docs/a114-fiscal-year-2014-budget-as-appropriated-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a114-fiscal-year-2014-budget-as-appropriated-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/114"
+    },
+    {
+     "path": "town-budget/docs/a113-fiscal-year-2015-budget-final-after-recap-pdf.pdf",
+     "title": "Fiscal Year 2015 Budget Final After Recap (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 4997694,
+     "url": "/docs/town-budget/docs/a113-fiscal-year-2015-budget-final-after-recap-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a113-fiscal-year-2015-budget-final-after-recap-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/113"
+    },
+    {
+     "path": "town-budget/docs/a115-fiscal-year-2016-budget-presentation-pdf.pdf",
+     "title": "Fiscal Year 2016 Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 550567,
+     "url": "/docs/town-budget/docs/a115-fiscal-year-2016-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a115-fiscal-year-2016-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/115"
+    },
+    {
+     "path": "town-budget/docs/a112-fiscal-year-2016-preliminary-budget-pdf.pdf",
+     "title": "Fiscal Year 2016 Preliminary Budget (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 15003189,
+     "url": "/docs/town-budget/docs/a112-fiscal-year-2016-preliminary-budget-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a112-fiscal-year-2016-preliminary-budget-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/112"
+    },
+    {
+     "path": "town-budget/docs/a82-fiscal-year-2021-adjustment-worksheet-made-to-budget-due-to-covid-19-pdf.pdf",
+     "title": "Fiscal Year 2021 Adjustment Worksheet Made to Budget due to COVID-19 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 17416,
+     "url": "/docs/town-budget/docs/a82-fiscal-year-2021-adjustment-worksheet-made-to-budget-due-to-covid-19-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a82-fiscal-year-2021-adjustment-worksheet-made-to-budget-due-to-covid-19-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/82"
+    },
+    {
+     "path": "town-budget/docs/a83-fiscal-year-2021-budget-message-and-preliminary-budget-proposal-pdf.pdf",
+     "title": "Fiscal Year 2021 Budget Message and Preliminary Budget Proposal (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 891703,
+     "url": "/docs/town-budget/docs/a83-fiscal-year-2021-budget-message-and-preliminary-budget-proposal-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a83-fiscal-year-2021-budget-message-and-preliminary-budget-proposal-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/83"
+    },
+    {
+     "path": "town-budget/docs/a81-fiscal-year-2021-capital-plan-presentation-pdf.pdf",
+     "title": "Fiscal Year 2021 Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 822282,
+     "url": "/docs/town-budget/docs/a81-fiscal-year-2021-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a81-fiscal-year-2021-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/81"
+    },
+    {
+     "path": "town-budget/docs/a86-fiscal-year-2021-preliminary-budget-line-item-detail-february-11-2020-pdf.pdf",
+     "title": "Fiscal Year 2021 Preliminary Budget Line Item Detail, February 11, 2020 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 622778,
+     "url": "/docs/town-budget/docs/a86-fiscal-year-2021-preliminary-budget-line-item-detail-february-11-2020-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a86-fiscal-year-2021-preliminary-budget-line-item-detail-february-11-2020-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/86"
+    },
+    {
+     "path": "town-budget/docs/a84-fiscal-year-2021-preliminary-budget-presentation-pdf.pdf",
+     "title": "Fiscal Year 2021 Preliminary Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1137856,
+     "url": "/docs/town-budget/docs/a84-fiscal-year-2021-preliminary-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a84-fiscal-year-2021-preliminary-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/84"
+    },
+    {
+     "path": "town-budget/docs/a79-fiscal-year-2021-revenue-expense-worksheet-may-7-2020-pdf.pdf",
+     "title": "Fiscal Year 2021 Revenue-Expense Worksheet, May 7, 2020 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 79278,
+     "url": "/docs/town-budget/docs/a79-fiscal-year-2021-revenue-expense-worksheet-may-7-2020-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a79-fiscal-year-2021-revenue-expense-worksheet-may-7-2020-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/79"
+    },
+    {
+     "path": "town-budget/docs/a80-fiscal-year-2021-revised-school-budget-presentation-pdf.pdf",
+     "title": "Fiscal Year 2021 Revised School Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 412331,
+     "url": "/docs/town-budget/docs/a80-fiscal-year-2021-revised-school-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a80-fiscal-year-2021-revised-school-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/80"
+    },
+    {
+     "path": "town-budget/docs/a85-fiscal-year-2021-town-manager-budget-recommendation-revised-due-to-covid-19-pdf.pdf",
+     "title": "Fiscal Year 2021 Town Manager Budget Recommendation, Revised due to COVID-19 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 822282,
+     "url": "/docs/town-budget/docs/a85-fiscal-year-2021-town-manager-budget-recommendation-revised-due-to-covid-19-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a85-fiscal-year-2021-town-manager-budget-recommendation-revised-due-to-covid-19-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/85"
+    },
+    {
+     "path": "town-budget/docs/a76-fiscal-year-2022-budget-message-and-preliminary-budget-recommendation-pdf.pdf",
+     "title": "Fiscal Year 2022 Budget Message and Preliminary Budget Recommendation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 728433,
+     "url": "/docs/town-budget/docs/a76-fiscal-year-2022-budget-message-and-preliminary-budget-recommendation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a76-fiscal-year-2022-budget-message-and-preliminary-budget-recommendation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/76"
+    },
+    {
+     "path": "town-budget/docs/a77-fiscal-year-2022-budget-presentation-pdf.pdf",
+     "title": "Fiscal Year 2022 Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1349286,
+     "url": "/docs/town-budget/docs/a77-fiscal-year-2022-budget-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a77-fiscal-year-2022-budget-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/77"
+    },
+    {
+     "path": "town-budget/docs/a78-fiscal-year-2022-capital-plan-presentation-pdf.pdf",
+     "title": "Fiscal Year 2022 Capital Plan Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 3518084,
+     "url": "/docs/town-budget/docs/a78-fiscal-year-2022-capital-plan-presentation-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/a78-fiscal-year-2022-capital-plan-presentation-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/78"
     },
     {
      "path": "town-budget/docs/1783-i-fy25-police-budget-narrative.pdf",
@@ -3289,6 +5122,50 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3378"
     },
     {
+     "path": "town-budget/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf",
+     "title": "Lunenburg Senior Citizen Property Tax Work-Off Program Application 2025 (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 415235,
+     "url": "/docs/town-budget/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3358"
+    },
+    {
+     "path": "town-budget/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf",
+     "title": "March 17, 2022 Tax Lien Sale Auction Registration Form (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 142429,
+     "url": "/docs/town-budget/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/787"
+    },
+    {
+     "path": "town-budget/docs/785-motor-vehicle-excise-tax-pdf.pdf",
+     "title": "Motor Vehicle Excise Tax (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 253763,
+     "url": "/docs/town-budget/docs/785-motor-vehicle-excise-tax-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/785-motor-vehicle-excise-tax-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/785"
+    },
+    {
+     "path": "town-budget/docs/4306-notice-of-tax-taking-lists.pdf",
+     "title": "Notice of Tax Taking Lists",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1004409,
+     "url": "/docs/town-budget/docs/4306-notice-of-tax-taking-lists.pdf",
+     "textUrl": "/docs/town-budget/text/4306-notice-of-tax-taking-lists.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4306"
+    },
+    {
      "path": "town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf",
      "title": "November 17, 2026 Special Town Meeting Legal Notice",
      "stars": 1,
@@ -3298,6 +5175,72 @@
      "url": "/docs/town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf",
      "textUrl": "/docs/town-budget/text/4396-november-17-2026-special-town-meeting-legal-notice.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4396"
+    },
+    {
+     "path": "town-budget/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf",
+     "title": "Real Estate & Personal Property Tax Actual Billing (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 251750,
+     "url": "/docs/town-budget/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/783-real-estate-personal-property-tax-actual-billing-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/783"
+    },
+    {
+     "path": "town-budget/docs/784-real-estate-tax-preliminary-billing-pfd.pdf",
+     "title": "Real Estate Tax Preliminary Billing (PFD)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 253051,
+     "url": "/docs/town-budget/docs/784-real-estate-tax-preliminary-billing-pfd.pdf",
+     "textUrl": "/docs/town-budget/text/784-real-estate-tax-preliminary-billing-pfd.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/784"
+    },
+    {
+     "path": "town-budget/docs/3547-role-of-the-assessing-department.pdf",
+     "title": "Role of the Assessing Department",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1289956,
+     "url": "/docs/town-budget/docs/3547-role-of-the-assessing-department.pdf",
+     "textUrl": "/docs/town-budget/text/3547-role-of-the-assessing-department.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3547"
+    },
+    {
+     "path": "town-budget/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf",
+     "title": "Senior Citizen Property Tax Work Off Program Application Form (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 415235,
+     "url": "/docs/town-budget/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/493-senior-citizen-property-tax-work-off-program-application-form-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/493"
+    },
+    {
+     "path": "town-budget/docs/494-senior-tax-work-off-program-brochure-pdf.pdf",
+     "title": "Senior Tax Work Off Program Brochure (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 438875,
+     "url": "/docs/town-budget/docs/494-senior-tax-work-off-program-brochure-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/494-senior-tax-work-off-program-brochure-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/494"
+    },
+    {
+     "path": "town-budget/docs/1416-senior-tax-work-off-record-hours.pdf",
+     "title": "Senior Tax Work Off- Record Hours",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 250144,
+     "url": "/docs/town-budget/docs/1416-senior-tax-work-off-record-hours.pdf",
+     "textUrl": "/docs/town-budget/text/1416-senior-tax-work-off-record-hours.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1416"
     },
     {
      "path": "town-budget/docs/4373-september-3-2026-special-town-meeting-warrant.pdf",
@@ -3322,6 +5265,17 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4365"
     },
     {
+     "path": "town-budget/docs/786-tax-lien-sale-auction-notice-pdf.pdf",
+     "title": "Tax Lien Sale Auction Notice (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 567326,
+     "url": "/docs/town-budget/docs/786-tax-lien-sale-auction-notice-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/786-tax-lien-sale-auction-notice-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/786"
+    },
+    {
      "path": "town-budget/docs/1787-v-attachment-d-fy25-overtime-costing-out-model.pdf",
      "title": "V. Attachment D - FY25 Overtime Costing Out Model",
      "stars": 1,
@@ -3342,6 +5296,17 @@
      "url": "/docs/town-budget/docs/1788-vii-fy25-police-budget-presentation.pdf",
      "textUrl": "/docs/town-budget/text/1788-vii-fy25-police-budget-presentation.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1788"
+    },
+    {
+     "path": "town-budget/docs/182-w-4-federal-tax-form-pdf.pdf",
+     "title": "W-4 Federal Tax Form (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 118030,
+     "url": "/docs/town-budget/docs/182-w-4-federal-tax-form-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/182-w-4-federal-tax-form-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/182"
     }
    ]
   },
@@ -3948,10 +5913,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 307,
-  "groups": 18,
-  "bytes": 367406234,
-  "loadBearing": 61
+  "documents": 481,
+  "groups": 19,
+  "bytes": 1075270580,
+  "loadBearing": 71
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 22 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 3 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

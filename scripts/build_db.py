@@ -325,6 +325,40 @@ REFERENCE = [
     'line-history-disagreements', 'rate-register', 'sped-para-history',
     'sped-teacher-history', 'sped-transport-history', 'total-expenses-history',
     'total-salaries-history', 'variance-by-group',
+
+    # From the annual town reports, FY2011-FY2025. See plans/ANNUAL-REPORTS.md.
+    #
+    # Two of these answer standing questions this project had recorded as unanswerable,
+    # and both were in documents already held: `placement-counts` is the count of children
+    # placed outside the district, which no budget line can produce, and
+    # `ballot-questions` is the record of what the town was actually asked to fund and
+    # whether it agreed.
+    #
+    # `annual-report-catalogue` is not data about the town -- it is data about the
+    # documents, 819 blocks found by reading all sixteen reports end to end rather than by
+    # searching them. It carries each table's PRINTED heading, because the headings differ
+    # between years and that is precisely what defeats a search.
+    #
+    # `annual-report-receipts` carries a `status` column on every row: `reconciled` means
+    # the year ties to its own printed GRAND TOTAL twice over, `partial` means it does not
+    # and cannot. **Never aggregate across years without splitting on it.**
+    'placement-counts', 'ballot-questions', 'annual-report-receipts',
+    'annual-report-catalogue', 'annual-report-contents', 'annual-report-survey',
+    'staff-roster-entries', 'staff-roster-counts', 'report-anomalies',
+    'extraction-plan', 'special-revenue-funds',
+
+    # The generic extraction, one table per family. Every row carries `status` and
+    # `reconciliation`: `reconciled` means the rows tie to the total the report itself
+    # prints, column by column; `partial` means they do not, and the residual is on the
+    # row. **Nothing here may be aggregated without splitting on `status` first.**
+    #
+    # Most of these are currently partial. The rows are real -- read at their own position,
+    # in the column they were printed in -- but an unreconciled extract is a transcription,
+    # not a verified figure, and rule 13 governs what may be quoted.
+    'report-appropriations', 'report-trust-funds', 'report-debt',
+    'report-capital-projects', 'report-valuation', 'report-elections',
+    'report-officials', 'report-dept-activity', 'report-enrollment-mcas',
+    'report-monty-tech', 'report-gross-wages', 'report-vital-records',
 ]
 
 VIEWS = """

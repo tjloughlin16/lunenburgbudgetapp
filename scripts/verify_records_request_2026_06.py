@@ -370,7 +370,7 @@ says('documents scanned', str(len(basis)))
 ledger = [p_ for p_, r in basis.items() if r['source_type'] == 'ledger']
 says('ledger documents', str(len(ledger)))
 for y in (24, 25, 26):
-    k = f'sources/munis-ledgers/account-details/account-details-fy20{y}.xlsx'
+    k = f'sources/munis-ledgers/account-details/account-details-fy20{y}-fund1301.xlsx'
     CHECKS += 1
     if basis.get(k, {}).get('source_type') == 'ledger':
         print(f"  ok    {'FY' + str(y) + ' journal classified ledger':<58} ledger")
@@ -444,7 +444,10 @@ head('12. Provenance')
 prov = open(os.path.join(REQ, 'PROVENANCE-fund1301.md')).read()
 import hashlib
 for f in sorted(os.listdir(REQ)):
-    if f == 'PROVENANCE.md':
+    # The provenance note cannot record its own sha256. It was called `PROVENANCE.md` when
+    # this was written and the archive reorg renamed it; the skip did not follow, so the
+    # check demanded that a file contain the hash of itself.
+    if f.startswith('PROVENANCE'):
         continue
     h = hashlib.sha256(open(os.path.join(REQ, f), 'rb').read()).hexdigest()
     CHECKS += 1

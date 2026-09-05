@@ -216,9 +216,20 @@ A folder of PDFs with no explanation is a pile, not an archive:
     python3 scripts/build_dataset_provenance.py     # AFTER moving anything
     python3 scripts/verify_source_copies.py         # slow; proves a moved file is still the file
 
-## Decisions still needed
+## Decisions — settled 5 September
 
-1. **Branch off `read-the-archive`, or commit its 1,115 files first?**
-2. **`town-annual-reports/` — finish the move or delete the folder?** Recommend finish.
-3. `peers/` → `peer-districts/` — in or out?
-4. Public `r2.dev` URL, or a custom domain on the bucket?
+1. **Commit the annual-report work first, then branch.** Its 1,115 files are finished work,
+   not damage; `plans/REORG-HANDOFF.md` was written at the end of it. Committing it on
+   `read-the-archive` with a message that says what it is, then branching `archive-storage`
+   off that, means the reorg starts from a clean tree and the two are never tangled in one
+   diff. Uncommitted files follow you across branches, so leaving them was never an option.
+2. **Finish `town-annual-reports/`.** All 16 annual reports move out of `town-budget/docs/`
+   with their index rows. One file in a folder is the state most likely to be mistaken for
+   done, and three files already reference it.
+3. **Yes to `peers/` → `peer-districts/`.** Three scripts, twelve files.
+4. **Public `r2.dev` URL.** No custom domain for now — one less thing to configure, and the
+   path already carries the meaning.
+
+**The hard constraint, stated plainly:** large binaries must stop going into git. Everything
+below serves that; where a step is optional it is marked, and where it is not, it is because
+skipping it leaves bytes in the pack.

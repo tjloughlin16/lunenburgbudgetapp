@@ -273,6 +273,61 @@ Still open: the other four pages are hand-built, and `lineage-graph.html` and
 
 ---
 
+## Track 6 — The town's second document store, and fifteen years of annual reports
+
+*Opened 4 September. Independent of Tracks 2 and 3: this is a store we already have, not a
+request. `notes/findings/TOWN-ARCHIVE.md` carries the full account.*
+
+| item | status |
+|---|---|
+| `/ArchiveCenter/` discovered — a second CivicPlus store no URL pattern in the fetcher matched | **done** |
+| `discover_archive()` reads its javascript-rendered index by AMID/ADID | **done** — 12 categories, 124 items |
+| Seeds added: `/838/Annual-Town-Reports`, `/287/Town-Manager-Reports` | **done** |
+| `WANTED` pattern `fy\d\d` did not match `FY 2025`, rejecting all 16 annual reports | **done** — fixed |
+| Fetcher prints its denominator: links seen, kept, rejected, and a sample of rejects | **done** — kept went 90 → 206 |
+| Cross-store duplicates reconciled, both addresses kept in `upstream` | **done** — 18 matched |
+| **All 16 annual town reports downloaded** | **done** — FY2011–FY2025 |
+| **`scripts/pdf_tables.py` — the reader** | **done** — see below |
+| `ocr_pdf.swift --boxes` emits position and confidence per line | **done** — default path unchanged |
+| **Survey, text-layer pass** | **done** — `sources/data/annual-report-survey.csv`, per page. 1,588 of 2,751 pages readable; 440 carry figures; 1,163 have no text layer |
+| **Survey, OCR pass** | **doing** — all 16 reports at scale 6 with rotation honoured |
+| `appropriations`, `debt` and `payroll` found in **zero** years by text layer | **expected** — they are on the scanned pages; FY2011's OCR already shows payroll on pp. 60–64 |
+| Receipts by source × year | **doing** — 4 years written (FY2014, 15, 17, 22), 401 source-years, every one tying to the report's own GRAND TOTAL on both checks; 11 years await the OCR pass |
+| FY2011's receipts page is clipped in the town's own scan — no GRAND TOTAL, a third of the detail absent | **known limit** — skipped and reported, not published half-checked |
+| Special revenue funds × year — turns `fund_activity` from a snapshot into a history | **open** |
+| Appropriations by department × year | **open** |
+| **Staff rosters → an org chart per year, per school, standardised so years compare** | **next, after parsing** — 25 pages, 10 years so far; harness built (`dump_roster_pages.py`, `build_staff_rosters.py`) |
+| Names kept — the town publishes them annually and they make the aggregate checkable | **decided** — a name persisting across years separates a renamed post from a turned-over one |
+| Rosters print **no total**, so reconciliation is unavailable | **handled** — the check is line accounting: every non-blank line claimed as entry or heading, leftovers counted and printed |
+| At least five different name/role encodings across years and schools | **why it is agent-read per page** — `Name - Role`, `Role Name`, `Name, First – Role`, a two-column table, and grade codes standing in for roles |
+| Position taxonomy: unrecognised titles stored blank, never bucketed as `Other` | **built** — an `Other` bucket makes the aggregate look complete while hiding that the taxonomy is wrong |
+| `CLAUDE.md` says "for people it is a headcount nobody publishes" — the town has published one for a decade | **open** — correct the sentence, do not quietly drop it. Note the caveat survives: a roster has no FTE and no funding source, so it bounds the question rather than settling it |
+| 35–55MB each against a 25MiB publishing limit | **open** — needs `ELSEWHERE` entries |
+
+### What the reader established, and why it is not a detail
+
+Three things were found by building it, and each changes what can be believed:
+
+1. **The reports are three kinds of document.** Six are page scans with no font resources
+   at all; ten have a text layer. pypdf returning nothing from FY2012 is correct, not
+   broken.
+2. **There is no correct extraction mode.** On one FY2025 page, `layout` is the only mode
+   that sees a blank cell — plain mode shifts every figure a column left. Four pages
+   earlier, `layout` recovers **zero** of the 61 money tokens plain mode reads. The mode is
+   chosen per page by measurement and recorded, which is rule 13 made mechanical.
+3. **Reconciliation is not sufficient.** OCR read `$22,399,495.70` off the FY2016 addendum
+   and did not read `REAL ESTATE TAXES` beside it — the largest revenue line in the town,
+   as a number with no name — and the figures still summed to the report's own printed
+   GRAND TOTAL. A table can tie perfectly and have lost what half its rows are about. So
+   there is a second check: every figure must have a label.
+
+And the reason that happened is worth carrying to any future OCR work here: **raster scale
+is a correctness parameter and it fails silently at confidence 1.000.** At scale 3.0 and
+4.0 those labels are missing; at 6.0 they are read. Structure settles by 6.0; individual
+characters never settle at all. Two passes, differenced.
+
+---
+
 ## The order, and why it cannot move
 
 1. **Track 1 before Track 2.** A request derived from a coverage matrix that measures the

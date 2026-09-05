@@ -1,0 +1,1 @@
+../../../sources/data/PROVENANCE-annual-report-receipts.md

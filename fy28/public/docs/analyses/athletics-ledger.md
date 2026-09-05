@@ -360,7 +360,7 @@ which separates spending by fund.
 There is a second, narrower consequence. `sources/data/document-basis.csv` classifies every
 financial document in the archive by what produced its figures, and before these arrived it
 found fifteen on a ledger basis, of which exactly one reached school budget lines. Rerun, it
-now scans **220** documents and finds **18** on a ledger basis: **these three journal exports
+now scans **349** documents and finds **10** on a ledger basis: **these three journal exports
 are the second, third and fourth to reach school money**, and they are the first to cover
 complete fiscal years.
 

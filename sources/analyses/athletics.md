@@ -48,16 +48,16 @@ only one of which is a record of money moving.
 
 | type | what it means | count |
 |---|---|---:|
-| `ledger` | the accounting system — a figure exists because a transaction did | 18 |
-| `restatement` | a prior year re-presented inside a document written by the party that spent it | 46 |
-| `forward` | proposed, requested, level service, balanced | 103 |
-| `narrative` | money discussed, no figure table | 53 |
+| `ledger` | the accounting system — a figure exists because a transaction did | 10 |
+| `restatement` | a prior year re-presented inside a document written by the party that spent it | 65 |
+| `forward` | proposed, requested, level service, balanced | 176 |
+| `narrative` | money discussed, no figure table | 98 |
 
 Of those ledger documents, exactly one reaches school budget **lines** on the general fund:
 `district-budget/text/fy23-quarterly-budget-update.txt`, covering one quarter of FY23.
 Everything else the school analysis rests on is restatement.
 
-**Three of the eighteen arrived after this document was written**, on 17 June 2026, and they
+**Three of the ten arrived after this document was written**, on 17 June 2026, and they
 are the athletics revolving fund's own cashbook for FY2024, FY2025 and FY2026 — the first
 complete fiscal years of ledger data this project has held for anything touching school money.
 They are read in `analyses/athletics-ledger.md`, and several claims in the sections below are

@@ -667,6 +667,163 @@ GROUPS = [
         ],
     },
     {
+        'section': 'ours', 'id': 'annual-reports', 'origin': 'us',
+        'title': 'Fifteen years of annual town reports, read into tables',
+        'blurb': 'The sixteen annual town reports, FY2011–FY2025, read page by page and '
+                 'turned into machine-readable tables. Two of these answer questions this '
+                 'project had recorded as unanswerable. Most of the rest are '
+                 'transcriptions that arithmetic cannot yet check, and every row says '
+                 'which it is. Start with PROVENANCE-report-tables.md below, which says '
+                 'what a figure in these means before you quote one.',
+        'items': [
+            ('data/placement-counts.csv',
+             'Out-of-district placements, by year, FY2011\u2013FY2025', 3,
+             '15 rows, and the answer to a standing question. CLAUDE.md listed '
+             'out-of-district placement counts among the numbers that would settle more '
+             'than any further analysis, and recorded them as not published. They are '
+             'published \u2014 in the Special Services report inside each annual town '
+             'report, sourced to SIMS Report 7 and measured on 1 March, split into '
+             'collaborative, day and residential. It is two sentences of prose with no '
+             'heading naming it, which is why fifteen years of it went unread. Two checks '
+             'come with it: the parts sum to the total, and each year states the previous '
+             'year\u2019s figure. It is a count of CHILDREN and says nothing about which '
+             'fund paid or what any placement cost. '
+             'See data/PROVENANCE-placement-counts.md.'),
+            ('data/PROVENANCE-placement-counts.md',
+             'Where the placement counts came from, and what they are not', 3,
+             'Written by us. Which sentence of which page each year came from, the two '
+             'checks the source itself supplies, the misprint in the FY2023 report, and '
+             'why DESE\u2019s Out-of-District FTE series is NOT a cross-check \u2014 it '
+             'runs ten times larger because it counts vocational, choice and charter '
+             'pupils too. Both series decline, which is easy to mistake for agreement.'),
+            ('data/staff-roster-entries.csv',
+             'Every name the town printed on a school staff roster, FY2011\u2013FY2025', 3,
+             '3,815 entries across 15 years, 7 schools and 100 pages. This BOUNDS the '
+             'question of whether budgeted positions were filled; it does not settle it. '
+             'A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row '
+             'each; no funding source, which is the question that actually matters; and it '
+             'is a point in time, undated within the year. A count of names the town '
+             'printed is a real quantity and it is not a staffing level.'),
+            ('data/staff-roster-counts.csv',
+             'Roster headcount by school and year', 2,
+             '699 rows: how many names appear on each school\u2019s roster in each year. '
+             'The same caveat governs it \u2014 see data/PROVENANCE-staff-rosters.md.'),
+            ('data/staff-position-map.csv',
+             'Roster position titles, grouped', 1,
+             '534 rows mapping the position titles printed on the rosters onto groups. A '
+             'hypothesis about which titles are the same job, not a fact about the town.'),
+            ('data/PROVENANCE-staff-rosters.md',
+             'Where the staff rosters came from, and what a name is not', 3,
+             'Written by us. The 100 pages, the one known defect (a hyphen-wrapped '
+             'surname), and the three reasons a roster count is not a staffing level.'),
+            ('data/annual-report-receipts.csv',
+             'Town receipts by source, FY2011\u2013FY2023', 3,
+             '1,137 rows, of which 504 tie to the report\u2019s own printed GRAND TOTAL '
+             'twice over. Never aggregate without splitting on the status column: 85 rows '
+             'are in years whose check failed and 548 in years that print no total. '
+             'See data/PROVENANCE-annual-report-receipts.md.'),
+            ('data/PROVENANCE-annual-report-receipts.md',
+             'Where the receipts came from', 2,
+             'Written by us: the page each year was read from, the two totals each year '
+             'is checked against, and what the status column means.'),
+            ('data/special-revenue-funds.csv',
+             'The special revenue funds, FY2011\u2013FY2025', 3,
+             '2,387 rows. These are the funds rule 11 says the budget documents cannot '
+             'show you \u2014 grants, revolving funds and gifts that pay for real staff '
+             'and appear nowhere in the appropriation. 693 rows prove themselves on the '
+             'fund\u2019s own identity (forward + receipts \u2212 disbursements = carried '
+             'forward), and 351 lost cells are recovered from it, written into their own '
+             'column and never into a value column. '
+             'See data/PROVENANCE-special-revenue-funds.md.'),
+            ('data/PROVENANCE-special-revenue-funds.md',
+             'Where the special revenue funds came from', 2,
+             'Written by us: the identity each row is checked against, what a recovered '
+             'cell is, and why a recovered value is never written into a value column.'),
+            ('data/ballot-questions.csv',
+             'What the town was asked to fund, and whether it agreed', 3,
+             '7 records. Every tally verified against its own precinct figures. This is '
+             'the other question the reports answered that nothing else could: an override '
+             'or debt exclusion is the moment the town decides, and the budget documents '
+             'record only the outcome\u2019s consequences.'),
+            ('data/report-appropriations.csv',
+             'The general fund appropriations, both tables, FY2011\u2013FY2025', 2,
+             '4,665 rows and the largest of these extracts. It holds TWO different tables '
+             '\u2014 the Town Accountant\u2019s schedule of the year that closed, and the '
+             'town meeting omnibus budget for the year ahead \u2014 told apart by the '
+             'table_family column, because averaging one against the other would be a '
+             'confident wrong answer. Read column_meaning before reading a value: the v '
+             'columns are ordinals, and where the table states an identity that fixes '
+             'them they are named. No year currently ties to its own printed total.'),
+            ('data/report-trust-funds.csv', 'Trust and stabilisation funds', 1,
+             '642 rows. 12 tie; the rest do not, and two years read their own grand total '
+             'as $7.00 and \u2212$19.00, which is our reading and not the town\u2019s '
+             'figure.'),
+            ('data/report-debt.csv', 'Debt outstanding, issued and retired', 1,
+             '354 rows, 74 of which tie to a printed total.'),
+            ('data/report-capital-projects.csv', 'Capital project authorisations', 1,
+             '616 rows. None tie yet.'),
+            ('data/report-elections.csv', 'The vote, by candidate and precinct', 2,
+             '2,012 rows. 323 prove themselves \u2014 the precinct figures sum to the '
+             'total the report prints beside them \u2014 and where exactly one cell was '
+             'lost to the scan it is derived from the row\u2019s own total and written '
+             'into derived_cell, never into a value column, because we know what the '
+             'missing figure must be and not which column it sat in.'),
+            ('data/report-gross-wages.csv', 'Gross wages paid, by employee', 1,
+             '3,545 rows. The town publishes every employee\u2019s gross wage; nothing in '
+             'it says which fund paid, which is the question rule 11 keeps asking. No '
+             'arithmetic check is available \u2014 these pages print no total.'),
+            ('data/report-valuation.csv', 'Valuation and tax rate history', 1,
+             '316 rows. No printed totals, so no arithmetic check.'),
+            ('data/report-officials.csv', 'Who held which town office', 1,
+             '237 rows. A list of names and terms; no total to check it against.'),
+            ('data/report-enrollment-mcas.csv', 'Enrolment and MCAS results', 1,
+             '337 rows. No arithmetic check available.'),
+            ('data/report-dept-activity.csv', 'What each department reports doing', 1,
+             '515 rows of counts departments publish about their own year.'),
+            ('data/report-monty-tech.csv', 'Montachusett Regional assessment and enrolment',
+             1, '70 rows. The vocational assessment is one of the largest single lines the '
+             'town votes and one of the least discussed.'),
+            ('data/report-vital-records.csv', 'Births, marriages and deaths', 1,
+             '96 rows from the Town Clerk\u2019s report.'),
+            ('data/PROVENANCE-report-tables.md',
+             'What the twelve generic extracts are, and what may not be done with them', 3,
+             'Written by us, generated from the data so its figures cannot drift. Why v1 '
+             'is an ordinal and not a column, what each of the three status words means, '
+             'what every other column carries, and the four things these tables do not '
+             'tell you. Read this before quoting any figure out of the tables above.'),
+            ('data/annual-report-catalogue.csv',
+             'Every table in every annual report, catalogued', 2,
+             '863 blocks found by reading all sixteen reports end to end rather than by '
+             'searching them. It carries each table\u2019s PRINTED heading, because the '
+             'headings differ between years and that is precisely what defeats a search. '
+             'The cross-year grouping is a hypothesis about which tables are the same '
+             'table, not a fact.'),
+            ('data/annual-report-contents.csv',
+             'What each report contains, section by section', 1,
+             '199 rows. The shape of the document rather than the town\u2019s figures.'),
+            ('data/annual-report-survey.csv',
+             'Every page of every report, and how it can be read', 1,
+             '2,751 rows \u2014 one per page \u2014 recording which instrument recovers '
+             'that page and how much of it. The instrument is part of the finding.'),
+            ('data/extraction-plan.csv',
+             'Which pages each dataset was read from', 2,
+             '553 rows joining a dataset and an edition to the pages it was taken off. '
+             'This is what makes a figure findable in the original.'),
+            ('data/dataset-provenance.csv',
+             'Every dataset row joined to the document it came from', 3,
+             '225 rows: dataset, edition, pages, the report\u2019s own filename, both of '
+             'the town\u2019s addresses for it, and the sha256 of our copy. Rule 12 wants '
+             'the address at the same time as the figure; this is that join, and '
+             'notes/generated/DATASET-PROVENANCE.md is its readable form.'),
+            ('data/report-anomalies.csv',
+             'What looks wrong in the extracts, and where to look', 2,
+             '521 rows naming the pages and rows whose reading is not credible \u2014 a '
+             'total smaller than the rows beneath it, a figure larger than the table it '
+             'sits in, a cell that plainly held money and did not parse. A list of places '
+             'to look, not a list of the town\u2019s mistakes.'),
+        ],
+    },
+    {
         'section': 'ours', 'id': 'derived', 'origin': 'us',
         'title': 'Built by this project',
         'blurb': 'Machine-readable extracts. Derived from the documents above and '
@@ -677,6 +834,26 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('munis-ledgers/expenses/PROVENANCE-fy2026-p09.md',
+             'Provenance for the FY26 period 9 ledgers \u2014 and the gap in it', 3,
+             'Written by us. What the reports say about themselves, quoted from their own '
+             'printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town '
+             'Accountant whose name the report prints, year/period 2026/9, and the general '
+             'fund run made with `Print totals only: Y`, which is why it carries 67 '
+             'department rollups and no accounts. And then the part that matters: NOTHING '
+             'in this archive records how these files were obtained. They are not on the '
+             'town\u2019s website and no email, records request or meeting packet is '
+             'recorded for them. Rule 12 says a document that did not come off a website '
+             'still has an address; this one\u2019s is missing, and the note records the '
+             'gap rather than inventing a route.'),
+            ('munis-ledgers/revenue/PROVENANCE-fy2026-p09.md',
+             'Provenance for the FY26 period 9 revenue reports', 1,
+             'A pointer: these arrived in the same package as the expenditure reports, and '
+             'how that package was obtained is not recorded. The full note is in '
+             'munis-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
+            ('munis-ledgers/fund-balances/PROVENANCE-fy2026-p09.md',
+             'Provenance for the FY26 period 9 fund balance reports', 1,
+             'The same pointer, filed with the fund balance reports.'),
             ('munis-ledgers/account-details/PROVENANCE-fund1301.md',
              'Provenance for the 17 June 2026 records request', 2,
              'Written by us, filed with the documents it describes: where each one came '
@@ -883,7 +1060,7 @@ GROUPS = [
              'balanced), or narrative. Each row quotes the raw header text the '
              'classification rests on, with its line number or cell reference, so any row '
              'can be checked in one grep; workbook rows also record which columns are '
-             'HIDDEN. Of 216 documents, 15 are ledger-basis and exactly one of those '
+             'HIDDEN. Of 349 documents, 10 are ledger-basis and exactly one of those '
              'reaches school budget lines. Rebuild with '
              'scripts/classify_document_basis.py.'),
             ('data/grants-history.csv',
@@ -1016,7 +1193,13 @@ KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarized as a corpus instead.
 SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
-             'town-budget', 'town-supplementary', 'town-annual-reports', 'dese'}
+             'town-budget', 'town-supplementary', 'town-annual-reports', 'dese',
+             # Working files, one per page, that the catalogue and the datasets summarise.
+             # `data/inventory/` is what an agent read off each report page before anything
+             # was extracted, and `data/rosters/` the parsed roster blocks. They are kept
+             # because re-reading them costs many hours, and they are not documents: the
+             # citable artefacts are the CSVs they produced, which are catalogued below.
+             'data/inventory', 'data/rosters', 'data/verify'}
 SKIP_FILES = {'supplemental.csv'}
 
 

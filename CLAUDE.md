@@ -195,8 +195,10 @@ staffing, of caseload, or of what the schools cost all in.
 - When a rate rests on a line, ask what else could be paying for that line, and say so
   next to the rate if you cannot rule it out.
 - Name what would settle it. For funding sources that is usually DESE's End of Year
-  Financial Report, which separates spending by fund; for people it is a headcount nobody
-  publishes.
+  Financial Report, which separates spending by fund. For people, the town **does** publish
+  a headcount -- per-school staff rosters in every annual report, FY2011 to FY2025 -- but it
+  is a list of names with no FTE and no funding source, so it bounds the question rather
+  than settling it. The thing nobody publishes is which fund pays which post.
 - The archive holding 245 documents does not fix this. Lunenburg publishes a great deal
   and still does not publish the mapping between the two.
 
@@ -259,6 +261,7 @@ Four that happened in a single day:
 | "the actuals sheet" | a forward budget workbook with a column headed ACTUALS |
 | "`main` is 15 commits ahead" | a number read off a summary, never off the repo |
 | a verifier passing on "four of eight usable years" | the string was present; there are nine |
+| `v1` summed across a run and called APPROPRIATED | the first column of each PAGE that held figures — three different printed columns |
 
 **The rules.**
 
@@ -272,6 +275,13 @@ Four that happened in a single day:
 - **A check must assert the number, not the prose around it.** `verify_athletics.py` first
   checked that a sentence existed and passed while the sentence was wrong. Derive the value
   from the data and compare.
+- **A positional name is not a column name.** `v1` in the annual-report extracts means
+  *the first column of this page that held figures*, and the column ruler is built per
+  page. Summing it across a run adds one page's APPROPRIATED to another's TOTAL EXPENDED,
+  and FY2011 came out within 1% of its own printed total that way — compensating errors
+  producing a check that passed because it had no power to fail. Read `column_meaning`,
+  which names the columns where the table states an identity that fixes them and says
+  `not established` where it does not.
 - **A summary in this conversation is not a source.** After a context reset the handoff
   reads exactly like something already verified. It is a claim about the repo, not the
   repo.
@@ -353,6 +363,21 @@ show up on re-reading your own work.
 
 ---
 
+## The annual town reports
+
+Sixteen of them, FY2011-FY2025, read page by page into 25 datasets. **The entry point is
+`notes/reference/ANNUAL-REPORTS.md`** -- what exists, where each thing lives, what state it is
+in, and what is still uncaptured. It is generated, so its counts cannot drift.
+
+Do not go looking for this in the CSVs. Three things there are easy to get wrong and all
+three are written down:
+
+- **`v1` is an ordinal, not a column.** Read `column_meaning`.
+- **`status` splits the rows into three.** `checked`, `check failed`, `no check` -- and
+  nothing may be aggregated without splitting on it.
+- **Six of the sixteen source PDFs exist only in this working tree.**
+  `notes/reference/BACKUP.md` lists every path with how many copies of it exist.
+
 ## Picking up mid-stream
 
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
@@ -401,6 +426,12 @@ arriving fresh.
     python3 scripts/build_views.py --check       # ...and every symlink in them still resolves
     python3 scripts/check_archive_layout.py      # is every document where the layout says, under the right name
     python3 scripts/check_moved_docs.py          # every address published before the reorg still resolves
+    python3 scripts/extract_tables.py <dataset>  # the annual reports, one table family at a time
+    python3 scripts/verify_report_tables.py      # every reconciliation those extracts state, recomputed
+    python3 scripts/build_report_tables_provenance.py  # what the generic extracts are, generated from them
+    python3 scripts/build_archive_guide.py       # the annual-report entry point and the backup manifest
+    python3 scripts/build_archive_guide.py --check    # ...and fail if either has gone stale
+    python3 scripts/build_dataset_provenance.py  # every dataset row joined to the document it came from
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
 
@@ -472,12 +503,29 @@ link dies.
 
 ## The standing questions
 
-Some numbers would settle more than any further analysis. They are not published:
+Some numbers would settle more than any further analysis.
 
-- Out-of-district **placement counts** by year. Dollars cannot distinguish fewer children
-  from a more honest estimate.
+**Two of them turned out to be published, in documents this project already held.** They sat
+unread for a different reason each time, and both reasons are worth keeping: one was prose
+rather than a table, and the other was found by searching for a heading the town does not
+consistently use. Neither was hard to get once anybody looked.
+
+- ~~Out-of-district **placement counts** by year.~~ **PUBLISHED, FY2013–FY2025.** In the
+  Special Services report inside each annual town report, sourced to SIMS Report 7 and
+  measured on 1 March, split into collaborative, day and residential placements.
+  `sources/data/placement-counts.csv`. It is two sentences of prose with no heading naming
+  it, which is why fifteen years of it went unread. Two checks come with it: the parts sum
+  to the total, and each year states the previous year's figure.
+  **This does not settle the money.** A placement count is children placed; it says nothing
+  about which fund paid or what any placement cost, and rule 11 still applies to the tuition
+  line.
+- ~~Whether budgeted positions were **filled**.~~ **BOUNDED, not settled.** The town
+  publishes per-school staff rosters, by name and position, in every annual report from
+  FY2011 to FY2025 — 51 blocks across fifteen years. But a roster carries **no FTE**, so a
+  0.4 music teacher and a full-timer are one row each; **no funding source**, which is the
+  question that actually matters; and it is a point in time, undated within the year. A
+  count of names the town printed is a real quantity and it is not a staffing level.
 - The FY26 **year-end** figures. Everything we hold for FY26 stops at 31 March.
-- Whether budgeted positions were **filled**. A budget line is an intention.
 - **How grants and state funding map onto the budget lines.** The budget shows the general
   fund and nothing else, so a line rising because a grant ended looks exactly like a line
   rising because the district grew. This one is load-bearing: the in-district special

@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, 'model'))
 import freecash as fc  # noqa: E402
 
 DOC = os.path.join(ROOT, 'sources', 'analyses', 'free-cash.md')
-WANTED = os.path.join(ROOT, 'notes', 'DATA-WANTED.md')
+WANTED = os.path.join(ROOT, 'notes', 'findings', 'DATA-WANTED.md')
 
 cap = fc.capital_consequence()
 if cap is None:
