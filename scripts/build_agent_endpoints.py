@@ -68,6 +68,80 @@ def usd(n):
     return f'${round(n):,}'
 
 
+# What this site cannot answer -- and the check that stops the list going stale.
+#
+# THIS IS THE ONE KIND OF CLAIM THAT ROTS SILENTLY. A "we do not have X" line is only
+# falsified by somebody FINDING X, and finding X is exactly the moment nobody thinks to go
+# back and edit a disclaimer. Two of the three entries here were wrong for weeks:
+#
+#   * placement counts were extracted to placement-counts.csv, FY2011-FY2025
+#   * per-school staff rosters were extracted to staff-roster-entries.csv, 3,815 rows
+#
+# and this file went on telling agents neither existed. An agent asked about
+# paraprofessionals read "Whether budgeted positions were filled. A budget line is an
+# intention", repeated it back almost verbatim, and stopped -- while the same file, four
+# sections earlier, handed it a queryable database with a `staff_roster_entries` table in
+# it. The disclaimer did not merely fail to help; it contradicted what the site had
+# already offered.
+#
+# So each entry names the dataset that would settle it, and `not_known_lines()` REFUSES TO
+# BUILD if that dataset exists and the sentence does not cite its published URL. You cannot
+# satisfy the guard without telling the reader where the data is.
+NOT_KNOWN = [
+    dict(
+        settled_by='sources/data/placement-counts.csv',
+        text='Out-of-district special education **placement counts** by year — '
+             'PARTLY ANSWERED. The town publishes them inside each annual report, sourced '
+             'to SIMS Report 7 and measured on 1 March: '
+             '`{SITE}/data/placement-counts.csv`, FY2013–FY2025, split into '
+             'collaborative, day and residential. **It does not settle the money.** A '
+             'placement count is children placed; it says nothing about which fund paid '
+             'or what any placement cost, so dollars still cannot distinguish fewer '
+             'children from a more honest estimate.'),
+    dict(
+        settled_by='sources/data/staff-roster-entries.csv',
+        text='Whether budgeted positions were **filled** — BOUNDED, not settled. The town '
+             'prints per-school staff rosters, by name and position, in every annual '
+             'report from FY2011 to FY2025: `{SITE}/data/staff-roster-entries.csv`, 3,815 '
+             'rows, and `{SITE}/data/staff-roster-counts.csv` for the counts. But a roster '
+             'carries **no FTE**, so a 0.4 music teacher and a full-timer are one row '
+             'each; **no funding source**, which is the question that actually matters; '
+             'and it is a point in time, undated within the year. A count of names the '
+             'town printed is a real quantity and it is not a staffing level. Grade level '
+             'appears only where the roster happens to print it — most paraprofessionals '
+             'are grouped by programme (Special Education, Achieve, TLC, Pre-School) '
+             'rather than by grade.'),
+    dict(
+        settled_by='sources/town-ledgers/expenses/'
+                   'glytdbud-expense-fy2026-p13-gf-all.xlsx',
+        text='FY26 **final** figures. What is held reaches period 12 — 30 June 2026 — '
+             'which is before purchase orders are cleared. Period 13 is the one that '
+             'closes the year, and nobody has published it.'),
+]
+
+
+def not_known_lines():
+    """The "does not know" list, refusing to build once one of its claims is false."""
+    stale = []
+    for e in NOT_KNOWN:
+        settled = os.path.join(ROOT, e['settled_by'])
+        if not os.path.exists(settled):
+            continue
+        public = '/data/' + os.path.basename(e['settled_by'])
+        if public not in e['text']:
+            stale.append(f"{e['settled_by']} now exists, and the entry that says this "
+                         f"site does not have it never mentions {public}")
+    if stale:
+        raise SystemExit(
+            'llms.txt claims this site does not know something it now does:\n  '
+            + '\n  '.join(stale)
+            + '\n\n  Rewrite the entry in NOT_KNOWN to say what the data IS and what it '
+              'still is not,\n  and cite its published URL. A disclaimer nobody revisits '
+              'is how an assistant\n  gets told the archive is empty while standing on '
+              'top of it.')
+    return [f"- {e['text'].format(SITE=SITE)}" for e in NOT_KNOWN]
+
+
 def worked_example():
     """The three-step search example in llms.txt, read out of the index it describes.
 
@@ -162,6 +236,28 @@ def main():
          'district-page-index.csv',
          'The 87 documents mirrored from the district budget page: label, our copy, the '
          'extracted text, the district’s original URL, and a sha256.'),
+        (os.path.join(ROOT, 'sources', 'data', 'staff-roster-entries.csv'),
+         'staff-roster-entries.csv',
+         'Every name and position the town printed in its per-school staff rosters, '
+         'FY2011 to FY2025 — 3,815 rows across 51 roster blocks, with the school, the '
+         'page it came from and the heading it sat under. Published because it is the '
+         'only published quantity that bears on whether budgeted positions were filled. '
+         'It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a '
+         'full-timer are one row each; there is no funding source, which is the question '
+         'that actually matters; and it is a point in time, undated within the year.'),
+        (os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv'),
+         'staff-roster-counts.csv',
+         'The same rosters counted by year, school and position — 699 rows. Use this '
+         'rather than counting the entries yourself, and read the caveats on '
+         'staff-roster-entries.csv before treating any of it as headcount.'),
+        (os.path.join(ROOT, 'sources', 'data', 'placement-counts.csv'),
+         'placement-counts.csv',
+         'Out-of-district special education placements by year, FY2013 to FY2025, split '
+         'into collaborative, day and residential. From the Special Services report '
+         'inside each annual town report, sourced to SIMS Report 7 and measured on '
+         '1 March. Two checks come with it: the parts sum to the total, and each year '
+         'states the previous year’s figure. It is a count of children placed and says '
+         'nothing about which fund paid or what a placement cost.'),
         (os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv'),
          'archive-manifest.csv',
          'Every file in the archive — 3,876 of them — with its size, its sha256, and the '
@@ -419,17 +515,27 @@ def main():
         'is taken from behind a login, and every file is republished with a sha256 so it '
         'can be checked against yours.',
         '',
-        '## Query the database directly',
+        '## Query the data',
         '',
-        'Everything on this site is derived from one SQLite database, and it is '
-        f'published: [{SITE}/data/lunenburg.db]({SITE}/data/lunenburg.db). Download it '
-        'and query it. Its sha256 is stated in `/api/index`, so you can check you got '
-        'the bytes we published.',
+        f'**Start at the API: [{SITE}/api/index]({SITE}/api/index).** Static JSON, no key, '
+        'no rate limit, nothing computed per request. Every response carries the documents '
+        'its rows came from, with URL and sha256, so a figure you take from it can be '
+        'cited to a source rather than to us. Every endpoint states its own size in '
+        '`bytes`, so you can decide before fetching.',
         '',
-        f'There is also a read-only JSON API at [{SITE}/api/index]({SITE}/api/index) — '
-        'no key, no rate limit, nothing computed per request. Every response carries the '
-        'documents its rows came from, with URL and sha256, so a figure you take from it '
-        'can be cited to a source rather than to us.',
+        f'**Every dataset is fetchable: [{SITE}/api/tables]({SITE}/api/tables).** One '
+        'entry per table with its row count and size. The named endpoints are joins and '
+        'roll-ups; this is the raw grain — staff rosters, out-of-district placement '
+        'counts, fifteen years of annual-report extracts. A table too large for one '
+        'fetch is published as an index plus one file per fiscal year, so nothing here '
+        'requires a request you cannot afford. This exists because an assistant read an '
+        'endpoint list of eight, saw nothing about staffing, and reported that this '
+        'project holds no headcount while `staff_roster_entries` had 3,815 rows in it.',
+        '',
+        'The whole thing is also downloadable as SQLite — '
+        f'[{SITE}/data/lunenburg.db]({SITE}/data/lunenburg.db), 16MB, sha256 in '
+        '`/api/index` — but that is the fallback, not the front door. Most callers cannot '
+        'fetch 16MB of binary, and nothing in it is unreachable through the API.',
         '',
         f'**Fetch [{SITE}/api/schema]({SITE}/api/schema) before computing anything.** It '
         'states the grain of every table and the four specific ways to get a confident '
@@ -508,10 +614,7 @@ def main():
         '',
         '## What this site does not know',
         '',
-        '- Out-of-district special education **placement counts** by year. Dollars cannot '
-        'distinguish fewer children from a more honest estimate.',
-        '- FY26 **year-end** figures. Everything held for FY26 stops at 31 March 2026.',
-        '- Whether budgeted positions were **filled**. A budget line is an intention.',
+        *not_known_lines(),
         '',
         '## Provenance',
         '',

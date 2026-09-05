@@ -263,6 +263,86 @@ def sha256_of(path):
     return h.hexdigest()
 
 
+
+# Every table in the database, fetchable. Not just the eight with a hand-written resource.
+#
+# An agent asked what this project holds on paraprofessionals, read `/api/index`, found
+# eight endpoints and none of them about staffing, and concluded "none of it holds
+# headcount". It was wrong: `staff_roster_entries` has 3,815 rows. The schema even named
+# the table -- in a row-count map, with no grain, no caveats and no address. A table an
+# agent can see the size of and cannot fetch is worse than one it cannot see at all,
+# because it looks like a dead end rather than a missing feature.
+#
+# So every table is published. Large ones are split by fiscal year rather than truncated,
+# because the alternative -- a 3 MB blob -- is a resource nobody can afford to fetch, and
+# this API already learned that with the budget lines.
+SHARD_ABOVE = 400 * 1024
+YEAR_COLUMNS = ('fy', 'fiscal_year', 'edition', 'year')
+
+
+def year_column(cols):
+    for c in YEAR_COLUMNS:
+        if c in cols:
+            return c
+    return None
+
+
+def publish_tables(db, written, already):
+    """Publish every table that has no hand-written resource of its own."""
+    names = [t for (t,) in db.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")]
+    listed = []
+    for name in names:
+        if name in already:
+            continue
+        cols = [c[1] for c in db.execute('PRAGMA table_info("%s")' % name)]
+        rows = q(db, 'SELECT * FROM "%s"' % name)
+        doc_field = 'doc_id' if 'doc_id' in cols else (
+            'document' if 'document' in cols else None)
+        meta = TABLES.get(name, {})
+        about = meta.get('what') or (
+            f'The `{name}` table, published whole. See /api/schema for its grain.')
+        caveats = list(meta.get('caveats', ()))
+
+        def payload(rs, note=''):
+            body = resource(db, name, rs, doc_field=doc_field or 'doc_id',
+                            caveats=caveats, about=about + note)
+            body['columns'] = cols
+            body['source'] = f'{SITE}/docs/data/{name.replace("_", "-")}.csv'
+            return body
+
+        whole = payload(rows)
+        size = len(json.dumps(whole, separators=(',', ':')))
+        yc = year_column(cols)
+        if size <= SHARD_ABOVE or not yc:
+            written['api/' + name] = write(name, whole)
+            listed.append(dict(url=f'{SITE}/api/{name}', rows=len(rows),
+                               bytes=written['api/' + name]))
+            continue
+
+        # Too large to hand to a caller in one piece: an index plus one file per year.
+        by_year = {}
+        for r in rows:
+            by_year.setdefault(str(r.get(yc) or 'undated'), []).append(r)
+        parts = []
+        for yr, rs in sorted(by_year.items()):
+            key = f'{name}/{yr}'
+            written['api/' + key] = write(key, payload(
+                rs, f' This file is {yc} {yr} only.'))
+            parts.append(dict(url=f'{SITE}/api/{key}', **{yc: yr},
+                              rows=len(rs), bytes=written['api/' + key]))
+        idx = dict(resource=name, about=about, count=len(rows), columns=cols,
+                   caveats=caveats,
+                   note=f'{len(rows):,} rows is more than one fetch should carry, so this '
+                        f'is an index. Each file below is one {yc}.',
+                   source=f'{SITE}/docs/data/{name.replace("_", "-")}.csv',
+                   parts=parts)
+        written['api/' + name] = write(name, idx)
+        listed.append(dict(url=f'{SITE}/api/{name}', rows=len(rows),
+                           bytes=written['api/' + name], splitBy=yc, parts=len(parts)))
+    return listed
+
+
 def main():
     if not os.path.exists(DB):
         print('no database; run scripts/build_db.py first')
@@ -461,6 +541,23 @@ def main():
                       FROM document ORDER BY path"""),
     ))
 
+    # Everything else in the database, fetchable rather than merely named.
+    curated = {'ledger_snapshot', 'budget_figure', 'account', 'fund', 'document',
+               'budget_line', 'workbook_figure', 'fiscal_period', 'crosswalk',
+               'fund_activity', 'grant_award'}
+    tables_listed = publish_tables(db, written, curated)
+    written['api/tables'] = write('tables', dict(
+        resource='tables',
+        about='Every dataset in this project, fetchable. One entry per table in the '
+              'database, with its size in bytes so a caller can decide before fetching. '
+              'The curated endpoints in /api/index are joins and roll-ups over these; '
+              'this is the raw grain.',
+        note='A table larger than 400KB is published as an index plus one file per '
+             'fiscal year rather than as one blob.',
+        count=len(tables_listed),
+        tables=sorted(tables_listed, key=lambda t: t['url']),
+    ))
+
     # The index goes last so it can report the real sizes.
     endpoints = [
         dict(url=f'{SITE}/api/schema', about='Read this first. Grain, conventions, and '
@@ -473,6 +570,9 @@ def main():
         dict(url=f'{SITE}/api/totals', about='Whole-year budget against actual.'),
         dict(url=f'{SITE}/api/funding', about='Revenue, transfers, funds and grants.'),
         dict(url=f'{SITE}/api/documents', about='Provenance for every source.'),
+        dict(url=f'{SITE}/api/tables', about='EVERY dataset in the project, fetchable, '
+             'with its size. Staff rosters, placement counts, annual-report extracts — '
+             'the raw grain the endpoints above are built from.'),
         dict(url=f'{SITE}/data/lunenburg.db', about='The whole database, SQLite. '
              f'sha256 {digest}.'),
     ]

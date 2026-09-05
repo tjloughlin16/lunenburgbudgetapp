@@ -55,6 +55,23 @@ RELEASES = [
 
             'The storage cannot be overwritten or deleted for ten years — tested by trying '
             'it, not assumed. An archive whose copies can change quietly is not an archive.',
+
+            'Every dataset this project holds is now fetchable one table at a time, at '
+            '/api/tables, with each file’s size stated so a reader can decide before '
+            'asking for it. Anything too large for one request is split by fiscal year '
+            'rather than truncated. This was found the way these things are: an assistant '
+            'asked what the archive holds about paraprofessionals, read a list of eight '
+            'endpoints, saw nothing about staffing and reported that we hold no headcount '
+            '— while a table of 3,815 roster entries sat behind a name it could see and '
+            'not fetch.',
+
+            'The list of things this site says it cannot answer was two-thirds wrong. It '
+            'still said out-of-district placement counts were unknown, and that whether '
+            'budgeted positions were filled was unknown; both had been extracted from the '
+            'town’s own annual reports weeks earlier. A disclaimer is only ever falsified '
+            'by somebody finding the thing, which is the moment nobody goes back to edit '
+            'it — so the build now refuses to publish a claim of ignorance about a dataset '
+            'that exists.',
         ],
     ),
     dict(
