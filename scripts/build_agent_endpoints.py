@@ -792,9 +792,23 @@ def main():
     boards = {}
     for r in minutes_rows:
         boards[r['board']] = boards.get(r['board'], 0) + 1
+    # `builtFrom`, not `commit`, and the rename is the whole fix.
+    #
+    # This file is written by the build, so the commit that CONTAINS it does not exist yet
+    # when it is written -- it is necessarily the child of whatever HEAD was. Calling the
+    # field `commit` therefore published a hash that was always one behind, in the one
+    # file whose stated job is telling a caller "compare this with anything else you hold;
+    # if they disagree, your copy is cached". An agent checking that hash against GitHub
+    # would conclude it held a stale copy when it did not.
+    #
+    # The value was never wrong, only its name. It is the commit the working tree stood at
+    # when the build ran, which is exactly what somebody tracing a figure back wants.
     version = dict(
         tag=model.get('releases', {}).get('current'),
-        commit=git('rev-parse', '--short', 'HEAD'),
+        builtFrom=git('rev-parse', '--short', 'HEAD'),
+        builtFromNote='The commit this build was made FROM. The commit that contains this '
+                      'file is its child, because the file is written before it is '
+                      'committed. Use `tag` to identify a release.',
         built=date.today().isoformat(),
         note=('What this build is. Fetch this FIRST and compare it with anything else you '
               'hold from this site: if another file disagrees with these counts, your copy '
@@ -815,7 +829,7 @@ def main():
     )
     with open(os.path.join(PUB, 'version.json'), 'w') as fh:
         json.dump(version, fh, indent=1)
-    print(f'  wrote public/version.json  {version["tag"]} {version["commit"]} '
+    print(f'  wrote public/version.json  {version["tag"]} {version["builtFrom"]} '
           f'({version["counts"]["minutes_documents"]} minutes documents)')
 
     print(f'wrote {os.path.relpath(os.path.join(PUB, "llms.txt"), ROOT)}')

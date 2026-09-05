@@ -131,7 +131,7 @@ type Ledger = {
     funds: { fund: string; name: string; kind: string | null; restriction: string | null; fy: number; revenue: number; spent: number; closing_balance: number }[]
   }
   meta: {
-    commit: string | null
+    builtFrom: string | null
     counts: Record<string, number>
     crosswalkNote: string
     lineSourceOverlap: { total: number; both: number; documentsOnly: number; workbookOnly: number }
@@ -1799,8 +1799,8 @@ function Provenance({ meta }: { meta: Ledger['meta'] }) {
           {meta.crosswalkNote}
         </p>
       </div>
-      {meta.commit && (
-        <Note>Generated from commit <code>{meta.commit}</code>.</Note>
+      {meta.builtFrom && (
+        <Note>Built from commit <code>{meta.builtFrom}</code>.</Note>
       )}
     </Section>
   )
