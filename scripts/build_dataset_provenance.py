@@ -3,8 +3,8 @@
 
 Rule 12: a figure is only checkable if somebody can get back to the document it came from,
 and that needs three things — the address, the publisher's own filename, and our copy with
-a sha256. All three already exist in `sources/town-budget/index.csv`; what has been missing
-is the join from a row in a dataset to the document that row was read out of.
+a sha256. All three already exist in the archive's per-folder `index.csv` files; what has
+been missing is the join from a row in a dataset to the document that row was read out of.
 
 Every dataset built from the annual reports carries `fy` (or `edition`) and `page`. That is
 enough: this walks each dataset, resolves the document, and writes both a machine-readable
@@ -13,6 +13,20 @@ join and a page per dataset that a reader can follow.
 **Two addresses are kept, not one.** The town publishes these reports in two stores and the
 links have died before — 57 in a single day. `upstream` holds both the DocumentCenter and
 the ArchiveCenter URL where both exist, because when one dies the other may not.
+
+## The join is searched for, never assumed to be in one folder
+
+This read `sources/town-budget/index.csv` by name. On 5 September 2026 the sixteen annual
+town reports moved to `sources/town-annual-reports/`, taking their index rows with them --
+correctly -- and this script went on looking in the folder they had left. It resolved zero
+of 225 dataset-editions and **exited 0**. Every annual-report figure silently lost its
+address, its publisher label, both town URLs and its sha256, and `dataset-provenance.csv`
+kept all 225 rows with those columns simply empty.
+
+So it now reads every `sources/*/index.csv`, and **it fails if a single edition cannot be
+resolved.** A provenance file that cannot say where a figure came from is worse than no
+provenance file, because it looks like one. The guard is the fix; the path was only the
+cause.
 
 ## Provenance is not verification
 
@@ -32,7 +46,7 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
-INDEX = os.path.join(ROOT, 'sources', 'town-budget', 'index.csv')
+INDEXES = os.path.join(ROOT, 'sources', '*', 'index.csv')
 OUT_CSV = os.path.join(DATA, 'dataset-provenance.csv')
 OUT_MD = os.path.join(ROOT, 'notes', 'generated', 'DATASET-PROVENANCE.md')
 
@@ -51,22 +65,34 @@ DATASETS = [
 
 
 def documents():
-    """{fiscal year: index row} for the annual town reports."""
+    """{fiscal year: index row} for the annual town reports, from wherever they are filed.
+
+    Every mirror's index.csv is read rather than one named folder. The tree is keyed on
+    provenance and a document can be re-filed -- that is the point of the layout -- so the
+    join has to survive a move. This one did not, and nothing noticed.
+    """
     out = {}
-    for r in csv.DictReader(open(INDEX)):
-        local = r.get('local', '')
-        if 'annual-town-report' not in local:
-            continue
-        m = re.search(r'fy-?(\d{4})', local)
-        if not m:
-            continue
-        key = f'FY{m.group(1)}' + ('-addendum' if 'addendum' in local else '')
-        out[key] = r
+    for path in sorted(glob.glob(INDEXES)):
+        with open(path, newline='') as fh:
+            for r in csv.DictReader(fh):
+                local = r.get('local', '')
+                if 'annual-town-report' not in local:
+                    continue
+                m = re.search(r'fy-?(\d{4})', local)
+                if not m:
+                    continue
+                key = f'FY{m.group(1)}' + ('-addendum' if 'addendum' in local else '')
+                out[key] = r
     return out
 
 
 def main():
     docs = documents()
+    if not docs:
+        raise SystemExit(
+            'No annual town reports found in any sources/*/index.csv.\n'
+            '  The join that gives every annual-report figure its address is broken, and\n'
+            '  writing the file anyway would publish 225 rows with empty provenance.')
     rows = []
     for name, yearcol in DATASETS:
         path = os.path.join(DATA, name + '.csv')
@@ -166,11 +192,16 @@ def main():
         fh.write('\n'.join(L) + '\n')
 
     print(f'{len(rows)} dataset-editions across {len(by_ds)} datasets')
-    print(f'{len(seen)} source documents, all with an address and a sha256'
-          if not missing else f'{len(missing)} dataset-editions could NOT be resolved '
-                              f'to a document: {sorted({m["edition"] for m in missing})}')
     print(f'wrote {os.path.relpath(OUT_CSV, ROOT)}')
     print(f'wrote {os.path.relpath(OUT_MD, ROOT)}')
+    if missing:
+        raise SystemExit(
+            f'\n{len(missing)} dataset-edition(s) could NOT be resolved to a document: '
+            f'{sorted({m["edition"] for m in missing})}\n'
+            '  Every one of those figures has no address, no publisher label and no\n'
+            '  sha256. This used to print and exit 0, which is how the whole join sat\n'
+            '  broken through a folder move without anything reporting it.')
+    print(f'{len(seen)} source documents, all with an address and a sha256')
 
 
 if __name__ == '__main__':

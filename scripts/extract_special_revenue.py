@@ -47,7 +47,11 @@ import pdf_tables as T
 import report_pages as RP
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, 'sources', 'town-budget', 'docs')
+# The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
+# Every script here globs '*annual-town-report*.pdf' under this path, and a glob
+# that matches nothing raises nothing -- so pointing at the folder they left made
+# each of these a silent no-op rather than an error.
+DOCS = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs')
 CATALOGUE = os.path.join(ROOT, 'sources', 'data', 'annual-report-catalogue.csv')
 OUT = os.path.join(ROOT, 'sources', 'data', 'special-revenue-funds.csv')
 PROV = os.path.join(ROOT, 'sources', 'data', 'PROVENANCE-special-revenue-funds.md')

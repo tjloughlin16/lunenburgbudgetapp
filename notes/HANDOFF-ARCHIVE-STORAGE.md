@@ -185,6 +185,31 @@ hour. Something on the zone still caches `/docs/` documents for a week — worth
 Caching → Cache Rules, because it is why a three-day-old asset outlived the deployment
 that created it.
 
+### The trap in untracking: a branch switch DELETES the files
+
+**This happened, was caught, and was recovered from — 5 September 2026.** Nine contract
+PDFs, 91 MB, vanished from the working tree.
+
+`git rm --cached` keeps a file on disk. What it does not survive is **moving between a
+commit that tracks the file and one that does not**: merging `archive-storage` into `main`
+applied the deletion to the working tree, and the bytes went.
+
+- **What caught it:** `build_source_index.py`, with *catalogued but not on disk*. It had
+  not been run between the merge and the next time somebody asked a question. Nothing else
+  in the check suite looks at whether a document is on this disk.
+- **What fixed it:** `python3 scripts/sync_archive.py --pull` — nine files, each hash
+  checked against the manifest after download. This was the first real use of the bucket
+  as a backup and it did exactly what it was built for.
+- **It failed the first time**, with `403 Forbidden` on all nine, against a bucket whose
+  public access was enabled and working. `r2.dev` refuses urllib's default
+  `Python-urllib/3.11` User-Agent. Fixed, and worth remembering: a recovery path is not a
+  recovery path until it has recovered something.
+
+**So after any branch switch or merge that crosses the untracking commit, run:**
+
+    python3 scripts/sync_archive.py --pull
+    python3 scripts/build_source_index.py
+
 ### What is NOT established
 
 - **That the r2.dev public URL is the right long-term address.** It works and it costs

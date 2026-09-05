@@ -29,7 +29,11 @@ warnings.filterwarnings('ignore')
 import pdf_tables as T
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, 'sources', 'town-budget', 'docs')
+# The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
+# Every script here globs '*annual-town-report*.pdf' under this path, and a glob
+# that matches nothing raises nothing -- so pointing at the folder they left made
+# each of these a silent no-op rather than an error.
+DOCS = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs')
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 PAGES = os.path.join(ROOT, 'sources', 'town-budget', 'pages')
 
@@ -173,8 +177,15 @@ def main():
         print(__doc__)
         return
     os.makedirs(args.out, exist_ok=True)
+    pdfs = sorted(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf')))
+    # A rebuild that finds no PDFs leaves the existing cache in place and says nothing,
+    # so every extractor downstream keeps producing byte-identical rows off text that is
+    # no longer traceable to a document. Loud is safe here; quiet is not.
+    if not pdfs:
+        raise SystemExit(f'No annual town reports found in {os.path.relpath(DOCS, ROOT)}. '
+                         f'The page cache has NOT been rebuilt.')
     total = 0
-    for pdf in sorted(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))):
+    for pdf in pdfs:
         n, ok, size = build(pdf, args.boxes, args.out)
         total += ok
         print(f'{edition_of(os.path.basename(pdf)):<18}{n:>5} pages  {ok:>5} readable  '

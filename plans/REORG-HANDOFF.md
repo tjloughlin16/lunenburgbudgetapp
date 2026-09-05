@@ -187,3 +187,105 @@ archive, not a place to put a delivery.
 
 And: **a link is not checked until something has been downloaded from it.** After the reorg,
 `verify_source_copies.py` is what proves a moved file is still the file.
+
+---
+
+# UPDATE — 5 September 2026, after `town-annual-reports/` was populated
+
+Written after observing the move, not before it. **Everything below is tested, not
+predicted.** I stopped as soon as I understood what had happened and changed nothing.
+
+## What moved
+
+| | before | now |
+|---|---|---|
+| the 16 annual report PDFs | `sources/town-budget/docs/` | `sources/town-annual-reports/docs/` ✅ |
+| their extracted text | `sources/town-budget/text/` | `sources/town-annual-reports/text/` ✅ |
+| their 16 index rows | `sources/town-budget/index.csv` | `sources/town-annual-reports/index.csv` ✅ |
+| **their OCR geometry** | `sources/town-budget/ocr/` | **still there — 17 files** ❌ |
+| **their page cache** | `sources/town-budget/pages/` | **still there — 32 files** ❌ |
+
+The move is half done. `ocr/` and `pages/` are derived *from the annual reports* and belong
+with them; they are sitting in the folder the reports left.
+
+## What broke, and why you will not see it break
+
+**Eight scripts hardcode `sources/town-budget/docs` and now see zero annual reports.**
+
+    report_pages.py            survey_annual_reports.py   extract_annual_receipts.py
+    extract_special_revenue.py verify_against_page.py     dump_report_pages.py
+    dump_roster_pages.py       build_archive_guide.py
+
+**None of them errors.** `report_pages.py` walks an empty glob and rebuilds a cache of
+nothing. `verify_against_page.py` cannot render the page it is meant to check against.
+
+**And the extractors keep working, which is the trap.** `extract_tables.py` reads the *page
+cache*, not the PDFs — so it still produces byte-identical output:
+
+    $ python3 scripts/extract_tables.py vital_records
+    all 14 planned edition(s) produced rows
+    vital_records: 96 rows, 15 editions
+
+That is the failure mode §3 of this file warned about, now real: **rows that look correct
+and are no longer traceable to a document.**
+
+## The one that actually matters: rule 12's spine is severed
+
+`scripts/build_dataset_provenance.py` hardcodes `sources/town-budget/index.csv` and filters
+for `annual-town-report` in the `local` column. It now finds **0 of 16**.
+
+    0 of 225 provenance rows resolve to a document
+
+Every annual-report dataset has lost its address, its publisher label, both of the town's
+URLs and its sha256. `sources/data/dataset-provenance.csv` still has 225 rows; the
+`document`, `publisher_label`, `upstream`, `sha256` and `bytes` columns are now **all
+empty**.
+
+**It exits 0 and prints a reassuring line.** It still says
+`16 source documents, all with an address and a sha256` — because that counts what it found
+in the index it was pointed at, before the join. Then it writes 225 rows with empty
+provenance and succeeds. Nothing in the check suite catches this.
+
+## Fixes, in the order they matter
+
+1. **`build_dataset_provenance.py` must read every `sources/*/index.csv`, not one.**
+   There are six: `district-budget`, `meetings`, `state-dese`, `town-annual-reports`,
+   `town-budget`, `town-supplementary`. Keying on the filename rather than the folder makes
+   it survive the next move too.
+2. **Make it fail when the join does.** A run that resolves 0 of 225 rows must exit non-zero.
+   That single guard would have caught this at the moment it happened. Suggested: fail if
+   any dataset resolves none of its editions.
+3. **Move `ocr/` and `pages/` to `sources/town-annual-reports/`** and update the four path
+   constants in `report_pages.py` (`DOCS`, `OCR`, `PAGES`) and the seven other scripts above.
+   Note `sources/town-budget/ocr/` and `pages/` may also hold non-annual-report material —
+   check before moving wholesale.
+4. **Rebuild in this order afterwards**, because each reads the last:
+
+       python3 scripts/report_pages.py --rebuild        # ~5 min, needs the PDFs findable
+       python3 scripts/extract_tables.py <each>         # or scripts/process_report.py
+       python3 scripts/build_dataset_provenance.py      # the join — check it is not 0
+       python3 scripts/build_report_tables_provenance.py
+       python3 scripts/build_archive_guide.py
+       python3 scripts/build_db.py --check
+       python3 scripts/verify_report_tables.py
+       python3 scripts/build_source_index.py
+
+5. **`check_archive_layout.py` needs to know `town-annual-reports/` is legitimate** — it is
+   a fourteenth top-level folder, which that check is written to refuse.
+
+## What I did NOT do
+
+Nothing. No file was edited, moved or deleted after the move was noticed. The datasets in
+`sources/data/` are the ones produced before it, and they are unchanged and still correct as
+readings — it is only their link back to the documents that is gone.
+
+## The backup predates all of this
+
+`/Users/tj/lunenburgbudgets-backup-2026-09-05/lunenburgbudgets-2026-09-05.zip` was taken at
+11:19, before the move, and holds `sources/town-budget/index.csv` **with** its 16
+annual-report rows. If the index rows need recovering rather than regenerating:
+
+    unzip -p .../lunenburgbudgets-2026-09-05.zip \
+      lunenburgbudgets/sources/town-budget/index.csv | grep annual-town-report
+
+A remote copy of that zip also exists.

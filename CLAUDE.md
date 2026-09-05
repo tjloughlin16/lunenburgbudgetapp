@@ -414,6 +414,12 @@ it.
   which is checked first -- and `check_archive_storage.py` reports it as *an older
   rendering*, separately from real failures, so it cannot be mistaken for one.
 
+**A branch switch across the untracking commit deletes the documents from this disk.**
+`git rm --cached` keeps a file; moving between a commit that tracks it and one that does
+not does not. Nine contract PDFs went that way the day it was done. After any checkout or
+merge that crosses it, run `sync_archive.py --pull` and then `build_source_index.py`, which
+is the check that catches it -- *catalogued but not on disk*.
+
 `sources/data/archive-manifest.csv` is the index into all of it, tracked in git because a
 clone held only in R2 would have to ask the network what exists before it could ask for any
 of it. It is published at `/data/archive-manifest.csv` and deliberately **not** stored in

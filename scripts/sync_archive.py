@@ -234,8 +234,14 @@ def pull(only=None, workers=6):
         os.makedirs(os.path.dirname(path), exist_ok=True)
         tmp = path + '.part'
         url = f'{A.PUBLIC_BASE}/{key}'
+        # An honest User-Agent, and not optional: r2.dev answers 403 to urllib's default
+        # `Python-urllib/3.11`, so the first real recovery this script was asked to do
+        # failed nine times over with a permission error against a bucket whose public
+        # access was enabled and working.
+        req = urllib.request.Request(url, headers={
+            'User-Agent': 'lunenburgbudgetproject.org archive sync'})
         try:
-            with urllib.request.urlopen(url, timeout=300) as res, open(tmp, 'wb') as fh:
+            with urllib.request.urlopen(req, timeout=300) as res, open(tmp, 'wb') as fh:
                 while True:
                     chunk = res.read(1 << 20)
                     if not chunk:
