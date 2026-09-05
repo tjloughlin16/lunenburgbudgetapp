@@ -570,8 +570,29 @@ def load_documents(db):
     Finally, any doc_id a fact cites that is still unknown gets a stub rather than being
     dropped. An orphaned figure must be visible as orphaned.
     """
-    link = {r['path']: r for r in rows('link-status')}
-    copy = {r['path']: r for r in rows('copy-status')}
+    # Both sides of this join, normalised.
+    #
+    # `link-status.csv` and `copy-status.csv` key on a path relative to `sources/`
+    # (`district-budget/docs/x.pdf`) while `document-basis.csv` keys on a repo-relative
+    # one (`sources/district-budget/docs/x.pdf`). They have never matched, so every one of
+    # the 616 document rows carried NULL for `link_state` and `copy_state` -- the two
+    # columns that say whether the publisher's copy still opens and whether it still
+    # matches ours. /api/documents published those nulls, and llms.txt described the field
+    # as telling you exactly that.
+    #
+    # A join that silently matches nothing looks identical to data that is simply absent.
+    def keyed(name):
+        out = {}
+        for r in rows(name):
+            p = (r.get('path') or '').strip()
+            if not p:
+                continue
+            out[p] = r
+            out[p if p.startswith('sources/') else 'sources/' + p] = r
+        return out
+
+    link = keyed('link-status')
+    copy = keyed('copy-status')
 
     # The crawlers' own indexes carry the upstream URL and the sha256 taken at fetch time.
     # Every mirror's index, not a named three. The list read `state-dese`,
@@ -598,10 +619,20 @@ def load_documents(db):
                   cp.get('local_sha256') or cr.get('sha256')]
 
     # Crawled sources that document-basis does not classify are still documents.
+    #
+    # And they get their link and copy state like everything else. This branch passed
+    # None for both, which is most of the archive: 613 of 616 document rows carried no
+    # answer to "does the publisher's copy still open" or "does it still match ours" --
+    # the two questions rule 12 exists to keep answerable. /api/documents published those
+    # nulls and llms.txt described the field as telling you exactly that.
     for p, cr in crawled.items():
         if p not in out:
-            out[p] = [p, p, 'primary', None, None, None, cr.get('upstream'),
-                      None, None, None, cr.get('sha256')]
+            lk, cp = link.get(p, {}), copy.get(p, {})
+            out[p] = [p, p, 'primary', None, None, None,
+                      lk.get('url') or cp.get('url') or cr.get('upstream'),
+                      lk.get('code'), cp.get('state'),
+                      cp.get('remote_sha256'),
+                      cp.get('local_sha256') or cr.get('sha256')]
 
     return out
 

@@ -486,6 +486,8 @@ arriving fresh.
     python3 scripts/classify_roster_roles.py --check   # ...and fail if it is stale
     python3 scripts/sync_d1.py                  # push the database to D1, which /api/query reads
     python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree
+    python3 scripts/build_question_bank.py      # 107 questions, each run against the database
+    python3 scripts/build_question_bank.py --check   # ...and fail if one stops answering
     python3 scripts/build_readme.py             # the repository's front door, counts derived
     python3 scripts/build_readme.py --check      # ...and every path it promises is in git
     python3 scripts/sync_archive.py --manifest   # hash every file in sources/; rewrite the manifest

@@ -575,6 +575,11 @@ def main():
         dict(url=f'{SITE}/api/totals', about='Whole-year budget against actual.'),
         dict(url=f'{SITE}/api/funding', about='Revenue, transfers, funds and grants.'),
         dict(url=f'{SITE}/api/documents', about='Provenance for every source.'),
+        dict(url=f'{SITE}/api/query', about='Ask a question in SQL instead of downloading '
+             'a table. Read-only, one statement, provenance with every answer.'),
+        dict(url=f'{SITE}/api/questions', about='107 worked examples: a question, the SQL '
+             'that answers it, and the columns it returns. Every one is executed on each '
+             'build.'),
         dict(url=f'{SITE}/api/tables', about='EVERY dataset in the project, fetchable, '
              'with its size. Staff rosters, placement counts, annual-report extracts — '
              'the raw grain the endpoints above are built from.'),

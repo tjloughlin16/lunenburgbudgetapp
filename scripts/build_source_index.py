@@ -710,6 +710,13 @@ GROUPS = [
              'each; no funding source, which is the question that actually matters; and it '
              'is a point in time, undated within the year. A count of names the town '
              'printed is a real quantity and it is not a staffing level.'),
+            ('analyses/questions.md',
+             'A hundred questions this archive can answer, each with the query', 3,
+             '107 questions across ten subjects, every one executed against the database '
+             'on each build \u2014 the build fails if one errors or returns nothing. It is '
+             'a menu for a person, a set of worked examples for anything using '
+             '/api/query, and a test that the tables still hold what it says they hold. '
+             'It deliberately does not print the answers: those move when the data does.'),
             ('data/role-classification.csv',
              'What kind of job each printed roster title is', 2,
              'The town\u2019s name for the same job changed five times in fifteen years '

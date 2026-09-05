@@ -1,0 +1,1275 @@
+{
+ "resource": "questions",
+ "about": "Questions this archive can answer, each with the SQL that answers it. Every one is executed on each build; the build fails if one stops answering.",
+ "endpoint": "https://lunenburgbudgetproject.org/api/query",
+ "readFirst": "https://lunenburgbudgetproject.org/api/schema",
+ "count": 107,
+ "questions": [
+  {
+   "theme": "The school budget",
+   "question": "What did the district budget in total, in each year and at each stage?",
+   "sql": "SELECT fy, stage, ROUND(SUM(value)) AS total FROM budget_figure GROUP BY fy, stage ORDER BY fy, stage",
+   "note": "A STAGE is not a period. `proposed`, `settled` and `actual` are three different documents about the same year, and mixing them is the error rule 1 exists for.",
+   "columns": [
+    "fy",
+    "stage",
+    "total"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "Which budget lines grew fastest across the years the archive holds?",
+   "sql": "WITH span AS (SELECT line_key, MIN(fy) AS first_fy, MAX(fy) AS last_fy FROM budget_figure WHERE stage='settled' GROUP BY line_key HAVING last_fy > first_fy) SELECT b.label, s.first_fy, s.last_fy, ROUND(a.value) AS started, ROUND(z.value) AS ended, ROUND(100.0*(z.value-a.value)/a.value,1) AS pct FROM span s JOIN budget_line b USING (line_key) JOIN budget_figure a ON a.line_key=s.line_key AND a.fy=s.first_fy AND a.stage='settled' JOIN budget_figure z ON z.line_key=s.line_key AND z.fy=s.last_fy AND z.stage='settled' WHERE a.value > 1000 ORDER BY pct DESC LIMIT 20",
+   "note": "Both ends are the SAME stage. A rate measured from an actual to a budget is partly growth and partly the step between them, which is rule 1.",
+   "columns": [
+    "label",
+    "first_fy",
+    "last_fy",
+    "started",
+    "ended",
+    "pct"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "Which lines do two documents state differently, and by how much?",
+   "sql": "SELECT label, fy, stage, ROUND(spread) AS spread FROM v_budget_disagreement WHERE spread > 0 ORDER BY spread DESC LIMIT 20",
+   "note": "The documents disagree with themselves by up to 1.5%, which is larger than most variances anybody wants to measure.",
+   "columns": [
+    "label",
+    "fy",
+    "stage",
+    "spread"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "What does each FY27 scenario total?",
+   "sql": "SELECT variant, ROUND(SUM(value)) AS total, COUNT(*) AS lines FROM budget_figure WHERE fy=2027 AND variant IS NOT NULL GROUP BY variant ORDER BY total DESC",
+   "note": "",
+   "columns": [
+    "variant",
+    "total",
+    "lines"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "How many budget lines are there in each section of the budget?",
+   "sql": "SELECT section, COUNT(*) AS lines FROM budget_line GROUP BY section ORDER BY lines DESC",
+   "note": "",
+   "columns": [
+    "section",
+    "lines"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "Which function groups hold the most budget lines?",
+   "sql": "SELECT function_group, COUNT(*) AS lines FROM budget_line WHERE function_group <> '' GROUP BY function_group ORDER BY lines DESC LIMIT 15",
+   "note": "",
+   "columns": [
+    "function_group",
+    "lines"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "What is in the FY27 workbook, by column?",
+   "sql": "SELECT column_kind, COUNT(*) AS rows, ROUND(SUM(value)) AS total FROM workbook_figure WHERE row_kind='line' GROUP BY column_kind ORDER BY rows DESC",
+   "note": "Filter `row_kind='line'`: the sheet's own TOTAL rows are loaded too, and summing without the filter double-counts roughly fourfold.",
+   "columns": [
+    "column_kind",
+    "rows",
+    "total"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "Which budget lines appear in the workbook but not in the line catalogue?",
+   "sql": "SELECT DISTINCT w.line_key FROM workbook_figure w LEFT JOIN budget_line b USING (line_key) WHERE b.line_key IS NULL LIMIT 20",
+   "note": "",
+   "columns": [
+    "line_key"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "How many figures rest on a document that two sources report differently?",
+   "sql": "SELECT fy, COUNT(*) AS figures FROM budget_figure WHERE documents_disagree=1 GROUP BY fy ORDER BY fy",
+   "note": "",
+   "columns": [
+    "fy",
+    "figures"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "What is the total salary line in each year, and does the stage change it?",
+   "sql": "SELECT fy, stage, total FROM total_salaries_history ORDER BY fy, stage",
+   "note": "",
+   "columns": [
+    "fy",
+    "stage",
+    "total"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "And total expenses?",
+   "sql": "SELECT fy, stage, total FROM total_expenses_history ORDER BY fy, stage",
+   "note": "",
+   "columns": [
+    "fy",
+    "stage",
+    "total"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "How many special education paraprofessionals were budgeted, by school and year?",
+   "sql": "SELECT fy, stage, ps, es, ms, hs, total FROM sped_para_history ORDER BY fy, stage",
+   "note": "This is the line the 12.8% escalator rests on, and it is dollars, not people.",
+   "columns": [
+    "fy",
+    "stage",
+    "ps",
+    "es",
+    "ms",
+    "hs",
+    "total"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "And special education teachers?",
+   "sql": "SELECT fy, stage, ps, es, ms, hs, total FROM sped_teacher_history ORDER BY fy, stage",
+   "note": "",
+   "columns": [
+    "fy",
+    "stage",
+    "ps",
+    "es",
+    "ms",
+    "hs",
+    "total"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "What has out-of-district tuition done, year by year?",
+   "sql": "SELECT fy, stage, private, collaborative, total FROM ood_tuition_history ORDER BY fy, stage",
+   "note": "",
+   "columns": [
+    "fy",
+    "stage",
+    "private",
+    "collaborative",
+    "total"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "How many children were placed outside the district, and where?",
+   "sql": "SELECT fy, as_of, total, collaborative, day, residential FROM placement_counts ORDER BY fy",
+   "note": "A count of children placed. It says nothing about which fund paid or what a placement cost, so it does not settle the money.",
+   "columns": [
+    "fy",
+    "as_of",
+    "total",
+    "collaborative",
+    "day",
+    "residential"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "Do the placement counts tie to their own parts, and to the prior year?",
+   "sql": "SELECT fy, parts_tie, chain_agrees, report_says_prior_year FROM placement_counts ORDER BY fy",
+   "note": "",
+   "columns": [
+    "fy",
+    "parts_tie",
+    "chain_agrees",
+    "report_says_prior_year"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "What has special education transportation cost, by year?",
+   "sql": "SELECT fy, stage, system, total FROM sped_transport_history ORDER BY fy, stage",
+   "note": "",
+   "columns": [
+    "fy",
+    "stage",
+    "system",
+    "total"
+   ]
+  },
+  {
+   "theme": "Special education",
+   "question": "Does each year of the placement series agree with what the next report says of it?",
+   "sql": "SELECT fy, total, report_says_prior_year, chain_agrees FROM placement_counts ORDER BY fy",
+   "note": "Two checks travel with this series: the parts sum to the total, and each year states the previous year's figure. `n/a` is the first year, which has nothing before it.",
+   "columns": [
+    "fy",
+    "total",
+    "report_says_prior_year",
+    "chain_agrees"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "What did each department spend against its budget, in the latest period held?",
+   "sql": "SELECT a.dept, a.name, l.fy, l.period, ROUND(l.revised) AS revised, ROUND(l.expended) AS expended, ROUND(l.available) AS available FROM ledger_snapshot l JOIN account a USING (account_id) WHERE a.level='department' ORDER BY l.fy DESC, l.period DESC, l.revised DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "dept",
+    "name",
+    "fy",
+    "period",
+    "revised",
+    "expended",
+    "available"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "Which departments are spending faster than the year is elapsing?",
+   "sql": "SELECT dept, name, fy, period, ROUND(year_elapsed,2) AS year_elapsed, ROUND(spent_share,2) AS spent_share, ROUND(pace_gap,2) AS pace_gap FROM v_burn WHERE pace_gap IS NOT NULL ORDER BY pace_gap DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "dept",
+    "name",
+    "fy",
+    "period",
+    "year_elapsed",
+    "spent_share",
+    "pace_gap"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "What funds does the town keep, and what restricts them?",
+   "sql": "SELECT kind, COUNT(*) AS funds FROM fund GROUP BY kind ORDER BY funds DESC",
+   "note": "",
+   "columns": [
+    "kind",
+    "funds"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "What moved through the special revenue funds in each year?",
+   "sql": "SELECT fund, fy, period, ROUND(opening_balance) AS opening, ROUND(revenue) AS revenue, ROUND(expenditure) AS spent, ROUND(closing_balance) AS closing FROM fund_activity ORDER BY fy DESC, revenue DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fund",
+    "fy",
+    "period",
+    "opening",
+    "revenue",
+    "spent",
+    "closing"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "How many accounts are there at each level of the chart?",
+   "sql": "SELECT level, account_type, COUNT(*) AS accounts FROM account GROUP BY level, account_type ORDER BY accounts DESC",
+   "note": "",
+   "columns": [
+    "level",
+    "account_type",
+    "accounts"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "Which grants did the district receive, and who owns them?",
+   "sql": "SELECT fy, kind, name, ROUND(amount) AS amount, owner FROM grant_award ORDER BY fy DESC, amount DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "kind",
+    "name",
+    "amount",
+    "owner"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "What does the ledger hold for each fiscal year and period?",
+   "sql": "SELECT fy, period, COUNT(*) AS rows, COUNT(DISTINCT account_id) AS accounts FROM ledger_snapshot GROUP BY fy, period ORDER BY fy, period",
+   "note": "Period 13 is the year-end close, after purchase orders are cleared. Period 12 is not the end of the year.",
+   "columns": [
+    "fy",
+    "period",
+    "rows",
+    "accounts"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "Which function codes can be compared between the budget and the ledger?",
+   "sql": "SELECT function_code, fy, period, ROUND(ledger_revised) AS revised, ROUND(ledger_expended) AS expended, budget_lines FROM v_function_budget_vs_ledger ORDER BY ledger_revised DESC LIMIT 20",
+   "note": "This is the level at which the two systems join. Below it they do not: the town shortens account names to ten characters.",
+   "columns": [
+    "function_code",
+    "fy",
+    "period",
+    "revised",
+    "expended",
+    "budget_lines"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "How much did each function group budget and spend across all years?",
+   "sql": "SELECT function_group, years, ROUND(budgeted) AS budgeted, ROUND(spent) AS spent, ROUND(net) AS net, worst_year FROM variance_by_group ORDER BY ABS(net) DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "function_group",
+    "years",
+    "budgeted",
+    "spent",
+    "net",
+    "worst_year"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "What went through fund 1301, and when?",
+   "sql": "SELECT fy, period, eff_date, src_meaning, COUNT(*) AS entries FROM fund_1301_cash_journal GROUP BY fy, period, eff_date, src_meaning ORDER BY fy DESC, eff_date DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "period",
+    "eff_date",
+    "src_meaning",
+    "entries"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many people of each kind did the town print on a roster, by year?",
+   "sql": "SELECT fy, role_category, COUNT(*) AS people FROM v_staff_roster WHERE role_category <> 'unknown' GROUP BY fy, role_category ORDER BY fy, people DESC",
+   "note": "A count of names the town printed. It carries no FTE and no funding source, so it is not a staffing level.",
+   "columns": [
+    "fy",
+    "role_category",
+    "people"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many paraprofessionals, by school and year?",
+   "sql": "SELECT fy, school, COUNT(*) AS paras FROM v_staff_roster WHERE role_category='paraprofessional' GROUP BY fy, school ORDER BY fy, paras DESC",
+   "note": "",
+   "columns": [
+    "fy",
+    "school",
+    "paras"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many paraprofessionals were tied to a named grade?",
+   "sql": "SELECT fy, role_grade, COUNT(*) AS paras FROM v_staff_roster WHERE role_category='paraprofessional' AND role_grade <> '' GROUP BY fy, role_grade ORDER BY fy, role_grade",
+   "note": "",
+   "columns": [
+    "fy",
+    "role_grade",
+    "paras"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "What did the town print as the title for a paraprofessional, year by year?",
+   "sql": "SELECT fy, role_raw, COUNT(*) AS rows FROM v_staff_roster WHERE role_category='paraprofessional' AND role_raw <> '' GROUP BY fy, role_raw ORDER BY fy, rows DESC",
+   "note": "Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para), Sped Para. Five names for one job across fifteen years, which is why `role_category` exists.",
+   "columns": [
+    "fy",
+    "role_raw",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "Which roster titles could not be classified at all?",
+   "sql": "SELECT role_raw, grade_or_dept, rows FROM role_classification WHERE role_category='unknown' ORDER BY rows DESC LIMIT 20",
+   "note": "Left `unknown` rather than guessed. 8% of rows.",
+   "columns": [
+    "role_raw",
+    "grade_or_dept",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "Which rule decided each classification, and how much rests on the weakest ones?",
+   "sql": "SELECT classified_by, role_category, SUM(rows) AS rows FROM role_classification GROUP BY classified_by, role_category ORDER BY rows DESC",
+   "note": "A rule beginning `heading-` read the section heading rather than a printed title, which is weaker evidence.",
+   "columns": [
+    "classified_by",
+    "role_category",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many names appear on each school roster in each year?",
+   "sql": "SELECT fy, school, position, count FROM staff_roster_counts ORDER BY fy DESC, count DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "school",
+    "position",
+    "count"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many teachers were printed against a specific grade?",
+   "sql": "SELECT fy, role_grade, COUNT(*) AS teachers FROM v_staff_roster WHERE role_category='teacher' AND role_grade <> '' GROUP BY fy, role_grade ORDER BY fy DESC, role_grade",
+   "note": "",
+   "columns": [
+    "fy",
+    "role_grade",
+    "teachers"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "Which schools have roster entries, and for which years?",
+   "sql": "SELECT school, COUNT(DISTINCT fy) AS years, MIN(fy) AS first, MAX(fy) AS last, COUNT(*) AS rows FROM staff_roster_entries GROUP BY school ORDER BY rows DESC",
+   "note": "",
+   "columns": [
+    "school",
+    "years",
+    "first",
+    "last",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many counselors, nurses, psychologists and social workers, by year?",
+   "sql": "SELECT fy, role_category, COUNT(*) AS people FROM v_staff_roster WHERE role_category IN ('counselor','nurse','psychologist','social_worker','speech_therapist') GROUP BY fy, role_category ORDER BY fy, role_category",
+   "note": "",
+   "columns": [
+    "fy",
+    "role_category",
+    "people"
+   ]
+  },
+  {
+   "theme": "Athletics and fees",
+   "question": "What did each sport cost, and how many played?",
+   "sql": "SELECT fy, season, level, sport, metric, value FROM athletics_by_sport WHERE is_numeric='1' ORDER BY fy DESC, value DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "season",
+    "level",
+    "sport",
+    "metric",
+    "value"
+   ]
+  },
+  {
+   "theme": "Athletics and fees",
+   "question": "Do the per-sport figures add up to the totals the district printed?",
+   "sql": "SELECT season, scope, metric, fy, printed, summed_from_rows, difference, ties FROM athletics_by_sport_reconciliation ORDER BY ABS(CAST(difference AS REAL)) DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "season",
+    "scope",
+    "metric",
+    "fy",
+    "printed",
+    "summed_from_rows",
+    "difference",
+    "ties"
+   ]
+  },
+  {
+   "theme": "Athletics and fees",
+   "question": "What has athletics cost and raised, year by year?",
+   "sql": "SELECT fy, side, item, amount, basis FROM athletics_history ORDER BY fy DESC, side",
+   "note": "",
+   "columns": [
+    "fy",
+    "side",
+    "item",
+    "amount",
+    "basis"
+   ]
+  },
+  {
+   "theme": "Athletics and fees",
+   "question": "What has the athletic fee been, by year and tier?",
+   "sql": "SELECT fy, school_year, level, item, amount, unit, verified FROM athletic_fee_schedule ORDER BY fy DESC, level",
+   "note": "",
+   "columns": [
+    "fy",
+    "school_year",
+    "level",
+    "item",
+    "amount",
+    "unit",
+    "verified"
+   ]
+  },
+  {
+   "theme": "Athletics and fees",
+   "question": "Which rates does this project know about, and which does it use?",
+   "sql": "SELECT fy, category, item, value, value_type, set_on FROM rate_register ORDER BY fy DESC, category LIMIT 20",
+   "note": "It deliberately includes rates the model does NOT use, and the ones that cannot be stated at all.",
+   "columns": [
+    "fy",
+    "category",
+    "item",
+    "value",
+    "value_type",
+    "set_on"
+   ]
+  },
+  {
+   "theme": "Athletics and fees",
+   "question": "Which rates were set by a document we hold, and which were not?",
+   "sql": "SELECT category, COUNT(*) AS rates, SUM(CASE WHEN source_file <> '' THEN 1 ELSE 0 END) AS with_a_document FROM rate_register GROUP BY category ORDER BY rates DESC",
+   "note": "",
+   "columns": [
+    "category",
+    "rates",
+    "with_a_document"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What appropriations did each annual report print, and are the rows checked?",
+   "sql": "SELECT edition, status, COUNT(*) AS rows FROM report_appropriations GROUP BY edition, status ORDER BY edition, rows DESC",
+   "note": "ALWAYS split on `status`. `checked`, `check failed` and `no check` are three different claims and nothing may be aggregated across them.",
+   "columns": [
+    "edition",
+    "status",
+    "rows"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What did the town pay in gross wages, and to how many people?",
+   "sql": "SELECT edition, status, COUNT(*) AS rows FROM report_gross_wages GROUP BY edition, status ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "status",
+    "rows"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What debt has the town carried?",
+   "sql": "SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_debt GROUP BY edition ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "rows",
+    "checked"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What capital projects did the reports list?",
+   "sql": "SELECT edition, label, status FROM report_capital_projects WHERE label <> '' ORDER BY edition DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "edition",
+    "label",
+    "status"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What is in the trust funds?",
+   "sql": "SELECT edition, COUNT(*) AS rows FROM report_trust_funds GROUP BY edition ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "rows"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What did the town value its property at?",
+   "sql": "SELECT edition, label, status FROM report_valuation WHERE label <> '' ORDER BY edition DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "edition",
+    "label",
+    "status"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What enrollment and MCAS results were printed?",
+   "sql": "SELECT edition, COUNT(*) AS rows FROM report_enrollment_mcas GROUP BY edition ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "rows"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What did the town assess for Monty Tech?",
+   "sql": "SELECT edition, label, status FROM report_monty_tech WHERE label <> '' ORDER BY edition DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "edition",
+    "label",
+    "status"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "How many births, deaths and marriages were recorded?",
+   "sql": "SELECT edition, label, status FROM report_vital_records WHERE label <> '' ORDER BY edition DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "edition",
+    "label",
+    "status"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "Who held town office, and when?",
+   "sql": "SELECT edition, label FROM report_officials WHERE label <> '' ORDER BY edition DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "edition",
+    "label"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What did each department report doing?",
+   "sql": "SELECT edition, COUNT(*) AS rows FROM report_dept_activity GROUP BY edition ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "rows"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What receipts did the town record, and from what source?",
+   "sql": "SELECT fy, source, amount, status FROM annual_report_receipts ORDER BY fy DESC, CAST(amount AS REAL) DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "source",
+    "amount",
+    "status"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What tables does each annual report contain?",
+   "sql": "SELECT fy, [table], pages, figure_rows, checkable FROM annual_report_contents ORDER BY fy DESC, figure_rows DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "table",
+    "pages",
+    "figure_rows",
+    "checkable"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "Which tables in the reports were read, and which are still uncaptured?",
+   "sql": "SELECT dataset, COUNT(*) AS editions, SUM(CASE WHEN extractable='yes' THEN 1 ELSE 0 END) AS extractable FROM extraction_plan GROUP BY dataset ORDER BY editions DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "dataset",
+    "editions",
+    "extractable"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What did the survey find on each page of each report?",
+   "sql": "SELECT fy, mode, COUNT(*) AS pages, SUM(money) AS money_tokens FROM annual_report_survey GROUP BY fy, mode ORDER BY fy, pages DESC",
+   "note": "",
+   "columns": [
+    "fy",
+    "mode",
+    "pages",
+    "money_tokens"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What is catalogued in each report, by printed heading?",
+   "sql": "SELECT fy, printed_heading, pages, grain FROM annual_report_catalogue WHERE printed_heading <> '' ORDER BY fy DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "printed_heading",
+    "pages",
+    "grain"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "Where did the extraction find something it could not reconcile?",
+   "sql": "SELECT fy, edition, [table], kind, detail FROM report_anomalies ORDER BY fy DESC LIMIT 20",
+   "note": "An anomaly is a finding about our reading of the page as much as about the page.",
+   "columns": [
+    "fy",
+    "edition",
+    "table",
+    "kind",
+    "detail"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "Which special revenue funds appear in the reports, and in which years?",
+   "sql": "SELECT fy, [group], COUNT(*) AS rows FROM special_revenue_funds GROUP BY fy, [group] ORDER BY fy DESC, rows DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "group",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "What free cash has each town certified, and from what?",
+   "sql": "SELECT town, year, line, amount, role FROM free_cash_proof ORDER BY year DESC, town LIMIT 20",
+   "note": "Absolute dollars with no denominator, so they do not compare between towns of different size. The composition does compare, because a share has no size.",
+   "columns": [
+    "town",
+    "year",
+    "line",
+    "amount",
+    "role"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "How does Lunenburg free cash compare with its neighbours, by composition?",
+   "sql": "SELECT town, year, line, amount FROM free_cash_proof WHERE role='component' ORDER BY year DESC, town LIMIT 20",
+   "note": "",
+   "columns": [
+    "town",
+    "year",
+    "line",
+    "amount"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "What has the town spent on capital, and where did the money come from?",
+   "sql": "SELECT fy, total, free_cash, taxation, unexpended_prior_year_capital, other FROM capital_funding_history ORDER BY fy",
+   "note": "",
+   "columns": [
+    "fy",
+    "total",
+    "free_cash",
+    "taxation",
+    "unexpended_prior_year_capital",
+    "other"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "What is in the FY27 capital plan, and what is funded?",
+   "sql": "SELECT rank, dept, project, cost, funded, funding FROM capital_plan_fy27 ORDER BY rank",
+   "note": "",
+   "columns": [
+    "rank",
+    "dept",
+    "project",
+    "cost",
+    "funded",
+    "funding"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "How do state measures compare Lunenburg with other districts?",
+   "sql": "SELECT district, fy, measure, value FROM dese_measure WHERE district <> '' ORDER BY fy DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "district",
+    "fy",
+    "measure",
+    "value"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "Which DESE measures reconcile against the printed totals, and which do not?",
+   "sql": "SELECT measure, COUNT(*) AS rows, SUM(CASE WHEN reconciles='1' THEN 1 ELSE 0 END) AS reconciling FROM dese_measure GROUP BY measure ORDER BY rows DESC LIMIT 15",
+   "note": "",
+   "columns": [
+    "measure",
+    "rows",
+    "reconciling"
+   ]
+  },
+  {
+   "theme": "Votes and elections",
+   "question": "What has the town been asked to fund, and did it agree?",
+   "sql": "SELECT date, election, question, type, amount, yes, no, total FROM ballot_questions ORDER BY date DESC",
+   "note": "",
+   "columns": [
+    "date",
+    "election",
+    "question",
+    "type",
+    "amount",
+    "yes",
+    "no",
+    "total"
+   ]
+  },
+  {
+   "theme": "Votes and elections",
+   "question": "What turnout did each ballot question draw?",
+   "sql": "SELECT date, question, total, registered, ROUND(100.0*total/registered,1) AS turnout_pct FROM ballot_questions WHERE registered > 0 ORDER BY date DESC",
+   "note": "",
+   "columns": [
+    "date",
+    "question",
+    "total",
+    "registered",
+    "turnout_pct"
+   ]
+  },
+  {
+   "theme": "Votes and elections",
+   "question": "What election results did the annual reports print?",
+   "sql": "SELECT edition, COUNT(*) AS rows FROM report_elections GROUP BY edition ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Where did a figure in this dataset come from?",
+   "sql": "SELECT dataset, edition, document, publisher_label, sha256 FROM dataset_document ORDER BY dataset, edition LIMIT 20",
+   "note": "This is the join that gives an annual-report row an address. Use it in any query whose answer somebody might want to check.",
+   "columns": [
+    "dataset",
+    "edition",
+    "document",
+    "publisher_label",
+    "sha256"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which documents does the archive hold, and how were they obtained?",
+   "sql": "SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC",
+   "note": "",
+   "columns": [
+    "source_type",
+    "basis",
+    "documents"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which documents no longer open at the publisher, or no longer match our copy?",
+   "sql": "SELECT doc_id, link_state, copy_state, url FROM document WHERE copy_state NOT IN ('identical','') OR link_state NOT IN ('200','') LIMIT 20",
+   "note": "",
+   "columns": [
+    "doc_id",
+    "link_state",
+    "copy_state",
+    "url"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which documents have no upstream address at all?",
+   "sql": "SELECT doc_id, source_type FROM document WHERE url IS NULL OR url='' LIMIT 20",
+   "note": "A gap on our side, not the town's: they were gathered before the mirror existed and nobody wrote down where they came from.",
+   "columns": [
+    "doc_id",
+    "source_type"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Where do two sources state the same budget line differently?",
+   "sql": "SELECT label, fy, stage, source, value, is_kept FROM line_history_disagreements ORDER BY fy DESC, label LIMIT 20",
+   "note": "",
+   "columns": [
+    "label",
+    "fy",
+    "stage",
+    "source",
+    "value",
+    "is_kept"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "How much of each dataset has been checked against the page it came from?",
+   "sql": "SELECT dataset, reconciled, partial, SUM(CAST(rows AS INTEGER)) AS rows FROM dataset_document GROUP BY dataset, reconciled, partial ORDER BY rows DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "dataset",
+    "reconciled",
+    "partial",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which figures has somebody stated publicly, and on what basis?",
+   "sql": "SELECT fy, metric, amount, stated_by, stated_on, basis FROM stated_figure ORDER BY fy DESC",
+   "note": "",
+   "columns": [
+    "fy",
+    "metric",
+    "amount",
+    "stated_by",
+    "stated_on",
+    "basis"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which budget lines have no ledger account mapped to them?",
+   "sql": "SELECT COUNT(*) AS budget_lines, (SELECT COUNT(*) FROM crosswalk) AS mapped FROM budget_line",
+   "note": "The crosswalk is empty ON PURPOSE. District lines are named, MUNIS rows are coded, and no published document maps one to the other. Budget-to-actual at line level cannot be answered from this data.",
+   "columns": [
+    "budget_lines",
+    "mapped"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which pages of the annual reports have columns we could not establish?",
+   "sql": "SELECT edition, COUNT(*) AS rows FROM report_appropriations WHERE column_meaning LIKE 'not established%' GROUP BY edition ORDER BY rows DESC",
+   "note": "`v1` is an ordinal -- the first column of THIS page that held figures -- not a column name. Read `column_meaning` before summing anything.",
+   "columns": [
+    "edition",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "How many rows of each report table failed their own check?",
+   "sql": "SELECT 'appropriations' AS t, status, COUNT(*) AS rows FROM report_appropriations GROUP BY status UNION ALL SELECT 'gross_wages', status, COUNT(*) FROM report_gross_wages GROUP BY status ORDER BY t, rows DESC",
+   "note": "",
+   "columns": [
+    "t",
+    "status",
+    "rows"
+   ]
+  },
+  {
+   "theme": "Finding your way",
+   "question": "What tables are there, and how big are they?",
+   "sql": "SELECT name FROM sqlite_master WHERE type IN ('table','view') ORDER BY type, name",
+   "note": "",
+   "columns": [
+    "name"
+   ]
+  },
+  {
+   "theme": "Finding your way",
+   "question": "What fiscal years does the archive cover, per dataset?",
+   "sql": "SELECT dataset, MIN(edition) AS first, MAX(edition) AS last, COUNT(*) AS editions FROM dataset_document GROUP BY dataset ORDER BY dataset",
+   "note": "",
+   "columns": [
+    "dataset",
+    "first",
+    "last",
+    "editions"
+   ]
+  },
+  {
+   "theme": "Finding your way",
+   "question": "What does one fiscal period mean?",
+   "sql": "SELECT period, label, months_elapsed, is_final FROM fiscal_period ORDER BY period",
+   "note": "",
+   "columns": [
+    "period",
+    "label",
+    "months_elapsed",
+    "is_final"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "What is the biggest single line in the budget, in each year?",
+   "sql": "SELECT f.fy, b.label, ROUND(MAX(f.value)) AS value FROM budget_figure f JOIN budget_line b USING (line_key) WHERE f.stage='settled' GROUP BY f.fy ORDER BY f.fy DESC",
+   "note": "",
+   "columns": [
+    "fy",
+    "label",
+    "value"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "How many lines does each budget document state?",
+   "sql": "SELECT doc_id, COUNT(*) AS figures, COUNT(DISTINCT fy) AS years FROM budget_figure GROUP BY doc_id ORDER BY figures DESC LIMIT 15",
+   "note": "",
+   "columns": [
+    "doc_id",
+    "figures",
+    "years"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "Which lines exist in one scenario but not another?",
+   "sql": "SELECT line_key, COUNT(DISTINCT variant) AS variants FROM budget_figure WHERE fy=2027 AND variant IS NOT NULL GROUP BY line_key ORDER BY variants LIMIT 15",
+   "note": "",
+   "columns": [
+    "line_key",
+    "variants"
+   ]
+  },
+  {
+   "theme": "The school budget",
+   "question": "What does the FY27 workbook say each line was in FY25?",
+   "sql": "SELECT line_key, column_kind, ROUND(value) AS value FROM workbook_figure WHERE fy=2025 AND row_kind='line' ORDER BY value DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "line_key",
+    "column_kind",
+    "value"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "Which accounts had the largest unspent balance at the latest period?",
+   "sql": "SELECT a.name, a.fund_name, l.fy, l.period, ROUND(l.available) AS available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy DESC, l.period DESC, l.available DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "name",
+    "fund_name",
+    "fy",
+    "period",
+    "available"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "How much was transferred into or out of each account?",
+   "sql": "SELECT a.name, l.fy, l.period, ROUND(l.transfers) AS transfers FROM ledger_snapshot l JOIN account a USING (account_id) WHERE l.transfers <> 0 ORDER BY ABS(l.transfers) DESC LIMIT 20",
+   "note": "`transfers` is CUMULATIVE. Movement between two periods is the difference of the column, never the later value.",
+   "columns": [
+    "name",
+    "fy",
+    "period",
+    "transfers"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "Which accounts are revenue rather than expenditure?",
+   "sql": "SELECT account_type, level, COUNT(*) AS accounts FROM account GROUP BY account_type, level ORDER BY accounts DESC",
+   "note": "Revenue rows are stored NEGATIVE, exactly as MUNIS prints them. Check `account_type` before doing arithmetic across types.",
+   "columns": [
+    "account_type",
+    "level",
+    "accounts"
+   ]
+  },
+  {
+   "theme": "The town's books",
+   "question": "What share of its budget had each department used?",
+   "sql": "SELECT a.dept, a.name, l.fy, l.period, ROUND(l.pct_used,1) AS pct_used FROM ledger_snapshot l JOIN account a USING (account_id) WHERE l.pct_used IS NOT NULL ORDER BY l.pct_used DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "dept",
+    "name",
+    "fy",
+    "period",
+    "pct_used"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many people did the town print on a roster in total, by year?",
+   "sql": "SELECT fy, COUNT(*) AS names, COUNT(DISTINCT school) AS schools FROM v_staff_roster GROUP BY fy ORDER BY fy",
+   "note": "",
+   "columns": [
+    "fy",
+    "names",
+    "schools"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "Which names appear across the most years?",
+   "sql": "SELECT name, COUNT(DISTINCT fy) AS years, MIN(fy) AS first, MAX(fy) AS last FROM staff_roster_entries WHERE name <> '' GROUP BY name ORDER BY years DESC, name LIMIT 20",
+   "note": "A name printed in a public annual report. It is not a claim about employment, and a roster gives no FTE.",
+   "columns": [
+    "name",
+    "years",
+    "first",
+    "last"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "How many administrators did each school print?",
+   "sql": "SELECT fy, school, COUNT(*) AS admins FROM v_staff_roster WHERE role_category='administrator' GROUP BY fy, school ORDER BY fy DESC, admins DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "school",
+    "admins"
+   ]
+  },
+  {
+   "theme": "Staff on the rosters",
+   "question": "Which grades appear anywhere on the rosters?",
+   "sql": "SELECT role_grade, COUNT(*) AS rows FROM v_staff_roster WHERE role_grade <> '' GROUP BY role_grade ORDER BY rows DESC",
+   "note": "",
+   "columns": [
+    "role_grade",
+    "rows"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "How many figures did each annual report yield, and how many were checked?",
+   "sql": "SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_appropriations GROUP BY edition ORDER BY edition",
+   "note": "",
+   "columns": [
+    "edition",
+    "rows",
+    "checked"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "Which report tables print a total we can reconcile to?",
+   "sql": "SELECT fy, [table], printed_total, checkable FROM annual_report_contents WHERE printed_total <> '' ORDER BY fy DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "fy",
+    "table",
+    "printed_total",
+    "checkable"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "How many pages of each report carried figures at all?",
+   "sql": "SELECT fy, COUNT(*) AS pages, SUM(CASE WHEN money > 0 THEN 1 ELSE 0 END) AS with_money FROM annual_report_survey GROUP BY fy ORDER BY fy",
+   "note": "",
+   "columns": [
+    "fy",
+    "pages",
+    "with_money"
+   ]
+  },
+  {
+   "theme": "The annual town reports",
+   "question": "What kinds of anomaly did the extraction find, and how often?",
+   "sql": "SELECT kind, COUNT(*) AS occurrences FROM report_anomalies GROUP BY kind ORDER BY occurrences DESC",
+   "note": "",
+   "columns": [
+    "kind",
+    "occurrences"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "How has free cash moved for Lunenburg specifically?",
+   "sql": "SELECT year, line, amount, role FROM free_cash_proof WHERE town='Lunenburg' ORDER BY year DESC, line",
+   "note": "",
+   "columns": [
+    "year",
+    "line",
+    "amount",
+    "role"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "Which towns does the free cash comparison cover?",
+   "sql": "SELECT town, COUNT(DISTINCT year) AS years, MIN(year) AS first, MAX(year) AS last FROM free_cash_proof GROUP BY town ORDER BY town",
+   "note": "",
+   "columns": [
+    "town",
+    "years",
+    "first",
+    "last"
+   ]
+  },
+  {
+   "theme": "Revenue, tax base and free cash",
+   "question": "What measures does the state publish about this district?",
+   "sql": "SELECT measure, COUNT(*) AS rows, MIN(fy) AS first, MAX(fy) AS last FROM dese_measure GROUP BY measure ORDER BY rows DESC LIMIT 15",
+   "note": "",
+   "columns": [
+    "measure",
+    "rows",
+    "first",
+    "last"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which documents were obtained by records request rather than published?",
+   "sql": "SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC",
+   "note": "",
+   "columns": [
+    "source_type",
+    "documents"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "What basis does each document have for the figures it prints?",
+   "sql": "SELECT basis, COUNT(*) AS documents FROM document WHERE basis IS NOT NULL GROUP BY basis ORDER BY documents DESC",
+   "note": "`ledger` means a figure exists because a transaction did. `restatement` means a prior year re-presented by the party that spent it. They are not interchangeable.",
+   "columns": [
+    "basis",
+    "documents"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "Which datasets have a document for every edition, and which do not?",
+   "sql": "SELECT dataset, COUNT(*) AS editions, SUM(CASE WHEN document <> '' THEN 1 ELSE 0 END) AS with_a_document FROM dataset_document GROUP BY dataset ORDER BY editions DESC",
+   "note": "",
+   "columns": [
+    "dataset",
+    "editions",
+    "with_a_document"
+   ]
+  },
+  {
+   "theme": "Provenance, and what is not established",
+   "question": "How many rows of each dataset came off each page?",
+   "sql": "SELECT dataset, edition, pages, rows FROM dataset_document ORDER BY CAST(rows AS INTEGER) DESC LIMIT 20",
+   "note": "",
+   "columns": [
+    "dataset",
+    "edition",
+    "pages",
+    "rows"
+   ]
+  }
+ ]
+}

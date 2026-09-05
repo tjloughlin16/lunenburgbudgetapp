@@ -88,6 +88,8 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 
 ## Data
 
+**Ask a question instead of downloading a table.** [https://lunenburgbudgetproject.org/api/query](https://lunenburgbudgetproject.org/api/query) takes one read-only SQL statement and answers it, with the documents its rows came from. [https://lunenburgbudgetproject.org/api/questions](https://lunenburgbudgetproject.org/api/questions) is 107 worked examples — a question, the query that answers it, and the columns it returns — every one executed on each build, so none of them is a claim. Start there and edit one.
+
 **Every dataset is in the API, and the API is the route to take.** [https://lunenburgbudgetproject.org/api/tables](https://lunenburgbudgetproject.org/api/tables) lists all of them with row counts and byte sizes; anything too large for one fetch is published as one file per fiscal year. The CSVs below are the same data as whole files, and several are large enough that a truncating fetcher will stop part-way through them without saying so.
 
 - [sped-lines.csv](https://lunenburgbudgetproject.org/data/sped-lines.csv) (0.0MB): Every budget line this project counts as special education, and which of the two rules caught it. They sum to the amount the projection starts from. Published because the state has no account code for special education, so the total is our classification rather than a figure anybody published.
@@ -112,11 +114,11 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 
 ## Documents
 
-455 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+456 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
 - **Published by the town, the district and the state** — 78 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 286 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 91 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 92 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 

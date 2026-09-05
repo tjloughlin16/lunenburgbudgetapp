@@ -1453,6 +1453,18 @@
      "textUrl": "/docs/data/dataset-provenance.csv"
     },
     {
+     "path": "analyses/questions.md",
+     "title": "A hundred questions this archive can answer, each with the query",
+     "stars": 3,
+     "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
+     "kind": "Notes",
+     "bytes": 40610,
+     "url": "/docs/analyses/questions.md",
+     "count": 944,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/questions.md"
+    },
+    {
      "path": "data/PROVENANCE-staff-rosters.md",
      "title": "Where the staff rosters came from, and what a name is not",
      "stars": 3,
@@ -1815,7 +1827,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 16351232,
+     "bytes": 16371712,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5631,10 +5643,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 455,
+  "documents": 456,
   "groups": 20,
-  "bytes": 1000412987,
-  "loadBearing": 71
+  "bytes": 1000474077,
+  "loadBearing": 72
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

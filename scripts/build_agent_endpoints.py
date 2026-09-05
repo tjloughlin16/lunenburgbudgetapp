@@ -628,6 +628,13 @@ def main():
         '',
         '## Data',
         '',
+        f'**Ask a question instead of downloading a table.** '
+        f'[{SITE}/api/query]({SITE}/api/query) takes one read-only SQL statement and '
+        f'answers it, with the documents its rows came from. '
+        f'[{SITE}/api/questions]({SITE}/api/questions) is 107 worked examples \u2014 a '
+        f'question, the query that answers it, and the columns it returns \u2014 every one '
+        f'executed on each build, so none of them is a claim. Start there and edit one.',
+        '',
         f'**Every dataset is in the API, and the API is the route to take.** '
         f'[{SITE}/api/tables]({SITE}/api/tables) lists all of them with row counts and '
         f'byte sizes; anything too large for one fetch is published as one file per '
