@@ -281,7 +281,15 @@ EXTRA_CAVEATS = {
     'staff_roster_entries': ['POSITION IS OUR CLASSIFICATION AND IT FAILS IN SOME YEARS. It is mapped from the printed job title, and the print changes: FY2012 says "Tutor", FY2013 "Aide", FY2014 "Paraprofessional" — and once "Paraprotessional", an OCR typo that drops that person from the count. FY2015 printed the page in two columns, which the extractor collapsed, leaving five people with no title at all. So a series counting paraprofessionals in the Kindergarten section reads 0, 5, 4, 4, 0 for FY2011–FY2015 across roughly the same five people. THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING. Found by an assistant reading the rows, not by any check here. Use `role_raw`, which is what the report actually printed, before trusting `position`.'],
 }
 
-SHARD_ABOVE = 400 * 1024
+# What a caller can actually finish, not what feels tidy.
+#
+# This was 400KB, chosen by eye, and it left 35 files above it -- the FY2016 appropriations
+# alone was 490KB. An assistant that can only reach GitHub asked to read the FY2022 annual
+# town report found the PDF gone from the repository (it is 16.8MB and lives in object
+# storage now), the extracted text at 0.5MB, and the structured extract at 0.4MB: three
+# routes to the same document and not one it could finish. 150KB is the figure the rest of
+# this project already uses, taken from an agent's own reported cutoff.
+SHARD_ABOVE = 150 * 1024
 YEAR_COLUMNS = ('fy', 'fiscal_year', 'edition', 'year')
 
 
@@ -325,17 +333,41 @@ def publish_tables(db, written, already):
                                bytes=written['api/' + name]))
             continue
 
-        # Too large to hand to a caller in one piece: an index plus one file per year.
+        # Too large to hand to a caller in one piece: an index plus one file per year --
+        # and a year that is STILL too large is chunked further, because some are. The
+        # FY2016 appropriations run to 490KB on their own.
+        # Clear the table's directory first. Shard names depend on how many parts a year
+        # needs, so lowering the size limit renamed `2016.json` to `2016-1.json` and left
+        # the old file sitting there, still listed by nothing and still fetchable -- a
+        # stale second copy of the data, which is the failure this project keeps meeting.
+        import shutil as _sh
+        _sh.rmtree(os.path.join(API, name), ignore_errors=True)
         by_year = {}
         for r in rows:
             by_year.setdefault(str(r.get(yc) or 'undated'), []).append(r)
         parts = []
         for yr, rs in sorted(by_year.items()):
-            key = f'{name}/{yr}'
-            written['api/' + key] = write(key, payload(
-                rs, f' This file is {yc} {yr} only.'))
-            parts.append(dict(url=f'{SITE}/api/{key}', **{yc: yr},
-                              rows=len(rs), bytes=written['api/' + key]))
+            chunks, chunk, size = [], [], 0
+            for r in rs:
+                approx = len(json.dumps(r, separators=(',', ':'))) + 1
+                # 80% of the limit: the rows are wrapped in a resource envelope --
+                # provenance, caveats, columns -- and measuring only the rows put the
+                # finished file a few KB over the line it was supposed to sit under.
+                if chunk and size + approx > SHARD_ABOVE * 0.8:
+                    chunks.append(chunk)
+                    chunk, size = [], 0
+                chunk.append(r)
+                size += approx
+            if chunk:
+                chunks.append(chunk)
+            for i, part in enumerate(chunks, 1):
+                suffix = yr if len(chunks) == 1 else f'{yr}-{i}'
+                key = f'{name}/{suffix}'
+                note = (f' This file is {yc} {yr} only.' if len(chunks) == 1
+                        else f' This file is part {i} of {len(chunks)} for {yc} {yr}.')
+                written['api/' + key] = write(key, payload(part, note))
+                parts.append(dict(url=f'{SITE}/api/{key}', **{yc: yr},
+                                  rows=len(part), bytes=written['api/' + key]))
         idx = dict(resource=name, about=about, count=len(rows), columns=cols,
                    caveats=caveats,
                    note=f'{len(rows):,} rows is more than one fetch should carry, so this '
@@ -547,9 +579,11 @@ def main():
     ))
 
     # Everything else in the database, fetchable rather than merely named.
-    curated = {'ledger_snapshot', 'budget_figure', 'account', 'fund', 'document',
-               'budget_line', 'workbook_figure', 'fiscal_period', 'crosswalk',
-               'fund_activity', 'grant_award'}
+    # Only the dimensions are skipped. The big FACT tables get a sharded route as well as
+    # their curated resource: /api/ledger is 395KB, which is a resource nobody with a
+    # 150KB ceiling can fetch, and the curated shape is a convenience rather than the only
+    # way in.
+    curated = {'account', 'fund', 'document', 'budget_line', 'fiscal_period', 'crosswalk'}
     tables_listed = publish_tables(db, written, curated)
     written['api/tables'] = write('tables', dict(
         resource='tables',
@@ -681,6 +715,18 @@ def main():
         ), fh, indent=1)
     written['.well-known/ai-plugin.json'] = os.path.getsize(
         os.path.join(wk, 'ai-plugin.json'))
+
+    # Anything a caller cannot finish is named here rather than left to be discovered.
+    # The curated resources are joins and roll-ups; each has a sharded raw table beside
+    # it, and that is the route to give an agent with a ceiling.
+    oversize = sorted(((v, k) for k, v in written.items()
+                       if k.startswith('api/') and v and v > SHARD_ABOVE), reverse=True)
+    if oversize:
+        print(f'{len(oversize)} endpoint(s) over {SHARD_ABOVE // 1024}KB — a caller with '
+              f'a fetch ceiling needs the sharded table instead:')
+        for v, k in oversize[:8]:
+            print(f'  {v / 1024:7.0f} KB  /{k}')
+        print()
 
     print('Published the database as an API\n')
     for k in sorted(written):

@@ -628,6 +628,17 @@ def main():
         '',
         '## Data',
         '',
+        f'**A document too long to read in one fetch is published in parts.** Any '
+        f'`.txt` over 140KB has a folder beside it: append `.parts/index.json` to its '
+        f'address for the list, or `.parts/001.txt` for the first piece. The FY2022 '
+        f'annual town report is 444KB of text and four parts of about 140KB, each split '
+        f'on a page boundary with the pages it covers stated: '
+        f'[{SITE}/docs/town-annual-reports/text/4129-fy-2022-annual-town-report.parts/index.json]'
+        f'({SITE}/docs/town-annual-reports/text/4129-fy-2022-annual-town-report.parts/index.json). '
+        f'The scanned PDF behind it is 16.8MB, is not in the git repository, and is '
+        f'served from object storage under the same `/docs/` prefix \u2014 fetch it only '
+        f'if you can hold 16.8MB, and read the parts otherwise.',
+        '',
         f'**Ask a question instead of downloading a table.** '
         f'[{SITE}/api/query]({SITE}/api/query) takes one read-only SQL statement and '
         f'answers it, with the documents its rows came from. '
