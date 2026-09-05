@@ -18,45 +18,55 @@ The bundles below are still the fastest way to read a board whole, if
 you can hold one. Check the size in this list before fetching.
 
 Individual documents: https://lunenburgbudgetproject.org/docs/minutes/text/<board>/<file>.txt
-Structured index    : https://lunenburgbudgetproject.org/data/minutes-index.csv
 
-  141 docs    0.97MB  https://lunenburgbudgetproject.org/minutes/select-board.txt
-  119 docs    0.89MB  https://lunenburgbudgetproject.org/minutes/school-committee.txt
-   95 docs    0.33MB  https://lunenburgbudgetproject.org/minutes/conservation-commission.txt
-   84 docs    0.50MB  https://lunenburgbudgetproject.org/minutes/finance-committee.txt
-   80 docs    0.32MB  https://lunenburgbudgetproject.org/minutes/sewer-commission.txt
-   79 docs    0.46MB  https://lunenburgbudgetproject.org/minutes/planning-board.txt
-   63 docs    0.17MB  https://lunenburgbudgetproject.org/minutes/board-of-assessors.txt
-   48 docs    0.10MB  https://lunenburgbudgetproject.org/minutes/board-of-health.txt
-   47 docs    0.19MB  https://lunenburgbudgetproject.org/minutes/lunenburg-municipal-building-design-committee.txt
-   46 docs    0.13MB  https://lunenburgbudgetproject.org/minutes/cemetery-commission.txt
-   42 docs    0.13MB  https://lunenburgbudgetproject.org/minutes/planning-board-public-hearing.txt
-   41 docs    0.10MB  https://lunenburgbudgetproject.org/minutes/public-access-cable-committee-pacc.txt
-   39 docs    0.13MB  https://lunenburgbudgetproject.org/minutes/council-on-aging.txt
-   36 docs    0.39MB  https://lunenburgbudgetproject.org/minutes/library-board-of-trustees.txt
-   36 docs    0.21MB  https://lunenburgbudgetproject.org/minutes/parks-commission.txt
-   34 docs    0.05MB  https://lunenburgbudgetproject.org/minutes/school-advisory-councils-committees.txt
-   34 docs    0.07MB  https://lunenburgbudgetproject.org/minutes/zoning-board-of-appeals.txt
-   33 docs    0.07MB  https://lunenburgbudgetproject.org/minutes/agricultural-commission.txt
-   31 docs    0.05MB  https://lunenburgbudgetproject.org/minutes/historical-commission.txt
-   31 docs    0.19MB  https://lunenburgbudgetproject.org/minutes/trust-fund-commission.txt
-   30 docs    0.09MB  https://lunenburgbudgetproject.org/minutes/architectural-preservation-district-commission.txt
-   28 docs    0.07MB  https://lunenburgbudgetproject.org/minutes/stormwater-task-force.txt
-   24 docs    0.06MB  https://lunenburgbudgetproject.org/minutes/open-space-committee.txt
-   19 docs    0.05MB  https://lunenburgbudgetproject.org/minutes/lunenburg-housing-authority.txt
-   18 docs    0.04MB  https://lunenburgbudgetproject.org/minutes/economic-development-committee.txt
-   18 docs    0.06MB  https://lunenburgbudgetproject.org/minutes/master-plan-steering-committee.txt
-   17 docs    0.04MB  https://lunenburgbudgetproject.org/minutes/green-communities-committee.txt
-   16 docs    0.03MB  https://lunenburgbudgetproject.org/minutes/lunenburg-300th-anniversary-committee.txt
-   14 docs    0.03MB  https://lunenburgbudgetproject.org/minutes/conservation-commission-public-hearing.txt
-   14 docs    0.02MB  https://lunenburgbudgetproject.org/minutes/select-board-public-hearing.txt
-   12 docs    0.02MB  https://lunenburgbudgetproject.org/minutes/by-law-committee.txt
-   12 docs    0.02MB  https://lunenburgbudgetproject.org/minutes/capital-planning-committee.txt
-    9 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/cultural-council.txt
-    8 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/board-of-registrars.txt
-    7 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/finance-committee-appointing-committee.txt
-    5 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/finance-committee-public-hearing.txt
-    4 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/north-central-climate-change-coalition.txt
-    3 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/cable-advisory-committee.txt
-    3 docs    0.01MB  https://lunenburgbudgetproject.org/minutes/personnel-committee.txt
-    2 docs    0.00MB  https://lunenburgbudgetproject.org/minutes/athletic-advisory-council.txt
+TO ANSWER A DATE OR BOARD QUESTION without reading any text, fetch that
+board's index instead of its bundle. Same name, .csv rather than .txt --
+  https://lunenburgbudgetproject.org/minutes/school-committee.csv    (a few KB)
+date, kind, board, our permanent address for the document, the town's
+own PDF, and its size. Newest first. Every board has one.
+
+All of them in one file: https://lunenburgbudgetproject.org/data/minutes-index.csv (239KB, sorted
+by board, and too large for some callers to read whole -- which is why
+the per-board files above exist).
+
+  docs      text        index
+  141 docs    0.97MB    28.0KB  https://lunenburgbudgetproject.org/minutes/select-board.txt
+  119 docs    0.89MB    24.6KB  https://lunenburgbudgetproject.org/minutes/school-committee.txt
+   95 docs    0.33MB    20.9KB  https://lunenburgbudgetproject.org/minutes/conservation-commission.txt
+   84 docs    0.50MB    17.6KB  https://lunenburgbudgetproject.org/minutes/finance-committee.txt
+   80 docs    0.32MB    16.6KB  https://lunenburgbudgetproject.org/minutes/sewer-commission.txt
+   79 docs    0.46MB    16.0KB  https://lunenburgbudgetproject.org/minutes/planning-board.txt
+   63 docs    0.17MB    13.2KB  https://lunenburgbudgetproject.org/minutes/board-of-assessors.txt
+   48 docs    0.10MB     9.8KB  https://lunenburgbudgetproject.org/minutes/board-of-health.txt
+   47 docs    0.19MB    12.4KB  https://lunenburgbudgetproject.org/minutes/lunenburg-municipal-building-design-committee.txt
+   46 docs    0.13MB     9.8KB  https://lunenburgbudgetproject.org/minutes/cemetery-commission.txt
+   42 docs    0.13MB     9.7KB  https://lunenburgbudgetproject.org/minutes/planning-board-public-hearing.txt
+   41 docs    0.10MB     9.9KB  https://lunenburgbudgetproject.org/minutes/public-access-cable-committee-pacc.txt
+   39 docs    0.13MB     8.1KB  https://lunenburgbudgetproject.org/minutes/council-on-aging.txt
+   36 docs    0.39MB     8.1KB  https://lunenburgbudgetproject.org/minutes/library-board-of-trustees.txt
+   36 docs    0.21MB     7.5KB  https://lunenburgbudgetproject.org/minutes/parks-commission.txt
+   34 docs    0.05MB     8.3KB  https://lunenburgbudgetproject.org/minutes/school-advisory-councils-committees.txt
+   34 docs    0.07MB     7.5KB  https://lunenburgbudgetproject.org/minutes/zoning-board-of-appeals.txt
+   33 docs    0.07MB     7.3KB  https://lunenburgbudgetproject.org/minutes/agricultural-commission.txt
+   31 docs    0.05MB     6.7KB  https://lunenburgbudgetproject.org/minutes/historical-commission.txt
+   31 docs    0.19MB     6.7KB  https://lunenburgbudgetproject.org/minutes/trust-fund-commission.txt
+   30 docs    0.09MB     8.0KB  https://lunenburgbudgetproject.org/minutes/architectural-preservation-district-commission.txt
+   28 docs    0.07MB     6.1KB  https://lunenburgbudgetproject.org/minutes/stormwater-task-force.txt
+   24 docs    0.06MB     5.2KB  https://lunenburgbudgetproject.org/minutes/open-space-committee.txt
+   19 docs    0.05MB     4.4KB  https://lunenburgbudgetproject.org/minutes/lunenburg-housing-authority.txt
+   18 docs    0.04MB     4.2KB  https://lunenburgbudgetproject.org/minutes/economic-development-committee.txt
+   18 docs    0.06MB     4.2KB  https://lunenburgbudgetproject.org/minutes/master-plan-steering-committee.txt
+   17 docs    0.04MB     3.9KB  https://lunenburgbudgetproject.org/minutes/green-communities-committee.txt
+   16 docs    0.03MB     4.0KB  https://lunenburgbudgetproject.org/minutes/lunenburg-300th-anniversary-committee.txt
+   14 docs    0.03MB     3.5KB  https://lunenburgbudgetproject.org/minutes/conservation-commission-public-hearing.txt
+   14 docs    0.02MB     3.2KB  https://lunenburgbudgetproject.org/minutes/select-board-public-hearing.txt
+   12 docs    0.02MB     2.5KB  https://lunenburgbudgetproject.org/minutes/by-law-committee.txt
+   12 docs    0.02MB     2.7KB  https://lunenburgbudgetproject.org/minutes/capital-planning-committee.txt
+    9 docs    0.01MB     1.9KB  https://lunenburgbudgetproject.org/minutes/cultural-council.txt
+    8 docs    0.01MB     1.7KB  https://lunenburgbudgetproject.org/minutes/board-of-registrars.txt
+    7 docs    0.01MB     1.8KB  https://lunenburgbudgetproject.org/minutes/finance-committee-appointing-committee.txt
+    5 docs    0.01MB     1.2KB  https://lunenburgbudgetproject.org/minutes/finance-committee-public-hearing.txt
+    4 docs    0.01MB     1.0KB  https://lunenburgbudgetproject.org/minutes/north-central-climate-change-coalition.txt
+    3 docs    0.01MB     0.7KB  https://lunenburgbudgetproject.org/minutes/cable-advisory-committee.txt
+    3 docs    0.01MB     0.7KB  https://lunenburgbudgetproject.org/minutes/personnel-committee.txt
+    2 docs    0.00MB     0.5KB  https://lunenburgbudgetproject.org/minutes/athletic-advisory-council.txt

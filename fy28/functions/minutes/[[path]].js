@@ -57,6 +57,14 @@ and no others:
    The full list of boards, with sizes:
        ${site}/minutes/INDEX.txt
 
+1b. ONE INDEX PER BOARD, if your question is about dates rather than words. Same
+   name as the bundle, .csv rather than .txt, a few KB, newest first:
+       ${site}/minutes/school-committee.csv
+   date, kind, our permanent address for each document, and the town's own PDF.
+   Every board has one. Use this instead of /data/minutes-index.csv, which is all
+   forty boards in one 242KB file sorted alphabetically -- if your fetch truncates,
+   you lose every board after the letter L.
+
 2. ONE DOCUMENT, for citing. Note the /docs/ prefix — this is a different path from
    the bundles above.
        ${site}/docs/minutes/text/<board>/<date>-<kind>-<id>.txt

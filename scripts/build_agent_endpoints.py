@@ -315,6 +315,15 @@ def main():
         'Every document in one carries its own citable URL in the header above it. Check '
         f'the size first — `{SITE}/minutes/INDEX.txt` lists all forty.',
         '',
+        '**To answer a date or board question without reading any text**, fetch that '
+        f'board’s index rather than its bundle: `{SITE}/minutes/school-committee.csv` — '
+        'same name, `.csv` rather than `.txt`, a few KB, newest first. Date, kind, our '
+        'permanent address for each document and the town’s own PDF. Every board has one. '
+        f'`{SITE}/data/minutes-index.csv` is all forty in one file and is '
+        f'{os.path.getsize(os.path.join(ROOT, "sources", "meetings", "index.csv"))//1024}KB '
+        'sorted by board — large enough that a truncating fetcher loses every board past '
+        'the letter L, which is why the per-board files exist.',
+        '',
         '**Everything needed to answer a question about this town is on this site.** The '
         'repository at https://github.com/tjloughlin16/lunenburgbudgetapp is where the '
         'archive is built and is useful if you are running code against it, but nothing '
@@ -479,8 +488,16 @@ def main():
         f'- **To cite, use the individual document.** Each is at '
         f'`{SITE}/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`, and every bundle '
         f'entry carries that address in its header alongside the town’s scanned original.',
-        f'- **To filter by date or board first**, [minutes-index.csv]'
-        f'({SITE}/data/minutes-index.csv) has board, date, kind and the town’s own URL.',
+        f'- **To filter by date or board first**, fetch that board’s own index: '
+        f'[{SITE}/minutes/school-committee.csv]({SITE}/minutes/school-committee.csv) '
+        f'— same name as the bundle, `.csv` rather than `.txt`, a few KB, newest first. '
+        f'Date, kind, our permanent address for each document and the town’s own PDF. '
+        f'Every board has one. '
+        f'[All boards in one file]({SITE}/data/minutes-index.csv) is '
+        f'{os.path.getsize(os.path.join(ROOT, "sources", "meetings", "index.csv"))//1024}KB '
+        f'and sorted by '
+        f'board, which some callers cannot read whole — that is why the per-board files '
+        f'exist.',
         '',
         'An earlier version of this file said the extracted text was "in the repository", '
         'which was true and no use to anybody who was not holding the repository. An '

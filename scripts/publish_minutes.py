@@ -77,7 +77,14 @@ def main():
 
     urls = town_urls()
     shutil.rmtree(DOCS_OUT, ignore_errors=True)
-    shutil.rmtree(BUNDLE_OUT, ignore_errors=True)
+    # Delete THIS script's own output, not the folder it sits in. `fy28/public/minutes/`
+    # also holds `find/` -- the word index, 476 files, published at the URL llms.txt tells
+    # agents to use -- and an `rmtree` of the parent takes it with the bundles. That is a
+    # loaded gun for the next person who runs this after a fresh checkout, and it does not
+    # announce itself: the site keeps working until the next deploy.
+    for name in os.listdir(BUNDLE_OUT) if os.path.isdir(BUNDLE_OUT) else []:
+        if name.endswith(('.txt', '.csv')):
+            os.remove(os.path.join(BUNDLE_OUT, name))
     os.makedirs(DOCS_OUT, exist_ok=True)
     os.makedirs(BUNDLE_OUT, exist_ok=True)
 
@@ -144,6 +151,29 @@ def main():
             manifest.append(dict(board=board, file=name, docs=len(group),
                                  bytes=os.path.getsize(out)))
 
+    # ONE INDEX PER BOARD, because the combined one cannot be read by the callers it is
+    # for. `/data/minutes-index.csv` is 242KB sorted alphabetically by board, and an
+    # agent reported its fetch truncating around 60-70% -- which cuts off at "Lunenburg
+    # Municipal Building", so School Committee, Select Board, Sewer Commission, Planning
+    # Board and everything else late in the alphabet is unreachable. It resorted to
+    # cloning the repository. A file a reader has to leave the site to read is not
+    # published; and sorting differently would only move which boards are unreachable.
+    #
+    # So: one small CSV per board, beside that board's text bundle, in date order with
+    # the newest first -- because a truncated read of a dated file should lose the oldest
+    # rows, not the newest.
+    csv_manifest = []
+    for board, docs in boards.items():
+        out = os.path.join(BUNDLE_OUT, f'{board}.csv')
+        with open(out, 'w', newline='', encoding='utf-8') as fh:
+            w = csv.writer(fh)
+            w.writerow(['date', 'kind', 'board', 'our_copy', 'town_pdf', 'bytes'])
+            for d in sorted(docs, key=lambda d: d['date'], reverse=True):
+                w.writerow([d['date'], d['kind'], board, SITE + d['path'],
+                            d['url'], len(d['body'])])
+        csv_manifest.append(dict(board=board, docs=len(docs),
+                                 bytes=os.path.getsize(out)))
+
     with open(os.path.join(BUNDLE_OUT, 'INDEX.txt'), 'w', encoding='utf-8') as fh:
         fh.write('Lunenburg meeting archive — full text, by board\n')
         fh.write('=' * 88 + '\n\n')
@@ -159,10 +189,22 @@ def main():
                  f'  {SITE}/minutes/find/<first two letters of the word>.json\n\n'
                  'The bundles below are still the fastest way to read a board whole, if\n'
                  'you can hold one. Check the size in this list before fetching.\n\n'
-                 f'Individual documents: {SITE}/docs/minutes/text/<board>/<file>.txt\n'
-                 f'Structured index    : {SITE}/data/minutes-index.csv\n\n')
+                 f'Individual documents: {SITE}/docs/minutes/text/<board>/<file>.txt\n\n'
+                 'TO ANSWER A DATE OR BOARD QUESTION without reading any text, fetch that\n'
+                 "board's index instead of its bundle. Same name, .csv rather than .txt --\n"
+                 f'  {SITE}/minutes/school-committee.csv    (a few KB)\n'
+                 'date, kind, board, our permanent address for the document, the town\'s\n'
+                 'own PDF, and its size. Newest first. Every board has one.\n\n'
+                 f'All of them in one file: {SITE}/data/minutes-index.csv '
+                 f'({os.path.getsize(os.path.join(SRC, "index.csv"))/1024:.0f}KB, sorted\n'
+                 'by board, and too large for some callers to read whole -- which is why\n'
+                 'the per-board files above exist).\n\n'
+                 '  docs      text        index\n')
+        by_board = {m['board']: m for m in csv_manifest}
         for m in sorted(manifest, key=lambda m: -m['docs']):
+            c = by_board.get(m['board'], {})
             fh.write(f'{m["docs"]:>5} docs  {m["bytes"]/1024/1024:>6.2f}MB  '
+                     f'{c.get("bytes", 0)/1024:>6.1f}KB  '
                      f'{SITE}/minutes/{m["file"]}\n')
 
     print(f'published {copied} documents ({total_bytes/1024/1024:.1f}MB of text) '
