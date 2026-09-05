@@ -1,3 +1,4 @@
+import MANIFEST from '../data/agent-manifest.json'
 import { MODEL } from '../model/engine'
 import { pathFor } from '../routes'
 import sources from '../data/sources.json'
@@ -32,7 +33,13 @@ const DOC_URL: Record<string, string> = Object.fromEntries(
   (sources as { groups: { items: { path: string; url: string }[] }[] }).groups
     .flatMap(g => g.items).map(i => [i.path, i.url]))
 
-const urlFor = (doc: string) => DOC_URL[doc] ?? `/docs/${doc}`
+/* Absolute. A citation exists so somebody can go and check the document, and for a
+ * program "somebody" means a fetcher that will not follow a bare path. */
+const SITE = MANIFEST.site
+const urlFor = (doc: string) => {
+  const u = DOC_URL[doc] ?? `/docs/${doc}`
+  return u.startsWith('http') ? u : SITE + u
+}
 
 /** The marker that sits against a figure. Small, and a real link. */
 export function Cite({ id }: { id: string }) {

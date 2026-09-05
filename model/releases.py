@@ -65,6 +65,13 @@ RELEASES = [
             '— while a table of 3,815 roster entries sat behind a name it could see and '
             'not fetch.',
 
+            'Every link to a file on this site is now a full address. All of them were '
+            'relative — `/data/staff-roster-entries.csv` rather than the whole URL — and '
+            'an assistant that can only follow addresses it has already seen written out '
+            'could follow none of them. It reported the roster data missing from the very '
+            'page built to hand it over, and went to the source repository instead. 100 '
+            'links across 18 pages.',
+
             'Every address this site hands a reader is now a full URL. Thirteen shipped '
             'as bare paths — `/data/staff-roster-entries.csv`, with no site name in front '
             'of it. An assistant reading that was told exactly where the data was and '

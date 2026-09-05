@@ -1,3 +1,4 @@
+import MANIFEST from '../data/agent-manifest.json'
 import { useEffect, useState } from 'react'
 import { Section, Note } from '../components/primitives'
 
@@ -29,6 +30,10 @@ type Payload = {
 }
 
 const kb = (n: number) => n >= 1e6 ? `${(n / 1e6).toFixed(1)} MB` : `${Math.round(n / 1024)} KB`
+
+/* Absolute. Every report on this page is a file, and a file linked relatively is
+ * one an assistant that only follows URLs it has seen cannot open. */
+const ABS = (u: string) => (u.startsWith('http') ? u : `${MANIFEST.site}${u}`)
 
 export function Reports() {
   const [d, setD] = useState<Payload | null>(null)
@@ -108,16 +113,16 @@ export function Reports() {
                 style={{ color: 'var(--text-secondary)' }}>{r.about}</p>
 
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] items-center">
-                <a href={r.markdown.url} className="font-semibold underline"
+                <a href={ABS(r.markdown.url)} className="font-semibold underline"
                   style={{ color: 'var(--series-cost)' }}>Read it</a>
                 {r.pdf && (
-                  <a href={r.pdf.url} className="font-semibold underline"
+                  <a href={ABS(r.pdf.url)} className="font-semibold underline"
                     style={{ color: 'var(--series-cost)' }}>
                     PDF <span className="font-normal tnum"
                       style={{ color: 'var(--text-muted)' }}>{kb(r.pdf.bytes)}</span>
                   </a>
                 )}
-                <a href={r.markdown.url} download className="underline"
+                <a href={ABS(r.markdown.url)} download className="underline"
                   style={{ color: 'var(--text-secondary)' }}>Source text</a>
                 {r.verifier ? (
                   <span className="text-[12px]" style={{ color: 'var(--status-good)' }}>
@@ -145,7 +150,7 @@ export function Reports() {
         </p>}>
         <div className="grid sm:grid-cols-2 gap-3">
           {Object.entries(d.data).map(([k, v]) => (
-            <a key={k} href={v.url} className="card p-4 block">
+            <a key={k} href={ABS(v.url)} className="card p-4 block">
               <p className="font-semibold text-sm mb-1" style={{ color: 'var(--series-cost)' }}>
                 <code>{v.url}</code>
               </p>

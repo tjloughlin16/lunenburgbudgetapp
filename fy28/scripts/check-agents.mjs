@@ -328,6 +328,33 @@ async function main() {
   // act on; it went to GitHub instead. `model/export.py` now absolutises them at publish
   // time, and this asserts they resolve, which also catches a URL going dead: the model
   // was still naming /minutes/school-committee.txt after the bundles were split.
+  // A LINK AN AGENT CANNOT RESOLVE IS NOT A LINK.
+  //
+  // Every href to a data file on this site was relative. An assistant whose fetcher takes
+  // only URLs it has already seen as links resolved none of them, reported the roster data
+  // "absent from /agents" -- the page whose entire job is handing a program addresses --
+  // and cloned the GitHub repository instead. It was right: nothing it could use was
+  // there.
+  //
+  // Pages the user navigates stay relative. Anything under /docs, /data, /api or /minutes
+  // is a file for a program, and it is written out in full.
+  console.log('\nevery link to a file must be absolute, or a program cannot follow it')
+  {
+    let relative = 0
+    for (const r of routes) {
+      const html = await (await fetch(base + r)).text()
+      const bad = [...html.matchAll(/href="(\.?\/(?:docs|data|api|minutes)\/[^"]*)"/g)]
+        .map(m => m[1])
+      if (bad.length) {
+        relative += bad.length
+        fails.push(`${r}: ${bad.length} relative link(s) to files — ` +
+          `${[...new Set(bad)].slice(0, 3).join(', ')}`)
+      }
+    }
+    console.log(`  ${relative ? 'FAIL' : ' ok '} ${routes.length} routes, ` +
+      `${relative} relative file link(s)`)
+  }
+
   console.log('\nevery URL the model publishes in prose must answer')
   {
     // Parsed, then re-stringified, so the match is against real strings rather than

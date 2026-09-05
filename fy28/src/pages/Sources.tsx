@@ -1,3 +1,5 @@
+import DATA_FILES from '../data/agent-data-files.json'
+import MANIFEST from '../data/agent-manifest.json'
 import { SourceIndex } from '../components/SourceIndex'
 import type { Tab } from '../routes'
 
@@ -11,6 +13,8 @@ import type { Tab } from '../routes'
  *  So it is top level, it is in the header on every page, it is the first line of the
  *  footer on every page, and the address is /sources — short enough to say out loud in a
  *  meeting, which is where somebody is standing when they need it. */
+const SITE = MANIFEST.site
+
 export function Sources({ onJump }: { onJump: (t: Tab) => void }) {
   return (
     <div>
@@ -67,15 +71,20 @@ export function Sources({ onJump }: { onJump: (t: Tab) => void }) {
           </p>
           <p className="text-[12.5px] leading-relaxed max-w-3xl"
             style={{ color: 'var(--text-muted)' }}>
+            {/* Read from the same manifest llms.txt and /agents are built from, and
+                written as ABSOLUTE addresses.
+
+                This was a hand-typed list of five files. It went stale the moment
+                anything was published beside it -- the staff rosters and placement
+                counts were absent from it while the homepage cited them -- and its
+                links were relative, which an assistant fetching only URLs it has seen
+                as links cannot use. Both failures at once, in the paragraph whose job
+                is handing somebody the data. */}
             The underlying data is downloadable directly:{' '}
-            {[['model.json', 'every figure the site computes'],
-              ['sources.json', 'the document archive'],
-              ['budget-lines.csv', 'the district budget, 351 lines'],
-              ['district-page-index.csv', '87 mirrored district documents'],
-              ['minutes-index.csv', '1,422 town meeting records']].map(([f, w], i) => (
-              <span key={f}>{i > 0 ? ' · ' : ''}
-                <a href={`/data/${f}`} download className="underline"
-                  style={{ color: 'var(--text-secondary)' }}>{f}</a>{' '}({w})
+            {DATA_FILES.map((d, i) => (
+              <span key={d.name}>{i > 0 ? ' · ' : ''}
+                <a href={`${SITE}/data/${d.name}`} download className="underline"
+                  style={{ color: 'var(--text-secondary)' }}>{d.name}</a>
               </span>
             ))}.
           </p>

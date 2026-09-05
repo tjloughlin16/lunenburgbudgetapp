@@ -160,7 +160,7 @@ function TransportFocus() {
         Athletic transportation, both sides
       </h3>
       <p className="text-[12px] leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-        From <a className="underline" href={`/docs/${S.doc}`}>{S.title}</a> &mdash; the only
+        From <a className="underline" href={`https://lunenburgbudgetproject.org/docs/${S.doc}`}>{S.title}</a> &mdash; the only
         document the district published that lists this line twice, once as an appropriation
         and once as the {S.fund}.
       </p>
@@ -259,7 +259,7 @@ export function Athletics({ onJump }: { onJump: (t: Tab) => void }) {
           style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
           ← The situation
         </button>
-        <a href="/docs/analyses/athletics.md"
+        <a href="https://lunenburgbudgetproject.org/docs/analyses/athletics.md"
           className="text-xs font-semibold px-3 py-2 rounded-md"
           style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
           The full analysis, with sources

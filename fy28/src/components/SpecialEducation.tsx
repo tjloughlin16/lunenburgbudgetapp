@@ -418,7 +418,7 @@ export function WhatCounts() {
         <br /><br />
         They come to <strong>{usd(c.total)}</strong>, which is the amount every projection
         on this page starts from. The list is below and it adds up; the underlying file is{' '}
-        <a href="/data/budget-lines.csv" className="font-semibold"
+        <a href="https://lunenburgbudgetproject.org/data/budget-lines.csv" className="font-semibold"
           style={{ color: 'var(--series-cost)' }}>published as a spreadsheet</a>, with a
         column marking which lines these are, so the sum can be checked without taking our
         word for any of it.

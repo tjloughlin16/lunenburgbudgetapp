@@ -25,8 +25,12 @@ import MANIFEST from '../data/agent-manifest.json'
 export function DataFooter() {
   const host = MANIFEST.site.replace(/^https?:\/\//, '')
   const corpus = MANIFEST.corpus || ''
+  // Absolute: this footer is the one thing on every page that names a machine-readable
+  // address, and a relative href is an address only to a caller that already knows where
+  // it is standing.
   const link = (p: string) => (
-    <a href={p} style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
+    <a href={`https://${host}${p}`}
+      style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
       {host}{p}
     </a>
   )

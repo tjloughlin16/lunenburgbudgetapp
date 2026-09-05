@@ -27,10 +27,15 @@ import MANIFEST from '../data/agent-manifest.json'
  *
  *  `scripts/agent-view.mjs --links` fails the build if any of these drifts past 50,000
  *  characters of converted text, so this cannot quietly slide down the page again. */
+/* Absolute. This line is the first machine-readable address on the page, put there
+ * because /api/index used to sit 95% of the way down the homepage; a relative href
+ * makes it unusable to the caller it was moved up for. */
+const ABS = (p: string) => `${MANIFEST.site}${p}`
+
 export function DataTopLine() {
   const host = MANIFEST.site.replace(/^https?:\/\//, '')
   const link = (p: string, label?: string) => (
-    <a href={p} className="underline underline-offset-2"
+    <a href={ABS(p)} className="underline underline-offset-2"
        style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
       {label ?? `${host}${p}`}
     </a>

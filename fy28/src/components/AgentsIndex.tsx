@@ -36,8 +36,17 @@ export function AgentsIndex() {
   const host = site.replace(/^https?:\/\//, '')
   const mono = { fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }
 
+  /* ABSOLUTE, and that is the whole point of this page.
+   *
+   * Every href here was relative. An assistant that can only fetch URLs it has already
+   * seen as links resolved none of them, reported the roster data "absent from /agents",
+   * and went to GitHub for it. The page exists to hand a program addresses; a relative
+   * href is an address only to something that already knows where it is.
+   *
+   * The visible text stays host-relative, because a reader does not need the scheme
+   * repeated forty times. */
   const Link = ({ path, children }: { path: string; children?: React.ReactNode }) => (
-    <a href={path} style={mono}>{children ?? `${host}${path}`}</a>
+    <a href={`${site}${path}`} style={mono}>{children ?? `${host}${path}`}</a>
   )
 
   const Row = ({ path, note }: { path: string; note: string }) => (

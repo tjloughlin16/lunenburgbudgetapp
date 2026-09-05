@@ -193,9 +193,9 @@ export function Rates() {
       <p className="text-[13px] leading-relaxed max-w-2xl"
         style={{ color: 'var(--text-secondary)' }}>
         The whole register is published as
-        {' '}<a href="/docs/data/rate-register.csv">rate-register.csv</a>, with the athletic
+        {' '}<a href="https://lunenburgbudgetproject.org/docs/data/rate-register.csv">rate-register.csv</a>, with the athletic
         fee detail in{' '}
-        <a href="/docs/data/athletic-fee-schedule.csv">athletic-fee-schedule.csv</a>. Every
+        <a href="https://lunenburgbudgetproject.org/docs/data/athletic-fee-schedule.csv">athletic-fee-schedule.csv</a>. Every
         row carries the file and the cell or quotation it rests on.
       </p>
     </div>

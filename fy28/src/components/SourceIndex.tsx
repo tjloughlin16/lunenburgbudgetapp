@@ -1,3 +1,4 @@
+import MANIFEST from '../data/agent-manifest.json'
 import { useMemo, useState } from 'react'
 import Papa from 'papaparse'
 import raw from '../data/sources.json'
@@ -19,6 +20,11 @@ import raw from '../data/sources.json'
  *  group the load-bearing documents come first — the ones a conclusion actually rests on —
  *  because a reader checking our work should meet those before the ones kept for
  *  completeness. */
+
+/* Absolute, for the same reason /agents is: a document linked relatively is a
+ * document an assistant that only fetches URLs it has SEEN cannot reach. This page
+ * links 454 of them. */
+const SITE: string = MANIFEST.site
 
 type Item = {
   path: string; title: string; stars: number; what: string; kind: string
@@ -76,7 +82,7 @@ function Row({ it }: { it: Item }) {
             document held somewhere else — this is the file, exactly as it was
             published. */}
         {it.url ? (
-          <a href={it.url} download
+          <a href={SITE + it.url} download
             className="text-[14px] font-semibold leading-snug underline
             decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
             {it.title}
@@ -118,7 +124,7 @@ function Row({ it }: { it: Item }) {
         </>)}
         {it.textUrl && (<>
           <span aria-hidden="true">&middot;</span>
-          <a href={it.textUrl} download className="underline"
+          <a href={SITE + it.textUrl} download className="underline"
             style={{ color: 'var(--text-secondary)' }}>extracted text</a>
         </>)}
         {/* The publisher's address is kept even where it no longer opens to the public --
@@ -364,7 +370,7 @@ function MeetingArchive() {
           <p className="mt-1 text-[13px] leading-relaxed max-w-3xl"
             style={{ color: 'var(--text-secondary)' }}>{S.corpus.note}</p>
           <p className="mt-2 text-[13px]">
-            <a href={S.corpusIndexUrl} download className="font-semibold underline"
+            <a href={SITE + S.corpusIndexUrl} download className="font-semibold underline"
               style={{ color: 'var(--series-cost)' }}>
               Download the archive index (CSV) &rarr;
             </a>

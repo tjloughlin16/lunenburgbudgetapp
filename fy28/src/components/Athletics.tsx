@@ -529,7 +529,7 @@ export function SplitReporting() {
         </span>
       </div>
       <p className="text-[12px] mb-4" style={{ color: 'var(--text-secondary)' }}>
-        <a href={`/docs/${s.doc}`} className="underline">{s.title}</a> — {s.subtitle}.
+        <a href={`https://lunenburgbudgetproject.org/docs/${s.doc}`} className="underline">{s.title}</a> — {s.subtitle}.
         It lists Athletic Transportation twice: once as an appropriation, once as the{' '}
         {s.fund}.
       </p>
