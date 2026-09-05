@@ -1,5 +1,5 @@
 """Extract Lunenburg Public Schools budget lines from the district workbook
-(public/data/proposals.xlsx == sources/xlsx/fy27-proposals.xlsx) into tidy CSV.
+(public/data/proposals.xlsx == sources/budget-workbooks/fy27-proposals.xlsx) into tidy CSV.
 
 Columns in the source sheet 'FY27 Budget Projection':
   A code (function group)   B description (line item)
@@ -11,7 +11,7 @@ Columns in the source sheet 'FY27 Budget Projection':
 """
 import openpyxl, csv, sys
 
-SRC = sys.argv[1] if len(sys.argv) > 1 else 'sources/xlsx/fy27-proposals.xlsx'
+SRC = sys.argv[1] if len(sys.argv) > 1 else 'sources/budget-workbooks/fy27-proposals.xlsx'
 OUT = sys.argv[2] if len(sys.argv) > 2 else 'sources/data/lps-budget-lines.csv'
 
 COLS = [

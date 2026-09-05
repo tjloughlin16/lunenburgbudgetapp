@@ -79,7 +79,7 @@ FLOOR_NOTE = dict(
              'Psychologist, from $98,784 to nothing.',
     implication='Cutting a service that is still owed does not save the money. It moves '
                 'the cost somewhere a budget cannot see it.',
-    source='xlsx/fy27-proposals.xlsx, columns fy26_final and fy27_balanced',
+    source='budget-workbooks/fy27-proposals.xlsx, columns fy26_final and fy27_balanced',
 )
 
 

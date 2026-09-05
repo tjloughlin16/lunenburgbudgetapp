@@ -12,7 +12,7 @@ answer a question twice.
 
     python3 scripts/fetch_dese.py [--from 2019] [--to 2026]
 
-Writes sources/dese/selected-populations.csv and the raw HTML per year beside it.
+Writes sources/state-dese/selected-populations.csv and the raw HTML per year beside it.
 """
 import argparse
 import csv
@@ -23,7 +23,7 @@ import urllib.parse
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, 'sources', 'dese')
+OUT = os.path.join(ROOT, 'sources', 'state-dese')
 # A report page, not a file. DESE builds this one on submission, so there is no deeper
 # link to give -- the address below plus the parameters this script posts (district
 # 01620000, one year at a time) is the whole of what "where it came from" can mean here.
@@ -152,7 +152,7 @@ def main():
             w = csv.DictWriter(fh, fieldnames=keys)
             w.writeheader()
             w.writerows(rows)
-        print(f'\nwrote {len(rows)} years to sources/dese/selected-populations.csv')
+        print(f'\nwrote {len(rows)} years to sources/state-dese/selected-populations.csv')
 
 
 if __name__ == '__main__':
@@ -169,4 +169,4 @@ if __name__ == '__main__':
 # Lunenburg's district code is 01620000.
 SPENDING = ('https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv'
             '?DIST_CODE=01620000&$limit=5000')
-SPENDING_OUT = 'dese/district-spending-categories.csv'
+SPENDING_OUT = 'state-dese/district-spending-categories.csv'

@@ -77,9 +77,9 @@ KEEP = {
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources', 'dese', 'radar-district-comparison.xlsx')
+SRC = os.path.join(ROOT, 'sources', 'state-dese', 'radar-district-comparison.xlsx')
 OUT = os.path.join(ROOT, 'sources', 'data', 'dese-radar.csv')
-DOC = 'sources/dese/radar-district-comparison.xlsx'
+DOC = 'sources/state-dese/radar-district-comparison.xlsx'
 
 # The ten function components DESE prints, and the total it prints beside them. Named
 # rather than inferred from position, so a reordered workbook is caught rather than

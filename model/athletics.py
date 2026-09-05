@@ -569,12 +569,12 @@ PEAK_FEE, PEAK_REVENUE = max(
 # This is worth pointing a reader at rather than burying. It is the district doing the
 # thing that would make every other year legible, and the format has not appeared since.
 #
-# Provenance: sources/district-budget-page/index.csv. Off the district's own budget page,
+# Provenance: sources/district-budget/index.csv. Off the district's own budget page,
 # link live as of 2026-08-29. sha256 e0a7c5baa041112c484f4059130f2ec2348325d1fe29b01e52af42d549430858
 SPLIT_REPORTING = dict(
     title='Proposed FY19 MSHS Athletic Budget',
     subtitle='Submitted to the Superintendent of Schools, amended proposed budget',
-    doc='district-budget-page/docs/fy19-proposed-athletics-budget.pdf',
+    doc='district-budget/docs/fy19-proposed-athletics-budget.pdf',
     link='https://drive.google.com/file/d/1UYTAQzmTbbv2kBVus4zR8lN3i0jqzaTn/view?usp=sharing',
     fund='Chapter 658 revolving fund — the same fund the town books as 1301',
     # Athletic Transportation appears twice in this document: once as an appropriated line

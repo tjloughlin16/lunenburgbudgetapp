@@ -25,12 +25,12 @@ import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = os.path.join(ROOT, 'sources', 'analyses', 'athletics-ledger.md')
-REQ = os.path.join(ROOT, 'sources', 'records-request-2026-06')
+REQ = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details')
 JOURNAL = os.path.join(ROOT, 'sources', 'data', 'fund-1301-cash-journal.csv')
 BYSPORT = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport.csv')
 RECON = os.path.join(ROOT, 'sources', 'data', 'athletics-by-sport-reconciliation.csv')
 HIST = os.path.join(ROOT, 'sources', 'data', 'athletics-history.csv')
-FUNDS = os.path.join(ROOT, 'sources', 'xlsx', 'school-funds-fy26.xlsx')
+FUNDS = os.path.join(ROOT, 'sources', 'budget-workbooks', 'school-funds-fy26.xlsx')
 
 FAILS = []
 CHECKS = 0
@@ -202,7 +202,7 @@ says('cash increase the report states', m.group(1))
 
 head('5. Athletics all-in, from the sport workbook')
 sw = openpyxl.load_workbook(
-    os.path.join(REQ, 'athletics-by-sport-fy24-fy26.xlsx'), data_only=True)
+    os.path.join(REQ, 'athletics-by-sport-fy2024-fy2026.xlsx'), data_only=True)
 SEASON_TOTALS = {
     2024: [('Fall', 'BM26', 'BM28'), ('Winter', 'BN23', 'BN26'), ('Spring', 'BN25', 'BN28')],
     2025: [('Fall', 'BN26', 'BN28'), ('Winter', 'BO23', 'BO26'), ('Spring', 'BO25', 'BO28')],
@@ -337,7 +337,7 @@ says('FY26 middle school per participation', ms_gross / ms_n)
 says('workbook FY26 participations', f'{hs_n + ms_n:.0f}')
 
 head('9. The fee-count document')
-xml = zipfile.ZipFile(os.path.join(REQ, 'athletic-fee-counts-2025-2026.docx')
+xml = zipfile.ZipFile(os.path.join(REQ, 'athletic-fee-counts-fy2026.docx')
                       ).read('word/document.xml').decode('utf8')
 lines = [re.sub(r'<[^>]+>', '', p).strip()
          for p in re.sub(r'</w:p>', '\n', xml).split('\n')]
@@ -370,14 +370,14 @@ says('documents scanned', str(len(basis)))
 ledger = [p_ for p_, r in basis.items() if r['source_type'] == 'ledger']
 says('ledger documents', str(len(ledger)))
 for y in (24, 25, 26):
-    k = f'sources/records-request-2026-06/fund-1301-journal-detail-fy{y}.xlsx'
+    k = f'sources/town-ledgers/account-details/account-details-fy20{y}-fund1301.xlsx'
     CHECKS += 1
     if basis.get(k, {}).get('source_type') == 'ledger':
         print(f"  ok    {'FY' + str(y) + ' journal classified ledger':<58} ledger")
     else:
         print(f'  FAIL  {k} is {basis.get(k, {}).get("source_type")!r}, not ledger')
         FAILS.append(f'basis fy{y}')
-k = 'sources/records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx'
+k = 'sources/town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx'
 CHECKS += 1
 if basis.get(k, {}).get('source_type') == 'narrative':
     print(f"  ok    {'sport workbook classified narrative, as disclosed':<58} narrative")
@@ -410,13 +410,13 @@ else:
     who = str((fields.get('Name of Requestor') or {}).get('/V') or '').strip()
     surname = [w for w in re.split(r'\s+', who) if len(w) > 2][-1:] or [who]
     OURS = [os.path.join(ROOT, 'sources', 'analyses'),
-            os.path.join(ROOT, 'sources', 'records-request-2026-06'),
+            os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details'),
             os.path.join(ROOT, 'sources', 'data'),
             os.path.join(ROOT, 'notes'),
             os.path.join(ROOT, 'scripts'),
             os.path.join(ROOT, 'fy28', 'src'),
             os.path.join(ROOT, 'fy28', 'public', 'docs', 'analyses'),
-            os.path.join(ROOT, 'fy28', 'public', 'docs', 'records-request-2026-06'),
+            os.path.join(ROOT, 'fy28', 'public', 'docs', 'town-ledgers', 'account-details'),
             os.path.join(ROOT, 'fy28', 'public', 'docs', 'data')]
     scanned = leaked = 0
     for base in OURS:
@@ -441,10 +441,13 @@ else:
 
 
 head('12. Provenance')
-prov = open(os.path.join(REQ, 'PROVENANCE.md')).read()
+prov = open(os.path.join(REQ, 'PROVENANCE-fund1301.md')).read()
 import hashlib
 for f in sorted(os.listdir(REQ)):
-    if f == 'PROVENANCE.md':
+    # The provenance note cannot record its own sha256. It was called `PROVENANCE.md` when
+    # this was written and the archive reorg renamed it; the skip did not follow, so the
+    # check demanded that a file contain the hash of itself.
+    if f.startswith('PROVENANCE'):
         continue
     h = hashlib.sha256(open(os.path.join(REQ, f), 'rb').read()).hexdigest()
     CHECKS += 1

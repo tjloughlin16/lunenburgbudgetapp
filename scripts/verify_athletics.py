@@ -75,7 +75,7 @@ import re
 try:
     import openpyxl
     ws = openpyxl.load_workbook(
-        os.path.join(ROOT, 'sources/xlsx/fy27-proposals.xlsx'), data_only=True).active
+        os.path.join(ROOT, 'sources/budget-workbooks/fy27-proposals.xlsx'), data_only=True).active
     cur, gf = None, 0.0
     for row in range(6, ws.max_row + 1):
         a, b, v = ws.cell(row, 1).value, ws.cell(row, 2).value, ws.cell(row, 7).value
@@ -100,7 +100,9 @@ head('Athletic transportation — budget against reported actual')
 rows = list(csv.DictReader(open(os.path.join(DATA, 'line-history.csv'))))
 cell = collections.defaultdict(dict)
 for r in rows:
-    if r['key'] == 'athletic transportation':
+    # variant='' only -- a scenario column is a different proposal for the same year,
+    # not another reading of the same figure. See notes/reference/SCHEMA.md, budget_figure.
+    if r['key'] == 'athletic transportation' and not r.get('variant'):
         cell[int(r['fy'])][r['stage']] = float(r['value'])
 exact_years = []
 for fy in sorted(cell):

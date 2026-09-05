@@ -25,7 +25,7 @@ Two fact tables, two different grains, one shared dimension.
                     intra-year transfer tracking and burn-rate analysis possible at all.
                     Period 13 is the year-end close, after the lapse period.
 
-  budget_figure     one row per (line, fiscal year, STAGE, document)
+  budget_figure     one row per (line, fiscal year, STAGE, VARIANT, document)
                     Stage is what the figure IS: proposed / settled / actual. A stage is
                     never a period and the two must not be joined as though they were.
 
@@ -172,10 +172,20 @@ CREATE TABLE budget_figure (
     fy                  INTEGER NOT NULL,
     stage               TEXT NOT NULL       -- 'proposed' | 'settled' | 'actual'
         CHECK (stage IN ('proposed', 'settled', 'actual')),
+    -- The document's own name for the column, where it named one: 'Balanced',
+    -- 'Core Budget', 'Level Service', 'Restoration'. Empty for a document that prints
+    -- one column per stage, which is most of them.
+    --
+    -- A SCENARIO IS NOT A DISAGREEMENT. The FY27 budget document prints four FY27
+    -- columns; they are four proposals, not four opinions about one figure, and folding
+    -- them onto one key would keep whichever was read last. Every query that wants "the"
+    -- budget for a year must say `variant = ''` or it will count a line four times --
+    -- the same rule as workbook_figure's row_kind='line'.
+    variant             TEXT NOT NULL DEFAULT '',
     value               REAL NOT NULL,
     documents_disagree  INTEGER NOT NULL DEFAULT 0,
     doc_id              TEXT NOT NULL,
-    PRIMARY KEY (line_key, fy, stage, doc_id)
+    PRIMARY KEY (line_key, fy, stage, variant, doc_id)
 );
 
 -- The FY27 workbook, wide columns unpivoted to one row per (line, fy, column).
@@ -312,9 +322,43 @@ REFERENCE = [
     'athletic-fee-schedule', 'athletics-by-sport', 'athletics-by-sport-reconciliation',
     'athletics-history', 'capital-funding-history', 'capital-plan-fy27',
     'free-cash-proof', 'fund-1301-cash-journal', 'ood-tuition-history',
-    'rate-register', 'sped-para-history',
+    'line-history-disagreements', 'rate-register', 'sped-para-history',
     'sped-teacher-history', 'sped-transport-history', 'total-expenses-history',
     'total-salaries-history', 'variance-by-group',
+
+    # From the annual town reports, FY2011-FY2025. See plans/ANNUAL-REPORTS.md.
+    #
+    # Two of these answer standing questions this project had recorded as unanswerable,
+    # and both were in documents already held: `placement-counts` is the count of children
+    # placed outside the district, which no budget line can produce, and
+    # `ballot-questions` is the record of what the town was actually asked to fund and
+    # whether it agreed.
+    #
+    # `annual-report-catalogue` is not data about the town -- it is data about the
+    # documents, 819 blocks found by reading all sixteen reports end to end rather than by
+    # searching them. It carries each table's PRINTED heading, because the headings differ
+    # between years and that is precisely what defeats a search.
+    #
+    # `annual-report-receipts` carries a `status` column on every row: `reconciled` means
+    # the year ties to its own printed GRAND TOTAL twice over, `partial` means it does not
+    # and cannot. **Never aggregate across years without splitting on it.**
+    'placement-counts', 'ballot-questions', 'annual-report-receipts',
+    'annual-report-catalogue', 'annual-report-contents', 'annual-report-survey',
+    'staff-roster-entries', 'staff-roster-counts', 'report-anomalies',
+    'extraction-plan', 'special-revenue-funds',
+
+    # The generic extraction, one table per family. Every row carries `status` and
+    # `reconciliation`: `reconciled` means the rows tie to the total the report itself
+    # prints, column by column; `partial` means they do not, and the residual is on the
+    # row. **Nothing here may be aggregated without splitting on `status` first.**
+    #
+    # Most of these are currently partial. The rows are real -- read at their own position,
+    # in the column they were printed in -- but an unreconciled extract is a transcription,
+    # not a verified figure, and rule 13 governs what may be quoted.
+    'report-appropriations', 'report-trust-funds', 'report-debt',
+    'report-capital-projects', 'report-valuation', 'report-elections',
+    'report-officials', 'report-dept-activity', 'report-enrollment-mcas',
+    'report-monty-tech', 'report-gross-wages', 'report-vital-records',
 ]
 
 VIEWS = """
@@ -394,7 +438,35 @@ SELECT  b.line_key, b.label, b.fy,
         MAX(CASE WHEN b.stage = 'actual'   THEN b.value END) AS actual,
         MAX(b.documents_disagree)                            AS documents_disagree
 FROM    budget_figure b
+-- variant = '' or a scenario column would win the MAX and be reported as the year's
+-- budget. A document stating four FY27 proposals states four figures, not one.
+WHERE   b.variant = ''
 GROUP BY b.line_key, b.label, b.fy;
+
+-- WHAT EACH DOCUMENT SAYS ABOUT A CONTESTED LINE, and which statement the ordering kept.
+--
+-- `budget_figure.documents_disagree` is a flag, and a flag is the least a reader can be
+-- told. The completeness matrix called a year `partial` on the strength of it and could
+-- not say whether that meant one line out of 282 or a third of the year -- and the losing
+-- figure had been discarded at extraction, so nothing could show the disagreement even if
+-- it wanted to. The cell could name the winner and no more.
+--
+-- Nothing here decides which document is right. Two documents stating a line differently
+-- is a fact about the documents; choosing between them is not a fact at all.
+CREATE VIEW v_budget_disagreement AS
+SELECT  d.fy, d.stage, d.variant, d.key AS line_key, d.label,
+        d.source, CAST(d.value AS REAL) AS value,
+        CAST(d.is_kept AS INTEGER) AS is_kept,
+        CAST(d.spread AS REAL) AS spread, d.kind
+FROM    line_history_disagreements d;
+
+-- The scenarios, kept separate and named. `final-budget-document.txt` prints Restoration,
+-- Core Budget and Balanced side by side for FY27, and which of them became the budget is
+-- a fact about a vote rather than about this document.
+CREATE VIEW v_budget_scenario AS
+SELECT  b.line_key, b.label, b.fy, b.stage, b.variant, b.value, b.doc_id
+FROM    budget_figure b
+WHERE   b.variant <> '';
 
 -- The same question off the FY27 workbook, which is the only source with both halves
 -- of FY25. A restatement, not a ledger: `document.basis` says so.
@@ -502,7 +574,7 @@ def load_documents(db):
 
     # The crawlers' own indexes carry the upstream URL and the sha256 taken at fetch time.
     crawled = {}
-    for name in ('dese', 'district-budget-page', 'town-site'):
+    for name in ('state-dese', 'district-budget', 'town-budget'):
         path = os.path.join(ROOT, 'sources', name, 'index.csv')
         if not os.path.exists(path):
             continue
@@ -553,10 +625,10 @@ def finish_documents(db, docs, cited):
     return len(docs), hashed
 
 
-TOWN_LEDGER_DOC = 'sources/q3-fy26/town-general-fund-expenditures-fy26-q3.txt'
-WORKBOOK_DOC = 'sources/xlsx/fy27-proposals.xlsx'
-FUNDS_DOC = 'sources/xlsx/school-funds-fy26.xlsx'
-SPECIAL_REV_DOC = 'sources/q3-fy26/town-special-revenue-fy26-q3.xlsx'
+TOWN_LEDGER_DOC = 'sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt'
+WORKBOOK_DOC = 'sources/budget-workbooks/fy27-proposals.xlsx'
+FUNDS_DOC = 'sources/budget-workbooks/school-funds-fy26.xlsx'
+SPECIAL_REV_DOC = 'sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'
 
 # Fund kinds, from what the fund's own name and the documents establishing it say. A fund
 # whose purpose is not stated in a document we hold is left NULL rather than guessed.
@@ -685,10 +757,10 @@ def load_budget_figures(db):
         if (not fy.isdigit() or value is None
                 or r['stage'] not in ('proposed', 'settled', 'actual')):
             continue
-        out.append((r['key'], r['label'], int(fy), r['stage'], value,
-                    int(r['documents_disagree'] or 0), r['source']))
+        out.append((r['key'], r['label'], int(fy), r['stage'], r.get('variant', ''),
+                    value, int(r['documents_disagree'] or 0), r['source']))
         lines.setdefault(r['key'], r['label'])
-    db.executemany('INSERT OR REPLACE INTO budget_figure VALUES (?,?,?,?,?,?,?)', out)
+    db.executemany('INSERT OR REPLACE INTO budget_figure VALUES (?,?,?,?,?,?,?,?)', out)
     db.executemany('INSERT OR IGNORE INTO budget_line VALUES (?,?,?,?,?)',
                    [(k, v, None, None, None) for k, v in lines.items()])
     return len(out)

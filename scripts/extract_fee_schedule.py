@@ -35,16 +35,17 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'sources', 'data', 'athletic-fee-schedule.csv')
 
-WORKBOOK = os.path.join(ROOT, 'sources', 'records-request-2026-06',
-                        'athletics-by-sport-fy24-fy26.xlsx')
-FAQ = os.path.join(ROOT, 'sources', 'txt', 'lhs-athletics-faq.txt')
-MINUTES = os.path.join(ROOT, 'sources', 'minutes', 'text', 'school-committee',
+WORKBOOK = os.path.join(ROOT, 'sources', 'town-ledgers', 'account-details',
+                        'athletics-by-sport-fy2024-fy2026.xlsx')
+FAQ = os.path.join(ROOT, 'sources', 'district-budget', 'text',
+                   'lhs-athletics-faq.txt')
+MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text', 'school-committee',
                        '2025-02-26-minutes-7076.txt')
 
 SOURCES = {
     'faq': dict(
         title='LHS Athletics FAQ (rschoolteams.com)',
-        path='txt/lhs-athletics-faq.txt',
+        path='district-budget/text/lhs-athletics-faq.txt',
         set_on='',
         note='States rates and no year anywhere in the document. It matches what was '
              'charged in FY24 and FY25 and was still the posted schedule long after the '
@@ -59,7 +60,7 @@ SOURCES = {
              'FY26 middle school rate and the sibling structure.'),
     'workbook': dict(
         title='District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)',
-        path='records-request-2026-06/athletics-by-sport-fy24-fy26.xlsx',
+        path='town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
         set_on='',
         note='Obtained by records request, 17 June 2026. Carries the rate strip for three '
              'school years side by side, which is what makes each rate datable.'),

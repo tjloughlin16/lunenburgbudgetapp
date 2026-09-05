@@ -2,7 +2,7 @@
 
     python3 scripts/build_analysis_pdf.py fy26-closeout
     python3 scripts/build_analysis_pdf.py --all
-    python3 scripts/build_analysis_pdf.py --file notes/REVIEW-DISCREPANCIES.md
+    python3 scripts/build_analysis_pdf.py --file notes/generated/REVIEW-DISCREPANCIES.md
 
 `--file` renders any Markdown file and writes the PDF BESIDE IT rather than into the
 published site. Correspondence with the Town is not an analysis: it is addressed to named
@@ -222,7 +222,7 @@ def build(name, md_path=None, out_dir=None):
             'the sources it names. A printed page outlives the numbers on it: re-run '
             'that script before quoting anything here.'
             % (date.today().isoformat(), rel, gen.group(1)))
-    else:
+    elif os.path.exists(verifier):
         stamp = (
             'Generated %s from <b>%s</b>. '
             'Every figure is recomputed from <b>sources/data/lunenburg.db</b> by '
@@ -230,8 +230,17 @@ def build(name, md_path=None, out_dir=None):
             'A printed page outlives the numbers on it: re-run that script before '
             'quoting anything here.'
             % (date.today().isoformat(), rel,
-               'scripts/' + os.path.basename(verifier) if os.path.exists(verifier)
-               else 'no verifier — treat every figure as unchecked'))
+               'scripts/' + os.path.basename(verifier)))
+    else:
+        # Correspondence, not an analysis. The analysis footer would tell a recipient
+        # there is 'no verifier — treat every figure as unchecked', which is true of an
+        # analysis with no verifier and meaningless on a letter. What a reader of a letter
+        # needs is where the figures in it came from, which is the site.
+        stamp = (
+            'Prepared %s by the Lunenburg Budget Project, an independent archive of the '
+            'town and school budgets at <b>lunenburgbudgetproject.org</b>. Every figure '
+            'quoted here is traceable to a document published on that site.'
+            % date.today().strftime('%-d %B %Y'))
 
     os.makedirs(out_dir, exist_ok=True)
     tmp = os.path.join(out_dir, name + '.print.html')

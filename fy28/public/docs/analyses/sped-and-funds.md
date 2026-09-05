@@ -56,7 +56,7 @@ FY23 → FY26 growth: SPED **13.0%/yr**, everything else **3.4%/yr**. In dollars
 added $1,979,619 of the $3,860,666 total increase — **51.3% of all budget growth was
 special education**, while enrollment fell.
 
-DESE confirms the shape independently (`xlsx/dese-all-districts.xlsx`). FY18 → FY24,
+DESE confirms the shape independently (`budget-workbooks/dese-all-districts.xlsx`). FY18 → FY24,
 Lunenburg's **Other Teaching Services** — where DESE books paras, therapists, tutors —
 grew **+51%** against **+32%** for Teachers, on enrollment **−2.5%**.
 
@@ -147,7 +147,7 @@ The cost reappears later, larger, and outside the appropriation.
 
 ### 1.6 The peer comparison omits the fastest-growing SPED cost
 
-`xlsx/dese-all-districts.xlsx` is **Total In-District Expenditures**. DESE's in-district
+`budget-workbooks/dese-all-districts.xlsx` is **Total In-District Expenditures**. DESE's in-district
 measure excludes out-of-district tuition — a separate reporting category. So the app's
 conclusion #3, comparing Lunenburg's growth to its neighbors, is computed on a basis
 that omits the line that quadrupled.
@@ -160,8 +160,8 @@ But it is an unstated scope limitation on a load-bearing conclusion.
 
 ## Part 2 — The money outside the operating budget
 
-Sources: `xlsx/school-funds-fy26.xlsx` (period 13, i.e. FY26 year-end) and
-`q3-fy26/town-special-revenue-fy26-q3.xlsx` (as of 3/31/2026). The two cross-validate:
+Sources: `budget-workbooks/school-funds-fy26.xlsx` (period 13, i.e. FY26 year-end) and
+`munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` (as of 3/31/2026). The two cross-validate:
 School Choice opens at $246,902.71 in both, Athletics at $110,247.89, Gift at $89,822.59.
 
 Column mapping in the special revenue workbook, confirmed against its own totals rows:
@@ -281,7 +281,7 @@ funding recurring costs. This says **recurring restricted money is not being spe
 
 ### 2.5 Town stabilization and trust funds
 
-From `q3-fy26/town-trust-agency-fy26-q3.xlsx`, as of 3/31/2026:
+From `munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx`, as of 3/31/2026:
 
 | Stabilization fund | Balance |
 |---|---:|
@@ -316,7 +316,7 @@ $4M health insurance line growing 9%/yr. The fund exists in name only.
 
 ## Part 3 — Why none of this surfaced during the budget debate
 
-`q3-fy26/fincom-memo-fy26-q3.docx`, from the Finance Director, is dated **11 August
+`town-budget/docs/fincom-memo-fy26-q3.docx`, from the Finance Director, is dated **11 August
 2026** and reports the quarter ending **31 March 2026** — a four-and-a-half month lag,
 and explicitly the first of a resumed series (*"In moving forward, I hope to present
 these reports quarterly to the Finance Committee"*).

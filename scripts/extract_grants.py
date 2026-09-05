@@ -14,7 +14,7 @@ grant stopped paying, and these pages are the only way to tell the two apart.
 import os, re, csv, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEXT = os.path.join(ROOT, 'sources/district-budget-page/text')
+TEXT = os.path.join(ROOT, 'sources/district-budget/text')
 OUT = os.path.join(ROOT, 'sources/data/grants-history.csv')
 
 # "* Special Education, 240 Grant  $   418,237" -- the leading stars are footnote markers
@@ -90,7 +90,7 @@ PREFERRED = 'fy25-superintendent-39-s-budget-update.txt'
 # anybody with access confirms the two are the same file.
 SOURCE_URL = ('https://drive.google.com/file/d/1yJNhIyBLVT8mu4GeJuQSjniKCPA41Oyq/view'
               '  [requires sign-in as of 29 Aug 2026]')
-OUR_COPY = ('https://lunenburgbudgetproject.org/docs/district-budget-page/docs/'
+OUR_COPY = ('https://lunenburgbudgetproject.org/docs/district-budget/docs/'
             'fy25-superintendent-39-s-budget-update.pdf')
 SHA256 = '9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a7354657f4d804c017af5dc7c'
 

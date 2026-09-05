@@ -21,7 +21,7 @@ exactly two can name somebody:
     X  VDR NAME/ITEM DESC   -- on a special education line, often a parent, not a company
     Y  COMMENTS             -- free text, so nothing constrains it
 
-Both are listed in `notes/INTAKE-FOR-THE-TOWN.md` as columns to omit at export time. This is
+Both are listed in `notes/process/INTAKE-FOR-THE-TOWN.md` as columns to omit at export time. This is
 the check that the omission actually happened.
 
 Names are matched loosely on purpose. A column called `VENDOR`, `VDR NAME`, `PAYEE`,
@@ -30,7 +30,7 @@ that changes its labels must fail this check rather than pass it by accident.
 
     python3 scripts/check_intake_headers.py ~/lunenburg-intake/*.xlsx
 
-Exit 0 = no hazardous column found. Exit 1 = do not ingest; see notes/INTAKE.md §10.
+Exit 0 = no hazardous column found. Exit 1 = do not ingest; see notes/process/INTAKE.md §10.
 """
 import csv
 import os
@@ -68,7 +68,7 @@ def headers(path):
             out += [f'{name}!{c}' if len(wb.sheetnames) > 1 else str(c)
                     for c in row if c is not None]
         return out
-    raise ValueError(f'cannot read headers from {ext} -- see notes/INTAKE.md §6')
+    raise ValueError(f'cannot read headers from {ext} -- see notes/process/INTAKE.md §6')
 
 
 def main(paths):
@@ -102,7 +102,7 @@ def main(paths):
     if bad:
         print('\nDo NOT ingest, open, copy or forward these files. Tell the Town today,')
         print('naming the file and the column, and ask for a re-export without it.')
-        print('notes/INTAKE.md §10 is the rest of the procedure.')
+        print('notes/process/INTAKE.md §10 is the rest of the procedure.')
     return 1 if bad else 0
 
 

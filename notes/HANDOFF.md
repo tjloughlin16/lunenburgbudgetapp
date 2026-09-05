@@ -10,6 +10,18 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 
 ---
 
+## An open decision found on 5 September 2026, not resolved here
+
+`sources/analyses/athletics-ledger.md` §7 no longer recomputes, and the gap moves a published
+headline: the town's appropriation covering **44%** of what the district's workbook says
+athletics cost becomes **35%** on the current data. The cause is which document FY2024
+athletics actuals are read from — `athletics-history.csv` holds three coach lines for
+FY2020–FY2022 and FY2026 and only one for FY2023–FY2025, faithfully, because the source those
+years come from prints a dash in the FY2024 column for the other two.
+
+Deliberately not rewritten. `notes/findings/ATHLETICS-LEDGER-FY2024-DRIFT.md` has the quoted
+source lines and what has to be decided.
+
 ## 0. STATE, as of 2 September 2026
 
 | | |
@@ -52,7 +64,7 @@ error this whole project is organised against.
 
 ### The FY26 ledger — the thing that made everything else possible
 
-`sources/records-request-2026-09/`, sent by the Town Manager on 2 September, produced by
+`sources/munis-ledgers/expenses/`, sent by the Town Manager on 2 September, produced by
 the Town Accountant the night before. **The first account-level general fund expenditure
 report this project has ever held** — every previous one was a department rollup that
 renders the whole school district as one row. Here it is 258 school accounts and 376 town
@@ -191,7 +203,7 @@ Both are deployed. If you touch `llms.txt` or the minutes surface, check with th
 1. **Nothing is deployed since `v9.2` except a guard and this file.** The persona rewrite
    of `fy26-closeout.md` IS live; it went out inside v9.2.
 2. **When FY24/FY25 arrive**, they load with no new code — drop them in
-   `sources/records-request-2026-09/` and re-run `extract_munis_report.py`. That is when
+   `sources/munis-ledgers/expenses/` and re-run `extract_munis_report.py`. That is when
    §8 of both analyses stops being one observation and becomes a pattern.
 3. **The town-side root-cause decomposition** has not been done the way the school side's
    §1a was. Snow will distort it, so the fixed-versus-discretionary split needs care.

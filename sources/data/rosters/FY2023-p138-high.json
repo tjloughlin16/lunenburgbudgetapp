@@ -1,0 +1,277 @@
+{
+  "document": "4131-fy-2023-annual-town-report.pdf",
+  "fy": 2023,
+  "page": 138,
+  "school": "high",
+  "lines_on_page": 31,
+  "note": "Two encodings on one page. Lines 2-6 are ROLE-THEN-NAME in two column pairs ('Principal / Timothy Santry' on the left, 'Admin. Assistant / Tina Cooney' on the right). From line 7 the page becomes bare-name columns under department headings (Math, Language Arts, Science, Social Studies, Foreign Language, Unified Arts), with no role printed at all -- those entries carry role_raw '' and the department in grade_or_dept. The asterisk after a name is kept as printed in name AND recorded as role_raw '*' so the marker is machine-visible: page 139 line 16 prints the legend '*Department Head', so an asterisk here marks a department head. TWO JUDGEMENT CALLS, stated openly. (1) Line 6 'Kelly Scott' is printed alone at column 86. That is the right-hand column position that holds ROLE labels on lines 2-3 ('Admin. Assistant' at 90, 'Secretary' at 88) and NAMES from line 8 onward ('Warren Stevenson*' at 89, 'Brent Coxall' at 89); no role is printed with her either way; she is recorded as an entry with role_raw '' and grade_or_dept '', though she may belong with 'Nurse / Lisa Lavery' on line 5 (page 134 lists a Kelly Scott as the Middle School '(LPN)'). (2) Line 22 prints 'Brent Coxall' in the right-hand column with 'IT Dept.' to his right. Applying the column rule mechanically would give him the nearest heading above in that column, 'Social Studies', which is plainly wrong -- he carries his own role label. The row in fact follows the lines 2-3 layout (a label column at ~88 and a value column at ~122) with the two swapped: 'Brent Coxall' at 89, 'IT Dept.' at 129. He is recorded with role_raw 'IT Dept.' and grade_or_dept ''; page 134 lists him under 'Technology IT:'. LIKELY READING: line 20 'James MeSweeney' is probably 'James McSweeney'. Timothy Santry is listed on page 134 as 'LMHS Principal' -- the Middle and High Schools share him.",
+  "entries": [
+    {
+      "line": 2,
+      "name": "Timothy Santry",
+      "role_raw": "Principal",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 2,
+      "name": "Tina Cooney",
+      "role_raw": "Admin. Assistant",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 3,
+      "name": "Karma Tousignant",
+      "role_raw": "Assistant Principal",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 3,
+      "name": "Sandra Sheehy",
+      "role_raw": "Secretary",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 4,
+      "name": "Yanina Burns",
+      "role_raw": "Assistant Principal",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 5,
+      "name": "Lisa Lavery",
+      "role_raw": "Nurse",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 6,
+      "name": "Kelly Scott",
+      "role_raw": "",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 8,
+      "name": "Sarah Sabatini",
+      "role_raw": "",
+      "grade_or_dept": "Math"
+    },
+    {
+      "line": 9,
+      "name": "Andrew Cantatore",
+      "role_raw": "",
+      "grade_or_dept": "Math"
+    },
+    {
+      "line": 9,
+      "name": "Erinanne Burroughs",
+      "role_raw": "",
+      "grade_or_dept": "Language Arts"
+    },
+    {
+      "line": 10,
+      "name": "Jennifer Miller*",
+      "role_raw": "*",
+      "grade_or_dept": "Math"
+    },
+    {
+      "line": 10,
+      "name": "Timothy Macuga",
+      "role_raw": "",
+      "grade_or_dept": "Language Arts"
+    },
+    {
+      "line": 11,
+      "name": "Eric Short",
+      "role_raw": "",
+      "grade_or_dept": "Math"
+    },
+    {
+      "line": 11,
+      "name": "Mike Estabrook",
+      "role_raw": "",
+      "grade_or_dept": "Language Arts"
+    },
+    {
+      "line": 12,
+      "name": "Jennifer Morse",
+      "role_raw": "",
+      "grade_or_dept": "Math"
+    },
+    {
+      "line": 12,
+      "name": "Mary Foyle",
+      "role_raw": "",
+      "grade_or_dept": "Language Arts"
+    },
+    {
+      "line": 13,
+      "name": "Jacob Lanpher",
+      "role_raw": "",
+      "grade_or_dept": "Math"
+    },
+    {
+      "line": 13,
+      "name": "Paul Harmon",
+      "role_raw": "",
+      "grade_or_dept": "Language Arts"
+    },
+    {
+      "line": 14,
+      "name": "Julia Callahan*",
+      "role_raw": "*",
+      "grade_or_dept": "Language Arts"
+    },
+    {
+      "line": 16,
+      "name": "Dawn Gearin*",
+      "role_raw": "*",
+      "grade_or_dept": "Science"
+    },
+    {
+      "line": 16,
+      "name": "Warren Stevenson*",
+      "role_raw": "*",
+      "grade_or_dept": "Social Studies"
+    },
+    {
+      "line": 17,
+      "name": "Mitchell Friedman",
+      "role_raw": "",
+      "grade_or_dept": "Science"
+    },
+    {
+      "line": 17,
+      "name": "Bradford Hausler",
+      "role_raw": "",
+      "grade_or_dept": "Social Studies"
+    },
+    {
+      "line": 18,
+      "name": "Craig Pingsterhaus",
+      "role_raw": "",
+      "grade_or_dept": "Science"
+    },
+    {
+      "line": 18,
+      "name": "Timothy Normandin",
+      "role_raw": "",
+      "grade_or_dept": "Social Studies"
+    },
+    {
+      "line": 19,
+      "name": "Jennifer Biery",
+      "role_raw": "",
+      "grade_or_dept": "Science"
+    },
+    {
+      "line": 19,
+      "name": "Hailee Martin",
+      "role_raw": "",
+      "grade_or_dept": "Social Studies"
+    },
+    {
+      "line": 20,
+      "name": "Robert Hill",
+      "role_raw": "",
+      "grade_or_dept": "Science"
+    },
+    {
+      "line": 20,
+      "name": "James MeSweeney",
+      "role_raw": "",
+      "grade_or_dept": "Social Studies"
+    },
+    {
+      "line": 21,
+      "name": "Elizabeth Bendler",
+      "role_raw": "",
+      "grade_or_dept": "Science"
+    },
+    {
+      "line": 22,
+      "name": "Brent Coxall",
+      "role_raw": "IT Dept.",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 24,
+      "name": "Alexis Pukaite",
+      "role_raw": "",
+      "grade_or_dept": "Unified Arts"
+    },
+    {
+      "line": 25,
+      "name": "Peggy Proctor",
+      "role_raw": "",
+      "grade_or_dept": "Foreign Language"
+    },
+    {
+      "line": 25,
+      "name": "Steven Boone*",
+      "role_raw": "*",
+      "grade_or_dept": "Unified Arts"
+    },
+    {
+      "line": 26,
+      "name": "Jessica Beardmore*",
+      "role_raw": "*",
+      "grade_or_dept": "Foreign Language"
+    },
+    {
+      "line": 26,
+      "name": "Derek Guimond",
+      "role_raw": "",
+      "grade_or_dept": "Unified Arts"
+    },
+    {
+      "line": 27,
+      "name": "Tamara Yourk",
+      "role_raw": "",
+      "grade_or_dept": "Foreign Language"
+    },
+    {
+      "line": 27,
+      "name": "Cameron Rodriquenz",
+      "role_raw": "",
+      "grade_or_dept": "Unified Arts"
+    },
+    {
+      "line": 28,
+      "name": "Lynn Radford",
+      "role_raw": "",
+      "grade_or_dept": "Foreign Language"
+    },
+    {
+      "line": 28,
+      "name": "Scott Barry-Grove",
+      "role_raw": "",
+      "grade_or_dept": "Unified Arts"
+    },
+    {
+      "line": 29,
+      "name": "Maria Flores",
+      "role_raw": "",
+      "grade_or_dept": "Foreign Language"
+    },
+    {
+      "line": 29,
+      "name": "Karyn Giuliani",
+      "role_raw": "",
+      "grade_or_dept": "Unified Arts"
+    },
+    {
+      "line": 30,
+      "name": "Pamela Vallee",
+      "role_raw": "",
+      "grade_or_dept": "Unified Arts"
+    }
+  ],
+  "headings": [
+    1,
+    7,
+    15,
+    23
+  ],
+  "ignored": [
+    31
+  ]
+}

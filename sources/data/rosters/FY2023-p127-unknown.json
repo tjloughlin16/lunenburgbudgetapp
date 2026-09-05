@@ -1,0 +1,302 @@
+{
+  "document": "4131-fy-2023-annual-town-report.pdf",
+  "fy": 2023,
+  "page": 127,
+  "school": "primary",
+  "lines_on_page": 48,
+  "note": "Filename says 'unknown'. Lines 1-36 are the continuation of the PRIMARY SCHOOL STAFF ROSTER begun on page 126 (Achieve, Kindergarten K1-K6, First Grade, ELL, unified arts, specialists, cafeteria, custodians), so school = primary. The Turkey Hill Elementary School narrative starts at line 37 and runs to line 47; it carries no roster and is recorded in headings (37, 38) and ignored (39-47). CONVENTIONS: (a) role_raw is the printed cell text with the name excised; where a grade/section code precedes the name and a role word follows it the two printed fragments are joined with ' - ' (printed 'K1 - Kirsten Snape - Teacher' -> role_raw 'K1 - Teacher'); where only a code is printed it stands alone as the role ('1A', '1B', '1C', 'ID', '1E'). (b) A room-number column (1201, 1160, 1104, 1102, 1101, 1103, 1136, 1225, 1233, 1202, 1204, 1203, 1137, 2205, 1234, 3106, 1126, 3108, 2509, 3109, 3107, 1261, 1239, 3111, 2123) is not captured -- the schema has no field for it. (c) OCR renders the right-hand table border variously as ']', '[', '|' or 'T' glued to a name (']Julie Ferdella', '| Heidi Quinlivan', '] Debra DiFruscia', '[Tara Bastien', 'TErin Mack', 'TAlyssa Mulone'); the glyph is stripped from name. DEVIATION FROM THE COLUMN RULE, stated openly: on line 2 the text 'Physical Reduction/Health' (OCR of 'Physical Education/Health') is printed at column 109, which is the ROOM-NUMBER cell of Julie Ferdella's own row (column 109 holds 1137, 2205, 1234, 3106, 1126, 3108 on the rows below), with her name in the name cell beside it -- so it sits on her line rather than above her, unlike every other unified-arts heading on the page (Art, Music, STEM, Library / Media, SEL, Reading Specialist, Specialists), which sit on their own line above the name. She is given grade_or_dept 'Physical Reduction/Health'; page 130 independently lists Julie Ferdella as 'PE, gym Health, 216'. No other entry on the page takes a heading from its own line. LIKELY READINGS: line 5 'essie Grippo-ra' is 'Jessie Grippo - Para' (recorded as printed, name 'essie Grippo' / role_raw 'ra'); line 6 'Nexis Wasiuk' is probably 'Alexis Wasiuk' and 'TLC Teach' a truncation of 'TLC Teacher'; line 25 'ID -' is '1D -' and the name is printed 'Christa Palma / Powell', kept whole rather than split because it cannot be told whether it is one person under two surnames or two people. Line 27 'TBD - Para' is a vacancy, recorded with name 'TBD'. Lines 26-30 in the right column are ROOM listings, not people ('Planning Room Upstairs', \"Teacher's Dining Room\", 'Time Out Room', 'Conference Rm', 'Cafeteria'), each with its own room number; lines 28-30 are therefore ignored. Because line 30's 'Cafeteria' is a room listing rather than a section heading, the cafeteria staff on lines 31-32 (Elly Forgues, Jessica McCarthy, Jewel Healy) are left with grade_or_dept '' rather than being given the nearest true heading above them, which is 'Specialists' and would be wrong. Meredith Weiss and Christina Kim (ELL) and Julie Ferdella, Heidi Quinlivan, Debra DiFruscia, Tara Bastien and Erin Mack also appear on the Turkey Hill roster (pages 130-131); they are district staff serving both schools.",
+  "entries": [
+    {
+      "line": 2,
+      "name": "Brittany Pepoli",
+      "role_raw": "ACH Teacher",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 2,
+      "name": "Julie Ferdella",
+      "role_raw": "",
+      "grade_or_dept": "Physical Reduction/Health"
+    },
+    {
+      "line": 3,
+      "name": "Melissa Nolan",
+      "role_raw": "Para",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 4,
+      "name": "Sherry Williams",
+      "role_raw": "Para",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 4,
+      "name": "Heidi Quinlivan",
+      "role_raw": "",
+      "grade_or_dept": "Art"
+    },
+    {
+      "line": 5,
+      "name": "essie Grippo",
+      "role_raw": "ra",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 6,
+      "name": "Nexis Wasiuk",
+      "role_raw": "TLC Teach",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 6,
+      "name": "Debra DiFruscia",
+      "role_raw": "",
+      "grade_or_dept": "Music"
+    },
+    {
+      "line": 7,
+      "name": "Maureen Dupuis",
+      "role_raw": "Para",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 8,
+      "name": "Skye Abreu",
+      "role_raw": "Para",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 8,
+      "name": "Tara Bastien",
+      "role_raw": "",
+      "grade_or_dept": "STEM"
+    },
+    {
+      "line": 9,
+      "name": "Haylee Myers",
+      "role_raw": "Para",
+      "grade_or_dept": "Achieve"
+    },
+    {
+      "line": 10,
+      "name": "Erin Mack",
+      "role_raw": "",
+      "grade_or_dept": "Library / Media"
+    },
+    {
+      "line": 12,
+      "name": "Kirsten Snape",
+      "role_raw": "K1 - Teacher",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 12,
+      "name": "Alyssa Mulone",
+      "role_raw": "",
+      "grade_or_dept": "SEL"
+    },
+    {
+      "line": 13,
+      "name": "Carly Surrette",
+      "role_raw": "K2 - Teacher",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 14,
+      "name": "Allison Doherty",
+      "role_raw": "K3 - Teacher",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 14,
+      "name": "Nancy Murray",
+      "role_raw": "",
+      "grade_or_dept": "Reading Specialist"
+    },
+    {
+      "line": 15,
+      "name": "Deb Zivojinovic",
+      "role_raw": "K4 - Teacher",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 15,
+      "name": "Juan Rojas",
+      "role_raw": "Tutor",
+      "grade_or_dept": "Reading Specialist"
+    },
+    {
+      "line": 16,
+      "name": "Amy Raffaele",
+      "role_raw": "K6 - Teacher",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 16,
+      "name": "Nicole Vautour",
+      "role_raw": "Tutor",
+      "grade_or_dept": "Reading Specialist"
+    },
+    {
+      "line": 17,
+      "name": "Kristine Hall",
+      "role_raw": "Para",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 18,
+      "name": "Julie Drake",
+      "role_raw": "Para",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 19,
+      "name": "Cailey Powell",
+      "role_raw": "Para",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 19,
+      "name": "Mary Sieling",
+      "role_raw": "Speech",
+      "grade_or_dept": "Specialists"
+    },
+    {
+      "line": 20,
+      "name": "Kelsey Bertram",
+      "role_raw": "Para",
+      "grade_or_dept": "Kindergarten"
+    },
+    {
+      "line": 20,
+      "name": "Sue Richards",
+      "role_raw": "Phys. Therap",
+      "grade_or_dept": "Specialists"
+    },
+    {
+      "line": 21,
+      "name": "Jayne Dusek",
+      "role_raw": "COTA",
+      "grade_or_dept": "Specialists"
+    },
+    {
+      "line": 22,
+      "name": "Michael Courtemanche",
+      "role_raw": "1A",
+      "grade_or_dept": "First Grade Teachers"
+    },
+    {
+      "line": 22,
+      "name": "Maggie Porpora",
+      "role_raw": "Occup Therap.",
+      "grade_or_dept": "Specialists"
+    },
+    {
+      "line": 23,
+      "name": "Patti Kilcommins",
+      "role_raw": "1B",
+      "grade_or_dept": "First Grade Teachers"
+    },
+    {
+      "line": 23,
+      "name": "Samantha Delano",
+      "role_raw": "BCBA",
+      "grade_or_dept": "Specialists"
+    },
+    {
+      "line": 24,
+      "name": "Kara Slattery",
+      "role_raw": "1C",
+      "grade_or_dept": "First Grade Teachers"
+    },
+    {
+      "line": 24,
+      "name": "Elena Oksanish",
+      "role_raw": "Speech",
+      "grade_or_dept": "Specialists"
+    },
+    {
+      "line": 25,
+      "name": "Christa Palma / Powell",
+      "role_raw": "ID",
+      "grade_or_dept": "First Grade Teachers"
+    },
+    {
+      "line": 26,
+      "name": "Jackie Favreau",
+      "role_raw": "1E",
+      "grade_or_dept": "First Grade Teachers"
+    },
+    {
+      "line": 27,
+      "name": "TBD",
+      "role_raw": "Para",
+      "grade_or_dept": "First Grade Teachers"
+    },
+    {
+      "line": 31,
+      "name": "Elly Forgues",
+      "role_raw": "Cafeteria Manager",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 32,
+      "name": "Meredith Weiss",
+      "role_raw": "",
+      "grade_or_dept": "ELL Teachers"
+    },
+    {
+      "line": 32,
+      "name": "Jessica McCarthy",
+      "role_raw": "",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 32,
+      "name": "Jewel Healy",
+      "role_raw": "",
+      "grade_or_dept": ""
+    },
+    {
+      "line": 33,
+      "name": "Christina Kim",
+      "role_raw": "",
+      "grade_or_dept": "ELL Teachers"
+    },
+    {
+      "line": 35,
+      "name": "Jose Marcial Allende",
+      "role_raw": "",
+      "grade_or_dept": "Custodians"
+    },
+    {
+      "line": 36,
+      "name": "Leesa Glenny",
+      "role_raw": "",
+      "grade_or_dept": "Custodians"
+    }
+  ],
+  "headings": [
+    1,
+    11,
+    34,
+    37,
+    38
+  ],
+  "ignored": [
+    28,
+    29,
+    30,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ]
+}

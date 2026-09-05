@@ -1,0 +1,83 @@
+{
+  "fy": 2016,
+  "document": "4122-fy-2016-annual-town-report-addendum.pdf",
+  "pages_total": 17,
+  "pages_walked": "1-17 (all pages; every page is OCR-only, none has a text layer)",
+  "what_this_document_is": "A 17-page repair document for the FY2016 annual town report. It contains NO narrative, NO headings of its own, and NO page numbers -- it is nothing but five financial tables, each of which is printed incompletely in the main FY2016 report (4123-fy-2016-annual-town-report.pdf). Each table appears here in full, including the columns and grand-total rows the main report cut off. Every page is landscape and every page's content sits far to the right of the text frame, which is consistent with these being the right-hand halves of oversize sheets that the main report's page setup clipped. The five tables, in order, are: FY2016 Receipts (addendum p1, replacing main p23); Special Revenue Funds (addendum pp2-6, replacing main pp31-35); Debt Repayment Schedule (addendum pp7-8, replacing main pp44-46); Collection of Taxes (addendum pp9-12, replacing main pp47-49 and the unreadable main p50); Town and School Employee Compensation (addendum pp13-17, replacing main pp198-202, which begin part-way through the alphabet at BENOIT). The addendum is therefore not supplementary information -- it is the missing half of the town's FY2016 financial record, and any figure taken from the main report's versions of these five tables should be checked here.",
+  "tables": [
+    {
+      "name": "FY2016 receipts by revenue source -- complete version",
+      "printed_heading": "FY 2016 RECEIPTS - JUNE 2016",
+      "pages": "1",
+      "what_it_is": "The whole FY2016 receipts page as designed: every revenue line the town collected, in three printed columns grouped by revenue class, with the SUMMARY OF RECEIPTS block and GRAND TOTAL that the main report's p23 does not carry.",
+      "grain": "one revenue source",
+      "columns": ["revenue source", "amount"],
+      "layout": "Three printed columns. The OCR has TRANSPOSED the page: each printed column becomes ONE text line, so the page yields five very long lines -- column 1's labels, column 1's values, column 2's labels, column 2's values, and column 3's labels. There is no line-by-line association between a label and its amount; you get two parallel sequences and must pair them by position.",
+      "printed_total": "the GRAND TOTAL label is present in the column-3 label line ('... TRANSFER FROM OTHER FUNDS NON RECURRING REVENUE GRAND TOTAL') but ITS VALUE IS NOT IN THE TEXT LAYER -- the OCR recovered no values line for column 3 at all",
+      "approx_rows": 130,
+      "extractable": "not without geometry",
+      "notes": "THIS IS THE PAGE THE MAIN REPORT TRUNCATES, and it is the reason to keep this file. Column 3 carries the lines the main report loses: NET METERING CREDITS, SCHOOL BASED MEDICARE REIMB, MEDICARE PART D REIMBURSEMENT, LOCK UP FEES, MISC OVER/SHORT, FEDERAL REVENUE, PREMIUM SALE OF BONDS, SALE OF TOWN EQUIPMENT, MISC. REVENUE, MEDICAL RECORDS, EARNINGS ON INVESTMENTS: INVESTMENT INCOME, PRIOR YEAR EXCISE, PRIOR YEAR INT/DEMAND, TRANSFERS FROM OTHER FUNDS, and then the SUMMARY OF RECEIPTS block with its class subtotals (TAXES & EXCISES, FEES, LICENSES AND PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, TRANSFER FROM OTHER FUNDS, NON RECURRING REVENUE) and GRAND TOTAL. THE VALUES FOR ALL OF THOSE ARE NOT IN THIS FILE'S TEXT LAYER -- they must be read off the page image. Note also that column 1's label line misspells 'PARSONAL PROPERTY TAXES' and that some values print without a comma separator ('$8755.00'). Also present here and absent from the main report: STATE REVENUE lines SMART GROWTH SCHOOL COST REIMB, SEC 2D CH 29 LOTTERY BEANO, MSBA REIMB-SCHOOL, SCHOOL TRANSPORTATION, ZONING INCENTIVE PAYMENT, VETERANS BENEFITS REIMBURSEMENT, LOCAL OPTION MEALS TAX, TRAILER PARKS, RESCUE WAGON, MEADOW WOODS WATER PRINCIPAL and INTEREST, STREET BETTERMENTS and INTEREST; and FEES lines SEALING FEES, PRE-SCHOOL TUITION, CONSTABLE FEES, VOTING LISTS, plus a whole DEPARTMENTAL REVENUE block (SUBDIVISION/FORM A FILING FEES, PLANNING BOARD FEES/PERMITS, WETLANDS BYLAWS, STUDENT PARKING FEES, ZONING BOARD FILING FEES, CEMETERIES BURIALS, COPIER FEES, WETLANDS FILING FEES, WETLANDS ADVERTISING FEE, RENTAL OF OFFICE SPACE, RESEARCH FEES, POLE LOCATIONS, RECORDING FEES, FORM OF INTENT-BUSINESS) and FINES & FORFEITS (PARKING FINES, COURT FINES, DOG FINES)."
+    },
+    {
+      "name": "Special revenue funds -- complete version",
+      "printed_heading": "(no heading recovered; the main report's version is headed 'TOWN OF LUNENBURG / SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/16')",
+      "pages": "2-6",
+      "what_it_is": "Every grant, gift, revolving and enterprise fund the town held in FY2016 with its opening balance, receipts, disbursements and closing balance -- the same table the main report prints on pp31-35, here running unbroken from the General Government block to the GRAND TOTAL.",
+      "grain": "one named fund",
+      "columns": ["PROGRAM NAME", "FORWARD 7/1/2015", "TOTAL RECEIPTS", "TOTAL DISBURSEMENTS", "BALANCE FWD 7/1/2016"],
+      "layout": "five pages, one fund per line with its four figures aligned across the line -- this is the ONE table in the addendum whose OCR is row-oriented and usable directly. Group headings (SCHOOL DEPARTMENT, PUBLIC SAFETY, PARKS & RECREATION, HIGHWAY DEPT, COUNCIL ON AGING, LIBRARY, CEMETERIES, UNCLASSIFIED) print on their own lines.",
+      "printed_total": "GRAND TOTAL $2,704,480.72 $6,543,358.01 $6,074,216.03 $3,173,622.70 (addendum p6, last line)",
+      "approx_rows": 130,
+      "extractable": "messy",
+      "notes": "The figures agree with the main report's version wherever both are legible, so this is a genuine reprint rather than a correction of the numbers. WHAT IT FIXES is the main report's DUPLICATED PAGE 32 -- the addendum's sequence has no duplicate, so it is the safer source for a row count. WHAT IT COSTS is OCR quality: this version drops many fund NAMES entirely (a line begins with the numbers and no label -- e.g. '$26,050.14 $396,270.67 $410,580.86 $11,739.95' is School Lunch, unnamed), and it introduces digit errors the main report does not have ('533,108.96' for $33,108.96 in School Facilities Use receipts; '$63.086.73' for $63,086.73; '$254,512.23 $286.673.00'; 'CHEck or Ticket' for 'GHSB Click It Or Ticket'; '(1.,964.05)'). USE THE MAIN REPORT FOR THE FIGURES AND THIS FILE ONLY TO CONFIRM THAT PAGE 32 IS A DUPLICATE."
+    },
+    {
+      "name": "Debt repayment schedule to FY2047 -- complete version",
+      "printed_heading": "TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 2016",
+      "pages": "7-8",
+      "what_it_is": "Principal and interest due in every fiscal year from 2017 to 2047 on each outstanding debt issue, with a TOTAL column per issue. Two pages carry what the main report spreads over three.",
+      "grain": "one debt issue (three rows each: PRINCIPAL, INTEREST, TOTAL)",
+      "columns": ["FISCAL YEAR", "one column per fiscal year", "TOTAL"],
+      "layout": "The OCR has TRANSPOSED the table: each fiscal YEAR becomes one text line carrying every issue's figures for that year in sequence, and the issue names arrive as a single run-on line at the foot of each page ('FISCAL YEAR MASS WATER POOL 3* PRINCIPAL TOTAL MASS WATER POLL TRUST MASS WATER POOL 4* PRINCIPAL INTEREST ...'). To read any issue's schedule you must take the same ordinal position out of every year-line.",
+      "printed_total": "the TOTAL column is recovered as a line on addendum p8 beginning 'TOTAL $10,651 $533 $11,184 $32,145 $2,452 $34,597 $100,000 $9,966 $109,966 $665,889 $81,507 $747,396 $7,615,000 $1,236,400 $8,851,400 ...' -- the grand totals themselves ($52,186,686 principal / $23,849,136 interest / $76,035,822 total) are printed in the main report on p46",
+      "approx_rows": 57,
+      "extractable": "not without geometry",
+      "notes": "THIS FILE CARRIES THE TABLE'S PRINTED TITLE, which the main report's pages 44-46 do not -- there the pages open straight into a FISCAL YEAR row. So the only place the document is formally named 'TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 2016' is here. The OCR is badly degraded: year labels are wrong in places ('2028.' with a stray full stop, and two lines both labelled '2012' which cannot be right for a schedule starting in 2017), and several figures are mangled ('82,755 8106636 8122-580', '3305302 $213,463', '51.105,338 $1.107,994', '$17.432'). Addendum p8 also carries a garbled '204Z' for 2047. Use the main report's pp44-46 for the year-by-year figures and this file only to confirm the table's title and the per-issue TOTAL column."
+    },
+    {
+      "name": "Collection of taxes -- receivables summary -- complete version with grand total",
+      "printed_heading": "TOWN OF LUNENBURG FY2016 COLLECTION OF TAXES RECEIVABLES SUMMARY JUNE 30, 2016",
+      "pages": "9-12",
+      "what_it_is": "For every tax type and every levy year still open, the full movement from opening receivable through commitments, adjustments, refunds, payments, abatements and transfers to the closing balance -- including the ABATEMENTS, TRANSFER and BALANCES columns the main report loses and the GRAND TOTAL row it does not print at all.",
+      "grain": "one tax type and levy year",
+      "columns": ["FISCAL YEAR", "FORWARD", "COMMITTMENTS", "ADJUSTMENTS", "REFUNDS", "PAYMENTS", "ABATEMENTS", "TRANSFER", "BALANCES"],
+      "layout": "The OCR has TRANSPOSED the table: each printed COLUMN becomes one text line carrying all that column's values in row order, and the row labels arrive as a run-on line ('FISCAL YEAR REAL ESTATE LEVY OF 2007 LEVY OF 2008 ... PERSONAL PROPERTY LEVY OF ...'). Column identity IS recoverable because each line is prefixed with its own column name (ABATEMENTS, PAYMENTS, REFUNDS, COMMITTMENTS ADJUSTMENTS, FORWARD, FISCAL YEAR). But the columns are sparse, so the values on a given column-line do not line up one-to-one with the labels on the label-line -- you must use the page image to know which rows a column's values belong to.",
+      "printed_total": "GRAND TOTAL row on addendum p12: FORWARD $8,785,059.19; COMMITTMENTS/ADJUSTMENTS/REFUNDS $27,413,095.43; then ($140,450.41), $68,096.46, ($26,679,833.15) and ABATEMENTS ($169,743.50). The TRANSFER and BALANCES totals are not in the text layer.",
+      "approx_rows": 70,
+      "extractable": "not without geometry",
+      "notes": "THIS IS THE MOST IMPORTANT PAGE RANGE IN THE ADDENDUM. The main report's pp47-49 print the header shrinking from eight columns to five to four and then stop mid-table with no total; page 50 of the main report has no text layer and no OCR at all. Here the whole table is present. The FORWARD grand total $8,785,059.19 exactly equals the FY2015 report's own CLOSING grand total for the same table (FY2015 p45, 'GRAND TOTAL ... $8,785,059.19'), so the two years chain and the FY2016 figure can be checked against the prior report. p11 covers the user-charge, utility-lien and betterment sections; p12 carries only the last row (SEPTIC COMMITTED INT) and the GRAND TOTAL. Note the source's own misspelling 'COMMITTMENTS' with two Ts, matching FY2015."
+    },
+    {
+      "name": "Town and school employee compensation -- the missing beginning of the list",
+      "printed_heading": "(none -- as in both main reports, this table has no heading anywhere)",
+      "pages": "13-17",
+      "what_it_is": "Gross calendar-year earnings by employee and department. This is the portion of the alphabet the main FY2016 report does not print -- the main report begins at BENOIT and these pages run from around BYRNE through the alphabet.",
+      "grain": "one employee",
+      "columns": ["SURNAME", "FORENAME", "DEPARTMENT", "amount"],
+      "layout": "multi-column, and the OCR is close to a total loss. Surnames come through in one column, some forenames in another, some department codes in a third, and THE DOLLAR AMOUNTS DO NOT APPEAR AT ALL -- not one earnings figure is recoverable from the text layer of these five pages.",
+      "printed_total": "",
+      "approx_rows": 180,
+      "extractable": "not without geometry",
+      "notes": "TREAT THESE PAGES AS IMAGES. Recovered content is fragmentary surname/forename/department triples that do not align -- for example p13 yields 'BYRNE / FIRE', 'CAIOZZO', 'CAISSEY', 'CALL SARAH', 'CALMES', 'CAMELO TRACI FIRE', 'CARLSON', 'CARON', 'CARRIER LINDA', 'CAVAIOLI SUSAN', 'CELONA', 'CHAIT'; p15 yields 'LANDI FIRE', 'LEET AMY', 'LEGER POLICE', 'LINK', 'LIVELY', 'LIZEK', 'LUCK', 'LUTH POLICE', 'LYNCH POLICE', 'LYONS'; p17 yields four fragments only ('KIT', 'COA', 'DPW', 'FIRE'). Departments visible include FIRE, POLICE, COA, DPW, SEWER. Because no amounts survive, this section CANNOT be used to reconstruct the missing A-to-BEND portion of the FY2016 payroll without going back to the PDF images. The FY2015 report's equivalent list (FY2015 pp206-211) IS complete and machine-readable, so for a two-year payroll comparison FY2015 is usable and FY2016 is not."
+    }
+  ],
+  "surprises": [
+    "The document has no title page, no headings of its own, no page numbers and no explanation. Nothing in it says it is an addendum or what it is fixing -- that has to be worked out by matching its tables against the main report's truncated ones.",
+    "It exists because the FY2016 report was published with five financial tables physically cut off at the right margin. The evidence is in the main report itself: the Collection of Taxes column header shrinks from eight column names on page 47 to five on page 48 to four on page 49, and then the table simply stops with no grand total.",
+    "The single most valuable thing in it -- the GRAND TOTAL row of the FY2016 Collection of Taxes table -- appears nowhere else, and its FORWARD figure ($8,785,059.19) ties exactly to the closing figure of the same table in the FY2015 report, so the two years reconcile once this file is in hand.",
+    "The second most valuable thing -- the GRAND TOTAL of FY2016 receipts -- is in this document as a printed label but its VALUE was not recovered by OCR, so the town's total FY2016 revenue figure is not machine-readable in either PDF and has to be read off a page image.",
+    "The employee compensation pages recover surnames and department codes but not a single dollar amount, which makes the addendum's most personally identifying content also its least usable.",
+    "The addendum's Special Revenue Funds reprint is cleaner in structure than the main report's (which duplicates a page) but dirtier in digits (533,108.96 for 33,108.96, 'CHEck or Ticket' for 'GHSB Click It Or Ticket'), so neither copy is authoritative on its own -- the two have to be read against each other."
+  ],
+  "pages_with_no_structured_data": "none -- all 17 pages are table fragments"
+}

@@ -131,10 +131,20 @@ def main():
         (os.path.join(ROOT, 'sources', 'data', 'lps-budget-lines.csv'), 'budget-lines.csv',
          'The district budget, 351 line items, one column per fiscal year and scenario. '
          'The tidy form of the workbook everything else is derived from.'),
-        (os.path.join(ROOT, 'sources', 'district-budget-page', 'index.csv'),
+        (os.path.join(ROOT, 'sources', 'district-budget', 'index.csv'),
          'district-page-index.csv',
          'The 87 documents mirrored from the district budget page: label, our copy, the '
          'extracted text, the district’s original URL, and a sha256.'),
+        (os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv'),
+         'archive-manifest.csv',
+         'Every file in the archive — 3,876 of them — with its size, its sha256, and the '
+         'publisher’s own URL where one is recorded. The documents themselves are no '
+         'longer in the repository: they are in a public, locked R2 bucket and are served '
+         'under the /docs/<path> URLs they have always had, so this is the index that '
+         'makes a download checkable and the list a fresh clone works from. The bucket '
+         'holds no copy of this file, deliberately — an object there cannot be updated '
+         'once written, so a manifest inside it would be permanently out of date about '
+         'its own contents.'),
         (os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv'), 'free-cash-proof.csv',
          'The Division of Local Services free cash proof for Lunenburg and eight comparable '
          'towns, 2021-2025, line by line. Free cash is what a town may appropriate without '
@@ -168,14 +178,14 @@ def main():
     # absent from the text tree while every published count said 1,422, so a search
     # returning nothing could not be distinguished from a subject nobody discussed. A
     # caller can now compute its own denominator without probing anything.
-    mi_src = os.path.join(ROOT, 'sources', 'minutes', 'index.csv')
+    mi_src = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
     if os.path.exists(mi_src):
         mi_out = os.path.join(DATA, 'minutes-index.csv')
         rows = list(csv.DictReader(open(mi_src)))
         for r in rows:
             stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
             r['has_text'] = 'Y' if stem and os.path.exists(
-                os.path.join(ROOT, 'sources', 'minutes', 'text', stem + '.txt')) else 'N'
+                os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt')) else 'N'
         with open(mi_out, 'w', newline='') as fh:
             w = csv.DictWriter(fh, list(rows[0].keys()))
             w.writeheader()
@@ -463,10 +473,13 @@ def main():
         '## Provenance',
         '',
         'Source: https://github.com/tjloughlin16/lunenburgbudgetapp. Documents are served '
-        'byte-identical to the archive; the build verifies this by hash. One file, a 53MB '
-        'scan of the teachers’ agreement, is served from separate storage because it '
-        'exceeds the host’s per-file limit, and its `url` in `sources.json` is '
-        'absolute.',
+        'byte-identical to the archive; the build verifies this by hash, and '
+        '`/data/archive-manifest.csv` carries the sha256 of every file so you can check '
+        'a download yourself. Every document is at `/docs/<path>` — there are no '
+        'exceptions and nothing is too large to serve. The published documents are not in '
+        'the git repository: they are in a public, locked object store and streamed under '
+        'those same URLs, so cite the `/docs/` address rather than any storage URL you '
+        'may see in a response header.',
     ]
 
     with open(os.path.join(PUB, 'llms.txt'), 'w') as fh:

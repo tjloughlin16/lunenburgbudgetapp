@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""Where every figure in every annual-report dataset came from.
+
+Rule 12: a figure is only checkable if somebody can get back to the document it came from,
+and that needs three things — the address, the publisher's own filename, and our copy with
+a sha256. All three already exist in `sources/town-budget/index.csv`; what has been missing
+is the join from a row in a dataset to the document that row was read out of.
+
+Every dataset built from the annual reports carries `fy` (or `edition`) and `page`. That is
+enough: this walks each dataset, resolves the document, and writes both a machine-readable
+join and a page per dataset that a reader can follow.
+
+**Two addresses are kept, not one.** The town publishes these reports in two stores and the
+links have died before — 57 in a single day. `upstream` holds both the DocumentCenter and
+the ArchiveCenter URL where both exist, because when one dies the other may not.
+
+## Provenance is not verification
+
+This says where a figure came from. It does not say the figure is right. A dataset can have
+perfect provenance and still be a transcription nobody has checked — which is what most of
+these currently are. The `status` column travels alongside precisely so the two are not
+confused.
+
+    python3 scripts/build_dataset_provenance.py
+"""
+
+import collections
+import csv
+import glob
+import os
+import re
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(ROOT, 'sources', 'data')
+INDEX = os.path.join(ROOT, 'sources', 'town-budget', 'index.csv')
+OUT_CSV = os.path.join(DATA, 'dataset-provenance.csv')
+OUT_MD = os.path.join(ROOT, 'notes', 'generated', 'DATASET-PROVENANCE.md')
+
+# Datasets built from the annual town reports, and the column naming the source year.
+DATASETS = [
+    ('placement-counts', 'fy'), ('ballot-questions', 'fy_report'),
+    ('annual-report-receipts', 'fy'), ('special-revenue-funds', 'edition'),
+    ('staff-roster-entries', 'fy'), ('annual-report-catalogue', 'edition'),
+    ('report-appropriations', 'edition'), ('report-trust-funds', 'edition'),
+    ('report-debt', 'edition'), ('report-capital-projects', 'edition'),
+    ('report-valuation', 'edition'), ('report-elections', 'edition'),
+    ('report-officials', 'edition'), ('report-dept-activity', 'edition'),
+    ('report-enrollment-mcas', 'edition'), ('report-monty-tech', 'edition'),
+    ('report-gross-wages', 'edition'), ('report-vital-records', 'edition'),
+]
+
+
+def documents():
+    """{fiscal year: index row} for the annual town reports."""
+    out = {}
+    for r in csv.DictReader(open(INDEX)):
+        local = r.get('local', '')
+        if 'annual-town-report' not in local:
+            continue
+        m = re.search(r'fy-?(\d{4})', local)
+        if not m:
+            continue
+        key = f'FY{m.group(1)}' + ('-addendum' if 'addendum' in local else '')
+        out[key] = r
+    return out
+
+
+def main():
+    docs = documents()
+    rows = []
+    for name, yearcol in DATASETS:
+        path = os.path.join(DATA, name + '.csv')
+        if not os.path.exists(path):
+            continue
+        data = list(csv.DictReader(open(path)))
+        if not data:
+            continue
+        by = collections.defaultdict(lambda: {'rows': 0, 'pages': set(),
+                                              'status': collections.Counter()})
+        for r in data:
+            ed = r.get('edition') or (f"FY{r[yearcol]}" if r.get(yearcol) else '')
+            if not ed.startswith('FY'):
+                ed = f'FY{ed}' if ed else ''
+            if not ed:
+                continue
+            b = by[ed]
+            b['rows'] += 1
+            for p in re.findall(r'\d+', str(r.get('page') or r.get('pages') or '')):
+                b['pages'].add(int(p))
+            if r.get('status'):
+                b['status'][r['status']] += 1
+
+        for ed, b in sorted(by.items()):
+            d = docs.get(ed) or docs.get(ed.replace('-addendum', ''))
+            pages = sorted(b['pages'])
+            rows.append({
+                'dataset': name, 'edition': ed, 'rows': b['rows'],
+                'pages': ','.join(str(p) for p in pages[:60]),
+                'page_count': len(pages),
+                'reconciled': b['status'].get('reconciled', 0),
+                'partial': b['status'].get('partial', 0),
+                'document': os.path.basename(d['local']) if d else '',
+                'publisher_label': d['label'] if d else '',
+                'upstream': d['upstream'] if d else '',
+                'sha256': d['sha256'] if d else '',
+                'bytes': d['bytes'] if d else '',
+            })
+
+    with open(OUT_CSV, 'w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+
+    missing = [r for r in rows if not r['sha256']]
+    by_ds = collections.defaultdict(list)
+    for r in rows:
+        by_ds[r['dataset']].append(r)
+
+    L = ['# Where every annual-report figure came from', '',
+         '**Generated by `scripts/build_dataset_provenance.py`. Do not edit.**', '',
+         'Rule 12 wants three things for every figure: the address it came from, the',
+         "publisher's own filename, and our copy with a sha256. This is the join from a row",
+         'in a dataset to the document it was read out of.', '',
+         '## Provenance is not verification', '',
+         'This says **where** a figure came from. It does not say the figure is right. A',
+         'dataset can have perfect provenance and still be an unchecked transcription —',
+         'which is what most of these currently are. `reconciled` and `partial` below are',
+         'the separate question, and they travel with every row in the data itself.', '',
+         '## Two addresses, not one', '',
+         'The town publishes these reports in **two** stores — DocumentCenter and',
+         'ArchiveCenter — and its links have died before, 57 in a single day. Both URLs are',
+         'kept where both exist, because when one dies the other may not. The',
+         "publisher's own label is kept too, because when both die the only way a resident",
+         'gets the document is to ask the town for it by name.', '']
+
+    for ds, rs in sorted(by_ds.items()):
+        tot = sum(r['rows'] for r in rs)
+        rec = sum(r['reconciled'] for r in rs)
+        L.append(f'## `{ds}` — {tot:,} rows across {len(rs)} report(s)'
+                 + (f', {rec:,} reconciled' if rec else ', **none reconciled**'))
+        L.append('')
+        L.append('| edition | rows | pages | checked | document | sha256 |')
+        L.append('|---|---:|---|---|---|---|')
+        for r in sorted(rs, key=lambda r: r['edition']):
+            chk = (f"{r['reconciled']} reconciled" if r['reconciled']
+                   else f"{r['partial']} partial" if r['partial'] else '—')
+            pages = r['pages'][:40] + ('…' if len(r['pages']) > 40 else '')
+            L.append(f"| {r['edition']} | {r['rows']} | {pages} | {chk} | "
+                     f"`{r['document']}` | `{(r['sha256'] or '')[:16]}…` |")
+        L.append('')
+
+    L += ['## The documents themselves', '',
+          '| edition | publisher label | addresses | bytes | sha256 |', '|---|---|---|---:|---|']
+    seen = set()
+    for r in sorted(rows, key=lambda r: r['edition']):
+        if r['edition'] in seen or not r['document']:
+            continue
+        seen.add(r['edition'])
+        urls = '<br>'.join(r['upstream'].split())
+        L.append(f"| {r['edition']} | {r['publisher_label']} | {urls} | "
+                 f"{int(r['bytes']):,} | `{r['sha256']}` |")
+    L.append('')
+
+    os.makedirs(os.path.dirname(OUT_MD), exist_ok=True)
+    with open(OUT_MD, 'w') as fh:
+        fh.write('\n'.join(L) + '\n')
+
+    print(f'{len(rows)} dataset-editions across {len(by_ds)} datasets')
+    print(f'{len(seen)} source documents, all with an address and a sha256'
+          if not missing else f'{len(missing)} dataset-editions could NOT be resolved '
+                              f'to a document: {sorted({m["edition"] for m in missing})}')
+    print(f'wrote {os.path.relpath(OUT_CSV, ROOT)}')
+    print(f'wrote {os.path.relpath(OUT_MD, ROOT)}')
+
+
+if __name__ == '__main__':
+    main()

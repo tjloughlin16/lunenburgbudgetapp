@@ -27,12 +27,12 @@
  {
   "name": "model.json",
   "note": "Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.",
-  "bytes": 313007
+  "bytes": 312785
  },
  {
   "name": "sources.json",
   "note": "The document archive: every source, its group, its size, and the URL it is served from.",
-  "bytes": 198082
+  "bytes": 293916
  },
  {
   "name": "budget-lines.csv",
@@ -42,22 +42,27 @@
  {
   "name": "district-page-index.csv",
   "note": "The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district\u2019s original URL, and a sha256.",
-  "bytes": 32304
+  "bytes": 31351
+ },
+ {
+  "name": "archive-manifest.csv",
+  "note": "Every file in the archive \u2014 3,876 of them \u2014 with its size, its sha256, and the publisher\u2019s own URL where one is recorded. The documents themselves are no longer in the repository: they are in a public, locked R2 bucket and are served under the /docs/<path> URLs they have always had, so this is the index that makes a download checkable and the list a fresh clone works from. The bucket holds no copy of this file, deliberately \u2014 an object there cannot be updated once written, so a manifest inside it would be permanently out of date about its own contents.",
+  "bytes": 680799
  },
  {
   "name": "free-cash-proof.csv",
   "note": "The Division of Local Services free cash proof for Lunenburg and eight comparable towns, 2021-2025, line by line. Free cash is what a town may appropriate without raising taxes. NOTE: these are absolute dollars with no denominator anywhere in the source, so they do not compare between towns of different size. The composition does compare, because a share has no size.",
-  "bytes": 79594
+  "bytes": 73294
  },
  {
   "name": "rate-register.csv",
   "note": "Every rate this project knows about \u2014 athletic and bus fees, collective bargaining raises, facilities \u2014 each carrying the fiscal year it applies to, the document that set it and the date. 62 rates. It exists because FY26 athletic fees were modelled on FY25\u2019s schedule for months: a right number from the wrong year, taken from a fee page that states its rates and never states which year they cover. It deliberately includes the rates the model does NOT use and the ones we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank.",
-  "bytes": 14237
+  "bytes": 14590
  },
  {
   "name": "athletic-fee-schedule.csv",
   "note": "Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them.",
-  "bytes": 6752
+  "bytes": 7018
  },
  {
   "name": "minutes-index.csv",

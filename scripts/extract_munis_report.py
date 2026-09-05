@@ -269,10 +269,14 @@ def main():
     ap.add_argument('--check', action='store_true')
     args = ap.parse_args()
 
-    dirs = [os.path.join(ROOT, 'sources', d)
-            for d in ('q3-fy26', 'records-request-2026-09')]
-    paths = sorted(os.path.join(d, f) for d in dirs if os.path.isdir(d)
-                   for f in os.listdir(d) if f.endswith('.txt'))
+    # Every MUNIS report now lives under sources/town-ledgers/, split by what the
+    # report IS -- expenses, revenue, account-details, transfers, purchase-orders,
+    # fund-balances -- so this walks the tree rather than naming the folders a
+    # particular delivery happened to arrive in.
+    base = os.path.join(ROOT, 'sources', 'town-ledgers')
+    paths = sorted(os.path.join(dp, f)
+                   for dp, _dn, fns in os.walk(base)
+                   for f in fns if f.endswith('.txt'))
 
     out, bad = [], []
     print('Parsing MUNIS year-to-date budget reports\n')

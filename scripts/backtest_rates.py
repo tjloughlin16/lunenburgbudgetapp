@@ -7,7 +7,7 @@ special education escalator 1.5 points too high.
 
 The model projects appropriations. Every rate in it must therefore be derived from
 appropriations. Actual spending is a different quantity and a different question, and it
-lives in notes/BUDGET-VS-ACTUAL.md.
+lives in notes/findings/BUDGET-VS-ACTUAL.md.
 
 The comparison that IS valid is FY25 adopted -> FY26 final -> FY27 level service. Level
 service is the district's own arithmetic for "the same services at next year's prices",

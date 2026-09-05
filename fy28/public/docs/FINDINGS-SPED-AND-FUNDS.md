@@ -161,7 +161,7 @@ But it is an unstated scope limitation on a load-bearing conclusion.
 ## Part 2 — The money outside the operating budget
 
 Sources: `xlsx/school-funds-fy26.xlsx` (period 13, i.e. FY26 year-end) and
-`q3-fy26/town-special-revenue-fy26-q3.xlsx` (as of 3/31/2026). The two cross-validate:
+`munis-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` (as of 3/31/2026). The two cross-validate:
 School Choice opens at $246,902.71 in both, Athletics at $110,247.89, Gift at $89,822.59.
 
 Column mapping in the special revenue workbook, confirmed against its own totals rows:
@@ -281,7 +281,7 @@ funding recurring costs. This says **recurring restricted money is not being spe
 
 ### 2.5 Town stabilization and trust funds
 
-From `q3-fy26/town-trust-agency-fy26-q3.xlsx`, as of 3/31/2026:
+From `munis-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx`, as of 3/31/2026:
 
 | Stabilization fund | Balance |
 |---|---:|
@@ -316,7 +316,7 @@ $4M health insurance line growing 9%/yr. The fund exists in name only.
 
 ## Part 3 — Why none of this surfaced during the budget debate
 
-`q3-fy26/fincom-memo-fy26-q3.docx`, from the Finance Director, is dated **11 August
+`town-budget/docs/fincom-memo-fy26-q3.docx`, from the Finance Director, is dated **11 August
 2026** and reports the quarter ending **31 March 2026** — a four-and-a-half month lag,
 and explicitly the first of a resumed series (*"In moving forward, I hope to present
 these reports quarterly to the Finance Committee"*).

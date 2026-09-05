@@ -45,15 +45,20 @@ def main():
                     help='exit non-zero if anything has drifted')
     args = ap.parse_args()
 
+    # Everything outbound lives under notes/outbound/: `drafts/` for what has been
+    # written and not sent, and `sent-<YYYY-MM>/` for what actually went out. Both carry
+    # a MANIFEST.json, and the difference between them is the `sent` field, not the
+    # folder name -- a folder called "sent" that contained only drafts is exactly the
+    # mistake this file exists to stop repeating.
+    out = os.path.join(NOTES, 'outbound')
     folders = sorted(
-        os.path.join(NOTES, d) for d in os.listdir(NOTES)
-        if d.startswith('sent-') and os.path.isfile(
-            os.path.join(NOTES, d, 'MANIFEST.json')))
+        os.path.join(out, d) for d in (os.listdir(out) if os.path.isdir(out) else [])
+        if os.path.isfile(os.path.join(out, d, 'MANIFEST.json')))
     if not folders:
-        print('nothing recorded as sent')
+        print('nothing recorded in notes/outbound/')
         return 0
 
-    drifted = 0
+    drifted = stale = 0
     for folder in folders:
         man = json.load(open(os.path.join(folder, 'MANIFEST.json')))
         print('%s  (recorded %s)' % (os.path.relpath(folder, ROOT), man['recorded']))
@@ -70,19 +75,35 @@ def main():
             if not os.path.exists(src):
                 notes.append('its source is gone')
             elif sha256(src) != doc['source_sha256_when_sent']:
-                notes.append('our copy has moved since it went out')
-            sent = doc.get('sent') or 'date not filled in'
-            if notes:
+                notes.append('the PDF is older than the Markdown it was built from')
+            # A document that has NOT been sent cannot have drifted from anybody: its
+            # PDF is just out of date with its source, and the fix is to rebuild it. Only
+            # once something has actually gone out does a changed source become the
+            # serious thing -- a recipient holding figures that no longer match ours.
+            sent = doc.get('sent')
+            if notes and not sent:
+                stale += 1
+                print('  STALE    %-28s draft for the %s — not sent'
+                      % (doc['pdf'], doc['to']))
+                for n in notes:
+                    print('           - %s' % n)
+                print('           rebuild it:  python3 %s' % doc['generator'])
+            elif notes:
                 drifted += 1
-                print('  DRIFTED  %-28s to the %s (%s)'
+                print('  DRIFTED  %-28s to the %s (sent %s)'
                       % (doc['pdf'], doc['to'], sent))
                 for n in notes:
                     print('           - %s' % n)
                 print('           rebuild and compare:  python3 %s' % doc['generator'])
             else:
-                print('  same     %-28s to the %s (%s)'
-                      % (doc['pdf'], doc['to'], sent))
+                print('  same     %-28s %s'
+                      % (doc['pdf'],
+                         ('sent %s' % sent) if sent else 'draft — not sent'))
 
+    if stale:
+        print('\n%d draft(s) are older than the source they were built from. Nothing has '
+              'been sent, so' % stale)
+        print('the fix is simply to rebuild them.')
     if drifted:
         print('\n%d document(s) differ from what was sent. That is information, not an '
               'error.' % drifted)
@@ -90,8 +111,8 @@ def main():
               'what the')
         print('recipient actually holds. Send a correction that names the version it '
               'corrects.')
-    else:
-        print('\nEverything sent still matches what we hold.')
+    elif not stale:
+        print('\nEverything recorded still matches what we hold.')
     return 1 if (drifted and args.strict) else 0
 
 

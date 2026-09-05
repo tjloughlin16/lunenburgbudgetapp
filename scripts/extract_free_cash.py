@@ -44,7 +44,7 @@ import sys
 import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'sources', 'dls-free-cash')
+SRC = os.path.join(ROOT, 'sources', 'state-dls')
 OUT = os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv')
 
 TOWNS = ['ayer', 'groton', 'littleton', 'lunenburg', 'shirley', 'townsend', 'upton',
@@ -113,7 +113,7 @@ def main():
                     role=('certified' if label == CERTIFIED else
                           'prior_year_certified' if label == PRIOR else
                           'identified_total' if label == IDENTIFIED else 'component'),
-                    source_file=f'dls-free-cash/free-cash-proof-{town}.xlsx',
+                    source_file=f'state-dls/free-cash-proof-{town}.xlsx',
                     source_ref=f'Sheet1!A{4 + list(rows).index(label)}'))
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

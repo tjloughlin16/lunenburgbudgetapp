@@ -15,7 +15,7 @@ figure: **the data required to settle it is a ratio, and what we hold is a numer
 ## What we now hold
 
 The Division of Local Services publishes a Free Cash Proof for every community — the
-year-end calculation, broken into its components. `sources/dls-free-cash/` holds it for
+year-end calculation, broken into its components. `sources/dls/` holds it for
 Lunenburg and eight comparable towns for 2021 to 2025, and
 `sources/data/free-cash-proof.csv` is the extract.
 
@@ -53,7 +53,7 @@ What the table does support is reading **across**. Lunenburg's balance fell 36% 
 ## The standard, and who says so
 
 The Town states it, in its own FY27 budget press release
-(`txt/town-fy27-budget-press-release.txt`, page 6):
+(`town-budget/text/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.txt`, page 6):
 
 > "DLS also recommends that communities understand the role free cash plays in sustaining a
 > strong credit rating and strive to generate free cash in an amount equal to **5-7% of its
@@ -176,7 +176,7 @@ FY27 capital plan publishes its own ten-year table saying so.
 | **ten-year average** | **$591,286** | $1,287,612 |
 | FY2027 (planned) | $991,627 | $1,830,203 |
 
-*Source: `sources/txt/town-article13-fy27-capital-plan.txt`, funding history table, and ATM
+*Source: `sources/town-budget/text/4111-article-13-fy-2027-capital-plan.txt`, funding history table, and ATM
 2026 warrant Article 13. Extracted to `sources/data/capital-funding-history.csv`, which
 reproduces the plan's own printed Average row to the cent — `model/freecash.py` refuses to
 export if it does not.*
@@ -324,6 +324,6 @@ should carry it.
 python3 scripts/extract_free_cash.py     # 81 reconciliations, all must tie
 ```
 
-Sources in `sources/dls-free-cash/` with `PROVENANCE.md` beside them. The denominator is
+Sources in `sources/dls/` with `PROVENANCE.md` beside them. The denominator is
 `sources/data/town-ledger-fy26-q3.csv`, extracted by `scripts/extract_town_ledger.py`, which
 reconciles to the report's own GRAND TOTAL before it will write.

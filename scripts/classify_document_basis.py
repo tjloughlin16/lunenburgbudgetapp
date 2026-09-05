@@ -190,8 +190,9 @@ def scan_xlsx(path):
 # by design: they are narrative, there are 1,100 of them, and a figure quoted in
 # minutes is a restatement of a document catalogued here.
 DIRS = [
-    'sources/txt', 'sources/district-budget-page/text', 'sources/q3-fy26',
-    'sources/peers', 'sources/town-site/text', 'sources/contracts/txt',
+    'sources/district-budget/text', 'sources/town-budget/text',
+    'sources/town-supplementary/text', 'sources/town-ledgers',
+    'sources/peer-districts', 'sources/contracts/txt',
 ]
 
 def main():

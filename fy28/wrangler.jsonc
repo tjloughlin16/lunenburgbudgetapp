@@ -3,5 +3,32 @@
   // Deploy with:  npx wrangler pages deploy
   "name": "lunenburg-fy28",
   "pages_build_output_dir": "dist",
-  "compatibility_date": "2026-08-18"
+  "compatibility_date": "2026-08-18",
+
+  // The archive's binaries -- every PDF, spreadsheet and Word document the town, the
+  // district and the state published -- are not in git and not in the build. They are in
+  // this bucket, and `functions/docs/_bucket.js` serves them under the /docs/ URLs they
+  // have always had. The bucket is public and read-only to anonymous callers; this
+  // binding exists so the Function can stream an object without a round trip out to
+  // pub-5baef0f2604545c398a39a176e400e34.r2.dev and back.
+  //
+  // R2 bindings are non-inheritable, so preview and production each name the bucket in
+  // full. They name the SAME bucket on purpose: a preview deploy that read from a
+  // different bucket would prove nothing about the one the public reads, and testing
+  // every /docs/ URL against a preview is the gate this whole move has to pass.
+  "r2_buckets": [
+    { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
+  ],
+  "env": {
+    "preview": {
+      "r2_buckets": [
+        { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
+      ]
+    },
+    "production": {
+      "r2_buckets": [
+        { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
+      ]
+    }
+  }
 }

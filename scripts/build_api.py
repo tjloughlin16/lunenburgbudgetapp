@@ -37,6 +37,7 @@ tables that must not be joined, and it will state the result with total confiden
 Everything here is generated. Nothing is hand-maintained, so it cannot drift from the
 database it describes.
 """
+import glob
 import hashlib
 import json
 import os
@@ -371,6 +372,23 @@ def main():
             caveats=TABLES['budget_figure']['caveats'],
             about='One budget line, every year and stage a document states it.'))
 
+    # A line that stops existing must stop being published. These files are written one
+    # per line and nothing ever removed them, so a key that disappeared -- because a
+    # parsing fix stopped inventing it, or because a document was re-read -- left a live
+    # endpoint serving figures the database no longer holds. Two of them were budget
+    # lines called `all-federal-grants-offsets-applied-revolving-account-...`, read out
+    # of a prose paragraph. An endpoint nobody can get to is unreachable; an endpoint
+    # that answers with a retired figure is worse.
+    live = set(taken) | {'%s-%d' % (k, n) for k, c in taken.items()
+                         for n in range(2, c + 1)}
+    removed = 0
+    for f in glob.glob(os.path.join(API, 'lines', '*.json')):
+        if os.path.basename(f)[:-5] not in live:
+            os.remove(f)
+            removed += 1
+    if removed:
+        print('  removed %d retired line endpoint(s)' % removed)
+
     written['api/lines'] = write('lines', dict(
         resource='lines',
         about='Index of the budget lines the district\'s BUDGET DOCUMENTS name. Fetch a '
@@ -478,7 +496,7 @@ def main():
         alsoSee={
             'llms.txt': f'{SITE}/llms.txt',
             'method': f'{SITE}/docs/analyses/show-your-work.md',
-            'schemaNotes': 'notes/SCHEMA.md in the repository',
+            'schemaNotes': 'notes/reference/SCHEMA.md in the repository',
         },
         contact=f'{SITE}/sources',
     ))

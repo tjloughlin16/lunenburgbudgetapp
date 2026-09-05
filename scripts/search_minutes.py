@@ -36,7 +36,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MIN = os.path.join(ROOT, 'sources', 'minutes')
+MIN = os.path.join(ROOT, 'sources', 'meetings')
 TEXT = os.path.join(MIN, 'text')
 SITE = 'https://lunenburgbudgetproject.org'
 

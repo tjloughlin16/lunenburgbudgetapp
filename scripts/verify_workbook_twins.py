@@ -23,7 +23,7 @@ formulas whose cached results were saved by one copy and not the other. That is 
 instrument, not the workbooks. So the comparison is at formula level, and the value-level
 count is reported beside it rather than instead of it.
 
-It also asserts the authorship metadata that sources/xlsx/PROVENANCE.md quotes. Every .xlsx
+It also asserts the authorship metadata that sources/budget-workbooks/PROVENANCE.md quotes. Every .xlsx
 is a zip whose docProps members record who created and last saved it, and that is the only
 provenance evidence these files carry from inside. It is worth stating exactly what that is
 and is not: **it says who authored a file, never who gave it to us.** A workbook created by
@@ -40,8 +40,8 @@ import openpyxl
 from openpyxl.utils import get_column_letter as col
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-UNTRACED = os.path.join(ROOT, 'sources/xlsx/fy27-proposals.xlsx')
-TRACED = os.path.join(ROOT, 'sources/xlsx/fy27-budget-projection-3-25-26.xlsx')
+UNTRACED = os.path.join(ROOT, 'sources/budget-workbooks/fy27-proposals.xlsx')
+TRACED = os.path.join(ROOT, 'sources/budget-workbooks/fy27-budget-projection-3-25-26.xlsx')
 
 # Columns E through M: FY25 budget, FY26 final, FY26 actuals-to-date and encumbrances, and
 # the four FY27 scenarios. Everything the projection reads. Anything outside this band is
@@ -106,7 +106,7 @@ def docprops(path):
 def check_metadata():
     bad = []
     for name, want in EXPECTED.items():
-        got = docprops(os.path.join(ROOT, 'sources/xlsx', name))
+        got = docprops(os.path.join(ROOT, 'sources/budget-workbooks', name))
         for tag, value in want.items():
             if got.get(tag) != value:
                 bad.append(f'    {name}  {tag}: expected {value!r}, found '
@@ -115,7 +115,7 @@ def check_metadata():
         print('  authorship metadata has changed since PROVENANCE.md was written:')
         print('\n'.join(bad))
     else:
-        print('  authorship metadata matches sources/xlsx/PROVENANCE.md '
+        print('  authorship metadata matches sources/budget-workbooks/PROVENANCE.md '
               '(creator, created, last modifier)')
     return len(bad)
 
@@ -173,7 +173,7 @@ def main():
                   'built on the copy with no address, so this is the one that must not '
                   'happen.')
         else:
-            print('\nFAILED — sources/xlsx/PROVENANCE.md describes metadata these files '
+            print('\nFAILED — sources/budget-workbooks/PROVENANCE.md describes metadata these files '
                   'no longer carry.')
         return 1
 
