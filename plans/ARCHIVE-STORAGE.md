@@ -46,7 +46,7 @@ So moving a PDF out of git does not move anything an agent reads.
     git                                    R2 bucket
     ─────────────────────────────          ─────────────────────────
     index.csv  (upstream url, sha256)  →   sources/<path>   the bytes
-    <name>.txt  extracted text             versioned, delete-protected
+    <name>.txt  extracted text             bucket-locked, no versioning
     analyses, scripts, model, CSVs
 
 The integrity contract already exists: **every mirrored document already carries a sha256
@@ -159,7 +159,7 @@ R2 is S3-compatible and already in use: the 51 MB teacher contract is served fro
 
 To settle from the docs rather than memory, because the whole point is deletion safety:
 
-- object **versioning** — available, and how a delete is recorded
+- **CONFIRMED 5 Sep: R2 has NO object versioning.** Use **bucket locks**, which prevent deletion *and* overwriting, per prefix or bucket-wide, Age / date / Indefinite, and apply to existing objects too
 - **lifecycle rules** — and whether one could ever expire an object we depend on
 - **retention / object-lock** semantics, if any
 - whether public `r2.dev` access is appropriate for the archive, or a custom domain is
@@ -189,7 +189,7 @@ Naming them because a second system that can disagree with the first is the real
    The crawl was extended to a second document store and it produces derived data as well
    as files, so the archive has grown in ways a file count does not show. Nothing below
    should start until this is understood, because **the storage move takes a snapshot and
-   anything wrong at that moment gets copied into the bucket and versioned there.**
+   anything wrong at that moment gets copied into the bucket and locked there, with no previous version to fall back to.**
 
    What to check, and why each one:
 
@@ -220,7 +220,7 @@ Naming them because a second system that can disagree with the first is the real
    is how a half-copied file gets its sha256 taken.
 2. Refresh the backup and verify the manifest.
 3. Re-apply the town split the fetcher flattened — `plans/ARCHIVE-REORG.md`.
-4. Confirm R2 versioning and retention against the docs; create and configure the bucket.
+4. Configure the bucket: indefinite bucket lock over all prefixes, no lifecycle rule, public read. (R2 versioning was checked and does not exist.)
 5. `sync_archive.py --push` for one file. Verify. Then the rest.
 6. `check_archive_storage.py` green both ways.
 7. Add the R2 branch to the `/docs/` Function. Deploy to a **preview** URL.

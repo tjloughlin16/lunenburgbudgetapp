@@ -104,12 +104,30 @@ the trap that committed 1,383 meeting PDFs last time.
 Confirm against current Cloudflare docs before creating anything, because deletion safety is
 the point and asserting it from memory is the wrong way to earn it:
 
-- object **versioning** — enabled **before the first object**; a later enable does not
-  protect what is already there
-- **no lifecycle rule at all** — an expiry policy on an archive is a deletion scheduled in
-  advance
+**R2 has no object versioning.** Checked against the docs on 5 September 2026, not assumed:
+the bucket features are public buckets, CORS, lifecycles, **bucket locks**, event
+notifications and storage classes. There is no S3-style version history, so **an overwrite
+destroys the previous bytes** and there is nothing to roll back to.
+
+What R2 gives instead is stronger for an archive, and it is what to use:
+
+- **Bucket locks.** They prevent *both deletion and overwriting*, per prefix or across the
+  whole bucket, with an Age, a date, or **Indefinite** retention — and they apply to
+  existing objects as well as new ones. Set an indefinite lock over the whole bucket before
+  the first upload. Note *"a bucket cannot be emptied while any bucket lock rules are
+  configured"*, which is exactly the property wanted here.
+- **A lock rule can be removed**, by dashboard, Wrangler or API. This is not immutability
+  against a determined administrator; it is protection against a mistake, which is the
+  actual risk.
+- **No lifecycle rule at all.** An expiry policy on an archive is a deletion scheduled in
+  advance.
 - anonymous access is **GET and HEAD only**
 - one write credential, held outside the repository
+
+**And this is why the 74 MB stays in git.** With no object versioning, R2 cannot answer
+"what did this file look like before?" — bucket locks stop it changing rather than
+remembering what it was. Git is the archive's version history, and the extracted text is
+the part of it that changes when a re-extraction changes what a figure rests on.
 
 ## Step 5 — Where every file ends up
 
