@@ -24,6 +24,40 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v10',
+        date='2026-09-05',
+        title='Every document downloads, including the seven that never could',
+        short='the archive moves off the site’s host',
+        headline='Seven documents were listed here and could not be downloaded — six of '
+                 'them annual town reports, the largest 79MB — because they were over the '
+                 'limit our web host allows for a single file. They download now. So do '
+                 'the town’s 1,422 meeting PDFs, which had never had an address at all.',
+        changes=[
+            'The archive’s documents are now held in storage built for them rather than '
+            'alongside the website. Every address is unchanged: a link to '
+            '/docs/<anything> that worked yesterday works today, and every link this site '
+            'has ever published was fetched and checked against its recorded fingerprint '
+            'before the change went live — 3,877 of them.',
+
+            'The seven that could not be served are the point. A source archive that lists '
+            'a document and cannot hand it over is asking to be taken on trust, which is '
+            'the one thing this project is built not to do. The FY2021 annual town report '
+            'is 79MB and had been catalogued and unreachable since the archive opened.',
+
+            'The 1,422 agendas and sets of minutes the town publishes are now downloadable '
+            'here as the town’s own scans, not only as extracted text. They existed on one '
+            'computer and nowhere else; several documents in this archive are already gone '
+            'from the addresses they came from, 57 of them in a single day last August.',
+
+            'Every file carries a published checksum at /data/archive-manifest.csv, so a '
+            'reader who downloads our copy can prove it is the same file we read. That '
+            'catalogue is the answer to "how do I know you have not altered this".',
+
+            'The storage cannot be overwritten or deleted for ten years — tested by trying '
+            'it, not assumed. An archive whose copies can change quietly is not an archive.',
+        ],
+    ),
+    dict(
         tag='v9.3',
         date='2026-09-03',
         title='What connects the school budget to the town’s books, and what does not',

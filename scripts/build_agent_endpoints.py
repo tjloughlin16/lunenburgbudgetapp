@@ -68,8 +68,35 @@ def usd(n):
     return f'${round(n):,}'
 
 
+def worked_example():
+    """The three-step search example in llms.txt, read out of the index it describes.
+
+    It used to be typed: *position 1070 is the School Committee minutes of 24 June 2026*.
+    Republishing the index renumbers every document, and on 5 September that document
+    became 1091 while the sentence went on saying 1070 -- an instruction to an agent to
+    look in the wrong place, in the one file written for agents. Rule 2, in the smallest
+    possible form: derive it, never type it.
+    """
+    find = os.path.join(PUB, 'minutes', 'find')
+    shard = json.load(open(os.path.join(find, 'je.json')))
+    docs = json.load(open(os.path.join(find, 'documents.json')))
+    n = shard['jerseys'][0]
+    d = docs[n]
+    board = d['board'].replace('-', ' ').title()
+    when = date.fromisoformat(d['date']).strftime('%-d %B %Y')
+    local = os.path.join(ROOT, 'fy28', 'public', d['path'].lstrip('/'))
+    return {
+        'n': n,
+        'path': d['path'],
+        'what': f"{board} {d['kind']} of {when}",
+        'kb': round(os.path.getsize(local) / 1024) if os.path.exists(local) else 0,
+        'docs_kb': round(os.path.getsize(os.path.join(find, 'documents.json')) / 1024),
+    }
+
+
 def main():
     os.makedirs(DATA, exist_ok=True)
+    ex = worked_example()
     model = json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json')))
     sources = json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')))
 
@@ -268,14 +295,13 @@ def main():
         '',
         f'1. **Look up the word.** `{SITE}/minutes/find/je.json` — the shard for words '
         'beginning "je". Lowercase your word, take its first two characters, fetch that '
-        'file. It is an object of term to document numbers: `{"jerseys":[1070]}`. Shards '
-        'average 3KB. A word absent from its shard appears in no document, and a missing '
-        'shard file means no indexed word starts with those characters.',
-        f'2. **Resolve the numbers.** `{SITE}/minutes/find/documents.json` (220KB) — fetch '
-        'once and keep it. It is an array; position 1070 is the School Committee minutes '
-        'of 24 June 2026, carrying the path to fetch.',
-        f'3. **Read the document.** '
-        f'`{SITE}/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt`, 29KB. '
+        f'file. It is an object of term to document numbers: `{{"jerseys":[{ex["n"]}]}}`. '
+        'Shards average 3KB. A word absent from its shard appears in no document, and a '
+        'missing shard file means no indexed word starts with those characters.',
+        f'2. **Resolve the numbers.** `{SITE}/minutes/find/documents.json` '
+        f'({ex["docs_kb"]}KB) — fetch once and keep it. It is an array; position '
+        f'{ex["n"]} is the {ex["what"]}, carrying the path to fetch.',
+        f'3. **Read the document.** `{SITE}{ex["path"]}`, {ex["kb"]}KB. '
         'It is a resident telling the committee that field hockey is "using hand me down '
         'jerseys". Documents average 4.5KB. Cite this, never the index and never a bundle.',
         '',

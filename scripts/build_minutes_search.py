@@ -53,7 +53,19 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEXT = os.path.join(ROOT, 'fy28', 'public', 'docs', 'minutes', 'text')
-OUT = os.path.join(ROOT, 'fy28', 'public', 'meetings', 'find')
+# PUBLISHED AT /minutes/find/, and that is not negotiable by a folder rename.
+#
+# `sources/minutes/` became `sources/meetings/` on 4 September 2026 and this output
+# followed the source folder, so 476 files moved from /minutes/find/ to /meetings/find/.
+# Nothing that advertises them moved: llms.txt, the /agents page, the release notes and
+# this index's own README all still say /minutes/find/, and they are right -- a folder
+# name is internal and a URL is a contract. The result was that `documents.json` and
+# `coverage.json` 404'd while being cited as the way to use the shards, which makes the
+# shards useless: they return document numbers with nothing to resolve them against.
+#
+# It was invisible for a day because the old files were still being served from a
+# week-long edge cache. An agent found it, not a check.
+OUT = os.path.join(ROOT, 'fy28', 'public', 'minutes', 'find')
 SITE = 'https://lunenburgbudgetproject.org'
 
 # A term in nearly every document tells you nothing about which one to read, and its

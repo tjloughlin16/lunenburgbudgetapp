@@ -241,6 +241,43 @@ async function main() {
     console.log(`  ${stale ? 'FAIL' : ' ok '} ${names.length} analyses, ${stale} stale`)
   }
 
+  // Every URL llms.txt hands an agent must actually answer.
+  //
+  // This is the check that was missing. `sources/minutes/` was renamed `meetings/` and
+  // the word index's output folder followed it, so `/minutes/find/documents.json` and
+  // `/minutes/find/coverage.json` began returning 404 while llms.txt, the /agents page
+  // and the index's own README all went on citing them. Without documents.json the
+  // shards are useless -- they return document numbers and nothing to resolve them
+  // against. It was invisible for a day because a week-long edge cache kept serving the
+  // files from before the rename, and it was found by an agent, not by anything here.
+  //
+  // Derived from llms.txt rather than listed beside it, so a URL added to that file is
+  // checked from the moment it is added.
+  console.log('\nevery URL llms.txt advertises must answer')
+  {
+    const txt = await (await fetch(base + '/llms.txt')).text()
+    const urls = [...new Set(
+      [...txt.matchAll(/https:\/\/lunenburgbudgetproject\.org(\/[^\s`)\]<>"']*)/g)]
+        .map(m => m[1].replace(/[.,]$/, ''))
+        // A trailing slash means llms.txt was naming a folder in prose -- `/docs/minutes/
+        // text/<board>/...` -- not handing over an address. Only real files are checked.
+        .filter(u => !u.endsWith('/')))]
+    let bad = 0
+    for (const u of urls) {
+      const res = await fetch(base + u, { redirect: 'follow' })
+      const type = res.headers.get('content-type') || ''
+      // Under /docs, /data and /minutes nothing is ever an HTML page, so the app shell
+      // coming back with a 200 is the soft 404 this whole file exists to catch.
+      const isFile = /^\/(docs|data|minutes)\//.test(u)
+      const ok = res.status === 200 && !(isFile && type.includes('text/html'))
+      if (!ok) {
+        bad++
+        fails.push(`llms.txt advertises ${u} — got ${res.status} ${type.split(';')[0]}`)
+      }
+    }
+    console.log(`  ${bad ? 'FAIL' : ' ok '} ${urls.length} advertised URLs, ${bad} not answering`)
+  }
+
   console.log('\nllms.txt figures must match the model the app renders from')
   {
     const model = JSON.parse(await readFile(join(APP, 'src', 'data', 'model.json'), 'utf8'))
