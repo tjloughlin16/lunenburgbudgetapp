@@ -3,6 +3,12 @@
 **Scope.** One workstream: reorganising `sources/`, and moving the binaries out of git into
 a public R2 bucket. Written 5 September 2026 to survive a context reset.
 
+**READ `plans/REORG-HANDOFF.md` FIRST.** It was written 5 September at the end of the
+annual-report work and it supersedes several assumptions in this file and in
+`plans/ARCHIVE-STORAGE.md`. In particular it carries the dependency map — which scripts
+hold hardcoded paths into `sources/` — and that is the thing that decides whether a folder
+can be moved at all.
+
 **Do not confuse this with the other handoffs.** `notes/HANDOFF.md` is the project's
 standing state; `notes/HANDOFF-ANNUAL-REPORTS.md` and `plans/ANNUAL-REPORTS.md` belong to
 another agent's crawl work; `plans/PLAN.md` is the whole arc. This file covers only the
@@ -53,6 +59,11 @@ load-bearing against the repo before acting on it.
   URL is a contract `llms.txt` publishes and `documents.json` embeds 1,422 times.
 - **Renames agreed, not yet done:** `munis-ledgers/` → `town-ledgers/`, `dls/` →
   `state-dls/`, `dese/` → `state-dese/`, and optionally `peers/` → `peer-districts/`.
+  **Cost re-measured 5 September against the new dependency map: 12 scripts reference
+  `munis-ledgers`, 7 `dese`, 4 `dls`, 3 `peers`.** All mechanical string replacements, and
+  none of these folders appears in the annual-report pipeline's hardcoded paths — the
+  expensive folders there are `town-budget/{docs,ocr,pages,text}` and
+  `sources/data/{inventory,rosters}`, which are **not** being renamed.
   Named by publisher, never by contents — `state-free-cash/` was rejected because the name
   would become a lie the moment DLS publishes something else.
 - **Not renamed, deliberately:** `data/`, `docs/`+`text/` inside mirrors,
@@ -60,10 +71,19 @@ load-bearing against the repo before acting on it.
 
 ## Next actions, in order
 
-**Step 0 is a review, not a move.** `plans/ARCHIVE-STORAGE.md` lists seven things to check
-and why. The short version: the crawl was extended to a second document store and produces
-derived CSVs as well as files, and **the storage move takes a snapshot — anything wrong at
-that moment is copied into the bucket and versioned there.**
+**Step 0 is a review, not a move** — and most of it has now been done for you.
+`plans/REORG-HANDOFF.md` §2 and §3 list what is new and what depends on it, and §5 records
+that every check passes except `check_archive_layout.py`, which fails only on the 27
+duplicated mirror files. Read it rather than rediscovering it.
+
+What is left of step 0: confirm those checks still pass at the moment you start, because
+**the storage move takes a snapshot and anything wrong then is copied into the bucket and
+versioned there.**
+
+**The silent failure to watch for**, in their words: `extract_tables.py` reads the *page
+cache*, so moving `town-budget/docs/` would leave it producing the same rows off stale text
+— "silently correct-looking and no longer traceable to a document". A loud break is safe; a
+quiet one is not.
 
 Then: refresh the backup → do the four renames → re-apply the town split → confirm R2
 versioning and retention against current Cloudflare docs → create the bucket → push one
@@ -92,19 +112,30 @@ reset and `git gc` reclaimed it. **Check `.gitignore` after every folder rename.
 
 ## Backups
 
-Taken 4 September, before anything destructive, and must be refreshed before the next
-destructive step:
+**Use the other agent's. It is better than mine and it is current:**
 
-    ~/lunenburg-archive-backup/
-        sources/              3,432 files, 1.2 GB
-        MANIFEST-sha256.txt   3,428 hashes, verified
-        README.md             refresh, verify, restore
+    /Users/tj/lunenburgbudgets-backup-2026-09-05/lunenburgbudgets-2026-09-05.zip
 
-`sources/` has since grown to 1.5 GB, so **the backup is already stale.** Refresh it:
+3.1 GB, 19,765 entries, the whole repository including `.git`. CRC-verified with
+`unzip -t`, checked back against the live tree with `shasum -c`, with a sha256 manifest of
+all 16,503 working-tree files beside it. **A remote copy also exists.**
 
-    rsync -a --delete-after ~/lunenburgbudgets/sources/ ~/lunenburg-archive-backup/sources/
+My earlier `~/lunenburg-archive-backup/` (rsync of `sources/` only, 1.2 GB, taken
+4 September) is **stale and narrower** — `sources/` has since grown past 1.5 GB. Keep it or
+delete it, but do not rely on it.
 
-**Re-fetching is not a recovery path.** 57 source links died in one day in August 2026.
+**Two things in `sources/data/` cannot practically be regenerated** and are the reason a
+backup matters more than the byte count suggests:
+
+| | | |
+|---|---|---|
+| `sources/data/inventory/` | 1.1 MB | 16 per-report table catalogues, read page by page by an agent — many hours |
+| `sources/data/rosters/` | 1.4 MB | 200 roster page dumps and parsed JSON — same |
+
+`sources/town-budget/ocr/` (14 MB) is regenerable but costs **~2 hours** of OCR.
+
+**Re-fetching is not a recovery path either.** 57 source links died in one day in August
+2026.
 
 ## What has been sent to the Town
 
