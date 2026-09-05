@@ -276,6 +276,11 @@ def sha256_of(path):
 # So every table is published. Large ones are split by fiscal year rather than truncated,
 # because the alternative -- a 3 MB blob -- is a resource nobody can afford to fetch, and
 # this API already learned that with the budget lines.
+# Caveats for tables that have no hand-written entry in TABLES but need one anyway.
+EXTRA_CAVEATS = {
+    'staff_roster_entries': ['POSITION IS OUR CLASSIFICATION AND IT FAILS IN SOME YEARS. It is mapped from the printed job title, and the print changes: FY2012 says "Tutor", FY2013 "Aide", FY2014 "Paraprofessional" — and once "Paraprotessional", an OCR typo that drops that person from the count. FY2015 printed the page in two columns, which the extractor collapsed, leaving five people with no title at all. So a series counting paraprofessionals in the Kindergarten section reads 0, 5, 4, 4, 0 for FY2011–FY2015 across roughly the same five people. THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING. Found by an assistant reading the rows, not by any check here. Use `role_raw`, which is what the report actually printed, before trusting `position`.'],
+}
+
 SHARD_ABOVE = 400 * 1024
 YEAR_COLUMNS = ('fy', 'fiscal_year', 'edition', 'year')
 
@@ -302,7 +307,7 @@ def publish_tables(db, written, already):
         meta = TABLES.get(name, {})
         about = meta.get('what') or (
             f'The `{name}` table, published whole. See /api/schema for its grain.')
-        caveats = list(meta.get('caveats', ()))
+        caveats = list(meta.get('caveats', ())) + EXTRA_CAVEATS.get(name, [])
 
         def payload(rs, note=''):
             body = resource(db, name, rs, doc_field=doc_field or 'doc_id',

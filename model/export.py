@@ -1,3 +1,4 @@
+import os
 import re
 import sys, json, csv
 sys.path.insert(0, 'model')
@@ -248,9 +249,41 @@ _BARE = re.compile(r'(?<!lunenburgbudgetproject\.org)(?<![\w/])(/(?:data|docs|ap
                    r'/[A-Za-z0-9._/-]+)')
 
 
+# AND A PATH TO A FILE TOO BIG TO FETCH IS UPGRADED TO THE FORM THAT FITS.
+#
+# An assistant asked for kindergarten paraprofessionals followed citation 10 -- correctly,
+# it is the citation that names the source -- to `/data/staff-roster-entries.csv`, 435KB.
+# Its fetch stopped at about 40%, mid-name, mid-2015, with no marker saying so, and it
+# reported ten fiscal years as unreachable. `llms.txt` had already been changed to say
+# "fetch this, not the CSV"; the citation had not, and a careful reader follows the
+# citation.
+#
+# So: where a dataset is published in the API AS ONE FILE PER FISCAL YEAR -- which is done
+# only when the whole file is too large for one fetch -- prose naming the CSV is rewritten
+# to name the API resource. Small CSVs are left alone; there is nothing wrong with them.
+_API = os.path.join('fy28', 'public', 'api')
+
+
+def _split_datasets():
+    out = {}
+    if not os.path.isdir(_API):
+        return out
+    for entry in os.listdir(_API):
+        full = os.path.join(_API, entry)
+        if os.path.isdir(full) and os.path.exists(full + '.json'):
+            out['/data/' + entry.replace('_', '-') + '.csv'] = '/api/' + entry
+    return out
+
+
+SPLIT = _split_datasets()
+
+
 def absolutise(node):
     if isinstance(node, str):
-        return _BARE.sub(lambda m: SITE + m.group(1).rstrip('.'), node)
+        def one(m):
+            path = m.group(1).rstrip('.')
+            return SITE + SPLIT.get(path, path)
+        return _BARE.sub(one, node)
     if isinstance(node, list):
         return [absolutise(v) for v in node]
     if isinstance(node, dict):

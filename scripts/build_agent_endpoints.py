@@ -102,8 +102,9 @@ NOT_KNOWN = [
         settled_by='sources/data/staff-roster-entries.csv',
         text='Whether budgeted positions were **filled** — BOUNDED, not settled. The town '
              'prints per-school staff rosters, by name and position, in every annual '
-             'report from FY2011 to FY2025: `{SITE}/data/staff-roster-entries.csv`, 3,815 '
-             'rows, and `{SITE}/data/staff-roster-counts.csv` for the counts. But a roster '
+             'report from FY2011 to FY2025: `{SITE}/api/staff_roster_entries`, 3,815 '
+             'rows as one file per fiscal year, and `{SITE}/data/staff-roster-counts.csv` '
+             'for the counts. But a roster '
              'carries **no FTE**, so a 0.4 music teacher and a full-timer are one row '
              'each; **no funding source**, which is the question that actually matters; '
              'and it is a point in time, undated within the year. A count of names the '
@@ -127,8 +128,13 @@ def not_known_lines():
         settled = os.path.join(ROOT, e['settled_by'])
         if not os.path.exists(settled):
             continue
-        public = '/data/' + os.path.basename(e['settled_by'])
-        if public not in e['text']:
+        # Either address satisfies this: the CSV, or the API resource that publishes the
+        # same rows in pieces. What must not happen is the sentence naming neither.
+        base = os.path.basename(e['settled_by'])
+        forms = ['/data/' + base,
+                 '/api/' + os.path.splitext(base)[0].replace('-', '_')]
+        public = forms[0]
+        if not any(f in e['text'] for f in forms):
             stale.append(f"{e['settled_by']} now exists, and the entry that says this "
                          f"site does not have it never mentions {public}")
     if stale:
@@ -267,7 +273,8 @@ def main():
          'as one file per fiscal year, about 60KB each. '
          'It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a '
          'full-timer are one row each; there is no funding source, which is the question '
-         'that actually matters; and it is a point in time, undated within the year.'),
+         'that actually matters; and it is a point in time, undated within the year. '
+         'POSITION IS OUR CLASSIFICATION AND IT FAILS IN SOME YEARS. It is mapped from the printed job title, and the print changes: FY2012 says "Tutor", FY2013 "Aide", FY2014 "Paraprofessional" — and once "Paraprotessional", an OCR typo that drops that person from the count. FY2015 printed the page in two columns, which the extractor collapsed, leaving five people with no title at all. So a series counting paraprofessionals in the Kindergarten section reads 0, 5, 4, 4, 0 for FY2011–FY2015 across roughly the same five people. THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING. Found by an assistant reading the rows, not by any check here. Use `role_raw`, which is what the report actually printed, before trusting `position`.'),
         (os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv'),
          'staff-roster-counts.csv',
          'The same rosters counted by year, school and position — 699 rows. Use this '

@@ -27,7 +27,7 @@
  {
   "name": "model.json",
   "note": "Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.",
-  "bytes": 317442
+  "bytes": 317427
  },
  {
   "name": "sources.json",
@@ -46,7 +46,7 @@
  },
  {
   "name": "staff-roster-entries.csv",
-  "note": "Every name and position the town printed in its per-school staff rosters, FY2011 to FY2025 \u2014 3,815 rows across 51 roster blocks, with the school, the page it came from and the heading it sat under. Published because it is the only published quantity that bears on whether budgeted positions were filled. At 435KB this file is more than some callers can fetch in one piece; https://lunenburgbudgetproject.org/api/staff_roster_entries is the same rows as one file per fiscal year, about 60KB each. It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a full-timer are one row each; there is no funding source, which is the question that actually matters; and it is a point in time, undated within the year.",
+  "note": "Every name and position the town printed in its per-school staff rosters, FY2011 to FY2025 \u2014 3,815 rows across 51 roster blocks, with the school, the page it came from and the heading it sat under. Published because it is the only published quantity that bears on whether budgeted positions were filled. At 435KB this file is more than some callers can fetch in one piece; https://lunenburgbudgetproject.org/api/staff_roster_entries is the same rows as one file per fiscal year, about 60KB each. It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a full-timer are one row each; there is no funding source, which is the question that actually matters; and it is a point in time, undated within the year. POSITION IS OUR CLASSIFICATION AND IT FAILS IN SOME YEARS. It is mapped from the printed job title, and the print changes: FY2012 says \"Tutor\", FY2013 \"Aide\", FY2014 \"Paraprofessional\" \u2014 and once \"Paraprotessional\", an OCR typo that drops that person from the count. FY2015 printed the page in two columns, which the extractor collapsed, leaving five people with no title at all. So a series counting paraprofessionals in the Kindergarten section reads 0, 5, 4, 4, 0 for FY2011\u2013FY2015 across roughly the same five people. THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING. Found by an assistant reading the rows, not by any check here. Use `role_raw`, which is what the report actually printed, before trusting `position`.",
   "bytes": 445869
  },
  {
