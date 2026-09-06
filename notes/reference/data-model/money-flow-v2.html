@@ -1,0 +1,215 @@
+<meta charset="utf-8">
+<title>How money reaches the schools — Lunenburg FY2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --traced-bg:#dfeee6;
+  --school:#9a4f14; --school-bg:#f7e7d8;
+  --warn:#8a6d10; --warn-bg:#faf3de;
+  --potbg:#2c2b28; --potink:#f2efe9;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --traced-bg:#1d3129; --school:#e2a068; --school-bg:#33231a;
+    --warn:#d9bd67; --warn-bg:#2c2718; --potbg:#e8e4dc; --potink:#1a1a18; }
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100%; }
+.wrap { max-width:1180px; margin:0 auto; padding:22px 16px 80px }
+header { border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }
+.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+h1 { font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
+.standfirst { font-size:16px; color:var(--muted); margin:0 }
+.stage { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }
+.stage.alt { background:transparent }
+h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
+.cap { font-size:13.5px; color:var(--muted); margin:0 0 14px }
+.bars { display:flex; flex-direction:column; gap:9px }
+.row { display:grid; grid-template-columns:1fr 34%; grid-template-areas:"lab amt" "bar bar";
+  gap:3px 10px; align-items:baseline }
+.lab { grid-area:lab; font-size:13.5px; font-weight:600; min-width:0;
+  overflow-wrap:anywhere }
+.lab .sub { display:block; font-weight:400; font-size:11.5px; color:var(--muted) }
+.amt { grid-area:amt; text-align:right; font-size:13.5px; white-space:nowrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace }
+.track { grid-area:bar; background:var(--grid); border-radius:3px; height:9px; width:100% }
+.fill { background:var(--traced); height:100%; border-radius:3px; min-width:2px }
+.row.hi .fill { background:var(--school) }
+.row.hi .lab { color:var(--school) }
+.pot { background:var(--potbg); color:var(--potink); border-radius:10px;
+  padding:18px 16px; margin:16px 0 }
+.pot h2 { color:var(--potink) }
+.pot p { font-size:14px; margin:8px 0 0 }
+.potline { font-family:ui-monospace,Menlo,monospace; font-size:15px; margin:0 }
+.refuse { border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }
+.warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
+  padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
+.metrics { display:grid; gap:10px; margin:16px 0 10px }
+.m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
+  background:var(--card) }
+.m.hi { border-color:var(--school); border-width:2px; background:var(--school-bg) }
+.mk { font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  color:var(--muted) }
+.m.hi .mk { color:var(--school) }
+.mv { font-size:25px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
+  font-family:ui-monospace,Menlo,monospace }
+.ms { font-size:12.5px; color:var(--muted); line-height:1.45 }
+@media (min-width:760px) { .metrics { grid-template-columns:repeat(3,1fr) } }
+.scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 }
+svg.flow { display:block; min-width:900px; height:auto }
+.dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
+.b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
+.b.core rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }
+.b.fund rect { fill:var(--traced-bg); stroke:var(--traced) }
+.b.grant rect { fill:var(--traced-bg); stroke:var(--traced); stroke-dasharray:5 3 }
+.b.missing rect { fill:var(--warn-bg); stroke:var(--warn); stroke-dasharray:3 3 }
+.b.prog rect { fill:var(--school-bg); stroke:var(--school) }
+.b.alt rect { fill:none; stroke:var(--muted); stroke-dasharray:5 4 }
+.bl { font-size:12.5px; font-weight:600; fill:var(--ink) }
+.bv { font-size:12px; fill:var(--muted); font-family:ui-monospace,Menlo,monospace }
+.e { fill:none; stroke-width:2 }
+.e.traced { stroke:var(--school); opacity:.55 }
+.e.restricted { stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }
+.e.missing { stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }
+.e.unknown { stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }
+.key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin:-4px 0 6px }
+.key span { display:flex; align-items:center; gap:6px }
+.k { width:22px; height:0; border-top:2px solid; display:inline-block }
+.k.traced { border-color:var(--school) }
+.k.restricted { border-top-style:dashed; border-color:var(--traced) }
+.k.missing { border-top-style:dotted; border-width:3px; border-color:var(--warn) }
+/* Two columns on a wide screen, one on a phone. The columns are a reading aid, not
+   the information: every landing box names its own sources, so nothing is lost when
+   they stack. Connector lines were tried and are unreadable at this density. */
+.cols { display:grid; gap:16px; margin:16px 0 }
+.col { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:15px 14px; min-width:0 }
+.col h2 { margin:0 }
+.colnote { font-size:12.5px; color:var(--muted); margin:2px 0 12px }
+.col h3 { font-size:12px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin:18px 0 8px; font-weight:700 }
+.intro { margin:14px 0 }
+.intro p { margin:0 0 6px }
+.core { background:var(--school-bg); border:2px solid var(--school); border-radius:8px;
+  padding:13px 14px }
+.corehd { font-size:11px; letter-spacing:.1em; font-weight:700; color:var(--school) }
+.coreamt { font-size:26px; font-weight:700; letter-spacing:-.02em;
+  font-family:ui-monospace,Menlo,monospace }
+.coresub { font-size:12.5px; color:var(--muted); margin-top:4px }
+.prog { border:1px solid var(--grid); border-radius:8px; padding:11px 12px; margin:9px 0 }
+.prog.alt { border-style:dashed }
+.proghd { display:flex; justify-content:space-between; gap:10px; align-items:baseline;
+  font-weight:700; font-size:14.5px }
+.progtot { font-family:ui-monospace,Menlo,monospace; font-size:13px; white-space:nowrap;
+  color:var(--muted); font-weight:400 }
+.line { display:grid; grid-template-columns:auto auto 1fr; gap:8px; align-items:baseline;
+  font-size:12.5px; margin-top:7px; padding-top:6px; border-top:1px dotted var(--grid) }
+.tag { font-size:10px; letter-spacing:.05em; text-transform:uppercase; font-weight:700;
+  padding:1px 6px; border-radius:3px; white-space:nowrap }
+.line.in .tag { background:var(--school-bg); color:var(--school) }
+.line.out .tag { background:var(--traced-bg); color:var(--traced) }
+.line.restricted .tag { background:var(--warn-bg); color:var(--warn) }
+.line.missing .tag { background:var(--warn-bg); color:var(--warn);
+  outline:1px dashed var(--warn) }
+.line .v { font-family:ui-monospace,Menlo,monospace; font-weight:600; white-space:nowrap }
+.line .src { color:var(--muted) }
+.progwhy { font-size:12.5px; color:var(--muted); margin-top:8px }
+.miss { background:var(--warn-bg); border-left:3px solid var(--warn); padding:10px 12px;
+  border-radius:0 6px 6px 0; font-size:13px; margin-top:12px }
+table { border-collapse:collapse; width:100%; margin-top:4px }
+td { padding:9px 0; border-bottom:1px solid var(--grid); font-size:14px; vertical-align:top }
+td .sub { display:block; font-size:11.5px; color:var(--muted) }
+td.v { text-align:right; white-space:nowrap; font-weight:600;
+  font-family:ui-monospace,Menlo,monospace }
+code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
+.gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:900px) {
+  .cols { grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); align-items:start }
+}
+@media (min-width:680px) {
+  .row { grid-template-columns:38% 1fr 22%; grid-template-areas:"lab bar amt"; gap:12px;
+    align-items:center }
+  .track { height:11px }
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
+  <h1>How money reaches the schools</h1>
+  <p class="standfirst">FY2026, from every source the town budgets to the 258 accounts the
+  school department spends from &mdash; and the one connection in the middle that cannot be
+  drawn, because no record ties a source to a department.</p>
+</header>
+
+<section class="metrics"><div class="m"><div class="mk">Appropriated to the schools</div><div class="mv">$26,247,474</div><div class="ms">Department 300. <b>The number in every headline.</b></div></div><div class="m"><div class="mk">Every box on the right, added</div><div class="mv">$33,220,787</div><div class="ms"><b>This column adds.</b> Each dollar appears exactly once, which is the whole change from version one.</div></div><div class="m hi"><div class="mk">Not in the school budget</div><div class="mv">+$6,973,313</div><div class="ms">Education the town appropriates elsewhere, plus everything the district spends from its own funds and grants.</div></div></section>
+<p class="warn"><b>Mixed bases, and it cannot be helped.</b> The appropriation is a budget as voted; fund and grant figures are nine months of ACTUAL spending, because the town publishes no twelve-month fund report. The pension is included at its full $2,392,572 even though only some of it is schools — <b>so the right-hand total is an over-count by an unknown amount, and every other figure here is a floor.</b></p>
+<div class="scroll"><svg viewBox="0 0 890 1106" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Where each dollar of school money is spent, counted once">
+<text class="dhd" x="20" y="26">SOURCES</text>
+<text class="dhd" x="610" y="26">WHERE IT IS SPENT — each dollar once</text>
+<path class="e traced" d="M274,71.0 C442.0,71.0 442.0,71.0 610,71.0"/>
+<path class="e traced" d="M274,71.0 C442.0,71.0 442.0,129.0 610,129.0"/>
+<path class="e traced" d="M274,71.0 C442.0,71.0 442.0,187.0 610,187.0"/>
+<path class="e unknown" d="M274,71.0 C442.0,71.0 442.0,245.0 610,245.0"/>
+<path class="e traced" d="M274,71.0 C442.0,71.0 442.0,303.0 610,303.0"/>
+<path class="e restricted" d="M274,419.0 C442.0,419.0 442.0,419.0 610,419.0"/>
+<path class="e restricted" d="M274,477.0 C442.0,477.0 442.0,477.0 610,477.0"/>
+<path class="e missing" d="M274,535.0 C442.0,535.0 442.0,535.0 610,535.0"/>
+<path class="e restricted" d="M274,593.0 C442.0,593.0 442.0,593.0 610,593.0"/>
+<path class="e restricted" d="M274,651.0 C442.0,651.0 442.0,651.0 610,651.0"/>
+<path class="e restricted" d="M274,709.0 C442.0,709.0 442.0,709.0 610,709.0"/>
+<path class="e restricted" d="M274,767.0 C442.0,767.0 442.0,767.0 610,767.0"/>
+<path class="e restricted" d="M274,825.0 C442.0,825.0 442.0,825.0 610,825.0"/>
+<path class="e restricted" d="M274,883.0 C442.0,883.0 442.0,883.0 610,883.0"/>
+<path class="e restricted" d="M274,941.0 C442.0,941.0 442.0,883.0 610,883.0"/>
+<path class="e restricted" d="M274,999.0 C442.0,999.0 442.0,883.0 610,883.0"/>
+<path class="e restricted" d="M274,1057.0 C442.0,1057.0 442.0,883.0 610,883.0"/>
+<g class="b core"><rect x="20" y="48" width="254" height="46" rx="5"/><text class="bl" x="30" y="67">General fund — appropriated</text><text class="bv" x="30" y="83">$29,110,331</text></g>
+<g class="b fund"><rect x="20" y="396" width="254" height="46" rx="5"/><text class="bl" x="30" y="415">2640 Special Ed Circuit Breaker</text><text class="bv" x="30" y="431">$325,970</text></g>
+<g class="b grant"><rect x="20" y="454" width="254" height="46" rx="5"/><text class="bl" x="30" y="473">Federal and state grants</text><text class="bv" x="30" y="489">$495,918</text></g>
+<g class="b missing"><rect x="20" y="512" width="254" height="46" rx="5"/><text class="bl" x="30" y="531">Bus fees — charged</text><text class="bv" x="30" y="547">not found</text></g>
+<g class="b fund"><rect x="20" y="570" width="254" height="46" rx="5"/><text class="bl" x="30" y="589">1301 Chapter 658 Revolving Fund</text><text class="bv" x="30" y="605">$160,164</text></g>
+<g class="b fund"><rect x="20" y="628" width="254" height="46" rx="5"/><text class="bl" x="30" y="647">2200 School Lunch Revolving</text><text class="bv" x="30" y="663">$572,231</text></g>
+<g class="b fund"><rect x="20" y="686" width="254" height="46" rx="5"/><text class="bl" x="30" y="705">1312 Extended Day Revolving Fun</text><text class="bv" x="30" y="721">$192,943</text></g>
+<g class="b fund"><rect x="20" y="744" width="254" height="46" rx="5"/><text class="bl" x="30" y="763">1305 After School Activities Fu</text><text class="bv" x="30" y="779">$111,376</text></g>
+<g class="b fund"><rect x="20" y="802" width="254" height="46" rx="5"/><text class="bl" x="30" y="821">1306 School Facilities Use Revo</text><text class="bv" x="30" y="837">$18,670</text></g>
+<g class="b fund"><rect x="20" y="860" width="254" height="46" rx="5"/><text class="bl" x="30" y="879">1308 School Choice Revolving</text><text class="bv" x="30" y="895">$83,116</text></g>
+<g class="b fund"><rect x="20" y="918" width="254" height="46" rx="5"/><text class="bl" x="30" y="937">1311 School Gift Fund</text><text class="bv" x="30" y="953">$22,486</text></g>
+<g class="b fund"><rect x="20" y="976" width="254" height="46" rx="5"/><text class="bl" x="30" y="995">1300 Lost Books/Tech Rev Fund</text><text class="bv" x="30" y="1011">$2,860</text></g>
+<g class="b fund"><rect x="20" y="1034" width="254" height="46" rx="5"/><text class="bl" x="30" y="1053">1302 Adult Education Revolving </text><text class="bv" x="30" y="1069">$4,000</text></g>
+<g class="b core"><rect x="610" y="48" width="254" height="46" rx="5"/><text class="bl" x="620" y="67">THE SCHOOL BUDGET</text><text class="bv" x="620" y="83">$26,247,474</text></g>
+<g class="b alt"><rect x="610" y="106" width="254" height="46" rx="5"/><text class="bl" x="620" y="125">Monty Tech assessment</text><text class="bv" x="620" y="141">$1,334,521</text></g>
+<g class="b alt"><rect x="610" y="164" width="254" height="46" rx="5"/><text class="bl" x="620" y="183">School retiree health</text><text class="bv" x="620" y="199">$1,521,536</text></g>
+<g class="b alt"><rect x="610" y="222" width="254" height="46" rx="5"/><text class="bl" x="620" y="241">Pension — share unknown</text><text class="bv" x="620" y="257">$2,392,572</text></g>
+<g class="b alt"><rect x="610" y="280" width="254" height="46" rx="5"/><text class="bl" x="620" y="299">School resource stipend</text><text class="bv" x="620" y="315">$6,800</text></g>
+<g class="b prog"><rect x="610" y="396" width="254" height="46" rx="5"/><text class="bl" x="620" y="415">Circuit breaker fund spent</text><text class="bv" x="620" y="431">$4,005</text></g>
+<g class="b prog"><rect x="610" y="454" width="254" height="46" rx="5"/><text class="bl" x="620" y="473">Grant funds spent</text><text class="bv" x="620" y="489">$495,918</text></g>
+<g class="b missing"><rect x="610" y="512" width="254" height="46" rx="5"/><text class="bl" x="620" y="531">Bus fee spending</text><text class="bv" x="620" y="547">not found</text></g>
+<g class="b prog"><rect x="610" y="570" width="254" height="46" rx="5"/><text class="bl" x="620" y="589">Athletics fund spent</text><text class="bv" x="620" y="605">$100,467</text></g>
+<g class="b prog"><rect x="610" y="628" width="254" height="46" rx="5"/><text class="bl" x="620" y="647">Lunch fund spent</text><text class="bv" x="620" y="663">$739,586</text></g>
+<g class="b prog"><rect x="610" y="686" width="254" height="46" rx="5"/><text class="bl" x="620" y="705">Extended day fund spent</text><text class="bv" x="620" y="721">$233,350</text></g>
+<g class="b prog"><rect x="610" y="744" width="254" height="46" rx="5"/><text class="bl" x="620" y="763">After school fund spent</text><text class="bv" x="620" y="779">$95,196</text></g>
+<g class="b prog"><rect x="610" y="802" width="254" height="46" rx="5"/><text class="bl" x="620" y="821">Facilities use fund spent</text><text class="bv" x="620" y="837">$12,354</text></g>
+<g class="b prog"><rect x="610" y="860" width="254" height="46" rx="5"/><text class="bl" x="620" y="879">Other own funds spent</text><text class="bv" x="620" y="895">$37,010</text></g>
+</svg></div>
+<div class="key"><span><i class="k traced"></i>traced</span><span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never observed</b></span><span><i class="k missing"></i>collected, cannot be located</span></div>
+<section class="stage"><h2>What a fund box on the right does NOT say</h2><p>Only that the fund spent the money. <b>Not what it bought.</b> There is no expense report for the special revenue funds, and fund 1301 — the one fund with a transaction journal — records <b>no vendor on any of its 46 FY26 payments</b>. So “Athletics fund spent” means money left that fund. That it went to athletics is the statute talking, not the ledger.</p><p class="cap">No offset edges are drawn. The district publishes three amounts (Extended Day $71,247, Facilities $25,000, Athletic $20,000) and none for lunch, school choice, the circuit breaker or the grants. Drawing an edge only where an amount happens to be published would imply the others have no offset, which is a stronger claim than we can make.</p></section>
+<section class="stage"><h2>The programme view — a different lens</h2><p class="cap">What each programme costs across both sides. <b>These figures overlap the diagram above and must never be added to it</b> — most of each row is already inside the school budget box.</p><table><tr><th>programme</th><th class="v">in the budget</th><th class="v">from funds</th><th class="v">total</th></tr>
+<tr><td>Special education</td><td class="v">$5,909,548</td><td class="v">$420,133</td><td class="v"><b>$6,329,681</b></td></tr>
+<tr><td>Transportation</td><td class="v">$1,531,234</td><td class="v">not found</td><td class="v"><b>$1,531,234</b></td></tr>
+<tr><td>Athletics</td><td class="v">$518,334</td><td class="v">$100,467</td><td class="v"><b>$618,801</b></td></tr>
+<tr><td>Food service</td><td class="v">—</td><td class="v">$739,586</td><td class="v"><b>$739,586</b></td></tr>
+<tr><td>Extended day and after school</td><td class="v">—</td><td class="v">$340,899</td><td class="v"><b>$340,899</b></td></tr>
+</table><p class="warn"><b>Athletics is the case to read.</b> The town appropriates $518,334 and the district’s own athletics documents record a further $335,856 through the revolving fund. And the district’s FY26 budget overview says why the line moves: it was cut <i>“with anticipation that athletic revolving may be enough to offset this reduction in the budget line”</i> — and the next year, <i>“athletic revolving can not support these increased costs”</i>, at a 254% line increase.</p></section>
+
+<p class="gen">Generated by <code>scripts/build_money_flow.py</code> from
+<code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
+fails if this file stops reproducing. Companion to <code>money-in.html</code>, kept
+unchanged beside it.</p>
+</div>

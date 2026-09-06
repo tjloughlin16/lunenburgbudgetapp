@@ -62,6 +62,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow.html')
+OUT2 = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow-v2.html')
 
 FY = 2026
 P_DEPT = 9      # the report that carries department-level rows
@@ -791,6 +792,205 @@ unchanged beside it.</p>
 '''
 
 
+# The layout for v2. Same idea — a source beside the thing it pays for — but the right
+# column now holds each dollar ONCE, so it can be added down.
+LAYOUT2 = [
+    ('appropriation', 'core'),
+    (None, 'MONTY'),
+    (None, 'RETHLTH'),
+    (None, 'PENSION'),
+    (None, 'STIPEND'),
+    (None, None),
+    ('2640', 'sp-2640'),
+    ('grants', 'sp-grants'),
+    ('BUSFEES', 'sp-bus'),
+    ('1301', 'sp-1301'),
+    ('2200', 'sp-2200'),
+    ('1312', 'sp-1312'),
+    ('1305', 'sp-1305'),
+    ('1306', 'sp-1306'),
+    ('1308', 'sp-other'),
+    ('1311', None),
+    ('1300', None),
+    ('1302', None),
+]
+
+
+def render_v2(c):
+    """The same money, drawn so that every dollar appears exactly once.
+
+    WHY THIS EXISTS BESIDE THE FIRST VERSION
+
+    In `money-flow.html` the right column mixes two kinds of thing: a CONTAINER (the school
+    budget) and PROGRAMMES that are partly inside it. `Special education $6,329,681` sits
+    under `THE SCHOOL BUDGET $26,247,474` and $5.9M of it is already counted there. A column
+    of numbers invites being added, and that one cannot be. TJ: *"it cannot be
+    'incorrect'."*
+
+    So here the right column is **where money is spent, each dollar once**: the
+    appropriation, the education the town appropriates to other departments, and each
+    fund's own spending. It adds.
+
+    WHAT IS LOST, AND WHERE IT WENT
+
+    The programme totals — the finding that athletics really costs $618,801 against a
+    budget line of $518,334 — are the best thing on the first version. They move to a table
+    below the diagram, under their own heading, marked as a different lens. They are not
+    deleted; they are moved out of a column somebody would sum.
+
+    WHAT A FUND BOX ON THE RIGHT CAN AND CANNOT SAY
+
+    Only that the fund spent the money. **Not what it bought.** No expense report exists for
+    the special revenue funds, and even fund 1301 — the one fund with a transaction journal
+    — records no vendor on any of its 46 FY26 payments. So every fund box says *purpose
+    presumed*, and the presumption is the statute or the grant award, never an observation.
+
+    NO OFFSET EDGES YET. The district documents three (Extended Day $71,247, Facilities
+    $25,000, Athletic $20,000) and publishes none for lunch, choice, the circuit breaker or
+    the grants. Drawing an edge only where an amount happens to be published would imply
+    the others have no offset, which is a stronger claim than we can make. The mechanism is
+    described in text below instead.
+    """
+    fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
+    funds = own_funds(c)
+    progs, d300 = programme_rows(c, fundnames)
+    ath_gen, ath_rev = athletics(c)
+    grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
+                                WHERE fy={FY} AND period={P_DEPT} AND spent>0
+                                  AND (revenue IS NULL OR revenue=0)""").fetchone()['v'] or 0
+    spent = {r['fund']: (r['spent'] or 0) for r in c.execute(f"""
+        SELECT fund, spent FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""")}
+    els = {a: c.execute(f"""SELECT original v FROM ledger_snapshot WHERE fy={FY}
+              AND period={P_ACCT} AND account_id=?""", (a,)).fetchone() for a, _, _ in ELSEWHERE_MAP}
+    els = {a: (r['v'] if r else 0) for a, r in els.items()}
+
+    LH, GAP, BW = 46, 12, 254
+    LX, RX, W = 20, 610, 890
+    fundrev = {f: rev for f, nm, rev, sp in funds}
+    lbox = {'appropriation': ('General fund — appropriated',
+                              d300 + sum(v for k, v in els.items()
+                                         if not k.endswith('560001')), 'core'),
+            'grants': ('Federal and state grants', grant_spend, 'grant'),
+            'BUSFEES': ('Bus fees — charged', None, 'missing')}
+    for f, nm, rev, sp in funds:
+        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund')
+
+    OTHER = ('1308', '1311', '1300', '1302')
+    rbox = {
+        'core': ('THE SCHOOL BUDGET', d300, 'core'),
+        'MONTY': ('Monty Tech assessment', els['0100-13102-532000'], 'alt'),
+        'RETHLTH': ('School retiree health', els['0100-19142-570018'], 'alt'),
+        'PENSION': ('Pension — share unknown', els['0100-18202-560001'], 'alt'),
+        'STIPEND': ('School resource stipend', els['0100-12101-519021'], 'alt'),
+        'sp-2640': ('Circuit breaker fund spent', spent.get('2640', 0), 'prog'),
+        'sp-grants': ('Grant funds spent', grant_spend, 'prog'),
+        'sp-bus': ('Bus fee spending', None, 'missing'),
+        'sp-1301': ('Athletics fund spent', spent.get('1301', 0), 'prog'),
+        'sp-2200': ('Lunch fund spent', spent.get('2200', 0), 'prog'),
+        'sp-1312': ('Extended day fund spent', spent.get('1312', 0), 'prog'),
+        'sp-1305': ('After school fund spent', spent.get('1305', 0), 'prog'),
+        'sp-1306': ('Facilities use fund spent', spent.get('1306', 0), 'prog'),
+        'sp-other': ('Other own funds spent', sum(spent.get(f, 0) for f in OTHER), 'prog'),
+    }
+    edges = [('appropriation', k, 'unknown' if k == 'PENSION' else 'traced')
+             for k in ('core', 'MONTY', 'RETHLTH', 'PENSION', 'STIPEND')]
+    edges += [('2640', 'sp-2640', 'restricted'), ('grants', 'sp-grants', 'restricted'),
+              ('BUSFEES', 'sp-bus', 'missing'), ('1301', 'sp-1301', 'restricted'),
+              ('2200', 'sp-2200', 'restricted'), ('1312', 'sp-1312', 'restricted'),
+              ('1305', 'sp-1305', 'restricted'), ('1306', 'sp-1306', 'restricted')]
+    edges += [(f, 'sp-other', 'restricted') for f in OTHER]
+
+    ly, ry, row = {}, {}, 0
+    for lk, rk in LAYOUT2:
+        y = 48 + row * (LH + GAP)
+        if lk and lk in lbox:
+            ly[lk] = y
+        if rk and rk in rbox:
+            ry[rk] = y
+        row += 1
+    H = 48 + row * (LH + GAP) + 14
+
+    o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
+         f'role="img" aria-label="Where each dollar of school money is spent, counted once">',
+         '<text class="dhd" x="20" y="26">SOURCES</text>',
+         f'<text class="dhd" x="{RX}" y="26">WHERE IT IS SPENT — each dollar once</text>']
+    for src, dst, how in edges:
+        if src not in ly or dst not in ry:
+            continue
+        y1, y2 = ly[src] + LH / 2, ry[dst] + LH / 2
+        x1, x2, mx = LX + BW, RX, (LX + BW + RX) / 2
+        o.append(f'<path class="e {how}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
+    for boxes, ys, x in ((lbox, ly, LX), (rbox, ry, RX)):
+        for key, y in ys.items():
+            label, val, kind = boxes[key]
+            o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{BW}" '
+                     f'height="{LH}" rx="5"/>'
+                     f'<text class="bl" x="{x+10}" y="{y+19}">{html.escape(label)}</text>'
+                     f'<text class="bv" x="{x+10}" y="{y+35}">'
+                     f'{money(val) if val is not None else "not found"}</text></g>')
+    o.append('</svg>')
+
+    right_total = sum(v for _, v, _ in rbox.values() if v is not None)
+    P = [f'<section class="metrics">'
+         f'<div class="m"><div class="mk">Appropriated to the schools</div>'
+         f'<div class="mv">{money(d300)}</div><div class="ms">Department 300. '
+         f'<b>The number in every headline.</b></div></div>'
+         f'<div class="m"><div class="mk">Every box on the right, added</div>'
+         f'<div class="mv">{money(right_total)}</div>'
+         f'<div class="ms"><b>This column adds.</b> Each dollar appears exactly once, '
+         f'which is the whole change from version one.</div></div>'
+         f'<div class="m hi"><div class="mk">Not in the school budget</div>'
+         f'<div class="mv">+{money(right_total - d300)}</div>'
+         f'<div class="ms">Education the town appropriates elsewhere, plus everything the '
+         f'district spends from its own funds and grants.</div></div></section>',
+         f'<p class="warn"><b>Mixed bases, and it cannot be helped.</b> The appropriation '
+         f'is a budget as voted; fund and grant figures are nine months of ACTUAL spending, '
+         f'because the town publishes no twelve-month fund report. The pension is included '
+         f'at its full {money(els["0100-18202-560001"])} even though only some of it is '
+         f'schools — <b>so the right-hand total is an over-count by an unknown amount, and '
+         f'every other figure here is a floor.</b></p>',
+         f'<div class="scroll">{chr(10).join(o)}</div>',
+         '<div class="key"><span><i class="k traced"></i>traced</span>'
+         '<span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never '
+         'observed</b></span>'
+         '<span><i class="k missing"></i>collected, cannot be located</span></div>',
+         '<section class="stage"><h2>What a fund box on the right does NOT say</h2>'
+         '<p>Only that the fund spent the money. <b>Not what it bought.</b> There is no '
+         'expense report for the special revenue funds, and fund 1301 — the one fund with a '
+         'transaction journal — records <b>no vendor on any of its 46 FY26 payments</b>. '
+         'So “Athletics fund spent” means money left that fund. That it went to athletics '
+         'is the statute talking, not the ledger.</p>'
+         '<p class="cap">No offset edges are drawn. The district publishes three amounts '
+         '(Extended Day $71,247, Facilities $25,000, Athletic $20,000) and none for lunch, '
+         'school choice, the circuit breaker or the grants. Drawing an edge only where an '
+         'amount happens to be published would imply the others have no offset, which is a '
+         'stronger claim than we can make.</p></section>']
+
+    P.append('<section class="stage"><h2>The programme view — a different lens</h2>'
+             '<p class="cap">What each programme costs across both sides. <b>These figures '
+             'overlap the diagram above and must never be added to it</b> — most of each '
+             'row is already inside the school budget box.</p>'
+             '<table><tr><th>programme</th><th class="v">in the budget</th>'
+             '<th class="v">from funds</th><th class="v">total</th></tr>')
+    for p in progs:
+        if not p['outs']:
+            continue
+        out = sum(v for _, v, _, _ in p['outs'])
+        P.append(f'<tr><td>{html.escape(p["name"])}</td>'
+                 f'<td class="v">{money(p["inside"]) if p["inside"] else "—"}</td>'
+                 f'<td class="v">{money(out) if out else "not found"}</td>'
+                 f'<td class="v"><b>{money(p["inside"] + out)}</b></td></tr>')
+    P.append('</table>'
+             f'<p class="warn"><b>Athletics is the case to read.</b> The town appropriates '
+             f'{money(ath_gen)} and the district’s own athletics documents record a further '
+             f'{money(ath_rev)} through the revolving fund. And the district’s FY26 budget '
+             f'overview says why the line moves: it was cut <i>“with anticipation that '
+             f'athletic revolving may be enough to offset this reduction in the budget '
+             f'line”</i> — and the next year, <i>“athletic revolving can not support these '
+             f'increased costs”</i>, at a 254% line increase.</p></section>')
+    return PAGE.format(body='\n'.join(P))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -801,6 +1001,9 @@ def main():
     if args.check:
         if not os.path.exists(OUT):
             raise SystemExit(f'{rel} does not exist. Run without --check.')
+        if not os.path.exists(OUT2) or open(OUT2, encoding='utf-8').read() != render_v2(c):
+            raise SystemExit(f'STALE: money-flow-v2.html no longer reproduces.\n'
+                             f'  Run: python3 scripts/build_money_flow.py')
         if open(OUT, encoding='utf-8').read() != fresh:
             raise SystemExit(f'STALE: {rel} no longer reproduces.\n'
                              f'  Run: python3 scripts/build_money_flow.py')
@@ -810,6 +1013,10 @@ def main():
     with open(OUT, 'w', encoding='utf-8') as fh:
         fh.write(fresh)
     print(f'wrote {rel} ({len(fresh):,} bytes)')
+    v2 = render_v2(c)
+    with open(OUT2, 'w', encoding='utf-8') as fh:
+        fh.write(v2)
+    print(f'wrote {os.path.relpath(OUT2, ROOT)} ({len(v2):,} bytes)')
 
 
 if __name__ == '__main__':
