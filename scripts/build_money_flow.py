@@ -683,6 +683,8 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 .pot p {{ font-size:14px; margin:8px 0 0 }}
 .potline {{ font-family:ui-monospace,Menlo,monospace; font-size:15px; margin:0 }}
 .refuse {{ border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }}
+.warnbox {{ border-color:var(--warn); border-width:2px }}
+.warnbox td .sub {{ display:block; font-size:11px; color:var(--muted) }}
 .warn {{ background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }}
 .metrics {{ display:grid; gap:10px; margin:16px 0 10px }}
@@ -871,6 +873,13 @@ def render_v2(c):
               AND period={P_ACCT} AND account_id=?""", (a,)).fetchone() for a, _, _ in ELSEWHERE_MAP}
     els = {a: (r['v'] if r else 0) for a, r in els.items()}
 
+    SCH = ("(fund LIKE '13%' OR fund LIKE '15%' OR fund LIKE '22%' OR fund LIKE '26%'"
+           " OR fund LIKE '27%' OR fund LIKE '28%' OR fund LIKE '29%')")
+    agg = c.execute(f"""SELECT SUM(revenue) i, SUM(spent) o, SUM(closing_balance) h
+                        FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND {SCH}""").fetchone()
+    f_in, f_out, f_held = agg['i'] or 0, agg['o'] or 0, agg['h'] or 0
+    f_open = f_held - f_in + f_out
+
     LH, GAP, BW = 58, 11, 254
     LX, RX, W = 20, 610, 890
     fundrev = {f: rev for f, nm, rev, sp in funds}
@@ -941,8 +950,8 @@ def render_v2(c):
 
     o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
          f'role="img" aria-label="Where each dollar of school money is spent, counted once">',
-         '<text class="dhd" x="20" y="26">SOURCES</text>',
-         f'<text class="dhd" x="{RX}" y="26">WHERE IT IS SPENT — each dollar once</text>']
+         '<text class="dhd" x="20" y="26">MONEY IN — this year</text>',
+         f'<text class="dhd" x="{RX}" y="26">MONEY OUT — this year, each dollar once</text>']
     for src, dst, how in edges:
         if src not in ly or dst not in ry:
             continue
@@ -986,6 +995,27 @@ def render_v2(c):
          '<span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never '
          'observed</b></span>'
          '<span><i class="k missing"></i>collected, cannot be located</span></div>',
+         f'<section class="stage warnbox"><h2>The two columns do not balance, and that is '
+         f'the point</h2>'
+         f'<p><b>Revenue is not spending.</b> A fund is a tank, not a pipe: it can spend '
+         f'less than it receives and accumulate, or more than it receives and draw a '
+         f'balance down. Reading across a row tells you what a fund took in and what it '
+         f'paid out — <b>it does not tell you those are the same money.</b></p>'
+         f'<p>Across all the schools’ own funds in FY2026 to 31 March:</p>'
+         f'<table><tr><td>money in</td><td class="v">{money(f_in)}</td></tr>'
+         f'<tr><td>money out</td><td class="v">{money(f_out)}</td></tr>'
+         f'<tr><td><b>net</b></td><td class="v"><b>{f_in - f_out:+,.0f}</b></td></tr>'
+         f'<tr><td>opening balance <span class="sub">derived from the fund identity; '
+         f'the town’s report does not print it</span></td>'
+         f'<td class="v">{money(f_open)}</td></tr>'
+         f'<tr><td>held at 31 March</td><td class="v">{money(f_held)}</td></tr></table>'
+         f'<p><b>The funds collectively spent {money(f_out - f_in)} more than they took '
+         f'in.</b> That money is real and it came from balances built in earlier years. A '
+         f'diagram that balanced would be hiding it.</p>'
+         f'<p class="cap">School lunch is the clearest single case — '
+         f'in $572,231, out $739,586, holding $287,771. The programme is solvent this year '
+         f'and has a smaller cushion next year, and neither the appropriation nor the '
+         f'“spent” figure shows that.</p></section>',
          '<section class="stage"><h2>What a fund box on the right does NOT say</h2>'
          '<p>Only that the fund spent the money. <b>Not what it bought.</b> There is no '
          'expense report for the special revenue funds, and fund 1301 — the one fund with a '

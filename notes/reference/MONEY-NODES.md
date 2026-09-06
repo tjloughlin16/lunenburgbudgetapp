@@ -148,6 +148,23 @@ Note what this does to the intuition. The natural guess is that the fees sit in 
 *One caution on the circuit breaker.* Fund 2640 shows $325,970 received while the general-fund line `SCHCOSTREI` shows $318,424 budgeted and **nothing received**. Two circuit breaker figures about $7,500 apart, in two places. Whether they are the same money is **not established**, and if they are, a total counting both double-counts about $318,000.
 
 
+## Revenue is not spending, and the two do not balance
+
+**A fund is a tank, not a pipe.** It can spend less than it receives and accumulate, or more than it receives and draw a balance down. So an INPUT and a USE of the same fund are not the same money, and any diagram or table that puts them side by side is inviting a conservation assumption that does not hold here.
+
+| all the schools’ own funds, FY2026 to 31 March | |
+|---|---:|
+| money in | 1,553,151 |
+| money out | 1,736,376 |
+| **net** | **-183,225** |
+| opening balance *(derived from the fund identity — not printed)* | 1,775,481 |
+| held at 31 March | 1,592,256 |
+
+**The funds collectively spent 183,225 more than they took in.** That money is real and came from balances built in earlier years. A model that balanced would be hiding it.
+
+This is why every fund row here carries `in`, `spent` and `held` rather than one figure. Any single one of the three is misleading on its own: `spent` alone made the circuit breaker look like a small programme rather than a reserve, and `in` alone would make school lunch look solvent rather than drawing down.
+
+
 ## How money leaves a fund — three routes, and how to tell which was used
 
 “Held” only means something once you know what the ways OUT are. There are three, and they are distinguishable:

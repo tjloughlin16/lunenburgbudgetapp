@@ -586,6 +586,31 @@ def render(c):
       'money is **not established**, and if they are, a total counting both double-counts '
       'about $318,000.\n')
 
+    a('\n## Revenue is not spending, and the two do not balance\n')
+    SCH = ("(fund LIKE '13%' OR fund LIKE '15%' OR fund LIKE '22%' OR fund LIKE '26%'"
+           " OR fund LIKE '27%' OR fund LIKE '28%' OR fund LIKE '29%')")
+    ag = c.execute(f"""SELECT SUM(revenue) i, SUM(spent) o, SUM(closing_balance) h
+                       FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND {SCH}""").fetchone()
+    i_, o_, h_ = ag['i'] or 0, ag['o'] or 0, ag['h'] or 0
+    a('**A fund is a tank, not a pipe.** It can spend less than it receives and accumulate, '
+      'or more than it receives and draw a balance down. So an INPUT and a USE of the same '
+      'fund are not the same money, and any diagram or table that puts them side by side '
+      'is inviting a conservation assumption that does not hold here.\n')
+    a('| all the schools’ own funds, FY2026 to 31 March | |')
+    a('|---|---:|')
+    a(f'| money in | {m(i_)} |')
+    a(f'| money out | {m(o_)} |')
+    a(f'| **net** | **{i_-o_:+,.0f}** |')
+    a(f'| opening balance *(derived from the fund identity — not printed)* | {m(h_-i_+o_)} |')
+    a(f'| held at 31 March | {m(h_)} |')
+    a(f'\n**The funds collectively spent {m(o_-i_)} more than they took in.** That money is '
+      f'real and came from balances built in earlier years. A model that balanced would be '
+      f'hiding it.\n')
+    a('This is why every fund row here carries `in`, `spent` and `held` rather than one '
+      'figure. Any single one of the three is misleading on its own: `spent` alone made the '
+      'circuit breaker look like a small programme rather than a reserve, and `in` alone '
+      'would make school lunch look solvent rather than drawing down.\n')
+
     a('\n## How money leaves a fund — three routes, and how to tell which was used\n')
     a('“Held” only means something once you know what the ways OUT are. There are three, '
       'and they are distinguishable:\n')
