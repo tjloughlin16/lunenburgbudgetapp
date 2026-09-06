@@ -44,6 +44,40 @@ const text = (value: unknown) => ({
   content: [{ type: 'text' as const, text: JSON.stringify(value, null, 1) }],
 })
 
+/**
+ * Register a tool, and log that it was called.
+ *
+ * This is the only unbiased way to find out whether an assistant USES any of this. Asking
+ * it afterwards biases the answer; telling it beforehand biases the run. Watching the
+ * server biases nothing:
+ *
+ *     cd mcp && npx wrangler tail lunenburg-mcp --format pretty
+ *
+ * then ask an assistant an ordinary question and see whether anything arrives.
+ *
+ * The tool name and how long it took, and nothing else. Not the arguments: a question
+ * somebody puts to an assistant is theirs, and this archive has no business keeping it.
+ */
+function tool(
+  server: McpServer,
+  name: string,
+  meta: Parameters<McpServer['registerTool']>[1],
+  handler: (args: never) => Promise<unknown>,
+) {
+  server.registerTool(name, meta, (async (args: never) => {
+    const started = Date.now()
+    try {
+      const out = await handler(args)
+      console.log(`tool ${name} ok ${Date.now() - started}ms`)
+      return out
+    } catch (e) {
+      console.log(`tool ${name} failed ${Date.now() - started}ms: `
+        + String((e as Error)?.message ?? e).slice(0, 120))
+      throw e
+    }
+  }) as Parameters<McpServer['registerTool']>[2])
+}
+
 /** Fetch one of the site's own static files. Cheaper and more current than re-deriving. */
 async function site(path: string) {
   const res = await fetch(SITE + path, {
@@ -58,7 +92,7 @@ function build(env: Env) {
   const server = new McpServer({ name: 'lunenburg-budget', version: '1.0.0' })
   const db = env.DB
 
-  server.registerTool('list_datasets', {
+  tool(server, 'list_datasets', {
     description:
       'Every dataset in the archive, with THE YEARS EACH COVERS, its row count and its '
       + 'size. Call this before answering from prose: it is how you find out whether the '
@@ -68,7 +102,7 @@ function build(env: Env) {
     inputSchema: {},
   }, async () => text(await site('/api/tables')))
 
-  server.registerTool('read_first', {
+  tool(server, 'read_first', {
     description:
       'The grain of every table and the specific ways to get a confident wrong answer '
       + 'out of this data. Read this before computing anything. It states, among others, '
@@ -79,7 +113,7 @@ function build(env: Env) {
     inputSchema: {},
   }, async () => text(await site('/api/schema')))
 
-  server.registerTool('worked_examples', {
+  tool(server, 'worked_examples', {
     description:
       '107 questions this archive can answer, each with the SQL that answers it. Every '
       + 'one is executed against the database on every build, so none of them is a claim. '
@@ -87,7 +121,7 @@ function build(env: Env) {
     inputSchema: {},
   }, async () => text(await site('/api/questions')))
 
-  server.registerTool('search_meetings', {
+  tool(server, 'search_meetings', {
     description:
       'Which of the 1,422 published town meeting documents contain a word — every board, '
       + '2025 onward. Returns the board, the date and a citable URL for each. AN EMPTY '
@@ -128,7 +162,7 @@ function build(env: Env) {
       cite: 'Cite the individual document, never a bundle and never this index.' })
   })
 
-  server.registerTool('budget_history', {
+  tool(server, 'budget_history', {
     description:
       'What a school budget line was in each year, AT ONE STAGE. The stage argument is '
       + 'required and singular on purpose: `proposed`, `settled` and `actual` are three '
@@ -157,7 +191,7 @@ function build(env: Env) {
     })
   })
 
-  server.registerTool('staff', {
+  tool(server, 'staff', {
     description:
       'How many people the town PRINTED on a school staff roster, by year, school and '
       + 'kind of job. Uses our classification of the printed title, never the title '
@@ -191,7 +225,7 @@ function build(env: Env) {
     })
   })
 
-  server.registerTool('document', {
+  tool(server, 'document', {
     description:
       'Where a document came from: the publisher\'s URL, our copy, and its sha256 so a '
       + 'reader can check they have the same bytes. Use it to cite anything.',
@@ -207,7 +241,7 @@ function build(env: Env) {
     })
   })
 
-  server.registerTool('query', {
+  tool(server, 'query', {
     description:
       'Any question the other tools do not cover, as one read-only SQL statement over the '
       + 'archive database. SELECT or WITH only; a LIMIT is imposed if you omit one. Call '
