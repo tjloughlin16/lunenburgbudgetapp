@@ -30,8 +30,8 @@ anybody looks twice.
 | IndexNow | <https://www.indexnow.org/documentation> — how the sitemap is pushed to Bing, Yandex, Seznam and Naver. Google does not participate |
 | Cloudflare D1 pricing and limits | <https://developers.cloudflare.com/d1/platform/pricing/> — 5M rows read and 100k written a day on the free plan, and it stops rather than bills |
 | Cloudflare rate limiting rules | <https://developers.cloudflare.com/waf/rate-limiting-rules/> — free plan is one rule and a ten-second period only |
-| Google Search Console | <https://search.google.com/search-console> — the only honest answer to *"is this indexed"*. **Domain not yet verified** |
-| Bing Webmaster Tools | <https://www.bing.com/webmasters> — same, and the one several agent search tools are built on |
+| Google Search Console | <https://search.google.com/search-console> — the only honest answer to *"is this indexed"*. **Domain property verified 6 Sept 2026**, via the Cloudflare integration (a second apex TXT; the MCP proof was left intact). Sitemap submitted |
+| Bing Webmaster Tools | <https://www.bing.com/webmasters> — same, and the one several agent search tools are built on. **Verified 6 Sept 2026**; `/BingSiteAuth.xml` and the `msvalidate.01` meta tag both carry the token. Sitemap submitted |
 | MCP Registry, source | <https://github.com/modelcontextprotocol/registry> — the authority on DNS auth. `internal/api/handlers/v0/auth/dns.go` and `common.go` answered every question the docs did not |
 | MCP Registry, our entry | <https://registry.modelcontextprotocol.io/v0/servers?search=lunenburg> — read the entry back rather than trusting a success line |
 | `mcp-publisher` releases | <https://github.com/modelcontextprotocol/registry/releases> — the official binary. **Not** the npm package of the same name |
@@ -353,10 +353,9 @@ That is a genuine conflict, not an oversight, and it is unresolved. See the open
 ## What to do next, in order
 
 1. **Run the two tests below.** Everything they need is live.
-2. **Verify the domain in Google Search Console and Bing Webmaster Tools.** Ten minutes,
-   and it is the only route to knowing what is indexed. Both are **apex TXT records too**,
-   so add them as SEPARATE records — the apex now holds the MCP proof and editing it in
-   place would revoke the domain claim.
+2. ~~**Verify the domain in Google Search Console and Bing Webmaster Tools.**~~ **Done,
+   6 September 2026**, both, with sitemaps submitted to each. Nothing further to do but
+   wait and then read them — see *What to watch for* below.
 3. **Add citizen-phrased questions to the bank**, mapped to the queries that answer them.
 4. Consider whether a rate limiting rule can carry a custom JSON body on this plan.
 5. **Markdown mirrors of the app's own pages.** Vercel's agent-readability guide
@@ -482,12 +481,29 @@ may be host-relative while `/docs/`, `/data/` and `/api/` stay absolute and cano
 split that has not been thought through and might not survive contact with `check-agents`,
 which forbids relative links to files for a different and still-valid reason.
 
-**3. Is anything indexing the site? — NOW THE TOP QUESTION.** Two independent agents have
-said the site is not in a search index, one of them after searching for it explicitly. For
-any fetcher whose allowlist is seeded from search results this is the entire door, and no
-amount of on-site work opens it. Everything we can do is done and verified. *Settled by:*
-Search Console and Bing Webmaster verification — the only honest answer to "has this been
-indexed", and the only remaining step nobody else can take for us.
+**3. Is anything indexing the site? — NOW THE TOP QUESTION, and now ANSWERABLE.** Two
+independent agents have said the site is not in a search index, one of them after searching
+for it explicitly. For any fetcher whose allowlist is seeded from search results this is
+the entire door, and no amount of on-site work opens it.
+
+Everything on our side is done and verified: `robots.txt` `Allow: /`, 68 sitemap URLs all
+answering, the IndexNow key file live and submissions accepted, the README linking the site
+properly, and **both consoles verified with sitemaps submitted, 6 September 2026**.
+
+*Settled by:* reading those consoles in a week or two. This is the first question here that
+has stopped needing an argument and started needing a wait.
+
+**What to watch for.** In each console, three numbers, and they are not the same question:
+
+- **Sitemap status** — *discovered*, and whether any of the 68 errored. Within days.
+- **Pages / URL Inspection** — how many are actually **indexed**, which is the number that
+  matters. Google's Coverage report and Bing's Site Explorer.
+- **A live search for the domain** — the thing agent B did. This is the end-to-end test and
+  the only one that reproduces the failure.
+
+If the consoles say indexed and an agent still cannot reach the site, the cause is
+somewhere else entirely and this whole line of work was wrong — which is worth knowing
+early, and is why the search is on the list rather than just the console numbers.
 
 **4. Will any client reach the MCP server on its own?** Published, listed, linked, and
 never observed in use. *Settled by:* `wrangler tail` during an ordinary question. Note the
