@@ -60,7 +60,8 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 .mv { font-size:25px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
   font-family:ui-monospace,Menlo,monospace }
 .ms { font-size:12.5px; color:var(--muted); line-height:1.45 }
-@media (min-width:760px) { .metrics { grid-template-columns:repeat(3,1fr) } }
+@media (min-width:760px) { .metrics { grid-template-columns:repeat(2,1fr) } }
+@media (min-width:1050px) { .metrics { grid-template-columns:repeat(4,1fr) } }
 .scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }
 svg.flow { display:block; min-width:900px; height:auto }
@@ -151,7 +152,7 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
   drawn, because no record ties a source to a department.</p>
 </header>
 
-<section class="metrics"><div class="m"><div class="mk">Appropriated to the schools</div><div class="mv">$26,247,474</div><div class="ms">Department 300, as Town Meeting voted. <b>The number in every headline.</b></div></div><div class="m hi"><div class="mk">What the school system SPENT</div><div class="mv">$27,350,055</div><div class="ms">$25,613,679 out of the appropriation through period 12, plus $1,736,376 from its own funds and grants through period 9.</div></div><div class="m"><div class="mk">The town spent on schools beyond that</div><div class="mv">$1,528,336+</div><div class="ms">Retiree health and the resource stipend, appropriated to other departments — <b>plus an unknown share of the $2,392,572 pension.</b> Monty Tech is excluded: it is a different district.</div></div></section>
+<section class="metrics"><div class="m"><div class="mk">Appropriated to the schools</div><div class="mv">$26,247,474</div><div class="ms">Department 300, as Town Meeting voted. <b>The number in every headline.</b></div></div><div class="m hi"><div class="mk">What the school system SPENT</div><div class="mv">$27,350,055</div><div class="ms">$25,613,679 out of the appropriation through period 12, plus $1,736,376 from its own funds and grants through period 9.</div></div><div class="m"><div class="mk">Sitting in accounts, unspent</div><div class="mv">$1,592,256</div><div class="ms">Held across the schools’ own funds at 31 March — $615,301 of it in the circuit breaker alone. Not spending, not income: money that has arrived and stopped.</div></div><div class="m"><div class="mk">The town spent on schools beyond that</div><div class="mv">$1,528,336+</div><div class="ms">Retiree health and the resource stipend, appropriated to other departments — <b>plus an unknown share of the $2,392,572 pension.</b> Monty Tech is excluded: it is a different district.</div></div></section>
 <p class="warn"><b>Mixed bases, and it cannot be helped.</b> Department 300 is actual spending through period 12; the funds are actual through period 9, because the town publishes no twelve-month fund report. <b>So the middle figure is a floor</b> — three more months of fund spending are not in it, and neither is any part of the pension.</p><p class="cap"><b>Do not add the right-hand column and call it school spending.</b> It comes to $33,220,787 and that figure means nothing: the school budget box is a BUDGET rather than spending, Monty Tech is a different district, and the pension box is the whole town’s. The column adds because each dollar is drawn once — that is a property of the drawing, not a finding about the schools.</p>
 <div class="scroll"><svg viewBox="0 0 890 1304" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Where each dollar of school money is spent, counted once">
 <text class="dhd" x="20" y="26">MONEY IN — this year</text>
@@ -210,7 +211,7 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 <tr><td>Athletics</td><td class="v">$518,334</td><td class="v">$100,467</td><td class="v"><b>$618,801</b></td></tr>
 <tr><td>Food service</td><td class="v">—</td><td class="v">$739,586</td><td class="v"><b>$739,586</b></td></tr>
 <tr><td>Extended day and after school</td><td class="v">—</td><td class="v">$340,899</td><td class="v"><b>$340,899</b></td></tr>
-</table><p class="warn"><b>Athletics is the case to read.</b> The town appropriates $518,334 and the district’s own athletics documents record a further $335,856 through the revolving fund. And the district’s FY26 budget overview says why the line moves: it was cut <i>“with anticipation that athletic revolving may be enough to offset this reduction in the budget line”</i> — and the next year, <i>“athletic revolving can not support these increased costs”</i>, at a 254% line increase.</p></section>
+</table><p class="warn"><b>Athletics is the case to read.</b> The town appropriates $518,334 and the district’s own athletics documents record a further $146,911 spent through the revolving fund (it took in $188,944 — two different quantities, never one). And the district’s FY26 budget overview says why the line moves: it was cut <i>“with anticipation that athletic revolving may be enough to offset this reduction in the budget line”</i> — and the next year, <i>“athletic revolving can not support these increased costs”</i>, at a 254% line increase.</p></section>
 
 <p class="gen">Generated by <code>scripts/build_money_flow.py</code> from
 <code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>

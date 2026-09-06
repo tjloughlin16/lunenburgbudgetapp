@@ -261,21 +261,34 @@ def money(v):
 
 
 def athletics(c):
-    """Both sides of athletics, which is the clearest case of the whole problem.
+    """Both sides of athletics, kept apart — which they were not.
 
-    The appropriated side is function 3510 inside dept 300. The fee side is a revolving
-    fund -- and that fund is NOT in the town's fund-balance report, so it is known only
-    from the district's own athletics documents. A page about how money reaches the
-    schools that showed the first and not the second would be describing half a program
-    and would look complete doing it.
+    THE BUG THIS FIXES
+
+    This returned the district's revolving-fund figure as a single number and the page
+    printed "$335,856 through the revolving fund". That figure is REVENUE PLUS SPENDING
+    ADDED TOGETHER. `athletics_history` holds both sides of the fund in one column, with
+    revenue rows distinguished only by an item name beginning "REVENUE —", and summing
+    `side='revolving'` collects all of them.
+
+    So the page overstated the fund by roughly a factor of two, and it did it in the one
+    paragraph held up as the worked example. TJ caught it by reading across the page:
+    the same fund appeared as $100,467 in the diagram and $335,856 in the prose.
+
+    Revenue and spending are never one number here. That is the same rule the fund
+    balances taught — a fund is a tank, not a pipe — arriving a third time.
     """
     gen = c.execute(f"""SELECT SUM(l.original) FROM ledger_snapshot l
                         JOIN account a USING (account_id)
                         WHERE l.fy={FY} AND l.period={P_ACCT} AND a.dept='300'
                           AND a.function='3510'""").fetchone()[0] or 0
     rev = c.execute("""SELECT SUM(amount) FROM athletics_history
-                       WHERE fy=? AND side='revolving'""", (FY,)).fetchone()[0] or 0
-    return gen, rev
+                       WHERE fy=? AND side='revolving' AND item LIKE 'REVENUE%'""",
+                    (FY,)).fetchone()[0] or 0
+    spend = c.execute("""SELECT SUM(amount) FROM athletics_history
+                         WHERE fy=? AND side='revolving'
+                           AND item NOT LIKE 'REVENUE%'""", (FY,)).fetchone()[0] or 0
+    return gen, rev, spend
 
 
 def bars(rows, hilite=(), note_of=None):
@@ -469,7 +482,7 @@ def render(c):
     srcs, rev_total = revenue_sources(c)
     funds = own_funds(c)
     progs, d300 = program_rows(c, fundnames)
-    ath_gen, ath_rev = athletics(c)
+    ath_gen, ath_rev, ath_spend = athletics(c)
 
     grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
                                 WHERE fy={FY} AND period={P_DEPT} AND spent>0
@@ -621,9 +634,14 @@ def render(c):
     a(f'<section class="stage"><h2>Athletics, in full, as the worked case</h2>'
       f'<p>The town appropriates <b>{money(ath_gen)}</b> for athletics inside dept 300 — '
       f'coaches, transport, the athletic director, the trainer, insurance. The district’s '
-      f'own athletics documents record a further <b>{money(ath_rev)}</b> through the '
-      f'revolving fund. So the program costs about <b>{money(ath_gen + ath_rev)}</b> and '
-      f'the town’s budget shows {money(ath_gen)} of it.</p>'
+      f'own athletics documents record the revolving fund taking in '
+      f'<b>{money(ath_rev)}</b> and spending <b>{money(ath_spend)}</b>. So athletics costs '
+      f'about <b>{money(ath_gen + ath_spend)}</b> to run and the town’s budget shows '
+      f'{money(ath_gen)} of it.</p>'
+      f'<p class="cap"><b>Those two are not one figure.</b> This page previously added '
+      f'them and printed {money(ath_rev + ath_spend)} as “through the revolving fund”, '
+      f'which is revenue and spending summed — the same mistake the fund balances warn '
+      f'about, made in the paragraph held up as the worked example.</p>'
       f'<p class="cap">The town ledger and the district’s documents give different figures '
       f'for the fund, on different bases and periods. Neither is wrong; they answer '
       f'different questions. Every fee-funded program has this shape — athletics is only '
@@ -694,7 +712,8 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 .mv {{ font-size:25px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
   font-family:ui-monospace,Menlo,monospace }}
 .ms {{ font-size:12.5px; color:var(--muted); line-height:1.45 }}
-@media (min-width:760px) {{ .metrics {{ grid-template-columns:repeat(3,1fr) }} }}
+@media (min-width:760px) {{ .metrics {{ grid-template-columns:repeat(2,1fr) }} }}
+@media (min-width:1050px) {{ .metrics {{ grid-template-columns:repeat(4,1fr) }} }}
 .scroll {{ overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }}
 svg.flow {{ display:block; min-width:900px; height:auto }}
@@ -857,7 +876,7 @@ def render_v2(c):
     fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
     funds = own_funds(c)
     progs, d300 = program_rows(c, fundnames)
-    ath_gen, ath_rev = athletics(c)
+    ath_gen, ath_rev, ath_spend = athletics(c)
     grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
                                 WHERE fy={FY} AND period={P_DEPT} AND spent>0
                                   AND (revenue IS NULL OR revenue=0)""").fetchone()['v'] or 0
@@ -984,6 +1003,7 @@ def render_v2(c):
     town_also = sum(v for k, v in els.items()
                     if not k.endswith('560001') and not k.endswith('532000'))
     right_total = sum(v for _, v, *_ in rbox.values() if v is not None)
+    cb_held = held.get('2640', 0)
 
     P = [f'<section class="metrics">'
          f'<div class="m"><div class="mk">Appropriated to the schools</div>'
@@ -993,6 +1013,11 @@ def render_v2(c):
          f'<div class="mv">{money(d300_spent + f_out)}</div>'
          f'<div class="ms">{money(d300_spent)} out of the appropriation through period 12, '
          f'plus {money(f_out)} from its own funds and grants through period 9.</div></div>'
+         f'<div class="m"><div class="mk">Sitting in accounts, unspent</div>'
+         f'<div class="mv">{money(f_held)}</div>'
+         f'<div class="ms">Held across the schools’ own funds at 31 March — '
+         f'{money(cb_held)} of it in the circuit breaker alone. Not spending, not income: '
+         f'money that has arrived and stopped.</div></div>'
          f'<div class="m"><div class="mk">The town spent on schools beyond that</div>'
          f'<div class="mv">{money(town_also)}+</div>'
          f'<div class="ms">Retiree health and the resource stipend, appropriated to other '
@@ -1065,7 +1090,9 @@ def render_v2(c):
     P.append('</table>'
              f'<p class="warn"><b>Athletics is the case to read.</b> The town appropriates '
              f'{money(ath_gen)} and the district’s own athletics documents record a further '
-             f'{money(ath_rev)} through the revolving fund. And the district’s FY26 budget '
+             f'{money(ath_spend)} spent through the revolving fund (it took in '
+             f'{money(ath_rev)} — two different quantities, never one). And the district’s '
+             f'FY26 budget '
              f'overview says why the line moves: it was cut <i>“with anticipation that '
              f'athletic revolving may be enough to offset this reduction in the budget '
              f'line”</i> — and the next year, <i>“athletic revolving can not support these '

@@ -730,6 +730,10 @@ def render(c):
     cap = c.execute(f"""SELECT SUM(l.original) v FROM ledger_snapshot l
         JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
           AND a.dept IN ('993','996')""").fetchone()['v'] or 0
+    sch_fac = c.execute(f"""SELECT SUM(l.original) v FROM ledger_snapshot l
+        JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
+          AND a.dept='300' AND a.function IN ('4110','4120','4130','4210','4220','4230',
+                                              '4400','2451','1450')""").fetchone()['v'] or 0
     fac = c.execute(f"""SELECT SUM(l.original) v FROM ledger_snapshot l
         JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
           AND a.dept IN ('193','155')""").fetchone()['v'] or 0
@@ -744,14 +748,20 @@ def render(c):
       f'borrowed for and this is where that is repaid |')
     a(f'| **School capital** | {m(cap)} | `TR CAP PRO` and `TR STAB FD`, single transfer '
       f'lines with no project detail |')
-    a(f'| **Facilities and IT support** | {m(fac)} | Departments 193 and 155 employ a '
-      f'facilities director, contract cleaning and technology staff. Whether any of it '
-      f'serves school buildings is not stated anywhere |')
+    a(f'| ~~Facilities and IT support~~ | ~~{m(fac)}~~ | **Withdrawn.** Departments 193 '
+      f'and 155 are the TOWN’s facilities and IT. The school runs its own, inside dept '
+      f'300 — custodial ${sch_fac:,.0f} across function 4110, utilities on 4120/4130, '
+      f'building maintenance on 4220/4230 and technology on 1450/2451/4400. Listing the '
+      f'town’s departments as hidden school cost was a guess, and a wrong one |')
     a('| **Student activity accounts** | not in the town’s books at all | Held by the '
       'school under its own statutory authority. They do not appear in any town ledger, so '
       'their size is not knowable from anything here |')
     a('| **Trust funds** | not usable | The annual-report extract for trust funds is '
       '`check failed` on ordinal columns and cannot be aggregated. Some are scholarships |')
+    a('| **Turf field income** | account exists, holds nothing | '
+      '`0100-01001-438200 RENTTURFFI` — rent, turf field — is budgeted at zero and has '
+      'received zero. Facilities-use revolving (fund 1306) took in $18,670 and may hold '
+      'it. **Not established either way** |')
     a('| **Bus fees** | not found | Charged by published policy, no observable destination. '
       'See the worked example |')
     a('\n**And the potential money — what could feed in and currently does not.**\n')

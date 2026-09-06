@@ -363,9 +363,10 @@ This list holds every dollar that moves through the town’s ledger under a labe
 |---|---:|---|
 | **School building debt service** | 2,547,440 | Two accounts, `SER LOAN P` and `SER LOAN I`, for all town borrowing. No project breakdown. School buildings were borrowed for and this is where that is repaid |
 | **School capital** | 1,285,000 | `TR CAP PRO` and `TR STAB FD`, single transfer lines with no project detail |
-| **Facilities and IT support** | 1,202,917 | Departments 193 and 155 employ a facilities director, contract cleaning and technology staff. Whether any of it serves school buildings is not stated anywhere |
+| ~~Facilities and IT support~~ | ~~1,202,917~~ | **Withdrawn.** Departments 193 and 155 are the TOWN’s facilities and IT. The school runs its own, inside dept 300 — custodial $2,349,578 across function 4110, utilities on 4120/4130, building maintenance on 4220/4230 and technology on 1450/2451/4400. Listing the town’s departments as hidden school cost was a guess, and a wrong one |
 | **Student activity accounts** | not in the town’s books at all | Held by the school under its own statutory authority. They do not appear in any town ledger, so their size is not knowable from anything here |
 | **Trust funds** | not usable | The annual-report extract for trust funds is `check failed` on ordinal columns and cannot be aggregated. Some are scholarships |
+| **Turf field income** | account exists, holds nothing | `0100-01001-438200 RENTTURFFI` — rent, turf field — is budgeted at zero and has received zero. Facilities-use revolving (fund 1306) took in $18,670 and may hold it. **Not established either way** |
 | **Bus fees** | not found | Charged by published policy, no observable destination. See the worked example |
 
 **And the potential money — what could feed in and currently does not.**
