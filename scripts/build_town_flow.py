@@ -164,7 +164,7 @@ GAPS_OUT = [
 ]
 
 
-def diagram(d):
+def diagram(d, c2):
     """Three columns, because two would be a lie.
 
     The school diagram is two columns — sources on the left, where it lands on the right —
@@ -199,6 +199,25 @@ def diagram(d):
     # departments and 21 active funds, and a shorter picture would be a shorter picture of
     # something else.
     SCHOOL_DEPTS = {'300', '301', '310'}
+    # Departments that are NOT all one thing. Colouring dept 914 as "town" is a claim we
+    # cannot defend — $1,521,536 of it is school retiree health — and colouring it school
+    # would be equally wrong. TJ: "its arbitrary right now".
+    #
+    # Where the account detail lets us split, we split and colour each part. Where it does
+    # not, the box is marked MIXED and coloured neither, which is the only honest option
+    # for the pension: it covers town and school staff together and no published document
+    # gives the proportion.
+    SPLIT = {
+        '914': ('0100-19142-570018', 'school retiree health'),
+        '210': ('0100-12101-519021', 'school resource stipend'),
+    }
+    MIXED = {'820': 'town AND school staff · no published split'}
+    part = {}
+    for dept, (aid, lab) in SPLIT.items():
+        r = c2.execute(f"""SELECT original v FROM ledger_snapshot WHERE fy={FY}
+                           AND period={P_ACCT} AND account_id=?""", (aid,)).fetchone()
+        if r:
+            part[dept] = (r['v'], lab)
 
     lrows = [('levy', 'Property tax levy', d['revclass'].get('levy', 0), 'gf'),
              ('state', 'State aid', d['revclass'].get('state', 0), 'gf'),
@@ -214,8 +233,19 @@ def diagram(d):
 
     rrows = []
     for r in d['depts']:
-        rrows.append((f'd{r["dept"]}', f'{r["dept"]} {r["name"].title()[:24]}', r['v'],
-                      'sch' if r['dept'] in SCHOOL_DEPTS else 'gf'))
+        dept = r['dept']
+        if dept in part:
+            sch_v, lab = part[dept]
+            rrows.append((f'd{dept}s', f'{dept} {r["name"].title()[:16]} — {lab}',
+                          sch_v, 'sch'))
+            rrows.append((f'd{dept}', f'{dept} {r["name"].title()[:24]} — town',
+                          r['v'] - sch_v, 'gf'))
+        elif dept in MIXED:
+            rrows.append((f'd{dept}', f'{dept} {r["name"].title()[:22]} — MIXED', r['v'],
+                          'mix'))
+        else:
+            rrows.append((f'd{dept}', f'{dept} {r["name"].title()[:24]}', r['v'],
+                          'sch' if dept in SCHOOL_DEPTS else 'gf'))
     for f, nm, v in ent:
         if d['ent_out'].get(f):
             rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent'))
@@ -245,7 +275,8 @@ def diagram(d):
     for k, lab, v, kind in rrows:
         if k.startswith('d'):
             edge(MX + MW, pot_mid, RX, ry[k] + LH / 2,
-                 'school' if kind == 'sch' else 'traced')
+                 'school' if kind == 'sch' else
+                 ('unknown' if kind == 'mix' else 'traced'))
     for f, nm, v in ent:
         if d['ent_out'].get(f):
             edge(LX + BW, ly[f'ent-{f}'] + LH / 2, RX, ry[f'ento-{f}'] + LH / 2,
@@ -345,9 +376,10 @@ def render(c):
       f'<div class="ms">The one system Town Meeting debates — and the only one where a '
       f'dollar’s origin cannot be followed.</div></div></section>')
 
-    a('<div class="scroll">' + diagram(d) + '</div>')
+    a('<div class="scroll">' + diagram(d, c) + '</div>')
     a('<div class="key"><span><i class="k school"></i><b>school money</b> — every box and '
       'line in orange</span>'
+      '<span><i class="k mix"></i><b>mixed</b> — town and school together, no published split</span>'
       '<span><i class="k traced"></i>traced</span>'
       '<span><i class="k bypass"></i>bypasses the general fund entirely — rate-funded and '
       'ring-fenced</span>'
@@ -579,6 +611,8 @@ svg.flow {{ display:block; min-width:950px; height:auto }}
 .b rect {{ fill:var(--card); stroke:var(--grid); stroke-width:1.5 }}
 .b.gf rect {{ fill:var(--traced-bg2); stroke:var(--traced) }}
 .b.ent rect {{ fill:none; stroke:var(--ent); stroke-width:2 }}
+.b.mix rect {{ fill:none; stroke:var(--warn); stroke-width:2 }}
+.e.unknown {{ stroke:var(--warn); stroke-dasharray:3 4; opacity:.8 }}
 .b.sch rect {{ fill:var(--school-bg); stroke:var(--school); stroke-width:2 }}
 .e.school {{ stroke:var(--school); opacity:.7; stroke-width:2.5 }}
 .b.sr rect {{ fill:none; stroke:var(--warn); stroke-width:2; stroke-dasharray:6 4 }}
@@ -601,6 +635,7 @@ svg.flow {{ display:block; min-width:950px; height:auto }}
 .key span {{ display:flex; align-items:center; gap:6px }}
 .k {{ width:24px; height:0; border-top:2px solid; display:inline-block }}
 .k.school {{ border-color:var(--school); border-top-width:3px }}
+.k.mix {{ border-color:var(--warn); border-top-style:dashed }}
 .k.traced {{ border-color:var(--traced) }}
 .k.bypass {{ border-color:var(--ent); border-top-width:3px }}
 .k.restricted {{ border-top-style:dashed; border-color:var(--warn) }}
