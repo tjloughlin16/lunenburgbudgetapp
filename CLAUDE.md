@@ -596,6 +596,7 @@ than a budget setting.
     python3 scripts/verify_fy26_closeout_town.py # ...and in its town-side companion
     python3 scripts/build_closeout_charts.py     # the charts that head both closeout analyses
     python3 scripts/build_reports_index.py       # the /reports index, generated from what is on disk
+    python3 scripts/build_reports_index.py --check    # ...and fail if an analysis is missing from it
     python3 scripts/build_analysis_pdf.py --all  # render the analyses to PDF for reading on paper
     python3 scripts/build_request_doc.py         # regenerate what is still outstanding from the Town
     python3 scripts/build_gross_budget_xlsx.py   # the gross budget spreadsheet, in the district's own shape

@@ -45,6 +45,14 @@ ORDER = [
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
 ABOUT = {
+    'what-you-can-ask':
+        'Every question this archive can answer, in plain English and without a line of '
+        'SQL. The list a resident should start from: pick the question you actually have '
+        'and follow it to the figure and the document behind it.',
+    'questions':
+        'The same questions with the query that answers each one, run against the '
+        'database on every build — so none of them is a claim about what this data can '
+        'do. If one stops answering, the build fails.',
     'connecting-the-budget':
         'What can be followed from the school budget to the town’s books, and where it '
         'stops. Two levels join, the third cannot, and the format a report arrives in '
@@ -196,9 +204,58 @@ def main():
         ),
     )
 
+    fresh = json.dumps(data, separators=(',', ':'))
+
+    # --check, and the reason it exists: this generator was NOT in check_generated.py, so
+    # when two analyses were added the published index went on describing thirteen. The
+    # site served a /reports page that was correct about everything it listed and silent
+    # about what it did not -- an omission, which is the one defect shape nothing here
+    # catches by re-reading. Found by somebody asking where the question list was.
+    if '--check' in sys.argv:
+        if not os.path.exists(OUT):
+            raise SystemExit('%s does not exist. Run without --check.'
+                             % os.path.relpath(OUT, ROOT))
+        with open(OUT, encoding='utf-8') as fh:
+            current = fh.read()
+
+        # PDF byte counts are excluded from the comparison, and that is not a shortcut.
+        # A PDF is not byte-reproducible -- re-rendering the same Markdown produces a
+        # different size -- so including them would make this check fail every time the
+        # PDFs are rebuilt, with nothing having changed. A check that cries wolf is worse
+        # than no check, because it gets ignored on the day it is right.
+        #
+        # What that costs: a PDF whose CONTENT changed will not be caught here. That is
+        # not what this check is for. It is for an analysis that exists on disk and is
+        # missing from the index a reader browses -- the omission that let /reports
+        # describe thirteen analyses while fifteen were published.
+        def comparable(text):
+            d = json.loads(text)
+            for r in d.get('reports', []):
+                if isinstance(r.get('pdf'), dict):
+                    r['pdf'].pop('bytes', None)
+            return json.dumps(d, separators=(',', ':'), sort_keys=True)
+
+        if comparable(current) != comparable(fresh):
+            now = json.loads(current)
+            was = {r['id'] for r in now.get('reports', [])}
+            has = {r['id'] for r in data['reports']}
+            missing = sorted(has - was)
+            extra = sorted(was - has)
+            raise SystemExit(
+                'STALE: %s no longer reproduces.%s%s\n  Run: python3 '
+                'scripts/build_reports_index.py' % (
+                    os.path.relpath(OUT, ROOT),
+                    '\n  published index is MISSING: %s' % ', '.join(missing)
+                    if missing else '',
+                    '\n  published index lists what is gone: %s' % ', '.join(extra)
+                    if extra else ''))
+        print('ok: %s lists all %d analyses' % (os.path.relpath(OUT, ROOT),
+                                                len(data['reports'])))
+        return
+
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as fh:
-        json.dump(data, fh, separators=(',', ':'))
+        fh.write(fresh)
     print('wrote %s' % os.path.relpath(OUT, ROOT))
     print('  %d analyses, %d with a verifier, %d with a PDF'
           % (len(reports), sum(1 for r in reports if r['verifier']),

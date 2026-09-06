@@ -43,6 +43,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # back fast. `sync_d1` is last because it is the only one that touches the network.
 CHECKS = [
     ('build_readme.py', ['--check']),
+    # Added 6 Sept 2026, after it had already drifted: two analyses were published
+    # and /reports went on listing thirteen. Nothing caught it because this file is
+    # the thing that catches it, and this generator was not in it.
+    ('build_reports_index.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),
