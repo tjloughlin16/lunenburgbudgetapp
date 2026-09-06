@@ -81,6 +81,22 @@ mistake, not the data's.**
 row. Every figure below is an account name in the town's own ledger, not an inference from
 a share.
 
+**How to reproduce it.** The two grains are different MUNIS reports and the period is the
+only thing that distinguishes them, so a query without `period` silently mixes them:
+
+    -- 67 department rows, the omnibus as voted
+    SELECT a.dept, a.name, l.original FROM ledger_snapshot l JOIN account a USING (account_id)
+    WHERE l.fy=2026 AND l.period=9 AND a.level='department' AND a.account_type='expense';
+
+    -- 635 account rows, the same money one level down
+    SELECT a.dept, a.name, l.original FROM ledger_snapshot l JOIN account a USING (account_id)
+    WHERE l.fy=2026 AND l.period=12 AND a.level='account' AND a.account_type='expense';
+
+**Three filters, all of them load-bearing.** Drop `level` and department rows are summed on
+top of their own detail. Drop `account_type` and revenue — stored NEGATIVE — is netted
+against expense, which is how the town's budget once came out as minus $997,871. Drop
+`period` and two different reports are added together.
+
 ### School cost that sits outside the school budget — provable
 
     dept 300, 258 accounts                26,247,474
