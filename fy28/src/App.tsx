@@ -277,12 +277,21 @@ export default function App() {
 
       {/* FIRST thing under the header, and that position is the whole point -- the same
           links in the footer sit at 95% of a 250KB page and are cut off before any
-          fetch tool reaches them. See DataTopLine.tsx. */}
-      <DataTopLine />
+          fetch tool reaches them. See DataTopLine.tsx.
+
+          NOT on /ask, because /ask is where it points. A bar advertising the page you are
+          already reading is a row of chrome that can only take you where you are. */}
+      {tab !== 'ask' && <DataTopLine />}
 
       {/* Under the header rather than inside it: the header is sticky and this is not
-          worth the vertical space on every scroll, but it has to be seen on arrival. */}
-      <UpdatedBar onOpen={() => setNotesOpen(true)} />
+          worth the vertical space on every scroll, but it has to be seen on arrival.
+
+          ARRIVAL is the operative word, and it was on every route. Four stacked bars ran
+          before the first word of /ask on a phone -- nav, the AI link, this, and the
+          breadcrumb -- which is most of a small screen spent on furniture. "The archive
+          was updated" is context for somebody landing on the site, so it belongs on the
+          page people land on. Somebody three pages deep has already arrived. */}
+      {tab === 'walk' && <UpdatedBar onOpen={() => setNotesOpen(true)} />}
 
       {tab !== 'walk' && <Breadcrumb tab={tab} goUp={goUp} />}
 
