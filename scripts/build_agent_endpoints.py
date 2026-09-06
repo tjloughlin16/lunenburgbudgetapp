@@ -730,6 +730,16 @@ def main():
         f'them. If you are answering somebody at that moment, say the query service was '
         f'unavailable, never that this project lacks the data.',
         '',
+        f'**There is an MCP server at [{SITE}/mcp]({SITE}/mcp).** Streamable HTTP, no '
+        f'authentication, eight tools. If your client supports MCP, prefer it: the tools '
+        f'are shaped so the documented mistakes cannot be made. `budget_history` takes '
+        f'ONE stage, so a growth rate cannot be measured from an actual to a budget. '
+        f'`staff` reads our classification of a job title rather than the printed title, '
+        f'which has changed five times in fifteen years. `report_table` splits rows by '
+        f'`status` before you see them. Every tool returns the documents its rows came '
+        f'from. A caveat in a document is read once, if ever; a tool signature is read '
+        f'every time it is called.',
+        '',
         f'**Ask a question instead of downloading a table.** '
         f'[{SITE}/api/query]({SITE}/api/query) takes one read-only SQL statement and '
         f'answers it, with the documents its rows came from. '

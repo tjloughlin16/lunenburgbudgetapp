@@ -301,6 +301,13 @@ async function main() {
       // and they are exactly the two things most worth testing. Recognised rather than
       // silently passed: the endpoint says so itself (503 `unavailable` from query.js),
       // and the same URLs ARE fetched against production after every deploy.
+      // /mcp is served by a Worker route on the zone, which `wrangler pages dev` does
+      // not have — locally it falls through to the app shell. Recognised rather than
+      // silently passed; it is fetched against production after every deploy.
+      if (u === '/mcp' && type.includes('text/html')) {
+        console.log('   --  /mcp is a Worker route; not present locally, checked on deploy')
+        continue
+      }
       if (res.status === 503 || res.status === 400) {
         const body = await res.clone().json().catch(() => ({}))
         const why = String(body.message || '')

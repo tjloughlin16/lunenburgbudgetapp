@@ -80,6 +80,17 @@ RELEASES = [
             'page was the framework’s starter template, untouched since the first commit, '
             'so it landed there too.',
 
+            'There is now an MCP server at lunenburgbudgetproject.org/mcp \u2014 eight '
+            'tools an assistant can call directly, over the same data as everything else. '
+            'It exists because of a pattern worth naming: four assistants asked the same '
+            'question about this archive in one day and all four answered wrongly, and '
+            'not one of the four mistakes was the assistant\u2019s. Each read what this '
+            'site told it and reasoned correctly from that. A warning in a document is '
+            'read once, if ever; the description of a tool is read every time the tool is '
+            'used \u2014 so the tools are built so the known mistakes cannot be made. The '
+            'one that asks what a budget line was takes a single stage, because comparing '
+            'a budget to an actual is the error this project was founded on catching.',
+
             'The list of things this site says it cannot answer was two-thirds wrong. It '
             'still said out-of-district placement counts were unknown, and that whether '
             'budgeted positions were filled was unknown; both had been extracted from the '

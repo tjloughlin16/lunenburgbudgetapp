@@ -120,6 +120,37 @@ category and, where the page says one, a grade — because the town has called t
 Tutor, Aide, Paraprofessional, Para, (para) and Sped Para across fifteen years, and a
 filter on the printed title measures the house style rather than the staffing.
 
+## The MCP server
+
+`lunenburgbudgetproject.org/mcp` — Streamable HTTP, no authentication, eight tools. A
+separate Worker (`mcp/`), because Cloudflare documents remote MCP on Workers only; it binds
+the same D1 database as the site's `/api/query`, so the two cannot disagree. A Workers route
+on the zone diverts only that path; the Pages site is untouched.
+
+**It is not a wrapper over the HTTP API, and that is the point.** A caveat in a document is
+read once, if ever. A tool description is read every time the tool is called. So the tools
+are shaped to make the documented mistakes unreachable:
+
+| tool | the mistake it prevents |
+|---|---|
+| `budget_history(label, stage)` | takes ONE stage. A growth rate cannot be measured from an actual to a budget — the error that put a special education escalator 1.5 points too high |
+| `staff(fy, category)` | reads `role_category`, never the printed title, which has changed five times in fifteen years |
+| `search_meetings(word)` | says explicitly that an empty result means *not in the indexed documents*, and that the archive starts January 2025 |
+| `document(name)` | returns the URL and the sha256, so citing is a call rather than a discipline |
+| `list_datasets` / `read_first` / `worked_examples` | the discovery three agents never made |
+| `query(sql)` | the escape hatch, with the same guards as the HTTP endpoint |
+
+Every tool returns the documents its rows came from, or says plainly that this result has
+none. A plain GET to `/mcp` returns a description of the server rather than a JSON-RPC
+*Method not allowed*, because somebody fetching that address is trying to find out what it
+is.
+
+Deploy with `cd mcp && npx wrangler deploy`. Indexed in the sitemap, `llms.txt`,
+`/api/index` and `.well-known/ai-plugin.json`.
+
+**Untested by a real client.** It answers `tools/list` and `tools/call` correctly over the
+wire, which is not the same as an assistant choosing to use it.
+
 ## What is NOT solved
 
 - **Sandbox egress allowlists.** The site answers any user agent in under 300ms with no bot
@@ -174,7 +205,7 @@ filter on the printed title measures the house style rather than the staffing.
 | JSON-LD on the homepage | already present |
 | fenced, language-tagged code blocks | yes, in `questions.md` |
 | **markdown mirrors with `Vary: Accept`** | **no — see item 5 above** |
-| an MCP server at a stable `/mcp` | no. Worth considering: this archive is a better fit for MCP than most sites, because the useful surface is already a small set of typed queries |
+| an MCP server at a stable `/mcp` | **built** — see below |
 
 ## How to check it still works
 

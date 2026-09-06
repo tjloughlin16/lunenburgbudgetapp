@@ -632,6 +632,9 @@ def main():
         dict(url=f'{SITE}/api/totals', about='Whole-year budget against actual.'),
         dict(url=f'{SITE}/api/funding', about='Revenue, transfers, funds and grants.'),
         dict(url=f'{SITE}/api/documents', about='Provenance for every source.'),
+        dict(url=f'{SITE}/mcp', about='MCP server, Streamable HTTP, no authentication. '
+             'Eight tools over the same database, shaped so the documented mistakes '
+             'cannot be made.'),
         dict(url=f'{SITE}/api/query', about='Ask a question in SQL instead of downloading '
              'a table. Read-only, one statement, provenance with every answer.'),
         dict(url=f'{SITE}/api/questions', about='107 worked examples: a question, the SQL '
@@ -731,6 +734,10 @@ def main():
                                   'asking. Every figure traces to a published document '
                                   'with a URL and a sha256.',
             api=dict(type='openapi', url=f'{SITE}/openapi.json'),
+            mcp=dict(type='streamable-http', url=f'{SITE}/mcp',
+                     authentication='none',
+                     about='Eight tools over the same database, shaped so the documented '
+                           'mistakes cannot be made.'),
             guide=f'{SITE}/llms.txt',
             index=f'{SITE}/api/index',
             contact_email=None,

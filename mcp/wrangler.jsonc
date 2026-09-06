@@ -1,0 +1,26 @@
+{
+  // The Lunenburg Budget Project's MCP server.
+  //
+  // A separate Worker rather than another Pages Function, because Cloudflare documents
+  // remote MCP on Workers only. It binds the SAME D1 database the site's /api/query uses,
+  // so the two cannot disagree about what the archive holds.
+  //
+  // No authentication. Everything here is public records, so the usual OAuth machinery
+  // would protect nothing and cost every caller a login.
+  "name": "lunenburg-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  // Served from the site's own domain so the address is /mcp rather than a workers.dev
+  // subdomain nobody would guess. A Workers route takes precedence over the Pages
+  // project on the same hostname, so only this one path is diverted.
+  "routes": [
+    { "pattern": "lunenburgbudgetproject.org/mcp", "zone_name": "lunenburgbudgetproject.org" },
+    { "pattern": "lunenburgbudgetproject.org/mcp/*", "zone_name": "lunenburgbudgetproject.org" }
+  ],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "lunenburg-budget",
+      "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+  ]
+}

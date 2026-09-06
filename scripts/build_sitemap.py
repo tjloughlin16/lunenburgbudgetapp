@@ -34,7 +34,7 @@ SITE = 'https://lunenburgbudgetproject.org'
 
 # The doors, in the order an agent should meet them.
 ENTRY = [
-    '/llms.txt', '/version.json',
+    '/llms.txt', '/version.json', '/mcp',
     '/api/index', '/api/schema', '/api/tables', '/api/questions', '/api/query',
     '/api/coverage', '/api/documents',
     '/minutes/INDEX.txt', '/minutes/find/README.txt',

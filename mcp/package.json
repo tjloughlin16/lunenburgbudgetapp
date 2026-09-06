@@ -1,0 +1,14 @@
+{
+  "name": "lunenburg-mcp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "agents": "^0.22.0",
+    "zod": "^4.5.4"
+  }
+}
