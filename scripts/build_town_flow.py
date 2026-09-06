@@ -133,6 +133,112 @@ def gather(c):
     return d
 
 
+def diagram(d):
+    """Three columns, because two would be a lie.
+
+    The school diagram is two columns — sources on the left, where it lands on the right —
+    and that works there because the school's money either IS the appropriation or comes
+    from a fund that bypasses it. For the town it would be dishonest: drawing a line from
+    `property tax` to `police department` asserts a connection no record supports, and that
+    connection not existing is the main finding of this whole workstream.
+
+    So the general fund sits in the middle as a single tall box, and every source on the
+    left connects to IT rather than to any department. Money is fungible once it lands
+    there; the diagram stops at the boundary where the evidence stops.
+
+    **The enterprise funds bypass it entirely**, drawn as long lines running under the pot
+    from their own revenue to their own spending. That bypass is the point of the picture:
+    it is the same town, the same accountants, and a dollar can be followed the whole way —
+    because the fund IS the boundary.
+
+    Line styles carry certainty, as everywhere else here:
+      solid       traced
+      dashed      restricted — the fund exists for one purpose, and its spending is
+                  not observed because no expense report for these funds exists
+    """
+    LH, GAP = 54, 11
+    LX, MX, RX, BW, MW = 20, 350, 680, 250, 200
+    W = 950
+
+    lrows = [('levy', 'Property tax levy', d['revclass'].get('levy', 0), 'gf'),
+             ('state', 'State aid', d['revclass'].get('state', 0), 'gf'),
+             ('local', 'Local receipts', d['revclass'].get('local', 0), 'gf'),
+             ('onetime', 'One-time money', d['revclass'].get('onetime', 0), 'gf'),
+             ('transfer', 'Transfers in', d['revclass'].get('transfer', 0), 'gf')]
+    ent = [(f, nm.title()[:24], v) for f, nm, v in d['ent_in']]
+    for f, nm, v in ent:
+        lrows.append((f'ent-{f}', nm, v, 'ent'))
+    lrows.append(('sr', 'Special revenue funds', d['sr_in'], 'sr'))
+
+    order = sorted(d['byclass'].items(), key=lambda kv: -sum(r['v'] for r in kv[1]))
+    rrows = [(k, CLASS_LABEL[k], sum(r['v'] for r in v), 'gf') for k, v in order]
+    for f, nm, v in ent:
+        if d['ent_out'].get(f):
+            rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent'))
+    rrows.append(('sro', 'Special revenue — spent', d['sr_out'], 'sr'))
+
+    ly = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(lrows)}
+    ry = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(rrows)}
+    H = 52 + max(len(lrows), len(rrows)) * (LH + GAP) + 16
+    pot_top, pot_bot = ly['levy'], ly['transfer'] + LH
+
+    o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
+         f'role="img" aria-label="Every dollar into Lunenburg and where it goes">',
+         '<text class="dhd" x="20" y="30">MONEY IN</text>',
+         f'<text class="dhd" x="{MX}" y="30">WHERE IT POOLS</text>',
+         f'<text class="dhd" x="{RX}" y="30">MONEY OUT</text>']
+
+    def edge(x1, y1, x2, y2, cls, dip=0):
+        mx = (x1 + x2) / 2
+        if dip:
+            o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1+dip} {mx},{y2+dip} '
+                     f'{x2},{y2}"/>')
+        else:
+            o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
+
+    for k, *_ in lrows[:5]:
+        edge(LX + BW, ly[k] + LH / 2, MX, pot_top + (pot_bot - pot_top) / 2, 'traced')
+    for k, lab, v, kind in rrows:
+        if kind == 'gf':
+            edge(MX + MW, pot_top + (pot_bot - pot_top) / 2, RX, ry[k] + LH / 2, 'traced')
+    for f, nm, v in ent:
+        if d['ent_out'].get(f):
+            edge(LX + BW, ly[f'ent-{f}'] + LH / 2, RX, ry[f'ento-{f}'] + LH / 2,
+                 'bypass', dip=120)
+    edge(LX + BW, ly['sr'] + LH / 2, RX, ry['sro'] + LH / 2, 'restricted', dip=140)
+
+    o.append(f'<g class="b pot"><rect x="{MX}" y="{pot_top}" width="{MW}" '
+             f'height="{pot_bot - pot_top}" rx="7"/>'
+             f'<text class="bl pw" x="{MX+12}" y="{pot_top+24}">GENERAL FUND 0100</text>'
+             f'<text class="bv pw" x="{MX+12}" y="{pot_top+44}">'
+             f'{money(d["rev_total"])}</text>')
+    for i, line in enumerate(['Every source on the left flows',
+                              'in here and loses its identity.',
+                              'No record ties a source to a',
+                              'department, so no line crosses',
+                              'this box — the diagonal edge',
+                              'does not exist.']):
+        o.append(f'<text class="potnote" x="{MX+12}" y="{pot_top+70+i*15}">{line}</text>')
+    o.append('</g>')
+
+    for rows, ys, x, w in ((lrows, ly, LX, BW), (rrows, ry, RX, BW)):
+        for k, label, v, kind in rows:
+            y = ys[k]
+            sub = ''
+            if k == 'sr':
+                sub = f'holding {money(d["sr_held"])} at 31 March'
+            elif kind == 'ent':
+                sub = 'rate-funded · bypasses the pot'
+            o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{w}" '
+                     f'height="{LH}" rx="5"/>'
+                     f'<text class="bl" x="{x+10}" y="{y+20}">{html.escape(label)}</text>'
+                     f'<text class="bv" x="{x+10}" y="{y+37}">{money(v)}</text>'
+                     + (f'<text class="bs" x="{x+10}" y="{y+49}">{html.escape(sub)}</text>'
+                        if sub else '') + '</g>')
+    o.append('</svg>')
+    return '\n'.join(o)
+
+
 def bars(rows):
     top = max((v for _, v, *_ in rows), default=1) or 1
     o = ['<div class="bars">']
@@ -171,6 +277,13 @@ def render(c):
       f'<div class="mv">{d["rev_total"]/town_in*100:.0f}%</div>'
       f'<div class="ms">The one system Town Meeting debates — and the only one where a '
       f'dollar’s origin cannot be followed.</div></div></section>')
+
+    a('<div class="scroll">' + diagram(d) + '</div>')
+    a('<div class="key"><span><i class="k traced"></i>traced</span>'
+      '<span><i class="k bypass"></i>bypasses the general fund entirely — rate-funded and '
+      'ring-fenced</span>'
+      '<span><i class="k restricted"></i>the fund spent it; <b>purpose not observed</b>'
+      '</span></div>')
 
     a('<section class="stage"><h2>The town runs four money systems that do not mix</h2>'
       '<p class="cap">This is the thing the school view cannot show, because the schools '
@@ -269,10 +382,12 @@ PAGE = '''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root {{ --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
-  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; }}
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --ent:#1c4f7a; --traced-bg2:#e7f0ea;
+  --potbg:#2c2b28; --potink:#f2efe9; }}
 @media (prefers-color-scheme: dark) {{
   :root {{ --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
-    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; }}
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --ent:#7fb4dd; --traced-bg2:#1b2b22;
+    --potbg:#e8e4dc; --potink:#1a1a18; }}
 }}
 * {{ box-sizing:border-box }}
 body {{ margin:0; background:var(--bg); color:var(--ink);
@@ -313,6 +428,31 @@ h3 {{ font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(
 .row.hi .fill {{ background:var(--hi) }}
 .row.hi .lab {{ color:var(--hi) }}
 .row.alt .fill {{ background:var(--muted) }}
+.scroll {{ overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 6px }}
+svg.flow {{ display:block; min-width:950px; height:auto }}
+.dhd {{ font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }}
+.b rect {{ fill:var(--card); stroke:var(--grid); stroke-width:1.5 }}
+.b.gf rect {{ fill:var(--traced-bg2); stroke:var(--traced) }}
+.b.ent rect {{ fill:none; stroke:var(--ent); stroke-width:2 }}
+.b.sr rect {{ fill:none; stroke:var(--warn); stroke-width:2; stroke-dasharray:6 4 }}
+.b.pot rect {{ fill:var(--potbg); stroke:var(--potbg) }}
+.bl {{ font-size:13px; font-weight:600; fill:var(--ink) }}
+.bv {{ font-size:13px; fill:var(--ink); font-family:ui-monospace,Menlo,monospace }}
+.bs {{ font-size:10px; fill:var(--muted) }}
+.pw {{ fill:var(--potink) }}
+.potnote {{ font-size:10.5px; fill:var(--potink); opacity:.75 }}
+.e {{ fill:none; stroke-width:2 }}
+.e.traced {{ stroke:var(--traced); opacity:.45 }}
+.e.bypass {{ stroke:var(--ent); opacity:.75; stroke-width:2.5 }}
+.e.restricted {{ stroke:var(--warn); opacity:.8; stroke-dasharray:7 5 }}
+.key {{ display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin-bottom:10px }}
+.key span {{ display:flex; align-items:center; gap:6px }}
+.k {{ width:24px; height:0; border-top:2px solid; display:inline-block }}
+.k.traced {{ border-color:var(--traced) }}
+.k.bypass {{ border-color:var(--ent); border-top-width:3px }}
+.k.restricted {{ border-top-style:dashed; border-color:var(--warn) }}
 .warn {{ background:var(--warn-bg); border-left:3px solid var(--warn);
   border-radius:0 6px 6px 0; padding:11px 13px; font-size:14px; margin:14px 0 }}
 table {{ border-collapse:collapse; width:100%; font-size:13.5px; margin-top:6px }}

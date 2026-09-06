@@ -3,10 +3,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root { --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
-  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; }
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --ent:#1c4f7a; --traced-bg2:#e7f0ea;
+  --potbg:#2c2b28; --potink:#f2efe9; }
 @media (prefers-color-scheme: dark) {
   :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
-    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; }
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --ent:#7fb4dd; --traced-bg2:#1b2b22;
+    --potbg:#e8e4dc; --potink:#1a1a18; }
 }
 * { box-sizing:border-box }
 body { margin:0; background:var(--bg); color:var(--ink);
@@ -47,6 +49,31 @@ h3 { font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(-
 .row.hi .fill { background:var(--hi) }
 .row.hi .lab { color:var(--hi) }
 .row.alt .fill { background:var(--muted) }
+.scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 6px }
+svg.flow { display:block; min-width:950px; height:auto }
+.dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
+.b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
+.b.gf rect { fill:var(--traced-bg2); stroke:var(--traced) }
+.b.ent rect { fill:none; stroke:var(--ent); stroke-width:2 }
+.b.sr rect { fill:none; stroke:var(--warn); stroke-width:2; stroke-dasharray:6 4 }
+.b.pot rect { fill:var(--potbg); stroke:var(--potbg) }
+.bl { font-size:13px; font-weight:600; fill:var(--ink) }
+.bv { font-size:13px; fill:var(--ink); font-family:ui-monospace,Menlo,monospace }
+.bs { font-size:10px; fill:var(--muted) }
+.pw { fill:var(--potink) }
+.potnote { font-size:10.5px; fill:var(--potink); opacity:.75 }
+.e { fill:none; stroke-width:2 }
+.e.traced { stroke:var(--traced); opacity:.45 }
+.e.bypass { stroke:var(--ent); opacity:.75; stroke-width:2.5 }
+.e.restricted { stroke:var(--warn); opacity:.8; stroke-dasharray:7 5 }
+.key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin-bottom:10px }
+.key span { display:flex; align-items:center; gap:6px }
+.k { width:24px; height:0; border-top:2px solid; display:inline-block }
+.k.traced { border-color:var(--traced) }
+.k.bypass { border-color:var(--ent); border-top-width:3px }
+.k.restricted { border-top-style:dashed; border-color:var(--warn) }
 .warn { background:var(--warn-bg); border-left:3px solid var(--warn);
   border-radius:0 6px 6px 0; padding:11px 13px; font-size:14px; margin:14px 0 }
 table { border-collapse:collapse; width:100%; font-size:13.5px; margin-top:6px }
@@ -77,6 +104,55 @@ a { color:var(--hi) }
 </header>
 
 <section class="metrics"><div class="m"><div class="mk">Every dollar into the town</div><div class="mv">$56,858,248</div><div class="ms">General fund, enterprise funds and special revenue funds. <b>Mixed bases — see below.</b></div></div><div class="m"><div class="mk">Every dollar out</div><div class="mv">$55,043,604</div><div class="ms">The omnibus budget, the enterprise funds and the special revenue funds.</div></div><div class="m hi"><div class="mk">Sitting in accounts, unspent</div><div class="mv">$1,592,572</div><div class="ms">Held across the special revenue funds at 31 March. Not income, not spending: money that arrived and stopped.</div></div><div class="m"><div class="mk">The general fund’s share of it all</div><div class="mv">92%</div><div class="ms">The one system Town Meeting debates — and the only one where a dollar’s origin cannot be followed.</div></div></section>
+<div class="scroll"><svg viewBox="0 0 950 718" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Every dollar into Lunenburg and where it goes">
+<text class="dhd" x="20" y="30">MONEY IN</text>
+<text class="dhd" x="350" y="30">WHERE IT POOLS</text>
+<text class="dhd" x="680" y="30">MONEY OUT</text>
+<path class="e traced" d="M270,79.0 C310.0,79.0 310.0,209.0 350,209.0"/>
+<path class="e traced" d="M270,144.0 C310.0,144.0 310.0,209.0 350,209.0"/>
+<path class="e traced" d="M270,209.0 C310.0,209.0 310.0,209.0 350,209.0"/>
+<path class="e traced" d="M270,274.0 C310.0,274.0 310.0,209.0 350,209.0"/>
+<path class="e traced" d="M270,339.0 C310.0,339.0 310.0,209.0 350,209.0"/>
+<path class="e traced" d="M550,209.0 C615.0,209.0 615.0,79.0 680,79.0"/>
+<path class="e traced" d="M550,209.0 C615.0,209.0 615.0,144.0 680,144.0"/>
+<path class="e traced" d="M550,209.0 C615.0,209.0 615.0,209.0 680,209.0"/>
+<path class="e traced" d="M550,209.0 C615.0,209.0 615.0,274.0 680,274.0"/>
+<path class="e traced" d="M550,209.0 C615.0,209.0 615.0,339.0 680,339.0"/>
+<path class="e traced" d="M550,209.0 C615.0,209.0 615.0,404.0 680,404.0"/>
+<path class="e bypass" d="M270,404.0 C475.0,524.0 475.0,589.0 680,469.0"/>
+<path class="e bypass" d="M270,534.0 C475.0,654.0 475.0,654.0 680,534.0"/>
+<path class="e bypass" d="M270,599.0 C475.0,719.0 475.0,719.0 680,599.0"/>
+<path class="e restricted" d="M270,664.0 C475.0,804.0 475.0,804.0 680,664.0"/>
+<g class="b pot"><rect x="350" y="52" width="200" height="314" rx="7"/><text class="bl pw" x="362" y="76">GENERAL FUND 0100</text><text class="bv pw" x="362" y="96">$52,187,832</text>
+<text class="potnote" x="362" y="122">Every source on the left flows</text>
+<text class="potnote" x="362" y="137">in here and loses its identity.</text>
+<text class="potnote" x="362" y="152">No record ties a source to a</text>
+<text class="potnote" x="362" y="167">department, so no line crosses</text>
+<text class="potnote" x="362" y="182">this box — the diagonal edge</text>
+<text class="potnote" x="362" y="197">does not exist.</text>
+</g>
+<g class="b gf"><rect x="20" y="52" width="250" height="54" rx="5"/><text class="bl" x="30" y="72">Property tax levy</text><text class="bv" x="30" y="89">$35,111,996</text></g>
+<g class="b gf"><rect x="20" y="117" width="250" height="54" rx="5"/><text class="bl" x="30" y="137">State aid</text><text class="bv" x="30" y="154">$11,153,368</text></g>
+<g class="b gf"><rect x="20" y="182" width="250" height="54" rx="5"/><text class="bl" x="30" y="202">Local receipts</text><text class="bv" x="30" y="219">$3,335,624</text></g>
+<g class="b gf"><rect x="20" y="247" width="250" height="54" rx="5"/><text class="bl" x="30" y="267">One-time money</text><text class="bv" x="30" y="284">$2,209,993</text></g>
+<g class="b gf"><rect x="20" y="312" width="250" height="54" rx="5"/><text class="bl" x="30" y="332">Transfers in</text><text class="bv" x="30" y="349">$376,851</text></g>
+<g class="b ent"><rect x="20" y="377" width="250" height="54" rx="5"/><text class="bl" x="30" y="397">Sewer Enterprise Fund</text><text class="bv" x="30" y="414">$1,454,671</text><text class="bs" x="30" y="426">rate-funded · bypasses the pot</text></g>
+<g class="b ent"><rect x="20" y="442" width="250" height="54" rx="5"/><text class="bl" x="30" y="462">Solid Waste/Recycling En</text><text class="bv" x="30" y="479">$1,000,000</text><text class="bs" x="30" y="491">rate-funded · bypasses the pot</text></g>
+<g class="b ent"><rect x="20" y="507" width="250" height="54" rx="5"/><text class="bl" x="30" y="527">Sewer Betterments</text><text class="bv" x="30" y="544">$436,667</text><text class="bs" x="30" y="556">rate-funded · bypasses the pot</text></g>
+<g class="b ent"><rect x="20" y="572" width="250" height="54" rx="5"/><text class="bl" x="30" y="592">Peg Access Enterprise Fu</text><text class="bv" x="30" y="609">$225,927</text><text class="bs" x="30" y="621">rate-funded · bypasses the pot</text></g>
+<g class="b sr"><rect x="20" y="637" width="250" height="54" rx="5"/><text class="bl" x="30" y="657">Special revenue funds</text><text class="bv" x="30" y="674">$1,553,151</text><text class="bs" x="30" y="686">holding $1,592,572 at 31 March</text></g>
+<g class="b gf"><rect x="680" y="52" width="250" height="54" rx="5"/><text class="bl" x="690" y="72">Voted as a total, allocated by another elected body</text><text class="bv" x="690" y="89">$26,919,511</text></g>
+<g class="b gf"><rect x="680" y="117" width="250" height="54" rx="5"/><text class="bl" x="690" y="137">Discretionary — the meeting sets the amount</text><text class="bv" x="690" y="154">$11,500,472</text></g>
+<g class="b gf"><rect x="680" y="182" width="250" height="54" rx="5"/><text class="bl" x="690" y="202">Assessed by somebody else</text><text class="bv" x="690" y="219">$4,829,830</text></g>
+<g class="b gf"><rect x="680" y="247" width="250" height="54" rx="5"/><text class="bl" x="690" y="267">Insurance and compensation</text><text class="bv" x="690" y="284">$4,107,709</text></g>
+<g class="b gf"><rect x="680" y="312" width="250" height="54" rx="5"/><text class="bl" x="690" y="332">Debt service, already committed</text><text class="bv" x="690" y="349">$2,547,439</text></g>
+<g class="b gf"><rect x="680" y="377" width="250" height="54" rx="5"/><text class="bl" x="690" y="397">Transfers to capital and trust</text><text class="bv" x="690" y="414">$1,285,000</text></g>
+<g class="b ent"><rect x="680" y="442" width="250" height="54" rx="5"/><text class="bl" x="690" y="462">Sewer Enterprise Fund — spent</text><text class="bv" x="690" y="479">$1,706,419</text><text class="bs" x="690" y="491">rate-funded · bypasses the pot</text></g>
+<g class="b ent"><rect x="680" y="507" width="250" height="54" rx="5"/><text class="bl" x="690" y="527">Sewer Betterments — spent</text><text class="bv" x="690" y="544">$184,920</text><text class="bs" x="690" y="556">rate-funded · bypasses the pot</text></g>
+<g class="b ent"><rect x="680" y="572" width="250" height="54" rx="5"/><text class="bl" x="690" y="592">Peg Access Enterprise Fu — spent</text><text class="bv" x="690" y="609">$225,928</text><text class="bs" x="690" y="621">rate-funded · bypasses the pot</text></g>
+<g class="b sr"><rect x="680" y="637" width="250" height="54" rx="5"/><text class="bl" x="690" y="657">Special revenue — spent</text><text class="bv" x="690" y="674">$1,736,376</text></g>
+</svg></div>
+<div class="key"><span><i class="k traced"></i>traced</span><span><i class="k bypass"></i>bypasses the general fund entirely — rate-funded and ring-fenced</span><span><i class="k restricted"></i>the fund spent it; <b>purpose not observed</b></span></div>
 <section class="stage"><h2>The town runs four money systems that do not mix</h2><p class="cap">This is the thing the school view cannot show, because the schools live in only two of them.</p><table><tr><th>system</th><th class="v">in</th><th class="v">out</th><th>can a dollar be followed?</th></tr><tr><td><b>General fund</b><span class="sub">67 departments, one pot</span></td><td class="v">$52,187,832</td><td class="v">$51,189,961</td><td><b>No.</b> Every source lands in fund 0100 and loses its identity. This is 92% of the money and the only system with this problem</td></tr><tr><td><b>Enterprise funds</b><span class="sub">sewer, water, PEG, solid waste</span></td><td class="v">$3,117,265</td><td class="v">$2,117,267</td><td><b>Yes.</b> Rate-funded and self-contained: the people who pay are the people served, and the accounts are separate end to end</td></tr><tr><td><b>Special revenue funds</b><span class="sub">61 of them, mostly the schools’</span></td><td class="v">$1,553,151</td><td class="v">$1,736,376</td><td><b>Half.</b> The source is known exactly, the use is not observed at all — no expense report exists for them</td></tr><tr><td><b>Trust funds</b><span class="sub">scholarships, cemetery, stabilisation</span></td><td class="v">—</td><td class="v">—</td><td><b>Not held.</b> The annual-report extract is <code>check failed</code> on ordinal columns and cannot be aggregated</td></tr></table><p class="warn"><b>The asymmetry is the finding.</b> The system nobody argues about — the enterprise funds — is fully traceable, because it is rate-funded and ring-fenced. The system every Town Meeting argues about is the one where no dollar can be followed from where it came from to what it bought. That is not an accident of record-keeping; it is what a general fund IS.</p></section>
 <div class="cols"><div class="col"><h2>Money in</h2><div class="colnote">Who sets each dollar. The general fund, by class.</div>
 <div class="bars">
