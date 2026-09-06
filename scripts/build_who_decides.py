@@ -80,6 +80,43 @@ CONTROL = {
     '996': ('transfer', 'stated', 'Named `TRANSFER TO TRUST FUNDS`.'),
 }
 
+# REVENUE, classified by the question that matters on this side: who SETS the amount,
+# and can the town change it. That is a different question from "who decides how it is
+# spent", and using one taxonomy for both would blur the only thing worth knowing here.
+#
+# Exact account names, because ten-character truncation makes prefixes dangerous -- `BUS
+# CERTIF` is business certificates and `TRANS ENT` is a transfer, both caught by reading
+# what an account sits among rather than by matching a substring.
+REV_CLASS = {
+    'levy': (['RE TAXES', 'PP TAXES', 'SUPPLE TAX', 'RE FY27', 'PP FY27', 'PREPAYPP',
+              'ROLL BACK', 'MISCTAXOVE', 'DEF PROP'],
+             'Set by the town — inside a cap it cannot exceed',
+             'The property tax levy. The town chooses the rate, and **Proposition 2½ caps '
+             'the total increase at 2.5% plus new growth.** Above that needs an override '
+             'at the ballot. This is the only large revenue the town sets at all, and it '
+             'is set inside a ceiling somebody else wrote.'),
+    'state': (['CH 70 AID', 'UGGA', 'SCHCOSTREI', 'SPED REIMB', 'CHARTER', 'STATE LAND',
+               'VET ABATE', 'ABATE ELDE', 'ABATE SPOU', 'BLIND ABAT', 'S6CH115VET',
+               'MSBA REIMB', 'ADD AID LB', 'ADDAIDAPPR', 'ADDAIDESTR', 'ADD\'L ASST',
+               'MUN RELIEF', 'LOC AID AD', 'STATE REVE', 'MUN STAB', 'SCHOOL TRA',
+               'ERATEREIMB', 'MED D DRUG', 'MEDRECMRC', 'QUINN BILL', 'CH 81'],
+              'Set by the Legislature — the town has no say',
+              'State aid. The amounts arrive in the Governor’s budget and the Cherry '
+              'Sheet. **Chapter 70 alone is more than a sixth of all town revenue and no '
+              'vote in Lunenburg changes it by a dollar.**'),
+    'onetime': (['FBCYBUDGET', 'PY BAL', 'BOND PROC', 'PREMIUMS', 'INS SETTLR',
+                 'SALE TOWNP', 'SALE STAND'],
+                'One-time money that does not recur',
+                'Free cash, reserves and proceeds. Real money, spendable once. Using it '
+                'for a recurring cost moves the problem to next year rather than solving '
+                'it.'),
+    'transfer': (['TRANS ENT', 'TRANSOFFSE', 'TRANSRECRE', 'OP TRAN AG', 'OP TRAN CP',
+                  'OP TRAN SR', 'OP TRAN TR'],
+                 'Moved in from the town’s other funds',
+                 'Transfers, chiefly from the enterprise funds. **Not new money into the '
+                 'town** — money the town already had, moved between pockets.'),
+}
+
 CLASSES = [
     ('assessed', 'Assessed by somebody else',
      'A bill the town did not set and cannot refuse. Another body — a regional district, '
@@ -161,7 +198,54 @@ def render(c):
     a(bars(rows))
     a('</section>')
 
-    a('<section class="pot"><h2>2 &middot; The general fund is one pot</h2>'
+    # Revenue, classified by who SETS it. The residual is `local` and is named as one.
+    allrev = c.execute(f"""SELECT name, SUM(budgeted) v FROM v_revenue
+                           WHERE fy={FY} AND fund='0100' GROUP BY name
+                           HAVING v>0""").fetchall()
+    idx = {}
+    for k, (names, _, _) in REV_CLASS.items():
+        for n in names:
+            idx[n] = k
+    buckets, members = {}, {}
+    for r in allrev:
+        k = idx.get(r['name'], 'local')
+        buckets[k] = buckets.get(k, 0) + r['v']
+        members.setdefault(k, []).append((r['name'], r['v']))
+    rtot = sum(buckets.values())
+
+    a('<section class="stage"><h2>2 &middot; Who SETS each dollar coming in</h2>'
+      '<p class="cap">A different question from who spends it, and it has a sharper '
+      'answer. Six accounts are 95% of all town revenue; 113 of the 192 carry nothing '
+      'at all.</p>')
+    order = ['levy', 'state', 'onetime', 'transfer', 'local']
+    lbl = {k: REV_CLASS[k][1] for k in REV_CLASS}
+    lbl['local'] = 'Local receipts — fees, permits, excise, fines'
+    a(bars([(lbl[k], buckets.get(k, 0),
+             'hi' if k == 'state' else '',
+             f'{buckets.get(k,0)/rtot*100:.1f}% of revenue')
+            for k in order if buckets.get(k)]))
+    st, lv = buckets.get('state', 0), buckets.get('levy', 0)
+    a(f'<p class="warn"><b>The town sets {lv/rtot*100:.0f}% of its own income, inside a '
+      f'ceiling it did not write, and has no say at all over {st/rtot*100:.0f}%.</b> '
+      f'Proposition 2½ caps the levy increase; Chapter 70 and the rest of state aid arrive '
+      f'in the Governor’s budget. Between them that is '
+      f'{(lv+st)/rtot*100:.0f}% of everything the town takes in.</p>')
+    for k in order:
+        if not buckets.get(k):
+            continue
+        why = REV_CLASS[k][2] if k in REV_CLASS else (
+            '**A residual** — everything not in the classes above. Rates are set variously '
+            'by the town and by statute, and the amounts move with activity rather than '
+            'with any decision.')
+        top = sorted(members[k], key=lambda x: -x[1])[:6]
+        a(f'<details><summary>{lbl[k]} — {money(buckets[k])}</summary>'
+          f'<p class="cap">{why}</p><p class="cap">'
+          + ', '.join(f'<code>{html.escape(n)}</code> {money(v)}' for n, v in top)
+          + (f' … and {len(members[k])-6} more' if len(members[k]) > 6 else '')
+          + '</p></details>')
+    a('</section>')
+
+    a('<section class="pot"><h2>3 &middot; The general fund is one pot</h2>'
       '<p>Every one of those 192 accounts pays into fund 0100 and loses its identity '
       'there. <b>No record ties a source to a department.</b> The town apportions by share '
       'when it presents a budget; that is a convention for explaining, not a route any '
@@ -170,7 +254,7 @@ def render(c):
       'no answer, and the question “who decides how the pot is spent?” has a very good '
       'one. That is what the rest of this page is.</p></section>')
 
-    a(f'<section class="stage"><h2>3 &middot; Who actually decides</h2>'
+    a(f'<section class="stage"><h2>4 &middot; Who actually decides how it is spent</h2>'
       f'<p class="cap">The omnibus budget is {money(omnibus)} across {len(depts)} '
       f'departments. A person at Town Meeting is voting on all of it and reasonably '
       f'believes they are deciding it.</p>')
@@ -272,6 +356,8 @@ th,td {{ text-align:left; padding:6px 8px 6px 0; border-bottom:1px solid var(--g
   vertical-align:top }}
 code {{ font-family:ui-monospace,Menlo,monospace; font-size:12px }}
 ul {{ font-size:14px; padding-left:20px }} li {{ margin:6px 0 }}
+details {{ margin:10px 0; font-size:13.5px }}
+summary {{ cursor:pointer; font-weight:600 }}
 .gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
 @media (min-width:680px) {{
   .row {{ grid-template-columns:40% 1fr 20%; grid-template-areas:"lab bar amt"; gap:12px;

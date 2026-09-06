@@ -48,6 +48,8 @@ th,td { text-align:left; padding:6px 8px 6px 0; border-bottom:1px solid var(--gr
   vertical-align:top }
 code { font-family:ui-monospace,Menlo,monospace; font-size:12px }
 ul { font-size:14px; padding-left:20px } li { margin:6px 0 }
+details { margin:10px 0; font-size:13.5px }
+summary { cursor:pointer; font-weight:600 }
 .gen { margin-top:30px; font-size:12px; color:var(--muted) }
 @media (min-width:680px) {
   .row { grid-template-columns:40% 1fr 20%; grid-template-areas:"lab bar amt"; gap:12px;
@@ -75,8 +77,23 @@ ul { font-size:14px; padding-left:20px } li { margin:6px 0 }
 <div class="row alt"><div class="lab">All special revenue funds (actual, 9 months)</div><div class="track"><div class="fill" style="width:2.98%"></div></div><div class="amt">$1,553,151</div></div>
 </div>
 </section>
-<section class="pot"><h2>2 &middot; The general fund is one pot</h2><p>Every one of those 192 accounts pays into fund 0100 and loses its identity there. <b>No record ties a source to a department.</b> The town apportions by share when it presents a budget; that is a convention for explaining, not a route any dollar takes.</p><p class="refuse">Which means the question “what does Chapter&nbsp;70 pay for?” has no answer, and the question “who decides how the pot is spent?” has a very good one. That is what the rest of this page is.</p></section>
-<section class="stage"><h2>3 &middot; Who actually decides</h2><p class="cap">The omnibus budget is $51,189,961 across 67 departments. A person at Town Meeting is voting on all of it and reasonably believes they are deciding it.</p>
+<section class="stage"><h2>2 &middot; Who SETS each dollar coming in</h2><p class="cap">A different question from who spends it, and it has a sharper answer. Six accounts are 95% of all town revenue; 113 of the 192 carry nothing at all.</p>
+<div class="bars">
+<div class="row "><div class="lab">Set by the town — inside a cap it cannot exceed<span class="sub">67.3% of revenue</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$35,111,996</div></div>
+<div class="row hi"><div class="lab">Set by the Legislature — the town has no say<span class="sub">21.4% of revenue</span></div><div class="track"><div class="fill" style="width:31.77%"></div></div><div class="amt">$11,153,368</div></div>
+<div class="row "><div class="lab">One-time money that does not recur<span class="sub">4.2% of revenue</span></div><div class="track"><div class="fill" style="width:6.29%"></div></div><div class="amt">$2,209,993</div></div>
+<div class="row "><div class="lab">Moved in from the town’s other funds<span class="sub">0.7% of revenue</span></div><div class="track"><div class="fill" style="width:1.07%"></div></div><div class="amt">$376,851</div></div>
+<div class="row "><div class="lab">Local receipts — fees, permits, excise, fines<span class="sub">6.4% of revenue</span></div><div class="track"><div class="fill" style="width:9.50%"></div></div><div class="amt">$3,335,624</div></div>
+</div>
+<p class="warn"><b>The town sets 67% of its own income, inside a ceiling it did not write, and has no say at all over 21%.</b> Proposition 2½ caps the levy increase; Chapter 70 and the rest of state aid arrive in the Governor’s budget. Between them that is 89% of everything the town takes in.</p>
+<details><summary>Set by the town — inside a cap it cannot exceed — $35,111,996</summary><p class="cap">The property tax levy. The town chooses the rate, and **Proposition 2½ caps the total increase at 2.5% plus new growth.** Above that needs an override at the ballot. This is the only large revenue the town sets at all, and it is set inside a ceiling somebody else wrote.</p><p class="cap"><code>RE TAXES</code> $34,029,858, <code>PP TAXES</code> $1,052,138, <code>SUPPLE TAX</code> $30,000</p></details>
+<details><summary>Set by the Legislature — the town has no say — $11,153,368</summary><p class="cap">State aid. The amounts arrive in the Governor’s budget and the Cherry Sheet. **Chapter 70 alone is more than a sixth of all town revenue and no vote in Lunenburg changes it by a dollar.**</p><p class="cap"><code>CH 70 AID</code> $9,229,410, <code>UGGA</code> $1,316,438, <code>SCHCOSTREI</code> $318,424, <code>ABATE ELDE</code> $56,897, <code>VET ABATE</code> $56,897, <code>S6CH115VET</code> $50,560 … and 3 more</p></details>
+<details><summary>One-time money that does not recur — $2,209,993</summary><p class="cap">Free cash, reserves and proceeds. Real money, spendable once. Using it for a recurring cost moves the problem to next year rather than solving it.</p><p class="cap"><code>FBCYBUDGET</code> $2,209,993</p></details>
+<details><summary>Moved in from the town’s other funds — $376,851</summary><p class="cap">Transfers, chiefly from the enterprise funds. **Not new money into the town** — money the town already had, moved between pockets.</p><p class="cap"><code>TRANS ENT</code> $338,397, <code>OP TRAN SR</code> $38,454</p></details>
+<details><summary>Local receipts — fees, permits, excise, fines — $3,335,624</summary><p class="cap">**A residual** — everything not in the classes above. Rates are set variously by the town and by statute, and the amounts move with activity rather than with any decision.</p><p class="cap"><code>MVE</code> $1,875,000, <code>RESCUE WAG</code> $275,000, <code>BUILD PERM</code> $262,000, <code>INVEST INC</code> $155,100, <code>NETMETERIN</code> $145,000, <code>MEALS TAX</code> $100,000 … and 58 more</p></details>
+</section>
+<section class="pot"><h2>3 &middot; The general fund is one pot</h2><p>Every one of those 192 accounts pays into fund 0100 and loses its identity there. <b>No record ties a source to a department.</b> The town apportions by share when it presents a budget; that is a convention for explaining, not a route any dollar takes.</p><p class="refuse">Which means the question “what does Chapter&nbsp;70 pay for?” has no answer, and the question “who decides how the pot is spent?” has a very good one. That is what the rest of this page is.</p></section>
+<section class="stage"><h2>4 &middot; Who actually decides how it is spent</h2><p class="cap">The omnibus budget is $51,189,961 across 67 departments. A person at Town Meeting is voting on all of it and reasonably believes they are deciding it.</p>
 <div class="bars">
 <div class="row "><div class="lab">Assessed by somebody else<span class="sub">9.4% of the budget</span></div><div class="track"><div class="fill" style="width:17.94%"></div></div><div class="amt">$4,829,830</div></div>
 <div class="row "><div class="lab">Committed by votes already taken<span class="sub">5.0% of the budget</span></div><div class="track"><div class="fill" style="width:9.46%"></div></div><div class="amt">$2,547,439</div></div>
