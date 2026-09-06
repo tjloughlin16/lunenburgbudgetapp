@@ -138,6 +138,28 @@ export function AskAnAssistant() {
         </p>
       </div>
 
+      {/* The same addresses as REAL ANCHORS, not only as text inside the box above.
+        * This matters because the top-of-page strip now sends agents here instead of
+        * listing every endpoint itself: a page that an agent is pointed at has to be a
+        * complete hop, or it is a dead end that merely looks like an index. Text in a
+        * <textarea> is text; an assistant that only follows links it has SEEN linked is
+        * not authorised by it. */}
+      <h2 className="mt-10 text-lg font-bold">The addresses, as links</h2>
+      <p className="mt-2 text-[14px]" style={{ color: 'var(--text-secondary)' }}>
+        The same ones as in the prompt. Follow them directly if you would rather.
+      </p>
+      <ul className="mt-3 text-[13px] space-y-1"
+        style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
+        {[...MANIFEST.query, ...MANIFEST.answers.map(a => ({ path: a.path, note: a.question }))]
+          .map(e => (
+            <li key={e.path}>
+              <a href={abs(e.path)} className="underline"
+                style={{ color: 'var(--series-cost)' }}>{e.path}</a>
+              <span className="ml-2" style={{ color: 'var(--text-muted)' }}>{e.note}</span>
+            </li>
+          ))}
+      </ul>
+
       <h2 className="mt-10 text-lg font-bold">What to ask it</h2>
       <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
         There are {MANIFEST.questions} questions this archive can answer, in plain English,

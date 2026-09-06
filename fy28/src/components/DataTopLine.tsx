@@ -25,6 +25,23 @@ import MANIFEST from '../data/agent-manifest.json'
  *  served only to machines is cloaking, and it would not work anyway, because the readers
  *  that matter drop hidden nodes exactly as they drop comments.
  *
+ *  ONE LINK, NOT FIVE -- changed 6 September 2026
+ *
+ *  It listed five addresses, and a resident opening the front page met a row of file paths
+ *  before a word about the budget. TJ: "it's just too overwhelming." That is a real cost
+ *  and it was being paid by every human visitor to buy something for a minority of
+ *  machine ones.
+ *
+ *  What matters is not that the addresses are HERE. It is that a machine-readable entry
+ *  point is EARLY -- above the truncation cut -- and that following it reaches everything.
+ *  So the strip is one link to /ask, which carries the prompt, every endpoint as a real
+ *  anchor, and the MCP server. One hop, and the hop is complete.
+ *
+ *  That is the condition to preserve if this is ever edited again: /ask must keep real
+ *  anchors to the endpoints. If it degrades into prose about them, this line becomes a
+ *  dead end that looks like an index, which is worse than the row of paths it replaced.
+ *  `check-agents.mjs` fetches every advertised URL, and DataFooter still lists them all.
+ *
  *  `scripts/agent-view.mjs --links` fails the build if any of these drifts past 50,000
  *  characters of converted text, so this cannot quietly slide down the page again. */
 /* Absolute. This line is the first machine-readable address on the page, put there
@@ -48,10 +65,8 @@ export function DataTopLine() {
     <div className="border-b" style={{ borderColor: 'var(--grid)' }}>
       <p className="mx-auto max-w-6xl px-5 py-1.5 text-[11px] leading-snug"
          style={{ color: 'var(--text-muted)' }}>
-        <strong style={{ color: 'var(--text-secondary)' }}>Reading this with software?</strong>{' '}
-        {link('/mcp')} is an MCP server · {link('/api/index', '/api/index')} the data ·{' '}
-        {link('/minutes/INDEX.txt', '/minutes/INDEX.txt')} the meetings ·{' '}
-        {link('/agents', '/agents')} every address · {link('/llms.txt', '/llms.txt')} the map.
+        Reading this with software, or want an AI to analyse it?{' '}
+        {link('/ask')} has the prompt, the data API and an MCP server.
       </p>
     </div>
   )
