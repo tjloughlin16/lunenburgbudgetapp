@@ -317,6 +317,88 @@ def programme_rows(c, fundnames):
     return out, d300
 
 
+def diagram(progs, funds, d300, grant_spend, elsewhere):
+    """The actual flow: source boxes, landing boxes, and a line between them.
+
+    WHY THIS EXISTS AFTER I ARGUED AGAINST IT
+
+    The first attempt at this page dropped connectors as unreadable and left two columns of
+    cards. TJ, correctly: "I dont see a diagram/flow diagram." Two lists side by side are
+    not a diagram — the LINE is the claim, and a page whose subject is which money goes
+    where cannot leave the going-where implicit.
+
+    What makes it readable is not fewer lines, it is fewer CROSSINGS: landing boxes are
+    ordered to sit beside the sources that feed them, so most edges are short and
+    near-horizontal. The line style is the finding:
+
+      solid       traced — an account or journal shows this money going here
+      dashed      restricted — the fund exists for this and nothing else, and no expense
+                  report for special revenue funds exists, so it is NOT observed
+      dotted red  the money is collected and cannot be located at all
+
+    Heights are uniform, unlike the money it represents, because a box has to hold a label.
+    The AMOUNT is printed in every box; the geometry carries the connection, never the
+    magnitude. A diagram that implied scale it does not have would be worse than a list.
+    """
+    LH, GAP, BW = 44, 10, 250
+    LX, RX, W = 20, 620, 900
+
+    left = [('appropriation', 'General fund — dept 300', d300, 'core')]
+    for f, nm, rev, sp in funds[:8]:
+        left.append((f, nm.title()[:30], rev, 'fund'))
+    left.append(('grants', 'Federal and state grants', grant_spend, 'grant'))
+    left.append(('BUSFEES', 'Bus fees — charged', None, 'missing'))
+
+    right, edges = [], []
+    right.append(('core', 'THE SCHOOL BUDGET', d300, 'core'))
+    edges.append(('appropriation', 'core', 'traced'))
+    for p in progs:
+        if not p['outs']:
+            continue
+        key = p['name']
+        right.append((key, p['name'], p['inside'] + sum(v for _, v, _, _ in p['outs']),
+                      'prog'))
+        for f, v, how, nm in p['outs']:
+            if any(f == k for k, *_ in left):
+                edges.append((f, key, how))
+            elif how == 'missing':
+                edges.append(('BUSFEES', key, 'missing'))
+            else:
+                edges.append(('grants', key, 'restricted'))
+    for aid, label, why in ELSEWHERE_MAP:
+        r = elsewhere.get(aid)
+        if r:
+            right.append((aid, label[:30], r['v'], 'alt'))
+            edges.append(('appropriation', aid, 'traced'))
+
+    H = max(len(left), len(right)) * (LH + GAP) + 70
+    ly = {k: 46 + i * (LH + GAP) for i, (k, *_) in enumerate(left)}
+    ry = {k: 46 + i * (LH + GAP) for i, (k, *_) in enumerate(right)}
+
+    o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
+         f'role="img" aria-label="Sources of school money and where each lands">']
+    o.append('<text class="dhd" x="20" y="24">SOURCES</text>')
+    o.append(f'<text class="dhd" x="{RX}" y="24">WHERE IT LANDS</text>')
+    for src, dst, how in edges:
+        if src not in ly or dst not in ry:
+            continue
+        y1, y2 = ly[src] + LH / 2, ry[dst] + LH / 2
+        x1, x2 = LX + BW, RX
+        mx = (x1 + x2) / 2
+        o.append(f'<path class="e {how}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
+    for col, items, x in (('l', left, LX), ('r', right, RX)):
+        yy = ly if col == 'l' else ry
+        for key, label, val, kind in items:
+            y = yy[key]
+            o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{BW}" '
+                     f'height="{LH}" rx="5"/>'
+                     f'<text class="bl" x="{x+9}" y="{y+18}">{html.escape(label)}</text>'
+                     f'<text class="bv" x="{x+9}" y="{y+34}">'
+                     f'{money(val) if val is not None else "not found"}</text></g>')
+    o.append('</svg>')
+    return '\n'.join(o)
+
+
 def render(c):
     fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
     srcs, rev_total = revenue_sources(c)
@@ -342,6 +424,13 @@ def render(c):
       '<p class="cap">Bars are proportional within each column. A source and a landing '
       'place are not the same kind of thing and are never added across the two.</p>'
       '</section>')
+
+    a('<div class="scroll">' + diagram(progs, funds, d300, grant_spend, elsewhere)
+      + '</div>')
+    a('<div class="key"><span><i class="k traced"></i>traced — an account shows it</span>'
+      '<span><i class="k restricted"></i>restricted — the fund exists for this and nothing '
+      'else, and is <b>not observed</b></span>'
+      '<span><i class="k missing"></i>collected, and cannot be located</span></div>')
 
     a('<div class="cols">')
 
@@ -486,6 +575,30 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 .refuse {{ border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }}
 .warn {{ background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }}
+.scroll {{ overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 }}
+svg.flow {{ display:block; min-width:900px; height:auto }}
+.dhd {{ font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }}
+.b rect {{ fill:var(--card); stroke:var(--grid); stroke-width:1.5 }}
+.b.core rect {{ fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }}
+.b.fund rect {{ fill:var(--traced-bg); stroke:var(--traced) }}
+.b.grant rect {{ fill:var(--traced-bg); stroke:var(--traced); stroke-dasharray:5 3 }}
+.b.missing rect {{ fill:var(--warn-bg); stroke:var(--warn); stroke-dasharray:3 3 }}
+.b.prog rect {{ fill:var(--school-bg); stroke:var(--school) }}
+.b.alt rect {{ fill:none; stroke:var(--muted); stroke-dasharray:5 4 }}
+.bl {{ font-size:12.5px; font-weight:600; fill:var(--ink) }}
+.bv {{ font-size:12px; fill:var(--muted); font-family:ui-monospace,Menlo,monospace }}
+.e {{ fill:none; stroke-width:2 }}
+.e.traced {{ stroke:var(--school); opacity:.55 }}
+.e.restricted {{ stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }}
+.e.missing {{ stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }}
+.key {{ display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin:-4px 0 6px }}
+.key span {{ display:flex; align-items:center; gap:6px }}
+.k {{ width:22px; height:0; border-top:2px solid; display:inline-block }}
+.k.traced {{ border-color:var(--school) }}
+.k.restricted {{ border-top-style:dashed; border-color:var(--traced) }}
+.k.missing {{ border-top-style:dotted; border-width:3px; border-color:var(--warn) }}
 /* Two columns on a wide screen, one on a phone. The columns are a reading aid, not
    the information: every landing box names its own sources, so nothing is lost when
    they stack. Connector lines were tried and are unreadable at this density. */

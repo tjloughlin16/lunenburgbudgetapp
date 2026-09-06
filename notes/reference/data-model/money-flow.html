@@ -48,6 +48,30 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 .refuse { border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }
 .warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
+.scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 }
+svg.flow { display:block; min-width:900px; height:auto }
+.dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
+.b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
+.b.core rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }
+.b.fund rect { fill:var(--traced-bg); stroke:var(--traced) }
+.b.grant rect { fill:var(--traced-bg); stroke:var(--traced); stroke-dasharray:5 3 }
+.b.missing rect { fill:var(--warn-bg); stroke:var(--warn); stroke-dasharray:3 3 }
+.b.prog rect { fill:var(--school-bg); stroke:var(--school) }
+.b.alt rect { fill:none; stroke:var(--muted); stroke-dasharray:5 4 }
+.bl { font-size:12.5px; font-weight:600; fill:var(--ink) }
+.bv { font-size:12px; fill:var(--muted); font-family:ui-monospace,Menlo,monospace }
+.e { fill:none; stroke-width:2 }
+.e.traced { stroke:var(--school); opacity:.55 }
+.e.restricted { stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }
+.e.missing { stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }
+.key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin:-4px 0 6px }
+.key span { display:flex; align-items:center; gap:6px }
+.k { width:22px; height:0; border-top:2px solid; display:inline-block }
+.k.traced { border-color:var(--school) }
+.k.restricted { border-top-style:dashed; border-color:var(--traced) }
+.k.missing { border-top-style:dotted; border-width:3px; border-color:var(--warn) }
 /* Two columns on a wide screen, one on a phone. The columns are a reading aid, not
    the information: every landing box names its own sources, so nothing is lost when
    they stack. Connector lines were tried and are unreadable at this density. */
@@ -113,6 +137,48 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 </header>
 
 <section class="intro"><p>Two columns. On the left, every source of money the schools use. On the right, where it comes to rest — starting with the one number everybody knows, and then <b>every other place school money is spent that the $26m does not contain</b>.</p><p class="cap">Bars are proportional within each column. A source and a landing place are not the same kind of thing and are never added across the two.</p></section>
+<div class="scroll"><svg viewBox="0 0 900 664" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Sources of school money and where each lands">
+<text class="dhd" x="20" y="24">SOURCES</text>
+<text class="dhd" x="620" y="24">WHERE IT LANDS</text>
+<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,68.0 620,68.0"/>
+<path class="e restricted" d="M270,176.0 C445.0,176.0 445.0,122.0 620,122.0"/>
+<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
+<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
+<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
+<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
+<path class="e missing" d="M270,608.0 C445.0,608.0 445.0,176.0 620,176.0"/>
+<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,230.0 620,230.0"/>
+<path class="e restricted" d="M270,122.0 C445.0,122.0 445.0,284.0 620,284.0"/>
+<path class="e restricted" d="M270,230.0 C445.0,230.0 445.0,338.0 620,338.0"/>
+<path class="e restricted" d="M270,284.0 C445.0,284.0 445.0,338.0 620,338.0"/>
+<path class="e restricted" d="M270,446.0 C445.0,446.0 445.0,338.0 620,338.0"/>
+<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,392.0 620,392.0"/>
+<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,446.0 620,446.0"/>
+<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,500.0 620,500.0"/>
+<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,554.0 620,554.0"/>
+<g class="b core"><rect x="20" y="46" width="250" height="44" rx="5"/><text class="bl" x="29" y="64">General fund — dept 300</text><text class="bv" x="29" y="80">$26,247,474</text></g>
+<g class="b fund"><rect x="20" y="100" width="250" height="44" rx="5"/><text class="bl" x="29" y="118">School Lunch Revolving</text><text class="bv" x="29" y="134">$572,231</text></g>
+<g class="b fund"><rect x="20" y="154" width="250" height="44" rx="5"/><text class="bl" x="29" y="172">Special Ed Circuit Breaker</text><text class="bv" x="29" y="188">$325,970</text></g>
+<g class="b fund"><rect x="20" y="208" width="250" height="44" rx="5"/><text class="bl" x="29" y="226">Extended Day Revolving Fund</text><text class="bv" x="29" y="242">$192,943</text></g>
+<g class="b fund"><rect x="20" y="262" width="250" height="44" rx="5"/><text class="bl" x="29" y="280">After School Activities Fund</text><text class="bv" x="29" y="296">$111,376</text></g>
+<g class="b fund"><rect x="20" y="316" width="250" height="44" rx="5"/><text class="bl" x="29" y="334">School Choice Revolving</text><text class="bv" x="29" y="350">$83,116</text></g>
+<g class="b fund"><rect x="20" y="370" width="250" height="44" rx="5"/><text class="bl" x="29" y="388">School Gift Fund</text><text class="bv" x="29" y="404">$22,486</text></g>
+<g class="b fund"><rect x="20" y="424" width="250" height="44" rx="5"/><text class="bl" x="29" y="442">School Facilities Use Revolv</text><text class="bv" x="29" y="458">$18,670</text></g>
+<g class="b fund"><rect x="20" y="478" width="250" height="44" rx="5"/><text class="bl" x="29" y="496">Comp School Health Serv Grant</text><text class="bv" x="29" y="512">$10,775</text></g>
+<g class="b grant"><rect x="20" y="532" width="250" height="44" rx="5"/><text class="bl" x="29" y="550">Federal and state grants</text><text class="bv" x="29" y="566">$495,918</text></g>
+<g class="b missing"><rect x="20" y="586" width="250" height="44" rx="5"/><text class="bl" x="29" y="604">Bus fees — charged</text><text class="bv" x="29" y="620">not found</text></g>
+<g class="b core"><rect x="620" y="46" width="250" height="44" rx="5"/><text class="bl" x="629" y="64">THE SCHOOL BUDGET</text><text class="bv" x="629" y="80">$26,247,474</text></g>
+<g class="b prog"><rect x="620" y="100" width="250" height="44" rx="5"/><text class="bl" x="629" y="118">Special education</text><text class="bv" x="629" y="134">$6,329,681</text></g>
+<g class="b prog"><rect x="620" y="154" width="250" height="44" rx="5"/><text class="bl" x="629" y="172">Transportation</text><text class="bv" x="629" y="188">$1,531,234</text></g>
+<g class="b prog"><rect x="620" y="208" width="250" height="44" rx="5"/><text class="bl" x="629" y="226">Athletics</text><text class="bv" x="629" y="242">$618,801</text></g>
+<g class="b prog"><rect x="620" y="262" width="250" height="44" rx="5"/><text class="bl" x="629" y="280">Food service</text><text class="bv" x="629" y="296">$739,586</text></g>
+<g class="b prog"><rect x="620" y="316" width="250" height="44" rx="5"/><text class="bl" x="629" y="334">Extended day and after school</text><text class="bv" x="629" y="350">$340,899</text></g>
+<g class="b alt"><rect x="620" y="370" width="250" height="44" rx="5"/><text class="bl" x="629" y="388">Monty Tech assessment</text><text class="bv" x="629" y="404">$1,334,521</text></g>
+<g class="b alt"><rect x="620" y="424" width="250" height="44" rx="5"/><text class="bl" x="629" y="442">School retiree health insuranc</text><text class="bv" x="629" y="458">$1,521,536</text></g>
+<g class="b alt"><rect x="620" y="478" width="250" height="44" rx="5"/><text class="bl" x="629" y="496">Pension — school share unknown</text><text class="bv" x="629" y="512">$2,392,572</text></g>
+<g class="b alt"><rect x="620" y="532" width="250" height="44" rx="5"/><text class="bl" x="629" y="550">School resource stipend</text><text class="bv" x="629" y="566">$6,800</text></g>
+</svg></div>
+<div class="key"><span><i class="k traced"></i>traced — an account shows it</span><span><i class="k restricted"></i>restricted — the fund exists for this and nothing else, and is <b>not observed</b></span><span><i class="k missing"></i>collected, and cannot be located</span></div>
 <div class="cols">
 <div class="col"><h2>Sources</h2>
 <div class="colnote">Where the money comes from.</div>
