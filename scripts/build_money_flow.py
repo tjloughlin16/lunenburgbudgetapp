@@ -716,7 +716,7 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 @media (min-width:1050px) {{ .metrics {{ grid-template-columns:repeat(4,1fr) }} }}
 .scroll {{ overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }}
-svg.flow {{ display:block; min-width:900px; height:auto }}
+svg.flow {{ display:block; min-width:930px; height:auto }}
 .dhd {{ font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }}
 .b rect {{ fill:var(--card); stroke:var(--grid); stroke-width:1.5 }}
 .b.core rect {{ fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }}
@@ -733,6 +733,11 @@ svg.flow {{ display:block; min-width:900px; height:auto }}
 .e.restricted {{ stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }}
 .e.missing {{ stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }}
 .e.unknown {{ stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }}
+.e.bypass {{ stroke:var(--traced); opacity:.7; stroke-width:2.5; stroke-dasharray:7 5 }}
+.b.gf rect {{ fill:var(--traced-bg); stroke:var(--traced) }}
+.b.pot rect {{ fill:#2c2b28; stroke:#2c2b28 }}
+.pw {{ fill:#f2efe9 }}
+.potnote {{ font-size:10px; fill:#f2efe9; opacity:.72 }}
 .key {{ display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
   margin:-4px 0 6px }}
 .key span {{ display:flex; align-items:center; gap:6px }}
@@ -816,12 +821,30 @@ unchanged beside it.</p>
 
 # The layout for v2. Same idea — a source beside the thing it pays for — but the right
 # column now holds each dollar ONCE, so it can be added down.
+# The same revenue classes the town page uses. Held here too rather than imported,
+# because the two pages must show the same figures and a shared import would make one of
+# them silently wrong the day the other changed its filter. Exact names, never prefixes.
+REV_CLASSES = {
+    'levy': (['RE TAXES', 'PP TAXES', 'SUPPLE TAX', 'RE FY27', 'PP FY27', 'PREPAYPP',
+              'ROLL BACK', 'MISCTAXOVE', 'DEF PROP'], 'Property tax levy'),
+    'state': (['CH 70 AID', 'UGGA', 'SCHCOSTREI', 'SPED REIMB', 'CHARTER', 'STATE LAND',
+               'VET ABATE', 'ABATE ELDE', 'ABATE SPOU', 'BLIND ABAT', 'S6CH115VET',
+               'MSBA REIMB', 'ADD AID LB', 'ADDAIDAPPR', 'ADDAIDESTR', "ADD'L ASST",
+               'MUN RELIEF', 'LOC AID AD', 'STATE REVE', 'MUN STAB', 'SCHOOL TRA',
+               'ERATEREIMB', 'MED D DRUG', 'MEDRECMRC', 'QUINN BILL', 'CH 81'],
+              'State aid — Chapter 70 and the rest'),
+    'onetime': (['FBCYBUDGET', 'PY BAL', 'BOND PROC', 'PREMIUMS', 'INS SETTLR',
+                 'SALE TOWNP', 'SALE STAND'], 'One-time money'),
+    'transfer': (['TRANS ENT', 'TRANSOFFSE', 'TRANSRECRE', 'OP TRAN AG', 'OP TRAN CP',
+                  'OP TRAN SR', 'OP TRAN TR'], 'Transfers in'),
+}
+
 LAYOUT2 = [
-    ('appropriation', 'core'),
-    (None, 'MONTY'),
-    (None, 'RETHLTH'),
-    (None, 'PENSION'),
-    (None, 'STIPEND'),
+    ('levy', 'core'),
+    ('state', 'MONTY'),
+    ('local', 'RETHLTH'),
+    ('onetime', 'PENSION'),
+    ('transfer', 'STIPEND'),
     (None, None),
     ('2640', 'sp-2640'),
     ('grants', 'sp-grants'),
@@ -897,16 +920,32 @@ def render_v2(c):
     f_open = f_held - f_in + f_out
 
     LH, GAP, BW = 58, 11, 254
-    LX, RX, W = 20, 610, 890
+    LX, RX, W = 20, 660, 930
     fundrev = {f: rev for f, nm, rev, sp in funds}
-    lbox = {'appropriation': ('General fund — appropriated',
-                              d300 + sum(v for k, v in els.items()
-                                         if not k.endswith('560001')), 'core',
-                              'excludes the pension share, which is unknown'),
-            'grants': ('Federal and state grants', grant_spend, 'grant',
+    # The general fund is no longer a source box. It is a POT in the middle, and the
+    # sources are what fills it — the same five classes the town page shows. Aligning the
+    # two was TJ's instruction: "you added a layer the school diagram doesnt have... BOth
+    # need to be fully aligned." Without it this page began at "General fund —
+    # appropriated" and silently skipped the question of where THAT came from, which is
+    # where Chapter 70 lives and where the tracing actually breaks.
+    allrev = {r['name']: r['v'] for r in c.execute(f"""
+        SELECT name, SUM(budgeted) v FROM v_revenue WHERE fy={FY} AND fund='0100'
+        GROUP BY name HAVING v > 0""")}
+    ridx = {n: k for k, (names, _) in REV_CLASSES.items() for n in names}
+    rclass = {}
+    for n, v in allrev.items():
+        rclass[ridx.get(n, 'local')] = rclass.get(ridx.get(n, 'local'), 0) + v
+    pot_total = sum(allrev.values())
+    to_education = d300 + sum(v for k, v in els.items() if not k.endswith('560001'))
+
+    lbox = {'grants': ('Federal and state grants', grant_spend, 'grant',
                        'spent side only — no FY26 revenue booked'),
             'BUSFEES': ('Bus fees — charged', None, 'missing',
                         '$180 / $270, policy 3601.01')}
+    for k, (_, lab) in REV_CLASSES.items():
+        lbox[k] = (lab, rclass.get(k, 0), 'gf', 'into the general fund')
+    lbox['local'] = ('Local receipts', rclass.get('local', 0), 'gf',
+                     'into the general fund')
     # A left box carries what it SPENT as well as what it received. Without it, the funds
     # that merge into one block on the right — "Other own funds spent" — are unreadable:
     # you can see a total leave four funds and cannot see which of them it left.
@@ -951,8 +990,9 @@ def render_v2(c):
         'sp-other': ('Other own funds spent', sum(spent.get(f, 0) for f in OTHER), 'prog',
                      'funds ' + ', '.join(OTHER) + ' — see each on the left'),
     }
-    edges = [('appropriation', k, 'unknown' if k == 'PENSION' else 'traced')
-             for k in ('core', 'MONTY', 'RETHLTH', 'PENSION', 'STIPEND')]
+    POT = ('levy', 'state', 'local', 'onetime', 'transfer')
+    GF_DEST = ('core', 'MONTY', 'RETHLTH', 'PENSION', 'STIPEND')
+    edges = []
     edges += [('2640', 'sp-2640', 'restricted'), ('grants', 'sp-grants', 'restricted'),
               ('BUSFEES', 'sp-bus', 'missing'), ('1301', 'sp-1301', 'restricted'),
               ('2200', 'sp-2200', 'restricted'), ('1312', 'sp-1312', 'restricted'),
@@ -969,16 +1009,51 @@ def render_v2(c):
         row += 1
     H = 48 + row * (LH + GAP) + 14
 
+    MX, MW = 330, 200
+    pot_top = min(ly[k] for k in POT if k in ly)
+    pot_bot = max(ly[k] for k in POT if k in ly) + LH
+    pot_mid = (pot_top + pot_bot) / 2
+
     o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
-         f'role="img" aria-label="Where each dollar of school money is spent, counted once">',
-         '<text class="dhd" x="20" y="26">MONEY IN — this year</text>',
-         f'<text class="dhd" x="{RX}" y="26">MONEY OUT — this year, each dollar once</text>']
+         f'role="img" aria-label="Where school money comes from and where it is spent">',
+         '<text class="dhd" x="20" y="26">MONEY IN</text>',
+         f'<text class="dhd" x="{MX}" y="26">WHERE IT POOLS</text>',
+         f'<text class="dhd" x="{RX}" y="26">MONEY OUT — each dollar once</text>']
+
+    def arc(x1, y1, x2, y2, cls, dip=0):
+        mx = (x1 + x2) / 2
+        o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1+dip} {mx},{y2+dip} '
+                 f'{x2},{y2}"/>')
+
+    for k in POT:
+        if k in ly:
+            arc(LX + BW, ly[k] + LH / 2, MX, pot_mid, 'traced')
+    for k in GF_DEST:
+        if k in ry:
+            arc(MX + MW, pot_mid, RX, ry[k] + LH / 2,
+                'unknown' if k == 'PENSION' else 'traced')
     for src, dst, how in edges:
         if src not in ly or dst not in ry:
             continue
-        y1, y2 = ly[src] + LH / 2, ry[dst] + LH / 2
-        x1, x2, mx = LX + BW, RX, (LX + BW + RX) / 2
-        o.append(f'<path class="e {how}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
+        arc(LX + BW, ly[src] + LH / 2, RX, ry[dst] + LH / 2,
+            'bypass' if how == 'restricted' else how, dip=130)
+
+    o.append(f'<g class="b pot"><rect x="{MX}" y="{pot_top}" width="{MW}" '
+             f'height="{pot_bot - pot_top}" rx="7"/>'
+             f'<text class="bl pw" x="{MX+12}" y="{pot_top+22}">GENERAL FUND 0100</text>'
+             f'<text class="bv pw" x="{MX+12}" y="{pot_top+40}">{money(pot_total)}</text>')
+    for i, line in enumerate([
+            f'{money(to_education)} of it is',
+            'appropriated to education.',
+            'The other 63 departments are',
+            'not drawn on this page.',
+            '',
+            'Every source on the left loses',
+            'its identity here. No record ties',
+            'a source to a department, so no',
+            'line crosses this box.']):
+        o.append(f'<text class="potnote" x="{MX+12}" y="{pot_top+60+i*14}">{line}</text>')
+    o.append('</g>')
     for boxes, ys, x in ((lbox, ly, LX), (rbox, ry, RX)):
         for key, y in ys.items():
             label, val, kind, *rest = boxes[key]

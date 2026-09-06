@@ -64,7 +64,7 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 @media (min-width:1050px) { .metrics { grid-template-columns:repeat(4,1fr) } }
 .scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }
-svg.flow { display:block; min-width:900px; height:auto }
+svg.flow { display:block; min-width:930px; height:auto }
 .dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
 .b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
 .b.core rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }
@@ -81,6 +81,11 @@ svg.flow { display:block; min-width:900px; height:auto }
 .e.restricted { stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }
 .e.missing { stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }
 .e.unknown { stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }
+.e.bypass { stroke:var(--traced); opacity:.7; stroke-width:2.5; stroke-dasharray:7 5 }
+.b.gf rect { fill:var(--traced-bg); stroke:var(--traced) }
+.b.pot rect { fill:#2c2b28; stroke:#2c2b28 }
+.pw { fill:#f2efe9 }
+.potnote { font-size:10px; fill:#f2efe9; opacity:.72 }
 .key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
   margin:-4px 0 6px }
 .key span { display:flex; align-items:center; gap:6px }
@@ -154,27 +159,48 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 
 <section class="metrics"><div class="m"><div class="mk">Appropriated to the schools</div><div class="mv">$26,247,474</div><div class="ms">Department 300, as Town Meeting voted. <b>The number in every headline.</b></div></div><div class="m hi"><div class="mk">What the school system SPENT</div><div class="mv">$27,350,055</div><div class="ms">$25,613,679 out of the appropriation through period 12, plus $1,736,376 from its own funds and grants through period 9.</div></div><div class="m"><div class="mk">Sitting in accounts, unspent</div><div class="mv">$1,592,256</div><div class="ms">Held across the schools’ own funds at 31 March — $615,301 of it in the circuit breaker alone. Not spending, not income: money that has arrived and stopped.</div></div><div class="m"><div class="mk">The town spent on schools beyond that</div><div class="mv">$1,528,336+</div><div class="ms">Retiree health and the resource stipend, appropriated to other departments — <b>plus an unknown share of the $2,392,572 pension.</b> Monty Tech is excluded: it is a different district.</div></div></section>
 <p class="warn"><b>Mixed bases, and it cannot be helped.</b> Department 300 is actual spending through period 12; the funds are actual through period 9, because the town publishes no twelve-month fund report. <b>So the middle figure is a floor</b> — three more months of fund spending are not in it, and neither is any part of the pension.</p><p class="cap"><b>Do not add the right-hand column and call it school spending.</b> It comes to $33,220,787 and that figure means nothing: the school budget box is a BUDGET rather than spending, Monty Tech is a different district, and the pension box is the whole town’s. The column adds because each dollar is drawn once — that is a property of the drawing, not a finding about the schools.</p>
-<div class="scroll"><svg viewBox="0 0 890 1304" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Where each dollar of school money is spent, counted once">
-<text class="dhd" x="20" y="26">MONEY IN — this year</text>
-<text class="dhd" x="610" y="26">MONEY OUT — this year, each dollar once</text>
-<path class="e traced" d="M274,77.0 C442.0,77.0 442.0,77.0 610,77.0"/>
-<path class="e traced" d="M274,77.0 C442.0,77.0 442.0,146.0 610,146.0"/>
-<path class="e traced" d="M274,77.0 C442.0,77.0 442.0,215.0 610,215.0"/>
-<path class="e unknown" d="M274,77.0 C442.0,77.0 442.0,284.0 610,284.0"/>
-<path class="e traced" d="M274,77.0 C442.0,77.0 442.0,353.0 610,353.0"/>
-<path class="e restricted" d="M274,491.0 C442.0,491.0 442.0,491.0 610,491.0"/>
-<path class="e restricted" d="M274,560.0 C442.0,560.0 442.0,560.0 610,560.0"/>
-<path class="e missing" d="M274,629.0 C442.0,629.0 442.0,629.0 610,629.0"/>
-<path class="e restricted" d="M274,698.0 C442.0,698.0 442.0,698.0 610,698.0"/>
-<path class="e restricted" d="M274,767.0 C442.0,767.0 442.0,767.0 610,767.0"/>
-<path class="e restricted" d="M274,836.0 C442.0,836.0 442.0,836.0 610,836.0"/>
-<path class="e restricted" d="M274,905.0 C442.0,905.0 442.0,905.0 610,905.0"/>
-<path class="e restricted" d="M274,974.0 C442.0,974.0 442.0,974.0 610,974.0"/>
-<path class="e restricted" d="M274,1043.0 C442.0,1043.0 442.0,1043.0 610,1043.0"/>
-<path class="e restricted" d="M274,1112.0 C442.0,1112.0 442.0,1043.0 610,1043.0"/>
-<path class="e restricted" d="M274,1181.0 C442.0,1181.0 442.0,1043.0 610,1043.0"/>
-<path class="e restricted" d="M274,1250.0 C442.0,1250.0 442.0,1043.0 610,1043.0"/>
-<g class="b core"><rect x="20" y="48" width="254" height="58" rx="5"/><text class="bl" x="30" y="66">General fund — appropriated</text><text class="bv" x="30" y="82">$29,110,331</text><text class="bs" x="30" y="97">excludes the pension share, which is unknown</text></g>
+<div class="scroll"><svg viewBox="0 0 930 1304" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Where school money comes from and where it is spent">
+<text class="dhd" x="20" y="26">MONEY IN</text>
+<text class="dhd" x="330" y="26">WHERE IT POOLS</text>
+<text class="dhd" x="660" y="26">MONEY OUT — each dollar once</text>
+<path class="e traced" d="M274,77.0 C302.0,77.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,146.0 C302.0,146.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,215.0 C302.0,215.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,284.0 C302.0,284.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,353.0 C302.0,353.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,77.0 660,77.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,146.0 660,146.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,215.0 660,215.0"/>
+<path class="e unknown" d="M530,215.0 C595.0,215.0 595.0,284.0 660,284.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,353.0 660,353.0"/>
+<path class="e bypass" d="M274,491.0 C467.0,621.0 467.0,621.0 660,491.0"/>
+<path class="e bypass" d="M274,560.0 C467.0,690.0 467.0,690.0 660,560.0"/>
+<path class="e missing" d="M274,629.0 C467.0,759.0 467.0,759.0 660,629.0"/>
+<path class="e bypass" d="M274,698.0 C467.0,828.0 467.0,828.0 660,698.0"/>
+<path class="e bypass" d="M274,767.0 C467.0,897.0 467.0,897.0 660,767.0"/>
+<path class="e bypass" d="M274,836.0 C467.0,966.0 467.0,966.0 660,836.0"/>
+<path class="e bypass" d="M274,905.0 C467.0,1035.0 467.0,1035.0 660,905.0"/>
+<path class="e bypass" d="M274,974.0 C467.0,1104.0 467.0,1104.0 660,974.0"/>
+<path class="e bypass" d="M274,1043.0 C467.0,1173.0 467.0,1173.0 660,1043.0"/>
+<path class="e bypass" d="M274,1112.0 C467.0,1242.0 467.0,1173.0 660,1043.0"/>
+<path class="e bypass" d="M274,1181.0 C467.0,1311.0 467.0,1173.0 660,1043.0"/>
+<path class="e bypass" d="M274,1250.0 C467.0,1380.0 467.0,1173.0 660,1043.0"/>
+<g class="b pot"><rect x="330" y="48" width="200" height="334" rx="7"/><text class="bl pw" x="342" y="70">GENERAL FUND 0100</text><text class="bv pw" x="342" y="88">$52,187,832</text>
+<text class="potnote" x="342" y="108">$29,110,331 of it is</text>
+<text class="potnote" x="342" y="122">appropriated to education.</text>
+<text class="potnote" x="342" y="136">The other 63 departments are</text>
+<text class="potnote" x="342" y="150">not drawn on this page.</text>
+<text class="potnote" x="342" y="164"></text>
+<text class="potnote" x="342" y="178">Every source on the left loses</text>
+<text class="potnote" x="342" y="192">its identity here. No record ties</text>
+<text class="potnote" x="342" y="206">a source to a department, so no</text>
+<text class="potnote" x="342" y="220">line crosses this box.</text>
+</g>
+<g class="b gf"><rect x="20" y="48" width="254" height="58" rx="5"/><text class="bl" x="30" y="66">Property tax levy</text><text class="bv" x="30" y="82">$35,111,996</text><text class="bs" x="30" y="97">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="117" width="254" height="58" rx="5"/><text class="bl" x="30" y="135">State aid — Chapter 70 and the rest</text><text class="bv" x="30" y="151">$11,153,368</text><text class="bs" x="30" y="166">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="186" width="254" height="58" rx="5"/><text class="bl" x="30" y="204">Local receipts</text><text class="bv" x="30" y="220">$3,335,624</text><text class="bs" x="30" y="235">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="255" width="254" height="58" rx="5"/><text class="bl" x="30" y="273">One-time money</text><text class="bv" x="30" y="289">$2,209,993</text><text class="bs" x="30" y="304">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="324" width="254" height="58" rx="5"/><text class="bl" x="30" y="342">Transfers in</text><text class="bv" x="30" y="358">$376,851</text><text class="bs" x="30" y="373">into the general fund</text></g>
 <g class="b fund"><rect x="20" y="462" width="254" height="58" rx="5"/><text class="bl" x="30" y="480">2640 Special Ed Circuit Breaker</text><text class="bv" x="30" y="496">$325,970</text><text class="bs" x="30" y="511">spent $4,005 · held $615,301</text></g>
 <g class="b grant"><rect x="20" y="531" width="254" height="58" rx="5"/><text class="bl" x="30" y="549">Federal and state grants</text><text class="bv" x="30" y="565">$495,918</text><text class="bs" x="30" y="580">spent side only — no FY26 revenue booked</text></g>
 <g class="b missing"><rect x="20" y="600" width="254" height="58" rx="5"/><text class="bl" x="30" y="618">Bus fees — charged</text><text class="bv" x="30" y="634">not found</text><text class="bs" x="30" y="649">$180 / $270, policy 3601.01</text></g>
@@ -187,20 +213,20 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 <g class="b fund"><rect x="20" y="1083" width="254" height="58" rx="5"/><text class="bl" x="30" y="1101">1311 School Gift Fund</text><text class="bv" x="30" y="1117">$22,486</text><text class="bs" x="30" y="1132">spent $2,911 · held $109,398</text></g>
 <g class="b fund"><rect x="20" y="1152" width="254" height="58" rx="5"/><text class="bl" x="30" y="1170">1300 Lost Books/Tech Rev Fund</text><text class="bv" x="30" y="1186">$2,860</text><text class="bs" x="30" y="1201">spent $661 · held $16,665</text></g>
 <g class="b fund"><rect x="20" y="1221" width="254" height="58" rx="5"/><text class="bl" x="30" y="1239">1302 Adult Education Revolving </text><text class="bv" x="30" y="1255">$4,000</text><text class="bs" x="30" y="1270">spent $2,880 · held $12,744</text></g>
-<g class="b core"><rect x="610" y="48" width="254" height="58" rx="5"/><text class="bl" x="620" y="66">THE SCHOOL BUDGET</text><text class="bv" x="620" y="82">$26,247,474</text><text class="bs" x="620" y="97">department 300, as voted</text></g>
-<g class="b alt"><rect x="610" y="117" width="254" height="58" rx="5"/><text class="bl" x="620" y="135">Monty Tech assessment</text><text class="bv" x="620" y="151">$1,334,521</text><text class="bs" x="620" y="166">a different district</text></g>
-<g class="b alt"><rect x="610" y="186" width="254" height="58" rx="5"/><text class="bl" x="620" y="204">School retiree health</text><text class="bv" x="620" y="220">$1,521,536</text><text class="bs" x="620" y="235">former school employees</text></g>
-<g class="b alt"><rect x="610" y="255" width="254" height="58" rx="5"/><text class="bl" x="620" y="273">Pension — share unknown</text><text class="bv" x="620" y="289">$2,392,572</text><text class="bs" x="620" y="304">town AND school staff together</text></g>
-<g class="b alt"><rect x="610" y="324" width="254" height="58" rx="5"/><text class="bl" x="620" y="342">School resource stipend</text><text class="bv" x="620" y="358">$6,800</text><text class="bs" x="620" y="373">inside the police department</text></g>
-<g class="b prog"><rect x="610" y="462" width="254" height="58" rx="5"/><text class="bl" x="620" y="480">Circuit breaker fund</text><text class="bv" x="620" y="496">$4,005</text><text class="bs" x="620" y="511">in $325,970 · held $615,301 ↑</text></g>
-<g class="b prog"><rect x="610" y="531" width="254" height="58" rx="5"/><text class="bl" x="620" y="549">Grant funds spent</text><text class="bv" x="620" y="565">$495,918</text><text class="bs" x="620" y="580">balances are NEGATIVE — spent ahead of reimbursement</text></g>
-<g class="b missing"><rect x="610" y="600" width="254" height="58" rx="5"/><text class="bl" x="620" y="618">Bus fee spending</text><text class="bv" x="620" y="634">not found</text><text class="bs" x="620" y="649">no account found</text></g>
-<g class="b prog"><rect x="610" y="669" width="254" height="58" rx="5"/><text class="bl" x="620" y="687">Athletics fund</text><text class="bv" x="620" y="703">$100,467</text><text class="bs" x="620" y="718">in $160,164 · held $169,945 ↑</text></g>
-<g class="b prog"><rect x="610" y="738" width="254" height="58" rx="5"/><text class="bl" x="620" y="756">School lunch fund</text><text class="bv" x="620" y="772">$739,586</text><text class="bs" x="620" y="787">in $572,231 · held $287,771 ↓</text></g>
-<g class="b prog"><rect x="610" y="807" width="254" height="58" rx="5"/><text class="bl" x="620" y="825">Extended day fund</text><text class="bv" x="620" y="841">$233,350</text><text class="bs" x="620" y="856">in $192,943 · held $54,161 ↓</text></g>
-<g class="b prog"><rect x="610" y="876" width="254" height="58" rx="5"/><text class="bl" x="620" y="894">After school fund</text><text class="bv" x="620" y="910">$95,196</text><text class="bs" x="620" y="925">in $111,376 · held $148,578 ↑</text></g>
-<g class="b prog"><rect x="610" y="945" width="254" height="58" rx="5"/><text class="bl" x="620" y="963">Facilities use fund</text><text class="bv" x="620" y="979">$12,354</text><text class="bs" x="620" y="994">in $18,670 · held $71,559 ↑</text></g>
-<g class="b prog"><rect x="610" y="1014" width="254" height="58" rx="5"/><text class="bl" x="620" y="1032">Other own funds spent</text><text class="bv" x="620" y="1048">$37,010</text><text class="bs" x="620" y="1063">funds 1308, 1311, 1300, 1302 — see each on the left</text></g>
+<g class="b core"><rect x="660" y="48" width="254" height="58" rx="5"/><text class="bl" x="670" y="66">THE SCHOOL BUDGET</text><text class="bv" x="670" y="82">$26,247,474</text><text class="bs" x="670" y="97">department 300, as voted</text></g>
+<g class="b alt"><rect x="660" y="117" width="254" height="58" rx="5"/><text class="bl" x="670" y="135">Monty Tech assessment</text><text class="bv" x="670" y="151">$1,334,521</text><text class="bs" x="670" y="166">a different district</text></g>
+<g class="b alt"><rect x="660" y="186" width="254" height="58" rx="5"/><text class="bl" x="670" y="204">School retiree health</text><text class="bv" x="670" y="220">$1,521,536</text><text class="bs" x="670" y="235">former school employees</text></g>
+<g class="b alt"><rect x="660" y="255" width="254" height="58" rx="5"/><text class="bl" x="670" y="273">Pension — share unknown</text><text class="bv" x="670" y="289">$2,392,572</text><text class="bs" x="670" y="304">town AND school staff together</text></g>
+<g class="b alt"><rect x="660" y="324" width="254" height="58" rx="5"/><text class="bl" x="670" y="342">School resource stipend</text><text class="bv" x="670" y="358">$6,800</text><text class="bs" x="670" y="373">inside the police department</text></g>
+<g class="b prog"><rect x="660" y="462" width="254" height="58" rx="5"/><text class="bl" x="670" y="480">Circuit breaker fund</text><text class="bv" x="670" y="496">$4,005</text><text class="bs" x="670" y="511">in $325,970 · held $615,301 ↑</text></g>
+<g class="b prog"><rect x="660" y="531" width="254" height="58" rx="5"/><text class="bl" x="670" y="549">Grant funds spent</text><text class="bv" x="670" y="565">$495,918</text><text class="bs" x="670" y="580">balances are NEGATIVE — spent ahead of reimbursement</text></g>
+<g class="b missing"><rect x="660" y="600" width="254" height="58" rx="5"/><text class="bl" x="670" y="618">Bus fee spending</text><text class="bv" x="670" y="634">not found</text><text class="bs" x="670" y="649">no account found</text></g>
+<g class="b prog"><rect x="660" y="669" width="254" height="58" rx="5"/><text class="bl" x="670" y="687">Athletics fund</text><text class="bv" x="670" y="703">$100,467</text><text class="bs" x="670" y="718">in $160,164 · held $169,945 ↑</text></g>
+<g class="b prog"><rect x="660" y="738" width="254" height="58" rx="5"/><text class="bl" x="670" y="756">School lunch fund</text><text class="bv" x="670" y="772">$739,586</text><text class="bs" x="670" y="787">in $572,231 · held $287,771 ↓</text></g>
+<g class="b prog"><rect x="660" y="807" width="254" height="58" rx="5"/><text class="bl" x="670" y="825">Extended day fund</text><text class="bv" x="670" y="841">$233,350</text><text class="bs" x="670" y="856">in $192,943 · held $54,161 ↓</text></g>
+<g class="b prog"><rect x="660" y="876" width="254" height="58" rx="5"/><text class="bl" x="670" y="894">After school fund</text><text class="bv" x="670" y="910">$95,196</text><text class="bs" x="670" y="925">in $111,376 · held $148,578 ↑</text></g>
+<g class="b prog"><rect x="660" y="945" width="254" height="58" rx="5"/><text class="bl" x="670" y="963">Facilities use fund</text><text class="bv" x="670" y="979">$12,354</text><text class="bs" x="670" y="994">in $18,670 · held $71,559 ↑</text></g>
+<g class="b prog"><rect x="660" y="1014" width="254" height="58" rx="5"/><text class="bl" x="670" y="1032">Other own funds spent</text><text class="bv" x="670" y="1048">$37,010</text><text class="bs" x="670" y="1063">funds 1308, 1311, 1300, 1302 — see each on the left</text></g>
 </svg></div>
 <div class="key"><span><i class="k traced"></i>traced</span><span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never observed</b></span><span><i class="k missing"></i>collected, cannot be located</span></div>
 <section class="stage warnbox"><h2>The two columns do not balance, and that is the point</h2><p><b>Revenue is not spending.</b> A fund is a tank, not a pipe: it can spend less than it receives and accumulate, or more than it receives and draw a balance down. Reading across a row tells you what a fund took in and what it paid out — <b>it does not tell you those are the same money.</b></p><p>Across all the schools’ own funds in FY2026 to 31 March:</p><table><tr><td>money in</td><td class="v">$1,553,151</td></tr><tr><td>money out</td><td class="v">$1,736,376</td></tr><tr><td><b>net</b></td><td class="v"><b>-183,225</b></td></tr><tr><td>opening balance <span class="sub">derived from the fund identity; the town’s report does not print it</span></td><td class="v">$1,775,481</td></tr><tr><td>held at 31 March</td><td class="v">$1,592,256</td></tr></table><p><b>The funds collectively spent $183,225 more than they took in.</b> That money is real and it came from balances built in earlier years. A diagram that balanced would be hiding it.</p><p class="cap">School lunch is the clearest single case — in $572,231, out $739,586, holding $287,771. The program is solvent this year and has a smaller cushion next year, and neither the appropriation nor the “spent” figure shows that.</p></section>

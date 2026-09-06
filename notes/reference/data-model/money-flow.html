@@ -64,7 +64,7 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 @media (min-width:1050px) { .metrics { grid-template-columns:repeat(4,1fr) } }
 .scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }
-svg.flow { display:block; min-width:900px; height:auto }
+svg.flow { display:block; min-width:930px; height:auto }
 .dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
 .b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
 .b.core rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }
@@ -81,6 +81,11 @@ svg.flow { display:block; min-width:900px; height:auto }
 .e.restricted { stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }
 .e.missing { stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }
 .e.unknown { stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }
+.e.bypass { stroke:var(--traced); opacity:.7; stroke-width:2.5; stroke-dasharray:7 5 }
+.b.gf rect { fill:var(--traced-bg); stroke:var(--traced) }
+.b.pot rect { fill:#2c2b28; stroke:#2c2b28 }
+.pw { fill:#f2efe9 }
+.potnote { font-size:10px; fill:#f2efe9; opacity:.72 }
 .key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
   margin:-4px 0 6px }
 .key span { display:flex; align-items:center; gap:6px }
