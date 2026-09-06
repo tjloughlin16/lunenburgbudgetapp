@@ -183,8 +183,26 @@ is a TXT of the form `v=MCPv1; k=ed25519; p=<public key>`; regenerate the public
 
     openssl pkey -in mcp/mcp-registry-key.pem -pubout -outform DER | tail -c 32 | base64
 
-Then `npx mcp-publisher login dns --domain lunenburgbudgetproject.org --private-key ...`
-and `npx mcp-publisher publish`. **Not done — the DNS record needs adding.**
+**Published, 6 September 2026.** `org.lunenburgbudgetproject/archive` 1.0.0, status
+`active`, listing `https://lunenburgbudgetproject.org/mcp` as a `streamable-http` remote.
+Read it back rather than trusting the success line:
+
+    curl -s "https://registry.modelcontextprotocol.io/v0/servers?search=lunenburg"
+
+Three things cost a round trip each, none of them documented where they were needed:
+
+- **The publisher is the GitHub release, not the npm package.** `npm view mcp-publisher`
+  returns 0.4.2; the registry's own release is 1.8.1 and is the binary whose source is
+  quoted above. Use `modelcontextprotocol/registry/releases`.
+- **`--private-key` takes hex, not a PEM path.** Passing the path fails with
+  `invalid hex private key format: encoding/hex: invalid byte: U+006D 'm'` — it is reading
+  the filename as the key. The Ed25519 seed is the tail of the PKCS#8 DER:
+
+      openssl pkey -in mcp-registry-key.pem -outform DER | tail -c 32 | xxd -p -c 64
+
+- **`description` is capped at 100 characters** and ours was 465, which is a 422 at publish
+  and not mentioned in the schema warning. The long form lives in the server's own
+  `GET /mcp` body, which is the right home for it — the registry line is a label.
 
 **The record goes on the APEX, not under a selector.** MCP DNS auth works like SPF, not
 like DKIM, and the DKIM intuition is common enough that the registry probes for it and
