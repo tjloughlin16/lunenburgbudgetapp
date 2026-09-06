@@ -130,6 +130,65 @@ category and, where the page says one, a grade — because the town has called t
 Tutor, Aide, Paraprofessional, Para, (para) and Sped Para across fifteen years, and a
 filter on the printed title measures the house style rather than the staffing.
 
+## The log — everything built, in order, with the commit that did it
+
+Grouped by what it was trying to fix. A commit hash is checkable; a summary in this file is
+not, which is the whole reason each line carries one.
+
+**Phase 1 — an agent could not find out what data exists** (5 Sept)
+
+| | |
+|---|---|
+| `f5c5d4e` | a citation must point at the form a reader can FETCH, not the form we hold |
+| `2864d2b` | `/api/query` over D1, and `role_category` so a roster title survives fifteen years of renaming |
+| `8d03db1` | 107 questions, each one executed at build time so none of them is a claim |
+| `b243072` | long documents published in parts — nobody can read a 16.8MB file in one fetch |
+| `f5fcc6f` | flat text is the wrong artefact for a table and we were publishing it as the right one |
+| `9447810` | say what data EXISTS before saying what we think — `/api/tables`, 5KB |
+
+**Phase 2 — it could not reach us, or could and would bankrupt us** (5 Sept)
+
+| | |
+|---|---|
+| `573e11b` | a fetch tool that cannot POST can still query the database — `/api/query` answers a GET |
+| `61b7c85` | being a link is not enough; some agents only fetch what a SEARCH knew about |
+| `d74a660` | check the sitemap is live and true, and PUSH it via IndexNow rather than waiting |
+| `2ad25ce` | refuse a query we can see will be too expensive, before it reads a row |
+| `2553a53` | cache identical queries at the edge; publish `rowsRead` |
+| `0d82480` | **a usage limit is not an absence and must never read like one** |
+| `561f300` | measure the rate limit rather than remember it, and check a BAND not a number |
+| `04593ec` | do not re-import a database D1 already holds — 4 imports exhausted a day's writes |
+| `0962dfa` | the root cause, and `check_generated.py`, the one command that catches it |
+
+**Phase 3 — the MCP server, and being discoverable at all** (5–6 Sept)
+
+| | |
+|---|---|
+| `06d80fe` | the server, eight tools, each shaped so a documented mistake cannot be made |
+| `558260e` | log which tool was called, so use can be observed without asking |
+| `2b80598` | the registry entry, because the registry IS the discovery mechanism |
+| `934b547` | **the front page link** — the only route that needed nobody's permission |
+| `db3d569` | halve the top line; a human reads it too. 330 characters to 176 |
+| `4529aab` | where the TXT record goes, read off the registry's source after I got it wrong |
+| `8f824b1` | published, and what it cost — three round trips, none findable from the error |
+
+**Phase 4 — what three real agent runs found** (6 Sept)
+
+| | |
+|---|---|
+| `9b67261` | `staff` rejected `{"fy": 2025}` as a number, and returned NO provenance key at all — the silent-zero shape, inside the tool built to prevent it |
+| `0889f04` | **citations printed addresses nobody could follow.** Four bare URLs in prose, including the files behind the two softest rates. Worse: the `source` line's visible text ended in a URL that was not its `href` |
+| `f8d46d9` | a self-referential canonical per route — buys the `?utm_source=` duplicate and nothing else |
+| `dc89d16` | the README's own site link was bare text, on the one page search engines definitely crawl |
+| `e715a00` | **three agents, three fetch policies, one shared blocker** — the finding that reordered everything |
+| `151a3ae` | Bing verified both ways it offers |
+| `d85d867` | both consoles verified and submitted |
+
+**What the three runs cost us to learn, stated plainly:** two real defects
+(`9b67261`, `0889f04`), one false alarm held open rather than closed (the sha256, question
+5), and one conclusion that inverted a day-old assumption (`e715a00`). None of the three
+agents was wrong about what it observed. Two were wrong about the cause, and so was I.
+
 ## The MCP server
 
 `lunenburgbudgetproject.org/mcp` — Streamable HTTP, no authentication, eight tools. A
