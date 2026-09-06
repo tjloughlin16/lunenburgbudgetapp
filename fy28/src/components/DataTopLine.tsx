@@ -45,9 +45,10 @@ export function DataTopLine() {
       <p className="mx-auto max-w-6xl px-5 py-1.5 text-[11px] leading-snug"
          style={{ color: 'var(--text-muted)' }}>
         <strong style={{ color: 'var(--text-secondary)' }}>Reading this with software?</strong>{' '}
-        Every figure and document here is downloadable. {link('/agents')} lists every
-        address as a link · {link('/llms.txt')} explains them · {link('/api/index')} is the
-        data API · {link('/minutes/INDEX.txt')} is the meeting archive.
+        Every figure and document here is downloadable. {link('/mcp')} is an MCP server ·{' '}
+        {link('/api/index')} is the data API · {link('/llms.txt')} explains them ·{' '}
+        {link('/agents')} lists every address as a link · {link('/minutes/INDEX.txt')} is
+        the meeting archive.
       </p>
     </div>
   )

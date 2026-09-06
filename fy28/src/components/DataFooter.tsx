@@ -38,7 +38,8 @@ export function DataFooter() {
     <p className="mb-2" style={{ color: 'var(--text-muted)' }}>
       <strong style={{ color: 'var(--text-secondary)' }}>Data.</strong>{' '}
       Every figure here is downloadable, and every source document with it.{' '}
-      {link('/llms.txt')} · {link('/minutes/INDEX.txt')} · {link('/data/minutes-index.csv')}
+      {link('/mcp')} · {link('/llms.txt')} · {link('/minutes/INDEX.txt')} ·{' '}
+      {link('/data/minutes-index.csv')}
       {' · '}{link('/api/index')} · {link('/agents')}
       {corpus ? ` — full text of ${corpus.split(' across ')[0]}, across every town board.` : '.'}
     </p>
