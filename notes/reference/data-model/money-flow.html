@@ -48,6 +48,17 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 .refuse { border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }
 .warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
+.metrics { display:grid; gap:10px; margin:16px 0 10px }
+.m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
+  background:var(--card) }
+.m.hi { border-color:var(--school); border-width:2px; background:var(--school-bg) }
+.mk { font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  color:var(--muted) }
+.m.hi .mk { color:var(--school) }
+.mv { font-size:25px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
+  font-family:ui-monospace,Menlo,monospace }
+.ms { font-size:12.5px; color:var(--muted); line-height:1.45 }
+@media (min-width:760px) { .metrics { grid-template-columns:repeat(3,1fr) } }
 .scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }
 svg.flow { display:block; min-width:900px; height:auto }
@@ -137,6 +148,7 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
   drawn, because no record ties a source to a department.</p>
 </header>
 
+<section class="metrics"><div class="m"><div class="mk">Appropriated to the schools</div><div class="mv">$26,287,474</div><div class="ms">Departments 300 and 301, as Town Meeting voted. <b>The number in every headline.</b></div></div><div class="m"><div class="mk">What the school system actually has</div><div class="mv">$28,336,543</div><div class="ms">…plus its own funds ($1,553,151) and grant spending ($495,918).</div></div><div class="m hi"><div class="mk">Outside the tax appropriation</div><div class="mv">+$4,911,925</div><div class="ms"><b>18.7%</b> more than the school budget — the district’s own funds and grants, plus $2,862,857 of education the town appropriates to other departments.</div></div></section><p class="warn"><b>These are not one basis and cannot be added carelessly.</b> The appropriation is a budget as voted; the funds and grants are nine months of ACTUAL spending, because the town publishes no twelve-month fund report. And the school share of the $2,392,572 pension assessment is in none of these figures, because nobody publishes it — so every number above is a floor.</p><p class="cap">The three are not the right column added up. The programme boxes <b>overlap</b> the school budget box — $5.9M of special education is inside the $26m, all of transportation is — so summing the column downwards would count most of it twice.</p>
 <section class="intro"><p>Two columns. On the left, every source of money the schools use. On the right, where it comes to rest — starting with the one number everybody knows, and then <b>every other place school money is spent that the $26m does not contain</b>.</p><p class="cap">Bars are proportional within each column. A source and a landing place are not the same kind of thing and are never added across the two.</p></section>
 <div class="scroll"><svg viewBox="0 0 890 1106" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Sources of school money and where each lands">
 <text class="dhd" x="20" y="26">SOURCES</text>

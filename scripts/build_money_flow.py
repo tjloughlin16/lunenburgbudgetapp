@@ -481,6 +481,48 @@ def render(c):
     P = []
     a = P.append
 
+    # The three metrics, computed here so the diagram cannot drift from its own headline.
+    #
+    # NOT the sum of the right column. The programme boxes OVERLAP the school budget box —
+    # $5.9M of "Special education" is inside the $26m, all of "Transportation" is — so
+    # adding the column down double-counts most of it. What is summed instead is each
+    # quantity once: the appropriation, the district's own money, and the town's education
+    # spending appropriated elsewhere.
+    appr2 = c.execute(f"""SELECT original FROM ledger_snapshot WHERE fy={FY}
+                          AND period={P_DEPT} AND account_id='0100-301'""").fetchone()
+    appr = d300 + (appr2['original'] if appr2 else 0)
+    ownrev = sum(rev for _, _, rev, _ in funds)
+    els = {a: elsewhere[a]['v'] for a, _, _ in ELSEWHERE_MAP if a in elsewhere}
+    pens = els.get('0100-18202-560001', 0)
+    outside_town = sum(v for k, v in els.items() if not k.endswith('560001'))
+    resources = appr + ownrev + grant_spend
+    outside = ownrev + grant_spend + outside_town
+
+    a('<section class="metrics">'
+      f'<div class="m"><div class="mk">Appropriated to the schools</div>'
+      f'<div class="mv">{money(appr)}</div>'
+      f'<div class="ms">Departments 300 and 301, as Town Meeting voted. '
+      f'<b>The number in every headline.</b></div></div>'
+      f'<div class="m"><div class="mk">What the school system actually has</div>'
+      f'<div class="mv">{money(resources)}</div>'
+      f'<div class="ms">…plus its own funds ({money(ownrev)}) and grant spending '
+      f'({money(grant_spend)}).</div></div>'
+      f'<div class="m hi"><div class="mk">Outside the tax appropriation</div>'
+      f'<div class="mv">+{money(outside)}</div>'
+      f'<div class="ms"><b>{outside/appr*100:.1f}%</b> more than the school budget — the '
+      f'district’s own funds and grants, plus {money(outside_town)} of education the town '
+      f'appropriates to other departments.</div></div>'
+      '</section>'
+      f'<p class="warn"><b>These are not one basis and cannot be added carelessly.</b> The '
+      f'appropriation is a budget as voted; the funds and grants are nine months of '
+      f'ACTUAL spending, because the town publishes no twelve-month fund report. And the '
+      f'school share of the {money(pens)} pension assessment is in none of these figures, '
+      f'because nobody publishes it — so every number above is a floor.</p>'
+      '<p class="cap">The three are not the right column added up. The programme boxes '
+      '<b>overlap</b> the school budget box — $5.9M of special education is inside the '
+      '$26m, all of transportation is — so summing the column downwards would count most '
+      'of it twice.</p>')
+
     a('<section class="intro"><p>Two columns. On the left, every source of money the '
       'schools use. On the right, where it comes to rest — starting with the one number '
       'everybody knows, and then <b>every other place school money is spent that the '
@@ -639,6 +681,17 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 .refuse {{ border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }}
 .warn {{ background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }}
+.metrics {{ display:grid; gap:10px; margin:16px 0 10px }}
+.m {{ border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
+  background:var(--card) }}
+.m.hi {{ border-color:var(--school); border-width:2px; background:var(--school-bg) }}
+.mk {{ font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  color:var(--muted) }}
+.m.hi .mk {{ color:var(--school) }}
+.mv {{ font-size:25px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
+  font-family:ui-monospace,Menlo,monospace }}
+.ms {{ font-size:12.5px; color:var(--muted); line-height:1.45 }}
+@media (min-width:760px) {{ .metrics {{ grid-template-columns:repeat(3,1fr) }} }}
 .scroll {{ overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
   background:var(--card); padding:10px; margin:14px 0 }}
 svg.flow {{ display:block; min-width:900px; height:auto }}
