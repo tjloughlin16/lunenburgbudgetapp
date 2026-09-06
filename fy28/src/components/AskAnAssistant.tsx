@@ -88,12 +88,37 @@ export function AskAnAssistant() {
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-8">
+      {/* THE PROMPT IS FIRST. Everything explaining it is below it, deliberately.
+        * The reader arriving here has already decided to try this -- they followed a link
+        * that said so -- and the box is the thing they came for. An explanation above it
+        * is a paragraph between a person and the button they are looking for. */}
       <h1 className="text-2xl font-bold">This is how you query the data</h1>
-      <p className="mt-3 text-[16px] leading-relaxed">
-        Copy the prompt below. Paste it into Claude, ChatGPT or any assistant that can
-        fetch a web page. Type your question at the end.
+      <p className="mt-2 text-[16px] leading-relaxed">
+        Copy this. Paste it into Claude, ChatGPT or any assistant that can fetch a web
+        page. Type your question at the end.
       </p>
-      <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+
+      <div className="mt-4 flex items-center gap-3">
+        <button onClick={copy}
+          className="rounded px-4 py-2 text-[14px] font-semibold border"
+          style={{ borderColor: 'var(--series-cost)', color: 'var(--series-cost)' }}>
+          {copied ? 'Copied' : 'Copy the prompt'}
+        </button>
+        <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+          or select the text below — {PROMPT.length.toLocaleString()} characters
+        </span>
+      </div>
+
+      <textarea readOnly value={PROMPT} rows={20} spellCheck={false}
+        onFocus={(e) => e.currentTarget.select()}
+        className="mt-3 w-full rounded border p-3 text-[12px] leading-relaxed"
+        style={{
+          borderColor: 'var(--grid)', color: 'var(--text-secondary)',
+          fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+          background: 'transparent',
+        }} />
+
+      <p className="mt-4 text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
         It carries every address the assistant needs — the whole database, the budget
         lines, the town ledger, the annual town reports, and {MANIFEST.corpus} — so it
         reads the data instead of guessing at it, and cites the document each figure came
@@ -101,7 +126,7 @@ export function AskAnAssistant() {
       </p>
 
       <div className="mt-5 rounded border p-4 text-[14px] leading-relaxed"
-        style={{ borderColor: 'var(--grid)', background: 'var(--surface, transparent)' }}>
+        style={{ borderColor: 'var(--grid)' }}>
         <p className="font-semibold">Why the prompt has to include the links</p>
         <p className="mt-1" style={{ color: 'var(--text-secondary)' }}>
           Assistants generally refuse to fetch a URL they have not been given — a sensible
@@ -112,26 +137,6 @@ export function AskAnAssistant() {
           whole trick, and it works today with every assistant.
         </p>
       </div>
-
-      <div className="mt-6 flex items-center gap-3">
-        <button onClick={copy}
-          className="rounded px-3 py-1.5 text-[13px] font-semibold border"
-          style={{ borderColor: 'var(--grid)', color: 'var(--series-cost)' }}>
-          {copied ? 'Copied' : 'Copy the prompt'}
-        </button>
-        <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
-          or select the text below — {PROMPT.length.toLocaleString()} characters
-        </span>
-      </div>
-
-      <textarea readOnly value={PROMPT} rows={22} spellCheck={false}
-        onFocus={(e) => e.currentTarget.select()}
-        className="mt-3 w-full rounded border p-3 text-[12px] leading-relaxed"
-        style={{
-          borderColor: 'var(--grid)', color: 'var(--text-secondary)',
-          fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-          background: 'transparent',
-        }} />
 
       <h2 className="mt-10 text-lg font-bold">What to ask it</h2>
       <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
