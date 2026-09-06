@@ -3,352 +3,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root {
-  --bg:#fbfaf8; --ink:#1a1a1a; --muted:#6b6b6b; --grid:#e0dcd5;
-  --traced:#1f5c3d; --traced-bg:#e7f0ea;
-  --school:#8a4b17; --school-bg:#f6ece2;
-  --pot:#3a3a3a; --pot-bg:#ecebe8;
-  --unknown:#9a7b1f; --unknown-bg:#f7f1dd;
+  --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --traced-bg:#dfeee6;
+  --school:#9a4f14; --school-bg:#f7e7d8;
+  --warn:#8a6d10; --warn-bg:#faf3de;
+  --potbg:#2c2b28; --potink:#f2efe9;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg:#151513; --ink:#eceae6; --muted:#9c9890; --grid:#33322e;
-    --traced:#7fc2a0; --traced-bg:#1b2b22; --school:#e0a06a; --school-bg:#2e2119;
-    --pot:#b9b6b0; --pot-bg:#222220; --unknown:#d8bd6a; --unknown-bg:#2b2617; }
+  :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --traced-bg:#1d3129; --school:#e2a068; --school-bg:#33231a;
+    --warn:#d9bd67; --warn-bg:#2c2718; --potbg:#e8e4dc; --potink:#1a1a18; }
 }
 * { box-sizing:border-box }
 body { margin:0; background:var(--bg); color:var(--ink);
-  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-.wrap { max-width:1560px; margin:0 auto; padding:28px 22px 70px }
-header { border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:22px }
-.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--muted) }
-h1 { font-size:30px; margin:6px 0 8px; letter-spacing:-.02em }
-.standfirst { font-size:17px; color:var(--muted); max-width:60em; margin:0 }
-h2 { font-size:19px; margin:34px 0 8px }
-p { max-width:62em }
-.key { display:flex; gap:26px; flex-wrap:wrap; margin:18px 0 6px; font-size:13px }
-.key div { display:flex; gap:8px; align-items:center }
-.sw { width:26px; height:13px; border:1.5px solid }
-.sw.t { background:var(--traced-bg); border-color:var(--traced) }
-.sw.s { background:var(--school-bg); border-color:var(--school) }
-.sw.u { background:var(--unknown-bg); border-color:var(--unknown) }
-.sw.p { background:var(--pot-bg); border-color:var(--pot) }
-.scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:6px;
-  background:var(--bg); margin-top:10px }
-svg { display:block; min-width:1500px }
-.hd { font-size:12px; font-weight:700; letter-spacing:.1em; fill:var(--ink) }
-.hdsub { font-size:11px; fill:var(--muted) }
-.box rect { stroke-width:1.5 }
-.box.src rect { fill:var(--traced-bg); stroke:var(--traced) }
-.box.pot rect { fill:var(--pot-bg); stroke:var(--pot); stroke-width:2 }
-.box.dept rect { fill:var(--traced-bg); stroke:var(--traced) }
-.box.dept.school rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2 }
-.box.dept.residual rect { fill:none; stroke:var(--muted); stroke-dasharray:4 3 }
-.box.use rect { fill:var(--school-bg); stroke:var(--school) }
-.lbl { font-size:11.5px; font-weight:600; fill:var(--ink) }
-.amt { font-size:12px; fill:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100%; }
+.wrap { max-width:820px; margin:0 auto; padding:22px 16px 80px }
+header { border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }
+.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+h1 { font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
+.standfirst { font-size:16px; color:var(--muted); margin:0 }
+.stage { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }
+.stage.alt { background:transparent }
+h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
+.cap { font-size:13.5px; color:var(--muted); margin:0 0 14px }
+.bars { display:flex; flex-direction:column; gap:9px }
+.row { display:grid; grid-template-columns:1fr 34%; grid-template-areas:"lab amt" "bar bar";
+  gap:3px 10px; align-items:baseline }
+.lab { grid-area:lab; font-size:13.5px; font-weight:600; min-width:0;
+  overflow-wrap:anywhere }
+.lab .sub { display:block; font-weight:400; font-size:11.5px; color:var(--muted) }
+.amt { grid-area:amt; text-align:right; font-size:13.5px; white-space:nowrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace }
+.track { grid-area:bar; background:var(--grid); border-radius:3px; height:9px; width:100% }
+.fill { background:var(--traced); height:100%; border-radius:3px; min-width:2px }
+.row.hi .fill { background:var(--school) }
+.row.hi .lab { color:var(--school) }
+.pot { background:var(--potbg); color:var(--potink); border-radius:10px;
+  padding:18px 16px; margin:16px 0 }
+.pot h2 { color:var(--potink) }
+.pot p { font-size:14px; margin:8px 0 0 }
+.potline { font-family:ui-monospace,Menlo,monospace; font-size:15px; margin:0 }
+.refuse { border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }
+.warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
+  padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
+table { border-collapse:collapse; width:100%; margin-top:4px }
+td { padding:9px 0; border-bottom:1px solid var(--grid); font-size:14px; vertical-align:top }
+td .sub { display:block; font-size:11.5px; color:var(--muted) }
+td.v { text-align:right; white-space:nowrap; font-weight:600;
   font-family:ui-monospace,Menlo,monospace }
-.sub { font-size:10px; fill:var(--muted) }
-.potnote { font-size:10.5px; fill:var(--muted) }
-.rib { stroke:none }
-.rib.in { fill:var(--traced); opacity:.13 }
-.rib.out { fill:var(--traced); opacity:.13 }
-.rib.out.school { fill:var(--school); opacity:.22 }
-.rib.out.residual { fill:var(--muted); opacity:.08 }
-.rib.use { fill:var(--school); opacity:.16 }
-table { border-collapse:collapse; width:100%; max-width:62em; margin:10px 0 6px;
-  font-size:14px }
-th,td { text-align:left; padding:5px 10px 5px 0; border-bottom:1px solid var(--grid);
-  vertical-align:top }
-td.v { text-align:right; font-family:ui-monospace,Menlo,monospace; white-space:nowrap }
-code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px; color:var(--muted) }
-.note { border-left:3px solid var(--unknown); background:var(--unknown-bg);
-  padding:12px 14px; margin:16px 0; max-width:62em; font-size:14px }
-.gen { margin-top:44px; padding-top:14px; border-top:1px solid var(--grid);
-  font-size:12px; color:var(--muted) }
+code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
+.gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:680px) {
+  .row { grid-template-columns:38% 1fr 22%; grid-template-areas:"lab bar amt"; gap:12px;
+    align-items:center }
+  .track { height:11px }
+}
 </style>
 
 <div class="wrap">
 <header>
-  <div class="kicker">Lunenburg Budget Project · Data architecture</div>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
   <h1>How money reaches the schools</h1>
   <p class="standfirst">FY2026, from every source the town budgets to the 258 accounts the
-  school department spends from — and the one edge in the middle that cannot be drawn
-  because no record ties a source to a department.</p>
+  school department spends from &mdash; and the one connection in the middle that cannot be
+  drawn, because no record ties a source to a department.</p>
 </header>
 
-<div class="key">
-  <div><span class="sw t"></span> traced — a named account holds this figure</div>
-  <div><span class="sw s"></span> school money</div>
-  <div><span class="sw p"></span> where provenance ends</div>
-  <div><span class="sw u"></span> real, but the split is unknown</div>
+<section class="stage"><h2>1 &middot; Where the money comes from</h2><p class="cap">Every general-fund revenue line the town budgets for FY2026. <b>Traced</b> &mdash; each is a named account. Total $52,187,832.</p>
+<div class="bars">
+<div class="row"><div class="lab">RE TAXES</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$34,029,858</div></div>
+<div class="row"><div class="lab">CH 70 AID</div><div class="track"><div class="fill" style="width:27.12%"></div></div><div class="amt">$9,229,410</div></div>
+<div class="row"><div class="lab">FBCYBUDGET</div><div class="track"><div class="fill" style="width:6.49%"></div></div><div class="amt">$2,209,993</div></div>
+<div class="row"><div class="lab">MVE</div><div class="track"><div class="fill" style="width:5.51%"></div></div><div class="amt">$1,875,000</div></div>
+<div class="row"><div class="lab">UGGA</div><div class="track"><div class="fill" style="width:3.87%"></div></div><div class="amt">$1,316,438</div></div>
+<div class="row"><div class="lab">PP TAXES</div><div class="track"><div class="fill" style="width:3.09%"></div></div><div class="amt">$1,052,138</div></div>
+<div class="row"><div class="lab">TRANS ENT</div><div class="track"><div class="fill" style="width:0.99%"></div></div><div class="amt">$338,397</div></div>
+<div class="row"><div class="lab">SCHCOSTREI</div><div class="track"><div class="fill" style="width:0.94%"></div></div><div class="amt">$318,424</div></div>
+<div class="row"><div class="lab">RESCUE WAG</div><div class="track"><div class="fill" style="width:0.81%"></div></div><div class="amt">$275,000</div></div>
+<div class="row"><div class="lab">70 smaller lines</div><div class="track"><div class="fill" style="width:4.53%"></div></div><div class="amt">$1,543,174</div></div>
 </div>
-
-<div class="scroll"><svg viewBox="0 0 1500 980" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How money reaches the Lunenburg schools, FY2026">
-<defs>
-      <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)"
-               patternUnits="userSpaceOnUse">
-        <rect width="7" height="7" fill="var(--unknown-bg)"/>
-        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--unknown)" stroke-width="3"/>
-      </pattern>
-    </defs>
-<text class="hd" x="60" y="62">EVERY SOURCE</text>
-<text class="hd" x="470" y="62">ONE POT</text>
-<text class="hd" x="830" y="62">APPROPRIATED BY VOTE</text>
-<text class="hd" x="1230" y="62">WHAT IT PAYS FOR</text>
-<text class="hdsub" x="60" y="82">traced — each is a named revenue account</text>
-<text class="hdsub" x="470" y="82">where provenance ends</text>
-<text class="hdsub" x="830" y="82">traced — Town Meeting voted each one</text>
-<text class="hdsub" x="1230" y="82">traced — 258 named accounts</text>
-<path class="rib in" d="M250,120.0 C360.0,120.0 360.0,120.0 470,120.0 L470,641.7 C360.0,641.7 360.0,641.7 250,641.7 Z"/>
-<path class="rib in" d="M250,646.7 C360.0,646.7 360.0,646.7 470,646.7 L470,788.1 C360.0,788.1 360.0,788.1 250,788.1 Z"/>
-<path class="rib in" d="M250,793.1 C360.0,793.1 360.0,793.1 470,793.1 L470,827.0 C360.0,827.0 360.0,827.0 250,827.0 Z"/>
-<path class="rib in" d="M250,832.0 C360.0,832.0 360.0,832.0 470,832.0 L470,860.8 C360.0,860.8 360.0,860.8 250,860.8 Z"/>
-<path class="rib in" d="M250,865.8 C360.0,865.8 360.0,865.8 470,865.8 L470,885.9 C360.0,885.9 360.0,885.9 250,885.9 Z"/>
-<path class="rib in" d="M250,890.9 C360.0,890.9 360.0,890.9 470,890.9 L470,907.1 C360.0,907.1 360.0,907.1 250,907.1 Z"/>
-<path class="rib in" d="M250,912.1 C360.0,912.1 360.0,912.1 470,912.1 L470,917.2 C360.0,917.2 360.0,917.2 250,917.2 Z"/>
-<path class="rib in" d="M250,922.2 C360.0,922.2 360.0,922.2 470,922.2 L470,927.1 C360.0,927.1 360.0,927.1 250,927.1 Z"/>
-<path class="rib in" d="M250,932.1 C360.0,932.1 360.0,932.1 470,932.1 L470,936.3 C360.0,936.3 360.0,936.3 250,936.3 Z"/>
-<path class="rib in" d="M250,941.3 C360.0,941.3 360.0,941.3 470,941.3 L470,965.0 C360.0,965.0 360.0,965.0 250,965.0 Z"/>
-<path class="rib out school" d="M660,120.0 C745.0,120.0 745.0,120.0 830,120.0 L830,522.4 C745.0,522.4 745.0,522.4 660,522.4 Z"/>
-<path class="rib out school" d="M660,527.4 C745.0,527.4 745.0,527.4 830,527.4 L830,547.8 C745.0,547.8 745.0,547.8 660,547.8 Z"/>
-<path class="rib out" d="M660,552.8 C745.0,552.8 745.0,552.8 830,552.8 L830,589.5 C745.0,589.5 745.0,589.5 660,589.5 Z"/>
-<path class="rib out" d="M660,594.5 C745.0,594.5 745.0,594.5 830,594.5 L830,651.4 C745.0,651.4 745.0,651.4 660,651.4 Z"/>
-<path class="rib out" d="M660,656.4 C745.0,656.4 745.0,656.4 830,656.4 L830,924.7 C745.0,924.7 745.0,924.7 660,924.7 Z"/>
-<path class="rib out residual" d="M660,929.7 C745.0,929.7 745.0,929.7 830,929.7 L830,945.0 C745.0,945.0 745.0,945.0 660,945.0 Z"/>
-<path class="rib use" d="M1020,120.0 C1125.0,120.0 1125.0,120.0 1230,120.0 L1230,241.6 C1125.0,241.6 1125.0,241.6 1020,241.6 Z"/>
-<path class="rib use" d="M1020,241.6 C1125.0,241.6 1125.0,246.6 1230,246.6 L1230,304.1 C1125.0,304.1 1125.0,299.1 1020,299.1 Z"/>
-<path class="rib use" d="M1020,299.1 C1125.0,299.1 1125.0,309.1 1230,309.1 L1230,342.6 C1125.0,342.6 1125.0,332.6 1020,332.6 Z"/>
-<path class="rib use" d="M1020,332.6 C1125.0,332.6 1125.0,347.6 1230,347.6 L1230,371.1 C1125.0,371.1 1125.0,356.1 1020,356.1 Z"/>
-<path class="rib use" d="M1020,356.1 C1125.0,356.1 1125.0,376.1 1230,376.1 L1230,396.7 C1125.0,396.7 1125.0,376.7 1020,376.7 Z"/>
-<path class="rib use" d="M1020,376.7 C1125.0,376.7 1125.0,401.7 1230,401.7 L1230,418.9 C1125.0,418.9 1125.0,393.9 1020,393.9 Z"/>
-<path class="rib use" d="M1020,393.9 C1125.0,393.9 1125.0,423.9 1230,423.9 L1230,439.0 C1125.0,439.0 1125.0,409.0 1020,409.0 Z"/>
-<path class="rib use" d="M1020,409.0 C1125.0,409.0 1125.0,444.0 1230,444.0 L1230,457.1 C1125.0,457.1 1125.0,422.1 1020,422.1 Z"/>
-<path class="rib use" d="M1020,422.1 C1125.0,422.1 1125.0,462.1 1230,462.1 L1230,473.7 C1125.0,473.7 1125.0,433.7 1020,433.7 Z"/>
-<path class="rib use" d="M1020,433.7 C1125.0,433.7 1125.0,478.7 1230,478.7 L1230,488.9 C1125.0,488.9 1125.0,443.9 1020,443.9 Z"/>
-<path class="rib use" d="M1020,443.9 C1125.0,443.9 1125.0,493.9 1230,493.9 L1230,501.8 C1125.0,501.8 1125.0,451.8 1020,451.8 Z"/>
-<path class="rib use" d="M1020,451.8 C1125.0,451.8 1125.0,506.8 1230,506.8 L1230,577.4 C1125.0,577.4 1125.0,522.4 1020,522.4 Z"/>
-<g class="box pot"><rect x="470" y="120" width="190" height="800.0"/>
-<text class="lbl" x="478" y="138">GENERAL FUND 0100</text>
-<text class="amt" x="478" y="154">$52,187,832</text>
-<text class="potnote" x="478" y="178">Every source above flows in</text>
-<text class="potnote" x="478" y="193">here and loses its identity.</text>
-<text class="potnote" x="478" y="208">No record ties a source to a</text>
-<text class="potnote" x="478" y="223">department, so the diagonal</text>
-<text class="potnote" x="478" y="238">edge — Chapter 70 to the</text>
-<text class="potnote" x="478" y="253">schools — cannot be drawn.</text>
-<text class="potnote" x="478" y="268">It is not missing. It does</text>
-<text class="potnote" x="478" y="283">not exist.</text>
-</g>
-<g class="box src">
-<rect x="60" y="120.0" width="190" height="521.7"/>
-<text class="lbl" x="68" y="134.0">RE TAXES</text>
-<text class="amt" x="68" y="149.0">$34,029,858</text>
-</g>
-<g class="box src">
-<rect x="60" y="646.7" width="190" height="141.5"/>
-<text class="lbl" x="68" y="660.7">CH 70 AID</text>
-<text class="amt" x="68" y="675.7">$9,229,410</text>
-</g>
-<g class="box src">
-<rect x="60" y="793.1" width="190" height="33.9"/>
-<text class="lbl" x="68" y="807.1">FBCYBUDGET</text>
-<text class="amt" x="68" y="822.1">$2,209,993</text>
-</g>
-<g class="box src">
-<rect x="60" y="832.0" width="190" height="28.7"/>
-<text class="lbl" x="68" y="846.0">MVE</text>
-<text class="amt" x="68" y="861.0">$1,875,000</text>
-</g>
-<g class="box src">
-<rect x="60" y="865.8" width="190" height="20.2"/>
-<text class="lbl" x="68" y="879.8">UGGA</text>
-<text class="amt" x="68" y="894.8">$1,316,438</text>
-</g>
-<g class="box src">
-<rect x="60" y="890.9" width="190" height="16.1"/>
-<text class="lbl" x="68" y="904.9">PP TAXES</text>
-<text class="amt" x="68" y="919.9">$1,052,138</text>
-</g>
-<g class="box src">
-<rect x="60" y="912.1" width="190" height="5.2"/>
-<text class="lbl" x="68" y="926.1">TRANS ENT</text>
-<text class="amt" x="68" y="941.1">$338,397</text>
-</g>
-<g class="box src">
-<rect x="60" y="922.2" width="190" height="4.9"/>
-<text class="lbl" x="68" y="936.2">SCHCOSTREI</text>
-<text class="amt" x="68" y="951.2">$318,424</text>
-</g>
-<g class="box src">
-<rect x="60" y="932.1" width="190" height="4.2"/>
-<text class="lbl" x="68" y="946.1">RESCUE WAG</text>
-<text class="amt" x="68" y="961.1">$275,000</text>
-</g>
-<g class="box src">
-<rect x="60" y="941.3" width="190" height="23.7"/>
-<text class="lbl" x="68" y="955.3">70 smaller lines</text>
-<text class="amt" x="68" y="970.3">$1,543,174</text>
-</g>
-<g class="box dept school">
-<rect x="830" y="120.0" width="190" height="402.4"/>
-<text class="lbl" x="838" y="134.0">SCHOOL DEPARTMENT</text>
-<text class="amt" x="838" y="149.0">$26,247,474</text>
-<text class="sub" x="838" y="162.0">dept 300</text>
-</g>
-<g class="box dept school">
-<rect x="830" y="527.4" width="190" height="20.5"/>
-<text class="lbl" x="838" y="541.4">MONTY TECH ASSESSMENT</text>
-<text class="amt" x="838" y="556.4">$1,334,521</text>
-<text class="sub" x="838" y="569.4">dept 310</text>
-</g>
-<g class="box dept">
-<rect x="830" y="552.8" width="190" height="36.7"/>
-<text class="lbl" x="838" y="566.8">WRRS ASSESSMENT</text>
-<text class="amt" x="838" y="581.8">$2,392,572</text>
-<text class="sub" x="838" y="594.8">dept 820</text>
-</g>
-<g class="box dept">
-<rect x="830" y="594.5" width="190" height="56.9"/>
-<text class="lbl" x="838" y="608.5">INSURANCE</text>
-<text class="amt" x="838" y="623.5">$3,713,520</text>
-<text class="sub" x="838" y="636.5">dept 914</text>
-</g>
-<g class="box dept">
-<rect x="830" y="656.4" width="190" height="268.3"/>
-<text class="lbl" x="838" y="670.4">All other departments (63)</text>
-<text class="amt" x="838" y="685.4">$17,501,874</text>
-</g>
-<g class="box dept residual">
-<rect x="830" y="929.7" width="190" height="15.3"/>
-<text class="lbl" x="838" y="943.7">Warrant articles, transfers, reser</text>
-<text class="amt" x="838" y="958.7">$997,871</text>
-</g>
-<g class="box use">
-<rect x="1230" y="120.0" width="190" height="121.6"/>
-<text class="lbl" x="1238" y="134.0">2305</text>
-<text class="amt" x="1238" y="149.0">$7,929,717</text>
-<text class="sub" x="1238" y="162.0">5 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="246.6" width="190" height="57.5"/>
-<text class="lbl" x="1238" y="260.6">5200 — Insurance Programs</text>
-<text class="amt" x="1238" y="275.6">$3,752,258</text>
-<text class="sub" x="1238" y="288.6">2 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="309.1" width="190" height="33.5"/>
-<text class="lbl" x="1238" y="323.1">2310 — Tutoring Cont. Ser.</text>
-<text class="amt" x="1238" y="338.1">$2,187,067</text>
-<text class="sub" x="1238" y="351.1">8 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="347.6" width="190" height="23.5"/>
-<text class="lbl" x="1238" y="361.6">3300 — Student Transportation</text>
-<text class="amt" x="1238" y="376.6">$1,531,234</text>
-<text class="sub" x="1238" y="389.6">2 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="376.1" width="190" height="20.6"/>
-<text class="lbl" x="1238" y="390.1">2330</text>
-<text class="amt" x="1238" y="405.1">$1,344,373</text>
-<text class="sub" x="1238" y="418.1">9 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="401.7" width="190" height="17.2"/>
-<text class="lbl" x="1238" y="415.7">2210 — P.S. Principals Office</text>
-<text class="amt" x="1238" y="430.7">$1,122,440</text>
-<text class="sub" x="1238" y="443.7">23 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="423.9" width="190" height="15.2"/>
-<text class="lbl" x="1238" y="437.9">9300 — Private Tuitions</text>
-<text class="amt" x="1238" y="452.9">$988,630</text>
-<text class="sub" x="1238" y="465.9">1 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="444.0" width="190" height="13.1"/>
-<text class="lbl" x="1238" y="458.0">4110 — Cust. Supplies - System</text>
-<text class="amt" x="1238" y="473.0">$853,560</text>
-<text class="sub" x="1238" y="486.0">12 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="462.1" width="190" height="11.6"/>
-<text class="lbl" x="1238" y="476.1">2710 — Guidance Exp.</text>
-<text class="amt" x="1238" y="491.1">$753,939</text>
-<text class="sub" x="1238" y="504.1">13 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="478.7" width="190" height="10.2"/>
-<text class="lbl" x="1238" y="492.7">2320</text>
-<text class="amt" x="1238" y="507.7">$663,335</text>
-<text class="sub" x="1238" y="520.7">7 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="493.9" width="190" height="7.9"/>
-<text class="lbl" x="1238" y="507.9">3510 — Athletic Expenses</text>
-<text class="amt" x="1238" y="522.9">$518,334</text>
-<text class="sub" x="1238" y="535.9">12 accounts</text>
-</g>
-<g class="box use">
-<rect x="1230" y="506.8" width="190" height="70.6"/>
-<text class="lbl" x="1238" y="520.8">31 smaller functions</text>
-<text class="amt" x="1238" y="535.8">$4,602,587</text>
-</g>
-</svg></div>
-
-<h2>The $26m is four different numbers</h2>
-<p>“The school budget” names the appropriation to department 300. Three other quantities get called the same thing, and they differ by up to 20%.</p>
-<table><tr><th>what is being asked</th><th></th><th class="v">FY2026</th></tr>
-<tr><td>What the town appropriates to the school department</td><td><code>dept 300, 258 accounts</code></td><td class="v">$26,247,474</td></tr>
-<tr><td>What the town spends on Lunenburg Public Schools</td><td><code>plus school retiree health and the resource stipend, both outside dept 300</code></td><td class="v">$27,775,810</td></tr>
-<tr><td>What the town spends on education</td><td><code>plus the Monty Tech assessment — a different district</code></td><td class="v">$29,110,331</td></tr>
-<tr><td>What the schools have to spend</td><td><code>plus their own funds, which never enter the general fund</code></td><td class="v">$27,585,043</td></tr>
+</section>
+<section class="pot"><h2>2 &middot; It all lands in one pot</h2><p class="potline"><b>GENERAL FUND 0100 &mdash; $52,187,832</b></p><p>Every source above flows in here and <b>loses its identity</b>. Money in the general fund is fungible, and no record ties a source to a department.</p><p class="refuse">So there is no line on this page from Chapter&nbsp;70 to the schools. The town apportions the pot across departments by share when it presents a budget, and that is a fair convention &mdash; but it is a convention. <b>The edge is not missing data. It does not exist.</b></p></section>
+<section class="stage"><h2>3 &middot; Town Meeting votes it out again</h2><p class="cap"><b>Traced</b> &mdash; every department is a line residents voted on. Omnibus total $51,189,961; the rest of the pot funds warrant articles, transfers and reserves.</p>
+<div class="bars">
+<div class="row hi"><div class="lab">SCHOOL DEPARTMENT<span class="sub">the school department</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$26,247,474</div></div>
+<div class="row hi"><div class="lab">MONTY TECH ASSESSMENT<span class="sub">regional vocational school</span></div><div class="track"><div class="fill" style="width:5.08%"></div></div><div class="amt">$1,334,521</div></div>
+<div class="row"><div class="lab">WRRS ASSESSMENT<span class="sub">pension for town AND school staff — split unknown</span></div><div class="track"><div class="fill" style="width:9.12%"></div></div><div class="amt">$2,392,572</div></div>
+<div class="row"><div class="lab">INSURANCE<span class="sub">includes school retiree health</span></div><div class="track"><div class="fill" style="width:14.15%"></div></div><div class="amt">$3,713,520</div></div>
+<div class="row"><div class="lab">All other departments (63)</div><div class="track"><div class="fill" style="width:66.68%"></div></div><div class="amt">$17,501,874</div></div>
+<div class="row"><div class="lab">Warrant articles, transfers, reserves<span class="sub">not appropriated to a department</span></div><div class="track"><div class="fill" style="width:3.80%"></div></div><div class="amt">$997,871</div></div>
+</div>
+</section>
+<section class="stage"><h2>4 &middot; What the school department spends it on</h2><p class="cap"><b>Traced</b> &mdash; 258 named accounts, grouped by the function code the town assigns. Function names are the district&rsquo;s own; a code its budget book does not name is shown bare.</p>
+<div class="bars">
+<div class="row"><div class="lab">2305</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$7,929,717</div></div>
+<div class="row"><div class="lab">5200 — Insurance Programs</div><div class="track"><div class="fill" style="width:47.32%"></div></div><div class="amt">$3,752,258</div></div>
+<div class="row"><div class="lab">2310 — Tutoring Cont. Ser.</div><div class="track"><div class="fill" style="width:27.58%"></div></div><div class="amt">$2,187,067</div></div>
+<div class="row"><div class="lab">3300 — Student Transportation</div><div class="track"><div class="fill" style="width:19.31%"></div></div><div class="amt">$1,531,234</div></div>
+<div class="row"><div class="lab">2330</div><div class="track"><div class="fill" style="width:16.95%"></div></div><div class="amt">$1,344,373</div></div>
+<div class="row"><div class="lab">2210 — P.S. Principals Office</div><div class="track"><div class="fill" style="width:14.15%"></div></div><div class="amt">$1,122,440</div></div>
+<div class="row"><div class="lab">9300 — Private Tuitions</div><div class="track"><div class="fill" style="width:12.47%"></div></div><div class="amt">$988,630</div></div>
+<div class="row"><div class="lab">4110 — Cust. Supplies - System</div><div class="track"><div class="fill" style="width:10.76%"></div></div><div class="amt">$853,560</div></div>
+<div class="row"><div class="lab">2710 — Guidance Exp.</div><div class="track"><div class="fill" style="width:9.51%"></div></div><div class="amt">$753,939</div></div>
+<div class="row"><div class="lab">2320</div><div class="track"><div class="fill" style="width:8.37%"></div></div><div class="amt">$663,335</div></div>
+<div class="row"><div class="lab">3510 — Athletic Expenses</div><div class="track"><div class="fill" style="width:6.54%"></div></div><div class="amt">$518,334</div></div>
+<div class="row"><div class="lab">31 smaller functions</div><div class="track"><div class="fill" style="width:58.04%"></div></div><div class="amt">$4,602,587</div></div>
+</div>
+</section>
+<section class="stage alt"><h2>5 &middot; School money in other departments</h2><p class="cap">Each identified by the name of an account in the town&rsquo;s own ledger. None inferred from a share.</p>
+<div class="bars">
+<div class="row"><div class="lab">COUNTY RET — dept 820<span class="sub">0100-18202-560001</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$2,392,572</div></div>
+<div class="row"><div class="lab">SCHRETHLTH — dept 914<span class="sub">0100-19142-570018</span></div><div class="track"><div class="fill" style="width:63.59%"></div></div><div class="amt">$1,521,536</div></div>
+<div class="row"><div class="lab">MONTY TECH — dept 310<span class="sub">0100-13102-532000</span></div><div class="track"><div class="fill" style="width:55.78%"></div></div><div class="amt">$1,334,521</div></div>
+<div class="row"><div class="lab">SCHRESSTIP — dept 210<span class="sub">0100-12101-519021</span></div><div class="track"><div class="fill" style="width:0.60%"></div></div><div class="amt">$6,800</div></div>
+</div>
+<p class="warn"><b>The pension cannot be split.</b> <code>COUNT[Y] RET</code> covers town and school employees together and no published document says in what proportion. Teachers are not in it at all &mdash; they are in the state system, whose cost Lunenburg never appropriates and never sees. The Worcester Regional Retirement System publishes an annual actuarial valuation by member unit; that is the document that would settle it.</p>
+</section>
+<section class="stage alt"><h2>6 &middot; Money that never enters the pot</h2><p class="cap">The schools&rsquo; own funds. Not appropriated, not in the $26m, and <b>actual rather than budgeted</b> &mdash; so they must never be added to it. Nine months of a twelve-month year.</p>
+<div class="bars">
+<div class="row"><div class="lab">SCHOOL LUNCH REVOLVING</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$572,231</div></div>
+<div class="row"><div class="lab">SPECIAL ED CIRCUIT BREAKER</div><div class="track"><div class="fill" style="width:56.96%"></div></div><div class="amt">$325,970</div></div>
+<div class="row"><div class="lab">EXTENDED DAY REVOLVING FUND</div><div class="track"><div class="fill" style="width:33.72%"></div></div><div class="amt">$192,943</div></div>
+<div class="row"><div class="lab">AFTER SCHOOL ACTIVITIES FUND</div><div class="track"><div class="fill" style="width:19.46%"></div></div><div class="amt">$111,376</div></div>
+<div class="row"><div class="lab">SCHOOL CHOICE REVOLVING</div><div class="track"><div class="fill" style="width:14.52%"></div></div><div class="amt">$83,116</div></div>
+<div class="row"><div class="lab">SCHOOL GIFT FUND</div><div class="track"><div class="fill" style="width:3.93%"></div></div><div class="amt">$22,486</div></div>
+<div class="row"><div class="lab">SCHOOL FACILITIES USE REVOLV</div><div class="track"><div class="fill" style="width:3.26%"></div></div><div class="amt">$18,670</div></div>
+<div class="row"><div class="lab">COMP SCHOOL HEALTH SERV GRANT</div><div class="track"><div class="fill" style="width:1.88%"></div></div><div class="amt">$10,775</div></div>
+</div>
+<p class="warn"><b>Athletics is the clearest case, and it is only half here.</b> The town appropriates $518,334 for athletics inside dept 300 (function 3510: coaches, transport, the athletic director, the trainer, insurance). Fees bring in a further $335,856 through a revolving fund &mdash; <b>which does not appear in the town&rsquo;s fund-balance report at all.</b> That figure comes from the district&rsquo;s own athletics documents. So athletics costs about $854,190 to run and the town&rsquo;s budget shows $518,334 of it. Every fee-funded programme has this shape; athletics is just the one where both halves have been found.</p>
+</section>
+<section class="stage"><h2>So what is &ldquo;the school budget&rdquo;?</h2><p class="cap">Four different numbers get called it, and they differ by more than 10%.</p><table>
+<tr><td>Appropriated to the school department<span class="sub">dept 300, 258 accounts</span></td><td class="v">$26,247,474</td></tr>
+<tr><td>Spent by the town on Lunenburg Public Schools<span class="sub">+ school retiree health, resource stipend</span></td><td class="v">$27,775,810</td></tr>
+<tr><td>Spent by the town on education<span class="sub">+ Monty Tech, a different district</span></td><td class="v">$29,110,331</td></tr>
+<tr><td>Available to the schools to spend<span class="sub">+ their own funds, outside the general fund</span></td><td class="v">$27,585,043</td></tr>
 </table>
-<p>And one that cannot be stated at all: the school share of the <strong>$2,392,572</strong> pension assessment.</p>
-<h2>School money appropriated to other departments</h2>
-<p>Each of these is identified by the name of an account in the town’s own ledger. None is inferred from a share.</p>
-<table><tr><th>account</th><th>dept</th><th>name</th><th class="v">as voted</th></tr>
-<tr><td><code>0100-18202-560001</code></td><td>820</td><td>COUNTY RET</td><td class="v">$2,392,572</td></tr>
-<tr><td><code>0100-19142-570018</code></td><td>914</td><td>SCHRETHLTH</td><td class="v">$1,521,536</td></tr>
-<tr><td><code>0100-13102-532000</code></td><td>310</td><td>MONTY TECH</td><td class="v">$1,334,521</td></tr>
-<tr><td><code>0100-12101-519021</code></td><td>210</td><td>SCHRESSTIP</td><td class="v">$6,800</td></tr>
-</table>
-<div class="note"><strong>The pension line is the one that cannot be split.</strong> <code>COUNT[Y] RET</code> covers town and school employees together and no published document says in what proportion. Teachers are not in it at all — they belong to the state system, whose cost Lunenburg never appropriates and never sees. The Worcester Regional Retirement System publishes an annual actuarial valuation by member unit; that is the document that would settle it.</div>
-<h2>What the school department’s money pays for</h2>
-<p>The 258 accounts, grouped by the function code the town assigns them. Function names are the district’s own, taken from its budget book; a code the book does not name is shown bare rather than named from general knowledge.</p>
-<table><tr><th>function</th><th class="v">accounts</th><th class="v">as voted</th></tr>
-<tr><td>2305</td><td class="v">5</td><td class="v">$7,929,717</td></tr>
-<tr><td>5200 — Insurance Programs</td><td class="v">2</td><td class="v">$3,752,258</td></tr>
-<tr><td>2310 — Tutoring Cont. Ser.</td><td class="v">8</td><td class="v">$2,187,067</td></tr>
-<tr><td>3300 — Student Transportation</td><td class="v">2</td><td class="v">$1,531,234</td></tr>
-<tr><td>2330</td><td class="v">9</td><td class="v">$1,344,373</td></tr>
-<tr><td>2210 — P.S. Principals Office</td><td class="v">23</td><td class="v">$1,122,440</td></tr>
-<tr><td>9300 — Private Tuitions</td><td class="v">1</td><td class="v">$988,630</td></tr>
-<tr><td>4110 — Cust. Supplies - System</td><td class="v">12</td><td class="v">$853,560</td></tr>
-<tr><td>2710 — Guidance Exp.</td><td class="v">13</td><td class="v">$753,939</td></tr>
-<tr><td>2320</td><td class="v">7</td><td class="v">$663,335</td></tr>
-<tr><td>3510 — Athletic Expenses</td><td class="v">12</td><td class="v">$518,334</td></tr>
-<tr><td>31 smaller functions</td><td class="v"></td><td class="v">$4,602,587</td></tr>
-</table>
-<h2>Money that never enters the general fund</h2>
-<p>These are the schools’ own funds. They are not appropriated, they do not appear in the $26m, and they are actual rather than budgeted — so they must never be added to it.</p>
-<table><tr><th>fund</th><th>name</th><th class="v">in</th><th class="v">out</th></tr>
-<tr><td><code>2200</code></td><td>SCHOOL LUNCH REVOLVING</td><td class="v">$572,231</td><td class="v">$739,586</td></tr>
-<tr><td><code>2640</code></td><td>SPECIAL ED CIRCUIT BREAKER</td><td class="v">$325,970</td><td class="v">$4,005</td></tr>
-<tr><td><code>1312</code></td><td>EXTENDED DAY REVOLVING FUND</td><td class="v">$192,943</td><td class="v">$233,350</td></tr>
-<tr><td><code>1305</code></td><td>AFTER SCHOOL ACTIVITIES FUND</td><td class="v">$111,376</td><td class="v">$95,196</td></tr>
-<tr><td><code>1308</code></td><td>SCHOOL CHOICE REVOLVING</td><td class="v">$83,116</td><td class="v">$30,558</td></tr>
-<tr><td><code>1311</code></td><td>SCHOOL GIFT FUND</td><td class="v">$22,486</td><td class="v">$2,911</td></tr>
-<tr><td><code>1306</code></td><td>SCHOOL FACILITIES USE REVOLV</td><td class="v">$18,670</td><td class="v">$12,354</td></tr>
-<tr><td><code>2681</code></td><td>COMP SCHOOL HEALTH SERV GRANT</td><td class="v">$10,775</td><td class="v">$5,120</td></tr>
-</table>
-<p><em>Nine months of a twelve-month year — the ledger we hold stops at 31 March.</em></p>
-<h2>Why there is no line from Chapter 70 to the schools</h2>
-<p>Because there is no such line to draw. Chapter 70 arrives as <strong>unrestricted revenue</strong> into fund 0100 and is thereafter indistinguishable from property tax. The town apportions general fund revenue across departments by share when it presents a budget, and that is a reasonable convention, but it is a convention: no dollar of state aid can be followed to a classroom.</p>
-<p>The old diagram drew seven such lines, each labelled with a figure. This one refuses to, and states the refusal on the pot. <strong>The edge is not missing data. It does not exist.</strong></p>
+<p class="warn">And one that cannot be stated at all: the school share of the $2,392,572 pension assessment. The honest answer is that nobody publishes it.</p>
+</section>
 
 <p class="gen">Generated by <code>scripts/build_money_flow.py</code> from
-<code>sources/data/lunenburg.db</code>. Do not edit — every figure is computed, and
-<code>--check</code> fails if this file stops reproducing. Companion to
-<code>money-in.html</code>, which is kept unchanged beside it.</p>
+<code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
+fails if this file stops reproducing. Companion to <code>money-in.html</code>, kept
+unchanged beside it.</p>
 </div>

@@ -21,16 +21,19 @@ not know things the ledger states outright. **It understates what is knowable**,
 figure on it is hand-typed besides. So this one is generated, and its whole design job is
 to make the difference between a traced number and an apportioned one impossible to miss.
 
-WHAT THE SHAPES MEAN, AND WHY THE POT IS DRAWN THE WAY IT IS
+WHY BARS AND NOT A SANKEY
 
-Three kinds of edge, and the distinction is the finding:
+The first version was a four-column Sankey and it failed on its own terms. Height carried
+value, so a $6,000 line became a two-pixel box with unreadable text stacked on it, and the
+canvas was 1500px wide -- unusable on the phone most residents will open it on.
 
-  SOLID     traced. A named account in the town's ledger holds this figure.
-  HATCHED   a real quantity whose SPLIT is unknown — the pension assessment covers town
-            and school staff and no published document says in what proportion.
-  (absent)  the edge that cannot be drawn at all: source to department.
+So: **bar LENGTH carries value, row height is fixed.** Every row is legible whatever it is
+worth, the whole thing is one column that scrolls DOWN, and nothing needs a horizontal
+scrollbar. A stage is a bar chart; the flow between stages is shown by ordering and by the
+pot sitting between them, not by ribbons that cross.
 
-That last one is the point of the pot. Every revenue line flows into fund `0100` and
+The one thing the Sankey did well is kept: the diagonal edge is still refused. That is the
+point of the pot. Every revenue line flows into fund `0100` and
 **loses its identity there**. Money is fungible; no record ties a source to a department.
 So the diagram deliberately refuses to draw a ribbon from Chapter 70 to the schools, which
 is exactly what the old page drew seven of. What replaces them is the pot itself, drawn as
@@ -181,132 +184,158 @@ def own_funds(c):
     return [(r['fund'], r['name'], r['revenue'], r['spent']) for r in rows]
 
 
-# ---------------------------------------------------------------- drawing
+# ---------------------------------------------------------------- rendering
+
 
 def money(v):
     return f'${v:,.0f}'
 
 
-def build(c):
+def athletics(c):
+    """Both sides of athletics, which is the clearest case of the whole problem.
+
+    The appropriated side is function 3510 inside dept 300. The fee side is a revolving
+    fund -- and that fund is NOT in the town's fund-balance report, so it is known only
+    from the district's own athletics documents. A page about how money reaches the
+    schools that showed the first and not the second would be describing half a program
+    and would look complete doing it.
+    """
+    gen = c.execute(f"""SELECT SUM(l.original) FROM ledger_snapshot l
+                        JOIN account a USING (account_id)
+                        WHERE l.fy={FY} AND l.period={P_ACCT} AND a.dept='300'
+                          AND a.function='3510'""").fetchone()[0] or 0
+    rev = c.execute("""SELECT SUM(amount) FROM athletics_history
+                       WHERE fy=? AND side='revolving'""", (FY,)).fetchone()[0] or 0
+    return gen, rev
+
+
+def bars(rows, hilite=(), note_of=None):
+    """A stage, as rows of label + proportional bar + amount.
+
+    Scaled to the biggest row in the STAGE, not across stages: a stage whose largest item
+    is small would otherwise render as a row of slivers, which is the failure this replaced.
+    """
+    top = max((v for _, v, *_ in rows), default=1) or 1
+    out = ['<div class="bars">']
+    for label, value, *rest in rows:
+        key = rest[0] if rest else None
+        cls = ' hi' if key in hilite else ''
+        pct = max(0.6, value / top * 100)
+        sub = (note_of or {}).get(key, '')
+        out.append(
+            f'<div class="row{cls}">'
+            f'<div class="lab">{html.escape(str(label))}'
+            + (f'<span class="sub">{html.escape(sub)}</span>' if sub else '')
+            + f'</div>'
+            f'<div class="track"><div class="fill" style="width:{pct:.2f}%"></div></div>'
+            f'<div class="amt">{money(value)}</div>'
+            f'</div>')
+    out.append('</div>')
+    return '\n'.join(out)
+
+
+def render(c):
     srcs, rev_total = revenue_sources(c)
     depts, omnibus = departments(c)
     elsewhere = school_elsewhere(c)
     uses, uses_total = school_uses(c)
     funds = own_funds(c)
+    ath_gen, ath_rev = athletics(c)
 
-    # One scale for every column, so a block twice as tall is twice the money everywhere.
-    span = H - TOP - BOT
-    scale = span / rev_total
-
-    def lay(pairs, x, y0=TOP):
-        boxes, y = [], y0
-        for label, value, *extra in pairs:
-            h = max(3.0, value * scale)
-            boxes.append(dict(label=label, value=value, x=x, y=y, h=h,
-                              extra=extra[0] if extra else None))
-            y += h + GAP
-        return boxes
-
-    src_boxes = lay([(n, v) for n, v in srcs], COL['src'])
-    pot_h = rev_total * scale
-    dept_boxes = lay([(n, v, d) for n, v, d in depts], COL['dept'])
-    # The pot appropriates less than it receives; the rest funds articles and reserves.
+    d300 = next(v for n, v, k in depts if k == '300')
+    ret = next((v for aid, dp, nm, v in elsewhere if aid.endswith('570018')), 0)
+    monty = next((v for aid, dp, nm, v in elsewhere if aid.endswith('532000')), 0)
+    pens = next((v for aid, dp, nm, v in elsewhere if aid.endswith('560001')), 0)
+    stip = next((v for aid, dp, nm, v in elsewhere if aid.endswith('519021')), 0)
+    funds_in = sum(r for _, _, r, _ in funds)
     residual = rev_total - omnibus
-    dept_boxes.append(dict(label='Warrant articles, transfers, reserves',
-                           value=residual, x=COL['dept'],
-                           y=dept_boxes[-1]['y'] + dept_boxes[-1]['h'] + GAP,
-                           h=max(3.0, residual * scale), extra='residual'))
-    use_boxes = lay([((f'{f} — {nm}' if f and nm else (nm or f or 'unclassified')), v, n)
-                     for f, nm, v, n in uses], COL['use'])
 
-    p = []
-    a = p.append
+    P = []
+    a = P.append
 
-    def rect(b, cls, sub=''):
-        a(f'<g class="box {cls}">')
-        a(f'<rect x="{b["x"]}" y="{b["y"]:.1f}" width="{BOXW}" height="{b["h"]:.1f}"/>')
-        a(f'<text class="lbl" x="{b["x"]+8}" y="{b["y"]+14:.1f}">'
-          f'{html.escape(str(b["label"])[:34])}</text>')
-        a(f'<text class="amt" x="{b["x"]+8}" y="{b["y"]+29:.1f}">{money(b["value"])}</text>')
-        if sub:
-            a(f'<text class="sub" x="{b["x"]+8}" y="{b["y"]+42:.1f}">{html.escape(sub)}</text>')
-        a('</g>')
+    a(f'<section class="stage"><h2>1 &middot; Where the money comes from</h2>'
+      f'<p class="cap">Every general-fund revenue line the town budgets for FY2026. '
+      f'<b>Traced</b> &mdash; each is a named account. Total {money(rev_total)}.</p>')
+    a(bars([(n, v) for n, v in srcs]))
+    a('</section>')
 
-    def ribbon(x1, y1, h1, x2, y2, h2, cls):
-        """A flow. Cubic beziers so two ribbons crossing stay readable."""
-        mx = (x1 + x2) / 2
-        a(f'<path class="rib {cls}" d="M{x1},{y1:.1f} C{mx},{y1:.1f} {mx},{y2:.1f} '
-          f'{x2},{y2:.1f} L{x2},{y2+h2:.1f} C{mx},{y2+h2:.1f} {mx},{y1+h1:.1f} '
-          f'{x1},{y1+h1:.1f} Z"/>')
+    a('<section class="pot"><h2>2 &middot; It all lands in one pot</h2>'
+      f'<p class="potline"><b>GENERAL FUND 0100 &mdash; {money(rev_total)}</b></p>'
+      '<p>Every source above flows in here and <b>loses its identity</b>. Money in the '
+      'general fund is fungible, and no record ties a source to a department.</p>'
+      '<p class="refuse">So there is no line on this page from Chapter&nbsp;70 to the '
+      'schools. The town apportions the pot across departments by share when it presents '
+      'a budget, and that is a fair convention &mdash; but it is a convention. '
+      '<b>The edge is not missing data. It does not exist.</b></p></section>')
 
-    a(f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" '
-      f'role="img" aria-label="How money reaches the Lunenburg schools, FY2026">')
-    a('''<defs>
-      <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)"
-               patternUnits="userSpaceOnUse">
-        <rect width="7" height="7" fill="var(--unknown-bg)"/>
-        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--unknown)" stroke-width="3"/>
-      </pattern>
-    </defs>''')
+    a(f'<section class="stage"><h2>3 &middot; Town Meeting votes it out again</h2>'
+      f'<p class="cap"><b>Traced</b> &mdash; every department is a line residents voted on. '
+      f'Omnibus total {money(omnibus)}; the rest of the pot funds warrant articles, '
+      f'transfers and reserves.</p>')
+    rows = [(n, v, k) for n, v, k in depts]
+    rows.append(('Warrant articles, transfers, reserves', residual, 'residual'))
+    a(bars(rows, hilite=('300', '310'), note_of={
+        '300': 'the school department', '310': 'regional vocational school',
+        '820': 'pension for town AND school staff — split unknown',
+        '914': 'includes school retiree health', 'residual': 'not appropriated to a department'}))
+    a('</section>')
 
-    for x, t in ((COL['src'], 'EVERY SOURCE'), (COL['pot'], 'ONE POT'),
-                 (COL['dept'], 'APPROPRIATED BY VOTE'), (COL['use'], 'WHAT IT PAYS FOR')):
-        a(f'<text class="hd" x="{x}" y="{TOP-58}">{t}</text>')
-    a(f'<text class="hdsub" x="{COL["src"]}" y="{TOP-38}">traced — each is a named '
-      f'revenue account</text>')
-    a(f'<text class="hdsub" x="{COL["pot"]}" y="{TOP-38}">where provenance ends</text>')
-    a(f'<text class="hdsub" x="{COL["dept"]}" y="{TOP-38}">traced — Town Meeting voted '
-      f'each one</text>')
-    a(f'<text class="hdsub" x="{COL["use"]}" y="{TOP-38}">traced — 258 named accounts</text>')
+    a(f'<section class="stage"><h2>4 &middot; What the school department spends it on</h2>'
+      f'<p class="cap"><b>Traced</b> &mdash; 258 named accounts, grouped by the function '
+      f'code the town assigns. Function names are the district&rsquo;s own; a code its '
+      f'budget book does not name is shown bare.</p>')
+    a(bars([((f'{f} — {nm}' if f and nm else (nm or f)), v, f) for f, nm, v, n in uses]))
+    a('</section>')
 
-    # sources -> pot
-    for b in src_boxes:
-        ribbon(b['x'] + BOXW, b['y'], b['h'], COL['pot'],
-               TOP + (b['y'] - TOP) * (pot_h / (span)), b['h'], 'in')
-    # pot -> departments
-    for b in dept_boxes:
-        cls = 'out school' if b.get('extra') in ('300', '310') else 'out'
-        if b.get('extra') == 'residual':
-            cls = 'out residual'
-        ribbon(COL['pot'] + BOXW, TOP + (b['y'] - TOP) * (pot_h / span), b['h'],
-               b['x'], b['y'], b['h'], cls)
-    # dept 300 -> its functions
-    d300 = next(b for b in dept_boxes if b.get('extra') == '300')
-    yy = d300['y']
-    for b in use_boxes:
-        share = b['h'] / max(1, sum(u['h'] for u in use_boxes)) * d300['h']
-        ribbon(d300['x'] + BOXW, yy, share, b['x'], b['y'], b['h'], 'use')
-        yy += share
+    a('<section class="stage alt"><h2>5 &middot; School money in other departments</h2>'
+      '<p class="cap">Each identified by the name of an account in the town&rsquo;s own '
+      'ledger. None inferred from a share.</p>')
+    a(bars([(f'{nm} — dept {dp}', v, aid) for aid, dp, nm, v in elsewhere],
+           note_of={aid: aid for aid, dp, nm, v in elsewhere}))
+    a('<p class="warn"><b>The pension cannot be split.</b> <code>COUNT[Y] RET</code> covers '
+      'town and school employees together and no published document says in what '
+      'proportion. Teachers are not in it at all &mdash; they are in the state system, '
+      'whose cost Lunenburg never appropriates and never sees. The Worcester Regional '
+      'Retirement System publishes an annual actuarial valuation by member unit; that is '
+      'the document that would settle it.</p>')
+    a('</section>')
 
-    a(f'<g class="box pot"><rect x="{COL["pot"]}" y="{TOP}" width="{BOXW}" '
-      f'height="{pot_h:.1f}"/>')
-    a(f'<text class="lbl" x="{COL["pot"]+8}" y="{TOP+18}">GENERAL FUND 0100</text>')
-    a(f'<text class="amt" x="{COL["pot"]+8}" y="{TOP+34}">{money(rev_total)}</text>')
-    for i, line in enumerate(['Every source above flows in',
-                              'here and loses its identity.',
-                              'No record ties a source to a',
-                              'department, so the diagonal',
-                              'edge — Chapter 70 to the',
-                              'schools — cannot be drawn.',
-                              'It is not missing. It does',
-                              'not exist.']):
-        a(f'<text class="potnote" x="{COL["pot"]+8}" y="{TOP+58+i*15}">{line}</text>')
-    a('</g>')
+    a('<section class="stage alt"><h2>6 &middot; Money that never enters the pot</h2>'
+      '<p class="cap">The schools&rsquo; own funds. Not appropriated, not in the '
+      '$26m, and <b>actual rather than budgeted</b> &mdash; so they must never be added '
+      'to it. Nine months of a twelve-month year.</p>')
+    a(bars([(nm, rev, f) for f, nm, rev, sp in funds]))
+    a(f'<p class="warn"><b>Athletics is the clearest case, and it is only half here.</b> '
+      f'The town appropriates {money(ath_gen)} for athletics inside dept 300 '
+      f'(function 3510: coaches, transport, the athletic director, the trainer, '
+      f'insurance). Fees bring in a further {money(ath_rev)} through a revolving fund '
+      f'&mdash; <b>which does not appear in the town&rsquo;s fund-balance report at all.</b> '
+      f'That figure comes from the district&rsquo;s own athletics documents. So athletics '
+      f'costs about {money(ath_gen + ath_rev)} to run and the town&rsquo;s budget shows '
+      f'{money(ath_gen)} of it. Every fee-funded programme has this shape; athletics is '
+      f'just the one where both halves have been found.</p>')
+    a('</section>')
 
-    for b in src_boxes:
-        rect(b, 'src')
-    for b in dept_boxes:
-        d = b.get('extra')
-        cls = 'dept school' if d in ('300', '310') else (
-            'dept residual' if d == 'residual' else 'dept')
-        rect(b, cls, f'dept {d}' if d and d not in ('other', 'residual') else '')
-    for b in use_boxes:
-        rect(b, 'use', f'{b["extra"]} accounts' if b.get('extra') else '')
+    a('<section class="stage"><h2>So what is &ldquo;the school budget&rdquo;?</h2>'
+      '<p class="cap">Four different numbers get called it, and they differ by more than '
+      '10%.</p><table>')
+    for q, v, why in [
+        ('Appropriated to the school department', d300, 'dept 300, 258 accounts'),
+        ('Spent by the town on Lunenburg Public Schools', d300 + ret + stip,
+         '+ school retiree health, resource stipend'),
+        ('Spent by the town on education', d300 + ret + stip + monty,
+         '+ Monty Tech, a different district'),
+        ('Available to the schools to spend', d300 + funds_in,
+         '+ their own funds, outside the general fund'),
+    ]:
+        a(f'<tr><td>{q}<span class="sub">{why}</span></td>'
+          f'<td class="v">{money(v)}</td></tr>')
+    a('</table>')
+    a(f'<p class="warn">And one that cannot be stated at all: the school share of the '
+      f'{money(pens)} pension assessment. The honest answer is that nobody publishes it.</p>')
+    a('</section>')
 
-    a('</svg>')
-    return '\n'.join(p), dict(srcs=srcs, rev_total=rev_total, depts=depts,
-                              omnibus=omnibus, elsewhere=elsewhere, uses=uses,
-                              funds=funds, residual=residual)
+    return PAGE.format(body='\n'.join(P))
 
 
 PAGE = '''<meta charset="utf-8">
@@ -314,177 +343,82 @@ PAGE = '''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root {{
-  --bg:#fbfaf8; --ink:#1a1a1a; --muted:#6b6b6b; --grid:#e0dcd5;
-  --traced:#1f5c3d; --traced-bg:#e7f0ea;
-  --school:#8a4b17; --school-bg:#f6ece2;
-  --pot:#3a3a3a; --pot-bg:#ecebe8;
-  --unknown:#9a7b1f; --unknown-bg:#f7f1dd;
+  --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --traced-bg:#dfeee6;
+  --school:#9a4f14; --school-bg:#f7e7d8;
+  --warn:#8a6d10; --warn-bg:#faf3de;
+  --potbg:#2c2b28; --potink:#f2efe9;
 }}
 @media (prefers-color-scheme: dark) {{
-  :root {{ --bg:#151513; --ink:#eceae6; --muted:#9c9890; --grid:#33322e;
-    --traced:#7fc2a0; --traced-bg:#1b2b22; --school:#e0a06a; --school-bg:#2e2119;
-    --pot:#b9b6b0; --pot-bg:#222220; --unknown:#d8bd6a; --unknown-bg:#2b2617; }}
+  :root {{ --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --traced-bg:#1d3129; --school:#e2a068; --school-bg:#33231a;
+    --warn:#d9bd67; --warn-bg:#2c2718; --potbg:#e8e4dc; --potink:#1a1a18; }}
 }}
 * {{ box-sizing:border-box }}
 body {{ margin:0; background:var(--bg); color:var(--ink);
-  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }}
-.wrap {{ max-width:1560px; margin:0 auto; padding:28px 22px 70px }}
-header {{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:22px }}
-.kicker {{ font-size:11px; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--muted) }}
-h1 {{ font-size:30px; margin:6px 0 8px; letter-spacing:-.02em }}
-.standfirst {{ font-size:17px; color:var(--muted); max-width:60em; margin:0 }}
-h2 {{ font-size:19px; margin:34px 0 8px }}
-p {{ max-width:62em }}
-.key {{ display:flex; gap:26px; flex-wrap:wrap; margin:18px 0 6px; font-size:13px }}
-.key div {{ display:flex; gap:8px; align-items:center }}
-.sw {{ width:26px; height:13px; border:1.5px solid }}
-.sw.t {{ background:var(--traced-bg); border-color:var(--traced) }}
-.sw.s {{ background:var(--school-bg); border-color:var(--school) }}
-.sw.u {{ background:var(--unknown-bg); border-color:var(--unknown) }}
-.sw.p {{ background:var(--pot-bg); border-color:var(--pot) }}
-.scroll {{ overflow-x:auto; border:1px solid var(--grid); border-radius:6px;
-  background:var(--bg); margin-top:10px }}
-svg {{ display:block; min-width:1500px }}
-.hd {{ font-size:12px; font-weight:700; letter-spacing:.1em; fill:var(--ink) }}
-.hdsub {{ font-size:11px; fill:var(--muted) }}
-.box rect {{ stroke-width:1.5 }}
-.box.src rect {{ fill:var(--traced-bg); stroke:var(--traced) }}
-.box.pot rect {{ fill:var(--pot-bg); stroke:var(--pot); stroke-width:2 }}
-.box.dept rect {{ fill:var(--traced-bg); stroke:var(--traced) }}
-.box.dept.school rect {{ fill:var(--school-bg); stroke:var(--school); stroke-width:2 }}
-.box.dept.residual rect {{ fill:none; stroke:var(--muted); stroke-dasharray:4 3 }}
-.box.use rect {{ fill:var(--school-bg); stroke:var(--school) }}
-.lbl {{ font-size:11.5px; font-weight:600; fill:var(--ink) }}
-.amt {{ font-size:12px; fill:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100%; }}
+.wrap {{ max-width:820px; margin:0 auto; padding:22px 16px 80px }}
+header {{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }}
+.kicker {{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }}
+h1 {{ font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }}
+.standfirst {{ font-size:16px; color:var(--muted); margin:0 }}
+.stage {{ background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }}
+.stage.alt {{ background:transparent }}
+h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
+.cap {{ font-size:13.5px; color:var(--muted); margin:0 0 14px }}
+.bars {{ display:flex; flex-direction:column; gap:9px }}
+.row {{ display:grid; grid-template-columns:1fr 34%; grid-template-areas:"lab amt" "bar bar";
+  gap:3px 10px; align-items:baseline }}
+.lab {{ grid-area:lab; font-size:13.5px; font-weight:600; min-width:0;
+  overflow-wrap:anywhere }}
+.lab .sub {{ display:block; font-weight:400; font-size:11.5px; color:var(--muted) }}
+.amt {{ grid-area:amt; text-align:right; font-size:13.5px; white-space:nowrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace }}
+.track {{ grid-area:bar; background:var(--grid); border-radius:3px; height:9px; width:100% }}
+.fill {{ background:var(--traced); height:100%; border-radius:3px; min-width:2px }}
+.row.hi .fill {{ background:var(--school) }}
+.row.hi .lab {{ color:var(--school) }}
+.pot {{ background:var(--potbg); color:var(--potink); border-radius:10px;
+  padding:18px 16px; margin:16px 0 }}
+.pot h2 {{ color:var(--potink) }}
+.pot p {{ font-size:14px; margin:8px 0 0 }}
+.potline {{ font-family:ui-monospace,Menlo,monospace; font-size:15px; margin:0 }}
+.refuse {{ border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }}
+.warn {{ background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
+  padding:11px 13px; font-size:13.5px; margin:14px 0 0 }}
+table {{ border-collapse:collapse; width:100%; margin-top:4px }}
+td {{ padding:9px 0; border-bottom:1px solid var(--grid); font-size:14px; vertical-align:top }}
+td .sub {{ display:block; font-size:11.5px; color:var(--muted) }}
+td.v {{ text-align:right; white-space:nowrap; font-weight:600;
   font-family:ui-monospace,Menlo,monospace }}
-.sub {{ font-size:10px; fill:var(--muted) }}
-.potnote {{ font-size:10.5px; fill:var(--muted) }}
-.rib {{ stroke:none }}
-.rib.in {{ fill:var(--traced); opacity:.13 }}
-.rib.out {{ fill:var(--traced); opacity:.13 }}
-.rib.out.school {{ fill:var(--school); opacity:.22 }}
-.rib.out.residual {{ fill:var(--muted); opacity:.08 }}
-.rib.use {{ fill:var(--school); opacity:.16 }}
-table {{ border-collapse:collapse; width:100%; max-width:62em; margin:10px 0 6px;
-  font-size:14px }}
-th,td {{ text-align:left; padding:5px 10px 5px 0; border-bottom:1px solid var(--grid);
-  vertical-align:top }}
-td.v {{ text-align:right; font-family:ui-monospace,Menlo,monospace; white-space:nowrap }}
-code {{ font-family:ui-monospace,Menlo,monospace; font-size:12.5px; color:var(--muted) }}
-.note {{ border-left:3px solid var(--unknown); background:var(--unknown-bg);
-  padding:12px 14px; margin:16px 0; max-width:62em; font-size:14px }}
-.gen {{ margin-top:44px; padding-top:14px; border-top:1px solid var(--grid);
-  font-size:12px; color:var(--muted) }}
+code {{ font-family:ui-monospace,Menlo,monospace; font-size:12.5px }}
+.gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
+@media (min-width:680px) {{
+  .row {{ grid-template-columns:38% 1fr 22%; grid-template-areas:"lab bar amt"; gap:12px;
+    align-items:center }}
+  .track {{ height:11px }}
+}}
 </style>
 
 <div class="wrap">
 <header>
-  <div class="kicker">Lunenburg Budget Project · Data architecture</div>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
   <h1>How money reaches the schools</h1>
   <p class="standfirst">FY2026, from every source the town budgets to the 258 accounts the
-  school department spends from — and the one edge in the middle that cannot be drawn
-  because no record ties a source to a department.</p>
+  school department spends from &mdash; and the one connection in the middle that cannot be
+  drawn, because no record ties a source to a department.</p>
 </header>
-
-<div class="key">
-  <div><span class="sw t"></span> traced — a named account holds this figure</div>
-  <div><span class="sw s"></span> school money</div>
-  <div><span class="sw p"></span> where provenance ends</div>
-  <div><span class="sw u"></span> real, but the split is unknown</div>
-</div>
-
-<div class="scroll">{svg}</div>
 
 {body}
 
 <p class="gen">Generated by <code>scripts/build_money_flow.py</code> from
-<code>sources/data/lunenburg.db</code>. Do not edit — every figure is computed, and
-<code>--check</code> fails if this file stops reproducing. Companion to
-<code>money-in.html</code>, which is kept unchanged beside it.</p>
+<code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
+fails if this file stops reproducing. Companion to <code>money-in.html</code>, kept
+unchanged beside it.</p>
 </div>
 '''
-
-
-def body_html(d, c):
-    p = []
-    a = p.append
-
-    a('<h2>The $26m is four different numbers</h2>')
-    a('<p>“The school budget” names the appropriation to department 300. Three other '
-      'quantities get called the same thing, and they differ by up to 20%.</p>')
-    d300 = next(v for n, v, k in d['depts'] if k == '300')
-    ret = next((v for aid, dp, nm, v in d['elsewhere'] if aid.endswith('570018')), 0)
-    monty = next((v for aid, dp, nm, v in d['elsewhere'] if aid.endswith('532000')), 0)
-    pens = next((v for aid, dp, nm, v in d['elsewhere'] if aid.endswith('560001')), 0)
-    stip = next((v for aid, dp, nm, v in d['elsewhere'] if aid.endswith('519021')), 0)
-    funds_in = sum(r for _, _, r, _ in d['funds'])
-    a('<table><tr><th>what is being asked</th><th></th><th class="v">FY2026</th></tr>')
-    for q, v, why in [
-        ('What the town appropriates to the school department', d300, 'dept 300, 258 accounts'),
-        ('What the town spends on Lunenburg Public Schools', d300 + ret + stip,
-         'plus school retiree health and the resource stipend, both outside dept 300'),
-        ('What the town spends on education', d300 + ret + stip + monty,
-         'plus the Monty Tech assessment — a different district'),
-        ('What the schools have to spend', d300 + funds_in,
-         'plus their own funds, which never enter the general fund'),
-    ]:
-        a(f'<tr><td>{q}</td><td><code>{why}</code></td><td class="v">{money(v)}</td></tr>')
-    a('</table>')
-    a(f'<p>And one that cannot be stated at all: the school share of the '
-      f'<strong>{money(pens)}</strong> pension assessment.</p>')
-
-    a('<h2>School money appropriated to other departments</h2>')
-    a('<p>Each of these is identified by the name of an account in the town’s own ledger. '
-      'None is inferred from a share.</p>')
-    a('<table><tr><th>account</th><th>dept</th><th>name</th><th class="v">as voted</th></tr>')
-    for aid, dept, nm, v in d['elsewhere']:
-        a(f'<tr><td><code>{aid}</code></td><td>{dept}</td><td>{html.escape(nm)}</td>'
-          f'<td class="v">{money(v)}</td></tr>')
-    a('</table>')
-    a('<div class="note"><strong>The pension line is the one that cannot be split.</strong> '
-      f'<code>COUNT[Y] RET</code> covers town and school employees together and no '
-      'published document says in what proportion. Teachers are not in it at all — they '
-      'belong to the state system, whose cost Lunenburg never appropriates and never sees. '
-      'The Worcester Regional Retirement System publishes an annual actuarial valuation by '
-      'member unit; that is the document that would settle it.</div>')
-
-    a('<h2>What the school department’s money pays for</h2>')
-    a('<p>The 258 accounts, grouped by the function code the town assigns them. Function '
-      'names are the district’s own, taken from its budget book; a code the book does not '
-      'name is shown bare rather than named from general knowledge.</p>')
-    a('<table><tr><th>function</th><th class="v">accounts</th><th class="v">as voted</th></tr>')
-    for f, nm, v, n in d['uses']:
-        label = f'{f} — {html.escape(nm)}' if f and nm else html.escape(str(nm or f))
-        a(f'<tr><td>{label}</td><td class="v">{n or ""}</td><td class="v">{money(v)}</td></tr>')
-    a('</table>')
-
-    a('<h2>Money that never enters the general fund</h2>')
-    a('<p>These are the schools’ own funds. They are not appropriated, they do not appear '
-      'in the $26m, and they are actual rather than budgeted — so they must never be added '
-      'to it.</p>')
-    a('<table><tr><th>fund</th><th>name</th><th class="v">in</th><th class="v">out</th></tr>')
-    for fund, nm, rev, sp in d['funds']:
-        a(f'<tr><td><code>{fund}</code></td><td>{html.escape(nm)}</td>'
-          f'<td class="v">{money(rev)}</td><td class="v">{money(sp or 0)}</td></tr>')
-    a('</table>')
-    a('<p><em>Nine months of a twelve-month year — the ledger we hold stops at 31 March.</em></p>')
-
-    a('<h2>Why there is no line from Chapter 70 to the schools</h2>')
-    a('<p>Because there is no such line to draw. Chapter 70 arrives as <strong>unrestricted '
-      'revenue</strong> into fund 0100 and is thereafter indistinguishable from property '
-      'tax. The town apportions general fund revenue across departments by share when it '
-      'presents a budget, and that is a reasonable convention, but it is a convention: no '
-      'dollar of state aid can be followed to a classroom.</p>')
-    a('<p>The old diagram drew seven such lines, each labelled with a figure. This one '
-      'refuses to, and states the refusal on the pot. <strong>The edge is not missing '
-      'data. It does not exist.</strong></p>')
-    return '\n'.join(p)
-
-
-def render(c):
-    svg, d = build(c)
-    return PAGE.format(svg=svg, body=body_html(d, c))
 
 
 def main():
