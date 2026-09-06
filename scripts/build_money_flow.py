@@ -196,24 +196,24 @@ def own_funds(c):
         ORDER BY revenue DESC""")]
 
 
-# ---------------------------------------------------------------- the programme map
+# ---------------------------------------------------------------- the program map
 #
-# A PROGRAMME is a thing the town does. It is not a fund and not a function code, and that
-# is the whole point of this page: **a programme's money arrives from more than one place,
+# A PROGRAM is a thing the town does. It is not a fund and not a function code, and that
+# is the whole point of this page: **a program's money arrives from more than one place,
 # and the budget shows one of them.**
 #
 # `inside`  function codes within dept 300 — appropriated, traced to named accounts
-# `outside` funds that pay for the same programme without entering the appropriation
+# `outside` funds that pay for the same program without entering the appropriation
 # `edge`    how sure we are the outside money goes here:
 #             traced      an account or journal shows it
 #             restricted  the fund exists for this and nothing else, but no expense report
 #                         for special revenue funds exists, so it is NOT OBSERVED
 #             missing     the money is known to be collected and cannot be located at all
-PROGRAMMES = [
+PROGRAMS = [
     ('Special education', ['2110', '2310', '2320', '2330', '9300', '9400'],
      [('2640', 'restricted'), ('2813', 'restricted'), ('2814', 'restricted'),
       ('2832', 'restricted'), ('2758', 'restricted')],
-     'The largest programme in the budget and the one with the most money outside it. The '
+     'The largest program in the budget and the one with the most money outside it. The '
      'circuit breaker reimburses high-cost placements; the #240 grants are read as IDEA '
      'from outside this archive, and they are the two biggest grant spends.'),
     ('Transportation', ['3300'],
@@ -224,19 +224,19 @@ PROGRAMMES = [
     ('Athletics', ['3510'],
      [('1301', 'restricted')],
      'Fund 1301 is the athletics revolving fund — the town calls it CHAPTER 658, which is '
-     'why every name-based search missed it. Fees in, programme costs out.'),
+     'why every name-based search missed it. Fees in, program costs out.'),
     ('Food service', [],
      [('2200', 'restricted')],
      '**Entirely outside the appropriation.** There is no food service function code inside '
      'dept 300 at all. A reader of the school budget sees nothing about feeding children.'),
     ('Extended day and after school', [],
      [('1312', 'restricted'), ('1305', 'restricted'), ('1306', 'restricted')],
-     '**Entirely outside the appropriation.** Fee-funded programmes that appear nowhere in '
+     '**Entirely outside the appropriation.** Fee-funded programs that appear nowhere in '
      'the $26m.'),
     ('Everything else in the school budget', None, [], ''),
 ]
 
-# School money the town appropriates to OTHER departments. Not a programme split -- these
+# School money the town appropriates to OTHER departments. Not a program split -- these
 # never touch dept 300 at all.
 ELSEWHERE_MAP = [
     ('0100-13102-532000', 'Monty Tech assessment',
@@ -303,8 +303,8 @@ def bars(rows, hilite=(), note_of=None):
     return '\n'.join(out)
 
 
-def programme_rows(c, fundnames):
-    """Each programme: what is inside the appropriation, and what is outside it."""
+def program_rows(c, fundnames):
+    """Each program: what is inside the appropriation, and what is outside it."""
     inside = {r['f']: r['v'] for r in c.execute(f"""
         SELECT a.function f, SUM(l.original) v FROM ledger_snapshot l
         JOIN account a USING (account_id)
@@ -314,7 +314,7 @@ def programme_rows(c, fundnames):
     spent = {r['fund']: (r['spent'] or 0) for r in c.execute(f"""
         SELECT fund, spent FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""")}
     claimed, out = set(), []
-    for name, fns, funds, why in PROGRAMMES:
+    for name, fns, funds, why in PROGRAMS:
         if fns is None:
             continue
         ins = sum(inside.get(f, 0) for f in fns)
@@ -364,7 +364,7 @@ LAYOUT = [
     ('1302', None),
 ]
 
-# Which left box feeds which right box, beyond what the programme map already says.
+# Which left box feeds which right box, beyond what the program map already says.
 EXTRA_EDGES = [
     ('1308', 'Other own-fund activity', 'restricted'),
     ('1311', 'Other own-fund activity', 'restricted'),
@@ -468,7 +468,7 @@ def render(c):
     fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
     srcs, rev_total = revenue_sources(c)
     funds = own_funds(c)
-    progs, d300 = programme_rows(c, fundnames)
+    progs, d300 = program_rows(c, fundnames)
     ath_gen, ath_rev = athletics(c)
 
     grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
@@ -484,7 +484,7 @@ def render(c):
 
     # The three metrics, computed here so the diagram cannot drift from its own headline.
     #
-    # NOT the sum of the right column. The programme boxes OVERLAP the school budget box —
+    # NOT the sum of the right column. The program boxes OVERLAP the school budget box —
     # $5.9M of "Special education" is inside the $26m, all of "Transportation" is — so
     # adding the column down double-counts most of it. What is summed instead is each
     # quantity once: the appropriation, the district's own money, and the town's education
@@ -519,7 +519,7 @@ def render(c):
       f'ACTUAL spending, because the town publishes no twelve-month fund report. And the '
       f'school share of the {money(pens)} pension assessment is in none of these figures, '
       f'because nobody publishes it — so every number above is a floor.</p>'
-      '<p class="cap">The three are not the right column added up. The programme boxes '
+      '<p class="cap">The three are not the right column added up. The program boxes '
       '<b>overlap</b> the school budget box — $5.9M of special education is inside the '
       '$26m, all of transportation is — so summing the column downwards would count most '
       'of it twice.</p>')
@@ -565,7 +565,7 @@ def render(c):
       f'headline, and every box below is money spent on the schools that it does not '
       f'contain.</div></div>')
 
-    a('<h3>Programmes paid for from more than one place</h3>')
+    a('<h3>Programs paid for from more than one place</h3>')
     for p in progs:
         if not p['outs'] and p['inside'] == 0:
             continue
@@ -622,11 +622,11 @@ def render(c):
       f'<p>The town appropriates <b>{money(ath_gen)}</b> for athletics inside dept 300 — '
       f'coaches, transport, the athletic director, the trainer, insurance. The district’s '
       f'own athletics documents record a further <b>{money(ath_rev)}</b> through the '
-      f'revolving fund. So the programme costs about <b>{money(ath_gen + ath_rev)}</b> and '
+      f'revolving fund. So the program costs about <b>{money(ath_gen + ath_rev)}</b> and '
       f'the town’s budget shows {money(ath_gen)} of it.</p>'
       f'<p class="cap">The town ledger and the district’s documents give different figures '
       f'for the fund, on different bases and periods. Neither is wrong; they answer '
-      f'different questions. Every fee-funded programme has this shape — athletics is only '
+      f'different questions. Every fee-funded program has this shape — athletics is only '
       f'the one where both halves have been found.</p></section>')
 
     return PAGE.format(body='\n'.join(P))
@@ -825,7 +825,7 @@ def render_v2(c):
     WHY THIS EXISTS BESIDE THE FIRST VERSION
 
     In `money-flow.html` the right column mixes two kinds of thing: a CONTAINER (the school
-    budget) and PROGRAMMES that are partly inside it. `Special education $6,329,681` sits
+    budget) and PROGRAMS that are partly inside it. `Special education $6,329,681` sits
     under `THE SCHOOL BUDGET $26,247,474` and $5.9M of it is already counted there. A column
     of numbers invites being added, and that one cannot be. TJ: *"it cannot be
     'incorrect'."*
@@ -836,7 +836,7 @@ def render_v2(c):
 
     WHAT IS LOST, AND WHERE IT WENT
 
-    The programme totals — the finding that athletics really costs $618,801 against a
+    The program totals — the finding that athletics really costs $618,801 against a
     budget line of $518,334 — are the best thing on the first version. They move to a table
     below the diagram, under their own heading, marked as a different lens. They are not
     deleted; they are moved out of a column somebody would sum.
@@ -856,7 +856,7 @@ def render_v2(c):
     """
     fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
     funds = own_funds(c)
-    progs, d300 = programme_rows(c, fundnames)
+    progs, d300 = program_rows(c, fundnames)
     ath_gen, ath_rev = athletics(c)
     grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
                                 WHERE fy={FY} AND period={P_DEPT} AND spent>0
@@ -898,7 +898,7 @@ def render_v2(c):
 
     OTHER = ('1308', '1311', '1300', '1302')
     # A fund box carries what is SITTING there as well as what moved. A fund that took in
-    # $325,970 and spent $4,005 is not a small programme — it is a reserve accumulating,
+    # $325,970 and spent $4,005 is not a small program — it is a reserve accumulating,
     # and the "spent" figure alone actively hides that. The mirror case is school lunch,
     # which spends $167,355 MORE than it receives and is drawing a balance down.
     def fb(key, label):
@@ -1033,7 +1033,7 @@ def render_v2(c):
          f'in.</b> That money is real and it came from balances built in earlier years. A '
          f'diagram that balanced would be hiding it.</p>'
          f'<p class="cap">School lunch is the clearest single case — '
-         f'in $572,231, out $739,586, holding $287,771. The programme is solvent this year '
+         f'in $572,231, out $739,586, holding $287,771. The program is solvent this year '
          f'and has a smaller cushion next year, and neither the appropriation nor the '
          f'“spent” figure shows that.</p></section>',
          '<section class="stage"><h2>What a fund box on the right does NOT say</h2>'
@@ -1048,11 +1048,11 @@ def render_v2(c):
          'amount happens to be published would imply the others have no offset, which is a '
          'stronger claim than we can make.</p></section>']
 
-    P.append('<section class="stage"><h2>The programme view — a different lens</h2>'
-             '<p class="cap">What each programme costs across both sides. <b>These figures '
+    P.append('<section class="stage"><h2>The program view — a different lens</h2>'
+             '<p class="cap">What each program costs across both sides. <b>These figures '
              'overlap the diagram above and must never be added to it</b> — most of each '
              'row is already inside the school budget box.</p>'
-             '<table><tr><th>programme</th><th class="v">in the budget</th>'
+             '<table><tr><th>program</th><th class="v">in the budget</th>'
              '<th class="v">from funds</th><th class="v">total</th></tr>')
     for p in progs:
         if not p['outs']:

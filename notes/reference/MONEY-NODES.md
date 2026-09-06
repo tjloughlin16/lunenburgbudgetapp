@@ -96,13 +96,13 @@ Bus fees are charged. The schedule is verified against the Superintendent’s Ma
 
 So a fee that is charged by published policy has **no observable destination in any ledger we hold**. That is not the same as saying the money is unaccounted for — it is saying we cannot see it, which is a statement about our documents and not about the town’s books.
 
-**The meeting archive carries what the ledger does not.** Searching it for the contractor’s name — rule 15a, and TJ knew to look — produces the shape of the programme the accounts will not show:
+**The meeting archive carries what the ledger does not.** Searching it for the contractor’s name — rule 15a, and TJ knew to look — produces the shape of the program the accounts will not show:
 
 - *Transportation contract, School Committee 8 January 2025:* “Dr. Gilson supplied the bid with **Dee Bus**, it is a 3 year contract with tentative increases over the 3 years.” The vendor the $1.75M is paid to, and the term.
 - *Bus fee vote:* “a motion to vote on bus fees and send to policy subcommittee for setting rates… The rates would be **$180 for 1 child, $270 for 2 kids**.” Policy 3601.01 adopted 21 May 2025.
 - *Superintendent’s report, 4 June 2025:* “We have received **1,074 bus requests, and have 494 unpaid** at this time. We will send a list to Dee bus, so they can designate bus routes, **names will not be forwarded to Dee Bus unless or until the fee is paid**.”
 
-**That last quote is the closest thing to a measurement of this programme that exists anywhere.** It is a count of requests at one date, not of families and not of payments, so it does not yield a revenue figure — 1,074 requests could be far fewer families, and “unpaid at this time” in June says nothing about September. What it does establish is that the fee is administered, tracked, and enforced by withholding the route. This is real money moving through a programme whose receipts we cannot locate in any ledger.
+**That last quote is the closest thing to a measurement of this program that exists anywhere.** It is a count of requests at one date, not of families and not of payments, so it does not yield a revenue figure — 1,074 requests could be far fewer families, and “unpaid at this time” in June says nothing about September. What it does establish is that the fee is administered, tracked, and enforced by withholding the route. This is real money moving through a program whose receipts we cannot locate in any ledger.
 
 It also dates the fee. The policy was adopted **21 May 2025**, after the FY2026 budget was built — which is one ordinary explanation for `STUDENTBUS` being budgeted at zero, and explains nothing about it having received zero.
 
@@ -111,7 +111,7 @@ Note what this does to the intuition. The natural guess is that the fees sit in 
 
 ## What is SITTING in the funds — and the three patterns in it
 
-“Spent” alone hides more than it shows. A fund that receives $325,970 and spends $4,005 is not a small programme; it is a reserve accumulating. Every fund below carries what moved **and what is left**, at 31 March.
+“Spent” alone hides more than it shows. A fund that receives $325,970 and spends $4,005 is not a small program; it is a reserve accumulating. Every fund below carries what moved **and what is left**, at 31 March.
 
 | fund | | in | spent | held 31 Mar | net |
 |---|---|---:|---:|---:|---:|
@@ -141,7 +141,7 @@ Note what this does to the intuition. The natural guess is that the fees sit in 
 
 **Pattern 1 — accumulating.** The circuit breaker took in $325,970, spent **$4,005**, and holds **$615,301** — nearly double the year’s receipts, so money has accumulated across years. *The reimbursement is arriving and largely not being spent out of this fund.* Why is not established: end-of-year timing, a carry-forward policy, or the costs being borne by the appropriation while the reserve builds all fit identically, and this project does not pick between explanations that fit equally.
 
-**Pattern 2 — drawing down.** School lunch spends **$167,355 more than it receives** and holds $287,771. Extended day is the same shape at −$40,406. A fee-funded programme spending its balance is solvent this year and has a smaller cushion next year, and neither the appropriation nor the “spent” figure shows it.
+**Pattern 2 — drawing down.** School lunch spends **$167,355 more than it receives** and holds $287,771. Extended day is the same shape at −$40,406. A fee-funded program spending its balance is solvent this year and has a smaller cushion next year, and neither the appropriation nor the “spent” figure shows it.
 
 **Pattern 3 — negative balances.** Several grant funds are **below zero** — FY26 #240 at −$179,637, FY25 117 SOA at −$91,220, FY25 #240 at −$88,503. Spending ahead of reimbursement is the ordinary explanation for a reimbursement-basis grant, and it is an *inference*: what is established is that the money went out and the receipt has not been booked.
 
@@ -162,7 +162,7 @@ Note what this does to the intuition. The natural guess is that the fees sit in 
 
 **The funds collectively spent 183,225 more than they took in.** That money is real and came from balances built in earlier years. A model that balanced would be hiding it.
 
-This is why every fund row here carries `in`, `spent` and `held` rather than one figure. Any single one of the three is misleading on its own: `spent` alone made the circuit breaker look like a small programme rather than a reserve, and `in` alone would make school lunch look solvent rather than drawing down.
+This is why every fund row here carries `in`, `spent` and `held` rather than one figure. Any single one of the three is misleading on its own: `spent` alone made the circuit breaker look like a small program rather than a reserve, and `in` alone would make school lunch look solvent rather than drawing down.
 
 
 ## How money leaves a fund — three routes, and how to tell which was used
@@ -200,8 +200,8 @@ The important column is `basis`. **`restricted` means we cannot show it** — th
 | Fund 1301 (athletics) | Athletics spending | **restricted** | The fund is athletics — established from its cash journal. But **no expense report exists for special revenue funds**, so what it actually paid for is not observed. The general-fund athletics line (function 3510) is a separate, traced thing. |
 | Fund 2200 (school lunch) | Food service | **restricted** | Same gap. |
 | Fund 2640 (circuit breaker) | Special education | **restricted** | Same gap — and see the assumption below about whether this is the same money as the general-fund `SCHCOSTREI` line. |
-| Fund 1312 / 1305 / 1306 / 1302 / 1300 | Their own programmes | **restricted** | Same gap. |
-| Fund 1308 (school choice) | — | **unknown** | School choice money is not restricted the way a programme revolving fund is. Where it is spent is not established here at all. |
+| Fund 1312 / 1305 / 1306 / 1302 / 1300 | Their own programs | **restricted** | Same gap. |
+| Fund 1308 (school choice) | — | **unknown** | School choice money is not restricted the way a program revolving fund is. Where it is spent is not established here at all. |
 | Grant funds 26xx–29xx | The purpose of each grant | **restricted** | Restricted by the grant award rather than by a town vote, and equally unobserved. |
 | Pension assessment (dept 820) | School staff | **unknown** | The assessment covers town and school employees together. No published document gives the split. |
 | Dept 914 `SCHRETHLTH` | School retirees | **traced** | The account name states it and it sits beside the town-retiree equivalent. |
@@ -215,7 +215,7 @@ The important column is `basis`. **`restricted` means we cannot show it** — th
 Everything here is currently load-bearing somewhere. A row leaves this table when a document arrives — never because it started to feel obvious.
 
 
-**A restricted fund’s spending goes to its own programme**
+**A restricted fund’s spending goes to its own program**
 
 - *Evidence:* It is what the fund exists for, and a revolving fund is bound by the vote that created it.
 - *What rests on it:* Every restricted edge above rests on this.
@@ -265,7 +265,7 @@ Everything here is currently load-bearing somewhere. A row leaves this table whe
 
 ## CLASSIFICATION — reasoned per item, not matched on a substring
 
-`how` says what the judgement rests on, because that is the part worth arguing with. **`outside`** means it depends on knowing what a programme is from beyond this archive — the weakest kind here, and flagged every time.
+`how` says what the judgement rests on, because that is the part worth arguing with. **`outside`** means it depends on knowing what a program is from beyond this archive — the weakest kind here, and flagged every time.
 
 ### Funds
 
@@ -280,7 +280,7 @@ Everything here is currently load-bearing somewhere. A row leaves this table whe
 | `1306` | SCHOOL FACILITIES USE REVOLV | **school** | stated | Use of school facilities. |
 | `1308` | SCHOOL CHOICE REVOLVING | **school** | stated | School choice. |
 | `1309` | INSURANCE RECOVERIES SCHOOL | **school** | stated | Insurance recoveries, school. |
-| `1310` | GREENTHUMB REVOLVING FUND | **unresolved** | unresolved | “Greenthumb” — a school garden programme or a town one. Nothing here says. No FY26 activity. |
+| `1310` | GREENTHUMB REVOLVING FUND | **unresolved** | unresolved | “Greenthumb” — a school garden program or a town one. Nothing here says. No FY26 activity. |
 | `1311` | SCHOOL GIFT FUND | **school** | stated | School gifts. |
 | `1312` | EXTENDED DAY REVOLVING FUND | **school** | stated | Extended day. |
 | `1314` | VENDING REVOLVING | **unresolved** | unresolved | Vending machines — in a school or a town building. No FY26 activity. |
@@ -292,10 +292,10 @@ Everything here is currently load-bearing somewhere. A row leaves this table whe
 | `2649` | DISPLACED STUDENTS-PUERTO RICO | **school** | stated | Displaced students. |
 | `2650` | UNDER STORAGE TANK GRANT | **town** | outside | Underground storage tanks — a public works and fire matter, not a school one. |
 | `2681` | COMP SCHOOL HEALTH SERV GRANT | **school** | stated | Comprehensive school health services. |
-| `2667` | FY24  #718 ARTS/CULTURAL VITAL | **unresolved** | unresolved | Arts and cultural — the district or the Cultural Council. The #718 code is not paired with a programme name anywhere here. |
+| `2667` | FY24  #718 ARTS/CULTURAL VITAL | **unresolved** | unresolved | Arts and cultural — the district or the Cultural Council. The #718 code is not paired with a program name anywhere here. |
 | `2709` | FY12  REG DISSEMINATION GR#321 | **unresolved** | unresolved | “Regional dissemination” #321, FY12. Dormant and undefined here. |
 | `2903` | BC/BS MINI GRANT | **unresolved** | unresolved | A Blue Cross mini grant — school wellness or town employee wellness. |
-| `2911` | TECH PREP PRIVATE GRANT | **school** | outside | Tech Prep is a federal vocational-education programme. |
+| `2911` | TECH PREP PRIVATE GRANT | **school** | outside | Tech Prep is a federal vocational-education program. |
 | `2912` | TUFTS UNIVERSITY HEAT GRANT | **unresolved** | unresolved | A Tufts University grant; “HEAT” is not expanded anywhere here. |
 | `2914` | HACH SCIENTIFIC FOUNDATION GR | **school** | outside | The Hach Scientific Foundation funds high-school chemistry teaching. |
 | `2793` | SCHOOL WATER IMPROVEMENT GRANT | **school** | stated | School water improvement. |
@@ -307,14 +307,14 @@ Everything here is currently load-bearing somewhere. A row leaves this table whe
 | `6200` | PEG ACCESS ENTERPRISE FUND | **town** | stated | PEG access enterprise. |
 | `7900` | SOLID WASTE/RECYCLING ENTERPRI | **town** | stated | Solid waste enterprise. |
 
-The remaining **33** funds are dated federal and state grant shells whose names pair a code with a programme. They are classified by that code:
+The remaining **33** funds are dated federal and state grant shells whose names pair a code with a program. They are classified by that code:
 
-| code | programme | how |
+| code | program | how |
 |---|---|---|
 | `#305` | Title I | paired |
 | `#140` | Title II Part A | paired |
 | `#309` | Title IV Part A | paired |
-| `#274` | Special education programme improvement | paired |
+| `#274` | Special education program improvement | paired |
 | `#117` | Student Opportunity Act, evidence-based | paired |
 | `#237` | Family and community engagement | paired |
 | `#113 / #119` | ESSER — federal pandemic relief for schools | paired |
@@ -353,6 +353,31 @@ Only the plausibly-school ones are listed. **The point of the list is the ones t
 - **Chapter 70, and every other general-fund revenue line.** They are inputs to the TOWN, not to the schools. They land in fund 0100 and lose their identity; the appropriation is the only edge out of it that anyone can follow. Listing Chapter 70 as a school input would assert a connection no record supports.
 
 - **The pension assessment and school retiree health as INPUTS.** They are money the town spends on school employees, not money the schools receive. They raise what the schools COST without raising what the schools GET, which is why they keep being mislaid on the wrong side.
+
+
+## Is this all of it? No — and here is what is missing
+
+This list holds every dollar that moves through the town’s ledger under a label that identifies it. **Six categories of real school money are not in it**, and five of the six are missing for the same reason: the town books them in a lump that has no school line inside it.
+
+| what is missing | size of the lump it hides in | why it cannot be split |
+|---|---:|---|
+| **School building debt service** | 2,547,440 | Two accounts, `SER LOAN P` and `SER LOAN I`, for all town borrowing. No project breakdown. School buildings were borrowed for and this is where that is repaid |
+| **School capital** | 1,285,000 | `TR CAP PRO` and `TR STAB FD`, single transfer lines with no project detail |
+| **Facilities and IT support** | 1,202,917 | Departments 193 and 155 employ a facilities director, contract cleaning and technology staff. Whether any of it serves school buildings is not stated anywhere |
+| **Student activity accounts** | not in the town’s books at all | Held by the school under its own statutory authority. They do not appear in any town ledger, so their size is not knowable from anything here |
+| **Trust funds** | not usable | The annual-report extract for trust funds is `check failed` on ordinal columns and cannot be aggregated. Some are scholarships |
+| **Bus fees** | not found | Charged by published policy, no observable destination. See the worked example |
+
+**And the potential money — what could feed in and currently does not.**
+
+- **MSBA school building reimbursement.** $474,239 a year in every checked year through FY2022, and **zero in FY2026**. Whether that is a bond reaching term is a guess.
+
+- **The balances already held.** $615,301 in the circuit breaker and $299,461 in school choice are the schools’ money, sitting still. They are not new money, but they are money not currently doing anything.
+
+- **Grants not applied for.** Unknowable from here by construction: a grant that was never sought leaves no trace in any ledger.
+
+
+**So: is the model accurate?** It is accurate about what it contains, and it contains what the town’s ledger labels. It is **not** the full cost of educating children in Lunenburg, and the gap is at least six categories wide. Every figure here is a floor.
 
 
 ## Known holes in this list

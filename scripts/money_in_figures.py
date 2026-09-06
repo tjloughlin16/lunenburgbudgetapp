@@ -176,7 +176,7 @@ def fund_figures(c):
     """The school's own funds — the money that pays for schools and is not appropriated.
 
     This is `CLAUDE.md` rule 11 made visible: grants, revolving funds, fees and gifts pay
-    for real staff and real programmes and appear nowhere in the school budget line.
+    for real staff and real programs and appear nowhere in the school budget line.
     """
     figs = []
     # Funds whose name says school, plus the ones the district plainly runs. Named rather

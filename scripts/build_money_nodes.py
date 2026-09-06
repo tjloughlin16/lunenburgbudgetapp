@@ -82,10 +82,10 @@ EDGES = [
     ('Fund 2640 (circuit breaker)', 'Special education', 'restricted',
      'Same gap — and see the assumption below about whether this is the same money as the '
      'general-fund `SCHCOSTREI` line.'),
-    ('Fund 1312 / 1305 / 1306 / 1302 / 1300', 'Their own programmes', 'restricted',
+    ('Fund 1312 / 1305 / 1306 / 1302 / 1300', 'Their own programs', 'restricted',
      'Same gap.'),
     ('Fund 1308 (school choice)', '—', 'unknown',
-     'School choice money is not restricted the way a programme revolving fund is. Where '
+     'School choice money is not restricted the way a program revolving fund is. Where '
      'it is spent is not established here at all.'),
     ('Grant funds 26xx–29xx', 'The purpose of each grant', 'restricted',
      'Restricted by the grant award rather than by a town vote, and equally unobserved.'),
@@ -102,7 +102,7 @@ EDGES = [
 # would settle it. A row leaves this table only when a document arrives, never because it
 # started to feel obvious.
 ASSUMPTIONS = [
-    ('A restricted fund’s spending goes to its own programme',
+    ('A restricted fund’s spending goes to its own program',
      'It is what the fund exists for, and a revolving fund is bound by the vote that '
      'created it.',
      'Every restricted edge above rests on this.',
@@ -137,12 +137,12 @@ ASSUMPTIONS = [
 # should be able to disagree with:
 #
 #   stated      the town's own name says it outright
-#   paired      the town's name pairs a code with a programme, so the code is defined by
+#   paired      the town's name pairs a code with a program, so the code is defined by
 #               the town rather than by us -- "FY26 #309 TITLE IV PART A" defines 309
 #   neighbours  read from what it sits among in the same report. This is how `BUS CERTIF`
 #               was caught: it sits with marriage licences, certified vitals, street lists,
 #               genealogy and dog licences, so it is BUSINESS certificates, not buses
-#   outside     it depends on knowing what a programme is, from outside this archive.
+#   outside     it depends on knowing what a program is, from outside this archive.
 #               Flagged every time, because it is the weakest kind here
 #   unresolved  ten characters is not enough and nothing else settles it
 #
@@ -160,7 +160,7 @@ FUND_CLASS = [
     ('1306', 'school', 'stated',    'Use of school facilities.'),
     ('1308', 'school', 'stated',    'School choice.'),
     ('1309', 'school', 'stated',    'Insurance recoveries, school.'),
-    ('1310', 'unresolved', 'unresolved', '“Greenthumb” — a school garden programme or a '
+    ('1310', 'unresolved', 'unresolved', '“Greenthumb” — a school garden program or a '
                                     'town one. Nothing here says. No FY26 activity.'),
     ('1311', 'school', 'stated',    'School gifts.'),
     ('1312', 'school', 'stated',    'Extended day.'),
@@ -180,13 +180,13 @@ FUND_CLASS = [
     ('2681', 'school', 'stated',    'Comprehensive school health services.'),
     ('2667', 'unresolved', 'unresolved', 'Arts and cultural — the district or the Cultural '
                                     'Council. The #718 code is not paired with a '
-                                    'programme name anywhere here.'),
+                                    'program name anywhere here.'),
     ('2709', 'unresolved', 'unresolved', '“Regional dissemination” #321, FY12. Dormant and '
                                     'undefined here.'),
     ('2903', 'unresolved', 'unresolved', 'A Blue Cross mini grant — school wellness or '
                                     'town employee wellness.'),
     ('2911', 'school', 'outside',   'Tech Prep is a federal vocational-education '
-                                    'programme.'),
+                                    'program.'),
     ('2912', 'unresolved', 'unresolved', 'A Tufts University grant; “HEAT” is not expanded '
                                     'anywhere here.'),
     ('2914', 'school', 'outside',   'The Hach Scientific Foundation funds high-school '
@@ -201,14 +201,14 @@ FUND_CLASS = [
     ('7900', 'town',   'stated',    'Solid waste enterprise.'),
 ]
 
-# Grant funds whose NAME pairs a numeric code with a federal or state programme. The town
-# defines the code for us, so any other fund carrying the same code is the same programme
+# Grant funds whose NAME pairs a numeric code with a federal or state program. The town
+# defines the code for us, so any other fund carrying the same code is the same program
 # — which is how the bare `#240` funds are read, and that step is marked `outside`.
 GRANT_CODES = [
     ('#305', 'Title I', 'paired'),
     ('#140', 'Title II Part A', 'paired'),
     ('#309', 'Title IV Part A', 'paired'),
-    ('#274', 'Special education programme improvement', 'paired'),
+    ('#274', 'Special education program improvement', 'paired'),
     ('#117', 'Student Opportunity Act, evidence-based', 'paired'),
     ('#237', 'Family and community engagement', 'paired'),
     ('#113 / #119', 'ESSER — federal pandemic relief for schools', 'paired'),
@@ -289,7 +289,7 @@ WORKED = dict(
         'and not about the town’s books.',
         '**The meeting archive carries what the ledger does not.** Searching it for the '
         'contractor’s name — rule 15a, and TJ knew to look — produces the shape of the '
-        'programme the accounts will not show:',
+        'program the accounts will not show:',
         '- *Transportation contract, School Committee 8 January 2025:* “Dr. Gilson '
         'supplied the bid with **Dee Bus**, it is a 3 year contract with tentative '
         'increases over the 3 years.” The vendor the $1.75M is paid to, and the term.\n'
@@ -300,12 +300,12 @@ WORKED = dict(
         'requests, and have 494 unpaid** at this time. We will send a list to Dee bus, so '
         'they can designate bus routes, **names will not be forwarded to Dee Bus unless '
         'or until the fee is paid**.”',
-        '**That last quote is the closest thing to a measurement of this programme that '
+        '**That last quote is the closest thing to a measurement of this program that '
         'exists anywhere.** It is a count of requests at one date, not of families and '
         'not of payments, so it does not yield a revenue figure — 1,074 requests could be '
         'far fewer families, and “unpaid at this time” in June says nothing about '
         'September. What it does establish is that the fee is administered, tracked, and '
-        'enforced by withholding the route. This is real money moving through a programme '
+        'enforced by withholding the route. This is real money moving through a program '
         'whose receipts we cannot locate in any ledger.',
         'It also dates the fee. The policy was adopted **21 May 2025**, after the FY2026 '
         'budget was built — which is one ordinary explanation for `STUDENTBUS` being '
@@ -550,7 +550,7 @@ def render(c):
 
     a('\n## What is SITTING in the funds — and the three patterns in it\n')
     a('“Spent” alone hides more than it shows. A fund that receives $325,970 and spends '
-      '$4,005 is not a small programme; it is a reserve accumulating. Every fund below '
+      '$4,005 is not a small program; it is a reserve accumulating. Every fund below '
       'carries what moved **and what is left**, at 31 March.\n')
     rows = c.execute(f"""SELECT fund, name, revenue, spent, closing_balance
         FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND (revenue>0 OR spent>0)
@@ -573,7 +573,7 @@ def render(c):
       'and this project does not pick between explanations that fit equally.\n')
     a('**Pattern 2 — drawing down.** School lunch spends **$167,355 more than it receives** '
       'and holds $287,771. Extended day is the same shape at −$40,406. A fee-funded '
-      'programme spending its balance is solvent this year and has a smaller cushion next '
+      'program spending its balance is solvent this year and has a smaller cushion next '
       'year, and neither the appropriation nor the “spent” figure shows it.\n')
     a('**Pattern 3 — negative balances.** Several grant funds are **below zero** — FY26 #240 '
       'at −$179,637, FY25 117 SOA at −$91,220, FY25 #240 at −$88,503. Spending ahead of '
@@ -608,7 +608,7 @@ def render(c):
       f'hiding it.\n')
     a('This is why every fund row here carries `in`, `spent` and `held` rather than one '
       'figure. Any single one of the three is misleading on its own: `spent` alone made the '
-      'circuit breaker look like a small programme rather than a reserve, and `in` alone '
+      'circuit breaker look like a small program rather than a reserve, and `in` alone '
       'would make school lunch look solvent rather than drawing down.\n')
 
     a('\n## How money leaves a fund — three routes, and how to tell which was used\n')
@@ -683,7 +683,7 @@ def render(c):
 
     a('\n## CLASSIFICATION — reasoned per item, not matched on a substring\n')
     a('`how` says what the judgement rests on, because that is the part worth arguing '
-      'with. **`outside`** means it depends on knowing what a programme is from beyond '
+      'with. **`outside`** means it depends on knowing what a program is from beyond '
       'this archive — the weakest kind here, and flagged every time.\n')
 
     a('### Funds\n')
@@ -695,8 +695,8 @@ def render(c):
         a(f'| `{f}` | {fn.get(f, "")} | **{cls}** | {how} | {why} |')
     rest = [f for f in sorted(fn) if f not in named]
     a(f'\nThe remaining **{len(rest)}** funds are dated federal and state grant shells '
-      f'whose names pair a code with a programme. They are classified by that code:\n')
-    a('| code | programme | how |')
+      f'whose names pair a code with a program. They are classified by that code:\n')
+    a('| code | program | how |')
     a('|---|---|---|')
     for code, prog, how in GRANT_CODES:
         a(f'| `{code}` | {prog} | {how} |')
@@ -722,6 +722,51 @@ def render(c):
       'town spends on school employees, not money the schools receive. They raise what the '
       'schools COST without raising what the schools GET, which is why they keep being '
       'mislaid on the wrong side.\n')
+
+    a('\n## Is this all of it? No — and here is what is missing\n')
+    dbt = c.execute(f"""SELECT SUM(l.original) v FROM ledger_snapshot l
+        JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
+          AND a.dept IN ('710','751','754')""").fetchone()['v'] or 0
+    cap = c.execute(f"""SELECT SUM(l.original) v FROM ledger_snapshot l
+        JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
+          AND a.dept IN ('993','996')""").fetchone()['v'] or 0
+    fac = c.execute(f"""SELECT SUM(l.original) v FROM ledger_snapshot l
+        JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
+          AND a.dept IN ('193','155')""").fetchone()['v'] or 0
+    a('This list holds every dollar that moves through the town’s ledger under a label '
+      'that identifies it. **Six categories of real school money are not in it**, and five '
+      'of the six are missing for the same reason: the town books them in a lump that has '
+      'no school line inside it.\n')
+    a('| what is missing | size of the lump it hides in | why it cannot be split |')
+    a('|---|---:|---|')
+    a(f'| **School building debt service** | {m(dbt)} | Two accounts, `SER LOAN P` and '
+      f'`SER LOAN I`, for all town borrowing. No project breakdown. School buildings were '
+      f'borrowed for and this is where that is repaid |')
+    a(f'| **School capital** | {m(cap)} | `TR CAP PRO` and `TR STAB FD`, single transfer '
+      f'lines with no project detail |')
+    a(f'| **Facilities and IT support** | {m(fac)} | Departments 193 and 155 employ a '
+      f'facilities director, contract cleaning and technology staff. Whether any of it '
+      f'serves school buildings is not stated anywhere |')
+    a('| **Student activity accounts** | not in the town’s books at all | Held by the '
+      'school under its own statutory authority. They do not appear in any town ledger, so '
+      'their size is not knowable from anything here |')
+    a('| **Trust funds** | not usable | The annual-report extract for trust funds is '
+      '`check failed` on ordinal columns and cannot be aggregated. Some are scholarships |')
+    a('| **Bus fees** | not found | Charged by published policy, no observable destination. '
+      'See the worked example |')
+    a('\n**And the potential money — what could feed in and currently does not.**\n')
+    a('- **MSBA school building reimbursement.** $474,239 a year in every checked year '
+      'through FY2022, and **zero in FY2026**. Whether that is a bond reaching term is a '
+      'guess.\n')
+    a('- **The balances already held.** $615,301 in the circuit breaker and $299,461 in '
+      'school choice are the schools’ money, sitting still. They are not new money, but '
+      'they are money not currently doing anything.\n')
+    a('- **Grants not applied for.** Unknowable from here by construction: a grant that was '
+      'never sought leaves no trace in any ledger.\n')
+    a('\n**So: is the model accurate?** It is accurate about what it contains, and it '
+      'contains what the town’s ledger labels. It is **not** the full cost of educating '
+      'children in Lunenburg, and the gap is at least six categories wide. Every figure '
+      'here is a floor.\n')
 
     a('\n## Known holes in this list\n')
     a('- Fund figures are **nine months**; the year is twelve. Nothing here is a year.\n')
