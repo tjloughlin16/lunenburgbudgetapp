@@ -439,6 +439,29 @@ reading as the server being broken.
 Ranked by how much the answer changes what to build. Each names what would settle it,
 because most of these cannot be settled by more reasoning.
 
+### Three agents, three different fetch policies — and only one shared blocker
+
+This is the most useful thing learned so far, and it reorders everything below.
+
+| | how it decides what it may fetch | what happened |
+|---|---|---|
+| **A** | anchors from a page it fetched **directly** | `/api/index` → `/api/schema`, two levels deep. Refused everything when the same page arrived via the `lburg.org` redirect |
+| **B** | links that came back from a **search result**, only | Read `lburg.org` fine. Refused `/mcp`, `/llms.txt`, `/agents`, `/api/index`. Its words: *"lunenburgbudgetproject.org doesn't appear in the search index at all — I searched for it and got nothing"* |
+| **C** | URLs the user typed | Everything the user pasted worked. Nothing else was tried |
+
+**Fixing the redirect helps A. Being indexed helps A and B both.** For B the redirect is
+irrelevant — a direct fetch would not have authorised those links either, because nothing
+but a search result does. That makes indexing the higher-leverage fix and the short domain
+the narrower one, which is the reverse of the order these were in yesterday.
+
+**Everything in our control is already correct**, measured 6 September: `robots.txt` is
+`Allow: /`, the sitemap lists 68 URLs and all 68 answer, the IndexNow key file returns 200,
+and the submission is accepted with HTTP 200.
+
+**And accepted is not indexed.** An IndexNow 200 means the ping was received. It is not a
+statement that anything was crawled, and nothing here should ever be read as one. Agent B
+searched and found nothing after those submissions had been made.
+
 **1. Does the redirect actually break link-following, or was that one tool once?**
 Everything about the short domain depends on this and it rests on a single agent's report
 that it could not re-run cleanly. *Settled by:* the same test on two more agents from a
@@ -459,10 +482,12 @@ may be host-relative while `/docs/`, `/data/` and `/api/` stay absolute and cano
 split that has not been thought through and might not survive contact with `check-agents`,
 which forbids relative links to files for a different and still-valid reason.
 
-**3. Is anything indexing the site?** An agent said outright *"search doesn't index the
-site,"* and its allowlist is built from search results, so for that class of tool indexing
-is the whole unblock. IndexNow has been pushed. *Settled by:* Search Console and Bing
-Webmaster verification, which needs the domain verified and is nobody's job but ours.
+**3. Is anything indexing the site? — NOW THE TOP QUESTION.** Two independent agents have
+said the site is not in a search index, one of them after searching for it explicitly. For
+any fetcher whose allowlist is seeded from search results this is the entire door, and no
+amount of on-site work opens it. Everything we can do is done and verified. *Settled by:*
+Search Console and Bing Webmaster verification — the only honest answer to "has this been
+indexed", and the only remaining step nobody else can take for us.
 
 **4. Will any client reach the MCP server on its own?** Published, listed, linked, and
 never observed in use. *Settled by:* `wrangler tail` during an ordinary question. Note the
