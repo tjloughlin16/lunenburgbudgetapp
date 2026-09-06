@@ -151,6 +151,41 @@ Deploy with `cd mcp && npx wrangler deploy`. Indexed in the sitemap, `llms.txt`,
 **Untested by a real client.** It answers `tools/list` and `tools/call` correctly over the
 wire, which is not the same as an assistant choosing to use it.
 
+### Finding out whether anything uses it, without asking
+
+There is no unbiased way to ask an assistant whether it used the tools: asking beforehand
+tells it the answer, asking afterwards invites a reconstruction. Watching the server biases
+nothing.
+
+    cd mcp && npx wrangler tail lunenburg-mcp --format json
+
+Every tool logs its name and duration — not its arguments, because a question somebody puts
+to an assistant is theirs. Ask an assistant an ordinary question and see whether anything
+arrives.
+
+### How an agent could DISCOVER it — the MCP Registry
+
+**MCP has no website-level discovery convention.** `server/discover` is a client asking a
+server it already knows; there is no `/.well-known/mcp.json` in the specification. So
+indexing `/mcp` in the sitemap and naming it in `llms.txt` reaches agents that read those,
+and nothing else.
+
+**The registry is the discovery mechanism**, and this server is eligible for it as a
+*remote* entry — no npm package needed. It is in preview.
+
+`mcp/server.json` is written and names `org.lunenburgbudgetproject/archive`, which requires
+**domain-based authentication**: a DNS TXT record proving control of the domain, which is
+also the honest thing for an archive claiming to be about a specific town.
+
+The key is generated at `mcp/mcp-registry-key.pem` — **gitignored, and it must stay that
+way**; it is the proof of the domain. The record to publish on `lunenburgbudgetproject.org`
+is a TXT of the form `v=MCPv1; k=ed25519; p=<public key>`; regenerate the public half with
+
+    openssl pkey -in mcp/mcp-registry-key.pem -pubout -outform DER | tail -c 32 | base64
+
+Then `npx mcp-publisher login dns --domain lunenburgbudgetproject.org --private-key ...`
+and `npx mcp-publisher publish`. **Not done — the DNS record needs adding.**
+
 ## What is NOT solved
 
 - **Sandbox egress allowlists.** The site answers any user agent in under 300ms with no bot

@@ -140,3 +140,6 @@ purge-these-21-urls.txt
 
 # The MCP worker's dependencies.
 mcp/node_modules
+
+# The MCP registry signing key. Proves the domain; never commit it.
+mcp/mcp-registry-key.pem

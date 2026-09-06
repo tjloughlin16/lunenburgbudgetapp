@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "org.lunenburgbudgetproject/archive",
+  "description": "An independent, checkable archive of the Lunenburg, Massachusetts town and school budget. Budget lines FY17-FY27, the town ledger, staff rosters FY2011-FY2025, out-of-district placement counts, elections, and fifteen years of annual town reports - every figure traceable to a published document with a sha256. Tools are shaped so the documented mistakes cannot be made: budget history takes one stage, so a growth rate cannot be measured from an actual to a budget.",
+  "version": "1.0.0",
+  "websiteUrl": "https://lunenburgbudgetproject.org",
+  "repository": {
+    "url": "https://github.com/tjloughlin16/lunenburgbudgetapp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://lunenburgbudgetproject.org/mcp"
+    }
+  ]
+}
