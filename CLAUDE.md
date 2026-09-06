@@ -434,6 +434,10 @@ separate agent failures in one day that prompted it — none of which was the ag
 
 
 
+`notes/HANDOFF-MONEY-IN.md` is the running doc for the current workstream: modelling every
+route money takes into the school budget, what has been established, and what is explicitly
+not. It is where to start if the work in progress is the money-flow page.
+
 `notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
 the working branch and not yet deployed, the open decision, and — most importantly — the
 list of claims that are NOT established, so they do not get restated as fact by somebody
