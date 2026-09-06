@@ -134,6 +134,30 @@ def gather(c):
     return d
 
 
+# GAPS, drawn as boxes rather than described in a paragraph.
+#
+# A diagram that shows only what is known reads as complete. These are the things the
+# town's own records cannot answer, and they belong in the picture at the same size as
+# everything else — on the side of the flow where they would sit if they could be seen.
+GAPS_IN = [
+    ('Bus fees', 'charged by published policy · no destination found in any ledger'),
+    ('Trust fund income', 'scholarships, cemetery, stabilisation · extract is check-failed'),
+    ('Student activity accounts', 'held by the school under its own authority · not in the '
+                                  'town’s books at all'),
+    ('Grants received in earlier years', 'spent now, booked then · nine funds, no FY26 '
+                                         'revenue'),
+]
+GAPS_OUT = [
+    ('School share of the pension', 'inside WRRS · town and school staff together, no '
+                                    'published split'),
+    ('Debt service by project', 'two accounts for ALL town borrowing · school buildings '
+                                'cannot be separated'),
+    ('What the capital transfers bought', 'two transfer lines · no project detail'),
+    ('What any special revenue fund bought', 'no expense report exists for these funds · '
+                                             'purpose is presumed, never observed'),
+]
+
+
 def diagram(d):
     """Three columns, because two would be a lie.
 
@@ -243,6 +267,28 @@ def diagram(d):
                      f'<text class="bv" x="{x+10}" y="{y+37}">{money(v)}</text>'
                      + (f'<text class="bs" x="{x+10}" y="{y+49}">{html.escape(sub)}</text>'
                         if sub else '') + '</g>')
+    # The gaps, at the foot of each column, at the same size as everything else.
+    gy = 52 + max(len(lrows), len(rrows)) * (LH + GAP) + 34
+    o.append(f'<text class="dhd gap" x="{LX}" y="{gy-12}">MONEY IN WE CANNOT SEE</text>')
+    o.append(f'<text class="dhd gap" x="{RX}" y="{gy-12}">SPENDING WE CANNOT SPLIT</text>')
+    for i, (label, why) in enumerate(GAPS_IN):
+        y = gy + i * (LH + GAP)
+        o.append(f'<g class="b gap"><rect x="{LX}" y="{y}" width="{BW}" height="{LH}" '
+                 f'rx="5"/><text class="bl gl" x="{LX+10}" y="{y+20}">'
+                 f'{html.escape(label)}</text>'
+                 f'<text class="bs" x="{LX+10}" y="{y+36}">{html.escape(why[:44])}</text>'
+                 f'<text class="bs" x="{LX+10}" y="{y+47}">{html.escape(why[44:88])}</text>'
+                 f'</g>')
+    for i, (label, why) in enumerate(GAPS_OUT):
+        y = gy + i * (LH + GAP)
+        o.append(f'<g class="b gap"><rect x="{RX}" y="{y}" width="{BW}" height="{LH}" '
+                 f'rx="5"/><text class="bl gl" x="{RX+10}" y="{y+20}">'
+                 f'{html.escape(label)}</text>'
+                 f'<text class="bs" x="{RX+10}" y="{y+36}">{html.escape(why[:44])}</text>'
+                 f'<text class="bs" x="{RX+10}" y="{y+47}">{html.escape(why[44:88])}</text>'
+                 f'</g>')
+    o[0] = o[0].replace(f'viewBox="0 0 {W} {H}"',
+                        f'viewBox="0 0 {W} {gy + len(GAPS_IN)*(LH+GAP) + 16}"')
     o.append('</svg>')
     return '\n'.join(o)
 
@@ -292,6 +338,28 @@ def render(c):
       'ring-fenced</span>'
       '<span><i class="k restricted"></i>the fund spent it; <b>purpose not observed</b>'
       '</span></div>')
+
+    n_rev = len(d['rev'])
+    a(f'<section class="stage"><h2>Can this page say “here is every way money comes in, '
+      f'itemised”?</h2>'
+      f'<p><b>Not quite, and the difference matters.</b> It is <i>classified</i>, not '
+      f'<i>itemised</i>. Each box on the left is a group: the five general-fund classes '
+      f'stand for <b>{n_rev} revenue accounts</b> that carry money, and 113 more that '
+      f'carry none. On the right, ten departments are named and <b>{len(d["depts"])-10} '
+      f'are collapsed into one box</b>. Inside each department are the 635 accounts the '
+      f'ledger actually holds.</p>'
+      f'<p>So the honest claim is: <b>every dollar the town’s ledger records is on this '
+      f'page somewhere</b>, at the grain a page can hold. What it is <i>not</i> is a list '
+      f'you could audit a cheque against.</p>'
+      f'<p class="warn"><b>And eight things are not on it at all, because the town’s '
+      f'records cannot answer them.</b> They are drawn at the foot of each column, at the '
+      f'same size as everything else, so the picture does not read as complete when it is '
+      f'not. Four are money coming in that cannot be seen; four are spending that cannot '
+      f'be split. Every one of them is a real quantity — none is a rounding difference or '
+      f'a missing file.</p>'
+      f'<p class="cap">The largest single unknown is the school share of the pension. The '
+      f'largest lumped one is debt service: two accounts for all town borrowing, with '
+      f'school buildings inside and no way to separate them.</p></section>')
 
     a('<section class="stage"><h2>The town runs four money systems that do not mix</h2>'
       '<p class="cap">This is the thing the school view cannot show, because the schools '
@@ -446,6 +514,10 @@ svg.flow {{ display:block; min-width:950px; height:auto }}
 .b.gf rect {{ fill:var(--traced-bg2); stroke:var(--traced) }}
 .b.ent rect {{ fill:none; stroke:var(--ent); stroke-width:2 }}
 .b.sr rect {{ fill:none; stroke:var(--warn); stroke-width:2; stroke-dasharray:6 4 }}
+.b.gap rect {{ fill:var(--warn-bg); stroke:var(--warn); stroke-width:1.5;
+  stroke-dasharray:3 3 }}
+.gl {{ fill:var(--warn) }}
+.dhd.gap {{ fill:var(--warn) }}
 .b.pot rect {{ fill:var(--potbg); stroke:var(--potbg) }}
 .bl {{ font-size:13px; font-weight:600; fill:var(--ink) }}
 .bv {{ font-size:13px; fill:var(--ink); font-family:ui-monospace,Menlo,monospace }}
