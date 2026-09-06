@@ -839,25 +839,20 @@ REV_CLASSES = {
                   'OP TRAN SR', 'OP TRAN TR'], 'Transfers in'),
 }
 
-LAYOUT2 = [
+# The FIXED head of the layout. Everything below it — one row per fund — is generated
+# from the data, because a hardcoded list of funds is a location pretending to be an
+# identity, and this one had already gone stale: funds 2672 and 2681 were returned by
+# `own_funds()`, had no row here, and were silently dropped from the diagram. TJ found it
+# by comparing the school page against the town one.
+LAYOUT2_HEAD = [
     ('levy', 'core'),
     ('state', 'MONTY'),
     ('local', 'RETHLTH'),
     ('onetime', 'PENSION'),
     ('transfer', 'STIPEND'),
     (None, None),
-    ('2640', 'sp-2640'),
     ('grants', 'sp-grants'),
     ('BUSFEES', 'sp-bus'),
-    ('1301', 'sp-1301'),
-    ('2200', 'sp-2200'),
-    ('1312', 'sp-1312'),
-    ('1305', 'sp-1305'),
-    ('1306', 'sp-1306'),
-    ('1308', 'sp-other'),
-    ('1311', None),
-    ('1300', None),
-    ('1302', None),
 ]
 
 
@@ -978,6 +973,7 @@ def render_v2(c):
                     'town AND school staff together'),
         'STIPEND': ('School resource stipend', els['0100-12101-519021'], 'alt',
                     'inside the police department'),
+        **{f'sp-{f}': fb(f, nm.title()[:26]) for f, nm, rev, sp in funds},
         'sp-2640': fb('2640', 'Circuit breaker fund'),
         'sp-grants': ('Grant funds spent', grant_spend, 'prog',
                       'balances are NEGATIVE — spent ahead of reimbursement'),
@@ -993,14 +989,19 @@ def render_v2(c):
     POT = ('levy', 'state', 'local', 'onetime', 'transfer')
     GF_DEST = ('core', 'MONTY', 'RETHLTH', 'PENSION', 'STIPEND')
     edges = []
-    edges += [('2640', 'sp-2640', 'restricted'), ('grants', 'sp-grants', 'restricted'),
-              ('BUSFEES', 'sp-bus', 'missing'), ('1301', 'sp-1301', 'restricted'),
-              ('2200', 'sp-2200', 'restricted'), ('1312', 'sp-1312', 'restricted'),
-              ('1305', 'sp-1305', 'restricted'), ('1306', 'sp-1306', 'restricted')]
-    edges += [(f, 'sp-other', 'restricted') for f in OTHER]
+    edges += [('grants', 'sp-grants', 'restricted'), ('BUSFEES', 'sp-bus', 'missing')]
+    edges += [(f, f'sp-{f}', 'restricted') for f, *_ in funds]
+
+    # One row per fund, in the order own_funds() returns them, so a new fund appears
+    # automatically and an existing one cannot fall off.
+    layout = list(LAYOUT2_HEAD) + [(f, f'sp-{f}') for f, nm, rev, sp in funds]
+    placed = {k for pair in layout for k in pair if k}
+    missing = [f for f, *_ in funds if f not in placed]
+    if missing:
+        raise SystemExit(f'funds returned but not placed on the diagram: {missing}')
 
     ly, ry, row = {}, {}, 0
-    for lk, rk in LAYOUT2:
+    for lk, rk in layout:
         y = 48 + row * (LH + GAP)
         if lk and lk in lbox:
             ly[lk] = y
