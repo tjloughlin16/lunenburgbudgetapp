@@ -183,6 +183,91 @@ Everything here is currently load-bearing somewhere. A row leaves this table whe
 | Where bus fee receipts are booked | A revenue account, a fund, or a statement that they are netted before booking. | The fee schedule is published and verified; `STUDENTBUS` shows zero. **A charged fee with no observable destination** is the clearest single gap in this model. |
 | The period 13 ledger | The year-end close. | Reconciles FY2026 properly; period 12 is used for now. |
 
+## CLASSIFICATION — reasoned per item, not matched on a substring
+
+`how` says what the judgement rests on, because that is the part worth arguing with. **`outside`** means it depends on knowing what a programme is from beyond this archive — the weakest kind here, and flagged every time.
+
+### Funds
+
+| fund | name | class | how | why |
+|---|---|---|---|---|
+| `0100` | GENERAL FUND | **town** | stated | The general fund. |
+| `1300` | LOST BOOKS/TECH REV FUND | **school** | stated | Lost books and technology — charged to students. |
+| `1301` | CHAPTER 658 REVOLVING FUND | **school** | evidence | Its cash journal says CHAPTER 658 ATHLET and it refunds families by name. |
+| `1302` | ADULT EDUCATION REVOLVING FUND | **school** | outside | Adult education is run by the district in Massachusetts. Not stated here. |
+| `1303` | SUMMER SCHOOL REVOLVING FUND | **school** | stated | Summer school. |
+| `1305` | AFTER SCHOOL ACTIVITIES FUND | **school** | stated | After school activities. |
+| `1306` | SCHOOL FACILITIES USE REVOLV | **school** | stated | Use of school facilities. |
+| `1308` | SCHOOL CHOICE REVOLVING | **school** | stated | School choice. |
+| `1309` | INSURANCE RECOVERIES SCHOOL | **school** | stated | Insurance recoveries, school. |
+| `1310` | GREENTHUMB REVOLVING FUND | **unresolved** | unresolved | “Greenthumb” — a school garden programme or a town one. Nothing here says. No FY26 activity. |
+| `1311` | SCHOOL GIFT FUND | **school** | stated | School gifts. |
+| `1312` | EXTENDED DAY REVOLVING FUND | **school** | stated | Extended day. |
+| `1314` | VENDING REVOLVING | **unresolved** | unresolved | Vending machines — in a school or a town building. No FY26 activity. |
+| `1315` | FAMILY NETWORK GIFT FUND | **unresolved** | unresolved | “Family Network” — plausibly the district’s family engagement work, plausibly the Council on Aging’s. No FY26 activity. |
+| `1549` | TECHNOLOGY FOR SCHOOL CHILDREN | **school** | stated | Technology for school children. |
+| `2200` | SCHOOL LUNCH REVOLVING | **school** | stated | School lunch. |
+| `2582` | EECBG ENERGY EFFICIENCY GRANT | **town** | outside | EECBG is the federal Energy Efficiency and Conservation Block Grant, made to municipalities. |
+| `2640` | SPECIAL ED CIRCUIT BREAKER | **school** | stated | Special education circuit breaker. |
+| `2649` | DISPLACED STUDENTS-PUERTO RICO | **school** | stated | Displaced students. |
+| `2650` | UNDER STORAGE TANK GRANT | **town** | outside | Underground storage tanks — a public works and fire matter, not a school one. |
+| `2681` | COMP SCHOOL HEALTH SERV GRANT | **school** | stated | Comprehensive school health services. |
+| `2667` | FY24  #718 ARTS/CULTURAL VITAL | **unresolved** | unresolved | Arts and cultural — the district or the Cultural Council. The #718 code is not paired with a programme name anywhere here. |
+| `2709` | FY12  REG DISSEMINATION GR#321 | **unresolved** | unresolved | “Regional dissemination” #321, FY12. Dormant and undefined here. |
+| `2903` | BC/BS MINI GRANT | **unresolved** | unresolved | A Blue Cross mini grant — school wellness or town employee wellness. |
+| `2911` | TECH PREP PRIVATE GRANT | **school** | outside | Tech Prep is a federal vocational-education programme. |
+| `2912` | TUFTS UNIVERSITY HEAT GRANT | **unresolved** | unresolved | A Tufts University grant; “HEAT” is not expanded anywhere here. |
+| `2914` | HACH SCIENTIFIC FOUNDATION GR | **school** | outside | The Hach Scientific Foundation funds high-school chemistry teaching. |
+| `2793` | SCHOOL WATER IMPROVEMENT GRANT | **school** | stated | School water improvement. |
+| `2772` | FY21 SCHOOL REOPENING #102 | **school** | stated | School reopening. |
+| `5000` | SEWER BETTERMENTS | **town** | stated | Sewer betterments. |
+| `5100` | WATER BETTERMENT FUND | **town** | stated | Water betterments. |
+| `6000` | SEWER ENTERPRISE FUND | **town** | stated | Sewer enterprise. |
+| `6100` | WATER ENTERPRISE FUND | **town** | stated | Water enterprise. |
+| `6200` | PEG ACCESS ENTERPRISE FUND | **town** | stated | PEG access enterprise. |
+| `7900` | SOLID WASTE/RECYCLING ENTERPRI | **town** | stated | Solid waste enterprise. |
+
+The remaining **33** funds are dated federal and state grant shells whose names pair a code with a programme. They are classified by that code:
+
+| code | programme | how |
+|---|---|---|
+| `#305` | Title I | paired |
+| `#140` | Title II Part A | paired |
+| `#309` | Title IV Part A | paired |
+| `#274` | Special education programme improvement | paired |
+| `#117` | Student Opportunity Act, evidence-based | paired |
+| `#237` | Family and community engagement | paired |
+| `#113 / #119` | ESSER — federal pandemic relief for schools | paired |
+| `#102` | School reopening | paired |
+| `#240` | NOT paired anywhere in our data. Three funds carry a bare 240 and no name. Read as IDEA special education from outside knowledge — **flagged, because these are the two largest grant spends at $229,398 and $179,637** | outside |
+
+### Revenue accounts
+
+Only the plausibly-school ones are listed. **The point of the list is the ones that turned out not to be.**
+
+| account | FY26 | class | how | why |
+|---|---:|---|---|---|
+| `CH 70 AID` | 9,229,410 | **school** | stated | Chapter 70 is the state education aid formula. Lands UNRESTRICTED in the general fund — a school-caused receipt, not school money. |
+| `SCHCOSTREI` | 318,424 | **school** | stated | School cost reimbursement — the circuit breaker. See the assumption about whether this duplicates fund 2640. |
+| `SPED REIMB` | 50,000 | **school** | stated | **Missed in the first pass.** Special education reimbursement. |
+| `CHARTER` | 26,136 | **school** | outside | **Missed in the first pass.** Charter school reimbursement — state aid to the town for resident pupils at charters. |
+| `PS TUITION` | 10,000 | **school** | stated | Pre-school tuition. |
+| `MSBA REIMB` | — | **school** | stated | School building authority. $474,239 a year through FY2022, zero now. |
+| `SCHOOL TRA` | — | **school** | stated | School transportation. |
+| `STUDENTBUS` | — | **school** | stated | Student bus fees — and see the worked example. Charged, and zero here. |
+| `ERATEREIMB` | — | **school** | outside | E-Rate is the federal telecoms discount for schools and libraries. Could be either. |
+| `MIN TEACHE` | — | **unresolved** | unresolved | Ten characters. Nothing settles it. |
+| `PROF DEV` | — | **unresolved** | unresolved | Professional development — for whose staff is not stated. |
+| `SD ADM FEE` | 35,000 | **unresolved** | unresolved | “SD” is School Department or Sewer District, and both exist in this ledger. |
+| `BUS CERTIF` | 2,000 | **town** | neighbours | **Not buses.** BUSINESS certificates. It sits among marriage licences, certified vitals, street lists, genealogy, dog licences and raffle permits — the Town Clerk’s fee schedule. *An error of mine, caught by reading the column instead of matching a substring.* |
+| `TRANS ENT` | 338,397 | **town** | neighbours | **Not transportation.** A TRANSFER. It sits with `OP TRAN AG`, `OP TRAN CP`, `OP TRAN SR`, `OP TRAN TR` — the operating transfers. Same error, same cause. |
+| `TRANSOFFSE` | — | **town** | neighbours | Transfer, as above. |
+| `TRANSRECRE` | — | **town** | neighbours | Transfer, as above. |
+| `BUS RENTAL` | — | **unresolved** | unresolved | Bus rental, or business rental. Zero in FY26 either way. |
+
+**Ten characters is why two of these were wrong.** `BUS` truncates both BUS and BUSINESS; `TRANS` truncates both TRANSPORTATION and TRANSFER. Neither can be read from the name — only from what the account sits among. This is `LEDGER-STRUCTURE.md` rule one, restated by breaking it.
+
+
 ## What is deliberately NOT a node
 
 - **Chapter 70, and every other general-fund revenue line.** They are inputs to the TOWN, not to the schools. They land in fund 0100 and lose their identity; the appropriation is the only edge out of it that anyone can follow. Listing Chapter 70 as a school input would assert a connection no record supports.

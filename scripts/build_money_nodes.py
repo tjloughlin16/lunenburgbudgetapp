@@ -131,6 +131,132 @@ ASSUMPTIONS = [
      'The town’s debt schedule, or the MSBA’s own payment record.'),
 ]
 
+# CLASSIFICATION — reasoned per item, not matched on a substring.
+#
+# `how` records what the judgement rests on, because the judgement is the thing a reader
+# should be able to disagree with:
+#
+#   stated      the town's own name says it outright
+#   paired      the town's name pairs a code with a programme, so the code is defined by
+#               the town rather than by us -- "FY26 #309 TITLE IV PART A" defines 309
+#   neighbours  read from what it sits among in the same report. This is how `BUS CERTIF`
+#               was caught: it sits with marriage licences, certified vitals, street lists,
+#               genealogy and dog licences, so it is BUSINESS certificates, not buses
+#   outside     it depends on knowing what a programme is, from outside this archive.
+#               Flagged every time, because it is the weakest kind here
+#   unresolved  ten characters is not enough and nothing else settles it
+#
+# Two of my own earlier errors are in here as `neighbours` rows. Both came from matching a
+# substring instead of reading the column: BUS CERTIF and the TRANS* family.
+FUND_CLASS = [
+    ('0100', 'town',   'stated',    'The general fund.'),
+    ('1300', 'school', 'stated',    'Lost books and technology — charged to students.'),
+    ('1301', 'school', 'evidence',  'Its cash journal says CHAPTER 658 ATHLET and it '
+                                    'refunds families by name.'),
+    ('1302', 'school', 'outside',   'Adult education is run by the district in '
+                                    'Massachusetts. Not stated here.'),
+    ('1303', 'school', 'stated',    'Summer school.'),
+    ('1305', 'school', 'stated',    'After school activities.'),
+    ('1306', 'school', 'stated',    'Use of school facilities.'),
+    ('1308', 'school', 'stated',    'School choice.'),
+    ('1309', 'school', 'stated',    'Insurance recoveries, school.'),
+    ('1310', 'unresolved', 'unresolved', '“Greenthumb” — a school garden programme or a '
+                                    'town one. Nothing here says. No FY26 activity.'),
+    ('1311', 'school', 'stated',    'School gifts.'),
+    ('1312', 'school', 'stated',    'Extended day.'),
+    ('1314', 'unresolved', 'unresolved', 'Vending machines — in a school or a town '
+                                    'building. No FY26 activity.'),
+    ('1315', 'unresolved', 'unresolved', '“Family Network” — plausibly the district’s '
+                                    'family engagement work, plausibly the Council on '
+                                    'Aging’s. No FY26 activity.'),
+    ('1549', 'school', 'stated',    'Technology for school children.'),
+    ('2200', 'school', 'stated',    'School lunch.'),
+    ('2582', 'town',   'outside',   'EECBG is the federal Energy Efficiency and '
+                                    'Conservation Block Grant, made to municipalities.'),
+    ('2640', 'school', 'stated',    'Special education circuit breaker.'),
+    ('2649', 'school', 'stated',    'Displaced students.'),
+    ('2650', 'town',   'outside',   'Underground storage tanks — a public works and fire '
+                                    'matter, not a school one.'),
+    ('2681', 'school', 'stated',    'Comprehensive school health services.'),
+    ('2667', 'unresolved', 'unresolved', 'Arts and cultural — the district or the Cultural '
+                                    'Council. The #718 code is not paired with a '
+                                    'programme name anywhere here.'),
+    ('2709', 'unresolved', 'unresolved', '“Regional dissemination” #321, FY12. Dormant and '
+                                    'undefined here.'),
+    ('2903', 'unresolved', 'unresolved', 'A Blue Cross mini grant — school wellness or '
+                                    'town employee wellness.'),
+    ('2911', 'school', 'outside',   'Tech Prep is a federal vocational-education '
+                                    'programme.'),
+    ('2912', 'unresolved', 'unresolved', 'A Tufts University grant; “HEAT” is not expanded '
+                                    'anywhere here.'),
+    ('2914', 'school', 'outside',   'The Hach Scientific Foundation funds high-school '
+                                    'chemistry teaching.'),
+    ('2793', 'school', 'stated',    'School water improvement.'),
+    ('2772', 'school', 'stated',    'School reopening.'),
+    ('5000', 'town',   'stated',    'Sewer betterments.'),
+    ('5100', 'town',   'stated',    'Water betterments.'),
+    ('6000', 'town',   'stated',    'Sewer enterprise.'),
+    ('6100', 'town',   'stated',    'Water enterprise.'),
+    ('6200', 'town',   'stated',    'PEG access enterprise.'),
+    ('7900', 'town',   'stated',    'Solid waste enterprise.'),
+]
+
+# Grant funds whose NAME pairs a numeric code with a federal or state programme. The town
+# defines the code for us, so any other fund carrying the same code is the same programme
+# — which is how the bare `#240` funds are read, and that step is marked `outside`.
+GRANT_CODES = [
+    ('#305', 'Title I', 'paired'),
+    ('#140', 'Title II Part A', 'paired'),
+    ('#309', 'Title IV Part A', 'paired'),
+    ('#274', 'Special education programme improvement', 'paired'),
+    ('#117', 'Student Opportunity Act, evidence-based', 'paired'),
+    ('#237', 'Family and community engagement', 'paired'),
+    ('#113 / #119', 'ESSER — federal pandemic relief for schools', 'paired'),
+    ('#102', 'School reopening', 'paired'),
+    ('#240', 'NOT paired anywhere in our data. Three funds carry a bare 240 and no name. '
+             'Read as IDEA special education from outside knowledge — **flagged, because '
+             'these are the two largest grant spends at $229,398 and $179,637**', 'outside'),
+]
+
+# Revenue accounts, reasoned. Only those that are plausibly school are listed; the point of
+# the list is the ones that turned out NOT to be.
+REV_CLASS = [
+    ('CH 70 AID',  9229410, 'school', 'stated', 'Chapter 70 is the state education aid '
+     'formula. Lands UNRESTRICTED in the general fund — a school-caused receipt, not '
+     'school money.'),
+    ('SCHCOSTREI',  318424, 'school', 'stated', 'School cost reimbursement — the circuit '
+     'breaker. See the assumption about whether this duplicates fund 2640.'),
+    ('SPED REIMB',   50000, 'school', 'stated', '**Missed in the first pass.** Special '
+     'education reimbursement.'),
+    ('CHARTER',      26136, 'school', 'outside', '**Missed in the first pass.** Charter '
+     'school reimbursement — state aid to the town for resident pupils at charters.'),
+    ('PS TUITION',   10000, 'school', 'stated', 'Pre-school tuition.'),
+    ('MSBA REIMB',       0, 'school', 'stated', 'School building authority. $474,239 a '
+     'year through FY2022, zero now.'),
+    ('SCHOOL TRA',       0, 'school', 'stated', 'School transportation.'),
+    ('STUDENTBUS',       0, 'school', 'stated', 'Student bus fees — and see the worked '
+     'example. Charged, and zero here.'),
+    ('ERATEREIMB',       0, 'school', 'outside', 'E-Rate is the federal telecoms discount '
+     'for schools and libraries. Could be either.'),
+    ('MIN TEACHE',       0, 'unresolved', 'unresolved', 'Ten characters. Nothing settles '
+     'it.'),
+    ('PROF DEV',         0, 'unresolved', 'unresolved', 'Professional development — for '
+     'whose staff is not stated.'),
+    ('SD ADM FEE',   35000, 'unresolved', 'unresolved', '“SD” is School Department or '
+     'Sewer District, and both exist in this ledger.'),
+    ('BUS CERTIF',    2000, 'town', 'neighbours', '**Not buses.** BUSINESS certificates. '
+     'It sits among marriage licences, certified vitals, street lists, genealogy, dog '
+     'licences and raffle permits — the Town Clerk’s fee schedule. *An error of mine, '
+     'caught by reading the column instead of matching a substring.*'),
+    ('TRANS ENT',   338397, 'town', 'neighbours', '**Not transportation.** A TRANSFER. It '
+     'sits with `OP TRAN AG`, `OP TRAN CP`, `OP TRAN SR`, `OP TRAN TR` — the operating '
+     'transfers. Same error, same cause.'),
+    ('TRANSOFFSE',       0, 'town', 'neighbours', 'Transfer, as above.'),
+    ('TRANSRECRE',       0, 'town', 'neighbours', 'Transfer, as above.'),
+    ('BUS RENTAL',       0, 'unresolved', 'unresolved', 'Bus rental, or business rental. '
+     'Zero in FY26 either way.'),
+]
+
 # A WORKED EXAMPLE, because the abstract version of this keeps being misunderstood.
 # Transportation is the case TJ described and it turned out stranger than either of us
 # expected. Held as data so the figures below are computed rather than typed.
@@ -451,6 +577,38 @@ def render(c):
     a('|---|---|---|')
     for doc, what, closes in WANTED:
         a(f'| {doc} | {what} | {closes} |')
+
+    a('\n## CLASSIFICATION — reasoned per item, not matched on a substring\n')
+    a('`how` says what the judgement rests on, because that is the part worth arguing '
+      'with. **`outside`** means it depends on knowing what a programme is from beyond '
+      'this archive — the weakest kind here, and flagged every time.\n')
+
+    a('### Funds\n')
+    a('| fund | name | class | how | why |')
+    a('|---|---|---|---|---|')
+    named = {f for f, *_ in FUND_CLASS}
+    fn = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
+    for f, cls, how, why in FUND_CLASS:
+        a(f'| `{f}` | {fn.get(f, "")} | **{cls}** | {how} | {why} |')
+    rest = [f for f in sorted(fn) if f not in named]
+    a(f'\nThe remaining **{len(rest)}** funds are dated federal and state grant shells '
+      f'whose names pair a code with a programme. They are classified by that code:\n')
+    a('| code | programme | how |')
+    a('|---|---|---|')
+    for code, prog, how in GRANT_CODES:
+        a(f'| `{code}` | {prog} | {how} |')
+
+    a('\n### Revenue accounts\n')
+    a('Only the plausibly-school ones are listed. **The point of the list is the ones that '
+      'turned out not to be.**\n')
+    a('| account | FY26 | class | how | why |')
+    a('|---|---:|---|---|---|')
+    for name, v, cls, how, why in REV_CLASS:
+        a(f'| `{name}` | {m(v)} | **{cls}** | {how} | {why} |')
+    a('\n**Ten characters is why two of these were wrong.** `BUS` truncates both BUS and '
+      'BUSINESS; `TRANS` truncates both TRANSPORTATION and TRANSFER. Neither can be read '
+      'from the name — only from what the account sits among. This is `LEDGER-STRUCTURE.md` '
+      'rule one, restated by breaking it.\n')
 
     a('\n## What is deliberately NOT a node\n')
     a('- **Chapter 70, and every other general-fund revenue line.** They are inputs to the '
