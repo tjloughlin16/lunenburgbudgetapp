@@ -47,6 +47,10 @@ const APP = join(HERE, '..')
 const DIST = join(APP, 'dist')
 const ROUTES_TS = join(APP, 'src', 'routes.ts')
 const SITEMAP = join(APP, 'public', 'sitemap.xml')
+// Read, not typed. `agent-manifest.json` already holds the one copy of this host that the
+// app's own absolute links are built from, and a second literal here is a latent drift.
+const SITE = JSON.parse(
+  await readFile(join(APP, 'src', 'data', 'agent-manifest.json'), 'utf8')).site
 const PORT = 8794
 
 // A page that renders to less than this much visible text has not rendered. The smallest
@@ -226,6 +230,28 @@ async function main() {
     }
     if (route !== '/' && !sitemap.includes(`<loc>https://lunenburgbudgetproject.org${route}</loc>`)) {
       failures.push(`${route}: rendered fine but is missing from public/sitemap.xml`)
+    }
+
+    // A SELF-REFERENTIAL canonical, one per route, injected here rather than put in
+    // index.html — the template is shared by every route, so a canonical in it would
+    // name the homepage on all eighteen of them, which is worse than having none.
+    //
+    // It buys exactly one thing, and it is worth being precise about which: query
+    // parameters. `/agents?utm_source=flyer` returns 200 with byte-identical content, so
+    // every shared link carrying a tracking tag is a separate URL to a search engine.
+    // The other duplicate shapes are already handled and do NOT need this — `/agents/`
+    // and `/index.html` 308 to the canonical form, preview deploys carry
+    // `x-robots-tag: noindex`, and lburg.org 301s, which is a directive rather than the
+    // hint a canonical is.
+    //
+    // It does nothing for an agent. A canonical tells indexers which address to credit;
+    // it authorises nothing, and no fetcher consults it before deciding what it may
+    // request.
+    const canonical = `<link rel="canonical" href="${SITE}${route}">`
+    html = html.replace('</head>', `    ${canonical}\n  </head>`)
+    if (!html.includes(canonical)) {
+      failures.push(`${route}: could not inject the canonical link — no </head> found`)
+      continue
     }
 
     // `<slug>.html`, NOT `<slug>/index.html`. Pages serves a directory by 308-redirecting

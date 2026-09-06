@@ -329,7 +329,10 @@ That is a genuine conflict, not an oversight, and it is unresolved. See the open
   `action_parameters.response` on this plan — worth one attempt.
 - **The short domain is a dead end for at least one agent**, and it is the domain people
   are handed. See the section above. Unresolved, and the highest-traffic path.
-- **There is no `<link rel="canonical">` anywhere.** What that would and would not buy,
+- ~~**There is no `<link rel="canonical">` anywhere.**~~ **Added 6 September**, one per
+  route, self-referential, injected by `prerender.mjs` from `agent-manifest.json`'s single
+  copy of the host. The 404 page deliberately has none — an error page names no canonical
+  address. What it does and does not buy,
   measured rather than assumed:
   - `/agents/` and `/index.html` both **308** to the canonical form, so trailing-slash and
     index duplicates do not exist. Cloudflare Pages handles it.
