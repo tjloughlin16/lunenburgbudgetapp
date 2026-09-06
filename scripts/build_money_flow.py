@@ -344,6 +344,10 @@ def programme_rows(c, fundnames):
 # top with four long sweeping edges is unreadable and says nothing extra.
 LAYOUT = [
     ('appropriation', 'core'),
+    (None, '0100-13102-532000'),
+    (None, '0100-19142-570018'),
+    (None, '0100-18202-560001'),
+    (None, '0100-12101-519021'),
     (None, None),
     ('2640', 'Special education'),
     ('grants', None),
@@ -357,11 +361,6 @@ LAYOUT = [
     ('1311', None),
     ('1300', None),
     ('1302', None),
-    (None, None),
-    ('general-other', '0100-13102-532000'),
-    (None, '0100-19142-570018'),
-    (None, '0100-18202-560001'),
-    (None, '0100-12101-519021'),
 ]
 
 # Which left box feeds which right box, beyond what the programme map already says.
@@ -370,10 +369,10 @@ EXTRA_EDGES = [
     ('1311', 'Other own-fund activity', 'restricted'),
     ('1300', 'Other own-fund activity', 'restricted'),
     ('1302', 'Other own-fund activity', 'restricted'),
-    ('general-other', '0100-13102-532000', 'traced'),
-    ('general-other', '0100-19142-570018', 'traced'),
-    ('general-other', '0100-18202-560001', 'unknown'),
-    ('general-other', '0100-12101-519021', 'traced'),
+    ('appropriation', '0100-13102-532000', 'traced'),
+    ('appropriation', '0100-19142-570018', 'traced'),
+    ('appropriation', '0100-18202-560001', 'unknown'),
+    ('appropriation', '0100-12101-519021', 'traced'),
 ]
 
 
@@ -395,11 +394,17 @@ def diagram(progs, funds, d300, grant_spend, elsewhere):
     LX, RX, W = 20, 610, 890
 
     fundmeta = {f: (nm, rev) for f, nm, rev, sp in funds}
+    # ONE box for the general fund. It was briefly drawn twice, lower down, to shorten
+    # the edges to the school costs in other departments — TJ, correctly: "dont SPLIT one
+    # source like that." A source drawn twice tells a reader there are two sources.
+    # The fix is to reorder the RIGHT column so everything the general fund feeds sits
+    # together at the top, which shortens the same edges without inventing a box.
+    gf_total = d300 + sum(elsewhere[a]['v'] for a, _, _ in ELSEWHERE_MAP
+                          if a in elsewhere and not a.endswith('560001'))
     lbox = {
-        'appropriation': ('General fund — dept 300', d300, 'core'),
+        'appropriation': ('General fund — appropriated', gf_total, 'core'),
         'grants': ('Federal and state grants', grant_spend, 'grant'),
         'BUSFEES': ('Bus fees — charged', None, 'missing'),
-        'general-other': ('General fund — other departments', None, 'core'),
     }
     for f, (nm, rev) in fundmeta.items():
         lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund')
