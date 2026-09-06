@@ -186,6 +186,25 @@ is a TXT of the form `v=MCPv1; k=ed25519; p=<public key>`; regenerate the public
 Then `npx mcp-publisher login dns --domain lunenburgbudgetproject.org --private-key ...`
 and `npx mcp-publisher publish`. **Not done — the DNS record needs adding.**
 
+**The record goes on the APEX, not under a selector.** MCP DNS auth works like SPF, not
+like DKIM, and the DKIM intuition is common enough that the registry probes for it and
+returns a specific error. From `internal/api/handlers/v0/auth/dns.go`:
+
+    var commonWrongSelectors = []string{"_mcp-auth", "_mcp-registry"}
+    // MCP DNS auth uses the apex, like SPF -- see #385, #1103, #1126
+
+So the name is `@`, and `_mcp.lunenburgbudgetproject.org` would resolve, validate as a
+well-formed record, and never be looked at. Two more things read off the same source rather
+than assumed:
+
+- The value must match `v=MCPv1;\s*k=([^;]+);\s*p=([A-Za-z0-9+/=]+)` (`common.go`), so the
+  semicolons and the base64 are load-bearing and a trailing `=` is fine.
+- The signed timestamp is checked to **±15 seconds**, so a machine with a drifting clock
+  fails `login` with a message about the timestamp, not about the record.
+
+The namespace follows from the domain by reversal — `BuildPermissions` grants
+`org.lunenburgbudgetproject/*` — which is why `server.json` is named the way it is.
+
 ## What is NOT solved
 
 - **Sandbox egress allowlists.** The site answers any user agent in under 300ms with no bot
