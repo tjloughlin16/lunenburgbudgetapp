@@ -65,6 +65,54 @@ So, precisely:
 *Not yet established:* whether the $105,282 gap is netting, or simply that `settled` holds
 252 lines where `proposed` holds 321. Check that before quoting the gap as anything.
 
+### We do NOT have to apportion the spending side. It is in the accounts.
+
+The apportionment of general-fund REVENUE across departments is a presentation convention
+and always will be — money in fund `0100` is fungible, and the Town Manager's own worksheet
+apparently splits it by share. But **spending is traceable, and guessing at it was our
+mistake, not the data's.**
+
+`ledger_snapshot` holds the same FY26 general fund at two grains, and they tie:
+
+    FY2026 period 9    67 department rows    51,189,961
+    FY2026 period 12  635 account rows       51,189,965      ($4 apart)
+
+`dept 300` decomposes into **258 accounts totalling $26,247,474**, exactly the department
+row. Every figure below is an account name in the town's own ledger, not an inference from
+a share.
+
+### School cost that sits outside the school budget — provable
+
+    dept 300, 258 accounts                26,247,474
+    + school retiree health (dept 914)     1,521,536   0100-19142-570018 SCHRETHLTH
+    + school resource stipend (dept 210)       6,800   0100-12101-519021 SCHRESSTIP
+                                        ------------
+    provable LPS cost                     27,775,810   +5.8%
+
+    + Monty Tech assessment (dept 310)     1,334,521   a DIFFERENT district
+    all town education spending           29,110,331   +10.9%
+
+    + WRRS pension (dept 820)              2,392,572   share unknown
+    upper bound if all of it were schools 31,502,903   +20.0%
+
+**Health insurance for ACTIVE school staff is inside dept 300** — `HEALTH INS $3,701,195`,
+matching the district workbook's line exactly. An earlier worry that this double-counted
+against dept 914's $3,713,520 was wrong: those two figures are 0.3% apart by coincidence
+and are different things. Dept 914 is retiree health plus town-employee health.
+
+**Pension contributions are absent from the district budget entirely.** Its only retirement
+lines are stipends — `Retirement/Longevity`, `Retirement/Master Teacher`, `Early Retirement
+Incentive` — and all are **$0** in FY26. So the $26.2M contains no pension cost at all.
+
+*Not established:* what share of WRRS is school staff. Our archive does not say who belongs
+to which system — the seven mentions of *"Worcester Regional Retirement or Massachusetts
+State Teachers Retirement"* are boilerplate from the senior tax work-off program about OBRA
+eligibility, not a statement about school employees. WRRS publishes an annual actuarial
+valuation by member unit; that is the document.
+
+*Also not established:* that `SCHRESSTIP` is a school resource officer stipend. The name is
+an abbreviation and the amount is immaterial, but it is an inference and is marked as one.
+
 ### The page's "Town Meeting appropriation" is not what Town Meeting voted
 
     dept 300   original 26,247,474  + transfers  76,394  = revised 26,323,868
@@ -164,6 +212,8 @@ document closes it.
 
 ## Next steps, in order
 
+0. **Model the spending side from the 635 account rows**, not from apportionment. This is
+   the change that matters most and it was available all along — see above.
 1. **Generate the page** from `money_in_figures.py` — `scripts/build_money_in.py`, with
    `--check`, registered in `check_generated.py`. Design decision still open: regenerate
    whole, or splice marked blocks the way `build_data_model_grids.py` does.
