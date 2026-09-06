@@ -571,6 +571,7 @@ than a budget setting.
     python3 scripts/check_github_mirror.py  # the fallback for agents that cannot reach the site
     python3 scripts/check_sitemap.py        # the live sitemap, and every URL in it, answers
     python3 scripts/check_sitemap.py --submit    # ...and tell the IndexNow engines it changed
+    python3 scripts/check_indexing.py       # ...and ask Google and Bing whether they DID index it
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present

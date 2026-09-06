@@ -549,8 +549,20 @@ Everything on our side is done and verified: `robots.txt` `Allow: /`, 68 sitemap
 answering, the IndexNow key file live and submissions accepted, the README linking the site
 properly, and **both consoles verified with sitemaps submitted, 6 September 2026**.
 
-*Settled by:* reading those consoles in a week or two. This is the first question here that
-has stopped needing an argument and started needing a wait.
+*Settled by:* `python3 scripts/check_indexing.py`, which asks Google and Bing through
+their own APIs rather than reading a console by eye or — the thing `CLAUDE.md` forbids —
+scraping a `site:` query and calling the count a measurement.
+
+It reports **Google's own `coverageState` verbatim** and counts by it, because the
+difference between `Crawled - currently not indexed` and `URL is unknown to Google` is the
+entire diagnosis and any boolean we invented would throw it away. It never fails for a URL
+being unindexed — that is a fact about Google, not a defect here — and it fails loudly when
+a credential is missing, because an absent answer that reads as "nothing is indexed" is
+this workstream's own failure shape.
+
+Both credentials are free and neither is in git; `secrets/README.md` says how to get them.
+This is the first question here that has stopped needing an argument and started needing a
+wait.
 
 **What to watch for.** In each console, three numbers, and they are not the same question:
 
