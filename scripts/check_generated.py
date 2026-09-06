@@ -48,6 +48,7 @@ CHECKS = [
     # the thing that catches it, and this generator was not in it.
     ('build_reports_index.py', ['--check']),
     ('build_money_flow.py', ['--check']),
+    ('build_money_nodes.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),
