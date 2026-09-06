@@ -548,6 +548,44 @@ def render(c):
     for para in WORKED['after']:
         a(para + '\n')
 
+    a('\n## What is SITTING in the funds — and the three patterns in it\n')
+    a('“Spent” alone hides more than it shows. A fund that receives $325,970 and spends '
+      '$4,005 is not a small programme; it is a reserve accumulating. Every fund below '
+      'carries what moved **and what is left**, at 31 March.\n')
+    rows = c.execute(f"""SELECT fund, name, revenue, spent, closing_balance
+        FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND (revenue>0 OR spent>0)
+          AND (fund LIKE '13%' OR fund LIKE '15%' OR fund LIKE '22%' OR fund LIKE '26%'
+               OR fund LIKE '27%' OR fund LIKE '28%' OR fund LIKE '29%')
+        ORDER BY closing_balance DESC""").fetchall()
+    a('| fund | | in | spent | held 31 Mar | net |')
+    a('|---|---|---:|---:|---:|---:|')
+    for r in rows:
+        net = (r['revenue'] or 0) - (r['spent'] or 0)
+        a(f'| `{r["fund"]}` | {r["name"].title()} | {m(r["revenue"])} | {m(r["spent"])} '
+          f'| {m(r["closing_balance"])} | {net:+,.0f} |')
+    tot = sum(r['closing_balance'] or 0 for r in rows)
+    a(f'\n**{m(tot)} is sitting in the schools’ own funds at 31 March.**\n')
+    a('**Pattern 1 — accumulating.** The circuit breaker took in $325,970, spent **$4,005**, '
+      'and holds **$615,301** — nearly double the year’s receipts, so money has accumulated '
+      'across years. *The reimbursement is arriving and largely not being spent out of this '
+      'fund.* Why is not established: end-of-year timing, a carry-forward policy, or the '
+      'costs being borne by the appropriation while the reserve builds all fit identically, '
+      'and this project does not pick between explanations that fit equally.\n')
+    a('**Pattern 2 — drawing down.** School lunch spends **$167,355 more than it receives** '
+      'and holds $287,771. Extended day is the same shape at −$40,406. A fee-funded '
+      'programme spending its balance is solvent this year and has a smaller cushion next '
+      'year, and neither the appropriation nor the “spent” figure shows it.\n')
+    a('**Pattern 3 — negative balances.** Several grant funds are **below zero** — FY26 #240 '
+      'at −$179,637, FY25 117 SOA at −$91,220, FY25 #240 at −$88,503. Spending ahead of '
+      'reimbursement is the ordinary explanation for a reimbursement-basis grant, and it is '
+      'an *inference*: what is established is that the money went out and the receipt has '
+      'not been booked.\n')
+    a('*One caution on the circuit breaker.* Fund 2640 shows $325,970 received while the '
+      'general-fund line `SCHCOSTREI` shows $318,424 budgeted and **nothing received**. Two '
+      'circuit breaker figures about $7,500 apart, in two places. Whether they are the same '
+      'money is **not established**, and if they are, a total counting both double-counts '
+      'about $318,000.\n')
+
     a('\n## EDGES — which source pays which use, and whether we can show it\n')
     a('The important column is `basis`. **`restricted` means we cannot show it** — the '
       'connection is near-certain because the fund exists for one purpose, but no report '

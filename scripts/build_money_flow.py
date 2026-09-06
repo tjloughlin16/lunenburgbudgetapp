@@ -311,8 +311,11 @@ def programme_rows(c, fundnames):
         WHERE l.fy={FY} AND l.period={P_ACCT} AND a.dept='300' AND a.function IS NOT NULL
         GROUP BY a.function""")}
     d300 = sum(inside.values())
-    spent = {r['fund']: (r['spent'] or 0) for r in c.execute(f"""
-        SELECT fund, spent FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""")}
+    fundrow = {r['fund']: r for r in c.execute(f"""
+        SELECT fund, revenue, spent, closing_balance FROM v_fund_year
+        WHERE fy={FY} AND period={P_DEPT}""")}
+    spent = {f: (r['spent'] or 0) for f, r in fundrow.items()}
+    held = {f: (r['closing_balance'] or 0) for f, r in fundrow.items()}
     claimed, out = set(), []
     for name, fns, funds, why in PROGRAMMES:
         if fns is None:
@@ -705,6 +708,7 @@ svg.flow {{ display:block; min-width:900px; height:auto }}
 .b.prog rect {{ fill:var(--school-bg); stroke:var(--school) }}
 .b.alt rect {{ fill:none; stroke:var(--muted); stroke-dasharray:5 4 }}
 .bl {{ font-size:12.5px; font-weight:600; fill:var(--ink) }}
+.bs {{ font-size:10px; fill:var(--muted) }}
 .bv {{ font-size:12px; fill:var(--muted); font-family:ui-monospace,Menlo,monospace }}
 .e {{ fill:none; stroke-width:2 }}
 .e.traced {{ stroke:var(--school); opacity:.55 }}
@@ -858,39 +862,64 @@ def render_v2(c):
     grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
                                 WHERE fy={FY} AND period={P_DEPT} AND spent>0
                                   AND (revenue IS NULL OR revenue=0)""").fetchone()['v'] or 0
-    spent = {r['fund']: (r['spent'] or 0) for r in c.execute(f"""
-        SELECT fund, spent FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""")}
+    fundrow = {r['fund']: r for r in c.execute(f"""
+        SELECT fund, revenue, spent, closing_balance FROM v_fund_year
+        WHERE fy={FY} AND period={P_DEPT}""")}
+    spent = {f: (r['spent'] or 0) for f, r in fundrow.items()}
+    held = {f: (r['closing_balance'] or 0) for f, r in fundrow.items()}
     els = {a: c.execute(f"""SELECT original v FROM ledger_snapshot WHERE fy={FY}
               AND period={P_ACCT} AND account_id=?""", (a,)).fetchone() for a, _, _ in ELSEWHERE_MAP}
     els = {a: (r['v'] if r else 0) for a, r in els.items()}
 
-    LH, GAP, BW = 46, 12, 254
+    LH, GAP, BW = 58, 11, 254
     LX, RX, W = 20, 610, 890
     fundrev = {f: rev for f, nm, rev, sp in funds}
     lbox = {'appropriation': ('General fund — appropriated',
                               d300 + sum(v for k, v in els.items()
-                                         if not k.endswith('560001')), 'core'),
-            'grants': ('Federal and state grants', grant_spend, 'grant'),
-            'BUSFEES': ('Bus fees — charged', None, 'missing')}
+                                         if not k.endswith('560001')), 'core',
+                              'excludes the pension share, which is unknown'),
+            'grants': ('Federal and state grants', grant_spend, 'grant',
+                       'spent side only — no FY26 revenue booked'),
+            'BUSFEES': ('Bus fees — charged', None, 'missing',
+                        '$180 / $270, policy 3601.01')}
     for f, nm, rev, sp in funds:
-        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund')
+        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund', 'received, nine months')
 
     OTHER = ('1308', '1311', '1300', '1302')
+    # A fund box carries what is SITTING there as well as what moved. A fund that took in
+    # $325,970 and spent $4,005 is not a small programme — it is a reserve accumulating,
+    # and the "spent" figure alone actively hides that. The mirror case is school lunch,
+    # which spends $167,355 MORE than it receives and is drawing a balance down.
+    def fb(key, label):
+        r = fundrow.get(key)
+        if not r:
+            return (label, 0, 'prog', '')
+        inn, sp, hl = r['revenue'] or 0, r['spent'] or 0, r['closing_balance'] or 0
+        net = inn - sp
+        mark = '↑' if net > 0 else ('↓' if net < 0 else '')
+        return (label, sp, 'prog', f'in {money(inn)} · held {money(hl)} {mark}')
+
     rbox = {
-        'core': ('THE SCHOOL BUDGET', d300, 'core'),
-        'MONTY': ('Monty Tech assessment', els['0100-13102-532000'], 'alt'),
-        'RETHLTH': ('School retiree health', els['0100-19142-570018'], 'alt'),
-        'PENSION': ('Pension — share unknown', els['0100-18202-560001'], 'alt'),
-        'STIPEND': ('School resource stipend', els['0100-12101-519021'], 'alt'),
-        'sp-2640': ('Circuit breaker fund spent', spent.get('2640', 0), 'prog'),
-        'sp-grants': ('Grant funds spent', grant_spend, 'prog'),
-        'sp-bus': ('Bus fee spending', None, 'missing'),
-        'sp-1301': ('Athletics fund spent', spent.get('1301', 0), 'prog'),
-        'sp-2200': ('Lunch fund spent', spent.get('2200', 0), 'prog'),
-        'sp-1312': ('Extended day fund spent', spent.get('1312', 0), 'prog'),
-        'sp-1305': ('After school fund spent', spent.get('1305', 0), 'prog'),
-        'sp-1306': ('Facilities use fund spent', spent.get('1306', 0), 'prog'),
-        'sp-other': ('Other own funds spent', sum(spent.get(f, 0) for f in OTHER), 'prog'),
+        'core': ('THE SCHOOL BUDGET', d300, 'core', 'department 300, as voted'),
+        'MONTY': ('Monty Tech assessment', els['0100-13102-532000'], 'alt',
+                  'a different district'),
+        'RETHLTH': ('School retiree health', els['0100-19142-570018'], 'alt',
+                    'former school employees'),
+        'PENSION': ('Pension — share unknown', els['0100-18202-560001'], 'alt',
+                    'town AND school staff together'),
+        'STIPEND': ('School resource stipend', els['0100-12101-519021'], 'alt',
+                    'inside the police department'),
+        'sp-2640': fb('2640', 'Circuit breaker fund'),
+        'sp-grants': ('Grant funds spent', grant_spend, 'prog',
+                      'balances are NEGATIVE — spent ahead of reimbursement'),
+        'sp-bus': ('Bus fee spending', None, 'missing', 'no account found'),
+        'sp-1301': fb('1301', 'Athletics fund'),
+        'sp-2200': fb('2200', 'School lunch fund'),
+        'sp-1312': fb('1312', 'Extended day fund'),
+        'sp-1305': fb('1305', 'After school fund'),
+        'sp-1306': fb('1306', 'Facilities use fund'),
+        'sp-other': ('Other own funds spent', sum(spent.get(f, 0) for f in OTHER), 'prog',
+                     'held ' + money(sum(held.get(f, 0) for f in OTHER))),
     }
     edges = [('appropriation', k, 'unknown' if k == 'PENSION' else 'traced')
              for k in ('core', 'MONTY', 'RETHLTH', 'PENSION', 'STIPEND')]
@@ -922,15 +951,18 @@ def render_v2(c):
         o.append(f'<path class="e {how}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
     for boxes, ys, x in ((lbox, ly, LX), (rbox, ry, RX)):
         for key, y in ys.items():
-            label, val, kind = boxes[key]
+            label, val, kind, *rest = boxes[key]
+            sub = rest[0] if rest else ''
             o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{BW}" '
                      f'height="{LH}" rx="5"/>'
-                     f'<text class="bl" x="{x+10}" y="{y+19}">{html.escape(label)}</text>'
-                     f'<text class="bv" x="{x+10}" y="{y+35}">'
-                     f'{money(val) if val is not None else "not found"}</text></g>')
+                     f'<text class="bl" x="{x+10}" y="{y+18}">{html.escape(label)}</text>'
+                     f'<text class="bv" x="{x+10}" y="{y+34}">'
+                     f'{money(val) if val is not None else "not found"}</text>'
+                     + (f'<text class="bs" x="{x+10}" y="{y+49}">{html.escape(sub)}</text>'
+                        if sub else '') + '</g>')
     o.append('</svg>')
 
-    right_total = sum(v for _, v, _ in rbox.values() if v is not None)
+    right_total = sum(v for _, v, *_ in rbox.values() if v is not None)
     P = [f'<section class="metrics">'
          f'<div class="m"><div class="mk">Appropriated to the schools</div>'
          f'<div class="mv">{money(d300)}</div><div class="ms">Department 300. '

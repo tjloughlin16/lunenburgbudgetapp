@@ -109,6 +109,45 @@ It also dates the fee. The policy was adopted **21 May 2025**, after the FY2026 
 Note what this does to the intuition. The natural guess is that the fees sit in a fund and pay bus bills directly, on top of the appropriation. That may be exactly right. It is also possible they land in the general fund and simply have not been booked yet. **Nothing we hold distinguishes those, and they imply very different things about who is paying for buses.**
 
 
+## What is SITTING in the funds — and the three patterns in it
+
+“Spent” alone hides more than it shows. A fund that receives $325,970 and spends $4,005 is not a small programme; it is a reserve accumulating. Every fund below carries what moved **and what is left**, at 31 March.
+
+| fund | | in | spent | held 31 Mar | net |
+|---|---|---:|---:|---:|---:|
+| `2640` | Special Ed Circuit Breaker | 325,970 | 4,005 | 615,301 | +321,965 |
+| `1308` | School Choice Revolving | 83,116 | 30,558 | 299,461 | +52,558 |
+| `2200` | School Lunch Revolving | 572,231 | 739,586 | 287,771 | -167,355 |
+| `1301` | Chapter 658 Revolving Fund | 160,164 | 100,467 | 169,945 | +59,697 |
+| `1305` | After School Activities Fund | 111,376 | 95,196 | 148,578 | +16,181 |
+| `1311` | School Gift Fund | 22,486 | 2,911 | 109,398 | +19,575 |
+| `1306` | School Facilities Use Revolv | 18,670 | 12,354 | 71,559 | +6,317 |
+| `2622` | Fy25 Family & Community | — | 2,477 | 70,800 | -2,477 |
+| `1312` | Extended Day Revolving Fund | 192,943 | 233,350 | 54,161 | -40,406 |
+| `2672` | Fy26 Family & Community 237 | 48,558 | 13,372 | 35,186 | +35,186 |
+| `1300` | Lost Books/Tech Rev Fund | 2,860 | 661 | 16,665 | +2,199 |
+| `1302` | Adult Education Revolving Fund | 4,000 | 2,880 | 12,744 | +1,120 |
+| `2681` | Comp School Health Serv Grant | 10,775 | 5,120 | 5,655 | +5,655 |
+| `2728` | Fy24 Title 11 Part A #140 | — | 3,217 | 5,108 | -3,217 |
+| `2832` | Fy25 #274  0205202509302025 | — | 5,427 | 0 | -5,427 |
+| `2800` | Fy25 140   080524093026 | — | 2,208 | — | -2,208 |
+| `2690` | Fy26 #309 Title Iv Part A | — | 3,240 | -3,240 | -3,240 |
+| `2758` | Fy23 240 | — | 1,666 | -8,167 | -1,666 |
+| `2813` | Fy25 #240 | — | 229,398 | -88,503 | -229,398 |
+| `2778` | Fy25 117 Soa Evidence Base | — | 68,647 | -91,220 | -68,647 |
+| `2814` | Fy26 #240 | — | 179,637 | -179,637 | -179,637 |
+
+**1,531,564 is sitting in the schools’ own funds at 31 March.**
+
+**Pattern 1 — accumulating.** The circuit breaker took in $325,970, spent **$4,005**, and holds **$615,301** — nearly double the year’s receipts, so money has accumulated across years. *The reimbursement is arriving and largely not being spent out of this fund.* Why is not established: end-of-year timing, a carry-forward policy, or the costs being borne by the appropriation while the reserve builds all fit identically, and this project does not pick between explanations that fit equally.
+
+**Pattern 2 — drawing down.** School lunch spends **$167,355 more than it receives** and holds $287,771. Extended day is the same shape at −$40,406. A fee-funded programme spending its balance is solvent this year and has a smaller cushion next year, and neither the appropriation nor the “spent” figure shows it.
+
+**Pattern 3 — negative balances.** Several grant funds are **below zero** — FY26 #240 at −$179,637, FY25 117 SOA at −$91,220, FY25 #240 at −$88,503. Spending ahead of reimbursement is the ordinary explanation for a reimbursement-basis grant, and it is an *inference*: what is established is that the money went out and the receipt has not been booked.
+
+*One caution on the circuit breaker.* Fund 2640 shows $325,970 received while the general-fund line `SCHCOSTREI` shows $318,424 budgeted and **nothing received**. Two circuit breaker figures about $7,500 apart, in two places. Whether they are the same money is **not established**, and if they are, a total counting both double-counts about $318,000.
+
+
 ## EDGES — which source pays which use, and whether we can show it
 
 The important column is `basis`. **`restricted` means we cannot show it** — the connection is near-certain because the fund exists for one purpose, but no report we hold says what the fund actually paid for. It is a presumption, and it is listed as one.
