@@ -56,6 +56,63 @@ export function Cite({ id }: { id: string }) {
   )
 }
 
+/** A URL printed in citation prose is an ADDRESS, and an address nobody can follow is
+ *  rule 12 satisfied for a human and broken for everything else.
+ *
+ *  An agent reading this site reported it precisely: it followed `/api/index` from the
+ *  header bar and reached `/api/schema` two levels deep, and was refused
+ *  `/data/sped-para-history.csv` — because that one appears only as bare text inside a
+ *  citation. Its words: *"Bare URLs in prose aren't anchors, so they don't enter the link
+ *  graph."* Three addresses were in that state, and they are the files behind the two
+ *  softest rates in the model.
+ *
+ *  Worse than unreachable, the `source` line was MISLEADING: the whole string is the text
+ *  of one anchor pointing at the workbook, so the link text ended in a URL that was not
+ *  the link target. A screen reader announces that text as the link.
+ *
+ *  So `basis` linkifies in place, and `source` — which sits inside the document anchor,
+ *  where a nested `<a>` is invalid HTML — has its URLs lifted out and rendered as siblings.
+ */
+const URL_RE = /https?:\/\/[^\s<>"')\]]+/g
+const TRAILING = /[.,;]+$/
+
+/** Prose with real anchors where the URLs were. For text NOT inside an anchor. */
+function linkify(text: string) {
+  const out: (string | ReturnType<typeof urlAnchor>)[] = []
+  let last = 0
+  for (const m of text.matchAll(URL_RE)) {
+    const raw = m[0]
+    const url = raw.replace(TRAILING, '')
+    if (m.index > last) out.push(text.slice(last, m.index))
+    out.push(urlAnchor(url, m.index))
+    out.push(raw.slice(url.length))
+    last = m.index + raw.length
+  }
+  out.push(text.slice(last))
+  return out
+}
+
+/** The path, not the whole URL — the host repeats on every one of these and carries
+ *  nothing. The href stays absolute, which is the half a fetcher uses. */
+function urlAnchor(url: string, key: number | string) {
+  return (
+    <a key={key} href={url} className="underline"
+      style={{ color: 'var(--series-cost)', fontFamily: 'ui-monospace, Menlo, monospace' }}>
+      {url.replace(/^https?:\/\/[^/]+/, '')}
+    </a>
+  )
+}
+
+/** The URLs pulled OUT, for text that is already the label of a link. */
+function withoutUrls(text: string) {
+  const urls = [...text.matchAll(URL_RE)].map(m => m[0].replace(TRAILING, ''))
+  const prose = text.replace(URL_RE, '')
+    .replace(/\s+/g, ' ')
+    .replace(/[\s;,]*(?:published at|and)?[\s;,]*$/i, '')
+    .trim()
+  return { prose, urls }
+}
+
 const KIND_COLOR: Record<string, string> = {
   ours: 'var(--status-warning)',
   statute: 'var(--text-muted)',
@@ -91,7 +148,7 @@ export function CitationList() {
                 <p className="text-[14px] font-semibold leading-snug">{c.metric}</p>
                 <p className="text-[13px] leading-relaxed mt-0.5"
                   style={{ color: 'var(--text-secondary)' }}>
-                  {c.basis}
+                  {linkify(c.basis)}
                 </p>
                 <p className="text-[12px] mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5">
                   <span className="font-semibold"
@@ -101,8 +158,9 @@ export function CitationList() {
                   <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&middot;</span>
                   <a href={urlFor(c.doc)} download
                     className="underline" style={{ color: 'var(--series-cost)' }}>
-                    {c.source}
+                    {withoutUrls(c.source).prose}
                   </a>
+                  {withoutUrls(c.source).urls.map(u => urlAnchor(u, u))}
                   <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&middot;</span>
                   <code className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
                     sources/{c.doc}
