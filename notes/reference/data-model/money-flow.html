@@ -65,6 +65,7 @@ svg.flow { display:block; min-width:900px; height:auto }
 .e.traced { stroke:var(--school); opacity:.55 }
 .e.restricted { stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }
 .e.missing { stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }
+.e.unknown { stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }
 .key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
   margin:-4px 0 6px }
 .key span { display:flex; align-items:center; gap:6px }
@@ -137,46 +138,51 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 </header>
 
 <section class="intro"><p>Two columns. On the left, every source of money the schools use. On the right, where it comes to rest — starting with the one number everybody knows, and then <b>every other place school money is spent that the $26m does not contain</b>.</p><p class="cap">Bars are proportional within each column. A source and a landing place are not the same kind of thing and are never added across the two.</p></section>
-<div class="scroll"><svg viewBox="0 0 900 664" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Sources of school money and where each lands">
-<text class="dhd" x="20" y="24">SOURCES</text>
-<text class="dhd" x="620" y="24">WHERE IT LANDS</text>
-<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,68.0 620,68.0"/>
-<path class="e restricted" d="M270,176.0 C445.0,176.0 445.0,122.0 620,122.0"/>
-<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
-<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
-<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
-<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,122.0 620,122.0"/>
-<path class="e missing" d="M270,608.0 C445.0,608.0 445.0,176.0 620,176.0"/>
-<path class="e restricted" d="M270,554.0 C445.0,554.0 445.0,230.0 620,230.0"/>
-<path class="e restricted" d="M270,122.0 C445.0,122.0 445.0,284.0 620,284.0"/>
-<path class="e restricted" d="M270,230.0 C445.0,230.0 445.0,338.0 620,338.0"/>
-<path class="e restricted" d="M270,284.0 C445.0,284.0 445.0,338.0 620,338.0"/>
-<path class="e restricted" d="M270,446.0 C445.0,446.0 445.0,338.0 620,338.0"/>
-<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,392.0 620,392.0"/>
-<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,446.0 620,446.0"/>
-<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,500.0 620,500.0"/>
-<path class="e traced" d="M270,68.0 C445.0,68.0 445.0,554.0 620,554.0"/>
-<g class="b core"><rect x="20" y="46" width="250" height="44" rx="5"/><text class="bl" x="29" y="64">General fund — dept 300</text><text class="bv" x="29" y="80">$26,247,474</text></g>
-<g class="b fund"><rect x="20" y="100" width="250" height="44" rx="5"/><text class="bl" x="29" y="118">School Lunch Revolving</text><text class="bv" x="29" y="134">$572,231</text></g>
-<g class="b fund"><rect x="20" y="154" width="250" height="44" rx="5"/><text class="bl" x="29" y="172">Special Ed Circuit Breaker</text><text class="bv" x="29" y="188">$325,970</text></g>
-<g class="b fund"><rect x="20" y="208" width="250" height="44" rx="5"/><text class="bl" x="29" y="226">Extended Day Revolving Fund</text><text class="bv" x="29" y="242">$192,943</text></g>
-<g class="b fund"><rect x="20" y="262" width="250" height="44" rx="5"/><text class="bl" x="29" y="280">After School Activities Fund</text><text class="bv" x="29" y="296">$111,376</text></g>
-<g class="b fund"><rect x="20" y="316" width="250" height="44" rx="5"/><text class="bl" x="29" y="334">School Choice Revolving</text><text class="bv" x="29" y="350">$83,116</text></g>
-<g class="b fund"><rect x="20" y="370" width="250" height="44" rx="5"/><text class="bl" x="29" y="388">School Gift Fund</text><text class="bv" x="29" y="404">$22,486</text></g>
-<g class="b fund"><rect x="20" y="424" width="250" height="44" rx="5"/><text class="bl" x="29" y="442">School Facilities Use Revolv</text><text class="bv" x="29" y="458">$18,670</text></g>
-<g class="b fund"><rect x="20" y="478" width="250" height="44" rx="5"/><text class="bl" x="29" y="496">Comp School Health Serv Grant</text><text class="bv" x="29" y="512">$10,775</text></g>
-<g class="b grant"><rect x="20" y="532" width="250" height="44" rx="5"/><text class="bl" x="29" y="550">Federal and state grants</text><text class="bv" x="29" y="566">$495,918</text></g>
-<g class="b missing"><rect x="20" y="586" width="250" height="44" rx="5"/><text class="bl" x="29" y="604">Bus fees — charged</text><text class="bv" x="29" y="620">not found</text></g>
-<g class="b core"><rect x="620" y="46" width="250" height="44" rx="5"/><text class="bl" x="629" y="64">THE SCHOOL BUDGET</text><text class="bv" x="629" y="80">$26,247,474</text></g>
-<g class="b prog"><rect x="620" y="100" width="250" height="44" rx="5"/><text class="bl" x="629" y="118">Special education</text><text class="bv" x="629" y="134">$6,329,681</text></g>
-<g class="b prog"><rect x="620" y="154" width="250" height="44" rx="5"/><text class="bl" x="629" y="172">Transportation</text><text class="bv" x="629" y="188">$1,531,234</text></g>
-<g class="b prog"><rect x="620" y="208" width="250" height="44" rx="5"/><text class="bl" x="629" y="226">Athletics</text><text class="bv" x="629" y="242">$618,801</text></g>
-<g class="b prog"><rect x="620" y="262" width="250" height="44" rx="5"/><text class="bl" x="629" y="280">Food service</text><text class="bv" x="629" y="296">$739,586</text></g>
-<g class="b prog"><rect x="620" y="316" width="250" height="44" rx="5"/><text class="bl" x="629" y="334">Extended day and after school</text><text class="bv" x="629" y="350">$340,899</text></g>
-<g class="b alt"><rect x="620" y="370" width="250" height="44" rx="5"/><text class="bl" x="629" y="388">Monty Tech assessment</text><text class="bv" x="629" y="404">$1,334,521</text></g>
-<g class="b alt"><rect x="620" y="424" width="250" height="44" rx="5"/><text class="bl" x="629" y="442">School retiree health insuranc</text><text class="bv" x="629" y="458">$1,521,536</text></g>
-<g class="b alt"><rect x="620" y="478" width="250" height="44" rx="5"/><text class="bl" x="629" y="496">Pension — school share unknown</text><text class="bv" x="629" y="512">$2,392,572</text></g>
-<g class="b alt"><rect x="620" y="532" width="250" height="44" rx="5"/><text class="bl" x="629" y="550">School resource stipend</text><text class="bv" x="629" y="566">$6,800</text></g>
+<div class="scroll"><svg viewBox="0 0 890 1164" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Sources of school money and where each lands">
+<text class="dhd" x="20" y="26">SOURCES</text>
+<text class="dhd" x="610" y="26">WHERE IT LANDS</text>
+<path class="e traced" d="M274,71.0 C442.0,71.0 442.0,71.0 610,71.0"/>
+<path class="e restricted" d="M274,187.0 C442.0,187.0 442.0,187.0 610,187.0"/>
+<path class="e restricted" d="M274,245.0 C442.0,245.0 442.0,187.0 610,187.0"/>
+<path class="e missing" d="M274,303.0 C442.0,303.0 442.0,303.0 610,303.0"/>
+<path class="e restricted" d="M274,361.0 C442.0,361.0 442.0,361.0 610,361.0"/>
+<path class="e restricted" d="M274,419.0 C442.0,419.0 442.0,419.0 610,419.0"/>
+<path class="e restricted" d="M274,477.0 C442.0,477.0 442.0,477.0 610,477.0"/>
+<path class="e restricted" d="M274,535.0 C442.0,535.0 442.0,477.0 610,477.0"/>
+<path class="e restricted" d="M274,593.0 C442.0,593.0 442.0,477.0 610,477.0"/>
+<path class="e restricted" d="M274,651.0 C442.0,651.0 442.0,651.0 610,651.0"/>
+<path class="e restricted" d="M274,709.0 C442.0,709.0 442.0,651.0 610,651.0"/>
+<path class="e restricted" d="M274,767.0 C442.0,767.0 442.0,651.0 610,651.0"/>
+<path class="e restricted" d="M274,825.0 C442.0,825.0 442.0,651.0 610,651.0"/>
+<path class="e traced" d="M274,941.0 C442.0,941.0 442.0,941.0 610,941.0"/>
+<path class="e traced" d="M274,941.0 C442.0,941.0 442.0,999.0 610,999.0"/>
+<path class="e unknown" d="M274,941.0 C442.0,941.0 442.0,1057.0 610,1057.0"/>
+<path class="e traced" d="M274,941.0 C442.0,941.0 442.0,1115.0 610,1115.0"/>
+<g class="b core"><rect x="20" y="48" width="254" height="46" rx="5"/><text class="bl" x="30" y="67">General fund — dept 300</text><text class="bv" x="30" y="83">$26,247,474</text></g>
+<g class="b fund"><rect x="20" y="164" width="254" height="46" rx="5"/><text class="bl" x="30" y="183">2640 Special Ed Circuit Breaker</text><text class="bv" x="30" y="199">$325,970</text></g>
+<g class="b grant"><rect x="20" y="222" width="254" height="46" rx="5"/><text class="bl" x="30" y="241">Federal and state grants</text><text class="bv" x="30" y="257">$495,918</text></g>
+<g class="b missing"><rect x="20" y="280" width="254" height="46" rx="5"/><text class="bl" x="30" y="299">Bus fees — charged</text><text class="bv" x="30" y="315">not found</text></g>
+<g class="b fund"><rect x="20" y="338" width="254" height="46" rx="5"/><text class="bl" x="30" y="357">1301 Chapter 658 Revolving Fund</text><text class="bv" x="30" y="373">$160,164</text></g>
+<g class="b fund"><rect x="20" y="396" width="254" height="46" rx="5"/><text class="bl" x="30" y="415">2200 School Lunch Revolving</text><text class="bv" x="30" y="431">$572,231</text></g>
+<g class="b fund"><rect x="20" y="454" width="254" height="46" rx="5"/><text class="bl" x="30" y="473">1312 Extended Day Revolving Fun</text><text class="bv" x="30" y="489">$192,943</text></g>
+<g class="b fund"><rect x="20" y="512" width="254" height="46" rx="5"/><text class="bl" x="30" y="531">1305 After School Activities Fu</text><text class="bv" x="30" y="547">$111,376</text></g>
+<g class="b fund"><rect x="20" y="570" width="254" height="46" rx="5"/><text class="bl" x="30" y="589">1306 School Facilities Use Revo</text><text class="bv" x="30" y="605">$18,670</text></g>
+<g class="b fund"><rect x="20" y="628" width="254" height="46" rx="5"/><text class="bl" x="30" y="647">1308 School Choice Revolving</text><text class="bv" x="30" y="663">$83,116</text></g>
+<g class="b fund"><rect x="20" y="686" width="254" height="46" rx="5"/><text class="bl" x="30" y="705">1311 School Gift Fund</text><text class="bv" x="30" y="721">$22,486</text></g>
+<g class="b fund"><rect x="20" y="744" width="254" height="46" rx="5"/><text class="bl" x="30" y="763">1300 Lost Books/Tech Rev Fund</text><text class="bv" x="30" y="779">$2,860</text></g>
+<g class="b fund"><rect x="20" y="802" width="254" height="46" rx="5"/><text class="bl" x="30" y="821">1302 Adult Education Revolving </text><text class="bv" x="30" y="837">$4,000</text></g>
+<g class="b core"><rect x="20" y="918" width="254" height="46" rx="5"/><text class="bl" x="30" y="937">General fund — other departments</text><text class="bv" x="30" y="953">not found</text></g>
+<g class="b core"><rect x="610" y="48" width="254" height="46" rx="5"/><text class="bl" x="620" y="67">THE SCHOOL BUDGET</text><text class="bv" x="620" y="83">$26,247,474</text></g>
+<g class="b prog"><rect x="610" y="164" width="254" height="46" rx="5"/><text class="bl" x="620" y="183">Special education</text><text class="bv" x="620" y="199">$6,329,681</text></g>
+<g class="b prog"><rect x="610" y="280" width="254" height="46" rx="5"/><text class="bl" x="620" y="299">Transportation</text><text class="bv" x="620" y="315">$1,531,234</text></g>
+<g class="b prog"><rect x="610" y="338" width="254" height="46" rx="5"/><text class="bl" x="620" y="357">Athletics</text><text class="bv" x="620" y="373">$618,801</text></g>
+<g class="b prog"><rect x="610" y="396" width="254" height="46" rx="5"/><text class="bl" x="620" y="415">Food service</text><text class="bv" x="620" y="431">$739,586</text></g>
+<g class="b prog"><rect x="610" y="454" width="254" height="46" rx="5"/><text class="bl" x="620" y="473">Extended day and after school</text><text class="bv" x="620" y="489">$340,899</text></g>
+<g class="b prog"><rect x="610" y="628" width="254" height="46" rx="5"/><text class="bl" x="620" y="647">Other own-fund activity</text><text class="bv" x="620" y="663">$112,463</text></g>
+<g class="b alt"><rect x="610" y="918" width="254" height="46" rx="5"/><text class="bl" x="620" y="937">Monty Tech assessment</text><text class="bv" x="620" y="953">$1,334,521</text></g>
+<g class="b alt"><rect x="610" y="976" width="254" height="46" rx="5"/><text class="bl" x="620" y="995">School retiree health insurance</text><text class="bv" x="620" y="1011">$1,521,536</text></g>
+<g class="b alt"><rect x="610" y="1034" width="254" height="46" rx="5"/><text class="bl" x="620" y="1053">Pension — school share unknown</text><text class="bv" x="620" y="1069">$2,392,572</text></g>
+<g class="b alt"><rect x="610" y="1092" width="254" height="46" rx="5"/><text class="bl" x="620" y="1111">School resource stipend</text><text class="bv" x="620" y="1127">$6,800</text></g>
 </svg></div>
 <div class="key"><span><i class="k traced"></i>traced — an account shows it</span><span><i class="k restricted"></i>restricted — the fund exists for this and nothing else, and is <b>not observed</b></span><span><i class="k missing"></i>collected, and cannot be located</span></div>
 <div class="cols">
@@ -191,11 +197,15 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 <div class="row"><div class="lab">SCHOOL LUNCH REVOLVING</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$572,231</div></div>
 <div class="row"><div class="lab">SPECIAL ED CIRCUIT BREAKER</div><div class="track"><div class="fill" style="width:56.96%"></div></div><div class="amt">$325,970</div></div>
 <div class="row"><div class="lab">EXTENDED DAY REVOLVING FUND</div><div class="track"><div class="fill" style="width:33.72%"></div></div><div class="amt">$192,943</div></div>
+<div class="row"><div class="lab">CHAPTER 658 REVOLVING FUND</div><div class="track"><div class="fill" style="width:27.99%"></div></div><div class="amt">$160,164</div></div>
 <div class="row"><div class="lab">AFTER SCHOOL ACTIVITIES FUND</div><div class="track"><div class="fill" style="width:19.46%"></div></div><div class="amt">$111,376</div></div>
 <div class="row"><div class="lab">SCHOOL CHOICE REVOLVING</div><div class="track"><div class="fill" style="width:14.52%"></div></div><div class="amt">$83,116</div></div>
+<div class="row"><div class="lab">FY26 FAMILY &amp; COMMUNITY 237</div><div class="track"><div class="fill" style="width:8.49%"></div></div><div class="amt">$48,558</div></div>
 <div class="row"><div class="lab">SCHOOL GIFT FUND</div><div class="track"><div class="fill" style="width:3.93%"></div></div><div class="amt">$22,486</div></div>
 <div class="row"><div class="lab">SCHOOL FACILITIES USE REVOLV</div><div class="track"><div class="fill" style="width:3.26%"></div></div><div class="amt">$18,670</div></div>
 <div class="row"><div class="lab">COMP SCHOOL HEALTH SERV GRANT</div><div class="track"><div class="fill" style="width:1.88%"></div></div><div class="amt">$10,775</div></div>
+<div class="row"><div class="lab">ADULT EDUCATION REVOLVING FUND</div><div class="track"><div class="fill" style="width:0.70%"></div></div><div class="amt">$4,000</div></div>
+<div class="row"><div class="lab">LOST BOOKS/TECH REV FUND</div><div class="track"><div class="fill" style="width:0.60%"></div></div><div class="amt">$2,860</div></div>
 </div>
 <h3>Grants</h3>
 <div class="bars">

@@ -174,14 +174,25 @@ def school_uses(c, top=11):
 
 
 def own_funds(c):
-    """The school's own funds — money that never enters the general fund at all."""
-    rows = c.execute(f"""
-        SELECT fund, name, revenue, spent, closing_balance FROM v_fund_year
+    """The schools' own funds — enumerated by NUMBER, never matched on name.
+
+    This function used to filter on names containing SCHOOL, EXTENDED DAY, ATHLETIC or
+    CIRCUIT. That silently dropped **fund 1301, the athletics revolving fund**, because the
+    town calls it `CHAPTER 658 REVOLVING FUND`. The bug survived being written about twice
+    — `LEDGER-STRUCTURE.md` says never identify a thing by its name in this ledger, and
+    `MONEY-NODES.md` lists 1301 as the proof — and was finally caught by the diagram,
+    which drew Athletics with no source box at all.
+
+    That is the argument for the diagram, incidentally. A missing row in a table looks like
+    a short table. A missing box under a line looks wrong.
+    """
+    return [(r['fund'], r['name'], r['revenue'] or 0, r['spent'] or 0)
+            for r in c.execute(f"""
+        SELECT fund, name, revenue, spent FROM v_fund_year
         WHERE fy={FY} AND period={P_DEPT} AND revenue > 0
-          AND (upper(name) LIKE '%SCHOOL%' OR upper(name) LIKE '%EXTENDED DAY%'
-               OR upper(name) LIKE '%CIRCUIT%')
-        ORDER BY revenue DESC""").fetchall()
-    return [(r['fund'], r['name'], r['revenue'], r['spent']) for r in rows]
+          AND (fund LIKE '13%' OR fund LIKE '15%' OR fund LIKE '22%' OR fund LIKE '26%'
+               OR fund LIKE '27%' OR fund LIKE '28%' OR fund LIKE '29%')
+        ORDER BY revenue DESC""")]
 
 
 # ---------------------------------------------------------------- the programme map
@@ -317,83 +328,131 @@ def programme_rows(c, fundnames):
     return out, d300
 
 
+# The vertical layout, as explicit rows. Each row may hold a left box, a right box, or
+# both, and a row with a gap on one side is deliberate.
+#
+# WHY THE ORDER IS HAND-SET RATHER THAN COMPUTED
+#
+# Because the readability of this diagram is almost entirely about CROSSINGS, and the fix
+# is to put a source beside the thing it pays for: the school lunch fund across from food
+# service, the athletics fund across from athletics. Sorting either column by size — the
+# obvious automatic rule — guarantees the opposite. A gap opposite a box costs nothing and
+# buys a horizontal line instead of a diagonal one.
+#
+# `general-other` is the general fund drawn a SECOND time, lower down, feeding the school
+# costs appropriated to other departments. Same source, two boxes, because one box at the
+# top with four long sweeping edges is unreadable and says nothing extra.
+LAYOUT = [
+    ('appropriation', 'core'),
+    (None, None),
+    ('2640', 'Special education'),
+    ('grants', None),
+    ('BUSFEES', 'Transportation'),
+    ('1301', 'Athletics'),
+    ('2200', 'Food service'),
+    ('1312', 'Extended day and after school'),
+    ('1305', None),
+    ('1306', None),
+    ('1308', 'Other own-fund activity'),
+    ('1311', None),
+    ('1300', None),
+    ('1302', None),
+    (None, None),
+    ('general-other', '0100-13102-532000'),
+    (None, '0100-19142-570018'),
+    (None, '0100-18202-560001'),
+    (None, '0100-12101-519021'),
+]
+
+# Which left box feeds which right box, beyond what the programme map already says.
+EXTRA_EDGES = [
+    ('1308', 'Other own-fund activity', 'restricted'),
+    ('1311', 'Other own-fund activity', 'restricted'),
+    ('1300', 'Other own-fund activity', 'restricted'),
+    ('1302', 'Other own-fund activity', 'restricted'),
+    ('general-other', '0100-13102-532000', 'traced'),
+    ('general-other', '0100-19142-570018', 'traced'),
+    ('general-other', '0100-18202-560001', 'unknown'),
+    ('general-other', '0100-12101-519021', 'traced'),
+]
+
+
 def diagram(progs, funds, d300, grant_spend, elsewhere):
-    """The actual flow: source boxes, landing boxes, and a line between them.
+    """The flow, laid out so a source sits beside the thing it pays for.
 
-    WHY THIS EXISTS AFTER I ARGUED AGAINST IT
-
-    The first attempt at this page dropped connectors as unreadable and left two columns of
-    cards. TJ, correctly: "I dont see a diagram/flow diagram." Two lists side by side are
-    not a diagram — the LINE is the claim, and a page whose subject is which money goes
-    where cannot leave the going-where implicit.
-
-    What makes it readable is not fewer lines, it is fewer CROSSINGS: landing boxes are
-    ordered to sit beside the sources that feed them, so most edges are short and
-    near-horizontal. The line style is the finding:
+    The line style is the finding, not decoration:
 
       solid       traced — an account or journal shows this money going here
       dashed      restricted — the fund exists for this and nothing else, and no expense
-                  report for special revenue funds exists, so it is NOT observed
-      dotted red  the money is collected and cannot be located at all
+                  report for the special revenue funds exists, so it is NOT observed
+      dotted      collected and cannot be located anywhere at all
 
-    Heights are uniform, unlike the money it represents, because a box has to hold a label.
-    The AMOUNT is printed in every box; the geometry carries the connection, never the
-    magnitude. A diagram that implied scale it does not have would be worse than a list.
+    Box heights are uniform and the amount is printed in each. **The geometry carries the
+    connection and never the magnitude** — a diagram implying a scale it does not have
+    would be worse than the list it replaced.
     """
-    LH, GAP, BW = 44, 10, 250
-    LX, RX, W = 20, 620, 900
+    LH, GAP, BW = 46, 12, 254
+    LX, RX, W = 20, 610, 890
 
-    left = [('appropriation', 'General fund — dept 300', d300, 'core')]
-    for f, nm, rev, sp in funds[:8]:
-        left.append((f, nm.title()[:30], rev, 'fund'))
-    left.append(('grants', 'Federal and state grants', grant_spend, 'grant'))
-    left.append(('BUSFEES', 'Bus fees — charged', None, 'missing'))
+    fundmeta = {f: (nm, rev) for f, nm, rev, sp in funds}
+    lbox = {
+        'appropriation': ('General fund — dept 300', d300, 'core'),
+        'grants': ('Federal and state grants', grant_spend, 'grant'),
+        'BUSFEES': ('Bus fees — charged', None, 'missing'),
+        'general-other': ('General fund — other departments', None, 'core'),
+    }
+    for f, (nm, rev) in fundmeta.items():
+        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund')
 
-    right, edges = [], []
-    right.append(('core', 'THE SCHOOL BUDGET', d300, 'core'))
-    edges.append(('appropriation', 'core', 'traced'))
+    rbox = {'core': ('THE SCHOOL BUDGET', d300, 'core'),
+            'Other own-fund activity': ('Other own-fund activity',
+                                        sum(fundmeta.get(f, ('', 0))[1]
+                                            for f in ('1308', '1311', '1300', '1302')),
+                                        'prog')}
+    edges = [('appropriation', 'core', 'traced')]
     for p in progs:
         if not p['outs']:
             continue
-        key = p['name']
-        right.append((key, p['name'], p['inside'] + sum(v for _, v, _, _ in p['outs']),
-                      'prog'))
+        rbox[p['name']] = (p['name'], p['inside'] + sum(v for _, v, _, _ in p['outs']),
+                           'prog')
         for f, v, how, nm in p['outs']:
-            if any(f == k for k, *_ in left):
-                edges.append((f, key, how))
-            elif how == 'missing':
-                edges.append(('BUSFEES', key, 'missing'))
-            else:
-                edges.append(('grants', key, 'restricted'))
+            src = f if f in lbox else ('BUSFEES' if how == 'missing' else 'grants')
+            edges.append((src, p['name'], how))
     for aid, label, why in ELSEWHERE_MAP:
         r = elsewhere.get(aid)
         if r:
-            right.append((aid, label[:30], r['v'], 'alt'))
-            edges.append(('appropriation', aid, 'traced'))
+            rbox[aid] = (label[:32], r['v'], 'alt')
+    edges += EXTRA_EDGES
 
-    H = max(len(left), len(right)) * (LH + GAP) + 70
-    ly = {k: 46 + i * (LH + GAP) for i, (k, *_) in enumerate(left)}
-    ry = {k: 46 + i * (LH + GAP) for i, (k, *_) in enumerate(right)}
+    ly, ry, row = {}, {}, 0
+    for lk, rk in LAYOUT:
+        y = 48 + row * (LH + GAP)
+        if lk and lk in lbox:
+            ly[lk] = y
+        if rk and rk in rbox:
+            ry[rk] = y
+        row += 1
+    H = 48 + row * (LH + GAP) + 14
 
     o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
-         f'role="img" aria-label="Sources of school money and where each lands">']
-    o.append('<text class="dhd" x="20" y="24">SOURCES</text>')
-    o.append(f'<text class="dhd" x="{RX}" y="24">WHERE IT LANDS</text>')
+         f'role="img" aria-label="Sources of school money and where each lands">',
+         '<text class="dhd" x="20" y="26">SOURCES</text>',
+         f'<text class="dhd" x="{RX}" y="26">WHERE IT LANDS</text>']
+    seen = set()
     for src, dst, how in edges:
-        if src not in ly or dst not in ry:
+        if src not in ly or dst not in ry or (src, dst) in seen:
             continue
+        seen.add((src, dst))
         y1, y2 = ly[src] + LH / 2, ry[dst] + LH / 2
-        x1, x2 = LX + BW, RX
-        mx = (x1 + x2) / 2
+        x1, x2, mx = LX + BW, RX, (LX + BW + RX) / 2
         o.append(f'<path class="e {how}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
-    for col, items, x in (('l', left, LX), ('r', right, RX)):
-        yy = ly if col == 'l' else ry
-        for key, label, val, kind in items:
-            y = yy[key]
+    for boxes, ys, x in ((lbox, ly, LX), (rbox, ry, RX)):
+        for key, y in ys.items():
+            label, val, kind = boxes[key]
             o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{BW}" '
                      f'height="{LH}" rx="5"/>'
-                     f'<text class="bl" x="{x+9}" y="{y+18}">{html.escape(label)}</text>'
-                     f'<text class="bv" x="{x+9}" y="{y+34}">'
+                     f'<text class="bl" x="{x+10}" y="{y+19}">{html.escape(label)}</text>'
+                     f'<text class="bv" x="{x+10}" y="{y+35}">'
                      f'{money(val) if val is not None else "not found"}</text></g>')
     o.append('</svg>')
     return '\n'.join(o)
@@ -592,6 +651,7 @@ svg.flow {{ display:block; min-width:900px; height:auto }}
 .e.traced {{ stroke:var(--school); opacity:.55 }}
 .e.restricted {{ stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }}
 .e.missing {{ stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }}
+.e.unknown {{ stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }}
 .key {{ display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
   margin:-4px 0 6px }}
 .key span {{ display:flex; align-items:center; gap:6px }}
