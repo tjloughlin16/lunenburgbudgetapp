@@ -55,18 +55,20 @@ const ABS = (p: string) => `${MANIFEST.site}${p}`
 
 export function DataTopLine() {
   const host = MANIFEST.site.replace(/^https?:\/\//, '')
-  const link = (p: string, label?: string) => (
-    <a href={ABS(p)} className="underline underline-offset-2"
-       style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
-      {label ?? `${host}${p}`}
-    </a>
-  )
   return (
     <div className="border-b" style={{ borderColor: 'var(--grid)' }}>
-      <p className="mx-auto max-w-6xl px-5 py-1.5 text-[11px] leading-snug"
-         style={{ color: 'var(--text-muted)' }}>
-        Reading this with software, or want an AI to analyse it?{' '}
-        {link('/ask')} has the prompt, the data API and an MCP server.
+      <p className="mx-auto max-w-6xl px-5 py-1.5 text-[12px]">
+        {/* The link text is the DESCRIPTION, not "click here". A screen reader can list a
+          * page's links out of context, and "click here" nine times is a list of nine
+          * identical entries -- WCAG 2.4.4. It also means the words a person scans are the
+          * words that say what happens, which is the same reason it reads better. */}
+        <a href={ABS('/ask')} className="font-semibold underline underline-offset-2"
+          style={{ color: 'var(--series-cost)' }}>
+          Analyse this budget with AI
+        </a>
+        <span className="ml-2" style={{ color: 'var(--text-muted)' }}>
+          {host}/ask
+        </span>
       </p>
     </div>
   )
