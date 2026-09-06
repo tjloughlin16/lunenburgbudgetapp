@@ -219,19 +219,25 @@ def diagram(d, c2):
         if r:
             part[dept] = (r['v'], lab)
 
-    lrows = [('levy', 'Property tax levy', d['revclass'].get('levy', 0), 'gf'),
-             ('state', 'State aid', d['revclass'].get('state', 0), 'gf'),
-             ('local', 'Local receipts', d['revclass'].get('local', 0), 'gf'),
-             ('onetime', 'One-time money', d['revclass'].get('onetime', 0), 'gf'),
-             ('transfer', 'Transfers in', d['revclass'].get('transfer', 0), 'gf')]
-    ent = [(f, nm.title()[:24], v) for f, nm, v in d['ent_in']]
-    for f, nm, v in ent:
-        lrows.append((f'ent-{f}', nm, v, 'ent'))
-    for r in d['srfunds']:
-        lrows.append((f'sr-{r["fund"]}', f'{r["fund"]} {r["name"].title()[:22]}',
-                      r['revenue'] or 0, 'sch'))
+    # THREE SECTIONS, and the alignment trick is in the second and third.
+    #
+    # The general fund cannot align: five revenue classes on the left, sixty-nine
+    # departments on the right, and everything passes through the pot anyway, so a
+    # horizontal line would mean nothing there.
+    #
+    # The funds CAN, and must. A fund's revenue and its spending are the same fund, so
+    # they get ONE ROW with a box on each side it has. A fund with revenue and no spending
+    # gets a left box and empty space opposite; a grant fund that spends without booking
+    # revenue gets a right box and empty space. That is the "leave space on one side" trick
+    # TJ named earlier, applied per fund instead of per column — and it means a horizontal
+    # line always reads as "this fund", never as a coincidence of ordering.
+    lrows, rrows, edges_fund = [], [], []
 
-    rrows = []
+    # --- section A: the general fund
+    for k, lab in (('levy', 'Property tax levy'), ('state', 'State aid'),
+                   ('local', 'Local receipts'), ('onetime', 'One-time money'),
+                   ('transfer', 'Transfers in')):
+        lrows.append((k, lab, d['revclass'].get(k, 0), 'gf'))
     for r in d['depts']:
         dept = r['dept']
         if dept in part:
@@ -246,15 +252,40 @@ def diagram(d, c2):
         else:
             rrows.append((f'd{dept}', f'{dept} {r["name"].title()[:24]}', r['v'],
                           'sch' if dept in SCHOOL_DEPTS else 'gf'))
-    for f, nm, v in ent:
-        if d['ent_out'].get(f):
-            rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent'))
-    for r in d['srspend']:
-        rrows.append((f'sro-{r["fund"]}', f'{r["fund"]} {r["name"].title()[:20]} — spent',
-                      r['spent'] or 0, 'sch'))
+    secA = max(len(lrows), len(rrows))
+    lrows += [(None, '', 0, '')] * (secA - len(lrows))
+    rrows += [(None, '', 0, '')] * (secA - len(rrows))
+    lrows.append((None, '', 0, ''))
+    rrows.append((None, '', 0, ''))
 
-    ly = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(lrows)}
-    ry = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(rrows)}
+    # --- section B: the enterprise funds, one row each
+    ent = {f: (nm, v) for f, nm, v in d['ent_in']}
+    for f in sorted(set(ent) | set(d['ent_out']), key=lambda x: -(ent.get(x, ('', 0))[1])):
+        nm = ent.get(f, (f, 0))[0].title()[:24]
+        lrows.append((f'ent-{f}', nm, ent[f][1], 'ent') if f in ent else (None, '', 0, ''))
+        rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent')
+                     if d['ent_out'].get(f) else (None, '', 0, ''))
+        if f in ent and d['ent_out'].get(f):
+            edges_fund.append((f'ent-{f}', f'ento-{f}', 'bypass'))
+    lrows.append((None, '', 0, ''))
+    rrows.append((None, '', 0, ''))
+
+    # --- section C: every special revenue fund, one row each
+    inn = {r['fund']: r for r in d['srfunds']}
+    out = {r['fund']: r for r in d['srspend']}
+    for f in sorted(set(inn) | set(out),
+                    key=lambda x: -max((inn.get(x) or {'revenue': 0})['revenue'] or 0,
+                                       (out.get(x) or {'spent': 0})['spent'] or 0)):
+        nm = (inn.get(f) or out[f])['name'].title()[:20]
+        lrows.append((f'sr-{f}', f'{f} {nm}', inn[f]['revenue'] or 0, 'sch')
+                     if f in inn else (None, '', 0, ''))
+        rrows.append((f'sro-{f}', f'{f} {nm} — spent', out[f]['spent'] or 0, 'sch')
+                     if f in out else (None, '', 0, ''))
+        if f in inn and f in out:
+            edges_fund.append((f'sr-{f}', f'sro-{f}', 'restricted'))
+
+    ly = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(lrows) if k}
+    ry = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(rrows) if k}
     H = 52 + max(len(lrows), len(rrows)) * (LH + GAP) + 16
     pot_top, pot_bot = ly['levy'], ly['transfer'] + LH
 
@@ -271,21 +302,16 @@ def diagram(d, c2):
 
     pot_mid = (pot_top + pot_bot) / 2
     for k, *_ in lrows[:5]:
-        edge(LX + BW, ly[k] + LH / 2, MX, pot_mid, 'traced')
+        if k:
+            edge(LX + BW, ly[k] + LH / 2, MX, pot_mid, 'traced')
     for k, lab, v, kind in rrows:
-        if k.startswith('d'):
+        if k and k.startswith('d'):
             edge(MX + MW, pot_mid, RX, ry[k] + LH / 2,
                  'school' if kind == 'sch' else
                  ('unknown' if kind == 'mix' else 'traced'))
-    for f, nm, v in ent:
-        if d['ent_out'].get(f):
-            edge(LX + BW, ly[f'ent-{f}'] + LH / 2, RX, ry[f'ento-{f}'] + LH / 2,
-                 'bypass', dip=90)
-    for r in d['srfunds']:
-        k = f'sro-{r["fund"]}'
-        if k in ry:
-            edge(LX + BW, ly[f'sr-{r["fund"]}'] + LH / 2, RX, ry[k] + LH / 2,
-                 'restricted', dip=70)
+    # Every fund edge is now perfectly horizontal, because the two boxes share a row.
+    for src, dst, how in edges_fund:
+        edge(LX + BW, ly[src] + LH / 2, RX, ry[dst] + LH / 2, how)
 
     o.append(f'<g class="b pot"><rect x="{MX}" y="{pot_top}" width="{MW}" '
              f'height="{pot_bot - pot_top}" rx="7"/>'
@@ -305,6 +331,8 @@ def diagram(d, c2):
 
     for rows, ys, x in ((lrows, ly, LX), (rrows, ry, RX)):
         for k, label, v, kind in rows:
+            if not k:
+                continue
             y = ys[k]
             o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{BW}" '
                      f'height="{LH}" rx="5"/>'
