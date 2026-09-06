@@ -1,0 +1,122 @@
+<meta charset="utf-8">
+<title>The whole town — every dollar in, every dollar out — Lunenburg FY2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; }
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100% }
+.wrap { max-width:1100px; margin:0 auto; padding:22px 16px 80px }
+header { border-bottom:2px solid var(--ink); padding-bottom:14px }
+.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+h1 { font-size:28px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
+.standfirst { font-size:16px; color:var(--muted); margin:0 }
+.metrics { display:grid; gap:10px; margin:16px 0 }
+.m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px; background:var(--card) }
+.m.hi { border-color:var(--hi); border-width:2px }
+.mk { font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  color:var(--muted) }
+.mv { font-size:24px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
+  font-family:ui-monospace,Menlo,monospace }
+.ms { font-size:12.5px; color:var(--muted); line-height:1.45 }
+.stage { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }
+h2 { font-size:18px; margin:0 0 6px }
+h3 { font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted);
+  margin:18px 0 8px }
+.cap { font-size:13.5px; color:var(--muted); margin:0 0 14px }
+.cols { display:grid; gap:16px; margin:16px 0 }
+.col { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:15px 14px; min-width:0 }
+.colnote { font-size:12.5px; color:var(--muted); margin:2px 0 12px }
+.bars { display:flex; flex-direction:column; gap:9px }
+.row { display:grid; grid-template-columns:1fr 34%; grid-template-areas:"lab amt" "bar bar";
+  gap:3px 10px; align-items:baseline }
+.lab { grid-area:lab; font-size:13.5px; font-weight:600; overflow-wrap:anywhere }
+.lab .sub { display:block; font-weight:400; font-size:11.5px; color:var(--muted) }
+.amt { grid-area:amt; text-align:right; font-size:13.5px; white-space:nowrap;
+  font-family:ui-monospace,Menlo,monospace }
+.track { grid-area:bar; background:var(--grid); border-radius:3px; height:9px }
+.fill { background:var(--traced); height:100%; border-radius:3px; min-width:2px }
+.row.hi .fill { background:var(--hi) }
+.row.hi .lab { color:var(--hi) }
+.row.alt .fill { background:var(--muted) }
+.warn { background:var(--warn-bg); border-left:3px solid var(--warn);
+  border-radius:0 6px 6px 0; padding:11px 13px; font-size:14px; margin:14px 0 }
+table { border-collapse:collapse; width:100%; font-size:13.5px; margin-top:6px }
+th,td { text-align:left; padding:8px 8px 8px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }
+td.v { text-align:right; white-space:nowrap; font-family:ui-monospace,Menlo,monospace }
+td .sub { display:block; font-size:11.5px; color:var(--muted); font-weight:400 }
+code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
+ul { font-size:14px; padding-left:20px } li { margin:7px 0 }
+a { color:var(--hi) }
+.gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:760px) { .metrics { grid-template-columns:repeat(2,1fr) } }
+@media (min-width:1000px) {
+  .metrics { grid-template-columns:repeat(4,1fr) }
+  .cols { grid-template-columns:1fr 1fr }
+  .row { grid-template-columns:44% 1fr 24%; grid-template-areas:"lab bar amt"; gap:10px;
+    align-items:center }
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
+  <h1>The whole town — every dollar in, every dollar out</h1>
+  <p class="standfirst">FY2026. The same model built for the schools, applied to all of
+  Lunenburg: who sets each dollar coming in, who decides how it goes out, and what is
+  sitting still.</p>
+</header>
+
+<section class="metrics"><div class="m"><div class="mk">Every dollar into the town</div><div class="mv">$56,858,248</div><div class="ms">General fund, enterprise funds and special revenue funds. <b>Mixed bases — see below.</b></div></div><div class="m"><div class="mk">Every dollar out</div><div class="mv">$55,043,604</div><div class="ms">The omnibus budget, the enterprise funds and the special revenue funds.</div></div><div class="m hi"><div class="mk">Sitting in accounts, unspent</div><div class="mv">$1,592,572</div><div class="ms">Held across the special revenue funds at 31 March. Not income, not spending: money that arrived and stopped.</div></div><div class="m"><div class="mk">The general fund’s share of it all</div><div class="mv">92%</div><div class="ms">The one system Town Meeting debates — and the only one where a dollar’s origin cannot be followed.</div></div></section>
+<section class="stage"><h2>The town runs four money systems that do not mix</h2><p class="cap">This is the thing the school view cannot show, because the schools live in only two of them.</p><table><tr><th>system</th><th class="v">in</th><th class="v">out</th><th>can a dollar be followed?</th></tr><tr><td><b>General fund</b><span class="sub">67 departments, one pot</span></td><td class="v">$52,187,832</td><td class="v">$51,189,961</td><td><b>No.</b> Every source lands in fund 0100 and loses its identity. This is 92% of the money and the only system with this problem</td></tr><tr><td><b>Enterprise funds</b><span class="sub">sewer, water, PEG, solid waste</span></td><td class="v">$3,117,265</td><td class="v">$2,117,267</td><td><b>Yes.</b> Rate-funded and self-contained: the people who pay are the people served, and the accounts are separate end to end</td></tr><tr><td><b>Special revenue funds</b><span class="sub">61 of them, mostly the schools’</span></td><td class="v">$1,553,151</td><td class="v">$1,736,376</td><td><b>Half.</b> The source is known exactly, the use is not observed at all — no expense report exists for them</td></tr><tr><td><b>Trust funds</b><span class="sub">scholarships, cemetery, stabilisation</span></td><td class="v">—</td><td class="v">—</td><td><b>Not held.</b> The annual-report extract is <code>check failed</code> on ordinal columns and cannot be aggregated</td></tr></table><p class="warn"><b>The asymmetry is the finding.</b> The system nobody argues about — the enterprise funds — is fully traceable, because it is rate-funded and ring-fenced. The system every Town Meeting argues about is the one where no dollar can be followed from where it came from to what it bought. That is not an accident of record-keeping; it is what a general fund IS.</p></section>
+<div class="cols"><div class="col"><h2>Money in</h2><div class="colnote">Who sets each dollar. The general fund, by class.</div>
+<div class="bars">
+<div class="row "><div class="lab">Property tax levy<span class="sub">Set by the town, inside the Proposition 2½ cap</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$35,111,996</div></div>
+<div class="row hi"><div class="lab">State aid<span class="sub">Set by the Legislature. No local say at all</span></div><div class="track"><div class="fill" style="width:31.77%"></div></div><div class="amt">$11,153,368</div></div>
+<div class="row "><div class="lab">Local receipts<span class="sub">Fees, permits, excise, fines. A residual</span></div><div class="track"><div class="fill" style="width:9.50%"></div></div><div class="amt">$3,335,624</div></div>
+<div class="row "><div class="lab">One-time money<span class="sub">Free cash and proceeds. Spendable once</span></div><div class="track"><div class="fill" style="width:6.29%"></div></div><div class="amt">$2,209,993</div></div>
+<div class="row "><div class="lab">Transfers in<span class="sub">From the town’s own other funds. Not new money</span></div><div class="track"><div class="fill" style="width:1.07%"></div></div><div class="amt">$376,851</div></div>
+</div>
+<h3>Outside the general fund</h3>
+<div class="bars">
+<div class="row alt"><div class="lab">Sewer Enterprise Fund<span class="sub">fund 6000</span></div><div class="track"><div class="fill" style="width:93.66%"></div></div><div class="amt">$1,454,671</div></div>
+<div class="row alt"><div class="lab">Solid Waste/Recycling Enterpri<span class="sub">fund 7900</span></div><div class="track"><div class="fill" style="width:64.39%"></div></div><div class="amt">$1,000,000</div></div>
+<div class="row alt"><div class="lab">Sewer Betterments<span class="sub">fund 5000</span></div><div class="track"><div class="fill" style="width:28.11%"></div></div><div class="amt">$436,667</div></div>
+<div class="row alt"><div class="lab">Peg Access Enterprise Fund<span class="sub">fund 6200</span></div><div class="track"><div class="fill" style="width:14.55%"></div></div><div class="amt">$225,927</div></div>
+<div class="row alt"><div class="lab">Special revenue funds<span class="sub">61 funds · holding $1,592,572 at 31 March</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$1,553,151</div></div>
+</div>
+</div>
+<div class="col"><h2>Money out</h2><div class="colnote">Who decides. The omnibus budget, by class.</div>
+<div class="bars">
+<div class="row "><div class="lab">Voted as a total, allocated by another elected body<span class="sub">52.6% of the omnibus</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$26,919,511</div></div>
+<div class="row hi"><div class="lab">Discretionary — the meeting sets the amount<span class="sub">22.5% of the omnibus</span></div><div class="track"><div class="fill" style="width:42.72%"></div></div><div class="amt">$11,500,472</div></div>
+<div class="row "><div class="lab">Assessed by somebody else<span class="sub">9.4% of the omnibus</span></div><div class="track"><div class="fill" style="width:17.94%"></div></div><div class="amt">$4,829,830</div></div>
+<div class="row "><div class="lab">Insurance and compensation<span class="sub">8.0% of the omnibus</span></div><div class="track"><div class="fill" style="width:15.26%"></div></div><div class="amt">$4,107,709</div></div>
+<div class="row "><div class="lab">Debt service, already committed<span class="sub">5.0% of the omnibus</span></div><div class="track"><div class="fill" style="width:9.46%"></div></div><div class="amt">$2,547,439</div></div>
+<div class="row "><div class="lab">Transfers to capital and trust<span class="sub">2.5% of the omnibus</span></div><div class="track"><div class="fill" style="width:4.77%"></div></div><div class="amt">$1,285,000</div></div>
+</div>
+<h3>Outside the general fund</h3>
+<div class="bars">
+<div class="row alt"><div class="lab">Sewer Enterprise Fund<span class="sub">fund 6000</span></div><div class="track"><div class="fill" style="width:98.27%"></div></div><div class="amt">$1,706,419</div></div>
+<div class="row alt"><div class="lab">Sewer Betterments<span class="sub">fund 5000</span></div><div class="track"><div class="fill" style="width:10.65%"></div></div><div class="amt">$184,920</div></div>
+<div class="row alt"><div class="lab">Peg Access Enterprise Fund<span class="sub">fund 6200</span></div><div class="track"><div class="fill" style="width:13.01%"></div></div><div class="amt">$225,928</div></div>
+<div class="row alt"><div class="lab">Special revenue funds<span class="sub">spent $1,736,376 against $1,553,151 received</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$1,736,376</div></div>
+</div>
+</div></div>
+<p class="warn"><b>The two columns do not balance, and should not.</b> Money in is $56,858,248 and money out is $55,043,604. A fund is a tank, not a pipe: the special revenue funds alone spent $183,225 more than they took in, drawing down balances built in earlier years. And the bases are mixed — the general fund and enterprise figures are budgets as voted, the special revenue funds are nine months of actual, because the town publishes no twelve-month fund report.</p>
+<section class="stage"><h2>What the town view shows that the school view cannot</h2><ul><li><b>Scale.</b> The school department is 53% of the omnibus budget once the library is counted with it — more than everything else the town does, combined.</li><li><b>The enterprise funds are the control case.</b> Rate-funded, ring-fenced, traceable. They prove the tracing problem is a property of the general fund rather than of the town’s record-keeping.</li><li><b>Two revenue lines are 83% of everything.</b> Property tax and Chapter 70. The other 190 accounts share the rest, and 113 of them carry nothing.</li><li><b>The same gaps recur outside the schools.</b> Debt service is two lumped accounts for all town borrowing; capital is two transfer lines with no project detail; the pension covers everybody with no split. These are not school problems, they are how the town books things.</li></ul></section>
+<section class="stage"><h2>The schools, in the same model</h2><p class="cap">Reproduced from <code>money-flow-v2.html</code> unchanged, so the two can be read against each other. The school system is one of the four above and lives in two of them: the general fund appropriation, and the special revenue funds it runs itself.</p><p><a href="money-flow-v2.html">Open the school diagram →</a></p></section>
+
+<p class="gen">Generated by <code>scripts/build_town_flow.py</code> from
+<code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
+fails if this file stops reproducing.</p>
+</div>

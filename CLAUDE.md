@@ -608,6 +608,7 @@ than a budget setting.
     python3 scripts/build_discrepancy_review.py   # the categories of discrepancy, for review by the Town
     python3 scripts/minutes_decisions.py         # ...and every quote in it, checked against the minutes
     python3 scripts/check_sent_documents.py      # has anything we sent the Town drifted from what we hold
+    python3 scripts/build_town_flow.py           # the whole town in the school model — in, out, held
     python3 scripts/build_who_decides.py         # every dollar in, where it lands, who decides
     python3 scripts/build_ledger_structure.py    # how the town's ledger is built and named
     python3 scripts/build_money_nodes.py         # every node in the school money graph, in/out
