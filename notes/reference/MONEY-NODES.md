@@ -96,6 +96,16 @@ Bus fees are charged. The schedule is verified against the Superintendent’s Ma
 
 So a fee that is charged by published policy has **no observable destination in any ledger we hold**. That is not the same as saying the money is unaccounted for — it is saying we cannot see it, which is a statement about our documents and not about the town’s books.
 
+**The meeting archive carries what the ledger does not.** Searching it for the contractor’s name — rule 15a, and TJ knew to look — produces the shape of the programme the accounts will not show:
+
+- *Transportation contract, School Committee 8 January 2025:* “Dr. Gilson supplied the bid with **Dee Bus**, it is a 3 year contract with tentative increases over the 3 years.” The vendor the $1.75M is paid to, and the term.
+- *Bus fee vote:* “a motion to vote on bus fees and send to policy subcommittee for setting rates… The rates would be **$180 for 1 child, $270 for 2 kids**.” Policy 3601.01 adopted 21 May 2025.
+- *Superintendent’s report, 4 June 2025:* “We have received **1,074 bus requests, and have 494 unpaid** at this time. We will send a list to Dee bus, so they can designate bus routes, **names will not be forwarded to Dee Bus unless or until the fee is paid**.”
+
+**That last quote is the closest thing to a measurement of this programme that exists anywhere.** It is a count of requests at one date, not of families and not of payments, so it does not yield a revenue figure — 1,074 requests could be far fewer families, and “unpaid at this time” in June says nothing about September. What it does establish is that the fee is administered, tracked, and enforced by withholding the route. This is real money moving through a programme whose receipts we cannot locate in any ledger.
+
+It also dates the fee. The policy was adopted **21 May 2025**, after the FY2026 budget was built — which is one ordinary explanation for `STUDENTBUS` being budgeted at zero, and explains nothing about it having received zero.
+
 Note what this does to the intuition. The natural guess is that the fees sit in a fund and pay bus bills directly, on top of the appropriation. That may be exactly right. It is also possible they land in the general fund and simply have not been booked yet. **Nothing we hold distinguishes those, and they imply very different things about who is paying for buses.**
 
 
