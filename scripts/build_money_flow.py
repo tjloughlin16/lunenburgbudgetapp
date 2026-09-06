@@ -973,25 +973,43 @@ def render_v2(c):
                         if sub else '') + '</g>')
     o.append('</svg>')
 
+    # NOT "the column added up". That figure was $33,220,787 and it is meaningless as
+    # school spending: it mixes a BUDGET with actuals, counts Monty Tech (a different
+    # district) and the WHOLE town's pension. TJ read it as the schools' annual spend,
+    # which is exactly what a metric card labelled "this column adds" invites. The column
+    # adding is a property of the drawing, not a finding, and it is a note now.
+    d300_spent = c.execute(f"""SELECT SUM(l.expended) v FROM ledger_snapshot l
+        JOIN account a USING (account_id) WHERE l.fy={FY} AND l.period={P_ACCT}
+          AND a.dept='300'""").fetchone()['v'] or 0
+    town_also = sum(v for k, v in els.items()
+                    if not k.endswith('560001') and not k.endswith('532000'))
     right_total = sum(v for _, v, *_ in rbox.values() if v is not None)
+
     P = [f'<section class="metrics">'
          f'<div class="m"><div class="mk">Appropriated to the schools</div>'
-         f'<div class="mv">{money(d300)}</div><div class="ms">Department 300. '
-         f'<b>The number in every headline.</b></div></div>'
-         f'<div class="m"><div class="mk">Every box on the right, added</div>'
-         f'<div class="mv">{money(right_total)}</div>'
-         f'<div class="ms"><b>This column adds.</b> Each dollar appears exactly once, '
-         f'which is the whole change from version one.</div></div>'
-         f'<div class="m hi"><div class="mk">Not in the school budget</div>'
-         f'<div class="mv">+{money(right_total - d300)}</div>'
-         f'<div class="ms">Education the town appropriates elsewhere, plus everything the '
-         f'district spends from its own funds and grants.</div></div></section>',
-         f'<p class="warn"><b>Mixed bases, and it cannot be helped.</b> The appropriation '
-         f'is a budget as voted; fund and grant figures are nine months of ACTUAL spending, '
-         f'because the town publishes no twelve-month fund report. The pension is included '
-         f'at its full {money(els["0100-18202-560001"])} even though only some of it is '
-         f'schools — <b>so the right-hand total is an over-count by an unknown amount, and '
-         f'every other figure here is a floor.</b></p>',
+         f'<div class="mv">{money(d300)}</div><div class="ms">Department 300, as Town '
+         f'Meeting voted. <b>The number in every headline.</b></div></div>'
+         f'<div class="m hi"><div class="mk">What the school system SPENT</div>'
+         f'<div class="mv">{money(d300_spent + f_out)}</div>'
+         f'<div class="ms">{money(d300_spent)} out of the appropriation through period 12, '
+         f'plus {money(f_out)} from its own funds and grants through period 9.</div></div>'
+         f'<div class="m"><div class="mk">The town spent on schools beyond that</div>'
+         f'<div class="mv">{money(town_also)}+</div>'
+         f'<div class="ms">Retiree health and the resource stipend, appropriated to other '
+         f'departments — <b>plus an unknown share of the {money(els["0100-18202-560001"])} '
+         f'pension.</b> Monty Tech is excluded: it is a different district.</div></div>'
+         '</section>',
+         f'<p class="warn"><b>Mixed bases, and it cannot be helped.</b> Department 300 is '
+         f'actual spending through period 12; the funds are actual through period 9, '
+         f'because the town publishes no twelve-month fund report. <b>So the middle figure '
+         f'is a floor</b> — three more months of fund spending are not in it, and neither '
+         f'is any part of the pension.</p>'
+         f'<p class="cap"><b>Do not add the right-hand column and call it school '
+         f'spending.</b> It comes to {money(right_total)} and that figure means nothing: '
+         f'the school budget box is a BUDGET rather than spending, Monty Tech is a '
+         f'different district, and the pension box is the whole town’s. The column adds '
+         f'because each dollar is drawn once — that is a property of the drawing, not a '
+         f'finding about the schools.</p>',
          f'<div class="scroll">{chr(10).join(o)}</div>',
          '<div class="key"><span><i class="k traced"></i>traced</span>'
          '<span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never '
