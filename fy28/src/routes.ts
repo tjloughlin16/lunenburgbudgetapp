@@ -11,7 +11,7 @@
 
 export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
-  | 'dataroom' | 'reports' | 'agents'
+  | 'dataroom' | 'reports' | 'agents' | 'ask'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -47,6 +47,10 @@ export const SLUG: Record<Tab, string> = {
   // page could read the name of a file and not be allowed to request it. See
   // components/AgentsIndex.tsx -- this page exists to put them in the link graph.
   agents: 'agents',
+  // How to point an assistant at this archive, with the prompt to paste. Short address
+  // on purpose: it gets read aloud and typed on a phone, which is the same reason
+  // lburg.org exists. See components/AskAnAssistant.tsx.
+  ask: 'ask',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -119,6 +123,7 @@ export const LABEL: Record<Tab, string> = {
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
   reports: 'Reports and analyses',
+  ask: 'How to query this data',
   agents: 'Every address on this site, as links',
   dataroom: 'The data room',
 }

@@ -84,6 +84,26 @@ ANSWERS = [
      '/docs/analyses/sped-and-the-curve.md', ''),
 ]
 
+# The QUERY stack, as opposed to ANSWERS above, which are files that hold a topic.
+# These are what an assistant uses to find out what exists and then ask it something,
+# and they are the addresses the /ask page pastes into a person's prompt.
+#
+# They live here rather than in the page component for rule 2: a URL typed into a
+# component is a figure typed into prose, and `exists()` below cannot check one that
+# nothing generated. Anything unpublished drops out rather than being advertised.
+QUERY = [
+    ('/llms.txt', 'start here — what this site holds and how to read it'),
+    ('/api/index', 'every machine-readable address, as JSON'),
+    ('/api/tables', 'what data EXISTS before you ask anything: 49 datasets, the years '
+                    'each covers, row counts. 5KB'),
+    ('/api/schema', 'the grain of every table, and four ways to get a confident wrong '
+                    'answer out of it'),
+    ('/api/questions', '107 worked questions, each with the query that answers it'),
+    ('/api/query?sql=SELECT%20name%20FROM%20sqlite_master%20WHERE%20type%3D%27table%27',
+     'one read-only SELECT over the database, as a plain GET. Returns the documents its '
+     'rows came from'),
+]
+
 EXTRA = [
     ('/llms.txt', 'the full guide to all of the above'),
     ('/sitemap.xml', 'every page'),
@@ -248,6 +268,17 @@ def main():
         answers=[dict(question=q, path=pth, note=n) for q, pth, n in rows],
         boards=[dict(name=n, docs=c) for n, c in boards()],
         extra=[dict(path=pth, note=n) for pth, n in EXTRA if exists(pth)],
+        # `exists()` checks a published FILE. /api/query is a Function with no file behind
+        # it, and /api/index is written by build_api.py after this runs on a cold build,
+        # so neither can be filtered that way -- they are checked live by check-agents.mjs
+        # instead, which fetches every advertised URL.
+        query=[dict(path=pth, note=n) for pth, n in QUERY],
+        # How many worked questions the bank holds, read from the bank rather than typed.
+        # The /ask page states this number to a reader, and rule 2 covers every generated
+        # surface, not just the model.
+        questions=len(json.load(open(os.path.join(PUB, 'api', 'questions.json')))
+                      .get('questions', []))
+        if exists('/api/questions.json') else 0,
         corpus=corpus,
     )
     mj = os.path.join(ROOT, 'fy28', 'src', 'data', 'agent-manifest.json')
