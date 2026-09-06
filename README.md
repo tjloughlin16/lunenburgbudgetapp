@@ -5,7 +5,10 @@ An independent, checkable archive of the Lunenburg, Massachusetts town and schoo
 of minutes across 40 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
-The site is **https://lunenburgbudgetproject.org**. This repository is everything behind it.
+The site is **[https://lunenburgbudgetproject.org](https://lunenburgbudgetproject.org)**. This repository is everything behind it.
+
+Start there: [the data API](https://lunenburgbudgetproject.org/api/index) · [an MCP server](https://lunenburgbudgetproject.org/mcp) ·
+[every published address](https://lunenburgbudgetproject.org/agents) · [the guide for agents](https://lunenburgbudgetproject.org/llms.txt).
 
 ---
 

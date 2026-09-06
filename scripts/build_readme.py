@@ -62,7 +62,10 @@ An independent, checkable archive of the Lunenburg, Massachusetts town and schoo
 of minutes across {c['boards']} town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
-The site is **{SITE}**. This repository is everything behind it.
+The site is **[{SITE}]({SITE})**. This repository is everything behind it.
+
+Start there: [the data API]({SITE}/api/index) · [an MCP server]({SITE}/mcp) ·
+[every published address]({SITE}/agents) · [the guide for agents]({SITE}/llms.txt).
 
 ---
 
