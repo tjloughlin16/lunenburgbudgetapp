@@ -187,9 +187,18 @@ def diagram(d):
       dashed      restricted — the fund exists for one purpose, and its spending is
                   not observed because no expense report for these funds exists
     """
-    LH, GAP = 54, 11
+    LH, GAP = 50, 8
     LX, MX, RX, BW, MW = 20, 350, 680, 250, 200
     W = 950
+
+    # NO AGGREGATION, and the reason is TJ's: "when you aggregate, we cant see what goes
+    # to the school and what doesnt. thats the point of the town diagram."
+    #
+    # So every department and every fund gets its own box, and school-related boxes are
+    # coloured. The diagram is tall — that is the honest shape of a town with 67
+    # departments and 21 active funds, and a shorter picture would be a shorter picture of
+    # something else.
+    SCHOOL_DEPTS = {'300', '301', '310'}
 
     lrows = [('levy', 'Property tax levy', d['revclass'].get('levy', 0), 'gf'),
              ('state', 'State aid', d['revclass'].get('state', 0), 'gf'),
@@ -199,21 +208,20 @@ def diagram(d):
     ent = [(f, nm.title()[:24], v) for f, nm, v in d['ent_in']]
     for f, nm, v in ent:
         lrows.append((f'ent-{f}', nm, v, 'ent'))
-    lrows.append(('sr', 'Special revenue — ALL school', d['sr_in'], 'sr'))
+    for r in d['srfunds']:
+        lrows.append((f'sr-{r["fund"]}', f'{r["fund"]} {r["name"].title()[:22]}',
+                      r['revenue'] or 0, 'sch'))
 
-    # DEPARTMENTS, not governance categories. The right column of the school diagram is
-    # concrete places money lands -- the school budget, athletics, food service, Monty Tech
-    # -- and the town's has to be the same thing or the two are not the same model. The
-    # "who decides" classification is a different lens and lives on `who-decides.html`; it
-    # was imported here without being asked for and changed what the column meant.
-    top = d['depts'][:10]
-    rest = sum(r['v'] for r in d['depts'][10:])
-    rrows = [(f'd{r["dept"]}', r['name'].title()[:28], r['v'], 'gf') for r in top]
-    rrows.append(('drest', f'The other {len(d["depts"])-10} departments', rest, 'gf'))
+    rrows = []
+    for r in d['depts']:
+        rrows.append((f'd{r["dept"]}', f'{r["dept"]} {r["name"].title()[:24]}', r['v'],
+                      'sch' if r['dept'] in SCHOOL_DEPTS else 'gf'))
     for f, nm, v in ent:
         if d['ent_out'].get(f):
             rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent'))
-    rrows.append(('sro', 'Special revenue spent — ALL school', d['sr_out'], 'sr'))
+    for r in d['srspend']:
+        rrows.append((f'sro-{r["fund"]}', f'{r["fund"]} {r["name"].title()[:20]} — spent',
+                      r['spent'] or 0, 'sch'))
 
     ly = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(lrows)}
     ry = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(rrows)}
@@ -222,59 +230,56 @@ def diagram(d):
 
     o = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="flow" '
          f'role="img" aria-label="Every dollar into Lunenburg and where it goes">',
-         '<text class="dhd" x="20" y="30">MONEY IN</text>',
-         f'<text class="dhd" x="{MX}" y="30">WHERE IT POOLS</text>',
-         f'<text class="dhd" x="{RX}" y="30">MONEY OUT</text>']
+         '<text class="dhd" x="20" y="30">MONEY IN — every source</text>',
+         f'<text class="dhd" x="{MX}" y="30">POOLS</text>',
+         f'<text class="dhd" x="{RX}" y="30">MONEY OUT — every department and fund</text>']
 
     def edge(x1, y1, x2, y2, cls, dip=0):
         mx = (x1 + x2) / 2
-        if dip:
-            o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1+dip} {mx},{y2+dip} '
-                     f'{x2},{y2}"/>')
-        else:
-            o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"/>')
+        o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1+dip} {mx},{y2+dip} '
+                 f'{x2},{y2}"/>')
 
+    pot_mid = (pot_top + pot_bot) / 2
     for k, *_ in lrows[:5]:
-        edge(LX + BW, ly[k] + LH / 2, MX, pot_top + (pot_bot - pot_top) / 2, 'traced')
+        edge(LX + BW, ly[k] + LH / 2, MX, pot_mid, 'traced')
     for k, lab, v, kind in rrows:
-        if kind == 'gf':
-            edge(MX + MW, pot_top + (pot_bot - pot_top) / 2, RX, ry[k] + LH / 2, 'traced')
+        if k.startswith('d'):
+            edge(MX + MW, pot_mid, RX, ry[k] + LH / 2,
+                 'school' if kind == 'sch' else 'traced')
     for f, nm, v in ent:
         if d['ent_out'].get(f):
             edge(LX + BW, ly[f'ent-{f}'] + LH / 2, RX, ry[f'ento-{f}'] + LH / 2,
-                 'bypass', dip=120)
-    edge(LX + BW, ly['sr'] + LH / 2, RX, ry['sro'] + LH / 2, 'restricted', dip=140)
+                 'bypass', dip=90)
+    for r in d['srfunds']:
+        k = f'sro-{r["fund"]}'
+        if k in ry:
+            edge(LX + BW, ly[f'sr-{r["fund"]}'] + LH / 2, RX, ry[k] + LH / 2,
+                 'restricted', dip=70)
 
     o.append(f'<g class="b pot"><rect x="{MX}" y="{pot_top}" width="{MW}" '
              f'height="{pot_bot - pot_top}" rx="7"/>'
-             f'<text class="bl pw" x="{MX+12}" y="{pot_top+24}">GENERAL FUND 0100</text>'
-             f'<text class="bv pw" x="{MX+12}" y="{pot_top+44}">'
+             f'<text class="bl pw" x="{MX+12}" y="{pot_top+22}">GENERAL FUND 0100</text>'
+             f'<text class="bv pw" x="{MX+12}" y="{pot_top+40}">'
              f'{money(d["rev_total"])}</text>')
-    for i, line in enumerate(['Every source on the left flows',
-                              'in here and loses its identity.',
-                              'No record ties a source to a',
+    for i, line in enumerate(['Every source on the left flows in',
+                              'here and loses its identity. No',
+                              'record ties a source to a',
                               'department, so no line crosses',
                               'this box — the diagonal edge',
-                              'does not exist.']):
-        o.append(f'<text class="potnote" x="{MX+12}" y="{pot_top+70+i*15}">{line}</text>')
+                              'does not exist. Orange lines out',
+                              'are the school; the rest is',
+                              'everything else the town does.']):
+        o.append(f'<text class="potnote" x="{MX+12}" y="{pot_top+62+i*13}">{line}</text>')
     o.append('</g>')
 
-    for rows, ys, x, w in ((lrows, ly, LX, BW), (rrows, ry, RX, BW)):
+    for rows, ys, x in ((lrows, ly, LX), (rrows, ry, RX)):
         for k, label, v, kind in rows:
             y = ys[k]
-            sub = ''
-            if k == 'sr':
-                sub = f'{len(d["srfunds"])} funds · holding {money(d["sr_held"])}'
-            elif k == 'sro':
-                sub = f'{len(d["srspend"])} funds · itemised in the table below'
-            elif kind == 'ent':
-                sub = 'rate-funded · bypasses the pot'
-            o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{w}" '
+            o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{BW}" '
                      f'height="{LH}" rx="5"/>'
                      f'<text class="bl" x="{x+10}" y="{y+20}">{html.escape(label)}</text>'
-                     f'<text class="bv" x="{x+10}" y="{y+37}">{money(v)}</text>'
-                     + (f'<text class="bs" x="{x+10}" y="{y+49}">{html.escape(sub)}</text>'
-                        if sub else '') + '</g>')
+                     f'<text class="bv" x="{x+10}" y="{y+37}">{money(v)}</text></g>')
+
     # The gaps, at the foot of each column, at the same size as everything else.
     gy = 52 + max(len(lrows), len(rrows)) * (LH + GAP) + 34
     o.append(f'<text class="dhd gap" x="{LX}" y="{gy-12}">MONEY IN WE CANNOT SEE</text>')
@@ -341,13 +346,29 @@ def render(c):
       f'dollar’s origin cannot be followed.</div></div></section>')
 
     a('<div class="scroll">' + diagram(d) + '</div>')
-    a('<div class="key"><span><i class="k traced"></i>traced</span>'
+    a('<div class="key"><span><i class="k school"></i><b>school money</b> — every box and '
+      'line in orange</span>'
+      '<span><i class="k traced"></i>traced</span>'
       '<span><i class="k bypass"></i>bypasses the general fund entirely — rate-funded and '
       'ring-fenced</span>'
       '<span><i class="k restricted"></i>the fund spent it; <b>purpose not observed</b>'
       '</span></div>')
 
     n_rev = len(d['rev'])
+    n_sch = sum(1 for r in d['depts'] if r['dept'] in ('300', '301', '310'))
+    a(f'<section class="stage"><h2>Nothing on this page is aggregated</h2>'
+      f'<p>Every one of the {len(d["depts"])} departments and every one of the '
+      f'{len(d["srspend"])} active funds has its own box. <b>That is why the diagram is '
+      f'tall</b> — it is the honest shape of a town with that many of each, and a shorter '
+      f'picture would be a shorter picture of something else.</p>'
+      f'<p><b>School money is orange, everywhere.</b> That is the point of the town view: '
+      f'once anything is combined you can no longer see what goes to the school and what '
+      f'does not. Scroll the right column and the schools are visible as a colour rather '
+      f'than as a number you have to trust.</p>'
+      f'<p class="cap">Every special revenue fund the town has is a school fund, so the '
+      f'entire lower half of both columns is orange. The general fund half is where the '
+      f'town’s other 64 departments live.</p></section>')
+
     a(f'<section class="stage"><h2>Can this page say “here is every way money comes in, '
       f'itemised”?</h2>'
       f'<p><b>Not quite, and the difference matters.</b> It is <i>classified</i>, not '
@@ -504,10 +525,12 @@ PAGE = '''<meta charset="utf-8">
 <style>
 :root {{ --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
   --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --ent:#1c4f7a; --traced-bg2:#e7f0ea;
+  --school:#9a4f14; --school-bg:#f7e7d8;
   --potbg:#2c2b28; --potink:#f2efe9; }}
 @media (prefers-color-scheme: dark) {{
   :root {{ --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
     --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --ent:#7fb4dd; --traced-bg2:#1b2b22;
+    --school:#e2a068; --school-bg:#33231a;
     --potbg:#e8e4dc; --potink:#1a1a18; }}
 }}
 * {{ box-sizing:border-box }}
@@ -556,6 +579,8 @@ svg.flow {{ display:block; min-width:950px; height:auto }}
 .b rect {{ fill:var(--card); stroke:var(--grid); stroke-width:1.5 }}
 .b.gf rect {{ fill:var(--traced-bg2); stroke:var(--traced) }}
 .b.ent rect {{ fill:none; stroke:var(--ent); stroke-width:2 }}
+.b.sch rect {{ fill:var(--school-bg); stroke:var(--school); stroke-width:2 }}
+.e.school {{ stroke:var(--school); opacity:.7; stroke-width:2.5 }}
 .b.sr rect {{ fill:none; stroke:var(--warn); stroke-width:2; stroke-dasharray:6 4 }}
 .b.gap rect {{ fill:var(--warn-bg); stroke:var(--warn); stroke-width:1.5;
   stroke-dasharray:3 3 }}
@@ -575,6 +600,7 @@ svg.flow {{ display:block; min-width:950px; height:auto }}
   margin-bottom:10px }}
 .key span {{ display:flex; align-items:center; gap:6px }}
 .k {{ width:24px; height:0; border-top:2px solid; display:inline-block }}
+.k.school {{ border-color:var(--school); border-top-width:3px }}
 .k.traced {{ border-color:var(--traced) }}
 .k.bypass {{ border-color:var(--ent); border-top-width:3px }}
 .k.restricted {{ border-top-style:dashed; border-color:var(--warn) }}
