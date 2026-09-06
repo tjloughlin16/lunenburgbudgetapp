@@ -30,6 +30,10 @@ import MANIFEST from '../data/agent-manifest.json'
 /* Absolute. This line is the first machine-readable address on the page, put there
  * because /api/index used to sit 95% of the way down the homepage; a relative href
  * makes it unusable to the caller it was moved up for. */
+/* The host appears ONCE, on the first link. Repeating it five times is ink that
+ * carries no information -- a human reads the same 27 characters over and over to
+ * find the four that differ. The hrefs stay absolute either way, which is the part
+ * a fetcher uses. */
 const ABS = (p: string) => `${MANIFEST.site}${p}`
 
 export function DataTopLine() {
@@ -45,10 +49,9 @@ export function DataTopLine() {
       <p className="mx-auto max-w-6xl px-5 py-1.5 text-[11px] leading-snug"
          style={{ color: 'var(--text-muted)' }}>
         <strong style={{ color: 'var(--text-secondary)' }}>Reading this with software?</strong>{' '}
-        Every figure and document here is downloadable. {link('/mcp')} is an MCP server ·{' '}
-        {link('/api/index')} is the data API · {link('/llms.txt')} explains them ·{' '}
-        {link('/agents')} lists every address as a link · {link('/minutes/INDEX.txt')} is
-        the meeting archive.
+        {link('/mcp')} is an MCP server · {link('/api/index', '/api/index')} the data ·{' '}
+        {link('/minutes/INDEX.txt', '/minutes/INDEX.txt')} the meetings ·{' '}
+        {link('/agents', '/agents')} every address · {link('/llms.txt', '/llms.txt')} the map.
       </p>
     </div>
   )
