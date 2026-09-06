@@ -131,6 +131,12 @@ def gather(c):
     sr = c.execute(f"""SELECT SUM(revenue) i, SUM(spent) o, SUM(closing_balance) h
         FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""").fetchone()
     d['sr_in'], d['sr_out'], d['sr_held'] = sr['i'] or 0, sr['o'] or 0, sr['h'] or 0
+    d['srfunds'] = c.execute(f"""SELECT fund, name, revenue, spent, closing_balance
+        FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND revenue > 0
+        ORDER BY revenue DESC""").fetchall()
+    d['srspend'] = c.execute(f"""SELECT fund, name, revenue, spent, closing_balance
+        FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND spent > 0
+        ORDER BY spent DESC""").fetchall()
     return d
 
 
@@ -193,7 +199,7 @@ def diagram(d):
     ent = [(f, nm.title()[:24], v) for f, nm, v in d['ent_in']]
     for f, nm, v in ent:
         lrows.append((f'ent-{f}', nm, v, 'ent'))
-    lrows.append(('sr', 'Special revenue funds', d['sr_in'], 'sr'))
+    lrows.append(('sr', 'Special revenue — ALL school', d['sr_in'], 'sr'))
 
     # DEPARTMENTS, not governance categories. The right column of the school diagram is
     # concrete places money lands -- the school budget, athletics, food service, Monty Tech
@@ -207,7 +213,7 @@ def diagram(d):
     for f, nm, v in ent:
         if d['ent_out'].get(f):
             rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent'))
-    rrows.append(('sro', 'Special revenue — spent', d['sr_out'], 'sr'))
+    rrows.append(('sro', 'Special revenue spent — ALL school', d['sr_out'], 'sr'))
 
     ly = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(lrows)}
     ry = {k: 52 + i * (LH + GAP) for i, (k, *_) in enumerate(rrows)}
@@ -258,7 +264,9 @@ def diagram(d):
             y = ys[k]
             sub = ''
             if k == 'sr':
-                sub = f'holding {money(d["sr_held"])} at 31 March'
+                sub = f'{len(d["srfunds"])} funds · holding {money(d["sr_held"])}'
+            elif k == 'sro':
+                sub = f'{len(d["srspend"])} funds · itemised in the table below'
             elif kind == 'ent':
                 sub = 'rate-funded · bypasses the pot'
             o.append(f'<g class="b {kind}"><rect x="{x}" y="{y}" width="{w}" '
@@ -376,6 +384,24 @@ def render(c):
       f'grant funds’ spending — nine funds that spent '
       f'money in FY2026 while booking no revenue, so a revenue-side box cannot show them. '
       f'They appear here only in the gaps.</p></section>')
+
+    a(f'<section class="stage"><h2>What is inside the special revenue box, itemised</h2>'
+      f'<p class="cap">The diagram carries these as one box on each side because there are '
+      f'{len(d["srspend"])} of them and a box each would swamp the picture. <b>Nothing is '
+      f'excluded from the totals</b> — every fund below is inside the '
+      f'{money(d["sr_out"])}, and each of these is school money.</p>'
+      f'<table><tr><th>fund</th><th></th><th class="v">in</th><th class="v">spent</th>'
+      f'<th class="v">held 31 Mar</th></tr>')
+    for r in d['srspend']:
+        a(f'<tr><td><code>{r["fund"]}</code></td><td>{r["name"].title()}</td>'
+          f'<td class="v">{money(r["revenue"] or 0)}</td>'
+          f'<td class="v">{money(r["spent"] or 0)}</td>'
+          f'<td class="v">{money(r["closing_balance"] or 0)}</td></tr>')
+    a(f'<tr><td></td><td><b>total</b></td><td class="v"><b>{money(d["sr_in"])}</b></td>'
+      f'<td class="v"><b>{money(d["sr_out"])}</b></td>'
+      f'<td class="v"><b>{money(d["sr_held"])}</b></td></tr></table>'
+      f'<p class="cap">School choice, for example, took in $83,116, spent $30,558 and '
+      f'holds $299,461 — all three inside the single box on the diagram.</p></section>')
 
     a('<section class="stage"><h2>The town runs four money systems that do not mix</h2>'
       '<p class="cap">This is the thing the school view cannot show, because the schools '
