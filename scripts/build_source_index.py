@@ -724,6 +724,39 @@ GROUPS = [
              'a menu for a person, a set of worked examples for anything using '
              '/api/query, and a test that the tables still hold what it says they hold. '
              'It deliberately does not print the answers: those move when the data does.'),
+            ('data/money-classification.csv',
+             'What every revenue account, fund and department IS', 2,
+             'The classification behind the money-flow diagrams, as data rather than as '
+             'code. One row per revenue account, fund, department or grant code, saying '
+             'what it is, HOW that was established and WHY. `how` is the column that '
+             'matters: `stated` means the town\u2019s own name says it; `neighbours` means '
+             'it was read from what an account sits among \u2014 which is how `BUS CERTIF` '
+             'turned out to be business certificates rather than buses; `outside` means it '
+             'depends on knowledge from beyond this archive and is the weakest kind here; '
+             '`unresolved` means ten characters is not enough and nothing settles it. '
+             'Loaded into the database as `money_classification`, with '
+             '`v_revenue_classified` and `v_spending_classified` joining it to the ledger.'),
+            ('data/money-edges.csv',
+             'Which source of money pays which use, and whether that can be shown', 2,
+             'Four bases, and `restricted` is the one to read carefully: it means the '
+             'connection is near-certain because a fund exists for one purpose and nothing '
+             'else \u2014 and that it is NOT OBSERVED, because the town publishes no '
+             'expense report for its special revenue funds. `impossible` means there is no '
+             'such connection to find: money in the general fund is fungible and no record '
+             'ties a source to a department. Loaded as `money_edges`.'),
+            ('data/money-assumptions.csv',
+             'Every assumption still holding the money model up', 2,
+             'What is being assumed, what evidence there is for it, what rests on it, and '
+             'the document that would settle it. A row leaves this file when a document '
+             'arrives, never because the assumption started to feel obvious. Loaded as '
+             '`money_assumptions`.'),
+            ('data/money-gaps.csv',
+             'What the town\u2019s records cannot answer', 2,
+             'Money coming in that cannot be seen, spending that cannot be split, and the '
+             'documents that would close each. Bus fees are charged by published policy '
+             'and have no observable destination; school building debt sits inside two '
+             'accounts for all town borrowing; the pension covers town and school staff '
+             'with no published split. Loaded as `money_gaps`.'),
             ('data/role-classification.csv',
              'What kind of job each printed roster title is', 2,
              'The town\u2019s name for the same job changed five times in fifteen years '

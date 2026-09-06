@@ -859,6 +859,78 @@ def load_reference(db):
     return n
 
 
+def load_money_model(db):
+    """The classification of every revenue account, fund and department — as DATA.
+
+    Everything this project learned about how Lunenburg's money is organised lived in
+    Python dictionaries inside four generator scripts, two of them holding their own copy
+    of the revenue classification. That is a derived thing written down, in a place nothing
+    checks, in four copies — and it meant none of it was queryable. A caller could ask the
+    database what the town SPENT and not what any of it MEANS, which is the more useful
+    question and the one this project exists to answer.
+
+    So the CSVs are the source of truth and this loads them. Four tables and two views:
+
+      money_classification   one row per revenue account, fund, department or grant code
+      money_edges            which source pays which use, and whether traced or presumed
+      money_assumptions      every assumption still load-bearing, and what would settle it
+      money_gaps             what the records cannot answer, and the document that would
+      v_revenue_classified   revenue by fiscal year and class — "what comes in, how much"
+      v_spending_classified  spending by fiscal year and class — the same, going out
+
+    `how` is the column that matters: `stated` means the town's own name says it,
+    `neighbours` means it was read from what an account sits among, and `outside` means it
+    depends on knowledge from beyond this archive and is the weakest kind here.
+    """
+    n = 0
+    for name, table, index in (
+            ('money-classification', 'money_classification', '(kind, "key")'),
+            ('money-edges', 'money_edges', '(source)'),
+            ('money-assumptions', 'money_assumptions', None),
+            ('money-gaps', 'money_gaps', '(side)')):
+        data = rows(name)
+        if not data:
+            continue
+        cols = list(data[0].keys())
+        db.execute('CREATE TABLE %s (%s)'
+                   % (table, ', '.join('"%s" TEXT' % c for c in cols)))
+        db.executemany('INSERT INTO %s VALUES (%s)' % (table, ','.join('?' * len(cols))),
+                       [[r[c] for c in cols] for r in data])
+        if index:
+            db.execute('CREATE INDEX ix_%s ON %s%s' % (table, table, index))
+        n += len(data)
+    if not n:
+        return 0
+
+    # WHAT COMES IN, BY CLASS AND YEAR. An account with no classification row appears as
+    # `unclassified` rather than vanishing — a join that drops rows looks exactly like data
+    # that is absent, and 113 of the 192 accounts carry nothing anyway.
+    db.execute("""
+        CREATE VIEW v_revenue_classified AS
+        SELECT r.fy, r.period, r.fund, r.name AS account,
+               COALESCE(m."group", 'local') AS class,
+               COALESCE(m.label, 'Local receipts') AS class_label,
+               r.budgeted, r.received
+        FROM v_revenue r
+        LEFT JOIN money_classification m
+               ON m.kind = 'revenue_account' AND m."key" = r.name AND m."group" <> ''""")
+
+    # AND WHAT GOES OUT. Departments carry the `who decides` class; anything unclassified
+    # is `discretionary`, which is a residual and is labelled as one everywhere else too.
+    db.execute("""
+        CREATE VIEW v_spending_classified AS
+        SELECT l.fy, l.period, a.dept, a.name AS department,
+               COALESCE(m.classification, 'discretionary') AS control,
+               COALESCE(m.how, 'residual') AS control_how,
+               l.original AS voted, l.revised, l.expended
+        FROM ledger_snapshot l
+        JOIN account a USING (account_id)
+        LEFT JOIN money_classification m
+               ON m.kind = 'department' AND m."key" = a.dept
+        WHERE a.level = 'department' AND a.account_type = 'expense'""")
+    return n
+
+
 def load_role_classification(db):
     """What kind of job each printed roster title is, and a view that joins it to the rows.
 
@@ -1194,6 +1266,7 @@ def main():
     print('  reference rows   %5d' % load_reference(db))
     print('  provenance rows  %5d' % load_provenance(db))
     print('  role vocabulary  %5d' % load_role_classification(db))
+    print('  money model      %5d' % load_money_model(db))
     check_document_paths(db)
 
     # Documents last: every doc_id any fact cites is known by now, so an orphan can be

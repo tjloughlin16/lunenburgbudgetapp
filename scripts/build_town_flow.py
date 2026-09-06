@@ -47,23 +47,18 @@ SCHOOL = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow-v2.h
 FY, P_DEPT, P_ACCT = 2026, 9, 12
 
 # Revenue, by who SETS the amount. Exact names — never prefixes. See rule 3.
-REV = {
-    'levy': (['RE TAXES', 'PP TAXES', 'SUPPLE TAX', 'RE FY27', 'PP FY27', 'PREPAYPP',
-              'ROLL BACK', 'MISCTAXOVE', 'DEF PROP'],
-             'Property tax levy', 'Set by the town, inside the Proposition 2½ cap'),
-    'state': (['CH 70 AID', 'UGGA', 'SCHCOSTREI', 'SPED REIMB', 'CHARTER', 'STATE LAND',
-               'VET ABATE', 'ABATE ELDE', 'ABATE SPOU', 'BLIND ABAT', 'S6CH115VET',
-               'MSBA REIMB', 'ADD AID LB', 'ADDAIDAPPR', 'ADDAIDESTR', "ADD'L ASST",
-               'MUN RELIEF', 'LOC AID AD', 'STATE REVE', 'MUN STAB', 'SCHOOL TRA',
-               'ERATEREIMB', 'MED D DRUG', 'MEDRECMRC', 'QUINN BILL', 'CH 81'],
-              'State aid', 'Set by the Legislature. No local say at all'),
-    'onetime': (['FBCYBUDGET', 'PY BAL', 'BOND PROC', 'PREMIUMS', 'INS SETTLR',
-                 'SALE TOWNP', 'SALE STAND'],
-                'One-time money', 'Free cash and proceeds. Spendable once'),
-    'transfer': (['TRANS ENT', 'TRANSOFFSE', 'TRANSRECRE', 'OP TRAN AG', 'OP TRAN CP',
-                  'OP TRAN SR', 'OP TRAN TR'],
-                 'Transfers in', 'From the town’s own other funds. Not new money'),
-}
+# REV is built from money-classification.csv at import time. It used to be a literal
+# here AND in build_who_decides.py AND in build_money_flow.py, which is three chances for
+# the same classification to disagree with itself.
+def _rev_classes():
+    out = {}
+    for r in _classification('revenue_account'):
+        if not r['group']:
+            continue
+        names, label, why = out.setdefault(r['group'], ([], r['label'], r['why']))
+        names.append(r['key'])
+    return out
+
 
 # Spending, by who DECIDES. Same table as who-decides.html, kept in step by hand because
 # the two pages answer different questions with the same classification.
@@ -85,6 +80,27 @@ CLASS_LABEL = {
 }
 
 
+
+def _classification(kind):
+    """Read a classification from the CSV rather than holding a copy of it.
+
+    Four scripts held their own literal of this, two of them the revenue classes, and a
+    dictionary duplicated four times is four chances to disagree. `money-classification.csv`
+    is the source of truth; the database loads the same file.
+    """
+    import csv
+    path = os.path.join(ROOT, 'sources', 'data', 'money-classification.csv')
+    if not os.path.exists(path):
+        raise SystemExit(f'{path} is missing. It is the source of truth for every '
+                         f'classification on this page.')
+    with open(path, newline='', encoding='utf-8') as fh:
+        rows = [r for r in csv.DictReader(fh) if r['kind'] == kind]
+    if not rows:
+        raise SystemExit(f'money-classification.csv holds no rows of kind {kind!r}. '
+                         f'Refusing to draw a page with no classification.')
+    return rows
+
+
 def db():
     if not os.path.exists(DB):
         raise SystemExit(f'{DB} missing. Run: python3 scripts/build_db.py')
@@ -102,6 +118,7 @@ def gather(c):
     d['rev'] = {r['name']: r['v'] for r in c.execute(f"""
         SELECT name, SUM(budgeted) v FROM v_revenue WHERE fy={FY} AND fund='0100'
         GROUP BY name HAVING v > 0""")}
+    REV = _rev_classes()
     idx = {n: k for k, (names, _, _) in REV.items() for n in names}
     d['revclass'] = {}
     for n, v in d['rev'].items():
@@ -518,6 +535,7 @@ def render(c):
     a('<div class="cols"><div class="col"><h2>Money in</h2>'
       '<div class="colnote">Who sets each dollar. The general fund, by class.</div>')
     order = ['levy', 'state', 'local', 'onetime', 'transfer']
+    REV = _rev_classes()
     lbl = {k: REV[k][1] for k in REV}
     lbl['local'] = 'Local receipts'
     note = {k: REV[k][2] for k in REV}

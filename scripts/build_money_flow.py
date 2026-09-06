@@ -77,6 +77,27 @@ BOXW = 190
 GAP = 5
 
 
+
+def _classification(kind):
+    """Read a classification from the CSV rather than holding a copy of it.
+
+    Four scripts held their own literal of this, two of them the revenue classes, and a
+    dictionary duplicated four times is four chances to disagree. `money-classification.csv`
+    is the source of truth; the database loads the same file.
+    """
+    import csv
+    path = os.path.join(ROOT, 'sources', 'data', 'money-classification.csv')
+    if not os.path.exists(path):
+        raise SystemExit(f'{path} is missing. It is the source of truth for every '
+                         f'classification on this page.')
+    with open(path, newline='', encoding='utf-8') as fh:
+        rows = [r for r in csv.DictReader(fh) if r['kind'] == kind]
+    if not rows:
+        raise SystemExit(f'money-classification.csv holds no rows of kind {kind!r}. '
+                         f'Refusing to draw a page with no classification.')
+    return rows
+
+
 def db():
     if not os.path.exists(DB):
         raise SystemExit(f'{DB} missing. Run: python3 scripts/build_db.py')

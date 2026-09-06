@@ -1621,6 +1621,18 @@
      "textUrl": "/docs/data/staff-roster-counts.csv"
     },
     {
+     "path": "data/money-classification.csv",
+     "title": "What every revenue account, fund and department IS",
+     "stars": 2,
+     "what": "The classification behind the money-flow diagrams, as data rather than as code. One row per revenue account, fund, department or grant code, saying what it is, HOW that was established and WHY. `how` is the column that matters: `stated` means the town’s own name says it; `neighbours` means it was read from what an account sits among — which is how `BUS CERTIF` turned out to be business certificates rather than buses; `outside` means it depends on knowledge from beyond this archive and is the weakest kind here; `unresolved` means ten characters is not enough and nothing settles it. Loaded into the database as `money_classification`, with `v_revenue_classified` and `v_spending_classified` joining it to the ledger.",
+     "kind": "Data",
+     "bytes": 13183,
+     "url": "/docs/data/money-classification.csv",
+     "count": 128,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-classification.csv"
+    },
+    {
      "path": "data/PROVENANCE-annual-report-receipts.md",
      "title": "Where the receipts came from",
      "stars": 2,
@@ -1643,6 +1655,42 @@
      "count": 88,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-special-revenue-funds.md"
+    },
+    {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 2311,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 14,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
+     "path": "data/money-edges.csv",
+     "title": "Which source of money pays which use, and whether that can be shown",
+     "stars": 2,
+     "what": "Four bases, and `restricted` is the one to read carefully: it means the connection is near-certain because a fund exists for one purpose and nothing else — and that it is NOT OBSERVED, because the town publishes no expense report for its special revenue funds. `impossible` means there is no such connection to find: money in the general fund is fungible and no record ties a source to a department. Loaded as `money_edges`.",
+     "kind": "Data",
+     "bytes": 1752,
+     "url": "/docs/data/money-edges.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-edges.csv"
+    },
+    {
+     "path": "data/money-assumptions.csv",
+     "title": "Every assumption still holding the money model up",
+     "stars": 2,
+     "what": "What is being assumed, what evidence there is for it, what rests on it, and the document that would settle it. A row leaves this file when a document arrives, never because the assumption started to feel obvious. Loaded as `money_assumptions`.",
+     "kind": "Data",
+     "bytes": 1646,
+     "url": "/docs/data/money-assumptions.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-assumptions.csv"
     },
     {
      "path": "data/report-trust-funds.csv",
@@ -1839,7 +1887,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 16371712,
+     "bytes": 16420864,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5655,9 +5703,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 457,
+  "documents": 461,
   "groups": 20,
-  "bytes": 1000484657,
+  "bytes": 1000552701,
   "loadBearing": 73
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
