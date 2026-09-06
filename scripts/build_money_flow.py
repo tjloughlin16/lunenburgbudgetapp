@@ -311,11 +311,8 @@ def programme_rows(c, fundnames):
         WHERE l.fy={FY} AND l.period={P_ACCT} AND a.dept='300' AND a.function IS NOT NULL
         GROUP BY a.function""")}
     d300 = sum(inside.values())
-    fundrow = {r['fund']: r for r in c.execute(f"""
-        SELECT fund, revenue, spent, closing_balance FROM v_fund_year
-        WHERE fy={FY} AND period={P_DEPT}""")}
-    spent = {f: (r['spent'] or 0) for f, r in fundrow.items()}
-    held = {f: (r['closing_balance'] or 0) for f, r in fundrow.items()}
+    spent = {r['fund']: (r['spent'] or 0) for r in c.execute(f"""
+        SELECT fund, spent FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""")}
     claimed, out = set(), []
     for name, fns, funds, why in PROGRAMMES:
         if fns is None:
@@ -891,8 +888,13 @@ def render_v2(c):
                        'spent side only — no FY26 revenue booked'),
             'BUSFEES': ('Bus fees — charged', None, 'missing',
                         '$180 / $270, policy 3601.01')}
+    # A left box carries what it SPENT as well as what it received. Without it, the funds
+    # that merge into one block on the right — "Other own funds spent" — are unreadable:
+    # you can see a total leave four funds and cannot see which of them it left.
     for f, nm, rev, sp in funds:
-        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund', 'received, nine months')
+        h = held.get(f, 0)
+        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund',
+                   f'spent {money(sp)} · held {money(h)}')
 
     OTHER = ('1308', '1311', '1300', '1302')
     # A fund box carries what is SITTING there as well as what moved. A fund that took in
@@ -928,7 +930,7 @@ def render_v2(c):
         'sp-1305': fb('1305', 'After school fund'),
         'sp-1306': fb('1306', 'Facilities use fund'),
         'sp-other': ('Other own funds spent', sum(spent.get(f, 0) for f in OTHER), 'prog',
-                     'held ' + money(sum(held.get(f, 0) for f in OTHER))),
+                     'funds ' + ', '.join(OTHER) + ' — see each on the left'),
     }
     edges = [('appropriation', k, 'unknown' if k == 'PENSION' else 'traced')
              for k in ('core', 'MONTY', 'RETHLTH', 'PENSION', 'STIPEND')]
