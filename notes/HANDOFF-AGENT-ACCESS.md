@@ -276,6 +276,36 @@ never that it resolves.** Before publishing, all three of these were asserted:
   correctly over the wire, which is not the same as an assistant choosing to use it. The
   unbiased way to find out is above: `wrangler tail`, and ask somebody an ordinary question.
 
+## The short domain is the real entry point, and it is the one that does not work
+
+`lburg.org` exists because the long name could not be typed into a phone in front of the
+town manager. That is not a vanity domain, it is **the address people are actually given**,
+so it is also the address they paste into an assistant. Any reasoning that treats it as a
+convenience for humans and the long name as the machine-readable one has the traffic
+backwards.
+
+**What is measured.** `lburg.org` returns a **301** to `lunenburgbudgetproject.org`,
+preserving the path — `lburg.org/api/index` lands on `…project.org/api/index`. Nothing is
+dropped. There is **no `<link rel="canonical">`** on any page. Every anchor on the homepage
+— all 33 of them — is absolute to `lunenburgbudgetproject.org`, from
+`agent-manifest.json`'s single hardcoded `site`.
+
+**What an agent reported**, having noticed its own contamination and said so, which is why
+it is worth recording: it fetched `lburg.org`, the page came back, and every anchor on it
+was then refused; it fetched `lunenburgbudgetproject.org` directly, the same page with the
+same anchors, and they worked. Its reading: link registration is keyed to the host that was
+REQUESTED, not the host that SERVED the response. That is one tool, once.
+
+**Why the obvious fix does not obviously work.** Serving `lburg.org` with a 200 instead of
+a 301 does not by itself help, because the anchors in that page still point at
+`lunenburgbudgetproject.org` — still a different host from the one requested, which is the
+condition that failed. Making the short domain a working entry point means the page must
+link to ITSELF, which means the absolute URLs have to vary by host, which breaks the thing
+the absolute URLs exist for: **one canonical address per document**, the address a resident
+asks the town for and the address every sha256 is checked against.
+
+That is a genuine conflict, not an oversight, and it is unresolved. See the open questions.
+
 ## What is NOT solved
 
 - **Sandbox egress allowlists.** The site answers any user agent in under 300ms with no bot
@@ -297,6 +327,10 @@ never that it resolves.** Before publishing, all three of these were asserted:
   customised. Mitigated by saying what it means in `llms.txt` and in `/api/query`'s own
   help, before a caller ever hits it. Untested whether a rate limiting rule accepts
   `action_parameters.response` on this plan — worth one attempt.
+- **The short domain is a dead end for at least one agent**, and it is the domain people
+  are handed. See the section above. Unresolved, and the highest-traffic path.
+- **There is no `<link rel="canonical">` anywhere.** Free to add, unrelated to the conflict
+  above, and not done.
 - **The 107 questions are all schema-shaped.** Not one is phrased the way a resident would
   ask. *"Is the school budget growing faster than the town can pay for?"* is the register
   that is missing, and it is the register the site is for.
@@ -335,6 +369,21 @@ They ask different questions and mixing them answers neither.
   evidence. An agent that quotes the site's prose did **not** use the tools, however right
   its answer is.
 
+**The prompts, and what each one actually tests.** Keep these; a prompt that has been
+used before is comparable across runs, and inventing a new one each time is how a result
+stops meaning anything.
+
+| prompt | tests | note |
+|---|---|---|
+| *"what options does the homepage offer for data and analysis?"* | **discovery only** | Answerable entirely from the page and the release notes. Two agents have answered it well WITHOUT FETCHING ANYTHING — which is the point: a good answer here is not evidence that anything is reachable |
+| *"is the school budget growing faster than the town can pay for it?"* | discovery **and** use | The citizen register. Cannot be answered from the homepage alone |
+| *"how many paraprofessionals did the town print on a roster in FY2025, and in what document?"* | use, and provenance | Has one right answer with a document behind it, so a wrong one is visible |
+
+The first is deliberately the weak one. It reads the **control plane** — what exists, where
+it is, what it is for — and never touches the **data plane**, the bytes. An agent can score
+full marks on it while being completely unable to reach a single file, and one did. Ask it
+first to confirm discovery works, then never mistake the answer for access.
+
 **Test B — does it WORK when connected?** Add
 `https://lunenburgbudgetproject.org/mcp` as a remote MCP server in a client that supports
 one, and ask the same question. This tests the eight tools, not discovery.
@@ -369,6 +418,51 @@ reading as the server being broken.
     python3 scripts/check_sitemap.py             # every URL in the sitemap answers
     python3 scripts/check_rate_limit.py          # the published limit is roughly true
     node fy28/scripts/check-agents.mjs           # every advertised URL answers, reads, is absolute
+
+## The open questions
+
+Ranked by how much the answer changes what to build. Each names what would settle it,
+because most of these cannot be settled by more reasoning.
+
+**1. Does the redirect actually break link-following, or was that one tool once?**
+Everything about the short domain depends on this and it rests on a single agent's report
+that it could not re-run cleanly. *Settled by:* the same test on two more agents from a
+fresh session — fetch `lburg.org`, immediately request an anchor from it, and record
+whether it is refused. Until then this is a hypothesis with one observation.
+
+**2. If it does break, can the short domain work without giving up one canonical address?**
+The three options are not equal and none is free:
+
+| | keeps one canonical address | works for a host-keyed fetcher |
+|---|---|---|
+| 301, as today | yes | no |
+| 200 on `lburg.org`, anchors unchanged | yes | **probably still no** — the anchors are still a different host from the one requested |
+| 200, anchors rewritten per host | **no** | yes |
+
+*Settled by:* answering 1 first. If the failure is real, the question becomes whether pages
+may be host-relative while `/docs/`, `/data/` and `/api/` stay absolute and canonical — a
+split that has not been thought through and might not survive contact with `check-agents`,
+which forbids relative links to files for a different and still-valid reason.
+
+**3. Is anything indexing the site?** An agent said outright *"search doesn't index the
+site,"* and its allowlist is built from search results, so for that class of tool indexing
+is the whole unblock. IndexNow has been pushed. *Settled by:* Search Console and Bing
+Webmaster verification, which needs the domain verified and is nobody's job but ours.
+
+**4. Will any client reach the MCP server on its own?** Published, listed, linked, and
+never observed in use. *Settled by:* `wrangler tail` during an ordinary question. Note the
+asymmetry — the tail can prove use, and nothing can prove non-discovery, so a quiet log
+means *not this time*, never *never*.
+
+**5. Where did that agent's mismatched sha256 come from?** It reported `/api/index` and
+`/api/schema` disagreeing about the database. All four copies agree — both endpoints,
+production and the repo — and its figures appear nowhere in anything published. *Settled
+by:* re-running it from a clean session. Left open rather than closed because a
+reproducible answer of "our cache served two builds" would be a real defect, and
+"the agent was wrong" is a conclusion, not an observation.
+
+**6. Do the analyses answer what a resident came with?** Rule 15a's question, and no
+verifier can reach it. Still open, still the one most likely to matter to the town.
 
 ## The rule this workstream is really about
 
