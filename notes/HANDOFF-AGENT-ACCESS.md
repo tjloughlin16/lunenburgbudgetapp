@@ -329,8 +329,20 @@ That is a genuine conflict, not an oversight, and it is unresolved. See the open
   `action_parameters.response` on this plan — worth one attempt.
 - **The short domain is a dead end for at least one agent**, and it is the domain people
   are handed. See the section above. Unresolved, and the highest-traffic path.
-- **There is no `<link rel="canonical">` anywhere.** Free to add, unrelated to the conflict
-  above, and not done.
+- **There is no `<link rel="canonical">` anywhere.** What that would and would not buy,
+  measured rather than assumed:
+  - `/agents/` and `/index.html` both **308** to the canonical form, so trailing-slash and
+    index duplicates do not exist. Cloudflare Pages handles it.
+  - Preview deployments answer 200 on `<hash>.lunenburg-fy28.pages.dev` but carry
+    `x-robots-tag: noindex`, so every deploy is NOT a crawlable copy of the site.
+  - `?utm_source=flyer` returns **200 with byte-identical content**. That is the one real
+    duplicate: every shared link carrying a tracking parameter is a separate URL to a
+    search engine, and there is nothing on the page saying which one is real.
+  - `lburg.org` **301s**, which is a stronger signal than a canonical, so the short domain
+    is not the reason to add one.
+  - **It would not help an agent at all.** A canonical is a hint to indexers about which
+    address to credit. It authorises nothing, and no fetcher consults it before deciding
+    what it may request. It cannot touch the problem above.
 - **The 107 questions are all schema-shaped.** Not one is phrased the way a resident would
   ask. *"Is the school budget growing faster than the town can pay for?"* is the register
   that is missing, and it is the register the site is for.
