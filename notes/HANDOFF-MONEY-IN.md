@@ -226,6 +226,16 @@ document closes it.
 
 ---
 
+## The three generated references this workstream produced
+
+- **`notes/reference/MONEY-NODES.md`** — every input and output node, flat, with `basis`
+  saying whether each is traced, partial or unknown. Read it first; it is the file for
+  saying *"you have missed X"*.
+- **`notes/reference/LEDGER-STRUCTURE.md`** — how the town's ledger is built and named,
+  and the decoder for every name that turned out not to say what it is.
+- **`notes/reference/data-model/money-flow.html`** — the diagram, phone-first,
+  bar-length-carries-value. `money-in.html` is untouched beside it.
+
 ## Next steps, in order
 
 0. **Model the spending side from the 635 account rows**, not from apportionment. This is
