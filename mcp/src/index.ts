@@ -201,23 +201,32 @@ function build(env: Env) {
       + 'are one row each, and it names no funding source, which is the question that '
       + 'usually matters. Grade appears only where the page happened to print it.',
     inputSchema: {
-      fy: z.string().optional().describe('Fiscal year as four digits, e.g. 2022'),
+      // Coerced, not merely typed. The published schema still says `string`, so a
+      // well-behaved caller sends "2025" -- but a year is the one argument an agent
+      // will reach for a number for, and rejecting 2025 costs a round trip to learn
+      // something that changes no answer. Forgiving on the way in, strict on the way out.
+      fy: z.coerce.string().optional().describe('Fiscal year as four digits, e.g. 2022'),
       category: z.string().optional().describe(
         'paraprofessional, teacher, administrator, counselor, nurse, psychologist, '
         + 'social_worker, speech_therapist, therapist, librarian, custodian, cafeteria, '
         + 'secretary, technology, specialist, coach'),
     },
   }, async ({ fy, category }) => {
+    // `document` is in the GROUP BY, not aggregated away. A count somebody may quote
+    // has to name the report it was counted from, and if one school-year spans two
+    // documents the honest result is two rows rather than one row hiding the split.
     const { results } = await db.prepare(
-      `SELECT fy, school, role_category, role_grade, COUNT(*) AS people
+      `SELECT fy, school, role_category, role_grade, document, COUNT(*) AS people
        FROM v_staff_roster
        WHERE (?1 IS NULL OR fy = ?1) AND (?2 IS NULL OR role_category = ?2)
          AND role_category <> 'unknown'
-       GROUP BY fy, school, role_category, role_grade
+       GROUP BY fy, school, role_category, role_grade, document
        ORDER BY fy, school, people DESC LIMIT 500`)
       .bind(fy ?? null, category ?? null).all()
+    const rows = (results ?? []) as Record<string, unknown>[]
     return text({
-      rows: results ?? [],
+      rows,
+      provenance: await provenance(db, rows),
       caution: 'A count of names the town printed. No FTE, no funding source, and the '
         + 'extraction fails in some years — FY2015 collapsed a two-column page and FY2024 '
         + 'stopped attributing paraprofessionals to grades. A zero may be a printing '
