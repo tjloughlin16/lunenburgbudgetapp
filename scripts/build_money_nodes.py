@@ -586,6 +586,46 @@ def render(c):
       'money is **not established**, and if they are, a total counting both double-counts '
       'about $318,000.\n')
 
+    a('\n## How money leaves a fund — three routes, and how to tell which was used\n')
+    a('“Held” only means something once you know what the ways OUT are. There are three, '
+      'and they are distinguishable:\n')
+    a('| route | where it shows | for the circuit breaker, FY26 |')
+    a('|---|---|---|')
+    cb = c.execute(f"""SELECT * FROM fund_activity WHERE fund='2640' AND fy={FY}""").fetchone()
+    sr = c.execute(f"""SELECT budgeted, received FROM v_revenue WHERE fy={FY}
+                       AND name='OP TRAN SR'""").fetchone()
+    a(f'| **Direct expenditure** | the fund’s own `expenditure` and `salaries` columns | '
+      f'`expenditure` {m(cb["expenditure"])}, `salaries` {m(cb["salaries"])}, '
+      f'`encumbered` {m(cb["encumbered"])} |')
+    a(f'| **Transfer into the general fund** | the general-fund revenue account '
+      f'`OP TRAN SR` — operating transfer from special revenue | **{m(sr["received"])} for '
+      f'the WHOLE TOWN, every special revenue fund combined.** A tenth of what this one '
+      f'fund holds, so it cannot have moved any material amount this way |')
+    a('| **Offsetting the appropriation** | the district’s published budget offsets | '
+      'The district publishes offsets for Extended Day, Facilities and Athletic and '
+      '**none for the circuit breaker**. If it is used that way, no published number says '
+      'so |')
+    opening = ((cb['closing_balance'] or 0) - (cb['revenue'] or 0)
+               + (cb['salaries'] or 0) + (cb['expenditure'] or 0))
+    a(f'\n**So for FY2026 so far, it essentially has not come out.** The fund identity '
+      f'recovers an opening balance the town’s report does not print:\n')
+    a('```')
+    a(f'opening balance   {opening:>10,.0f}   derived, not printed')
+    a(f'+ revenue         {cb["revenue"]:>10,.0f}')
+    a(f'- expenditure     {cb["expenditure"]:>10,.0f}')
+    a(f'= closing balance {cb["closing_balance"]:>10,.0f}   ties exactly')
+    a('```')
+    a('\nIt began the year holding money, took in more than it spent by a factor of '
+      'eighty, and is sitting on the result. **The diagram showing “spent $4,005 · held '
+      '$615,301” is therefore correct**, and the “spent” figure on its own would have been '
+      'close to a lie.\n')
+    a('*Two things this does NOT establish.* Whether it is normal: we hold one period of '
+      'one year, and a fund that spends at year end looks exactly like this on 31 March — '
+      'the period 13 report would settle it. And whether `SCHCOSTREI` is the same money: '
+      'the general fund shows $318,424 budgeted and **nothing received** against this '
+      'fund’s $325,970 received. Two circuit breaker figures of similar size, one received '
+      'and one not.\n')
+
     a('\n## EDGES — which source pays which use, and whether we can show it\n')
     a('The important column is `basis`. **`restricted` means we cannot show it** — the '
       'connection is near-certain because the fund exists for one purpose, but no report '

@@ -148,6 +148,30 @@ Note what this does to the intuition. The natural guess is that the fees sit in 
 *One caution on the circuit breaker.* Fund 2640 shows $325,970 received while the general-fund line `SCHCOSTREI` shows $318,424 budgeted and **nothing received**. Two circuit breaker figures about $7,500 apart, in two places. Whether they are the same money is **not established**, and if they are, a total counting both double-counts about $318,000.
 
 
+## How money leaves a fund — three routes, and how to tell which was used
+
+“Held” only means something once you know what the ways OUT are. There are three, and they are distinguishable:
+
+| route | where it shows | for the circuit breaker, FY26 |
+|---|---|---|
+| **Direct expenditure** | the fund’s own `expenditure` and `salaries` columns | `expenditure` 4,005, `salaries` —, `encumbered` — |
+| **Transfer into the general fund** | the general-fund revenue account `OP TRAN SR` — operating transfer from special revenue | **38,454 for the WHOLE TOWN, every special revenue fund combined.** A tenth of what this one fund holds, so it cannot have moved any material amount this way |
+| **Offsetting the appropriation** | the district’s published budget offsets | The district publishes offsets for Extended Day, Facilities and Athletic and **none for the circuit breaker**. If it is used that way, no published number says so |
+
+**So for FY2026 so far, it essentially has not come out.** The fund identity recovers an opening balance the town’s report does not print:
+
+```
+opening balance      293,335   derived, not printed
++ revenue            325,970
+- expenditure          4,005
+= closing balance    615,301   ties exactly
+```
+
+It began the year holding money, took in more than it spent by a factor of eighty, and is sitting on the result. **The diagram showing “spent $4,005 · held $615,301” is therefore correct**, and the “spent” figure on its own would have been close to a lie.
+
+*Two things this does NOT establish.* Whether it is normal: we hold one period of one year, and a fund that spends at year end looks exactly like this on 31 March — the period 13 report would settle it. And whether `SCHCOSTREI` is the same money: the general fund shows $318,424 budgeted and **nothing received** against this fund’s $325,970 received. Two circuit breaker figures of similar size, one received and one not.
+
+
 ## EDGES — which source pays which use, and whether we can show it
 
 The important column is `basis`. **`restricted` means we cannot show it** — the connection is near-certain because the fund exists for one purpose, but no report we hold says what the fund actually paid for. It is a presumption, and it is listed as one.
