@@ -122,6 +122,7 @@ def gather(c):
           AND a.level='department' AND a.account_type='expense'
         ORDER BY l.original DESC""").fetchall()
     d['omnibus'] = sum(r['v'] for r in depts)
+    d['depts'] = depts
     d['byclass'] = {}
     for r in depts:
         k = CONTROL.get(r['dept'], 'discretionary')
@@ -170,8 +171,15 @@ def diagram(d):
         lrows.append((f'ent-{f}', nm, v, 'ent'))
     lrows.append(('sr', 'Special revenue funds', d['sr_in'], 'sr'))
 
-    order = sorted(d['byclass'].items(), key=lambda kv: -sum(r['v'] for r in kv[1]))
-    rrows = [(k, CLASS_LABEL[k], sum(r['v'] for r in v), 'gf') for k, v in order]
+    # DEPARTMENTS, not governance categories. The right column of the school diagram is
+    # concrete places money lands -- the school budget, athletics, food service, Monty Tech
+    # -- and the town's has to be the same thing or the two are not the same model. The
+    # "who decides" classification is a different lens and lives on `who-decides.html`; it
+    # was imported here without being asked for and changed what the column meant.
+    top = d['depts'][:10]
+    rest = sum(r['v'] for r in d['depts'][10:])
+    rrows = [(f'd{r["dept"]}', r['name'].title()[:28], r['v'], 'gf') for r in top]
+    rrows.append(('drest', f'The other {len(d["depts"])-10} departments', rest, 'gf'))
     for f, nm, v in ent:
         if d['ent_out'].get(f):
             rrows.append((f'ento-{f}', nm + ' — spent', d['ent_out'][f], 'ent'))
@@ -331,12 +339,14 @@ def render(c):
     a('</div>')
 
     a('<div class="col"><h2>Money out</h2>'
-      '<div class="colnote">Who decides. The omnibus budget, by class.</div>')
-    a(bars([(CLASS_LABEL[k], sum(r['v'] for r in v),
-             'hi' if k == 'discretionary' else '',
-             f'{sum(r["v"] for r in v)/d["omnibus"]*100:.1f}% of the omnibus')
-            for k, v in sorted(d['byclass'].items(),
-                               key=lambda kv: -sum(r['v'] for r in kv[1]))]))
+      '<div class="colnote">Where it actually lands. The omnibus budget, by '
+      'department.</div>')
+    a(bars([(r['name'].title(), r['v'], 'hi' if r['dept'] in ('300', '310') else '',
+             f'dept {r["dept"]} · {r["v"]/d["omnibus"]*100:.1f}% of the omnibus')
+            for r in d['depts'][:12]]
+           + [(f'The other {len(d["depts"])-12} departments',
+               sum(r['v'] for r in d['depts'][12:]), '',
+               'every one under ' + money(d['depts'][12]['v']))]))
     a('<h3>Outside the general fund</h3>')
     a(bars([(nm.title(), d['ent_out'].get(f, 0), 'alt', f'fund {f}')
             for f, nm, v in d['ent_in'] if d['ent_out'].get(f)]
