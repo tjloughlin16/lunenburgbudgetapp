@@ -74,6 +74,105 @@ All figures FY2026. Appropriations are as voted; fund figures are actual through
 - **Pension (WRRS) attributable to school staff** — The assessment covers town and school employees together and no published document gives the split. Teachers are not in it — they are in the state system. WRRS publishes an annual actuarial valuation by member unit; that is the document.
 - **Spending from the schools’ own funds and grants** — Includes the grant funds above. Actual — never add to a budget.
 
+## Worked example — Transportation — a fee that is charged, and cannot be followed anywhere
+
+The district budgets transportation the way it budgets anything fee-funded: take the full cost, subtract what the fees are expected to bring in, and ask the town to appropriate the difference. **This is documented in the district’s own workbook**, in the comments column beside general education transportation: *"Does this reflect a reduction of $50K to accound for the money planned to come from the busing fees?"* — the people writing the budget, asking each other.
+
+So the appropriation is NET. The fees are supposed to pay the rest. To show that, you need three things: the fee schedule, the spending, and the fee revenue.
+
+**We have the first two and the third is missing.**
+
+| transportation account | voted | spent |
+|---|---:|---:|
+| `0100-S3991692-535025` REG TRANS | 965,500 | 976,500 |
+| `0100-S3991692-535026` SPED TRANS | 565,734 | 620,025 |
+| `0100-S1011031-511001` BUS MAN SA | 110,000 | 102,069 |
+| `0100-S1011031-511002` BUS OFF SA | 106,500 | 105,335 |
+| **total** | **1,747,734** | **1,803,929** |
+
+Bus fees are charged. The schedule is verified against the Superintendent’s May 2025 email and the School Committee’s adoption of Bus Fee Policy 3601.01 on 21 May 2025: $180 for a family with one student, $270 for two or more, $50 reduced, free for qualifying families. Grades 7–12 all charged; K–6 charged under two miles.
+
+**And the general-fund revenue account `STUDENTBUS` shows $0 budgeted and $0 received.** There is no transportation revolving fund in the town’s fund table either — the 13xx range holds athletics, lunch, extended day, adult education, facilities use, school choice, gifts, vending and greenthumb. No buses.
+
+So a fee that is charged by published policy has **no observable destination in any ledger we hold**. That is not the same as saying the money is unaccounted for — it is saying we cannot see it, which is a statement about our documents and not about the town’s books.
+
+Note what this does to the intuition. The natural guess is that the fees sit in a fund and pay bus bills directly, on top of the appropriation. That may be exactly right. It is also possible they land in the general fund and simply have not been booked yet. **Nothing we hold distinguishes those, and they imply very different things about who is paying for buses.**
+
+
+## EDGES — which source pays which use, and whether we can show it
+
+The important column is `basis`. **`restricted` means we cannot show it** — the connection is near-certain because the fund exists for one purpose, but no report we hold says what the fund actually paid for. It is a presumption, and it is listed as one.
+
+| source | use | basis | why |
+|---|---|---|---|
+| Any general-fund revenue source | Department 300 | **impossible** | Money in fund 0100 is fungible and no record ties a source to a department. The town apportions by share when presenting a budget; that is a convention, not a flow. **No further data will fix this.** |
+| Department 300 appropriation | Its 258 accounts, by function | **traced** | `glytdbud-expense-fy2026-p12-gf-all` holds every account. |
+| Fund 1301 (athletics) | Athletics spending | **restricted** | The fund is athletics — established from its cash journal. But **no expense report exists for special revenue funds**, so what it actually paid for is not observed. The general-fund athletics line (function 3510) is a separate, traced thing. |
+| Fund 2200 (school lunch) | Food service | **restricted** | Same gap. |
+| Fund 2640 (circuit breaker) | Special education | **restricted** | Same gap — and see the assumption below about whether this is the same money as the general-fund `SCHCOSTREI` line. |
+| Fund 1312 / 1305 / 1306 / 1302 / 1300 | Their own programmes | **restricted** | Same gap. |
+| Fund 1308 (school choice) | — | **unknown** | School choice money is not restricted the way a programme revolving fund is. Where it is spent is not established here at all. |
+| Grant funds 26xx–29xx | The purpose of each grant | **restricted** | Restricted by the grant award rather than by a town vote, and equally unobserved. |
+| Pension assessment (dept 820) | School staff | **unknown** | The assessment covers town and school employees together. No published document gives the split. |
+| Dept 914 `SCHRETHLTH` | School retirees | **traced** | The account name states it and it sits beside the town-retiree equivalent. |
+| State teachers’ pension system | District teaching staff | **unknown** | Not appropriated by Lunenburg, not in our archive, and not sized anywhere here. |
+
+**The traceability runs backwards from what anyone expects.** The general fund is $26.2M with an *unknown source* and a *fully traced use* — 258 named accounts. The restricted funds are $1.7M with a *fully known source* and an *untraced use*. Neither has both ends, and the big one is missing the end people ask about.
+
+
+## ASSUMPTIONS in use, and what would settle each
+
+Everything here is currently load-bearing somewhere. A row leaves this table when a document arrives — never because it started to feel obvious.
+
+
+**A restricted fund’s spending goes to its own programme**
+
+- *Evidence:* It is what the fund exists for, and a revolving fund is bound by the vote that created it.
+- *What rests on it:* Every restricted edge above rests on this.
+- *Settled by:* An expense report for the special revenue funds.
+
+**`SCHRESSTIP` is a school resource officer stipend**
+
+- *Evidence:* Read from the abbreviation, in the police department.
+- *What rests on it:* A $6,800 line. Immaterial, and still an inference.
+- *Settled by:* The account’s full name from MUNIS, which truncates at ten characters.
+
+**The general-fund `SCHCOSTREI` line and fund 2640 are not the same money**
+
+- *Evidence:* Nothing. They are similar magnitudes and we have not established either way.
+- *What rests on it:* **If they are the same money, a total that counts both double-counts $318,424.**
+- *Settled by:* The town accountant, or a transfer record between the two.
+
+**The district workbook total ties to the dept 300 appropriation**
+
+- *Evidence:* They land 0.4% apart for FY2026.
+- *What rests on it:* Used to argue the $26m is the town’s bill rather than a gross figure.
+- *Settled by:* Whether the 0.4% is netting or simply that `settled` holds 252 lines where `proposed` holds 321.
+
+**The pension assessment includes school non-teaching staff**
+
+- *Evidence:* Standard Massachusetts practice: teachers in the state system, other municipal employees in the county system. **Our archive does not say this.**
+- *What rests on it:* The reason the pension is treated as a school cost at all.
+- *Settled by:* The WRRS annual actuarial valuation, which reports by member unit.
+
+**MSBA reimbursement stopped because a bond reached term**
+
+- *Evidence:* Nothing. It is a guess that fits.
+- *What rests on it:* Explains $474,239 a year that arrived through FY2022 and is zero in FY2026.
+- *Settled by:* The town’s debt schedule, or the MSBA’s own payment record.
+
+
+## The documents that would close the gaps
+
+| document | what it is | what it closes |
+|---|---|---|
+| `glytdbud-expense` for the special revenue funds | The identical report the town already runs for the general fund and for each of the four enterprise funds, pointed at funds 13xx/22xx/26xx–29xx instead. | Turns **every restricted edge** above from presumption into traced fact — athletics, lunch, circuit breaker, extended day, and every grant. |
+| WRRS annual actuarial valuation, by member unit | Published by the retirement system. | Sizes the school share of the $2.39M pension assessment. |
+| The Town Manager’s revenue apportionment worksheet | Seen once; we do not hold it. | Documents the convention by which general-fund revenue is presented as split across departments. It cannot make the edge traceable — nothing can — but it makes the convention citable. |
+| DESE End of Year Financial Report | Published by the state. | Separates district spending by FUND, which is the one thing the town’s budget documents never show. |
+| Where bus fee receipts are booked | A revenue account, a fund, or a statement that they are netted before booking. | The fee schedule is published and verified; `STUDENTBUS` shows zero. **A charged fee with no observable destination** is the clearest single gap in this model. |
+| The period 13 ledger | The year-end close. | Reconciles FY2026 properly; period 12 is used for now. |
+
 ## What is deliberately NOT a node
 
 - **Chapter 70, and every other general-fund revenue line.** They are inputs to the TOWN, not to the schools. They land in fund 0100 and lose their identity; the appropriation is the only edge out of it that anyone can follow. Listing Chapter 70 as a school input would assert a connection no record supports.

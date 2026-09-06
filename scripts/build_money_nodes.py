@@ -57,7 +57,145 @@ FY, P_DEPT, P_ACCT = 2026, 9, 12
 # exactly what fails: fund 1301 is the athletics revolving fund and is called
 # `CHAPTER 658 REVOLVING FUND`. Anything in these ranges that appears in the ledger and is
 # not named here shows up in the "unclassified" check at the end rather than vanishing.
-SCHOOL_FUND_PREFIXES = ('13', '22', '26', '27', '28')
+SCHOOL_FUND_PREFIXES = ('13', '15', '22', '26', '27', '28', '29')
+
+# EDGES: which source pays which use. `basis` is the whole point of this table.
+#
+#   traced      we can see it. A named account or a report holds the connection.
+#   restricted  near-certain, and NOT OBSERVED. A revolving fund exists for one purpose,
+#               so the money almost certainly goes there -- but no report we hold shows
+#               what the fund actually paid for. This is a presumption, not evidence.
+#   unknown     the connection exists and cannot be sized or shown from anything published.
+#   impossible  there is no such connection to find. Not missing data.
+EDGES = [
+    ('Any general-fund revenue source', 'Department 300', 'impossible',
+     'Money in fund 0100 is fungible and no record ties a source to a department. The '
+     'town apportions by share when presenting a budget; that is a convention, not a '
+     'flow. **No further data will fix this.**'),
+    ('Department 300 appropriation', 'Its 258 accounts, by function', 'traced',
+     '`glytdbud-expense-fy2026-p12-gf-all` holds every account.'),
+    ('Fund 1301 (athletics)', 'Athletics spending', 'restricted',
+     'The fund is athletics — established from its cash journal. But **no expense report '
+     'exists for special revenue funds**, so what it actually paid for is not observed. '
+     'The general-fund athletics line (function 3510) is a separate, traced thing.'),
+    ('Fund 2200 (school lunch)', 'Food service', 'restricted', 'Same gap.'),
+    ('Fund 2640 (circuit breaker)', 'Special education', 'restricted',
+     'Same gap — and see the assumption below about whether this is the same money as the '
+     'general-fund `SCHCOSTREI` line.'),
+    ('Fund 1312 / 1305 / 1306 / 1302 / 1300', 'Their own programmes', 'restricted',
+     'Same gap.'),
+    ('Fund 1308 (school choice)', '—', 'unknown',
+     'School choice money is not restricted the way a programme revolving fund is. Where '
+     'it is spent is not established here at all.'),
+    ('Grant funds 26xx–29xx', 'The purpose of each grant', 'restricted',
+     'Restricted by the grant award rather than by a town vote, and equally unobserved.'),
+    ('Pension assessment (dept 820)', 'School staff', 'unknown',
+     'The assessment covers town and school employees together. No published document '
+     'gives the split.'),
+    ('Dept 914 `SCHRETHLTH`', 'School retirees', 'traced',
+     'The account name states it and it sits beside the town-retiree equivalent.'),
+    ('State teachers’ pension system', 'District teaching staff', 'unknown',
+     'Not appropriated by Lunenburg, not in our archive, and not sized anywhere here.'),
+]
+
+# ASSUMPTIONS currently load-bearing somewhere in this workstream. Each says plainly what
+# would settle it. A row leaves this table only when a document arrives, never because it
+# started to feel obvious.
+ASSUMPTIONS = [
+    ('A restricted fund’s spending goes to its own programme',
+     'It is what the fund exists for, and a revolving fund is bound by the vote that '
+     'created it.',
+     'Every restricted edge above rests on this.',
+     'An expense report for the special revenue funds.'),
+    ('`SCHRESSTIP` is a school resource officer stipend',
+     'Read from the abbreviation, in the police department.',
+     'A $6,800 line. Immaterial, and still an inference.',
+     'The account’s full name from MUNIS, which truncates at ten characters.'),
+    ('The general-fund `SCHCOSTREI` line and fund 2640 are not the same money',
+     'Nothing. They are similar magnitudes and we have not established either way.',
+     '**If they are the same money, a total that counts both double-counts $318,424.**',
+     'The town accountant, or a transfer record between the two.'),
+    ('The district workbook total ties to the dept 300 appropriation',
+     'They land 0.4% apart for FY2026.',
+     'Used to argue the $26m is the town’s bill rather than a gross figure.',
+     'Whether the 0.4% is netting or simply that `settled` holds 252 lines where '
+     '`proposed` holds 321.'),
+    ('The pension assessment includes school non-teaching staff',
+     'Standard Massachusetts practice: teachers in the state system, other municipal '
+     'employees in the county system. **Our archive does not say this.**',
+     'The reason the pension is treated as a school cost at all.',
+     'The WRRS annual actuarial valuation, which reports by member unit.'),
+    ('MSBA reimbursement stopped because a bond reached term',
+     'Nothing. It is a guess that fits.',
+     'Explains $474,239 a year that arrived through FY2022 and is zero in FY2026.',
+     'The town’s debt schedule, or the MSBA’s own payment record.'),
+]
+
+# A WORKED EXAMPLE, because the abstract version of this keeps being misunderstood.
+# Transportation is the case TJ described and it turned out stranger than either of us
+# expected. Held as data so the figures below are computed rather than typed.
+WORKED = dict(
+    title='Transportation — a fee that is charged, and cannot be followed anywhere',
+    story=[
+        'The district budgets transportation the way it budgets anything fee-funded: take '
+        'the full cost, subtract what the fees are expected to bring in, and ask the town '
+        'to appropriate the difference. **This is documented in the district’s own '
+        'workbook**, in the comments column beside general education transportation: '
+        '*"Does this reflect a reduction of $50K to accound for the money planned to come '
+        'from the busing fees?"* — the people writing the budget, asking each other.',
+        'So the appropriation is NET. The fees are supposed to pay the rest. To show that, '
+        'you need three things: the fee schedule, the spending, and the fee revenue.',
+        '**We have the first two and the third is missing.**',
+    ],
+    after=[
+        'Bus fees are charged. The schedule is verified against the Superintendent’s May '
+        '2025 email and the School Committee’s adoption of Bus Fee Policy 3601.01 on '
+        '21 May 2025: $180 for a family with one student, $270 for two or more, $50 '
+        'reduced, free for qualifying families. Grades 7–12 all charged; K–6 charged '
+        'under two miles.',
+        '**And the general-fund revenue account `STUDENTBUS` shows $0 budgeted and $0 '
+        'received.** There is no transportation revolving fund in the town’s fund table '
+        'either — the 13xx range holds athletics, lunch, extended day, adult education, '
+        'facilities use, school choice, gifts, vending and greenthumb. No buses.',
+        'So a fee that is charged by published policy has **no observable destination in '
+        'any ledger we hold**. That is not the same as saying the money is unaccounted '
+        'for — it is saying we cannot see it, which is a statement about our documents '
+        'and not about the town’s books.',
+        'Note what this does to the intuition. The natural guess is that the fees sit in '
+        'a fund and pay bus bills directly, on top of the appropriation. That may be '
+        'exactly right. It is also possible they land in the general fund and simply have '
+        'not been booked yet. **Nothing we hold distinguishes those, and they imply very '
+        'different things about who is paying for buses.**',
+    ],
+)
+
+# The documents that would close the gaps, and what each one closes.
+WANTED = [
+    ('`glytdbud-expense` for the special revenue funds',
+     'The identical report the town already runs for the general fund and for each of the '
+     'four enterprise funds, pointed at funds 13xx/22xx/26xx–29xx instead.',
+     'Turns **every restricted edge** above from presumption into traced fact — athletics, '
+     'lunch, circuit breaker, extended day, and every grant.'),
+    ('WRRS annual actuarial valuation, by member unit',
+     'Published by the retirement system.',
+     'Sizes the school share of the $2.39M pension assessment.'),
+    ('The Town Manager’s revenue apportionment worksheet',
+     'Seen once; we do not hold it.',
+     'Documents the convention by which general-fund revenue is presented as split across '
+     'departments. It cannot make the edge traceable — nothing can — but it makes the '
+     'convention citable.'),
+    ('DESE End of Year Financial Report',
+     'Published by the state.',
+     'Separates district spending by FUND, which is the one thing the town’s budget '
+     'documents never show.'),
+    ('Where bus fee receipts are booked',
+     'A revenue account, a fund, or a statement that they are netted before booking.',
+     'The fee schedule is published and verified; `STUDENTBUS` shows zero. **A charged '
+     'fee with no observable destination** is the clearest single gap in this model.'),
+    ('The period 13 ledger',
+     'The year-end close.',
+     'Reconciles FY2026 properly; period 12 is used for now.'),
+]
 
 
 import re
@@ -241,6 +379,55 @@ def render(c):
     for r in outs:
         if r['note']:
             a(f'- **{r["node"]}** — {r["note"]}')
+
+    a(f'\n## Worked example — {WORKED["title"]}\n')
+    for para in WORKED['story']:
+        a(para + '\n')
+    tr = c.execute(f"""SELECT a.account_id, a.name, l.original, l.expended
+                       FROM ledger_snapshot l JOIN account a USING (account_id)
+                       WHERE l.fy={FY} AND l.period={P_ACCT} AND a.dept='300'
+                         AND (a.function='3300' OR a.name LIKE 'BUS %')
+                       ORDER BY l.original DESC""").fetchall()
+    a('| transportation account | voted | spent |')
+    a('|---|---:|---:|')
+    for r in tr:
+        a(f'| `{r["account_id"]}` {r["name"].strip()} | {m(r["original"])} | '
+          f'{m(r["expended"])} |')
+    a(f'| **total** | **{m(sum(r["original"] for r in tr))}** | '
+      f'**{m(sum(r["expended"] for r in tr))}** |')
+    a('')
+    for para in WORKED['after']:
+        a(para + '\n')
+
+    a('\n## EDGES — which source pays which use, and whether we can show it\n')
+    a('The important column is `basis`. **`restricted` means we cannot show it** — the '
+      'connection is near-certain because the fund exists for one purpose, but no report '
+      'we hold says what the fund actually paid for. It is a presumption, and it is '
+      'listed as one.\n')
+    a('| source | use | basis | why |')
+    a('|---|---|---|---|')
+    for src, use, basis, why in EDGES:
+        a(f'| {src} | {use} | **{basis}** | {why} |')
+    a('\n**The traceability runs backwards from what anyone expects.** The general fund '
+      'is $26.2M with an *unknown source* and a *fully traced use* — 258 named accounts. '
+      'The restricted funds are $1.7M with a *fully known source* and an *untraced use*. '
+      'Neither has both ends, and the big one is missing the end people ask about.\n')
+
+    a('\n## ASSUMPTIONS in use, and what would settle each\n')
+    a('Everything here is currently load-bearing somewhere. A row leaves this table when '
+      'a document arrives — never because it started to feel obvious.\n')
+    for what, ev, where, settle in ASSUMPTIONS:
+        a(f'\n**{what}**\n')
+        a(f'- *Evidence:* {ev}')
+        a(f'- *What rests on it:* {where}')
+        a(f'- *Settled by:* {settle}')
+    a('')
+
+    a('\n## The documents that would close the gaps\n')
+    a('| document | what it is | what it closes |')
+    a('|---|---|---|')
+    for doc, what, closes in WANTED:
+        a(f'| {doc} | {what} | {closes} |')
 
     a('\n## What is deliberately NOT a node\n')
     a('- **Chapter 70, and every other general-fund revenue line.** They are inputs to the '
