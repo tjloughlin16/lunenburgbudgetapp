@@ -758,10 +758,18 @@ def render(c):
       'their size is not knowable from anything here |')
     a('| **Trust funds** | not usable | The annual-report extract for trust funds is '
       '`check failed` on ordinal columns and cannot be aggregated. Some are scholarships |')
-    a('| **Turf field income** | account exists, holds nothing | '
-      '`0100-01001-438200 RENTTURFFI` — rent, turf field — is budgeted at zero and has '
-      'received zero. Facilities-use revolving (fund 1306) took in $18,670 and may hold '
-      'it. **Not established either way** |')
+    a('| **Turf field income** | `CELL TOWER` $80,000 budgeted, $33,272 received | '
+      'There is a cell installation near the turf field and the town leases the ground '
+      'for it: the Select Board consented to a **sublease under a Land Lease Agreement '
+      'between Cellco Partnership (Verizon Wireless) and the Town, to New Cingular '
+      'Wireless (AT&amp;T)**. The revenue accounts that could hold it are `CELL TOWER` and '
+      '`LAND LEASE` ($1,000). **Whether any of it is earmarked for the field is NOT '
+      'established** — the meeting archive was searched for a link between the lease '
+      'revenue and the field and none was found, and a general fund line is subject to '
+      'the pot rule like any other. `RENTTURFFI` (rent, turf field) exists and is zero. '
+      '*A minute records the Town Manager saying T-Mobile services cell towers on the '
+      'Town Hall roof; that is either a second site or a different subject, and it is '
+      'noted so the quote is not later mistaken for evidence about the field.* |')
     a('| **Bus fees** | not found | Charged by published policy, no observable destination. '
       'See the worked example |')
     a('\n**And the potential money — what could feed in and currently does not.**\n')
