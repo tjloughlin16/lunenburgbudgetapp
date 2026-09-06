@@ -54,7 +54,6 @@ import MANIFEST from '../data/agent-manifest.json'
 const ABS = (p: string) => `${MANIFEST.site}${p}`
 
 export function DataTopLine() {
-  const host = MANIFEST.site.replace(/^https?:\/\//, '')
   return (
     <div className="border-b" style={{ borderColor: 'var(--grid)' }}>
       <p className="mx-auto max-w-6xl px-5 py-1.5 text-[12px]">
@@ -66,9 +65,6 @@ export function DataTopLine() {
           style={{ color: 'var(--series-cost)' }}>
           Analyse this budget with AI
         </a>
-        <span className="ml-2" style={{ color: 'var(--text-muted)' }}>
-          {host}/ask
-        </span>
       </p>
     </div>
   )
