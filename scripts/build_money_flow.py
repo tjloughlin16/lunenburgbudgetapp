@@ -184,6 +184,63 @@ def own_funds(c):
     return [(r['fund'], r['name'], r['revenue'], r['spent']) for r in rows]
 
 
+# ---------------------------------------------------------------- the programme map
+#
+# A PROGRAMME is a thing the town does. It is not a fund and not a function code, and that
+# is the whole point of this page: **a programme's money arrives from more than one place,
+# and the budget shows one of them.**
+#
+# `inside`  function codes within dept 300 — appropriated, traced to named accounts
+# `outside` funds that pay for the same programme without entering the appropriation
+# `edge`    how sure we are the outside money goes here:
+#             traced      an account or journal shows it
+#             restricted  the fund exists for this and nothing else, but no expense report
+#                         for special revenue funds exists, so it is NOT OBSERVED
+#             missing     the money is known to be collected and cannot be located at all
+PROGRAMMES = [
+    ('Special education', ['2110', '2310', '2320', '2330', '9300', '9400'],
+     [('2640', 'restricted'), ('2813', 'restricted'), ('2814', 'restricted'),
+      ('2832', 'restricted'), ('2758', 'restricted')],
+     'The largest programme in the budget and the one with the most money outside it. The '
+     'circuit breaker reimburses high-cost placements; the #240 grants are read as IDEA '
+     'from outside this archive, and they are the two biggest grant spends.'),
+    ('Transportation', ['3300'],
+     [('BUSFEES', 'missing')],
+     'The appropriation is NET — the district subtracts expected fee revenue before asking '
+     'the town. Its own workbook says so. **The fees are charged and cannot be located in '
+     'any ledger we hold.**'),
+    ('Athletics', ['3510'],
+     [('1301', 'restricted')],
+     'Fund 1301 is the athletics revolving fund — the town calls it CHAPTER 658, which is '
+     'why every name-based search missed it. Fees in, programme costs out.'),
+    ('Food service', [],
+     [('2200', 'restricted')],
+     '**Entirely outside the appropriation.** There is no food service function code inside '
+     'dept 300 at all. A reader of the school budget sees nothing about feeding children.'),
+    ('Extended day and after school', [],
+     [('1312', 'restricted'), ('1305', 'restricted'), ('1306', 'restricted')],
+     '**Entirely outside the appropriation.** Fee-funded programmes that appear nowhere in '
+     'the $26m.'),
+    ('Everything else in the school budget', None, [], ''),
+]
+
+# School money the town appropriates to OTHER departments. Not a programme split -- these
+# never touch dept 300 at all.
+ELSEWHERE_MAP = [
+    ('0100-13102-532000', 'Monty Tech assessment',
+     'A different school district, assessed on the town. Education spending that the '
+     'Lunenburg school budget does not contain and the School Committee does not control.'),
+    ('0100-19142-570018', 'School retiree health insurance',
+     'Health insurance for former school employees, appropriated under the insurance '
+     'department.'),
+    ('0100-18202-560001', 'Pension — school share unknown',
+     'The county retirement assessment covers town and school staff together. Teachers are '
+     'in the state system instead, and that cost Lunenburg never sees at all.'),
+    ('0100-12101-519021', 'School resource stipend',
+     'Inside the police department. The expansion of the abbreviation is inferred.'),
+]
+
+
 # ---------------------------------------------------------------- rendering
 
 
@@ -234,106 +291,147 @@ def bars(rows, hilite=(), note_of=None):
     return '\n'.join(out)
 
 
+def programme_rows(c, fundnames):
+    """Each programme: what is inside the appropriation, and what is outside it."""
+    inside = {r['f']: r['v'] for r in c.execute(f"""
+        SELECT a.function f, SUM(l.original) v FROM ledger_snapshot l
+        JOIN account a USING (account_id)
+        WHERE l.fy={FY} AND l.period={P_ACCT} AND a.dept='300' AND a.function IS NOT NULL
+        GROUP BY a.function""")}
+    d300 = sum(inside.values())
+    spent = {r['fund']: (r['spent'] or 0) for r in c.execute(f"""
+        SELECT fund, spent FROM v_fund_year WHERE fy={FY} AND period={P_DEPT}""")}
+    claimed, out = set(), []
+    for name, fns, funds, why in PROGRAMMES:
+        if fns is None:
+            continue
+        ins = sum(inside.get(f, 0) for f in fns)
+        claimed.update(fns)
+        outs = [(f, spent.get(f, 0), how, fundnames.get(f, '')) for f, how in funds]
+        out.append(dict(name=name, inside=ins, fns=fns, outs=outs, why=why))
+    rest = d300 - sum(p['inside'] for p in out)
+    out.append(dict(name='Everything else in the school budget', inside=rest, fns=[],
+                    outs=[], why='Teaching, buildings, administration, guidance, health, '
+                                 'technology — the {} function codes not claimed above.'
+                                 .format(len(inside) - len(claimed))))
+    return out, d300
+
+
 def render(c):
+    fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
     srcs, rev_total = revenue_sources(c)
-    depts, omnibus = departments(c)
-    elsewhere = school_elsewhere(c)
-    uses, uses_total = school_uses(c)
     funds = own_funds(c)
+    progs, d300 = programme_rows(c, fundnames)
     ath_gen, ath_rev = athletics(c)
 
-    d300 = next(v for n, v, k in depts if k == '300')
-    ret = next((v for aid, dp, nm, v in elsewhere if aid.endswith('570018')), 0)
-    monty = next((v for aid, dp, nm, v in elsewhere if aid.endswith('532000')), 0)
-    pens = next((v for aid, dp, nm, v in elsewhere if aid.endswith('560001')), 0)
-    stip = next((v for aid, dp, nm, v in elsewhere if aid.endswith('519021')), 0)
-    funds_in = sum(r for _, _, r, _ in funds)
-    residual = rev_total - omnibus
+    grant_spend = c.execute(f"""SELECT SUM(spent) v FROM v_fund_year
+                                WHERE fy={FY} AND period={P_DEPT} AND spent>0
+                                  AND (revenue IS NULL OR revenue=0)""").fetchone()['v'] or 0
+    elsewhere = {r['account_id']: r for r in c.execute(f"""
+        SELECT a.account_id, a.name, l.original v FROM ledger_snapshot l
+        JOIN account a USING (account_id)
+        WHERE l.fy={FY} AND l.period={P_ACCT}""")}
 
     P = []
     a = P.append
 
-    a(f'<section class="stage"><h2>1 &middot; Where the money comes from</h2>'
-      f'<p class="cap">Every general-fund revenue line the town budgets for FY2026. '
-      f'<b>Traced</b> &mdash; each is a named account. Total {money(rev_total)}.</p>')
-    a(bars([(n, v) for n, v in srcs]))
-    a('</section>')
+    a('<section class="intro"><p>Two columns. On the left, every source of money the '
+      'schools use. On the right, where it comes to rest — starting with the one number '
+      'everybody knows, and then <b>every other place school money is spent that the '
+      '$26m does not contain</b>.</p>'
+      '<p class="cap">Bars are proportional within each column. A source and a landing '
+      'place are not the same kind of thing and are never added across the two.</p>'
+      '</section>')
 
-    a('<section class="pot"><h2>2 &middot; It all lands in one pot</h2>'
-      f'<p class="potline"><b>GENERAL FUND 0100 &mdash; {money(rev_total)}</b></p>'
-      '<p>Every source above flows in here and <b>loses its identity</b>. Money in the '
-      'general fund is fungible, and no record ties a source to a department.</p>'
-      '<p class="refuse">So there is no line on this page from Chapter&nbsp;70 to the '
-      'schools. The town apportions the pot across departments by share when it presents '
-      'a budget, and that is a fair convention &mdash; but it is a convention. '
-      '<b>The edge is not missing data. It does not exist.</b></p></section>')
+    a('<div class="cols">')
 
-    a(f'<section class="stage"><h2>3 &middot; Town Meeting votes it out again</h2>'
-      f'<p class="cap"><b>Traced</b> &mdash; every department is a line residents voted on. '
-      f'Omnibus total {money(omnibus)}; the rest of the pot funds warrant articles, '
-      f'transfers and reserves.</p>')
-    rows = [(n, v, k) for n, v, k in depts]
-    rows.append(('Warrant articles, transfers, reserves', residual, 'residual'))
-    a(bars(rows, hilite=('300', '310'), note_of={
-        '300': 'the school department', '310': 'regional vocational school',
-        '820': 'pension for town AND school staff — split unknown',
-        '914': 'includes school retiree health', 'residual': 'not appropriated to a department'}))
-    a('</section>')
-
-    a(f'<section class="stage"><h2>4 &middot; What the school department spends it on</h2>'
-      f'<p class="cap"><b>Traced</b> &mdash; 258 named accounts, grouped by the function '
-      f'code the town assigns. Function names are the district&rsquo;s own; a code its '
-      f'budget book does not name is shown bare.</p>')
-    a(bars([((f'{f} — {nm}' if f and nm else (nm or f)), v, f) for f, nm, v, n in uses]))
-    a('</section>')
-
-    a('<section class="stage alt"><h2>5 &middot; School money in other departments</h2>'
-      '<p class="cap">Each identified by the name of an account in the town&rsquo;s own '
-      'ledger. None inferred from a share.</p>')
-    a(bars([(f'{nm} — dept {dp}', v, aid) for aid, dp, nm, v in elsewhere],
-           note_of={aid: aid for aid, dp, nm, v in elsewhere}))
-    a('<p class="warn"><b>The pension cannot be split.</b> <code>COUNT[Y] RET</code> covers '
-      'town and school employees together and no published document says in what '
-      'proportion. Teachers are not in it at all &mdash; they are in the state system, '
-      'whose cost Lunenburg never appropriates and never sees. The Worcester Regional '
-      'Retirement System publishes an annual actuarial valuation by member unit; that is '
-      'the document that would settle it.</p>')
-    a('</section>')
-
-    a('<section class="stage alt"><h2>6 &middot; Money that never enters the pot</h2>'
-      '<p class="cap">The schools&rsquo; own funds. Not appropriated, not in the '
-      '$26m, and <b>actual rather than budgeted</b> &mdash; so they must never be added '
-      'to it. Nine months of a twelve-month year.</p>')
+    # ------------------------------------------------------------------ column one
+    a('<div class="col"><h2>Sources</h2>')
+    a('<div class="colnote">Where the money comes from.</div>')
+    a('<h3>Appropriated by Town Meeting</h3>')
+    a(bars([('General fund — department 300', d300, 'core')]))
+    a('<h3>The schools’ own funds — never enter the general fund</h3>')
     a(bars([(nm, rev, f) for f, nm, rev, sp in funds]))
-    a(f'<p class="warn"><b>Athletics is the clearest case, and it is only half here.</b> '
-      f'The town appropriates {money(ath_gen)} for athletics inside dept 300 '
-      f'(function 3510: coaches, transport, the athletic director, the trainer, '
-      f'insurance). Fees bring in a further {money(ath_rev)} through a revolving fund '
-      f'&mdash; <b>which does not appear in the town&rsquo;s fund-balance report at all.</b> '
-      f'That figure comes from the district&rsquo;s own athletics documents. So athletics '
-      f'costs about {money(ath_gen + ath_rev)} to run and the town&rsquo;s budget shows '
-      f'{money(ath_gen)} of it. Every fee-funded programme has this shape; athletics is '
-      f'just the one where both halves have been found.</p>')
-    a('</section>')
+    a('<h3>Grants</h3>')
+    a(bars([('Federal and state grants, spent side only', grant_spend, 'g')]))
+    a('<div class="miss"><b>Bus fees — charged, and not found.</b> $180 a family, $270 for '
+      'two or more, School Committee policy 3601.01. The general-fund account '
+      '<code>STUDENTBUS</code> is zero and no transportation fund exists. This is a source '
+      'we know is real and cannot place.</div>')
+    a('</div>')
 
-    a('<section class="stage"><h2>So what is &ldquo;the school budget&rdquo;?</h2>'
-      '<p class="cap">Four different numbers get called it, and they differ by more than '
-      '10%.</p><table>')
-    for q, v, why in [
-        ('Appropriated to the school department', d300, 'dept 300, 258 accounts'),
-        ('Spent by the town on Lunenburg Public Schools', d300 + ret + stip,
-         '+ school retiree health, resource stipend'),
-        ('Spent by the town on education', d300 + ret + stip + monty,
-         '+ Monty Tech, a different district'),
-        ('Available to the schools to spend', d300 + funds_in,
-         '+ their own funds, outside the general fund'),
-    ]:
-        a(f'<tr><td>{q}<span class="sub">{why}</span></td>'
-          f'<td class="v">{money(v)}</td></tr>')
-    a('</table>')
-    a(f'<p class="warn">And one that cannot be stated at all: the school share of the '
-      f'{money(pens)} pension assessment. The honest answer is that nobody publishes it.</p>')
-    a('</section>')
+    # ------------------------------------------------------------------ column two
+    a('<div class="col"><h2>Where it lands</h2>')
+    a('<div class="colnote">What the money is spent on.</div>')
+    a(f'<div class="core"><div class="corehd">THE SCHOOL BUDGET</div>'
+      f'<div class="coreamt">{money(d300)}</div>'
+      f'<div class="coresub">Department 300 — 258 accounts. This is the number in every '
+      f'headline, and every box below is money spent on the schools that it does not '
+      f'contain.</div></div>')
+
+    a('<h3>Programmes paid for from more than one place</h3>')
+    for p in progs:
+        if not p['outs'] and p['inside'] == 0:
+            continue
+        tot = p['inside'] + sum(v for _, v, _, _ in p['outs'])
+        a(f'<div class="prog"><div class="proghd">{html.escape(p["name"])}'
+          f'<span class="progtot">{money(tot)}</span></div>')
+        if p['inside']:
+            a(f'<div class="line in"><span class="tag">inside the $26m</span>'
+              f'<span class="v">{money(p["inside"])}</span>'
+              f'<span class="src">function {", ".join(p["fns"])}</span></div>')
+        for f, v, how, nm in p['outs']:
+            if how == 'missing':
+                a('<div class="line missing"><span class="tag">outside — NOT FOUND</span>'
+                  '<span class="v">?</span><span class="src">bus fees are charged and '
+                  'cannot be located</span></div>')
+            else:
+                a(f'<div class="line out {how}"><span class="tag">outside — {how}</span>'
+                  f'<span class="v">{money(v)}</span>'
+                  f'<span class="src">fund {f} {html.escape(nm.title())}</span></div>')
+        if p['why']:
+            a(f'<div class="progwhy">{p["why"]}</div>')
+        a('</div>')
+
+    a('<h3>School money the town appropriates elsewhere</h3>')
+    a('<div class="colnote">These never touch department 300.</div>')
+    for aid, label, why in ELSEWHERE_MAP:
+        r = elsewhere.get(aid)
+        if not r:
+            continue
+        unknown = aid.endswith('560001')
+        a(f'<div class="prog alt"><div class="proghd">{html.escape(label)}'
+          f'<span class="progtot">{"share unknown" if unknown else money(r["v"])}</span>'
+          f'</div><div class="line out"><span class="tag">'
+          f'{"of " + money(r["v"]) if unknown else "traced"}</span>'
+          f'<span class="v"></span><span class="src"><code>{aid}</code></span></div>'
+          f'<div class="progwhy">{why}</div></div>')
+    a('</div></div>')
+
+    a('<section class="stage"><h2>How to read the outside column</h2>'
+      '<table><tr><th>label</th><th>means</th></tr>'
+      '<tr><td><b>traced</b></td><td>an account or a journal shows this money going '
+      'here.</td></tr>'
+      '<tr><td><b>restricted</b></td><td>the fund exists for this and nothing else, so the '
+      'money almost certainly goes here — <b>but no expense report for the special revenue '
+      'funds exists, so it is not observed.</b> A presumption, not evidence.</td></tr>'
+      '<tr><td><b>NOT FOUND</b></td><td>the money is known to be collected and cannot be '
+      'located in any ledger we hold.</td></tr></table>'
+      '<p class="warn">Every <b>restricted</b> row on this page becomes <b>traced</b> with '
+      'one document: <code>glytdbud-expense</code> run for the special revenue funds — the '
+      'same report the town already produces for the general fund and for each of its four '
+      'enterprise funds.</p></section>')
+
+    a(f'<section class="stage"><h2>Athletics, in full, as the worked case</h2>'
+      f'<p>The town appropriates <b>{money(ath_gen)}</b> for athletics inside dept 300 — '
+      f'coaches, transport, the athletic director, the trainer, insurance. The district’s '
+      f'own athletics documents record a further <b>{money(ath_rev)}</b> through the '
+      f'revolving fund. So the programme costs about <b>{money(ath_gen + ath_rev)}</b> and '
+      f'the town’s budget shows {money(ath_gen)} of it.</p>'
+      f'<p class="cap">The town ledger and the district’s documents give different figures '
+      f'for the fund, on different bases and periods. Neither is wrong; they answer '
+      f'different questions. Every fee-funded programme has this shape — athletics is only '
+      f'the one where both halves have been found.</p></section>')
 
     return PAGE.format(body='\n'.join(P))
 
@@ -358,7 +456,7 @@ PAGE = '''<meta charset="utf-8">
 body {{ margin:0; background:var(--bg); color:var(--ink);
   font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   -webkit-text-size-adjust:100%; }}
-.wrap {{ max-width:820px; margin:0 auto; padding:22px 16px 80px }}
+.wrap {{ max-width:1180px; margin:0 auto; padding:22px 16px 80px }}
 header {{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }}
 .kicker {{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }}
 h1 {{ font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }}
@@ -388,6 +486,44 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 .refuse {{ border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }}
 .warn {{ background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }}
+/* Two columns on a wide screen, one on a phone. The columns are a reading aid, not
+   the information: every landing box names its own sources, so nothing is lost when
+   they stack. Connector lines were tried and are unreadable at this density. */
+.cols {{ display:grid; gap:16px; margin:16px 0 }}
+.col {{ background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:15px 14px; min-width:0 }}
+.col h2 {{ margin:0 }}
+.colnote {{ font-size:12.5px; color:var(--muted); margin:2px 0 12px }}
+.col h3 {{ font-size:12px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin:18px 0 8px; font-weight:700 }}
+.intro {{ margin:14px 0 }}
+.intro p {{ margin:0 0 6px }}
+.core {{ background:var(--school-bg); border:2px solid var(--school); border-radius:8px;
+  padding:13px 14px }}
+.corehd {{ font-size:11px; letter-spacing:.1em; font-weight:700; color:var(--school) }}
+.coreamt {{ font-size:26px; font-weight:700; letter-spacing:-.02em;
+  font-family:ui-monospace,Menlo,monospace }}
+.coresub {{ font-size:12.5px; color:var(--muted); margin-top:4px }}
+.prog {{ border:1px solid var(--grid); border-radius:8px; padding:11px 12px; margin:9px 0 }}
+.prog.alt {{ border-style:dashed }}
+.proghd {{ display:flex; justify-content:space-between; gap:10px; align-items:baseline;
+  font-weight:700; font-size:14.5px }}
+.progtot {{ font-family:ui-monospace,Menlo,monospace; font-size:13px; white-space:nowrap;
+  color:var(--muted); font-weight:400 }}
+.line {{ display:grid; grid-template-columns:auto auto 1fr; gap:8px; align-items:baseline;
+  font-size:12.5px; margin-top:7px; padding-top:6px; border-top:1px dotted var(--grid) }}
+.tag {{ font-size:10px; letter-spacing:.05em; text-transform:uppercase; font-weight:700;
+  padding:1px 6px; border-radius:3px; white-space:nowrap }}
+.line.in .tag {{ background:var(--school-bg); color:var(--school) }}
+.line.out .tag {{ background:var(--traced-bg); color:var(--traced) }}
+.line.restricted .tag {{ background:var(--warn-bg); color:var(--warn) }}
+.line.missing .tag {{ background:var(--warn-bg); color:var(--warn);
+  outline:1px dashed var(--warn) }}
+.line .v {{ font-family:ui-monospace,Menlo,monospace; font-weight:600; white-space:nowrap }}
+.line .src {{ color:var(--muted) }}
+.progwhy {{ font-size:12.5px; color:var(--muted); margin-top:8px }}
+.miss {{ background:var(--warn-bg); border-left:3px solid var(--warn); padding:10px 12px;
+  border-radius:0 6px 6px 0; font-size:13px; margin-top:12px }}
 table {{ border-collapse:collapse; width:100%; margin-top:4px }}
 td {{ padding:9px 0; border-bottom:1px solid var(--grid); font-size:14px; vertical-align:top }}
 td .sub {{ display:block; font-size:11.5px; color:var(--muted) }}
@@ -395,6 +531,9 @@ td.v {{ text-align:right; white-space:nowrap; font-weight:600;
   font-family:ui-monospace,Menlo,monospace }}
 code {{ font-family:ui-monospace,Menlo,monospace; font-size:12.5px }}
 .gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
+@media (min-width:900px) {{
+  .cols {{ grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); align-items:start }}
+}}
 @media (min-width:680px) {{
   .row {{ grid-template-columns:38% 1fr 22%; grid-template-areas:"lab bar amt"; gap:12px;
     align-items:center }}

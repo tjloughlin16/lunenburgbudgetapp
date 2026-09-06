@@ -18,7 +18,7 @@
 body { margin:0; background:var(--bg); color:var(--ink);
   font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   -webkit-text-size-adjust:100%; }
-.wrap { max-width:820px; margin:0 auto; padding:22px 16px 80px }
+.wrap { max-width:1180px; margin:0 auto; padding:22px 16px 80px }
 header { border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }
 .kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
 h1 { font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
@@ -48,6 +48,44 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 .refuse { border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }
 .warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
+/* Two columns on a wide screen, one on a phone. The columns are a reading aid, not
+   the information: every landing box names its own sources, so nothing is lost when
+   they stack. Connector lines were tried and are unreadable at this density. */
+.cols { display:grid; gap:16px; margin:16px 0 }
+.col { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:15px 14px; min-width:0 }
+.col h2 { margin:0 }
+.colnote { font-size:12.5px; color:var(--muted); margin:2px 0 12px }
+.col h3 { font-size:12px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin:18px 0 8px; font-weight:700 }
+.intro { margin:14px 0 }
+.intro p { margin:0 0 6px }
+.core { background:var(--school-bg); border:2px solid var(--school); border-radius:8px;
+  padding:13px 14px }
+.corehd { font-size:11px; letter-spacing:.1em; font-weight:700; color:var(--school) }
+.coreamt { font-size:26px; font-weight:700; letter-spacing:-.02em;
+  font-family:ui-monospace,Menlo,monospace }
+.coresub { font-size:12.5px; color:var(--muted); margin-top:4px }
+.prog { border:1px solid var(--grid); border-radius:8px; padding:11px 12px; margin:9px 0 }
+.prog.alt { border-style:dashed }
+.proghd { display:flex; justify-content:space-between; gap:10px; align-items:baseline;
+  font-weight:700; font-size:14.5px }
+.progtot { font-family:ui-monospace,Menlo,monospace; font-size:13px; white-space:nowrap;
+  color:var(--muted); font-weight:400 }
+.line { display:grid; grid-template-columns:auto auto 1fr; gap:8px; align-items:baseline;
+  font-size:12.5px; margin-top:7px; padding-top:6px; border-top:1px dotted var(--grid) }
+.tag { font-size:10px; letter-spacing:.05em; text-transform:uppercase; font-weight:700;
+  padding:1px 6px; border-radius:3px; white-space:nowrap }
+.line.in .tag { background:var(--school-bg); color:var(--school) }
+.line.out .tag { background:var(--traced-bg); color:var(--traced) }
+.line.restricted .tag { background:var(--warn-bg); color:var(--warn) }
+.line.missing .tag { background:var(--warn-bg); color:var(--warn);
+  outline:1px dashed var(--warn) }
+.line .v { font-family:ui-monospace,Menlo,monospace; font-weight:600; white-space:nowrap }
+.line .src { color:var(--muted) }
+.progwhy { font-size:12.5px; color:var(--muted); margin-top:8px }
+.miss { background:var(--warn-bg); border-left:3px solid var(--warn); padding:10px 12px;
+  border-radius:0 6px 6px 0; font-size:13px; margin-top:12px }
 table { border-collapse:collapse; width:100%; margin-top:4px }
 td { padding:9px 0; border-bottom:1px solid var(--grid); font-size:14px; vertical-align:top }
 td .sub { display:block; font-size:11.5px; color:var(--muted) }
@@ -55,6 +93,9 @@ td.v { text-align:right; white-space:nowrap; font-weight:600;
   font-family:ui-monospace,Menlo,monospace }
 code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 .gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:900px) {
+  .cols { grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); align-items:start }
+}
 @media (min-width:680px) {
   .row { grid-template-columns:38% 1fr 22%; grid-template-areas:"lab bar amt"; gap:12px;
     align-items:center }
@@ -71,57 +112,15 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
   drawn, because no record ties a source to a department.</p>
 </header>
 
-<section class="stage"><h2>1 &middot; Where the money comes from</h2><p class="cap">Every general-fund revenue line the town budgets for FY2026. <b>Traced</b> &mdash; each is a named account. Total $52,187,832.</p>
+<section class="intro"><p>Two columns. On the left, every source of money the schools use. On the right, where it comes to rest — starting with the one number everybody knows, and then <b>every other place school money is spent that the $26m does not contain</b>.</p><p class="cap">Bars are proportional within each column. A source and a landing place are not the same kind of thing and are never added across the two.</p></section>
+<div class="cols">
+<div class="col"><h2>Sources</h2>
+<div class="colnote">Where the money comes from.</div>
+<h3>Appropriated by Town Meeting</h3>
 <div class="bars">
-<div class="row"><div class="lab">RE TAXES</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$34,029,858</div></div>
-<div class="row"><div class="lab">CH 70 AID</div><div class="track"><div class="fill" style="width:27.12%"></div></div><div class="amt">$9,229,410</div></div>
-<div class="row"><div class="lab">FBCYBUDGET</div><div class="track"><div class="fill" style="width:6.49%"></div></div><div class="amt">$2,209,993</div></div>
-<div class="row"><div class="lab">MVE</div><div class="track"><div class="fill" style="width:5.51%"></div></div><div class="amt">$1,875,000</div></div>
-<div class="row"><div class="lab">UGGA</div><div class="track"><div class="fill" style="width:3.87%"></div></div><div class="amt">$1,316,438</div></div>
-<div class="row"><div class="lab">PP TAXES</div><div class="track"><div class="fill" style="width:3.09%"></div></div><div class="amt">$1,052,138</div></div>
-<div class="row"><div class="lab">TRANS ENT</div><div class="track"><div class="fill" style="width:0.99%"></div></div><div class="amt">$338,397</div></div>
-<div class="row"><div class="lab">SCHCOSTREI</div><div class="track"><div class="fill" style="width:0.94%"></div></div><div class="amt">$318,424</div></div>
-<div class="row"><div class="lab">RESCUE WAG</div><div class="track"><div class="fill" style="width:0.81%"></div></div><div class="amt">$275,000</div></div>
-<div class="row"><div class="lab">70 smaller lines</div><div class="track"><div class="fill" style="width:4.53%"></div></div><div class="amt">$1,543,174</div></div>
+<div class="row"><div class="lab">General fund — department 300</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$26,247,474</div></div>
 </div>
-</section>
-<section class="pot"><h2>2 &middot; It all lands in one pot</h2><p class="potline"><b>GENERAL FUND 0100 &mdash; $52,187,832</b></p><p>Every source above flows in here and <b>loses its identity</b>. Money in the general fund is fungible, and no record ties a source to a department.</p><p class="refuse">So there is no line on this page from Chapter&nbsp;70 to the schools. The town apportions the pot across departments by share when it presents a budget, and that is a fair convention &mdash; but it is a convention. <b>The edge is not missing data. It does not exist.</b></p></section>
-<section class="stage"><h2>3 &middot; Town Meeting votes it out again</h2><p class="cap"><b>Traced</b> &mdash; every department is a line residents voted on. Omnibus total $51,189,961; the rest of the pot funds warrant articles, transfers and reserves.</p>
-<div class="bars">
-<div class="row hi"><div class="lab">SCHOOL DEPARTMENT<span class="sub">the school department</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$26,247,474</div></div>
-<div class="row hi"><div class="lab">MONTY TECH ASSESSMENT<span class="sub">regional vocational school</span></div><div class="track"><div class="fill" style="width:5.08%"></div></div><div class="amt">$1,334,521</div></div>
-<div class="row"><div class="lab">WRRS ASSESSMENT<span class="sub">pension for town AND school staff — split unknown</span></div><div class="track"><div class="fill" style="width:9.12%"></div></div><div class="amt">$2,392,572</div></div>
-<div class="row"><div class="lab">INSURANCE<span class="sub">includes school retiree health</span></div><div class="track"><div class="fill" style="width:14.15%"></div></div><div class="amt">$3,713,520</div></div>
-<div class="row"><div class="lab">All other departments (63)</div><div class="track"><div class="fill" style="width:66.68%"></div></div><div class="amt">$17,501,874</div></div>
-<div class="row"><div class="lab">Warrant articles, transfers, reserves<span class="sub">not appropriated to a department</span></div><div class="track"><div class="fill" style="width:3.80%"></div></div><div class="amt">$997,871</div></div>
-</div>
-</section>
-<section class="stage"><h2>4 &middot; What the school department spends it on</h2><p class="cap"><b>Traced</b> &mdash; 258 named accounts, grouped by the function code the town assigns. Function names are the district&rsquo;s own; a code its budget book does not name is shown bare.</p>
-<div class="bars">
-<div class="row"><div class="lab">2305</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$7,929,717</div></div>
-<div class="row"><div class="lab">5200 — Insurance Programs</div><div class="track"><div class="fill" style="width:47.32%"></div></div><div class="amt">$3,752,258</div></div>
-<div class="row"><div class="lab">2310 — Tutoring Cont. Ser.</div><div class="track"><div class="fill" style="width:27.58%"></div></div><div class="amt">$2,187,067</div></div>
-<div class="row"><div class="lab">3300 — Student Transportation</div><div class="track"><div class="fill" style="width:19.31%"></div></div><div class="amt">$1,531,234</div></div>
-<div class="row"><div class="lab">2330</div><div class="track"><div class="fill" style="width:16.95%"></div></div><div class="amt">$1,344,373</div></div>
-<div class="row"><div class="lab">2210 — P.S. Principals Office</div><div class="track"><div class="fill" style="width:14.15%"></div></div><div class="amt">$1,122,440</div></div>
-<div class="row"><div class="lab">9300 — Private Tuitions</div><div class="track"><div class="fill" style="width:12.47%"></div></div><div class="amt">$988,630</div></div>
-<div class="row"><div class="lab">4110 — Cust. Supplies - System</div><div class="track"><div class="fill" style="width:10.76%"></div></div><div class="amt">$853,560</div></div>
-<div class="row"><div class="lab">2710 — Guidance Exp.</div><div class="track"><div class="fill" style="width:9.51%"></div></div><div class="amt">$753,939</div></div>
-<div class="row"><div class="lab">2320</div><div class="track"><div class="fill" style="width:8.37%"></div></div><div class="amt">$663,335</div></div>
-<div class="row"><div class="lab">3510 — Athletic Expenses</div><div class="track"><div class="fill" style="width:6.54%"></div></div><div class="amt">$518,334</div></div>
-<div class="row"><div class="lab">31 smaller functions</div><div class="track"><div class="fill" style="width:58.04%"></div></div><div class="amt">$4,602,587</div></div>
-</div>
-</section>
-<section class="stage alt"><h2>5 &middot; School money in other departments</h2><p class="cap">Each identified by the name of an account in the town&rsquo;s own ledger. None inferred from a share.</p>
-<div class="bars">
-<div class="row"><div class="lab">COUNTY RET — dept 820<span class="sub">0100-18202-560001</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$2,392,572</div></div>
-<div class="row"><div class="lab">SCHRETHLTH — dept 914<span class="sub">0100-19142-570018</span></div><div class="track"><div class="fill" style="width:63.59%"></div></div><div class="amt">$1,521,536</div></div>
-<div class="row"><div class="lab">MONTY TECH — dept 310<span class="sub">0100-13102-532000</span></div><div class="track"><div class="fill" style="width:55.78%"></div></div><div class="amt">$1,334,521</div></div>
-<div class="row"><div class="lab">SCHRESSTIP — dept 210<span class="sub">0100-12101-519021</span></div><div class="track"><div class="fill" style="width:0.60%"></div></div><div class="amt">$6,800</div></div>
-</div>
-<p class="warn"><b>The pension cannot be split.</b> <code>COUNT[Y] RET</code> covers town and school employees together and no published document says in what proportion. Teachers are not in it at all &mdash; they are in the state system, whose cost Lunenburg never appropriates and never sees. The Worcester Regional Retirement System publishes an annual actuarial valuation by member unit; that is the document that would settle it.</p>
-</section>
-<section class="stage alt"><h2>6 &middot; Money that never enters the pot</h2><p class="cap">The schools&rsquo; own funds. Not appropriated, not in the $26m, and <b>actual rather than budgeted</b> &mdash; so they must never be added to it. Nine months of a twelve-month year.</p>
+<h3>The schools’ own funds — never enter the general fund</h3>
 <div class="bars">
 <div class="row"><div class="lab">SCHOOL LUNCH REVOLVING</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$572,231</div></div>
 <div class="row"><div class="lab">SPECIAL ED CIRCUIT BREAKER</div><div class="track"><div class="fill" style="width:56.96%"></div></div><div class="amt">$325,970</div></div>
@@ -132,16 +131,58 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 <div class="row"><div class="lab">SCHOOL FACILITIES USE REVOLV</div><div class="track"><div class="fill" style="width:3.26%"></div></div><div class="amt">$18,670</div></div>
 <div class="row"><div class="lab">COMP SCHOOL HEALTH SERV GRANT</div><div class="track"><div class="fill" style="width:1.88%"></div></div><div class="amt">$10,775</div></div>
 </div>
-<p class="warn"><b>Athletics is the clearest case, and it is only half here.</b> The town appropriates $518,334 for athletics inside dept 300 (function 3510: coaches, transport, the athletic director, the trainer, insurance). Fees bring in a further $335,856 through a revolving fund &mdash; <b>which does not appear in the town&rsquo;s fund-balance report at all.</b> That figure comes from the district&rsquo;s own athletics documents. So athletics costs about $854,190 to run and the town&rsquo;s budget shows $518,334 of it. Every fee-funded programme has this shape; athletics is just the one where both halves have been found.</p>
-</section>
-<section class="stage"><h2>So what is &ldquo;the school budget&rdquo;?</h2><p class="cap">Four different numbers get called it, and they differ by more than 10%.</p><table>
-<tr><td>Appropriated to the school department<span class="sub">dept 300, 258 accounts</span></td><td class="v">$26,247,474</td></tr>
-<tr><td>Spent by the town on Lunenburg Public Schools<span class="sub">+ school retiree health, resource stipend</span></td><td class="v">$27,775,810</td></tr>
-<tr><td>Spent by the town on education<span class="sub">+ Monty Tech, a different district</span></td><td class="v">$29,110,331</td></tr>
-<tr><td>Available to the schools to spend<span class="sub">+ their own funds, outside the general fund</span></td><td class="v">$27,585,043</td></tr>
-</table>
-<p class="warn">And one that cannot be stated at all: the school share of the $2,392,572 pension assessment. The honest answer is that nobody publishes it.</p>
-</section>
+<h3>Grants</h3>
+<div class="bars">
+<div class="row"><div class="lab">Federal and state grants, spent side only</div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$495,918</div></div>
+</div>
+<div class="miss"><b>Bus fees — charged, and not found.</b> $180 a family, $270 for two or more, School Committee policy 3601.01. The general-fund account <code>STUDENTBUS</code> is zero and no transportation fund exists. This is a source we know is real and cannot place.</div>
+</div>
+<div class="col"><h2>Where it lands</h2>
+<div class="colnote">What the money is spent on.</div>
+<div class="core"><div class="corehd">THE SCHOOL BUDGET</div><div class="coreamt">$26,247,474</div><div class="coresub">Department 300 — 258 accounts. This is the number in every headline, and every box below is money spent on the schools that it does not contain.</div></div>
+<h3>Programmes paid for from more than one place</h3>
+<div class="prog"><div class="proghd">Special education<span class="progtot">$6,329,681</span></div>
+<div class="line in"><span class="tag">inside the $26m</span><span class="v">$5,909,548</span><span class="src">function 2110, 2310, 2320, 2330, 9300, 9400</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$4,005</span><span class="src">fund 2640 Special Ed Circuit Breaker</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$229,398</span><span class="src">fund 2813 Fy25 #240</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$179,637</span><span class="src">fund 2814 Fy26 #240</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$5,427</span><span class="src">fund 2832 Fy25 #274  0205202509302025</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$1,666</span><span class="src">fund 2758 Fy23 240</span></div>
+<div class="progwhy">The largest programme in the budget and the one with the most money outside it. The circuit breaker reimburses high-cost placements; the #240 grants are read as IDEA from outside this archive, and they are the two biggest grant spends.</div>
+</div>
+<div class="prog"><div class="proghd">Transportation<span class="progtot">$1,531,234</span></div>
+<div class="line in"><span class="tag">inside the $26m</span><span class="v">$1,531,234</span><span class="src">function 3300</span></div>
+<div class="line missing"><span class="tag">outside — NOT FOUND</span><span class="v">?</span><span class="src">bus fees are charged and cannot be located</span></div>
+<div class="progwhy">The appropriation is NET — the district subtracts expected fee revenue before asking the town. Its own workbook says so. **The fees are charged and cannot be located in any ledger we hold.**</div>
+</div>
+<div class="prog"><div class="proghd">Athletics<span class="progtot">$618,801</span></div>
+<div class="line in"><span class="tag">inside the $26m</span><span class="v">$518,334</span><span class="src">function 3510</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$100,467</span><span class="src">fund 1301 Chapter 658 Revolving Fund</span></div>
+<div class="progwhy">Fund 1301 is the athletics revolving fund — the town calls it CHAPTER 658, which is why every name-based search missed it. Fees in, programme costs out.</div>
+</div>
+<div class="prog"><div class="proghd">Food service<span class="progtot">$739,586</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$739,586</span><span class="src">fund 2200 School Lunch Revolving</span></div>
+<div class="progwhy">**Entirely outside the appropriation.** There is no food service function code inside dept 300 at all. A reader of the school budget sees nothing about feeding children.</div>
+</div>
+<div class="prog"><div class="proghd">Extended day and after school<span class="progtot">$340,899</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$233,350</span><span class="src">fund 1312 Extended Day Revolving Fund</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$95,196</span><span class="src">fund 1305 After School Activities Fund</span></div>
+<div class="line out restricted"><span class="tag">outside — restricted</span><span class="v">$12,354</span><span class="src">fund 1306 School Facilities Use Revolv</span></div>
+<div class="progwhy">**Entirely outside the appropriation.** Fee-funded programmes that appear nowhere in the $26m.</div>
+</div>
+<div class="prog"><div class="proghd">Everything else in the school budget<span class="progtot">$18,288,358</span></div>
+<div class="line in"><span class="tag">inside the $26m</span><span class="v">$18,288,358</span><span class="src">function </span></div>
+<div class="progwhy">Teaching, buildings, administration, guidance, health, technology — the 34 function codes not claimed above.</div>
+</div>
+<h3>School money the town appropriates elsewhere</h3>
+<div class="colnote">These never touch department 300.</div>
+<div class="prog alt"><div class="proghd">Monty Tech assessment<span class="progtot">$1,334,521</span></div><div class="line out"><span class="tag">traced</span><span class="v"></span><span class="src"><code>0100-13102-532000</code></span></div><div class="progwhy">A different school district, assessed on the town. Education spending that the Lunenburg school budget does not contain and the School Committee does not control.</div></div>
+<div class="prog alt"><div class="proghd">School retiree health insurance<span class="progtot">$1,521,536</span></div><div class="line out"><span class="tag">traced</span><span class="v"></span><span class="src"><code>0100-19142-570018</code></span></div><div class="progwhy">Health insurance for former school employees, appropriated under the insurance department.</div></div>
+<div class="prog alt"><div class="proghd">Pension — school share unknown<span class="progtot">share unknown</span></div><div class="line out"><span class="tag">of $2,392,572</span><span class="v"></span><span class="src"><code>0100-18202-560001</code></span></div><div class="progwhy">The county retirement assessment covers town and school staff together. Teachers are in the state system instead, and that cost Lunenburg never sees at all.</div></div>
+<div class="prog alt"><div class="proghd">School resource stipend<span class="progtot">$6,800</span></div><div class="line out"><span class="tag">traced</span><span class="v"></span><span class="src"><code>0100-12101-519021</code></span></div><div class="progwhy">Inside the police department. The expansion of the abbreviation is inferred.</div></div>
+</div></div>
+<section class="stage"><h2>How to read the outside column</h2><table><tr><th>label</th><th>means</th></tr><tr><td><b>traced</b></td><td>an account or a journal shows this money going here.</td></tr><tr><td><b>restricted</b></td><td>the fund exists for this and nothing else, so the money almost certainly goes here — <b>but no expense report for the special revenue funds exists, so it is not observed.</b> A presumption, not evidence.</td></tr><tr><td><b>NOT FOUND</b></td><td>the money is known to be collected and cannot be located in any ledger we hold.</td></tr></table><p class="warn">Every <b>restricted</b> row on this page becomes <b>traced</b> with one document: <code>glytdbud-expense</code> run for the special revenue funds — the same report the town already produces for the general fund and for each of its four enterprise funds.</p></section>
+<section class="stage"><h2>Athletics, in full, as the worked case</h2><p>The town appropriates <b>$518,334</b> for athletics inside dept 300 — coaches, transport, the athletic director, the trainer, insurance. The district’s own athletics documents record a further <b>$335,856</b> through the revolving fund. So the programme costs about <b>$854,190</b> and the town’s budget shows $518,334 of it.</p><p class="cap">The town ledger and the district’s documents give different figures for the fund, on different bases and periods. Neither is wrong; they answer different questions. Every fee-funded programme has this shape — athletics is only the one where both halves have been found.</p></section>
 
 <p class="gen">Generated by <code>scripts/build_money_flow.py</code> from
 <code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
