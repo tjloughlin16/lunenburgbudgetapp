@@ -226,6 +226,42 @@ document closes it.
 
 ---
 
+## The two headline findings, both computed
+
+**Who decides how it is spent** — the omnibus budget, $51,189,961 across 67 departments:
+
+| share | class |
+|---:|---|
+| 52.6% | Town Meeting votes a TOTAL, another elected body allocates (schools, library) |
+| 22.5% | **discretionary — the meeting sets the amount and a department spends it** |
+| 9.4% | assessed by somebody else, and cannot be refused |
+| 8.0% | insurance and compensation, driven by bargaining and claims |
+| 5.0% | debt service, committed by votes already taken |
+| 2.5% | transfers to capital and trust |
+
+**Who sets each dollar coming in** — $52,187,832 of general fund revenue:
+
+| share | class |
+|---:|---|
+| 67% | the levy — set by the town, **inside a cap it did not write** (Proposition 2½) |
+| 21% | state aid — set by the Legislature, no say at all |
+| 7% | local receipts (a residual) |
+| 4% | one-time money — free cash and proceeds, spendable once |
+| 1% | transfers from the town’s own funds — not new money |
+
+**The two halves say the same thing from opposite ends.** 89% of income is capped or
+decided elsewhere; 22.5% of spending is a line the meeting actually sets. Neither budget
+document states either.
+
+Revenue is also brutally concentrated: **six accounts are 95%** of it, `RE TAXES` alone is
+65%, and **113 of the 192 accounts carry nothing at all.**
+
+*The control classes are judgements about governance, not arithmetic.* Each carries how it
+was established — `stated` where the ledger names it, `minutes` where the town’s record
+shows it, `outside` where it rests on knowing how Massachusetts municipal government works,
+`residual` for what is left. `discretionary` is a residual and is not a positive finding
+about any department.
+
 ## The three generated references this workstream produced
 
 - **`notes/reference/MONEY-NODES.md`** — every input and output node, flat, with `basis`
@@ -233,8 +269,10 @@ document closes it.
   saying *"you have missed X"*.
 - **`notes/reference/LEDGER-STRUCTURE.md`** — how the town's ledger is built and named,
   and the decoder for every name that turned out not to say what it is.
-- **`notes/reference/data-model/money-flow.html`** — the diagram, phone-first,
+- **`notes/reference/data-model/money-flow.html`** — the school diagram, phone-first,
   bar-length-carries-value. `money-in.html` is untouched beside it.
+- **`notes/reference/data-model/who-decides.html`** — all money in, all 67 departments,
+  and who controls each end.
 
 ## Next steps, in order
 
