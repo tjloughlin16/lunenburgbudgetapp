@@ -47,7 +47,17 @@ FileHandle.standardError.write("printed page + \(offset) = pdf index\n".data(usi
 try? FileManager.default.createDirectory(atPath: outDir, withIntermediateDirectories: true)
 for printed in pages {
     guard let page = doc.page(at: printed + offset - 1) else { continue }
-    let r = page.bounds(for: .mediaBox)
+    // ROTATION IS NOT OPTIONAL TO HANDLE, and getting it wrong is silent.
+    //
+    // `bounds(for:)` returns the box BEFORE rotation, while `draw(with:to:)` applies it.
+    // Six of the sixteen annual reports are scanned landscape and carry /Rotate 270, so a
+    // canvas sized from the unrotated box clipped the top third of every FY2021 page --
+    // and the result still looked like a valid page of the table, just starting partway
+    // down. Nothing about it said "cropped".
+    var r = page.bounds(for: .mediaBox)
+    if page.rotation == 90 || page.rotation == 270 {
+        r = CGRect(x: 0, y: 0, width: r.height, height: r.width)
+    }
     guard let ctx = CGContext(data: nil, width: Int(r.width * scale), height: Int(r.height * scale),
         bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(),
         bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue) else { continue }

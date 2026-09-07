@@ -1453,6 +1453,18 @@
      "textUrl": "/docs/data/dataset-provenance.csv"
     },
     {
+     "path": "data/special-revenue-read.csv",
+     "title": "The special revenue funds, read from the page",
+     "stars": 3,
+     "what": "The FY2011–FY2025 schedule of every fund outside the general appropriation — forward balance, receipts, disbursements, carried forward — transcribed by reading the rendered page rather than by OCR. **It is the only version of this table that ties to its own printed grand total.** FY2022: 167 funds, all four columns to the penny, and every row satisfying the identity the table states. A figure read off an image is a READING and carries the same status as the OCR’s; what makes it trustworthy is that the report’s own printed total and the row identity both check it. See data/PROVENANCE-special-revenue-read.md.",
+     "kind": "Data",
+     "bytes": 53231,
+     "url": "/docs/data/special-revenue-read.csv",
+     "count": 329,
+     "unit": "rows",
+     "textUrl": "/docs/data/special-revenue-read.csv"
+    },
+    {
      "path": "analyses/questions.md",
      "title": "A hundred questions this archive can answer, each with the query",
      "stars": 3,
@@ -1463,18 +1475,6 @@
      "count": 944,
      "unit": "lines",
      "textUrl": "/docs/analyses/questions.md"
-    },
-    {
-     "path": "data/special-revenue-read.csv",
-     "title": "The special revenue funds, read from the page",
-     "stars": 3,
-     "what": "The FY2011–FY2025 schedule of every fund outside the general appropriation — forward balance, receipts, disbursements, carried forward — transcribed by reading the rendered page rather than by OCR. **It is the only version of this table that ties to its own printed grand total.** FY2022: 167 funds, all four columns to the penny, and every row satisfying the identity the table states. A figure read off an image is a READING and carries the same status as the OCR’s; what makes it trustworthy is that the report’s own printed total and the row identity both check it. See data/PROVENANCE-special-revenue-read.md.",
-     "kind": "Data",
-     "bytes": 27096,
-     "url": "/docs/data/special-revenue-read.csv",
-     "count": 167,
-     "unit": "rows",
-     "textUrl": "/docs/data/special-revenue-read.csv"
     },
     {
      "path": "data/PROVENANCE-staff-rosters.md",
@@ -1746,9 +1746,9 @@
      "stars": 2,
      "what": "The independent check on the file above, quoted off the page with its page number. Kept separate and never computed from our own rows — the OCR misread this very figure by $1,010, so the reconciliation had been measured against a wrong target.",
      "kind": "Data",
-     "bytes": 149,
+     "bytes": 236,
      "url": "/docs/data/special-revenue-printed-totals.csv",
-     "count": 1,
+     "count": 2,
      "unit": "rows",
      "textUrl": "/docs/data/special-revenue-printed-totals.csv"
     },
@@ -1947,7 +1947,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 18571264,
+     "bytes": 18599936,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5765,7 +5765,7 @@
  "totals": {
   "documents": 466,
   "groups": 20,
-  "bytes": 1002794628,
+  "bytes": 1002849522,
   "loadBearing": 74
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

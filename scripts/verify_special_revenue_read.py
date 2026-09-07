@@ -102,11 +102,41 @@ def main():
             print(f'  {"ok  " if ok else "FAIL"}  {c:14} {got:>15,.2f}  '
                   f'printed {want:>15,.2f}  {d:+,.2f}')
 
+    # 3. THE YEAR CHAIN. Free, and independent of both checks above: what a year carries
+    # forward must be what the next year brings forward. It catches a whole page missed at
+    # the end of a year, which the other two checks cannot -- a missing page would make the
+    # column totals disagree with the printed grand total, yes, but only if the grand total
+    # were on a page we still read. This is checked between CONSECUTIVE years only; a gap
+    # in coverage is reported rather than chained across.
+    print('\nThe year chain — one year\'s carried forward against the next year\'s brought forward')
+    by_fy = {}
+    for r in rows:
+        by_fy.setdefault(int(r['fy']), []).append(r)
+    years = sorted(by_fy)
+    linked = 0
+    for a, b in zip(years, years[1:]):
+        if b != a + 1:
+            print(f'  --    FY{a} to FY{b}: not consecutive, nothing to chain')
+            continue
+        carried = sum(num(r['carried']) for r in by_fy[a])
+        forward = sum(num(r['forward']) for r in by_fy[b])
+        d = carried - forward
+        ok = abs(d) <= TOL
+        fails_here = 0 if ok else 1
+        globals()['_chain_fails'] = globals().get('_chain_fails', 0) + fails_here
+        linked += 1
+        print(f'  {"ok  " if ok else "FAIL"}  FY{a} carried {carried:>15,.2f} '
+              f'-> FY{b} forward {forward:>15,.2f}  {d:+,.2f}')
+    if not linked:
+        print('  --    only one year so far; the chain needs two consecutive ones')
+    fails += globals().get('_chain_fails', 0)
+
     print(f'\n{len(editions)} edition(s) checked, {fails} failure(s)')
     if fails:
         sys.exit(1)
-    print('Every column ties to the total the report itself prints, and every row '
-          'satisfies\nthe identity the table states. Two independent checks, both passing.')
+    print('Every column ties to the total the report itself prints, every row satisfies\n'
+          'the identity the table states, and consecutive years chain. Three independent\n'
+          'checks, all passing.')
 
 
 if __name__ == '__main__':

@@ -199,7 +199,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">74</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">67,011</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">67,174</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">916</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
@@ -1614,7 +1614,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>1311</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">22485.91</td><td class="num">0.0</td><td class="num">2910.68</td><td class="num">0.0</td><td class="num">109397.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">167 rows</span> <span class="yr">2022–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">329 rows</span> <span class="yr">2021–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
 <p class="ans">The special revenue schedule READ from the rendered page rather than OCR&#x27;d: balance brought forward, total receipts, total disbursements, balance carried forward, per fund. <strong>The only version of this table that ties to its own printed grand total</strong> — FY2022, 167 funds, all four columns to the penny and every row balancing.</p>
 <p class="warn">A figure read off an image is a READING, not a published number — same status as the OCR&#x27;s. It is trustworthy because the report&#x27;s own printed total and the table&#x27;s own identity both check it, not because a model produced it. Years that do not tie are not in here.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1633,9 +1633,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>group</th><th>fund</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>row_ties</th><th>document</th><th>read_by</th></tr>
-<tr><td class="num">2022</td><td>FY2022</td><td>34</td><td>SCHOOL DEPARTMENT</td><td>Title IV - Part A #309</td><td>2898.72</td><td>3816.00</td><td>2341.00</td><td>4373.72</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2022</td><td>FY2022</td><td>36</td><td>HIGHWAY DEPARTMENT</td><td>Small Bridge Program Grant</td><td>-50767.07</td><td>315917.39</td><td>265150.32</td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2022</td><td>FY2022</td><td>37</td><td>UNCLASSIFIED</td><td>Community Compact - Syber Security Grant</td><td>50.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>50.00</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2022</td><td>FY2022</td><td>35</td><td>PUBLIC SAFETY</td><td>Byrne Justice Assistance Grant</td><td>-1050.50</td><td>1050.50</td><td><span class="nul">empty</span></td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2021</td><td>FY2021</td><td>32</td><td>SCHOOL DEPARTMENT</td><td>Program Improvement Grant #274</td><td>43.00</td><td>10991.00</td><td>12343.80</td><td>-1309.80</td><td>yes</td><td>sources/town-annual-reports/docs/4128-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2021</td><td>FY2021</td><td>35</td><td>UNCLASSIFIED</td><td>State Earmark - Town Hall Ramp</td><td>-13500.00</td><td>13500.00</td><td><span class="nul">empty</span></td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4128-fy-20…</td><td>vision</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
@@ -1761,7 +1761,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2027</td><td>contract_cola</td><td>Paraprofessionals</td><td>cost-of-living adjustment to the salary sca…</td><td>2.0</td><td>percent</td><td><span class="nul">empty</span></td><td>June 30, 2028</td><td>Lunenburg school employee contracts — Parap…</td><td>contracts/CONTRACTS.md</td><td>Paraprofessionals | FY26–FY28 | 3.0% · 2.0%…</td><td>recorded</td><td>deliberately not used — the line has never …</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag">provenance</span> <span class="n">1 row</span> <span class="yr">2022–2022</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag">provenance</span> <span class="n">2 rows</span> <span class="yr">2021–2022</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
 <p class="ans">The GRAND TOTAL each annual report PRINTS for the special revenue schedule, quoted with its page. Four columns.</p>
 <p class="warn">This is the independent check on <code>special_revenue_read</code>, so it must be read off the page and never computed from our own rows — the OCR misread this very figure by $1,010 and the reconciliation was measured against it for months.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1774,8 +1774,9 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>carried</code></td><td class="ty">TEXT</td><td>Balance the fund carried forward into the next year. <span class="unit">dollars</span><br><span class="ccaut">Ties to the NEXT year&#x27;s <code>forward</code>, which is a check across years the schedule makes possible.</span></td></tr>
 <tr><td><code>quote</code></td><td class="ty">TEXT</td><td>What the source says, verbatim.</td></tr>
 </table></div>
-<p class="cap sm">First 1 row, in rowid order:</p>
+<p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>quote</th></tr>
+<tr><td class="num">2021</td><td>FY2021</td><td>35</td><td>5596048.89</td><td>7088091.52</td><td>6269397.74</td><td>6414742.67</td><td>GRAND TOTAL row, page 35</td></tr>
 <tr><td class="num">2022</td><td>FY2022</td><td>37</td><td>6414742.67</td><td>9235154.01</td><td>7004408.01</td><td>8645488.67</td><td>GRAND TOTAL row, page 37</td></tr>
 </table></div>
 </details>
