@@ -38,6 +38,23 @@
   --trace-partial: #b8860b;
   --trace-none: #96140f;
   --trace-never: #7d7b76;
+  /* THE FOUR BANDS on /money-outside-the-budget. Special revenue funds cut four ways —
+     enterprise, pandemic-era, school department, everything else — and the cut is by
+     FUND NAME, which is our reading and is published beside the chart.
+     They are a CATEGORICAL set, not a series and not a status set, so they never carry
+     direction: nothing here means "up" or "bad". Kept off --series-cost/--series-revenue
+     deliberately, because those two mean spending and receipts on the same page and a
+     hue must not mean "disbursements" in one chart and "school" in the next.
+     Validated with the dataviz validator against this surface, all-pairs: lightness band,
+     chroma floor, CVD separation (worst ΔE 13.6, deuteranopia) and normal-vision
+     separation all pass. One check WARNs by design — the amber is 2.32:1 against this
+     surface rather than 3:1 — and the relief the validator requires is present: every
+     band is direct-labelled and every chart has a table twin.
+     --fund-other is achromatic on purpose. It is the residual, not an entity. */
+  --fund-enterprise: #116336;
+  --fund-pandemic: #e09a20;
+  --fund-school: #8e3a95;
+  --fund-other: #8a8880;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -65,6 +82,15 @@
     --trace-partial: #efc768;
     --trace-none: #e05252;
     --trace-never: #9b9992;
+    /* The four bands, re-stepped for the dark surface rather than flipped. The dark
+       lightness band is only 0.19 wide (0.48–0.67), and green against amber under
+       protanopia needs lightness to separate them: holding the amber inside the band
+       collapses that pair to ΔE 6.7, so the amber is deliberately a little light
+       (L 0.708) and the pair reads at ΔE 14.6 instead. Every other check passes. */
+    --fund-enterprise: #127c47;
+    --fund-pandemic: #cf9520;
+    --fund-school: #b062b9;
+    --fund-other: #9b9992;
   }
 }
 :root[data-theme="dark"] {
@@ -85,6 +111,10 @@
     --trace-partial: #efc768;
     --trace-none: #e05252;
     --trace-never: #9b9992;
+    --fund-enterprise: #127c47;
+    --fund-pandemic: #cf9520;
+    --fund-school: #b062b9;
+    --fund-other: #9b9992;
 }
 
 /* Anything that pins itself below the header needs to know how tall the header is,

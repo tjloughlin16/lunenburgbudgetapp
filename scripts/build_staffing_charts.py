@@ -75,10 +75,14 @@ INTERMITTENT = 'central-office'
 # every year FY2014-FY2027 -- which is what makes a sum across years comparable at all.
 SPED_PARA_LINES = ('ps special ed para', 'es special ed para', 'ms special ed para',
                    'hs special ed para', 'ace special ed para')
-# The special-education teacher panel, from the same documents. Its run starts later.
-SPED_TEACHER_LINES = ('ps special ed teacher', 'es special ed teacher',
-                      'ms special ed resource rm teacher', 'hs special ed resource rm teacher',
-                      'ace special ed resource rm teacher')
+# The special-education TEACHER series is read from `sped_teacher_history`, not from a
+# list of line keys, because one of its lines was RENAMED mid-run: the elementary line is
+# `es special ed resource rm teacher` to FY2024 and `es special ed teacher` from FY2023.
+# A key panel spanning both reports a year where one goes to zero and another appears --
+# rule 6's "lines that go to zero and reappear renamed produce rates that look like
+# findings". The history table is the district's own five-school aggregation and carries
+# a documents_disagree flag; the paraprofessional panel below is RECONCILED against its
+# twin so the two routes to the same figure cannot silently part company.
 NURSE_LINES = ('ps nurses', 'es nurses', 'ms nurses', 'hs nurses', 'nurse coordinator')
 SUB_LINES = ('ps regular sub', 'es regular sub', 'ms regular sub', 'hs regular sub',
              'kind regular sub')
@@ -87,13 +91,34 @@ SUB_LINES = ('ps regular sub', 'es regular sub', 'ms regular sub', 'hs regular s
 # 'actual' is what the district's own documents restate as spent; the page says so.
 DOLLAR_STAGE = 'actual'
 
-# A department heading that names a grade. Anything containing "grade" that does not match
-# is reported as an OCR defect -- derived, so the list cannot go stale (rule 2).
-GRADE_OK = re.compile(
-    r'^(pre-?k|kindergarten|'
-    r'(first|second|third|fourth|fifth|sixth|seventh|eighth|1st|2nd|3rd|4th|5th|6th|7th|8th)'
-    r'|grade\s*(level\s*)?[0-9]|grades?\s*[0-9])', re.I)
-HAS_GRADE = re.compile(r'grade', re.I)
+# A department heading that names a grade. These pages are SCANNED and read by OCR, so
+# some headings came back mangled. They are found by RULE rather than listed by hand, so
+# the count cannot go stale as the extraction improves (rule 2 applies to a fixture as
+# much as to a sentence).
+#
+# The rule: a heading containing the word "grade" must have a recognisable ordinal on one
+# side of it. `First Grade Teachers`, `Grade 3`, `Grades 6 & 7` and `Grade level
+# Paraprofessionals` all pass. `Ith Grade:`, `Gth Grade:`, `8t Grade Teachers`,
+# `8*" Grade Teachers`, `econd Grade Teacher` and `secona Grade` do not, and each one is a
+# real grade level this project cannot read off the page.
+ORDINALS = {'pre-k', 'prek', 'pre', 'kindergarten', 'k',
+            'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth',
+            '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th',
+            'level', 'levels', '1', '2', '3', '4', '5', '6', '7', '8'}
+TOKEN = re.compile(r'[a-z0-9-]+', re.I)
+
+
+def grade_heading_is_readable(text):
+    """None if the heading does not name a grade; True/False if it does."""
+    tok = [t.lower() for t in TOKEN.findall(text or '')]
+    at = [i for i, t in enumerate(tok) if t in ('grade', 'grades')]
+    if not at:
+        return None
+    for i in at:
+        near = ([tok[i - 1]] if i else []) + (tok[i + 1:i + 2])
+        if any(n in ORDINALS for n in near):
+            return True
+    return False
 
 
 def rows(db, sql, *a):
@@ -226,11 +251,21 @@ def roster(db):
 
     # ---- OCR defects in the printed department headings, found by rule.
     ocr = collections.Counter()
+    ocr_where = collections.defaultdict(set)
+    graded = 0
     for r in ent:
         g = (r['grade_or_dept'] or '').strip()
-        if HAS_GRADE.search(g) and not GRADE_OK.match(g):
+        ok = grade_heading_is_readable(g)
+        if ok is None:
+            continue
+        graded += 1
+        if not ok:
             ocr[g] += 1
-    ocr_rows = [dict(printed=g, rows=n) for g, n in ocr.most_common()]
+            ocr_where[g].add((r['fy'], r['school']))
+    ocr_rows = [dict(printed=g, rows=n,
+                     years=sorted({fy for fy, _ in ocr_where[g]}),
+                     schools=sorted({s for _, s in ocr_where[g]}))
+                for g, n in ocr.most_common()]
 
     # ---- people appearing on two schools' rosters in one year. The source, not a bug.
     shared_staff = collections.Counter()
@@ -257,11 +292,11 @@ def roster(db):
     for d in doubled:
         if d['school'] not in buildings:
             continue
+        drop = set(d['pages'])
         alt = []
         for keep in d['pages']:
-            alt.append(sum(1 for r in panel if r['fy'] == d['fy']
-                           and not (r['school'] == d['school'] and r['page'] not in
-                                    (set(d['pages']) - {keep} and {keep} or {keep}))))
+            alt.append(sum(1 for r in panel if r['fy'] == d['fy'] and not (
+                r['school'] == d['school'] and r['page'] in drop - {keep})))
         bands[d['fy']] = dict(low=min(alt), high=max(alt), summed=by_year[d['fy']])
 
     year_rows = []
@@ -318,6 +353,7 @@ def roster(db):
         doubled=doubled,
         ocr_defects=ocr_rows,
         ocr_rows=sum(r['rows'] for r in ocr_rows),
+        grade_headed_rows=graded,
         shared_staff=[dict(fy=fy, names=n) for fy, n in sorted(shared_staff.items())],
         first_fy=all_years[0], last_fy=all_years[-1])
 
@@ -346,11 +382,63 @@ def dollar_panel(db, key, label, lines, stage=DOLLAR_STAGE):
                   % ','.join('?' * len(lines)), *lines):
         names[r['line_key']] = r['label']
     return dict(
-        key=key, label=label, stage=stage, lines=len(lines),
+        key=key, label=label, stage=stage, source='budget_figure', lines=len(lines),
         line_labels=[names.get(k, k) for k in lines],
         first_fy=full[0], last_fy=full[-1],
         years_dropped=partial,
         points=[dict(fy=fy, dollars=round(sum(got[fy].values()), 2)) for fy in full])
+
+
+def history_panel(db, table, key, label, stage=DOLLAR_STAGE):
+    """A series the extraction already aggregated per school, with its own total column.
+
+    Used where a line was RENAMED mid-run, which a fixed list of line keys cannot follow.
+    The table's own `total` is checked against its five school columns before it is used:
+    an extract with a total the source itself prints must reconcile to it (rule 13).
+    """
+    out, disagree = [], 0
+    for r in rows(db, f'SELECT * FROM {table} WHERE stage = ? ORDER BY fy', stage):
+        parts = [float(r[c] or 0) for c in ('ps', 'es', 'ms', 'hs', 'ace')]
+        total = float(r['total'] or 0)
+        if abs(sum(parts) - total) > 1:
+            sys.exit(f'{table} FY{r["fy"]} {stage}: the five school columns sum to '
+                     f'{sum(parts):,.0f} against a printed total of {total:,.0f}. '
+                     f'Refusing to write a series off a table that does not tie.')
+        disagree += int(r['documents_disagree'] or 0)
+        out.append(dict(fy=r['fy'], dollars=total,
+                        by_school=dict(zip(('ps', 'es', 'ms', 'hs', 'ace'), parts))))
+    if not out:
+        sys.exit(f'{table} holds no {stage} rows -- refusing to write.')
+    return dict(key=key, label=label, stage=stage, source=table, lines=5,
+                line_labels=['Primary', 'Elementary', 'Middle', 'High', 'ACE'],
+                first_fy=out[0]['fy'], last_fy=out[-1]['fy'], years_dropped=[],
+                documents_disagree=disagree,
+                points=[dict(fy=r['fy'], dollars=r['dollars']) for r in out],
+                by_school=[dict(fy=r['fy'], **r['by_school']) for r in out])
+
+
+def reconcile(a, b):
+    """Two independent routes to the same figure, compared, with the result PUBLISHED.
+
+    The special education paraprofessional dollars can be reached by summing five line
+    keys out of `budget_figure`, or by reading `sped_para_history`'s own total column.
+    Both are in this database and nothing else compares them.
+
+    A disagreement is DATA here rather than a crash, because one has been found and it is
+    worth showing: FY2024's ACE line. What is refused is a comparison that compares
+    nothing, which passes trivially and looks identical to a comparison that passed.
+    """
+    x = {q['fy']: q['dollars'] for q in a['points']}
+    y = {q['fy']: q['dollars'] for q in b['points']}
+    shared = sorted(set(x) & set(y))
+    if not shared:
+        sys.exit(f'{a["key"]} and {b["key"]} share no year. A comparison that compares '
+                 f'nothing passes trivially -- refusing to write.')
+    off = [dict(fy=fy, a=round(x[fy], 2), b=round(y[fy], 2),
+                difference=round(x[fy] - y[fy], 2))
+           for fy in shared if abs(x[fy] - y[fy]) > 1]
+    return dict(a=a['source'], b=b['source'], years=len(shared), agree=len(shared) - len(off),
+                first_fy=shared[0], last_fy=shared[-1], disagree=off)
 
 
 def change(points, key='dollars'):
@@ -373,9 +461,20 @@ def build():
     peers = peer_series(db)
     ros = roster(db)
 
+    # The paraprofessional dollars, reached twice: by summing the five line keys out of
+    # `budget_figure`, and by reading the district's own five-school aggregation in
+    # `sped_para_history`. The line panel is the one the page draws, because it is the one
+    # that matches the workbook cell (`sheet1!D340 = -157886.32`, checked by hand against
+    # `FY27 Budget Projection as of 2.24.26 with restorations.xlsx`). The comparison is
+    # published rather than swallowed.
+    para = dollar_panel(db, 'sped_para', 'Special education paraprofessionals',
+                        SPED_PARA_LINES)
+    checked = [reconcile(para, history_panel(db, 'sped_para_history', 'sped_para_history',
+                                             'Special education paraprofessionals'))]
     panels = [
-        dollar_panel(db, 'sped_para', 'Special education paraprofessionals', SPED_PARA_LINES),
-        dollar_panel(db, 'sped_teacher', 'Special education teachers', SPED_TEACHER_LINES),
+        para,
+        history_panel(db, 'sped_teacher_history', 'sped_teacher',
+                      'Special education teachers'),
         dollar_panel(db, 'nurses', 'Nurses', NURSE_LINES),
         dollar_panel(db, 'subs', 'Regular substitutes', SUB_LINES),
     ]
@@ -403,11 +502,21 @@ def build():
     ratio = [r for r in state if r['paras_per_100'] is not None]
     trough = min(ratio, key=lambda r: r['paras_per_100'])
 
+    MEASURES = ('teacher_fte', 'para_fte', 'pupils_in_district', 'student_headcount',
+                'teachers_per_100', 'paras_per_100')
     fte_change = {}
-    for f in ('teacher_fte', 'para_fte', 'pupils_in_district', 'student_headcount',
-              'teachers_per_100', 'paras_per_100'):
+    for f in MEASURES:
         pts = [dict(fy=r['fy'], v=r[f]) for r in state if r.get(f) is not None]
         fte_change[f] = change(pts, 'v')
+
+    # The same measures over the ROSTER's window, so the page can put the state's FTE
+    # beside the town's printed names without either one implying the other's years.
+    r_lo, r_hi = ros['first_fy'], ros['last_fy']
+    roster_window = {}
+    for f in MEASURES:
+        pts = [dict(fy=r['fy'], v=r[f]) for r in state
+               if r.get(f) is not None and r_lo <= r['fy'] <= r_hi]
+        roster_window[f] = change(pts, 'v')
 
     # Gross wages: present in the archive, and NOT usable as a headcount. Counted here so
     # the page can say why with a figure rather than an adjective.
@@ -423,15 +532,20 @@ def build():
         state=dict(
             lea=LEA, docs=dese_docs, reconciles=dese_recon,
             first_fy=s_lo, last_fy=s_hi, points=state,
-            change=fte_change, trough=trough,
-            rank_paras_first=rank_in_year(peers, s_lo, 'paras_per_100'),
-            rank_paras_last=rank_in_year(peers, s_hi, 'paras_per_100'),
-            rank_teachers_first=rank_in_year(peers, s_lo, 'teachers_per_100'),
-            rank_teachers_last=rank_in_year(peers, s_hi, 'teachers_per_100'),
+            change=fte_change, change_over_roster_years=roster_window, trough=trough,
+            # EVERY year, not two chosen ones. A rank quoted at a start and an end is a
+            # rank the writer picked; the page draws all seventeen and reads the extremes
+            # off the series, which is the same discipline as showing the whole chart.
+            ranks=dict(
+                paras=[r for r in (rank_in_year(peers, fy, 'paras_per_100')
+                                   for fy in range(s_lo, s_hi + 1)) if r],
+                teachers=[r for r in (rank_in_year(peers, fy, 'teachers_per_100')
+                                      for fy in range(s_lo, s_hi + 1)) if r]),
             latest=by_fy[s_hi]),
         peers=peers,
         roster=ros,
-        dollars=dict(stage=DOLLAR_STAGE, panels=panels, sped_common_window=common),
+        dollars=dict(stage=DOLLAR_STAGE, panels=panels, sped_common_window=common,
+                     reconciled=checked),
         wages=dict(
             rows=sum(r['n'] for r in wages), years=len(wages),
             school_tagged=sum(r['school'] for r in wages),

@@ -12,6 +12,7 @@
 export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
   | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
+  | 'staffing'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -75,6 +76,12 @@ export const SLUG: Record<Tab, string> = {
   // aloud is the question, and "what we cannot answer" is the question. `gaps` is an
   // alias, because it is what anybody working on the site calls it.
   gaps: 'what-we-cannot-answer',
+  // The people the budget buys, in the three quantities the archive actually holds --
+  // names the town printed, FTE the state published, and dollars. NOT `staff`: the page
+  // is about the SCHOOLS' staffing and a bare `staff` would read as the town's. The word
+  // people say out loud is "school staffing", so that is the address; `staffing` and the
+  // rest are aliases.
+  staffing: 'school-staffing',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -135,6 +142,12 @@ const ALIASES: Record<string, Tab> = {
   // broken. The page is about what the TOWN'S RECORDS do not say.
   gaps: 'gaps', 'what-we-cannot-answer': 'gaps', 'data-gaps': 'gaps',
   'what-is-not-in-here': 'gaps', gap: 'gaps',
+  // NOT 'teachers' alone as the slug -- the page is about paraprofessionals at least as
+  // much, and naming it for one role would tell a reader what the finding is before they
+  // have seen it.
+  'school-staffing': 'staffing', staffing: 'staffing', staff: 'staffing',
+  teachers: 'staffing', headcount: 'staffing', paraprofessionals: 'staffing',
+  paras: 'staffing', 'staff-rosters': 'staffing', rosters: 'staffing',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -173,6 +186,7 @@ export const LABEL: Record<Tab, string> = {
   database: 'The database',
   gaps: 'What we cannot answer',
   variance: 'Budgets against actuals',
+  staffing: 'School staffing — names, FTE and dollars',
   dataroom: 'The data room',
 }
 
@@ -187,6 +201,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   reports: 'themoney',
   gaps: 'themoney',
   variance: 'themoney',
+  staffing: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -249,6 +264,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   freecash: 'crisis',
   themoney: 'money', gaps: 'money', variance: 'money', reports: 'money',
+  staffing: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -266,7 +282,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'variance', 'gaps', 'reports'],
+  money: ['themoney', 'staffing', 'variance', 'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }
