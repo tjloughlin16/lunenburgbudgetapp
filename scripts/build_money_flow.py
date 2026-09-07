@@ -59,6 +59,9 @@ import re
 import sqlite3
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import page_sources  # noqa: E402  (needs the path above)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow.html')
@@ -498,7 +501,7 @@ def diagram(progs, funds, d300, grant_spend, elsewhere):
     return '\n'.join(o)
 
 
-def render(c):
+def _render_body(c):
     fundnames = {r[0]: r[1] for r in c.execute('SELECT fund, name FROM fund')}
     srcs, rev_total = revenue_sources(c)
     funds = own_funds(c)
@@ -668,7 +671,7 @@ def render(c):
       f'different questions. Every fee-funded program has this shape — athletics is only '
       f'the one where both halves have been found.</p></section>')
 
-    return PAGE.format(body='\n'.join(P))
+    return '\n'.join(P)
 
 
 PAGE = '''<meta charset="utf-8">
@@ -877,7 +880,7 @@ LAYOUT2_HEAD = [
 ]
 
 
-def render_v2(c):
+def _render_v2_body(c):
     """The same money, drawn so that every dollar appears exactly once.
 
     WHY THIS EXISTS BESIDE THE FIRST VERSION
@@ -1218,7 +1221,7 @@ def render_v2(c):
              f'athletic revolving may be enough to offset this reduction in the budget '
              f'line”</i> — and the next year, <i>“athletic revolving can not support these '
              f'increased costs”</i>, at a 254% line increase.</p></section>')
-    return PAGE.format(body='\n'.join(P))
+    return '\n'.join(P)
 
 
 def main():
@@ -1248,6 +1251,33 @@ def main():
         fh.write(v2)
     print(f'wrote {os.path.relpath(OUT2, ROOT)} ({len(v2):,} bytes)')
 
+
+
+# The two public renderers. Each runs its body under `tracing`, so the source list at the
+# foot of the page is a RECORD of the tables that render actually read -- not a list
+# maintained beside it, which is the thing that goes stale silently. See page_sources.py.
+def _with_sources(c, body_fn, extra_files=()):
+    with page_sources.tracing(c) as seen:
+        body = body_fn(c)
+    docs = page_sources.collect(c, seen, extra_files=extra_files)
+    return PAGE.format(body=body + '\n' + page_sources.footer_html(docs, html.escape))
+
+
+def render(c):
+    return _with_sources(c, _render_body, extra_files=CLASSIFICATION_FILES)
+
+
+def render_v2(c):
+    return _with_sources(c, _render_v2_body, extra_files=CLASSIFICATION_FILES)
+
+
+# Files the scripts read straight off disk rather than through the database. They are ours
+# and rule 12 makes them sources like any other: "If a number came out of a spreadsheet we
+# built, that spreadsheet is a source too and it gets published like any other."
+CLASSIFICATION_FILES = ('sources/data/money-classification.csv',
+                        'sources/data/money-edges.csv',
+                        'sources/data/money-assumptions.csv',
+                        'sources/data/money-gaps.csv')
 
 if __name__ == '__main__':
     main()

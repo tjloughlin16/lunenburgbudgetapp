@@ -38,7 +38,11 @@ traceable end to end. Putting them beside each other is the point of the page.
 import argparse
 import html
 import os
+import sys
 import sqlite3
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import page_sources  # noqa: E402  (needs the path above)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
@@ -396,7 +400,7 @@ def bars(rows):
     return '\n'.join(o)
 
 
-def render(c):
+def _render_body(c):
     d = gather(c)
     P = []
     a = P.append
@@ -594,7 +598,7 @@ def render(c):
       'lives in two of them: the general fund appropriation, and the special revenue '
       'funds it runs itself.</p>'
       f'<p><a href="school-money-flow.html">Open the school diagram →</a></p></section>')
-    return PAGE.format(body='\n'.join(P))
+    return '\n'.join(P)
 
 
 PAGE = '''<meta charset="utf-8">
@@ -742,6 +746,21 @@ def main():
         fh.write(fresh)
     print(f'wrote {rel} ({len(fresh):,} bytes)')
 
+
+
+# See page_sources.py: the source list is RECORDED from the tables this render actually
+# reads, so it cannot drift away from the page the way a hand-kept list does.
+CLASSIFICATION_FILES = ('sources/data/money-classification.csv',
+                        'sources/data/money-edges.csv',
+                        'sources/data/money-assumptions.csv',
+                        'sources/data/money-gaps.csv')
+
+
+def render(c):
+    with page_sources.tracing(c) as seen:
+        body = _render_body(c)
+    docs = page_sources.collect(c, seen, extra_files=CLASSIFICATION_FILES)
+    return PAGE.format(body=body + '\n' + page_sources.footer_html(docs, html.escape))
 
 if __name__ == '__main__':
     main()
