@@ -158,6 +158,42 @@ The exception is a genuine warning that changes whether the reader should trust 
 follows — rule 3's territory, and the caveat block on `/reports`. Those lead. "Here is how
 this page is organised" is not one of them.
 
+## 7b. A drill-in page: conclusions, then categories, then the raw
+
+**Every analysis page opens with what it MEANS, not with what it holds.** TJ's pattern,
+and it is the shape a resident reads rather than the shape the data arrives in:
+
+1. **Insights / conclusions.** What this page establishes, in sentences. Three or four,
+   each one a claim a reader could repeat at a meeting.
+2. **Organised categorical data.** The breakdown that supports them — by year, by category,
+   by school. Charts belong here.
+3. **Raw data and context.** The table, the caveats, the method, what it does not show.
+
+Rule 7 governs all three: a figure is a fact, an explanation for it is a hypothesis, and
+the top of the page is exactly where that line gets crossed. An insight may say *this line
+grew 40% while enrolment fell*. It may not say *because the district hired* unless a
+document says so.
+
+Rule 7a still applies within section 1 — lead with the conclusion, not with a paragraph
+explaining that conclusions follow.
+
+### Three years is a trend HERE, and that is not a general claim
+
+The default instinct — "three years is too short to plot" — is wrong in this town, and
+it was corrected after being applied to athletics participation. TJ:
+
+> *"our boards in town are hesitant to look forward even 2 years because they dont trust
+> the stability. So 3 years to them is magical."*
+
+The audience is a board that will not project two years out. A three-year series is not a
+weak trend to them; it is more forward visibility than they currently use. So plot it —
+and **state the span on the chart** so nobody mistakes three years for fifteen.
+
+The rule this replaces is not "short series are fine". It is: **judge a series against
+what the reader currently has, not against what a statistician would want.** Five checked
+years of state revenue is thin for a regression and substantial for a town that budgets
+one year at a time.
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs
