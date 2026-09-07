@@ -449,6 +449,9 @@ def render(c):
                 a(f'<tr><td><code>{esc(name)}</code></td>'
                   f'<td class="ty">{esc(typ)}</td><td>{what}</td></tr>')
             a('</table></div>')
+            a(f'<p class="openrow"><button class="open" data-t="{esc(t)}">'
+              f'Open full table &rarr;</button> <span class="cap sm">queries the live '
+              f'API</span></p>')
             rows = sample(c, t)
             if rows:
                 a(f'<p class="cap sm">First {len(rows)} row'
@@ -587,6 +590,29 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
 .unit {{ font-size:10.5px; color:var(--muted); text-transform:uppercase;
   letter-spacing:.06em }}
 .ccaut {{ font-size:12px; color:var(--hi) }}
+.openrow {{ margin:10px 0 0 }}
+button.open, #mrun, #mx {{ font:inherit; font-size:12px; padding:4px 10px;
+  border:1px solid var(--grid); border-radius:6px; background:var(--card);
+  color:var(--ink); cursor:pointer }}
+button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced) }}
+#modal {{ position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9;
+  display:flex; align-items:center; justify-content:center; padding:16px }}
+#modal .sheet {{ background:var(--bg); border-radius:10px; width:min(1180px,100%);
+  height:min(84vh,100%); display:flex; flex-direction:column; overflow:hidden;
+  border:1px solid var(--grid) }}
+.mbar {{ display:flex; gap:8px; align-items:center; padding:9px 11px;
+  border-bottom:1px solid var(--grid); flex-wrap:wrap }}
+.mbar strong {{ font-family:ui-monospace,Menlo,monospace; font-size:13px }}
+#msql {{ flex:1; min-width:200px; font:12px/1.4 ui-monospace,Menlo,monospace;
+  padding:5px 8px; border:1px solid var(--grid); border-radius:6px;
+  background:var(--code); color:var(--ink) }}
+#mmeta {{ font-size:11.5px; color:var(--muted);
+  font-family:ui-monospace,Menlo,monospace }}
+#mx {{ margin-left:auto }}
+.mwrap {{ overflow:auto; flex:1 }}
+.mwrap table {{ font-size:11.5px; white-space:nowrap }}
+.mwrap th {{ position:sticky; top:0; background:var(--code) }}
+.mnote {{ padding:16px; font-size:13px; color:var(--muted) }}
 </style>
 
 <div class="wrap">
@@ -606,7 +632,102 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
   <div class="metric"><div class="v">{pct_described}</div><div class="l">columns described</div></div>
 </div>
 
+<p class="warn"><strong>Two databases, and they are not always the same one.</strong>
+Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
+<code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
+queries the PUBLISHED API, which is a copy pushed to Cloudflare D1 and can lag behind.
+If a table opens empty, or the button reports that it does not exist, that copy has not
+been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
+hidden because two sources that usually agree are the ones that mislead when they
+stop.</p>
+
 {body}
+
+<div id="modal" hidden>
+  <div class="sheet">
+    <div class="mbar">
+      <strong id="mt"></strong>
+      <input id="msql" spellcheck="false" autocomplete="off">
+      <button id="mrun">Run</button>
+      <span id="mmeta"></span>
+      <button id="mx" title="close">&times;</button>
+    </div>
+    <div id="mbody" class="mwrap"></div>
+  </div>
+</div>
+<script>
+// WHY THIS QUERIES THE LIVE API RATHER THAN CARRYING THE ROWS.
+//
+// Embedding every row was measured first: 15.5 MB in this page, or 30.5 MB as one file
+// per table. Both put the same data in a second place, where it can go stale against the
+// database it was copied from, and land tens of megabytes in git on every rebuild.
+//
+// Fetching from a sibling file does not work: opened from disk this document has an
+// opaque origin, so fetch() at a file:// URL is refused as cross-origin and there is no
+// server to add a header to. But /api/query is on https and answers with
+// `access-control-allow-origin: *`, which an opaque origin is allowed to read. So the
+// data comes from the same public endpoint anybody else would use — one copy, always
+// current, and this page becomes a caller of the API rather than a duplicate of it.
+const API = 'https://lunenburgbudgetproject.org/api/query';
+const modal = document.getElementById('modal'), mt = document.getElementById('mt'),
+      msql = document.getElementById('msql'), mbody = document.getElementById('mbody'),
+      mmeta = document.getElementById('mmeta');
+
+function esc(s) {{
+  return String(s).replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
+}}
+
+async function run(sql) {{
+  mbody.innerHTML = '<p class="mnote">querying…</p>';
+  mmeta.textContent = '';
+  let r, j;
+  try {{
+    r = await fetch(API + '?sql=' + encodeURIComponent(sql));
+    j = await r.json();
+  }} catch (e) {{
+    // The honest failure. This page works offline; the button does not.
+    mbody.innerHTML = '<p class="mnote">Could not reach the API — this needs an internet ' +
+      'connection, because the rows are not in this file. ' + esc(e.message) + '</p>';
+    return;
+  }}
+  if (!r.ok || j.error) {{
+    mbody.innerHTML = '<p class="mnote">' + esc(j.error || ('HTTP ' + r.status)) +
+      (j.suggestion ? '<br>' + esc(j.suggestion) : '') + '</p>';
+    return;
+  }}
+  const rows = j.rows || j.results || [];
+  if (!rows.length) {{ mbody.innerHTML = '<p class="mnote">No rows.</p>'; return; }}
+  const cols = Object.keys(rows[0]);
+  const head = '<tr>' + cols.map(k => '<th>' + esc(k) + '</th>').join('') + '</tr>';
+  const body = rows.map(row => '<tr>' + cols.map(k => {{
+    const v = row[k];
+    if (v === null) return '<td><span class="nul">NULL</span></td>';
+    if (v === '') return '<td><span class="nul">empty</span></td>';
+    return '<td' + (typeof v === 'number' ? ' class="num"' : '') + '>' + esc(v) + '</td>';
+  }}).join('') + '</tr>').join('');
+  mbody.innerHTML = '<table class="samp">' + head + body + '</table>';
+  // rowsRead is the billable quantity and is NOT the number of rows returned — a GROUP BY
+  // returning 14 rows can read 9,330. Showing both is why the endpoint publishes it.
+  mmeta.textContent = rows.length.toLocaleString() + ' returned' +
+    (j.rowsRead != null ? ' · ' + j.rowsRead.toLocaleString() + ' rows read' : '') +
+    (rows.length === 1000 ? ' · capped at 1,000 — add OFFSET for more' : '');
+}}
+
+document.addEventListener('click', e => {{
+  const b = e.target.closest('button.open');
+  if (b) {{
+    mt.textContent = b.dataset.t;
+    msql.value = 'SELECT * FROM ' + b.dataset.t + ' LIMIT 1000';
+    modal.hidden = false;
+    run(msql.value);
+    return;
+  }}
+  if (e.target.id === 'mrun') run(msql.value);
+  if (e.target.id === 'mx' || e.target.id === 'modal') modal.hidden = true;
+}});
+msql.addEventListener('keydown', e => {{ if (e.key === 'Enter') run(msql.value); }});
+document.addEventListener('keydown', e => {{ if (e.key === 'Escape') modal.hidden = true; }});
+</script>
 
 <p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
 database on {gen}. Do not edit — run the script. The CSVs in <code>sources/data/</code>

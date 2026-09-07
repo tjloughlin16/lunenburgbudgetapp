@@ -76,6 +76,29 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 .unit { font-size:10.5px; color:var(--muted); text-transform:uppercase;
   letter-spacing:.06em }
 .ccaut { font-size:12px; color:var(--hi) }
+.openrow { margin:10px 0 0 }
+button.open, #mrun, #mx { font:inherit; font-size:12px; padding:4px 10px;
+  border:1px solid var(--grid); border-radius:6px; background:var(--card);
+  color:var(--ink); cursor:pointer }
+button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced) }
+#modal { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9;
+  display:flex; align-items:center; justify-content:center; padding:16px }
+#modal .sheet { background:var(--bg); border-radius:10px; width:min(1180px,100%);
+  height:min(84vh,100%); display:flex; flex-direction:column; overflow:hidden;
+  border:1px solid var(--grid) }
+.mbar { display:flex; gap:8px; align-items:center; padding:9px 11px;
+  border-bottom:1px solid var(--grid); flex-wrap:wrap }
+.mbar strong { font-family:ui-monospace,Menlo,monospace; font-size:13px }
+#msql { flex:1; min-width:200px; font:12px/1.4 ui-monospace,Menlo,monospace;
+  padding:5px 8px; border:1px solid var(--grid); border-radius:6px;
+  background:var(--code); color:var(--ink) }
+#mmeta { font-size:11.5px; color:var(--muted);
+  font-family:ui-monospace,Menlo,monospace }
+#mx { margin-left:auto }
+.mwrap { overflow:auto; flex:1 }
+.mwrap table { font-size:11.5px; white-space:nowrap }
+.mwrap th { position:sticky; top:0; background:var(--code) }
+.mnote { padding:16px; font-size:13px; color:var(--muted) }
 </style>
 
 <div class="wrap">
@@ -94,6 +117,15 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
   <div class="metric"><div class="v">893</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">80%</div><div class="l">columns described</div></div>
 </div>
+
+<p class="warn"><strong>Two databases, and they are not always the same one.</strong>
+Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
+<code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
+queries the PUBLISHED API, which is a copy pushed to Cloudflare D1 and can lag behind.
+If a table opens empty, or the button reports that it does not exist, that copy has not
+been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
+hidden because two sources that usually agree are the ones that mislead when they
+stop.</p>
 
 <div class="stage"><h2>Can I ask this?</h2>
 <p class="cap">Every query below is <strong>run against the live database when this page is built</strong>, so a question that stops answering breaks the build rather than sitting here looking answerable. Two of them return nothing, and that is the honest state of the archive rather than a fault.</p>
@@ -211,6 +243,7 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 <tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td><td>Which columns the source printed rounded.<br><span class="ccaut">Sets the tolerance a reconciliation may use — one dollar per rounded row, not a blanket.</span></td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="ledger_snapshot">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>account_id</th><th>fy</th><th>period</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th><th>rounded_columns</th><th>doc_id</th></tr>
 <tr><td>0100-11462-573100</td><td class="num">2026</td><td class="num">12</td><td class="num">750.0</td><td class="num">0.0</td><td class="num">750.0</td><td class="num">250.0</td><td class="num">0.0</td><td class="num">500.0</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
@@ -231,6 +264,7 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 <tr><td><code>documents_disagree</code></td><td class="ty">INTEGER</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="budget_figure">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>line_key</th><th>label</th><th>fy</th><th>stage</th><th>variant</th><th>value</th><th>documents_disagree</th><th>doc_id</th></tr>
 <tr><td>hs librarian</td><td>H.S. Librarian</td><td class="num">2027</td><td>proposed</td><td>Core Budget</td><td class="num">55175.0</td><td class="num">0</td><td>sources/district-budget/text/final-budget-d…</td></tr>
@@ -250,6 +284,7 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 <tr><td><code>row_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="workbook_figure">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>row</th><th>line_key</th><th>fy</th><th>column_kind</th><th>value</th><th>row_kind</th><th>doc_id</th></tr>
 <tr><td class="num">139</td><td>m.s. general school supplies</td><td class="num">2024</td><td>actual</td><td class="num">7475.99</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
@@ -273,6 +308,7 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td><td>Where in the source the figure sits — a cell, a line, a page.<br><span class="ccaut">Rule 13: a coordinate, so a figure can be checked rather than taken.</span></td></tr>
 <tr><td><code>verified</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="athletic_fee_schedule">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>school_year</th><th>level</th><th>item</th><th>amount</th><th>unit</th><th>set_on</th><th>source</th><th>source_file</th><th>source_ref</th><th>verified</th></tr>
 <tr><td class="num">2025</td><td>2024-25</td><td>HS</td><td>third_child</td><td>85.00</td><td>per student per sport per season</td><td><span class="nul">empty</span></td><td>District athletics workbook, by sport (Town…</td><td>munis-ledgers/account-details/athletics-by-…</td><td>Spring!L3</td><td>Spring!L3</td></tr>
@@ -294,6 +330,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>is_numeric</code></td><td class="ty">TEXT</td><td>Whether the raw value parsed as a number.</td></tr>
 <tr><td><code>cell</code></td><td class="ty">TEXT</td><td>The spreadsheet cell the figure came from.<br><span class="ccaut">A coordinate, so the figure can be checked.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="athletics_by_sport">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>season</th><th>level</th><th>sport</th><th>fy</th><th>metric</th><th>value</th><th>raw</th><th>is_numeric</th><th>cell</th></tr>
 <tr><td>Fall</td><td>HS</td><td>Boys CC</td><td class="num">2024</td><td>Costs for all 3 Seasons</td><td><span class="nul">empty</span></td><td>MIAA 1/3 4550. -1516.67</td><td>0</td><td>AX6</td></tr>
@@ -312,6 +349,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td><td>Where the figure came from, as the extractor recorded it.<br><span class="ccaut">A loose reference — a filename — not a resolved address.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="athletics_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>side</th><th>item</th><th>amount</th><th>basis</th><th>source</th></tr>
 <tr><td class="num">2016</td><td>revolving</td><td>Athletic Secretary</td><td>7796</td><td>actual</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
@@ -340,6 +378,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>read_by</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>checks</code></td><td class="ty">TEXT</td><td>Which checks this row passed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="ballot_questions">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>date</th><th>election</th><th>question</th><th>type</th><th>amount</th><th>purpose</th><th>yes</th><th>no</th><th>blanks</th><th>total</th><th>registered</th><th>turnout_pct</th><th>result</th><th>fy_report</th><th>page</th><th>read_by</th><th>checks</th></tr>
 <tr><td>2014-01-11</td><td>Special Town Election</td><td>QUESTION 1. DEBT EXCLUSION</td><td>Proposition 2½ debt exclusion</td><td>72975321</td><td>Bonds to construct a new Lunenburg Middle/H…</td><td>1414</td><td>543</td><td>0</td><td>1957</td><td>7059</td><td>27.7</td><td>PASSED</td><td>2014</td><td>152</td><td>plain</td><td>YES 413+234+323+444=1414; NO 163+111+140+12…</td></tr>
@@ -357,6 +396,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>unexpended_prior_year_capital</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>other</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="capital_funding_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>total</th><th>free_cash</th><th>taxation</th><th>unexpended_prior_year_capital</th><th>other</th></tr>
 <tr><td class="num">2017</td><td>619475.00</td><td>250000.00</td><td>349023.05</td><td>20451.95</td><td>0.00</td></tr>
@@ -376,6 +416,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>funded</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>funding</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="capital_plan_fy27">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>rank</th><th>dept</th><th>project</th><th>cost</th><th>cumulative</th><th>funded</th><th>funding</th></tr>
 <tr><td>2</td><td>Police</td><td>Patrol Cruiser (replacement)</td><td>68627.00</td><td>418627.00</td><td>yes</td><td>free_cash_or_taxation</td></tr>
@@ -395,6 +436,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>reconciles</code></td><td class="ty">TEXT</td><td>Whether this figure ties to DESE&#x27;s own printed total.</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="dese_measure">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>lea</th><th>district</th><th>fy</th><th>group</th><th>measure</th><th>value</th><th>reconciles</th><th>doc_id</th></tr>
 <tr><td>01620000</td><td>Lunenburg</td><td class="num">2025</td><td>MCAS Performance</td><td>ELA Grade 10 % Meets or Exceeds</td><td class="num">0.57</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
@@ -415,6 +457,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>reconciles</code></td><td class="ty">TEXT</td><td>Whether this figure ties to DESE&#x27;s own printed total.</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="dese_radar">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>lea</th><th>district</th><th>fy</th><th>group</th><th>measure</th><th>value</th><th>reconciles</th><th>doc_id</th></tr>
 <tr><td>06100000</td><td>Ashburnham-Westminster</td><td class="num">2019</td><td>MCAS Performance</td><td>Math Grades 3-8 % Meets or Exceeds</td><td>0.518</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
@@ -434,6 +477,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>source_file</code></td><td class="ty">TEXT</td><td>The file the figure was read from.</td></tr>
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td><td>Where in the source the figure sits — a cell, a line, a page.<br><span class="ccaut">Rule 13: a coordinate, so a figure can be checked rather than taken.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="free_cash_proof">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>town</th><th>year</th><th>line</th><th>amount</th><th>role</th><th>source_file</th><th>source_ref</th></tr>
 <tr><td>Lunenburg</td><td>2022</td><td>Free Cash Certified Prior Year</td><td>2666962.00</td><td>prior_year_certified</td><td>dls/free-cash-proof-lunenburg.xlsx</td><td>Sheet1!A4</td></tr>
@@ -465,6 +509,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>vendor</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>comments</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="fund_1301_cash_journal">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>source_row</th><th>eff_date</th><th>post_date</th><th>src</th><th>src_meaning</th><th>period</th><th>journal</th><th>ref1</th><th>po_ref2</th><th>ref3</th><th>reference</th><th>amount</th><th>running_balance_derived</th><th>check_no</th><th>warrant</th><th>voucher</th><th>vendor</th><th>comments</th></tr>
 <tr><td class="num">2024</td><td>20</td><td>2024-05-23</td><td>2024-05-23</td><td>APP</td><td>accounts payable — warrant disbursement</td><td>11</td><td>476</td><td>58 24</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>58 24</td><td>-5504.91</td><td>49527.63</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
@@ -487,6 +532,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>closing_balance</code></td><td class="ty">REAL</td><td>What the fund held at the end of the period. <span class="unit">dollars</span></td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="fund_activity">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fund</th><th>fy</th><th>period</th><th>opening_balance</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>closing_balance</th><th>doc_id</th></tr>
 <tr><td>2765</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">-502.0</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
@@ -508,6 +554,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>url</code></td><td class="ty">TEXT</td><td>The publisher&#x27;s own address for the document.</td></tr>
 <tr><td><code>sha256</code></td><td class="ty">TEXT</td><td>Checksum of our copy.<br><span class="ccaut">Here because a file can be replaced at the same URL without the URL changing.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="grant_award">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>kind</th><th>name</th><th>amount</th><th>owner</th><th>documents_disagree</th><th>doc_id</th><th>url</th><th>sha256</th></tr>
 <tr><td>2022</td><td>federal</td><td>Special Education, 240 Grant</td><td class="num">399152.0</td><td>Director of Special Services</td><td class="num">1</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
@@ -532,6 +579,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>our_copy</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>sha256</code></td><td class="ty">TEXT</td><td>Checksum of our copy.<br><span class="ccaut">Here because a file can be replaced at the same URL without the URL changing.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="grants_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>kind</th><th>name</th><th>amount</th><th>owner</th><th>page</th><th>doc</th><th>esser</th><th>disagreement</th><th>source_url</th><th>our_copy</th><th>sha256</th></tr>
 <tr><td>2021</td><td>federal</td><td>Title IV, 309 Grant</td><td>18466.0</td><td>Director of Teaching &amp; Learning</td><td>35</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>0</td><td><span class="nul">empty</span></td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>https://lunenburgbudgetproject.org/docs/dis…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
@@ -552,6 +600,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td><td>Where the figure came from, as the extractor recorded it.<br><span class="ccaut">A loose reference — a filename — not a resolved address.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="line_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>label</th><th>fy</th><th>stage</th><th>variant</th><th>value</th><th>documents_disagree</th><th>source</th></tr>
 <tr><td>es principal asst prin</td><td>E.S. Principal/Asst. Prin.</td><td class="num">2026</td><td>settled</td><td><span class="nul">empty</span></td><td>241000</td><td>0</td><td>final-budget-document.txt</td></tr>
@@ -583,6 +632,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>restoration_2_24_26</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>comments</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="lps_budget_lines">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>row</th><th>section</th><th>function_group</th><th>line_item</th><th>kind</th><th>fy23_actual</th><th>fy24_actual</th><th>fy25_actual</th><th>fy25_budget</th><th>fy26_final</th><th>fy26_actual_td</th><th>fy26_encumb_td</th><th>fy27_restoration</th><th>fy27_core</th><th>fy27_level_service</th><th>fy27_balanced</th><th>forecast_outyear</th><th>restoration_2_24_26</th><th>comments</th></tr>
 <tr><td>50</td><td>EXPENSES</td><td>2210 - H.S. Principals Office</td><td>H.S. Graduation Expenses</td><td>line</td><td>7934.71</td><td>8250.65</td><td>8038.54</td><td>10000.0</td><td>10378.0</td><td>33.35</td><td>1616.65</td><td>10378.0</td><td>10378.0</td><td>10378.0</td><td>10378.0</td><td>10378.0</td><td>10378.0</td><td><span class="nul">empty</span></td></tr>
@@ -618,6 +668,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>suppress_zero</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td><td>Which columns the source printed rounded.<br><span class="ccaut">Sets the tolerance a reconciliation may use — one dollar per rounded row, not a blanket.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="munis_ledger">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>fy</th><th>period</th><th>fund</th><th>fund_name</th><th>funds_covered</th><th>account_type</th><th>level</th><th>dept</th><th>org</th><th>object</th><th>account</th><th>function</th><th>name</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th><th>totals_only</th><th>suppress_zero</th><th>rounded_columns</th></tr>
 <tr><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td class="num">2026</td><td>12</td><td>0100</td><td>GENERAL FUND</td><td><span class="nul">empty</span></td><td>expense</td><td>account</td><td>300</td><td>S1011022</td><td>535003</td><td>0100-3-300-1210-01-1-02-2-535003</td><td>1210</td><td>DUES/MTGS</td><td>8000.0</td><td>-3584.8</td><td>4415.2</td><td>3521.0</td><td>0.0</td><td>894.2</td><td>0.0</td><td>0</td><td>1</td><td><span class="nul">empty</span></td></tr>
@@ -636,6 +687,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="ood_tuition_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>private</th><th>collaborative</th><th>total</th><th>documents_disagree</th></tr>
 <tr><td class="num">2017</td><td>proposed</td><td>581345</td><td>74189</td><td>655534</td><td>0</td></tr>
@@ -662,6 +714,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
 <tr><td><code>checks</code></td><td class="ty">TEXT</td><td>Which checks this row passed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="placement_counts">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>as_of</th><th>total</th><th>collaborative</th><th>day</th><th>residential</th><th>collaborative_within_day</th><th>collaborative_basis</th><th>report_says_prior_year</th><th>parts_tie</th><th>chain_agrees</th><th>page</th><th>document</th><th>checks</th></tr>
 <tr><td class="num">2011</td><td>2011-03-01</td><td>15</td><td><span class="nul">empty</span></td><td>13</td><td>2</td><td>1</td><td>subset of day placements</td><td><span class="nul">empty</span></td><td>yes</td><td>n/a</td><td>35</td><td>FY2011</td><td>parts 13+2=15 ties to stated 15</td></tr>
@@ -687,6 +740,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>in_model</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="rate_register">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>category</th><th>unit</th><th>item</th><th>value</th><th>value_type</th><th>set_on</th><th>expires</th><th>source</th><th>source_file</th><th>source_ref</th><th>status</th><th>in_model</th></tr>
 <tr><td>2024</td><td>athletic_fee</td><td>MS</td><td>reduced_fee</td><td>26.00</td><td>dollars</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>District athletics workbook, by sport (Town…</td><td>munis-ledgers/account-details/athletics-by-…</td><td>Spring!T3</td><td>verified</td><td>reference</td></tr>
@@ -707,6 +761,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="revenue_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>printed_name</th><th>source_key</th><th>class</th><th>label</th><th>amount</th><th>document</th><th>page</th></tr>
 <tr><td class="num">2014</td><td>DISHONORED CHECK FEE</td><td>DISHONOREDCHECKFEE</td><td>local</td><td>DISHONORED CHECK FEE</td><td class="num">475.0</td><td>4120-fy-2014-annual-town-report.pdf</td><td>22</td></tr>
@@ -725,6 +780,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>encumbered</code></td><td class="ty">TEXT</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
 <tr><td><code>balance</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="school_special_revenue_fy26_q3">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fund</th><th>name</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>balance</th></tr>
 <tr><td>2748</td><td>FY24 117 EVIDENCE</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-0.0</td></tr>
@@ -746,6 +802,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="sped_para_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>ps</th><th>es</th><th>ms</th><th>hs</th><th>ace</th><th>total</th><th>documents_disagree</th></tr>
 <tr><td class="num">2018</td><td>actual</td><td>169424</td><td>122049</td><td>214030</td><td>136132</td><td>0</td><td>641635</td><td>0</td></tr>
@@ -767,6 +824,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="sped_teacher_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>ps</th><th>es</th><th>ms</th><th>hs</th><th>ace</th><th>total</th><th>documents_disagree</th></tr>
 <tr><td class="num">2021</td><td>actual</td><td>516646</td><td>362179</td><td>407895</td><td>378784</td><td>57649</td><td>1723153</td><td>0</td></tr>
@@ -783,6 +841,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="sped_transport_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>system</th><th>total</th><th>documents_disagree</th></tr>
 <tr><td class="num">2020</td><td>actual</td><td>223350</td><td>223350</td><td>1</td></tr>
@@ -799,6 +858,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>position</code></td><td class="ty">TEXT</td><td>The job, classified by us from the printed title.<br><span class="ccaut">A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row each.</span></td></tr>
 <tr><td><code>count</code></td><td class="ty">TEXT</td><td>How many. <span class="unit">count</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="staff_roster_counts">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>school</th><th>position</th><th>count</th></tr>
 <tr><td class="num">2011</td><td>primary</td><td>Classroom Teacher</td><td>9</td></tr>
@@ -821,6 +881,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>line</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="staff_roster_entries">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>school</th><th>page</th><th>name</th><th>role_raw</th><th>position</th><th>position_from</th><th>grade_or_dept</th><th>line</th><th>document</th></tr>
 <tr><td class="num">2014</td><td>high</td><td>110</td><td>Joseph Adamowicz</td><td><span class="nul">empty</span></td><td>Paraprofessional</td><td>section heading</td><td>Paraprofessionals:</td><td>7</td><td>4120-fy-2014-annual-town-report.pdf</td></tr>
@@ -844,6 +905,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>supersedes</code></td><td class="ty">REAL</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="stated_figure">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>metric</th><th>amount</th><th>stated_on</th><th>stated_by</th><th>basis</th><th>doc_id</th><th>source_ref</th><th>quote</th><th>supersedes</th><th>note</th></tr>
 <tr><td class="num">2025</td><td>school_surplus</td><td class="num">582115.44</td><td>2025-09-03</td><td>Superintendent (memo read into the record b…</td><td>close</td><td>sources/meetings/text/school-committee/2025…</td><td>line 36</td><td>recently discovered in the amount of $582,1…</td><td><span class="nul">NULL</span></td><td>The Chair read a prepared statement about a…</td></tr>
@@ -858,6 +920,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="total_expenses_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
 <tr><td class="num">2018</td><td>settled</td><td>6034260</td><td>1</td></tr>
@@ -873,6 +936,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="total_salaries_history">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
 <tr><td class="num">2018</td><td>proposed</td><td>13374150</td><td>0</td></tr>
@@ -894,6 +958,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>available</code></td><td class="ty">TEXT</td><td>Revised less expended less encumbered. <span class="unit">dollars</span></td></tr>
 <tr><td><code>pct_used</code></td><td class="ty">TEXT</td><td>Share of the revised budget used. <span class="unit">percent</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="town_ledger_fy26_q3">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dept</th><th>name</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th></tr>
 <tr><td>525</td><td>PHYSICALS</td><td>3500.0</td><td>0.0</td><td>3500.0</td><td>416.0</td><td>234.0</td><td>2850.0</td><td>18.6</td></tr>
@@ -922,6 +987,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>first_seen_fy</code></td><td class="ty">INTEGER</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>last_seen_fy</code></td><td class="ty">INTEGER</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="account">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>account_id</th><th>fund</th><th>fund_name</th><th>dept</th><th>org</th><th>object</th><th>account_string</th><th>function</th><th>name</th><th>account_type</th><th>level</th><th>first_seen_fy</th><th>last_seen_fy</th></tr>
 <tr><td>0100-11462-534400</td><td>0100</td><td>GENERAL FUND</td><td>146</td><td>11462</td><td>534400</td><td>0100-1-146-0000-00-0-00-2-534400</td><td><span class="nul">NULL</span></td><td>POSTAGE</td><td>expense</td><td>account</td><td class="num">2026</td><td class="num">2026</td></tr>
@@ -941,6 +1007,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="account_names">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dept</th><th>object</th><th>org</th><th>code</th><th>readable</th><th>basis</th><th>note</th></tr>
 <tr><td>300</td><td>511002</td><td><span class="nul">empty</span></td><td>HS GUID SE</td><td>High school guidance secretary</td><td>department context</td><td>Object 511002 is the secretarial salary obj…</td></tr>
@@ -958,6 +1025,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>function_group</code></td><td class="ty">TEXT</td><td>Our grouping of DESE function codes into readable categories.</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td><td>What sort of row or record this is.<br><span class="ccaut">Meaning differs by table — see the per-table entry.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="budget_line">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>line_key</th><th>label</th><th>section</th><th>function_group</th><th>kind</th></tr>
 <tr><td>special ed transp system</td><td>Special Education Transp - System</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
@@ -976,6 +1044,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>evidence</code></td><td class="ty">TEXT</td><td>What establishes the claim in this row.</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="crosswalk">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
 </details>
 <details class="t"><summary><code>fiscal_period</code> <span class="n">13 rows</span><span class="gr">one row per MUNIS period</span></summary>
@@ -987,6 +1056,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>months_elapsed</code></td><td class="ty">REAL</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>is_final</code></td><td class="ty">INTEGER</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="fiscal_period">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>period</th><th>label</th><th>months_elapsed</th><th>is_final</th></tr>
 <tr><td class="num">10</td><td>April</td><td class="num">10.0</td><td class="num">0</td></tr>
@@ -1003,6 +1073,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td><td>What sort of row or record this is.<br><span class="ccaut">Meaning differs by table — see the per-table entry.</span></td></tr>
 <tr><td><code>restriction</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="fund">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fund</th><th>name</th><th>kind</th><th>restriction</th></tr>
 <tr><td>1311</td><td>SCHOOL GIFT FUND</td><td>gift</td><td><span class="nul">NULL</span></td></tr>
@@ -1020,6 +1091,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>role_grade</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>classified_by</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="role_classification">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>role_raw</th><th>grade_or_dept</th><th>rows</th><th>role_category</th><th>role_grade</th><th>classified_by</th></tr>
 <tr><td><span class="nul">empty</span></td><td>Technology IT:</td><td>9</td><td>technology</td><td><span class="nul">empty</span></td><td>heading-technology</td></tr>
@@ -1034,6 +1106,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>position</code></td><td class="ty">TEXT</td><td>The job, classified by us from the printed title.<br><span class="ccaut">A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row each.</span></td></tr>
 <tr><td><code>times_seen</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="staff_position_map">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>role_as_printed</th><th>position</th><th>times_seen</th></tr>
 <tr><td>(TLC) Theraputic Learning Center</td><td>Special Education Teacher</td><td>1</td></tr>
@@ -1055,6 +1128,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="annual_report_receipts">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>source</th><th>amount</th><th>status</th><th>document</th><th>page</th></tr>
 <tr><td class="num">2015</td><td>CEMETERIES BURIALS</td><td>4000.00</td><td>checked</td><td>4121-fy-2015-annual-town-report.pdf</td><td>22</td></tr>
@@ -1096,6 +1170,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_appropriations">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>appropriations</td><td class="num">2014</td><td>FY2014</td><td>141</td><td>1</td><td>Health &amp; Sanitation</td><td>62 Town Highway Garage</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>omnibus-budget</td><td><span class="nul">empty</span></td><td>GENERAL FUND APPROPRIATIONS | SUMMARY &amp; CLA…</td><td>1000.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td>v1=voted (from the shape of the column, not…</td><td>check failed</td><td>voted: 28,979,584.00 vs 29,079,384.00 (-99,…</td></tr>
@@ -1137,6 +1212,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_capital_projects">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>capital_projects</td><td class="num">2016</td><td>FY2016</td><td>36</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Technology, School Department</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CAPITAL PROJECT FUNDS FY 2016 | APPROPRIATE…</td><td>30000.00</td><td>28228.93</td><td>1771.07</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>3</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>v1: 1,207,111.79 vs 11,120,094.93 (-9,912,9…</td></tr>
@@ -1178,6 +1254,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_debt">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>debt</td><td class="num">2020</td><td>FY2020</td><td>45</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>PRINCIPAL</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE A…</td><td>965000.00</td><td>1070000.00</td><td>18510000.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>3</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1219,6 +1296,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_dept_activity">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>dept_activity</td><td class="num">2016</td><td>FY2016</td><td>53</td><td><span class="nul">empty</span></td><td>Cemetery Commissioners, Ch</td><td>* Arthur Weidenhoff</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CEMETERY DEPARTMENT | Cemetery Commissioner…</td><td>81</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1260,6 +1338,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_elections">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>elections</td><td class="num">2014</td><td>FY2014</td><td>159</td><td>1</td><td><span class="nul">empty</span></td><td>TOTAL</td><td><span class="nul">empty</span></td><td>subtotal</td><td>parts sum to the printed total</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>1187</td><td>955</td><td>1053</td><td>1052</td><td>4247</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>181 full rows tie, 1 do not; 28 partial not…</td></tr>
@@ -1301,6 +1380,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_enrollment_mcas">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>enrollment_mcas</td><td class="num">2012</td><td>FY2012</td><td>33</td><td>1</td><td>Health Promotion</td><td>PK</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Confirmed 25 | Communicable Disease Number …</td><td>43</td><td>41</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1342,6 +1422,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_gross_wages">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>gross_wages</td><td class="num">2016</td><td>FY2016</td><td>202</td><td><span class="nul">empty</span></td><td>FIRE</td><td>VASADY-KOVACS</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>FIRE SCHOOL | NEIL SCHOOL | SCHOOL | SCHOOL</td><td>5683.64</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1383,6 +1464,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_monty_tech">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>monty_tech</td><td class="num">2017</td><td>FY2017</td><td>143</td><td><span class="nul">empty</span></td><td>Debt Service                               …</td><td>Retired Employee Benefits         859,100</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>General Fund- Income and Expense Summary | …</td><td>5250.00</td><td>821348.00</td><td>969651.00</td><td>1004045.00</td><td>1068842.00</td><td>64797.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>6</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1424,6 +1506,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_officials">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>officials</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>*Shirley A. Levesque</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Marion Benson, c/o Planning Board | D.P.W. …</td><td>80</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1465,6 +1548,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_trust_funds">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>trust_funds</td><td class="num">2011</td><td>FY2011</td><td>73</td><td><span class="nul">empty</span></td><td>LIBRARY FU</td><td>EMMA DIMOND LIBRARY BOOKS</td><td><span class="nul">empty</span></td><td>subtotal</td><td>subtotal: equals the 2 rows below it, in 2 …</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TRUST FUNDS | BEGINNING BEGINNING DISBURSE …</td><td>300.00</td><td>125.46</td><td>0.00</td><td>3.09</td><td>0.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>v1: 354,751.46 vs 1,905,698.11 (-1,550,946.…</td></tr>
@@ -1506,6 +1590,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_valuation">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>valuation</td><td class="num">2016</td><td>FY2016</td><td>37</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Industrial</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>BOARD OF ASSESSORS | Fiscal 2016 Assessment…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>19994000.00</td><td>19.61</td><td>392082.34</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>3</td><td><span class="nul">empty</span></td><td>0</td><td>1.6667%</td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1547,6 +1632,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_vital_records">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
 <tr><td>vital_records</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>*Betty Ann Sikora</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>JANUARY JULY | Nancy L Woodruff 79 N *Richa…</td><td>72</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
@@ -1579,6 +1665,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="special_revenue_funds">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>group</th><th>fund</th><th>page</th><th>is_subtotal</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>n_values</th><th>ruler_spanned</th><th>row_check</th><th>derived_cell</th><th>columns_tying</th><th>status</th><th>reconciliation</th></tr>
 <tr><td class="num">2012</td><td>FY2012</td><td>LIBRARY</td><td>Water Enterprise Fund</td><td>70</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>12380.65</td><td>17308.06</td><td>15950.86</td><td>13737.85</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>4</td><td><span class="nul">empty</span></td><td>fund balances: forward + receipts - disburs…</td><td><span class="nul">empty</span></td><td>0</td><td>check failed</td><td>v1: 2,897,297.02 vs printed 2,766,954.67 (+…</td></tr>
@@ -1598,6 +1685,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>rests_on</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>settled_by</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="money_assumptions">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>assumption</th><th>evidence</th><th>rests_on</th><th>settled_by</th></tr>
 <tr><td>`SCHRESSTIP` is a school resource officer s…</td><td>Read from the abbreviation, in the police d…</td><td>A $6,800 line. Immaterial, and still an inf…</td><td>The account’s full name from MUNIS, which t…</td></tr>
@@ -1617,6 +1705,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>how</code></td><td class="ty">TEXT</td><td>How that classification was established.</td></tr>
 <tr><td><code>why</code></td><td class="ty">TEXT</td><td>Why the classification was made, in words that can be argued with.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="money_classification">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>kind</th><th>key</th><th>group</th><th>label</th><th>classification</th><th>how</th><th>why</th></tr>
 <tr><td>revenue_account</td><td>SALE STAND</td><td>onetime</td><td>One-time money</td><td>general_fund_revenue</td><td>named</td><td>Free cash and proceeds. Spendable once</td></tr>
@@ -1633,6 +1722,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
 <tr><td><code>why</code></td><td class="ty">TEXT</td><td>Why the classification was made, in words that can be argued with.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="money_edges">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>source</th><th>use</th><th>basis</th><th>why</th></tr>
 <tr><td>Fund 1301 (athletics)</td><td>Athletics spending</td><td>restricted</td><td>The fund is athletics — established from it…</td></tr>
@@ -1648,6 +1738,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>what</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>why</code></td><td class="ty">TEXT</td><td>Why the classification was made, in words that can be argued with.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="money_gaps">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>side</th><th>what</th><th>why</th></tr>
 <tr><td>money_in</td><td>Student activity accounts</td><td>held by the school under its own authority …</td></tr>
@@ -1678,6 +1769,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>notes</code></td><td class="ty">TEXT</td><td>What we recorded about this row while reading it.</td></tr>
 <tr><td><code>cluster</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="annual_report_catalogue">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>document</th><th>name</th><th>printed_heading</th><th>pages</th><th>what_it_is</th><th>grain</th><th>columns</th><th>layout</th><th>printed_total</th><th>approx_rows</th><th>extractable</th><th>notes</th><th>cluster</th></tr>
 <tr><td class="num">2013</td><td>FY2013</td><td>4119-fy-2013-annual-town-report.pdf</td><td>Nashoba Environmental Health Department act…</td><td>Environmental Health Department / Environme…</td><td>16</td><td>Counts of regional health district activity…</td><td>one activity type</td><td>(activity) | (count)</td><td>label with dot leaders, count right</td><td><span class="nul">empty</span></td><td>12</td><td>clean</td><td>THE MOST COMPLETE OF THE THREE YEARS: Lunen…</td><td>activity counts department environmental</td></tr>
@@ -1703,6 +1795,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>csv_fields</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>grain</code></td><td class="ty">TEXT</td><td>What one row of this table represents.<br><span class="ccaut">The field that decides whether two tables can be joined or summed.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="annual_report_contents">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>table</th><th>pages</th><th>page_count</th><th>pages_with_figures</th><th>figure_rows</th><th>figures</th><th>columns</th><th>read_by</th><th>printed_total</th><th>checkable</th><th>csv_fields</th><th>grain</th></tr>
 <tr><td class="num">2018</td><td>payroll</td><td>5,248-254</td><td>8</td><td>7</td><td>304</td><td>586</td><td>7</td><td>layout+plain</td><td><span class="nul">empty</span></td><td>no</td><td>fy, department, position_count, gross</td><td>AGGREGATE ONLY -- never one row per named p…</td></tr>
@@ -1726,6 +1819,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>totals</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="annual_report_survey">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>document</th><th>page</th><th>mode</th><th>gutters</th><th>money</th><th>chars</th><th>rows</th><th>sections</th><th>totals</th><th>note</th></tr>
 <tr><td class="num">2016</td><td>4123-fy-2016-annual-town-report.pdf</td><td>174</td><td>plain</td><td>2</td><td>39</td><td>2291</td><td>39</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
@@ -1747,6 +1841,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>difference</code></td><td class="ty">TEXT</td><td>Ours less the source&#x27;s. <span class="unit">dollars</span></td></tr>
 <tr><td><code>ties</code></td><td class="ty">TEXT</td><td>Whether the two agree.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="athletics_by_sport_reconciliation">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>season</th><th>scope</th><th>metric</th><th>fy</th><th>printed</th><th>printed_cell</th><th>printed_raw</th><th>summed_from_rows</th><th>difference</th><th>ties</th></tr>
 <tr><td>Winter</td><td>ALL</td><td>Equipment</td><td class="num">2024</td><td>2567.2</td><td>BH23</td><td>2567.2</td><td>2567.2</td><td>0.0</td><td>1</td></tr>
@@ -1764,6 +1859,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
 <tr><td><code>caution</code></td><td class="ty">TEXT</td><td>What goes wrong if this is used without knowing the above.<br><span class="ccaut">Every entry here was written after getting it wrong at least once.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="column_glossary">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>column</th><th>meaning</th><th>unit</th><th>basis</th><th>caution</th></tr>
 <tr><td>v4</td><td>ORDINAL: the fourth column of this page tha…</td><td>dollars</td><td>derived</td><td>See v1.</td></tr>
@@ -1787,6 +1883,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>sha256</code></td><td class="ty">TEXT</td><td>Checksum of our copy.<br><span class="ccaut">Here because a file can be replaced at the same URL without the URL changing.</span></td></tr>
 <tr><td><code>bytes</code></td><td class="ty">TEXT</td><td>Size of our copy. <span class="unit">bytes</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="dataset_document">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>edition</th><th>rows</th><th>pages</th><th>page_count</th><th>reconciled</th><th>partial</th><th>document</th><th>publisher_label</th><th>upstream</th><th>sha256</th><th>bytes</th></tr>
 <tr><td>special-revenue-funds</td><td>FY2015</td><td>129</td><td>29,30,31,32,33</td><td>5</td><td>0</td><td>0</td><td>4121-fy-2015-annual-town-report.pdf</td><td>FY 2015 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>712afbb458b2a452a1c4b3ce618478c8f59a31d7f04…</td><td>7590404</td></tr>
@@ -1810,6 +1907,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>remote_sha256</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>local_sha256</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="document">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
 <tr><td>sources/district-budget/text/fy23-quarterly…</td><td>sources/district-budget/text/fy23-quarterly…</td><td>ledger</td><td>budget</td><td>2</td><td><span class="nul">empty</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>5d3c93143333601a78715745056dc3d794dc2c55ed4…</td></tr>
@@ -1834,6 +1932,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>rows</code></td><td class="ty">TEXT</td><td>How many rows the extract produced. <span class="unit">count</span></td></tr>
 <tr><td><code>notes</code></td><td class="ty">TEXT</td><td>What we recorded about this row while reading it.</td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="extraction_plan">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>pages</th><th>printed_heading</th><th>table</th><th>grain</th><th>printed_total</th><th>checkable</th><th>extractable</th><th>rows</th><th>notes</th></tr>
 <tr><td>officials</td><td class="num">2016</td><td>FY2016</td><td>7</td><td>ELECTED OFFICIALS</td><td>Elected officials -- state and federal</td><td>one officeholder</td><td><span class="nul">empty</span></td><td>no</td><td>messy</td><td>9</td><td>Substantively identical to FY2015 p8.</td></tr>
@@ -1857,6 +1956,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>covers</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>reason</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="line_history_coverage">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>document</th><th>doc_year</th><th>data_rows</th><th>rows_with_layout</th><th>rows_short_of_columns</th><th>figures</th><th>header_line</th><th>header_years</th><th>header_kinds</th><th>doc_date</th><th>covers</th><th>reason</th></tr>
 <tr><td>fy21-recommended-budget-presentation-4-22-2…</td><td>2021</td><td>30</td><td>0</td><td>0</td><td>0</td><td><span class="nul">empty</span></td><td>FY20 Budget FY21 Budget</td><td><span class="nul">empty</span></td><td>2020-04-22</td><td>FY2020 FY2021</td><td>header wrapped: line 101 states 2 fiscal ye…</td></tr>
@@ -1879,6 +1979,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>spread</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td><td>What sort of row or record this is.<br><span class="ccaut">Meaning differs by table — see the per-table entry.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="line_history_disagreements">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>label</th><th>fy</th><th>stage</th><th>variant</th><th>source</th><th>value</th><th>is_kept</th><th>spread</th><th>kind</th></tr>
 <tr><td>hs general school supplies</td><td>H.S. General School Supplies</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td>fy26-school-dept-approved-budget-3-12-25.txt</td><td>16000</td><td>1</td><td>5500</td><td>documents</td></tr>
@@ -1898,6 +1999,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td><td>Where the figure came from, as the extractor recorded it.<br><span class="ccaut">A loose reference — a filename — not a resolved address.</span></td></tr>
 <tr><td><code>detail</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="report_anomalies">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>document</th><th>pages</th><th>table</th><th>kind</th><th>source</th><th>detail</th></tr>
 <tr><td class="num">2016</td><td>FY2016</td><td>4123-fy-2016-annual-town-report.pdf</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>note</td><td>surprise</td><td>The fire department publishes a genuine wor…</td></tr>
@@ -1915,6 +2017,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>what_it_answers</code></td><td class="ty">TEXT</td><td>The question one row of this table answers.</td></tr>
 <tr><td><code>caution</code></td><td class="ty">TEXT</td><td>What goes wrong if this is used without knowing the above.<br><span class="ccaut">Every entry here was written after getting it wrong at least once.</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="table_semantics">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>table_name</th><th>role</th><th>grain</th><th>what_it_answers</th><th>caution</th></tr>
 <tr><td>money_gaps</td><td>classification</td><td>one row per gap</td><td>Questions the published documents do not cl…</td><td>This table is the honest list of what canno…</td></tr>
@@ -1939,6 +2042,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>worst_year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>best_year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
+<p class="openrow"><button class="open" data-t="variance_by_group">Open full table &rarr;</button> <span class="cap sm">queries the live API</span></p>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>function_group</th><th>years</th><th>budgeted</th><th>spent</th><th>net</th><th>gross</th><th>churn</th><th>worst_year</th><th>best_year</th></tr>
 <tr><td>2320 - Therapeutic Services</td><td>5</td><td>3093610</td><td>3014841</td><td>-78769</td><td>78769</td><td>1.00</td><td>-0.0532</td><td>-0.0100</td></tr>
@@ -1985,6 +2089,92 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>money_out</td><td>What any special revenue fund bought</td><td>no expense report exists for these funds · purpose is presumed, never observed</td></tr>
 <tr><td>money_out</td><td>What the capital transfers bought</td><td>two transfer lines · no project detail</td></tr>
 </table></div></div>
+
+<div id="modal" hidden>
+  <div class="sheet">
+    <div class="mbar">
+      <strong id="mt"></strong>
+      <input id="msql" spellcheck="false" autocomplete="off">
+      <button id="mrun">Run</button>
+      <span id="mmeta"></span>
+      <button id="mx" title="close">&times;</button>
+    </div>
+    <div id="mbody" class="mwrap"></div>
+  </div>
+</div>
+<script>
+// WHY THIS QUERIES THE LIVE API RATHER THAN CARRYING THE ROWS.
+//
+// Embedding every row was measured first: 15.5 MB in this page, or 30.5 MB as one file
+// per table. Both put the same data in a second place, where it can go stale against the
+// database it was copied from, and land tens of megabytes in git on every rebuild.
+//
+// Fetching from a sibling file does not work: opened from disk this document has an
+// opaque origin, so fetch() at a file:// URL is refused as cross-origin and there is no
+// server to add a header to. But /api/query is on https and answers with
+// `access-control-allow-origin: *`, which an opaque origin is allowed to read. So the
+// data comes from the same public endpoint anybody else would use — one copy, always
+// current, and this page becomes a caller of the API rather than a duplicate of it.
+const API = 'https://lunenburgbudgetproject.org/api/query';
+const modal = document.getElementById('modal'), mt = document.getElementById('mt'),
+      msql = document.getElementById('msql'), mbody = document.getElementById('mbody'),
+      mmeta = document.getElementById('mmeta');
+
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+async function run(sql) {
+  mbody.innerHTML = '<p class="mnote">querying…</p>';
+  mmeta.textContent = '';
+  let r, j;
+  try {
+    r = await fetch(API + '?sql=' + encodeURIComponent(sql));
+    j = await r.json();
+  } catch (e) {
+    // The honest failure. This page works offline; the button does not.
+    mbody.innerHTML = '<p class="mnote">Could not reach the API — this needs an internet ' +
+      'connection, because the rows are not in this file. ' + esc(e.message) + '</p>';
+    return;
+  }
+  if (!r.ok || j.error) {
+    mbody.innerHTML = '<p class="mnote">' + esc(j.error || ('HTTP ' + r.status)) +
+      (j.suggestion ? '<br>' + esc(j.suggestion) : '') + '</p>';
+    return;
+  }
+  const rows = j.rows || j.results || [];
+  if (!rows.length) { mbody.innerHTML = '<p class="mnote">No rows.</p>'; return; }
+  const cols = Object.keys(rows[0]);
+  const head = '<tr>' + cols.map(k => '<th>' + esc(k) + '</th>').join('') + '</tr>';
+  const body = rows.map(row => '<tr>' + cols.map(k => {
+    const v = row[k];
+    if (v === null) return '<td><span class="nul">NULL</span></td>';
+    if (v === '') return '<td><span class="nul">empty</span></td>';
+    return '<td' + (typeof v === 'number' ? ' class="num"' : '') + '>' + esc(v) + '</td>';
+  }).join('') + '</tr>').join('');
+  mbody.innerHTML = '<table class="samp">' + head + body + '</table>';
+  // rowsRead is the billable quantity and is NOT the number of rows returned — a GROUP BY
+  // returning 14 rows can read 9,330. Showing both is why the endpoint publishes it.
+  mmeta.textContent = rows.length.toLocaleString() + ' returned' +
+    (j.rowsRead != null ? ' · ' + j.rowsRead.toLocaleString() + ' rows read' : '') +
+    (rows.length === 1000 ? ' · capped at 1,000 — add OFFSET for more' : '');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button.open');
+  if (b) {
+    mt.textContent = b.dataset.t;
+    msql.value = 'SELECT * FROM ' + b.dataset.t + ' LIMIT 1000';
+    modal.hidden = false;
+    run(msql.value);
+    return;
+  }
+  if (e.target.id === 'mrun') run(msql.value);
+  if (e.target.id === 'mx' || e.target.id === 'modal') modal.hidden = true;
+});
+msql.addEventListener('keydown', e => { if (e.key === 'Enter') run(msql.value); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.hidden = true; });
+</script>
 
 <p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
 database on 2026-09-07. Do not edit — run the script. The CSVs in <code>sources/data/</code>

@@ -1,0 +1,130 @@
+column,meaning,unit,basis,caution
+fy,"Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026.",year,ours,"INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year)."
+edition,"Which annual town report the row was read from, as that report names itself.",,ours,"FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice."
+page,"The page number printed on the page, not the PDF's index.",,publisher,"The two differ by a cover offset that is not constant across years."
+document,"The source file the figure was read from.",,ours,
+doc_id,"The archive path of the document this row's figures came from.",,ours,"Every fact row carries one. A figure that cannot name its document is not loaded."
+label,"The row's name, as printed.",,publisher,"Not a key. MUNIS truncates to ten characters, so MS GUIDANC and HS GUIDANC collide."
+line_key,"Our normalised join key for a budget line.",,derived,"Normalisation differs between budget_figure and workbook_figure — joining them on line_key matches only a fraction. Join on the normalised label instead."
+value,"The figure, as printed.",dollars,publisher,
+amount,"The figure, as printed.",dollars,publisher,
+v1,"ORDINAL, NOT A COLUMN NAME: the first column of THIS PAGE that held figures.",dollars,derived,"The ruler is built per page, so v1 on one page and v1 on the next can be different printed columns. Read column_meaning. Summing v1 down a run adds one page's APPROPRIATED to another's TOTAL EXPENDED."
+v2,"ORDINAL: the second column of this page that held figures.",dollars,derived,"See v1."
+v3,"ORDINAL: the third column of this page that held figures.",dollars,derived,"See v1."
+v4,"ORDINAL: the fourth column of this page that held figures.",dollars,derived,"See v1."
+v5,"ORDINAL: the fifth column of this page that held figures.",dollars,derived,"See v1."
+v6,"ORDINAL: the sixth column of this page that held figures.",dollars,derived,"See v1."
+v7,"ORDINAL: the seventh column of this page that held figures.",dollars,derived,"See v1."
+v8,"ORDINAL: the eighth column of this page that held figures.",dollars,derived,"See v1."
+columns_as_printed,"The column headings of this table, verbatim, as that page prints them.",,publisher,"This is what says which printed column v1 actually is. It is the only thing that does."
+column_meaning,"What each ordinal column is, where the table states an identity that fixes it.",,derived,"Says `not established` where the table does not fix it, and that is not the same as unknown-and-guessable."
+status,"Whether this row's table was CHECKED against a total the report itself prints.",,derived,"`checked`, `check failed`, `no check`. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total."
+reconciliation,"The per-column result of that check: what we summed against what the report printed.",,derived,
+row_check,"Whether the row satisfies an identity the table itself states.",,derived,
+derived_cell,"A cell we computed from the row's own other cells, recorded here and NEVER written into a v column.",,derived,"An inference kept out of the readings, on purpose."
+n_values,"How many money cells this row actually carried.",count,derived,"Fewer than the table's column count means blank cells, and which ones were blank is positional."
+ruler_spanned,"The column ruler could not cut this row cleanly.",,derived,"Flagged rather than dropped: a dropped row shifts nothing and is invisible."
+is_subtotal,"This row is a total of other rows, not a fund or a line of its own.",,derived,"Must be excluded from column sums or the rows it summarises are counted twice."
+group,"The department heading the row sits under, as printed.",,publisher,"A heading governs every row below it until the next one."
+dataset,"Which extract family this row belongs to.",,ours,
+table_family,"Which printed table shape this row came from.",,ours,
+kind,"What sort of row or record this is.",,ours,"Meaning differs by table — see the per-table entry."
+stage,"What the figure IS: proposed, settled, or actual.",,ours,"Rule 1. A rate measured from one stage to another is partly growth and partly the step between them."
+variant,"Which whole-budget scenario the figure belongs to.",,ours,"FY27 has four — Balanced, Core Budget, Level Service, Restoration. Without this you sum all four budgets together."
+period,"MUNIS accounting period: a point in time INSIDE the fiscal year.",,publisher,"A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other."
+account_id,"The full MUNIS account, fund-org-object.",,publisher,"The stable identity. Never identify an account by its name."
+account_type,"Whether the account is expense or revenue.",,publisher,"Revenue is stored NEGATIVE. Omitting this once made the town's whole budget compute as minus $997,871."
+level,"Whether the row is a department roll-up or a detail account.",,derived,"Both live in the same table. Summing both adds the budget to itself."
+fund,"The MUNIS fund number.",,publisher,"School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school."
+fund_name,"The fund's name as MUNIS prints it.",,publisher,"CHAPTER 658 REVOLVING FUND is athletics. Identify a fund by number."
+dept,"The MUNIS department number.",,publisher,"A department is not a purpose: school retiree health sits in the insurance department."
+org,"The MUNIS org segment of the account.",,publisher,
+object,"The MUNIS object code — what kind of thing the money buys.",,publisher,
+function,"The DESE function code.",,publisher,"Joins a CATEGORY, never a line."
+name,"The name as the source prints it.",,publisher,"MUNIS truncates account names to ten characters."
+original,"The appropriation as originally voted.",dollars,publisher,
+revised,"The appropriation after transfers.",dollars,publisher,
+expended,"Spent.",dollars,publisher,
+encumbered,"Committed by purchase order but not yet spent.",dollars,publisher,
+available,"Revised less expended less encumbered.",dollars,publisher,
+pct_used,"Share of the revised budget used.",percent,publisher,
+revenue,"Money received into the fund.",dollars,publisher,"Not the same quantity as spending, and the two must never be added."
+spent,"Money paid out of the fund.",dollars,publisher,"Not the same quantity as revenue."
+opening_balance,"What the fund held at the start of the year.",dollars,publisher,
+closing_balance,"What the fund held at the end of the period.",dollars,publisher,
+class,"Our classification of what KIND of revenue this is.",,ours,"Says where the money came FROM. It does NOT say what the money went on to pay for — general fund money is fungible and no document apportions it."
+classification,"Our classification of the node.",,ours,
+how,"How that classification was established.",,ours,
+why,"Why the classification was made, in words that can be argued with.",,ours,
+basis,"Whether a figure is published, contractual, statutory, our measurement or our assumption.",,ours,
+source,"Where the figure came from, as the extractor recorded it.",,ours,"A loose reference — a filename — not a resolved address."
+sha256,"Checksum of our copy.",,derived,"Here because a file can be replaced at the same URL without the URL changing."
+url,"The publisher's own address for the document.",,publisher,
+upstream,"The publisher's address, as deeply as it goes.",,publisher,
+path,"Where our copy lives in the archive.",,ours,
+bytes,"Size of our copy.",bytes,derived,
+rows,"How many rows the extract produced.",count,derived,
+printed_total,"The total the source itself prints, quoted.",,publisher,"This is the independent check. An extract that does not tie to it is not trusted."
+documents_disagree,"Two documents state different figures for the same thing.",,derived,"Kept rather than resolved: which is right is often not established."
+school,"Which school, as the roster prints it.",,publisher,
+position,"The job, classified by us from the printed title.",,ours,"A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row each."
+role_raw,"The job title exactly as printed.",,publisher,
+count,"How many.",count,derived,
+total,"The row's total, as printed.",dollars,publisher,
+notes,"What we recorded about this row while reading it.",,ours,
+panel,"Which block of the page this row came from, where a page prints several tables.",,derived,"Two panels on one page have different column rulers. Summing across panels mixes them."
+label_missing,"The row's label did not survive extraction.",,derived,"The figures may still be good. A missing label is not a missing row."
+line_no,"Position of the row on the page, counting from the top.",,derived,"Positional, so it identifies a row within a page and nothing beyond it."
+repaired_cells,"Cells we corrected, and what the correction was.",,derived,"A repair is a change we made to a reading. It is recorded so it can be disputed."
+unparsed_cells,"Cells we could not read.",,derived,"Kept rather than dropped: a dropped cell is invisible."
+pages,"Which pages of the source this covers.",,ours,
+source_ref,"Where in the source the figure sits — a cell, a line, a page.",,ours,"Rule 13: a coordinate, so a figure can be checked rather than taken."
+source_file,"The file the figure was read from.",,ours,
+function_group,"Our grouping of DESE function codes into readable categories.",,ours,
+transfers,"Money moved into or out of the appropriation after it was voted.",dollars,publisher,"This is why `original` and `revised` differ."
+metric,"Which quantity this row measures.",,ours,
+note,"What we recorded about this row.",,ours,
+item,"The thing being priced or counted.",,ours,
+key,"The row's join key.",,derived,
+grain,"What one row of this table represents.",,ours,"The field that decides whether two tables can be joined or summed."
+table,"Which table this row describes.",,ours,
+section,"The budget book's own section heading.",,publisher,
+evidence,"What establishes the claim in this row.",,ours,
+rounded_columns,"Which columns the source printed rounded.",,publisher,"Sets the tolerance a reconciliation may use — one dollar per rounded row, not a blanket."
+row,"The worksheet row number in the source spreadsheet.",,publisher,"Rule 13: quotes a coordinate, so a figure can be traced to its cell."
+salaries,"The salary portion of the fund's spending.",dollars,publisher,
+expenditure,"The non-salary portion of the fund's spending.",dollars,publisher,
+lea,"The state's district code.",,publisher,
+district,"The district's name as DESE prints it.",,publisher,
+measure,"Which DESE measure this row reports.",,publisher,
+reconciles,"Whether this figure ties to DESE's own printed total.",,derived,
+owner,"Who holds the grant.",,publisher,
+unit,"What the figure is counted in.",,ours,
+set_on,"The date the rate or fee was set.",,publisher,
+season,"Which athletic season.",,publisher,
+level,"School level, where the row is about athletics rather than accounts.",,publisher,"Means something different in `account` — see that table's entry."
+sport,"The sport.",,publisher,
+raw,"The value exactly as printed, before parsing.",,publisher,"Rule 13: what the source says, beside what we made of it."
+is_numeric,"Whether the raw value parsed as a number.",,derived,
+cell,"The spreadsheet cell the figure came from.",,publisher,"A coordinate, so the figure can be checked."
+printed,"The total the source itself prints.",dollars,publisher,
+printed_cell,"Where that printed total sits.",,publisher,
+printed_raw,"The printed total exactly as it appears.",,publisher,
+summed_from_rows,"What our rows add to.",dollars,derived,
+difference,"Ours less the source's.",dollars,derived,
+ties,"Whether the two agree.",,derived,
+as_of,"The date the count was taken.",,publisher,"Placement counts are measured on 1 March, not at year end."
+collaborative,"Children placed with an educational collaborative.",count,publisher,"Children, not dollars."
+day,"Children in a day placement.",count,publisher,"Children, not dollars."
+residential,"Children in a residential placement.",count,publisher,"Children, not dollars."
+collaborative_within_day,"Whether the collaborative count is inside the day count.",,publisher,
+collaborative_basis,"How the collaborative figure was arrived at.",,publisher,
+report_says_prior_year,"The prior-year figure this report restates.",,publisher,"Each year states last year's number, which checks the chain."
+parts_tie,"Whether the parts sum to the printed total.",,derived,
+chain_agrees,"Whether this year's report agrees with last year's about last year.",,derived,
+checks,"Which checks this row passed.",,derived,
+table_name,"Which table this row describes.",,ours,"Named `table_name` rather than `table` because `table` is an SQL reserved word and this table exists to be queried."
+role,"What kind of table it is: fact, dimension, extract, classification, provenance or derived.",,ours,"Facts carry the measurements. Everything else describes, extracts, classifies or checks them."
+what_it_answers,"The question one row of this table answers.",,ours,
+meaning,"What the column holds.",,ours,
+caution,"What goes wrong if this is used without knowing the above.",,ours,"Every entry here was written after getting it wrong at least once."

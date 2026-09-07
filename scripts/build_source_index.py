@@ -790,6 +790,23 @@ GROUPS = [
              'Where the receipts came from', 2,
              'Written by us: the page each year was read from, the two totals each year '
              'is checked against, and what the status column means.'),
+            ('data/table-semantics.csv',
+             'What each table in the database is', 2,
+             'Written by us. One row per table: its ROLE (fact, dimension, extract, '
+             'classification, provenance, derived), its GRAIN — what one row of it '
+             'represents — and what question it answers. Loaded into the database as '
+             '`table_semantics`, so the description is queryable by the same route as the '
+             'data it describes, and checked both ways: a table with no row here fails '
+             'the build, and a row naming a table that no longer exists fails it too.'),
+            ('data/column-glossary.csv',
+             'What each column name means, across every table', 2,
+             'Written by us. Keyed on the column NAME rather than on table-plus-name, '
+             'because 883 column instances share only 285 distinct names and the '
+             'dangerous ones mean the same thing everywhere: `v1` is an ordinal on every '
+             'table that has it, `status` splits rows into checked, check failed and no '
+             'check on every extract. Each entry carries a `caution` saying what goes '
+             'wrong if the column is used without knowing that, and every one of those '
+             'was written after getting it wrong at least once.'),
             ('data/special-revenue-funds.csv',
              'The special revenue funds, FY2011\u2013FY2025', 3,
              '2,387 rows. These are the funds rule 11 says the budget documents cannot '
