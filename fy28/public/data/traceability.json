@@ -1,0 +1,269 @@
+{
+ "as_of": {
+  "accounts_period": 12,
+  "fy": 2026,
+  "revenue_history_from": 2014,
+  "revenue_history_to": 2022,
+  "revenue_period": 9
+ },
+ "generated_by": "scripts/build_traceability_ladder.py",
+ "headline": {
+  "answerable": 3,
+  "control_fund": "1301",
+  "control_of_funds": 61,
+  "control_postings": 277,
+  "never": 1,
+  "partly": 1,
+  "rungs": 6,
+  "unanswerable": 1
+ },
+ "rungs": [
+  {
+   "figures": [
+    {
+     "kind": "count",
+     "label": "budget lines in the district workbook",
+     "value": 351
+    },
+    {
+     "kind": "count",
+     "label": "town accounts carrying an FY26 appropriation",
+     "value": 606
+    },
+    {
+     "kind": "usd",
+     "label": "appropriated to the school department, as the ledger opened",
+     "value": 26287474.000000004
+    }
+   ],
+   "holds": "The district prints a budget workbook; the town prints the same department in its year-to-date ledger. Both sides supply the key, and the join was run.",
+   "key": "department · 300, 301",
+   "limit": "A department total says nothing about which category, which school or which fund paid.",
+   "n": 1,
+   "question": "What was budgeted, town and school",
+   "state": "answerable",
+   "tier": 1
+  },
+  {
+   "figures": [
+    {
+     "kind": "count",
+     "label": "revenue accounts in the FY26 ledger, across 7 funds",
+     "value": 224
+    },
+    {
+     "kind": "usd",
+     "label": "received, through the period this report covers",
+     "value": 41160566.68999999
+    },
+    {
+     "kind": "usd",
+     "label": "of it Chapter 70 school aid",
+     "value": 6870136.0
+    }
+   ],
+   "holds": "The town runs a revenue report by account. Every source it books is named, budgeted and received on the same line.",
+   "key": "revenue account · object 4xxxxx",
+   "limit": "It says what arrived. It never says what any of it went on to pay for — that is rung 6.",
+   "n": 2,
+   "question": "Where the revenue came from",
+   "state": "answerable",
+   "tier": 3
+  },
+  {
+   "figures": [
+    {
+     "kind": "count",
+     "label": "general-fund accounts, across 69 departments",
+     "value": 635
+    },
+    {
+     "kind": "count",
+     "label": "of them in the school department",
+     "value": 259
+    },
+    {
+     "kind": "usd",
+     "label": "spent against the school department accounts",
+     "value": 25657318.309999995
+    }
+   ],
+   "holds": "The year-to-date report run with totals off prints every account: what was appropriated, what was spent, what is left.",
+   "key": "account number · 0100-S2055101-511001",
+   "limit": "An account is a bucket, not a purchase. Two schools share a code and the printed names truncate at ten characters.",
+   "n": 3,
+   "question": "What was spent, department by department and account by account",
+   "state": "answerable",
+   "tier": 3
+  },
+  {
+   "figures": [
+    {
+     "kind": "count",
+     "label": "of 635 accounts show a mid-year adjustment",
+     "value": 305
+    },
+    {
+     "kind": "usd",
+     "label": "moved in or out, added up without netting",
+     "value": 4971010.140000001
+    },
+    {
+     "kind": "usd",
+     "label": "of it across the school department's 83 adjusted accounts",
+     "value": 708989.9899999998
+    }
+   ],
+   "holds": "The ledger carries a transfers column, so the SIZE of the movement into or out of an account is visible.",
+   "key": "no key — the ledger prints a net, not a pair",
+   "limit": "Only the net. Nothing names the account the money came from, and no budget document shows a transfer at all — they are approved during the year, after the document was printed.",
+   "n": 4,
+   "question": "What money moved between accounts during the year",
+   "state": "partly",
+   "tier": 3,
+   "why": "two transfer lines · no project detail",
+   "why_of": "What the capital transfers bought"
+  },
+  {
+   "control": {
+    "commented": 136,
+    "first_fy": 2024,
+    "fund": "1301",
+    "funds_like_it": 61,
+    "kinds": [
+     {
+      "meaning": "cash receipts posting",
+      "postings": 125,
+      "src": "CRP"
+     },
+     {
+      "meaning": "accounts payable — warrant disbursement",
+      "postings": 70,
+      "src": "APP"
+     },
+     {
+      "meaning": "payroll journal",
+      "postings": 67,
+      "src": "PRJ"
+     },
+     {
+      "meaning": "general journal reversal / correction",
+      "postings": 7,
+      "src": "GRV"
+     },
+     {
+      "meaning": "general journal entry",
+      "postings": 5,
+      "src": "GEN"
+     },
+     {
+      "meaning": "start of year — opening balance carried forward",
+      "postings": 3,
+      "src": "SOY"
+     }
+    ],
+    "last_fy": 2026,
+    "name": "athletics revolving fund",
+    "named": 57,
+    "numbered": 277,
+    "postings": 277
+   },
+   "figures": [
+    {
+     "kind": "count",
+     "label": "postings held, for the athletics fund alone",
+     "value": 277
+    },
+    {
+     "kind": "ratio",
+     "label": "school funds with any transaction detail",
+     "of": 61,
+     "value": 1
+    },
+    {
+     "kind": "count",
+     "label": "general-fund accounts with none",
+     "value": 635,
+     "zeroed": true
+    }
+   ],
+   "holds": "Nothing, for the general fund. This is the tier we do not have.",
+   "key": "check, warrant, journal",
+   "limit": "Held for exactly one fund, because exactly one was asked for and produced. The report that would produce the rest is the one the town already runs for the general fund.",
+   "n": 5,
+   "question": "What the money was spent ON — a vendor, a service, a person",
+   "state": "no",
+   "tier": null,
+   "wanted": {
+    "closes": "Turns **every restricted edge** above from presumption into traced fact — athletics, lunch, circuit breaker, extended day, and every grant.",
+    "detail": "The identical report the town already runs for the general fund and for each of the four enterprise funds, pointed at funds 13xx/22xx/26xx–29xx instead.",
+    "document": "`glytdbud-expense` for the special revenue funds"
+   },
+   "why": "no expense report exists for these funds · purpose is presumed, never observed",
+   "why_of": "What any special revenue fund bought"
+  },
+  {
+   "basis": "impossible",
+   "figures": [
+    {
+     "kind": "usd",
+     "label": "of Chapter 70 lands in the general fund",
+     "value": 6870136.0
+    },
+    {
+     "kind": "usd",
+     "label": "where it is indistinguishable from every other dollar in it",
+     "value": 38858712.039999984
+    }
+   ],
+   "holds": "Both sides are complete and neither carries anything that ties them together.",
+   "key": "no key exists",
+   "limit": "This is the one rung a document cannot close. Money in the general fund is fungible; the town apportions revenue across departments by share when it presents a budget, and a share is a convention rather than a flow.",
+   "n": 6,
+   "question": "Which revenue paid which expense",
+   "state": "never",
+   "tier": null,
+   "wanted": {
+    "closes": "Documents the convention by which general-fund revenue is presented as split across departments. It cannot make the edge traceable — nothing can — but it makes the convention citable.",
+    "detail": "Seen once; we do not hold it.",
+    "document": "The Town Manager’s revenue apportionment worksheet"
+   },
+   "why": "Money in fund 0100 is fungible and no record ties a source to a department. The town apportions by share when presenting a budget; that is a convention, not a flow. **No further data will fix this.**",
+   "why_of": "Any general-fund revenue source → Department 300"
+  }
+ ],
+ "source": "sources/data/lunenburg.db — ledger_snapshot, account, v_revenue, lps_budget_lines, fund_1301_cash_journal, school_special_revenue_fy26_q3, money_gaps, money_edges",
+ "states": [
+  {
+   "label": "the archive answers it",
+   "rungs": [
+    1,
+    2,
+    3
+   ],
+   "state": "answerable"
+  },
+  {
+   "label": "answered in part, and it says which part",
+   "rungs": [
+    4
+   ],
+   "state": "partly"
+  },
+  {
+   "label": "no report we hold answers it — one exists and we do not have it",
+   "rungs": [
+    5
+   ],
+   "state": "no"
+  },
+  {
+   "label": "no key exists on either side; no document can make one",
+   "rungs": [
+    6
+   ],
+   "state": "never"
+  }
+ ],
+ "vocabulary": "notes/reference/data-model/join-map.html — levels of detail, the key each turns on, and the tier we do not have"
+}

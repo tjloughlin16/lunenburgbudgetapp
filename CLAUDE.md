@@ -194,6 +194,39 @@ what the reader currently has, not against what a statistician would want.** Fiv
 years of state revenue is thin for a regression and substantial for a town that budgets
 one year at a time.
 
+## 7c. A conclusion you cannot draw is a GAP, and it gets registered
+
+**When an analysis stops short because the data will not carry it, that stopping point is
+a finding and it belongs in `sources/data/money-gaps.csv`.** Not only in the prose of the
+page that hit it.
+
+TJ: *"While we generate insights, if we can't draw conclusions because data is missing,
+that's a GAP (and a VISUAL one I hope) we have to fill."*
+
+The reason it must be registered rather than merely written: a limit stated in one
+paragraph of one page is invisible to everyone who did not read that page — including the
+next person building the next page, who will hit the same wall and describe it again in
+different words. `money_gaps` is the single registry, it loads into the database, it is
+published at `/api/money_gaps.json`, and `/what-we-cannot-answer` renders it. Add a row
+there and it appears everywhere that matters.
+
+**The rule in practice.** While building an analysis page, whenever you write a sentence
+of the form *we cannot say whether…* or *this does not establish…*, ask whether the same
+limit is already a row in `money-gaps.csv`. If it is, cite it. If it is not, add it, with:
+
+- `side` — which kind of gap. The values are read off the data rather than mapped in code,
+  so a new kind appears on the page the day it appears in the CSV. `people` was added this
+  way, for the roster limits: **no FTE, no funding source, undated within the year.**
+- `what` — the question that cannot be answered, phrased as a question and not as a
+  complaint about a document.
+- `why` — the reason, and then **`— closes:` and the single document that would settle
+  it.** That last half is the most useful thing on the page: a gap with no named remedy is
+  a grievance, and a gap with one is a records request.
+
+**And the registry outranks the page.** If an analysis and `money_gaps` disagree about
+whether something is knowable, the analysis is wrong until the registry is updated —
+because the registry is what the request letter, the API and the gaps page all read.
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs

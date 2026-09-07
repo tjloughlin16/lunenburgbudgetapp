@@ -24,6 +24,20 @@
   --status-bad: #c02626;
   --status-serious: #ec835a;
   --status-critical: #d03b3b;
+  /* THE TRACEABILITY LADDER on /what-we-cannot-answer. Four states, and they are the join
+     map's four marks under its own names: a question the archive answers, one it answers
+     in part, one no report we hold answers though a report exists, and one no key exists
+     for anywhere. They are a STATUS set and not a series, so they never appear on a chart
+     that means something else, and every one of them ships beside a distinct shape and a
+     word — colour is never the only carrier.
+     Checked with the dataviz validator against this surface: CVD separation, normal-vision
+     separation and 3:1 contrast all pass. Two checks fail by design — the lightness band,
+     because these are marks rather than an even categorical ramp, and the chroma floor on
+     `never`, which is achromatic on purpose: "no key exists" is the absence of a colour. */
+  --trace-answerable: #1d6f2e;
+  --trace-partial: #b8860b;
+  --trace-none: #96140f;
+  --trace-never: #7d7b76;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -44,6 +58,13 @@
     /* Lifted well off the navy: the same royal at 4.5:1 against a near-black surface is
        unreadable, and a wordmark nobody can read is not branding. */
     --brand: #7aabf2;
+    /* The ladder's four states, re-stepped for the dark surface rather than
+       flipped: the amber lifts and the red drops so the two stay apart under
+       deuteranopia. Re-validated against this surface. */
+    --trace-answerable: #4fae63;
+    --trace-partial: #efc768;
+    --trace-none: #e05252;
+    --trace-never: #9b9992;
   }
 }
 :root[data-theme="dark"] {
@@ -60,6 +81,10 @@
   --series-revenue: #d95926;
   --status-bad: #ff6b6b;
     --brand: #7aabf2;
+    --trace-answerable: #4fae63;
+    --trace-partial: #efc768;
+    --trace-none: #e05252;
+    --trace-never: #9b9992;
 }
 
 /* Anything that pins itself below the header needs to know how tall the header is,

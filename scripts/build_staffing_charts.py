@@ -1,0 +1,472 @@
+#!/usr/bin/env python3
+"""The school-staffing page's series, pre-rendered from the database.
+
+    python3 scripts/build_staffing_charts.py            # write it
+    python3 scripts/build_staffing_charts.py --check    # fail if it is stale
+
+WHAT THIS PAGE IS ABOUT, AND WHY IT IS BUILT THE WAY IT IS.
+
+Three separate things in this archive touch school staffing, and they are three different
+quantities that a reader will assume are one:
+
+  1. **The town's printed rosters** (`staff_roster_entries`) -- a list of NAMES, by school,
+     in every annual town report FY2011-FY2025. No FTE, no funding source, no date within
+     the year. A count of these is a count of names the town printed. It is a real
+     quantity and it is not a staffing level.
+  2. **DESE's published FTE** (`dese_measure`) -- the state DOES publish full-time
+     equivalents, for teachers and paraprofessionals, for Lunenburg and for six comparison
+     districts, FY2009-FY2025. This is the only FTE series in the archive.
+  3. **Budget lines** (`budget_figure`, `sped_para_history`, `sped_teacher_history`) --
+     dollars. Rule 11: a line is NET of grants, fees and reimbursement, and a line rising
+     is not a position filled.
+
+The page keeps them apart, names which one every figure comes from, and never divides one
+by another. Dividing a net budget line by a DESE FTE count produces something that looks
+like a cost per employee and is not one, twice over: the numerator excludes every fund but
+the general fund, and the denominator counts staff those other funds pay for.
+
+RULE 1. Nothing here measures growth from an actual in one year to a budget in another.
+Every dollar series on this page is ONE stage across its whole run, and the stage is
+carried in the payload so the page can say which. Nothing here feeds the projection.
+
+RULE 6, LIKE FOR LIKE. A dollar series is built from a panel of lines present in EVERY
+year of its run, not from "all lines matching para", which ran from 5 lines to 9 and would
+have produced growth that was really coverage. The panel and its size are in the payload.
+
+WHAT THE ROSTER SERIES CANNOT BE READ AS, computed rather than asserted:
+
+  * Which schools got a roster printed changes year to year. Central office is printed in
+    some years and not others; Passios closed; the middle school appears as its own roster
+    from FY2016. So the year-over-year move in a raw total is partly print practice.
+  * FY2024 prints TWO complete Turkey Hill rosters with different principals, and nothing
+    on either page says which year each describes. That year is reported as a RANGE.
+  * `monty-tech` is six administrators of the regional vocational school Lunenburg sends
+    students to. Not Lunenburg staff; excluded, and the exclusion is asserted.
+  * The rosters are OCR'd off scanned pages and some department headings came back
+    corrupted. Those are DETECTED here by rule, not listed by hand, so the count cannot
+    drift as the extraction improves.
+
+WHY A FILE AND NOT A QUERY. D1's free tier stops at 5 million rows read a day. Everything
+here is the same for every reader until the database is rebuilt.
+"""
+import argparse
+import collections
+import json
+import os
+import re
+import sqlite3
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
+OUT = os.path.join(ROOT, 'fy28/public/data/school-staffing.json')
+
+LEA = '01620000'                      # Lunenburg, in DESE's own org code
+DISTRICT = 'Lunenburg'
+
+# NOT Lunenburg staff. Six administrators of the regional vocational school the town SENDS
+# students to, printed in the FY2019 report beside the district's own rosters.
+NOT_OURS = 'monty-tech'
+# Printed in 8 of the 15 years. Including it makes the total jump in the years it appears
+# and fall in the years it does not, and neither move is a staffing change.
+INTERMITTENT = 'central-office'
+
+# The special-education paraprofessional lines. Five, one per school/programme, present in
+# every year FY2014-FY2027 -- which is what makes a sum across years comparable at all.
+SPED_PARA_LINES = ('ps special ed para', 'es special ed para', 'ms special ed para',
+                   'hs special ed para', 'ace special ed para')
+# The special-education teacher panel, from the same documents. Its run starts later.
+SPED_TEACHER_LINES = ('ps special ed teacher', 'es special ed teacher',
+                      'ms special ed resource rm teacher', 'hs special ed resource rm teacher',
+                      'ace special ed resource rm teacher')
+NURSE_LINES = ('ps nurses', 'es nurses', 'ms nurses', 'hs nurses', 'nurse coordinator')
+SUB_LINES = ('ps regular sub', 'es regular sub', 'ms regular sub', 'hs regular sub',
+             'kind regular sub')
+
+# The stage every dollar series on this page is read at. ONE stage, whole run (rule 1).
+# 'actual' is what the district's own documents restate as spent; the page says so.
+DOLLAR_STAGE = 'actual'
+
+# A department heading that names a grade. Anything containing "grade" that does not match
+# is reported as an OCR defect -- derived, so the list cannot go stale (rule 2).
+GRADE_OK = re.compile(
+    r'^(pre-?k|kindergarten|'
+    r'(first|second|third|fourth|fifth|sixth|seventh|eighth|1st|2nd|3rd|4th|5th|6th|7th|8th)'
+    r'|grade\s*(level\s*)?[0-9]|grades?\s*[0-9])', re.I)
+HAS_GRADE = re.compile(r'grade', re.I)
+
+
+def rows(db, sql, *a):
+    return [dict(r) for r in db.execute(sql, a)]
+
+
+# ------------------------------------------------------------------ DESE, the FTE series
+
+def state_series(db):
+    """DESE's own figures for Lunenburg. The only FTE in this archive."""
+    want = {
+        'Teacher FTE': 'teacher_fte',
+        'Paraprofessional FTE': 'para_fte',
+        'Instructional Support FTE': 'instructional_support_fte',
+        'Special Education Instructional Support FTE': 'sped_support_fte',
+        'In-District FTE Pupils': 'pupils_in_district',
+        'Out-of-District FTE Pupils': 'pupils_out_of_district',
+        'Student Headcount': 'student_headcount',
+        'Students with disabilities % Headcount': 'pct_disabilities',
+        'Low-Income % Headcount': 'pct_low_income',
+        'Average Teacher Salary': 'average_teacher_salary',
+    }
+    got = collections.defaultdict(dict)
+    docs, recon = set(), collections.Counter()
+    for r in rows(db, 'SELECT fy, measure, value, reconciles, doc_id FROM dese_measure '
+                      'WHERE lea = ? AND measure IN (%s)'
+                      % ','.join('?' * len(want)), LEA, *want):
+        got[r['fy']][want[r['measure']]] = r['value']
+        docs.add(r['doc_id'])
+        recon[r['reconciles'] or ''] += 1
+    if not got:
+        sys.exit('dese_measure returned nothing for Lunenburg. A join that matches nothing '
+                 'looks exactly like data that is absent -- refusing to write.')
+    out = []
+    for fy in sorted(got):
+        r = dict(fy=fy, **got[fy])
+        pu = r.get('pupils_in_district')
+        r['paras_per_100'] = 100 * r['para_fte'] / pu if pu and r.get('para_fte') is not None else None
+        r['teachers_per_100'] = 100 * r['teacher_fte'] / pu if pu and r.get('teacher_fte') is not None else None
+        out.append(r)
+    return out, sorted(docs), dict(recon)
+
+
+def peer_series(db):
+    """The same two ratios for every district in DESE's comparison sheet.
+
+    The PANEL IS NOT CONSTANT and that is the source, not a defect: Ayer appears to
+    FY2011 and Ayer Shirley from FY2012, which is a regionalisation. Each district
+    carries its own first and last year so the page can say so rather than draw a line
+    across a gap.
+    """
+    got = collections.defaultdict(dict)
+    for r in rows(db, "SELECT district, fy, measure, value FROM dese_measure "
+                      "WHERE measure IN ('Paraprofessional FTE', 'Teacher FTE', "
+                      "'In-District FTE Pupils')"):
+        got[r['district']].setdefault(r['fy'], {})[r['measure']] = r['value']
+    if DISTRICT not in got:
+        sys.exit('the peer sheet no longer names Lunenburg -- refusing to write.')
+    out = []
+    for name in sorted(got):
+        pts = []
+        for fy in sorted(got[name]):
+            v = got[name][fy]
+            pu = v.get('In-District FTE Pupils')
+            if not pu:
+                continue
+            pts.append(dict(
+                fy=fy,
+                paras_per_100=100 * v['Paraprofessional FTE'] / pu
+                if v.get('Paraprofessional FTE') is not None else None,
+                teachers_per_100=100 * v['Teacher FTE'] / pu
+                if v.get('Teacher FTE') is not None else None))
+        if pts:
+            out.append(dict(district=name, is_lunenburg=name == DISTRICT,
+                            first_fy=pts[0]['fy'], last_fy=pts[-1]['fy'], points=pts))
+    return out
+
+
+def rank_in_year(peers, fy, field):
+    """Where Lunenburg sits among the districts REPORTING THAT YEAR, and how many that is.
+
+    A rank without its denominator is the shape of error this project keeps finding: the
+    comparison set has six members in some years and five in others.
+    """
+    vals = [(p['district'], q[field]) for p in peers for q in p['points']
+            if q['fy'] == fy and q[field] is not None]
+    if not any(d == DISTRICT for d, _ in vals):
+        return None
+    vals.sort(key=lambda t: -t[1])
+    return dict(fy=fy, of=len(vals),
+                rank=[d for d, _ in vals].index(DISTRICT) + 1,
+                value=dict(vals)[DISTRICT],
+                highest=vals[0][0], highest_value=vals[0][1],
+                lowest=vals[-1][0], lowest_value=vals[-1][1])
+
+
+# --------------------------------------------------------------- the town's own rosters
+
+def roster(db):
+    ent = rows(db, 'SELECT e.fy, e.school, e.page, e.name, e.role_raw, e.grade_or_dept, '
+                   '       c.role_category '
+                   'FROM staff_roster_entries e '
+                   'LEFT JOIN role_classification c '
+                   '  ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept')
+    if not ent:
+        sys.exit('staff_roster_entries is empty -- refusing to write.')
+    unjoined = sum(1 for r in ent if r['role_category'] is None)
+    if unjoined:
+        sys.exit(f'{unjoined} roster entries did not join to role_classification. A row '
+                 f'with no category is not a row with no role -- refusing to write.')
+
+    # ---- the FY2024 Turkey Hill problem, DETECTED rather than remembered.
+    # A school with two pages whose name lists overlap heavily is the same roster printed
+    # twice, not a bigger school. The overlap is measured; the year is reported as a range.
+    doubled = []
+    by_sy = collections.defaultdict(lambda: collections.defaultdict(set))
+    for r in ent:
+        if r['name']:
+            by_sy[(r['fy'], r['school'])][r['page']].add(r['name'])
+    for (fy, school), pages in sorted(by_sy.items()):
+        ps = sorted(pages)
+        for i in range(len(ps)):
+            for j in range(i + 1, len(ps)):
+                a, b = pages[ps[i]], pages[ps[j]]
+                shared = a & b
+                if len(shared) >= 0.4 * min(len(a), len(b)):
+                    doubled.append(dict(fy=fy, school=school, pages=[ps[i], ps[j]],
+                                        names=[len(a), len(b)], shared=len(shared)))
+    doubled_years = {d['fy'] for d in doubled}
+
+    # ---- OCR defects in the printed department headings, found by rule.
+    ocr = collections.Counter()
+    for r in ent:
+        g = (r['grade_or_dept'] or '').strip()
+        if HAS_GRADE.search(g) and not GRADE_OK.match(g):
+            ocr[g] += 1
+    ocr_rows = [dict(printed=g, rows=n) for g, n in ocr.most_common()]
+
+    # ---- people appearing on two schools' rosters in one year. The source, not a bug.
+    shared_staff = collections.Counter()
+    seen = collections.defaultdict(set)
+    for r in ent:
+        if r['name']:
+            seen[(r['fy'], r['name'])].add(r['school'])
+    for (fy, _), sch in seen.items():
+        if len(sch) > 1:
+            shared_staff[fy] += 1
+
+    # ---- the comparable panel: every school building, every year it was printed.
+    school_years = collections.defaultdict(set)
+    for r in ent:
+        school_years[r['school']].add(r['fy'])
+    all_years = sorted({r['fy'] for r in ent})
+    buildings = sorted(s for s in school_years if s not in (NOT_OURS, INTERMITTENT))
+
+    panel = [r for r in ent if r['school'] in buildings]
+    by_year = collections.Counter(r['fy'] for r in panel)
+    # For a doubled year, the honest figure is a band: the year with each printed roster
+    # taken alone. Neither page says which year it describes.
+    bands = {}
+    for d in doubled:
+        if d['school'] not in buildings:
+            continue
+        alt = []
+        for keep in d['pages']:
+            alt.append(sum(1 for r in panel if r['fy'] == d['fy']
+                           and not (r['school'] == d['school'] and r['page'] not in
+                                    (set(d['pages']) - {keep} and {keep} or {keep}))))
+        bands[d['fy']] = dict(low=min(alt), high=max(alt), summed=by_year[d['fy']])
+
+    year_rows = []
+    for fy in all_years:
+        b = bands.get(fy)
+        year_rows.append(dict(
+            fy=fy,
+            names=b['low'] if b else by_year[fy],
+            names_high=b['high'] if b else None,
+            names_if_summed=b['summed'] if b else None,
+            schools=sorted(s for s in buildings if fy in school_years[s]),
+            pages=len({(r['school'], r['page']) for r in panel if r['fy'] == fy}),
+            central_office_printed=fy in school_years.get(INTERMITTENT, set()),
+            doubled=fy in doubled_years,
+            shared_names=shared_staff.get(fy, 0)))
+
+    # ---- by role category, on the same panel. A doubled year is marked, not silently
+    # halved: there is no way to split a category between two printed rosters.
+    cats = collections.Counter(r['role_category'] for r in panel)
+    role_rows = []
+    for cat in sorted(cats, key=lambda c: (-cats[c], c)):
+        pts = collections.Counter(r['fy'] for r in panel if r['role_category'] == cat)
+        role_rows.append(dict(
+            role=cat, total=cats[cat],
+            first_fy=min(pts), last_fy=max(pts),
+            points=[dict(fy=fy, names=pts.get(fy, 0), doubled=fy in doubled_years)
+                    for fy in all_years]))
+
+    # ---- by school, latest year with no doubling in it.
+    clean = [fy for fy in all_years if fy not in doubled_years]
+    latest = clean[-1]
+    by_school = [dict(school=s, names=sum(1 for r in panel
+                                          if r['fy'] == latest and r['school'] == s))
+                 for s in buildings if latest in school_years[s]]
+
+    unclassified = cats.get('unknown', 0)
+    return dict(
+        years=year_rows, roles=role_rows,
+        buildings=buildings,
+        by_school=dict(fy=latest, rows=sorted(by_school, key=lambda r: -r['names'])),
+        entries_total=len(ent), entries_in_panel=len(panel),
+        excluded=[dict(school=NOT_OURS,
+                       entries=sum(1 for r in ent if r['school'] == NOT_OURS),
+                       years=sorted(school_years.get(NOT_OURS, ())),
+                       why='administrators of the regional vocational school Lunenburg '
+                           'sends students to — not Lunenburg staff'),
+                  dict(school=INTERMITTENT,
+                       entries=sum(1 for r in ent if r['school'] == INTERMITTENT),
+                       years=sorted(school_years.get(INTERMITTENT, ())),
+                       why='printed in some annual reports and not others, so including '
+                           'it moves the total in years when nothing changed')],
+        unclassified=unclassified,
+        unclassified_share=unclassified / len(panel),
+        doubled=doubled,
+        ocr_defects=ocr_rows,
+        ocr_rows=sum(r['rows'] for r in ocr_rows),
+        shared_staff=[dict(fy=fy, names=n) for fy, n in sorted(shared_staff.items())],
+        first_fy=all_years[0], last_fy=all_years[-1])
+
+
+# ------------------------------------------------------------------------- the dollars
+
+def dollar_panel(db, key, label, lines, stage=DOLLAR_STAGE):
+    """One panel of budget lines, one stage, only the years where EVERY line reports.
+
+    Rule 6: a sum over a line set that grows from five to nine measures coverage and calls
+    it growth. Years where the panel is incomplete are dropped and counted.
+    """
+    got = collections.defaultdict(dict)
+    for r in rows(db, 'SELECT fy, line_key, label, value FROM budget_figure '
+                      "WHERE variant = '' AND stage = ? AND line_key IN (%s)"
+                      % ','.join('?' * len(lines)), stage, *lines):
+        got[r['fy']][r['line_key']] = r['value']
+    if not got:
+        sys.exit(f'the {key} panel matched no rows in budget_figure -- refusing to write.')
+    full = sorted(fy for fy in got if len(got[fy]) == len(lines))
+    partial = sorted(fy for fy in got if len(got[fy]) != len(lines))
+    if not full:
+        sys.exit(f'the {key} panel is complete in no year -- refusing to write.')
+    names = {}
+    for r in rows(db, 'SELECT line_key, label FROM budget_figure WHERE line_key IN (%s)'
+                  % ','.join('?' * len(lines)), *lines):
+        names[r['line_key']] = r['label']
+    return dict(
+        key=key, label=label, stage=stage, lines=len(lines),
+        line_labels=[names.get(k, k) for k in lines],
+        first_fy=full[0], last_fy=full[-1],
+        years_dropped=partial,
+        points=[dict(fy=fy, dollars=round(sum(got[fy].values()), 2)) for fy in full])
+
+
+def change(points, key='dollars'):
+    """First to last of a series, as a fact about two published figures and nothing more."""
+    if len(points) < 2:
+        return None
+    a, b = points[0], points[-1]
+    return dict(first_fy=a['fy'], last_fy=b['fy'], first=a[key], last=b[key],
+                change=b[key] - a[key],
+                pct=(b[key] - a[key]) / a[key] if a[key] else None)
+
+
+# ------------------------------------------------------------------------------- build
+
+def build():
+    db = sqlite3.connect(DB)
+    db.row_factory = sqlite3.Row
+
+    state, dese_docs, dese_recon = state_series(db)
+    peers = peer_series(db)
+    ros = roster(db)
+
+    panels = [
+        dollar_panel(db, 'sped_para', 'Special education paraprofessionals', SPED_PARA_LINES),
+        dollar_panel(db, 'sped_teacher', 'Special education teachers', SPED_TEACHER_LINES),
+        dollar_panel(db, 'nurses', 'Nurses', NURSE_LINES),
+        dollar_panel(db, 'subs', 'Regular substitutes', SUB_LINES),
+    ]
+    for p in panels:
+        p['change'] = change(p['points'])
+
+    # The two special-education panels over the window BOTH of them cover. Comparing a
+    # 12-year run against an 8-year run and reporting the two percentages side by side is
+    # the like-for-like error wearing a different coat.
+    para = next(p for p in panels if p['key'] == 'sped_para')
+    teach = next(p for p in panels if p['key'] == 'sped_teacher')
+    lo = max(para['first_fy'], teach['first_fy'])
+    hi = min(para['last_fy'], teach['last_fy'])
+    common = dict(first_fy=lo, last_fy=hi, panels=[])
+    for p in (para, teach):
+        pts = [q for q in p['points'] if lo <= q['fy'] <= hi]
+        common['panels'].append(dict(key=p['key'], label=p['label'],
+                                     lines=p['lines'], change=change(pts), points=pts))
+
+    by_fy = {r['fy']: r for r in state}
+    # The state series' own endpoints, and the roster's, so the page never implies the two
+    # cover the same years.
+    s_lo, s_hi = state[0]['fy'], state[-1]['fy']
+    # The paraprofessional trough: the lowest reported ratio and the years either side.
+    ratio = [r for r in state if r['paras_per_100'] is not None]
+    trough = min(ratio, key=lambda r: r['paras_per_100'])
+
+    fte_change = {}
+    for f in ('teacher_fte', 'para_fte', 'pupils_in_district', 'student_headcount',
+              'teachers_per_100', 'paras_per_100'):
+        pts = [dict(fy=r['fy'], v=r[f]) for r in state if r.get(f) is not None]
+        fte_change[f] = change(pts, 'v')
+
+    # Gross wages: present in the archive, and NOT usable as a headcount. Counted here so
+    # the page can say why with a figure rather than an adjective.
+    wages = rows(db, "SELECT fy, COUNT(*) n, "
+                     "SUM(CASE WHEN \"group\" LIKE 'SCHOOL%' THEN 1 ELSE 0 END) school, "
+                     "COUNT(DISTINCT status) statuses, MAX(status) status "
+                     "FROM report_gross_wages GROUP BY fy ORDER BY fy")
+
+    return dict(
+        generated_by='scripts/build_staffing_charts.py',
+        source='sources/data/lunenburg.db — staff_roster_entries, role_classification, '
+               'dese_measure, budget_figure, report_gross_wages',
+        state=dict(
+            lea=LEA, docs=dese_docs, reconciles=dese_recon,
+            first_fy=s_lo, last_fy=s_hi, points=state,
+            change=fte_change, trough=trough,
+            rank_paras_first=rank_in_year(peers, s_lo, 'paras_per_100'),
+            rank_paras_last=rank_in_year(peers, s_hi, 'paras_per_100'),
+            rank_teachers_first=rank_in_year(peers, s_lo, 'teachers_per_100'),
+            rank_teachers_last=rank_in_year(peers, s_hi, 'teachers_per_100'),
+            latest=by_fy[s_hi]),
+        peers=peers,
+        roster=ros,
+        dollars=dict(stage=DOLLAR_STAGE, panels=panels, sped_common_window=common),
+        wages=dict(
+            rows=sum(r['n'] for r in wages), years=len(wages),
+            school_tagged=sum(r['school'] for r in wages),
+            statuses=sorted({r['status'] for r in wages}),
+            by_year=[dict(fy=r['fy'], rows=r['n'], school_tagged=r['school'])
+                     for r in wages]),
+    )
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true',
+                    help='fail if the published file is not what this would write')
+    a = ap.parse_args()
+    payload = json.dumps(build(), indent=1, sort_keys=True) + '\n'
+    if a.check:
+        have = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
+        if have != payload:
+            print(f'STALE — {os.path.relpath(OUT, ROOT)} is not what the database now '
+                  f'produces. Run scripts/build_staffing_charts.py.')
+            return 1
+        print(f'ok — {os.path.relpath(OUT, ROOT)} reproduces from the database')
+        return 0
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    open(OUT, 'w', encoding='utf-8').write(payload)
+    d = json.loads(payload)
+    print(f"wrote {os.path.relpath(OUT, ROOT)} — "
+          f"{d['roster']['entries_in_panel']} roster names in the comparable panel "
+          f"FY{d['roster']['first_fy'] % 100}–FY{d['roster']['last_fy'] % 100}, "
+          f"{len(d['state']['points'])} years of DESE FTE, "
+          f"{len(d['peers'])} districts, {len(d['dollars']['panels'])} dollar panels, "
+          f"{len(d['roster']['ocr_defects'])} OCR-corrupted headings "
+          f"({d['roster']['ocr_rows']} rows)")
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

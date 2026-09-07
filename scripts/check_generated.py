@@ -85,6 +85,12 @@ CHECKS = [
     # going stale: the published file, and the agreement between the database route and
     # the CSV route to the same figure.
     ('build_variance_charts.py', ['--check']),
+    # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
+    # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
+    # a key is not there, so this entry catches two things: the published file going
+    # stale against the ledger, and a gap-register row being renamed out from under a
+    # rung that would otherwise render with no reason on it.
+    ('build_traceability_ladder.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),

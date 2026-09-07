@@ -225,7 +225,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">76</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">68,825</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">68,910</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">934</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
@@ -1442,10 +1442,10 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 5,599 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 5,684 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
-<details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2011–2011</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund_column, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
+<details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">119 rows</span> <span class="yr">2011–2012</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund_column, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
 <p class="ans">What the town HOLDS, read from the COMBINED BALANCE SHEET — assets, liabilities and fund equity across six fund columns (general, special revenue, enterprise, capital project, trust and agency, long-term debt). Everything else in this archive measures money MOVING; this is the only table that measures what is sitting there.</p>
 <p class="warn">Read from the page, like <code>special_revenue_read</code>. It is trusted because three checks hold: each column foots to its own printed total, the sheet&#x27;s identity (liabilities + fund equity = assets) holds per column, and special revenue + enterprise fund equity ties to the special revenue schedule&#x27;s carried-forward total — an INDEPENDENT document. One printed sheet does not balance itself (FY2019 trust and agency, $657,297.35 apart); that is the town&#x27;s print, recorded not corrected.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1463,8 +1463,8 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page_printed</th><th>page_pdf</th><th>section</th><th>line</th><th>fund</th><th>amount</th><th>document</th><th>read_by</th></tr>
 <tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>assets</td><td>CASH and CASH INVESTMENTS</td><td>general</td><td>2383371.72</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>liabilities</td><td>DUE TO TRUST FUNDS/SRF/CPF/ENTERPRISE</td><td>general</td><td>122705.76</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>fund_balances</td><td>UNRESERVED: UNDESIGNATED</td><td>enterprise</td><td>512163.95</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2012</td><td>FY2012</td><td>53</td><td>56</td><td>assets</td><td>DUE FROM GENERAL FUND</td><td>enterprise</td><td>36868.07</td><td>sources/town-annual-reports/docs/4118-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2012</td><td>FY2012</td><td>53</td><td>56</td><td>fund_balances</td><td>UNRESERVED: UNDESIGNATED</td><td>enterprise</td><td>514883.07</td><td>sources/town-annual-reports/docs/4118-fy-20…</td><td>vision</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
@@ -1653,7 +1653,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>balance_sheet_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">24 rows</span> <span class="yr">2011–2011</span><button class="open" data-t="balance_sheet_printed_totals">Query table</button></span><span class="gr">one row per printed total per fund column per year</span></summary>
+<details class="t"><summary><span class="srow"><code>balance_sheet_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">48 rows</span> <span class="yr">2011–2012</span><button class="open" data-t="balance_sheet_printed_totals">Query table</button></span><span class="gr">one row per printed total per fund column per year</span></summary>
 <p class="ans">The totals each balance sheet PRINTS — total assets, total liabilities, total fund equity — quoted with the page they appear on.</p>
 <p class="warn">The independent check on <code>balance_sheet</code>, so it must be read off the page and never computed from our own rows.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1668,9 +1668,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page_printed</th><th>page_pdf</th><th>total_row</th><th>fund</th><th>amount</th><th>quote</th></tr>
-<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL ASSETS</td><td>special_revenue</td><td>1494488.29</td><td>TOTAL ASSETS row, printed page 53</td></tr>
-<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL FUND EQUITY</td><td>enterprise</td><td>1497430.65</td><td>TOTAL FUND EQUITY row, printed page 53</td></tr>
-<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>long_term_debt</td><td>27097991</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL ASSETS</td><td>capital_project</td><td>818223.39</td><td>TOTAL ASSETS row, printed page 53</td></tr>
+<tr><td class="num">2012</td><td>FY2012</td><td>53</td><td>56</td><td>TOTAL ASSETS</td><td>long_term_debt</td><td>26479505</td><td>TOTAL ASSETS row, printed page 53</td></tr>
+<tr><td class="num">2012</td><td>FY2012</td><td>53</td><td>56</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>long_term_debt</td><td>26479505</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag scope sboth">school + town</span> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
@@ -1756,7 +1756,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>State teachers’ pension system</td><td>District teaching staff</td><td>unknown</td><td>Not appropriated by Lunenburg, not in our a…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">14 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
+<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">17 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
 <p class="ans">The honest list of what CANNOT be answered — per side (money in, money out), what is missing and why the published documents do not close it.</p>
 <p class="warn">This table is the honest list of what cannot be answered.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1766,9 +1766,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>side</th><th>what</th><th>why</th></tr>
-<tr><td>money_in</td><td>Student activity accounts</td><td>held by the school under its own authority …</td></tr>
 <tr><td>money_in</td><td>Grants received in earlier years</td><td>spent now, booked then · nine funds, no FY2…</td></tr>
-<tr><td>money_out</td><td>School share of the pension</td><td>inside WRRS · town and school staff togethe…</td></tr>
+<tr><td>money_out</td><td>Debt service by project</td><td>two accounts for ALL town borrowing · schoo…</td></tr>
+<tr><td>document_wanted</td><td>WRRS annual actuarial valuation, by member …</td><td>Published by the retirement system. — close…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>rate_register</code> <span class="tag scope sboth">school + town</span> <span class="tag">fact</span> <span class="n">62 rows</span> <span class="yr">2024–2029</span><button class="open" data-t="rate_register">Query table</button></span><span class="gr">one row per rate</span></summary>
@@ -2169,6 +2169,9 @@ stop.</p></div>
 <tr><td>money_out</td><td>School share of the pension</td><td>inside WRRS · town and school staff together, no published split</td></tr>
 <tr><td>money_out</td><td>What any special revenue fund bought</td><td>no expense report exists for these funds · purpose is presumed, never observed</td></tr>
 <tr><td>money_out</td><td>What the capital transfers bought</td><td>two transfer lines · no project detail</td></tr>
+<tr><td>people</td><td>How many people the schools actually employ</td><td>The town publishes per-school staff ROSTERS in every annual report, FY2011 to FY2025 — a list of names. A roster carries <strong>no FTE</strong>, so a 0.4 music teacher and a full-timer are one row each, and it is a point in time, undated within the year. A count of names the town printed is a real quantity and it is <strong>not a staffing level</strong>. — closes: a staffing report stating FTE by position and year.</td></tr>
+<tr><td>people</td><td>Whether a budgeted position was filled</td><td>A budget line is money the town has to raise, not a person in a chair. A line funded all year for a post vacant half of it looks identical on the page to one that was filled. <strong>Bounded, not settled</strong>: the rosters show who was printed, which narrows the question without answering it. — closes: a filled-position list, or payroll by position rather than by name.</td></tr>
+<tr><td>people</td><td>Which fund pays which post</td><td>This is the load-bearing one. The rosters name people and the budget names dollars, and <strong>nothing published joins them to a funding source</strong>. So a paraprofessional line rising cannot be distinguished from a grant that was paying for those posts ending — which is exactly what the special education escalator rests on. — closes: DESE&#x27;s End of Year Financial Report, which separates spending by fund.</td></tr>
 </table></div></div>
 <div class="stage"><h2>Examples — real questions, run against the live database</h2>
 <p class="cap">Every query below is <strong>run against the live database when this page is built</strong>, so a question that stops answering breaks the build rather than sitting here looking answerable. Two of them return nothing, and that is the honest state of the archive rather than a fault.</p>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Tab } from '../routes'
+import { TraceLadder, type Trace } from '../components/TraceLadder'
 
 /** What we cannot answer — the gaps, in one place, with what would close each of them.
  *
@@ -38,6 +39,11 @@ import type { Tab } from '../routes'
  *                                 two counts, and they disagree the day one is edited.
  *    /data/data-request.json      written by scripts/build_request_doc.py from the coverage
  *                                 matrix, alongside the letter.
+ *    /data/traceability.json      written by scripts/build_traceability_ladder.py. The
+ *                                 central gap on this page is not a list but a DEPTH —
+ *                                 six questions about the same dollar, and the answering
+ *                                 stops part-way down — so it is drawn rather than
+ *                                 bulleted. See components/TraceLadder.tsx.
  *
  *  RULE 7a: THE PAGE OPENS WITH THE GAPS. Not with an explanation of what a gap is, not
  *  with the method, not with a caveat about how to read the table. The first thing under
@@ -180,6 +186,7 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
   const [ext, setExt] = useState<Extraction | null>(null)
   const [req, setReq] = useState<Request | null>(null)
   const [ass, setAss] = useState<AssumptionIndex | null>(null)
+  const [trace, setTrace] = useState<Trace | null>(null)
   const [err, setErr] = useState<string | null>(null)
 
   useEffect(() => {
@@ -187,10 +194,11 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
     const get = (u: string) =>
       fetch(u).then(r => (r.ok ? r.json() : Promise.reject(new Error(`${u}: HTTP ${r.status}`))))
     Promise.all([get('/api/money_gaps.json'), get('/data/extraction-gaps.json'),
-      get('/data/data-request.json'), get('/api/money_assumptions.json')])
-      .then(([g, e, r, a]) => {
+      get('/data/data-request.json'), get('/api/money_assumptions.json'),
+      get('/data/traceability.json')])
+      .then(([g, e, r, a, t]) => {
         if (!live) return
-        setGaps(g); setExt(e); setReq(r); setAss(a)
+        setGaps(g); setExt(e); setReq(r); setAss(a); setTrace(t)
       })
       .catch(e => { if (live) setErr(String(e)) })
     return () => { live = false }
@@ -221,11 +229,17 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
           <p className="text-[15px] font-bold mb-1">This page&rsquo;s data did not load</p>
           <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             {err}. The lists themselves are still at <code>/api/money_gaps.json</code>,{' '}
-            <code>/data/extraction-gaps.json</code>, <code>/data/data-request.json</code>{' '}
-            and <code>/api/money_assumptions.json</code>.
+            <code>/data/extraction-gaps.json</code>, <code>/data/data-request.json</code>,{' '}
+            <code>/api/money_assumptions.json</code> and{' '}
+            <code>/data/traceability.json</code>.
           </p>
         </div>
       )}
+
+      {/* 0 ------------------------------------------------- how far the money follows */}
+      <H2>How far the money can be followed</H2>
+      {trace && <TraceLadder t={trace} />}
+      {!trace && !err && <Body>Loading the traceability ladder&hellip;</Body>}
 
       {/* 1 -------------------------------------------------------------- money_gaps */}
       <H2>What no document says</H2>
@@ -504,6 +518,12 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
           <a href="/api/money_assumptions.json" className="underline"
             style={{ color: 'var(--series-cost)' }}><code>/api/money_assumptions.json</code></a>{' '}
           &mdash; every assumption the money model rests on, with what would settle it.
+        </li>
+        <li>
+          <a href="/data/traceability.json" className="underline"
+            style={{ color: 'var(--series-cost)' }}><code>/data/traceability.json</code></a>{' '}
+          &mdash; the six rungs above, each with its state, its reason and its figures,
+          recomputed from the ledger.
         </li>
       </ul>
       <Body>
