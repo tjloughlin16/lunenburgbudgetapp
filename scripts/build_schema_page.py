@@ -471,9 +471,19 @@ def render(c):
             # table follows another concludes there is no reason, and is right to.
             if sem.get('tier') != seen_tier:
                 seen_tier = sem.get('tier') or ''
-                head = (f'{TIERS[seen_tier][0]} — {TIERS[seen_tier][1]}' if seen_tier
-                        else 'Not about money')
-                a(f'<p class="tierhead">{esc(head)}</p>')
+                # Name on its own line, what it means underneath. The two were joined
+                # by an em dash on one 11px line, which made the name compete with its
+                # own explanation for the same glance.
+                # `gloss` is the column glossary in this scope — naming a local the same
+                # thing shadowed it and broke every column description on the page.
+                if seen_tier:
+                    t_name, t_gloss = TIERS[seen_tier]
+                else:
+                    t_name, t_gloss = ('Not about money',
+                                       'Counts, names, dates and documents — everything '
+                                       'this archive holds that is not a dollar figure')
+                a(f'<p class="tierhead"><b>{esc(t_name)}</b>'
+                  f'<span>{esc(t_gloss)}</span></p>')
             spine = ' spine' if t in SPINE else ''
             dq = sem.get('default_query') or ''
             qattr = ' data-q="%s"' % esc(dq) if dq else ''
@@ -686,10 +696,15 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
 .unit {{ font-size:10.5px; color:var(--muted); text-transform:uppercase;
   letter-spacing:.06em }}
 .ccaut {{ font-size:12px; color:var(--hi) }}
-.tierhead {{ font-size:11px; letter-spacing:.07em; text-transform:uppercase;
-  color:var(--muted); margin:18px 0 4px; padding-top:8px;
-  border-top:1px solid var(--grid) }}
-details + .tierhead {{ margin-top:20px }}
+/* A GROUP HEADING, not a caption. It was 11px muted uppercase — quieter than the table
+   names under it, so a new group read as a stray label rather than a break. A heading
+   that is smaller than its own contents is not a heading. */
+.tierhead {{ margin:30px 0 10px; padding-top:16px;
+  border-top:2px solid var(--ink) }}
+.tierhead b {{ display:block; font-size:16px; font-weight:700; letter-spacing:-.01em;
+  color:var(--ink) }}
+.tierhead span {{ display:block; font-size:12.5px; color:var(--muted); margin-top:2px }}
+details + .tierhead {{ margin-top:34px }}
 .srow {{ display:flex; align-items:baseline; gap:9px; flex-wrap:wrap }}
 .srow code {{ font-size:13.5px }}
 /* Pushed to the right edge so every table's control lands in the same column — a button
