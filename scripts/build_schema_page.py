@@ -487,9 +487,12 @@ def render(c):
                 a(f'<tr><td><code>{esc(name)}</code></td>'
                   f'<td class="ty">{esc(typ)}</td><td>{what}</td></tr>')
             a('</table></div>')
-            a(f'<p class="openrow"><button class="open" data-t="{esc(t)}">'
-              f'Open full table &rarr;</button> <span class="cap sm">queries the live '
-              f'API</span></p>')
+            dq = sem.get('default_query') or ''
+            qattr = ' data-q="%s"' % esc(dq) if dq else ''
+            joined = 'opens with its names joined back &middot; ' if dq else ''
+            a('<p class="openrow"><button class="open" data-t="%s"%s>'
+              'Open full table &rarr;</button> <span class="cap sm">%s'
+              'queries the live API</span></p>' % (esc(t), qattr, joined))
             rows = sample(c, t)
             if rows:
                 a(f'<p class="cap sm">First {len(rows)} row'
@@ -681,6 +684,53 @@ button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced
 .mwrap td.num {{ text-align:right; font-family:ui-monospace,Menlo,monospace;
   font-variant-numeric:tabular-nums }}
 .mnote {{ padding:28px 20px; font-size:13.5px; color:var(--muted); text-align:center }}
+
+/* Column controls. The header cell is a container for two affordances, so it stops being
+   a label and becomes a control strip — which is why the sort button IS the label rather
+   than sitting beside it: a second click target for the same idea reads as two ideas. */
+.mwrap th {{ padding:0 }}
+.thh {{ display:flex; align-items:stretch; gap:0 }}
+.thh .srt {{ flex:1; text-align:left; font:inherit; font-size:10.5px; font-weight:600;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--muted); background:none;
+  border:0; padding:9px 6px 9px 16px; cursor:pointer; white-space:nowrap }}
+.thh .srt:hover {{ color:var(--ink) }}
+.thh .srt i {{ display:inline-block; width:9px; margin-left:5px; opacity:.35 }}
+.thh .srt i::after {{ content:'\2195' }}
+.thh .srt.up, .thh .srt.down {{ color:var(--traced) }}
+.thh .srt.up i, .thh .srt.down i {{ opacity:1 }}
+.thh .srt.up i::after {{ content:'\2191' }}
+.thh .srt.down i::after {{ content:'\2193' }}
+.thh .flt {{ font:inherit; font-size:11px; background:none; border:0; color:var(--muted);
+  padding:0 12px 0 4px; cursor:pointer }}
+.thh .flt:hover {{ color:var(--ink) }}
+.thh .flt.on {{ color:var(--hi); font-weight:700 }}
+.mwrap th {{ position:sticky; top:0; overflow:visible }}
+/* `overflow:visible` overrides the ellipsis rule the data cells share, or the filter
+   panel is clipped to the header cell and appears as a 20px sliver. And `sticky` is
+   already a positioned value, so it is the containing block for that panel — adding
+   `relative` here would silently un-stick the header instead. */
+
+.fpanel {{ position:absolute; z-index:5; margin-top:2px; right:0; width:270px;
+  background:var(--bg); border:1px solid var(--grid); border-radius:9px;
+  box-shadow:0 12px 30px rgba(0,0,0,.28); padding:9px; text-align:left;
+  font-weight:400; text-transform:none; letter-spacing:0 }}
+.fpanel .fq {{ width:100%; font:12px/1.4 ui-monospace,Menlo,monospace; padding:5px 8px;
+  border:1px solid var(--grid); border-radius:6px; background:var(--code);
+  color:var(--ink) }}
+.fvals {{ max-height:230px; overflow:auto; margin:7px 0 }}
+.fvals label {{ display:flex; gap:7px; align-items:baseline; padding:3px 4px;
+  font-size:12px; color:var(--ink); border-radius:4px; cursor:pointer;
+  white-space:nowrap }}
+.fvals label:hover {{ background:var(--code) }}
+.fvals label span {{ flex:1; overflow:hidden; text-overflow:ellipsis }}
+.fvals label b {{ color:var(--muted); font-weight:400; font-size:11px;
+  font-family:ui-monospace,Menlo,monospace }}
+.fmore {{ font-size:11.5px; color:var(--muted); margin:6px 4px 0 }}
+.fbar {{ display:flex; gap:7px; justify-content:flex-end }}
+.fbar button {{ font:inherit; font-size:11.5px; padding:4px 11px; cursor:pointer;
+  border:1px solid var(--grid); border-radius:6px; background:var(--bg);
+  color:var(--ink) }}
+.fbar .fdone {{ border-color:var(--traced); color:var(--traced) }}
 </style>
 
 <div class="wrap">
@@ -736,23 +786,120 @@ stop.</p>
 // opaque origin, so fetch() at a file:// URL is refused as cross-origin and there is no
 // server to add a header to. But /api/query is on https and answers with
 // `access-control-allow-origin: *`, which an opaque origin is allowed to read. So the
-// data comes from the same public endpoint anybody else would use — one copy, always
-// current, and this page becomes a caller of the API rather than a duplicate of it.
-// Build-time default comes from agent-manifest.json (or $LUNENBURG_API). A viewer can
-// re-aim it without a rebuild: ?api=http://127.0.0.1:8788 — useful against wrangler dev.
+// data comes from the same public endpoint anybody else would use.
+//
+// SORTING AND FILTERING HAPPEN HERE, NOT IN SQL, AND THAT IS A REAL LIMIT.
+//
+// TJ: "This is for people who dont know sql but want to do some basic review." So every
+// column header carries a sort control and a value picker, and neither requires typing.
+//
+// They act on the ROWS THAT CAME BACK — at most 1,000, because that is the API's cap.
+// Sorting a thousand rows client-side is not the same as sorting the table: for a table
+// with more rows than that, you are sorting a slice. The header says so whenever the cap
+// is hit, because a sort that silently means something narrower than it appears is
+// exactly the kind of quietly-wrong answer this project keeps finding.
 const API = (new URLSearchParams(location.search).get('api') || '{api_base}')
               .replace(/\/$/, '') + '/api/query';
 const modal = document.getElementById('modal'), mt = document.getElementById('mt'),
       msql = document.getElementById('msql'), mbody = document.getElementById('mbody'),
       mmeta = document.getElementById('mmeta');
 
+let DATA = [], COLS = [], SORT = {{col: null, dir: 1}}, FILTERS = {{}}, CAPPED = false;
+
 function esc(s) {{
   return String(s).replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
+}}
+function show(v) {{
+  if (v === null) return '<span class="nul">NULL</span>';
+  if (v === '') return '<span class="nul">empty</span>';
+  return esc(v);
+}}
+
+function visible() {{
+  let rows = DATA.filter(r => COLS.every(c => {{
+    const f = FILTERS[c];
+    if (!f) return true;
+    if (f.text && !String(r[c] ?? '').toLowerCase().includes(f.text)) return false;
+    if (f.only && !f.only.has(String(r[c] ?? ''))) return false;
+    return true;
+  }}));
+  if (SORT.col) {{
+    const c = SORT.col;
+    rows = rows.slice().sort((a, b) => {{
+      const x = a[c], y = b[c];
+      if (x === null || x === undefined) return 1;   // nulls last, both directions
+      if (y === null || y === undefined) return -1;
+      if (typeof x === 'number' && typeof y === 'number') return (x - y) * SORT.dir;
+      return String(x).localeCompare(String(y), undefined, {{numeric: true}}) * SORT.dir;
+    }});
+  }}
+  return rows;
+}}
+
+function draw() {{
+  const rows = visible();
+  const head = COLS.map(c => {{
+    const active = SORT.col === c ? (SORT.dir === 1 ? ' up' : ' down') : '';
+    const on = FILTERS[c] ? ' on' : '';
+    return '<th><div class="thh"><button class="srt' + active + '" data-c="' + esc(c) +
+      '" title="sort">' + esc(c) + '<i></i></button>' +
+      '<button class="flt' + on + '" data-c="' + esc(c) + '" title="filter">&#9662;</button>' +
+      '</div></th>';
+  }}).join('');
+  const body = rows.map(r => '<tr>' + COLS.map(c => {{
+    const v = r[c];
+    return '<td' + (typeof v === 'number' ? ' class="num"' : '') + '>' + show(v) + '</td>';
+  }}).join('') + '</tr>').join('');
+  mbody.innerHTML = '<table class="samp"><thead><tr>' + head + '</tr></thead><tbody>' +
+    body + '</tbody></table>';
+  const nf = Object.keys(FILTERS).length;
+  mmeta.textContent = rows.length.toLocaleString() + ' of ' + DATA.length.toLocaleString() +
+    (nf ? ' · ' + nf + ' filter' + (nf > 1 ? 's' : '') : '') +
+    (CAPPED ? ' · capped at 1,000 by the API — sorting a slice, not the table' : '');
+}}
+
+function panel(col, btn) {{
+  document.querySelectorAll('.fpanel').forEach(p => p.remove());
+  const vals = new Map();
+  for (const r of DATA) {{
+    const k = String(r[col] ?? '');
+    vals.set(k, (vals.get(k) || 0) + 1);
+  }}
+  const cur = FILTERS[col] || {{}};
+  const list = [...vals.entries()].sort((a, b) => b[1] - a[1]);
+  const p = document.createElement('div');
+  p.className = 'fpanel';
+  p.innerHTML =
+    '<input class="fq" placeholder="contains…" value="' + esc(cur.text || '') + '">' +
+    '<div class="fvals">' + list.slice(0, 400).map(([v, n]) =>
+      '<label><input type="checkbox" value="' + esc(v) + '"' +
+      (cur.only && cur.only.has(v) ? ' checked' : '') + '>' +
+      '<span>' + (v === '' ? '<i class="nul">empty</i>' : esc(v)) + '</span>' +
+      '<b>' + n.toLocaleString() + '</b></label>').join('') +
+      (list.length > 400 ? '<p class="fmore">' + (list.length - 400).toLocaleString() +
+        ' more values — use “contains” to narrow</p>' : '') +
+    '</div><div class="fbar"><button class="fclear">clear</button>' +
+    '<button class="fdone">apply</button></div>';
+  btn.parentElement.appendChild(p);
+
+  const apply = () => {{
+    const text = p.querySelector('.fq').value.trim().toLowerCase();
+    const only = new Set([...p.querySelectorAll('.fvals input:checked')].map(i => i.value));
+    if (text || only.size) FILTERS[col] = {{text: text || null, only: only.size ? only : null}};
+    else delete FILTERS[col];
+    p.remove();
+    draw();
+  }};
+  p.querySelector('.fdone').onclick = apply;
+  p.querySelector('.fq').onkeydown = e => {{ if (e.key === 'Enter') apply(); }};
+  p.querySelector('.fclear').onclick = () => {{ delete FILTERS[col]; p.remove(); draw(); }};
+  p.querySelector('.fq').focus();
 }}
 
 async function run(sql) {{
   mbody.innerHTML = '<p class="mnote">querying…</p>';
   mmeta.textContent = '';
+  DATA = []; COLS = []; SORT = {{col: null, dir: 1}}; FILTERS = {{}}; CAPPED = false;
   let r, j;
   try {{
     r = await fetch(API + '?sql=' + encodeURIComponent(sql));
@@ -770,36 +917,40 @@ async function run(sql) {{
   }}
   const rows = j.rows || j.results || [];
   if (!rows.length) {{ mbody.innerHTML = '<p class="mnote">No rows.</p>'; return; }}
-  const cols = Object.keys(rows[0]);
-  const head = '<tr>' + cols.map(k => '<th>' + esc(k) + '</th>').join('') + '</tr>';
-  const body = rows.map(row => '<tr>' + cols.map(k => {{
-    const v = row[k];
-    if (v === null) return '<td><span class="nul">NULL</span></td>';
-    if (v === '') return '<td><span class="nul">empty</span></td>';
-    return '<td' + (typeof v === 'number' ? ' class="num"' : '') + '>' + esc(v) + '</td>';
-  }}).join('') + '</tr>').join('');
-  mbody.innerHTML = '<table class="samp">' + head + body + '</table>';
+  DATA = rows; COLS = Object.keys(rows[0]); CAPPED = rows.length === 1000;
+  draw();
   // rowsRead is the billable quantity and is NOT the number of rows returned — a GROUP BY
-  // returning 14 rows can read 9,330. Showing both is why the endpoint publishes it.
-  mmeta.textContent = rows.length.toLocaleString() + ' returned' +
-    (j.rowsRead != null ? ' · ' + j.rowsRead.toLocaleString() + ' rows read' : '') +
-    (rows.length === 1000 ? ' · capped at 1,000 — add OFFSET for more' : '');
+  // returning 14 rows can read 9,330. It is appended rather than replacing the counts.
+  if (j.rowsRead != null) mmeta.textContent += ' · ' + j.rowsRead.toLocaleString() + ' read';
 }}
 
 document.addEventListener('click', e => {{
   const b = e.target.closest('button.open');
   if (b) {{
     mt.textContent = b.dataset.t;
-    msql.value = 'SELECT * FROM ' + b.dataset.t + ' LIMIT 1000';
+    msql.value = b.dataset.q || ('SELECT * FROM ' + b.dataset.t + ' LIMIT 1000');
     modal.hidden = false;
     run(msql.value);
     return;
   }}
+  const srt = e.target.closest('button.srt');
+  if (srt) {{
+    const c = srt.dataset.c;
+    SORT = {{col: c, dir: SORT.col === c ? -SORT.dir : 1}};
+    draw();
+    return;
+  }}
+  const flt = e.target.closest('button.flt');
+  if (flt) {{ panel(flt.dataset.c, flt); return; }}
+  if (!e.target.closest('.fpanel')) document.querySelectorAll('.fpanel').forEach(p => p.remove());
   if (e.target.id === 'mrun') run(msql.value);
   if (e.target.id === 'mx' || e.target === modal) modal.hidden = true;
 }});
 msql.addEventListener('keydown', e => {{ if (e.key === 'Enter') run(msql.value); }});
-document.addEventListener('keydown', e => {{ if (e.key === 'Escape') modal.hidden = true; }});
+document.addEventListener('keydown', e => {{ if (e.key === 'Escape') {{
+  if (document.querySelector('.fpanel')) document.querySelectorAll('.fpanel').forEach(p => p.remove());
+  else modal.hidden = true;
+}} }});
 </script>
 
 <p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
