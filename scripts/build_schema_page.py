@@ -555,10 +555,10 @@ PAGE = '''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root {{ --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
-  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --code:#f3f1ec; }}
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --code:#f3f1ec; --head-bar:#f5f3ee; --band:#faf9f6; }}
 @media (prefers-color-scheme: dark) {{
   :root {{ --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
-    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --code:#23221f; }}
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --code:#23221f; --head-bar:#201f1c; --band:#1a1917; }}
 }}
 * {{ box-sizing:border-box }}
 body {{ margin:0; background:var(--bg); color:var(--ink);
@@ -633,28 +633,54 @@ button.open, #mrun, #mx {{ font:inherit; font-size:12px; padding:4px 10px;
   border:1px solid var(--grid); border-radius:6px; background:var(--card);
   color:var(--ink); cursor:pointer }}
 button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced) }}
-#modal {{ position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9;
-  display:flex; align-items:center; justify-content:center; padding:16px }}
+#modal {{ position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:9;
+  display:flex; align-items:center; justify-content:center; padding:24px;
+  backdrop-filter:blur(2px) }}
 /* MUST come after the rule above. `hidden` is only a `display:none` in the UA stylesheet,
    so ANY display rule on the same element beats it — the modal was visible from page
    load, blank, and the close button set an attribute that changed nothing. */
 #modal[hidden] {{ display:none }}
-#modal .sheet {{ background:var(--bg); border-radius:10px; width:min(1180px,100%);
-  height:min(84vh,100%); display:flex; flex-direction:column; overflow:hidden;
-  border:1px solid var(--grid) }}
-.mbar {{ display:flex; gap:8px; align-items:center; padding:9px 11px;
-  border-bottom:1px solid var(--grid); flex-wrap:wrap }}
-.mbar strong {{ font-family:ui-monospace,Menlo,monospace; font-size:13px }}
-#msql {{ flex:1; min-width:200px; font:12px/1.4 ui-monospace,Menlo,monospace;
-  padding:5px 8px; border:1px solid var(--grid); border-radius:6px;
-  background:var(--code); color:var(--ink) }}
-#mmeta {{ font-size:11.5px; color:var(--muted);
-  font-family:ui-monospace,Menlo,monospace }}
-#mx {{ margin-left:auto }}
-.mwrap {{ overflow:auto; flex:1 }}
-.mwrap table {{ font-size:11.5px; white-space:nowrap }}
-.mwrap th {{ position:sticky; top:0; background:var(--code) }}
-.mnote {{ padding:16px; font-size:13px; color:var(--muted) }}
+#modal .sheet {{ background:var(--bg); border-radius:12px; width:min(1500px,100%);
+  height:min(88vh,100%); display:flex; flex-direction:column; overflow:hidden;
+  border:1px solid var(--grid); box-shadow:0 18px 50px rgba(0,0,0,.3) }}
+
+/* The bar is a control strip, so it gets its own ground and a real inset. Its parts are
+   three different kinds of thing — what you are looking at, how to change it, what came
+   back — and they are spaced as three groups rather than evenly. */
+.mbar {{ display:flex; gap:12px; align-items:center; padding:13px 18px;
+  border-bottom:1px solid var(--grid); background:var(--head-bar); flex-wrap:wrap }}
+.mbar strong {{ font-family:ui-monospace,Menlo,monospace; font-size:14px;
+  letter-spacing:-.01em }}
+#msql {{ flex:1; min-width:240px; font:12.5px/1.5 ui-monospace,Menlo,monospace;
+  padding:7px 11px; border:1px solid var(--grid); border-radius:7px;
+  background:var(--bg); color:var(--ink) }}
+#msql:focus {{ outline:none; border-color:var(--traced) }}
+#mmeta {{ font-size:11.5px; color:var(--muted); white-space:nowrap;
+  font-family:ui-monospace,Menlo,monospace; padding:3px 9px; border-radius:20px;
+  background:var(--code) }}
+#mmeta:empty {{ display:none }}
+#mx {{ margin-left:auto; font-size:17px; line-height:1; padding:4px 11px 6px }}
+
+/* The table wants to be full-bleed so the sticky header spans the sheet, but content
+   flush to a container edge reads as an accident. So the INSET lives on the first and
+   last cells rather than on the scroll box. */
+.mwrap {{ overflow:auto; flex:1; background:var(--bg) }}
+.mwrap table {{ font-size:12px; white-space:nowrap; border-collapse:separate;
+  border-spacing:0; width:100% }}
+.mwrap th, .mwrap td {{ padding:8px 16px; border-bottom:1px solid var(--grid);
+  vertical-align:top; max-width:380px; overflow:hidden; text-overflow:ellipsis }}
+.mwrap th:first-child, .mwrap td:first-child {{ padding-left:18px }}
+.mwrap th:last-child, .mwrap td:last-child {{ padding-right:18px }}
+.mwrap th {{ position:sticky; top:0; z-index:1; background:var(--head-bar);
+  font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted);
+  font-weight:600; border-bottom:2px solid var(--grid); white-space:nowrap }}
+/* Row banding, not borders, to carry the eye across a wide table. Kept very low
+   contrast: at 60+ columns a visible stripe becomes the loudest thing on screen. */
+.mwrap tbody tr:nth-child(even) td {{ background:var(--band) }}
+.mwrap tbody tr:hover td {{ background:var(--code) }}
+.mwrap td.num {{ text-align:right; font-family:ui-monospace,Menlo,monospace;
+  font-variant-numeric:tabular-nums }}
+.mnote {{ padding:28px 20px; font-size:13.5px; color:var(--muted); text-align:center }}
 </style>
 
 <div class="wrap">
