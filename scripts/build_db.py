@@ -959,6 +959,17 @@ UNLOADED = [
     ('balance-sheet', 'The combined balance sheet READ from the page — what the town '
      'HOLDS, against the flow tables everything else here measures'),
     ('balance-sheet-printed-totals', 'The totals each balance sheet prints, quoted'),
+    # The ENTERPRISE-FUNDS combining balance sheet, FY2024-FY2025. A SEPARATE dataset,
+    # deliberately: it is four named ratepayer funds (Sewer, Water, Solid Waste, PEG
+    # Access) with a memorandum-only total column, not the six fund-type columns of the
+    # town-wide sheet above, and FY2024 and FY2025 print no town-wide sheet at all.
+    # Appending it to `balance_sheet` would put rows into a schema whose column meanings
+    # they do not share. FY2024 prints the SAME sheet twice, so `printing` (1 or 2) must
+    # be collapsed on before anything is summed.
+    ('enterprise-balance-sheet', 'The enterprise-funds combining balance sheet READ from '
+     'the page — what the four RATEPAYER funds hold; not general-fund money'),
+    ('enterprise-balance-sheet-printed-totals',
+     'The totals and the printed Proof row each enterprise balance sheet states, quoted'),
     ('special-revenue-read', 'The special revenue schedule READ from the page — the '
      'only version of it that ties to its own printed total'),
     ('special-revenue-printed-totals', 'The GRAND TOTAL each report prints, quoted'),
@@ -1281,6 +1292,48 @@ def check_join_key(db):
     return coded, overlap
 
 
+def check_stored_queries(db):
+    """Every query this database PUBLISHES must actually run against it.
+
+    `table-semantics.csv` carries a `default_query` per table. They are published on the
+    schema page and handed to assistants as the worked example for each table, and until
+    this ran, NOT ONE OF THEM HAD EVER BEEN EXECUTED. One was dead:
+
+        SELECT fy, section, line, fund_column, amount FROM balance_sheet ...
+
+    There is no `fund_column`; the column is `fund`. A reader who copied the example this
+    project gave them got `Error: no such column: fund_column`, on the one surface built
+    to make the data easy to reach.
+
+    THE SHAPE IS THE FAMILIAR ONE POINTED A NEW WAY. A column NAME was typed into prose
+    and the thing it named moved -- rule 2, except the prose is SQL, so it looks like code
+    and gets the credibility of code while having none of the checking. `check_generated`
+    cannot catch it because nothing regenerates the file.
+
+    The cure is the one `build_question_bank.py` already applies to the question bank: run
+    every stored query on each build, and fail if one stops answering. A query is only
+    known to work at the moment it is executed.
+    """
+    import csv as _csv
+    bad = []
+    path = os.path.join(DATA, 'table-semantics.csv')
+    for r in _csv.DictReader(open(path, encoding='utf-8')):
+        q = (r.get('default_query') or '').strip()
+        if not q:
+            continue
+        try:
+            db.execute(q).fetchmany(1)
+        except Exception as e:                      # noqa: BLE001 -- the message IS the finding
+            bad.append('  %s: %s' % (r['table_name'], e))
+    if bad:
+        raise SystemExit(
+            'table-semantics.csv publishes %d query/queries that do not run against this '
+            'database:\n%s\nThese are the worked examples the schema page hands a reader. '
+            'A published query that errors is worse than none.' % (len(bad), '\n'.join(bad)))
+    return sum(1 for r in _csv.DictReader(open(path, encoding='utf-8'))
+               if (r.get('default_query') or '').strip())
+
+
 def reconcile(db):
     """Assert against figures established outside this script, not against itself."""
     print('\nReconciliations')
@@ -1531,6 +1584,10 @@ def main():
     coded, overlap = check_join_key(db)
     print('  function codes   %5d accounts carry one; %d shared with the budget' %
           (coded, overlap))
+
+    n_q = check_stored_queries(db)
+    print('  worked examples  %5d published queries, every one executed against this '
+          'build' % n_q)
 
     reconcile(db)
     bad = [c for c in CHECKS if not c[0]]

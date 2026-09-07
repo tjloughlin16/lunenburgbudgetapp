@@ -82,6 +82,12 @@ CHECKS = [
     # schedule's own carried-forward total — two documents, different pages, and the
     # second was verified to the penny by an entirely separate pass.
     ('verify_balance_sheet.py', []),
+    # The ENTERPRISE-funds combining balance sheet, FY2024-FY2025, read from the page.
+    # Five checks: column footing, the identity the sheet states, the sheet's OWN printed
+    # Proof row, the memorandum column cross-footed against the four fund columns, and --
+    # free, because the town gave it to us -- FY2024's two printings of the same sheet on
+    # pages 21 and 28, transcribed independently and asserted to agree.
+    ('verify_enterprise_balance_sheet.py', []),
     # What the reports contain that we have not read, or have read without checking.
     # Generated because a count nobody maintains is the only kind that stays true.
     ('build_extraction_gaps.py', ['--check']),

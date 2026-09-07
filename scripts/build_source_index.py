@@ -812,6 +812,29 @@ GROUPS = [
              'special revenue schedule; the one printed sheet that does not balance itself '
              '(FY2019, $657,297.35, pinned and not adjusted away); why FY2024 and FY2025 '
              'have no town-wide balance sheet at all; and how to add a year.'),
+            ('data/enterprise-balance-sheet.csv',
+             'The enterprise-funds balance sheet, read from the page', 3,
+             'What the four RATEPAYER funds \u2014 Sewer, Water, Solid Waste and PEG '
+             'Access \u2014 hold at 30 June, from the only balance sheet the FY2024 and '
+             'FY2025 annual reports print. Neither of those reports contains the '
+             'town-wide combined balance sheet above, so this is a separate dataset with '
+             'a different population, not more rows of it. FY2024 prints the same sheet '
+             'TWICE, on printed pages 21 and 28, and both printings are transcribed and '
+             'asserted to agree. None of this money is available to the general fund. '
+             'See data/PROVENANCE-enterprise-balance-sheet.md.'),
+            ('data/enterprise-balance-sheet-printed-totals.csv',
+             'The TOTAL rows and the PROOF row each enterprise sheet prints', 2,
+             'The independent check on the file above, quoted off the page with the raw '
+             'cell text, the printed page number and the PDF index, which are not the '
+             'same number. The sheet carries its own Proof row and that is what a reading '
+             'is reconciled to.'),
+            ('data/PROVENANCE-enterprise-balance-sheet.md',
+             'Why the enterprise sheet is a dataset of its own', 2,
+             'Written by us: the five checks including FY2024\u2019s two printings of the '
+             'same sheet; both editions\u2019 tables of contents naming a town-wide '
+             'balance sheet that is not in the book; the $102,000.00 the FY2024 '
+             'memorandum column is out on two offsetting lines, pinned and not adjusted '
+             'away; and what these ratepayer balances are not.'),
             ('data/special-revenue-read.csv',
              'The special revenue funds, read from the page', 3,
              'The FY2011\u2013FY2025 schedule of every fund outside the general '

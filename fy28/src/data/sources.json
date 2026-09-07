@@ -1489,6 +1489,18 @@
      "textUrl": "/docs/analyses/questions.md"
     },
     {
+     "path": "data/enterprise-balance-sheet.csv",
+     "title": "The enterprise-funds balance sheet, read from the page",
+     "stars": 3,
+     "what": "What the four RATEPAYER funds — Sewer, Water, Solid Waste and PEG Access — hold at 30 June, from the only balance sheet the FY2024 and FY2025 annual reports print. Neither of those reports contains the town-wide combined balance sheet above, so this is a separate dataset with a different population, not more rows of it. FY2024 prints the same sheet TWICE, on printed pages 21 and 28, and both printings are transcribed and asserted to agree. None of this money is available to the general fund. See data/PROVENANCE-enterprise-balance-sheet.md.",
+     "kind": "Data",
+     "bytes": 17605,
+     "url": "/docs/data/enterprise-balance-sheet.csv",
+     "count": 114,
+     "unit": "rows",
+     "textUrl": "/docs/data/enterprise-balance-sheet.csv"
+    },
+    {
      "path": "data/PROVENANCE-staff-rosters.md",
      "title": "Where the staff rosters came from, and what a name is not",
      "stars": 3,
@@ -1662,9 +1674,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 23969,
+     "bytes": 25988,
      "url": "/docs/data/table-semantics.csv",
-     "count": 76,
+     "count": 78,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -1681,6 +1693,18 @@
      "textUrl": "/docs/data/staff-roster-counts.csv"
     },
     {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 18045,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 34,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
      "path": "data/column-glossary.csv",
      "title": "What each column name means, across every table",
      "stars": 2,
@@ -1693,16 +1717,16 @@
      "textUrl": "/docs/data/column-glossary.csv"
     },
     {
-     "path": "data/money-gaps.csv",
-     "title": "What the town’s records cannot answer",
+     "path": "data/PROVENANCE-enterprise-balance-sheet.md",
+     "title": "Why the enterprise sheet is a dataset of its own",
      "stars": 2,
-     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
-     "kind": "Data",
-     "bytes": 15152,
-     "url": "/docs/data/money-gaps.csv",
-     "count": 32,
-     "unit": "rows",
-     "textUrl": "/docs/data/money-gaps.csv"
+     "what": "Written by us: the five checks including FY2024’s two printings of the same sheet; both editions’ tables of contents naming a town-wide balance sheet that is not in the book; the $102,000.00 the FY2024 memorandum column is out on two offsetting lines, pinned and not adjusted away; and what these ratepayer balances are not.",
+     "kind": "Notes",
+     "bytes": 14716,
+     "url": "/docs/data/PROVENANCE-enterprise-balance-sheet.md",
+     "count": 247,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-enterprise-balance-sheet.md"
     },
     {
      "path": "data/PROVENANCE-balance-sheet.md",
@@ -1727,6 +1751,18 @@
      "count": 134,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
+    },
+    {
+     "path": "data/enterprise-balance-sheet-printed-totals.csv",
+     "title": "The TOTAL rows and the PROOF row each enterprise sheet prints",
+     "stars": 2,
+     "what": "The independent check on the file above, quoted off the page with the raw cell text, the printed page number and the PDF index, which are not the same number. The sheet carries its own Proof row and that is what a reading is reconciled to.",
+     "kind": "Data",
+     "bytes": 11424,
+     "url": "/docs/data/enterprise-balance-sheet-printed-totals.csv",
+     "count": 75,
+     "unit": "rows",
+     "textUrl": "/docs/data/enterprise-balance-sheet-printed-totals.csv"
     },
     {
      "path": "data/PROVENANCE-special-revenue-funds.md",
@@ -1983,7 +2019,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 19050496,
+     "bytes": 19091456,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5799,10 +5835,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 469,
+  "documents": 472,
   "groups": 20,
-  "bytes": 1003727476,
-  "loadBearing": 75
+  "bytes": 1003817093,
+  "loadBearing": 76
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
