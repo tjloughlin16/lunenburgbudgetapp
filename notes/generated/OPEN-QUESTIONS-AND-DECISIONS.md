@@ -2,7 +2,7 @@
 
 The Lunenburg Budget Project — for review, 7 September 2026
 
-**7 decisions** and **13 open questions**. The gap registry behind the questions holds **34 rows** across 5 kinds: `document_wanted`, `held`, `money_in`, `money_out`, `people`.
+**6 decisions** and **13 open questions**. The gap registry behind the questions holds **37 rows** across 5 kinds: `document_wanted`, `held`, `money_in`, `money_out`, `people`.
 
 The two lists are kept apart because they behave differently, and section 3 below is the part worth reading first if you read nothing else.
 
@@ -15,7 +15,7 @@ below is blocked on more analysis; each is blocked on somebody choosing.
 
 | # | the decision | why it is yours and not mine | cost of leaving it |
 |---|---|---|---|
-| D1 | **Push the database to D1.** Held deliberately. A full replace is ~51,000 writes against a free-tier ceiling of 100,000 a day, and four re-imports took the endpoint dark on 5 September. | It spends a shared daily budget that residents' queries also draw on. | `/api/query` serves the older database. `sync_d1.py --check` fails, and it is the ONLY failing check — so a real failure has nowhere to hide. That is the actual cost. |
+| ~~D1~~ | ~~**Push the database to D1.**~~ **DONE 7 Sep 2026** — 70,013 rows in one pass; D1 verified to match the local copy, 78 tables. The plan's "~140,026 writes" warning proved pessimistic: the ceiling is not rows x 2, and what exhausted the budget on 5 September was four re-imports in one day rather than the size of one. | | |
 | ~~D2~~ | ~~**Deploy.**~~ **DONE 7 Sep 2026** — v11 is live, verified against the archive manifest. | | |
 | D3 | **Resume the tax-rate and town-meeting extraction, or drop it.** Held after repeated `ECONNRESET`. Your instruction was to hold if the agents keep failing and continue if some make progress. | The balance-sheet and special-revenue extractions since then both succeeded, so the evidence has changed. | Two datasets stay uncaptured. Nothing else depends on them. |
 | ~~D4~~ | ~~**What to do about `athletics.md` being stale.**~~ **DONE 7 Sep 2026** — both analyses corrected, the page no longer disagrees, and the verifier now reads both documents and recomputes the series it had never checked. | | |
