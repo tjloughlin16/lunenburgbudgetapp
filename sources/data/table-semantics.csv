@@ -1,0 +1,73 @@
+table_name,role,grain,what_it_answers,caution
+account,dimension,one row per MUNIS account,The town's chart of accounts — every account number with its fund, department and function code.
+account_names,dimension,one row per abbreviated account name,What a ten-character MUNIS name actually expands to.,The expansions are ours except where `basis` says otherwise.
+annual_report_catalogue,provenance,one row per table per annual report,Every table found by reading all sixteen annual reports end to end.,"A catalogue of what EXISTS, not of what has been extracted."
+annual_report_contents,provenance,one row per extracted table,Which tables were read, from which pages
+annual_report_receipts,extract,one row per revenue line per year,Every receipt the annual reports print, as printed.
+annual_report_survey,provenance,one row per page surveyed,What each page of each report looks like to an extractor.,"A survey, not data: it measures pages, it does not read figures."
+athletic_fee_schedule,fact,one row per fee per year,What the district charged families to play, by level and year.
+athletics_by_sport,fact,one row per sport per season per metric,Participation and cost by sport.,
+athletics_by_sport_reconciliation,provenance,one row per printed total,Whether the by-sport rows sum to the totals the source prints.,
+athletics_history,fact,one row per athletics figure per year,Both sides of athletics — what the town appropriated and what the fund spent.,"Appropriation, fund revenue and fund spending are three quantities. Never add two of them."
+ballot_questions,fact,one row per ballot question,What each override and debt exclusion asked and how the town voted.,
+budget_figure,fact,one row per line per year per stage per variant,What a budget document said a line would be — or was.,Split on `stage` AND `variant`. FY27 carries four whole budgets.
+budget_line,dimension,one row per budget line,The district's line list, with its section and function group.
+capital_funding_history,fact,one row per year,Where capital spending was funded from.,
+capital_plan_fy27,fact,one row per project,The FY27 capital plan as proposed, ranked.
+crosswalk,dimension,one row per budget line mapped to an account,Intended to join a budget line to a ledger account. It is EMPTY.,"Deliberately empty. MUNIS truncates to ten characters so MS GUIDANC and HS GUIDANC collide; only the CATEGORY can be joined, through account.function. Populating this would record an inference as a mapping."
+dataset_document,provenance,one row per dataset per document,Which document every extracted dataset row came from.,
+dese_measure,fact,one row per district per year per measure,DESE's own published measures for every district.,
+dese_radar,fact,one row per district per year per measure,DESE's all-funds per-pupil figures.,"All-funds, so NOT comparable with the town's general fund appropriation."
+document,provenance,one row per source document,Every document in the archive with its address and checksum.,`link_state` says whether the publisher's copy still opens; `copy_state` whether it still matches ours.
+extraction_plan,provenance,one row per planned extract,What was planned to be read out of the annual reports, and what state each is in.
+fiscal_period,dimension,one row per MUNIS period,What each accounting period means and how much of the year had elapsed.,"Period 13 is the year-end close after the lapse period, not a thirteenth month."
+free_cash_proof,fact,one row per line of the state's proof,How the state computed certified free cash, for nine towns.
+fund,dimension,one row per MUNIS fund,Every fund the town runs, with its kind and restriction.
+fund_1301_cash_journal,fact,one row per transaction,The athletics revolving fund at transaction level, from a records request.
+fund_activity,fact,one row per fund per year per period,What each fund took in, spent and holds.
+grant_award,fact,one row per grant per year,Grants awarded, by name and amount.
+grants_history,fact,one row per grant per year,The same grants with their source addresses.,`fy` is TEXT — see grant_award.
+ledger_snapshot,fact,one row per account per year per period per document,What the town's books say, at a moment in the year.
+line_history,fact,one row per line per year per stage,Every budget line, every year
+line_history_coverage,provenance,one row per source document,How much of each budget document was successfully read.,
+line_history_disagreements,provenance,one row per disagreeing reading,Where two documents state different figures for the same line-year.,Kept rather than resolved. Which document is right is often not established.
+lps_budget_lines,fact,one row per budget book line,The district's own budget book, in its own shape and column order.
+money_assumptions,classification,one row per assumption,Every assumption the money model rests on, with what would settle it.
+money_classification,classification,one row per revenue account or fund or department,Our classification of every money node — what it is and how that was established.,`how` and `why` carry the basis so a classification can be argued with.
+money_edges,classification,one row per traced edge,Where a restricted fund's money is permitted to go.,"An edge is the statute or grant award — a PRESUMPTION about purpose, never an observation of spending."
+money_gaps,classification,one row per gap,Questions the published documents do not close.,This table is the honest list of what cannot be answered.
+munis_ledger,fact,one row per account per report,The MUNIS chart of accounts exactly as delivered.,
+ood_tuition_history,fact,one row per year per stage,Out-of-district tuition, private and collaborative.
+placement_counts,fact,one row per year,Children placed outside the district, split collaborative/day/residential.
+rate_register,fact,one row per rate,Every rate and fee the model uses, with where it was set.
+report_anomalies,provenance,one row per anomaly,Things found while reading the annual reports that need a human.,
+report_appropriations,extract,one row per printed line,Appropriations as the annual reports print them.,v1..v8 are ORDINALS. Read `column_meaning` and split on `status`.
+report_capital_projects,extract,one row per printed line,Capital projects as the annual reports print them.,v1..v8 are ORDINALS. Split on `status`.
+report_debt,extract,one row per printed line,Debt as the annual reports print it.,v1..v8 are ORDINALS. Split on `status`.
+report_dept_activity,extract,one row per printed line,Departmental activity tables from the annual reports.,v1..v8 are ORDINALS. Split on `status`.
+report_elections,extract,one row per printed line,Election results as the annual reports print them.,v1..v8 are ORDINALS. Split on `status`.
+report_enrollment_mcas,extract,one row per printed line,Enrollment and MCAS tables from the annual reports.,v1..v8 are ORDINALS. Split on `status`.
+report_gross_wages,extract,one row per printed line,Gross wages as the annual reports print them.,v1..v8 are ORDINALS. Split on `status`.
+report_monty_tech,extract,one row per printed line,Monty Tech figures from the annual reports.,Monty Tech is a DIFFERENT DISTRICT. Never add it to Lunenburg's schools.
+report_officials,extract,one row per printed line,Town officials as the annual reports list them.,v1..v8 are ORDINALS. Split on `status`.
+report_trust_funds,extract,one row per printed line,Trust funds as the annual reports print them.,v1..v8 are ORDINALS. Split on `status`.
+report_valuation,extract,one row per printed line,Valuation tables from the annual reports.,v1..v8 are ORDINALS. Split on `status`.
+report_vital_records,extract,one row per printed line,Vital records counts from the annual reports.,v1..v8 are ORDINALS. Split on `status`.
+revenue_history,fact,one row per revenue source per year,Every source of town revenue by year, with our classification of what KIND it is.
+role_classification,dimension,one row per printed roster title,What job each printed roster title actually is.,
+school_special_revenue_fy26_q3,fact,one row per school fund,The schools' own funds at FY26 period 9.,
+special_revenue_funds,extract,one row per fund per year,Every fund outside the general appropriation, fifteen years
+sped_para_history,fact,one row per year per stage,Special education paraprofessionals by school.,"A budget line, not a headcount."
+sped_teacher_history,fact,one row per year per stage,Special education teachers by school.,"A budget line, not a headcount."
+sped_transport_history,fact,one row per year per stage,Special education transportation.,
+staff_position_map,dimension,one row per printed roster title,Printed titles mapped to positions.,
+staff_roster_counts,fact,one row per school per position per year,How many names the town printed under each position.,"A count of NAMES, with no FTE and no funding source. It is not a staffing level."
+staff_roster_entries,fact,one row per person per year,The per-school staff rosters, name by name
+stated_figure,fact,one row per figure the town stated,Figures the town or district asserted in their own words, with the quote.
+total_expenses_history,fact,one row per year per stage,Total expenses as each document states them.,
+total_salaries_history,fact,one row per year per stage,Total salaries as each document states them.,
+town_ledger_fy26_q3,fact,one row per department,The FY26 period 9 town ledger, by department.
+variance_by_group,derived,one row per function group,How far each group's spending ran from its budget, across years.
+workbook_figure,fact,one row per worksheet row per year per column,The FY27 workbook unpivoted, every cell quotable by its row.
+table_semantics,provenance,one row per table in this database,"What each table is: its role, its grain, and what question it answers.","Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too."
+column_glossary,provenance,one row per DISTINCT column name across the whole database,"What a column name means, its unit, and what goes wrong if it is ignored.","Keyed on the NAME, not on table plus name, because `v1` and `status` mean the same dangerous thing everywhere they appear. Where a name genuinely differs by table, the table entry says so."

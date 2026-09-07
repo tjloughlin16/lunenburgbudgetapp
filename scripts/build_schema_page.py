@@ -53,7 +53,9 @@ Only `partly` moves the verdict. Both print, because a reader needs both.
 """
 
 import argparse
+import csv
 import html
+import random
 import os
 import sqlite3
 from datetime import date
@@ -135,47 +137,93 @@ QUESTIONS = [
             'depend on any name, and MUNIS names are ten characters typed by a person.'),
 ]
 
-# Every table belongs to a family. Declared rather than inferred, because the grouping is
-# a judgement about what the data IS. `families()` refuses to run if a table matches none,
-# so a new table has to be placed rather than quietly landing in "other".
-FAMILIES = [
-    ('The spine — what a budget said and what the books say', """
-     Three fact tables, three different grains. Confusing them is how a budget gets
-     compared to an actual that is not its own.""",
-     ['budget_figure', 'budget_line', 'ledger_snapshot', 'workbook_figure', 'account',
-      'fund', 'fiscal_period', 'crosswalk', 'munis_ledger', 'lps_budget_lines',
-      'line_history', 'line_history_coverage', 'line_history_disagreements',
-      'account_names', 'town_ledger_fy26_q3', 'stated_figure']),
-    ('Money in, money out — the classification we built', """
-     Our model of every route money takes in and out, as data rather than as a diagram.
-     The `how`/`why` columns carry the basis for each call, so a classification can be
-     argued with rather than only read.""",
-     ['money_classification', 'money_edges', 'money_assumptions', 'money_gaps',
-      'revenue_history', 'fund_activity', 'school_special_revenue_fy26_q3',
-      'fund_1301_cash_journal', 'grant_award', 'grants_history', 'variance_by_group']),
-    ('The annual town reports — sixteen years, read page by page', """
-     Extracts from the printed reports. **Nothing here may be aggregated without splitting
-     on `status`**, and `v1`..`v8` are ORDINALS — the first column of that page that held
-     figures — not named columns. Read `column_meaning`.""",
-     ['annual_report_catalogue', 'annual_report_contents', 'annual_report_receipts',
-      'annual_report_survey', 'report_appropriations', 'report_capital_projects',
-      'report_debt', 'report_dept_activity', 'report_elections',
-      'report_enrollment_mcas', 'report_gross_wages', 'report_monty_tech',
-      'report_officials', 'report_trust_funds', 'report_valuation',
-      'report_vital_records', 'report_anomalies', 'special_revenue_funds',
-      'extraction_plan', 'ballot_questions', 'capital_funding_history',
-      'capital_plan_fy27', 'free_cash_proof', 'total_expenses_history',
-      'total_salaries_history']),
-    ('Schools — the lines the projection rests on', '',
-     ['athletics_history', 'athletics_by_sport', 'athletics_by_sport_reconciliation',
-      'athletic_fee_schedule', 'ood_tuition_history', 'placement_counts',
-      'sped_para_history', 'sped_teacher_history', 'sped_transport_history',
-      'staff_roster_entries', 'staff_roster_counts', 'staff_position_map',
-      'role_classification', 'dese_measure', 'dese_radar', 'rate_register']),
-    ('Provenance — which document every figure came from', """
-     Rule 12 in table form. A figure that cannot name its document is not loaded.""",
-     ['document', 'dataset_document']),
+# THE SEMANTICS LIVE IN TWO CSVs, NOT IN THIS FILE.
+#
+# TJ asked for descriptions of the tables and their columns, and then — reading the page —
+# for the MAIN tables to be distinguishable from the rest: "there has to be some main
+# tables right, fact tables, vs dimensions? Hard to tell." Seventy tables listed as equals
+# is a directory, not a map.
+#
+# Where that description lives matters more than what it says. Three properties decided it:
+#
+#   1. It is DATA, so it loads into the database and `/api/query` can reach it. A
+#      description trapped in a Python docstring is invisible to every caller that is not
+#      reading this file.
+#   2. It is CHECKABLE. `--check` fails if a table exists with no entry, or an entry names
+#      a table that does not. That is the whole anti-drift mechanism this project runs on.
+#   3. It is SMALL. 883 column instances share only 285 distinct names, and 110 of those
+#      names cover 80% of the instances — so a shared glossary describes `v1`, `status`
+#      and `fy` once each, which is right, because those mean the same dangerous thing
+#      everywhere they appear.
+#
+# `sources/data/table-semantics.csv`  — one row per table: role, grain, what it answers.
+# `sources/data/column-glossary.csv`  — one row per distinct column name.
+#
+# Coverage is deliberately printed on the page rather than rounded up to "documented".
+ROLES = [
+    ('fact', 'Facts — the measurements',
+     'What was budgeted, what was spent, what a fund holds. These carry the figures; '
+     'everything else in the database describes, extracts, classifies or checks them.'),
+    ('dimension', 'Dimensions — what a key means',
+     'Joined to, never summed. An account number, a fund, a line, a period.'),
+    ('extract', 'Extracts — readings off a printed page',
+     'What the annual reports print, before anything decides what it means. This is where '
+     '`v1`..`v8` and `status` live, and neither may be used without reading its entry.'),
+    ('classification', 'Our model — every row here is a judgement',
+     'Not measurements. Each carries the basis for the call so it can be argued with.'),
+    ('provenance', 'Provenance — where a figure came from, and whether it holds up',
+     'Rule 12 in table form.'),
+    ('derived', 'Derived — computed from the tables above',
+     'Convenience, recomputable, never a source.'),
 ]
+
+# The three grains SCHEMA.md names. Called out because confusing them is how a budget gets
+# compared to an actual that is not its own, and because 33 fact tables all looking alike
+# is the problem TJ reported.
+SPINE = ('ledger_snapshot', 'budget_figure', 'workbook_figure')
+
+
+def semantics():
+    """Load both CSVs. Returns (per-table dict, per-column dict)."""
+    def rows(name):
+        path = os.path.join(ROOT, 'sources', 'data', name)
+        if not os.path.exists(path):
+            raise SystemExit('%s is missing — it is the source of the table and column '
+                             'descriptions on this page.' % name)
+        with open(path, newline='', encoding='utf-8') as fh:
+            return list(csv.DictReader(fh))
+    tabs = {r['table_name']: r for r in rows('table-semantics.csv')}
+    cols = {r['column']: r for r in rows('column-glossary.csv')}
+    return tabs, cols
+
+
+def by_role(c, tabs):
+    """Group every table by its declared role, or refuse to run."""
+    tables = [r[0] for r in c.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")]
+    undescribed = sorted(set(tables) - set(tabs))
+    if undescribed:
+        raise SystemExit(
+            'table(s) with no entry in sources/data/table-semantics.csv: %s\n'
+            '  A table nobody described is a table nobody can use. Add a row giving its '
+            'role, its grain and what it answers.' % ', '.join(undescribed))
+    gone = sorted(set(tabs) - set(tables))
+    if gone:
+        raise SystemExit('table-semantics.csv describes table(s) that no longer exist: %s'
+                         % ', '.join(gone))
+    known = {r for r, _, _ in ROLES}
+    bad = sorted({t for t, r in tabs.items() if r['role'] not in known})
+    if bad:
+        raise SystemExit('unknown role(s) on: %s. Roles are: %s'
+                         % (', '.join(bad), ', '.join(sorted(known))))
+    out = []
+    for role, title, blurb in ROLES:
+        members = [t for t in tables if tabs[t]['role'] == role]
+        # the spine first, then the rest alphabetically
+        members.sort(key=lambda t: (t not in SPINE, SPINE.index(t) if t in SPINE else 0, t))
+        out.append((role, title, blurb, members))
+    return out
+
 
 # Columns that decide what a row IS. Omitting one does not raise -- it returns a number
 # that is the sum of two different things. All four have been got wrong here.
@@ -233,18 +281,30 @@ def families(c):
 
 
 def sample(c, t, n=3):
-    """The first `n` rows, for showing what the table actually looks like.
+    """`n` rows drawn from ACROSS the table — random, and reproducible.
 
-    ORDER BY rowid, not a bare LIMIT: without an ORDER BY, SQLite's row order is an
-    implementation detail, and this page is checked byte-for-byte by `--check`. A sample
-    that reshuffled on a rebuild would fail the build for no reason and, worse, train
-    somebody to re-run the generator until it passed.
+    The first three rows are a bad sample and TJ said so: every extract begins with its
+    tidiest year, so the head of a table shows none of what makes it awkward. A random
+    sample shows the blanks, the negatives and the `check failed` rows.
+
+    But this page is verified byte-for-byte by `--check`, so a sample that reshuffled on
+    every rebuild would fail the build for no reason and — worse — teach somebody to
+    re-run the generator until it passed. That is how a check stops meaning anything.
+
+    So the randomness is SEEDED, on the table's own name. Spread through the table like a
+    random sample, identical on every run, and different per table rather than always the
+    same three positions.
     """
     try:
-        rs = c.execute('SELECT * FROM "%s" ORDER BY rowid LIMIT %d' % (t, n)).fetchall()
+        n_rows = c.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
+        if not n_rows:
+            return []
+        rng = random.Random(t)          # the table name IS the seed
+        picks = sorted(rng.sample(range(n_rows), min(n, n_rows)))
+        rs = c.execute('SELECT * FROM "%s" ORDER BY rowid' % t).fetchall()
     except sqlite3.OperationalError:
         return []                       # a WITHOUT ROWID table: no stable order to take
-    return rs
+    return [rs[i] for i in picks]
 
 
 def cell(v, width=44):
@@ -290,15 +350,18 @@ def run_questions(c):
 
 
 def render(c):
-    fams = families(c)
+    tabs, gloss = semantics()
+    fams = by_role(c, tabs)
     qs = run_questions(c)
-    n_tables = sum(len(m) for _, _, m in fams)
+    n_tables = sum(len(m) for *_, m in fams)
     n_views = c.execute(
         "SELECT COUNT(*) FROM sqlite_master WHERE type='view'").fetchone()[0]
     n_rows = sum(c.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
-                 for _, _, ms in fams for t in ms)
-    n_cols = sum(len(c.execute('PRAGMA table_info("%s")' % t).fetchall())
-                 for _, _, ms in fams for t in ms)
+                 for *_, ms in fams for t in ms)
+    all_cols = [(t, d[1]) for *_, ms in fams for t in ms
+                for d in c.execute('PRAGMA table_info("%s")' % t)]
+    n_cols = len(all_cols)
+    described = sum(1 for _, nm in all_cols if nm in gloss)
 
     B = []
     a = B.append
@@ -353,20 +416,38 @@ def render(c):
     a('</div>')
 
     # ---- the inventory
-    for title, blurb, members in fams:
+    for role, title, blurb, members in fams:
         a(f'<div class="stage"><h2>{esc(title)}</h2>')
         if blurb:
             a(f'<p class="cap">{md(" ".join(blurb.split()))}</p>')
         for t in members:
             n, cols, years = profile(c, t)
-            a('<details><summary><code>%s</code> <span class="n">%s row%s</span>%s'
-              '</summary>' % (esc(t), f'{n:,}', '' if n == 1 else 's',
-                              f' <span class="yr">{esc(years)}</span>' if years else ''))
+            sem = tabs[t]
+            spine = ' spine' if t in SPINE else ''
+            a('<details class="t%s"><summary><code>%s</code>%s '
+              '<span class="n">%s row%s</span>%s<span class="gr">%s</span></summary>'
+              % (spine, esc(t),
+                 ' <span class="badge">the spine</span>' if spine else '',
+                 f'{n:,}', '' if n == 1 else 's',
+                 f' <span class="yr">{esc(years)}</span>' if years else '',
+                 esc(sem['grain'])))
+            a(f'<p class="ans">{md(sem["what_it_answers"])}</p>')
+            if sem.get('caution'):
+                a(f'<p class="warn">{md(sem["caution"])}</p>')
             a('<div class="scroll"><table class="cols"><tr><th>column</th>'
-              '<th>type</th></tr>')
+              '<th>type</th><th>what it is</th></tr>')
             for name, typ in cols:
+                g = gloss.get(name)
+                if g:
+                    what = md(g['meaning'])
+                    if g.get('unit'):
+                        what += f' <span class="unit">{esc(g["unit"])}</span>'
+                    if g.get('caution'):
+                        what += f'<br><span class="ccaut">{md(g["caution"])}</span>'
+                else:
+                    what = '<span class="nul">not described yet</span>'
                 a(f'<tr><td><code>{esc(name)}</code></td>'
-                  f'<td class="ty">{esc(typ)}</td></tr>')
+                  f'<td class="ty">{esc(typ)}</td><td>{what}</td></tr>')
             a('</table></div>')
             rows = sample(c, t)
             if rows:
@@ -414,6 +495,7 @@ def render(c):
     return PAGE.format(
         body=body, n_tables=n_tables, n_views=n_views,
         n_rows=f'{n_rows:,}', n_cols=n_cols,
+        pct_described=f'{described / n_cols:.0%}',
         gen=date.today().isoformat())
 
 
@@ -496,7 +578,15 @@ details table.samp td {{ padding-right:14px }}
 .cap.sm {{ font-size:12px; margin:11px 0 0 }}
 .nul {{ color:var(--muted); font-style:italic; font-size:.9em }}
 .gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
-@media (min-width:680px) {{ .metrics {{ grid-template-columns:repeat(4,1fr) }} }}
+@media (min-width:680px) {{ .metrics {{ grid-template-columns:repeat(5,1fr) }} }}
+details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
+.badge {{ font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+  background:var(--traced); color:var(--bg); padding:1px 6px; border-radius:20px }}
+.gr {{ display:block; font-size:11.5px; color:var(--muted); margin-top:2px }}
+.ans {{ font-size:13.5px; margin:8px 0 0 }}
+.unit {{ font-size:10.5px; color:var(--muted); text-transform:uppercase;
+  letter-spacing:.06em }}
+.ccaut {{ font-size:12px; color:var(--hi) }}
 </style>
 
 <div class="wrap">
@@ -513,6 +603,7 @@ details table.samp td {{ padding-right:14px }}
   <div class="metric"><div class="v">{n_views}</div><div class="l">views</div></div>
   <div class="metric"><div class="v">{n_rows}</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">{n_cols}</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">{pct_described}</div><div class="l">columns described</div></div>
 </div>
 
 {body}

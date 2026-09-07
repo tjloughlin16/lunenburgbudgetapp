@@ -952,6 +952,12 @@ UNLOADED = [
     ('town-ledger-fy26-q3', 'The FY26 Q3 town ledger, by department'),
     ('school-special-revenue-fy26-q3', 'The FY26 Q3 school special revenue funds'),
     ('line-history-coverage', 'Which lines have how many years of history'),
+    # The semantics, as DATA. A description that lives only in a docstring is invisible to
+    # every caller that is not reading the source -- including /api/query, which is how an
+    # agent meets this database. Loading them means "what does this column mean" is
+    # answerable in SQL, by the same route as every other question here.
+    ('table-semantics', 'What each table is: its role, its grain, what it answers'),
+    ('column-glossary', 'What each column name means, and what goes wrong if ignored'),
 ]
 PLUMBING = ('archive-manifest', 'archive-push-state', 'copy-status', 'link-status',
             'document-basis', 'stated-figures', 'dataset-provenance')
