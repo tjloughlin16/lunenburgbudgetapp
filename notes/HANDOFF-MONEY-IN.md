@@ -21,16 +21,27 @@ Local-only, not published. **Every figure on it is hand-typed** — 140 of them,
 
 ---
 
-## READ THIS FIRST — one thing is blocked
+## READ THIS FIRST — one thing is owed
 
-**D1 is out of sync and cannot be pushed until tomorrow.** The database grew from 51,226 to
-66,630 rows; a full replace needs ~133,000 writes and the free tier allows 100,000 a day,
-of which today's earlier push already used ~102,000.
+**A D1 push is owed and the daily write budget is spent.** Ask what it involves without
+spending a request on the question:
 
-    python3 scripts/sync_d1.py          # run this first tomorrow
-    python3 scripts/check_generated.py  # sync_d1 --check is the only failure until then
+    python3 scripts/sync_d1.py --plan   # OFFLINE. What a push would do, and whether one is owed.
+    python3 scripts/sync_d1.py          # when the budget resets. One command, that is all.
+    python3 scripts/sync_d1.py --check  # ...and confirm the two copies agree
 
-The static JSON API is current. Only `/api/query` is behind.
+`--plan` reads only the local database and the recorded sha of the last push, because the
+one thing you cannot do when the budget is gone is ask D1 about it. It reports 72 tables
+and 66,831 rows against a published copy at 51,226, and names the tables the published
+copy is missing once a push has recorded a table list.
+
+**What is affected while it is behind.** Only `/api/query`. The static JSON API, the site
+and every generated document are current. But the schema page's *Open full table* modal
+queries the published copy, so the newest tables — `table_semantics`, `column_glossary` —
+answer "no such table" until this runs. **The page says so itself**; it is not a bug to
+chase.
+
+Everything else is built locally and committed. Pushing later is one command.
 
 ## Where we are
 

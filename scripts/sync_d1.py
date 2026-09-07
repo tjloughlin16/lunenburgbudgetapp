@@ -35,6 +35,17 @@ NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
 # The sha256 of the database last successfully imported. Tracked in git, so a clone knows
 # whether the live copy is the one this repository describes.
 PUSHED = os.path.join(ROOT, 'sources', 'data', 'd1-pushed.txt')
+# What the last push actually SENT, recorded so `--plan` can say which tables the
+# published copy is missing without asking the network — which is the one thing you
+# cannot do when the reason you are planning is that the budget is spent.
+PUSHED_TABLES = os.path.join(ROOT, 'sources', 'data', 'd1-pushed-tables.txt')
+
+
+def _last_tables():
+    """Tables the last recorded push sent. Empty when we have never recorded one."""
+    if not os.path.exists(PUSHED_TABLES):
+        return []
+    return [l.strip() for l in open(PUSHED_TABLES) if l.strip()]
 
 
 def db_sha256():
@@ -105,6 +116,8 @@ def main():
                     help='compare row counts and fail on any difference')
     ap.add_argument('--force', action='store_true',
                     help='import even if this database has already been imported')
+    ap.add_argument('--plan', action='store_true',
+                    help='say what a push WOULD do, without touching the network')
     args = ap.parse_args()
 
     if not os.path.exists(DB):
@@ -125,6 +138,41 @@ def main():
     here = db_sha256()
     last = open(PUSHED).read().strip() if os.path.exists(PUSHED) else ''
     rows = sum(local_counts().values())
+
+    if args.plan:
+        # OFFLINE ON PURPOSE. When the daily write budget is gone the honest question is
+        # "is a push still owed, and how big is it" — and answering that by asking D1
+        # spends a request against the thing you are already out of. Everything here is
+        # read from the local database and the recorded sha of the last push.
+        counts = local_counts()
+        con = sqlite3.connect(DB)
+        idx = con.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='index'"
+                          ).fetchone()[0]
+        due = here != last
+        print('D1 push plan — nothing was sent, nothing was read from the network\n')
+        print(f'  local database   {here[:12]}  {len(counts)} tables, {rows:,} rows')
+        print(f'  last pushed      {(last[:12] or "never"):12}  '
+              f'{"DIFFERENT — a push is owed" if due else "identical — nothing to push"}')
+        print(f'  indexes          {idx}')
+        print(f'\n  a full replace writes ~{rows:,} rows plus index maintenance.')
+        print(f'  The free tier allows 100,000 writes a day. This database is larger than')
+        print(f'  that, and the last full replace still succeeded, so the accounting is')
+        print(f'  not simply rows x 2 — but it is the right order of magnitude and four')
+        print(f'  re-imports in a day is what exhausted the budget on 5 September.')
+        if due:
+            known = _last_tables()
+            new_t = sorted(set(counts) - set(known)) if known else []
+            if not known:
+                print('\n  (which tables the published copy holds is not recorded yet — '
+                      'the next\n   push writes d1-pushed-tables.txt and this line gets '
+                      'specific.)')
+            if new_t:
+                print(f'\n  tables NOT yet in the published copy: {", ".join(new_t)}')
+                print(f'  Until this is pushed, anything querying the API for them gets')
+                print(f'  "no such table" — including the schema page\'s own modal.')
+            print(f'\n  When the budget resets:  python3 scripts/sync_d1.py')
+        return 0
+
     if here == last and not args.force:
         print(f'nothing to do: D1 already holds this database ({here[:12]}).\n'
               f'  A full replace writes about {rows:,} rows against a free-tier limit of\n'
@@ -193,6 +241,8 @@ def main():
         return 1
     with open(PUSHED, 'w') as fh:
         fh.write(here + '\n')
+    with open(PUSHED_TABLES, 'w') as fh:
+        fh.write('\n'.join(sorted(want)) + '\n')
     print(f'ok: D1 matches — {len(want)} tables, {sum(want.values()):,} rows')
     return 0
 
