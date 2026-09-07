@@ -248,7 +248,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
   <div class="metric"><div class="v">78</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
   <div class="metric"><div class="v">70,013</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">954</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">955</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">80%</div><div class="l">columns described</div></div>
 </div>
 
@@ -1086,12 +1086,13 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>role</code></td><td class="ty">TEXT</td><td>What kind of table it is: fact, dimension, extract, classification, provenance or derived.<br><span class="ccaut">Facts carry the measurements. Everything else describes, extracts, classifies or checks them.</span></td></tr>
 <tr><td><code>source_file</code></td><td class="ty">TEXT</td><td>The file the figure was read from.</td></tr>
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td><td>Where in the source the figure sits — a cell, a line, a page.<br><span class="ccaut">Rule 13: a coordinate, so a figure can be checked rather than taken.</span></td></tr>
+<tr><td><code>label_ref</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>town</th><th>year</th><th>line</th><th>amount</th><th>role</th><th>source_file</th><th>source_ref</th></tr>
-<tr><td>Lunenburg</td><td>2022</td><td>Free Cash Certified Prior Year</td><td>2666962.00</td><td>prior_year_certified</td><td>dls/free-cash-proof-lunenburg.xlsx</td><td>Sheet1!A4</td></tr>
-<tr><td>Townsend</td><td>2024</td><td>Add Overlay Surplus Closed (CL#13)</td><td>0.00</td><td>component</td><td>dls/free-cash-proof-townsend.xlsx</td><td>Sheet1!A13</td></tr>
-<tr><td>Uxbridge</td><td>2022</td><td>Revenue Deficits</td><td>0.00</td><td>component</td><td>dls/free-cash-proof-uxbridge.xlsx</td><td>Sheet1!A6</td></tr>
+<div class="scroll"><table class="samp"><tr><th>town</th><th>year</th><th>line</th><th>amount</th><th>role</th><th>source_file</th><th>source_ref</th><th>label_ref</th></tr>
+<tr><td>Lunenburg</td><td>2022</td><td>Free Cash Certified Prior Year</td><td>2666962.00</td><td>prior_year_certified</td><td>state-dls/free-cash-proof-lunenburg.xlsx</td><td>Sheet1!C4</td><td>Sheet1!A4</td></tr>
+<tr><td>Townsend</td><td>2024</td><td>Add Overlay Surplus Closed (CL#13)</td><td>0.00</td><td>component</td><td>state-dls/free-cash-proof-townsend.xlsx</td><td>Sheet1!E13</td><td>Sheet1!A13</td></tr>
+<tr><td>Uxbridge</td><td>2022</td><td>Revenue Deficits</td><td>0.00</td><td>component</td><td>state-dls/free-cash-proof-uxbridge.xlsx</td><td>Sheet1!C6</td><td>Sheet1!A6</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>report_capital_projects</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">616 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_capital_projects">Query table</button></span><span class="gr">one row per printed line</span></summary>

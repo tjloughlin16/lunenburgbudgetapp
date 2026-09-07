@@ -101,25 +101,59 @@ def read(town):
     return name, years, rows, components
 
 
+def cell_ref(row_index, year_index):
+    """The cell the AMOUNT is in — not the cell its label is in.
+
+    THIS WAS WRONG FOR EVERY ROW IN THE FILE. `source_ref` was emitted as
+    `Sheet1!A<row>` regardless of year, which is column A: the LABEL. The amounts live in
+    columns B to F, one per year. So all 630 citations named the right row and the wrong
+    column, and a reader who followed one landed on the words `Current Year Calculation`
+    where they had been promised `3,354,370`.
+
+    Rule 12 says a figure is only checkable if somebody can get back to the document it
+    came from. A citation that resolves to a label is not a weaker citation; it is one that
+    fails at exactly the moment somebody tries to use it, and never before — which is why
+    it survived from the first extraction to the day a page tried to print the coordinates
+    beside the figures and had to derive them itself.
+
+    Columns: B is `2 + 0`, so year index i is column `2 + i`. Rows start at 4.
+    """
+    return 'Sheet1!%s%d' % (openpyxl.utils.get_column_letter(2 + year_index),
+                            4 + row_index)
+
+
 def main():
     out, checks = [], 0
     for town in TOWNS:
         name, years, rows, components = read(town)
         checks += len(years) + len(years) - 1
+        # Re-opened to assert each citation against the workbook rather than trusting the
+        # arithmetic above. A coordinate this file computes and never checks is the same
+        # class of claim as the one it just replaced.
+        ws = openpyxl.load_workbook(
+            os.path.join(SRC, f'free-cash-proof-{town}.xlsx'), data_only=True)['Sheet1']
         for i, y in enumerate(years):
             for label, vals in rows.items():
+                ref = cell_ref(list(rows).index(label), i)
+                got = ws[ref.split('!', 1)[1]].value or 0
+                if round(float(got), 2) != round(float(vals[i]), 2):
+                    sys.exit(f'{town} {y} {label!r}: cited {ref} holds {got!r}, not '
+                             f'{vals[i]!r}. Refusing to write a citation that does not '
+                             f'resolve to its own figure.')
+                checks += 1
                 out.append(dict(
                     town=name, year=y, line=label, amount=f'{vals[i]:.2f}',
                     role=('certified' if label == CERTIFIED else
                           'prior_year_certified' if label == PRIOR else
                           'identified_total' if label == IDENTIFIED else 'component'),
                     source_file=f'state-dls/free-cash-proof-{town}.xlsx',
-                    source_ref=f'Sheet1!A{4 + list(rows).index(label)}'))
+                    source_ref=ref,
+                    label_ref=f'Sheet1!A{4 + list(rows).index(label)}'))
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['town', 'year', 'line', 'amount', 'role',
-                                           'source_file', 'source_ref'])
+                                           'source_file', 'source_ref', 'label_ref'])
         w.writeheader()
         w.writerows(out)
 

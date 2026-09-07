@@ -370,7 +370,7 @@ def build():
     c = sqlite3.connect(DB)
     c.row_factory = sqlite3.Row
     raw = [dict(r) for r in c.execute(
-        'SELECT town, year, line, amount, role, source_file, source_ref '
+        'SELECT town, year, line, amount, role, source_file, source_ref, label_ref '
         'FROM free_cash_proof')]
     if not raw:
         fail('free_cash_proof is empty — the table this page is built from matched nothing')
@@ -437,14 +437,19 @@ def build():
             chained += 1
 
     # ------------------------------------- CHECK 4: the coordinate, against the workbook
-    # `source_ref` is the label cell in column A for every year. The amount lives in the
-    # year's own column, and that is what the page cites. Verified against the file when
-    # the file is on disk (a fresh clone has the manifest and not the bytes).
+    # `source_ref` NOW NAMES THE AMOUNT'S OWN CELL, and `label_ref` names the label in
+    # column A. It did not: every row cited `Sheet1!A<row>` whatever the year, so all 630
+    # citations gave the right row and the wrong column, and this page derived the real
+    # coordinate itself by pushing the row into the year's column.
+    #
+    # That workaround is gone. The extractor emits both coordinates and asserts each one
+    # against the workbook before it writes, so the fix lives where the defect was rather
+    # than in the one consumer that happened to notice. This still re-checks them here,
+    # because a citation is a promise to a READER and the page is what makes it.
     def ref(line, year):
-        src = next(r['source_ref'] for r in raw
-                   if r['town'] == TOWN and r['year'] == year and r['line'] == line)
-        row = src.split('!A')[1]
-        return f'Sheet1!{col_letter(years.index(year))}{row}', f'Sheet1!A{row}'
+        r = next(r for r in raw
+                 if r['town'] == TOWN and r['year'] == year and r['line'] == line)
+        return r['source_ref'], r['label_ref']
 
     checked_cells = 0
     wb_path = os.path.join(WORKBOOKS, f'free-cash-proof-{TOWN.lower()}.xlsx')

@@ -2019,7 +2019,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 19091456,
+     "bytes": 19103744,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2072,6 +2072,18 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
+     "path": "data/free-cash-proof.csv",
+     "title": "Free cash, nine towns, five years, line by line",
+     "stars": 3,
+     "what": "630 rows: town, year, proof line, amount, the role that line plays in the calculation, and the cell it came from. Rebuild with scripts/extract_free_cash.py, which reconciles every town-year against two totals the source prints itself and refuses to write if any of the 81 checks fails.",
+     "kind": "Data",
+     "bytes": 83744,
+     "url": "/docs/data/free-cash-proof.csv",
+     "count": 630,
+     "unit": "rows",
+     "textUrl": "/docs/data/free-cash-proof.csv"
+    },
+    {
      "path": "data/document-basis.csv",
      "title": "What produced each document’s figures",
      "stars": 3,
@@ -2082,18 +2094,6 @@
      "count": 322,
      "unit": "rows",
      "textUrl": "/docs/data/document-basis.csv"
-    },
-    {
-     "path": "data/free-cash-proof.csv",
-     "title": "Free cash, nine towns, five years, line by line",
-     "stars": 3,
-     "what": "630 rows: town, year, proof line, amount, the role that line plays in the calculation, and the cell it came from. Rebuild with scripts/extract_free_cash.py, which reconciles every town-year against two totals the source prints itself and refuses to write if any of the 81 checks fails.",
-     "kind": "Data",
-     "bytes": 73294,
-     "url": "/docs/data/free-cash-proof.csv",
-     "count": 630,
-     "unit": "rows",
-     "textUrl": "/docs/data/free-cash-proof.csv"
     },
     {
      "path": "data/athletics-by-sport.csv",
@@ -5837,7 +5837,7 @@
  "totals": {
   "documents": 472,
   "groups": 20,
-  "bytes": 1003817093,
+  "bytes": 1003839831,
   "loadBearing": 76
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
