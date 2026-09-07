@@ -40,7 +40,7 @@
  * publish. An endpoint that can produce one has to admit when it has.
  */
 
-import { ROWS } from './_tablesizes.js'
+import { ROWS, UNIQUE } from './_tablesizes.js'
 
 const SITE = 'https://lunenburgbudgetproject.org'
 const MAX_ROWS = 1000
@@ -83,10 +83,39 @@ function estimate(sql) {
   if (!names.length) return { rows: 0, tables: [] }
   const known = names.filter(n => n in ROWS)
   if (!known.length) return { rows: 0, tables: [] }
-  // First table scanned; each further table is a join, so multiply -- capped so a
-  // three-way join of small tables is not refused for arithmetic reasons alone.
+
+  // Which joined tables are reached through a UNIQUE column. Multiplying is right for a
+  // join that can pair every row with every row; it is wrong for an equi-join on a unique
+  // key, where each row matches AT MOST ONE. `ledger_snapshot JOIN account USING
+  // (account_id)` cannot read more than the two tables together -- about 1,964 rows --
+  // and estimating 983 x 981 = 964,323 refused it outright.
+  //
+  // The unique columns come from the schema (single-column primary keys and unique
+  // indexes), never from a column's name: a column called `id` that is NOT unique would
+  // make this optimistic, and an optimistic cost guard is worse than none.
+  const cheap = new Set()
+  const joins = sql.matchAll(
+    /\bjoin\s+["'`]?([a-z_][a-z0-9_]*)["'`]?(?:\s+(?:as\s+)?["'`]?[a-z_][a-z0-9_]*["'`]?)?\s*(using\s*\(([^)]*)\)|on\s+([^\n]*?)(?=\bjoin\b|\bwhere\b|\bgroup\b|\border\b|\blimit\b|$))/gi)
+  for (const m of joins) {
+    const t = m[1].toLowerCase()
+    const keys = UNIQUE[t]
+    if (!keys) continue
+    const clause = (m[3] || m[4] || '').toLowerCase()
+    // Bare column names in the clause, ignoring any table/alias qualifier.
+    const cols = [...clause.matchAll(/([a-z_][a-z0-9_]*)\s*(?=[,)]|$|=)|\.\s*([a-z_][a-z0-9_]*)/g)]
+      .flatMap(x => [x[1], x[2]]).filter(Boolean)
+    if (keys.some(k => cols.includes(k))) cheap.add(t)
+  }
+
+  // First table scanned; each further table is a join, so multiply -- unless it was
+  // reached through a unique key, in which case it adds. Capped so a three-way join of
+  // small tables is not refused for arithmetic reasons alone.
   let rows = ROWS[known[0]]
-  for (const n of known.slice(1)) rows = Math.min(rows * Math.max(ROWS[n], 1), 1e9)
+  for (const n of known.slice(1)) {
+    rows = cheap.has(n)
+      ? rows + Math.max(ROWS[n], 1)
+      : Math.min(rows * Math.max(ROWS[n], 1), 1e9)
+  }
   return { rows, tables: known }
 }
 

@@ -17,6 +17,7 @@ export const ROWS = {
  "budget_line": 688,
  "capital_funding_history": 10,
  "capital_plan_fy27": 22,
+ "column_glossary": 130,
  "crosswalk": 0,
  "dataset_document": 225,
  "dese_measure": 2982,
@@ -67,6 +68,7 @@ export const ROWS = {
  "staff_roster_counts": 699,
  "staff_roster_entries": 3815,
  "stated_figure": 2,
+ "table_semantics": 72,
  "total_expenses_history": 28,
  "total_salaries_history": 28,
  "town_ledger_fy26_q3": 67,
@@ -88,4 +90,25 @@ export const ROWS = {
  "v_workbook_budget_vs_actual": 9503,
  "variance_by_group": 59,
  "workbook_figure": 3261
+}
+
+// Columns that are UNIQUE on each table, from the schema — single-column
+// primary keys and unique indexes. A join on one of these matches at most
+// one row, so its cost ADDS rather than multiplies.
+export const UNIQUE = {
+ "account": [
+  "account_id"
+ ],
+ "budget_line": [
+  "line_key"
+ ],
+ "document": [
+  "doc_id"
+ ],
+ "fiscal_period": [
+  "period"
+ ],
+ "fund": [
+  "fund"
+ ]
 }

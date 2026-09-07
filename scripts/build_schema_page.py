@@ -462,13 +462,17 @@ def render(c):
             n, cols, years = profile(c, t)
             sem = tabs[t]
             spine = ' spine' if t in SPINE else ''
-            a('<details class="t%s"><summary><code>%s</code>%s '
-              '<span class="n">%s row%s</span>%s<span class="gr">%s</span></summary>'
+            dq = sem.get('default_query') or ''
+            qattr = ' data-q="%s"' % esc(dq) if dq else ''
+            a('<details class="t%s"><summary><span class="srow"><code>%s</code>%s '
+              '<span class="n">%s row%s</span>%s'
+              '<button class="open" data-t="%s"%s>Query table</button></span>'
+              '<span class="gr">%s</span></summary>'
               % (spine, esc(t),
                  ' <span class="badge">the spine</span>' if spine else '',
                  f'{n:,}', '' if n == 1 else 's',
                  f' <span class="yr">{esc(years)}</span>' if years else '',
-                 esc(sem['grain'])))
+                 esc(t), qattr, esc(sem['grain'])))
             a(f'<p class="ans">{md(sem["what_it_answers"])}</p>')
             if sem.get('caution'):
                 a(f'<p class="warn">{md(sem["caution"])}</p>')
@@ -487,12 +491,6 @@ def render(c):
                 a(f'<tr><td><code>{esc(name)}</code></td>'
                   f'<td class="ty">{esc(typ)}</td><td>{what}</td></tr>')
             a('</table></div>')
-            dq = sem.get('default_query') or ''
-            qattr = ' data-q="%s"' % esc(dq) if dq else ''
-            joined = 'opens with its names joined back &middot; ' if dq else ''
-            a('<p class="openrow"><button class="open" data-t="%s"%s>'
-              'Open full table &rarr;</button> <span class="cap sm">%s'
-              'queries the live API</span></p>' % (esc(t), qattr, joined))
             rows = sample(c, t)
             if rows:
                 a(f'<p class="cap sm">First {len(rows)} row'
@@ -631,7 +629,11 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
 .unit {{ font-size:10.5px; color:var(--muted); text-transform:uppercase;
   letter-spacing:.06em }}
 .ccaut {{ font-size:12px; color:var(--hi) }}
-.openrow {{ margin:10px 0 0 }}
+.srow {{ display:flex; align-items:baseline; gap:9px; flex-wrap:wrap }}
+.srow code {{ font-size:13.5px }}
+/* Pushed to the right edge so every table's control lands in the same column — a button
+   that moves with the length of the name beside it has to be hunted for on each row. */
+.srow button.open {{ margin-left:auto }}
 button.open, #mrun, #mx {{ font:inherit; font-size:12px; padding:4px 10px;
   border:1px solid var(--grid); border-radius:6px; background:var(--card);
   color:var(--ink); cursor:pointer }}
@@ -927,6 +929,8 @@ async function run(sql) {{
 document.addEventListener('click', e => {{
   const b = e.target.closest('button.open');
   if (b) {{
+    // The button lives inside <summary>, so a click would also toggle the disclosure.
+    e.preventDefault();
     mt.textContent = b.dataset.t;
     msql.value = b.dataset.q || ('SELECT * FROM ' + b.dataset.t + ' LIMIT 1000');
     modal.hidden = false;

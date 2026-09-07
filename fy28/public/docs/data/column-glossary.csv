@@ -128,3 +128,4 @@ role,"What kind of table it is: fact, dimension, extract, classification, proven
 what_it_answers,"The question one row of this table answers.",,ours,
 meaning,"What the column holds.",,ours,
 caution,"What goes wrong if this is used without knowing the above.",,ours,"Every entry here was written after getting it wrong at least once."
+default_query,"The query the schema page's modal opens this table with.",,ours,"Set only where a bare SELECT * is unhelpful — a fact table keyed on a code shows numbers with no words until its dimension is joined back."
