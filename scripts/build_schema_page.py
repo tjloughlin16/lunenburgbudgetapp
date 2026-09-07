@@ -275,11 +275,21 @@ def by_scope(c, tabs):
     out = []
     for scope, title, blurb in SCOPES:
         members = [t for t in tables if tabs[t]['scope'] == scope]
-        # Spine first, then finest money detail first, then by name: a reader scanning for
-        # "where are the actual accounts" should not have to read every row to find them.
-        members.sort(key=lambda t: (t not in SPINE,
-                                    SPINE.index(t) if t in SPINE else 0,
-                                    -int(tabs[t]['tier'] or 0), t))
+        # BY TIER, THEN ALPHABETICALLY. TJ: "whats the order of the tables? I can't figure
+        # it out" — and he could not because there wasn't one worth working out. It was
+        # spine-first, then FINEST money detail first, then by name: three rules, one of
+        # them backwards, none of them written down anywhere a reader could see.
+        #
+        # An order nobody can infer is the same as no order. Tier ascending reads the way
+        # the join map does — totals, then categories, then accounts, then the tables that
+        # are not about money at all — and `tier` is on the page as a badge already, so
+        # the rule is visible rather than needing explanation. Ties break alphabetically,
+        # which needs no explanation at all.
+        #
+        # The spine is no longer forced to the top. It is still marked, and marking is
+        # what it needed: a special case in the SORT made the sequence unreadable to buy
+        # three rows a head start.
+        members.sort(key=lambda t: (int(tabs[t]['tier'] or 9), t))
         out.append((scope, title, blurb, members))
     return out
 
@@ -448,9 +458,17 @@ def render(c):
         a(f'<div class="stage"><h2>{esc(title)}</h2>')
         if blurb:
             a(f'<p class="cap">{md(" ".join(blurb.split()))}</p>')
+        seen_tier = None
         for t in members:
             n, cols, years = profile(c, t)
             sem = tabs[t]
+            # The order is shown rather than described. A reader who cannot see why one
+            # table follows another concludes there is no reason, and is right to.
+            if sem.get('tier') != seen_tier:
+                seen_tier = sem.get('tier') or ''
+                head = (f'{TIERS[seen_tier][0]} — {TIERS[seen_tier][1]}' if seen_tier
+                        else 'Not about money')
+                a(f'<p class="tierhead">{esc(head)}</p>')
             spine = ' spine' if t in SPINE else ''
             dq = sem.get('default_query') or ''
             qattr = ' data-q="%s"' % esc(dq) if dq else ''
@@ -663,6 +681,10 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
 .unit {{ font-size:10.5px; color:var(--muted); text-transform:uppercase;
   letter-spacing:.06em }}
 .ccaut {{ font-size:12px; color:var(--hi) }}
+.tierhead {{ font-size:11px; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--muted); margin:18px 0 4px; padding-top:8px;
+  border-top:1px solid var(--grid) }}
+details + .tierhead {{ margin-top:20px }}
 .srow {{ display:flex; align-items:baseline; gap:9px; flex-wrap:wrap }}
 .srow code {{ font-size:13.5px }}
 /* Pushed to the right edge so every table's control lands in the same column — a button
