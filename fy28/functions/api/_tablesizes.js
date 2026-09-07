@@ -43,7 +43,7 @@ export const ROWS = {
  "money_assumptions": 6,
  "money_classification": 252,
  "money_edges": 11,
- "money_gaps": 37,
+ "money_gaps": 39,
  "munis_ledger": 983,
  "ood_tuition_history": 30,
  "peg_access": 110,

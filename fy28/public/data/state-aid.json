@@ -185,6 +185,18 @@
    "side": "money_in",
    "what": "Where the PEG Access balance went between FY2019 and FY2021",
    "why": "The fund's carried balance is continuous in the report from FY2015 to FY2019 -- each edition's Starting Balance is the previous edition's Ending Balance to the cent -- and then stops being a series. FY2019 prints a Total of $573,837.37 (starting balance, plus revenue, less expenses, plus the Comcast Tech Fund of $124,796.01); FY2020 opens at $447,813.36, $126,024.01 lower; FY2021 opens at $272,000.00, which the same page's prose states is the budget rather than a balance. One document explains part of it: Article 16 of the FY2019 Annual Town Meeting established a PEG Access Enterprise Fund under MGL c.44 s53F1/2 and transferred into it the balances of the PEG Access and Cable Related Receipts Reserved For Appropriation Fund and the Comcast Tech Capital Grant Fund as of 30 June 2019. So the fund changed legal form at exactly this point, which is why the statement changes shape. WHAT IS NOT ESTABLISHED: the amounts transferred, and therefore whether the $126,024.01 step is the transfer, a closing entry, a restatement, or something else. There is also a smaller unexplained step earlier, FY2017's Ending Balance $303,909.77 against FY2018's Starting Balance $303,551.54, $358.23 apart, with no fund change to account for it. -- closes: the Town Accountant's opening and closing trial balances for the PEG Access and Cable Related funds for FY2018, FY2019 and FY2020, showing the transfers in and out."
+  },
+  {
+   "closes": "the Cherry Sheets themselves (DLS form CS 1-ER for Lunenburg, one per year), or the Town Manager\u2019s working file behind the FY2027 booklet\u2019s revenue narrative.",
+   "side": "money_in",
+   "what": "What quantity the Town\u2019s own published state-aid growth rates of 5.3% and 1.4% measure",
+   "why": "The FY2027 Town Meeting booklet states that \"From FY13-FY23 state aid increased at an annual rate of 5.3%, but in the last four years, it has slowed to approximately 1.4%\" (3765-town-meeting-booklet-including-warrant, line 338), and does not say which figure it grew. Rebuilding the Town\u2019s own `Subtotal State Aid` line from its own revenue/expenditure worksheets \u2014 23 consecutive budget years, FY2005 to FY2027, notes/findings/state-aid-budget-series.csv \u2014 gives 4.5660% for FY2013\u2192FY2023 and 1.9144% for FY2023\u2192FY2027. Neither published rate is reproducible from the Town\u2019s own published series, so a rate quoted to Town Meeting cannot be checked against anything."
+  },
+  {
+   "closes": "the FY2027 Cherry Sheet for Lunenburg on the enacted budget (DLS form CS 1-ER), which states each receipt and each assessment separately.",
+   "side": "money_in",
+   "what": "How much of the FY2027 enacted state-aid increase is receipts and how much is offsetting assessments",
+   "why": "model/finance.py grows a FY2027 base of $11,404,917 + $471,121. The first is the Governor\u2019s GROSS cherry sheet Total Receipts, printed by the FY2027 Town Meeting booklet. The second is recorded in fy27-and-the-override.md as NET \u2014 \"+$471,121 net (Ch.70, charter/choice receiving tuition, Smart Growth, UGGA, vets/elderly exemptions; offset by higher charter assessments)\". A gross figure and a net figure are being added, so the gross FY2027 receipt estimate the projection actually grows is not established, and neither is how much of the increase the Town keeps. This archive holds no Cherry Sheet for any year, which is the only document that prints receipts and assessments side by side."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

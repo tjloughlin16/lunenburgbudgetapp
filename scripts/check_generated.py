@@ -143,6 +143,20 @@ CHECKS = [
     # `object LIKE '45%'` is neither all state aid nor only state aid — two of those
     # accounts are local option taxes the state merely collects.
     ('build_state_aid.py', ['--check']),
+    # The BUDGET-to-BUDGET state aid series, FY2005-FY2027 -- the like-for-like
+    # counterpart to the receipts series above, and the evidence behind decision D10 in
+    # notes/findings/STATE-AID-RATE.md. It catches four kinds of drift nothing else here
+    # would: a heading moving inside the FY19 budget handout workbook (whose year labels
+    # sit on TWO rows, and three of whose twenty columns are a projection, an ACTUAL and a
+    # duplicate override column that must never enter a budget series); five later
+    # worksheets RESTATING the same fiscal year with different figures; the FY2027 Town
+    # Meeting booklet's cherry sheet components no longer summing to its own printed
+    # `Total Receipts`; and the definitional bridge -- the booklet counts School Choice
+    # Receiving in the total and every earlier worksheet does not, so the series is only
+    # publishable while 10,776,998.00 - 94,912.00 still equals the 10,682,086.00 the 2024
+    # Annual Town Meeting booklet prints for the same year. It also refuses if
+    # model/finance.py's FY27 state aid base stops being the figure this series ends on.
+    ('build_state_aid_series.py', ['--check']),
     # The free-cash page's series. It is the only generator here that reads FOUR
     # independent things and reconciles them against each other, so it catches the most
     # kinds of drift at once: the Division of Local Services' free cash proof (whose
