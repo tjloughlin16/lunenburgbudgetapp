@@ -790,6 +790,28 @@ GROUPS = [
              'Where the receipts came from', 2,
              'Written by us: the page each year was read from, the two totals each year '
              'is checked against, and what the status column means.'),
+            ('data/special-revenue-read.csv',
+             'The special revenue funds, read from the page', 3,
+             'The FY2011\u2013FY2025 schedule of every fund outside the general '
+             'appropriation \u2014 forward balance, receipts, disbursements, carried '
+             'forward \u2014 transcribed by reading the rendered page rather than by OCR. '
+             '**It is the only version of this table that ties to its own printed grand '
+             'total.** FY2022: 167 funds, all four columns to the penny, and every row '
+             'satisfying the identity the table states. A figure read off an image is a '
+             'READING and carries the same status as the OCR\u2019s; what makes it '
+             'trustworthy is that the report\u2019s own printed total and the row identity '
+             'both check it. See data/PROVENANCE-special-revenue-read.md.'),
+            ('data/special-revenue-printed-totals.csv',
+             'The GRAND TOTAL each report prints', 2,
+             'The independent check on the file above, quoted off the page with its page '
+             'number. Kept separate and never computed from our own rows \u2014 the OCR '
+             'misread this very figure by $1,010, so the reconciliation had been measured '
+             'against a wrong target.'),
+            ('data/PROVENANCE-special-revenue-read.md',
+             'Why the schedule is read rather than OCR\u2019d', 2,
+             'Written by us: what the OCR actually got wrong, with the four cases; why a '
+             'reading is trustworthy only because two independent things check it; and how '
+             'to add a year.'),
             ('data/table-semantics.csv',
              'What each table in the database is', 2,
              'Written by us. One row per table: its ROLE (fact, dimension, extract, '

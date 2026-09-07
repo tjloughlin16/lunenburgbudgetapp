@@ -1,7 +1,7 @@
 # The Lunenburg Budget Project
 
 An independent, checkable archive of the Lunenburg, Massachusetts town and school budget:
-3,877 documents, 64 datasets, and 1,422 agendas and sets
+3,877 documents, 66 datasets, and 1,422 agendas and sets
 of minutes across 40 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
@@ -46,7 +46,7 @@ here, under `sources/*/text/`, and that is what the analysis reads.
 | | |
 |---|---|
 | `sources/` | the archive, keyed by **how a document reached us** — see `sources/README.txt` |
-| `sources/data/` | 64 datasets extracted from those documents, CSV |
+| `sources/data/` | 66 datasets extracted from those documents, CSV |
 | `sources/analyses/` | the written analyses, each with a verifier script |
 | `model/` | the projection — `python3 model/export.py` writes `fy28/src/data/model.json` |
 | `scripts/` | extraction, verification and publishing |

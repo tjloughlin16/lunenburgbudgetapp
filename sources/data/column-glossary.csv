@@ -131,3 +131,10 @@ caution,"What goes wrong if this is used without knowing the above.",,ours,"Ever
 default_query,"The query the schema page's modal opens this table with.",,ours,"Set only where a bare SELECT * is unhelpful — a fact table keyed on a code shows numbers with no words until its dimension is joined back."
 scope,"Whose money or whose subject the table is about: school, town, both, state or archive.",,ours,"`both` is not a hedge — the ledger and the chart of accounts genuinely carry every department, and splitting them would be inventing a division the source does not make."
 tier,"How finely the money is resolved: 1 totals, 2 categories, 3 accounts. Blank where the table is not about money.",,ours,"From the join map. Tier 1 answers what was appropriated and what is left; tier 2 which category is over; tier 3 what one account spent. The tier below 3 — which revenue paid which expense — no report reaches."
+forward,"Balance the fund brought forward from the previous year, as the schedule prints it.",dollars,publisher,
+receipts,"Total money the fund took in during the year.",dollars,publisher,"Not the same quantity as disbursements and must never be added to it."
+disbursements,"Total money the fund paid out during the year.",dollars,publisher,
+carried,"Balance the fund carried forward into the next year.",dollars,publisher,"Ties to the NEXT year's `forward`, which is a check across years the schedule makes possible."
+row_ties,"Whether this row satisfies forward + receipts − disbursements = carried.",,derived,"The identity the table itself states. A row that does not tie is a transcription error or a printing error, and which one is not decided here."
+read_by,"Which instrument produced the figures: `vision` for a page read directly.",,ours,"A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source."
+quote,"What the source says, verbatim.",,publisher,

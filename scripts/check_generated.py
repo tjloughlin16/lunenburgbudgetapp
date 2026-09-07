@@ -60,6 +60,10 @@ CHECKS = [
     # KeyError and the committed CSV could not be regenerated. It was not in this list,
     # which is the file whose whole job is catching that.
     ('extract_special_revenue.py', ['--check']),
+    # The read-from-the-page version, checked against the report's own printed GRAND TOTAL
+    # and against the identity the table states. Two independent checks; a year that does
+    # not pass both is not in the dataset.
+    ('verify_special_revenue_read.py', []),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),

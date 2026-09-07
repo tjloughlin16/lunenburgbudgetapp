@@ -197,11 +197,11 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 </header>
 
 <div class="metrics">
-  <div class="metric"><div class="v">72</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">74</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">66,834</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">896</div><div class="l">columns</div></div>
-  <div class="metric"><div class="v">80%</div><div class="l">columns described</div></div>
+  <div class="metric"><div class="v">67,011</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">916</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
 
 <div class="stage alt"><h2>How this is arranged</h2>
@@ -1018,7 +1018,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>result</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>fy_report</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
-<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td>Which instrument produced the figures: <code>vision</code> for a page read directly.<br><span class="ccaut">A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source.</span></td></tr>
 <tr><td><code>checks</code></td><td class="ty">TEXT</td><td>Which checks this row passed.</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
@@ -1614,6 +1614,30 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>1311</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">22485.91</td><td class="num">0.0</td><td class="num">2910.68</td><td class="num">0.0</td><td class="num">109397.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
 </table></div>
 </details>
+<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">167 rows</span> <span class="yr">2022–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
+<p class="ans">The special revenue schedule READ from the rendered page rather than OCR&#x27;d: balance brought forward, total receipts, total disbursements, balance carried forward, per fund. <strong>The only version of this table that ties to its own printed grand total</strong> — FY2022, 167 funds, all four columns to the penny and every row balancing.</p>
+<p class="warn">A figure read off an image is a READING, not a published number — same status as the OCR&#x27;s. It is trustworthy because the report&#x27;s own printed total and the table&#x27;s own identity both check it, not because a model produced it. Years that do not tie are not in here.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td><td>The department heading the row sits under, as printed.<br><span class="ccaut">A heading governs every row below it until the next one.</span></td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
+<tr><td><code>forward</code></td><td class="ty">TEXT</td><td>Balance the fund brought forward from the previous year, as the schedule prints it. <span class="unit">dollars</span></td></tr>
+<tr><td><code>receipts</code></td><td class="ty">TEXT</td><td>Total money the fund took in during the year. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as disbursements and must never be added to it.</span></td></tr>
+<tr><td><code>disbursements</code></td><td class="ty">TEXT</td><td>Total money the fund paid out during the year. <span class="unit">dollars</span></td></tr>
+<tr><td><code>carried</code></td><td class="ty">TEXT</td><td>Balance the fund carried forward into the next year. <span class="unit">dollars</span><br><span class="ccaut">Ties to the NEXT year&#x27;s <code>forward</code>, which is a check across years the schedule makes possible.</span></td></tr>
+<tr><td><code>row_ties</code></td><td class="ty">TEXT</td><td>Whether this row satisfies forward + receipts − disbursements = carried.<br><span class="ccaut">The identity the table itself states. A row that does not tie is a transcription error or a printing error, and which one is not decided here.</span></td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td>Which instrument produced the figures: <code>vision</code> for a page read directly.<br><span class="ccaut">A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>group</th><th>fund</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>row_ties</th><th>document</th><th>read_by</th></tr>
+<tr><td class="num">2022</td><td>FY2022</td><td>34</td><td>SCHOOL DEPARTMENT</td><td>Title IV - Part A #309</td><td>2898.72</td><td>3816.00</td><td>2341.00</td><td>4373.72</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2022</td><td>FY2022</td><td>36</td><td>HIGHWAY DEPARTMENT</td><td>Small Bridge Program Grant</td><td>-50767.07</td><td>315917.39</td><td>265150.32</td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2022</td><td>FY2022</td><td>37</td><td>UNCLASSIFIED</td><td>Community Compact - Syber Security Grant</td><td>50.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>50.00</td><td>yes</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
 <p class="ans">What each MUNIS accounting period means and how many months of the year had elapsed. Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
 <p class="warn">Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
@@ -1737,6 +1761,24 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2027</td><td>contract_cola</td><td>Paraprofessionals</td><td>cost-of-living adjustment to the salary sca…</td><td>2.0</td><td>percent</td><td><span class="nul">empty</span></td><td>June 30, 2028</td><td>Lunenburg school employee contracts — Parap…</td><td>contracts/CONTRACTS.md</td><td>Paraprofessionals | FY26–FY28 | 3.0% · 2.0%…</td><td>recorded</td><td>deliberately not used — the line has never …</td></tr>
 </table></div>
 </details>
+<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag">provenance</span> <span class="n">1 row</span> <span class="yr">2022–2022</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
+<p class="ans">The GRAND TOTAL each annual report PRINTS for the special revenue schedule, quoted with its page. Four columns.</p>
+<p class="warn">This is the independent check on <code>special_revenue_read</code>, so it must be read off the page and never computed from our own rows — the OCR misread this very figure by $1,010 and the reconciliation was measured against it for months.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
+<tr><td><code>forward</code></td><td class="ty">TEXT</td><td>Balance the fund brought forward from the previous year, as the schedule prints it. <span class="unit">dollars</span></td></tr>
+<tr><td><code>receipts</code></td><td class="ty">TEXT</td><td>Total money the fund took in during the year. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as disbursements and must never be added to it.</span></td></tr>
+<tr><td><code>disbursements</code></td><td class="ty">TEXT</td><td>Total money the fund paid out during the year. <span class="unit">dollars</span></td></tr>
+<tr><td><code>carried</code></td><td class="ty">TEXT</td><td>Balance the fund carried forward into the next year. <span class="unit">dollars</span><br><span class="ccaut">Ties to the NEXT year&#x27;s <code>forward</code>, which is a check across years the schedule makes possible.</span></td></tr>
+<tr><td><code>quote</code></td><td class="ty">TEXT</td><td>What the source says, verbatim.</td></tr>
+</table></div>
+<p class="cap sm">First 1 row, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>quote</th></tr>
+<tr><td class="num">2022</td><td>FY2022</td><td>37</td><td>6414742.67</td><td>9235154.01</td><td>7004408.01</td><td>8645488.67</td><td>GRAND TOTAL row, page 37</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>stated_figure</code> <span class="tag">fact</span> <span class="n">2 rows</span> <span class="yr">2025–2025</span><button class="open" data-t="stated_figure">Query table</button></span><span class="gr">one row per figure the town stated</span></summary>
 <p class="ans">Figures the town or district ASSERTED in their own words, with the quote, who said it, when, and what it supersedes. Claims, kept as claims.</p>
 <p class="warn"> with the quote.</p>
@@ -1749,7 +1791,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td><td>Where in the source the figure sits — a cell, a line, a page.<br><span class="ccaut">Rule 13: a coordinate, so a figure can be checked rather than taken.</span></td></tr>
-<tr><td><code>quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>quote</code></td><td class="ty">TEXT</td><td>What the source says, verbatim.</td></tr>
 <tr><td><code>supersedes</code></td><td class="ty">REAL</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
 </table></div>
@@ -1843,7 +1885,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>figure_rows</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>figures</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>columns</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td>Which instrument produced the figures: <code>vision</code> for a page read directly.<br><span class="ccaut">A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source.</span></td></tr>
 <tr><td><code>printed_total</code></td><td class="ty">TEXT</td><td>The total the source itself prints, quoted.<br><span class="ccaut">This is the independent check. An extract that does not tie to it is not trusted.</span></td></tr>
 <tr><td><code>checkable</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>csv_fields</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
@@ -1879,7 +1921,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2022</td><td>4129-fy-2022-annual-town-report.pdf</td><td>154</td><td>layout</td><td>0</td><td>0</td><td>3297</td><td>0</td><td>town_meeting</td><td><span class="nul">empty</span></td><td>text, no figures</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>column_glossary</code> <span class="tag">provenance</span> <span class="n">132 rows</span><button class="open" data-t="column_glossary">Query table</button></span><span class="gr">one row per DISTINCT column name across the whole database</span></summary>
+<details class="t"><summary><span class="srow"><code>column_glossary</code> <span class="tag">provenance</span> <span class="n">139 rows</span><button class="open" data-t="column_glossary">Query table</button></span><span class="gr">one row per DISTINCT column name across the whole database</span></summary>
 <p class="ans">One row per DISTINCT column name across the whole database: what it means, its unit, whether it is published or ours, and the caution attached to it.</p>
 <p class="warn">Keyed on the NAME, not on table plus name, because <code>v1</code> and <code>status</code> mean the same dangerous thing everywhere they appear. Where a name genuinely differs by table, the table entry says so.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1985,7 +2027,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag">provenance</span> <span class="n">72 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag">provenance</span> <span class="n">74 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
