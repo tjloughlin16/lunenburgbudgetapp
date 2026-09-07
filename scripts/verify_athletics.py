@@ -16,8 +16,21 @@ sys.path.insert(0, os.path.join(ROOT, 'model'))
 DOC = os.path.join(ROOT, 'sources/analyses/athletics.md')
 DATA = os.path.join(ROOT, 'sources/data')
 
+LEDGER_DOC = os.path.join(ROOT, 'sources/analyses/athletics-ledger.md')
+
 TEXT = open(DOC, encoding='utf-8').read()
 PLAIN = TEXT.replace('**', '').replace('`', '')
+
+# THE SECOND DOCUMENT WAS NEVER CHECKED BY ANYTHING.
+#
+# `athletics-ledger.md` states the comparison against the district's own workbook and the
+# share it implies, and both moved when three FY2024 rows were withdrawn. This file read
+# only `athletics.md`, so a figure could be recomputed, found wrong, corrected in one
+# document and left standing in the other -- which is what happened. A verifier that names
+# one document is a verifier with a blind spot the size of the second one.
+LEDGER = open(LEDGER_DOC, encoding='utf-8').read()
+LEDGER_PLAIN = LEDGER.replace('**', '').replace('`', '')
+
 FAILS = []
 
 
@@ -31,6 +44,18 @@ def present(label, needle):
     ok = (n in TEXT or n in PLAIN or norm(n) in norm(TEXT) or norm(n) in norm(PLAIN))
     if not ok:
         FAILS.append(f'{label}: "{n}" not in the document')
+    print(f"  {'OK  ' if ok else 'GONE'}  {label:<46} {n}")
+
+
+def present_ledger(label, needle):
+    """The same assertion, against athletics-ledger.md."""
+    def norm(t):
+        return t.replace('\u2212', '-').replace('\u2013', '-')
+    n = str(needle)
+    ok = (n in LEDGER or n in LEDGER_PLAIN
+          or norm(n) in norm(LEDGER) or norm(n) in norm(LEDGER_PLAIN))
+    if not ok:
+        FAILS.append(f'{label}: "{n}" not in athletics-ledger.md')
     print(f"  {'OK  ' if ok else 'GONE'}  {label:<46} {n}")
 
 
@@ -183,6 +208,41 @@ for fy, cost, rev in ((2014, 107257, 110474), (2017, 131551, 109351), (2018, 600
     present(f'FY{fy} margin', f'{rev - cost:+,}')
 for fy, cost, rev in ((2024, 129125, 128252.50), (2025, 53940, 117069.00)):
     present(f'FY{fy} margin', f'{rev - cost:+,.0f}')
+
+# --- the general fund series, recomputed from athletics_history ---------------------
+#
+# THIS BLOCK EXISTS BECAUSE THE VERIFIER PASSED WHILE THE TABLE WAS WRONG.
+#
+# Commit 07aa298 withdrew three FY2024 rows -- Freshman & MS Coaches, Unified Sports Coach
+# and Replacement of Uniforms -- when it fixed a workbook whose column mapping had let
+# unlabelled cells through. The analysis table predated that and went on printing 314,319
+# for a year the data now totals 285,281, a difference of exactly the three withdrawn rows.
+#
+# Nothing failed, because nothing checked the table: this file asserted the FY19 split
+# document, the workbook totals and the fund margins, and never the series the document
+# leads with. A figure sitting beside figures that ARE checked inherits their credibility
+# and none of their maintenance -- which is why it survived every read-through, and why the
+# fix is a check rather than more care.
+head('The general fund series, recomputed from athletics_history')
+import sqlite3
+_db = sqlite3.connect(os.path.join(DATA, 'lunenburg.db'))
+_gen = {fy: amt for fy, amt in _db.execute(
+    "SELECT fy, SUM(amount) FROM athletics_history WHERE side='general' GROUP BY fy")}
+for _fy in sorted(_gen):
+    present(f'FY{_fy} general fund total', f'{round(_gen[_fy]):,}')
+
+# The comparison against the district's own workbook, and the share it implies. Both
+# numbers moved when the three rows came out and only one of them was in this file.
+head('Section 5 -- appropriation against the workbook, FY2024')
+_WORKBOOK_FY24 = 351642.89          # the workbook's own total, checked below
+_UNMATCHED = 160980.00              # AD, trainer, insurance -- lines the workbook omits
+_comparable = round(_gen[2024] - _UNMATCHED, 2)
+present_ledger('FY2024 comparable general fund', f'{_comparable:,.2f}')
+present_ledger('FY2024 workbook cost', f'{_WORKBOOK_FY24:,.2f}')
+present_ledger('FY2024 share the appropriation covered', f'{_comparable / _WORKBOOK_FY24 * 100:.0f}%')
+present_ledger('FY2024 outside the general fund', f'{_WORKBOOK_FY24 - _comparable:,.2f}')
+if abs(_comparable + _UNMATCHED - _gen[2024]) > 0.005:
+    FAILS.append('the comparable and unmatched halves no longer sum to the FY2024 total')
 
 # --- document basis counts --------------------------------------------------------
 head('Source-type counts, from document-basis.csv')

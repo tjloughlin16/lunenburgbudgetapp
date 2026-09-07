@@ -2061,20 +2061,6 @@
  ],
  "recomputed": [
   {
-   "ours": 285281.0,
-   "published": 314319.0,
-   "what": "The general fund\u2019s FY2024 athletics appropriation",
-   "where": "athletics.md \u00a77",
-   "why": "Three FY2024 rows \u2014 Freshman & MS Coaches, Unified Sports Coach and Replacement of Uniforms \u2014 were withdrawn from athletics-history.csv in commit 07aa298, which corrected a workbook whose two fiscal years span eight columns and whose column mapping had let unlabelled cells through. The table in the analysis was generated before that."
-  },
-  {
-   "ours": 0.3535,
-   "published": 0.44,
-   "what": "Share of the workbook\u2019s cost the appropriation covered, FY2024",
-   "where": "athletics-ledger.md \u00a75",
-   "why": "The same three rows. Coaches on the general fund side was $65,073 with them and is $46,733 without, and the comparable total falls with it."
-  },
-  {
    "boolean": true,
    "ours": null,
    "published": null,
@@ -2091,7 +2077,7 @@
    "updated": "2026-09-07",
    "url": "/docs/analyses/athletics.md",
    "why": "The written analysis: both sides of the money, FY14 to FY26, and why an appropriation is not a cost",
-   "words": 7334
+   "words": 7302
   },
   {
    "id": "athletics-ledger",
@@ -2100,7 +2086,7 @@
    "updated": "2026-09-05",
    "url": "/docs/analyses/athletics-ledger.md",
    "why": "Three years of the fund at transaction level \u2014 277 postings with vendor, check number and the clerk\u2019s own comments",
-   "words": 4295
+   "words": 4324
   }
  ],
  "source": "sources/data/lunenburg.db \u2014 athletics_history, athletics_by_sport, athletic_fee_schedule, fund_1301_cash_journal, money_gaps",

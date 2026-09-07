@@ -105,8 +105,10 @@ exactly, which is the strongest corroboration anything in this analysis has.
 What we cannot say is **whose** payroll the FY2024 and FY2025 figures were. The export carries
 no name, no position and no object code on a payroll row. The district's own athletics
 workbook attributes $127,088.40 of coaching cost to FY2024, which is the right neighbourhood
-— but the general fund also carried $65,073.00 of coaches that year, and the two together far
-exceed the workbook's figure. Something does not add up and the ledger cannot say what.
+— but the general fund also carried $46,733.00 of coaches that year, and the fund's own
+payroll journal moved $121,346.72. Those two together are $168,079.72 against a workbook
+figure of $127,088.40. Something does not add up and the ledger cannot say what, because a
+payroll row carries no position: not all of the fund's payroll need be coaches.
 
 **Receipts are net of a payment processor.** Every month carries a deposit referenced
 `MMMYY/REVTRA`, `/REVTPM` or `/REVTSC` and a smaller negative row referenced `MMMYY/REVFEE`.
@@ -189,24 +191,24 @@ workbook and the budget both name:
 | FY2024 | workbook | general fund | outside the general fund |
 |---|---:|---:|---:|
 | Officials | 51,570.04 | 0.00 | 51,570.04 |
-| Coaches | 127,088.40 | 65,073.00 | 62,015.40 |
+| Coaches | 127,088.40 | 46,733.00 | 80,355.40 |
 | Transportation | 117,555.00 | 40,000.00 | 77,555.00 |
-| Uniforms | 16,293.54 | 10,698.00 | 5,595.54 |
+| Uniforms | 16,293.54 | 0.00 | 16,293.54 |
 | everything else matched | 39,135.91 | 37,568.00 | 1,567.91 |
-| **total** | **351,642.89** | **153,339.00** | **198,303.89** |
+| **total** | **351,642.89** | **124,301.00** | **227,341.89** |
 
 A further **$160,980.00** sat on general fund athletics lines with no counterpart in the
 workbook at all — the athletic director, the trainer and insurance, none of which the workbook
 tracks.
 
-**In FY2024 the town's athletics appropriation covered 44% of what the district's own workbook
+**In FY2024 the town's athletics appropriation covered 35% of what the district's own workbook
 says the sports cost.** That is rule 11 stated as a measurement rather than as a warning, and
 it is the first time this project has been able to make it one for any program.
 
 Two things this does not say. It does not say the district hid anything: the fund is a
 Chapter 658 revolving fund, its purpose is to hold fee revenue and spend it, and the district
 described the arrangement in its own FY26 budget overview. And it does not generalise to other
-programs by arithmetic — 44% is athletics' number, and nothing here measures anybody else's.
+programs by arithmetic — 35% is athletics' number, and nothing here measures anybody else's.
 
 ---
 
@@ -338,7 +340,7 @@ These files change its standing from possible to demonstrated, in the only progr
 sides are visible:
 
 - **A program's cost can be more than twice its appropriation.** Athletics' FY2024 comparable
-  general fund lines were $153,339.00 against $351,642.89 of cost.
+  general fund lines were $124,301.00 against $351,642.89 of cost — 2.8 times.
 - **Costs move between funds by memo, and the memo does not appear in either budget document.**
   $254,121.18 moved in FY2025 on four journal entries. Neither the general fund budget nor the
   fund's own summary shows a trace of it. The FY2024 budget-to-budget change in the athletics
@@ -396,7 +398,7 @@ finding. **School general fund spending still rests on one quarter of FY23.**
 | The town's line rose because the fund ran out | The sequence is visible; the causation is not, and the fund never had slack in any year |
 | The FY26 report is wrong | Its arithmetic is right. One label attaches 6/30/26 to a payable the journal shows paid on 8 July 2025 |
 | Athletics costs $384,135.65 | That is what the district's operating workbook totals for FY2024. It is not a ledger and it does not reconcile to one |
-| The general fund pays 44% of athletics generally | One year, one program, comparable categories only |
+| The general fund pays 35% of athletics generally | One year, one program, comparable categories only |
 | Middle school fees exceed the middle school rate | The 2025-26 middle school rate is not stated in any document we hold |
 | 593 students played sports in 2025-26 | Two town documents give 593 and 649 for the same year and count different things |
 | The archive now has ledger coverage of school spending | Three years of one revolving fund. The general fund still has one quarter of FY23 |

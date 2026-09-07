@@ -413,20 +413,29 @@ def build():
         fail(f'FY{COMPARE_FY}: comparable categories sum above the workbook’s own total')
 
     # ------------------------------------------ where we differ from the prose, and why
+    #
+    # TWO OF THESE WERE RESOLVED on 7 September 2026 by correcting the analyses, and the
+    # entries are gone rather than left standing as caveats: a page's job is to be current,
+    # and a resolved disagreement is history. What replaces them is a CHECK, because the
+    # thing that let them exist was that nothing compared the two.
+    #
+    # `verify_athletics.py` asserts the figures are present in the analyses. This asserts
+    # the other direction -- that the SUPERSEDED figures are gone. Both are needed: a
+    # document can carry the new number in one table and the old one in a sentence
+    # underneath, which is exactly the shape of every defect in this project.
+    for _doc, _gone, _what in (
+        ('athletics.md', '314,319', 'the FY2024 general fund total'),
+        ('athletics-ledger.md', '44%', 'the FY2024 share of workbook cost'),
+        ('athletics-ledger.md', '65,073', 'FY2024 coaches on the general fund side'),
+        ('athletics-ledger.md', '153,339', 'the FY2024 comparable general fund total'),
+    ):
+        _p = os.path.join(ROOT, 'sources', 'analyses', _doc)
+        if _gone in open(_p, encoding='utf-8').read():
+            fail(f'{_doc} still carries {_gone} for {_what}. That figure was superseded '
+                 f'when commit 07aa298 withdrew three FY2024 rows. Either the correction '
+                 f'was reverted or a second copy of it was missed.')
+
     recomputed = [
-        dict(what=f'The general fund’s FY{COMPARE_FY} athletics appropriation',
-             ours=round(spend['general'][COMPARE_FY], 2), published=314319.0,
-             where='athletics.md §7',
-             why='Three FY2024 rows — Freshman & MS Coaches, Unified Sports Coach and '
-                 'Replacement of Uniforms — were withdrawn from athletics-history.csv in '
-                 'commit 07aa298, which corrected a workbook whose two fiscal years span '
-                 'eight columns and whose column mapping had let unlabelled cells '
-                 'through. The table in the analysis was generated before that.'),
-        dict(what=f'Share of the workbook’s cost the appropriation covered, FY{COMPARE_FY}',
-             ours=compare['share'], published=0.44,
-             where='athletics-ledger.md §5',
-             why='The same three rows. Coaches on the general fund side was $65,073 with '
-                 'them and is $46,733 without, and the comparable total falls with it.'),
         dict(what='Whether the middle school blended fee exceeds its own top tier, FY2026',
              ours=None, published=None, boolean=True,
              where='athletics-ledger.md §8',
