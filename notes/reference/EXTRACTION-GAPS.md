@@ -49,11 +49,11 @@ What each one is, and why it matters here:
 
 ## The wider count
 
-`annual_report_catalogue` holds **863** tables found by reading the reports end to end. `annual_report_contents` records **199** that have been read into a dataset. The catalogue is a list of what EXISTS and the difference is not all loss — many catalogued rows are the same table across pages, and some are prose. But it is not nothing either, and nothing had ever compared the two.
+`annual_report_catalogue` holds **866** tables found by reading the reports end to end. `annual_report_contents` records **199** that have been read into a dataset. The catalogue is a list of what EXISTS and the difference is not all loss — many catalogued rows are the same table across pages, and some are prose. But it is not nothing either, and nothing had ever compared the two.
 
 | how hard the survey judged it | tables | rows |
 |---|---:|---:|
-| clean | 440 | 12,436 |
+| clean | 443 | 12,459 |
 | messy | 311 | 20,061 |
 | not without geometry | 112 | 6,901 |
 

@@ -226,6 +226,19 @@
       "notes": "Building 588, Sheet Metal 26, Plumbing 177, Gas 143, Electrical 459. These sum to 1,393, so the printed total ties."
     },
     {
+      "name": "PEG access (Public Access Cable) revenue versus expenses, FY23",
+      "printed_heading": "FY23 REVENUE vs EXPENSES",
+      "pages": "79",
+      "what_it_is": "The PEG Access enterprise fund's year: Comcast franchise revenue plus enterprise fund interest, less expenses.",
+      "grain": "one statement line",
+      "columns": ["(line)", "(amount)"],
+      "layout": "five rows, label left, amount right, no header row",
+      "printed_total": "Subtotal $217,384.49; Expenses $163,236.09; Balance $54,148.40",
+      "approx_rows": 5,
+      "extractable": "clean",
+      "notes": "Both identities hold exactly: 203,773.00 + 13,611.49 = 217,384.49 and 217,384.49 - 163,236.09 = 54,148.40. Its Expenses row equals the line-item TOTAL on printed page 80 to the cent. There is NO starting-balance row, so `Balance` is the year's surplus and not a fund balance. Found in September 2026 while extracting `peg-access.csv`; it was absent from this inventory, which made the report look like an edition that prints no PEG statement. It prints one. It was missed because the table is an IMAGE with no text layer, so a text search of the page returns the Financials paragraph and then nothing."
+    },
+    {
       "name": "PEG access (Public Access Cable) expenses by line item",
       "printed_heading": "FY23 LINE ITEMS AS A PERCENTAGE",
       "pages": "80",

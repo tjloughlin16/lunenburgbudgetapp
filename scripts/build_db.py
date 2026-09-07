@@ -970,6 +970,16 @@ UNLOADED = [
      'the page — what the four RATEPAYER funds hold; not general-fund money'),
     ('enterprise-balance-sheet-printed-totals',
      'The totals and the printed Proof row each enterprise balance sheet states, quoted'),
+    # PEG Access / Public Access Cable, FY2015-FY2025, read from the page. Kept apart from
+    # `enterprise_balance_sheet` on purpose: that table is a STOCK at 30 June and this is a
+    # FLOW across the year, and for FY2025 -- the one year both cover -- they do not
+    # reconcile. Nothing here is a tax dollar; it is the Comcast franchise fee.
+    ('peg-access', 'Every PEG Access expense line READ from the page, with the percentage '
+     'of total expense the report prints beside it'),
+    ('peg-access-printed-totals',
+     'The revenue-versus-expenses statement each report prints, row by row, quoted'),
+    ('peg-access-identities',
+     'The arithmetic each PEG statement states about itself, over the printed ordinals'),
     ('special-revenue-read', 'The special revenue schedule READ from the page — the '
      'only version of it that ties to its own printed total'),
     ('special-revenue-printed-totals', 'The GRAND TOTAL each report prints, quoted'),

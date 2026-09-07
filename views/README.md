@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**248 of 454 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**248 of 476 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **206 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **228 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -66,9 +66,11 @@ Listed so this view cannot look more complete than it is.
 - `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
 - `analyses/peer-districts.md` — What other districts did
+- `analyses/questions.md` — A hundred questions this archive can answer, each with the query
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
 - `analyses/sped-and-funds.md` — Special education and the funds outside the budget
 - `analyses/sped-and-the-curve.md` — Special education and the curve
+- `analyses/what-you-can-ask.md` — What you can ask this archive, in plain English
 - `budget-workbooks/dese-all-districts.xlsx` — DESE per-pupil expenditures, FY2018–FY2024
 - `contracts/CONTRACTS.md` — Research notes: union contracts
 - `contracts/pdf/custodial-2023-2026.pdf` — Custodial agreement, 2023–2026
@@ -79,9 +81,13 @@ Listed so this view cannot look more complete than it is.
 - `contracts/pdf/nonaffiliated-benefits.pdf` — Non-affiliated benefits
 - `contracts/pdf/nonaffiliated-salary-schedule.pdf` — Non-affiliated salary schedule
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
+- `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
+- `data/PROVENANCE-enterprise-balance-sheet.md` — Why the enterprise sheet is a dataset of its own
+- `data/PROVENANCE-peg-access.md` — Whose money PEG Access is, and why the balance series is not a series
 - `data/PROVENANCE-placement-counts.md` — Where the placement counts came from, and what they are not
 - `data/PROVENANCE-report-tables.md` — What the twelve generic extracts are, and what may not be done with them
 - `data/PROVENANCE-special-revenue-funds.md` — Where the special revenue funds came from
+- `data/PROVENANCE-special-revenue-read.md` — Why the schedule is read rather than OCR’d
 - `data/PROVENANCE-staff-rosters.md` — Where the staff rosters came from, and what a name is not
 - `data/account-names.csv` — What the ledger’s account codes mean — our readings
 - `data/annual-report-catalogue.csv` — Every table in every annual report, catalogued
@@ -91,14 +97,19 @@ Listed so this view cannot look more complete than it is.
 - `data/athletic-fee-schedule.csv` — Athletic fees, by fiscal year, with their sources
 - `data/athletics-by-sport-reconciliation.csv` — Where the district’s workbook does not add up
 - `data/athletics-by-sport.csv` — Athletics by sport, long form
+- `data/balance-sheet-printed-totals.csv` — The TOTAL rows each balance sheet prints
+- `data/balance-sheet.csv` — The combined balance sheet, read from the page
 - `data/ballot-questions.csv` — What the town was asked to fund, and whether it agreed
 - `data/business/categorized.csv` — Business records by industry
 - `data/business/merged_dataset.csv` — Business certificate records
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
+- `data/column-glossary.csv` — What each column name means, across every table
 - `data/copy-status.csv` — Whether the publisher’s copy is still our copy
 - `data/dataset-provenance.csv` — Every dataset row joined to the document it came from
 - `data/dese-radar.csv` — DESE’s own figures, every district, FY2009–FY2025
 - `data/document-basis.csv` — What produced each document’s figures
+- `data/enterprise-balance-sheet-printed-totals.csv` — The TOTAL rows and the PROOF row each enterprise sheet prints
+- `data/enterprise-balance-sheet.csv` — The enterprise-funds balance sheet, read from the page
 - `data/extraction-plan.csv` — Which pages each dataset was read from
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
@@ -108,8 +119,15 @@ Listed so this view cannot look more complete than it is.
 - `data/link-status.csv` — Whether each source document is still public
 - `data/lps-budget-lines.csv` — Budget lines, tidy CSV
 - `data/lunenburg.db` — The whole analysis database, SQLite
+- `data/money-assumptions.csv` — Every assumption still holding the money model up
+- `data/money-classification.csv` — What every revenue account, fund and department IS
+- `data/money-edges.csv` — Which source of money pays which use, and whether that can be shown
+- `data/money-gaps.csv` — What the town’s records cannot answer
 - `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
 - `data/ood-tuition-history.csv` — Out-of-district tuition, eleven budgets
+- `data/peg-access-identities.csv` — The arithmetic each PEG statement states about itself
+- `data/peg-access-printed-totals.csv` — The revenue-versus-expenses statement each report prints
+- `data/peg-access.csv` — PEG Access expenses, line by line, read from the page
 - `data/placement-counts.csv` — Out-of-district placements, by year, FY2011–FY2025
 - `data/rate-register.csv` — Every rate, with the year it applies to and who set it
 - `data/report-anomalies.csv` — What looks wrong in the extracts, and where to look
@@ -125,7 +143,10 @@ Listed so this view cannot look more complete than it is.
 - `data/report-trust-funds.csv` — Trust and stabilisation funds
 - `data/report-valuation.csv` — Valuation and tax rate history
 - `data/report-vital-records.csv` — Births, marriages and deaths
+- `data/role-classification.csv` — What kind of job each printed roster title is
 - `data/special-revenue-funds.csv` — The special revenue funds, FY2011–FY2025
+- `data/special-revenue-printed-totals.csv` — The GRAND TOTAL each report prints
+- `data/special-revenue-read.csv` — The special revenue funds, read from the page
 - `data/sped-para-history.csv` — Special education paraprofessionals, ten budgets
 - `data/sped-teacher-history.csv` — Special education teachers, eight budgets
 - `data/sped-transport-history.csv` — Special education transportation, nine budgets
@@ -133,6 +154,7 @@ Listed so this view cannot look more complete than it is.
 - `data/staff-roster-counts.csv` — Roster headcount by school and year
 - `data/staff-roster-entries.csv` — Every name the town printed on a school staff roster, FY2011–FY2025
 - `data/stated-figures.csv` — Figures the town stated about itself, with the quote
+- `data/table-semantics.csv` — What each table in the database is
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
 - `data/total-salaries-history.csv` — District total salaries, budget and actual by year
 - `data/variance-by-group.csv` — Budget against actual, every group and year

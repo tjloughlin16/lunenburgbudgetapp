@@ -1501,6 +1501,18 @@
      "textUrl": "/docs/data/enterprise-balance-sheet.csv"
     },
     {
+     "path": "data/peg-access.csv",
+     "title": "PEG Access expenses, line by line, read from the page",
+     "stars": 3,
+     "what": "Every expense line the PEG Access / Public Access Cable report prints in each annual town report, FY2015–FY2025, with the percentage of total expense the table prints beside it from FY2020 on. CABLE FRANCHISE money: paid by subscribers under the Comcast licence, appropriated by its own Town Meeting article, and not available to the general fund. See data/PROVENANCE-peg-access.md.",
+     "kind": "Data",
+     "bytes": 14591,
+     "url": "/docs/data/peg-access.csv",
+     "count": 110,
+     "unit": "rows",
+     "textUrl": "/docs/data/peg-access.csv"
+    },
+    {
      "path": "data/PROVENANCE-staff-rosters.md",
      "title": "Where the staff rosters came from, and what a name is not",
      "stars": 3,
@@ -1590,9 +1602,9 @@
      "stars": 2,
      "what": "863 blocks found by reading all sixteen reports end to end rather than by searching them. It carries each table’s PRINTED heading, because the headings differ between years and that is precisely what defeats a search. The cross-year grouping is a hypothesis about which tables are the same table, not a fact.",
      "kind": "Data",
-     "bytes": 881301,
+     "bytes": 884561,
      "url": "/docs/data/annual-report-catalogue.csv",
-     "count": 863,
+     "count": 866,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-catalogue.csv"
     },
@@ -1674,9 +1686,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 25988,
+     "bytes": 28774,
      "url": "/docs/data/table-semantics.csv",
-     "count": 78,
+     "count": 81,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -1698,11 +1710,23 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 18045,
+     "bytes": 22215,
      "url": "/docs/data/money-gaps.csv",
-     "count": 34,
+     "count": 37,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
+     "path": "data/PROVENANCE-peg-access.md",
+     "title": "Whose money PEG Access is, and why the balance series is not a series",
+     "stars": 2,
+     "what": "Written by us: the Town Meeting article that turned a receipts-reserved fund into an enterprise fund on 30 June 2019, which is what the mid-series renaming actually was; the five printed defects, pinned and not adjusted away; the FY2025 comparison against the enterprise balance sheet, which does not reconcile; and that FY2024 was uncatalogued rather than absent.",
+     "kind": "Notes",
+     "bytes": 19467,
+     "url": "/docs/data/PROVENANCE-peg-access.md",
+     "count": 330,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-peg-access.md"
     },
     {
      "path": "data/column-glossary.csv",
@@ -1751,6 +1775,18 @@
      "count": 134,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
+    },
+    {
+     "path": "data/peg-access-printed-totals.csv",
+     "title": "The revenue-versus-expenses statement each report prints",
+     "stars": 2,
+     "what": "Every row of the statement, in the order printed, with the raw cell text, the printed page number and the PDF index, which are not the same number. It is the independent check on the file above — the line-item TOTAL and the statement’s Expenses row are printed on different pages of the same report — and it also carries what the prose says the figure was, which in FY2017 is $40.00 away from the table on the facing page.",
+     "kind": "Data",
+     "bytes": 12260,
+     "url": "/docs/data/peg-access-printed-totals.csv",
+     "count": 77,
+     "unit": "rows",
+     "textUrl": "/docs/data/peg-access-printed-totals.csv"
     },
     {
      "path": "data/enterprise-balance-sheet-printed-totals.csv",
@@ -1811,6 +1847,18 @@
      "count": 6,
      "unit": "rows",
      "textUrl": "/docs/data/money-assumptions.csv"
+    },
+    {
+     "path": "data/peg-access-identities.csv",
+     "title": "The arithmetic each PEG statement states about itself",
+     "stars": 2,
+     "what": "Recorded over the printed row ORDINALS rather than the labels, because the statement’s arithmetic changes every few years and two rows of FY2019’s carry the identical printed label `Subtotal`. A statement with no identity recorded is refused, and so is a printed row no identity reaches — which is what catches FY2020’s orphan row.",
+     "kind": "Data",
+     "bytes": 1562,
+     "url": "/docs/data/peg-access-identities.csv",
+     "count": 23,
+     "unit": "rows",
+     "textUrl": "/docs/data/peg-access-identities.csv"
     },
     {
      "path": "data/special-revenue-printed-totals.csv",
@@ -2019,7 +2067,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 19103744,
+     "bytes": 19165184,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5835,10 +5883,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 472,
+  "documents": 476,
   "groups": 20,
-  "bytes": 1003839831,
-  "loadBearing": 76
+  "bytes": 1003959367,
+  "loadBearing": 77
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

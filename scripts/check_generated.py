@@ -48,6 +48,10 @@ CHECKS = [
     # notes/findings/DRILL-IN-PAGES.md without the sheet being rebuilt -- which is
     # the failure that matters, because the sheet is what gets printed and reviewed.
     ('build_decisions_doc.py', ['--check']),
+    # Every money parser against every printed shape of a negative. A dropped sign
+    # does not zero a figure, it reflects it -- the paraprofessional line came out
+    # $315,772 wrong, twice the line, and that line feeds a published projection.
+    ('check_money_parsers.py', []),
     # Added 6 Sept 2026, after it had already drifted: two analyses were published
     # and /reports went on listing thirteen. Nothing caught it because this file is
     # the thing that catches it, and this generator was not in it.
@@ -88,6 +92,14 @@ CHECKS = [
     # free, because the town gave it to us -- FY2024's two printings of the same sheet on
     # pages 21 and 28, transcribed independently and asserted to agree.
     ('verify_enterprise_balance_sheet.py', []),
+    # PEG Access / Public Access Cable, FY2015-FY2025, read from the page. Seven checks:
+    # the expense lines foot to the report's own printed TOTAL; the printed percent column
+    # foots to its printed 100.00% and every percent recomputes; the identities each
+    # statement states about ITSELF hold; every printed row is reached by one of them --
+    # which is what caught FY2020's orphan `Subtotal`; the two pages of each report agree
+    # on total expenses; and what the prose says the revenue was matches what the table
+    # prints. Five printed defects are pinned to the penny rather than smoothed.
+    ('verify_peg_access.py', []),
     # What the reports contain that we have not read, or have read without checking.
     # Generated because a count nobody maintains is the only kind that stays true.
     ('build_extraction_gaps.py', ['--check']),

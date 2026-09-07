@@ -835,6 +835,36 @@ GROUPS = [
              'balance sheet that is not in the book; the $102,000.00 the FY2024 '
              'memorandum column is out on two offsetting lines, pinned and not adjusted '
              'away; and what these ratepayer balances are not.'),
+            ('data/peg-access.csv',
+             'PEG Access expenses, line by line, read from the page', 3,
+             'Every expense line the PEG Access / Public Access Cable report prints in '
+             'each annual town report, FY2015–FY2025, with the percentage of total '
+             'expense the table prints beside it from FY2020 on. CABLE FRANCHISE money: '
+             'paid by subscribers under the Comcast licence, appropriated by its own Town '
+             'Meeting article, and not available to the general fund. '
+             'See data/PROVENANCE-peg-access.md.'),
+            ('data/peg-access-printed-totals.csv',
+             'The revenue-versus-expenses statement each report prints', 2,
+             'Every row of the statement, in the order printed, with the raw cell text, '
+             'the printed page number and the PDF index, which are not the same number. '
+             'It is the independent check on the file above — the line-item TOTAL and '
+             'the statement’s Expenses row are printed on different pages of the same '
+             'report — and it also carries what the prose says the figure was, which '
+             'in FY2017 is $40.00 away from the table on the facing page.'),
+            ('data/peg-access-identities.csv',
+             'The arithmetic each PEG statement states about itself', 2,
+             'Recorded over the printed row ORDINALS rather than the labels, because the '
+             'statement’s arithmetic changes every few years and two rows of '
+             'FY2019’s carry the identical printed label `Subtotal`. A statement with '
+             'no identity recorded is refused, and so is a printed row no identity '
+             'reaches — which is what catches FY2020’s orphan row.'),
+            ('data/PROVENANCE-peg-access.md',
+             'Whose money PEG Access is, and why the balance series is not a series', 2,
+             'Written by us: the Town Meeting article that turned a receipts-reserved fund '
+             'into an enterprise fund on 30 June 2019, which is what the mid-series '
+             'renaming actually was; the five printed defects, pinned and not adjusted '
+             'away; the FY2025 comparison against the enterprise balance sheet, which does '
+             'not reconcile; and that FY2024 was uncatalogued rather than absent.'),
             ('data/special-revenue-read.csv',
              'The special revenue funds, read from the page', 3,
              'The FY2011\u2013FY2025 schedule of every fund outside the general '

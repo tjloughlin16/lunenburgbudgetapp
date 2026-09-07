@@ -22,6 +22,9 @@ OUT = os.path.join(ROOT, 'sources/data/grants-history.csv')
 LINE = re.compile(r'^(\*{0,4})\s*([A-Za-z][^$]{3,70}?)\s*\$\s*([\d,]+)\s*$')
 YEAR = re.compile(r'^FY(\d{2})\s+(FEDERAL|STATE)\s+GRANTS', re.I)
 ESSER = re.compile(r'^(ESSER\s*\d)\s+\$?\s*([\d,]+)', re.I)
+# `$(31,000)`, `$-31,000` or a bare `(31,000)` after a label — the shapes LINE cannot
+# represent. Used to REFUSE, never to parse.
+NEGATIVE_AMOUNT = re.compile(r'\$\s*[\(\-]|\(\s*[\d,]+\.?\d*\s*\)\s*$')
 OWNER = {'*': 'Director of Special Services',
          '**': 'Director of Teaching & Learning',
          '***': 'Director of Community School Programs',
@@ -58,6 +61,28 @@ def scan(path):
                              amount=float(e.group(2).replace(',', '')), owner='',
                              page=page, doc=os.path.basename(path)))
             continue
+        # A NEGATIVE THIS REGEX CANNOT REPRESENT MUST NOT BE SKIPPED IN SILENCE.
+        #
+        # The amount group is `[\d,]+` — no sign, no parentheses. So a line reading
+        # `Some Grant  $(31,000)` does not match, and an unmatched line is simply passed
+        # over. That is worse than a sign flip: a flipped sign is wrong by twice the value
+        # and might be noticed, a dropped row is invisible.
+        #
+        # It is the same shape as the MUNIS extract that lost 16 of 67 departments because
+        # the regex wanted a digit before the decimal point and the report prints zero as
+        # `.00`. Nothing noticed for weeks because nothing compared the extract to a total.
+        # This extractor has no control total either — it reads presentation decks, which
+        # print no grand total to tie to — so the regex IS the only gate, and it has to
+        # refuse rather than shrug.
+        #
+        # Searched every grants document on 7 September 2026: no negative grant line
+        # exists today. This is a latent defect with a guard on it, not an active one.
+        if fy and NEGATIVE_AMOUNT.search(t):
+            sys.exit(f'{os.path.basename(path)} p{page}: {t!r}\n'
+                     '  A grants line carries a negative amount, and LINE cannot match '
+                     'one — it would be dropped without trace. Widen the regex and decide '
+                     'what a negative grant MEANS before recording it.')
+
         m = LINE.match(t)
         # No single grant Lunenburg receives is seven figures; anything that large in a
         # grants section is a total or a stray budget row.

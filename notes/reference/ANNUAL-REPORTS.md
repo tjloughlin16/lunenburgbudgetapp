@@ -56,7 +56,7 @@ Read `column_meaning` before reading a value.
 
 | dataset | rows | years | what it is |
 |---|---:|---|---|
-| `annual-report-catalogue.csv` | 863 | 2011–2025 | Every table in every report, with its PRINTED heading |
+| `annual-report-catalogue.csv` | 866 | 2011–2025 | Every table in every report, with its PRINTED heading |
 | `annual-report-contents.csv` | 199 | 2011–2025 | What each report contains, section by section |
 | `annual-report-survey.csv` | 2,751 | 2011–2025 | Every page, and which instrument recovers it |
 | `extraction-plan.csv` | 553 | 2011–2025 | Which pages each dataset is read from |
@@ -65,9 +65,9 @@ Read `column_meaning` before reading a value.
 
 ## What is NOT captured
 
-### 1. 275 of 863 catalogued tables sit on pages no dataset reads
+### 1. 278 of 866 catalogued tables sit on pages no dataset reads
 
-About 6,205 rows by the catalogue's own estimate. Much of it is furniture — tables of
+About 6,228 rows by the catalogue's own estimate. Much of it is furniture — tables of
 contents, pie-chart labels, phone directories. These are the substantial ones, all marked
 `clean` in the catalogue:
 

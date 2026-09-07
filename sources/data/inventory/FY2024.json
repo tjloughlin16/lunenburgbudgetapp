@@ -226,6 +226,32 @@
       "notes": "FY2023 HAS NO EQUIVALENT — this table exists only in FY2024. An asterisk before a name appears to mark veterans (some carry a service note underneath: '(Vietnam)', '(PeaceTime)'). Some rows lost their AGE. Cemeteries recorded as North, South, and one lot reference 'N/W East #28'."
     },
     {
+      "name": "Public Access Cable (PEG) revenue versus expenses, FY24",
+      "printed_heading": "FY24 REVENUE vs EXPENSES",
+      "pages": "63",
+      "what_it_is": "The PEG Access enterprise fund's year: what came in from the Comcast franchise fee and from interest, what went out, and the difference. Printed in WHOLE DOLLARS, unlike the line-item table on the facing page, which is in cents.",
+      "grain": "one statement line",
+      "columns": ["(line)", "(amount)"],
+      "layout": "six rows, label left, amount right, no header row",
+      "printed_total": "Subtotal $252,882; Expenses $174,150; Balance $ 78,732",
+      "approx_rows": 6,
+      "extractable": "clean",
+      "notes": "Both identities the table states hold exactly: 192,954 + 24,498 + 35,430 = 252,882 and 252,882 - 174,150 = 78,732. Its Expenses row disagrees with the line-item TOTAL on printed page 64 ($174,151.16) by $1.16, which whole-dollar rounding does not explain. There is NO starting-balance row, so `Balance` is the year's surplus and not a fund balance. Found in September 2026 while extracting `peg-access.csv`; it was absent from this inventory, which made the report look like an edition that prints no PEG statement. It prints one. It was missed because the table is an IMAGE with no text layer, so a text search of the page returns the Financials paragraph and then nothing."
+    },
+    {
+      "name": "Public Access Cable (PEG) expenses by line item, FY24",
+      "printed_heading": "FY24 LINE ITEMS AS A PERCENTAGE",
+      "pages": "64",
+      "what_it_is": "Every PEG Access expense line for FY24 with its share of total expense, and the pie chart below it drawn from the same figures.",
+      "grain": "one expense line item",
+      "columns": ["Line Item", "Expenses", "% of Expense"],
+      "layout": "three columns, eleven lines and a Total row",
+      "printed_total": "Total $174,151.16  100.00%",
+      "approx_rows": 12,
+      "extractable": "clean",
+      "notes": "The eleven lines foot to the printed total to the cent and every printed percent recomputes from its own amount over it. `Indirect Costs $47,503.00` is the figure Town Meeting voted by name in the FY2023 report's warrant. Found in September 2026 while extracting `peg-access.csv`; it was absent from this inventory, which made the report look like an edition that prints no PEG statement. It prints one. It was missed because the table is an IMAGE with no text layer, so a text search of the page returns the Financials paragraph and then nothing."
+    },
+    {
       "name": "Senior property tax work-off program",
       "printed_heading": "SENIOR PROPERTY TAX WORK-OFF PROGRAM / JANUARY 1, 2024 – NOVEMBER 1, 2024",
       "pages": "66",
