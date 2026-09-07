@@ -32,17 +32,17 @@ Checked means the extract was recomputed against a total the report itself print
 
 These were found by reading all sixteen annual reports page by page, counted, and recorded in `annual_report_contents`. **No dataset holds any of them.** They are mentioned in `extraction_plan`, so this is work not done rather than work considered and declined.
 
+> **A warning about the row counts in this table, learned by acting on one of them.** The survey tags a family with a PAGE-LEVEL REGEX — any page containing the phrase gets counted, and `figure_rows` sums every figure on those whole pages. So a count here is an upper bound on a family’s size and sometimes not a table at all. `enterprise` was listed here at 954 rows and fifteen unread years; on inspection 368 of those rows were the special revenue schedule already read, 221 were Town Meeting articles that merely say the words, and the funds themselves turned out to be fully traced FY2011–FY2023. **Check what a family actually is before extracting it.**
+
 | family | years it appears in | figure rows counted | dataset |
 |---|---:|---:|---|
-| `enterprise` | 15 | 954 | **none** |
 | `town_meeting` | 15 | 924 | **none** |
 | `balance_sheet` | 14 | 488 | **none** |
 | `tax_rate` | 15 | 216 | **none** |
-| **total** | | **2,582** | |
+| **total** | | **1,628** | |
 
 What each one is, and why it matters here:
 
-- **`enterprise`** — The four enterprise funds — water, sewer, solid waste, PEG access. CLAUDE.md calls these the **control case**: they are the part of the town where money in and money out CAN be traced, which is what proves the general fund’s opacity is a property of a general fund rather than sloppy record-keeping. Fifteen years of them are unread.
 - **`town_meeting`** — What Town Meeting actually voted, article by article. The appropriation is the OUTPUT of these votes, and the archive currently holds the output and not the decision.
 - **`balance_sheet`** — The combining balance sheet — what the town HOLDS, against the flow tables the archive already has. `pdf_tables.py` names this page specifically as one where plain extraction mode wins and layout mode recovers zero of its 61 money tokens.
 - **`tax_rate`** — The tax rate by class and year. Small, and it is the number every resident actually feels.

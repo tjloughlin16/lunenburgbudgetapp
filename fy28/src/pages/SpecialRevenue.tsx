@@ -465,11 +465,12 @@ export function SpecialRevenue() {
 
       <H2 id="persistent">Which funds accumulate, and which run themselves down</H2>
       <Body>
-        The {c.names_every_year} funds printed in every one of the {c.editions} editions,
-        by how much they took in over the whole period. A fund appearing twice can look
-        like it always overspends on a sample of two, so these are the only ones long
-        enough to have a habit. {drawers.length} of the {d.persistent.length} largest spent
-        more than they received across the thirteen years;{' '}
+        {c.names_every_year} funds are printed in every one of the {c.editions} editions;
+        these are the {d.persistent.length} of them that took in the most over the period.
+        A fund appearing twice can look like it always overspends on a sample of two, so
+        the ones printed every year are the only ones long enough to have a habit.{' '}
+        {drawers.length} of these {d.persistent.length} spent more than they received
+        across the thirteen years;{' '}
         {accumulators.length > 0 && <>the largest net accumulation among them is{' '}
           {accumulators[0].fund}, {usd(accumulators[0].net)} over the period.</>}
       </Body>

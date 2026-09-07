@@ -1,6 +1,6 @@
 import {
   BarChart, Bar, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ReferenceLine, ResponsiveContainer, Legend,
+  ReferenceLine, ResponsiveContainer,
 } from 'recharts'
 import { usd } from '../model/engine'
 
@@ -502,5 +502,3 @@ export function StaffAgainstEnrolment({ rows }: { rows: StatePoint[] }) {
     </Card>
   )
 }
-
-export { Legend }

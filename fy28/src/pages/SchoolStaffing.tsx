@@ -344,7 +344,7 @@ export function SchoolStaffing() {
         <ul className="text-[13.5px] leading-relaxed space-y-1.5"
           style={{ color: 'var(--text-secondary)' }}>
           <li>
-            <strong>Names the town printed.</strong> {ros.entries_in_panel} of them, across{' '}
+            <strong>Names the town printed.</strong> {ros.entries_total} of them, across{' '}
             {rYears.length} annual town reports, {fy(ros.first_fy)}&ndash;{fy(ros.last_fy)}.
             A roster carries no FTE, so a 0.4 music teacher and a full-timer are one name
             each; no funding source; and no date within the year.
@@ -443,7 +443,7 @@ export function SchoolStaffing() {
       </Body>
       <Body>
         <strong>That still leaves Lunenburg with the fewest teachers per pupil in its
-        group.</strong> It has been {fewestTeachers[0]?.of} of {fewestTeachers[0]?.of} for{' '}
+        group.</strong> It has been last of {fewestTeachers[0]?.of} for{' '}
         {fewestTeachers.length} consecutive years, and the highest district in{' '}
         {fy(st.ranks.teachers[st.ranks.teachers.length - 1].fy)} reports{' '}
         {num(st.ranks.teachers[st.ranks.teachers.length - 1].highest_value, 2)} against
@@ -482,7 +482,7 @@ export function SchoolStaffing() {
       <Body>
         Two panels of five budget lines each, read from the district&rsquo;s own documents
         at the {d.dollars.stage} stage across their whole run, over the{' '}
-        {cw.last_fy - cw.first_fy} years both of them cover. Special education
+        {cw.last_fy - cw.first_fy + 1} years both of them cover. Special education
         paraprofessional lines moved {pct(cwPara.change!.pct!)} &mdash; from{' '}
         {usd(cwPara.change!.first)} to {usd(cwPara.change!.last)}. Special education teacher
         lines moved {pct(cwTeach.change!.pct!)}, from {usd(cwTeach.change!.first)} to{' '}
@@ -502,8 +502,10 @@ export function SchoolStaffing() {
       <p className="text-[12px] mt-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
         The paraprofessional panel runs from {fy(paraPanel.first_fy)} and the teacher panel
         from {fy(teachPanel.first_fy)}; the comparison above uses only the{' '}
-        {cw.last_fy - cw.first_fy + 1} years both cover. Reading a twelve-year percentage
-        against an eight-year one is the like-for-like error wearing a different coat.
+        {cw.last_fy - cw.first_fy + 1} years both cover. Reading a{' '}
+        {paraPanel.last_fy - paraPanel.first_fy + 1}-year percentage against a{' '}
+        {teachPanel.last_fy - teachPanel.first_fy + 1}-year one is the like-for-like error
+        wearing a different coat.
       </p>
 
       <NotShown>
@@ -571,8 +573,8 @@ export function SchoolStaffing() {
         changed. Which schools appear varies &mdash; there are{' '}
         {printedSchoolSets.size} different combinations across {rYears.length} years.
         Central office is printed in {yearsWithCO} of them and left out of the rest, so it
-        is excluded here entirely: a total that gains twenty names in the years a page was
-        included is measuring the page, not the payroll.
+        is excluded here entirely: a total that gains a whole page of names in some years
+        and not others is measuring the page, not the payroll.
       </Body>
       <div className="mt-6"><NamesPrinted rows={rYears} /></div>
       <TableTwin caption="Every year, and what was printed in it"
@@ -736,9 +738,10 @@ export function SchoolStaffing() {
             <code>{recon.b}</code>&rsquo;s own total column. They agree in {recon.agree} of{' '}
             {recon.years} years, {fy(recon.first_fy)}&ndash;{fy(recon.last_fy)}, and differ in{' '}
             {fy(negCell.fy)}: {usd(negCell.a)} against {usd(negCell.b)}. The difference is
-            exactly twice the ACE line, which is a sign. The workbook itself prints a
-            negative there &mdash; cell <code>sheet1!D340 = −157,886.32</code> in the FY27
-            projection &mdash; so this page draws the <code>{recon.a}</code> route and reports
+            exactly twice that year&rsquo;s ACE line, which is what a flipped sign produces.
+            The workbook itself prints a negative there &mdash; cell{' '}
+            <code>sheet1!D340 = −157,886.32</code> in the FY27 projection workbook, read
+            directly &mdash; so this page draws the <code>{recon.a}</code> route and reports
             the disagreement rather than choosing quietly.
           </p>
           <p className="text-[13.5px] leading-relaxed mt-2.5" style={{ color: 'var(--text-secondary)' }}>

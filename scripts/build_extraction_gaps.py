@@ -60,7 +60,19 @@ FAMILY = {
     'payroll': 'report_gross_wages',
     'staff_roster': 'staff_roster_entries',
     'school_report': 'report_enrollment_mcas',
-    'enterprise': None,
+    # NOT None, and this line was wrong in the published audit. The survey defines this
+    # family as a page-level regex — `survey_annual_reports.py` tags any page containing
+    # the string "ENTERPRISE FUND" anywhere — so its 954 "figure rows" are a KEYWORD
+    # TALLY, not a table. Classified: 368 of them are the special revenue schedule we have
+    # already read, 221 are Town Meeting article pages that merely say the words, 139 are
+    # Treasurer's cash listings and committee prose, 127 are trust and debt schedules, 99
+    # are the balance-sheet page.
+    #
+    # And the funds themselves are READ: special-revenue-read.csv carries forward,
+    # receipts, disbursements and carried for Water, Sewer, Sewer Betterment, Solid
+    # Waste/Recycling and PEG Access, per fund, FY2011-FY2023 — money in AND money out,
+    # which is the whole of the control-case claim.
+    'enterprise': 'special_revenue_read',
     'tax_rate': None,
     'town_meeting': None,
     'balance_sheet': None,
@@ -190,6 +202,15 @@ def render(d):
       'recorded in `annual_report_contents`. **No dataset holds any of them.** They are '
       'mentioned in `extraction_plan`, so this is work not done rather than work '
       'considered and declined.\n')
+    a('> **A warning about the row counts in this table, learned by acting on one of '
+      'them.** The survey tags a family with a PAGE-LEVEL REGEX — any page containing the '
+      'phrase gets counted, and `figure_rows` sums every figure on those whole pages. So '
+      'a count here is an upper bound on a family\u2019s size and sometimes not a table '
+      'at all. `enterprise` was listed here at 954 rows and fifteen unread years; on '
+      'inspection 368 of those rows were the special revenue schedule already read, 221 '
+      'were Town Meeting articles that merely say the words, and the funds themselves '
+      'turned out to be fully traced FY2011\u2013FY2023. **Check what a family actually '
+      'is before extracting it.**\n')
     a('| family | years it appears in | figure rows counted | dataset |')
     a('|---|---:|---:|---|')
     for f, n, rr in missing:

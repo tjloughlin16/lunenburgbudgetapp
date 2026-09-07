@@ -85,6 +85,13 @@ CHECKS = [
     # going stale: the published file, and the agreement between the database route and
     # the CSV route to the same figure.
     ('build_variance_charts.py', ['--check']),
+    # The school-staffing page's series. It reconciles two independent routes to the
+    # paraprofessional dollars -- summing five line keys out of `budget_figure`, and
+    # `sped_para_history`'s own total column -- and REFUSES to write if they share no year,
+    # because a comparison that compares nothing passes trivially. It also refuses if the
+    # roster fails to join to its classification, since a name with no category looks
+    # exactly like a name with no role.
+    ('build_staffing_charts.py', ['--check']),
     # The special-revenue page's series. It re-derives the two checks that make the
     # dataset publishable rather than trusting the provenance note: every fund row's
     # forward + receipts − disbursements = carried, and every year's four columns
