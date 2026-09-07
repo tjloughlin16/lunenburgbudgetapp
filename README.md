@@ -27,7 +27,7 @@ clone is needed:
 | you want | fetch |
 |---|---|
 | what this holds, and its limits | [`fy28/public/llms.txt`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/llms.txt) |
-| every dataset, with row counts and sizes | [`fy28/public/api/tables.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/tables.json) — 53 of them |
+| every dataset, with row counts and sizes | [`fy28/public/api/tables.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/tables.json) — 64 of them |
 | the grain of every table, and the traps | [`fy28/public/api/schema.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/schema.json) |
 | every figure the site computes | [`fy28/public/data/model/index.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/data/model/index.json) — 38 sections, one file each |
 | every source document, with its sha256 | [`sources/data/archive-manifest.csv`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/data/archive-manifest.csv) |

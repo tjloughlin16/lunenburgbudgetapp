@@ -859,6 +859,52 @@ def load_reference(db):
     return n
 
 
+# Datasets that were on disk as CSVs and not in the database, so nothing could query
+# them. Split deliberately: the first list is ANALYSIS DATA and belongs in the read model;
+# the second is archive PLUMBING — what has been copied where, which links still resolve —
+# and belongs in the manifests rather than in a database somebody is asking budget
+# questions of.
+UNLOADED = [
+    ('line-history', 'Every budget line, every year, as extracted'),
+    ('dese-radar', 'DESE all-funds per-pupil figures, all districts'),
+    ('munis-ledger', 'The MUNIS chart of accounts as delivered'),
+    ('staff-position-map', 'Printed roster titles mapped to positions'),
+    ('lps-budget-lines', 'The district budget book’s own line list'),
+    ('account-names', 'What each abbreviated account name expands to'),
+    ('grants-history', 'Grants by year'),
+    ('town-ledger-fy26-q3', 'The FY26 Q3 town ledger, by department'),
+    ('school-special-revenue-fy26-q3', 'The FY26 Q3 school special revenue funds'),
+    ('line-history-coverage', 'Which lines have how many years of history'),
+]
+PLUMBING = ('archive-manifest', 'archive-push-state', 'copy-status', 'link-status',
+            'document-basis', 'stated-figures', 'dataset-provenance')
+
+
+def load_unloaded(db):
+    """CSVs that existed on disk and could not be queried.
+
+    Fifteen datasets were sitting in `sources/data` and in no table, so `/api/query` could
+    not reach them and no worked example could use them. Ten are analysis data and load
+    here; the rest is archive bookkeeping — what has been copied where, which links still
+    resolve — which belongs in a manifest rather than in a database somebody is asking
+    budget questions of. That split is a judgement and is recorded in `PLUMBING` above so
+    it can be argued with.
+    """
+    n = 0
+    for name, _ in UNLOADED:
+        data = rows(name)
+        if not data:
+            continue
+        table = name.replace('-', '_')
+        cols = list(data[0].keys())
+        db.execute('CREATE TABLE %s (%s)'
+                   % (table, ', '.join('"%s" TEXT' % c for c in cols)))
+        db.executemany('INSERT INTO %s VALUES (%s)' % (table, ','.join('?' * len(cols))),
+                       [[r[c] for c in cols] for r in data])
+        n += len(data)
+    return n
+
+
 def load_money_model(db):
     """The classification of every revenue account, fund and department — as DATA.
 
@@ -914,6 +960,41 @@ def load_money_model(db):
         FROM v_revenue r
         LEFT JOIN money_classification m
                ON m.kind = 'revenue_account' AND m."key" = r.name AND m."group" <> ''""")
+
+    # REVENUE OVER TIME, from the annual reports. Five years, and ONLY five — the other
+    # eight have no checked rows and are excluded rather than shown as zero.
+    #
+    # A TABLE, not a view, and the reason matters: the join key is the source name with
+    # every space and punctuation mark removed, which needs a function SQLite has to be
+    # given. A view calling a custom function works only in the connection that created it
+    # — it fails from any other client and from D1, which has no custom functions at all.
+    # So the key is computed here, once, and stored.
+    #
+    # The squashing is not cosmetic. OCR splits words in some editions: `REAL EST AT E T
+    # AXES` and `REAL ESTATE TAXES` are the same line, and **73 of the 197 printed names
+    # were split this way**. Grouping on the raw name shows Real Estate Taxes as a
+    # four-year series and a one-year series instead of one five-year series.
+    import re as _re
+    cls = {r[0]: (r[1], r[2]) for r in db.execute(
+        'SELECT "key", "group", label FROM money_classification WHERE kind=?',
+        ('report_receipt',))}
+    src = db.execute("""SELECT fy, source, amount, document, page
+                        FROM annual_report_receipts WHERE status='checked'""").fetchall()
+    db.execute('CREATE TABLE revenue_history (fy TEXT, printed_name TEXT, '
+               'source_key TEXT, class TEXT, label TEXT, amount REAL, '
+               'document TEXT, page TEXT)')
+    hist = []
+    for fy, source, amount, document, page in src:
+        k = _re.sub(r'[^A-Z0-9]', '', (source or '').upper())
+        g, lab = cls.get(k, ('local', source))
+        hist.append((fy, source, k, g, lab, float(amount or 0), document, page))
+    db.executemany('INSERT INTO revenue_history VALUES (?,?,?,?,?,?,?,?)', hist)
+    db.execute('CREATE INDEX ix_revenue_history ON revenue_history(fy, class)')
+    unmatched = sum(1 for h in hist if h[2] not in cls)
+    if unmatched:
+        raise SystemExit(f'revenue_history: {unmatched} rows matched no classification. '
+                         f'A join that matches nothing looks exactly like data that is '
+                         f'absent — refusing to write it.')
 
     # AND WHAT GOES OUT. Departments carry the `who decides` class; anything unclassified
     # is `discretionary`, which is a residual and is labelled as one everywhere else too.
@@ -1267,6 +1348,7 @@ def main():
     print('  provenance rows  %5d' % load_provenance(db))
     print('  role vocabulary  %5d' % load_role_classification(db))
     print('  money model      %5d' % load_money_model(db))
+    print('  newly loaded     %5d' % load_unloaded(db))
     check_document_paths(db)
 
     # Documents last: every doc_id any fact cites is known by now, so an orphan can be

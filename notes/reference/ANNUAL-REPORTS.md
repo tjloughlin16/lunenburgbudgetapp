@@ -30,7 +30,7 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 | `special-revenue-funds.csv` | 2,387 | 2011–2025 | 0 checked / 2,058 failed / 329 no check | yes | yes | yes |
 | `staff-roster-entries.csv` | 3,815 | 2011–2025 | every line of every page accounted for | yes | — | yes |
 | `staff-roster-counts.csv` | 699 | 2011–2025 | derived from the above | yes | — | yes |
-| `staff-position-map.csv` | 534 | — | a hypothesis about which titles are the same job | **no** | — | yes |
+| `staff-position-map.csv` | 534 | — | a hypothesis about which titles are the same job | yes | — | yes |
 
 ### Built by the generic extractor (`scripts/extract_tables.py`)
 

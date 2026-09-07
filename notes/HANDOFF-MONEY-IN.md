@@ -274,6 +274,48 @@ about any department.
 - **`notes/reference/data-model/who-decides.html`** — all money in, all 67 departments,
   and who controls each end.
 
+## The model is now data, not code
+
+Four CSVs, loaded into the database, queryable on `/api/query`:
+
+| dataset | rows | what it holds |
+|---|---:|---|
+| `money-classification.csv` | 252 | every revenue account, fund, department, grant code and annual-report receipt name — with **what** it is, **how** that was established and **why** |
+| `money-edges.csv` | 11 | which source pays which use: `traced`, `restricted` (presumed, never observed), `impossible` |
+| `money-assumptions.csv` | 6 | every assumption still load-bearing, and what would settle it |
+| `money-gaps.csv` | 14 | what the records cannot answer |
+
+…plus `revenue_history` (a table, 504 rows, five checked years) and the views
+`v_revenue_classified` and `v_spending_classified`.
+
+**Revenue over time, from the annual reports:**
+
+| | FY2014 | FY2015 | FY2017 | FY2018 | FY2022 |
+|---|---:|---:|---:|---:|---:|
+| levy | 19,918,391 | 20,593,467 | 24,458,766 | 25,615,880 | 29,721,395 |
+| state aid | 7,202,322 | 7,534,776 | 8,301,780 | 9,096,694 | 9,825,939 |
+| local receipts | 2,860,925 | 2,867,812 | 3,364,145 | 3,787,748 | 4,736,884 |
+| transfers | 807,442 | 838,054 | 923,160 | 1,692,340 | 2,391,151 |
+| **total** | **30,789,379** | **31,842,092** | **37,050,713** | **40,193,022** | **46,695,139** |
+
+*Five years only.* The other eight annual-report years have no checked rows and are
+excluded rather than shown as zero.
+
+**The join key is the source name with every space and punctuation mark removed**, and that
+is not cosmetic: OCR splits words in some editions, so `REAL EST AT E T AXES` and
+`REAL ESTATE TAXES` are the same line. **73 of the 197 printed names were split this way.**
+Grouping on the raw name shows Real Estate Taxes as a four-year series and a one-year
+series instead of one five-year series.
+
+`revenue_history` is a TABLE rather than a view because the squashing needs a function
+SQLite has to be given, and a view calling a custom function works only in the connection
+that created it — it fails from any other client and from D1, which has no custom functions
+at all.
+
+**And the cell tower, since it came up:** $35,829 (FY2014) → $72,240 (FY2022), four
+checked years, printed as `RENTAL FEES CELL TOWER`. Whether any of it is earmarked for the
+turf field is still not established.
+
 ## Next steps, in order
 
 0. **Model the spending side from the 635 account rows**, not from apportionment. This is

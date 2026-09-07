@@ -15,7 +15,7 @@ path that exists only in the working tree is one disk failure from gone.
 | `sources/data/inventory/` | tree + git + bucket | 1 MB | 16 | Per-report table catalogues — every table found by reading all sixteen reports end to end, printed heading verbatim. | **many hours of agent reading** |
 | `sources/data/rosters/` | tree + git + bucket | 1 MB | 200 | Roster page dumps and parsed JSON — 100 pages, every line numbered and accounted for. | **many hours of agent reading** |
 | `sources/data/` | tree + git + bucket | 13 MB | 62 | The datasets themselves, plus provenance and the extraction plan. CSV only — the directory total below includes the two above. | seconds, given everything above |
-| `sources/data/lunenburg.db` | tree + bucket | 16 MB | 1 | Derived read model. Dropped and rebuilt from the CSVs on every run, never edited. | seconds — `python3 scripts/build_db.py` |
+| `sources/data/lunenburg.db` | tree + bucket | 19 MB | 1 | Derived read model. Dropped and rebuilt from the CSVs on every run, never edited. | seconds — `python3 scripts/build_db.py` |
 
 ## The files that exist in exactly one place
 
