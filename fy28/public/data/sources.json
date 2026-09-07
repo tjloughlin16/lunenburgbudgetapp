@@ -1185,9 +1185,9 @@
      "stars": 3,
      "what": "The method document. Every figure this project publishes, with its inputs, the formula, a worked example in real dollars, and — beside each one — whether it is somebody else’s figure, a contract, a statute, our measurement or our assumption. Fifteen sections: the projection itself, why each escalator is what it is, special education, out-of-district tuition, health insurance, free cash, athletic fees, the levers, the cut cascade, the tax base and overrides, an assumption register ranked by what each one moves, and what none of it can compute. GENERATED from the live model by scripts/build_show_your_work.py, so it cannot drift from the code — run it with --check to prove the copy you are reading is current. Written to be usable by an assistant checking a number as well as by a resident following the argument.",
      "kind": "Notes",
-     "bytes": 94467,
+     "bytes": 95275,
      "url": "/docs/analyses/show-your-work.md",
-     "count": 1828,
+     "count": 1839,
      "unit": "lines",
      "textUrl": "/docs/analyses/show-your-work.md"
     },
@@ -1693,6 +1693,18 @@
      "textUrl": "/docs/data/table-semantics.csv"
     },
     {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 24133,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 39,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
      "path": "data/staff-roster-counts.csv",
      "title": "Roster headcount by school and year",
      "stars": 2,
@@ -1703,18 +1715,6 @@
      "count": 699,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-counts.csv"
-    },
-    {
-     "path": "data/money-gaps.csv",
-     "title": "What the town’s records cannot answer",
-     "stars": 2,
-     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
-     "kind": "Data",
-     "bytes": 22215,
-     "url": "/docs/data/money-gaps.csv",
-     "count": 37,
-     "unit": "rows",
-     "textUrl": "/docs/data/money-gaps.csv"
     },
     {
      "path": "data/PROVENANCE-peg-access.md",
@@ -5885,7 +5885,7 @@
  "totals": {
   "documents": 476,
   "groups": 20,
-  "bytes": 1003959367,
+  "bytes": 1003962093,
   "loadBearing": 77
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

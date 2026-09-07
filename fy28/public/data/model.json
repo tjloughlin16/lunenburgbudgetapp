@@ -795,7 +795,7 @@
   "other": 0.03,
   "levy_growth": 0.025,
   "new_growth": 400000,
-  "state_aid_growth": 0.02,
+  "state_aid_growth": 0.0275,
   "local_receipts_growth": 0.01,
   "school_share": 0.562,
   "athletic_fee_revenue": 0,
@@ -1002,9 +1002,24 @@
   "note": "Every projection on this site is computed from budget columns \u2014 what was voted or proposed \u2014 never from actual spending. The two are different quantities and mixing them produces a growth rate that is partly growth and partly the difference between them."
  },
  "releases": {
-  "current": "v11",
+  "current": "v12",
   "updated": "2026-09-07",
   "items": [
+   {
+    "tag": "v12",
+    "date": "2026-09-07",
+    "title": "The one assumption with nothing behind it now has the town\u2019s own answer",
+    "short": "the state aid rate is derived, not guessed",
+    "headline": "This projection assumed state aid would grow 2% a year, and nothing anywhere said why. It now grows at 2.75% \u2014 the typical year in the town\u2019s own published estimates of that money, across twenty-three budget years. If you have quoted a shortfall figure from this site, the numbers below have moved.",
+    "changes": [
+     "The projected FY28 school shortfall is now $632,876, down from $680,870. The FY29 figure, if the town does nothing in FY28, is $1,224,035 rather than $1,322,303. Nothing about the town\u2019s costs changed \u2014 only what this site assumes about the cheque the state sends.",
+     "Where 2.75% comes from, in one sentence: Lunenburg has published its own estimate of state aid every year since 2005, and 2.75% is what a typical year looks like across all twenty-three of them. Nobody had lined them up before.",
+     "Why the typical year rather than the overall average. State aid does not grow smoothly \u2014 most years it moves a little, and four times in twenty-three years it jumped more than 10% at once because the legislature changed something. Averaging those in would assume the state keeps doing that on the same schedule. Assuming ordinary years is the safer way to be wrong: if a big year comes, the town is better off than this site predicted.",
+     "The change is small on purpose, and that is the reassuring part. Replacing a figure that had no source with one derived from twenty-three years of the town\u2019s own documents moved the shortfall about 7%. Had it swung wildly, it would have meant the projection was resting on the guess.",
+     "What it does not promise: most of this money is Chapter 70, which comes out of a state formula driven by student counts and property values. Twenty-three years of history says what that formula has done, not what it will do. The site records this rate\u2019s confidence as moderate for that reason.",
+     "One assumption in the model still has no source behind it \u2014 local receipts, assumed to grow 1% a year. It is named on the method page, as this one was, and the page now counts them rather than asserting how many there are."
+    ]
+   },
    {
     "tag": "v11",
     "date": "2026-09-07",
@@ -1382,28 +1397,28 @@
     "id": "budgeted",
     "label": "As the district budgeted it for FY27",
     "tuition": 700142,
-    "gap": 680870,
+    "gap": 632876,
     "delta": 0
    },
    {
     "id": "midway",
     "label": "Midway back",
     "tuition": 1000000,
-    "gap": 980728,
+    "gap": 932734,
     "delta": 299858
    },
    {
     "id": "fy25",
     "label": "Back to the FY25 budget",
     "tuition": 1164824,
-    "gap": 1145552,
+    "gap": 1097558,
     "delta": 464682
    },
    {
     "id": "fy26",
     "label": "Back to the FY26 budget",
     "tuition": 1291293,
-    "gap": 1272021,
+    "gap": 1224027,
     "delta": 591151
    }
   ],
@@ -5463,27 +5478,27 @@
   "deficits": [
    {
     "fy": 28,
-    "amount": 680870
+    "amount": 632876
    },
    {
     "fy": 29,
-    "amount": 1322303
+    "amount": 1224035
    },
    {
     "fy": 30,
-    "amount": 2033179
+    "amount": 1882276
    },
    {
     "fy": 31,
-    "amount": 2819056
+    "amount": 2613071
    },
    {
     "fy": 32,
-    "amount": 3685928
+    "amount": 3422328
    },
    {
     "fy": 33,
-    "amount": 4640257
+    "amount": 4316419
    }
   ],
   "ladder": [
@@ -5493,39 +5508,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": true,
-      "remaining": 2673500
+      "remaining": 2721494
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": true,
-      "remaining": 1351197
+      "remaining": 1497459
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -681982
+      "remaining": -384817
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -3501038
+      "remaining": -2997888
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -7186966
+      "remaining": -6420216
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -11827223
+      "remaining": -10736635
      }
     ]
    },
@@ -5535,39 +5550,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": true,
-      "remaining": 2161600
+      "remaining": 2209594
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": true,
-      "remaining": 839297
+      "remaining": 985559
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -1193882
+      "remaining": -896717
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -4012938
+      "remaining": -3509788
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -7698866
+      "remaining": -6932116
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -12339123
+      "remaining": -11248535
      }
     ]
    },
@@ -5577,39 +5592,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": true,
-      "remaining": 1649701
+      "remaining": 1697695
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": true,
-      "remaining": 327398
+      "remaining": 473660
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -1705781
+      "remaining": -1408616
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -4524837
+      "remaining": -4021687
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -8210765
+      "remaining": -7444015
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -12851022
+      "remaining": -11760434
      }
     ]
    },
@@ -5619,39 +5634,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": true,
-      "remaining": 1137801
+      "remaining": 1185795
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": false,
-      "remaining": -184502
+      "remaining": -38240
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -2217681
+      "remaining": -1920516
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -5036737
+      "remaining": -4533587
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -8722665
+      "remaining": -7955915
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -13362922
+      "remaining": -12272334
      }
     ]
    },
@@ -5661,39 +5676,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": true,
-      "remaining": 625902
+      "remaining": 673896
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": false,
-      "remaining": -696401
+      "remaining": -550139
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -2729580
+      "remaining": -2432415
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -5548636
+      "remaining": -5045486
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -9234564
+      "remaining": -8467814
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -13874821
+      "remaining": -12784233
      }
     ]
    },
@@ -5703,39 +5718,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": true,
-      "remaining": 114002
+      "remaining": 161996
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": false,
-      "remaining": -1208301
+      "remaining": -1062039
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -3241480
+      "remaining": -2944315
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -6060536
+      "remaining": -5557386
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -9746464
+      "remaining": -8979714
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -14386721
+      "remaining": -13296133
      }
     ]
    },
@@ -5745,39 +5760,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": false,
-      "remaining": -397898
+      "remaining": -349904
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": false,
-      "remaining": -1720201
+      "remaining": -1573939
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -3753380
+      "remaining": -3456215
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -6572436
+      "remaining": -6069286
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -10258364
+      "remaining": -9491614
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -14898621
+      "remaining": -13808033
      }
     ]
    },
@@ -5787,39 +5802,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": false,
-      "remaining": -909797
+      "remaining": -861803
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": false,
-      "remaining": -2232100
+      "remaining": -2085838
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -4265279
+      "remaining": -3968114
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -7084335
+      "remaining": -6581185
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -10770263
+      "remaining": -10003513
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -15410520
+      "remaining": -14319932
      }
     ]
    },
@@ -5829,39 +5844,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "covered": false,
-      "remaining": -1421697
+      "remaining": -1373703
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "covered": false,
-      "remaining": -2744000
+      "remaining": -2597738
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "covered": false,
-      "remaining": -4777179
+      "remaining": -4480014
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "covered": false,
-      "remaining": -7596235
+      "remaining": -7093085
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "covered": false,
-      "remaining": -11282163
+      "remaining": -10515413
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "covered": false,
-      "remaining": -15922420
+      "remaining": -14831832
      }
     ]
    }
@@ -5874,39 +5889,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -2673500,
+      "deficit": -2721494,
       "applied": 3354370,
-      "after": -2673500
+      "after": -2721494
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -5917,39 +5932,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -996315,
+      "deficit": -1044309,
       "applied": 1677185,
-      "after": -996315
+      "after": -1044309
      },
      {
       "fy": 29,
-      "deficit": -354882,
+      "deficit": -453150,
       "applied": 1677185,
-      "after": -354882
+      "after": -453150
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -5960,39 +5975,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -437253,
+      "deficit": -485247,
       "applied": 1118123,
-      "after": -437253
+      "after": -485247
      },
      {
       "fy": 29,
-      "deficit": 204180,
+      "deficit": 105912,
       "applied": 1118123,
-      "after": 204180
+      "after": 105912
      },
      {
       "fy": 30,
-      "deficit": 915056,
+      "deficit": 764153,
       "applied": 1118123,
-      "after": 915056
+      "after": 764153
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6003,39 +6018,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -2161600,
+      "deficit": -2209594,
       "applied": 2842470,
-      "after": -2161600
+      "after": -2209594
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6046,39 +6061,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -740365,
+      "deficit": -788359,
       "applied": 1421235,
-      "after": -740365
+      "after": -788359
      },
      {
       "fy": 29,
-      "deficit": -98932,
+      "deficit": -197200,
       "applied": 1421235,
-      "after": -98932
+      "after": -197200
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6089,39 +6104,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -266620,
+      "deficit": -314614,
       "applied": 947490,
-      "after": -266620
+      "after": -314614
      },
      {
       "fy": 29,
-      "deficit": 374813,
+      "deficit": 276545,
       "applied": 947490,
-      "after": 374813
+      "after": 276545
      },
      {
       "fy": 30,
-      "deficit": 1085689,
+      "deficit": 934786,
       "applied": 947490,
-      "after": 1085689
+      "after": 934786
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6132,39 +6147,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -1649701,
+      "deficit": -1697695,
       "applied": 2330571,
-      "after": -1649701
+      "after": -1697695
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6175,39 +6190,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -484415,
+      "deficit": -532409,
       "applied": 1165285,
-      "after": -484415
+      "after": -532409
      },
      {
       "fy": 29,
-      "deficit": 157018,
+      "deficit": 58750,
       "applied": 1165285,
-      "after": 157018
+      "after": 58750
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6218,39 +6233,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -95987,
+      "deficit": -143981,
       "applied": 776857,
-      "after": -95987
+      "after": -143981
      },
      {
       "fy": 29,
-      "deficit": 545446,
+      "deficit": 447178,
       "applied": 776857,
-      "after": 545446
+      "after": 447178
      },
      {
       "fy": 30,
-      "deficit": 1256322,
+      "deficit": 1105419,
       "applied": 776857,
-      "after": 1256322
+      "after": 1105419
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6261,39 +6276,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -1137801,
+      "deficit": -1185795,
       "applied": 1818671,
-      "after": -1137801
+      "after": -1185795
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6304,39 +6319,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -228466,
+      "deficit": -276460,
       "applied": 909336,
-      "after": -228466
+      "after": -276460
      },
      {
       "fy": 29,
-      "deficit": 412967,
+      "deficit": 314699,
       "applied": 909336,
-      "after": 412967
+      "after": 314699
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6347,39 +6362,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 74646,
+      "deficit": 26652,
       "applied": 606224,
-      "after": 74646
+      "after": 26652
      },
      {
       "fy": 29,
-      "deficit": 716079,
+      "deficit": 617811,
       "applied": 606224,
-      "after": 716079
+      "after": 617811
      },
      {
       "fy": 30,
-      "deficit": 1426955,
+      "deficit": 1276052,
       "applied": 606224,
-      "after": 1426955
+      "after": 1276052
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6390,39 +6405,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -625902,
+      "deficit": -673896,
       "applied": 1306772,
-      "after": -625902
+      "after": -673896
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6433,39 +6448,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 27484,
+      "deficit": -20510,
       "applied": 653386,
-      "after": 27484
+      "after": -20510
      },
      {
       "fy": 29,
-      "deficit": 668917,
+      "deficit": 570649,
       "applied": 653386,
-      "after": 668917
+      "after": 570649
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6476,39 +6491,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 245279,
+      "deficit": 197285,
       "applied": 435591,
-      "after": 245279
+      "after": 197285
      },
      {
       "fy": 29,
-      "deficit": 886712,
+      "deficit": 788444,
       "applied": 435591,
-      "after": 886712
+      "after": 788444
      },
      {
       "fy": 30,
-      "deficit": 1597588,
+      "deficit": 1446685,
       "applied": 435591,
-      "after": 1597588
+      "after": 1446685
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6519,39 +6534,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -114002,
+      "deficit": -161996,
       "applied": 794872,
-      "after": -114002
+      "after": -161996
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6562,39 +6577,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 283434,
+      "deficit": 235440,
       "applied": 397436,
-      "after": 283434
+      "after": 235440
      },
      {
       "fy": 29,
-      "deficit": 924867,
+      "deficit": 826599,
       "applied": 397436,
-      "after": 924867
+      "after": 826599
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6605,39 +6620,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 415913,
+      "deficit": 367919,
       "applied": 264957,
-      "after": 415913
+      "after": 367919
      },
      {
       "fy": 29,
-      "deficit": 1057346,
+      "deficit": 959078,
       "applied": 264957,
-      "after": 1057346
+      "after": 959078
      },
      {
       "fy": 30,
-      "deficit": 1768222,
+      "deficit": 1617319,
       "applied": 264957,
-      "after": 1768222
+      "after": 1617319
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6648,39 +6663,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 397898,
+      "deficit": 349904,
       "applied": 282972,
-      "after": 397898
+      "after": 349904
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6691,39 +6706,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 539384,
+      "deficit": 491390,
       "applied": 141486,
-      "after": 539384
+      "after": 491390
      },
      {
       "fy": 29,
-      "deficit": 1180817,
+      "deficit": 1082549,
       "applied": 141486,
-      "after": 1180817
+      "after": 1082549
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6734,39 +6749,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 586546,
+      "deficit": 538552,
       "applied": 94324,
-      "after": 586546
+      "after": 538552
      },
      {
       "fy": 29,
-      "deficit": 1227979,
+      "deficit": 1129711,
       "applied": 94324,
-      "after": 1227979
+      "after": 1129711
      },
      {
       "fy": 30,
-      "deficit": 1938855,
+      "deficit": 1787952,
       "applied": 94324,
-      "after": 1938855
+      "after": 1787952
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6777,39 +6792,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "applied": 0,
-      "after": 680870
+      "after": 632876
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6820,39 +6835,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "applied": 0,
-      "after": 680870
+      "after": 632876
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6863,39 +6878,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "applied": 0,
-      "after": 680870
+      "after": 632876
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6906,39 +6921,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "applied": 0,
-      "after": 680870
+      "after": 632876
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6949,39 +6964,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "applied": 0,
-      "after": 680870
+      "after": 632876
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    },
@@ -6992,39 +7007,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 680870,
+      "deficit": 632876,
       "applied": 0,
-      "after": 680870
+      "after": 632876
      },
      {
       "fy": 29,
-      "deficit": 1322303,
+      "deficit": 1224035,
       "applied": 0,
-      "after": 1322303
+      "after": 1224035
      },
      {
       "fy": 30,
-      "deficit": 2033179,
+      "deficit": 1882276,
       "applied": 0,
-      "after": 2033179
+      "after": 1882276
      },
      {
       "fy": 31,
-      "deficit": 2819056,
+      "deficit": 2613071,
       "applied": 0,
-      "after": 2819056
+      "after": 2613071
      },
      {
       "fy": 32,
-      "deficit": 3685928,
+      "deficit": 3422328,
       "applied": 0,
-      "after": 3685928
+      "after": 3422328
      },
      {
       "fy": 33,
-      "deficit": 4640257,
+      "deficit": 4316419,
       "applied": 0,
-      "after": 4640257
+      "after": 4316419
      }
     ]
    }
@@ -7035,56 +7050,56 @@
    "years": [
     {
      "fy": 28,
-     "deficit": 680870,
+     "deficit": 632876,
      "freeCashApplied": 794872,
-     "afterFreeCash": -114002,
+     "afterFreeCash": -161996,
      "overrideValue": 794872,
-     "afterOverride": -114002
+     "afterOverride": -161996
     },
     {
      "fy": 29,
-     "deficit": 1322303,
+     "deficit": 1224035,
      "freeCashApplied": 0,
-     "afterFreeCash": 1322303,
+     "afterFreeCash": 1224035,
      "overrideValue": 814744,
-     "afterOverride": 507559
+     "afterOverride": 409291
     },
     {
      "fy": 30,
-     "deficit": 2033179,
+     "deficit": 1882276,
      "freeCashApplied": 0,
-     "afterFreeCash": 2033179,
+     "afterFreeCash": 1882276,
      "overrideValue": 835112,
-     "afterOverride": 1198067
+     "afterOverride": 1047164
     },
     {
      "fy": 31,
-     "deficit": 2819056,
+     "deficit": 2613071,
      "freeCashApplied": 0,
-     "afterFreeCash": 2819056,
+     "afterFreeCash": 2613071,
      "overrideValue": 855990,
-     "afterOverride": 1963066
+     "afterOverride": 1757081
     },
     {
      "fy": 32,
-     "deficit": 3685928,
+     "deficit": 3422328,
      "freeCashApplied": 0,
-     "afterFreeCash": 3685928,
+     "afterFreeCash": 3422328,
      "overrideValue": 877390,
-     "afterOverride": 2808538
+     "afterOverride": 2544938
     },
     {
      "fy": 33,
-     "deficit": 4640257,
+     "deficit": 4316419,
      "freeCashApplied": 0,
-     "afterFreeCash": 4640257,
+     "afterFreeCash": 4316419,
      "overrideValue": 899325,
-     "afterOverride": 3740932
+     "afterOverride": 3417094
     }
    ],
-   "cumulativeNone": 15181593,
-   "cumulativeFreeCash": 14386721,
-   "cumulativeOverride": 10104160
+   "cumulativeNone": 14091005,
+   "cumulativeFreeCash": 13296133,
+   "cumulativeOverride": 9013572
   },
   "sustainableDraw": 2026212,
   "policyStops": [
@@ -7135,43 +7150,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 2026212,
-      "after": -1345342
+      "after": -1393336
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 15181593,
-    "gapLeftWithPolicy": 3024321
+    "gapLeftOneTimeOnly": 14091005,
+    "gapLeftWithPolicy": 1933733
    },
    {
     "target": 0.07,
@@ -7182,43 +7197,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 2026212,
-      "after": -1345342
+      "after": -1393336
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 15181593,
-    "gapLeftWithPolicy": 3024321
+    "gapLeftOneTimeOnly": 14091005,
+    "gapLeftWithPolicy": 1933733
    },
    {
     "target": 0.06,
@@ -7229,43 +7244,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 2309184,
-      "after": -1628314
+      "after": -1676308
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 14898621,
-    "gapLeftWithPolicy": 2741349
+    "gapLeftOneTimeOnly": 13808033,
+    "gapLeftWithPolicy": 1650761
    },
    {
     "target": 0.05,
@@ -7276,43 +7291,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 2821084,
-      "after": -2140214
+      "after": -2188208
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 14386721,
-    "gapLeftWithPolicy": 2229449
+    "gapLeftOneTimeOnly": 13296133,
+    "gapLeftWithPolicy": 1138861
    },
    {
     "target": 0.04,
@@ -7323,43 +7338,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 3332984,
-      "after": -2652114
+      "after": -2700108
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 13874821,
-    "gapLeftWithPolicy": 1717549
+    "gapLeftOneTimeOnly": 12784233,
+    "gapLeftWithPolicy": 626961
    },
    {
     "target": 0.03,
@@ -7370,43 +7385,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 3844883,
-      "after": -3164013
+      "after": -3212007
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 13362922,
-    "gapLeftWithPolicy": 1205650
+    "gapLeftOneTimeOnly": 12272334,
+    "gapLeftWithPolicy": 115062
    },
    {
     "target": 0.02,
@@ -7417,43 +7432,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 4356783,
-      "after": -3675913
+      "after": -3723907
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 12851022,
-    "gapLeftWithPolicy": 693750
+    "gapLeftOneTimeOnly": 11760434,
+    "gapLeftWithPolicy": -396838
    },
    {
     "target": 0.01,
@@ -7464,43 +7479,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 4868682,
-      "after": -4187812
+      "after": -4235806
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 12339123,
-    "gapLeftWithPolicy": 181851
+    "gapLeftOneTimeOnly": 11248535,
+    "gapLeftWithPolicy": -908737
    },
    {
     "target": 0.0,
@@ -7511,43 +7526,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 680870,
+      "before": 632876,
       "applied": 5380582,
-      "after": -4699712
+      "after": -4747706
      },
      {
       "fy": 29,
-      "before": 1322303,
+      "before": 1224035,
       "applied": 2026212,
-      "after": -703909
+      "after": -802177
      },
      {
       "fy": 30,
-      "before": 2033179,
+      "before": 1882276,
       "applied": 2026212,
-      "after": 6967
+      "after": -143936
      },
      {
       "fy": 31,
-      "before": 2819056,
+      "before": 2613071,
       "applied": 2026212,
-      "after": 792844
+      "after": 586859
      },
      {
       "fy": 32,
-      "before": 3685928,
+      "before": 3422328,
       "applied": 2026212,
-      "after": 1659716
+      "after": 1396116
      },
      {
       "fy": 33,
-      "before": 4640257,
+      "before": 4316419,
       "applied": 2026212,
-      "after": 2614045
+      "after": 2290207
      }
     ],
-    "gapLeftOneTimeOnly": 11827223,
-    "gapLeftWithPolicy": -330049
+    "gapLeftOneTimeOnly": 10736635,
+    "gapLeftWithPolicy": -1420637
    }
   ],
   "capital": {
@@ -8714,7 +8729,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$634,068",
+   "value": "$583,571",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -8722,8 +8737,8 @@
   {
    "id": "business",
    "label": "What business growth would have to deliver",
-   "value": "$44.1M",
-   "sub": "of new commercial value every year \u2014 about 67 more average businesses a year, on top of the 234 the town has, or 15 typical developments",
+   "value": "$40.6M",
+   "sub": "of new commercial value every year \u2014 about 62 more average businesses a year, on top of the 234 the town has, or 13 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },
@@ -8881,7 +8896,7 @@
    "body": "The town certified $3,354,370 this year, 6.55% of its operating budget, and says it aims for 5%-7%. So about 24% of it \u2014 $794,872 \u2014 could go to the schools every year without breaching that standard. The catch is the condition: this year was a record, driven by unspent appropriations at 2.49 times their own four-year average. An ordinary year certifies $2,026,212, or 3.96% \u2014 already below the floor, with nothing to redirect at all. Both arguments in town are right about different years: a record balance, and below the recommendation in seven of the last ten."
   }
  ],
- "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $630,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
+ "headline": "Lunenburg is not facing a one-year problem that can be solved by cutting sports. It is facing a structural gap of roughly $580,000 a year, every year, in a town whose school budget grew 1.08% while its neighbors grew three to six times faster.",
  "levers": [
   {
    "id": "athletic_fees",

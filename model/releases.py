@@ -24,6 +24,47 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v12',
+        date='2026-09-07',
+        title='The one assumption with nothing behind it now has the town’s own answer',
+        short='the state aid rate is derived, not guessed',
+        headline='This projection assumed state aid would grow 2% a year, and nothing '
+                 'anywhere said why. It now grows at 2.75% — the typical year in the '
+                 'town’s own published estimates of that money, across twenty-three '
+                 'budget years. If you have quoted a shortfall figure from this site, the '
+                 'numbers below have moved.',
+        changes=[
+            'The projected FY28 school shortfall is now $632,876, down from $680,870. The '
+            'FY29 figure, if the town does nothing in FY28, is $1,224,035 rather than '
+            '$1,322,303. Nothing about the town’s costs changed — only what this site '
+            'assumes about the cheque the state sends.',
+
+            'Where 2.75% comes from, in one sentence: Lunenburg has published its own '
+            'estimate of state aid every year since 2005, and 2.75% is what a typical year '
+            'looks like across all twenty-three of them. Nobody had lined them up before.',
+
+            'Why the typical year rather than the overall average. State aid does not grow '
+            'smoothly — most years it moves a little, and four times in twenty-three years '
+            'it jumped more than 10% at once because the legislature changed something. '
+            'Averaging those in would assume the state keeps doing that on the same '
+            'schedule. Assuming ordinary years is the safer way to be wrong: if a big year '
+            'comes, the town is better off than this site predicted.',
+
+            'The change is small on purpose, and that is the reassuring part. Replacing a '
+            'figure that had no source with one derived from twenty-three years of the '
+            'town’s own documents moved the shortfall about 7%. Had it swung wildly, it '
+            'would have meant the projection was resting on the guess.',
+
+            'What it does not promise: most of this money is Chapter 70, which comes out '
+            'of a state formula driven by student counts and property values. Twenty-three '
+            'years of history says what that formula has done, not what it will do. The '
+            'site records this rate’s confidence as moderate for that reason.',
+
+            'One assumption in the model still has no source behind it — local receipts, '
+            'assumed to grow 1% a year. It is named on the method page, as this one was, '
+            'and the page now counts them rather than asserting how many there are.',
+        ]),
+    dict(
         tag='v11',
         date='2026-09-07',
         title='Four doors, and eight questions answered one page at a time',
