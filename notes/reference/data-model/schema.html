@@ -61,7 +61,11 @@ summary .n { color:var(--muted); font-size:12px;
   font-family:ui-monospace,Menlo,monospace }
 summary .yr { color:var(--traced); font-size:11.5px;
   font-family:ui-monospace,Menlo,monospace }
-details table { margin-top:9px; max-width:420px }
+details table.cols { margin-top:9px; max-width:420px }
+details table.samp { margin-top:5px; font-size:11.5px; white-space:nowrap }
+details table.samp td { padding-right:14px }
+.cap.sm { font-size:12px; margin:11px 0 0 }
+.nul { color:var(--muted); font-style:italic; font-size:.9em }
 .gen { margin-top:30px; font-size:12px; color:var(--muted) }
 @media (min-width:680px) { .metrics { grid-template-columns:repeat(4,1fr) } }
 </style>
@@ -182,7 +186,7 @@ details table { margin-top:9px; max-width:420px }
 <div class="stage"><h2>The spine — what a budget said and what the books say</h2>
 <p class="cap">Three fact tables, three different grains. Confusing them is how a budget gets compared to an actual that is not its own.</p>
 <details><summary><code>budget_figure</code> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
@@ -191,17 +195,31 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>value</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>line_key</th><th>label</th><th>fy</th><th>stage</th><th>variant</th><th>value</th><th>documents_disagree</th><th>doc_id</th></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td class="num">2019</td><td>actual</td><td><span class="nul">empty</span></td><td class="num">0.0</td><td class="num">0</td><td>sources/district-budget/text/fy23-approved-…</td></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td class="num">2020</td><td>actual</td><td><span class="nul">empty</span></td><td class="num">0.0</td><td class="num">0</td><td>sources/district-budget/text/fy24-approved-…</td></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td class="num">2021</td><td>actual</td><td><span class="nul">empty</span></td><td class="num">0.0</td><td class="num">0</td><td>sources/district-budget/text/fy24-approved-…</td></tr>
+</table></div>
+</details>
 <details><summary><code>budget_line</code> <span class="n">688 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>section</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>function_group</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>line_key</th><th>label</th><th>section</th><th>function_group</th><th>kind</th></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
+<tr><td>ace special ed para</td><td>ACE Special Ed Paraprofessionals</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
+<tr><td>additional</td><td>additional</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
+</table></div>
+</details>
 <details><summary><code>ledger_snapshot</code> <span class="n">983 rows</span> <span class="yr">2026–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>account_id</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>period</code></td><td class="ty">INTEGER</td></tr>
@@ -214,9 +232,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>pct_used</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>account_id</th><th>fy</th><th>period</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th><th>rounded_columns</th><th>doc_id</th></tr>
+<tr><td>6200-01901-511000</td><td class="num">2026</td><td class="num">9</td><td class="num">102100.0</td><td class="num">0.0</td><td class="num">102100.0</td><td class="num">74712.13</td><td class="num">0.0</td><td class="num">27387.87</td><td class="num">73.2</td><td>original,transfers,revised</td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
+<tr><td>6200-01901-512100</td><td class="num">2026</td><td class="num">9</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td>original,transfers,revised</td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
+<tr><td>6200-01901-512105</td><td class="num">2026</td><td class="num">9</td><td class="num">38500.0</td><td class="num">0.0</td><td class="num">38500.0</td><td class="num">23366.96</td><td class="num">0.0</td><td class="num">15133.04</td><td class="num">60.7</td><td>original,transfers,revised</td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
+</table></div>
+</details>
 <details><summary><code>workbook_figure</code> <span class="n">3,261 rows</span> <span class="yr">2023, 2024, 2025, 2026, 2027, 2029</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>row</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
@@ -224,9 +249,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>value</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>row_kind</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>row</th><th>line_key</th><th>fy</th><th>column_kind</th><th>value</th><th>row_kind</th><th>doc_id</th></tr>
+<tr><td class="num">7</td><td>1110 - school committee</td><td class="num">2029</td><td>forecast</td><td class="num">8612.0</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
+<tr><td class="num">8</td><td>staff orientation expenses</td><td class="num">2025</td><td>budget</td><td class="num">250.0</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
+<tr><td class="num">8</td><td>staff orientation expenses</td><td class="num">2026</td><td>final_budget</td><td class="num">1000.0</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
+</table></div>
+</details>
 <details><summary><code>account</code> <span class="n">981 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>account_id</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fund_name</code></td><td class="ty">TEXT</td></tr>
@@ -240,32 +272,55 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>first_seen_fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>last_seen_fy</code></td><td class="ty">INTEGER</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>account_id</th><th>fund</th><th>fund_name</th><th>dept</th><th>org</th><th>object</th><th>account_string</th><th>function</th><th>name</th><th>account_type</th><th>level</th><th>first_seen_fy</th><th>last_seen_fy</th></tr>
+<tr><td>6200-01901-511000</td><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td><span class="nul">NULL</span></td><td>01901</td><td>511000</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>SALPEG</td><td>expense</td><td>account</td><td class="num">2026</td><td class="num">2026</td></tr>
+<tr><td>6200-01901-512100</td><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td><span class="nul">NULL</span></td><td>01901</td><td>512100</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>SALS TEMP</td><td>expense</td><td>account</td><td class="num">2026</td><td class="num">2026</td></tr>
+<tr><td>6200-01901-512105</td><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td><span class="nul">NULL</span></td><td>01901</td><td>512105</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>PRVIDEOGRA</td><td>expense</td><td>account</td><td class="num">2026</td><td class="num">2026</td></tr>
+</table></div>
+</details>
 <details><summary><code>fund</code> <span class="n">68 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>restriction</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fund</th><th>name</th><th>kind</th><th>restriction</th></tr>
+<tr><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
+<tr><td>5000</td><td>SEWER BETTERMENTS</td><td>enterprise</td><td><span class="nul">NULL</span></td></tr>
+<tr><td>5100</td><td>WATER BETTERMENT FUND</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
+</table></div>
+</details>
 <details><summary><code>fiscal_period</code> <span class="n">13 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>period</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>months_elapsed</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>is_final</code></td><td class="ty">INTEGER</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>period</th><th>label</th><th>months_elapsed</th><th>is_final</th></tr>
+<tr><td class="num">1</td><td>July</td><td class="num">1.0</td><td class="num">0</td></tr>
+<tr><td class="num">2</td><td>August</td><td class="num">2.0</td><td class="num">0</td></tr>
+<tr><td class="num">3</td><td>September / Q1</td><td class="num">3.0</td><td class="num">0</td></tr>
+</table></div>
+</details>
 <details><summary><code>crosswalk</code> <span class="n">0 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>account_id</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>method</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>confidence</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>evidence</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
+</details>
 <details><summary><code>munis_ledger</code> <span class="n">983 rows</span> <span class="yr">2026–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>period</code></td><td class="ty">TEXT</td></tr>
@@ -290,9 +345,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>totals_only</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>suppress_zero</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>doc_id</th><th>fy</th><th>period</th><th>fund</th><th>fund_name</th><th>funds_covered</th><th>account_type</th><th>level</th><th>dept</th><th>org</th><th>object</th><th>account</th><th>function</th><th>name</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th><th>totals_only</th><th>suppress_zero</th><th>rounded_columns</th></tr>
+<tr><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td class="num">2026</td><td>9</td><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td>6200 PEG ACCESS ENTERPRISE FUND</td><td>expense</td><td>account</td><td><span class="nul">empty</span></td><td>01901</td><td>511000</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>SALPEG</td><td>102100.0</td><td>0.0</td><td>102100.0</td><td>74712.13</td><td>0.0</td><td>27387.87</td><td>73.2</td><td>0</td><td>0</td><td>original,transfers,revised</td></tr>
+<tr><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td class="num">2026</td><td>9</td><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td>6200 PEG ACCESS ENTERPRISE FUND</td><td>expense</td><td>account</td><td><span class="nul">empty</span></td><td>01901</td><td>512100</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>SALS TEMP</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>0</td><td>original,transfers,revised</td></tr>
+<tr><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td class="num">2026</td><td>9</td><td>6200</td><td>PEG ACCESS ENTERPRISE FUND</td><td>6200 PEG ACCESS ENTERPRISE FUND</td><td>expense</td><td>account</td><td><span class="nul">empty</span></td><td>01901</td><td>512105</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>PRVIDEOGRA</td><td>38500.0</td><td>0.0</td><td>38500.0</td><td>23366.96</td><td>0.0</td><td>15133.04</td><td>60.7</td><td>0</td><td>0</td><td>original,transfers,revised</td></tr>
+</table></div>
+</details>
 <details><summary><code>lps_budget_lines</code> <span class="n">356 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>row</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>section</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>function_group</code></td><td class="ty">TEXT</td></tr>
@@ -312,9 +374,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>forecast_outyear</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>restoration_2_24_26</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>comments</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>row</th><th>section</th><th>function_group</th><th>line_item</th><th>kind</th><th>fy23_actual</th><th>fy24_actual</th><th>fy25_actual</th><th>fy25_budget</th><th>fy26_final</th><th>fy26_actual_td</th><th>fy26_encumb_td</th><th>fy27_restoration</th><th>fy27_core</th><th>fy27_level_service</th><th>fy27_balanced</th><th>forecast_outyear</th><th>restoration_2_24_26</th><th>comments</th></tr>
+<tr><td>6</td><td>EXPENSES</td><td><span class="nul">empty</span></td><td>DESCRIPTION, EXPENSES</td><td>line</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td>7</td><td>EXPENSES</td><td>1110 - School Committee</td><td>1110 - School Committee</td><td>line</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>8612.0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td>8</td><td>EXPENSES</td><td>1110 - School Committee</td><td>Staff Orientation Expenses</td><td>line</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>250.0</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>1000.0</td><td>1000.0</td><td>1000.0</td><td>1000.0</td><td>1000.0</td><td>1000.0</td><td><span class="nul">empty</span></td></tr>
+</table></div>
+</details>
 <details><summary><code>line_history</code> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
@@ -323,9 +392,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>key</th><th>label</th><th>fy</th><th>stage</th><th>variant</th><th>value</th><th>documents_disagree</th><th>source</th></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td class="num">2019</td><td>actual</td><td><span class="nul">empty</span></td><td>0</td><td>0</td><td>fy23-approved-budget.txt</td></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td class="num">2020</td><td>actual</td><td><span class="nul">empty</span></td><td>0</td><td>0</td><td>fy24-approved-budget.txt</td></tr>
+<tr><td>ace general school supplies</td><td>ACE General School Supplies</td><td class="num">2021</td><td>actual</td><td><span class="nul">empty</span></td><td>0</td><td>0</td><td>fy24-approved-budget.txt</td></tr>
+</table></div>
+</details>
 <details><summary><code>line_history_coverage</code> <span class="n">86 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>doc_year</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>data_rows</code></td><td class="ty">TEXT</td></tr>
@@ -338,9 +414,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>doc_date</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>covers</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reason</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>document</th><th>doc_year</th><th>data_rows</th><th>rows_with_layout</th><th>rows_short_of_columns</th><th>figures</th><th>header_line</th><th>header_years</th><th>header_kinds</th><th>doc_date</th><th>covers</th><th>reason</th></tr>
+<tr><td>3-12-25-town-manager-39-s-budget.txt</td><td>2025</td><td>356</td><td>355</td><td>30</td><td>325</td><td>2</td><td>FY25 FY26 FY26 FY26 FY26 %</td><td>Budgeted Level Adj Needs Based TM 030525 TM…</td><td>2025-03-12</td><td>FY2025 FY2026</td><td><span class="nul">empty</span></td></tr>
+<tr><td>additional-town-revenue-spending-plan.txt</td><td><span class="nul">empty</span></td><td>31</td><td>0</td><td>0</td><td>0</td><td><span class="nul">empty</span></td><td>Savings FY27</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>FY2027</td><td>single-column table: line 8 states one fisc…</td></tr>
+<tr><td>athletic-program-costs-by-sport.txt</td><td>2024</td><td>23</td><td>0</td><td>0</td><td>0</td><td><span class="nul">empty</span></td><td>FY24</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>FY2024</td><td>single-column table: line 3 states one fisc…</td></tr>
+</table></div>
+</details>
 <details><summary><code>line_history_disagreements</code> <span class="n">1,497 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
@@ -351,9 +434,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>is_kept</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>spread</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>key</th><th>label</th><th>fy</th><th>stage</th><th>variant</th><th>source</th><th>value</th><th>is_kept</th><th>spread</th><th>kind</th></tr>
+<tr><td>ace special ed para</td><td>ACE Special Ed Paraprofessionals</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td>3-12-25-town-manager-39-s-budget.txt</td><td>66275</td><td>0</td><td>450</td><td>documents</td></tr>
+<tr><td>ace special ed para</td><td>ACE Special Ed Paraprofessionals</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td>final-fy25-budget-4-3-24.txt</td><td>66725</td><td>0</td><td>450</td><td>documents</td></tr>
+<tr><td>ace special ed para</td><td>ACE Special Ed Paraprofessionals</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td>final-fy26-sc-approved-budget-3-12-25-with-…</td><td>66275</td><td>0</td><td>450</td><td>documents</td></tr>
+</table></div>
+</details>
 <details><summary><code>account_names</code> <span class="n">124 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>object</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>org</code></td><td class="ty">TEXT</td></tr>
@@ -361,9 +451,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>readable</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dept</th><th>object</th><th>org</th><th>code</th><th>readable</th><th>basis</th><th>note</th></tr>
+<tr><td>126</td><td>531005</td><td><span class="nul">empty</span></td><td>LEGAL EXPE</td><td>Legal expenses</td><td>plain reading</td><td><span class="nul">empty</span></td></tr>
+<tr><td>132</td><td>578000</td><td><span class="nul">empty</span></td><td>RES FUND</td><td>Reserve Fund</td><td>department name</td><td>Department 132 is RESERVE FUND</td></tr>
+<tr><td>133</td><td>578000</td><td><span class="nul">empty</span></td><td>RES FUND</td><td>Salary reserve</td><td>department name</td><td>Department 133 is SALARY RESERVE — the same…</td></tr>
+</table></div>
+</details>
 <details><summary><code>town_ledger_fy26_q3</code> <span class="n">67 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>original</code></td><td class="ty">TEXT</td></tr>
@@ -373,9 +470,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>encumbered</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>available</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>pct_used</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dept</th><th>name</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th></tr>
+<tr><td>122</td><td>SELECT BOARD</td><td>180280.0</td><td>4778.0</td><td>185059.0</td><td>117630.98</td><td>613.36</td><td>66814.33</td><td>63.9</td></tr>
+<tr><td>126</td><td>TOWN MANAGER</td><td>305325.0</td><td>0.0</td><td>305325.0</td><td>202818.36</td><td>37510.48</td><td>64996.16</td><td>78.7</td></tr>
+<tr><td>131</td><td>FINANCE COMMITTEE</td><td>1800.0</td><td>0.0</td><td>1800.0</td><td>261.0</td><td>0.0</td><td>1539.0</td><td>14.5</td></tr>
+</table></div>
+</details>
 <details><summary><code>stated_figure</code> <span class="n">2 rows</span> <span class="yr">2025–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>metric</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>amount</code></td><td class="ty">REAL</td></tr>
@@ -387,12 +491,18 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>quote</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>supersedes</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 2 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>metric</th><th>amount</th><th>stated_on</th><th>stated_by</th><th>basis</th><th>doc_id</th><th>source_ref</th><th>quote</th><th>supersedes</th><th>note</th></tr>
+<tr><td class="num">2025</td><td>school_surplus</td><td class="num">582115.44</td><td>2025-09-03</td><td>Superintendent (memo read into the record b…</td><td>close</td><td>sources/meetings/text/school-committee/2025…</td><td>line 36</td><td>recently discovered in the amount of $582,1…</td><td><span class="nul">NULL</span></td><td>The Chair read a prepared statement about a…</td></tr>
+<tr><td class="num">2025</td><td>school_surplus</td><td class="num">603885.97</td><td>2025-09-17</td><td>Business Administrator (Mr. McNamara) to th…</td><td>close</td><td>sources/meetings/text/school-committee/2025…</td><td>line 123</td><td>the surplus number has gone up to $603,885.…</td><td class="num">582115.44</td><td>The $21,770.53 difference is encumbrances r…</td></tr>
+</table></div>
+</details>
 </div>
 <div class="stage"><h2>Money in, money out — the classification we built</h2>
 <p class="cap">Our model of every route money takes in and out, as data rather than as a diagram. The <code>how</code>/<code>why</code> columns carry the basis for each call, so a classification can be argued with rather than only read.</p>
 <details><summary><code>money_classification</code> <span class="n">252 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>key</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
@@ -400,29 +510,57 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>classification</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>how</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>why</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>kind</th><th>key</th><th>group</th><th>label</th><th>classification</th><th>how</th><th>why</th></tr>
+<tr><td>revenue_account</td><td>RE TAXES</td><td>levy</td><td>Property tax levy</td><td>general_fund_revenue</td><td>named</td><td>Set by the town, inside the Proposition 2½ …</td></tr>
+<tr><td>revenue_account</td><td>PP TAXES</td><td>levy</td><td>Property tax levy</td><td>general_fund_revenue</td><td>named</td><td>Set by the town, inside the Proposition 2½ …</td></tr>
+<tr><td>revenue_account</td><td>SUPPLE TAX</td><td>levy</td><td>Property tax levy</td><td>general_fund_revenue</td><td>named</td><td>Set by the town, inside the Proposition 2½ …</td></tr>
+</table></div>
+</details>
 <details><summary><code>money_edges</code> <span class="n">11 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>use</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>why</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>source</th><th>use</th><th>basis</th><th>why</th></tr>
+<tr><td>Any general-fund revenue source</td><td>Department 300</td><td>impossible</td><td>Money in fund 0100 is fungible and no recor…</td></tr>
+<tr><td>Department 300 appropriation</td><td>Its 258 accounts, by function</td><td>traced</td><td>`glytdbud-expense-fy2026-p12-gf-all` holds …</td></tr>
+<tr><td>Fund 1301 (athletics)</td><td>Athletics spending</td><td>restricted</td><td>The fund is athletics — established from it…</td></tr>
+</table></div>
+</details>
 <details><summary><code>money_assumptions</code> <span class="n">6 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>assumption</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>evidence</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>rests_on</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>settled_by</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>assumption</th><th>evidence</th><th>rests_on</th><th>settled_by</th></tr>
+<tr><td>A restricted fund’s spending goes to its ow…</td><td>It is what the fund exists for, and a revol…</td><td>Every restricted edge above rests on this.</td><td>An expense report for the special revenue f…</td></tr>
+<tr><td>`SCHRESSTIP` is a school resource officer s…</td><td>Read from the abbreviation, in the police d…</td><td>A $6,800 line. Immaterial, and still an inf…</td><td>The account’s full name from MUNIS, which t…</td></tr>
+<tr><td>The general-fund `SCHCOSTREI` line and fund…</td><td>Nothing. They are similar magnitudes and we…</td><td>**If they are the same money, a total that …</td><td>The town accountant, or a transfer record b…</td></tr>
+</table></div>
+</details>
 <details><summary><code>money_gaps</code> <span class="n">14 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>side</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>what</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>why</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>side</th><th>what</th><th>why</th></tr>
+<tr><td>money_in</td><td>Bus fees</td><td>charged by published policy · no destinatio…</td></tr>
+<tr><td>money_in</td><td>Trust fund income</td><td>scholarships, cemetery, stabilisation · ext…</td></tr>
+<tr><td>money_in</td><td>Student activity accounts</td><td>held by the school under its own authority …</td></tr>
+</table></div>
+</details>
 <details><summary><code>revenue_history</code> <span class="n">504 rows</span> <span class="yr">2014, 2015, 2017, 2018, 2022</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>printed_name</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source_key</code></td><td class="ty">TEXT</td></tr>
@@ -431,9 +569,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>amount</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>printed_name</th><th>source_key</th><th>class</th><th>label</th><th>amount</th><th>document</th><th>page</th></tr>
+<tr><td class="num">2014</td><td>PERSONAL PROPERTY TAXES</td><td>PERSONALPROPERTYTAXES</td><td>levy</td><td>PERSONAL PROPERTY TAXES</td><td class="num">543532.16</td><td>4120-fy-2014-annual-town-report.pdf</td><td>22</td></tr>
+<tr><td class="num">2014</td><td>RENTAL FEES CELL TOWER</td><td>RENTALFEESCELLTOWER</td><td>local</td><td>RENTAL FEES CELL TOWER</td><td class="num">35828.83</td><td>4120-fy-2014-annual-town-report.pdf</td><td>22</td></tr>
+<tr><td class="num">2014</td><td>DOG FINES</td><td>DOGFINES</td><td>local</td><td>DOG FINES</td><td class="num">2050.0</td><td>4120-fy-2014-annual-town-report.pdf</td><td>22</td></tr>
+</table></div>
+</details>
 <details><summary><code>fund_activity</code> <span class="n">61 rows</span> <span class="yr">2026–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>period</code></td><td class="ty">INTEGER</td></tr>
@@ -444,9 +589,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>encumbered</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>closing_balance</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fund</th><th>fy</th><th>period</th><th>opening_balance</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>closing_balance</th><th>doc_id</th></tr>
+<tr><td>1312</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">192943.21</td><td class="num">227220.93</td><td class="num">6128.64</td><td class="num">0.0</td><td class="num">54160.65999999999</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
+<tr><td>2200</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">572231.32</td><td class="num">217676.1</td><td class="num">521910.17</td><td class="num">0.0</td><td class="num">287770.76999999996</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
+<tr><td>2813</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">0.0</td><td class="num">89183.81</td><td class="num">140214.52000000002</td><td class="num">0.0</td><td class="num">-88502.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
+</table></div>
+</details>
 <details><summary><code>school_special_revenue_fy26_q3</code> <span class="n">62 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>revenue</code></td><td class="ty">TEXT</td></tr>
@@ -454,9 +606,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>expenditure</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>encumbered</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>balance</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fund</th><th>name</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>balance</th></tr>
+<tr><td>1312</td><td>EXTENDED DAY REVOLVING FUND</td><td>192943.21</td><td>227220.93</td><td>6128.64</td><td>0.0</td><td>54160.65999999999</td></tr>
+<tr><td>&#x27;2200</td><td>SCHOOL LUNCH REVOLVING</td><td>572231.32</td><td>217676.1</td><td>521910.17</td><td>0.0</td><td>287770.76999999996</td></tr>
+<tr><td>2813</td><td>FY25 #240</td><td>-0.0</td><td>89183.81</td><td>140214.52000000002</td><td>0.0</td><td>-88502.82</td></tr>
+</table></div>
+</details>
 <details><summary><code>fund_1301_cash_journal</code> <span class="n">277 rows</span> <span class="yr">2024–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>source_row</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>eff_date</code></td><td class="ty">TEXT</td></tr>
@@ -476,9 +635,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>voucher</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>vendor</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>comments</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>source_row</th><th>eff_date</th><th>post_date</th><th>src</th><th>src_meaning</th><th>period</th><th>journal</th><th>ref1</th><th>po_ref2</th><th>ref3</th><th>reference</th><th>amount</th><th>running_balance_derived</th><th>check_no</th><th>warrant</th><th>voucher</th><th>vendor</th><th>comments</th></tr>
+<tr><td class="num">2024</td><td>110</td><td>2023-07-01</td><td>2023-10-31</td><td>SOY</td><td>start of year — opening balance carried for…</td><td>0</td><td>5</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>SOY BAL</td><td>137845.84</td><td>137845.84</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>OPENING BALANCE</td></tr>
+<tr><td class="num">2024</td><td>109</td><td>2023-07-06</td><td>2023-07-03</td><td>PRJ</td><td>payroll journal</td><td>1</td><td>11</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>-37.50</td><td>137808.34</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td class="num">2024</td><td>108</td><td>2023-07-14</td><td>2023-07-19</td><td>APP</td><td>accounts payable — warrant disbursement</td><td>1</td><td>55</td><td>1 W/P</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1 W/P 23</td><td>-8442.08</td><td>129366.26</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+</table></div>
+</details>
 <details><summary><code>grant_award</code> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
@@ -488,9 +654,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>url</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>sha256</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>kind</th><th>name</th><th>amount</th><th>owner</th><th>documents_disagree</th><th>doc_id</th><th>url</th><th>sha256</th></tr>
+<tr><td>2020</td><td>federal</td><td>Special Education, 240 Grant</td><td class="num">367980.0</td><td>Director of Special Services</td><td class="num">0</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
+<tr><td>2020</td><td>federal</td><td>Title I, 305 Grant</td><td class="num">240799.0</td><td>Director of Special Services</td><td class="num">0</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
+<tr><td>2020</td><td>federal</td><td>Special Education, AARP IDEA</td><td class="num">88330.0</td><td>Director of Special Services</td><td class="num">0</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
+</table></div>
+</details>
 <details><summary><code>grants_history</code> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
@@ -503,9 +676,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>source_url</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>our_copy</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>sha256</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>kind</th><th>name</th><th>amount</th><th>owner</th><th>page</th><th>doc</th><th>esser</th><th>disagreement</th><th>source_url</th><th>our_copy</th><th>sha256</th></tr>
+<tr><td>2020</td><td>federal</td><td>Special Education, 240 Grant</td><td>367980.0</td><td>Director of Special Services</td><td>36</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>0</td><td><span class="nul">empty</span></td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>https://lunenburgbudgetproject.org/docs/dis…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
+<tr><td>2020</td><td>federal</td><td>Title I, 305 Grant</td><td>240799.0</td><td>Director of Special Services</td><td>36</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>0</td><td><span class="nul">empty</span></td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>https://lunenburgbudgetproject.org/docs/dis…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
+<tr><td>2020</td><td>federal</td><td>Special Education, AARP IDEA</td><td>88330.0</td><td>Director of Special Services</td><td>36</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>0</td><td><span class="nul">empty</span></td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>https://lunenburgbudgetproject.org/docs/dis…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
+</table></div>
+</details>
 <details><summary><code>variance_by_group</code> <span class="n">59 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>function_group</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>years</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>budgeted</code></td><td class="ty">TEXT</td></tr>
@@ -515,12 +695,19 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>churn</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>worst_year</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>best_year</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>function_group</th><th>years</th><th>budgeted</th><th>spent</th><th>net</th><th>gross</th><th>churn</th><th>worst_year</th><th>best_year</th></tr>
+<tr><td>5200 - Insurance Programs</td><td>6</td><td>16910523</td><td>17355134</td><td>444611</td><td>487143</td><td>1.10</td><td>-0.0075</td><td>0.0748</td></tr>
+<tr><td>2305 - H.S. Teachers - General Education</td><td>5</td><td>12429464</td><td>12350654</td><td>-78810</td><td>78810</td><td>1.00</td><td>-0.0110</td><td>-0.0000</td></tr>
+<tr><td>2305 - Middle School Teachers - General Edu…</td><td>5</td><td>9362984</td><td>9422369</td><td>59385</td><td>82389</td><td>1.39</td><td>-0.0043</td><td>0.0143</td></tr>
+</table></div>
+</details>
 </div>
 <div class="stage"><h2>The annual town reports — sixteen years, read page by page</h2>
 <p class="cap">Extracts from the printed reports. <strong>Nothing here may be aggregated without splitting on <code>status</code></strong>, and <code>v1</code>..<code>v8</code> are ORDINALS — the first column of that page that held figures — not named columns. Read <code>column_meaning</code>.</p>
 <details><summary><code>annual_report_catalogue</code> <span class="n">863 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
@@ -536,9 +723,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>extractable</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>notes</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>cluster</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>document</th><th>name</th><th>printed_heading</th><th>pages</th><th>what_it_is</th><th>grain</th><th>columns</th><th>layout</th><th>printed_total</th><th>approx_rows</th><th>extractable</th><th>notes</th><th>cluster</th></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>Table of contents / department index with p…</td><td><span class="nul">empty</span></td><td>3</td><td>Alphabetical index of report sections with …</td><td>one report section</td><td>(section name) | (page or page range)</td><td>two columns, name left and page right, dot …</td><td><span class="nul">empty</span></td><td>38</td><td>clean</td><td>Row 29 has a page range (29-42) with no lab…</td><td>contents department index numbers</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>Town at a glance: roads, population, valuat…</td><td>TOTAL ROADS: / STATE ROADS: / POPULATION: /…</td><td>4</td><td>Label/value fact block at the head of the r…</td><td>one town statistic or one officeholder</td><td>(label) | (value)</td><td>two-column label/value list</td><td><span class="nul">empty</span></td><td>17</td><td>clean</td><td>ASSESSED VALUATION is $1,092,532,700 real e…</td><td>delegation glance legislative population</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>Town department office hours</td><td>OFFICE HOURS</td><td>4</td><td>Opening hours for each town office, by day …</td><td>one office and one day-group</td><td>(department) | (days) | (hours)</td><td>three columns; several departments share a …</td><td><span class="nul">empty</span></td><td>27</td><td>clean</td><td>Building Department / Planning Board / Sele…</td><td>department hours office</td></tr>
+</table></div>
+</details>
 <details><summary><code>annual_report_contents</code> <span class="n">199 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>table</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>pages</code></td><td class="ty">TEXT</td></tr>
@@ -552,18 +746,32 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>checkable</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>csv_fields</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>grain</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>table</th><th>pages</th><th>page_count</th><th>pages_with_figures</th><th>figure_rows</th><th>figures</th><th>columns</th><th>read_by</th><th>printed_total</th><th>checkable</th><th>csv_fields</th><th>grain</th></tr>
+<tr><td class="num">2011</td><td>appropriations</td><td>59</td><td>1</td><td>1</td><td>4</td><td>6</td><td>5</td><td>ocr</td><td><span class="nul">empty</span></td><td>no</td><td>fy, department, appropriated, expended, bal…</td><td>one row per department per year</td></tr>
+<tr><td class="num">2011</td><td>capital_project</td><td>3,65,71</td><td>3</td><td>2</td><td>43</td><td>197</td><td>6</td><td>ocr</td><td><span class="nul">empty</span></td><td>no</td><td>fy, project_number, project_name, balance</td><td>one row per capital project per year</td></tr>
+<tr><td class="num">2011</td><td>debt</td><td>3,56,59</td><td>3</td><td>2</td><td>9</td><td>89</td><td>5</td><td>ocr</td><td><span class="nul">empty</span></td><td>no</td><td>fy, issue, principal, interest, maturity</td><td>one row per debt issue per year</td></tr>
+</table></div>
+</details>
 <details><summary><code>annual_report_receipts</code> <span class="n">1,137 rows</span> <span class="yr">2011–2023</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>source</th><th>amount</th><th>status</th><th>document</th><th>page</th></tr>
+<tr><td class="num">2011</td><td>PERSONAL PROPERTY TAXES</td><td>449774.00</td><td>no check</td><td>4117-fy-2011-annual-town-report.pdf</td><td>58</td></tr>
+<tr><td class="num">2011</td><td>RENTAL FEES CELL TOWER</td><td>31162.58</td><td>no check</td><td>4117-fy-2011-annual-town-report.pdf</td><td>58</td></tr>
+<tr><td class="num">2011</td><td>REAL ESTATE TAXES</td><td>17241283.89</td><td>no check</td><td>4117-fy-2011-annual-town-report.pdf</td><td>58</td></tr>
+</table></div>
+</details>
 <details><summary><code>annual_report_survey</code> <span class="n">2,751 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
@@ -575,9 +783,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>sections</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>totals</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>note</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>document</th><th>page</th><th>mode</th><th>gutters</th><th>money</th><th>chars</th><th>rows</th><th>sections</th><th>totals</th><th>note</th></tr>
+<tr><td class="num">2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>1</td><td>ocr</td><td>0</td><td>0</td><td>70</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>0 low-confidence money line(s)</td></tr>
+<tr><td class="num">2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>2</td><td>ocr</td><td>0</td><td>0</td><td>1283</td><td>0</td><td>school_report</td><td><span class="nul">empty</span></td><td>0 low-confidence money line(s)</td></tr>
+<tr><td class="num">2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>3</td><td>ocr</td><td>0</td><td>0</td><td>1015</td><td>0</td><td>special_revenue|capital_project|trust_funds…</td><td><span class="nul">empty</span></td><td>0 low-confidence money line(s)</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_appropriations</code> <span class="n">4,665 rows</span> <span class="yr">2011 … 2025 (14 years)</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -607,9 +822,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>appropriations</td><td class="num">2011</td><td>FY2011</td><td>61</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>accountant-schedule</td><td><span class="nul">empty</span></td><td>$11,060.0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>840000.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td>v1=appropriated | v2=available | v3=expende…</td><td>check failed</td><td>appropriated: 26,433,400.67 vs 27,948,061.4…</td></tr>
+<tr><td>appropriations</td><td class="num">2011</td><td>FY2011</td><td>61</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>fwd</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>accountant-schedule</td><td><span class="nul">empty</span></td><td>$11,060.0</td><td>1426.38</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td>v1=appropriated | v2=available | v3=expende…</td><td>check failed</td><td>appropriated: 26,433,400.67 vs 27,948,061.4…</td></tr>
+<tr><td>appropriations</td><td class="num">2011</td><td>FY2011</td><td>61</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>accountant-schedule</td><td><span class="nul">empty</span></td><td>$11,060.0</td><td>21587.40</td><td>4.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td>yes</td><td>0</td><td><span class="nul">empty</span></td><td>v1=appropriated | v2=available | v3=expende…</td><td>check failed</td><td>appropriated: 26,433,400.67 vs 27,948,061.4…</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_capital_projects</code> <span class="n">616 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -639,9 +861,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>capital_projects</td><td class="num">2011</td><td>FY2011</td><td>71</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>ENGINEER AND CONSTRUCT SEWERS</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CAPITAL PROJECT FUNDS FY 2011 | APPROPRIATE…</td><td><span class="nul">empty</span></td><td>-744.00</td><td>1789.27</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td>yes</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>capital_projects</td><td class="num">2011</td><td>FY2011</td><td>71</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>DEVELOPMENT OF CEMETERIES</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CAPITAL PROJECT FUNDS FY 2011 | APPROPRIATE…</td><td><span class="nul">empty</span></td><td>3950.00</td><td>4541.01</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>capital_projects</td><td class="num">2011</td><td>FY2011</td><td>71</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>DESIGN/CONSTRUCT PUBLIC SAFETY</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CAPITAL PROJECT FUNDS FY 2011 | APPROPRIATE…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>7112.98</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_debt</code> <span class="n">354 rows</span> <span class="yr">2011, 2017, 2019, 2020, 2021, 2023, 2024, 2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -671,9 +900,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>debt</td><td class="num">2011</td><td>FY2011</td><td>75</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>8,440,000 9,034,000 9,490,000 10,020,000 10…</td><td><span class="nul">empty</span></td><td>10550000.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>debt</td><td class="num">2011</td><td>FY2011</td><td>75</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Other Building</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>8,440,000 9,034,000 9,490,000 10,020,000 10…</td><td><span class="nul">empty</span></td><td>8.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td>yes</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>debt</td><td class="num">2011</td><td>FY2011</td><td>75</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Streets Sidewalks &amp; Parking</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>8,440,000 9,034,000 9,490,000 10,020,000 10…</td><td><span class="nul">empty</span></td><td>6300114.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_dept_activity</code> <span class="n">515 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -703,9 +939,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>dept_activity</td><td class="num">2011</td><td>FY2011</td><td>18</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>By the Lunenburg Board of Health&#x27;s continue…</td><td>15</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>dept_activity</td><td class="num">2011</td><td>FY2011</td><td>21</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>By the Lunenburg Board of Health&#x27;s continue…</td><td>18</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>dept_activity</td><td class="num">2011</td><td>FY2011</td><td>23</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>By the Lunenburg Board of Health&#x27;s continue…</td><td>20</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_elections</code> <span class="n">2,012 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -735,9 +978,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>elections</td><td class="num">2011</td><td>FY2011</td><td>79</td><td>1</td><td><span class="nul">empty</span></td><td>SATURDAY MAY</td><td><span class="nul">empty</span></td><td>row</td><td>not a full row — not checked</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>21</td><td>2011</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>2 full rows tie, 8 do not; 6 partial not ch…</td></tr>
+<tr><td>elections</td><td class="num">2011</td><td>FY2011</td><td>79</td><td>1</td><td><span class="nul">empty</span></td><td>** Thomas A. Alonzo</td><td><span class="nul">empty</span></td><td>row</td><td>not a full row — not checked</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>19</td><td>20</td><td>32</td><td>30</td><td>101</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>2 full rows tie, 8 do not; 6 partial not ch…</td></tr>
+<tr><td>elections</td><td class="num">2011</td><td>FY2011</td><td>79</td><td>1</td><td><span class="nul">empty</span></td><td>** David J. Matthews</td><td><span class="nul">empty</span></td><td>row</td><td>parts sum to 71, total printed 104</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>20</td><td>21</td><td>30</td><td>104</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>4</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>2 full rows tie, 8 do not; 6 partial not ch…</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_enrollment_mcas</code> <span class="n">337 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -767,9 +1017,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>enrollment_mcas</td><td class="num">2011</td><td>FY2011</td><td>32</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Learning is reflective, creative, ongoing a…</td><td>29</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>enrollment_mcas</td><td class="num">2011</td><td>FY2011</td><td>48</td><td>1</td><td><span class="nul">empty</span></td><td>Students</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Learning is reflective, creative, ongoing a…</td><td>2009</td><td>2010</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>enrollment_mcas</td><td class="num">2011</td><td>FY2011</td><td>48</td><td>1</td><td><span class="nul">empty</span></td><td>Students           2009                    …</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Learning is reflective, creative, ongoing a…</td><td>318</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_gross_wages</code> <span class="n">3,545 rows</span> <span class="yr">2011 … 2025 (13 years)</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -799,9 +1056,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>gross_wages</td><td class="num">2011</td><td>FY2011</td><td>99</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>FIRE</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>4225.43</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>gross_wages</td><td class="num">2011</td><td>FY2011</td><td>99</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>ELKINS, ERIN</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>3935.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>gross_wages</td><td class="num">2011</td><td>FY2011</td><td>99</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>HOWARD, ERIN FIRE</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>49406.82</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_monty_tech</code> <span class="n">70 rows</span> <span class="yr">2017–2017</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -831,9 +1095,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>monty_tech</td><td class="num">2017</td><td>FY2017</td><td>142</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Chapter 70                    13,764,000</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>General Fund- Income and Expense Summary | …</td><td>13800675.00</td><td>13837825.00</td><td>13920325.00</td><td>14144811.00</td><td>224486.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>monty_tech</td><td class="num">2017</td><td>FY2017</td><td>142</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Transportation Reimbursement     815,343</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>General Fund- Income and Expense Summary | …</td><td>1065340.00</td><td>1197975.00</td><td>1331125.00</td><td>1232580.00</td><td>-98545.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>monty_tech</td><td class="num">2017</td><td>FY2017</td><td>142</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>School Building Authority Aid    948,213</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>General Fund- Income and Expense Summary | …</td><td>948213.00</td><td>948213.00</td><td>948213.00</td><td>948213.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>4</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_officials</code> <span class="n">237 rows</span> <span class="yr">2011 … 2024 (13 years)</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -863,9 +1134,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>officials</td><td class="num">2011</td><td>FY2011</td><td>9</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Marion Benson, c/o Planning Board | D.P.W. …</td><td>6</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>officials</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Nancy L Woodruff</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Marion Benson, c/o Planning Board | D.P.W. …</td><td>79</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>officials</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>*Richard E. Bushnoe</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Marion Benson, c/o Planning Board | D.P.W. …</td><td>54</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_trust_funds</code> <span class="n">642 rows</span> <span class="yr">2011 … 2025 (13 years)</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -895,9 +1173,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>trust_funds</td><td class="num">2011</td><td>FY2011</td><td>73</td><td><span class="nul">empty</span></td><td>CEMETERY FU</td><td>PERPETUAL CARE BEQUEST</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TRUST FUNDS | BEGINNING BEGINNING DISBURSE …</td><td>166802.91</td><td>6604.88</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>v1: 354,751.46 vs 1,905,698.11 (-1,550,946.…</td></tr>
+<tr><td>trust_funds</td><td class="num">2011</td><td>FY2011</td><td>73</td><td><span class="nul">empty</span></td><td>CEMETERY FU</td><td>C. ALLEN HEADSTONE</td><td><span class="nul">empty</span></td><td>subtotal</td><td>subtotal: equals the 2 rows below it, in 2 …</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TRUST FUNDS | BEGINNING BEGINNING DISBURSE …</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>0.00</td><td>1259.45</td><td>0.00</td><td>0.00</td><td>174667.24</td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>v1: 354,751.46 vs 1,905,698.11 (-1,550,946.…</td></tr>
+<tr><td>trust_funds</td><td class="num">2011</td><td>FY2011</td><td>73</td><td><span class="nul">empty</span></td><td>CEMETERY FU</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>subtotal</td><td>subtotal: equals the 1 rows below it, in 2 …</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TRUST FUNDS | BEGINNING BEGINNING DISBURSE …</td><td>100.00</td><td>444.90</td><td>0.00</td><td>3.95</td><td>0.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>v1: 354,751.46 vs 1,905,698.11 (-1,550,946.…</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_valuation</code> <span class="n">316 rows</span> <span class="yr">2011–2019</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -927,9 +1212,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>valuation</td><td class="num">2011</td><td>FY2011</td><td>12</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>varatull allu ran motory | Fiscal Year Tax …</td><td>2011.00</td><td><span class="nul">empty</span></td><td>3.33</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td>5,185          18,006,811.48</td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>valuation</td><td class="num">2011</td><td>FY2011</td><td>12</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>varatull allu ran motory | Fiscal Year Tax …</td><td>2010.00</td><td><span class="nul">empty</span></td><td>3.03</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td>5,028          17,427,296.54</td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>valuation</td><td class="num">2011</td><td>FY2011</td><td>12</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>varatull allu ran motory | Fiscal Year Tax …</td><td>2009.00</td><td><span class="nul">empty</span></td><td>4.57</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td>5,055          16,915,183.70</td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_vital_records</code> <span class="n">96 rows</span> <span class="yr">2011 … 2025 (14 years)</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -959,9 +1251,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>page</th><th>panel</th><th>group</th><th>label</th><th>label_missing</th><th>kind</th><th>row_check</th><th>derived_cell</th><th>table_family</th><th>line_no</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th><th>n_values</th><th>ruler_spanned</th><th>repaired_cells</th><th>unparsed_cells</th><th>column_meaning</th><th>status</th><th>reconciliation</th></tr>
+<tr><td>vital_records</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Nancy L Woodruff</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>JANUARY JULY | Nancy L Woodruff 79 N *Richa…</td><td>79</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>vital_records</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>*Richard E. Bushnoe</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>JANUARY JULY | Nancy L Woodruff 79 N *Richa…</td><td>54</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+<tr><td>vital_records</td><td class="num">2011</td><td>FY2011</td><td>13</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Robert E. Tucker WWII</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>JANUARY JULY | Nancy L Woodruff 79 N *Richa…</td><td>82</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
 <details><summary><code>report_anomalies</code> <span class="n">521 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
@@ -970,9 +1269,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>detail</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>document</th><th>pages</th><th>table</th><th>kind</th><th>source</th><th>detail</th></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>13-14</td><td>Capital Planning Committee: items placed in…</td><td>announced but absent</td><td>table note</td><td>Only the last two rows survive on p14 (&#x27;Sch…</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>56</td><td>Combined balance sheet, all fund types, Jun…</td><td>announced but absent</td><td>table note</td><td>The table&#x27;s own heading AND the whole ASSET…</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>56</td><td>Combined balance sheet, all fund types, Jun…</td><td>announced but absent</td><td>table note</td><td>Column headers (which fund each money colum…</td></tr>
+</table></div>
+</details>
 <details><summary><code>special_revenue_funds</code> <span class="n">2,387 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
@@ -993,9 +1299,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>columns_tying</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>group</th><th>fund</th><th>page</th><th>is_subtotal</th><th>columns_as_printed</th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>n_values</th><th>ruler_spanned</th><th>row_check</th><th>derived_cell</th><th>columns_tying</th><th>status</th><th>reconciliation</th></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td><span class="nul">empty</span></td><td>Zoning Board Consultant Revolving</td><td>66</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>11422.58</td><td>42103.27</td><td>10816.46</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>3</td><td><span class="nul">empty</span></td><td>one cell missing; derivable from the row it…</td><td>v4 = 42,709.39, from this fund&#x27;s own other …</td><td>0</td><td>check failed</td><td>v2: 5,575,241.30 vs printed 6,048,615.90 (-…</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td><span class="nul">empty</span></td><td>Conservation Gift Fund-Cook Farm</td><td>66</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>148.00</td><td><span class="nul">empty</span></td><td>148.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>0</td><td>check failed</td><td>v2: 5,575,241.30 vs printed 6,048,615.90 (-…</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td><span class="nul">empty</span></td><td>Town Records Gift Fund</td><td>66</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>252.35</td><td><span class="nul">empty</span></td><td>252.35</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>0</td><td>check failed</td><td>v2: 5,575,241.30 vs printed 6,048,615.90 (-…</td></tr>
+</table></div>
+</details>
 <details><summary><code>extraction_plan</code> <span class="n">553 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
@@ -1008,9 +1321,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>extractable</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>notes</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>fy</th><th>edition</th><th>pages</th><th>printed_heading</th><th>table</th><th>grain</th><th>printed_total</th><th>checkable</th><th>extractable</th><th>rows</th><th>notes</th></tr>
+<tr><td>receipts</td><td class="num">2011</td><td>FY2011</td><td>58</td><td>FY 2011 RECEIPTS - JUNE 2011</td><td>FY 2011 receipts, line by line</td><td>one revenue account</td><td><span class="nul">empty</span></td><td>no</td><td>messy</td><td>90</td><td>Columns one and two are complete and clean.…</td></tr>
+<tr><td>receipts</td><td class="num">2011</td><td>FY2011</td><td>58</td><td>SUMMARY OF RECEIPTS</td><td>Summary of receipts by category</td><td>one revenue category</td><td>GRAND TOTAL (label present, value not captu…</td><td>yes</td><td>not without geometry</td><td>10</td><td>STILL DAMAGED. Category labels all present …</td></tr>
+<tr><td>receipts</td><td class="num">2012</td><td>FY2012</td><td>58</td><td>FY 2012 RECEIPTS - JUNE 2012 / TAXES &amp; EXCI…</td><td>FY 2012 receipts, line by line</td><td>one revenue account</td><td><span class="nul">empty</span></td><td>no</td><td>messy</td><td>95</td><td>Columns one and two are clean; the third co…</td></tr>
+</table></div>
+</details>
 <details><summary><code>ballot_questions</code> <span class="n">7 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>date</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>election</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>question</code></td><td class="ty">TEXT</td></tr>
@@ -1028,18 +1348,32 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>read_by</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>checks</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>date</th><th>election</th><th>question</th><th>type</th><th>amount</th><th>purpose</th><th>yes</th><th>no</th><th>blanks</th><th>total</th><th>registered</th><th>turnout_pct</th><th>result</th><th>fy_report</th><th>page</th><th>read_by</th><th>checks</th></tr>
+<tr><td>2012-05</td><td>Annual Town Election</td><td>QUESTION 1. OVERRIDE</td><td>Proposition 2½ override</td><td>2200000</td><td>Funding the Town Manager&#x27;s FY2013 Override …</td><td>1084</td><td>2275</td><td><span class="nul">empty</span></td><td>3374</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>FAILED</td><td>2012</td><td>105</td><td>ocr</td><td>precinct YES 290+191+246+357=1084; NO 620+5…</td></tr>
+<tr><td>2014-01-11</td><td>Special Town Election</td><td>QUESTION 1. DEBT EXCLUSION</td><td>Proposition 2½ debt exclusion</td><td>72975321</td><td>Bonds to construct a new Lunenburg Middle/H…</td><td>1414</td><td>543</td><td>0</td><td>1957</td><td>7059</td><td>27.7</td><td>PASSED</td><td>2014</td><td>152</td><td>plain</td><td>YES 413+234+323+444=1414; NO 163+111+140+12…</td></tr>
+<tr><td>2016-05</td><td>Annual Town Election</td><td>QUESTION 1 – Pavement Management Plan</td><td>Proposition 2½ debt exclusion</td><td>4000000</td><td>Pavement Management Plan — town roads</td><td>181</td><td>127</td><td>55</td><td>363</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>PASSED</td><td>2016</td><td>193</td><td>plain</td><td>YES 58+27+34+62=181; NO 28+36+32+31=127; Bl…</td></tr>
+</table></div>
+</details>
 <details><summary><code>capital_funding_history</code> <span class="n">10 rows</span> <span class="yr">2017–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>free_cash</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>taxation</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>unexpended_prior_year_capital</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>other</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>total</th><th>free_cash</th><th>taxation</th><th>unexpended_prior_year_capital</th><th>other</th></tr>
+<tr><td class="num">2017</td><td>619475.00</td><td>250000.00</td><td>349023.05</td><td>20451.95</td><td>0.00</td></tr>
+<tr><td class="num">2018</td><td>633317.00</td><td>290018.69</td><td>343298.31</td><td>0.00</td><td>0.00</td></tr>
+<tr><td class="num">2019</td><td>1455214.00</td><td>215736.00</td><td>767999.97</td><td>54478.03</td><td>417000.00</td></tr>
+</table></div>
+</details>
 <details><summary><code>capital_plan_fy27</code> <span class="n">22 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>rank</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>project</code></td><td class="ty">TEXT</td></tr>
@@ -1047,9 +1381,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>cumulative</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>funded</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>funding</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>rank</th><th>dept</th><th>project</th><th>cost</th><th>cumulative</th><th>funded</th><th>funding</th></tr>
+<tr><td>1</td><td>DPW</td><td>Flat Hill Rd Bridge Completion (Engineering…</td><td>350000.00</td><td>350000.00</td><td>yes</td><td>free_cash_or_taxation</td></tr>
+<tr><td>2</td><td>Police</td><td>Patrol Cruiser (replacement)</td><td>68627.00</td><td>418627.00</td><td>yes</td><td>free_cash_or_taxation</td></tr>
+<tr><td>3</td><td>Fire</td><td>Engine 2 - 4x4 Brush Truck (replacement)</td><td>335000.00</td><td>753627.00</td><td>yes</td><td>stabilization</td></tr>
+</table></div>
+</details>
 <details><summary><code>free_cash_proof</code> <span class="n">630 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>town</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>year</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>line</code></td><td class="ty">TEXT</td></tr>
@@ -1057,34 +1398,62 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>role</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source_file</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>town</th><th>year</th><th>line</th><th>amount</th><th>role</th><th>source_file</th><th>source_ref</th></tr>
+<tr><td>Ayer</td><td>2021</td><td>Free Cash Certified Prior Year</td><td>1553607.00</td><td>prior_year_certified</td><td>dls/free-cash-proof-ayer.xlsx</td><td>Sheet1!A4</td></tr>
+<tr><td>Ayer</td><td>2021</td><td>Current Year Calculation</td><td>2528927.00</td><td>certified</td><td>dls/free-cash-proof-ayer.xlsx</td><td>Sheet1!A5</td></tr>
+<tr><td>Ayer</td><td>2021</td><td>Revenue Deficits</td><td>0.00</td><td>component</td><td>dls/free-cash-proof-ayer.xlsx</td><td>Sheet1!A6</td></tr>
+</table></div>
+</details>
 <details><summary><code>total_expenses_history</code> <span class="n">28 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2014</td><td>actual</td><td>5146641</td><td>1</td></tr>
+<tr><td class="num">2015</td><td>actual</td><td>5388035</td><td>1</td></tr>
+<tr><td class="num">2016</td><td>actual</td><td>5324706</td><td>1</td></tr>
+</table></div>
+</details>
 <details><summary><code>total_salaries_history</code> <span class="n">28 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2014</td><td>actual</td><td>11044481</td><td>1</td></tr>
+<tr><td class="num">2015</td><td>actual</td><td>11434642</td><td>0</td></tr>
+<tr><td class="num">2016</td><td>actual</td><td>12046557</td><td>0</td></tr>
+</table></div>
+</details>
 </div>
 <div class="stage"><h2>Schools — the lines the projection rests on</h2>
 <details><summary><code>athletics_history</code> <span class="n">175 rows</span> <span class="yr">2014–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>side</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>item</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>side</th><th>item</th><th>amount</th><th>basis</th><th>source</th></tr>
+<tr><td class="num">2014</td><td>general</td><td>Athletic Coaches</td><td>114636</td><td>actual</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
+<tr><td class="num">2014</td><td>general</td><td>Athletic Dues &amp; Fees</td><td>9519</td><td>actual</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
+<tr><td class="num">2014</td><td>general</td><td>Athletic Equipment/Reconditioning</td><td>3065</td><td>actual</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
+</table></div>
+</details>
 <details><summary><code>athletics_by_sport</code> <span class="n">960 rows</span> <span class="yr">2024–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>season</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>sport</code></td><td class="ty">TEXT</td></tr>
@@ -1094,9 +1463,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>raw</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>is_numeric</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>cell</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>season</th><th>level</th><th>sport</th><th>fy</th><th>metric</th><th>value</th><th>raw</th><th>is_numeric</th><th>cell</th></tr>
+<tr><td>Fall</td><td>HS</td><td>Boys CC</td><td class="num">2024</td><td>2nd Sibling</td><td>1.0</td><td>1</td><td>1</td><td>H6</td></tr>
+<tr><td>Fall</td><td>HS</td><td>Boys CC</td><td class="num">2024</td><td>Coaches</td><td>2234.5</td><td>2234.5</td><td>1</td><td>AO6</td></tr>
+<tr><td>Fall</td><td>HS</td><td>Boys CC</td><td class="num">2024</td><td>Costs for all 3 Seasons</td><td><span class="nul">empty</span></td><td>MIAA 1/3 4550. -1516.67</td><td>0</td><td>AX6</td></tr>
+</table></div>
+</details>
 <details><summary><code>athletics_by_sport_reconciliation</code> <span class="n">342 rows</span> <span class="yr">2024–2026</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>season</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>scope</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>metric</code></td><td class="ty">TEXT</td></tr>
@@ -1107,9 +1483,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>summed_from_rows</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>difference</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>ties</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>season</th><th>scope</th><th>metric</th><th>fy</th><th>printed</th><th>printed_cell</th><th>printed_raw</th><th>summed_from_rows</th><th>difference</th><th>ties</th></tr>
+<tr><td>Fall</td><td>ALL</td><td>2nd Sibling</td><td class="num">2024</td><td>3080.0</td><td>H26</td><td>3080</td><td>22.0</td><td>3058.0</td><td>0</td></tr>
+<tr><td>Fall</td><td>ALL</td><td>2nd Sibling</td><td class="num">2025</td><td>2660.0</td><td>I26</td><td>2660</td><td>19.0</td><td>2641.0</td><td>0</td></tr>
+<tr><td>Fall</td><td>ALL</td><td>3rd sibling</td><td class="num">2024</td><td>85.0</td><td>K26</td><td>85</td><td>1.0</td><td>84.0</td><td>0</td></tr>
+</table></div>
+</details>
 <details><summary><code>athletic_fee_schedule</code> <span class="n">31 rows</span> <span class="yr">2024–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>school_year</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
@@ -1121,18 +1504,32 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>source_file</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>verified</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>school_year</th><th>level</th><th>item</th><th>amount</th><th>unit</th><th>set_on</th><th>source</th><th>source_file</th><th>source_ref</th><th>verified</th></tr>
+<tr><td class="num">2024</td><td>2023-24</td><td>HS</td><td>full_pay</td><td>250.00</td><td>per student per sport per season</td><td><span class="nul">empty</span></td><td>District athletics workbook, by sport (Town…</td><td>munis-ledgers/account-details/athletics-by-…</td><td>Spring!E3</td><td>Spring!E3</td></tr>
+<tr><td class="num">2025</td><td>2024-25</td><td>HS</td><td>full_pay</td><td>250.00</td><td>per student per sport per season</td><td><span class="nul">empty</span></td><td>District athletics workbook, by sport (Town…</td><td>munis-ledgers/account-details/athletics-by-…</td><td>Spring!F3</td><td>Spring!F3</td></tr>
+<tr><td class="num">2024</td><td>2023-24</td><td>HS</td><td>second_child</td><td>140.00</td><td>per student per sport per season</td><td><span class="nul">empty</span></td><td>District athletics workbook, by sport (Town…</td><td>munis-ledgers/account-details/athletics-by-…</td><td>Spring!H3</td><td>Spring!H3</td></tr>
+</table></div>
+</details>
 <details><summary><code>ood_tuition_history</code> <span class="n">30 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>private</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>collaborative</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>private</th><th>collaborative</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2014</td><td>actual</td><td>1025404</td><td>236285</td><td>1261689</td><td>0</td></tr>
+<tr><td class="num">2015</td><td>actual</td><td>1114849</td><td>335187</td><td>1450036</td><td>0</td></tr>
+<tr><td class="num">2016</td><td>actual</td><td>854122</td><td>112129</td><td>966251</td><td>0</td></tr>
+</table></div>
+</details>
 <details><summary><code>placement_counts</code> <span class="n">15 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>as_of</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
@@ -1147,9 +1544,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>checks</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>as_of</th><th>total</th><th>collaborative</th><th>day</th><th>residential</th><th>collaborative_within_day</th><th>collaborative_basis</th><th>report_says_prior_year</th><th>parts_tie</th><th>chain_agrees</th><th>page</th><th>document</th><th>checks</th></tr>
+<tr><td class="num">2011</td><td>2011-03-01</td><td>15</td><td><span class="nul">empty</span></td><td>13</td><td>2</td><td>1</td><td>subset of day placements</td><td><span class="nul">empty</span></td><td>yes</td><td>n/a</td><td>35</td><td>FY2011</td><td>parts 13+2=15 ties to stated 15</td></tr>
+<tr><td class="num">2012</td><td>2012-03-01</td><td>24</td><td><span class="nul">empty</span></td><td>19</td><td>5</td><td>7</td><td>subset of day placements</td><td><span class="nul">empty</span></td><td>yes</td><td>n/a</td><td>33</td><td>FY2012</td><td>parts 19+5=24 ties to stated 24</td></tr>
+<tr><td class="num">2013</td><td>2013-03-01</td><td>22</td><td><span class="nul">empty</span></td><td>17</td><td>5</td><td><span class="nul">empty</span></td><td>not stated</td><td><span class="nul">empty</span></td><td>yes</td><td>n/a</td><td>32</td><td>FY2013</td><td>parts 17+5=22 ties to stated 22</td></tr>
+</table></div>
+</details>
 <details><summary><code>sped_para_history</code> <span class="n">26 rows</span> <span class="yr">2014–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>ps</code></td><td class="ty">TEXT</td></tr>
@@ -1159,9 +1563,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>ace</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>ps</th><th>es</th><th>ms</th><th>hs</th><th>ace</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2014</td><td>actual</td><td>153425</td><td>0</td><td>162721</td><td>50819</td><td>0</td><td>366965</td><td>0</td></tr>
+<tr><td class="num">2015</td><td>actual</td><td>178670</td><td>0</td><td>198917</td><td>0</td><td>0</td><td>377587</td><td>0</td></tr>
+<tr><td class="num">2016</td><td>actual</td><td>185668</td><td>0</td><td>211242</td><td>141139</td><td>0</td><td>538049</td><td>0</td></tr>
+</table></div>
+</details>
 <details><summary><code>sped_teacher_history</code> <span class="n">21 rows</span> <span class="yr">2017–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>ps</code></td><td class="ty">TEXT</td></tr>
@@ -1171,17 +1582,31 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>ace</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>ps</th><th>es</th><th>ms</th><th>hs</th><th>ace</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2017</td><td>actual</td><td>473861</td><td>307620</td><td>375364</td><td>380738</td><td>0</td><td>1537583</td><td>0</td></tr>
+<tr><td class="num">2018</td><td>actual</td><td>447610</td><td>270455</td><td>353569</td><td>421252</td><td>0</td><td>1492886</td><td>0</td></tr>
+<tr><td class="num">2019</td><td>actual</td><td>484200</td><td>280982</td><td>335221</td><td>357584</td><td>48446</td><td>1506433</td><td>0</td></tr>
+</table></div>
+</details>
 <details><summary><code>sped_transport_history</code> <span class="n">25 rows</span> <span class="yr">2015–2027</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>system</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>system</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2015</td><td>actual</td><td>480536</td><td>480536</td><td>0</td></tr>
+<tr><td class="num">2016</td><td>actual</td><td>460508</td><td>460508</td><td>0</td></tr>
+<tr><td class="num">2017</td><td>actual</td><td>360537</td><td>360537</td><td>0</td></tr>
+</table></div>
+</details>
 <details><summary><code>staff_roster_entries</code> <span class="n">3,815 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>school</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
@@ -1192,31 +1617,59 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>grade_or_dept</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>line</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>school</th><th>page</th><th>name</th><th>role_raw</th><th>position</th><th>position_from</th><th>grade_or_dept</th><th>line</th><th>document</th></tr>
+<tr><td class="num">2011</td><td>central-office</td><td>32</td><td>David Reif</td><td>Chairperson</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Lunenburg School Committee</td><td>7</td><td>4117-fy-2011-annual-town-report.pdf</td></tr>
+<tr><td class="num">2011</td><td>central-office</td><td>32</td><td>Gregory Berthiaume</td><td>Vice-Chairperson</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Lunenburg School Committee</td><td>8</td><td>4117-fy-2011-annual-town-report.pdf</td></tr>
+<tr><td class="num">2011</td><td>central-office</td><td>32</td><td>Michael Mackin</td><td>Secretary</td><td>Administrative Staff</td><td>printed role</td><td>Lunenburg School Committee</td><td>9</td><td>4117-fy-2011-annual-town-report.pdf</td></tr>
+</table></div>
+</details>
 <details><summary><code>staff_roster_counts</code> <span class="n">699 rows</span> <span class="yr">2011–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
 <tr><td><code>school</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>position</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>count</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>school</th><th>position</th><th>count</th></tr>
+<tr><td class="num">2011</td><td>central-office</td><td>(unmapped)</td><td>13</td></tr>
+<tr><td class="num">2011</td><td>central-office</td><td>Administrative Staff</td><td>3</td></tr>
+<tr><td class="num">2011</td><td>central-office</td><td>Custodial / Facilities</td><td>3</td></tr>
+</table></div>
+</details>
 <details><summary><code>staff_position_map</code> <span class="n">534 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>role_as_printed</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>position</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>times_seen</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>role_as_printed</th><th>position</th><th>times_seen</th></tr>
+<tr><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>489</td></tr>
+<tr><td><span class="nul">empty</span></td><td>Administrative Staff</td><td>4</td></tr>
+<tr><td><span class="nul">empty</span></td><td>Behaviour / BCBA</td><td>4</td></tr>
+</table></div>
+</details>
 <details><summary><code>role_classification</code> <span class="n">1,030 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>role_raw</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>grade_or_dept</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>role_category</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>role_grade</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>classified_by</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>role_raw</th><th>grade_or_dept</th><th>rows</th><th>role_category</th><th>role_grade</th><th>classified_by</th></tr>
+<tr><td><span class="nul">empty</span></td><td>Paraprofessionals</td><td>178</td><td>paraprofessional</td><td><span class="nul">empty</span></td><td>heading-paras</td></tr>
+<tr><td><span class="nul">empty</span></td><td>Cafeteria</td><td>86</td><td>cafeteria</td><td><span class="nul">empty</span></td><td>heading-cafeteria</td></tr>
+<tr><td><span class="nul">empty</span></td><td>Custodians</td><td>83</td><td>custodian</td><td><span class="nul">empty</span></td><td>heading-custodial</td></tr>
+</table></div>
+</details>
 <details><summary><code>dese_measure</code> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>lea</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>district</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
@@ -1225,9 +1678,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>value</code></td><td class="ty">REAL</td></tr>
 <tr><td><code>reconciles</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>lea</th><th>district</th><th>fy</th><th>group</th><th>measure</th><th>value</th><th>reconciles</th><th>doc_id</th></tr>
+<tr><td>00190000</td><td>Ayer</td><td class="num">2011</td><td>Student Enrollment</td><td>In-District FTE Pupils</td><td class="num">924.1</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
+<tr><td>00190000</td><td>Ayer</td><td class="num">2011</td><td>Student Enrollment</td><td>Out-of-District FTE Pupils</td><td class="num">381.5</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
+<tr><td>00190000</td><td>Ayer</td><td class="num">2011</td><td>Student Enrollment</td><td>Total FTE Pupils</td><td class="num">1305.6</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
+</table></div>
+</details>
 <details><summary><code>dese_radar</code> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>lea</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>district</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
@@ -1236,9 +1696,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>reconciles</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>lea</th><th>district</th><th>fy</th><th>group</th><th>measure</th><th>value</th><th>reconciles</th><th>doc_id</th></tr>
+<tr><td>00190000</td><td>Ayer</td><td class="num">2011</td><td>Student Enrollment</td><td>In-District FTE Pupils</td><td>924.1</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
+<tr><td>00190000</td><td>Ayer</td><td class="num">2011</td><td>Student Enrollment</td><td>Out-of-District FTE Pupils</td><td>381.5</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
+<tr><td>00190000</td><td>Ayer</td><td class="num">2011</td><td>Student Enrollment</td><td>Total FTE Pupils</td><td>1305.6</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
+</table></div>
+</details>
 <details><summary><code>rate_register</code> <span class="n">62 rows</span> <span class="yr">2024–2029</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>fy</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>category</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>unit</code></td><td class="ty">TEXT</td></tr>
@@ -1252,12 +1719,19 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>in_model</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>category</th><th>unit</th><th>item</th><th>value</th><th>value_type</th><th>set_on</th><th>expires</th><th>source</th><th>source_file</th><th>source_ref</th><th>status</th><th>in_model</th></tr>
+<tr><td>2026</td><td>activity_fee</td><td>Student Activities</td><td>fee increase</td><td><span class="nul">empty</span></td><td>dollars</td><td>2025-02-26</td><td><span class="nul">empty</span></td><td>School Committee minutes, 26 February 2025 …</td><td>minutes/text/school-committee/2025-02-26-mi…</td><td>Committee recommends Dr. Gilson</td><td>not_adopted</td><td>no</td></tr>
+<tr><td>2024</td><td>athletic_fee</td><td>ANY</td><td>unified_track</td><td>100.00</td><td>dollars</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>LHS Athletics FAQ (rschoolteams.com)</td><td>district-budget/text/lhs-athletics-faq.txt</td><td>Unified Track =$100.00</td><td>verified</td><td>reference</td></tr>
+<tr><td>2024</td><td>athletic_fee</td><td>HS</td><td>family_cap</td><td>475.00</td><td>dollars</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>LHS Athletics FAQ (rschoolteams.com)</td><td>district-budget/text/lhs-athletics-faq.txt</td><td>Total Cap per season=$475.00</td><td>verified</td><td>reference</td></tr>
+</table></div>
+</details>
 </div>
 <div class="stage"><h2>Provenance — which document every figure came from</h2>
 <p class="cap">Rule 12 in table form. A figure that cannot name its document is not loaded.</p>
 <details><summary><code>document</code> <span class="n">616 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>path</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>source_type</code></td><td class="ty">TEXT</td></tr>
@@ -1269,9 +1743,16 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>copy_state</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>remote_sha256</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>local_sha256</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
+<tr><td>sources/budget-workbooks/ch70-fy27-summary.…</td><td>sources/budget-workbooks/ch70-fy27-summary.…</td><td>narrative</td><td>narrative</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>https://www.doe.mass.edu/finance/chapter70/…</td><td>200</td><td>identical</td><td>cef241f30300c06f443b7a9178efa293105a6104a3d…</td><td>cef241f30300c06f443b7a9178efa293105a6104a3d…</td></tr>
+<tr><td>sources/budget-workbooks/dese-all-districts…</td><td>sources/budget-workbooks/dese-all-districts…</td><td>narrative</td><td>narrative</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>https://educationtocareer.data.mass.gov/d/e…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>c54092d755ac6800677760987f32fac5708f82e7aae…</td></tr>
+<tr><td>sources/budget-workbooks/fy27-budget-projec…</td><td>sources/budget-workbooks/fy27-budget-projec…</td><td>restatement</td><td>both</td><td><span class="nul">empty</span></td><td>FY27 Budget Projection:I</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>dffbc4474d07368ac4e8ea2d81f778c8c228ba9135c…</td></tr>
+</table></div>
+</details>
 <details><summary><code>dataset_document</code> <span class="n">225 rows</span></summary>
-<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
@@ -1284,7 +1765,14 @@ details table { margin-top:9px; max-width:420px }
 <tr><td><code>upstream</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>sha256</code></td><td class="ty">TEXT</td></tr>
 <tr><td><code>bytes</code></td><td class="ty">TEXT</td></tr>
-</table></div></details>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>dataset</th><th>edition</th><th>rows</th><th>pages</th><th>page_count</th><th>reconciled</th><th>partial</th><th>document</th><th>publisher_label</th><th>upstream</th><th>sha256</th><th>bytes</th></tr>
+<tr><td>placement-counts</td><td>FY2011</td><td>1</td><td>35</td><td>1</td><td>0</td><td>0</td><td>4117-fy-2011-annual-town-report.pdf</td><td>FY 2011 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>551f9edd75d051ae4d863a5d5c13925c0b9a2f93459…</td><td>31626604</td></tr>
+<tr><td>placement-counts</td><td>FY2012</td><td>1</td><td>33</td><td>1</td><td>0</td><td>0</td><td>4118-fy-2012-annual-town-report.pdf</td><td>FY 2012 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>75d645ee7055f68c6a7adc0d32f534f49a1fd2a81a4…</td><td>56577710</td></tr>
+<tr><td>placement-counts</td><td>FY2013</td><td>1</td><td>32</td><td>1</td><td>0</td><td>0</td><td>4119-fy-2013-annual-town-report.pdf</td><td>FY 2013 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>00670845b7d322166015c1b6ce4d3cef6ac2007d108…</td><td>37839397</td></tr>
+</table></div>
+</details>
 </div>
 <div class="stage alt"><h2>Views — the joins already written for you</h2>
 <p class="cap">A view is the safe way to ask a question that needs two tables. Each one carries the splitting columns above in its own <code>WHERE</code>, so it cannot be got wrong the way a hand-written join can.</p>

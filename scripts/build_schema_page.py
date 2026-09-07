@@ -232,6 +232,31 @@ def families(c):
     return out
 
 
+def sample(c, t, n=3):
+    """The first `n` rows, for showing what the table actually looks like.
+
+    ORDER BY rowid, not a bare LIMIT: without an ORDER BY, SQLite's row order is an
+    implementation detail, and this page is checked byte-for-byte by `--check`. A sample
+    that reshuffled on a rebuild would fail the build for no reason and, worse, train
+    somebody to re-run the generator until it passed.
+    """
+    try:
+        rs = c.execute('SELECT * FROM "%s" ORDER BY rowid LIMIT %d' % (t, n)).fetchall()
+    except sqlite3.OperationalError:
+        return []                       # a WITHOUT ROWID table: no stable order to take
+    return rs
+
+
+def cell(v, width=44):
+    """One value, trimmed for the page. Empty and NULL are DIFFERENT and shown that way."""
+    if v is None:
+        return '<span class="nul">NULL</span>'
+    t = str(v)
+    if t == '':
+        return '<span class="nul">empty</span>'
+    return esc(t if len(t) <= width else t[:width - 1] + '…')
+
+
 def profile(c, t):
     """Row count, columns with declared type, and the fiscal years actually present."""
     n = c.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
@@ -337,11 +362,27 @@ def render(c):
             a('<details><summary><code>%s</code> <span class="n">%s row%s</span>%s'
               '</summary>' % (esc(t), f'{n:,}', '' if n == 1 else 's',
                               f' <span class="yr">{esc(years)}</span>' if years else ''))
-            a('<div class="scroll"><table><tr><th>column</th><th>type</th></tr>')
+            a('<div class="scroll"><table class="cols"><tr><th>column</th>'
+              '<th>type</th></tr>')
             for name, typ in cols:
                 a(f'<tr><td><code>{esc(name)}</code></td>'
                   f'<td class="ty">{esc(typ)}</td></tr>')
-            a('</table></div></details>')
+            a('</table></div>')
+            rows = sample(c, t)
+            if rows:
+                a(f'<p class="cap sm">First {len(rows)} row'
+                  f'{"" if len(rows) == 1 else "s"}, in rowid order:</p>')
+                a('<div class="scroll"><table class="samp"><tr>%s</tr>' %
+                  ''.join(f'<th>{esc(k)}</th>' for k in rows[0].keys()))
+                for r in rows:
+                    a('<tr>%s</tr>' % ''.join(
+                        '<td%s>%s</td>' % (' class="num"' if isinstance(r[k], (int, float))
+                                           else '', cell(r[k])) for k in r.keys()))
+                a('</table></div>')
+            else:
+                a('<p class="cap sm">No rows. That is the honest state of this table, '
+                  'not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>')
+            a('</details>')
         a('</div>')
 
     # ---- views
@@ -449,7 +490,11 @@ summary .n {{ color:var(--muted); font-size:12px;
   font-family:ui-monospace,Menlo,monospace }}
 summary .yr {{ color:var(--traced); font-size:11.5px;
   font-family:ui-monospace,Menlo,monospace }}
-details table {{ margin-top:9px; max-width:420px }}
+details table.cols {{ margin-top:9px; max-width:420px }}
+details table.samp {{ margin-top:5px; font-size:11.5px; white-space:nowrap }}
+details table.samp td {{ padding-right:14px }}
+.cap.sm {{ font-size:12px; margin:11px 0 0 }}
+.nul {{ color:var(--muted); font-style:italic; font-size:.9em }}
 .gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
 @media (min-width:680px) {{ .metrics {{ grid-template-columns:repeat(4,1fr) }} }}
 </style>
