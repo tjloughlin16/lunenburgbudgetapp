@@ -55,6 +55,7 @@ two different reports are added together.
 import argparse
 import html
 import os
+import re as _re
 import re
 import sqlite3
 import sys
@@ -727,6 +728,11 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
 .warn {{ background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }}
 .metrics {{ display:grid; gap:10px; margin:16px 0 10px }}
+/* The fourth card is deliberately quieter: money sitting still is context, not
+   the story the first three tell. Same card, less weight -- not a smaller box,
+   which would break the grid on a phone. */
+.m.small {{ opacity:.82 }}
+.m.small .mv {{ font-size:.78em }}
 .m {{ border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
   background:var(--card) }}
 .m.hi {{ border-color:var(--school); border-width:2px; background:var(--school-bg) }}
@@ -937,6 +943,19 @@ def _render_v2_body(c):
                         FROM v_fund_year WHERE fy={FY} AND period={P_DEPT} AND {SCH}""").fetchone()
     f_in, f_out, f_held = agg['i'] or 0, agg['o'] or 0, agg['h'] or 0
     f_open = f_held - f_in + f_out
+    # The school appropriation is departments 300 + 301, not 300 alone. 301 is
+    # SCHOOL NON-RECURRING EXPENSES, and leaving it out is half of why the
+    # $105,282 'gap' looked like a gap -- see the reconciliations in build_db.py.
+    _r301 = c.execute(
+        'SELECT original v FROM ledger_snapshot WHERE fy=? AND period=? '
+        'AND account_id=?', (FY, P_DEPT, '0100-301')).fetchone()
+    if _r301 is None:
+        # P_DEPT is the report that carries department-level rows and P_ACCT is not; a
+        # miss here means the appropriation silently loses $40,000 and the headline card
+        # goes on looking right. That is the silent-zero shape, so it fails instead.
+        raise SystemExit('0100-301 not found at period %d — the school appropriation is '
+                         'departments 300 + 301 and cannot be computed without it.' % P_DEPT)
+    d301 = _r301['v'] or 0
 
     LH, GAP, BW = 58, 11, 254
     LX, RX, W = 20, 660, 930
@@ -968,9 +987,23 @@ def _render_v2_body(c):
     # A left box carries what it SPENT as well as what it received. Without it, the funds
     # that merge into one block on the right — "Other own funds spent" — are unreadable:
     # you can see a total leave four funds and cannot see which of them it left.
+    def short(name, n=28):
+        """Trim a fund name to fit its box, on a WORD boundary.
+
+        A hard character cut was invisible while the right column carried hand-written
+        labels. The moment the right label became `<left minus its number> spent`, the
+        cuts surfaced as `Extended Day Revolving Fun spent` — the truncation was always
+        there, and only the second use of the string made it readable as a defect.
+        """
+        name = name.title()
+        if len(name) <= n:
+            return name
+        cut = name[:n].rsplit(' ', 1)[0]
+        return cut if len(cut) >= n // 2 else name[:n]
+
     for f, nm, rev, sp in funds:
         h = held.get(f, 0)
-        lbox[f] = (f'{f} {nm.title()[:26]}', rev, 'fund',
+        lbox[f] = (f'{f} {short(nm)}', rev, 'fund',
                    f'spent {money(sp)} · held {money(h)}')
 
     OTHER = ('1308', '1311', '1300', '1302')
@@ -978,6 +1011,30 @@ def _render_v2_body(c):
     # $325,970 and spent $4,005 is not a small program — it is a reserve accumulating,
     # and the "spent" figure alone actively hides that. The mirror case is school lunch,
     # which spends $167,355 MORE than it receives and is drawing a balance down.
+    def spent_label(fund):
+        """The right-hand label for a fund whose SPENDING we cannot break down.
+
+        TJ, reading the page: "putting a 'fund' on the right is awkward. I can't
+        understand how to read it." He was right, and the reason is that the right column
+        answers *what the money was spent on* — so a box reading `After school fund` names
+        a place money sits where a use of money belongs, and quietly implies we know a
+        destination when all we know is the total that left.
+
+        So the label is the LEFT box's title with its fund number removed, plus the word
+        spent: `1305 After School` becomes `After School spent`. That says exactly what
+        was measured — money left this fund — and nothing beyond it.
+
+        Derived from `lbox` rather than typed again, so the two sides cannot drift apart.
+        """
+        left = lbox[fund][0]
+        stripped = _re.sub(r'^\s*%s\s+' % _re.escape(fund), '', left)
+        if stripped == left:
+            # A silent no-op leaves the old confusing label in place and nothing fails.
+            raise SystemExit('spent_label: %r does not start with fund %s — the left '
+                             'label’s shape changed and the right column would keep the '
+                             'fund name.' % (left, fund))
+        return '%s spent' % stripped.rstrip(' .')
+
     def fb(key, label):
         r = fundrow.get(key)
         if not r:
@@ -997,16 +1054,16 @@ def _render_v2_body(c):
                     'town AND school staff together'),
         'STIPEND': ('School resource stipend', els['0100-12101-519021'], 'alt',
                     'inside the police department'),
-        **{f'sp-{f}': fb(f, nm.title()[:26]) for f, nm, rev, sp in funds},
-        'sp-2640': fb('2640', 'Circuit breaker fund'),
+        **{f'sp-{f}': fb(f, spent_label(f)) for f, nm, rev, sp in funds},
+        'sp-2640': fb('2640', spent_label('2640')),
         'sp-grants': ('Grant funds spent', grant_spend, 'prog',
                       'balances are NEGATIVE — spent ahead of reimbursement'),
         'sp-bus': ('Bus fee spending', None, 'missing', 'no account found'),
-        'sp-1301': fb('1301', 'Athletics fund'),
-        'sp-2200': fb('2200', 'School lunch fund'),
-        'sp-1312': fb('1312', 'Extended day fund'),
-        'sp-1305': fb('1305', 'After school fund'),
-        'sp-1306': fb('1306', 'Facilities use fund'),
+        'sp-1301': fb('1301', spent_label('1301')),
+        'sp-2200': fb('2200', spent_label('2200')),
+        'sp-1312': fb('1312', spent_label('1312')),
+        'sp-1305': fb('1305', spent_label('1305')),
+        'sp-1306': fb('1306', spent_label('1306')),
         'sp-other': ('Other own funds spent', sum(spent.get(f, 0) for f in OTHER), 'prog',
                      'funds ' + ', '.join(OTHER) + ' — see each on the left'),
     }
@@ -1129,25 +1186,51 @@ def _render_v2_body(c):
     right_total = sum(v for _, v, *_ in rbox.values() if v is not None)
     cb_held = held.get('2640', 0)
 
+    # THE FOUR METRICS, IN THE ORDER THEY TELL THE STORY. TJ set this order, and the
+    # order is the argument: what the town voted, what arrived on top of it, what was
+    # actually spent, and only then -- smaller, because it is not the point -- what is
+    # sitting still.
+    #
+    # Each is ONE quantity. The temptation all through this page has been to add a
+    # revenue to a spend and print the sum, which is how "$335,856 through the revolving
+    # fund" shipped as revenue PLUS spending. So: card 1 is a budget, card 2 is money in,
+    # card 3 is money out, card 4 is a balance. Four different things, never mixed.
+    appropriation = d300 + d301
+    # Money in beyond the appropriation. `f_in` is revenue genuinely RECEIVED into the
+    # schools' own funds. Grants are the awkward half: nine grant funds spent in FY26 and
+    # booked NO revenue at all, so nothing states what the grants provided. Their spending
+    # is used as a FLOOR for it and labelled as one -- a floor is not a measurement.
+    additional = f_in + grant_spend
+    total_spent = d300_spent + f_out
+
     P = [f'<section class="metrics">'
-         f'<div class="m"><div class="mk">Appropriated to the schools</div>'
-         f'<div class="mv">{money(d300)}</div><div class="ms">Department 300, as Town '
-         f'Meeting voted. <b>The number in every headline.</b></div></div>'
-         f'<div class="m hi"><div class="mk">What the school system SPENT</div>'
-         f'<div class="mv">{money(d300_spent + f_out)}</div>'
+         f'<div class="m"><div class="mk">The school budget</div>'
+         f'<div class="mv">{money(appropriation)}</div>'
+         f'<div class="ms">Departments 300 and 301, as Town Meeting voted. Headlines '
+         f'usually quote {money(d300)} — department 300 alone, leaving out '
+         f'{money(d301)} of non-recurring costs.</div></div>'
+         f'<div class="m hi"><div class="mk">Funding beyond the budget</div>'
+         f'<div class="mv">+{money(additional)}</div>'
+         f'<div class="ms">{money(f_in)} received into the schools’ own funds — fees, '
+         f'lunch, gifts, reimbursement — plus <b>at least</b> {money(grant_spend)} in '
+         f'grants, which booked no FY26 revenue at all and are floored by what they '
+         f'spent. <b>{additional/appropriation*100:.1f}%</b> on top of the budget.</div></div>'
+         f'<div class="m"><div class="mk">What the schools actually spent</div>'
+         f'<div class="mv">{money(total_spent)}</div>'
          f'<div class="ms">{money(d300_spent)} out of the appropriation through period 12, '
-         f'plus {money(f_out)} from its own funds and grants through period 9.</div></div>'
-         f'<div class="m"><div class="mk">Sitting in accounts, unspent</div>'
+         f'plus {money(f_out)} from its own funds and grants through period 9. A floor: '
+         f'three more months of fund spending are not in it.</div></div>'
+         f'<div class="m small"><div class="mk">Unspent, sitting in accounts</div>'
          f'<div class="mv">{money(f_held)}</div>'
-         f'<div class="ms">Held across the schools’ own funds at 31 March — '
-         f'{money(cb_held)} of it in the circuit breaker alone. Not spending, not income: '
-         f'money that has arrived and stopped.</div></div>'
-         f'<div class="m"><div class="mk">The town spent on schools beyond that</div>'
-         f'<div class="mv">{money(town_also)}+</div>'
-         f'<div class="ms">Retiree health and the resource stipend, appropriated to other '
-         f'departments — <b>plus an unknown share of the {money(els["0100-18202-560001"])} '
-         f'pension.</b> Monty Tech is excluded: it is a different district.</div></div>'
+         f'<div class="ms">Held across the schools’ own funds at 31 March, '
+         f'{money(cb_held)} of it in the circuit breaker. Not spending and not income — '
+         f'money that arrived and stopped.</div></div>'
          '</section>',
+         f'<p class="cap"><b>And the town spends on schools outside all four figures.</b> '
+         f'{money(town_also)} of retiree health and a resource stipend sits in other '
+         f'departments’ appropriations, <b>plus an unknown share of the '
+         f'{money(els["0100-18202-560001"])} pension</b>. Monty Tech is excluded '
+         f'throughout: it is a different district.</p>',
          f'<p class="warn"><b>Mixed bases, and it cannot be helped.</b> Department 300 is '
          f'actual spending through period 12; the funds are actual through period 9, '
          f'because the town publishes no twelve-month fund report. <b>So the middle figure '

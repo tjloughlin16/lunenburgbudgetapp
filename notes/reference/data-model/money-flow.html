@@ -51,6 +51,11 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
 .warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
   padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
 .metrics { display:grid; gap:10px; margin:16px 0 10px }
+/* The fourth card is deliberately quieter: money sitting still is context, not
+   the story the first three tell. Same card, less weight -- not a smaller box,
+   which would break the grid on a phone. */
+.m.small { opacity:.82 }
+.m.small .mv { font-size:.78em }
 .m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
   background:var(--card) }
 .m.hi { border-color:var(--school); border-width:2px; background:var(--school-bg) }
