@@ -21,17 +21,39 @@ Local-only, not published. **Every figure on it is hand-typed** — 140 of them,
 
 ---
 
+## READ THIS FIRST — one thing is blocked
+
+**D1 is out of sync and cannot be pushed until tomorrow.** The database grew from 51,226 to
+66,630 rows; a full replace needs ~133,000 writes and the free tier allows 100,000 a day,
+of which today's earlier push already used ~102,000.
+
+    python3 scripts/sync_d1.py          # run this first tomorrow
+    python3 scripts/check_generated.py  # sync_d1 --check is the only failure until then
+
+The static JSON API is current. Only `/api/query` is behind.
+
 ## Where we are
 
-**Done:** `scripts/money_in_figures.py` — every quantity computed from
-`sources/data/lunenburg.db`, each as a `Fig` carrying its value, its words, and **the SQL
-that defines it**. The SQL is the point: an aggregate with no stated definition cannot be
-checked, only believed, and two of the page's aggregates could not be adjudicated at all
-for exactly that reason.
+**Everything below is generated and checked.** `python3 scripts/check_generated.py` runs
+the `--check` of all 21 generators; the only failure tonight is `sync_d1`, above.
 
-**Next:** generate the page itself from those figures, then add the annual-report history.
+| what | where |
+|---|---|
+| The whole town, three columns, 123 boxes | `notes/reference/data-model/town-money-flow.html` |
+| The schools, same model | `notes/reference/data-model/money-flow-v2.html` |
+| The first school attempt, kept for comparison | `notes/reference/data-model/money-flow.html` |
+| The original hand-typed page, untouched | `notes/reference/data-model/money-in.html` |
+| Who decides, and who sets each dollar in | `notes/reference/data-model/who-decides.html` |
+| Every node, edge, assumption and gap | `notes/reference/MONEY-NODES.md` |
+| How the town's ledger is built and named | `notes/reference/LEDGER-STRUCTURE.md` |
 
----
+Build them all with:
+
+    python3 scripts/build_town_flow.py
+    python3 scripts/build_money_flow.py       # writes both school pages
+    python3 scripts/build_who_decides.py
+    python3 scripts/build_money_nodes.py
+    python3 scripts/build_ledger_structure.py
 
 ## What has been established
 
@@ -316,29 +338,84 @@ at all.
 checked years, printed as `RENTAL FEES CELL TOWER`. Whether any of it is earmarked for the
 turf field is still not established.
 
+## The six rules the diagrams are built on, and how each was learned
+
+Every one came from getting it wrong first. They are the transferable part of this
+workstream — none is about Lunenburg.
+
+**1. Each dollar appears exactly once, so a column adds.** The first school diagram had
+program boxes overlapping the budget box: `Special education $6,329,681` sat under
+`THE SCHOOL BUDGET $26,247,474` with $5.9M already counted in it. A column of numbers
+invites being added, and that one could not be.
+
+**2. A fund is a tank, not a pipe.** In, spent and held are three numbers and never one.
+`spent` alone made the circuit breaker look like a small program rather than a $615,301
+reserve; `in` alone would make school lunch look solvent rather than drawing down $167,355.
+
+**3. The columns do not balance, and should not.** Revenue is not spending. Across the
+schools' own funds, in was $1,553,151 and out was $1,736,376 — a $183,225 drawdown from
+balances built in earlier years. A diagram that balanced would be hiding it.
+
+**4. Never identify anything by its name.** Ten characters truncates BUSINESS and BUS to
+the same string, and TRANSFER and TRANSPORTATION likewise. `BUS CERTIF` is business
+certificates; `TRANS ENT` is a transfer; `CHAPTER 658` is the athletics revolving fund.
+Identify by account number, fund number or department.
+
+**5. No aggregation, and the reason is not readability.** TJ: *"when you aggregate, we cant
+see what goes to the school and what doesnt. thats the point of the town diagram."* An
+aggregate that cannot be opened is indistinguishable from an omission — a reader who
+cannot find a number they know exists reasonably concludes it is missing.
+
+**6. One row per fund, boxes on whichever side it has.** A fund's revenue and its spending
+are the same fund, so they share a row and the edge is horizontal. The empty halves turn
+out to be the informative ones: Solid Waste took in $1,000,000 and spent nothing we hold;
+the #240 grants spent $229,398 and $179,637 while booking no revenue at all. Two
+independently sorted lists hide that completely.
+
+## Four bugs found by drawing the picture
+
+Each was invisible in a table and obvious in a diagram.
+
+- **Athletics was double-counted.** `athletics_history` holds both sides of the revolving
+  fund in one column, with revenue rows marked only by an item name starting `REVENUE —`.
+  Summing `side='revolving'` collected all of them, so the page printed $335,856 — revenue
+  ($188,944) plus spending ($146,911) added together — **in the paragraph held up as the
+  worked example.**
+- **Two funds were silently dropped.** `LAYOUT2` hardcoded which funds got a row;
+  `own_funds()` returned twelve and the layout placed ten. Funds 2672 and 2681 vanished.
+  Now generated, with an assertion that refuses to draw the page if any fund is unplaced.
+- **`own_funds()` filtered on names** and so missed fund 1301, the athletics fund, because
+  the town calls it `CHAPTER 658`. The diagram exposed it by drawing Athletics with no
+  source box.
+- **Insurance was coloured as town money** when $1,521,536 of it is school retiree health.
+  Departments are split where the account detail allows and marked MIXED where it does not —
+  the pension is the only box on the page with no colour at all, which is correct.
+
 ## Next steps, in order
 
-0. **Model the spending side from the 635 account rows**, not from apportionment. This is
-   the change that matters most and it was available all along — see above.
-1. **Generate the page** from `money_in_figures.py` — `scripts/build_money_in.py`, with
-   `--check`, registered in `check_generated.py`. Design decision still open: regenerate
-   whole, or splice marked blocks the way `build_data_model_grids.py` does.
-2. **Settle the two aggregates the draft could not justify** — property tax was $195,000
-   above `RE TAXES + PP TAXES`, and the revenue total $27,500 above the sum of its lines.
-   Neither had a recorded definition, which is why neither could be argued with.
-3. **Show all 67 departments**, tail collapsed, rather than the school alone.
-4. **Add the receipts history**, with the eight unusable years visible as absent.
-5. **Check the $105,282 gap** between the workbook and the appropriation — netting, or
-   `settled` holding 252 lines where `proposed` holds 321?
-6. **OCR fixes**, especially grade-level bugs in the roster data, and the spaced-letter
-   artefacts (`PRE-SCHOOL T UIT ION`) that drop a year out of its own category on any
-   GROUP BY of a source name.
-7. **WRRS** — TJ to digest, then decide whether it belongs on this page at all.
-8. **Then** decide about publishing. Not before 1, because publishing a page of typed
-   figures is how three figures once shipped stating amounts the model no longer produced,
-   one of them off by $313,000.
-
----
+1. **`python3 scripts/sync_d1.py`** — the only blocked thing. Do it first.
+2. **Ask the Town for `glytdbud-expense` run against the special revenue funds.** The same
+   report they already produce for the general fund and for each of the four enterprise
+   funds, pointed at funds 13xx/22xx/26xx–29xx. It is the single highest-value document
+   outstanding: it turns **every `restricted` edge** in the model from presumption into
+   traced fact — athletics, lunch, circuit breaker, extended day, and every grant — and it
+   is currently blocking three separate pages.
+3. **Ask where bus fee receipts are booked.** Charged by published policy ($180/$270,
+   School Committee 3601.01, 21 May 2025), tracked and enforced (1,074 requests, 494
+   unpaid on 4 June 2025), and with no observable destination in any ledger we hold.
+4. **Ask for the WRRS actuarial valuation by member unit** — sizes the school share of the
+   $2,392,572 pension, the largest single unknown in the model.
+5. **Ask for a debt schedule by project** — splits $2,547,439 of debt service now sitting
+   in two accounts for all town borrowing, with school buildings inside it.
+6. **Check the $105,282 gap** between the district workbook and the appropriation: netting,
+   or simply that `settled` holds 252 lines where `proposed` holds 321?
+7. **Fix the OCR grade-level bugs** TJ flagged in the roster data, and the spaced-letter
+   artefacts generally. `revenue_history` shows the scale of the problem: 73 of 197
+   printed names were split by spacing alone.
+8. **Extend the revenue series.** Eight of the thirteen annual-report years have no checked
+   rows. `notes/HANDOFF-ANNUAL-REPORTS.md` has the seven-step list that would fix them.
+9. **Decide about publishing.** None of these pages is on the website. That is a decision,
+   not an oversight — see rule 9 in `CLAUDE.md`.
 
 ## Claims NOT established — do not restate these as fact
 
