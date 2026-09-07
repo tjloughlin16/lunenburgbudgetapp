@@ -118,6 +118,46 @@ Specifics that follow from this:
   not show what happened.
 - Name what would settle it. Usually one number nobody publishes.
 
+## 7a. Do not open a page with the context. Open it with the thing
+
+**A page leads with what it is for. Everything explaining how to read it comes after.**
+
+TJ, after the same correction on four different pages: *"we need to keep the top sections
+from being big blocks of text that are just context, across the whole app. its a pattern
+you do when you build, but people hate that."*
+
+It is a pattern, and it comes from writing the page in the order it was built rather than
+the order it is read. Everything above the fold got there because it seemed necessary
+BEFORE the reader could understand what follows — which is true for the author, who has
+just spent an hour on the caveats, and false for the reader, who came for a table.
+
+The count is the test. Four real cases here, all mine:
+
+| page | prose before the thing | after |
+|---|---:|---:|
+| the front page | ~700 words, then eighteen links | four doors |
+| the schema page | 156 words and a caveat | 32 words and a metric row |
+| the money page | five documents as equals | two, then the rest |
+| the school flow | a section answering the question the cards raise | answered on the card |
+
+**How to write it instead.**
+
+- **The thing first.** The inventory, the four doors, the two documents, the figure. If
+  the page is called *the database, table by table*, the tables are the page.
+- **A caveat goes beside what it qualifies**, not above everything. The note about which
+  database the query button reads belongs next to the query button. A footnote that opens
+  the page is a preface.
+- **The key comes after the thing it is a key to.** Explaining the badges before a reader
+  has seen a badge is explaining a legend to somebody who has not seen the map.
+- **One line under the title, not a paragraph.** If the standfirst needs three sentences,
+  the page is doing two jobs.
+- **Guidance does not get worse by moving down. It gets findable**, because a reader
+  meets it after they have seen the thing it is about.
+
+The exception is a genuine warning that changes whether the reader should trust what
+follows — rule 3's territory, and the caveat block on `/reports`. Those lead. "Here is how
+this page is organised" is not one of them.
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs

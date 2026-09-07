@@ -443,25 +443,17 @@ def render(c):
     B = []
     a = B.append
 
-    # ---- the columns that decide what a row is
-    a('<div class="stage alt"><h2>The columns you cannot leave out</h2>')
-    a('<p class="cap">None of these raises an error when omitted. Each returns a number '
-      'that is the sum of two different things, which is why every one of them has been '
-      'got wrong here at least once.</p>')
-    a('<div class="scroll"><table><tr><th>column</th><th>in</th>'
-      '<th>what happens if you omit it</th></tr>')
-    for col, where, what in SPLITTERS:
-        a(f'<tr><td><code>{esc(col)}</code></td><td>{md(where)}</td>'
-          f'<td>{md(what)}</td></tr>')
-    a('</table></div>')
-    a('<p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was '
-      'stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> '
-      'answered against a third of the database and returned <em>zero rows, with no '
-      'error,</em> against the rest. It is INTEGER everywhere now except three documented '
-      'exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the '
-      'build if a new table arrives without it.</p>')
-    a('</div>')
-
+    # ---- THE INVENTORY, FIRST. TJ: "put the sections that contain the tables at the
+    # top. dont bury the lede. Everything else is context and helpful information."
+    #
+    # He is right and it is the same note he gave on the front page. This page is called
+    # `The database, table by table`; the tables ARE the page. Everything above them was
+    # guidance about how to read them — true, useful, and not what anybody came for. A
+    # reader who arrives looking for `ledger_snapshot` should not scroll past three
+    # explanatory sections to reach a list they can search.
+    #
+    # The guidance did not get worse by moving. It got FINDABLE, because a reader meets
+    # it after they have seen the thing it is about.
     # ---- the inventory
     for role, title, blurb, members in fams:
         # COLLAPSED BY DEFAULT. TJ: "I got lost in what i was looking at."
@@ -571,6 +563,64 @@ def render(c):
                   'not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>')
             a('</details>')
         a('</details>')
+
+    # ---- the key, now BELOW the tables. It explains the badges a reader has just
+    # seen rather than badges they have not, which is the whole argument for moving it.
+    a('''<div class="stage alt"><h2>How this is arranged</h2>
+<p class="cap">Grouped by <strong>whose money it is</strong>, because that is the question
+people arrive with. Two other facets ride along as badges on every table.</p>
+<div class="scroll"><table><tr><th>badge</th><th>what it tells you</th></tr>
+<tr><td><span class="tag tier t1">Tier 1 &middot; totals</span></td><td>What was
+appropriated and what is left, by department. Not which category, not which school, not
+which fund paid.</td></tr>
+<tr><td><span class="tag tier t2">Tier 2 &middot; categories</span></td><td>Whether
+guidance, special education or transport is over — and whether the town's books and the
+district's budget agree on a code. Not which school inside a category: names truncate at
+ten characters, so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> are both 2710.</td></tr>
+<tr><td><span class="tag tier t3">Tier 3 &middot; accounts</span></td><td>What one account
+spent, and how much came in per fund.</td></tr>
+<tr><td><span class="tag">fact</span> <span class="tag">dimension</span></td><td>How the
+table is built. Facts carry the figures; dimensions say what a key means and are joined
+to, never summed.</td></tr>
+<tr><td><span class="badge">the spine</span></td><td>The three grains everything else
+describes, extracts or checks.</td></tr>
+</table></div>
+<p class="warn"><strong>There is a tier below 3, and no report reaches it.</strong> Which
+revenue paid which expense. That is the grey edge in the join map, and it is why this
+archive measures appropriations and says so.</p></div>''')
+
+    # ---- the columns that decide what a row is
+    a('<div class="stage alt"><h2>The columns you cannot leave out</h2>')
+    a('<p class="cap">None of these raises an error when omitted. Each returns a number '
+      'that is the sum of two different things, which is why every one of them has been '
+      'got wrong here at least once.</p>')
+    a('<div class="scroll"><table><tr><th>column</th><th>in</th>'
+      '<th>what happens if you omit it</th></tr>')
+    for col, where, what in SPLITTERS:
+        a(f'<tr><td><code>{esc(col)}</code></td><td>{md(where)}</td>'
+          f'<td>{md(what)}</td></tr>')
+    a('</table></div>')
+    a('<p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was '
+      'stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> '
+      'answered against a third of the database and returned <em>zero rows, with no '
+      'error,</em> against the rest. It is INTEGER everywhere now except three documented '
+      'exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the '
+      'build if a new table arrives without it.</p>')
+    a('</div>')
+
+    # ---- the caveat about WHICH database, beside the button it qualifies rather than
+    # above the inventory. It is a footnote to `Open full table`, and a footnote that
+    # opens the page is a preface.
+    a('''<div class="stage alt"><p class="warn"><strong>Two databases, and they are not always the same one.</strong>
+Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
+<code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
+queries <code>{api_base}</code>, a copy pushed to Cloudflare D1 that can lag behind.
+Point it elsewhere with <code>?api=&lt;base-url&gt;</code> on this page's own URL, or set
+<code>LUNENBURG_API</code> before building.
+If a table opens empty, or the button reports that it does not exist, that copy has not
+been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
+hidden because two sources that usually agree are the ones that mislead when they
+stop.</p></div>''')
 
     # ---- views
     a('<div class="stage alt"><h2>Views — the joins already written for you</h2>')
@@ -870,9 +920,7 @@ button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced
 <header>
   <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
   <h1>The database, table by table</h1>
-  <p class="standfirst">Everything <code>sources/data/lunenburg.db</code> holds, what each
-  table is for, which years it actually covers — and, first, whether the question you
-  arrived with can be answered at all.</p>
+  <p class="standfirst">Every table, what it holds, and which years it covers.</p>
 </header>
 
 <div class="metrics">
@@ -883,39 +931,9 @@ button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced
   <div class="metric"><div class="v">{pct_described}</div><div class="l">columns described</div></div>
 </div>
 
-<div class="stage alt"><h2>How this is arranged</h2>
-<p class="cap">Grouped by <strong>whose money it is</strong>, because that is the question
-people arrive with. Two other facets ride along as badges on every table.</p>
-<div class="scroll"><table><tr><th>badge</th><th>what it tells you</th></tr>
-<tr><td><span class="tag tier t1">Tier 1 &middot; totals</span></td><td>What was
-appropriated and what is left, by department. Not which category, not which school, not
-which fund paid.</td></tr>
-<tr><td><span class="tag tier t2">Tier 2 &middot; categories</span></td><td>Whether
-guidance, special education or transport is over — and whether the town's books and the
-district's budget agree on a code. Not which school inside a category: names truncate at
-ten characters, so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> are both 2710.</td></tr>
-<tr><td><span class="tag tier t3">Tier 3 &middot; accounts</span></td><td>What one account
-spent, and how much came in per fund.</td></tr>
-<tr><td><span class="tag">fact</span> <span class="tag">dimension</span></td><td>How the
-table is built. Facts carry the figures; dimensions say what a key means and are joined
-to, never summed.</td></tr>
-<tr><td><span class="badge">the spine</span></td><td>The three grains everything else
-describes, extracts or checks.</td></tr>
-</table></div>
-<p class="warn"><strong>There is a tier below 3, and no report reaches it.</strong> Which
-revenue paid which expense. That is the grey edge in the join map, and it is why this
-archive measures appropriations and says so.</p></div>
 
-<p class="warn"><strong>Two databases, and they are not always the same one.</strong>
-Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
-<code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
-queries <code>{api_base}</code>, a copy pushed to Cloudflare D1 that can lag behind.
-Point it elsewhere with <code>?api=&lt;base-url&gt;</code> on this page's own URL, or set
-<code>LUNENBURG_API</code> before building.
-If a table opens empty, or the button reports that it does not exist, that copy has not
-been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
-hidden because two sources that usually agree are the ones that mislead when they
-stop.</p>
+
+
 
 {body}
 

@@ -219,9 +219,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <header>
   <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
   <h1>The database, table by table</h1>
-  <p class="standfirst">Everything <code>sources/data/lunenburg.db</code> holds, what each
-  table is for, which years it actually covers — and, first, whether the question you
-  arrived with can be answered at all.</p>
+  <p class="standfirst">Every table, what it holds, and which years it covers.</p>
 </header>
 
 <div class="metrics">
@@ -232,53 +230,10 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
 
-<div class="stage alt"><h2>How this is arranged</h2>
-<p class="cap">Grouped by <strong>whose money it is</strong>, because that is the question
-people arrive with. Two other facets ride along as badges on every table.</p>
-<div class="scroll"><table><tr><th>badge</th><th>what it tells you</th></tr>
-<tr><td><span class="tag tier t1">Tier 1 &middot; totals</span></td><td>What was
-appropriated and what is left, by department. Not which category, not which school, not
-which fund paid.</td></tr>
-<tr><td><span class="tag tier t2">Tier 2 &middot; categories</span></td><td>Whether
-guidance, special education or transport is over — and whether the town's books and the
-district's budget agree on a code. Not which school inside a category: names truncate at
-ten characters, so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> are both 2710.</td></tr>
-<tr><td><span class="tag tier t3">Tier 3 &middot; accounts</span></td><td>What one account
-spent, and how much came in per fund.</td></tr>
-<tr><td><span class="tag">fact</span> <span class="tag">dimension</span></td><td>How the
-table is built. Facts carry the figures; dimensions say what a key means and are joined
-to, never summed.</td></tr>
-<tr><td><span class="badge">the spine</span></td><td>The three grains everything else
-describes, extracts or checks.</td></tr>
-</table></div>
-<p class="warn"><strong>There is a tier below 3, and no report reaches it.</strong> Which
-revenue paid which expense. That is the grey edge in the join map, and it is why this
-archive measures appropriations and says so.</p></div>
 
-<p class="warn"><strong>Two databases, and they are not always the same one.</strong>
-Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
-<code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
-queries <code>https://lunenburgbudgetproject.org</code>, a copy pushed to Cloudflare D1 that can lag behind.
-Point it elsewhere with <code>?api=&lt;base-url&gt;</code> on this page's own URL, or set
-<code>LUNENBURG_API</code> before building.
-If a table opens empty, or the button reports that it does not exist, that copy has not
-been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
-hidden because two sources that usually agree are the ones that mislead when they
-stop.</p>
 
-<div class="stage alt"><h2>The columns you cannot leave out</h2>
-<p class="cap">None of these raises an error when omitted. Each returns a number that is the sum of two different things, which is why every one of them has been got wrong here at least once.</p>
-<div class="scroll"><table><tr><th>column</th><th>in</th><th>what happens if you omit it</th></tr>
-<tr><td><code>status</code></td><td>annual report extracts</td><td><code>checked</code>, <code>check failed</code>, <code>no check</code>. Summing across them mixes verified figures with unverified ones.</td></tr>
-<tr><td><code>level</code></td><td><code>account</code>, <code>ledger_snapshot</code></td><td><code>department</code> roll-ups sit in the same table as their own detail. Summing both adds the budget to itself.</td></tr>
-<tr><td><code>account_type</code></td><td><code>account</code></td><td>Revenue is stored NEGATIVE. Omitting it once made the town’s whole budget compute as minus $997,871.</td></tr>
-<tr><td><code>period</code></td><td><code>ledger_snapshot</code></td><td>Two periods are two different MUNIS reports of the same year, not two halves of it.</td></tr>
-<tr><td><code>stage</code></td><td><code>budget_figure</code></td><td><code>proposed</code>, <code>settled</code>, <code>actual</code>. Rule 1: a rate measured across stages is partly growth and partly the step between them.</td></tr>
-<tr><td><code>variant</code></td><td><code>budget_figure</code></td><td>FY27 has four whole budgets — Balanced, Core, Level Service, Restoration. Without this you sum all four.</td></tr>
-<tr><td><code>v1 … v8</code></td><td>annual report extracts</td><td>ORDINALS, not column names: the first column of THAT PAGE that held figures. Summing <code>v1</code> down a run adds one page’s APPROPRIATED to another’s TOTAL EXPENDED.</td></tr>
-</table></div>
-<p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> answered against a third of the database and returned <em>zero rows, with no error,</em> against the rest. It is INTEGER everywhere now except three documented exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the build if a new table arrives without it.</p>
-</div>
+
+
 <details class="scope"><summary class="scopehead"><b>School money and school subjects</b><span>28 tables &middot; 33,557 rows</span></summary>
 <p class="cap">The district&#x27;s budget, its own funds, and what the town publishes about its schools.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
@@ -2090,6 +2045,51 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
+<div class="stage alt"><h2>How this is arranged</h2>
+<p class="cap">Grouped by <strong>whose money it is</strong>, because that is the question
+people arrive with. Two other facets ride along as badges on every table.</p>
+<div class="scroll"><table><tr><th>badge</th><th>what it tells you</th></tr>
+<tr><td><span class="tag tier t1">Tier 1 &middot; totals</span></td><td>What was
+appropriated and what is left, by department. Not which category, not which school, not
+which fund paid.</td></tr>
+<tr><td><span class="tag tier t2">Tier 2 &middot; categories</span></td><td>Whether
+guidance, special education or transport is over — and whether the town's books and the
+district's budget agree on a code. Not which school inside a category: names truncate at
+ten characters, so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> are both 2710.</td></tr>
+<tr><td><span class="tag tier t3">Tier 3 &middot; accounts</span></td><td>What one account
+spent, and how much came in per fund.</td></tr>
+<tr><td><span class="tag">fact</span> <span class="tag">dimension</span></td><td>How the
+table is built. Facts carry the figures; dimensions say what a key means and are joined
+to, never summed.</td></tr>
+<tr><td><span class="badge">the spine</span></td><td>The three grains everything else
+describes, extracts or checks.</td></tr>
+</table></div>
+<p class="warn"><strong>There is a tier below 3, and no report reaches it.</strong> Which
+revenue paid which expense. That is the grey edge in the join map, and it is why this
+archive measures appropriations and says so.</p></div>
+<div class="stage alt"><h2>The columns you cannot leave out</h2>
+<p class="cap">None of these raises an error when omitted. Each returns a number that is the sum of two different things, which is why every one of them has been got wrong here at least once.</p>
+<div class="scroll"><table><tr><th>column</th><th>in</th><th>what happens if you omit it</th></tr>
+<tr><td><code>status</code></td><td>annual report extracts</td><td><code>checked</code>, <code>check failed</code>, <code>no check</code>. Summing across them mixes verified figures with unverified ones.</td></tr>
+<tr><td><code>level</code></td><td><code>account</code>, <code>ledger_snapshot</code></td><td><code>department</code> roll-ups sit in the same table as their own detail. Summing both adds the budget to itself.</td></tr>
+<tr><td><code>account_type</code></td><td><code>account</code></td><td>Revenue is stored NEGATIVE. Omitting it once made the town’s whole budget compute as minus $997,871.</td></tr>
+<tr><td><code>period</code></td><td><code>ledger_snapshot</code></td><td>Two periods are two different MUNIS reports of the same year, not two halves of it.</td></tr>
+<tr><td><code>stage</code></td><td><code>budget_figure</code></td><td><code>proposed</code>, <code>settled</code>, <code>actual</code>. Rule 1: a rate measured across stages is partly growth and partly the step between them.</td></tr>
+<tr><td><code>variant</code></td><td><code>budget_figure</code></td><td>FY27 has four whole budgets — Balanced, Core, Level Service, Restoration. Without this you sum all four.</td></tr>
+<tr><td><code>v1 … v8</code></td><td>annual report extracts</td><td>ORDINALS, not column names: the first column of THAT PAGE that held figures. Summing <code>v1</code> down a run adds one page’s APPROPRIATED to another’s TOTAL EXPENDED.</td></tr>
+</table></div>
+<p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> answered against a third of the database and returned <em>zero rows, with no error,</em> against the rest. It is INTEGER everywhere now except three documented exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the build if a new table arrives without it.</p>
+</div>
+<div class="stage alt"><p class="warn"><strong>Two databases, and they are not always the same one.</strong>
+Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
+<code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
+queries <code>{api_base}</code>, a copy pushed to Cloudflare D1 that can lag behind.
+Point it elsewhere with <code>?api=&lt;base-url&gt;</code> on this page's own URL, or set
+<code>LUNENBURG_API</code> before building.
+If a table opens empty, or the button reports that it does not exist, that copy has not
+been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
+hidden because two sources that usually agree are the ones that mislead when they
+stop.</p></div>
 <div class="stage alt"><h2>Views — the joins already written for you</h2>
 <p class="cap">A view is the safe way to ask a question that needs two tables. Each one carries the splitting columns above in its own <code>WHERE</code>, so it cannot be got wrong the way a hand-written join can.</p>
 <div class="scroll"><table><tr><th>view</th><th>columns</th></tr>
