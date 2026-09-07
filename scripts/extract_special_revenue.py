@@ -210,7 +210,13 @@ def mark_arithmetic_subtotals(rows_in, tol=0.02):
                     # A single line repeated with no label of its own is that line's
                     # total: these schedules print a one-line department as the line and
                     # then the department total, identical. Counting both doubles it.
-                    enough = n >= 2 or (n == 1 and not rows_in[i]['label'].strip())
+                    # The label key differs by caller: this schedule names it
+                    # `fund`, the generic table extractor names it `label`. Reading
+                    # only one of them raised KeyError here and had left this whole
+                    # extractor unrunnable -- so the committed CSV was produced by
+                    # an older version of this file and could not be regenerated.
+                    _lab = rows_in[i].get('label', rows_in[i].get('fund', ''))
+                    enough = n >= 2 or (n == 1 and not _lab.strip())
                     if enough and abs(run - v) <= tol:
                         found = (n, label)
                         break
@@ -371,15 +377,23 @@ def main():
                                 for i, v in enumerate(values[:6])},
                              'n_values': sum(1 for v in values if v is not None),
                              'status': ''})
-        # Subtotals whose label did not survive, found by arithmetic. A department total
-        # counted as detail is added to the very lines it summarises.
+        # THE ARITHMETIC SUBTOTAL DETECTOR IS DELIBERATELY NOT RUN ON THIS SCHEDULE.
+        #
+        # It exists for the APPROPRIATIONS schedule, which prints a department total after
+        # its lines and frequently loses that total's label to extraction. This schedule
+        # does not print department totals at all: every one of the sixteen editions was
+        # scanned for a subtotal row and every one has zero, from a GENERAL GOVERNMENT
+        # heading straight through to a single GRAND TOTAL at the end.
+        #
+        # So here the detector can only produce FALSE POSITIVES, and it did. `FY22
+        # Foundation Reserve` and `FY22 ARP Idea #252` are ordinary school grants whose
+        # balances happened to equal the run above them; marked as subtotals and excluded
+        # from the column sums, they took $42,521.85 of FY2022 receipts with them.
+        #
+        # A detector that infers structure is right only where that structure exists. That
+        # is worth stating rather than deleting, because the function is correct and the
+        # call site was not.
         seg = rows[n_before:]
-        for r in seg:
-            r['kind'] = 'subtotal' if r.get('is_subtotal') == 'yes' else 'row'
-        mark_arithmetic_subtotals(seg)
-        for r in seg:
-            if r['kind'] == 'subtotal':
-                r['is_subtotal'] = 'yes'
         mine = [r for r in seg if r.get('is_subtotal') != 'yes']
         ledger.append({'fy': fy, 'edition': edition, 'pages': got, 'funds': len(mine),
                        'grand_values': grand_values, 'header': header})
@@ -431,7 +445,12 @@ def main():
     # and the per-column result is recorded so a consumer can see WHICH column is
     # trustworthy rather than discarding the year whole.
     for led in ledger:
-        mine = [r for r in rows if r['edition'] == led['edition']]
+        # SUBTOTALS ARE EXCLUDED FROM THE COLUMN SUMS. They are the sums of the rows
+        # above them, so adding them to those rows counts a department twice -- and
+        # `mark_arithmetic_subtotals` finds them by arithmetic, so this became live the
+        # moment the crash above was fixed and they started being marked at all.
+        mine = [r for r in rows if r['edition'] == led['edition']
+                and r.get('is_subtotal') != 'yes']
         led['checks'], led['ok'] = [], False
         if not led['grand_values'] or not mine:
             for r in mine:

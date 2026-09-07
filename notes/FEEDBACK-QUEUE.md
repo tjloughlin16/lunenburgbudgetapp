@@ -11,7 +11,33 @@ Nothing in this file is a claim about the data. It is a work list.
 
 ## Open
 
-*(nothing outstanding)*
+### 3. $26m + $2m does not visibly equal the $27m spent
+
+*Raised 7 Sept 2026, on `school-money-flow.html`.* TJ: *"$26m + $2m, I expected 'what the
+schools actually spent' to be the 26+2, but its $27. I'm not sure how to understand
+that."*
+
+The cards currently invite that subtraction and then do not explain it. Both halves of the
+answer are real and neither is on the page:
+
+- **Not all of the budget was spent.** Card 1 is an appropriation — permission to spend —
+  and card 3 is spending. The unspent remainder of the appropriation is a genuine figure
+  and it is nowhere in the four cards.
+- **Money in is not money out, per fund.** Card 2 counts revenue *received*; card 3 counts
+  what was *spent*. A fund can take in more than it spends (the circuit breaker) or spend
+  more than it takes in (school lunch, drawing a balance down). Card 4 is where that
+  difference comes to rest, but nothing says so.
+
+So the three figures do not reconcile because they are a permission, an inflow and an
+outflow — three different kinds of quantity, which was deliberate — and the page never
+says what closes the gap.
+
+**Fix:** show the bridge explicitly rather than leaving the reader to attempt the sum.
+Budget + funding in − spent = what is left, split into *appropriation not spent* and
+*fund balances*, and check that it actually adds. If it does not add, say what is missing
+rather than adjusting a card until it does — the mixed bases (period 12 for the
+appropriation, period 9 for the funds) mean it may genuinely not close, and that is a
+finding rather than an error to hide.
 
 ---
 
