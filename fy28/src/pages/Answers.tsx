@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import type { ReactNode } from 'react'
 import { MODEL, usd, usdShort } from '../model/engine'
 import {
@@ -1487,7 +1488,7 @@ function Lever({ n, name, head, href, children }: {
       <div className="flex items-baseline gap-2 mb-1">
         <span className="text-[11px] font-bold tnum shrink-0"
           style={{ color: 'var(--text-muted)' }}>{n}</span>
-        <a href={href} className="text-[15px] font-bold hover:underline"
+        <a href={abs(href)} className="text-[15px] font-bold hover:underline"
           style={{ color: 'var(--series-cost)' }}>{name}</a>
       </div>
       <p className="text-[13px] font-semibold leading-snug mb-1">{head}</p>

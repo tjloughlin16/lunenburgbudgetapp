@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 /** HOW FAR THE MONEY CAN BE FOLLOWED — the ladder, drawn.
  *
  *  WHY THIS IS A PICTURE AND THE REST OF THE PAGE IS A LIST. The other gaps on
@@ -347,7 +348,7 @@ export function TraceLadder({ t }: { t: Trace }) {
         {t.as_of.revenue_period} for the revenue, which is the only snapshot that carries
         it. The reason on each rung is quoted from the town&rsquo;s gap register rather
         than written here. Published as{' '}
-        <a href="/data/traceability.json" className="underline"
+        <a href={abs('/data/traceability.json')} className="underline"
           style={{ color: 'var(--series-cost)' }}><code>/data/traceability.json</code></a>.
         The levels and the keys are the ones already used in {t.vocabulary}.
       </p>

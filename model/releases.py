@@ -24,6 +24,73 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v11',
+        date='2026-09-07',
+        title='Four doors, and eight questions answered one page at a time',
+        short='the site is reorganised, and the analyses arrive',
+        headline='The front page used to be an argument about FY28 with everything else '
+                 'behind it. It is now four doors — the budget crisis, the money, the '
+                 'database, and a door for AI assistants — and behind the money door are '
+                 'eight new pages, each one taking a single question as far as the '
+                 'published records will carry it and then saying where it stops.',
+        changes=[
+            'Seven analysis pages are new — what sports cost and who pays, the money '
+            'outside the budget, state aid, school staffing, health insurance, budgets '
+            'against actuals, and what we cannot answer — and the free cash page has been '
+            'rebuilt around the state’s own proof workbooks. Each opens with what it '
+            'establishes rather than with how to read it, and each ends with what it does '
+            'not show — because a figure is a fact and an explanation for it is not.',
+
+            'We were wrong about Chapter 70 and this build corrects it. This project’s '
+            'own working notes described Chapter 70 as "roughly $11.4M of a $26.6M school '
+            'budget", which puts it near 43% of the school budget. It is 35%. $11.4M is '
+            'the Governor’s figure for ALL state aid to Lunenburg — Chapter 70 is about '
+            'four fifths of that and the rest is not school money. If you have quoted the '
+            'higher share from anything here, quote 35% instead.',
+
+            'State aid misses its own estimate by about a quarter of a million dollars in '
+            'an average year, and it has come in ABOVE the estimate in four of the last '
+            'five. The one shortfall year was large. Read the direction and the size as '
+            'two different findings; the direction is much the steadier of the two.',
+
+            'The state’s own free cash proof adds up exactly — and to a number the state '
+            'does not certify. Across nine towns and five years, every one of the 45 '
+            'proofs foots to the cent to a line called Identified Free Cash, and not one '
+            'of them foots to the certified figure the town actually quotes. The '
+            'worksheet prints nothing that reconciles them. The town’s own books give a '
+            'third number again. All three are internally correct and nothing published '
+            'joins them.',
+
+            'Free cash is not saved money. Nearly half of five years of it is '
+            'appropriations that were voted and not spent, and another 39% is local '
+            'receipts coming in above what was estimated — which every one of the nine '
+            'towns did, in every year measured. That is either conservative estimating or '
+            'what the convention looks like statewide, and the data cannot tell you which.',
+
+            'The town holds about $10M in special revenue funds and a third of it arrived '
+            'in the pandemic years. Those funds sit outside the budget everybody argues '
+            'about. Most of the balance is not school money and much of it is legally '
+            'restricted, so read it as a position rather than as money available to '
+            'spend.',
+
+            'Athletics is the one part of school money where both sides can be seen, and '
+            'what it shows is that a budget line is not a cost — the appropriation covered '
+            'about a third of what the district’s own workbook says the same categories '
+            'cost. In one year, two thirds of everything paid into the athletics fund was '
+            'four journal entries described only as "per memo", documents this project '
+            'does not hold. Without them that year closes negative.',
+
+            'What this project cannot answer now has its own page, and it names the '
+            'specific document that would close each gap rather than describing an '
+            'absence. Thirty-two of them. Several are load-bearing: we hold no Cherry '
+            'Sheet for any year, and nothing published says which fund pays which post.',
+
+            'Where a new page disagrees with an older analysis on this site, the page says '
+            'so and shows both figures rather than quietly agreeing with itself. Three '
+            'athletics figures moved when a column mapping was fixed, and the older '
+            'analysis still carries the earlier ones.',
+        ]),
+    dict(
         tag='v10',
         date='2026-09-05',
         title='Every document downloads, including the seven that never could',

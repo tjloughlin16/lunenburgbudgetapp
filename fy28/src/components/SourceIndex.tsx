@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import MANIFEST from '../data/agent-manifest.json'
 import { useMemo, useState } from 'react'
 import Papa from 'papaparse'
@@ -82,7 +83,7 @@ function Row({ it }: { it: Item }) {
             document held somewhere else — this is the file, exactly as it was
             published. */}
         {it.url ? (
-          <a href={SITE + it.url} download
+          <a href={abs(SITE + it.url)} download
             className="text-[14px] font-semibold leading-snug underline
             decoration-1 underline-offset-2" style={{ color: 'var(--series-cost)' }}>
             {it.title}
@@ -124,7 +125,7 @@ function Row({ it }: { it: Item }) {
         </>)}
         {it.textUrl && (<>
           <span aria-hidden="true">&middot;</span>
-          <a href={SITE + it.textUrl} download className="underline"
+          <a href={abs(SITE + it.textUrl)} download className="underline"
             style={{ color: 'var(--text-secondary)' }}>extracted text</a>
         </>)}
         {/* The publisher's address is kept even where it no longer opens to the public --
@@ -136,14 +137,14 @@ function Row({ it }: { it: Item }) {
           <span aria-hidden="true">&middot;</span>
           {it.upstreamRestricted ? (
             <span style={{ color: 'var(--text-muted)' }}>
-              <a href={it.upstream} target="_blank" rel="noopener noreferrer"
+              <a href={abs(it.upstream)} target="_blank" rel="noopener noreferrer"
                 className="underline" style={{ color: 'var(--text-muted)' }}>
                 the publisher&rsquo;s copy</a>{' '}
               needs sign-in{it.upstreamCheckedOn && ` as of ${asOf(it.upstreamCheckedOn)}`}
               {' '}&mdash; ours is the open one
             </span>
           ) : (
-            <a href={it.upstream} target="_blank" rel="noopener noreferrer"
+            <a href={abs(it.upstream)} target="_blank" rel="noopener noreferrer"
               className="underline"
               style={{ color: 'var(--text-secondary)' }}>the publisher&rsquo;s original</a>
           )}
@@ -301,7 +302,7 @@ export function SourceIndex() {
                   {o?.url && (
                     <p className="text-[12px] mb-1" style={{ color: 'var(--text-muted)' }}>
                       Published by{' '}
-                      <a href={o.url} target="_blank" rel="noopener noreferrer"
+                      <a href={abs(o.url)} target="_blank" rel="noopener noreferrer"
                         style={{ color: 'var(--brand)' }}>{o.name}</a>
                     </p>
                   )}
@@ -370,7 +371,7 @@ function MeetingArchive() {
           <p className="mt-1 text-[13px] leading-relaxed max-w-3xl"
             style={{ color: 'var(--text-secondary)' }}>{S.corpus.note}</p>
           <p className="mt-2 text-[13px]">
-            <a href={SITE + S.corpusIndexUrl} download className="font-semibold underline"
+            <a href={abs(SITE + S.corpusIndexUrl)} download className="font-semibold underline"
               style={{ color: 'var(--series-cost)' }}>
               Download the archive index (CSV) &rarr;
             </a>
@@ -424,7 +425,7 @@ function MeetingArchive() {
                                 style={{ color: 'var(--text-secondary)' }}>{d.kind}</span>
                               {/* Straight to the town's own copy. Ours are scans we did not
                                   commit; theirs is the authoritative one and it is free. */}
-                              <a href={d.url} target="_blank" rel="noopener noreferrer"
+                              <a href={abs(d.url)} target="_blank" rel="noopener noreferrer"
                                 className="underline min-w-0"
                                 style={{ color: 'var(--series-cost)' }}>
                                 {d.path ? 'Open at the Town' : 'Listed, but the Town returns an error'}

@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd, usdShort } from '../model/engine'
 import {
@@ -173,7 +174,7 @@ export function SpecialRevenue() {
             {err}. Nothing on this page is typed into it, so with the file missing there is
             nothing to show rather than something stale. The figures themselves are at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/special-revenue.json">/data/special-revenue.json</a>.
+              href={abs('/data/special-revenue.json')}>/data/special-revenue.json</a>.
           </p>
         </div>
       </div>
@@ -699,7 +700,7 @@ export function SpecialRevenue() {
         {c.editions} annual town reports, one schedule each. Every figure on this page is
         recomputed from{' '}
         <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href="/data/special-revenue.json">/data/special-revenue.json</a>{' '}
+          href={abs('/data/special-revenue.json')}>/data/special-revenue.json</a>{' '}
         when the site is built, by <code>{d.generated_by}</code>, from{' '}
         <code>{d.source}</code>. The dataset&rsquo;s own provenance note &mdash; what it is,
         how a year is added, and what it deliberately excludes &mdash; is{' '}
@@ -715,7 +716,7 @@ export function SpecialRevenue() {
           {d.documents.map(p => (
             <li key={p} className="border-t py-1.5" style={{ borderColor: 'var(--grid)' }}>
               <a className="underline break-all" style={{ color: 'var(--series-cost)' }}
-                href={`/${p.replace(/^sources\//, 'docs/')}`}>{p}</a>
+                href={abs(`/${p.replace(/^sources\//, 'docs/')}`)}>{p}</a>
             </li>
           ))}
         </ul>

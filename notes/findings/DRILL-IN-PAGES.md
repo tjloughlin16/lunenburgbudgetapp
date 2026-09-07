@@ -379,6 +379,61 @@ at build time.
 
 ---
 
+## 5d. The deploy gate caught a defect three pages of rules had not
+
+Worth recording separately, because it is the clearest case in this project of a
+**check earning its keep against a rule that was written down and still not followed.**
+
+`npm run check:agents` refused the v11 deploy with ten problems. Nine were one problem:
+
+> every link to a file must be absolute, or a program cannot follow it
+
+Nine pages linked to `/docs/…`, `/data/…` and `/api/…` as bare paths.
+
+### Why it keeps happening
+
+**A browser resolves a relative path against the page it is on.** So a relative file
+link is not merely correct-looking to a human reviewer — it is *indistinguishable from
+a working link* to every human who clicks it. It is broken only for readers who cannot
+click, and there is no way to notice them by looking.
+
+`model.json` records the two previous occurrences: 100 links across 18 pages, then 13
+more. Each time the failure was identical — an assistant was told exactly where the
+data was, could not fetch it because its tool only accepts addresses it has seen
+written out in full, **reported the data missing from the very page built to hand it
+over**, and went to the source repository instead.
+
+### Why the rule did not prevent the third one
+
+The rule existed. It lived as a comment on a local helper inside one component
+(`AskAnAssistant.tsx`), and a second copy of the same helper lived in `DataTopLine.tsx`.
+So every page built afterwards re-invented the bug, because the rule was not anywhere a
+page author would look.
+
+It is now `fy28/src/lib/abs.ts`, derived from `agent-manifest.json` — the same value
+`llms.txt`, the footer and the agent prompt read — so the domain is not typed again.
+
+### And the first fix was not enough, which is the more useful half
+
+Rewriting `href="/docs/…"` in the source took ten problems to seven. **All seven
+survivors were links that are not literals** — built at runtime out of a JSON field:
+
+```
+href={r.url}     href={q.cite}     href={`/${p.replace(/^sources\//, 'docs/')}`}
+```
+
+A source-text rewrite cannot see those, and neither can a reviewer reading the diff.
+So `abs()` was made **prefix-guarded and idempotent** instead, and applied to every
+href regardless of kind: a path under those four prefixes gets the site name, an in-app
+route is returned untouched (prefixing one would turn a client-side navigation into a
+full page load), and anything already absolute is returned unchanged.
+
+**The generalisable form:** when a rule is about the *value* of something, enforcing it
+at the point where the value is written only covers the values that are written. Put
+the guard on the value itself and the constructed cases come along for free.
+
+---
+
 ## 6. Decisions waiting on TJ
 
 Not questions about the data — questions about what this project should do. Nothing

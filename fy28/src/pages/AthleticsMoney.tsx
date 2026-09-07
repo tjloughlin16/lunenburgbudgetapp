@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -193,9 +194,9 @@ export function AthleticsMoney() {
             {err}. Nothing on this page is typed into it, so with the file missing there is
             nothing to show rather than something stale. The written analyses are at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/docs/analyses/athletics.md">/docs/analyses/athletics.md</a> and{' '}
+              href={abs('/docs/analyses/athletics.md')}>/docs/analyses/athletics.md</a> and{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/docs/analyses/athletics-ledger.md">/docs/analyses/athletics-ledger.md</a>.
+              href={abs('/docs/analyses/athletics-ledger.md')}>/docs/analyses/athletics-ledger.md</a>.
           </p>
         </div>
       </div>
@@ -777,7 +778,7 @@ export function AthleticsMoney() {
         </dl>
         <p className="text-[13px] leading-relaxed mt-4" style={{ color: 'var(--text-secondary)' }}>
           Every table above is downloadable as itself:{' '}
-          <a className="underline" style={{ color: 'var(--series-cost)' }} href="/data/athletics.json">
+          <a className="underline" style={{ color: 'var(--series-cost)' }} href={abs('/data/athletics.json')}>
             /data/athletics.json</a> is exactly what this page reads.
         </p>
       </div>
@@ -790,7 +791,7 @@ export function AthleticsMoney() {
       </Body>
       <div className="grid gap-3 mt-6 sm:grid-cols-2">
         {d.related.map(r => (
-          <a key={r.id} href={r.url} className="card p-5 block">
+          <a key={r.id} href={abs(r.url)} className="card p-5 block">
             <p className="text-[15px] font-bold leading-snug">{r.title}</p>
             <p className="text-[13px] leading-relaxed mt-2" style={{ color: 'var(--text-secondary)' }}>
               {r.why}

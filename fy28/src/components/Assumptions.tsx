@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import type { Assumptions as A } from '../model/engine'
 import { MODEL, usd } from '../model/engine'
 
@@ -37,7 +38,7 @@ export function AssumptionsPanel({ a, setA, leverTotal }: {
               <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
                 {note}
                 {more && <>{' '}
-                  <a href={more} className="font-semibold"
+                  <a href={abs(more)} className="font-semibold"
                     style={{ color: 'var(--series-cost)' }}>how we got it &rarr;</a>
                 </>}
               </p>

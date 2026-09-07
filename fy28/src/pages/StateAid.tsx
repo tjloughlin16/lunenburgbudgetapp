@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -203,11 +204,11 @@ function Said({ q }: { q: Payload['said'][number] }) {
         {q.why}
       </p>
       <p className="text-[12px] mt-2.5">
-        <a className="underline" style={{ color: 'var(--series-cost)' }} href={q.cite}>
+        <a className="underline" style={{ color: 'var(--series-cost)' }} href={abs(q.cite)}>
           the minutes, as text
         </a>
         {' · '}
-        <a className="underline" style={{ color: 'var(--series-cost)' }} href={q.town}>
+        <a className="underline" style={{ color: 'var(--series-cost)' }} href={abs(q.town)}>
           the town&rsquo;s own copy
         </a>
       </p>
@@ -241,7 +242,7 @@ export function StateAid() {
             nothing to show rather than something stale. The underlying rows are published
             at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/state-aid.json">/data/state-aid.json</a>.
+              href={abs('/data/state-aid.json')}>/data/state-aid.json</a>.
           </p>
         </div>
       </div>
@@ -770,7 +771,7 @@ export function StateAid() {
         <a className="underline" style={{ color: 'var(--series-cost)' }}
           href="/what-we-cannot-answer">what we cannot answer</a> and at{' '}
         <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href="/api/money_gaps.json">/api/money_gaps.json</a>.
+          href={abs('/api/money_gaps.json')}>/api/money_gaps.json</a>.
       </Body>
       <div className="grid gap-4 mt-5"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))' }}>
@@ -804,11 +805,11 @@ export function StateAid() {
             <strong>The {fy(L.fy)} aid accounts</strong> &mdash; the town&rsquo;s own MUNIS
             revenue ledger, period {L.period}, at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={`/docs/${L.doc_id.replace(/^sources\//, '')}`}>
+              href={abs(`/docs/${L.doc_id.replace(/^sources\//, '')}`)}>
               {L.doc_id.split('/').pop()}
             </a>. The school appropriation is from the matching expense report,{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={`/docs/${L.school_doc_id.replace(/^sources\//, '')}`}>
+              href={abs(`/docs/${L.school_doc_id.replace(/^sources\//, '')}`)}>
               {L.school_doc_id.split('/').pop()}
             </a>.
           </li>
@@ -837,7 +838,7 @@ export function StateAid() {
             <strong>Everything on this page</strong> is written by{' '}
             <code>{d.generated_by}</code> into{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/state-aid.json">/data/state-aid.json</a>. No figure is typed into
+              href={abs('/data/state-aid.json')}>/data/state-aid.json</a>. No figure is typed into
             the page, and <code>scripts/check_generated.py</code> fails if the file stops
             reproducing.
           </li>
@@ -850,7 +851,7 @@ export function StateAid() {
         {d.related.map(r => (
           <div key={r.id} className="card p-4">
             <p className="text-[14px] font-bold leading-snug">
-              <a className="underline" style={{ color: 'var(--series-cost)' }} href={r.url}>
+              <a className="underline" style={{ color: 'var(--series-cost)' }} href={abs(r.url)}>
                 {r.title}
               </a>
             </p>
@@ -862,7 +863,7 @@ export function StateAid() {
                 <>
                   {' · '}
                   <a className="underline" style={{ color: 'var(--series-cost)' }}
-                    href={r.pdf}>PDF</a>
+                    href={abs(r.pdf)}>PDF</a>
                 </>
               )}
             </p>

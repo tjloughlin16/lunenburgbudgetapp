@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import MANIFEST from '../data/agent-manifest.json'
 import { MODEL } from '../model/engine'
 import { pathFor } from '../routes'
@@ -96,7 +97,7 @@ function linkify(text: string) {
  *  nothing. The href stays absolute, which is the half a fetcher uses. */
 function urlAnchor(url: string, key: number | string) {
   return (
-    <a key={key} href={url} className="underline"
+    <a key={key} href={abs(url)} className="underline"
       style={{ color: 'var(--series-cost)', fontFamily: 'ui-monospace, Menlo, monospace' }}>
       {url.replace(/^https?:\/\/[^/]+/, '')}
     </a>
@@ -156,7 +157,7 @@ export function CitationList() {
                     {C.kindLabels[c.kind]}
                   </span>
                   <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&middot;</span>
-                  <a href={urlFor(c.doc)} download
+                  <a href={abs(urlFor(c.doc))} download
                     className="underline" style={{ color: 'var(--series-cost)' }}>
                     {withoutUrls(c.source).prose}
                   </a>
@@ -173,7 +174,7 @@ export function CitationList() {
 
         {/* A real link rather than a tab callback: the walkthrough deliberately narrows
             which tabs it can jump to, and the archive is not one of them. */}
-        <a href={pathFor('sources')}
+        <a href={abs(pathFor('sources'))}
           className="inline-block mt-7 text-xs font-semibold px-3 py-2 rounded-md no-underline"
           style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
           The full archive &mdash; every document, not just these &rarr;

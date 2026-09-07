@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -188,7 +189,7 @@ export function BudgetVsActual() {
             {err}. Nothing on this page is typed into it, so with the file missing there is
             nothing to show rather than something stale. The written analysis is at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/docs/analyses/budget-vs-actual.md">/docs/analyses/budget-vs-actual.md</a>.
+              href={abs('/docs/analyses/budget-vs-actual.md')}>/docs/analyses/budget-vs-actual.md</a>.
           </p>
         </div>
       </div>
@@ -606,7 +607,7 @@ export function BudgetVsActual() {
       </Body>
       <div className="grid gap-2.5 mt-6 max-w-2xl">
         {d.related.map(r => (
-          <a key={r.id} href={r.url}
+          <a key={r.id} href={abs(r.url)}
             className="card block px-4 py-3.5 min-h-[44px] transition-opacity hover:opacity-90">
             <span className="text-[14.5px] font-bold leading-tight"
               style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</span>
@@ -627,7 +628,7 @@ export function BudgetVsActual() {
         nothing here apportions a year&rsquo;s variance between its lines.
       </Body>
       <div className="grid gap-2.5 mt-6 max-w-2xl">
-        <a href={d.analysis.markdown}
+        <a href={abs(d.analysis.markdown)}
           className="card block px-4 py-4 min-h-[44px] transition-opacity hover:opacity-90">
           <span className="text-[16px] font-bold leading-tight"
             style={{ color: 'var(--series-cost)' }}>{d.analysis.title} &rarr;</span>
@@ -639,14 +640,14 @@ export function BudgetVsActual() {
           </span>
         </a>
         {d.analysis.pdf && (
-          <a href={d.analysis.pdf}
+          <a href={abs(d.analysis.pdf)}
             className="card block px-4 py-3 min-h-[44px] transition-opacity hover:opacity-90">
             <span className="text-[14px] font-bold" style={{ color: 'var(--series-cost)' }}>
               The same analysis as a PDF &rarr;
             </span>
           </a>
         )}
-        <a href="/data/budget-vs-actual.json"
+        <a href={abs('/data/budget-vs-actual.json')}
           className="card block px-4 py-3 min-h-[44px] transition-opacity hover:opacity-90">
           <span className="text-[14px] font-bold" style={{ color: 'var(--series-cost)' }}>
             Every series on this page, as JSON &rarr;

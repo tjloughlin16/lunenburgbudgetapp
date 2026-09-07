@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -256,7 +257,7 @@ export function SchoolStaffing() {
             nothing to show rather than something stale. The underlying rows are published
             at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/school-staffing.json">/data/school-staffing.json</a>.
+              href={abs('/data/school-staffing.json')}>/data/school-staffing.json</a>.
           </p>
         </div>
       </div>
@@ -805,7 +806,7 @@ export function SchoolStaffing() {
             &mdash; every non-blank line on a page claimed as an entry or a heading.
           </p>
           <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
-            <a className="underline" href="/docs/data/PROVENANCE-staff-rosters.md">
+            <a className="underline" href={abs('/docs/data/PROVENANCE-staff-rosters.md')}>
               PROVENANCE-staff-rosters.md
             </a>{' '}carries the per-page ledger.
           </p>
@@ -827,7 +828,7 @@ export function SchoolStaffing() {
           </p>
           <p className="text-[12px] mt-1.5">
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/school-staffing.json">/data/school-staffing.json</a>
+              href={abs('/data/school-staffing.json')}>/data/school-staffing.json</a>
           </p>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import type { Tab } from '../routes'
 import { LABEL } from '../routes'
@@ -75,7 +76,7 @@ function Body({ children }: { children: React.ReactNode }) {
  *  one is the defect that put the arrow there in the first place. */
 function PageRow({ p }: { p: RefPage }) {
   return (
-    <a href={p.url} className="card block px-4 py-4 min-h-[44px] transition-opacity hover:opacity-90">
+    <a href={abs(p.url)} className="card block px-4 py-4 min-h-[44px] transition-opacity hover:opacity-90">
       <span className="flex items-baseline gap-2 flex-wrap">
         <span className="text-[16px] font-bold leading-tight"
           style={{ color: 'var(--series-cost)' }}>{p.title} &rarr;</span>
@@ -99,7 +100,7 @@ function PageRow({ p }: { p: RefPage }) {
  *  `note` is what the address IS; the one quantity in them is read at runtime. */
 function Route({ href, name, note }: { href: string; name: string; note: React.ReactNode }) {
   return (
-    <a href={href} className="card block px-4 py-3 min-h-[44px] transition-opacity hover:opacity-90">
+    <a href={abs(href)} className="card block px-4 py-3 min-h-[44px] transition-opacity hover:opacity-90">
       <code className="text-[14px] font-bold leading-tight"
         style={{ color: 'var(--series-cost)' }}>{name}</code>
       <span className="block text-[12.5px] mt-0.5 leading-snug"
@@ -179,7 +180,7 @@ export function Database({ onJump }: { onJump: (t: Tab) => void }) {
             style={{ color: 'var(--text-muted)' }}>What can and cannot be joined</p>
           <div className="grid gap-2">
             {secondary.map(p => (
-              <a key={p.name} href={p.url}
+              <a key={p.name} href={abs(p.url)}
                 className="card block px-4 py-3 min-h-[44px] transition-opacity
                            hover:opacity-90">
                 <span className="text-[14px] font-bold leading-tight"
@@ -205,14 +206,14 @@ export function Database({ onJump }: { onJump: (t: Tab) => void }) {
         including the four ways to get a confident wrong answer out of this data.
       </Body>
       <div className="grid gap-2 mt-6 sm:grid-cols-2">
-        <Route href="/api/index" name="/api/index"
+        <Route href={abs('/api/index')} name="/api/index"
           note="What exists, as JSON. The map a program should fetch first." />
-        <Route href="/api/schema" name="/api/schema"
+        <Route href={abs('/api/schema')} name="/api/schema"
           note="Every table and view, what each is for, and the four ways to get a confident wrong answer." />
-        <Route href="/data/lunenburg.db" name="/data/lunenburg.db"
+        <Route href={abs('/data/lunenburg.db')} name="/data/lunenburg.db"
           note={<>The whole database, SQLite{dbBytes ? ` — ${kb(dbBytes)}` : ''}. The same file
             every figure on this site comes from.</>} />
-        <Route href="/data/archive-manifest.csv" name="/data/archive-manifest.csv"
+        <Route href={abs('/data/archive-manifest.csv')} name="/data/archive-manifest.csv"
           note="Every document in the archive: its address, the publisher's own filename, and a sha256." />
       </div>
       <p className="text-xs leading-relaxed mt-4" style={{ color: 'var(--text-muted)' }}>

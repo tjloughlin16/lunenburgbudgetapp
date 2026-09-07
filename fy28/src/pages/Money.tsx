@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import type { Tab } from '../routes'
 // Derived, not typed. The area was renamed to "Budget Crisis" and this page was
@@ -82,7 +83,7 @@ function Body({ children }: { children: React.ReactNode }) {
  *  on a phone. */
 function PageRow({ p }: { p: RefPage }) {
   return (
-    <a href={p.url} className="card block px-4 py-4 min-h-[44px] transition-opacity hover:opacity-90">
+    <a href={abs(p.url)} className="card block px-4 py-4 min-h-[44px] transition-opacity hover:opacity-90">
       {/* The arrow is not decoration. Until it was here a document row and a GAP row
           were the same `card` with the same bold title over the same muted sentence,
           and only one of them did anything — TJ: "The Town Manager's revenue
@@ -195,7 +196,7 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
               glance. */}
           <div className="grid gap-2">
             {secondary.map(p => (
-              <a key={p.name} href={p.url}
+              <a key={p.name} href={abs(p.url)}
                 className="card block px-4 py-3 min-h-[44px] transition-opacity
                            hover:opacity-90">
                 <span className="text-[14px] font-bold leading-tight"

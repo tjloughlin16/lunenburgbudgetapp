@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { Section, Note, Stat } from '../components/primitives'
 
@@ -786,7 +787,7 @@ function DocLine({ d }: { d: DocRef }) {
       <span className="block text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
         {d.basis && <>basis: {d.basis} · </>}
         {d.sha256 ? <>sha256 {d.sha256.slice(0, 16)}…</> : 'no checksum recorded'}
-        {d.url && <> · <a href={d.url} target="_blank" rel="noreferrer"
+        {d.url && <> · <a href={abs(d.url)} target="_blank" rel="noreferrer"
           className="underline" style={{ color: 'var(--series-cost)' }}>publisher’s copy</a></>}
       </span>
       {d.hiddenColumns && (

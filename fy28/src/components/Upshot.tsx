@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { Cite } from './Citations'
 import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
@@ -438,7 +439,7 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
         <h3 className="text-[16px] font-bold leading-snug mb-2">{head}</h3>
         <p className="text-[13px] leading-relaxed flex-1"
           style={{ color: 'var(--text-secondary)' }}>{children}</p>
-        <a href={href} className="text-[11px] font-semibold mt-3 no-underline
+        <a href={abs(href)} className="text-[11px] font-semibold mt-3 no-underline
                                   before:absolute before:inset-0 before:content-['']"
           style={{ color: 'var(--series-cost)' }}>How this was worked out &rarr;</a>
       </div>

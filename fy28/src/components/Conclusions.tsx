@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { MODEL } from '../model/engine'
 
 /** Where a finding's working is shown.
@@ -17,7 +18,7 @@ export function Headlines() {
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-10">
       {MODEL.headlines.map(h => (
-        <a key={h.id} href={hrefFor(h.anchor)}
+        <a key={h.id} href={abs(hrefFor(h.anchor))}
           className="card p-5 flex flex-col hover:opacity-90 transition-opacity">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-2 leading-tight"
             style={{ color: 'var(--text-muted)' }}>{h.label}</p>
@@ -41,7 +42,7 @@ export function Conclusions() {
       <ol className="grid gap-3 md:grid-cols-2">
         {MODEL.conclusions.map(c => (
           <li key={c.n}>
-            <a href={hrefFor(c.anchor)}
+            <a href={abs(hrefFor(c.anchor))}
               className="card p-5 h-full flex flex-col hover:opacity-90 transition-opacity block">
               <div className="flex items-baseline justify-between gap-3 mb-2">
                 <span className="text-[11px] font-bold tnum tracking-widest"

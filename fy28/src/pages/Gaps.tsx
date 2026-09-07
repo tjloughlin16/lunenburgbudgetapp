@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import type { Tab } from '../routes'
 import { TraceLadder, type Trace } from '../components/TraceLadder'
@@ -281,7 +282,7 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
           </ul>
           <p className="text-xs leading-relaxed mt-5" style={{ color: 'var(--text-muted)' }}>
             {n(gaps!.count)} entries in total, published as{' '}
-            <a href="/api/money_gaps.json" className="underline"
+            <a href={abs('/api/money_gaps.json')} className="underline"
               style={{ color: 'var(--text-secondary)' }}><code>/api/money_gaps.json</code></a>{' '}
             and queryable as <code>money_gaps</code>. Each is something we went looking for
             and could not establish &mdash; not a claim about anybody.
@@ -500,27 +501,27 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
       <ul className="mt-4 text-[13.5px] leading-relaxed space-y-1.5"
         style={{ color: 'var(--text-secondary)' }}>
         <li>
-          <a href="/api/money_gaps.json" className="underline"
+          <a href={abs('/api/money_gaps.json')} className="underline"
             style={{ color: 'var(--series-cost)' }}><code>/api/money_gaps.json</code></a>{' '}
           &mdash; what the published records do not answer, and the document that would.
         </li>
         <li>
-          <a href="/data/extraction-gaps.json" className="underline"
+          <a href={abs('/data/extraction-gaps.json')} className="underline"
             style={{ color: 'var(--series-cost)' }}><code>/data/extraction-gaps.json</code></a>{' '}
           &mdash; what has been read from the annual reports, and what has been checked.
         </li>
         <li>
-          <a href="/data/data-request.json" className="underline"
+          <a href={abs('/data/data-request.json')} className="underline"
             style={{ color: 'var(--series-cost)' }}><code>/data/data-request.json</code></a>{' '}
           &mdash; the report-years outstanding from the Town, recomputed from what is held.
         </li>
         <li>
-          <a href="/api/money_assumptions.json" className="underline"
+          <a href={abs('/api/money_assumptions.json')} className="underline"
             style={{ color: 'var(--series-cost)' }}><code>/api/money_assumptions.json</code></a>{' '}
           &mdash; every assumption the money model rests on, with what would settle it.
         </li>
         <li>
-          <a href="/data/traceability.json" className="underline"
+          <a href={abs('/data/traceability.json')} className="underline"
             style={{ color: 'var(--series-cost)' }}><code>/data/traceability.json</code></a>{' '}
           &mdash; the six rungs above, each with its state, its reason and its figures,
           recomputed from the ledger.

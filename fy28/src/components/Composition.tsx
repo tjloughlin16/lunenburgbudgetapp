@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { MODEL, usd } from '../model/engine'
 
 // Ordinal ramp on one hue (blue), lightest step no lighter than 250 on light surface.
@@ -45,7 +46,7 @@ export function Composition() {
                 {/* A line with an argument of its own says so here. Without it the only
                     way to that argument is to scroll a different page and find it. */}
                 {LABELS[k]?.more && <>{' '}
-                  <a href={LABELS[k].more} className="font-semibold"
+                  <a href={abs(LABELS[k].more)} className="font-semibold"
                     style={{ color: 'var(--series-cost)' }}>
                     Why this line drives the rate &rarr;
                   </a>

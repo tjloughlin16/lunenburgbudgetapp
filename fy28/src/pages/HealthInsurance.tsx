@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -218,7 +219,7 @@ export function HealthInsurance() {
             nothing to show rather than something stale. The underlying rows are published
             at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/health-insurance.json">/data/health-insurance.json</a>.
+              href={abs('/data/health-insurance.json')}>/data/health-insurance.json</a>.
           </p>
         </div>
       </div>
@@ -587,7 +588,7 @@ export function HealthInsurance() {
         <a className="underline" style={{ color: 'var(--series-cost)' }}
           href="/what-we-cannot-answer">what we cannot answer</a> and at{' '}
         <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href="/api/money_gaps.json">/api/money_gaps.json</a>.
+          href={abs('/api/money_gaps.json')}>/api/money_gaps.json</a>.
       </Body>
       <div className="grid gap-4 mt-5"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))' }}>
@@ -619,7 +620,7 @@ export function HealthInsurance() {
             <strong>The {fy(L.fy)} accounts</strong> &mdash; the town&rsquo;s own general
             ledger, period {L.period}, at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={`/docs/${L.accounts[0].doc_id.replace(/^sources\//, '')}`}>
+              href={abs(`/docs/${L.accounts[0].doc_id.replace(/^sources\//, '')}`)}>
               {L.accounts[0].doc_id.split('/').pop()}
             </a>. The {L.accounts.length} accounts sum to {usd(L.total_original)} against a
             department row of {usd(L.department_row)} printed in a different MUNIS report
@@ -641,7 +642,7 @@ export function HealthInsurance() {
             <strong>Everything on this page</strong> is written by{' '}
             <code>{d.generated_by}</code> into{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/data/health-insurance.json">/data/health-insurance.json</a>, from{' '}
+              href={abs('/data/health-insurance.json')}>/data/health-insurance.json</a>, from{' '}
             <code>{d.source}</code>. No figure is typed into the page, and{' '}
             <code>scripts/check_generated.py</code> fails if the file stops reproducing.
           </li>

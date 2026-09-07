@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { MODEL, usd } from '../model/engine'
 import {
@@ -193,8 +194,8 @@ function Said({ q }: { q: Payload['said'][number] }) {
       &ldquo;{q.quote}&rdquo;
       <div className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
         &mdash; {q.board}, {q.date}{q.agenda ? ` · ${q.agenda}` : ''} ·{' '}
-        <a className="underline" href={q.cite}>our copy</a> ·{' '}
-        <a className="underline" href={q.town}>the Town&rsquo;s</a>
+        <a className="underline" href={abs(q.cite)}>our copy</a> ·{' '}
+        <a className="underline" href={abs(q.town)}>the Town&rsquo;s</a>
       </div>
     </blockquote>
   )
@@ -276,7 +277,7 @@ export function FreeCash() {
             nothing to show rather than something stale. Everything below that is built from
             the projection still renders. The written analysis is at{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href="/docs/analyses/free-cash.md">/docs/analyses/free-cash.md</a>.
+              href={abs('/docs/analyses/free-cash.md')}>/docs/analyses/free-cash.md</a>.
           </p>
         </div>
       )}
@@ -366,7 +367,7 @@ export function FreeCash() {
               style={{ color: 'var(--text-secondary)' }}>
               Every figure above is recomputed from the database at build time rather than
               read off <a className="underline" style={{ color: 'var(--series-cost)' }}
-                href="/docs/analyses/free-cash.md">free-cash.md</a>, and the recomputation
+                href={abs('/docs/analyses/free-cash.md')}>free-cash.md</a>, and the recomputation
               found nothing to correct in it. The generator also re-derives the five figures{' '}
               <code>model/freecash.py</code> carries as typed constants &mdash; the certified
               and identified amounts, the {d.coverage.years[d.coverage.years.length - 1]}{' '}
@@ -503,7 +504,7 @@ export function FreeCash() {
                 </table>
                 <p className="text-[11.5px] mt-2" style={{ color: 'var(--text-muted)' }}>
                   Checked when this page was built: the steps sum to both totals the page
-                  prints. <a className="underline" href={r.url}>the report</a>
+                  prints. <a className="underline" href={abs(r.url)}>the report</a>
                 </p>
               </Card>
             ))}
@@ -908,11 +909,11 @@ export function FreeCash() {
             <p className="mt-2">
               {d.document.what}. Our copy:{' '}
               <a className="underline" style={{ color: 'var(--series-cost)' }}
-                href={d.document.our_copy}>{d.document.our_copy}</a>; the publisher&rsquo;s
+                href={abs(d.document.our_copy)}>{d.document.our_copy}</a>; the publisher&rsquo;s
               own filename was <code>{d.document.publisher_filename}</code>. How it reached
               us, and what is still unknown about that, is in{' '}
               <a className="underline" style={{ color: 'var(--series-cost)' }}
-                href={d.document.provenance}>PROVENANCE.md</a>. Sheet{' '}
+                href={abs(d.document.provenance)}>PROVENANCE.md</a>. Sheet{' '}
               <code>{d.document.sheet}</code>, rows {d.document.rows}, with the years across{' '}
               <code>{d.document.year_columns}</code>.
             </p>

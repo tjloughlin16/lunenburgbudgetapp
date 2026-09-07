@@ -1,3 +1,4 @@
+import { abs } from '../lib/abs'
 import type { Area, Tab } from '../routes'
 import { AREA_HOME, AREA_LABEL } from '../routes'
 
@@ -69,7 +70,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           four things. The row is the hit target, not the words in it. */}
       <div className="grid gap-2.5">
         {DOORS.map(d => d.href ? (
-          <a key={d.area} href={d.href}
+          <a key={d.area} href={abs(d.href)}
             className="card px-4 py-4 text-left w-full min-h-[64px] block
                        transition-opacity hover:opacity-90">
             <span className="text-[17px] font-bold leading-tight block">
