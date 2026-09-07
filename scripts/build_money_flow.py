@@ -1209,12 +1209,21 @@ def _render_v2_body(c):
     # fund" shipped as revenue PLUS spending. So: card 1 is a budget, card 2 is money in,
     # card 3 is money out, card 4 is a balance. Four different things, never mixed.
     appropriation = d300 + d301
-    # Money in beyond the appropriation. `f_in` is revenue genuinely RECEIVED into the
-    # schools' own funds. Grants are the awkward half: nine grant funds spent in FY26 and
-    # booked NO revenue at all, so nothing states what the grants provided. Their spending
-    # is used as a FLOOR for it and labelled as one -- a floor is not a measurement.
-    additional = f_in + grant_spend
-    total_spent = d300_spent + f_out
+    # ADDITIONAL REVENUE IS REVENUE. It used to be `f_in + grant_spend`, which added
+    # $495,918 of grant SPENDING to $1,553,151 of money received and called the sum money
+    # in -- while that same spending was already inside `f_out` and counted again in the
+    # spending card. One figure, two quantities, one of them double-counted.
+    #
+    # TJ found it from the arithmetic refusing to work: "the $2m is revenue, even if
+    # unspent." Rule 1's shape exactly, on the revenue side.
+    additional = f_in
+    spent_from_budget = d300_spent
+    spent_from_funds = f_out
+    total_spent = spent_from_budget + spent_from_funds
+    # Grants that spent and booked NO revenue this year. Its own fact, stated on its own,
+    # never folded into a revenue figure: it is money that arrived in an earlier year or
+    # was never recorded arriving, and either way it is not FY26 income.
+    grants_no_revenue = grant_spend
     enc300 = c.execute(
         'SELECT SUM(l.encumbered) v FROM ledger_snapshot l JOIN account a '
         'USING (account_id) WHERE l.fy=? AND l.period=? AND a.dept=?',
@@ -1222,59 +1231,72 @@ def _render_v2_body(c):
     # The bridge must CLOSE. If it ever stops, the page would go on printing two halves
     # that no longer account for the whole — which is the exact defect the bridge was
     # added to fix, so it fails here instead.
+    # The two sides must account for each other exactly. Appropriation less what was
+    # spent from it, plus revenue less what was spent from the funds, is the whole of the
+    # difference — and the second term is NEGATIVE here, because the funds spent more than
+    # they took in. That sign is the finding the old card was hiding.
     _left = appropriation + additional - total_spent
-    _parts = (appropriation - d300_spent) + (additional - f_out)
+    _parts = (appropriation - spent_from_budget) + (additional - spent_from_funds)
     if abs(_left - _parts) > 0.01:
         raise SystemExit(
-            'the money-not-spent bridge does not close: %.2f as a total, %.2f from its '
-            'two parts (%.2f apart). One of the inputs changed basis.'
+            'the money bridge does not close: %.2f as a total, %.2f from its two parts '
+            '(%.2f apart). One of the inputs changed basis.'
             % (_left, _parts, _left - _parts))
 
     P = [f'<section class="metrics">'
          f'<div class="m"><div class="mk">The school budget</div>'
          f'<div class="mv">{money(appropriation)}</div>'
          f'<div class="ms">Departments 300 and 301, as Town Meeting voted. Headlines '
-         f'usually quote {money(d300)} — department 300 alone, leaving out '
-         f'{money(d301)} of non-recurring costs.</div></div>'
-         f'<div class="m hi"><div class="mk">Funding beyond the budget</div>'
+         f'usually quote {money(d300)} — department 300 alone.</div></div>'
+
+         f'<div class="m"><div class="mk">Additional revenue</div>'
          f'<div class="mv">+{money(additional)}</div>'
-         f'<div class="ms">{money(f_in)} received into the schools’ own funds — fees, '
-         f'lunch, gifts, reimbursement — plus <b>at least</b> {money(grant_spend)} in '
-         f'grants, which booked no FY26 revenue at all and are floored by what they '
-         f'spent. <b>{additional/appropriation*100:.1f}%</b> on top of the budget.</div></div>'
-         f'<div class="m"><div class="mk">What the schools actually spent</div>'
+         f'<div class="ms">Received into the schools’ own funds through 31 March — fees, '
+         f'lunch, gifts, reimbursement. <b>Revenue, whether or not it was spent.</b>'
+         f'</div></div>'
+
+         f'<div class="m hi"><div class="mk">Spent from the budget</div>'
+         f'<div class="mv">{money(spent_from_budget)}</div>'
+         f'<div class="ms">Department 300 through period 12, leaving '
+         f'{money(appropriation - spent_from_budget)} of the appropriation unspent.'
+         f'</div></div>'
+
+         f'<div class="m hi"><div class="mk">Spent from those funds</div>'
+         f'<div class="mv">{money(spent_from_funds)}</div>'
+         f'<div class="ms">Through 31 March. <b>{money(spent_from_funds - additional)} '
+         f'more than came in</b> — the funds drew their balances down.</div></div>'
+
+         f'<div class="m small"><div class="mk">Total spent</div>'
          f'<div class="mv">{money(total_spent)}</div>'
-         # ANSWERED ON THE CARD, because this is where the question forms. TJ asked it
-         # twice. The first answer was a full section immediately below — 1,273 bytes
-         # away — and it still did not land, because a reader who adds the two cards
-         # above and gets a bigger number does not go looking for a heading, they
-         # conclude the page is wrong. The arithmetic has to be where the arithmetic
-         # happens.
-         f'<div class="ms"><b>Not {money(appropriation + additional)}</b>, because a '
-         f'budget is permission to spend and {money(appropriation - d300_spent)} of it '
-         f'was not spent. <a href="#bridge">All '
-         f'{money(appropriation + additional - total_spent)} of the difference '
-         f'&darr;</a></div></div>'
-         f'<div class="m small"><div class="mk">Unspent, sitting in accounts</div>'
+         f'<div class="ms">The two spending figures above, and nothing else: '
+         f'{money(spent_from_budget)} + {money(spent_from_funds)}.</div></div>'
+
+         f'<div class="m small"><div class="mk">Held, unspent</div>'
          f'<div class="mv">{money(f_held)}</div>'
-         f'<div class="ms">Held across the schools’ own funds at 31 March, '
-         f'{money(cb_held)} of it in the circuit breaker. Not spending and not income — '
-         f'money that arrived and stopped.</div></div>'
+         f'<div class="ms">Sitting in the schools’ own funds at 31 March, '
+         f'{money(cb_held)} of it in the circuit breaker. A balance built up across '
+         f'years, not this year’s leftover.</div></div>'
          '</section>',
-         # THE BRIDGE. TJ, reading the cards: "$26m + $2m, I expected 'what the
-         # schools actually spent' to be the 26+2, but its $27. I'm not sure how to
-         # understand that."
+
+         # THE CHART COMES SECOND. TJ: "i want people to get to the charts very
+         # quickly.... So METRICS then charts immediately, all context after."
          #
-         # He was right to expect the sum to mean something, and right that the page
-         # never said what closed it. Four cards that invite a subtraction and do not
-         # explain the remainder are worse than three cards.
-         #
-         # The remainder is real and it is two things: an appropriation is PERMISSION to
-         # spend and not all of it was spent, and money into a fund is not money out of
-         # it. Both are figures the town publishes; neither was on the page.
-         #
-         # It is asserted below rather than trusted, because a bridge that silently
-         # stopped closing would be a worse defect than the confusion it fixes.
+         # Rule 7a, on the page that most needed it: the diagram IS this document, and
+         # a reconciliation panel above it made a reader scroll past the answer to reach
+         # the thing. The bridge did not get worse by moving — it got read, because it
+         # now follows the picture that raises the question.
+         f'<div class="scroll">{chr(10).join(o)}</div>',
+         '<div class="key"><span><i class="k traced"></i>traced</span>'
+         '<span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never '
+         'observed</b></span>'
+         '<span><i class="k missing"></i>collected, cannot be located</span></div>',
+         f'<p class="warn"><b>{money(grants_no_revenue)} of that fund spending came from '
+         f'grant funds that booked NO revenue at all this year.</b> Money that arrived in '
+         f'an earlier year, or arrived without being recorded — the budget documents do '
+         f'not distinguish those, and neither can we. It is not FY26 income and is not in '
+         f'the revenue figure above; it used to be, which made additional revenue look '
+         f'{money(additional + grants_no_revenue)}.</p>',
+
          f'<section class="stage" id="bridge"><h2>Why {money(appropriation)} plus '
          f'{money(additional)} is not {money(total_spent)}</h2>'
          f'<p class="cap">The first three cards are three different KINDS of quantity — '
@@ -1282,7 +1304,7 @@ def _render_v2_body(c):
          f'an error. It is money not spent, and it is two separate things.</p>'
          f'<table class="bridge">'
          f'<tr><td>The school budget</td><td class="v">{money(appropriation)}</td></tr>'
-         f'<tr><td>+ funding beyond the budget</td><td class="v">{money(additional)}</td></tr>'
+         f'<tr><td>+ additional revenue</td><td class="v">{money(additional)}</td></tr>'
          f'<tr class="sub"><td>= everything available</td>'
          f'<td class="v">{money(appropriation + additional)}</td></tr>'
          f'<tr><td>− what was actually spent</td><td class="v">{money(total_spent)}</td></tr>'
@@ -1296,8 +1318,9 @@ def _render_v2_body(c):
          f'for rather than spare.</span></td>'
          f'<td class="v">{money(appropriation - d300_spent)}</td></tr>'
          f'<tr><td><b>Fund money not spent this year</b><br><span class="sm">The funds '
-         f'took in {money(f_in)} and spent {money(f_out)}. Money in is not money out.'
-         f'</span></td><td class="v">{money(additional - f_out)}</td></tr>'
+         f'took in {money(f_in)} and spent {money(f_out)} — so this is NEGATIVE. They '
+         f'spent balances built up in earlier years.</span></td>'
+         f'<td class="v">{money(additional - spent_from_funds)}</td></tr>'
          f'</table>'
          f'<p class="warn"><b>This is NOT the {money(f_held)} in the fourth card.</b> That '
          f'figure is what the funds HOLD — a balance built up across years, most of it put '
@@ -1325,11 +1348,6 @@ def _render_v2_body(c):
          f'different district, and the pension box is the whole town’s. The column adds '
          f'because each dollar is drawn once — that is a property of the drawing, not a '
          f'finding about the schools.</p>',
-         f'<div class="scroll">{chr(10).join(o)}</div>',
-         '<div class="key"><span><i class="k traced"></i>traced</span>'
-         '<span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never '
-         'observed</b></span>'
-         '<span><i class="k missing"></i>collected, cannot be located</span></div>',
          f'<section class="stage warnbox"><h2>The two columns do not balance, and that is '
          f'the point</h2>'
          f'<p><b>Revenue is not spending.</b> A fund is a tank, not a pipe: it can spend '
