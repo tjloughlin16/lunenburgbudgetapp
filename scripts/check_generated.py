@@ -43,6 +43,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # back fast. `sync_d1` is last because it is the only one that touches the network.
 CHECKS = [
     ('build_readme.py', ['--check']),
+    # The printable decisions/questions sheet is EXTRACTED from the notes rather
+    # than typed, so this fails the moment a decision is taken and struck from
+    # notes/findings/DRILL-IN-PAGES.md without the sheet being rebuilt -- which is
+    # the failure that matters, because the sheet is what gets printed and reviewed.
+    ('build_decisions_doc.py', ['--check']),
     # Added 6 Sept 2026, after it had already drifted: two analyses were published
     # and /reports went on listing thirteen. Nothing caught it because this file is
     # the thing that catches it, and this generator was not in it.
