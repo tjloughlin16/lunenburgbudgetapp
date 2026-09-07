@@ -270,16 +270,32 @@ in the cost.** Say which one you mean, every time.
 The same trap runs the other way for anything fee-funded: modelling "what fee would make
 this self-funding" against a line that is already net of fees counts the fees twice.
 
-**And above all of it sits state aid.** Chapter 70 is roughly $11.4M of a $26.6M school
-budget, and it is set in the Governor's budget rather than by anything Lunenburg does. So
-even the appropriation is not the town's bill: the town's bill is what is left after
-Chapter 70, and that can move without a single cost changing. A year where aid rises and
-the appropriation rises with it is not the same year as one where aid is flat and the town
-covers the difference, and the expense side of the budget cannot tell them apart.
+**And above all of it sits state aid.** Chapter 70 is about **35%** of the school
+appropriation -- $9,229,410 of $26,287,474 in the FY2026 revenue ledger -- and it is set in
+the Governor's budget rather than by anything Lunenburg does. So even the appropriation is
+not the town's bill: the town's bill is what is left after Chapter 70, and that can move
+without a single cost changing. A year where aid rises and the appropriation rises with it
+is not the same year as one where aid is flat and the town covers the difference, and the
+expense side of the budget cannot tell them apart.
 
-The model handles this on the revenue side -- Chapter 70 is projected separately at 2% --
-which is right. What must not happen is an expense line being described as "what the town
-pays" when three layers sit between the two.
+**Chapter 70 is not the same thing as state aid, and this paragraph got that wrong for
+months.** It said Chapter 70 was "roughly $11.4M of a $26.6M school budget", which put the
+share near 43%. $11,404,917 is the Governor's FY27 figure for **all** state aid to
+Lunenburg -- the line the Town Manager's press release calls *State aid* -- and Chapter 70
+is 78.7% of it. The rest is Unrestricted General Government Aid and the other cherry sheet
+receipts, none of which is school money. Two real figures, folded together, and the
+resulting share was eight points too high in the document that tells everyone else never to
+type a figure into prose. See `/state-aid`, where both are computed.
+
+The model handles this on the revenue side, which is right -- but note what it grows:
+**total state aid at 2%, not Chapter 70 alone.** `model/finance.py` carries the aid as one
+`state_aid` field, so the 2% applies to the whole cherry sheet. Measured Chapter 70
+receipts grew 4.47% a year over FY2014-FY2022, actual to actual -- a different quantity
+over a different span, so it is not a correction to the assumption, but it is the first
+evidence the archive holds bearing on a rate `show-your-work.md` records as `BARE`.
+
+What must not happen is an expense line being described as "what the town pays" when three
+layers sit between the two.
 
 And you cannot see all the inputs or all the outputs, which is the general form of it.
 

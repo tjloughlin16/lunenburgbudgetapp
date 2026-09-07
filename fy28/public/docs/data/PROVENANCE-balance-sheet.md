@@ -220,3 +220,28 @@ report contains no notes, and a fund balance is not a measure of what anything c
 what any service consumed. `FUND BALANCES: UNRESERVED: UNDESIGNATED` for the general fund
 is *not* free cash — free cash is certified by the Division of Local Services from a
 different submission, and the two are related but not the same number.
+
+### One explanation for the $87,293.86 has been tested and ruled out
+
+`Sale of Cemetery Lots` carried **$87,308.09** in FY2023 — within **$14.23** of the gap.
+That is close enough to look like the answer, and the shape of the story is plausible: a
+fund counted in the special revenue schedule and classified into a different column of the
+balance sheet would produce exactly this signature. Sale-of-lots money is the kind of fund
+that sits on a reclassification boundary, so the hypothesis was worth the query.
+
+**It is not that.** The fund appears in the special revenue schedule in *all thirteen*
+editions, including FY2011, FY2013, FY2019 and FY2022 — the four years where the two
+documents agree **to the cent**. A fund counted inconsistently cannot be present in the
+years that tie. So it is counted the same way throughout and the near-match is a
+coincidence.
+
+Recorded because a ruled-out hypothesis is worth as much as a confirmed one here and
+survives nowhere else: the next person to look at this gap will find the same $87,308.09,
+and without this note will spend the same hour on it. The residual $14.23 is also not a
+fund — no FY2023 fund carries ±$14.23, and no negative fund closes the difference.
+
+**What is still not established** is what the difference IS. Nothing says which of the two
+published tables is right, whether a fund sits in one and not the other, or whether it is
+connected to the $17,861.24 restatement `verify_special_revenue_read.py` records in the
+same year. Those are two different amounts and nothing joins them. Registered in
+`money-gaps.csv` under `held`, closing on the Town's FY2023 trial balance.

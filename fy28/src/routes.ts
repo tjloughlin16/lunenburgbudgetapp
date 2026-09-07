@@ -16,6 +16,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'staffing'
   | 'insurance'
   | 'sportsmoney'
+  | 'stateaid'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -101,6 +102,12 @@ export const SLUG: Record<Tab, string> = {
   // QUESTION a resident asks out loud -- "what do sports actually cost?" -- rather than
   // the accounting shape of the answer.
   sportsmoney: 'what-sports-cost',
+  // The share of the school budget nobody in Lunenburg votes on. The slug is the THING a
+  // resident says out loud -- "state aid" -- rather than `chapter-70`, which is the
+  // accounting name for only the largest part of it and would promise less than the page
+  // holds. NOT `aid` on its own: that reads as assistance to residents, which is a
+  // different department in a different part of the budget.
+  stateaid: 'state-aid',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -183,6 +190,10 @@ const ALIASES: Record<string, Tab> = {
   'what-sports-cost': 'sportsmoney', 'athletics-money': 'sportsmoney',
   'sports-money': 'sportsmoney', 'athletics-cost': 'sportsmoney',
   'who-pays-for-sports': 'sportsmoney', 'athletics-both-sides': 'sportsmoney',
+  // NOT 'aid' alone -- see the slug note. `chapter-70` and `cherry-sheet` are the two
+  // names the documents use, and somebody arriving with either should land here.
+  'state-aid': 'stateaid', 'chapter-70': 'stateaid', ch70: 'stateaid',
+  'cherry-sheet': 'stateaid', 'local-aid': 'stateaid', 'school-aid': 'stateaid',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -225,6 +236,7 @@ export const LABEL: Record<Tab, string> = {
   staffing: 'School staffing — names, FTE and dollars',
   insurance: 'Health insurance — the cost outside the school budget',
   sportsmoney: 'What sports cost, and who pays',
+  stateaid: 'State aid — the part nobody here votes on',
   dataroom: 'The data room',
 }
 
@@ -243,6 +255,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   staffing: 'themoney',
   insurance: 'themoney',
   sportsmoney: 'themoney',
+  stateaid: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -309,6 +322,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   staffing: 'money',
   insurance: 'money',
   sportsmoney: 'money',
+  stateaid: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -326,7 +340,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'staffing', 'insurance', 'sportsmoney', 'variance', 'funds',
+  money: ['themoney', 'stateaid', 'staffing', 'insurance', 'sportsmoney', 'variance', 'funds',
           'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],

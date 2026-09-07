@@ -109,6 +109,34 @@ CHECKS = [
     # fund's receipts are three quantities, and "$335,856 through the revolving fund" was
     # once the second plus the third.
     ('build_athletics_charts.py', ['--check']),
+    # The state-aid page's series. This one reaches outside the database for three of its
+    # five quantities, so it is the entry that catches the most kinds of drift: the DESE
+    # Chapter 70 workbook (whose column headings and Lunenburg row it asserts against
+    # `model/taxbase.CH70` — two routes to the same eight figures), `model/finance.py`'s
+    # state aid growth rate and FY27 revenue base, and five MEETING MINUTES, each quote
+    # checked to still be present verbatim in the file it is attributed to. A quote that
+    # has drifted from its source is rule 13's exact shape and nothing else here would see
+    # it. It also refuses on a 45xx revenue object this project has not classified, since
+    # `object LIKE '45%'` is neither all state aid nor only state aid — two of those
+    # accounts are local option taxes the state merely collects.
+    ('build_state_aid.py', ['--check']),
+    # The free-cash page's series. It is the only generator here that reads FOUR
+    # independent things and reconciles them against each other, so it catches the most
+    # kinds of drift at once: the Division of Local Services' free cash proof (whose
+    # eleven component rows must sum, to the cent, to the workbook's own `Identified Free
+    # Cash July 1,` in all 45 town-years, and whose certified figure must chain year to
+    # year); the WORKBOOK ITSELF, re-opened so every cited cell is asserted to hold the
+    # cited amount — `source_ref` names the LABEL cell in column A and the amount is in
+    # the year's own column, which is rule 13's exact shape; the TOWN's own undesignated
+    # fund balance roll-forward out of two annual reports, cross-footed against both
+    # totals each page prints and chained across the two documents, read from two
+    # different instruments (OCR for FY2024, the PDF's text layer for FY2025); and five
+    # figures `model/freecash.py` carries as TYPED constants, recomputed from the proof
+    # they were copied out of. It also refuses on a `money_gaps` row it quotes by key
+    # having been renamed, on a gap row whose stated figures have drifted from the data,
+    # and on any of six meeting quotes no longer being present verbatim in the file it
+    # is attributed to.
+    ('build_free_cash_charts.py', ['--check']),
     # The special-revenue page's series. It re-derives the two checks that make the
     # dataset publishable rather than trusting the provenance note: every fund row's
     # forward + receipts − disbursements = carried, and every year's four columns

@@ -1,0 +1,1615 @@
+{
+ "assumption": {
+  "applies_to": "total state aid, not Chapter 70 alone",
+  "base": 11876038,
+  "ch70_share_of_base": 0.7872,
+  "enacted_above_governor": 471121,
+  "enacted_pct": 0.041309,
+  "gap_points": 2.47,
+  "governor": 11404917,
+  "measured": 0.044653,
+  "measured_span": [
+   2014,
+   2022
+  ],
+  "rate": 0.02
+ },
+ "corroboration": {
+  "agrees": true,
+  "denominator": 26287474.0,
+  "note": "Chapter 70 budgeted in the FY2026 revenue ledger against the FY2026 appropriation to departments 300 and 301. Both are BUDGET figures from the same ledger, which is what makes the ratio meaningful (rule 1).",
+  "numerator": 9229410.0,
+  "recomputed": 0.3511,
+  "stated": 0.35,
+  "stated_by": "School Committee",
+  "stated_on": "2026-06-24"
+ },
+ "formula": {
+  "aid": 9349335.0,
+  "aid_per_pupil": 5846.99,
+  "aid_share": 0.404916,
+  "aid_share_of_nss": 0.398099,
+  "appropriation_over_nss": 3087342.0,
+  "as_of": "2026-01-28",
+  "cells": {
+   "aid": "G168",
+   "enrollment": "D168",
+   "foundation": "E168",
+   "nss": "H168",
+   "required": "F168"
+  },
+  "district": "Lunenburg",
+  "enrollment": 1599,
+  "enrollment_actual": 1581,
+  "foundation": 23089579.619999997,
+  "foundation_per_pupil": 14440.01,
+  "fy": 2027,
+  "lps_appropriation": 26572288,
+  "median_aid_share": 0.351983,
+  "nss": 23484946.0,
+  "operating_districts": 319,
+  "peers": [
+   {
+    "aid": 0.0,
+    "aid_share": null,
+    "district": "Ayer",
+    "foundation": 0.0,
+    "operating": false,
+    "row": 25
+   },
+   {
+    "aid": 0.0,
+    "aid_share": null,
+    "district": "Groton",
+    "foundation": 0.0,
+    "operating": false,
+    "row": 121
+   },
+   {
+    "aid": 5377675.0,
+    "aid_share": 0.253553,
+    "district": "Littleton",
+    "foundation": 21209266.97,
+    "operating": true,
+    "row": 164
+   },
+   {
+    "aid": 9349335.0,
+    "aid_share": 0.404916,
+    "district": "Lunenburg",
+    "foundation": 23089579.619999997,
+    "operating": true,
+    "row": 168
+   },
+   {
+    "aid": 0.0,
+    "aid_share": null,
+    "district": "Shirley",
+    "foundation": 0.0,
+    "operating": false,
+    "row": 276
+   },
+   {
+    "aid": 0.0,
+    "aid_share": null,
+    "district": "Townsend",
+    "foundation": 0.0,
+    "operating": false,
+    "row": 305
+   },
+   {
+    "aid": 39979.0,
+    "aid_share": 0.27691,
+    "district": "Upton",
+    "foundation": 144375.68,
+    "operating": false,
+    "row": 309
+   },
+   {
+    "aid": 10223445.0,
+    "aid_share": 0.424704,
+    "district": "Uxbridge",
+    "foundation": 24071934.779999994,
+    "operating": true,
+    "row": 310
+   },
+   {
+    "aid": 19315344.0,
+    "aid_share": 0.319974,
+    "district": "Westford",
+    "foundation": 60365431.10319999,
+    "operating": true,
+    "row": 332
+   }
+  ],
+  "percentile": 0.5674,
+  "rank": 138,
+  "required": 14135611.0,
+  "required_share": 0.612207,
+  "required_share_of_nss": 0.601901,
+  "row": 168,
+  "sheet": "alldistricts",
+  "source": "sources/budget-workbooks/ch70-fy27-summary.xlsx"
+ },
+ "gaps": [
+  {
+   "closes": null,
+   "side": "money_in",
+   "what": "Grants received in earlier years",
+   "why": "spent now, booked then \u00b7 nine funds, no FY26 revenue"
+  },
+  {
+   "closes": "Turns **every restricted edge** above from presumption into traced fact \u2014 athletics, lunch, circuit breaker, extended day, and every grant.",
+   "side": "document_wanted",
+   "what": "`glytdbud-expense` for the special revenue funds",
+   "why": "The identical report the town already runs for the general fund and for each of the four enterprise funds, pointed at funds 13xx/22xx/26xx\u201329xx instead."
+  },
+  {
+   "closes": "Separates district spending by FUND, which is the one thing the town\u2019s budget documents never show.",
+   "side": "document_wanted",
+   "what": "DESE End of Year Financial Report",
+   "why": "Published by the state."
+  },
+  {
+   "closes": "DESE's End of Year Financial Report, which separates spending by fund.",
+   "side": "people",
+   "what": "Which fund pays which post",
+   "why": "This is the load-bearing one. The rosters name people and the budget names dollars, and **nothing published joins them to a funding source**. So a paraprofessional line rising cannot be distinguished from a grant that was paying for those posts ending \u2014 which is exactly what the special education escalator rests on."
+  },
+  {
+   "closes": "the Town's FY2023 trial balance or general ledger fund balances as of 30 June 2023, which would say which of its own two published tables the accounting system agrees with.",
+   "side": "held",
+   "what": "What the $87,293.86 is that the FY2023 annual report states twice and differently",
+   "why": "Two tables printed in the same FY2023 annual town report state the money held in special revenue and enterprise funds, and they disagree. The combined balance sheet on printed page 24 gives TOTAL FUND EQUITY of $6,131,303.68 for SPECIAL REVENUE and $3,812,502.24 for ENTERPRISE, $9,943,805.92 together. The special revenue schedule in the same report prints a GRAND TOTAL carried forward of $10,031,099.78. The difference is $87,293.86, where FY2011, FY2013, FY2019 and FY2022 agree to the cent. It is not a misreading: the FY2023 page was transcribed and every column foots to its own printed TOTAL ASSETS, TOTAL LIABILITIES and TOTAL FUND EQUITY, the accounting identity holds in all six columns, and the long-term debt mirror agrees. So FY2023 is transcribed and deliberately NOT written into the dataset, which is why the combined balance sheet here stops at FY2022 while the special revenue schedule runs to FY2023. One explanation has been tested and RULED OUT: the fund 'Sale of Cemetery Lots' carried $87,308.09 in FY2023, within $14.23 of the gap, which suggested a fund counted in one statement and classified elsewhere in the other. It is not that \u2014 the same fund appears in the schedule in all thirteen years including the four where the two documents agree to the cent, so it is counted consistently and the near-match is a coincidence. What the difference IS remains unestablished; nothing here says which document is right, nor whether it is connected to the $17,861.24 of grant funds the town restated between the FY2022 and FY2023 reports. Those are two different amounts and nothing joins them."
+  },
+  {
+   "closes": "DLS Cherry Sheet CS 1-ER (estimated receipts) and CS 1-EB (estimated charges) for Lunenburg, FY2021 to FY2027.",
+   "side": "document_wanted",
+   "what": "The Cherry Sheet itself \u2014 what the state told Lunenburg to expect, receipt by receipt",
+   "why": "This archive holds no Cherry Sheet for any year. The Cherry Sheet is the state\u2019s own statement of estimated aid and assessments to a Massachusetts town, and it is what a tax rate is set on. Without it the only measurement of aid estimate error this project can make is one net line on the Division of Local Services free cash proof \u2014 `Excess/Shortfall Cherry Sheet Receipts (CL#8)` \u2014 which lumps Chapter 70, Unrestricted General Government Aid, the abatement reimbursements and every other receipt into a single figure. So a year that came in $390,814 short can be reported as short and cannot be reported as short in anything."
+  },
+  {
+   "closes": "the Town\u2019s FY-end recap (Form A-1) beside the Cherry Sheet for the same year, which states estimated and actual receipts on one page.",
+   "side": "money_in",
+   "what": "Whether a shortfall in state aid falls on the schools or on the rest of the town",
+   "why": "Chapter 70 is 35% of the school appropriation and the town has no vote on it, so which side of the budget absorbs a miss is the question a resident actually has. Nothing published answers it. The free cash proof states one net cherry sheet figure for the whole town; the general ledger\u2019s state aid accounts share no organisation code with any expense account, 0 of 222, so no aid dollar can be followed to anything it paid for; and the appropriation is voted before the final aid number is known. A year where aid rose and the appropriation rose with it and a year where aid was flat and the town covered the difference are different facts about the world and identical facts on the page."
+  },
+  {
+   "closes": "DESE\u2019s FY27 foundation enrollment worksheet for Lunenburg, which states the October 1 count by grade and category the formula was run on.",
+   "side": "people",
+   "what": "How many children Chapter 70 is actually paid for",
+   "why": "The aid is calculated on a `Foundation enrollment` of 1,599 in DESE\u2019s FY27 Chapter 70 summary. DESE publishes three other counts for the same district \u2014 Student Headcount, In-District FTE Pupils and Total FTE Pupils \u2014 and in the latest year published they are 1,563, 1,568.9 and 1,665.9. Four numbers, one agency, none of them equal, measured on different dates and counting different things. So every per-pupil figure on this project, including aid per pupil, is a division by a count whose definition has to be stated with it, and no published document reconciles the foundation count to the children in the buildings."
+  }
+ ],
+ "generated_by": "scripts/build_state_aid.py",
+ "ledger": {
+  "accounts": [
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "STATE REVENUE \u2014 a header account, zero in every column",
+    "object": "450000",
+    "pct_received": null,
+    "printed": "STATE REVE",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 48606.0,
+    "kind": "general",
+    "meaning": "State-owned land \u2014 payment in lieu of taxes on state property",
+    "object": "450100",
+    "pct_received": 66.7,
+    "printed": "STATE LAND",
+    "received": 32400.0,
+    "still_to_come": 16206.0
+   },
+   {
+    "budgeted": 56897.0,
+    "kind": "general",
+    "meaning": "Veterans\u2019 abatement reimbursement",
+    "object": "450200",
+    "pct_received": 0.0,
+    "printed": "VET ABATE",
+    "received": 0.0,
+    "still_to_come": 56897.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Abatement reimbursement \u2014 surviving spouses",
+    "object": "450300",
+    "pct_received": null,
+    "printed": "ABATE SPOU",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Abatement reimbursement \u2014 the blind",
+    "object": "450400",
+    "pct_received": null,
+    "printed": "BLIND ABAT",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 56897.0,
+    "kind": "general",
+    "meaning": "Abatement reimbursement \u2014 the elderly",
+    "object": "450500",
+    "pct_received": 248.4,
+    "printed": "ABATE ELDE",
+    "received": 141305.0,
+    "still_to_come": -84408.0
+   },
+   {
+    "budgeted": 9229410.0,
+    "kind": "school",
+    "meaning": "Chapter 70 school aid",
+    "object": "450600",
+    "pct_received": 74.4,
+    "printed": "CH 70 AID",
+    "received": 6870136.0,
+    "still_to_come": 2359274.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "school",
+    "meaning": "School building assistance reimbursement",
+    "object": "450700",
+    "pct_received": null,
+    "printed": "MSBA REIMB",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Additional aid \u2014 local aid",
+    "object": "450800",
+    "pct_received": null,
+    "printed": "ADD AID LB",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "school",
+    "meaning": "School transportation reimbursement",
+    "object": "450900",
+    "pct_received": null,
+    "printed": "SCHOOL TRA",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Municipal stabilisation",
+    "object": "451000",
+    "pct_received": null,
+    "printed": "MUN STAB",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 26136.0,
+    "kind": "school",
+    "meaning": "Charter school reimbursement",
+    "object": "451100",
+    "pct_received": 75.0,
+    "printed": "CHARTER",
+    "received": 19602.0,
+    "still_to_come": 6534.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Professional development",
+    "object": "451200",
+    "pct_received": null,
+    "printed": "PROF DEV",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "school",
+    "meaning": "Minimum teacher salary",
+    "object": "451300",
+    "pct_received": null,
+    "printed": "MIN TEACHE",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 1316438.0,
+    "kind": "general",
+    "meaning": "Unrestricted General Government Aid",
+    "object": "451400",
+    "pct_received": 75.0,
+    "printed": "UGGA",
+    "received": 987327.0,
+    "still_to_come": 329111.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Chapter 81 highway aid",
+    "object": "451500",
+    "pct_received": null,
+    "printed": "CH 81",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Local aid adjustment",
+    "object": "451700",
+    "pct_received": null,
+    "printed": "LOC AID AD",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "local_option",
+    "meaning": "Room occupancy excise \u2014 a local tax the state collects",
+    "object": "451800",
+    "pct_received": null,
+    "printed": "RM OCC EXC",
+    "received": 530.18,
+    "still_to_come": -530.18
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Additional assistance",
+    "object": "451900",
+    "pct_received": null,
+    "printed": "ADD'L ASST",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 50560.0,
+    "kind": "general",
+    "meaning": "Veterans\u2019 benefits \u2014 Chapter 115 \u00a76 reimbursement",
+    "object": "452000",
+    "pct_received": 69.6,
+    "printed": "S6CH115VET",
+    "received": 35184.11,
+    "still_to_come": 15375.89
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Highway reconstruction",
+    "object": "452100",
+    "pct_received": null,
+    "printed": "HWY RECON",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Quinn Bill police education reimbursement",
+    "object": "452200",
+    "pct_received": null,
+    "printed": "QUINN BILL",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Municipal relief",
+    "object": "452300",
+    "pct_received": null,
+    "printed": "MUN RELIEF",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Forest cutting",
+    "object": "452400",
+    "pct_received": null,
+    "printed": "FOREST CUT",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Zoning incentive",
+    "object": "452500",
+    "pct_received": null,
+    "printed": "ZONING INC",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 100000.0,
+    "kind": "local_option",
+    "meaning": "Meals tax \u2014 a local tax the state collects",
+    "object": "452600",
+    "pct_received": 111.8,
+    "printed": "MEALS TAX",
+    "received": 111840.63,
+    "still_to_come": -11840.63
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Additional aid \u2014 estimated",
+    "object": "452700",
+    "pct_received": null,
+    "printed": "ADDAIDESTR",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 0.0,
+    "kind": "general",
+    "meaning": "Additional aid \u2014 appropriated",
+    "object": "452800",
+    "pct_received": null,
+    "printed": "ADDAIDAPPR",
+    "received": 0.0,
+    "still_to_come": 0.0
+   },
+   {
+    "budgeted": 318424.0,
+    "kind": "school",
+    "meaning": "School cost reimbursement",
+    "object": "452900",
+    "pct_received": 0.0,
+    "printed": "SCHCOSTREI",
+    "received": 0.0,
+    "still_to_come": 318424.0
+   }
+  ],
+  "aid_budgeted": 11103368.0,
+  "aid_received": 8085954.11,
+  "aid_share_of_revenue": 0.2008,
+  "ch70": {
+   "budgeted": 9229410.0,
+   "kind": "school",
+   "meaning": "Chapter 70 school aid",
+   "object": "450600",
+   "pct_received": 74.4,
+   "printed": "CH 70 AID",
+   "received": 6870136.0,
+   "still_to_come": 2359274.0
+  },
+  "ch70_share_of_school": 0.3511,
+  "doc_id": "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt",
+  "fy": 2026,
+  "general_named_budgeted": 1529398.0,
+  "local_option_accounts": [
+   "MEALS TAX"
+  ],
+  "local_option_budgeted": 100000.0,
+  "local_option_received": 112370.81,
+  "omnibus": 51189961.0,
+  "omnibus_departments": 67,
+  "period": 9,
+  "revenue_accounts": 224,
+  "revenue_total": 55305097.0,
+  "school_appropriation": 26287474.0,
+  "school_departments": [
+   {
+    "dept": "300",
+    "name": "SCHOOL DEPARTMENT",
+    "original": 26247474.0
+   },
+   {
+    "dept": "301",
+    "name": "SCHOOL NON-RECURRING EXPENSES",
+    "original": 40000.0
+   }
+  ],
+  "school_doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt",
+  "school_named_budgeted": 9573970.0,
+  "town_share_dollars": 17058064.0,
+  "town_share_of_school": 0.6489,
+  "with_a_figure": 10
+ },
+ "pupils": {
+  "aid_per_foundation_pupil": 5846.99,
+  "counts": [
+   {
+    "fy": 2027,
+    "is_formula": true,
+    "measure": "Foundation enrollment",
+    "value": 1599.0,
+    "who": "DESE, FY27 Chapter 70 summary \u2014 the count the aid is calculated on",
+    "whole_district": true
+   },
+   {
+    "fy": 2025,
+    "is_formula": false,
+    "measure": "Student Headcount",
+    "value": 1563.0,
+    "who": "DESE district profile \u2014 the latest year published",
+    "whole_district": true
+   },
+   {
+    "fy": 2025,
+    "is_formula": false,
+    "measure": "In-District FTE Pupils",
+    "value": 1568.9,
+    "who": "DESE district profile \u2014 the latest year published",
+    "whole_district": true
+   },
+   {
+    "fy": 2025,
+    "is_formula": false,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 97.0,
+    "who": "DESE district profile \u2014 the latest year published",
+    "whole_district": false
+   },
+   {
+    "fy": 2025,
+    "is_formula": false,
+    "measure": "Total FTE Pupils",
+    "value": 1665.9,
+    "who": "DESE district profile \u2014 the latest year published",
+    "whole_district": true
+   }
+  ],
+  "formula_fy": 2027,
+  "latest_fy": 2025,
+  "series": [
+   {
+    "fy": 2009,
+    "measure": "In-District FTE Pupils",
+    "value": 1750.0
+   },
+   {
+    "fy": 2009,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 83.8
+   },
+   {
+    "fy": 2009,
+    "measure": "Student Headcount",
+    "value": 1739.0
+   },
+   {
+    "fy": 2009,
+    "measure": "Total FTE Pupils",
+    "value": 1833.8
+   },
+   {
+    "fy": 2010,
+    "measure": "In-District FTE Pupils",
+    "value": 1719.2
+   },
+   {
+    "fy": 2010,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 89.7
+   },
+   {
+    "fy": 2010,
+    "measure": "Student Headcount",
+    "value": 1702.0
+   },
+   {
+    "fy": 2010,
+    "measure": "Total FTE Pupils",
+    "value": 1808.9
+   },
+   {
+    "fy": 2011,
+    "measure": "In-District FTE Pupils",
+    "value": 1663.5
+   },
+   {
+    "fy": 2011,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 91.7
+   },
+   {
+    "fy": 2011,
+    "measure": "Student Headcount",
+    "value": 1650.0
+   },
+   {
+    "fy": 2011,
+    "measure": "Total FTE Pupils",
+    "value": 1755.2
+   },
+   {
+    "fy": 2012,
+    "measure": "In-District FTE Pupils",
+    "value": 1639.5
+   },
+   {
+    "fy": 2012,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 124.4
+   },
+   {
+    "fy": 2012,
+    "measure": "Student Headcount",
+    "value": 1637.0
+   },
+   {
+    "fy": 2012,
+    "measure": "Total FTE Pupils",
+    "value": 1763.9
+   },
+   {
+    "fy": 2013,
+    "measure": "In-District FTE Pupils",
+    "value": 1581.0
+   },
+   {
+    "fy": 2013,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 138.2
+   },
+   {
+    "fy": 2013,
+    "measure": "Student Headcount",
+    "value": 1587.0
+   },
+   {
+    "fy": 2013,
+    "measure": "Total FTE Pupils",
+    "value": 1719.2
+   },
+   {
+    "fy": 2014,
+    "measure": "In-District FTE Pupils",
+    "value": 1565.6
+   },
+   {
+    "fy": 2014,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 139.5
+   },
+   {
+    "fy": 2014,
+    "measure": "Student Headcount",
+    "value": 1564.0
+   },
+   {
+    "fy": 2014,
+    "measure": "Total FTE Pupils",
+    "value": 1705.1
+   },
+   {
+    "fy": 2015,
+    "measure": "In-District FTE Pupils",
+    "value": 1563.3
+   },
+   {
+    "fy": 2015,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 160.8
+   },
+   {
+    "fy": 2015,
+    "measure": "Student Headcount",
+    "value": 1557.0
+   },
+   {
+    "fy": 2015,
+    "measure": "Total FTE Pupils",
+    "value": 1724.1
+   },
+   {
+    "fy": 2016,
+    "measure": "In-District FTE Pupils",
+    "value": 1567.3
+   },
+   {
+    "fy": 2016,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 142.5
+   },
+   {
+    "fy": 2016,
+    "measure": "Student Headcount",
+    "value": 1567.0
+   },
+   {
+    "fy": 2016,
+    "measure": "Total FTE Pupils",
+    "value": 1709.8
+   },
+   {
+    "fy": 2017,
+    "measure": "In-District FTE Pupils",
+    "value": 1619.3
+   },
+   {
+    "fy": 2017,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 161.8
+   },
+   {
+    "fy": 2017,
+    "measure": "Student Headcount",
+    "value": 1613.0
+   },
+   {
+    "fy": 2017,
+    "measure": "Total FTE Pupils",
+    "value": 1781.1
+   },
+   {
+    "fy": 2018,
+    "measure": "In-District FTE Pupils",
+    "value": 1620.5
+   },
+   {
+    "fy": 2018,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 143.4
+   },
+   {
+    "fy": 2018,
+    "measure": "Student Headcount",
+    "value": 1641.0
+   },
+   {
+    "fy": 2018,
+    "measure": "Total FTE Pupils",
+    "value": 1763.9
+   },
+   {
+    "fy": 2019,
+    "measure": "In-District FTE Pupils",
+    "value": 1654.0
+   },
+   {
+    "fy": 2019,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 130.4
+   },
+   {
+    "fy": 2019,
+    "measure": "Student Headcount",
+    "value": 1649.0
+   },
+   {
+    "fy": 2019,
+    "measure": "Total FTE Pupils",
+    "value": 1784.4
+   },
+   {
+    "fy": 2020,
+    "measure": "In-District FTE Pupils",
+    "value": 1651.3
+   },
+   {
+    "fy": 2020,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 121.5
+   },
+   {
+    "fy": 2020,
+    "measure": "Student Headcount",
+    "value": 1641.0
+   },
+   {
+    "fy": 2020,
+    "measure": "Total FTE Pupils",
+    "value": 1772.8
+   },
+   {
+    "fy": 2021,
+    "measure": "In-District FTE Pupils",
+    "value": 1575.5
+   },
+   {
+    "fy": 2021,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 124.2
+   },
+   {
+    "fy": 2021,
+    "measure": "Student Headcount",
+    "value": 1593.0
+   },
+   {
+    "fy": 2021,
+    "measure": "Total FTE Pupils",
+    "value": 1699.7
+   },
+   {
+    "fy": 2022,
+    "measure": "In-District FTE Pupils",
+    "value": 1599.8
+   },
+   {
+    "fy": 2022,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 125.1
+   },
+   {
+    "fy": 2022,
+    "measure": "Student Headcount",
+    "value": 1597.0
+   },
+   {
+    "fy": 2022,
+    "measure": "Total FTE Pupils",
+    "value": 1724.9
+   },
+   {
+    "fy": 2023,
+    "measure": "In-District FTE Pupils",
+    "value": 1566.1
+   },
+   {
+    "fy": 2023,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 105.4
+   },
+   {
+    "fy": 2023,
+    "measure": "Student Headcount",
+    "value": 1562.0
+   },
+   {
+    "fy": 2023,
+    "measure": "Total FTE Pupils",
+    "value": 1671.5
+   },
+   {
+    "fy": 2024,
+    "measure": "In-District FTE Pupils",
+    "value": 1580.5
+   },
+   {
+    "fy": 2024,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 99.9
+   },
+   {
+    "fy": 2024,
+    "measure": "Student Headcount",
+    "value": 1580.0
+   },
+   {
+    "fy": 2024,
+    "measure": "Total FTE Pupils",
+    "value": 1680.4
+   },
+   {
+    "fy": 2025,
+    "measure": "In-District FTE Pupils",
+    "value": 1568.9
+   },
+   {
+    "fy": 2025,
+    "measure": "Out-of-District FTE Pupils",
+    "value": 97.0
+   },
+   {
+    "fy": 2025,
+    "measure": "Student Headcount",
+    "value": 1563.0
+   },
+   {
+    "fy": 2025,
+    "measure": "Total FTE Pupils",
+    "value": 1665.9
+   }
+  ],
+  "series_years": [
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "spread": 102.9,
+  "spread_high": 1665.9,
+  "spread_low": 1563.0
+ },
+ "receipts": {
+  "checked": [
+   2014,
+   2015,
+   2017,
+   2018,
+   2022
+  ],
+  "growth": {
+   "cagr": 0.044653,
+   "change": 2307511.0,
+   "first": 5516107.0,
+   "first_fy": 2014,
+   "last": 7823618.0,
+   "last_fy": 2022,
+   "pct": 0.418322,
+   "stage": "actual",
+   "years": 8
+  },
+  "not_checked": [
+   {
+    "fy": 2011,
+    "status": "no check",
+    "unpublished_figure": 4523464.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "fy": 2012,
+    "status": "no check",
+    "unpublished_figure": 4612665.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "fy": 2013,
+    "status": "no check",
+    "unpublished_figure": 5352253.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "fy": 2016,
+    "status": "no check",
+    "unpublished_figure": 5834483.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "fy": 2019,
+    "status": "no check",
+    "unpublished_figure": 7.53,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "fy": 2020,
+    "status": "absent",
+    "unpublished_figure": null,
+    "why": "no Chapter 70 row was extracted from that edition"
+   },
+   {
+    "fy": 2021,
+    "status": "no check",
+    "unpublished_figure": 7.77,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   }
+  ],
+  "series": [
+   {
+    "amount": null,
+    "document": "4117-fy-2011-annual-town-report.pdf",
+    "fy": 2011,
+    "page": "58",
+    "stage": "actual",
+    "status": "no check",
+    "unpublished_figure": 4523464.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "amount": null,
+    "document": "4118-fy-2012-annual-town-report.pdf",
+    "fy": 2012,
+    "page": "58",
+    "stage": "actual",
+    "status": "no check",
+    "unpublished_figure": 4612665.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "amount": null,
+    "document": "4119-fy-2013-annual-town-report.pdf",
+    "fy": 2013,
+    "page": "63",
+    "stage": "actual",
+    "status": "no check",
+    "unpublished_figure": 5352253.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "amount": 5516107.0,
+    "document": "4120-fy-2014-annual-town-report.pdf",
+    "fy": 2014,
+    "page": "22",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 5605872.0,
+    "document": "4121-fy-2015-annual-town-report.pdf",
+    "fy": 2015,
+    "page": "22",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": null,
+    "document": "4123-fy-2016-annual-town-report.pdf",
+    "fy": 2016,
+    "page": "23",
+    "stage": "actual",
+    "status": "no check",
+    "unpublished_figure": 5834483.0,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "amount": 6351257.0,
+    "document": "4124-fy-2017-annual-town-report.pdf",
+    "fy": 2017,
+    "page": "22",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 7272505.0,
+    "document": "4125-fy-2018-annual-town-report.pdf",
+    "fy": 2018,
+    "page": "28",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": null,
+    "document": "4126-fy-2019-annual-town-report.pdf",
+    "fy": 2019,
+    "page": "30",
+    "stage": "actual",
+    "status": "no check",
+    "unpublished_figure": 7.53,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "amount": null,
+    "document": null,
+    "fy": 2020,
+    "page": null,
+    "stage": "actual",
+    "status": "absent",
+    "unpublished_figure": null,
+    "why": "no Chapter 70 row was extracted from that edition"
+   },
+   {
+    "amount": null,
+    "document": "4128-fy-2021-annual-town-report.pdf",
+    "fy": 2021,
+    "page": "25",
+    "stage": "actual",
+    "status": "no check",
+    "unpublished_figure": 7.77,
+    "why": "the receipts page states no total this extract can be reconciled to"
+   },
+   {
+    "amount": 7823618.0,
+    "document": "4129-fy-2022-annual-town-report.pdf",
+    "fy": 2022,
+    "page": "26",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   }
+  ],
+  "span": [
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ]
+ },
+ "recomputed": [
+  {
+   "ours": "Chapter 70 alone is 9,229,410 in the FY2026 revenue ledger \u2014 35% of the 26,287,474 school appropriation",
+   "what": "Chapter 70\u2019s size in the school budget",
+   "where": "This project\u2019s own working notes describe Chapter 70 as \"roughly $11.4M of a $26.6M school budget\"",
+   "why": "$11,404,917 is the Governor\u2019s FY27 figure for ALL state aid to Lunenburg, not Chapter 70 \u2014 it is the line the Town Manager\u2019s 17 April 2026 press release calls \"State aid\", and it includes Unrestricted General Government Aid and every other cherry sheet receipt. The two figures were folded together. The School Committee\u2019s own \"35%\" is the Chapter 70 share, and it is the one that recomputes."
+  },
+  {
+   "ours": "The model grows total state aid at 2.0% a year. Chapter 70 RECEIPTS grew 4.47% a year across the 8 checked years FY2014 to FY2022",
+   "what": "What the projection assumes state aid will do",
+   "where": "show-your-work.md records the state aid growth rate as BARE \u2014 \"Nothing. No stated source and no derivation\"",
+   "why": "These are not the same quantity over the same span, so this is not a correction and no rate is changed here. It is the flag rule 6 asks for: an assumption with no stated source, and a measured series that runs 2.5 points above it."
+  }
+ ],
+ "related": [
+  {
+   "id": "fy27-and-the-override",
+   "pdf": "/docs/analyses/fy27-and-the-override.pdf",
+   "title": "Lunenburg FY28 \u2014 What the source data says (research notes, Aug 2026)",
+   "updated": "2026-08-28",
+   "url": "/docs/analyses/fy27-and-the-override.md",
+   "why": "Where the FY27 state aid figures come from \u2014 the Town Manager\u2019s own revenue arithmetic, including the enacted budget landing above the Governor\u2019s proposal",
+   "words": 1413
+  },
+  {
+   "id": "connecting-the-budget",
+   "pdf": "/docs/analyses/connecting-the-budget.pdf",
+   "title": "Connecting the school budget to the Town's books",
+   "updated": "2026-09-03",
+   "url": "/docs/analyses/connecting-the-budget.md",
+   "why": "Why state aid cannot be traced to anything it paid for: the aid accounts share no organisation code with any expense account",
+   "words": 938
+  },
+  {
+   "id": "show-your-work",
+   "pdf": "/docs/analyses/show-your-work.pdf",
+   "title": "Show your work",
+   "updated": "2026-09-05",
+   "url": "/docs/analyses/show-your-work.md",
+   "why": "Every rate the projection uses and what each one rests on \u2014 including the state aid growth rate, which is recorded there as having no stated source",
+   "words": 16069
+  },
+  {
+   "id": "free-cash",
+   "pdf": "/docs/analyses/free-cash.pdf",
+   "title": "Free cash: is Lunenburg hoarding, or rebuilding?",
+   "updated": "2026-09-04",
+   "url": "/docs/analyses/free-cash.md",
+   "why": "The free cash proof these cherry sheet variances are one line of",
+   "words": 2924
+  }
+ ],
+ "said": [
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2025-10-01-minutes-7432.txt",
+   "date": "2025-10-01",
+   "key": "estimate",
+   "quote": "the school budget is based on an estimate of chapter 70 number, this year there is an additional $202,185, in order for the school to get this money it needs to be on the warrant for the Town meeting in November",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012025-7432",
+   "why": "The town budgets against an ESTIMATE of Chapter 70, and when the real number comes in higher the difference does not simply become school spending. It takes a warrant article at Town Meeting."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2026-06-24-minutes-7869.txt",
+   "date": "2026-06-24",
+   "key": "share",
+   "quote": "35% of the entire school budget in Luneburg is covered by chapter 70 funds",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7869",
+   "why": "A figure stated at a public meeting. It is recomputed from the town\u2019s own revenue and expense ledgers below rather than repeated."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2026-04-01-minutes-7748.txt",
+   "date": "2026-04-01",
+   "key": "formula",
+   "quote": "I am hoping we will get the override and limp through a few years and that the Chapter 70 formula changes",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04012026-7748",
+   "why": "The formula is the thing the town is waiting on, and it is decided at the State House."
+  },
+  {
+   "board": "Finance Committee",
+   "cite": "/docs/meetings/text/finance-committee/2026-01-27-minutes-7619.txt",
+   "date": "2026-01-27",
+   "key": "schoolchoice",
+   "quote": "school choice enrollment revenue, which has declined from approximately $500,000 to $112,000 on the cherry sheet",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01272026-7619",
+   "why": "School choice tuition is a cherry sheet line, and a Finance Committee member named its decline as one of two things the boards must address before asking voters for an override. This archive holds no Cherry Sheet, so it can report that this was SAID and cannot check the figure \u2014 which is the gap registered below, stated by somebody in the room before we found it."
+  },
+  {
+   "board": "Finance Committee",
+   "cite": "/docs/meetings/text/finance-committee/2026-02-19-minutes-7657.txt",
+   "date": "2026-02-19",
+   "key": "assessments",
+   "quote": "Cherry Sheet Assessments: $1,069,349",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02192026-7657",
+   "why": "The Cherry Sheet has a charges side as well as a receipts side. The town\u2019s FY27 revenue plan subtracts this before anything is available to appropriate."
+  }
+ ],
+ "source": "sources/data/lunenburg.db \u2014 v_revenue, ledger_snapshot, account, annual_report_receipts, free_cash_proof, money_gaps; sources/budget-workbooks/ch70-fy27-summary.xlsx; model/finance.py; model/taxbase.py; sources/meetings/text/",
+ "variance": {
+  "line": "Excess/Shortfall Cherry Sheet Receipts (CL#8)",
+  "of": 9,
+  "peer_max_swing": 663551.0,
+  "peers": [
+   {
+    "best": 412383.0,
+    "mean_abs": 156217.6,
+    "over": 2,
+    "series": [
+     {
+      "amount": -47.0,
+      "year": 2021
+     },
+     {
+      "amount": 412383.0,
+      "year": 2022
+     },
+     {
+      "amount": -84371.0,
+      "year": 2023
+     },
+     {
+      "amount": 33119.0,
+      "year": 2024
+     },
+     {
+      "amount": -251168.0,
+      "year": 2025
+     }
+    ],
+    "swing": 663551.0,
+    "town": "Westford",
+    "under": 3,
+    "worst": -251168.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": 68729.0,
+    "mean_abs": 76730.0,
+    "over": 2,
+    "series": [
+     {
+      "amount": 68729.0,
+      "year": 2021
+     },
+     {
+      "amount": -167410.0,
+      "year": 2022
+     },
+     {
+      "amount": 6817.0,
+      "year": 2023
+     },
+     {
+      "amount": -14083.0,
+      "year": 2024
+     },
+     {
+      "amount": -126611.0,
+      "year": 2025
+     }
+    ],
+    "swing": 236139.0,
+    "town": "Uxbridge",
+    "under": 3,
+    "worst": -167410.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": 84533.0,
+    "mean_abs": 45964.2,
+    "over": 2,
+    "series": [
+     {
+      "amount": -9515.0,
+      "year": 2021
+     },
+     {
+      "amount": -62572.0,
+      "year": 2022
+     },
+     {
+      "amount": 10966.0,
+      "year": 2023
+     },
+     {
+      "amount": -62235.0,
+      "year": 2024
+     },
+     {
+      "amount": 84533.0,
+      "year": 2025
+     }
+    ],
+    "swing": 147105.0,
+    "town": "Townsend",
+    "under": 3,
+    "worst": -62572.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": -17173.0,
+    "mean_abs": 95218.6,
+    "over": 0,
+    "series": [
+     {
+      "amount": -43335.0,
+      "year": 2021
+     },
+     {
+      "amount": -17173.0,
+      "year": 2022
+     },
+     {
+      "amount": -134231.0,
+      "year": 2023
+     },
+     {
+      "amount": -159815.0,
+      "year": 2024
+     },
+     {
+      "amount": -121539.0,
+      "year": 2025
+     }
+    ],
+    "swing": 142642.0,
+    "town": "Littleton",
+    "under": 5,
+    "worst": -159815.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": 104155.0,
+    "mean_abs": 44196.8,
+    "over": 4,
+    "series": [
+     {
+      "amount": 43149.0,
+      "year": 2021
+     },
+     {
+      "amount": 47452.0,
+      "year": 2022
+     },
+     {
+      "amount": 104155.0,
+      "year": 2023
+     },
+     {
+      "amount": -8472.0,
+      "year": 2024
+     },
+     {
+      "amount": 17756.0,
+      "year": 2025
+     }
+    ],
+    "swing": 112627.0,
+    "town": "Groton",
+    "under": 1,
+    "worst": -8472.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": 29052.0,
+    "mean_abs": 25481.4,
+    "over": 3,
+    "series": [
+     {
+      "amount": 19884.0,
+      "year": 2021
+     },
+     {
+      "amount": 14088.0,
+      "year": 2022
+     },
+     {
+      "amount": -28162.0,
+      "year": 2023
+     },
+     {
+      "amount": -36221.0,
+      "year": 2024
+     },
+     {
+      "amount": 29052.0,
+      "year": 2025
+     }
+    ],
+    "swing": 65273.0,
+    "town": "Ayer",
+    "under": 2,
+    "worst": -36221.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": 13729.0,
+    "mean_abs": 14370.2,
+    "over": 2,
+    "series": [
+     {
+      "amount": 6835.0,
+      "year": 2021
+     },
+     {
+      "amount": -4043.0,
+      "year": 2022
+     },
+     {
+      "amount": -45083.0,
+      "year": 2023
+     },
+     {
+      "amount": -2161.0,
+      "year": 2024
+     },
+     {
+      "amount": 13729.0,
+      "year": 2025
+     }
+    ],
+    "swing": 58812.0,
+    "town": "Shirley",
+    "under": 3,
+    "worst": -45083.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   },
+   {
+    "best": 38254.0,
+    "mean_abs": 14869.6,
+    "over": 3,
+    "series": [
+     {
+      "amount": -927.0,
+      "year": 2021
+     },
+     {
+      "amount": 18348.0,
+      "year": 2022
+     },
+     {
+      "amount": -11727.0,
+      "year": 2023
+     },
+     {
+      "amount": 5092.0,
+      "year": 2024
+     },
+     {
+      "amount": 38254.0,
+      "year": 2025
+     }
+    ],
+    "swing": 49981.0,
+    "town": "Upton",
+    "under": 2,
+    "worst": -11727.0,
+    "years": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ]
+   }
+  ],
+  "rank": 1,
+  "source_file": "dls/free-cash-proof-ayer.xlsx",
+  "source_ref": "Sheet1!A9",
+  "town": {
+   "best": 327281.0,
+   "mean_abs": 245751.4,
+   "over": 4,
+   "series": [
+    {
+     "amount": 240260.0,
+     "certified": 2666962.0,
+     "share_of_certified": 0.0901,
+     "year": 2021
+    },
+    {
+     "amount": 120947.0,
+     "certified": 2923290.0,
+     "share_of_certified": 0.0414,
+     "year": 2022
+    },
+    {
+     "amount": 327281.0,
+     "certified": 1870612.0,
+     "share_of_certified": 0.175,
+     "year": 2023
+    },
+    {
+     "amount": -390814.0,
+     "certified": 2270060.0,
+     "share_of_certified": -0.1722,
+     "year": 2024
+    },
+    {
+     "amount": 149455.0,
+     "certified": 3354370.0,
+     "share_of_certified": 0.0446,
+     "year": 2025
+    }
+   ],
+   "swing": 718095.0,
+   "town": "Lunenburg",
+   "under": 1,
+   "worst": -390814.0,
+   "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ]
+  },
+  "town_names": [
+   "Lunenburg",
+   "Westford",
+   "Uxbridge",
+   "Townsend",
+   "Littleton",
+   "Groton",
+   "Ayer",
+   "Shirley",
+   "Upton"
+  ],
+  "years": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ]
+ }
+}
