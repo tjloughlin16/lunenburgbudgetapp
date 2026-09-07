@@ -470,9 +470,12 @@ export function CostPerSport({ rows, feeLine, years }: {
           <BarChart data={data} layout="vertical"
             margin={{ top: 4, right: 46, bottom: 4, left: 4 }}>
             <CartesianGrid stroke="var(--grid)" horizontal={false} />
+            {/* usd rather than usdShort here: these run to about $1,300, and usdShort
+                rounds both $1,000 and $1,299 to "$1k" — an axis with two identical ticks
+                on it, and a label list where the four dearest sports all read the same. */}
             <XAxis type="number" tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
               stroke="var(--axis)" tickLine={false}
-              tickFormatter={v => usdShort(v as number)} />
+              tickFormatter={v => usd(v as number)} />
             <YAxis type="category" dataKey="label" width={132}
               tick={{ fill: 'var(--text-secondary)', fontSize: 11 }}
               stroke="var(--axis)" tickLine={false} axisLine={false} />
@@ -494,7 +497,7 @@ export function CostPerSport({ rows, feeLine, years }: {
             <Bar dataKey="per_athlete" fill={CAT_COLOUR.Coaches} isAnimationActive={false}
               radius={[0, 4, 4, 0]} maxBarSize={16}>
               <LabelList dataKey="per_athlete" position="right"
-                formatter={v => usdShort(Number(v))}
+                formatter={v => usd(Number(v))}
                 style={{ fill: 'var(--text-muted)', fontSize: 10 }} />
             </Bar>
           </BarChart>

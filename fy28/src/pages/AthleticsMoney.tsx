@@ -210,7 +210,13 @@ export function AthleticsMoney() {
   const partLast = d.participation_totals[d.participation_totals.length - 1]
   const partChange = (partLast.total - partFirst.total) / partFirst.total
   const hsFees = d.fee_headline.filter(r => r.level === 'HS').sort((a, b) => a.fy - b.fy)
-  const feeFirst = hsFees[0], feeLast = hsFees[hsFees.length - 1]
+  /** The fee series is measured over EXACTLY the years participation is measured over.
+   *  It runs a year further — FY27's rate is published — and comparing a three-year
+   *  headcount to a four-year price is the kind of mismatched span this project keeps
+   *  catching in its own prose. The later year is stated separately, with its provenance. */
+  const feeFirst = hsFees.find(r => r.fy === partFirst.fy)!
+  const feeLast = hsFees.find(r => r.fy === partLast.fy)!
+  const feeAhead = hsFees.filter(r => r.fy > partLast.fy)
   const feeChange = (feeLast.amount - feeFirst.amount) / feeFirst.amount
   const memoShare = d.memo_entries
     .filter(r => r.fy === 2025).reduce((a, r) => a + r.amount, 0) / flow25.receipts
@@ -248,8 +254,10 @@ export function AthleticsMoney() {
           and {usd(fy26.revolving ?? 0)} spent by the fee-funded fund
         </Stat>
         <Stat value={usd(d.memo_total)} tone={CAT_COLOUR.Officials}>
-          moved into the fund on {d.memo_entries.length} journal entries whose whole
-          description is <em>per memo</em>. We hold none of the memos
+          moved into the fund across {fy(d.memo_entries[0].fy)}&ndash;
+          {fy(d.memo_entries[d.memo_entries.length - 1].fy)} on{' '}
+          {d.memo_entries.length} journal entries whose whole description is{' '}
+          <em>per memo</em>. We hold none of the memos
         </Stat>
         <Stat value={`${partLast.total}`}>
           participations in {fy(partLast.fy)}, from {partFirst.total} in {fy(partFirst.fy)}.
@@ -311,8 +319,11 @@ export function AthleticsMoney() {
           claim={<>Participation is roughly flat over three years while the fee it pays has
             risen {Math.round(feeChange * 100)}%.</>}>
           {partFirst.total} participations in {fy(partFirst.fy)}, {partLast.total} in{' '}
-          {fy(partLast.fy)}. Over the same span the high-school fee a first child pays went
-          from {usd(feeFirst.amount)} to {usd(feeLast.amount)}.{' '}
+          {fy(partLast.fy)}. Over exactly those years the high-school fee a first child
+          pays went from {usd(feeFirst.amount)} to {usd(feeLast.amount)}
+          {feeAhead.length
+            ? `, and is ${usd(feeAhead[feeAhead.length - 1].amount)} in ${fy(feeAhead[feeAhead.length - 1].fy)} on a source we do not hold a copy of`
+            : ''}.{' '}
           <strong>These are two measurements side by side and nothing here connects them</strong>{' '}
           &mdash; three years is not enough to see a response to a price, and the fee rose
           after most of the fall.{' '}
