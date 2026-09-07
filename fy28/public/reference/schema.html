@@ -73,6 +73,12 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
   border:1px solid var(--grid); color:var(--muted); padding:1px 6px; border-radius:20px;
   white-space:nowrap }
 .tag.tier { border-color:var(--hi); color:var(--hi) }
+.tag.scope { font-weight:700 }
+.tag.scope.sschool { border-color:var(--traced); color:var(--traced) }
+.tag.scope.stown { border-color:var(--hi); color:var(--hi) }
+/* `school + town` is the one that matters most: it means the table genuinely carries
+   both and splitting it would invent a division the source does not make. */
+.tag.scope.sboth { border-color:var(--ink); color:var(--ink) }
 .tag.tier.t3 { border-color:var(--traced); color:var(--traced) }
 .badge { font-size:10px; letter-spacing:.08em; text-transform:uppercase;
   background:var(--traced); color:var(--bg); padding:1px 6px; border-radius:20px }
@@ -84,6 +90,19 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 /* A GROUP HEADING, not a caption. It was 11px muted uppercase — quieter than the table
    names under it, so a new group read as a stray label rather than a break. A heading
    that is smaller than its own contents is not a heading. */
+.scope { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:0 15px; margin:16px 0 }
+.scope > summary { list-style:none; cursor:pointer; padding:15px 0 }
+.scope > summary::-webkit-details-marker { display:none }
+.scopehead b { font-size:19px; letter-spacing:-.02em }
+.scopehead span { display:block; font-size:12px; color:var(--muted); margin-top:2px;
+  font-family:ui-monospace,Menlo,monospace }
+/* A closed section has to look closed. The caret is the only thing on the row that
+   says the heading is a control rather than a label. */
+.scopehead::after { content:'BE'; float:right; color:var(--muted);
+  font-size:13px; margin-top:-18px }
+.scope:not([open]) > .scopehead::after { content:'B8' }
+.scope[open] { padding-bottom:15px }
 .tierhead { margin:30px 0 10px; padding-top:16px;
   border-top:2px solid var(--ink) }
 .tierhead b { display:block; font-size:16px; font-weight:700; letter-spacing:-.01em;
@@ -230,7 +249,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">74</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">68,538</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">68,738</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">916</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
@@ -282,10 +301,10 @@ stop.</p>
 </table></div>
 <p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> answered against a third of the database and returned <em>zero rows, with no error,</em> against the rest. It is INTEGER everywhere now except three documented exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the build if a new table arrives without it.</p>
 </div>
-<div class="stage"><h2>School money and school subjects</h2>
+<details class="scope"><summary class="scopehead"><b>School money and school subjects</b><span>28 tables &middot; 33,557 rows</span></summary>
 <p class="cap">The district&#x27;s budget, its own funds, and what the town publishes about its schools.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
-<details class="t"><summary><span class="srow"><code>school_special_revenue_fy26_q3</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">62 rows</span><button class="open" data-t="school_special_revenue_fy26_q3">Query table</button></span><span class="gr">one row per school fund</span></summary>
+<details class="t"><summary><span class="srow"><code>school_special_revenue_fy26_q3</code> <span class="tag scope sschool">school</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">62 rows</span><button class="open" data-t="school_special_revenue_fy26_q3">Query table</button></span><span class="gr">one row per school fund</span></summary>
 <p class="ans">The schools&#x27; own funds at one moment (FY26 period 9): per fund, revenue received, salaries paid, other expenditure, encumbered, and the balance left. Dollars.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
@@ -303,7 +322,7 @@ stop.</p>
 <tr><td>2582</td><td>EECBG ENERGY EFFICIENCY GRANT</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>316.48</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>total_expenses_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_expenses_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>total_expenses_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_expenses_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
 <p class="ans">One dollar total per year per stage — the district&#x27;s own stated total expenses, as each document states it.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
@@ -318,7 +337,7 @@ stop.</p>
 <tr><td class="num">2026</td><td>settled</td><td>9169982</td><td>0</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>total_salaries_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_salaries_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>total_salaries_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_salaries_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
 <p class="ans">One dollar total per year per stage — the district&#x27;s own stated total salaries.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
@@ -334,7 +353,7 @@ stop.</p>
 </table></div>
 </details>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
-<details class="t spine"><summary><span class="srow"><code>budget_figure</code> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="budget_figure" data-q="SELECT f.fy, f.stage, f.variant, f.label, f.value, b.section, b.function_group, f.doc_id FROM budget_figure f LEFT JOIN budget_line b USING (line_key) ORDER BY f.fy, f.stage, f.value DESC LIMIT 1000">Query table</button></span><span class="gr">one row per line per year per stage per variant</span></summary>
+<details class="t spine"><summary><span class="srow"><code>budget_figure</code> <span class="tag scope sschool">school</span> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="budget_figure" data-q="SELECT f.fy, f.stage, f.variant, f.label, f.value, b.section, b.function_group, f.doc_id FROM budget_figure f LEFT JOIN budget_line b USING (line_key) ORDER BY f.fy, f.stage, f.value DESC LIMIT 1000">Query table</button></span><span class="gr">one row per line per year per stage per variant</span></summary>
 <p class="ans">Dollar amounts per budget LINE from the district&#x27;s budget documents — no counts, no people. Each figure carries the stage it represents (proposed / settled / actual) and, for FY27, which of four whole budget scenarios it belongs to. FY2014–FY2027, 9,503 figures, plus a flag where two documents state different amounts for the same line-year.</p>
 <p class="warn">Split on <code>stage</code> AND <code>variant</code>. FY27 carries four whole budgets.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -354,7 +373,7 @@ stop.</p>
 <tr><td>hs repair p e equipment</td><td>H.S. Repair P.E. Equipment</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td class="num">0.0</td><td class="num">0</td><td>sources/district-budget/text/fy26-school-de…</td></tr>
 </table></div>
 </details>
-<details class="t spine"><summary><span class="srow"><code>workbook_figure</code> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">3,261 rows</span> <span class="yr">2023, 2024, 2025, 2026, 2027, 2029</span><button class="open" data-t="workbook_figure" data-q="SELECT w.fy, w.column_kind, w.row_kind, w.row, b.label, w.value FROM workbook_figure w LEFT JOIN budget_line b USING (line_key) ORDER BY w.fy, w.row LIMIT 1000">Query table</button></span><span class="gr">one row per worksheet row per year per column</span></summary>
+<details class="t spine"><summary><span class="srow"><code>workbook_figure</code> <span class="tag scope sschool">school</span> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">3,261 rows</span> <span class="yr">2023, 2024, 2025, 2026, 2027, 2029</span><button class="open" data-t="workbook_figure" data-q="SELECT w.fy, w.column_kind, w.row_kind, w.row, b.label, w.value FROM workbook_figure w LEFT JOIN budget_line b USING (line_key) ORDER BY w.fy, w.row LIMIT 1000">Query table</button></span><span class="gr">one row per worksheet row per year per column</span></summary>
 <p class="ans">The FY27 budget workbook unpivoted to one row per worksheet row × year × column, so every figure is quotable by its spreadsheet coordinate. <code>column_kind</code> says which printed column — final_budget, actual_to_date, encumbered_to_date. Dollars only.</p>
 <p class="warn"> every cell quotable by its row.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -373,7 +392,7 @@ stop.</p>
 <tr><td class="num">237</td><td>executive secretaries/supt.</td><td class="num">2025</td><td>actual</td><td class="num">184375.15</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>athletics_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">175 rows</span> <span class="yr">2014–2026</span><button class="open" data-t="athletics_history">Query table</button></span><span class="gr">one row per athletics figure per year</span></summary>
+<details class="t"><summary><span class="srow"><code>athletics_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">175 rows</span> <span class="yr">2014–2026</span><button class="open" data-t="athletics_history">Query table</button></span><span class="gr">one row per athletics figure per year</span></summary>
 <p class="ans">Athletics money from BOTH sides, and these are three different quantities that must never be added: what the town appropriated from the general fund, what the revolving fund took IN, and what the revolving fund SPENT. Dollars per year with the basis and source document for each.</p>
 <p class="warn">Appropriation, fund revenue and fund spending are three quantities. Never add two of them.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -391,7 +410,7 @@ stop.</p>
 <tr><td class="num">2020</td><td>general</td><td>Athletic Coaches</td><td>91601.0</td><td>actual</td><td>fy24-approved-budget.txt</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>budget_line</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">dimension</span> <span class="n">688 rows</span><button class="open" data-t="budget_line">Query table</button></span><span class="gr">one row per budget line</span></summary>
+<details class="t"><summary><span class="srow"><code>budget_line</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">dimension</span> <span class="n">688 rows</span><button class="open" data-t="budget_line">Query table</button></span><span class="gr">one row per budget line</span></summary>
 <p class="ans">The district&#x27;s LINE LIST — no money at all. One row per budget line with its section, its function group and what kind of line it is. This is the dimension <code>budget_figure</code> and <code>workbook_figure</code> hang their dollars on.</p>
 <p class="warn"> with its section and function group.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -408,7 +427,7 @@ stop.</p>
 <tr><td>h.s. guidance secretary</td><td>H.S. Guidance Secretary</td><td>SALARIES</td><td>2710 - Guidance Salaries</td><td>line</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>line_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="line_history">Query table</button></span><span class="gr">one row per line per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>line_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="line_history">Query table</button></span><span class="gr">one row per line per year per stage</span></summary>
 <p class="ans">Every budget line × year × stage as EXTRACTED, before disagreements between documents are resolved. Dollars. This is the raw reading; <code>budget_figure</code> is the settled one.</p>
 <p class="warn"> every year</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -428,7 +447,7 @@ stop.</p>
 <tr><td>plus total revolving fund</td><td>plus TOTAL Revolving Fund</td><td class="num">2017</td><td>actual</td><td><span class="nul">empty</span></td><td>113819</td><td>0</td><td>fy19-proposed-athletics-budget.txt</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>lps_budget_lines</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">356 rows</span><button class="open" data-t="lps_budget_lines">Query table</button></span><span class="gr">one row per budget book line</span></summary>
+<details class="t"><summary><span class="srow"><code>lps_budget_lines</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">356 rows</span><button class="open" data-t="lps_budget_lines">Query table</button></span><span class="gr">one row per budget book line</span></summary>
 <p class="ans">The district&#x27;s budget book in ITS OWN shape: one row per line with every year&#x27;s column side by side (FY23 actual through the four FY27 scenarios) rather than unpivoted. Includes the workbook&#x27;s own comments column, which is where the district explains a line to itself.</p>
 <p class="warn"> in its own shape and column order.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -459,7 +478,7 @@ stop.</p>
 <tr><td>198</td><td>EXPENSES</td><td>4230 - M.S. Repairs</td><td>4230 - M.S. Repairs</td><td>line</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1800.0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>ood_tuition_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">30 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="ood_tuition_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>ood_tuition_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">30 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="ood_tuition_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
 <p class="ans">Out-of-district special education tuition in DOLLARS, split private vs collaborative, per year per stage. Not a count of children — <code>placement_counts</code> is that, and the two do not divide into each other.</p>
 <p class="warn"> private and collaborative.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -477,7 +496,7 @@ stop.</p>
 <tr><td class="num">2021</td><td>proposed</td><td>589156</td><td>130113</td><td>719269</td><td>0</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>sped_para_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">26 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="sped_para_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>sped_para_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">26 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="sped_para_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
 <p class="ans">Budgeted DOLLARS for special education paraprofessionals, split by school, per year per stage. A budget line, never a headcount.</p>
 <p class="warn">A budget line, not a headcount.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -498,7 +517,7 @@ stop.</p>
 <tr><td class="num">2026</td><td>settled</td><td>424416</td><td>225152</td><td>373590</td><td>275473</td><td>43742</td><td>1342373</td><td>0</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>sped_teacher_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">21 rows</span> <span class="yr">2017–2027</span><button class="open" data-t="sped_teacher_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>sped_teacher_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">21 rows</span> <span class="yr">2017–2027</span><button class="open" data-t="sped_teacher_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
 <p class="ans">Budgeted DOLLARS for special education teachers, split by school, per year per stage. A budget line, never a headcount.</p>
 <p class="warn">A budget line, not a headcount.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -519,7 +538,7 @@ stop.</p>
 <tr><td class="num">2022</td><td>actual</td><td>541721</td><td>342512</td><td>407145</td><td>454812</td><td>31049</td><td>1777239</td><td>0</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>sped_transport_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">25 rows</span> <span class="yr">2015–2027</span><button class="open" data-t="sped_transport_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<details class="t"><summary><span class="srow"><code>sped_transport_history</code> <span class="tag scope sschool">school</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">25 rows</span> <span class="yr">2015–2027</span><button class="open" data-t="sped_transport_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
 <p class="ans">Budgeted DOLLARS for special education transportation, per year per stage.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
@@ -536,7 +555,7 @@ stop.</p>
 </table></div>
 </details>
 <p class="tierhead"><b>Tier 3 · accounts</b><span>what one account spent</span></p>
-<details class="t"><summary><span class="srow"><code>fund_1301_cash_journal</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">277 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="fund_1301_cash_journal">Query table</button></span><span class="gr">one row per transaction</span></summary>
+<details class="t"><summary><span class="srow"><code>fund_1301_cash_journal</code> <span class="tag scope sschool">school</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">277 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="fund_1301_cash_journal">Query table</button></span><span class="gr">one row per transaction</span></summary>
 <p class="ans">TRANSACTIONS — the athletics revolving fund line by line: effective and posting dates, journal, references, vendor, amount, running balance, check and warrant numbers, and the comments the clerk typed. The only transaction-level data in the archive, obtained by records request.</p>
 <p class="warn"> from a records request.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -568,7 +587,7 @@ stop.</p>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>athletic_fee_schedule</code> <span class="tag">fact</span> <span class="n">31 rows</span> <span class="yr">2024–2027</span><button class="open" data-t="athletic_fee_schedule">Query table</button></span><span class="gr">one row per fee per year</span></summary>
+<details class="t"><summary><span class="srow"><code>athletic_fee_schedule</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">31 rows</span> <span class="yr">2024–2027</span><button class="open" data-t="athletic_fee_schedule">Query table</button></span><span class="gr">one row per fee per year</span></summary>
 <p class="ans">The published fee a family pays to play: dollars per fiscal year × school level × item, with the date it was set and the document that set it. Includes family caps and sibling discounts.</p>
 <p class="warn"> by level and year.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -592,7 +611,7 @@ stop.</p>
 to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>athletics_by_sport</code> <span class="tag">fact</span> <span class="n">960 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="athletics_by_sport">Query table</button></span><span class="gr">one row per sport per season per metric</span></summary>
+<details class="t"><summary><span class="srow"><code>athletics_by_sport</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">960 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="athletics_by_sport">Query table</button></span><span class="gr">one row per sport per season per metric</span></summary>
 <p class="ans">Per sport × season × level: participation COUNTS and DOLLAR figures mixed in one table, told apart by <code>metric</code>. <code>raw</code> keeps the value exactly as printed and <code>is_numeric</code> says whether it parsed, because some cells are text.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>season</code></td><td class="ty">TEXT</td><td>Which athletic season.</td></tr>
@@ -612,7 +631,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>Spring</td><td>HS</td><td>Softball</td><td class="num">2025</td><td>Full Pay</td><td>21.0</td><td>21</td><td>1</td><td>F5</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>athletics_by_sport_reconciliation</code> <span class="tag">provenance</span> <span class="n">342 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="athletics_by_sport_reconciliation">Query table</button></span><span class="gr">one row per printed total</span></summary>
+<details class="t"><summary><span class="srow"><code>athletics_by_sport_reconciliation</code> <span class="tag scope sschool">school</span> <span class="tag">provenance</span> <span class="n">342 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="athletics_by_sport_reconciliation">Query table</button></span><span class="gr">one row per printed total</span></summary>
 <p class="ans">Not data — checks. For each total the source prints, what our rows sum to, the difference, and whether it ties.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>season</code></td><td class="ty">TEXT</td><td>Which athletic season.</td></tr>
@@ -633,7 +652,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>Winter</td><td>HS</td><td>Full Pay</td><td class="num">2024</td><td>118.0</td><td>E16</td><td>118</td><td>118.0</td><td>0.0</td><td>1</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>grant_award</code> <span class="tag">fact</span> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span><button class="open" data-t="grant_award">Query table</button></span><span class="gr">one row per grant per year</span></summary>
+<details class="t"><summary><span class="srow"><code>grant_award</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span><button class="open" data-t="grant_award">Query table</button></span><span class="gr">one row per grant per year</span></summary>
 <p class="ans">Grant AWARDS: name, amount in dollars, who holds it, and the fiscal year — except one ESSER award that genuinely spans FY21–24, which is why <code>fy</code> is TEXT here.</p>
 <p class="warn"> by name and amount.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -654,7 +673,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2023</td><td>state</td><td>Grant</td><td class="num">25000.0</td><td><span class="nul">empty</span></td><td class="num">0</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>grants_history</code> <span class="tag">fact</span> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span><button class="open" data-t="grants_history">Query table</button></span><span class="gr">one row per grant per year</span></summary>
+<details class="t"><summary><span class="srow"><code>grants_history</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span><button class="open" data-t="grants_history">Query table</button></span><span class="gr">one row per grant per year</span></summary>
 <p class="ans">The same awards with their source addresses and checksums, plus whether documents disagree about an amount and whether it is ESSER money.</p>
 <p class="warn"><code>fy</code> is TEXT — see grant_award.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -678,7 +697,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2024</td><td>state</td><td>Arts &amp; Cultural Vitality, 718 Grant</td><td>5200.0</td><td>Director of Teaching &amp; Learning</td><td>32</td><td>fy25-superintendent-39-s-budget-update.txt</td><td>0</td><td><span class="nul">empty</span></td><td>https://drive.google.com/file/d/1yJNhIyBLVT…</td><td>https://lunenburgbudgetproject.org/docs/dis…</td><td>9169e2700def0c1a2b6bebbc55d4e7f737ea5c3a735…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>line_history_coverage</code> <span class="tag">provenance</span> <span class="n">86 rows</span><button class="open" data-t="line_history_coverage">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>line_history_coverage</code> <span class="tag scope sschool">school</span> <span class="tag">provenance</span> <span class="n">86 rows</span><button class="open" data-t="line_history_coverage">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">Not figures — a report on extraction. Per source document: how many data rows, how many carried a usable layout, how many fell short of the expected column count, and why a document was or was not usable.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
@@ -701,7 +720,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>school-committee-approved-fy26-budget-perso…</td><td>2026</td><td>2</td><td>0</td><td>0</td><td>0</td><td><span class="nul">empty</span></td><td>School Committee Approved FY26 Budget</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>FY2026</td><td>single-column table: line 2 states one fisc…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>line_history_disagreements</code> <span class="tag">provenance</span> <span class="n">1,497 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="line_history_disagreements">Query table</button></span><span class="gr">one row per disagreeing reading</span></summary>
+<details class="t"><summary><span class="srow"><code>line_history_disagreements</code> <span class="tag scope sschool">school</span> <span class="tag">provenance</span> <span class="n">1,497 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="line_history_disagreements">Query table</button></span><span class="gr">one row per disagreeing reading</span></summary>
 <p class="ans">One row per disagreeing READING: where two documents state different dollar amounts for the same line-year, both values are kept with their source and the spread between them. Nothing here is resolved.</p>
 <p class="warn">Kept rather than resolved. Which document is right is often not established.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -723,7 +742,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>ps guidance supplies</td><td>P.S. Guidance Supplies</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td>3-12-25-town-manager-39-s-budget.txt</td><td>250</td><td>0</td><td>50</td><td>documents</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>placement_counts</code> <span class="tag">fact</span> <span class="n">15 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="placement_counts">Query table</button></span><span class="gr">one row per year</span></summary>
+<details class="t"><summary><span class="srow"><code>placement_counts</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">15 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="placement_counts">Query table</button></span><span class="gr">one row per year</span></summary>
 <p class="ans">CHILDREN, not dollars. Students placed outside the district, split collaborative / day / residential, measured on 1 March each year from SIMS Report 7. FY2013–FY2025. Carries its own checks: whether the parts sum to the total, and whether each year agrees with the next year&#x27;s restatement of it.</p>
 <p class="warn"> split collaborative/day/residential.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -749,7 +768,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2023</td><td>2023-03-01</td><td>7</td><td>3</td><td>3</td><td>1</td><td><span class="nul">empty</span></td><td>parallel category</td><td>8</td><td>yes</td><td>yes</td><td>120</td><td>FY2023</td><td>parts 3+3+1=7 ties to stated 7; report says…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_enrollment_mcas</code> <span class="tag">extract</span> <span class="n">337 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_enrollment_mcas">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_enrollment_mcas</code> <span class="tag scope sschool">school</span> <span class="tag">extract</span> <span class="n">337 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_enrollment_mcas">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Enrollment counts and MCAS results as the annual reports print them. Mixed measures in ordinal columns; read <code>column_meaning</code> before using any of them.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -790,7 +809,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>enrollment_mcas</td><td class="num">2024</td><td>FY2024</td><td>109</td><td>1</td><td><span class="nul">empty</span></td><td>Grade 6 ELA</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>49</td><td>40</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_monty_tech</code> <span class="tag">extract</span> <span class="n">70 rows</span> <span class="yr">2017–2017</span><button class="open" data-t="report_monty_tech">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_monty_tech</code> <span class="tag scope sschool">school</span> <span class="tag">extract</span> <span class="n">70 rows</span> <span class="yr">2017–2017</span><button class="open" data-t="report_monty_tech">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Figures for Montachusett Regional Vocational Technical School as the annual reports print them. A DIFFERENT DISTRICT: Lunenburg pays it an assessment, and its figures must never be added to Lunenburg&#x27;s own schools.</p>
 <p class="warn">Monty Tech is a DIFFERENT DISTRICT. Never add it to Lunenburg&#x27;s schools.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -831,7 +850,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>monty_tech</td><td class="num">2017</td><td>FY2017</td><td>143</td><td><span class="nul">empty</span></td><td>Debt Service                               …</td><td>Total                        $24,785,240  $</td><td><span class="nul">empty</span></td><td>subtotal</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>General Fund- Income and Expense Summary | …</td><td><span class="nul">empty</span></td><td>25548074.00</td><td>26228813.00</td><td>26364958.00</td><td>26895680.00</td><td>530722.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td>yes</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>role_classification</code> <span class="tag">dimension</span> <span class="n">1,030 rows</span><button class="open" data-t="role_classification">Query table</button></span><span class="gr">one row per printed roster title</span></summary>
+<details class="t"><summary><span class="srow"><code>role_classification</code> <span class="tag scope sschool">school</span> <span class="tag">dimension</span> <span class="n">1,030 rows</span><button class="open" data-t="role_classification">Query table</button></span><span class="gr">one row per printed roster title</span></summary>
 <p class="ans">Our classification of each printed roster title into a role category and grade, with how it was classified. Judgement, recorded so it can be disputed.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>role_raw</code></td><td class="ty">TEXT</td><td>The job title exactly as printed.</td></tr>
@@ -848,7 +867,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>Occup. Therapist</td><td>Specialists</td><td>1</td><td>specialist</td><td><span class="nul">empty</span></td><td>heading-specialists</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>staff_position_map</code> <span class="tag">dimension</span> <span class="n">534 rows</span><button class="open" data-t="staff_position_map">Query table</button></span><span class="gr">one row per printed roster title</span></summary>
+<details class="t"><summary><span class="srow"><code>staff_position_map</code> <span class="tag scope sschool">school</span> <span class="tag">dimension</span> <span class="n">534 rows</span><button class="open" data-t="staff_position_map">Query table</button></span><span class="gr">one row per printed roster title</span></summary>
 <p class="ans">A lookup, not data: each printed roster title, how many times it was seen, and the position it maps to.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>role_as_printed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
@@ -862,7 +881,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>Music MS</td><td>Specialist Teacher</td><td>1</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>staff_roster_counts</code> <span class="tag">fact</span> <span class="n">699 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="staff_roster_counts">Query table</button></span><span class="gr">one row per school per position per year</span></summary>
+<details class="t"><summary><span class="srow"><code>staff_roster_counts</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">699 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="staff_roster_counts">Query table</button></span><span class="gr">one row per school per position per year</span></summary>
 <p class="ans">Counts of the names above, per school × position × year. A count of names the town printed. It is not a staffing level and cannot be turned into one.</p>
 <p class="warn">A count of NAMES, with no FTE and no funding source. It is not a staffing level.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -878,7 +897,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2019</td><td>primary</td><td>(unmapped)</td><td>13</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>staff_roster_entries</code> <span class="tag">fact</span> <span class="n">3,815 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="staff_roster_entries">Query table</button></span><span class="gr">one row per person per year</span></summary>
+<details class="t"><summary><span class="srow"><code>staff_roster_entries</code> <span class="tag scope sschool">school</span> <span class="tag">fact</span> <span class="n">3,815 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="staff_roster_entries">Query table</button></span><span class="gr">one row per person per year</span></summary>
 <p class="ans">PEOPLE — one row per name the town printed, per year, with the school, the page, the printed job title and our classification of it. FY2011–FY2025, 3,815 entries. No FTE, no salary, no funding source, and undated within the year.</p>
 <p class="warn"> name by name</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -900,11 +919,11 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2019</td><td>middle</td><td>131</td><td>Kathleen Hyatt</td><td><span class="nul">empty</span></td><td>Paraprofessional</td><td>section heading</td><td>Paraprofessionals</td><td>25</td><td>4126-fy-2019-annual-town-report.pdf</td></tr>
 </table></div>
 </details>
-</div>
-<div class="stage"><h2>Town money and town subjects</h2>
+</details>
+<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>18 tables &middot; 17,762 rows</span></summary>
 <p class="cap">The other 67 departments, the receipts that fund them, and what the annual reports print about the town.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
-<details class="t"><summary><span class="srow"><code>annual_report_receipts</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">1,137 rows</span> <span class="yr">2011–2023</span><button class="open" data-t="annual_report_receipts">Query table</button></span><span class="gr">one row per revenue line per year</span></summary>
+<details class="t"><summary><span class="srow"><code>annual_report_receipts</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">1,137 rows</span> <span class="yr">2011–2023</span><button class="open" data-t="annual_report_receipts">Query table</button></span><span class="gr">one row per revenue line per year</span></summary>
 <p class="ans">Town REVENUE — every receipt line the annual reports print, by name and amount, per year, FY2011–FY2023. Only five years are <code>checked</code> against the report&#x27;s own printed total.</p>
 <p class="warn"> as printed.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -922,7 +941,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2022</td><td>DOG LICENSES</td><td>10670.00</td><td>checked</td><td>4129-fy-2022-annual-town-report.pdf</td><td>26</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_appropriations</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">4,665 rows</span> <span class="yr">2011 … 2025 (14 years)</span><button class="open" data-t="report_appropriations">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_appropriations</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">4,665 rows</span> <span class="yr">2011 … 2025 (14 years)</span><button class="open" data-t="report_appropriations">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">APPROPRIATIONS as the annual reports print them — the largest extract here, 4,665 rows across sixteen years. Values sit in ORDINAL columns (v1..v8) whose meaning changes page to page; <code>column_meaning</code> names them where the table states an identity that fixes them, and says <code>not established</code> where it does not.</p>
 <p class="warn">v1..v8 are ORDINALS. Read <code>column_meaning</code> and split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -963,7 +982,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>appropriations</td><td class="num">2016</td><td>FY2016</td><td>144</td><td>1</td><td>Unclassified</td><td>Group Health Insurance</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>omnibus-budget</td><td><span class="nul">empty</span></td><td>TOWN OF LUNENBURG | GENERAL FUND APPROPRIAT…</td><td>1907185.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td>v1=voted (from the shape of the column, not…</td><td>check failed</td><td>voted: 33,802,373.00 vs 33,802,328.00 (+45.…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>revenue_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">504 rows</span> <span class="yr">2014, 2015, 2017, 2018, 2022</span><button class="open" data-t="revenue_history">Query table</button></span><span class="gr">one row per revenue source per year</span></summary>
+<details class="t"><summary><span class="srow"><code>revenue_history</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">504 rows</span> <span class="yr">2014, 2015, 2017, 2018, 2022</span><button class="open" data-t="revenue_history">Query table</button></span><span class="gr">one row per revenue source per year</span></summary>
 <p class="ans">The checked subset of the above joined to our classification: the printed name, our normalised key, what KIND of revenue it is (levy, state aid, local receipt, transfer, one-time), the amount, and the document and page it came from. Five years.</p>
 <p class="warn"> with our classification of what KIND it is.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -983,7 +1002,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2017</td><td>SUBDIVISION/FORM A FILING FEES</td><td>SUBDIVISIONFORMAFILINGFEES</td><td>local</td><td>SUBDIVISION/FORM A FILING FEES</td><td class="num">2100.0</td><td>4124-fy-2017-annual-town-report.pdf</td><td>22</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_funds</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">2,387 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="special_revenue_funds">Query table</button></span><span class="gr">one row per fund per year</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_funds</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">2,387 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="special_revenue_funds">Query table</button></span><span class="gr">one row per fund per year</span></summary>
 <p class="ans">Every fund OUTSIDE the general appropriation, FY2011–FY2025: balance brought forward, receipts, disbursements, balance carried forward. Grants, revolving funds and gifts that pay for real staff and appear nowhere in the appropriation. Dollars.</p>
 <p class="warn"> fifteen years</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1015,7 +1034,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2018</td><td>FY2018</td><td>GENERAL GOVERNMENT</td><td>Sewer Gift Fund</td><td>35</td><td><span class="nul">empty</span></td><td>FISCAL YEAR ENDING 6/30/18 ; FORWARD | TOTA…</td><td>387.09</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>387.09</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td>check failed</td><td>v1: 3,560,171.36 vs printed 3,564,136.36 (-…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>town_ledger_fy26_q3</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">67 rows</span><button class="open" data-t="town_ledger_fy26_q3">Query table</button></span><span class="gr">one row per department</span></summary>
+<details class="t"><summary><span class="srow"><code>town_ledger_fy26_q3</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">67 rows</span><button class="open" data-t="town_ledger_fy26_q3">Query table</button></span><span class="gr">one row per department</span></summary>
 <p class="ans">The town&#x27;s 67 departments at FY26 period 9: appropriation, transfers, revised, expended, encumbered, available and percent used. EXPENSE side only, department grain only.</p>
 <p class="warn"> by department.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1037,7 +1056,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>ballot_questions</code> <span class="tag">fact</span> <span class="n">7 rows</span><button class="open" data-t="ballot_questions">Query table</button></span><span class="gr">one row per ballot question</span></summary>
+<details class="t"><summary><span class="srow"><code>ballot_questions</code> <span class="tag scope stown">town</span> <span class="tag">fact</span> <span class="n">7 rows</span><button class="open" data-t="ballot_questions">Query table</button></span><span class="gr">one row per ballot question</span></summary>
 <p class="ans">VOTES, not dollars — though each carries the amount at stake. Per ballot question: type, purpose, yes / no / blank counts, registered voters, turnout and the result.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>date</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
@@ -1065,7 +1084,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2024-05-18</td><td>Annual Town Election</td><td>QUESTION 1. OVERRIDE</td><td>Proposition 2½ override</td><td><span class="nul">empty</span></td><td>Override approved by voters in May 2024; Ar…</td><td>753</td><td>664</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>PASSED</td><td>2024</td><td>174</td><td>plain</td><td>YES 189+149+157+258=753; NO 195+118+175+176…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>capital_funding_history</code> <span class="tag">fact</span> <span class="n">10 rows</span> <span class="yr">2017–2026</span><button class="open" data-t="capital_funding_history">Query table</button></span><span class="gr">one row per year</span></summary>
+<details class="t"><summary><span class="srow"><code>capital_funding_history</code> <span class="tag scope stown">town</span> <span class="tag">fact</span> <span class="n">10 rows</span> <span class="yr">2017–2026</span><button class="open" data-t="capital_funding_history">Query table</button></span><span class="gr">one row per year</span></summary>
 <p class="ans">Per year, how capital spending was PAID FOR: free cash, taxation, unexpended prior-year capital, other. Dollars.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
@@ -1082,7 +1101,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2024</td><td>1039010.00</td><td>467268.98</td><td>556789.09</td><td>14951.93</td><td>0.00</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>capital_plan_fy27</code> <span class="tag">fact</span> <span class="n">22 rows</span><button class="open" data-t="capital_plan_fy27">Query table</button></span><span class="gr">one row per project</span></summary>
+<details class="t"><summary><span class="srow"><code>capital_plan_fy27</code> <span class="tag scope stown">town</span> <span class="tag">fact</span> <span class="n">22 rows</span><button class="open" data-t="capital_plan_fy27">Query table</button></span><span class="gr">one row per project</span></summary>
 <p class="ans">The FY27 capital plan as proposed: project, department, cost, running cumulative, whether it was funded and from where.</p>
 <p class="warn"> ranked.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1101,7 +1120,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>19</td><td>Schools</td><td>Heat for THES Maintenance Garage</td><td>60000.00</td><td>2718608.00</td><td>no</td><td>unfunded</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>free_cash_proof</code> <span class="tag">fact</span> <span class="n">630 rows</span><button class="open" data-t="free_cash_proof">Query table</button></span><span class="gr">one row per line of the state&#x27;s proof</span></summary>
+<details class="t"><summary><span class="srow"><code>free_cash_proof</code> <span class="tag scope stown">town</span> <span class="tag">fact</span> <span class="n">630 rows</span><button class="open" data-t="free_cash_proof">Query table</button></span><span class="gr">one row per line of the state&#x27;s proof</span></summary>
 <p class="ans">The state&#x27;s own line-by-line proof of certified free cash, for nine towns — every component with its role in the calculation. Dollars.</p>
 <p class="warn"> for nine towns.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1120,7 +1139,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>Uxbridge</td><td>2022</td><td>Revenue Deficits</td><td>0.00</td><td>component</td><td>dls/free-cash-proof-uxbridge.xlsx</td><td>Sheet1!A6</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_capital_projects</code> <span class="tag">extract</span> <span class="n">616 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_capital_projects">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_capital_projects</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">616 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_capital_projects">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Capital project funds as the annual reports print them: appropriated, expended, encumbered and balance, per article.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1161,7 +1180,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>capital_projects</td><td class="num">2025</td><td>FY2025</td><td>30</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>3114 11/23 TC Passios Roof</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CAPITAL PROJECT FUND BALANCE DETAIL | TOWN …</td><td>300000.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_debt</code> <span class="tag">extract</span> <span class="n">354 rows</span> <span class="yr">2011, 2017, 2019, 2020, 2021, 2023, 2024, 2025</span><button class="open" data-t="report_debt">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_debt</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">354 rows</span> <span class="yr">2011, 2017, 2019, 2020, 2021, 2023, 2024, 2025</span><button class="open" data-t="report_debt">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Outstanding DEBT and repayment schedules as the annual reports print them. Dollars, town-wide — school building debt is inside these figures and is not separated out.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1202,7 +1221,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>debt</td><td class="num">2025</td><td>FY2025</td><td>39</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TOTAL MASS WATER POL TRUST-SEWER</td><td><span class="nul">empty</span></td><td>subtotal</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TRUST &amp; STABILIZATION FUNDS HELD BY OTHER B…</td><td>73779.00</td><td>73792.00</td><td>73806.00</td><td>73820.00</td><td>73835.00</td><td>73881.00</td><td>73896.00</td><td>73913.00</td><td>9</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>checked</td><td>v3: 2,981,199.55 vs 2,981,199.55 [v-numbers…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_dept_activity</code> <span class="tag">extract</span> <span class="n">515 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_dept_activity">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_dept_activity</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">515 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_dept_activity">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Departmental activity tables — permits issued, inspections done, cases handled. Mostly COUNTS rather than dollars, and what is counted differs by department and by year.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1243,7 +1262,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>dept_activity</td><td class="num">2017</td><td>FY2017</td><td>88</td><td><span class="nul">empty</span></td><td>CEMETERY NAME</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>CEMETERY DEPARTMENT - 2017 | NAME AGE CEMET…</td><td>50</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_elections</code> <span class="tag">extract</span> <span class="n">2,012 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_elections">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_elections</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">2,012 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_elections">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Election results as the annual reports print them: candidates, offices and vote counts in ordinal columns.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1284,7 +1303,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>elections</td><td class="num">2024</td><td>FY2024</td><td>173</td><td>1</td><td><span class="nul">empty</span></td><td>BLANKS</td><td><span class="nul">empty</span></td><td>row</td><td>parts sum to the printed total</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>99</td><td>77</td><td>84</td><td>114</td><td>374</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>96 full rows tie, 14 do not; 124 partial no…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_gross_wages</code> <span class="tag">extract</span> <span class="n">3,545 rows</span> <span class="yr">2011 … 2025 (13 years)</span><button class="open" data-t="report_gross_wages">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_gross_wages</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">3,545 rows</span> <span class="yr">2011 … 2025 (13 years)</span><button class="open" data-t="report_gross_wages">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">GROSS WAGES paid per named employee per year, as the annual reports print them. 3,545 rows. Actual pay rather than budget, including overtime and details.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1325,7 +1344,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>gross_wages</td><td class="num">2025</td><td>FY2025</td><td>182</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>WENTWORTH</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2025 GROSS WAGES</td><td>51673.54</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_officials</code> <span class="tag">extract</span> <span class="n">237 rows</span> <span class="yr">2011 … 2024 (13 years)</span><button class="open" data-t="report_officials">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_officials</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">237 rows</span> <span class="yr">2011 … 2024 (13 years)</span><button class="open" data-t="report_officials">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Names and offices of town officials as each annual report lists them. No money.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1366,7 +1385,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>officials</td><td class="num">2023</td><td>FY2023</td><td>167</td><td><span class="nul">empty</span></td><td>Highway</td><td>Vehicle Mtc - Highway</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>APPOINTED OFFICIALS | INSPECTOR OF PLUMBING…</td><td>64</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td>0</td><td>62,750.00</td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_trust_funds</code> <span class="tag">extract</span> <span class="n">642 rows</span> <span class="yr">2011 … 2025 (13 years)</span><button class="open" data-t="report_trust_funds">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_trust_funds</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">642 rows</span> <span class="yr">2011 … 2025 (13 years)</span><button class="open" data-t="report_trust_funds">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Trust fund balances and activity as the annual reports print them.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1407,7 +1426,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>trust_funds</td><td class="num">2020</td><td>FY2020</td><td>41</td><td><span class="nul">empty</span></td><td>LIBRARY FUNDS</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>footnote</td><td>printed below the grand total, which ends t…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TOWN OF LUNENBURG Page 1 of 2 | TRUST FUNDS…</td><td>8129.00</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>28434.40</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>check failed</td><td>v2: 29,909.86 vs 7.00 (+29,902.86) [v-numbe…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_valuation</code> <span class="tag">extract</span> <span class="n">316 rows</span> <span class="yr">2011–2019</span><button class="open" data-t="report_valuation">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_valuation</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">316 rows</span> <span class="yr">2011–2019</span><button class="open" data-t="report_valuation">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Assessed property VALUATION by class, as the annual reports print it. Dollars — and the base the tax levy is computed on.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1448,7 +1467,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>valuation</td><td class="num">2019</td><td>FY2019</td><td>43</td><td><span class="nul">empty</span></td><td>Assessor&#x27;s Account for</td><td>Charges to 6/30/2019</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Valuation and Tax History | Fiscal Year Tax…</td><td>118953.20</td><td>133830.01</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_vital_records</code> <span class="tag">extract</span> <span class="n">96 rows</span> <span class="yr">2011 … 2025 (14 years)</span><button class="open" data-t="report_vital_records">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<details class="t"><summary><span class="srow"><code>report_vital_records</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">96 rows</span> <span class="yr">2011 … 2025 (14 years)</span><button class="open" data-t="report_vital_records">Query table</button></span><span class="gr">one row per printed line</span></summary>
 <p class="ans">Counts of births, marriages and deaths as the annual reports print them.</p>
 <p class="warn">v1..v8 are ORDINALS. Split on <code>status</code>.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1489,11 +1508,11 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>vital_records</td><td class="num">2013</td><td>FY2013</td><td>92</td><td>1</td><td><span class="nul">empty</span></td><td>TOTAL</td><td><span class="nul">empty</span></td><td>subtotal</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>trailing figures</td><td>564</td><td>436</td><td>482</td><td>535</td><td>2017</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>5</td><td><span class="nul">empty</span></td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no check</td><td>no total printed</td></tr>
 </table></div>
 </details>
-</div>
-<div class="stage"><h2>Both at once — the ledger and the model</h2>
+</details>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>17 tables &middot; 5,514 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
-<details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
+<details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
 <p class="ans">Per fund per period: opening balance, revenue in, salaries, other expenditure, encumbered and closing balance. FY2026 period 9 only — and <code>opening_balance</code> is NULL for every one of the 61 funds.</p>
 <p class="warn"> spent and holds.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1515,7 +1534,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>1311</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">22485.91</td><td class="num">0.0</td><td class="num">2910.68</td><td class="num">0.0</td><td class="num">109397.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,683 rows</span> <span class="yr">2011–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,882 rows</span> <span class="yr">2011–2023</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
 <p class="ans">The special revenue schedule READ from the rendered page rather than OCR&#x27;d: balance brought forward, total receipts, total disbursements, balance carried forward, per fund. <strong>The only version of this table that ties to its own printed grand total</strong> — FY2022, 167 funds, all four columns to the penny and every row balancing.</p>
 <p class="warn">A figure read off an image is a READING, not a published number — same status as the OCR&#x27;s. It is trustworthy because the report&#x27;s own printed total and the table&#x27;s own identity both check it, not because a model produced it. Years that do not tie are not in here.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1540,7 +1559,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
-<details class="t"><summary><span class="srow"><code>variance_by_group</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">derived</span> <span class="n">59 rows</span><button class="open" data-t="variance_by_group">Query table</button></span><span class="gr">one row per function group</span></summary>
+<details class="t"><summary><span class="srow"><code>variance_by_group</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">derived</span> <span class="n">59 rows</span><button class="open" data-t="variance_by_group">Query table</button></span><span class="gr">one row per function group</span></summary>
 <p class="ans">Computed, not read: per function group, how far spending ran from budget across years — budgeted, spent, net, gross, churn, and the best and worst years.</p>
 <p class="warn"> across years.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1562,7 +1581,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Tier 3 · accounts</b><span>what one account spent</span></p>
-<details class="t spine"><summary><span class="srow"><code>ledger_snapshot</code> <span class="badge">the spine</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="ledger_snapshot" data-q="SELECT l.fy, l.period, l.account_id, a.name, a.fund_name, a.dept, a.function, a.account_type, a.level, l.original, l.revised, l.expended, l.encumbered, l.available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy, l.period, l.account_id LIMIT 1000">Query table</button></span><span class="gr">one row per account per year per period per document</span></summary>
+<details class="t spine"><summary><span class="srow"><code>ledger_snapshot</code> <span class="tag scope sboth">school + town</span> <span class="badge">the spine</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="ledger_snapshot" data-q="SELECT l.fy, l.period, l.account_id, a.name, a.fund_name, a.dept, a.function, a.account_type, a.level, l.original, l.revised, l.expended, l.encumbered, l.available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy, l.period, l.account_id LIMIT 1000">Query table</button></span><span class="gr">one row per account per year per period per document</span></summary>
 <p class="ans">BOTH revenue and expense accounts from the town&#x27;s MUNIS books, told apart by <code>account_type</code> — revenue is stored NEGATIVE. Six money measures per row: original appropriation, transfers, revised, expended, encumbered, available, plus percent used. Two grains in the same table (<code>level</code>): 67 department roll-ups and 916 detail accounts. FY2026 only, at two periods — 9 carries the department rows, 12 the account rows.</p>
 <p class="warn"> at a moment in the year.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1586,7 +1605,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>0100-14112-521016</td><td class="num">2026</td><td class="num">12</td><td class="num">750.0</td><td class="num">-750.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>account</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">981 rows</span><button class="open" data-t="account">Query table</button></span><span class="gr">one row per MUNIS account</span></summary>
+<details class="t"><summary><span class="srow"><code>account</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">981 rows</span><button class="open" data-t="account">Query table</button></span><span class="gr">one row per MUNIS account</span></summary>
 <p class="ans">The chart of accounts — no money at all. One row per MUNIS account number split into fund, department, org and object, with its DESE function code, its name, whether it is revenue or expense, whether it is a roll-up or a detail account, and the years it appears.</p>
 <p class="warn"> department and function code.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1611,7 +1630,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>0100-01001-432800</td><td>0100</td><td>GENERAL FUND</td><td><span class="nul">NULL</span></td><td>01001</td><td>432800</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>ZN BD FILE</td><td>revenue</td><td>account</td><td class="num">2026</td><td class="num">2026</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>account_names</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">124 rows</span><button class="open" data-t="account_names">Query table</button></span><span class="gr">one row per abbreviated account name</span></summary>
+<details class="t"><summary><span class="srow"><code>account_names</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">124 rows</span><button class="open" data-t="account_names">Query table</button></span><span class="gr">one row per abbreviated account name</span></summary>
 <p class="ans">A decoder, not data: what each ten-character MUNIS abbreviation expands to, and the basis for each expansion.</p>
 <p class="warn">The expansions are ours except where <code>basis</code> says otherwise.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1630,7 +1649,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>300</td><td>519104</td><td><span class="nul">empty</span></td><td>UNIFSPORTS</td><td>Sports uniforms</td><td>district document</td><td>The district budget prints “Replacement of …</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>crosswalk</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">0 rows</span><button class="open" data-t="crosswalk" data-q="SELECT * FROM crosswalk LIMIT 1000">Query table</button></span><span class="gr">one row per budget line mapped to an account</span></summary>
+<details class="t"><summary><span class="srow"><code>crosswalk</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">0 rows</span><button class="open" data-t="crosswalk" data-q="SELECT * FROM crosswalk LIMIT 1000">Query table</button></span><span class="gr">one row per budget line mapped to an account</span></summary>
 <p class="ans">EMPTY, deliberately. It would map a budget line to a ledger account, and it cannot: MUNIS truncates names to ten characters so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> collide. Only the CATEGORY joins, through <code>account.function</code>.</p>
 <p class="warn">Deliberately empty. MUNIS truncates to ten characters so MS GUIDANC and HS GUIDANC collide; only the CATEGORY can be joined, through account.function. Populating this would record an inference as a mapping.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1643,7 +1662,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
 </details>
-<details class="t"><summary><span class="srow"><code>munis_ledger</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="munis_ledger">Query table</button></span><span class="gr">one row per account per report</span></summary>
+<details class="t"><summary><span class="srow"><code>munis_ledger</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="munis_ledger">Query table</button></span><span class="gr">one row per account per report</span></summary>
 <p class="ans">The MUNIS chart of accounts exactly as DELIVERED, before our normalisation — including the report parameters (<code>totals_only</code>, <code>suppress_zero</code>) that decide what a report shows and therefore what is missing from it.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
@@ -1679,7 +1698,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
+<details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag scope sboth">school + town</span> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
 <p class="ans">What each MUNIS accounting period means and how many months of the year had elapsed. Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
 <p class="warn">Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1695,7 +1714,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">12</td><td>June</td><td class="num">12.0</td><td class="num">0</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>fund</code> <span class="tag">dimension</span> <span class="n">68 rows</span><button class="open" data-t="fund">Query table</button></span><span class="gr">one row per MUNIS fund</span></summary>
+<details class="t"><summary><span class="srow"><code>fund</code> <span class="tag scope sboth">school + town</span> <span class="tag">dimension</span> <span class="n">68 rows</span><button class="open" data-t="fund">Query table</button></span><span class="gr">one row per MUNIS fund</span></summary>
 <p class="ans">One row per MUNIS fund: its number, its name, what kind of fund it is and what restricts it. No money.</p>
 <p class="warn"> with its kind and restriction.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1711,7 +1730,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2653</td><td>FY24 FAMILY &amp; COMMUNITY #237</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_assumptions</code> <span class="tag">our model</span> <span class="n">6 rows</span><button class="open" data-t="money_assumptions">Query table</button></span><span class="gr">one row per assumption</span></summary>
+<details class="t"><summary><span class="srow"><code>money_assumptions</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">6 rows</span><button class="open" data-t="money_assumptions">Query table</button></span><span class="gr">one row per assumption</span></summary>
 <p class="ans">Every assumption the money model rests on, what it rests on, and what single document would settle it.</p>
 <p class="warn"> with what would settle it.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1727,7 +1746,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>The pension assessment includes school non-…</td><td>Standard Massachusetts practice: teachers i…</td><td>The reason the pension is treated as a scho…</td><td>The WRRS annual actuarial valuation, which …</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_classification</code> <span class="tag">our model</span> <span class="n">252 rows</span><button class="open" data-t="money_classification">Query table</button></span><span class="gr">one row per revenue account or fund or department</span></summary>
+<details class="t"><summary><span class="srow"><code>money_classification</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">252 rows</span><button class="open" data-t="money_classification">Query table</button></span><span class="gr">one row per revenue account or fund or department</span></summary>
 <p class="ans">Our model, not measurement. One row per revenue account, fund or department: what we classified it as, HOW that was established, and WHY. 252 rows covering every money node in the school and town diagrams.</p>
 <p class="warn"><code>how</code> and <code>why</code> carry the basis so a classification can be argued with.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1746,7 +1765,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>report_receipt</td><td>STUDENTPARKINGFEES</td><td>local</td><td>STUDENT PARKING FEES</td><td>general_fund_revenue</td><td>residual</td><td>Local receipts — a residual: fees, permits,…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_edges</code> <span class="tag">our model</span> <span class="n">11 rows</span><button class="open" data-t="money_edges">Query table</button></span><span class="gr">one row per traced edge</span></summary>
+<details class="t"><summary><span class="srow"><code>money_edges</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">11 rows</span><button class="open" data-t="money_edges">Query table</button></span><span class="gr">one row per traced edge</span></summary>
 <p class="ans">Where a restricted fund&#x27;s money is PERMITTED to go, with the statute or grant award that permits it. An edge is a presumption about purpose, never an observation of spending.</p>
 <p class="warn">An edge is the statute or grant award — a PRESUMPTION about purpose, never an observation of spending.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1762,7 +1781,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>State teachers’ pension system</td><td>District teaching staff</td><td>unknown</td><td>Not appropriated by Lunenburg, not in our a…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag">our model</span> <span class="n">14 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
+<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">14 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
 <p class="ans">The honest list of what CANNOT be answered — per side (money in, money out), what is missing and why the published documents do not close it.</p>
 <p class="warn">This table is the honest list of what cannot be answered.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1777,7 +1796,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>money_out</td><td>School share of the pension</td><td>inside WRRS · town and school staff togethe…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>rate_register</code> <span class="tag">fact</span> <span class="n">62 rows</span> <span class="yr">2024–2029</span><button class="open" data-t="rate_register">Query table</button></span><span class="gr">one row per rate</span></summary>
+<details class="t"><summary><span class="srow"><code>rate_register</code> <span class="tag scope sboth">school + town</span> <span class="tag">fact</span> <span class="n">62 rows</span> <span class="yr">2024–2029</span><button class="open" data-t="rate_register">Query table</button></span><span class="gr">one row per rate</span></summary>
 <p class="ans">Every rate and fee the model uses: the value, what kind of value it is, when it was set, when it expires, its source document and cell reference, and whether the model actually uses it.</p>
 <p class="warn"> with where it was set.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1802,7 +1821,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2027</td><td>contract_cola</td><td>Paraprofessionals</td><td>cost-of-living adjustment to the salary sca…</td><td>2.0</td><td>percent</td><td><span class="nul">empty</span></td><td>June 30, 2028</td><td>Lunenburg school employee contracts — Parap…</td><td>contracts/CONTRACTS.md</td><td>Paraprofessionals | FY26–FY28 | 3.0% · 2.0%…</td><td>recorded</td><td>deliberately not used — the line has never …</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag">provenance</span> <span class="n">12 rows</span> <span class="yr">2011–2022</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">13 rows</span> <span class="yr">2011–2023</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
 <p class="ans">The GRAND TOTAL each annual report PRINTS for the special revenue schedule, quoted with its page. Four columns.</p>
 <p class="warn">This is the independent check on <code>special_revenue_read</code>, so it must be read off the page and never computed from our own rows — the OCR misread this very figure by $1,010 and the reconciliation was measured against it for months.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1818,11 +1837,11 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>quote</th></tr>
 <tr><td class="num">2015</td><td>FY2015</td><td>33</td><td>2599893.63</td><td>5285016.77</td><td>5180429.68</td><td>2704480.72</td><td>GRAND TOTAL row, page 33</td></tr>
-<tr><td class="num">2020</td><td>FY2020</td><td>35</td><td>4576323.49</td><td>6465186.53</td><td>5445461.13</td><td>5596048.89</td><td>GRAND TOTAL row, page 35</td></tr>
-<tr><td class="num">2022</td><td>FY2022</td><td>37</td><td>6414742.67</td><td>9235154.01</td><td>7004408.01</td><td>8645488.67</td><td>GRAND TOTAL row, page 37</td></tr>
+<tr><td class="num">2021</td><td>FY2021</td><td>35</td><td>5596048.89</td><td>7088091.52</td><td>6269397.74</td><td>6414742.67</td><td>GRAND TOTAL row, page 35</td></tr>
+<tr><td class="num">2023</td><td>FY2023</td><td>43</td><td>8663349.91</td><td>9102807.73</td><td>7735057.86</td><td>10031099.78</td><td>GRAND TOTAL row, page 43</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>stated_figure</code> <span class="tag">fact</span> <span class="n">2 rows</span> <span class="yr">2025–2025</span><button class="open" data-t="stated_figure">Query table</button></span><span class="gr">one row per figure the town stated</span></summary>
+<details class="t"><summary><span class="srow"><code>stated_figure</code> <span class="tag scope sboth">school + town</span> <span class="tag">fact</span> <span class="n">2 rows</span> <span class="yr">2025–2025</span><button class="open" data-t="stated_figure">Query table</button></span><span class="gr">one row per figure the town stated</span></summary>
 <p class="ans">Figures the town or district ASSERTED in their own words, with the quote, who said it, when, and what it supersedes. Claims, kept as claims.</p>
 <p class="warn"> with the quote.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1844,11 +1863,11 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2025</td><td>school_surplus</td><td class="num">603885.97</td><td>2025-09-17</td><td>Business Administrator (Mr. McNamara) to th…</td><td>close</td><td>sources/meetings/text/school-committee/2025…</td><td>line 123</td><td>the surplus number has gone up to $603,885.…</td><td class="num">582115.44</td><td>The $21,770.53 difference is encumbrances r…</td></tr>
 </table></div>
 </details>
-</div>
-<div class="stage"><h2>The state&#x27;s figures</h2>
+</details>
+<details class="scope"><summary class="scopehead"><b>The state&#x27;s figures</b><span>2 tables &middot; 5,964 rows</span></summary>
 <p class="cap">DESE&#x27;s own published measures, for Lunenburg and every other district. All-funds, so NOT comparable with a general fund appropriation.</p>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>dese_measure</code> <span class="tag">fact</span> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span><button class="open" data-t="dese_measure">Query table</button></span><span class="gr">one row per district per year per measure</span></summary>
+<details class="t"><summary><span class="srow"><code>dese_measure</code> <span class="tag scope sstate">state</span> <span class="tag">fact</span> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span><button class="open" data-t="dese_measure">Query table</button></span><span class="gr">one row per district per year per measure</span></summary>
 <p class="ans">The state&#x27;s published measures for EVERY Massachusetts district, per year: enrollment, per-pupil spending, selected populations. Each value carries whether it reconciles to DESE&#x27;s own printed total.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>lea</code></td><td class="ty">TEXT</td><td>The state&#x27;s district code.</td></tr>
@@ -1867,7 +1886,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>06730000</td><td>Groton-Dunstable</td><td class="num">2012</td><td>Expenditures Per Pupil</td><td>Teachers</td><td class="num">4483.0</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>dese_radar</code> <span class="tag">fact</span> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span><button class="open" data-t="dese_radar">Query table</button></span><span class="gr">one row per district per year per measure</span></summary>
+<details class="t"><summary><span class="srow"><code>dese_radar</code> <span class="tag scope sstate">state</span> <span class="tag">fact</span> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span><button class="open" data-t="dese_radar">Query table</button></span><span class="gr">one row per district per year per measure</span></summary>
 <p class="ans">DESE&#x27;s ALL-FUNDS per-pupil expenditure figures for every district. All funds means grants and revolving funds are included, so these are NOT comparable with a general fund appropriation.</p>
 <p class="warn">All-funds, so NOT comparable with the town&#x27;s general fund appropriation.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1887,11 +1906,11 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>07350000</td><td>North Middlesex</td><td class="num">2019</td><td>Expenditures Per Pupil</td><td>Operations and Maintenance</td><td>1513</td><td>yes</td><td>sources/state-dese/radar-district-compariso…</td></tr>
 </table></div>
 </details>
-</div>
-<div class="stage"><h2>About the archive itself</h2>
+</details>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>9 tables &middot; 5,941 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>annual_report_catalogue</code> <span class="tag">provenance</span> <span class="n">863 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_catalogue">Query table</button></span><span class="gr">one row per table per annual report</span></summary>
+<details class="t"><summary><span class="srow"><code>annual_report_catalogue</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">863 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_catalogue">Query table</button></span><span class="gr">one row per table per annual report</span></summary>
 <p class="ans">A catalogue of what EXISTS, not of what has been extracted. Every table found by reading all sixteen annual reports end to end: its printed heading verbatim, its pages, its grain, its printed total, and whether it is extractable.</p>
 <p class="warn">A catalogue of what EXISTS, not of what has been extracted.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1918,7 +1937,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2018</td><td>FY2018</td><td>4125-fy-2018-annual-town-report.pdf</td><td>Fire department calls for service, 2018</td><td><span class="nul">empty</span></td><td>96</td><td>Calendar 2018 fire department run volume sp…</td><td>one call category</td><td>category | count</td><td>Two side-by-side label/number pairs embedde…</td><td>stated in the prose above it: &#x27;your Fire De…</td><td>4</td><td>clean</td><td>Fires &amp; Hazardous Conditions 452, Emergency…</td><td>calls department fire service</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>annual_report_contents</code> <span class="tag">provenance</span> <span class="n">199 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_contents">Query table</button></span><span class="gr">one row per extracted table</span></summary>
+<details class="t"><summary><span class="srow"><code>annual_report_contents</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">199 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_contents">Query table</button></span><span class="gr">one row per extracted table</span></summary>
 <p class="ans">What was actually READ: which tables, from which pages, how many figures, and whether the extract is checkable against a printed total.</p>
 <p class="warn"> from which pages</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1943,7 +1962,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2025</td><td>enterprise</td><td>25,35,53,64,67,140,142-143,152</td><td>9</td><td>8</td><td>96</td><td>155</td><td>6</td><td>layout+plain</td><td><span class="nul">empty</span></td><td>no</td><td>fy, fund, line, amount</td><td>one row per enterprise fund line per year</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>annual_report_survey</code> <span class="tag">provenance</span> <span class="n">2,751 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_survey">Query table</button></span><span class="gr">one row per page surveyed</span></summary>
+<details class="t"><summary><span class="srow"><code>annual_report_survey</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">2,751 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_survey">Query table</button></span><span class="gr">one row per page surveyed</span></summary>
 <p class="ans">A measurement of PAGES, not of figures: per page, the extraction mode, how many gutters and money tokens it holds, how many characters and rows. This is how the right instrument is chosen per page.</p>
 <p class="warn">A survey, not data: it measures pages, it does not read figures.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1966,7 +1985,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2022</td><td>4129-fy-2022-annual-town-report.pdf</td><td>154</td><td>layout</td><td>0</td><td>0</td><td>3297</td><td>0</td><td>town_meeting</td><td><span class="nul">empty</span></td><td>text, no figures</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>column_glossary</code> <span class="tag">provenance</span> <span class="n">139 rows</span><button class="open" data-t="column_glossary">Query table</button></span><span class="gr">one row per DISTINCT column name across the whole database</span></summary>
+<details class="t"><summary><span class="srow"><code>column_glossary</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">139 rows</span><button class="open" data-t="column_glossary">Query table</button></span><span class="gr">one row per DISTINCT column name across the whole database</span></summary>
 <p class="ans">One row per DISTINCT column name across the whole database: what it means, its unit, whether it is published or ours, and the caution attached to it.</p>
 <p class="warn">Keyed on the NAME, not on table plus name, because <code>v1</code> and <code>status</code> mean the same dangerous thing everywhere they appear. Where a name genuinely differs by table, the table entry says so.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1983,7 +2002,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>path</td><td>Where our copy lives in the archive.</td><td><span class="nul">empty</span></td><td>ours</td><td><span class="nul">empty</span></td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>dataset_document</code> <span class="tag">provenance</span> <span class="n">225 rows</span><button class="open" data-t="dataset_document">Query table</button></span><span class="gr">one row per dataset per document</span></summary>
+<details class="t"><summary><span class="srow"><code>dataset_document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">225 rows</span><button class="open" data-t="dataset_document">Query table</button></span><span class="gr">one row per dataset per document</span></summary>
 <p class="ans">The join between an extracted dataset and the document it came from: which pages, how many rows, whether it reconciled, and the publisher&#x27;s own label, size and checksum.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td><td>Which extract family this row belongs to.</td></tr>
@@ -2006,7 +2025,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>report-enrollment-mcas</td><td>FY2018</td><td>13</td><td>112,125,137,139,143</td><td>5</td><td>0</td><td>0</td><td>4125-fy-2018-annual-town-report.pdf</td><td>FY 2018 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>364a1138df754668ee59a499cf3d76b6ac006d47a4a…</td><td>8052398</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>document</code> <span class="tag">provenance</span> <span class="n">616 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">616 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">One row per source document: its archive path, how it reached us, its publisher URL, whether that link still opens (<code>link_state</code>), whether our copy still matches the publisher&#x27;s (<code>copy_state</code>), and both checksums. Also which columns a workbook HIDES from a reader.</p>
 <p class="warn"><code>link_state</code> says whether the publisher&#x27;s copy still opens; <code>copy_state</code> whether it still matches ours.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -2029,7 +2048,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>sources/town-budget/text/a106-fy24-finance-…</td><td>sources/town-budget/text/a106-fy24-finance-…</td><td>forward</td><td>budget</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>e5b4f1ab3fe6bf3e0a1424ba2e318db988221897dc4…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag">provenance</span> <span class="n">553 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>
+<details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">553 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>
 <p class="ans">What is planned to be read out of the annual reports and what state each item is in — including items deliberately not attempted, and why.</p>
 <p class="warn"> and what state each is in.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -2053,7 +2072,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>monty_tech</td><td class="num">2024</td><td>FY2024</td><td>118</td><td>OUR SCHOOL COMMUNITY</td><td>Monty Tech member towns</td><td>one member town</td><td><span class="nul">empty</span></td><td>no</td><td>clean</td><td>18</td><td>&#x27;Barre&#x27; is spelled correctly this year (FY2…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>report_anomalies</code> <span class="tag">provenance</span> <span class="n">521 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_anomalies">Query table</button></span><span class="gr">one row per anomaly</span></summary>
+<details class="t"><summary><span class="srow"><code>report_anomalies</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">521 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_anomalies">Query table</button></span><span class="gr">one row per anomaly</span></summary>
 <p class="ans">Things found while reading the annual reports that need a person: a total that does not tie, a heading that moved, a column that vanished.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
@@ -2072,7 +2091,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag">provenance</span> <span class="n">74 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">74 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -2092,7 +2111,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>staff_roster_entries</td><td>fact</td><td>school</td><td><span class="nul">empty</span></td><td>one row per person per year</td><td>PEOPLE — one row per name the town printed,…</td><td> name by name</td><td><span class="nul">empty</span></td></tr>
 </table></div>
 </details>
-</div>
+</details>
 <div class="stage alt"><h2>Views — the joins already written for you</h2>
 <p class="cap">A view is the safe way to ask a question that needs two tables. Each one carries the splitting columns above in its own <code>WHERE</code>, so it cannot be got wrong the way a hand-written join can.</p>
 <div class="scroll"><table><tr><th>view</th><th>columns</th></tr>

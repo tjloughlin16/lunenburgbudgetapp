@@ -19,7 +19,12 @@ h1{font-size:25px;line-height:1.15;margin:8px 0 0;letter-spacing:-.02em}
 pre.doc{background:var(--card);border:1px solid var(--grid);border-radius:10px;
   padding:16px 15px;margin:18px 0 0;overflow-x:auto;
   font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
-  white-space:pre;tab-size:2}
+  /* pre-WRAP, not pre. The document is unaltered either way -- this only decides
+     where the browser breaks a line too long for the screen. `pre` puts a 36KB
+     document behind a horizontal scrollbar on a phone; `pre-wrap` wraps at spaces
+     and leaves every character in place. overflow-x stays for a token with no
+     space in it, such as a long account string. */
+  white-space:pre-wrap;tab-size:2}
 /* Injected by scripts/build_reference_pages.py. Not part of the source document. */
 .lbp-bar{display:block;margin:0;padding:0;background:#f1eee8;
   border-bottom:1px solid #dcd7ce;color:#5f5a51;

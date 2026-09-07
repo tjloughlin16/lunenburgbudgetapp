@@ -232,6 +232,10 @@ ROLE_LABEL = {
 # is the problem TJ reported.
 SPINE = ('ledger_snapshot', 'budget_figure', 'workbook_figure')
 
+# Short enough to sit on a row without pushing the row count off a phone.
+SCOPE_TAG = {'school': 'school', 'town': 'town', 'both': 'school + town',
+             'state': 'state', 'archive': 'archive'}
+
 
 def semantics():
     """Load both CSVs. Returns (per-table dict, per-column dict)."""
@@ -460,7 +464,27 @@ def render(c):
 
     # ---- the inventory
     for role, title, blurb, members in fams:
-        a(f'<div class="stage"><h2>{esc(title)}</h2>')
+        # COLLAPSED BY DEFAULT. TJ: "I got lost in what i was looking at."
+        #
+        # Seventy-four tables down one scroll is a page with no shape. Closed, the same
+        # page opens as five lines — whose money, and how many tables — so the structure
+        # is the first thing you see and the contents are the second. That is the whole
+        # of the fix: the reader chooses a section before reading one.
+        #
+        # The row count goes in the summary because it is the only number that helps you
+        # decide whether to open it.
+        n_rows_here = sum(c.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
+                          for t in members)
+        # CLOSED. Open, this is the same page TJ got lost in with a caret added. Closed,
+        # it opens as five lines and one tap gets you the section you meant.
+        #
+        # It costs nothing to a machine: a <details> keeps its contents in the DOM whether
+        # open or shut, so the crawler, the GitHub mirror and any agent fetching the HTML
+        # see every table either way. Only a human's scroll is shortened.
+        a(f'<details class="scope"><summary class="scopehead">'
+          f'<b>{esc(title)}</b>'
+          f'<span>{len(members)} tables &middot; {n_rows_here:,} rows</span>'
+          f'</summary>')
         if blurb:
             a(f'<p class="cap">{md(" ".join(blurb.split()))}</p>')
         seen_tier = None
@@ -488,7 +512,19 @@ def render(c):
             dq = sem.get('default_query') or ''
             qattr = ' data-q="%s"' % esc(dq) if dq else ''
             tier = sem.get('tier') or ''
-            tags = ' <span class="badge">the spine</span>' if spine else ''
+            # SCOPE ON THE ROW. TJ: "i cant tell if total_expenses_history is school
+            # only or town." It is school — the district's own stated totals — and the
+            # page knew, because it groups by scope. But a group heading is only visible
+            # at the moment you scroll past it; a reader looking at one table in a long
+            # list, or at one row in the query modal, has nothing.
+            #
+            # Renaming the tables would also fix it and costs far more: these names are
+            # the CSV filenames, they are in D1, in /api/query, in the question bank and
+            # quoted in the analyses. A badge fixes a display problem without touching an
+            # interface.
+            tags = ' <span class="tag scope s%s">%s</span>' % (
+                esc(sem['scope']), esc(SCOPE_TAG[sem['scope']]))
+            tags += ' <span class="badge">the spine</span>' if spine else ''
             if tier:
                 tags += ' <span class="tag tier t%s" title="%s">%s</span>' % (
                     tier, esc(TIERS[tier][1]), esc(TIERS[tier][0]))
@@ -534,7 +570,7 @@ def render(c):
                 a('<p class="cap sm">No rows. That is the honest state of this table, '
                   'not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>')
             a('</details>')
-        a('</div>')
+        a('</details>')
 
     # ---- views
     a('<div class="stage alt"><h2>Views — the joins already written for you</h2>')
@@ -688,6 +724,12 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
   border:1px solid var(--grid); color:var(--muted); padding:1px 6px; border-radius:20px;
   white-space:nowrap }}
 .tag.tier {{ border-color:var(--hi); color:var(--hi) }}
+.tag.scope {{ font-weight:700 }}
+.tag.scope.sschool {{ border-color:var(--traced); color:var(--traced) }}
+.tag.scope.stown {{ border-color:var(--hi); color:var(--hi) }}
+/* `school + town` is the one that matters most: it means the table genuinely carries
+   both and splitting it would invent a division the source does not make. */
+.tag.scope.sboth {{ border-color:var(--ink); color:var(--ink) }}
 .tag.tier.t3 {{ border-color:var(--traced); color:var(--traced) }}
 .badge {{ font-size:10px; letter-spacing:.08em; text-transform:uppercase;
   background:var(--traced); color:var(--bg); padding:1px 6px; border-radius:20px }}
@@ -699,6 +741,19 @@ details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
 /* A GROUP HEADING, not a caption. It was 11px muted uppercase — quieter than the table
    names under it, so a new group read as a stray label rather than a break. A heading
    that is smaller than its own contents is not a heading. */
+.scope {{ background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:0 15px; margin:16px 0 }}
+.scope > summary {{ list-style:none; cursor:pointer; padding:15px 0 }}
+.scope > summary::-webkit-details-marker {{ display:none }}
+.scopehead b {{ font-size:19px; letter-spacing:-.02em }}
+.scopehead span {{ display:block; font-size:12px; color:var(--muted); margin-top:2px;
+  font-family:ui-monospace,Menlo,monospace }}
+/* A closed section has to look closed. The caret is the only thing on the row that
+   says the heading is a control rather than a label. */
+.scopehead::after {{ content:'\25BE'; float:right; color:var(--muted);
+  font-size:13px; margin-top:-18px }}
+.scope:not([open]) > .scopehead::after {{ content:'\25B8' }}
+.scope[open] {{ padding-bottom:15px }}
 .tierhead {{ margin:30px 0 10px; padding-top:16px;
   border-top:2px solid var(--ink) }}
 .tierhead b {{ display:block; font-size:16px; font-weight:700; letter-spacing:-.01em;

@@ -50,6 +50,56 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 READ = os.path.join(ROOT, 'sources', 'data', 'special-revenue-read.csv')
 TOTALS = os.path.join(ROOT, 'sources', 'data', 'special-revenue-printed-totals.csv')
 COLS = ('forward', 'receipts', 'disbursements', 'carried')
+
+# CHAIN BREAKS WE HAVE EXAMINED, with the amount and what explains it.
+#
+# The year chain assumes a fund's closing balance is next year's opening balance. Usually
+# it is. When it is not, that is a fact about the TOWN'S BOOKS rather than an error in
+# this dataset — but it must never be assumed to be, so an exception is recorded only with
+# the amount pinned and a decomposition that accounts for all of it.
+#
+# The amount is matched EXACTLY. If the break changes by a penny the check fails again,
+# because a new discrepancy hiding inside an old allowance is exactly what an exception
+# list is for preventing.
+CHAIN_EXCEPTIONS = {
+    ('FY2022', 'FY2023'): (
+        17861.24,
+        'The town re-cut its grant funds BY YEAR between these reports — `Title I #305` '
+        'becomes `Title I #305 - FY22`, `- FY21`, `- FY20`, and the same for PL 94-142, '
+        'Title IV, Teacher Quality and others. BOTH YEARS TIE TO THEIR OWN PRINTED GRAND '
+        'TOTAL, so neither reading is in doubt: the two reports disagree with each other. '
+        'Nothing here establishes WHY the town restated, and this dataset does not '
+        'speculate.'),
+}
+
+
+def decompose(rows, a, b):
+    """Account for a chain break, per fund, COMPUTED — never typed.
+
+    The first version of this note carried the per-fund figures in its prose and one of
+    them was wrong: it said $14,859.26 against the Firefighter Safety Equipment Grant
+    where the answer is $14,869.10. The cause is worth more than the correction. The
+    diagnostic built `{fund: amount}` as a dict comprehension, and FY2023 prints TWO rows
+    named `Firefighter Safety Equipment Grant` — $9.84 and $14,869.10 — so the second
+    silently replaced the first. A duplicate key in a source nobody promised was unique.
+
+    Then the wrong figure was typed into a docstring, where nothing could ever check it.
+    Rule 2 exists for exactly this, and an agent reading the same data found it.
+    """
+    def bag(fy, col):
+        out = {}
+        for r in rows:
+            if r['fy'] == str(fy):
+                # `+=`, not assignment: fund names are NOT unique within a year.
+                out[r['fund']] = out.get(r['fund'], 0.0) + num(r[col])
+        return out
+    was, now = bag(a, 'carried'), bag(b, 'forward')
+    added = sum(v for k, v in now.items() if k not in was)
+    dropped = sum(v for k, v in was.items() if k not in now)
+    restated = sum(now[k] - was[k] for k in set(was) & set(now))
+    biggest = max(((now[k] - was[k], k) for k in set(was) & set(now)),
+                  key=lambda t: abs(t[0]), default=(0.0, ''))
+    return added, dropped, restated, biggest
 TOL = 0.02
 
 
@@ -122,6 +172,21 @@ def main():
         forward = sum(num(r['forward']) for r in by_fy[b])
         d = carried - forward
         ok = abs(d) <= TOL
+        # An examined break, matched on the exact amount.
+        known = CHAIN_EXCEPTIONS.get((f'FY{a}', f'FY{b}'))
+        if not ok and known and abs(d + known[0]) <= TOL:
+            print(f'  note  FY{a} carried {carried:>15,.2f} -> FY{b} forward '
+                  f'{forward:>15,.2f}  {d:+,.2f}')
+            print(f'        EXAMINED — {known[1]}')
+            added, dropped, restated, (big, bigname) = decompose(rows, a, b)
+            print(f'        computed: +{added:,.2f} in funds FY{b} opens and FY{a} did '
+                  f'not carry, -{dropped:,.2f} in funds FY{a} carried and FY{b} does '
+                  f'not open,')
+            print(f'                  {restated:+,.2f} restated across funds in both '
+                  f'(largest: {bigname}, {big:+,.2f}).')
+            print(f'                  residual {added - dropped + restated - known[0]:+,.2f}')
+            linked += 1
+            continue
         fails_here = 0 if ok else 1
         globals()['_chain_fails'] = globals().get('_chain_fails', 0) + fails_here
         linked += 1
@@ -134,9 +199,14 @@ def main():
     print(f'\n{len(editions)} edition(s) checked, {fails} failure(s)')
     if fails:
         sys.exit(1)
-    print('Every column ties to the total the report itself prints, every row satisfies\n'
-          'the identity the table states, and consecutive years chain. Three independent\n'
-          'checks, all passing.')
+    n_ex = sum(1 for k in CHAIN_EXCEPTIONS)
+    print('Every column ties to the total the report itself prints and every row satisfies')
+    print('the identity the table states. Consecutive years chain, with %d examined'
+          % n_ex if n_ex else 'the identity the table states, and consecutive years chain.')
+    if n_ex:
+        print('exception%s above — a break the town made, pinned to the penny, not one we'
+              % ('' if n_ex == 1 else 's'))
+        print('are ignoring.')
 
 
 if __name__ == '__main__':

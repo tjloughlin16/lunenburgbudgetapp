@@ -68,6 +68,13 @@ NOT sticky: `schema.html` has a `position:fixed` modal at `z-index:9` and sticky
 headers at `top:0`, and a second sticky element at the top of the viewport would fight
 both.
 
+One thing it deliberately does not do: four of the eight pages zero `body { margin }` and
+four do not, so on those four the bar sits inside the browser's default 8px gutter rather
+than flush to the edge. Every way of removing that difference either changes the page's
+own layout (injecting `body{margin:0}` narrows the gutter on a phone by 8px on four
+documents) or relies on `100vw`, which overflows whenever a scrollbar is present. An 8px
+inset reads as a margin; a horizontal scrollbar reads as a bug.
+
 WHY THE TWO MARKDOWN FILES ARE NOT TRANSFORMED, AND WHAT THEY GET INSTEAD
 
 `LEDGER-STRUCTURE.md` and `MONEY-NODES.md` are Markdown. Injecting HTML into them would
@@ -382,7 +389,12 @@ h1{font-size:25px;line-height:1.15;margin:8px 0 0;letter-spacing:-.02em}
 pre.doc{background:var(--card);border:1px solid var(--grid);border-radius:10px;
   padding:16px 15px;margin:18px 0 0;overflow-x:auto;
   font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
-  white-space:pre;tab-size:2}
+  /* pre-WRAP, not pre. The document is unaltered either way -- this only decides
+     where the browser breaks a line too long for the screen. `pre` puts a 36KB
+     document behind a horizontal scrollbar on a phone; `pre-wrap` wraps at spaces
+     and leaves every character in place. overflow-x stays for a token with no
+     space in it, such as a long account string. */
+  white-space:pre-wrap;tab-size:2}
 %(bar_css)s</style>
 %(bar)s<div class="wrap">
 <header>

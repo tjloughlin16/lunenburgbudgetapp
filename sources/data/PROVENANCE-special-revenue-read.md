@@ -53,10 +53,51 @@ the column total unchanged.
 
 | edition | funds | rows tie | columns tie |
 |---|---:|---|---|
-| FY2022 | 167 | 167 of 167 | 4 of 4, to the penny |
+| FY2011 | 159 | all | 4 of 4, to the penny |
+| FY2012 | 127 | all | 4 of 4, to the penny |
+| FY2013 | 126 | all | 4 of 4, to the penny |
+| FY2014 | 130 | all | 4 of 4, to the penny |
+| FY2015 | 124 | all | 4 of 4, to the penny |
+| FY2016 | 130 | all | 4 of 4, to the penny |
+| FY2017 | 128 | all | 4 of 4, to the penny |
+| FY2018 | 135 | all | 4 of 4, to the penny |
+| FY2019 | 143 | all | 4 of 4, to the penny |
+| FY2020 | 152 | all | 4 of 4, to the penny |
+| FY2021 | 162 | all | 4 of 4, to the penny |
+| FY2022 | 167 | all | 4 of 4, to the penny |
+| FY2023 | 199 | all | 4 of 4, to the penny |
 
-Fifteen editions remain. The schedule runs pages 33–37 in FY2022; the pages differ by year
-and are named in `annual_report_catalogue`.
+**13 consecutive editions, FY2011–FY2023, 1,882 fund-years.** Every one ties
+to its own printed GRAND TOTAL on all four columns and satisfies the row identity, and
+consecutive years chain — with one examined exception, FY2022→FY2023, where the town
+re-cut its grant funds by year and restated $17,861.24. That break is recorded in
+`verify_special_revenue_read.py` with the amount pinned exactly, and its decomposition is
+**computed at check time rather than written down**, because the first version of that
+note carried a per-fund figure in its prose and the figure was wrong.
+
+## FY2024 and FY2025 are NOT in this dataset, and should not be
+
+They are a different table, not a later edition of this one. FY2024 prints
+`Special Revenue Fund Balance Detail (Unaudited)` with eight columns; FY2025 prints five.
+Neither prints FORWARD, TOTAL RECEIPTS or TOTAL DISBURSEMENTS.
+
+- **They are a stock, not a flow.** Nothing in either report says what a fund received or
+  spent that year.
+- **The row identity does not exist.** `forward + receipts − disbursements = carried` has
+  no counterpart, so the check that makes this dataset worth trusting cannot be run. What
+  remains is a column total — the weaker half, and on its own it proves the addition and
+  nothing about the rows.
+- **The population changed.** Water, Sewer, Sewer Betterment, Solid Waste/Recycling and
+  PEG Access — enterprise funds that sat inside the FY2011–FY2023 schedule — are absent.
+  So the chain is not merely broken, it is **not computable**.
+- **There is no key.** FY2011–FY2023 print no fund numbers; FY2025 truncates fund names to
+  about ten characters (`FY25117SOA`, `ARTTURFREV`). And the number is not unique either —
+  FY2024 prints `2404` twice.
+
+They belong in a separate balance-detail dataset keyed on fund number and checked against
+its own printed total. Appending them here would put rows into a schema whose column
+meanings they do not share, and would quietly weaken the stated guarantee for all thirteen
+years that do hold it.
 
 ## How a year is added
 
