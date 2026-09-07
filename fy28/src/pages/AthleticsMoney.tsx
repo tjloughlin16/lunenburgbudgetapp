@@ -95,6 +95,18 @@ type Payload = {
   }[]
 }
 
+/** The gap register writes emphasis as `**like this**`, because it is a CSV read by the
+ *  API and by the request letter as well as by this page. Rendered here by splitting on
+ *  the marker rather than by setting HTML: the field is data, and data does not get to
+ *  choose what tags a page emits. */
+function Marked({ text }: { text: string }) {
+  return (
+    <>{text.split(/\*\*(.+?)\*\*/g).map((part, i) => (
+      i % 2 ? <strong key={i}>{part}</strong> : <span key={i}>{part}</span>
+    ))}</>
+  )
+}
+
 function H2({ id, children }: { id?: string; children: React.ReactNode }) {
   return (
     <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
@@ -498,10 +510,12 @@ export function AthleticsMoney() {
         <Participation rows={d.participation} totals={d.participation_totals} />
       </div>
       <p className="text-[12px] mt-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
-        {d.negatives.length} rows in the workbook are <em>negative</em> &mdash; out-of-district
-        athletes subtracted back out, {d.negatives.map(n => `${n.athletes} in ${fy(n.fy)}`).join(', ')}.
-        They are counted the way the sheet counts them, which means a season total is a net
-        figure and not a headcount of bodies.
+        {d.negatives.length} rows in the workbook are <em>negative</em> &mdash;
+        out-of-district athletes subtracted back out, {d.negatives.reduce((a, n) => a + n.athletes, 0)}{' '}
+        across the three years, all of them in{' '}
+        {[...new Set(d.negatives.map(n => n.season))].join(' and ')}. They are counted the
+        way the sheet counts them, which means a season total is a net figure and not a
+        headcount of bodies.
       </p>
       <NotShown>
         <p>
@@ -722,13 +736,13 @@ export function AthleticsMoney() {
                 style={{ color: 'var(--text-muted)' }}>{g.side.replace('_', ' ')}</p>
               <p className="text-[14.5px] font-semibold leading-snug mt-1">{g.what}</p>
               <p className="text-[13px] leading-relaxed mt-1.5"
-                style={{ color: 'var(--text-secondary)' }}>{why.trim()}</p>
+                style={{ color: 'var(--text-secondary)' }}><Marked text={why.trim()} /></p>
               {closes ? (
                 <p className="text-[13px] leading-relaxed mt-2 pt-2 border-t"
                   style={{ borderColor: 'var(--grid)', color: 'var(--text-secondary)' }}>
                   <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
                     Closed by:
-                  </span>{' '}{closes.trim()}
+                  </span>{' '}<Marked text={closes.trim()} />
                 </p>
               ) : null}
             </div>

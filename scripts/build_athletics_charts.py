@@ -489,7 +489,7 @@ def build():
     keep = [g for g in gaps
             if any(w in (g['what'] + ' ' + g['why']).lower()
                    for w in ('athletic', 'revolving', 'special revenue fund',
-                             'end of year financial report'))]
+                             'end of year financial report', 'play sports'))]
     if not keep:
         fail('no money_gaps row mentions athletics — rule 7c says a limit this page hits '
              'is registered there, and the join that reads them back matched nothing')
