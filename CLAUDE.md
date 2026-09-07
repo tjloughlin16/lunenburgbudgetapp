@@ -288,11 +288,26 @@ resulting share was eight points too high in the document that tells everyone el
 type a figure into prose. See `/state-aid`, where both are computed.
 
 The model handles this on the revenue side, which is right -- but note what it grows:
-**total state aid at 2%, not Chapter 70 alone.** `model/finance.py` carries the aid as one
-`state_aid` field, so the 2% applies to the whole cherry sheet. Measured Chapter 70
-receipts grew 4.47% a year over FY2014-FY2022, actual to actual -- a different quantity
-over a different span, so it is not a correction to the assumption, but it is the first
-evidence the archive holds bearing on a rate `show-your-work.md` records as `BARE`.
+**total state aid, not Chapter 70 alone.** `model/finance.py` carries the aid as one
+`state_aid` field, so the rate applies to the whole cherry sheet.
+
+**That rate was 2% with nothing behind it, and it is now derived.** The obstacle was rule 1
+in its purest form: the only measured series anybody had was Chapter 70 RECEIPTS, actual to
+actual, and it may not be differenced against a forward rate on a budgeted TOTAL. Different
+quantity, different stage. So a like-for-like series had to be built -- and it existed
+unread, in the town's own `Subtotal State Aid` line, **twenty-three consecutive budget
+years, FY2005-FY2027**, mostly in a single worksheet.
+
+The rate is the MEDIAN annual step of that series, not its compound rate: the compound rate
+is carried by four policy step-years of +10% or more, and projecting it forward assumes a
+legislature. See `notes/findings/STATE-AID-RATE.md` and the generated, `--check`ed series
+beside it. Confidence is moderate rather than high, because Chapter 70 is most of the base
+and it is a FORMULA whose inputs move independently, not a trend.
+
+**The lesson generalises past this rate.** A rate can go unexamined for years not because
+nobody looked but because the obvious comparison is forbidden -- and when rule 1 blocks the
+easy series, the answer is to go and build the hard one, not to leave the rate BARE. Two
+other rates in this repo are in that position right now.
 
 What must not happen is an expense line being described as "what the town pays" when three
 layers sit between the two.

@@ -27,7 +27,9 @@ FIVE QUANTITIES, NEVER ADDED, AND NEVER DIFFERENCED ACROSS EACH OTHER (rules 1 a
      entitled to subtract them.
   4. THE FORMULA -- DESE's FY27 Chapter 70 district summary. Not money received; the
      calculation that decides how much will be.
-  5. THE MODEL'S ASSUMPTION -- `model/finance.py` grows total state aid at 2.0% a year.
+  5. THE MODEL'S ASSUMPTION -- `model/finance.py` grows total state aid at the rate this
+     script READS from DEFAULT_ASSUMPTIONS rather than typing. It was 2.0% with nothing
+     behind it; since 7 September 2026 it is derived -- see notes/findings/STATE-AID-RATE.md.
 
 RULE 1 IS THE WHOLE DIFFICULTY. It would be easy and wrong to run a growth rate from the
 FY2022 receipt to the FY2026 budget: that is partly growth and partly the step between an

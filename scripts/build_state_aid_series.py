@@ -4,7 +4,7 @@
     python3 scripts/build_state_aid_series.py           # write it
     python3 scripts/build_state_aid_series.py --check   # fail if it is stale
 
-WHAT THIS IS FOR. `model/finance.py` grows total state aid at 2.0% a year and
+WHAT THIS IS FOR. `model/finance.py` grows total state aid at a single rate, and
 `sources/analyses/show-your-work.md` grades that rate `BARE` -- no stated source and no
 derivation. `scripts/build_state_aid.py` (the /state-aid page) publishes a measured
 Chapter 70 RECEIPT rate of about 4.47% a year and is careful to say it is NOT a
