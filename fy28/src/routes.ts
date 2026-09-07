@@ -11,7 +11,7 @@
 
 export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
-  | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database'
+  | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -53,6 +53,10 @@ export const SLUG: Record<Tab, string> = {
   freecash: 'free-cash',
   // What this project WROTE, as opposed to what it mirrors. Public and linked.
   reports: 'reports',
+  // Budgets against actuals, charted. The slug is what the question is called out loud --
+  // people say "budget versus actual", not "variance" -- and `variance` is an alias for
+  // anybody who arrives with the accounting word instead.
+  variance: 'budget-vs-actual',
   // Every machine-readable address on the site, as LINKS. `llms.txt` names all of these
   // already, but it is text/plain, and assistants that only fetch URLs seen in a prior
   // page could read the name of a file and not be allowed to request it. See
@@ -67,6 +71,10 @@ export const SLUG: Record<Tab, string> = {
   // `data` and the tab is `database`; an area and a page may share a name, they may not
   // share an address.
   database: 'database',
+  // The gaps, in one place. NOT `gaps` as the address: what a resident types or reads
+  // aloud is the question, and "what we cannot answer" is the question. `gaps` is an
+  // alias, because it is what anybody working on the site calls it.
+  gaps: 'what-we-cannot-answer',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -110,6 +118,11 @@ const ALIASES: Record<string, Tab> = {
   'follow-the-money': 'themoney',
   'free-cash': 'freecash', freecash: 'freecash', reserves: 'freecash', 'certified-free-cash': 'freecash',
   reports: 'reports', analyses: 'reports', analysis: 'reports', 'our-analyses': 'reports',
+  // NOT 'actuals' alone as the slug: the page is a COMPARISON, and a reader who lands on
+  // something called "actuals" reasonably expects a spending ledger, which is a different
+  // page in a different area.
+  'budget-vs-actual': 'variance', variance: 'variance', 'budgets-vs-actuals': 'variance',
+  'budget-versus-actual': 'variance', actuals: 'variance', underspend: 'variance',
   // NOT 'api' or 'data' -- both are live Function prefixes serving real files, and an
   // alias would shadow the archive with an app route.
   agents: 'agents', 'for-agents': 'agents', ai: 'agents', llms: 'agents',
@@ -118,6 +131,10 @@ const ALIASES: Record<string, Tab> = {
   // a published reference document at /reference/schema.html.
   database: 'database', 'the-database': 'database', db: 'database',
   'the-data': 'database',
+  // NOT 'missing' or 'unknown' -- both would read as a page about the archive being
+  // broken. The page is about what the TOWN'S RECORDS do not say.
+  gaps: 'gaps', 'what-we-cannot-answer': 'gaps', 'data-gaps': 'gaps',
+  'what-is-not-in-here': 'gaps', gap: 'gaps',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -154,6 +171,8 @@ export const LABEL: Record<Tab, string> = {
   ask: 'How to query this data',
   agents: 'Every address on this site, as links',
   database: 'The database',
+  gaps: 'What we cannot answer',
+  variance: 'Budgets against actuals',
   dataroom: 'The data room',
 }
 
@@ -166,6 +185,8 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   athletics: 'context',
   rates: 'deeper',
   reports: 'themoney',
+  gaps: 'themoney',
+  variance: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -227,7 +248,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   freecash: 'crisis',
-  themoney: 'money', reports: 'money',
+  themoney: 'money', gaps: 'money', variance: 'money', reports: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -245,7 +266,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'reports'],
+  money: ['themoney', 'variance', 'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

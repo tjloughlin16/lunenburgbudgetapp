@@ -790,6 +790,28 @@ GROUPS = [
              'Where the receipts came from', 2,
              'Written by us: the page each year was read from, the two totals each year '
              'is checked against, and what the status column means.'),
+            ('data/balance-sheet.csv',
+             'The combined balance sheet, read from the page', 3,
+             'What the town HOLDS at 30 June — cash, receivables, warrants payable, '
+             'reserves and undesignated fund balance — by fund type, transcribed by '
+             'reading the rendered page rather than by OCR, which recovers zero of this '
+             'page’s money tokens. Every other dataset here measures money moving; '
+             'this one measures a stock. FY2011 so far: 61 figures, every column footing '
+             'to the report’s own printed total, the identity the table states, and '
+             'the special revenue plus enterprise fund equity tying to the special revenue '
+             'schedule’s printed carried forward. '
+             'See data/PROVENANCE-balance-sheet.md.'),
+            ('data/balance-sheet-printed-totals.csv',
+             'The TOTAL rows each balance sheet prints', 2,
+             'The independent check on the file above, quoted off the page with its '
+             'printed page number and its PDF index, which are not the same number. Kept '
+             'separate and never computed from our own rows.'),
+            ('data/PROVENANCE-balance-sheet.md',
+             'Why the balance sheet is read rather than OCR’d', 2,
+             'Written by us: the four checks including the cross-document one against the '
+             'special revenue schedule; the one printed sheet that does not balance itself '
+             '(FY2019, $657,297.35, pinned and not adjusted away); why FY2024 and FY2025 '
+             'have no town-wide balance sheet at all; and how to add a year.'),
             ('data/special-revenue-read.csv',
              'The special revenue funds, read from the page', 3,
              'The FY2011\u2013FY2025 schedule of every fund outside the general '

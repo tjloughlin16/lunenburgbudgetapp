@@ -72,9 +72,19 @@ CHECKS = [
     # and against the identity the table states. Two independent checks; a year that does
     # not pass both is not in the dataset.
     ('verify_special_revenue_read.py', []),
+    # The combined balance sheet, read from the page. Its cross-check is the strongest in
+    # the archive: special revenue + enterprise fund equity must equal the special revenue
+    # schedule's own carried-forward total — two documents, different pages, and the
+    # second was verified to the penny by an entirely separate pass.
+    ('verify_balance_sheet.py', []),
     # What the reports contain that we have not read, or have read without checking.
     # Generated because a count nobody maintains is the only kind that stays true.
     ('build_extraction_gaps.py', ['--check']),
+    # The budget-versus-actual page's series. It reconciles every function group against
+    # `variance_by_group` before it will write, so this entry catches two different things
+    # going stale: the published file, and the agreement between the database route and
+    # the CSV route to the same figure.
+    ('build_variance_charts.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),

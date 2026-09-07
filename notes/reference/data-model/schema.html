@@ -223,10 +223,10 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 </header>
 
 <div class="metrics">
-  <div class="metric"><div class="v">74</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">76</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">68,738</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">916</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">68,825</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">934</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
 
@@ -1442,9 +1442,31 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>17 tables &middot; 5,514 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 5,599 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
+<details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2011–2011</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund_column, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
+<p class="ans">What the town HOLDS, read from the COMBINED BALANCE SHEET — assets, liabilities and fund equity across six fund columns (general, special revenue, enterprise, capital project, trust and agency, long-term debt). Everything else in this archive measures money MOVING; this is the only table that measures what is sitting there.</p>
+<p class="warn">Read from the page, like <code>special_revenue_read</code>. It is trusted because three checks hold: each column foots to its own printed total, the sheet&#x27;s identity (liabilities + fund equity = assets) holds per column, and special revenue + enterprise fund equity ties to the special revenue schedule&#x27;s carried-forward total — an INDEPENDENT document. One printed sheet does not balance itself (FY2019 trust and agency, $657,297.35 apart); that is the town&#x27;s print, recorded not corrected.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>page_printed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>page_pdf</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>section</code></td><td class="ty">TEXT</td><td>The budget book&#x27;s own section heading.</td></tr>
+<tr><td><code>line</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td>Which instrument produced the figures: <code>vision</code> for a page read directly.<br><span class="ccaut">A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page_printed</th><th>page_pdf</th><th>section</th><th>line</th><th>fund</th><th>amount</th><th>document</th><th>read_by</th></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>assets</td><td>CASH and CASH INVESTMENTS</td><td>general</td><td>2383371.72</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>liabilities</td><td>DUE TO TRUST FUNDS/SRF/CPF/ENTERPRISE</td><td>general</td><td>122705.76</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>fund_balances</td><td>UNRESERVED: UNDESIGNATED</td><td>enterprise</td><td>512163.95</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
 <p class="ans">Per fund per period: opening balance, revenue in, salaries, other expenditure, encumbered and closing balance. FY2026 period 9 only — and <code>opening_balance</code> is NULL for every one of the 61 funds.</p>
 <p class="warn"> spent and holds.</p>
@@ -1631,6 +1653,26 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
+<details class="t"><summary><span class="srow"><code>balance_sheet_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">24 rows</span> <span class="yr">2011–2011</span><button class="open" data-t="balance_sheet_printed_totals">Query table</button></span><span class="gr">one row per printed total per fund column per year</span></summary>
+<p class="ans">The totals each balance sheet PRINTS — total assets, total liabilities, total fund equity — quoted with the page they appear on.</p>
+<p class="warn">The independent check on <code>balance_sheet</code>, so it must be read off the page and never computed from our own rows.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>page_printed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>page_pdf</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>total_row</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>quote</code></td><td class="ty">TEXT</td><td>What the source says, verbatim.</td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page_printed</th><th>page_pdf</th><th>total_row</th><th>fund</th><th>amount</th><th>quote</th></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL ASSETS</td><td>special_revenue</td><td>1494488.29</td><td>TOTAL ASSETS row, printed page 53</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL FUND EQUITY</td><td>enterprise</td><td>1497430.65</td><td>TOTAL FUND EQUITY row, printed page 53</td></tr>
+<tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>long_term_debt</td><td>27097991</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag scope sboth">school + town</span> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
 <p class="ans">What each MUNIS accounting period means and how many months of the year had elapsed. Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
 <p class="warn">Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
@@ -1840,7 +1882,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>9 tables &middot; 5,941 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>9 tables &middot; 5,943 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
 <details class="t"><summary><span class="srow"><code>annual_report_catalogue</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">863 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_catalogue">Query table</button></span><span class="gr">one row per table per annual report</span></summary>
@@ -2024,7 +2066,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">74 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">76 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>

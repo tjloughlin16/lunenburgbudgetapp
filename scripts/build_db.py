@@ -956,6 +956,9 @@ UNLOADED = [
     # every caller that is not reading the source -- including /api/query, which is how an
     # agent meets this database. Loading them means "what does this column mean" is
     # answerable in SQL, by the same route as every other question here.
+    ('balance-sheet', 'The combined balance sheet READ from the page — what the town '
+     'HOLDS, against the flow tables everything else here measures'),
+    ('balance-sheet-printed-totals', 'The totals each balance sheet prints, quoted'),
     ('special-revenue-read', 'The special revenue schedule READ from the page — the '
      'only version of it that ties to its own printed total'),
     ('special-revenue-printed-totals', 'The GRAND TOTAL each report prints, quoted'),

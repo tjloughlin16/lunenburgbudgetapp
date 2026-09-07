@@ -3,7 +3,7 @@
 
 # What we still need from the Town
 
-Generated 2026-09-04 by `scripts/build_request_doc.py` from the coverage matrix in the database. **Re-run it before sending anything** — asking twice for a document already sent spends goodwill the next request needs.
+Generated 2026-09-07 by `scripts/build_request_doc.py` from the coverage matrix in the database. **Re-run it before sending anything** — asking twice for a document already sent spends goodwill the next request needs.
 
 **32 of 36** report-years outstanding for FY2024–FY2026.
 

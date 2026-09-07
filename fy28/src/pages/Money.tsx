@@ -3,7 +3,7 @@ import type { Tab } from '../routes'
 // Derived, not typed. The area was renamed to "Budget Crisis" and this page was
 // the one place still saying the old name, because it had written it into a
 // sentence instead of reading AREA_LABEL like the header and the front page do.
-import { AREA_LABEL } from '../routes'
+import { AREA_LABEL, LABEL } from '../routes'
 
 /** The front door to "The money".
  *
@@ -18,8 +18,14 @@ import { AREA_LABEL } from '../routes'
  *  The crisis pages answer "what should the town do". This area answers a different
  *  question — how the money actually moves — and the honest version of that answer is
  *  mostly about where the trail goes cold. So the page does two things and neither is a
- *  conclusion: it hands over the five documents, and it states what the published records
- *  cannot answer.
+ *  conclusion: it hands over the five documents, and it hands over the gaps.
+ *
+ *  THE GAP LIST ITSELF MOVED. It was rendered at the bottom of this page and is now
+ *  /what-we-cannot-answer, with two bodies of material it belongs beside: what has been
+ *  extracted and never checked against a printed total, and what the Town has been asked
+ *  for and has not sent. This page still READS `money_gaps` -- for the count on the link,
+ *  which is derived rather than typed, and for the empty-list warning, because a link
+ *  promising a list that is empty is worse than no link.
  *
  *  NOT ONE FIGURE IS TYPED HERE (CLAUDE.md rule 2). Every number, title and description on
  *  this page arrives at runtime from two generated files:
@@ -28,8 +34,8 @@ import { AREA_LABEL } from '../routes'
  *                           reference documents, each with the `door` it belongs to, the
  *                           scripts that regenerate it, and a one-line description. The
  *                           title is read out of the document itself.
- *    /api/money_gaps.json   the `money_gaps` table, published whole by build_api.py. It is
- *                           the project's own list of what the records do not answer.
+ *    /api/money_gaps.json   the `money_gaps` table, published whole by build_api.py. Only
+ *                           its COUNT is shown here; the rows are on /what-we-cannot-answer.
  *
  *  Static files, both of them: no D1 read budget is spent by opening this page.
  *
@@ -59,22 +65,6 @@ type GapIndex = { count: number; rows: Gap[] }
 const DOOR = 'the money'
 
 const kb = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)} MB` : `${Math.round(n / 1024)} KB`)
-
-/** The town's own records use `money_in` / `money_out` / `document_wanted`. Rendered from
- *  the value rather than mapped through a table typed here, so a fourth kind of gap
- *  appears on this page the day it appears in the data. */
-const sideLabel = (s: string) => s.replace(/_/g, ' ')
-
-/** The gap descriptions carry `**bold**` from the CSV. Rendered, not stripped — the
- *  emphasis is the author's and it lands on the load-bearing half of the sentence. */
-function Emphasised({ text }: { text: string }) {
-  return (
-    <>
-      {text.split(/\*\*/).map((part, i) =>
-        i % 2 ? <strong key={i}>{part}</strong> : <span key={i}>{part}</span>)}
-    </>
-  )
-}
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl">{children}</h2>
@@ -139,7 +129,6 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
    *  documents as equals makes a reader choose between things that are not choices. */
   const primary = pages.filter(p => p.tier === 'primary')
   const secondary = pages.filter(p => p.tier !== 'primary')
-  const sides = [...new Set((gaps?.rows ?? []).map(g => g.side))]
 
   return (
     <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
@@ -229,44 +218,30 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
       <H2>What is not in here</H2>
       <Body>
         The most useful thing this project can say about the town&rsquo;s money is which
-        parts of it the published records cannot answer. This list is kept as data rather
-        than as prose, so it is the same list the diagrams are built against.
+        parts of it the published records cannot answer. That list is kept as data rather
+        than as prose, so it is the same list the diagrams are built against &mdash; and it
+        has a page of its own, alongside what has been read without being checked and what
+        the Town has been asked for and has not sent.
       </Body>
-      <div className="mt-6 space-y-8">
-        {sides.map(side => (
-          <div key={side}>
-            <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
-              style={{ color: 'var(--text-muted)' }}>{sideLabel(side)}</p>
-            <ul className="space-y-2.5">
-              {gaps!.rows.filter(g => g.side === side).map(g => (
-                <li key={g.what} className="pl-3.5 py-1"
-                  style={{ borderLeft: '2px solid var(--grid)' }}>
-                  <p className="text-[14.5px] font-bold leading-snug">
-                    <Emphasised text={g.what} />
-                  </p>
-                  <p className="text-[13px] leading-snug mt-1"
-                    style={{ color: 'var(--text-secondary)' }}>
-                    <Emphasised text={g.why} />
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+      <button onClick={() => onJump('gaps')}
+        className="card block w-full text-left px-4 py-4 min-h-[44px] mt-6
+                   transition-opacity hover:opacity-90">
+        <span className="text-[16px] font-bold leading-tight"
+          style={{ color: 'var(--series-cost)' }}>{LABEL.gaps} &rarr;</span>
+        <span className="block text-[13.5px] mt-1.5 leading-snug"
+          style={{ color: 'var(--text-secondary)' }}>
+          {gaps
+            ? <>{gaps.count.toLocaleString()} questions this project went looking for and
+              could not settle from the published records, each with the document that
+              would close it &mdash; with what we hold and have not checked, and what is
+              still outstanding from the Town.</>
+            : 'What the published records cannot answer, and what would close each gap.'}
+        </span>
+      </button>
       {gaps && !gaps.rows.length && (
         <p className="text-[13.5px] mt-4" style={{ color: 'var(--status-warning)' }}>
           <code>/api/money_gaps.json</code> answered with no rows. An empty gap list means
           the endpoint changed shape, not that nothing is missing.
-        </p>
-      )}
-      {gaps && (
-        <p className="text-xs leading-relaxed mt-6" style={{ color: 'var(--text-muted)' }}>
-          {gaps.count.toLocaleString()} entries, published as{' '}
-          <a href="/api/money_gaps.json" className="underline"
-            style={{ color: 'var(--text-secondary)' }}><code>/api/money_gaps.json</code></a>{' '}
-          and queryable as <code>money_gaps</code>. Each is something we went looking for and
-          could not establish &mdash; not a claim about anybody.
         </p>
       )}
     </div>
