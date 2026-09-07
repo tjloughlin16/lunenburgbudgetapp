@@ -50,8 +50,8 @@ only one of which is a record of money moving.
 |---|---|---:|
 | `ledger` | the accounting system — a figure exists because a transaction did | 10 |
 | `restatement` | a prior year re-presented inside a document written by the party that spent it | 65 |
-| `forward` | proposed, requested, level service, balanced | 176 |
-| `narrative` | money discussed, no figure table | 98 |
+| `forward` | proposed, requested, level service, balanced | 172 |
+| `narrative` | money discussed, no figure table | 75 |
 
 Of those ledger documents, exactly one reaches school budget **lines** on the general fund:
 `district-budget/text/fy23-quarterly-budget-update.txt`, covering one quarter of FY23.
