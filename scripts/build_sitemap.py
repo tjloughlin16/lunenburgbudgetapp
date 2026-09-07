@@ -70,9 +70,24 @@ def analyses():
     return out
 
 
+def reference():
+    """Every reference page published by `build_reference_pages.py`.
+
+    Globbed rather than listed, for the same reason `routes()` is: a page added there and
+    not added here would be published, correct, and reachable by nobody -- which is the
+    exact condition these pages were rescued FROM. And per this project's reachability
+    note, some agent tools accept only URLs that came from a search result, so being a
+    static file at a real address is not enough on its own; being INDEXED is what reaches
+    them, and the sitemap is where that starts.
+    """
+    return ['/reference/' + os.path.basename(p)
+            for p in sorted(glob.glob(os.path.join(PUB, 'reference', '*')))
+            if os.path.isfile(p)]
+
+
 def render():
     seen, urls = set(), []
-    for u in routes() + ENTRY + published_data() + analyses():
+    for u in routes() + ENTRY + published_data() + reference() + analyses():
         if u not in seen:
             seen.add(u)
             urls.append(u)

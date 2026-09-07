@@ -1,0 +1,300 @@
+<meta charset="utf-8">
+<title>How money reaches the schools — Lunenburg FY2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --traced-bg:#dfeee6;
+  --school:#9a4f14; --school-bg:#f7e7d8;
+  --warn:#8a6d10; --warn-bg:#faf3de;
+  --potbg:#2c2b28; --potink:#f2efe9;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --traced-bg:#1d3129; --school:#e2a068; --school-bg:#33231a;
+    --warn:#d9bd67; --warn-bg:#2c2718; --potbg:#e8e4dc; --potink:#1a1a18; }
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100%; }
+.wrap { max-width:1180px; margin:0 auto; padding:22px 16px 80px }
+header { border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }
+.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+h1 { font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
+.standfirst { font-size:16px; color:var(--muted); margin:0 }
+.stage { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }
+.stage.alt { background:transparent }
+h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
+.cap { font-size:13.5px; color:var(--muted); margin:0 0 14px }
+.bars { display:flex; flex-direction:column; gap:9px }
+.row { display:grid; grid-template-columns:1fr 34%; grid-template-areas:"lab amt" "bar bar";
+  gap:3px 10px; align-items:baseline }
+.lab { grid-area:lab; font-size:13.5px; font-weight:600; min-width:0;
+  overflow-wrap:anywhere }
+.lab .sub { display:block; font-weight:400; font-size:11.5px; color:var(--muted) }
+.amt { grid-area:amt; text-align:right; font-size:13.5px; white-space:nowrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace }
+.track { grid-area:bar; background:var(--grid); border-radius:3px; height:9px; width:100% }
+.fill { background:var(--traced); height:100%; border-radius:3px; min-width:2px }
+.row.hi .fill { background:var(--school) }
+.row.hi .lab { color:var(--school) }
+.pot { background:var(--potbg); color:var(--potink); border-radius:10px;
+  padding:18px 16px; margin:16px 0 }
+.pot h2 { color:var(--potink) }
+.pot p { font-size:14px; margin:8px 0 0 }
+.potline { font-family:ui-monospace,Menlo,monospace; font-size:15px; margin:0 }
+.refuse { border-top:1px solid rgba(128,128,128,.4); padding-top:10px; margin-top:12px }
+.warnbox { border-color:var(--warn); border-width:2px }
+.warnbox td .sub { display:block; font-size:11px; color:var(--muted) }
+.warn { background:var(--warn-bg); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
+  padding:11px 13px; font-size:13.5px; margin:14px 0 0 }
+.metrics { display:grid; gap:10px; margin:16px 0 10px }
+/* The fourth card is deliberately quieter: money sitting still is context, not
+   the story the first three tell. Same card, less weight -- not a smaller box,
+   which would break the grid on a phone. */
+.m.small { opacity:.82 }
+.m.small .mv { font-size:.78em }
+table.bridge { width:100%; border-collapse:collapse; margin:10px 0; font-size:14px }
+table.bridge td { padding:7px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }
+table.bridge td.v { text-align:right; white-space:nowrap; width:34%;
+  font-family:ui-monospace,Menlo,monospace; font-variant-numeric:tabular-nums }
+table.bridge tr.sub td { border-top:1px solid var(--ink); font-weight:600 }
+table.bridge tr.tot td { border-top:2px solid var(--ink); border-bottom:none;
+  font-weight:700 }
+table.bridge .sm { font-size:12.5px; color:var(--muted) }
+.m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
+  background:var(--card) }
+.m.hi { border-color:var(--school); border-width:2px; background:var(--school-bg) }
+.mk { font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  color:var(--muted) }
+.m.hi .mk { color:var(--school) }
+.mv { font-size:25px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
+  font-family:ui-monospace,Menlo,monospace }
+.ms { font-size:12.5px; color:var(--muted); line-height:1.45 }
+@media (min-width:760px) { .metrics { grid-template-columns:repeat(2,1fr) } }
+@media (min-width:1050px) { .metrics { grid-template-columns:repeat(4,1fr) } }
+.scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 }
+svg.flow { display:block; min-width:930px; height:auto }
+.dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
+.b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
+.b.core rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2.5 }
+.b.fund rect { fill:var(--traced-bg); stroke:var(--traced) }
+.b.grant rect { fill:var(--traced-bg); stroke:var(--traced); stroke-dasharray:5 3 }
+.b.missing rect { fill:var(--warn-bg); stroke:var(--warn); stroke-dasharray:3 3 }
+.b.prog rect { fill:var(--school-bg); stroke:var(--school) }
+.b.alt rect { fill:none; stroke:var(--muted); stroke-dasharray:5 4 }
+.bl { font-size:12.5px; font-weight:600; fill:var(--ink) }
+.bs { font-size:10px; fill:var(--muted) }
+.bv { font-size:12px; fill:var(--muted); font-family:ui-monospace,Menlo,monospace }
+.e { fill:none; stroke-width:2 }
+.e.traced { stroke:var(--school); opacity:.55 }
+.e.restricted { stroke:var(--traced); opacity:.75; stroke-dasharray:7 5 }
+.e.missing { stroke:var(--warn); stroke-dasharray:2 5; stroke-width:2.5 }
+.e.unknown { stroke:var(--muted); stroke-dasharray:2 4; opacity:.8 }
+.e.bypass { stroke:var(--traced); opacity:.7; stroke-width:2.5; stroke-dasharray:7 5 }
+.b.gf rect { fill:var(--traced-bg); stroke:var(--traced) }
+.b.pot rect { fill:#2c2b28; stroke:#2c2b28 }
+.pw { fill:#f2efe9 }
+.potnote { font-size:10px; fill:#f2efe9; opacity:.72 }
+.key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin:-4px 0 6px }
+.key span { display:flex; align-items:center; gap:6px }
+.k { width:22px; height:0; border-top:2px solid; display:inline-block }
+.k.traced { border-color:var(--school) }
+.k.restricted { border-top-style:dashed; border-color:var(--traced) }
+.k.missing { border-top-style:dotted; border-width:3px; border-color:var(--warn) }
+/* Two columns on a wide screen, one on a phone. The columns are a reading aid, not
+   the information: every landing box names its own sources, so nothing is lost when
+   they stack. Connector lines were tried and are unreadable at this density. */
+.cols { display:grid; gap:16px; margin:16px 0 }
+.col { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:15px 14px; min-width:0 }
+.col h2 { margin:0 }
+.colnote { font-size:12.5px; color:var(--muted); margin:2px 0 12px }
+.col h3 { font-size:12px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin:18px 0 8px; font-weight:700 }
+.intro { margin:14px 0 }
+.intro p { margin:0 0 6px }
+.core { background:var(--school-bg); border:2px solid var(--school); border-radius:8px;
+  padding:13px 14px }
+.corehd { font-size:11px; letter-spacing:.1em; font-weight:700; color:var(--school) }
+.coreamt { font-size:26px; font-weight:700; letter-spacing:-.02em;
+  font-family:ui-monospace,Menlo,monospace }
+.coresub { font-size:12.5px; color:var(--muted); margin-top:4px }
+.prog { border:1px solid var(--grid); border-radius:8px; padding:11px 12px; margin:9px 0 }
+.prog.alt { border-style:dashed }
+.proghd { display:flex; justify-content:space-between; gap:10px; align-items:baseline;
+  font-weight:700; font-size:14.5px }
+.progtot { font-family:ui-monospace,Menlo,monospace; font-size:13px; white-space:nowrap;
+  color:var(--muted); font-weight:400 }
+.line { display:grid; grid-template-columns:auto auto 1fr; gap:8px; align-items:baseline;
+  font-size:12.5px; margin-top:7px; padding-top:6px; border-top:1px dotted var(--grid) }
+.tag { font-size:10px; letter-spacing:.05em; text-transform:uppercase; font-weight:700;
+  padding:1px 6px; border-radius:3px; white-space:nowrap }
+.line.in .tag { background:var(--school-bg); color:var(--school) }
+.line.out .tag { background:var(--traced-bg); color:var(--traced) }
+.line.restricted .tag { background:var(--warn-bg); color:var(--warn) }
+.line.missing .tag { background:var(--warn-bg); color:var(--warn);
+  outline:1px dashed var(--warn) }
+.line .v { font-family:ui-monospace,Menlo,monospace; font-weight:600; white-space:nowrap }
+.line .src { color:var(--muted) }
+.progwhy { font-size:12.5px; color:var(--muted); margin-top:8px }
+.miss { background:var(--warn-bg); border-left:3px solid var(--warn); padding:10px 12px;
+  border-radius:0 6px 6px 0; font-size:13px; margin-top:12px }
+table { border-collapse:collapse; width:100%; margin-top:4px }
+td { padding:9px 0; border-bottom:1px solid var(--grid); font-size:14px; vertical-align:top }
+td .sub { display:block; font-size:11.5px; color:var(--muted) }
+td.v { text-align:right; white-space:nowrap; font-weight:600;
+  font-family:ui-monospace,Menlo,monospace }
+code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
+.gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:900px) {
+  .cols { grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); align-items:start }
+}
+@media (min-width:680px) {
+  .row { grid-template-columns:38% 1fr 22%; grid-template-areas:"lab bar amt"; gap:12px;
+    align-items:center }
+  .track { height:11px }
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
+  <h1>How money reaches the schools</h1>
+  <p class="standfirst">FY2026, from every source the town budgets to the 258 accounts the
+  school department spends from &mdash; and the one connection in the middle that cannot be
+  drawn, because no record ties a source to a department.</p>
+</header>
+
+<section class="metrics"><div class="m"><div class="mk">The school budget</div><div class="mv">$26,287,474</div><div class="ms">Departments 300 and 301, as Town Meeting voted. Headlines usually quote $26,247,474 — department 300 alone, leaving out $40,000 of non-recurring costs.</div></div><div class="m hi"><div class="mk">Funding beyond the budget</div><div class="mv">+$2,049,069</div><div class="ms">$1,553,151 received into the schools’ own funds — fees, lunch, gifts, reimbursement — plus <b>at least</b> $495,918 in grants, which booked no FY26 revenue at all and are floored by what they spent. <b>7.8%</b> on top of the budget.</div></div><div class="m"><div class="mk">What the schools actually spent</div><div class="mv">$27,350,055</div><div class="ms">$25,613,679 out of the appropriation through period 12, plus $1,736,376 from its own funds and grants through period 9. A floor: three more months of fund spending are not in it.</div></div><div class="m small"><div class="mk">Unspent, sitting in accounts</div><div class="mv">$1,592,256</div><div class="ms">Held across the schools’ own funds at 31 March, $615,301 of it in the circuit breaker. Not spending and not income — money that arrived and stopped.</div></div></section>
+<section class="stage"><h2>Why those figures do not simply add</h2><p class="cap">The first three cards are three different KINDS of quantity — a permission, an inflow, an outflow — so the difference between them is not an error. It is money not spent, and it is two separate things.</p><table class="bridge"><tr><td>The school budget</td><td class="v">$26,287,474</td></tr><tr><td>+ funding beyond the budget</td><td class="v">$2,049,069</td></tr><tr class="sub"><td>= everything available</td><td class="v">$28,336,543</td></tr><tr><td>− what was actually spent</td><td class="v">$27,350,055</td></tr><tr class="tot"><td>= not spent</td><td class="v">$986,487</td></tr></table><p class="cap">Which splits in two:</p><table class="bridge"><tr><td><b>Appropriation not spent</b><br><span class="sm">Voted and not used. $236,784 of it is already committed by purchase order, so it is spoken for rather than spare.</span></td><td class="v">$673,795</td></tr><tr><td><b>Fund money not spent this year</b><br><span class="sm">The funds took in $1,553,151 and spent $1,736,376. Money in is not money out.</span></td><td class="v">$312,692</td></tr></table><p class="warn"><b>This is NOT the $1,592,256 in the fourth card.</b> That figure is what the funds HOLD — a balance built up across years, most of it put there before FY26. This is one year's flow. A balance and a flow are different quantities and they are not expected to agree.</p><p class="cap"><b>And the bases are mixed, which cannot be helped.</b> The appropriation side is actual spending through period 12; the fund side is through period 9, because the town publishes no twelve-month fund report. Three more months of fund spending are missing from every figure above, so "not spent" is an <b>upper bound</b>.</p></section>
+<p class="cap"><b>And the town spends on schools outside all four figures.</b> $1,528,336 of retiree health and a resource stipend sits in other departments’ appropriations, <b>plus an unknown share of the $2,392,572 pension</b>. Monty Tech is excluded throughout: it is a different district.</p>
+<p class="warn"><b>Mixed bases, and it cannot be helped.</b> Department 300 is actual spending through period 12; the funds are actual through period 9, because the town publishes no twelve-month fund report. <b>So the middle figure is a floor</b> — three more months of fund spending are not in it, and neither is any part of the pension.</p><p class="cap"><b>Do not add the right-hand column and call it school spending.</b> It comes to $33,276,289 and that figure means nothing: the school budget box is a BUDGET rather than spending, Monty Tech is a different district, and the pension box is the whole town’s. The column adds because each dollar is drawn once — that is a property of the drawing, not a finding about the schools.</p>
+<div class="scroll"><svg viewBox="0 0 930 1442" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Where school money comes from and where it is spent">
+<text class="dhd" x="20" y="26">MONEY IN</text>
+<text class="dhd" x="330" y="26">WHERE IT POOLS</text>
+<text class="dhd" x="660" y="26">MONEY OUT — each dollar once</text>
+<path class="e traced" d="M274,77.0 C302.0,77.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,146.0 C302.0,146.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,215.0 C302.0,215.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,284.0 C302.0,284.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M274,353.0 C302.0,353.0 302.0,215.0 330,215.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,77.0 660,77.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,146.0 660,146.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,215.0 660,215.0"/>
+<path class="e unknown" d="M530,215.0 C595.0,215.0 595.0,284.0 660,284.0"/>
+<path class="e traced" d="M530,215.0 C595.0,215.0 595.0,353.0 660,353.0"/>
+<path class="e bypass" d="M274,491.0 C467.0,491.0 467.0,491.0 660,491.0"/>
+<path class="e missing" d="M274,560.0 C467.0,560.0 467.0,560.0 660,560.0"/>
+<path class="e bypass" d="M274,629.0 C467.0,629.0 467.0,629.0 660,629.0"/>
+<path class="e bypass" d="M274,698.0 C467.0,698.0 467.0,698.0 660,698.0"/>
+<path class="e bypass" d="M274,767.0 C467.0,767.0 467.0,767.0 660,767.0"/>
+<path class="e bypass" d="M274,836.0 C467.0,836.0 467.0,836.0 660,836.0"/>
+<path class="e bypass" d="M274,905.0 C467.0,905.0 467.0,905.0 660,905.0"/>
+<path class="e bypass" d="M274,974.0 C467.0,974.0 467.0,974.0 660,974.0"/>
+<path class="e bypass" d="M274,1043.0 C467.0,1043.0 467.0,1043.0 660,1043.0"/>
+<path class="e bypass" d="M274,1112.0 C467.0,1112.0 467.0,1112.0 660,1112.0"/>
+<path class="e bypass" d="M274,1181.0 C467.0,1181.0 467.0,1181.0 660,1181.0"/>
+<path class="e bypass" d="M274,1250.0 C467.0,1250.0 467.0,1250.0 660,1250.0"/>
+<path class="e bypass" d="M274,1319.0 C467.0,1319.0 467.0,1319.0 660,1319.0"/>
+<path class="e bypass" d="M274,1388.0 C467.0,1388.0 467.0,1388.0 660,1388.0"/>
+<g class="b pot"><rect x="330" y="48" width="200" height="334" rx="7"/><text class="bl pw" x="342" y="70">GENERAL FUND 0100</text><text class="bv pw" x="342" y="88">$52,187,832</text>
+<text class="potnote" x="342" y="108">$29,110,331 of it is</text>
+<text class="potnote" x="342" y="122">appropriated to education.</text>
+<text class="potnote" x="342" y="136">The other 63 departments are</text>
+<text class="potnote" x="342" y="150">not drawn on this page.</text>
+<text class="potnote" x="342" y="164"></text>
+<text class="potnote" x="342" y="178">Every source on the left loses</text>
+<text class="potnote" x="342" y="192">its identity here. No record ties</text>
+<text class="potnote" x="342" y="206">a source to a department, so no</text>
+<text class="potnote" x="342" y="220">line crosses this box.</text>
+</g>
+<g class="b gf"><rect x="20" y="48" width="254" height="58" rx="5"/><text class="bl" x="30" y="66">Property tax levy</text><text class="bv" x="30" y="82">$35,111,996</text><text class="bs" x="30" y="97">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="117" width="254" height="58" rx="5"/><text class="bl" x="30" y="135">State aid — Chapter 70 and the rest</text><text class="bv" x="30" y="151">$11,153,368</text><text class="bs" x="30" y="166">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="186" width="254" height="58" rx="5"/><text class="bl" x="30" y="204">Local receipts</text><text class="bv" x="30" y="220">$3,335,624</text><text class="bs" x="30" y="235">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="255" width="254" height="58" rx="5"/><text class="bl" x="30" y="273">One-time money</text><text class="bv" x="30" y="289">$2,209,993</text><text class="bs" x="30" y="304">into the general fund</text></g>
+<g class="b gf"><rect x="20" y="324" width="254" height="58" rx="5"/><text class="bl" x="30" y="342">Transfers in</text><text class="bv" x="30" y="358">$376,851</text><text class="bs" x="30" y="373">into the general fund</text></g>
+<g class="b grant"><rect x="20" y="462" width="254" height="58" rx="5"/><text class="bl" x="30" y="480">Federal and state grants</text><text class="bv" x="30" y="496">$495,918</text><text class="bs" x="30" y="511">spent side only — no FY26 revenue booked</text></g>
+<g class="b missing"><rect x="20" y="531" width="254" height="58" rx="5"/><text class="bl" x="30" y="549">Bus fees — charged</text><text class="bv" x="30" y="565">not found</text><text class="bs" x="30" y="580">$180 / $270, policy 3601.01</text></g>
+<g class="b fund"><rect x="20" y="600" width="254" height="58" rx="5"/><text class="bl" x="30" y="618">2200 School Lunch Revolving</text><text class="bv" x="30" y="634">$572,231</text><text class="bs" x="30" y="649">spent $739,586 · held $287,771</text></g>
+<g class="b fund"><rect x="20" y="669" width="254" height="58" rx="5"/><text class="bl" x="30" y="687">2640 Special Ed Circuit Breaker</text><text class="bv" x="30" y="703">$325,970</text><text class="bs" x="30" y="718">spent $4,005 · held $615,301</text></g>
+<g class="b fund"><rect x="20" y="738" width="254" height="58" rx="5"/><text class="bl" x="30" y="756">1312 Extended Day Revolving Fund</text><text class="bv" x="30" y="772">$192,943</text><text class="bs" x="30" y="787">spent $233,350 · held $54,161</text></g>
+<g class="b fund"><rect x="20" y="807" width="254" height="58" rx="5"/><text class="bl" x="30" y="825">1301 Chapter 658 Revolving Fund</text><text class="bv" x="30" y="841">$160,164</text><text class="bs" x="30" y="856">spent $100,467 · held $169,945</text></g>
+<g class="b fund"><rect x="20" y="876" width="254" height="58" rx="5"/><text class="bl" x="30" y="894">1305 After School Activities Fund</text><text class="bv" x="30" y="910">$111,376</text><text class="bs" x="30" y="925">spent $95,196 · held $148,578</text></g>
+<g class="b fund"><rect x="20" y="945" width="254" height="58" rx="5"/><text class="bl" x="30" y="963">1308 School Choice Revolving</text><text class="bv" x="30" y="979">$83,116</text><text class="bs" x="30" y="994">spent $30,558 · held $299,461</text></g>
+<g class="b fund"><rect x="20" y="1014" width="254" height="58" rx="5"/><text class="bl" x="30" y="1032">2672 Fy26 Family &amp; Community 237</text><text class="bv" x="30" y="1048">$48,558</text><text class="bs" x="30" y="1063">spent $13,372 · held $35,186</text></g>
+<g class="b fund"><rect x="20" y="1083" width="254" height="58" rx="5"/><text class="bl" x="30" y="1101">1311 School Gift Fund</text><text class="bv" x="30" y="1117">$22,486</text><text class="bs" x="30" y="1132">spent $2,911 · held $109,398</text></g>
+<g class="b fund"><rect x="20" y="1152" width="254" height="58" rx="5"/><text class="bl" x="30" y="1170">1306 School Facilities Use Revolv</text><text class="bv" x="30" y="1186">$18,670</text><text class="bs" x="30" y="1201">spent $12,354 · held $71,559</text></g>
+<g class="b fund"><rect x="20" y="1221" width="254" height="58" rx="5"/><text class="bl" x="30" y="1239">2681 Comp School Health Serv</text><text class="bv" x="30" y="1255">$10,775</text><text class="bs" x="30" y="1270">spent $5,120 · held $5,655</text></g>
+<g class="b fund"><rect x="20" y="1290" width="254" height="58" rx="5"/><text class="bl" x="30" y="1308">1302 Adult Education Revolving</text><text class="bv" x="30" y="1324">$4,000</text><text class="bs" x="30" y="1339">spent $2,880 · held $12,744</text></g>
+<g class="b fund"><rect x="20" y="1359" width="254" height="58" rx="5"/><text class="bl" x="30" y="1377">1300 Lost Books/Tech Rev Fund</text><text class="bv" x="30" y="1393">$2,860</text><text class="bs" x="30" y="1408">spent $661 · held $16,665</text></g>
+<g class="b core"><rect x="660" y="48" width="254" height="58" rx="5"/><text class="bl" x="670" y="66">THE SCHOOL BUDGET</text><text class="bv" x="670" y="82">$26,247,474</text><text class="bs" x="670" y="97">department 300, as voted</text></g>
+<g class="b alt"><rect x="660" y="117" width="254" height="58" rx="5"/><text class="bl" x="670" y="135">Monty Tech assessment</text><text class="bv" x="670" y="151">$1,334,521</text><text class="bs" x="670" y="166">a different district</text></g>
+<g class="b alt"><rect x="660" y="186" width="254" height="58" rx="5"/><text class="bl" x="670" y="204">School retiree health</text><text class="bv" x="670" y="220">$1,521,536</text><text class="bs" x="670" y="235">former school employees</text></g>
+<g class="b alt"><rect x="660" y="255" width="254" height="58" rx="5"/><text class="bl" x="670" y="273">Pension — share unknown</text><text class="bv" x="670" y="289">$2,392,572</text><text class="bs" x="670" y="304">town AND school staff together</text></g>
+<g class="b alt"><rect x="660" y="324" width="254" height="58" rx="5"/><text class="bl" x="670" y="342">School resource stipend</text><text class="bv" x="670" y="358">$6,800</text><text class="bs" x="670" y="373">inside the police department</text></g>
+<g class="b prog"><rect x="660" y="462" width="254" height="58" rx="5"/><text class="bl" x="670" y="480">Grant funds spent</text><text class="bv" x="670" y="496">$495,918</text><text class="bs" x="670" y="511">balances are NEGATIVE — spent ahead of reimbursement</text></g>
+<g class="b missing"><rect x="660" y="531" width="254" height="58" rx="5"/><text class="bl" x="670" y="549">Bus fee spending</text><text class="bv" x="670" y="565">not found</text><text class="bs" x="670" y="580">no account found</text></g>
+<g class="b prog"><rect x="660" y="600" width="254" height="58" rx="5"/><text class="bl" x="670" y="618">School Lunch Revolving spent</text><text class="bv" x="670" y="634">$739,586</text><text class="bs" x="670" y="649">in $572,231 · held $287,771 ↓</text></g>
+<g class="b prog"><rect x="660" y="669" width="254" height="58" rx="5"/><text class="bl" x="670" y="687">Special Ed Circuit Breaker spent</text><text class="bv" x="670" y="703">$4,005</text><text class="bs" x="670" y="718">in $325,970 · held $615,301 ↑</text></g>
+<g class="b prog"><rect x="660" y="738" width="254" height="58" rx="5"/><text class="bl" x="670" y="756">Extended Day Revolving Fund spent</text><text class="bv" x="670" y="772">$233,350</text><text class="bs" x="670" y="787">in $192,943 · held $54,161 ↓</text></g>
+<g class="b prog"><rect x="660" y="807" width="254" height="58" rx="5"/><text class="bl" x="670" y="825">Chapter 658 Revolving Fund spent</text><text class="bv" x="670" y="841">$100,467</text><text class="bs" x="670" y="856">in $160,164 · held $169,945 ↑</text></g>
+<g class="b prog"><rect x="660" y="876" width="254" height="58" rx="5"/><text class="bl" x="670" y="894">After School Activities Fund spent</text><text class="bv" x="670" y="910">$95,196</text><text class="bs" x="670" y="925">in $111,376 · held $148,578 ↑</text></g>
+<g class="b prog"><rect x="660" y="945" width="254" height="58" rx="5"/><text class="bl" x="670" y="963">School Choice Revolving spent</text><text class="bv" x="670" y="979">$30,558</text><text class="bs" x="670" y="994">in $83,116 · held $299,461 ↑</text></g>
+<g class="b prog"><rect x="660" y="1014" width="254" height="58" rx="5"/><text class="bl" x="670" y="1032">Fy26 Family &amp; Community 237 spent</text><text class="bv" x="670" y="1048">$13,372</text><text class="bs" x="670" y="1063">in $48,558 · held $35,186 ↑</text></g>
+<g class="b prog"><rect x="660" y="1083" width="254" height="58" rx="5"/><text class="bl" x="670" y="1101">School Gift Fund spent</text><text class="bv" x="670" y="1117">$2,911</text><text class="bs" x="670" y="1132">in $22,486 · held $109,398 ↑</text></g>
+<g class="b prog"><rect x="660" y="1152" width="254" height="58" rx="5"/><text class="bl" x="670" y="1170">School Facilities Use Revolv spent</text><text class="bv" x="670" y="1186">$12,354</text><text class="bs" x="670" y="1201">in $18,670 · held $71,559 ↑</text></g>
+<g class="b prog"><rect x="660" y="1221" width="254" height="58" rx="5"/><text class="bl" x="670" y="1239">Comp School Health Serv spent</text><text class="bv" x="670" y="1255">$5,120</text><text class="bs" x="670" y="1270">in $10,775 · held $5,655 ↑</text></g>
+<g class="b prog"><rect x="660" y="1290" width="254" height="58" rx="5"/><text class="bl" x="670" y="1308">Adult Education Revolving spent</text><text class="bv" x="670" y="1324">$2,880</text><text class="bs" x="670" y="1339">in $4,000 · held $12,744 ↑</text></g>
+<g class="b prog"><rect x="660" y="1359" width="254" height="58" rx="5"/><text class="bl" x="670" y="1377">Lost Books/Tech Rev Fund spent</text><text class="bv" x="670" y="1393">$661</text><text class="bs" x="670" y="1408">in $2,860 · held $16,665 ↑</text></g>
+</svg></div>
+<div class="key"><span><i class="k traced"></i>traced</span><span><i class="k restricted"></i>the fund spent it — <b>purpose presumed, never observed</b></span><span><i class="k missing"></i>collected, cannot be located</span></div>
+<section class="stage warnbox"><h2>The two columns do not balance, and that is the point</h2><p><b>Revenue is not spending.</b> A fund is a tank, not a pipe: it can spend less than it receives and accumulate, or more than it receives and draw a balance down. Reading across a row tells you what a fund took in and what it paid out — <b>it does not tell you those are the same money.</b></p><p>Across all the schools’ own funds in FY2026 to 31 March:</p><table><tr><td>money in</td><td class="v">$1,553,151</td></tr><tr><td>money out</td><td class="v">$1,736,376</td></tr><tr><td><b>net</b></td><td class="v"><b>-183,225</b></td></tr><tr><td>opening balance <span class="sub">derived from the fund identity; the town’s report does not print it</span></td><td class="v">$1,775,481</td></tr><tr><td>held at 31 March</td><td class="v">$1,592,256</td></tr></table><p><b>The funds collectively spent $183,225 more than they took in.</b> That money is real and it came from balances built in earlier years. A diagram that balanced would be hiding it.</p><p class="cap">School lunch is the clearest single case — in $572,231, out $739,586, holding $287,771. The program is solvent this year and has a smaller cushion next year, and neither the appropriation nor the “spent” figure shows that.</p></section>
+<section class="stage"><h2>What a fund box on the right does NOT say</h2><p>Only that the fund spent the money. <b>Not what it bought.</b> There is no expense report for the special revenue funds, and fund 1301 — the one fund with a transaction journal — records <b>no vendor on any of its 46 FY26 payments</b>. So “Athletics fund spent” means money left that fund. That it went to athletics is the statute talking, not the ledger.</p><p class="cap">No offset edges are drawn. The district publishes three amounts (Extended Day $71,247, Facilities $25,000, Athletic $20,000) and none for lunch, school choice, the circuit breaker or the grants. Drawing an edge only where an amount happens to be published would imply the others have no offset, which is a stronger claim than we can make.</p></section>
+<section class="stage"><h2>The program view — a different lens</h2><p class="cap">What each program costs across both sides. <b>These figures overlap the diagram above and must never be added to it</b> — most of each row is already inside the school budget box.</p><table><tr><th>program</th><th class="v">in the budget</th><th class="v">from funds</th><th class="v">total</th></tr>
+<tr><td>Special education</td><td class="v">$5,909,548</td><td class="v">$420,133</td><td class="v"><b>$6,329,681</b></td></tr>
+<tr><td>Transportation</td><td class="v">$1,531,234</td><td class="v">not found</td><td class="v"><b>$1,531,234</b></td></tr>
+<tr><td>Athletics</td><td class="v">$518,334</td><td class="v">$100,467</td><td class="v"><b>$618,801</b></td></tr>
+<tr><td>Food service</td><td class="v">—</td><td class="v">$739,586</td><td class="v"><b>$739,586</b></td></tr>
+<tr><td>Extended day and after school</td><td class="v">—</td><td class="v">$340,899</td><td class="v"><b>$340,899</b></td></tr>
+</table><p class="warn"><b>Athletics is the case to read.</b> The town appropriates $518,334 and the district’s own athletics documents record a further $146,911 spent through the revolving fund (it took in $188,944 — two different quantities, never one). And the district’s FY26 budget overview says why the line moves: it was cut <i>“with anticipation that athletic revolving may be enough to offset this reduction in the budget line”</i> — and the next year, <i>“athletic revolving can not support these increased costs”</i>, at a 254% line increase.</p></section>
+<section class="stage"><h2>Where this page comes from</h2>
+<p class="cap">Every document behind the figures above. This list is <strong>recorded while the page is built</strong> — SQLite reports each table the render actually reads, and the documents come off <code>doc_id</code> on the rows themselves, so it cannot drift away from what the page does. 
+All 23 were traced that way.</p>
+<div class="scroll"><table><tr><th>document</th><th>feeds</th><th>how we know</th><th>sha256</th></tr>
+<tr><td>Athletics_v10.xlsx (citizen analysis, unpublished)</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td>budget-workbooks/fy27-proposals.xlsx</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td>budget-workbooks/school-funds-fy26.xlsx</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td>district-budget/docs/fy19-proposed-athletics-budget.pdf</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td>fy24-approved-budget.txt</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td>fy27-budget-projections-as-of-2-24-26-with-restorations.txt</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td>fy27-budget-projections-as-of-3-16-26-with-restorations.txt</td><td class="ty">athletics_history</td><td>traced</td><td class="ty">not on disk</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-assumptions.csv">data/money-assumptions.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">620c2b74ce21d327…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-classification.csv">data/money-classification.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">2ece30bf2f0347a9…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-edges.csv">data/money-edges.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">0b05cefe4369e8d6…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-gaps.csv">data/money-gaps.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">e593c26acdfde360…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">6e2ada913f7457f2…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">f67d785fd5ba15dc…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">be236a99caa7e8cb…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">58fa38d6d654d647…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">449853bc842b2494…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx">town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">215dd64f597f1f2d…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx">town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx</a></td><td class="ty">fund_activity</td><td>traced</td><td class="ty">4b9777d83c747c1c…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">668868e19fc24fa6…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">ccaa743215e8fea4…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">78a0f82a9b06f54a…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">f4647f445bf824ec…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">7e0f22acb4934c57…</td></tr>
+</table></div>
+<p class="cap">Addresses resolve on the published site; the archive is also mirrored on GitHub. A sha256 is here because a file can be replaced at the same URL — see rule 12.</p></section>
+
+<p class="gen">Generated by <code>scripts/build_money_flow.py</code> from
+<code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
+fails if this file stops reproducing. Companion to <code>money-in.html</code>, kept
+unchanged beside it.</p>
+</div>

@@ -11,6 +11,33 @@ Nothing in this file is a claim about the data. It is a work list.
 
 ## Open
 
+### 5. `follow-the-money.html` states something that is not true
+
+*Found 7 Sept 2026 by the agent publishing the reference pages, which refused to publish
+it.* The page's own diagram labels the `account` box **"no function column"**. That was
+true when it was drawn and has not been since 3 September: `account` carries `function`
+and `account_string`, **270 accounts hold a code**, and `v_function_budget_vs_ledger`
+performs the join the page says is impossible. Verified directly, not taken on report.
+
+It is **hand-written**, which is the whole reason it went stale — nothing regenerates it,
+so nothing told it the schema had moved underneath. Every other page in that folder is
+generated and would have failed `check_generated.py` the moment its input changed.
+
+Three options, and the middle one is probably right:
+1. Regenerate it from the database, like its neighbours. Most work, and it stops being a
+   class of problem rather than an instance.
+2. Correct the label and add the date it was corrected, keeping the page hand-written.
+   Leaves the same trap set for the next reader.
+3. Retire it. `money-in.html` is the page a reader wants under that name — its `<title>`
+   is literally *"Follow The Money"* — which is also how the site plan came to name the
+   wrong file.
+
+**Also found, and worse:** `money-flow.html` (the v1 school diagram, still generated on
+every run) **adds an appropriation to nine months of fund actuals and calls the sum "what
+the school system actually has"**. That is rule 1, on a live generated page. Only
+`school-money-flow.html` is published; v1 should be retired or fixed rather than left
+generating.
+
 ### 4. The four never-extracted families — balance sheet first
 
 *Raised 7 Sept 2026, on `notes/reference/EXTRACTION-GAPS.md`.* TJ: *"we need all that

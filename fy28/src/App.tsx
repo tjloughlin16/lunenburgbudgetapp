@@ -11,6 +11,7 @@ import { FindTheMoney } from './pages/FindTheMoney'
 import { BendTheCurve } from './pages/BendTheCurve'
 import { Override } from './pages/Override'
 import { Walkthrough } from './pages/Walkthrough'
+import { Home } from './pages/Home'
 import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
@@ -23,7 +24,7 @@ import { AskAnAssistant } from './components/AskAnAssistant'
 import { FreeCash } from './pages/FreeCash'
 import { DataRoom } from './pages/DataRoom'
 import { Reports } from './pages/Reports'
-import { LABEL, PARENT, pathFor, tabFromPath, type Tab } from './routes'
+import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
 
@@ -200,9 +201,9 @@ export default function App() {
               small tax on everybody who tries to tell somebody else about it.
               FY28 has not gone anywhere — it is all over the walkthrough, where it is a
               fact rather than a title. */}
-          <button onClick={() => go('walk')}
+          <button onClick={() => go('home')}
             className="font-bold shrink-0 mr-1 leading-none text-left"
-            title="Back to the start of the walkthrough">
+            title="Back to the front page — the four ways into this site">
             {/* Two lines on a phone rather than a shorter name. "Budget Project" alone
                 saved thirty pixels and dropped the only word that says which town this
                 is about — which is the one word a link shared into a Lunenburg Facebook
@@ -214,6 +215,19 @@ export default function App() {
               <span className="block" style={{ color: 'var(--brand)' }}>Lunenburg</span>
               <span className="block">Budget Project</span>
             </span>
+          </button>
+
+          {/* The walkthrough is no longer at the root, so it needs a way back into it
+              that is not the wordmark. Desktop only, for the same reason Go deeper is:
+              the two boards and Sources are what a phone has room for, and the footer
+              carries this one too. */}
+          <button onClick={() => go('walk')} title="The walkthrough, from the beginning"
+            aria-current={tab === 'walk' ? 'page' : undefined}
+            className="hidden sm:inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
+                       whitespace-nowrap shrink-0"
+            style={{ background: tab === 'walk' ? 'var(--surface-3)' : 'transparent',
+                     color: tab === 'walk' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+            {LABEL.walk}
           </button>
 
           {/* Reachable on a phone from the walkthrough's last room and the footer, so it
@@ -291,9 +305,16 @@ export default function App() {
           breadcrumb -- which is most of a small screen spent on furniture. "The archive
           was updated" is context for somebody landing on the site, so it belongs on the
           page people land on. Somebody three pages deep has already arrived. */}
-      {tab === 'walk' && <UpdatedBar onOpen={() => setNotesOpen(true)} />}
+      {/* Both arrival pages, and only those. `/` is the door somebody lands on now, and
+          the walkthrough is the page most bookmarks and shared links still point at. */}
+      {(tab === 'home' || tab === 'walk')
+        && <UpdatedBar onOpen={() => setNotesOpen(true)} />}
 
-      {tab !== 'walk' && <Breadcrumb tab={tab} goUp={goUp} />}
+      {/* The root has no breadcrumb because there is nothing above it. Everything else
+          does, including the walkthrough now that it sits one level down. */}
+      {tab !== ROOT && <Breadcrumb tab={tab} goUp={goUp} />}
+
+      {tab === 'home' && <Home onJump={go} />}
 
       {tab === 'walk' && <Walkthrough onJump={go} />}
 
@@ -353,6 +374,11 @@ export default function App() {
           {/* First line of the footer on every page. The sentence below promises the
               reader can check this against the documents it cites; a promise with no link
               under it is decoration. */}
+          <button onClick={() => go('walk')}
+            className="text-xs font-semibold mb-2 block"
+            style={{ color: 'var(--series-cost)' }}>
+            Start here &mdash; the walkthrough, from the beginning &rarr;
+          </button>
           <button onClick={() => go('sources')}
             className="text-xs font-semibold mb-2 block"
             style={{ color: 'var(--series-cost)' }}>
@@ -401,7 +427,10 @@ export default function App() {
 function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
   const trail: Tab[] = []
   for (let up = PARENT[tab]; up; up = PARENT[up]) trail.unshift(up)
-  trail.unshift('walk')
+  // Whichever tab owns the root, read from the table rather than named. It was hardcoded
+  // to 'walk' and would have gone on claiming the walkthrough was the top of the site the
+  // day the root became the chooser.
+  trail.unshift(ROOT)
 
   return (
     <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: 'var(--grid)' }}>

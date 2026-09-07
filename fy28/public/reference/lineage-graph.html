@@ -1,0 +1,284 @@
+<title>Lineage Graph</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#F6F8F4; --band:#E7EEE4; --card:#FFFFFF;
+    --ink:#17251F; --ink-2:#3C4C43; --muted:#68766A;
+    --rule:#C9D4C7; --rule-soft:#DFE7DC;
+    --works:#2C5F7C; --works-soft:#E2EDF3;
+    --broken:#A03A1F; --broken-soft:#F6E5DE;
+    --recover:#9A6A17; --recover-soft:#F6EEDC;
+    --never:#6B7A72; --never-soft:#E8EDE7;
+    --shadow:0 1px 2px rgba(23,37,31,.06), 0 8px 24px -16px rgba(23,37,31,.28);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#111814; --band:#18211C; --card:#161E19;
+      --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+      --rule:#2C3830; --rule-soft:#222C26;
+      --works:#7FB3D0; --works-soft:#17272F;
+      --broken:#E08B6A; --broken-soft:#2C1D16;
+      --recover:#D6A54A; --recover-soft:#2A2313;
+      --never:#8A9A8C; --never-soft:#1D251F;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#111814; --band:#18211C; --card:#161E19;
+    --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+    --rule:#2C3830; --rule-soft:#222C26;
+    --works:#7FB3D0; --works-soft:#17272F;
+    --broken:#E08B6A; --broken-soft:#2C1D16;
+    --recover:#D6A54A; --recover-soft:#2A2313;
+    --never:#8A9A8C; --never-soft:#1D251F;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font:400 16px/1.62 "IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:60rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  h1,h2,h3{font-family:"IBM Plex Serif",Georgia,serif;text-wrap:balance;margin:0}
+  h1{font-size:clamp(1.9rem,4.4vw,2.75rem);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+  h2{font-size:1.4rem;font-weight:600;margin:3.25rem 0 .5rem}
+  h3{font-size:1.02rem;font-weight:600;margin:0 0 .3rem}
+  p{margin:0 0 1rem;max-width:65ch}
+  code,.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem
+  }
+  .lede{font-size:1.16rem;line-height:1.55;color:var(--ink-2);max-width:60ch;margin:1.1rem 0 0}
+  .verdicts{display:grid;gap:.75rem;margin:2.25rem 0 0}
+  @media(min-width:640px){.verdicts{grid-template-columns:1fr 1fr}}
+  .v{
+    background:var(--card);border:1px solid var(--rule);border-radius:2px;
+    padding:1rem 1.1rem;box-shadow:var(--shadow);display:flex;gap:.85rem;align-items:flex-start
+  }
+  .v .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.1em;
+    text-transform:uppercase;padding:.28rem .45rem;border-radius:2px;white-space:nowrap;font-weight:600
+  }
+  .tag.ok{background:var(--works-soft);color:var(--works)}
+  .tag.no{background:var(--broken-soft);color:var(--broken)}
+  .tag.rec{background:var(--recover-soft);color:var(--recover)}
+  .tag.nev{background:var(--never-soft);color:var(--never)}
+  .rec{color:var(--recover);font-weight:600}
+  .nev{color:var(--never);font-weight:600}
+  .legend{display:grid;gap:.5rem;margin:1.2rem 0 0;font-size:.88rem}
+  @media(min-width:760px){.legend{grid-template-columns:1fr 1fr}}
+  .legend div{display:flex;gap:.6rem;align-items:baseline}
+  .legend .sw{flex:0 0 34px;height:0;border-top-width:2.5px;position:relative;top:-4px}
+  .q{border-left:2px solid var(--rule);padding:.15rem 0 .15rem 1.1rem;margin:1.1rem 0 0}
+  .q h3{font-family:"IBM Plex Sans",sans-serif;font-size:.98rem}
+  .q.yes{border-left-color:var(--works)} .q.rec2{border-left-color:var(--recover)}
+  .q.doc{border-left-color:var(--broken)} .q.no2{border-left-color:var(--never)}
+  .q p{font-size:.92rem;color:var(--ink-2);margin:.15rem 0 0}
+  .v p{margin:0;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+  .v strong{color:var(--ink)}
+  figure{margin:2rem 0 0;background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:1.5rem 1rem 1.1rem;box-shadow:var(--shadow);overflow-x:auto}
+  figure svg{display:block;max-width:100%;height:auto;margin:0 auto;color:var(--ink)}
+  figcaption{font-size:.86rem;color:var(--muted);margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--rule-soft);max-width:none;line-height:1.5}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0 0}
+  th{
+    text-align:left;font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);font-weight:500;
+    padding:.55rem .7rem;border-bottom:1px solid var(--rule)
+  }
+  td{padding:.62rem .7rem;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  tbody tr:nth-child(odd){background:var(--band)}
+  td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ok{color:var(--works);font-weight:600}
+  .no{color:var(--broken);font-weight:600}
+  .scroller{overflow-x:auto}
+  .layer{border-left:2px solid var(--rule);padding:0 0 0 1.15rem;margin:1.4rem 0 0}
+  .layer.broken{border-left-color:var(--broken)}
+  .layer .k{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
+  .note{background:var(--band);border-left:2px solid var(--rule);padding:1rem 1.15rem;margin:1.5rem 0 0;font-size:.94rem}
+  .note.warn{border-left-color:var(--broken)}
+  .note p:last-child{margin-bottom:0}
+  footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
+</style><style>
+  .graphwrap{position:relative;background:var(--card);border:1px solid var(--rule);border-radius:2px;
+    box-shadow:var(--shadow);margin-top:1.4rem}
+  .gscroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+  svg#g{display:block;width:1215px;max-width:none;height:auto}
+  svg#g text{font-family:"IBM Plex Sans",sans-serif;pointer-events:none;user-select:none}
+  .lg{display:flex;flex-wrap:wrap;gap:.35rem .9rem;padding:.75rem 1rem;border-bottom:1px solid var(--rule-soft);font-size:.8rem;align-items:center}
+  .lg b{display:inline-flex;align-items:center;gap:.4rem;font-weight:500;color:var(--ink-2)}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .hint{padding:.6rem 1rem;font-size:.82rem;color:var(--muted);border-top:1px solid var(--rule-soft)}
+  .colhead{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:1.2px;fill:currentColor;opacity:.5}
+  #g .n{cursor:default}
+  #g .n.q{cursor:pointer}
+  #trace{font-size:.9rem;margin-top:1rem;min-height:3.2rem;padding:.85rem 1.05rem;
+    background:var(--band);border-left:2px solid var(--rule)}
+  #trace b{color:var(--ink)}
+  .chip{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.76rem;
+    padding:.12rem .4rem;border-radius:2px;background:var(--works-soft);color:var(--works);margin:0 .15rem}
+  .chip.bad{background:var(--broken-soft);color:var(--broken)}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Lunenburg Budget Project · lineage graph · 3 September 2026</p>
+  <h1>Which questions the data can answer, and why the rest cannot be</h1>
+  <p class="lede">A lookup needs one key. A <em>connectivity</em> question needs two sides brought together, and those are the ones that fail — in three different ways, only one of which a schema diagram can show. Click a question to trace it.</p>
+
+  <div class="graphwrap">
+    <div class="lg">
+      <b><span class="dot" style="background:#7C4DA0"></span>Question</b>
+      <b><span class="dot" style="background:#A03A1F"></span>Key</b>
+      <b><span class="dot" style="background:#2C5F7C"></span>Table</b>
+      <b><span class="dot" style="background:#9A6A17"></span>Extract</b>
+      <b><span class="dot" style="background:#2F7A55"></span>Report</b>
+      <span style="margin-left:auto;color:var(--muted)">click a question to trace it · scroll sideways for the full chain</span>
+    </div>
+    <div class="gscroll"><svg id="g" viewBox="0 0 1215 865" role="img" aria-label="A layered graph of nine questions, the keys they need, the tables and extracts carrying those keys, and the reports those came from. Three questions connect to a key that no field carries, so their path ends there."></svg></div>
+    <div class="hint">Seven questions reach a report. Six stop — five because no field anywhere carries the link, and one because the column is on both sides and the values never meet.</div>
+  </div>
+  <div id="trace">Click any question node to trace it back to the reports that answer it.</div>
+
+  <h2>How to read it</h2>
+  <p>The chain is always the same five steps, and each one is a different kind of thing:</p>
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:.9rem;background:var(--band);padding:.85rem 1rem;border-left:2px solid var(--rule)">question &rarr; key &rarr; table &rarr; extract &rarr; report</p>
+  <p>The columns are those five steps, in that order, left to right. Positions are computed once by <code>scripts/build_lineage_graph.py</code> — nodes are ordered within each column by the average height of what they connect to, swept both directions until the crossings settle — so the picture is the same every time you open it. A force simulation lands somewhere different on every load, and a position that means nothing still looks like it means something.</p>
+  <p>Two of those links are <strong>derived</strong> and one is <strong>assigned</strong>, which matters if you are going to trust it. Table&nbsp;&rarr;&nbsp;extract is read out of <code>build_db.py</code>&rsquo;s own <code>rows(...)</code> calls; table&nbsp;&rarr;&nbsp;key and the field lists are read from the live schema. Extract&nbsp;&rarr;&nbsp;report is <em>our labelling</em> — which Town report produced a given CSV is not recorded anywhere machine-readable, so it is written in one place in <code>scripts/build_lineage_graph.py</code> rather than implied across a dozen documents.</p>
+
+  <h2>Three ways a connection fails</h2>
+  <p>Worth separating, because they call for completely different responses — and because only the first is visible in a schema.</p>
+
+  <div class="q doc"><h3>1 · One side carries the key, the other never did</h3>
+    <p><strong>Ask for a document.</strong> The grants list names 79 awards and never says which account paid them. The budget prints no account number, ever. Nothing is broken; the link was never recorded, and a report could record it.</p>
+    <p style="margin-top:.4rem"><em>Questions stuck here:</em> did a grant pay for these staff · which school does this spending belong to · which budget line does a revolving fund pay for.</p></div>
+
+  <div class="q rec2"><h3>2 · The column is on both sides and the values never meet</h3>
+    <p><strong>The most deceptive one.</strong> <code>fund</code> is a column on <code>fund_activity</code> and on <code>account</code>, so every schema diagram draws a join there. The values are disjoint: the school&rsquo;s revolving funds are <span class="mono">1300&ndash;1303</span>, the ledger we hold carries <span class="mono">5000&ndash;6200</span>, and the intersection is <strong>zero of 61</strong>. The join is expressible, runs without error, and returns nothing.</p>
+    <p style="margin-top:.4rem">This is not a missing key. It is a missing <em>report</em> — the ledger for the school&rsquo;s own funds — and it looks like neither until you intersect the values.</p></div>
+
+  <div class="q no2"><h3>3 · No field anywhere carries the link, and none can</h3>
+    <p><strong>Do not ask.</strong> &ldquo;What did state aid pay for?&rdquo; and &ldquo;which categories does state aid pay for?&rdquo; both need a tie from money in to money out. State aid arrives as unrestricted revenue into the general fund; 29 state-aid revenue accounts share <strong>zero</strong> organisation codes with any expense account, because no municipal ledger records which dollar paid which bill.</p>
+    <p style="margin-top:.4rem">What can be said instead: how much came in (<span class="mono">CH 70 AID — $6,870,136</span>), what the general fund spent, and what the town had to raise after aid. Those are real answers to a nearby question, and they are the honest substitute for one nobody can answer.</p></div>
+
+  <footer>
+    Generated by <code>scripts/build_lineage_graph.py</code> from the live database and from
+    <code>build_db.py</code>&rsquo;s own loader calls. Source of record:
+    <code>notes/data-model/lineage.json</code>. Re-run it before quoting anything here.
+  </footer>
+</div>
+
+<script>
+const DATA = {"nodes": [{"id": "table:account", "kind": "table", "label": "account", "rows": 981, "fields": 13, "x": 544, "y": 129, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:munis-ledger", "kind": "extract", "label": "munis-ledger.csv", "x": 757, "y": 196, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:Year-to-date budget report (glytdbud)", "kind": "report", "label": "Year-to-date budget report (glytdbud)", "x": 990, "y": 358, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "key:department", "kind": "key", "label": "dept", "note": "the department code, 300 and 301", "x": 405, "y": 278, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:function", "kind": "key", "label": "function", "note": "the DESE category code, 2710 and 2305", "x": 405, "y": 332, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:account_id", "kind": "key", "label": "account_id", "note": "the MUNIS account number", "x": 405, "y": 358, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:fund", "kind": "key", "label": "fund", "note": "the fund code, 0100 and 1301", "x": 405, "y": 386, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "table:athletic_fee_schedule", "kind": "table", "label": "athletic_fee_schedule", "rows": 31, "fields": 11, "x": 544, "y": 75, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:athletic-fee-schedule", "kind": "extract", "label": "athletic-fee-schedule.csv", "x": 757, "y": 142, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:Records request, June 2026", "kind": "report", "label": "Records request, June 2026", "x": 990, "y": 332, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "table:athletics_by_sport", "kind": "table", "label": "athletics_by_sport", "rows": 960, "fields": 9, "x": 544, "y": 102, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:athletics-by-sport", "kind": "extract", "label": "athletics-by-sport.csv", "x": 757, "y": 170, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:athletics_by_sport_reconciliation", "kind": "table", "label": "athletics_by_sport_reconciliation", "rows": 342, "fields": 10, "x": 544, "y": 507, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:athletics-by-sport-reconciliation", "kind": "extract", "label": "athletics-by-sport-reconciliation.csv", "x": 757, "y": 466, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:athletics_history", "kind": "table", "label": "athletics_history", "rows": 178, "fields": 6, "x": 544, "y": 534, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:athletics-history", "kind": "extract", "label": "athletics-history.csv", "x": 757, "y": 494, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:budget_figure", "kind": "table", "label": "budget_figure", "rows": 8598, "fields": 7, "x": 544, "y": 345, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:line-history", "kind": "extract", "label": "line-history.csv", "x": 757, "y": 304, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:The district budget workbook", "kind": "report", "label": "The district budget workbook", "x": 990, "y": 440, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "key:line_key", "kind": "key", "label": "line_key", "note": "the budget line, by its printed name", "x": 405, "y": 494, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:doc_id", "kind": "key", "label": "doc_id", "note": "the document a figure came from", "x": 405, "y": 548, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "table:budget_line", "kind": "table", "label": "budget_line", "rows": 703, "fields": 5, "x": 544, "y": 318, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:lps-budget-lines", "kind": "extract", "label": "lps-budget-lines.csv", "x": 757, "y": 278, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:capital_funding_history", "kind": "table", "label": "capital_funding_history", "rows": 10, "fields": 6, "x": 544, "y": 561, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:capital-funding-history", "kind": "extract", "label": "capital-funding-history.csv", "x": 757, "y": 520, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:capital_plan_fy27", "kind": "table", "label": "capital_plan_fy27", "rows": 22, "fields": 7, "x": 544, "y": 48, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:capital-plan-fy27", "kind": "extract", "label": "capital-plan-fy27.csv", "x": 757, "y": 116, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:crosswalk", "kind": "table", "label": "crosswalk", "rows": 0, "fields": 6, "x": 544, "y": 804, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:dese_measure", "kind": "table", "label": "dese_measure", "rows": 2982, "fields": 8, "x": 544, "y": 399, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:dese-radar", "kind": "extract", "label": "dese-radar.csv", "x": 757, "y": 358, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:DESE, all funds", "kind": "report", "label": "DESE, all funds", "x": 990, "y": 466, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "table:document", "kind": "table", "label": "document", "rows": 393, "fields": 11, "x": 544, "y": 453, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:document-basis", "kind": "extract", "label": "document-basis.csv", "x": 757, "y": 412, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:Written by this project", "kind": "report", "label": "Written by this project", "x": 990, "y": 520, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "table:fiscal_period", "kind": "table", "label": "fiscal_period", "rows": 13, "fields": 4, "x": 544, "y": 264, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "key:period", "kind": "key", "label": "period", "note": "the fiscal period, 1 to 13", "x": 405, "y": 412, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "table:free_cash_proof", "kind": "table", "label": "free_cash_proof", "rows": 630, "fields": 7, "x": 544, "y": 588, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:free-cash-proof", "kind": "extract", "label": "free-cash-proof.csv", "x": 757, "y": 548, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:fund", "kind": "table", "label": "fund", "rows": 68, "fields": 4, "x": 544, "y": 183, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:school-special-revenue-fy26-q3", "kind": "extract", "label": "school-special-revenue-fy26-q3.csv", "x": 757, "y": 250, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:Special revenue report", "kind": "report", "label": "Special revenue report", "x": 990, "y": 412, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "table:fund_1301_cash_journal", "kind": "table", "label": "fund_1301_cash_journal", "rows": 277, "fields": 19, "x": 544, "y": 210, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:fund-1301-cash-journal", "kind": "extract", "label": "fund-1301-cash-journal.csv", "x": 757, "y": 224, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:Account Detail (athletics only)", "kind": "report", "label": "Account Detail (athletics only)", "x": 990, "y": 386, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "table:fund_activity", "kind": "table", "label": "fund_activity", "rows": 61, "fields": 10, "x": 544, "y": 237, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:grant_award", "kind": "table", "label": "grant_award", "rows": 79, "fields": 9, "x": 544, "y": 372, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:grants-history", "kind": "extract", "label": "grants-history.csv", "x": 757, "y": 332, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:ledger_snapshot", "kind": "table", "label": "ledger_snapshot", "rows": 983, "fields": 12, "x": 544, "y": 156, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:ood_tuition_history", "kind": "table", "label": "ood_tuition_history", "rows": 30, "fields": 6, "x": 544, "y": 615, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:ood-tuition-history", "kind": "extract", "label": "ood-tuition-history.csv", "x": 757, "y": 574, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:rate_register", "kind": "table", "label": "rate_register", "rows": 62, "fields": 13, "x": 544, "y": 642, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:rate-register", "kind": "extract", "label": "rate-register.csv", "x": 757, "y": 602, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:sped_para_history", "kind": "table", "label": "sped_para_history", "rows": 26, "fields": 9, "x": 544, "y": 669, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:sped-para-history", "kind": "extract", "label": "sped-para-history.csv", "x": 757, "y": 628, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:sped_teacher_history", "kind": "table", "label": "sped_teacher_history", "rows": 21, "fields": 9, "x": 544, "y": 696, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:sped-teacher-history", "kind": "extract", "label": "sped-teacher-history.csv", "x": 757, "y": 656, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:sped_transport_history", "kind": "table", "label": "sped_transport_history", "rows": 25, "fields": 5, "x": 544, "y": 723, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:sped-transport-history", "kind": "extract", "label": "sped-transport-history.csv", "x": 757, "y": 682, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:stated_figure", "kind": "table", "label": "stated_figure", "rows": 2, "fields": 11, "x": 544, "y": 426, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:stated-figures", "kind": "extract", "label": "stated-figures.csv", "x": 757, "y": 386, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "report:Meeting minutes and letters", "kind": "report", "label": "Meeting minutes and letters", "x": 990, "y": 494, "col": 4, "anchor": "start", "font": 9.5, "r": 7}, {"id": "table:total_expenses_history", "kind": "table", "label": "total_expenses_history", "rows": 28, "fields": 4, "x": 544, "y": 750, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:total-expenses-history", "kind": "extract", "label": "total-expenses-history.csv", "x": 757, "y": 710, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:total_salaries_history", "kind": "table", "label": "total_salaries_history", "rows": 28, "fields": 4, "x": 544, "y": 777, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:total-salaries-history", "kind": "extract", "label": "total-salaries-history.csv", "x": 757, "y": 736, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:variance_by_group", "kind": "table", "label": "variance_by_group", "rows": 57, "fields": 9, "x": 544, "y": 480, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "extract:variance-by-group", "kind": "extract", "label": "variance-by-group.csv", "x": 757, "y": 440, "col": 3, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "table:workbook_figure", "kind": "table", "label": "workbook_figure", "rows": 3261, "fields": 7, "x": 544, "y": 291, "col": 2, "anchor": "start", "font": 9.5, "r": 4.5}, {"id": "key:fund-both-sides", "kind": "key", "label": "fund-both-sides", "note": "the fund column is on both sides and the values do not meet", "state": "disjoint", "shared": 0, "missing": true, "x": 405, "y": 304, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:grant-to-account", "kind": "key", "label": "grant-to-account", "note": "no field ties a grant to an account", "state": "none", "shared": null, "missing": true, "x": 405, "y": 520, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:line-to-account", "kind": "key", "label": "line-to-account", "note": "no field ties a budget line to an account", "state": "none", "shared": null, "missing": true, "x": 405, "y": 574, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:fund-to-line", "kind": "key", "label": "fund-to-line", "note": "no field ties a fund to a budget line", "state": "none", "shared": null, "missing": true, "x": 405, "y": 466, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "key:revenue-to-expense", "kind": "key", "label": "revenue-to-expense", "note": "no field ties money in to money out", "state": "none", "shared": null, "missing": true, "x": 405, "y": 440, "col": 1, "anchor": "start", "font": 9.5, "r": 6.5}, {"id": "q:What was appropriated for the schools?", "kind": "question", "label": "What was appropriated for the schools?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 264, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:How much state aid came in?", "kind": "question", "label": "How much state aid came in?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 372, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:What did one account spend?", "kind": "question", "label": "What did one account spend?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 399, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:What is in each revolving fund?", "kind": "question", "label": "What is in each revolving fund?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 426, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:What did athletics pay, transaction by transaction?", "kind": "question", "label": "What did athletics pay, transaction by transaction?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 453, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Is a category over budget?", "kind": "question", "label": "Is a category over budget?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 318, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Do the town and the district agree, by category?", "kind": "question", "label": "Do the town and the district agree, by category?", "answerable": true, "state": "joins", "verdict": "the key is carried and the two sides share values", "x": 324, "y": 345, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Do the school revolving funds appear in the ledger?", "kind": "question", "label": "Do the school revolving funds appear in the ledger?", "answerable": false, "state": "disjoint", "verdict": "the column is on both sides and no value appears in both", "x": 324, "y": 291, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:What did state aid pay for?", "kind": "question", "label": "What did state aid pay for?", "answerable": false, "state": "none", "verdict": "no field anywhere carries such a key", "x": 324, "y": 480, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Which categories does state aid pay for?", "kind": "question", "label": "Which categories does state aid pay for?", "answerable": false, "state": "none", "verdict": "no field anywhere carries such a key", "x": 324, "y": 507, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Which budget line does a revolving fund pay for?", "kind": "question", "label": "Which budget line does a revolving fund pay for?", "answerable": false, "state": "none", "verdict": "no field anywhere carries such a key", "x": 324, "y": 534, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Did a grant pay for these staff?", "kind": "question", "label": "Did a grant pay for these staff?", "answerable": false, "state": "none", "verdict": "no field anywhere carries such a key", "x": 324, "y": 561, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "q:Which school does this spending belong to?", "kind": "question", "label": "Which school does this spending belong to?", "answerable": false, "state": "none", "verdict": "no field anywhere carries such a key", "x": 324, "y": 588, "col": 0, "anchor": "end", "font": 11, "r": 7}, {"id": "__canvas", "kind": "meta", "label": "", "width": 1215, "height": 865, "columns": [{"kind": "question", "x": 324}, {"kind": "key", "x": 405}, {"kind": "table", "x": 544}, {"kind": "extract", "x": 757}, {"kind": "report", "x": 990}]}], "edges": [{"source": "extract:munis-ledger", "target": "table:account", "rel": "loads into"}, {"source": "report:Year-to-date budget report (glytdbud)", "target": "extract:munis-ledger", "rel": "extracted from"}, {"source": "table:account", "target": "key:department", "rel": "keyed by", "rows": 704}, {"source": "table:account", "target": "key:function", "rel": "keyed by", "rows": 270}, {"source": "table:account", "target": "key:account_id", "rel": "keyed by", "rows": 981}, {"source": "table:account", "target": "key:fund", "rel": "keyed by", "rows": 981}, {"source": "extract:athletic-fee-schedule", "target": "table:athletic_fee_schedule", "rel": "loads into"}, {"source": "report:Records request, June 2026", "target": "extract:athletic-fee-schedule", "rel": "extracted from"}, {"source": "extract:athletics-by-sport", "target": "table:athletics_by_sport", "rel": "loads into"}, {"source": "report:Records request, June 2026", "target": "extract:athletics-by-sport", "rel": "extracted from"}, {"source": "extract:athletics-by-sport-reconciliation", "target": "table:athletics_by_sport_reconciliation", "rel": "loads into"}, {"source": "extract:athletics-history", "target": "table:athletics_history", "rel": "loads into"}, {"source": "extract:line-history", "target": "table:budget_figure", "rel": "loads into"}, {"source": "report:The district budget workbook", "target": "extract:line-history", "rel": "extracted from"}, {"source": "table:budget_figure", "target": "key:line_key", "rel": "keyed by", "rows": 8598}, {"source": "table:budget_figure", "target": "key:doc_id", "rel": "keyed by", "rows": 8598}, {"source": "extract:line-history", "target": "table:budget_line", "rel": "loads into"}, {"source": "report:The district budget workbook", "target": "extract:line-history", "rel": "extracted from"}, {"source": "extract:lps-budget-lines", "target": "table:budget_line", "rel": "loads into"}, {"source": "report:The district budget workbook", "target": "extract:lps-budget-lines", "rel": "extracted from"}, {"source": "table:budget_line", "target": "key:line_key", "rel": "keyed by", "rows": 703}, {"source": "extract:capital-funding-history", "target": "table:capital_funding_history", "rel": "loads into"}, {"source": "extract:capital-plan-fy27", "target": "table:capital_plan_fy27", "rel": "loads into"}, {"source": "table:capital_plan_fy27", "target": "key:department", "rel": "keyed by", "rows": 22}, {"source": "extract:dese-radar", "target": "table:dese_measure", "rel": "loads into"}, {"source": "report:DESE, all funds", "target": "extract:dese-radar", "rel": "extracted from"}, {"source": "table:dese_measure", "target": "key:doc_id", "rel": "keyed by", "rows": 2982}, {"source": "extract:document-basis", "target": "table:document", "rel": "loads into"}, {"source": "report:Written by this project", "target": "extract:document-basis", "rel": "extracted from"}, {"source": "table:document", "target": "key:doc_id", "rel": "keyed by", "rows": 393}, {"source": "extract:lps-budget-lines", "target": "table:fiscal_period", "rel": "loads into"}, {"source": "report:The district budget workbook", "target": "extract:lps-budget-lines", "rel": "extracted from"}, {"source": "table:fiscal_period", "target": "key:period", "rel": "keyed by", "rows": 13}, {"source": "extract:free-cash-proof", "target": "table:free_cash_proof", "rel": "loads into"}, {"source": "extract:munis-ledger", "target": "table:fund", "rel": "loads into"}, {"source": "report:Year-to-date budget report (glytdbud)", "target": "extract:munis-ledger", "rel": "extracted from"}, {"source": "extract:school-special-revenue-fy26-q3", "target": "table:fund", "rel": "loads into"}, {"source": "report:Special revenue report", "target": "extract:school-special-revenue-fy26-q3", "rel": "extracted from"}, {"source": "table:fund", "target": "key:fund", "rel": "keyed by", "rows": 68}, {"source": "extract:fund-1301-cash-journal", "target": "table:fund_1301_cash_journal", "rel": "loads into"}, {"source": "report:Account Detail (athletics only)", "target": "extract:fund-1301-cash-journal", "rel": "extracted from"}, {"source": "table:fund_1301_cash_journal", "target": "key:period", "rel": "keyed by", "rows": 277}, {"source": "extract:school-special-revenue-fy26-q3", "target": "table:fund_activity", "rel": "loads into"}, {"source": "report:Special revenue report", "target": "extract:school-special-revenue-fy26-q3", "rel": "extracted from"}, {"source": "table:fund_activity", "target": "key:fund", "rel": "keyed by", "rows": 61}, {"source": "table:fund_activity", "target": "key:period", "rel": "keyed by", "rows": 61}, {"source": "table:fund_activity", "target": "key:doc_id", "rel": "keyed by", "rows": 61}, {"source": "extract:grants-history", "target": "table:grant_award", "rel": "loads into"}, {"source": "report:The district budget workbook", "target": "extract:grants-history", "rel": "extracted from"}, {"source": "table:grant_award", "target": "key:doc_id", "rel": "keyed by", "rows": 79}, {"source": "extract:munis-ledger", "target": "table:ledger_snapshot", "rel": "loads into"}, {"source": "report:Year-to-date budget report (glytdbud)", "target": "extract:munis-ledger", "rel": "extracted from"}, {"source": "table:ledger_snapshot", "target": "key:account_id", "rel": "keyed by", "rows": 983}, {"source": "table:ledger_snapshot", "target": "key:period", "rel": "keyed by", "rows": 983}, {"source": "table:ledger_snapshot", "target": "key:doc_id", "rel": "keyed by", "rows": 983}, {"source": "extract:ood-tuition-history", "target": "table:ood_tuition_history", "rel": "loads into"}, {"source": "extract:rate-register", "target": "table:rate_register", "rel": "loads into"}, {"source": "extract:sped-para-history", "target": "table:sped_para_history", "rel": "loads into"}, {"source": "extract:sped-teacher-history", "target": "table:sped_teacher_history", "rel": "loads into"}, {"source": "extract:sped-transport-history", "target": "table:sped_transport_history", "rel": "loads into"}, {"source": "extract:stated-figures", "target": "table:stated_figure", "rel": "loads into"}, {"source": "report:Meeting minutes and letters", "target": "extract:stated-figures", "rel": "extracted from"}, {"source": "table:stated_figure", "target": "key:doc_id", "rel": "keyed by", "rows": 2}, {"source": "extract:total-expenses-history", "target": "table:total_expenses_history", "rel": "loads into"}, {"source": "extract:total-salaries-history", "target": "table:total_salaries_history", "rel": "loads into"}, {"source": "extract:variance-by-group", "target": "table:variance_by_group", "rel": "loads into"}, {"source": "report:Written by this project", "target": "extract:variance-by-group", "rel": "extracted from"}, {"source": "extract:lps-budget-lines", "target": "table:workbook_figure", "rel": "loads into"}, {"source": "report:The district budget workbook", "target": "extract:lps-budget-lines", "rel": "extracted from"}, {"source": "table:workbook_figure", "target": "key:line_key", "rel": "keyed by", "rows": 3261}, {"source": "table:workbook_figure", "target": "key:doc_id", "rel": "keyed by", "rows": 3261}, {"source": "q:What was appropriated for the schools?", "target": "key:department", "rel": "needs"}, {"source": "q:How much state aid came in?", "target": "key:account_id", "rel": "needs"}, {"source": "q:What did one account spend?", "target": "key:account_id", "rel": "needs"}, {"source": "q:What is in each revolving fund?", "target": "key:fund", "rel": "needs"}, {"source": "q:What did athletics pay, transaction by transaction?", "target": "key:period", "rel": "needs"}, {"source": "q:Is a category over budget?", "target": "key:function", "rel": "needs"}, {"source": "q:Do the town and the district agree, by category?", "target": "key:function", "rel": "needs"}, {"source": "q:Do the school revolving funds appear in the ledger?", "target": "key:fund-both-sides", "rel": "needs"}, {"source": "q:What did state aid pay for?", "target": "key:revenue-to-expense", "rel": "needs"}, {"source": "q:Which categories does state aid pay for?", "target": "key:revenue-to-expense", "rel": "needs"}, {"source": "q:Which budget line does a revolving fund pay for?", "target": "key:fund-to-line", "rel": "needs"}, {"source": "q:Did a grant pay for these staff?", "target": "key:grant-to-account", "rel": "needs"}, {"source": "q:Which school does this spending belong to?", "target": "key:line-to-account", "rel": "needs"}]};
+const COLOR = {question:'#7C4DA0', key:'#A03A1F', table:'#2C5F7C', extract:'#9A6A17', report:'#2F7A55'};
+const R = n => n.r;
+const NS = 'http://www.w3.org/2000/svg';
+
+const canvas = DATA.nodes.find(n => n.id === '__canvas');
+const nodes = DATA.nodes.filter(n => n.kind !== 'meta');
+const byId = new Map(nodes.map(n => [n.id, n]));
+const links = DATA.edges.filter(e => byId.has(e.source) && byId.has(e.target));
+const adj = new Map(nodes.map(n => [n.id, []]));
+for (const l of links) { adj.get(l.source).push(l.target); adj.get(l.target).push(l.source); }
+
+const svg = document.getElementById('g');
+const el = (t, a) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); return n; };
+
+for (const col of canvas.columns) {
+  const h = el('text', {x: col.x, y: 24, class: 'colhead', 'text-anchor': 'middle'});
+  h.textContent = col.kind.toUpperCase(); svg.appendChild(h);
+}
+
+const gLinks = el('g', {}); svg.appendChild(gLinks);
+const gNodes = el('g', {}); svg.appendChild(gNodes);
+const linkEls = new Map();
+for (const l of links) {
+  const a = byId.get(l.source), b = byId.get(l.target);
+  const [p, q] = a.x <= b.x ? [a, b] : [b, a];        // always draw left to right
+  const mx = (p.x + q.x) / 2;
+  const path = el('path', {
+    d: `M${p.x + R(p)} ${p.y} C${mx} ${p.y}, ${mx} ${q.y}, ${q.x - R(q)} ${q.y}`,
+    fill: 'none', stroke: 'currentColor', 'stroke-width': 1, 'stroke-opacity': .3});
+  gLinks.appendChild(path); linkEls.set(l, path);
+}
+
+const nodeEls = new Map();
+for (const n of nodes) {
+  const grp = el('g', {transform: `translate(${n.x},${n.y})`, class: 'n' + (n.kind === 'question' ? ' q' : '')});
+  const missing = n.kind === 'key' && n.missing;
+  grp.appendChild(el('circle', {r: R(n), fill: missing ? 'none' : COLOR[n.kind],
+    stroke: COLOR[n.kind], 'stroke-width': missing ? 2 : 0, 'stroke-dasharray': missing ? '3 2' : ''}));
+  const right = n.anchor === 'start';
+  const t = el('text', {x: right ? R(n) + 8 : -(R(n) + 8), y: 3.6,
+    'text-anchor': n.anchor, 'font-size': n.font,
+    'font-weight': n.kind === 'question' || n.kind === 'report' ? 600 : 400, fill: 'currentColor'});
+  t.textContent = n.label;
+  grp.appendChild(t);
+  const tip = el('title', {});
+  tip.textContent = n.label + (n.rows !== undefined ? ` — ${n.rows.toLocaleString()} rows` : '')
+    + (n.note ? ` — ${n.note}` : '');
+  grp.appendChild(tip);
+  gNodes.appendChild(grp); nodeEls.set(n.id, grp);
+  if (n.kind === 'question') grp.addEventListener('click', e => { e.stopPropagation(); trace(n); });
+}
+
+const out = document.getElementById('trace');
+const REST = 'Click any question to trace it back to the reports that answer it. Click it again to clear.';
+let active = null;
+
+function clearTrace() {
+  active = null;
+  for (const [, g] of nodeEls) g.setAttribute('opacity', 1);
+  for (const [, p] of linkEls) {
+    p.setAttribute('stroke-opacity', .3);
+    p.setAttribute('stroke', 'currentColor');
+    p.setAttribute('stroke-width', 1);
+  }
+  out.textContent = REST;
+}
+
+function trace(d) {
+  // Clicking the active question again clears it. Without this there was no way back to
+  // the whole graph once anything was selected, which made the view feel stuck.
+  if (active === d.id) { clearTrace(); return; }
+  active = d.id;
+  // Walk FORWARD only, one column at a time: question -> key -> table -> extract ->
+  // report. An undirected walk floods the whole connected component -- from the key it
+  // reaches every other question needing that key, then back out through their tables --
+  // so clicking one question lit up most of the graph and the path was unreadable.
+  // Edges are stored pointing whichever way the loader implied, so direction comes from
+  // the column index rather than from the edge.
+  const seen = new Set([d.id]), queue = [d.id];
+  while (queue.length) {
+    const cur = queue.shift();
+    for (const nx of adj.get(cur)) {
+      if (seen.has(nx)) continue;
+      if (byId.get(nx).col !== byId.get(cur).col + 1) continue;
+      seen.add(nx); queue.push(nx);
+    }
+  }
+  for (const [id, g] of nodeEls) g.setAttribute('opacity', seen.has(id) ? 1 : .13);
+  for (const [l, p] of linkEls) {
+    const on = seen.has(l.source) && seen.has(l.target);
+    p.setAttribute('stroke-opacity', on ? .95 : .05);
+    p.setAttribute('stroke', on ? (d.answerable ? '#2C5F7C' : d.state === 'disjoint' ? '#9A6A17' : '#A03A1F') : 'currentColor');
+    p.setAttribute('stroke-width', on ? 1.8 : 1);
+  }
+  const reports = [...seen].map(i => byId.get(i)).filter(n => n.kind === 'report').map(n => n.label);
+  const key = [...seen].map(i => byId.get(i)).find(n => n.kind === 'key');
+  out.innerHTML = (d.answerable
+    ? `<b>${d.label}</b> turns on <span class="chip">${key.label}</span> and reaches `
+      + `${reports.length} report${reports.length === 1 ? '' : 's'}: `
+      + reports.map(r => `<span class="chip">${r}</span>`).join(' ')
+    : `<b>${d.label}</b> needs <span class="chip bad">${key.label}</span> — ${key.note}. `
+      + (d.state === 'disjoint'
+          ? `The column is on both sides and the values never meet — the join runs and returns nothing.`
+          : `The path ends there: no table carries that link, so no extract and no report is reachable.`))
+    + ` <span style="color:var(--muted)">— click it again to clear.</span>`;
+}
+
+// Anywhere off a node clears too, which is what most people try first.
+svg.addEventListener('click', clearTrace);
+addEventListener('keydown', e => { if (e.key === 'Escape') clearTrace(); });
+clearTrace();
+</script>

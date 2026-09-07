@@ -9,15 +9,22 @@
  *  /bend-the-curve#leverage means what it looks like it means. Both hosts are configured
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
-export type Tab = 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
+export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
   | 'dataroom' | 'reports' | 'agents' | 'ask'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
-  // The walkthrough is the front door now, so it takes the root. Straight answers keeps
-  // an address of its own rather than losing one — nothing here has been retired.
-  walk: '',
+  // The root is a CHOOSER, not a chapter. It was the walkthrough, and before that Straight
+  // answers, and each time the page at the root was one reading path presented as the whole
+  // site. It is not: the argument, the documents, the data and the machine-readable
+  // addresses are four different visits. See pages/Home.
+  home: '',
+  // The walkthrough gave up the root and kept every word. This is the one address on the
+  // site that has ever moved, which is why `walkthrough` and `start-here` were already
+  // aliases for it — anybody who typed one lands where they always did, and `/` now
+  // answers with the door rather than with a 404 or a redirect.
+  walk: 'walkthrough',
   deeper: 'go-deeper',
   answers: 'straight-answers',
   money: 'find-the-money',
@@ -73,6 +80,9 @@ export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom'])
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
 const ALIASES: Record<string, Tab> = {
+  // The chooser answers to a name as well as to the root. `/` is what gets shared; `home`
+  // is what somebody types when they have lost their place.
+  home: 'home', doors: 'home',
   answers: 'answers',
   walk: 'walk', walkthrough: 'walk', start: 'walk', 'start-here': 'walk',
   deeper: 'deeper', more: 'deeper', everything: 'deeper',
@@ -106,6 +116,7 @@ const BY_SLUG: Record<string, Tab> = {
  *  Was duplicated between the nav, the Go deeper index and the breadcrumb, which is three
  *  chances for a page to be called two things. */
 export const LABEL: Record<Tab, string> = {
+  home: 'Home',
   walk: 'Start here',
   deeper: 'Go deeper',
   answers: 'Straight answers',
@@ -149,7 +160,7 @@ export const pathFor = (tab: Tab): string => (SLUG[tab] ? `/${SLUG[tab]}` : '/')
  *  quietly pointing at the old one — so the root and every unrecognized path still resolved
  *  to Straight answers while every test of the nav said otherwise. Derived, it cannot
  *  drift the next time the front door moves. */
-const ROOT: Tab = (Object.entries(SLUG) as [Tab, string][]).find(([, v]) => v === '')![0]
+export const ROOT: Tab = (Object.entries(SLUG) as [Tab, string][]).find(([, v]) => v === '')![0]
 
 /** Anything unrecognized falls back to the first tab rather than to an error page.
  *  A stale link should land somebody on the site, not on a 404 they will not report. */

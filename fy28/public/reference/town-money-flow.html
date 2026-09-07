@@ -1,0 +1,445 @@
+<meta charset="utf-8">
+<title>The whole town — every dollar in, every dollar out — Lunenburg FY2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --ent:#1c4f7a; --traced-bg2:#e7f0ea;
+  --school:#9a4f14; --school-bg:#f7e7d8;
+  --potbg:#2c2b28; --potink:#f2efe9; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --ent:#7fb4dd; --traced-bg2:#1b2b22;
+    --school:#e2a068; --school-bg:#33231a;
+    --potbg:#e8e4dc; --potink:#1a1a18; }
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100% }
+.wrap { max-width:1100px; margin:0 auto; padding:22px 16px 80px }
+header { border-bottom:2px solid var(--ink); padding-bottom:14px }
+.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+h1 { font-size:28px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
+.standfirst { font-size:16px; color:var(--muted); margin:0 }
+.metrics { display:grid; gap:10px; margin:16px 0 }
+.m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px; background:var(--card) }
+.m.hi { border-color:var(--hi); border-width:2px }
+.mk { font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  color:var(--muted) }
+.mv { font-size:24px; font-weight:700; letter-spacing:-.02em; margin:2px 0 3px;
+  font-family:ui-monospace,Menlo,monospace }
+.ms { font-size:12.5px; color:var(--muted); line-height:1.45 }
+.stage { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }
+h2 { font-size:18px; margin:0 0 6px }
+h3 { font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted);
+  margin:18px 0 8px }
+.cap { font-size:13.5px; color:var(--muted); margin:0 0 14px }
+.cols { display:grid; gap:16px; margin:16px 0 }
+.col { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:15px 14px; min-width:0 }
+.colnote { font-size:12.5px; color:var(--muted); margin:2px 0 12px }
+.bars { display:flex; flex-direction:column; gap:9px }
+.row { display:grid; grid-template-columns:1fr 34%; grid-template-areas:"lab amt" "bar bar";
+  gap:3px 10px; align-items:baseline }
+.lab { grid-area:lab; font-size:13.5px; font-weight:600; overflow-wrap:anywhere }
+.lab .sub { display:block; font-weight:400; font-size:11.5px; color:var(--muted) }
+.amt { grid-area:amt; text-align:right; font-size:13.5px; white-space:nowrap;
+  font-family:ui-monospace,Menlo,monospace }
+.track { grid-area:bar; background:var(--grid); border-radius:3px; height:9px }
+.fill { background:var(--traced); height:100%; border-radius:3px; min-width:2px }
+.row.hi .fill { background:var(--hi) }
+.row.hi .lab { color:var(--hi) }
+.row.alt .fill { background:var(--muted) }
+.scroll { overflow-x:auto; border:1px solid var(--grid); border-radius:10px;
+  background:var(--card); padding:10px; margin:14px 0 6px }
+svg.flow { display:block; min-width:950px; height:auto }
+.dhd { font-size:11px; font-weight:700; letter-spacing:.11em; fill:var(--muted) }
+.b rect { fill:var(--card); stroke:var(--grid); stroke-width:1.5 }
+.b.gf rect { fill:var(--traced-bg2); stroke:var(--traced) }
+.b.ent rect { fill:none; stroke:var(--ent); stroke-width:2 }
+.b.mix rect { fill:none; stroke:var(--warn); stroke-width:2 }
+.e.unknown { stroke:var(--warn); stroke-dasharray:3 4; opacity:.8 }
+.b.sch rect { fill:var(--school-bg); stroke:var(--school); stroke-width:2 }
+.e.school { stroke:var(--school); opacity:.7; stroke-width:2.5 }
+.b.sr rect { fill:none; stroke:var(--warn); stroke-width:2; stroke-dasharray:6 4 }
+.b.gap rect { fill:var(--warn-bg); stroke:var(--warn); stroke-width:1.5;
+  stroke-dasharray:3 3 }
+.gl { fill:var(--warn) }
+.dhd.gap { fill:var(--warn) }
+.b.pot rect { fill:var(--potbg); stroke:var(--potbg) }
+.bl { font-size:13px; font-weight:600; fill:var(--ink) }
+.bv { font-size:13px; fill:var(--ink); font-family:ui-monospace,Menlo,monospace }
+.bs { font-size:10px; fill:var(--muted) }
+.pw { fill:var(--potink) }
+.potnote { font-size:10.5px; fill:var(--potink); opacity:.75 }
+.e { fill:none; stroke-width:2 }
+.e.traced { stroke:var(--traced); opacity:.45 }
+.e.bypass { stroke:var(--ent); opacity:.75; stroke-width:2.5 }
+.e.restricted { stroke:var(--warn); opacity:.8; stroke-dasharray:7 5 }
+.key { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:12px; color:var(--muted);
+  margin-bottom:10px }
+.key span { display:flex; align-items:center; gap:6px }
+.k { width:24px; height:0; border-top:2px solid; display:inline-block }
+.k.school { border-color:var(--school); border-top-width:3px }
+.k.mix { border-color:var(--warn); border-top-style:dashed }
+.k.traced { border-color:var(--traced) }
+.k.bypass { border-color:var(--ent); border-top-width:3px }
+.k.restricted { border-top-style:dashed; border-color:var(--warn) }
+.warn { background:var(--warn-bg); border-left:3px solid var(--warn);
+  border-radius:0 6px 6px 0; padding:11px 13px; font-size:14px; margin:14px 0 }
+table { border-collapse:collapse; width:100%; font-size:13.5px; margin-top:6px }
+th,td { text-align:left; padding:8px 8px 8px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }
+td.v { text-align:right; white-space:nowrap; font-family:ui-monospace,Menlo,monospace }
+td .sub { display:block; font-size:11.5px; color:var(--muted); font-weight:400 }
+code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
+ul { font-size:14px; padding-left:20px } li { margin:7px 0 }
+a { color:var(--hi) }
+.gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:760px) { .metrics { grid-template-columns:repeat(2,1fr) } }
+@media (min-width:1000px) {
+  .metrics { grid-template-columns:repeat(4,1fr) }
+  .cols { grid-template-columns:1fr 1fr }
+  .row { grid-template-columns:44% 1fr 24%; grid-template-areas:"lab bar amt"; gap:10px;
+    align-items:center }
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
+  <h1>The whole town — every dollar in, every dollar out</h1>
+  <p class="standfirst">FY2026. The same model built for the schools, applied to all of
+  Lunenburg: who sets each dollar coming in, who decides how it goes out, and what is
+  sitting still.</p>
+</header>
+
+<section class="metrics"><div class="m"><div class="mk">Every dollar into the town</div><div class="mv">$56,858,248</div><div class="ms">General fund, enterprise funds and special revenue funds. <b>Mixed bases — see below.</b></div></div><div class="m"><div class="mk">Every dollar out</div><div class="mv">$55,043,604</div><div class="ms">The omnibus budget, the enterprise funds and the special revenue funds.</div></div><div class="m hi"><div class="mk">Sitting in accounts, unspent</div><div class="mv">$1,592,572</div><div class="ms">Held across the special revenue funds at 31 March. Not income, not spending: money that arrived and stopped.</div></div><div class="m"><div class="mk">The general fund’s share of it all</div><div class="mv">92%</div><div class="ms">The one system Town Meeting debates — and the only one where a dollar’s origin cannot be followed.</div></div></section>
+<div class="scroll"><svg viewBox="0 0 950 5902" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Every dollar into Lunenburg and where it goes">
+<text class="dhd" x="20" y="30">MONEY IN — every source</text>
+<text class="dhd" x="350" y="30">POOLS</text>
+<text class="dhd" x="680" y="30">MONEY OUT — every department and fund</text>
+<path class="e traced" d="M270,77.0 C310.0,77.0 310.0,193.0 350,193.0"/>
+<path class="e traced" d="M270,135.0 C310.0,135.0 310.0,193.0 350,193.0"/>
+<path class="e traced" d="M270,193.0 C310.0,193.0 310.0,193.0 350,193.0"/>
+<path class="e traced" d="M270,251.0 C310.0,251.0 310.0,193.0 350,193.0"/>
+<path class="e traced" d="M270,309.0 C310.0,309.0 310.0,193.0 350,193.0"/>
+<path class="e school" d="M550,193.0 C615.0,193.0 615.0,77.0 680,77.0"/>
+<path class="e school" d="M550,193.0 C615.0,193.0 615.0,135.0 680,135.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,193.0 680,193.0"/>
+<path class="e school" d="M550,193.0 C615.0,193.0 615.0,251.0 680,251.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,309.0 680,309.0"/>
+<path class="e unknown" d="M550,193.0 C615.0,193.0 615.0,367.0 680,367.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,425.0 680,425.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,483.0 680,483.0"/>
+<path class="e school" d="M550,193.0 C615.0,193.0 615.0,541.0 680,541.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,599.0 680,599.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,657.0 680,657.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,715.0 680,715.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,773.0 680,773.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,831.0 680,831.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,889.0 680,889.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,947.0 680,947.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1005.0 680,1005.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1063.0 680,1063.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1121.0 680,1121.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1179.0 680,1179.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1237.0 680,1237.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1295.0 680,1295.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1353.0 680,1353.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1411.0 680,1411.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1469.0 680,1469.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1527.0 680,1527.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1585.0 680,1585.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1643.0 680,1643.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1701.0 680,1701.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1759.0 680,1759.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1817.0 680,1817.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1875.0 680,1875.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1933.0 680,1933.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,1991.0 680,1991.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2049.0 680,2049.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2107.0 680,2107.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2165.0 680,2165.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2223.0 680,2223.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2281.0 680,2281.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2339.0 680,2339.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2397.0 680,2397.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2455.0 680,2455.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2513.0 680,2513.0"/>
+<path class="e school" d="M550,193.0 C615.0,193.0 615.0,2571.0 680,2571.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2629.0 680,2629.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2687.0 680,2687.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2745.0 680,2745.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2803.0 680,2803.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2861.0 680,2861.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2919.0 680,2919.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,2977.0 680,2977.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3035.0 680,3035.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3093.0 680,3093.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3151.0 680,3151.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3209.0 680,3209.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3267.0 680,3267.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3325.0 680,3325.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3383.0 680,3383.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3441.0 680,3441.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3499.0 680,3499.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3557.0 680,3557.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3615.0 680,3615.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3673.0 680,3673.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3731.0 680,3731.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3789.0 680,3789.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3847.0 680,3847.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3905.0 680,3905.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,3963.0 680,3963.0"/>
+<path class="e traced" d="M550,193.0 C615.0,193.0 615.0,4021.0 680,4021.0"/>
+<path class="e bypass" d="M270,4137.0 C475.0,4137.0 475.0,4137.0 680,4137.0"/>
+<path class="e bypass" d="M270,4253.0 C475.0,4253.0 475.0,4253.0 680,4253.0"/>
+<path class="e bypass" d="M270,4311.0 C475.0,4311.0 475.0,4311.0 680,4311.0"/>
+<path class="e restricted" d="M270,4427.0 C475.0,4427.0 475.0,4427.0 680,4427.0"/>
+<path class="e restricted" d="M270,4485.0 C475.0,4485.0 475.0,4485.0 680,4485.0"/>
+<path class="e restricted" d="M270,4543.0 C475.0,4543.0 475.0,4543.0 680,4543.0"/>
+<path class="e restricted" d="M270,4717.0 C475.0,4717.0 475.0,4717.0 680,4717.0"/>
+<path class="e restricted" d="M270,4775.0 C475.0,4775.0 475.0,4775.0 680,4775.0"/>
+<path class="e restricted" d="M270,4833.0 C475.0,4833.0 475.0,4833.0 680,4833.0"/>
+<path class="e restricted" d="M270,4949.0 C475.0,4949.0 475.0,4949.0 680,4949.0"/>
+<path class="e restricted" d="M270,5007.0 C475.0,5007.0 475.0,5007.0 680,5007.0"/>
+<path class="e restricted" d="M270,5065.0 C475.0,5065.0 475.0,5065.0 680,5065.0"/>
+<path class="e restricted" d="M270,5123.0 C475.0,5123.0 475.0,5123.0 680,5123.0"/>
+<path class="e restricted" d="M270,5239.0 C475.0,5239.0 475.0,5239.0 680,5239.0"/>
+<path class="e restricted" d="M270,5413.0 C475.0,5413.0 475.0,5413.0 680,5413.0"/>
+<g class="b pot"><rect x="350" y="52" width="200" height="282" rx="7"/><text class="bl pw" x="362" y="74">GENERAL FUND 0100</text><text class="bv pw" x="362" y="92">$52,187,832</text>
+<text class="potnote" x="362" y="114">Every source on the left flows in</text>
+<text class="potnote" x="362" y="127">here and loses its identity. No</text>
+<text class="potnote" x="362" y="140">record ties a source to a</text>
+<text class="potnote" x="362" y="153">department, so no line crosses</text>
+<text class="potnote" x="362" y="166">this box — the diagonal edge</text>
+<text class="potnote" x="362" y="179">does not exist. Orange lines out</text>
+<text class="potnote" x="362" y="192">are the school; the rest is</text>
+<text class="potnote" x="362" y="205">everything else the town does.</text>
+</g>
+<g class="b gf"><rect x="20" y="52" width="250" height="50" rx="5"/><text class="bl" x="30" y="72">Property tax levy</text><text class="bv" x="30" y="89">$35,111,996</text></g>
+<g class="b gf"><rect x="20" y="110" width="250" height="50" rx="5"/><text class="bl" x="30" y="130">State aid</text><text class="bv" x="30" y="147">$11,153,368</text></g>
+<g class="b gf"><rect x="20" y="168" width="250" height="50" rx="5"/><text class="bl" x="30" y="188">Local receipts</text><text class="bv" x="30" y="205">$3,335,624</text></g>
+<g class="b gf"><rect x="20" y="226" width="250" height="50" rx="5"/><text class="bl" x="30" y="246">One-time money</text><text class="bv" x="30" y="263">$2,209,993</text></g>
+<g class="b gf"><rect x="20" y="284" width="250" height="50" rx="5"/><text class="bl" x="30" y="304">Transfers in</text><text class="bv" x="30" y="321">$376,851</text></g>
+<g class="b ent"><rect x="20" y="4112" width="250" height="50" rx="5"/><text class="bl" x="30" y="4132">Sewer Enterprise Fund</text><text class="bv" x="30" y="4149">$1,454,671</text></g>
+<g class="b ent"><rect x="20" y="4170" width="250" height="50" rx="5"/><text class="bl" x="30" y="4190">Solid Waste/Recycling En</text><text class="bv" x="30" y="4207">$1,000,000</text></g>
+<g class="b ent"><rect x="20" y="4228" width="250" height="50" rx="5"/><text class="bl" x="30" y="4248">Sewer Betterments</text><text class="bv" x="30" y="4265">$436,667</text></g>
+<g class="b ent"><rect x="20" y="4286" width="250" height="50" rx="5"/><text class="bl" x="30" y="4306">Peg Access Enterprise Fu</text><text class="bv" x="30" y="4323">$225,927</text></g>
+<g class="b sch"><rect x="20" y="4402" width="250" height="50" rx="5"/><text class="bl" x="30" y="4422">2200 School Lunch Revolvi</text><text class="bv" x="30" y="4439">$572,231</text></g>
+<g class="b sch"><rect x="20" y="4460" width="250" height="50" rx="5"/><text class="bl" x="30" y="4480">2640 Special Ed Circuit B</text><text class="bv" x="30" y="4497">$325,970</text></g>
+<g class="b sch"><rect x="20" y="4518" width="250" height="50" rx="5"/><text class="bl" x="30" y="4538">1312 Extended Day Revolvi</text><text class="bv" x="30" y="4555">$192,943</text></g>
+<g class="b sch"><rect x="20" y="4692" width="250" height="50" rx="5"/><text class="bl" x="30" y="4712">1301 Chapter 658 Revolvin</text><text class="bv" x="30" y="4729">$160,164</text></g>
+<g class="b sch"><rect x="20" y="4750" width="250" height="50" rx="5"/><text class="bl" x="30" y="4770">1305 After School Activit</text><text class="bv" x="30" y="4787">$111,376</text></g>
+<g class="b sch"><rect x="20" y="4808" width="250" height="50" rx="5"/><text class="bl" x="30" y="4828">1308 School Choice Revolv</text><text class="bv" x="30" y="4845">$83,116</text></g>
+<g class="b sch"><rect x="20" y="4924" width="250" height="50" rx="5"/><text class="bl" x="30" y="4944">2672 Fy26 Family &amp; Commun</text><text class="bv" x="30" y="4961">$48,558</text></g>
+<g class="b sch"><rect x="20" y="4982" width="250" height="50" rx="5"/><text class="bl" x="30" y="5002">1311 School Gift Fund</text><text class="bv" x="30" y="5019">$22,486</text></g>
+<g class="b sch"><rect x="20" y="5040" width="250" height="50" rx="5"/><text class="bl" x="30" y="5060">1306 School Facilities Us</text><text class="bv" x="30" y="5077">$18,670</text></g>
+<g class="b sch"><rect x="20" y="5098" width="250" height="50" rx="5"/><text class="bl" x="30" y="5118">2681 Comp School Health S</text><text class="bv" x="30" y="5135">$10,775</text></g>
+<g class="b sch"><rect x="20" y="5214" width="250" height="50" rx="5"/><text class="bl" x="30" y="5234">1302 Adult Education Revo</text><text class="bv" x="30" y="5251">$4,000</text></g>
+<g class="b sch"><rect x="20" y="5388" width="250" height="50" rx="5"/><text class="bl" x="30" y="5408">1300 Lost Books/Tech Rev </text><text class="bv" x="30" y="5425">$2,860</text></g>
+<g class="b sch"><rect x="680" y="52" width="250" height="50" rx="5"/><text class="bl" x="690" y="72">300 School Department</text><text class="bv" x="690" y="89">$26,247,474</text></g>
+<g class="b sch"><rect x="680" y="110" width="250" height="50" rx="5"/><text class="bl" x="690" y="130">914 Insurance — school retiree health</text><text class="bv" x="690" y="147">$1,521,536</text></g>
+<g class="b gf"><rect x="680" y="168" width="250" height="50" rx="5"/><text class="bl" x="690" y="188">914 Insurance — town</text><text class="bv" x="690" y="205">$2,191,984</text></g>
+<g class="b sch"><rect x="680" y="226" width="250" height="50" rx="5"/><text class="bl" x="690" y="246">210 Police Departmen — school resource stipend</text><text class="bv" x="690" y="263">$6,800</text></g>
+<g class="b gf"><rect x="680" y="284" width="250" height="50" rx="5"/><text class="bl" x="690" y="304">210 Police Department — town</text><text class="bv" x="690" y="321">$2,399,372</text></g>
+<g class="b mix"><rect x="680" y="342" width="250" height="50" rx="5"/><text class="bl" x="690" y="362">820 Wrrs Assessment — MIXED</text><text class="bv" x="690" y="379">$2,392,572</text></g>
+<g class="b gf"><rect x="680" y="400" width="250" height="50" rx="5"/><text class="bl" x="690" y="420">220 Fire Department</text><text class="bv" x="690" y="437">$1,717,588</text></g>
+<g class="b gf"><rect x="680" y="458" width="250" height="50" rx="5"/><text class="bl" x="690" y="478">710 Principal Serial Loans</text><text class="bv" x="690" y="495">$1,506,369</text></g>
+<g class="b sch"><rect x="680" y="516" width="250" height="50" rx="5"/><text class="bl" x="690" y="536">310 Monty Tech Assessment</text><text class="bv" x="690" y="553">$1,334,521</text></g>
+<g class="b gf"><rect x="680" y="574" width="250" height="50" rx="5"/><text class="bl" x="690" y="594">993 Transfer To Capital Proj</text><text class="bv" x="690" y="611">$1,052,500</text></g>
+<g class="b gf"><rect x="680" y="632" width="250" height="50" rx="5"/><text class="bl" x="690" y="652">751 Interest Serial Loans</text><text class="bv" x="690" y="669">$1,039,840</text></g>
+<g class="b gf"><rect x="680" y="690" width="250" height="50" rx="5"/><text class="bl" x="690" y="710">825 State Assessments</text><text class="bv" x="690" y="727">$1,028,529</text></g>
+<g class="b gf"><rect x="680" y="748" width="250" height="50" rx="5"/><text class="bl" x="690" y="768">193 Facilities &amp; Grounds</text><text class="bv" x="690" y="785">$711,606</text></g>
+<g class="b gf"><rect x="680" y="806" width="250" height="50" rx="5"/><text class="bl" x="690" y="826">421 Highway Administration</text><text class="bv" x="690" y="843">$644,443</text></g>
+<g class="b gf"><rect x="680" y="864" width="250" height="50" rx="5"/><text class="bl" x="690" y="884">411 Highway Construction &amp; M</text><text class="bv" x="690" y="901">$634,850</text></g>
+<g class="b gf"><rect x="680" y="922" width="250" height="50" rx="5"/><text class="bl" x="690" y="942">610 Lunenburg Public Library</text><text class="bv" x="690" y="959">$632,037</text></g>
+<g class="b gf"><rect x="680" y="980" width="250" height="50" rx="5"/><text class="bl" x="690" y="1000">155 Information Technology D</text><text class="bv" x="690" y="1017">$491,311</text></g>
+<g class="b gf"><rect x="680" y="1038" width="250" height="50" rx="5"/><text class="bl" x="690" y="1058">433 Recycling Program</text><text class="bv" x="690" y="1075">$470,000</text></g>
+<g class="b gf"><rect x="680" y="1096" width="250" height="50" rx="5"/><text class="bl" x="690" y="1116">170 Land Use</text><text class="bv" x="690" y="1133">$440,157</text></g>
+<g class="b gf"><rect x="680" y="1154" width="250" height="50" rx="5"/><text class="bl" x="690" y="1174">423 Snow Removal</text><text class="bv" x="690" y="1191">$355,571</text></g>
+<g class="b gf"><rect x="680" y="1212" width="250" height="50" rx="5"/><text class="bl" x="690" y="1232">135 Town Accountant</text><text class="bv" x="690" y="1249">$323,244</text></g>
+<g class="b gf"><rect x="680" y="1270" width="250" height="50" rx="5"/><text class="bl" x="690" y="1290">228 Radio Watch</text><text class="bv" x="690" y="1307">$310,764</text></g>
+<g class="b gf"><rect x="680" y="1328" width="250" height="50" rx="5"/><text class="bl" x="690" y="1348">126 Town Manager</text><text class="bv" x="690" y="1365">$305,325</text></g>
+<g class="b gf"><rect x="680" y="1386" width="250" height="50" rx="5"/><text class="bl" x="690" y="1406">141 Assessor&#x27;S Administratio</text><text class="bv" x="690" y="1423">$297,308</text></g>
+<g class="b gf"><rect x="680" y="1444" width="250" height="50" rx="5"/><text class="bl" x="690" y="1464">541 Council On Aging</text><text class="bv" x="690" y="1481">$261,182</text></g>
+<g class="b gf"><rect x="680" y="1502" width="250" height="50" rx="5"/><text class="bl" x="690" y="1522">945 Liability Insurance</text><text class="bv" x="690" y="1539">$239,189</text></g>
+<g class="b gf"><rect x="680" y="1560" width="250" height="50" rx="5"/><text class="bl" x="690" y="1580">996 Transfer To Trust Funds</text><text class="bv" x="690" y="1597">$232,500</text></g>
+<g class="b gf"><rect x="680" y="1618" width="250" height="50" rx="5"/><text class="bl" x="690" y="1638">192 Public Buildings</text><text class="bv" x="690" y="1655">$221,357</text></g>
+<g class="b gf"><rect x="680" y="1676" width="250" height="50" rx="5"/><text class="bl" x="690" y="1696">133 Salary Reserve</text><text class="bv" x="690" y="1713">$210,000</text></g>
+<g class="b gf"><rect x="680" y="1734" width="250" height="50" rx="5"/><text class="bl" x="690" y="1754">132 Reserve Fund</text><text class="bv" x="690" y="1771">$185,000</text></g>
+<g class="b gf"><rect x="680" y="1792" width="250" height="50" rx="5"/><text class="bl" x="690" y="1812">122 Select Board</text><text class="bv" x="690" y="1829">$180,280</text></g>
+<g class="b gf"><rect x="680" y="1850" width="250" height="50" rx="5"/><text class="bl" x="690" y="1870">429 Vehicle Maintenance</text><text class="bv" x="690" y="1887">$179,750</text></g>
+<g class="b gf"><rect x="680" y="1908" width="250" height="50" rx="5"/><text class="bl" x="690" y="1928">912 Workers Compensation</text><text class="bv" x="690" y="1945">$145,000</text></g>
+<g class="b gf"><rect x="680" y="1966" width="250" height="50" rx="5"/><text class="bl" x="690" y="1986">161 Town Clerk&#x27;S Administrat</text><text class="bv" x="690" y="2003">$143,602</text></g>
+<g class="b gf"><rect x="680" y="2024" width="250" height="50" rx="5"/><text class="bl" x="690" y="2044">650 Parks &amp; Recreation</text><text class="bv" x="690" y="2061">$134,434</text></g>
+<g class="b gf"><rect x="680" y="2082" width="250" height="50" rx="5"/><text class="bl" x="690" y="2102">146 Tax Collector&#x27;S Administ</text><text class="bv" x="690" y="2119">$130,718</text></g>
+<g class="b gf"><rect x="680" y="2140" width="250" height="50" rx="5"/><text class="bl" x="690" y="2160">491 Cemetery Department</text><text class="bv" x="690" y="2177">$125,339</text></g>
+<g class="b gf"><rect x="680" y="2198" width="250" height="50" rx="5"/><text class="bl" x="690" y="2218">145 Treasurer&#x27;S Administrati</text><text class="bv" x="690" y="2235">$118,966</text></g>
+<g class="b gf"><rect x="680" y="2256" width="250" height="50" rx="5"/><text class="bl" x="690" y="2276">199 Central Purchasing</text><text class="bv" x="690" y="2293">$91,500</text></g>
+<g class="b gf"><rect x="680" y="2314" width="250" height="50" rx="5"/><text class="bl" x="690" y="2334">543 Veteran&#x27;S Services</text><text class="bv" x="690" y="2351">$90,699</text></g>
+<g class="b gf"><rect x="680" y="2372" width="250" height="50" rx="5"/><text class="bl" x="690" y="2392">512 General Health Expense</text><text class="bv" x="690" y="2409">$56,631</text></g>
+<g class="b gf"><rect x="680" y="2430" width="250" height="50" rx="5"/><text class="bl" x="690" y="2450">521 Nashoba Health</text><text class="bv" x="690" y="2467">$47,815</text></g>
+<g class="b gf"><rect x="680" y="2488" width="250" height="50" rx="5"/><text class="bl" x="690" y="2508">292 Animal Control</text><text class="bv" x="690" y="2525">$46,125</text></g>
+<g class="b sch"><rect x="680" y="2546" width="250" height="50" rx="5"/><text class="bl" x="690" y="2566">301 School Non-Recurring Exp</text><text class="bv" x="690" y="2583">$40,000</text></g>
+<g class="b gf"><rect x="680" y="2604" width="250" height="50" rx="5"/><text class="bl" x="690" y="2624">294 Tree Removal</text><text class="bv" x="690" y="2641">$38,500</text></g>
+<g class="b gf"><rect x="680" y="2662" width="250" height="50" rx="5"/><text class="bl" x="690" y="2682">158 Tax Title Redemp/Foreclo</text><text class="bv" x="690" y="2699">$30,500</text></g>
+<g class="b gf"><rect x="680" y="2720" width="250" height="50" rx="5"/><text class="bl" x="690" y="2740">425 Traffic Signs &amp; Devices</text><text class="bv" x="690" y="2757">$28,500</text></g>
+<g class="b gf"><rect x="680" y="2778" width="250" height="50" rx="5"/><text class="bl" x="690" y="2798">522 Nashoba Nursing</text><text class="bv" x="690" y="2815">$21,915</text></g>
+<g class="b gf"><rect x="680" y="2836" width="250" height="50" rx="5"/><text class="bl" x="690" y="2856">163 Registration &amp; Census</text><text class="bv" x="690" y="2873">$20,950</text></g>
+<g class="b gf"><rect x="680" y="2894" width="250" height="50" rx="5"/><text class="bl" x="690" y="2914">213 Police Lock Up</text><text class="bv" x="690" y="2931">$20,600</text></g>
+<g class="b gf"><rect x="680" y="2952" width="250" height="50" rx="5"/><text class="bl" x="690" y="2972">223 Fire Hydrant Expense</text><text class="bv" x="690" y="2989">$17,000</text></g>
+<g class="b gf"><rect x="680" y="3010" width="250" height="50" rx="5"/><text class="bl" x="690" y="3030">162 Elections</text><text class="bv" x="690" y="3047">$11,100</text></g>
+<g class="b gf"><rect x="680" y="3068" width="250" height="50" rx="5"/><text class="bl" x="690" y="3088">227 Mtc Of Town Radios</text><text class="bv" x="690" y="3105">$10,000</text></g>
+<g class="b gf"><rect x="680" y="3126" width="250" height="50" rx="5"/><text class="bl" x="690" y="3146">913 Unemployment Compensatio</text><text class="bv" x="690" y="3163">$10,000</text></g>
+<g class="b gf"><rect x="680" y="3184" width="250" height="50" rx="5"/><text class="bl" x="690" y="3204">195 Town Reports</text><text class="bv" x="690" y="3221">$7,000</text></g>
+<g class="b gf"><rect x="680" y="3242" width="250" height="50" rx="5"/><text class="bl" x="690" y="3262">291 Emergency Management</text><text class="bv" x="690" y="3279">$7,000</text></g>
+<g class="b gf"><rect x="680" y="3300" width="250" height="50" rx="5"/><text class="bl" x="690" y="3320">693 Band Concerts</text><text class="bv" x="690" y="3337">$6,000</text></g>
+<g class="b gf"><rect x="680" y="3358" width="250" height="50" rx="5"/><text class="bl" x="690" y="3378">244 Inspector Of Wghts &amp; Mea</text><text class="bv" x="690" y="3395">$4,600</text></g>
+<g class="b gf"><rect x="680" y="3416" width="250" height="50" rx="5"/><text class="bl" x="690" y="3436">841 Montachusett Planning Co</text><text class="bv" x="690" y="3453">$4,478</text></g>
+<g class="b gf"><rect x="680" y="3474" width="250" height="50" rx="5"/><text class="bl" x="690" y="3494">214 Injury Leave</text><text class="bv" x="690" y="3511">$4,000</text></g>
+<g class="b gf"><rect x="680" y="3532" width="250" height="50" rx="5"/><text class="bl" x="690" y="3552">524 Police/Fire Medical</text><text class="bv" x="690" y="3569">$4,000</text></g>
+<g class="b gf"><rect x="680" y="3590" width="250" height="50" rx="5"/><text class="bl" x="690" y="3610">525 Physicals</text><text class="bv" x="690" y="3627">$3,500</text></g>
+<g class="b gf"><rect x="680" y="3648" width="250" height="50" rx="5"/><text class="bl" x="690" y="3668">131 Finance Committee</text><text class="bv" x="690" y="3685">$1,800</text></g>
+<g class="b gf"><rect x="680" y="3706" width="250" height="50" rx="5"/><text class="bl" x="690" y="3726">754 Loan Administrative Fees</text><text class="bv" x="690" y="3743">$1,230</text></g>
+<g class="b gf"><rect x="680" y="3764" width="250" height="50" rx="5"/><text class="bl" x="690" y="3784">691 Historical Commission</text><text class="bv" x="690" y="3801">$1,000</text></g>
+<g class="b gf"><rect x="680" y="3822" width="250" height="50" rx="5"/><text class="bl" x="690" y="3842">178 Architectural Preservati</text><text class="bv" x="690" y="3859">$500</text></g>
+<g class="b gf"><rect x="680" y="3880" width="250" height="50" rx="5"/><text class="bl" x="690" y="3900">136 Annual Audit</text><text class="bv" x="690" y="3917">$0</text></g>
+<g class="b gf"><rect x="680" y="3938" width="250" height="50" rx="5"/><text class="bl" x="690" y="3958">175 Planning Board</text><text class="bv" x="690" y="3975">$0</text></g>
+<g class="b gf"><rect x="680" y="3996" width="250" height="50" rx="5"/><text class="bl" x="690" y="4016">241 Building Inspection</text><text class="bv" x="690" y="4033">$0</text></g>
+<g class="b ent"><rect x="680" y="4112" width="250" height="50" rx="5"/><text class="bl" x="690" y="4132">Sewer Enterprise Fund — spent</text><text class="bv" x="690" y="4149">$1,706,419</text></g>
+<g class="b ent"><rect x="680" y="4228" width="250" height="50" rx="5"/><text class="bl" x="690" y="4248">Sewer Betterments — spent</text><text class="bv" x="690" y="4265">$184,920</text></g>
+<g class="b ent"><rect x="680" y="4286" width="250" height="50" rx="5"/><text class="bl" x="690" y="4306">Peg Access Enterprise Fu — spent</text><text class="bv" x="690" y="4323">$225,928</text></g>
+<g class="b sch"><rect x="680" y="4402" width="250" height="50" rx="5"/><text class="bl" x="690" y="4422">2200 School Lunch Revolvi — spent</text><text class="bv" x="690" y="4439">$739,586</text></g>
+<g class="b sch"><rect x="680" y="4460" width="250" height="50" rx="5"/><text class="bl" x="690" y="4480">2640 Special Ed Circuit B — spent</text><text class="bv" x="690" y="4497">$4,005</text></g>
+<g class="b sch"><rect x="680" y="4518" width="250" height="50" rx="5"/><text class="bl" x="690" y="4538">1312 Extended Day Revolvi — spent</text><text class="bv" x="690" y="4555">$233,350</text></g>
+<g class="b sch"><rect x="680" y="4576" width="250" height="50" rx="5"/><text class="bl" x="690" y="4596">2813 Fy25 #240 — spent</text><text class="bv" x="690" y="4613">$229,398</text></g>
+<g class="b sch"><rect x="680" y="4634" width="250" height="50" rx="5"/><text class="bl" x="690" y="4654">2814 Fy26 #240 — spent</text><text class="bv" x="690" y="4671">$179,637</text></g>
+<g class="b sch"><rect x="680" y="4692" width="250" height="50" rx="5"/><text class="bl" x="690" y="4712">1301 Chapter 658 Revolvin — spent</text><text class="bv" x="690" y="4729">$100,467</text></g>
+<g class="b sch"><rect x="680" y="4750" width="250" height="50" rx="5"/><text class="bl" x="690" y="4770">1305 After School Activit — spent</text><text class="bv" x="690" y="4787">$95,196</text></g>
+<g class="b sch"><rect x="680" y="4808" width="250" height="50" rx="5"/><text class="bl" x="690" y="4828">1308 School Choice Revolv — spent</text><text class="bv" x="690" y="4845">$30,558</text></g>
+<g class="b sch"><rect x="680" y="4866" width="250" height="50" rx="5"/><text class="bl" x="690" y="4886">2778 Fy25 117 Soa Evidenc — spent</text><text class="bv" x="690" y="4903">$68,647</text></g>
+<g class="b sch"><rect x="680" y="4924" width="250" height="50" rx="5"/><text class="bl" x="690" y="4944">2672 Fy26 Family &amp; Commun — spent</text><text class="bv" x="690" y="4961">$13,372</text></g>
+<g class="b sch"><rect x="680" y="4982" width="250" height="50" rx="5"/><text class="bl" x="690" y="5002">1311 School Gift Fund — spent</text><text class="bv" x="690" y="5019">$2,911</text></g>
+<g class="b sch"><rect x="680" y="5040" width="250" height="50" rx="5"/><text class="bl" x="690" y="5060">1306 School Facilities Us — spent</text><text class="bv" x="690" y="5077">$12,354</text></g>
+<g class="b sch"><rect x="680" y="5098" width="250" height="50" rx="5"/><text class="bl" x="690" y="5118">2681 Comp School Health S — spent</text><text class="bv" x="690" y="5135">$5,120</text></g>
+<g class="b sch"><rect x="680" y="5156" width="250" height="50" rx="5"/><text class="bl" x="690" y="5176">2832 Fy25 #274  020520250 — spent</text><text class="bv" x="690" y="5193">$5,427</text></g>
+<g class="b sch"><rect x="680" y="5214" width="250" height="50" rx="5"/><text class="bl" x="690" y="5234">1302 Adult Education Revo — spent</text><text class="bv" x="690" y="5251">$2,880</text></g>
+<g class="b sch"><rect x="680" y="5272" width="250" height="50" rx="5"/><text class="bl" x="690" y="5292">2690 Fy26 #309 Title Iv P — spent</text><text class="bv" x="690" y="5309">$3,240</text></g>
+<g class="b sch"><rect x="680" y="5330" width="250" height="50" rx="5"/><text class="bl" x="690" y="5350">2728 Fy24 Title 11 Part A — spent</text><text class="bv" x="690" y="5367">$3,217</text></g>
+<g class="b sch"><rect x="680" y="5388" width="250" height="50" rx="5"/><text class="bl" x="690" y="5408">1300 Lost Books/Tech Rev  — spent</text><text class="bv" x="690" y="5425">$661</text></g>
+<g class="b sch"><rect x="680" y="5446" width="250" height="50" rx="5"/><text class="bl" x="690" y="5466">2622 Fy25 Family &amp; Commun — spent</text><text class="bv" x="690" y="5483">$2,477</text></g>
+<g class="b sch"><rect x="680" y="5504" width="250" height="50" rx="5"/><text class="bl" x="690" y="5524">2800 Fy25 140   080524093 — spent</text><text class="bv" x="690" y="5541">$2,208</text></g>
+<g class="b sch"><rect x="680" y="5562" width="250" height="50" rx="5"/><text class="bl" x="690" y="5582">2758 Fy23 240 — spent</text><text class="bv" x="690" y="5599">$1,666</text></g>
+<text class="dhd gap" x="20" y="5642">MONEY IN WE CANNOT SEE</text>
+<text class="dhd gap" x="680" y="5642">SPENDING WE CANNOT SPLIT</text>
+<g class="b gap"><rect x="20" y="5654" width="250" height="50" rx="5"/><text class="bl gl" x="30" y="5674">Bus fees</text><text class="bs" x="30" y="5690">charged by published policy · no destination</text><text class="bs" x="30" y="5701"> found in any ledger</text></g>
+<g class="b gap"><rect x="20" y="5712" width="250" height="50" rx="5"/><text class="bl gl" x="30" y="5732">Trust fund income</text><text class="bs" x="30" y="5748">scholarships, cemetery, stabilisation · extr</text><text class="bs" x="30" y="5759">act is check-failed</text></g>
+<g class="b gap"><rect x="20" y="5770" width="250" height="50" rx="5"/><text class="bl gl" x="30" y="5790">Student activity accounts</text><text class="bs" x="30" y="5806">held by the school under its own authority ·</text><text class="bs" x="30" y="5817"> not in the town’s books at all</text></g>
+<g class="b gap"><rect x="20" y="5828" width="250" height="50" rx="5"/><text class="bl gl" x="30" y="5848">Grants received in earlier years</text><text class="bs" x="30" y="5864">spent now, booked then · nine funds, no FY26</text><text class="bs" x="30" y="5875"> revenue</text></g>
+<g class="b gap"><rect x="680" y="5654" width="250" height="50" rx="5"/><text class="bl gl" x="690" y="5674">School share of the pension</text><text class="bs" x="690" y="5690">inside WRRS · town and school staff together</text><text class="bs" x="690" y="5701">, no published split</text></g>
+<g class="b gap"><rect x="680" y="5712" width="250" height="50" rx="5"/><text class="bl gl" x="690" y="5732">Debt service by project</text><text class="bs" x="690" y="5748">two accounts for ALL town borrowing · school</text><text class="bs" x="690" y="5759"> buildings cannot be separated</text></g>
+<g class="b gap"><rect x="680" y="5770" width="250" height="50" rx="5"/><text class="bl gl" x="690" y="5790">What the capital transfers bought</text><text class="bs" x="690" y="5806">two transfer lines · no project detail</text><text class="bs" x="690" y="5817"></text></g>
+<g class="b gap"><rect x="680" y="5828" width="250" height="50" rx="5"/><text class="bl gl" x="690" y="5848">What any special revenue fund bought</text><text class="bs" x="690" y="5864">no expense report exists for these funds · p</text><text class="bs" x="690" y="5875">urpose is presumed, never observed</text></g>
+</svg></div>
+<div class="key"><span><i class="k school"></i><b>school money</b> — every box and line in orange</span><span><i class="k mix"></i><b>mixed</b> — town and school together, no published split</span><span><i class="k traced"></i>traced</span><span><i class="k bypass"></i>bypasses the general fund entirely — rate-funded and ring-fenced</span><span><i class="k restricted"></i>the fund spent it; <b>purpose not observed</b></span></div>
+<section class="stage"><h2>Nothing on this page is aggregated</h2><p>Every one of the 67 departments and every one of the 21 active funds has its own box. <b>That is why the diagram is tall</b> — it is the honest shape of a town with that many of each, and a shorter picture would be a shorter picture of something else.</p><p><b>School money is orange, everywhere.</b> That is the point of the town view: once anything is combined you can no longer see what goes to the school and what does not. Scroll the right column and the schools are visible as a colour rather than as a number you have to trust.</p><p class="cap">Every special revenue fund the town has is a school fund, so the entire lower half of both columns is orange. The general fund half is where the town’s other 64 departments live.</p></section>
+<section class="stage"><h2>Can this page say “here is every way money comes in, itemised”?</h2><p><b>Not quite, and the difference matters.</b> It is <i>classified</i>, not <i>itemised</i>. Each box on the left is a group: the five general-fund classes stand for <b>79 revenue accounts</b> that carry money, and 113 more that carry none. On the right, ten departments are named and <b>57 are collapsed into one box</b>. Inside each department are the 635 accounts the ledger actually holds.</p><p>So the honest claim is: <b>every dollar the town’s ledger records is on this page somewhere</b>, at the grain a page can hold. What it is <i>not</i> is a list you could audit a cheque against.</p><p class="warn"><b>And eight things are not on it at all, because the town’s records cannot answer them.</b> They are drawn at the foot of each column, at the same size as everything else, so the picture does not read as complete when it is not. Four are money coming in that cannot be seen; four are spending that cannot be split. Every one of them is a real quantity — none is a rounding difference or a missing file.</p><p class="cap">The largest single unknown is the school share of the pension. The largest lumped one is debt service: two accounts for all town borrowing, with school buildings inside and no way to separate them.</p></section>
+<section class="stage"><h2>Every dollar of special revenue in this town is school money</h2><p>The single box marked “Special revenue funds — $1,553,151” on the left is not a town-wide category with a school share inside it. <b>It is entirely school money.</b> Twelve funds carry revenue in FY2026 — school lunch, the special education circuit breaker, extended day, Chapter 658 athletics, after school, school choice, family and community engagement, the school gift fund, facilities use, comprehensive school health, adult education, and lost books — and no other town department runs one at all.</p><p class="cap">Which is why the school page itemises these and this page does not: same money, finer grain, and the school page is where the grain belongs. The one thing this page does <b>not</b> carry that the school page does is the grant funds’ spending — nine funds that spent money in FY2026 while booking no revenue, so a revenue-side box cannot show them. They appear here only in the gaps.</p></section>
+<section class="stage"><h2>What is inside the special revenue box, itemised</h2><p class="cap">The diagram carries these as one box on each side because there are 21 of them and a box each would swamp the picture. <b>Nothing is excluded from the totals</b> — every fund below is inside the $1,736,376, and each of these is school money.</p><table><tr><th>fund</th><th></th><th class="v">in</th><th class="v">spent</th><th class="v">held 31 Mar</th></tr>
+<tr><td><code>2200</code></td><td>School Lunch Revolving</td><td class="v">$572,231</td><td class="v">$739,586</td><td class="v">$287,771</td></tr>
+<tr><td><code>1312</code></td><td>Extended Day Revolving Fund</td><td class="v">$192,943</td><td class="v">$233,350</td><td class="v">$54,161</td></tr>
+<tr><td><code>2813</code></td><td>Fy25 #240</td><td class="v">$0</td><td class="v">$229,398</td><td class="v">$-88,503</td></tr>
+<tr><td><code>2814</code></td><td>Fy26 #240</td><td class="v">$0</td><td class="v">$179,637</td><td class="v">$-179,637</td></tr>
+<tr><td><code>1301</code></td><td>Chapter 658 Revolving Fund</td><td class="v">$160,164</td><td class="v">$100,467</td><td class="v">$169,945</td></tr>
+<tr><td><code>1305</code></td><td>After School Activities Fund</td><td class="v">$111,376</td><td class="v">$95,196</td><td class="v">$148,578</td></tr>
+<tr><td><code>2778</code></td><td>Fy25 117 Soa Evidence Base</td><td class="v">$0</td><td class="v">$68,647</td><td class="v">$-91,220</td></tr>
+<tr><td><code>1308</code></td><td>School Choice Revolving</td><td class="v">$83,116</td><td class="v">$30,558</td><td class="v">$299,461</td></tr>
+<tr><td><code>2672</code></td><td>Fy26 Family & Community 237</td><td class="v">$48,558</td><td class="v">$13,372</td><td class="v">$35,186</td></tr>
+<tr><td><code>1306</code></td><td>School Facilities Use Revolv</td><td class="v">$18,670</td><td class="v">$12,354</td><td class="v">$71,559</td></tr>
+<tr><td><code>2832</code></td><td>Fy25 #274  0205202509302025</td><td class="v">$0</td><td class="v">$5,427</td><td class="v">$0</td></tr>
+<tr><td><code>2681</code></td><td>Comp School Health Serv Grant</td><td class="v">$10,775</td><td class="v">$5,120</td><td class="v">$5,655</td></tr>
+<tr><td><code>2640</code></td><td>Special Ed Circuit Breaker</td><td class="v">$325,970</td><td class="v">$4,005</td><td class="v">$615,301</td></tr>
+<tr><td><code>2690</code></td><td>Fy26 #309 Title Iv Part A</td><td class="v">$0</td><td class="v">$3,240</td><td class="v">$-3,240</td></tr>
+<tr><td><code>2728</code></td><td>Fy24 Title 11 Part A #140</td><td class="v">$0</td><td class="v">$3,217</td><td class="v">$5,108</td></tr>
+<tr><td><code>1311</code></td><td>School Gift Fund</td><td class="v">$22,486</td><td class="v">$2,911</td><td class="v">$109,398</td></tr>
+<tr><td><code>1302</code></td><td>Adult Education Revolving Fund</td><td class="v">$4,000</td><td class="v">$2,880</td><td class="v">$12,744</td></tr>
+<tr><td><code>2622</code></td><td>Fy25 Family & Community</td><td class="v">$0</td><td class="v">$2,477</td><td class="v">$70,800</td></tr>
+<tr><td><code>2800</code></td><td>Fy25 140   080524093026</td><td class="v">$0</td><td class="v">$2,208</td><td class="v">$0</td></tr>
+<tr><td><code>2758</code></td><td>Fy23 240</td><td class="v">$0</td><td class="v">$1,666</td><td class="v">$-8,167</td></tr>
+<tr><td><code>1300</code></td><td>Lost Books/Tech Rev Fund</td><td class="v">$2,860</td><td class="v">$661</td><td class="v">$16,665</td></tr>
+<tr><td></td><td><b>total</b></td><td class="v"><b>$1,553,151</b></td><td class="v"><b>$1,736,376</b></td><td class="v"><b>$1,592,572</b></td></tr></table><p class="cap">School choice, for example, took in $83,116, spent $30,558 and holds $299,461 — all three inside the single box on the diagram.</p></section>
+<section class="stage"><h2>The town runs four money systems that do not mix</h2><p class="cap">This is the thing the school view cannot show, because the schools live in only two of them.</p><table><tr><th>system</th><th class="v">in</th><th class="v">out</th><th>can a dollar be followed?</th></tr><tr><td><b>General fund</b><span class="sub">67 departments, one pot</span></td><td class="v">$52,187,832</td><td class="v">$51,189,961</td><td><b>No.</b> Every source lands in fund 0100 and loses its identity. This is 92% of the money and the only system with this problem</td></tr><tr><td><b>Enterprise funds</b><span class="sub">sewer, water, PEG, solid waste</span></td><td class="v">$3,117,265</td><td class="v">$2,117,267</td><td><b>Yes.</b> Rate-funded and self-contained: the people who pay are the people served, and the accounts are separate end to end</td></tr><tr><td><b>Special revenue funds</b><span class="sub">61 of them, and <b>every one that carries money is a school fund</b></span></td><td class="v">$1,553,151</td><td class="v">$1,736,376</td><td><b>Half.</b> The source is known exactly, the use is not observed at all — no expense report exists for them</td></tr><tr><td><b>Trust funds</b><span class="sub">scholarships, cemetery, stabilisation</span></td><td class="v">—</td><td class="v">—</td><td><b>Not held.</b> The annual-report extract is <code>check failed</code> on ordinal columns and cannot be aggregated</td></tr></table><p class="warn"><b>The asymmetry is the finding.</b> The system nobody argues about — the enterprise funds — is fully traceable, because it is rate-funded and ring-fenced. The system every Town Meeting argues about is the one where no dollar can be followed from where it came from to what it bought. That is not an accident of record-keeping; it is what a general fund IS.</p></section>
+<div class="cols"><div class="col"><h2>Money in</h2><div class="colnote">Who sets each dollar. The general fund, by class.</div>
+<div class="bars">
+<div class="row "><div class="lab">Property tax levy<span class="sub">Set by the town, inside the Proposition 2½ cap</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$35,111,996</div></div>
+<div class="row hi"><div class="lab">State aid<span class="sub">Set by the Legislature. No local say at all</span></div><div class="track"><div class="fill" style="width:31.77%"></div></div><div class="amt">$11,153,368</div></div>
+<div class="row "><div class="lab">Local receipts<span class="sub">Fees, permits, excise, fines. A residual</span></div><div class="track"><div class="fill" style="width:9.50%"></div></div><div class="amt">$3,335,624</div></div>
+<div class="row "><div class="lab">One-time money<span class="sub">Free cash and proceeds. Spendable once</span></div><div class="track"><div class="fill" style="width:6.29%"></div></div><div class="amt">$2,209,993</div></div>
+<div class="row "><div class="lab">Transfers in<span class="sub">From the town’s own other funds. Not new money</span></div><div class="track"><div class="fill" style="width:1.07%"></div></div><div class="amt">$376,851</div></div>
+</div>
+<h3>Outside the general fund</h3>
+<div class="bars">
+<div class="row alt"><div class="lab">Sewer Enterprise Fund<span class="sub">fund 6000</span></div><div class="track"><div class="fill" style="width:93.66%"></div></div><div class="amt">$1,454,671</div></div>
+<div class="row alt"><div class="lab">Solid Waste/Recycling Enterpri<span class="sub">fund 7900</span></div><div class="track"><div class="fill" style="width:64.39%"></div></div><div class="amt">$1,000,000</div></div>
+<div class="row alt"><div class="lab">Sewer Betterments<span class="sub">fund 5000</span></div><div class="track"><div class="fill" style="width:28.11%"></div></div><div class="amt">$436,667</div></div>
+<div class="row alt"><div class="lab">Peg Access Enterprise Fund<span class="sub">fund 6200</span></div><div class="track"><div class="fill" style="width:14.55%"></div></div><div class="amt">$225,927</div></div>
+<div class="row alt"><div class="lab">Special revenue funds<span class="sub">61 funds · holding $1,592,572 at 31 March</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$1,553,151</div></div>
+</div>
+</div>
+<div class="col"><h2>Money out</h2><div class="colnote">Where it actually lands. The omnibus budget, by department.</div>
+<div class="bars">
+<div class="row hi"><div class="lab">School Department<span class="sub">dept 300 · 51.3% of the omnibus</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$26,247,474</div></div>
+<div class="row "><div class="lab">Insurance<span class="sub">dept 914 · 7.3% of the omnibus</span></div><div class="track"><div class="fill" style="width:14.15%"></div></div><div class="amt">$3,713,520</div></div>
+<div class="row "><div class="lab">Police Department<span class="sub">dept 210 · 4.7% of the omnibus</span></div><div class="track"><div class="fill" style="width:9.17%"></div></div><div class="amt">$2,406,172</div></div>
+<div class="row "><div class="lab">Wrrs Assessment<span class="sub">dept 820 · 4.7% of the omnibus</span></div><div class="track"><div class="fill" style="width:9.12%"></div></div><div class="amt">$2,392,572</div></div>
+<div class="row "><div class="lab">Fire Department<span class="sub">dept 220 · 3.4% of the omnibus</span></div><div class="track"><div class="fill" style="width:6.54%"></div></div><div class="amt">$1,717,588</div></div>
+<div class="row "><div class="lab">Principal Serial Loans<span class="sub">dept 710 · 2.9% of the omnibus</span></div><div class="track"><div class="fill" style="width:5.74%"></div></div><div class="amt">$1,506,369</div></div>
+<div class="row hi"><div class="lab">Monty Tech Assessment<span class="sub">dept 310 · 2.6% of the omnibus</span></div><div class="track"><div class="fill" style="width:5.08%"></div></div><div class="amt">$1,334,521</div></div>
+<div class="row "><div class="lab">Transfer To Capital Project Fd<span class="sub">dept 993 · 2.1% of the omnibus</span></div><div class="track"><div class="fill" style="width:4.01%"></div></div><div class="amt">$1,052,500</div></div>
+<div class="row "><div class="lab">Interest Serial Loans<span class="sub">dept 751 · 2.0% of the omnibus</span></div><div class="track"><div class="fill" style="width:3.96%"></div></div><div class="amt">$1,039,840</div></div>
+<div class="row "><div class="lab">State Assessments<span class="sub">dept 825 · 2.0% of the omnibus</span></div><div class="track"><div class="fill" style="width:3.92%"></div></div><div class="amt">$1,028,529</div></div>
+<div class="row "><div class="lab">Facilities &amp; Grounds<span class="sub">dept 193 · 1.4% of the omnibus</span></div><div class="track"><div class="fill" style="width:2.71%"></div></div><div class="amt">$711,606</div></div>
+<div class="row "><div class="lab">Highway Administration<span class="sub">dept 421 · 1.3% of the omnibus</span></div><div class="track"><div class="fill" style="width:2.46%"></div></div><div class="amt">$644,443</div></div>
+<div class="row "><div class="lab">The other 55 departments<span class="sub">every one under $634,850</span></div><div class="track"><div class="fill" style="width:28.17%"></div></div><div class="amt">$7,394,827</div></div>
+</div>
+<h3>Outside the general fund</h3>
+<div class="bars">
+<div class="row alt"><div class="lab">Sewer Enterprise Fund<span class="sub">fund 6000</span></div><div class="track"><div class="fill" style="width:98.27%"></div></div><div class="amt">$1,706,419</div></div>
+<div class="row alt"><div class="lab">Sewer Betterments<span class="sub">fund 5000</span></div><div class="track"><div class="fill" style="width:10.65%"></div></div><div class="amt">$184,920</div></div>
+<div class="row alt"><div class="lab">Peg Access Enterprise Fund<span class="sub">fund 6200</span></div><div class="track"><div class="fill" style="width:13.01%"></div></div><div class="amt">$225,928</div></div>
+<div class="row alt"><div class="lab">Special revenue funds<span class="sub">spent $1,736,376 against $1,553,151 received</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div><div class="amt">$1,736,376</div></div>
+</div>
+</div></div>
+<p class="warn"><b>The two columns do not balance, and should not.</b> Money in is $56,858,248 and money out is $55,043,604. A fund is a tank, not a pipe: the special revenue funds alone spent $183,225 more than they took in, drawing down balances built in earlier years. And the bases are mixed — the general fund and enterprise figures are budgets as voted, the special revenue funds are nine months of actual, because the town publishes no twelve-month fund report.</p>
+<section class="stage"><h2>What the town view shows that the school view cannot</h2><ul><li><b>Scale.</b> The school department is 53% of the omnibus budget once the library is counted with it — more than everything else the town does, combined.</li><li><b>The enterprise funds are the control case.</b> Rate-funded, ring-fenced, traceable. They prove the tracing problem is a property of the general fund rather than of the town’s record-keeping.</li><li><b>Two revenue lines are 83% of everything.</b> Property tax and Chapter 70. The other 190 accounts share the rest, and 113 of them carry nothing.</li><li><b>The same gaps recur outside the schools.</b> Debt service is two lumped accounts for all town borrowing; capital is two transfer lines with no project detail; the pension covers everybody with no split. These are not school problems, they are how the town books things.</li></ul></section>
+<section class="stage"><h2>The schools, in the same model</h2><p class="cap">Reproduced from <code>school-money-flow.html</code> unchanged, so the two can be read against each other. The school system is one of the four above and lives in two of them: the general fund appropriation, and the special revenue funds it runs itself.</p><p><a href="school-money-flow.html">Open the school diagram →</a></p></section>
+<section class="stage"><h2>Where this page comes from</h2>
+<p class="cap">Every document behind the figures above. This list is <strong>recorded while the page is built</strong> — SQLite reports each table the render actually reads, and the documents come off <code>doc_id</code> on the rows themselves, so it cannot drift away from what the page does. 
+All 16 were traced that way.</p>
+<div class="scroll"><table><tr><th>document</th><th>feeds</th><th>how we know</th><th>sha256</th></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-assumptions.csv">data/money-assumptions.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">620c2b74ce21d327…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-classification.csv">data/money-classification.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">2ece30bf2f0347a9…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-edges.csv">data/money-edges.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">0b05cefe4369e8d6…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/data/money-gaps.csv">data/money-gaps.csv</a></td><td class="ty">read directly by the script</td><td>traced</td><td class="ty">e593c26acdfde360…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">6e2ada913f7457f2…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">f67d785fd5ba15dc…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">be236a99caa7e8cb…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">58fa38d6d654d647…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt">town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">449853bc842b2494…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx">town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">215dd64f597f1f2d…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx">town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx</a></td><td class="ty">fund_activity</td><td>traced</td><td class="ty">4b9777d83c747c1c…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">668868e19fc24fa6…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">ccaa743215e8fea4…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">78a0f82a9b06f54a…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">f4647f445bf824ec…</td></tr>
+<tr><td><a href="https://lunenburgbudgetproject.org/docs/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt">town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt</a></td><td class="ty">account, fund, ledger_snapshot</td><td>traced</td><td class="ty">7e0f22acb4934c57…</td></tr>
+</table></div>
+<p class="cap">Addresses resolve on the published site; the archive is also mirrored on GitHub. A sha256 is here because a file can be replaced at the same URL — see rule 12.</p></section>
+
+<p class="gen">Generated by <code>scripts/build_town_flow.py</code> from
+<code>sources/data/lunenburg.db</code>. Every figure is computed; <code>--check</code>
+fails if this file stops reproducing.</p>
+</div>

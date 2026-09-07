@@ -1,0 +1,332 @@
+<title>Can I Match It?</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#F6F8F4; --band:#E7EEE4; --card:#FFFFFF;
+    --ink:#17251F; --ink-2:#3C4C43; --muted:#68766A;
+    --rule:#C9D4C7; --rule-soft:#DFE7DC;
+    --works:#2C5F7C; --works-soft:#E2EDF3;
+    --broken:#A03A1F; --broken-soft:#F6E5DE;
+    --recover:#9A6A17; --recover-soft:#F6EEDC;
+    --never:#6B7A72; --never-soft:#E8EDE7;
+    --shadow:0 1px 2px rgba(23,37,31,.06), 0 8px 24px -16px rgba(23,37,31,.28);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#111814; --band:#18211C; --card:#161E19;
+      --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+      --rule:#2C3830; --rule-soft:#222C26;
+      --works:#7FB3D0; --works-soft:#17272F;
+      --broken:#E08B6A; --broken-soft:#2C1D16;
+      --recover:#D6A54A; --recover-soft:#2A2313;
+      --never:#8A9A8C; --never-soft:#1D251F;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#111814; --band:#18211C; --card:#161E19;
+    --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+    --rule:#2C3830; --rule-soft:#222C26;
+    --works:#7FB3D0; --works-soft:#17272F;
+    --broken:#E08B6A; --broken-soft:#2C1D16;
+    --recover:#D6A54A; --recover-soft:#2A2313;
+    --never:#8A9A8C; --never-soft:#1D251F;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font:400 16px/1.62 "IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:60rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  h1,h2,h3{font-family:"IBM Plex Serif",Georgia,serif;text-wrap:balance;margin:0}
+  h1{font-size:clamp(1.9rem,4.4vw,2.75rem);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+  h2{font-size:1.4rem;font-weight:600;margin:3.25rem 0 .5rem}
+  h3{font-size:1.02rem;font-weight:600;margin:0 0 .3rem}
+  p{margin:0 0 1rem;max-width:65ch}
+  code,.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem
+  }
+  .lede{font-size:1.16rem;line-height:1.55;color:var(--ink-2);max-width:60ch;margin:1.1rem 0 0}
+  .verdicts{display:grid;gap:.75rem;margin:2.25rem 0 0}
+  @media(min-width:640px){.verdicts{grid-template-columns:1fr 1fr}}
+  .v{
+    background:var(--card);border:1px solid var(--rule);border-radius:2px;
+    padding:1rem 1.1rem;box-shadow:var(--shadow);display:flex;gap:.85rem;align-items:flex-start
+  }
+  .v .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.1em;
+    text-transform:uppercase;padding:.28rem .45rem;border-radius:2px;white-space:nowrap;font-weight:600
+  }
+  .tag.ok{background:var(--works-soft);color:var(--works)}
+  .tag.no{background:var(--broken-soft);color:var(--broken)}
+  .tag.rec{background:var(--recover-soft);color:var(--recover)}
+  .tag.nev{background:var(--never-soft);color:var(--never)}
+  .rec{color:var(--recover);font-weight:600}
+  .nev{color:var(--never);font-weight:600}
+  .legend{display:grid;gap:.5rem;margin:1.2rem 0 0;font-size:.88rem}
+  @media(min-width:760px){.legend{grid-template-columns:1fr 1fr}}
+  .legend div{display:flex;gap:.6rem;align-items:baseline}
+  .legend .sw{flex:0 0 34px;height:0;border-top-width:2.5px;position:relative;top:-4px}
+  .q{border-left:2px solid var(--rule);padding:.15rem 0 .15rem 1.1rem;margin:1.1rem 0 0}
+  .q h3{font-family:"IBM Plex Sans",sans-serif;font-size:.98rem}
+  .q.yes{border-left-color:var(--works)} .q.rec2{border-left-color:var(--recover)}
+  .q.doc{border-left-color:var(--broken)} .q.no2{border-left-color:var(--never)}
+  .q p{font-size:.92rem;color:var(--ink-2);margin:.15rem 0 0}
+  .v p{margin:0;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+  .v strong{color:var(--ink)}
+  figure{margin:2rem 0 0;background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:1.5rem 1rem 1.1rem;box-shadow:var(--shadow);overflow-x:auto}
+  figure svg{display:block;max-width:100%;height:auto;margin:0 auto;color:var(--ink)}
+  figcaption{font-size:.86rem;color:var(--muted);margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--rule-soft);max-width:none;line-height:1.5}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0 0}
+  th{
+    text-align:left;font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);font-weight:500;
+    padding:.55rem .7rem;border-bottom:1px solid var(--rule)
+  }
+  td{padding:.62rem .7rem;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  tbody tr:nth-child(odd){background:var(--band)}
+  td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ok{color:var(--works);font-weight:600}
+  .no{color:var(--broken);font-weight:600}
+  .scroller{overflow-x:auto}
+  .layer{border-left:2px solid var(--rule);padding:0 0 0 1.15rem;margin:1.4rem 0 0}
+  .layer.broken{border-left-color:var(--broken)}
+  .layer .k{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
+  .note{background:var(--band);border-left:2px solid var(--rule);padding:1rem 1.15rem;margin:1.5rem 0 0;font-size:.94rem}
+  .note.warn{border-left-color:var(--broken)}
+  .note p:last-child{margin-bottom:0}
+  footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
+</style>
+<style>
+  table.m{width:100%;border-collapse:separate;border-spacing:5px;font-size:.9rem;margin-top:1.4rem}
+  table.m th.col{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--muted);font-weight:500;padding:0 .5rem .3rem;text-align:left;
+    vertical-align:bottom;border:0}
+  table.m th[scope=row]{text-align:left;vertical-align:top;padding:.9rem .8rem;width:19%;
+    background:var(--band);border:1px solid var(--rule);border-radius:2px}
+  .lvl{display:block;font-family:"IBM Plex Serif",Georgia,serif;font-size:1.02rem;font-weight:600;line-height:1.25}
+  .sub{display:block;font-size:.78rem;color:var(--muted);margin-top:.28rem;line-height:1.35}
+  td.c{vertical-align:top;padding:.8rem .85rem;background:var(--card);border:1px solid var(--rule);
+    border-radius:2px}
+  td.c p{margin:0;font-size:.82rem;line-height:1.45;color:var(--ink-2);max-width:none}
+  td.c p.ev{margin-top:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--muted);line-height:1.4}
+  .mk{display:flex;align-items:center;gap:.42rem;margin-bottom:.45rem}
+  .gl{font-size:1.05rem;line-height:1}
+  .wd{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600}
+  td.yes{border-color:var(--works)} td.yes .gl,td.yes .wd{color:var(--works)}
+  td.part{border-color:var(--recover)} td.part .gl,td.part .wd{color:var(--recover)}
+  td.no .gl,td.no .wd{color:var(--broken);opacity:.85}
+  .op{margin-top:.7rem;padding-top:.6rem;border-top:1px dashed var(--rule)}
+  .ow{display:block;font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.09em;
+    text-transform:uppercase;font-weight:600;margin-bottom:.28rem}
+  .op.ask .ow{color:var(--works)} .op.never .ow{color:var(--muted)}
+  .op p{font-size:.78rem;color:var(--ink-2)}
+  .op.never p{color:var(--muted)}
+  @media(max-width:900px){
+    table.m,table.m tbody,table.m tr,table.m td,table.m th{display:block;width:auto}
+    table.m thead{display:none}
+    table.m tr{margin-bottom:1.2rem}
+    table.m td.c::before{content:attr(data-col);display:block;font-family:"IBM Plex Mono",monospace;
+      font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+  }
+</style>
+
+<style>
+  table.cov{border-collapse:separate;border-spacing:2px;font-size:.8rem;margin:1.2rem 0 .5rem;width:100%}
+  table.cov th{font-family:"IBM Plex Mono",monospace;font-size:.62rem;font-weight:500;color:var(--muted);
+    padding:0 0 .35rem;border:0;text-align:center}
+  table.cov th[scope=row]{text-align:left;font-family:"IBM Plex Sans",sans-serif;font-size:.78rem;
+    font-weight:400;color:var(--ink-2);padding:.2rem .7rem .2rem 0;white-space:nowrap}
+  table.cov td.s{text-align:center;font-size:.85rem;line-height:1.5;width:22px;border-radius:2px}
+  td.s.obtained{color:var(--works);background:var(--works-soft)}
+  td.s.partial{color:var(--recover);background:var(--recover-soft)}
+  /* Held, and not read. A different fact from `not held`, and the opposite action:
+     nothing to ask anybody for, the document is already in the archive. */
+  td.s.unread{color:var(--recover);background:var(--recover-soft)}
+  td.s.missing{color:var(--muted);opacity:.45}
+  tr.grp td{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--muted);padding:.7rem 0 .2rem}
+  td.tot{font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-align:right;padding-left:.6rem;
+    color:var(--ink-2);white-space:nowrap}
+  td.tot span{color:var(--muted)}
+  th.tot{text-align:right}
+  .covkey{font-size:.82rem;color:var(--muted)}
+  .covkey .s{font-size:.9rem;padding:0 .1rem}
+  .covkey .obtained{color:var(--works)} .covkey .partial{color:var(--recover)}
+  tr.prop th[scope=row]{color:var(--works);font-weight:600}
+  tr.prop td.s{outline:1px dashed var(--works);outline-offset:-1px}
+  td.s.f-pdf{background:transparent;box-shadow:inset 0 0 0 1px var(--rule)}
+
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Lunenburg Budget Project · 3 September 2026</p>
+  <h1>Starting from the school budget, what can it be matched to?</h1>
+  <p class="lede">Three levels of the budget down the side, four things to match them to across the top. Each cell says what is true today, and under the dashed rule, what would open it — because &ldquo;we do not have it&rdquo; and &ldquo;nobody could have it&rdquo; call for completely different responses.</p>
+
+  <div class="scroller">
+  <table class="m">
+    <thead><tr><th></th><th class="col">Actual spend</th><th class="col">Individual transactions</th><th class="col">State funding</th><th class="col">Revolving and other funds</th></tr></thead>
+    <tbody>
+    <tr>
+      <th scope="row"><span class="lvl">Overall school budget</span><span class="sub">the department as one number</span></th>
+      <td class="c yes" data-col="Actual spend">
+        <div class="mk"><span class="gl">✓</span><span class="wd">have it</span></div>
+        <p>Department totals exist on both sides. This is the comparison the review document rests on.</p>
+        <p class="ev">dept 300 · $41,350,320 expended of $52,656,432 revised</p>
+      </td>
+      <td class="c no" data-col="Individual transactions">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>Transaction detail exists for the athletics revolving fund and nothing else.</p>
+        <p class="ev">fund 1301 only · 277 rows</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>Account Detail for the general fund. MUNIS already runs this report — it produced the athletics file. Nothing new has to exist.</p></div>
+      </td>
+      <td class="c part" data-col="State funding">
+        <div class="mk"><span class="gl">◐</span><span class="wd">total only</span></div>
+        <p>The two totals can sit side by side. Which spending the aid paid for cannot be said.</p>
+        <p class="ev">CH 70 AID $6,870,136 · a ratio, not a trace</p>
+        <div class="op never"><span class="ow">— nothing would change this</span><p>Aid arrives unrestricted into the general fund. No report attributes it, because no ledger records which dollar paid which bill.</p></div>
+      </td>
+      <td class="c part" data-col="Revolving and other funds">
+        <div class="mk"><span class="gl">◐</span><span class="wd">total only</span></div>
+        <p>Balances and activity are held, but these funds are absent from the ledger we have.</p>
+        <p class="ev">61 funds · 0 shared fund values with the ledger</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>The year-to-date report run for the school’s own funds — 1300 to 1303 and the rest. The one we hold covers the general and enterprise funds only.</p></div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="lvl">By category code</span><span class="sub">2710 Guidance, 2305 Teachers</span></th>
+      <td class="c yes" data-col="Actual spend">
+        <div class="mk"><span class="gl">✓</span><span class="wd">have it</span></div>
+        <p>The one join between the two sides: the budget prints the code, the spreadsheet carries it in the fourth segment.</p>
+        <p class="ev">41 of 45 codes · FY2026 period 12 only</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>Works today for one period. Earlier years arrived as PDFs, which drop the code — a spreadsheet export of the same reports extends it backwards.</p></div>
+      </td>
+      <td class="c no" data-col="Individual transactions">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>The athletics journal has no function, object, org or account column. Every row is the same CASH account, so there is nothing to group by.</p>
+        <p class="ev">0 of 19 columns carry a code</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>Account Detail WITH the object code. The June request asked for object-level detail and what arrived had none — worth asking for by name this time.</p></div>
+      </td>
+      <td class="c no" data-col="State funding">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>Not one revenue account carries a function code. Aid is not booked to a category, so there is no category to match it to.</p>
+        <p class="ev">0 of 222 revenue accounts</p>
+        <div class="op never"><span class="ow">— nothing would change this</span><p>The Town would have to book revenue against spending categories, which is not how fund accounting works anywhere.</p></div>
+      </td>
+      <td class="c no" data-col="Revolving and other funds">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>The fund records carry balances and no function code, so no fund can be attributed to a category.</p>
+        <p class="ev">0 fund records carry a code</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>Expenditure detail for each fund, with object codes. The funds do spend against coded accounts; the summary report we hold simply does not show them.</p></div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><span class="lvl">By line item</span><span class="sub">a row per school, as the budget prints it</span></th>
+      <td class="c no" data-col="Actual spend">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>MUNIS cuts account names to ten characters. MS GUIDANC and HS GUIDANC are both 2710 where the budget has a row per school.</p>
+        <p class="ev">no key · names truncated at 10 characters</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>A crosswalk from the district: which account each budget line is built from. They build the budget in a workbook and may well hold this — nobody has asked.</p></div>
+      </td>
+      <td class="c no" data-col="Individual transactions">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>Needs a line-level key and general fund transaction detail. Neither exists today.</p>
+        <p class="ev">two gaps, not one</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>Both of the asks above. This cell opens only when they both land, so it is the last one to fall, not the first.</p></div>
+      </td>
+      <td class="c no" data-col="State funding">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>Fails twice: aid carries no category, and no line carries an account.</p>
+        <p class="ev">0 revenue accounts coded</p>
+        <div class="op never"><span class="ow">— nothing would change this</span><p>Blocked by the same thing as the cell above it. A line-level crosswalk would not help, because there is nothing on the aid side to join to.</p></div>
+      </td>
+      <td class="c no" data-col="Revolving and other funds">
+        <div class="mk"><span class="gl">✕</span><span class="wd">no</span></div>
+        <p>Out of reach from every source at this level.</p>
+        <p class="ev">no key at this level, from anywhere</p>
+        <div class="op ask"><span class="ow">→ could be fetched</span><p>The district crosswalk plus fund detail with object codes. Two documents, both plausible, neither requested.</p></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The shape of it</h2>
+  <p><strong>Nine of the twelve cells could be opened by a document.</strong> That is the headline, and it is a much better position than the bare answers suggest — most of what cannot be done today is not a limit of the accounting, it is a report nobody has requested.</p>
+  <p><strong>Three cannot be opened by anything</strong>, and all three are state funding at some level. Aid arrives unrestricted into the general fund; no ledger anywhere records which dollar paid which bill. Asking the Town for it spends goodwill on a question their own system cannot answer either.</p>
+  <p><strong>Four documents would do nearly all of it:</strong></p>
+  <ol style="max-width:65ch;padding-left:1.25rem">
+    <li><strong>Account Detail for the general fund, with object codes.</strong> Opens transactions at the overall and category levels. MUNIS already runs it — it produced the athletics file — and the June request asked for object-level detail that did not arrive, so name it explicitly.</li>
+    <li><strong>The year-to-date report for the school&rsquo;s own funds.</strong> Puts the 61 revolving funds into the ledger instead of beside it.</li>
+    <li><strong>Spreadsheet exports for earlier years.</strong> Extends the category join backwards; today it holds for FY2026 period 12 alone because every earlier year came as a PDF.</li>
+    <li><strong>A crosswalk from the district</strong> — which account each budget line is built from. They build the budget in a workbook and may simply have this. Nobody has asked.</li>
+  </ol>
+  <p>The fourth is the interesting one, because it is the only ask on this page directed at the district rather than the Town, and it is the only thing that opens the line-item row at all.</p>
+
+
+  <h2>The same question, asked from the other side</h2>
+  <p>The app already carries a <strong>completeness</strong> table — the same fourteen document types for every fiscal year since 2009, on the data room page. It answers <em>what do we hold</em>. The matrix above answers <em>what does holding it let us say</em>. Put side by side they agree, and where they disagree the disagreement is the useful part.</p>
+
+  <div class="scroller">
+  <table class="cov">
+    <thead><tr><th></th><th>09</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th class="tot">have</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="21">Budget documents</td></tr>
+      <tr class=""><th scope="row">Proposed budget, line level</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s unread" title="FY2015: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="s unread" title="FY2016: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="s obtained f-pdf" title="FY2017: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2018: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2019: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2020: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2021: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2022: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2023: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2024: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2025: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2026: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2027: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="tot">11<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Approved budget, line level</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s unread" title="FY2015: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="s obtained f-pdf" title="FY2016: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2017: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2018: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2019: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2020: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2021: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2022: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2023: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s unread" title="FY2024: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="s obtained f-pdf" title="FY2025: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2026: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s unread" title="FY2027: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="tot">10<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Prior-year actuals, restated</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s obtained f-pdf" title="FY2014: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2015: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2016: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2017: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2018: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2019: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2020: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2021: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2022: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2023: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2024: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2025: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s unread" title="FY2026: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="s unread" title="FY2027: unread — held, and never read. The documents are in the archive with their figures not extracted — the gap is ours, not the town’s">▨</td><td class="tot">12<span>/19</span></td></tr>
+      <tr class="grp"><td colspan="21">The town’s ledger</td></tr>
+      <tr class=""><th scope="row">Appropriation as voted</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s obtained f-sheet" title="FY2026: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">1<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Q1 spend report (period 3)</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2026: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">0<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Q2 spend report (period 6)</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2026: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">0<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Q3 spend report (period 9)</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s partial" title="FY2026: partial — held, but at the wrong grain — a department rollup where account level was needed. Asking for the same report with Print totals only: N fixes it">◐</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">0<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Year-end position (period 12)</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s obtained f-sheet" title="FY2026: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">1<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Year-end close (period 13)</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2026: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">0<span>/19</span></td></tr>
+      <tr class="prop"><th scope="row">Account Detail, transaction level  ⟵ proposed</th><td class="s missing" title="FY2009 — missing">·</td><td class="s missing" title="FY2010 — missing">·</td><td class="s missing" title="FY2011 — missing">·</td><td class="s missing" title="FY2012 — missing">·</td><td class="s missing" title="FY2013 — missing">·</td><td class="s missing" title="FY2014 — missing">·</td><td class="s missing" title="FY2015 — missing">·</td><td class="s missing" title="FY2016 — missing">·</td><td class="s missing" title="FY2017 — missing">·</td><td class="s missing" title="FY2018 — missing">·</td><td class="s missing" title="FY2019 — missing">·</td><td class="s missing" title="FY2020 — missing">·</td><td class="s missing" title="FY2021 — missing">·</td><td class="s missing" title="FY2022 — missing">·</td><td class="s missing" title="FY2023 — missing">·</td><td class="s partial f-sheet" title="FY2024 — partial, spreadsheet">◐</td><td class="s partial f-sheet" title="FY2025 — partial, spreadsheet">◐</td><td class="s partial f-sheet" title="FY2026 — partial, spreadsheet">◐</td><td class="s missing" title="FY2027 — missing">·</td><td class="tot">0<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Purchase orders closed after close</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2026: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">0<span>/19</span></td></tr>
+      <tr class="grp"><td colspan="21">Funding sources</td></tr>
+      <tr class=""><th scope="row">Revenue ledger</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s obtained f-pdf" title="FY2026: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">1<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Revolving and grant fund activity</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2020: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2021: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2022: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2023: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2024: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s obtained f-sheet" title="FY2026: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">1<span>/19</span></td></tr>
+      <tr class=""><th scope="row">Grant awards listed</th><td class="s missing" title="FY2009: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2010: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2011: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2012: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2013: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2014: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2015: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2016: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2017: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2018: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2019: missing — nothing in the archive supplies this">·</td><td class="s obtained f-pdf" title="FY2020: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2021: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2022: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2023: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s obtained f-pdf" title="FY2024: obtained, as a PDF — the printed form drops the account string, so it cannot be joined by code">◍</td><td class="s missing" title="FY2025: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2026: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">5<span>/19</span></td></tr>
+      <tr class="grp"><td colspan="21">Independent check</td></tr>
+      <tr class=""><th scope="row">DESE all-funds per pupil, by function</th><td class="s obtained f-sheet" title="FY2009: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2010: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2011: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2012: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2013: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2014: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2015: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2016: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2017: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2018: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2019: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2020: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2021: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2022: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2023: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2024: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s obtained f-sheet" title="FY2025: obtained, as a SPREADSHEET — it carries the account string, which is the only thing joining the budget to the ledger">●</td><td class="s missing" title="FY2026: missing — nothing in the archive supplies this">·</td><td class="s missing" title="FY2027: missing — nothing in the archive supplies this">·</td><td class="tot">17<span>/19</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="covkey">
+    <span class="s obtained">●</span> obtained, spreadsheet &nbsp;
+    <span class="s obtained">◍</span> obtained, PDF &nbsp;
+    <span class="s partial">◐</span> partial &nbsp;
+    <span class="s missing">·</span> missing
+  </p>
+  <p class="covkey" style="margin-top:.5rem"><strong>Two additions on this copy, not yet in the app.</strong>
+    A fifteenth row for <em>Account Detail</em>, and a distinction between a document that
+    arrived as a spreadsheet and one that arrived as a PDF. Both came out of comparing the
+    two tables, and both change what the completeness figure means.</p>
+
+  <h3>Where the two views agree</h3>
+  <p>The category join works for <strong>FY2026 period 12 and nothing else</strong>, and the completeness table shows exactly why: <em>Year-end position (period 12)</em> is obtained for one year out of nineteen. Two tables built from different data, arriving at the same boundary, is a good sign that the boundary is real rather than an artefact of how either was built.</p>
+  <p>The same holds for the funds. <em>Revolving and grant fund activity</em> is obtained for FY2026 alone, and its own note says what to ask for: <code>glytdbud</code> for the school grant, revolving and school choice funds. That is the second of the four documents above, already written down, already costed as a records request.</p>
+
+  <h3>Where they disagree, and this is the finding</h3>
+  <div class="note warn">
+    <p><strong>The completeness table had no row for transaction-level detail</strong>, and the copy above adds one. Its ledger group is six rows and all six are <code>glytdbud</code> variants — quarterly spend, year-end position, year-end close, purchase orders. Account Detail, the report that produced the athletics journal and the one the matrix above says would open the most cells, is not tracked at all.</p>
+    <p style="margin-top:.7rem">So the two views measure different things and neither was wrong: completeness tracks <em>report-years</em>; the matrix tracks <em>what can be joined</em>, and found the biggest unlock in a report completeness had no row for. Added above, it reads <strong>three partial years and no obtained ones</strong> — athletics FY2024 to FY2026, and partial rather than obtained because one revolving fund is not the school department.</p>
+  </div>
+  <div class="note warn" style="margin-top:1.2rem">
+    <p><strong>And completeness counted a PDF the same as a spreadsheet.</strong> The matrix cares enormously which: a PDF drops the account code, and the account code is the only join between the district&rsquo;s budget and the Town&rsquo;s books. The table above now separates them — a filled dot is a spreadsheet, a ring is a PDF.</p>
+    <p style="margin-top:.7rem">Read that way, the ledger group tells a sharper story. <em>Year-end position</em> is obtained once, from
+    <code>town-general-fund-expenditures-fy26-p12.xlsx</code>, and it is a spreadsheet — which is the entire reason the category row of the matrix works at all. The appropriation and revenue rows for the same year are PDF-derived, and neither can be joined to a budget line. Same year, same department, same completeness score, and one of them can answer a question the others cannot.</p>
+  </div>
+
+  <footer>
+    Every count was produced by querying <code>sources/data/lunenburg.db</code> on 3 September 2026.
+    What each cell states as fact was checked; what it says could be fetched is a judgement about
+    what MUNIS can produce, and is marked as such rather than promised.
+  </footer>
+</div>

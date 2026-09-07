@@ -1,0 +1,581 @@
+<title>The Lunenburg Join Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#F6F8F4; --band:#E7EEE4; --card:#FFFFFF;
+    --ink:#17251F; --ink-2:#3C4C43; --muted:#68766A;
+    --rule:#C9D4C7; --rule-soft:#DFE7DC;
+    --works:#2C5F7C; --works-soft:#E2EDF3;
+    --broken:#A03A1F; --broken-soft:#F6E5DE;
+    --recover:#9A6A17; --recover-soft:#F6EEDC;
+    --never:#6B7A72; --never-soft:#E8EDE7;
+    --shadow:0 1px 2px rgba(23,37,31,.06), 0 8px 24px -16px rgba(23,37,31,.28);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#111814; --band:#18211C; --card:#161E19;
+      --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+      --rule:#2C3830; --rule-soft:#222C26;
+      --works:#7FB3D0; --works-soft:#17272F;
+      --broken:#E08B6A; --broken-soft:#2C1D16;
+      --recover:#D6A54A; --recover-soft:#2A2313;
+      --never:#8A9A8C; --never-soft:#1D251F;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#111814; --band:#18211C; --card:#161E19;
+    --ink:#E6ECE3; --ink-2:#B7C3B8; --muted:#8A9A8C;
+    --rule:#2C3830; --rule-soft:#222C26;
+    --works:#7FB3D0; --works-soft:#17272F;
+    --broken:#E08B6A; --broken-soft:#2C1D16;
+    --recover:#D6A54A; --recover-soft:#2A2313;
+    --never:#8A9A8C; --never-soft:#1D251F;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font:400 16px/1.62 "IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:60rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+  h1,h2,h3{font-family:"IBM Plex Serif",Georgia,serif;text-wrap:balance;margin:0}
+  h1{font-size:clamp(1.9rem,4.4vw,2.75rem);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+  h2{font-size:1.4rem;font-weight:600;margin:3.25rem 0 .5rem}
+  h3{font-size:1.02rem;font-weight:600;margin:0 0 .3rem}
+  p{margin:0 0 1rem;max-width:65ch}
+  code,.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem
+  }
+  .lede{font-size:1.16rem;line-height:1.55;color:var(--ink-2);max-width:60ch;margin:1.1rem 0 0}
+  .verdicts{display:grid;gap:.75rem;margin:2.25rem 0 0}
+  @media(min-width:640px){.verdicts{grid-template-columns:1fr 1fr}}
+  .v{
+    background:var(--card);border:1px solid var(--rule);border-radius:2px;
+    padding:1rem 1.1rem;box-shadow:var(--shadow);display:flex;gap:.85rem;align-items:flex-start
+  }
+  .v .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.1em;
+    text-transform:uppercase;padding:.28rem .45rem;border-radius:2px;white-space:nowrap;font-weight:600
+  }
+  .tag.ok{background:var(--works-soft);color:var(--works)}
+  .tag.no{background:var(--broken-soft);color:var(--broken)}
+  .tag.rec{background:var(--recover-soft);color:var(--recover)}
+  .tag.nev{background:var(--never-soft);color:var(--never)}
+  .rec{color:var(--recover);font-weight:600}
+  .nev{color:var(--never);font-weight:600}
+  .legend{display:grid;gap:.5rem;margin:1.2rem 0 0;font-size:.88rem}
+  @media(min-width:760px){.legend{grid-template-columns:1fr 1fr}}
+  .legend div{display:flex;gap:.6rem;align-items:baseline}
+  .legend .sw{flex:0 0 34px;height:0;border-top-width:2.5px;position:relative;top:-4px}
+  .q{border-left:2px solid var(--rule);padding:.15rem 0 .15rem 1.1rem;margin:1.1rem 0 0}
+  .q h3{font-family:"IBM Plex Sans",sans-serif;font-size:.98rem}
+  .q.yes{border-left-color:var(--works)} .q.rec2{border-left-color:var(--recover)}
+  .q.doc{border-left-color:var(--broken)} .q.no2{border-left-color:var(--never)}
+  .q p{font-size:.92rem;color:var(--ink-2);margin:.15rem 0 0}
+  .v p{margin:0;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+  .v strong{color:var(--ink)}
+  figure{margin:2rem 0 0;background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:1.5rem 1rem 1.1rem;box-shadow:var(--shadow);overflow-x:auto}
+  figure svg{display:block;max-width:100%;height:auto;margin:0 auto;color:var(--ink)}
+  figcaption{font-size:.86rem;color:var(--muted);margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--rule-soft);max-width:none;line-height:1.5}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0 0}
+  th{
+    text-align:left;font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);font-weight:500;
+    padding:.55rem .7rem;border-bottom:1px solid var(--rule)
+  }
+  td{padding:.62rem .7rem;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  tbody tr:nth-child(odd){background:var(--band)}
+  td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ok{color:var(--works);font-weight:600}
+  .no{color:var(--broken);font-weight:600}
+  .scroller{overflow-x:auto}
+  .layer{border-left:2px solid var(--rule);padding:0 0 0 1.15rem;margin:1.4rem 0 0}
+  .layer.broken{border-left-color:var(--broken)}
+  .layer .k{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
+  .note{background:var(--band);border-left:2px solid var(--rule);padding:1rem 1.15rem;margin:1.5rem 0 0;font-size:.94rem}
+  .note.warn{border-left-color:var(--broken)}
+  .note p:last-child{margin-bottom:0}
+  footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
+</style>
+
+
+<div class="wrap">
+  <p class="eyebrow">Lunenburg Budget Project · data model · 3 September 2026</p>
+  <h1>What can be joined, what can’t, and which questions that leaves unanswerable</h1>
+  <p class="lede">Money can be followed at six levels of detail. Each one turns on a key, and a level only answers a question if both sides supply that key. Two levels meet. Two are one-sided. One we hold for a single fund. One has data on both sides and no key at all, and no document will ever fix it.</p>
+
+
+  <figure>
+    <svg viewBox="0 0 880 832" role="img" aria-label="Six levels of detail. The whole school department and the category level meet on both sides. By fund and by account exist only in the Town's books. By transaction is held for the athletics fund alone. By school has data on both sides and no key at all. And at no level does money coming in meet money going out.">
+      <text x="30" y="30" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.4" fill="currentColor" opacity=".55">LEVEL OF DETAIL, AND THE KEY IT TURNS ON</text>
+      <text x="292" y="82" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.3" fill="currentColor" opacity=".55">THE DISTRICT’S BUDGET SAYS</text>
+      <text x="546" y="82" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.3" fill="currentColor" opacity=".55">THE TOWN’S BOOKS SAY</text>
+      <text x="838" y="82" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.3" fill="currentColor" opacity=".55">MEET?</text>
+      <line x1="30" y1="96" x2="850" y2="96" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="124" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">The whole school department</text>
+      <text x="30" y="142" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity=".62">keyed by department · 300, 301</text>
+      <rect x="292" y="108" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="304" y="129" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">The budget workbook</text><text x="304" y="146" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">bottom-line totals</text>
+      <rect x="546" y="108" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="558" y="129" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">Year-to-date report</text><text x="558" y="146" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">Print Totals Only TRUE</text>
+      <path d="M813 138 l6 7 l12 -15" fill="none" stroke="#2C5F7C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="30" y="180" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor" opacity=".72">Both sides, for every year we hold.</text>
+      <line x1="30" y1="208" x2="850" y2="208" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="236" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">By category</text>
+      <text x="30" y="254" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity=".62">keyed by function code · 2710, 2305</text>
+      <rect x="292" y="220" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="304" y="241" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">The budget workbook</text><text x="304" y="258" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">prints the code over each group</text>
+      <rect x="546" y="220" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="558" y="241" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">Year-to-date report</text><text x="558" y="258" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">spreadsheet only — the 4th segment of the</text><text x="558" y="271" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">account number</text>
+      <path d="M813 250 l6 7 l12 -15" fill="none" stroke="#2C5F7C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="30" y="292" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor" opacity=".72">41 of 45 codes present on both sides. FY2026 period 12 only: the PDF drops the code.</text>
+      <line x1="30" y1="320" x2="850" y2="320" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="348" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">By fund</text>
+      <text x="30" y="366" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity=".62">keyed by fund · 0100, 1301, 2200</text>
+      <rect x="292" y="332" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".22"/><text x="304" y="358" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".5">nothing — the budget is the general</text><text x="304" y="372" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".5">fund and never names another</text>
+      <rect x="546" y="332" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="558" y="353" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">Special revenue report</text><text x="558" y="370" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">61 funds, balances and activity</text>
+      <line x1="814" y1="351" x2="830" y2="367" stroke="#A03A1F" stroke-width="3" stroke-linecap="round"/><line x1="830" y1="351" x2="814" y2="367" stroke="#A03A1F" stroke-width="3" stroke-linecap="round"/>
+      <text x="30" y="404" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor" opacity=".72">The town books the funds; the budget names none. Nothing carries a fund back to a budget line.</text>
+      <line x1="30" y1="432" x2="850" y2="432" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="460" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">By account</text>
+      <text x="30" y="478" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity=".62">keyed by account number · 0100-S2055101-511001</text>
+      <rect x="292" y="444" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".22"/><text x="304" y="470" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".5">nothing — the budget prints no account</text><text x="304" y="484" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".5">number, ever</text>
+      <rect x="546" y="444" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="558" y="465" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">Year-to-date report</text><text x="558" y="482" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">Print Totals Only FALSE — 981 accounts</text>
+      <line x1="814" y1="463" x2="830" y2="479" stroke="#A03A1F" stroke-width="3" stroke-linecap="round"/><line x1="830" y1="463" x2="814" y2="479" stroke="#A03A1F" stroke-width="3" stroke-linecap="round"/>
+      <text x="30" y="516" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor" opacity=".72">One-sided. The town can tell you about an account; the budget cannot be asked about one.</text>
+      <line x1="30" y1="544" x2="850" y2="544" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="572" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">By transaction</text>
+      <text x="30" y="590" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity=".62">keyed by check, warrant, journal</text>
+      <rect x="292" y="556" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".22"/><text x="304" y="582" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".5">nothing</text>
+      <rect x="546" y="556" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="558" y="577" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">Account Detail</text><text x="558" y="594" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">athletics revolving fund only, FY24–FY26</text>
+      <circle cx="822" cy="583" r="9" fill="none" stroke="#9A6A17" stroke-width="2.6"/><path d="M822 574 a9 9 0 0 1 0 18 z" fill="#9A6A17"/>
+      <text x="30" y="628" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor" opacity=".72">The tier we do not have. Held for one fund; requested for the school accounts.</text>
+      <line x1="30" y1="656" x2="850" y2="656" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="684" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">By school</text>
+      <text x="30" y="702" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity=".62">no key exists</text>
+      <rect x="292" y="668" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="304" y="689" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">The budget workbook</text><text x="304" y="706" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">a row per school — E.S., M.S., H.S.</text>
+      <rect x="546" y="668" width="238" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="558" y="689" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="currentColor">Year-to-date report</text><text x="558" y="706" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">names cut to ten characters — MS GUIDANC,</text><text x="558" y="719" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity=".7">HS GUIDANC</text>
+      <line x1="814" y1="687" x2="830" y2="703" stroke="#6B7A72" stroke-width="3" stroke-linecap="round"/><line x1="830" y1="687" x2="814" y2="703" stroke="#6B7A72" stroke-width="3" stroke-linecap="round"/>
+      <text x="30" y="740" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor" opacity=".72">Both sides hold the data and neither carries a key for it. Matching them is inference, not tracking.</text>
+      <line x1="30" y1="768" x2="850" y2="768" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="30" y="794" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="#6B7A72">And at no level does money coming in meet money going out. Chapter 70 — $6,870,136 — lands in the general fund, where it is</text>
+      <text x="30" y="810" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="#6B7A72">indistinguishable from tax.</text>
+    </svg>
+    <figcaption><strong>Read a row across: at this level of detail, keyed by this, here is what each side supplies and whether they meet.</strong> A blue tick is a join that was run. A red cross is one side missing something a document could supply. A grey cross is a key that exists nowhere. The half circle is a level held for one fund and requested for the rest.</figcaption>
+  </figure>
+
+  <h2>What each tier buys, and what it still cannot answer</h2>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>Tier</th><th>The report</th><th>Questions it answers</th><th>Questions it still cannot</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>1</strong><br><span style="color:var(--muted)">Totals</span></td>
+        <td>School budget workbook · YTD with <code>Print Totals Only TRUE</code></td>
+        <td>What was appropriated. What is left. Whether the department as a whole is over or under.</td>
+        <td>Which category. Which school. Which fund paid.</td>
+      </tr>
+      <tr>
+        <td><strong>2</strong><br><span style="color:var(--muted)">Categories</span></td>
+        <td>YTD with <code>Print Totals Only FALSE</code></td>
+        <td>Whether guidance, special education or transport is over. Whether the Town’s books and the district’s budget agree on a code — <span class="ok">38 of 45 do</span>.</td>
+        <td>Which school inside a category. Names truncate at ten characters: <code>MS GUIDANC</code>, <code>HS GUIDANC</code>, both 2710.</td>
+      </tr>
+      <tr>
+        <td><strong>3</strong><br><span style="color:var(--muted)">Accounts</span></td>
+        <td>Account Detail · Revenue report</td>
+        <td>What one account spent, transaction by transaction. How much came in per fund. <span class="ok">Chapter 70: $6,870,136.</span></td>
+        <td>Which revenue paid which expense. That is the grey edge, and no tier reaches it.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The model, used</h2>
+  <p>The point of drawing it is to sort a question before spending months on it. Each of these resolves to an edge above.</p>
+
+  <div class="q yes"><h3>What did the town appropriate for the schools in FY26, and how much is unspent?</h3>
+    <p><strong>Answerable now.</strong> Totals only — no join needed.</p></div>
+
+  <div class="q yes"><h3>Is the guidance line over budget, and do the two documents agree?</h3>
+    <p><strong>Answerable, for FY2026 period 12.</strong> The category code joins the two sides. Guidance, teachers, transport — each one comparable. Category 2305, classroom teachers, — 7 budget lines against 5 ledger accounts, <span class="mono">$7,867,027.11</span> expended. Every earlier year is PDF-derived and carries no code, so the answer does not extend backwards.</p></div>
+
+  <div class="q doc"><h3>Did a grant pay for those paraprofessionals, or did the town?</h3>
+    <p><strong>Needs a document.</strong> The grants list names 79 awards and never says which account paid them. The special revenue funds reach no account either — that join returns zero rows. DESE’s End of Year Financial Report separates spending by fund and is the most likely thing to close it. This is load-bearing: the special education escalator rests on a paraprofessional line that cannot currently be told apart from grant money unwinding.</p></div>
+
+  <div class="q no2"><h3>Where does the school spend the Chapter 70 money?</h3>
+    <p><strong>Not answerable, and no document will make it so.</strong> Chapter 70 arrives as unrestricted revenue into fund <code>0100</code>. Once there it is indistinguishable from property tax. 222 revenue accounts and 759 expense accounts share three orgs, and nothing links them, because no municipal ledger records which dollar paid which bill.</p>
+    <p style="margin-top:.5rem">What <em>is</em> answerable, and worth saying instead: how much Chapter 70 came in, what the general fund spent in total, and what the town had to raise after aid. Asking the Town for more detail here would spend goodwill on a question their system cannot answer either.</p></div>
+
+  <h2>What holds the join up</h2>
+  <div class="note">
+    <p><strong><code>account.function</code></strong> carries MUNIS's function code; <code>'0000'</code> — town departments, and every row from a printed report — stores as NULL rather than a code that looks real and joins to nothing. A null means the source was a PDF, not that the account has no function.</p>
+    <p style="margin-top:.7rem"><strong><code>crosswalk</code> is empty on purpose.</strong> The code joins a category, never a line: MUNIS truncates account names to ten characters, so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> are both 2710 where the budget has a row per school. Rows in <code>crosswalk</code> would record an inference as a mapping; the view computes the join and shows its working in SQL.</p>
+    <p style="margin-top:.7rem"><strong><code>check_join_key()</code> runs on every build</strong> and fails if <code>account.function</code> is empty or fewer than 20 codes are shared with the budget. Nothing compared loader output to loader input before, which is how a column can go missing without anyone noticing.</p>
+  </div>
+
+  <h2>The schema itself</h2>
+  <p>The ladder above is the argument; this is the reference under it. It is <strong>generated from the live database</strong> by <code>scripts/build_schema_uml.py</code>, so it is a function of the schema rather than a claim about it — a hand-drawn version is wrong the first time a column is added and nothing notices, because a picture cannot fail a test.</p>
+  <p>Two kinds of edge, drawn deliberately:</p>
+  <ul style="max-width:65ch;margin:0 0 1rem;padding-left:1.15rem">
+    <li><strong>Declared</strong> — a real <code>FOREIGN KEY</code>. The schema asserts it. There are <strong>six</strong>, across 29 tables and 241 columns.</li>
+    <li><strong>Verified</strong> — a column carrying another table&rsquo;s key name, whose values were <em>checked by running the join</em>. There are <strong>twelve</strong>, and the match rate is on the edge: &ldquo;there is a <code>doc_id</code> column&rdquo; and &ldquo;every <code>doc_id</code> resolves&rdquo; are different facts and only the second is worth drawing.</li>
+  </ul>
+  <p>A candidate that matches nothing is not drawn at all. A same-named column that never resolves is a coincidence, and an edge for it would be a lie in the shape of a line.</p>
+  <div class="scroller" style="border:1px solid var(--rule);border-radius:2px;background:var(--card);padding:1rem;margin-top:1.25rem">
+<pre class="mermaid">
+erDiagram
+    BUDGET_LINE ||--o{ ACCOUNT : "function 258/270"
+    FUND ||--o{ ACCOUNT : "fund 981/981"
+    BUDGET_LINE ||--o{ BUDGET_FIGURE : "line_key 8,598/8,598"
+    DOCUMENT ||--o{ BUDGET_FIGURE : "doc_id 8,598/8,598"
+    ACCOUNT ||--o{ CROSSWALK : "account_id"
+    BUDGET_LINE ||--o{ CROSSWALK : "line_key"
+    DOCUMENT ||--o{ CROSSWALK : "doc_id"
+    DOCUMENT ||--o{ DESE_MEASURE : "doc_id 2,982/2,982"
+    FISCAL_PERIOD ||--o{ FUND_1301_CASH_JOURNAL : "period 274/277"
+    DOCUMENT ||--o{ FUND_ACTIVITY : "doc_id 61/61"
+    FISCAL_PERIOD ||--o{ FUND_ACTIVITY : "period 61/61"
+    FUND ||--o{ FUND_ACTIVITY : "fund 61/61"
+    ACCOUNT ||--o{ LEDGER_SNAPSHOT : "account_id"
+    DOCUMENT ||--o{ LEDGER_SNAPSHOT : "doc_id"
+    FISCAL_PERIOD ||--o{ LEDGER_SNAPSHOT : "period"
+    DOCUMENT ||--o{ STATED_FIGURE : "doc_id 2/2"
+    BUDGET_LINE ||--o{ WORKBOOK_FIGURE : "line_key 3,205/3,261"
+    DOCUMENT ||--o{ WORKBOOK_FIGURE : "doc_id 3,261/3,261"
+    ACCOUNT {
+        text account_id PK
+        text fund FK
+        text fund_name
+        text dept
+        text org
+        text object
+        text account_string
+        text function FK
+        text name
+        text account_type
+        text level
+        int first_seen_fy
+        int last_seen_fy
+        %% 981 rows
+    }
+    ATHLETIC_FEE_SCHEDULE {
+        text fy
+        text school_year
+        text level
+        text item
+        text amount
+        text unit
+        text set_on
+        text source
+        text source_file
+        text source_ref
+        text verified
+        %% 31 rows
+    }
+    ATHLETICS_BY_SPORT {
+        text season
+        text level
+        text sport
+        text fy
+        text metric
+        text value
+        text raw
+        text is_numeric
+        text cell
+        %% 960 rows
+    }
+    ATHLETICS_BY_SPORT_RECONCILIATION {
+        text season
+        text scope
+        text metric
+        text fy
+        text printed
+        text printed_cell
+        text printed_raw
+        text summed_from_rows
+        text difference
+        text ties
+        %% 342 rows
+    }
+    ATHLETICS_HISTORY {
+        text fy
+        text side
+        text item
+        text amount
+        text basis
+        text source
+        %% 178 rows
+    }
+    BUDGET_FIGURE {
+        text line_key PK
+        text label
+        int fy PK
+        text stage PK
+        real value
+        int documents_disagree
+        text doc_id PK
+        %% 8,598 rows
+    }
+    BUDGET_LINE {
+        text line_key PK
+        text label
+        text section
+        text function_group
+        text kind
+        %% 703 rows
+    }
+    CAPITAL_FUNDING_HISTORY {
+        text fy
+        text total
+        text free_cash
+        text taxation
+        text unexpended_prior_year_capital
+        text other
+        %% 10 rows
+    }
+    CAPITAL_PLAN_FY27 {
+        text rank
+        text dept
+        text project
+        text cost
+        text cumulative
+        text funded
+        text funding
+        %% 22 rows
+    }
+    CROSSWALK {
+        text line_key PK
+        text account_id PK
+        text method
+        text confidence
+        text evidence
+        text doc_id FK
+        %% 0 rows
+    }
+    DESE_MEASURE {
+        text lea PK
+        text district
+        int fy PK
+        text group PK
+        text measure PK
+        real value
+        text reconciles
+        text doc_id FK
+        %% 2,982 rows
+    }
+    DOCUMENT {
+        text doc_id PK
+        text path
+        text source_type
+        text basis
+        text ledger_at
+        text hidden_columns
+        text url
+        text link_state
+        text copy_state
+        text remote_sha256
+        text local_sha256
+        %% 393 rows
+    }
+    FISCAL_PERIOD {
+        int period PK
+        text label
+        real months_elapsed
+        int is_final
+        %% 13 rows
+    }
+    FREE_CASH_PROOF {
+        text town
+        text year
+        text line
+        text amount
+        text role
+        text source_file
+        text source_ref
+        %% 630 rows
+    }
+    FUND {
+        text fund PK
+        text name
+        text kind
+        text restriction
+        %% 68 rows
+    }
+    FUND_1301_CASH_JOURNAL {
+        text fy
+        text source_row
+        text eff_date
+        text post_date
+        text src
+        text src_meaning
+        text period FK
+        text journal
+        text ref1
+        text po_ref2
+        text ref3
+        text reference
+        text amount
+        text running_balance_derived
+        text check_no
+        text warrant
+        text voucher
+        text vendor
+        text comments
+        %% 277 rows
+    }
+    FUND_ACTIVITY {
+        text fund PK
+        int fy PK
+        int period PK
+        real opening_balance
+        real revenue
+        real salaries
+        real expenditure
+        real encumbered
+        real closing_balance
+        text doc_id PK
+        %% 61 rows
+    }
+    GRANT_AWARD {
+        text fy PK
+        text kind
+        text name PK
+        real amount
+        text owner
+        int documents_disagree
+        text doc_id
+        text url
+        text sha256
+        %% 79 rows
+    }
+    LEDGER_SNAPSHOT {
+        text account_id PK
+        int fy PK
+        int period PK
+        real original
+        real transfers
+        real revised
+        real expended
+        real encumbered
+        real available
+        real pct_used
+        text rounded_columns
+        text doc_id PK
+        %% 983 rows
+    }
+    OOD_TUITION_HISTORY {
+        text fy
+        text stage
+        text private
+        text collaborative
+        text total
+        text documents_disagree
+        %% 30 rows
+    }
+    RATE_REGISTER {
+        text fy
+        text category
+        text unit
+        text item
+        text value
+        text value_type
+        text set_on
+        text expires
+        text source
+        text source_file
+        text source_ref
+        text status
+        text in_model
+        %% 62 rows
+    }
+    SPED_PARA_HISTORY {
+        text fy
+        text stage
+        text ps
+        text es
+        text ms
+        text hs
+        text ace
+        text total
+        text documents_disagree
+        %% 26 rows
+    }
+    SPED_TEACHER_HISTORY {
+        text fy
+        text stage
+        text ps
+        text es
+        text ms
+        text hs
+        text ace
+        text total
+        text documents_disagree
+        %% 21 rows
+    }
+    SPED_TRANSPORT_HISTORY {
+        text fy
+        text stage
+        text system
+        text total
+        text documents_disagree
+        %% 25 rows
+    }
+    STATED_FIGURE {
+        int fy PK
+        text metric PK
+        real amount PK
+        text stated_on
+        text stated_by
+        text basis
+        text doc_id FK
+        text source_ref
+        text quote
+        real supersedes
+        text note
+        %% 2 rows
+    }
+    TOTAL_EXPENSES_HISTORY {
+        text fy
+        text stage
+        text total
+        text documents_disagree
+        %% 28 rows
+    }
+    TOTAL_SALARIES_HISTORY {
+        text fy
+        text stage
+        text total
+        text documents_disagree
+        %% 28 rows
+    }
+    VARIANCE_BY_GROUP {
+        text function_group
+        text years
+        text budgeted
+        text spent
+        text net
+        text gross
+        text churn
+        text worst_year
+        text best_year
+        %% 57 rows
+    }
+    WORKBOOK_FIGURE {
+        int row PK
+        text line_key FK
+        int fy PK
+        text column_kind PK
+        real value
+        text row_kind
+        text doc_id PK
+        %% 3,261 rows
+    }
+</pre>
+  </div>
+  <p style="margin-top:1rem;font-size:.92rem;color:var(--muted);max-width:none">Regenerate with <code>python3 scripts/build_schema_uml.py</code>. Source of record: <code>notes/data-model/schema.mmd</code>.</p>
+
+  <footer>
+    Every count was produced by querying <code>fy28/public/data/lunenburg.db</code> and the CSVs under <code>sources/data/</code> on 3 September 2026. Coverage is narrow and worth restating: the ledger is FY2026 periods 9 and 12 only. Every earlier year is PDF-derived and carries no function code at all.
+  </footer>
+</div>
