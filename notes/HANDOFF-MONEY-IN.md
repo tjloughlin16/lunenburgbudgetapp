@@ -475,6 +475,48 @@ Each was invisible in a table and obvious in a diagram.
 9. **Decide about publishing.** None of these pages is on the website. That is a decision,
    not an oversight — see rule 9 in `CLAUDE.md`.
 
+## Special revenue funds — what was fixed, and what the remaining gap actually is
+
+**Worked on 7 September 2026.** The goal was to turn fifteen years of `check failed` into
+checked data, because that is what an FY selector on the money-flow diagrams would rest on.
+Two real defects were fixed and the third turned out not to be where anyone would look.
+
+**1. The extractor had not run since a refactor.** `extract_special_revenue.py` raised
+`KeyError` on every invocation: it reads a row's label as `label`, and this schedule builds
+rows with `fund`. So `special-revenue-funds.csv` — the load-bearing dataset for rule 11 —
+was produced by a version of the file that no longer existed. Nothing caught it because
+this extractor **is not in `check_generated.py`**, which is the file whose whole job is
+catching exactly this. Rebuilt output is byte-identical on every value.
+
+**2. The arithmetic subtotal detector was being applied to a schedule with no subtotals.**
+It exists for the APPROPRIATIONS schedule, which prints a department total and often loses
+its label. All sixteen editions of THIS schedule were scanned: every one has zero subtotal
+rows, running from a `GENERAL GOVERNMENT` heading straight to a single `GRAND TOTAL`. So it
+could only produce false positives, and it did — `FY22 Foundation Reserve` and `FY22 ARP
+Idea #252` are ordinary school grants whose balances happened to equal the run above them.
+
+**3. The remaining gap is OCR, and the extractor is exonerated.** This is the part worth
+keeping, because it redirects effort. For FY2022:
+
+    amounts the OCR produced       483    $31,220,415.35
+    values in our CSV              483    $31,220,415.35   <- identical
+    the report's printed total             $31,300,803.36
+                                            -$80,388.01
+
+**Every single amount the OCR produced is in the dataset.** No row is dropped — checked
+line by line, and the only excluded line is the GRAND TOTAL itself. The missing $80,388 was
+never recognised. These pages have **no text layer at all**: FY2022 pages 33–37 hold 21
+characters each, the printed page number, which is also why `33.00` was appearing as a fund
+balance.
+
+*Tested and it does not work:* re-OCR at double resolution. Scale 4.0 finds 555 money
+tokens against 548 at scale 2.0 — and the per-page sums swing wildly between the two, one
+page even going negative. **Resolution is not the lever**, and a second pass at it would be
+wasted. What would move this is a different OCR engine, or reading five pages by hand.
+
+*Still true:* 0 of 16 years reconcile, and `status` must be split on before any of it is
+aggregated. Nothing here is `checked`.
+
 ## Claims NOT established — do not restate these as fact
 
 - ~~That the $105,282 gap is fee netting. It may be missing lines.~~ **SETTLED 7 Sept 2026 — it was neither.** See *The $105,282 gap, resolved* above.

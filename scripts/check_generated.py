@@ -55,6 +55,11 @@ CHECKS = [
     # The schema inventory. It RUNS its worked queries against the live database, so this
     # entry also catches a query that has stopped answering -- not only a stale file.
     ('build_schema_page.py', ['--check']),
+    # Added 7 Sept 2026 after it had been CRASHING for an unknown length of time. It reads
+    # a row's label as `label`; this schedule builds rows with `fund`, so every run raised
+    # KeyError and the committed CSV could not be regenerated. It was not in this list,
+    # which is the file whose whole job is catching that.
+    ('extract_special_revenue.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),

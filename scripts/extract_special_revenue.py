@@ -35,6 +35,7 @@ printed, the rows above it must sum to it; where none is printed the year is mar
 import argparse
 import collections
 import csv
+import io
 import os
 import re
 import sys
@@ -280,6 +281,8 @@ def header_of(lines):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--boxes', default=os.path.join(ROOT, 'sources', 'town-budget', 'ocr'))
+    ap.add_argument('--check', action='store_true',
+                    help='re-extract and fail if the committed CSV no longer reproduces')
     args = ap.parse_args()
 
     rows, ledger = [], []
@@ -484,6 +487,27 @@ def main():
                'columns_as_printed'] + [f'v{i}' for i in range(1, 7)]
               + ['n_values', 'ruler_spanned', 'row_check', 'derived_cell',
                  'columns_tying', 'status', 'reconciliation'])
+    # --check exists because this file raised KeyError on every run for an unknown
+    # length of time and the committed CSV could not be regenerated at all. An extractor
+    # that cannot be re-run is a dataset nobody can check.
+    if args.check:
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, fieldnames=fields, extrasaction='ignore',
+                           lineterminator='\n')
+        w.writeheader()
+        for r in rows:
+            w.writerow({k: r.get(k, '') for k in fields})
+        fresh = buf.getvalue()
+        rel = os.path.relpath(OUT, ROOT)
+        if not os.path.exists(OUT):
+            raise SystemExit(f'{rel} does not exist. Run without --check.')
+        have = open(OUT, newline='', encoding='utf-8').read()
+        if have.replace('\r\n', '\n') != fresh:
+            raise SystemExit(f'STALE: {rel} no longer reproduces.\n'
+                             f'  Run: python3 scripts/extract_special_revenue.py')
+        print(f'ok: {rel} still reproduces — {len(rows):,} fund-years')
+        return
+
     with open(OUT, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore')
         w.writeheader()
