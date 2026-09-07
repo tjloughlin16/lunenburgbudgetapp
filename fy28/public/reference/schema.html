@@ -81,6 +81,10 @@ details.spine { border-left:3px solid var(--traced); padding-left:10px }
 .unit { font-size:10.5px; color:var(--muted); text-transform:uppercase;
   letter-spacing:.06em }
 .ccaut { font-size:12px; color:var(--hi) }
+.tierhead { font-size:11px; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--muted); margin:18px 0 4px; padding-top:8px;
+  border-top:1px solid var(--grid) }
+details + .tierhead { margin-top:20px }
 .srow { display:flex; align-items:baseline; gap:9px; flex-wrap:wrap }
 .srow code { font-size:13.5px }
 /* Pushed to the right edge so every table's control lands in the same column — a button
@@ -187,6 +191,28 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 .fbar .fdone { border-color:var(--traced); color:var(--traced) }
 </style>
 
+<style>
+/* Injected by scripts/build_reference_pages.py. Not part of the source document. */
+.lbp-bar{display:block;margin:0;padding:0;background:#f1eee8;
+  border-bottom:1px solid #dcd7ce;color:#5f5a51;
+  font:500 13px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+    Helvetica,Arial,sans-serif;letter-spacing:0;text-transform:none}
+.lbp-bar .lbp-in{max-width:1180px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.lbp-bar a{font:inherit;color:#1b1a18;text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,.25);padding:0;background:none}
+.lbp-bar a:hover{border-bottom-color:currentColor}
+.lbp-bar .lbp-mark{font-weight:700}
+.lbp-bar .lbp-sep{color:#a29b90}
+.lbp-bar .lbp-area{color:#5f5a51}
+@media (prefers-color-scheme:dark){
+  .lbp-bar{background:#1f1e1b;border-bottom-color:#35322d;color:#a49e94}
+  .lbp-bar a{color:#efece7;border-bottom-color:rgba(255,255,255,.28)}
+  .lbp-bar .lbp-sep{color:#6f6a61}
+  .lbp-bar .lbp-area{color:#a49e94}
+}
+</style>
+<div class="lbp-bar"><div class="lbp-in"><a class="lbp-mark" href="/">The Lunenburg Budget Project</a><span class="lbp-sep">&middot;</span><span class="lbp-area">The database</span></div></div>
 <div class="wrap">
 <header>
   <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
@@ -253,6 +279,56 @@ stop.</p>
 </div>
 <div class="stage"><h2>School money and school subjects</h2>
 <p class="cap">The district&#x27;s budget, its own funds, and what the town publishes about its schools.</p>
+<p class="tierhead">Tier 1 · totals — what was appropriated and what is left, by department</p>
+<details class="t"><summary><span class="srow"><code>school_special_revenue_fy26_q3</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">62 rows</span><button class="open" data-t="school_special_revenue_fy26_q3">Query table</button></span><span class="gr">one row per school fund</span></summary>
+<p class="ans">The schools&#x27; own funds at one moment (FY26 period 9): per fund, revenue received, salaries paid, other expenditure, encumbered, and the balance left. Dollars.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td><td>The name as the source prints it.<br><span class="ccaut">MUNIS truncates account names to ten characters.</span></td></tr>
+<tr><td><code>revenue</code></td><td class="ty">TEXT</td><td>Money received into the fund. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as spending, and the two must never be added.</span></td></tr>
+<tr><td><code>salaries</code></td><td class="ty">TEXT</td><td>The salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
+<tr><td><code>expenditure</code></td><td class="ty">TEXT</td><td>The non-salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">TEXT</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
+<tr><td><code>balance</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fund</th><th>name</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>balance</th></tr>
+<tr><td>2748</td><td>FY24 117 EVIDENCE</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-0.0</td></tr>
+<tr><td>2653</td><td>FY24 FAMILY &amp; COMMUNITY #237</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>433.7</td></tr>
+<tr><td>2582</td><td>EECBG ENERGY EFFICIENCY GRANT</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>316.48</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>total_expenses_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_expenses_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<p class="ans">One dollar total per year per stage — the district&#x27;s own stated total expenses, as each document states it.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td><td>What the figure IS: proposed, settled, or actual.<br><span class="ccaut">Rule 1. A rate measured from one stage to another is partly growth and partly the step between them.</span></td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2018</td><td>settled</td><td>6034260</td><td>1</td></tr>
+<tr><td class="num">2022</td><td>proposed</td><td>6008705</td><td>0</td></tr>
+<tr><td class="num">2026</td><td>settled</td><td>9169982</td><td>0</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>total_salaries_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_salaries_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
+<p class="ans">One dollar total per year per stage — the district&#x27;s own stated total salaries.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td><td>What the figure IS: proposed, settled, or actual.<br><span class="ccaut">Rule 1. A rate measured from one stage to another is partly growth and partly the step between them.</span></td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
+<tr><td class="num">2018</td><td>proposed</td><td>13374150</td><td>0</td></tr>
+<tr><td class="num">2020</td><td>proposed</td><td>14407125</td><td>0</td></tr>
+<tr><td class="num">2024</td><td>proposed</td><td>16226166</td><td>0</td></tr>
+</table></div>
+</details>
+<p class="tierhead">Tier 2 · categories — whether a category — guidance, special education, transport — is over</p>
 <details class="t spine"><summary><span class="srow"><code>budget_figure</code> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="budget_figure" data-q="SELECT f.fy, f.stage, f.variant, f.label, f.value, b.section, b.function_group, f.doc_id FROM budget_figure f LEFT JOIN budget_line b USING (line_key) ORDER BY f.fy, f.stage, f.value DESC LIMIT 1000">Query table</button></span><span class="gr">one row per line per year per stage per variant</span></summary>
 <p class="ans">Dollar amounts per budget LINE from the district&#x27;s budget documents — no counts, no people. Each figure carries the stage it represents (proposed / settled / actual) and, for FY27, which of four whole budget scenarios it belongs to. FY2014–FY2027, 9,503 figures, plus a flag where two documents state different amounts for the same line-year.</p>
 <p class="warn">Split on <code>stage</code> AND <code>variant</code>. FY27 carries four whole budgets.</p>
@@ -290,37 +366,6 @@ stop.</p>
 <tr><td class="num">139</td><td>m.s. general school supplies</td><td class="num">2024</td><td>actual</td><td class="num">7475.99</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
 <tr><td class="num">188</td><td>telephone maintenance/system</td><td class="num">2026</td><td>actual_to_date</td><td class="num">0.0</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
 <tr><td class="num">237</td><td>executive secretaries/supt.</td><td class="num">2025</td><td>actual</td><td class="num">184375.15</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
-</table></div>
-</details>
-<details class="t"><summary><span class="srow"><code>fund_1301_cash_journal</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">277 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="fund_1301_cash_journal">Query table</button></span><span class="gr">one row per transaction</span></summary>
-<p class="ans">TRANSACTIONS — the athletics revolving fund line by line: effective and posting dates, journal, references, vendor, amount, running balance, check and warrant numbers, and the comments the clerk typed. The only transaction-level data in the archive, obtained by records request.</p>
-<p class="warn"> from a records request.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>source_row</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>eff_date</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>post_date</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>src</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>src_meaning</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>period</code></td><td class="ty">TEXT</td><td>MUNIS accounting period: a point in time INSIDE the fiscal year.<br><span class="ccaut">A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other.</span></td></tr>
-<tr><td><code>journal</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>ref1</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>po_ref2</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>ref3</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>reference</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>amount</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
-<tr><td><code>running_balance_derived</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>check_no</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>warrant</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>voucher</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>vendor</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>comments</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fy</th><th>source_row</th><th>eff_date</th><th>post_date</th><th>src</th><th>src_meaning</th><th>period</th><th>journal</th><th>ref1</th><th>po_ref2</th><th>ref3</th><th>reference</th><th>amount</th><th>running_balance_derived</th><th>check_no</th><th>warrant</th><th>voucher</th><th>vendor</th><th>comments</th></tr>
-<tr><td class="num">2024</td><td>20</td><td>2024-05-23</td><td>2024-05-23</td><td>APP</td><td>accounts payable — warrant disbursement</td><td>11</td><td>476</td><td>58 24</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>58 24</td><td>-5504.91</td><td>49527.63</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
-<tr><td class="num">2025</td><td>84</td><td>2024-08-07</td><td>2024-08-14</td><td>GRV</td><td>general journal reversal / correction</td><td>2</td><td>106</td><td>12WP24</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2412001378</td><td>-586.50</td><td>17029.10</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TO CORRECT FY</td></tr>
-<tr><td class="num">2026</td><td>13</td><td>2026-04-02</td><td>2026-04-02</td><td>APP</td><td>accounts payable — warrant disbursement</td><td>10</td><td>40</td><td>44 26</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>44 26</td><td>-9900.00</td><td>160044.80</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>athletics_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">175 rows</span> <span class="yr">2014–2026</span><button class="open" data-t="athletics_history">Query table</button></span><span class="gr">one row per athletics figure per year</span></summary>
@@ -485,54 +530,39 @@ stop.</p>
 <tr><td class="num">2023</td><td>settled</td><td>329360</td><td>329360</td><td>0</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>school_special_revenue_fy26_q3</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">62 rows</span><button class="open" data-t="school_special_revenue_fy26_q3">Query table</button></span><span class="gr">one row per school fund</span></summary>
-<p class="ans">The schools&#x27; own funds at one moment (FY26 period 9): per fund, revenue received, salaries paid, other expenditure, encumbered, and the balance left. Dollars.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
-<tr><td><code>name</code></td><td class="ty">TEXT</td><td>The name as the source prints it.<br><span class="ccaut">MUNIS truncates account names to ten characters.</span></td></tr>
-<tr><td><code>revenue</code></td><td class="ty">TEXT</td><td>Money received into the fund. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as spending, and the two must never be added.</span></td></tr>
-<tr><td><code>salaries</code></td><td class="ty">TEXT</td><td>The salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
-<tr><td><code>expenditure</code></td><td class="ty">TEXT</td><td>The non-salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
-<tr><td><code>encumbered</code></td><td class="ty">TEXT</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
-<tr><td><code>balance</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fund</th><th>name</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>balance</th></tr>
-<tr><td>2748</td><td>FY24 117 EVIDENCE</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-0.0</td></tr>
-<tr><td>2653</td><td>FY24 FAMILY &amp; COMMUNITY #237</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>433.7</td></tr>
-<tr><td>2582</td><td>EECBG ENERGY EFFICIENCY GRANT</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>316.48</td></tr>
-</table></div>
-</details>
-<details class="t"><summary><span class="srow"><code>total_expenses_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_expenses_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
-<p class="ans">One dollar total per year per stage — the district&#x27;s own stated total expenses, as each document states it.</p>
+<p class="tierhead">Tier 3 · accounts — what one account spent</p>
+<details class="t"><summary><span class="srow"><code>fund_1301_cash_journal</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">277 rows</span> <span class="yr">2024–2026</span><button class="open" data-t="fund_1301_cash_journal">Query table</button></span><span class="gr">one row per transaction</span></summary>
+<p class="ans">TRANSACTIONS — the athletics revolving fund line by line: effective and posting dates, journal, references, vendor, amount, running balance, check and warrant numbers, and the comments the clerk typed. The only transaction-level data in the archive, obtained by records request.</p>
+<p class="warn"> from a records request.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>stage</code></td><td class="ty">TEXT</td><td>What the figure IS: proposed, settled, or actual.<br><span class="ccaut">Rule 1. A rate measured from one stage to another is partly growth and partly the step between them.</span></td></tr>
-<tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
-<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
+<tr><td><code>source_row</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>eff_date</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>post_date</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>src</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>src_meaning</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>period</code></td><td class="ty">TEXT</td><td>MUNIS accounting period: a point in time INSIDE the fiscal year.<br><span class="ccaut">A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other.</span></td></tr>
+<tr><td><code>journal</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>ref1</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>po_ref2</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>ref3</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>reference</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>running_balance_derived</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>check_no</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>warrant</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>voucher</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>vendor</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>comments</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
-<tr><td class="num">2018</td><td>settled</td><td>6034260</td><td>1</td></tr>
-<tr><td class="num">2022</td><td>proposed</td><td>6008705</td><td>0</td></tr>
-<tr><td class="num">2026</td><td>settled</td><td>9169982</td><td>0</td></tr>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>source_row</th><th>eff_date</th><th>post_date</th><th>src</th><th>src_meaning</th><th>period</th><th>journal</th><th>ref1</th><th>po_ref2</th><th>ref3</th><th>reference</th><th>amount</th><th>running_balance_derived</th><th>check_no</th><th>warrant</th><th>voucher</th><th>vendor</th><th>comments</th></tr>
+<tr><td class="num">2024</td><td>20</td><td>2024-05-23</td><td>2024-05-23</td><td>APP</td><td>accounts payable — warrant disbursement</td><td>11</td><td>476</td><td>58 24</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>58 24</td><td>-5504.91</td><td>49527.63</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td class="num">2025</td><td>84</td><td>2024-08-07</td><td>2024-08-14</td><td>GRV</td><td>general journal reversal / correction</td><td>2</td><td>106</td><td>12WP24</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>2412001378</td><td>-586.50</td><td>17029.10</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>TO CORRECT FY</td></tr>
+<tr><td class="num">2026</td><td>13</td><td>2026-04-02</td><td>2026-04-02</td><td>APP</td><td>accounts payable — warrant disbursement</td><td>10</td><td>40</td><td>44 26</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>44 26</td><td>-9900.00</td><td>160044.80</td><td>0</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>total_salaries_history</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">28 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="total_salaries_history">Query table</button></span><span class="gr">one row per year per stage</span></summary>
-<p class="ans">One dollar total per year per stage — the district&#x27;s own stated total salaries.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>stage</code></td><td class="ty">TEXT</td><td>What the figure IS: proposed, settled, or actual.<br><span class="ccaut">Rule 1. A rate measured from one stage to another is partly growth and partly the step between them.</span></td></tr>
-<tr><td><code>total</code></td><td class="ty">TEXT</td><td>The row&#x27;s total, as printed. <span class="unit">dollars</span></td></tr>
-<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td><td>Two documents state different figures for the same thing.<br><span class="ccaut">Kept rather than resolved: which is right is often not established.</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fy</th><th>stage</th><th>total</th><th>documents_disagree</th></tr>
-<tr><td class="num">2018</td><td>proposed</td><td>13374150</td><td>0</td></tr>
-<tr><td class="num">2020</td><td>proposed</td><td>14407125</td><td>0</td></tr>
-<tr><td class="num">2024</td><td>proposed</td><td>16226166</td><td>0</td></tr>
-</table></div>
-</details>
+<p class="tierhead">Not about money</p>
 <details class="t"><summary><span class="srow"><code>athletic_fee_schedule</code> <span class="tag">fact</span> <span class="n">31 rows</span> <span class="yr">2024–2027</span><button class="open" data-t="athletic_fee_schedule">Query table</button></span><span class="gr">one row per fee per year</span></summary>
 <p class="ans">The published fee a family pays to play: dollars per fiscal year × school level × item, with the date it was set and the document that set it. Includes family caps and sibling discounts.</p>
 <p class="warn"> by level and year.</p>
@@ -868,6 +898,7 @@ to $325</td><td>quoted in source</td></tr>
 </div>
 <div class="stage"><h2>Town money and town subjects</h2>
 <p class="cap">The other 67 departments, the receipts that fund them, and what the annual reports print about the town.</p>
+<p class="tierhead">Tier 1 · totals — what was appropriated and what is left, by department</p>
 <details class="t"><summary><span class="srow"><code>annual_report_receipts</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">1,137 rows</span> <span class="yr">2011–2023</span><button class="open" data-t="annual_report_receipts">Query table</button></span><span class="gr">one row per revenue line per year</span></summary>
 <p class="ans">Town REVENUE — every receipt line the annual reports print, by name and amount, per year, FY2011–FY2023. Only five years are <code>checked</code> against the report&#x27;s own printed total.</p>
 <p class="warn"> as printed.</p>
@@ -1000,6 +1031,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>825</td><td>STATE ASSESSMENTS</td><td>1028529.0</td><td>0.0</td><td>1028529.0</td><td>765004.0</td><td>0.0</td><td>263525.0</td><td>74.4</td></tr>
 </table></div>
 </details>
+<p class="tierhead">Not about money</p>
 <details class="t"><summary><span class="srow"><code>ballot_questions</code> <span class="tag">fact</span> <span class="n">7 rows</span><button class="open" data-t="ballot_questions">Query table</button></span><span class="gr">one row per ballot question</span></summary>
 <p class="ans">VOTES, not dollars — though each carries the amount at stake. Per ballot question: type, purpose, yes / no / blank counts, registered voters, turnout and the result.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1455,6 +1487,76 @@ to $325</td><td>quoted in source</td></tr>
 </div>
 <div class="stage"><h2>Both at once — the ledger and the model</h2>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
+<p class="tierhead">Tier 1 · totals — what was appropriated and what is left, by department</p>
+<details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
+<p class="ans">Per fund per period: opening balance, revenue in, salaries, other expenditure, encumbered and closing balance. FY2026 period 9 only — and <code>opening_balance</code> is NULL for every one of the 61 funds.</p>
+<p class="warn"> spent and holds.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>period</code></td><td class="ty">INTEGER</td><td>MUNIS accounting period: a point in time INSIDE the fiscal year.<br><span class="ccaut">A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other.</span></td></tr>
+<tr><td><code>opening_balance</code></td><td class="ty">REAL</td><td>What the fund held at the start of the year. <span class="unit">dollars</span></td></tr>
+<tr><td><code>revenue</code></td><td class="ty">REAL</td><td>Money received into the fund. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as spending, and the two must never be added.</span></td></tr>
+<tr><td><code>salaries</code></td><td class="ty">REAL</td><td>The salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
+<tr><td><code>expenditure</code></td><td class="ty">REAL</td><td>The non-salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">REAL</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
+<tr><td><code>closing_balance</code></td><td class="ty">REAL</td><td>What the fund held at the end of the period. <span class="unit">dollars</span></td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fund</th><th>fy</th><th>period</th><th>opening_balance</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>closing_balance</th><th>doc_id</th></tr>
+<tr><td>2765</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">-502.0</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
+<tr><td>2769</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">4.55</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
+<tr><td>1311</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">22485.91</td><td class="num">0.0</td><td class="num">2910.68</td><td class="num">0.0</td><td class="num">109397.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,397 rows</span> <span class="yr">2013–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
+<p class="ans">The special revenue schedule READ from the rendered page rather than OCR&#x27;d: balance brought forward, total receipts, total disbursements, balance carried forward, per fund. <strong>The only version of this table that ties to its own printed grand total</strong> — FY2022, 167 funds, all four columns to the penny and every row balancing.</p>
+<p class="warn">A figure read off an image is a READING, not a published number — same status as the OCR&#x27;s. It is trustworthy because the report&#x27;s own printed total and the table&#x27;s own identity both check it, not because a model produced it. Years that do not tie are not in here.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td><td>The department heading the row sits under, as printed.<br><span class="ccaut">A heading governs every row below it until the next one.</span></td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
+<tr><td><code>forward</code></td><td class="ty">TEXT</td><td>Balance the fund brought forward from the previous year, as the schedule prints it. <span class="unit">dollars</span></td></tr>
+<tr><td><code>receipts</code></td><td class="ty">TEXT</td><td>Total money the fund took in during the year. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as disbursements and must never be added to it.</span></td></tr>
+<tr><td><code>disbursements</code></td><td class="ty">TEXT</td><td>Total money the fund paid out during the year. <span class="unit">dollars</span></td></tr>
+<tr><td><code>carried</code></td><td class="ty">TEXT</td><td>Balance the fund carried forward into the next year. <span class="unit">dollars</span><br><span class="ccaut">Ties to the NEXT year&#x27;s <code>forward</code>, which is a check across years the schedule makes possible.</span></td></tr>
+<tr><td><code>row_ties</code></td><td class="ty">TEXT</td><td>Whether this row satisfies forward + receipts − disbursements = carried.<br><span class="ccaut">The identity the table itself states. A row that does not tie is a transcription error or a printing error, and which one is not decided here.</span></td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td>Which instrument produced the figures: <code>vision</code> for a page read directly.<br><span class="ccaut">A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>group</th><th>fund</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>row_ties</th><th>document</th><th>read_by</th></tr>
+<tr><td class="num">2020</td><td>FY2020</td><td>32</td><td>PUBLIC SAFETY</td><td>Community Policing FY 96</td><td>6.55</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>6.55</td><td>yes</td><td>sources/town-annual-reports/docs/4127-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2017</td><td>FY2017</td><td>32</td><td>LIBRARY</td><td>FY07 Public Libraries Fund</td><td>571.17</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>571.17</td><td>yes</td><td>sources/town-annual-reports/docs/4124-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2013</td><td>FY2013</td><td>68</td><td>SCHOOL DEPARTMENT</td><td>Full Day Kindergarten Grant</td><td>1470.00</td><td>48382.00</td><td>49852.00</td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4119-fy-20…</td><td>vision</td></tr>
+</table></div>
+</details>
+<p class="tierhead">Tier 2 · categories — whether a category — guidance, special education, transport — is over</p>
+<details class="t"><summary><span class="srow"><code>variance_by_group</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">derived</span> <span class="n">59 rows</span><button class="open" data-t="variance_by_group">Query table</button></span><span class="gr">one row per function group</span></summary>
+<p class="ans">Computed, not read: per function group, how far spending ran from budget across years — budgeted, spent, net, gross, churn, and the best and worst years.</p>
+<p class="warn"> across years.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>function_group</code></td><td class="ty">TEXT</td><td>Our grouping of DESE function codes into readable categories.</td></tr>
+<tr><td><code>years</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>budgeted</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>spent</code></td><td class="ty">TEXT</td><td>Money paid out of the fund. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as revenue.</span></td></tr>
+<tr><td><code>net</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>gross</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>churn</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>worst_year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>best_year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>function_group</th><th>years</th><th>budgeted</th><th>spent</th><th>net</th><th>gross</th><th>churn</th><th>worst_year</th><th>best_year</th></tr>
+<tr><td>2320 - Therapeutic Services</td><td>5</td><td>3093610</td><td>3014841</td><td>-78769</td><td>78769</td><td>1.00</td><td>-0.0532</td><td>-0.0100</td></tr>
+<tr><td>(unmapped)</td><td>4</td><td>2722759</td><td>2748038</td><td>25279</td><td>62963</td><td>2.49</td><td>-0.0371</td><td>0.0590</td></tr>
+<tr><td>2325 - Special Education Substitutes</td><td>5</td><td>322364</td><td>274236</td><td>-48128</td><td>153472</td><td>3.19</td><td>-0.6591</td><td>0.9754</td></tr>
+</table></div>
+</details>
+<p class="tierhead">Tier 3 · accounts — what one account spent</p>
 <details class="t spine"><summary><span class="srow"><code>ledger_snapshot</code> <span class="badge">the spine</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="ledger_snapshot" data-q="SELECT l.fy, l.period, l.account_id, a.name, a.fund_name, a.dept, a.function, a.account_type, a.level, l.original, l.revised, l.expended, l.encumbered, l.available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy, l.period, l.account_id LIMIT 1000">Query table</button></span><span class="gr">one row per account per year per period per document</span></summary>
 <p class="ans">BOTH revenue and expense accounts from the town&#x27;s MUNIS books, told apart by <code>account_type</code> — revenue is stored NEGATIVE. Six money measures per row: original appropriation, transfers, revised, expended, encumbered, available, plus percent used. Two grains in the same table (<code>level</code>): 67 department roll-ups and 916 detail accounts. FY2026 only, at two periods — 9 carries the department rows, 12 the account rows.</p>
 <p class="warn"> at a moment in the year.</p>
@@ -1571,73 +1673,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>sources/town-ledgers/revenue/glytdbud-reven…</td><td class="num">2026</td><td>9</td><td>0100</td><td>GENERAL FUND</td><td>0100 GENERAL FUND</td><td>revenue</td><td>account</td><td><span class="nul">empty</span></td><td>01001</td><td>417900</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>INT FARM A</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>0</td><td>original,transfers,revised</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>variance_by_group</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">derived</span> <span class="n">59 rows</span><button class="open" data-t="variance_by_group">Query table</button></span><span class="gr">one row per function group</span></summary>
-<p class="ans">Computed, not read: per function group, how far spending ran from budget across years — budgeted, spent, net, gross, churn, and the best and worst years.</p>
-<p class="warn"> across years.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>function_group</code></td><td class="ty">TEXT</td><td>Our grouping of DESE function codes into readable categories.</td></tr>
-<tr><td><code>years</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>budgeted</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>spent</code></td><td class="ty">TEXT</td><td>Money paid out of the fund. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as revenue.</span></td></tr>
-<tr><td><code>net</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>gross</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>churn</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>worst_year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>best_year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>function_group</th><th>years</th><th>budgeted</th><th>spent</th><th>net</th><th>gross</th><th>churn</th><th>worst_year</th><th>best_year</th></tr>
-<tr><td>2320 - Therapeutic Services</td><td>5</td><td>3093610</td><td>3014841</td><td>-78769</td><td>78769</td><td>1.00</td><td>-0.0532</td><td>-0.0100</td></tr>
-<tr><td>(unmapped)</td><td>4</td><td>2722759</td><td>2748038</td><td>25279</td><td>62963</td><td>2.49</td><td>-0.0371</td><td>0.0590</td></tr>
-<tr><td>2325 - Special Education Substitutes</td><td>5</td><td>322364</td><td>274236</td><td>-48128</td><td>153472</td><td>3.19</td><td>-0.6591</td><td>0.9754</td></tr>
-</table></div>
-</details>
-<details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
-<p class="ans">Per fund per period: opening balance, revenue in, salaries, other expenditure, encumbered and closing balance. FY2026 period 9 only — and <code>opening_balance</code> is NULL for every one of the 61 funds.</p>
-<p class="warn"> spent and holds.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>period</code></td><td class="ty">INTEGER</td><td>MUNIS accounting period: a point in time INSIDE the fiscal year.<br><span class="ccaut">A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other.</span></td></tr>
-<tr><td><code>opening_balance</code></td><td class="ty">REAL</td><td>What the fund held at the start of the year. <span class="unit">dollars</span></td></tr>
-<tr><td><code>revenue</code></td><td class="ty">REAL</td><td>Money received into the fund. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as spending, and the two must never be added.</span></td></tr>
-<tr><td><code>salaries</code></td><td class="ty">REAL</td><td>The salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
-<tr><td><code>expenditure</code></td><td class="ty">REAL</td><td>The non-salary portion of the fund&#x27;s spending. <span class="unit">dollars</span></td></tr>
-<tr><td><code>encumbered</code></td><td class="ty">REAL</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
-<tr><td><code>closing_balance</code></td><td class="ty">REAL</td><td>What the fund held at the end of the period. <span class="unit">dollars</span></td></tr>
-<tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fund</th><th>fy</th><th>period</th><th>opening_balance</th><th>revenue</th><th>salaries</th><th>expenditure</th><th>encumbered</th><th>closing_balance</th><th>doc_id</th></tr>
-<tr><td>2765</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">-502.0</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
-<tr><td>2769</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">4.55</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
-<tr><td>1311</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">22485.91</td><td class="num">0.0</td><td class="num">2910.68</td><td class="num">0.0</td><td class="num">109397.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
-</table></div>
-</details>
-<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,397 rows</span> <span class="yr">2013–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
-<p class="ans">The special revenue schedule READ from the rendered page rather than OCR&#x27;d: balance brought forward, total receipts, total disbursements, balance carried forward, per fund. <strong>The only version of this table that ties to its own printed grand total</strong> — FY2022, 167 funds, all four columns to the penny and every row balancing.</p>
-<p class="warn">A figure read off an image is a READING, not a published number — same status as the OCR&#x27;s. It is trustworthy because the report&#x27;s own printed total and the table&#x27;s own identity both check it, not because a model produced it. Years that do not tie are not in here.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
-<tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
-<tr><td><code>group</code></td><td class="ty">TEXT</td><td>The department heading the row sits under, as printed.<br><span class="ccaut">A heading governs every row below it until the next one.</span></td></tr>
-<tr><td><code>fund</code></td><td class="ty">TEXT</td><td>The MUNIS fund number.<br><span class="ccaut">School money spans 13xx, 15xx, 22xx and 26xx-29xx. There is no single range that means school.</span></td></tr>
-<tr><td><code>forward</code></td><td class="ty">TEXT</td><td>Balance the fund brought forward from the previous year, as the schedule prints it. <span class="unit">dollars</span></td></tr>
-<tr><td><code>receipts</code></td><td class="ty">TEXT</td><td>Total money the fund took in during the year. <span class="unit">dollars</span><br><span class="ccaut">Not the same quantity as disbursements and must never be added to it.</span></td></tr>
-<tr><td><code>disbursements</code></td><td class="ty">TEXT</td><td>Total money the fund paid out during the year. <span class="unit">dollars</span></td></tr>
-<tr><td><code>carried</code></td><td class="ty">TEXT</td><td>Balance the fund carried forward into the next year. <span class="unit">dollars</span><br><span class="ccaut">Ties to the NEXT year&#x27;s <code>forward</code>, which is a check across years the schedule makes possible.</span></td></tr>
-<tr><td><code>row_ties</code></td><td class="ty">TEXT</td><td>Whether this row satisfies forward + receipts − disbursements = carried.<br><span class="ccaut">The identity the table itself states. A row that does not tie is a transcription error or a printing error, and which one is not decided here.</span></td></tr>
-<tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
-<tr><td><code>read_by</code></td><td class="ty">TEXT</td><td>Which instrument produced the figures: <code>vision</code> for a page read directly.<br><span class="ccaut">A reading, whichever instrument made it. It is checked by the printed total, not trusted for its source.</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>group</th><th>fund</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>row_ties</th><th>document</th><th>read_by</th></tr>
-<tr><td class="num">2020</td><td>FY2020</td><td>32</td><td>PUBLIC SAFETY</td><td>Community Policing FY 96</td><td>6.55</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>6.55</td><td>yes</td><td>sources/town-annual-reports/docs/4127-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2017</td><td>FY2017</td><td>32</td><td>LIBRARY</td><td>FY07 Public Libraries Fund</td><td>571.17</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>571.17</td><td>yes</td><td>sources/town-annual-reports/docs/4124-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2013</td><td>FY2013</td><td>68</td><td>SCHOOL DEPARTMENT</td><td>Full Day Kindergarten Grant</td><td>1470.00</td><td>48382.00</td><td>49852.00</td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4119-fy-20…</td><td>vision</td></tr>
-</table></div>
-</details>
+<p class="tierhead">Not about money</p>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
 <p class="ans">What each MUNIS accounting period means and how many months of the year had elapsed. Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
 <p class="warn">Period 13 is the year-end close after the lapse period, not a thirteenth month.</p>
@@ -1806,6 +1842,7 @@ to $325</td><td>quoted in source</td></tr>
 </div>
 <div class="stage"><h2>The state&#x27;s figures</h2>
 <p class="cap">DESE&#x27;s own published measures, for Lunenburg and every other district. All-funds, so NOT comparable with a general fund appropriation.</p>
+<p class="tierhead">Not about money</p>
 <details class="t"><summary><span class="srow"><code>dese_measure</code> <span class="tag">fact</span> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span><button class="open" data-t="dese_measure">Query table</button></span><span class="gr">one row per district per year per measure</span></summary>
 <p class="ans">The state&#x27;s published measures for EVERY Massachusetts district, per year: enrollment, per-pupil spending, selected populations. Each value carries whether it reconciles to DESE&#x27;s own printed total.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1848,6 +1885,7 @@ to $325</td><td>quoted in source</td></tr>
 </div>
 <div class="stage"><h2>About the archive itself</h2>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
+<p class="tierhead">Not about money</p>
 <details class="t"><summary><span class="srow"><code>annual_report_catalogue</code> <span class="tag">provenance</span> <span class="n">863 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_catalogue">Query table</button></span><span class="gr">one row per table per annual report</span></summary>
 <p class="ans">A catalogue of what EXISTS, not of what has been extracted. Every table found by reading all sixteen annual reports end to end: its printed heading verbatim, its pages, its grain, its printed total, and whether it is extractable.</p>
 <p class="warn">A catalogue of what EXISTS, not of what has been extracted.</p>

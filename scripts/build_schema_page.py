@@ -286,10 +286,15 @@ def by_scope(c, tabs):
         # the rule is visible rather than needing explanation. Ties break alphabetically,
         # which needs no explanation at all.
         #
-        # The spine is no longer forced to the top. It is still marked, and marking is
-        # what it needed: a special case in the SORT made the sequence unreadable to buy
-        # three rows a head start.
-        members.sort(key=lambda t: (int(tabs[t]['tier'] or 9), t))
+        # TIER, then SPINE, then alphabetically. TJ: "budget_figure should be at the top
+        # of the tier 2 categories along with workbook_figure."
+        #
+        # The spine belongs at the head of ITS OWN tier, not at the head of the section.
+        # Forcing it to the very top was the original mistake — it broke the tier
+        # sequence to buy three rows a head start, and made the whole order unreadable.
+        # Inside one tier it costs nothing and puts the three grains everything else
+        # describes where a reader meets them first.
+        members.sort(key=lambda t: (int(tabs[t]['tier'] or 9), t not in SPINE, t))
         out.append((scope, title, blurb, members))
     return out
 

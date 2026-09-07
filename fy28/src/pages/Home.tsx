@@ -33,16 +33,20 @@ import { AREA_HOME, AREA_LABEL } from '../routes'
  *  colour rather than the brand one, so the eye sorts it out of the set of three before
  *  reading it — the three above are choices about the town, and this one is plumbing. */
 const DOORS: { area: Area; who: string; note?: string; quiet?: boolean
-  /** A door that opens a generated FILE rather than a route. `The database` is the
-   *  schema page — 74 tables with a live query box — which is a published document, not
-   *  a React page. It used to open the rate register, which is a good document about
-   *  fees and a baffling front door for a database: it greets you with athletic fees.
-   *  Landing on the thing the area is named after is worth leaving the app for. */
+  /** A door that opens a generated FILE rather than a route.
+   *
+   *  NOTHING USES THIS NOW, and it is kept because the reasoning is worth having when the
+   *  next area has no front page. `The database` had this set to `/reference/schema.html`,
+   *  because that document — every table, with a live query box — was a better greeting
+   *  than the rate register it opened before, which answers a question about athletic fees
+   *  to somebody who came for a database. It was still a front page whose first click left
+   *  the app, and the four other reference documents behind that door were reachable from
+   *  nowhere. `pages/Database` is the route now, and the schema page is the first thing on
+   *  it. */
   href?: string }[] = [
   { area: 'crisis', who: 'Why the budget keeps breaking, and what would fix it' },
   { area: 'money', who: 'Where every dollar comes from, and where the trail goes cold' },
-  { area: 'data', who: 'Every table, what it holds, and a query box',
-    href: '/reference/schema.html' },
+  { area: 'data', who: 'Every table, the whole file, and how to check a figure' },
   { area: 'agents', who: 'Pointing an assistant at this, or you are one',
     quiet: true },
 ]

@@ -58,6 +58,7 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
    which would break the grid on a phone. */
 .m.small { opacity:.82 }
 .m.small .mv { font-size:.78em }
+.m .ms a { color:var(--hi); font-weight:600; white-space:nowrap }
 table.bridge { width:100%; border-collapse:collapse; margin:10px 0; font-size:14px }
 table.bridge td { padding:7px 0; border-bottom:1px solid var(--grid);
   vertical-align:top }
@@ -164,6 +165,28 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
 }
 </style>
 
+<style>
+/* Injected by scripts/build_reference_pages.py. Not part of the source document. */
+.lbp-bar{display:block;margin:0;padding:0;background:#f1eee8;
+  border-bottom:1px solid #dcd7ce;color:#5f5a51;
+  font:500 13px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+    Helvetica,Arial,sans-serif;letter-spacing:0;text-transform:none}
+.lbp-bar .lbp-in{max-width:1180px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.lbp-bar a{font:inherit;color:#1b1a18;text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,.25);padding:0;background:none}
+.lbp-bar a:hover{border-bottom-color:currentColor}
+.lbp-bar .lbp-mark{font-weight:700}
+.lbp-bar .lbp-sep{color:#a29b90}
+.lbp-bar .lbp-area{color:#5f5a51}
+@media (prefers-color-scheme:dark){
+  .lbp-bar{background:#1f1e1b;border-bottom-color:#35322d;color:#a49e94}
+  .lbp-bar a{color:#efece7;border-bottom-color:rgba(255,255,255,.28)}
+  .lbp-bar .lbp-sep{color:#6f6a61}
+  .lbp-bar .lbp-area{color:#a49e94}
+}
+</style>
+<div class="lbp-bar"><div class="lbp-in"><a class="lbp-mark" href="/">The Lunenburg Budget Project</a><span class="lbp-sep">&middot;</span><a class="lbp-back" href="/the-money">The money &rarr;</a></div></div>
 <div class="wrap">
 <header>
   <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
@@ -174,8 +197,8 @@ code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
   drawn, because no record ties a source to a department.</p>
 </header>
 
-<section class="metrics"><div class="m"><div class="mk">The school budget</div><div class="mv">$26,287,474</div><div class="ms">Departments 300 and 301, as Town Meeting voted. Headlines usually quote $26,247,474 — department 300 alone, leaving out $40,000 of non-recurring costs.</div></div><div class="m hi"><div class="mk">Funding beyond the budget</div><div class="mv">+$2,049,069</div><div class="ms">$1,553,151 received into the schools’ own funds — fees, lunch, gifts, reimbursement — plus <b>at least</b> $495,918 in grants, which booked no FY26 revenue at all and are floored by what they spent. <b>7.8%</b> on top of the budget.</div></div><div class="m"><div class="mk">What the schools actually spent</div><div class="mv">$27,350,055</div><div class="ms">$25,613,679 out of the appropriation through period 12, plus $1,736,376 from its own funds and grants through period 9. A floor: three more months of fund spending are not in it.</div></div><div class="m small"><div class="mk">Unspent, sitting in accounts</div><div class="mv">$1,592,256</div><div class="ms">Held across the schools’ own funds at 31 March, $615,301 of it in the circuit breaker. Not spending and not income — money that arrived and stopped.</div></div></section>
-<section class="stage"><h2>Why those figures do not simply add</h2><p class="cap">The first three cards are three different KINDS of quantity — a permission, an inflow, an outflow — so the difference between them is not an error. It is money not spent, and it is two separate things.</p><table class="bridge"><tr><td>The school budget</td><td class="v">$26,287,474</td></tr><tr><td>+ funding beyond the budget</td><td class="v">$2,049,069</td></tr><tr class="sub"><td>= everything available</td><td class="v">$28,336,543</td></tr><tr><td>− what was actually spent</td><td class="v">$27,350,055</td></tr><tr class="tot"><td>= not spent</td><td class="v">$986,487</td></tr></table><p class="cap">Which splits in two:</p><table class="bridge"><tr><td><b>Appropriation not spent</b><br><span class="sm">Voted and not used. $236,784 of it is already committed by purchase order, so it is spoken for rather than spare.</span></td><td class="v">$673,795</td></tr><tr><td><b>Fund money not spent this year</b><br><span class="sm">The funds took in $1,553,151 and spent $1,736,376. Money in is not money out.</span></td><td class="v">$312,692</td></tr></table><p class="warn"><b>This is NOT the $1,592,256 in the fourth card.</b> That figure is what the funds HOLD — a balance built up across years, most of it put there before FY26. This is one year's flow. A balance and a flow are different quantities and they are not expected to agree.</p><p class="cap"><b>And the bases are mixed, which cannot be helped.</b> The appropriation side is actual spending through period 12; the fund side is through period 9, because the town publishes no twelve-month fund report. Three more months of fund spending are missing from every figure above, so "not spent" is an <b>upper bound</b>.</p></section>
+<section class="metrics"><div class="m"><div class="mk">The school budget</div><div class="mv">$26,287,474</div><div class="ms">Departments 300 and 301, as Town Meeting voted. Headlines usually quote $26,247,474 — department 300 alone, leaving out $40,000 of non-recurring costs.</div></div><div class="m hi"><div class="mk">Funding beyond the budget</div><div class="mv">+$2,049,069</div><div class="ms">$1,553,151 received into the schools’ own funds — fees, lunch, gifts, reimbursement — plus <b>at least</b> $495,918 in grants, which booked no FY26 revenue at all and are floored by what they spent. <b>7.8%</b> on top of the budget.</div></div><div class="m"><div class="mk">What the schools actually spent</div><div class="mv">$27,350,055</div><div class="ms"><b>Not $28,336,543</b>, because a budget is permission to spend and $673,795 of it was not spent. <a href="#bridge">All $986,487 of the difference &darr;</a></div></div><div class="m small"><div class="mk">Unspent, sitting in accounts</div><div class="mv">$1,592,256</div><div class="ms">Held across the schools’ own funds at 31 March, $615,301 of it in the circuit breaker. Not spending and not income — money that arrived and stopped.</div></div></section>
+<section class="stage" id="bridge"><h2>Why $26,287,474 plus $2,049,069 is not $27,350,055</h2><p class="cap">The first three cards are three different KINDS of quantity — a permission, an inflow, an outflow — so the difference between them is not an error. It is money not spent, and it is two separate things.</p><table class="bridge"><tr><td>The school budget</td><td class="v">$26,287,474</td></tr><tr><td>+ funding beyond the budget</td><td class="v">$2,049,069</td></tr><tr class="sub"><td>= everything available</td><td class="v">$28,336,543</td></tr><tr><td>− what was actually spent</td><td class="v">$27,350,055</td></tr><tr class="tot"><td>= not spent</td><td class="v">$986,487</td></tr></table><p class="cap">Which splits in two:</p><table class="bridge"><tr><td><b>Appropriation not spent</b><br><span class="sm">Voted and not used. $236,784 of it is already committed by purchase order, so it is spoken for rather than spare.</span></td><td class="v">$673,795</td></tr><tr><td><b>Fund money not spent this year</b><br><span class="sm">The funds took in $1,553,151 and spent $1,736,376. Money in is not money out.</span></td><td class="v">$312,692</td></tr></table><p class="warn"><b>This is NOT the $1,592,256 in the fourth card.</b> That figure is what the funds HOLD — a balance built up across years, most of it put there before FY26. This is one year's flow. A balance and a flow are different quantities and they are not expected to agree.</p><p class="cap"><b>And the bases are mixed, which cannot be helped.</b> The appropriation side is actual spending through period 12; the fund side is through period 9, because the town publishes no twelve-month fund report. Three more months of fund spending are missing from every figure above, so "not spent" is an <b>upper bound</b>.</p></section>
 <p class="cap"><b>And the town spends on schools outside all four figures.</b> $1,528,336 of retiree health and a resource stipend sits in other departments’ appropriations, <b>plus an unknown share of the $2,392,572 pension</b>. Monty Tech is excluded throughout: it is a different district.</p>
 <p class="warn"><b>Mixed bases, and it cannot be helped.</b> Department 300 is actual spending through period 12; the funds are actual through period 9, because the town publishes no twelve-month fund report. <b>So the middle figure is a floor</b> — three more months of fund spending are not in it, and neither is any part of the pension.</p><p class="cap"><b>Do not add the right-hand column and call it school spending.</b> It comes to $33,276,289 and that figure means nothing: the school budget box is a BUDGET rather than spending, Monty Tech is a different district, and the pension box is the whole town’s. The column adds because each dollar is drawn once — that is a property of the drawing, not a finding about the schools.</p>
 <div class="scroll"><svg viewBox="0 0 930 1442" xmlns="http://www.w3.org/2000/svg" class="flow" role="img" aria-label="Where school money comes from and where it is spent">

@@ -11,7 +11,7 @@
 
 export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
-  | 'dataroom' | 'reports' | 'agents' | 'ask'
+  | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -62,6 +62,11 @@ export const SLUG: Record<Tab, string> = {
   // on purpose: it gets read aloud and typed on a phone, which is the same reason
   // lburg.org exists. See components/AskAnAssistant.tsx.
   ask: 'ask',
+  // THE DATABASE area's front door. NOT `data` -- `/data` is a live Function prefix
+  // serving real files, and an app route there would shadow the archive. The area is
+  // `data` and the tab is `database`; an area and a page may share a name, they may not
+  // share an address.
+  database: 'database',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -109,6 +114,10 @@ const ALIASES: Record<string, Tab> = {
   // alias would shadow the archive with an app route.
   agents: 'agents', 'for-agents': 'agents', ai: 'agents', llms: 'agents',
   'machine-readable': 'agents', downloads: 'agents',
+  // NOT 'data', 'api' or 'schema' -- the first two are Function prefixes and the third is
+  // a published reference document at /reference/schema.html.
+  database: 'database', 'the-database': 'database', db: 'database',
+  'the-data': 'database',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -144,6 +153,7 @@ export const LABEL: Record<Tab, string> = {
   reports: 'Reports and analyses',
   ask: 'How to query this data',
   agents: 'Every address on this site, as links',
+  database: 'The database',
   dataroom: 'The data room',
 }
 
@@ -209,7 +219,7 @@ export const AREA_LABEL: Record<Area, string> = {
 
 /** The page each area opens at, and the tab that owns its bar. */
 export const AREA_HOME: Record<Area, Tab> = {
-  crisis: 'walk', money: 'themoney', data: 'rates', agents: 'ask',
+  crisis: 'walk', money: 'themoney', data: 'database', agents: 'ask',
 }
 
 const AREA_OF: Partial<Record<Tab, Area>> = {
@@ -218,7 +228,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   freecash: 'crisis',
   themoney: 'money', reports: 'money',
-  rates: 'data', dataroom: 'data',
+  database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
 
@@ -236,7 +246,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
   money: ['themoney', 'reports'],
-  data: ['rates'],
+  data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }
 

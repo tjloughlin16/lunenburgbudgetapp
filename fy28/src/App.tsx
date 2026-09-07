@@ -24,6 +24,7 @@ import { FreeCash } from './pages/FreeCash'
 import { DataRoom } from './pages/DataRoom'
 import { Reports } from './pages/Reports'
 import { Money } from './pages/Money'
+import { Database } from './pages/Database'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
@@ -348,6 +349,7 @@ export default function App() {
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
       {tab === 'themoney' && <Money onJump={go} />}
+      {tab === 'database' && <Database onJump={go} />}
       {tab === 'reports' && <Reports />}
       {tab === 'agents' && <AgentsIndex />}
       {tab === 'ask' && <AskAnAssistant />}

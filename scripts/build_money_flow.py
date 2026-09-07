@@ -735,6 +735,7 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
    which would break the grid on a phone. */
 .m.small {{ opacity:.82 }}
 .m.small .mv {{ font-size:.78em }}
+.m .ms a {{ color:var(--hi); font-weight:600; white-space:nowrap }}
 table.bridge {{ width:100%; border-collapse:collapse; margin:10px 0; font-size:14px }}
 table.bridge td {{ padding:7px 0; border-bottom:1px solid var(--grid);
   vertical-align:top }}
@@ -1243,9 +1244,17 @@ def _render_v2_body(c):
          f'spent. <b>{additional/appropriation*100:.1f}%</b> on top of the budget.</div></div>'
          f'<div class="m"><div class="mk">What the schools actually spent</div>'
          f'<div class="mv">{money(total_spent)}</div>'
-         f'<div class="ms">{money(d300_spent)} out of the appropriation through period 12, '
-         f'plus {money(f_out)} from its own funds and grants through period 9. A floor: '
-         f'three more months of fund spending are not in it.</div></div>'
+         # ANSWERED ON THE CARD, because this is where the question forms. TJ asked it
+         # twice. The first answer was a full section immediately below — 1,273 bytes
+         # away — and it still did not land, because a reader who adds the two cards
+         # above and gets a bigger number does not go looking for a heading, they
+         # conclude the page is wrong. The arithmetic has to be where the arithmetic
+         # happens.
+         f'<div class="ms"><b>Not {money(appropriation + additional)}</b>, because a '
+         f'budget is permission to spend and {money(appropriation - d300_spent)} of it '
+         f'was not spent. <a href="#bridge">All '
+         f'{money(appropriation + additional - total_spent)} of the difference '
+         f'&darr;</a></div></div>'
          f'<div class="m small"><div class="mk">Unspent, sitting in accounts</div>'
          f'<div class="mv">{money(f_held)}</div>'
          f'<div class="ms">Held across the schools’ own funds at 31 March, '
@@ -1266,7 +1275,8 @@ def _render_v2_body(c):
          #
          # It is asserted below rather than trusted, because a bridge that silently
          # stopped closing would be a worse defect than the confusion it fixes.
-         f'<section class="stage"><h2>Why those figures do not simply add</h2>'
+         f'<section class="stage" id="bridge"><h2>Why {money(appropriation)} plus '
+         f'{money(additional)} is not {money(total_spent)}</h2>'
          f'<p class="cap">The first three cards are three different KINDS of quantity — '
          f'a permission, an inflow, an outflow — so the difference between them is not '
          f'an error. It is money not spent, and it is two separate things.</p>'
@@ -1298,6 +1308,7 @@ def _render_v2_body(c):
          f'through period 9, because the town publishes no twelve-month fund report. '
          f'Three more months of fund spending are missing from every figure above, so '
          f'"not spent" is an <b>upper bound</b>.</p></section>',
+
          f'<p class="cap"><b>And the town spends on schools outside all four figures.</b> '
          f'{money(town_also)} of retiree health and a resource stipend sits in other '
          f'departments’ appropriations, <b>plus an unknown share of the '

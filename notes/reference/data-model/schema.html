@@ -307,24 +307,6 @@ stop.</p>
 </table></div>
 </details>
 <p class="tierhead">Tier 2 · categories — whether a category — guidance, special education, transport — is over</p>
-<details class="t"><summary><span class="srow"><code>athletics_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">175 rows</span> <span class="yr">2014–2026</span><button class="open" data-t="athletics_history">Query table</button></span><span class="gr">one row per athletics figure per year</span></summary>
-<p class="ans">Athletics money from BOTH sides, and these are three different quantities that must never be added: what the town appropriated from the general fund, what the revolving fund took IN, and what the revolving fund SPENT. Dollars per year with the basis and source document for each.</p>
-<p class="warn">Appropriation, fund revenue and fund spending are three quantities. Never add two of them.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>side</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>item</code></td><td class="ty">TEXT</td><td>The thing being priced or counted.</td></tr>
-<tr><td><code>amount</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
-<tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
-<tr><td><code>source</code></td><td class="ty">TEXT</td><td>Where the figure came from, as the extractor recorded it.<br><span class="ccaut">A loose reference — a filename — not a resolved address.</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>fy</th><th>side</th><th>item</th><th>amount</th><th>basis</th><th>source</th></tr>
-<tr><td class="num">2016</td><td>revolving</td><td>Athletic Secretary</td><td>7796</td><td>actual</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
-<tr><td class="num">2018</td><td>revolving</td><td>Track and Field Payment</td><td>40000</td><td>budget</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
-<tr><td class="num">2020</td><td>general</td><td>Athletic Coaches</td><td>91601.0</td><td>actual</td><td>fy24-approved-budget.txt</td></tr>
-</table></div>
-</details>
 <details class="t spine"><summary><span class="srow"><code>budget_figure</code> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span><button class="open" data-t="budget_figure" data-q="SELECT f.fy, f.stage, f.variant, f.label, f.value, b.section, b.function_group, f.doc_id FROM budget_figure f LEFT JOIN budget_line b USING (line_key) ORDER BY f.fy, f.stage, f.value DESC LIMIT 1000">Query table</button></span><span class="gr">one row per line per year per stage per variant</span></summary>
 <p class="ans">Dollar amounts per budget LINE from the district&#x27;s budget documents — no counts, no people. Each figure carries the stage it represents (proposed / settled / actual) and, for FY27, which of four whole budget scenarios it belongs to. FY2014–FY2027, 9,503 figures, plus a flag where two documents state different amounts for the same line-year.</p>
 <p class="warn">Split on <code>stage</code> AND <code>variant</code>. FY27 carries four whole budgets.</p>
@@ -343,6 +325,43 @@ stop.</p>
 <tr><td>hs librarian</td><td>H.S. Librarian</td><td class="num">2027</td><td>proposed</td><td>Core Budget</td><td class="num">55175.0</td><td class="num">0</td><td>sources/district-budget/text/final-budget-d…</td></tr>
 <tr><td>hs library books</td><td>H.S. Library Books</td><td class="num">2017</td><td>proposed</td><td><span class="nul">empty</span></td><td class="num">0.0</td><td class="num">0</td><td>sources/district-budget/text/fy18-non-perso…</td></tr>
 <tr><td>hs repair p e equipment</td><td>H.S. Repair P.E. Equipment</td><td class="num">2025</td><td>proposed</td><td><span class="nul">empty</span></td><td class="num">0.0</td><td class="num">0</td><td>sources/district-budget/text/fy26-school-de…</td></tr>
+</table></div>
+</details>
+<details class="t spine"><summary><span class="srow"><code>workbook_figure</code> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">3,261 rows</span> <span class="yr">2023, 2024, 2025, 2026, 2027, 2029</span><button class="open" data-t="workbook_figure" data-q="SELECT w.fy, w.column_kind, w.row_kind, w.row, b.label, w.value FROM workbook_figure w LEFT JOIN budget_line b USING (line_key) ORDER BY w.fy, w.row LIMIT 1000">Query table</button></span><span class="gr">one row per worksheet row per year per column</span></summary>
+<p class="ans">The FY27 budget workbook unpivoted to one row per worksheet row × year × column, so every figure is quotable by its spreadsheet coordinate. <code>column_kind</code> says which printed column — final_budget, actual_to_date, encumbered_to_date. Dollars only.</p>
+<p class="warn"> every cell quotable by its row.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>row</code></td><td class="ty">INTEGER</td><td>The worksheet row number in the source spreadsheet.<br><span class="ccaut">Rule 13: quotes a coordinate, so a figure can be traced to its cell.</span></td></tr>
+<tr><td><code>line_key</code></td><td class="ty">TEXT</td><td>Our normalised join key for a budget line.<br><span class="ccaut">Normalisation differs between budget_figure and workbook_figure — joining them on line_key matches only a fraction. Join on the normalised label instead.</span></td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>column_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>value</code></td><td class="ty">REAL</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>row_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>row</th><th>line_key</th><th>fy</th><th>column_kind</th><th>value</th><th>row_kind</th><th>doc_id</th></tr>
+<tr><td class="num">139</td><td>m.s. general school supplies</td><td class="num">2024</td><td>actual</td><td class="num">7475.99</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
+<tr><td class="num">188</td><td>telephone maintenance/system</td><td class="num">2026</td><td>actual_to_date</td><td class="num">0.0</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
+<tr><td class="num">237</td><td>executive secretaries/supt.</td><td class="num">2025</td><td>actual</td><td class="num">184375.15</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>athletics_history</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">175 rows</span> <span class="yr">2014–2026</span><button class="open" data-t="athletics_history">Query table</button></span><span class="gr">one row per athletics figure per year</span></summary>
+<p class="ans">Athletics money from BOTH sides, and these are three different quantities that must never be added: what the town appropriated from the general fund, what the revolving fund took IN, and what the revolving fund SPENT. Dollars per year with the basis and source document for each.</p>
+<p class="warn">Appropriation, fund revenue and fund spending are three quantities. Never add two of them.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>side</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>item</code></td><td class="ty">TEXT</td><td>The thing being priced or counted.</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>basis</code></td><td class="ty">TEXT</td><td>Whether a figure is published, contractual, statutory, our measurement or our assumption.</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td><td>Where the figure came from, as the extractor recorded it.<br><span class="ccaut">A loose reference — a filename — not a resolved address.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>side</th><th>item</th><th>amount</th><th>basis</th><th>source</th></tr>
+<tr><td class="num">2016</td><td>revolving</td><td>Athletic Secretary</td><td>7796</td><td>actual</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
+<tr><td class="num">2018</td><td>revolving</td><td>Track and Field Payment</td><td>40000</td><td>budget</td><td>district-budget/docs/fy19-proposed-athletic…</td></tr>
+<tr><td class="num">2020</td><td>general</td><td>Athletic Coaches</td><td>91601.0</td><td>actual</td><td>fy24-approved-budget.txt</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>budget_line</code> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">dimension</span> <span class="n">688 rows</span><button class="open" data-t="budget_line">Query table</button></span><span class="gr">one row per budget line</span></summary>
@@ -487,25 +506,6 @@ stop.</p>
 <tr><td class="num">2020</td><td>actual</td><td>223350</td><td>223350</td><td>1</td></tr>
 <tr><td class="num">2022</td><td>proposed</td><td>297843</td><td>297843</td><td>0</td></tr>
 <tr><td class="num">2023</td><td>settled</td><td>329360</td><td>329360</td><td>0</td></tr>
-</table></div>
-</details>
-<details class="t spine"><summary><span class="srow"><code>workbook_figure</code> <span class="badge">the spine</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">fact</span> <span class="n">3,261 rows</span> <span class="yr">2023, 2024, 2025, 2026, 2027, 2029</span><button class="open" data-t="workbook_figure" data-q="SELECT w.fy, w.column_kind, w.row_kind, w.row, b.label, w.value FROM workbook_figure w LEFT JOIN budget_line b USING (line_key) ORDER BY w.fy, w.row LIMIT 1000">Query table</button></span><span class="gr">one row per worksheet row per year per column</span></summary>
-<p class="ans">The FY27 budget workbook unpivoted to one row per worksheet row × year × column, so every figure is quotable by its spreadsheet coordinate. <code>column_kind</code> says which printed column — final_budget, actual_to_date, encumbered_to_date. Dollars only.</p>
-<p class="warn"> every cell quotable by its row.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>row</code></td><td class="ty">INTEGER</td><td>The worksheet row number in the source spreadsheet.<br><span class="ccaut">Rule 13: quotes a coordinate, so a figure can be traced to its cell.</span></td></tr>
-<tr><td><code>line_key</code></td><td class="ty">TEXT</td><td>Our normalised join key for a budget line.<br><span class="ccaut">Normalisation differs between budget_figure and workbook_figure — joining them on line_key matches only a fraction. Join on the normalised label instead.</span></td></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>column_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>value</code></td><td class="ty">REAL</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
-<tr><td><code>row_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>row</th><th>line_key</th><th>fy</th><th>column_kind</th><th>value</th><th>row_kind</th><th>doc_id</th></tr>
-<tr><td class="num">139</td><td>m.s. general school supplies</td><td class="num">2024</td><td>actual</td><td class="num">7475.99</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
-<tr><td class="num">188</td><td>telephone maintenance/system</td><td class="num">2026</td><td>actual_to_date</td><td class="num">0.0</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
-<tr><td class="num">237</td><td>executive secretaries/supt.</td><td class="num">2025</td><td>actual</td><td class="num">184375.15</td><td>line</td><td>sources/budget-workbooks/fy27-proposals.xlsx</td></tr>
 </table></div>
 </details>
 <p class="tierhead">Tier 3 · accounts — what one account spent</p>
@@ -1535,6 +1535,30 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead">Tier 3 · accounts — what one account spent</p>
+<details class="t spine"><summary><span class="srow"><code>ledger_snapshot</code> <span class="badge">the spine</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="ledger_snapshot" data-q="SELECT l.fy, l.period, l.account_id, a.name, a.fund_name, a.dept, a.function, a.account_type, a.level, l.original, l.revised, l.expended, l.encumbered, l.available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy, l.period, l.account_id LIMIT 1000">Query table</button></span><span class="gr">one row per account per year per period per document</span></summary>
+<p class="ans">BOTH revenue and expense accounts from the town&#x27;s MUNIS books, told apart by <code>account_type</code> — revenue is stored NEGATIVE. Six money measures per row: original appropriation, transfers, revised, expended, encumbered, available, plus percent used. Two grains in the same table (<code>level</code>): 67 department roll-ups and 916 detail accounts. FY2026 only, at two periods — 9 carries the department rows, 12 the account rows.</p>
+<p class="warn"> at a moment in the year.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>account_id</code></td><td class="ty">TEXT</td><td>The full MUNIS account, fund-org-object.<br><span class="ccaut">The stable identity. Never identify an account by its name.</span></td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>period</code></td><td class="ty">INTEGER</td><td>MUNIS accounting period: a point in time INSIDE the fiscal year.<br><span class="ccaut">A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other.</span></td></tr>
+<tr><td><code>original</code></td><td class="ty">REAL</td><td>The appropriation as originally voted. <span class="unit">dollars</span></td></tr>
+<tr><td><code>transfers</code></td><td class="ty">REAL</td><td>Money moved into or out of the appropriation after it was voted. <span class="unit">dollars</span><br><span class="ccaut">This is why <code>original</code> and <code>revised</code> differ.</span></td></tr>
+<tr><td><code>revised</code></td><td class="ty">REAL</td><td>The appropriation after transfers. <span class="unit">dollars</span></td></tr>
+<tr><td><code>expended</code></td><td class="ty">REAL</td><td>Spent. <span class="unit">dollars</span></td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">REAL</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
+<tr><td><code>available</code></td><td class="ty">REAL</td><td>Revised less expended less encumbered. <span class="unit">dollars</span></td></tr>
+<tr><td><code>pct_used</code></td><td class="ty">REAL</td><td>Share of the revised budget used. <span class="unit">percent</span></td></tr>
+<tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td><td>Which columns the source printed rounded.<br><span class="ccaut">Sets the tolerance a reconciliation may use — one dollar per rounded row, not a blanket.</span></td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>account_id</th><th>fy</th><th>period</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th><th>rounded_columns</th><th>doc_id</th></tr>
+<tr><td>0100-11462-573100</td><td class="num">2026</td><td class="num">12</td><td class="num">750.0</td><td class="num">0.0</td><td class="num">750.0</td><td class="num">250.0</td><td class="num">0.0</td><td class="num">500.0</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
+<tr><td>0100-11751-511000</td><td class="num">2026</td><td class="num">12</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">12796.8</td><td class="num">0.0</td><td class="num">-12796.8</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
+<tr><td>0100-14112-521016</td><td class="num">2026</td><td class="num">12</td><td class="num">750.0</td><td class="num">-750.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>account</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">dimension</span> <span class="n">981 rows</span><button class="open" data-t="account">Query table</button></span><span class="gr">one row per MUNIS account</span></summary>
 <p class="ans">The chart of accounts — no money at all. One row per MUNIS account number split into fund, department, org and object, with its DESE function code, its name, whether it is revenue or expense, whether it is a roll-up or a detail account, and the years it appears.</p>
 <p class="warn"> department and function code.</p>
@@ -1591,30 +1615,6 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
-</details>
-<details class="t spine"><summary><span class="srow"><code>ledger_snapshot</code> <span class="badge">the spine</span> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="ledger_snapshot" data-q="SELECT l.fy, l.period, l.account_id, a.name, a.fund_name, a.dept, a.function, a.account_type, a.level, l.original, l.revised, l.expended, l.encumbered, l.available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy, l.period, l.account_id LIMIT 1000">Query table</button></span><span class="gr">one row per account per year per period per document</span></summary>
-<p class="ans">BOTH revenue and expense accounts from the town&#x27;s MUNIS books, told apart by <code>account_type</code> — revenue is stored NEGATIVE. Six money measures per row: original appropriation, transfers, revised, expended, encumbered, available, plus percent used. Two grains in the same table (<code>level</code>): 67 department roll-ups and 916 detail accounts. FY2026 only, at two periods — 9 carries the department rows, 12 the account rows.</p>
-<p class="warn"> at a moment in the year.</p>
-<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
-<tr><td><code>account_id</code></td><td class="ty">TEXT</td><td>The full MUNIS account, fund-org-object.<br><span class="ccaut">The stable identity. Never identify an account by its name.</span></td></tr>
-<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
-<tr><td><code>period</code></td><td class="ty">INTEGER</td><td>MUNIS accounting period: a point in time INSIDE the fiscal year.<br><span class="ccaut">A period is not a stage. Period 9 and period 12 are two different reports of the same year; adding them adds one report to the other.</span></td></tr>
-<tr><td><code>original</code></td><td class="ty">REAL</td><td>The appropriation as originally voted. <span class="unit">dollars</span></td></tr>
-<tr><td><code>transfers</code></td><td class="ty">REAL</td><td>Money moved into or out of the appropriation after it was voted. <span class="unit">dollars</span><br><span class="ccaut">This is why <code>original</code> and <code>revised</code> differ.</span></td></tr>
-<tr><td><code>revised</code></td><td class="ty">REAL</td><td>The appropriation after transfers. <span class="unit">dollars</span></td></tr>
-<tr><td><code>expended</code></td><td class="ty">REAL</td><td>Spent. <span class="unit">dollars</span></td></tr>
-<tr><td><code>encumbered</code></td><td class="ty">REAL</td><td>Committed by purchase order but not yet spent. <span class="unit">dollars</span></td></tr>
-<tr><td><code>available</code></td><td class="ty">REAL</td><td>Revised less expended less encumbered. <span class="unit">dollars</span></td></tr>
-<tr><td><code>pct_used</code></td><td class="ty">REAL</td><td>Share of the revised budget used. <span class="unit">percent</span></td></tr>
-<tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td><td>Which columns the source printed rounded.<br><span class="ccaut">Sets the tolerance a reconciliation may use — one dollar per rounded row, not a blanket.</span></td></tr>
-<tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
-</table></div>
-<p class="cap sm">First 3 rows, in rowid order:</p>
-<div class="scroll"><table class="samp"><tr><th>account_id</th><th>fy</th><th>period</th><th>original</th><th>transfers</th><th>revised</th><th>expended</th><th>encumbered</th><th>available</th><th>pct_used</th><th>rounded_columns</th><th>doc_id</th></tr>
-<tr><td>0100-11462-573100</td><td class="num">2026</td><td class="num">12</td><td class="num">750.0</td><td class="num">0.0</td><td class="num">750.0</td><td class="num">250.0</td><td class="num">0.0</td><td class="num">500.0</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
-<tr><td>0100-11751-511000</td><td class="num">2026</td><td class="num">12</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">12796.8</td><td class="num">0.0</td><td class="num">-12796.8</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
-<tr><td>0100-14112-521016</td><td class="num">2026</td><td class="num">12</td><td class="num">750.0</td><td class="num">-750.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">0.0</td><td><span class="nul">empty</span></td><td>sources/town-ledgers/expenses/glytdbud-expe…</td></tr>
-</table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>munis_ledger</code> <span class="tag tier t3" title="what one account spent">Tier 3 · accounts</span> <span class="tag">fact</span> <span class="n">983 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="munis_ledger">Query table</button></span><span class="gr">one row per account per report</span></summary>
 <p class="ans">The MUNIS chart of accounts exactly as DELIVERED, before our normalisation — including the report parameters (<code>totals_only</code>, <code>suppress_zero</code>) that decide what a report shows and therefore what is missing from it.</p>
