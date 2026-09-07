@@ -2,7 +2,7 @@
 
 The Lunenburg Budget Project — for review, 7 September 2026
 
-**9 decisions** and **13 open questions**. The gap registry behind the questions holds **34 rows** across 5 kinds: `document_wanted`, `held`, `money_in`, `money_out`, `people`.
+**8 decisions** and **13 open questions**. The gap registry behind the questions holds **34 rows** across 5 kinds: `document_wanted`, `held`, `money_in`, `money_out`, `people`.
 
 The two lists are kept apart because they behave differently, and section 3 below is the part worth reading first if you read nothing else.
 
@@ -19,7 +19,7 @@ below is blocked on more analysis; each is blocked on somebody choosing.
 | ~~D2~~ | ~~**Deploy.**~~ **DONE 7 Sep 2026** — v11 is live, verified against the archive manifest. | | |
 | D3 | **Resume the tax-rate and town-meeting extraction, or drop it.** Held after repeated `ECONNRESET`. Your instruction was to hold if the agents keep failing and continue if some make progress. | The balance-sheet and special-revenue extractions since then both succeeded, so the evidence has changed. | Two datasets stay uncaptured. Nothing else depends on them. |
 | ~~D4~~ | ~~**What to do about `athletics.md` being stale.**~~ **DONE 7 Sep 2026** — both analyses corrected, the page no longer disagrees, and the verifier now reads both documents and recomputes the series it had never checked. | | |
-| D5 | **IN PROGRESS 7 Sep 2026.** **Extract the FY2024/FY2025 enterprise-only combining balance sheets as a new dataset.** They cannot extend the combined series — different table — so this is a decision to start something, not to finish something. | It is scope, and enterprise funds are ratepayer money rather than tax money. | Two years of enterprise fund positions stay unread. |
+| ~~D5~~ | ~~**Extract the FY2024/FY2025 enterprise-only combining balance sheets.**~~ **DONE 7 Sep 2026** — both years tie to their own printed PROOF; FY2024's two printings agree figure for figure. Found a $102,000 pair of compensating errors and a published query that had never been run. | | |
 | D6 | **The PEG revenue-vs-expenses statements**, ~11 editions with a real cross-check. Same shape of decision as D5, and the cross-check makes it the better bet of the two. | Scope. | Same. |
 | D7 | **Send a records request.** The gaps registry now names specific documents rather than describing absences — the FY2023 trial balance, the five athletics memos, the `Account_Detail` export for orgs S3066672/S3066671, DESE's End of Year Financial Report. That is a letter, not a list. | It is outbound, to the Town, in your name. | The gaps stay gaps. Several are load-bearing. |
 | D8 | **Audit the other extracts for the parenthesised-negative defect.** `sped_para_history` was wrong by $315,772 in FY2024 — twice the line, because a sign error doubles rather than zeroes. Fixed there; not looked for elsewhere. | It is unbounded work with an unknown yield, which is exactly the kind of thing to decide rather than drift into. | Unknown. That is the argument for doing it. |
