@@ -8,7 +8,7 @@ Writes `notes/reference/data-model/town-money-flow.html`.
 
 WHY THIS EXISTS
 
-`money-flow-v2.html` does this for the schools. Doing it for the whole town was TJ's
+`school-money-flow.html` does this for the schools. Doing it for the whole town was TJ's
 instruction — *"LETS SEE WHAT WE LEARN FROM THAT"* — and the answer is that the town
 version has a shape the school version does not, because the town has four separate money
 systems and only one of them is the thing anybody argues about.
@@ -43,7 +43,7 @@ import sqlite3
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'town-money-flow.html')
-SCHOOL = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow-v2.html')
+SCHOOL = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'school-money-flow.html')
 FY, P_DEPT, P_ACCT = 2026, 9, 12
 
 # Revenue, by who SETS the amount. Exact names — never prefixes. See rule 3.
@@ -589,11 +589,11 @@ def render(c):
       '</ul></section>')
 
     a('<section class="stage"><h2>The schools, in the same model</h2>'
-      '<p class="cap">Reproduced from <code>money-flow-v2.html</code> unchanged, so the '
+      '<p class="cap">Reproduced from <code>school-money-flow.html</code> unchanged, so the '
       'two can be read against each other. The school system is one of the four above and '
       'lives in two of them: the general fund appropriation, and the special revenue '
       'funds it runs itself.</p>'
-      f'<p><a href="money-flow-v2.html">Open the school diagram →</a></p></section>')
+      f'<p><a href="school-money-flow.html">Open the school diagram →</a></p></section>')
     return PAGE.format(body='\n'.join(P))
 
 

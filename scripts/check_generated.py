@@ -52,6 +52,9 @@ CHECKS = [
     ('build_ledger_structure.py', ['--check']),
     ('build_who_decides.py', ['--check']),
     ('build_town_flow.py', ['--check']),
+    # The schema inventory. It RUNS its worked queries against the live database, so this
+    # entry also catches a query that has stopped answering -- not only a stale file.
+    ('build_schema_page.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),

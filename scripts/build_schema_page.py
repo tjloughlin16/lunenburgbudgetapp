@@ -1,0 +1,504 @@
+#!/usr/bin/env python3
+"""Every table in the database, what it holds, and whether it can answer your question.
+
+    python3 scripts/build_schema_page.py
+    python3 scripts/build_schema_page.py --check
+
+Writes `notes/reference/data-model/schema.html`.
+
+WHY THIS EXISTS ALONGSIDE SCHEMA.md AND schema.mmd
+
+Three documents, three different jobs, and it is worth being clear which is which:
+
+  SCHEMA.md      PROSE. The grain of the three fact tables, and the traps between them.
+                 Hand-written, because "a period is not a stage" is an argument, not a
+                 property of the file.
+  schema.mmd     A PICTURE. Which table joins to which, with the match rate on the edge.
+  this page      The INVENTORY. Every table, every column, its type, how many rows, and
+                 which fiscal years it actually covers.
+
+The inventory has to be generated, and the reason is rule 2 applied to a schema: a column
+list typed into a document is wrong the first time a column is added and nothing fails.
+
+WHAT THE TOP OF THE PAGE IS FOR, AND WHY IT LEADS
+
+A schema tells you what columns exist. It does not tell you whether the question you
+arrived with can be answered, and that is the thing somebody actually wants to know. So
+the page opens with real questions, each one RUN against the live database at build time,
+showing its row count and its first rows.
+
+That means a question that has stopped answering breaks the build rather than sitting on
+the page looking answerable. It also means the honest ones are visible: two of the
+questions below return nothing, and the page says so in the same voice as the ones that
+work, because "we hold five checked years" is a fact about this archive and hiding it
+would make the page a brochure.
+
+THE VERDICT COLUMN IS DERIVED, NOT WRITTEN
+
+`answers` / `partly` / `not yet` is computed from what the query returned, never typed.
+
+Two fields feed it and they are deliberately NOT the same thing, because the first draft
+of this page conflated them and every question came out `partly`, which made the badge
+carry no information at all:
+
+  `partly`  the rows are NOT what was asked for. Q1 returns every revenue source with an
+            amount and a class, and CANNOT say which department the money went on to pay
+            for -- general fund money is fungible and no document closes it. Q4 was asked
+            for what the town VOTED in FY24 and can only return what the district ASKED
+            for, because that year has no `settled` stage. Those are shortfalls.
+  `caveat`  the rows ARE what was asked for, and here is how to read them without getting
+            it wrong. "A stage is not a stage" is guidance, not a shortfall.
+
+Only `partly` moves the verdict. Both print, because a reader needs both.
+"""
+
+import argparse
+import html
+import os
+import sqlite3
+from datetime import date
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
+OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'schema.html')
+
+# --------------------------------------------------------------------------------------
+# The questions. Each is RUN. `partly` is a declared limit on what the rows establish, and
+# it is prose about the WORLD, not about the SQL -- see rule 7.
+# --------------------------------------------------------------------------------------
+QUESTIONS = [
+    dict(
+        q='Every source of revenue in FY2022, by name and amount, with our classification',
+        sql="""SELECT fy, printed_name, label, class, amount, document, page
+               FROM revenue_history WHERE fy = 2022 ORDER BY amount DESC""",
+        partly=(
+            '`class` says what KIND of revenue it is — levy, state aid, local receipt, '
+            'transfer — which is a property of where the money came FROM. It does not say '
+            'what the money went on to pay for, and for anything landing in the general '
+            'fund nothing can: that money is fungible by law and no document apportions '
+            'it. Only restricted funds have a traceable destination, and those are in '
+            '`money_edges`.'),
+        why='The classification is joined in at build time from `money_classification`, '
+            'so the name the report printed and the group we assigned are in one row.'),
+    dict(
+        q='The same question for FY2023',
+        sql='SELECT fy, printed_name, amount FROM revenue_history WHERE fy = 2023',
+        why='Returns nothing, and that is the correct answer rather than a failure. '
+            '`revenue_history` carries only years whose extract was CHECKED against the '
+            'report’s own printed total. FY2023 has 10 unchecked rows in '
+            '`annual_report_receipts`; loading them here would make five verified years '
+            'and one guess look identical.'),
+    dict(
+        q='What was budgeted for the Superintendent, FY2022 to FY2025',
+        sql="""SELECT fy, stage, label, value FROM budget_figure
+               WHERE label LIKE '%Superintendent%' AND fy BETWEEN 2022 AND 2025
+               ORDER BY fy, stage""",
+        caveat=(
+            'One row per **stage**, and they are different quantities: `proposed` is what '
+            'was asked for, `settled` what was voted, `actual` what the later document '
+            'reported. Rule 1 — never compute a growth rate from one stage to another.'),
+        why='`budget_figure` is one row per line × year × stage × variant. Filtering on '
+            'a label works here because "Superintendent" is unique; most lines are not, '
+            'which is what `line_key` is for.'),
+    dict(
+        q='Every line in the school budget for FY2024, by name and amount',
+        sql="""SELECT fy, stage, label, value FROM budget_figure
+               WHERE fy = 2024 AND stage = 'proposed' ORDER BY value DESC""",
+        partly=(
+            'FY2024 has no `settled` stage in the archive — only `proposed` and `actual`. '
+            'So this is what the district ASKED for that year, not what the town voted. '
+            'The stage you get is not the stage you named, and the coverage table below '
+            'is the only place that difference is visible before you query.'),
+        why='Which stages exist varies by year, so a query written for one year can '
+            'silently return nothing for another.'),
+    dict(
+        q='Where the money actually went in FY2026, by department, with who decides',
+        sql="""SELECT department, control, voted, expended FROM v_spending_classified
+               WHERE fy = 2026 AND period = 9 ORDER BY expended DESC LIMIT 12""",
+        caveat=(
+            '`control` is our classification of who holds the decision, not a published '
+            'field. `voted` and `expended` are the town’s own figures; the column beside '
+            'them is ours and is labelled that way everywhere it appears.'),
+        why='Spending IS traceable to a department, which is why this answers where the '
+            'revenue question above cannot.'),
+    dict(
+        q='The full ledger for one account across the year',
+        sql="""SELECT l.fy, l.period, a.name, a.account_id, l.original, l.revised,
+                      l.expended, l.available
+               FROM ledger_snapshot l JOIN account a USING (account_id)
+               WHERE a.account_id LIKE '0100-S%' AND l.fy = 2026
+               ORDER BY l.expended DESC LIMIT 10""",
+        caveat=(
+            '`period` is a point in time inside the year, not a stage. Two periods of the '
+            'same year are two different MUNIS reports and adding them double-counts.'),
+        why='The `S` prefix is the structural way to find school accounts — it does not '
+            'depend on any name, and MUNIS names are ten characters typed by a person.'),
+]
+
+# Every table belongs to a family. Declared rather than inferred, because the grouping is
+# a judgement about what the data IS. `families()` refuses to run if a table matches none,
+# so a new table has to be placed rather than quietly landing in "other".
+FAMILIES = [
+    ('The spine — what a budget said and what the books say', """
+     Three fact tables, three different grains. Confusing them is how a budget gets
+     compared to an actual that is not its own.""",
+     ['budget_figure', 'budget_line', 'ledger_snapshot', 'workbook_figure', 'account',
+      'fund', 'fiscal_period', 'crosswalk', 'munis_ledger', 'lps_budget_lines',
+      'line_history', 'line_history_coverage', 'line_history_disagreements',
+      'account_names', 'town_ledger_fy26_q3', 'stated_figure']),
+    ('Money in, money out — the classification we built', """
+     Our model of every route money takes in and out, as data rather than as a diagram.
+     The `how`/`why` columns carry the basis for each call, so a classification can be
+     argued with rather than only read.""",
+     ['money_classification', 'money_edges', 'money_assumptions', 'money_gaps',
+      'revenue_history', 'fund_activity', 'school_special_revenue_fy26_q3',
+      'fund_1301_cash_journal', 'grant_award', 'grants_history', 'variance_by_group']),
+    ('The annual town reports — sixteen years, read page by page', """
+     Extracts from the printed reports. **Nothing here may be aggregated without splitting
+     on `status`**, and `v1`..`v8` are ORDINALS — the first column of that page that held
+     figures — not named columns. Read `column_meaning`.""",
+     ['annual_report_catalogue', 'annual_report_contents', 'annual_report_receipts',
+      'annual_report_survey', 'report_appropriations', 'report_capital_projects',
+      'report_debt', 'report_dept_activity', 'report_elections',
+      'report_enrollment_mcas', 'report_gross_wages', 'report_monty_tech',
+      'report_officials', 'report_trust_funds', 'report_valuation',
+      'report_vital_records', 'report_anomalies', 'special_revenue_funds',
+      'extraction_plan', 'ballot_questions', 'capital_funding_history',
+      'capital_plan_fy27', 'free_cash_proof', 'total_expenses_history',
+      'total_salaries_history']),
+    ('Schools — the lines the projection rests on', '',
+     ['athletics_history', 'athletics_by_sport', 'athletics_by_sport_reconciliation',
+      'athletic_fee_schedule', 'ood_tuition_history', 'placement_counts',
+      'sped_para_history', 'sped_teacher_history', 'sped_transport_history',
+      'staff_roster_entries', 'staff_roster_counts', 'staff_position_map',
+      'role_classification', 'dese_measure', 'dese_radar', 'rate_register']),
+    ('Provenance — which document every figure came from', """
+     Rule 12 in table form. A figure that cannot name its document is not loaded.""",
+     ['document', 'dataset_document']),
+]
+
+# Columns that decide what a row IS. Omitting one does not raise -- it returns a number
+# that is the sum of two different things. All four have been got wrong here.
+SPLITTERS = [
+    ('status', 'annual report extracts',
+     '`checked`, `check failed`, `no check`. Summing across them mixes verified figures '
+     'with unverified ones.'),
+    ('level', '`account`, `ledger_snapshot`',
+     '`department` roll-ups sit in the same table as their own detail. Summing both adds '
+     'the budget to itself.'),
+    ('account_type', '`account`',
+     'Revenue is stored NEGATIVE. Omitting it once made the town’s whole budget compute '
+     'as minus $997,871.'),
+    ('period', '`ledger_snapshot`',
+     'Two periods are two different MUNIS reports of the same year, not two halves of it.'),
+    ('stage', '`budget_figure`',
+     '`proposed`, `settled`, `actual`. Rule 1: a rate measured across stages is partly '
+     'growth and partly the step between them.'),
+    ('variant', '`budget_figure`',
+     'FY27 has four whole budgets — Balanced, Core, Level Service, Restoration. Without '
+     'this you sum all four.'),
+    ('v1 … v8', 'annual report extracts',
+     'ORDINALS, not column names: the first column of THAT PAGE that held figures. '
+     'Summing `v1` down a run adds one page’s APPROPRIATED to another’s TOTAL EXPENDED.'),
+]
+
+
+def db():
+    if not os.path.exists(DB):
+        raise SystemExit(f'{DB} missing. Run: python3 scripts/build_db.py')
+    c = sqlite3.connect(DB)
+    c.row_factory = sqlite3.Row
+    return c
+
+
+def families(c):
+    """Assign every table to a declared family, or refuse to run."""
+    tables = [r[0] for r in c.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")]
+    placed, out = set(), []
+    for title, blurb, members in FAMILIES:
+        got = [t for t in members if t in tables]
+        placed.update(got)
+        out.append((title, blurb, got))
+    orphan = sorted(set(tables) - placed)
+    if orphan:
+        raise SystemExit(
+            'table(s) in no family: %s\n'
+            '  Add each to FAMILIES in scripts/build_schema_page.py. A table nobody '
+            'placed is a table nobody documented.' % ', '.join(orphan))
+    missing = sorted({m for _, _, ms in FAMILIES for m in ms} - set(tables))
+    if missing:
+        raise SystemExit('FAMILIES names table(s) that do not exist: %s' % ', '.join(missing))
+    return out
+
+
+def profile(c, t):
+    """Row count, columns with declared type, and the fiscal years actually present."""
+    n = c.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
+    cols = [(d[1], d[2] or 'TEXT') for d in c.execute('PRAGMA table_info("%s")' % t)]
+    years = ''
+    if any(name == 'fy' for name, _ in cols) and n:
+        ys = sorted({str(r[0]) for r in c.execute(
+            'SELECT DISTINCT fy FROM "%s" WHERE fy IS NOT NULL' % t) if r[0] != ''})
+        nums = [y for y in ys if y.isdigit()]
+        if nums and len(nums) == len(ys) and int(nums[-1]) - int(nums[0]) == len(nums) - 1:
+            years = '%s–%s' % (nums[0], nums[-1])          # a contiguous run
+        elif ys:
+            years = ', '.join(ys) if len(ys) <= 8 else '%s … %s (%d years)' % (
+                ys[0], ys[-1], len(ys))
+    return n, cols, years
+
+
+def esc(x):
+    return html.escape(str(x))
+
+
+def run_questions(c):
+    out = []
+    for spec in QUESTIONS:
+        rs = c.execute(spec['sql']).fetchall()
+        # DERIVED, never typed: rows decide answers vs not-yet; `partly` narrows it.
+        verdict = 'not yet' if not rs else ('partly' if spec.get('partly') else 'answers')
+        # `caveat` deliberately does NOT appear here -- see the note at the top of the file.
+        out.append((spec, rs, verdict))
+    return out
+
+
+def render(c):
+    fams = families(c)
+    qs = run_questions(c)
+    n_tables = sum(len(m) for _, _, m in fams)
+    n_views = c.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='view'").fetchone()[0]
+    n_rows = sum(c.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
+                 for _, _, ms in fams for t in ms)
+    n_cols = sum(len(c.execute('PRAGMA table_info("%s")' % t).fetchall())
+                 for _, _, ms in fams for t in ms)
+
+    B = []
+    a = B.append
+
+    # ---- the questions, first, because that is what somebody actually arrives with
+    a('<div class="stage"><h2>Can I ask this?</h2>')
+    a('<p class="cap">Every query below is <strong>run against the live database when '
+      'this page is built</strong>, so a question that stops answering breaks the build '
+      'rather than sitting here looking answerable. Two of them return nothing, and that '
+      'is the honest state of the archive rather than a fault.</p>')
+    for spec, rs, verdict in qs:
+        a('<div class="q">')
+        a(f'<div class="qhead"><span class="v v-{verdict.replace(" ", "-")}">'
+          f'{esc(verdict)}</span><span class="qt">{esc(spec["q"])}</span></div>')
+        a('<pre><code>%s</code></pre>' % esc(' '.join(spec['sql'].split())))
+        a(f'<p class="rc">{len(rs):,} row{"" if len(rs) == 1 else "s"}</p>')
+        if rs:
+            keys = rs[0].keys()
+            a('<div class="scroll"><table><tr>%s</tr>' %
+              ''.join(f'<th>{esc(k)}</th>' for k in keys))
+            for r in rs[:5]:
+                a('<tr>%s</tr>' % ''.join(
+                    '<td%s>%s</td>' % (' class="num"' if isinstance(r[k], (int, float))
+                                       else '', esc(r[k])) for k in keys))
+            a('</table></div>')
+            if len(rs) > 5:
+                a(f'<p class="cap">…and {len(rs) - 5:,} more.</p>')
+        for field, cls in (('partly', 'warn shortfall'), ('caveat', 'warn')):
+            if spec.get(field):
+                a(f'<p class="{cls}">{md(spec[field])}</p>')
+        a(f'<p class="cap">{md(spec["why"])}</p>')
+        a('</div>')
+    a('</div>')
+
+    # ---- the columns that decide what a row is
+    a('<div class="stage alt"><h2>The columns you cannot leave out</h2>')
+    a('<p class="cap">None of these raises an error when omitted. Each returns a number '
+      'that is the sum of two different things, which is why every one of them has been '
+      'got wrong here at least once.</p>')
+    a('<div class="scroll"><table><tr><th>column</th><th>in</th>'
+      '<th>what happens if you omit it</th></tr>')
+    for col, where, what in SPLITTERS:
+        a(f'<tr><td><code>{esc(col)}</code></td><td>{md(where)}</td>'
+          f'<td>{md(what)}</td></tr>')
+    a('</table></div>')
+    a('<p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was '
+      'stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> '
+      'answered against a third of the database and returned <em>zero rows, with no '
+      'error,</em> against the rest. It is INTEGER everywhere now except three documented '
+      'exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the '
+      'build if a new table arrives without it.</p>')
+    a('</div>')
+
+    # ---- the inventory
+    for title, blurb, members in fams:
+        a(f'<div class="stage"><h2>{esc(title)}</h2>')
+        if blurb:
+            a(f'<p class="cap">{md(" ".join(blurb.split()))}</p>')
+        for t in members:
+            n, cols, years = profile(c, t)
+            a('<details><summary><code>%s</code> <span class="n">%s row%s</span>%s'
+              '</summary>' % (esc(t), f'{n:,}', '' if n == 1 else 's',
+                              f' <span class="yr">{esc(years)}</span>' if years else ''))
+            a('<div class="scroll"><table><tr><th>column</th><th>type</th></tr>')
+            for name, typ in cols:
+                a(f'<tr><td><code>{esc(name)}</code></td>'
+                  f'<td class="ty">{esc(typ)}</td></tr>')
+            a('</table></div></details>')
+        a('</div>')
+
+    # ---- views
+    a('<div class="stage alt"><h2>Views — the joins already written for you</h2>')
+    a('<p class="cap">A view is the safe way to ask a question that needs two tables. '
+      'Each one carries the splitting columns above in its own <code>WHERE</code>, so it '
+      'cannot be got wrong the way a hand-written join can.</p>')
+    a('<div class="scroll"><table><tr><th>view</th><th>columns</th></tr>')
+    for (v,) in c.execute(
+            "SELECT name FROM sqlite_master WHERE type='view' ORDER BY name"):
+        cs = ', '.join(d[1] for d in c.execute('PRAGMA table_info("%s")' % v))
+        a(f'<tr><td><code>{esc(v)}</code></td><td class="ty">{esc(cs)}</td></tr>')
+    a('</table></div></div>')
+
+    # ---- what cannot be asked, straight out of the data
+    gaps = c.execute('SELECT side, what, why FROM money_gaps ORDER BY side, what').fetchall()
+    a('<div class="stage"><h2>What this database cannot tell you</h2>')
+    a('<p class="cap">Read from <code>money_gaps</code>, so this list is data rather than '
+      'a thing somebody remembered to write down. Each is a question the published '
+      'documents do not close.</p>')
+    a('<div class="scroll"><table><tr><th>side</th><th>what is missing</th>'
+      '<th>why it cannot be answered</th></tr>')
+    for g in gaps:
+        a(f'<tr><td>{esc(g["side"])}</td><td>{md(g["what"])}</td>'
+          f'<td>{md(g["why"])}</td></tr>')
+    a('</table></div></div>')
+
+    body = '\n'.join(B)
+    return PAGE.format(
+        body=body, n_tables=n_tables, n_views=n_views,
+        n_rows=f'{n_rows:,}', n_cols=n_cols,
+        gen=date.today().isoformat())
+
+
+def md(s):
+    """The three inline marks used above. Escapes first, so no input can inject markup."""
+    s = esc(s)
+    for mark, tag in (('**', 'strong'), ('`', 'code'), ('*', 'em')):
+        parts = s.split(mark)
+        s = parts[0] + ''.join(
+            f'<{tag}>{p}</{tag}>' if i % 2 else p for i, p in enumerate(parts[1:], 1))
+    return s
+
+
+PAGE = '''<meta charset="utf-8">
+<title>The database, table by table — Lunenburg Budget Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {{ --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --code:#f3f1ec; }}
+@media (prefers-color-scheme: dark) {{
+  :root {{ --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --code:#23221f; }}
+}}
+* {{ box-sizing:border-box }}
+body {{ margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100% }}
+.wrap {{ max-width:880px; margin:0 auto; padding:22px 16px 80px }}
+header {{ border-bottom:2px solid var(--ink); padding-bottom:14px }}
+.kicker {{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }}
+h1 {{ font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }}
+.standfirst {{ font-size:16px; color:var(--muted); margin:0 }}
+.metrics {{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--grid);
+  border:1px solid var(--grid); border-radius:10px; overflow:hidden; margin:16px 0 }}
+.metric {{ background:var(--card); padding:12px 14px }}
+.metric .v {{ font-size:22px; font-weight:600; letter-spacing:-.02em;
+  font-family:ui-monospace,Menlo,monospace }}
+.metric .l {{ font-size:11.5px; color:var(--muted); text-transform:uppercase;
+  letter-spacing:.08em; margin-top:2px }}
+.stage {{ background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }}
+.stage.alt {{ background:transparent }}
+h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
+.cap {{ font-size:13.5px; color:var(--muted); margin:0 0 14px }}
+.q {{ border-top:1px solid var(--grid); padding-top:13px; margin-top:13px }}
+.qhead {{ display:flex; gap:9px; align-items:baseline; flex-wrap:wrap }}
+.qt {{ font-weight:600; font-size:14.5px; flex:1; min-width:200px }}
+.v {{ font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  padding:2px 7px; border-radius:20px; white-space:nowrap }}
+.v-answers {{ background:var(--traced); color:var(--bg) }}
+.v-partly {{ background:var(--hi); color:var(--bg) }}
+.v-not-yet {{ background:transparent; color:var(--muted); border:1px solid var(--grid) }}
+pre {{ background:var(--code); border-radius:7px; padding:10px 11px; overflow-x:auto;
+  margin:9px 0 6px }}
+pre code {{ font-size:12px; white-space:pre-wrap; overflow-wrap:anywhere }}
+.rc {{ font-size:12px; color:var(--muted); margin:0 0 6px;
+  font-family:ui-monospace,Menlo,monospace }}
+.scroll {{ overflow-x:auto; -webkit-overflow-scrolling:touch }}
+table {{ border-collapse:collapse; width:100%; font-size:13px }}
+th,td {{ text-align:left; padding:5px 10px 5px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }}
+th {{ font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted);
+  font-weight:600; white-space:nowrap }}
+td.num {{ text-align:right; font-family:ui-monospace,Menlo,monospace; white-space:nowrap }}
+td.ty {{ font-family:ui-monospace,Menlo,monospace; font-size:11.5px; color:var(--muted) }}
+code {{ font-family:ui-monospace,Menlo,monospace; font-size:12.5px }}
+.warn {{ background:var(--warn-bg); border-left:3px solid var(--warn);
+  border-radius:0 6px 6px 0; padding:11px 13px; font-size:13.5px; margin:10px 0 }}
+.warn.shortfall {{ border-left-color:var(--hi) }}
+details {{ border-bottom:1px solid var(--grid); padding:7px 0 }}
+details[open] {{ padding-bottom:11px }}
+summary {{ cursor:pointer; font-size:14px }}
+summary .n {{ color:var(--muted); font-size:12px;
+  font-family:ui-monospace,Menlo,monospace }}
+summary .yr {{ color:var(--traced); font-size:11.5px;
+  font-family:ui-monospace,Menlo,monospace }}
+details table {{ margin-top:9px; max-width:420px }}
+.gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
+@media (min-width:680px) {{ .metrics {{ grid-template-columns:repeat(4,1fr) }} }}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
+  <h1>The database, table by table</h1>
+  <p class="standfirst">Everything <code>sources/data/lunenburg.db</code> holds, what each
+  table is for, which years it actually covers — and, first, whether the question you
+  arrived with can be answered at all.</p>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="v">{n_tables}</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">{n_views}</div><div class="l">views</div></div>
+  <div class="metric"><div class="v">{n_rows}</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">{n_cols}</div><div class="l">columns</div></div>
+</div>
+
+{body}
+
+<p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
+database on {gen}. Do not edit — run the script. The CSVs in <code>sources/data/</code>
+are the source of truth; this database is a derived read model, rebuilt from scratch on
+every run.</p>
+</div>
+'''
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true')
+    args = ap.parse_args()
+    fresh = render(db())
+    rel = os.path.relpath(OUT, ROOT)
+    if args.check:
+        if not os.path.exists(OUT):
+            raise SystemExit(f'{rel} does not exist. Run without --check.')
+        if open(OUT, encoding='utf-8').read() != fresh:
+            raise SystemExit(f'STALE: {rel} no longer reproduces.\n'
+                             f'  Run: python3 scripts/build_schema_page.py')
+        print(f'ok: {rel} still reproduces')
+        return
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, 'w', encoding='utf-8') as fh:
+        fh.write(fresh)
+    print(f'wrote {rel} ({len(fresh):,} bytes)')
+
+
+if __name__ == '__main__':
+    main()

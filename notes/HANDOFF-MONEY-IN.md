@@ -40,7 +40,7 @@ the `--check` of all 21 generators; the only failure tonight is `sync_d1`, above
 | what | where |
 |---|---|
 | The whole town, three columns, 123 boxes | `notes/reference/data-model/town-money-flow.html` |
-| The schools, same model | `notes/reference/data-model/money-flow-v2.html` |
+| The schools, same model | `notes/reference/data-model/school-money-flow.html` |
 | The first school attempt, kept for comparison | `notes/reference/data-model/money-flow.html` |
 | The original hand-typed page, untouched | `notes/reference/data-model/money-in.html` |
 | Who decides, and who sets each dollar in | `notes/reference/data-model/who-decides.html` |
@@ -86,6 +86,52 @@ So, precisely:
 
 *Not yet established:* whether the $105,282 gap is netting, or simply that `settled` holds
 252 lines where `proposed` holds 321. Check that before quoting the gap as anything.
+
+### The $105,282 gap, resolved — it was neither netting nor missing lines
+
+**Settled 7 September 2026.** The figure was an artefact of two wrong comparisons stacked
+on each other, and correcting either one alone would still have left a residual.
+
+**First, it measured against the wrong appropriation.** The town's FY26 school
+appropriation is departments **300 + 301**, and `301 SCHOOL NON-RECURRING EXPENSES` is
+$40,000 of it. Department 300 alone is $26,247,474; the two together are $26,287,474.
+
+**Second, it used the wrong one of two district documents.** `budget_figure` stage
+`settled` is extracted from the district's *final budget document*. The FY27 workbook's
+`final_budget` column is a **different document about the same year**, and it is the one
+that ties: $26,287,475.93 against the appropriation's $26,287,474 — **$1.93 apart**, a
+reconciliation that was already in `build_db.py` and passing the whole time.
+
+So the real question was never budget-versus-vote. It was **two documents the district
+published, disagreeing with each other by $145,283.93** — and that difference is now
+itemised down to the penny:
+
+| | amount | what it is |
+|---|---:|---|
+| `E.S. Psychologist` | 98,784.00 | in the workbook, absent from the budget document |
+| `Curriculum Adoption` | 40,000.00 | in the workbook, absent from the budget document |
+| `Dues/Meetings` | 6,500.00 | both carry it, stated differently |
+| two lines at zero | 0.00 | `5500 - Crossing Guards`, `Kindergarten Aides/Regular` |
+| eight P.S. supply lines | 0.07 | rounding, in pennies |
+
+**Four reconciliations now assert this**, and the shape of them matters more than the
+result. The first version asserted that the total difference equalled the sum of the
+differences — which is true by algebra, passes forever, and has **no power to fail**. That
+is the `v1` mistake from rule 13 in a new costume. The check that shipped subtracts three
+*typed* amounts and asserts each one still stands individually, because a total is exactly
+what compensating errors hide behind.
+
+**One thing to be careful with.** The `E.S. Psychologist` at $98,784 is also one of only
+five nonzero lines FY26 `proposed` carries that `settled` does not. That the position was
+cut is a **hypothesis** the documents are consistent with — rule 7. Nothing in either
+document tests it, and the staff roster would not settle it either: it has no FTE and no
+funding source. What would settle it is a filled-position list, which nobody publishes.
+
+*Two things this does NOT establish:* that every year behaves this way — only FY26 has
+been decomposed — and that the workbook is the better document in general. It is the one
+that ties **for FY26**, which is a fact about FY26.
+
+
 
 ### We do NOT have to apportion the spending side. It is in the accounts.
 
@@ -407,8 +453,9 @@ Each was invisible in a table and obvious in a diagram.
    $2,392,572 pension, the largest single unknown in the model.
 5. **Ask for a debt schedule by project** — splits $2,547,439 of debt service now sitting
    in two accounts for all town borrowing, with school buildings inside it.
-6. **Check the $105,282 gap** between the district workbook and the appropriation: netting,
-   or simply that `settled` holds 252 lines where `proposed` holds 321?
+6. ~~**Check the $105,282 gap.**~~ **DONE 7 Sept 2026** — it was an artefact of two
+   stacked comparisons, not a gap in the money. Written up above; asserted by four new
+   reconciliations in `build_db.py`.
 7. **Fix the OCR grade-level bugs** TJ flagged in the roster data, and the spaced-letter
    artefacts generally. `revenue_history` shows the scale of the problem: 73 of 197
    printed names were split by spacing alone.
@@ -419,7 +466,7 @@ Each was invisible in a table and obvious in a diagram.
 
 ## Claims NOT established — do not restate these as fact
 
-- That the $105,282 gap is fee netting. It may be missing lines.
+- ~~That the $105,282 gap is fee netting. It may be missing lines.~~ **SETTLED 7 Sept 2026 — it was neither.** See *The $105,282 gap, resolved* above.
 - That MSBA stopped because a bond reached term. That is a guess with nothing testing it.
 - That WRRS grew 77%. Two observations, one of them prose from a narrative.
 - That Chapter 70 funds any particular school line. It cannot be traced past the general

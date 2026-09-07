@@ -827,6 +827,81 @@ def load_workbook(db):
     return len(out)
 
 
+# `fy` IS THE EXCEPTION TO "EVERYTHING TEXT", AND THIS IS WHY.
+#
+# The generic loaders below deliberately declare every column TEXT so that nothing is
+# silently changed on the way in. That is right for values. It was WRONG for `fy`, and it
+# cost us a whole class of silent zero.
+#
+# SQLite does not compare a TEXT '2023' equal to an INTEGER 2023. It does not raise
+# either -- it returns no rows. So `WHERE fy = 2023` answered correctly against
+# `budget_figure` (INTEGER, declared in DDL above) and returned NOTHING against
+# `revenue_history`, `annual_report_receipts` and 42 other tables, with no error to read.
+# Eighteen tables said yes and forty-four said nothing, to the same query.
+#
+# That is the third sub-cause in CLAUDE.md -- a result that matches nothing looks exactly
+# like data that is absent -- appearing in the one column every table is filtered on.
+#
+# So `fy` is coerced to INTEGER **only when every value in the column is a bare four-digit
+# year**, which changes no fact: '2014' and 2014 are the same year. Where a value is not a
+# year the column stays TEXT, because those are not years and must not be forced into one:
+#
+#   grant_award.fy / grants_history.fy = 'FY21-24'  a genuinely multi-year ESSER award
+#   rate_register.fy                   = ''         a rate with no year set
+#
+# `check_fy_types` below refuses to write the database if a new table arrives with a TEXT
+# `fy` that is not on that list, so the next one fails the build instead of the query.
+FY_TEXT_EXPECTED = {
+    'grant_award': "the ESSER award spans FY21-24 and is not a single year",
+    'grants_history': "the ESSER award spans FY21-24 and is not a single year",
+    'rate_register': "one rate carries no fiscal year at all",
+}
+
+
+def fy_is_year(data, col='fy'):
+    """True when every value in `col` is a bare four-digit year, so INTEGER loses nothing."""
+    vals = [r.get(col) for r in data]
+    return bool(vals) and all(v is not None and str(v).strip().isdigit()
+                              and len(str(v).strip()) == 4 for v in vals)
+
+
+def coerce_fy(data, cols):
+    """Return (declared types per column, a row-reader) with `fy` typed as a year if it is.
+
+    Returns TEXT for everything else -- see the note above for why that is deliberate.
+    """
+    as_year = 'fy' in cols and fy_is_year(data)
+    types = ['INTEGER' if (c == 'fy' and as_year) else 'TEXT' for c in cols]
+
+    def read(r):
+        return [int(str(r[c]).strip()) if (c == 'fy' and as_year) else r[c] for c in cols]
+    return types, read
+
+
+def check_fy_types(db):
+    """Refuse to write if any table's `fy` is TEXT for a reason nobody wrote down.
+
+    A silent zero is the worst failure this database has, because it is indistinguishable
+    from an honest empty answer. This is the check that makes the next one loud.
+    """
+    bad = []
+    for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"):
+        cols = {d[1]: d[2] for d in db.execute('PRAGMA table_info("%s")' % t)}
+        if cols.get('fy') != 'TEXT' or t in FY_TEXT_EXPECTED:
+            continue
+        vals = [r[0] for r in db.execute('SELECT DISTINCT fy FROM "%s"' % t)]
+        if vals and all(v is not None and str(v).strip().isdigit()
+                        and len(str(v).strip()) == 4 for v in vals):
+            bad.append(t)
+    if bad:
+        raise SystemExit(
+            'fy stored as TEXT but holding only years, in: %s\n'
+            '  `WHERE fy = 2023` returns ZERO ROWS against these and raises nothing.\n'
+            '  Load them through coerce_fy(), or add them to FY_TEXT_EXPECTED with a '
+            'reason.' % ', '.join(bad))
+    return len(FY_TEXT_EXPECTED)
+
+
 def load_reference(db):
     """Load the remaining CSVs verbatim, one table each, all columns TEXT.
 
@@ -852,9 +927,11 @@ def load_reference(db):
             else:
                 seen[c2] = 0
             safe.append('"%s"' % c2)
-        db.execute('CREATE TABLE "%s" (%s)' % (table, ', '.join(c + ' TEXT' for c in safe)))
+        types, read = coerce_fy(data, cols)
+        db.execute('CREATE TABLE "%s" (%s)'
+                   % (table, ', '.join('%s %s' % (c, t) for c, t in zip(safe, types))))
         db.executemany('INSERT INTO "%s" VALUES (%s)' % (table, ','.join('?' * len(cols))),
-                       [[r[c] for c in cols] for r in data])
+                       [read(r) for r in data])
         n += len(data)
     return n
 
@@ -897,10 +974,11 @@ def load_unloaded(db):
             continue
         table = name.replace('-', '_')
         cols = list(data[0].keys())
+        types, read = coerce_fy(data, cols)
         db.execute('CREATE TABLE %s (%s)'
-                   % (table, ', '.join('"%s" TEXT' % c for c in cols)))
+                   % (table, ', '.join('"%s" %s' % (c, t) for c, t in zip(cols, types))))
         db.executemany('INSERT INTO %s VALUES (%s)' % (table, ','.join('?' * len(cols))),
-                       [[r[c] for c in cols] for r in data])
+                       [read(r) for r in data])
         n += len(data)
     return n
 
@@ -938,10 +1016,11 @@ def load_money_model(db):
         if not data:
             continue
         cols = list(data[0].keys())
+        types, read = coerce_fy(data, cols)
         db.execute('CREATE TABLE %s (%s)'
-                   % (table, ', '.join('"%s" TEXT' % c for c in cols)))
+                   % (table, ', '.join('"%s" %s' % (c, t) for c, t in zip(cols, types))))
         db.executemany('INSERT INTO %s VALUES (%s)' % (table, ','.join('?' * len(cols))),
-                       [[r[c] for c in cols] for r in data])
+                       [read(r) for r in data])
         if index:
             db.execute('CREATE INDEX ix_%s ON %s%s' % (table, table, index))
         n += len(data)
@@ -980,14 +1059,14 @@ def load_money_model(db):
         ('report_receipt',))}
     src = db.execute("""SELECT fy, source, amount, document, page
                         FROM annual_report_receipts WHERE status='checked'""").fetchall()
-    db.execute('CREATE TABLE revenue_history (fy TEXT, printed_name TEXT, '
+    db.execute('CREATE TABLE revenue_history (fy INTEGER, printed_name TEXT, '
                'source_key TEXT, class TEXT, label TEXT, amount REAL, '
                'document TEXT, page TEXT)')
     hist = []
     for fy, source, amount, document, page in src:
         k = _re.sub(r'[^A-Z0-9]', '', (source or '').upper())
         g, lab = cls.get(k, ('local', source))
-        hist.append((fy, source, k, g, lab, float(amount or 0), document, page))
+        hist.append((int(fy), source, k, g, lab, float(amount or 0), document, page))
     db.executemany('INSERT INTO revenue_history VALUES (?,?,?,?,?,?,?,?)', hist)
     db.execute('CREATE INDEX ix_revenue_history ON revenue_history(fy, class)')
     unmatched = sum(1 for h in hist if h[2] not in cls)
@@ -1269,6 +1348,69 @@ def reconcile(db):
                  WHERE account_id IN ('0100-300','0100-301') AND period=9"""),
           0.0, tol=2.0)
 
+    # THE $105,282 "GAP", WHICH WAS NEITHER $105,282 NOR A GAP.
+    #
+    # The handoff carried an open question: the district's FY26 budget was $105,282 below
+    # the town's appropriation, and we did not know whether that was fee netting (rule 11)
+    # or missing lines. It was neither. It was two wrong comparisons stacked:
+    #
+    #   1. It measured against department 300 alone. The town's school appropriation is
+    #      300 + 301, and 301 SCHOOL NON-RECURRING EXPENSES is $40,000 of it.
+    #   2. It used `budget_figure` stage `settled`, which is extracted from the district's
+    #      FINAL BUDGET DOCUMENT -- a different document from the FY27 workbook, about the
+    #      same year. The check above shows the WORKBOOK ties to the appropriation within
+    #      $1.93. The budget document does not, and the difference is between two things
+    #      the district published, not between a budget and a vote.
+    #
+    # So this asserts the second difference is fully ITEMISED rather than merely measured.
+    # Four labels the workbook carries and the budget document does not, and one line the
+    # two documents state differently, account for all of it:
+    #
+    #     98,784.00  E.S. Psychologist          40,000.00  Curriculum Adoption
+    #      6,500.00  Dues/Meetings                   0.00  two lines carrying zero
+    #
+    # A check on the total alone would pass while a new discrepancy appeared and an old
+    # one vanished by the same amount -- compensating errors, which this project has
+    # shipped before. So the residual is what is asserted, and it is pennies.
+    #
+    # The E.S. Psychologist is worth noting and NOT worth explaining here. It is also one
+    # of only five nonzero lines in FY26 `proposed` that `settled` does not carry. That
+    # the position was cut is a HYPOTHESIS the two documents are consistent with; nothing
+    # in them tests it, and the roster would not settle it either -- it has no FTE.
+    import re as _re
+
+    def _norm(x):
+        return _re.sub(r'[^a-z0-9]', '', (x or '').lower())
+
+    def _bag(sql):
+        out = {}
+        for lab, val in db.execute(sql):
+            out[_norm(lab)] = out.get(_norm(lab), 0.0) + (val or 0.0)
+        return out
+
+    _wb = _bag("""SELECT b.label, w.value FROM workbook_figure w
+                  LEFT JOIN budget_line b USING (line_key)
+                  WHERE w.fy=2026 AND w.column_kind='final_budget' AND w.row_kind='line'""")
+    _bd = _bag("""SELECT label, value FROM budget_figure
+                  WHERE fy=2026 AND stage='settled'""")
+    # The discrepancies we have actually looked at, ENUMERATED. Subtracting a residual
+    # computed from the same two bags would be an identity -- it would restate the
+    # difference as itself and pass forever. These are typed because they are findings.
+    _KNOWN_FY26 = {
+        'espsychologist': 98784.00,     # in the workbook, absent from the budget document
+        'curriculumadoption': 40000.00,  # ditto
+        'duesmeetings': 6500.00,        # both documents carry it, stated differently
+    }
+    _residual = sum(_wb.values()) - sum(_bd.values()) - sum(_KNOWN_FY26.values())
+    check(db, 'FY26 workbook vs district budget document, residual after 3 known lines',
+          _residual, 0.0, tol=1.0)   # a dollar: eight P.S. supply lines round differently
+    # ...and each known line is still the discrepancy we recorded, not a number that
+    # happens to sum right. Compensating errors are how this project has been fooled
+    # before, and a total is exactly what hides them.
+    for _k, _amt in _KNOWN_FY26.items():
+        check(db, 'FY26 discrepancy still stands: %s' % _k,
+              _wb.get(_k, 0.0) - _bd.get(_k, 0.0), _amt, tol=0.01)
+
     # The first ACCOUNT-LEVEL general fund expenditure report in the archive: FY26 at
     # period 12, sent by the Town Manager on 2 September 2026. Asserted against the
     # printed PDF's own GRAND TOTAL, which is the only thing establishing that the
@@ -1369,6 +1511,10 @@ def main():
           '%d figures still unresolved' % (fixed, unresolved))
     for m in missing[:5]:
         print('      no document for %s' % m)
+
+    n_text_fy = check_fy_types(db)
+    print('  fy typing              every fy is INTEGER except %d documented exception(s)'
+          % n_text_fy)
 
     coded, overlap = check_join_key(db)
     print('  function codes   %5d accounts carry one; %d shared with the budget' %

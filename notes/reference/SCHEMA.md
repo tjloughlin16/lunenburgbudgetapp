@@ -113,6 +113,37 @@ poison every budget-to-actual comparison built on it.
 
 ---
 
+## `fy` is INTEGER everywhere, and the day it was not
+
+`WHERE fy = 2023` is the most common filter anybody writes against this database. For a
+long time it answered against 18 tables and returned **zero rows, raising nothing**,
+against the other 44 — because the generic CSV loaders declared every column `TEXT`, and
+SQLite does not compare TEXT `'2023'` equal to INTEGER `2023`.
+
+That is the worst failure this database can have, and CLAUDE.md already names it: *a result
+that matches nothing looks exactly like data that is absent.* There was no error to read
+and no way to tell a real empty year from a type mismatch.
+
+`fy` is now INTEGER in every table where every value is a bare four-digit year, which
+changes no fact — `'2014'` and `2014` are the same year. Three tables keep `TEXT`, and
+each has a reason that is not a year:
+
+| table | value | why |
+|---|---|---|
+| `grant_award`, `grants_history` | `FY21-24` | one ESSER award genuinely spans four years |
+| `rate_register` | `''` | one rate carries no fiscal year at all |
+
+`check_fy_types()` in `build_db.py` **refuses to write the database** if a new table
+arrives with a TEXT `fy` holding only years and no recorded reason. The next one fails the
+build instead of the query.
+
+> The general form, and it is the reason this section exists rather than a comment in the
+> loader: **a type mismatch on a filter column is silent, and silence is indistinguishable
+> from an honest empty answer.** It is the same shape as the four silent zeros of
+> 5 September — a join that matched nothing, reported as data that was not there.
+
+---
+
 ## Sign conventions and rounding, both of which have already bitten
 
 **Revenue is stored negative, exactly as MUNIS prints it** (`Print revenue as credit: Y`).

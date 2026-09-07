@@ -62,7 +62,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow.html')
-OUT2 = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'money-flow-v2.html')
+OUT2 = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'school-money-flow.html')
 
 FY = 2026
 P_DEPT = 9      # the report that carries department-level rows
@@ -1042,9 +1042,32 @@ def render_v2(c):
          f'<text class="dhd" x="{MX}" y="26">WHERE IT POOLS</text>',
          f'<text class="dhd" x="{RX}" y="26">MONEY OUT — each dollar once</text>']
 
-    def arc(x1, y1, x2, y2, cls, dip=0):
+    def arc(x1, y1, x2, y2, cls, avoid=None):
+        """Draw an edge, dipping ONLY as far as it takes to clear `avoid`.
+
+        The restricted edges skip the general fund entirely -- that is the whole point of
+        drawing them -- so they must not be drawn through the box representing it. They
+        used to take a flat `dip=130`, which cleared the pot and also sagged every edge
+        that was never going anywhere near it: a source and its use on the SAME ROW came
+        out as a 180px droop between two boxes that should be joined by a straight line.
+
+        So the dip is computed from the geometry instead of assumed. For the cubic below,
+        with both control points offset by `d`, the curve's deepest point is at t=0.5 and
+        sits `0.75 * d` past the straight line -- so `d` is solved backwards from the
+        clearance actually needed. An edge that clears the pot on its own gets d = 0 and
+        is drawn straight, which is what a reader expects a same-row connection to be.
+        """
         mx = (x1 + x2) / 2
-        o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1+dip} {mx},{y2+dip} '
+        d = 0.0
+        if avoid and x2 != x1:
+            L, R, T, B = avoid
+            yat = lambda x: y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+            edge_ys = [yat(L), yat(R)]
+            # Does the straight line pass through the box, vertically and horizontally?
+            if min(x1, x2) < R and max(x1, x2) > L and min(edge_ys) < B and max(edge_ys) > T:
+                want = B + 22 - (y1 + y2) / 2      # go under it, with a gutter
+                d = max(0.0, want / 0.75)
+        o.append(f'<path class="e {cls}" d="M{x1},{y1} C{mx},{y1+d:.1f} {mx},{y2+d:.1f} '
                  f'{x2},{y2}"/>')
 
     for k in POT:
@@ -1058,7 +1081,8 @@ def render_v2(c):
         if src not in ly or dst not in ry:
             continue
         arc(LX + BW, ly[src] + LH / 2, RX, ry[dst] + LH / 2,
-            'bypass' if how == 'restricted' else how, dip=130)
+            'bypass' if how == 'restricted' else how,
+            avoid=(MX, MX + MW, pot_top, pot_bot))
 
     o.append(f'<g class="b pot"><rect x="{MX}" y="{pot_top}" width="{MW}" '
              f'height="{pot_bot - pot_top}" rx="7"/>'
@@ -1208,7 +1232,7 @@ def main():
         if not os.path.exists(OUT):
             raise SystemExit(f'{rel} does not exist. Run without --check.')
         if not os.path.exists(OUT2) or open(OUT2, encoding='utf-8').read() != render_v2(c):
-            raise SystemExit(f'STALE: money-flow-v2.html no longer reproduces.\n'
+            raise SystemExit(f'STALE: school-money-flow.html no longer reproduces.\n'
                              f'  Run: python3 scripts/build_money_flow.py')
         if open(OUT, encoding='utf-8').read() != fresh:
             raise SystemExit(f'STALE: {rel} no longer reproduces.\n'

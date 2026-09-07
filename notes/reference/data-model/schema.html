@@ -1,0 +1,1332 @@
+<meta charset="utf-8">
+<title>The database, table by table — Lunenburg Budget Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --bg:#fbfaf8; --card:#fff; --ink:#191919; --muted:#6b6b6b; --grid:#e2ded7;
+  --traced:#1f5c3d; --hi:#9a4f14; --warn:#8a6d10; --warn-bg:#faf3de; --code:#f3f1ec; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141412; --card:#1c1b19; --ink:#eeebe6; --muted:#a09b93; --grid:#34322e;
+    --traced:#79c39f; --hi:#e2a068; --warn:#d9bd67; --warn-bg:#2c2718; --code:#23221f; }
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-text-size-adjust:100% }
+.wrap { max-width:880px; margin:0 auto; padding:22px 16px 80px }
+header { border-bottom:2px solid var(--ink); padding-bottom:14px }
+.kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }
+h1 { font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }
+.standfirst { font-size:16px; color:var(--muted); margin:0 }
+.metrics { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--grid);
+  border:1px solid var(--grid); border-radius:10px; overflow:hidden; margin:16px 0 }
+.metric { background:var(--card); padding:12px 14px }
+.metric .v { font-size:22px; font-weight:600; letter-spacing:-.02em;
+  font-family:ui-monospace,Menlo,monospace }
+.metric .l { font-size:11.5px; color:var(--muted); text-transform:uppercase;
+  letter-spacing:.08em; margin-top:2px }
+.stage { background:var(--card); border:1px solid var(--grid); border-radius:10px;
+  padding:16px 15px; margin:16px 0 }
+.stage.alt { background:transparent }
+h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
+.cap { font-size:13.5px; color:var(--muted); margin:0 0 14px }
+.q { border-top:1px solid var(--grid); padding-top:13px; margin-top:13px }
+.qhead { display:flex; gap:9px; align-items:baseline; flex-wrap:wrap }
+.qt { font-weight:600; font-size:14.5px; flex:1; min-width:200px }
+.v { font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:700;
+  padding:2px 7px; border-radius:20px; white-space:nowrap }
+.v-answers { background:var(--traced); color:var(--bg) }
+.v-partly { background:var(--hi); color:var(--bg) }
+.v-not-yet { background:transparent; color:var(--muted); border:1px solid var(--grid) }
+pre { background:var(--code); border-radius:7px; padding:10px 11px; overflow-x:auto;
+  margin:9px 0 6px }
+pre code { font-size:12px; white-space:pre-wrap; overflow-wrap:anywhere }
+.rc { font-size:12px; color:var(--muted); margin:0 0 6px;
+  font-family:ui-monospace,Menlo,monospace }
+.scroll { overflow-x:auto; -webkit-overflow-scrolling:touch }
+table { border-collapse:collapse; width:100%; font-size:13px }
+th,td { text-align:left; padding:5px 10px 5px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }
+th { font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted);
+  font-weight:600; white-space:nowrap }
+td.num { text-align:right; font-family:ui-monospace,Menlo,monospace; white-space:nowrap }
+td.ty { font-family:ui-monospace,Menlo,monospace; font-size:11.5px; color:var(--muted) }
+code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px }
+.warn { background:var(--warn-bg); border-left:3px solid var(--warn);
+  border-radius:0 6px 6px 0; padding:11px 13px; font-size:13.5px; margin:10px 0 }
+.warn.shortfall { border-left-color:var(--hi) }
+details { border-bottom:1px solid var(--grid); padding:7px 0 }
+details[open] { padding-bottom:11px }
+summary { cursor:pointer; font-size:14px }
+summary .n { color:var(--muted); font-size:12px;
+  font-family:ui-monospace,Menlo,monospace }
+summary .yr { color:var(--traced); font-size:11.5px;
+  font-family:ui-monospace,Menlo,monospace }
+details table { margin-top:9px; max-width:420px }
+.gen { margin-top:30px; font-size:12px; color:var(--muted) }
+@media (min-width:680px) { .metrics { grid-template-columns:repeat(4,1fr) } }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
+  <h1>The database, table by table</h1>
+  <p class="standfirst">Everything <code>sources/data/lunenburg.db</code> holds, what each
+  table is for, which years it actually covers — and, first, whether the question you
+  arrived with can be answered at all.</p>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="v">70</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">16</div><div class="l">views</div></div>
+  <div class="metric"><div class="v">66,630</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">883</div><div class="l">columns</div></div>
+</div>
+
+<div class="stage"><h2>Can I ask this?</h2>
+<p class="cap">Every query below is <strong>run against the live database when this page is built</strong>, so a question that stops answering breaks the build rather than sitting here looking answerable. Two of them return nothing, and that is the honest state of the archive rather than a fault.</p>
+<div class="q">
+<div class="qhead"><span class="v v-partly">partly</span><span class="qt">Every source of revenue in FY2022, by name and amount, with our classification</span></div>
+<pre><code>SELECT fy, printed_name, label, class, amount, document, page FROM revenue_history WHERE fy = 2022 ORDER BY amount DESC</code></pre>
+<p class="rc">100 rows</p>
+<div class="scroll"><table><tr><th>fy</th><th>printed_name</th><th>label</th><th>class</th><th>amount</th><th>document</th><th>page</th></tr>
+<tr><td class="num">2022</td><td>REAL ESTATE TAXES</td><td>REAL ESTATE TAXES</td><td>levy</td><td class="num">28756474.97</td><td>4129-fy-2022-annual-town-report.pdf</td><td>26</td></tr>
+<tr><td class="num">2022</td><td>CH 70 SCHOOL AID</td><td>CH 70 SCHOOL AID</td><td>state</td><td class="num">7823618.0</td><td>4129-fy-2022-annual-town-report.pdf</td><td>26</td></tr>
+<tr><td class="num">2022</td><td>TRANSFERS FROM OTHER FUNDS</td><td>TRANSFERS FROM OTHER FUNDS</td><td>transfer</td><td class="num">2391150.83</td><td>4129-fy-2022-annual-town-report.pdf</td><td>26</td></tr>
+<tr><td class="num">2022</td><td>MOTOR VEHICLE EXCISE</td><td>MOTOR VEHICLE EXCISE</td><td>local</td><td class="num">1839037.96</td><td>4129-fy-2022-annual-town-report.pdf</td><td>26</td></tr>
+<tr><td class="num">2022</td><td>UNRESTRICTED GEN&#x27;L GOVT AID</td><td>UNRESTRICTED GEN&#x27;L GOVT AID</td><td>state</td><td class="num">1162230.0</td><td>4129-fy-2022-annual-town-report.pdf</td><td>26</td></tr>
+</table></div>
+<p class="cap">…and 95 more.</p>
+<p class="warn shortfall"><code>class</code> says what KIND of revenue it is — levy, state aid, local receipt, transfer — which is a property of where the money came FROM. It does not say what the money went on to pay for, and for anything landing in the general fund nothing can: that money is fungible by law and no document apportions it. Only restricted funds have a traceable destination, and those are in <code>money_edges</code>.</p>
+<p class="cap">The classification is joined in at build time from <code>money_classification</code>, so the name the report printed and the group we assigned are in one row.</p>
+</div>
+<div class="q">
+<div class="qhead"><span class="v v-not-yet">not yet</span><span class="qt">The same question for FY2023</span></div>
+<pre><code>SELECT fy, printed_name, amount FROM revenue_history WHERE fy = 2023</code></pre>
+<p class="rc">0 rows</p>
+<p class="cap">Returns nothing, and that is the correct answer rather than a failure. <code>revenue_history</code> carries only years whose extract was CHECKED against the report’s own printed total. FY2023 has 10 unchecked rows in <code>annual_report_receipts</code>; loading them here would make five verified years and one guess look identical.</p>
+</div>
+<div class="q">
+<div class="qhead"><span class="v v-answers">answers</span><span class="qt">What was budgeted for the Superintendent, FY2022 to FY2025</span></div>
+<pre><code>SELECT fy, stage, label, value FROM budget_figure WHERE label LIKE &#x27;%Superintendent%&#x27; AND fy BETWEEN 2022 AND 2025 ORDER BY fy, stage</code></pre>
+<p class="rc">10 rows</p>
+<div class="scroll"><table><tr><th>fy</th><th>stage</th><th>label</th><th>value</th></tr>
+<tr><td class="num">2022</td><td>actual</td><td>Superintendent</td><td class="num">165000.0</td></tr>
+<tr><td class="num">2022</td><td>proposed</td><td>Superintendent</td><td class="num">157000.0</td></tr>
+<tr><td class="num">2022</td><td>settled</td><td>Superintendent</td><td class="num">165000.0</td></tr>
+<tr><td class="num">2023</td><td>actual</td><td>Superintendent</td><td class="num">171000.0</td></tr>
+<tr><td class="num">2023</td><td>proposed</td><td>Superintendent</td><td class="num">171000.0</td></tr>
+</table></div>
+<p class="cap">…and 5 more.</p>
+<p class="warn">One row per <strong>stage</strong>, and they are different quantities: <code>proposed</code> is what was asked for, <code>settled</code> what was voted, <code>actual</code> what the later document reported. Rule 1 — never compute a growth rate from one stage to another.</p>
+<p class="cap"><code>budget_figure</code> is one row per line × year × stage × variant. Filtering on a label works here because &quot;Superintendent&quot; is unique; most lines are not, which is what <code>line_key</code> is for.</p>
+</div>
+<div class="q">
+<div class="qhead"><span class="v v-partly">partly</span><span class="qt">Every line in the school budget for FY2024, by name and amount</span></div>
+<pre><code>SELECT fy, stage, label, value FROM budget_figure WHERE fy = 2024 AND stage = &#x27;proposed&#x27; ORDER BY value DESC</code></pre>
+<p class="rc">319 rows</p>
+<div class="scroll"><table><tr><th>fy</th><th>stage</th><th>label</th><th>value</th></tr>
+<tr><td class="num">2024</td><td>proposed</td><td>Health Insurance</td><td class="num">3076306.0</td></tr>
+<tr><td class="num">2024</td><td>proposed</td><td>H.S. Teachers/Regular</td><td class="num">2899395.0</td></tr>
+<tr><td class="num">2024</td><td>proposed</td><td>M.S. Teachers/Regular</td><td class="num">2027997.0</td></tr>
+<tr><td class="num">2024</td><td>proposed</td><td>E.S. Teachers/Regular</td><td class="num">1527124.0</td></tr>
+<tr><td class="num">2024</td><td>proposed</td><td>P.S. Teachers/Regular</td><td class="num">1033468.0</td></tr>
+</table></div>
+<p class="cap">…and 314 more.</p>
+<p class="warn shortfall">FY2024 has no <code>settled</code> stage in the archive — only <code>proposed</code> and <code>actual</code>. So this is what the district ASKED for that year, not what the town voted. The stage you get is not the stage you named, and the coverage table below is the only place that difference is visible before you query.</p>
+<p class="cap">Which stages exist varies by year, so a query written for one year can silently return nothing for another.</p>
+</div>
+<div class="q">
+<div class="qhead"><span class="v v-answers">answers</span><span class="qt">Where the money actually went in FY2026, by department, with who decides</span></div>
+<pre><code>SELECT department, control, voted, expended FROM v_spending_classified WHERE fy = 2026 AND period = 9 ORDER BY expended DESC LIMIT 12</code></pre>
+<p class="rc">12 rows</p>
+<div class="scroll"><table><tr><th>department</th><th>control</th><th>voted</th><th>expended</th></tr>
+<tr><td>SCHOOL DEPARTMENT</td><td>delegated</td><td class="num">26247474.0</td><td class="num">15736640.86</td></tr>
+<tr><td>WRRS ASSESSMENT</td><td>assessed</td><td class="num">2392572.0</td><td class="num">2392572.0</td></tr>
+<tr><td>INSURANCE</td><td>bargained</td><td class="num">3713520.0</td><td class="num">2240086.02</td></tr>
+<tr><td>POLICE DEPARTMENT</td><td>discretionary</td><td class="num">2406172.0</td><td class="num">1686886.24</td></tr>
+<tr><td>FIRE DEPARTMENT</td><td>discretionary</td><td class="num">1717588.0</td><td class="num">1169012.23</td></tr>
+</table></div>
+<p class="cap">…and 7 more.</p>
+<p class="warn"><code>control</code> is our classification of who holds the decision, not a published field. <code>voted</code> and <code>expended</code> are the town’s own figures; the column beside them is ours and is labelled that way everywhere it appears.</p>
+<p class="cap">Spending IS traceable to a department, which is why this answers where the revenue question above cannot.</p>
+</div>
+<div class="q">
+<div class="qhead"><span class="v v-answers">answers</span><span class="qt">The full ledger for one account across the year</span></div>
+<pre><code>SELECT l.fy, l.period, a.name, a.account_id, l.original, l.revised, l.expended, l.available FROM ledger_snapshot l JOIN account a USING (account_id) WHERE a.account_id LIKE &#x27;0100-S%&#x27; AND l.fy = 2026 ORDER BY l.expended DESC LIMIT 10</code></pre>
+<p class="rc">10 rows</p>
+<div class="scroll"><table><tr><th>fy</th><th>period</th><th>name</th><th>account_id</th><th>original</th><th>revised</th><th>expended</th><th>available</th></tr>
+<tr><td class="num">2026</td><td class="num">12</td><td>HEALTH INS</td><td>0100-S5991992-570001</td><td class="num">3701195.0</td><td class="num">3701195.0</td><td class="num">3622881.65</td><td class="num">78313.35</td></tr>
+<tr><td class="num">2026</td><td class="num">12</td><td>HS TEACHER</td><td>0100-S2066101-511001</td><td class="num">2719099.0</td><td class="num">2719099.0</td><td class="num">2791452.42</td><td class="num">-72353.42</td></tr>
+<tr><td class="num">2026</td><td class="num">12</td><td>MS TEACHER</td><td>0100-S2055101-511001</td><td class="num">2038757.0</td><td class="num">2038757.0</td><td class="num">2022044.44</td><td class="num">16712.56</td></tr>
+<tr><td class="num">2026</td><td class="num">12</td><td>ES TEACHER</td><td>0100-S2044101-511001</td><td class="num">1552471.0</td><td class="num">1552471.0</td><td class="num">1556544.17</td><td class="num">-4073.17</td></tr>
+<tr><td class="num">2026</td><td class="num">12</td><td>PS TEACH R</td><td>0100-S2072101-511001</td><td class="num">1172728.46</td><td class="num">1172728.46</td><td class="num">1095292.39</td><td class="num">77436.07</td></tr>
+</table></div>
+<p class="cap">…and 5 more.</p>
+<p class="warn"><code>period</code> is a point in time inside the year, not a stage. Two periods of the same year are two different MUNIS reports and adding them double-counts.</p>
+<p class="cap">The <code>S</code> prefix is the structural way to find school accounts — it does not depend on any name, and MUNIS names are ten characters typed by a person.</p>
+</div>
+</div>
+<div class="stage alt"><h2>The columns you cannot leave out</h2>
+<p class="cap">None of these raises an error when omitted. Each returns a number that is the sum of two different things, which is why every one of them has been got wrong here at least once.</p>
+<div class="scroll"><table><tr><th>column</th><th>in</th><th>what happens if you omit it</th></tr>
+<tr><td><code>status</code></td><td>annual report extracts</td><td><code>checked</code>, <code>check failed</code>, <code>no check</code>. Summing across them mixes verified figures with unverified ones.</td></tr>
+<tr><td><code>level</code></td><td><code>account</code>, <code>ledger_snapshot</code></td><td><code>department</code> roll-ups sit in the same table as their own detail. Summing both adds the budget to itself.</td></tr>
+<tr><td><code>account_type</code></td><td><code>account</code></td><td>Revenue is stored NEGATIVE. Omitting it once made the town’s whole budget compute as minus $997,871.</td></tr>
+<tr><td><code>period</code></td><td><code>ledger_snapshot</code></td><td>Two periods are two different MUNIS reports of the same year, not two halves of it.</td></tr>
+<tr><td><code>stage</code></td><td><code>budget_figure</code></td><td><code>proposed</code>, <code>settled</code>, <code>actual</code>. Rule 1: a rate measured across stages is partly growth and partly the step between them.</td></tr>
+<tr><td><code>variant</code></td><td><code>budget_figure</code></td><td>FY27 has four whole budgets — Balanced, Core, Level Service, Restoration. Without this you sum all four.</td></tr>
+<tr><td><code>v1 … v8</code></td><td>annual report extracts</td><td>ORDINALS, not column names: the first column of THAT PAGE that held figures. Summing <code>v1</code> down a run adds one page’s APPROPRIATED to another’s TOTAL EXPENDED.</td></tr>
+</table></div>
+<p class="warn"><strong>And one that is now fixed.</strong> <code>fy</code> was stored as TEXT in 44 tables and INTEGER in 18, so <code>WHERE fy = 2023</code> answered against a third of the database and returned <em>zero rows, with no error,</em> against the rest. It is INTEGER everywhere now except three documented exceptions, and <code>check_fy_types</code> in <code>build_db.py</code> fails the build if a new table arrives without it.</p>
+</div>
+<div class="stage"><h2>The spine — what a budget said and what the books say</h2>
+<p class="cap">Three fact tables, three different grains. Confusing them is how a budget gets compared to an actual that is not its own.</p>
+<details><summary><code>budget_figure</code> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>variant</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>budget_line</code> <span class="n">688 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>section</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>function_group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>ledger_snapshot</code> <span class="n">983 rows</span> <span class="yr">2026–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>account_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>period</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>original</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>transfers</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>revised</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>expended</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>available</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>pct_used</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>workbook_figure</code> <span class="n">3,261 rows</span> <span class="yr">2023, 2024, 2025, 2026, 2027, 2029</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>row</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>column_kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>row_kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>account</code> <span class="n">981 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>account_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fund_name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>org</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>object</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>account_string</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>function</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>account_type</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>first_seen_fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>last_seen_fy</code></td><td class="ty">INTEGER</td></tr>
+</table></div></details>
+<details><summary><code>fund</code> <span class="n">68 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>restriction</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>fiscal_period</code> <span class="n">13 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>period</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>months_elapsed</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>is_final</code></td><td class="ty">INTEGER</td></tr>
+</table></div></details>
+<details><summary><code>crosswalk</code> <span class="n">0 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>line_key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>account_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>method</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>confidence</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>evidence</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>munis_ledger</code> <span class="n">983 rows</span> <span class="yr">2026–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>period</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fund_name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>funds_covered</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>account_type</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>org</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>object</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>account</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>function</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>original</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>transfers</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>revised</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>expended</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>available</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pct_used</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>totals_only</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>suppress_zero</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rounded_columns</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>lps_budget_lines</code> <span class="n">356 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>row</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>section</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>function_group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_item</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy23_actual</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy24_actual</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy25_actual</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy25_budget</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy26_final</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy26_actual_td</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy26_encumb_td</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy27_restoration</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy27_core</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy27_level_service</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy27_balanced</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>forecast_outyear</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>restoration_2_24_26</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>comments</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>line_history</code> <span class="n">9,503 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>variant</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>line_history_coverage</code> <span class="n">86 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_year</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>data_rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rows_with_layout</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rows_short_of_columns</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>figures</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>header_line</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>header_years</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>header_kinds</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_date</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>covers</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reason</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>line_history_disagreements</code> <span class="n">1,497 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>variant</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>is_kept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>spread</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>account_names</code> <span class="n">124 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>object</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>org</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>code</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>readable</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>note</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>town_ledger_fy26_q3</code> <span class="n">67 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>original</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>transfers</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>revised</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>expended</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>available</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pct_used</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>stated_figure</code> <span class="n">2 rows</span> <span class="yr">2025–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>metric</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>stated_on</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>stated_by</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>quote</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>supersedes</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>note</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+</div>
+<div class="stage"><h2>Money in, money out — the classification we built</h2>
+<p class="cap">Our model of every route money takes in and out, as data rather than as a diagram. The <code>how</code>/<code>why</code> columns carry the basis for each call, so a classification can be argued with rather than only read.</p>
+<details><summary><code>money_classification</code> <span class="n">252 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>classification</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>how</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>why</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>money_edges</code> <span class="n">11 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>use</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>why</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>money_assumptions</code> <span class="n">6 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>assumption</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>evidence</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rests_on</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>settled_by</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>money_gaps</code> <span class="n">14 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>side</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>what</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>why</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>revenue_history</code> <span class="n">504 rows</span> <span class="yr">2014, 2015, 2017, 2018, 2022</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>printed_name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_key</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>class</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>fund_activity</code> <span class="n">61 rows</span> <span class="yr">2026–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>period</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>opening_balance</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>revenue</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>salaries</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>expenditure</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>closing_balance</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>school_special_revenue_fy26_q3</code> <span class="n">62 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>revenue</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>salaries</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>expenditure</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>encumbered</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>balance</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>fund_1301_cash_journal</code> <span class="n">277 rows</span> <span class="yr">2024–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>source_row</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>eff_date</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>post_date</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>src</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>src_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>period</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>journal</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ref1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>po_ref2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ref3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reference</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>running_balance_derived</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>check_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>warrant</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>voucher</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>vendor</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>comments</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>grant_award</code> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>owner</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>url</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>sha256</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>grants_history</code> <span class="n">79 rows</span> <span class="yr">2020, 2021, 2022, 2023, 2024, FY21-24</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>owner</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>esser</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>disagreement</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_url</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>our_copy</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>sha256</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>variance_by_group</code> <span class="n">59 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>function_group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>years</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>budgeted</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>spent</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>net</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>gross</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>churn</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>worst_year</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>best_year</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+</div>
+<div class="stage"><h2>The annual town reports — sixteen years, read page by page</h2>
+<p class="cap">Extracts from the printed reports. <strong>Nothing here may be aggregated without splitting on <code>status</code></strong>, and <code>v1</code>..<code>v8</code> are ORDINALS — the first column of that page that held figures — not named columns. Read <code>column_meaning</code>.</p>
+<details><summary><code>annual_report_catalogue</code> <span class="n">863 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_heading</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pages</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>what_it_is</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>grain</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>layout</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>approx_rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>extractable</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>notes</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>cluster</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>annual_report_contents</code> <span class="n">199 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>table</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pages</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page_count</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pages_with_figures</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>figure_rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>figures</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>checkable</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>csv_fields</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>grain</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>annual_report_receipts</code> <span class="n">1,137 rows</span> <span class="yr">2011–2023</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>annual_report_survey</code> <span class="n">2,751 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>mode</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>gutters</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>money</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>chars</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>sections</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>totals</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>note</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_appropriations</code> <span class="n">4,665 rows</span> <span class="yr">2011 … 2025 (14 years)</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_capital_projects</code> <span class="n">616 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_debt</code> <span class="n">354 rows</span> <span class="yr">2011, 2017, 2019, 2020, 2021, 2023, 2024, 2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_dept_activity</code> <span class="n">515 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_elections</code> <span class="n">2,012 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_enrollment_mcas</code> <span class="n">337 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_gross_wages</code> <span class="n">3,545 rows</span> <span class="yr">2011 … 2025 (13 years)</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_monty_tech</code> <span class="n">70 rows</span> <span class="yr">2017–2017</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_officials</code> <span class="n">237 rows</span> <span class="yr">2011 … 2024 (13 years)</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_trust_funds</code> <span class="n">642 rows</span> <span class="yr">2011 … 2025 (13 years)</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_valuation</code> <span class="n">316 rows</span> <span class="yr">2011–2019</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_vital_records</code> <span class="n">96 rows</span> <span class="yr">2011 … 2025 (14 years)</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>panel</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>label_missing</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table_family</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v7</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v8</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>repaired_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unparsed_cells</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>column_meaning</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>report_anomalies</code> <span class="n">521 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pages</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>detail</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>special_revenue_funds</code> <span class="n">2,387 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fund</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>is_subtotal</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v1</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v2</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v3</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v4</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v5</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>v6</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>n_values</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ruler_spanned</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>row_check</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>derived_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>columns_tying</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>extraction_plan</code> <span class="n">553 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pages</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_heading</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>table</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>grain</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>checkable</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>extractable</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>notes</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>ballot_questions</code> <span class="n">7 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>date</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>election</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>question</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>type</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>purpose</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>yes</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>no</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>blanks</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>registered</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>turnout_pct</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>result</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy_report</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>read_by</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>checks</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>capital_funding_history</code> <span class="n">10 rows</span> <span class="yr">2017–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>free_cash</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>taxation</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unexpended_prior_year_capital</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>other</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>capital_plan_fy27</code> <span class="n">22 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>rank</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>project</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>cost</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>cumulative</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>funded</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>funding</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>free_cash_proof</code> <span class="n">630 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>town</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>year</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>role</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_file</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>total_expenses_history</code> <span class="n">28 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>total_salaries_history</code> <span class="n">28 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+</div>
+<div class="stage"><h2>Schools — the lines the projection rests on</h2>
+<details><summary><code>athletics_history</code> <span class="n">175 rows</span> <span class="yr">2014–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>side</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>item</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>athletics_by_sport</code> <span class="n">960 rows</span> <span class="yr">2024–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>season</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>sport</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>metric</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>raw</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>is_numeric</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>cell</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>athletics_by_sport_reconciliation</code> <span class="n">342 rows</span> <span class="yr">2024–2026</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>season</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>scope</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>metric</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_cell</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>printed_raw</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>summed_from_rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>difference</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ties</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>athletic_fee_schedule</code> <span class="n">31 rows</span> <span class="yr">2024–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>school_year</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>level</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>item</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>amount</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unit</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>set_on</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_file</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>verified</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>ood_tuition_history</code> <span class="n">30 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>private</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>collaborative</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>placement_counts</code> <span class="n">15 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>as_of</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>collaborative</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>day</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>residential</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>collaborative_within_day</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>collaborative_basis</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>report_says_prior_year</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>parts_tie</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>chain_agrees</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>checks</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>sped_para_history</code> <span class="n">26 rows</span> <span class="yr">2014–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ps</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>es</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ms</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>hs</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ace</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>sped_teacher_history</code> <span class="n">21 rows</span> <span class="yr">2017–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ps</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>es</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ms</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>hs</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ace</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>sped_transport_history</code> <span class="n">25 rows</span> <span class="yr">2015–2027</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>stage</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>system</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>total</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>documents_disagree</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>staff_roster_entries</code> <span class="n">3,815 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>school</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>name</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>role_raw</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>position</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>position_from</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>grade_or_dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>line</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>staff_roster_counts</code> <span class="n">699 rows</span> <span class="yr">2011–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>school</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>position</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>count</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>staff_position_map</code> <span class="n">534 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>role_as_printed</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>position</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>times_seen</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>role_classification</code> <span class="n">1,030 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>role_raw</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>grade_or_dept</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>role_category</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>role_grade</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>classified_by</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>dese_measure</code> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>lea</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>district</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>measure</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">REAL</td></tr>
+<tr><td><code>reconciles</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>dese_radar</code> <span class="n">2,982 rows</span> <span class="yr">2009–2025</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>lea</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>district</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td></tr>
+<tr><td><code>group</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>measure</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciles</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>rate_register</code> <span class="n">62 rows</span> <span class="yr">2024–2029</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>fy</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>category</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>unit</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>item</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>value_type</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>set_on</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>expires</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_file</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_ref</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>in_model</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+</div>
+<div class="stage"><h2>Provenance — which document every figure came from</h2>
+<p class="cap">Rule 12 in table form. A figure that cannot name its document is not loaded.</p>
+<details><summary><code>document</code> <span class="n">616 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>doc_id</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>path</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>source_type</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>basis</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>ledger_at</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>hidden_columns</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>url</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>link_state</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>copy_state</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>remote_sha256</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>local_sha256</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+<details><summary><code>dataset_document</code> <span class="n">225 rows</span></summary>
+<div class="scroll"><table><tr><th>column</th><th>type</th></tr>
+<tr><td><code>dataset</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>rows</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>pages</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>page_count</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>reconciled</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>partial</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>publisher_label</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>upstream</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>sha256</code></td><td class="ty">TEXT</td></tr>
+<tr><td><code>bytes</code></td><td class="ty">TEXT</td></tr>
+</table></div></details>
+</div>
+<div class="stage alt"><h2>Views — the joins already written for you</h2>
+<p class="cap">A view is the safe way to ask a question that needs two tables. Each one carries the splitting columns above in its own <code>WHERE</code>, so it cannot be got wrong the way a hand-written join can.</p>
+<div class="scroll"><table><tr><th>view</th><th>columns</th></tr>
+<tr><td><code>v_appropriation_vs_spend</code></td><td class="ty">fy, fund, dept, name, level, original, transfers, revised, expended, encumbered, surplus, surplus_pct, doc_id</td></tr>
+<tr><td><code>v_budget_disagreement</code></td><td class="ty">fy, stage, variant, line_key, label, source, value, is_kept, spread, kind</td></tr>
+<tr><td><code>v_budget_scenario</code></td><td class="ty">line_key, label, fy, stage, variant, value, doc_id</td></tr>
+<tr><td><code>v_burn</code></td><td class="ty">dept, name, fy, period, year_elapsed, spent_share, committed_share, pace_gap, available_now, doc_id</td></tr>
+<tr><td><code>v_function_budget_vs_ledger</code></td><td class="ty">function_code, fy, period, ledger_revised, ledger_expended, ledger_encumbered, accounts, budget_lines, doc_id</td></tr>
+<tr><td><code>v_fund_year</code></td><td class="ty">fund, name, kind, restriction, fy, period, revenue, spent, closing_balance, doc_id</td></tr>
+<tr><td><code>v_interfund</code></td><td class="ty">fund, fund_name, org, object, name, fy, period, budgeted, revised, received, still_to_come, pct_received, doc_id</td></tr>
+<tr><td><code>v_line_budget_vs_actual</code></td><td class="ty">line_key, label, fy, settled, proposed, actual, documents_disagree</td></tr>
+<tr><td><code>v_provenance</code></td><td class="ty">fact, doc_id, path, basis, copy_state, rows</td></tr>
+<tr><td><code>v_revenue</code></td><td class="ty">fund, fund_name, org, object, name, fy, period, budgeted, revised, received, still_to_come, pct_received, doc_id</td></tr>
+<tr><td><code>v_revenue_classified</code></td><td class="ty">fy, period, fund, account, class, class_label, budgeted, received</td></tr>
+<tr><td><code>v_spending_classified</code></td><td class="ty">fy, period, dept, department, control, control_how, voted, revised, expended</td></tr>
+<tr><td><code>v_staff_roster</code></td><td class="ty">fy, school, page, name, role_raw, grade_or_dept, position_legacy, role_category, role_grade, classified_by, document</td></tr>
+<tr><td><code>v_state_aid</code></td><td class="ty">fund, fund_name, org, object, name, fy, period, budgeted, revised, received, still_to_come, pct_received, doc_id</td></tr>
+<tr><td><code>v_transfer_history</code></td><td class="ty">dept, name, fy, period, original, transfers, revised, moved_since_last, doc_id</td></tr>
+<tr><td><code>v_workbook_budget_vs_actual</code></td><td class="ty">line_key, row, fy, budget, actual, under_budget</td></tr>
+</table></div></div>
+<div class="stage"><h2>What this database cannot tell you</h2>
+<p class="cap">Read from <code>money_gaps</code>, so this list is data rather than a thing somebody remembered to write down. Each is a question the published documents do not close.</p>
+<div class="scroll"><table><tr><th>side</th><th>what is missing</th><th>why it cannot be answered</th></tr>
+<tr><td>document_wanted</td><td>DESE End of Year Financial Report</td><td>Published by the state. — closes: Separates district spending by FUND, which is the one thing the town’s budget documents never show.</td></tr>
+<tr><td>document_wanted</td><td>The Town Manager’s revenue apportionment worksheet</td><td>Seen once; we do not hold it. — closes: Documents the convention by which general-fund revenue is presented as split across departments. It cannot make the edge traceable — nothing can — but it makes the convention citable.</td></tr>
+<tr><td>document_wanted</td><td>The period 13 ledger</td><td>The year-end close. — closes: Reconciles FY2026 properly; period 12 is used for now.</td></tr>
+<tr><td>document_wanted</td><td>WRRS annual actuarial valuation, by member unit</td><td>Published by the retirement system. — closes: Sizes the school share of the $2.39M pension assessment.</td></tr>
+<tr><td>document_wanted</td><td>Where bus fee receipts are booked</td><td>A revenue account, a fund, or a statement that they are netted before booking. — closes: The fee schedule is published and verified; <code>STUDENTBUS</code> shows zero. <strong>A charged fee with no observable destination</strong> is the clearest single gap in this model.</td></tr>
+<tr><td>document_wanted</td><td><code>glytdbud-expense</code> for the special revenue funds</td><td>The identical report the town already runs for the general fund and for each of the four enterprise funds, pointed at funds 13xx/22xx/26xx–29xx instead. — closes: Turns <strong>every restricted edge</strong> above from presumption into traced fact — athletics, lunch, circuit breaker, extended day, and every grant.</td></tr>
+<tr><td>money_in</td><td>Bus fees</td><td>charged by published policy · no destination found in any ledger</td></tr>
+<tr><td>money_in</td><td>Grants received in earlier years</td><td>spent now, booked then · nine funds, no FY26 revenue</td></tr>
+<tr><td>money_in</td><td>Student activity accounts</td><td>held by the school under its own authority · not in the town’s books at all</td></tr>
+<tr><td>money_in</td><td>Trust fund income</td><td>scholarships, cemetery, stabilisation · extract is check-failed</td></tr>
+<tr><td>money_out</td><td>Debt service by project</td><td>two accounts for ALL town borrowing · school buildings cannot be separated</td></tr>
+<tr><td>money_out</td><td>School share of the pension</td><td>inside WRRS · town and school staff together, no published split</td></tr>
+<tr><td>money_out</td><td>What any special revenue fund bought</td><td>no expense report exists for these funds · purpose is presumed, never observed</td></tr>
+<tr><td>money_out</td><td>What the capital transfers bought</td><td>two transfer lines · no project detail</td></tr>
+</table></div></div>
+
+<p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
+database on 2026-09-07. Do not edit — run the script. The CSVs in <code>sources/data/</code>
+are the source of truth; this database is a derived read model, rebuilt from scratch on
+every run.</p>
+</div>
