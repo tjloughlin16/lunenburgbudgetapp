@@ -1633,14 +1633,26 @@
      "textUrl": "/docs/data/staff-roster-counts.csv"
     },
     {
+     "path": "data/table-semantics.csv",
+     "title": "What each table in the database is",
+     "stars": 2,
+     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
+     "kind": "Data",
+     "bytes": 21408,
+     "url": "/docs/data/table-semantics.csv",
+     "count": 72,
+     "unit": "rows",
+     "textUrl": "/docs/data/table-semantics.csv"
+    },
+    {
      "path": "data/column-glossary.csv",
      "title": "What each column name means, across every table",
      "stars": 2,
      "what": "Written by us. Keyed on the column NAME rather than on table-plus-name, because 883 column instances share only 285 distinct names and the dangerous ones mean the same thing everywhere: `v1` is an ordinal on every table that has it, `status` splits rows into checked, check failed and no check on every extract. Each entry carries a `caution` saying what goes wrong if the column is used without knowing that, and every one of those was written after getting it wrong at least once.",
      "kind": "Data",
-     "bytes": 13609,
+     "bytes": 14224,
      "url": "/docs/data/column-glossary.csv",
-     "count": 130,
+     "count": 132,
      "unit": "rows",
      "textUrl": "/docs/data/column-glossary.csv"
     },
@@ -1655,18 +1667,6 @@
      "count": 134,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
-    },
-    {
-     "path": "data/table-semantics.csv",
-     "title": "What each table in the database is",
-     "stars": 2,
-     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
-     "kind": "Data",
-     "bytes": 11283,
-     "url": "/docs/data/table-semantics.csv",
-     "count": 72,
-     "unit": "rows",
-     "textUrl": "/docs/data/table-semantics.csv"
     },
     {
      "path": "data/PROVENANCE-special-revenue-funds.md",
@@ -1911,7 +1911,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 18522112,
+     "bytes": 18534400,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5729,7 +5729,7 @@
  "totals": {
   "documents": 463,
   "groups": 20,
-  "bytes": 1002701760,
+  "bytes": 1002724788,
   "loadBearing": 73
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -197,22 +197,35 @@ QUESTIONS = [
 # `sources/data/column-glossary.csv`  — one row per distinct column name.
 #
 # Coverage is deliberately printed on the page rather than rounded up to "documented".
-ROLES = [
-    ('fact', 'Facts — the measurements',
-     'What was budgeted, what was spent, what a fund holds. These carry the figures; '
-     'everything else in the database describes, extracts, classifies or checks them.'),
-    ('dimension', 'Dimensions — what a key means',
-     'Joined to, never summed. An account number, a fund, a line, a period.'),
-    ('extract', 'Extracts — readings off a printed page',
-     'What the annual reports print, before anything decides what it means. This is where '
-     '`v1`..`v8` and `status` live, and neither may be used without reading its entry.'),
-    ('classification', 'Our model — every row here is a judgement',
-     'Not measurements. Each carries the basis for the call so it can be argued with.'),
-    ('provenance', 'Provenance — where a figure came from, and whether it holds up',
-     'Rule 12 in table form.'),
-    ('derived', 'Derived — computed from the tables above',
-     'Convenience, recomputable, never a source.'),
+SCOPES = [
+    ('school', 'School money and school subjects',
+     "The district's budget, its own funds, and what the town publishes about its schools."),
+    ('town', 'Town money and town subjects',
+     'The other 67 departments, the receipts that fund them, and what the annual reports '
+     'print about the town.'),
+    ('both', 'Both at once — the ledger and the model',
+     "Tables that carry every department together. The town's books do not separate school "
+     'from town, and neither do these: splitting them would invent a division the source '
+     'does not make.'),
+    ('state', "The state's figures",
+     "DESE's own published measures, for Lunenburg and every other district. All-funds, so "
+     'NOT comparable with a general fund appropriation.'),
+    ('archive', 'About the archive itself',
+     'Which document a figure came from, what has been read, and what these tables mean.'),
 ]
+
+# The tier badges, from the join map: how finely a table resolves money.
+TIERS = {
+    '1': ('Tier 1 · totals', 'what was appropriated and what is left, by department'),
+    '2': ('Tier 2 · categories',
+          'whether a category — guidance, special education, transport — is over'),
+    '3': ('Tier 3 · accounts', 'what one account spent'),
+}
+
+ROLE_LABEL = {
+    'fact': 'fact', 'dimension': 'dimension', 'extract': 'extract',
+    'classification': 'our model', 'provenance': 'provenance', 'derived': 'derived',
+}
 
 # The three grains SCHEMA.md names. Called out because confusing them is how a budget gets
 # compared to an actual that is not its own, and because 33 fact tables all looking alike
@@ -234,36 +247,43 @@ def semantics():
     return tabs, cols
 
 
-def by_role(c, tabs):
-    """Group every table by its declared role, or refuse to run."""
+def by_scope(c, tabs):
+    """Group every table by whose money it is about, or refuse to run.
+
+    The grouping was by ROLE — fact, dimension, extract — which is how a database is built
+    and not how anybody arrives at one. TJ: group them "by the tiering modal we came up
+    with... and by group 'school vs town department'". So the top-level split is whose
+    money it is, and role and tier ride along as badges.
+    """
     tables = [r[0] for r in c.execute(
         "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")]
     undescribed = sorted(set(tables) - set(tabs))
     if undescribed:
         raise SystemExit(
             'table(s) with no entry in sources/data/table-semantics.csv: %s\n'
-            '  A table nobody described is a table nobody can use. Add a row giving its '
-            'role, its grain and what it answers.' % ', '.join(undescribed))
+            '  A table nobody described is a table nobody can use.' % ', '.join(undescribed))
     gone = sorted(set(tabs) - set(tables))
     if gone:
         raise SystemExit('table-semantics.csv describes table(s) that no longer exist: %s'
                          % ', '.join(gone))
-    known = {r for r, _, _ in ROLES}
-    bad = sorted({t for t, r in tabs.items() if r['role'] not in known})
-    if bad:
-        raise SystemExit('unknown role(s) on: %s. Roles are: %s'
-                         % (', '.join(bad), ', '.join(sorted(known))))
+    for field, allowed in (('role', set(ROLE_LABEL)),
+                           ('scope', {sc for sc, _, _ in SCOPES}),
+                           ('tier', set(TIERS) | {''})):
+        bad = sorted({t for t, r in tabs.items() if (r.get(field) or '') not in allowed})
+        if bad:
+            raise SystemExit('unknown %s on: %s' % (field, ', '.join(bad)))
     out = []
-    for role, title, blurb in ROLES:
-        members = [t for t in tables if tabs[t]['role'] == role]
-        # the spine first, then the rest alphabetically
-        members.sort(key=lambda t: (t not in SPINE, SPINE.index(t) if t in SPINE else 0, t))
-        out.append((role, title, blurb, members))
+    for scope, title, blurb in SCOPES:
+        members = [t for t in tables if tabs[t]['scope'] == scope]
+        # Spine first, then finest money detail first, then by name: a reader scanning for
+        # "where are the actual accounts" should not have to read every row to find them.
+        members.sort(key=lambda t: (t not in SPINE,
+                                    SPINE.index(t) if t in SPINE else 0,
+                                    -int(tabs[t]['tier'] or 0), t))
+        out.append((scope, title, blurb, members))
     return out
 
 
-# Columns that decide what a row IS. Omitting one does not raise -- it returns a number
-# that is the sum of two different things. All four have been got wrong here.
 SPLITTERS = [
     ('status', 'annual report extracts',
      '`checked`, `check failed`, `no check`. Summing across them mixes verified figures '
@@ -389,7 +409,7 @@ def run_questions(c):
 def render(c):
     API_BASE = api_base()
     tabs, gloss = semantics()
-    fams = by_role(c, tabs)
+    fams = by_scope(c, tabs)
     qs = run_questions(c)
     n_tables = sum(len(m) for *_, m in fams)
     n_views = c.execute(
@@ -403,36 +423,6 @@ def render(c):
 
     B = []
     a = B.append
-
-    # ---- the questions, first, because that is what somebody actually arrives with
-    a('<div class="stage"><h2>Can I ask this?</h2>')
-    a('<p class="cap">Every query below is <strong>run against the live database when '
-      'this page is built</strong>, so a question that stops answering breaks the build '
-      'rather than sitting here looking answerable. Two of them return nothing, and that '
-      'is the honest state of the archive rather than a fault.</p>')
-    for spec, rs, verdict in qs:
-        a('<div class="q">')
-        a(f'<div class="qhead"><span class="v v-{verdict.replace(" ", "-")}">'
-          f'{esc(verdict)}</span><span class="qt">{esc(spec["q"])}</span></div>')
-        a('<pre><code>%s</code></pre>' % esc(' '.join(spec['sql'].split())))
-        a(f'<p class="rc">{len(rs):,} row{"" if len(rs) == 1 else "s"}</p>')
-        if rs:
-            keys = rs[0].keys()
-            a('<div class="scroll"><table><tr>%s</tr>' %
-              ''.join(f'<th>{esc(k)}</th>' for k in keys))
-            for r in rs[:5]:
-                a('<tr>%s</tr>' % ''.join(
-                    '<td%s>%s</td>' % (' class="num"' if isinstance(r[k], (int, float))
-                                       else '', esc(r[k])) for k in keys))
-            a('</table></div>')
-            if len(rs) > 5:
-                a(f'<p class="cap">…and {len(rs) - 5:,} more.</p>')
-        for field, cls in (('partly', 'warn shortfall'), ('caveat', 'warn')):
-            if spec.get(field):
-                a(f'<p class="{cls}">{md(spec[field])}</p>')
-        a(f'<p class="cap">{md(spec["why"])}</p>')
-        a('</div>')
-    a('</div>')
 
     # ---- the columns that decide what a row is
     a('<div class="stage alt"><h2>The columns you cannot leave out</h2>')
@@ -464,12 +454,17 @@ def render(c):
             spine = ' spine' if t in SPINE else ''
             dq = sem.get('default_query') or ''
             qattr = ' data-q="%s"' % esc(dq) if dq else ''
+            tier = sem.get('tier') or ''
+            tags = ' <span class="badge">the spine</span>' if spine else ''
+            if tier:
+                tags += ' <span class="tag tier t%s" title="%s">%s</span>' % (
+                    tier, esc(TIERS[tier][1]), esc(TIERS[tier][0]))
+            tags += ' <span class="tag">%s</span>' % esc(ROLE_LABEL[sem['role']])
             a('<details class="t%s"><summary><span class="srow"><code>%s</code>%s '
               '<span class="n">%s row%s</span>%s'
               '<button class="open" data-t="%s"%s>Query table</button></span>'
               '<span class="gr">%s</span></summary>'
-              % (spine, esc(t),
-                 ' <span class="badge">the spine</span>' if spine else '',
+              % (spine, esc(t), tags,
                  f'{n:,}', '' if n == 1 else 's',
                  f' <span class="yr">{esc(years)}</span>' if years else '',
                  esc(t), qattr, esc(sem['grain'])))
@@ -532,6 +527,40 @@ def render(c):
         a(f'<tr><td>{esc(g["side"])}</td><td>{md(g["what"])}</td>'
           f'<td>{md(g["why"])}</td></tr>')
     a('</table></div></div>')
+
+    # ---- EXAMPLES, at the end. They were at the top, where they pushed the
+    # inventory below the fold — and somebody arriving at a schema page is looking for a
+    # table, not for a worked example. They are still run at build time; only their
+    # position changed.
+    a('<div class="stage"><h2>Examples — real questions, run against the live database</h2>')
+    a('<p class="cap">Every query below is <strong>run against the live database when '
+      'this page is built</strong>, so a question that stops answering breaks the build '
+      'rather than sitting here looking answerable. Two of them return nothing, and that '
+      'is the honest state of the archive rather than a fault.</p>')
+    for spec, rs, verdict in qs:
+        a('<div class="q">')
+        a(f'<div class="qhead"><span class="v v-{verdict.replace(" ", "-")}">'
+          f'{esc(verdict)}</span><span class="qt">{esc(spec["q"])}</span></div>')
+        a('<pre><code>%s</code></pre>' % esc(' '.join(spec['sql'].split())))
+        a(f'<p class="rc">{len(rs):,} row{"" if len(rs) == 1 else "s"}</p>')
+        if rs:
+            keys = rs[0].keys()
+            a('<div class="scroll"><table><tr>%s</tr>' %
+              ''.join(f'<th>{esc(k)}</th>' for k in keys))
+            for r in rs[:5]:
+                a('<tr>%s</tr>' % ''.join(
+                    '<td%s>%s</td>' % (' class="num"' if isinstance(r[k], (int, float))
+                                       else '', esc(r[k])) for k in keys))
+            a('</table></div>')
+            if len(rs) > 5:
+                a(f'<p class="cap">…and {len(rs) - 5:,} more.</p>')
+        for field, cls in (('partly', 'warn shortfall'), ('caveat', 'warn')):
+            if spec.get(field):
+                a(f'<p class="{cls}">{md(spec[field])}</p>')
+        a(f'<p class="cap">{md(spec["why"])}</p>')
+        a('</div>')
+    a('</div>')
+
 
     body = '\n'.join(B)
     return PAGE.format(
@@ -622,6 +651,11 @@ details table.samp td {{ padding-right:14px }}
 .gen {{ margin-top:30px; font-size:12px; color:var(--muted) }}
 @media (min-width:680px) {{ .metrics {{ grid-template-columns:repeat(5,1fr) }} }}
 details.spine {{ border-left:3px solid var(--traced); padding-left:10px }}
+.tag {{ font-size:10px; letter-spacing:.05em; text-transform:uppercase;
+  border:1px solid var(--grid); color:var(--muted); padding:1px 6px; border-radius:20px;
+  white-space:nowrap }}
+.tag.tier {{ border-color:var(--hi); color:var(--hi) }}
+.tag.tier.t3 {{ border-color:var(--traced); color:var(--traced) }}
 .badge {{ font-size:10px; letter-spacing:.08em; text-transform:uppercase;
   background:var(--traced); color:var(--bg); padding:1px 6px; border-radius:20px }}
 .gr {{ display:block; font-size:11.5px; color:var(--muted); margin-top:2px }}
@@ -751,6 +785,29 @@ button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced
   <div class="metric"><div class="v">{n_cols}</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">{pct_described}</div><div class="l">columns described</div></div>
 </div>
+
+<div class="stage alt"><h2>How this is arranged</h2>
+<p class="cap">Grouped by <strong>whose money it is</strong>, because that is the question
+people arrive with. Two other facets ride along as badges on every table.</p>
+<div class="scroll"><table><tr><th>badge</th><th>what it tells you</th></tr>
+<tr><td><span class="tag tier t1">Tier 1 &middot; totals</span></td><td>What was
+appropriated and what is left, by department. Not which category, not which school, not
+which fund paid.</td></tr>
+<tr><td><span class="tag tier t2">Tier 2 &middot; categories</span></td><td>Whether
+guidance, special education or transport is over — and whether the town's books and the
+district's budget agree on a code. Not which school inside a category: names truncate at
+ten characters, so <code>MS GUIDANC</code> and <code>HS GUIDANC</code> are both 2710.</td></tr>
+<tr><td><span class="tag tier t3">Tier 3 &middot; accounts</span></td><td>What one account
+spent, and how much came in per fund.</td></tr>
+<tr><td><span class="tag">fact</span> <span class="tag">dimension</span></td><td>How the
+table is built. Facts carry the figures; dimensions say what a key means and are joined
+to, never summed.</td></tr>
+<tr><td><span class="badge">the spine</span></td><td>The three grains everything else
+describes, extracts or checks.</td></tr>
+</table></div>
+<p class="warn"><strong>There is a tier below 3, and no report reaches it.</strong> Which
+revenue paid which expense. That is the grey edge in the join map, and it is why this
+archive measures appropriations and says so.</p></div>
 
 <p class="warn"><strong>Two databases, and they are not always the same one.</strong>
 Everything printed on this page — row counts, samples, coverage — is read from the LOCAL

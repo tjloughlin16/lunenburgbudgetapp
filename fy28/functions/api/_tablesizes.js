@@ -17,7 +17,7 @@ export const ROWS = {
  "budget_line": 688,
  "capital_funding_history": 10,
  "capital_plan_fy27": 22,
- "column_glossary": 130,
+ "column_glossary": 132,
  "crosswalk": 0,
  "dataset_document": 225,
  "dese_measure": 2982,
