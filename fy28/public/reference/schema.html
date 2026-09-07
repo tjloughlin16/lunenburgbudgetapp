@@ -247,7 +247,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">76</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">69,805</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">69,808</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">934</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
@@ -1464,7 +1464,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 6,579 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 6,582 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
 <details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">774 rows</span> <span class="yr">2011–2022</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund_column, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
@@ -1778,7 +1778,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>State teachers’ pension system</td><td>District teaching staff</td><td>unknown</td><td>Not appropriated by Lunenburg, not in our a…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">17 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
+<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">20 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
 <p class="ans">The honest list of what CANNOT be answered — per side (money in, money out), what is missing and why the published documents do not close it.</p>
 <p class="warn">This table is the honest list of what cannot be answered.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1788,8 +1788,8 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>side</th><th>what</th><th>why</th></tr>
-<tr><td>money_in</td><td>Grants received in earlier years</td><td>spent now, booked then · nine funds, no FY2…</td></tr>
 <tr><td>money_out</td><td>Debt service by project</td><td>two accounts for ALL town borrowing · schoo…</td></tr>
+<tr><td>money_out</td><td>What any special revenue fund bought</td><td>no expense report exists for these funds · …</td></tr>
 <tr><td>document_wanted</td><td>WRRS annual actuarial valuation, by member …</td><td>Published by the retirement system. — close…</td></tr>
 </table></div>
 </details>
@@ -2180,6 +2180,7 @@ stop.</p></div>
 <tr><td>document_wanted</td><td>DESE End of Year Financial Report</td><td>Published by the state. — closes: Separates district spending by FUND, which is the one thing the town’s budget documents never show.</td></tr>
 <tr><td>document_wanted</td><td>The Town Manager’s revenue apportionment worksheet</td><td>Seen once; we do not hold it. — closes: Documents the convention by which general-fund revenue is presented as split across departments. It cannot make the edge traceable — nothing can — but it makes the convention citable.</td></tr>
 <tr><td>document_wanted</td><td>The period 13 ledger</td><td>The year-end close. — closes: Reconciles FY2026 properly; period 12 is used for now.</td></tr>
+<tr><td>document_wanted</td><td>The town’s Chapter 32B enrolment schedule</td><td>Not published anywhere in this archive; the town must hold one to administer the plan and set premium shares. — closes: Splits every insurance account between the town and the schools, in every year, instead of in the two years the split happens to be printed.</td></tr>
 <tr><td>document_wanted</td><td>WRRS annual actuarial valuation, by member unit</td><td>Published by the retirement system. — closes: Sizes the school share of the $2.39M pension assessment.</td></tr>
 <tr><td>document_wanted</td><td>Where bus fee receipts are booked</td><td>A revenue account, a fund, or a statement that they are netted before booking. — closes: The fee schedule is published and verified; <code>STUDENTBUS</code> shows zero. <strong>A charged fee with no observable destination</strong> is the clearest single gap in this model.</td></tr>
 <tr><td>document_wanted</td><td><code>glytdbud-expense</code> for the special revenue funds</td><td>The identical report the town already runs for the general fund and for each of the four enterprise funds, pointed at funds 13xx/22xx/26xx–29xx instead. — closes: Turns <strong>every restricted edge</strong> above from presumption into traced fact — athletics, lunch, circuit breaker, extended day, and every grant.</td></tr>
@@ -2188,7 +2189,9 @@ stop.</p></div>
 <tr><td>money_in</td><td>Student activity accounts</td><td>held by the school under its own authority · not in the town’s books at all</td></tr>
 <tr><td>money_in</td><td>Trust fund income</td><td>scholarships, cemetery, stabilisation · extract is check-failed</td></tr>
 <tr><td>money_out</td><td>Debt service by project</td><td>two accounts for ALL town borrowing · school buildings cannot be separated</td></tr>
+<tr><td>money_out</td><td>School share of Medicare, active health insurance and the insurance reserves</td><td>Five of the seven FY2026 insurance accounts — active health insurance, Medicare, life insurance, insurance cost control and Public Employee Committee expenses — carry nothing in their names that says which side of the town they are for, so the school portion of them is not separable in any year. — closes: The town’s Chapter 32B enrolment schedule, which counts insured employees and retirees by department.</td></tr>
 <tr><td>money_out</td><td>School share of the pension</td><td>inside WRRS · town and school staff together, no published split</td></tr>
+<tr><td>money_out</td><td>School share of the town’s health insurance before FY2026</td><td>The town’s insurance department prints one undivided <code>Health Insurance CH 32B</code> line in fifteen of the sixteen annual reports · a school share is named only in the FY2023 report and in the FY2026 ledger, so no year between them can be split. — closes: The town’s Chapter 32B enrolment schedule, which counts insured employees and retirees by department and would split every year rather than the two that happened to be printed.</td></tr>
 <tr><td>money_out</td><td>What any special revenue fund bought</td><td>no expense report exists for these funds · purpose is presumed, never observed</td></tr>
 <tr><td>money_out</td><td>What the capital transfers bought</td><td>two transfer lines · no project detail</td></tr>
 <tr><td>people</td><td>How many people the schools actually employ</td><td>The town publishes per-school staff ROSTERS in every annual report, FY2011 to FY2025 — a list of names. A roster carries <strong>no FTE</strong>, so a 0.4 music teacher and a full-timer are one row each, and it is a point in time, undated within the year. A count of names the town printed is a real quantity and it is <strong>not a staffing level</strong>. — closes: a staffing report stating FTE by position and year.</td></tr>

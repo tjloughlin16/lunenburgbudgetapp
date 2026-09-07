@@ -213,6 +213,10 @@ export function SpecialRevenue() {
   const chainBreak = d.chain.find(r => r.known_break)!
   const groups = d.by_group.map(g => g.group)
   const drawers = d.persistent.filter(r => r.net < 0)
+  /** One denominator for both mover panels, so a bar in the left card and a bar in the
+   *  right card are the same length for the same number of dollars. */
+  const moverSpan = Math.max(
+    ...[...d.movers.risers, ...d.movers.fallers].map(r => Math.abs(r.change)), 1)
   const accumulators = [...d.persistent].sort((a, b) => b.net - a.net).slice(0, 5)
 
   return (
@@ -453,13 +457,15 @@ export function SpecialRevenue() {
           <p className="text-[13px] font-semibold mb-2" style={{ color: IN }}>
             Grew the most
           </p>
-          <Movers rows={d.movers.risers} firstFy={d.movers.first_fy} lastFy={d.movers.last_fy} />
+          <Movers rows={d.movers.risers} firstFy={d.movers.first_fy}
+            lastFy={d.movers.last_fy} span={moverSpan} />
         </div>
         <div>
           <p className="text-[13px] font-semibold mb-2" style={{ color: OUT }}>
             Fell the most
           </p>
-          <Movers rows={d.movers.fallers} firstFy={d.movers.first_fy} lastFy={d.movers.last_fy} />
+          <Movers rows={d.movers.fallers} firstFy={d.movers.first_fy}
+            lastFy={d.movers.last_fy} span={moverSpan} />
         </div>
       </div>
 

@@ -1,0 +1,1224 @@
+{
+ "district": {
+  "actual": [
+   {
+    "fy": 2014,
+    "value": 1739772.0
+   },
+   {
+    "fy": 2015,
+    "value": 1766882.0
+   },
+   {
+    "fy": 2016,
+    "value": 2027585.0
+   },
+   {
+    "fy": 2017,
+    "value": 2376697.0
+   },
+   {
+    "fy": 2018,
+    "value": 2672420.0
+   },
+   {
+    "fy": 2019,
+    "value": 2854285.0
+   },
+   {
+    "fy": 2020,
+    "value": 2793142.0
+   },
+   {
+    "fy": 2021,
+    "value": 2706450.0
+   },
+   {
+    "fy": 2022,
+    "value": 2593020.0
+   },
+   {
+    "fy": 2023,
+    "value": 3041341.0
+   },
+   {
+    "fy": 2024,
+    "value": 3212078.0
+   },
+   {
+    "fy": 2025,
+    "value": 3248744.0
+   }
+  ],
+  "change_actual": {
+   "cagr": 0.058416618737112236,
+   "change": 1508972.0,
+   "first": 1739772.0,
+   "first_fy": 2014,
+   "last": 3248744.0,
+   "last_fy": 2025,
+   "pct": 0.8673389386655262,
+   "years": 11
+  },
+  "change_settled": {
+   "cagr": 0.04344025699147447,
+   "change": 1067283.0,
+   "first": 2633912.0,
+   "first_fy": 2018,
+   "last": 3701195.0,
+   "last_fy": 2026,
+   "pct": 0.4052082985308545,
+   "years": 8
+  },
+  "line_key": "health insurance",
+  "proposed": [
+   {
+    "fy": 2017,
+    "value": 2168063.0
+   },
+   {
+    "fy": 2018,
+    "value": 2633912.0
+   },
+   {
+    "fy": 2019,
+    "value": 2912322.0
+   },
+   {
+    "fy": 2020,
+    "value": 2826122.0
+   },
+   {
+    "fy": 2021,
+    "value": 2706450.0
+   },
+   {
+    "fy": 2022,
+    "value": 2507129.0
+   },
+   {
+    "fy": 2023,
+    "value": 2881127.0
+   },
+   {
+    "fy": 2024,
+    "value": 3076306.0
+   },
+   {
+    "fy": 2025,
+    "value": 3140838.0
+   },
+   {
+    "fy": 2026,
+    "value": 3692744.0
+   },
+   {
+    "fy": 2027,
+    "value": 4341561.0
+   }
+  ],
+  "settled": [
+   {
+    "fy": 2018,
+    "value": 2633912.0
+   },
+   {
+    "fy": 2019,
+    "value": 2850678.0
+   },
+   {
+    "fy": 2020,
+    "value": 2826122.0
+   },
+   {
+    "fy": 2021,
+    "value": 2706450.0
+   },
+   {
+    "fy": 2022,
+    "value": 2507129.0
+   },
+   {
+    "fy": 2023,
+    "value": 2843344.0
+   },
+   {
+    "fy": 2025,
+    "value": 3140838.0
+   },
+   {
+    "fy": 2026,
+    "value": 3701195.0
+   }
+  ],
+  "stages_note": "settled, proposed and actual are three different documents about the same line and are never differenced across each other",
+  "variants": [
+   {
+    "points": [
+     {
+      "fy": 2027,
+      "value": 3994071.0
+     }
+    ],
+    "variant": "Balanced"
+   },
+   {
+    "points": [
+     {
+      "fy": 2027,
+      "value": 4318729.0
+     }
+    ],
+    "variant": "Core Budget"
+   },
+   {
+    "points": [
+     {
+      "fy": 2027,
+      "value": 4043166.0
+     }
+    ],
+    "variant": "Level Service"
+   },
+   {
+    "points": [
+     {
+      "fy": 2027,
+      "value": 4389135.0
+     }
+    ],
+    "variant": "Restoration"
+   }
+  ]
+ },
+ "gaps": [
+  {
+   "closes": "The town\u2019s Chapter 32B enrolment schedule, which counts insured employees and retirees by department and would split every year rather than the two that happened to be printed.",
+   "side": "money_out",
+   "what": "School share of the town\u2019s health insurance before FY2026",
+   "why": "The town\u2019s insurance department prints one undivided `Health Insurance CH 32B` line in fifteen of the sixteen annual reports \u00b7 a school share is named only in the FY2023 report and in the FY2026 ledger, so no year between them can be split."
+  },
+  {
+   "closes": "The town\u2019s Chapter 32B enrolment schedule, which counts insured employees and retirees by department.",
+   "side": "money_out",
+   "what": "School share of Medicare, active health insurance and the insurance reserves",
+   "why": "Five of the seven FY2026 insurance accounts \u2014 active health insurance, Medicare, life insurance, insurance cost control and Public Employee Committee expenses \u2014 carry nothing in their names that says which side of the town they are for, so the school portion of them is not separable in any year."
+  },
+  {
+   "closes": "Splits every insurance account between the town and the schools, in every year, instead of in the two years the split happens to be printed.",
+   "side": "document_wanted",
+   "what": "The town\u2019s Chapter 32B enrolment schedule",
+   "why": "Not published anywhere in this archive; the town must hold one to administer the plan and set premium shares."
+  }
+ ],
+ "generated_by": "scripts/build_insurance_charts.py",
+ "ledger": {
+  "accounts": [
+   {
+    "account_id": "0100-19142-570001",
+    "available": -61287.11,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 1376557.17,
+    "meaning": "Active employees\u2019 health insurance",
+    "original": 1315270.06,
+    "printed": "HEALTH INS",
+    "revised": 1315270.06,
+    "side": "unnamed",
+    "transfers": 0.0
+   },
+   {
+    "account_id": "0100-19142-570002",
+    "available": 2135.16,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 12864.84,
+    "meaning": "Life insurance",
+    "original": 15000.0,
+    "printed": "LIFE INS",
+    "revised": 15000.0,
+    "side": "unnamed",
+    "transfers": 0.0
+   },
+   {
+    "account_id": "0100-19142-570003",
+    "available": 54151.4,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 345848.6,
+    "meaning": "Medicare \u2014 the employer\u2019s payroll share",
+    "original": 400000.0,
+    "printed": "MEDI",
+    "revised": 400000.0,
+    "side": "unnamed",
+    "transfers": 0.0
+   },
+   {
+    "account_id": "0100-19142-570004",
+    "available": 0.0,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 8000.0,
+    "meaning": "Insurance cost control",
+    "original": 8000.0,
+    "printed": "INS COST C",
+    "revised": 8000.0,
+    "side": "unnamed",
+    "transfers": 0.0
+   },
+   {
+    "account_id": "0100-19142-570009",
+    "available": -139874.18,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 593088.85,
+    "meaning": "Town retirees\u2019 health insurance",
+    "original": 453214.67,
+    "printed": "TNRETHLTHI",
+    "revised": 453214.67,
+    "side": "town",
+    "transfers": 0.0
+   },
+   {
+    "account_id": "0100-19142-570016",
+    "available": 450.02,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 49.98,
+    "meaning": "Public Employee Committee expenses",
+    "original": 500.0,
+    "printed": "PEC EXPENS",
+    "revised": 500.0,
+    "side": "unnamed",
+    "transfers": 0.0
+   },
+   {
+    "account_id": "0100-19142-570018",
+    "available": 259159.59,
+    "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "encumbered": 0.0,
+    "expended": 1262376.0,
+    "meaning": "School retirees\u2019 health insurance",
+    "original": 1521535.59,
+    "printed": "SCHRETHLTH",
+    "revised": 1521535.59,
+    "side": "school",
+    "transfers": 0.0
+   }
+  ],
+  "department_doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt",
+  "department_row": 3713520.0,
+  "dept": "914",
+  "dept_name": "INSURANCE",
+  "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt",
+  "fy": 2026,
+  "period": 12,
+  "reconciles_department_row": true,
+  "school_original": 1521535.59,
+  "school_share_of_dept": 0.4097286291407718,
+  "total_expended": 3598785.44,
+  "total_original": 3713520.32,
+  "unnamed_accounts": 5,
+  "unnamed_original": 1738770.06
+ },
+ "reports": {
+  "checked": [
+   2011,
+   2012,
+   2013,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "editions": 15,
+  "growth_since_named": {
+   "cagr": 0.0782846134232047,
+   "first": 1213617.67,
+   "first_fy": 2023,
+   "last": 1521535.59,
+   "last_fy": 2026,
+   "pct": 0.25371904810845425
+  },
+  "names_school_share": [
+   2023
+  ],
+  "not_checked": [
+   {
+    "fy": 2014,
+    "why": "components sum to 1,902,595.27 against a printed 1,908,745.27"
+   },
+   {
+    "fy": 2024,
+    "why": "no insurance classification printed in this edition"
+   },
+   {
+    "fy": 2025,
+    "why": "no insurance classification printed in this edition"
+   }
+  ],
+  "school_retirees_first_named_fy": 2023,
+  "school_retirees_fy2023": 1213617.67,
+  "school_retirees_page": "32",
+  "school_retirees_source": "sources/town-budget/pages/FY2023.txt",
+  "school_years": [
+   2023,
+   2026
+  ],
+  "split": {
+   "fy": 2023,
+   "named_rows": [
+    "Town Retirees Health",
+    "School Retirees Health"
+   ],
+   "prev_fy": 2022,
+   "total_after": 2852641.67,
+   "total_before": 2533781.59,
+   "total_pct": 0.12584355386369356,
+   "undivided_after": 917584.39,
+   "undivided_before": 2198217.85,
+   "undivided_pct": -0.5825780461204061
+  },
+  "years": [
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2011,
+    "line_no": "3-8",
+    "names_school_share": false,
+    "page": "65",
+    "printed_expended": 1896544.33,
+    "printed_total": 1970826.33,
+    "rows": [
+     {
+      "appropriated": 1720019.41,
+      "expended": 1720019.41,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 15306.92,
+      "expended": 15306.92,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 215000.0,
+      "expended": 153218.0,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 20000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2011.txt",
+    "summed_components": 1970826.33
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2012,
+    "line_no": "7-12",
+    "names_school_share": false,
+    "page": "65",
+    "printed_expended": 0.0,
+    "printed_total": 2119333.71,
+    "rows": [
+     {
+      "appropriated": 1869686.83,
+      "expended": null,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 18421.0,
+      "expended": null,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 204575.88,
+      "expended": null,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 26150.0,
+      "expended": null,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": null,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2012.txt",
+    "summed_components": 2119333.71
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2013,
+    "line_no": "27-32",
+    "names_school_share": false,
+    "page": "69",
+    "printed_expended": 2047358.94,
+    "printed_total": 2053508.94,
+    "rows": [
+     {
+      "appropriated": 1832971.17,
+      "expended": 6150.0,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 9622.5,
+      "expended": 9622.5,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 202915.27,
+      "expended": 202915.27,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 0.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2013.txt",
+    "summed_components": 2053508.94
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": false,
+    "difference": -6150.0,
+    "fy": 2014,
+    "line_no": "18-23",
+    "names_school_share": false,
+    "page": "28",
+    "printed_expended": 1897889.42,
+    "printed_total": 1908745.27,
+    "rows": [
+     {
+      "appropriated": 1676766.56,
+      "expended": 1672215.22,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 10210.76,
+      "expended": 10056.25,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 207617.95,
+      "expended": 207617.95,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 0.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2014.txt",
+    "summed_components": 1902595.27
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2015,
+    "line_no": "22-27",
+    "names_school_share": false,
+    "page": "28",
+    "printed_expended": 1797805.3,
+    "printed_total": 1804659.45,
+    "rows": [
+     {
+      "appropriated": 1567369.1,
+      "expended": 1560744.12,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 10061.67,
+      "expended": 9832.5,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 219228.68,
+      "expended": 219228.68,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 0.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2015.txt",
+    "summed_components": 1804659.45
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2016,
+    "line_no": "9-14",
+    "names_school_share": false,
+    "page": "30",
+    "printed_expended": 1919998.72,
+    "printed_total": 1919998.72,
+    "rows": [
+     {
+      "appropriated": 1662769.78,
+      "expended": 1662769.78,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 9926.25,
+      "expended": 9926.25,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 239302.69,
+      "expended": 239302.69,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 0.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2016.txt",
+    "summed_components": 1919998.72
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2017,
+    "line_no": "24-29",
+    "names_school_share": false,
+    "page": "28",
+    "printed_expended": 2060815.25,
+    "printed_total": 2105918.99,
+    "rows": [
+     {
+      "appropriated": 1838708.99,
+      "expended": 1797968.97,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 13937.47,
+      "expended": 10073.75,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 244772.53,
+      "expended": 244772.53,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2017.txt",
+    "summed_components": 2105918.99
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2018,
+    "line_no": "23-28",
+    "names_school_share": false,
+    "page": "34",
+    "printed_expended": 0.0,
+    "printed_total": 2319622.56,
+    "rows": [
+     {
+      "appropriated": 2038422.56,
+      "expended": null,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 15000.0,
+      "expended": null,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 260700.0,
+      "expended": null,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 5000.0,
+      "expended": null,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": null,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2018.txt",
+    "summed_components": 2319622.56
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2019,
+    "line_no": "8-13",
+    "names_school_share": false,
+    "page": "36",
+    "printed_expended": 2385536.21,
+    "printed_total": 2604860.11,
+    "rows": [
+     {
+      "appropriated": 2313232.16,
+      "expended": 2100353.26,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 15000.0,
+      "expended": 9055.0,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 268127.95,
+      "expended": 268127.95,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2019.txt",
+    "summed_components": 2604860.11
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2020,
+    "line_no": "22-27",
+    "names_school_share": false,
+    "page": "30",
+    "printed_expended": 2390459.17,
+    "printed_total": 2656877.8,
+    "rows": [
+     {
+      "appropriated": 2372677.8,
+      "expended": 2095153.63,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 15000.0,
+      "expended": 10776.25,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 260700.0,
+      "expended": 276529.29,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2020.txt",
+    "summed_components": 2656877.8
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2021,
+    "line_no": "7-12",
+    "names_school_share": false,
+    "page": "31",
+    "printed_expended": 2382566.91,
+    "printed_total": 2633155.17,
+    "rows": [
+     {
+      "appropriated": 2317776.64,
+      "expended": 2072164.63,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 15000.0,
+      "expended": 10523.75,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 291878.53,
+      "expended": 291878.53,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2021.txt",
+    "summed_components": 2633155.17
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2022,
+    "line_no": "20-25",
+    "names_school_share": false,
+    "page": "32",
+    "printed_expended": 2497171.15,
+    "printed_total": 2533781.59,
+    "rows": [
+     {
+      "appropriated": 2198217.85,
+      "expended": 2162118.63,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 11550.38,
+      "expended": 11539.16,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 315513.36,
+      "expended": 315513.36,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2022.txt",
+    "summed_components": 2533781.59
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": true,
+    "difference": 0.0,
+    "fy": 2023,
+    "line_no": "13-20",
+    "names_school_share": true,
+    "page": "32",
+    "printed_expended": 2850202.74,
+    "printed_total": 2852641.67,
+    "rows": [
+     {
+      "appropriated": 917584.39,
+      "expended": 917584.39,
+      "key": "health_ins",
+      "label": "Health Insurance CH 32B",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 15000.0,
+      "expended": 13709.73,
+      "key": "life",
+      "label": "Life Insurance",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 331092.95,
+      "expended": 331092.95,
+      "key": "medicare",
+      "label": "Medicare",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 366846.66,
+      "expended": 366198.0,
+      "key": "town_retirees",
+      "label": "Town Retirees Health",
+      "side": "town"
+     },
+     {
+      "appropriated": 8000.0,
+      "expended": 8000.0,
+      "key": "cost_control",
+      "label": "Insurance Cost Control",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 500.0,
+      "expended": 0.0,
+      "key": "pec",
+      "label": "Public Employee Committee Expenses",
+      "side": "unnamed"
+     },
+     {
+      "appropriated": 1213617.67,
+      "expended": 1213617.67,
+      "key": "school_retirees",
+      "label": "School Retirees Health",
+      "side": "school"
+     }
+    ],
+    "source": "sources/town-budget/pages/FY2023.txt",
+    "summed_components": 2852641.67
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": false,
+    "difference": null,
+    "fy": 2024,
+    "line_no": null,
+    "names_school_share": false,
+    "page": null,
+    "printed_expended": null,
+    "printed_total": null,
+    "rows": [],
+    "source": "sources/town-budget/pages/FY2024.txt",
+    "summed_components": null
+   },
+   {
+    "carried_forward": 0.0,
+    "checked": false,
+    "difference": null,
+    "fy": 2025,
+    "line_no": null,
+    "names_school_share": false,
+    "page": null,
+    "printed_expended": null,
+    "printed_total": null,
+    "rows": [],
+    "source": "sources/town-budget/pages/FY2025.txt",
+    "summed_components": null
+   }
+  ],
+  "years_examined": [
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ]
+ },
+ "school": {
+  "active": {
+   "account_id": "0100-S5991992-570001",
+   "available": 78313.35,
+   "doc_id": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "expended": 3622881.65,
+   "original": 3701195.0,
+   "printed": "HEALTH INS"
+  },
+  "appropriation": 26287474.0,
+  "appropriation_departments": [
+   {
+    "dept": "300",
+    "name": "SCHOOL DEPARTMENT",
+    "original": 26247474.0
+   },
+   {
+    "dept": "301",
+    "name": "SCHOOL NON-RECURRING EXPENSES",
+    "original": 40000.0
+   }
+  ],
+  "district_book_agrees": true,
+  "district_book_settled": 3701195.0,
+  "health_share_of_appropriation": 0.14079690578105755,
+  "omnibus": 51189961.0,
+  "omnibus_departments": 67,
+  "retiree_account_id": "0100-19142-570018",
+  "retiree_original": 1521535.59,
+  "retiree_share_of_appropriation": 0.05788063128469476,
+  "retiree_share_of_total": 0.2913295188752978,
+  "total_original": 5222730.59
+ },
+ "source": "sources/data/lunenburg.db",
+ "town_change": {
+  "cagr": 0.04313975384697133,
+  "change": 1742693.99,
+  "first": 1970826.33,
+  "first_fy": 2011,
+  "last": 3713520.32,
+  "last_fy": 2026,
+  "pct": 0.884245335813024,
+  "years": 15
+ },
+ "town_series": [
+  {
+   "appropriated": 1970826.33,
+   "fy": 2011,
+   "page": "65",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2119333.71,
+   "fy": 2012,
+   "page": "65",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2053508.94,
+   "fy": 2013,
+   "page": "69",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 1804659.45,
+   "fy": 2015,
+   "page": "28",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 1919998.72,
+   "fy": 2016,
+   "page": "30",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2105918.99,
+   "fy": 2017,
+   "page": "28",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2319622.56,
+   "fy": 2018,
+   "page": "34",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2604860.11,
+   "fy": 2019,
+   "page": "36",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2656877.8,
+   "fy": 2020,
+   "page": "30",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2633155.17,
+   "fy": 2021,
+   "page": "31",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2533781.59,
+   "fy": 2022,
+   "page": "32",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 2852641.67,
+   "fy": 2023,
+   "page": "32",
+   "source": "annual report"
+  },
+  {
+   "appropriated": 3713520.32,
+   "fy": 2026,
+   "page": null,
+   "source": "ledger"
+  }
+ ]
+}

@@ -55,6 +55,23 @@
   --fund-pandemic: #e09a20;
   --fund-school: #8e3a95;
   --fund-other: #8a8880;
+  /* WHAT THE SPORTS COST, BY CATEGORY, on /athletics-money. Three named categories out of
+     the district's own sport-by-sport workbook — its column headings, not our idea of the
+     shape — plus an achromatic residual.
+     They are a CATEGORICAL set. They never carry direction, and they are deliberately
+     kept off --series-cost/--series-revenue, which on that same page carry the two SIDES
+     of the money (the town's appropriation and the fee-funded fund). A hue that means
+     "the town pays this" in one chart must not mean "officials" in the next.
+     Validated with the dataviz validator against this surface, all-pairs: lightness band,
+     chroma floor, CVD separation (worst ΔE 11.9, deuteranopia) and normal-vision
+     separation all pass. One check WARNs by design — the amber is 2.36:1 against this
+     surface rather than 3:1 — and the relief the validator requires is present: every
+     category is direct-labelled in the legend and every chart has a table twin.
+     The residual is var(--text-muted) rather than a token of its own, for the same reason
+     --fund-other is achromatic: it is what is left, not an entity. */
+  --ath-coaches: #0e8a6b;
+  --ath-transport: #8e3a95;
+  --ath-officials: #c9a227;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -91,6 +108,12 @@
     --fund-pandemic: #cf9520;
     --fund-school: #b062b9;
     --fund-other: #9b9992;
+    /* The three athletics categories, re-stepped for the dark surface rather than
+       flipped. All five checks pass here, including the contrast the light amber only
+       WARNs on. */
+    --ath-coaches: #13a37f;
+    --ath-transport: #b96fc3;
+    --ath-officials: #b58e1e;
   }
 }
 :root[data-theme="dark"] {
@@ -115,6 +138,9 @@
     --fund-pandemic: #cf9520;
     --fund-school: #b062b9;
     --fund-other: #9b9992;
+    --ath-coaches: #13a37f;
+    --ath-transport: #b96fc3;
+    --ath-officials: #b58e1e;
 }
 
 /* Anything that pins itself below the header needs to know how tall the header is,

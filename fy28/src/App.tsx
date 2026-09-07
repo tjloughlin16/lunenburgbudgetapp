@@ -27,6 +27,7 @@ import { Money } from './pages/Money'
 import { Gaps } from './pages/Gaps'
 import { BudgetVsActual } from './pages/BudgetVsActual'
 import { SchoolStaffing } from './pages/SchoolStaffing'
+import { HealthInsurance } from './pages/HealthInsurance'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
@@ -356,6 +357,7 @@ export default function App() {
       {tab === 'gaps' && <Gaps onJump={go} />}
       {tab === 'variance' && <BudgetVsActual />}
       {tab === 'staffing' && <SchoolStaffing />}
+      {tab === 'insurance' && <HealthInsurance />}
       {tab === 'funds' && <SpecialRevenue />}
       {tab === 'database' && <Database onJump={go} />}
       {tab === 'reports' && <Reports />}

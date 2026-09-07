@@ -40,9 +40,17 @@ ORDINALS, not columns, and the page-level reconciliation does not tie. So this s
 the page text directly and reconciles each year against **the identity the table itself
 prints** -- the component rows must sum to the printed `Total Insurance`. A year that does
 not tie is reported as not established and is kept out of every series. That check has
-power to fail: it fails on FY2014 today, where the page prints a `fwd` carry-forward
-inside the subtotal, and that year is repaired only by reading the carry-forward line the
-page actually prints.
+power to fail, and it does: FY2014 is short by exactly the $6,150.00 the page prints as a
+bare `fwd` carry-forward on its own line above the block, and rather than guess which row
+that belongs to the year is reported as not established. FY2024 and FY2025 print no
+classification of appropriations at all.
+
+ONLY THE APPROPRIATED COLUMN IS PUBLISHED FROM THESE PAGES. The reconciliation establishes
+that one column: the components sum to the printed subtotal in it. The EXPENDED column is
+present on the page and does NOT tie in every year -- several editions print two columns
+where others print four, so what is third on one page is second on another -- and that is
+rule 13's positional-name trap exactly. A column this script has not established is not
+published from it.
 
 THE FINDING THE EXTRACT MAKES POSSIBLE. In FY2023 the town's report stopped printing one
 `Health Insurance CH 32B` line and started printing three -- town retirees, school retirees
@@ -68,7 +76,7 @@ import sqlite3
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB = os.path.join(ROOT, 'fy28/public/data/lunenburg.db')
+DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 PAGES = os.path.join(ROOT, 'sources/town-budget/pages')
 OUT = os.path.join(ROOT, 'fy28/public/data/health-insurance.json')
 
@@ -83,7 +91,7 @@ DISTRICT_LINE = 'health insurance'
 # build_traceability_ladder.py uses, and for the same reason: the register outranks the page.
 GAP_KEYS = [
     ('money_out', 'School share of the town’s health insurance before FY2026'),
-    ('money_out', 'School share of Medicare, life insurance and the insurance reserves'),
+    ('money_out', 'School share of Medicare, active health insurance and the insurance reserves'),
     ('document_wanted', 'The town’s Chapter 32B enrolment schedule'),
 ]
 
@@ -382,10 +390,8 @@ def build():
     # The town-side series: the appropriated column of every year that ties, plus FY2026
     # from the ledger, which is a different document and is labelled as one.
     town_series = [{'fy': y['fy'], 'appropriated': y['printed_total'],
-                    'expended': y['printed_expended'],
                     'source': 'annual report', 'page': y['page']} for y in checked]
     town_series.append({'fy': LEDGER_FY, 'appropriated': acct_sum,
-                        'expended': round(sum(a['expended'] for a in accounts), 2),
                         'source': 'ledger', 'page': None})
 
     school_total = round(active['original'] + sum(
@@ -402,9 +408,30 @@ def build():
     if r23:
         school23 = next(r['appropriated'] for r in r23['rows'] if r['key'] == 'school_retirees')
 
+    # THE SPLIT, MEASURED. In the first year the report names a school share, the single
+    # `Health Insurance CH 32B` line falls while the department's own subtotal rises. Both
+    # halves are computed here so the page states the measurement and not the reading of it.
+    split = None
+    if r23:
+        prev = next((y for y in checked if y['fy'] == r23['fy'] - 1), None)
+        if prev:
+            def row(y, key):
+                return next((r['appropriated'] for r in y['rows'] if r['key'] == key), None)
+            a, b = row(prev, 'health_ins'), row(r23, 'health_ins')
+            split = {
+                'fy': r23['fy'], 'prev_fy': prev['fy'],
+                'undivided_before': a, 'undivided_after': b,
+                'undivided_pct': None if not a else (b - a) / a,
+                'total_before': prev['printed_total'], 'total_after': r23['printed_total'],
+                'total_pct': (r23['printed_total'] - prev['printed_total']) / prev['printed_total'],
+                'named_rows': [r['label'] for r in r23['rows'] if r['side'] != 'unnamed'],
+            }
+
+    town_points = [{'fy': t['fy'], 'value': t['appropriated']} for t in town_series]
+
     return {
         'generated_by': 'scripts/build_insurance_charts.py',
-        'source': 'fy28/public/data/lunenburg.db',
+        'source': 'sources/data/lunenburg.db',
         'ledger': {
             'fy': LEDGER_FY, 'period': LEDGER_PERIOD, 'dept': INSURANCE_DEPT,
             'dept_name': dept['name'], 'doc_id': dept['doc_id'],
@@ -454,10 +481,16 @@ def build():
                 else f'components sum to {y["summed_components"]:,.2f} against a printed '
                      f'{y["printed_total"]:,.2f}')} for y in reports if not y['checked']],
             'names_school_share': [y['fy'] for y in named],
+            # The years in which ANY document in this archive separates a school share, and
+            # the years in which one could have. Computed rather than counted in the page,
+            # because "2 of 16" is exactly the kind of figure that survives the data moving.
+            'school_years': sorted({y['fy'] for y in named} | {LEDGER_FY}),
+            'years_examined': sorted({y['fy'] for y in reports} | {LEDGER_FY}),
             'school_retirees_fy2023': school23,
             'school_retirees_first_named_fy': r23['fy'] if r23 else None,
             'school_retirees_page': r23['page'] if r23 else None,
             'school_retirees_source': r23['source'] if r23 else None,
+            'split': split,
             'growth_since_named': None if not school23 else {
                 'first_fy': r23['fy'], 'last_fy': LEDGER_FY,
                 'first': school23, 'last': school_in_dept914,
@@ -466,6 +499,7 @@ def build():
             },
         },
         'town_series': town_series,
+        'town_change': change(town_points),
         'gaps': gaps(cx),
     }
 

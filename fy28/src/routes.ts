@@ -14,6 +14,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
   | 'funds'
   | 'staffing'
+  | 'insurance'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -88,6 +89,11 @@ export const SLUG: Record<Tab, string> = {
   // people say out loud is "school staffing", so that is the address; `staffing` and the
   // rest are aliases.
   staffing: 'school-staffing',
+  // The largest school cost that is not in the school budget. The slug is the THING, not
+  // the finding — `health-insurance` is what a resident types and what gets read aloud at
+  // a meeting. NOT `insurance` on its own: the town's ledger has a liability-insurance
+  // department too, and a bare `insurance` would promise both.
+  insurance: 'health-insurance',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -160,6 +166,11 @@ const ALIASES: Record<string, Tab> = {
   'school-staffing': 'staffing', staffing: 'staffing', staff: 'staffing',
   teachers: 'staffing', headcount: 'staffing', paraprofessionals: 'staffing',
   paras: 'staffing', 'staff-rosters': 'staffing', rosters: 'staffing',
+  // NOT 'retirees' or 'benefits' alone -- the first names only half the page and the
+  // second would promise pensions, which are a different assessment in a different
+  // department and are NOT established here.
+  'health-insurance': 'insurance', insurance: 'insurance', health: 'insurance',
+  'retiree-health': 'insurance', 'chapter-32b': 'insurance', 'schrethlth': 'insurance',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -200,6 +211,7 @@ export const LABEL: Record<Tab, string> = {
   variance: 'Budgets against actuals',
   funds: 'The money outside the budget',
   staffing: 'School staffing — names, FTE and dollars',
+  insurance: 'Health insurance — the cost outside the school budget',
   dataroom: 'The data room',
 }
 
@@ -216,6 +228,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   variance: 'themoney',
   funds: 'themoney',
   staffing: 'themoney',
+  insurance: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -280,6 +293,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   themoney: 'money', gaps: 'money', variance: 'money', funds: 'money',
   reports: 'money',
   staffing: 'money',
+  insurance: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -297,7 +311,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'staffing', 'variance', 'funds', 'gaps', 'reports'],
+  money: ['themoney', 'staffing', 'insurance', 'variance', 'funds', 'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

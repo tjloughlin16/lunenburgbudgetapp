@@ -131,13 +131,43 @@ ACTUAL_KINDS = {'actual', 'actuals', 'expended'}
 # series -- and it broke a series that had already been validated against the workbook.
 # The cost of leaving it out is that a row using a dash for zero has one fewer number than
 # it has columns, so the row is skipped. A skipped row is visible; a shifted one is not.
-NUM = re.compile(r'\(?\$?\s?(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?\)?')
+# PARENTHESES ARE A MINUS SIGN, and this regex used to eat them.
+#
+# It matched `\(?` and `\)?` and then captured only the digits between, so
+# `(157,886.32)` -- accounting notation for NEGATIVE -- came out as +157,886. The ACE
+# paraprofessional line is negative in FY2024, and `sped_para_history` therefore reported
+# a total $315,772 too high: wrong by exactly TWICE the line, because the figure was not
+# merely dropped, it was reflected.
+#
+# Found by an agent building the staffing page, which summed the same five lines out of
+# `budget_figure` (which parses the sign correctly) and got a different answer from this
+# dataset. Two extracts of one cell disagreeing is the only reason anybody noticed.
+#
+# The group now spans the brackets so `money()` can see them.
+NUM = re.compile(r'(-?\(?-?\$?\s?-?\d{1,3}(?:,\d{3})*(?:\.\d+)?\)?)')
 
 
 def money(tok):
+    """A figure as the document prints it, INCLUDING its sign.
+
+    `(1,234)` is minus 1,234 -- accounting notation, and the town's budget documents use
+    it. Reading it as positive does not lose the figure, it REFLECTS it, so a total comes
+    out wrong by twice the line rather than by the line.
+    """
     if not tok:
         return 0.0
-    return float(tok.replace(',', ''))
+    # These documents write a negative THREE ways and the archive has met all three:
+    #   (157,886.32)$   parenthesised, dollar sign trailing
+    #   -$157,886       minus before the dollar
+    #   -34.00          a bare minus, on the percentage columns
+    t = tok.strip()
+    neg = (t.startswith('(') and t.endswith(')')) or t.lstrip('(').startswith('-') \
+        or t.startswith('-')
+    t = t.strip('()').replace('$', '').replace(',', '').replace('-', '').strip()
+    if not t or t == '-':
+        return 0.0
+    v = float(t)
+    return -v if neg else v
 
 
 def columns(lines, i):

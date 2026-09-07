@@ -115,8 +115,8 @@ export function Flow({ rows }: { rows: YearRow[] }) {
               stroke="var(--axis)" tickLine={false} axisLine={false}
               tickFormatter={usdShort} />
             <Tooltip content={<FlowTip />} cursor={{ fill: 'var(--surface-3)', opacity: 0.5 }} />
-            <Bar dataKey="receipts" fill={IN} radius={[4, 4, 0, 0]} />
-            <Bar dataKey="disbursements" fill={OUT} radius={[4, 4, 0, 0]} />
+            <Bar dataKey="receipts" fill={IN} radius={[4, 4, 0, 0]} isAnimationActive={false} />
+            <Bar dataKey="disbursements" fill={OUT} radius={[4, 4, 0, 0]} isAnimationActive={false} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -196,7 +196,7 @@ export function Held({ rows, bands }: { rows: BandRow[]; bands: BandDef[] }) {
             {bands.map(b => (
               <Area key={b.id} type="monotone" dataKey={b.id} stackId="held"
                 stroke="var(--surface-1)" strokeWidth={2}
-                fill={BAND_COLOUR[b.id]} fillOpacity={0.92} />
+                fill={BAND_COLOUR[b.id]} fillOpacity={0.92} isAnimationActive={false} />
             ))}
           </AreaChart>
         </ResponsiveContainer>
@@ -275,7 +275,7 @@ export function Net({ rows, what }: { rows: YearRow[]; what: string }) {
             <Tooltip content={<NetTip what={what} />}
               cursor={{ fill: 'var(--surface-3)', opacity: 0.5 }} />
             <ReferenceLine y={0} stroke="var(--axis)" />
-            <Bar dataKey="net" radius={[4, 4, 0, 0]}>
+            <Bar dataKey="net" radius={[4, 4, 0, 0]} isAnimationActive={false}>
               {rows.map(r => <Cell key={r.fy} fill={r.net >= 0 ? IN : OUT} />)}
             </Bar>
           </BarChart>
@@ -329,11 +329,15 @@ export type MoverRow = {
  *  reflows to one column without a scroll container.
  *
  *  Colour is the diverging pair, by SIGN, not by rank — re-sorting the list never
- *  repaints a fund the reader has already learned. */
-export function Movers({ rows, firstFy, lastFy }: {
-  rows: MoverRow[]; firstFy: number; lastFy: number
+ *  repaints a fund the reader has already learned.
+ *
+ *  `span` IS PASSED IN, and that is the point of it. Two of these render side by side —
+ *  what grew and what fell — and scaling each to its own largest value drew an $85,000
+ *  fall the same length as an $893,000 rise. The caller hands both panels the same
+ *  denominator, so a bar's length means the same thing in either one. */
+export function Movers({ rows, firstFy, lastFy, span }: {
+  rows: MoverRow[]; firstFy: number; lastFy: number; span: number
 }) {
-  const span = Math.max(...rows.map(r => Math.abs(r.change)), 1)
   return (
     <Card>
       <p className="text-[11.5px] mb-3" style={{ color: 'var(--text-muted)' }}>
