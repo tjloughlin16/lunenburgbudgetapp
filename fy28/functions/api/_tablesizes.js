@@ -41,7 +41,7 @@ export const ROWS = {
  "money_assumptions": 6,
  "money_classification": 252,
  "money_edges": 11,
- "money_gaps": 23,
+ "money_gaps": 24,
  "munis_ledger": 983,
  "ood_tuition_history": 30,
  "placement_counts": 15,
