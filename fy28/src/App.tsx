@@ -18,13 +18,13 @@ import { Sources } from './pages/Sources'
 import { Athletics } from './pages/Athletics'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
-import { DataTopLine } from './components/DataTopLine'
 import { AgentsIndex } from './components/AgentsIndex'
 import { AskAnAssistant } from './components/AskAnAssistant'
 import { FreeCash } from './pages/FreeCash'
 import { DataRoom } from './pages/DataRoom'
 import { Reports } from './pages/Reports'
-import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_LABEL, AREA_TABS, areaOf } from './routes'
+import { Money } from './pages/Money'
+import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
 
@@ -196,7 +196,7 @@ export default function App() {
         style={{ background: 'color-mix(in srgb, var(--surface-2) 92%, transparent)',
                  borderColor: 'var(--grid)' }}>
         <nav aria-label="Sections"
-          className="mx-auto max-w-6xl px-5 h-12 flex items-center gap-3">
+          className="mx-auto max-w-6xl px-4 h-10 flex items-center gap-2">
           {/* The site outgrew its name. It was "Lunenburg FY28" when it was a projection
               of one budget year; it is now an argument about why the year keeps
               recurring and what would stop it, and the address people will type is
@@ -211,12 +211,17 @@ export default function App() {
                 saved thirty pixels and dropped the only word that says which town this
                 is about — which is the one word a link shared into a Lunenburg Facebook
                 group cannot do without. */}
-            <span className="hidden sm:inline text-sm">
+            {/* ONE LINE, always. The phone variant used to stack "Lunenburg" over
+                "Budget Project", which on its own made the bar twice as tall as it
+                needed to be — a two-line brand in a sticky header costs a row of the
+                page on every screen, forever. The short form keeps the town's name,
+                which is the one word a link shared into a Lunenburg group cannot do
+                without. */}
+            <span className="hidden sm:inline text-sm whitespace-nowrap">
               <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project
             </span>
-            <span className="sm:hidden block text-[11px]">
-              <span className="block" style={{ color: 'var(--brand)' }}>Lunenburg</span>
-              <span className="block">Budget Project</span>
+            <span className="sm:hidden text-[13px] whitespace-nowrap">
+              <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget
             </span>
           </button>
 
@@ -228,16 +233,15 @@ export default function App() {
               not the same as nesting the URLs. */}
           {area && (
             <>
-              <span className="hidden sm:inline text-[11px] font-semibold uppercase
-                               tracking-wider shrink-0 pl-1 pr-0.5"
-                style={{ color: 'var(--text-muted)' }}>{AREA_LABEL[area]}</span>
+              {/* The area's NAME is not drawn. The tabs beside it are the area, and a
+                  label repeating them is a word that costs horizontal room on a phone
+                  and tells a reader nothing they cannot see. */}
               <div className="no-scrollbar flex items-center gap-1 min-w-0
                               overflow-x-auto overscroll-x-contain">
                 {AREA_TABS[area].map(id => (
                   <button key={id} onClick={() => go(id)}
                     aria-current={tab === id ? 'page' : undefined}
-                    className="text-xs font-semibold px-2.5 py-1.5 rounded-md
-                               whitespace-nowrap shrink-0"
+                    className="text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
                     style={{ background: tab === id ? 'var(--surface-3)' : 'transparent',
                              color: tab === id ? 'var(--text-primary)'
                                                : 'var(--text-secondary)' }}>
@@ -257,7 +261,7 @@ export default function App() {
           <div className="flex items-center gap-1.5 ml-auto min-w-0 shrink-0">
             <button onClick={() => go('sources')} title="Every document this is built on"
               aria-current={tab === 'sources' ? 'page' : undefined}
-              className="inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
+              className="inline-flex text-xs font-semibold px-2 py-1 rounded
                          whitespace-nowrap shrink-0"
               style={{ background: tab === 'sources' ? 'var(--surface-3)' : 'transparent',
                        color: tab === 'sources' ? 'var(--text-primary)'
@@ -271,7 +275,7 @@ export default function App() {
               <button key={c.id} onClick={() => go(c.id)} title={c.sub}
                 aria-current={tab === c.id ? 'page' : undefined}
                 className="cta flex items-center gap-1.5 text-xs font-bold
-                           px-2.5 py-2 rounded-md whitespace-nowrap shrink-0
+                           px-2.5 py-1.5 rounded whitespace-nowrap shrink-0
                            transition-opacity hover:opacity-90"
                 style={tab === c.id
                   ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
@@ -297,13 +301,21 @@ export default function App() {
         )}
       </header>
 
-      {/* FIRST thing under the header, and that position is the whole point -- the same
-          links in the footer sit at 95% of a 250KB page and are cut off before any
-          fetch tool reaches them. See DataTopLine.tsx.
+      {/* THE MACHINE-READABLE TOP LINE WAS REMOVED, 7 Sept 2026. TJ: "remove 'Analyse
+          this budget with AI' now. we have a top level page that describes it."
 
-          NOT on /ask, because /ask is where it points. A bar advertising the page you are
-          already reading is a row of chrome that can only take you where you are. */}
-      {tab !== 'ask' && <DataTopLine />}
+          It is worth knowing what that gave up, because the component is still in the
+          tree and somebody will wonder. It existed for BYTE POSITION: the same links in
+          the footer sit at about 95% of a 250KB page, and agent fetch tools that truncate
+          never reach them. A line under the header is read first.
+
+          What replaces it is structural rather than textual — `For AI assistants` is now
+          one of four doors on the front page, so /ask and /agents are in the link graph
+          at the top level instead of being a banner on every page. That is a better
+          answer for a human and a WEAKER one for a truncating fetcher, which only sees
+          the page it asked for. If that turns out to matter, the fix is an early link in
+          the head rather than a visible bar. See components/DataTopLine.tsx, which is
+          left in place with its reasoning intact. */}
 
       {/* Under the header rather than inside it: the header is sticky and this is not
           worth the vertical space on every scroll, but it has to be seen on arrival.
@@ -332,6 +344,7 @@ export default function App() {
       {tab === 'athletics' && <Athletics onJump={go} />}
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
+      {tab === 'themoney' && <Money onJump={go} />}
       {tab === 'reports' && <Reports />}
       {tab === 'agents' && <AgentsIndex />}
       {tab === 'ask' && <AskAnAssistant />}
@@ -377,27 +390,33 @@ export default function App() {
 
       <footer className="border-t py-10" style={{ borderColor: 'var(--grid)' }}>
         <div className="mx-auto max-w-6xl px-5 text-xs" style={{ color: 'var(--text-muted)' }}>
-          {/* The only route to the other pages on a phone, where the header gives up its
-              Go deeper button to fit the two boards. */}
-          {/* First line of the footer on every page. The sentence below promises the
-              reader can check this against the documents it cites; a promise with no link
-              under it is decoration. */}
-          <button onClick={() => go('walk')}
-            className="text-xs font-semibold mb-2 block"
-            style={{ color: 'var(--series-cost)' }}>
-            Start here &mdash; the walkthrough, from the beginning &rarr;
-          </button>
-          <button onClick={() => go('sources')}
-            className="text-xs font-semibold mb-2 block"
-            style={{ color: 'var(--series-cost)' }}>
-            Sources &mdash; every document this is built on &rarr;
-          </button>
-          <button onClick={() => go('deeper')}
-            className="text-xs font-semibold mb-3 block"
-            style={{ color: 'var(--series-cost)' }}>
-            Go deeper &mdash; every other page &rarr;
-          </button>
-          <DataFooter />
+          {/* NAVIGATION AND THE DATA BLOCK ARE OFF THE FRONT PAGE.
+              The chooser's whole job is one decision between four doors. A footer under
+              it offering the walkthrough, Sources and Go deeper re-adds three of the
+              destinations the page just finished removing, and the machine-readable
+              block adds six addresses on top — so the shortest page on the site had the
+              longest tail. They stay on every other page, where the reader is inside
+              something and a way out is worth the room. */}
+          {tab !== 'home' && (
+            <>
+              <button onClick={() => go('walk')}
+                className="text-xs font-semibold mb-2 block"
+                style={{ color: 'var(--series-cost)' }}>
+                Start here &mdash; the walkthrough, from the beginning &rarr;
+              </button>
+              <button onClick={() => go('sources')}
+                className="text-xs font-semibold mb-2 block"
+                style={{ color: 'var(--series-cost)' }}>
+                Sources &mdash; every document this is built on &rarr;
+              </button>
+              <button onClick={() => go('deeper')}
+                className="text-xs font-semibold mb-3 block"
+                style={{ color: 'var(--series-cost)' }}>
+                Go deeper &mdash; every other page &rarr;
+              </button>
+              <DataFooter />
+            </>
+          )}
 
           {/* Said plainly and near the top of the block, because it is the sentence
               somebody quotes when they are asked "is this the Town's site?" — and because

@@ -1,5 +1,5 @@
 import type { Area, Tab } from '../routes'
-import { AREA_HOME, AREA_LABEL, pathFor } from '../routes'
+import { AREA_HOME, AREA_LABEL } from '../routes'
 
 /** The front page: four doors and nothing else.
  *
@@ -22,16 +22,29 @@ import { AREA_HOME, AREA_LABEL, pathFor } from '../routes'
  *
  *   - **No figure is typed into this copy.** This is where "3,877 documents" gets written
  *     down once and quietly stops being true. (CLAUDE.md rule 2.)
- *   - **A door describes what exists.** "The money" is mostly not built and says so in
- *     those words. (Rule 7: an intention is not an outcome.)
+ *   - **A door describes what exists.** "The money" carried a `Being built` flag while its
+ *     front page said so too; it now opens on a real page that hands over five published
+ *     reference documents and the list of what the records cannot answer, so the flag came
+ *     off. A door may promise only what is behind it. (Rule 7: an intention is not an
+ *     outcome.)
  */
 
-const DOORS: { area: Area; who: string; note?: string }[] = [
+/** `quiet` marks a door that is not for a resident. It is smaller and in the muted
+ *  colour rather than the brand one, so the eye sorts it out of the set of three before
+ *  reading it — the three above are choices about the town, and this one is plumbing. */
+const DOORS: { area: Area; who: string; note?: string; quiet?: boolean
+  /** A door that opens a generated FILE rather than a route. `The database` is the
+   *  schema page — 74 tables with a live query box — which is a published document, not
+   *  a React page. It used to open the rate register, which is a good document about
+   *  fees and a baffling front door for a database: it greets you with athletic fees.
+   *  Landing on the thing the area is named after is worth leaving the app for. */
+  href?: string }[] = [
   { area: 'crisis', who: 'Why the budget keeps breaking, and what would fix it' },
-  { area: 'money', who: 'How the town’s money actually moves',
-    note: 'Being built' },
-  { area: 'data', who: 'Every table, and query it yourself' },
-  { area: 'agents', who: 'Pointing an assistant at this, or you are one' },
+  { area: 'money', who: 'Where every dollar comes from, and where the trail goes cold' },
+  { area: 'data', who: 'Every table, what it holds, and a query box',
+    href: '/reference/schema.html' },
+  { area: 'agents', who: 'Pointing an assistant at this, or you are one',
+    quiet: true },
 ]
 
 export function Home({ onJump }: { onJump: (t: Tab) => void }) {
@@ -51,12 +64,26 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           make the fourth door share a line with the third and stop being a list of
           four things. The row is the hit target, not the words in it. */}
       <div className="grid gap-2.5">
-        {DOORS.map(d => (
-          <button key={d.area} onClick={() => onJump(AREA_HOME[d.area])}
-            className="card px-4 py-4 text-left w-full min-h-[64px]
+        {DOORS.map(d => d.href ? (
+          <a key={d.area} href={d.href}
+            className="card px-4 py-4 text-left w-full min-h-[64px] block
                        transition-opacity hover:opacity-90">
+            <span className="text-[17px] font-bold leading-tight block">
+              {AREA_LABEL[d.area]}
+            </span>
+            <span className="block text-[13.5px] mt-1 leading-snug"
+              style={{ color: 'var(--text-muted)' }}>{d.who}</span>
+          </a>
+        ) : (
+          <button key={d.area} onClick={() => onJump(AREA_HOME[d.area])}
+            className={'card text-left w-full transition-opacity hover:opacity-90 ' +
+              (d.quiet ? 'px-4 py-3 min-h-[52px] mt-1.5' : 'px-4 py-4 min-h-[64px]')}
+            style={d.quiet ? { background: 'transparent' } : undefined}>
             <span className="flex items-baseline gap-2 flex-wrap">
-              <span className="text-[17px] font-bold leading-tight">
+              <span className={d.quiet
+                ? 'text-[14.5px] font-bold leading-tight'
+                : 'text-[17px] font-bold leading-tight'}
+                style={d.quiet ? { color: 'var(--text-secondary)' } : undefined}>
                 {AREA_LABEL[d.area]}
               </span>
               {d.note && (
@@ -64,17 +91,20 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
                   style={{ color: 'var(--status-warning)' }}>{d.note}</span>
               )}
             </span>
-            <span className="block text-[13.5px] mt-1 leading-snug"
-              style={{ color: 'var(--text-secondary)' }}>{d.who}</span>
+            <span className={d.quiet
+              ? 'block text-[12.5px] mt-0.5 leading-snug'
+              : 'block text-[13.5px] mt-1 leading-snug'}
+              style={{ color: 'var(--text-muted)' }}>{d.who}</span>
           </button>
         ))}
       </div>
 
-      <p className="mt-8 pt-4 border-t text-[12.5px] leading-snug"
-        style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>
-        The walkthrough used to be at this address and is now at{' '}
-        <code>{pathFor('walk')}</code>. Every other address is unchanged.
-      </p>
+      {/* The "the walkthrough moved" note was here and is gone. It explained a
+          change to somebody who had not seen the old page and could not have missed it,
+          on the one page whose job is to be four choices. Every old address still
+          resolves — `walk`, `walkthrough`, `start` and `start-here` are all aliases —
+          so nobody arrives at a dead link and needs telling. */}
+
     </div>
   )
 }

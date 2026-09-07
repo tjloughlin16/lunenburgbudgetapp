@@ -35,7 +35,7 @@ for — a reader picks their depth rather than being walked down one corridor.
 
 | door | for | what it holds |
 |---|---|---|
-| **Understanding the budget** | a resident with a question about the override, the schools, their tax bill | everything the site is today: the walkthrough, the situation, bend the curve, build your own budget, what solved requires |
+| **Budget Crisis** | a resident with a question about the override, the schools, their tax bill | everything the site is today: the walkthrough, the situation, bend the curve, build your own budget, what solved requires |
 | **The money, explained** | anyone asking "how does this actually work" | the structural findings. Where money comes from, where it goes, who decides. The money-flow diagrams, follow the money, who decides, the ledger structure |
 | **The data** | a reporter, a committee member, a resident checking a number | the schema page, charts over time, the query tool, the archive of documents |
 | **For AI assistants** | agents | `/agents`, `/ask`, the API. Already built, currently hard to find |
@@ -56,7 +56,7 @@ department, so it reads as *the Finance Committee's page* rather than *the town'
 | **Follow the money** | already a page name here | would have to be renamed or absorbed |
 
 **Recommendation: "The money"** as the door, with the standfirst carrying the precision.
-It is the phrase a resident already uses, and it sits beside "Understanding the budget"
+It is the phrase a resident already uses, and it sits beside "Budget Crisis"
 without either sounding like the other.
 
 ---

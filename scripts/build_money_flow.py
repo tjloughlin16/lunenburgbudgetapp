@@ -676,7 +676,7 @@ def _render_body(c):
 
 
 PAGE = '''<meta charset="utf-8">
-<title>How money reaches the schools — Lunenburg FY2026</title>
+<title>School Money Flow</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root {{
@@ -699,6 +699,8 @@ body {{ margin:0; background:var(--bg); color:var(--ink);
 header {{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:8px }}
 .kicker {{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted) }}
 h1 {{ font-size:27px; line-height:1.15; margin:8px 0; letter-spacing:-.02em }}
+.sub {{ font-size:15.5px; color:var(--muted); margin:2px 0 0;
+  letter-spacing:-.01em }}
 .standfirst {{ font-size:16px; color:var(--muted); margin:0 }}
 .stage {{ background:var(--card); border:1px solid var(--grid); border-radius:10px;
   padding:16px 15px; margin:16px 0 }}
@@ -842,7 +844,8 @@ code {{ font-family:ui-monospace,Menlo,monospace; font-size:12.5px }}
 <div class="wrap">
 <header>
   <div class="kicker">Lunenburg Budget Project &middot; Data architecture</div>
-  <h1>How money reaches the schools</h1>
+  <h1>School Money Flow</h1>
+  <p class="sub">How money reaches the schools</p>
   <p class="standfirst">FY2026, from every source the town budgets to the 258 accounts the
   school department spends from &mdash; and the one connection in the middle that cannot be
   drawn, because no record ties a source to a department.</p>

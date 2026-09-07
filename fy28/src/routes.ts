@@ -9,7 +9,7 @@
  *  /bend-the-curve#leverage means what it looks like it means. Both hosts are configured
  *  to serve index.html for any path, so a cold load of a deep link works. */
 
-export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'context' | 'why' | 'curve' | 'override'
+export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
   | 'dataroom' | 'reports' | 'agents' | 'ask'
 
@@ -28,6 +28,10 @@ export const SLUG: Record<Tab, string> = {
   deeper: 'go-deeper',
   answers: 'straight-answers',
   money: 'find-the-money',
+  // THE MONEY area's front door. NOT `money` -- that tab id has meant `/find-the-money`
+  // since long before the areas existed, and both the slug and the `money` alias are
+  // cited off this site. An area and a page may share a name; they may not share a Tab.
+  themoney: 'the-money',
   context: 'the-situation',
   why: 'why-it-repeats',
   curve: 'bend-the-curve',
@@ -96,6 +100,9 @@ const ALIASES: Record<string, Tab> = {
   // NOT 'rates' -- that alias already means the curve page, and has since before this
   // page existed. A shared link must not change where it lands.
   'rate-register': 'rates', fees: 'rates', 'fee-schedule': 'rates', register: 'rates',
+  // NOT 'money' -- taken, and by a page in a different area.
+  'the-money': 'themoney', 'how-money-works': 'themoney', 'money-flow': 'themoney',
+  'follow-the-money': 'themoney',
   'free-cash': 'freecash', freecash: 'freecash', reserves: 'freecash', 'certified-free-cash': 'freecash',
   reports: 'reports', analyses: 'reports', analysis: 'reports', 'our-analyses': 'reports',
   // NOT 'api' or 'data' -- both are live Function prefixes serving real files, and an
@@ -121,6 +128,7 @@ export const LABEL: Record<Tab, string> = {
   deeper: 'Go deeper',
   answers: 'Straight answers',
   money: 'Find the money',
+  themoney: 'How the money moves',
   context: 'The situation',
   why: 'Why it repeats',
   curve: 'Bend the curve',
@@ -147,7 +155,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
   athletics: 'context',
   rates: 'deeper',
-  reports: 'deeper',
+  reports: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -191,7 +199,9 @@ export function tabFromPath(pathname: string): Tab {
 export type Area = 'crisis' | 'money' | 'data' | 'agents'
 
 export const AREA_LABEL: Record<Area, string> = {
-  crisis: 'Understanding the budget',
+  // TJ, 7 Sept: "Budget Crisis". Names the thing rather than the reader's posture
+  // toward it — and it is what the town calls it, which is what a door has to match.
+  crisis: 'Budget Crisis',
   money: 'The money',
   data: 'The database',
   agents: 'For AI assistants',
@@ -199,7 +209,7 @@ export const AREA_LABEL: Record<Area, string> = {
 
 /** The page each area opens at, and the tab that owns its bar. */
 export const AREA_HOME: Record<Area, Tab> = {
-  crisis: 'walk', money: 'reports', data: 'rates', agents: 'ask',
+  crisis: 'walk', money: 'themoney', data: 'rates', agents: 'ask',
 }
 
 const AREA_OF: Partial<Record<Tab, Area>> = {
@@ -207,7 +217,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   freecash: 'crisis',
-  reports: 'money',
+  themoney: 'money', reports: 'money',
   rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -220,7 +230,7 @@ export function areaOf(t: Tab): Area | null {
  *  that link them rather than from the bar — a bar with fourteen entries is a sitemap. */
 export const AREA_TABS: Record<Area, Tab[]> = {
   crisis: ['walk', 'solved', 'curve', 'adjust', 'answers', 'deeper'],
-  money: ['reports'],
+  money: ['themoney', 'reports'],
   data: ['rates'],
   agents: ['ask', 'agents'],
 }
