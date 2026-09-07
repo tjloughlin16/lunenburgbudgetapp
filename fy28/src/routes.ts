@@ -168,3 +168,59 @@ export function tabFromPath(pathname: string): Tab {
   const seg = pathname.replace(/^\/+|\/+$/g, '').toLowerCase()
   return BY_SLUG[seg] ?? ROOT
 }
+
+/** WHICH AREA A PAGE BELONGS TO — the nav is scoped, the URLs are not.
+ *
+ *  The header used to show one flat bar on every page: the walkthrough, Go deeper,
+ *  Sources and the two boards. That bar is the CRISIS ANALYSIS chapter list, and showing
+ *  it on the front page re-presented the corridor the chooser exists to escape. TJ:
+ *  "those tabs and pages should only show when going into that subpage."
+ *
+ *  So navigation is scoped by area and **the addresses are not touched**. `/bend-the-curve`
+ *  does not become `/crisis/bend-the-curve`: those slugs are cited off this site and a URL
+ *  is an interface. Navigation scope does not have to equal URL nesting, which is what
+ *  makes this a nav change rather than a migration — and why check_moved_docs.py has
+ *  nothing new to check.
+ *
+ *  `sources` is deliberately in NO area. It backs all four, and putting it inside one
+ *  would say it belongs to that one. It stays in the header everywhere, as a utility
+ *  link rather than a peer tab — the claim this site rests on is that a resident can
+ *  check it, and evidence reachable only from inside one area is a weaker claim than it
+ *  sounds.
+ */
+export type Area = 'crisis' | 'money' | 'data' | 'agents'
+
+export const AREA_LABEL: Record<Area, string> = {
+  crisis: 'Understanding the budget',
+  money: 'The money',
+  data: 'The database',
+  agents: 'For AI assistants',
+}
+
+/** The page each area opens at, and the tab that owns its bar. */
+export const AREA_HOME: Record<Area, Tab> = {
+  crisis: 'walk', money: 'reports', data: 'rates', agents: 'ask',
+}
+
+const AREA_OF: Partial<Record<Tab, Area>> = {
+  walk: 'crisis', deeper: 'crisis', answers: 'crisis', money: 'crisis', context: 'crisis',
+  why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
+  adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
+  freecash: 'crisis',
+  reports: 'money',
+  rates: 'data', dataroom: 'data',
+  ask: 'agents', agents: 'agents',
+}
+
+export function areaOf(t: Tab): Area | null {
+  return AREA_OF[t] ?? null
+}
+
+/** The tabs shown in an area's own bar, in order. Drill-ins are reachable from the pages
+ *  that link them rather than from the bar — a bar with fourteen entries is a sitemap. */
+export const AREA_TABS: Record<Area, Tab[]> = {
+  crisis: ['walk', 'solved', 'curve', 'adjust', 'answers', 'deeper'],
+  money: ['reports'],
+  data: ['rates'],
+  agents: ['ask', 'agents'],
+}

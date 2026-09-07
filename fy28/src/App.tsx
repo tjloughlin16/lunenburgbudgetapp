@@ -24,7 +24,7 @@ import { AskAnAssistant } from './components/AskAnAssistant'
 import { FreeCash } from './pages/FreeCash'
 import { DataRoom } from './pages/DataRoom'
 import { Reports } from './pages/Reports'
-import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab } from './routes'
+import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_LABEL, AREA_TABS, areaOf } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
 
@@ -56,9 +56,10 @@ const CTAS: { id: Tab; label: string; short: string; glyph: string; sub: string 
  *  it had seven equally good beginnings, which was never true. The walkthrough is the way
  *  in, the two boards are the things you use, and everything else keeps its address and
  *  its content behind one quiet door. Nothing has been removed — see pages/GoDeeper. */
-const DEEPER: { id: Tab; label: string; sub: string } =
-  { id: 'deeper', label: 'Go deeper',
-    sub: 'Every other page — the questions, the levers priced in full, and where the numbers come from' }
+// `Go deeper` used to sit in the global bar; it is now a tab inside the crisis
+// area's own list (AREA_TABS in routes.ts), so this constant has no reader.
+// Deleted rather than left unused — an unused nav definition is the next
+// person's evidence that the bar still works the old way.
 
 /** Three pages, three jobs.
  *
@@ -68,6 +69,8 @@ const DEEPER: { id: Tab; label: string; sub: string } =
  *  that crosses between them is a starting list of cuts, sent one way, on request. */
 export default function App() {
   const [tab, setTab] = useState<Tab>(() => tabFromPath(window.location.pathname))
+  /** Which area's bar to show. `null` on the chooser and on Sources, which is global. */
+  const area = areaOf(tab)
   const [order, setOrder] = useState<string[]>(MODEL.presets.school_committee.order)
   const [preset, setPreset] = useState<string | null>('school_committee')
   const [seed, setSeed] = useState<{ state: CutState; nonce: number } | null>(null)
@@ -217,49 +220,54 @@ export default function App() {
             </span>
           </button>
 
-          {/* The walkthrough is no longer at the root, so it needs a way back into it
-              that is not the wordmark. Desktop only, for the same reason Go deeper is:
-              the two boards and Sources are what a phone has room for, and the footer
-              carries this one too. */}
-          <button onClick={() => go('walk')} title="The walkthrough, from the beginning"
-            aria-current={tab === 'walk' ? 'page' : undefined}
-            className="hidden sm:inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
-                       whitespace-nowrap shrink-0"
-            style={{ background: tab === 'walk' ? 'var(--surface-3)' : 'transparent',
-                     color: tab === 'walk' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-            {LABEL.walk}
-          </button>
+          {/* AREA NAV — scoped, and empty on the front page.
+              This bar used to list the walkthrough, Go deeper and the two boards on EVERY
+              page including the chooser, which re-presented the corridor the chooser
+              exists to escape. Those are the CRISIS ANALYSIS chapters; they belong inside
+              that area and nowhere else. The addresses did not move: scoping the nav is
+              not the same as nesting the URLs. */}
+          {area && (
+            <>
+              <span className="hidden sm:inline text-[11px] font-semibold uppercase
+                               tracking-wider shrink-0 pl-1 pr-0.5"
+                style={{ color: 'var(--text-muted)' }}>{AREA_LABEL[area]}</span>
+              <div className="no-scrollbar flex items-center gap-1 min-w-0
+                              overflow-x-auto overscroll-x-contain">
+                {AREA_TABS[area].map(id => (
+                  <button key={id} onClick={() => go(id)}
+                    aria-current={tab === id ? 'page' : undefined}
+                    className="text-xs font-semibold px-2.5 py-1.5 rounded-md
+                               whitespace-nowrap shrink-0"
+                    style={{ background: tab === id ? 'var(--surface-3)' : 'transparent',
+                             color: tab === id ? 'var(--text-primary)'
+                                               : 'var(--text-secondary)' }}>
+                    {LABEL[id]}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
 
-          {/* Reachable on a phone from the walkthrough's last room and the footer, so it
-              gives up its place in the bar rather than squeezing the two boards. */}
-          <button onClick={() => go(DEEPER.id)} title={DEEPER.sub}
-            aria-current={tab === DEEPER.id ? 'page' : undefined}
-            className="hidden sm:inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
-                       whitespace-nowrap shrink-0"
-            style={{ background: tab === DEEPER.id ? 'var(--surface-3)' : 'transparent',
-                     color: tab === DEEPER.id ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-            {DEEPER.label}
-          </button>
+          {/* Sources is in NO area on purpose and shows everywhere, pushed to the right so
+              it reads as a utility rather than as a peer of the chapter tabs. It backs all
+              four areas; putting it inside one would say it belongs to that one. Kept on a
+              phone where other things are not: the claim this site rests on is that a
+              resident can check it, and evidence reachable only on a desktop is a weaker
+              claim than it sounds. */}
+          <div className="flex items-center gap-1.5 ml-auto min-w-0 shrink-0">
+            <button onClick={() => go('sources')} title="Every document this is built on"
+              aria-current={tab === 'sources' ? 'page' : undefined}
+              className="inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
+                         whitespace-nowrap shrink-0"
+              style={{ background: tab === 'sources' ? 'var(--surface-3)' : 'transparent',
+                       color: tab === 'sources' ? 'var(--text-primary)'
+                                                : 'var(--text-secondary)' }}>
+              Sources
+            </button>
 
-          {/* Kept on a phone where Go deeper is not. The claim this whole site rests on is
-              that a resident can check it, and evidence that only appears on a desktop is
-              a weaker claim than it sounds. Two words, so it costs the CTAs almost
-              nothing. */}
-          <button onClick={() => go('sources')} title="Every document this is built on"
-            aria-current={tab === 'sources' ? 'page' : undefined}
-            className="inline-flex text-xs font-semibold px-2.5 py-1.5 rounded-md
-                       whitespace-nowrap shrink-0"
-            style={{ background: tab === 'sources' ? 'var(--surface-3)' : 'transparent',
-                     color: tab === 'sources' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-            Sources
-          </button>
-
-          {/* Scrolls rather than wraps or truncates: three buttons plus the brand is
-              wider than a small phone, and a nav that reflows to two rows moves the page
-              under the reader's thumb. */}
-          <div className="no-scrollbar flex items-center gap-1.5 ml-auto min-w-0
-                          overflow-x-auto overscroll-x-contain">
-            {CTAS.map(c => (
+            {/* The two boards, only where they mean something. On the money, database and
+                assistant areas they are an invitation to leave. */}
+            {area === 'crisis' && CTAS.map(c => (
               <button key={c.id} onClick={() => go(c.id)} title={c.sub}
                 aria-current={tab === c.id ? 'page' : undefined}
                 className="cta flex items-center gap-1.5 text-xs font-bold
