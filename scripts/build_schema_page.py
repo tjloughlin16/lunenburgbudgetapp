@@ -55,14 +55,51 @@ Only `partly` moves the verdict. Both print, because a reader needs both.
 import argparse
 import csv
 import html
-import random
+import json
 import os
+import random
 import sqlite3
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'notes', 'reference', 'data-model', 'schema.html')
+MANIFEST = os.path.join(ROOT, 'fy28', 'src', 'data', 'agent-manifest.json')
+
+
+def api_base():
+    """Which API the page's modal queries. Never typed into this file.
+
+    Three layers, most specific first, because there are three real situations:
+
+      LUNENBURG_API   an environment variable — point a build at `wrangler dev`, or at a
+                      preview deploy, without editing anything. TJ's suggestion, and the
+                      reason it is needed is the note already on the page: this document
+                      is generated from the LOCAL database and queries a PUBLISHED one, so
+                      there has to be a way to aim it at the copy you are actually working
+                      on.
+      agent-manifest  the canonical site, read from the same file the rest of the build
+                      reads it from. Rule 2: a URL typed into a generator is a figure
+                      typed into prose, and this project has had a document number and a
+                      bundle name go stale exactly that way.
+      (no default)    if the manifest cannot be read, fail rather than guess — a page
+                      silently pointing at the wrong database is the failure this whole
+                      mechanism exists to prevent.
+
+    A viewer can override it again at runtime with `?api=` — see the script on the page.
+    """
+    env = os.environ.get('LUNENBURG_API')
+    if env:
+        return env.rstrip('/')
+    if not os.path.exists(MANIFEST):
+        raise SystemExit(
+            f'{os.path.relpath(MANIFEST, ROOT)} is missing and LUNENBURG_API is not set, '
+            f'so there is no way to know which API this page should query.')
+    with open(MANIFEST, encoding='utf-8') as fh:
+        site = json.load(fh).get('site')
+    if not site:
+        raise SystemExit(f'no `site` in {os.path.relpath(MANIFEST, ROOT)}')
+    return site.rstrip('/')
 
 # --------------------------------------------------------------------------------------
 # The questions. Each is RUN. `partly` is a declared limit on what the rows establish, and
@@ -350,6 +387,7 @@ def run_questions(c):
 
 
 def render(c):
+    API_BASE = api_base()
     tabs, gloss = semantics()
     fams = by_role(c, tabs)
     qs = run_questions(c)
@@ -497,7 +535,7 @@ def render(c):
     body = '\n'.join(B)
     return PAGE.format(
         body=body, n_tables=n_tables, n_views=n_views,
-        n_rows=f'{n_rows:,}', n_cols=n_cols,
+        n_rows=f'{n_rows:,}', n_cols=n_cols, api_base=API_BASE,
         pct_described=f'{described / n_cols:.0%}',
         gen=date.today().isoformat())
 
@@ -635,7 +673,9 @@ button.open:hover, #mrun:hover {{ border-color:var(--traced); color:var(--traced
 <p class="warn"><strong>Two databases, and they are not always the same one.</strong>
 Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
 <code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
-queries the PUBLISHED API, which is a copy pushed to Cloudflare D1 and can lag behind.
+queries <code>{api_base}</code>, a copy pushed to Cloudflare D1 that can lag behind.
+Point it elsewhere with <code>?api=&lt;base-url&gt;</code> on this page's own URL, or set
+<code>LUNENBURG_API</code> before building.
 If a table opens empty, or the button reports that it does not exist, that copy has not
 been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
 hidden because two sources that usually agree are the ones that mislead when they
@@ -668,7 +708,10 @@ stop.</p>
 // `access-control-allow-origin: *`, which an opaque origin is allowed to read. So the
 // data comes from the same public endpoint anybody else would use — one copy, always
 // current, and this page becomes a caller of the API rather than a duplicate of it.
-const API = 'https://lunenburgbudgetproject.org/api/query';
+// Build-time default comes from agent-manifest.json (or $LUNENBURG_API). A viewer can
+// re-aim it without a rebuild: ?api=http://127.0.0.1:8788 — useful against wrangler dev.
+const API = (new URLSearchParams(location.search).get('api') || '{api_base}')
+              .replace(/\/$/, '') + '/api/query';
 const modal = document.getElementById('modal'), mt = document.getElementById('mt'),
       msql = document.getElementById('msql'), mbody = document.getElementById('mbody'),
       mmeta = document.getElementById('mmeta');

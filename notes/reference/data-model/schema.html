@@ -121,7 +121,9 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <p class="warn"><strong>Two databases, and they are not always the same one.</strong>
 Everything printed on this page — row counts, samples, coverage — is read from the LOCAL
 <code>sources/data/lunenburg.db</code> when the page is built. <em>Open full table</em>
-queries the PUBLISHED API, which is a copy pushed to Cloudflare D1 and can lag behind.
+queries <code>https://lunenburgbudgetproject.org</code>, a copy pushed to Cloudflare D1 that can lag behind.
+Point it elsewhere with <code>?api=&lt;base-url&gt;</code> on this page's own URL, or set
+<code>LUNENBURG_API</code> before building.
 If a table opens empty, or the button reports that it does not exist, that copy has not
 been pushed yet: <code>python3 scripts/sync_d1.py</code>. This is stated rather than
 hidden because two sources that usually agree are the ones that mislead when they
@@ -2115,7 +2117,10 @@ to $325</td><td>quoted in source</td></tr>
 // `access-control-allow-origin: *`, which an opaque origin is allowed to read. So the
 // data comes from the same public endpoint anybody else would use — one copy, always
 // current, and this page becomes a caller of the API rather than a duplicate of it.
-const API = 'https://lunenburgbudgetproject.org/api/query';
+// Build-time default comes from agent-manifest.json (or $LUNENBURG_API). A viewer can
+// re-aim it without a rebuild: ?api=http://127.0.0.1:8788 — useful against wrangler dev.
+const API = (new URLSearchParams(location.search).get('api') || 'https://lunenburgbudgetproject.org')
+              .replace(/\/$/, '') + '/api/query';
 const modal = document.getElementById('modal'), mt = document.getElementById('mt'),
       msql = document.getElementById('msql'), mbody = document.getElementById('mbody'),
       mmeta = document.getElementById('mmeta');
