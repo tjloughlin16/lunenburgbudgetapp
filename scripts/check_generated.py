@@ -64,6 +64,9 @@ CHECKS = [
     # and against the identity the table states. Two independent checks; a year that does
     # not pass both is not in the dataset.
     ('verify_special_revenue_read.py', []),
+    # What the reports contain that we have not read, or have read without checking.
+    # Generated because a count nobody maintains is the only kind that stays true.
+    ('build_extraction_gaps.py', ['--check']),
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),
