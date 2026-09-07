@@ -12,6 +12,7 @@
 export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
   | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
+  | 'funds'
   | 'staffing'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
@@ -58,6 +59,11 @@ export const SLUG: Record<Tab, string> = {
   // people say "budget versus actual", not "variance" -- and `variance` is an alias for
   // anybody who arrives with the accounting word instead.
   variance: 'budget-vs-actual',
+  // The special revenue funds — grants, revolving funds, gifts, and the enterprise
+  // funds — read out of thirteen annual town reports. The slug is the QUESTION rather
+  // than the accounting term: a resident says "money outside the budget", and
+  // `special-revenue` is an alias for anybody who arrives with the words the town uses.
+  funds: 'money-outside-the-budget',
   // Every machine-readable address on the site, as LINKS. `llms.txt` names all of these
   // already, but it is text/plain, and assistants that only fetch URLs seen in a prior
   // page could read the name of a file and not be allowed to request it. See
@@ -142,6 +148,12 @@ const ALIASES: Record<string, Tab> = {
   // broken. The page is about what the TOWN'S RECORDS do not say.
   gaps: 'gaps', 'what-we-cannot-answer': 'gaps', 'data-gaps': 'gaps',
   'what-is-not-in-here': 'gaps', gap: 'gaps',
+  // NOT 'funds' on its own -- what a reader means by that word here is free cash, and
+  // `freecash` already answers to `reserves`. This page is specifically the money that
+  // is NOT appropriated.
+  'money-outside-the-budget': 'funds', 'special-revenue': 'funds',
+  'special-revenue-funds': 'funds', 'revolving-funds': 'funds', grants: 'funds',
+  'outside-the-budget': 'funds',
   // NOT 'teachers' alone as the slug -- the page is about paraprofessionals at least as
   // much, and naming it for one role would tell a reader what the finding is before they
   // have seen it.
@@ -186,6 +198,7 @@ export const LABEL: Record<Tab, string> = {
   database: 'The database',
   gaps: 'What we cannot answer',
   variance: 'Budgets against actuals',
+  funds: 'The money outside the budget',
   staffing: 'School staffing — names, FTE and dollars',
   dataroom: 'The data room',
 }
@@ -201,6 +214,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   reports: 'themoney',
   gaps: 'themoney',
   variance: 'themoney',
+  funds: 'themoney',
   staffing: 'themoney',
   agents: 'sources',
   freecash: 'money',
@@ -263,7 +277,8 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   freecash: 'crisis',
-  themoney: 'money', gaps: 'money', variance: 'money', reports: 'money',
+  themoney: 'money', gaps: 'money', variance: 'money', funds: 'money',
+  reports: 'money',
   staffing: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
@@ -282,7 +297,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'staffing', 'variance', 'gaps', 'reports'],
+  money: ['themoney', 'staffing', 'variance', 'funds', 'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

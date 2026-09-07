@@ -82,9 +82,22 @@ the cent. The allowance is named and confined rather than applied everywhere.
 | edition | figures | printed page | checks |
 |---|---:|---:|---|
 | FY2011 | 61 | 53 | all four, to the penny |
+| FY2012 | 58 | 53 | all four, to the penny |
+| FY2013 | 65 | 57 | all four, to the penny |
+| FY2014 | 62 | 20 | all four, to the penny |
+| FY2015 | 63 | 20 | all four, to the penny |
+| FY2016 | 68 | 20, 21 | all four, to the penny |
+| FY2017 | 72 | 20 | all four, to the penny |
+| FY2018 | 64 | 26 | all four, to the penny |
+| FY2019 | 64 | 26 | footing and cross-check to the penny; the trust and agency identity is the printed defect below |
+| FY2020 | 67 | 22 | all four, to the penny |
+| FY2021 | 65 | 22 | all four, to the penny |
+| FY2022 | 65 | 24 | all four, to the penny |
 
-FY2012–FY2023 are surveyed and legible but **not yet transcribed**. The table above is the
-honest count, not the ambition.
+**FY2023 is transcribed and NOT written down**, because it fails the cross-check by the
+amount recorded below. Its staged CSVs exist but `append_balance_sheet_year.py` refused
+them, which is the rule working rather than an obstacle to route around. The table above is
+the honest count, not the ambition.
 
 ## The town-wide balance sheet does NOT exist for FY2024 or FY2025
 
@@ -130,9 +143,25 @@ FY2023 is also the year `verify_special_revenue_read.py` already records a resta
 break in: the town re-cut its grant funds by year between the FY2022 and FY2023 reports and
 restated $17,861.24. **These are two different amounts and nothing here connects them.**
 The gap may be a fund moved between statements, a restatement, or a reading error in
-figures nothing has yet checked — those two equity figures are a reading off one page and
-have not been through the four checks. Whoever transcribes FY2023 finds out which; until
-then it is an open question, not a defect, and it is not in `PRINTED_DEFECTS`.
+figures nothing has yet checked — those two equity figures were, when that was written, a
+reading off one page that had not been through the four checks.
+
+**They have now been through three of the four, and they hold.** FY2023 was transcribed on
+7 September 2026: every column foots to its own printed TOTAL ASSETS, TOTAL LIABILITIES and
+TOTAL FUND EQUITY to the cent, the identity holds in all six columns, and the long-term
+debt mirror agrees. So the $87,293.86 is **not a misreading of the balance sheet page** —
+that is what the three internal checks now rule out.
+
+*What that does NOT establish:* what the difference IS. It is a disagreement between two
+documents printed in the same report, and nothing here says which of them is right, whether
+a fund sits in one and not the other, or whether it is connected to the $17,861.24
+restatement `verify_special_revenue_read.py` records in the same year. Those are two
+different amounts and nothing joins them.
+
+It is deliberately **not** in `PRINTED_DEFECTS`: that list is for a page disagreeing with
+ITSELF, and every FY2023 column does tie to its own printed totals. So the year is refused
+by `append_balance_sheet_year.py` and is not in the dataset. The staged CSVs are kept out of
+the repository rather than written into it.
 
 ## Page numbers: the catalogue holds the PDF index, not the printed page
 
@@ -150,15 +179,24 @@ at the foot of the rendered image, every time.** Both numbers are recorded in th
 | edition | PDF index | printed page | confirmed from the page foot |
 |---|---:|---:|---|
 | FY2011 | 56 | 53 | yes |
+| FY2012 | 56 | 53 | yes |
 | FY2013 | 61 | 57 | yes |
+| FY2014 | 20 | 20 | yes |
+| FY2015 | 20 | 20 | yes |
+| FY2016 | 20, 21 | 20, 21 | yes |
+| FY2017 | 20 | 20 | yes |
+| FY2018 | 26 | 26 | yes |
 | FY2019 | 28 | 26 | yes |
+| FY2020 | 22 | 22 | yes |
+| FY2021 | 23 | 22 | yes |
 | FY2022 | 24 | 24 | yes |
 | FY2023 | 24 | 24 | yes |
 
-The PDF indices for the remaining editions — FY2012 p56, FY2014 p20, FY2015 p20, FY2016
-p20–21, FY2017 p20, FY2018 p26, FY2020 p22, FY2021 p23 — come from the OCR (`grep` for
-`TOTAL LIABILITIES` in `sources/town-budget/ocr/`). Their printed page numbers are **not
-yet confirmed** and must be read off the foot of the image when each year is transcribed.
+Every one of these was read off the foot of the rendered image. The offset is +3 on FY2011
+and FY2012, +4 on FY2013, +2 on FY2019, +1 on FY2021 and zero on the eight digital-era
+editions — and `render_report_page.swift` inferred +1, +1, +1, +1, +1 and 0 for those same
+documents. It was right only where the offset happens to be zero. **Never trust the
+inference; read the foot.**
 
 ## How a year is added
 

@@ -348,6 +348,28 @@ export type RoleRow = {
   points: { fy: number; names: number; doubled: boolean }[]
 }
 
+function RoleTip({ active, payload, label }: {
+  active?: boolean
+  payload?: { payload: { fy: number; names: number; doubled: boolean } }[]
+  label?: string
+}) {
+  if (!active || !payload?.length) return null
+  const d = payload[0].payload
+  return (
+    <div className="rounded-[10px] px-2.5 py-1.5 text-xs"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      <span style={{ color: 'var(--text-secondary)' }}>{fy(d.fy)} {label} </span>
+      <span className="tnum font-bold">{d.names}</span>
+      {d.doubled && (
+        <p className="mt-1 leading-snug" style={{ color: 'var(--status-warning)' }}>
+          one school printed twice
+        </p>
+      )}
+    </div>
+  )
+}
+
+
 /** One tiny chart per role, all on the same scale within a row of the grid.
  *
  *  Small multiples rather than a sixteen-series line chart: colour cannot carry sixteen
@@ -374,14 +396,8 @@ export function RoleGrid({ rows, format }: { rows: RoleRow[]; format: (s: string
                   barCategoryGap="12%">
                   <YAxis domain={[0, top]} hide />
                   <XAxis dataKey="fy" hide />
-                  <Tooltip
-                    cursor={{ fill: 'var(--surface-3)' }}
-                    contentStyle={{
-                      background: 'var(--surface-1)', border: '1px solid var(--grid)',
-                      borderRadius: 10, fontSize: 12,
-                    }}
-                    labelFormatter={(v: number) => fy(v)}
-                    formatter={(v: number) => [`${v} names`, format(r.role)]} />
+                  <Tooltip cursor={{ fill: 'var(--surface-3)' }}
+                    content={<RoleTip label={format(r.role)} />} />
                   <Bar dataKey="names" isAnimationActive={false} radius={[2, 2, 0, 0]}>
                     {r.points.map(p => (
                       <Cell key={p.fy}
@@ -409,6 +425,34 @@ export type StatePoint = {
   pupils_in_district: number; teachers_per_100: number; paras_per_100: number
 }
 
+type EnrolSeries = readonly { key: keyof StatePoint; label: string; hue: string }[]
+
+function EnrolTip({ active, label, rows, series }: {
+  active?: boolean; label?: number; rows: StatePoint[]; series: EnrolSeries
+}) {
+  if (!active || label === undefined) return null
+  const raw = rows.find(r => r.fy === label)
+  const base = rows[0]
+  if (!raw) return null
+  return (
+    <div className="rounded-[10px] px-3 py-2 text-xs"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      <p className="font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }}>
+        {fy(label)}
+      </p>
+      {series.map(s => (
+        <p key={String(s.key)} className="flex justify-between gap-5">
+          <span style={{ color: s.hue }}>{s.label}</span>
+          <span className="tnum font-semibold">
+            {num(raw[s.key], 1)} &middot; {Math.round(100 * raw[s.key] / base[s.key])}
+          </span>
+        </p>
+      ))}
+    </div>
+  )
+}
+
+
 /** Staff FTE and enrolment, both indexed to the first year on ONE axis.
  *
  *  This is the chart a dual axis would ruin. Teachers are around 105 and pupils around
@@ -416,11 +460,11 @@ export type StatePoint = {
  *  the two ranges. Indexed, the reader sees what actually happened to each. */
 export function StaffAgainstEnrolment({ rows }: { rows: StatePoint[] }) {
   const base = rows[0]
-  const SERIES = [
+  const SERIES: EnrolSeries = [
     { key: 'para_fte', label: 'Paraprofessional FTE', hue: SUBJECT },
     { key: 'teacher_fte', label: 'Teacher FTE', hue: COOL },
     { key: 'pupils_in_district', label: 'In-district pupils', hue: NEUTRAL },
-  ] as const
+  ]
   const data = rows.map(r => {
     const row: Record<string, number> = { fy: r.fy }
     for (const s of SERIES) row[s.key] = 100 * r[s.key] / base[s.key]
@@ -429,7 +473,7 @@ export function StaffAgainstEnrolment({ rows }: { rows: StatePoint[] }) {
   return (
     <Card>
       <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2">
-        {SERIES.map(s => <Chip key={s.key} color={s.hue}>{s.label}</Chip>)}
+        {SERIES.map(s => <Chip key={String(s.key)} color={s.hue}>{s.label}</Chip>)}
       </div>
       <div style={{ height: 270 }}>
         <ResponsiveContainer width="100%" height="100%">
@@ -440,20 +484,10 @@ export function StaffAgainstEnrolment({ rows }: { rows: StatePoint[] }) {
             <YAxis tick={{ fontSize: 11, fill: 'var(--text-muted)' }} stroke="var(--axis)"
               width={44} />
             <ReferenceLine y={100} stroke="var(--axis)" strokeDasharray="3 3" />
-            <Tooltip
-              cursor={{ stroke: 'var(--axis)' }}
-              contentStyle={{
-                background: 'var(--surface-1)', border: '1px solid var(--grid)',
-                borderRadius: 10, fontSize: 12,
-              }}
-              labelFormatter={(v: number) => fy(v)}
-              formatter={(v: number, k: string) => {
-                const s = SERIES.find(x => x.key === k)!
-                const raw = rows.find(r => 100 * r[s.key] / base[s.key] === v)
-                return [`${Math.round(v)}${raw ? ` · ${num(raw[s.key], 1)}` : ''}`, s.label]
-              }} />
+            <Tooltip cursor={{ stroke: 'var(--axis)' }}
+              content={<EnrolTip rows={rows} series={SERIES} />} />
             {SERIES.map(s => (
-              <Line key={s.key} type="monotone" dataKey={s.key} dot={false} stroke={s.hue}
+              <Line key={String(s.key)} type="monotone" dataKey={s.key} dot={false} stroke={s.hue}
                 strokeWidth={s.key === 'pupils_in_district' ? 1.5 : 2.5}
                 strokeDasharray={s.key === 'pupils_in_district' ? '4 3' : undefined}
                 isAnimationActive={false} />

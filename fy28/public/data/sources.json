@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-05",
+ "generated": "2026-09-07",
  "origins": [
   {
    "id": "school",
@@ -1410,7 +1410,7 @@
      "stars": 3,
      "what": "2,387 rows. These are the funds rule 11 says the budget documents cannot show you — grants, revolving funds and gifts that pay for real staff and appear nowhere in the appropriation. 693 rows prove themselves on the fund’s own identity (forward + receipts − disbursements = carried forward), and 351 lost cells are recovered from it, written into their own column and never into a value column. See data/PROVENANCE-special-revenue-funds.md.",
      "kind": "Data",
-     "bytes": 952049,
+     "bytes": 953632,
      "url": "/docs/data/special-revenue-funds.csv",
      "count": 2387,
      "unit": "rows",
@@ -1427,6 +1427,30 @@
      "count": 3815,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-entries.csv"
+    },
+    {
+     "path": "data/special-revenue-read.csv",
+     "title": "The special revenue funds, read from the page",
+     "stars": 3,
+     "what": "The FY2011–FY2025 schedule of every fund outside the general appropriation — forward balance, receipts, disbursements, carried forward — transcribed by reading the rendered page rather than by OCR. **It is the only version of this table that ties to its own printed grand total.** FY2022: 167 funds, all four columns to the penny, and every row satisfying the identity the table states. A figure read off an image is a READING and carries the same status as the OCR’s; what makes it trustworthy is that the report’s own printed total and the row identity both check it. See data/PROVENANCE-special-revenue-read.md.",
+     "kind": "Data",
+     "bytes": 302905,
+     "url": "/docs/data/special-revenue-read.csv",
+     "count": 1882,
+     "unit": "rows",
+     "textUrl": "/docs/data/special-revenue-read.csv"
+    },
+    {
+     "path": "data/balance-sheet.csv",
+     "title": "The combined balance sheet, read from the page",
+     "stars": 3,
+     "what": "What the town HOLDS at 30 June — cash, receivables, warrants payable, reserves and undesignated fund balance — by fund type, transcribed by reading the rendered page rather than by OCR, which recovers zero of this page’s money tokens. Every other dataset here measures money moving; this one measures a stock. FY2011 so far: 61 figures, every column footing to the report’s own printed total, the identity the table states, and the special revenue plus enterprise fund equity tying to the special revenue schedule’s printed carried forward. See data/PROVENANCE-balance-sheet.md.",
+     "kind": "Data",
+     "bytes": 105580,
+     "url": "/docs/data/balance-sheet.csv",
+     "count": 709,
+     "unit": "rows",
+     "textUrl": "/docs/data/balance-sheet.csv"
     },
     {
      "path": "data/annual-report-receipts.csv",
@@ -1609,6 +1633,42 @@
      "textUrl": "/docs/data/role-classification.csv"
     },
     {
+     "path": "data/money-classification.csv",
+     "title": "What every revenue account, fund and department IS",
+     "stars": 2,
+     "what": "The classification behind the money-flow diagrams, as data rather than as code. One row per revenue account, fund, department or grant code, saying what it is, HOW that was established and WHY. `how` is the column that matters: `stated` means the town’s own name says it; `neighbours` means it was read from what an account sits among — which is how `BUS CERTIF` turned out to be business certificates rather than buses; `outside` means it depends on knowledge from beyond this archive and is the weakest kind here; `unresolved` means ten characters is not enough and nothing settles it. Loaded into the database as `money_classification`, with `v_revenue_classified` and `v_spending_classified` joining it to the ledger.",
+     "kind": "Data",
+     "bytes": 34508,
+     "url": "/docs/data/money-classification.csv",
+     "count": 252,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-classification.csv"
+    },
+    {
+     "path": "data/balance-sheet-printed-totals.csv",
+     "title": "The TOTAL rows each balance sheet prints",
+     "stars": 2,
+     "what": "The independent check on the file above, quoted off the page with its printed page number and its PDF index, which are not the same number. Kept separate and never computed from our own rows.",
+     "kind": "Data",
+     "bytes": 28080,
+     "url": "/docs/data/balance-sheet-printed-totals.csv",
+     "count": 264,
+     "unit": "rows",
+     "textUrl": "/docs/data/balance-sheet-printed-totals.csv"
+    },
+    {
+     "path": "data/table-semantics.csv",
+     "title": "What each table in the database is",
+     "stars": 2,
+     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
+     "kind": "Data",
+     "bytes": 23969,
+     "url": "/docs/data/table-semantics.csv",
+     "count": 76,
+     "unit": "rows",
+     "textUrl": "/docs/data/table-semantics.csv"
+    },
+    {
      "path": "data/staff-roster-counts.csv",
      "title": "Roster headcount by school and year",
      "stars": 2,
@@ -1619,6 +1679,18 @@
      "count": 699,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-counts.csv"
+    },
+    {
+     "path": "data/column-glossary.csv",
+     "title": "What each column name means, across every table",
+     "stars": 2,
+     "what": "Written by us. Keyed on the column NAME rather than on table-plus-name, because 883 column instances share only 285 distinct names and the dangerous ones mean the same thing everywhere: `v1` is an ordinal on every table that has it, `status` splits rows into checked, check failed and no check on every extract. Each entry carries a `caution` saying what goes wrong if the column is used without knowing that, and every one of those was written after getting it wrong at least once.",
+     "kind": "Data",
+     "bytes": 15232,
+     "url": "/docs/data/column-glossary.csv",
+     "count": 139,
+     "unit": "rows",
+     "textUrl": "/docs/data/column-glossary.csv"
     },
     {
      "path": "data/PROVENANCE-annual-report-receipts.md",
@@ -1633,16 +1705,88 @@
      "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
     },
     {
+     "path": "data/PROVENANCE-balance-sheet.md",
+     "title": "Why the balance sheet is read rather than OCR’d",
+     "stars": 2,
+     "what": "Written by us: the four checks including the cross-document one against the special revenue schedule; the one printed sheet that does not balance itself (FY2019, $657,297.35, pinned and not adjusted away); why FY2024 and FY2025 have no town-wide balance sheet at all; and how to add a year.",
+     "kind": "Notes",
+     "bytes": 10534,
+     "url": "/docs/data/PROVENANCE-balance-sheet.md",
+     "count": 184,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-balance-sheet.md"
+    },
+    {
      "path": "data/PROVENANCE-special-revenue-funds.md",
      "title": "Where the special revenue funds came from",
      "stars": 2,
      "what": "Written by us: the identity each row is checked against, what a recovered cell is, and why a recovered value is never written into a value column.",
      "kind": "Notes",
-     "bytes": 6644,
+     "bytes": 6655,
      "url": "/docs/data/PROVENANCE-special-revenue-funds.md",
      "count": 88,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-special-revenue-funds.md"
+    },
+    {
+     "path": "data/PROVENANCE-special-revenue-read.md",
+     "title": "Why the schedule is read rather than OCR’d",
+     "stars": 2,
+     "what": "Written by us: what the OCR actually got wrong, with the four cases; why a reading is trustworthy only because two independent things check it; and how to add a year.",
+     "kind": "Notes",
+     "bytes": 5946,
+     "url": "/docs/data/PROVENANCE-special-revenue-read.md",
+     "count": 110,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-special-revenue-read.md"
+    },
+    {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 3616,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 17,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
+     "path": "data/money-edges.csv",
+     "title": "Which source of money pays which use, and whether that can be shown",
+     "stars": 2,
+     "what": "Four bases, and `restricted` is the one to read carefully: it means the connection is near-certain because a fund exists for one purpose and nothing else — and that it is NOT OBSERVED, because the town publishes no expense report for its special revenue funds. `impossible` means there is no such connection to find: money in the general fund is fungible and no record ties a source to a department. Loaded as `money_edges`.",
+     "kind": "Data",
+     "bytes": 1752,
+     "url": "/docs/data/money-edges.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-edges.csv"
+    },
+    {
+     "path": "data/money-assumptions.csv",
+     "title": "Every assumption still holding the money model up",
+     "stars": 2,
+     "what": "What is being assumed, what evidence there is for it, what rests on it, and the document that would settle it. A row leaves this file when a document arrives, never because the assumption started to feel obvious. Loaded as `money_assumptions`.",
+     "kind": "Data",
+     "bytes": 1646,
+     "url": "/docs/data/money-assumptions.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-assumptions.csv"
+    },
+    {
+     "path": "data/special-revenue-printed-totals.csv",
+     "title": "The GRAND TOTAL each report prints",
+     "stars": 2,
+     "what": "The independent check on the file above, quoted off the page with its page number. Kept separate and never computed from our own rows — the OCR misread this very figure by $1,010, so the reconciliation had been measured against a wrong target.",
+     "kind": "Data",
+     "bytes": 1194,
+     "url": "/docs/data/special-revenue-printed-totals.csv",
+     "count": 13,
+     "unit": "rows",
+     "textUrl": "/docs/data/special-revenue-printed-totals.csv"
     },
     {
      "path": "data/report-trust-funds.csv",
@@ -1839,7 +1983,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 16371712,
+     "bytes": 19017728,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5655,10 +5799,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 457,
+  "documents": 469,
   "groups": 20,
-  "bytes": 1000484657,
-  "loadBearing": 73
+  "bytes": 1003667229,
+  "loadBearing": 75
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

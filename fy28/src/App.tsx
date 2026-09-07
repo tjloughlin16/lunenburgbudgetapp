@@ -26,6 +26,8 @@ import { Reports } from './pages/Reports'
 import { Money } from './pages/Money'
 import { Gaps } from './pages/Gaps'
 import { BudgetVsActual } from './pages/BudgetVsActual'
+import { SchoolStaffing } from './pages/SchoolStaffing'
+import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { type Package } from './model/rates'
@@ -353,6 +355,8 @@ export default function App() {
       {tab === 'themoney' && <Money onJump={go} />}
       {tab === 'gaps' && <Gaps onJump={go} />}
       {tab === 'variance' && <BudgetVsActual />}
+      {tab === 'staffing' && <SchoolStaffing />}
+      {tab === 'funds' && <SpecialRevenue />}
       {tab === 'database' && <Database onJump={go} />}
       {tab === 'reports' && <Reports />}
       {tab === 'agents' && <AgentsIndex />}

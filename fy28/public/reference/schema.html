@@ -247,7 +247,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">76</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">69,536</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">69,805</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">934</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
@@ -1464,10 +1464,10 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 6,310 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>19 tables &middot; 6,579 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
-<details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">577 rows</span> <span class="yr">2011–2019</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund_column, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
+<details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">774 rows</span> <span class="yr">2011–2022</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund_column, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
 <p class="ans">What the town HOLDS, read from the COMBINED BALANCE SHEET — assets, liabilities and fund equity across six fund columns (general, special revenue, enterprise, capital project, trust and agency, long-term debt). Everything else in this archive measures money MOVING; this is the only table that measures what is sitting there.</p>
 <p class="warn">Read from the page, like <code>special_revenue_read</code>. It is trusted because three checks hold: each column foots to its own printed total, the sheet&#x27;s identity (liabilities + fund equity = assets) holds per column, and special revenue + enterprise fund equity ties to the special revenue schedule&#x27;s carried-forward total — an INDEPENDENT document. One printed sheet does not balance itself (FY2019 trust and agency, $657,297.35 apart); that is the town&#x27;s print, recorded not corrected.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1486,7 +1486,7 @@ to $325</td><td>quoted in source</td></tr>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page_printed</th><th>page_pdf</th><th>section</th><th>line</th><th>fund</th><th>amount</th><th>document</th><th>read_by</th></tr>
 <tr><td class="num">2011</td><td>FY2011</td><td>53</td><td>56</td><td>assets</td><td>FY 11 REAL ESTATE TAXES</td><td>general</td><td>445664.60</td><td>sources/town-annual-reports/docs/4117-fy-20…</td><td>vision</td></tr>
 <tr><td class="num">2012</td><td>FY2012</td><td>53</td><td>56</td><td>assets</td><td>FY 12 REAL ESTATE TAXES</td><td>general</td><td>356747.49</td><td>sources/town-annual-reports/docs/4118-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2017</td><td>FY2017</td><td>20</td><td>20</td><td>liabilities</td><td>DUE TO TRUST FUNDS/SRF/CPF/ENTERPRISE</td><td>special_revenue</td><td>9700.47</td><td>sources/town-annual-reports/docs/4124-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2022</td><td>FY2022</td><td>24</td><td>24</td><td>assets</td><td>FY19 REAL ESTATE TAXES</td><td>general</td><td>-104.00</td><td>sources/town-annual-reports/docs/4129-fy-20…</td><td>vision</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>fund_activity</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">61 rows</span> <span class="yr">2026–2026</span><button class="open" data-t="fund_activity" data-q="SELECT a.fy, a.period, a.fund, f.name, f.kind, f.restriction, a.revenue, a.salaries, a.expenditure, a.encumbered, a.closing_balance FROM fund_activity a LEFT JOIN fund f USING (fund) ORDER BY a.closing_balance DESC LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year per period</span></summary>
@@ -1675,7 +1675,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
-<details class="t"><summary><span class="srow"><code>balance_sheet_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">216 rows</span> <span class="yr">2011–2019</span><button class="open" data-t="balance_sheet_printed_totals">Query table</button></span><span class="gr">one row per printed total per fund column per year</span></summary>
+<details class="t"><summary><span class="srow"><code>balance_sheet_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">288 rows</span> <span class="yr">2011–2022</span><button class="open" data-t="balance_sheet_printed_totals">Query table</button></span><span class="gr">one row per printed total per fund column per year</span></summary>
 <p class="ans">The totals each balance sheet PRINTS — total assets, total liabilities, total fund equity — quoted with the page they appear on.</p>
 <p class="warn">The independent check on <code>balance_sheet</code>, so it must be read off the page and never computed from our own rows.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1690,9 +1690,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page_printed</th><th>page_pdf</th><th>total_row</th><th>fund</th><th>amount</th><th>quote</th></tr>
-<tr><td class="num">2015</td><td>FY2015</td><td>20</td><td>20</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>capital_project</td><td>16710822.94</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
-<tr><td class="num">2018</td><td>FY2018</td><td>26</td><td>26</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>enterprise</td><td>8259012.62</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
-<tr><td class="num">2019</td><td>FY2019</td><td>26</td><td>28</td><td>TOTAL LIABILITIES</td><td>enterprise</td><td>5867279.03</td><td>TOTAL LIABILITIES row, printed page 26</td></tr>
+<tr><td class="num">2012</td><td>FY2012</td><td>53</td><td>56</td><td>TOTAL ASSETS</td><td>general</td><td>6185491.72</td><td>TOTAL ASSETS row, printed page 53</td></tr>
+<tr><td class="num">2018</td><td>FY2018</td><td>26</td><td>26</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>capital_project</td><td>1671644.20</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
+<tr><td class="num">2020</td><td>FY2020</td><td>22</td><td>22</td><td>TOTAL LIABILITIES/FUND EQUITY</td><td>special_revenue</td><td>2650524.60</td><td>TOTAL LIABILITIES/FUND EQUITY row, printed …</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag scope sboth">school + town</span> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>

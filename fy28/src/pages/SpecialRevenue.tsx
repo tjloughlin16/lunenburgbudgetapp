@@ -257,14 +257,16 @@ export function SpecialRevenue() {
 
       <ul className="mt-6">
         <Insight n={1} headline={<>
-          The money outside the appropriation grew faster than the balances suggest, and
-          the balances {times(last.carried / first.carried)}d.
+          These funds took in more than they spent in {surplusYears.length} of{' '}
+          {d.by_year.length} years, and what they hold multiplied{' '}
+          {times(last.carried / first.carried)}.
         </>}>
-          Receipts rose from {usd(first.receipts)} in {fy(first.fy)} to{' '}
-          {usd(last.receipts)} in {fy(last.fy)}. What is held at year end rose from{' '}
-          {usd(first.carried)} to {usd(last.carried)} over the same thirteen years, because
-          in {surplusYears.length} of {d.by_year.length} of them more came in than went out.
-          The single exception is {deficitYears.map(r => fy(r.fy)).join(', ')}, when the
+          Receipts rose {times(last.receipts / first.receipts)} &mdash; from{' '}
+          {usd(first.receipts)} in {fy(first.fy)} to {usd(last.receipts)} in{' '}
+          {fy(last.fy)}. The balance carried at year end rose further, from{' '}
+          {usd(first.carried)} to {usd(last.carried)}, because in{' '}
+          {surplusYears.length} of the {d.by_year.length} years more came in than went out.
+          The only exception is {deficitYears.map(r => fy(r.fy)).join(', ')}, when the
           funds spent {usd(Math.abs(deficitYears[0].net))} more than they received.
         </Insight>
 
@@ -272,9 +274,9 @@ export function SpecialRevenue() {
           {share(bandsLast.pandemic / bandsLast.total)} of what is being held is
           pandemic-era money, and this series ends before we can see whether it has gone.
         </>}>
-          {pandemicBand.funds!.length} funds we identify by name &mdash; ARPA, the three
-          ESSER rounds, CARES, a FEMA COVID grant and the rest &mdash; held{' '}
-          {usd(bandsLast.pandemic)} of the {usd(bandsLast.total)} carried into{' '}
+          {bandsLast.pandemic_funds} funds &mdash; ARPA, the ESSER rounds and the rest of
+          a list of {pandemicBand.funds!.length} names we identify as pandemic-era &mdash;
+          held {usd(bandsLast.pandemic)} of the {usd(bandsLast.total)} carried into{' '}
           {fy(last.fy + 1)}. They received {usd(bandsLast.pandemic_receipts)} in{' '}
           {fy(last.fy)} and spent {usd(bandsLast.pandemic_disbursements)}. Before{' '}
           {fy(pandemicFirst.fy)} they did not exist. The schedule stops at {fy(c.last_fy)},
@@ -468,8 +470,8 @@ export function SpecialRevenue() {
         like it always overspends on a sample of two, so these are the only ones long
         enough to have a habit. {drawers.length} of the {d.persistent.length} largest spent
         more than they received across the thirteen years;{' '}
-        {accumulators.length > 0 && <>the biggest accumulator is {accumulators[0].fund}, up{' '}
-          {usd(accumulators[0].net)} on the period.</>}
+        {accumulators.length > 0 && <>the largest net accumulation among them is{' '}
+          {accumulators[0].fund}, {usd(accumulators[0].net)} over the period.</>}
       </Body>
       <div className="card p-4 mt-6 overflow-x-auto">
         <table className="w-full text-[12.5px] tnum">

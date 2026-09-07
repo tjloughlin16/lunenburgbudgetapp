@@ -85,6 +85,13 @@ CHECKS = [
     # going stale: the published file, and the agreement between the database route and
     # the CSV route to the same figure.
     ('build_variance_charts.py', ['--check']),
+    # The special-revenue page's series. It re-derives the two checks that make the
+    # dataset publishable rather than trusting the provenance note: every fund row's
+    # forward + receipts − disbursements = carried, and every year's four columns
+    # summed against the GRAND TOTAL the town printed. It refuses to write if either
+    # fails or if the reconciliation join matches nothing, so this entry catches the
+    # published file going stale AND a rebuild that silently emptied the table.
+    ('build_special_revenue.py', ['--check']),
     # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
     # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
     # a key is not there, so this entry catches two things: the published file going
