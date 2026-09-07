@@ -134,6 +134,24 @@ SCRIPTS = os.path.join(ROOT, 'scripts')
 PUB = os.path.join(ROOT, 'fy28', 'public', 'reference')
 INDEX = os.path.join(ROOT, 'fy28', 'public', 'data', 'reference.json')
 
+# TIER — is this a document a resident should be handed, or one they arrive at after
+# asking a second question?
+#
+# TJ, reading the money page: "follow the money is too low level to be a top doc. its a
+# secondary/detailed doc. same with who decides. and the town ledger structure."
+#
+# He is right, and the distinction is not about quality. The two FLOW diagrams answer the
+# question somebody actually walks in with — where does the money come from and where does
+# it go — and everything else answers a question you only have once you have seen them:
+# which route exactly, who signs, how is the ledger named. Presenting five documents as
+# equals makes a reader choose between things that are not alternatives.
+#
+# `primary` is deliberately scarce. Two per door at most; if a third looks primary, the
+# honest move is to ask which of the three a resident would open first and demote the
+# other two.
+TIER_PRIMARY = 'primary'
+TIER_SECONDARY = 'secondary'
+
 # What ships, in the order a reader should meet it, with the door SITE-EXPANSION.md puts
 # it behind. Source paths are relative to the repository root -- written out rather than
 # globbed, because "which of these is fit to publish" is a decision per file and a glob
@@ -142,34 +160,34 @@ INDEX = os.path.join(ROOT, 'fy28', 'public', 'data', 'reference.json')
 #
 # `about` is editorial. Everything else about a page is read from the page.
 PAGES = [
-    dict(src='notes/reference/data-model/schema.html', door='the data', about=(
+    dict(src='notes/reference/data-model/schema.html', tier=TIER_PRIMARY, door='the data', about=(
         'Every table in the database, what it is for, which years it actually covers — '
         'and, first, whether the question you arrived with can be answered at all.')),
-    dict(src='notes/reference/data-model/money-in.html', door='the money', about=(
+    dict(src='notes/reference/data-model/money-in.html', tier=TIER_SECONDARY, door='the money', about=(
         'Every route into the school budget and out the other side, level by level, and '
         'the level at which each trail goes cold.')),
-    dict(src='notes/reference/data-model/school-money-flow.html', door='the money', about=(
+    dict(src='notes/reference/data-model/school-money-flow.html', tier=TIER_PRIMARY, door='the money', about=(
         'FY2026 drawn end to end: every source the town budgets, the 258 accounts the '
         'school department spends from, and the connection in the middle nobody records.')),
-    dict(src='notes/reference/data-model/town-money-flow.html', door='the money', about=(
+    dict(src='notes/reference/data-model/town-money-flow.html', tier=TIER_PRIMARY, door='the money', about=(
         'The same model applied to all of Lunenburg — the general fund, the enterprise '
         'funds and the special revenue funds, in one picture.')),
-    dict(src='notes/reference/data-model/who-decides.html', door='the money', about=(
+    dict(src='notes/reference/data-model/who-decides.html', tier=TIER_SECONDARY, door='the money', about=(
         'Where each dollar comes to rest and who actually gets to decide how it is spent '
         '— the question the budget documents never answer.')),
-    dict(src='notes/reference/LEDGER-STRUCTURE.md', door='the money', about=(
+    dict(src='notes/reference/LEDGER-STRUCTURE.md', tier=TIER_SECONDARY, door='the money', about=(
         'How the town’s ledger is built and named: what an account number means, what a '
         'fund number means, and why a name in it must never be used to identify anything.')),
-    dict(src='notes/reference/MONEY-NODES.md', door='the data', about=(
+    dict(src='notes/reference/MONEY-NODES.md', tier=TIER_SECONDARY, door='the data', about=(
         'Every node in the school money graph as a flat list, inputs and outputs, each '
         'marked traced, partial or unknown. The rows with no number are the point.')),
-    dict(src='notes/reference/data-model/join-map.html', door='the data', about=(
+    dict(src='notes/reference/data-model/join-map.html', tier=TIER_SECONDARY, door='the data', about=(
         'Six levels of detail, the key each one turns on, and which of them the district’s '
         'budget and the town’s books can actually be brought together at.')),
-    dict(src='notes/reference/data-model/match-matrix.html', door='the data', about=(
+    dict(src='notes/reference/data-model/match-matrix.html', tier=TIER_SECONDARY, door='the data', about=(
         'Three levels of the school budget against four things to match them to. Each cell '
         'says what is true today and, separately, what would open it.')),
-    dict(src='notes/reference/data-model/lineage-graph.html', door='the data', about=(
+    dict(src='notes/reference/data-model/lineage-graph.html', tier=TIER_SECONDARY, door='the data', about=(
         'Question to key to table to extract to report, as a graph — and the three '
         'different ways a connection fails, only one of which a schema can show.')),
 ]
@@ -304,6 +322,7 @@ def build():
             title=title,
             about=page['about'],
             door=page['door'],
+            tier=page['tier'],
             url='/reference/' + name,
             source=page['src'],
             format='html' if name.endswith('.html') else 'markdown',

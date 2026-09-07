@@ -199,7 +199,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">74</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">67,867</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">68,250</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">916</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">81%</div><div class="l">columns described</div></div>
 </div>
@@ -1614,7 +1614,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>1311</td><td class="num">2026</td><td class="num">9</td><td><span class="nul">NULL</span></td><td class="num">22485.91</td><td class="num">0.0</td><td class="num">2910.68</td><td class="num">0.0</td><td class="num">109397.82</td><td>sources/town-ledgers/fund-balances/special-…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,017 rows</span> <span class="yr">2016–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_read</code> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,397 rows</span> <span class="yr">2013–2022</span><button class="open" data-t="special_revenue_read" data-q="SELECT fy, page, [group], fund, forward, receipts, disbursements, carried, row_ties FROM special_revenue_read ORDER BY fy, page, rowid LIMIT 1000">Query table</button></span><span class="gr">one row per fund per year</span></summary>
 <p class="ans">The special revenue schedule READ from the rendered page rather than OCR&#x27;d: balance brought forward, total receipts, total disbursements, balance carried forward, per fund. <strong>The only version of this table that ties to its own printed grand total</strong> — FY2022, 167 funds, all four columns to the penny and every row balancing.</p>
 <p class="warn">A figure read off an image is a READING, not a published number — same status as the OCR&#x27;s. It is trustworthy because the report&#x27;s own printed total and the table&#x27;s own identity both check it, not because a model produced it. Years that do not tie are not in here.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1633,9 +1633,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>group</th><th>fund</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>row_ties</th><th>document</th><th>read_by</th></tr>
-<tr><td class="num">2021</td><td>FY2021</td><td>31</td><td>SCHOOL DEPARTMENT</td><td>Adult Education</td><td>8692.75</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>8692.75</td><td>yes</td><td>sources/town-annual-reports/docs/4128-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2020</td><td>FY2020</td><td>34</td><td>COUNCIL ON AGING</td><td>E.O.C.D. Senior Center Grant</td><td>1684.87</td><td>0.84</td><td><span class="nul">empty</span></td><td>1685.71</td><td>yes</td><td>sources/town-annual-reports/docs/4127-fy-20…</td><td>vision</td></tr>
-<tr><td class="num">2018</td><td>FY2018</td><td>36</td><td>SCHOOL DEPARTMENT</td><td>Extended Day Revolving Fund</td><td>85601.80</td><td>311152.46</td><td>345369.27</td><td>51384.99</td><td>yes</td><td>sources/town-annual-reports/docs/4125-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2020</td><td>FY2020</td><td>32</td><td>PUBLIC SAFETY</td><td>Community Policing FY 96</td><td>6.55</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>6.55</td><td>yes</td><td>sources/town-annual-reports/docs/4127-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2017</td><td>FY2017</td><td>32</td><td>LIBRARY</td><td>FY07 Public Libraries Fund</td><td>571.17</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>571.17</td><td>yes</td><td>sources/town-annual-reports/docs/4124-fy-20…</td><td>vision</td></tr>
+<tr><td class="num">2013</td><td>FY2013</td><td>68</td><td>SCHOOL DEPARTMENT</td><td>Full Day Kindergarten Grant</td><td>1470.00</td><td>48382.00</td><td>49852.00</td><td>0.00</td><td>yes</td><td>sources/town-annual-reports/docs/4119-fy-20…</td><td>vision</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>fiscal_period</code> <span class="tag">dimension</span> <span class="n">13 rows</span><button class="open" data-t="fiscal_period">Query table</button></span><span class="gr">one row per MUNIS period</span></summary>
@@ -1761,7 +1761,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2027</td><td>contract_cola</td><td>Paraprofessionals</td><td>cost-of-living adjustment to the salary sca…</td><td>2.0</td><td>percent</td><td><span class="nul">empty</span></td><td>June 30, 2028</td><td>Lunenburg school employee contracts — Parap…</td><td>contracts/CONTRACTS.md</td><td>Paraprofessionals | FY26–FY28 | 3.0% · 2.0%…</td><td>recorded</td><td>deliberately not used — the line has never …</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag">provenance</span> <span class="n">7 rows</span> <span class="yr">2016–2022</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
+<details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag">provenance</span> <span class="n">10 rows</span> <span class="yr">2013–2022</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
 <p class="ans">The GRAND TOTAL each annual report PRINTS for the special revenue schedule, quoted with its page. Four columns.</p>
 <p class="warn">This is the independent check on <code>special_revenue_read</code>, so it must be read off the page and never computed from our own rows — the OCR misread this very figure by $1,010 and the reconciliation was measured against it for months.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -1776,8 +1776,8 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>fy</th><th>edition</th><th>page</th><th>forward</th><th>receipts</th><th>disbursements</th><th>carried</th><th>quote</th></tr>
-<tr><td class="num">2018</td><td>FY2018</td><td>39</td><td>3564136.36</td><td>6246072.62</td><td>5837989.85</td><td>3972219.13</td><td>GRAND TOTAL row, page 39</td></tr>
-<tr><td class="num">2020</td><td>FY2020</td><td>35</td><td>4576323.49</td><td>6465186.53</td><td>5445461.13</td><td>5596048.89</td><td>GRAND TOTAL row, page 35</td></tr>
+<tr><td class="num">2013</td><td>FY2013</td><td>71</td><td>2062621.79</td><td>5844092.35</td><td>5697713.47</td><td>2209000.67</td><td>GRAND TOTAL row, page 71</td></tr>
+<tr><td class="num">2017</td><td>FY2017</td><td>33</td><td>3173622.70</td><td>6383702.24</td><td>5993188.58</td><td>3564136.36</td><td>GRAND TOTAL row, page 33</td></tr>
 <tr><td class="num">2022</td><td>FY2022</td><td>37</td><td>6414742.67</td><td>9235154.01</td><td>7004408.01</td><td>8645488.67</td><td>GRAND TOTAL row, page 37</td></tr>
 </table></div>
 </details>

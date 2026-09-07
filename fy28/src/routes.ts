@@ -229,8 +229,32 @@ export function areaOf(t: Tab): Area | null {
 /** The tabs shown in an area's own bar, in order. Drill-ins are reachable from the pages
  *  that link them rather than from the bar — a bar with fourteen entries is a sitemap. */
 export const AREA_TABS: Record<Area, Tab[]> = {
-  crisis: ['walk', 'solved', 'curve', 'adjust', 'answers', 'deeper'],
+  // The three BOARDS — what would fix it, bend the curve, build your own budget — are
+  // not here. They are `CTAS` in App.tsx and render as buttons at the right of the same
+  // bar, so listing them here drew each of them twice. Chapters and tools are different
+  // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
+  // below fails loudly if they stop being.
+  crisis: ['walk', 'answers', 'deeper'],
   money: ['themoney', 'reports'],
   data: ['rates'],
   agents: ['ask', 'agents'],
+}
+
+/** The area bar and the boards must not draw the same page twice.
+ *
+ *  They did: `solved`, `curve` and `adjust` were in AREA_TABS.crisis AND in CTAS, so the
+ *  crisis header showed each of them as a tab and again as a button. Nothing failed,
+ *  because a nav that renders something twice is still a valid nav — which is exactly why
+ *  this needs an assertion rather than care.
+ *
+ *  Called from App at module load. In a dev build it throws; in production it warns and
+ *  the page still renders, because a duplicated button is ugly and a blank site is worse.
+ */
+export function assertNoDuplicateNav(ctaIds: Tab[]): void {
+  const dupes = (Object.keys(AREA_TABS) as Area[]).flatMap(a =>
+    AREA_TABS[a].filter(t => ctaIds.includes(t)).map(t => `${a}:${t}`))
+  if (!dupes.length) return
+  const msg = `nav draws these twice — in AREA_TABS and in CTAS: ${dupes.join(', ')}`
+  if (import.meta.env.DEV) throw new Error(msg)
+  console.warn(msg)
 }

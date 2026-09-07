@@ -49,7 +49,7 @@ import { AREA_LABEL } from '../routes'
 
 type RefPage = {
   name: string; title: string; about: string; url: string; format: string
-  door: string; bytes: number; generators: string[]
+  door: string; tier: string; bytes: number; generators: string[]
 }
 type RefIndex = { about: string; caveat: string; pages: RefPage[] }
 
@@ -133,6 +133,12 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
   }, [])
 
   const pages = (ref?.pages ?? []).filter(p => p.door === DOOR)
+  /** Two tiers, because these are not alternatives. The flow diagrams answer the question
+   *  somebody walks in with; the rest answer questions you only have once you have seen
+   *  them — which route exactly, who signs, how the ledger is named. Presenting five
+   *  documents as equals makes a reader choose between things that are not choices. */
+  const primary = pages.filter(p => p.tier === 'primary')
+  const secondary = pages.filter(p => p.tier !== 'primary')
   const sides = [...new Set((gaps?.rows ?? []).map(g => g.side))]
 
   return (
@@ -188,8 +194,30 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
           : 'Loading the published reference index…'}
       </Body>
       <div className="grid gap-2.5 mt-6">
-        {pages.map(p => <PageRow key={p.name} p={p} />)}
+        {primary.map(p => <PageRow key={p.name} p={p} />)}
       </div>
+
+      {secondary.length > 0 && (
+        <>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mt-9 mb-3"
+            style={{ color: 'var(--text-muted)' }}>Going further</p>
+          {/* Smaller rows, and no arrow-coloured title: these are still links and still
+              the whole row, but they should not compete with the two above for a first
+              glance. */}
+          <div className="grid gap-2">
+            {secondary.map(p => (
+              <a key={p.name} href={p.url}
+                className="card block px-4 py-3 min-h-[44px] transition-opacity
+                           hover:opacity-90">
+                <span className="text-[14px] font-bold leading-tight"
+                  style={{ color: 'var(--series-cost)' }}>{p.title} &rarr;</span>
+                <span className="block text-[12.5px] mt-0.5 leading-snug"
+                  style={{ color: 'var(--text-secondary)' }}>{p.about}</span>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
       {ref && !pages.length && (
         <p className="text-[13.5px] mt-4" style={{ color: 'var(--status-warning)' }}>
           The reference index loaded and no page in it is filed under &ldquo;{DOOR}&rdquo;.
