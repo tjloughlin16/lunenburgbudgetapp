@@ -92,6 +92,23 @@ CHECKS = [
     # roster fails to join to its classification, since a name with no category looks
     # exactly like a name with no role.
     ('build_staffing_charts.py', ['--check']),
+    # The health-insurance page's series. Three things go stale independently here and this
+    # catches all three: the published file against the ledger; the annual-report extract,
+    # which refuses to write unless the insurance block of each year sums to the `Total
+    # Insurance` that same page prints; and the gap-register rows the page quotes BY KEY,
+    # since a limit whose reason has been renamed out from under it renders as an empty box.
+    # It also refuses if a dept-914 account appears that this project has not described --
+    # an undescribed account would otherwise be drawn as a bar with no meaning on it.
+    ('build_insurance_charts.py', ['--check']),
+    # The athletics page's series. Athletics is the one programme where both sides of the
+    # money are visible, so this generator is also the place four assertions live that
+    # nothing else in the project can make: the district workbook's cost columns summing
+    # to its own printed total, the fund's cash chaining to the opening balance the town
+    # printed for the next year, and -- the one that has actually gone wrong here -- a
+    # REVENUE row reaching a spending total. An appropriation, a fund's spending and a
+    # fund's receipts are three quantities, and "$335,856 through the revolving fund" was
+    # once the second plus the third.
+    ('build_athletics_charts.py', ['--check']),
     # The special-revenue page's series. It re-derives the two checks that make the
     # dataset publishable rather than trusting the provenance note: every fund row's
     # forward + receipts − disbursements = carried, and every year's four columns

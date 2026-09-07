@@ -28,6 +28,7 @@ import { Gaps } from './pages/Gaps'
 import { BudgetVsActual } from './pages/BudgetVsActual'
 import { SchoolStaffing } from './pages/SchoolStaffing'
 import { HealthInsurance } from './pages/HealthInsurance'
+import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
@@ -358,6 +359,7 @@ export default function App() {
       {tab === 'variance' && <BudgetVsActual />}
       {tab === 'staffing' && <SchoolStaffing />}
       {tab === 'insurance' && <HealthInsurance />}
+      {tab === 'sportsmoney' && <AthleticsMoney />}
       {tab === 'funds' && <SpecialRevenue />}
       {tab === 'database' && <Database onJump={go} />}
       {tab === 'reports' && <Reports />}

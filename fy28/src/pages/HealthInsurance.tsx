@@ -265,9 +265,9 @@ export function HealthInsurance() {
         different department of the same budget, {usd(retiree.original)} for the health
         insurance of people who used to work in them. The second figure appears nowhere in
         the district&rsquo;s budget book. Nothing is hidden &mdash; it is where municipal
-        accounting puts it &mdash; but it means the school budget is{' '}
-        {share(S.retiree_share_of_appropriation)} smaller than the schools&rsquo; cost to
-        the town, before anything else is counted.
+        accounting puts it &mdash; but it means the schools cost the town{' '}
+        {share(S.retiree_share_of_appropriation)} more than their own budget says, before
+        anything else is counted.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">

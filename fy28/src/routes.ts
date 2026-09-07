@@ -15,6 +15,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'funds'
   | 'staffing'
   | 'insurance'
+  | 'sportsmoney'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -94,6 +95,12 @@ export const SLUG: Record<Tab, string> = {
   // a meeting. NOT `insurance` on its own: the town's ledger has a liability-insurance
   // department too, and a bare `insurance` would promise both.
   insurance: 'health-insurance',
+  // Athletics drilled in: both sides of the money, charted. NOT `athletics` -- that tab
+  // has meant the DECISION BOARD since long before this page existed, it is cited off
+  // this site, and `sports`/`athletic` are already aliases for it. The slug is the
+  // QUESTION a resident asks out loud -- "what do sports actually cost?" -- rather than
+  // the accounting shape of the answer.
+  sportsmoney: 'what-sports-cost',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -171,6 +178,11 @@ const ALIASES: Record<string, Tab> = {
   // department and are NOT established here.
   'health-insurance': 'insurance', insurance: 'insurance', health: 'insurance',
   'retiree-health': 'insurance', 'chapter-32b': 'insurance', 'schrethlth': 'insurance',
+  // NOT 'athletics', 'sports' or 'athletic' -- all three already land on the decision
+  // board, and a link that has been shared once must keep landing where it landed.
+  'what-sports-cost': 'sportsmoney', 'athletics-money': 'sportsmoney',
+  'sports-money': 'sportsmoney', 'athletics-cost': 'sportsmoney',
+  'who-pays-for-sports': 'sportsmoney', 'athletics-both-sides': 'sportsmoney',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -212,6 +224,7 @@ export const LABEL: Record<Tab, string> = {
   funds: 'The money outside the budget',
   staffing: 'School staffing — names, FTE and dollars',
   insurance: 'Health insurance — the cost outside the school budget',
+  sportsmoney: 'What sports cost, and who pays',
   dataroom: 'The data room',
 }
 
@@ -229,6 +242,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   funds: 'themoney',
   staffing: 'themoney',
   insurance: 'themoney',
+  sportsmoney: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -294,6 +308,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   reports: 'money',
   staffing: 'money',
   insurance: 'money',
+  sportsmoney: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -311,7 +326,8 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'staffing', 'insurance', 'variance', 'funds', 'gaps', 'reports'],
+  money: ['themoney', 'staffing', 'insurance', 'sportsmoney', 'variance', 'funds',
+          'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }
