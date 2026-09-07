@@ -11,6 +11,31 @@ Nothing in this file is a claim about the data. It is a work list.
 
 ## Open
 
+### 4. The four never-extracted families — balance sheet first
+
+*Raised 7 Sept 2026, on `notes/reference/EXTRACTION-GAPS.md`.* TJ: *"we need all that
+info. the balance sheet seems critical."*
+
+Four table families are surveyed in every annual report, counted, recorded in
+`annual_report_contents`, named in `extraction_plan` — and no dataset holds any of them.
+
+| family | years | figure rows | why it matters |
+|---|---:|---:|---|
+| `balance_sheet` | 14 | 488 | **TJ's priority.** What the town HOLDS, against the flow tables the archive already has. Everything here measures money moving; nothing measures what is sitting still, at the town level. |
+| `enterprise` | 15 | 954 | Water, sewer, solid waste, PEG. The **control case** — the only part of the town where money in and money out can both be traced. |
+| `town_meeting` | 15 | 924 | What was VOTED, article by article. We hold the appropriation, which is the output of these votes, not the decision. |
+| `tax_rate` | 15 | 216 | The number every resident actually feels. |
+
+**Do the balance sheet first**, and expect it to be harder than special revenue rather
+than easier: `pdf_tables.py` names the combining balance sheet specifically as a page
+where plain extraction mode wins and layout mode recovers **zero** of its 61 money
+tokens. The read-from-the-page method now proven on special revenue does not care about
+that, which is the argument for using it here too.
+
+The check to reconcile against is the balance sheet's own identity — assets = liabilities
++ fund equity — plus whatever totals each year prints. Establish that BEFORE transcribing
+a year, not after; a table with no independent check is not worth reading into a dataset.
+
 ### 3. $26m + $2m does not visibly equal the $27m spent
 
 *Raised 7 Sept 2026, on `school-money-flow.html`.* TJ: *"$26m + $2m, I expected 'what the
