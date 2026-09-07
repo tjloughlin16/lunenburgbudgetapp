@@ -56,6 +56,15 @@ h2 { font-size:17px; margin:0 0 6px; letter-spacing:-.01em }
    which would break the grid on a phone. */
 .m.small { opacity:.82 }
 .m.small .mv { font-size:.78em }
+table.bridge { width:100%; border-collapse:collapse; margin:10px 0; font-size:14px }
+table.bridge td { padding:7px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }
+table.bridge td.v { text-align:right; white-space:nowrap; width:34%;
+  font-family:ui-monospace,Menlo,monospace; font-variant-numeric:tabular-nums }
+table.bridge tr.sub td { border-top:1px solid var(--ink); font-weight:600 }
+table.bridge tr.tot td { border-top:2px solid var(--ink); border-bottom:none;
+  font-weight:700 }
+table.bridge .sm { font-size:12.5px; color:var(--muted) }
 .m { border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
   background:var(--card) }
 .m.hi { border-color:var(--school); border-width:2px; background:var(--school-bg) }

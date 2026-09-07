@@ -733,6 +733,15 @@ h2 {{ font-size:17px; margin:0 0 6px; letter-spacing:-.01em }}
    which would break the grid on a phone. */
 .m.small {{ opacity:.82 }}
 .m.small .mv {{ font-size:.78em }}
+table.bridge {{ width:100%; border-collapse:collapse; margin:10px 0; font-size:14px }}
+table.bridge td {{ padding:7px 0; border-bottom:1px solid var(--grid);
+  vertical-align:top }}
+table.bridge td.v {{ text-align:right; white-space:nowrap; width:34%;
+  font-family:ui-monospace,Menlo,monospace; font-variant-numeric:tabular-nums }}
+table.bridge tr.sub td {{ border-top:1px solid var(--ink); font-weight:600 }}
+table.bridge tr.tot td {{ border-top:2px solid var(--ink); border-bottom:none;
+  font-weight:700 }}
+table.bridge .sm {{ font-size:12.5px; color:var(--muted) }}
 .m {{ border:1px solid var(--grid); border-radius:9px; padding:12px 13px;
   background:var(--card) }}
 .m.hi {{ border-color:var(--school); border-width:2px; background:var(--school-bg) }}
@@ -1202,6 +1211,20 @@ def _render_v2_body(c):
     # is used as a FLOOR for it and labelled as one -- a floor is not a measurement.
     additional = f_in + grant_spend
     total_spent = d300_spent + f_out
+    enc300 = c.execute(
+        'SELECT SUM(l.encumbered) v FROM ledger_snapshot l JOIN account a '
+        'USING (account_id) WHERE l.fy=? AND l.period=? AND a.dept=?',
+        (FY, P_ACCT, '300')).fetchone()['v'] or 0
+    # The bridge must CLOSE. If it ever stops, the page would go on printing two halves
+    # that no longer account for the whole — which is the exact defect the bridge was
+    # added to fix, so it fails here instead.
+    _left = appropriation + additional - total_spent
+    _parts = (appropriation - d300_spent) + (additional - f_out)
+    if abs(_left - _parts) > 0.01:
+        raise SystemExit(
+            'the money-not-spent bridge does not close: %.2f as a total, %.2f from its '
+            'two parts (%.2f apart). One of the inputs changed basis.'
+            % (_left, _parts, _left - _parts))
 
     P = [f'<section class="metrics">'
          f'<div class="m"><div class="mk">The school budget</div>'
@@ -1226,6 +1249,52 @@ def _render_v2_body(c):
          f'{money(cb_held)} of it in the circuit breaker. Not spending and not income — '
          f'money that arrived and stopped.</div></div>'
          '</section>',
+         # THE BRIDGE. TJ, reading the cards: "$26m + $2m, I expected 'what the
+         # schools actually spent' to be the 26+2, but its $27. I'm not sure how to
+         # understand that."
+         #
+         # He was right to expect the sum to mean something, and right that the page
+         # never said what closed it. Four cards that invite a subtraction and do not
+         # explain the remainder are worse than three cards.
+         #
+         # The remainder is real and it is two things: an appropriation is PERMISSION to
+         # spend and not all of it was spent, and money into a fund is not money out of
+         # it. Both are figures the town publishes; neither was on the page.
+         #
+         # It is asserted below rather than trusted, because a bridge that silently
+         # stopped closing would be a worse defect than the confusion it fixes.
+         f'<section class="stage"><h2>Why those figures do not simply add</h2>'
+         f'<p class="cap">The first three cards are three different KINDS of quantity — '
+         f'a permission, an inflow, an outflow — so the difference between them is not '
+         f'an error. It is money not spent, and it is two separate things.</p>'
+         f'<table class="bridge">'
+         f'<tr><td>The school budget</td><td class="v">{money(appropriation)}</td></tr>'
+         f'<tr><td>+ funding beyond the budget</td><td class="v">{money(additional)}</td></tr>'
+         f'<tr class="sub"><td>= everything available</td>'
+         f'<td class="v">{money(appropriation + additional)}</td></tr>'
+         f'<tr><td>− what was actually spent</td><td class="v">{money(total_spent)}</td></tr>'
+         f'<tr class="tot"><td>= not spent</td>'
+         f'<td class="v">{money(appropriation + additional - total_spent)}</td></tr>'
+         f'</table>'
+         f'<p class="cap">Which splits in two:</p>'
+         f'<table class="bridge">'
+         f'<tr><td><b>Appropriation not spent</b><br><span class="sm">Voted and not used. '
+         f'{money(enc300)} of it is already committed by purchase order, so it is spoken '
+         f'for rather than spare.</span></td>'
+         f'<td class="v">{money(appropriation - d300_spent)}</td></tr>'
+         f'<tr><td><b>Fund money not spent this year</b><br><span class="sm">The funds '
+         f'took in {money(f_in)} and spent {money(f_out)}. Money in is not money out.'
+         f'</span></td><td class="v">{money(additional - f_out)}</td></tr>'
+         f'</table>'
+         f'<p class="warn"><b>This is NOT the {money(f_held)} in the fourth card.</b> That '
+         f'figure is what the funds HOLD — a balance built up across years, most of it put '
+         f'there before FY26. This is one year\'s flow. A balance and a flow are different '
+         f'quantities and they are not expected to agree.</p>'
+         f'<p class="cap"><b>And the bases are mixed, which cannot be helped.</b> The '
+         f'appropriation side is actual spending through period 12; the fund side is '
+         f'through period 9, because the town publishes no twelve-month fund report. '
+         f'Three more months of fund spending are missing from every figure above, so '
+         f'"not spent" is an <b>upper bound</b>.</p></section>',
          f'<p class="cap"><b>And the town spends on schools outside all four figures.</b> '
          f'{money(town_also)} of retiree health and a resource stipend sits in other '
          f'departments’ appropriations, <b>plus an unknown share of the '
