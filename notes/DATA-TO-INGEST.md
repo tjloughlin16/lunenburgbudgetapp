@@ -60,6 +60,9 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-sped-movement.xlsx` | DESE `8aww-sugs`, 1.1 MB | `2b5e67f3ba6b` | students entering and leaving special education each year |
 | `dese-ch70-district-profile.xlsx` | **doe.mass.edu/finance/chapter70/**, not Socrata | `a0dc63bc9d51` | **34 years of the Chapter 70 formula, FY1993-FY2026** |
 | `dese-ch70-key-factors.xlsx` | same | `9fdc7d0a6131` | foundation enrolment split by EL / vocational / low-income — the formula's INPUTS |
+| `dese-enrollment-by-grade.xlsx` | DESE `t8td-gens`, 12.7 MB | `a2fb23dea70c` | enrolment by grade and school — the denominators |
+| `sims-datahandbook_2021.docx` | doe.mass.edu, 421 KB | `be9c1fef99a9` | SIMS definitions — STUDENT data only |
+| `sims-datahandbook_2022.docx` | doe.mass.edu, 413 KB | `65ca4aea1430` | as above |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -108,6 +111,26 @@ understating real costs, which is what the 2019 Student Opportunity Act addresse
 that gives one of those without the other is taking a side using a number.
 
 **It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
+
+**THE SIMS HANDBOOKS WILL NOT RESOLVE THE STAFFING CONTRADICTIONS. Checked, not assumed.**
+
+Both handbooks searched: **zero** mentions of `paraprofessional`, `job class` or `educator`.
+SIMS is the STUDENT information system. It carries `special education` 66-70 times and
+`placement` 11-12, so it defines what counts as a placement and how students with
+disabilities are counted — useful for the placement trajectory and the SWD count.
+
+**The staffing definitions are in EPIMS**, the Education Personnel Information Management
+System, which is a separate collection with its own handbook. That is where job
+classification codes live, and what would settle:
+
+- why the paraprofessional line implies $69,161 per FTE — what makes somebody a *special
+  education* paraprofessional rather than a paraprofessional
+- why special education teacher FTE falls 18.5 to 2.0 while total FTE holds flat — how FTE
+  is apportioned when one person works across categories
+
+**Look for the EPIMS Data Handbook on doe.mass.edu**, under educator data rather than the
+Socrata portal. Until it is in hand, neither staffing contradiction can be closed and
+neither number may be published as an answer.
 
 **THE CHAPTER 70 PROFILE IS THE MOST VALUABLE FILE IN THIS BATCH.**
 
