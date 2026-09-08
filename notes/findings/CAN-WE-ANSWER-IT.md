@@ -264,7 +264,31 @@ Four bases, in descending order of what they will survive:
 | **statement** | a closing statement prepared by the Town Accountant from the books — the balance sheet, the special revenue schedule. Not the ledger, but not the spender's own budget book either |
 | **restatement** | a closed year re-presented inside a document written by the party that spent it |
 | **budget** | proposed, requested, level service, balanced — a plan |
-| **state-published** | DESE. Collected by a third party to its own definitions, which is a different KIND of independence |
+
+**A correction, 8 September 2026.** This table first called DESE data *"collected by a third
+party"*. TJ: *"'Third party' is not the right way to think about this, right? Its
+standardized, legally required metrics. Isnt that the best possible scenario for this
+data?"*
+
+He is right, and the correct framing makes it stronger. DESE is not an outside analyst; it
+is the regulator, and this is a **statutory return** — filed because the law requires it, on
+a schema the district does not control.
+
+**The value is not independence. It is that the schema is not the filer's to choose.** The
+town's own budget book can present a line net of grants and never mark it as net; that is
+the whole of rule 11. On DESE's form `GEN_FUND` and `GRNTS_REVOLV` are separate boxes and
+both must be completed. We get the split because the form demands it, not because anybody
+elected to disclose it. Non-optional structure is a better property than independence, and
+it is why this beats the town's own documents for anything requiring comparison — the
+town's books are not comparable to anywhere.
+
+**What it is still not.** The figures are self-reported: DESE collects, standardizes and
+reviews, but is not auditing every line against a ledger. It is an annual return rather
+than transactions, so it says what fell in which bucket for the year and never what a
+payment bought. And it is a different quantity from the appropriation — where DESE and the
+town differ, both can be right about different things, and that difference is worth
+measuring rather than reconciling away.
+| **statutory return** | DESE. The district's own figures, filed because the law requires it, on a schema DESE sets, alongside 300+ districts filing identically |
 
 | question | verdict | basis of the figures |
 |---|---|---|
@@ -275,8 +299,8 @@ Four bases, in descending order of what they will survive:
 | Coaches / athletic transport per year | **see below — this one I overstated** | mixed |
 | Money held outside the budget, FY2011–23 | **YES** | **statement** — the town's own special revenue schedule, ties to its printed total every year |
 | The balance sheet, FY2011–22 | **YES** | **statement** — same, plus its own printed identity |
-| Teacher FTE, pupils, disability share | **YES** | **state-published** — DESE, FY2009–2025 |
-| Paraprofessional FTE against sped para dollars | BOUNDED | **state-published** FTE against **restatement** dollars — two different bases AND two different populations |
+| Teacher FTE, pupils, disability share | **YES** | **statutory return** — DESE, FY2009–2025 |
+| Paraprofessional FTE against sped para dollars | BOUNDED | **statutory return** FTE against **restatement** dollars — two different bases AND two different populations |
 | Out-of-district placement counts | **YES** | **statement** — Special Services report, parts sum to the stated total |
 | Athletes per sport, cost per sport | **YES** | district workbook + **ledger** for fund 1301, FY2024–26 |
 | All-in cost per line | **NO** | no basis exists; the mapping is unpublished |
