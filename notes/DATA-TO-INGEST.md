@@ -58,6 +58,8 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-sped-placement-trajectory.xlsx` | DESE `92x3-2qj9`, 762 KB | `ff3e4c9e8dd8` | where a child STARTS against where they end up — the route into out-of-district, 2018-2026 |
 | `dese-sped-program-characteristics.xlsx` | DESE `n62c-bx65`, 5.3 MB | `417435bddfca` | disability type and demographics behind the SWD count |
 | `dese-sped-movement.xlsx` | DESE `8aww-sugs`, 1.1 MB | `2b5e67f3ba6b` | students entering and leaving special education each year |
+| `dese-ch70-district-profile.xlsx` | **doe.mass.edu/finance/chapter70/**, not Socrata | `a0dc63bc9d51` | **34 years of the Chapter 70 formula, FY1993-FY2026** |
+| `dese-ch70-key-factors.xlsx` | same | `9fdc7d0a6131` | foundation enrolment split by EL / vocational / low-income — the formula's INPUTS |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -106,6 +108,42 @@ understating real costs, which is what the 2019 Student Opportunity Act addresse
 that gives one of those without the other is taking a side using a number.
 
 **It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
+
+**THE CHAPTER 70 PROFILE IS THE MOST VALUABLE FILE IN THIS BATCH.**
+
+`qt58-634r` on the Socrata portal has no download; it redirects to
+`https://www.doe.mass.edu/finance/chapter70/`, which is a DIFFERENT ADDRESS and is where
+refreshes must come from. Record it as such (rule 12) — the Socrata catalogue is not the
+authority for this one.
+
+The workbook's front sheet is an interactive lookup; the data lives in hidden-in-plain-sight
+sheets behind it. **`DataC70` is tidy, 14,844 rows, and carries every term of the formula:**
+
+    fy · distfoundenro · distfoundbudget · distrlc · c70aid · rqdnss · actualNSS
+
+**34 years, FY1993 to FY2026.** Lunenburg has a row for every one.
+
+    FY    found enrol   foundation    req local    ch70 aid   actual NSS
+    2022        1,656   18,408,485   10,908,378   7,823,618   23,919,189
+    2026        1,603   22,073,946   13,334,631   9,229,410   27,085,833
+
+**It reconciles.** FY2026 Chapter 70 aid is 9,229,410 — the exact figure derived
+independently from the FY27 workbook by cell reference for `/state-aid`. Same quantity,
+extended back to 1993.
+
+**What it changes.** The state-aid growth rate currently rests on 23 years of the TOWN's own
+`Subtotal State Aid` worksheets. This is 34 years of the STATE's series with foundation
+enrolment, required local contribution and aid separated — so the rate can be derived from
+the formula's own terms rather than from a total the town happened to print. It also carries
+required against actual NSS past SY2022, which `5izv-jyrd` does not.
+
+`keyfactors.xlsx` holds the inputs: foundation enrolment split by English learner,
+vocational and low-income share. That is what lets anybody model how the formula RESPONDS to
+enrolment change — which is exactly what the students-leave scenario needs, and what it
+currently assumes linearly.
+
+**Note the front sheet is formulas.** Read with `data_only=True` and take the Data sheets;
+the Summary sheet is a VLOOKUP interface and will read as empty or as formula text.
 
 **CASELOAD MOVEMENT, and a duplicate row to check before anyone quotes it.**
 
