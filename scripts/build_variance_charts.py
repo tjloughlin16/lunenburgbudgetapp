@@ -30,6 +30,7 @@ nothing looks exactly like data that is absent.
 """
 import argparse
 import collections
+import csv
 import importlib.util
 import json
 import os
@@ -59,6 +60,26 @@ SAME_WAY = 0.02
 # A group has drifted when its first two measured years and its last two are this far
 # apart. Five points is the analysis's threshold.
 DRIFT = 0.05
+
+# ---------------------------------------------------------------------------------------
+# WHAT THE SECOND COLUMN ACTUALLY IS, AND WHY THE PAGE HAS TO SAY SO.
+#
+# `budget_figure.stage = 'restated'` was called `actual` until 7 September 2026, and the
+# rename is the whole point: not one of the documents behind those rows is an accounting
+# record. Every one is a district budget book, and `document-basis.csv` classifies each as
+# `restatement` -- a prior year re-presented inside a document written by the party that
+# spent it -- or `forward`. None is `ledger`.
+#
+# Rule 13 lists this exact error in its own table: "the actuals sheet" against "a forward
+# budget workbook with a column headed ACTUALS". So the basis is JOINED per document and
+# per year rather than described, the join is asserted to match, and the page renders what
+# the join returns.
+#
+# The consequence a resident needs is one sentence long: a budget book cannot show money
+# moved between lines mid-year, because approved transfers never appear in one -- and
+# mid-year movement is exactly what an over-budgeting question is about.
+BASIS_CSV = os.path.join(ROOT, 'sources/data/document-basis.csv')
+RESTATED_STAGE = 'restated'
 
 
 def norm_fn():
@@ -305,6 +326,102 @@ def build():
         HAVING readings > 1
         ORDER BY (hi - lo) DESC LIMIT 8"""))
 
+    # ------------------------------ WHICH YEARS ARE WHICH: the evidence behind column two
+    #
+    # FAIL CLOSED. A join that matches nothing looks exactly like data that is absent, and
+    # here an empty join would publish a page claiming no document supports any year.
+    if not os.path.exists(BASIS_CSV):
+        sys.exit(f'{os.path.relpath(BASIS_CSV, ROOT)} is not here. Every year on this page '
+                 'is labelled with the basis of the documents behind it, and an unlabelled '
+                 'year is the error this page was rewritten to stop making.')
+    basis_of = {r['path']: r for r in csv.DictReader(open(BASIS_CSV, encoding='utf-8'))}
+    if not basis_of:
+        sys.exit('document-basis.csv has no rows — the classification is empty, which is '
+                 'not the same thing as documents with no classification.')
+
+    doc_rows = list(db.execute(
+        'SELECT fy, doc_id, COUNT(*) AS rows_n FROM budget_figure '
+        'WHERE stage = ? AND variant = \'\' GROUP BY fy, doc_id ORDER BY fy, doc_id',
+        (RESTATED_STAGE,)))
+    if not doc_rows:
+        sys.exit(f'no budget_figure rows at stage={RESTATED_STAGE!r}. The page is built on '
+                 'them; an empty result is a broken stage name, not a district that never '
+                 'reported a prior year.')
+    unclassified = sorted({r['doc_id'] for r in doc_rows if r['doc_id'] not in basis_of})
+    if unclassified:
+        sys.exit('these documents supply the second column and are not classified in '
+                 'document-basis.csv, so the page cannot say what they are:\n  '
+                 + '\n  '.join(unclassified))
+
+    ledger_years = sorted({r['fy'] for r in db.execute(
+        'SELECT DISTINCT fy FROM ledger_snapshot')})
+    ledger_snapshots = [
+        dict(doc=r['doc_id'], fy=r['fy'], period=r['period'], accounts=r['accounts'])
+        for r in db.execute(
+            'SELECT doc_id, fy, period, COUNT(*) AS accounts FROM ledger_snapshot '
+            'GROUP BY doc_id, fy, period ORDER BY fy, period, doc_id')]
+    ledger_accounts = sum(r['accounts'] for r in ledger_snapshots)
+    if not ledger_years or not ledger_accounts:
+        sys.exit('ledger_snapshot is empty. The page states which years ARE ledger-backed; '
+                 'with no rows it would state that none are, which is a different claim.')
+    ledger_docs = [dict(path=r['path'], why=(r['ledger_why'] or '').strip())
+                   for r in sorted((v for v in basis_of.values()
+                                    if v['source_type'] == 'ledger'),
+                                   key=lambda v: v['path'])]
+    if not ledger_docs:
+        sys.exit('document-basis.csv classifies no document as a ledger. The page names '
+                 'them; an empty list would read as an archive with no accounting record '
+                 'in it at all.')
+
+    per_year = collections.defaultdict(lambda: collections.Counter())
+    docs_year = collections.defaultdict(set)
+    for r in doc_rows:
+        per_year[r['fy']][basis_of[r['doc_id']]['source_type']] += r['rows_n']
+        docs_year[r['fy']].add(r['doc_id'])
+    measured = set(years)
+    basis_by_year = [
+        dict(fy=fy,
+             rows=sum(per_year[fy].values()),
+             source_types=dict(sorted(per_year[fy].items())),
+             documents=sorted(docs_year[fy]),
+             ledger_backed=fy in ledger_years,
+             measured=fy in measured)
+        for fy in sorted(per_year)]
+
+    doc_types = collections.Counter(
+        basis_of[d]['source_type'] for d in {r['doc_id'] for r in doc_rows})
+    evidence = dict(
+        stage=RESTATED_STAGE,
+        documents=len({r['doc_id'] for r in doc_rows}),
+        document_types=dict(sorted(doc_types.items())),
+        by_year=basis_by_year,
+        # The one snapshot that answers the question this page asks -- the deepest
+        # period, the most accounts -- named rather than left for a reader to pick out of
+        # eleven. It is the FY2026 general fund at period 12.
+        ledger=dict(years=ledger_years, snapshots=ledger_snapshots,
+                    deepest=max(ledger_snapshots,
+                                key=lambda r: (r['fy'], r['period'], r['accounts'])),
+                    accounts=ledger_accounts, documents=ledger_docs),
+        measured_years_ledger_backed=sorted(measured & set(ledger_years)),
+        measured_years_restated_only=sorted(measured - set(ledger_years)))
+
+    # ---------------------------------------------------- the registry, rule 7c
+    #
+    # The limit this page states -- that over-budgeting cannot be settled before FY2026
+    # because both halves of the comparison come out of the same budget book -- is a
+    # REGISTERED gap, not an observation invented here. The registry outranks the page, so
+    # the page quotes the row rather than paraphrasing it, and the build fails if the row
+    # goes away: a limit stated in one paragraph of one page is invisible to everybody who
+    # did not read that page.
+    gaps = [dict(side=r['side'], what=r['what'], why=r['why'])
+            for r in db.execute('SELECT side, what, why FROM money_gaps')
+            if 'per line, in any year before' in r['what']
+            or 'came in under plan' in r['what']]
+    if not gaps:
+        sys.exit('no money_gaps row covers what this page cannot settle. Rule 7c says that '
+                 'limit is registered rather than written into one page, and the join that '
+                 'reads it back matched nothing.')
+
     # ------------------------------------------- the analysis this page stands on
     reports = json.load(open(REPORTS, encoding='utf-8'))
     by_id = {r['id']: r for r in reports['reports']}
@@ -349,6 +466,8 @@ def build():
             workbook_lines_never_measured=len(set(section) - {r['key'] for r in recs}),
             min_lines_per_year=MIN_LINES_PER_YEAR, min_budget=MIN_BUDGET,
             same_way_threshold=SAME_WAY, drift_threshold=DRIFT),
+        evidence=evidence,
+        gaps=gaps,
         by_year=year_rows,
         sections=section_rows,
         groups=groups,

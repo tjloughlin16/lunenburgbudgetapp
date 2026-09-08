@@ -71,6 +71,10 @@ type GapIndex = { count: number; rows: Gap[] }
 const ABOUT: Partial<Record<Tab, string>> = {
   stateaid: 'The share of the school budget nobody here votes on, and how far it misses '
           + 'its own estimate.',
+  leaving: 'What school choice would cost the town if students transferred out — a '
+         + 'scenario put to this site, with every input a dial.',
+  families: 'Every school fee a household can be charged, priced for one to four '
+         + 'children — and the three places the published record runs out.',
   staffing: 'What the town publishes about who works in the schools — and why a list of '
           + 'names is not a staffing level.',
   insurance: 'The line that grows fastest, budgeted against what was later reported.',
@@ -80,6 +84,8 @@ const ABOUT: Partial<Record<Tab, string>> = {
           + 'two documents disagree.',
   funds: 'Grants, gifts, revolving and enterprise funds — the money that never appears in '
        + 'the budget everyone argues about.',
+  stopped: 'Every school line the district’s own book took to zero, when, and how often '
+         + 'the money came back the following year.',
 }
 
 const DOOR = 'the money'

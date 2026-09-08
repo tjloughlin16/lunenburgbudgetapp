@@ -42,6 +42,7 @@ import argparse
 import collections
 import json
 import os
+import re
 import sqlite3
 import sys
 
@@ -108,6 +109,57 @@ WORKBOOK_COMPARABLE = {
 }
 COMPARE_FY = 2024
 
+# ---------------------------------------------------------------------------------------
+# THE FLAG THAT SITS ABOVE THE THREE LEVELS. Where the figures a page publishes have been
+# publicly contested on the record, the page says so beside them. The per-sport costs here
+# come from ONE document -- the district's own athletics workbook -- and School Committee
+# minutes of 24 June 2026 record a resident telling the committee that questions about what
+# middle school athletics actually costs have been answered inconsistently.
+#
+# RULE 15a. A quote from the minutes is asserted against the minutes file on EVERY build,
+# not read once and typed. The assertion is on the WORDS, normalised for the line wrapping
+# the PDF extract carries, and the line number the quote starts on is computed and
+# published so a reader can find it in the text we serve.
+#
+# RULE 13, WHICH IS WHY THE SPEAKER IS CHECKED TOO. This is public comment, recorded in the
+# minutes -- it is a resident's statement, not the district's own words, and the difference
+# matters. So the build also asserts that the quote sits inside that speaker's block, and
+# the page attributes it that way. What the minutes establish is that the question was put
+# in public and that the answers given were described on the record as inconsistent. They
+# are not the district conceding a figure.
+MINUTES_DOC = 'sources/meetings/text/school-committee/2026-06-24-minutes-7869.txt'
+MINUTES_URL = '/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt'
+MINUTES_TOWN_URL = ('https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/'
+                    '_06242026-7869')
+MINUTES_BOARD = 'School Committee'
+MINUTES_DATE = '24 June 2026'
+MINUTES_SPEAKER = 'Chris Hurlbut'
+# How far the speaker's name may sit ahead of a quote for the quote to be inside their
+# block. The whole statement runs a few hundred characters; anything past this and the
+# attribution is a guess rather than a reading.
+SPEAKER_WINDOW = 2000
+MINUTES_QUOTES = [
+    ('Community members have asked straightforward questions regarding the actual cost '
+     'of middle school athletics and the process required to apply community raised '
+     'funds towards these programs. Yet the answers have been inconsistent.'),
+    ('Available data suggests that user registration fees may exceed the known cost of '
+     'operating these programs'),
+    ('middle school athletics were eliminated as a budget reduction of $14,415'),
+]
+# The reduction the minutes name is also a line in the district's own budget: the build
+# checks the two against each other rather than letting a quoted figure stand alone.
+MINUTES_REDUCTION_LINE = 'Freshman & MS Coaches'
+
+# The generic words in the workbook's sport names. They are not sports, so a payment
+# reading "MS" or "OOD" is not a payment attributed to a sport, and counting one as a hit
+# would turn a real absence into a false presence.
+SPORT_STOPWORDS = {'boys', 'girls', 'out', 'of', 'district', 'team', 'ood', 'hs', 'ms'}
+# Every field on a cashbook row that carries free text or a reference. A disbursement is
+# searched across all of them: the claim is that NOTHING on the row names a sport, and a
+# claim about the whole row has to look at the whole row.
+JOURNAL_TEXT_FIELDS = ('src_meaning', 'journal', 'ref1', 'po_ref2', 'ref3', 'reference',
+                       'check_no', 'warrant', 'voucher', 'vendor', 'comments')
+
 # The two documents this page draws, quoted so a reader can find them.
 RELATED = [
     ('athletics', 'The written analysis: both sides of the money, FY14 to FY26, and why '
@@ -130,6 +182,62 @@ def num(v):
 
 def fail(msg):
     sys.exit(f'build_athletics_charts: {msg}')
+
+
+def _flat(text):
+    """One run of whitespace is one space.
+
+    The minutes reach us as text extracted from a PDF, so a sentence is wrapped across
+    lines at whatever width the page had. Asserting a quote against the raw file would be
+    asserting the line breaks, which are the extractor's and not the committee's.
+    """
+    return ' '.join(text.split())
+
+
+def minutes_quotes():
+    """Every quote this page prints, checked against the minutes file. Rule 15a.
+
+    Returns the quote with the line of the file it starts on. Refuses to write if a quote
+    is not there verbatim, or if it does not sit inside the block of the speaker the page
+    attributes it to -- a quote lifted out of the wrong speaker's remarks is exactly the
+    rule 13 failure of quoting a rendering rather than the source.
+    """
+    path = os.path.join(ROOT, MINUTES_DOC)
+    if not os.path.exists(path):
+        fail(f'{MINUTES_DOC} is not on disk — run scripts/sync_archive.py --pull. '
+             'A quote this page prints is asserted against it on every build.')
+    raw = open(path, encoding='utf-8').read().splitlines()
+
+    # A normalised copy of the file, and the line each normalised character came from, so
+    # a hit can be reported as a coordinate rather than as "it is in there somewhere".
+    flat, line_at = [], []
+    for n, ln in enumerate(raw, start=1):
+        for word in ln.split():
+            if flat:
+                flat.append(' ')
+                line_at.append(n)
+            flat.append(word)
+            line_at.extend([n] * len(word))
+    flat = ''.join(flat)
+
+    speaker_at = flat.find(MINUTES_SPEAKER)
+    if speaker_at < 0:
+        fail(f'{MINUTES_DOC} no longer names {MINUTES_SPEAKER}. The page attributes these '
+             'words to that speaker, and an attribution that cannot be checked is not one.')
+
+    out = []
+    for quote in MINUTES_QUOTES:
+        at = flat.find(_flat(quote))
+        if at < 0:
+            fail(f'{MINUTES_DOC} no longer contains, verbatim:\n  “{quote}”\n'
+                 'Either the town republished the minutes or the extractor changed. '
+                 'Nothing is published from a quote that cannot be found in its source.')
+        if not 0 <= at - speaker_at <= SPEAKER_WINDOW:
+            fail(f'the quote “{quote[:60]}…” is {at - speaker_at} characters from '
+                 f'{MINUTES_SPEAKER} in {MINUTES_DOC}. The page says it is that '
+                 'speaker’s; at that distance it is a guess.')
+        out.append(dict(text=quote, line=line_at[at]))
+    return out
 
 
 def build():
@@ -327,8 +435,8 @@ def build():
 
     # ------------------------------------------------------------- the fund's cashbook
     j = q(c, 'SELECT fy, eff_date, post_date, src, src_meaning, journal, ref1, '
-             'reference, amount, comments, vendor, check_no, warrant '
-             'FROM fund_1301_cash_journal ORDER BY fy, eff_date')
+             'po_ref2, ref3, reference, amount, comments, vendor, check_no, warrant, '
+             'voucher FROM fund_1301_cash_journal ORDER BY fy, eff_date')
     if not j:
         fail('fund_1301_cash_journal is empty')
     flow, src_rows, opening = [], [], {}
@@ -378,6 +486,53 @@ def build():
     disb = [r for r in j if (num(r['amount']) or 0) < 0]
     named = [r for r in disb if (r['vendor'] or '').strip()]
 
+    # ------------------------------------------ CAN A PAYMENT BE PUT AGAINST A SPORT?
+    #
+    # The page states that it cannot, so the page runs the search rather than repeating a
+    # sentence from an analysis. Every disbursement row, every free-text and reference
+    # field on it, against the workbook's OWN sport names -- taken from the data, so a
+    # sport the district adds next year is searched for without anybody remembering to.
+    #
+    # A search that finds nothing and a search that had nothing to look for are the same
+    # printed zero, which is why both the vocabulary and the rows are asserted non-empty
+    # before the count means anything.
+    sport_terms = sorted({
+        w for name in {k[2] for k in ath}
+        for w in ''.join(ch if ch.isalpha() else ' ' for ch in name.lower()).split()
+        if len(w) >= 2 and w not in SPORT_STOPWORDS})
+    if not sport_terms:
+        fail('no sport names came out of athletics_by_sport, so the search for a sport on '
+             'a payment had nothing to look for. A zero from an empty vocabulary is not a '
+             'finding.')
+    if not disb:
+        fail('no disbursement rows in fund_1301_cash_journal — the page says what these '
+             'rows do not carry, and it may not say it about an empty set')
+    # Whole words only. `CC` is the workbook's name for cross country and it is also
+    # inside "accounts payable", so a substring test reported eleven payments as naming a
+    # sport when not one of them does -- a false presence, which is worse than the absence
+    # it would have hidden.
+    term_re = {t: re.compile(r'\b' + re.escape(t) + r'\b') for t in sport_terms}
+    sport_hits = []
+    for r in disb:
+        blob = ' '.join((r[f] or '') for f in JOURNAL_TEXT_FIELDS).lower()
+        hit = sorted({t for t, rx in term_re.items() if rx.search(blob)})
+        if hit:
+            sport_hits.append(dict(fy=int(r['fy']), journal=r['journal'],
+                                   amount=num(r['amount']), terms=hit))
+    warrant_rows = [r for r in disb if r['src'] == 'APP']
+    with_ref = [r for r in warrant_rows if (r['reference'] or '').strip()]
+    attribution = dict(
+        years=sorted({int(r['fy']) for r in disb}),
+        disbursements=len(disb),
+        named_vendor=len(named),
+        warrant_disbursements=len(warrant_rows),
+        warrant_disbursements_referenced=len(with_ref),
+        fields_searched=list(JOURNAL_TEXT_FIELDS),
+        sport_terms=sport_terms,
+        sports=len({k[2] for k in ath}),
+        sport_mentions=len(sport_hits),
+        sport_hits=sport_hits)
+
     # ------------------------------------- rule 11, measured: one year, one programme
     gf = collections.defaultdict(float)
     unmatched = collections.defaultdict(float)
@@ -411,6 +566,88 @@ def build():
     # CHECK 1b: the comparable categories must not exceed the workbook's own total.
     if compare['workbook_total'] > printed[COMPARE_FY] + CENT:
         fail(f'FY{COMPARE_FY}: comparable categories sum above the workbook’s own total')
+
+    # -------------------------------------- THREE DOCUMENTS, THREE FIGURES, ONE YEAR
+    #
+    # The strongest thing on this page, and it is a DISAGREEMENT rather than a number.
+    # Three documents state what athletics came to in FY2024 and no two of them agree:
+    #
+    #   the district's own workbook          — its printed Total Expenses, every sport
+    #   the athletics revolving fund         — what it actually paid out, from its cashbook
+    #   the town's general fund              — every athletics line in the budget book
+    #
+    # The second and third are money that left two different pots, so they may be added to
+    # each other -- and their sum is well above what the first says the whole thing cost.
+    # The first may NOT be added to either: it is a claim about total cost, and adding a
+    # claim to a payment is the error this page exists to demonstrate.
+    #
+    # Levels, in the sense the site now labels them: the workbook figure is STATED, the
+    # fund's payments are TRACED TO A PAYMENT, the appropriation is STATED in a budget book
+    # the district wrote. Publishing the three together is what CROSS-CHECKED means when
+    # the sources visibly disagree.
+    flow_cmp = next((r for r in flow if r['fy'] == COMPARE_FY), None)
+    wb_total = printed.get(COMPARE_FY)
+    gf_total = spend['general'].get(COMPARE_FY)
+    if flow_cmp is None or wb_total is None or not gf_total:
+        fail(f'FY{COMPARE_FY}: one of the three sides of the disagreement is missing — '
+             f'workbook {wb_total}, fund {flow_cmp is not None}, general fund {gf_total}. '
+             'A three-way disagreement with two sides is not one, and an absent side must '
+             'not be drawn as a small one.')
+    fund_paid = abs(flow_cmp['payments'])
+    if fund_paid <= 0:
+        fail(f'FY{COMPARE_FY}: the revolving fund shows no payments out. That is an empty '
+             'join, not a fund that spent nothing.')
+    three_way = dict(
+        fy=COMPARE_FY,
+        workbook=round(wb_total, 2),
+        fund_paid=round(fund_paid, 2),
+        general=round(gf_total, 2),
+        two_pots=round(fund_paid + gf_total, 2),
+        over_workbook=round(fund_paid + gf_total - wb_total, 2),
+        over_workbook_share=round((fund_paid + gf_total) / wb_total - 1, 4),
+        sources=[
+            dict(who='the district’s workbook states',
+                 amount=round(wb_total, 2), level='stated',
+                 what='its own printed Total Expenses across every sport',
+                 table='athletics_by_sport'),
+            dict(who='the revolving fund actually paid',
+                 amount=round(fund_paid, 2), level='traced to a payment',
+                 what='every disbursement in the fund’s cashbook that year',
+                 table='fund_1301_cash_journal'),
+            dict(who='the general fund carried',
+                 amount=round(gf_total, 2), level='stated',
+                 what='every athletics line in the district’s budget book',
+                 table='athletics_history'),
+        ])
+
+    # ------------------------------- the reduction the minutes name, against the budget
+    #
+    # The minutes quote a figure. A quoted figure is a claim, so it is checked against the
+    # district's own line rather than repeated: the last year middle school coaching was
+    # funded, the budget carries exactly the amount the reduction is said to have removed.
+    quotes = minutes_quotes()
+    reduction_line = next(
+        ((item, per_fy) for item, per_fy in items['general'].items()
+         if item.lower() == MINUTES_REDUCTION_LINE.lower()), None)
+    if reduction_line is None:
+        fail(f'no general fund line called “{MINUTES_REDUCTION_LINE}” in '
+             'athletics_history. The page checks a figure quoted from the minutes against '
+             'that line, and a missing line is an unchecked quote.')
+    red_item, red_by_fy = reduction_line
+    red_fy = max(red_by_fy)
+    reduction = dict(
+        line=red_item, fy=red_fy, amount=round(red_by_fy[red_fy], 2),
+        quoted=quotes[-1]['text'],
+        matches=(f'${red_by_fy[red_fy]:,.0f}' in quotes[-1]['text']))
+    if not reduction['matches']:
+        fail(f'the minutes quote a reduction the budget line “{red_item}” does not match: '
+             f'the line is {red_by_fy[red_fy]:,.2f} in FY{red_fy}. Either the quote or the '
+             'line moved, and the page states that the two agree.')
+
+    disclaimer = dict(
+        board=MINUTES_BOARD, date=MINUTES_DATE, speaker=MINUTES_SPEAKER,
+        doc=MINUTES_DOC, url=MINUTES_URL, town_url=MINUTES_TOWN_URL,
+        quotes=quotes, reduction=reduction)
 
     # ------------------------------------------ where we differ from the prose, and why
     #
@@ -540,6 +777,9 @@ def build():
         fund_flow=flow, fund_sources=src_rows,
         memo_entries=memo, memo_total=memo_total,
         compare=compare,
+        three_way=three_way,
+        disclaimer=disclaimer,
+        attribution=attribution,
         fee_check=fee_check,
         fy26_fund=dict(
             revenue=next(r['revenue'] for r in both if r['fy'] == 2026),

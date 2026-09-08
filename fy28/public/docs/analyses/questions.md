@@ -488,7 +488,7 @@ Returns `fy`, `side`, `item`, `amount`, `basis` — for example: fy=2026, side=g
 SELECT fy, school_year, level, item, amount, unit, verified FROM athletic_fee_schedule ORDER BY fy DESC, level
 ```
 
-Returns `fy`, `school_year`, `level`, `item`, `amount`, `unit`, `verified` — for example: fy=2027, school_year=2026-27, level=ANY, item=family_cap, amount=1500.00, unit=per student per sport per season, verified=source not held
+Returns `fy`, `school_year`, `level`, `item`, `amount`, `unit`, `verified` — for example: fy=2027, school_year=2026-27, level=ANY, item=family_cap, amount=1500.00, unit=not established, verified=source not held
 
 **Which rates does this project know about, and which does it use?**
 

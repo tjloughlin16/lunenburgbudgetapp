@@ -1,0 +1,285 @@
+import {
+  CartesianGrid, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis,
+} from 'recharts'
+import { usd } from '../model/engine'
+import { Legend, fy, share } from './StateAidCharts'
+
+/** The charts for /if-students-leave. Every figure arrives from /data/if-students-leave.json,
+ *  written by scripts/build_if_students_leave.py — nothing here computes a measurement and
+ *  nothing here has one typed into it (rule 2). What this file DOES compute is the scenario
+ *  itself, from dials the reader sets, off inputs that arrive measured.
+ *
+ *  COLOUR. The categorical question is which direction a dollar moves, and it has two
+ *  answers: money the town loses, and money the town stops spending. So two hues, the
+ *  site's warm series colour for what the town loses and the cool one for what it saves,
+ *  with recessive ink for anything assumed rather than measured. Identity is never carried
+ *  by colour alone — every chart is directly labelled and has a table twin.
+ *
+ *  THE SENSITIVITY CHART IS THE POINT. A single net figure would be a false precision on
+ *  five assumptions. The curve shows the whole range at once and lets the reader see where
+ *  their own belief lands, which is the honest shape for a scenario nobody has measured. */
+
+export const LOSS = 'var(--series-revenue)'
+export const SAVE = 'var(--series-cost)'
+export const MUTED = 'var(--text-muted)'
+
+const AXIS = { fontSize: 11, fill: 'var(--text-muted)' }
+const compact = (n: number) =>
+  Math.abs(n) >= 1_000_000 ? `$${(n / 1_000_000).toFixed(1)}M`
+    : Math.abs(n) >= 1_000 ? `$${Math.round(n / 1_000)}k` : `$${Math.round(n)}`
+
+function Box({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="card p-3 text-[12.5px]"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      {children}
+    </div>
+  )
+}
+
+export { fy, share }
+
+/* ------------------------------------------------------------------------ the asymmetry */
+
+/** TWO BARS ON ONE SCALE, opposed: what the town loses against what it stops spending.
+ *
+ *  This is the page's whole argument in one mark. Two lengths on a common baseline compare
+ *  without arithmetic; the reader does not have to hold either number in their head to see
+ *  that one is longer. The scale is fixed to the larger of the two so the shorter bar is
+ *  never drawn full-width, which is the failure that would make a $0 saving look like a
+ *  match for a $390,000 loss. */
+export function Asymmetry({ items }: {
+  items: { label: React.ReactNode; amount: number; hue: string; note?: React.ReactNode }[]
+}) {
+  const top = Math.max(...items.map(i => Math.abs(i.amount)), 1)
+  return (
+    <div className="mt-5 flex flex-col gap-4">
+      {items.map((i, k) => (
+        <div key={k}>
+          <div className="flex items-baseline justify-between gap-3 flex-wrap">
+            <span className="text-[13.5px] font-semibold">{i.label}</span>
+            <span className="text-[15px] font-bold tnum whitespace-nowrap"
+              style={{ color: i.hue }}>{usd(i.amount)}</span>
+          </div>
+          <div className="mt-1.5 rounded-[3px]"
+            style={{ background: 'var(--surface-3)', height: 18 }}>
+            <div className="rounded-[3px]" style={{
+              width: `${Math.max(i.amount > 0 ? 0.8 : 0, (Math.abs(i.amount) / top) * 100)}%`,
+              height: 18, background: i.hue,
+            }} />
+          </div>
+          {i.note && (
+            <p className="text-[11.5px] mt-1.5 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+              {i.note}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------- where they leave from */
+
+export type Grade = {
+  grade: string; resident: number; leaving: number; remaining: number; share: number
+}
+
+/** Each grade at its real size, with the share leaving drawn inside it rather than beside
+ *  it. Inside, because the finding is that the loss is small relative to the grade it comes
+ *  out of — and two adjacent bars would invite the eye to compare the losses with each
+ *  other instead. Grades are drawn to a common scale so grade 9 being the smallest is
+ *  visible, which is the reason it loses the fewest. */
+export function PerGrade({ grades }: { grades: Grade[] }) {
+  const top = Math.max(...grades.map(g => g.resident), 1)
+  return (
+    <div className="mt-5">
+      <div className="flex flex-col gap-3">
+        {grades.map(g => (
+          <div key={g.grade}>
+            <div className="flex items-baseline justify-between gap-3">
+              <span className="text-[13px] font-semibold">Grade {g.grade}</span>
+              <span className="text-[12.5px] tnum whitespace-nowrap"
+                style={{ color: 'var(--text-secondary)' }}>
+                {g.leaving.toFixed(1)} of {g.resident} leaving &middot; {share(g.share)}
+              </span>
+            </div>
+            <div className="relative mt-1 rounded-[3px] overflow-hidden"
+              style={{ background: 'var(--surface-3)', height: 18,
+                       width: `${(g.resident / top) * 100}%` }}>
+              <div className="absolute inset-0 rounded-[3px]"
+                style={{ background: 'var(--axis)', opacity: 0.35 }} />
+              <div className="absolute top-0 left-0" style={{
+                width: `${g.share * 100}%`, height: 18, background: LOSS,
+              }} />
+            </div>
+          </div>
+        ))}
+      </div>
+      <Legend items={[
+        { hue: LOSS, label: 'The share of that grade the scenario has leaving' },
+        { hue: 'var(--axis)', label: 'Resident students the town printed for that grade' },
+      ]} />
+    </div>
+  )
+}
+
+/* ---------------------------------------------------------- school choice money coming IN */
+
+export type FundYear = {
+  fy: number; receipts: number | null; carried: number | null; usable: boolean
+  why: string | null
+}
+
+/** The receipts line only. The BALANCE is a different quantity — it is what the fund has
+ *  saved up, not what arrived that year — and plotting the two together on one axis would
+ *  invite exactly the reading this page exists to avoid. A year the extract could not read
+ *  is drawn as a break in the line rather than as a zero. */
+export function ChoiceIn({ series, cherry }: {
+  series: FundYear[]; cherry: { fy: number; amount: number }[]
+}) {
+  const data = series.map(r => ({
+    fy: fy(r.fy), receipts: r.usable ? r.receipts : null,
+  }))
+  const cherryData = cherry.map(r => ({ fy: fy(r.fy), cherry: r.amount }))
+  const merged = [...data, ...cherryData.filter(c => !data.some(d => d.fy === c.fy))]
+  return (
+    <div className="mt-5">
+      <div style={{ width: '100%', height: 250 }}>
+        <ResponsiveContainer>
+          <LineChart data={merged} margin={{ top: 8, right: 8, left: 8, bottom: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="fy" tick={AXIS} tickLine={false} axisLine={false} />
+            <YAxis tick={AXIS} tickLine={false} axisLine={false} tickFormatter={compact} />
+            <Tooltip cursor={{ stroke: 'var(--grid)' }} content={({ active, payload, label }) => {
+              if (!active || !payload?.length) return null
+              return (
+                <Box>
+                  <div className="font-bold">{label}</div>
+                  {payload.map(p => (
+                    <div key={String(p.dataKey)} className="tnum">
+                      {p.dataKey === 'cherry' ? 'cherry sheet estimate: ' : 'into the fund: '}
+                      {usd(Number(p.value))}
+                    </div>
+                  ))}
+                </Box>
+              )
+            }} />
+            <Line type="monotone" dataKey="receipts" stroke={SAVE} strokeWidth={2}
+              dot={{ r: 2.5 }} connectNulls={false} isAnimationActive={false} />
+            <Line type="monotone" dataKey="cherry" stroke={LOSS} strokeWidth={2}
+              strokeDasharray="4 3" dot={{ r: 2.5 }} connectNulls={false}
+              isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <Legend items={[
+        { hue: SAVE, label: 'Receipts into the town’s School Choice revolving fund — the annual town reports' },
+        { hue: LOSS, label: 'The cherry sheet’s School Choice Receiving line — the FY2027 Town Meeting booklet' },
+      ]} />
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------------- the whole range */
+
+export type Curve = { avoidable: number; hold: number; full: number }
+
+/** The net cost to the town across every value of the one input nobody has measured.
+ *
+ *  Two curves, because the aid question has two ends and the truth is between them: the
+ *  lower assumes Chapter 70 does not move, the upper assumes it falls by the whole
+ *  foundation reduction. A zero line is drawn explicitly, since the point where a curve
+ *  crosses it is the break-even the page names. */
+export function Sensitivity({ curve, breakEven }: {
+  curve: Curve[]; breakEven: number | null
+}) {
+  return (
+    <div className="mt-5">
+      <div style={{ width: '100%', height: 280 }}>
+        <ResponsiveContainer>
+          <LineChart data={curve} margin={{ top: 8, right: 8, left: 8, bottom: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="avoidable" tick={AXIS} tickLine={false} axisLine={false}
+              tickFormatter={(v: number) => `${Math.round(v * 100)}%`} />
+            <YAxis tick={AXIS} tickLine={false} axisLine={false} tickFormatter={compact} />
+            <ReferenceLine y={0} stroke="var(--axis)" />
+            {breakEven != null && breakEven <= 1 && (
+              <ReferenceLine x={curve.reduce((a, b) =>
+                Math.abs(b.avoidable - breakEven) < Math.abs(a.avoidable - breakEven) ? b : a
+              ).avoidable} stroke="var(--status-good)" strokeDasharray="3 3" />
+            )}
+            <Tooltip cursor={{ stroke: 'var(--grid)' }} content={({ active, payload, label }) => {
+              if (!active || !payload?.length) return null
+              return (
+                <Box>
+                  <div className="font-bold">
+                    {Math.round(Number(label) * 100)}% of the per-pupil appropriation avoided
+                  </div>
+                  {payload.map(p => (
+                    <div key={String(p.dataKey)} className="tnum">
+                      {p.dataKey === 'hold' ? 'aid unchanged: ' : 'aid falls in full: '}
+                      {usd(Number(p.value))}
+                    </div>
+                  ))}
+                </Box>
+              )
+            }} />
+            <Line type="monotone" dataKey="full" stroke={LOSS} strokeWidth={2} dot={false}
+              isAnimationActive={false} />
+            <Line type="monotone" dataKey="hold" stroke={SAVE} strokeWidth={2} dot={false}
+              isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <Legend items={[
+        { hue: LOSS, label: 'Net cost if Chapter 70 falls by the whole foundation reduction' },
+        { hue: SAVE, label: 'Net cost if Chapter 70 does not move — where DESE’s own row currently sits' },
+        { hue: 'var(--status-good)', label: 'Where the town breaks even, if it gets there' },
+      ]} />
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------------------ one dial */
+
+/** A slider with its own basis printed under it. Every control on this page is an
+ *  ASSUMPTION and the page would be dishonest if it did not say so beside each one. */
+export function Dial({ label, value, setValue, min, max, step, format, tone, basis, note,
+                       reset }: {
+  label: React.ReactNode
+  value: number; setValue: (n: number) => void
+  min: number; max: number; step: number
+  format: (n: number) => string
+  tone: string
+  basis: string
+  note: React.ReactNode
+  reset: number
+}) {
+  const moved = Math.abs(value - reset) > 1e-9
+  return (
+    <div className="card p-4">
+      <div className="flex items-baseline justify-between gap-3 mb-1">
+        <h3 className="text-[13px] font-bold">{label}</h3>
+        <span className="text-[10px] font-bold uppercase tracking-widest shrink-0"
+          style={{ color: basis === 'statute' ? 'var(--text-secondary)' : tone }}>
+          {basis}
+        </span>
+      </div>
+      <div className="flex items-baseline justify-between gap-3 mb-1">
+        <span className="text-lg font-bold tnum">{format(value)}</span>
+        {moved && (
+          <button onClick={() => setValue(reset)}
+            className="text-[10px] font-semibold underline"
+            style={{ color: 'var(--text-secondary)' }}>reset</button>
+        )}
+      </div>
+      <input type="range" min={min} max={max} step={step} value={value}
+        aria-label={typeof label === 'string' ? label : undefined}
+        onChange={e => setValue(Number(e.target.value))} className="w-full" />
+      <p className="text-[11.5px] leading-snug mt-2" style={{ color: 'var(--text-muted)' }}>
+        {note}
+      </p>
+    </div>
+  )
+}

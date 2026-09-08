@@ -1,4 +1,5 @@
 import { abs } from '../lib/abs'
+import { Basis, type Level } from '../components/Basis'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -83,6 +84,25 @@ type Payload = {
     rows: { category: string; workbook: number; general: number; outside: number }[]
     workbook_total: number; general_total: number; share: number
     unmatched: { item: string; amount: number }[]; unmatched_total: number
+  }
+  three_way: {
+    fy: number
+    workbook: number; fund_paid: number; general: number
+    two_pots: number; over_workbook: number; over_workbook_share: number
+    sources: { who: string; amount: number; level: Level; what: string; table: string }[]
+  }
+  disclaimer: {
+    board: string; date: string; speaker: string
+    doc: string; url: string; town_url: string
+    quotes: { text: string; line: number }[]
+    reduction: { line: string; fy: number; amount: number; quoted: string; matches: boolean }
+  }
+  attribution: {
+    years: number[]; disbursements: number; named_vendor: number
+    warrant_disbursements: number; warrant_disbursements_referenced: number
+    fields_searched: string[]; sport_terms: string[]; sports: number
+    sport_mentions: number
+    sport_hits: { fy: number; journal: string; amount: number; terms: string[] }[]
   }
   fy26_fund: { revenue: number; spending: number; appropriation: number; all_in: number }
   recomputed: {
@@ -256,6 +276,119 @@ export function AthleticsMoney() {
         nothing else &mdash; which is why what athletics shows about the gap between an
         appropriation and a cost matters far beyond athletics.
       </p>
+
+      {/* =========================================== THE FLAG, AND IT LEADS ON PURPOSE
+        *
+        * Rule 7a says a page opens with the thing rather than with context — and makes
+        * one exception, for a genuine warning that changes whether the reader should
+        * trust what follows. This is that exception, and it still opens with a thing:
+        * three documents, three figures, one year, drawn before a word of explanation.
+        *
+        * Rule 15a: the quote underneath is asserted against the minutes file on every
+        * build by scripts/build_athletics_charts.py, with the line it starts on. */}
+      <div className="card p-5 sm:p-6 mt-9" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest"
+          style={{ color: 'var(--text-muted)' }}>
+          Read the costs on this page with this attached
+        </p>
+        <p className="text-[19px] sm:text-[21px] font-bold leading-snug mt-2 max-w-2xl">
+          Three documents say what athletics cost in {fy(d.three_way.fy)}. No two of them
+          agree, and nothing published reconciles them.
+        </p>
+
+        <div className="overflow-x-auto mt-5">
+          <table className="stack w-full text-[13px] tnum max-w-2xl">
+            <caption className="sr-only">
+              Three figures for what athletics cost in {fy(d.three_way.fy)}, with how
+              confirmed each one is
+            </caption>
+            <tbody>
+              {d.three_way.sources.map(r => (
+                <tr key={r.who} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                  <td className="rowhead py-2 pr-4 font-semibold leading-snug">{r.who}</td>
+                  <td data-label="Amount"
+                    className="py-2 pr-4 text-right font-bold whitespace-nowrap">
+                    {usd(r.amount)}
+                  </td>
+                  <td data-label="How confirmed" className="py-2">
+                    <Basis level={r.level}>{r.what}</Basis>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-[14px] leading-relaxed mt-4 max-w-2xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          The second and third are money that really left two different pots, so they add:{' '}
+          <strong style={{ color: 'var(--status-bad)' }}>{usd(d.three_way.two_pots)}</strong>{' '}
+          &mdash; {usd(d.three_way.over_workbook)} more than the workbook says the whole
+          programme cost, {share(d.three_way.over_workbook_share)} above it. The first is a
+          claim about total cost and may not be added to either.{' '}
+          <strong>The disagreement is the finding.</strong> It is worth more than any one of
+          the three figures, and it is why the per-sport costs further down carry a label.
+        </p>
+
+        {/* The half of it that is a hypothesis, kept apart from the half that is a
+          * measurement. Rule 7: three readings fit these rows equally well. */}
+        <p className="text-[13px] leading-relaxed mt-3 max-w-2xl"
+          style={{ color: 'var(--text-muted)' }}>
+          <strong>What this does not show.</strong> Which of the three is right, or that
+          any of them is wrong. Three readings fit equally: the workbook may count a
+          narrower programme than the two funds paid for; the fund and the appropriation may
+          both be paying for things the workbook never tracked; or the workbook may simply
+          be a plan and the other two the money. Nothing in these documents separates them.
+        </p>
+
+        {/* -------------------------------------------------- the quote, asserted at build */}
+        <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
+          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+            style={{ color: 'var(--text-muted)' }}>
+            And these figures are contested in public, on the record
+          </p>
+          {d.disclaimer.quotes.slice(0, 2).map(qt => (
+            <blockquote key={qt.line} className="text-[14.5px] leading-relaxed pl-3.5 mb-2.5"
+              style={{ borderLeft: '3px solid var(--status-warning)' }}>
+              &ldquo;{qt.text}&rdquo;{' '}
+              <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+                line {qt.line}
+              </span>
+            </blockquote>
+          ))}
+          <p className="text-[13px] leading-relaxed mt-3" style={{ color: 'var(--text-secondary)' }}>
+            {d.disclaimer.speaker}, in public comment to the {d.disclaimer.board} on{' '}
+            {d.disclaimer.date}, recorded in the town&rsquo;s own minutes. Both quotes are
+            checked against{' '}
+            <a className="underline" style={{ color: 'var(--series-cost)' }}
+              href={abs(d.disclaimer.url)}>the minutes we serve</a> every time this page is
+            built, at the lines given &mdash; and{' '}
+            <a className="underline" style={{ color: 'var(--series-cost)' }}
+              href={d.disclaimer.town_url}>the town&rsquo;s own copy</a> is the address to
+            ask for if that one ever moves.
+          </p>
+          <p className="text-[13px] leading-relaxed mt-2.5" style={{ color: 'var(--text-secondary)' }}>
+            <strong>What the minutes establish</strong> is that the question was asked in
+            public and that the answers given were described, on the record, as
+            inconsistent &mdash; and that no reconciliation has been published since.{' '}
+            <strong>What they do not establish</strong> is a cost. This is a resident
+            speaking, not the district conceding a figure, and a statement that answers were
+            inconsistent does not say which of them was wrong.
+          </p>
+          <p className="text-[13px] leading-relaxed mt-2.5" style={{ color: 'var(--text-secondary)' }}>
+            One figure in the same statement <em>can</em> be checked, and it holds:{' '}
+            <Basis level="cross-checked" />{' '}
+            <span className="ml-1">
+              &ldquo;{d.disclaimer.reduction.quoted}&rdquo; &mdash; and the district&rsquo;s
+              own budget carries {usd(d.disclaimer.reduction.amount)} against{' '}
+              <em>{d.disclaimer.reduction.line}</em> in {fy(d.disclaimer.reduction.fy)} &mdash;
+              the most recent year the measured series carries that line at all. The build
+              refuses to publish this sentence if the two stop matching. It confirms the
+              size of the reduction, and it does not confirm anything about the cost.
+            </span>
+          </p>
+        </div>
+      </div>
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={share(d.compare.share)} tone={FUND}>
@@ -431,6 +564,10 @@ export function AthleticsMoney() {
       </NotShown>
 
       <H2 id="cost">What the money actually buys</H2>
+      <p className="mt-1"><Basis level="stated">
+        one document &mdash; the district&rsquo;s own workbook &mdash; and it is the
+        document whose figures are contested above
+      </Basis></p>
       <Body>
         The district&rsquo;s own sport-by-sport workbook is the only document that puts a
         cost against a category. Its columns sum to its own printed total to the cent in
@@ -472,6 +609,10 @@ export function AthleticsMoney() {
       </NotShown>
 
       <H2 id="per-sport">What a season costs, per player</H2>
+      <p className="mt-1"><Basis level="stated">
+        one document, disclaimed by its own author &mdash; kept, because a bounded answer
+        with its basis attached beats a refusal
+      </Basis></p>
       <Body>
         The workbook prints a cost for each sport and prints a headcount beside it, and
         never divides one by the other. <strong>This division is ours.</strong> In{' '}
@@ -498,6 +639,52 @@ export function AthleticsMoney() {
           children, and the town publishes no unduplicated athlete count.
         </p>
       </NotShown>
+
+      {/* ------------------------ why nothing independent can check a per-sport figure */}
+      <div className="card p-5 mt-6 max-w-3xl" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+        <p className="text-[14.5px] font-bold mb-1">
+          The only independent record of athletics money cannot be put against a sport.
+        </p>
+        <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          The revolving fund&rsquo;s cashbook is the one place in this archive where an
+          athletics payment is a transaction rather than a claim &mdash;{' '}
+          <Basis level="traced to a payment" />. It could corroborate the bars above, and it
+          cannot, because of what a row does not carry.{' '}
+          <strong>{d.attribution.warrant_disbursements_referenced} of{' '}
+            {d.attribution.warrant_disbursements}</strong> warrant disbursements carry a
+          warrant reference and nothing else &mdash; no vendor, no description &mdash; and a
+          vendor name appears on {d.attribution.named_vendor} of all{' '}
+          {d.attribution.disbursements} disbursements across{' '}
+          {fy(d.attribution.years[0])}&ndash;{fy(d.attribution.years[d.attribution.years.length - 1])}.
+        </p>
+        <p className="text-[13.5px] leading-relaxed mt-3" style={{ color: 'var(--text-secondary)' }}>
+          <strong>The check, so it is not taken on trust.</strong> Every one of those{' '}
+          {d.attribution.disbursements} rows was searched across{' '}
+          {d.attribution.fields_searched.length} fields &mdash;{' '}
+          {d.attribution.fields_searched.map(f => <code key={f} className="mr-1.5">{f}</code>)}{' '}
+          &mdash; for any of the {d.attribution.sport_terms.length} words in the
+          workbook&rsquo;s own names for its {d.attribution.sports} sports, whole words only.
+          Hits:{' '}
+          <strong style={{
+            color: d.attribution.sport_mentions === 0 ? 'var(--status-bad)' : 'var(--text-primary)',
+          }}>{d.attribution.sport_mentions}</strong>.
+          {d.attribution.sport_mentions === 0
+            ? ' Not one payment out of that fund, in three years, names a sport.'
+            : ` ${d.attribution.sport_hits.map(h => `${fy(h.fy)} journal ${h.journal}`).join(', ')}.`}
+          {' '}The vocabulary is read off <code>athletics_by_sport</code> rather than typed,
+          so a sport the district adds next year is searched for without anybody remembering
+          to add it, and the generator refuses to publish this paragraph if that list comes
+          back empty &mdash; a zero found by looking for nothing is not a finding.
+        </p>
+        <p className="text-[13px] leading-relaxed mt-3" style={{ color: 'var(--text-muted)' }}>
+          <strong>What this does not show.</strong> That the information does not exist. The
+          warrants themselves name a vendor and a description, and the town&rsquo;s
+          accounting system holds the accounts-payable detail behind every one of these
+          references. It is not published, which is a different thing from not being
+          recorded &mdash; and it is the single document that would let anybody say what a
+          sport costs.
+        </p>
+      </div>
 
       {/* ------------------------------------------------ participation, its own subject */}
       <H2 id="participation">Who plays &mdash; on its own terms, not as a budget input</H2>

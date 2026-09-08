@@ -143,6 +143,21 @@ CHECKS = [
     # `object LIKE '45%'` is neither all state aid nor only state aid — two of those
     # accounts are local option taxes the state merely collects.
     ('build_state_aid.py', ['--check']),
+    # The school-choice scenario page. It reaches five documents and reconciles three of
+    # them against each other, so this entry catches the drift nothing else would: the
+    # FY2025 annual town report's enrolment table, whose COLUMN HEADINGS are read off the
+    # printed page because `column_meaning` is empty for that dataset and `v1` is an
+    # ordinal -- get that wrong and 433 stops being a count of resident students; the same
+    # table checked against `report_enrollment_mcas`, two routes to one row; the DESE
+    # Chapter 70 workbook against `model/taxbase.CH70`; thirteen years of the School Choice
+    # revolving fund, every one of them `check failed` at the PAGE level, so this generator
+    # supplies the row-level checks instead and refuses on either -- forward + receipts -
+    # disbursements = carried, and the carried balance opening the next annual town report;
+    # and five meeting quotes, each asserted verbatim in the file it is attributed to. It
+    # also refuses if Lunenburg's Chapter 70 aid stops being above foundation minus
+    # required contribution, which is the measurement the page's central correction rests
+    # on -- that one is meant to be rebuilt rather than reworded.
+    ('build_if_students_leave.py', ['--check']),
     # The BUDGET-to-BUDGET state aid series, FY2005-FY2027 -- the like-for-like
     # counterpart to the receipts series above, and the evidence behind decision D10 in
     # notes/findings/STATE-AID-RATE.md. It catches four kinds of drift nothing else here
@@ -181,6 +196,19 @@ CHECKS = [
     # fails or if the reconciliation join matches nothing, so this entry catches the
     # published file going stale AND a rebuild that silently emptied the table.
     ('build_special_revenue.py', ['--check']),
+    # The what-stopped-being-funded page's series. It is the only generator here whose
+    # subject is an ABSENCE, which is the shape rule 6 warns about: a line that goes to
+    # zero and reappears renamed produces a −100% rate that looks like a finding. So this
+    # entry catches five separate things going wrong. The stage name — the rows were
+    # called `actual` until 7 September 2026 and read as the accounting system, so the
+    # generator refuses to run if that name comes back. The two AGGREGATE pseudo-lines a
+    # printed GRAND TOTAL produced, excluded by name, so a rename would leave the
+    # exclusion either wrong or silently matching nothing. The rename pass, which must
+    # match something: a detector that finds no renames in a book that demonstrably
+    # renames lines is broken, not clean. The spelling-candidate pass, likewise. And the
+    # four `money_gaps` rows the page quotes BY KEY, since a limit whose wording has been
+    # edited out from under it renders as an empty box.
+    ('build_stopped_funding.py', ['--check']),
     # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
     # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
     # a key is not there, so this entry catches two things: the published file going

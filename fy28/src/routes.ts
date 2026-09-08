@@ -18,6 +18,9 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'insurance'
   | 'sportsmoney'
   | 'stateaid'
+  | 'stopped'
+  | 'leaving'
+  | 'families'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -59,9 +62,12 @@ export const SLUG: Record<Tab, string> = {
   freecash: 'free-cash',
   // What this project WROTE, as opposed to what it mirrors. Public and linked.
   reports: 'reports',
-  // Budgets against actuals, charted. The slug is what the question is called out loud --
-  // people say "budget versus actual", not "variance" -- and `variance` is an alias for
-  // anybody who arrives with the accounting word instead.
+  // Budgets against what the district LATER REPORTED it spent. The label says "reported"
+  // and not "actuals" on purpose: before FY2026 both columns come out of a district budget
+  // book, and a budget book restating itself is not an accounting record. The SLUG does
+  // not move -- it is published and cited, people say "budget versus actual" out loud, and
+  // an address is an interface. `variance` is an alias for anybody arriving with the
+  // accounting word instead.
   variance: 'budget-vs-actual',
   // The special revenue funds — grants, revolving funds, gifts, and the enterprise
   // funds — read out of thirteen annual town reports. The slug is the QUESTION rather
@@ -115,6 +121,25 @@ export const SLUG: Record<Tab, string> = {
   // holds. NOT `aid` on its own: that reads as assistance to residents, which is a
   // different department in a different part of the budget.
   stateaid: 'state-aid',
+  // Every school line the district's own book took to zero, and when. The slug is the
+  // QUESTION as it was asked out loud -- "what wasn't paid for that previously was
+  // paid?" -- rather than `defunded` or `cuts`, both of which state a conclusion this
+  // page is careful not to draw: a line ending is not a service ending. NOT `zeros` or
+  // `zeroed`, which name our instrument instead of the reader's question.
+  stopped: 'what-stopped-being-funded',
+  // What school choice would cost the town if students transferred out. The slug is the
+  // sentence a resident says -- "if students leave" -- rather than `school-choice`, which
+  // names a programme and would promise the whole of it, including the seats Lunenburg
+  // OPENS, which is a different page's worth of material and the opposite direction of
+  // money. NOT `enrollment-decline`: the page is about a decision families make, not
+  // about a birth cohort, and those have different remedies.
+  leaving: 'if-students-leave',
+  // What a HOUSEHOLD pays, as against what the town raises. The slug is the sentence a
+  // resident says out loud at a meeting -- "what do families actually pay?" -- rather than
+  // `fees`, which is already an alias for the rate register and promises the schedule
+  // instead of the bill. NOT `what-parents-pay`: the argument this page answers is about
+  // families, and a household with no child in the schools is the other half of it.
+  families: 'what-families-pay',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -203,6 +228,25 @@ const ALIASES: Record<string, Tab> = {
   // names the documents use, and somebody arriving with either should land here.
   'state-aid': 'stateaid', 'chapter-70': 'stateaid', ch70: 'stateaid',
   'cherry-sheet': 'stateaid', 'local-aid': 'stateaid', 'school-aid': 'stateaid',
+  // NOT 'cuts' -- a cut is a decision somebody made, and what this page measures is a
+  // line going to zero in a document. The two are not the same claim, and the address
+  // should not promise the stronger one. `defunded` and `zeroed-out` are what people
+  // type looking for it, so both land here.
+  'what-stopped-being-funded': 'stopped', 'stopped-being-funded': 'stopped',
+  defunded: 'stopped', 'zeroed-out': 'stopped', 'what-stopped': 'stopped',
+  'lines-that-stopped': 'stopped',
+  // `school-choice` lands here because it is what somebody types, even though the page is
+  // only one direction of it -- and the page says in its first screen which direction.
+  // NOT 'choice' alone: it reads as the budget choices boards make, which is most of this
+  // site. NOT 'enrollment', which is a count and not a scenario.
+  // NOT 'fees' or 'fee-schedule' -- both have meant the rate register since before this
+  // page existed, and a shared link must not change where it lands.
+  'what-families-pay': 'families', 'family-fees': 'families',
+  'what-parents-pay': 'families', 'school-fees': 'families',
+  'student-fees': 'families', 'user-fees': 'families',
+  'if-students-leave': 'leaving', 'school-choice': 'leaving', 'choicing-out': 'leaving',
+  'students-leaving': 'leaving', 'school-choice-scenario': 'leaving',
+  'what-if-students-leave': 'leaving', 'transfers-out': 'leaving',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -240,12 +284,15 @@ export const LABEL: Record<Tab, string> = {
   agents: 'Every address on this site, as links',
   database: 'The database',
   gaps: 'What we cannot answer',
-  variance: 'Budgets against actuals',
+  variance: 'Budgets against what was later reported',
   funds: 'The money outside the budget',
   staffing: 'School staffing — names, FTE and dollars',
   insurance: 'Health insurance — the cost outside the school budget',
   sportsmoney: 'What sports cost, and who pays',
   stateaid: 'State aid — the part nobody here votes on',
+  stopped: 'What stopped being funded',
+  leaving: 'If students leave — what school choice would cost',
+  families: 'What a family actually pays',
   askus: 'Ask us a question',
   dataroom: 'The data room',
 }
@@ -267,6 +314,9 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   sportsmoney: 'themoney',
   askus: 'themoney',
   stateaid: 'themoney',
+  stopped: 'themoney',
+  leaving: 'themoney',
+  families: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -334,6 +384,9 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   insurance: 'money',
   sportsmoney: 'money',
   stateaid: 'money',
+  stopped: 'money',
+  leaving: 'money',
+  families: 'money',
   askus: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
@@ -352,8 +405,8 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'askus', 'stateaid', 'staffing', 'insurance', 'sportsmoney',
-          'variance', 'funds', 'gaps', 'reports'],
+  money: ['themoney', 'askus', 'stateaid', 'leaving', 'families', 'staffing', 'insurance',
+          'sportsmoney', 'stopped', 'variance', 'funds', 'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

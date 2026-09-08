@@ -1,4 +1,5 @@
 import { abs } from '../lib/abs'
+import { Basis } from '../components/Basis'
 import { useEffect, useMemo, useState } from 'react'
 import { usd } from '../model/engine'
 import {
@@ -7,7 +8,20 @@ import {
   type YearRow, type SpreadRow, type PairRow, type GroupRow,
 } from '../components/VarianceCharts'
 
-/** Budgets against actuals, charted.
+/** Budgets against what was later REPORTED spent, charted.
+ *
+ *  THE WORD "ACTUAL" IS THE DEFECT THIS PAGE WAS REWRITTEN AROUND. `budget_figure` carries
+ *  a stage that was called `actual` until 7 September 2026 and is now called `restated`,
+ *  because not one of the sixteen documents behind those rows is an accounting record.
+ *  Every one is a district budget book, classified `restatement` or `forward` in
+ *  `document-basis.csv`; none is a `ledger`. Rule 13 lists this exact error in its own
+ *  table — "the actuals sheet" against "a forward budget workbook with a column headed
+ *  ACTUALS" — and the page carried it in its title.
+ *
+ *  So the basis of every year is JOINED from `document-basis.csv` by
+ *  `scripts/build_variance_charts.py`, the join is asserted to match, and the page renders
+ *  what came back rather than a sentence somebody wrote. The slug does not move: it is
+ *  published and cited, and an address is an interface.
  *
  *  WHAT THIS PAGE IS. `sources/analyses/budget-vs-actual.md` did this reasoning first and
  *  at length; this is the same question with the series drawn, and it neither redoes the
@@ -44,6 +58,25 @@ import {
 type Payload = {
   generated_by: string
   source: string
+  evidence: {
+    stage: string
+    documents: number
+    document_types: Record<string, number>
+    by_year: {
+      fy: number; rows: number; source_types: Record<string, number>
+      documents: string[]; ledger_backed: boolean; measured: boolean
+    }[]
+    ledger: {
+      years: number[]
+      snapshots: { doc: string; fy: number; period: number; accounts: number }[]
+      deepest: { doc: string; fy: number; period: number; accounts: number }
+      accounts: number
+      documents: { path: string; why: string }[]
+    }
+    measured_years_ledger_backed: number[]
+    measured_years_restated_only: number[]
+  }
+  gaps: { side: string; what: string; why: string }[]
   coverage: {
     line_years: number; lines: number; first_fy: number; last_fy: number
     years: number[]; groups: number
@@ -128,6 +161,17 @@ function NotShown({ children }: { children: React.ReactNode }) {
   )
 }
 
+/** How the archive's classification of a document reads in a sentence. Keyed on the value
+ *  `document-basis.csv` carries, so an unrecognised classification renders as its own name
+ *  rather than vanishing — a type that disappears from a list is indistinguishable from a
+ *  type with no documents in it. */
+const BASIS_WORD: Record<string, string> = {
+  restatement: 'restating an earlier year inside a later budget book',
+  forward: 'a forward budget — proposed, requested, level service or balanced',
+  ledger: 'from the accounting system',
+  narrative: 'narrative',
+}
+
 const VIEWS = [
   { id: 'largest', label: 'Largest' },
   { id: 'volatile', label: 'Most volatile' },
@@ -182,7 +226,7 @@ export function BudgetVsActual() {
   if (err) {
     return (
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Budgets against actuals</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Budgets against what was later reported</h1>
         <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
           <p className="text-[15px] font-bold mb-1">The series did not load</p>
           <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -199,7 +243,7 @@ export function BudgetVsActual() {
   if (!d) {
     return (
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Budgets against actuals</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Budgets against what was later reported</h1>
         <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
           Loading the measured series&hellip;
         </p>
@@ -240,6 +284,108 @@ export function BudgetVsActual() {
         {wildest} of {d.coverage.line_years} line-years missed their own budget by more than
         a quarter &mdash; in both directions, cancelling each other out.
       </p>
+
+      {/* ================================================== WHICH YEARS ARE WHICH
+        *
+        * This leads. Rule 7a's one exception is a genuine warning that changes whether a
+        * reader should trust what follows, and the title of this page promised something
+        * the data does not deliver before FY2026: an ACTUAL, meaning the accounting
+        * system. Every figure below the FY2026 line is a district budget book restating
+        * itself.
+        *
+        * Every count here is joined from document-basis.csv at build time. The generator
+        * refuses to write if a document supplying the second column is unclassified, or if
+        * the ledger tables come back empty — an empty join would publish "no year is
+        * ledger-backed", which is a claim and not an absence. */}
+      <div className="card p-5 sm:p-6 mt-9 max-w-3xl"
+        style={{ borderLeft: '4px solid var(--status-warning)' }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest"
+          style={{ color: 'var(--text-muted)' }}>Which years are which</p>
+        <p className="text-[19px] sm:text-[21px] font-bold leading-snug mt-2">
+          Every year charted on this page is the district restating itself inside its own
+          later budget book. None of them comes from the town&rsquo;s accounting system.
+        </p>
+        <p className="text-[14px] leading-relaxed mt-3" style={{ color: 'var(--text-secondary)' }}>
+          <strong>Why that matters, in one sentence:</strong> a budget book cannot show
+          money moved between lines during the year, because approved transfers never
+          appear in one &mdash; and mid-year movement is exactly what an over-budgeting
+          question is about.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 mt-5">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+              style={{ color: 'var(--text-muted)' }}>
+              What the second column on this page is
+            </p>
+            <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {d.evidence.documents} documents supply it, and the archive classifies them:{' '}
+              {Object.entries(d.evidence.document_types)
+                .map(([k, n]) => `${n} ${BASIS_WORD[k] ?? k}`).join(', ')}
+              {d.evidence.document_types['ledger']
+                ? '.'
+                : <> &mdash; and <strong>none from the accounting system</strong>.</>}{' '}
+              The column is named <code>{d.evidence.stage}</code> in the database for that
+              reason; it was called <code>actual</code> until it was checked.
+            </p>
+            <p className="mt-2"><Basis level="stated">
+              the party that spent the money, reporting on itself, after the fact
+            </Basis></p>
+          </div>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+              style={{ color: 'var(--text-muted)' }}>
+              What the accounting system actually covers
+            </p>
+            <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {fy(d.evidence.ledger.deepest.fy)}, period{' '}
+              {d.evidence.ledger.deepest.period} &mdash;{' '}
+              {d.evidence.ledger.deepest.accounts} general fund accounts with what was
+              budgeted, what moved mid-year, and what was spent. That year is not on this
+              page: the measured years here are{' '}
+              {fy(d.coverage.first_fy)}&ndash;{fy(d.coverage.last_fy)}, and{' '}
+              <strong>{d.evidence.measured_years_ledger_backed.length} of{' '}
+                {d.coverage.years.length}</strong> of them are ledger-backed.
+            </p>
+            <p className="mt-2"><Basis level="traced to a payment">
+              the town&rsquo;s own books, transaction by transaction
+            </Basis></p>
+          </div>
+        </div>
+
+        <p className="text-[12.5px] leading-relaxed mt-4" style={{ color: 'var(--text-muted)' }}>
+          The archive holds {d.evidence.ledger.documents.length} accounting records in
+          all, most of them town-wide or one fund deep rather than the school department
+          line by line. Every one is listed at{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }}
+            href={abs('/data/budget-vs-actual.json')}>/data/budget-vs-actual.json</a>{' '}
+          under <code>evidence.ledger.documents</code>, with the reason each was classified
+          that way.
+        </p>
+
+        <p className="text-[13px] leading-relaxed mt-3" style={{ color: 'var(--text-muted)' }}>
+          This limit is a registered gap rather than a remark made here &mdash;{' '}
+          {d.gaps.map((g, i) => (
+            <span key={g.what}>
+              {i ? '; ' : ''}<em>{g.what}</em>
+            </span>
+          ))}{' '}
+          &mdash; so it reaches{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }}
+            href="/what-we-cannot-answer">the gaps page</a>, the API and the records
+          request, and not only this paragraph. Each row names the one document that would
+          close it.
+        </p>
+
+        <p className="text-[13px] leading-relaxed mt-4 pt-3 border-t"
+          style={{ borderColor: 'var(--grid)', color: 'var(--text-secondary)' }}>
+          <strong>None of that makes the page worth less.</strong> A restatement is
+          published, it is the district&rsquo;s own account of itself, and it is the only
+          multi-year series that exists &mdash; a pattern in what a district reports is a
+          real finding. What it cannot do is settle over-budgeting, because both halves of
+          that comparison come out of the same book, and a document cannot audit itself.
+        </p>
+      </div>
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={pct(worstYear.pct)} tone={worstYear.net >= 0 ? OVER : UNDER}>
@@ -287,6 +433,27 @@ export function BudgetVsActual() {
           : `${overYears.length} of ${d.by_year.length} came in over: ${overYears.map(r => fy(r.fy)).join(', ')}.`}
       </Body>
       <div className="mt-6"><YearVariance rows={d.by_year} /></div>
+      {/* Each bar, marked with what its second column rests on. Derived from the join,
+        * not typed: if a year ever does get a ledger behind it, this says so on the day
+        * the document lands rather than the day somebody remembers to edit a sentence. */}
+      <div className="flex flex-wrap gap-x-5 gap-y-2 mt-4">
+        {d.by_year.map(y => {
+          const ev = d.evidence.by_year.find(e => e.fy === y.fy)
+          return (
+            <span key={y.fy} className="inline-flex items-baseline gap-1.5 text-[12px]">
+              <span className="font-semibold tnum">{fy(y.fy)}</span>
+              <Basis level={ev?.ledger_backed ? 'traced to a payment' : 'stated'} />
+            </span>
+          )
+        })}
+      </div>
+      <p className="text-[12px] mt-2.5 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+        Every measured year is marked with what its second column rests on, read off the
+        classification of the documents that supplied it. {' '}
+        {d.evidence.measured_years_restated_only.length === d.coverage.years.length
+          ? 'All of them are the district restating itself.'
+          : `${d.evidence.measured_years_restated_only.length} of ${d.coverage.years.length} are the district restating itself.`}
+      </p>
       <p className="text-[12px] mt-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
         {fy(d.by_year[d.by_year.length - 1].fy)} rests on{' '}
         {d.by_year[d.by_year.length - 1].lines} lines against{' '}
@@ -627,6 +794,56 @@ export function BudgetVsActual() {
         They do not sum back to the district&rsquo;s own printed totals, which is why
         nothing here apportions a year&rsquo;s variance between its lines.
       </Body>
+      {/* ------------------------------------ every year, and what it actually rests on */}
+      <div className="overflow-x-auto mt-6">
+        <table className="stack w-full text-xs tnum max-w-3xl">
+          <caption className="sr-only">
+            Every year with a reported-spending column, how many rows it carries, and what
+            kind of document supplied them
+          </caption>
+          <thead>
+            <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
+              <th className="font-semibold py-1.5">Year</th>
+              <th className="font-semibold py-1.5 text-right">Rows</th>
+              <th className="font-semibold py-1.5 text-right">Documents</th>
+              <th className="font-semibold py-1.5">What supplied them</th>
+              <th className="font-semibold py-1.5">Basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            {d.evidence.by_year.map(y => (
+              <tr key={y.fy} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                <td className="rowhead py-1.5 font-semibold">
+                  {fy(y.fy)}
+                  {y.measured ? null : (
+                    <span className="ml-1.5 text-[10px] font-semibold uppercase tracking-widest"
+                      style={{ color: 'var(--text-muted)' }}>not charted</span>
+                  )}
+                </td>
+                <td data-label="Rows" className="py-1.5 text-right">{y.rows}</td>
+                <td data-label="Documents" className="py-1.5 text-right">{y.documents.length}</td>
+                <td data-label="What supplied them" className="py-1.5">
+                  {Object.entries(y.source_types)
+                    .map(([k, n]) => `${n} rows ${BASIS_WORD[k] ?? k}`).join('; ')}
+                </td>
+                <td data-label="Basis" className="py-1.5">
+                  <Basis level={y.ledger_backed ? 'traced to a payment' : 'stated'} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-[12px] mt-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+        Rows counted at stage <code>{d.evidence.stage}</code> in the database, joined to{' '}
+        <a className="underline" style={{ color: 'var(--series-cost)' }}
+          href={abs('/docs/data/document-basis.csv')}>document-basis.csv</a>, which records
+        what produced each document&rsquo;s figures. Years marked <em>not charted</em>
+        carry the column but fall below the guards below, or are FY21. The build refuses to
+        write this page if a document supplying any of these rows is unclassified &mdash;
+        an unlabelled year is precisely the thing the page was rewritten to stop doing.
+      </p>
+
       <div className="grid gap-2.5 mt-6 max-w-2xl">
         <a href={abs(d.analysis.markdown)}
           className="card block px-4 py-4 min-h-[44px] transition-opacity hover:opacity-90">

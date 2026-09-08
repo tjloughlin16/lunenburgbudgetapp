@@ -1482,7 +1482,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 40624,
+     "bytes": 40607,
      "url": "/docs/analyses/questions.md",
      "count": 944,
      "unit": "lines",
@@ -1657,6 +1657,18 @@
      "textUrl": "/docs/data/role-classification.csv"
     },
     {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 38753,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 54,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
      "path": "data/money-classification.csv",
      "title": "What every revenue account, fund and department IS",
      "stars": 2,
@@ -1679,18 +1691,6 @@
      "count": 288,
      "unit": "rows",
      "textUrl": "/docs/data/balance-sheet-printed-totals.csv"
-    },
-    {
-     "path": "data/money-gaps.csv",
-     "title": "What the town’s records cannot answer",
-     "stars": 2,
-     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
-     "kind": "Data",
-     "bytes": 29239,
-     "url": "/docs/data/money-gaps.csv",
-     "count": 44,
-     "unit": "rows",
-     "textUrl": "/docs/data/money-gaps.csv"
     },
     {
      "path": "data/table-semantics.csv",
@@ -2067,7 +2067,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 19210240,
+     "bytes": 19230720,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2221,11 +2221,23 @@
      "stars": 3,
      "what": "Athletic fees, bus fees, collective bargaining raises, facilities and the fees the district’s payment portal sells — 62 rates, each carrying the fiscal year it applies to, the document that set it and the date. Built after FY26 athletic fees were modelled at $250 a season when the district had voted $325: not a wrong number, a right number from the wrong year, taken from a schedule that states its rates and never states which year they cover. It deliberately includes rates we do NOT use and the ten we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank. Rebuild with scripts/build_rate_register.py.",
      "kind": "Data",
-     "bytes": 14590,
+     "bytes": 14580,
      "url": "/docs/data/rate-register.csv",
      "count": 63,
      "unit": "rows",
      "textUrl": "/docs/data/rate-register.csv"
+    },
+    {
+     "path": "data/athletic-fee-schedule.csv",
+     "title": "Athletic fees, by fiscal year, with their sources",
+     "stars": 3,
+     "what": "The detail behind the register: every athletic fee tier for FY24 to FY27, 27 of the 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them. The script refuses to write if any figure stops matching its source. Rebuild with scripts/extract_fee_schedule.py.",
+     "kind": "Data",
+     "bytes": 13308,
+     "url": "/docs/data/athletic-fee-schedule.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/athletic-fee-schedule.csv"
     },
     {
      "path": "data/account-names.csv",
@@ -2238,18 +2250,6 @@
      "count": 124,
      "unit": "rows",
      "textUrl": "/docs/data/account-names.csv"
-    },
-    {
-     "path": "data/athletic-fee-schedule.csv",
-     "title": "Athletic fees, by fiscal year, with their sources",
-     "stars": 3,
-     "what": "The detail behind the register: every athletic fee tier for FY24 to FY27, 27 of the 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them. The script refuses to write if any figure stops matching its source. Rebuild with scripts/extract_fee_schedule.py.",
-     "kind": "Data",
-     "bytes": 7018,
-     "url": "/docs/data/athletic-fee-schedule.csv",
-     "count": 32,
-     "unit": "rows",
-     "textUrl": "/docs/data/athletic-fee-schedule.csv"
     },
     {
      "path": "data/town-ledger-fy26-q3.csv",
@@ -5885,7 +5885,7 @@
  "totals": {
   "documents": 476,
   "groups": 20,
-  "bytes": 1004020185,
+  "bytes": 1004056442,
   "loadBearing": 77
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

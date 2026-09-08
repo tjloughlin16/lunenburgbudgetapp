@@ -1,0 +1,4172 @@
+{
+ "cap_stated": [
+  2025
+ ],
+ "cap_unstated": [
+  2026,
+  2027
+ ],
+ "caps": [
+  {
+   "amount": 475.0,
+   "fy": 2025,
+   "headroom": 0.0,
+   "ladder": [
+    250.0,
+    140.0,
+    85.0
+   ],
+   "ladder_complete": true,
+   "ladder_sum": 475.0,
+   "level": "HS",
+   "school_year": "2024-25",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "Total Cap per season=$475.00",
+   "unit": "per family, per season",
+   "unit_basis": "The FAQ names the period inside the label itself: \"Total Cap per season\".",
+   "unit_quote": "Total Cap per season",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 1500.0,
+   "fy": 2026,
+   "headroom": 687.5,
+   "ladder": [
+    325.0,
+    243.75,
+    243.75
+   ],
+   "ladder_complete": true,
+   "ladder_sum": 812.5,
+   "level": "ANY",
+   "school_year": "2025-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "family cap of $1500",
+   "unit": "not established",
+   "unit_basis": "THE ONE THAT MATTERS. The cap that preceded this one was stated per season, in those words. This one is stated with no period at all, and no cell of the district workbook carries a family cap of any amount. Read per season and read per year it is a different bill, and nothing published says which.",
+   "unit_quote": null,
+   "unit_status": "not established",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 1500.0,
+   "fy": 2027,
+   "headroom": 575.0,
+   "ladder": [
+    400.0,
+    300.0,
+    225.0
+   ],
+   "ladder_complete": true,
+   "ladder_sum": 925.0,
+   "level": "ANY",
+   "school_year": "2026-27",
+   "source": "Superintendent's email to families, August 2026",
+   "source_file": null,
+   "source_ref": null,
+   "unit": "not established",
+   "unit_basis": "The source is an email to families that this archive does not hold, so nothing about it can be quoted -- the amount included.",
+   "unit_quote": null,
+   "unit_status": "not established",
+   "verified": "source not held"
+  }
+ ],
+ "default": {
+  "bus": true,
+  "children": 2,
+  "fy": 2027,
+  "level": "HS",
+  "sports": 1,
+  "tier": "full"
+ },
+ "faq": {
+  "cite": "/docs/district-budget/text/lhs-athletics-faq.txt",
+  "quotes": [
+   "Only one sport per season is allowed.",
+   "Total Cap per season=$475.00",
+   "Per Season Breakdown:"
+  ],
+  "title": "LHS Athletics FAQ (rschoolteams.com)"
+ },
+ "fourth_child": {
+  "by_rule": 168.75,
+  "flat": 225.0,
+  "fy": 2027,
+  "inferred": [
+   {
+    "children": 4,
+    "sports": 1
+   },
+   {
+    "children": 4,
+    "sports": 2
+   },
+   {
+    "children": 4,
+    "sports": 3
+   }
+  ],
+  "level": "HS",
+  "published_steps": 3,
+  "uncomputable": []
+ },
+ "gaps": [
+  {
+   "closes": "the district\u2019s athletic fee schedule as published to families for 2026-27, which is the document the Superintendent\u2019s August 2026 email to families attached or described.",
+   "side": "money_in",
+   "what": "What period the school athletic family cap covers",
+   "why": "The $1,500 family cap was set by the School Committee on 26 February 2025 and the minutes state the amount and no period: \"with a family cap of $1500\". The cap it replaced did state one \u2014 the LHS Athletics FAQ prints \"Total Cap per season=$475.00\" \u2014 so the schedule has moved from a stated period to none. The district workbook obtained by records request carries the per-student rates on three worksheets named for the three seasons and carries no family cap in any cell, so the corroboration that dates the other rates does not reach this one. Read per season and read per year, $1,500 is a different bill for the same family. The arithmetic argues for the annual reading \u2014 with the published FY2027 ladder a family of five children playing one sport each in one season reaches $1,375, still under the cap \u2014 but that is an inference from the cap being unreachable, not a statement in any document."
+  },
+  {
+   "closes": "the district\u2019s published schedule of student fees for the current year, listing every fee the portal charges with its amount.",
+   "side": "money_in",
+   "what": "What the six fees the district\u2019s payment portal sells actually cost",
+   "why": "The district\u2019s RevTrak portal offers an Afterschool Activity Fee, a Chromebook Repair Fee, Extended Day & ELC, Field Trips, an LHS Parking Permit and a Primary Preschool Program. The portal renders in JavaScript and serves no amounts to a plain fetch, and no fee schedule for any of them appears in a budget book, a warrant or a set of minutes in this archive. So the existence of each fee is established and the amount of every one of them is not, and any total of what a Lunenburg family pays the schools in a year is a floor with six named items sitting above it."
+  },
+  {
+   "closes": "the district\u2019s athletic fee schedule as published to families for 2026-27, stating the rate for each additional child or the point at which the ladder stops.",
+   "side": "money_in",
+   "what": "What a fourth child in one family pays for high school athletics",
+   "why": "The FY2027 schedule names a first, second and third child \u2014 $400, $300 and $225 \u2014 and stops. The FY2024 and FY2025 schedules did the same, and there the cap resolved it: the three published rates sum to exactly the $475 the FAQ prints as the cap, so a fourth child added nothing. That identity does not hold in FY2027, where the three rates sum to $925 against a $1,500 cap, so the fourth child is neither priced nor obviously free. A family of four children \u2014 the case residents ask about most often \u2014 therefore cannot be costed from anything published."
+  },
+  {
+   "closes": "the athletic user fee presentation given to the School Committee on 26 February 2025, which is the slideshow the minutes name.",
+   "side": "money_in",
+   "what": "How the $1,500 athletic family cap was arrived at, and over what period",
+   "why": "The School Committee minutes of 26 February 2025 record the decision and not the derivation: \"A slideshow presentation of athletic user fees is presented ... with a family cap of $1500. ... all approve via roll call vote\". A slideshow WAS presented, so the arithmetic exists somewhere; this archive does not hold it, and the only athletics presentation material here is two Athletic Advisory Council agendas from the preceding weeks. Minutes summarise, so the absence of arithmetic in them is not evidence that there was none \u2014 what is established is that no document we hold derives the figure or states the period it covers. The figure itself is unreachable per season by family size alone: five children at one sport each come to between $1,220 and $1,375 depending on how the sibling discount is carried past the third child, both under $1,500."
+  },
+  {
+   "closes": "the district\u2019s athletic fee schedule as published to families for 2026-27, in full, including the reduced and waived rates and the middle school schedule.",
+   "side": "money_in",
+   "what": "What FY2027 athletic fees are for anyone other than a full-paying high school family",
+   "why": "The only account this archive has of the 2026-27 athletic fees is a Superintendent\u2019s email to families in August 2026 that we do not hold, reported as four figures: a first, second and third child and a family cap. FY2026 published more than that \u2014 a middle school rate, a reduced rate for high school and for middle school, and a sibling discount \u2014 and none of those has an FY2027 successor in any document here. So a middle school family, a family paying the reduced fee and a family whose fee is waived cannot be priced for the year now running."
+  },
+  {
+   "closes": "an unduplicated athlete roster, or a participation report that states whether it counts students or participations.",
+   "side": "people",
+   "what": "How many children play sports",
+   "why": "Two town documents give 593 and 649 for the same year and count different things: one counts fee categories, the other counts participations by sport, and a participation is not a child \u2014 one student playing three seasons is three of them. Some workbook rows are negative, subtracting out-of-district athletes back out, so a season total is a net figure rather than a headcount of bodies. Nothing published is an unduplicated count."
+  },
+  {
+   "closes": null,
+   "side": "money_in",
+   "what": "Bus fees",
+   "why": "charged by published policy \u00b7 no destination found in any ledger"
+  }
+ ],
+ "generated_by": "scripts/build_what_families_pay.py",
+ "ladder_exhibit": {
+  "assumption_flat": "the discount stops descending and every further child pays the third-child rate \u2014 the more expensive of the two",
+  "assumption_rule": "the same 25% keeps compounding past the third child",
+  "cap": 1500.0,
+  "flat_rate": 225.0,
+  "fy": 2027,
+  "level": "HS",
+  "published_steps": 3,
+  "ratio": 0.75,
+  "ratio_pct": 25.0,
+  "reaches_cap": false,
+  "rows": [
+   {
+    "children": 1,
+    "cumulative_by_rule": 400.0,
+    "cumulative_flat": 400.0,
+    "footing": "published",
+    "headroom_by_rule": 1100.0,
+    "headroom_flat": 1100.0,
+    "published": true,
+    "rate_by_rule": 400.0,
+    "rate_flat": 400.0,
+    "under_cap": true
+   },
+   {
+    "children": 2,
+    "cumulative_by_rule": 700.0,
+    "cumulative_flat": 700.0,
+    "footing": "published",
+    "headroom_by_rule": 800.0,
+    "headroom_flat": 800.0,
+    "published": true,
+    "rate_by_rule": 300.0,
+    "rate_flat": 300.0,
+    "under_cap": true
+   },
+   {
+    "children": 3,
+    "cumulative_by_rule": 925.0,
+    "cumulative_flat": 925.0,
+    "footing": "published",
+    "headroom_by_rule": 575.0,
+    "headroom_flat": 575.0,
+    "published": true,
+    "rate_by_rule": 225.0,
+    "rate_flat": 225.0,
+    "under_cap": true
+   },
+   {
+    "children": 4,
+    "cumulative_by_rule": 1093.75,
+    "cumulative_flat": 1150.0,
+    "footing": "by the ratio the published rates follow",
+    "headroom_by_rule": 406.25,
+    "headroom_flat": 350.0,
+    "published": false,
+    "rate_by_rule": 168.75,
+    "rate_flat": 225.0,
+    "under_cap": true
+   },
+   {
+    "children": 5,
+    "cumulative_by_rule": 1220.31,
+    "cumulative_flat": 1375.0,
+    "footing": "by the ratio the published rates follow",
+    "headroom_by_rule": 279.69,
+    "headroom_flat": 125.0,
+    "published": false,
+    "rate_by_rule": 126.56,
+    "rate_flat": 225.0,
+    "under_cap": true
+   }
+  ],
+  "rule": "the published rates are 400, 400 x 0.75 and 400 x 0.75^2, to the cent \u2014 the 25% sibling discount the School Committee voted for FY2026, compounding down the ladder",
+  "seasons": 1
+ },
+ "max_children": 4,
+ "max_sports": 3,
+ "max_spread": 1781.25,
+ "max_spread_at": {
+  "children": 4,
+  "fy": 2027,
+  "level": "HS",
+  "sports": 3,
+  "tier": "full"
+ },
+ "published_spread": 1275.0,
+ "published_spread_at": {
+  "children": 3,
+  "fy": 2027,
+  "level": "HS",
+  "sports": 3,
+  "tier": "full"
+ },
+ "related": [
+  {
+   "id": "athletics",
+   "pdf": "/docs/analyses/athletics.pdf",
+   "title": "Athletics: what it costs, who pays, and what the budget line does not say",
+   "updated": "2026-09-07",
+   "url": "/docs/analyses/athletics.md",
+   "why": "Both sides of the athletics money \u2014 what the fees bring in against what the town appropriates, and why an appropriation is not a cost",
+   "words": 7302
+  },
+  {
+   "id": "athletics-ledger",
+   "pdf": "/docs/analyses/athletics-ledger.pdf",
+   "title": "The athletics ledger: what a fund's cashbook shows that a budget line cannot",
+   "updated": "2026-09-07",
+   "url": "/docs/analyses/athletics-ledger.md",
+   "why": "The revolving fund the athletic fees are paid into, at transaction level",
+   "words": 4324
+  },
+  {
+   "id": "connecting-the-budget",
+   "pdf": "/docs/analyses/connecting-the-budget.pdf",
+   "title": "Connecting the school budget to the Town's books",
+   "updated": "2026-09-03",
+   "url": "/docs/analyses/connecting-the-budget.md",
+   "why": "Why a fee paid cannot be followed to anything it bought",
+   "words": 938
+  }
+ ],
+ "said": [
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2025-02-26-minutes-7076.txt",
+   "date": "2025-02-26",
+   "key": "thevote",
+   "quote": "A slideshow presentation of athletic user fees is presented to increase fee for high school up to $325 and $275 for Middle School.  A 25% discount for siblings.  Reduced fee for high school to $50 and $40 for middle school with a family cap of $1500.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262025-7076",
+   "who": "School Committee, moved and approved by roll call",
+   "why": "The whole of what any document in this archive says about the family cap. It is one sentence, it names an amount, and it names no period. Everything on this page about the cap runs off this sentence and the one it replaced."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2025-02-26-minutes-7076.txt",
+   "date": "2025-02-26",
+   "key": "fourfifty",
+   "quote": "As far as the student activities is concerned, when I looked at the list, I personally participate in 6 of them.  That would cost $450 which is more than any of the athletic fees were raised.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262025-7076",
+   "who": "Kara Harunkiewicz, in public comment at the same meeting",
+   "why": "Said in the room where the athletic fees were voted, and it is the point this page is built to test: athletics is the fee everybody argues about and it is not the only one a family pays. The $450 is a resident\u2019s own arithmetic on a list of activities, at the same meeting where the activity fee was discussed and NOT voted \u2014 which is why this archive holds no activity fee schedule to check it against."
+  },
+  {
+   "board": "Finance Committee",
+   "cite": "/docs/meetings/text/finance-committee/2025-03-20-minutes-7010.txt",
+   "date": "2025-03-20",
+   "key": "fortheyear",
+   "quote": "The fee for 1 child is $180 and the family cap is $270 for the year.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03202025-7010",
+   "who": "the Finance Committee, on the bus fee set eight days earlier",
+   "why": "The same district, the same budget cycle, a family cap \u2014 and the period stated in so many words. Four weeks before this, the athletic cap was voted with no period at all. That does not establish what the athletic cap means. It does establish that stating the period is something the town does when it has one in mind, so the omission is not a convention of minute-taking."
+  },
+  {
+   "board": "Finance Committee",
+   "cite": "/docs/meetings/text/finance-committee/2026-03-26-minutes-7737.txt",
+   "date": "2026-03-26",
+   "key": "seventyfive",
+   "quote": "Athletic fees would need to be raised by $75 per student. This would generate $120,000.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03262026-7737",
+   "who": "the Finance Committee, on the FY2027 budget",
+   "why": "A year later, the same fee is being modelled as a way to close a budget gap \u2014 so what a family pays is not a settled schedule but a live variable. Note the unit the town itself uses when it talks about the fee: PER STUDENT. Not per sport, not per season."
+  }
+ ],
+ "schedule": [
+  {
+   "amount": 100.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "unified_track",
+   "level": "ANY",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "Unified Track =$100.00",
+   "unit": "not established",
+   "unit_basis": "The FAQ lists this as a bullet BELOW both \"Per Season Breakdown:\" blocks and under no heading of its own. Nothing in the document says what period it covers.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 475.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "family_cap",
+   "level": "HS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "Total Cap per season=$475.00",
+   "unit": "per family, per season",
+   "unit_basis": "The FAQ names the period inside the label itself: \"Total Cap per season\".",
+   "unit_quote": "Total Cap per season",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 250.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "full_pay",
+   "level": "HS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!E3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!E3"
+  },
+  {
+   "amount": 32.5,
+   "confirming": false,
+   "fy": 2024,
+   "item": "reduced_fee",
+   "level": "HS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!Q3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!Q3"
+  },
+  {
+   "amount": 140.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "second_child",
+   "level": "HS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!H3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!H3"
+  },
+  {
+   "amount": 85.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "third_child",
+   "level": "HS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!K3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!K3"
+  },
+  {
+   "amount": 200.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "full_pay",
+   "level": "MS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "1st student=$200.00",
+   "unit": "per student, per season",
+   "unit_basis": "The FAQ prints the heading \"Per Season Breakdown:\" immediately above these amounts, in both the high school and the middle school block.",
+   "unit_quote": "Per Season Breakdown:",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 26.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "reduced_fee",
+   "level": "MS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!T3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!T3"
+  },
+  {
+   "amount": 150.0,
+   "confirming": false,
+   "fy": 2024,
+   "item": "second_child",
+   "level": "MS",
+   "school_year": "2023-24",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "2nd student=$150.00",
+   "unit": "per student, per season",
+   "unit_basis": "The FAQ prints the heading \"Per Season Breakdown:\" immediately above these amounts, in both the high school and the middle school block.",
+   "unit_quote": "Per Season Breakdown:",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 100.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "unified_track",
+   "level": "ANY",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "Unified Track =$100.00",
+   "unit": "not established",
+   "unit_basis": "The FAQ lists this as a bullet BELOW both \"Per Season Breakdown:\" blocks and under no heading of its own. Nothing in the document says what period it covers.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 475.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "family_cap",
+   "level": "HS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "Total Cap per season=$475.00",
+   "unit": "per family, per season",
+   "unit_basis": "The FAQ names the period inside the label itself: \"Total Cap per season\".",
+   "unit_quote": "Total Cap per season",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 250.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "full_pay",
+   "level": "HS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!F3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!F3"
+  },
+  {
+   "amount": 32.5,
+   "confirming": false,
+   "fy": 2025,
+   "item": "reduced_fee",
+   "level": "HS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!R3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!R3"
+  },
+  {
+   "amount": 140.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "second_child",
+   "level": "HS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!I3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!I3"
+  },
+  {
+   "amount": 85.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "third_child",
+   "level": "HS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!L3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!L3"
+  },
+  {
+   "amount": 200.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "full_pay",
+   "level": "MS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "1st student=$200.00",
+   "unit": "per student, per season",
+   "unit_basis": "The FAQ prints the heading \"Per Season Breakdown:\" immediately above these amounts, in both the high school and the middle school block.",
+   "unit_quote": "Per Season Breakdown:",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 26.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "reduced_fee",
+   "level": "MS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!U3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!U3"
+  },
+  {
+   "amount": 150.0,
+   "confirming": false,
+   "fy": 2025,
+   "item": "second_child",
+   "level": "MS",
+   "school_year": "2024-25",
+   "set_on": "",
+   "source": "LHS Athletics FAQ (rschoolteams.com)",
+   "source_file": "district-budget/text/lhs-athletics-faq.txt",
+   "source_ref": "2nd student=$150.00",
+   "unit": "per student, per season",
+   "unit_basis": "The FAQ prints the heading \"Per Season Breakdown:\" immediately above these amounts, in both the high school and the middle school block.",
+   "unit_quote": "Per Season Breakdown:",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 1500.0,
+   "confirming": false,
+   "fy": 2026,
+   "item": "family_cap",
+   "level": "ANY",
+   "school_year": "2025-26",
+   "set_on": "2025-02-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "family cap of $1500",
+   "unit": "not established",
+   "unit_basis": "THE ONE THAT MATTERS. The cap that preceded this one was stated per season, in those words. This one is stated with no period at all, and no cell of the district workbook carries a family cap of any amount. Read per season and read per year it is a different bill, and nothing published says which.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 325.0,
+   "confirming": false,
+   "fy": 2026,
+   "item": "full_pay",
+   "level": "HS",
+   "school_year": "2025-26",
+   "set_on": "2025-02-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "up \nto $325",
+   "unit": "per student, per season",
+   "unit_basis": "The 26 February 2025 minutes state an amount and no period. The same amount sits in the workbook's per-season rate strip, in the 25/26 column, which is the corroborating row recorded separately below.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 325.0,
+   "confirming": true,
+   "fy": 2026,
+   "item": "full_pay_confirm",
+   "level": "HS",
+   "school_year": "2025-26",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!G3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!G3"
+  },
+  {
+   "amount": 50.0,
+   "confirming": false,
+   "fy": 2026,
+   "item": "reduced_fee",
+   "level": "HS",
+   "school_year": "2025-26",
+   "set_on": "2025-02-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "Reduced fee for high school to $50",
+   "unit": "per student, per season",
+   "unit_basis": "The 26 February 2025 minutes state an amount and no period. The same amount sits in the workbook's per-season rate strip, in the 25/26 column, which is the corroborating row recorded separately below.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 50.0,
+   "confirming": true,
+   "fy": 2026,
+   "item": "reduced_fee_confirm",
+   "level": "HS",
+   "school_year": "2025-26",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!S3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!S3"
+  },
+  {
+   "amount": 25.0,
+   "confirming": false,
+   "fy": 2026,
+   "item": "sibling_discount_pct",
+   "level": "HS",
+   "school_year": "2025-26",
+   "set_on": "2025-02-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "A 25% discount for siblings",
+   "unit": "percent of the fee, for an additional child",
+   "unit_basis": "A percentage discount off another rate. It carries no period of its own.",
+   "unit_quote": "A 25% discount for siblings",
+   "unit_status": "stated",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 275.0,
+   "confirming": false,
+   "fy": 2026,
+   "item": "full_pay",
+   "level": "MS",
+   "school_year": "2025-26",
+   "set_on": "2025-02-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "$275 for Middle School",
+   "unit": "not established",
+   "unit_basis": "The 26 February 2025 minutes state an amount and no period, and no cell of the district workbook carries this figure.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 40.0,
+   "confirming": false,
+   "fy": 2026,
+   "item": "reduced_fee",
+   "level": "MS",
+   "school_year": "2025-26",
+   "set_on": "2025-02-26",
+   "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+   "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "source_ref": "$40 for middle school",
+   "unit": "per student, per season",
+   "unit_basis": "The 26 February 2025 minutes state an amount and no period. The same amount sits in the workbook's per-season rate strip, in the 25/26 column, which is the corroborating row recorded separately below.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "quoted in source"
+  },
+  {
+   "amount": 40.0,
+   "confirming": true,
+   "fy": 2026,
+   "item": "reduced_fee_confirm",
+   "level": "MS",
+   "school_year": "2025-26",
+   "set_on": "",
+   "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
+   "source_file": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+   "source_ref": "Spring!V3",
+   "unit": "per student, per season",
+   "unit_basis": "The workbook nowhere writes the word season. Its own construction fixes it: the rate strip is row 3 of three worksheets named Fall, Winter, Spring, the same rates appear on more than one of them, and each is applied to that worksheet's own athlete counts.",
+   "unit_quote": "",
+   "unit_status": "structural",
+   "verified": "Spring!V3"
+  },
+  {
+   "amount": 1500.0,
+   "confirming": false,
+   "fy": 2027,
+   "item": "family_cap",
+   "level": "ANY",
+   "school_year": "2026-27",
+   "set_on": "2026-08",
+   "source": "Superintendent's email to families, August 2026",
+   "source_file": "",
+   "source_ref": "",
+   "unit": "not established",
+   "unit_basis": "The source is an email to families that this archive does not hold, so nothing about it can be quoted -- the amount included.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "source not held"
+  },
+  {
+   "amount": 400.0,
+   "confirming": false,
+   "fy": 2027,
+   "item": "full_pay",
+   "level": "HS",
+   "school_year": "2026-27",
+   "set_on": "2026-08",
+   "source": "Superintendent's email to families, August 2026",
+   "source_file": "",
+   "source_ref": "",
+   "unit": "not established",
+   "unit_basis": "The source is an email to families that this archive does not hold, so nothing about it can be quoted -- the amount included.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "source not held"
+  },
+  {
+   "amount": 300.0,
+   "confirming": false,
+   "fy": 2027,
+   "item": "second_child",
+   "level": "HS",
+   "school_year": "2026-27",
+   "set_on": "2026-08",
+   "source": "Superintendent's email to families, August 2026",
+   "source_file": "",
+   "source_ref": "",
+   "unit": "not established",
+   "unit_basis": "The source is an email to families that this archive does not hold, so nothing about it can be quoted -- the amount included.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "source not held"
+  },
+  {
+   "amount": 225.0,
+   "confirming": false,
+   "fy": 2027,
+   "item": "third_child",
+   "level": "HS",
+   "school_year": "2026-27",
+   "set_on": "2026-08",
+   "source": "Superintendent's email to families, August 2026",
+   "source_file": "",
+   "source_ref": "",
+   "unit": "not established",
+   "unit_basis": "The source is an email to families that this archive does not hold, so nothing about it can be quoted -- the amount included.",
+   "unit_quote": "",
+   "unit_status": "not established",
+   "verified": "source not held"
+  }
+ ],
+ "season_cap_binds_anywhere": false,
+ "seasons": 3,
+ "source": "sources/data/lunenburg.db \u2014 athletic_fee_schedule, rate_register, money_gaps; sources/district-budget/text/lhs-athletics-faq.txt; sources/meetings/text/",
+ "tiers": [
+  "full",
+  "reduced",
+  "waived"
+ ],
+ "unpriced": [
+  {
+   "category": "activity_fee",
+   "fy": "2026",
+   "item": "fee increase",
+   "source": "School Committee minutes, 26 February 2025 \u2014 discussed, not voted",
+   "source_ref": "Committee recommends Dr. Gilson",
+   "status": "not_adopted",
+   "unit": "Student Activities"
+  },
+  {
+   "category": "bus_fee",
+   "fy": "2027",
+   "item": "one student, reduced",
+   "source": "Not restated in the 17 August 2026 email, which gives three tiers",
+   "source_ref": "",
+   "status": "not_published",
+   "unit": "Transportation, to school"
+  },
+  {
+   "category": "contract_cola",
+   "fy": null,
+   "item": "cost-of-living adjustment",
+   "source": "Lunenburg school employee contracts \u2014 term 2023\u20132026",
+   "source_ref": "*not public*",
+   "status": "not_published",
+   "unit": "Cafeteria"
+  },
+  {
+   "category": "contract_cola",
+   "fy": null,
+   "item": "cost-of-living adjustment",
+   "source": "Lunenburg school employee contracts \u2014 term 2025\u20132028",
+   "source_ref": "*not public*",
+   "status": "not_published",
+   "unit": "Secretaries"
+  },
+  {
+   "category": "facilities_fee",
+   "fy": "2026",
+   "item": "increase on prior schedule",
+   "source": "School Committee minutes, 26 February 2025 \u2014 moved, seconded, approved",
+   "source_ref": "Facilities Proposal to increase fees by 50%",
+   "status": "not_published",
+   "unit": "Facilities"
+  },
+  {
+   "category": "other_fee",
+   "fy": null,
+   "item": "Afterschool Activity Fee",
+   "source": "RevTrak payment portal navigation (lunenburg.revtrak.net) \u2014 the portal renders in JavaScript and serves no amounts to a plain fetch",
+   "source_ref": "https://lunenburg.revtrak.net/r2#/v/bus-fees",
+   "status": "not_published",
+   "unit": "Lunenburg Public Schools"
+  },
+  {
+   "category": "other_fee",
+   "fy": null,
+   "item": "Chromebook Repair Fee",
+   "source": "RevTrak payment portal navigation (lunenburg.revtrak.net) \u2014 the portal renders in JavaScript and serves no amounts to a plain fetch",
+   "source_ref": "https://lunenburg.revtrak.net/r2#/v/bus-fees",
+   "status": "not_published",
+   "unit": "Lunenburg Public Schools"
+  },
+  {
+   "category": "other_fee",
+   "fy": null,
+   "item": "Extended Day & ELC",
+   "source": "RevTrak payment portal navigation (lunenburg.revtrak.net) \u2014 the portal renders in JavaScript and serves no amounts to a plain fetch",
+   "source_ref": "https://lunenburg.revtrak.net/r2#/v/bus-fees",
+   "status": "not_published",
+   "unit": "Lunenburg Public Schools"
+  },
+  {
+   "category": "other_fee",
+   "fy": null,
+   "item": "Field Trips",
+   "source": "RevTrak payment portal navigation (lunenburg.revtrak.net) \u2014 the portal renders in JavaScript and serves no amounts to a plain fetch",
+   "source_ref": "https://lunenburg.revtrak.net/r2#/v/bus-fees",
+   "status": "not_published",
+   "unit": "Lunenburg Public Schools"
+  },
+  {
+   "category": "other_fee",
+   "fy": null,
+   "item": "LHS Parking Permit",
+   "source": "RevTrak payment portal navigation (lunenburg.revtrak.net) \u2014 the portal renders in JavaScript and serves no amounts to a plain fetch",
+   "source_ref": "https://lunenburg.revtrak.net/r2#/v/bus-fees",
+   "status": "not_published",
+   "unit": "Lunenburg Public Schools"
+  },
+  {
+   "category": "other_fee",
+   "fy": null,
+   "item": "Primary Preschool Program",
+   "source": "RevTrak payment portal navigation (lunenburg.revtrak.net) \u2014 the portal renders in JavaScript and serves no amounts to a plain fetch",
+   "source_ref": "https://lunenburg.revtrak.net/r2#/v/bus-fees",
+   "status": "not_published",
+   "unit": "Lunenburg Public Schools"
+  }
+ ],
+ "unpriced_count": 10,
+ "unpriced_portal": 6,
+ "years": [
+  {
+   "bus": {
+    "one student": {
+     "amount": 180.0,
+     "source": "Superintendent's email, 17 August 2026",
+     "source_file": "correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+     "source_ref": "One child: $180.00",
+     "status": "verified"
+    },
+    "one student, reduced": {
+     "amount": null,
+     "source": "Not restated in the 17 August 2026 email, which gives three tiers",
+     "source_file": "correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+     "source_ref": "",
+     "status": "not_published"
+    },
+    "qualifying families": {
+     "amount": 0.0,
+     "source": "Superintendent's email, 17 August 2026",
+     "source_file": "correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+     "source_ref": "Free-Families that have qualified",
+     "status": "verified"
+    },
+    "two or more students": {
+     "amount": 270.0,
+     "source": "Superintendent's email, 17 August 2026",
+     "source_file": "correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+     "source_ref": "Family rate (2+ children): $270.00",
+     "status": "verified"
+    },
+    "two or more, reduced": {
+     "amount": 75.0,
+     "source": "Superintendent's email, 17 August 2026",
+     "source_file": "correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt",
+     "source_ref": "$75 Families w/2+ children that qualify for a reduced fee",
+     "status": "verified"
+    }
+   },
+   "cap": {
+    "amount": 1500.0,
+    "fy": 2027,
+    "headroom": 575.0,
+    "ladder": [
+     400.0,
+     300.0,
+     225.0
+    ],
+    "ladder_complete": true,
+    "ladder_sum": 925.0,
+    "level": "ANY",
+    "school_year": "2026-27",
+    "source": "Superintendent's email to families, August 2026",
+    "source_file": null,
+    "source_ref": null,
+    "unit": "not established",
+    "unit_basis": "The source is an email to families that this archive does not hold, so nothing about it can be quoted -- the amount included.",
+    "unit_quote": null,
+    "unit_status": "not established",
+    "verified": "source not held"
+   },
+   "fy": 2027,
+   "levels": {
+    "HS": {
+     "ladder": {
+      "fy": 2027,
+      "kind": "ladder",
+      "level": "HS",
+      "pct": null,
+      "rates": [
+       400.0,
+       300.0,
+       225.0
+      ],
+      "ratio": 0.75,
+      "ratio_exact": true,
+      "source": "Superintendent's email to families, August 2026",
+      "stops_after": 3
+     },
+     "reduced": null,
+     "reduced_status": "not published",
+     "tiers": {
+      "full": {
+       "available": true,
+       "flat": null,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 400.0,
+         "per_year": 400.0,
+         "seasons": [
+          400.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 400.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 800.0,
+         "per_year": 800.0,
+         "seasons": [
+          400.0,
+          400.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 800.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 1200.0,
+         "per_year": 1200.0,
+         "seasons": [
+          400.0,
+          400.0,
+          400.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 1200.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 700.0,
+         "per_year": 700.0,
+         "seasons": [
+          700.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 700.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 1400.0,
+         "per_year": 1400.0,
+         "seasons": [
+          700.0,
+          700.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 1400.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 2100.0,
+         "per_year": 1500.0,
+         "seasons": [
+          700.0,
+          700.0,
+          700.0
+         ],
+         "sports": 3,
+         "spread": 600.0,
+         "uncapped": 2100.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 925.0,
+         "per_year": 925.0,
+         "seasons": [
+          925.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 925.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 1850.0,
+         "per_year": 1500.0,
+         "seasons": [
+          925.0,
+          925.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 350.0,
+         "uncapped": 1850.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 2775.0,
+         "per_year": 1500.0,
+         "seasons": [
+          925.0,
+          925.0,
+          925.0
+         ],
+         "sports": 3,
+         "spread": 1275.0,
+         "uncapped": 2775.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 1,
+         "per_season": 1093.75,
+         "per_year": 1093.75,
+         "seasons": [
+          1093.75,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 1093.75,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 1,
+         "per_season": 2187.5,
+         "per_year": 1500.0,
+         "seasons": [
+          1093.75,
+          1093.75,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 687.5,
+         "uncapped": 2187.5,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 1,
+         "per_season": 3281.25,
+         "per_year": 1500.0,
+         "seasons": [
+          1093.75,
+          1093.75,
+          1093.75
+         ],
+         "sports": 3,
+         "spread": 1781.25,
+         "uncapped": 3281.25,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [
+        {
+         "children": 4,
+         "sports": 1
+        },
+        {
+         "children": 4,
+         "sports": 2
+        },
+        {
+         "children": 4,
+         "sports": 3
+        }
+       ],
+       "max_spread": 1781.25,
+       "season_cap_ever_binds": false,
+       "source": "Superintendent's email to families, August 2026",
+       "source_ref": null,
+       "uncomputable": []
+      },
+      "reduced": {
+       "available": false,
+       "flat": null,
+       "grid": [],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "Superintendent's email to families, August 2026",
+       "source_ref": null,
+       "uncomputable": []
+      },
+      "waived": {
+       "available": true,
+       "flat": 0.0,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "LHS Athletics FAQ: \"Students that are on the free lunch program have the athletic fee waived\". The FAQ states no year.",
+       "source_ref": null,
+       "uncomputable": []
+      }
+     }
+    },
+    "MS": {
+     "ladder": {
+      "fy": 2027,
+      "kind": "not published",
+      "level": "MS",
+      "pct": null,
+      "rates": [],
+      "ratio": null,
+      "ratio_exact": false,
+      "source": null,
+      "stops_after": 0
+     },
+     "reduced": null,
+     "reduced_status": "not published",
+     "tiers": {
+      "full": {
+       "available": true,
+       "flat": null,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 1
+        },
+        {
+         "children": 1,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 1
+        },
+        {
+         "children": 1,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 1
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 2
+        },
+        {
+         "children": 2,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 2
+        },
+        {
+         "children": 2,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 2
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 3
+        },
+        {
+         "children": 3,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 3
+        },
+        {
+         "children": 3,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 3
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 4
+        },
+        {
+         "children": 4,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 4
+        },
+        {
+         "children": 4,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 4
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": null,
+       "source_ref": null,
+       "uncomputable": [
+        {
+         "children": 1,
+         "sports": 1
+        },
+        {
+         "children": 1,
+         "sports": 2
+        },
+        {
+         "children": 1,
+         "sports": 3
+        },
+        {
+         "children": 2,
+         "sports": 1
+        },
+        {
+         "children": 2,
+         "sports": 2
+        },
+        {
+         "children": 2,
+         "sports": 3
+        },
+        {
+         "children": 3,
+         "sports": 1
+        },
+        {
+         "children": 3,
+         "sports": 2
+        },
+        {
+         "children": 3,
+         "sports": 3
+        },
+        {
+         "children": 4,
+         "sports": 1
+        },
+        {
+         "children": 4,
+         "sports": 2
+        },
+        {
+         "children": 4,
+         "sports": 3
+        }
+       ]
+      },
+      "reduced": {
+       "available": false,
+       "flat": null,
+       "grid": [],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": null,
+       "source_ref": null,
+       "uncomputable": []
+      },
+      "waived": {
+       "available": true,
+       "flat": 0.0,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "LHS Athletics FAQ: \"Students that are on the free lunch program have the athletic fee waived\". The FAQ states no year.",
+       "source_ref": null,
+       "uncomputable": []
+      }
+     }
+    }
+   }
+  },
+  {
+   "bus": {
+    "one student": {
+     "amount": 180.0,
+     "source": "Superintendent's email, May 2025",
+     "source_file": "correspondence/2025-05-bus-fees-superintendent.txt",
+     "source_ref": "$180 Families with 1 student",
+     "status": "verified"
+    },
+    "one student, reduced": {
+     "amount": 50.0,
+     "source": "Superintendent's email, May 2025",
+     "source_file": "correspondence/2025-05-bus-fees-superintendent.txt",
+     "source_ref": "$50 Families with 1 student that qualify for a reduced fee",
+     "status": "verified"
+    },
+    "qualifying families": {
+     "amount": 0.0,
+     "source": "Superintendent's email, May 2025",
+     "source_file": "correspondence/2025-05-bus-fees-superintendent.txt",
+     "source_ref": "Free - Families that have submitted a Free/Reduced Application and qualify",
+     "status": "verified"
+    },
+    "two or more students": {
+     "amount": 270.0,
+     "source": "Superintendent's email, May 2025",
+     "source_file": "correspondence/2025-05-bus-fees-superintendent.txt",
+     "source_ref": "$270 Families with 2 or more students",
+     "status": "verified"
+    },
+    "two or more, reduced": {
+     "amount": 75.0,
+     "source": "Superintendent's email, May 2025",
+     "source_file": "correspondence/2025-05-bus-fees-superintendent.txt",
+     "source_ref": "$75 Families with 2 or more students that qualify for a reduced fee",
+     "status": "verified"
+    }
+   },
+   "cap": {
+    "amount": 1500.0,
+    "fy": 2026,
+    "headroom": 687.5,
+    "ladder": [
+     325.0,
+     243.75,
+     243.75
+    ],
+    "ladder_complete": true,
+    "ladder_sum": 812.5,
+    "level": "ANY",
+    "school_year": "2025-26",
+    "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+    "source_file": "minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+    "source_ref": "family cap of $1500",
+    "unit": "not established",
+    "unit_basis": "THE ONE THAT MATTERS. The cap that preceded this one was stated per season, in those words. This one is stated with no period at all, and no cell of the district workbook carries a family cap of any amount. Read per season and read per year it is a different bill, and nothing published says which.",
+    "unit_quote": null,
+    "unit_status": "not established",
+    "verified": "quoted in source"
+   },
+   "fy": 2026,
+   "levels": {
+    "HS": {
+     "ladder": {
+      "fy": 2026,
+      "kind": "percentage",
+      "level": "HS",
+      "pct": 25.0,
+      "pct_ref": "A 25% discount for siblings",
+      "pct_source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+      "rates": [
+       325.0
+      ],
+      "ratio": 0.75,
+      "ratio_exact": true,
+      "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+      "stops_after": 1
+     },
+     "reduced": 50.0,
+     "reduced_status": "published",
+     "tiers": {
+      "full": {
+       "available": true,
+       "flat": null,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 325.0,
+         "per_year": 325.0,
+         "seasons": [
+          325.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 325.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 650.0,
+         "per_year": 650.0,
+         "seasons": [
+          325.0,
+          325.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 650.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 975.0,
+         "per_year": 975.0,
+         "seasons": [
+          325.0,
+          325.0,
+          325.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 975.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 1,
+         "per_season": 568.75,
+         "per_year": 568.75,
+         "seasons": [
+          568.75,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 568.75,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 1,
+         "per_season": 1137.5,
+         "per_year": 1137.5,
+         "seasons": [
+          568.75,
+          568.75,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 1137.5,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 1,
+         "per_season": 1706.25,
+         "per_year": 1500.0,
+         "seasons": [
+          568.75,
+          568.75,
+          568.75
+         ],
+         "sports": 3,
+         "spread": 206.25,
+         "uncapped": 1706.25,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 2,
+         "per_season": 812.5,
+         "per_year": 812.5,
+         "seasons": [
+          812.5,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 812.5,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 2,
+         "per_season": 1625.0,
+         "per_year": 1500.0,
+         "seasons": [
+          812.5,
+          812.5,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 125.0,
+         "uncapped": 1625.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 2,
+         "per_season": 2437.5,
+         "per_year": 1500.0,
+         "seasons": [
+          812.5,
+          812.5,
+          812.5
+         ],
+         "sports": 3,
+         "spread": 937.5,
+         "uncapped": 2437.5,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 3,
+         "per_season": 1056.25,
+         "per_year": 1056.25,
+         "seasons": [
+          1056.25,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 1056.25,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 3,
+         "per_season": 2112.5,
+         "per_year": 1500.0,
+         "seasons": [
+          1056.25,
+          1056.25,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 612.5,
+         "uncapped": 2112.5,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": false,
+         "inferred_child_rates": 3,
+         "per_season": 3168.75,
+         "per_year": 1500.0,
+         "seasons": [
+          1056.25,
+          1056.25,
+          1056.25
+         ],
+         "sports": 3,
+         "spread": 1668.75,
+         "uncapped": 3168.75,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [
+        {
+         "children": 2,
+         "sports": 1
+        },
+        {
+         "children": 2,
+         "sports": 2
+        },
+        {
+         "children": 2,
+         "sports": 3
+        },
+        {
+         "children": 3,
+         "sports": 1
+        },
+        {
+         "children": 3,
+         "sports": 2
+        },
+        {
+         "children": 3,
+         "sports": 3
+        },
+        {
+         "children": 4,
+         "sports": 1
+        },
+        {
+         "children": 4,
+         "sports": 2
+        },
+        {
+         "children": 4,
+         "sports": 3
+        }
+       ],
+       "max_spread": 1668.75,
+       "season_cap_ever_binds": false,
+       "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+       "source_ref": null,
+       "uncomputable": []
+      },
+      "reduced": {
+       "available": true,
+       "flat": 50.0,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 50.0,
+         "per_year": 50.0,
+         "seasons": [
+          50.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 50.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 100.0,
+         "per_year": 100.0,
+         "seasons": [
+          50.0,
+          50.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 100.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 150.0,
+         "per_year": 150.0,
+         "seasons": [
+          50.0,
+          50.0,
+          50.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 150.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 100.0,
+         "per_year": 100.0,
+         "seasons": [
+          100.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 100.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 200.0,
+         "per_year": 200.0,
+         "seasons": [
+          100.0,
+          100.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 200.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 300.0,
+         "per_year": 300.0,
+         "seasons": [
+          100.0,
+          100.0,
+          100.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 300.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 150.0,
+         "per_year": 150.0,
+         "seasons": [
+          150.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 150.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 300.0,
+         "per_year": 300.0,
+         "seasons": [
+          150.0,
+          150.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 300.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 450.0,
+         "per_year": 450.0,
+         "seasons": [
+          150.0,
+          150.0,
+          150.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 450.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 200.0,
+         "per_year": 200.0,
+         "seasons": [
+          200.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 200.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 400.0,
+         "per_year": 400.0,
+         "seasons": [
+          200.0,
+          200.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 400.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 600.0,
+         "per_year": 600.0,
+         "seasons": [
+          200.0,
+          200.0,
+          200.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 600.0,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+       "source_ref": "Reduced fee for high school to $50",
+       "uncomputable": []
+      },
+      "waived": {
+       "available": true,
+       "flat": 0.0,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "LHS Athletics FAQ: \"Students that are on the free lunch program have the athletic fee waived\". The FAQ states no year.",
+       "source_ref": null,
+       "uncomputable": []
+      }
+     }
+    },
+    "MS": {
+     "ladder": {
+      "fy": 2026,
+      "kind": "ladder",
+      "level": "MS",
+      "pct": null,
+      "rates": [
+       275.0
+      ],
+      "ratio": null,
+      "ratio_exact": false,
+      "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+      "stops_after": 1
+     },
+     "reduced": 40.0,
+     "reduced_status": "published",
+     "tiers": {
+      "full": {
+       "available": true,
+       "flat": null,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 275.0,
+         "per_year": 275.0,
+         "seasons": [
+          275.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 275.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 550.0,
+         "per_year": 550.0,
+         "seasons": [
+          275.0,
+          275.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 550.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 825.0,
+         "per_year": 825.0,
+         "seasons": [
+          275.0,
+          275.0,
+          275.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 825.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 275.0,
+         "per_year": 275.0,
+         "seasons": [
+          275.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 275.0,
+         "unknown_child_rates": 1
+        },
+        {
+         "children": 2,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 550.0,
+         "per_year": 550.0,
+         "seasons": [
+          275.0,
+          275.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 550.0,
+         "unknown_child_rates": 1
+        },
+        {
+         "children": 2,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 825.0,
+         "per_year": 825.0,
+         "seasons": [
+          275.0,
+          275.0,
+          275.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 825.0,
+         "unknown_child_rates": 1
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 275.0,
+         "per_year": 275.0,
+         "seasons": [
+          275.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 275.0,
+         "unknown_child_rates": 2
+        },
+        {
+         "children": 3,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 550.0,
+         "per_year": 550.0,
+         "seasons": [
+          275.0,
+          275.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 550.0,
+         "unknown_child_rates": 2
+        },
+        {
+         "children": 3,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 825.0,
+         "per_year": 825.0,
+         "seasons": [
+          275.0,
+          275.0,
+          275.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 825.0,
+         "unknown_child_rates": 2
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 275.0,
+         "per_year": 275.0,
+         "seasons": [
+          275.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 275.0,
+         "unknown_child_rates": 3
+        },
+        {
+         "children": 4,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 550.0,
+         "per_year": 550.0,
+         "seasons": [
+          275.0,
+          275.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 550.0,
+         "unknown_child_rates": 3
+        },
+        {
+         "children": 4,
+         "computable": false,
+         "fully_published": false,
+         "inferred_child_rates": 0,
+         "per_season": 825.0,
+         "per_year": 825.0,
+         "seasons": [
+          275.0,
+          275.0,
+          275.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 825.0,
+         "unknown_child_rates": 3
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+       "source_ref": null,
+       "uncomputable": [
+        {
+         "children": 2,
+         "sports": 1
+        },
+        {
+         "children": 2,
+         "sports": 2
+        },
+        {
+         "children": 2,
+         "sports": 3
+        },
+        {
+         "children": 3,
+         "sports": 1
+        },
+        {
+         "children": 3,
+         "sports": 2
+        },
+        {
+         "children": 3,
+         "sports": 3
+        },
+        {
+         "children": 4,
+         "sports": 1
+        },
+        {
+         "children": 4,
+         "sports": 2
+        },
+        {
+         "children": 4,
+         "sports": 3
+        }
+       ]
+      },
+      "reduced": {
+       "available": true,
+       "flat": 40.0,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 40.0,
+         "per_year": 40.0,
+         "seasons": [
+          40.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 40.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 80.0,
+         "per_year": 80.0,
+         "seasons": [
+          40.0,
+          40.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 80.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 120.0,
+         "per_year": 120.0,
+         "seasons": [
+          40.0,
+          40.0,
+          40.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 120.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 80.0,
+         "per_year": 80.0,
+         "seasons": [
+          80.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 80.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 160.0,
+         "per_year": 160.0,
+         "seasons": [
+          80.0,
+          80.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 160.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 240.0,
+         "per_year": 240.0,
+         "seasons": [
+          80.0,
+          80.0,
+          80.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 240.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 120.0,
+         "per_year": 120.0,
+         "seasons": [
+          120.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 120.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 240.0,
+         "per_year": 240.0,
+         "seasons": [
+          120.0,
+          120.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 240.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 360.0,
+         "per_year": 360.0,
+         "seasons": [
+          120.0,
+          120.0,
+          120.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 360.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 160.0,
+         "per_year": 160.0,
+         "seasons": [
+          160.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 160.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 320.0,
+         "per_year": 320.0,
+         "seasons": [
+          160.0,
+          160.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 320.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 480.0,
+         "per_year": 480.0,
+         "seasons": [
+          160.0,
+          160.0,
+          160.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 480.0,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "School Committee minutes, 26 February 2025 \u2014 \"Increasing New & Existing Revenues\"",
+       "source_ref": "$40 for middle school",
+       "uncomputable": []
+      },
+      "waived": {
+       "available": true,
+       "flat": 0.0,
+       "grid": [
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 1,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 2,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 3,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 0,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 1,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 2,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        },
+        {
+         "children": 4,
+         "computable": true,
+         "fully_published": true,
+         "inferred_child_rates": 0,
+         "per_season": 0.0,
+         "per_year": 0.0,
+         "seasons": [
+          0.0,
+          0.0,
+          0.0
+         ],
+         "sports": 3,
+         "spread": 0.0,
+         "uncapped": 0.0,
+         "unknown_child_rates": 0
+        }
+       ],
+       "inferred": [],
+       "max_spread": 0.0,
+       "season_cap_ever_binds": false,
+       "source": "LHS Athletics FAQ: \"Students that are on the free lunch program have the athletic fee waived\". The FAQ states no year.",
+       "source_ref": null,
+       "uncomputable": []
+      }
+     }
+    }
+   }
+  }
+ ]
+}

@@ -28,7 +28,10 @@ import { Gaps } from './pages/Gaps'
 import { BudgetVsActual } from './pages/BudgetVsActual'
 import { SchoolStaffing } from './pages/SchoolStaffing'
 import { HealthInsurance } from './pages/HealthInsurance'
+import { StoppedFunding } from './pages/StoppedFunding'
 import { StateAid } from './pages/StateAid'
+import { IfStudentsLeave } from './pages/IfStudentsLeave'
+import { WhatFamiliesPay } from './pages/WhatFamiliesPay'
 import { AskUs } from './pages/AskUs'
 import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
@@ -362,6 +365,9 @@ export default function App() {
       {tab === 'staffing' && <SchoolStaffing />}
       {tab === 'insurance' && <HealthInsurance />}
       {tab === 'stateaid' && <StateAid />}
+      {tab === 'leaving' && <IfStudentsLeave />}
+      {tab === 'families' && <WhatFamiliesPay />}
+      {tab === 'stopped' && <StoppedFunding />}
       {tab === 'askus' && <AskUs />}
       {tab === 'sportsmoney' && <AthleticsMoney />}
       {tab === 'funds' && <SpecialRevenue />}
