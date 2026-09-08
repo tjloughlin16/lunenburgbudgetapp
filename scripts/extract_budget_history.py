@@ -121,8 +121,27 @@ KINDS = re.compile(r'\b(FINAL BUDGET|Actuals|Actual|Expended|Budgeted|Budget|Pro
                    r'Requested|Recommended|Recommend|Adopted|Final|Approved)\b', re.I)
 BUDGET_KINDS = {'budgeted', 'budget', 'final budget', 'proposed', 'requested',
                 'recommended', 'recommend', 'adopted', 'final', 'approved'}
-# What was actually spent. Recorded for the budget-versus-actual question and for nothing
-# else: no projection may read these, and the audit fails the build if one does.
+# The column headings that mean "a year already closed" -- and the stage they are recorded
+# under is `restated`, NOT `actual`. The rename was made 7 September 2026 and the reason is
+# worth keeping, because the old name caused the error it was named for.
+#
+# THESE FIGURES DO NOT COME FROM A LEDGER. Every document they are read out of is a
+# district BUDGET book -- fy24-approved-budget, fy19-supt-proposed-expense-budget,
+# fy27-budget-projections -- and `document-basis.csv` classifies all sixteen of them as
+# `restatement` (14) or `forward` (2). None is classified `ledger`. So what a column headed
+# ACTUAL holds here is the district re-presenting a closed year inside its own later budget
+# book: its account of what it spent, not the accounting system's record of it.
+#
+# The distinction is load-bearing for the question these figures exist to answer. A
+# restatement CANNOT show money moved between lines mid-year, because approved transfers do
+# not appear in a budget document -- and mid-year movement is exactly what an
+# over-budgeting question is about. `ledger_snapshot` carries original / revised / expended
+# / encumbered per account and `revised` vs `original` IS that movement; it exists for
+# FY2026 and one quarter of FY23, and nowhere else for school spending.
+#
+# The old name invited the reading it got: a stage called `actual` was quoted as an actual,
+# in a project whose rule 13 lists that exact error in its own table. Naming the stage after
+# what it IS rather than after the column heading it was read from is the fix.
 ACTUAL_KINDS = {'actual', 'actuals', 'expended'}
 # Numbers only. A bare "-" in these sheets means zero, and reading it as one was tried and
 # reverted: several of the district's own line labels contain a dash ("Special Education
@@ -246,7 +265,7 @@ def scan(path, parts):
                 if kind in BUDGET_KINDS:
                     stage = stage_of(fy, kind, dy)
                 elif kind in ACTUAL_KINDS:
-                    stage = 'actual'
+                    stage = 'restated'
                 else:
                     continue
                 out.append(dict(fy=fy, line=key, kind=kind, value=v, stage=stage,
@@ -271,11 +290,11 @@ def run(name, spec):
     years = sorted({o['fy'] for o in obs})
     parts = list(spec['parts'])
     print(f"\n{spec['what'].upper()} — budget columns only, one stage at a time")
-    print(f"{'FY':<6}{'actual':>14}{'settled':>14}{'proposed':>14}")
+    print(f"{'FY':<6}{'restated':>14}{'settled':>14}{'proposed':>14}")
     rows = []
     for fy in years:
         cell, vals = {}, {}
-        for stage in ('actual', 'settled', 'proposed'):
+        for stage in ('restated', 'settled', 'proposed'):
             got = {k: pick(fy, k, stage) for k in parts}
             have = [k for k in parts if got[k][0] is not None]
             # A partial year is not a total. Summing three of five schools and calling it
@@ -285,7 +304,7 @@ def run(name, spec):
                                disagree=any(got[k][1] for k in have), have=len(have))
             cell[stage] = f"{total:,.0f}" + ('*' if vals[stage]['disagree'] else '') \
                 if total is not None else f'({len(have)}/{len(parts)})'
-        print(f"FY{fy % 100:<4}{cell['actual']:>14}{cell['settled']:>14}"
+        print(f"FY{fy % 100:<4}{cell['restated']:>14}{cell['settled']:>14}"
               f"{cell['proposed']:>14}")
         rows.append((fy, vals))
 

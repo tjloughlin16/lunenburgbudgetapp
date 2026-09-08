@@ -24,7 +24,7 @@ Or download the database: `https://lunenburgbudgetproject.org/data/lunenburg.db`
 SELECT fy, stage, ROUND(SUM(value)) AS total FROM budget_figure GROUP BY fy, stage ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `total` — for example: fy=2014, stage=actual, total=16500031.0
+Returns `fy`, `stage`, `total` — for example: fy=2014, stage=restated, total=16500031.0
 
 > A STAGE is not a period. `proposed`, `settled` and `actual` are three different documents about the same year, and mixing them is the error rule 1 exists for.
 
@@ -104,7 +104,7 @@ Returns `fy`, `figures` — for example: fy=2014, figures=2
 SELECT fy, stage, total FROM total_salaries_history ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `total` — for example: fy=2014, stage=actual, total=11044481
+Returns `fy`, `stage`, `total` — for example: fy=2014, stage=restated, total=11044481
 
 **And total expenses?**
 
@@ -112,7 +112,7 @@ Returns `fy`, `stage`, `total` — for example: fy=2014, stage=actual, total=110
 SELECT fy, stage, total FROM total_expenses_history ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `total` — for example: fy=2014, stage=actual, total=5146641
+Returns `fy`, `stage`, `total` — for example: fy=2014, stage=restated, total=5146641
 
 **What is the biggest single line in the budget, in each year?**
 
@@ -154,7 +154,7 @@ Returns `line_key`, `column_kind`, `value` — for example: line_key=health insu
 SELECT fy, stage, ps, es, ms, hs, total FROM sped_para_history ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `ps`, `es`, `ms`, `hs`, `total` — for example: fy=2014, stage=actual, ps=153425, es=0, ms=162721, hs=50819, total=366965
+Returns `fy`, `stage`, `ps`, `es`, `ms`, `hs`, `total` — for example: fy=2014, stage=restated, ps=153425, es=0, ms=162721, hs=50819, total=366965
 
 > This is the line the 12.8% escalator rests on, and it is dollars, not people.
 
@@ -164,7 +164,7 @@ Returns `fy`, `stage`, `ps`, `es`, `ms`, `hs`, `total` — for example: fy=2014,
 SELECT fy, stage, ps, es, ms, hs, total FROM sped_teacher_history ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `ps`, `es`, `ms`, `hs`, `total` — for example: fy=2017, stage=actual, ps=473861, es=307620, ms=375364, hs=380738, total=1537583
+Returns `fy`, `stage`, `ps`, `es`, `ms`, `hs`, `total` — for example: fy=2017, stage=restated, ps=473861, es=307620, ms=375364, hs=380738, total=1537583
 
 **What has out-of-district tuition done, year by year?**
 
@@ -172,7 +172,7 @@ Returns `fy`, `stage`, `ps`, `es`, `ms`, `hs`, `total` — for example: fy=2017,
 SELECT fy, stage, private, collaborative, total FROM ood_tuition_history ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `private`, `collaborative`, `total` — for example: fy=2014, stage=actual, private=1025404, collaborative=236285, total=1261689
+Returns `fy`, `stage`, `private`, `collaborative`, `total` — for example: fy=2014, stage=restated, private=1025404, collaborative=236285, total=1261689
 
 **How many children were placed outside the district, and where?**
 
@@ -198,7 +198,7 @@ Returns `fy`, `parts_tie`, `chain_agrees`, `report_says_prior_year` — for exam
 SELECT fy, stage, system, total FROM sped_transport_history ORDER BY fy, stage
 ```
 
-Returns `fy`, `stage`, `system`, `total` — for example: fy=2015, stage=actual, system=480536, total=480536
+Returns `fy`, `stage`, `system`, `total` — for example: fy=2015, stage=restated, system=480536, total=480536
 
 **Does each year of the placement series agree with what the next report says of it?**
 

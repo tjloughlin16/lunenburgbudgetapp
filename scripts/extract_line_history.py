@@ -746,7 +746,7 @@ def scan(path, labels=None):
             if kind in LINE_BUDGET_KINDS:
                 stage = ebh.stage_of(fy, kind, dy)
             elif kind in ebh.ACTUAL_KINDS:
-                stage = 'actual'
+                stage = 'restated'
             else:
                 continue
             out.append(dict(fy=fy, label=label, key=norm(label), stage=stage, value=v,
@@ -979,7 +979,7 @@ def main():
     print(f'wrote {DISAGREE} -- {rows_out:,} statements across '
           f'{len(disagree):,} contested cells')
 
-    pairs = [(k, fy) for (k, fy, st, va) in best if st == 'actual' and not va
+    pairs = [(k, fy) for (k, fy, st, va) in best if st == 'restated' and not va
              and (k, fy, 'settled', '') in best]
     print(f'{len(pairs):,} line-years with both a settled budget and an actual')
     yrs = collections.Counter(fy for _, fy in pairs)

@@ -81,10 +81,10 @@ SELECT  b.line_key,
         b.fy,
         MAX(b.label)                                                AS label,
         MAX(CASE WHEN b.stage = 'settled' THEN b.value END)         AS settled,
-        MAX(CASE WHEN b.stage = 'actual'  THEN b.value END)         AS actual,
+        MAX(CASE WHEN b.stage = 'restated' THEN b.value END)         AS actual,
         MAX(CASE WHEN b.stage = 'settled'
                  THEN b.documents_disagree END)                     AS settled_disputed,
-        MAX(CASE WHEN b.stage = 'actual'
+        MAX(CASE WHEN b.stage = 'restated'
                  THEN b.documents_disagree END)                     AS actual_disputed
 FROM    budget_figure b
 -- variant='' or a scenario column wins the MAX and is reported as the year's budget. A

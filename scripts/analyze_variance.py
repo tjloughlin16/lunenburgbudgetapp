@@ -81,12 +81,12 @@ def main():
     wb, fn, sec, label, cell = load()
     recs, dropped = [], collections.Counter()
     for (k, fy), v in cell.items():
-        why = usable(fy, v.get('settled'), v.get('actual'))
+        why = usable(fy, v.get('settled'), v.get('restated'))
         if why:
-            if v.get('settled') or v.get('actual'):
+            if v.get('settled') or v.get('restated'):
                 dropped[why] += 1
             continue
-        recs.append((k, fy, v['settled'][0], v['actual'][0]))
+        recs.append((k, fy, v['settled'][0], v['restated'][0]))
 
     thin = thin_years(recs)
     for fy, n in sorted(thin.items()):

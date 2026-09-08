@@ -88,8 +88,11 @@ SUB_LINES = ('ps regular sub', 'es regular sub', 'ms regular sub', 'hs regular s
              'kind regular sub')
 
 # The stage every dollar series on this page is read at. ONE stage, whole run (rule 1).
-# 'actual' is what the district's own documents restate as spent; the page says so.
-DOLLAR_STAGE = 'actual'
+# `restated` is what the district's own budget books re-present as spent for a closed year
+# -- not a ledger figure, and the page says so. The stage was called `actual` until
+# 7 September 2026; it was renamed because the name was being read as the accounting
+# system. See the comment on ACTUAL_KINDS in scripts/extract_budget_history.py.
+DOLLAR_STAGE = 'restated'
 
 # A department heading that names a grade. These pages are SCANNED and read by OCR, so
 # some headings came back mangled. They are found by RULE rather than listed by hand, so

@@ -26,7 +26,7 @@ Two fact tables, two different grains, one shared dimension.
                     Period 13 is the year-end close, after the lapse period.
 
   budget_figure     one row per (line, fiscal year, STAGE, VARIANT, document)
-                    Stage is what the figure IS: proposed / settled / actual. A stage is
+                    Stage is what the figure IS: proposed / settled / restated. A stage is
                     never a period and the two must not be joined as though they were.
 
   account           the CONFORMED DIMENSION. Both facts point at it. Until the line-level
@@ -171,8 +171,16 @@ CREATE TABLE budget_figure (
     line_key            TEXT NOT NULL,
     label               TEXT,
     fy                  INTEGER NOT NULL,
-    stage               TEXT NOT NULL       -- 'proposed' | 'settled' | 'actual'
-        CHECK (stage IN ('proposed', 'settled', 'actual')),
+    -- 'proposed'  what the district asked for
+    -- 'settled'   what was voted
+    -- 'restated'  what the district later re-presented as spent, INSIDE ITS OWN BUDGET
+    --             BOOK. NOT a ledger figure. Renamed from 'actual' on 7 September 2026
+    --             because the old name was read as the accounting system and produced a
+    --             written claim that twelve years of school actuals were available. They
+    --             are not: the ledger reaches school spending for FY2026 period 12 and one
+    --             quarter of FY23. See check_no_stage_actual() below.
+    stage               TEXT NOT NULL
+        CHECK (stage IN ('proposed', 'settled', 'restated')),
     -- The document's own name for the column, where it named one: 'Balanced',
     -- 'Core Budget', 'Level Service', 'Restoration'. Empty for a document that prints
     -- one column per stage, which is most of them.
@@ -436,7 +444,7 @@ CREATE VIEW v_line_budget_vs_actual AS
 SELECT  b.line_key, b.label, b.fy,
         MAX(CASE WHEN b.stage = 'settled'  THEN b.value END) AS settled,
         MAX(CASE WHEN b.stage = 'proposed' THEN b.value END) AS proposed,
-        MAX(CASE WHEN b.stage = 'actual'   THEN b.value END) AS actual,
+        MAX(CASE WHEN b.stage = 'restated' THEN b.value END) AS actual,
         MAX(b.documents_disagree)                            AS documents_disagree
 FROM    budget_figure b
 -- variant = '' or a scenario column would win the MAX and be reported as the year's
@@ -784,16 +792,62 @@ def load_budget_figures(db):
     Resolved by `resolve_budget_documents()` AFTER the document table is written -- it is
     not written until `finish_documents`, so doing it here silently matched nothing and
     dropped all 8,598 rows. The loader stores the filename; the post-pass rewrites it.
+
+    AND THE STAGE ALLOWLIST BELOW SILENTLY DROPPED 3,316 ROWS during the 7 September 2026
+    rename of `actual` to `restated`. The CSV was rewritten, the CHECK constraint was
+    updated, `check_no_stage_actual` reported success -- and the rows were gone, because
+    this filter still named the old value and a row that fails it is SKIPPED, not refused.
+
+    Every signal pointed the right way. The guard said "none of them calls it `actual`",
+    which was true and meaningless: they were not there to call it anything. An absent row
+    and a correctly-renamed row look identical to a check that only asks whether the OLD
+    name is present.
+
+    One thing caught it: `build_variance_charts` refused to write because its pivot matched
+    nothing. A generator that fails closed is worth more than three that report success,
+    and this is the case that proves it. The count assertion at the end of this function
+    exists so the next rename does not need luck.
     """
-    out, lines = [], {}
+    STAGES = ('proposed', 'settled', 'restated')
+    out, lines, skipped = [], {}, {}
     for r in rows('line-history'):
         fy, value = r['fy'], num(r['value'])
-        if (not fy.isdigit() or value is None
-                or r['stage'] not in ('proposed', 'settled', 'actual')):
+        if not fy.isdigit() or value is None:
+            continue
+        if r['stage'] not in STAGES:
+            skipped[r['stage']] = skipped.get(r['stage'], 0) + 1
             continue
         out.append((r['key'], r['label'], int(fy), r['stage'], r.get('variant', ''),
                     value, int(r['documents_disagree'] or 0), r['source']))
         lines.setdefault(r['key'], r['label'])
+
+    # A STAGE THIS LOADER DOES NOT RECOGNISE IS A DEFECT, NOT A ROW TO SKIP.
+    #
+    # This filter dropped 3,316 rows during the rename of `actual` to `restated` and
+    # reported nothing, because an unknown value fell through `continue`. The CSV is the
+    # source of truth here; if it holds a stage the database has never heard of, the right
+    # answer is to stop and be told, not to quietly publish a smaller database.
+    if skipped:
+        raise SystemExit(
+            'line-history.csv holds %d row(s) whose stage this loader does not recognise: '
+            '%s.\n  Known stages: %s.\n  A row with an unknown stage is DROPPED, and a '
+            'dropped row is invisible — this is exactly how the `actual` -> `restated` '
+            'rename lost 3,316 figures while every check reported success. Add the stage '
+            'here and to the CHECK constraint on budget_figure, or fix the extractor.'
+            % (sum(skipped.values()),
+               ', '.join('%r (%d)' % (k, v) for k, v in sorted(skipped.items())),
+               ', '.join(repr(s) for s in STAGES)))
+
+    # And the stages that SHOULD be here must actually be here. The check above catches a
+    # renamed stage; this catches one that vanished from the extractor entirely, which
+    # looks identical downstream and produces no unknown value to trip over.
+    present = {r[3] for r in out}
+    missing = [s for s in STAGES if s not in present]
+    if missing:
+        raise SystemExit(
+            'line-history.csv produced no rows at all for stage(s): %s.\n  Every one of '
+            '%s is expected. A stage that silently empties looks exactly like data that '
+            'was never collected.' % (', '.join(missing), ', '.join(STAGES)))
     db.executemany('INSERT OR REPLACE INTO budget_figure VALUES (?,?,?,?,?,?,?,?)', out)
     db.executemany('INSERT OR IGNORE INTO budget_line VALUES (?,?,?,?,?)',
                    [(k, v, None, None, None) for k, v in lines.items()])
@@ -1302,6 +1356,43 @@ def check_join_key(db):
     return coded, overlap
 
 
+def check_no_stage_actual(db):
+    """No table may carry a stage called `actual`, because none of them holds one.
+
+    Every figure loaded under that stage comes from a district BUDGET book, not from the
+    accounting system: `document-basis.csv` classifies all sixteen source documents as
+    `restatement` (14) or `forward` (2), and none as `ledger`. The stage is now `restated`.
+
+    THE OLD NAME CAUSED THE ERROR IT WAS NAMED FOR. An assessment written on 7 September
+    2026 read `stage='actual'` as the ledger and told TJ that twelve years of school
+    actuals were available. They are not: the ledger reaches school spending for FY2026
+    period 12 and one quarter of FY23, and nowhere else. Rule 13 lists this exact mistake
+    in its own table -- "the actuals sheet" against "a forward budget workbook with a
+    column headed ACTUALS" -- and it was made anyway, by someone who had just quoted the
+    rule.
+
+    A comment cannot prevent that. A name can, and a check keeps the name.
+    """
+    bad = []
+    for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'"):
+        cols = {d[1] for d in db.execute('PRAGMA table_info("%s")' % t)}
+        if 'stage' not in cols:
+            continue
+        n = db.execute('SELECT COUNT(*) FROM "%s" WHERE stage = ?' % t, ('actual',)).fetchone()[0]
+        if n:
+            bad.append('  %s: %d row(s)' % (t, n))
+    if bad:
+        raise SystemExit(
+            'a table carries stage=\'actual\', which no figure in this database is:\n'
+            + '\n'.join(bad)
+            + '\nThese are RESTATEMENTS -- a closed year re-presented inside the budget '
+              'book of the party that spent it. The stage is `restated`. If a genuine '
+              'ledger series is being loaded, give it its own stage name and say which '
+              'ledger document it came from.')
+    return sum(1 for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'")
+               if 'stage' in {d[1] for d in db.execute('PRAGMA table_info("%s")' % t)})
+
+
 def check_stored_queries(db):
     """Every query this database PUBLISHES must actually run against it.
 
@@ -1594,6 +1685,10 @@ def main():
     coded, overlap = check_join_key(db)
     print('  function codes   %5d accounts carry one; %d shared with the budget' %
           (coded, overlap))
+
+    n_st = check_no_stage_actual(db)
+    print('  stage names      %5d tables carry a stage; none of them calls it `actual`'
+          % n_st)
 
     n_q = check_stored_queries(db)
     print('  worked examples  %5d published queries, every one executed against this '

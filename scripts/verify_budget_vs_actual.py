@@ -63,7 +63,7 @@ def usable(fy, b, a):
 MIN_LINES_PER_YEAR = 20
 THIN_YEARS = {fy for fy, n in collections.Counter(
     fy for (k, fy), v in cell.items()
-    if usable(fy, v.get('settled'), v.get('actual'))).items()
+    if usable(fy, v.get('settled'), v.get('restated'))).items()
     if n < MIN_LINES_PER_YEAR}
 
 
@@ -72,7 +72,7 @@ def group(pred):
     for (k, fy), v in cell.items():
         if not pred(k) or fy in THIN_YEARS:
             continue
-        b, a = v.get('settled'), v.get('actual')
+        b, a = v.get('settled'), v.get('restated')
         if usable(fy, b, a):
             out[fy][0] += b[0]
             out[fy][1] += a[0]
@@ -82,8 +82,8 @@ def group(pred):
 print('Recomputing every figure in budget-vs-actual.md\n')
 
 print('FY21, the year that is excluded')
-pairs = [(v['settled'][0], v['actual'][0]) for (k, fy), v in cell.items()
-         if fy == 2021 and 'settled' in v and 'actual' in v and v['settled'][0] > 10_000]
+pairs = [(v['settled'][0], v['restated'][0]) for (k, fy), v in cell.items()
+         if fy == 2021 and 'settled' in v and 'restated' in v and v['settled'][0] > 10_000]
 same = sum(1 for b, a in pairs if abs(b - a) < 1)
 present('lines with both figures', f'{len(pairs)} lines')
 present('identical to the dollar', f'{same} of {len(pairs)}')
@@ -120,7 +120,7 @@ _recs = []
 for (k, fy), v in cell.items():
     if fy in THIN_YEARS:
         continue
-    b, a = v.get('settled'), v.get('actual')
+    b, a = v.get('settled'), v.get('restated')
     if usable(fy, b, a):
         _recs.append((k, fy, b[0], a[0]))
 present('usable line-years', f'{len(_recs)} usable line-years')
@@ -149,7 +149,7 @@ per = collections.defaultdict(list)
 for (k, fy), v in cell.items():
     if fy in THIN_YEARS:
         continue
-    b, a = v.get('settled'), v.get('actual')
+    b, a = v.get('settled'), v.get('restated')
     if usable(fy, b, a):
         per[k].append(a[0] / b[0] - 1)
 multi = {k: v for k, v in per.items() if len(v) >= 4}
