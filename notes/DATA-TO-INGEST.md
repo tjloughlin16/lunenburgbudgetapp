@@ -51,6 +51,7 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-residents-sending.xlsx` | DESE `vxt3-k35x`, 2.4 MB | `ef345000874d` | where resident children go, by receiving district and reason, 2014-2026 |
 | `dese-enrollment-receiving.xlsx` | DESE `8xyg-59b2`, 2.2 MB | `b23f4106f6c0` | who comes IN, by sending town and reason — the mirror of the file above |
 | `dese-circuit-breaker.xlsx` | DESE `ab34-d3ma`, 449 KB | `b710ba4f88fb` | high-cost special education reimbursement — **and a STUDENT COUNT**, `ELIG_STU_CLAIM_CNT` |
+| `dese-ch70-foundation-nss.xlsx` | DESE `5izv-jyrd`, 328 KB | `2f581d1c6eda` | foundation budget, and **required vs actual net school spending** — 2008-2022 only |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -81,6 +82,24 @@ out-of-district and high-cost placements, which is the line the in-district spec
 education escalator rests on. It also splits reimbursement into instruction/tuition against
 transportation, with prior-year adjustments and relief payments broken out, so a year's
 receipt can be told apart from a year's entitlement.
+
+**The Chapter 70 file answers a question nobody in town can currently put a number on:
+does Lunenburg spend above or below the minimum the state requires?**
+
+    SY      required NSS     actual NSS    over/under   % of required
+    2017     15,538,425     19,861,673     4,323,248      1.28
+    2020     17,948,505     22,275,868     4,327,363      1.24
+    2022     18,731,996     23,919,189     5,187,193      1.28
+
+About 128% of the floor, stable for six years, $4.3-5.2M above it.
+
+**Publish the measurement and both readings, never a verdict.** "The town already spends
+well above what the state requires" is true. So is "the required minimum is a floor, not a
+standard of adequacy" — the foundation formula has been criticised for decades as
+understating real costs, which is what the 2019 Student Opportunity Act addressed. A page
+that gives one of those without the other is taking a side using a number.
+
+**It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
 
 **Note the key is `FY`, not `SY`.** Every other file here is school year. Joining them
 without checking that would be the fiscal-year type error this repo has already had once,
