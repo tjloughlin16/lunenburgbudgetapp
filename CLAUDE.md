@@ -434,6 +434,49 @@ Four that happened in a single day:
 The general form: **an instrument that reformats before you see it is part of the finding,
 and it has to be checked like one.**
 
+### 13a. A hand-built deck or spreadsheet cannot carry the confidence a ledger can
+
+TJ, 8 September 2026, on the athletics costs: *"this is why we need ACTUALS where possible.
+hand crafted decks and sheets are not trustworthy to this degree of confidence."*
+
+**The worked example, because it is the sharpest this archive has.** Three published figures
+for one quantity — what Lunenburg athletics cost in a year:
+
+| figure | document | how it reached us |
+|---:|---|---|
+| $185,355.62 | *"Cost of Running Each Sport"*, attributed to a PowerPoint to School Committee, 1 May 2024, slide 12 | transcribed by the district into the PDF below; **the deck itself is not in the archive** |
+| $275,947.63 | `FY24 Programmatic Cost`, in *Athletic Program Costs by Sport*, with the FY26 budget materials | published, held, `sha256 218d17e1…` |
+| $349,145.39 | `Total Expenses`, the district's own by-sport workbook | **records request; no publisher address exists** |
+
+**Highest against lowest is 1.88x.** Per sport it is far worse: Outdoor Track is $15,221.50
+in one column and $1,146.00 in the other, a factor of thirteen.
+
+**And the first two are printed side by side, in one table, on one page.** This is not two
+documents that happen to disagree and nobody noticed. Whoever built that page was looking
+straight at $19,805.28 next to $25,774.45 for football and left both there.
+
+**What follows for the work.**
+
+- **A figure from a deck or a working spreadsheet is `stated`, and it stays `stated`
+  however official the document looks.** Slide numbers, letterheads and budget-packet
+  covers are not provenance. The question is always what produced the number, not what it
+  was printed on.
+- **Where a ledger exists, prefer it, and say when one does not.** Athletics is the only
+  programme here where any transaction-level record exists at all, and even that one — the
+  revolving fund's cashbook — cannot attribute a payment to a sport: 173 disbursements,
+  zero mentions of any sport.
+- **Never average or reconcile disagreeing hand-built figures into one number.** Publish
+  the spread. A reader deciding which sport to cut is better served by *"between $1,146 and
+  $15,221, and the town has not reconciled them"* than by any single figure we could
+  choose, and choosing one would be us adding a claim the documents do not make.
+- **Ask for the ledger.** The remedy is almost always a report the accounting system can
+  already produce: the accounts-payable detail behind the warrants, the year-end expense
+  report by department. Both are named on the records request for this reason.
+
+The general form, and it is rule 13 pointed at a whole class of document: **a spreadsheet
+is an argument someone assembled; a ledger is a record of what happened.** They can look
+identical on a page and they are not the same kind of thing.
+
 ---
 
 ## 14. After correcting a large error, re-examine everything it was explaining
