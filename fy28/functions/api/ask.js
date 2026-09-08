@@ -196,9 +196,20 @@ export async function onRequestPost({ request, env }) {
   });
 }
 
-export async function onRequestGet() {
+export async function onRequestGet({ env }) {
   return json({
     resource: 'ask',
+    // THE PAGE ASKS BEFORE IT RENDERS A FORM.
+    //
+    // The site key lives in the page and the secret lives only in Cloudflare, so the two
+    // halves can disagree — and they did: the site key was set while the secret was not,
+    // which would have rendered a form that looked live and refused every submission.
+    // That is worse than a form that says it is off, because the person only finds out
+    // after writing their question.
+    //
+    // So the server states whether it can actually accept, and the page believes the
+    // server rather than its own half of the pair.
+    accepting: Boolean(env?.TURNSTILE_SECRET) && Boolean(env?.QUESTIONS),
     method: 'POST',
     what: 'Ask a question about the Lunenburg town or school budget. Stored for review by '
         + 'a person; no automated answer is generated.',

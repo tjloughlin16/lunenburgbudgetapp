@@ -50,7 +50,26 @@ export function AskUs() {
   const rendered = useRef(false)
 
   const siteKey = (CONFIG as { turnstileSiteKey?: string }).turnstileSiteKey || ''
-  const live = Boolean(siteKey)
+
+  /** THE SERVER DECIDES WHETHER THIS FORM IS OPEN, not this page.
+   *
+   *  The site key is here and the secret is only in Cloudflare, so the two halves can
+   *  disagree — and once did: the key was set while the secret was not, which would have
+   *  rendered a form that looked live and refused every submission. A person only finds
+   *  that out after writing their question, which is the worst moment to find it out.
+   *
+   *  `null` while we are asking. The form does not render on a guess. */
+  const [accepting, setAccepting] = useState<boolean | null>(null)
+  useEffect(() => {
+    let alive = true
+    fetch('/api/ask')
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then(j => { if (alive) setAccepting(Boolean(j.accepting)) })
+      .catch(() => { if (alive) setAccepting(false) })
+    return () => { alive = false }
+  }, [])
+
+  const live = Boolean(siteKey) && accepting === true
 
   useEffect(() => {
     if (!live || rendered.current) return
@@ -117,6 +136,10 @@ export function AskUs() {
             className="mt-4 text-[14px] font-semibold underline"
             style={{ color: 'var(--series-cost)' }}>Ask another</button>
         </div>
+      ) : accepting === null ? (
+        <p className="mt-8 text-[15px]" style={{ color: 'var(--text-muted)' }}>
+          Checking whether the form is open&hellip;
+        </p>
       ) : !live ? (
         <div className="card p-6 mt-8 max-w-2xl"
           style={{ borderLeft: '4px solid var(--status-warning)' }}>

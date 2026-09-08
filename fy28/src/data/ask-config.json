@@ -1,5 +1,5 @@
 {
-  "turnstileSiteKey": "",
-  "_why": "Cloudflare Turnstile's SITE key, which is public by design and belongs in the page. Empty means the form is switched OFF and says so, rather than rendering a box whose submissions the server will refuse. The matching SECRET key is never here: it is set with `npx wrangler pages secret put TURNSTILE_SECRET` and lives only in Cloudflare.",
-  "_setup": "https://dash.cloudflare.com -> Turnstile -> Add site -> lunenburgbudgetproject.org. Paste the site key here, then run: cd fy28 && npx wrangler pages secret put TURNSTILE_SECRET"
+  "turnstileSiteKey": "0x4AAAAAAEsK8TUrv_8NpqtM",
+  "_why": "Cloudflare Turnstile's SITE key. Public by design — it is rendered into the page and is meant to be seen. The matching SECRET key is never here and never in git: it is set with `npx wrangler pages secret put TURNSTILE_SECRET` and lives only in Cloudflare. If this value is empty the form switches itself off and says so, rather than rendering a box whose submissions the server will refuse.",
+  "_where": "This sits under fy28/ because fy28/ IS the web app — src, public, functions, dist. The folder name is a fossil from when this site was one argument about the FY28 budget; it now holds every page, the archive and the API. The name is stale, the location is not."
 }

@@ -24,6 +24,36 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v13',
+        date='2026-09-07',
+        title='Ask us a question',
+        short='a form for residents, and a page that says what it cannot prove',
+        headline='There is now a form on this site for asking a question about the town or '
+                 'school budget. A person reads every one. There is no automated answer — '
+                 'a machine-written answer to a budget question is exactly the kind of '
+                 'confident wrong thing this site exists to argue against.',
+        changes=[
+            'Ask a question at /ask-a-question, linked from the front page. Anything about '
+            'the budget, where the money goes, or the data here. An email is optional and '
+            'is used only to reply.',
+
+            'What we keep: the question, when it arrived, and your email if you left one. '
+            'Not your IP address — to stop one source flooding the form we keep a '
+            'shortened one-way hash of it, enough to notice a flood and not enough to '
+            'identify anybody.',
+
+            'We cannot promise every question gets an answer, and we would rather say so '
+            'than imply otherwise. Some will need a document the town has not published, '
+            'and then the honest reply is which document that is.',
+
+            'Athletics costs on this site now carry a warning they should have carried '
+            'before. Per-sport costs come from one document — the district’s own workbook — '
+            'and the district has given inconsistent public answers about what middle '
+            'school athletics actually costs. What can be shown is that three documents '
+            'give three different figures for FY2024 and nothing published reconciles '
+            'them. That disagreement is the finding.',
+        ]),
+    dict(
         tag='v12',
         date='2026-09-07',
         title='The one assumption with nothing behind it now has the town’s own answer',
