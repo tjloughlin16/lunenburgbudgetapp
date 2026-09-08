@@ -782,6 +782,52 @@ GROUPS = [
              'Roster headcount by school and year', 2,
              '699 rows: how many names appear on each school\u2019s roster in each year. '
              'The same caveat governs it \u2014 see data/PROVENANCE-staff-rosters.md.'),
+            ('data/youtube-videos.csv',
+             'Every video on the town\u2019s PEG access channel', 2,
+             '4,671 rows: the video id, the title EXACTLY as posted, the URL and the '
+             'channel rank (0 = newest). A flat channel extraction returns no upload '
+             'dates, so `channel_rank` is the only chronology the channel gave us. It '
+             'carries no classification at all \u2014 what board a video was for is a '
+             'judgment about a string and lives in its own files.'),
+            ('data/youtube-title-classification.csv',
+             'What each video title says the video IS', 1,
+             '1,594 rows, one per distinct title stem \u2014 the title with its date '
+             'removed, which is OUR grouping device and never a quotable title. Each is '
+             '`meeting`, `not_a_meeting` (a Mass, a basketball game, a book club) or '
+             '`undetermined`, with the boards for a meeting and the reason where one is '
+             'worth recording. A LANGUAGE MODEL read these; see '
+             'data/PROVENANCE-youtube-classification.md.'),
+            ('data/youtube-boards.csv',
+             'The bodies we named, and why we say two names are one board', 1,
+             '40 rows. `meetings_folder` joins to the AgendaCenter folders and is EMPTY '
+             'for the seven bodies outside them \u2014 Town Meeting, the Water District, '
+             'the Green Community Task Force, the TCP Building Design Committee and three '
+             'state or federal agencies. `basis` carries the evidence for every rename '
+             'asserted: Selectmen titles stop 2020-10-13 and Select Board titles start '
+             '2020-10-20.'),
+            ('data/youtube-classification-overrides.csv',
+             'Human corrections to the video classification', 1,
+             'Keyed on video id, READ by the classifier and never written by it. Without '
+             'it every improvement to the classification would silently discard every '
+             'correction. Currently empty, and the generator reports how many it applied '
+             'on every run.'),
+            ('data/youtube-video-classification.csv',
+             'One row per video, with what we think it is', 2,
+             'Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date '
+             'derived from the title with `date_source` saying which route was used, and '
+             '`classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR '
+             'and belongs anywhere this index is quoted.'),
+            ('data/youtube-video-boards.csv',
+             'One row per (video, board) pair', 2,
+             'Generated. There is no board column on a video: a tri-board meeting is '
+             'three rows and is not a special case. `in_agenda_center` is NO for the '
+             'bodies the town\u2019s AgendaCenter does not carry.'),
+            ('data/PROVENANCE-youtube-classification.md',
+             'What the video classification is, and what it is not', 3,
+             'Written by us. The three outcomes, the line between a body convening and a '
+             'body presenting, the minutes that establish which three boards a tri-board '
+             'meeting is, and how the MM.DD.YY order was established from the titles '
+             'rather than assumed.'),
             ('data/staff-position-map.csv',
              'Roster position titles, grouped', 1,
              '534 rows mapping the position titles printed on the rosters onto groups. A '
@@ -1403,6 +1449,35 @@ GROUPS = [
          'we need \u2014 the registry records the gap rather than only the holdings, so '
          'next year\u2019s refresh starts from a list rather than from memory. Rebuild '
          'with scripts/build_dese_registry.py.'),
+        ('data/meeting-register.csv',
+         'Every meeting, and what survives of it', 3,
+         'One row per meeting occasion \u2014 one board, one date \u2014 with what this '
+         'project holds for it: an agenda, minutes, whether their text can actually be '
+         'read, a recording, a transcript, and a processed transcript. The last two are '
+         'zero everywhere today and the columns are kept anyway, because a column nobody '
+         'has filled is a measurable gap and a column nobody added is an invisible one. '
+         'THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes '
+         'documents, and a document implies a meeting \u2014 so a row means at least one '
+         'artefact says this board met that day, and a meeting that left no trace cannot '
+         'appear. The `evidence` column says which side put each row there, because the '
+         'document side is the town\u2019s own filing and the video side is a model '
+         'reading a video title, and those are different kinds of evidence. 231 meetings '
+         'here have a recording and no paperwork at all, 162 of them School Committee. '
+         'Rebuild with scripts/build_meeting_register.py.'),
+        ('data/minutes-searchable.csv',
+         'How much of the meeting archive a search can actually read', 3,
+         'Per board and year: how many documents the town listed, how many we hold, and '
+         'how many contain text a search can match \u2014 which is a quarter fewer than '
+         'hold a text file at all. The unsearchable ones are split by CAUSE rather than '
+         'lumped: image scans, pages whose text was converted to vector outlines (which '
+         'OCR cannot read either until they are rasterised), blank files, our own '
+         'extractor failing on a real text layer, and documents the town lists that we do '
+         'not hold. The threshold is not a guess \u2014 it is calibrated against whether '
+         'the PDF carries a font resource at all, and the two agree at zero characters and '
+         'nowhere else. It exists because rule 15a tells everyone here to search the '
+         'archive before concluding a thing was never discussed, and an unreadable '
+         'document and a subject nobody raised produce the identical empty result. '
+         'Rebuild with scripts/build_minutes_searchable.py.'),
         ('data/minutes-coverage.csv',
          'Minutes posted against agendas posted, by board and year', 3,
          'A grep of the meeting archive that finds nothing prints nothing, and nothing '

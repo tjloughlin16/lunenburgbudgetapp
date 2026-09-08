@@ -81,9 +81,33 @@ TOKEN = re.compile(r"[a-z][a-z0-9'-]{%d,}" % (MIN_LEN - 1))
 NAME = re.compile(r'^(\d{4}-\d{2}-\d{2})-([a-z]+)-(\d+)\.txt$')
 
 
+def _searchable_text():
+    """Borrow the ONE definition of "holds text a search can match".
+
+    Imported rather than reimplemented. Two copies of a coverage test is how a published
+    count and the terminal tool come to disagree about the same archive.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        'bms', os.path.join(ROOT, 'scripts', 'build_minutes_searchable.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.searchable_text
+
+
+
 def documents():
-    """Every published document, in a stable order, read off what is actually on disk."""
-    out = []
+    """Every SEARCHABLE document, in a stable order, read off what is actually on disk.
+
+    Not every document with a text file. The extractor writes a .txt for every PDF it
+    opens, including the image scans, and those files hold nothing but the `===PAGE n===`
+    markers the extractor itself wrote. Indexing them added a quarter of the archive to
+    this index's own stated coverage while contributing not one term to it -- so the
+    number this index published as its denominator was a number no search could ever
+    reach.
+    """
+    body_of = _searchable_text()
+    out, empty = [], 0
     for board in sorted(os.listdir(TEXT)):
         d = os.path.join(TEXT, board)
         if not os.path.isdir(d):
@@ -92,10 +116,13 @@ def documents():
             m = NAME.match(fn)
             if not m:
                 continue
+            if not body_of(os.path.join(d, fn)).strip():
+                empty += 1
+                continue
             date, kind, file_id = m.groups()
             out.append(dict(board=board, date=date, kind=kind, id=int(file_id),
                             path=f'/docs/minutes/text/{board}/{fn}'))
-    return out
+    return out, empty
 
 
 def unsearchable():
@@ -117,20 +144,26 @@ def unsearchable():
     if not os.path.exists(idx):
         return None, []
     import csv
+    body_of = _searchable_text()
     rows = list(csv.DictReader(open(idx)))
     missing = []
     for r in rows:
         stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
-        ok = stem and os.path.exists(
-            os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt'))
+        txt = (os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt')
+               if stem else '')
+        # THE TEST IS THE TEXT, NOT THE FILE. A .txt exists for every scan the extractor
+        # opened; it holds only page markers, and it was being counted as coverage.
+        ok = bool(txt) and os.path.exists(txt) and bool(body_of(txt).strip())
         if not ok:
             missing.append(dict(board=r['board'], date=r['date'], kind=r['kind'],
-                                url=r['url']))
+                                url=r['url'],
+                                reason=('no file held' if not (txt and os.path.exists(txt))
+                                        else 'no text layer — image scan or blank')))
     return len(rows), missing
 
 
 def main():
-    docs = documents()
+    docs, empty = documents()
     published_total, missing = unsearchable()
     if not docs:
         print(f'no documents under {TEXT} -- run publish_minutes.py first', file=sys.stderr)
@@ -194,11 +227,15 @@ def main():
         json.dump(dict(
             indexed=len(docs),
             published_by_the_town=published_total,
-            note=('Documents in this index against documents the town has published. A '
-                  'search here can only find something said in the indexed ones. If the '
-                  'two numbers differ, `unsearchable` lists every document that cannot be '
-                  'searched, and an empty result means "not in the indexed set" rather '
-                  'than "never discussed".'),
+            note=('Documents in this index against documents the town has published. '
+                  'INDEXED counts documents holding text a search can match, which is '
+                  'smaller than the number holding an extracted text file at all: a scan '
+                  'extracts to nothing but page markers, and counting those as covered '
+                  'overstated this index by roughly a quarter of the archive. A search '
+                  'here can only find something said in the indexed ones. `unsearchable` '
+                  'lists every document that cannot be searched and why, and an empty '
+                  'result means "not in the indexed set" rather than "never discussed".'),
+            unsearchable_count=len(missing),
             unsearchable=missing,
         ), fh, indent=1)
 
@@ -214,16 +251,23 @@ read in one fetch. This index exists so you do not have to.
 COVERAGE -- READ THIS BEFORE CONCLUDING ANYTHING FROM AN EMPTY RESULT
 
 This index covers {len(docs):,} documents. The town has published {published_total or len(docs):,}.
-{'Every published document is searchable.' if published_total == len(docs) else f'{published_total - len(docs)} are NOT searchable and are listed in coverage.json.'}
+{'Every published document is searchable.' if published_total == len(docs) else f'{published_total - len(docs):,} are NOT searchable and are listed in coverage.json.'}
 
 An empty result means the word is not in the {len(docs):,} documents indexed here. That is
 not the same as nobody having said it, and the two are only distinguishable if you know the
 denominator -- so it is published: {SITE}/minutes/find/coverage.json.
 
-This is not hypothetical. 39 documents the town published as Word files were missing from
-this archive while every count said otherwise, one of them School Committee minutes from the
-middle of a fiscal year under analysis. They are here now. The count above is what makes the
-next such gap visible instead of silent.
+MOST OF WHAT IS MISSING IS NOT MISSING. It is a photograph. {empty:,} documents the town
+published have an extracted text file that holds nothing but page markers, because the page
+is an image and nobody has run OCR over it. Those were counted as covered until this index
+was corrected, which is worse than not holding them: a document that cannot be read and a
+subject nobody raised produce the identical empty result, and one of them was being
+reported as read.
+
+This is not hypothetical in the other direction either. 39 documents the town published as
+Word files were missing from this archive while every count said otherwise, one of them
+School Committee minutes from the middle of a fiscal year under analysis. They are here
+now. The count above is what makes the next such gap visible instead of silent.
 
 HOW TO USE IT
 
@@ -265,7 +309,9 @@ Terms shorter than {MIN_LEN} characters are not indexed. Terms appearing in more
 postings would be most of the index. {dropped:,} terms were dropped on that rule.
 
 Words are matched exactly as they appear in the text, so plurals and possessives are
-separate terms. The text is extracted from scans, so it carries OCR errors.
+separate terms. The text is the PDF's own text layer, extracted, never OCR -- so it carries
+the extractor's line-breaking and column-order quirks, and a document with no text layer is
+absent from this index entirely rather than present with errors in it.
 
 BUILT FROM
 
@@ -280,7 +326,8 @@ derived and can be thrown away.
           f'({100*len(docs)/(published_total or len(docs)):.1f}%), '
           f'{len(kept):,} terms, {dropped:,} dropped as too common')
     if missing:
-        print(f'  {len(missing)} NOT searchable -- listed in coverage.json')
+        print(f'  {len(missing):,} NOT searchable -- listed in coverage.json '
+              f'({empty:,} of them hold a text file with no text in it)')
     print(f'  {len(shards)} shards, {total / 1e6:.2f}MB total, '
           f'largest shard {biggest[0]}.json at {biggest[1] / 1e3:.0f}KB')
     return 0

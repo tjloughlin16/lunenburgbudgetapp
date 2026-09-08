@@ -234,10 +234,32 @@ CHECKS = [
     ('build_sitemap.py', ['--check']),
     ('check_github_mirror.py', []),
     ('classify_roster_roles.py', ['--check']),
+    # What each of the 4,671 PEG-channel videos IS. The most derived thing in this
+    # archive -- a language model's reading of a title -- so this entry catches four kinds
+    # of drift nothing else would. A title stem with no decision recorded, which becomes
+    # `undetermined` rather than a guess and is printed by name. A board named in the
+    # classification that is not in the board registry, or a registry row naming a
+    # sources/meetings/ folder that does not exist -- a registry pointing at nothing reads
+    # as coverage. A run where the join to the decisions matches nothing, which looks
+    # exactly like a channel with no meetings on it. And the overrides file, which is READ
+    # and never written: without it every improvement to the classification would silently
+    # discard every human correction, and nothing would report that it happened.
+    ('build_youtube_classification.py', ['--check']),
     ('build_views.py', ['--check']),
     ('build_archive_guide.py', ['--check']),
     ('build_show_your_work.py', ['--check']),
     ('build_data_model_grids.py', ['--check']),
+    # How much of the meeting archive can actually be SEARCHED, per board and year --
+    # which is not how much of it has a text file beside it. A .txt exists for every scan
+    # the extractor opened, holding only the `===PAGE n===` markers the extractor itself
+    # wrote, and `search_minutes.py` counted every one of those as searched. A quarter of
+    # the archive was reported as covered while contributing nothing a grep could match,
+    # which defeats the single thing that coverage line exists to prevent. This entry also
+    # catches the reverse: an OCR run that recovers documents and is never reflected in
+    # what the tool tells a reader it searched. It refuses to write unless every count
+    # foots against the town's own listing.
+    ('build_minutes_searchable.py', ['--check']),
+    ('build_meeting_register.py', ['--check']),
     ('split_large_text.py', ['--check']),
     ('build_question_bank.py', ['--check']),
     # DESE's three district-finance datasets: the registry of how to get them again, and

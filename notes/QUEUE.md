@@ -14,13 +14,39 @@ section marked done.
 
 ## Still open from phase one
 
-- **The SEARCHABLE-TEXT denominator, item 3's other half.** `build_minutes_coverage.py`
-  compares what we hold against what the town lists, which was the fix asked for. But
-  `search_minutes.py` still counts a document as searched when a `.txt` file exists for
-  it, and **3,365 of 12,016 (28%) are image scans whose text file holds only page
-  markers**. So the line that exists to stop a silent grep reading as *nobody said it* is
-  overstating coverage by more than a quarter. Worst affected: select-board 642,
-  finance-committee 314, board-of-assessors 257.
+- ~~**The SEARCHABLE-TEXT denominator, item 3's other half.**~~ **DONE, 8 September 2026.**
+  `search_minutes.py` counted a document as searched when a `.txt` file existed for it, and
+  a `.txt` exists for every scan the extractor opened holding nothing but the
+  `===PAGE n===` markers the extractor itself wrote. Measured properly:
+  **8,899 of the 12,015 documents held are searchable
+  (74%)**, so 3,116 were being reported as
+  covered while contributing nothing a grep could match, and a further 50
+  the town lists are not held at all.
+  **The threshold is zero, and that is measured rather than chosen.** Calibrated against a
+  signal independent of the extractor — whether the PDF carries a `/Font` resource — and
+  the two agree at zero and nowhere else. Do not take that from this note; recompute it:
+
+      python3 scripts/build_minutes_searchable.py --calibrate
+
+  It prints the cross-tabulation band by band and the two percentages the cut rests on,
+  both of which are currently above 99.8. The documents in the 1-40 character band are NOT
+  scans; they are one-line AgendaCenter stubs that do carry a text layer
+  (`Planning Board Meeting1.`), and folding them in would have misattributed several
+  hundred documents to OCR.
+  Each unsearchable document is diagnosed from its own structure rather than assumed:
+  **3,096 image scans, 3 whose text is drawn as vector
+  outlines** (no font and no raster image — OCR cannot see those either until somebody
+  rasterises them), **14 blank**, 2 with a text layer our
+  extractor could not read, 1 that will not parse.
+  Worst affected, as a share of what that board holds:
+  board-of-assessors 255/488 (52%), select-board 629/1,347 (47%), lunenburg-housing-authority 110/255 (43%), school-building-committee-meeting 67/160 (42%), finance-committee 305/780 (39%).
+  `scripts/build_minutes_searchable.py` writes `sources/data/minutes-searchable.csv` per
+  board and year, `check_generated.py` fails if it goes stale, `search_minutes.py` reports
+  the denominator **for the filter you ran** rather than the archive average, and the limit
+  is registered as a `record` gap in `sources/data/money-gaps.csv`.
+  **Still open from it:** one orphan — `select-board/2026-02-24-agenda-7671.txt` is in the
+  text tree and not in `sources/meetings/index.csv`, so the tree and the index disagree by
+  one document. Nothing established about why.
 - **Item 4, the rule 15a re-runs.** Only `/what-stopped-being-funded` re-ran its searches
   against the grown archive. **Athletics, PEG and free cash have not**, and neither has
   *why $1,500?* — the vote is in the minutes of 26 February 2025 with no derivation, and
@@ -35,10 +61,18 @@ section marked done.
 TJ, 8 September 2026: *"lets add to the roadmap to OCR those meeting minutes that aren't
 text. Not imoprtant right now."*
 
-**3,365 documents, 28% of the meeting archive, carry no text layer.** Every one sampled is
-an image PDF rather than a blank, so the words are there and unreadable rather than
-absent — OCR would recover them. They are now in R2, so the originals survive whatever
-happens to this disk, which is what made this safe to defer.
+**3,116 documents, 26% of what the
+meeting archive holds, carry no text a search can match.** Measured across all of them
+rather than sampled, and they are not one thing: **3,096 are image PDFs**, so
+the words are there and unreadable rather than absent and OCR would recover them;
+**3 draw their text as vector outlines**, which OCR cannot see either
+until the page is rasterised first; **14 are blank** and hold nothing to
+recover, here or ever; 2 have a text layer our own extractor could not
+read, which is ours to fix and not OCR's job; 1 will not parse at all.
+So the OCR run's real target is 3,099 documents, not
+all 3,116. They are in R2, so the originals survive whatever happens to this
+disk, which is what made this safe to defer. Per board and year:
+`sources/data/minutes-searchable.csv`.
 
 Two things to carry into it when it happens:
 
@@ -46,9 +80,10 @@ Two things to carry into it when it happens:
   lottery PDF is the worked example already in this archive: its per-applicant pages OCR'd
   to `L.unenburg`, `Lunchburg` and `Accepte`. Whatever this produces must be marked as
   ours and must never be quoted as the document's own words.
-- **Fix the denominator first, or this hides itself.** While `search_minutes.py` counts
-  these as searched, there is no signal telling anybody the OCR is needed or, later, that
-  it worked.
+- ~~**Fix the denominator first, or this hides itself.**~~ **Done, 8 September 2026.**
+  `sources/data/minutes-searchable.csv` is the signal, per board and per year, and
+  `check_generated.py` fails when it stops reproducing — so an OCR run that works shows up
+  as the image-scan count falling, and one that silently does not shows up as it not.
 
 
 Written 8 September 2026. Ordered deliberately: **finishing beats starting**, and each
@@ -91,6 +126,9 @@ as a fact about what the town publishes. It is not.
 `search_minutes.py` prints on every run:
 
     Searched 1,422 of 1,422 documents the town has published.
+
+(Fixed twice since. The count above was a snapshot of a 2025-onward archive; the second
+defect, counting a text FILE as searched text, is closed under *Still open from phase one*.)
 
 **That denominator is ours.** It compares what we hold against what we hold, and calls the
 result what the town published. The line exists precisely so that a grep finding nothing

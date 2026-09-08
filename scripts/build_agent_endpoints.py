@@ -27,6 +27,22 @@ DATA = os.path.join(PUB, 'data')
 SITE = 'https://lunenburgbudgetproject.org'
 
 
+def _searchable_text():
+    """Borrow the ONE definition of "this document holds text a search can match".
+
+    Imported rather than reimplemented: two copies of a coverage test is how a published
+    count and the terminal tool come to disagree about the same archive, and this repo has
+    already shipped that defect once with `has_text`.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        'bms', os.path.join(ROOT, 'scripts', 'build_minutes_searchable.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return lambda path: bool(path and os.path.exists(path) and mod.searchable_text(path))
+
+
+
 
 # Which escalators to name, and what to call them. Iterated rather than written out so
 # that a bucket the model does not carry is omitted instead of printed as 0.0% -- the
@@ -401,34 +417,52 @@ def main():
                           about + ' An index; each section is its own file, sized.',
                           os.path.getsize(os.path.join(out_dir, 'index.json'))))
 
-    # The meeting index gets one column the source file does not have: has_text.
+    # The meeting index gets two columns the source file does not have: has_text and
+    # searchable. TWO, because they are different facts and conflating them published a
+    # coverage figure that was wrong by a quarter of the archive.
     #
-    # It is DERIVED here, from what is on disk at publish time, rather than stored
+    # `has_text` says an extract exists. `searchable` says that extract holds something a
+    # grep could match -- which is a strictly smaller set, because the extractor writes a
+    # .txt for every scan it opens containing nothing but the `===PAGE n===` markers it
+    # wrote itself. For a long time only has_text was published, under a sentence saying
+    # those rows "have extracted text a search can reach". They did not.
+    #
+    # Both are DERIVED here, from what is on disk at publish time, rather than stored
     # upstream -- a stored coverage flag is a claim, and a claim goes stale silently,
-    # which is the exact failure this column exists to prevent. 39 documents were once
+    # which is the exact failure these columns exist to prevent. 39 documents were once
     # absent from the text tree while every published count said 1,422, so a search
     # returning nothing could not be distinguished from a subject nobody discussed. A
     # caller can now compute its own denominator without probing anything.
     mi_src = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
     if os.path.exists(mi_src):
+        searchable_text = _searchable_text()
         mi_out = os.path.join(DATA, 'minutes-index.csv')
         rows = list(csv.DictReader(open(mi_src)))
         for r in rows:
             stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
-            r['has_text'] = 'Y' if stem and os.path.exists(
-                os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt')) else 'N'
+            txt = (os.path.join(ROOT, 'sources', 'meetings', 'text', stem + '.txt')
+                   if stem else '')
+            r['has_text'] = 'Y' if txt and os.path.exists(txt) else 'N'
+            r['searchable'] = ('Y' if r['has_text'] == 'Y' and searchable_text(txt)
+                               else 'N')
         with open(mi_out, 'w', newline='') as fh:
             w = csv.DictWriter(fh, list(rows[0].keys()))
             w.writeheader()
             w.writerows(rows)
         readable = sum(1 for r in rows if r['has_text'] == 'Y')
+        greppable = sum(1 for r in rows if r['searchable'] == 'Y')
+        if not greppable:
+            raise SystemExit('not one meeting document is searchable. Refusing to publish '
+                             'an index that says the archive holds no words.')
         published.append((
             'minutes-index.csv',
             'Every agenda and set of minutes the town publishes: board, date, kind, the '
-            f'town’s own URL, and has_text. {len(rows):,} rows, of which {readable:,} '
-            'have extracted text a search can reach. Check has_text before concluding '
-            'that something was never discussed: a document nothing can read and a '
-            'subject nobody raised are different facts and produce the same empty result.',
+            f'town’s own URL, has_text and searchable. {len(rows):,} rows, of which '
+            f'{readable:,} have an extracted text file and only {greppable:,} hold any '
+            'text a search can match — the rest are image scans. Check SEARCHABLE, '
+            'not has_text, before concluding that something was never discussed: a '
+            'document nothing can read and a subject nobody raised are different facts '
+            'and produce the same empty result.',
             os.path.getsize(mi_out)))
 
     a, f = model['assumptions'], model['fy27']
@@ -951,7 +985,12 @@ def main():
         counts=dict(
             minutes_documents=len(minutes_rows),
             minutes_boards=len(boards),
-            minutes_searchable=sum(1 for r in minutes_rows if r.get('has_text') == 'Y'),
+            # has_text and searchable are NOT the same count, and publishing the first
+            # under the second's name overstated coverage by a quarter of the archive.
+            minutes_with_text_file=sum(1 for r in minutes_rows
+                                       if r.get('has_text') == 'Y'),
+            minutes_searchable=sum(1 for r in minutes_rows
+                                   if r.get('searchable') == 'Y'),
             school_committee_documents=boards.get('School Committee'),
             source_documents=sources['totals']['documents'],
         ),
@@ -959,7 +998,8 @@ def main():
             f'{SITE}/minutes/INDEX.txt': 'repeats minutes_documents and the per-board counts',
             f'{SITE}/agents': 'repeats minutes_documents and the per-board counts',
             f'{SITE}/minutes/find/coverage.json': 'repeats minutes_documents and minutes_searchable',
-            f'{SITE}/data/minutes-index.csv': 'one row per minutes document, with has_text',
+            f'{SITE}/data/minutes-index.csv': 'one row per minutes document, with '
+                                              'has_text AND searchable',
         },
     )
     with open(os.path.join(PUB, 'version.json'), 'w') as fh:
