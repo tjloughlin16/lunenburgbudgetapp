@@ -128,6 +128,21 @@ classification codes live, and what would settle:
 - why special education teacher FTE falls 18.5 to 2.0 while total FTE holds flat — how FTE
   is apportioned when one person works across categories
 
+**Checked twice, because raw counts lied.** A first pass counted `ESP` 8 times and `FTE` 9
+times, which looked like the definitions were there after all. Word-boundary matching finds
+ZERO of both: `ESP` was inside *responsible* and *Response*, `FTE` inside *after*. The only
+real hit is `Assistant` (10), and in an administrative-title sense.
+
+**And a wider point TJ raised that outlives the handbook question.** Lunenburg's budget book
+uses its own vocabulary. The district calls a line *Special Ed Paraprofessionals*; DESE has
+its own definition of a paraprofessional on the return. Neither is wrong and they are not
+the same set of people — which is most of why the $69,161 per FTE result exists.
+
+So the fix is not only EPIMS. It is **the district's own crosswalk**: how its budget line
+names map onto what it reports to the state. That may exist nowhere in writing, in which
+case it is a records request rather than a download, and a good one — the answer would
+settle several things at once.
+
 **Look for the EPIMS Data Handbook on doe.mass.edu**, under educator data rather than the
 Socrata portal. Until it is in hand, neither staffing contradiction can be closed and
 neither number may be published as an answer.
