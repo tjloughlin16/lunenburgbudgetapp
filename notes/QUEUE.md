@@ -164,3 +164,73 @@ breaker reimburses; and the route into out-of-district placement.
   and the tuition each way.
 - **Retirement exposure** — educators by age group drives future salary-step cost.
 - **Student-teacher ratio against spending**, over time and against peers.
+
+---
+
+# Phase three: the site as a town hub
+
+Set 8 September 2026. **A different KIND of content from everything above, and that
+distinction is the first design decision.**
+
+Every page on this site so far is a *measurement* — a figure somebody can check against a
+document. What follows is *announcements*: what happened, what is coming, what is open for
+registration. Both are useful and they are not the same epistemic category. **Keep them
+structurally and visually distinct**, or the credibility built by the first gets spent by
+the second. A wrong meeting date is a small error; a wrong meeting date sitting beside a
+budget figure teaches a reader that the budget figures are that kind of number.
+
+## 12. Refresh mechanisms — soon, TJ wants these in days
+
+**"Deterministic" is TJ's word and it is the right requirement.** Every checker answers
+*what changed since the last run*, stores that state, and is idempotent — running twice
+produces one result, not two. No feed should ever be able to say "new" about something it
+already said was new.
+
+**YouTube — the Lunenburg Access channel.** `youtube.com/user/LunenburgAccess/videos`, found
+in the minutes' own standing notice, and it is the PEG channel whose finances this project
+already extracted. **Use the channel RSS feed** (`/feeds/videos.xml?channel_id=…`) rather
+than the API: no key, no quota, no billing, and it is a published interface. Surface as
+"3 new videos this week" / "New School Committee video".
+
+**Meetings — we already have the fetcher.** `scripts/fetch_agendas.py` walks board × year.
+Extend it to report NEW rather than re-download everything, and drive two surfaces:
+*"Upcoming meetings this week"* with the agenda downloadable, and *"minutes posted"* when a
+meeting that had none gets some. **The second is quietly valuable**: it is the same signal
+as `minutes-coverage.csv`, live — a town where minutes appear promptly looks different from
+one where they do not, and now that is measurable rather than felt.
+
+**Cost.** These are cheap (RSS and HTML, no paid API), but anything writing to D1 shares the
+100,000/day budget the data push needs — see the question inbox, which was given its own
+database for exactly this reason. Do the same here, or keep state in a committed file.
+
+## 13. Community news
+
+Aggregate and LINK. Do not republish. Reproducing somebody else's announcement wholesale is
+both a copyright problem and a quality one — the value is the pointer plus a sentence of
+context, not a copy. Attribute the source on every item.
+
+## 14. Athletics and youth sports — a section of its own
+
+Registration openings harvested and posted as they appear. Same rule as community news:
+link, summarise, attribute; never wholesale copy.
+
+**Note the tension with `/what-sports-cost`.** That page says the district's own athletics
+cost figures are disputed. A sports section that reads as promotional next to an analysis
+that reads as sceptical needs a clear line between them, or each undermines the other.
+
+## 15. The sports directory — TJ says MUCH later, recorded now so it is not lost
+
+What sports are available at what ages, how to register, who to contact, what it costs.
+
+**This is the most useful thing on the whole list for an ordinary resident, and the hardest
+to keep true.** It is not derived from any document we hold: it must be gathered from
+leagues, the district and youth organisations, and it goes stale the moment a season turns
+or a volunteer changes. Anything built here needs a stated review cadence and a visible
+"last checked" date per entry, or it becomes a page of wrong phone numbers.
+
+If it is ever built: the same rules apply. Every entry names where it came from and when it
+was verified.
+
+## 16. Facebook — later still
+
+Push the above to drive people back to the site. Nothing to build until the feeds exist.
