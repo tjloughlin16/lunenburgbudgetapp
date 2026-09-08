@@ -84,3 +84,83 @@ rule 13 with a microphone.**
   athletics accounts-payable detail, the district's fee schedule as published to families,
   and the 26 February 2025 athletic user fee presentation.
 - **D3**, the tax-rate and town-meeting extraction, still parked.
+
+---
+
+# Phase two: what the DESE data becomes
+
+Set 8 September 2026, after ingesting 18 DESE files. **Sequenced deliberately — the
+database work gates everything below it.**
+
+## 6. Build the database out
+
+15 of 18 staged files are catalogued and unread. Nothing below can start until they load,
+and each carries a trap already recorded in `notes/DATA-TO-INGEST.md`: rollup rows beside
+detail, `FY` against `SY` keys, a repeated SY2024 row, VLOOKUP front sheets.
+
+**Do not load them all into one wide table.** They are different grains — district, school,
+person-class, placement-cohort — and joining across grains is how this project produced
+$116M for a $26.6M district.
+
+## 7. Grant money unwinding — the visual TJ asked for first
+
+The finding is already established for one line. Paraprofessionals, function 2330:
+
+    FY2013 -> FY2014   total +1.3%   general fund -40%   grants +190%
+    FY2019 -> FY2022   total +22%    town's share +44%
+
+**Half of what looks like growth is a grant ending.** The page should run that across every
+function code, not just paras — a stacked area of general fund against grants per function,
+where the eye sees the swap even when the total is flat.
+
+**The honest frame:** this is DESE's attribution of a dollar to a fund. It does not say
+which post, which grant, or that the same people moved between funds.
+
+## 8. Staffing, in FTE, against funding and cost
+
+Now possible and previously not: FTE by grade band, subject and school; headcount by job
+class including administrators; special education staffing ratios; retention and new hires.
+
+**Cost per FTE is the prize and the trap.** EPIMS FTE is per ASSIGNMENT; a budget line pays
+whole salaries. Any cost-per-FTE figure must state which denominator it used, or it will
+reproduce the $69,161 error in a new costume.
+
+Carry forward as unresolved: sped teacher FTE 18.5 (2008) to 2.0 (2026) against flat total
+FTE, and administrators 28 to 38 on a base of ten people over three years.
+
+## 9. Chapter 70, modelled exactly
+
+34 years of every formula term, FY1993-FY2026, and FY2026 aid reconciles to the figure
+derived independently for `/state-aid`. Foundation enrolment, foundation budget, required
+local contribution, aid, required and actual NSS — plus `keyfactors.xlsx` holding the
+INPUTS (English learner, vocational and low-income shares).
+
+**Whether it can be modelled *exactly* is an open question, not a promise.** The formula has
+hold-harmless and minimum-aid provisions; Lunenburg's aid already sits $395,366 above
+foundation-minus-required, which is those provisions operating. Test the reproduction
+against known years before claiming a model.
+
+## 10. Special education: four reports, not one
+
+The data now answers, separately: how many students (a published count, 217-265); how many
+leave and where (58 via choice in SY2026, back to 2014); what it costs and what circuit
+breaker reimburses; and the route into out-of-district placement.
+
+**Keep them apart.** Merging them into one narrative is how a proxy becomes a fact.
+
+## 11. What else — candidates worth testing
+
+- **Lunenburg is 310th of 318 districts on per-pupil spending**, $18,027 against a $23,520
+  median. Verify, then publish; it is the plainest fact in the whole batch.
+- **Spending mix against peers** — do we spend more on administration and less on teaching,
+  per pupil, than comparable districts?
+- **Foundation budget against actual spending, by category.** The foundation formula assumes
+  a per-pupil amount per category. Comparing actual function spending to what the formula
+  assumes shows where the town spends above or below the state's own model of adequacy.
+  Nobody in town has this.
+- **Circuit breaker against the out-of-district line** — how much of that cost comes back,
+  and whether the budget line is stated net or gross of it.
+- **The net school choice position** — we hold both directions. Children out, children in,
+  and the tuition each way.
+- **Retirement exposure** — educators by age group drives future salary-step cost.
+- **Student-teacher ratio against spending**, over time and against peers.
