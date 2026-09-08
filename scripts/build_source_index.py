@@ -1712,6 +1712,25 @@ def publish(rel):
                 f'--push, then check_archive_storage.py')
         return size, None
 
+    # THE DATABASE IS NOT COPIED INTO THE BUILD, and this is the one exception here.
+    #
+    # `fy28/public/` IS the Cloudflare Pages build, and Pages caps a static asset at 25MB
+    # -- a platform limit, not a quota. The database passed it on 8 September (29.3MB), so
+    # a copy here fails the deploy. `build_api.py` deletes it and this function put it
+    # straight back: two generators, one file, opposite intentions, and the loop was only
+    # visible because check_github_mirror demanded the file be committed while .gitignore
+    # refused it.
+    #
+    # Both published addresses still work and neither moves. `/data/lunenburg.db` streams
+    # from R2 via `fy28/functions/data/lunenburg.db.js`, and the GitHub fallback reads
+    # `mirror/data/lunenburg.db`, which is OUTSIDE the build and is why that directory
+    # exists. A URL is an interface; where the bytes live is an implementation detail.
+    if rel == 'data/lunenburg.db':
+        stale = os.path.join(DOCS, rel)
+        if os.path.exists(stale):
+            os.remove(stale)
+        return size, None
+
     dst = os.path.join(DOCS, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     # Re-copy only when it would actually differ, so a rebuild is not 128MB of writes.
