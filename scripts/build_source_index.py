@@ -378,6 +378,16 @@ GROUPS = [
             ('peer-districts/wachusett-fy27-budget-presentation.pdf', 'Wachusett FY27 budget presentation', 2,
              'Member-town assessments, enrollment by town, and a discretionary contribution '
              'up 9.21%.'),
+            ('peer-districts/montytech-class-of-2030-lottery.pdf',
+             'Montachusett Regional admissions lottery, class of 2030', 2,
+             'Not a peer — the district Lunenburg PAYS, and the larger of the two outflows '
+             'of resident students. Filed here because of how it reached us: mirrored from '
+             'another district\u2019s own website. The summary page is trustworthy and the '
+             'per-applicant pages are not: the 18 town figures sum to the printed total of '
+             '365, but the applicant pages are OCR of an image PDF and produced '
+             '\u201cL.unenburg\u201d, \u201cLunchburg\u201d and truncated statuses, so '
+             'accepted-versus-waitlisted must not be counted from them. The document holds '
+             'no personal data: a town, an anonymous applicant number and a status.'),
         ],
     },
     {
@@ -1384,7 +1394,25 @@ GROUPS = [
              'loaded once and a net position drawn from it rests on one measurement '
              'rather than two agreeing ones. Rebuild with '
              'scripts/extract_dese_students.py.'),
-            ('data/lunenburg.db',
+            ('data/dese-source-registry.csv',
+         'Every DESE dataset this project reads, and how to refresh it', 3,
+         'The state publishes these on its own schedule, so each row carries the portal '
+         'page a person can open, the API endpoint a program can call, the publisher, the '
+         'sha256 of the copy we hold, what the dataset can answer, and when it is worth '
+         'fetching again. Rows marked WANTED are datasets we do NOT hold and have decided '
+         'we need \u2014 the registry records the gap rather than only the holdings, so '
+         'next year\u2019s refresh starts from a list rather than from memory. Rebuild '
+         'with scripts/build_dese_registry.py.'),
+        ('data/minutes-coverage.csv',
+         'Minutes posted against agendas posted, by board and year', 3,
+         'A grep of the meeting archive that finds nothing prints nothing, and nothing '
+         'reads as \u201cnobody said it\u201d. This is the denominator that stops that: '
+         'per board and year, how many meetings the town posted an agenda for and how many '
+         'it posted minutes for. The denominator is AGENDAS, not meetings held \u2014 a '
+         'meeting with neither is invisible to us and this table cannot see it either. '
+         'School Committee minutes are 162 of 402 listed meetings, with none at all in '
+         '2021 or 2022. Rebuild with scripts/build_minutes_coverage.py.'),
+        ('data/lunenburg.db',
              'The whole analysis database, SQLite', 3,
              'Every figure on this site in one queryable file, built by '
              'scripts/build_db.py from the CSVs above, which remain the source of truth. '
@@ -1857,6 +1885,9 @@ SOURCE_URLS = {
     'peer-districts/north-middlesex-finance-subcommittee.pdf':
         'https://resources.finalsite.net/images/v1764774508/nmrsdorg/'
         'bregkjqfing6b9eyfqzz/2025-12-01-FinancePacket.pdf',
+    'peer-districts/montytech-class-of-2030-lottery.pdf':
+        'https://montytech.net/wp-content/uploads/2026/03/'
+        'Class-of-2030-Lottery-Results.pdf',
 
     # The town's own web server, which has never lost a link: 81 of 81 on 29 August and
     # again on 31 August.

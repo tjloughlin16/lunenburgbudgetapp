@@ -362,3 +362,75 @@ export function NamedLines({ lines, span }: { lines: Named[]; span: number[] }) 
     </div>
   )
 }
+
+/* ------------------------------------------- the state's own fund split, by category */
+
+export type FundPoint = { fy: number; gen_fund: number; grants: number; total: number }
+
+/** GENERAL FUND against GRANTS AND REVOLVING, from DESE, for one function category.
+ *
+ *  This is the one chart on the page whose two marks are not "stopped" and "came back",
+ *  so it does not reuse those two. General fund is the site's cool series colour; grants
+ *  and revolving is the enterprise-fund green, which on /money-outside-the-budget already
+ *  means money that is not the general fund — the same meaning it carries here.
+ *
+ *  Stacked, because the two ARE parts of one total: DESE's own `total` column, which the
+ *  extract reconciles to before any of this is published.
+ *
+ *  ONE AXIS. Both series are dollars on the same scale, and the page never differences
+ *  this against the district's own book — different grains, and `crosswalk` is empty on
+ *  purpose. */
+export const GENERAL = 'var(--series-cost)'
+export const GRANTS = 'var(--fund-enterprise)'
+
+function FundTip({ active, payload }: {
+  active?: boolean; payload?: { payload: FundPoint }[]
+}) {
+  const p = payload?.[0]?.payload
+  if (!active || !p) return null
+  return (
+    <div className="card p-2.5 text-[12px]" style={{ minWidth: 220 }}>
+      <div className="font-bold mb-1">{fy(p.fy)}</div>
+      <div className="flex justify-between gap-4">
+        <span style={{ color: 'var(--text-secondary)' }}>General fund</span>
+        <span className="tnum">{usd(p.gen_fund)}</span>
+      </div>
+      <div className="flex justify-between gap-4">
+        <span style={{ color: 'var(--text-secondary)' }}>Grants and revolving</span>
+        <span className="tnum">{usd(p.grants)}</span>
+      </div>
+      <div className="flex justify-between gap-4 mt-1 font-semibold">
+        <span>All funds</span><span className="tnum">{usd(p.total)}</span>
+      </div>
+    </div>
+  )
+}
+
+export function FundSplit({ points, height = 200 }: {
+  points: FundPoint[]; height?: number
+}) {
+  return (
+    <div className="mt-4">
+      <div style={{ height }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={points} margin={{ top: 6, right: 6, left: 0, bottom: 0 }}
+            barCategoryGap="20%">
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="fy" tickFormatter={fy} tick={{ fontSize: 11 }}
+              stroke="var(--axis)" interval="preserveStartEnd" />
+            <YAxis tickFormatter={v => usd(v)} tick={{ fontSize: 11 }} stroke="var(--axis)"
+              width={64} />
+            <Tooltip cursor={{ fill: 'var(--surface-3)' }} content={<FundTip />} />
+            <Bar dataKey="gen_fund" stackId="f" isAnimationActive={false} fill={GENERAL} />
+            <Bar dataKey="grants" stackId="f" isAnimationActive={false} fill={GRANTS}
+              radius={[3, 3, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <Key items={[
+        { color: GENERAL, label: 'general fund — the only part the district’s budget book shows' },
+        { color: GRANTS, label: 'grants and revolving funds — invisible in that book' },
+      ]} />
+    </div>
+  )
+}

@@ -137,6 +137,14 @@ QUOTES = [
              'district’s book after FY2022 and the middle school line is still funded in '
              'FY2025. A budget line is not a filled post, and this is the two halves '
              'sitting side by side.'),
+    dict(key='psychologist', board='finance-committee', date='2021-03-18',
+         kind='minutes', doc='2083',
+         quote='Covid relief money was used to hire a part- time school psychologist.',
+         why='The single largest line on this page that went to a printed zero and stayed '
+             'there is a school psychologist line. Five years later a board is told a '
+             'school psychologist was hired with money from outside the budget book. Two '
+             'facts, five years apart, about different posts; the page does not join '
+             'them, and this is what a line at zero can look like from the other side.'),
     dict(key='prof-development', board='school-committee', date='2026-02-04',
          kind='minutes', doc='7634',
          quote='the remaining $17,000 will be dedicated to contracted professional '
@@ -162,6 +170,33 @@ QUOTES = [
 SEARCHED = ['guidance counselor', 'professional development', 'department head',
             'tutoring', 'psychologist', 'school psychologist', 'adjustment counselor',
             'textbook']
+
+# DESE'S OWN FIGURES, AS CORROBORATION AND NOT AS A JOIN. `dese_function_expenditure`
+# splits every function category into GENERAL FUND and GRANTS/REVOLVING, FY2009-FY2025,
+# collected by the state to its own definitions. That is the one thing the district's
+# budget book structurally cannot show (rule 11): the book is the general fund and nothing
+# else, so a line falling because a grant took it over and a line falling because the
+# activity stopped are identical in it.
+#
+# THE GRAINS DO NOT JOIN, and this is deliberately not a join. A district budget line is
+# not a DESE function code; `crosswalk` in this database is EMPTY on purpose, because the
+# mapping is an inference and recording an inference as a mapping is how this project's
+# worst errors happen. So each category below is set BESIDE a family of district lines and
+# read at the category level only: does the state's independently-collected total for this
+# kind of spending fall in the years the district's lines stop? The pairing is OURS and the
+# page says so.
+DESE_LEA = '01620000'
+DESE_CATEGORIES = [
+    ('PDEV', 'the professional development lines',
+     'Five per-school professional development lines go to zero. Did professional '
+     'development spending fall?'),
+    ('GUID', 'the guidance counsellor lines',
+     'Three of the four guidance counsellor lines stop appearing after the FY2022 '
+     'boundary. Did guidance spending fall?'),
+    ('MATL', 'the textbook, workbook and supplies lines',
+     'The largest group of zeroings by count is books, materials and supplies. Did '
+     'spending on materials fall?'),
+]
 
 GAP_KEYS = [
     ('money_out', 'Whether a school line that stops appearing in the district’s book '
@@ -215,6 +250,96 @@ def series(cx):
     return kept
 
 
+def dese(cx, first_fy, last_fy):
+    """The state's own figures for the categories this page's findings sit in.
+
+    Refuses on three things, each of which would otherwise publish a corroboration that
+    corroborates nothing: the table being absent, Lunenburg having no rows in a category
+    the page names, and any row DESE's own reconciliation marks as not tying."""
+    have = cx.execute("SELECT name FROM sqlite_master WHERE type='table' "
+                      "AND name='dese_function_expenditure'").fetchone()
+    if have is None:
+        fail('dese_function_expenditure is not in the database — this page sets the '
+             "state's independent fund split beside the district's book, and without it "
+             'the corroboration section would render empty')
+    out = []
+    for code, family, question in DESE_CATEGORIES:
+        rows = cx.execute(
+            'SELECT fy, gen_fund, grants_revolving, total, reconciles, doc_id '
+            'FROM dese_function_expenditure '
+            "WHERE lea=? AND level='category' AND func_cat_code=? ORDER BY fy",
+            (DESE_LEA, code)).fetchall()
+        if not rows:
+            fail(f'DESE has no Lunenburg rows for category {code} — the join matched '
+                 'nothing, which looks exactly like the state publishing nothing')
+        bad = [r['fy'] for r in rows if r['reconciles'] != 'yes']
+        if bad:
+            fail(f'DESE category {code} does not reconcile in {bad} — refusing to quote '
+                 'a figure the extract itself says does not tie')
+        desc = cx.execute('SELECT func_cat_desc FROM dese_function_expenditure '
+                          "WHERE lea=? AND level='category' AND func_cat_code=? LIMIT 1",
+                          (DESE_LEA, code)).fetchone()['func_cat_desc']
+        pts = [dict(fy=r['fy'], gen_fund=round(r['gen_fund'], 2),
+                    grants=round(r['grants_revolving'], 2), total=round(r['total'], 2))
+               for r in rows]
+        # Summarised over the SAME span as the district's own series, so the two are
+        # like for like. The longer state series is published whole beneath it.
+        over = [p for p in pts if first_fy <= p['fy'] <= last_fy]
+        if not over:
+            fail(f'DESE category {code} has no year in common with the district series')
+        first, last = over[0], over[-1]
+        out.append(dict(
+            code=code, name=desc, family=family, question=question, points=pts,
+            first_fy=first['fy'], last_fy=last['fy'],
+            gen_fund_first=first['gen_fund'], gen_fund_last=last['gen_fund'],
+            gen_fund_change=round(last['gen_fund'] - first['gen_fund'], 2),
+            grants_first=first['grants'], grants_last=last['grants'],
+            grant_share_last=(round(last['grants'] / last['total'], 4)
+                              if last['total'] else None),
+            grant_share_max=max(
+                (round(p['grants'] / p['total'], 4) for p in over if p['total']),
+                default=None),
+            overlap_first_fy=first['fy'], overlap_last_fy=last['fy'],
+            documents=sorted({r['doc_id'] for r in rows})))
+    return out
+
+
+def minutes_coverage():
+    """How much of what the town HELD is actually published, per board per year.
+
+    A search finding nothing in a year where 14% of meetings have minutes is not evidence
+    that nobody discussed it, and this page makes claims about what was and was not said.
+    So the coverage travels with them."""
+    path = os.path.join(ROOT, 'sources/data/minutes-coverage.csv')
+    if not os.path.exists(path):
+        fail('sources/data/minutes-coverage.csv is not here — the page states how thin '
+             'the meeting record is in places, and that cannot be typed')
+    rows = [r for r in csv.DictReader(open(path, encoding='utf-8'))
+            if r['board'] == 'School Committee']
+    if not rows:
+        fail('minutes-coverage.csv carries no School Committee rows — the coverage '
+             'caveat would render with nothing behind it')
+    years = sorted(int(r['year']) for r in rows)
+    agendas = sum(int(r['agendas']) for r in rows)
+    minutes = sum(int(r['minutes']) for r in rows)
+    empty = sorted({int(r['year']) for r in rows if int(r['minutes']) == 0})
+    # The town's listing gives more than one row for some board-years; a year is one
+    # row here, summed, or the shares would be quoted twice.
+    agg = collections.defaultdict(lambda: [0, 0])
+    for r in rows:
+        agg[int(r['year'])][0] += int(r['agendas'])
+        agg[int(r['year'])][1] += int(r['minutes'])
+    per = [dict(year=y, agendas=a, minutes=m,
+                share=round(m / a, 4) if a else None)
+           for y, (a, m) in sorted(agg.items())]
+    empty = [r['year'] for r in per if r['minutes'] == 0]
+    thin = [r['year'] for r in per if r['share'] is not None and r['share'] < 0.5]
+    return dict(board='School Committee', first_year=years[0], last_year=years[-1],
+                agendas=agendas, minutes=minutes,
+                share=round(minutes / agendas, 4) if agendas else None,
+                years_with_none=empty, years_under_half=thin, per_year=per)
+
+
 def searched():
     """Run each term against the meeting archive, and report the denominator too.
 
@@ -227,12 +352,14 @@ def searched():
         fail('sources/meetings/index.csv is not here — the page states how many meeting '
              'documents were searched, and a search of nothing is not a search')
     rows = list(csv.DictReader(open(idx, encoding='utf-8')))
-    readable = []
+    readable, dates = [], []
     for r in rows:
         stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
         txt = os.path.join(ROOT, 'sources/meetings/text', stem + '.txt') if stem else ''
         if stem and os.path.exists(txt):
             readable.append(txt)
+            if r.get('date'):
+                dates.append(r['date'])
     if not readable:
         fail('no meeting document is readable — refusing to publish a count of what '
              'nobody said')
@@ -242,7 +369,11 @@ def searched():
         pat = re.compile(re.escape(term), re.I)
         out.append(dict(term=term,
                         documents=sum(1 for b in bodies if pat.search(b))))
-    return dict(terms=out, readable=len(readable), published=len(rows))
+    if not dates:
+        fail('no meeting document carries a date — the page states how far back the '
+             'archive reaches and that cannot be typed')
+    return dict(terms=out, readable=len(readable), published=len(rows),
+                first_date=min(dates), last_date=max(dates))
 
 
 def build():
@@ -582,6 +713,8 @@ def build():
                          closes=closes.strip() or None))
 
     hits = searched()
+    state = dese(cx, first_fy, last_fy)
+    coverage_minutes = minutes_coverage()
     source_docs = sorted({r['doc_id'] for r in rows})
 
     return dict(
@@ -652,9 +785,12 @@ def build():
         prof_development_split=pd_split,
         prof_development_zero_from=pd_zero_from,
         said=said,
+        dese=state,
+        minutes_coverage=coverage_minutes,
         searched=hits['terms'],
-        minutes=dict(readable=hits['readable'], published=hits['published']),
-        searchable_from=2025,
+        minutes=dict(readable=hits['readable'], published=hits['published'],
+                     first_date=hits['first_date'], last_date=hits['last_date']),
+        searchable_from=int(hits['first_date'][:4]),
         gaps=gaps,
     )
 
@@ -683,7 +819,8 @@ def main():
           f'(${t["event_dollars"]:,.0f}), {t["returned"]} of them funded again, '
           f'{t["permanent"]} lines zero and stayed zero, {t["renames"]} renames '
           f'established by value plus {t["spelling_candidates"]} spelling candidates, '
-          f'{t["vanished"]} lines stop appearing')
+          f'{t["vanished"]} lines stop appearing; '
+          f'{len(d["dese"])} DESE categories set beside them')
     return 0
 
 

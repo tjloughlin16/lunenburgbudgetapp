@@ -443,9 +443,16 @@ def main():
     # than leave two databases published at two URLs disagreeing with each other -- which
     # is exactly what was found on 8 September: /data/ 21.2MB, /docs/data/ 29.3MB, and
     # llms.txt advertising a third figure that was true of the R2 copy alone.
-    stale = os.path.join(PUB, 'data', 'lunenburg.db')
-    if os.path.exists(stale):
-        os.remove(stale)
+    #
+    # BOTH addresses, because the bug was that only one was known. `/docs/` mirrors
+    # `sources/` into the build, and `sources/data/lunenburg.db` rode along with it -- so
+    # removing the copy at /data/ left a larger one at /docs/data/ that the guard below
+    # would refuse the build over. The GitHub-findable copy lives at `mirror/data/`,
+    # OUTSIDE the build, which is the whole reason that directory exists.
+    for stale in (os.path.join(PUB, 'data', 'lunenburg.db'),
+                  os.path.join(PUB, 'docs', 'data', 'lunenburg.db')):
+        if os.path.exists(stale):
+            os.remove(stale)
 
     counts = {t: db.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
               for (t,) in db.execute(

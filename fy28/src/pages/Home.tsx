@@ -2,7 +2,7 @@ import { abs } from '../lib/abs'
 import type { Area, Tab } from '../routes'
 import { AREA_HOME, AREA_LABEL } from '../routes'
 
-/** The front page: four doors and nothing else.
+/** The front page: the top-level doors and nothing else.
  *
  *  For its whole life the root served the walkthrough, which made this site one corridor —
  *  the right shape when the only thing here was an argument about FY28, and the wrong shape
@@ -47,6 +47,11 @@ const DOORS: { area: Area; who: string; note?: string; quiet?: boolean
   href?: string }[] = [
   { area: 'crisis', who: 'Why the budget keeps breaking, and what would fix it' },
   { area: 'money', who: 'Where every dollar comes from, and where the trail goes cold' },
+  // Split out of `money` on 8 September at TJ's suggestion. The money door had grown
+  // thirteen tabs behind it, which is a sitemap rather than an area. Named for the FORM
+  // and not the subject -- it was `School analysis` for an hour, which would have made
+  // the town-side reports homeless the moment one was written.
+  { area: 'analyses', who: 'The reports: staffing, athletics, fees, and what each one cannot say' },
   { area: 'data', who: 'Every table, the whole file, and how to check a figure' },
   { area: 'agents', who: 'Pointing an assistant at this, or you are one',
     quiet: true },
@@ -65,9 +70,11 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         </p>
       </header>
 
-      {/* One column, always. Four rows on a phone is the whole page; two columns would
-          make the fourth door share a line with the third and stop being a list of
-          four things. The row is the hit target, not the words in it. */}
+      {/* One column, always. The rows are the whole page on a phone; two columns would
+          pair them off and stop the set reading as a list. The row is the hit target, not
+          the words in it. The count is deliberately not written into the prose here or in
+          the comment above — it was "four" until it was five, which is rule 2 arriving in
+          a doc comment. */}
       <div className="grid gap-2.5">
         {DOORS.map(d => d.href ? (
           <a key={d.area} href={abs(d.href)}

@@ -1,5 +1,56 @@
 # What is queued, in order
 
+## THE ORDER, set by TJ on 8 September 2026
+
+**Phase two, then phase four, then phase three.** Phase three (the town hub, the digests,
+the refresh mechanisms) waits until **every drill-in report is built** — TJ was explicit
+that the reports come first, even though the hub is the thing residents would notice
+soonest. D1 is tomorrow's; D7 and D3 are TJ's own.
+
+Phase one is closed. All three partial pages are routed and rendering, the harvest ran to
+2009 rather than 2023, and `/what-stopped-being-funded` finished on 8 September. What
+survives from it is listed under *Still open from phase one* below rather than left in a
+section marked done.
+
+## Still open from phase one
+
+- **The SEARCHABLE-TEXT denominator, item 3's other half.** `build_minutes_coverage.py`
+  compares what we hold against what the town lists, which was the fix asked for. But
+  `search_minutes.py` still counts a document as searched when a `.txt` file exists for
+  it, and **3,365 of 12,016 (28%) are image scans whose text file holds only page
+  markers**. So the line that exists to stop a silent grep reading as *nobody said it* is
+  overstating coverage by more than a quarter. Worst affected: select-board 642,
+  finance-committee 314, board-of-assessors 257.
+- **Item 4, the rule 15a re-runs.** Only `/what-stopped-being-funded` re-ran its searches
+  against the grown archive. **Athletics, PEG and free cash have not**, and neither has
+  *why $1,500?* — the vote is in the minutes of 26 February 2025 with no derivation, and
+  the reasoning may sit in a 2023 or 2024 meeting nobody has read.
+- **Item 5, YouTube transcripts.** Not started; needs one install. The design caveat
+  stands and is the reason it stays cheap: a caption is a machine's rendering of audio,
+  *fifteen hundred* / *$1,500* / *$50* are one sound to it, so a transcript locates a
+  moment and never cites a figure.
+
+## OCR the image-only meeting documents — NOT urgent, recorded so it is not lost
+
+TJ, 8 September 2026: *"lets add to the roadmap to OCR those meeting minutes that aren't
+text. Not imoprtant right now."*
+
+**3,365 documents, 28% of the meeting archive, carry no text layer.** Every one sampled is
+an image PDF rather than a blank, so the words are there and unreadable rather than
+absent — OCR would recover them. They are now in R2, so the originals survive whatever
+happens to this disk, which is what made this safe to defer.
+
+Two things to carry into it when it happens:
+
+- **OCR output is a rendering, not the record.** Rule 13 exactly, and the Monty Tech
+  lottery PDF is the worked example already in this archive: its per-applicant pages OCR'd
+  to `L.unenburg`, `Lunchburg` and `Accepte`. Whatever this produces must be marked as
+  ours and must never be quoted as the document's own words.
+- **Fix the denominator first, or this hides itself.** While `search_minutes.py` counts
+  these as searched, there is no signal telling anybody the OCR is needed or, later, that
+  it worked.
+
+
 Written 8 September 2026. Ordered deliberately: **finishing beats starting**, and each
 item below is either half-built or blocked on the one above it.
 
@@ -57,6 +108,160 @@ half the record. In particular: **why $1,500?** The School Committee minutes of 
 archive. The reasoning may sit in a 2023 or 2024 meeting nobody has read.
 
 ## 5. YouTube transcripts — a finding aid, never a source
+
+### TJ's specification, 8 September 2026
+
+> *"I want you to be able to find all the videos posted for every committee, list them and
+> store them, then fetch their transcripts in reverse order (newest first). And this
+> mechanism will be used to create the refresh mechanism too to find new ones, and fetch
+> their link and their transcript."*
+
+**Four parts, and the fourth is the reason the first three are worth building.**
+
+1. **ENUMERATE.** Every video the PEG channel has posted, for every committee — not just
+   School Committee and Select Board. `youtube.com/user/LunenburgAccess/videos`. The
+   committee has to be derived from the video title, and titles are written by a person, so
+   **the mapping from title to board is OURS and gets marked as ours.** It will not be
+   clean: expect abbreviations, misspellings, renamed boards and joint meetings belonging
+   to two. A video whose board cannot be determined is recorded as undetermined rather than
+   guessed into the nearest match.
+2. **STORE THE INDEX.** One row per video: id, title as posted, URL, published date, board
+   as we classified it, duration, and whether a transcript has been fetched. This index is
+   the durable artefact — it is worth having even for videos whose transcripts never
+   arrive, because it establishes THAT a meeting was recorded, which is itself a fact the
+   written record does not always carry.
+3. **FETCH NEWEST FIRST.** Reverse chronological, resumable, rate-limited. Newest first
+   because the refresh case and the backfill case are then the same loop, and because an
+   interrupted backfill has still delivered the most useful half.
+4. **THE SAME MECHANISM IS THE REFRESH DETECTOR.** Re-running the enumeration and diffing
+   against the stored index IS "what is new since last time". Do not build a second
+   watcher for phase three's refresh mechanisms — this is it. That is the design
+   constraint that should shape parts 1-3: the enumeration must be cheap enough to run
+   often and must produce a stable id per video so a diff means something.
+
+### The caveat, built in from the start rather than added after
+
+Auto-generated captions are a machine's rendering of audio, not a record. They mangle names
+and — fatally here — numbers: *fifteen hundred*, *$1,500* and *$50* are the same sound to a
+caption model. **A figure quoted from a caption as though it were the record is rule 13
+with a microphone.**
+
+So: a transcript locates the MOMENT. The citation is the video at that timestamp, or the
+document the transcript tells you to go and ask for. Store transcripts somewhere that makes
+this structural rather than advisory — they are ours, derived, and must never be mistaken
+for minutes. They do not belong in `sources/meetings/text/`, which holds documents the town
+published.
+
+**And it changes the coverage story.** The town posts minutes for 40% of School Committee
+meetings and none at all for 2021 or 2022. A recording of a meeting whose minutes were
+never posted is the only account of it that exists. That is the strongest argument for
+building this, and also the strongest reason to be careful about how it is quoted.
+
+### THE TITLES ARE NOT CONSISTENT, AND THAT IS THE HARD PART
+
+TJ, 8 September 2026: *"Be careful indexing the videos. Their titles are not consistently
+labeled. No standard formatting."*
+
+**So the board and the date are DERIVED, and everything derived here is ours.** Rule 13 is
+the whole of this section: the title is the observed thing, our reading of it is not, and
+the two must never be stored in a way that lets the second be mistaken for the first.
+
+- **Store the title exactly as posted, always, in its own column.** Never a cleaned or
+  normalised version in its place. Every classification we make sits BESIDE it and is
+  recomputable from it, so improving the classifier does not require re-fetching anything.
+- **A video whose board cannot be determined is `undetermined`.** Not the nearest match,
+  not the most common board, not a guess with a confidence score that later gets read as a
+  fact. This project has a worked example of the failure — fuzzy label matching proposed
+  `M.S. Special Ed Speech Pathologists` -> `E.S. …` at 0.97 similarity, and they are two
+  different schools.
+- **Publish the undetermined count as a denominator.** Exactly the lesson the minutes
+  coverage line taught twice: a classifier that silently drops what it cannot read produces
+  a clean-looking index that is quietly missing whole boards. If 300 videos cannot be
+  assigned, the number 300 has to be visible everywhere the index is used.
+- **The published DATE is not necessarily the meeting date.** A recording uploaded days
+  later carries the upload date, and joint or re-posted meetings break it further. Derive
+  the meeting date from the title where the title states one, fall back to the publish
+  date, and **record which of the two each row used** — a column, not a convention. A
+  transcript matched to the wrong meeting is worse than one matched to none.
+- **A VIDEO BELONGS TO N BOARDS, AND THAT IS A DATA MODEL DECISION, NOT A PARSING ONE.**
+  TJ's example, 8 September 2026: *"a tri-board meeting was created. That would have broken
+  any parsing up to that point.... so that should be filed under the 3 boards it
+  represents. So we need to be flexible in processing titles and understanding what they
+  represent."*
+
+  So **there is no `board` column.** One table of videos keyed on video id, and a separate
+  `video_board` table with one row per (video, board) pair. A tri-board meeting is three
+  rows and is not a special case; a single-board meeting is one row and is not a different
+  shape. Anything that puts a board in the video row forces the tri-board meeting to pick a
+  winner or invent a `board_2` column, and both are how the next unforeseen format breaks
+  it again.
+
+  The wider point in his correction is the one to build for: **the titles will keep
+  producing arrangements nobody anticipated.** A tri-board meeting is not a malformed
+  title, it is a real meeting the town held, and the index has to be able to represent
+  things the town does rather than only things the town has done so far. That is why the
+  classifier is an agent reading intent and not a parser matching a shape — and it is why
+  `undetermined` has to be cheap, because the alternative to representing something
+  correctly must be recording that we could not, never squeezing it into the nearest slot.
+**THE CLASSIFIER IS AN AGENT READING THE TITLES, NOT A PATTERN TABLE.** TJ, correcting an
+earlier draft of this section that proposed regexes: *"i just mean, an agent will have to
+review the titles to classify which committee they are for. Storing them verbatim is super
+required of course."*
+
+That is the right call — no set of patterns survives titles with no standard formatting —
+and it makes the stored shape matter more, not less:
+
+- **The classification is a MODEL'S JUDGMENT about a string.** It is the most derived thing
+  in this archive and it gets marked as ours everywhere it appears. Rule 13 with a
+  language model: what the channel published is the title; what board it was for is our
+  reading of it.
+- **Store the judgment beside the title, never in place of it**, with the model that made
+  it and when. A reclassification then rewrites one column and touches nothing else.
+- **HUMAN CORRECTIONS MUST SURVIVE RE-CLASSIFICATION.** This is the part that is easy to
+  get wrong and expensive to discover: a separate overrides file, keyed on video id, that
+  the classifier reads and never writes. Without it, every improvement to the prompt
+  silently discards every correction TJ has made, and nothing reports that it happened.
+- **Give the agent the board list and let it decline.** It should be choosing from the
+  boards the town actually has — the meeting archive already holds them — and returning
+  `undetermined` must be an allowed answer rather than a failure it tries to avoid.
+- **Batch it and keep it cheap.** Titles are short; thousands fit in few calls. The whole
+  index can be reclassified for very little, which is what makes the overrides file and
+  the verbatim titles worth having.
+
+**Do not tune the classifier against a sample and then report the sample's accuracy.**
+The honest figure is *how many it refused to classify*, which needs no ground truth — and
+if accuracy is wanted, it has to be measured against titles that were not used to write
+the prompt.
+
+### WE DO NOT DOWNLOAD THE VIDEOS
+
+TJ, 8 September 2026: *"we dont need to download the videos."*
+
+**The index and the transcript. Never the media file.** This is an explicit exception to
+the instinct the rest of this archive runs on — rule 12 says keep our own copy because
+links die, and that instinct is right for a 2 MB PDF and wrong here:
+
+- **Size.** The archive is 4.26 GB after taking in 21,000 documents. A single two-hour
+  meeting recording is comparable to a fair slice of that. Mirroring years of them across
+  every board is a different kind of project.
+- **The bucket is write-once for ten years.** A mistake in a document ingest is an
+  annoyance; the same mistake across video files is permanent and large.
+- **We are not the archive of record for the recordings.** The PEG channel is, and this
+  project already extracted its finances. What we need from a video is *what was said and
+  when* — the transcript gives that, and the timestamped URL gives the citation.
+
+So the stored artefacts are: the video index (one row per meeting recording) and the
+transcripts. **The citation is a URL into the channel at a timestamp**, which means the
+link dying is a real exposure we are accepting knowingly rather than one we overlooked —
+and the index is what makes it recoverable, because it records the title, the date and the
+board even if the video goes.
+
+### What it needs
+
+One install (`yt-dlp` or `youtube-transcript-api`); neither is on the machine. **Neither is
+needed to download media** — both can list a channel and pull captions alone, and the
+fetcher should be written so it cannot pull a media stream even by accident.
+
 
 The minutes carry a standing notice that each meeting is recorded and uploaded, and the
 archive already holds the address: `youtube.com/user/LunenburgAccess/videos`. That is the

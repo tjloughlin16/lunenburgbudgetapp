@@ -344,6 +344,7 @@ def upstream_urls():
         idx = os.path.join(SRC, folder, 'index.csv')
         if not os.path.exists(idx):
             continue
+        matched = 0
         with open(idx, newline='') as fh:
             for row in csv.DictReader(fh):
                 url = (row.get('upstream') or row.get('url') or '').strip()
@@ -352,8 +353,28 @@ def upstream_urls():
                     if not rel:
                         continue
                     rel = rel[len('sources/'):] if rel.startswith('sources/') else rel
+                    # AN INDEX MAY BE WRITTEN RELATIVE TO ITS OWN FOLDER, and
+                    # `sources/meetings/index.csv` is: it stores
+                    # `select-board/2018-06-18-minutes-5130.pdf` where the manifest key
+                    # is `meetings/select-board/...`. Unqualified, the join matched none
+                    # of 24,033 rows and every upstream cell was written empty -- which
+                    # reads as "the town published no address for these" when in fact
+                    # all 12,065 addresses were sitting one column away. That is the
+                    # third defect shape in CLAUDE.md: a join matching nothing is
+                    # indistinguishable from data that is absent.
+                    if not rel.startswith(folder + '/'):
+                        rel = folder + '/' + rel
                     if url and rel not in out:
                         out[rel] = url
+                        matched += 1
+        # AND IT ASSERTS THAT IT MATCHED. An index that stops joining must fail loudly
+        # rather than quietly contribute nothing.
+        if matched == 0:
+            raise SystemExit(
+                'sources/%s/index.csv yielded no upstream addresses. Either it has no '
+                'url column or its paths no longer line up with the manifest keys; '
+                'either way the manifest would silently record 0 addresses for that '
+                'folder.' % folder)
     return out
 
 

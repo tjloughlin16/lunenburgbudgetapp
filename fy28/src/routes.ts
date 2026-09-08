@@ -357,20 +357,35 @@ export function tabFromPath(pathname: string): Tab {
  *  check it, and evidence reachable only from inside one area is a weaker claim than it
  *  sounds.
  */
-export type Area = 'crisis' | 'money' | 'data' | 'agents'
+export type Area = 'crisis' | 'money' | 'analyses' | 'data' | 'agents'
 
 export const AREA_LABEL: Record<Area, string> = {
   // TJ, 7 Sept: "Budget Crisis". Names the thing rather than the reader's posture
   // toward it — and it is what the town calls it, which is what a door has to match.
   crisis: 'Budget Crisis',
   money: 'The money',
+  // TJ, 8 Sept: "Maybe we need another category, like 'School Detailed Analysis' next to
+  // 'The Money'". He was right, and the count is the argument: `money` had reached
+  // THIRTEEN tabs in one strip -- which the comment on AREA_TABS below already warned
+  // against in the same file, and which is unusable on a phone.
+  //
+  // IT WAS `School analysis` FOR AN HOUR AND THAT WAS THE WRONG NAME. TJ, same day:
+  // "Maybe we have just an Analyses section, not school specific, so we can also dump
+  // town reports too." A name that says `school` is a promise about the contents, and
+  // half the analyses this project will write are town-side -- free cash, the tax rate,
+  // the ledger. Naming the area after the FORM (an analysis) rather than the SUBJECT
+  // (schools) is what lets the town reports land here without a second rename.
+  analyses: 'Analyses',
   data: 'The database',
   agents: 'For AI assistants',
 }
 
 /** The page each area opens at, and the tab that owns its bar. */
 export const AREA_HOME: Record<Area, Tab> = {
-  crisis: 'walk', money: 'themoney', data: 'database', agents: 'ask',
+  // `analyses` opens on /reports, which is the generated index of every analysis on
+  // disk. An area whose front page is a list of what is in it needs no new hub page --
+  // and build_reports_index.py already fails if an analysis is missing from it.
+  crisis: 'walk', money: 'themoney', analyses: 'reports', data: 'database', agents: 'ask',
 }
 
 const AREA_OF: Partial<Record<Tab, Area>> = {
@@ -378,16 +393,16 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   freecash: 'crisis',
-  themoney: 'money', gaps: 'money', variance: 'money', funds: 'money',
-  reports: 'money',
-  staffing: 'money',
-  insurance: 'money',
-  sportsmoney: 'money',
-  stateaid: 'money',
-  stopped: 'money',
-  leaving: 'money',
-  families: 'money',
-  askus: 'money',
+  // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
+  // the flow hub, the two revenue-side pages, what we cannot answer, and the question box.
+  themoney: 'money', stateaid: 'money', funds: 'money', gaps: 'money', askus: 'money',
+  // `analyses` is every drill-in REPORT, school or town. Health insurance and budget-vs-
+  // actual moved here from the money side: both are analyses of spending rather than
+  // accounts of where money originates, and filing them by subject was what produced a
+  // thirteen-tab strip in the first place.
+  reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
+  families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
+  variance: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -405,8 +420,9 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'askus', 'stateaid', 'leaving', 'families', 'staffing', 'insurance',
-          'sportsmoney', 'stopped', 'variance', 'funds', 'gaps', 'reports'],
+  money: ['themoney', 'stateaid', 'funds', 'gaps', 'askus'],
+  analyses: ['reports', 'staffing', 'stopped', 'leaving', 'families', 'sportsmoney',
+             'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

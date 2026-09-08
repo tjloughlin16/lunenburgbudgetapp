@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
+import { Basis } from '../components/Basis'
 import {
-  ByCategory, NamedLines, ShapeOfTheBook, TableTwin, ZeroedByYear,
-  fy, type Cover, type Cut, type Named, type Year,
+  ByCategory, FundSplit, NamedLines, ShapeOfTheBook, TableTwin, ZeroedByYear,
+  fy, type Cover, type Cut, type FundPoint, type Named, type Year,
 } from '../components/StoppedFundingCharts'
 
 /** What stopped being funded — every school line the district's own book took to zero.
@@ -112,6 +113,22 @@ type Payload = {
     renames_across: number
     documents_before: string[]; documents_after: string[]
   }
+  dese: {
+    code: string; name: string; family: string; question: string
+    points: FundPoint[]
+    first_fy: number; last_fy: number
+    overlap_first_fy: number; overlap_last_fy: number
+    gen_fund_first: number; gen_fund_last: number; gen_fund_change: number
+    grants_first: number; grants_last: number
+    grant_share_last: number | null; grant_share_max: number | null
+    documents: string[]
+  }[]
+  minutes_coverage: {
+    board: string; first_year: number; last_year: number
+    agendas: number; minutes: number; share: number | null
+    years_with_none: number[]; years_under_half: number[]
+    per_year: { year: number; agendas: number; minutes: number; share: number | null }[]
+  }
   guidance: Named[]
   prof_development: Named[]
   prof_development_split: {
@@ -124,7 +141,9 @@ type Payload = {
     cite: string; town: string
   }[]
   searched: { term: string; documents: number }[]
-  minutes: { readable: number; published: number }
+  minutes: {
+    readable: number; published: number; first_date: string; last_date: string
+  }
   searchable_from: number
   gaps: { side: string; what: string; why: string; closes: string | null }[]
 }
@@ -258,6 +277,10 @@ export function StoppedFunding() {
   const guidanceQuote = d.said.find(q => q.key === 'guidance')!
   const socialQuote = d.said.find(q => q.key === 'social-workers')!
   const pdQuote = d.said.find(q => q.key === 'prof-development')!
+  const psyQuote = d.said.find(q => q.key === 'psychologist')!
+  const MC = d.minutes_coverage
+  const pdev = d.dese.find(c => c.code === 'PDEV')!
+  const roseEverywhere = d.dese.every(c => c.gen_fund_change > 0)
   const pdZero = d.prof_development_zero_from
   const pdLast = d.prof_development_split[d.prof_development_split.length - 1]
   const pdPeak = d.prof_development_split.reduce(
@@ -318,6 +341,9 @@ export function StoppedFunding() {
           cannot: a claim about what the district <em>reports</em> is fairly settled by the
           district&rsquo;s own book, and a claim about whether that book is right is not.
         </p>
+        <p className="mt-3">
+          <Basis level="stated">the district&rsquo;s restatement of its own closed years</Basis>
+        </p>
       </div>
 
       {/* ------------------------------------------------------- 1. conclusions */}
@@ -354,6 +380,19 @@ export function StoppedFunding() {
           {S.renames_across} of them can be shown to be the same line spelled differently.
         </Insight>
         <Insight n={4} headline={
+          <>And the state&rsquo;s own figures do not show the money leaving.
+            {roseEverywhere ? ' In all three categories where district lines stopped, '
+              + 'DESE reports MORE general fund spending at the end of the span than at '
+              + 'the start.' : ''}</>}>
+          DESE collects spending from every district to its own definitions and splits it
+          into general fund and grants. For {pdev.name.toLowerCase()} the general fund
+          figure moves from {usd(pdev.gen_fund_first)} in FY{pdev.overlap_first_fy} to{' '}
+          {usd(pdev.gen_fund_last)} in FY{pdev.overlap_last_fy}, and grants reach{' '}
+          {Math.round((pdev.grant_share_max ?? 0) * 100)}% of the category at their peak.
+          The grains do not join &mdash; a budget line is not a function code &mdash; so
+          this corroborates at the category level and settles nothing line by line.
+        </Insight>
+        <Insight n={5} headline={
           <>For FY{silent[0]} onward this question has no answer in this source.</>}>
           The documents restating the most recent years print almost no zeros &mdash;{' '}
           {d.per_year.find(p => p.fy === silent[0])!.zeros_printed} in a book of{' '}
@@ -498,6 +537,60 @@ export function StoppedFunding() {
         the same figures.
       </Maybe>
 
+      <H2 id="dese">A second source, and it does not show the money leaving</H2>
+      <Body>
+        Everything above this line comes out of the district&rsquo;s own book, which shows
+        the general fund and nothing else. DESE collects spending from every district in
+        the state to its own definitions and publishes it{' '}
+        <strong>split by fund</strong> &mdash; which is precisely the thing the budget book
+        structurally cannot show. So for each family of lines that stops on this page, the
+        state&rsquo;s figures for the same kind of spending are set beside it.{' '}
+        <Basis level="cross-checked">two independent sources, at different grains</Basis>
+      </Body>
+      <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
+          style={{ color: 'var(--text-muted)' }}>This is not a join, and must not become one</p>
+        <p className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          A district budget line is not a DESE function code. The mapping between them is
+          not published by anybody, and this project keeps its <code>crosswalk</code> table
+          deliberately empty rather than record an inference as a mapping. The pairing of
+          each category to each family of lines below is <strong>ours</strong>, it is read
+          at the category level only, and no figure here is subtracted from any figure
+          above.
+        </p>
+      </div>
+      {d.dese.map(c => (
+        <div key={c.code} className="mt-10">
+          <H3>{c.name}</H3>
+          <Body>{c.question}</Body>
+          <Body>
+            Set beside {c.family}. Over the same span as the district&rsquo;s own series,
+            FY{c.overlap_first_fy} to FY{c.overlap_last_fy}, the general fund figure goes
+            from {usd(c.gen_fund_first)} to {usd(c.gen_fund_last)} &mdash;{' '}
+            {c.gen_fund_change >= 0 ? 'up' : 'down'} {usd(Math.abs(c.gen_fund_change))}.
+            Grants and revolving funds reach{' '}
+            {Math.round((c.grant_share_max ?? 0) * 100)}% of all spending in this category
+            at their peak.
+          </Body>
+          <FundSplit points={c.points} />
+          <TableTwin
+            caption={`${c.name} — DESE, FY${c.first_fy} to FY${c.last_fy}`}
+            head={['Year', 'General fund', 'Grants and revolving', 'All funds',
+                   'Grant share']}
+            rows={c.points.map(p => [
+              fy(p.fy), usd(p.gen_fund), usd(p.grants), usd(p.total),
+              p.total ? `${Math.round((p.grants / p.total) * 100)}%` : '—'])} />
+        </div>
+      ))}
+      <NotShown>
+        A category total holding up does not mean every service inside it held up.
+        DESE&rsquo;s categories are broad, they are collected to the state&rsquo;s
+        definitions rather than the district&rsquo;s, and a category can be flat while one
+        thing inside it ended and another grew. What this does establish is narrower and
+        still worth having: <strong>the money did not leave the category</strong> in the
+        years the district&rsquo;s lines for it stopped.
+      </NotShown>
+
       {/* ------------------------------------------------- lines that fell and stayed down */}
       <H2 id="declines">Lines that fell sharply and did not recover</H2>
       <Body>
@@ -531,9 +624,12 @@ export function StoppedFunding() {
       {/* -------------------------------------------- what the town said (rule 15a) */}
       <H2 id="said">What the town said about one of these</H2>
       <Body>
-        The searchable meeting archive begins in {d.searchable_from}, and almost everything
-        on this page is older than that. One line family is the exception, and it is worth
-        the space because the two halves do not sit together comfortably.
+        The meeting archive now runs from {d.minutes.first_date} to{' '}
+        {d.minutes.last_date} &mdash; {d.minutes.readable} readable documents out of{' '}
+        {d.minutes.published} the town has published &mdash; so it reaches back over the
+        whole of the series above. Three things people said sit close enough to a line on
+        this page to be worth setting beside it. None of them explains a figure; each of
+        them is what a figure looks like from the other side.
       </Body>
       <div className="card p-5 mt-6 max-w-3xl">
         <p className="text-[15px] leading-relaxed italic">&ldquo;{guidanceQuote.quote}&rdquo;</p>
@@ -570,6 +666,30 @@ export function StoppedFunding() {
         no longer describes the job. This project cannot join the two, and that limit is
         registered: <em>{gapFilled.what}</em>.
       </NotShown>
+      <H3>The largest permanent ending, and a board meeting five years later</H3>
+      <Body>
+        {t.biggest_permanent.label} is the largest line on this page that went to a printed
+        zero and stayed at zero, last funded in FY{t.biggest_permanent.last_funded_fy}. The
+        meeting archive now reaches back far enough to have something to say near it.
+      </Body>
+      <div className="card p-5 mt-6 max-w-3xl">
+        <p className="text-[15px] leading-relaxed italic">&ldquo;{psyQuote.quote}&rdquo;</p>
+        <p className="text-[12.5px] mt-3" style={{ color: 'var(--text-muted)' }}>
+          {psyQuote.board}, {psyQuote.date} &middot;{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }}
+            href={abs(psyQuote.cite)}>our copy</a>{' '}&middot;{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }}
+            href={psyQuote.town}>the town&rsquo;s</a>
+        </p>
+      </div>
+      <NotShown>
+        These are two facts five years apart about posts that may be entirely different
+        people in entirely different roles. The page does not join them. What the pair
+        shows is the shape of the problem: a post can exist, be paid for, and appear
+        nowhere in the document this page is built on, because that document is the
+        general fund and nothing else.
+      </NotShown>
+
       <H3>Professional development: five lines to zero, one line up</H3>
       <Body>
         Every per-school professional development line in the book is printed at zero from
@@ -616,14 +736,31 @@ export function StoppedFunding() {
       <H3>What was searched, and what came back empty</H3>
       <Body>
         A search that finds nothing prints nothing, and nothing reads as <em>nobody said
-        it</em>. It is not: it means nobody said it in the {d.searchable_from}-onward
-        documents that can be read &mdash; {d.minutes.readable} of the{' '}
-        {d.minutes.published} the town has published. Terms that returned meeting
+        it</em>. It is not: it means nobody said it in the{' '}
+        {d.minutes.readable} documents that can be read. Terms that returned meeting
         documents:{' '}
-        {found.map(s => `${s.term} (${s.documents})`).join(', ')}. Terms that returned
-        none at all: {empty.map(s => s.term).join(', ')} &mdash; including the single
-        largest permanent ending on this page.
+        {found.map(s => `${s.term} (${s.documents})`).join(', ')}.
+        {empty.length > 0
+          ? ` Terms that returned none at all: ${empty.map(s => s.term).join(', ')}.`
+          : ' Every term searched returned at least one document.'}
       </Body>
+      <Body>
+        And the record itself is thin in places. Of {MC.agendas} School Committee meetings
+        the town lists between {MC.first_year} and {MC.last_year}, minutes are published
+        for {MC.minutes} &mdash; {Math.round((MC.share ?? 0) * 100)}%. In{' '}
+        {MC.years_with_none.join(' and ')} there are none at all, and{' '}
+        {MC.years_under_half.length} years sit under half.{' '}
+        <strong>A search finding nothing in a year like that is not evidence that nobody
+        discussed it.</strong> {d.minutes.published - d.minutes.readable} of the{' '}
+        {d.minutes.published} documents cannot be read at all, so no search here covers
+        them either.
+      </Body>
+      <TableTwin
+        caption={`${MC.board} minutes published, against meetings listed`}
+        head={['Year', 'Meetings listed', 'Minutes published', 'Share']}
+        rows={MC.per_year.map(r => [
+          r.year, r.agendas, r.minutes,
+          r.share === null ? '—' : `${Math.round(r.share * 100)}%`])} />
 
       {/* --------------------------------------------------------- 3. the raw and the method */}
       <H2 id="permanent">Every line that went to zero and stayed there</H2>

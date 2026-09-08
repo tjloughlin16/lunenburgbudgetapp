@@ -212,11 +212,10 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
         {primary.map(p => <PageRow key={p.name} p={p} />)}
       </div>
 
-      <H2>The analyses</H2>
+      <H2>Where the money comes from</H2>
       <Body>
-        Each takes one question as far as the published records carry it, and then says
-        where it stops. They open with what they establish rather than with how to read
-        them.
+        The routes in, and the money that never reaches the budget everyone argues about.
+        The reports that read the spending side are below.
       </Body>
       {/* DERIVED FROM THE AREA'S OWN TAB LIST, not typed.
           These pages existed for hours reachable only from the header bar, because this
@@ -239,6 +238,31 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
                 style={{ color: 'var(--text-secondary)' }}>{ABOUT[t] ?? ''}</span>
             </button>
           ))}
+      </div>
+
+      {/* THE DRILL-INS, WHICH ARE NO LONGER IN THIS AREA.
+          Splitting `money` in two on 8 September moved eight pages out of AREA_TABS.money,
+          and because the grid above is derived from that list they would have vanished
+          from this page the same commit — the exact "reachable only from the header bar"
+          condition the comment above records TJ catching once already.
+          A split must leave a door behind it. Same derivation, so a report added to the
+          analyses area appears here the day it is routed. */}
+      <H2>The reports</H2>
+      <Body>
+        Each takes one question as far as the published records carry it, and then says
+        where it stops. They have an area of their own.
+      </Body>
+      <div className="grid gap-2.5 mt-6 sm:grid-cols-2">
+        {AREA_TABS.analyses.filter(t => t !== 'reports').map(t => (
+          <button key={t} onClick={() => onJump(t)}
+            className="card block w-full text-left px-4 py-4 min-h-[44px]
+                       transition-opacity hover:opacity-90">
+            <span className="text-[15.5px] font-bold leading-tight block"
+              style={{ color: 'var(--series-cost)' }}>{LABEL[t]} &rarr;</span>
+            <span className="block text-[13px] mt-1.5 leading-snug"
+              style={{ color: 'var(--text-secondary)' }}>{ABOUT[t] ?? ''}</span>
+          </button>
+        ))}
       </div>
 
       {secondary.length > 0 && (

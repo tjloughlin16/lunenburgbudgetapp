@@ -810,7 +810,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=297
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=317
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -888,7 +888,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=check fa
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=297
+Returns `source_type`, `documents` — for example: source_type=primary, documents=317
 
 **What basis does each document have for the figures it prints?**
 
