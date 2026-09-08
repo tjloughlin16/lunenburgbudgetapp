@@ -23,6 +23,12 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'families'
   | 'unwind'
   | 'minaid'
+  | 'sped'
+  | 'spedcount'
+  | 'spedleave'
+  | 'spedcost'
+  | 'spedroute'
+  | 'peers'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -160,6 +166,43 @@ export const SLUG: Record<Tab, string> = {
   // somebody receives rather than as the complaint the town has actually been making to
   // the Legislature. NOT `the-formula`, which promises every formula in the budget.
   minaid: 'why-we-only-get-minimum-aid',
+  // Special education, as FOUR reports behind one door. The door's slug is the words a
+  // resident says -- "special education" -- and nothing more, because the page is a
+  // chooser rather than an argument and a slug that named a finding would preload one.
+  //
+  // THE FOUR ARE FOUR ADDRESSES ON PURPOSE. notes/QUEUE.md item 10: "Four reports, not
+  // one. Keep them apart. Merging them into one narrative is how a proxy becomes a fact."
+  // Separate addresses are the structural form of that: a resident can be sent to the one
+  // that answers their question, and a link that has been shared cannot drift into
+  // carrying the other three.
+  sped: 'special-education',
+  // The question as it gets asked out loud -- "how many kids are on an IEP" -- rather
+  // than `sped-enrollment`, which names our instrument, or `students-with-disabilities`,
+  // which is DESE's phrase and not the town's. NOT `how-many-students`, which promises
+  // enrolment as a whole.
+  spedcount: 'how-many-students-are-on-an-iep',
+  // NOT `school-choice`, `students-leaving` or `transfers-out` -- all three have meant
+  // /if-students-leave since before this page existed, and that page is a SCENARIO with
+  // dials while this one is a measurement with none. A shared link must keep landing
+  // where it landed. The slug is where the children actually are, which is what this
+  // report counts and what /if-students-leave does not.
+  spedleave: 'where-students-go-instead',
+  // The sentence a resident says at a meeting. NOT `sped-cost` and NOT
+  // `out-of-district-tuition`, which name the accounting shape of the answer rather than
+  // the question -- and NOT `circuit-breaker`, which promises only the reimbursement half.
+  spedcost: 'what-special-education-costs',
+  // The question underneath the tuition line, phrased as the route rather than as the
+  // outcome. NOT `out-of-district`, which reads as a page about the placements
+  // themselves, and NOT `placement-counts`, which names a CSV.
+  spedroute: 'who-ends-up-out-of-district',
+  // What every OTHER district spends, and Lunenburg inside that. The slug is the sentence
+  // a resident says at a meeting -- "what do other districts spend?" -- rather than
+  // `per-pupil-spending`, which names the statistic instead of the question, or
+  // `peer-districts`, which is what this project calls the set and is also the name of an
+  // older analysis about what neighbours CUT rather than what they spend. NOT `spending`
+  // or `comparison` on their own: the first promises the whole budget and the second
+  // promises nothing at all. NOT `how-we-compare`, which reads as a verdict.
+  peers: 'what-other-districts-spend',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -280,6 +323,30 @@ const ALIASES: Record<string, Tab> = {
   'if-students-leave': 'leaving', 'school-choice': 'leaving', 'choicing-out': 'leaving',
   'students-leaving': 'leaving', 'school-choice-scenario': 'leaving',
   'what-if-students-leave': 'leaving', 'transfers-out': 'leaving',
+  // NOT 'sped' alone as the slug -- it is jargon nobody says out loud -- but it is
+  // exactly what somebody working on the site types, so it lands here.
+  'special-education': 'sped', sped: 'sped', 'special-ed': 'sped',
+  'special-education-reports': 'sped', 'iep': 'sped',
+  'how-many-students-are-on-an-iep': 'spedcount', 'iep-count': 'spedcount',
+  'students-with-disabilities': 'spedcount', 'sped-enrollment': 'spedcount',
+  'how-many-on-an-iep': 'spedcount',
+  // NOT 'school-choice' or 'students-leaving': both already land on /if-students-leave.
+  'where-students-go-instead': 'spedleave', 'where-our-students-go': 'spedleave',
+  'who-leaves': 'spedleave', 'residents-by-district': 'spedleave',
+  'what-special-education-costs': 'spedcost', 'sped-cost': 'spedcost',
+  'circuit-breaker': 'spedcost', 'out-of-district-tuition': 'spedcost',
+  'sped-money': 'spedcost',
+  // NOT 'peers' meaning the older sources/analyses/peer-districts.md -- that document is
+  // about what comparable districts CUT, it is reachable from /reports, and it is a
+  // different question from what they SPEND. These are the forms somebody types looking
+  // for the spending comparison.
+  'what-other-districts-spend': 'peers', 'per-pupil': 'peers',
+  'per-pupil-spending': 'peers', peers: 'peers', 'peer-districts': 'peers',
+  'comparison-districts': 'peers', 'how-we-compare': 'peers',
+  'what-other-towns-spend': 'peers', 'spending-per-pupil': 'peers',
+  'who-ends-up-out-of-district': 'spedroute', 'out-of-district': 'spedroute',
+  'placement-counts': 'spedroute', 'placements': 'spedroute',
+  'the-route-out-of-district': 'spedroute',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -329,6 +396,12 @@ export const LABEL: Record<Tab, string> = {
   unwind: 'When a grant ends — who picks up the bill',
   minaid: 'Chapter 70 — the formula, and why it pays the floor',
   askus: 'Ask us a question',
+  sped: 'Special education — four reports',
+  spedcount: 'How many Lunenburg children are on an IEP',
+  spedleave: 'Who leaves Lunenburg schools, and where they go',
+  spedcost: 'What out-of-district special education costs, and what comes back',
+  spedroute: 'Who ends up out of district',
+  peers: 'What other districts spend, for each pupil',
   dataroom: 'The data room',
 }
 
@@ -354,6 +427,9 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   families: 'themoney',
   unwind: 'themoney',
   minaid: 'themoney',
+  sped: 'reports',
+  spedcount: 'sped', spedleave: 'sped', spedcost: 'sped', spedroute: 'sped',
+  peers: 'reports',
   agents: 'sources',
   freecash: 'money',
 }
@@ -440,6 +516,8 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
+  sped: 'analyses', spedcount: 'analyses', spedleave: 'analyses', spedcost: 'analyses',
+  spedroute: 'analyses', peers: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -458,8 +536,13 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
   money: ['themoney', 'stateaid', 'funds', 'gaps', 'askus'],
-  analyses: ['reports', 'minaid', 'staffing', 'stopped', 'unwind', 'leaving',
-             'families', 'sportsmoney', 'insurance', 'variance'],
+  // `sped` is ONE entry for FOUR reports, and that is deliberate twice over. The comment
+  // above warns that a bar with fourteen entries is a sitemap; adding the four reports
+  // individually would have made it exactly that. And the four belong behind one door
+  // anyway: /special-education is a chooser whose whole job is to say, before a reader
+  // opens any of them, that these four do not combine.
+  analyses: ['reports', 'sped', 'peers', 'minaid', 'staffing', 'stopped', 'unwind',
+             'leaving', 'families', 'sportsmoney', 'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

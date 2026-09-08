@@ -31,6 +31,12 @@ import { HealthInsurance } from './pages/HealthInsurance'
 import { StoppedFunding } from './pages/StoppedFunding'
 import { GrantUnwinding } from './pages/GrantUnwinding'
 import { MinimumAid } from './pages/MinimumAid'
+import { PeerSpending } from './pages/PeerSpending'
+import { SpecialEducationHub } from './pages/SpecialEducationHub'
+import { SpedStudents } from './pages/SpedStudents'
+import { SpedLeaving } from './pages/SpedLeaving'
+import { SpedCost } from './pages/SpedCost'
+import { SpedRoute } from './pages/SpedRoute'
 import { StateAid } from './pages/StateAid'
 import { IfStudentsLeave } from './pages/IfStudentsLeave'
 import { WhatFamiliesPay } from './pages/WhatFamiliesPay'
@@ -372,6 +378,12 @@ export default function App() {
       {tab === 'stopped' && <StoppedFunding />}
       {tab === 'unwind' && <GrantUnwinding />}
       {tab === 'minaid' && <MinimumAid />}
+      {tab === 'peers' && <PeerSpending />}
+      {tab === 'sped' && <SpecialEducationHub />}
+      {tab === 'spedcount' && <SpedStudents />}
+      {tab === 'spedleave' && <SpedLeaving />}
+      {tab === 'spedcost' && <SpedCost />}
+      {tab === 'spedroute' && <SpedRoute />}
       {tab === 'askus' && <AskUs />}
       {tab === 'sportsmoney' && <AthleticsMoney />}
       {tab === 'funds' && <SpecialRevenue />}

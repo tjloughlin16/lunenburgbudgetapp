@@ -102,6 +102,21 @@
   --fc-receipts: var(--ath-transport);
   --fc-aid: var(--ath-officials);
   --fc-other: var(--text-muted);
+  /* MONEY AGAINST PUPILS, on /what-other-districts-spend. A per-pupil figure is a ratio
+     and both halves move, and the page's central chart draws the two halves side by side:
+     what a district spent, and how many pupils it has. Neither is larger or better by
+     nature and neither is a direction, so this is a CATEGORICAL pair and never the
+     diverging one.
+     Deliberately kept off --series-cost/--series-revenue, because on THIS page
+     --series-cost means LUNENBURG against a field of other districts. A hue that means
+     "our town" in one chart must not mean "dollars" in the next.
+     THE VALUES ARE TWO OF THE ATHLETICS TRIPLE, by alias and under their own names, which
+     is the same move --fc-* makes and for the same reason: that set is validated
+     all-pairs against both surfaces, and the two pages never share a chart -- nothing
+     here carries a sport. An alias makes the reuse visible; copying the hex would have
+     hidden it, and the dark re-stepping would not have followed. */
+  --pp-money: var(--ath-coaches);
+  --pp-pupils: var(--ath-transport);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {

@@ -91,6 +91,15 @@ const ABOUT: Partial<Record<Tab, string>> = {
   minaid: 'Chapter 70’s formula, term by term, for twenty years — and why four of the last '
         + 'five increases are a flat per-pupil floor the Legislature sets rather than '
         + 'anything the formula produced.',
+  peers: 'What DESE says every Massachusetts district spends for each pupil, with '
+       + 'Lunenburg drawn through it — and the arithmetic that says how much of the '
+       + 'difference is money and how much is children.',
+  // FOUR reports behind one door, and the description says so, because the thing a reader
+  // most needs to know before opening any of them is that they do not combine.
+  sped: 'Four separate reports on the quarter of the budget nobody was measuring: how many '
+      + 'children, who leaves and where they go, what it costs and what the state '
+      + 'reimburses, and the route into out-of-district placement. They are four because '
+      + 'a student is not a dollar and a placement is not a cost.',
 }
 
 const DOOR = 'the money'

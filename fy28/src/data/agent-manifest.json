@@ -57,11 +57,167 @@
    "question": "special education as a cost driver",
    "path": "/docs/analyses/sped-and-the-curve.md",
    "note": ""
+  },
+  {
+   "question": "how many Lunenburg children are on an IEP, in district and out",
+   "path": "/data/sped-students.json",
+   "note": "a COUNT OF CHILDREN from DESE. Never divide it into a dollar figure \u2014 the money is a different return with a different census"
+  },
+  {
+   "question": "where Lunenburg resident children actually go to school, and both directions of school choice",
+   "path": "/data/sped-leaving.json",
+   "note": "a COUNT OF CHILDREN BY DISTRICT, SY2014 onward. It carries NO disability status, so it is not a special education figure"
+  },
+  {
+   "question": "what out-of-district special education costs, split by the fund that paid it, and what the circuit breaker reimburses",
+   "path": "/data/sped-cost.json",
+   "note": "DOLLARS. The budget line the town votes is the general fund share only; the all-funds figure is larger"
+  },
+  {
+   "question": "the route into out-of-district placement, and the town\u2019s own count of children placed",
+   "path": "/data/sped-route.json",
+   "note": "PLACEMENTS, on two instruments that do not always agree. The cohort bases are tens of children, so no percentage may be quoted without its count"
   }
  ],
  "boards": [
   {
-   "name": "board-of-health",
+   "name": "planning-board-2017",
+   "docs": 107
+  },
+  {
+   "name": "select-board-2017",
+   "docs": 107
+  },
+  {
+   "name": "select-board-2018",
+   "docs": 99
+  },
+  {
+   "name": "select-board-2019",
+   "docs": 95
+  },
+  {
+   "name": "cultural-council",
+   "docs": 84
+  },
+  {
+   "name": "select-board-2012",
+   "docs": 82
+  },
+  {
+   "name": "select-board-2013",
+   "docs": 80
+  },
+  {
+   "name": "select-board-2016",
+   "docs": 78
+  },
+  {
+   "name": "select-board-2020-1",
+   "docs": 71
+  },
+  {
+   "name": "planning-board-2018-1",
+   "docs": 69
+  },
+  {
+   "name": "economic-development-committee",
+   "docs": 69
+  },
+  {
+   "name": "select-board-2011",
+   "docs": 69
+  },
+  {
+   "name": "select-board-2015",
+   "docs": 69
+  },
+  {
+   "name": "select-board-2014",
+   "docs": 69
+  },
+  {
+   "name": "building-reuse-committee",
+   "docs": 64
+  },
+  {
+   "name": "by-law-committee",
+   "docs": 64
+  },
+  {
+   "name": "senior-citizens-tax-work-off-committee",
+   "docs": 63
+  },
+  {
+   "name": "sewer-commission-2016",
+   "docs": 60
+  },
+  {
+   "name": "select-board-2023-1",
+   "docs": 58
+  },
+  {
+   "name": "planning-board-2011-1",
+   "docs": 55
+  },
+  {
+   "name": "sewer-commission-2017",
+   "docs": 54
+  },
+  {
+   "name": "sewer-commission-2018",
+   "docs": 53
+  },
+  {
+   "name": "personnel-committee-2023",
+   "docs": 51
+  },
+  {
+   "name": "finance-committee-2020",
+   "docs": 51
+  },
+  {
+   "name": "sewer-commission-2019",
+   "docs": 51
+  },
+  {
+   "name": "sewer-commission-2015",
+   "docs": 50
+  },
+  {
+   "name": "finance-committee-2012",
+   "docs": 50
+  },
+  {
+   "name": "finance-committee-2016",
+   "docs": 50
+  },
+  {
+   "name": "finance-committee-2019",
+   "docs": 49
+  },
+  {
+   "name": "sewer-commission-2020",
+   "docs": 49
+  },
+  {
+   "name": "capital-planning-committee-2013",
+   "docs": 48
+  },
+  {
+   "name": "conservation-commission-2015",
+   "docs": 48
+  },
+  {
+   "name": "finance-committee-2013",
+   "docs": 48
+  },
+  {
+   "name": "finance-committee-2011",
+   "docs": 48
+  },
+  {
+   "name": "finance-committee-2015",
    "docs": 48
   },
   {
@@ -69,31 +225,219 @@
    "docs": 48
   },
   {
-   "name": "cemetery-commission",
+   "name": "finance-committee-appointing-committee",
+   "docs": 47
+  },
+  {
+   "name": "sewer-commission-2014",
+   "docs": 47
+  },
+  {
+   "name": "planning-board-2016-2",
+   "docs": 47
+  },
+  {
+   "name": "board-of-assessors-2023",
+   "docs": 47
+  },
+  {
+   "name": "charter-review-committee",
    "docs": 46
+  },
+  {
+   "name": "library-board-of-trustees-2012",
+   "docs": 45
+  },
+  {
+   "name": "finance-committee-2014",
+   "docs": 45
   },
   {
    "name": "board-of-assessors-2025",
    "docs": 45
   },
   {
-   "name": "planning-board-public-hearing",
+   "name": "personnel-committee-2022",
+   "docs": 44
+  },
+  {
+   "name": "sewer-commission-2021",
+   "docs": 44
+  },
+  {
+   "name": "sewer-commission-2022",
+   "docs": 44
+  },
+  {
+   "name": "select-board-2021-3",
+   "docs": 44
+  },
+  {
+   "name": "finance-committee-2017",
+   "docs": 44
+  },
+  {
+   "name": "select-board-2022-1",
+   "docs": 44
+  },
+  {
+   "name": "council-on-aging-2012",
+   "docs": 43
+  },
+  {
+   "name": "planning-board-2014-2",
+   "docs": 43
+  },
+  {
+   "name": "planning-board-2022-2",
    "docs": 42
   },
   {
-   "name": "public-access-cable-committee-pacc",
+   "name": "planning-board-2015-2",
+   "docs": 42
+  },
+  {
+   "name": "planning-board-2021-2",
    "docs": 41
   },
   {
-   "name": "council-on-aging",
+   "name": "council-on-aging-2013",
+   "docs": 40
+  },
+  {
+   "name": "planning-board-2010-1",
+   "docs": 40
+  },
+  {
+   "name": "zoning-board-of-appeals-2013",
    "docs": 39
   },
   {
-   "name": "zoning-board-of-appeals",
+   "name": "cable-advisory-committee",
+   "docs": 39
+  },
+  {
+   "name": "planning-board-2019-1",
+   "docs": 38
+  },
+  {
+   "name": "zoning-board-of-appeals-2014",
+   "docs": 38
+  },
+  {
+   "name": "finance-committee-2021-1",
+   "docs": 38
+  },
+  {
+   "name": "board-of-health-2012",
+   "docs": 37
+  },
+  {
+   "name": "planning-board-2023-1",
+   "docs": 37
+  },
+  {
+   "name": "stormwater-task-force-2016",
+   "docs": 37
+  },
+  {
+   "name": "historical-commission-2015",
+   "docs": 37
+  },
+  {
+   "name": "school-building-committee-meeting-2014",
+   "docs": 37
+  },
+  {
+   "name": "conservation-commission-2011",
+   "docs": 37
+  },
+  {
+   "name": "school-building-committee-meeting-2012",
+   "docs": 37
+  },
+  {
+   "name": "school-advisory-councils-committees-2019",
+   "docs": 37
+  },
+  {
+   "name": "agricultural-commission-2024",
+   "docs": 37
+  },
+  {
+   "name": "planning-board-2014-3",
+   "docs": 37
+  },
+  {
+   "name": "school-advisory-councils-committees-2014",
+   "docs": 36
+  },
+  {
+   "name": "conservation-commission-2012",
+   "docs": 36
+  },
+  {
+   "name": "select-board-2010",
+   "docs": 36
+  },
+  {
+   "name": "planning-board-2009-1",
+   "docs": 36
+  },
+  {
+   "name": "school-committee-2023-1",
+   "docs": 36
+  },
+  {
+   "name": "school-advisory-councils-committees-2021",
+   "docs": 36
+  },
+  {
+   "name": "council-on-aging-2011",
+   "docs": 35
+  },
+  {
+   "name": "board-of-health-2015",
+   "docs": 35
+  },
+  {
+   "name": "finance-committee-2018",
+   "docs": 35
+  },
+  {
+   "name": "planning-board-2013-1",
+   "docs": 35
+  },
+  {
+   "name": "board-of-registrars",
+   "docs": 35
+  },
+  {
+   "name": "board-of-assessors-2014",
    "docs": 34
   },
   {
-   "name": "school-advisory-councils-committees",
+   "name": "cemetery-commission-2018",
+   "docs": 34
+  },
+  {
+   "name": "conservation-commission-2017-2",
+   "docs": 34
+  },
+  {
+   "name": "conservation-commission-2014",
+   "docs": 34
+  },
+  {
+   "name": "select-board-2021-2",
+   "docs": 34
+  },
+  {
+   "name": "conservation-commission-2010",
+   "docs": 34
+  },
+  {
+   "name": "planning-board-2016-1",
    "docs": 34
   },
   {
@@ -101,7 +445,19 @@
    "docs": 34
   },
   {
-   "name": "agricultural-commission",
+   "name": "board-of-health-2014",
+   "docs": 33
+  },
+  {
+   "name": "cemetery-commission-2025",
+   "docs": 33
+  },
+  {
+   "name": "planning-board-2022-1",
+   "docs": 33
+  },
+  {
+   "name": "sewer-commission-2010",
    "docs": 33
   },
   {
@@ -109,31 +465,387 @@
    "docs": 33
   },
   {
+   "name": "lunenburg-municipal-building-design-committee-2021",
+   "docs": 33
+  },
+  {
+   "name": "sewer-commission-2026",
+   "docs": 33
+  },
+  {
+   "name": "school-building-committee-meeting-2013",
+   "docs": 33
+  },
+  {
+   "name": "planning-board-2012-1",
+   "docs": 33
+  },
+  {
+   "name": "planning-board-2014-1",
+   "docs": 33
+  },
+  {
+   "name": "planning-board-2021-3",
+   "docs": 32
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2016",
+   "docs": 32
+  },
+  {
+   "name": "sewer-commission-2012",
+   "docs": 32
+  },
+  {
+   "name": "sewer-commission-2013",
+   "docs": 32
+  },
+  {
+   "name": "finance-committee-2010",
+   "docs": 32
+  },
+  {
+   "name": "planning-board-2015-1",
+   "docs": 32
+  },
+  {
+   "name": "nashoba-valley-reginal-dispatch-committee",
+   "docs": 31
+  },
+  {
+   "name": "library-board-of-trustees-2014",
+   "docs": 31
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2013",
+   "docs": 31
+  },
+  {
+   "name": "planning-board-2013-2",
+   "docs": 31
+  },
+  {
+   "name": "zoning-board-of-appeals-2015",
+   "docs": 31
+  },
+  {
    "name": "lunenburg-municipal-building-design-committee-2025",
    "docs": 31
   },
   {
-   "name": "sewer-commission-2026",
+   "name": "select-board-2022-2",
    "docs": 31
   },
   {
-   "name": "historical-commission",
-   "docs": 31
-  },
-  {
-   "name": "architectural-preservation-district-commission",
+   "name": "board-of-health-2011",
    "docs": 30
   },
   {
-   "name": "stormwater-task-force",
+   "name": "parks-commission-2024-1",
+   "docs": 30
+  },
+  {
+   "name": "parks-commission-2018",
+   "docs": 30
+  },
+  {
+   "name": "planning-board-2020-1",
+   "docs": 30
+  },
+  {
+   "name": "board-of-assessors-2019",
+   "docs": 30
+  },
+  {
+   "name": "board-of-health-2020",
+   "docs": 30
+  },
+  {
+   "name": "library-board-of-trustees-2013",
+   "docs": 29
+  },
+  {
+   "name": "conservation-commission-2016-1",
+   "docs": 29
+  },
+  {
+   "name": "green-communities-committee-2011",
+   "docs": 29
+  },
+  {
+   "name": "stormwater-task-force-2019",
+   "docs": 29
+  },
+  {
+   "name": "lunenburg-municipal-building-design-committee-2020-1",
+   "docs": 29
+  },
+  {
+   "name": "lunenburg-300th-anniversary-committee",
+   "docs": 29
+  },
+  {
+   "name": "architectural-preservation-district-commission-2022",
+   "docs": 29
+  },
+  {
+   "name": "board-of-health-2025",
+   "docs": 29
+  },
+  {
+   "name": "planning-board-2012-2",
+   "docs": 29
+  },
+  {
+   "name": "school-advisory-councils-committees-2022",
+   "docs": 29
+  },
+  {
+   "name": "library-board-of-trustees-2015",
    "docs": 28
+  },
+  {
+   "name": "zoning-board-of-appeals-2023",
+   "docs": 28
+  },
+  {
+   "name": "historical-commission-2014",
+   "docs": 28
+  },
+  {
+   "name": "sewer-commission-2011",
+   "docs": 28
+  },
+  {
+   "name": "conservation-commission-2018-1",
+   "docs": 28
+  },
+  {
+   "name": "school-advisory-councils-committees-2025",
+   "docs": 28
+  },
+  {
+   "name": "board-of-health-2018",
+   "docs": 28
+  },
+  {
+   "name": "board-of-assessors-2024-2",
+   "docs": 28
+  },
+  {
+   "name": "library-board-of-trustees-2020",
+   "docs": 28
+  },
+  {
+   "name": "board-of-health-2016",
+   "docs": 27
+  },
+  {
+   "name": "parks-commission-2023",
+   "docs": 27
+  },
+  {
+   "name": "planning-board-2019-2",
+   "docs": 27
+  },
+  {
+   "name": "stormwater-task-force-2017",
+   "docs": 27
+  },
+  {
+   "name": "cemetery-commission-2023",
+   "docs": 27
+  },
+  {
+   "name": "planning-board-2022-3",
+   "docs": 27
+  },
+  {
+   "name": "green-communities-committee-2009",
+   "docs": 27
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2025",
+   "docs": 27
+  },
+  {
+   "name": "school-committee-2022-1",
+   "docs": 27
+  },
+  {
+   "name": "board-of-health-2024",
+   "docs": 27
+  },
+  {
+   "name": "school-advisory-councils-committees-2023",
+   "docs": 27
+  },
+  {
+   "name": "agricultural-commission-2025",
+   "docs": 27
   },
   {
    "name": "planning-board-2025-2",
    "docs": 26
   },
   {
-   "name": "open-space-committee",
+   "name": "board-of-health-2010",
+   "docs": 26
+  },
+  {
+   "name": "board-of-assessors-2017",
+   "docs": 26
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2015",
+   "docs": 26
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2011",
+   "docs": 26
+  },
+  {
+   "name": "devens-regional-oversight-committee",
+   "docs": 26
+  },
+  {
+   "name": "parks-commission-2017",
+   "docs": 26
+  },
+  {
+   "name": "planning-board-2011-2",
+   "docs": 26
+  },
+  {
+   "name": "board-of-health-2009",
+   "docs": 26
+  },
+  {
+   "name": "architectural-preservation-district-commission-2024",
+   "docs": 26
+  },
+  {
+   "name": "town-manager-screening-committee",
+   "docs": 26
+  },
+  {
+   "name": "finance-committee-2023-1",
+   "docs": 26
+  },
+  {
+   "name": "board-of-health-2022",
+   "docs": 26
+  },
+  {
+   "name": "board-of-assessors-2012",
+   "docs": 25
+  },
+  {
+   "name": "board-of-assessors-2013",
+   "docs": 25
+  },
+  {
+   "name": "board-of-health-2013",
+   "docs": 25
+  },
+  {
+   "name": "board-of-assessors-2011",
+   "docs": 25
+  },
+  {
+   "name": "board-of-health-2017",
+   "docs": 25
+  },
+  {
+   "name": "zoning-board-of-appeals-2017",
+   "docs": 25
+  },
+  {
+   "name": "finance-committee-2022-2",
+   "docs": 25
+  },
+  {
+   "name": "council-on-aging-2024",
+   "docs": 25
+  },
+  {
+   "name": "council-on-aging-2023",
+   "docs": 25
+  },
+  {
+   "name": "board-of-health-2021",
+   "docs": 25
+  },
+  {
+   "name": "library-board-of-trustees-2021",
+   "docs": 25
+  },
+  {
+   "name": "board-of-health-2023",
+   "docs": 25
+  },
+  {
+   "name": "architectural-preservation-district-commission-2016",
+   "docs": 24
+  },
+  {
+   "name": "board-of-assessors-2010",
+   "docs": 24
+  },
+  {
+   "name": "board-of-assessors-2015",
+   "docs": 24
+  },
+  {
+   "name": "council-on-aging-2014",
+   "docs": 24
+  },
+  {
+   "name": "planning-board-2019-3",
+   "docs": 24
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2012",
+   "docs": 24
+  },
+  {
+   "name": "stormwater-task-force-2018",
+   "docs": 24
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2022",
+   "docs": 24
+  },
+  {
+   "name": "school-building-committee-meeting-2015",
+   "docs": 24
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2019",
+   "docs": 24
+  },
+  {
+   "name": "sewer-commission-2024-1",
+   "docs": 24
+  },
+  {
+   "name": "finance-committee-2022-1",
+   "docs": 24
+  },
+  {
+   "name": "council-on-aging-2019",
+   "docs": 24
+  },
+  {
+   "name": "council-on-aging-2025",
+   "docs": 24
+  },
+  {
+   "name": "library-board-of-trustees-2019",
+   "docs": 24
+  },
+  {
+   "name": "architectural-preservation-district-commission-2021",
    "docs": 24
   },
   {
@@ -141,15 +853,243 @@
    "docs": 24
   },
   {
+   "name": "agricultural-commission-2023",
+   "docs": 24
+  },
+  {
+   "name": "open-space-committee-2018",
+   "docs": 24
+  },
+  {
+   "name": "library-board-of-trustees-2022",
+   "docs": 24
+  },
+  {
+   "name": "architectural-preservation-district-commission-2019",
+   "docs": 24
+  },
+  {
+   "name": "board-of-assessors-2016",
+   "docs": 23
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2017",
+   "docs": 23
+  },
+  {
+   "name": "zoning-board-of-appeals-2024",
+   "docs": 23
+  },
+  {
+   "name": "planning-board-2020-2",
+   "docs": 23
+  },
+  {
+   "name": "historical-commission-2024",
+   "docs": 23
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2021",
+   "docs": 23
+  },
+  {
+   "name": "planning-board-public-hearing-2026",
+   "docs": 23
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2024",
+   "docs": 23
+  },
+  {
+   "name": "council-on-aging-2018",
+   "docs": 23
+  },
+  {
+   "name": "architectural-preservation-district-commission-2025",
+   "docs": 23
+  },
+  {
+   "name": "board-of-assessors-2020",
+   "docs": 23
+  },
+  {
+   "name": "board-of-assessors-2022",
+   "docs": 23
+  },
+  {
+   "name": "council-on-aging-2010",
+   "docs": 22
+  },
+  {
+   "name": "council-on-aging-2016",
+   "docs": 22
+  },
+  {
+   "name": "planning-board-2023-2",
+   "docs": 22
+  },
+  {
+   "name": "library-board-of-trustees-2016",
+   "docs": 22
+  },
+  {
+   "name": "planning-board-2021-1",
+   "docs": 22
+  },
+  {
+   "name": "open-space-committee-2014",
+   "docs": 22
+  },
+  {
+   "name": "council-on-aging-2017",
+   "docs": 22
+  },
+  {
+   "name": "council-on-aging-2015",
+   "docs": 22
+  },
+  {
+   "name": "cemetery-commission-2019",
+   "docs": 22
+  },
+  {
+   "name": "historical-commission-2013",
+   "docs": 22
+  },
+  {
+   "name": "historical-commission-2016",
+   "docs": 22
+  },
+  {
+   "name": "cemetery-commission-2022",
+   "docs": 22
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2023",
+   "docs": 22
+  },
+  {
+   "name": "lunenburg-housing-authority-2023",
+   "docs": 22
+  },
+  {
+   "name": "lunenburg-housing-authority-2021",
+   "docs": 22
+  },
+  {
+   "name": "zoning-board-of-appeals-2012",
+   "docs": 22
+  },
+  {
+   "name": "select-board-2026-4",
+   "docs": 22
+  },
+  {
+   "name": "architectural-preservation-district-commission-2023",
+   "docs": 22
+  },
+  {
    "name": "finance-committee-2025-1",
    "docs": 22
+  },
+  {
+   "name": "board-of-assessors-2018",
+   "docs": 22
+  },
+  {
+   "name": "capital-planning-committee-2021",
+   "docs": 22
+  },
+  {
+   "name": "board-of-health-2019",
+   "docs": 22
+  },
+  {
+   "name": "school-advisory-councils-committees-2024",
+   "docs": 22
+  },
+  {
+   "name": "sewer-commission-2023-1",
+   "docs": 22
+  },
+  {
+   "name": "library-board-of-trustees-2023",
+   "docs": 22
+  },
+  {
+   "name": "personnel-committee-2010",
+   "docs": 22
+  },
+  {
+   "name": "library-board-of-trustees-2011",
+   "docs": 21
+  },
+  {
+   "name": "parks-commission-2021-1",
+   "docs": 21
+  },
+  {
+   "name": "cemetery-commission-2021",
+   "docs": 21
+  },
+  {
+   "name": "parks-commission-2016",
+   "docs": 21
   },
   {
    "name": "select-board-2025-6",
    "docs": 21
   },
   {
+   "name": "parks-commission-2014",
+   "docs": 21
+  },
+  {
+   "name": "zoning-board-of-appeals-2011",
+   "docs": 21
+  },
+  {
+   "name": "board-of-assessors-2024-1",
+   "docs": 21
+  },
+  {
+   "name": "library-board-of-trustees-2009",
+   "docs": 21
+  },
+  {
+   "name": "open-space-committee-2013",
+   "docs": 20
+  },
+  {
+   "name": "capital-planning-committee-2016",
+   "docs": 20
+  },
+  {
+   "name": "library-board-of-trustees-2010",
+   "docs": 20
+  },
+  {
+   "name": "library-board-of-trustees-2017",
+   "docs": 20
+  },
+  {
+   "name": "personnel-committee-2024",
+   "docs": 20
+  },
+  {
+   "name": "historical-commission-2012",
+   "docs": 20
+  },
+  {
    "name": "planning-board-2026-1",
+   "docs": 20
+  },
+  {
+   "name": "green-communities-committee-2010",
+   "docs": 20
+  },
+  {
+   "name": "zoning-board-of-appeals-2019",
    "docs": 20
   },
   {
@@ -157,27 +1097,163 @@
    "docs": 20
   },
   {
+   "name": "parks-commission-2019",
+   "docs": 20
+  },
+  {
+   "name": "zoning-board-of-appeals-2016",
+   "docs": 20
+  },
+  {
+   "name": "planning-board-public-hearing-2025",
+   "docs": 20
+  },
+  {
+   "name": "historical-commission-2025",
+   "docs": 20
+  },
+  {
+   "name": "lunenburg-housing-authority-2022",
+   "docs": 20
+  },
+  {
+   "name": "green-communities-committee-2024",
+   "docs": 20
+  },
+  {
+   "name": "select-board-public-hearing",
+   "docs": 20
+  },
+  {
+   "name": "council-on-aging-2022",
+   "docs": 20
+  },
+  {
+   "name": "personnel-committee-2011",
+   "docs": 20
+  },
+  {
    "name": "school-committee-2025-5",
    "docs": 20
+  },
+  {
+   "name": "planning-board-2021-4",
+   "docs": 19
   },
   {
    "name": "trust-fund-commission-2025",
    "docs": 19
   },
   {
-   "name": "lunenburg-housing-authority",
+   "name": "school-advisory-councils-committees-2017",
    "docs": 19
   },
   {
-   "name": "select-board-2026-3",
+   "name": "historical-commission-2011",
    "docs": 19
   },
   {
-   "name": "select-board-2026-1",
+   "name": "zoning-board-of-appeals-2022",
    "docs": 19
   },
   {
-   "name": "master-plan-steering-committee",
+   "name": "parks-commission-2020",
+   "docs": 19
+  },
+  {
+   "name": "finance-committee-2024-3",
+   "docs": 19
+  },
+  {
+   "name": "historical-commission-2018",
+   "docs": 19
+  },
+  {
+   "name": "planning-board-2013-3",
+   "docs": 19
+  },
+  {
+   "name": "select-board-2023-2",
+   "docs": 19
+  },
+  {
+   "name": "lunenburg-municipal-building-design-committee-2022",
+   "docs": 19
+  },
+  {
+   "name": "school-committee-2024-4",
+   "docs": 19
+  },
+  {
+   "name": "conservation-commission-2013",
+   "docs": 19
+  },
+  {
+   "name": "cemetery-commission-2017",
+   "docs": 19
+  },
+  {
+   "name": "sewer-commission-2024-2",
+   "docs": 19
+  },
+  {
+   "name": "conservation-commission-2018-2",
+   "docs": 19
+  },
+  {
+   "name": "library-board-of-trustees-2018",
+   "docs": 19
+  },
+  {
+   "name": "board-of-assessors-2026",
+   "docs": 19
+  },
+  {
+   "name": "board-of-health-2026",
+   "docs": 19
+  },
+  {
+   "name": "school-advisory-councils-committees-2020",
+   "docs": 19
+  },
+  {
+   "name": "agricultural-commission-2018",
+   "docs": 19
+  },
+  {
+   "name": "personnel-committee-2021",
+   "docs": 18
+  },
+  {
+   "name": "capital-planning-committee-2017",
+   "docs": 18
+  },
+  {
+   "name": "parks-commission-2022-1",
+   "docs": 18
+  },
+  {
+   "name": "school-advisory-councils-committees-2015",
+   "docs": 18
+  },
+  {
+   "name": "green-communities-committee-2013",
+   "docs": 18
+  },
+  {
+   "name": "zoning-board-of-appeals-2026",
+   "docs": 18
+  },
+  {
+   "name": "lunenburg-housing-authority-2019",
+   "docs": 18
+  },
+  {
+   "name": "historical-commission-2019",
+   "docs": 18
+  },
+  {
+   "name": "lunenburg-housing-authority-2024",
    "docs": 18
   },
   {
@@ -185,15 +1261,63 @@
    "docs": 18
   },
   {
-   "name": "economic-development-committee",
+   "name": "historical-commission-2023",
    "docs": 18
   },
   {
-   "name": "board-of-assessors-2026",
+   "name": "lunenburg-municipal-building-design-committee-2024",
    "docs": 18
   },
   {
-   "name": "green-communities-committee",
+   "name": "lunenburg-municipal-building-design-committee-2026",
+   "docs": 18
+  },
+  {
+   "name": "select-board-2020-2",
+   "docs": 18
+  },
+  {
+   "name": "personnel-committee-2015",
+   "docs": 18
+  },
+  {
+   "name": "school-committee-2023-2",
+   "docs": 18
+  },
+  {
+   "name": "agricultural-commission-2019",
+   "docs": 18
+  },
+  {
+   "name": "master-plan-steering-committee-2025",
+   "docs": 17
+  },
+  {
+   "name": "personnel-committee-2020",
+   "docs": 17
+  },
+  {
+   "name": "capital-planning-committee-2014",
+   "docs": 17
+  },
+  {
+   "name": "cemetery-commission-2024",
+   "docs": 17
+  },
+  {
+   "name": "historical-commission-2017",
+   "docs": 17
+  },
+  {
+   "name": "land-acquisition-committee",
+   "docs": 17
+  },
+  {
+   "name": "school-building-committee-meeting-2016",
+   "docs": 17
+  },
+  {
+   "name": "school-committee-2024-3",
    "docs": 17
   },
   {
@@ -201,11 +1325,51 @@
    "docs": 17
   },
   {
+   "name": "conservation-commission-2019-2",
+   "docs": 17
+  },
+  {
+   "name": "stormwater-task-force-2026",
+   "docs": 17
+  },
+  {
+   "name": "finance-committee-2024-1",
+   "docs": 17
+  },
+  {
+   "name": "historical-commission-2022",
+   "docs": 17
+  },
+  {
    "name": "select-board-2025-3",
    "docs": 17
   },
   {
-   "name": "select-board-2026-2",
+   "name": "lunenburg-housing-authority-2020",
+   "docs": 17
+  },
+  {
+   "name": "historical-commission-2021",
+   "docs": 17
+  },
+  {
+   "name": "library-board-of-trustees-2024-1",
+   "docs": 17
+  },
+  {
+   "name": "school-advisory-councils-committees-2018",
+   "docs": 17
+  },
+  {
+   "name": "open-space-committee-2024",
+   "docs": 17
+  },
+  {
+   "name": "personnel-committee-2012",
+   "docs": 17
+  },
+  {
+   "name": "conservation-commission-2023-1",
    "docs": 17
   },
   {
@@ -213,15 +1377,39 @@
    "docs": 17
   },
   {
+   "name": "capital-planning-committee-2015",
+   "docs": 16
+  },
+  {
+   "name": "personnel-committee-2019",
+   "docs": 16
+  },
+  {
+   "name": "lunenburg-housing-authority-2011",
+   "docs": 16
+  },
+  {
+   "name": "planning-board-2024-2",
+   "docs": 16
+  },
+  {
+   "name": "green-communities-committee-2014",
+   "docs": 16
+  },
+  {
+   "name": "zoning-board-of-appeals-2025",
+   "docs": 16
+  },
+  {
    "name": "parks-commission-2026",
    "docs": 16
   },
   {
-   "name": "lunenburg-300th-anniversary-committee",
+   "name": "planning-board-public-hearing-2024",
    "docs": 16
   },
   {
-   "name": "lunenburg-municipal-building-design-committee-2026",
+   "name": "public-access-cable-committee-pacc-2018",
    "docs": 16
   },
   {
@@ -229,11 +1417,87 @@
    "docs": 16
   },
   {
+   "name": "sewer-commission-2023-2",
+   "docs": 16
+  },
+  {
+   "name": "council-on-aging-2026",
+   "docs": 16
+  },
+  {
+   "name": "open-space-committee-2025",
+   "docs": 16
+  },
+  {
    "name": "school-committee-2025-3",
    "docs": 16
   },
   {
+   "name": "personnel-committee-2016",
+   "docs": 16
+  },
+  {
+   "name": "board-of-assessors-2021",
+   "docs": 16
+  },
+  {
+   "name": "architectural-preservation-district-commission-2018",
+   "docs": 16
+  },
+  {
+   "name": "select-board-2026-3",
+   "docs": 16
+  },
+  {
+   "name": "capital-planning-committee-2018",
+   "docs": 16
+  },
+  {
+   "name": "school-advisory-councils-committees-2016",
+   "docs": 15
+  },
+  {
+   "name": "conservation-commission-2017-1",
+   "docs": 15
+  },
+  {
+   "name": "lunenburg-housing-authority-2017",
+   "docs": 15
+  },
+  {
    "name": "finance-committee-2026-1",
+   "docs": 15
+  },
+  {
+   "name": "green-communities-committee-2025",
+   "docs": 15
+  },
+  {
+   "name": "conservation-commission-2022-1",
+   "docs": 15
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2026",
+   "docs": 15
+  },
+  {
+   "name": "agricultural-commission-2021",
+   "docs": 15
+  },
+  {
+   "name": "budget-task-force",
+   "docs": 15
+  },
+  {
+   "name": "capital-planning-committee-2022",
+   "docs": 15
+  },
+  {
+   "name": "agricultural-commission-2022",
+   "docs": 15
+  },
+  {
+   "name": "select-board-2024-4",
    "docs": 15
   },
   {
@@ -241,7 +1505,47 @@
    "docs": 15
   },
   {
+   "name": "capital-planning-committee-2024",
+   "docs": 15
+  },
+  {
    "name": "planning-board-2025-1",
+   "docs": 14
+  },
+  {
+   "name": "capital-planning-committee-2011",
+   "docs": 14
+  },
+  {
+   "name": "parks-commission-2021-2",
+   "docs": 14
+  },
+  {
+   "name": "lunenburg-housing-authority-2013",
+   "docs": 14
+  },
+  {
+   "name": "lunenburg-housing-authority-2012",
+   "docs": 14
+  },
+  {
+   "name": "zoning-board-of-appeals-2021",
+   "docs": 14
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2010",
+   "docs": 14
+  },
+  {
+   "name": "stormwater-task-force-2024",
+   "docs": 14
+  },
+  {
+   "name": "conservation-commission-2019-1",
+   "docs": 14
+  },
+  {
+   "name": "lunenburg-housing-authority-2025",
    "docs": 14
   },
   {
@@ -249,7 +1553,19 @@
    "docs": 14
   },
   {
-   "name": "select-board-public-hearing",
+   "name": "stormwater-task-force-2025",
+   "docs": 14
+  },
+  {
+   "name": "school-committee-2026-3",
+   "docs": 14
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2020",
+   "docs": 14
+  },
+  {
+   "name": "capital-planning-committee-2023",
    "docs": 14
   },
   {
@@ -257,7 +1573,35 @@
    "docs": 14
   },
   {
-   "name": "school-committee-2026-3",
+   "name": "select-board-2024-1",
+   "docs": 14
+  },
+  {
+   "name": "trust-fund-commission-2026-1",
+   "docs": 13
+  },
+  {
+   "name": "parks-commission-2022-2",
+   "docs": 13
+  },
+  {
+   "name": "personnel-committee-2018",
+   "docs": 13
+  },
+  {
+   "name": "cemetery-commission-2026",
+   "docs": 13
+  },
+  {
+   "name": "planning-board-2020-3",
+   "docs": 13
+  },
+  {
+   "name": "lunenburg-housing-authority-2016",
+   "docs": 13
+  },
+  {
+   "name": "lunenburg-housing-authority-2014",
    "docs": 13
   },
   {
@@ -265,27 +1609,163 @@
    "docs": 13
   },
   {
+   "name": "parks-commission-2015",
+   "docs": 13
+  },
+  {
+   "name": "stormwater-task-force-2022",
+   "docs": 13
+  },
+  {
+   "name": "school-committee-2024-5",
+   "docs": 13
+  },
+  {
+   "name": "conservation-commission-2024-4",
+   "docs": 13
+  },
+  {
+   "name": "cemetery-commission-2016",
+   "docs": 13
+  },
+  {
    "name": "select-board-2025-1",
    "docs": 13
+  },
+  {
+   "name": "conservation-commission-2022-3",
+   "docs": 13
+  },
+  {
+   "name": "planning-board-2009-2",
+   "docs": 13
+  },
+  {
+   "name": "select-board-2024-5",
+   "docs": 13
+  },
+  {
+   "name": "capital-planning-committee-2020",
+   "docs": 13
+  },
+  {
+   "name": "finance-committee-2021-2",
+   "docs": 13
+  },
+  {
+   "name": "capital-planning-committee-2019",
+   "docs": 13
+  },
+  {
+   "name": "select-board-2026-2",
+   "docs": 13
+  },
+  {
+   "name": "open-space-committee-2021",
+   "docs": 13
+  },
+  {
+   "name": "open-space-committee-2023",
+   "docs": 13
+  },
+  {
+   "name": "personnel-committee-2009",
+   "docs": 12
   },
   {
    "name": "planning-board-2025-3",
    "docs": 12
   },
   {
-   "name": "trust-fund-commission-2026",
+   "name": "agricultural-commission-2017",
    "docs": 12
   },
   {
-   "name": "capital-planning-committee",
+   "name": "planning-board-2024-3",
    "docs": 12
   },
   {
-   "name": "by-law-committee",
+   "name": "zoning-board-of-appeals-2018",
    "docs": 12
+  },
+  {
+   "name": "lunenburg-housing-authority-2015",
+   "docs": 12
+  },
+  {
+   "name": "historical-commission-2026",
+   "docs": 12
+  },
+  {
+   "name": "cemetery-commission-2014",
+   "docs": 12
+  },
+  {
+   "name": "agricultural-commission-2020",
+   "docs": 12
+  },
+  {
+   "name": "select-board-2024-7",
+   "docs": 12
+  },
+  {
+   "name": "conservation-commission-2021-5",
+   "docs": 12
+  },
+  {
+   "name": "master-plan-steering-committee-2024",
+   "docs": 11
+  },
+  {
+   "name": "trust-fund-commission-2019",
+   "docs": 11
+  },
+  {
+   "name": "select-board-2021-1",
+   "docs": 11
+  },
+  {
+   "name": "conservation-commission-2020-4",
+   "docs": 11
   },
   {
    "name": "select-board-2025-4",
+   "docs": 11
+  },
+  {
+   "name": "lunenburg-housing-authority-2018",
+   "docs": 11
+  },
+  {
+   "name": "finance-committee-2024-2",
+   "docs": 11
+  },
+  {
+   "name": "conservation-commission-2024-3",
+   "docs": 11
+  },
+  {
+   "name": "planning-board-2015-3",
+   "docs": 11
+  },
+  {
+   "name": "finance-committee-2024-4",
+   "docs": 11
+  },
+  {
+   "name": "conservation-commission-2022-2",
+   "docs": 11
+  },
+  {
+   "name": "conservation-commission-2020-1",
+   "docs": 11
+  },
+  {
+   "name": "school-advisory-councils-committees-2026",
+   "docs": 11
+  },
+  {
+   "name": "open-space-committee-2019",
    "docs": 11
   },
   {
@@ -293,7 +1773,51 @@
    "docs": 11
   },
   {
+   "name": "personnel-committee-2013",
+   "docs": 11
+  },
+  {
+   "name": "select-board-2026-1",
+   "docs": 11
+  },
+  {
+   "name": "open-space-committee-2022",
+   "docs": 11
+  },
+  {
+   "name": "finance-committee-2023-2",
+   "docs": 11
+  },
+  {
+   "name": "architectural-preservation-district-commission-2017",
+   "docs": 10
+  },
+  {
+   "name": "lunenburg-housing-authority-2010",
+   "docs": 10
+  },
+  {
+   "name": "planning-board-2026-2",
+   "docs": 10
+  },
+  {
+   "name": "historical-commission-2010",
+   "docs": 10
+  },
+  {
+   "name": "conservation-commission-2024-2",
+   "docs": 10
+  },
+  {
+   "name": "conservation-commission-2019-3",
+   "docs": 10
+  },
+  {
    "name": "select-board-2025-2",
+   "docs": 10
+  },
+  {
+   "name": "historical-commission-2020",
    "docs": 10
   },
   {
@@ -301,7 +1825,39 @@
    "docs": 10
   },
   {
-   "name": "cultural-council",
+   "name": "conservation-commission-2021-4",
+   "docs": 10
+  },
+  {
+   "name": "capital-planning-committee-2025",
+   "docs": 10
+  },
+  {
+   "name": "planning-board-2016-3",
+   "docs": 10
+  },
+  {
+   "name": "conservation-commission-2023-3",
+   "docs": 10
+  },
+  {
+   "name": "council-on-aging-2020",
+   "docs": 10
+  },
+  {
+   "name": "select-board-2024-3",
+   "docs": 10
+  },
+  {
+   "name": "council-on-aging-2021",
+   "docs": 10
+  },
+  {
+   "name": "green-communities-committee-2023",
+   "docs": 9
+  },
+  {
+   "name": "lunenburg-municipal-building-design-committee-2023",
    "docs": 9
   },
   {
@@ -310,6 +1866,74 @@
   },
   {
    "name": "conservation-commission-2026-2",
+   "docs": 9
+  },
+  {
+   "name": "green-communities-committee-2022",
+   "docs": 9
+  },
+  {
+   "name": "green-communities-committee-2021",
+   "docs": 9
+  },
+  {
+   "name": "zoning-board-of-appeals-2010",
+   "docs": 9
+  },
+  {
+   "name": "conservation-commission-2020-2",
+   "docs": 9
+  },
+  {
+   "name": "open-space-committee-2026",
+   "docs": 9
+  },
+  {
+   "name": "personnel-committee-2017",
+   "docs": 9
+  },
+  {
+   "name": "architectural-preservation-district-commission-2020",
+   "docs": 9
+  },
+  {
+   "name": "open-space-committee-2020",
+   "docs": 9
+  },
+  {
+   "name": "conservation-commission-2023-2",
+   "docs": 9
+  },
+  {
+   "name": "conservation-commission-2021-1",
+   "docs": 9
+  },
+  {
+   "name": "school-advisory-councils-committees-2013",
+   "docs": 8
+  },
+  {
+   "name": "open-space-committee-2012",
+   "docs": 8
+  },
+  {
+   "name": "capital-planning-committee-2010",
+   "docs": 8
+  },
+  {
+   "name": "master-plan-steering-committee-2023",
+   "docs": 8
+  },
+  {
+   "name": "green-communities-committee-2016",
+   "docs": 8
+  },
+  {
+   "name": "green-communities-committee-2012",
+   "docs": 8
+  },
+  {
+   "name": "conservation-commission-2024-1",
    "docs": 8
   },
   {
@@ -317,19 +1941,119 @@
    "docs": 8
   },
   {
-   "name": "board-of-registrars",
+   "name": "stormwater-task-force-2023",
    "docs": 8
   },
   {
-   "name": "finance-committee-appointing-committee",
+   "name": "conservation-commission-2019-4",
+   "docs": 8
+  },
+  {
+   "name": "finance-committee-public-hearing",
+   "docs": 8
+  },
+  {
+   "name": "board-of-assessors-2024-3",
+   "docs": 8
+  },
+  {
+   "name": "select-board-2024-2",
+   "docs": 8
+  },
+  {
+   "name": "trust-fund-commission-2026-2",
    "docs": 7
   },
   {
-   "name": "planning-board-2026-2",
+   "name": "green-communities-committee-2015",
+   "docs": 7
+  },
+  {
+   "name": "select-board-2023-3",
+   "docs": 7
+  },
+  {
+   "name": "conservation-commission-2020-5",
+   "docs": 7
+  },
+  {
+   "name": "green-communities-committee-2020",
+   "docs": 7
+  },
+  {
+   "name": "school-committee-2024-1",
    "docs": 7
   },
   {
    "name": "finance-committee-2026-3",
+   "docs": 7
+  },
+  {
+   "name": "conservation-commission-2020-3",
+   "docs": 7
+  },
+  {
+   "name": "parks-commission-2011",
+   "docs": 7
+  },
+  {
+   "name": "planning-board-2010-2",
+   "docs": 7
+  },
+  {
+   "name": "conservation-commission-2023-4",
+   "docs": 7
+  },
+  {
+   "name": "conservation-commission-2021-3",
+   "docs": 7
+  },
+  {
+   "name": "architectural-preservation-district-commission-2026",
+   "docs": 7
+  },
+  {
+   "name": "school-advisory-councils-committees-2012",
+   "docs": 6
+  },
+  {
+   "name": "capital-planning-committee-2012",
+   "docs": 6
+  },
+  {
+   "name": "school-building-committee-meeting-2019",
+   "docs": 6
+  },
+  {
+   "name": "school-committee-2021",
+   "docs": 6
+  },
+  {
+   "name": "school-committee-2024-2",
+   "docs": 6
+  },
+  {
+   "name": "conservation-commission-2022-4",
+   "docs": 6
+  },
+  {
+   "name": "north-central-climate-change-coalition",
+   "docs": 6
+  },
+  {
+   "name": "school-committee-2022-2",
+   "docs": 6
+  },
+  {
+   "name": "cemetery-commission-2015",
+   "docs": 6
+  },
+  {
+   "name": "green-communities-committee-2018",
+   "docs": 6
+  },
+  {
+   "name": "stormwater-task-force-2021",
    "docs": 6
   },
   {
@@ -337,23 +2061,159 @@
    "docs": 6
   },
   {
-   "name": "finance-committee-public-hearing",
+   "name": "planning-board-2012-3",
+   "docs": 6
+  },
+  {
+   "name": "agricultural-commission-2026",
+   "docs": 6
+  },
+  {
+   "name": "conservation-commission-2021-2",
+   "docs": 6
+  },
+  {
+   "name": "planning-board-2018-2",
    "docs": 5
   },
   {
-   "name": "north-central-climate-change-coalition",
+   "name": "parks-commission-2024-2",
+   "docs": 5
+  },
+  {
+   "name": "personnel-committee-2026",
+   "docs": 5
+  },
+  {
+   "name": "select-board-2024-8",
+   "docs": 5
+  },
+  {
+   "name": "planning-board-2024-1",
+   "docs": 5
+  },
+  {
+   "name": "green-communities-committee-2017",
+   "docs": 5
+  },
+  {
+   "name": "cemetery-commission-2020",
+   "docs": 5
+  },
+  {
+   "name": "planning-board-2024-4",
+   "docs": 5
+  },
+  {
+   "name": "cemetery-commission-2012",
+   "docs": 5
+  },
+  {
+   "name": "lunenburg-housing-authority-2026",
+   "docs": 5
+  },
+  {
+   "name": "cemetery-commission-2011",
+   "docs": 5
+  },
+  {
+   "name": "parks-commission-2012",
+   "docs": 5
+  },
+  {
+   "name": "conservation-commission-2023-5",
+   "docs": 5
+  },
+  {
+   "name": "conservation-commission-2018-3",
+   "docs": 5
+  },
+  {
+   "name": "library-board-of-trustees-2024-2",
+   "docs": 5
+  },
+  {
+   "name": "school-advisory-councils-committees-2011",
    "docs": 4
   },
   {
-   "name": "cable-advisory-committee",
-   "docs": 3
+   "name": "open-space-committee-2015",
+   "docs": 4
   },
   {
-   "name": "personnel-committee",
-   "docs": 3
+   "name": "lunenburg-hazard-mitigation-plan-team-committee",
+   "docs": 4
   },
   {
    "name": "athletic-advisory-council",
+   "docs": 4
+  },
+  {
+   "name": "cemetery-commission-2010",
+   "docs": 4
+  },
+  {
+   "name": "school-committee-2023-3",
+   "docs": 4
+  },
+  {
+   "name": "public-access-cable-committee-pacc-2014",
+   "docs": 3
+  },
+  {
+   "name": "school-building-committee-meeting-2018",
+   "docs": 3
+  },
+  {
+   "name": "school-building-committee-meeting-2017",
+   "docs": 3
+  },
+  {
+   "name": "lunenburg-municipal-building-design-committee-2019",
+   "docs": 3
+  },
+  {
+   "name": "planning-board-public-hearing-2023",
+   "docs": 3
+  },
+  {
+   "name": "sewer-commission-2023-3",
+   "docs": 3
+  },
+  {
+   "name": "open-space-committee-2011",
+   "docs": 2
+  },
+  {
+   "name": "conservation-commission-2016-2",
+   "docs": 2
+  },
+  {
+   "name": "open-space-committee-2016",
+   "docs": 2
+  },
+  {
+   "name": "parks-commission-2010",
+   "docs": 2
+  },
+  {
+   "name": "green-communities-committee-2026",
+   "docs": 2
+  },
+  {
+   "name": "stormwater-task-force-2020",
+   "docs": 2
+  },
+  {
+   "name": "school-committee-2026-4",
+   "docs": 2
+  },
+  {
+   "name": "select-board-2024-6",
+   "docs": 2
+  },
+  {
+   "name": "personnel-committee-2014",
    "docs": 2
   },
   {
@@ -361,7 +2221,55 @@
    "docs": 2
   },
   {
+   "name": "capital-planning-committee-2026",
+   "docs": 2
+  },
+  {
+   "name": "master-plan-steering-committee-2026",
+   "docs": 1
+  },
+  {
+   "name": "planning-board-2023-3",
+   "docs": 1
+  },
+  {
+   "name": "open-space-committee-2017",
+   "docs": 1
+  },
+  {
+   "name": "cemetery-commission-2013",
+   "docs": 1
+  },
+  {
    "name": "library-board-of-trustees-2025-3",
+   "docs": 1
+  },
+  {
+   "name": "conservation-commission-2020-6",
+   "docs": 1
+  },
+  {
+   "name": "lunenburg-municipal-building-design-committee-2020-2",
+   "docs": 1
+  },
+  {
+   "name": "green-communities-committee-2019",
+   "docs": 1
+  },
+  {
+   "name": "boa-neighborhood-ans-site-index-subcommittee",
+   "docs": 1
+  },
+  {
+   "name": "school-committee-2024-6",
+   "docs": 1
+  },
+  {
+   "name": "trust-fund-commission-2014",
+   "docs": 1
+  },
+  {
+   "name": "trust-fund-commission-2017",
    "docs": 1
   },
   {
@@ -406,5 +2314,5 @@
   }
  ],
  "questions": 107,
- "corpus": "1,422 agendas and sets of minutes across 40 town boards, 2025-01-06 to 2026-11-17"
+ "corpus": "12,015 agendas and sets of minutes across 51 town boards, 2009-01-05 to 2026-11-17"
 }

@@ -82,6 +82,25 @@ ANSWERS = [
      '/docs/analyses/athletics-ledger.md', 'and /docs/analyses/athletics.md'),
     ('special education as a cost driver',
      '/docs/analyses/sped-and-the-curve.md', ''),
+    # FOUR payloads, and the note is the point: they are separate because they count
+    # different things, and an assistant that joins them will produce a cost per special
+    # education student out of a numerator and a denominator from different returns.
+    ('how many Lunenburg children are on an IEP, in district and out',
+     '/data/sped-students.json', 'a COUNT OF CHILDREN from DESE. Never divide it into a '
+     'dollar figure — the money is a different return with a different census'),
+    ('where Lunenburg resident children actually go to school, and both directions of '
+     'school choice',
+     '/data/sped-leaving.json', 'a COUNT OF CHILDREN BY DISTRICT, SY2014 onward. It carries '
+     'NO disability status, so it is not a special education figure'),
+    ('what out-of-district special education costs, split by the fund that paid it, and '
+     'what the circuit breaker reimburses',
+     '/data/sped-cost.json', 'DOLLARS. The budget line the town votes is the general fund '
+     'share only; the all-funds figure is larger'),
+    ('the route into out-of-district placement, and the town’s own count of children '
+     'placed',
+     '/data/sped-route.json', 'PLACEMENTS, on two instruments that do not always agree. '
+     'The cohort bases are tens of children, so no percentage may be quoted without its '
+     'count'),
 ]
 
 # The QUERY stack, as opposed to ANSWERS above, which are files that hold a topic.
