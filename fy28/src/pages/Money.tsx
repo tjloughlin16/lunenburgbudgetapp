@@ -4,7 +4,7 @@ import type { Tab } from '../routes'
 // Derived, not typed. The area was renamed to "Budget Crisis" and this page was
 // the one place still saying the old name, because it had written it into a
 // sentence instead of reading AREA_LABEL like the header and the front page do.
-import { AREA_LABEL, LABEL } from '../routes'
+import { AREA_LABEL, AREA_TABS, LABEL } from '../routes'
 
 /** The front door to "The money".
  *
@@ -62,6 +62,25 @@ type RefIndex = { about: string; caveat: string; pages: RefPage[] }
 
 type Gap = { side: string; what: string; why: string }
 type GapIndex = { count: number; rows: Gap[] }
+
+/** One line per analysis, saying what it ESTABLISHES rather than what it contains.
+ *
+ *  No figure is typed here (rule 2). Every number on those pages is computed and can move;
+ *  a headline quoted in this list would be the one thing on the page that does not.
+ *  Anything not named here renders with no description rather than a wrong one. */
+const ABOUT: Partial<Record<Tab, string>> = {
+  stateaid: 'The share of the school budget nobody here votes on, and how far it misses '
+          + 'its own estimate.',
+  staffing: 'What the town publishes about who works in the schools — and why a list of '
+          + 'names is not a staffing level.',
+  insurance: 'The line that grows fastest, budgeted against what was later reported.',
+  sportsmoney: 'Both sides of school athletics: what the town appropriates, and what the '
+             + 'district says the same categories cost.',
+  variance: 'Budgets against what was later reported spent, line by line, and where the '
+          + 'two documents disagree.',
+  funds: 'Grants, gifts, revolving and enterprise funds — the money that never appears in '
+       + 'the budget everyone argues about.',
+}
 
 const DOOR = 'the money'
 
@@ -177,7 +196,7 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
         </div>
       )}
 
-      <H2>The documents</H2>
+      <H2>Core documents</H2>
       <Body>
         {ref
           ? ref.caveat
@@ -187,19 +206,51 @@ export function Money({ onJump }: { onJump: (t: Tab) => void }) {
         {primary.map(p => <PageRow key={p.name} p={p} />)}
       </div>
 
+      <H2>The analyses</H2>
+      <Body>
+        Each takes one question as far as the published records carry it, and then says
+        where it stops. They open with what they establish rather than with how to read
+        them.
+      </Body>
+      {/* DERIVED FROM THE AREA'S OWN TAB LIST, not typed.
+          These pages existed for hours reachable only from the header bar, because this
+          page listed the five reference documents and nothing else — the same "published,
+          correct, and findable by nobody" condition it was built to rescue those documents
+          FROM. TJ: "do those drill-ins have links on The Money page? I expected to see them
+          there, but I dont."
+          Reading AREA_TABS means the next drill-in appears here the day it is routed,
+          rather than the day somebody remembers to add it. */}
+      <div className="grid gap-2.5 mt-6 sm:grid-cols-2">
+        {AREA_TABS.money
+          .filter(t => t !== 'themoney' && t !== 'reports' && t !== 'gaps' && t !== 'askus')
+          .map(t => (
+            <button key={t} onClick={() => onJump(t)}
+              className="card block w-full text-left px-4 py-4 min-h-[44px]
+                         transition-opacity hover:opacity-90">
+              <span className="text-[15.5px] font-bold leading-tight block"
+                style={{ color: 'var(--series-cost)' }}>{LABEL[t]} &rarr;</span>
+              <span className="block text-[13px] mt-1.5 leading-snug"
+                style={{ color: 'var(--text-secondary)' }}>{ABOUT[t] ?? ''}</span>
+            </button>
+          ))}
+      </div>
+
       {secondary.length > 0 && (
         <>
-          <p className="text-[11px] font-semibold uppercase tracking-widest mt-9 mb-3"
-            style={{ color: 'var(--text-muted)' }}>Going further</p>
-          {/* Smaller rows, and no arrow-coloured title: these are still links and still
-              the whole row, but they should not compete with the two above for a first
-              glance. */}
-          <div className="grid gap-2">
+          <H2>Going further</H2>
+          <Body>
+            The routes in detail — which one exactly, who signs, and how the ledger is
+            named. These answer questions you only have once you have read the two above.
+          </Body>
+          {/* A SECTION, not an eyebrow. These sat as small rows tucked under the core
+              documents, which made them read as a footnote to those rather than as their
+              own shelf. TJ: "Going further as a section itself, same as the others". */}
+          <div className="grid gap-2.5 mt-6">
             {secondary.map(p => (
               <a key={p.name} href={abs(p.url)}
-                className="card block px-4 py-3 min-h-[44px] transition-opacity
+                className="card block px-4 py-4 min-h-[44px] transition-opacity
                            hover:opacity-90">
-                <span className="text-[14px] font-bold leading-tight"
+                <span className="text-[15.5px] font-bold leading-tight"
                   style={{ color: 'var(--series-cost)' }}>{p.title} &rarr;</span>
                 <span className="block text-[12.5px] mt-0.5 leading-snug"
                   style={{ color: 'var(--text-secondary)' }}>{p.about}</span>

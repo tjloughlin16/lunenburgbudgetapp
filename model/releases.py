@@ -24,6 +24,25 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v14',
+        date='2026-09-07',
+        title='The analyses are on the page that is meant to hold them',
+        short='the money page now lists what it is for',
+        headline='Eight analyses of how the town’s money moves were reachable only from '
+                 'the bar at the top of the screen. The Money page — the page whose whole '
+                 'job is to hand them over — listed five reference documents and none of '
+                 'the analyses. They are on it now.',
+        changes=[
+            'The Money now reads: the core documents, the analyses, going further, and '
+            'what the records cannot answer. Each analysis says in one line what it '
+            'establishes, so you can tell from the list whether it is the one you want.',
+
+            'The list is built from the site’s own routing rather than written by hand, so '
+            'a new analysis appears here the day it is published rather than the day '
+            'somebody remembers to add a link. The previous arrangement is exactly how '
+            'eight pages came to be published, correct, and findable by nobody.',
+        ]),
+    dict(
         tag='v13',
         date='2026-09-07',
         title='Ask us a question',
