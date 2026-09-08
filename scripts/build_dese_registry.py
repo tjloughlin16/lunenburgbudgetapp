@@ -138,6 +138,13 @@ ELSEWHERE = [
      'Contains NO staffing definitions — checked with word boundaries after raw substring '
      'counts said otherwise. The staffing definitions are in EPIMS, which is NOT YET HELD '
      'and is what would resolve both open contradictions.'),
+    ('sources/inbox/epims-datahandbook.docx', '', 'EPIMS Data Handbook',
+     'https://www.doe.mass.edu/',
+     'RESOLVES the paraprofessional contradiction: FTE is per ASSIGNMENT, not per person, '
+     'so DESE FTE and the district budget line have different denominators. AND reveals '
+     'that EPIMS collects per-individual Federal Salary Source plus percent of salary — '
+     'which fund pays which post, the thing rule 11 says nobody publishes.',
+     'Federal grants only; state grants and revolving funds are not in these fields.'),
     ('sources/inbox/sims-datahandbook_2021.docx', '', 'SIMS Data Handbook 2021',
      'https://www.doe.mass.edu/', 'As above, 2021 edition.', ''),
     ('sources/inbox/sims-datahandbook_2022.docx', '', 'SIMS Data Handbook 2022',
@@ -147,10 +154,11 @@ ELSEWHERE = [
 # Named, wanted, not yet held. A registry that only lists what arrived cannot tell the next
 # person what was looked for and missed.
 WANTED = [
-    ('EPIMS Data Handbook', 'https://www.doe.mass.edu/',
-     'Job classification codes and FTE apportionment. Would resolve BOTH open '
-     'contradictions: the $69,161 per FTE paraprofessional result and the 18.5->2.0 sped '
-     'teacher collapse.'),
+    ('EPIMS federal salary source, aggregated by job classification',
+     'records request — Lunenburg Public Schools',
+     'EPIMS collects per-individual federal grant funding percentages. Aggregated by job '
+     'classification this answers which fund pays which post — rule 11 outright. No '
+     'individual records sought.'),
     ('Non-Public School Enrollment', SOCRATA + '/d/cbbr-jpy4',
      'Children leaving to PRIVATE school. The choice files capture public-to-public only, '
      'so this is the missing half of who leaves.'),

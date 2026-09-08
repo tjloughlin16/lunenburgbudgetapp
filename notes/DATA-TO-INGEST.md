@@ -112,6 +112,43 @@ that gives one of those without the other is taking a side using a number.
 
 **It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
 
+**EPIMS RESOLVES THE CONTRADICTION AND REVEALS SOMETHING LARGER.**
+`sources/inbox/epims-datahandbook.docx`, sha `5509621edcd5`.
+
+**1. The paraprofessional contradiction is a denominator mismatch.** EPIMS defines FTE as
+*"the percent of workday staff are involved in an assignment: 1.00 is a full-time employee;
+a half-time employee is a .50 FTE"* — **per ASSIGNMENT, not per person.** So DESE's special
+education paraprofessional FTE counts the share of workday coded to special education
+assignments, while the district's budget line pays whole salaries. Different denominators,
+never comparable, and that is the whole of the $69,161 result.
+
+Stated honestly: the handbook does not say outright that one individual may hold several
+assignment records. It is inferred from three structural signals — FTE attaches to an
+assignment; assignments sit in a separate `Work Assignment Record` keyed by `MEPID`; and the
+handbook refers to an educator's *primary* job classification, which implies non-primary
+ones. Strong, and not explicit.
+
+**2. AND THE THING RULE 11 SAYS NOBODY PUBLISHES IS COLLECTED EVERY YEAR.**
+
+Rule 11 closes with: *"The thing nobody publishes is which fund pays which post."* EPIMS
+collects, **per individual**, up to three `Federal Salary Source` codes and a
+`Percent of Federal Salary Source` for each — *"Percent of an individual's salary paid from
+the federal grant identified in Federal Salary Source 1. Enter as a decimal to the
+thousandths."*
+
+The district reports, for every employee, which federal grant pays what fraction of them.
+**We were looking in budget documents, which is why we never found it.**
+
+It is near-certainly not published per person — that is personnel data. But it EXISTS, which
+moves the question from *can this be known* to *can we get it aggregated*. Aggregated by job
+classification it answers the paraprofessional question outright, and by function it answers
+rule 11 generally.
+
+**Add to the records request**, and it is now the highest-value item on it: EPIMS federal
+salary source and percent, aggregated by job classification and school year — no individual
+records sought. Note it covers FEDERAL grants only; state grants and revolving funds are not
+in these fields, so `cnfs-edqq`'s `GRNTS_REVOLV` remains the wider measure.
+
 **THE SIMS HANDBOOKS WILL NOT RESOLVE THE STAFFING CONTRADICTIONS. Checked, not assumed.**
 
 Both handbooks searched: **zero** mentions of `paraprofessional`, `job class` or `educator`.
