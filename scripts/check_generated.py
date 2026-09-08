@@ -248,6 +248,21 @@ CHECKS = [
     # still a faithful copy of the workbook. It also re-reads the eight meeting quotes and
     # refuses to write if the five money_gaps rows it CITES have been renamed.
     ('build_minimum_aid.py', ['--check']),
+    # The FOUR special education reports. One generator, four payloads, and this entry
+    # catches far more than a stale file, because the generator asserts the structural
+    # claims each page's prose rests on and refuses to write if one has stopped holding:
+    # that DESE's own in-district and out-of-district counts still sum to the total it
+    # prints beside them (the reconciliation that turned an unexplained disagreement in
+    # `money_gaps` into a measured one); that the paraprofessional staffing rate still
+    # reproduces from its own printed FTE and count in every year, which is the sole
+    # reason that row is published while three others in the same table are not; that the
+    # district's restated out-of-district budget line still ties to DESE's GENERAL FUND
+    # column rather than to its all-funds column, which is the whole of the rule 11
+    # finding; that the two starting placements in the trajectory are both still there,
+    # since one of them is half a comparison; and that a quote attributed to a meeting is
+    # still in the extracted minutes. Any one of those going quiet would leave every
+    # figure on the pages a faithful copy of the source and a sentence beside it wrong.
+    ('build_special_education.py', ['--check']),
     # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
     # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
     # a key is not there, so this entry catches two things: the published file going
@@ -283,6 +298,7 @@ CHECKS = [
     # foots against the town's own listing.
     ('build_minutes_searchable.py', ['--check']),
     ('build_meeting_register.py', ['--check']),
+    ('build_where_students_go.py', ['--check']),
     ('split_large_text.py', ['--check']),
     ('build_question_bank.py', ['--check']),
     # DESE's three district-finance datasets: the registry of how to get them again, and
