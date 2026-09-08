@@ -43,7 +43,27 @@ finance, staffing or enrolment related.
 
 ## Arrived, not yet catalogued
 
-*(append here as things land)*
+Staged in `sources/inbox/`, hashed, unread.
+
+| file | source | sha256 (first 12) | what it offers |
+|---|---|---|---|
+| `dese-teachers-by-grade-subject.xlsx` | DESE `77fu-a6h8`, 133 MB | `76a5498ba1b5` | **FTE by grade band AND subject AND school.** Breaks a limit recorded as structural: grade detail without FTE (town rosters) or FTE without grade detail (DESE) — this is both |
+| `dese-residents-sending.xlsx` | DESE `vxt3-k35x`, 2.4 MB | `ef345000874d` | where resident children go, by receiving district and reason, 2014-2026 |
+
+Columns, recorded so nobody has to reopen a 133 MB file to find out:
+
+    teachers:  SY DIST_CODE DIST_NAME ORG_CODE ORG_NAME ORG_TYPE SUBJ
+               PK2_CNT PK2_PCT GRD_3_5_CNT GRD_3_5_PCT GRD_6_8_CNT GRD_6_8_PCT
+               GRD_9_12_CNT GRD_9_12_PCT MULTI_GRD_CNT MULTI_GRD_PCT
+               ALL_GRD_CNT ALL_GRD_PCT FTE_CNT
+
+    sending:   SY TOWN_NAME ENR_REASON DIST_CODE DIST_NAME ENR_CNT
+
+**A caution on the teachers file before anyone aggregates it.** It carries a `State` row
+(`DIST_CODE 00000000`) alongside district rows, and a `SUBJ` of `All` alongside individual
+subjects. Both are rollups sitting in the same column space as detail — the same shape that
+produced $116M for a $26.6M district in the expenditure data. Establish the levels before
+summing anything.
 
 ---
 
