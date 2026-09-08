@@ -1,0 +1,5 @@
+{
+  "turnstileSiteKey": "",
+  "_why": "Cloudflare Turnstile's SITE key, which is public by design and belongs in the page. Empty means the form is switched OFF and says so, rather than rendering a box whose submissions the server will refuse. The matching SECRET key is never here: it is set with `npx wrangler pages secret put TURNSTILE_SECRET` and lives only in Cloudflare.",
+  "_setup": "https://dash.cloudflare.com -> Turnstile -> Add site -> lunenburgbudgetproject.org. Paste the site key here, then run: cd fy28 && npx wrangler pages secret put TURNSTILE_SECRET"
+}

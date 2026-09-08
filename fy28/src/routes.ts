@@ -12,6 +12,7 @@
 export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
   | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
+  | 'askus'
   | 'funds'
   | 'staffing'
   | 'insurance'
@@ -76,6 +77,12 @@ export const SLUG: Record<Tab, string> = {
   // on purpose: it gets read aloud and typed on a phone, which is the same reason
   // lburg.org exists. See components/AskAnAssistant.tsx.
   ask: 'ask',
+  // A RESIDENT asks us a question, in their own words. Distinct from `ask`, which is the
+  // agent-facing page about querying the data and has meant that for far longer. The slug
+  // is the sentence somebody would say -- "ask a question" -- not "contact" or "feedback",
+  // both of which promise something else: contact is about reaching a person, feedback is
+  // about the site. This is about the BUDGET.
+  askus: 'ask-a-question',
   // THE DATABASE area's front door. NOT `data` -- `/data` is a live Function prefix
   // serving real files, and an app route there would shadow the archive. The area is
   // `data` and the tab is `database`; an area and a page may share a name, they may not
@@ -187,6 +194,8 @@ const ALIASES: Record<string, Tab> = {
   'retiree-health': 'insurance', 'chapter-32b': 'insurance', 'schrethlth': 'insurance',
   // NOT 'athletics', 'sports' or 'athletic' -- all three already land on the decision
   // board, and a link that has been shared once must keep landing where it landed.
+  'ask-a-question': 'askus', 'ask-us': 'askus', 'question': 'askus',
+  'ask-a-budget-question': 'askus', 'submit-a-question': 'askus',
   'what-sports-cost': 'sportsmoney', 'athletics-money': 'sportsmoney',
   'sports-money': 'sportsmoney', 'athletics-cost': 'sportsmoney',
   'who-pays-for-sports': 'sportsmoney', 'athletics-both-sides': 'sportsmoney',
@@ -237,6 +246,7 @@ export const LABEL: Record<Tab, string> = {
   insurance: 'Health insurance — the cost outside the school budget',
   sportsmoney: 'What sports cost, and who pays',
   stateaid: 'State aid — the part nobody here votes on',
+  askus: 'Ask us a question',
   dataroom: 'The data room',
 }
 
@@ -255,6 +265,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   staffing: 'themoney',
   insurance: 'themoney',
   sportsmoney: 'themoney',
+  askus: 'themoney',
   stateaid: 'themoney',
   agents: 'sources',
   freecash: 'money',
@@ -323,6 +334,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   insurance: 'money',
   sportsmoney: 'money',
   stateaid: 'money',
+  askus: 'money',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -340,8 +352,8 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
-  money: ['themoney', 'stateaid', 'staffing', 'insurance', 'sportsmoney', 'variance', 'funds',
-          'gaps', 'reports'],
+  money: ['themoney', 'askus', 'stateaid', 'staffing', 'insurance', 'sportsmoney',
+          'variance', 'funds', 'gaps', 'reports'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

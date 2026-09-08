@@ -104,6 +104,25 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         ))}
       </div>
 
+      {/* A FIFTH THING, and deliberately not a fifth DOOR.
+          This page is four choices and that took three attempts to get right — TJ:
+          "too many buttons... ONLY show the top level subpages." A door is a place to
+          go and read; this is an invitation to say something, which is a different act.
+          So it sits under the set, smaller and quieter, where it reads as an offer
+          rather than as a fifth option competing with the four. */}
+      <button onClick={() => onJump('askus')}
+        className="mt-5 w-full text-left px-4 py-3 min-h-[44px] rounded-lg
+                   transition-opacity hover:opacity-80"
+        style={{ border: '1px dashed var(--grid)', background: 'transparent' }}>
+        <span className="text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
+          Ask us a question &rarr;
+        </span>
+        <span className="block text-[12.5px] mt-0.5 leading-snug"
+          style={{ color: 'var(--text-muted)' }}>
+          About the budget, or anything on this site. A person reads every one.
+        </span>
+      </button>
+
       {/* The "the walkthrough moved" note was here and is gone. It explained a
           change to somebody who had not seen the old page and could not have missed it,
           on the one page whose job is to be four choices. Every old address still

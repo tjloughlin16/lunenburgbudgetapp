@@ -22,7 +22,16 @@
   // published. Refresh it with `python3 scripts/sync_d1.py` after build_db.py.
   "d1_databases": [
     { "binding": "DB", "database_name": "lunenburg-budget",
-      "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+      "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" },
+    // The question inbox, and it is a SEPARATE DATABASE on purpose.
+    //
+    // D1 on the Workers Free plan does not bill, it stops: 100,000 writes a day. The
+    // site's own data push writes ~70,000 of them in one go. If submissions shared that
+    // budget a spam flood would not cost money -- it would mean the day's push fails and
+    // the published data goes stale. Here the worst case is this form saying "try again
+    // tomorrow" while everything else carries on.
+    { "binding": "QUESTIONS", "database_name": "lunenburg-questions",
+      "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" }
   ],
   "r2_buckets": [
     { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
@@ -31,7 +40,9 @@
     "preview": {
       "d1_databases": [
         { "binding": "DB", "database_name": "lunenburg-budget",
-          "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+          "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" },
+        { "binding": "QUESTIONS", "database_name": "lunenburg-questions",
+          "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" }
       ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
@@ -40,7 +51,9 @@
     "production": {
       "d1_databases": [
         { "binding": "DB", "database_name": "lunenburg-budget",
-          "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" }
+          "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" },
+        { "binding": "QUESTIONS", "database_name": "lunenburg-questions",
+          "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" }
       ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }

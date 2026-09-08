@@ -368,7 +368,29 @@ def build():
     dl = district_line(cx)
     settled = series(dl, 'settled')
     proposed = series(dl, 'proposed')
-    actual = series(dl, 'actual')
+    # `restated` -- what the district later re-presented as spent, in its own budget book.
+    # NOT a ledger figure. The stage was called `actual` until 7 September 2026; renaming
+    # it broke this line silently, which is why the guard below exists.
+    actual = series(dl, 'restated')
+
+    # A SERIES THIS PAGE INDEXES MUST NOT BE EMPTY.
+    #
+    # When the stage was renamed, this query started matching nothing and the generator
+    # wrote `"actual": []` without complaint. `check_generated` passed, because an empty
+    # list reproduces perfectly. The page then did `d.district.actual[0].fy`, threw, and
+    # prerendered zero characters -- and the ONLY thing that caught it was the build's own
+    # "rendered only 0 chars of text" check, two steps downstream.
+    #
+    # A generator that writes an empty series is asserting that the data is absent. This
+    # one is not entitled to assert that: the line has been budgeted every year since
+    # FY2014 and restated for most of them.
+    for name, got in (('settled', settled), ('proposed', proposed), ('restated', actual)):
+        if not got:
+            raise SystemExit(
+                f'the {name!r} series for the health insurance line matched no rows in '
+                f'budget_figure. That is not an empty year, it is a query that stopped '
+                f'matching -- most likely a stage renamed underneath it. Refusing to '
+                f'write a page that indexes into an empty list.')
     variants = sorted({r['variant'] for r in dl if r['variant']})
 
     # RECONCILIATION 2 — the district's own settled FY2026 health-insurance line against the
