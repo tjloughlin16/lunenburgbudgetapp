@@ -130,6 +130,14 @@ ELSEWHERE = [
      'Foundation enrolment split by English learner, vocational and low-income share — the '
      'formula INPUTS, which is what lets anybody model how it responds to enrolment change.',
      'Data sheets are dataAid, dataNSS, dataContribution. Front sheet is an interface.'),
+    ('sources/inbox/dese-job-classification-codes.docx', '',
+     'Job Classification Codes (evaluation)',
+     'https://www.doe.mass.edu/',
+     '43 code/label pairs -- 1200 Superintendent, 1305 Principal and so on. The vocabulary '
+     'behind EPIMS job classification.',
+     'Covers the EVALUATION job classes: administrators and licensed staff. Contains NO '
+     'paraprofessional codes, so it does not by itself resolve the paraprofessional '
+     'boundary.'),
     ('sources/inbox/sims-datahandbook-current.docx', '',
      'SIMS Data Handbook (current)',
      'https://www.doe.mass.edu/',
