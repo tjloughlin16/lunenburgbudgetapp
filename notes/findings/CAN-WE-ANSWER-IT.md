@@ -250,6 +250,92 @@ shape.
 
 ---
 
+## Re-answered: every question, with the BASIS of the figures behind it
+
+Added after the correction above, because correcting three verdicts and leaving the rest
+was not re-answering the question. **Every answer below now states what KIND of document
+its figures come from**, which is the thing that was missing the first time.
+
+Four bases, in descending order of what they will survive:
+
+| basis | what it means |
+|---|---|
+| **ledger** | a figure exists because a transaction did |
+| **statement** | a closing statement prepared by the Town Accountant from the books — the balance sheet, the special revenue schedule. Not the ledger, but not the spender's own budget book either |
+| **restatement** | a closed year re-presented inside a document written by the party that spent it |
+| **budget** | proposed, requested, level service, balanced — a plan |
+| **state-published** | DESE. Collected by a third party to its own definitions, which is a different KIND of independence |
+
+| question | verdict | basis of the figures |
+|---|---|---|
+| Which school lines underspent, FY2026 | **YES** | **ledger** — `glytdbud` period 12 |
+| Which school lines underspent, FY2014–25 | PARTLY | **restatement** — district budget books |
+| Are the schools over-budgeting, before FY2026 | NO, not to audit standard | **restatement**, both sides |
+| What stopped being funded | PARTLY | **restatement** — and a fair source for a claim about what the district reports |
+| Coaches / athletic transport per year | **see below — this one I overstated** | mixed |
+| Money held outside the budget, FY2011–23 | **YES** | **statement** — the town's own special revenue schedule, ties to its printed total every year |
+| The balance sheet, FY2011–22 | **YES** | **statement** — same, plus its own printed identity |
+| Teacher FTE, pupils, disability share | **YES** | **state-published** — DESE, FY2009–2025 |
+| Paraprofessional FTE against sped para dollars | BOUNDED | **state-published** FTE against **restatement** dollars — two different bases AND two different populations |
+| Out-of-district placement counts | **YES** | **statement** — Special Services report, parts sum to the stated total |
+| Athletes per sport, cost per sport | **YES** | district workbook + **ledger** for fund 1301, FY2024–26 |
+| All-in cost per line | **NO** | no basis exists; the mapping is unpublished |
+
+### The one I got wrong a second time: coaches and athletic transportation per year
+
+I said **YES**. The honest answer is **PARTLY**, and the split matters.
+
+`athletics_history` draws on seven sources, and here is what they are:
+
+```
+district-budget/docs/fy19-proposed-athletics-budget.pdf     budget
+fy24-approved-budget.txt                                    budget book
+fy27-budget-projections-as-of-2-24-26.txt                   budget book
+fy27-budget-projections-as-of-3-16-26.txt                   budget book
+budget-workbooks/fy27-proposals.xlsx                        budget
+budget-workbooks/school-funds-fy26.xlsx                     LEDGER
+Athletics_v10.xlsx                                          a resident's analysis
+```
+
+**Six of the seven are budget documents.** The general fund athletics series FY2014–FY2026
+is what the district *budgeted and later restated*, not what the town's books recorded.
+What IS ledger-backed on the athletics side is the revolving fund — `fund_1301_cash_journal`,
+277 postings, FY2024–FY2026 — which is why `/what-sports-cost` can say what went INTO that
+fund with confidence and is weaker on what the general fund paid out.
+
+So: *"how much do we spend on coaches"* is answerable as **what the district budgeted and
+reports**, for thirteen years. It is answerable from the accounting system for **FY2026**.
+
+### And a finding about our own instrument
+
+`document-basis.csv` carries **one basis per document** — 322 paths, 322 rows. That is too
+coarse for the annual town reports, and they are the source of a great deal of what this
+project publishes.
+
+The FY2022 annual town report is classified `forward`. It contains:
+
+```
+Combined balance sheet, all fund types and account groups, 30 June 2022
+FY 2023 Omnibus Budget (as voted, Annual Town Meeting 7 May 2022)
+```
+
+A closing balance sheet prepared by the Town Accountant and next year's budget as voted, in
+one PDF, under one label. **All twelve annual town reports are classified `forward`**, which
+would make the special revenue schedule and the balance sheet — two of the most reliable
+datasets here, each tying to its own printed totals — look like budget documents.
+
+That is rule 13's general form pointed at ourselves: *an instrument that reformats before
+you see it is part of the finding.* The classifier answers "what is this document" when the
+question that matters is "what is this TABLE". Registered as a gap; the remedy is a basis
+per table family in `annual_report_catalogue`, not per document.
+
+**Nothing published rests on this being wrong** — the special revenue and balance sheet
+datasets are validated by their own printed totals rather than by their basis label. But it
+means the basis column cannot currently be used to answer "is this figure ledger-backed",
+which is exactly what I tried to use it for.
+
+---
+
 ## The specific questions
 
 ### How much on coaches per year, athletic transportation per year — **YES**
