@@ -197,6 +197,12 @@
    "side": "money_in",
    "what": "How much of the FY2027 enacted state-aid increase is receipts and how much is offsetting assessments",
    "why": "model/finance.py grows a FY2027 base of $11,404,917 + $471,121. The first is the Governor\u2019s GROSS cherry sheet Total Receipts, printed by the FY2027 Town Meeting booklet. The second is recorded in fy27-and-the-override.md as NET \u2014 \"+$471,121 net (Ch.70, charter/choice receiving tuition, Smart Growth, UGGA, vets/elderly exemptions; offset by higher charter assessments)\". A gross figure and a net figure are being added, so the gross FY2027 receipt estimate the projection actually grows is not established, and neither is how much of the increase the Town keeps. This archive holds no Cherry Sheet for any year, which is the only document that prints receipts and assessments side by side."
+  },
+  {
+   "closes": "payroll detail by position and date for the year in question, which separates a vacancy from every other cause, plus the grant award records for the same year.",
+   "side": "money_out",
+   "what": "Why a budget line came in under plan, as against by how much",
+   "why": "A line under plan can be a post left vacant, a service cut, a grant that covered the cost instead, money transferred to another line, or a line over-budgeted from the start. All five produce the same smaller number in the spent column. The accounting system narrows it \u2014 it records mid-year transfers, so money moved can be distinguished from money not spent, and we hold that for FY2026 \u2014 but it cannot separate a vacancy from a cancelled service from a funding switch. Every published explanation of a Lunenburg school surplus is therefore a hypothesis about a measurement, and this project must not restate one as the measurement."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",
