@@ -43,6 +43,20 @@ RATE_LABELS = [
 ]
 
 
+
+def _db_mb():
+    """The database's size, measured now rather than remembered.
+
+    This was the literal string `16MB`, typed twice. It was true of the copy in R2 when
+    somebody wrote it and then four versions drifted past it -- the build held 21.2MB, the
+    archive 29.3MB, and llms.txt went on telling agents 16MB. Rule 2 covers every generated
+    surface, and llms.txt is the one read by machines that cannot see the file.
+    """
+    import os as _os
+    n = _os.path.getsize(_os.path.join(ROOT, 'sources', 'data', 'lunenburg.db'))
+    return '%.0fMB' % (n / 1048576)
+
+
 def rate_list(a):
     """The escalators this build actually carries, in reading order."""
     return ', '.join(f'{label} {a[k]:.1%}' for k, label in RATE_LABELS if k in a)
@@ -674,9 +688,9 @@ def main():
         'project holds no headcount while `staff_roster_entries` had 3,815 rows in it.',
         '',
         'The whole thing is also downloadable as SQLite — '
-        f'[{SITE}/data/lunenburg.db]({SITE}/data/lunenburg.db), 16MB, sha256 in '
+        f'[{SITE}/data/lunenburg.db]({SITE}/data/lunenburg.db), {_db_mb()}, sha256 in '
         '`/api/index` — but that is the fallback, not the front door. Most callers cannot '
-        'fetch 16MB of binary, and nothing in it is unreachable through the API.',
+        f'fetch {_db_mb()} of binary, and nothing in it is unreachable through the API.',
         '',
         f'**Fetch [{SITE}/api/schema]({SITE}/api/schema) before computing anything.** It '
         'states the grain of every table and the four specific ways to get a confident '

@@ -1197,7 +1197,9 @@ GROUPS = [
              'DESE\u2019s own figures, every district, FY2009\u2013FY2025', 3,
              'The state\u2019s RADAR district comparison: enrollment, demographics, '
              'staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, '
-             'for all 421 Massachusetts districts. The first view of Lunenburg school '
+             'for Lunenburg and the six peer districts \u2014 SEVEN, not all 421, because '
+             'the workbook was scoped down so the published database would fit under '
+             'Cloudflare\u2019s 25MB asset limit. The first view of Lunenburg school '
              'spending here that is neither the town\u2019s general fund nor written by '
              'the district, so it bounds from outside the money the budget document cannot '
              'see. Three cautions travel with it: DESE counts costs the school budget does '
@@ -1208,6 +1210,180 @@ GROUPS = [
              'not a headcount. Each district-year is checked against DESE\u2019s own '
              'printed in-district total \u2014 16 fail, all charter schools, and Lunenburg '
              'ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.'),
+            ('data/dese-function-expenditure.csv',
+             'DESE spending by function code, general fund against grants, '
+             'FY2009\u2013FY2025', 3,
+             'The general fund and grants/revolving money in SEPARATE columns, by DESE '
+             'function code, for Lunenburg and its six peers. Rule 11 says a budget line '
+             'is net and that nobody publishes the split; this is the split, at the level '
+             'of a function code. Lunenburg SY2025 shows $478,097 of grant and revolving '
+             'money against function 2330, Paraprofessionals, beside $1,338,477 of '
+             'general fund. Read `level` before summing anything: the source puts rollups '
+             'beside detail and nothing in its column names says which is which, so '
+             'adding every Lunenburg SY2025 row gives $117,996,913 against an in-district '
+             'total of $27,903,187. A function code is not a budget line and not a post, '
+             'so this bounds the funding-source question rather than settling it. '
+             'Rebuild with scripts/extract_dese_finance.py.'),
+            ('data/dese-function-statewide.csv',
+             'Where Lunenburg sits among every Massachusetts district, per function, '
+             'FY2009\u2013FY2025', 3,
+             'Each function code collapsed to a distribution across all districts in '
+             'DESE\u2019s file \u2014 min, quartiles, median, max, Lunenburg\u2019s own '
+             'per-pupil figure and its rank \u2014 plus the statewide dollar totals and '
+             'the share of each function paid by grants and revolving money. Districts '
+             'differ in size, grade span and whether they are regional, so per pupil is '
+             'the comparable quantity and a raw dollar comparison between two districts '
+             'is not one. The denominator INCLUDES charter and virtual districts, which '
+             'are in DESE\u2019s file and are not municipal school districts, and it is '
+             'printed on every row for that reason. Rebuild with '
+             'scripts/extract_dese_finance.py.'),
+            ('data/dese-ch70-formula.csv',
+             'The Chapter 70 formula, term by term, FY1993\u2013FY2026', 3,
+             'Thirty-four years of the state aid formula for every Massachusetts district '
+             '\u2014 foundation enrolment, foundation budget, required local '
+             'contribution, Chapter 70 aid, required net school spending and what was '
+             'actually spent. It answers a question nobody in town can currently put a '
+             'number on: whether Lunenburg spends above or below the minimum the state '
+             'requires. FY2026 aid ties exactly to the town\u2019s own MUNIS revenue '
+             'ledger, two sources neither derived from the other. Two cautions travel '
+             'with it: the source sheet has TWO columns called rqdnss holding different '
+             'numbers, split here into required_nss and required_nss_published, and its '
+             'actualNSS column holds BUDGETED figures for the last two years \u2014 read '
+             'nss_stage. Publish the ratio to the required minimum as a measurement, '
+             'never as a verdict: a floor is not a standard of adequacy. Rebuild with '
+             'scripts/extract_dese_state_aid.py.'),
+            ('data/dese-ch70-statewide.csv',
+             'Where Lunenburg sits among every Massachusetts district on state aid', 3,
+             'Four ratios per fiscal year across all districts \u2014 net school spending '
+             'as a share of what the state requires, Chapter 70 aid per foundation pupil, '
+             'the required local contribution as a share of the foundation budget, and '
+             'circuit breaker claim per eligible student \u2014 as min, quartiles, '
+             'median, max, Lunenburg\u2019s own figure and its rank. The row-level '
+             'Chapter 70 tables are seven districts because the published database has to '
+             'fit under Cloudflare\u2019s 25MB asset limit; this is what a reader would '
+             'otherwise lose. Publish the share-of-required as a measurement and never as '
+             'a verdict: a floor is not a standard of adequacy. Rebuild with '
+             'scripts/extract_dese_state_aid.py.'),
+            ('data/dese-ch70-aid-factor.csv',
+             'How the Chapter 70 aid figure is built, FY2007 on', 3,
+             'Every increment the formula adds between the foundation budget and the aid '
+             'paid, and every reduction it applies. This is what lets anybody model how '
+             'the aid RESPONDS to a change in enrolment rather than assuming it moves '
+             'linearly \u2014 which is what the students-leave scenario needs. Rebuild '
+             'with scripts/extract_dese_state_aid.py.'),
+            ('data/dese-ch70-contribution.csv',
+             'The municipal half of the Chapter 70 formula, FY2007 on', 3,
+             'Equalized valuation, income, the effort each implies, and how the required '
+             'local contribution was arrived at \u2014 the half of the formula the '
+             'school budget never shows. A DIFFERENT GRAIN: a row is a town, not a '
+             'district, so for a regional district several towns feed one district and '
+             'the two must not be joined one to one. Rebuild with '
+             'scripts/extract_dese_state_aid.py.'),
+            ('data/dese-circuit-breaker.csv',
+             'High-cost special education reimbursement, FY2006\u2013FY2026', 3,
+             'A fund rule 11 names as unmapped: money the district receives that never '
+             'appears in the general fund appropriation the town votes, split into '
+             'instruction and tuition against transportation with prior-year adjustments '
+             'separated. It also carries a count of CHILDREN rather than dollars. Keyed '
+             'on FISCAL year where every other DESE file here is school year. Rebuild '
+             'with scripts/extract_dese_state_aid.py.'),
+            ('data/dese-teacher-program-area.csv',
+             'Teacher FTE by program area, SY2008\u2013SY2026', 3,
+             'General education, special education, career/technical and English learner '
+             'FTE per state, district and school. This is where Lunenburg\u2019s special '
+             'education teacher FTE falls from 18.5 to 2.0 while its total holds flat '
+             '\u2014 the signature of recoding, and NOT established as staff leaving; it '
+             'is registered in money-gaps.csv rather than explained. Filter org_level '
+             'before summing, and note a district row is not the sum of its school rows. '
+             'Rebuild with scripts/extract_dese_staffing.py.'),
+            ('data/dese-teacher-subject.csv',
+             'Teacher FTE by subject, with licensure and class ratios, '
+             'SY2008\u2013SY2026', 3,
+             'Teacher FTE per subject with the share licensed, the share teaching in '
+             'field, the share experienced and the students-per-teacher ratio. The column '
+             'DESE calls TCHR_CNT is an FTE, not a headcount. Two of the subject values '
+             'are GROUPS of the others, so the members do not partition and summing them '
+             'double counts \u2014 filter subject_level. Rebuild with '
+             'scripts/extract_dese_staffing.py.'),
+            ('data/dese-teacher-grade-subject.csv',
+             'Teacher FTE by grade band AND subject AND school, SY2008\u2013SY2026', 3,
+             'The one file that breaks a limit recorded here as structural: the '
+             'town\u2019s staff rosters give grade detail with no FTE and DESE elsewhere '
+             'gives FTE with no grade. This gives both. Extracted from a 133 MB workbook '
+             'of 1.77 million rows. Where it and dese-teacher-subject.csv disagree about '
+             'the same organisation\u2019s total FTE, both are kept and neither is '
+             'treated as correcting the other \u2014 agrees_with_teacher_subject says '
+             'which. Rebuild with scripts/extract_dese_staffing.py.'),
+            ('data/dese-educator-workforce.csv',
+             'Staff HEADCOUNT by job class, with hires and retention, '
+             'SY2021\u2013SY2023', 3,
+             'The only DESE table here that counts administrators and paraprofessionals '
+             'as people rather than as FTE or as dollars \u2014 the discrimination this '
+             'project could not previously make. Read race_level before summing: the All '
+             'Educators row sits beside the seven reported races, and adding the whole '
+             'job class gives exactly twice the headcount. This project\u2019s own notes '
+             'recorded 118 paraprofessionals and 38 administrators for SY2023 that way; '
+             'the file holds 59 and 19. Three years on a base of tens is thin, and a '
+             'reclassification would look identical to a change in staffing. Rebuild with '
+             'scripts/extract_dese_staffing.py.'),
+            ('data/dese-enrollment.csv',
+             'Enrolment by grade and selected population, SY1992\u2013SY2026', 3,
+             'The denominator for nearly every rate on this site: enrolment by grade, and '
+             'the counts of English learners, low income, economically disadvantaged, '
+             'high needs and students with disabilities, per state, district and school. '
+             'Its published count of students with disabilities agrees exactly with '
+             'dese-sped-program.csv and does NOT agree with the denominator the staffing '
+             'ratios use in the same year \u2014 registered in money-gaps.csv. Rebuild '
+             'with scripts/extract_dese_students.py.'),
+            ('data/dese-sped-indicator.csv',
+             'Special education indicators and staffing ratios, SY2017\u2013SY2026', 3,
+             'Context counts, special education FTE per 100 students with disabilities, '
+             'and the outcome, assessment and postsecondary measures, each with students '
+             'with disabilities set beside students without. The grade groups OVERLAP, so '
+             'no sum across them means anything, and on the staffing rows the count '
+             'column holds the denominator while the ratio is in the percentage column. '
+             'Rebuild with scripts/extract_dese_students.py.'),
+            ('data/dese-sped-program.csv',
+             'What the students with disabilities are, SY2020\u2013SY2026', 3,
+             'Disability type, race, gender, grade span, in district against out of '
+             'district, placement, and the special education FTE ratios \u2014 with a '
+             'PUBLISHED count of students with disabilities, which was previously '
+             'reachable here only by multiplying a percentage by enrolment. Three of the '
+             'ten categories do not behave like the rest: Placement is in-district only '
+             'and runs short of its own total, Disability Type is a collapsed rendering '
+             'of Disability Type All, and the FTE category is a ratio despite the file '
+             'calling every row a percentage. Rebuild with '
+             'scripts/extract_dese_students.py.'),
+            ('data/dese-sped-trajectory.csv',
+             'Where a placement starts and where it leads, SY2018\u2013SY2026', 3,
+             'The route into out-of-district placement, which is the largest single line '
+             'in the special education budget. THE BASES ARE TINY \u2014 a Lunenburg '
+             'cohort is tens of children, so a percentage here must never travel without '
+             'its count. unaccounted_cnt is the cohort less the four destinations, and '
+             'what it is has not been established. Rebuild with '
+             'scripts/extract_dese_students.py.'),
+            ('data/dese-sped-movement.csv',
+             'Children entering and leaving special education services, '
+             'SY2019\u2013SY2025', 3,
+             'The caseload dynamic behind the spending line, which a headcount alone '
+             'cannot show. Two traps are marked in the data itself: repeats_prior_year '
+             'flags rows identical to the same district\u2019s previous year \u2014 '
+             'Lunenburg\u2019s SY2024 and SY2025 are such a pair and must never be '
+             'summed as two years of movement \u2014 and grade_rows_sum records that the '
+             'grade rows are not the K-12 row broken down. Rebuild with '
+             'scripts/extract_dese_students.py.'),
+            ('data/dese-town-enrollment.csv',
+             'Where every town\u2019s children actually go to school, '
+             'SY2014\u2013SY2026', 3,
+             'Both directions of the choice question in one table: where a town\u2019s '
+             'resident children go, and who arrives at a district and from where, by '
+             'reason \u2014 school choice, charter, tuitioned, METCO, foster care. These '
+             'are the headcounts behind the choice dollars on the cherry sheet. DESE '
+             'publishes it as two datasets, Sending and Receiving; compared row by row '
+             'they hold the IDENTICAL rows and differ only in column order, so it is '
+             'loaded once and a net position drawn from it rests on one measurement '
+             'rather than two agreeing ones. Rebuild with '
+             'scripts/extract_dese_students.py.'),
             ('data/lunenburg.db',
              'The whole analysis database, SQLite', 3,
              'Every figure on this site in one queryable file, built by '

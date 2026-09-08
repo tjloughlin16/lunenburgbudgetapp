@@ -18,6 +18,22 @@ reached us.
 | District Expenditures by Spending Category | DESE `er3w-dyti` | agent ingesting; may duplicate `dese_measure` |
 | School Expenditures by Spending Category | DESE `i5up-aez6` — school level, new granularity | agent ingesting |
 
+**The fifteen files listed below under *Arrived, not yet catalogued* are LOADED**, 8
+September 2026. They are in `sources/state-dese/`, catalogued in `index.csv` and in
+`dese-source-registry.csv`, and they are in the database as fourteen tables. Three extracts
+write them and every one refuses to write unless the identities its source states about
+itself still hold:
+
+    scripts/extract_dese_staffing.py     vd2f-ib9q  4684-cw3t  77fu-a6h8  fz9c-2g33
+    scripts/extract_dese_students.py     t8td-gens  yamx-769q  n62c-bx65  92x3-2qj9
+                                         8aww-sugs  vxt3-k35x + 8xyg-59b2
+    scripts/extract_dese_state_aid.py    qt58-634r  keyfactors  ab34-d3ma  (5izv-jyrd
+                                         as a cross-check)
+
+**Two things below are now known to be WRONG and are left in place with the correction
+beside them**, because how they went wrong is the most useful thing on this page. Both are
+the rollup-beside-detail trap this file warned about, committed while writing the warning.
+
 ## Identified, not yet downloaded
 
 Ordered by the gap each closes. IDs are Socrata dataset ids on
@@ -220,6 +236,30 @@ currently assumes linearly.
 **Note the front sheet is formulas.** Read with `data_only=True` and take the Data sheets;
 the Summary sheet is a VLOOKUP interface and will read as empty or as formula text.
 
+> **AND THREE OF ITS COLUMN NAMES MEAN TWO THINGS EACH.** `DataC70` has TWO columns headed
+> `rqdnss` and TWO headed `c70aid`, and within each pair the values differ — 1,551 and 615
+> district-years respectively. Column I is required NSS as the formula computes it
+> (`= distrlc + c70aid`, which holds in 14,817 of 14,820 rows); column J is what DESE
+> publishes, and the sheet's own note reads *"from Profile file, includes carryover"* —
+> column J is the one `DataNSS` matches, in all 12,689 comparable rows, where column I
+> matches in none of the 1,551 where they differ. `c70aid` at column M is described as
+> *"From this file, reflecting penalties, if any"*. All four are carried, named for what
+> the sheet says they are.
+>
+> **AND `actualNSS` IS BUDGETED IN THE LAST TWO YEARS.** `DataNSS` names the same values
+> `2025budnss` and `2026budnss`. The `DataC70` column is headed `actualNSS` for all
+> thirty-four years regardless. Rule 1 in its purest form, hiding behind a column name —
+> so `nss_stage` is carried on every row. The workbook also contradicts itself: the same
+> FY2025 value appears under `2025budnss` in one column and `FY25 Actual NSS` in another,
+> and nothing here establishes which label is right.
+>
+> `DataNSS` itself is NOT loaded. It agrees with `DataC70` on actual NSS in all 12,185
+> comparable district-years and on required NSS wherever column J is used, so it is one
+> series in a wide shape, and a second table would make it look like a second source.
+> `5izv-jyrd` IS a separate publication and is used as a cross-check: 9,689 values agree,
+> and the only 18 that do not are STATE TOTALS rows, where the two DESE publications differ
+> by about $10M.
+
 **CASELOAD MOVEMENT, and a duplicate row to check before anyone quotes it.**
 
     SY   enrolled  on IEP  moved IN  moved OUT   net
@@ -227,6 +267,19 @@ the Summary sheet is a VLOOKUP interface and will read as empty or as formula te
     2022     1439     207        33         28    +5
     2024     1448     222        38         17   +21
     2025     1448     222        38         17   +21
+
+> **CARRIED INTO THE DATA RATHER THAN LEFT HERE.** `dese_sped_movement.repeats_prior_year`
+> is `yes` on any row whose four figures exactly equal the same district's previous year,
+> measured across every district in the file rather than spotted in one. It fires on 4,514
+> rows statewide, and `build_db.py` asserts that it still fires for Lunenburg — a check
+> that stopped firing would mean the flag had stopped working, not that the duplicate had
+> been fixed.
+>
+> A second thing found while loading it: **the grade rows are NOT the K-12 row broken
+> down.** The state's thirteen grade rows come to 789,946 against a K-12 row of 823,078,
+> and the give-away is `Grade 12` — 2,714 statewide against about 70,000 in each other
+> secondary grade. A grade row counts children still enrolled to be observed moving. The
+> residual is published as `grade_rows_sum` rather than explained.
 
 **SY2024 and SY2025 are identical across all four columns.** Four independent counts landing
 on the same values two years running is not plausible; it is far more likely a row carried
@@ -261,6 +314,13 @@ percentage by enrolment, which was our arithmetic and not a published figure.
 
 It also gives special education paraprofessionals per 100 students with disabilities. Times
 the count, that implies an FTE:
+
+> **AND `yamx-769q` DISAGREES WITH ITSELF ABOUT THE DENOMINATOR.** For SY2026 its CONTEXT
+> rows count 258 students with disabilities while its special education staffing rows are
+> computed on 246 — one dataset, one district, one year, two counts of the same children.
+> The 246 is what the arithmetic below uses. `dese_enrollment` and `dese_sped_program`
+> independently agree on 258. Registered in `money-gaps.csv`; `build_db.py` asserts the
+> twelve-child gap so it cannot quietly close.
 
     SY2019  265 SWD x 18.5/100 = 49.0 FTE
     SY2021  249 SWD x 16.7/100 = 41.6 FTE
@@ -298,6 +358,18 @@ by job class group:
     2022             34          32              78                112        234
     2023             38          28              76                118        246
 
+> **EVERY FIGURE IN THAT TABLE IS EXACTLY TWICE THE TRUTH.** `fz9c-2g33` carries a
+> `RACE_ETH` of `All Educators` — a TOTAL row — beside the seven reported races, and the
+> table above was made by summing all eight. SY2023 Lunenburg is 19 administrators, 14
+> other-licensed, 38 other-non-licensed, **59 paraprofessionals** and 123 teachers. The
+> `dese_educator_workforce` table has `race_level` for exactly this reason, and
+> `build_db.py` asserts both the total and that the naive sum comes to twice it, so a
+> lost level column fails there rather than in somebody's query.
+>
+> The administrator claim survives in shape and halves in size: 14 → 17 → 19 over three
+> years. Everything said below about it still applies — ten people is now five, three
+> years is still thin, and a reclassification would still look identical.
+
 **Read it carefully before it becomes a talking point.** Administrators rise 28 -> 38, +36%
 in three years. But three years is thin, ten people is a small base, and a reclassification
 would look identical — note `Other - Licensed` goes 28, 32, 28, which is the shape a recode
@@ -318,6 +390,15 @@ where Lunenburg's resident children go; receiving gives who arrives and from whe
 directions means a NET position, and the tuition that follows each way. This project holds
 `School Choice Receiving` as one dollar line on the cherry sheet; these are the headcounts
 behind it.
+
+> **THEY ARE NOT A PAIR. THEY ARE THE SAME FILE TWICE.** Compared tuple by tuple on
+> (school year, town of residence, reason, enrolling district, count), `vxt3-k35x` and
+> `8xyg-59b2` hold the IDENTICAL 74,878 rows and differ only in the order of their
+> columns. One measurement published under two names. So there is one table,
+> `dese_town_enrollment`, and sending and receiving are two ways of reading it — filter on
+> the town, or filter on the district. Loading both would have made a net position look
+> like it rested on two independent sources. The extract compares them on every run and
+> refuses to load if they ever diverge.
 
 **A caution on the teachers file before anyone aggregates it.** It carries a `State` row
 (`DIST_CODE 00000000`) alongside district rows, and a `SUBJ` of `All` alongside individual

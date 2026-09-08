@@ -3,8 +3,8 @@ import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
 import { TableTwin, fy, share } from '../components/StateAidCharts'
 import {
-  Asymmetry, ChoiceIn, Dial, LOSS, PerGrade, SAVE, Sensitivity,
-  type FundYear, type Grade,
+  AidHistory, Asymmetry, ChoiceIn, Dial, Flows, LOSS, PerGrade, SAVE, Sensitivity,
+  type AidYear, type FlowYear, type FundYear, type Grade,
 } from '../components/LeavingCharts'
 
 /** If students leave — what school choice would cost Lunenburg.
@@ -35,6 +35,11 @@ import {
  *  NO D1 AT PAGE LOAD. One static file. */
 
 type Basis = [string, string]
+
+type Prov = {
+  key: string; file: string; sheet: string; dataset: string | null; title: string
+  path: string; sha256: string; rows: number
+}
 
 type Payload = {
   generated_by: string
@@ -68,6 +73,50 @@ type Payload = {
     appropriation: number; appropriation_per_pupil: number
     appropriation_denominator: string
   }
+  formula_history: {
+    sources: Prov[]
+    series: AidYear[]; span: [number, number]
+    latest: AidYear & { foundation: number; required: number }
+    town_ledger_ch70: number; fy27_aid: number
+    enrolment_fell_years: { fy: number; pupils: number; aid_change: number
+      aid_fell: boolean }[]
+    enrolment_fell: number; aid_fell_too: number; aid_fell_in: number[]
+    aid_fell_with_reduction: number[]; aid_fell_unexplained: number[]
+    components_from: number
+    recent_from: number
+    recent_fell: { fy: number; pupils: number; aid_change: number; aid_fell: boolean }[]
+    components: {
+      fy: number; enrollment: number; aid: number; foundaidinc: number
+      downpymtaidinc: number; growthaidinc: number; targaidphaseinaid: number
+      minaidinc: number; increments: number
+    }[]
+    identity_ties: { fy: number; residual: number }[]
+    identity_breaks: { fy: number; residual: number }[]
+    latest_components: {
+      fy: number; enrollment: number; aid: number; minaidinc: number; increments: number
+      foundaidinc: number
+    }
+    min_aid_per_pupil: number; min_aid_total: number; foundation_aid_inc: number
+    latest_named: [string, number][]
+  }
+  key_factors: {
+    file: string; sheet: string; row: number; title: string | null
+    enrollment: number; el: number; el_share: number; voc: number; voc_share: number
+    lowinc: number; lowinc_share: number; lowinc_group: number | string
+    labor_market: string; wage_factor: number
+    foundation: number; foundation_per_pupil: number
+  }
+  flows: {
+    sources: Prov[]
+    years: number[]; latest_sy: number
+    series: FlowYear[]
+    latest: FlowYear & { resident_total: number; attending_lunenburg: number }
+    destinations: { district: string; reason: string; students: number }[]
+    origins: { town: string; reason: string; students: number }[]
+    member_elsewhere: { district: string; students: number }[]
+    peak: FlowYear; low: FlowYear; mean_out: number
+    first: FlowYear; last: FlowYear; reasons_seen: string[]
+  }
   choice_in: {
     fund_series: (FundYear & {
       edition: string; page: string; fund: string; status: string
@@ -84,14 +133,17 @@ type Payload = {
   scenario: {
     defaults: {
       athlete_share: number; transfer_rate: number; tuition: number
-      aid_response: number; avoidable_share: number
+      aid_per_pupil: number; avoidable_share: number
     }
     basis: Record<string, Basis>
+    aid_per_pupil: number; aid_per_pupil_max: number; aid_ratio: number | null
+    baseline_sy: number; baseline_out: number; baseline_in: number; baseline_net: number
+    after_out: number; after_multiple: number | null
     hs_resident: number; athletes: number; leavers: number
     per_grade: Grade[]; biggest_grade_loss: number
     foundation_per_pupil: number; appropriation_per_pupil: number
     foundation_reduction: number; tuition_out: number
-    aid_loss: number; aid_loss_upper: number
+    aid_loss: number; aid_loss_upper: number; aid_loss_ratio: number | null
     max_avoidable: number; avoided: number
     net_cost: number; net_cost_upper: number
     break_even_avoidable_share: number; break_even_upper: number
@@ -254,6 +306,9 @@ function Page({ d }: { d: Payload }) {
   const E = d.enrolment
   const P = d.premise
   const F = d.formula
+  const H = d.formula_history
+  const K = d.key_factors
+  const W = d.flows
   const C = d.choice_in
   const S = d.scenario
   const D = S.defaults
@@ -261,7 +316,7 @@ function Page({ d }: { d: Payload }) {
   const [athleteShare, setAthleteShare] = useState(D.athlete_share)
   const [transferRate, setTransferRate] = useState(D.transfer_rate)
   const [tuition, setTuition] = useState(D.tuition)
-  const [aidResponse, setAidResponse] = useState(D.aid_response)
+  const [aidPerPupil, setAidPerPupil] = useState(D.aid_per_pupil)
   const [avoidable, setAvoidable] = useState(D.avoidable_share)
 
   /** The scenario, recomputed. The same arithmetic the generator runs at the defaults —
@@ -273,7 +328,7 @@ function Page({ d }: { d: Payload }) {
     const leavers = Math.round(transferRate * athletes)
     const foundationReduction = leavers * F.foundation_per_pupil
     const tuitionOut = leavers * tuition
-    const aidLoss = aidResponse * foundationReduction
+    const aidLoss = leavers * aidPerPupil
     const maxAvoidable = leavers * F.appropriation_per_pupil
     const avoided = avoidable * maxAvoidable
     const grades: Grade[] = E.grades.map(g => {
@@ -288,7 +343,7 @@ function Page({ d }: { d: Payload }) {
       const a = i / 20
       return {
         avoidable: a,
-        hold: tuitionOut - a * maxAvoidable,
+        hold: tuitionOut + aidLoss - a * maxAvoidable,
         full: tuitionOut + foundationReduction - a * maxAvoidable,
       }
     })
@@ -300,16 +355,20 @@ function Page({ d }: { d: Payload }) {
       participationsLost: leavers * P.per_athlete,
       feesLost: leavers * P.per_athlete * S.fee.amount,
       perGradeMax: grades.length ? Math.max(...grades.map(g => g.leaving)) : 0,
+      afterOut: W.latest.out_choice + leavers,
+      afterMultiple: W.latest.out_choice ? (W.latest.out_choice + leavers) / W.latest.out_choice : null,
+      netAfter: W.latest.out_choice + leavers - W.latest.in_choice,
     }
-  }, [athleteShare, transferRate, tuition, aidResponse, avoidable, E, F, P, S])
+  }, [athleteShare, transferRate, tuition, aidPerPupil, avoidable, E, F, P, S, W])
 
   const moved = athleteShare !== D.athlete_share || transferRate !== D.transfer_rate
-    || tuition !== D.tuition || aidResponse !== D.aid_response
+    || tuition !== D.tuition || aidPerPupil !== D.aid_per_pupil
     || avoidable !== D.avoidable_share
 
   const resetAll = () => {
     setAthleteShare(D.athlete_share); setTransferRate(D.transfer_rate)
-    setTuition(D.tuition); setAidResponse(D.aid_response); setAvoidable(D.avoidable_share)
+    setTuition(D.tuition); setAidPerPupil(D.aid_per_pupil)
+    setAvoidable(D.avoidable_share)
   }
 
   const fund = C.fund_series
@@ -323,19 +382,25 @@ function Page({ d }: { d: Payload }) {
       </h1>
       <p className="mt-5 text-lg leading-relaxed max-w-2xl"
         style={{ color: 'var(--text-secondary)' }}>
-        A scenario put to this site has {share(D.transfer_rate)} of Lunenburg&rsquo;s
-        athletes transferring out under school choice &mdash; {S.leavers} students out of
-        the {E.hs_resident} the town printed for its high school. Set the dials yourself:
-        every input below is a dial because not one of them has been measured.
+        {W.latest.out_choice} Lunenburg children already leave under school choice, and{' '}
+        {W.latest.in_choice} arrive. A scenario put to this site adds {S.leavers} more in
+        one year. Set the dials yourself &mdash; and watch what Chapter 70 actually does,
+        because that is where the state&rsquo;s own figures land somewhere the arithmetic
+        would not lead you.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={String(m.leavers)} tone={LOSS}>
-          students leaving, at the settings currently on this page &mdash; out of{' '}
-          {E.hs_resident} resident high school students the town printed for {fy(E.fy)}
+          students leaving, at the settings currently on this page &mdash; on top of the{' '}
+          {W.latest.out_choice} DESE counts already leaving in SY{String(W.latest_sy).slice(2)}
         </Stat>
         <Stat value={usd(m.tuitionOut + m.aidLoss)} tone={LOSS}>
           leaves the town in the first year: sending tuition, plus whatever Chapter 70 does
+        </Stat>
+        <Stat value={usd(H.min_aid_per_pupil)} tone={SAVE}>
+          is what Chapter 70 currently moves for one foundation pupil, against a foundation
+          budget of {usd(F.foundation_per_pupil)} each &mdash; DESE&rsquo;s own aid
+          components, FY{String(H.latest_components.fy).slice(2)}
         </Stat>
         <Stat value={usd(m.avoided)} tone={SAVE}>
           stops being spent &mdash; which is a decision somebody has to take, not a
@@ -350,7 +415,7 @@ function Page({ d }: { d: Payload }) {
       {/* ------------------------------------------------------------ 1. THE CONCLUSIONS */}
       <H2 id="findings">What this page establishes</H2>
       <Body>
-        Four claims. The first is about the scenario as it was put; the rest are about what
+        Six claims. The first two are about the scenario as it was put; the rest are what
         the town&rsquo;s and the state&rsquo;s own documents show once you have all of them.
       </Body>
 
@@ -378,36 +443,76 @@ function Page({ d }: { d: Payload }) {
           holds at every setting of every dial on this page.
         </Insight>
         <Insight n={3} headline={
-          <>Chapter 70 aid is already {usd(F.above_gap)} above foundation minus the required
-            local contribution &mdash; so it is not that subtraction that is setting it.</>
+          <>This is not a new flow. At the settings on this page it is{' '}
+            {m.afterMultiple?.toFixed(2)}&times; an existing one, arriving in a single
+            year.</>
         }>
-          DESE&rsquo;s own FY{String(F.fy).slice(2)} row for Lunenburg: a foundation budget
-          of {usd(F.foundation)} less a required contribution of {usd(F.required)} leaves{' '}
-          {usd(F.gap)}, against aid of {usd(F.aid)}. {F.districts_above_gap} of the{' '}
-          {F.operating_districts} operating districts in the same sheet are in the same
-          position. Multiplying foundation dollars per pupil by students lost is therefore
-          an <strong>upper bound on the foundation effect</strong> rather than a prediction
-          of the aid loss &mdash; which is why the aid dial opens at zero and goes to 100%.
+          DESE counts {W.latest.out_choice} Lunenburg residents leaving under school choice
+          in SY{String(W.latest_sy).slice(2)} and {W.latest.in_choice} arriving &mdash; a
+          net {W.latest.net_choice} out. It has run between {W.low.out_choice} and{' '}
+          {W.peak.out_choice} every year since SY{String(W.years[0]).slice(2)}. The scenario
+          would take the outward flow to {m.afterOut}. That is the useful way to read it:
+          not whether school choice happens, but how fast.
         </Insight>
         <Insight n={4} headline={
-          <>Even if aid never moves, the town has to stop spending{' '}
+          <>Chapter 70 currently moves {usd(H.min_aid_per_pupil)} for a foundation pupil,
+            not {usd(F.foundation_per_pupil)}. The two differ by a factor of{' '}
+            {S.aid_ratio}.</>
+        }>
+          DESE&rsquo;s own aid-component columns make this year&rsquo;s aid last
+          year&rsquo;s aid plus named increments &mdash; an identity that holds to the
+          dollar in the last {H.identity_ties.filter(t => t.fy >= H.latest_components.fy - 6).length}{' '}
+          of seven years. In FY{String(H.latest_components.fy).slice(2)} the whole of
+          Lunenburg&rsquo;s {usd(H.latest_components.increments)} increase is the minimum
+          aid increment, and the foundation aid increment is{' '}
+          {usd(H.foundation_aid_inc)}. {usd(H.min_aid_total)} over{' '}
+          {H.latest_components.enrollment.toLocaleString()} foundation pupils is{' '}
+          {usd(H.min_aid_per_pupil)} each.
+        </Insight>
+        <Insight n={5} headline={
+          <>Over {H.span[1] - H.span[0]} years, foundation enrolment fell in{' '}
+            {H.enrolment_fell} of them and Chapter 70 aid fell in {H.aid_fell_too}.</>
+        }>
+          FY{H.span[0]} to FY{H.span[1]}, from DESE&rsquo;s Chapter 70 district profile.
+          The {H.aid_fell_too} years aid fell are{' '}
+          {H.aid_fell_in.map(y => `FY${String(y).slice(2)}`).join(', ')}.{' '}
+          {H.aid_fell_with_reduction.length > 0 && <>
+            DESE&rsquo;s component columns carry a reduction in{' '}
+            {H.aid_fell_with_reduction.map(y => `FY${String(y).slice(2)}`).join(' and ')}.
+          </>}{' '}
+          {H.aid_fell_unexplained.length > 0 && <>
+            {H.aid_fell_unexplained.map(y => `FY${String(y).slice(2)}`).join(' and ')}{' '}
+            predates those columns, which start at FY{String(H.components_from).slice(2)},
+            so nothing here says why aid fell that year.
+          </>}{' '}
+          This measures what happened. It does not establish what would happen.
+        </Insight>
+        <Insight n={6} headline={
+          <>Even if aid barely moves, the town has to stop spending{' '}
             {share(S.break_even_avoidable_share)} of a student&rsquo;s appropriation just to
             break even.</>
         }>
           At {usd(F.appropriation_per_pupil)} per pupil, {m.leavers} students carry{' '}
           {usd(m.maxAvoidable)} of appropriation with them at most. Sending tuition alone
-          is {usd(m.tuitionOut)}. If Chapter 70 fell by the whole foundation reduction the
-          break-even would be {share(S.break_even_upper)} of per-pupil spending, which is
-          more than exists to cut.
+          is {usd(m.tuitionOut)}, and it is assessed whatever Chapter 70 does. If aid fell
+          by the whole foundation reduction the break-even would be{' '}
+          {share(S.break_even_upper)} of per-pupil spending, which is more than exists to
+          cut.
         </Insight>
       </div>
 
       <NotShown>
         <p>
-          <strong>Nobody has measured a single Lunenburg student choicing out.</strong> This
-          is a scenario, not a forecast, and no part of it is evidence that any student will
-          leave or has left. The archive holds thirteen years of school choice money coming
-          IN and not one figure for money going out.
+          <strong>This is a scenario and not a forecast.</strong> Nothing here is evidence
+          that {S.leavers} more children will leave, or that athletes are the ones who
+          would. The children who leave are counted; nobody counts why, and nobody counts
+          whether they play sports.
+        </p>
+        <p className="mt-2.5">
+          <strong>The counts carry no money.</strong> DESE publishes how many children go
+          where. Not one document in this archive states the tuition that follows any of
+          them, in either direction, so every dollar figure on this page rests on an
+          assumed rate.
         </p>
         <p className="mt-2.5">
           It also does not show that {share(D.athlete_share)} of the high school are
@@ -415,6 +520,59 @@ function Page({ d }: { d: Payload }) {
           {P.hs_participations.toFixed(0)} high school participations are{' '}
           {share(P.participation_share)} of the entire student body, which is the proof
           that column is counting something other than people.
+        </p>
+      </NotShown>
+
+      {/* ------------------------------------------------------------- 1b. THE BASELINE */}
+      <H2 id="baseline">The flow that already exists</H2>
+      <Body>
+        School choice is not a thing that might start happening in Lunenburg. It has been
+        measured every year since SY{String(W.years[0]).slice(2)}, in both directions, by
+        the state. This is the line the scenario departs from.
+      </Body>
+      <Flows series={W.series} scenarioOut={m.afterOut}
+        scenarioLabel={`the scenario: ${m.afterOut} leaving`} />
+      <TableTwin
+        caption="Lunenburg residents, by where they go — DESE, school years"
+        head={['School year', 'Leaving under school choice', 'At charter schools',
+               'Arriving under school choice', 'Net school choice']}
+        rows={W.series.map(r => [`SY${String(r.sy).slice(2)}`, r.out_choice, r.out_charter,
+                                 r.in_choice, r.net_choice])}
+        note={<>Counted by the state, not by us. The outward flow peaked at{' '}
+          {W.peak.out_choice} in SY{String(W.peak.sy).slice(2)} and has averaged{' '}
+          {W.mean_out} over the {W.years.length} years published.</>} />
+
+      <H3>Where they go, and where the arrivals come from</H3>
+      <div className="grid gap-6 mt-5"
+        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))' }}>
+        <div>
+          <TableTwin
+            caption={`Leaving, SY${String(W.latest_sy).slice(2)}`}
+            head={['District', 'Programme', 'Children']}
+            rows={W.destinations.map(x => [x.district, x.reason, x.students])} />
+        </div>
+        <div>
+          <TableTwin
+            caption={`Arriving, SY${String(W.latest_sy).slice(2)}`}
+            head={['Town of residence', 'Programme', 'Children']}
+            rows={W.origins.map(x => [x.town, x.reason, x.students])} />
+        </div>
+      </div>
+      <NotShown>
+        <p>
+          <strong>Membership is not choice.</strong>{' '}
+          {W.member_elsewhere.map((x, i) => (
+            <span key={x.district}>{i ? ', ' : ''}{x.students} Lunenburg children attend{' '}
+              {x.district}</span>
+          ))} as resident members of a district Lunenburg belongs to, not by choosing out.
+          That is the largest single destination outside Lunenburg and it does not belong
+          in a school choice count.
+        </p>
+        <p className="mt-2.5">
+          These are counts of children and they carry <strong>no money at all</strong>. The
+          tuition that follows each of them is set differently for school choice and for
+          charters, is higher for special education, and appears in no document this
+          archive holds.
         </p>
       </NotShown>
 
@@ -449,10 +607,11 @@ function Page({ d }: { d: Payload }) {
           value={tuition} setValue={setTuition} min={0} max={25000} step={250}
           format={usd} tone={LOSS} reset={D.tuition}
           basis={S.basis.tuition[0]} note={S.basis.tuition[1]} />
-        <Dial label="How much of the foundation reduction reaches Chapter 70 aid"
-          value={aidResponse} setValue={setAidResponse} min={0} max={1} step={0.01}
-          format={pctLabel} tone={LOSS} reset={D.aid_response}
-          basis={S.basis.aid_response[0]} note={S.basis.aid_response[1]} />
+        <Dial label="Chapter 70 aid lost per student"
+          value={aidPerPupil} setValue={setAidPerPupil} min={0}
+          max={Math.round(S.aid_per_pupil_max)} step={10}
+          format={usd} tone={LOSS} reset={D.aid_per_pupil}
+          basis={S.basis.aid_per_pupil[0]} note={S.basis.aid_per_pupil[1]} />
         <Dial label="Share of a student’s appropriation the district stops spending"
           value={avoidable} setValue={setAvoidable} min={0} max={1} step={0.01}
           format={pctLabel} tone={SAVE} reset={D.avoidable_share}
@@ -469,12 +628,15 @@ function Page({ d }: { d: Payload }) {
             takes off the top, and no document in this archive breaks it out.</>,
         },
         {
-          label: <>Chapter 70 aid, at {share(aidResponse)} of the foundation reduction</>,
+          label: <>Chapter 70 aid, at {usd(aidPerPupil)} a student</>,
           amount: m.aidLoss, hue: LOSS,
-          note: <>The foundation budget falls {usd(m.foundationReduction)} &mdash;{' '}
+          note: <>The foundation budget would fall {usd(m.foundationReduction)} &mdash;{' '}
             {m.leavers} &times; {usd(F.foundation_per_pupil)} per pupil, cell{' '}
-            <code>{F.cells.foundation}</code> over <code>{F.cells.enrollment}</code>.
-            Whether any of that reaches the aid is the open question of this page.</>,
+            <code>{F.cells.foundation}</code> over <code>{F.cells.enrollment}</code> &mdash;
+            but the aid attached to a foundation pupil at the margin is currently{' '}
+            {usd(H.min_aid_per_pupil)}, because the minimum aid increment is the only thing
+            adding to Lunenburg&rsquo;s aid in FY{String(H.latest_components.fy).slice(2)}.
+            The dial spans both readings.</>,
         },
         {
           label: <>Spending the district stops, at {share(avoidable)} of per-pupil
@@ -495,12 +657,14 @@ function Page({ d }: { d: Payload }) {
       <Body>
         The single input the answer is most sensitive to is the one nothing measures: how
         much a district stops spending when students go. Both curves below are drawn across
-        every value of it, at the two ends of the aid question.
+        every value of it &mdash; the lower at the aid figure currently on the dial, the
+        upper at the reading the scenario was originally built on.
       </Body>
       <Sensitivity curve={m.curve} breakEven={m.breakEven} />
       <TableTwin
         caption="Net cost to the town, by how much spending the district avoids"
-        head={['Spending avoided', 'If Chapter 70 does not move', 'If aid falls in full']}
+        head={['Spending avoided', `At ${usd(aidPerPupil)} of aid per student`,
+               'If aid fell by the whole foundation reduction']}
         rows={m.curve.filter((_, i) => i % 4 === 0).map(r => [
           share(r.avoidable), usd(r.hold), usd(r.full)])}
         note={<>Break-even at the current aid setting is{' '}
@@ -638,6 +802,116 @@ function Page({ d }: { d: Payload }) {
         </p>
       </Maybe>
 
+      <H3>
+        What Chapter 70 has actually done &mdash; FY{H.span[0]} to FY{H.span[1]}
+      </H3>
+      <Body>
+        DESE&rsquo;s Chapter 70 district profile carries {H.series.length} years of
+        Lunenburg&rsquo;s foundation enrolment, foundation budget, required local
+        contribution and aid. Its FY{String(H.latest.fy).slice(2)} aid figure is{' '}
+        {usd(H.latest.aid)}, which is exactly what the town&rsquo;s own FY2026 revenue
+        ledger budgets for Chapter 70 &mdash; two independent documents, and the generator
+        refuses to publish this series if they ever stop agreeing.
+      </Body>
+      <AidHistory series={H.series} fellYears={H.enrolment_fell_years.map(f => f.fy)} />
+      <TableTwin
+        caption="Every year foundation enrolment was lower than the year before"
+        head={['FY', 'Change in foundation pupils', 'Change in Chapter 70 aid',
+               'Did aid fall?']}
+        rows={H.enrolment_fell_years.map(f => [
+          `FY${String(f.fy).slice(2)}`, f.pupils, usd(f.aid_change),
+          f.aid_fell ? 'yes' : 'no'])}
+        note={<>{H.enrolment_fell} of the {H.span[1] - H.span[0]} year-on-year steps in the
+          series. Aid fell in {H.aid_fell_too} of them. <strong>This is a record, not a
+          rule.</strong> A year in this table is a year enrolment happened to be lower, not
+          a year anybody left in the way this page models, and the size of the fall is not
+          held constant across them.</>} />
+
+      <H3>And why: the aid calculation, in DESE&rsquo;s own components</H3>
+      <Body>
+        The trends workbook splits the calculation into named increments. The identity is
+        that this year&rsquo;s aid is <em>last year&rsquo;s aid plus the increments</em>,
+        and it holds to the dollar in{' '}
+        {H.identity_ties.length} of the {H.identity_ties.length + H.identity_breaks.length}{' '}
+        year-to-year steps published &mdash; the exceptions are{' '}
+        {H.identity_breaks.map(b => `FY${String(b.fy).slice(2)}`).join(', ')}, and they are
+        shown rather than smoothed.
+      </Body>
+      <TableTwin
+        caption="Chapter 70 aid, and what added to it — DESE’s own column names"
+        head={['FY', 'Foundation pupils', 'foundaidinc', 'downpymtaidinc', 'growthaidinc',
+               'targaidphaseinaid', 'minaidinc', 'Chapter 70 aid']}
+        rows={H.components.map(r => [
+          `FY${String(r.fy).slice(2)}`, r.enrollment.toLocaleString(),
+          usd(r.foundaidinc), usd(r.downpymtaidinc), usd(r.growthaidinc),
+          usd(r.targaidphaseinaid), usd(r.minaidinc), usd(r.aid)])}
+        note={<>Sheet <code>dataAid</code> of DESE&rsquo;s Chapter 70 trends workbook. In
+          FY{String(H.latest_components.fy).slice(2)} every dollar of the increase is{' '}
+          <code>minaidinc</code>.</>} />
+
+      <div className="card p-5 mt-6 max-w-3xl" style={{ borderLeft: `4px solid ${SAVE}` }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+          style={{ color: 'var(--text-muted)' }}>
+          What a foundation pupil is currently worth in aid
+        </p>
+        <p className="text-[15px] leading-relaxed">
+          FY{String(H.latest_components.fy).slice(2)}:{' '}
+          <code>minaidinc</code> {usd(H.min_aid_total)} over{' '}
+          {H.latest_components.enrollment.toLocaleString()} foundation pupils ={' '}
+          <strong>{usd(H.min_aid_per_pupil)} each</strong>. <code>foundaidinc</code> is{' '}
+          {usd(H.foundation_aid_inc)}, so nothing about the foundation budget is adding to
+          Lunenburg&rsquo;s aid this year.
+        </p>
+        <p className="text-[14px] leading-relaxed mt-3"
+          style={{ color: 'var(--text-secondary)' }}>
+          The division is ours. What DESE states is the {usd(H.min_aid_total)} and the{' '}
+          {H.latest_components.enrollment.toLocaleString()}; that the minimum aid increment
+          is paid per pupil is what makes dividing them meaningful, and the page says so
+          rather than assuming a reader will infer it.
+        </p>
+      </div>
+
+      <Maybe settle={<>DESE&rsquo;s preliminary Chapter 70 aid calculation for Lunenburg
+        for the year in question, which states the foundation aid, minimum aid and
+        hold-harmless components before the year is set.</>}>
+        <p>
+          The obvious reading is hold-harmless: aid does not fall below last year&rsquo;s,
+          so the only thing enrolment moves is the minimum aid increment on top. That fits
+          every number above and this archive does not test it. Two things would break the
+          {' '}{usd(H.min_aid_per_pupil)}: the Legislature setting a different minimum aid
+          rate, which it has done repeatedly, and an enrolment fall large enough to move
+          Lunenburg onto a different track in the formula, which nothing here models.
+        </p>
+      </Maybe>
+
+      <H3>Which children leave, not only how many</H3>
+      <Body>
+        DESE calculates the foundation budget from the composition of a district, not from
+        a headcount alone. Its key-factors summary, row {K.row}, gives Lunenburg&rsquo;s
+        FY{String(H.latest_components.fy).slice(2)} foundation enrolment as{' '}
+        {K.enrollment.toLocaleString()} and splits it three ways.
+      </Body>
+      <TableTwin
+        head={['Category', 'Children', 'Share of foundation enrolment']}
+        rows={[
+          ['English learners', K.el, share(K.el_share)],
+          ['Low income (group ' + K.lowinc_group + ')', K.lowinc, share(K.lowinc_share)],
+          ['Vocational', K.voc, share(K.voc_share)],
+        ]}
+        note={<>Wage adjustment factor {K.wage_factor.toFixed(3)},{' '}
+          {K.labor_market}. Foundation budget {usd(K.foundation)}, or{' '}
+          {usd(K.foundation_per_pupil)} a pupil &mdash; the FY
+          {String(H.latest_components.fy).slice(2)} figure, which is not the FY
+          {String(F.fy).slice(2)} figure the scenario above uses.</>} />
+      <NotShown>
+        The sheet is headed <em>{K.title}</em> and lists these categories as factors in the
+        calculation, which is what establishes that they are inputs to it. It does not
+        publish the rate attached to any of them. So this page can say that <strong>which
+        children leave changes the foundation figure and not only how many</strong>, and it
+        cannot say in which direction or by how much &mdash; which means it cannot say what
+        a departing athlete is worth as against any other child. Registered below.
+      </NotShown>
+
       <H3>School choice money, the way Lunenburg currently sees it &mdash; coming in</H3>
       <Body>
         The town has a School Choice revolving fund and its annual reports have printed it
@@ -712,17 +986,21 @@ function Page({ d }: { d: Payload }) {
           ['It is a scenario, not a forecast.',
            'Nothing here predicts that any student will transfer. Every dial is an input '
            + 'somebody chose, and the page exists so a reader can choose differently.'],
-          ['Nobody has measured how many Lunenburg students choice out.',
-           'Enrolment falls for many reasons — families moving, smaller birth cohorts, '
-           + 'charter schools, school choice — and a fall in enrolment is not a count of '
-           + 'departures.'],
+          ['The children are counted. The money is not.',
+           'DESE publishes how many Lunenburg residents attend every other district, in '
+           + 'both directions, for thirteen school years. No document in this archive '
+           + 'states the tuition that follows one of them.'],
+          ['Nothing here says why any child left.',
+           'Athletics, class offerings, a family moving town, a programme somewhere else — '
+           + 'the count is the same number under all of them, and attaching a cause to it '
+           + 'would be a hypothesis dressed as a measurement.'],
           ['Participations are not students.',
            'The 45% is tested against a participation count and bounded by it, not '
            + 'measured from it. No unduplicated athlete roster is published.'],
-          ['Chapter 70 is a formula this project cannot reproduce.',
-           'The archive holds DESE’s summary, which publishes the result. What aid would '
-           + 'actually be in a year enrolment fell needs the calculation, and that is a '
-           + 'different document.'],
+          ['The Chapter 70 figure is a marginal rate, not a model of the formula.',
+           'DESE’s components show what added to aid in each year. They do not let anyone '
+           + 'run the calculation forward, and the minimum aid rate is set annually by the '
+           + 'Legislature — it has been as low as $30 a pupil in the years published.'],
           ['A budget line is net, and it is dollars.',
            'The per-pupil appropriation here is what the town raises after aid, divided by '
            + 'a count. It is not what educating a child costs, and grants, fees and '
@@ -796,6 +1074,20 @@ function Page({ d }: { d: Payload }) {
         </li>
         <li><code>{d.generated_by}</code> &mdash; the generator, and its refusals</li>
       </ul>
+      <H3>The state&rsquo;s own files, by name and by hash</H3>
+      <Body>
+        Four DESE workbooks, located by filename rather than by folder &mdash; this archive
+        re-files documents on purpose, and a script that names a folder is a break with a
+        date on it. A spreadsheet can be replaced in place, so each is hashed.
+      </Body>
+      <TableTwin
+        head={['File', 'Sheet', 'DESE dataset', 'Rows', 'sha256']}
+        rows={[...H.sources, ...W.sources].map(x => [
+          x.file, x.sheet, x.dataset ?? '—', x.rows.toLocaleString(),
+          x.sha256.slice(0, 16) + '…'])}
+        note={<>{[...H.sources, ...W.sources].map((x, i) => (
+          <span key={x.file}>{i ? ' ' : ''}<strong>{x.file}</strong> &mdash; {x.title}.</span>
+        ))}</>} />
 
       <H3>The athletics fund loses fees too, and that is a different pot</H3>
       <Body>

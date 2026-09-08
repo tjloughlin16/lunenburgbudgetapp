@@ -406,10 +406,46 @@ def main():
     written = {}
 
     # ---- layer 0: the database itself, downloadable, with its bytes named ------------
-    pub_db = os.path.join(PUB, 'data', 'lunenburg.db')
-    os.makedirs(os.path.dirname(pub_db), exist_ok=True)
-    shutil.copyfile(DB, pub_db)
-    digest = sha256_of(pub_db)
+    #
+    # NOT COPIED INTO THE BUILD ANY MORE. Cloudflare Pages caps a static asset at 25MB --
+    # a platform limit, not a quota, so no plan raises it. The database crossed it on
+    # 8 September 2026 (21.2MB -> 29.3MB, the DESE ingest) and a build shipping it would
+    # have failed at DEPLOY time rather than here.
+    #
+    # `fy28/functions/data/lunenburg.db.js` now serves the same published URL out of R2,
+    # exactly as /docs/ already does for the archive. The URL does not move; only the
+    # bytes' address does.
+    digest = sha256_of(DB)
+    db_bytes = os.path.getsize(DB)
+
+    # A GUARD, because this failed silently. Nothing measured any published asset against
+    # the platform limit, so the first symptom would have been a rejected deploy with the
+    # database already 4MB over. Anything still shipped in the build gets checked.
+    PAGES_ASSET_LIMIT = 25 * 1024 * 1024
+    def _guard_build_assets():
+        over = []
+        for root, _, files in os.walk(PUB):
+            for f in files:
+                full = os.path.join(root, f)
+                n = os.path.getsize(full)
+                if n > PAGES_ASSET_LIMIT:
+                    over.append((os.path.relpath(full, PUB), n))
+        if over:
+            raise SystemExit(
+                'these files ship in the build and exceed the 25MB Cloudflare Pages asset '
+                'limit:\n' + '\n'.join(
+                    '  %-52s %.1f MB' % (p, n / 1048576) for p, n in sorted(over))
+                + '\n\nPages refuses them at DEPLOY time, not here, so this stops it '
+                  'earlier. Serve the file from R2 the way /data/lunenburg.db and /docs/ '
+                  'already are, rather than shrinking it to fit.')
+
+    # An older copy may be sitting in the build from before the move. Remove it rather
+    # than leave two databases published at two URLs disagreeing with each other -- which
+    # is exactly what was found on 8 September: /data/ 21.2MB, /docs/data/ 29.3MB, and
+    # llms.txt advertising a third figure that was true of the R2 copy alone.
+    stale = os.path.join(PUB, 'data', 'lunenburg.db')
+    if os.path.exists(stale):
+        os.remove(stale)
 
     counts = {t: db.execute('SELECT COUNT(*) FROM "%s"' % t).fetchone()[0]
               for (t,) in db.execute(
@@ -417,7 +453,7 @@ def main():
     views = [v for (v,) in db.execute(
         "SELECT name FROM sqlite_master WHERE type='view' ORDER BY name")]
 
-    written['data/lunenburg.db'] = os.path.getsize(pub_db)
+    written['data/lunenburg.db'] = db_bytes    # served from R2, not shipped
 
     # ---- layer 1: named resources ---------------------------------------------------
     written['api/schema'] = write('schema', dict(
@@ -428,7 +464,7 @@ def main():
                     'a derived read model, dropped and rebuilt from scratch on every run. '
                     'Nothing is ever edited in it.',
         download=dict(url=f'{SITE}/data/lunenburg.db', sha256=digest,
-                      bytes=os.path.getsize(pub_db), format='SQLite 3',
+                      bytes=db_bytes, format='SQLite 3',
                       note='The whole database. Query it yourself; it is the same file '
                            'every figure below comes from.'),
         tables={name: dict(
@@ -819,7 +855,11 @@ def main():
     print('Published the database as an API\n')
     for k in sorted(written):
         print('  %-24s %8.1f KB' % (k, written[k] / 1024))
+    # Every published asset against the platform limit, before anything is deployed.
+    _guard_build_assets()
+
     print('\n  sha256(lunenburg.db) = %s' % digest)
+    print('  %.1f MB, served from R2 rather than shipped in the build' % (db_bytes / 1048576))
     return 0
 
 

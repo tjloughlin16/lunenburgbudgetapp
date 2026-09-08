@@ -253,6 +253,22 @@ CHECKS = [
     # plausible number four times too large, which is the exact shape this project has
     # shipped before.
     ('extract_dese_finance.py', ['--check']),
+    # The Chapter 70 formula and the circuit breaker. It ties DESE's FY2026 Chapter 70
+    # aid to what the TOWN'S OWN MUNIS revenue ledger records receiving -- two sources,
+    # neither derived from the other -- and refuses to write if they part company. It
+    # also splits two pairs of identically named columns that hold different numbers,
+    # and carries whether each year's net school spending is actual or BUDGETED.
+    ('extract_dese_state_aid.py', ['--check']),
+    # The student datasets. Six DESE files, five tables: the sending and receiving
+    # enrolment files hold the identical rows and are loaded once, and the extract
+    # compares them row by row on every run so that a divergence stops the build rather
+    # than quietly becoming two sources for one measurement.
+    ('extract_dese_students.py', ['--check']),
+    # The staffing datasets. SLOW -- it reads a 133 MB workbook of 1.77M rows, which is
+    # about four minutes, and it is here rather than omitted because the alternative is
+    # a rollup summed with its own detail going unnoticed. `dese_xlsx.py` is why it is
+    # four minutes and not forty.
+    ('extract_dese_staffing.py', ['--check']),
     ('build_db.py', ['--check']),
     ('check_archive_layout.py', []),
     ('check_moved_docs.py', []),

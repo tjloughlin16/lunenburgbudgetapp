@@ -248,6 +248,527 @@ CREATE TABLE dese_measure (
     PRIMARY KEY (lea, fy, "group", measure)
 );
 
+-- DESE's spending by FUNCTION CODE, with the general fund and grants/revolving money in
+-- SEPARATE columns. Massachusetts DESE dataset `cnfs-edqq`, SY2009-SY2025.
+--
+-- Rule 11 says the district's budget documents show the general fund and nothing else,
+-- so a line rising because a grant ended looks identical to a line rising because the
+-- district grew. This is the first published split of the two in this archive. It does
+-- NOT close the gap: the split is by FUNCTION CODE, and a function code is not a budget
+-- line and not a post.
+--
+-- `level` IS LOAD-BEARING. The source file puts rollups beside detail and nothing in its
+-- column names says which is which; summing every Lunenburg SY2025 row gives
+-- $117,996,913 against an in-district total of $27,903,187. NEVER aggregate without
+-- filtering `level`, and never add ODTR to OODD -- it is already inside it.
+--
+--   level='total'     TTPP, the grand total = IIII + OODD
+--   level='rollup'    IIII (in-district), OODD (out-of-district)
+--   level='category'  the ten in-district categories, plus ODTR and COMM
+--   level='detail'    the printed function codes beneath them, plus TUIT, which has
+--                     no category row of its own
+--
+-- `reconciles` is the verdict on the identity that row heads: `yes`, `no`, `partial` for
+-- ODTR (whose detail is only ever the single code 9130 and is a component, not the
+-- whole), and blank on a detail row, which heads nothing.
+--
+-- Seven districts only -- Lunenburg and the six peers -- because 363,514 rows would take
+-- the published database past Cloudflare's 25MB asset limit. Every other district is in
+-- dese_function_statewide as a distribution.
+CREATE TABLE dese_function_expenditure (
+    fy                  INTEGER NOT NULL,
+    lea                 TEXT NOT NULL,      -- DESE org code; Lunenburg is 01620000
+    district            TEXT,
+    level               TEXT NOT NULL,      -- total | rollup | category | detail
+    func_cat_code       TEXT NOT NULL,
+    func_cat_desc       TEXT,
+    func_code           TEXT NOT NULL,
+    func_desc           TEXT,
+    in_out_dist         TEXT,               -- blank on every summary row
+    gen_fund            REAL,
+    grants_revolving    REAL,
+    total               REAL,
+    per_pupil           REAL,               -- 0 on every out-of-district row; DESE's own
+    reconciles          TEXT,
+    doc_id              TEXT NOT NULL,
+    PRIMARY KEY (lea, fy, func_cat_code, func_code)
+);
+
+-- Every Massachusetts district collapsed to a distribution, so a peer comparison has a
+-- denominator. One row per year per function per level.
+--
+-- Rule 6: districts differ in size, grade span and whether they are regional, so a raw
+-- dollar comparison between two of them means very little. `per_pupil_median` and the
+-- quartiles are the comparable quantity, and `per_pupil_basis` says on every row whether
+-- one exists -- DESE prints 0 per pupil against every out-of-district row, and a median
+-- of zeros is not a statistic.
+--
+-- `districts` is the denominator and it INCLUDES charter and virtual districts, which
+-- are in DESE's file and are not municipal school districts. Read it before quoting a
+-- rank.
+CREATE TABLE dese_function_statewide (
+    fy                  INTEGER NOT NULL,
+    level               TEXT NOT NULL,
+    func_cat_code       TEXT NOT NULL,
+    func_code           TEXT NOT NULL,
+    func_desc           TEXT,
+    districts           INTEGER,            -- the denominator, charters included
+    gen_fund_total      REAL,
+    grants_revolving_total REAL,
+    total               REAL,
+    grant_share         REAL,               -- grants_revolving_total / total
+    per_pupil_basis     TEXT,
+    per_pupil_min       REAL,
+    per_pupil_p25       REAL,
+    per_pupil_median    REAL,
+    per_pupil_p75       REAL,
+    per_pupil_max       REAL,
+    lunenburg_per_pupil REAL,
+    lunenburg_rank_of_districts TEXT,       -- '12 of 337', highest first
+    doc_id              TEXT NOT NULL,
+    PRIMARY KEY (fy, level, func_cat_code, func_code)
+);
+
+-- ------------------------------------------------- DESE staffing, students and aid
+--
+-- Fourteen datasets DESE publishes, loaded here from `sources/data/dese-*.csv`, which are
+-- written by three extracts that refuse to write unless the hierarchy each file states
+-- still holds. Read those extracts before quoting anything from these tables; the
+-- docstrings carry what a column name will mislead you about.
+--
+-- ONE RULE COVERS ALL OF THEM: **filter on the level column before aggregating.** Every
+-- one of these files puts summary rows in the same column space as detail -- a `State`
+-- row beside districts, a subject of `All` beside individual subjects, an
+-- `All Educators` row beside the reported races -- and nothing in the source's own column
+-- names says which is which. Summing a column across such a file counts the same people
+-- three or four times.
+--
+-- AND THEY ARE DIFFERENT GRAINS. A row here is a district-year, or an organisation-year,
+-- or a person-class, or a placement cohort, or a town/district pair. They are not
+-- joinable into one wide table and were deliberately not written as one.
+--
+-- `printing` APPEARS ON THREE OF THEM AND IS PART OF THE KEY. DESE publishes the same
+-- natural key twice in `dese_sped_indicator`, `dese_sped_program` and
+-- `dese_teacher_grade_subject`, for three different reasons: a row published twice
+-- identically; a row published twice with the district under two different NAMES
+-- (`Ayer Shirley` and `Ayer Shirley School District` for one org code); and a row
+-- published twice with DIFFERENT FIGURES -- 0.0 FTE against 0.2 for one school, one
+-- subject, one year. The first load of these tables keyed on the natural key and lost 111
+-- rows to INSERT OR REPLACE without a word, which is the shape of defect this repository
+-- keeps finding: a load that drops rows looks exactly like data that was never published.
+-- So `printing` numbers them, as it does for the balance sheet the annual report prints
+-- twice, `load_dese_datasets` refuses to write unless every CSV row arrived, and anything
+-- aggregating these tables must collapse on `printing` first.
+
+-- vd2f-ib9q. One row per organisation per year: teacher FTE split four ways.
+-- `org_level` is state | district | school | collaborative, in one column.
+-- A DISTRICT ROW IS NOT THE SUM OF ITS SCHOOL ROWS -- staff with no school assignment
+-- have a district row and no school row, and the gap reaches several hundred FTE in the
+-- largest districts. Do not reconstruct one from the other.
+CREATE TABLE dese_teacher_program_area (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,      -- DESE district code; Lunenburg is 01620000
+    district        TEXT,
+    org_code        TEXT NOT NULL,      -- the SCHOOL's code, or the district's own
+    org_name        TEXT,
+    org_level       TEXT NOT NULL,      -- state | district | school | collaborative
+    gen_ed_fte      REAL,
+    gen_ed_pct      REAL,
+    sped_fte        REAL,               -- falls 18.5 (2008) to 2.0 (2026) in Lunenburg
+    sped_pct        REAL,               --   while total_fte holds flat. UNRESOLVED.
+    career_tech_fte REAL,
+    career_tech_pct REAL,
+    el_fte          REAL,
+    el_pct          REAL,
+    total_fte       REAL,
+    comments        TEXT,
+    reconciles      TEXT,               -- do the four parts sum to total_fte
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, org_code)
+);
+
+-- 4684-cw3t. The same grain again with a subject on it.
+-- `teacher_fte` IS AN FTE despite the source calling the column `TCHR_CNT`.
+-- `subject_level`: all | group | subject. `Core-All Subjects` and `Total Non-Core
+-- Academic Subjects` are GROUPS of the subjects beside them, so the members of this
+-- column do not partition and summing them double counts.
+CREATE TABLE dese_teacher_subject (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    org_code        TEXT NOT NULL,
+    org_name        TEXT,
+    org_level       TEXT NOT NULL,
+    subject         TEXT NOT NULL,
+    subject_level   TEXT NOT NULL,      -- all | group | subject
+    teacher_fte     REAL,
+    licensed_pct    REAL,
+    students_per_teacher REAL,          -- parsed from '11.7 to 1'
+    student_teacher_ratio_printed TEXT, -- ...and the sentence DESE actually prints
+    experienced_pct REAL,
+    teachers_without_license REAL,
+    in_field_pct    REAL,
+    core_academic_fte REAL,
+    core_academic_pct REAL,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, org_code, subject)
+);
+
+-- 77fu-a6h8. The same grain, with the FTE split across grade bands -- which is what makes
+-- it worth 133 MB: grade detail AND FTE, where the town's rosters give grade detail with
+-- no FTE and DESE elsewhere gives FTE with no grade.
+-- `agrees_with_teacher_subject` is written only on the `All` rows and records whether
+-- this dataset and 4684-cw3t state the same total FTE for that organisation. Where they
+-- do not, BOTH are kept and neither corrects the other.
+CREATE TABLE dese_teacher_grade_subject (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    org_code        TEXT NOT NULL,
+    org_name        TEXT,
+    org_level       TEXT NOT NULL,
+    subject         TEXT NOT NULL,
+    subject_level   TEXT NOT NULL,
+    pk_2_fte        REAL,
+    grade_3_5_fte   REAL,
+    grade_6_8_fte   REAL,
+    grade_9_12_fte  REAL,
+    multi_grade_fte REAL,
+    all_grade_fte   REAL,
+    total_fte       REAL,
+    printing        INTEGER NOT NULL,   -- see below
+    reconciles      TEXT,               -- do the six bands sum to total_fte
+    agrees_with_teacher_subject TEXT,   -- yes | no | blank; `All` rows only
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, org_code, subject, printing)
+);
+
+-- fz9c-2g33. HEADCOUNT, not FTE, and the only DESE table here that counts
+-- administrators and paraprofessionals as people. SY2021-SY2023 only.
+-- `race_level` is all | detail: `All Educators` is the total row and the seven reported
+-- categories are beneath it. There is NO all-job-classes row, so a district total is the
+-- sum over the five job classes of the `All Educators` rows and nothing published states
+-- it.
+CREATE TABLE dese_educator_workforce (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    race_ethnicity  TEXT NOT NULL,
+    race_level      TEXT NOT NULL,      -- all | detail
+    job_class       TEXT NOT NULL,      -- Administrator | Teacher | Paraprofessional |
+                                        --   Other - Licensed | Other - Non-Licensed
+    educators_headcount REAL,
+    educators_pct   REAL,
+    hires_headcount REAL,
+    hires_pct       REAL,
+    retained_headcount REAL,
+    retained_pct    REAL,
+    reconciles      TEXT,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea, race_ethnicity, job_class)
+);
+
+-- t8td-gens. The denominator for nearly everything else here: enrolment by grade and by
+-- selected population, per organisation, back to SY1992.
+-- `swd_cnt` is a PUBLISHED count of students with disabilities per organisation. It is
+-- not the same quantity as the count in dese_sped_program, which is measured on a
+-- different date and includes out-of-district children -- the two differ and the
+-- difference is not reconciled anywhere.
+CREATE TABLE dese_enrollment (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    org_code        TEXT NOT NULL,
+    org_name        TEXT,
+    org_level       TEXT NOT NULL,
+    total_cnt       REAL,
+    pk_cnt REAL, k_cnt REAL,
+    grade_1_cnt REAL, grade_2_cnt REAL, grade_3_cnt REAL, grade_4_cnt REAL,
+    grade_5_cnt REAL, grade_6_cnt REAL, grade_7_cnt REAL, grade_8_cnt REAL,
+    grade_9_cnt REAL, grade_10_cnt REAL, grade_11_cnt REAL, grade_12_cnt REAL,
+    sp_cnt          REAL,               -- special education beyond grade 12
+    el_cnt REAL, el_pct REAL,
+    first_lang_not_english_cnt REAL,
+    high_needs_cnt REAL, high_needs_pct REAL,
+    low_income_cnt REAL, low_income_pct REAL,
+    econ_disadvantaged_cnt REAL, econ_disadvantaged_pct REAL,
+    swd_cnt REAL, swd_pct REAL,
+    reconciles      TEXT,               -- do PK..12 plus SP sum to total_cnt
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, org_code)
+);
+
+-- yamx-769q. Special education indicators: the context counts, the staffing ratios, and
+-- the outcome and assessment measures, by grade group and student group.
+-- `grades_level` is all | subset and THE SUBSETS OVERLAP. `Grade 10` is inside
+-- `Grades 9-12` is inside `K-12`, and `Grades 3-8` crosses both. There is no sum of them
+-- that means anything.
+-- `denominator_cnt` is the population the percentage is OF. It is not the indicator's own
+-- count -- that is `measure_cnt`.
+-- `value_type` says whether a row is a percentage, an average, an FTE or an FTE per 100
+-- students with disabilities. Read it before doing arithmetic on `measure_cnt`.
+CREATE TABLE dese_sped_indicator (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    geo_level       TEXT NOT NULL,      -- state | district
+    grades          TEXT NOT NULL,
+    grades_level    TEXT NOT NULL,      -- all | subset (the subsets OVERLAP)
+    student_group   TEXT NOT NULL,
+    student_group_level TEXT NOT NULL,  -- all | detail
+    indicator_category TEXT NOT NULL,
+    indicator       TEXT NOT NULL,
+    printing        INTEGER NOT NULL,   -- see below
+    denominator_cnt REAL,
+    measure_cnt     REAL,
+    measure_pct     REAL,
+    value_type      TEXT,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea, grades, student_group, indicator_category, indicator, printing)
+);
+
+-- n62c-bx65. What the students with disabilities are: disability type, demographics,
+-- placement, and the special education FTE ratios.
+-- `indicator_level` is total | member. Each category carries its own total row.
+-- THREE CATEGORIES BEHAVE DIFFERENTLY AND THE EXTRACT PRINTS WHICH ON EVERY RUN:
+--   Placement runs SHORT of its own total, because its four members are IN-DISTRICT
+--     placements and children placed out of district are in the total and in none of them.
+--   Disability Type is a COLLAPSED rendering of Disability Type All, with several
+--     disabilities folded into `Other Disability`. Adding the two counts every child twice.
+--   Special Education FTEs per 100 SWDs is a RATIO, not a count, even though it sits in
+--     the same column and `value_type` says `Percent` on every row in this file.
+CREATE TABLE dese_sped_program (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    geo_level       TEXT NOT NULL,
+    indicator_category TEXT NOT NULL,
+    indicator       TEXT NOT NULL,
+    indicator_level TEXT NOT NULL,      -- total | member
+    printing        INTEGER NOT NULL,   -- see below
+    denominator_cnt REAL,
+    measure_cnt     REAL,
+    measure_pct     REAL,
+    value_type      TEXT,
+    reconciles      TEXT,               -- do the members sum to the category's own total
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea, indicator_category, indicator, printing)
+);
+
+-- 92x3-2qj9. Where a cohort started and where the same children are now. THE BASES ARE
+-- TINY: a Lunenburg cohort is tens of children, so a percentage here must never travel
+-- without its count. `unaccounted_cnt` is the cohort less the four destinations -- what
+-- it IS (moved away, private school, aged out, suppressed) is not established.
+CREATE TABLE dese_sped_trajectory (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    geo_level       TEXT NOT NULL,
+    grade_span      TEXT NOT NULL,      -- K-12 and K-2 OVERLAP; never sum them
+    placement_at_start TEXT NOT NULL,
+    cohort_cnt      REAL,
+    no_iep_cnt REAL, no_iep_pct REAL,
+    included_cnt REAL, included_pct REAL,
+    sub_separate_cnt REAL, sub_separate_pct REAL,
+    out_of_district_cnt REAL, out_of_district_pct REAL,
+    unaccounted_cnt REAL,
+    reconciles      TEXT,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea, grade_span, placement_at_start)
+);
+
+-- 8aww-sugs. Caseload movement: who entered and who left special education services.
+-- TWO THINGS BEFORE ANYBODY QUOTES IT.
+--   `repeats_prior_year` is `yes` where every one of the four figures exactly equals the
+--   same district's previous year. Lunenburg's SY2024 and SY2025 are such a pair. Four
+--   independent counts landing identically two years running is not plausible and a row
+--   carried forward is; nothing may sum two such years as two years of movement.
+--   `grade_rows_sum` is on the K-12 rows and is the sum of that district's grade rows. IT
+--   DOES NOT EQUAL `enrolled_cnt`, and the grade rows are NOT the K-12 row broken down:
+--   the `Grade 12` row is a fraction of the size of the others, so a grade row counts
+--   children still enrolled to be observed. What the residual IS is not established.
+CREATE TABLE dese_sped_movement (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    geo_level       TEXT NOT NULL,
+    grades          TEXT NOT NULL,
+    grades_level    TEXT NOT NULL,      -- all | grade
+    enrolled_cnt    REAL,
+    on_iep_cnt      REAL,
+    moved_in_cnt    REAL,
+    moved_out_cnt   REAL,
+    grade_rows_sum  REAL,               -- K-12 rows only; NOT equal to enrolled_cnt
+    repeats_prior_year TEXT,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea, grades)
+);
+
+-- vxt3-k35x AND 8xyg-59b2 -- ONE table, because the two datasets hold the IDENTICAL rows
+-- and differ only in column order. The extract compares them tuple by tuple on every run
+-- and refuses to load if they ever diverge.
+-- Read it in either direction: filter on `town` for where a town's resident children go,
+-- filter on `lea` for who arrives at a district and from where.
+-- Both dataset ids are carried, because a reader checking the figure needs to know that
+-- the two published files are one measurement rather than two agreeing ones.
+CREATE TABLE dese_town_enrollment (
+    fy              INTEGER NOT NULL,
+    town            TEXT NOT NULL,      -- town of RESIDENCE
+    enrollment_reason TEXT NOT NULL,    -- School Choice Program, Charter School,
+                                        --   Resident/Member, tuitioned in several ways
+    lea             TEXT NOT NULL,      -- the district the children actually attend
+    district        TEXT,
+    students        REAL,
+    doc_id_sending  TEXT NOT NULL,
+    doc_id_receiving TEXT NOT NULL,
+    PRIMARY KEY (fy, town, enrollment_reason, lea)
+);
+
+-- The Chapter 70 formula, FY1993-FY2026, from the DESE district profile workbook.
+-- THREE COLUMN NAMES IN THE SOURCE MEAN TWO THINGS EACH AND ARE SPLIT HERE:
+--   `required_nss`           column I: the formula's arithmetic, = rlc + aid
+--   `required_nss_published` column J: what DESE publishes, carryover included. These are
+--                            NOT equal -- they differ in over a thousand district-years.
+--   `ch70_aid` / `ch70_aid_after_penalties`: columns H and M, the second described by the
+--                            sheet as reflecting penalties.
+-- `nss_stage` IS LOAD-BEARING. The source column is headed `actualNSS` for all 34 years,
+-- and for FY2025 and FY2026 the value is BUDGETED net school spending -- the sheet's own
+-- DataNSS names them `budnss`. Rule 1: a rate measured from an actual to a budget is
+-- partly growth and partly the step between the two. Filter on `nss_stage` or say which
+-- you mean.
+CREATE TABLE dese_ch70_formula (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,      -- 8-digit DESE code, joinable to every table above
+    org4_code       TEXT NOT NULL,      -- the workbook's own 4-digit key
+    lea_number      TEXT,
+    district        TEXT,
+    level           TEXT NOT NULL,      -- state | district
+    foundation_enrollment REAL,
+    foundation_budget REAL,
+    required_local_contribution REAL,
+    ch70_aid        REAL,
+    ch70_aid_after_penalties REAL,
+    required_nss    REAL,               -- column I, computed
+    required_nss_published REAL,        -- column J, published, includes carryover
+    net_school_spending REAL,
+    nss_stage       TEXT,               -- actual | budgeted -- READ THIS
+    nss_pct_of_required REAL,
+    reconciles      TEXT,               -- required_nss == rlc + aid
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, org4_code)
+);
+
+-- The aid build-up, term by term, FY2007 on. Every increment the formula adds and every
+-- reduction it applies, between the foundation budget and the aid actually paid.
+CREATE TABLE dese_ch70_aid_factor (
+    fy              INTEGER NOT NULL,
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    level           TEXT NOT NULL,
+    foundation_enrollment REAL,
+    foundation_budget REAL,
+    required_local_contribution REAL,
+    target_aid_pct  REAL,
+    foundation_aid_increment REAL,
+    down_payment_aid_increment REAL,
+    growth_aid_increment REAL,
+    target_aid_phase_in REAL,
+    minimum_aid_increment REAL,
+    non_operating_reduction REAL,
+    ch70_aid        REAL,
+    required_nss    REAL,
+    ch70_aid_reduction REAL,
+    hold_harmless_low_income REAL,
+    minimum_aid_adjustment REAL,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea)
+);
+
+-- The MUNICIPAL side of the same formula, and a DIFFERENT GRAIN: a row is a town, not a
+-- district. For a regional district several towns contribute to one district and the two
+-- tables must not be joined one to one. This is where the town's ability to pay is
+-- computed -- equalized valuation, income, and the effort each implies.
+CREATE TABLE dese_ch70_contribution (
+    fy              INTEGER NOT NULL,
+    lea_number      TEXT NOT NULL,      -- the workbook's municipal key, NOT a DESE code
+    municipality    TEXT,
+    equalized_valuation REAL,
+    property_local_effort REAL,
+    income          REAL,
+    income_local_effort REAL,
+    combined_effort_yield REAL,
+    town_foundation_enrollment REAL,
+    town_foundation_budget REAL,
+    target_local_contribution REAL,
+    municipal_revenue_growth_factor REAL,
+    preliminary_contribution REAL,
+    excess_effort   REAL,
+    effort_reduction REAL,
+    shortfall       REAL,
+    dollar_increment REAL,
+    acceleration    REAL,
+    required_local_contribution REAL,
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea_number)
+);
+
+-- Every Massachusetts district collapsed to a distribution, so a peer comparison has a
+-- denominator. The row-level Chapter 70 tables above are Lunenburg, its six peers and the
+-- state row -- the published database has to fit under Cloudflare's 25 MB per-asset limit
+-- -- and this is what a reader would otherwise lose: where Lunenburg SITS.
+--
+-- `basis` says on every row what the ratio is a ratio OF. Read it: foundation enrolment
+-- is not a headcount of the children in the buildings, and the circuit breaker rows are
+-- keyed on a fiscal year the others are not.
+--
+-- Publish the share-of-required as a MEASUREMENT and never as a verdict. Both readings are
+-- true at once -- the town spends well above what the state requires, AND the required
+-- minimum is a floor rather than a standard of adequacy -- and a page giving one without
+-- the other is taking a side using a number.
+CREATE TABLE dese_ch70_statewide (
+    fy              INTEGER NOT NULL,
+    measure         TEXT NOT NULL,
+    basis           TEXT,               -- what the ratio is OF
+    districts       INTEGER,            -- the denominator; read it before quoting a rank
+    p_min REAL, p25 REAL, median REAL, p75 REAL, p_max REAL,
+    lunenburg       REAL,
+    lunenburg_rank_of_districts TEXT,   -- '12 of 337', highest first
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, measure)
+);
+
+-- ab34-d3ma. Reimbursement for high-cost special education placements.
+-- **KEYED ON FY, NOT SY.** Every other DESE table here is school year. This repository has
+-- already had a fiscal-year type error that matched nothing silently.
+-- `eligible_students_claimed` is a count of CHILDREN, which is rare in this archive.
+-- This is money the district RECEIVES and it is not in the general fund appropriation the
+-- town votes. Rule 11: a budget line that fell because circuit breaker rose is not a line
+-- that got cheaper.
+CREATE TABLE dese_circuit_breaker (
+    fy              INTEGER NOT NULL,   -- FISCAL year, not school year
+    lea             TEXT NOT NULL,
+    district        TEXT,
+    level           TEXT NOT NULL,      -- state | district
+    eligible_students_claimed REAL,     -- CHILDREN, not dollars
+    total_eligible_expenses REAL,
+    threshold_amount REAL,
+    net_eligible_instruction_tuition REAL,
+    net_eligible_transport REAL,
+    total_net_claim REAL,
+    reimb_instruction_tuition REAL,
+    reimb_special_circumstance_tuition REAL,
+    reimb_transport REAL,
+    reimb_special_circumstance_transport REAL,
+    prior_year_adjustment REAL,
+    total_quarterly_payment REAL,
+    extra_relief_payment REAL,
+    additional_supplemental_payment REAL,
+    comments        TEXT,
+    reconciles      TEXT,               -- tuition claim + transport claim == total claim
+    doc_id          TEXT NOT NULL,
+    PRIMARY KEY (fy, lea)
+);
+
 -- Figures the town or district stated about itself, in public, with the quote.
 --
 -- These are NOT ours and are not computed from anything here. They exist because the
@@ -776,6 +1297,155 @@ def load_funds(db):
                        r.get('source_url'), r.get('sha256')))
     db.executemany('INSERT OR REPLACE INTO grant_award VALUES (?,?,?,?,?,?,?,?,?)', grants)
     return len(act), len(grants), len(stated), len(dese)
+
+
+DESE_FUNCTION_DOC = 'sources/state-dese/district-expenditures-by-function.xlsx'
+
+
+def load_dese_function(db):
+    """DESE's function-code split of general fund against grants and revolving money.
+
+    Both CSVs are written by `extract_dese_finance.py`, which refuses to write unless the
+    hierarchy it asserts still holds in all 5,479 district-years and unless its two
+    cross-checks against the RADAR workbook match SOMETHING -- a join that matches nothing
+    looks exactly like data that is absent.
+
+    This loader adds the assertion the extract cannot make: that `level` survived the
+    load. A NULL or unknown level here would let a caller sum a rollup with its own
+    detail, which is the one failure mode this pair of tables exists to prevent.
+    """
+    fn = []
+    for r in rows('dese-function-expenditure'):
+        fn.append((int(r['fy']), r['lea'], r['district'], r['level'], r['func_cat_code'],
+                   r['func_cat_desc'], r['func_code'], r['func_desc'], r['in_out_dist'],
+                   num(r['gen_fund']), num(r['grants_revolving']), num(r['total']),
+                   num(r['per_pupil']), r['reconciles'], r['doc_id']))
+    db.executemany('INSERT OR REPLACE INTO dese_function_expenditure '
+                   'VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', fn)
+    sw = []
+    for r in rows('dese-function-statewide'):
+        sw.append((int(r['fy']), r['level'], r['func_cat_code'], r['func_code'],
+                   r['func_desc'], int(r['districts']), num(r['gen_fund_total']),
+                   num(r['grants_revolving_total']), num(r['total']), num(r['grant_share']),
+                   r['per_pupil_basis'], num(r['per_pupil_min']), num(r['per_pupil_p25']),
+                   num(r['per_pupil_median']), num(r['per_pupil_p75']),
+                   num(r['per_pupil_max']), num(r['lunenburg_per_pupil']),
+                   r['lunenburg_rank_of_districts'], r['doc_id']))
+    db.executemany('INSERT OR REPLACE INTO dese_function_statewide '
+                   'VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', sw)
+
+    LEVELS = {'total', 'rollup', 'category', 'detail'}
+    for table in ('dese_function_expenditure', 'dese_function_statewide'):
+        got = {r[0] for r in db.execute('SELECT DISTINCT level FROM "%s"' % table)}
+        if got != LEVELS:
+            raise SystemExit(
+                '%s carries levels %s, expected %s.\n'
+                'The level column is what stops a rollup being summed with its own '
+                'detail. A build\nthat has lost it would produce a plausible total '
+                'four times too large.' % (table, sorted(got), sorted(LEVELS)))
+    return len(fn), len(sw)
+
+
+# The fourteen DESE datasets ingested on 8 September 2026, as (csv name, table, the
+# level column that must survive the load, the levels that column is allowed to hold).
+#
+# The level column is the whole defence. Every one of these sources puts summary rows in
+# the same column space as detail and names neither, so a build that lost the level would
+# let a caller sum a rollup with the detail beneath it and get a plausible number several
+# times too large -- which is precisely what happened once with the function-code
+# expenditures ($116M for a $26.6M district).
+DESE_DATASETS = [
+    ('dese-teacher-program-area', 'dese_teacher_program_area', 'org_level',
+     {'state', 'district', 'school'}),
+    ('dese-teacher-subject', 'dese_teacher_subject', 'subject_level',
+     {'all', 'group', 'subject'}),
+    ('dese-teacher-grade-subject', 'dese_teacher_grade_subject', 'subject_level',
+     {'all', 'group', 'subject'}),
+    ('dese-educator-workforce', 'dese_educator_workforce', 'race_level',
+     {'all', 'detail'}),
+    ('dese-enrollment', 'dese_enrollment', 'org_level',
+     {'state', 'district', 'school', 'collaborative'}),
+    ('dese-sped-indicator', 'dese_sped_indicator', 'student_group_level',
+     {'all', 'detail'}),
+    ('dese-sped-program', 'dese_sped_program', 'indicator_level', {'total', 'member'}),
+    ('dese-sped-trajectory', 'dese_sped_trajectory', 'geo_level', {'state', 'district'}),
+    ('dese-sped-movement', 'dese_sped_movement', 'grades_level', {'all', 'grade'}),
+    ('dese-town-enrollment', 'dese_town_enrollment', None, None),
+    ('dese-ch70-formula', 'dese_ch70_formula', 'level', {'state', 'district'}),
+    ('dese-ch70-aid-factor', 'dese_ch70_aid_factor', 'level', {'state', 'district'}),
+    ('dese-ch70-contribution', 'dese_ch70_contribution', None, None),
+    ('dese-circuit-breaker', 'dese_circuit_breaker', 'level', {'state', 'district'}),
+    ('dese-ch70-statewide', 'dese_ch70_statewide', None, None),
+]
+
+# Which columns are text in these tables. Everything else that is not `fy` is a figure,
+# and `num()` turns a blank into NULL rather than into nought -- DESE suppresses small
+# cells, and a suppressed count read as zero understates every total it enters.
+DESE_TEXT_COLS = {
+    'lea', 'district', 'org_code', 'org_name', 'org_level', 'subject', 'subject_level',
+    'race_ethnicity', 'race_level', 'job_class', 'geo_level', 'grades', 'grades_level',
+    'student_group', 'student_group_level', 'indicator_category', 'indicator',
+    'indicator_level', 'grade_span', 'placement_at_start', 'value_type', 'comments',
+    'reconciles', 'agrees_with_teacher_subject', 'repeats_prior_year', 'doc_id',
+    'town', 'enrollment_reason', 'doc_id_sending', 'doc_id_receiving', 'org4_code',
+    'lea_number', 'level', 'municipality', 'nss_stage', 'student_teacher_ratio_printed',
+    'measure', 'basis', 'lunenburg_rank_of_districts',
+}
+# `printing` is an ordinal, not a figure: 1 for the first row published under a natural
+# key, 2 for the next. It is part of the primary key of three tables.
+DESE_INT_COLS = {'fy', 'printing', 'districts'}
+
+
+def load_dese_datasets(db):
+    """The fourteen DESE staffing, student and Chapter 70 tables.
+
+    Each CSV is written by one of `extract_dese_staffing.py`, `extract_dese_students.py`
+    or `extract_dese_state_aid.py`, every one of which refuses to write unless the
+    identities its source states about itself still hold and unless its cross-checks match
+    SOMETHING. This loader adds the two assertions those extracts cannot make:
+
+      1. the LEVEL column survived the load, and holds exactly the values it should;
+      2. nothing loaded empty. An empty table passes every downstream check and renders a
+         blank page -- which is what `build_insurance_charts.py` did until it was caught.
+    """
+    total = 0
+    for name, table, level_col, levels in DESE_DATASETS:
+        data = rows(name)
+        if not data:
+            raise SystemExit(
+                '%s.csv is empty, so %s would load as an empty table.\n'
+                'An empty table passes every check downstream and renders a blank page.\n'
+                'Re-run the extract that writes it.' % (name, table))
+        cols = list(data[0].keys())
+        placeholders = ','.join('?' * len(cols))
+        batch = []
+        for r in data:
+            batch.append(tuple(
+                r[c] if c in DESE_TEXT_COLS else
+                (int(r[c]) if c in DESE_INT_COLS else num(r[c])) for c in cols))
+        db.executemany('INSERT OR REPLACE INTO %s (%s) VALUES (%s)'
+                       % (table, ','.join('"%s"' % c for c in cols), placeholders), batch)
+        n = db.execute('SELECT COUNT(*) FROM "%s"' % table).fetchone()[0]
+        if n != len(data):
+            raise SystemExit(
+                '%s holds %d rows from a %d-row CSV.\n'
+                'INSERT OR REPLACE dropped %d row(s) to a primary key collision, and a\n'
+                'load that drops rows looks exactly like data that was never published.\n'
+                'Either the key is too narrow for what DESE published, or a `printing`\n'
+                'column is needed -- see the schema note. Nothing here may be lost '
+                'quietly.' % (table, n, len(data), len(data) - n))
+        if level_col:
+            got = {x[0] for x in db.execute(
+                'SELECT DISTINCT "%s" FROM "%s"' % (level_col, table))}
+            if not got <= levels or not got:
+                raise SystemExit(
+                    '%s.%s carries %s; only %s are known.\n'
+                    'The level column is what stops a rollup being summed with its own '
+                    'detail. A\nbuild that has lost it would produce a plausible total '
+                    'several times too large.'
+                    % (table, level_col, sorted(got), sorted(levels)))
+        total += n
+    return total
 
 
 def load_budget_figures(db):
@@ -1617,6 +2287,249 @@ def reconcile(db):
                       AND measure='Total In-District Expenditures')"""),
           0.0, tol=10.0)
 
+    # DESE's function-code split, SY2025 Lunenburg. Asserted against the figures the
+    # source itself prints, and against the OTHER DESE publication already in this
+    # database -- two independent DESE routes to the same per-pupil total.
+    check(db, 'DESE FY25 Lunenburg in-district spending, all funds',
+          q("""SELECT total FROM dese_function_expenditure
+               WHERE lea='01620000' AND fy=2025 AND func_cat_code='IIII'"""),
+          27903187.0)
+    check(db, 'DESE FY25 Lunenburg in-district, general fund only',
+          q("""SELECT gen_fund FROM dese_function_expenditure
+               WHERE lea='01620000' AND fy=2025 AND func_cat_code='IIII'"""),
+          25331940.0)
+    check(db, 'DESE FY25 Lunenburg in-district, grants and revolving',
+          q("""SELECT grants_revolving FROM dese_function_expenditure
+               WHERE lea='01620000' AND fy=2025 AND func_cat_code='IIII'"""),
+          2571247.0)
+    # The hierarchy, asserted in SQL rather than only in the extract: the grand total is
+    # the two rollups and nothing else. If `level` were wrong this would not hold.
+    check(db, 'DESE FY25 Lunenburg, IIII + OODD - TTPP',
+          q("""SELECT (SELECT SUM(total) FROM dese_function_expenditure
+                       WHERE lea='01620000' AND fy=2025 AND level='rollup')
+                    - (SELECT total FROM dese_function_expenditure
+                       WHERE lea='01620000' AND fy=2025 AND level='total')"""),
+          0.0, tol=4.0)
+    # ...and the in-district detail rows reach the in-district rollup, which is the join
+    # that would silently match nothing if `level` or `in_out_dist` were lost.
+    check(db, 'DESE FY25 Lunenburg, in-district detail vs the IIII rollup',
+          q("""SELECT (SELECT SUM(total) FROM dese_function_expenditure
+                       WHERE lea='01620000' AND fy=2025 AND level='detail'
+                         AND in_out_dist='In-District')
+                    - (SELECT total FROM dese_function_expenditure
+                       WHERE lea='01620000' AND fy=2025 AND func_cat_code='IIII')"""),
+          0.0, tol=10.0)
+    # The paraprofessional line, which is the one this dataset was fetched for. Rule 11:
+    # this is a FUNCTION CODE, not a budget line and not a post -- see money_gaps.
+    check(db, 'DESE FY25 Lunenburg paras (fn 2330), grants and revolving',
+          q("""SELECT grants_revolving FROM dese_function_expenditure
+               WHERE lea='01620000' AND fy=2025 AND func_code='2330'"""),
+          478097.0)
+    check(db, 'DESE FY25 Lunenburg paras (fn 2330), general fund',
+          q("""SELECT gen_fund FROM dese_function_expenditure
+               WHERE lea='01620000' AND fy=2025 AND func_code='2330'"""),
+          1338477.0)
+    # Two DESE publications, one workbook and one open-data dataset, on the same figure.
+    check(db, 'DESE FY25 per pupil: function dataset vs RADAR workbook',
+          q("""SELECT (SELECT per_pupil FROM dese_function_expenditure
+                       WHERE lea='01620000' AND fy=2025 AND func_cat_code='IIII')
+                    - (SELECT value FROM dese_measure WHERE lea='01620000' AND fy=2025
+                       AND measure='Total In-District Expenditures')"""),
+          0.0)
+    # The peer denominator. A rank with no denominator is not a measurement.
+    check(db, 'districts in the FY25 statewide total distribution',
+          q("""SELECT districts FROM dese_function_statewide
+               WHERE fy=2025 AND level='total' AND func_cat_code='TTPP'"""),
+          318.0)
+
+
+    # ---------------------------------------------------------------- DESE, ingested
+    # 8 September 2026. Fourteen datasets. Every check below asserts a NUMBER derived
+    # from the data, never that a row or a string exists.
+
+    # THE ONE THAT MATTERS MOST: the state's Chapter 70 formula against the TOWN'S OWN
+    # general ledger. DESE's DataC70 sheet and a MUNIS revenue printout, neither derived
+    # from the other, on one receipt.
+    check(db, "FY2026 Chapter 70 aid: DESE's formula minus the town's own ledger",
+          q("""SELECT (SELECT ch70_aid FROM dese_ch70_formula
+                       WHERE lea='01620000' AND fy=2026)
+                    - (SELECT -revised FROM ledger_snapshot JOIN account USING (account_id)
+                       WHERE fy=2026 AND period=9 AND object='450600')"""),
+          0.0, tol=1.0)
+
+    # The formula's own arithmetic, in SQL rather than only in the extract.
+    check(db, 'FY2026 Lunenburg required NSS - (local contribution + Chapter 70 aid)',
+          q("""SELECT required_nss - (required_local_contribution + ch70_aid)
+               FROM dese_ch70_formula WHERE lea='01620000' AND fy=2026"""),
+          0.0, tol=1.0)
+    # Two different quantities under one column name in the source. If this ever came out
+    # zero the split would have collapsed and `required_nss` would silently be one number.
+    check(db, 'district-years where the two rqdnss columns differ (must not be zero)',
+          q("""SELECT COUNT(*) > 0 FROM dese_ch70_formula
+               WHERE required_nss IS NOT NULL AND required_nss_published IS NOT NULL
+                 AND ABS(required_nss - required_nss_published) > 1"""),
+          1.0)
+    # Rule 1, asserted: the last two years of net school spending are BUDGETED, and the
+    # source column that holds them is headed `actualNSS`.
+    check(db, 'FY2026 net school spending rows whose stage is not `actual`',
+          q("""SELECT COUNT(*) FROM dese_ch70_formula
+               WHERE fy=2026 AND net_school_spending IS NOT NULL
+                 AND nss_stage <> 'budgeted'"""),
+          0.0)
+
+    # Lunenburg above the required floor. Published as the measurement, never as a verdict:
+    # the floor is a minimum, not a standard of adequacy.
+    check(db, 'FY2026 Lunenburg net school spending as a share of required',
+          q("""SELECT ROUND(net_school_spending / required_nss_published, 3)
+               FROM dese_ch70_formula WHERE lea='01620000' AND fy=2026"""),
+          1.2, tol=0.15)
+
+    # Where Lunenburg sits, with the denominator. A rank with no denominator is not a
+    # measurement, so the check asserts the denominator too.
+    check(db, 'FY2026 districts in the net-school-spending distribution',
+          q("""SELECT districts > 300 FROM dese_ch70_statewide
+               WHERE fy=2026 AND measure='net school spending as a share of required'"""),
+          1.0)
+    check(db, "FY2026 Lunenburg's share of required, distribution vs the formula table",
+          q("""SELECT (SELECT lunenburg FROM dese_ch70_statewide WHERE fy=2026
+                       AND measure='net school spending as a share of required')
+                    - (SELECT net_school_spending / required_nss_published
+                       FROM dese_ch70_formula WHERE lea='01620000' AND fy=2026)"""),
+          0.0, tol=0.0002)
+
+    # The circuit breaker, and the identity it states about itself.
+    check(db, 'FY2026 Lunenburg circuit breaker: tuition + transport - total net claim',
+          q("""SELECT net_eligible_instruction_tuition + net_eligible_transport
+                      - total_net_claim
+               FROM dese_circuit_breaker WHERE lea='01620000' AND fy=2026"""),
+          0.0, tol=1.0)
+    check(db, 'FY2026 Lunenburg high-cost special education students claimed > 0',
+          q("""SELECT eligible_students_claimed > 0 FROM dese_circuit_breaker
+               WHERE lea='01620000' AND fy=2026"""), 1.0)
+
+    # Staffing. The rollup and the detail, in one table, asserted apart.
+    check(db, 'SY2026 Lunenburg teacher FTE: the four program areas minus the total',
+          q("""SELECT gen_ed_fte + sped_fte + career_tech_fte + el_fte - total_fte
+               FROM dese_teacher_program_area
+               WHERE lea='01620000' AND fy=2026 AND org_level='district'"""),
+          0.0, tol=0.25)
+    # Two DESE datasets on one quantity: program area against grade-and-subject.
+    check(db, 'SY2026 Lunenburg district FTE: program area minus grade-and-subject',
+          q("""SELECT (SELECT total_fte FROM dese_teacher_program_area
+                       WHERE lea='01620000' AND fy=2026 AND org_level='district')
+                    - (SELECT total_fte FROM dese_teacher_grade_subject
+                       WHERE lea='01620000' AND fy=2026 AND org_level='district'
+                         AND subject='All')"""),
+          0.0, tol=0.15)
+    # ...and the grade bands within it.
+    check(db, 'SY2026 Lunenburg: the six grade bands minus the total FTE',
+          q("""SELECT pk_2_fte + grade_3_5_fte + grade_6_8_fte + grade_9_12_fte
+                      + multi_grade_fte + all_grade_fte - total_fte
+               FROM dese_teacher_grade_subject
+               WHERE lea='01620000' AND fy=2026 AND org_level='district'
+                 AND subject='All'"""),
+          0.0, tol=0.35)
+    # The rollup trap itself, in the table that carries it: summing every subject would
+    # count each teacher roughly three times. This asserts that it WOULD, so that a build
+    # which had lost `subject_level` fails here rather than in somebody's query.
+    check(db, 'SY2026 Lunenburg: every subject summed, over the `All` row (must exceed 2x)',
+          q("""SELECT (SELECT SUM(total_fte) FROM dese_teacher_grade_subject
+                       WHERE lea='01620000' AND fy=2026 AND org_level='district')
+                    / (SELECT total_fte FROM dese_teacher_grade_subject
+                       WHERE lea='01620000' AND fy=2026 AND org_level='district'
+                         AND subject='All') > 2"""),
+          1.0)
+    # Headcount, not FTE, and the only published count of paraprofessionals as people.
+    # NOTE THE FIGURE. `notes/DATA-TO-INGEST.md` recorded 118 paraprofessionals and 38
+    # administrators for SY2023 from this dataset. Both are exactly TWICE what it holds,
+    # because `All Educators` is a total row sitting beside the seven reported races and
+    # a first reading summed both. That is the rollup-beside-detail trap this whole
+    # ingest is organised around, committed once already in our own notes -- so the check
+    # asserts the total AND that the naive sum is exactly double it, which is the shape a
+    # lost level column would take.
+    check(db, 'SY2023 Lunenburg paraprofessional HEADCOUNT (the All Educators row)',
+          q("""SELECT educators_headcount FROM dese_educator_workforce
+               WHERE lea='01620000' AND fy=2023 AND job_class='Paraprofessional'
+                 AND race_level='all'"""),
+          59.0)
+    check(db, 'SY2023 paras: summing every row over the total row (the double count)',
+          q("""SELECT (SELECT SUM(educators_headcount) FROM dese_educator_workforce
+                       WHERE lea='01620000' AND fy=2023
+                         AND job_class='Paraprofessional')
+                    / (SELECT educators_headcount FROM dese_educator_workforce
+                       WHERE lea='01620000' AND fy=2023
+                         AND job_class='Paraprofessional' AND race_level='all')"""),
+          2.0)
+
+    # Students. The published SWD count, which used to be reachable only by multiplying a
+    # percentage by enrolment -- our arithmetic, not a published figure.
+    check(db, 'SY2026 Lunenburg students with disabilities, as n62c-bx65 publishes it',
+          q("""SELECT measure_cnt FROM dese_sped_program
+               WHERE lea='01620000' AND fy=2026 AND indicator_category='Disability Type'
+                 AND indicator_level='total'"""),
+          258.0)
+    # The same quantity out of three DESE datasets. Two of them agree exactly:
+    check(db, 'SY2026 Lunenburg SWD: the sped file minus the enrolment file',
+          q("""SELECT (SELECT measure_cnt FROM dese_sped_program
+                       WHERE lea='01620000' AND fy=2026
+                         AND indicator_category='Disability Type'
+                         AND indicator_level='total')
+                    - (SELECT swd_cnt FROM dese_enrollment
+                       WHERE lea='01620000' AND fy=2026 AND org_level='district')"""),
+          0.0)
+    # ...AND THE THIRD DOES NOT, INSIDE A SINGLE FILE. In `yamx-769q` the CONTEXT rows
+    # count 258 students with disabilities and the SPECIAL EDUCATION STAFF rows carry 246
+    # as the denominator of their per-100 ratios. One dataset, one district, one year, two
+    # counts of the same children. This asserts the gap so it cannot quietly close: the
+    # paraprofessional-per-FTE chain in notes/DATA-TO-INGEST.md is built on the 246.
+    check(db, 'SY2026 Lunenburg SWD inside yamx-769q: staff denominator minus context',
+          q("""SELECT (SELECT DISTINCT measure_cnt FROM dese_sped_indicator
+                       WHERE lea='01620000' AND fy=2026
+                         AND indicator_category='SPECIAL EDUCATION STAFF')
+                    - (SELECT measure_cnt FROM dese_sped_indicator
+                       WHERE lea='01620000' AND fy=2026 AND indicator_category='CONTEXT'
+                         AND grades='K-12'
+                         AND student_group='Students with Disabilities')"""),
+          -12.0)
+    check(db, 'SY2026 Lunenburg enrolment: PK to 12 plus SP, minus the printed total',
+          q("""SELECT pk_cnt + k_cnt + grade_1_cnt + grade_2_cnt + grade_3_cnt
+                      + grade_4_cnt + grade_5_cnt + grade_6_cnt + grade_7_cnt
+                      + grade_8_cnt + grade_9_cnt + grade_10_cnt + grade_11_cnt
+                      + grade_12_cnt + sp_cnt - total_cnt
+               FROM dese_enrollment
+               WHERE lea='01620000' AND fy=2026 AND org_level='district'"""),
+          0.0)
+    # School choice, both directions, out of ONE table.
+    check(db, 'SY2026 Lunenburg children leaving via school choice',
+          q("""SELECT SUM(students) FROM dese_town_enrollment
+               WHERE fy=2026 AND town='Lunenburg' AND lea <> '01620000'
+                 AND enrollment_reason='School Choice Program'"""),
+          58.0)
+    check(db, 'SY2026 children arriving in Lunenburg via school choice',
+          q("""SELECT SUM(students) FROM dese_town_enrollment
+               WHERE fy=2026 AND lea='01620000' AND town <> 'Lunenburg'
+                 AND enrollment_reason='School Choice Program'"""),
+          11.0)
+    # The carried-forward year. This must keep firing: it is the reason the column exists.
+    check(db, 'Lunenburg movement rows repeating the previous year exactly',
+          q("""SELECT COUNT(*) > 0 FROM dese_sped_movement
+               WHERE lea='01620000' AND repeats_prior_year='yes'"""),
+          1.0)
+    # The placement trajectory, whose bases are tiny: this asserts the COUNT, because a
+    # percentage off a base of tens must never travel alone.
+    check(db, 'SY2026 Lunenburg K-12 cohort starting substantially separate',
+          q("""SELECT cohort_cnt FROM dese_sped_trajectory
+               WHERE lea='01620000' AND fy=2026 AND grade_span='K-12'
+                 AND placement_at_start='Substantially Separate Classroom'"""),
+          28.0)
+
+    # Every DESE fact carries an address.
+    check(db, 'DESE staffing rows with no document', q(
+        "SELECT COUNT(*) FROM dese_teacher_grade_subject "
+        "WHERE doc_id IS NULL OR doc_id=''"), 0)
+    check(db, 'Chapter 70 rows with no document', q(
+        "SELECT COUNT(*) FROM dese_ch70_formula WHERE doc_id IS NULL OR doc_id=''"), 0)
+
     # Every fact carries an address.
     check(db, 'ledger rows with no document', q(
         "SELECT COUNT(*) FROM ledger_snapshot WHERE doc_id IS NULL OR doc_id=''"), 0)
@@ -1652,6 +2565,10 @@ def main():
     print('  grant awards     %5d' % gr)
     print('  stated figures   %5d' % st)
     print('  DESE measures    %5d' % ds)
+    nfn, nsw = load_dese_function(db)
+    print('  DESE by function %5d  (+ %d statewide distribution rows)' % (nfn, nsw))
+    print('  DESE staffing,   %5d  (%d tables: teachers, students, Chapter 70)'
+          % (load_dese_datasets(db), len(DESE_DATASETS)))
     print('  reference rows   %5d' % load_reference(db))
     print('  provenance rows  %5d' % load_provenance(db))
     print('  role vocabulary  %5d' % load_role_classification(db))
@@ -1665,6 +2582,22 @@ def main():
         """SELECT DISTINCT doc_id FROM ledger_snapshot
            UNION SELECT DISTINCT doc_id FROM workbook_figure
            UNION SELECT DISTINCT doc_id FROM dese_measure
+           UNION SELECT DISTINCT doc_id FROM dese_function_expenditure
+           UNION SELECT DISTINCT doc_id FROM dese_teacher_program_area
+           UNION SELECT DISTINCT doc_id FROM dese_teacher_subject
+           UNION SELECT DISTINCT doc_id FROM dese_teacher_grade_subject
+           UNION SELECT DISTINCT doc_id FROM dese_educator_workforce
+           UNION SELECT DISTINCT doc_id FROM dese_enrollment
+           UNION SELECT DISTINCT doc_id FROM dese_sped_indicator
+           UNION SELECT DISTINCT doc_id FROM dese_sped_program
+           UNION SELECT DISTINCT doc_id FROM dese_sped_trajectory
+           UNION SELECT DISTINCT doc_id FROM dese_sped_movement
+           UNION SELECT DISTINCT doc_id_sending FROM dese_town_enrollment
+           UNION SELECT DISTINCT doc_id_receiving FROM dese_town_enrollment
+           UNION SELECT DISTINCT doc_id FROM dese_ch70_formula
+           UNION SELECT DISTINCT doc_id FROM dese_ch70_aid_factor
+           UNION SELECT DISTINCT doc_id FROM dese_ch70_contribution
+           UNION SELECT DISTINCT doc_id FROM dese_circuit_breaker
            UNION SELECT DISTINCT doc_id FROM stated_figure
            UNION SELECT DISTINCT doc_id FROM fund_activity""")]
     n_docs, hashed = finish_documents(db, docs, cited)

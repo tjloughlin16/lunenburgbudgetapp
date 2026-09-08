@@ -57,66 +57,66 @@ SOURCES = [
     ('sources/state-dese/school-expenditures-by-spending-category.xlsx', 'i5up-aez6',
      'School Expenditures by Spending Category',
      'Per-SCHOOL spending. The only per-school financial series in this archive.', ''),
-    ('sources/inbox/dese-residents-sending.xlsx', 'vxt3-k35x',
+    ('sources/state-dese/dese-residents-sending.xlsx', 'vxt3-k35x',
      'Where Residents Go to School (Sending)',
      'Where resident children go, by receiving district and reason, 2014-2026. Closes '
      '"how many children leave and for where".', ''),
-    ('sources/inbox/dese-enrollment-receiving.xlsx', '8xyg-59b2',
+    ('sources/state-dese/dese-enrollment-receiving.xlsx', '8xyg-59b2',
      'Reasons for Student Enrollment by Town (Receiving)',
      'Who arrives and from where. The mirror of the sending file; together they give a '
      'NET choice position.', ''),
-    ('sources/inbox/dese-circuit-breaker.xlsx', 'ab34-d3ma',
+    ('sources/state-dese/dese-circuit-breaker.xlsx', 'ab34-d3ma',
      'Special Education Circuit Breaker Reimbursements',
      'A fund rule 11 names as unmapped, AND a count of children: ELIG_STU_CLAIM_CNT.',
      'Keys on FY, not SY. Every other file here is school year.'),
-    ('sources/inbox/dese-ch70-foundation-nss.xlsx', '5izv-jyrd',
+    ('sources/state-dese/dese-ch70-foundation-nss.xlsx', '5izv-jyrd',
      'Chapter 70 Foundation Budget and Net School Spending',
      'Required against actual net school spending. Lunenburg sits at ~128% of the floor.',
      'Stops at SY2022. The Chapter 70 profile workbook below runs to FY2026.'),
-    ('sources/inbox/dese-teachers-by-grade-subject.xlsx', '77fu-a6h8',
+    ('sources/state-dese/dese-teachers-by-grade-subject.xlsx', '77fu-a6h8',
      'Elementary and Secondary Teachers by Grade and Subject',
      'FTE by grade band AND subject AND school. Breaks a limit recorded as structural: '
      'grade detail without FTE, or FTE without grade detail, never both.',
      'Carries a State row and a SUBJ of All beside detail. Establish levels before summing.'),
-    ('sources/inbox/dese-teachers-by-program-area.xlsx', 'vd2f-ib9q',
+    ('sources/state-dese/dese-teachers-by-program-area.xlsx', 'vd2f-ib9q',
      'Elementary and Secondary Teachers by Program Area',
      'GEN_ED / SPED / CAREER_TECH / EL teacher FTE, per school.',
      'Lunenburg SPED FTE falls 18.5 (2008) to 2.0 (2026) while total FTE holds flat. That '
      'is the signature of recoding, not of staff leaving. UNRESOLVED.'),
-    ('sources/inbox/dese-teacher-data.xlsx', '4684-cw3t',
+    ('sources/state-dese/dese-teacher-data.xlsx', '4684-cw3t',
      'Elementary and Secondary Teacher Data',
      'Teacher counts, student-teacher ratio, licensure, experience, in-field share.', ''),
-    ('sources/inbox/dese-educators-retention.xlsx', 'fz9c-2g33',
+    ('sources/state-dese/dese-educators-retention.xlsx', 'fz9c-2g33',
      'Total Educators, Retention, and New Hires',
      'Headcount by job class INCLUDING Administrator and Paraprofessional, plus hires and '
      'retention. 2021-2023 only.',
      'Headcount, not FTE. Administrators 28->38 over three years on a base of ten people; '
      'a reclassification would look identical.'),
-    ('sources/inbox/dese-sped-indicators.xlsx', 'yamx-769q',
+    ('sources/state-dese/dese-sped-indicators.xlsx', 'yamx-769q',
      'Special Education Indicators',
      'A published COUNT of students with disabilities, 217-265, plus sped staffing ratios.',
      'Its paraprofessional ratio times the count implies $69,161 per FTE against the '
      'district budget line. The two are not the same population. UNRESOLVED.'),
-    ('sources/inbox/dese-sped-program-characteristics.xlsx', 'n62c-bx65',
+    ('sources/state-dese/dese-sped-program-characteristics.xlsx', 'n62c-bx65',
      'Special Education Program Characteristics and Student Demographics',
      'Disability type and demographics behind the SWD count.', ''),
-    ('sources/inbox/dese-sped-placement-trajectory.xlsx', '92x3-2qj9',
+    ('sources/state-dese/dese-sped-placement-trajectory.xlsx', '92x3-2qj9',
      'Special Education Placement Trajectory',
      'Where a child starts against where they end up. The route into out-of-district.',
      'Tiny bases. 14.3% of 28 is four children; the percentage must never travel alone.'),
-    ('sources/inbox/dese-sped-movement.xlsx', '8aww-sugs',
+    ('sources/state-dese/dese-sped-movement.xlsx', '8aww-sugs',
      'Students Moving In and Out of Special Education Services',
      'Caseload dynamics: how many enter and leave services each year.',
      'SY2024 and SY2025 are identical across all four columns. Probably a carried-forward '
      'row; check before quoting either.'),
-    ('sources/inbox/dese-enrollment-by-grade.xlsx', 't8td-gens',
+    ('sources/state-dese/dese-enrollment-by-grade.xlsx', 't8td-gens',
      'Enrollment: Grade, Race/Ethnicity, Gender, and Selected Populations',
      'Enrolment by grade and school. The denominators for most of the above.', ''),
 ]
 
 # Sources that are NOT on the Socrata portal. The distinction is the point.
 ELSEWHERE = [
-    ('sources/inbox/dese-ch70-district-profile.xlsx', 'qt58-634r',
+    ('sources/state-dese/dese-ch70-district-profile.xlsx', 'qt58-634r',
      'Chapter 70 District Profile',
      'https://www.doe.mass.edu/finance/chapter70/',
      '34 years of the Chapter 70 formula, FY1993-FY2026 — foundation enrolment, foundation '
@@ -124,13 +124,13 @@ ELSEWHERE = [
      'reconciles exactly to the figure derived independently for /state-aid.',
      'The Socrata page qt58-634r has NO DOWNLOAD and redirects here. Read with '
      'data_only=True and take the DataC70 sheet; the front sheet is a VLOOKUP interface.'),
-    ('sources/inbox/dese-ch70-key-factors.xlsx', '',
+    ('sources/state-dese/dese-ch70-key-factors.xlsx', '',
      'Chapter 70 Key Factors',
      'https://www.doe.mass.edu/finance/chapter70/',
      'Foundation enrolment split by English learner, vocational and low-income share — the '
      'formula INPUTS, which is what lets anybody model how it responds to enrolment change.',
      'Data sheets are dataAid, dataNSS, dataContribution. Front sheet is an interface.'),
-    ('sources/inbox/dese-job-classification-codes.docx', '',
+    ('sources/state-dese/dese-job-classification-codes.docx', '',
      'Job Classification Codes (evaluation)',
      'https://www.doe.mass.edu/',
      '43 code/label pairs -- 1200 Superintendent, 1305 Principal and so on. The vocabulary '
@@ -138,7 +138,7 @@ ELSEWHERE = [
      'Covers the EVALUATION job classes: administrators and licensed staff. Contains NO '
      'paraprofessional codes, so it does not by itself resolve the paraprofessional '
      'boundary.'),
-    ('sources/inbox/sims-datahandbook-current.docx', '',
+    ('sources/state-dese/sims-datahandbook-current.docx', '',
      'SIMS Data Handbook (current)',
      'https://www.doe.mass.edu/',
      'Defines STUDENT data: special education placement, school choice. 42 mentions of '
@@ -146,16 +146,16 @@ ELSEWHERE = [
      'Contains NO staffing definitions — checked with word boundaries after raw substring '
      'counts said otherwise. The staffing definitions are in EPIMS, which is NOT YET HELD '
      'and is what would resolve both open contradictions.'),
-    ('sources/inbox/epims-datahandbook.docx', '', 'EPIMS Data Handbook',
+    ('sources/state-dese/epims-datahandbook.docx', '', 'EPIMS Data Handbook',
      'https://www.doe.mass.edu/',
      'RESOLVES the paraprofessional contradiction: FTE is per ASSIGNMENT, not per person, '
      'so DESE FTE and the district budget line have different denominators. AND reveals '
      'that EPIMS collects per-individual Federal Salary Source plus percent of salary — '
      'which fund pays which post, the thing rule 11 says nobody publishes.',
      'Federal grants only; state grants and revolving funds are not in these fields.'),
-    ('sources/inbox/sims-datahandbook_2021.docx', '', 'SIMS Data Handbook 2021',
+    ('sources/state-dese/sims-datahandbook_2021.docx', '', 'SIMS Data Handbook 2021',
      'https://www.doe.mass.edu/', 'As above, 2021 edition.', ''),
-    ('sources/inbox/sims-datahandbook_2022.docx', '', 'SIMS Data Handbook 2022',
+    ('sources/state-dese/sims-datahandbook_2022.docx', '', 'SIMS Data Handbook 2022',
      'https://www.doe.mass.edu/', 'As above, 2022 edition.', ''),
 ]
 

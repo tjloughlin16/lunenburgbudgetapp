@@ -30,9 +30,26 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # What the fallback promises. Every file under these must be committed, or an agent
 # following the README lands on a 404.
-MIRRORED = ['fy28/public/api', 'fy28/public/docs/data', 'fy28/public/minutes/find']
+MIRRORED = ['fy28/public/api', 'fy28/public/docs/data', 'fy28/public/minutes/find',
+            'mirror/data']
 # The database an agent queries when it cannot reach /api/query.
-MUST_EXIST = ['fy28/public/docs/data/lunenburg.db', 'fy28/public/llms.txt',
+#
+# IT LIVES OUTSIDE fy28/public/ ON PURPOSE, since 8 September 2026. Everything under
+# `public/` is copied into the Pages build, and Cloudflare caps a static asset at 25MB --
+# a platform limit no plan raises. The database passed it (21.2MB -> 29.3MB, the DESE
+# ingest), so shipping it would have failed the DEPLOY rather than the build.
+#
+# GitHub's limit is 100MB, so git is still a fine home for it. Only the Pages build had a
+# problem, and the fix is to keep the file in the repository without publishing it as a
+# site asset. The site serves the same bytes from R2 at the same URL --
+# `fy28/functions/data/lunenburg.db.js`.
+#
+# THE CAPABILITY THIS PROTECTS. `/api/query` is the one thing that cannot be mirrored: it
+# needs a live database at request time. An agent that cannot reach the site at all --
+# and several cannot, their sandboxes refuse the host -- queries this committed copy
+# instead. Dropping it would have left those agents able to read the CSVs and unable to
+# ask anything.
+MUST_EXIST = ['mirror/data/lunenburg.db', 'fy28/public/llms.txt',
               'sources/data/archive-manifest.csv', 'README.md']
 
 

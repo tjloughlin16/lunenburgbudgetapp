@@ -427,6 +427,23 @@ def unpriced(c):
 
 # ---------------------------------------------------------------------- what the town said
 
+# WHAT THIS PAGE MAY AND MAY NOT CLAIM ABOUT THE SEARCH. Rule 15a says to search the
+# meeting archive for what people said about a thing in the same year, and rule 13 says not
+# to quote a rendering of it. The archive was being ENLARGED and RE-EXTRACTED while this
+# page was written -- documents were being added and their text written out by another
+# process -- so any count of how many documents were searched would have been true for a
+# few minutes. It is therefore not published here at all. What IS published is the thing
+# that can be checked: every quote below is asserted verbatim, on every build, against the
+# named file it is attributed to. Absence of a quote on this page is not evidence that
+# nobody said it.
+SEARCH_NOTE = (
+    'Found with scripts/search_minutes.py and asserted verbatim against the named file on '
+    'every build. No count of documents searched is published: the meeting archive was '
+    'being enlarged and re-extracted while this page was written, so a coverage figure '
+    'would have been stale within the hour. Nothing here claims that nobody else said '
+    'anything — only that these people said these words, in these documents.')
+
+
 def said():
     out = []
     for spec in QUOTES:
@@ -618,6 +635,35 @@ def build():
         fail('no scenario now separates the two cap readings — the page’s central finding '
              'is the size of that separation and there would be nothing to publish')
 
+    # ---- THE TIER CONTRAST, computed. The most useful sentence this page can produce.
+    # The argument it answers -- "parents should pay more, they are the ones using the
+    # schools" -- treats parents as one group. The same three athletes are two completely
+    # different bills depending on which tier the family is in, and both are true at once.
+    # Taken from the most recent year in which BOTH tiers are published, because FY2027
+    # publishes no reduced rate at all and a contrast drawn across two years would not be
+    # like for like (rule 6).
+    contrast = None
+    for y in years:
+        t = y['levels']['HS']['tiers']
+        if not (t['full']['available'] and t['reduced']['available']):
+            continue
+        pick = lambda tier, ch, sp: next(
+            g for g in t[tier]['grid'] if g['children'] == ch and g['sports'] == sp)
+        ch, sp = 3, 1
+        full, red = pick('full', ch, sp), pick('reduced', ch, sp)
+        contrast = dict(
+            fy=y['fy'], level='HS', children=ch, sports=sp,
+            full=full['per_year'], reduced=red['per_year'],
+            waived=0.0, flat=t['reduced']['flat'],
+            ratio=round(full['per_year'] / red['per_year'], 2) if red['per_year'] else None,
+            full_published=full['fully_published'],
+            source=t['reduced']['source'], source_ref=t['reduced']['source_ref'])
+        break
+    if contrast is None:
+        fail('no year publishes both a full and a reduced athletic fee — the page states '
+             'the contrast between the two tiers as its most concrete finding and there '
+             'would be nothing to state it from')
+
     unpriced_rows = unpriced(c)
     not_published = [u for u in unpriced_rows if u['status'] == 'not_published']
 
@@ -680,6 +726,7 @@ def build():
             flat=money(flat_rate),
             uncomputable=hs27['tiers']['full']['uncomputable'],
             inferred=hs27['tiers']['full']['inferred']),
+        tier_contrast=contrast,
         unpriced=unpriced_rows,
         unpriced_count=len(not_published),
         # The portal fees on their own, because they are the ones a FAMILY meets: the
@@ -689,6 +736,7 @@ def build():
         unpriced_portal=len([u for u in not_published if u['category'] == 'other_fee']),
         faq=faq_rule(),
         said=said(),
+        search_note=SEARCH_NOTE,
         gaps=[split(gaps[k]) for k in GAP_KEYS],
         related=related,
     )
@@ -728,6 +776,10 @@ def main():
           f"{d['max_spread_at']['sports']} sports)")
     print(f"  a per-season cap binds in any modelled scenario: "
           f"{d['season_cap_binds_anywhere']}")
+    ct = d['tier_contrast']
+    print(f"  FY{ct['fy']} HS, {ct['children']} children one sport each: "
+          f"{ct['full']:,.2f} at the full fee against {ct['reduced']:,.2f} at the reduced "
+          f"fee — {ct['ratio']:.0f}x")
     print(f"  named fees with no published amount: {d['unpriced_count']}, of which "
           f"{d['unpriced_portal']} are fees the district's own portal sells")
     return 0

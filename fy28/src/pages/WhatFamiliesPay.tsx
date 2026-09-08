@@ -106,6 +106,12 @@ type Payload = {
     uncomputable: { children: number; sports: number }[]
     inferred: { children: number; sports: number }[]
   }
+  tier_contrast: {
+    fy: number; level: string; children: number; sports: number
+    full: number; reduced: number; waived: number; flat: number | null
+    ratio: number | null; full_published: boolean
+    source: string | null; source_ref: string | null
+  }
   unpriced: {
     fy: string | null; category: string; unit: string; item: string; status: string
     source: string; source_ref: string | null
@@ -115,6 +121,7 @@ type Payload = {
   faq: { cite: string; quotes: string[]; title: string }
   said: { key: string; board: string; date: string; who: string; quote: string; why: string
     cite: string; town: string }[]
+  search_note: string
   gaps: { side: string; what: string; why: string; closes: string | null }[]
   related: { id: string; title: string; why: string; words: number; updated: string
     url: string; pdf: string | null }[]
@@ -186,7 +193,11 @@ export function WhatFamiliesPay() {
   const [err, setErr] = useState(false)
 
   useEffect(() => {
-    fetch(abs('/data/what-families-pay.json'))
+    // RELATIVE, and abs() only on hrefs. `abs` writes the site name in front of a file
+    // path so a program can follow the link; using it on a FETCH points the page at
+    // production, which 404s for any file not deployed yet and renders the error state
+    // into the prerender. Same-origin here, like every other page.
+    fetch('/data/what-families-pay.json')
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
       .then(setD).catch(() => setErr(true))
   }, [])
@@ -247,6 +258,7 @@ export function WhatFamiliesPay() {
   const cap27 = d.caps.find(c => c.fy === lx.fy)!
   const last = lx.rows[lx.rows.length - 1]
   const capNow = year.cap
+  const ct = d.tier_contrast
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-10">
@@ -304,6 +316,30 @@ export function WhatFamiliesPay() {
           {money(d.fourth_child.by_rule)} <em>if</em> it keeps compounding. No document
           says it does, and none states a fourth-child rate.
         </Insight>
+      </div>
+
+      <div className="card p-5 mt-3" style={{ borderTop: `3px solid ${YEAR}` }}>
+        <p className="text-[16px] font-bold leading-snug">
+          The same {ct.children} athletes cost one family {money(ct.full)} a year and
+          another {money(ct.reduced)}. Both families are “parents”.
+        </p>
+        <div className="text-[13.5px] leading-relaxed mt-2"
+          style={{ color: 'var(--text-secondary)' }}>
+          <p>
+            {fyLabel(ct.fy)} high school, {ct.children} children with {ct.sports} sport
+            each — the full ladder against the reduced fee a qualifying family pays,{' '}
+            {money(ct.flat ?? 0)} a child a season. A family whose fee is waived pays{' '}
+            {money(ct.waived)}. That is a factor of {ct.ratio} between two households in
+            the same school, and the argument this page answers is usually made without
+            either figure in it.
+          </p>
+          <p className="mt-2.5">
+            <strong>It can only be shown for {fyLabel(ct.fy)}.</strong>{' '}
+            {fyLabel(d.years[0].fy)} publishes no reduced rate, no waived rate and no
+            middle school rate — so for the year now running, the cheaper half of this
+            comparison cannot be computed at all. That is registered below.
+          </p>
+        </div>
       </div>
 
       <NotShown>
@@ -482,10 +518,14 @@ export function WhatFamiliesPay() {
 
       {cell && cell.computable && !cell.fully_published && (
         <p className="text-[12.5px] mt-3 max-w-2xl" style={{ color: SEASON }}>
-          One or more rates in this scenario are produced by the rule the published rates
-          follow rather than stated in a document. Set the family to{' '}
-          {lv.ladder.stops_after} children or fewer for a total in which every rate is
-          published.
+          One or more rates in this scenario are not stated in any document.{' '}
+          {lv.ladder.kind === 'percentage'
+            ? 'They follow from the sibling discount the School Committee voted, which is '
+              + 'published as a rule even though the resulting rate is not written down.'
+            : 'They follow from the ratio the published rates happen to follow, which is '
+              + 'an inference: nothing says the ladder continues past where it stops.'}{' '}
+          Set the family to {lv.ladder.stops_after} children or fewer for a total in which
+          every rate is published outright.
         </p>
       )}
 
@@ -504,10 +544,17 @@ export function WhatFamiliesPay() {
           g.computable ? (g.spread > 0 ? money(g.spread) : '—') : 'not published',
         ])}
         note={<>
-          * includes at least one rate produced by the rule rather than published. Rows
-          reading “not published” are the family sizes this archive cannot price at all.
-          The widest difference between the two readings where every rate is published is{' '}
-          {money(d.published_spread)}.
+          * includes at least one rate not stated in any document.{' '}
+          {lv.ladder.kind === 'percentage'
+            ? `In ${fyLabel(fy)} it is produced by a rule that WAS voted — the
+               ${100 - lv.ladder.ratio! * 100}% sibling discount — so the rate follows from
+               something published even though no document names it.`
+            : `In ${fyLabel(fy)} it is produced by the ratio the three published rates
+               happen to follow. Nothing says the ladder continues, so that is an
+               inference and it is marked as one.`}{' '}
+          Rows reading “not published” are the family sizes this archive cannot price at
+          all. The widest difference between the two readings where every rate is
+          published is {money(d.published_spread)}.
         </>} />
 
       <NotShown>
@@ -539,10 +586,7 @@ export function WhatFamiliesPay() {
 
       {/* -------------------------------------------------------------- 5. what was said */}
       <H2 id="said">What was said in the room</H2>
-      <Body>
-        Found by searching the meeting archive, and each quote checked against the file it
-        is attributed to on every build.
-      </Body>
+      <Body>{d.search_note}</Body>
       <div className="grid gap-3 mt-5">
         {d.said.map(s => (
           <div key={s.key} className="card p-5">

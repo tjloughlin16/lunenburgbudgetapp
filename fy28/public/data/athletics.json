@@ -1954,6 +1954,16 @@
    "side": "money_out",
    "what": "What folding one athletics team would actually stop the town spending",
    "why": "A per-sport figure is not a saving. The district\u2019s own workbook divides district-wide costs into thirds and pushes them into season totals \u2014 the notes column headed \u201cCosts for all 3 Seasons\u201d reads, at AX6, \u201cMIAA 1/3 4550. -1516.67\u201d, and at AY10 \u201cMIDWACH - 1/3 7000 - 2333.33\u201d \u2014 so league membership, trainer supplies, CPR certification and the online forms subscription sit inside per-sport totals. Whether any of those actually falls when one team folds is untested: a league assessment, a trainer\u2019s hours and an insurance premium may each scale with the number of teams or not at all. This app answers it structurally rather than empirically \u2014 the FY27 athletics lines are split into a coaching-and-equipment pool that follows the teams and an overhead that does not, and the published per-sport figures are used only as weights to spread the pool \u2014 which bounds the saving without establishing it. \u2014 closes: the district\u2019s athletics budget for a year in which a team was actually dropped, line by line against the year before, or a quotation from the MIAA and MIDWACH showing how each assessment varies with the number of teams entered."
+  },
+  {
+   "side": "people",
+   "what": "Whether a rise in the paraprofessional line is more posts or a grant unwinding",
+   "why": "DESE now publishes the split at the level of its own FUNCTION CODES, SY2009-SY2025: Lunenburg's function 2330, Paraprofessionals, is $1,338,477 of general fund beside $478,097 of grants and revolving money in SY2025 (`dese_function_expenditure`). That BOUNDS the question and does not settle it. A function code aggregates many posts and many funding sources; it is DESE's measure of spending rather than the town's appropriation; and nothing in it says which post any dollar paid, or whether the same posts were general-funded the year before. The in-district special education escalator still rests on a line that cannot be distinguished from grant money unwinding. \u2014 closes: the district's grant award and payroll charge detail for the paraprofessional posts, by fund and fiscal year."
+  },
+  {
+   "side": "money_out",
+   "what": "Which budget line each dollar of grant and revolving money paid for",
+   "why": "The fund split now exists at DESE's function level and nowhere below it. Lunenburg SY2025 spent $3,044,898 of grants and revolving money against $26,986,344 of general fund across all functions. But the district's budget book prints one NET figure per printed line (rule 11), DESE prints one figure per function code, and no published document maps the second onto the first \u2014 so a line that rose because a grant ended still looks identical to a line that rose because the district grew. This is the budget-line half of `Which fund pays which post`, which is the same wall approached from the staffing side. \u2014 closes: DESE's End of Year Financial Report Schedule 1 as Lunenburg files it, which separates revenues and expenditures by source of funds; or the MUNIS year-to-date expense report run for the school grant and revolving funds rather than the general fund."
   }
  ],
  "generated_by": "scripts/build_athletics_charts.py",

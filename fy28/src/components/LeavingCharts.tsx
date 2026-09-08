@@ -181,6 +181,129 @@ export function ChoiceIn({ series, cherry }: {
   )
 }
 
+/* ------------------------------------------------- the flow that already exists, both ways */
+
+export type FlowYear = {
+  sy: number; out_choice: number; out_charter: number; in_choice: number
+  net_choice: number
+}
+
+/** CHILDREN, NOT DOLLARS, and both directions on one axis because they are the same unit
+ *  and the reader's question is which is bigger. A dashed reference line marks where the
+ *  scenario would put the outward flow, so the modelled number is read against the real
+ *  one rather than in isolation — which is the whole reason this chart is here. */
+export function Flows({ series, scenarioOut, scenarioLabel }: {
+  series: FlowYear[]; scenarioOut: number; scenarioLabel: string
+}) {
+  const data = series.map(r => ({
+    sy: `SY${String(r.sy).slice(2)}`,
+    out: r.out_choice, in: r.in_choice, charter: r.out_charter,
+  }))
+  return (
+    <div className="mt-5">
+      <div style={{ width: '100%', height: 270 }}>
+        <ResponsiveContainer>
+          <LineChart data={data} margin={{ top: 14, right: 8, left: 8, bottom: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="sy" tick={AXIS} tickLine={false} axisLine={false} />
+            <YAxis tick={AXIS} tickLine={false} axisLine={false}
+              tickFormatter={(v: number) => String(v)} />
+            <ReferenceLine y={scenarioOut} stroke={LOSS} strokeDasharray="5 4"
+              label={{ value: scenarioLabel, position: 'insideTopRight',
+                       fill: 'var(--text-muted)', fontSize: 11 }} />
+            <Tooltip cursor={{ stroke: 'var(--grid)' }} content={({ active, payload, label }) => {
+              if (!active || !payload?.length) return null
+              return (
+                <Box>
+                  <div className="font-bold">{label}</div>
+                  {payload.map(p => (
+                    <div key={String(p.dataKey)} className="tnum">
+                      {p.dataKey === 'out' ? 'leaving under school choice: '
+                        : p.dataKey === 'in' ? 'arriving under school choice: '
+                          : 'leaving to charter schools: '}
+                      {String(p.value)}
+                    </div>
+                  ))}
+                </Box>
+              )
+            }} />
+            <Line type="monotone" dataKey="out" stroke={LOSS} strokeWidth={2}
+              dot={{ r: 2.5 }} isAnimationActive={false} />
+            <Line type="monotone" dataKey="in" stroke={SAVE} strokeWidth={2}
+              dot={{ r: 2.5 }} isAnimationActive={false} />
+            <Line type="monotone" dataKey="charter" stroke="var(--axis)" strokeWidth={1.5}
+              strokeDasharray="3 3" dot={false} isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <Legend items={[
+        { hue: LOSS, label: 'Lunenburg residents leaving under school choice' },
+        { hue: SAVE, label: 'Children arriving in Lunenburg under school choice' },
+        { hue: 'var(--axis)', label: 'Lunenburg residents at charter schools — a different programme' },
+      ]} />
+    </div>
+  )
+}
+
+/* ----------------------------------------- what aid has done, against what enrolment did */
+
+export type AidYear = { fy: number; enrollment: number; aid: number }
+
+/** ONE AXIS, DOLLARS. Foundation enrolment is on the same picture only as a MARK — a dot
+ *  on the aid line for a year enrolment fell — because a second axis in different units
+ *  invites a reader to compare two slopes that have no common scale, which is precisely
+ *  the inference this chart exists to test. The enrolment numbers are in the table twin,
+ *  where they can be read rather than eyeballed. */
+export function AidHistory({ series, fellYears }: {
+  series: AidYear[]; fellYears: number[]
+}) {
+  const fell = new Set(fellYears)
+  const data = series.map(r => ({ ...r, label: `FY${String(r.fy).slice(2)}` }))
+  return (
+    <div className="mt-5">
+      <div style={{ width: '100%', height: 270 }}>
+        <ResponsiveContainer>
+          <LineChart data={data} margin={{ top: 8, right: 8, left: 8, bottom: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={false}
+              interval={3} />
+            <YAxis tick={AXIS} tickLine={false} axisLine={false} tickFormatter={compact} />
+            <Tooltip cursor={{ stroke: 'var(--grid)' }} content={({ active, payload }) => {
+              if (!active || !payload?.length) return null
+              const p = payload[0].payload as typeof data[number]
+              return (
+                <Box>
+                  <div className="font-bold">{p.label}</div>
+                  <div className="tnum">{usd(p.aid)} of Chapter 70 aid</div>
+                  <div className="tnum" style={{ color: 'var(--text-muted)' }}>
+                    {p.enrollment.toLocaleString()} foundation pupils
+                    {fell.has(p.fy) ? ' — down on the year before' : ''}
+                  </div>
+                </Box>
+              )
+            }} />
+            <Line type="monotone" dataKey="aid" stroke={SAVE} strokeWidth={2}
+              isAnimationActive={false}
+              dot={(props: { cx?: number; cy?: number; payload?: AidYear; index?: number }) => {
+                const { cx, cy, payload, index } = props
+                if (cx == null || cy == null || !payload) {
+                  return <g key={`d${index}`} />
+                }
+                return fell.has(payload.fy)
+                  ? <circle key={`d${index}`} cx={cx} cy={cy} r={4} fill={LOSS} />
+                  : <circle key={`d${index}`} cx={cx} cy={cy} r={1.8} fill={SAVE} />
+              }} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <Legend items={[
+        { hue: SAVE, label: 'Chapter 70 aid to Lunenburg, as DESE states it' },
+        { hue: LOSS, label: 'A year foundation enrolment was lower than the year before' },
+      ]} />
+    </div>
+  )
+}
+
 /* ------------------------------------------------------------------------- the whole range */
 
 export type Curve = { avoidable: number; hold: number; full: number }
@@ -233,8 +356,8 @@ export function Sensitivity({ curve, breakEven }: {
         </ResponsiveContainer>
       </div>
       <Legend items={[
-        { hue: LOSS, label: 'Net cost if Chapter 70 falls by the whole foundation reduction' },
-        { hue: SAVE, label: 'Net cost if Chapter 70 does not move — where DESE’s own row currently sits' },
+        { hue: LOSS, label: 'Net cost if aid fell by the whole foundation reduction — the original reading' },
+        { hue: SAVE, label: 'Net cost at the aid-per-student figure currently on the dial' },
         { hue: 'var(--status-good)', label: 'Where the town breaks even, if it gets there' },
       ]} />
     </div>
