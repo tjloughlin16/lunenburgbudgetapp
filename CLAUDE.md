@@ -434,10 +434,26 @@ Four that happened in a single day:
 The general form: **an instrument that reformats before you see it is part of the finding,
 and it has to be checked like one.**
 
-### 13a. A hand-built deck or spreadsheet cannot carry the confidence a ledger can
+### 13a. A sheet the accounting system printed is proof. A sheet somebody assembled is not
 
 TJ, 8 September 2026, on the athletics costs: *"this is why we need ACTUALS where possible.
-hand crafted decks and sheets are not trustworthy to this degree of confidence."*
+hand crafted decks and sheets are not trustworthy to this degree of confidence."* And
+immediately, correcting the first draft of this rule: *"well. not all sheets of course. hand
+crafted sheets not backed by a financial printout. munis sheets are proof for instance."*
+
+**That correction is the rule.** The first draft condemned spreadsheets as a class, and this
+archive disproves it in one query: **seven of the ten `ledger` documents here are `.xlsx`** —
+every MUNIS export, the fund cashbooks, the year-end expense report. The strongest evidence
+we hold is spreadsheets.
+
+**So the axis is not the file format. It is whether the accounting system produced the
+figure or a person did.** A MUNIS export is a printout of what the books say, and it
+arrives with the marks of that: account numbers, periods, warrant references, and totals
+the system foots itself. A workbook someone built to answer a question is an argument —
+useful, often the only thing available, and carrying exactly as much authority as the
+person who typed it.
+
+`document-basis.csv` already encodes this and does not look at extensions.
 
 **The worked example, because it is the sharpest this archive has.** Three published figures
 for one quantity — what Lunenburg athletics cost in a year:
@@ -457,10 +473,13 @@ straight at $19,805.28 next to $25,774.45 for football and left both there.
 
 **What follows for the work.**
 
-- **A figure from a deck or a working spreadsheet is `stated`, and it stays `stated`
-  however official the document looks.** Slide numbers, letterheads and budget-packet
-  covers are not provenance. The question is always what produced the number, not what it
-  was printed on.
+- **A figure a person assembled is `stated`, however official the document looks.** Slide
+  numbers, letterheads and budget-packet covers are not provenance. The question is always
+  what produced the number, not what it was printed on — and not what it was saved as.
+- **A figure the accounting system printed is evidence, in whatever format it arrives.**
+  A MUNIS `.xlsx` is not a spreadsheet in the sense this rule warns about. Check for the
+  system's own marks: account codes, a period, a warrant or journal reference, and a total
+  the report foots itself.
 - **Where a ledger exists, prefer it, and say when one does not.** Athletics is the only
   programme here where any transaction-level record exists at all, and even that one — the
   revolving fund's cashbook — cannot attribute a payment to a sport: 173 disbursements,
@@ -473,9 +492,10 @@ straight at $19,805.28 next to $25,774.45 for football and left both there.
   already produce: the accounts-payable detail behind the warrants, the year-end expense
   report by department. Both are named on the records request for this reason.
 
-The general form, and it is rule 13 pointed at a whole class of document: **a spreadsheet
-is an argument someone assembled; a ledger is a record of what happened.** They can look
-identical on a page and they are not the same kind of thing.
+The general form: **a hand-built sheet is an argument someone assembled; a printout from
+the books is a record of what happened.** They arrive in the same file format, open in the
+same program, and are not the same kind of thing. Ask which one produced it, never what it
+was saved as.
 
 ---
 
