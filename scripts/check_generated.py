@@ -225,6 +225,17 @@ CHECKS = [
     # four `money_gaps` rows the page quotes BY KEY, since a limit whose wording has been
     # edited out from under it renders as an empty box.
     ('build_stopped_funding.py', ['--check']),
+    # The grant-unwinding page's series -- DESE's split of every district dollar into the
+    # general fund and grants/revolving. Four things fail here that nothing else would
+    # catch. The year-on-year join, which must match functions: a join that matches
+    # nothing looks exactly like a district that never moved money between funds. The
+    # length of the district-total series, since a truncated one would publish a shorter
+    # record as though it were the whole one. The five meeting quotes, re-read out of the
+    # extracted minutes on every run -- a quote is a claim about a document and the
+    # extractor can change what a document renders to. And the document's own sha256,
+    # read from the archive manifest rather than typed, so a citation cannot lose its
+    # hash silently.
+    ('build_grant_unwinding.py', ['--check']),
     # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
     # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
     # a key is not there, so this entry catches two things: the published file going

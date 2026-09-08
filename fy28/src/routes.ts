@@ -21,6 +21,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'stopped'
   | 'leaving'
   | 'families'
+  | 'unwind'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -140,6 +141,16 @@ export const SLUG: Record<Tab, string> = {
   // instead of the bill. NOT `what-parents-pay`: the argument this page answers is about
   // families, and a household with no child in the schools is the other half of it.
   families: 'what-families-pay',
+  // What happened in each part of the budget when a grant stopped paying for it. The slug
+  // is the CONDITION a resident names -- "when grants end" -- and stops there, because the
+  // answer is two answers: in half the affected functions the town's money rose and in the
+  // other half nothing replaced it. NOT `grant-unwinding`, which is our word for the
+  // mechanism and nobody's word for the question. NOT `esser`, which names one federal
+  // programme when the source publishes a fund total that cannot be split by grant --
+  // an address that promises more than the page can deliver. NOT `grants`, `funds` or
+  // `special-revenue`: all three have meant /money-outside-the-budget since long before
+  // this page existed, and a shared link must keep landing where it landed.
+  unwind: 'when-grants-end',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -244,6 +255,12 @@ const ALIASES: Record<string, Tab> = {
   'what-families-pay': 'families', 'family-fees': 'families',
   'what-parents-pay': 'families', 'school-fees': 'families',
   'student-fees': 'families', 'user-fees': 'families',
+  // NOT 'grants' or 'grant-funding' -- both already land on /money-outside-the-budget.
+  // These are the forms somebody types looking for what happened when the federal money
+  // ran out.
+  'when-grants-end': 'unwind', 'grants-ending': 'unwind', 'grant-unwinding': 'unwind',
+  'esser': 'unwind', 'esser-cliff': 'unwind', 'when-the-grants-ended': 'unwind',
+  'grant-funded-positions': 'unwind', 'fund-split': 'unwind',
   'if-students-leave': 'leaving', 'school-choice': 'leaving', 'choicing-out': 'leaving',
   'students-leaving': 'leaving', 'school-choice-scenario': 'leaving',
   'what-if-students-leave': 'leaving', 'transfers-out': 'leaving',
@@ -293,6 +310,7 @@ export const LABEL: Record<Tab, string> = {
   stopped: 'What stopped being funded',
   leaving: 'If students leave — what school choice would cost',
   families: 'What a family actually pays',
+  unwind: 'When a grant ends — who picks up the bill',
   askus: 'Ask us a question',
   dataroom: 'The data room',
 }
@@ -317,6 +335,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   stopped: 'themoney',
   leaving: 'themoney',
   families: 'themoney',
+  unwind: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -402,7 +421,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   // thirteen-tab strip in the first place.
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
-  variance: 'analyses',
+  variance: 'analyses', unwind: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -421,8 +440,8 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
   money: ['themoney', 'stateaid', 'funds', 'gaps', 'askus'],
-  analyses: ['reports', 'staffing', 'stopped', 'leaving', 'families', 'sportsmoney',
-             'insurance', 'variance'],
+  analyses: ['reports', 'staffing', 'stopped', 'unwind', 'leaving', 'families',
+             'sportsmoney', 'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

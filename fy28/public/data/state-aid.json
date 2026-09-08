@@ -233,6 +233,18 @@
    "side": "money_out",
    "what": "Which budget line each dollar of grant and revolving money paid for",
    "why": "The fund split now exists at DESE's function level and nowhere below it. Lunenburg SY2025 spent $3,044,898 of grants and revolving money against $26,986,344 of general fund across all functions. But the district's budget book prints one NET figure per printed line (rule 11), DESE prints one figure per function code, and no published document maps the second onto the first \u2014 so a line that rose because a grant ended still looks identical to a line that rose because the district grew. This is the budget-line half of `Which fund pays which post`, which is the same wall approached from the staffing side."
+  },
+  {
+   "closes": "the district's grant award letters and end-of-grant expenditure reports, naming the posts and object codes each grant paid, set against the general fund payroll and object detail for the same function in the following year.",
+   "side": "money_out",
+   "what": "Whether a general fund rise beside a grant fall is the same cost, or a different cost in the same function",
+   "why": "DESE's End of Year Financial Report splits every function code into general fund and grants/revolving, so a function where grants fell and the general fund rose in the same year can be MEASURED \u2014 8 of them in Lunenburg in SY2025, grants -$1,127,647 against general fund +$1,136,013 (`dese_function_expenditure`). Sorting those functions into \u201cswapped\u201d and \u201creduced\u201d is OUR label on the signs of two numbers, and the state publishes no such classification. A function code is a bucket: `Teachers, Classroom` covers every classroom teacher in four schools, and both funds can move inside it for reasons that have nothing to do with each other. So the split establishes that the funding mix moved and cannot establish that the town picked up the thing the grant was paying for."
+  },
+  {
+   "closes": "the district's end-of-year grant expenditure detail by grant code for FY2024 and FY2025, or Schedule 19 of its End of Year Financial Report as filed, which lists each grant separately.",
+   "side": "money_in",
+   "what": "How much of the SY2025 grant fall was ESSER, as against every other grant and revolving fund",
+   "why": "The meeting record names ESSER as the cause repeatedly and with figures \u2014 the district told the School Committee on 15 November 2023 \u201cWe have a loss of $650,000 in ESSER funds, this is much more significant than we expected\u201d, and on 17 January 2024 put the loss at $600,000 beside a $500,000 health insurance rise. DESE reports one combined `grants_revolving` column, which holds ESSER, Title I and the other federal and state grants together with circuit breaker, school choice, athletics, food service and every other revolving fund. The SY2025 fall of $2,023,188 across matched functions therefore cannot be attributed to any one of them. The district's own stated ESSER figures and this fall are different quantities measured at different stages \u2014 a forward budget gap against a closed-year fund total \u2014 and this project does not difference one against the other."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",
