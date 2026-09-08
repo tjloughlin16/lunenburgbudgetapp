@@ -49,6 +49,7 @@ Staged in `sources/inbox/`, hashed, unread.
 |---|---|---|---|
 | `dese-teachers-by-grade-subject.xlsx` | DESE `77fu-a6h8`, 133 MB | `76a5498ba1b5` | **FTE by grade band AND subject AND school.** Breaks a limit recorded as structural: grade detail without FTE (town rosters) or FTE without grade detail (DESE) — this is both |
 | `dese-residents-sending.xlsx` | DESE `vxt3-k35x`, 2.4 MB | `ef345000874d` | where resident children go, by receiving district and reason, 2014-2026 |
+| `dese-enrollment-receiving.xlsx` | DESE `8xyg-59b2`, 2.2 MB | `b23f4106f6c0` | who comes IN, by sending town and reason — the mirror of the file above |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -58,6 +59,14 @@ Columns, recorded so nobody has to reopen a 133 MB file to find out:
                ALL_GRD_CNT ALL_GRD_PCT FTE_CNT
 
     sending:   SY TOWN_NAME ENR_REASON DIST_CODE DIST_NAME ENR_CNT
+
+    receiving: SY DIST_CODE DIST_NAME ENR_REASON TOWN_NAME ENR_CNT
+
+**The two enrolment files are a matched pair and are worth more together.** Sending gives
+where Lunenburg's resident children go; receiving gives who arrives and from where. Both
+directions means a NET position, and the tuition that follows each way. This project holds
+`School Choice Receiving` as one dollar line on the cherry sheet; these are the headcounts
+behind it.
 
 **A caution on the teachers file before anyone aggregates it.** It carries a `State` row
 (`DIST_CODE 00000000`) alongside district rows, and a `SUBJ` of `All` alongside individual
