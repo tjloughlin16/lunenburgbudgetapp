@@ -304,6 +304,7 @@
  "not_established": [
   "THAT ANY OF THESE CHILDREN HAS AN IEP. This is the one that matters, and it is why this report is separate from the other three. DESE publishes the count by town, district and programme and does not publish disability status with it. A special education student who leaves under school choice and a student with no IEP who leaves are one row here.",
   "What any of it costs. The archive holds the counts and not one document stating the tuition Lunenburg is assessed for them \u2014 already registered in `money-gaps.csv` on both the money-out and the people side.",
+  "WHICH GRADES they leave in \u2014 the question everybody actually asks. dese_town_enrollment carries no grade column, and the grade counts that do exist are headcounts INSIDE a district rather than an outflow from a town, so they cannot be differenced to recover it. Whether families leave at a transition year or steadily throughout is unknown, and those imply completely different things about what the district could change. Registered in `money-gaps.csv` as \u201cWhich grades Lunenburg children leave the district in\u201d.",
   "Why any family left. A count of departures is not a reason for them, and nothing in this file or in the meeting record surveys the households.",
   "That a child leaving is a child the district no longer spends on. Out-of-district special education placements are NOT in this file: a placed child stays enrolled in Lunenburg and is counted as a resident member."
  ],
@@ -436,6 +437,152 @@
   "Tuitioned In - Paid by Parent/Guardian",
   "Tuitioned In - Waived by Local Agreement"
  ],
+ "route_change": {
+  "charter": {
+   "first": 44,
+   "last": 22,
+   "pct": -50.0
+  },
+  "elsewhere": {
+   "first": 186,
+   "last": 177,
+   "pct": -4.8
+  },
+  "in_lunenburg": {
+   "first": 1513,
+   "last": 1553,
+   "pct": 2.6
+  },
+  "monty_tech": {
+   "first": 70,
+   "last": 97,
+   "pct": 38.6
+  },
+  "school_choice": {
+   "first": 69,
+   "last": 58,
+   "pct": -15.9
+  }
+ },
+ "routes": [
+  {
+   "charter": 44,
+   "elsewhere": 186,
+   "fy": 2014,
+   "in_lunenburg": 1513,
+   "monty_tech": 70,
+   "other": 3,
+   "school_choice": 69
+  },
+  {
+   "charter": 42,
+   "elsewhere": 209,
+   "fy": 2015,
+   "in_lunenburg": 1513,
+   "monty_tech": 76,
+   "other": 2,
+   "school_choice": 89
+  },
+  {
+   "charter": 40,
+   "elsewhere": 211,
+   "fy": 2016,
+   "in_lunenburg": 1512,
+   "monty_tech": 86,
+   "other": 5,
+   "school_choice": 80
+  },
+  {
+   "charter": 40,
+   "elsewhere": 237,
+   "fy": 2017,
+   "in_lunenburg": 1568,
+   "monty_tech": 87,
+   "other": 4,
+   "school_choice": 106
+  },
+  {
+   "charter": 30,
+   "elsewhere": 213,
+   "fy": 2018,
+   "in_lunenburg": 1599,
+   "monty_tech": 77,
+   "other": 7,
+   "school_choice": 99
+  },
+  {
+   "charter": 26,
+   "elsewhere": 176,
+   "fy": 2019,
+   "in_lunenburg": 1616,
+   "monty_tech": 72,
+   "other": 4,
+   "school_choice": 74
+  },
+  {
+   "charter": 27,
+   "elsewhere": 191,
+   "fy": 2020,
+   "in_lunenburg": 1607,
+   "monty_tech": 75,
+   "other": 5,
+   "school_choice": 84
+  },
+  {
+   "charter": 30,
+   "elsewhere": 179,
+   "fy": 2021,
+   "in_lunenburg": 1565,
+   "monty_tech": 77,
+   "other": 4,
+   "school_choice": 68
+  },
+  {
+   "charter": 28,
+   "elsewhere": 203,
+   "fy": 2022,
+   "in_lunenburg": 1578,
+   "monty_tech": 90,
+   "other": 8,
+   "school_choice": 77
+  },
+  {
+   "charter": 25,
+   "elsewhere": 191,
+   "fy": 2023,
+   "in_lunenburg": 1541,
+   "monty_tech": 92,
+   "other": 7,
+   "school_choice": 67
+  },
+  {
+   "charter": 26,
+   "elsewhere": 181,
+   "fy": 2024,
+   "in_lunenburg": 1565,
+   "monty_tech": 97,
+   "other": 2,
+   "school_choice": 56
+  },
+  {
+   "charter": 29,
+   "elsewhere": 184,
+   "fy": 2025,
+   "in_lunenburg": 1544,
+   "monty_tech": 96,
+   "other": 1,
+   "school_choice": 58
+  },
+  {
+   "charter": 22,
+   "elsewhere": 177,
+   "fy": 2026,
+   "in_lunenburg": 1553,
+   "monty_tech": 97,
+   "other": 0,
+   "school_choice": 58
+  }
+ ],
  "said": [
   {
    "board": "School Committee",
@@ -445,6 +592,15 @@
    "quote": "We receive $5000 per student, however the cost per student is more than that",
    "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05012024-6554",
    "why": "The district on the money that arrives with a child choosing IN. The counts on this page are children, not dollars; this is the nearest the meeting record comes to a rate, and it is the receiving side rather than the sending side that the town is assessed for."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2026-03-23-minutes-7732.txt",
+   "date": "2026-03-23",
+   "key": "disentangle",
+   "quote": "the idea of bringing back things like vocational programs to the school, even if it means that we'd have to disentangle ourselves from Monty Tech that is something that has real long-term value",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03232026-7732",
+   "why": "RULE 15a. The Monty Tech line is the one that MOVED on this page \u2014 the largest route out and the only one that rose \u2014 and this is what the School Committee was saying about it in the same year the count reached its high. It is a member\u2019s view of what the town should do, offered in a discussion of school property and programmes. It is NOT evidence about why any of those children enrolled there, and it does not bear on the count at all: Lunenburg is assessed for its member share whatever anybody at this meeting thinks of the arrangement."
   },
   {
    "board": "School Committee",
@@ -468,6 +624,10 @@
   {
    "documents": 174,
    "term": "Monty Tech"
+  },
+  {
+   "documents": 188,
+   "term": "Montachusett"
   },
   {
    "documents": 0,
@@ -691,6 +851,23 @@
    "sha256": "b23f4106f6c08bfe733b0c4e2c536fbf7ba4160d45861dcd19d0c38ef2bea29b",
    "table": "dese_town_enrollment",
    "url": "https://educationtocareer.data.mass.gov/d/8xyg-59b2"
+  }
+ ],
+ "three_routes": [
+  {
+   "key": "monty_tech",
+   "route": "Montachusett Regional (Monty Tech)",
+   "what": "NOT choosing out. Lunenburg is a MEMBER TOWN of the regional vocational district, so these children are reported as Resident/Member \u2014 of Monty Tech. The town is assessed for them, and no Lunenburg decision admits or refuses any of them."
+  },
+  {
+   "key": "school_choice",
+   "route": "School choice",
+   "what": "A family applies to another district that has opened seats. The sending town pays tuition, taken off its cherry sheet. The receiving district decides how many seats to open; the sending town decides nothing."
+  },
+  {
+   "key": "charter",
+   "route": "Charter schools",
+   "what": "A family applies to a charter school. A different statute and a different flow of money from school choice, assessed on the town separately."
   }
  ]
 }

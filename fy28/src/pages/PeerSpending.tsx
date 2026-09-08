@@ -292,8 +292,12 @@ export function PeerSpending() {
   const lunDemo = d.demographics.find(r => r.is_lunenburg)!
   const lowInc = d.demographics.map(r => r.low_income)
   const mcasLast = d.mcas.filter(r => r.fy === d.mcas_meta.last_fy)
-  const nextLowest = d.last_year[d.last_year.length - 2]
-  const lunLast = d.last_year[d.last_year.length - 1]
+  // Lunenburg's NEIGHBOUR in the order, derived from where it actually sits rather than
+  // assumed to be last. It has been fifth in nine of the seventeen years and sixth in the
+  // other eight, and a page that hardcodes "last" is wrong in nine of them.
+  const lunLast = d.last_year.find(r => r.lea === '01620000')!
+  const lunIdx = d.last_year.indexOf(lunLast)
+  const nextLowest = d.last_year[lunIdx === d.last_year.length - 1 ? lunIdx - 1 : lunIdx + 1]
   const sw = d.statewide[d.statewide.length - 1]
   const swFirst = d.statewide[0]
   const bene = d.categories.find(c => c.code === 'BENE')!
@@ -345,7 +349,7 @@ export function PeerSpending() {
         <Insight n={2} headline={
           <>Against the five comparison districts it has never been higher than{' '}
             {H.best_rank}th of {H.of} &mdash; and &ldquo;last&rdquo; in {fy(H.fy)} is a
-            margin of {money(lunLast.per_pupil - nextLowest.per_pupil).replace('-', '')}.</>}>
+            margin of {money(Math.abs(lunLast.per_pupil - nextLowest.per_pupil))}.</>}>
           {shortName(nextLowest.district)} is {money(nextLowest.per_pupil)} and Lunenburg is{' '}
           {money(lunLast.per_pupil)} &mdash;{' '}
           {pct1(Math.abs(lunLast.per_pupil / nextLowest.per_pupil - 1))} apart. Over{' '}
@@ -879,8 +883,8 @@ export function PeerSpending() {
         reason <strong>not</strong> to read the table as a spending result rather than as an
         alternative explanation for one. And this archive holds no statewide distribution of
         MCAS, so no state percentile can be computed for any of these figures &mdash; which
-        is why the &ldquo;top 20% for performance&rdquo; half of the claim quoted above
-        cannot be checked here while the spending half can.
+        is why the performance half of the claim quoted above cannot be checked here while
+        the spending half can.
       </NotShown>
       <H3>Who the students are, {fy(H.fy)}</H3>
       <TableTwin

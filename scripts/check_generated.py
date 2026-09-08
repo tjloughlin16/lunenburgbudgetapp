@@ -248,6 +248,25 @@ CHECKS = [
     # still a faithful copy of the workbook. It also re-reads the eight meeting quotes and
     # refuses to write if the five money_gaps rows it CITES have been renamed.
     ('build_minimum_aid.py', ['--check']),
+    # What every OTHER district spends, on /what-other-districts-spend. This entry catches
+    # far more than a stale file, because the generator asserts the structure the page's
+    # sentences rest on and refuses to write if one has stopped holding: that the four
+    # LEVELS in the finance table are still separable and the STATE row is still outside
+    # the district set (a sum across them is an order of magnitude wrong); that
+    # (1+spending) / (1+pupils) still equals (1+per pupil) for every district, which is the
+    # page's central claim and is arithmetic rather than an argument; that the eleven
+    # category gaps still SUM to the in-district gap, which is why the decomposition is
+    # against one named district rather than a category-by-category median; that DESE's
+    # per-pupil column still reproduces from its own dollar totals over TOTAL FTE on the
+    # district row and IN-DISTRICT FTE on every other one -- two denominators under one
+    # heading, and our own derived label is wrong about it; that DESE's average teacher
+    # salary is still the Teachers function's spend per teacher FTE, so the page's
+    # "salary times ratio" line stays labelled a definition rather than a discovery; and
+    # that the net school spending measure still carries more than one STAGE, since rule 1
+    # forbids differencing across it and the page splits on it. It also re-reads the seven
+    # meeting quotes out of the extracted minutes and refuses to write if the four
+    # money_gaps rows it CITES have been renamed.
+    ('build_peer_spending.py', ['--check']),
     # The FOUR special education reports. One generator, four payloads, and this entry
     # catches far more than a stale file, because the generator asserts the structural
     # claims each page's prose rests on and refuses to write if one has stopped holding:
@@ -263,6 +282,12 @@ CHECKS = [
     # still in the extracted minutes. Any one of those going quiet would leave every
     # figure on the pages a faithful copy of the source and a sentence beside it wrong.
     ('build_special_education.py', ['--check']),
+    # The generator agrees with its own output by construction. This recomputes every
+    # figure /where-students-go-instead renders by a SECOND route -- SQL against the raw
+    # DESE table -- and asserts rule 2 structurally against the page's prose. A rival
+    # generator for the same page got the in-district definition wrong and only a second
+    # route found it.
+    ('verify_where_students_go.py', []),
     # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
     # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
     # a key is not there, so this entry catches two things: the published file going
@@ -298,7 +323,6 @@ CHECKS = [
     # foots against the town's own listing.
     ('build_minutes_searchable.py', ['--check']),
     ('build_meeting_register.py', ['--check']),
-    ('build_where_students_go.py', ['--check']),
     ('split_large_text.py', ['--check']),
     ('build_question_bank.py', ['--check']),
     # DESE's three district-finance datasets: the registry of how to get them again, and

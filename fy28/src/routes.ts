@@ -25,7 +25,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'minaid'
   | 'sped'
   | 'spedcount'
-  | 'spedleave'
+  | 'outflow'
   | 'spedcost'
   | 'spedroute'
   | 'peers'
@@ -186,7 +186,7 @@ export const SLUG: Record<Tab, string> = {
   // dials while this one is a measurement with none. A shared link must keep landing
   // where it landed. The slug is where the children actually are, which is what this
   // report counts and what /if-students-leave does not.
-  spedleave: 'where-students-go-instead',
+  outflow: 'where-students-go-instead',
   // The sentence a resident says at a meeting. NOT `sped-cost` and NOT
   // `out-of-district-tuition`, which name the accounting shape of the answer rather than
   // the question -- and NOT `circuit-breaker`, which promises only the reimbursement half.
@@ -331,8 +331,9 @@ const ALIASES: Record<string, Tab> = {
   'students-with-disabilities': 'spedcount', 'sped-enrollment': 'spedcount',
   'how-many-on-an-iep': 'spedcount',
   // NOT 'school-choice' or 'students-leaving': both already land on /if-students-leave.
-  'where-students-go-instead': 'spedleave', 'where-our-students-go': 'spedleave',
-  'who-leaves': 'spedleave', 'residents-by-district': 'spedleave',
+  'where-students-go-instead': 'outflow', 'where-our-students-go': 'outflow',
+  'who-leaves': 'outflow', 'residents-by-district': 'outflow',
+  'where-students-go': 'outflow', 'monty-tech': 'outflow',
   'what-special-education-costs': 'spedcost', 'sped-cost': 'spedcost',
   'circuit-breaker': 'spedcost', 'out-of-district-tuition': 'spedcost',
   'sped-money': 'spedcost',
@@ -398,7 +399,7 @@ export const LABEL: Record<Tab, string> = {
   askus: 'Ask us a question',
   sped: 'Special education — four reports',
   spedcount: 'How many Lunenburg children are on an IEP',
-  spedleave: 'Who leaves Lunenburg schools, and where they go',
+  outflow: 'Who leaves Lunenburg schools, and where they go',
   spedcost: 'What out-of-district special education costs, and what comes back',
   spedroute: 'Who ends up out of district',
   peers: 'What other districts spend, for each pupil',
@@ -428,7 +429,13 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   unwind: 'themoney',
   minaid: 'themoney',
   sped: 'reports',
-  spedcount: 'sped', spedleave: 'sped', spedcost: 'sped', spedroute: 'sped',
+  spedcount: 'sped', spedcost: 'sped', spedroute: 'sped',
+  // NOT under `sped`, and that is the whole structural point of this page. It counts
+  // EVERY resident child educated somewhere else, and its headline negative is that the
+  // file carries no disability flag -- so a general measurement filed under Special
+  // education would contradict its own first sentence by its location. The special
+  // education hub still reaches it, as the question it cannot answer.
+  outflow: 'reports',
   peers: 'reports',
   agents: 'sources',
   freecash: 'money',
@@ -516,7 +523,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
-  sped: 'analyses', spedcount: 'analyses', spedleave: 'analyses', spedcost: 'analyses',
+  sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
@@ -541,8 +548,14 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // individually would have made it exactly that. And the four belong behind one door
   // anyway: /special-education is a chooser whose whole job is to say, before a reader
   // opens any of them, that these four do not combine.
+  // `outflow` and `leaving` are ADJACENT ON PURPOSE. One is a measurement of where the
+  // town's children actually are and the other is a scenario of what it would cost if
+  // more of them left; they are the two halves a resident conflates, and side by side in
+  // the bar is where the difference is cheapest to see. Splitting them across the strip
+  // would leave the scenario findable and the measurement not, which is the wrong way
+  // round -- the measurement is the thing that happened.
   analyses: ['reports', 'sped', 'peers', 'minaid', 'staffing', 'stopped', 'unwind',
-             'leaving', 'families', 'sportsmoney', 'insurance', 'variance'],
+             'outflow', 'leaving', 'families', 'sportsmoney', 'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

@@ -67,7 +67,8 @@ export function SpecialEducationHub() {
       <h1 className="text-3xl font-bold tracking-tight max-w-3xl">Special education</h1>
       <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
         style={{ color: 'var(--text-secondary)' }}>
-        Four reports. They answer four different questions and they do not combine.
+        Four questions. Three of them have an answer in this archive, the fourth has
+        none &mdash; and they do not combine with each other.
       </p>
 
       <div className="grid gap-4 mt-8 md:grid-cols-2">
@@ -79,15 +80,19 @@ export function SpecialEducationHub() {
           in DESE&rsquo;s file that reproduces from its own arithmetic &mdash; and the two
           that do not.
         </Door>
-        <Door href="/where-students-go-instead" unit="children, with no disability flag"
-          name="Who leaves, and where they go"
-          figure={l ? String(l.last.elsewhere) : undefined}
-          caption={l ? `${fy(l.last.fy)} · ${l.last.elsewhere_pct.toFixed(1)}% of resident children` : undefined}>
-          Every district educating a Lunenburg resident, both directions of school choice,
-          back to {l ? `FY${l.fy_first}` : 'the start of the record'}.{' '}
-          <strong>Not a special education figure</strong> &mdash; the file
-          carries no disability status, and this report exists separately to stop it being
-          read as one.
+        <Door href="/where-students-go-instead" unit="children — with no disability flag"
+          name="Do children with an IEP leave at a different rate"
+          figure="no"
+          caption="DESE publishes no disability status with the enrolment it publishes">
+          The count of children who leave exists, is measured, and is a{' '}
+          <strong>general</strong> figure &mdash; {l ? l.last.elsewhere : 'every one'} of
+          Lunenburg&rsquo;s resident children are educated by another district, and DESE
+          does not say which of them has a plan. So the special education version of this
+          question has no answer here at all. The measurement itself is a report of its
+          own, outside these four, because merged into a special education narrative
+          &ldquo;{l ? l.last.elsewhere : ''} children left&rdquo; becomes &ldquo;
+          {l ? l.last.elsewhere : ''} special education children left&rdquo; in one
+          retelling.
         </Door>
         <Door href="/what-special-education-costs" unit="dollars"
           name="What it costs, and what comes back"

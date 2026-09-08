@@ -55,6 +55,9 @@ DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
 LEA = '01620000'
+# Montachusett Regional Vocational Technical. Lunenburg is a MEMBER of this district,
+# which is why its children are Resident/Member rows and why they are not "choosing out".
+MONTY = '08320000'
 STATE = '00000000'
 TOWN = 'Lunenburg'
 MINUTES = 'sources/meetings/text'
@@ -106,6 +109,19 @@ QUOTES = [
              'counts on this page are children, not dollars; this is the nearest the '
              'meeting record comes to a rate, and it is the receiving side rather than '
              'the sending side that the town is assessed for.'),
+    dict(key='disentangle', page='leaving', board='school-committee', date='2026-03-23',
+         kind='minutes', doc='7732',
+         quote="the idea of bringing back things like vocational programs to the "
+               "school, even if it means that we'd have to disentangle ourselves from "
+               "Monty Tech that is something that has real long-term value",
+         why='RULE 15a. The Monty Tech line is the one that MOVED on this page — the '
+             'largest route out and the only one that rose — and this is what the '
+             'School Committee was saying about it in the same year the count reached '
+             'its high. It is a member’s view of what the town should do, offered in a '
+             'discussion of school property and programmes. It is NOT evidence about '
+             'why any of those children enrolled there, and it does not bear on the '
+             'count at all: Lunenburg is assessed for its member share whatever anybody '
+             'at this meeting thinks of the arrangement.'),
     dict(key='hsonly', page='leaving', board='school-committee', date='2026-02-04',
          kind='minutes', doc='7634',
          quote='We are looking to only add school choice options to the high school',
@@ -153,7 +169,8 @@ QUOTES = [
 # finds nothing prints nothing, and nothing reads as "nobody said it".
 SEARCHED = {
     'students': ['special education', 'IEP', 'paraprofessional', 'students with disabilities'],
-    'leaving': ['school choice', 'charter', 'Monty Tech', 'enrollment decline'],
+    'leaving': ['school choice', 'charter', 'Monty Tech', 'Montachusett',
+                'enrollment decline'],
     'cost': ['circuit breaker', 'out of district', 'tuition', 'Medicaid', 'extraordinary relief'],
     'route': ['out of district placement', 'inclusion', 'substantially separate',
               'collaborative'],
@@ -587,6 +604,60 @@ def build_leaving(db, mf):
     if not net:
         fail('the inbound and outbound school choice series share no year')
 
+    # -------------------------------------------------------------- THE THREE ROUTES
+    #
+    # THIS IS THE FINDING, and it is invisible in the total. `elsewhere` moves 186 -> 177
+    # across thirteen years while the three routes underneath it move +38.6%, -15.9% and
+    # -50.0%. Anybody watching only the total would report that nothing is happening.
+    #
+    # THEY ARE THREE DIFFERENT LEGAL MECHANISMS AND THE PAGE NEVER SUMS THEM WITHOUT
+    # SAYING SO:
+    #
+    #   * MONTY TECH IS NOT CHOOSING OUT. Lunenburg is a MEMBER TOWN of the Montachusett
+    #     Regional Vocational Technical district, so those children are Resident/Member
+    #     rows -- of Monty Tech. The town is assessed for them whether or not it likes the
+    #     figure, and no Lunenburg decision admits or refuses any of them.
+    #   * SCHOOL CHOICE is a family applying to a district that has opened seats. The
+    #     sending town pays tuition off its cherry sheet.
+    #   * CHARTER is a family applying to a charter school -- a different statute and a
+    #     different flow of money.
+    #
+    # KEYED ON THE LEA CODE, NOT ON THE DISTRICT NAME. Rule 13: a name is a rendering and
+    # DESE has renamed districts inside this file's own span. 08320000 does not move.
+    monty_rows = [r for r in rows if r[3] == MONTY]
+    if not monty_rows:
+        fail('no rows for LEA %s (Montachusett Regional Vocational Technical). A join '
+             'that matches nothing looks exactly like a town with no vocational students'
+             % MONTY)
+    monty = collections.defaultdict(float)
+    for fy, _reason, _dist, lea, n in monty_rows:
+        monty[fy] += n or 0
+
+    routes = []
+    for s_ in series:
+        fy = s_['fy']
+        m = int(monty[fy])
+        ch = s_.get('School Choice Program', 0)
+        ct = s_.get('Charter School', 0)
+        other = s_['elsewhere'] - m - ch - ct
+        # A negative residual would mean a school-choice or charter row carried the
+        # Lunenburg LEA, which would make `elsewhere` and the reason columns count
+        # different things. Refuse rather than publish a decomposition that does not sum.
+        if other < 0:
+            fail('FY%d: the three routes (%d + %d + %d) exceed the %d children educated '
+                 'outside Lunenburg' % (fy, m, ch, ct, s_['elsewhere']))
+        routes.append({'fy': fy, 'monty_tech': m, 'school_choice': ch, 'charter': ct,
+                       'other': other, 'elsewhere': s_['elsewhere'],
+                       'in_lunenburg': s_['in_lunenburg']})
+
+    def pct(a, b):
+        return round(100.0 * (b - a) / a, 1) if a else None
+
+    rf, rl = routes[0], routes[-1]
+    route_change = {k: {'first': rf[k], 'last': rl[k], 'pct': pct(rf[k], rl[k])}
+                    for k in ('monty_tech', 'school_choice', 'charter', 'elsewhere',
+                              'in_lunenburg')}
+
     first, last = series[0], series[-1]
     peak = max(series, key=lambda s: s.get('School Choice Program', 0))
     return {
@@ -617,6 +688,27 @@ def build_leaving(db, mf):
         'elsewhere_latest': elsewhere_latest,
         'inbound': inbound,
         'net': net,
+        'routes': routes,
+        'route_change': route_change,
+        'three_routes': [
+            {'route': 'Montachusett Regional (Monty Tech)',
+             'key': 'monty_tech',
+             'what': 'NOT choosing out. Lunenburg is a MEMBER TOWN of the regional '
+                     'vocational district, so these children are reported as '
+                     'Resident/Member — of Monty Tech. The town is assessed for them, '
+                     'and no Lunenburg decision admits or refuses any of them.'},
+            {'route': 'School choice',
+             'key': 'school_choice',
+             'what': 'A family applies to another district that has opened seats. The '
+                     'sending town pays tuition, taken off its cherry sheet. The '
+                     'receiving district decides how many seats to open; the sending '
+                     'town decides nothing.'},
+            {'route': 'Charter schools',
+             'key': 'charter',
+             'what': 'A family applies to a charter school. A different statute and a '
+                     'different flow of money from school choice, assessed on the town '
+                     'separately.'},
+        ],
         'said': said_for('leaving'),
         'searched': searched('leaving'),
         'minutes': coverage(),
@@ -629,6 +721,14 @@ def build_leaving(db, mf):
             'What any of it costs. The archive holds the counts and not one document '
             'stating the tuition Lunenburg is assessed for them — already registered '
             'in `money-gaps.csv` on both the money-out and the people side.',
+            'WHICH GRADES they leave in — the question everybody actually asks. '
+            'dese_town_enrollment carries no grade column, and the grade counts that do '
+            'exist are headcounts INSIDE a district rather than an outflow from a town, '
+            'so they cannot be differenced to recover it. Whether families leave at a '
+            'transition year or steadily throughout is unknown, and those imply '
+            'completely different things about what the district could change. '
+            'Registered in `money-gaps.csv` as “Which grades Lunenburg children leave '
+            'the district in”.',
             'Why any family left. A count of departures is not a reason for them, and '
             'nothing in this file or in the meeting record surveys the households.',
             'That a child leaving is a child the district no longer spends on. Out-of-'

@@ -229,6 +229,53 @@ export function ChoiceBothWays({ rows }: { rows: NetPoint[] }) {
   )
 }
 
+export type RoutePoint = {
+  fy: number; monty_tech: number; school_choice: number; charter: number
+  other: number; elsewhere: number; in_lunenburg: number
+}
+
+const MONTY = 'var(--fund-school)'
+const CHOICE = 'var(--series-cost)'
+const CHARTER = 'var(--series-revenue)'
+
+/** THE THREE ROUTES, AS THREE LINES ON ONE FRAME — DELIBERATELY NOT STACKED.
+ *
+ *  A stacked area would draw a single filled band whose height is the sum, and the sum is
+ *  the one quantity this page refuses to present as meaningful: Monty Tech is a member-town
+ *  assessment, school choice is a family application, charter is a third statute. Stacking
+ *  them says "here is the outflow" and the eye reads the envelope, not the parts.
+ *
+ *  Three lines say the opposite thing, which is the finding: the envelope is almost flat
+ *  and the lines inside it cross. */
+export function ThreeRoutes({ rows }: { rows: RoutePoint[] }) {
+  return (
+    <div className="mt-5">
+      <div style={{ height: 260 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={rows} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="fy" tickFormatter={fy} tick={{ fontSize: 11 }}
+              stroke="var(--axis)" interval="preserveStartEnd" />
+            <YAxis tick={{ fontSize: 11 }} stroke="var(--axis)" width={40} />
+            <Tooltip cursor={{ stroke: 'var(--grid)' }} />
+            <Line type="monotone" dataKey="monty_tech" name="Monty Tech (member town)"
+              stroke={MONTY} strokeWidth={2} dot={false} isAnimationActive={false} />
+            <Line type="monotone" dataKey="school_choice" name="school choice"
+              stroke={CHOICE} strokeWidth={2} dot={false} isAnimationActive={false} />
+            <Line type="monotone" dataKey="charter" name="charter schools"
+              stroke={CHARTER} strokeWidth={2} dot={false} isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <Key items={[
+        { color: MONTY, label: 'Montachusett Regional — Lunenburg is a member town' },
+        { color: CHOICE, label: 'school choice — a family applies elsewhere' },
+        { color: CHARTER, label: 'charter schools — a different statute again' },
+      ]} />
+    </div>
+  )
+}
+
 /* ================================================================ 3. what it costs */
 
 export type Spend = {

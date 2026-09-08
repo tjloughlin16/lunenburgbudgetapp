@@ -101,6 +101,14 @@ ANSWERS = [
      '/data/sped-route.json', 'PLACEMENTS, on two instruments that do not always agree. '
      'The cohort bases are tens of children, so no percentage may be quoted without its '
      'count'),
+    # ALL FUNDS, and the note is the whole of it: an assistant that reads this as the
+    # town's school budget will be wrong by the grants, the revolving funds and the
+    # town-paid insurance attributed to the schools.
+    ('what every Massachusetts district spends for each pupil, with Lunenburg in it',
+     '/data/peer-spending.json', 'DESE’s ALL-FUNDS per-pupil figures, FY2009–FY2025. NOT '
+     'the town’s appropriation and not what a household pays. The district total is per '
+     'TOTAL FTE pupils and every category is per IN-DISTRICT FTE pupils — two '
+     'denominators under one heading'),
 ]
 
 # The QUERY stack, as opposed to ANSWERS above, which are files that hold a topic.

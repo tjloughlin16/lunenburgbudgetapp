@@ -560,6 +560,13 @@ GROUPS = [
              'A line-by-line bridge between them, and the three places the district\u2019s '
              'own documents disagree with each other. Includes a correction to an earlier '
              'version of this analysis.'),
+            ('analyses/per-pupil-spending.md',
+             'What Lunenburg spends for each pupil, and what that number hides', 3,
+             'DESE’s all-funds per-pupil figures: Lunenburg against every district in '
+             'Massachusetts and against five neighbours, FY2009–FY2025. The gap '
+             'decomposed into a numerator and a denominator, into eleven function '
+             'categories, and into pay against staffing — and the two Chapter 70 '
+             'standings that look like a contradiction and are not one.'),
             ('analyses/sped-and-the-curve.md', 'Special education and the curve', 3,
              'The FY27 level-service budget rises 3.98%. Strip out one line \u2014 '
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '

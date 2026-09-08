@@ -381,7 +381,7 @@ export default function App() {
       {tab === 'peers' && <PeerSpending />}
       {tab === 'sped' && <SpecialEducationHub />}
       {tab === 'spedcount' && <SpedStudents />}
-      {tab === 'spedleave' && <SpedLeaving />}
+      {tab === 'outflow' && <SpedLeaving />}
       {tab === 'spedcost' && <SpedCost />}
       {tab === 'spedroute' && <SpedRoute />}
       {tab === 'askus' && <AskUs />}

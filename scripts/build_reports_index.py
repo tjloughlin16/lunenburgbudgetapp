@@ -38,7 +38,8 @@ SITE = 'https://lunenburgbudgetproject.org'
 ORDER = [
     'fy26-closeout', 'fy26-closeout-town', 'budget-vs-actual', 'free-cash',
     'athletics', 'athletics-ledger', 'sped-and-the-curve', 'sped-and-funds',
-    'fy27-and-the-override', 'fy27-cut-reconciliation', 'peer-districts',
+    'fy27-and-the-override', 'fy27-cut-reconciliation', 'per-pupil-spending',
+    'peer-districts',
     'connecting-the-budget', 'show-your-work',
 ]
 
@@ -90,6 +91,10 @@ ABOUT = {
     'peer-districts':
         'What six neighbouring districts did with the same year, and what that does and '
         'does not tell you about Lunenburg.',
+    'per-pupil-spending':
+        'What DESE says Lunenburg spends for each pupil, against every district in '
+        'Massachusetts and against five neighbours — and the arithmetic that says how '
+        'much of the difference is money and how much is children.',
     'show-your-work':
         'Every calculation the site publishes, with its inputs, its formula, a worked '
         'example, and whether each figure is published, contractual, statutory, our '
