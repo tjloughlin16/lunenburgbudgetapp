@@ -48,6 +48,10 @@ CHECKS = [
     # notes/findings/DRILL-IN-PAGES.md without the sheet being rebuilt -- which is
     # the failure that matters, because the sheet is what gets printed and reviewed.
     ('build_decisions_doc.py', ['--check']),
+    # Every DESE source with its address, so next year's refresh does not require
+    # rediscovering where any of it came from. Fails if a registered file is absent:
+    # a registry pointing at nothing reads as coverage, which is worse than none.
+    ('build_dese_registry.py', ['--check']),
     # Every money parser against every printed shape of a negative. A dropped sign
     # does not zero a figure, it reflects it -- the paraprofessional line came out
     # $315,772 wrong, twice the line, and that line feeds a published projection.
@@ -158,6 +162,18 @@ CHECKS = [
     # required contribution, which is the measurement the page's central correction rests
     # on -- that one is meant to be rebuilt rather than reworded.
     ('build_if_students_leave.py', ['--check']),
+    # What a HOUSEHOLD pays, priced for one to four children. It catches four kinds of
+    # drift that nothing else here would, and every one of them is about a unit rather
+    # than a figure: a family cap acquiring or losing a stated period in its own source;
+    # the FY2027 rate ladder ceasing to be the FY2026 sibling discount compounding, which
+    # is what lets an unpublished fourth-child rate be called INFERRED rather than
+    # unknown; five children at one sport each reaching the cap in a single season, which
+    # would end the page's lead inference and require it rewritten rather than
+    # re-rendered; and the LHS Athletics FAQ losing the sentence "Only one sport per
+    # season is allowed", which is the whole of what makes a season fee also a per-sport
+    # fee. It also refuses if `rate_register` stops carrying unpublished fees, because the
+    # open band above every total on that page rests on there being some.
+    ('build_what_families_pay.py', ['--check']),
     # The BUDGET-to-BUDGET state aid series, FY2005-FY2027 -- the like-for-like
     # counterpart to the receipts series above, and the evidence behind decision D10 in
     # notes/findings/STATE-AID-RATE.md. It catches four kinds of drift nothing else here
@@ -224,6 +240,19 @@ CHECKS = [
     ('build_data_model_grids.py', ['--check']),
     ('split_large_text.py', ['--check']),
     ('build_question_bank.py', ['--check']),
+    # DESE's three district-finance datasets: the registry of how to get them again, and
+    # every stored sha256. The registry is the only place the portal page, the API
+    # endpoint, the Socrata dataset id and the publisher's own filename are written down,
+    # so a refresh that has to rediscover them is a refresh that will pick the wrong file.
+    ('fetch_dese_finance.py', ['--check']),
+    # The function-code extract. It refuses to write unless the hierarchy it asserts still
+    # holds in all 5,479 district-years -- the ten in-district categories summing to their
+    # own detail and then to IIII, TUIT detail plus ODTR summing to OODD, and IIII plus
+    # OODD to TTPP -- and unless its two cross-checks against the RADAR workbook already
+    # in the archive match SOMETHING. A rollup summed with its own detail produces a
+    # plausible number four times too large, which is the exact shape this project has
+    # shipped before.
+    ('extract_dese_finance.py', ['--check']),
     ('build_db.py', ['--check']),
     ('check_archive_layout.py', []),
     ('check_moved_docs.py', []),
