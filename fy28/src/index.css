@@ -12,6 +12,20 @@
   --axis: #c3c2b7;
   --series-cost: #2a78d6;
   --series-revenue: #eb6834;
+  /* THE FLOOR, on /why-we-only-get-minimum-aid. ONE new hue, for one thing: the flat
+     per-pupil minimum the Legislature sets over the top of the Chapter 70 formula when
+     the formula itself produces less. The formula's own aid term keeps --series-cost,
+     because on this site that hue has always meant the state's half of a school dollar
+     and the floor is state money too — what changes is WHO DECIDED IT, and that is the
+     only distinction these two marks carry.
+     A third hue was needed rather than --series-revenue because the same page draws the
+     town's contribution adjustment as a DIVERGING pair, and --series-cost/--series-revenue
+     are that pair. A hue that means "the Legislature's floor" in one chart must not mean
+     "money added to the town's requirement" in the next.
+     Validated with the dataviz validator against this surface, all-pairs, alongside both
+     series hues: lightness band, chroma floor, CVD separation (worst ΔE 14.2, deuteranopia)
+     normal-vision separation and 3:1 contrast all pass, in both modes. */
+  --ch70-floor: #a3357f;
   /* Lunenburg blue — the Blue Knights' royal, kept apart from --series-cost so that
      branding and data never borrow each other's meaning. A reader who learns that this
      blue means "cost" on a chart should not meet it again as decoration. */
@@ -102,6 +116,9 @@
     --axis: #383835;
     --series-cost: #3987e5;
     --series-revenue: #d95926;
+    /* Re-stepped for the dark surface rather than flipped. All five checks pass
+       against both dark series hues, all-pairs (worst ΔE 8.2, protanopia). */
+    --ch70-floor: #c26fb0;
     /* Same reason as --brand below: #c02626 against a near-black surface fails contrast,
        so the dark theme takes a lighter red rather than the same one. */
     --status-bad: #ff6b6b;
@@ -144,6 +161,7 @@
   --axis: #383835;
   --series-cost: #3987e5;
   --series-revenue: #d95926;
+  --ch70-floor: #c26fb0;
   --status-bad: #ff6b6b;
     --brand: #7aabf2;
     --trace-answerable: #4fae63;

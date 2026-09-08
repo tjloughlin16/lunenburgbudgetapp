@@ -22,6 +22,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'leaving'
   | 'families'
   | 'unwind'
+  | 'minaid'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -151,6 +152,14 @@ export const SLUG: Record<Tab, string> = {
   // `special-revenue`: all three have meant /money-outside-the-budget since long before
   // this page existed, and a shared link must keep landing where it landed.
   unwind: 'when-grants-end',
+  // Chapter 70's FORMULA, as against state aid as a whole. The slug is the sentence a
+  // resident says out loud at a meeting -- "why do we only get minimum aid?" -- rather
+  // than `chapter-70`, which is already an alias for /state-aid and has been since long
+  // before this page existed, and which names an accounting programme instead of the
+  // question about it. NOT `minimum-aid` alone: that reads as a description of a benefit
+  // somebody receives rather than as the complaint the town has actually been making to
+  // the Legislature. NOT `the-formula`, which promises every formula in the budget.
+  minaid: 'why-we-only-get-minimum-aid',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   dataroom: 'data-room',
 }
@@ -261,6 +270,13 @@ const ALIASES: Record<string, Tab> = {
   'when-grants-end': 'unwind', 'grants-ending': 'unwind', 'grant-unwinding': 'unwind',
   'esser': 'unwind', 'esser-cliff': 'unwind', 'when-the-grants-ended': 'unwind',
   'grant-funded-positions': 'unwind', 'fund-split': 'unwind',
+  // NOT 'chapter-70', 'ch70' or 'school-aid' -- all three have meant /state-aid since
+  // long before this page existed and are cited off this site. A link that has been
+  // shared once must keep landing where it landed, even when a newer page is arguably a
+  // better answer to the word. These are the forms somebody types looking for the FLOOR.
+  'why-we-only-get-minimum-aid': 'minaid', 'minimum-aid': 'minaid',
+  'min-aid': 'minaid', 'ch70-formula': 'minaid', 'chapter-70-formula': 'minaid',
+  'foundation-budget': 'minaid', 'the-formula': 'minaid',
   'if-students-leave': 'leaving', 'school-choice': 'leaving', 'choicing-out': 'leaving',
   'students-leaving': 'leaving', 'school-choice-scenario': 'leaving',
   'what-if-students-leave': 'leaving', 'transfers-out': 'leaving',
@@ -311,6 +327,7 @@ export const LABEL: Record<Tab, string> = {
   leaving: 'If students leave — what school choice would cost',
   families: 'What a family actually pays',
   unwind: 'When a grant ends — who picks up the bill',
+  minaid: 'Chapter 70 — the formula, and why it pays the floor',
   askus: 'Ask us a question',
   dataroom: 'The data room',
 }
@@ -336,6 +353,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   leaving: 'themoney',
   families: 'themoney',
   unwind: 'themoney',
+  minaid: 'themoney',
   agents: 'sources',
   freecash: 'money',
 }
@@ -421,7 +439,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   // thirteen-tab strip in the first place.
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
-  variance: 'analyses', unwind: 'analyses',
+  variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -440,8 +458,8 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // below fails loudly if they stop being.
   crisis: ['walk', 'answers', 'deeper'],
   money: ['themoney', 'stateaid', 'funds', 'gaps', 'askus'],
-  analyses: ['reports', 'staffing', 'stopped', 'unwind', 'leaving', 'families',
-             'sportsmoney', 'insurance', 'variance'],
+  analyses: ['reports', 'minaid', 'staffing', 'stopped', 'unwind', 'leaving',
+             'families', 'sportsmoney', 'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }

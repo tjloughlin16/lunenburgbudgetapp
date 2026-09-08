@@ -236,6 +236,18 @@ CHECKS = [
     # read from the archive manifest rather than typed, so a citation cannot lose its
     # hash silently.
     ('build_grant_unwinding.py', ['--check']),
+    # Chapter 70's aid components, term by term, on /why-we-only-get-minimum-aid. This
+    # entry catches more than staleness, because the generator asserts the identities the
+    # page's prose rests on rather than just recomputing them: that the year's whole aid
+    # increase still equals the minimum aid increment to the cent, that DESE's own
+    # foundation-aid rule still reproduces the printed increment, that the target local
+    # contribution still equals the combined effort yield in every year, that the town's
+    # requirement still splits between its districts by foundation budget share, and that
+    # Lunenburg still lands on a per-pupil rate several other districts share. Any one of
+    # those ceasing to hold makes a sentence on the page wrong while every figure in it is
+    # still a faithful copy of the workbook. It also re-reads the eight meeting quotes and
+    # refuses to write if the five money_gaps rows it CITES have been renamed.
+    ('build_minimum_aid.py', ['--check']),
     # How far the money can be followed — the six rungs on /what-we-cannot-answer. It
     # quotes each rung's reason out of `money_gaps` and `money_edges` BY KEY and exits if
     # a key is not there, so this entry catches two things: the published file going

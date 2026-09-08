@@ -88,6 +88,9 @@ const ABOUT: Partial<Record<Tab, string>> = {
          + 'the money came back the following year.',
   unwind: 'Every school dollar split by the fund that paid it — and what happened in each '
         + 'part of the budget when the grant money stopped.',
+  minaid: 'Chapter 70’s formula, term by term, for twenty years — and why four of the last '
+        + 'five increases are a flat per-pupil floor the Legislature sets rather than '
+        + 'anything the formula produced.',
 }
 
 const DOOR = 'the money'

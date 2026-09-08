@@ -32,7 +32,7 @@
  {
   "name": "sources.json",
   "note": "The document archive: every source, its group, its size, and the URL it is served from.",
-  "bytes": 310341
+  "bytes": 345946
  },
  {
   "name": "budget-lines.csv",
@@ -62,7 +62,7 @@
  {
   "name": "archive-manifest.csv",
   "note": "Every file in the archive \u2014 3,876 of them \u2014 with its size, its sha256, and the publisher\u2019s own URL where one is recorded. The documents themselves are no longer in the repository: they are in a public, locked R2 bucket and are served under the /docs/<path> URLs they have always had, so this is the index that makes a download checkable and the list a fresh clone works from. The bucket holds no copy of this file, deliberately \u2014 an object there cannot be updated once written, so a manifest inside it would be permanently out of date about its own contents.",
-  "bytes": 680915
+  "bytes": 4200207
  },
  {
   "name": "free-cash-proof.csv",
@@ -91,7 +91,7 @@
  },
  {
   "name": "minutes-index.csv",
-  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, and has_text. 12,065 rows, of which 12,014 have extracted text a search can reach. Check has_text before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
-  "bytes": 2070471
+  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, has_text and searchable. 12,065 rows, of which 12,014 have an extracted text file and only 8,899 hold any text a search can match \u2014 the rest are image scans. Check SEARCHABLE, not has_text, before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
+  "bytes": 2094612
  }
 ]

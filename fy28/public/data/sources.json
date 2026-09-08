@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-07",
+ "generated": "2026-09-08",
  "origins": [
   {
    "id": "school",
@@ -40,11 +40,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 38 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 39 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 271 of these 286 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 294 of these 309 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -802,6 +802,18 @@
      "textUrl": "/docs/peer-districts/north-middlesex-finance-subcommittee.txt"
     },
     {
+     "path": "peer-districts/montytech-class-of-2030-lottery.pdf",
+     "title": "Montachusett Regional admissions lottery, class of 2030",
+     "stars": 2,
+     "what": "Not a peer — the district Lunenburg PAYS, and the larger of the two outflows of resident students. Filed here because of how it reached us: mirrored from another district’s own website. The summary page is trustworthy and the per-applicant pages are not: the 18 town figures sum to the printed total of 365, but the applicant pages are OCR of an image PDF and produced “L.unenburg”, “Lunchburg” and truncated statuses, so accepted-versus-waitlisted must not be counted from them. The document holds no personal data: a town, an anonymous applicant number and a status.",
+     "upstream": "https://montytech.net/wp-content/uploads/2026/03/Class-of-2030-Lottery-Results.pdf",
+     "kind": "PDF",
+     "bytes": 1481396,
+     "url": "/docs/peer-districts/montytech-class-of-2030-lottery.pdf",
+     "count": 18,
+     "unit": "pages"
+    },
+    {
      "path": "peer-districts/ashburnham-westminster-fy27-detail.pdf",
      "title": "Ashburnham-Westminster line detail",
      "stars": 2,
@@ -1537,6 +1549,18 @@
      "textUrl": "/docs/analyses/what-you-can-ask.md"
     },
     {
+     "path": "data/PROVENANCE-youtube-classification.md",
+     "title": "What the video classification is, and what it is not",
+     "stars": 3,
+     "what": "Written by us. The three outcomes, the line between a body convening and a body presenting, the minutes that establish which three boards a tri-board meeting is, and how the MM.DD.YY order was established from the titles rather than assumed.",
+     "kind": "Notes",
+     "bytes": 6577,
+     "url": "/docs/data/PROVENANCE-youtube-classification.md",
+     "count": 114,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-youtube-classification.md"
+    },
+    {
      "path": "data/PROVENANCE-report-tables.md",
      "title": "What the twelve generic extracts are, and what may not be done with them",
      "stars": 3,
@@ -1597,6 +1621,18 @@
      "textUrl": "/docs/data/report-appropriations.csv"
     },
     {
+     "path": "data/youtube-video-classification.csv",
+     "title": "One row per video, with what we think it is",
+     "stars": 2,
+     "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
+     "kind": "Data",
+     "bytes": 1037688,
+     "url": "/docs/data/youtube-video-classification.csv",
+     "count": 4671,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-video-classification.csv"
+    },
+    {
      "path": "data/annual-report-catalogue.csv",
      "title": "Every table in every annual report, catalogued",
      "stars": 2,
@@ -1607,6 +1643,30 @@
      "count": 866,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-catalogue.csv"
+    },
+    {
+     "path": "data/youtube-videos.csv",
+     "title": "Every video on the town’s PEG access channel",
+     "stars": 2,
+     "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
+     "kind": "Data",
+     "bytes": 586897,
+     "url": "/docs/data/youtube-videos.csv",
+     "count": 4671,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-videos.csv"
+    },
+    {
+     "path": "data/youtube-video-boards.csv",
+     "title": "One row per (video, board) pair",
+     "stars": 2,
+     "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
+     "kind": "Data",
+     "bytes": 432127,
+     "url": "/docs/data/youtube-video-boards.csv",
+     "count": 2873,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-video-boards.csv"
     },
     {
      "path": "data/report-elections.csv",
@@ -1645,6 +1705,18 @@
      "textUrl": "/docs/data/report-anomalies.csv"
     },
     {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 57770,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 72,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
      "path": "data/role-classification.csv",
      "title": "What kind of job each printed roster title is",
      "stars": 2,
@@ -1657,16 +1729,16 @@
      "textUrl": "/docs/data/role-classification.csv"
     },
     {
-     "path": "data/money-gaps.csv",
-     "title": "What the town’s records cannot answer",
+     "path": "data/table-semantics.csv",
+     "title": "What each table in the database is",
      "stars": 2,
-     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 38753,
-     "url": "/docs/data/money-gaps.csv",
-     "count": 54,
+     "bytes": 51655,
+     "url": "/docs/data/table-semantics.csv",
+     "count": 98,
      "unit": "rows",
-     "textUrl": "/docs/data/money-gaps.csv"
+     "textUrl": "/docs/data/table-semantics.csv"
     },
     {
      "path": "data/money-classification.csv",
@@ -1693,16 +1765,16 @@
      "textUrl": "/docs/data/balance-sheet-printed-totals.csv"
     },
     {
-     "path": "data/table-semantics.csv",
-     "title": "What each table in the database is",
+     "path": "data/column-glossary.csv",
+     "title": "What each column name means, across every table",
      "stars": 2,
-     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
+     "what": "Written by us. Keyed on the column NAME rather than on table-plus-name, because 883 column instances share only 285 distinct names and the dangerous ones mean the same thing everywhere: `v1` is an ordinal on every table that has it, `status` splits rows into checked, check failed and no check on every extract. Each entry carries a `caution` saying what goes wrong if the column is used without knowing that, and every one of those was written after getting it wrong at least once.",
      "kind": "Data",
-     "bytes": 28774,
-     "url": "/docs/data/table-semantics.csv",
-     "count": 81,
+     "bytes": 24981,
+     "url": "/docs/data/column-glossary.csv",
+     "count": 179,
      "unit": "rows",
-     "textUrl": "/docs/data/table-semantics.csv"
+     "textUrl": "/docs/data/column-glossary.csv"
     },
     {
      "path": "data/staff-roster-counts.csv",
@@ -1727,18 +1799,6 @@
      "count": 330,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-peg-access.md"
-    },
-    {
-     "path": "data/column-glossary.csv",
-     "title": "What each column name means, across every table",
-     "stars": 2,
-     "what": "Written by us. Keyed on the column NAME rather than on table-plus-name, because 883 column instances share only 285 distinct names and the dangerous ones mean the same thing everywhere: `v1` is an ordinal on every table that has it, `status` splits rows into checked, check failed and no check on every extract. Each entry carries a `caution` saying what goes wrong if the column is used without knowing that, and every one of those was written after getting it wrong at least once.",
-     "kind": "Data",
-     "bytes": 15232,
-     "url": "/docs/data/column-glossary.csv",
-     "count": 139,
-     "unit": "rows",
-     "textUrl": "/docs/data/column-glossary.csv"
     },
     {
      "path": "data/PROVENANCE-enterprise-balance-sheet.md",
@@ -1945,6 +2005,18 @@
      "textUrl": "/docs/data/report-dept-activity.csv"
     },
     {
+     "path": "data/youtube-title-classification.csv",
+     "title": "What each video title says the video IS",
+     "stars": 1,
+     "what": "1,594 rows, one per distinct title stem — the title with its date removed, which is OUR grouping device and never a quotable title. Each is `meeting`, `not_a_meeting` (a Mass, a basketball game, a book club) or `undetermined`, with the boards for a meeting and the reason where one is worth recording. A LANGUAGE MODEL read these; see data/PROVENANCE-youtube-classification.md.",
+     "kind": "Data",
+     "bytes": 116475,
+     "url": "/docs/data/youtube-title-classification.csv",
+     "count": 1594,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-title-classification.csv"
+    },
+    {
      "path": "data/report-enrollment-mcas.csv",
      "title": "Enrolment and MCAS results",
      "stars": 1,
@@ -2027,6 +2099,28 @@
      "count": 534,
      "unit": "rows",
      "textUrl": "/docs/data/staff-position-map.csv"
+    },
+    {
+     "path": "data/youtube-boards.csv",
+     "title": "The bodies we named, and why we say two names are one board",
+     "stars": 1,
+     "what": "40 rows. `meetings_folder` joins to the AgendaCenter folders and is EMPTY for the seven bodies outside them — Town Meeting, the Water District, the Green Community Task Force, the TCP Building Design Committee and three state or federal agencies. `basis` carries the evidence for every rename asserted: Selectmen titles stop 2020-10-13 and Select Board titles start 2020-10-20.",
+     "kind": "Data",
+     "bytes": 8989,
+     "url": "/docs/data/youtube-boards.csv",
+     "count": 40,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-boards.csv"
+    },
+    {
+     "path": "data/youtube-classification-overrides.csv",
+     "title": "Human corrections to the video classification",
+     "stars": 1,
+     "what": "Keyed on video id, READ by the classifier and never written by it. Without it every improvement to the classification would silently discard every correction. Currently empty, and the generator reports how many it applied on every run.",
+     "kind": "Data",
+     "bytes": 73,
+     "url": "/docs/data/youtube-classification-overrides.csv",
+     "textUrl": "/docs/data/youtube-classification-overrides.csv"
     }
    ]
   },
@@ -2067,9 +2161,57 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 19230720,
+     "bytes": 29347840,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
+    },
+    {
+     "path": "data/dese-teacher-grade-subject.csv",
+     "title": "Teacher FTE by grade band AND subject AND school, SY2008–SY2026",
+     "stars": 3,
+     "what": "The one file that breaks a limit recorded here as structural: the town’s staff rosters give grade detail with no FTE and DESE elsewhere gives FTE with no grade. This gives both. Extracted from a 133 MB workbook of 1.77 million rows. Where it and dese-teacher-subject.csv disagree about the same organisation’s total FTE, both are kept and neither is treated as correcting the other — agrees_with_teacher_subject says which. Rebuild with scripts/extract_dese_staffing.py.",
+     "kind": "Data",
+     "bytes": 1495268,
+     "url": "/docs/data/dese-teacher-grade-subject.csv",
+     "count": 8467,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-teacher-grade-subject.csv"
+    },
+    {
+     "path": "data/dese-ch70-contribution.csv",
+     "title": "The municipal half of the Chapter 70 formula, FY2007 on",
+     "stars": 3,
+     "what": "Equalized valuation, income, the effort each implies, and how the required local contribution was arrived at — the half of the formula the school budget never shows. A DIFFERENT GRAIN: a row is a town, not a district, so for a regional district several towns feed one district and the two must not be joined one to one. Rebuild with scripts/extract_dese_state_aid.py.",
+     "kind": "Data",
+     "bytes": 1413517,
+     "url": "/docs/data/dese-ch70-contribution.csv",
+     "count": 7040,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-ch70-contribution.csv"
+    },
+    {
+     "path": "data/dese-function-expenditure.csv",
+     "title": "DESE spending by function code, general fund against grants, FY2009–FY2025",
+     "stars": 3,
+     "what": "The general fund and grants/revolving money in SEPARATE columns, by DESE function code, for Lunenburg and its six peers. Rule 11 says a budget line is net and that nobody publishes the split; this is the split, at the level of a function code. Lunenburg SY2025 shows $478,097 of grant and revolving money against function 2330, Paraprofessionals, beside $1,338,477 of general fund. Read `level` before summing anything: the source puts rollups beside detail and nothing in its column names says which is which, so adding every Lunenburg SY2025 row gives $117,996,913 against an in-district total of $27,903,187. A function code is not a budget line and not a post, so this bounds the funding-source question rather than settling it. Rebuild with scripts/extract_dese_finance.py.",
+     "kind": "Data",
+     "bytes": 1369065,
+     "url": "/docs/data/dese-function-expenditure.csv",
+     "count": 6930,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-function-expenditure.csv"
+    },
+    {
+     "path": "data/dese-sped-indicator.csv",
+     "title": "Special education indicators and staffing ratios, SY2017–SY2026",
+     "stars": 3,
+     "what": "Context counts, special education FTE per 100 students with disabilities, and the outcome, assessment and postsecondary measures, each with students with disabilities set beside students without. The grade groups OVERLAP, so no sum across them means anything, and on the staffing rows the count column holds the denominator while the ratio is in the percentage column. Rebuild with scripts/extract_dese_students.py.",
+     "kind": "Data",
+     "bytes": 1117621,
+     "url": "/docs/data/dese-sped-indicator.csv",
+     "count": 4860,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-sped-indicator.csv"
     },
     {
      "path": "data/line-history.csv",
@@ -2084,16 +2226,88 @@
      "textUrl": "/docs/data/line-history.csv"
     },
     {
+     "path": "data/dese-teacher-subject.csv",
+     "title": "Teacher FTE by subject, with licensure and class ratios, SY2008–SY2026",
+     "stars": 3,
+     "what": "Teacher FTE per subject with the share licensed, the share teaching in field, the share experienced and the students-per-teacher ratio. The column DESE calls TCHR_CNT is an FTE, not a headcount. Two of the subject values are GROUPS of the others, so the members do not partition and summing them double counts — filter subject_level. Rebuild with scripts/extract_dese_staffing.py.",
+     "kind": "Data",
+     "bytes": 858852,
+     "url": "/docs/data/dese-teacher-subject.csv",
+     "count": 5527,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-teacher-subject.csv"
+    },
+    {
+     "path": "data/meeting-register.csv",
+     "title": "Every meeting, and what survives of it",
+     "stars": 3,
+     "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
+     "kind": "Data",
+     "bytes": 605550,
+     "url": "/docs/data/meeting-register.csv",
+     "count": 7014,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-register.csv"
+    },
+    {
+     "path": "data/dese-sped-program.csv",
+     "title": "What the students with disabilities are, SY2020–SY2026",
+     "stars": 3,
+     "what": "Disability type, race, gender, grade span, in district against out of district, placement, and the special education FTE ratios — with a PUBLISHED count of students with disabilities, which was previously reachable here only by multiplying a percentage by enrolment. Three of the ten categories do not behave like the rest: Placement is in-district only and runs short of its own total, Disability Type is a collapsed rendering of Disability Type All, and the FTE category is a ratio despite the file calling every row a percentage. Rebuild with scripts/extract_dese_students.py.",
+     "kind": "Data",
+     "bytes": 414302,
+     "url": "/docs/data/dese-sped-program.csv",
+     "count": 2403,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-sped-program.csv"
+    },
+    {
      "path": "data/dese-radar.csv",
      "title": "DESE’s own figures, every district, FY2009–FY2025",
      "stars": 3,
-     "what": "The state’s RADAR district comparison: enrollment, demographics, staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, for all 421 Massachusetts districts. The first view of Lunenburg school spending here that is neither the town’s general fund nor written by the district, so it bounds from outside the money the budget document cannot see. Three cautions travel with it: DESE counts costs the school budget does not carry, so its total must never be subtracted from the town’s appropriation to produce “hidden money”; it says all funds and gives one number, so it cannot say which dollar came from a grant; and its paraprofessional figure is FTE from the state’s staffing collection, not a headcount. Each district-year is checked against DESE’s own printed in-district total — 16 fail, all charter schools, and Lunenburg ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.",
+     "what": "The state’s RADAR district comparison: enrollment, demographics, staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, for Lunenburg and the six peer districts — SEVEN, not all 421, because the workbook was scoped down so the published database would fit under Cloudflare’s 25MB asset limit. The first view of Lunenburg school spending here that is neither the town’s general fund nor written by the district, so it bounds from outside the money the budget document cannot see. Three cautions travel with it: DESE counts costs the school budget does not carry, so its total must never be subtracted from the town’s appropriation to produce “hidden money”; it says all funds and gives one number, so it cannot say which dollar came from a grant; and its paraprofessional figure is FTE from the state’s staffing collection, not a headcount. Each district-year is checked against DESE’s own printed in-district total — 16 fail, all charter schools, and Lunenburg ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.",
      "kind": "Data",
      "bytes": 405460,
      "url": "/docs/data/dese-radar.csv",
      "count": 2982,
      "unit": "rows",
      "textUrl": "/docs/data/dese-radar.csv"
+    },
+    {
+     "path": "data/dese-function-statewide.csv",
+     "title": "Where Lunenburg sits among every Massachusetts district, per function, FY2009–FY2025",
+     "stars": 3,
+     "what": "Each function code collapsed to a distribution across all districts in DESE’s file — min, quartiles, median, max, Lunenburg’s own per-pupil figure and its rank — plus the statewide dollar totals and the share of each function paid by grants and revolving money. Districts differ in size, grade span and whether they are regional, so per pupil is the comparable quantity and a raw dollar comparison between two districts is not one. The denominator INCLUDES charter and virtual districts, which are in DESE’s file and are not municipal school districts, and it is printed on every row for that reason. Rebuild with scripts/extract_dese_finance.py.",
+     "kind": "Data",
+     "bytes": 307157,
+     "url": "/docs/data/dese-function-statewide.csv",
+     "count": 1438,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-function-statewide.csv"
+    },
+    {
+     "path": "data/dese-town-enrollment.csv",
+     "title": "Where every town’s children actually go to school, SY2014–SY2026",
+     "stars": 3,
+     "what": "Both directions of the choice question in one table: where a town’s resident children go, and who arrives at a district and from where, by reason — school choice, charter, tuitioned, METCO, foster care. These are the headcounts behind the choice dollars on the cherry sheet. DESE publishes it as two datasets, Sending and Receiving; compared row by row they hold the IDENTICAL rows and differ only in column order, so it is loaded once and a net position drawn from it rests on one measurement rather than two agreeing ones. Rebuild with scripts/extract_dese_students.py.",
+     "kind": "Data",
+     "bytes": 247019,
+     "url": "/docs/data/dese-town-enrollment.csv",
+     "count": 1488,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-town-enrollment.csv"
+    },
+    {
+     "path": "data/dese-enrollment.csv",
+     "title": "Enrolment by grade and selected population, SY1992–SY2026",
+     "stars": 3,
+     "what": "The denominator for nearly every rate on this site: enrolment by grade, and the counts of English learners, low income, economically disadvantaged, high needs and students with disabilities, per state, district and school. Its published count of students with disabilities agrees exactly with dese-sped-program.csv and does NOT agree with the denominator the staffing ratios use in the same year — registered in money-gaps.csv. Rebuild with scripts/extract_dese_students.py.",
+     "kind": "Data",
+     "bytes": 232515,
+     "url": "/docs/data/dese-enrollment.csv",
+     "count": 1194,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-enrollment.csv"
     },
     {
      "path": "data/munis-ledger.csv",
@@ -2120,6 +2334,30 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
+     "path": "data/dese-educator-workforce.csv",
+     "title": "Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023",
+     "stars": 3,
+     "what": "The only DESE table here that counts administrators and paraprofessionals as people rather than as FTE or as dollars — the discrimination this project could not previously make. Read race_level before summing: the All Educators row sits beside the seven reported races, and adding the whole job class gives exactly twice the headcount. This project’s own notes recorded 118 paraprofessionals and 38 administrators for SY2023 that way; the file holds 59 and 19. Three years on a base of tens is thin, and a reclassification would look identical to a change in staffing. Rebuild with scripts/extract_dese_staffing.py.",
+     "kind": "Data",
+     "bytes": 115400,
+     "url": "/docs/data/dese-educator-workforce.csv",
+     "count": 840,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-educator-workforce.csv"
+    },
+    {
+     "path": "data/dese-teacher-program-area.csv",
+     "title": "Teacher FTE by program area, SY2008–SY2026",
+     "stars": 3,
+     "what": "General education, special education, career/technical and English learner FTE per state, district and school. This is where Lunenburg’s special education teacher FTE falls from 18.5 to 2.0 while its total holds flat — the signature of recoding, and NOT established as staff leaving; it is registered in money-gaps.csv rather than explained. Filter org_level before summing, and note a district row is not the sum of its school rows. Rebuild with scripts/extract_dese_staffing.py.",
+     "kind": "Data",
+     "bytes": 109798,
+     "url": "/docs/data/dese-teacher-program-area.csv",
+     "count": 659,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-teacher-program-area.csv"
+    },
+    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -2142,6 +2380,18 @@
      "count": 322,
      "unit": "rows",
      "textUrl": "/docs/data/document-basis.csv"
+    },
+    {
+     "path": "data/dese-sped-movement.csv",
+     "title": "Children entering and leaving special education services, SY2019–SY2025",
+     "stars": 3,
+     "what": "The caseload dynamic behind the spending line, which a headcount alone cannot show. Two traps are marked in the data itself: repeats_prior_year flags rows identical to the same district’s previous year — Lunenburg’s SY2024 and SY2025 are such a pair and must never be summed as two years of movement — and grade_rows_sum records that the grade rows are not the K-12 row broken down. Rebuild with scripts/extract_dese_students.py.",
+     "kind": "Data",
+     "bytes": 74302,
+     "url": "/docs/data/dese-sped-movement.csv",
+     "count": 684,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-sped-movement.csv"
     },
     {
      "path": "data/athletics-by-sport.csv",
@@ -2168,6 +2418,54 @@
      "textUrl": "/docs/data/lps-budget-lines.csv"
     },
     {
+     "path": "data/minutes-coverage.csv",
+     "title": "Minutes posted against agendas posted, by board and year",
+     "stars": 3,
+     "what": "A grep of the meeting archive that finds nothing prints nothing, and nothing reads as “nobody said it”. This is the denominator that stops that: per board and year, how many meetings the town posted an agenda for and how many it posted minutes for. The denominator is AGENDAS, not meetings held — a meeting with neither is invisible to us and this table cannot see it either. School Committee minutes are 162 of 402 listed meetings, with none at all in 2021 or 2022. Rebuild with scripts/build_minutes_coverage.py.",
+     "kind": "Data",
+     "bytes": 51362,
+     "url": "/docs/data/minutes-coverage.csv",
+     "count": 1017,
+     "unit": "rows",
+     "textUrl": "/docs/data/minutes-coverage.csv"
+    },
+    {
+     "path": "data/dese-ch70-formula.csv",
+     "title": "The Chapter 70 formula, term by term, FY1993–FY2026",
+     "stars": 3,
+     "what": "Thirty-four years of the state aid formula for every Massachusetts district — foundation enrolment, foundation budget, required local contribution, Chapter 70 aid, required net school spending and what was actually spent. It answers a question nobody in town can currently put a number on: whether Lunenburg spends above or below the minimum the state requires. FY2026 aid ties exactly to the town’s own MUNIS revenue ledger, two sources neither derived from the other. Two cautions travel with it: the source sheet has TWO columns called rqdnss holding different numbers, split here into required_nss and required_nss_published, and its actualNSS column holds BUDGETED figures for the last two years — read nss_stage. Publish the ratio to the required minimum as a measurement, never as a verdict: a floor is not a standard of adequacy. Rebuild with scripts/extract_dese_state_aid.py.",
+     "kind": "Data",
+     "bytes": 48469,
+     "url": "/docs/data/dese-ch70-formula.csv",
+     "count": 259,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-ch70-formula.csv"
+    },
+    {
+     "path": "data/minutes-searchable.csv",
+     "title": "How much of the meeting archive a search can actually read",
+     "stars": 3,
+     "what": "Per board and year: how many documents the town listed, how many we hold, and how many contain text a search can match — which is a quarter fewer than hold a text file at all. The unsearchable ones are split by CAUSE rather than lumped: image scans, pages whose text was converted to vector outlines (which OCR cannot read either until they are rasterised), blank files, our own extractor failing on a real text layer, and documents the town lists that we do not hold. The threshold is not a guess — it is calibrated against whether the PDF carries a font resource at all, and the two agree at zero characters and nowhere else. It exists because rule 15a tells everyone here to search the archive before concluding a thing was never discussed, and an unreadable document and a subject nobody raised produce the identical empty result. Rebuild with scripts/build_minutes_searchable.py.",
+     "kind": "Data",
+     "bytes": 41823,
+     "url": "/docs/data/minutes-searchable.csv",
+     "count": 514,
+     "unit": "rows",
+     "textUrl": "/docs/data/minutes-searchable.csv"
+    },
+    {
+     "path": "data/dese-sped-trajectory.csv",
+     "title": "Where a placement starts and where it leads, SY2018–SY2026",
+     "stars": 3,
+     "what": "The route into out-of-district placement, which is the largest single line in the special education budget. THE BASES ARE TINY — a Lunenburg cohort is tens of children, so a percentage here must never travel without its count. unaccounted_cnt is the cohort less the four destinations, and what it is has not been established. Rebuild with scripts/extract_dese_students.py.",
+     "kind": "Data",
+     "bytes": 40384,
+     "url": "/docs/data/dese-sped-trajectory.csv",
+     "count": 252,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-sped-trajectory.csv"
+    },
+    {
      "path": "data/fund-1301-cash-journal.csv",
      "title": "The athletics revolving fund’s cashbook, three years",
      "stars": 3,
@@ -2190,6 +2488,42 @@
      "count": 79,
      "unit": "rows",
      "textUrl": "/docs/data/grants-history.csv"
+    },
+    {
+     "path": "data/dese-ch70-statewide.csv",
+     "title": "Where Lunenburg sits among every Massachusetts district on state aid",
+     "stars": 3,
+     "what": "Four ratios per fiscal year across all districts — net school spending as a share of what the state requires, Chapter 70 aid per foundation pupil, the required local contribution as a share of the foundation budget, and circuit breaker claim per eligible student — as min, quartiles, median, max, Lunenburg’s own figure and its rank. The row-level Chapter 70 tables are seven districts because the published database has to fit under Cloudflare’s 25MB asset limit; this is what a reader would otherwise lose. Publish the share-of-required as a measurement and never as a verdict: a floor is not a standard of adequacy. Rebuild with scripts/extract_dese_state_aid.py.",
+     "kind": "Data",
+     "bytes": 25510,
+     "url": "/docs/data/dese-ch70-statewide.csv",
+     "count": 122,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-ch70-statewide.csv"
+    },
+    {
+     "path": "data/dese-ch70-aid-factor.csv",
+     "title": "How the Chapter 70 aid figure is built, FY2007 on",
+     "stars": 3,
+     "what": "Every increment the formula adds between the foundation budget and the aid paid, and every reduction it applies. This is what lets anybody model how the aid RESPONDS to a change in enrolment rather than assuming it moves linearly — which is what the students-leave scenario needs. Rebuild with scripts/extract_dese_state_aid.py.",
+     "kind": "Data",
+     "bytes": 24998,
+     "url": "/docs/data/dese-ch70-aid-factor.csv",
+     "count": 155,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-ch70-aid-factor.csv"
+    },
+    {
+     "path": "data/dese-circuit-breaker.csv",
+     "title": "High-cost special education reimbursement, FY2006–FY2026",
+     "stars": 3,
+     "what": "A fund rule 11 names as unmapped: money the district receives that never appears in the general fund appropriation the town votes, split into instruction and tuition against transportation with prior-year adjustments separated. It also carries a count of CHILDREN rather than dollars. Keyed on FISCAL year where every other DESE file here is school year. Rebuild with scripts/extract_dese_state_aid.py.",
+     "kind": "Data",
+     "bytes": 24316,
+     "url": "/docs/data/dese-circuit-breaker.csv",
+     "count": 147,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-circuit-breaker.csv"
     },
     {
      "path": "data/line-history-coverage.csv",
@@ -2238,6 +2572,18 @@
      "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/athletic-fee-schedule.csv"
+    },
+    {
+     "path": "data/dese-source-registry.csv",
+     "title": "Every DESE dataset this project reads, and how to refresh it",
+     "stars": 3,
+     "what": "The state publishes these on its own schedule, so each row carries the portal page a person can open, the API endpoint a program can call, the publisher, the sha256 of the copy we hold, what the dataset can answer, and when it is worth fetching again. Rows marked WANTED are datasets we do NOT hold and have decided we need — the registry records the gap rather than only the holdings, so next year’s refresh starts from a list rather than from memory. Rebuild with scripts/build_dese_registry.py.",
+     "kind": "Data",
+     "bytes": 12583,
+     "url": "/docs/data/dese-source-registry.csv",
+     "count": 29,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-source-registry.csv"
     },
     {
      "path": "data/account-names.csv",
@@ -5592,8 +5938,38 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 11 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 34 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
+    {
+     "path": "state-dese/dese-ch70-district-profile.xlsx",
+     "title": "Chapter 70 District Profile",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 3848346,
+     "url": "/docs/state-dese/dese-ch70-district-profile.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/qt58-634r"
+    },
+    {
+     "path": "state-dese/dese-ch70-foundation-nss.xlsx",
+     "title": "Chapter 70 Foundation Budget and Net School Spending",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 336495,
+     "url": "/docs/state-dese/dese-ch70-foundation-nss.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/5izv-jyrd"
+    },
+    {
+     "path": "state-dese/dese-ch70-key-factors.xlsx",
+     "title": "Chapter 70 Key Factors",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 4597493,
+     "url": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+     "upstream": "https://www.doe.mass.edu/finance/chapter70/"
+    },
     {
      "path": "state-dese/radar-district-comparison.xlsx",
      "title": "DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025",
@@ -5605,6 +5981,26 @@
      "upstream": "https://www.doe.mass.edu/research/radar/district-comparison.xlsx"
     },
     {
+     "path": "state-dese/district-expenditures-by-function.xlsx",
+     "title": "DESE district expenditures by function code, SY2009-SY2025 — general fund and grants/revolving as separate columns, every Massachusetts district",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 26156131,
+     "url": "/docs/state-dese/district-expenditures-by-function.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/resource/cnfs-edqq.csv"
+    },
+    {
+     "path": "state-dese/district-expenditures-by-spending-category.xlsx",
+     "title": "DESE district expenditures by spending category, SY2009-SY2025 — the RADAR measures for every district; supersedes the seven-district workbook",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 5661905,
+     "url": "/docs/state-dese/district-expenditures-by-spending-category.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/resource/er3w-dyti.csv"
+    },
+    {
      "path": "state-dese/lunenburg-finance-profile.html",
      "title": "DESE school and district profiles — Lunenburg per pupil expenditures, all funds",
      "stars": 1,
@@ -5613,6 +6009,16 @@
      "bytes": 24962,
      "url": "/docs/state-dese/lunenburg-finance-profile.html",
      "upstream": "https://profiles.doe.mass.edu/profiles/finance.aspx?orgcode=01620000&orgtypecode=5&dropDownOrgCode=2"
+    },
+    {
+     "path": "state-dese/school-expenditures-by-spending-category.xlsx",
+     "title": "DESE school expenditures by spending category, SY2009-SY2025 — per-school rather than per-district",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 28945330,
+     "url": "/docs/state-dese/school-expenditures-by-spending-category.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/resource/i5up-aez6.csv"
     },
     {
      "path": "state-dese/selected-populations-2019.html",
@@ -5695,6 +6101,66 @@
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
     },
     {
+     "path": "state-dese/epims-datahandbook.docx",
+     "title": "EPIMS Data Handbook",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Document",
+     "bytes": 166851,
+     "url": "/docs/state-dese/epims-datahandbook.docx",
+     "upstream": "https://www.doe.mass.edu/"
+    },
+    {
+     "path": "state-dese/dese-teacher-data.xlsx",
+     "title": "Elementary and Secondary Teacher Data",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 25969884,
+     "url": "/docs/state-dese/dese-teacher-data.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/4684-cw3t"
+    },
+    {
+     "path": "state-dese/dese-teachers-by-grade-subject.xlsx",
+     "title": "Elementary and Secondary Teachers by Grade and Subject",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 136220984,
+     "url": "/docs/state-dese/dese-teachers-by-grade-subject.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/77fu-a6h8"
+    },
+    {
+     "path": "state-dese/dese-teachers-by-program-area.xlsx",
+     "title": "Elementary and Secondary Teachers by Program Area",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 3327582,
+     "url": "/docs/state-dese/dese-teachers-by-program-area.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/vd2f-ib9q"
+    },
+    {
+     "path": "state-dese/dese-enrollment-by-grade.xlsx",
+     "title": "Enrollment: Grade, Race/Ethnicity, Gender, and Selected Populations",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 13368300,
+     "url": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/t8td-gens"
+    },
+    {
+     "path": "state-dese/dese-job-classification-codes.docx",
+     "title": "Job Classification Codes (evaluation)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Document",
+     "bytes": 89562,
+     "url": "/docs/state-dese/dese-job-classification-codes.docx",
+     "upstream": "https://www.doe.mass.edu/"
+    },
+    {
      "path": "state-dese/selected-populations.csv",
      "title": "Lunenburg selected populations, all years (CSV)",
      "stars": 1,
@@ -5703,6 +6169,116 @@
      "bytes": 775,
      "url": "/docs/state-dese/selected-populations.csv",
      "upstream": "https://profiles.doe.mass.edu/statereport/selectedpopulations.aspx"
+    },
+    {
+     "path": "state-dese/dese-enrollment-receiving.xlsx",
+     "title": "Reasons for Student Enrollment by Town (Receiving)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 2269473,
+     "url": "/docs/state-dese/dese-enrollment-receiving.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/8xyg-59b2"
+    },
+    {
+     "path": "state-dese/sims-datahandbook-current.docx",
+     "title": "SIMS Data Handbook (current)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Document",
+     "bytes": 208588,
+     "url": "/docs/state-dese/sims-datahandbook-current.docx",
+     "upstream": "https://www.doe.mass.edu/"
+    },
+    {
+     "path": "state-dese/sims-datahandbook_2021.docx",
+     "title": "SIMS Data Handbook 2021",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Document",
+     "bytes": 431477,
+     "url": "/docs/state-dese/sims-datahandbook_2021.docx",
+     "upstream": "https://www.doe.mass.edu/"
+    },
+    {
+     "path": "state-dese/sims-datahandbook_2022.docx",
+     "title": "SIMS Data Handbook 2022",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Document",
+     "bytes": 423618,
+     "url": "/docs/state-dese/sims-datahandbook_2022.docx",
+     "upstream": "https://www.doe.mass.edu/"
+    },
+    {
+     "path": "state-dese/dese-circuit-breaker.xlsx",
+     "title": "Special Education Circuit Breaker Reimbursements",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 459801,
+     "url": "/docs/state-dese/dese-circuit-breaker.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/ab34-d3ma"
+    },
+    {
+     "path": "state-dese/dese-sped-indicators.xlsx",
+     "title": "Special Education Indicators",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 12072013,
+     "url": "/docs/state-dese/dese-sped-indicators.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/yamx-769q"
+    },
+    {
+     "path": "state-dese/dese-sped-placement-trajectory.xlsx",
+     "title": "Special Education Placement Trajectory",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 780632,
+     "url": "/docs/state-dese/dese-sped-placement-trajectory.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/92x3-2qj9"
+    },
+    {
+     "path": "state-dese/dese-sped-program-characteristics.xlsx",
+     "title": "Special Education Program Characteristics and Student Demographics",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 5447420,
+     "url": "/docs/state-dese/dese-sped-program-characteristics.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/n62c-bx65"
+    },
+    {
+     "path": "state-dese/dese-sped-movement.xlsx",
+     "title": "Students Moving In and Out of Special Education Services",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 1140538,
+     "url": "/docs/state-dese/dese-sped-movement.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/8aww-sugs"
+    },
+    {
+     "path": "state-dese/dese-educators-retention.xlsx",
+     "title": "Total Educators, Retention, and New Hires",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 1633461,
+     "url": "/docs/state-dese/dese-educators-retention.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/fz9c-2g33"
+    },
+    {
+     "path": "state-dese/dese-residents-sending.xlsx",
+     "title": "Where Residents Go to School (Sending)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 2529872,
+     "url": "/docs/state-dese/dese-residents-sending.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/vxt3-k35x"
     }
    ]
   }
@@ -5711,182 +6287,226 @@
   "boards": [
    {
     "name": "Select Board",
-    "documents": 141
-   },
-   {
-    "name": "School Committee",
-    "documents": 119
-   },
-   {
-    "name": "Conservation Commission",
-    "documents": 95
-   },
-   {
-    "name": "Finance Committee",
-    "documents": 84
-   },
-   {
-    "name": "Sewer Commission",
-    "documents": 80
+    "documents": 1395
    },
    {
     "name": "Planning Board",
-    "documents": 79
+    "documents": 1351
    },
    {
-    "name": "Board Of Assessors",
-    "documents": 63
+    "name": "Finance Committee",
+    "documents": 780
+   },
+   {
+    "name": "Sewer Commission",
+    "documents": 743
+   },
+   {
+    "name": "Conservation Commission",
+    "documents": 710
    },
    {
     "name": "Board Of Health",
-    "documents": 48
+    "documents": 495
    },
    {
-    "name": "Lunenburg Municipal Building Design Committee",
-    "documents": 47
-   },
-   {
-    "name": "Cemetery Commission",
-    "documents": 46
-   },
-   {
-    "name": "Planning Board Public Hearing",
-    "documents": 42
-   },
-   {
-    "name": "Public Access Cable Committee (PACC)",
-    "documents": 41
-   },
-   {
-    "name": "Council On Aging",
-    "documents": 39
+    "name": "Board Of Assessors",
+    "documents": 489
    },
    {
     "name": "Library Board Of Trustees",
-    "documents": 36
+    "documents": 437
    },
    {
-    "name": "Parks Commission",
-    "documents": 36
+    "name": "Council On Aging",
+    "documents": 407
    },
    {
-    "name": "School Advisory Councils & Committees",
-    "documents": 34
+    "name": "Public Access Cable Committee (PACC)",
+    "documents": 367
    },
    {
     "name": "Zoning Board Of Appeals",
-    "documents": 34
+    "documents": 355
    },
    {
-    "name": "Agricultural Commission",
-    "documents": 33
+    "name": "School Advisory Councils & Committees",
+    "documents": 332
    },
    {
     "name": "Historical Commission",
-    "documents": 31
+    "documents": 329
    },
    {
-    "name": "Trust Fund Commission",
-    "documents": 31
+    "name": "Parks Commission",
+    "documents": 328
    },
    {
-    "name": "Architectural Preservation District Commission",
-    "documents": 30
+    "name": "Personnel Committee",
+    "documents": 311
    },
    {
-    "name": "Stormwater Task Force",
-    "documents": 28
+    "name": "School Committee",
+    "documents": 282
    },
    {
-    "name": "Open Space Committee",
-    "documents": 24
+    "name": "Capital Planning Committee",
+    "documents": 267
+   },
+   {
+    "name": "Cemetery Commission",
+    "documents": 259
    },
    {
     "name": "Lunenburg Housing Authority",
-    "documents": 19
-   },
-   {
-    "name": "Economic Development Committee",
-    "documents": 18
-   },
-   {
-    "name": "Master Plan Steering Committee",
-    "documents": 18
+    "documents": 255
    },
    {
     "name": "Green Communities Committee",
-    "documents": 17
+    "documents": 216
+   },
+   {
+    "name": "Architectural Preservation District Commission",
+    "documents": 214
+   },
+   {
+    "name": "Stormwater Task Force",
+    "documents": 191
+   },
+   {
+    "name": "Agricultural Commission",
+    "documents": 185
+   },
+   {
+    "name": "Open Space Committee",
+    "documents": 182
+   },
+   {
+    "name": "Lunenburg Municipal Building Design Committee",
+    "documents": 161
+   },
+   {
+    "name": "School Building Committee Meeting",
+    "documents": 160
+   },
+   {
+    "name": "Cultural Council",
+    "documents": 84
+   },
+   {
+    "name": "Economic Development Committee",
+    "documents": 69
+   },
+   {
+    "name": "Building Reuse Committee",
+    "documents": 64
+   },
+   {
+    "name": "By Law Committee",
+    "documents": 64
+   },
+   {
+    "name": "Senior Citizens Tax Work Off Committee",
+    "documents": 63
+   },
+   {
+    "name": "Planning Board Public Hearing",
+    "documents": 62
+   },
+   {
+    "name": "Trust Fund Commission",
+    "documents": 52
+   },
+   {
+    "name": "Finance  Committee Appointing  Committee",
+    "documents": 47
+   },
+   {
+    "name": "Charter Review Committee",
+    "documents": 46
+   },
+   {
+    "name": "Cable Advisory Committee",
+    "documents": 39
+   },
+   {
+    "name": "Master Plan Steering Committee",
+    "documents": 37
+   },
+   {
+    "name": "Board Of Registrars",
+    "documents": 35
+   },
+   {
+    "name": "Nashoba Valley Reginal Dispatch Committee",
+    "documents": 31
    },
    {
     "name": "Lunenburg 300Th Anniversary Committee",
-    "documents": 16
+    "documents": 30
+   },
+   {
+    "name": "Devens Regional Oversight Committee",
+    "documents": 26
+   },
+   {
+    "name": "Town Manager Screening Committee",
+    "documents": 26
+   },
+   {
+    "name": "Select Board Public Hearing",
+    "documents": 20
+   },
+   {
+    "name": "Land Acquisition Committee",
+    "documents": 17
+   },
+   {
+    "name": "Budget Task Force",
+    "documents": 15
    },
    {
     "name": "Conservation Commission Public Hearing",
     "documents": 14
    },
    {
-    "name": "Select Board Public Hearing",
-    "documents": 14
-   },
-   {
-    "name": "By Law Committee",
-    "documents": 12
-   },
-   {
-    "name": "Capital Planning Committee",
-    "documents": 12
-   },
-   {
-    "name": "Cultural Council",
-    "documents": 9
-   },
-   {
-    "name": "Board Of Registrars",
+    "name": "Finance Committee Public Hearing",
     "documents": 8
    },
    {
-    "name": "Finance  Committee Appointing  Committee",
-    "documents": 7
-   },
-   {
-    "name": "Finance Committee Public Hearing",
-    "documents": 5
-   },
-   {
     "name": "North Central Climate Change Coalition",
-    "documents": 4
-   },
-   {
-    "name": "Cable Advisory Committee",
-    "documents": 3
-   },
-   {
-    "name": "Personnel Committee",
-    "documents": 3
+    "documents": 6
    },
    {
     "name": "Athletic Advisory Council",
-    "documents": 2
+    "documents": 4
+   },
+   {
+    "name": "Lunenburg Hazard Mitigation Plan Team Committee",
+    "documents": 4
+   },
+   {
+    "name": "Boa Neighborhood Ans Site Index Subcommittee",
+    "documents": 1
    }
   ],
-  "boardCount": 40,
-  "listed": 1422,
-  "fetched": 1422,
-  "agendas": 948,
-  "minutes": 474,
-  "from": "2025-01-06",
+  "boardCount": 51,
+  "listed": 12065,
+  "fetched": 12015,
+  "agendas": 7405,
+  "minutes": 4660,
+  "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 1423,
+  "textFiles": 12016,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 476,
+  "documents": 528,
   "groups": 20,
-  "bytes": 1004056442,
-  "loadBearing": 77
+  "bytes": 1302610998,
+  "loadBearing": 99
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

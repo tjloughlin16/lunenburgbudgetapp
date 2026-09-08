@@ -30,6 +30,7 @@ import { SchoolStaffing } from './pages/SchoolStaffing'
 import { HealthInsurance } from './pages/HealthInsurance'
 import { StoppedFunding } from './pages/StoppedFunding'
 import { GrantUnwinding } from './pages/GrantUnwinding'
+import { MinimumAid } from './pages/MinimumAid'
 import { StateAid } from './pages/StateAid'
 import { IfStudentsLeave } from './pages/IfStudentsLeave'
 import { WhatFamiliesPay } from './pages/WhatFamiliesPay'
@@ -370,6 +371,7 @@ export default function App() {
       {tab === 'families' && <WhatFamiliesPay />}
       {tab === 'stopped' && <StoppedFunding />}
       {tab === 'unwind' && <GrantUnwinding />}
+      {tab === 'minaid' && <MinimumAid />}
       {tab === 'askus' && <AskUs />}
       {tab === 'sportsmoney' && <AthleticsMoney />}
       {tab === 'funds' && <SpecialRevenue />}
