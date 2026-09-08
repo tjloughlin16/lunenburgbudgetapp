@@ -27,12 +27,12 @@
  {
   "name": "model.json",
   "note": "Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.",
-  "bytes": 327180
+  "bytes": 338487
  },
  {
   "name": "sources.json",
   "note": "The document archive: every source, its group, its size, and the URL it is served from.",
-  "bytes": 310340
+  "bytes": 310341
  },
  {
   "name": "budget-lines.csv",
@@ -72,17 +72,17 @@
  {
   "name": "rate-register.csv",
   "note": "Every rate this project knows about \u2014 athletic and bus fees, collective bargaining raises, facilities \u2014 each carrying the fiscal year it applies to, the document that set it and the date. 62 rates. It exists because FY26 athletic fees were modelled on FY25\u2019s schedule for months: a right number from the wrong year, taken from a fee page that states its rates and never states which year they cover. It deliberately includes the rates the model does NOT use and the ones we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank.",
-  "bytes": 14590
+  "bytes": 14580
  },
  {
   "name": "athletic-fee-schedule.csv",
   "note": "Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them.",
-  "bytes": 7018
+  "bytes": 13308
  },
  {
   "name": "model/index.json",
   "note": "Every figure the site computes, one section per file. An index; each section is its own file, sized.",
-  "bytes": 5099
+  "bytes": 5100
  },
  {
   "name": "sources/index.json",
@@ -91,7 +91,7 @@
  },
  {
   "name": "minutes-index.csv",
-  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, and has_text. 1,422 rows, of which 1,422 have extracted text a search can reach. Check has_text before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
-  "bytes": 247652
+  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, and has_text. 1,734 rows, of which 0 have extracted text a search can reach. Check has_text before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
+  "bytes": 298621
  }
 ]

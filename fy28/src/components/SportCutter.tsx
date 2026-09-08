@@ -5,6 +5,11 @@ import {
   overheadId, overheadSaving, perAthlete, restoreId, setTeamDepth, sportId, sportSaving,
   teamRank, teamsCut, teamsInOrder, type CutState,
 } from '../model/cuts'
+import { COLUMN_LABEL, COLUMNS as COST_COLUMNS } from './SportCosts'
+
+/** The three published per-sport cost columns. The weights below come from one of them;
+ *  the board says so rather than letting a reader assume it is the only one. */
+const COSTS = MODEL.athletics.costSources
 
 /** The athletics dial.
  *
@@ -424,10 +429,15 @@ export function TeamBoard({ state, setState }: {
         so each step displaces as few students as the money allows. No ranking of teams is
         neutral &mdash; tick them individually if you disagree with ours.{' '}
         Per-team figures spread the FY27 coaching-and-equipment pool across teams using the
-        district's published per-sport costs as weights. Those published figures are from an
-        FY24 athletics document and total {usd(MODEL.athletics.perSportTotal)} — more than
-        the whole FY27 athletics budget — so they are used for relative size, not as
-        absolute savings. Source: {ATHLETICS_SPLIT.source}
+        district&rsquo;s published per-sport costs as <strong>weights</strong> — relative
+        size, never absolute savings. <strong>Three district documents state three
+        different per-sport figures</strong> for FY{String(COSTS.fy).slice(2)}, totalling{' '}
+        {COST_COLUMNS.map((c, i) => (
+          <span key={c}>{i > 0 && (i === COST_COLUMNS.length - 1 ? ' and ' : ', ')}
+            {usd(COSTS.totals[c])}</span>
+        ))} — a spread of {usd(COSTS.totalSpread)}. The weights here come from{' '}
+        {COLUMN_LABEL.costsBySport}, and the panel above the board shows what the other two
+        say. Source: {ATHLETICS_SPLIT.source}
       </p>
     </div>
   )

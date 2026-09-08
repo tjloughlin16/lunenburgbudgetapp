@@ -956,7 +956,7 @@
     "metric": "What each sport costs, and how many play it",
     "value": "25 sports",
     "kind": "published",
-    "basis": "Cost and participation per sport, FY24",
+    "basis": "Cost and participation per sport, FY24 \u2014 CONTESTED. Three documents the district produced state three different costs for the same team in the same year: this one, the Athletic Program Funding Overview deck of 1 May 2024, and the Total Expenses column of the district\u2019s own by-sport workbook. Nothing published reconciles them; the app shows all three and takes no view on which is right. Computed in model/athletics_sources.py.",
     "doc": "district-budget/docs/athletic-program-costs-by-sport.pdf",
     "source": "Athletic program costs by sport",
     "n": 13
@@ -4473,7 +4473,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!E3",
     "status": "verified",
     "inModel": "reference"
@@ -4488,7 +4488,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!Q3",
     "status": "verified",
     "inModel": "reference"
@@ -4503,7 +4503,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!H3",
     "status": "verified",
     "inModel": "reference"
@@ -4518,7 +4518,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!K3",
     "status": "verified",
     "inModel": "reference"
@@ -4548,7 +4548,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!T3",
     "status": "verified",
     "inModel": "reference"
@@ -4608,7 +4608,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!F3",
     "status": "verified",
     "inModel": "reference"
@@ -4623,7 +4623,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!R3",
     "status": "verified",
     "inModel": "reference"
@@ -4638,7 +4638,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!I3",
     "status": "verified",
     "inModel": "reference"
@@ -4653,7 +4653,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!L3",
     "status": "verified",
     "inModel": "reference"
@@ -4683,7 +4683,7 @@
     "setOn": "",
     "expires": "",
     "source": "District athletics workbook, by sport (Town filename: Copy of Athletics 24.25 (1).xlsx)",
-    "sourceFile": "munis-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
+    "sourceFile": "town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx",
     "sourceRef": "Spring!U3",
     "status": "verified",
     "inModel": "reference"
@@ -9344,7 +9344,544 @@
   "participations": 691,
   "chargeableParticipations": 582,
   "msParticipations": 109,
-  "perSportTotal": 275947.63
+  "perSportTotal": 275947.63,
+  "costSources": {
+   "fy": 2024,
+   "sports": [
+    {
+     "name": "Football",
+     "level": "HS",
+     "students": 32,
+     "columns": {
+      "costsBySport": 19805.28,
+      "deck": 25774.45,
+      "workbook": 30114.24
+     },
+     "cells": [
+      "BM9"
+     ],
+     "low": 19805.28,
+     "high": 30114.24,
+     "spread": 10308.96,
+     "spreadPct": 52.1
+    },
+    {
+     "name": "Cheer",
+     "level": "HS",
+     "students": 14,
+     "columns": {
+      "costsBySport": 5909.0,
+      "deck": 4960.5,
+      "workbook": 5906.0
+     },
+     "cells": [
+      "BM5"
+     ],
+     "low": 4960.5,
+     "high": 5909.0,
+     "spread": 948.5,
+     "spreadPct": 19.1
+    },
+    {
+     "name": "Field Hockey",
+     "level": "HS",
+     "students": 30,
+     "columns": {
+      "costsBySport": 10458.5,
+      "deck": 9865.99,
+      "workbook": 12004.28
+     },
+     "cells": [
+      "BM8"
+     ],
+     "low": 9865.99,
+     "high": 12004.28,
+     "spread": 2138.29,
+     "spreadPct": 21.7
+    },
+    {
+     "name": "Cross Country",
+     "level": "HS",
+     "students": 22,
+     "columns": {
+      "costsBySport": 10585.9,
+      "deck": 6818.5,
+      "workbook": 11000.9
+     },
+     "cells": [
+      "BM6",
+      "BM7"
+     ],
+     "low": 6818.5,
+     "high": 11000.9,
+     "spread": 4182.4,
+     "spreadPct": 61.3
+    },
+    {
+     "name": "Golf",
+     "level": "HS",
+     "students": 13,
+     "columns": {
+      "costsBySport": 7859.4,
+      "deck": 5930.97,
+      "workbook": 7936.97
+     },
+     "cells": [
+      "BM10"
+     ],
+     "low": 5930.97,
+     "high": 7936.97,
+     "spread": 2006.0,
+     "spreadPct": 33.8
+    },
+    {
+     "name": "Boys' Soccer",
+     "level": "HS",
+     "students": 35,
+     "columns": {
+      "costsBySport": 18950.33,
+      "deck": 9336.5,
+      "workbook": 14637.8
+     },
+     "cells": [
+      "BM11"
+     ],
+     "low": 9336.5,
+     "high": 18950.33,
+     "spread": 9613.83,
+     "spreadPct": 103.0
+    },
+    {
+     "name": "Girls' Soccer",
+     "level": "HS",
+     "students": 34,
+     "columns": {
+      "costsBySport": 15250.33,
+      "deck": 14983.5,
+      "workbook": 19659.81
+     },
+     "cells": [
+      "BM12"
+     ],
+     "low": 14983.5,
+     "high": 19659.81,
+     "spread": 4676.31,
+     "spreadPct": 31.2
+    },
+    {
+     "name": "Unified Basketball",
+     "level": "HS",
+     "students": 14,
+     "columns": {
+      "costsBySport": 3032.82,
+      "deck": 1907.82,
+      "workbook": 3122.82
+     },
+     "cells": [
+      "BM14"
+     ],
+     "low": 1907.82,
+     "high": 3122.82,
+     "spread": 1215.0,
+     "spreadPct": 63.7
+    },
+    {
+     "name": "Softball",
+     "level": "HS",
+     "students": 39,
+     "columns": {
+      "costsBySport": 17431.0,
+      "deck": 4895.0,
+      "workbook": 22684.5
+     },
+     "cells": [
+      "BN5"
+     ],
+     "low": 4895.0,
+     "high": 22684.5,
+     "spread": 17789.5,
+     "spreadPct": 363.4
+    },
+    {
+     "name": "Girls' Lacrosse",
+     "level": "HS",
+     "students": 31,
+     "columns": {
+      "costsBySport": 12350.16,
+      "deck": 1492.29,
+      "workbook": 14061.16
+     },
+     "cells": [
+      "BN7"
+     ],
+     "low": 1492.29,
+     "high": 14061.16,
+     "spread": 12568.87,
+     "spreadPct": 842.3
+    },
+    {
+     "name": "Boys' Lacrosse",
+     "level": "HS",
+     "students": 35,
+     "columns": {
+      "costsBySport": 10496.18,
+      "deck": 612.79,
+      "workbook": 14189.18
+     },
+     "cells": [
+      "BN9"
+     ],
+     "low": 612.79,
+     "high": 14189.18,
+     "spread": 13576.39,
+     "spreadPct": 2215.5
+    },
+    {
+     "name": "Baseball",
+     "level": "HS",
+     "students": 15,
+     "columns": {
+      "costsBySport": 17777.36,
+      "deck": 2573.5,
+      "workbook": 19295.36
+     },
+     "cells": [
+      "BN6"
+     ],
+     "low": 2573.5,
+     "high": 19295.36,
+     "spread": 16721.86,
+     "spreadPct": 649.8
+    },
+    {
+     "name": "Outdoor Track",
+     "level": "HS",
+     "students": 86,
+     "columns": {
+      "costsBySport": 15221.5,
+      "deck": 1146.0,
+      "workbook": 22840.0
+     },
+     "cells": [
+      "BN11",
+      "BN12"
+     ],
+     "low": 1146.0,
+     "high": 22840.0,
+     "spread": 21694.0,
+     "spreadPct": 1893.0
+    },
+    {
+     "name": "Indoor Track",
+     "level": "HS",
+     "students": 70,
+     "columns": {
+      "costsBySport": 32456.0,
+      "deck": 17532.5,
+      "workbook": 29600.5
+     },
+     "cells": [
+      "BN5",
+      "BN6"
+     ],
+     "low": 17532.5,
+     "high": 32456.0,
+     "spread": 14923.5,
+     "spreadPct": 85.1
+    },
+    {
+     "name": "Unified Track",
+     "level": "HS",
+     "students": 12,
+     "columns": {
+      "costsBySport": 1593.0,
+      "deck": 353.0,
+      "workbook": 2583.0
+     },
+     "cells": [
+      "BN14"
+     ],
+     "low": 353.0,
+     "high": 2583.0,
+     "spread": 2230.0,
+     "spreadPct": 631.7
+    },
+    {
+     "name": "Girls' Basketball",
+     "level": "HS",
+     "students": 23,
+     "columns": {
+      "costsBySport": 9881.0,
+      "deck": 14959.0,
+      "workbook": 21296.0
+     },
+     "cells": [
+      "BN8"
+     ],
+     "low": 9881.0,
+     "high": 21296.0,
+     "spread": 11415.0,
+     "spreadPct": 115.5
+    },
+    {
+     "name": "Boys' Basketball",
+     "level": "HS",
+     "students": 21,
+     "columns": {
+      "costsBySport": 13518.0,
+      "deck": 20717.96,
+      "workbook": 28027.46
+     },
+     "cells": [
+      "BN7"
+     ],
+     "low": 13518.0,
+     "high": 28027.46,
+     "spread": 14509.46,
+     "spreadPct": 107.3
+    },
+    {
+     "name": "Boys' Ice Hockey",
+     "level": "HS",
+     "students": 40,
+     "columns": {
+      "costsBySport": 11994.27,
+      "deck": 15069.7,
+      "workbook": 23700.7
+     },
+     "cells": [
+      "BN9"
+     ],
+     "low": 11994.27,
+     "high": 23700.7,
+     "spread": 11706.43,
+     "spreadPct": 97.6
+    },
+    {
+     "name": "Girls' Ice Hockey",
+     "level": "HS",
+     "students": 2,
+     "columns": {
+      "costsBySport": 1100.0,
+      "deck": 1100.0,
+      "workbook": 2117.48
+     },
+     "cells": [
+      "BN11"
+     ],
+     "low": 1100.0,
+     "high": 2117.48,
+     "spread": 1017.48,
+     "spreadPct": 92.5
+    },
+    {
+     "name": "Alpine Skiing",
+     "level": "HS",
+     "students": 14,
+     "columns": {
+      "costsBySport": 9825.0,
+      "deck": 9825.0,
+      "workbook": 10960.0
+     },
+     "cells": [
+      "BN12"
+     ],
+     "low": 9825.0,
+     "high": 10960.0,
+     "spread": 1135.0,
+     "spreadPct": 11.6
+    },
+    {
+     "name": "MS Cross Country",
+     "level": "MS",
+     "students": 30,
+     "columns": {
+      "costsBySport": 6134.85,
+      "deck": 2428.65,
+      "workbook": 6805.2
+     },
+     "cells": [
+      "BM22"
+     ],
+     "low": 2428.65,
+     "high": 6805.2,
+     "spread": 4376.55,
+     "spreadPct": 180.2
+    },
+    {
+     "name": "MS Field Hockey",
+     "level": "MS",
+     "students": 25,
+     "columns": {
+      "costsBySport": 7180.25,
+      "deck": 3407.5,
+      "workbook": 7229.53
+     },
+     "cells": [
+      "BM23"
+     ],
+     "low": 3407.5,
+     "high": 7229.53,
+     "spread": 3822.03,
+     "spreadPct": 112.2
+    },
+    {
+     "name": "MS Track",
+     "level": "MS",
+     "students": 25,
+     "columns": {
+      "costsBySport": 4000.0,
+      "deck": 4000.0,
+      "workbook": 4316.0
+     },
+     "cells": [
+      "BN21"
+     ],
+     "low": 4000.0,
+     "high": 4316.0,
+     "spread": 316.0,
+     "spreadPct": 7.9
+    },
+    {
+     "name": "MS Girls' Basketball",
+     "level": "MS",
+     "students": 14,
+     "columns": {
+      "costsBySport": 6764.25,
+      "deck": 2365.75,
+      "workbook": 7268.25
+     },
+     "cells": [
+      "BN20"
+     ],
+     "low": 2365.75,
+     "high": 7268.25,
+     "spread": 4902.5,
+     "spreadPct": 207.2
+    },
+    {
+     "name": "MS Boys' Basketball",
+     "level": "MS",
+     "students": 15,
+     "columns": {
+      "costsBySport": 6373.25,
+      "deck": 3298.75,
+      "workbook": 7788.25
+     },
+     "cells": [
+      "BN19"
+     ],
+     "low": 3298.75,
+     "high": 7788.25,
+     "spread": 4489.5,
+     "spreadPct": 136.1
+    }
+   ],
+   "totals": {
+    "costsBySport": 275947.63,
+    "deck": 185355.62,
+    "workbook": 349145.39
+   },
+   "totalLow": 185355.62,
+   "totalHigh": 349145.39,
+   "totalSpread": 163789.77,
+   "totalSpreadPct": 88.4,
+   "widest": "Boys' Lacrosse",
+   "widestPct": 2215.5,
+   "agreeing": 0,
+   "count": 25,
+   "workbookYears": {
+    "2024": {
+     "total": 349145.39,
+     "covered": 25,
+     "columnSum": 351642.89,
+     "excluded": 2497.5
+    },
+    "2025": {
+     "total": 282507.66,
+     "covered": 25,
+     "columnSum": 283721.15,
+     "excluded": 1213.5
+    }
+   },
+   "columnMeaning": {
+    "costsBySport": "\"Athletic Program Costs by Sport\", published with the FY26 budget materials. FY24 programmatic cost per sport.",
+    "deck": "\"Cost of Running Each Sport\", Athletic Program Funding Overview deck, 1 May 2024.",
+    "workbook": "`Total Expenses` per sport in the district\u2019s own by-sport workbook. athletics-by-sport-fy24-fy26.xlsx, obtained from the Town by records request, 17 June 2026. Extracted to sources/data/athletics-by-sport.csv, which carries the spreadsheet cell beside every value."
+   },
+   "derivedColumn": "workbook",
+   "source": "athletics-by-sport-fy24-fy26.xlsx, obtained from the Town by records request, 17 June 2026. Extracted to sources/data/athletics-by-sport.csv, which carries the spreadsheet cell beside every value.",
+   "sharedNotes": [
+    {
+     "note": "MIAA 1/3 4550. -1516.67",
+     "cell": "AX6",
+     "season": "Fall"
+    },
+    {
+     "note": "Letters & Pins 1/3 1005.50 -353.16",
+     "cell": "AX11",
+     "season": "Fall"
+    },
+    {
+     "note": "NATA Trainer 1/3 81.66",
+     "cell": "AX5",
+     "season": "Fall"
+    },
+    {
+     "note": "Trainer Supplies 1/3 2627.53 -- 875.84",
+     "cell": "AX8",
+     "season": "Fall"
+    },
+    {
+     "note": "Socks 1/3 1278.78 - 426.26",
+     "cell": "AX9",
+     "season": "Fall"
+    },
+    {
+     "note": "CPR 240/3 80",
+     "cell": "AX7",
+     "season": "Fall"
+    },
+    {
+     "note": "Coach Jackets 1/3 756 - 252",
+     "cell": "AX12",
+     "season": "Fall"
+    },
+    {
+     "note": "coach passes 1/3 of 35 - 11.67",
+     "cell": "AX10",
+     "season": "Fall"
+    },
+    {
+     "note": "Final Forms 2315/3 -711.67",
+     "cell": "AX14",
+     "season": "Fall"
+    },
+    {
+     "note": "End of year trophy 887/3=295.66",
+     "cell": "AY13",
+     "season": "Winter"
+    },
+    {
+     "note": "MIDWACH - 1/3 7000 - 2333.33",
+     "cell": "AY10",
+     "season": "Spring"
+    }
+   ],
+   "sharedNoteColumn": "Costs for all 3 Seasons",
+   "excluded": [
+    {
+     "level": "HS",
+     "sport": "Out of District",
+     "why": "Out-of-district athletes, not a team. $0 in both years the workbook covers."
+    },
+    {
+     "level": "MS",
+     "sport": "Softball",
+     "why": "A middle school team the workbook budgets and the FY26 planning roster does not list, so there is no sport here to attach it to."
+    }
+   ]
+  }
  },
  "extras": [
   {

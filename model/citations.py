@@ -174,7 +174,13 @@ CITATIONS = [
 
     dict(id='athletics', metric='What each sport costs, and how many play it',
          value='25 sports',
-         kind='published', basis='Cost and participation per sport, FY24',
+         kind='published',
+         basis='Cost and participation per sport, FY24 — CONTESTED. Three documents the '
+               'district produced state three different costs for the same team in the '
+               'same year: this one, the Athletic Program Funding Overview deck of 1 May '
+               '2024, and the Total Expenses column of the district’s own by-sport '
+               'workbook. Nothing published reconciles them; the app shows all three and '
+               'takes no view on which is right. Computed in model/athletics_sources.py.',
          doc='district-budget/docs/athletic-program-costs-by-sport.pdf',
          source='Athletic program costs by sport'),
 

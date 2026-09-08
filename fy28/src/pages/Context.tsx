@@ -5,6 +5,7 @@ import { Composition, FrillsCheck } from '../components/Composition'
 import { Magnitude } from '../components/Magnitude'
 import { PeerGrowth, PeerTable, PeerLessons } from '../components/Peers'
 import { SportTable, FeeAccounting, CurrentFees, SplitReporting } from '../components/Athletics'
+import { CostDisagreement, WhatCuttingSaves } from '../components/SportCosts'
 import { Recommendation } from '../components/Recommendation'
 
 /** Set true to put our own recommendation back on the situation page. */
@@ -229,7 +230,11 @@ export function Context({ onRecommend, onSources, onAthletics }: {
         <CurrentFees />
 
         <h3 className="text-sm font-bold mt-10 mb-3">What each sport actually costs</h3>
+        {/* The disagreement leads, because a reader uses the table below it to decide
+            which team to give up and three documents give three answers. */}
+        <div className="mb-4"><CostDisagreement /></div>
         <SportTable fee={MODEL.currentFees.effectiveAthletic} />
+        <div className="mt-4"><WhatCuttingSaves /></div>
 
         <h3 className="text-sm font-bold mt-10 mb-3">Where does the fee money actually go?</h3>
         <div className="mb-4"><SplitReporting /></div>

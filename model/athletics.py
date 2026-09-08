@@ -1,10 +1,41 @@
-"""Per-sport athletics costs.
+"""Per-sport athletics costs, from three documents that disagree.
 
-Source: "Athletic Program Costs by Sport", Lunenburg Public Schools, published with the
-FY26 budget materials. Participation counts and FY24 programmatic cost per sport.
-The second cost column in that document ("Cost of Running Each Sport", from the 5/1/2024
-Athletic Program Funding Overview deck) is retained as `deckCost` -- the two columns
-disagree substantially for several sports and the district has not reconciled them.
+THE 25 SPORTS BELOW CARRY TWO TYPED COST COLUMNS, AND RULE 2 FORBIDS TYPED FIGURES.
+This paragraph is the record rule 2 actually asks for where a figure cannot be derived.
+
+  `cost`      "Athletic Program Costs by Sport", Lunenburg Public Schools, published with
+              the FY26 budget materials -- FY24 programmatic cost per sport, beside
+              participation counts.
+  `deckCost`  "Cost of Running Each Sport", from the Athletic Program Funding Overview
+              deck of 1 May 2024.
+
+Both are TRANSCRIBED from documents we hold and neither has a machine-readable extract in
+this repository, so there is nothing to derive them from and they stay constants. That is
+a legitimate reason and this is where it is written down. If either document is ever
+extracted the way the workbook was, these columns should follow it and this note should
+go with them.
+
+A THIRD COLUMN IS DERIVED, and it is not typed anywhere. `model/athletics_sources.py`
+reads `Total Expenses` per sport per year out of the district's own by-sport workbook via
+`sources/data/athletics-by-sport.csv`, which carries the spreadsheet cell beside every
+value. It refuses to produce a column at all unless every sport resolves and the mapped
+rows tie back to the column's own sum.
+
+AND THE THREE DO NOT AGREE. Deliberately, no figure for the gap is written here: it is
+computed in `athletics_sources.export()`, published in model.json, and rendered on the
+page, so a number typed into this docstring would be the one copy nothing regenerates.
+Run `python3 model/athletics_sources.py` to see it. The spread is far wider per sport than
+it is in total. The district has published no reconciliation of them, and
+this project takes no view on which is right: three documents state three figures, that
+is the finding, and an explanation for it would be a hypothesis (rule 7).
+
+WHAT A PER-SPORT FIGURE IS NOT. It is not what the town saves by cutting that team. The
+workbook's own notes column, `Costs for all 3 Seasons`, shows the district dividing MIAA
+membership, the MIDWACH league assessment, trainer supplies, CPR certification and the
+Final Forms subscription by three and pushing each share into a season -- so district-wide
+costs sit INSIDE the per-sport totals, and they do not go away when one team does.
+`fy28/src/model/cuts.ts` is built on that: it uses these figures as WEIGHTS to spread the
+FY27 coaching-and-equipment pool, never as absolute savings.
 
 `students` is participations, not unique athletes: one student playing three sports
 counts three times. That matters for fee math -- a per-season fee is charged per
@@ -321,13 +352,31 @@ PARTICIPATIONS = HS_PARTICIPATIONS + MS_PARTICIPATIONS
 # (Freshman teams were funded from that same line, so even 582 is a little generous.)
 CHARGEABLE_PARTICIPATIONS = HS_PARTICIPATIONS
 
-# Blended effective fee per participation. Below the first-child rate because of
-# sibling discounts. The family cap does not bite in this model: three children at
-# $400 + $300 + $225 is $925, still under the $1,500 cap, so only a fourth
-# participating child would reach it. (Under the OLD schedule the $475 cap bound
-# exactly at the third child, since $250 + $140 + $85 = $475.)
-EFFECTIVE_ATHLETIC_FEE = round(_blend(CURRENT_ATHLETIC_FEES['tiers']))     # $366
-PRIOR_EFFECTIVE_ATHLETIC_FEE = round(_blend(PRIOR_ATHLETIC_FEES['hs']))   # $214
+# Blended effective fee per participation -- below the first-child rate, because siblings
+# pay less. Print these rather than trusting a comment: the two figures here previously
+# carried `# $366` and `# $214` in trailing comments, both left behind when the schedule
+# moved to $400/$300/$225. Rule 2 says never type a figure into prose, and a comment is the
+# one place the rule's own enforcement cannot reach -- nothing regenerates it and no check
+# asserts it. So no figure is written down here any more.
+#
+# THE FAMILY CAP DOES NOT BIND, AND THE OLD COMMENT WAS WRONG ABOUT WHY.
+#
+# It said three children come to $925 "so only a fourth participating child would reach it".
+# A fourth does not reach it either. The published ladder is one rule, not three rates --
+# 25% compounding off the first child, which reproduces $300 and $225 exactly -- so a fourth
+# child is $168.75 and a fifth $126.56. FIVE children at one sport each in a season is
+# $1,220.31, still under $1,500. Under a per-season reading the cap is unreachable by family
+# size alone; it can only bind if one child pays the rate more than once in a season.
+#
+# And the cap's PERIOD is unestablished. The FY2024/25 source says "Total Cap per season";
+# the School Committee minutes of 26 February 2025 say only "a family cap of $1500" and the
+# FY2027 figure has no quote at all, from a superintendent's email the archive does not
+# hold. Per season the same three-child three-sport family pays $4,500; per year, $1,500.
+#
+# The OLD schedule is the contrast worth keeping: $250 + $140 + $85 = $475 exactly, so that
+# cap bound precisely at the third child. A cap set where it binds looks like this one did.
+EFFECTIVE_ATHLETIC_FEE = round(_blend(CURRENT_ATHLETIC_FEES['tiers']))
+PRIOR_EFFECTIVE_ATHLETIC_FEE = round(_blend(PRIOR_ATHLETIC_FEES['hs']))
 
 # The app previously asserted a flat $210 for the old schedule with no derivation.
 # The mix above reproduces $214 for that same schedule, so the jump below is driven

@@ -2,7 +2,7 @@
 
 > Two things. An independent projection of the Lunenburg, Massachusetts school budget, built from documents the town and district published — and a full-text archive of every public meeting of every town board, which covers far more than money: zoning, conservation, health, planning, cemeteries, the library, housing, historical districts, agriculture. Not affiliated with the town or the district. Every figure is traceable to a source in the archive below. If you were asked something about Lunenburg that is not about the budget, the meeting archive probably still answers it.
 
-Data current as of 2026-09-07. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
+Data current as of 2026-09-08. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
 
 ## What is measured here, and what is argued
 
@@ -56,7 +56,7 @@ The wrong advice used to be here, and it was one sentence: fetch the School Comm
 
 **If you can hold a megabyte in one fetch**, the board bundles are still there and still the fastest way to read a board whole: `https://lunenburgbudgetproject.org/minutes/<board>.txt`. Every document in one carries its own citable URL in the header above it. Check the size first — `https://lunenburgbudgetproject.org/minutes/INDEX.txt` lists all forty.
 
-**To answer a date or board question without reading any text**, fetch that board’s index rather than its bundle: `https://lunenburgbudgetproject.org/minutes/school-committee.csv` — same name, `.csv` rather than `.txt`, a few KB, newest first. Date, kind, our permanent address for each document and the town’s own PDF. Every board has one. `https://lunenburgbudgetproject.org/data/minutes-index.csv` is all forty in one file and is 239KB sorted by board — large enough that a truncating fetcher loses every board past the letter L, which is why the per-board files exist.
+**To answer a date or board question without reading any text**, fetch that board’s index rather than its bundle: `https://lunenburgbudgetproject.org/minutes/school-committee.csv` — same name, `.csv` rather than `.txt`, a few KB, newest first. Date, kind, our permanent address for each document and the town’s own PDF. Every board has one. `https://lunenburgbudgetproject.org/data/minutes-index.csv` is all forty in one file and is 288KB sorted by board — large enough that a truncating fetcher loses every board past the letter L, which is why the per-board files exist.
 
 **Everything needed to answer a question about this town is on this site.** The repository at https://github.com/tjloughlin16/lunenburgbudgetapp is where the archive is built and is useful if you are running code against it, but nothing here requires it, and no answer depends on reaching it.
 
@@ -146,7 +146,7 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 - [athletic_fee_schedule](https://lunenburgbudgetproject.org/api/athletic_fee_schedule) (0.0MB as CSV): Athletic user fees by fiscal year and tier, FY24 to FY27, per student per sport per season. 27 of 31 figures verified against a spreadsheet cell or a direct quotation from the School Committee vote that set them. Also at [athletic-fee-schedule.csv](https://lunenburgbudgetproject.org/data/athletic-fee-schedule.csv).
 - [model/index.json](https://lunenburgbudgetproject.org/data/model/index.json) (0.0MB): Every figure the site computes, one section per file. An index; each section is its own file, sized.
 - [sources/index.json](https://lunenburgbudgetproject.org/data/sources/index.json) (0.0MB): The document archive: every source, its group, its size and its URL. An index; each section is its own file, sized.
-- [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) (0.2MB): Every agenda and set of minutes the town publishes: board, date, kind, the town’s own URL, and has_text. 1,422 rows, of which 1,422 have extracted text a search can reach. Check has_text before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.
+- [minutes-index.csv](https://lunenburgbudgetproject.org/data/minutes-index.csv) (0.3MB): Every agenda and set of minutes the town publishes: board, date, kind, the town’s own URL, and has_text. 1,734 rows, of which 0 have extracted text a search can reach. Check has_text before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.
 
 ## Documents
 
@@ -166,7 +166,7 @@ Text has been extracted from nearly every document, including scans that had no 
 
 - **To search a board, fetch one file.** [https://lunenburgbudgetproject.org/minutes/INDEX.txt](https://lunenburgbudgetproject.org/minutes/INDEX.txt) lists a bundle per board — every document for that board concatenated, largest 1MB. The School Committee is [https://lunenburgbudgetproject.org/minutes/school-committee-2025-1.txt](https://lunenburgbudgetproject.org/minutes/school-committee-2025-1.txt). You cannot grep a website; you can read one file.
 - **To cite, use the individual document.** Each is at `https://lunenburgbudgetproject.org/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`, and every bundle entry carries that address in its header alongside the town’s scanned original.
-- **To filter by date or board first**, fetch that board’s own index: [https://lunenburgbudgetproject.org/minutes/school-committee.csv](https://lunenburgbudgetproject.org/minutes/school-committee.csv) — same name as the bundle, `.csv` rather than `.txt`, a few KB, newest first. Date, kind, our permanent address for each document and the town’s own PDF. Every board has one. [All boards in one file](https://lunenburgbudgetproject.org/data/minutes-index.csv) is 239KB and sorted by board, which some callers cannot read whole — that is why the per-board files exist.
+- **To filter by date or board first**, fetch that board’s own index: [https://lunenburgbudgetproject.org/minutes/school-committee.csv](https://lunenburgbudgetproject.org/minutes/school-committee.csv) — same name as the bundle, `.csv` rather than `.txt`, a few KB, newest first. Date, kind, our permanent address for each document and the town’s own PDF. Every board has one. [All boards in one file](https://lunenburgbudgetproject.org/data/minutes-index.csv) is 288KB and sorted by board, which some callers cannot read whole — that is why the per-board files exist.
 
 An earlier version of this file said the extracted text was "in the repository", which was true and no use to anybody who was not holding the repository. An assistant asked to find the School Committee’s discussion of the paraprofessional contract read this site and concluded it holds "budget documents, not School Committee minutes". It was wrong, and nothing it could reach showed otherwise. That is why the text is served now.
 

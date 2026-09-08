@@ -87,6 +87,42 @@ export interface TrendStat {
   biggestFall: [number, number]; biggestRise: [number, number]
 }
 
+/** THREE PUBLISHED FIGURES FOR WHAT ONE SPORT COSTS, AND THE GAP BETWEEN THEM.
+ *
+ *  Two of the three columns are transcribed from documents; the third is derived from the
+ *  district's own workbook extract, cell by cell. They disagree, the district has
+ *  published no reconciliation, and a resident deciding which team to give up has to see
+ *  that before acting on any one of them. Computed in `model/athletics_sources.py` --
+ *  nothing here is typed. */
+export type CostColumn = 'costsBySport' | 'deck' | 'workbook'
+
+export interface SportCosts {
+  name: string; level: string; students: number
+  columns: Partial<Record<CostColumn, number>>
+  /** The spreadsheet cells the workbook figure came out of. */
+  cells: string[]
+  low: number; high: number; spread: number; spreadPct: number | null
+}
+
+export interface CostSources {
+  fy: number
+  sports: SportCosts[]
+  totals: Record<CostColumn, number>
+  totalLow: number; totalHigh: number; totalSpread: number; totalSpreadPct: number
+  widest: string; widestPct: number
+  agreeing: number; count: number
+  workbookYears: Record<string, { total: number; covered: number
+                                  columnSum: number; excluded: number }>
+  columnMeaning: Record<CostColumn, string>
+  derivedColumn: CostColumn
+  source: string
+  /** The workbook's own notes column, verbatim, where the district divides district-wide
+   *  costs across the three seasons. Quoted with its cell (rule 13). */
+  sharedNotes: { note: string; cell: string; season: string }[]
+  sharedNoteColumn: string
+  excluded: { level: string; sport: string; why: string }[]
+}
+
 export const MODEL = raw as unknown as {
   categories: Record<string, { label: string; color: string }>
   programs: Program[]
@@ -159,7 +195,8 @@ export const MODEL = raw as unknown as {
                participations: number; chargeableParticipations: number
                msParticipations: number; perSportTotal: number
                peakFee: number; peakRevenue: number; dropoffPer100: number
-               ladder: LadderRung[] }
+               ladder: LadderRung[]
+               costSources: CostSources }
   buckets: Record<string, number>
   currentFees: {
     athletic: {

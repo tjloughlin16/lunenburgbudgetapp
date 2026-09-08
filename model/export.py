@@ -32,6 +32,7 @@ from taxbase import (TAX_RATE, LEVY, TOTAL_VALUE, RESIDENTIAL_SHARE, CIP_SHARE,
     FY23, BUSINESSES, EMPLOYEES, PAYROLL, AVG_COMMERCIAL_VALUE, FY23_NEW_VALUE,
     COMMERCIAL_CONTEXT, NEW_GROWTH_HISTORY, VALUE_BY_CLASS, AVG_HOME_HISTORY,
     EXCESS_LEVY_CAPACITY, GAP_IN_BUSINESSES, MIX_VALUE)
+import athletics_sources
 import derivations
 import citations
 import releases
@@ -194,7 +195,11 @@ data = dict(
                    participations=sum(s['students'] for s in SPORTS),
                    chargeableParticipations=CHARGEABLE_PARTICIPATIONS,
                    msParticipations=MS_PARTICIPATIONS,
-                   perSportTotal=round(sum(s['cost'] for s in SPORTS), 2)),
+                   perSportTotal=round(sum(s['cost'] for s in SPORTS), 2),
+                   # Three published figures per sport and the spread between
+                   # them. The workbook column is DERIVED from the extract;
+                   # the other two are transcribed and say so.
+                   costSources=athletics_sources.export(SPORTS)),
     extras=[
         dict(cat='athletics', label='Every sport, coach, trainer and athletic bus',
              total=466244,

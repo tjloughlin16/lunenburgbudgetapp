@@ -1,6 +1,12 @@
 import { useState } from 'react'
-import { MODEL, usd } from '../model/engine'
+import { MODEL, usd, type CostColumn } from '../model/engine'
 import { FeeCurve, feeRevenue, type CurveArgs } from './FeeCurve'
+import { Basis } from './Basis'
+import { COLUMNS, COLUMN_LABEL, COLUMN_SHORT, COSTS_BY_SPORT, columnTotal } from './SportCosts'
+
+/** The three published cost columns and the spread between them, computed in
+ *  `model/athletics_sources.py`. */
+const C = MODEL.athletics.costSources
 
 const A = MODEL.athletics
 
@@ -350,27 +356,72 @@ export function AthleticsFees({ fee, setFee, payers, teamsCut = 0, costOf }: {
   )
 }
 
-/** Per-sport cost table — the "which sports are expensive" question. */
+/** Per-sport cost table — the "which sports are expensive" question.
+ *
+ *  IT NO LONGER IMPLIES THAT ONE COST FIGURE EXISTS. Three district documents state three
+ *  figures per sport for the same year and disagree by a wide and unreconciled margin,
+ *  so this
+ *  opens on the RANGE across all three and lets the reader pick a single column if they
+ *  want one. Everything downstream — per athlete, coverage by the fee, the count of
+ *  self-funding sports — follows the chosen basis, because a table that switched its cost
+ *  column and left the conclusions alone would be worse than one that never switched.
+ *
+ *  Every figure comes from `MODEL.athletics.costSources`, computed in
+ *  `model/athletics_sources.py`. Nothing here is typed. */
 export function SportTable({ fee }: { fee: number }) {
   const [sort, setSort] = useState<'perAthlete' | 'cost' | 'students' | 'coverage'>('perAthlete')
   const [loaded, setLoaded] = useState(false)
+  const [basis, setBasis] = useState<'range' | CostColumn>('range')
 
   // Per-sport figures are direct program costs only. Loading them up spreads the
   // athletic director, trainer, secretary, insurance, dues and transport across sports
-  // in proportion to their direct cost.
-  const OVERHEAD = A.levelService / A.perSportTotal
-  const mult = loaded ? OVERHEAD : 1
-  const costOf = (sp: { cost: number }) => sp.cost * mult
-  const perAthlete = (sp: { cost: number; students: number }) => costOf(sp) / sp.students
-  const coverage = (sp: { cost: number; students: number }) => fee / perAthlete(sp)
+  // in proportion to their direct cost — in proportion to the CHOSEN column, so the
+  // multiplier is the whole program over that column's own total.
+  const mult = (col: CostColumn) =>
+    loaded ? A.levelService / columnTotal(col) : 1
+
+  const band = (name: string): [number, number] => {
+    const r = COSTS_BY_SPORT.get(name)
+    if (!r) return [0, 0]
+    if (basis !== 'range') {
+      const v = (r.columns[basis] ?? 0) * mult(basis)
+      return [v, v]
+    }
+    const vals = COLUMNS
+      .filter(c => r.columns[c] !== undefined)
+      .map(c => (r.columns[c] as number) * mult(c))
+    return [Math.min(...vals), Math.max(...vals)]
+  }
+
+  const totalBand = (): [number, number] => {
+    if (basis !== 'range') {
+      const v = columnTotal(basis) * mult(basis)
+      return [v, v]
+    }
+    const vals = COLUMNS.map(c => columnTotal(c) * mult(c))
+    return [Math.min(...vals), Math.max(...vals)]
+  }
+
+  const mid = (name: string) => { const [lo, hi] = band(name); return (lo + hi) / 2 }
+  const perAthleteBand = (sp: { name: string; students: number }): [number, number] => {
+    const [lo, hi] = band(sp.name)
+    return [lo / sp.students, hi / sp.students]
+  }
+  /** Coverage is best when the cost is lowest, so the LOW cost gives the HIGH coverage. */
+  const coverageBand = (sp: { name: string; students: number }): [number, number] => {
+    const [lo, hi] = perAthleteBand(sp)
+    return [hi > 0 ? fee / hi : 0, lo > 0 ? fee / lo : 0]
+  }
 
   const sports = [...MODEL.sports].sort((a, b) =>
-    sort === 'perAthlete' ? perAthlete(b) - perAthlete(a)
-      : sort === 'cost' ? b.cost - a.cost
-      : sort === 'coverage' ? coverage(a) - coverage(b)
+    sort === 'perAthlete' ? mid(b.name) / b.students - mid(a.name) / a.students
+      : sort === 'cost' ? mid(b.name) - mid(a.name)
+      : sort === 'coverage' ? coverageBand(a)[0] - coverageBand(b)[0]
       : b.students - a.students)
 
-  const selfFunding = sports.filter(sp => Math.round(coverage(sp) * 100) >= 100).length
+  const selfFundingLow = sports.filter(sp => Math.round(coverageBand(sp)[0] * 100) >= 100).length
+  const selfFundingHigh = sports.filter(sp => Math.round(coverageBand(sp)[1] * 100) >= 100).length
+  const [tLo, tHi] = totalBand()
 
   const COLS: [typeof sort, string][] = [
     ['students', 'Athletes'], ['cost', 'Cost'],
@@ -385,15 +436,46 @@ export function SportTable({ fee }: { fee: number }) {
     </th>
   )
 
+  const money = ([lo, hi]: [number, number]) =>
+    Math.round(lo) === Math.round(hi)
+      ? usd(lo)
+      : <span className="whitespace-nowrap">{usd(lo)}<span
+          style={{ color: 'var(--text-muted)' }}> – </span>{usd(hi)}</span>
+
   return (
     <div className="card p-5">
+      {/* Which document's costs? — chosen before anything is read off the table. */}
+      <div className="flex flex-wrap items-center gap-1.5 mb-3">
+        <span className="text-[11px] font-semibold mr-1" style={{ color: 'var(--text-muted)' }}>
+          Costs from
+        </span>
+        {([['range', 'All three (a range)'],
+           ...COLUMNS.map(c => [c, COLUMN_SHORT[c]] as const)] as const).map(([k, label]) => (
+          <button key={k} onClick={() => setBasis(k as 'range' | CostColumn)}
+            aria-pressed={basis === k}
+            className="px-2.5 py-1 rounded-md text-[11px] font-semibold border"
+            style={{ borderColor: basis === k ? 'var(--series-cost)' : 'var(--grid)',
+                     background: basis === k ? 'var(--series-cost)' : 'var(--surface-1)',
+                     color: basis === k ? '#fff' : 'var(--text-secondary)' }}>{label}</button>
+        ))}
+        <Basis level="contested">
+          {basis === 'range'
+            ? `three documents, agreeing on ${C.agreeing} of ${C.count} teams`
+            : 'one of three documents that disagree'}
+        </Basis>
+      </div>
+
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <p className="text-[13px]">
           At <strong>{usd(fee)}</strong> a season,{' '}
-          <strong style={{ color: selfFunding > 0 ? 'var(--status-good)' : 'var(--status-critical)' }}>
-            {selfFunding} of {sports.length} sports
+          <strong style={{ color: selfFundingHigh > 0 ? 'var(--status-good)' : 'var(--status-critical)' }}>
+            {selfFundingLow === selfFundingHigh
+              ? `${selfFundingLow} of ${sports.length} sports`
+              : `between ${selfFundingLow} and ${selfFundingHigh} of ${sports.length} sports`}
           </strong>{' '}
-          pay for themselves.
+          pay for themselves
+          {selfFundingLow !== selfFundingHigh &&
+            <> — the answer depends on which document you take the cost from</>}.
         </p>
         <div className="flex gap-1">
           {[[false, 'Direct cost'], [true, 'With overhead']].map(([v, label]) => (
@@ -424,9 +506,10 @@ export function SportTable({ fee }: { fee: number }) {
         ))}
       </div>
       <div className="overflow-x-auto">
-        <table className="stack w-full text-xs tnum sm:min-w-[560px]">
+        <table className="stack w-full text-xs tnum sm:min-w-[620px]">
           <caption className="sr-only">
-            Lunenburg athletics: participations and programmatic cost per sport, FY24
+            Lunenburg athletics: participations and the range of published cost per sport,
+            FY{C.fy}
           </caption>
           <thead>
             <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
@@ -438,31 +521,34 @@ export function SportTable({ fee }: { fee: number }) {
             </tr>
           </thead>
           <tbody>
-            {sports.map(s => (
-              <tr key={s.name} className="border-t" style={{ borderColor: 'var(--grid)' }}>
-                <td className="rowhead py-1.5">
-                  {s.name}
-                  {s.level === 'MS' && <span className="ml-1.5 text-[9px] uppercase
-                    tracking-widest font-bold" style={{ color: 'var(--text-muted)' }}>middle</span>}
-                </td>
-                <td data-label="Athletes" className="py-1.5 text-right">{s.students}</td>
-                <td data-label="Cost" className="py-1.5 text-right">{usd(costOf(s))}</td>
-                <td data-label="Per athlete"
-                  className="py-1.5 text-right font-semibold">{usd(perAthlete(s))}</td>
-                <td data-label="Covered by the fee" className="rowfull py-1.5 sm:pl-3">
-                  <Coverage pct={coverage(s)} /></td>
-              </tr>
-            ))}
+            {sports.map(s => {
+              const cb = coverageBand(s)
+              return (
+                <tr key={s.name} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                  <td className="rowhead py-1.5">
+                    {s.name}
+                    {s.level === 'MS' && <span className="ml-1.5 text-[9px] uppercase
+                      tracking-widest font-bold" style={{ color: 'var(--text-muted)' }}>middle</span>}
+                  </td>
+                  <td data-label="Athletes" className="py-1.5 text-right">{s.students}</td>
+                  <td data-label="Cost" className="py-1.5 text-right">{money(band(s.name))}</td>
+                  <td data-label="Per athlete"
+                    className="py-1.5 text-right font-semibold">{money(perAthleteBand(s))}</td>
+                  <td data-label="Covered by the fee" className="rowfull py-1.5 sm:pl-3">
+                    <Coverage pct={cb[0]} hi={cb[1]} /></td>
+                </tr>
+              )
+            })}
             <tr className="border-t-2 font-bold" style={{ borderColor: 'var(--axis)' }}>
               <td className="rowhead py-2">All sports</td>
               <td data-label="Athletes" className="py-2 text-right">{A.participations}</td>
-              <td data-label="Cost"
-                className="py-2 text-right">{usd(A.perSportTotal * mult)}</td>
+              <td data-label="Cost" className="py-2 text-right">{money([tLo, tHi])}</td>
               <td data-label="Per athlete" className="py-2 text-right">
-                {usd((A.perSportTotal * mult) / A.participations)}
+                {money([tLo / A.participations, tHi / A.participations])}
               </td>
               <td data-label="Covered by the fee" className="rowfull py-2 sm:pl-3">
-                <Coverage pct={fee / ((A.perSportTotal * mult) / A.participations)} />
+                <Coverage pct={fee / (tHi / A.participations)}
+                  hi={fee / (tLo / A.participations)} />
               </td>
             </tr>
           </tbody>
@@ -475,19 +561,23 @@ export function SportTable({ fee }: { fee: number }) {
         spreads the athletic director, trainer, secretary, insurance, dues and
         district-wide transport across the sports in proportion to their direct cost, which
         is the fairer test of whether a sport truly pays for itself.
-        {' '}FY24 programmatic cost per sport, from the district&rsquo;s own
-        &ldquo;Athletic Program Costs by Sport.&rdquo; Athletes are participations, not
+        {' '}Athletes are participations, not
         unique students &mdash; a three-sport athlete counts three times, which is also how
-        a per-season fee would be charged. These per-sport costs total{' '}
-        {usd(MODEL.athletics.perSportTotal)}; the full high school program is{' '}
+        a per-season fee would be charged. On the{' '}
+        <strong>{basis === 'range' ? 'range across all three documents'
+          : COLUMN_LABEL[basis]}</strong>, the per-sport figures total{' '}
+        {money(totalBand())}; the full high school program is{' '}
         {usd(MODEL.athletics.levelService)}, the difference being the athletic director,
         trainer, secretary, insurance, dues and district-wide transportation. Add the
         middle school and freshman teams back and a whole athletics program is{' '}
         {usd(WHOLE_TOTAL)}.
+        {' '}<strong>None of these is what the town saves by cutting a team</strong> &mdash;
+        see the panel above.
       </p>
     </div>
   )
 }
+
 
 function Line({ k, v, bold }: { k: string; v: string; bold?: boolean }) {
   return (
@@ -737,25 +827,46 @@ export function CurrentFees() {
 }
 
 
-/** Fee-to-cost coverage for one sport. Never color alone — always a figure and a word. */
-function Coverage({ pct }: { pct: number }) {
-  const p = Math.max(0, pct)
+/** Fee-to-cost coverage for one sport. Never color alone — always a figure and a word.
+ *
+ *  `pct` is the LOW end of coverage and `hi` the high end. Where the two differ the bar is
+ *  a band rather than a fill, because the published costs disagree and a single filled bar
+ *  would state a precision the documents do not support. Where they are equal it renders
+ *  exactly as it did before. */
+function Coverage({ pct, hi }: { pct: number; hi?: number }) {
+  const lo = Math.max(0, pct)
+  const top = Math.max(lo, hi ?? lo)
+  const shownLo = Math.round(lo * 100)
+  const shownHi = Math.round(top * 100)
+  const isRange = shownLo !== shownHi
   // Classify on the figure actually shown, so a rounded 100% never reads "Part-funded".
-  const shown = Math.round(p * 100)
-  const state = shown >= 100 ? 'full' : shown >= 50 ? 'part' : 'low'
+  // A range that straddles 100% is neither — it is undetermined, and says so.
+  const state = shownLo >= 100 ? 'full'
+    : shownHi >= 100 ? 'split'
+    : shownHi >= 50 ? 'part' : 'low'
   const color = state === 'full' ? 'var(--status-good)'
+    : state === 'split' ? 'var(--status-bad)'
     : state === 'part' ? 'var(--status-serious)' : 'var(--status-critical)'
   const word = state === 'full' ? 'Pays its way'
+    : state === 'split' ? 'Depends on the source'
     : state === 'part' ? 'Part-funded' : 'Subsidised'
-  const glyph = state === 'full' ? '✓' : state === 'part' ? '◐' : '✕'
+  const glyph = state === 'full' ? '✓' : state === 'split' ? '?'
+    : state === 'part' ? '◐' : '✕'
   return (
     <span className="flex items-center gap-2">
-      <span className="h-2 rounded-full overflow-hidden shrink-0 w-14"
+      <span className="h-2 rounded-full overflow-hidden shrink-0 w-14 relative"
         style={{ background: 'var(--surface-3)' }}>
-        <span className="block h-full rounded-full"
-          style={{ width: `${Math.min(100, p * 100)}%`, background: color }} />
+        <span className="absolute top-0 h-full rounded-full"
+          style={{ left: isRange ? `${Math.min(100, lo * 100)}%` : 0,
+                   width: isRange
+                     ? `${Math.max(3, Math.min(100, top * 100) - Math.min(100, lo * 100))}%`
+                     : `${Math.min(100, lo * 100)}%`,
+                   background: color }} />
       </span>
-      <span className="font-semibold tnum w-9 text-right">{shown}%</span>
+      <span className="font-semibold tnum text-right whitespace-nowrap"
+        style={{ minWidth: isRange ? '4.5rem' : '2.25rem' }}>
+        {isRange ? `${shownLo}–${shownHi}%` : `${shownLo}%`}
+      </span>
       <span className="text-[10px] font-semibold whitespace-nowrap" style={{ color }}>
         <span aria-hidden="true">{glyph} </span>{word}
       </span>

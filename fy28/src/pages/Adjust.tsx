@@ -18,6 +18,7 @@ import { GrowthCalculator } from '../components/TaxBase'
 import { GrowthDial } from '../components/GrowthDial'
 import { AssumptionsPanel } from '../components/Assumptions'
 import { TeamSlider, TeamBoard } from '../components/SportCutter'
+import { CostDisagreement, WhatCuttingSaves } from '../components/SportCosts'
 import { CutBoard } from '../components/CutBoard'
 import { CapitalLever } from '../components/CapitalLever'
 import { CONVERTIBLE } from '../model/capital'
@@ -400,6 +401,14 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
               tech_cut: <GrowthDial value={newValue} setValue={setNewValue} gap={gap}
                 share={growthShare} max={growthMax} />,
             }} />
+
+          {/* Two things a reader has to see BEFORE they give up a team, not after: the
+              published costs disagree, and folding a team does not save what the team
+              is listed at. Both are on the board itself rather than in a footnote. */}
+          <div className="grid gap-3 mt-3">
+            <WhatCuttingSaves />
+            <CostDisagreement detail={false} onFullTable={() => onJump('fees')} />
+          </div>
 
           <div className="grid gap-3 mt-3">
             <Disclose title="Athletics fees, in detail"
