@@ -56,6 +56,8 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-teacher-data.xlsx` | DESE `4684-cw3t`, 25 MB | `4fbe81d65aee` | teacher counts, **student-teacher ratio**, licensure, experience, in-field, by school and subject |
 | `dese-sped-indicators.xlsx` | DESE `yamx-769q`, 11.8 MB | `41d517465d59` | **a published COUNT of students with disabilities** (217-265), plus sped staffing ratios, outcomes, 2017-2026 |
 | `dese-sped-placement-trajectory.xlsx` | DESE `92x3-2qj9`, 762 KB | `ff3e4c9e8dd8` | where a child STARTS against where they end up — the route into out-of-district, 2018-2026 |
+| `dese-sped-program-characteristics.xlsx` | DESE `n62c-bx65`, 5.3 MB | `417435bddfca` | disability type and demographics behind the SWD count |
+| `dese-sped-movement.xlsx` | DESE `8aww-sugs`, 1.1 MB | `2b5e67f3ba6b` | students entering and leaving special education each year |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -104,6 +106,23 @@ understating real costs, which is what the 2019 Student Opportunity Act addresse
 that gives one of those without the other is taking a side using a number.
 
 **It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
+
+**CASELOAD MOVEMENT, and a duplicate row to check before anyone quotes it.**
+
+    SY   enrolled  on IEP  moved IN  moved OUT   net
+    2019     1518     254        28         40   -12
+    2022     1439     207        33         28    +5
+    2024     1448     222        38         17   +21
+    2025     1448     222        38         17   +21
+
+**SY2024 and SY2025 are identical across all four columns.** Four independent counts landing
+on the same values two years running is not plausible; it is far more likely a row carried
+forward. Check it against DESE before either year is used, and do not let the +21 be quoted
+twice as though it were two years of the same movement.
+
+The series otherwise gives the caseload dynamic behind the spending line — how many children
+enter special education services each year and how many leave — which is the thing a
+headcount alone cannot show.
 
 **THE PLACEMENT TRAJECTORY SHOWS THE ROUTE INTO THE BIGGEST COST.** SY2026, K-12:
 
