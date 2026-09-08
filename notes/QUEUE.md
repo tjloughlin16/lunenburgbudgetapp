@@ -116,7 +116,42 @@ where the eye sees the swap even when the total is flat.
 **The honest frame:** this is DESE's attribution of a dollar to a fund. It does not say
 which post, which grant, or that the same people moved between funds.
 
-## 8. Staffing, in FTE, against funding and cost
+## 8. Staffing over time — counts, costs, and CUTS
+
+TJ, restating it: *"school staffing over time. Costs, counts, cuts, etc."*
+
+**"Cuts" is the framing that makes this a page rather than a table**, and it is the one
+thing here nobody can currently answer. The town has argued about staffing cuts through
+two override cycles and no published series shows what actually happened to the workforce.
+
+What we now hold that makes it possible:
+
+    dese_teacher_grade_subject   FTE by grade band AND subject AND school
+    dese_teacher_program_area    GEN_ED / SPED / CAREER_TECH / EL FTE
+    dese_educator_workforce      HEADCOUNT by job class, plus hires and retention
+    dese_function_expenditure    the same years, split general fund vs grants
+    budget_figure                what was budgeted and later restated, per line
+
+**Four series, four different units, and that is the whole difficulty.** FTE, headcount,
+dollars and budget lines do not convert into one another, and a page that quietly treats
+them as the same thing will be wrong in a way nobody can see. State the unit on every
+figure.
+
+**The cuts question specifically.** A post disappearing from a budget line is not a cut: it
+can be a vacancy unfilled, a role recoded, a grant ending, or a retirement not replaced.
+`dese_educator_workforce` carries HIRES and RETENTION alongside headcount, which is the
+only thing here that distinguishes *people leaving* from *posts disappearing*. Use it.
+
+**Two traps already paid for, both recorded above.** The educator table's naive sum is
+exactly 2x the truth — `All Educators` sits beside the seven race rows, and I published
+double figures before catching it. And any cost-per-FTE reproduces the $69,161 error unless
+it names its denominator, because EPIMS FTE is per ASSIGNMENT while a budget line pays
+whole salaries.
+
+Carry unresolved rather than solving: sped teacher FTE 18.5 (2008) to 2.0 (2026) against
+flat total FTE.
+
+## 8a. The original framing, kept: FTE against funding and cost
 
 Now possible and previously not: FTE by grade band, subject and school; headcount by job
 class including administrators; special education staffing ratios; retention and new hires.
