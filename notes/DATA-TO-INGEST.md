@@ -54,6 +54,7 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-ch70-foundation-nss.xlsx` | DESE `5izv-jyrd`, 328 KB | `2f581d1c6eda` | foundation budget, and **required vs actual net school spending** — 2008-2022 only |
 | `dese-educators-retention.xlsx` | DESE `fz9c-2g33`, 1.6 MB | `be8a87c9471e` | **headcount by job class — including Administrator and Paraprofessional** — plus hires and retention. 2021-2023 only |
 | `dese-teacher-data.xlsx` | DESE `4684-cw3t`, 25 MB | `4fbe81d65aee` | teacher counts, **student-teacher ratio**, licensure, experience, in-field, by school and subject |
+| `dese-sped-indicators.xlsx` | DESE `yamx-769q`, 11.8 MB | `41d517465d59` | **a published COUNT of students with disabilities** (217-265), plus sped staffing ratios, outcomes, 2017-2026 |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -102,6 +103,42 @@ understating real costs, which is what the 2019 Student Opportunity Act addresse
 that gives one of those without the other is taking a side using a number.
 
 **It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
+
+**TWO SOURCES DISAGREE ABOUT PARAPROFESSIONALS, AND THAT IS THE FINDING.**
+
+`yamx-769q` publishes a real count of students with disabilities — 217 to 265 — which
+closes a gap properly: the count was previously only reachable by multiplying a published
+percentage by enrolment, which was our arithmetic and not a published figure.
+
+It also gives special education paraprofessionals per 100 students with disabilities. Times
+the count, that implies an FTE:
+
+    SY2019  265 SWD x 18.5/100 = 49.0 FTE
+    SY2021  249 SWD x 16.7/100 = 41.6 FTE
+    SY2023  230 SWD x 10.4/100 = 23.9 FTE
+    SY2026  246 SWD x  7.3/100 = 18.0 FTE
+
+Against the district's own special education paraprofessional budget line, which rose 94%
+over the same period. Divide one by the other:
+
+    SY2019    672,872 / 49.0 FTE = 13,732 per FTE
+    SY2023  1,018,072 / 23.9 FTE = 42,597 per FTE
+    SY2025  1,244,894 / 18.0 FTE = 69,161 per FTE
+
+**A paraprofessional does not cost $69,000.** So these two figures are not about the same
+population: either DESE counts something narrower than the budget line, or the line carries
+more than paraprofessionals, or a reclassification moved people between categories. What is
+established is that the two cannot both be measurements of the same thing — not that
+paraprofessionals became expensive.
+
+**Do not publish either number as an answer to the paraprofessional question until this is
+resolved.** It looks like the discrimination we have wanted all week (dollars against
+people) and it is currently a contradiction wearing that costume.
+
+**Related and probably the same defect:** `vd2f-ib9q` shows Lunenburg special education
+teacher FTE falling 18.5 (2008) to 2.0 (2026) — a 90% collapse — while general education
+FTE holds at 100-113 and total FTE is flat. Teachers being recoded from special education
+to general education produces exactly that signature. Rule 6.
 
 **A CORRECTION I OWE TJ: administrator headcount IS published.** I told him DESE gave
 administration only as a spending category, not a count of people. `fz9c-2g33` gives both,
