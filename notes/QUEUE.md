@@ -586,6 +586,46 @@ run. That is a different mechanism from school choice and a different argument.
 It also complicates `/if-students-leave`, which treats leaving as school choice. **Monty
 Tech is the larger outflow — 97 against 58 — and has grown for seven straight years.**
 
+## Groundwork done 8 September 2026 — READ THE STATUS COLUMN BEFORE USING ANY OF THIS
+
+The assessment series exists and it is NOT clean. `report_appropriations`, rows labelled
+`Monty Tech Assessment`, `column_meaning` = `v1=appropriated | v2=available | v3=expended`:
+
+    fy    appropriated   status          students   per student
+    2011       633,124   check failed           -             -
+    2013       681,078   no check               -             -
+    2014       757,805   check failed          70       10,825
+    2016       799,478   check failed          86        9,296
+    2019       824,011   check failed          72       11,444
+    2022       876,289   check failed          90        9,736
+    2026     1,334,521   town ledger dept 310  97       13,757
+
+**Every annual-report row is `check failed` or `no check`.** That is the reconciliation the
+extractor states about itself failing, and CLAUDE.md is explicit that nothing may be
+aggregated without splitting on `status`. So these are CANDIDATES, not established figures,
+and a page built on them has to say so beside every one. The FY2026 figure is different in
+kind — it comes from the town's own ledger (`town_ledger_fy26_q3`, dept 310, original
+1,334,521, expended 1,000,890 at 75% through Q3) and is the only one that is not an
+extraction from a printed page.
+
+FY2023, FY2024 and FY2025 are missing from the series entirely.
+
+**Do not use `report_monty_tech`.** Its rows are `status = 'no check'` with an EMPTY
+`column_meaning`, which is exactly the trap rule 13 names: `v1` is an ordinal — the first
+column of that page that held figures — and not a column name. Summing it adds one page's
+APPROPRIATED to another's TOTAL EXPENDED.
+
+**The shape of the finding, stated as arithmetic and not yet as a claim:** between FY2014
+and FY2026 the assessment rose about 76% while the number of Lunenburg students at Monty
+Tech rose 38.6%, so the amount per student rose about 27%. Whether that is Monty Tech
+costing more, the assessment formula shifting between member towns, or the extraction
+being unreliable is NOT established by any of the above — and the middle one matters most,
+because the formula apportions a regional district's costs across member towns by a rule
+Lunenburg does not set.
+
+**What would settle it:** Monty Tech's own annual budget book, which prints the assessment
+for every member town beside the formula that produced it. The archive holds none.
+
 ## What we hold
 
 - `dese_town_enrollment`, FY2014-FY2026, Lunenburg residents at Montachusett Regional
