@@ -50,6 +50,7 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-teachers-by-grade-subject.xlsx` | DESE `77fu-a6h8`, 133 MB | `76a5498ba1b5` | **FTE by grade band AND subject AND school.** Breaks a limit recorded as structural: grade detail without FTE (town rosters) or FTE without grade detail (DESE) — this is both |
 | `dese-residents-sending.xlsx` | DESE `vxt3-k35x`, 2.4 MB | `ef345000874d` | where resident children go, by receiving district and reason, 2014-2026 |
 | `dese-enrollment-receiving.xlsx` | DESE `8xyg-59b2`, 2.2 MB | `b23f4106f6c0` | who comes IN, by sending town and reason — the mirror of the file above |
+| `dese-circuit-breaker.xlsx` | DESE `ab34-d3ma`, 449 KB | `b710ba4f88fb` | high-cost special education reimbursement — **and a STUDENT COUNT**, `ELIG_STU_CLAIM_CNT` |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -61,6 +62,29 @@ Columns, recorded so nobody has to reopen a 133 MB file to find out:
     sending:   SY TOWN_NAME ENR_REASON DIST_CODE DIST_NAME ENR_CNT
 
     receiving: SY DIST_CODE DIST_NAME ENR_REASON TOWN_NAME ENR_CNT
+
+    circuit:   FY DIST_CODE DIST_NAME ELIG_STU_CLAIM_CNT TOT_ELIG_EXPENSES
+               THRESHOLD_AMT NET_ELIG_INSTR_TUIT_COSTS NET_ELIG_TRANS_COSTS
+               TOT_NET_CLAIM REIMB_INSTR_TUIT REIMB_SPEC_IND_INSTR_TUIT
+               REIMB_TRANS REIMB_SPEC_IND_TRANS PRIOR_YEAR_ADJ
+               TOT_QTLY_PAYMENT EXTRA_RELIEF_PAYMENT ADDL_SUPPL_PAYMENT COMMENTS
+
+**Two reasons the circuit breaker file matters more than its size suggests.**
+
+`ELIG_STU_CLAIM_CNT` is a count of CHILDREN, not dollars. This project repeatedly stops at
+"dollars are not students" (rule 7); this is a published headcount of high-cost special
+education students per district per year, and it stands beside the placement counts already
+held.
+
+And circuit breaker is one of the funds rule 11 names as unmapped — money that offsets
+out-of-district and high-cost placements, which is the line the in-district special
+education escalator rests on. It also splits reimbursement into instruction/tuition against
+transportation, with prior-year adjustments and relief payments broken out, so a year's
+receipt can be told apart from a year's entitlement.
+
+**Note the key is `FY`, not `SY`.** Every other file here is school year. Joining them
+without checking that would be the fiscal-year type error this repo has already had once,
+in the other direction.
 
 **The two enrolment files are a matched pair and are worth more together.** Sending gives
 where Lunenburg's resident children go; receiving gives who arrives and from where. Both
