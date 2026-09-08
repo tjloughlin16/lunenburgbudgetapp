@@ -277,3 +277,65 @@ was verified.
 ## 16. Facebook — later still
 
 Push the above to drive people back to the site. Nothing to build until the feeds exist.
+
+
+---
+
+# Phase four: Monty Tech, the outflow nobody has modelled
+
+Set 8 September 2026. Recorded for later — the data is in hand.
+
+## 17. A Monty Tech drill-in
+
+**It is bigger than school choice and growing faster, and nothing on this site mentions it.**
+
+    FY      in Lunenburg   Monty Tech   all resident   MT share
+    2014           1,513           70          1,699       4.1%
+    2019           1,616           72          1,792       4.0%
+    2026           1,553           97          1,730       5.6%
+
+Flat around 4% through FY2019, then up every single year since. 70 -> 97 in headcount,
++39%, while Lunenburg's own enrolment fell. And the Class of 2030 lottery admitted **24
+Lunenburg students against 365 places, 6.6% of the incoming class** — larger than the
+current four-year average, so the climb looks set to continue.
+
+**THE REASON IT MATTERS IS NOT THE ONE PEOPLE ASSUME.** Monty Tech is an ASSESSMENT, not a
+tuition. Lunenburg is a member town of the regional vocational district and pays a share of
+its operating cost. So 27 more students since 2014 is not 27 x $5,000 walking out — it is a
+growing slice of a bill the town has almost no control over, set by a district it does not
+run. That is a different mechanism from school choice and a different argument.
+
+It also complicates `/if-students-leave`, which treats leaving as school choice. **Monty
+Tech is the larger outflow — 97 against 58 — and has grown for seven straight years.**
+
+## What we hold
+
+- `dese_town_enrollment`, FY2014-FY2026, Lunenburg residents at Montachusett Regional
+- `report_monty_tech` (70 rows) from the annual town reports
+- `sources/inbox/montytech-class-of-2030-lottery.pdf`, sha `0a28526cac39` — OCR'd
+
+**On the lottery PDF: the summary page is trustworthy, the applicant pages are not.** The
+18 town figures sum to exactly the printed total of 365, which is the parts-tie-to-total
+check. The per-applicant pages are OCR of an image PDF and produced `L.unenburg`,
+`Lunchburg`, `Accepte`, `Waitlis`. **Do not count accepted-versus-waitlisted from that OCR**
+— that is a derived thing quoted as observed. If the split is wanted, request it.
+
+No personal data in the document: town, an anonymous applicant number, and a status. Checked
+before archiving.
+
+## What we do NOT hold, and would need
+
+- **The assessment itself.** What Lunenburg pays Monty Tech each year, and how the share is
+  calculated. That is the money question and it is not in anything here yet.
+- Prior years' lottery results, for an applications trend rather than a single cohort.
+- Whether Lunenburg applicants are accepted at a different rate than other member towns.
+
+## The questions a resident would actually ask
+
+- Is the assessment rising faster than the student count, or slower?
+- Does a student at Monty Tech cost the town more or less than one in Lunenburg?
+- Is the rise demand from families, or capacity decisions at Monty Tech?
+
+**The third cannot be answered from counts alone** — an admission is a place offered as well
+as a place wanted, and the lottery exists precisely because demand exceeds supply. Counts
+show the outcome of both and separate neither.
