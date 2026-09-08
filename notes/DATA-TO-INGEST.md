@@ -55,6 +55,7 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-educators-retention.xlsx` | DESE `fz9c-2g33`, 1.6 MB | `be8a87c9471e` | **headcount by job class — including Administrator and Paraprofessional** — plus hires and retention. 2021-2023 only |
 | `dese-teacher-data.xlsx` | DESE `4684-cw3t`, 25 MB | `4fbe81d65aee` | teacher counts, **student-teacher ratio**, licensure, experience, in-field, by school and subject |
 | `dese-sped-indicators.xlsx` | DESE `yamx-769q`, 11.8 MB | `41d517465d59` | **a published COUNT of students with disabilities** (217-265), plus sped staffing ratios, outcomes, 2017-2026 |
+| `dese-sped-placement-trajectory.xlsx` | DESE `92x3-2qj9`, 762 KB | `ff3e4c9e8dd8` | where a child STARTS against where they end up — the route into out-of-district, 2018-2026 |
 
 Columns, recorded so nobody has to reopen a 133 MB file to find out:
 
@@ -103,6 +104,22 @@ understating real costs, which is what the 2019 Student Opportunity Act addresse
 that gives one of those without the other is taking a side using a number.
 
 **It stops at SY2022**, three years behind. Later years are probably in `qt58-634r`.
+
+**THE PLACEMENT TRAJECTORY SHOWS THE ROUTE INTO THE BIGGEST COST.** SY2026, K-12:
+
+    started as                        n    no IEP  included  sub-sep  out-of-district
+    Inclusive Setting               123     32.5%     60.2%     5.7%             1.6%
+    Substantially Separate Classroom  28     10.7%     10.7%    64.3%            14.3%
+
+A child starting in a substantially separate classroom is nine times more likely to end up
+out of district than one starting included. Out-of-district tuition is the largest single
+cost in the special education budget, so this is the pathway into it, and the district's
+own stated strategy has been to keep children in district.
+
+**The base is tiny and that governs how it may be used.** 14.3% of 28 is four children. One
+year, one cohort. Nine years are in the file; a pattern across them would be worth
+something, a single year is worth nothing, and quoting the percentage without the count
+would be indefensible.
 
 **TWO SOURCES DISAGREE ABOUT PARAPROFESSIONALS, AND THAT IS THE FINDING.**
 
