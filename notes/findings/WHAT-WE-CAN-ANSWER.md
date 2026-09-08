@@ -180,38 +180,13 @@ Separately, the annual reports give **out-of-district placements** for thirteen 
 counted each 1 March and split into collaborative, day and residential. Those are children
 placed outside the district — a much smaller and different number.
 
-**Athletes and costs per sport — I said yes. That was wrong, and the correction is the
-most important one in this document.**
+**Athletes and costs per sport — participations YES, costs STATED and disputed.**
 
-We can show what the district's own athletics workbook **states** for each sport, for three
-years. We **cannot prove any of it.** There is no invoice, no payment record, and no
-independent figure to check a single sport against.
-
-**Three reasons, and the third is decisive.**
-
-*The district has publicly disclaimed these numbers.* School Committee minutes of 24 June
-2026 record that community members "have asked straightforward questions regarding the
-actual cost of middle school athletics" and that "the answers have been inconsistent" — and
-that "available data suggests that user registration fees may exceed the known cost of
-operating these programs." When the people who produced a figure will not stand behind it,
-repeating it as established is not something we get to do.
-
-*The one independent record we have does not reconcile to it.* We hold every transaction in
-and out of the athletics revolving fund for three years. In FY2024 that fund paid out
-$317,004 and the general fund carried $285,281, while the workbook states total cost of
-$351,643. Those numbers do not add up to each other in any direction, and nothing published
-explains the difference.
-
-*And the payments do not say what they bought.* Each disbursement from the fund carries a
-warrant number — `44 24` — and nothing else. **No vendor. No description. Not one mention
-of any sport in three years of transactions.** So even with the ledger in hand, the money
-cannot be attributed to a sport.
-
-**What is actually established:** how many participations each sport had, what fees were
-charged, and what the fund took in and paid out in total. **What is not:** what any
-individual sport costs. The honest answer to *"what does middle school athletics cost"* is
-the same one the district gave — nobody currently knows — and the difference is that we can
-now say precisely which document would settle it.
+Participation by sport and season, and the fee schedule, hold up. Per-sport **costs** come
+from one document — the district's own workbook — nothing independent checks them, and the
+district has publicly given inconsistent answers about them. Report them as the district's
+figures, with that flag, and report the three-way disagreement beside them. See *"So what
+CAN we say about athletics costs?"* above for the full answer.
 
 **What would close it:** the accounts-payable detail behind those warrants — the vendor and
 description for each payment — which the town's accounting system holds and does not
@@ -219,32 +194,85 @@ publish.
 
 ---
 
-## The test I should have been applying all along
+## How confirmed is an answer? Three levels — and all three are answers
 
-TJ, on the athletics answer: *"can we actually PROVE it? we have reports from the school,
-but can we match that to an actual invoice, or actual payment?"*
+TJ, first: *"can we actually PROVE it?"* Then, on my answer to that:
+*"I think we should be able to give some level of answer, but not a confirmed-with-invoice
+level of confirmed. Which IS an answer, just not to full detail."*
 
-That is a sharper standard than the one I was using, and it is the right one for an audit.
-Three levels, and they are not close to equivalent:
+Both are right, and the second corrects an over-swing in the first. **A refusal is not more
+honest than a bounded answer — it is just less useful.** So the levels below are a label
+that travels WITH an answer, never a gate that withholds one.
 
-1. **Somebody published a number.** A district workbook says a sport cost $X.
-2. **The number reconciles to something independent.** A second document, produced by
-   somebody else or for another purpose, arrives at the same figure.
-3. **The number is traceable to a payment.** An invoice, a warrant, a payroll record — the
-   transaction that actually happened.
+| level | what it means | how to say it |
+|---|---|---|
+| **Stated** | A document says so, and nothing independent checks it | *"The district's workbook states…"* |
+| **Cross-checked** | A second, independent document agrees — or visibly disagrees, which is itself informative | *"Two documents give X and Y, and they differ by Z"* |
+| **Traced to a payment** | An invoice, warrant or payroll record. The transaction happened | *"The fund paid out X"* |
 
-**Almost everything in this project sits at level 1 or 2.** Very little reaches level 3,
-and where it does not, the honest word is "stated", not "is".
+**Most of this project lives at Stated and Cross-checked, and that is normal for public
+records.** Very little municipal information is traceable to a payment without a records
+request. The failure is not being at level 1 or 2 — it is *reporting* level 1 as though it
+were level 3.
 
-Level 3 exists here for: the athletics revolving fund's transactions in and out (three
-years, though without saying what was bought), and the town's general fund for FY2026.
+**One extra flag, above all three:** where the body that produced a figure has publicly
+declined to stand behind it, say so beside the number. That is not a lower level; it is a
+different fact about the figure, and readers need it.
 
-**Where a figure has been publicly disclaimed by the body that produced it — as the
-athletics costs have been — it does not even hold level 1 securely.** It is a claim
-somebody has withdrawn.
+---
 
-I will apply this test to the rest of the site. It is likely to move several answers
-downward, and that is the point of having it.
+## So what CAN we say about athletics costs?
+
+Quite a lot, once the levels are attached rather than used to refuse:
+
+**Traced to a payment.** The athletics revolving fund paid out **$317,004 in FY2024**,
+$293,054 in FY2025 and $171,154 in FY2026. Those are real transactions. Split by kind —
+payroll, warrants, corrections — but **not by sport**: each payment carries a warrant number
+and no vendor, no description, and no sport, across three years.
+
+**Cross-checked, and they disagree — which is the finding.** For FY2024 there are three
+figures for what athletics cost, from three documents:
+
+| | |
+|---|---:|
+| the district's workbook states | 351,643 |
+| the revolving fund actually paid out | 317,004 |
+| the general fund carried | 285,281 |
+
+The first is a claim about total cost; the second and third are money that actually left two
+different pots. **The fund and the general fund together come to $602,285 — well above the
+workbook's stated total** — and nothing published reconciles them. That disagreement is a
+solid, defensible finding on its own, and it is more useful than any single number.
+
+**Stated, and publicly disclaimed.** Per-sport costs come only from the workbook, and School
+Committee minutes of 24 June 2026 record that questions about the actual cost of middle
+school athletics have received *"inconsistent"* answers. Report those figures as the
+district's, with that flag attached — do not repeat them as established, and do not suppress
+them either.
+
+**Solid at any level.** Participations by sport and by season, and the fee schedule with the
+date each rate was set. Those are counts and rates, not costs, and they hold up.
+
+**So the answerable version of "what does middle school athletics cost" is:** the district
+removed it as a budget reduction of **$14,415**, community members have asked what it
+actually costs and received inconsistent answers, and available data raises the question of
+whether fees exceed the cost. **That is a real answer to a real question** — it just is not a
+cost figure, and nobody currently has one.
+
+---
+
+## And the same for the surplus
+
+**Where it sits: to the dollar, for FY2026, traced.** Which accounts came in under plan, and
+how much moved between lines mid-year.
+
+**Why it sits there: bounded, not settled.** A line under plan can be a vacancy, a cut
+service, a grant covering the cost, a transfer out, or over-budgeting. All five look the
+same. The accounting system does separate one of them — money *moved* is distinguishable
+from money *not spent* — which is more than a budget book can do.
+
+**So the answer is:** here is exactly where, here are the possible causes, here is the one we
+can rule in or out, and here is the document that would decide the rest. Not "we cannot say".
 
 ---
 
