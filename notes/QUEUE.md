@@ -203,6 +203,49 @@ one where they do not, and now that is measurable rather than felt.
 100,000/day budget the data push needs — see the question inbox, which was given its own
 database for exactly this reason. Do the same here, or keep state in a committed file.
 
+## 12a. MEETING DIGESTS — this is the actual point, and I had it filed wrong
+
+TJ: *"i personally was watching every meeting in town (Select board, finance committee and
+school committee). and taking notes, and posting them online. People loved it because i
+focused only on the details that mattered to them. That is missing."*
+
+**So the feed is not notifications with digests attached. The digests ARE the product**, and
+the notifications exist to bring people to them. Filed above as though "new video posted"
+were the feature; it is the delivery mechanism.
+
+**And this dissolves the line I drew in the section above.** I warned that announcements
+must stay apart from measurements. A meeting digest is neither: it is derived from a PRIMARY
+SOURCE this archive already holds, it can quote, and every quote can be asserted against the
+minutes file on build — exactly what `/what-sports-cost` and `/state-aid` already do. That
+makes it far closer to the analysis pages than to a news feed, and it should be built to
+their standard rather than a lower one.
+
+**What is checkable and what is editorial, kept apart (rule 7).**
+
+- *What the minutes say* — quotable, citable, asserted at build time. A vote, a figure, a
+  motion, who moved it.
+- *Why it matters to you* — TJ's actual contribution, and the reason people read it. That is
+  judgement and must read as judgement.
+
+The failure mode is the familiar one: an editorial line hardening into a stated fact by the
+next paragraph. A digest saying *"the Committee cut middle school athletics"* when the
+minutes record a budget reduction of $14,415 has already crossed it.
+
+**We can go backwards as well as forwards.** The archive now holds **4,660 sets of minutes
+back to 2009**, extracted to text. Digests need not start with the next meeting — the
+back catalogue is there, and the years nobody has read are exactly where the answers to
+current arguments sit.
+
+**On drafting them.** If a model drafts, three rules and none is optional: every claim
+carries a quote from the minutes; the quote is asserted against the file at build time so a
+fabricated one fails the build rather than publishing; and a person approves before it goes
+out. A hallucinated decision on a town budget site would cost more credibility than the
+whole feed is worth. Note also that per-meeting drafting costs money per meeting, unlike
+everything else here — cap it and say so.
+
+**Start with the three boards TJ already watched** — Select Board, Finance Committee, School
+Committee. We hold 1,022 sets of their minutes, 2010-2026.
+
 ## 13. Community news
 
 Aggregate and LINK. Do not republish. Reproducing somebody else's announcement wholesale is
