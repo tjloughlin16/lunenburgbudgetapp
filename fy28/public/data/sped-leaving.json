@@ -1,9 +1,10 @@
 {
- "about": "Where Lunenburg\u2019s resident children actually go to school, from DESE\u2019s count of residents by district \u2014 every reason, both directions, SY2014 onward.",
+ "about": "Which PUBLIC district educates each of Lunenburg\u2019s resident children, from DESE\u2019s count of residents by district \u2014 every public route, both directions, SY2014 onward. Private and parochial schools are not in it.",
  "closes": "DLS Cherry Sheet CS 1-EB (estimated charges) for Lunenburg, which prints the school choice sending and charter tuition assessments on their own lines \u2014 the money. For the disability question, DESE\u2019s SIMS detail crossing enrollment reason with IEP status, which is not published at town level at all.",
  "conclusions": [
   {
    "basis": "DESE\u2019s count of resident children by town and district, every reason and both directions, for every year it has been published.",
+   "bearing": null,
    "claim": "Change in children schooled outside Lunenburg, over 13 years",
    "detail": "The number of Lunenburg children going to school somewhere other than a Lunenburg school has barely moved in 13 years \u2014 186 then, 177 now, a change of -4.8% \u2014 while where they go changed completely. Monty Tech went 70 to 97. School choice went 69 to 58. Charter schools went 44 to 22. Anybody watching only the total would report that nothing is happening here, and three things beneath it are moving in different directions at once, one of them by half. Over the same span the children in Lunenburg\u2019s own schools went 1,513 to 1,553. That matters for planning because the three routes cost the town different amounts and none of them is controlled by the same decision.",
    "figure": "total_change",
@@ -87,6 +88,7 @@
   },
   {
    "basis": "DESE\u2019s resident-by-district count for the latest published year, read by district rather than by enrollment reason.",
+   "bearing": null,
    "claim": "Lunenburg children at Monty Tech, the largest single destination",
    "detail": "The largest single destination for a Lunenburg child educated elsewhere is not school choice. It is Montachusett Regional Vocational Technical, with 97 children. More than school choice and charter schools put together. Those children are counted as resident MEMBERS, because Lunenburg belongs to that district and helps fund it \u2014 a family choosing it is not choosing OUT of anything the town runs, and no Lunenburg decision admits or refuses any of them. Reading \u201cchildren who leave\u201d as school choice alone understates the count by more than half and points the argument at the one route the town has least to do with.",
    "figure": "students",
@@ -248,7 +250,7 @@
  },
  "fy_first": 2014,
  "fy_last": 2026,
- "grain": "A count of children by town-and-district pair. THE FILE CARRIES NO DISABILITY FLAG, so nothing on this page is a special education figure.",
+ "grain": "A count of children by town-and-PUBLIC-district pair. THE FILE CARRIES NO DISABILITY FLAG, so nothing on this page is a special education figure \u2014 and it carries no private schools either, so the totals here are a floor and not a count of everyone educated outside Lunenburg.",
  "inbound": [
   {
    "fy": 2014,
@@ -411,6 +413,7 @@
   }
  ],
  "not_established": [
+  "HOW MANY LUNENBURG CHILDREN ARE AT PRIVATE OR PAROCHIAL SCHOOLS. None of them are here. Every row in this file is keyed on the eight-digit code that identifies a Massachusetts PUBLIC district, and private schools do not have one or report enrolment to the state \u2014 so Cushing, Notre Dame, St Bernard\u2019s and the rest generate no record, for any town, in any year. The number of children educated outside Lunenburg\u2019s own schools is therefore a FLOOR and not a total. It matters in the opposite direction from everything else on this page: a child at a private school costs the town no tuition and no assessment, and moves Chapter 70 aid by about $150 \u2014 so those departures are close to free for the budget, and they are the ones nobody can count.",
   "THAT ANY OF THESE CHILDREN HAS AN IEP. This is the one that matters, and it is why this report is separate from the other three. DESE publishes the count by town, district and programme and does not publish disability status with it. A special education student who leaves under school choice and a student with no IEP who leaves are one row here.",
   "What any of it costs. The archive holds the counts and not one document stating the tuition Lunenburg is assessed for them \u2014 already registered in `money-gaps.csv` on both the money-out and the people side.",
   "WHICH GRADES they leave in \u2014 the question everybody actually asks. dese_town_enrollment carries no grade column, and the grade counts that do exist are headcounts INSIDE a district rather than an outflow from a town, so they cannot be differenced to recover it. Whether families leave at a transition year or steadily throughout is unknown, and those imply completely different things about what the district could change. Registered in `money-gaps.csv` as \u201cWhich grades Lunenburg children leave the district in\u201d.",

@@ -777,11 +777,13 @@ def build_leaving(db, mf):
     rc = route_change
     biggest_dest = elsewhere_latest[0]
     return {
-        'about': 'Where Lunenburg’s resident children actually go to school, from '
-                 'DESE’s count of residents by district — every reason, both '
-                 'directions, SY2014 onward.',
-        'grain': 'A count of children by town-and-district pair. THE FILE CARRIES NO '
-                 'DISABILITY FLAG, so nothing on this page is a special education figure.',
+        'about': 'Which PUBLIC district educates each of Lunenburg’s resident children, '
+                 'from DESE’s count of residents by district — every public route, both '
+                 'directions, SY2014 onward. Private and parochial schools are not in it.',
+        'grain': 'A count of children by town-and-PUBLIC-district pair. THE FILE CARRIES '
+                 'NO DISABILITY FLAG, so nothing on this page is a special education '
+                 'figure — and it carries no private schools either, so the totals here '
+                 'are a floor and not a count of everyone educated outside Lunenburg.',
         'sources': [
             doc(mf, 'state-dese/dese-residents-sending.xlsx', 'dese_town_enrollment', DESE,
                 'Enrollment of town residents by district (vxt3-k35x). Where each '
@@ -922,6 +924,25 @@ def build_leaving(db, mf):
         'searched': searched('leaving'),
         'minutes': coverage(),
         'not_established': [
+            # A READER CAUGHT THIS BEFORE THE PAGE ADMITTED IT. Asked why Cushing Academy
+            # is not among the destinations. It is not, and neither is any other private
+            # school, for ANY town: every row in the file is keyed on an 8-digit LEA code,
+            # which only Massachusetts PUBLIC districts have. Checked -- zero rows for
+            # Cushing, Notre Dame, St Bernard's, Applewild, Groton School or Lawrence
+            # Academy anywhere in the table. Private schools do not report enrolment to
+            # DESE, so a resident child at one generates no record at all: not a zero, not
+            # an "other", nothing.
+            'HOW MANY LUNENBURG CHILDREN ARE AT PRIVATE OR PAROCHIAL SCHOOLS. None of '
+            'them are here. Every row in this file is keyed on the eight-digit code that '
+            'identifies a Massachusetts PUBLIC district, and private schools do not have '
+            'one or report enrolment to the state — so Cushing, Notre Dame, St '
+            'Bernard’s and the rest generate no record, for any town, in any year. The '
+            'number of children educated outside Lunenburg’s own schools is therefore a '
+            'FLOOR and not a total. It matters in the opposite direction from everything '
+            'else on this page: a child at a private school costs the town no tuition '
+            'and no assessment, and moves Chapter 70 aid by about $150 — so those '
+            'departures are close to free for the budget, and they are the ones nobody '
+            'can count.',
             'THAT ANY OF THESE CHILDREN HAS AN IEP. This is the one that matters, and it '
             'is why this report is separate from the other three. DESE publishes the '
             'count by town, district and programme and does not publish disability '
