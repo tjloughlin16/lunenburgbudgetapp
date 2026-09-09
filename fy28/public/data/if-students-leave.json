@@ -370,14 +370,24 @@
   },
   {
    "basis": "DESE\u2019s Chapter 70 Trends in Aid and Local Contribution workbook, sheet `dataAid`, which breaks the aid calculation into its named components, and DESE\u2019s Chapter 70 District Profile, sheet `DataC70`, for the whole published run of foundation enrolment and aid. The latest year\u2019s aid is tied to the town\u2019s own revenue ledger before any of it is used.",
-   "claim": "What state aid currently moves for one pupil the funding formula counts",
-   "detail": "Chapter 70 is currently moving $150 for one foundation pupil, not the $14,440 the foundation budget is worth per pupil \u2014 a factor of 96.3 between the two figures a scenario could price a departing student at. DESE\u2019s own aid-component columns make each year\u2019s aid the previous year\u2019s plus named increments, an identity that holds to the dollar in all 7 of the last seven years. In FY2026 the whole of Lunenburg\u2019s $240,450 increase is the minimum aid increment and the foundation aid increment is $0; $240,450 spread over 1,603 foundation pupils is $150 each. Across the 33 years DESE publishes, foundation enrolment fell in 17 of them and aid fell in 3.",
+   "claim": "How much Lunenburg\u2019s state aid changes if one pupil leaves",
+   "detail": "Lunenburg receives $9,349,335 in Chapter 70 aid, about $5,847 for every pupil the formula counts. That is not what a departing pupil takes with them. Because the town sits on the minimum-aid floor, the aid total moves by about $150 per pupil \u2014 so a scenario can price a leaver anywhere between $150 and the $14,440 the state\u2019s own costing says a pupil is worth, a factor of 96.3, and the answer changes the arithmetic completely. DESE\u2019s own aid-component columns make each year\u2019s aid the previous year\u2019s plus named increments, an identity that holds to the dollar in all 7 of the last seven years. In FY2026 the whole of Lunenburg\u2019s $240,450 increase is the minimum aid increment and the foundation aid increment is $0; $240,450 spread over 1,603 foundation pupils is $150 each. Across the 33 years DESE publishes, foundation enrolment fell in 17 of them and aid fell in 3.",
    "figure": "marginal",
    "figures": {
+    "aid_avg": {
+     "text": "$5,847",
+     "unit": "",
+     "value": 5846.99
+    },
     "aid_fell": {
      "text": "3",
      "unit": "",
      "value": 3
+    },
+    "aid_total": {
+     "text": "$9,349,335",
+     "unit": "",
+     "value": 9349335.0
     },
     "enrolment_fell": {
      "text": "17",
@@ -451,7 +461,7 @@
      "slug": "/state-aid"
     }
    ],
-   "so_what": "Far less than a pupil\u2019s share of the school budget, so those two must not be used interchangeably."
+   "so_what": "Lunenburg gets $5,847 a pupil in all. Only $150 of it moves with enrolment."
   },
   {
    "basis": "DESE\u2019s enrolment of town residents by district and its enrolment of a district by town of residence \u2014 the two files that count the same children in opposite directions \u2014 filtered to Lunenburg in every school year both cover, with each year\u2019s destination detail summed back to that year\u2019s total before it is used.",

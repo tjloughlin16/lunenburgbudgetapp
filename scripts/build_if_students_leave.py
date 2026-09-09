@@ -1495,13 +1495,41 @@ def the_conclusions(enr, fml, hist, flows, scn):
         ),
         conclusion(
             id='chapter-70-moves-a-fraction-of-the-foundation-rate',
-            claim='What state aid currently moves for one pupil the funding formula counts',
-            so_what='Far less than a pupil’s share of the school budget, so those two must not be used interchangeably.',
-            lede='Chapter 70 is currently moving %s for one foundation pupil, not the %s '
-                  'the foundation budget is worth per pupil — a factor of %s between the '
-                  'two figures a scenario could price a departing student at.'
-                  % (C.usd(hist['min_aid_per_pupil']), C.usd(fml['foundation_per_pupil']),
-                     '%.1f' % scn['aid_ratio']),
+            # "FOUNDATION BUDGET" IS THE JARGON THAT BREAKS THIS CARD.
+            # TJ, reading it: "i think 'foundation' is not clear." It is the state's own
+            # calculation of what educating a district's children ought to cost -- a
+            # formula, not money anybody hands over -- and a reader who does not already
+            # know that cannot tell why two figures for one departing pupil differ by a
+            # factor of ninety-six. So the card says what the number IS before using its
+            # name, and the name goes in the expansion where it can be defined properly.
+            # THIS CARD MISLED THE PERSON WHO COMMISSIONED IT, WHICH IS THE TEST FAILING.
+            # It led with $150 and TJ read it as "the state gives us only $150 per
+            # student". The state gives Lunenburg $9,229,410, about $5,757 a pupil, some
+            # 35% of the school budget. The $150 is a RATE OF CHANGE -- how much that
+            # total moves if enrolment moves by one, because the town sits on the
+            # minimum-aid floor -- and a rate of change presented as a rate of payment is
+            # off by a factor of thirty-eight in the direction most likely to be quoted
+            # at a meeting.
+            #
+            # So the claim now says CHANGES rather than loses, and the average is on the
+            # card beside the marginal figure. A marginal quantity shown without the
+            # average it moves is not a hard figure to misread; it is a hard figure to
+            # read CORRECTLY.
+            claim='How much Lunenburg’s state aid changes if one pupil leaves',
+            so_what='Lunenburg gets %s a pupil in all. Only %s of it moves with '
+                    'enrolment.'
+                    % (C.usd(fml['aid_per_pupil']),
+                       C.usd(hist['min_aid_per_pupil'])),
+            lede='Lunenburg receives %s in Chapter 70 aid, about %s for every pupil the '
+                  'formula counts. That is not what a departing pupil takes with them. '
+                  'Because the town sits on the minimum-aid floor, the aid total moves by '
+                  'about %s per pupil — so a scenario can price a leaver anywhere between '
+                  '%s and the %s the state’s own costing says a pupil is worth, a factor '
+                  'of %s, and the answer changes the arithmetic completely.'
+                  % (C.usd(fml['aid']), C.usd(fml['aid_per_pupil']),
+                     C.usd(hist['min_aid_per_pupil']),
+                     C.usd(hist['min_aid_per_pupil']),
+                     C.usd(fml['foundation_per_pupil']), '%.1f' % scn['aid_ratio']),
             detail='DESE’s own aid-component columns make each year’s aid the previous '
                    'year’s plus named increments, an identity that holds to the dollar in '
                    'all %s of the last seven years. In %s the whole of Lunenburg’s %s '
@@ -1520,6 +1548,11 @@ def the_conclusions(enr, fml, hist, flows, scn):
                 'foundation_pp': figure(fml['foundation_per_pupil'],
                                         C.usd(fml['foundation_per_pupil'])),
                 'ratio': figure(scn['aid_ratio'], '%.1f' % scn['aid_ratio']),
+                # The AVERAGE, registered so it can appear beside the marginal figure.
+                # Showing a rate of change without the total it changes is what made this
+                # card read as "the state gives us $150 a student".
+                'aid_total': figure(fml['aid'], C.usd(fml['aid'])),
+                'aid_avg': figure(fml['aid_per_pupil'], C.usd(fml['aid_per_pupil'])),
                 'ties': figure(recent_ties, C.num(recent_ties)),
                 'fy': figure(fy26['fy'], C.fy(fy26['fy'])),
                 'increase': figure(fy26['increments'], C.usd(fy26['increments'])),

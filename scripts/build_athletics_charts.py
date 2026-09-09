@@ -115,6 +115,59 @@ WORKBOOK_COMPARABLE = {
 COMPARE_FY = 2024
 
 # ---------------------------------------------------------------------------------------
+# WHAT COUNTS AS ATHLETICS, ACCORDING TO THE MACHINE THAT KEEPS THE BOOKS
+#
+# TJ, on this page: *"I am not clear if you are factoring in some other costs that the
+# school does, like the athletic director, trainer, facility costs, etc"*. That is the
+# right question and the page could not answer it, because the answer was a comment in
+# this file rather than a thing on the page.
+#
+# It is answerable exactly, and not by us deciding what athletics ought to include. MUNIS
+# codes every school account to a FUNCTION and a PROGRAM, and function 3510 is Athletics --
+# the same code DESE uses in its own chart of accounts, so the town's ledger and the
+# state's expenditure report are naming the same box. Everything the town's accounting
+# system considers athletics is in there and nothing else is.
+#
+# RULE 13a, AND THIS IS THE STRONGEST FORM OF IT THE PAGE HAS. A MUNIS `glytdbud` printout
+# is a record of what the books say; the district's budget book and its by-sport workbook
+# are figures people assembled. Here the printout AGREES with the budget book to the cent
+# -- twelve accounts summing to the same total as the twelve athletics lines in the budget
+# book -- which is a cross-check rather than a fourth figure, and the build refuses to
+# publish the block if the two ever stop tying.
+#
+# AND THE OTHER HALF: WHAT NO DOCUMENT CAN ATTRIBUTE. Grounds, custodians, heating,
+# electricity and building maintenance are their own functions in the same ledger, whole
+# school and whole year, and NOT ONE of those accounts carries the athletics program
+# segment. So the pitch, the gym, the lights and the person who lines the field are real
+# costs of school sports that nothing published splits out. A total for athletics is
+# therefore a FLOOR, and this block is what lets the page say so with the arithmetic
+# beside it instead of as an apology.
+LEDGER_FY = 2026
+ATH_FUNCTION = '3510'
+# Where the pieces of a MUNIS account string sit. `0100-3-300-3510-06-6-67-1-511026` is
+# fund, ?, department, FUNCTION, location, ?, PROGRAM, ?, object. Named rather than
+# indexed inline, because a positional read with no name on it is the defect rule 13
+# describes: `v1` meaning "the first column that held figures".
+SEG_FUNCTION, SEG_PROGRAM = 3, 6
+SCHOOL_ACCOUNT_PREFIX = '0100-3-300-'
+# The operations-and-maintenance functions in the school department, with the names DESE
+# gives those codes. Read off the ledger rather than listed as a set to sum, so a function
+# the town starts using appears here without anybody remembering to add it -- the check
+# below is that none of them is athletics-coded, and a function omitted from a hand-kept
+# list is a function that check never looked at.
+FACILITY_FUNCTION_NAMES = {
+    '4110': 'Custodial services',
+    '4120': 'Heating of buildings',
+    '4130': 'Utility services',
+    '4210': 'Maintenance of grounds',
+    '4220': 'Maintenance of buildings',
+    '4230': 'Maintenance of equipment',
+    '4300': 'Extraordinary maintenance',
+    '4400': 'Technology infrastructure and maintenance',
+    '4450': 'Technology maintenance',
+}
+
+# ---------------------------------------------------------------------------------------
 # THE FLAG THAT SITS ABOVE THE THREE LEVELS. Where the figures a page publishes have been
 # publicly contested on the record, the page says so beside them. The per-sport costs here
 # come from ONE document -- the district's own athletics workbook -- and School Committee
@@ -154,6 +207,53 @@ MINUTES_QUOTES = [
 # The reduction the minutes name is also a line in the district's own budget: the build
 # checks the two against each other rather than letting a quoted figure stand alone.
 MINUTES_REDUCTION_LINE = 'Freshman & MS Coaches'
+
+# THE OTHER QUOTE, AND IT IS THE EVIDENCE FOR THE GAP RATHER THAN FOR A FIGURE.
+#
+# Rule 15a says to search the meeting archive for what people said about the thing in the
+# same year, and it earned itself again here. The claim that no document attributes a share
+# of the fields to athletics is a claim about an ABSENCE, and an absence is the hardest
+# thing to publish honestly -- so the strongest corroboration available is a town official
+# asking for exactly that document in public and being told somebody would look into it.
+#
+# It is a Cemetery Commission meeting, which is the sort of place nobody would think to
+# look and precisely why the archive is searched by term rather than by board.
+FIELDS_DOC = 'sources/meetings/text/cemetery-commission/2024-05-16-minutes-6574.txt'
+FIELDS_URL = '/docs/minutes/text/cemetery-commission/2024-05-16-minutes-6574.txt'
+FIELDS_TOWN_URL = ('https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/'
+                   '_05162024-6574')
+FIELDS_BOARD = 'Cemetery Commission'
+FIELDS_DATE = '16 May 2024'
+FIELDS_SPEAKER = 'Michael Clark'
+# The quote begins with the speaker's own name because that is how the minutes write it.
+# Rendering it as `{speaker} + {quote}` produced “Michael Clark asked what is…” inside
+# quotation marks, and the minutes say “Commissioner Michael Clark, asked what is…” --
+# a stitched string presented as a quotation, which is rule 13 exactly.
+FIELDS_QUOTES = [
+    ('Commissioner Michael Clark, asked what is the School Departments field maintenance '
+     'plan look like? Do they have a schedule and licenses? DPW Director, Bernard will '
+     'look into this'),
+]
+
+# THE PERSONA REVIEW'S OWN FINDING, and it is step 3 of notes/process/PERSONAS.md rather
+# than anything a verifier could reach: for every category a report shows underspending,
+# search the archive for what somebody asked for in the same year.
+#
+# This page prints two athletics equipment accounts. In the same fiscal year, at the same
+# School Committee meeting the page already quotes, a booster president said the team had
+# more heads than helmets. The report holds both halves and had not put them together --
+# which is exactly the failure that first run of the persona review caught.
+#
+# WHAT IT MUST NOT BECOME. "The money was there and they would not spend it." The persona
+# document is explicit about that: the request may have arrived after the order window,
+# reconditioning is not buying, and this ledger is period 12 rather than a closed year.
+# The honest sentence puts the two side by side and says what neither establishes.
+HELMETS_SPEAKER = 'Nikki Jeannotte'
+HELMETS_QUOTES = [
+    ('Casey, the head coach put in a request to the athletic department to purchase five '
+     'new helmets earlier this spring, we currently have more heads than we have helmets'),
+]
+EQUIPMENT_ACCOUNTS = ('EQUIP RECO', 'NEW EQUIP')
 
 # The generic words in the workbook's sport names. They are not sports, so a payment
 # reading "MS" or "OOD" is not a payment attributed to a sport, and counting one as a hit
@@ -199,7 +299,7 @@ def _flat(text):
     return ' '.join(text.split())
 
 
-def minutes_quotes():
+def minutes_quotes(doc=None, speaker=None, quotes=None):
     """Every quote this page prints, checked against the minutes file. Rule 15a.
 
     Returns the quote with the line of the file it starts on. Refuses to write if a quote
@@ -207,9 +307,12 @@ def minutes_quotes():
     attributes it to -- a quote lifted out of the wrong speaker's remarks is exactly the
     rule 13 failure of quoting a rendering rather than the source.
     """
-    path = os.path.join(ROOT, MINUTES_DOC)
+    doc = doc or MINUTES_DOC
+    speaker = speaker or MINUTES_SPEAKER
+    quotes = quotes or MINUTES_QUOTES
+    path = os.path.join(ROOT, doc)
     if not os.path.exists(path):
-        fail(f'{MINUTES_DOC} is not on disk — run scripts/sync_archive.py --pull. '
+        fail(f'{doc} is not on disk — run scripts/sync_archive.py --pull. '
              'A quote this page prints is asserted against it on every build.')
     raw = open(path, encoding='utf-8').read().splitlines()
 
@@ -225,24 +328,172 @@ def minutes_quotes():
             line_at.extend([n] * len(word))
     flat = ''.join(flat)
 
-    speaker_at = flat.find(MINUTES_SPEAKER)
-    if speaker_at < 0:
-        fail(f'{MINUTES_DOC} no longer names {MINUTES_SPEAKER}. The page attributes these '
+    # EVERY place the speaker is named, not the first. Minutes name people in the
+    # attendance list at the top and again where they speak, so `find` returns a
+    # coordinate 5,000 characters from the words -- which reads exactly like a quote
+    # attributed to the wrong person. The test is whether the quote sits inside the
+    # NEAREST PRECEDING mention of that speaker, which is the thing the claim actually
+    # rests on.
+    speaker_at = [m.start() for m in re.finditer(re.escape(speaker), flat)]
+    if not speaker_at:
+        fail(f'{doc} no longer names {speaker}. The page attributes these '
              'words to that speaker, and an attribution that cannot be checked is not one.')
 
     out = []
-    for quote in MINUTES_QUOTES:
+    for quote in quotes:
         at = flat.find(_flat(quote))
         if at < 0:
-            fail(f'{MINUTES_DOC} no longer contains, verbatim:\n  “{quote}”\n'
+            fail(f'{doc} no longer contains, verbatim:\n  “{quote}”\n'
                  'Either the town republished the minutes or the extractor changed. '
                  'Nothing is published from a quote that cannot be found in its source.')
-        if not 0 <= at - speaker_at <= SPEAKER_WINDOW:
-            fail(f'the quote “{quote[:60]}…” is {at - speaker_at} characters from '
-                 f'{MINUTES_SPEAKER} in {MINUTES_DOC}. The page says it is that '
+        before = [x for x in speaker_at if x <= at]
+        gap = at - before[-1] if before else -1
+        if not 0 <= gap <= SPEAKER_WINDOW:
+            fail(f'the quote “{quote[:60]}…” is {gap} characters after the nearest '
+                 f'mention of {speaker} in {doc}. The page says it is that '
                  'speaker’s; at that distance it is a guess.')
         out.append(dict(text=quote, line=line_at[at]))
     return out
+
+
+def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
+            workbook_unmatched_total):
+    """What the town's accounting system itself codes to athletics, and what it cannot.
+
+    Two halves, and the page needs both to answer "are you counting the athletic director".
+
+    THE FIRST HALF is every account MUNIS codes to function 3510. It is not our list: it
+    is the box the bookkeeping puts things in, and the athletic director, the trainer, the
+    secretary, the police detail and the insurance are all inside it. The district's own
+    per-sport workbook carries none of those four, which is a large part of why the
+    published totals for athletics disagree -- and until now that was a comment in this
+    file rather than a sentence a reader could see.
+
+    THE SECOND HALF is the operations-and-maintenance functions in the same ledger. The
+    fields, the gym, the lights and the custodians are real costs of running school sports
+    and NOT ONE of those accounts carries the athletics program segment, so no share of
+    them can be attributed. That makes every athletics total a floor, and this is the
+    arithmetic that lets the page say so rather than hedge.
+    """
+    rows = q(c, "SELECT account, name, original, transfers, revised, expended, doc_id, "
+                "period FROM munis_ledger WHERE fy = ? AND totals_only = '0' AND "
+                "account LIKE ?", LEDGER_FY, SCHOOL_ACCOUNT_PREFIX + '%')
+    if not rows:
+        fail(f'no FY{LEDGER_FY} school accounts in munis_ledger — the ledger join matched '
+             'nothing, which reads exactly like a school department that spends nothing')
+
+    def seg(acct, i):
+        parts = acct.split('-')
+        return parts[i] if len(parts) > i else ''
+
+    ath = [r for r in rows if seg(r['account'], SEG_FUNCTION) == ATH_FUNCTION]
+    if not ath:
+        fail(f'no FY{LEDGER_FY} account carries function {ATH_FUNCTION} — either the '
+             'account string changed shape or the town recoded athletics. Nothing is '
+             'published from a join that matched nothing.')
+    ath_programs = sorted({seg(r['account'], SEG_PROGRAM) for r in ath})
+
+    accounts = sorted(
+        (dict(account=r['account'],
+              name=r['name'],
+              program=seg(r['account'], SEG_PROGRAM),
+              appropriated=round(num(r['original']) or 0.0, 2),
+              transfers=round(num(r['transfers']) or 0.0, 2),
+              revised=round(num(r['revised']) or 0.0, 2),
+              # THROUGH PERIOD 12, WHICH IS NOT A CLOSED YEAR. Period 13 is the year-end
+              # close after the lapse period and the town has not published one for
+              # FY2026. So a low figure here is a line that had not spent YET as much as
+              # a line that did not spend, and the page says which.
+              expended=round(num(r['expended']) or 0.0, 2))
+         for r in ath),
+        key=lambda r: -r['appropriated'])
+    # THE ACCOUNT'S NAME IN THE OTHER DOCUMENT, where the two documents fix it between
+    # them. MUNIS prints a ten-character abbreviation -- `ATHTRAINER`, `ADSALARY` -- and
+    # the district's budget book prints a sentence. Where exactly ONE budget book line
+    # carries the same appropriation to the cent, the two name the same thing and the
+    # readable name is published beside the ledger's own. Where the amounts do not tie,
+    # or tie to more than one line, NOTHING is published: a label chosen by resemblance
+    # would be us naming the account, which is rule 13's whole subject. Five of the twelve
+    # come back empty in FY2026, both because a transfer moved the line after it was
+    # appropriated.
+    by_amount = collections.defaultdict(list)
+    for item, per_fy in budget_book_items.items():
+        amt = per_fy.get(LEDGER_FY)
+        if amt is not None:
+            by_amount[round(amt, 2)].append(item)
+    for r in accounts:
+        hit = by_amount.get(r['appropriated'], [])
+        r['book_line'] = hit[0] if len(hit) == 1 else ''
+
+    appropriated = round(sum(r['appropriated'] for r in accounts), 2)
+    revised = round(sum(r['revised'] for r in accounts), 2)
+    expended = round(sum(r['expended'] for r in accounts), 2)
+
+    # THE CROSS-CHECK, AND IT IS THE POINT OF THE BLOCK. The accounting system's printout
+    # and the district's budget book are two independent statements of the same quantity,
+    # and they tie to the cent. Rule 13a: one of them is a record of what the books say and
+    # the other is a sheet somebody assembled, so this is the printout confirming the
+    # sheet -- not a fourth figure to add to the three the page already publishes.
+    book = round(budget_book_general.get(LEDGER_FY, 0.0), 2)
+    if not book:
+        fail(f'athletics_history carries no FY{LEDGER_FY} general fund total to check the '
+             'ledger against')
+    if abs(appropriated - book) > CENT:
+        fail(f'FY{LEDGER_FY}: function {ATH_FUNCTION} in the ledger appropriates '
+             f'{appropriated:,.2f} against {book:,.2f} in the district\u2019s budget book. '
+             'The page states that the accounting system and the budget book agree on what '
+             'athletics is, and they no longer do.')
+
+    # THE SECOND HALF. Read the facility functions off the ledger rather than summing a
+    # hand-kept set: a function the town starts using has to be inside the check, and a
+    # function omitted from a list is one the check never looked at.
+    fac_rows = [r for r in rows
+                if seg(r['account'], SEG_FUNCTION) in FACILITY_FUNCTION_NAMES]
+    if not fac_rows:
+        fail(f'no FY{LEDGER_FY} school account carries an operations-and-maintenance '
+             'function. A school department with no custodians and no heat is an empty '
+             'join, not a finding.')
+    by_function = collections.defaultdict(float)
+    for r in fac_rows:
+        by_function[seg(r['account'], SEG_FUNCTION)] += num(r['revised']) or 0.0
+    facility = [dict(code=k, name=FACILITY_FUNCTION_NAMES[k], amount=round(v, 2),
+                     accounts=sum(1 for r in fac_rows
+                                  if seg(r['account'], SEG_FUNCTION) == k))
+                for k, v in sorted(by_function.items())]
+    facility_total = round(sum(f['amount'] for f in facility), 2)
+
+    # THE ASSERTION THE WHOLE "we cannot say" REST ON. If a facility account ever DOES
+    # carry the athletics program segment, then a share IS attributable and the page must
+    # stop saying it is not.
+    attributed = [r['account'] for r in fac_rows
+                  if seg(r['account'], SEG_PROGRAM) in ath_programs]
+    if attributed:
+        fail('an operations-and-maintenance account now carries the athletics program '
+             f'segment: {attributed}. The page states that no facility cost is attributed '
+             'to athletics anywhere in the ledger, and that is no longer true.')
+
+    return dict(
+        fy=LEDGER_FY,
+        function=ATH_FUNCTION,
+        period=str(rows[0]['period']),
+        doc=rows[0]['doc_id'],
+        accounts=accounts,
+        appropriated=appropriated,
+        revised=revised,
+        expended=expended,
+        budget_book=book,
+        ties=True,
+        # The general fund lines the district's own by-sport workbook does not carry at
+        # all, in the year the two can be compared. This is the answer to "is the athletic
+        # director in there": in the town's appropriation yes, in the per-sport workbook
+        # no, and the gap between them is most of why the published totals disagree.
+        workbook_fy=COMPARE_FY,
+        not_in_workbook=workbook_unmatched,
+        not_in_workbook_total=workbook_unmatched_total,
+        facility=facility,
+        facility_total=facility_total,
+        facility_attributed=0.0,
+    )
 
 
 def build():
@@ -801,6 +1052,67 @@ def build():
     scope = compare['unmatched_total']
     unexplained = three_way['over_workbook'] - scope
 
+    # WHAT THE TOWN'S OWN ACCOUNTING SYSTEM CALLS ATHLETICS, and what it cannot split.
+    # Computed last because it checks itself against `spend['general']`, which everything
+    # above is built from.
+    count = counted(c, spend['general'], items['general'], compare['unmatched'],
+                    compare['unmatched_total'])
+    equip = [r for r in count['accounts'] if r['name'] in EQUIPMENT_ACCOUNTS]
+    if len(equip) != len(EQUIPMENT_ACCOUNTS):
+        fail(f'FY{LEDGER_FY}: expected the equipment accounts {EQUIPMENT_ACCOUNTS} under '
+             f'function {ATH_FUNCTION} and found {[r["name"] for r in equip]}. The page '
+             'sets what they spent beside what a coach asked for, and it cannot do that '
+             'against a line it did not find.')
+    count['equipment'] = dict(
+        accounts=equip,
+        revised=round(sum(r['revised'] for r in equip), 2),
+        expended=round(sum(r['expended'] for r in equip), 2),
+        said=dict(board=MINUTES_BOARD, date=MINUTES_DATE, speaker=HELMETS_SPEAKER,
+                  url=MINUTES_URL, town_url=MINUTES_TOWN_URL,
+                  quotes=minutes_quotes(MINUTES_DOC, HELMETS_SPEAKER, HELMETS_QUOTES)))
+
+    count['said'] = dict(
+        board=FIELDS_BOARD, date=FIELDS_DATE, speaker=FIELDS_SPEAKER,
+        url=FIELDS_URL, town_url=FIELDS_TOWN_URL,
+        quotes=minutes_quotes(FIELDS_DOC, FIELDS_SPEAKER, FIELDS_QUOTES))
+
+    # RULE 2 APPLIED TO THE GAP REGISTER, which is prose that ships.
+    #
+    # `money-gaps.csv` is written by hand -- it is read by the API, by the records request
+    # and by /what-we-cannot-answer as well as by this page -- so the figures inside it are
+    # exactly the thing rule 2 warns about: typed, checkable by nothing, and rendering
+    # confidently long after the model has moved. The row about the buildings states the
+    # two totals this block computes, so they are asserted against it here. A gap whose own
+    # arithmetic has gone stale is worse than no gap: it is a records request for the wrong
+    # document.
+    facility_gap = next((g for g in gaps
+                         if 'grounds, custodial' in g['what'].lower()), None)
+    if facility_gap is None:
+        fail('money-gaps.csv no longer registers the grounds and custodial share. Rule 7c: '
+             'a limit this page states has to be a row there, because the page is not what '
+             'the records request reads.')
+    for _what, _text in (('the athletics appropriation', f'${count["appropriated"]:,.0f}'),
+                         ('the facility total', f'${count["facility_total"]:,.0f}'),
+                         ('the account count', f'{len(count["accounts"])} accounts')):
+        if _text not in facility_gap['why']:
+            fail(f'the buildings gap in money-gaps.csv no longer states {_text} for '
+                 f'{_what}. The register is what the request letter and the API read, so '
+                 'a figure that has drifted there is a figure this project is publishing '
+                 'wrong in three places.')
+    # The two accounts a reader asks about by name. Looked up rather than indexed, and
+    # the build stops if either stops being there: a conclusion naming the athletic
+    # director is a conclusion that has to have found the athletic director.
+    def ledger_account(name):
+        hit = [r for r in count['accounts'] if r['name'] == name]
+        if len(hit) != 1:
+            fail(f'FY{LEDGER_FY}: {len(hit)} accounts named {name!r} under function '
+                 f'{ATH_FUNCTION}. A conclusion names that line, and a name that resolves '
+                 'to none or to several is not a citation.')
+        return hit[0]
+
+    ad_line = ledger_account('ADSALARY')
+    trainer_line = ledger_account('ATHTRAINER')
+
     return dict(
         generated_by='scripts/build_athletics_charts.py',
         source='sources/data/lunenburg.db — athletics_history, athletics_by_sport, '
@@ -826,6 +1138,7 @@ def build():
         fund_flow=flow, fund_sources=src_rows,
         memo_entries=memo, memo_total=memo_total,
         compare=compare,
+        counted=count,
         three_way=three_way,
         disclaimer=disclaimer,
         attribution=attribution,
@@ -840,63 +1153,9 @@ def build():
         related=related,
         conclusions=emit('what-sports-cost', [
             conclusion(
-                id='what-a-season-takes-and-who-puts-it-in',
-                claim='For each place on a team, across everything two different pots spent on athletics',
-                so_what='The town’s budget paid most of it and fees paid the rest. Neither number alone is the cost.',
-                lede='Athletics in %s took %s out of two different pots for %s '
-                      'participations \u2014 %s each \u2014 and the town\u2019s '
-                      'appropriation was %s of it.'
-                      % (C.fy(latest['fy']), C.usd(latest['all_in']),
-                         C.num(part_latest['total']), C.usd(per_participation),
-                         C.usd(latest['general'])),
-                detail='The fee-funded revolving fund spent the other %s, and banked %s '
-                       'in user fees the same year \u2014 %s of what the two pots spent '
-                       'between them. Per participation the fund actually banked %s at '
-                       'the high school against a posted fee of %s, because waivers and '
-                       'sibling discounts sit in the same pool. A resident reading the '
-                       'town\u2019s budget line sees %s and a family reading the fee '
-                       'schedule sees %s; neither is the whole of what a season takes.'
-                       % (C.usd(latest['revolving']), C.usd(latest['revenue']),
-                          C.pct(family_share), C.usd(hs['per_participation']),
-                          C.usd(hs['stated_fee']), C.usd(latest['general']),
-                          C.usd(hs['stated_fee'])),
-                figures={
-                    'fy': figure(latest['fy'], C.fy(latest['fy'])),
-                    'all_in': figure(latest['all_in'], C.usd(latest['all_in'])),
-                    'participations': figure(part_latest['total'],
-                                             C.num(part_latest['total'])),
-                    'per_participation': figure(per_participation,
-                                                C.usd(per_participation)),
-                    'appropriation': figure(latest['general'], C.usd(latest['general'])),
-                    'fund_spending': figure(latest['revolving'],
-                                            C.usd(latest['revolving'])),
-                    'fee_revenue': figure(latest['revenue'], C.usd(latest['revenue'])),
-                    'family_share': figure(family_share, C.pct(family_share)),
-                    'banked_per_participation': figure(hs['per_participation'],
-                                                       C.usd(hs['per_participation'])),
-                    'posted_fee': figure(hs['stated_fee'], C.usd(hs['stated_fee'])),
-                },
-                figure='per_participation',
-                kind='measured',
-                basis='athletics_history for all three dollar figures \u2014 the '
-                      'appropriation out of the district\u2019s budget book, the '
-                      'fund\u2019s spending and its user-fee receipts out of the '
-                      'fund\u2019s own year-end report; athletics_by_sport, a workbook '
-                      'the district assembled, for the participation count; and '
-                      'athletic_fee_schedule for the posted fee, which is sourced to '
-                      'School Committee minutes rather than to a district web page.',
-                not_shown='What a season costs. These are two pots\u2019 outgoings in one '
-                          'year: the appropriation is net of everything else that pays '
-                          'for athletics, and the fee receipts are net of the payment '
-                          'processor\u2019s cut, so what a family was charged and what '
-                          'the fund banked are different numbers. Nor is a participation '
-                          'a child \u2014 one child in three seasons is three of these.',
-                see=[('/what-families-pay', 'what a family pays across the whole budget'),
-                     ('/money-outside-the-budget', 'the funds outside the budget')],
-            ),
-            conclusion(
                 id='more-left-the-accounts-than-any-document-totals',
-                claim='Left the town’s accounts for athletics, more than any document totals',
+                claim='Left the town’s accounts for athletics in %s, more than any '
+                      'document totals' % C.fy(three_way['fy']),
                 so_what='The district’s own workbook puts the whole programme well below that. The spread is published, not reconciled.',
                 lede='Athletics took %s out of the town\u2019s two pots in %s '
                       '\u2014 %s more than the district\u2019s own workbook says the '
@@ -949,8 +1208,73 @@ def build():
                      ('/what-we-cannot-answer', 'what the record cannot answer')],
             ),
             conclusion(
+                id='everything-the-books-call-athletics-and-what-they-cannot',
+                claim='Everything the town’s books code to athletics in %s — director '
+                      'and trainer included' % C.fy(count['fy']),
+                so_what='Not the buildings. Grounds, heat and custodians split by no programme, so this is a floor.',
+                lede='The town\u2019s accounting system codes %d accounts to function '
+                     '%s, Athletics, in %s \u2014 %s appropriated, and the '
+                     'district\u2019s budget book states the same total to the cent.'
+                     % (len(count['accounts']), count['function'], C.fy(count['fy']),
+                        C.usd(count['appropriated'])),
+                detail='Inside it are the athletic director at %s, the trainer at %s, the '
+                       'secretary, the police details and the insurance \u2014 and the '
+                       'district\u2019s own sport-by-sport workbook carries none of the '
+                       'first four. In %s, the one year the two can be set side by side, '
+                       'that was %s of appropriation the per-sport '
+                       'figures never saw, which is a large part of why the published '
+                       'totals disagree. Outside it are the buildings: custodians, '
+                       'heating, utilities, grounds and building maintenance are their '
+                       'own functions in the same printout, %s across the whole school '
+                       'department, and not one of those accounts carries the athletics '
+                       'programme code. The pitch is still mown and the gym is still lit, '
+                       'so what athletics costs is that %s plus a share of the %s that '
+                       'nobody publishes.'
+                       % (C.usd(ad_line['appropriated']), C.usd(trainer_line['appropriated']),
+                          C.fy(count['workbook_fy']), C.usd(count['not_in_workbook_total']),
+                          C.usd(count['facility_total']), C.usd(count['appropriated']),
+                          C.usd(count['facility_total'])),
+                figures={
+                    'accounts': figure(len(count['accounts']), str(len(count['accounts']))),
+                    'function': figure(count['function'], count['function']),
+                    'fy': figure(count['fy'], C.fy(count['fy'])),
+                    'appropriated': figure(count['appropriated'],
+                                           C.usd(count['appropriated'])),
+                    'director': figure(ad_line['appropriated'],
+                                       C.usd(ad_line['appropriated'])),
+                    'trainer': figure(trainer_line['appropriated'],
+                                      C.usd(trainer_line['appropriated'])),
+                    'workbook_fy': figure(count['workbook_fy'],
+                                          C.fy(count['workbook_fy'])),
+                    'not_in_workbook': figure(count['not_in_workbook_total'],
+                                              C.usd(count['not_in_workbook_total'])),
+                    'facility': figure(count['facility_total'],
+                                       C.usd(count['facility_total'])),
+                },
+                figure='appropriated',
+                kind='measured',
+                basis='The town\u2019s own MUNIS year-to-date budget report for '
+                      'FY%d period %s \u2014 a printout of what the books say, with '
+                      'account numbers, transfers and a total the system foots itself. '
+                      'Function %s is Athletics in the town\u2019s chart of accounts and '
+                      'in DESE\u2019s, so the ledger and the state name the same box. The '
+                      'build refuses to publish this if the ledger and the district\u2019s '
+                      'budget book stop agreeing on the total, or if a grounds or '
+                      'custodial account ever does carry the athletics programme code.'
+                      % (count['fy'], count['period'], count['function']),
+                not_shown='What athletics costs. This is what the town APPROPRIATES for '
+                          'it, which is rule 11: net of the fee-funded fund, net of any '
+                          'grant, and with no share of the buildings in it at all. Nor '
+                          'does an account name a person or a post \u2014 a line called '
+                          'ATHTRAINER is dollars, not a trainer, and the town publishes no '
+                          'FTE against it.',
+                see=[('/what-we-cannot-answer', 'the grounds share nobody publishes'),
+                     ('/connecting-the-budget', 'how a budget line reaches the ledger')],
+            ),
+            conclusion(
                 id='the-bus-bill-fell-and-the-town-paid-more',
-                claim='Budgeted for athletic buses, more than double the year before',
+                claim='Budgeted for athletic buses in %s, more than double the year '
+                      'before' % C.fy(t_to['fy']),
                 so_what='The bus bill itself fell that year. What changed is which pot paid, not what it cost.',
                 lede='Lunenburg\u2019s athletic transportation line rose from %s to %s '
                       'in a year when the bus bill itself fell from %s to %s: the cost '

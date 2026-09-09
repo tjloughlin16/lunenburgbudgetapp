@@ -51,6 +51,7 @@ here is the same for every reader until the database is rebuilt.
 """
 import argparse
 import collections
+import csv
 import json
 import os
 import re
@@ -65,6 +66,8 @@ from conclusions import conclusion, emit, figure
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 OUT = os.path.join(ROOT, 'fy28/public/data/school-staffing.json')
+MANIFEST = os.path.join(ROOT, 'sources/data/archive-manifest.csv')
+MINUTES = 'sources/meetings/text'
 
 LEA = '01620000'                      # Lunenburg, in DESE's own org code
 DISTRICT = 'Lunenburg'
@@ -471,6 +474,776 @@ def change(points, key='dollars'):
                 pct=(b[key] - a[key]) / a[key] if a[key] else None)
 
 
+# ================================================================= rule 12 and rule 15a
+#
+# ADDED with the composition sections below. This page had no provenance block and no
+# meeting search, because it predates both being part of what a report is. It now
+# publishes the documents behind every figure and the coverage denominator behind every
+# search, like every other report on this site.
+
+def manifest():
+    with open(MANIFEST, encoding='utf-8') as fh:
+        return {r['key']: r for r in csv.DictReader(fh)}
+
+
+def doc(mf, key, table, publisher, note):
+    r = mf.get(key)
+    if not r:
+        sys.exit('%s is not in archive-manifest.csv. A figure without its document is '
+                 'not publishable -- refusing to write.' % key)
+    return {'path': 'sources/' + key, 'sha256': r['sha256'], 'bytes': int(r['bytes']),
+            'url': r['upstream'], 'docs_url': '/docs/' + key, 'table': table,
+            'publisher': publisher, 'note': note}
+
+
+DESE_PUB = 'Massachusetts Department of Elementary and Secondary Education'
+
+# WHAT THE TOWN SAID, and every one of these is re-read out of the archive on every build
+# and refused if it is no longer verbatim there. Rule 15a: for every category this report
+# says rose or fell, search the meeting archive for what people said about that thing in
+# the same year. That step is what found the ELL count and the Turkey Hill class sizes
+# below -- two figures spoken in public meetings that match DESE's file for the same year
+# to within one child, from sources that never consulted each other.
+QUOTES = [
+    dict(key='chair-staffing-up', board='finance-committee', date='2026-01-27',
+         kind='minutes', doc='7619',
+         quote="really irritates me when we say things like we're cutting staff when the "
+               "data shows that staffing has gone up almost every year in the last 10 "
+               "years",
+         why='The Finance Committee chair, at the Tri-Board meeting, showing a chart of '
+             'school staffing FY16 to FY25. His chart is HEADCOUNT and this page is FTE, '
+             'so the two are not the same measurement — but the direction he describes is '
+             'in the state’s FTE series too.'),
+    dict(key='composition-not-headcount', board='finance-committee', date='2026-01-27',
+         kind='minutes', doc='7619',
+         quote='the more relevant data point is the composition of staff, not total '
+               'headcount',
+         why='The School Committee chair, in the same exchange. This page is the '
+             'composition, and it is here because he asked for it in the room.'),
+    dict(key='need-has-risen', board='finance-committee', date='2026-01-27',
+         kind='minutes', doc='7619',
+         quote="the student population's needs have increased substantially, with more "
+               "students on IEPs, more English language learners, and more students "
+               "entering below benchmark, meaning that even flat staffing represents a "
+               "reduction in effective capacity",
+         why='The School Committee vice-chair, in the same paragraph. Every quantity she '
+             'names except “below benchmark” is published by DESE and is plotted here.'),
+    dict(key='cuts-by-subject', board='finance-committee', date='2026-01-27',
+         kind='minutes', doc='7619',
+         quote='the loss of the Bridge Program, the TLC and Transition programs, and cuts '
+               'across special education, music, physical education, world language, '
+               'math, and science',
+         why='A seventeen-year district employee, in public comment at the same meeting, '
+             'naming the subjects. Four of the six she names move in the state’s file '
+             'over FY2024–FY2026; mathematics moves the other way.'),
+    dict(key='turkey-hill-split', board='finance-committee', date='2026-01-27',
+         kind='minutes', doc='7619',
+         quote='her position had been changed from full-time fourth grade special '
+               'education teacher to split between special education and an MTSS '
+               'interventionist',
+         why='A teacher at the school this page finds carrying the district’s whole '
+             'net fall in teacher FTE, describing one post becoming two part-posts. '
+             'DESE counts FTE per ASSIGNMENT, which is exactly what that produces.'),
+    dict(key='ell-count', board='school-committee', date='2025-12-17',
+         kind='minutes', doc='7572',
+         quote='we currently have 71 ELL students',
+         why='Said in a School Committee meeting in December 2025. DESE’s file records '
+             '70 English learners for the same school year — two counts, taken '
+             'independently, one child apart.'),
+    dict(key='turkey-hill-class-sizes', board='school-committee', date='2025-09-03',
+         kind='minutes', doc='7385',
+         quote='We have started this year with 357 students and an average class size of '
+               '23/24 for third grade with 113 students, 135 students in the fourth grade '
+               'with an average class size of 27, and 109 students in the fifth grade '
+               'with an average class size of 22/23',
+         why='The principal of the grades 3–5 school, on the first day of the year DESE '
+             'records 356 pupils there — 113, 135 and 108 by grade. Three of the four '
+             'figures match exactly.'),
+    dict(key='esser-hired-13', board='finance-committee', date='2023-04-20',
+         kind='minutes', doc='96',
+         quote='ESSER funds allowed the School Department to hire 13 new positions across '
+               'the district. Social workers, guidance counselors, subject specialists, '
+               'tutors, and technicians were all brought into the school',
+         why='The single largest confound in any staffing series covering these years. '
+             'DESE counts federally funded staff exactly like appropriated staff, so a '
+             'grant arriving and a grant ending are both invisible in the FTE line.'),
+    dict(key='esser-unwound', board='finance-committee', date='2024-02-21',
+         kind='minutes', doc='6417',
+         quote='kept 2 social worker positions while cutting 2 budget funded guidance',
+         why='The other end of the same grant. Positions were kept, cut and moved onto a '
+             'different grant in one year — three different things that look identical '
+             'in a headcount and in an FTE count alike.'),
+    dict(key='one-music-teacher', board='school-committee', date='2024-01-24',
+         kind='minutes', doc='6375',
+         quote='there is one high school music teacher and there are two art teachers',
+         why='Why this page cannot answer “what happened to music”. DESE publishes one '
+             'Arts bucket; the town distinguishes music from art and this is the archive '
+             'saying so.'),
+    dict(key='fy27-cut-list', board='school-advisory-councils-committees',
+         date='2026-03-26', kind='minutes', doc='7726',
+         quote='cuts: 2 primary teachers; 2 elementary; CODA; .2 music; interventionist '
+               'at primary; custodian; part time AD; band and atheltic transportation',
+         why='The district publishes a line-by-line cut list every year. This one is '
+             'FY2027 and is not yet in any DESE file — the state’s teacher data stops at '
+             'FY2026, so the most recent cuts are visible only in the minutes.'),
+]
+
+SEARCHED_TERMS = ['staffing', 'class size', 'paraprofessional', 'world language',
+                  'interventionist', 'ELL', 'ESSER', 'guidance counselor']
+
+
+def said_in_meetings():
+    """Every quote, re-read out of the archive and refused if it is not verbatim there."""
+    out = []
+    for spec in QUOTES:
+        rel = '%s/%s/%s-%s-%s.txt' % (MINUTES, spec['board'], spec['date'],
+                                      spec['kind'], spec['doc'])
+        path = os.path.join(ROOT, rel)
+        if not os.path.exists(path):
+            sys.exit('%s is not here -- a quote on this page is attributed to a document '
+                     'that is not in the archive. Refusing to write.' % rel)
+        text = re.sub(r'\s+', ' ', open(path, encoding='utf-8', errors='replace').read())
+        if re.sub(r'\s+', ' ', spec['quote']) not in text:
+            sys.exit('the quote attributed to %s %s is no longer in %s -- quote the '
+                     'source, never your rendering of it. Refusing to write.'
+                     % (spec['board'], spec['date'], rel))
+        out.append(dict(
+            key=spec['key'], board=spec['board'].replace('-', ' ').title(),
+            kind=spec['kind'], date=spec['date'], quote=spec['quote'], why=spec['why'],
+            cite='/docs/' + rel.replace('sources/', ''),
+            town='https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_%s%s%s-%s'
+                 % (spec['date'][5:7], spec['date'][8:10], spec['date'][:4], spec['doc'])))
+    return out
+
+
+_ARCHIVE = {}
+
+
+def archive():
+    """The meeting archive, read once: the bodies, and the measured coverage denominator.
+
+    THE DENOMINATOR IS NOT `len(*.txt)`. An image scan extracts to an empty file, so
+    counting text files overstates coverage by about a third. `minutes-searchable.csv` is
+    the generated authority and it is read rather than recomputed.
+    """
+    if _ARCHIVE:
+        return _ARCHIVE
+    idx = os.path.join(ROOT, 'sources/meetings/index.csv')
+    if not os.path.exists(idx):
+        sys.exit('sources/meetings/index.csv is not here -- a search of nothing is not a '
+                 'search. Refusing to write.')
+    rows_ = list(csv.DictReader(open(idx, encoding='utf-8')))
+    bodies, dates = [], []
+    for r in rows_:
+        stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
+        txt = os.path.join(ROOT, MINUTES, stem + '.txt') if stem else ''
+        if stem and os.path.exists(txt):
+            bodies.append(open(txt, encoding='utf-8', errors='replace').read())
+            if r.get('date'):
+                dates.append(r['date'])
+    if not bodies or not dates:
+        sys.exit('no meeting document is readable -- refusing to publish a count of what '
+                 'nobody said.')
+    cov = os.path.join(ROOT, 'sources/data/minutes-searchable.csv')
+    if not os.path.exists(cov):
+        sys.exit('sources/data/minutes-searchable.csv is not here -- the searchable share '
+                 'cannot be typed. Refusing to write.')
+    t = collections.Counter()
+    for r in csv.DictReader(open(cov, encoding='utf-8')):
+        for k in ('held', 'searchable', 'unsearchable', 'image_scan'):
+            t[k] += int(r[k] or 0)
+    if not t['searchable'] or t['held'] != t['searchable'] + t['unsearchable']:
+        sys.exit('minutes-searchable.csv does not reconcile -- refusing to publish a '
+                 'coverage figure that does not add up.')
+    _ARCHIVE.update(bodies=bodies, published=len(rows_), text_files_present=len(bodies),
+                    held=t['held'], searchable=t['searchable'],
+                    unsearchable=t['unsearchable'], image_scan=t['image_scan'],
+                    searchable_share=round(t['searchable'] / t['held'], 4),
+                    first_date=min(dates), last_date=max(dates))
+    return _ARCHIVE
+
+
+def searched():
+    a = archive()
+    return [dict(term=t, documents=sum(1 for b in a['bodies']
+                                       if re.search(re.escape(t), b, re.I)))
+            for t in SEARCHED_TERMS]
+
+
+def coverage():
+    a = archive()
+    return {k: a[k] for k in ('published', 'held', 'searchable', 'unsearchable',
+                              'image_scan', 'searchable_share', 'text_files_present',
+                              'first_date', 'last_date')}
+
+
+# =====================================================================================
+# WHO TEACHES, AND WHOM  --  the composition half of this page
+# =====================================================================================
+#
+# ADDED 9 September 2026, for one reason: two town bodies are publicly disagreeing about
+# a fact and this archive can settle what each of them is true of.
+#
+#   Finance Committee Chair, Tri-Board, 27 January 2026, showing a staffing chart:
+#     "it really irritates me when we say things like we're cutting staff when the data
+#      shows that staffing has gone up almost every year in the last 10 years"
+#   School Committee Vice-Chair, same meeting, same paragraph:
+#     "FY25 saw a downward turn, and FY26 included significant layoffs, which was not
+#      reflected in the chart ... even flat staffing represents a reduction in effective
+#      capacity"
+#
+# THE PAGE DOES NOT ADJUDICATE THAT, and the temptation to is the whole risk here. Rule 7:
+# "teacher FTE rose between these two years" is a measurement and so is "teacher FTE fell
+# between those two"; WHO IS RIGHT is not a third measurement, it is a choice of window.
+# So every window is drawn, the two named ones are DERIVED by argmin/argmax rather than
+# chosen, and the count of rising year-steps is published beside the net change because
+# those two facts are what the two claims are respectively about.
+#
+# FOUR TRAPS, each of which this code asserts against rather than remembering.
+#
+#  1. DISTRICT ROWS SIT BESIDE SCHOOL ROWS in every one of these DESE tables. A query
+#     that forgets `org_level` doubles the district. Every read here names the level and
+#     `school_reconciliation` proves the schools sum to the district in every year.
+#
+#  2. `dese_educator_workforce` PRINTS ITS OWN TOTAL AS A ROW. `All Educators` and the
+#     seven race rows are the same people twice, and summing them once produced
+#     "administrators doubled" here when the published figures are 14 and 19. Only
+#     `race_level = 'all'` is read, and the double is computed and published so the trap
+#     is visible rather than merely avoided.
+#
+#  3. THE SUBJECT CLASSIFICATION IS NOT COMPARABLE BEFORE FY2013. `Core-All Subjects` --
+#     one teacher counted against every core subject she teaches -- is 56.5 FTE in FY2008
+#     and 11.0 by FY2013, which is 47 FTE moving between categories with no staffing
+#     event behind it. Subject series are therefore published for the whole run and
+#     DIFFERENCED only from `SUBJECT_ERA`, and the reason is in the payload.
+#
+#  4. `low_income_pct` AND `econ_disadvantaged_pct` ARE TWO DIFFERENT MEASURES. DESE
+#     replaced the first with the second for FY2015-FY2021 and then went back to a
+#     redefined `low income`. Joining them into one series produces a rise that is partly
+#     a definition. The three segments are published separately and the break years are
+#     named. `high_needs_pct` runs unbroken FY2013-FY2026 and is the measure the ratios
+#     use -- but it carries low income inside it, so its own FY2022 step is flagged too.
+#
+# AND THE STANDING CAUTION FROM THE REST OF THIS PAGE APPLIES UNCHANGED. DESE's FTE
+# counts staff paid from grants, circuit breaker reimbursement and revolving funds
+# alongside those the town appropriates (rule 11), and DESE's FTE is per ASSIGNMENT
+# rather than per person -- the EPIMS handbook defines it as "the percent of workday
+# staff are involved in an assignment". A subject losing 1.0 FTE may be one person gone,
+# or five people each teaching one less section of it.
+
+# The FY2017 reconfiguration. Passios closed after FY2012; Turkey Hill Middle became
+# Turkey Hill Elementary (grades 3-5) and Lunenburg Middle School (grades 6-8) opened as
+# its own org code in FY2017. A per-school series drawn across that is drawing the
+# buildings changing grades, so the per-school panel starts here and says so.
+SCHOOL_ERA = 2017
+# Subject differences start here. See trap 3 above.
+SUBJECT_ERA = 2013
+# The total-FTE era. FY2011 reports 102.3 between FY2010's 120.4 and FY2012's 114.4 --
+# an 18 FTE fall and a 12 FTE recovery in consecutive years, which no staffing decision
+# produces. The whole run is PUBLISHED; the derived peak and trough are taken from here.
+TOTAL_ERA = 2013
+
+ALL_TEACHERS = 'All Teachers'
+# `Core-All Subjects` is a GROUP, not a subject: an elementary teacher's FTE apportioned
+# across the core subjects she teaches. It is kept in the series because dropping it
+# would make the subjects appear to sum to less than they do, and it is excluded from the
+# "which programme moved" ranking because it is not a programme.
+NOT_A_SUBJECT = ('All', ALL_TEACHERS, 'Core-All Subjects')
+
+# What each school teaches, read off the enrolment file's own grade columns rather than
+# asserted, so a reconfiguration cannot leave this sentence behind.
+GRADE_COLS = [('pk_cnt', 'PK'), ('k_cnt', 'K')] + \
+             [('grade_%d_cnt' % i, str(i)) for i in range(1, 13)]
+
+
+def grade_span(db, org_code, fy):
+    """The grades a school actually enrolled in a year, from the state's own columns."""
+    r = db.execute('SELECT %s FROM dese_enrollment WHERE lea = ? AND org_code = ? '
+                   'AND fy = ?' % ', '.join(c for c, _ in GRADE_COLS),
+                   (LEA, org_code, fy)).fetchone()
+    if not r:
+        return ''
+    got = [lab for (col, lab), v in zip(GRADE_COLS, r) if v]
+    if not got:
+        return ''
+    return got[0] if len(got) == 1 else '%s–%s' % (got[0], got[-1])
+
+
+def upsteps(points, key='fte'):
+    """How many of a series' year-steps rose, and how many steps there are.
+
+    The Finance Committee's claim is about DIRECTION IN MOST YEARS and the School
+    Committee's is about the LAST STEP, so a net change alone answers neither. Both
+    numbers are published for every window this page draws.
+    """
+    up = sum(1 for a, b in zip(points, points[1:]) if b[key] > a[key])
+    return dict(up=up, steps=len(points) - 1)
+
+
+def window(points, lo, hi, key='fte'):
+    """One window of a series, with everything both sides of the argument need."""
+    pts = [p for p in points if lo <= p['fy'] <= hi]
+    if len(pts) < 2:
+        sys.exit('the %s-%s window holds %d points -- a change measured over one year is '
+                 'not a window. Refusing to write.' % (lo, hi, len(pts)))
+    a, b = pts[0][key], pts[-1][key]
+    return dict(first_fy=pts[0]['fy'], last_fy=pts[-1]['fy'], first=a, last=b,
+                change=round(b - a, 4), pct=(b - a) / a * 100 if a else None,
+                **upsteps(pts, key))
+
+
+def teacher_totals(db):
+    """DESE's `All Teachers` line for the district, every published year.
+
+    Read from `dese_teacher_subject` at `org_level = 'district'`. The same figure is
+    printed in three of DESE's files and the agreement is checked below rather than
+    assumed.
+    """
+    out = [dict(fy=r['fy'], fte=r['teacher_fte'],
+                students_per_teacher=r['students_per_teacher'],
+                licensed_pct=r['licensed_pct'], in_field_pct=r['in_field_pct'])
+           for r in rows(db, "SELECT fy, teacher_fte, students_per_teacher, licensed_pct, "
+                             "in_field_pct FROM dese_teacher_subject WHERE lea = ? AND "
+                             "org_level = 'district' AND subject = ? ORDER BY fy",
+                         LEA, ALL_TEACHERS)]
+    if len(out) < 15:
+        sys.exit('dese_teacher_subject returned %d district years for Lunenburg. A join '
+                 'that matches almost nothing looks exactly like a district with almost '
+                 'no history -- refusing to write.' % len(out))
+    return out
+
+
+def enrolment(db):
+    """Enrolment and every need measure DESE publishes for the district.
+
+    RULE 13 ON THE NEED MEASURES. `low_income_pct` and `econ_disadvantaged_pct` are two
+    different questions asked of two different definitions and they are kept in separate
+    fields, never coalesced. `high_needs_pct` is the one measure that runs unbroken over
+    the modern years, and it is published with its own break flag because low income sits
+    inside it.
+    """
+    out = []
+    for r in rows(db, "SELECT fy, total_cnt, swd_cnt, swd_pct, el_cnt, el_pct, "
+                      "high_needs_cnt, high_needs_pct, low_income_pct, "
+                      "econ_disadvantaged_pct, first_lang_not_english_cnt "
+                      "FROM dese_enrollment WHERE lea = ? AND org_level = 'district' "
+                      "AND total_cnt IS NOT NULL ORDER BY fy", LEA):
+        out.append(dict(r))
+    if len(out) < 25:
+        sys.exit('dese_enrollment returned %d district years -- refusing to write.'
+                 % len(out))
+    # A duplicate year would double a denominator silently. DESE prints the district
+    # under two spellings in the early 1990s and both reach this table.
+    fys = [r['fy'] for r in out]
+    if len(set(fys)) != len(fys):
+        dup = sorted({f for f in fys if fys.count(f) > 1})
+        sys.exit('dese_enrollment holds more than one district row for %s. Two rows for '
+                 'one year is a denominator counted twice -- refusing to write.'
+                 % ', '.join(str(f) for f in dup))
+    return out
+
+
+def need_breaks(rows_):
+    """Where a need series stops being one series, computed rather than remembered."""
+    out = []
+    for field, what in (('low_income_pct', 'low income'),
+                        ('econ_disadvantaged_pct', 'economically disadvantaged')):
+        have = sorted(r['fy'] for r in rows_ if r[field] is not None)
+        runs, start = [], None
+        for i, f in enumerate(have):
+            if start is None:
+                start = f
+            if i + 1 == len(have) or have[i + 1] != f + 1:
+                runs.append((start, f))
+                start = None
+        out.append(dict(measure=field, what=what,
+                        runs=[dict(first_fy=a, last_fy=b) for a, b in runs]))
+    return out
+
+
+def composition(db):
+    """Teacher FTE decomposed four ways, against enrolment and against need.
+
+    Every one of the four is a different question and none of them is the others:
+      * BY YEAR      -- did the number of teachers move, and in which direction, when
+      * BY SCHOOL    -- was it one building or all of them
+      * BY SUBJECT   -- did a stable total conceal a recomposition
+      * BY PROGRAMME -- general education against special education, which is a
+                        REGISTERED GAP rather than a finding and is published as one
+    """
+    totals = teacher_totals(db)
+    enr = enrolment(db)
+    by_fy_enr = {r['fy']: r for r in enr}
+
+    # ---- the district series, with the three defensible denominators beside it.
+    # A ratio has two halves and this page is not allowed to publish one without saying
+    # which half moved, so the numerator and both denominators travel together.
+    district = []
+    for t in totals:
+        e = by_fy_enr.get(t['fy'])
+        row = dict(t)
+        row['students'] = e['total_cnt'] if e else None
+        row['high_needs'] = e['high_needs_cnt'] if e else None
+        row['swd'] = e['swd_cnt'] if e else None
+        row['el'] = e['el_cnt'] if e else None
+        row['per_100_students'] = (100 * t['fte'] / e['total_cnt']
+                                   if e and e['total_cnt'] else None)
+        row['per_100_high_needs'] = (100 * t['fte'] / e['high_needs_cnt']
+                                     if e and e['high_needs_cnt'] else None)
+        district.append(row)
+
+    era = [p for p in district if p['fy'] >= TOTAL_ERA]
+    first_fy, last_fy = district[0]['fy'], district[-1]['fy']
+
+    # ---- THE WINDOWS, AND WHY THERE ARE THREE OF THEM RATHER THAN ONE.
+    #
+    # The first draft of this took the argmin and the argmax of the modern era and called
+    # them "the rise" and "the fall". They are FY2014 and FY2018, and naming them would
+    # have been a headline dressed as a derivation: the series ALSO falls to 107.4 in
+    # FY2020, climbs to 114.0 in FY2024 and falls again. It has two peaks, no trend, and
+    # the sign of "did staffing go up" is a property of the window and not of the town.
+    #
+    # So the page draws the whole series, publishes EVERY window's sign in one matrix, and
+    # names three windows -- each of which has a reason outside anybody's argument:
+    #
+    #   whole    every year DESE has published. Not a choice.
+    #   charted  FY2016-FY2025, because that is the span of the chart shown at the
+    #            Tri-Board on 27 January 2026, per the minutes. A document, not a pick.
+    #   recent   from the LATEST LOCAL MAXIMUM to the latest published year, which is a
+    #            rule applied to the series rather than a year somebody liked.
+    peaks = [p for k, p in enumerate(district)
+             if 0 < k < len(district) - 1
+             and p['fte'] > district[k - 1]['fte'] and p['fte'] > district[k + 1]['fte']]
+    if not peaks:
+        sys.exit('the teacher series has no local maximum, which cannot be true of a '
+                 'series that both rises and falls -- refusing to write.')
+    peak = peaks[-1]
+    trough = min([p for p in era if p['fy'] <= peak['fy']], key=lambda p: p['fte'])
+
+    # The span of the chart shown at the Tri-Board, read off the minutes rather than
+    # chosen. The minutes say "a chart of school staffing from FY16 through FY25"; that
+    # chart is HEADCOUNT and this series is FTE, which the page says every time it draws
+    # this window. What is borrowed is the span, not the measurement.
+    charted_lo, charted_hi = 2016, 2025
+
+    windows = dict(
+        whole=dict(why='every year DESE has published',
+                   **window(district, first_fy, last_fy)),
+        charted=dict(why='the span of the staffing chart shown at the Tri-Board meeting '
+                         'of 27 January 2026, per the minutes',
+                     **window(district, charted_lo, charted_hi)),
+        recent=dict(why='from the latest local maximum in the series to the latest year '
+                        'published',
+                    **window(district, peak['fy'], last_fy)),
+    )
+    # The same two endpoints for the denominators, so "staffing fell" and "enrolment fell"
+    # are never quoted over different spans (rule 6, like for like).
+    for key, w in list(windows.items()):
+        lo, hi = w['first_fy'], w['last_fy']
+        for field, name in (('students', 'students'), ('per_100_students', 'per_100'),
+                            ('high_needs', 'high_needs'),
+                            ('per_100_high_needs', 'per_100_high_needs')):
+            pts = [p for p in district if lo <= p['fy'] <= hi and p[field] is not None]
+            w[name] = (dict(first_fy=pts[0]['fy'], last_fy=pts[-1]['fy'],
+                            first=pts[0][field], last=pts[-1][field],
+                            change=pts[-1][field] - pts[0][field],
+                            pct=((pts[-1][field] - pts[0][field]) / pts[0][field] * 100
+                                 if pts[0][field] else None))
+                       if len(pts) >= 2 else None)
+
+    # EVERY WINDOW, not three. The matrix is the answer to "did staffing go up": it went
+    # up over some spans and down over others, and this counts them instead of choosing.
+    # A reader who wants a different pair of years can read the sign off the grid.
+    matrix, rose, fell, flat = [], 0, 0, 0
+    for a in district:
+        row = []
+        for b in district:
+            if b['fy'] <= a['fy']:
+                row.append(None)
+                continue
+            d = round(b['fte'] - a['fte'], 1)
+            row.append(d)
+            if d > 0:
+                rose += 1
+            elif d < 0:
+                fell += 1
+            else:
+                flat += 1
+        matrix.append(dict(fy=a['fy'], to=row))
+    if rose + fell + flat != len(district) * (len(district) - 1) // 2:
+        sys.exit('the window matrix does not hold every pair of years -- refusing to write.')
+    every_window = dict(pairs=rose + fell + flat, rose=rose, fell=fell, flat=flat,
+                        rows=matrix, years=[p['fy'] for p in district])
+
+    # ---- by school. THE SUM IS ASSERTED AGAINST THE DISTRICT IN EVERY YEAR: district
+    # rows and school rows are in one table and a level filter that silently stopped
+    # working would look exactly like a district that shed a school.
+    recon = []
+    for t in totals:
+        s = db.execute("SELECT SUM(teacher_fte) FROM dese_teacher_subject WHERE lea = ? "
+                       "AND org_level = 'school' AND subject = ? AND fy = ?",
+                       (LEA, ALL_TEACHERS, t['fy'])).fetchone()[0]
+        if s is None:
+            sys.exit('no school rows at all in FY%d, against a district total of %s. A '
+                     'join that matches nothing looks exactly like data that is absent '
+                     '-- refusing to write.' % (t['fy'], t['fte']))
+        recon.append(dict(fy=t['fy'], district=t['fte'], schools=round(s, 4),
+                          difference=round(s - t['fte'], 4)))
+    worst = max(recon, key=lambda r: abs(r['difference']))
+    if abs(worst['difference']) > 0.5:
+        sys.exit('the schools sum to %s against a district total of %s in FY%d. The '
+                 'per-school panel is only publishable while it reconciles -- refusing '
+                 'to write.' % (worst['schools'], worst['district'], worst['fy']))
+
+    schools = []
+    for r in rows(db, "SELECT DISTINCT org_code, org_name FROM dese_teacher_subject "
+                      "WHERE lea = ? AND org_level = 'school' ORDER BY org_code", LEA):
+        pts = []
+        for s in rows(db, "SELECT fy, teacher_fte FROM dese_teacher_subject WHERE lea = ? "
+                          "AND org_code = ? AND subject = ? ORDER BY fy",
+                      LEA, r['org_code'], ALL_TEACHERS):
+            e = db.execute('SELECT total_cnt FROM dese_enrollment WHERE lea = ? AND '
+                           'org_code = ? AND fy = ?',
+                           (LEA, r['org_code'], s['fy'])).fetchone()
+            students = e[0] if e else None
+            pts.append(dict(fy=s['fy'], fte=s['teacher_fte'], students=students,
+                            per_100=(100 * s['teacher_fte'] / students
+                                     if students else None)))
+        if not pts:
+            continue
+        era_pts = [p for p in pts if p['fy'] >= SCHOOL_ERA]
+        schools.append(dict(
+            org_code=r['org_code'], name=r['org_name'],
+            grades=grade_span(db, r['org_code'], pts[-1]['fy']),
+            first_fy=pts[0]['fy'], last_fy=pts[-1]['fy'],
+            open_now=pts[-1]['fy'] == last_fy,
+            points=pts,
+            since_era=(window(era_pts, SCHOOL_ERA, last_fy)
+                       if len(era_pts) >= 2 else None),
+            since_peak=(window(era_pts, peak['fy'], last_fy)
+                        if len([p for p in era_pts if p['fy'] >= peak['fy']]) >= 2
+                        else None)))
+    open_now = [s for s in schools if s['open_now'] and s['since_era']]
+    if not open_now:
+        sys.exit('no school has a full post-reconfiguration series -- refusing to write.')
+    moved = sorted(open_now, key=lambda s: s['since_era']['change'])
+    steady = [s for s in open_now if abs(s['since_era']['change']) <= 1.0]
+
+    # ---- by subject. `dese_teacher_grade_subject` is the SUPERSET -- it carries
+    # Physical/Health, Computer Science, Engineering and twenty more that
+    # `dese_teacher_subject` (core academic only) never prints -- so it is the source, and
+    # the two files' shared cells are compared rather than trusted.
+    agree = disagree = 0
+    disagreements = []
+    for r in rows(db, "SELECT a.fy, a.org_name, a.subject, a.total_fte, b.teacher_fte "
+                      "FROM dese_teacher_grade_subject a JOIN dese_teacher_subject b "
+                      "ON a.fy = b.fy AND a.org_code = b.org_code "
+                      "AND a.subject = b.subject WHERE a.lea = ?", LEA):
+        if r['total_fte'] is None or r['teacher_fte'] is None:
+            continue
+        if abs(r['total_fte'] - r['teacher_fte']) > 0.05:
+            disagree += 1
+            disagreements.append(dict(fy=r['fy'], org=r['org_name'], subject=r['subject'],
+                                      grade_subject=r['total_fte'],
+                                      teacher_subject=r['teacher_fte'],
+                                      difference=round(r['total_fte'] - r['teacher_fte'], 2)))
+        else:
+            agree += 1
+    if not agree:
+        sys.exit('the two DESE teacher files share no matching cell -- a comparison that '
+                 'compares nothing passes trivially. Refusing to write.')
+
+    subject_rows = []
+    for r in rows(db, "SELECT DISTINCT subject, subject_level FROM "
+                      "dese_teacher_grade_subject WHERE lea = ? AND org_level = 'district' "
+                      "ORDER BY subject", LEA):
+        pts = [dict(fy=s['fy'], fte=s['total_fte'])
+               for s in rows(db, "SELECT fy, total_fte FROM dese_teacher_grade_subject "
+                                 "WHERE lea = ? AND org_level = 'district' AND subject = ? "
+                                 "ORDER BY fy", LEA, r['subject'])
+               if s['total_fte'] is not None]
+        if not pts:
+            continue
+        subject_rows.append(dict(subject=r['subject'], level=r['subject_level'],
+                                 is_programme=r['subject'] not in NOT_A_SUBJECT,
+                                 first_fy=pts[0]['fy'], last_fy=pts[-1]['fy'],
+                                 latest=pts[-1]['fte'], points=pts))
+
+    def subject_window(lo, hi, label, why):
+        got = []
+        for s in subject_rows:
+            if not s['is_programme']:
+                continue
+            d = {p['fy']: p['fte'] for p in s['points']}
+            a, b = d.get(lo, 0.0), d.get(hi, 0.0)
+            got.append(dict(subject=s['subject'], first=a, last=b,
+                            change=round(b - a, 4),
+                            pct=(b - a) / a * 100 if a else None))
+        got.sort(key=lambda r: -r['change'])
+        up = round(sum(r['change'] for r in got if r['change'] > 0), 4)
+        down = round(sum(r['change'] for r in got if r['change'] < 0), 4)
+        return dict(key=label.lower().replace(' ', '-'), label=label, why=why,
+                    first_fy=lo, last_fy=hi, rows=got,
+                    # THE GROSS MOVEMENT, NOT ONLY THE NET. A net of +2 FTE that is +9
+                    # against -7 is a completely different decade from a quiet one, and
+                    # only the gross figures show it. This is the whole finding of the
+                    # subject section.
+                    up=up, down=down, gross=round(up - down, 4), net=round(up + down, 4),
+                    subjects=len(got))
+
+    subject_windows = [
+        subject_window(SUBJECT_ERA, last_fy, 'The comparable run',
+                       'every year the subject classification is comparable across'),
+        subject_window(charted_lo, charted_hi, 'The charted years',
+                       'the span of the staffing chart shown at the Tri-Board'),
+        subject_window(peak['fy'], last_fy, 'Since the latest peak',
+                       'the same window as the recent fall in the district total'),
+    ]
+
+    # ---- by programme area. THIS IS A REGISTERED GAP AND IS PUBLISHED AS ONE.
+    # `money_gaps` already carries "Why DESE special education teacher FTE falls from 18.5
+    # to 2.0 while total teacher FTE holds flat". A district that had lost nine tenths of
+    # its special education teachers would show it everywhere else in these files and does
+    # not. The series is drawn because refusing to draw it is how it stayed unexamined;
+    # the page states that it cannot be read as a staffing change.
+    programme = [dict(r) for r in rows(
+        db, "SELECT fy, gen_ed_fte, sped_fte, career_tech_fte, el_fte, total_fte, "
+            "reconciles FROM dese_teacher_program_area WHERE lea = ? AND "
+            "org_level = 'district' ORDER BY fy", LEA)]
+    if not programme:
+        sys.exit('dese_teacher_program_area returned nothing for Lunenburg -- refusing '
+                 'to write.')
+    off = [p for p in programme
+           if abs((p['gen_ed_fte'] or 0) + (p['sped_fte'] or 0) + (p['career_tech_fte'] or 0)
+                  + (p['el_fte'] or 0) - (p['total_fte'] or 0)) > 0.15]
+    if off:
+        sys.exit('the programme areas do not sum to their own printed total in FY%s -- '
+                 'refusing to write.' % ', FY'.join(str(p['fy']) for p in off))
+    prog_total = {p['fy']: p['total_fte'] for p in programme}
+    mismatch = [t['fy'] for t in totals
+                if t['fy'] in prog_total and abs(prog_total[t['fy']] - t['fte']) > 0.15]
+    if mismatch:
+        sys.exit('the programme-area total disagrees with the All Teachers line in FY%s. '
+                 'Two DESE files that no longer describe the same district cannot both '
+                 'be drawn -- refusing to write.'
+                 % ', FY'.join(str(f) for f in mismatch))
+
+    # ---- by grade band. Published, and NOT differenced: `multi_grade` absorbs between
+    # 11 and 26 FTE depending on the year and FY2018 puts 13.3 in grades 9-12 against
+    # 23-27 in every neighbouring year. A band series is a coding series here.
+    bands = [dict(r) for r in rows(
+        db, "SELECT fy, pk_2_fte, grade_3_5_fte, grade_6_8_fte, grade_9_12_fte, "
+            "multi_grade_fte, all_grade_fte, total_fte FROM dese_teacher_grade_subject "
+            "WHERE lea = ? AND org_level = 'district' AND subject = 'All' ORDER BY fy", LEA)]
+    band_off = [b for b in bands
+                if abs(sum(b[c] or 0 for c in ('pk_2_fte', 'grade_3_5_fte', 'grade_6_8_fte',
+                                               'grade_9_12_fte', 'multi_grade_fte',
+                                               'all_grade_fte')) - (b['total_fte'] or 0)) > 0.15]
+    if band_off:
+        sys.exit('the grade bands do not sum to their own total in FY%s -- refusing to '
+                 'write.' % ', FY'.join(str(b['fy']) for b in band_off))
+
+    # ---- WHO DESE'S TEACHER FILES DO NOT COUNT AT ALL.
+    # TJ asked whether the town has staffed up in social workers, guidance or
+    # extracurricular. None of them is a teacher on these returns. The only state file
+    # that reaches them is the educator workforce file, which is THREE YEARS long, is
+    # headcount rather than FTE, and puts every one of them in two residual buckets.
+    # THE ROLLUP TRAP IS HERE. `All Educators` is the file's own total printed as a row
+    # beside seven race rows that sum to it. Reading both doubles every figure, and doing
+    # so once produced "administrators doubled" on this project when the published numbers
+    # are 14 and 19. Only race_level = 'all' is read, and the double is computed so the
+    # trap is visible in the payload rather than only avoided in the code.
+    wf, wf_double = [], []
+    for r in rows(db, "SELECT fy, job_class, educators_headcount, hires_headcount, "
+                      "retained_pct FROM dese_educator_workforce WHERE lea = ? AND "
+                      "race_level = 'all' ORDER BY fy, job_class", LEA):
+        wf.append(dict(r))
+    for r in rows(db, "SELECT fy, job_class, SUM(educators_headcount) both_levels "
+                      "FROM dese_educator_workforce WHERE lea = ? GROUP BY fy, job_class",
+                  LEA):
+        wf_double.append(dict(r))
+    if not wf:
+        sys.exit('dese_educator_workforce returned nothing at race_level = all for '
+                 'Lunenburg -- refusing to write.')
+    by_key = {(r['fy'], r['job_class']): r['educators_headcount'] for r in wf}
+    doubled_by = [d for d in wf_double
+                  if by_key.get((d['fy'], d['job_class'])) is not None
+                  and abs(d['both_levels'] - 2 * by_key[(d['fy'], d['job_class'])]) > 0.5]
+    if doubled_by:
+        sys.exit('the race detail rows no longer sum to the All Educators row in '
+                 'dese_educator_workforce. The rollup shape this code guards against has '
+                 'changed and the guard has to be re-derived -- refusing to write.')
+    wf_years = sorted({r['fy'] for r in wf})
+
+    # The town's own rosters ARE the only source that names these people, and they carry
+    # no FTE -- which is exactly the limit `money_gaps` already registers. The counts are
+    # published so a reader can see the shape of what is and is not knowable, with the
+    # print-practice caveat the roster section of this page already makes.
+    support = []
+    for r in rows(db, "SELECT role_category, fy, COUNT(*) n FROM v_staff_roster "
+                      "WHERE school NOT IN (?, ?) GROUP BY role_category, fy",
+                  NOT_OURS, INTERMITTENT):
+        support.append(dict(r))
+    support_roles = ('counselor', 'psychologist', 'social_worker', 'nurse',
+                     'speech_therapist', 'therapist', 'librarian')
+    got_roles = {r['role_category'] for r in support}
+    missing = [c for c in support_roles if c not in got_roles]
+    if missing:
+        sys.exit('the roster classification no longer produces %s. A category that '
+                 'matches nothing looks exactly like a role nobody holds -- refusing to '
+                 'write.' % ', '.join(missing))
+    support_years = sorted({r['fy'] for r in support})
+    support_rows = [
+        dict(role=c, points=[dict(fy=f, names=next((r['n'] for r in support
+                                                    if r['role_category'] == c
+                                                    and r['fy'] == f), 0))
+                             for f in support_years])
+        for c in support_roles]
+
+    return dict(
+        first_fy=first_fy, last_fy=last_fy,
+        eras=dict(total=TOTAL_ERA, school=SCHOOL_ERA, subject=SUBJECT_ERA,
+                  why_total='FY2011 reports 18 FTE below FY2010 and FY2012 reports 12 '
+                            'above FY2011, which no staffing decision produces. The whole '
+                            'run is drawn; the derived peak and trough are taken from the '
+                            'comparable era.',
+                  why_school='Passios Elementary closed after FY2012 and the FY2017 '
+                             'reconfiguration split Turkey Hill Middle into Turkey Hill '
+                             'Elementary and Lunenburg Middle School. A per-school series '
+                             'drawn across that is drawing the buildings changing grades.',
+                  why_subject='Core-All Subjects -- one teacher counted against every core '
+                              'subject she teaches -- falls from 56.5 FTE in FY2008 to '
+                              '11.0 in FY2013. That is 47 FTE moving between categories '
+                              'with no staffing event behind it.'),
+        district=district,
+        peak=peak, trough=trough, windows=windows, every_window=every_window,
+        enrolment=enr, need_breaks=need_breaks(enr),
+        schools=dict(era=SCHOOL_ERA, rows=schools, open_now=[s['org_code'] for s in open_now],
+                     reconciliation=recon, worst=worst,
+                     biggest_fall=moved[0], steady=[s['name'] for s in steady]),
+        subjects=dict(era=SUBJECT_ERA, rows=subject_rows, windows=subject_windows,
+                      agreement=dict(compared=agree + disagree, agree=agree,
+                                     disagree=disagree, rows=disagreements,
+                                     largest=(max((abs(d['difference'])
+                                                   for d in disagreements), default=0.0))),
+                      source='dese_teacher_grade_subject',
+                      checked_against='dese_teacher_subject'),
+        programme=dict(rows=programme, registered_gap=(
+            'Why DESE special education teacher FTE falls from 18.5 to 2.0 while total '
+            'teacher FTE holds flat')),
+        bands=bands,
+        not_counted=dict(
+            workforce=wf, first_fy=wf_years[0], last_fy=wf_years[-1],
+            years=len(wf_years),
+            job_classes=sorted({r['job_class'] for r in wf}),
+            rollup_trap=('`All Educators` is this file’s own total printed as a row '
+                         'beside seven race rows that sum to it. Reading both doubles '
+                         'every figure.'),
+            roster=dict(roles=support_rows, first_fy=support_years[0],
+                        last_fy=support_years[-1])),
+    )
+
+
 # ------------------------------------------------------------------------------- build
 
 def build():
@@ -480,6 +1253,8 @@ def build():
     state, dese_docs, dese_recon = state_series(db)
     peers = peer_series(db)
     ros = roster(db)
+    mf = manifest()
+    comp = composition(db)
 
     # The paraprofessional dollars, reached twice: by summing the five line keys out of
     # `budget_figure`, and by reading the district's own five-school aggregation in
@@ -591,6 +1366,33 @@ def build():
     cw_para = next(p for p in common['panels'] if p['key'] == 'sped_para')['change']
     cw_teach = next(p for p in common['panels'] if p['key'] == 'sped_teacher')['change']
 
+    # ---- the composition figures the new conclusions rest on, derived here and nowhere
+    # else. Every endpoint below is an argmin, an argmax or the end of a published series;
+    # none of them is a year somebody chose because it made a point.
+    # THE WINDOWS WERE RENAMED AND THIS CONSUMER WAS NOT, which is how the generator came
+    # to fail with KeyError: 'rise'. The old names were `rise` and `fall` -- the argmin and
+    # argmax of the modern era, FY2014 and FY2018 -- and the comment above their definition
+    # explains why naming them that way was a headline dressed as a derivation: the series
+    # has TWO peaks, falls to 107.4 in FY2020, climbs to 114.0 in FY2024 and falls again.
+    # The sign of "did staffing go up" is a property of the window, not of the town.
+    #
+    # `whole`, `charted` and `recent` each have a reason outside anybody's argument: every
+    # published year; the span of the chart the Tri-Board was actually shown; and the
+    # latest local maximum to the latest year, which is a rule applied to the series.
+    whole, charted, recent = (comp['windows'][k]
+                              for k in ('whole', 'charted', 'recent'))
+    ratio_whole = whole['per_100']
+    hn = whole['per_100_high_needs']
+    if not hn:
+        sys.exit('no high-needs ratio window -- refusing to write.')
+    worst_school = comp['schools']['biggest_fall']
+    steady = comp['schools']['steady']
+    sub_run = comp['subjects']['windows'][0]
+    sub_fall = comp['subjects']['windows'][2]
+    top_up = sub_run['rows'][0]
+    top_down = sub_run['rows'][-1]
+    cut_down = sub_fall['rows'][-1]
+
     return dict(
         generated_by='scripts/build_staffing_charts.py',
         source='sources/data/lunenburg.db — staff_roster_entries, role_classification, '
@@ -602,6 +1404,73 @@ def build():
             ranks=dict(paras=para_ranks, teachers=teacher_ranks),
             latest=by_fy[s_hi]),
         peers=peers,
+        composition=comp,
+        about='Who Lunenburg’s schools employ, in the two instruments that exist: the '
+              'names the town prints in its own annual reports, and the full-time '
+              'equivalents the state publishes by school, by subject and by programme.',
+        grain='Teacher FTE as the state counts it — per ASSIGNMENT, not per person — set '
+              'against pupil headcount and the state’s need measures. Not dollars, not '
+              'posts, not people, and not a count of who the town appropriates for.',
+        sources=[
+            doc(mf, 'state-dese/dese-teacher-data.xlsx', 'dese_teacher_subject', DESE_PUB,
+                'Teacher FTE by district, by school and by core academic subject, with '
+                'the state’s own students-per-teacher figure. FY2008–FY2026.'),
+            doc(mf, 'state-dese/dese-teachers-by-grade-subject.xlsx',
+                'dese_teacher_grade_subject', DESE_PUB,
+                'The same FTE split by grade band and across a much wider subject list — '
+                'physical and health education, computer science, engineering and twenty '
+                'more the core-academic file never prints. The subject series on this '
+                'page is read from here and checked against the file above.'),
+            doc(mf, 'state-dese/dese-teachers-by-program-area.xlsx',
+                'dese_teacher_program_area', DESE_PUB,
+                'Teacher FTE split into general education, special education, career and '
+                'technical, and English learner. Published on this page as a registered '
+                'gap rather than as a finding — see the section that draws it.'),
+            doc(mf, 'state-dese/dese-enrollment-by-grade.xlsx', 'dese_enrollment',
+                DESE_PUB,
+                'Enrolment by grade and by school, with students with disabilities, '
+                'English learners, high needs and low income. FY1992–FY2026; the need '
+                'measures start later and one of them changes definition twice.'),
+            doc(mf, 'state-dese/dese-educators-retention.xlsx', 'dese_educator_workforce',
+                DESE_PUB,
+                'Educator headcount and retention by job classification, FY2021–FY2023. '
+                'The only state file that reaches counsellors, administrators and '
+                'paraprofessionals as a group — three years, headcount not FTE.'),
+        ],
+        said=said_in_meetings(),
+        searched=searched(),
+        minutes=coverage(),
+        not_established=[
+            'Whether any position was filled. DESE reports FTE per ASSIGNMENT — the '
+            'state’s own handbook defines it as the percent of a workday a member of '
+            'staff is involved in an assignment — so one person split across two roles '
+            'and two people each half-time are the same figure. A teacher at Turkey Hill '
+            'described exactly that split in a public meeting in January 2026.',
+            'Who pays for any of it. DESE counts staff paid from grants, circuit breaker '
+            'reimbursement and revolving funds alongside those the town appropriates, so '
+            'the arrival and the ending of the federal ESSER money — thirteen positions '
+            'by the Finance Committee’s own account — are both invisible in this series.',
+            'What happened to music. DESE publishes one Arts bucket and the town '
+            'distinguishes music from art in its own minutes. Arts FTE rose over the '
+            'years the district’s cut lists name a music position each time.',
+            'Whether a subject losing FTE lost a course. A fall of one FTE can be a '
+            'section, a course, or one teacher’s timetable reallocated across subjects, '
+            'and nothing published distinguishes them.',
+            'What Lunenburg’s counsellors, social workers, psychologists and nurses do as '
+            'a series. None of them is a teacher on these returns; the state’s workforce '
+            'file reaches them for three years only and puts them in two residual '
+            'buckets; the town’s rosters name them and carry no FTE.',
+            'How the low-income share moved between FY2014 and FY2022. DESE replaced '
+            '“low income” with “economically disadvantaged” and then went back to a '
+            'redefined “low income”, so the three segments published here are three '
+            'measures and not one series.',
+        ],
+        closes='DESE’s End of Year Financial Report, Schedule 1, as Lunenburg files it, '
+               'which separates spending by fund and is the document that would say which '
+               'fund pays which post; the district’s own EPIMS work assignment detail by '
+               'school, subject and job classification, which would turn an assignment '
+               'count into a position count; and the district’s master schedule by year, '
+               'which would say whether a subject losing FTE lost a course.',
         roster=ros,
         dollars=dict(stage=DOLLAR_STAGE, panels=panels, sped_common_window=common,
                      reconciled=checked),
@@ -741,7 +1610,7 @@ def build():
             conclusion(
                 id='inside-sped-the-money-went-to-paraprofessionals',
                 claim='Rise in what the schools budget for special education paraprofessionals',
-                so_what='Special education teacher lines rose a fifth as fast. Inside this budget, the money went to assistants.',
+                so_what='Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals.',
                 lede='Inside special education the money went to paraprofessionals: '
                       'those %s budget lines rose %s over %s, while the %s special '
                       'education teacher lines rose %s.'

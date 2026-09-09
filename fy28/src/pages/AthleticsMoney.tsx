@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
 import {
   BothSides, TransportSwap, Coaching, CostByCategory, CostPerSport, Participation,
-  WhoPays, FundCash, FeeLadder, fy, share, FUND, CAT_COLOUR, NEUTRAL,
+  WhoPays, FundCash, FeeLadder, fy, share, FUND, NEUTRAL,
   type SideRow, type TransportRow, type CoachRow, type CatRow, type SportRow,
   type PartRow, type MixRow, type FlowRow, type FeeRow,
 } from '../components/AthleticsCharts'
 import {
   Conclusions,
-  Body, H2, Insight, NotShown, Stat,
+  Body, H2, NotShown,
   ReportShell,
 } from '../components/report'
 import type { Conclusion } from '../components/report'
@@ -94,6 +94,31 @@ type Payload = {
     reference: string; amount: number; comments: string
   }[]
   memo_total: number
+  counted: {
+    fy: number; function: string; period: string; doc: string
+    accounts: {
+      account: string; name: string; program: string; book_line: string
+      appropriated: number; transfers: number; revised: number; expended: number
+    }[]
+    appropriated: number; revised: number; expended: number
+    budget_book: number; ties: boolean
+    equipment: {
+      accounts: { name: string; revised: number; expended: number }[]
+      revised: number; expended: number
+      said: {
+        board: string; date: string; speaker: string; url: string; town_url: string
+        quotes: { text: string; line: number }[]
+      }
+    }
+    workbook_fy: number
+    not_in_workbook: { item: string; amount: number }[]; not_in_workbook_total: number
+    facility: { code: string; name: string; amount: number; accounts: number }[]
+    facility_total: number; facility_attributed: number
+    said: {
+      board: string; date: string; speaker: string; url: string; town_url: string
+      quotes: { text: string; line: number }[]
+    }
+  }
   compare: {
     fy: number
     rows: { category: string; workbook: number; general: number; outside: number }[]
@@ -163,22 +188,7 @@ export function AthleticsMoney() {
   const fy26 = d.both_sides[d.both_sides.length - 1]
   const t24 = d.transport.find(r => r.fy === 2024)!
   const t25 = d.transport.find(r => r.fy === 2025)!
-  const t26 = d.transport.find(r => r.fy === 2026)!
-  const flow25 = d.fund_flow.find(r => r.fy === 2025)!
-  const partFirst = d.participation_totals[0]
   const partLast = d.participation_totals[d.participation_totals.length - 1]
-  const partChange = (partLast.total - partFirst.total) / partFirst.total
-  const hsFees = d.fee_headline.filter(r => r.level === 'HS').sort((a, b) => a.fy - b.fy)
-  /** The fee series is measured over EXACTLY the years participation is measured over.
-   *  It runs a year further — FY27's rate is published — and comparing a three-year
-   *  headcount to a four-year price is the kind of mismatched span this project keeps
-   *  catching in its own prose. The later year is stated separately, with its provenance. */
-  const feeFirst = hsFees.find(r => r.fy === partFirst.fy)!
-  const feeLast = hsFees.find(r => r.fy === partLast.fy)!
-  const feeAhead = hsFees.filter(r => r.fy > partLast.fy)
-  const feeChange = (feeLast.amount - feeFirst.amount) / feeFirst.amount
-  const memoShare = d.memo_entries
-    .filter(r => r.fy === 2025).reduce((a, r) => a + r.amount, 0) / flow25.receipts
   const unpublished = d.both_sides.filter(r => r.revolving_state === 'not published')
   const costYearFee = d.fee_headline
     .find(r => r.level === 'HS' && r.fy === d.coverage.cost_years[d.coverage.cost_years.length - 1])
@@ -201,26 +211,292 @@ export function AthleticsMoney() {
       </>}
     >
 
-      {/* =========================================== THE FLAG, AND IT LEADS ON PURPOSE
+      {/* ===================================================== WHAT THIS COUNTS, FIRST
         *
-        * Rule 7a says a page opens with the thing rather than with context — and makes
-        * one exception, for a genuine warning that changes whether the reader should
-        * trust what follows. This is that exception, and it still opens with a thing:
-        * three documents, three figures, one year, drawn before a word of explanation.
+        * TJ: *"I am not clear if you are factoring in some other costs that the school
+        * does, like the athletic director, trainer, facility costs, etc"*. The answer
+        * existed and lived in a comment in the generator, which is the same as not
+        * existing. It is the FIRST thing on the page now, because a reader cannot judge
+        * any figure below without it — and it is the report's GRAIN, which every report
+        * on this site states above the fold.
         *
-        * Rule 15a: the quote underneath is asserted against the minutes file on every
-        * build by scripts/build_athletics_charts.py, with the line it starts on. */}
-      <div className="card p-5 sm:p-6 mt-9" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+        * IT IS NOT OUR DEFINITION OF ATHLETICS. The town's accounting system codes every
+        * school account to a function, and function 3510 is Athletics — the same code
+        * DESE uses. So the box is the bookkeeping's, not ours, and the build refuses to
+        * publish this if the ledger and the district's budget book stop agreeing on what
+        * is in it. The detail sits behind a disclosure: the answer is two sentences and
+        * the twelve account numbers are for whoever wants them. */}
+      <div className="card p-5 sm:p-6 mt-9" style={{ borderLeft: '4px solid var(--fund-school)' }}>
         <p className="text-[11px] font-semibold uppercase tracking-widest"
-          style={{ color: 'var(--text-muted)' }}>
-          Read the costs on this page with this attached
-        </p>
-        <p className="text-[19px] sm:text-[21px] font-bold leading-snug mt-2 max-w-2xl">
-          Three documents say what athletics cost in {fy(d.three_way.fy)}. No two of them
-          agree, and nothing published reconciles them.
+          style={{ color: 'var(--text-muted)' }}>What this page counts</p>
+
+        <div className="grid gap-6 mt-4 sm:grid-cols-2">
+          <div>
+            <p className="text-2xl font-bold tnum">{usd(d.counted.appropriated)}</p>
+            <p className="text-[14px] leading-snug mt-1.5">
+              <strong>Everything the town&rsquo;s books call athletics</strong> in{' '}
+              {fy(d.counted.fy)} &mdash; {d.counted.accounts.length} accounts under
+              function {d.counted.function}, including the athletic director, the trainer,
+              the secretary, the police details and the insurance.
+            </p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold tnum" style={{ color: 'var(--text-muted)' }}>
+              {usd(d.counted.facility_total)}
+            </p>
+            <p className="text-[14px] leading-snug mt-1.5">
+              <strong>The buildings and grounds, which cannot be split.</strong> Custodians,
+              heat, utilities, grounds and building maintenance across the whole school
+              department. Not one of those accounts carries the athletics code, so no share
+              of it is counted anywhere &mdash; here or in any published figure.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-[14px] leading-relaxed mt-5 max-w-2xl">
+          So every athletics total on this page, and every one the district publishes, is a{' '}
+          <strong>floor rather than a total</strong>. The fields are still mown and the gym
+          is still lit.
         </p>
 
-        <div className="overflow-x-auto mt-5">
+        <details className="mt-4">
+          <summary className="cursor-pointer list-none inline-flex items-center gap-1.5
+                              text-[12.5px] font-semibold"
+            style={{ color: 'var(--text-muted)' }}>
+            <span className="conc-chev inline-block transition-transform"
+              aria-hidden="true">&#9656;</span>
+            The {d.counted.accounts.length} accounts, and the {d.counted.facility.length}{' '}
+            functions that hold the buildings
+          </summary>
+
+          <div className="overflow-x-auto mt-4">
+            <table className="stack w-full text-[12.5px] tnum max-w-3xl">
+              <caption className="sr-only">
+                Every {fy(d.counted.fy)} account the town&rsquo;s ledger codes to function{' '}
+                {d.counted.function}, athletics
+              </caption>
+              <thead>
+                <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
+                  <th className="font-semibold py-1.5">Ledger account</th>
+                  <th className="font-semibold py-1.5">The budget book&rsquo;s name for it</th>
+                  <th className="font-semibold py-1.5 text-right">Appropriated</th>
+                  <th className="font-semibold py-1.5 text-right">After transfers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.counted.accounts.map(a => (
+                  <tr key={a.account} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                    <td className="rowhead py-1.5 font-semibold">
+                      <code>{a.name}</code>
+                      <span className="block text-[10.5px] font-normal break-all"
+                        style={{ color: 'var(--text-muted)' }}>{a.account}</span>
+                    </td>
+                    <td data-label="Budget book" className="py-1.5"
+                      style={{ color: 'var(--text-secondary)' }}>
+                      {a.book_line || <span style={{ color: 'var(--text-muted)' }}>
+                        &mdash; the amounts do not tie, so nothing is claimed
+                      </span>}
+                    </td>
+                    <td data-label="Appropriated" className="py-1.5 text-right">
+                      {usd(a.appropriated)}
+                    </td>
+                    <td data-label="After transfers" className="py-1.5 text-right">
+                      {usd(a.revised)}
+                    </td>
+                  </tr>
+                ))}
+                <tr className="border-t-2" style={{ borderColor: 'var(--axis)' }}>
+                  <td className="rowhead py-1.5 font-bold">Total</td>
+                  <td className="py-1.5 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
+                    the district&rsquo;s budget book states {usd(d.counted.budget_book)}
+                  </td>
+                  <td data-label="Appropriated" className="py-1.5 text-right font-bold">
+                    {usd(d.counted.appropriated)}
+                  </td>
+                  <td data-label="After transfers" className="py-1.5 text-right font-bold">
+                    {usd(d.counted.revised)}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[12.5px] leading-relaxed mt-3 max-w-2xl"
+            style={{ color: 'var(--text-secondary)' }}>
+            <Basis level="cross-checked" />{' '}
+            <span className="ml-1">
+              The account names are the ten characters MUNIS prints, not ours. The ledger and
+              the budget book state the same total to the cent, and the build refuses to
+              publish this block if they stop doing so &mdash; a printout from the books
+              confirming a sheet somebody assembled. Period {d.counted.period} of{' '}
+              {fy(d.counted.fy)}, from <code>{d.counted.doc.split('/').pop()}</code>.
+            </span>
+          </p>
+
+          {/* STEP 3 OF notes/process/PERSONAS.md, which is the step a verifier cannot do.
+              For every category that shows underspending, search the archive for what
+              somebody concretely asked for in the same year. The two athletics equipment
+              accounts are above; the football boosters' president asked this committee for
+              five helmets in the same year, at the same meeting this page already quotes.
+              The report held both halves and had not put them together.
+
+              AND WHAT IT MUST NOT SAY. That the money was there and was withheld. Three
+              things cut against it and all three are stated: the ledger stops at period 12
+              rather than a closed year, reconditioning is not buying, and nothing here
+              dates the request against the order window. */}
+          <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+              style={{ color: 'var(--text-muted)' }}>
+              The equipment lines, and what somebody asked for in the same year
+            </p>
+            <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              The two equipment accounts above carried {usd(d.counted.equipment.revised)}{' '}
+              after transfers in {fy(d.counted.fy)} and had spent{' '}
+              {usd(d.counted.equipment.expended)} of it by period {d.counted.period}.
+            </p>
+            {d.counted.equipment.said.quotes.map(qt => (
+              <blockquote key={qt.line} className="text-[14px] leading-relaxed pl-3.5 my-2.5"
+                style={{ borderLeft: '3px solid var(--axis)' }}>
+                &ldquo;{qt.text}&rdquo;{' '}
+                <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+                  line {qt.line}
+                </span>
+              </blockquote>
+            ))}
+            <p className="text-[12.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {d.counted.equipment.said.speaker}, president of the football boosters, to the{' '}
+              {d.counted.equipment.said.board} on {d.counted.equipment.said.date} &mdash;{' '}
+              <a className="underline" style={{ color: 'var(--series-cost)' }}
+                href={abs(d.counted.equipment.said.url)}>our copy</a> &middot;{' '}
+              <a className="underline" style={{ color: 'var(--series-cost)' }}
+                href={d.counted.equipment.said.town_url}>the town&rsquo;s</a>, checked on
+              every build. <strong>These two facts are set side by side and nothing here
+              connects them.</strong> Period {d.counted.period} is not a closed year, so a
+              line that has not spent is not a line that will not; reconditioning helmets
+              and buying them are different accounts; and nothing published dates the
+              request against the ordering window. What the minutes establish is that the
+              request was made and that no answer had been given by that meeting.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto mt-5">
+            <table className="stack w-full text-[12.5px] tnum max-w-2xl">
+              <caption className="sr-only">
+                The school department&rsquo;s operations and maintenance functions in{' '}
+                {fy(d.counted.fy)}, none of them coded to athletics
+              </caption>
+              <thead>
+                <tr className="text-left" style={{ color: 'var(--text-muted)' }}>
+                  <th className="font-semibold py-1.5">Function</th>
+                  <th className="font-semibold py-1.5 text-right">Whole school department</th>
+                  <th className="font-semibold py-1.5 text-right">Coded to athletics</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.counted.facility.map(f => (
+                  <tr key={f.code} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+                    <td className="rowhead py-1.5 font-semibold">
+                      {f.name} <span style={{ color: 'var(--text-muted)' }}>{f.code}</span>
+                    </td>
+                    <td data-label="Whole department" className="py-1.5 text-right">
+                      {usd(f.amount)}
+                    </td>
+                    <td data-label="Coded to athletics" className="py-1.5 text-right"
+                      style={{ color: 'var(--text-muted)' }}>{usd(0)}</td>
+                  </tr>
+                ))}
+                <tr className="border-t-2" style={{ borderColor: 'var(--axis)' }}>
+                  <td className="rowhead py-1.5 font-bold">Total</td>
+                  <td data-label="Whole department" className="py-1.5 text-right font-bold">
+                    {usd(d.counted.facility_total)}
+                  </td>
+                  <td data-label="Coded to athletics" className="py-1.5 text-right font-bold">
+                    {usd(d.counted.facility_attributed)}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[12.5px] leading-relaxed mt-3 max-w-2xl"
+            style={{ color: 'var(--text-secondary)' }}>
+            The right-hand column is not an estimate of zero. It is the count of accounts in
+            those functions carrying the athletics programme code, and the build stops if it
+            ever stops being none &mdash; because on that day a share <em>would</em> be
+            attributable and this page would have to say so. The fund&rsquo;s cashbook does
+            not help either: no posting in it names a field, a light or a custodian.{' '}
+            <a className="underline" style={{ color: 'var(--series-cost)' }}
+              href={abs('/what-we-cannot-answer')}>Registered as a gap</a>, with the
+            document that would close it.
+          </p>
+
+          {/* RULE 15a. An ABSENCE is the hardest thing to publish honestly, so the
+              corroboration is a town official asking in public for the document this page
+              says does not exist. Asserted against the minutes file on every build, with
+              the line it starts on. */}
+          <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+              style={{ color: 'var(--text-muted)' }}>
+              A town board asked for this document and did not get one
+            </p>
+            {d.counted.said.quotes.map(qt => (
+              <blockquote key={qt.line} className="text-[14px] leading-relaxed pl-3.5 mb-2"
+                style={{ borderLeft: '3px solid var(--axis)' }}>
+                &ldquo;{qt.text}&rdquo;{' '}
+                <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+                  line {qt.line}
+                </span>
+              </blockquote>
+            ))}
+            <p className="text-[12.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {d.counted.said.board}, {d.counted.said.date}, in the town&rsquo;s own
+              minutes &mdash;{' '}
+              <a className="underline" style={{ color: 'var(--series-cost)' }}
+                href={abs(d.counted.said.url)}>our copy</a> &middot;{' '}
+              <a className="underline" style={{ color: 'var(--series-cost)' }}
+                href={d.counted.said.town_url}>the town&rsquo;s</a>. The quote is checked
+              against that file every time this page is built.{' '}
+              <strong>What it establishes</strong> is that the question was asked and
+              referred onward. <strong>What it does not establish</strong> is that no plan
+              exists &mdash; only that none was produced then, and that none has reached
+              this archive since.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart.
+
+          THREE, AND NOT MORE, ON PURPOSE. Rule 4: athletics is 1.7% of what the town
+          spends and its growth does not exceed the levy cap, so it is not a driver of the
+          gap and a page about it must not carry the weight of one. What earns its place is
+          only what generalises -- the disagreement between documents, what an
+          appropriation does and does not contain, and one bill visibly moving between
+          funds. A fourth card computing a cost per participation was cut for the opposite
+          reason: it is the most quotable figure here and the least decision-relevant, and
+          a participation is not a child. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
+      {/* ================================== THE DISAGREEMENT, WHICH IS THE FIRST FINDING
+        *
+        * Rule 7a says a page opens with the thing and makes one exception, for a warning
+        * that changes whether a reader should trust what follows. This is that warning,
+        * and it sits directly under the conclusion that states it rather than above
+        * everything: three documents, three figures, one year, drawn.
+        *
+        * Rule 15a: the quotes are asserted against the minutes file on every build by
+        * scripts/build_athletics_charts.py, with the line each one starts on. They are
+        * behind a disclosure because the table is the finding and the minutes are the
+        * evidence that it is contested in public -- and a reader meets evidence better
+        * after the thing it is evidence about. */}
+      <H2 id="three-documents">
+        Three documents say what athletics cost in {fy(d.three_way.fy)}. No two agree
+      </H2>
+      <div className="card p-5 mt-5" style={{ borderLeft: '4px solid var(--status-warning)' }}>
+        <div className="overflow-x-auto">
           <table className="stack w-full text-[13px] tnum max-w-2xl">
             <caption className="sr-only">
               Three figures for what athletics cost in {fy(d.three_way.fy)}, with how
@@ -248,14 +524,11 @@ export function AthleticsMoney() {
           The second and third are money that really left two different pots, so they add:{' '}
           <strong style={{ color: 'var(--status-bad)' }}>{usd(d.three_way.two_pots)}</strong>{' '}
           &mdash; {usd(d.three_way.over_workbook)} more than the workbook says the whole
-          programme cost, {share(d.three_way.over_workbook_share)} above it. The first is a
-          claim about total cost and may not be added to either.{' '}
-          <strong>The disagreement is the finding.</strong> It is worth more than any one of
-          the three figures, and it is why the per-sport costs further down carry a label.
+          programme cost. The first is a claim about total cost and may not be added to
+          either. <strong>The disagreement is the finding</strong>, and it is worth more
+          than any one of the three figures.
         </p>
 
-        {/* The half of it that is a hypothesis, kept apart from the half that is a
-          * measurement. Rule 7: three readings fit these rows equally well. */}
         <p className="text-[13px] leading-relaxed mt-3 max-w-2xl"
           style={{ color: 'var(--text-muted)' }}>
           <strong>What this does not show.</strong> Which of the three is right, or that
@@ -265,14 +538,16 @@ export function AthleticsMoney() {
           be a plan and the other two the money. Nothing in these documents separates them.
         </p>
 
-        {/* -------------------------------------------------- the quote, asserted at build */}
-        <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
-          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+        <details className="mt-4">
+          <summary className="cursor-pointer list-none inline-flex items-center gap-1.5
+                              text-[12.5px] font-semibold"
             style={{ color: 'var(--text-muted)' }}>
-            And these figures are contested in public, on the record
-          </p>
+            <span className="conc-chev inline-block transition-transform"
+              aria-hidden="true">&#9656;</span>
+            These figures are contested in public, on the record
+          </summary>
           {d.disclaimer.quotes.slice(0, 2).map(qt => (
-            <blockquote key={qt.line} className="text-[14.5px] leading-relaxed pl-3.5 mb-2.5"
+            <blockquote key={qt.line} className="text-[14.5px] leading-relaxed pl-3.5 mb-2.5 mt-3"
               style={{ borderLeft: '3px solid var(--status-warning)' }}>
               &ldquo;{qt.text}&rdquo;{' '}
               <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
@@ -311,118 +586,16 @@ export function AthleticsMoney() {
               size of the reduction, and it does not confirm anything about the cost.
             </span>
           </p>
-        </div>
-      </div>
-
-      <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
-        <Stat value={share(d.compare.share)} tone={FUND}>
-          of what the district&rsquo;s own workbook says the sports cost was covered by the
-          town&rsquo;s comparable budget lines in {fy(d.compare.fy)}
-        </Stat>
-        <Stat value={usd(fy26.all_in ?? 0)}>
-          the whole {fy(fy26.fy)} athletics programme &mdash; {usd(fy26.general)} appropriated
-          and {usd(fy26.revolving ?? 0)} spent by the fee-funded fund
-        </Stat>
-        <Stat value={usd(d.memo_total)} tone={CAT_COLOUR.Officials}>
-          moved into the fund across {fy(d.memo_entries[0].fy)}&ndash;
-          {fy(d.memo_entries[d.memo_entries.length - 1].fy)} on{' '}
-          {d.memo_entries.length} journal entries whose whole description is{' '}
-          <em>per memo</em>. We hold none of the memos
-        </Stat>
-        <Stat value={`${partLast.total}`}>
-          participations in {fy(partLast.fy)}, from {partFirst.total} in {fy(partFirst.fy)}.
-          One child in three seasons is three of these
-        </Stat>
-      </div>
-
-      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
-      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
-          payload, computed by the generator that computed the figures -- see
-          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
-          from the same file, so the two cannot drift apart. */}
-      <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions} />
-
-      {/* ==================================================== 1. WHAT THIS ESTABLISHES */}
-      <H2 id="insights">What this establishes</H2>
-      <Body>
-        Four claims a resident could repeat at a meeting. Each is recomputed from the
-        database when this page is built, and each names the table it came out of.
-      </Body>
-
-      <div className="grid gap-4 mt-6 sm:grid-cols-2">
-        <Insight n={1} figure={share(d.compare.share)} tone={FUND}
-          headline={<>An athletics appropriation is not what athletics costs &mdash; and
-            here that is a measurement, not a warning.</>}>
-          In {fy(d.compare.fy)} the town&rsquo;s comparable athletics lines came to{' '}
-          {usd(d.compare.general_total)} against {usd(d.compare.workbook_total)} that the
-          district&rsquo;s own sport-by-sport workbook totals for the same categories.
-          A further {usd(d.compare.unmatched_total)} sat on general fund lines the workbook
-          does not track at all.{' '}
-          <span style={{ color: 'var(--text-muted)' }}>
-            <code>athletics_history</code> joined to <code>athletics_by_sport</code> on
-            comparable categories, {fy(d.compare.fy)} only.
-          </span>
-        </Insight>
-
-        <Insight n={2} figure={share(t24.fund_share ?? 0)} tone={CAT_COLOUR.Transportation}
-          headline={<>Two-thirds of the bus bill was paid outside the town&rsquo;s budget in{' '}
-            {fy(2024)}. A year later it was {share(t25.fund_share ?? 0)}.</>}>
-          Athletic transportation cost {usd(t24.cost ?? 0)} in {fy(2024)}, of which the
-          town&rsquo;s line carried {usd(t24.general ?? 0)}. In {fy(2025)} the cost fell to{' '}
-          {usd(t25.cost ?? 0)} and the town&rsquo;s line rose to {usd(t25.general ?? 0)}.
-          The {fy(2026)} line is {usd(t26.general ?? 0)}.{' '}
-          <span style={{ color: 'var(--text-muted)' }}>
-            <code>athletics_history</code> both sides, checked against{' '}
-            <code>athletics_by_sport</code>&rsquo;s own transportation total &mdash; the two
-            budget sides sum to it exactly in both years.
-          </span>
-        </Insight>
-
-        <Insight n={3} figure={share(memoShare)} tone={CAT_COLOUR.Officials}
-          headline={<>Most of what came into the fund in {fy(2025)} was four journal entries
-            nobody outside Town Hall can read.</>}>
-          {usd(d.memo_entries.filter(r => r.fy === 2025).reduce((a, r) => a + r.amount, 0))}{' '}
-          of {usd(flow25.receipts)} arrived as general-journal entries described only as an
-          expense adjustment made per a memo. Take them out and the year closes at{' '}
-          <strong style={{ color: 'var(--status-bad)' }}>{usd(flow25.without_journals)}</strong>.
-          That is arithmetic on the town&rsquo;s own rows, not a balance the town reported.{' '}
-          <span style={{ color: 'var(--text-muted)' }}>
-            <code>fund_1301_cash_journal</code>, <code>src = &lsquo;GEN&rsquo;</code>.
-          </span>
-        </Insight>
-
-        <Insight n={4}
-          figure={`${partChange >= 0 ? '+' : '−'}${Math.abs(partChange * 100).toFixed(1)}%`}
-          headline={<>Participation is roughly flat over three years while the fee it pays has
-            risen {Math.round(feeChange * 100)}%.</>}>
-          {partFirst.total} participations in {fy(partFirst.fy)}, {partLast.total} in{' '}
-          {fy(partLast.fy)}. Over exactly those years the high-school fee a first child
-          pays went from {usd(feeFirst.amount)} to {usd(feeLast.amount)}
-          {feeAhead.length
-            ? `, and is ${usd(feeAhead[feeAhead.length - 1].amount)} in ${fy(feeAhead[feeAhead.length - 1].fy)} on a source we do not hold a copy of`
-            : ''}.{' '}
-          <strong>These are two measurements side by side and nothing here connects them</strong>{' '}
-          &mdash; three years is not enough to see a response to a price, and the fee rose
-          after most of the fall.{' '}
-          <span style={{ color: 'var(--text-muted)' }}>
-            <code>athletics_by_sport</code> where <code>metric = &lsquo;Total
-            Athletes&rsquo;</code>, and <code>athletic_fee_schedule</code>.
-          </span>
-        </Insight>
+        </details>
       </div>
 
       {/* ------------------------------------------------ where we differ from the prose */}
       <div className="card p-5 mt-6" style={{ borderLeft: '4px solid var(--status-warning)' }}>
         <p className="text-[14.5px] font-bold mb-1">
-          Three figures here differ from the written analyses. These are the recomputed ones.
+          Where this page differs from the written analyses, these are the recomputed
+          figures.
         </p>
-        <p className="text-[13.5px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          Every number on this page is derived from the database at build time. The reports
-          are prose, and prose was true on the day it was written. Where they disagree, this
-          is what the data now says &mdash; and what moved underneath it.
-        </p>
-        <ul className="space-y-3">
+        <ul className="space-y-3 mt-3">
           {d.recomputed.map(r => (
             <li key={r.what} className="text-[13.5px] leading-relaxed">
               <span className="font-semibold">{r.what}.</span>{' '}

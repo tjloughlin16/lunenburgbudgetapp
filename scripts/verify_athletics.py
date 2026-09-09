@@ -122,6 +122,10 @@ if gf is not None:
 
 # --- the transportation line, budget against reported actual ----------------------
 head('Athletic transportation — budget against reported actual')
+# The stage a later budget document reports for a year that has closed. NOT `actual`:
+# `line_history` has three stages -- proposed, settled, restated -- and the third is what
+# `athletics.json` calls a restated actual. See notes/reference/SCHEMA.md.
+ACTUAL_STAGE = 'restated'
 rows = list(csv.DictReader(open(os.path.join(DATA, 'line-history.csv'))))
 cell = collections.defaultdict(dict)
 for r in rows:
@@ -132,11 +136,23 @@ for r in rows:
 exact_years = []
 for fy in sorted(cell):
     b = cell[fy].get('settled') or cell[fy].get('proposed')
-    a_ = cell[fy].get('actual')
+    a_ = cell[fy].get(ACTUAL_STAGE)
     if b and a_ and b == a_:
         exact_years.append(fy)
 usable = [fy for fy in sorted(cell)
-          if (cell[fy].get('settled') or cell[fy].get('proposed')) and cell[fy].get('actual')]
+          if (cell[fy].get('settled') or cell[fy].get('proposed')) and cell[fy].get(ACTUAL_STAGE)]
+# WHAT WENT WRONG HERE, because it is rule 13 in one word. This block asked for stage
+# `actual` and `line_history` has not carried that name for some time -- the stage a later
+# budget document reports for a closed year is `restated`, which is what athletics.json's
+# own `general_basis` calls a "restated actual". So the lookup matched nothing, `usable`
+# came back empty, and the check printed "Four of zero usable years" rather than the "Four
+# of nine" the document states. It FAILED loudly, which is the only reason it is fixable
+# rather than silent -- but the shape is the one this project keeps hitting: a name typed
+# into a script, the thing it named moved, and nothing connected the two.
+if not usable:
+    FAILS.append(f'no year carries both a budget and a {ACTUAL_STAGE!r} figure for '
+                 'athletic transportation. That is an empty join, not a line nobody '
+                 'reported -- check the stage vocabulary in line-history.csv.')
 print(f'  {"OK  " if len(exact_years) == 4 else "FAIL"}  '
       f'years where actual equals budget exactly      {exact_years} of {len(usable)} usable')
 if len(exact_years) != 4:
