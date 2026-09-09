@@ -34,6 +34,8 @@ catch a figure typed into a sentence that nothing regenerates -- for that the on
 is deriving it, which is why the caveats and examples now are.
 """
 import os
+import argparse
+import concurrent.futures as cf
 import subprocess
 import sys
 
@@ -403,20 +405,56 @@ CHECKS = [
 ]
 
 
+def _run(job):
+    """One generator's --check, as a subprocess. Returns (label, rc, output)."""
+    script, args = job
+    path = os.path.join(ROOT, 'scripts', script)
+    label = script + (' ' + ' '.join(args) if args else '')
+    r = subprocess.run([sys.executable, path, *args], cwd=ROOT,
+                       capture_output=True, text=True)
+    return label, r.returncode, (r.stdout or r.stderr).strip()
+
+
 def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('-j', '--jobs', type=int, default=min(8, (os.cpu_count() or 4)),
+                    help='how many checks to run at once (default: CPU count, max 8)')
+    ap.add_argument('--serial', action='store_true',
+                    help='one at a time, for debugging a check that misbehaves')
+    args_ns = ap.parse_args()
+
+    jobs = [(s, a) for s, a in CHECKS
+            if os.path.exists(os.path.join(ROOT, 'scripts', s))]
+
+    # RUN THEM AT ONCE. This was a serial loop and it grew to 63 generators, which is
+    # roughly half an hour -- long enough that it stops being run before a commit, which
+    # is the only moment it earns anything.
+    #
+    # They are independent BY CONSTRUCTION: in --check mode every one reads its sources,
+    # compares against its own output, and writes nothing. Nothing here shares state, so
+    # nothing here needs ordering. The one thing concurrency costs is interleaved output,
+    # which is why results are collected and printed in the order CHECKS declares them
+    # rather than in the order they happen to finish -- a run whose output reshuffles
+    # between invocations is hard to diff, and diffing runs is how a new failure is spotted.
+    results = {}
+    if args_ns.serial or args_ns.jobs <= 1:
+        for job in jobs:
+            label, rc, out = _run(job)
+            results[label] = (rc, out)
+    else:
+        with cf.ThreadPoolExecutor(max_workers=args_ns.jobs) as pool:
+            for label, rc, out in pool.map(_run, jobs):
+                results[label] = (rc, out)
+
     failed = []
-    for script, args in CHECKS:
-        path = os.path.join(ROOT, 'scripts', script)
-        if not os.path.exists(path):
-            continue
-        label = script + (' ' + ' '.join(args) if args else '')
-        r = subprocess.run([sys.executable, path, *args], cwd=ROOT,
-                           capture_output=True, text=True)
-        mark = ' ok ' if r.returncode == 0 else 'FAIL'
-        tail = (r.stdout or r.stderr).strip().splitlines()
+    for script, a in jobs:
+        label = script + (' ' + ' '.join(a) if a else '')
+        rc, out = results[label]
+        mark = ' ok ' if rc == 0 else 'FAIL'
+        tail = out.splitlines()
         print(f'  {mark}  {label:42s} {tail[-1][:60] if tail else ""}')
-        if r.returncode != 0:
-            failed.append((label, (r.stdout or r.stderr).strip()))
+        if rc != 0:
+            failed.append((label, out))
 
     print()
     if failed:

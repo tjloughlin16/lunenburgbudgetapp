@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-08",
+ "generated": "2026-09-09",
  "origins": [
   {
    "id": "school",
@@ -1228,6 +1228,30 @@
      "textUrl": "/docs/analyses/athletics-ledger.md"
     },
     {
+     "path": "analyses/per-pupil-spending.md",
+     "title": "What Lunenburg spends for each pupil, and what that number hides",
+     "stars": 3,
+     "what": "DESE’s all-funds per-pupil figures: Lunenburg against every district in Massachusetts and against five neighbours, FY2009–FY2025. The gap decomposed into a numerator and a denominator, into eleven function categories, and into pay against staffing — and the two Chapter 70 standings that look like a contradiction and are not one.",
+     "kind": "Notes",
+     "bytes": 24083,
+     "url": "/docs/analyses/per-pupil-spending.md",
+     "count": 417,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/per-pupil-spending.md"
+    },
+    {
+     "path": "analyses/monty-tech.md",
+     "title": "The Monty Tech assessment — the school bill nobody in Lunenburg votes on",
+     "stars": 3,
+     "what": "Montachusett Regional Vocational Technical is the larger of the two routes out of Lunenburg’s own schools and the only school line the town does not vote. What sets the assessment: the Chapter 70 minimum required local contribution, derived from DESE’s own workbook for FY2007–FY2026 and checked against DESE’s printed apportionment sheet and five figures stated at three public meetings. The four parts of the bill where the district publishes them, the twenty-year series with its eleven check-failed candidates drawn as candidates, and the town’s own forecast of the line against what it did. Every figure recomputed by scripts/verify_monty_tech.py.",
+     "kind": "Notes",
+     "bytes": 19460,
+     "url": "/docs/analyses/monty-tech.md",
+     "count": 323,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/monty-tech.md"
+    },
+    {
      "path": "analyses/free-cash.md",
      "title": "Free cash: is Lunenburg hoarding, or rebuilding?",
      "stars": 3,
@@ -1494,9 +1518,9 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 40607,
+     "bytes": 41103,
      "url": "/docs/analyses/questions.md",
-     "count": 944,
+     "count": 952,
      "unit": "lines",
      "textUrl": "/docs/analyses/questions.md"
     },
@@ -1542,9 +1566,9 @@
      "stars": 3,
      "what": "107 questions with no query behind them — the same list as questions.md, generated from the same source so the two cannot come to offer different things. Where a question has a caveat it is printed under it in italics, because what a figure does NOT tell you is the half most often dropped when somebody quotes it at a meeting.",
      "kind": "Notes",
-     "bytes": 10580,
+     "bytes": 10641,
      "url": "/docs/analyses/what-you-can-ask.md",
-     "count": 174,
+     "count": 175,
      "unit": "lines",
      "textUrl": "/docs/analyses/what-you-can-ask.md"
     },
@@ -1710,9 +1734,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 57697,
+     "bytes": 77584,
      "url": "/docs/data/money-gaps.csv",
-     "count": 72,
+     "count": 91,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2161,7 +2185,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 29347840,
+     "bytes": 29368320,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2731,6 +2755,28 @@
      "textUrl": "/docs/data/total-expenses-history.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. It is currently empty: YouTube IP-blocked the caption endpoint after ten test fetches, and the backfill is deliberately on hold rather than retrying. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 92,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
+     "path": "data/meeting-watch-state.csv",
+     "title": "Every agenda and set of minutes the town has listed, and when we first saw it",
+     "stars": 2,
+     "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1759575,
+     "url": "/docs/data/meeting-watch-state.csv",
+     "count": 12071,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-state.csv"
+    },
+    {
      "path": "data/copy-status.csv",
      "title": "Whether the publisher’s copy is still our copy",
      "stars": 2,
@@ -2804,6 +2850,18 @@
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
     },
     {
+     "path": "data/meeting-watch-events.csv",
+     "title": "What appeared on the town’s site between one crawl and the next",
+     "stars": 2,
+     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1006,
+     "url": "/docs/data/meeting-watch-events.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
      "path": "data/sped-transport-history.csv",
      "title": "Special education transportation, nine budgets",
      "stars": 2,
@@ -2826,6 +2884,18 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/capital-funding-history.csv"
+    },
+    {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 147,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
@@ -6503,10 +6573,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 528,
+  "documents": 534,
   "groups": 20,
-  "bytes": 1302610925,
-  "loadBearing": 99
+  "bytes": 1304456212,
+  "loadBearing": 102
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

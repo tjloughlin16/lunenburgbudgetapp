@@ -1483,6 +1483,16 @@ GROUPS = [
          'reading a video title, and those are different kinds of evidence. 231 meetings '
          'here have a recording and no paperwork at all, 162 of them School Committee. '
          'Rebuild with scripts/build_meeting_register.py.'),
+        ('data/youtube-transcript-index.csv',
+         'Which meeting recordings we hold a transcript for', 3,
+         'One row per fetched transcript: the video, the board, the meeting date, how '
+         'many caption segments and how long. The transcripts themselves are NOT in git '
+         '\u2014 they are machine-generated captions, bulky and never edited by hand, so '
+         'they go to the archive bucket like the documents rather than into git like the '
+         'things we write. This index is the map into them, and it is small enough to '
+         'version. It is currently empty: YouTube IP-blocked the caption endpoint after '
+         'ten test fetches, and the backfill is deliberately on hold rather than '
+         'retrying. Rebuild with scripts/fetch_youtube_transcripts.py.'),
         ('data/minutes-searchable.csv',
          'How much of the meeting archive a search can actually read', 3,
          'Per board and year: how many documents the town listed, how many we hold, and '
