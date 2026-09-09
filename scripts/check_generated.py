@@ -323,6 +323,7 @@ CHECKS = [
     # foots against the town's own listing.
     ('build_minutes_searchable.py', ['--check']),
     ('build_meeting_register.py', ['--check']),
+    ('build_spending_vs_required.py', ['--check']),
     ('split_large_text.py', ['--check']),
     ('build_question_bank.py', ['--check']),
     # DESE's three district-finance datasets: the registry of how to get them again, and
