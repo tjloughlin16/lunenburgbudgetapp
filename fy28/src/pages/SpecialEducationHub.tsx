@@ -1,6 +1,9 @@
 import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
-import { H2, Body, useReport } from '../components/spedPage'
+import { H2, Body, ReportShell, useReport } from '../components/report'
+import type { Tab } from '../routes'
+
+const TAB: Tab = 'sped'
 import { fy } from '../components/SpedCharts'
 
 /** THE FOUR DOORS. A chooser, not a chapter.
@@ -63,13 +66,12 @@ export function SpecialEducationHub() {
   const sub = r?.pooled.find(p => /Separate/.test(p.start))
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <h1 className="text-3xl font-bold tracking-tight max-w-3xl">Special education</h1>
-      <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-        style={{ color: 'var(--text-secondary)' }}>
+    <ReportShell tab={TAB} title="Special education"
+      standfirst={<>
         Four questions. Three of them have an answer in this archive, the fourth has
         none &mdash; and they do not combine with each other.
-      </p>
+      </>}
+    >
 
       <div className="grid gap-4 mt-8 md:grid-cols-2">
         <Door href="/how-many-students-are-on-an-iep" unit="children"
@@ -146,6 +148,6 @@ export function SpecialEducationHub() {
           href={abs('/if-students-leave')}>If students leave</a> is the school-choice
         SCENARIO, priced on an assumption; the report here is the measurement with no dials.
       </Body>
-    </div>
+    </ReportShell>
   )
 }

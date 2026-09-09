@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import {
@@ -5,6 +6,13 @@ import {
   Statewide, TableTwin, TeacherSplit, fy, money, pct1, shortName, signedPct, signedUsd,
   type CatRow, type DecompRow, type SwRow, type TeacherRow, type YearRow,
 } from '../components/PeerSpendingCharts'
+import {
+  Body, H2, H3, Insight, NotShown, Quote, Stat,
+  ReportShell,
+} from '../components/report'
+
+const TAB: Tab = 'peers'
+const DATA = '/data/peer-spending.json'
 
 /** What Lunenburg spends for each pupil, against every district in Massachusetts and
  *  against five neighbours.
@@ -146,87 +154,16 @@ type Payload = {
 
 const TITLE = 'What other districts spend'
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-1 max-w-3xl
-                           scroll-mt-24">{children}</h2>
-  )
-}
-
-function H3({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-[17px] font-bold tracking-tight mt-9 mb-1 max-w-3xl">{children}</h3>
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
+/** This report's frame. Every report on the site is drawn in the same shell -- see
+ *  components/report.tsx -- and this wrapper exists only so the page's own title, tab and
+ *  payload are stated once rather than at each of its three return points. */
+function Shell({ err, loading, title, standfirst, children }: {
+  err?: string | null; loading?: boolean
+  title?: React.ReactNode; standfirst?: React.ReactNode; children?: React.ReactNode
 }) {
   return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight tnum"
-        style={tone ? { color: tone } : undefined}>{value}</div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[16rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-function Insight({ n, headline, children }: {
-  n: number; headline: React.ReactNode; children: React.ReactNode
-}) {
-  return (
-    <div className="card p-5">
-      <div className="text-[11px] font-semibold uppercase tracking-widest mb-2"
-        style={{ color: 'var(--text-muted)' }}>Finding {n}</div>
-      <p className="text-[17px] font-bold leading-snug">{headline}</p>
-      <div className="text-[14px] leading-relaxed mt-2.5"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** The half of every section that says what the measurement does NOT establish. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-function Quote({ q }: { q: Said }) {
-  return (
-    <div className="card p-4">
-      <p className="text-[15px] leading-relaxed">&ldquo;{q.quote}&rdquo;</p>
-      <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
-        {q.who} &middot; {q.board} &middot; {q.date} &middot;{' '}
-        <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href={abs(q.cite)}>our copy</a>{' '}
-        &middot; <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href={q.town}>the town&rsquo;s</a>
-      </p>
-      <p className="text-[13.5px] leading-relaxed mt-2.5"
-        style={{ color: 'var(--text-secondary)' }}>{q.why}</p>
-    </div>
-  )
-}
-
-function Shell({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <h1 className="text-3xl font-bold tracking-tight">{TITLE}</h1>
-      {children}
-    </div>
+    <ReportShell tab={TAB} dataUrl={DATA} title={title ?? TITLE} standfirst={standfirst}
+      err={err} loading={loading}>{children}</ReportShell>
   )
 }
 
@@ -245,30 +182,8 @@ export function PeerSpending() {
     return () => { live = false }
   }, [])
 
-  if (err) {
-    return (
-      <Shell>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The comparison did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The rows are published at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/data/peer-spending.json')}>/data/peer-spending.json</a>.
-          </p>
-        </div>
-      </Shell>
-    )
-  }
-  if (!d) {
-    return (
-      <Shell>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading DESE&rsquo;s district figures&hellip;
-        </p>
-      </Shell>
-    )
-  }
+  if (err) return <Shell err={err} />
+  if (!d) return <Shell loading />
 
   const H = d.headline
   const C = d.category_headline
@@ -303,13 +218,11 @@ export function PeerSpending() {
   const bene = d.categories.find(c => c.code === 'BENE')!
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <h1 className="text-3xl font-bold tracking-tight">{TITLE}</h1>
-      <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-        style={{ color: 'var(--text-secondary)' }}>
+    <Shell standfirst={<>
         What DESE says each Massachusetts district spends for each pupil &mdash;{' '}
         {fy(d.first_fy)} to {fy(d.last_fy)}, all funds.
-      </p>
+      </>}
+    >
 
       {/* ---------------------------------------------------------- 1. WHAT IT ESTABLISHES */}
       <div className="grid gap-6 mt-9"
@@ -994,6 +907,6 @@ export function PeerSpending() {
         { hue: OURS, label: 'Lunenburg, throughout' },
         { hue: FIELD, label: 'every other district — a field, not a ranking' },
       ]} />
-    </div>
+    </Shell>
   )
 }

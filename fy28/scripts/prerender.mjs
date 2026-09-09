@@ -111,8 +111,21 @@ async function readRoutes() {
       bySlug.filter(m => unlisted.has(m[1])).map(m => `/${m[2]}`).join(', '))
   }
 
-  // '' is the root. Everything else is a path segment.
-  return listed.map(s => (s ? `/${s}` : '/'))
+  const routes = listed.map(s => (s ? `/${s}` : '/'))
+
+  // THE MARKDOWN ANALYSES, one route each.
+  //
+  // They share a single Tab -- the document id is the second path segment -- so SLUG
+  // holds one entry for all of them and enumerating from it would render one page.
+  // Read off the published documents instead, which is the same discipline the rest of
+  // this script follows: the routes come from the thing that decides them, never from a
+  // list kept beside it. A document added to public/docs/analyses is prerendered the
+  // same day, and `build_reports_index.py --check` fails if it is missing from /reports.
+  const docs = (await readdir(join(APP, 'public', 'docs', 'analyses')))
+    .filter(f => f.endsWith('.md')).map(f => f.slice(0, -3)).sort()
+  if (!docs.length) throw new Error('no analyses in public/docs/analyses — nothing to render')
+  console.log(`  ${docs.length} markdown analyses at /analysis/<id>`)
+  return [...routes, ...docs.map(d => `/analysis/${d}`)]
 }
 
 /** Serve dist, falling back to the PRISTINE shell.

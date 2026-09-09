@@ -560,6 +560,18 @@ GROUPS = [
              'A line-by-line bridge between them, and the three places the district\u2019s '
              'own documents disagree with each other. Includes a correction to an earlier '
              'version of this analysis.'),
+            ('analyses/monty-tech.md',
+             'The Monty Tech assessment \u2014 the school bill nobody in Lunenburg votes on', 3,
+             'Montachusett Regional Vocational Technical is the larger of the two routes '
+             'out of Lunenburg\u2019s own schools and the only school line the town does '
+             'not vote. What sets the assessment: the Chapter 70 minimum required local '
+             'contribution, derived from DESE\u2019s own workbook for FY2007\u2013FY2026 '
+             'and checked against DESE\u2019s printed apportionment sheet and five figures '
+             'stated at three public meetings. The four parts of the bill where the '
+             'district publishes them, the twenty-year series with its eleven check-failed '
+             'candidates drawn as candidates, and the town\u2019s own forecast of the line '
+             'against what it did. Every figure recomputed by '
+             'scripts/verify_monty_tech.py.'),
             ('analyses/per-pupil-spending.md',
              'What Lunenburg spends for each pupil, and what that number hides', 3,
              'DESE’s all-funds per-pupil figures: Lunenburg against every district in '
@@ -1494,6 +1506,34 @@ GROUPS = [
          'meeting with neither is invisible to us and this table cannot see it either. '
          'School Committee minutes are 162 of 402 listed meetings, with none at all in '
          '2021 or 2022. Rebuild with scripts/build_minutes_coverage.py.'),
+        ('data/meeting-watch-state.csv',
+         'Every agenda and set of minutes the town has listed, and when we first saw it', 2,
+         'Written by us, and it is an OBSERVATION LOG rather than a measurement — what '
+         'this project’s crawler could see on the town’s AgendaCenter on a given '
+         'day. One row per document, keyed on the town’s own file id. `first_seen` is '
+         'the day OUR crawler first saw it and NOT the day the town posted it: the '
+         'AgendaCenter publishes no posting timestamp, so any gap between a meeting and its '
+         'minutes appearing is an upper bound bounded by how often we look. The 12,065 rows '
+         'adopted when the watch was seeded carry an EMPTY first_seen, because we do not '
+         'know — an empty cell rather than a guess — and the `basis` column says '
+         'which rows those are. Rebuild with scripts/watch_meetings.py.'),
+        ('data/meeting-watch-events.csv',
+         'What appeared on the town’s site between one crawl and the next', 2,
+         'Written by us. One row per document the watch saw APPEAR — an agenda posted '
+         'for a coming meeting, or minutes arriving for a meeting that had none. Everything '
+         'present when the watch was seeded is deliberately absent: it was already known and '
+         'was never new. This is the file that makes the feed deterministic, and '
+         'scripts/check_meeting_watch_idempotent.py proves the point by running the detector '
+         'twice and requiring the second run to announce nothing. '
+         '`days_after_meeting_upper_bound` is named that way because it is one. '
+         'Rebuild with scripts/watch_meetings.py.'),
+        ('data/meeting-watch-runs.csv',
+         'When we looked, how much answered, and what was new', 2,
+         'Written by us. One row per day per source, so the record says how much of the '
+         'town’s listing actually responded on each run. That column exists because a '
+         'board-year that fails to fetch and a board-year with no meetings come back '
+         'identically empty — the silent-zero shape — and a run too incomplete to '
+         'trust refuses to write at all. Rebuild with scripts/watch_meetings.py.'),
         ('data/lunenburg.db',
              'The whole analysis database, SQLite', 3,
              'Every figure on this site in one queryable file, built by '

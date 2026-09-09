@@ -16,23 +16,74 @@ import { Section, Note } from '../components/primitives'
  */
 
 type Report = {
-  id: string; title: string; about: string; words: number; updated: string | null
+  id: string; kind: string; title: string; about: string; url: string
+  words: number; updated: string | null
   markdown: { url: string; bytes: number; sha256: string }
   pdf: { url: string; bytes: number } | null
   verifier: { path: string; command: string } | null
   charts: string[]
 }
+
+/** A report that is a React PAGE rather than a document. Same area, same shell, same
+ *  print stylesheet; what differs is that its figures are recomputed from a published
+ *  payload on every build rather than written into prose and checked afterwards. */
+type Page = {
+  id: string; kind: string; title: string; about: string; url: string
+  component: string
+  data: { url: string; bytes: number; sha256: string } | null
+  generator: string | null
+}
+
 type Payload = {
   generated: string
   caveat: { headline: string; body: string; checkable: string; corrections: string }
   reports: Report[]
+  pages: Page[]
   data: Record<string, { url: string; about: string }>
 }
 
-const kb = (n: number) => n >= 1e6 ? `${(n / 1e6).toFixed(1)} MB` : `${Math.round(n / 1024)} KB`
+/** A glyph per report, so a wall of cards can be scanned rather than read.
+ *
+ *  TJ: "I want them to stand out to people somehow." These are a NAVIGATION aid and
+ *  nothing more — they carry no meaning a reader has to decode, and no report depends on
+ *  one to be understood. Chosen for the subject rather than the finding, because a
+ *  finding can change and an icon that argued a conclusion would then be wrong in a way
+ *  nothing checks.
+ *
+ *  An unmapped report gets the neutral document glyph rather than breaking or being
+ *  dropped — a new report must always appear here, and appearing without a distinctive
+ *  icon is a visible prompt to give it one. */
+const ICON: Record<string, string> = {
+  // the routed reports
+  sped: '\u{1F9E9}',          // special education
+  peers: '\u{1F5FA}\uFE0F',    // other districts
+  required: '\u2696\uFE0F',    // the enforced minimum
+  minaid: '\u{1F3DB}\uFE0F',   // Chapter 70, the state formula
+  staffing: '\u{1F465}',      // people
+  stopped: '\u{1F6D1}',       // lines taken to zero
+  unwind: '\u{1F4C9}',        // grants ending
+  outflow: '\u{1F68C}',       // students leaving
+  montytech: '\u{1F527}',     // vocational
+  leaving: '\u{1F39A}\uFE0F',  // a scenario with dials, not a measurement
+  families: '\u{1F4B5}',      // what a household pays
+  sportsmoney: '\u{1F3C8}',   // athletics
+  insurance: '\u{1F3E5}',     // health insurance
+  variance: '\u{1F4CA}',      // budget against actual
+  // the written analyses
+  'fy26-closeout': '\u{1F4D2}', 'fy26-closeout-town': '\u{1F3E2}',
+  'budget-vs-actual': '\u{1F4CA}', 'free-cash': '\u{1F4B0}',
+  athletics: '\u{1F3C6}', 'athletics-ledger': '\u{1F9FE}',
+  'sped-and-the-curve': '\u{1F9E9}', 'sped-and-funds': '\u{1F9E9}',
+  'fy27-and-the-override': '\u{1F5F3}\uFE0F', 'fy27-cut-reconciliation': '\u2702\uFE0F',
+  'per-pupil-spending': '\u{1F393}', 'peer-districts': '\u{1F5FA}\uFE0F',
+  'connecting-the-budget': '\u{1F517}', 'show-your-work': '\u{1F9EE}',
+  'monty-tech': '\u{1F527}', questions: '\u2753', 'what-you-can-ask': '\u{1F50D}',
+}
+const icon = (id: string) => ICON[id] || '\u{1F4C4}'
 
-/* Absolute. Every report on this page is a file, and a file linked relatively is
- * one an assistant that only follows URLs it has seen cannot open. */
+/* Absolute, for the FILES this page still links — the datasets under each report and
+ * the reference documents at the foot. The reports themselves are routes now, not
+ * files, and a route is linked relatively like any other page on the site. */
 const ABS = (u: string) => (u.startsWith('http') ? u : `${MANIFEST.site}${u}`)
 
 export function Reports() {
@@ -71,10 +122,11 @@ export function Reports() {
         </h1>
         <p className="max-w-3xl text-[15px] leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}>
-          {d.reports.length} documents written by this project, from records the town and
-          district published and from documents obtained by request. Each one is published
-          as a web page, a PDF and its source text, and most are checked by a script that
-          recomputes every figure in them.
+          {d.pages.length + d.reports.length} analyses written by this project, from
+          records the town and district published and from documents obtained by request.
+          {' '}{d.pages.length} are pages computed from a published payload on every build;
+          {' '}{d.reports.length} are documents, each published as a page, a PDF and its
+          source text with a checksum. Every one of them prints.
         </p>
       </header>
 
@@ -93,16 +145,56 @@ export function Reports() {
         </div>
       </div>
 
-      <Section id="reports" eyebrow="The documents" title="Every analysis"
+      {/* THE PLUMBING IS NOT THE OFFER.
+          Each row used to print the payload URL, the generator's filename and a full
+          sha256 under a two-line description. TJ, 9 September, reading it: "why all this
+          info on each report". Because I put a provenance block on an INDEX — the right
+          instinct (rule 3: say which numbers are ours) applied to the wrong surface.
+
+          A checksum is for somebody auditing a specific figure. They are not on this
+          page; they are on the report, where the figure is, and every report carries its
+          own provenance block naming the payload, the generator and the documents
+          underneath. Printing it here costs three lines of noise per row against a
+          two-line description, on the page a resident meets first.
+
+          What a row owes a reader is: what is this, and is it checked. */}
+      <Section id="pages" eyebrow="Computed on every build" title="The reports"
         lede={<p>
-          Newest first among the current work. Each row links the readable version, the
-          printable one, the source text with its checksum, and — where one exists — the
-          command that reproduces every figure in it from the database.
+          Each is recomputed from published data every time the site is built, so no
+          figure in one was typed by hand. Open a report to see the data and the script
+          behind it.
+        </p>}>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {d.pages.map(r => (
+            <a key={r.id} href={r.url}
+              className="card p-4 block transition-opacity hover:opacity-90">
+              <div className="flex items-start gap-2.5">
+                <span aria-hidden="true" className="text-[20px] leading-none shrink-0 mt-0.5"
+                  >{icon(r.id)}</span>
+                <div className="min-w-0">
+                  <h3 className="text-[15px] font-bold leading-tight mb-1.5"
+                    style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</h3>
+                  <p className="text-[13px] leading-relaxed"
+                    style={{ color: 'var(--text-secondary)' }}>{r.about}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section id="reports" eyebrow="The documents" title="The written analyses"
+        lede={<p>
+          Longer pieces, written rather than computed. Each opens as a page here; the
+          Markdown it is rendered from and a printable copy are linked from the document
+          itself, beside the sources it was built on.
         </p>}>
         <ul className="space-y-5">
           {d.reports.map(r => (
             <li key={r.id} className="card p-4">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1.5">
+                <span aria-hidden="true" className="text-[20px] leading-none"
+                  >{icon(r.id)}</span>
                 <h3 className="text-lg font-bold leading-tight">{r.title}</h3>
                 <span className="text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
                   {r.words.toLocaleString()} words
@@ -112,18 +204,22 @@ export function Reports() {
               <p className="text-sm leading-relaxed mb-3 max-w-3xl"
                 style={{ color: 'var(--text-secondary)' }}>{r.about}</p>
 
+              {/* THE INDEX OFFERS THE REPORT, NOT A CHOICE OF FILE FORMATS.
+                  TJ, 9 September: "just dont put pdfs/markdown in the analyses
+                  section". This row used to carry Read it / PDF / Source text as three
+                  peer links, which made the section read as a document library — three
+                  ways to obtain the same thing, and a decision to make before reading
+                  any of it. Every analysis is now a page, so the page is the offer.
+
+                  THE FILES DO NOT DISAPPEAR. Rule 12 requires our processed copy to be
+                  downloadable, and it still is: the markdown and the PDF are published
+                  at /docs/analyses/ and are linked from the report's own provenance
+                  block, beside the sources they were built from — which is where
+                  somebody who wants the file is actually standing. What changed is that
+                  they are no longer presented as alternatives to reading it. */}
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] items-center">
-                <a href={ABS(r.markdown.url)} className="font-semibold underline"
+                <a href={r.url} className="font-semibold underline"
                   style={{ color: 'var(--series-cost)' }}>Read it</a>
-                {r.pdf && (
-                  <a href={ABS(r.pdf.url)} className="font-semibold underline"
-                    style={{ color: 'var(--series-cost)' }}>
-                    PDF <span className="font-normal tnum"
-                      style={{ color: 'var(--text-muted)' }}>{kb(r.pdf.bytes)}</span>
-                  </a>
-                )}
-                <a href={ABS(r.markdown.url)} download className="underline"
-                  style={{ color: 'var(--text-secondary)' }}>Source text</a>
                 {r.verifier ? (
                   <span className="text-[12px]" style={{ color: 'var(--status-good)' }}>
                     ✓ every figure recomputed by{' '}
@@ -135,9 +231,6 @@ export function Reports() {
                   </span>
                 )}
               </div>
-              <p className="text-[11px] mt-2 break-all" style={{ color: 'var(--text-muted)' }}>
-                sha256 {r.markdown.sha256}
-              </p>
             </li>
           ))}
         </ul>

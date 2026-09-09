@@ -249,7 +249,18 @@ q(T, 'What did the town value its property at?',
   "ORDER BY edition DESC LIMIT 20")
 q(T, 'What enrollment and MCAS results were printed?',
   "SELECT edition, COUNT(*) AS rows FROM report_enrollment_mcas GROUP BY edition ORDER BY edition")
+# THE OBVIOUS TABLE IS THE WRONG TABLE, and this question used to read it.
+# `report_monty_tech` is MONTY TECH'S OWN BUDGET, reprinted inside one annual town report
+# -- 70 rows, one edition, `column_meaning` empty and `status` = 'no check', so its `v1`
+# is an ordinal and not a column. It says nothing about what Lunenburg was assessed.
+# The town's assessment is a line in the accountant's schedule, and every one of those
+# rows fails its own reconciliation, so the query returns `status` beside the figure and
+# the caller must split on it. See /monty-tech.
 q(T, 'What did the town assess for Monty Tech?',
+  "SELECT fy, v1 AS appropriated, column_meaning, status FROM report_appropriations "
+  "WHERE label = 'Monty Tech Assessment' AND table_family = 'accountant-schedule' "
+  "ORDER BY fy DESC LIMIT 20")
+q(T, 'What is in the Monty Tech pages of the annual town report?',
   "SELECT edition, label, status FROM report_monty_tech WHERE label <> '' ORDER BY edition DESC LIMIT 20")
 q(T, 'How many births, deaths and marriages were recorded?',
   "SELECT edition, label, status FROM report_vital_records WHERE label <> '' ORDER BY edition DESC LIMIT 20")

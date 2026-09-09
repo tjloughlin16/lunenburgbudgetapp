@@ -1,13 +1,16 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
-import type { Base } from '../components/spedPage'
+import type { Base } from '../components/report'
 import {
   Body, Coverage, Grain, H2, Insight, NotEstablished, NotShown, OtherReports,
   Provenance, Quote, Shell, Stat, useReport,
-} from '../components/spedPage'
+} from '../components/report'
 import type { Dest, NetPoint, RoutePoint } from '../components/SpedCharts'
 import {
   ChoiceBothWays, Destinations, Span, TableTwin, ThreeRoutes, fy,
 } from '../components/SpedCharts'
+
+const TAB: Tab = 'outflow'
 
 /** WHO LEAVES, AND WHERE THEY GO. A GENERAL report, and NOT one of the four special
  *  education reports -- see PARENT in routes.ts, where it hangs off /reports.
@@ -83,7 +86,7 @@ const L = (href: string, t: string) => (
 export function SpedLeaving() {
   const { d, err } = useReport<Payload>('sped-leaving.json')
   const title = 'Who leaves Lunenburg schools, and where they go'
-  if (!d) return <Shell title={title} err={err} loading={!err} />
+  if (!d) return <Shell tab={TAB} title={title} err={err} loading={!err} />
 
   const last = d.last
   const first = d.first
@@ -99,7 +102,7 @@ export function SpedLeaving() {
   const routeOf = (k: Change) => d.three_routes.find(r => r.key === k)!
 
   return (
-    <Shell title={title}
+    <Shell tab={TAB} title={title}
       standfirst={`${last.elsewhere} of ${last.total.toLocaleString()} resident children — ${last.elsewhere_pct.toFixed(1)}% — are educated by a district other than Lunenburg. This is a count of children and it says nothing about disability.`}>
 
       <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
@@ -207,11 +210,17 @@ export function SpedLeaving() {
         mechanism named is not a route.
       </Body>
       <NotShown>
-        What any of this movement does to what the town PAYS. A member-town assessment is
-        set by the regional agreement and a school choice tuition is set in statute; this
-        page holds neither document and prices nothing. A rising count at{' '}
-        {routeOf('monty_tech').route} is a rising count, and reading a rising assessment
-        off it is the step this page will not take for you.
+        What any of this movement does to what the town PAYS. This page counts children and
+        prices nothing; a rising count at {routeOf('monty_tech').route} is a rising count,
+        and reading a rising assessment off it is the step this page will not take for you.
+        The assessment itself is measured at{' '}
+        <a className="underline" style={{ color: 'var(--series-cost)' }}
+          href="/monty-tech">Monty Tech &mdash; the assessment, and what sets it</a>, and
+        the short version is that the count is not what moves it: nearly all of the bill
+        is the state&rsquo;s minimum required local contribution, computed from the
+        town&rsquo;s property value and resident income. What school choice costs is a
+        different question again, and the statutory tuition that would answer it is not in
+        this archive.
       </NotShown>
       <NotShown>
         That {routeOf('monty_tech').route} belongs on a list of departures at all. Those

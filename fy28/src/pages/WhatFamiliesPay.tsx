@@ -1,9 +1,18 @@
+import type { Tab } from '../routes'
 import { useEffect, useMemo, useState } from 'react'
 import { abs } from '../lib/abs'
 import { TableTwin } from '../components/StateAidCharts'
 import {
   BothReadings, Choice, LadderExhibit, SEASON, YEAR, money,
 } from '../components/FamilyFeeCharts'
+import {
+  Body, H2, H3, Insight, NotShown,
+  ReportShell,
+} from '../components/report'
+
+const TAB: Tab = 'families'
+const DATA = '/data/what-families-pay.json'
+const TITLE = 'What a family pays'
 
 /** What a Lunenburg family actually pays for school in a year.
  *
@@ -127,50 +136,6 @@ type Payload = {
     url: string; pdf: string | null }[]
 }
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
-                           scroll-mt-[calc(var(--header-h)+1rem)]">{children}</h2>
-  )
-}
-
-function H3({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-[15px] font-bold mt-9 mb-1 max-w-2xl">{children}</h3>
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-/** The half of every section that says what the measurement does NOT establish. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-/** A claim the page makes, with the one thing it rests on. */
-function Insight({ tone, headline, children }: {
-  tone: string; headline: React.ReactNode; children: React.ReactNode
-}) {
-  return (
-    <div className="card p-5" style={{ borderTop: `3px solid ${tone}` }}>
-      <p className="text-[16px] font-bold leading-snug">{headline}</p>
-      <div className="text-[13.5px] leading-relaxed mt-2"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
 /** The badge that says how a figure is footed. It is on every rate on this page, because
  *  "published", "produced by a published rule" and "nothing says" are the three states the
  *  whole page is about (rule 3). */
@@ -190,7 +155,9 @@ const fyLabel = (n: number) => `FY${n}`
 
 export function WhatFamiliesPay() {
   const [d, setD] = useState<Payload | null>(null)
-  const [err, setErr] = useState(false)
+  // A string rather than a flag, so the shell can print WHY the fetch failed --
+  // every other report on the site does, and the shell states it in one voice.
+  const [err, setErr] = useState<string | null>(null)
 
   useEffect(() => {
     // RELATIVE, and abs() only on hrefs. `abs` writes the site name in front of a file
@@ -199,7 +166,7 @@ export function WhatFamiliesPay() {
     // into the prerender. Same-origin here, like every other page.
     fetch('/data/what-families-pay.json')
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then(setD).catch(() => setErr(true))
+      .then(setD).catch(e => setErr(String(e)))
   }, [])
 
   const [fy, setFy] = useState<number | null>(null)
@@ -237,20 +204,8 @@ export function WhatFamiliesPay() {
     return year.bus[key]?.amount ?? null
   }, [year, bus, children, tier])
 
-  if (err) {
-    return (
-      <div className="mx-auto max-w-4xl px-5 py-12">
-        <h1 className="text-3xl font-bold">What a family pays</h1>
-        <Body>The fee data did not load. It is a single static file at{' '}
-          <a className="underline" href={abs('/data/what-families-pay.json')}>
-            /data/what-families-pay.json</a>.</Body>
-      </div>
-    )
-  }
-  if (!d || fy === null || !year || !lv || !tierData) {
-    return <div className="mx-auto max-w-4xl px-5 py-12 text-[15px]"
-      style={{ color: 'var(--text-muted)' }}>Loading the fee schedule…</div>
-  }
+  if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
+  if (!d || fy === null || !year || !lv || !tierData) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
 
   const lx = d.ladder_exhibit
   const stated = d.caps.filter(c => c.unit_status === 'stated')
@@ -261,15 +216,15 @@ export function WhatFamiliesPay() {
   const ct = d.tier_contrast
 
   return (
-    <div className="mx-auto max-w-4xl px-5 py-10">
-      <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+    <ReportShell tab={TAB} dataUrl={DATA}
+      title={<>
         What a family actually pays
-      </h1>
-      <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-        style={{ color: 'var(--text-secondary)' }}>
+      </>}
+      standfirst={<>
         Every school fee a Lunenburg household can be charged, priced for one, two, three
         and four children — and the three places where the published record runs out.
-      </p>
+      </>}
+    >
 
       {/* ---------------------------------------------------------------- 1. conclusions */}
       <H2 id="what-this-establishes">What this establishes</H2>
@@ -675,6 +630,6 @@ export function WhatFamiliesPay() {
         <a className="underline" href={abs('/data/what-families-pay.json')}>
           /data/what-families-pay.json</a>.
       </p>
-    </div>
+    </ReportShell>
   )
 }

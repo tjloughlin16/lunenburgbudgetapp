@@ -45,12 +45,32 @@ ENTRY = [
 
 
 def routes():
-    """Every prerendered page, read off the build rather than listed here."""
+    """Every prerendered page, read off the build rather than listed here.
+
+    Only the top level. The nested pages -- `/reference/<name>` and `/analysis/<id>` --
+    are enumerated from the SOURCES that decide them, below and in `reference()`, because
+    a stale file left in dist would otherwise keep a deleted page in the sitemap.
+    """
     out = ['/']
     for p in sorted(glob.glob(os.path.join(DIST, '*.html'))):
         name = os.path.basename(p)[:-5]
         if name not in ('index', 'not-found'):
             out.append('/' + name)
+    return out
+
+
+def analysis_pages():
+    """The markdown analyses as PAGES, derived from the documents rather than the build.
+
+    `routes()` finds these once they have been rendered, and cannot find them before the
+    first build that renders them -- while `prerender.mjs` refuses to write a route that
+    is not already in the sitemap. That is a genuine cycle, and this breaks it at the end
+    the documents are on: the .md files decide which analyses exist, so the sitemap can
+    know the addresses before anything has been built.
+    """
+    out = []
+    for p in sorted(glob.glob(os.path.join(PUB, 'docs', 'analyses', '*.md'))):
+        out.append('/analysis/' + os.path.basename(p)[:-3])
     return out
 
 
@@ -87,7 +107,8 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in routes() + ENTRY + published_data() + reference() + analyses():
+    for u in (routes() + analysis_pages() + ENTRY + published_data()
+              + reference() + analyses()):
         if u not in seen:
             seen.add(u)
             urls.append(u)

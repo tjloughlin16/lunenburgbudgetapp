@@ -31,7 +31,9 @@ import { HealthInsurance } from './pages/HealthInsurance'
 import { StoppedFunding } from './pages/StoppedFunding'
 import { GrantUnwinding } from './pages/GrantUnwinding'
 import { MinimumAid } from './pages/MinimumAid'
+import { MontyTech } from './pages/MontyTech'
 import { PeerSpending } from './pages/PeerSpending'
+import { SpendingVsRequired } from './pages/SpendingVsRequired'
 import { SpecialEducationHub } from './pages/SpecialEducationHub'
 import { SpedStudents } from './pages/SpedStudents'
 import { SpedLeaving } from './pages/SpedLeaving'
@@ -44,6 +46,7 @@ import { AskUs } from './pages/AskUs'
 import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
+import { Analysis } from './pages/Analysis'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { type Package } from './model/rates'
 import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
@@ -215,7 +218,9 @@ export default function App() {
 
   return (
     <div>
-      <header className="sticky top-0 z-30 backdrop-blur border-b"
+      {/* `no-print`: the header is navigation, and navigation on paper is ink that
+          cannot be pressed. See the print block in index.css. */}
+      <header className="no-print sticky top-0 z-30 backdrop-blur border-b"
         style={{ background: 'color-mix(in srgb, var(--surface-2) 92%, transparent)',
                  borderColor: 'var(--grid)' }}>
         <nav aria-label="Sections"
@@ -379,6 +384,8 @@ export default function App() {
       {tab === 'unwind' && <GrantUnwinding />}
       {tab === 'minaid' && <MinimumAid />}
       {tab === 'peers' && <PeerSpending />}
+      {tab === 'montytech' && <MontyTech />}
+      {tab === 'required' && <SpendingVsRequired />}
       {tab === 'sped' && <SpecialEducationHub />}
       {tab === 'spedcount' && <SpedStudents />}
       {tab === 'outflow' && <SpedLeaving />}
@@ -389,6 +396,10 @@ export default function App() {
       {tab === 'funds' && <SpecialRevenue />}
       {tab === 'database' && <Database onJump={go} />}
       {tab === 'reports' && <Reports />}
+      {/* Every MARKDOWN analysis, at /analysis/<id>, rendered in the same shell as the
+          React reports. One component for seventeen documents -- the id is in the path.
+          See pages/Analysis.tsx for why they are rendered rather than transcribed. */}
+      {tab === 'analysis' && <Analysis />}
       {tab === 'agents' && <AgentsIndex />}
       {tab === 'ask' && <AskAnAssistant />}
       {/* Unlisted. Nothing on the site links here -- see UNLISTED in routes.ts. */}
@@ -441,7 +452,7 @@ export default function App() {
               longest tail. They stay on every other page, where the reader is inside
               something and a way out is worth the room. */}
           {tab !== 'home' && (
-            <>
+            <div className="no-print">
               <button onClick={() => go('walk')}
                 className="text-xs font-semibold mb-2 block"
                 style={{ color: 'var(--series-cost)' }}>
@@ -458,7 +469,7 @@ export default function App() {
                 Go deeper &mdash; every other page &rarr;
               </button>
               <DataFooter />
-            </>
+            </div>
           )}
 
           {/* Said plainly and near the top of the block, because it is the sentence

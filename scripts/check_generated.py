@@ -282,6 +282,23 @@ CHECKS = [
     # still in the extracted minutes. Any one of those going quiet would leave every
     # figure on the pages a faithful copy of the source and a sentence beside it wrong.
     ('build_special_education.py', ['--check']),
+    # The Monty Tech assessment. This entry catches far more than a stale file: the
+    # generator refuses to write unless the DERIVATION the whole page rests on -- the
+    # town's required local contribution minus its own school district's -- still equals
+    # what DESE's own apportionment sheet PRINTS for FY2026, field for field, as the
+    # district reprinted it in its FY2027 budget book; unless the town's total required
+    # contribution is still bound by wealth rather than by the 82.5%-of-foundation cap,
+    # which is the one sentence that makes "a child changing school does not change the
+    # town's obligation" true; unless the four assessment parts still sum to the total
+    # the district prints, in every year it prints them; unless the town's ledger and the
+    # district's own book still agree on FY2026 to the cent; unless five figures stated
+    # at three different public meetings still match the derived series to the dollar;
+    # unless `report_monty_tech` is still the unusable table the page says it is; and
+    # unless every figure read off a printed budget book is still on the line of the
+    # extracted text this page cites. Any one of those going quiet leaves every number on
+    # the page a faithful copy and a sentence beside it wrong.
+    ('build_monty_tech.py', ['--check']),
+
     # The generator agrees with its own output by construction. This recomputes every
     # figure /where-students-go-instead renders by a SECOND route -- SQL against the raw
     # DESE table -- and asserts rule 2 structurally against the page's prose. A rival
@@ -323,7 +340,30 @@ CHECKS = [
     # foots against the town's own listing.
     ('build_minutes_searchable.py', ['--check']),
     ('build_meeting_register.py', ['--check']),
+    # The meeting watch, added 8 September 2026. Three entries because there are three
+    # different ways this can be wrong and only one of them is staleness.
+    #
+    #   * the state file can stop holding together -- a duplicate key, an event naming a
+    #     document the state does not hold, a seeded row carrying a first_seen date it
+    #     cannot know;
+    #   * the detector can stop being DETERMINISTIC, which is TJ's requirement and the
+    #     one failure a --check cannot see: a feed that announces the same meeting twice
+    #     reproduces its output perfectly. It needs a test that runs the thing twice;
+    #   * the published feed can go stale against the state behind it.
+    #
+    # None touches the network. The crawl is scripts/watch_meetings.py, run on its own.
+    ('watch_meetings.py', ['--check']),
+    ('check_meeting_watch_idempotent.py', []),
+    ('build_meeting_feed.py', ['--check']),
     ('build_spending_vs_required.py', ['--check']),
+    # The generator agrees with its own output by construction. This recomputes every
+    # figure /what-the-state-requires-us-to-spend renders by a SECOND route -- both
+    # DESE tables read whole and partitioned in Python rather than filtered in SQL --
+    # and asserts the six values the PAGE derives at render time, which no generator
+    # produces and nothing else would notice going wrong. It also asserts rule 1
+    # mechanically: that the actual and budgeted stages are two disjoint collections
+    # and that no chart names a dataKey capable of drawing one line through both.
+    ('verify_spending_vs_required.py', []),
     ('split_large_text.py', ['--check']),
     ('build_question_bank.py', ['--check']),
     # DESE's three district-finance datasets: the registry of how to get them again, and

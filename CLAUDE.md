@@ -839,6 +839,12 @@ than a budget setting.
     python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree
     python3 scripts/build_question_bank.py      # 107 questions, each run against the database
     python3 scripts/build_question_bank.py --check   # ...and fail if one stops answering
+    python3 scripts/watch_meetings.py --seed     # adopt what we hold, announcing nothing
+    python3 scripts/watch_meetings.py            # crawl the town; report only what is NEW
+    python3 scripts/watch_meetings.py --check    # ...and that the watch state holds together
+    python3 scripts/check_meeting_watch_idempotent.py  # run it twice; one result, not two
+    python3 scripts/build_meeting_feed.py        # what is coming, and what minutes just appeared
+    python3 scripts/build_meeting_feed.py --check     # ...and fail if the feed is stale
     python3 scripts/split_large_text.py         # long documents, in parts a caller can read
     python3 scripts/split_large_text.py --check  # ...and fail if a long one has no parts
     python3 scripts/build_readme.py             # the repository's front door, counts derived

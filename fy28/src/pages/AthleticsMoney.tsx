@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { Basis, type Level } from '../components/Basis'
 import { useEffect, useState } from 'react'
@@ -8,6 +9,17 @@ import {
   type SideRow, type TransportRow, type CoachRow, type CatRow, type SportRow,
   type PartRow, type MixRow, type FlowRow, type FeeRow,
 } from '../components/AthleticsCharts'
+import {
+  Body, H2, Insight, NotShown, Stat,
+  ReportShell,
+} from '../components/report'
+
+/** The frame this report is drawn in. See components/report.tsx.
+ *  TITLE is the report's NAME, used before the payload arrives; the h1 the
+ *  reader lands on is the finding, which needs the data to state. */
+const TAB: Tab = 'sportsmoney'
+const DATA = '/data/athletics.json'
+const TITLE = 'Athletics, both sides of the money'
 
 /** Athletics, drilled in: both sides of the money, charted.
  *
@@ -128,69 +140,6 @@ function Marked({ text }: { text: string }) {
   )
 }
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
-                           scroll-mt-[calc(var(--header-h)+1rem)]">{children}</h2>
-  )
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
-}) {
-  return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight" style={tone ? { color: tone } : undefined}>
-        {value}
-      </div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** The half of a section that says what the data does NOT establish. A distinct shape on
- *  purpose: here the limit is as load-bearing as the finding, and a caveat set in the same
- *  grey as the paragraph above it gets skimmed. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-/** An insight, in the shape rule 7b asks for: a claim a reader could repeat, the figure
- *  it rests on, and the query that produced it. */
-function Insight({ n, claim, figure, tone, children }: {
-  n: number; claim: React.ReactNode; figure: string; tone?: string; children: React.ReactNode
-}) {
-  return (
-    <div className="card p-5">
-      <div className="flex items-baseline gap-3">
-        <span className="text-[11px] font-bold tabular-nums"
-          style={{ color: 'var(--text-muted)' }}>{String(n).padStart(2, '0')}</span>
-        <span className="text-2xl font-bold tracking-tight tnum"
-          style={tone ? { color: tone } : undefined}>{figure}</span>
-      </div>
-      <p className="text-[15.5px] font-semibold leading-snug mt-2">{claim}</p>
-      <div className="text-[13.5px] leading-relaxed mt-2"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
 export function AthleticsMoney() {
   const [d, setD] = useState<Payload | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -204,35 +153,9 @@ export function AthleticsMoney() {
     return () => { live = false }
   }, [])
 
-  if (err) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Athletics, both sides of the money</h1>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The series did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The written analyses are at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/docs/analyses/athletics.md')}>/docs/analyses/athletics.md</a> and{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/docs/analyses/athletics-ledger.md')}>/docs/analyses/athletics-ledger.md</a>.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
 
-  if (!d) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Athletics, both sides of the money</h1>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading the measured series&hellip;
-        </p>
-      </div>
-    )
-  }
+  if (!d) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
 
   const fy26 = d.both_sides[d.both_sides.length - 1]
   const t24 = d.transport.find(r => r.fy === 2024)!
@@ -263,19 +186,17 @@ export function AthleticsMoney() {
   const dearest = wideSport[0], cheapest = wideSport[wideSport.length - 1]
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-        style={{ color: 'var(--text-muted)' }}>The money</p>
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+    <ReportShell tab={TAB} dataUrl={DATA}
+      title={<>
         The only programme where you can see both sides of the money.
-      </h1>
-      <p className="mt-5 text-lg leading-relaxed max-w-2xl"
-        style={{ color: 'var(--text-secondary)' }}>
+      </>}
+      standfirst={<>
         The town appropriates. Families pay a fee into a separate fund. That fund spends.
         For every other line in the budget you can see the first of those three and
         nothing else &mdash; which is why what athletics shows about the gap between an
         appropriation and a cost matters far beyond athletics.
-      </p>
+      </>}
+    >
 
       {/* =========================================== THE FLAG, AND IT LEADS ON PURPOSE
         *
@@ -420,7 +341,7 @@ export function AthleticsMoney() {
 
       <div className="grid gap-4 mt-6 sm:grid-cols-2">
         <Insight n={1} figure={share(d.compare.share)} tone={FUND}
-          claim={<>An athletics appropriation is not what athletics costs &mdash; and
+          headline={<>An athletics appropriation is not what athletics costs &mdash; and
             here that is a measurement, not a warning.</>}>
           In {fy(d.compare.fy)} the town&rsquo;s comparable athletics lines came to{' '}
           {usd(d.compare.general_total)} against {usd(d.compare.workbook_total)} that the
@@ -434,7 +355,7 @@ export function AthleticsMoney() {
         </Insight>
 
         <Insight n={2} figure={share(t24.fund_share ?? 0)} tone={CAT_COLOUR.Transportation}
-          claim={<>Two-thirds of the bus bill was paid outside the town&rsquo;s budget in{' '}
+          headline={<>Two-thirds of the bus bill was paid outside the town&rsquo;s budget in{' '}
             {fy(2024)}. A year later it was {share(t25.fund_share ?? 0)}.</>}>
           Athletic transportation cost {usd(t24.cost ?? 0)} in {fy(2024)}, of which the
           town&rsquo;s line carried {usd(t24.general ?? 0)}. In {fy(2025)} the cost fell to{' '}
@@ -448,7 +369,7 @@ export function AthleticsMoney() {
         </Insight>
 
         <Insight n={3} figure={share(memoShare)} tone={CAT_COLOUR.Officials}
-          claim={<>Most of what came into the fund in {fy(2025)} was four journal entries
+          headline={<>Most of what came into the fund in {fy(2025)} was four journal entries
             nobody outside Town Hall can read.</>}>
           {usd(d.memo_entries.filter(r => r.fy === 2025).reduce((a, r) => a + r.amount, 0))}{' '}
           of {usd(flow25.receipts)} arrived as general-journal entries described only as an
@@ -462,7 +383,7 @@ export function AthleticsMoney() {
 
         <Insight n={4}
           figure={`${partChange >= 0 ? '+' : '−'}${Math.abs(partChange * 100).toFixed(1)}%`}
-          claim={<>Participation is roughly flat over three years while the fee it pays has
+          headline={<>Participation is roughly flat over three years while the fee it pays has
             risen {Math.round(feeChange * 100)}%.</>}>
           {partFirst.total} participations in {fy(partFirst.fy)}, {partLast.total} in{' '}
           {fy(partLast.fy)}. Over exactly those years the high-school fee a first child
@@ -1017,6 +938,6 @@ export function AthleticsMoney() {
           Every rate and fee, with the document that set it
         </a>
       </div>
-    </div>
+    </ReportShell>
   )
 }

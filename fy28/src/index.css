@@ -117,6 +117,26 @@
      hidden it, and the dark re-stepping would not have followed. */
   --pp-money: var(--ath-coaches);
   --pp-pupils: var(--ath-transport);
+  /* THE FOUR PARTS OF A REGIONAL ASSESSMENT, on /monty-tech. The district's own names for
+     them, in its own order: the required minimum contribution the state calculates, the
+     transportation and other operating assessment, the capital assessment, and bonds.
+     They are a CATEGORICAL set — parts of one bill — and they carry no direction: capital
+     falling to zero in FY2027 is drawn as a segment that is not there, never as a colour
+     that means good.
+     Deliberately kept off --series-cost/--series-revenue, which on this page carry the
+     other distinction the reader must not lose: whether a figure is ESTABLISHED or a
+     candidate off a check-failed extract. A hue that means "we cannot vouch for this
+     number" in one chart must not mean "transportation" in the next.
+     THE VALUES ARE THE ATHLETICS TRIPLE, by alias and under their own names — the same
+     move --fc-* and --pp-* make, and for the same reason: that set is validated all-pairs
+     against both surfaces, and no chart on this page carries a sport. An alias makes the
+     reuse visible and follows the dark re-stepping; a copied hex would do neither.
+     --mt-bonds is achromatic because it is zero in every year the archive can decompose,
+     and a hue for a thing that is never present would be a colour with no referent. */
+  --mt-minimum: var(--ath-coaches);
+  --mt-transport: var(--ath-transport);
+  --mt-capital: var(--ath-officials);
+  --mt-bonds: var(--text-muted);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -287,4 +307,136 @@ input[type="range"] { accent-color: var(--series-cost); }
   /* Group headings inside the body stay where they are. */
   table.stack tbody th { text-align: left; padding-top: 0.75rem; }
   table.stack tbody tr:first-child { border-top: none; }
+}
+
+/* Only ever seen on paper. The print block below reveals it. */
+.print-only { display: none; }
+
+/* ---- Printing a report -------------------------------------------------
+   These documents get taken to meetings on paper. The browser's own print is
+   what makes the PDF -- there is no second renderer, deliberately, because a
+   server-side one would produce a document that can disagree with the page.
+   So this stylesheet is the whole of the PDF's design.
+
+   What it has to get right, in the order the failures actually happen:
+
+     1. FURNITURE MUST GO. The sticky header, the area nav, the breadcrumb, the
+        footer's navigation and every button are controls; on paper they are
+        ink that cannot be pressed. `.no-print` marks them.
+     2. THE ADDRESS AND THE PROVENANCE MUST STAY. A printout with no address is
+        a page nobody can get back to, and a figure whose source did not print
+        is a figure nobody can check -- rule 12 on paper. `.print-only` reveals
+        the address line; `.report-provenance` is forced visible even where a
+        wrapper is hidden.
+     3. NOTHING SPLITS FROM ITS LABEL. A chart on one page and its caption on
+        the next is worse than no chart. `break-inside: avoid` on figures,
+        cards, findings and table rows; `thead` repeats via `display:
+        table-header-group` so a table crossing a page keeps its column names.
+     4. CHARTS MUST SURVIVE. Recharts draws SVG, which prints -- but only if the
+        colour is not thrown away. `print-color-adjust: exact` keeps the series
+        hues; without it Chrome prints a chart as an empty axis.
+     5. LINKS MUST BE READABLE. A blue underline on paper points nowhere, so the
+        href is printed after the link text -- but only for real destinations,
+        never for in-page anchors, which would print as noise.
+
+   The light tokens are forced on for print regardless of the reader's theme:
+   a dark-mode print is a page of black toner and unreadable body text. */
+@media print {
+  :root, :root[data-theme="dark"] {
+    color-scheme: light;
+    --surface-1: #ffffff;
+    --surface-2: #ffffff;
+    --surface-3: #f0efec;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-muted: #555555;
+    --grid: #cccccc;
+    --axis: #999999;
+    --header-h: 0px;
+  }
+
+  @page { margin: 14mm 12mm; }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+  }
+
+  /* Colour is data here -- a series hue, a status mark, a fund band. Chrome
+     drops backgrounds and desaturates SVG fills without this. */
+  * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+
+  /* The furniture. The app header carries `.no-print` in App.tsx; every <nav> on
+     the site is navigation, including the breadcrumb. The report's own header is
+     `.report-head`, inside <article>, and is deliberately not matched. */
+  nav,
+  .no-print,
+  button:not(.print-keep) {
+    display: none !important;
+  }
+
+  /* Anything that is only for paper. Hidden on screen by the base rule below;
+     a nested @media screen inside @media print would never match. */
+  .print-only { display: block !important; }
+
+  /* The app footer keeps the affiliation disclaimer and drops its navigation --
+     the nav rules above already remove the buttons, so what is left is the
+     sentence somebody quotes when asked whether this is the Town's site. */
+  footer { border: 0 !important; padding-top: 6pt !important; font-size: 8.5pt; }
+
+  .report {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .report-head { break-after: avoid; }
+  .report-head h1 { font-size: 20pt; line-height: 1.15; }
+  .report-address {
+    font-size: 8pt;
+    color: #555555;
+    margin-top: 6pt;
+    padding-top: 5pt;
+    border-top: 1px solid #cccccc;
+  }
+
+  /* A heading at the foot of a page with its section overleaf. */
+  h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
+  h2 { font-size: 14pt; margin-top: 16pt; }
+  h3 { font-size: 11.5pt; }
+  p, li { orphans: 3; widows: 3; }
+
+  /* Never split a thing from its label. */
+  figure, .avoid-break, .card, tr, blockquote, pre {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  figcaption { break-before: avoid; }
+
+  /* A table crossing a page keeps its column names, and its first rows stay
+     with its header. */
+  table { break-inside: auto; width: 100% !important; font-size: 9pt; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+
+  /* Charts. Recharts sizes itself to a container that has no width on paper
+     unless it is told one, and its SVG must not be clipped by the horizontal
+     scroller the screen layout puts around wide content. */
+  .recharts-wrapper, .recharts-surface, svg { max-width: 100% !important; }
+  .overflow-x-auto { overflow: visible !important; }
+
+  /* Rule 12 on paper: the provenance block always prints. */
+  .report-provenance { display: grid !important; break-before: auto; }
+
+  /* Where a link goes, since the underline points nowhere on paper. In-page
+     anchors and javascript: are skipped -- they would print as noise. */
+  a[href^="http"]::after,
+  a[href^="/"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7.5pt;
+    color: #555555;
+    word-break: break-all;
+  }
+  a { color: #000000 !important; text-decoration: underline; }
 }

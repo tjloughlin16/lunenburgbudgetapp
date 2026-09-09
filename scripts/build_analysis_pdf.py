@@ -21,6 +21,27 @@ they can reproduce anything, which is the trade this project keeps making the ot
 The PDF carries the same provenance the document does: what produced it, when, and which
 verifier asserts its figures. A printed page is the copy most likely to be quoted from
 after the numbers have moved, so it says on its face how to check whether they have.
+
+KEPT DELIBERATELY, NOW THAT THE BROWSER PRINTS THESE TOO
+
+Every analysis is rendered as a page on the site and the print stylesheet in
+`fy28/src/index.css` makes Save as PDF produce a good document from any of them. That
+covers the reader who wants paper in the moment, and it is the better answer for them --
+one rendering, from the same DOM they are looking at.
+
+It does not cover what this script is for, and neither of these is optional:
+
+  - **A PDF at a stable address that nobody has to open a browser to get.** All seventeen
+    are catalogued in the archive with a sha256, served from `/docs/analyses/<id>.pdf`, and
+    described in `sources.json` as renderings of the Markdown. An address a program can
+    fetch cannot be produced by a person pressing Print.
+  - **Bulk, for a records request.** A copy of `connecting-the-budget.pdf` accompanies the
+    request sent to the Town, and `check_sent_documents.py` compares what was sent against
+    what we hold. `--all` renders the set in one command.
+
+The two renderings cannot drift into disagreement about a FIGURE, because neither holds
+one: both render the same Markdown, which is the source of truth and the thing the
+verifiers assert against. They differ in typography, which is what they are for.
 """
 import argparse
 import html

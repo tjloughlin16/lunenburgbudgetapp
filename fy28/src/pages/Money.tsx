@@ -91,9 +91,19 @@ const ABOUT: Partial<Record<Tab, string>> = {
   minaid: 'Chapter 70’s formula, term by term, for twenty years — and why four of the last '
         + 'five increases are a flat per-pupil floor the Legislature sets rather than '
         + 'anything the formula produced.',
+  montytech: 'The larger of the two routes out of Lunenburg’s own schools, and an '
+          + 'assessment rather than an appropriation — what sets it, and why 95% of it is '
+          + 'a figure the state calculates.',
   peers: 'What DESE says every Massachusetts district spends for each pupil, with '
        + 'Lunenburg drawn through it — and the arithmetic that says how much of the '
        + 'difference is money and how much is children.',
+  // The ONE measure the state enforces, and the description says so first — because
+  // every other line in this list is a budget somebody chose, and a reader has no way to
+  // know that this one is different.
+  required: 'The one school spending figure Massachusetts enforces rather than observes, '
+          + 'and where Lunenburg has sat against every other district for three decades. '
+          + 'The town has never been below the floor, and its position against the state '
+          + 'was at the median more recently than the usual story allows.',
   // FOUR reports behind one door, and the description says so, because the thing a reader
   // most needs to know before opening any of them is that they do not combine.
   sped: 'Four separate reports on the quarter of the budget nobody was measuring: how many '

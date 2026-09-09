@@ -1,11 +1,14 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
-import type { Base } from '../components/spedPage'
+import type { Base } from '../components/report'
 import {
   Body, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown,
   OtherReports, Provenance, Quote, Shell, Stat, useReport,
-} from '../components/spedPage'
+} from '../components/report'
 import type { Count, Para } from '../components/SpedCharts'
 import { CountBars, ParaFte, Span, TableTwin, fy } from '../components/SpedCharts'
+
+const TAB: Tab = 'spedcount'
 
 /** HOW MANY CHILDREN. Report one of four, and the four are separate on purpose.
  *
@@ -68,7 +71,7 @@ const L = (href: string, t: string) => (
 export function SpedStudents() {
   const { d, err } = useReport<Payload>('sped-students.json')
   const title = 'How many Lunenburg children are on an IEP'
-  if (!d) return <Shell title={title} err={err} loading={!err} />
+  if (!d) return <Shell tab={TAB} title={title} err={err} loading={!err} />
 
   const last = d.last
   const lowest = d.lowest
@@ -96,7 +99,7 @@ export function SpedStudents() {
   const spans = [...new Set(d.grade_span.map(g => g.span))].sort()
 
   return (
-    <Shell title={title}
+    <Shell tab={TAB} title={title}
       standfirst={`${last.swd} of them, in ${fy(last.fy)}. The state publishes the count; this is what it says.`}>
 
       {/* -------------------------------------------------- the thing, first (rule 7a) */}

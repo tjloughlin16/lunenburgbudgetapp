@@ -1,12 +1,15 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
-import type { Base } from '../components/spedPage'
+import type { Base } from '../components/report'
 import {
   Body, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown, OtherReports,
   Provenance, Quote, Shell, Stat, useReport,
-} from '../components/spedPage'
+} from '../components/report'
 import type { Breaker, Spend } from '../components/SpedCharts'
 import { CircuitBreaker, Span, TableTwin, TuitionByFund, fy } from '../components/SpedCharts'
+
+const TAB: Tab = 'spedcost'
 
 /** WHAT IT COSTS, AND WHAT COMES BACK. Report three of four.
  *
@@ -71,7 +74,7 @@ const L = (href: string, t: string) => (
 export function SpedCost() {
   const { d, err } = useReport<Payload>('sped-cost.json')
   const title = 'What out-of-district special education costs, and what comes back'
-  if (!d) return <Shell title={title} err={err} loading={!err} />
+  if (!d) return <Shell tab={TAB} title={title} err={err} loading={!err} />
 
   const last = d.last
   const outside = last.total - last.gen_fund
@@ -85,7 +88,7 @@ export function SpedCost() {
   const sameSign = d.beside.filter(b => b.difference > 0).length
 
   return (
-    <Shell title={title}
+    <Shell tab={TAB} title={title}
       standfirst={`${usd(last.total)} spent in ${fy(last.fy)}. The line in the budget the town votes said ${usd(last.gen_fund)}. Both figures are correct, and they are not the same quantity.`}>
 
       <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">

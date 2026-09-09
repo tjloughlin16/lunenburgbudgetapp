@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
@@ -6,6 +7,17 @@ import {
   SIDE_LABEL, fy, pct, share,
   type Account, type Point, type TownYear, type Variant,
 } from '../components/InsuranceCharts'
+import {
+  Body, H2, H3, Insight, Maybe, NotShown, Stat,
+  ReportShell,
+} from '../components/report'
+
+/** The frame this report is drawn in. See components/report.tsx.
+ *  TITLE is the report's NAME, used before the payload arrives; the h1 the
+ *  reader lands on is the finding, which needs the data to state. */
+const TAB: Tab = 'insurance'
+const DATA = '/data/health-insurance.json'
+const TITLE = 'Health insurance'
 
 /** Health insurance — the school cost that is not in the school budget.
  *
@@ -118,83 +130,6 @@ type Payload = {
   gaps: { side: string; what: string; why: string; closes: string | null }[]
 }
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
-                           scroll-mt-[calc(var(--header-h)+1rem)]">{children}</h2>
-  )
-}
-
-function H3({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-[15px] font-bold mt-9 mb-1 max-w-2xl">{children}</h3>
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
-}) {
-  return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight tnum"
-        style={tone ? { color: tone } : undefined}>{value}</div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** The half of every section that says what the measurement does NOT establish. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-/** A hypothesis, marked as one. Never rendered in the same voice as a measurement. */
-function Maybe({ settle, children }: { settle: React.ReactNode; children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-4 max-w-2xl"
-      style={{ borderLeft: '4px solid var(--status-warning)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>
-        A possible explanation &mdash; nothing here tests it
-      </p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-        <p className="mt-2.5"><strong>What would settle it:</strong> {settle}</p>
-      </div>
-    </div>
-  )
-}
-
-/** One conclusion, at the top, in the shape somebody could repeat out loud. */
-function Insight({ n, headline, children }: {
-  n: number; headline: React.ReactNode; children: React.ReactNode
-}) {
-  return (
-    <div className="card p-5">
-      <div className="text-[11px] font-semibold uppercase tracking-widest mb-2"
-        style={{ color: 'var(--text-muted)' }}>Finding {n}</div>
-      <p className="text-[17px] font-bold leading-snug">{headline}</p>
-      <p className="text-[14px] leading-relaxed mt-2.5" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </p>
-    </div>
-  )
-}
-
 export function HealthInsurance() {
   const [d, setD] = useState<Payload | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -208,34 +143,9 @@ export function HealthInsurance() {
     return () => { live = false }
   }, [])
 
-  if (err) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Health insurance</h1>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The series did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The underlying rows are published
-            at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/data/health-insurance.json')}>/data/health-insurance.json</a>.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
 
-  if (!d) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Health insurance</h1>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading the measured series&hellip;
-        </p>
-      </div>
-    )
-  }
+  if (!d) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
 
   const L = d.ledger
   const S = d.school
@@ -253,15 +163,12 @@ export function HealthInsurance() {
   const gapDoc = d.gaps.find(g => g.side === 'document_wanted')
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-        style={{ color: 'var(--text-muted)' }}>The money</p>
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+    <ReportShell tab={TAB} dataUrl={DATA}
+      title={<>
         {usd(retiree.original)} of school health insurance, appropriated to a department
         that is not the schools.
-      </h1>
-      <p className="mt-5 text-lg leading-relaxed max-w-2xl"
-        style={{ color: 'var(--text-secondary)' }}>
+      </>}
+      standfirst={<>
         In {fy(L.fy)} the town appropriated {usd(S.appropriation)} to its schools and, in a
         different department of the same budget, {usd(retiree.original)} for the health
         insurance of people who used to work in them. The second figure appears nowhere in
@@ -269,7 +176,8 @@ export function HealthInsurance() {
         accounting puts it &mdash; but it means the schools cost the town{' '}
         {share(S.retiree_share_of_appropriation)} more than their own budget says, before
         anything else is counted.
-      </p>
+      </>}
+    >
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={usd(retiree.original)} tone="var(--series-revenue)">
@@ -658,6 +566,6 @@ export function HealthInsurance() {
         The {fy(L.fy)} ledger is period {L.period}, not the year-end close. Expended figures
         here are through that period and will move; appropriations will not.
       </p>
-    </div>
+    </ReportShell>
   )
 }

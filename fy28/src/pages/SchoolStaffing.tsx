@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd } from '../model/engine'
@@ -6,6 +7,17 @@ import {
   fy, num, pct,
   type Peer, type RosterYear, type RoleRow, type StatePoint,
 } from '../components/StaffingCharts'
+import {
+  Body, H2, Maybe, NotShown, Stat,
+  ReportShell,
+} from '../components/report'
+
+/** The frame this report is drawn in. See components/report.tsx.
+ *  TITLE is the report's NAME, used before the payload arrives; the h1 the
+ *  reader lands on is the finding, which needs the data to state. */
+const TAB: Tab = 'staffing'
+const DATA = '/data/school-staffing.json'
+const TITLE = 'School staffing'
 
 /** School staffing — names, FTE and dollars.
  *
@@ -140,64 +152,6 @@ const ROLE: Record<string, string> = {
 }
 const role = (r: string) => ROLE[r] ?? r
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
-                           scroll-mt-[calc(var(--header-h)+1rem)]">{children}</h2>
-  )
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
-}) {
-  return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight" style={tone ? { color: tone } : undefined}>
-        {value}
-      </div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** The half of every section that says what the measurement does NOT establish. A
- *  distinct shape on purpose — on this page the limit is as load-bearing as the finding. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-/** A hypothesis, marked as one. Never rendered in the same voice as a measurement. */
-function Maybe({ settle, children }: { settle: React.ReactNode; children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-4 max-w-2xl" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>A possible explanation &mdash; nothing here tests it</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-        <p className="mt-2.5">
-          <strong>What would settle it:</strong> {settle}
-        </p>
-      </div>
-    </div>
-  )
-}
-
 /** The longest run of consecutive years at a given rank, derived rather than picked.
  *  A rank quoted at two chosen years is a rank the writer chose. */
 function longestRun(ranks: Rank[], test: (r: Rank) => boolean) {
@@ -246,34 +200,9 @@ export function SchoolStaffing() {
     return rs.slice(0, 8)
   }, [d, view])
 
-  if (err) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">School staffing</h1>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The series did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The underlying rows are published
-            at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/data/school-staffing.json')}>/data/school-staffing.json</a>.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
 
-  if (!d) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">School staffing</h1>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading the measured series&hellip;
-        </p>
-      </div>
-    )
-  }
+  if (!d) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
 
   const st = d.state
   const w = st.change_over_roster_years
@@ -303,20 +232,18 @@ export function SchoolStaffing() {
   const negCell = recon?.disagree[0]
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-        style={{ color: 'var(--text-muted)' }}>The money</p>
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+    <ReportShell tab={TAB} dataUrl={DATA}
+      title={<>
         Fewer children, the same teachers, and {pct(paraFte.pct!)} paraprofessionals.
-      </h1>
-      <p className="mt-5 text-lg leading-relaxed max-w-2xl"
-        style={{ color: 'var(--text-secondary)' }}>
+      </>}
+      standfirst={<>
         Between {fy(paraFte.first_fy)} and {fy(paraFte.last_fy)} the state recorded
         Lunenburg&rsquo;s in-district enrolment falling {pct(pupils.pct!)} and its teacher
         FTE moving {pct(teachFte.pct!)}. Over the same years its paraprofessional FTE went
         from {num(paraFte.first)} to {num(paraFte.last)}. That is one line moving and the
         rest holding &mdash; and nothing in these documents says why.
-      </p>
+      </>}
+    >
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={num(lastPara.value, 2)} tone="var(--series-revenue)">
@@ -844,6 +771,6 @@ export function SchoolStaffing() {
           joins them.
         </p>
       </div>
-    </div>
+    </ReportShell>
   )
 }

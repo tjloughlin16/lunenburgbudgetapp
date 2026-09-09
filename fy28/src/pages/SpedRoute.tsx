@@ -1,11 +1,14 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
-import type { Base } from '../components/spedPage'
+import type { Base } from '../components/report'
 import {
   Body, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown, OtherReports,
   Provenance, Quote, Shell, Stat, useReport,
-} from '../components/spedPage'
+} from '../components/report'
 import type { Cohort, PlaceCount } from '../components/SpedCharts'
 import { PlacementCounts, RouteBars, Span, TableTwin, fy } from '../components/SpedCharts'
+
+const TAB: Tab = 'spedroute'
 
 /** THE ROUTE INTO OUT-OF-DISTRICT PLACEMENT. Report four of four.
  *
@@ -64,7 +67,7 @@ const L = (href: string, t: string) => (
 export function SpedRoute() {
   const { d, err } = useReport<Payload>('sped-route.json')
   const title = 'Who ends up out of district'
-  if (!d) return <Shell title={title} err={err} loading={!err} />
+  if (!d) return <Shell tab={TAB} title={title} err={err} loading={!err} />
 
   const incl = d.pooled.find(p => /Inclusive/.test(p.start))!
   const sub = d.pooled.find(p => /Separate/.test(p.start))!
@@ -78,7 +81,7 @@ export function SpedRoute() {
   const k2 = d.cohorts.filter(c => c.grade_span === 'K-2')
 
   return (
-    <Shell title={title}
+    <Shell tab={TAB} title={title}
       standfirst={`Of ${sub.cohort.toLocaleString()} children who started in a substantially separate classroom, ${sub.out_of_district} are now out of district. Of ${incl.cohort.toLocaleString()} who started in an inclusive setting, ${incl.out_of_district} are.`}>
 
       <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">

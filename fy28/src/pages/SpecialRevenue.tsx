@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd, usdShort } from '../model/engine'
@@ -5,6 +6,14 @@ import {
   Flow, Held, Net, Movers, Chip, BAND_COLOUR, fy, IN, OUT,
   type YearRow, type BandRow, type BandDef, type MoverRow,
 } from '../components/SpecialRevenueCharts'
+import {
+  Body, H2, Insight, NotShown, Stat,
+  ReportShell,
+} from '../components/report'
+
+const TAB: Tab = 'funds'
+const DATA = '/data/special-revenue.json'
+const TITLE = 'The money outside the budget'
 
 /** The money outside the appropriation — the town's special revenue funds, FY2011–FY2023.
  *
@@ -80,64 +89,6 @@ type Payload = {
 const share = (x: number) => `${(x * 100).toFixed(x >= 0.1 ? 0 : 1)}%`
 const times = (x: number) => `${x.toFixed(1)}×`
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
-                           scroll-mt-[calc(var(--header-h)+1rem)]">{children}</h2>
-  )
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
-}) {
-  return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight" style={tone ? { color: tone } : undefined}>
-        {value}
-      </div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** The half of a section that says what the measurement does NOT establish. A distinct
- *  shape on purpose: on this page the limit is as load-bearing as the finding, and a
- *  caveat set in the same grey as the paragraph above it gets skimmed. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-/** One claim, at the top, with the measurement that carries it. */
-function Insight({ n, headline, children }: {
-  n: number; headline: React.ReactNode; children: React.ReactNode
-}) {
-  return (
-    <li className="border-t pt-4 pb-1" style={{ borderColor: 'var(--grid)' }}>
-      <p className="text-[11px] font-semibold tabular-nums mb-1"
-        style={{ color: 'var(--text-muted)' }}>{n}</p>
-      <p className="text-[17px] font-bold leading-snug max-w-2xl">{headline}</p>
-      <p className="text-[14.5px] leading-relaxed max-w-2xl mt-1.5"
-        style={{ color: 'var(--text-secondary)' }}>{children}</p>
-    </li>
-  )
-}
-
 export function SpecialRevenue() {
   const [d, setD] = useState<Payload | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -164,33 +115,9 @@ export function SpecialRevenue() {
       .sort((a, b) => (b[C] as number) - (a[C] as number))
   }, [d, year, group])
 
-  if (err) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">The money outside the budget</h1>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The series did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The figures themselves are at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/data/special-revenue.json')}>/data/special-revenue.json</a>.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
 
-  if (!d || year === null) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">The money outside the budget</h1>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading thirteen years of fund schedules&hellip;
-        </p>
-      </div>
-    )
-  }
+  if (!d || year === null) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
 
   const c = d.coverage
   const first = d.by_year[0]
@@ -221,14 +148,11 @@ export function SpecialRevenue() {
   const accumulators = [...d.persistent].sort((a, b) => b.net - a.net).slice(0, 5)
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-        style={{ color: 'var(--text-muted)' }}>The money</p>
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+    <ReportShell tab={TAB} dataUrl={DATA}
+      title={<>
         There is {usdShort(last.carried)} outside the budget Town Meeting votes.
-      </h1>
-      <p className="mt-5 text-lg leading-relaxed max-w-2xl"
-        style={{ color: 'var(--text-secondary)' }}>
+      </>}
+      standfirst={<>
         Town Meeting votes an appropriation. Beside it the town runs {last.funds} separate
         funds that take in money of their own &mdash; grants, fees, gifts, water and sewer
         charges &mdash; and carry whatever is left over into the next year. In{' '}
@@ -236,7 +160,8 @@ export function SpecialRevenue() {
         {usd(last.carried)} on 30 June. This is thirteen consecutive years of that
         schedule, {fy(c.first_fy)} to {fy(c.last_fy)}, read out of the town&rsquo;s own
         annual reports.
-      </p>
+      </>}
+    >
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
         <Stat value={usd(last.carried)}>
@@ -727,6 +652,6 @@ export function SpecialRevenue() {
         {c.merged_group_rows} rows are merged into one heading here. That is our rendering
         of the town&rsquo;s page, not something the page says.
       </p>
-    </div>
+    </ReportShell>
   )
 }

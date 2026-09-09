@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { Basis } from '../components/Basis'
 import { useEffect, useMemo, useState } from 'react'
@@ -7,6 +8,17 @@ import {
   OVER, UNDER,
   type YearRow, type SpreadRow, type PairRow, type GroupRow,
 } from '../components/VarianceCharts'
+import {
+  Body, H2, NotShown, Stat,
+  ReportShell,
+} from '../components/report'
+
+/** The frame this report is drawn in. See components/report.tsx.
+ *  TITLE is the report's NAME, used before the payload arrives; the h1 the
+ *  reader lands on is the finding, which needs the data to state. */
+const TAB: Tab = 'variance'
+const DATA = '/data/budget-vs-actual.json'
+const TITLE = 'Budgets against what was later reported'
 
 /** Budgets against what was later REPORTED spent, charted.
  *
@@ -118,49 +130,6 @@ type Payload = {
  *  the kind of thing nobody notices in review. */
 const share = (x: number) => `${(x * 100).toFixed(x >= 0.1 ? 0 : 1)}%`
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl
-                           scroll-mt-[calc(var(--header-h)+1rem)]">{children}</h2>
-  )
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
-}) {
-  return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight" style={tone ? { color: tone } : undefined}>
-        {value}
-      </div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** A box for the half of a section that says what the data does NOT establish. It is a
- *  distinct shape on purpose: on this page the limit is as load-bearing as the finding,
- *  and a caveat set in the same grey as the paragraph before it gets skimmed. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
 /** How the archive's classification of a document reads in a sentence. Keyed on the value
  *  `document-basis.csv` carries, so an unrecognised classification renders as its own name
  *  rather than vanishing — a type that disappears from a list is indistinguishable from a
@@ -223,33 +192,9 @@ export function BudgetVsActual() {
     return Math.max(0.1, Math.ceil(at * 20) / 20)
   }, [groups])
 
-  if (err) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Budgets against what was later reported</h1>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The series did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The written analysis is at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/docs/analyses/budget-vs-actual.md')}>/docs/analyses/budget-vs-actual.md</a>.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
 
-  if (!d) {
-    return (
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-        <h1 className="text-3xl font-bold tracking-tight">Budgets against what was later reported</h1>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading the measured series&hellip;
-        </p>
-      </div>
-    )
-  }
+  if (!d) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
 
   const worstYear = [...d.by_year].sort((a, b) => Math.abs(b.pct) - Math.abs(a.pct))[0]
   const overYears = d.by_year.filter(r => r.net > 0)
@@ -271,19 +216,17 @@ export function BudgetVsActual() {
   const ordinaryShare = d.fy21.ordinary.map(r => r.share)
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-        style={{ color: 'var(--text-muted)' }}>The money</p>
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+    <ReportShell tab={TAB} dataUrl={DATA}
+      title={<>
         The budget lands. The lines inside it do not.
-      </h1>
-      <p className="mt-5 text-lg leading-relaxed max-w-2xl"
-        style={{ color: 'var(--text-secondary)' }}>
+      </>}
+      standfirst={<>
         Across {d.by_year.length} measured years the school budget came within{' '}
         {share(Math.abs(worstYear.pct))} of itself in the worst of them. Underneath that,{' '}
         {wildest} of {d.coverage.line_years} line-years missed their own budget by more than
         a quarter &mdash; in both directions, cancelling each other out.
-      </p>
+      </>}
+    >
 
       {/* ================================================== WHICH YEARS ARE WHICH
         *
@@ -885,6 +828,6 @@ export function BudgetVsActual() {
         {d.coverage.workbook_lines} lines in the district&rsquo;s current workbook are never
         measured here at all &mdash; mostly lines the older documents do not carry.
       </p>
-    </div>
+    </ReportShell>
   )
 }

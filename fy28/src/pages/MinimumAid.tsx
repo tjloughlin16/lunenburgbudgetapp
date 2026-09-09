@@ -1,3 +1,4 @@
+import type { Tab } from '../routes'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { Basis } from '../components/Basis'
@@ -6,6 +7,13 @@ import {
   dollars2, fy, money, share, signed,
   type ContribRow, type DistRow, type YearRow,
 } from '../components/MinimumAidCharts'
+import {
+  Body, H2, H3, Insight, NotShown, Quote, Stat,
+  ReportShell,
+} from '../components/report'
+
+const TAB: Tab = 'minaid'
+const DATA = '/data/minimum-aid.json'
 
 /** Chapter 70, term by term — why the formula pays Lunenburg the Legislature's floor.
  *
@@ -145,87 +153,16 @@ type Payload = {
 
 const TITLE = 'Why we only get minimum aid'
 
-function H2({ id, children }: { id?: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="text-2xl font-bold tracking-tight mt-14 mb-1 max-w-3xl
-                           scroll-mt-24">{children}</h2>
-  )
-}
-
-function H3({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-[17px] font-bold tracking-tight mt-9 mb-1 max-w-3xl">{children}</h3>
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-      style={{ color: 'var(--text-secondary)' }}>{children}</p>
-  )
-}
-
-function Stat({ value, tone, children }: {
-  value: string; tone?: string; children: React.ReactNode
+/** This report's frame. Every report on the site is drawn in the same shell -- see
+ *  components/report.tsx -- and this wrapper exists only so the page's own title, tab and
+ *  payload are stated once rather than at each of its three return points. */
+function Shell({ err, loading, title, standfirst, children }: {
+  err?: string | null; loading?: boolean
+  title?: React.ReactNode; standfirst?: React.ReactNode; children?: React.ReactNode
 }) {
   return (
-    <div>
-      <div className="text-3xl font-bold tracking-tight tnum"
-        style={tone ? { color: tone } : undefined}>{value}</div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[16rem]"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-function Insight({ n, headline, children }: {
-  n: number; headline: React.ReactNode; children: React.ReactNode
-}) {
-  return (
-    <div className="card p-5">
-      <div className="text-[11px] font-semibold uppercase tracking-widest mb-2"
-        style={{ color: 'var(--text-muted)' }}>Finding {n}</div>
-      <p className="text-[17px] font-bold leading-snug">{headline}</p>
-      <div className="text-[14px] leading-relaxed mt-2.5"
-        style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
-  )
-}
-
-/** The half of every section that says what the measurement does NOT establish. */
-function NotShown({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="card p-4 mt-5 max-w-2xl" style={{ borderLeft: '4px solid var(--axis)' }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5"
-        style={{ color: 'var(--text-muted)' }}>What this does not show</p>
-      <div className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-function Quote({ q }: { q: Said }) {
-  return (
-    <div className="card p-4">
-      <p className="text-[15px] leading-relaxed">&ldquo;{q.quote}&rdquo;</p>
-      <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
-        {q.board} &middot; {q.kind.toLowerCase()} &middot; {q.date} &middot;{' '}
-        <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href={abs(q.cite)}>our copy</a>{' '}
-        &middot; <a className="underline" style={{ color: 'var(--series-cost)' }}
-          href={q.town}>the town&rsquo;s</a>
-      </p>
-      <p className="text-[13.5px] leading-relaxed mt-2.5"
-        style={{ color: 'var(--text-secondary)' }}>{q.why}</p>
-    </div>
-  )
-}
-
-function Shell({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <h1 className="text-3xl font-bold tracking-tight">{TITLE}</h1>
-      {children}
-    </div>
+    <ReportShell tab={TAB} dataUrl={DATA} title={title ?? TITLE} standfirst={standfirst}
+      err={err} loading={loading}>{children}</ReportShell>
   )
 }
 
@@ -242,30 +179,8 @@ export function MinimumAid() {
     return () => { live = false }
   }, [])
 
-  if (err) {
-    return (
-      <Shell>
-        <div className="card p-5 mt-8" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[15px] font-bold mb-1">The formula did not load</p>
-          <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            {err}. Nothing on this page is typed into it, so with the file missing there is
-            nothing to show rather than something stale. The rows are published at{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/data/minimum-aid.json')}>/data/minimum-aid.json</a>.
-          </p>
-        </div>
-      </Shell>
-    )
-  }
-  if (!d) {
-    return (
-      <Shell>
-        <p className="mt-4 text-[15px]" style={{ color: 'var(--text-muted)' }}>
-          Loading DESE&rsquo;s aid components&hellip;
-        </p>
-      </Shell>
-    )
-  }
+  if (err) return <Shell err={err} />
+  if (!d) return <Shell loading />
 
   const H = d.headline
   const Z = d.why_zero
@@ -288,13 +203,11 @@ export function MinimumAid() {
   const SP = d.spending
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
-      <h1 className="text-3xl font-bold tracking-tight">{TITLE}</h1>
-      <p className="text-[15px] leading-relaxed max-w-2xl mt-3"
-        style={{ color: 'var(--text-secondary)' }}>
+    <Shell standfirst={<>
         Chapter 70 alone, term by term, from DESE&rsquo;s own workbook &mdash; {fy(d.fy_first)}{' '}
         to {fy(d.fy_last)}.
-      </p>
+      </>}
+    >
 
       {/* ---------------------------------------------------------- 1. WHAT IT ESTABLISHES */}
       <div className="grid gap-6 mt-9"
@@ -826,6 +739,6 @@ export function MinimumAid() {
         { hue: FORMULA, label: 'the formula’s own aid term' },
         { hue: FLOOR, label: 'the Legislature’s flat per-pupil floor' },
       ]} />
-    </div>
+    </Shell>
   )
 }

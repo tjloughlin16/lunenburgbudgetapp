@@ -29,6 +29,13 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'spedcost'
   | 'spedroute'
   | 'peers'
+  | 'montytech'
+  | 'required'
+  // Every analysis written as a MARKDOWN document rather than as a React page. One tab
+  // for seventeen documents: the id is the second path segment, `/analysis/free-cash`,
+  // and `analysisIdFromPath` below reads it. See pages/Analysis.tsx for why the documents
+  // are rendered rather than transcribed.
+  | 'analysis'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -203,7 +210,30 @@ export const SLUG: Record<Tab, string> = {
   // or `comparison` on their own: the first promises the whole budget and the second
   // promises nothing at all. NOT `how-we-compare`, which reads as a verdict.
   peers: 'what-other-districts-spend',
+  // The name everybody in town says out loud, and nothing else. NOT
+  // `regional-vocational-assessment`, which is the accounting shape of the thing and what
+  // nobody calls it; NOT `montachusett`, which is also a planning commission, a transit
+  // authority and a home-care agency, all of which appear in these minutes; and NOT
+  // `vocational-school`, which promises a page about the school rather than about the
+  // bill. `monty-tech` WAS AN ALIAS FOR /where-students-go-instead and is now this page's
+  // own address -- the one alias move made deliberately here, because a reader typing it
+  // wanted the assessment and was being handed a headcount. The old page is linked from
+  // the first screen of this one.
+  montytech: 'monty-tech',
+  // What the state ENFORCES, as against every other spending page here, which measures a
+  // budget somebody chose. The slug is the sentence a resident says when they hear the
+  // town is barely above the state minimum -- NOT `net-school-spending`, which is DESE's
+  // term of art and nobody's sentence, and NOT `spending-vs-required`, which names the
+  // payload. NOT `are-we-meeting-the-minimum` either: the answer is yes in every measured
+  // year, and a slug that promises a yes/no buries the finding, which is about position.
+  required: 'what-the-state-requires-us-to-spend',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
+  // The bare address is the fallback index only. Every markdown analysis lives one
+  // segment down -- /analysis/free-cash -- and those are the addresses that are
+  // published, prerendered and in the sitemap. `analysis` itself is UNLISTED because
+  // /reports is the canonical index of every analysis and a second one would compete
+  // with it.
+  analysis: 'analysis',
   dataroom: 'data-room',
 }
 
@@ -220,7 +250,7 @@ export const SLUG: Record<Tab, string> = {
  *  keep quiet — the classic own-goal of that file.
  *
  *  Give an unlisted page NO alias. An alias is a second guessable address. */
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom'])
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
@@ -333,7 +363,7 @@ const ALIASES: Record<string, Tab> = {
   // NOT 'school-choice' or 'students-leaving': both already land on /if-students-leave.
   'where-students-go-instead': 'outflow', 'where-our-students-go': 'outflow',
   'who-leaves': 'outflow', 'residents-by-district': 'outflow',
-  'where-students-go': 'outflow', 'monty-tech': 'outflow',
+  'where-students-go': 'outflow',
   'what-special-education-costs': 'spedcost', 'sped-cost': 'spedcost',
   'circuit-breaker': 'spedcost', 'out-of-district-tuition': 'spedcost',
   'sped-money': 'spedcost',
@@ -345,6 +375,19 @@ const ALIASES: Record<string, Tab> = {
   'per-pupil-spending': 'peers', peers: 'peers', 'peer-districts': 'peers',
   'comparison-districts': 'peers', 'how-we-compare': 'peers',
   'what-other-towns-spend': 'peers', 'spending-per-pupil': 'peers',
+  // The forms somebody types looking for the ENFORCED floor. NOT 'minimum-aid' or
+  // 'ch70-formula', which have meant /why-we-only-get-minimum-aid since before this page
+  // existed, and NOT 'per-pupil', which is /what-other-districts-spend.
+  'what-the-state-requires-us-to-spend': 'required',
+  'net-school-spending': 'required', 'required-net-school-spending': 'required',
+  nss: 'required', 'spending-vs-required': 'required', 'the-state-minimum': 'required',
+  'minimum-spending': 'required', 'required-spending': 'required',
+  'are-we-meeting-the-minimum': 'required',
+  // NOT 'vocational' or 'regional' on their own: the first promises the school and the
+  // second is a word this town uses for a planning commission and a transit authority.
+  'monty-tech': 'montytech', montytech: 'montytech', 'monty': 'montytech',
+  montachusett: 'montytech', 'regional-assessment': 'montytech',
+  'monty-tech-assessment': 'montytech', 'vocational-school': 'montytech',
   'who-ends-up-out-of-district': 'spedroute', 'out-of-district': 'spedroute',
   'placement-counts': 'spedroute', 'placements': 'spedroute',
   'the-route-out-of-district': 'spedroute',
@@ -398,11 +441,14 @@ export const LABEL: Record<Tab, string> = {
   minaid: 'Chapter 70 — the formula, and why it pays the floor',
   askus: 'Ask us a question',
   sped: 'Special education — four reports',
+  montytech: 'Monty Tech — the assessment, and what sets it',
   spedcount: 'How many Lunenburg children are on an IEP',
   outflow: 'Who leaves Lunenburg schools, and where they go',
   spedcost: 'What out-of-district special education costs, and what comes back',
   spedroute: 'Who ends up out of district',
   peers: 'What other districts spend, for each pupil',
+  required: 'What the state requires us to spend — and where that puts us',
+  analysis: 'An analysis',
   dataroom: 'The data room',
 }
 
@@ -437,6 +483,8 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // education hub still reaches it, as the question it cannot answer.
   outflow: 'reports',
   peers: 'reports',
+  analysis: 'reports',
+  required: 'reports',
   agents: 'sources',
   freecash: 'money',
 }
@@ -455,7 +503,20 @@ export const ROOT: Tab = (Object.entries(SLUG) as [Tab, string][]).find(([, v]) 
  *  A stale link should land somebody on the site, not on a 404 they will not report. */
 export function tabFromPath(pathname: string): Tab {
   const seg = pathname.replace(/^\/+|\/+$/g, '').toLowerCase()
+  // The one two-segment address on the site. Seventeen markdown analyses share a single
+  // page component, so the document id travels in the path rather than in a Tab of its
+  // own -- see `analysis` in the union above.
+  if (seg.startsWith('analysis/')) return 'analysis'
   return BY_SLUG[seg] ?? ROOT
+}
+
+/** The document a `/analysis/<id>` address names, or null for the bare index.
+ *
+ *  Restricted to the shape an analysis id actually has, so the path cannot be used to
+ *  reach for anything else: this value becomes part of a fetch URL. */
+export function analysisIdFromPath(pathname: string): string | null {
+  const m = /^\/analysis\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
 }
 
 /** WHICH AREA A PAGE BELONGS TO — the nav is scoped, the URLs are not.
@@ -502,9 +563,21 @@ export const AREA_LABEL: Record<Area, string> = {
 
 /** The page each area opens at, and the tab that owns its bar. */
 export const AREA_HOME: Record<Area, Tab> = {
-  // `analyses` opens on /reports, which is the generated index of every analysis on
-  // disk. An area whose front page is a list of what is in it needs no new hub page --
-  // and build_reports_index.py already fails if an analysis is missing from it.
+  // `analyses` opens on /reports, the generated index of every analysis this project
+  // has written -- BOTH KINDS. An area whose front page is a list of what is in it needs
+  // no new hub page.
+  //
+  // THIS COMMENT WAS FALSE FOR A DAY AND NOTHING FAILED. It said the index covered every
+  // analysis on disk and that build_reports_index.py fails if one is missing, and both
+  // were true while every analysis was a Markdown document in sources/analyses/. Eight
+  // reports were then built as React PAGES, the generator could not see them, and the
+  // front door of this whole area listed the documents and none of the pages -- an
+  // omission, which is the one defect shape nothing here catches by re-reading.
+  //
+  // It is true again, and by construction rather than by care: the generator reads
+  // AREA_TABS.analyses below, joins each tab to the page component that declares
+  // `const TAB: Tab = ...`, and REFUSES TO WRITE if a routed report has no owner. Adding a
+  // report to that list without a page, or a page without adding it to that list, fails.
   crisis: 'walk', money: 'themoney', analyses: 'reports', data: 'database', agents: 'ask',
 }
 
@@ -524,7 +597,8 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
-  spedroute: 'analyses', peers: 'analyses',
+  spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
+  analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
 }
@@ -554,8 +628,16 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // the bar is where the difference is cheapest to see. Splitting them across the strip
   // would leave the scenario findable and the measurement not, which is the wrong way
   // round -- the measurement is the thing that happened.
-  analyses: ['reports', 'sped', 'peers', 'minaid', 'staffing', 'stopped', 'unwind',
-             'outflow', 'leaving', 'families', 'sportsmoney', 'insurance', 'variance'],
+  // `required` sits next to `peers` and `minaid` on purpose: the three are the same
+  // question asked of three different documents, and a reader who opens one should meet
+  // the other two immediately rather than discover later that they exist.
+  // `montytech` sits next to `outflow` and `leaving`, because those three are the pages
+  // about children who are not in a Lunenburg classroom and they answer three different
+  // questions: how many there are, what it would cost if more left, and what the town is
+  // already assessed for the largest group of them.
+  analyses: ['reports', 'sped', 'peers', 'required', 'minaid', 'staffing', 'stopped',
+             'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
+             'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }
