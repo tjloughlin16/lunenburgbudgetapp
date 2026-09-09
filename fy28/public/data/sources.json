@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-08",
+ "generated": "2026-09-09",
  "origins": [
   {
    "id": "school",
@@ -1197,7 +1197,7 @@
      "stars": 3,
      "what": "The method document. Every figure this project publishes, with its inputs, the formula, a worked example in real dollars, and — beside each one — whether it is somebody else’s figure, a contract, a statute, our measurement or our assumption. Fifteen sections: the projection itself, why each escalator is what it is, special education, out-of-district tuition, health insurance, free cash, athletic fees, the levers, the cut cascade, the tax base and overrides, an assumption register ranked by what each one moves, and what none of it can compute. GENERATED from the live model by scripts/build_show_your_work.py, so it cannot drift from the code — run it with --check to prove the copy you are reading is current. Written to be usable by an assistant checking a number as well as by a resident following the argument.",
      "kind": "Notes",
-     "bytes": 95275,
+     "bytes": 95280,
      "url": "/docs/analyses/show-your-work.md",
      "count": 1839,
      "unit": "lines",
@@ -1216,6 +1216,18 @@
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
     {
+     "path": "analyses/per-pupil-spending.md",
+     "title": "What Lunenburg spends for each pupil, and what that number hides",
+     "stars": 3,
+     "what": "DESE’s all-funds per-pupil figures: Lunenburg against every district in Massachusetts and against five neighbours, FY2009–FY2025. The gap decomposed into a numerator and a denominator, into eleven function categories, and into pay against staffing — and the two Chapter 70 standings that look like a contradiction and are not one.",
+     "kind": "Notes",
+     "bytes": 26814,
+     "url": "/docs/analyses/per-pupil-spending.md",
+     "count": 450,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/per-pupil-spending.md"
+    },
+    {
      "path": "analyses/athletics-ledger.md",
      "title": "The athletics ledger: what a cashbook shows that a budget line cannot",
      "stars": 3,
@@ -1226,6 +1238,18 @@
      "count": 447,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics-ledger.md"
+    },
+    {
+     "path": "analyses/monty-tech.md",
+     "title": "The Monty Tech assessment — the school bill nobody in Lunenburg votes on",
+     "stars": 3,
+     "what": "Montachusett Regional Vocational Technical is the larger of the two routes out of Lunenburg’s own schools and the only school line the town does not vote. What sets the assessment: the Chapter 70 minimum required local contribution, derived from DESE’s own workbook for FY2007–FY2026 and checked against DESE’s printed apportionment sheet and five figures stated at three public meetings. The four parts of the bill where the district publishes them, the twenty-year series with its eleven check-failed candidates drawn as candidates, and the town’s own forecast of the line against what it did. Every figure recomputed by scripts/verify_monty_tech.py.",
+     "kind": "Notes",
+     "bytes": 19472,
+     "url": "/docs/analyses/monty-tech.md",
+     "count": 323,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/monty-tech.md"
     },
     {
      "path": "analyses/free-cash.md",
@@ -1494,9 +1518,9 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 40607,
+     "bytes": 41067,
      "url": "/docs/analyses/questions.md",
-     "count": 944,
+     "count": 952,
      "unit": "lines",
      "textUrl": "/docs/analyses/questions.md"
     },
@@ -1542,9 +1566,9 @@
      "stars": 3,
      "what": "107 questions with no query behind them — the same list as questions.md, generated from the same source so the two cannot come to offer different things. Where a question has a caveat it is printed under it in italics, because what a figure does NOT tell you is the half most often dropped when somebody quotes it at a meeting.",
      "kind": "Notes",
-     "bytes": 10580,
+     "bytes": 10641,
      "url": "/docs/analyses/what-you-can-ask.md",
-     "count": 174,
+     "count": 175,
      "unit": "lines",
      "textUrl": "/docs/analyses/what-you-can-ask.md"
     },
@@ -1566,7 +1590,7 @@
      "stars": 3,
      "what": "Written by us, generated from the data so its figures cannot drift. Why v1 is an ordinal and not a column, what each of the three status words means, what every other column carries, and the four things these tables do not tell you. Read this before quoting any figure out of the tables above.",
      "kind": "Notes",
-     "bytes": 6027,
+     "bytes": 6029,
      "url": "/docs/data/PROVENANCE-report-tables.md",
      "count": 107,
      "unit": "lines",
@@ -1578,7 +1602,7 @@
      "stars": 3,
      "what": "Written by us. Which sentence of which page each year came from, the two checks the source itself supplies, the misprint in the FY2023 report, and why DESE’s Out-of-District FTE series is NOT a cross-check — it runs ten times larger because it counts vocational, choice and charter pupils too. Both series decline, which is easy to mistake for agreement.",
      "kind": "Notes",
-     "bytes": 4476,
+     "bytes": 4477,
      "url": "/docs/data/PROVENANCE-placement-counts.md",
      "count": 97,
      "unit": "lines",
@@ -1638,7 +1662,7 @@
      "stars": 2,
      "what": "863 blocks found by reading all sixteen reports end to end rather than by searching them. It carries each table’s PRINTED heading, because the headings differ between years and that is precisely what defeats a search. The cross-year grouping is a hypothesis about which tables are the same table, not a fact.",
      "kind": "Data",
-     "bytes": 884561,
+     "bytes": 884570,
      "url": "/docs/data/annual-report-catalogue.csv",
      "count": 866,
      "unit": "rows",
@@ -1686,7 +1710,7 @@
      "stars": 2,
      "what": "553 rows joining a dataset and an edition to the pages it was taken off. This is what makes a figure findable in the original.",
      "kind": "Data",
-     "bytes": 286235,
+     "bytes": 286238,
      "url": "/docs/data/extraction-plan.csv",
      "count": 553,
      "unit": "rows",
@@ -1698,7 +1722,7 @@
      "stars": 2,
      "what": "521 rows naming the pages and rows whose reading is not credible — a total smaller than the rows beneath it, a figure larger than the table it sits in, a cell that plainly held money and did not parse. A list of places to look, not a list of the town’s mistakes.",
      "kind": "Data",
-     "bytes": 160253,
+     "bytes": 160255,
      "url": "/docs/data/report-anomalies.csv",
      "count": 521,
      "unit": "rows",
@@ -1710,9 +1734,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 57697,
+     "bytes": 82706,
      "url": "/docs/data/money-gaps.csv",
-     "count": 72,
+     "count": 97,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -1734,7 +1758,7 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 51655,
+     "bytes": 51661,
      "url": "/docs/data/table-semantics.csv",
      "count": 98,
      "unit": "rows",
@@ -2018,7 +2042,7 @@
     },
     {
      "path": "data/report-enrollment-mcas.csv",
-     "title": "Enrolment and MCAS results",
+     "title": "Enrollment and MCAS results",
      "stars": 1,
      "what": "337 rows. No arithmetic check available.",
      "kind": "Data",
@@ -2066,7 +2090,7 @@
     },
     {
      "path": "data/report-monty-tech.csv",
-     "title": "Montachusett Regional assessment and enrolment",
+     "title": "Montachusett Regional assessment and enrollment",
      "stars": 1,
      "what": "70 rows. The vocational assessment is one of the largest single lines the town votes and one of the least discussed.",
      "kind": "Data",
@@ -2161,7 +2185,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 29347840,
+     "bytes": 30359552,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2238,6 +2262,18 @@
      "textUrl": "/docs/data/dese-teacher-subject.csv"
     },
     {
+     "path": "data/dese-radar.csv",
+     "title": "DESE’s own figures, every district, FY2009–FY2025",
+     "stars": 3,
+     "what": "The state’s RADAR district comparison: enrollment, demographics, staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, for Lunenburg and the six peer districts — SEVEN, not all 421, because the workbook was scoped down so the published database would fit under Cloudflare’s 25MB asset limit. The first view of Lunenburg school spending here that is neither the town’s general fund nor written by the district, so it bounds from outside the money the budget document cannot see. Three cautions travel with it: DESE counts costs the school budget does not carry, so its total must never be subtracted from the town’s appropriation to produce “hidden money”; it says all funds and gives one number, so it cannot say which dollar came from a grant; and its paraprofessional figure is FTE from the state’s staffing collection, not a headcount. Each district-year is checked against DESE’s own printed in-district total — 16 fail, all charter schools, and Lunenburg ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.",
+     "kind": "Data",
+     "bytes": 767983,
+     "url": "/docs/data/dese-radar.csv",
+     "count": 5344,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-radar.csv"
+    },
+    {
      "path": "data/meeting-register.csv",
      "title": "Every meeting, and what survives of it",
      "stars": 3,
@@ -2253,25 +2289,13 @@
      "path": "data/dese-sped-program.csv",
      "title": "What the students with disabilities are, SY2020–SY2026",
      "stars": 3,
-     "what": "Disability type, race, gender, grade span, in district against out of district, placement, and the special education FTE ratios — with a PUBLISHED count of students with disabilities, which was previously reachable here only by multiplying a percentage by enrolment. Three of the ten categories do not behave like the rest: Placement is in-district only and runs short of its own total, Disability Type is a collapsed rendering of Disability Type All, and the FTE category is a ratio despite the file calling every row a percentage. Rebuild with scripts/extract_dese_students.py.",
+     "what": "Disability type, race, gender, grade span, in district against out of district, placement, and the special education FTE ratios — with a PUBLISHED count of students with disabilities, which was previously reachable here only by multiplying a percentage by enrollment. Three of the ten categories do not behave like the rest: Placement is in-district only and runs short of its own total, Disability Type is a collapsed rendering of Disability Type All, and the FTE category is a ratio despite the file calling every row a percentage. Rebuild with scripts/extract_dese_students.py.",
      "kind": "Data",
      "bytes": 414302,
      "url": "/docs/data/dese-sped-program.csv",
      "count": 2403,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-program.csv"
-    },
-    {
-     "path": "data/dese-radar.csv",
-     "title": "DESE’s own figures, every district, FY2009–FY2025",
-     "stars": 3,
-     "what": "The state’s RADAR district comparison: enrollment, demographics, staffing FTE, MCAS and per-pupil expenditure by function, ACROSS ALL FUNDS, for Lunenburg and the six peer districts — SEVEN, not all 421, because the workbook was scoped down so the published database would fit under Cloudflare’s 25MB asset limit. The first view of Lunenburg school spending here that is neither the town’s general fund nor written by the district, so it bounds from outside the money the budget document cannot see. Three cautions travel with it: DESE counts costs the school budget does not carry, so its total must never be subtracted from the town’s appropriation to produce “hidden money”; it says all funds and gives one number, so it cannot say which dollar came from a grant; and its paraprofessional figure is FTE from the state’s staffing collection, not a headcount. Each district-year is checked against DESE’s own printed in-district total — 16 fail, all charter schools, and Lunenburg ties in all 17 years. Rebuild with scripts/extract_dese_radar.py.",
-     "kind": "Data",
-     "bytes": 405460,
-     "url": "/docs/data/dese-radar.csv",
-     "count": 2982,
-     "unit": "rows",
-     "textUrl": "/docs/data/dese-radar.csv"
     },
     {
      "path": "data/dese-function-statewide.csv",
@@ -2299,9 +2323,9 @@
     },
     {
      "path": "data/dese-enrollment.csv",
-     "title": "Enrolment by grade and selected population, SY1992–SY2026",
+     "title": "Enrollment by grade and selected population, SY1992–SY2026",
      "stars": 3,
-     "what": "The denominator for nearly every rate on this site: enrolment by grade, and the counts of English learners, low income, economically disadvantaged, high needs and students with disabilities, per state, district and school. Its published count of students with disabilities agrees exactly with dese-sped-program.csv and does NOT agree with the denominator the staffing ratios use in the same year — registered in money-gaps.csv. Rebuild with scripts/extract_dese_students.py.",
+     "what": "The denominator for nearly every rate on this site: enrollment by grade, and the counts of English learners, low income, economically disadvantaged, high needs and students with disabilities, per state, district and school. Its published count of students with disabilities agrees exactly with dese-sped-program.csv and does NOT agree with the denominator the staffing ratios use in the same year — registered in money-gaps.csv. Rebuild with scripts/extract_dese_students.py.",
      "kind": "Data",
      "bytes": 232515,
      "url": "/docs/data/dese-enrollment.csv",
@@ -2433,7 +2457,7 @@
      "path": "data/dese-ch70-formula.csv",
      "title": "The Chapter 70 formula, term by term, FY1993–FY2026",
      "stars": 3,
-     "what": "Thirty-four years of the state aid formula for every Massachusetts district — foundation enrolment, foundation budget, required local contribution, Chapter 70 aid, required net school spending and what was actually spent. It answers a question nobody in town can currently put a number on: whether Lunenburg spends above or below the minimum the state requires. FY2026 aid ties exactly to the town’s own MUNIS revenue ledger, two sources neither derived from the other. Two cautions travel with it: the source sheet has TWO columns called rqdnss holding different numbers, split here into required_nss and required_nss_published, and its actualNSS column holds BUDGETED figures for the last two years — read nss_stage. Publish the ratio to the required minimum as a measurement, never as a verdict: a floor is not a standard of adequacy. Rebuild with scripts/extract_dese_state_aid.py.",
+     "what": "Thirty-four years of the state aid formula for every Massachusetts district — foundation enrollment, foundation budget, required local contribution, Chapter 70 aid, required net school spending and what was actually spent. It answers a question nobody in town can currently put a number on: whether Lunenburg spends above or below the minimum the state requires. FY2026 aid ties exactly to the town’s own MUNIS revenue ledger, two sources neither derived from the other. Two cautions travel with it: the source sheet has TWO columns called rqdnss holding different numbers, split here into required_nss and required_nss_published, and its actualNSS column holds BUDGETED figures for the last two years — read nss_stage. Publish the ratio to the required minimum as a measurement, never as a verdict: a floor is not a standard of adequacy. Rebuild with scripts/extract_dese_state_aid.py.",
      "kind": "Data",
      "bytes": 48469,
      "url": "/docs/data/dese-ch70-formula.csv",
@@ -2495,7 +2519,7 @@
      "stars": 3,
      "what": "Four ratios per fiscal year across all districts — net school spending as a share of what the state requires, Chapter 70 aid per foundation pupil, the required local contribution as a share of the foundation budget, and circuit breaker claim per eligible student — as min, quartiles, median, max, Lunenburg’s own figure and its rank. The row-level Chapter 70 tables are seven districts because the published database has to fit under Cloudflare’s 25MB asset limit; this is what a reader would otherwise lose. Publish the share-of-required as a measurement and never as a verdict: a floor is not a standard of adequacy. Rebuild with scripts/extract_dese_state_aid.py.",
      "kind": "Data",
-     "bytes": 25510,
+     "bytes": 25544,
      "url": "/docs/data/dese-ch70-statewide.csv",
      "count": 122,
      "unit": "rows",
@@ -2505,7 +2529,7 @@
      "path": "data/dese-ch70-aid-factor.csv",
      "title": "How the Chapter 70 aid figure is built, FY2007 on",
      "stars": 3,
-     "what": "Every increment the formula adds between the foundation budget and the aid paid, and every reduction it applies. This is what lets anybody model how the aid RESPONDS to a change in enrolment rather than assuming it moves linearly — which is what the students-leave scenario needs. Rebuild with scripts/extract_dese_state_aid.py.",
+     "what": "Every increment the formula adds between the foundation budget and the aid paid, and every reduction it applies. This is what lets anybody model how the aid RESPONDS to a change in enrollment rather than assuming it moves linearly — which is what the students-leave scenario needs. Rebuild with scripts/extract_dese_state_aid.py.",
      "kind": "Data",
      "bytes": 24998,
      "url": "/docs/data/dese-ch70-aid-factor.csv",
@@ -2531,7 +2555,7 @@
      "stars": 3,
      "what": "One row for every document on the district’s budget page, whether or not a figure came out of it, with the reason when none did — quoted from that document’s own header line and its line number. It exists because the file above reports only what was read, so a document held and never parsed was indistinguishable from a document the town never published, and the coverage matrix reported both as absent. Most of the archive’s budget page is in the second category. Rebuild with scripts/extract_line_history.py.",
      "kind": "Data",
-     "bytes": 22596,
+     "bytes": 22601,
      "url": "/docs/data/line-history-coverage.csv",
      "count": 86,
      "unit": "rows",
@@ -2555,9 +2579,9 @@
      "stars": 3,
      "what": "Athletic fees, bus fees, collective bargaining raises, facilities and the fees the district’s payment portal sells — 62 rates, each carrying the fiscal year it applies to, the document that set it and the date. Built after FY26 athletic fees were modelled at $250 a season when the district had voted $325: not a wrong number, a right number from the wrong year, taken from a schedule that states its rates and never states which year they cover. It deliberately includes rates we do NOT use and the ten we cannot state at all, because a fee the town charges and does not publish is a finding rather than a blank. Rebuild with scripts/build_rate_register.py.",
      "kind": "Data",
-     "bytes": 14580,
+     "bytes": 16948,
      "url": "/docs/data/rate-register.csv",
-     "count": 63,
+     "count": 72,
      "unit": "rows",
      "textUrl": "/docs/data/rate-register.csv"
     },
@@ -2579,7 +2603,7 @@
      "stars": 3,
      "what": "The state publishes these on its own schedule, so each row carries the portal page a person can open, the API endpoint a program can call, the publisher, the sha256 of the copy we hold, what the dataset can answer, and when it is worth fetching again. Rows marked WANTED are datasets we do NOT hold and have decided we need — the registry records the gap rather than only the holdings, so next year’s refresh starts from a list rather than from memory. Rebuild with scripts/build_dese_registry.py.",
      "kind": "Data",
-     "bytes": 12583,
+     "bytes": 12587,
      "url": "/docs/data/dese-source-registry.csv",
      "count": 29,
      "unit": "rows",
@@ -2731,6 +2755,28 @@
      "textUrl": "/docs/data/total-expenses-history.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. It is currently empty: YouTube IP-blocked the caption endpoint after ten test fetches, and the backfill is deliberately on hold rather than retrying. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 92,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
+     "path": "data/meeting-watch-state.csv",
+     "title": "Every agenda and set of minutes the town has listed, and when we first saw it",
+     "stars": 2,
+     "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1759575,
+     "url": "/docs/data/meeting-watch-state.csv",
+     "count": 12071,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-state.csv"
+    },
+    {
      "path": "data/copy-status.csv",
      "title": "Whether the publisher’s copy is still our copy",
      "stars": 2,
@@ -2804,6 +2850,18 @@
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
     },
     {
+     "path": "data/meeting-watch-events.csv",
+     "title": "What appeared on the town’s site between one crawl and the next",
+     "stars": 2,
+     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1006,
+     "url": "/docs/data/meeting-watch-events.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
      "path": "data/sped-transport-history.csv",
      "title": "Special education transportation, nine budgets",
      "stars": 2,
@@ -2826,6 +2884,18 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/capital-funding-history.csv"
+    },
+    {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 147,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
@@ -6503,10 +6573,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 528,
+  "documents": 534,
   "groups": 20,
-  "bytes": 1302610925,
-  "loadBearing": 99
+  "bytes": 1305820235,
+  "loadBearing": 102
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

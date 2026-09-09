@@ -7,9 +7,11 @@ import {
   type CatRow, type DecompRow, type SwRow, type TeacherRow, type YearRow,
 } from '../components/PeerSpendingCharts'
 import {
+  Conclusions,
   Body, H2, H3, Insight, NotShown, Quote, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 const TAB: Tab = 'peers'
 const DATA = '/data/peer-spending.json'
@@ -52,12 +54,24 @@ const DATA = '/data/peer-spending.json'
  *
  *  NO D1 AT PAGE LOAD. One static file. */
 
+/** One district Lunenburg children left for. `shape` is read off DESE's own name for the
+ *  district by the generator, not assigned here, because a regional vocational, charter or
+ *  Commonwealth virtual district is funded and shaped differently from a K-12 municipal
+ *  school and its per-pupil figure is not like for like. */
+type DestRow = {
+  lea: string; district: string; shape: string; students: number
+  share_of_leavers: number; how: string[]; students_all_years: number; years: number
+  per_pupil: number; reconciles: string; gap: number; gap_pct: number
+  spends_more: boolean
+}
+
 type Said = {
   key: string; board: string; date: string; kind: string; quote: string; why: string
   who: string; cite: string; town: string
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   about: string
   not_this_page: string
   fin_fy: number; ch70_fy: number
@@ -85,6 +99,18 @@ type Payload = {
     bottom_quarter_years: number; bottom_quarter_of: number
     bottom_quarter_unbroken: boolean; best_rank: number; worst_rank: number
   }
+  destinations: {
+    enr_fy: number; fin_fy: number; first_enr_fy: number; enr_years: number
+    threshold: number; lunenburg: number; stayed: number; left: number
+    left_share: number
+    rows: DestRow[]
+    listed: number; listed_children: number
+    below_threshold: number; below_threshold_children: number
+    more: number; less: number
+    children_where_more: number; children_where_less: number
+    widest: DestRow; narrowest: DestRow; like_for_like: DestRow
+    less_rows: DestRow[]
+  }
   totals: YearRow[]
   last_year: YearRow[]
   statewide: SwRow[]
@@ -98,7 +124,7 @@ type Payload = {
     from_fy: number; to_fy: number; spend_from: number; spend_to: number
     spend_pct: number; pupils_from: number; pupils_to: number; pupils_pct: number
     per_pupil_from: number; per_pupil_to: number; per_pupil_change: number
-    at_old_enrolment: number; denominator_share: number
+    at_old_enrollment: number; denominator_share: number
   }
   categories: CatRow[]
   category_headline: {
@@ -192,7 +218,7 @@ export function PeerSpending() {
   const T = S.target
   const lun = d.decomposition.find(r => r.is_lunenburg)!
   const lunAtOld = d.decomposition.find(r => r.is_lunenburg)!
-  const sortedAtOld = [...d.decomposition].sort((a, b) => b.at_old_enrolment - a.at_old_enrolment)
+  const sortedAtOld = [...d.decomposition].sort((a, b) => b.at_old_enrollment - a.at_old_enrollment)
   const lastAtOld = sortedAtOld[sortedAtOld.length - 1]
   const spendPcts = d.decomposition.map(r => r.spend_pct)
   const spendLow = d.decomposition.find(r => r.spend_pct === Math.min(...spendPcts))!
@@ -216,6 +242,19 @@ export function PeerSpending() {
   const sw = d.statewide[d.statewide.length - 1]
   const swFirst = d.statewide[0]
   const bene = d.categories.find(c => c.code === 'BENE')!
+  // WHERE THE CHILDREN GO. Everything below is read off the payload; the bar scale is the
+  // only thing computed here, and it is a layout measurement rather than a figure.
+  const DEST = d.destinations
+  // Sorted by what each district SPENDS, highest first, with Lunenburg in its own place
+  // rather than pinned to the top. The point of the picture is where Lunenburg sits among
+  // the schools its children go to; how many children go to each is on the label and in
+  // the table, which is the weight the ranking does not carry.
+  const destBars: (DestRow | { district: string; per_pupil: number; ours: true })[] =
+    [{ district: 'Lunenburg', per_pupil: DEST.lunenburg, ours: true as const },
+     ...DEST.rows]
+      .sort((a, b) => b.per_pupil - a.per_pupil)
+  const destMax = Math.max(...destBars.map(r => r.per_pupil))
+  const destUnreconciled = DEST.rows.filter(r => r.reconciles === 'no')
 
   return (
     <Shell standfirst={<>
@@ -227,6 +266,17 @@ export function PeerSpending() {
       {/* ---------------------------------------------------------- 1. WHAT IT ESTABLISHES */}
       <div className="grid gap-6 mt-9"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 15rem), 1fr))' }}>
+        {/* THE LEAD, and it is a destination rather than a peer: what the schools this
+            town's own children attend spend, against what this town spends. The widest
+            is a regional vocational district and the tile says so in the same breath. */}
+        <Stat value={signedPct(DEST.widest.gap_pct)}>
+          more for each pupil at {shortName(DEST.widest.district)} &mdash;{' '}
+          <strong>{money(DEST.widest.per_pupil)}</strong> a pupil against
+          Lunenburg&rsquo;s {money(DEST.lunenburg)}, {signedUsd(DEST.widest.gap)}. A{' '}
+          {DEST.widest.shape}, so not like for like;{' '}
+          {DEST.widest.students.toLocaleString()} of the{' '}
+          {DEST.left.toLocaleString()} children educated outside Lunenburg go there
+        </Stat>
         <Stat value={money(H.per_pupil)} tone={OURS}>
           Lunenburg in {fy(H.fy)}, per FTE pupil. <strong>All funds</strong> &mdash; not the
           school appropriation and not what a household pays
@@ -244,6 +294,176 @@ export function PeerSpending() {
           {H.bottom_quarter_unbroken ? 'every year DESE publishes here' : 'of the years published'}
         </Stat>
       </div>
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
+      {/* ------------------------------------- 2. WHERE LUNENBURG'S CHILDREN ACTUALLY GO */}
+      {/* DESTINATIONS ARE NOT PEERS, and this section is deliberately not merged into the
+          six-district tables below. A peer is a district of a similar shape, for asking
+          whether a figure is normal. A destination is where resident children were
+          actually educated. Different question, different set, kept apart.
+
+          THE THING FIRST (rule 7a): the bars, then the table, then every note about how to
+          read them. The caveats are real and they go underneath.
+
+          NOT ONE FOUNDATION FIGURE IS ON THIS PAGE. A foundation budget per pupil is a
+          Chapter 70 formula output -- what the state's model says an adequate education
+          costs -- and for Montachusett it is about five thousand dollars BELOW what the
+          district actually spends. /monty-tech reports the foundation figure; this section
+          reports spending; the note under the table says plainly that they are different
+          measures and nothing here puts the two in one row. */}
+      <H2 id="destinations">
+        What the schools Lunenburg&rsquo;s children go to instead spend
+      </H2>
+      <Body>
+        Every district that took {DEST.threshold} or more Lunenburg children in{' '}
+        {fy(DEST.enr_fy)}, against what each of them spent for every pupil in{' '}
+        {fy(DEST.fin_fy)}.
+      </Body>
+
+      <div className="mt-5 grid gap-2.5">
+        {destBars.map(r => {
+          const ours = 'ours' in r
+          const row = ours ? null : (r as DestRow)
+          return (
+            <div key={r.district} className="grid items-center gap-3"
+              style={{ gridTemplateColumns: 'minmax(9rem, 15rem) 1fr auto' }}>
+              <div className="text-[12.5px] leading-tight"
+                style={{ fontWeight: ours ? 700 : 400 }}>
+                {shortName(r.district)}
+                {row ? (
+                  <span className="block text-[11px]" style={{ color: FIELD }}>
+                    {row.shape} &middot; {row.students.toLocaleString()} children
+                  </span>
+                ) : (
+                  <span className="block text-[11px]" style={{ color: FIELD }}>
+                    its own schools &middot; {DEST.stayed.toLocaleString()} children
+                  </span>
+                )}
+              </div>
+              <div className="h-4 rounded-[2px]" style={{ background: 'var(--surface-3)' }}>
+                <div className="h-4 rounded-[2px]"
+                  style={{
+                    width: `${(r.per_pupil / destMax) * 100}%`,
+                    background: ours ? OURS : row && row.spends_more
+                      ? 'var(--pp-money)' : 'var(--pp-pupils)',
+                  }} />
+              </div>
+              {/* THE DOLLARS AND THE PERCENTAGE TOGETHER. A percentage says how big the
+                  gap is; the dollar figure says what it is, and a reader should not have
+                  to hunt for the base it is a percentage of. */}
+              <div className="text-[12.5px] tnum whitespace-nowrap text-right leading-tight"
+                style={{ fontWeight: ours ? 700 : 400 }}>
+                {money(r.per_pupil)}
+                {row ? (
+                  <span className="block text-[11px]" style={{ color: FIELD }}>
+                    {signedUsd(row.gap)} &middot; {signedPct(row.gap_pct)}
+                  </span>
+                ) : null}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      <TableTwin
+        caption={`Lunenburg children by district, ${fy(DEST.enr_fy)}; spending per pupil, ${fy(DEST.fin_fy)}`}
+        head={['District', 'What it is', `Children ${fy(DEST.enr_fy)}`,
+          `Children ${fy(DEST.first_enr_fy)}–${fy(DEST.enr_fy)}`,
+          'Per pupil', 'Difference', '%']}
+        mark={r => r[0] === 'Lunenburg'}
+        rows={[
+          ['Lunenburg', 'its own schools', DEST.stayed.toLocaleString(), '—',
+            money(DEST.lunenburg), '—', '—'],
+          ...DEST.rows.map(r => [
+            shortName(r.district), r.shape, r.students.toLocaleString(),
+            r.students_all_years.toLocaleString(),
+            money(r.per_pupil), signedUsd(r.gap), signedPct(r.gap_pct),
+          ]),
+        ]}
+        note={<>
+          {DEST.children_where_more.toLocaleString()} of the{' '}
+          {DEST.left.toLocaleString()} children who left went to a district spending more
+          for each pupil than Lunenburg; {DEST.children_where_less.toLocaleString()} went
+          to the {DEST.less} Commonwealth virtual districts, which spend less. A further{' '}
+          {DEST.below_threshold_children.toLocaleString()} children
+          went to {DEST.below_threshold} other districts in ones and twos, below the
+          threshold this table draws at.
+        </>}
+      />
+
+      <NotShown>
+        <p>
+          <strong>These are destinations, not peers.</strong> The six districts in the rest
+          of this page are a comparison set &mdash; districts of a similar shape, for
+          asking whether a figure is normal. These are where{' '}
+          {DEST.left.toLocaleString()} Lunenburg children
+          were actually educated in {fy(DEST.enr_fy)}. The two sets overlap and are not the
+          same question, and no figure here is carried into the peer tables below.
+        </p>
+        <p className="mt-2.5">
+          <strong>A regional vocational, charter or virtual district is not like for
+          like.</strong> They are funded differently, enrol different grades, and buy
+          different things: {shortName(DEST.widest.district)} is a{' '}
+          {DEST.widest.shape} and its {money(DEST.widest.per_pupil)} is not a
+          like-for-like comparison with a K&ndash;12 school.{' '}
+          {shortName(DEST.like_for_like.district)} at {money(DEST.like_for_like.per_pupil)}{' '}
+          is the nearest one that is. Take the range &mdash;{' '}
+          {signedPct(DEST.narrowest.gap_pct)} to {signedPct(DEST.widest.gap_pct)} &mdash;
+          rather than any single figure in it.
+        </p>
+        <p className="mt-2.5">
+          <strong>A per-pupil figure is a ratio and both halves move.</strong> A district
+          with fewer pupils reads higher with nothing bought, which is the arithmetic the
+          rest of this page works through for the peer set. Nothing here says the
+          difference is programme.
+        </p>
+        <p className="mt-2.5">
+          <strong>Two collections, two years, never differenced.</strong> The children are
+          counted in DESE&rsquo;s residents-sending and enrolment-receiving files for{' '}
+          {fy(DEST.enr_fy)}; the spending is DESE&rsquo;s end-of-year finance collection
+          for {fy(DEST.fin_fy)}. One is a count of children and the other is dollars over a
+          pupil count, and nothing on this page subtracts one from the other.
+        </p>
+        <p className="mt-2.5">
+          <strong>This is spending, not a foundation budget.</strong> Every figure in this
+          section is what a district reported spending, all funds, after the year closed.
+          A <em>foundation budget per pupil</em> &mdash; the figure{' '}
+          <a className="link" href={abs('/monty-tech')}>/monty-tech</a> reports &mdash; is a
+          Chapter&nbsp;70 formula output, the state&rsquo;s model of what an adequate
+          education costs. The two measure different things, they differ by thousands of
+          dollars for the same district in the same year, and they are never placed in one
+          row here.
+        </p>
+        {destUnreconciled.length ? (
+          <p className="mt-2.5">
+            <strong>One row does not tie to its own source.</strong>{' '}
+            {destUnreconciled.map(r => shortName(r.district)).join(', ')}:
+            DESE&rsquo;s ten printed per-pupil function columns do not sum to the total it
+            prints beside them. Sixteen district-years in the workbook do this and every
+            one of them is a charter school; what DESE puts in the total and not in a
+            printed column is not established. The figure is published with that verdict
+            beside it rather than dropped.
+          </p>
+        ) : null}
+      </NotShown>
+
+      <Body>
+        <strong>Families choose Monty Tech.</strong> They apply, and a place is not
+        guaranteed. What is different is how the <em>bill</em> behaves: Lunenburg is a
+        member town of {shortName(DEST.widest.district)}, so the state computes one
+        required local contribution for the town and splits it between its two districts by
+        foundation-budget share &mdash; a different rule from school choice, and{' '}
+        <a className="link" href={abs('/monty-tech')}>/monty-tech</a> works it through.{' '}
+        <a className="link" href={abs('/where-students-go-instead')}>
+          Where students go instead</a> has the year-by-year counts.
+      </Body>
 
       <H2 id="findings">What this page establishes</H2>
       <div className="grid gap-4 mt-6"
@@ -272,7 +492,7 @@ export function PeerSpending() {
         </Insight>
         <Insight n={3} headline={
           <>Most of the spread between these six is the denominator. Spending grew within a
-            narrow band; enrolment did not.</>}>
+            narrow band; enrollment did not.</>}>
           {fy(d.first_comparable_fy)} to {fy(d.last_fy)}: every district increased spending
           between {signedPct(spendLow.spend_pct)} ({shortName(spendLow.district)}) and{' '}
           {signedPct(spendHigh.spend_pct)} ({shortName(spendHigh.district)}).
@@ -281,7 +501,7 @@ export function PeerSpending() {
           {signedPct(Math.min(...d.decomposition.map(r => r.pupils_pct)))} at the other end.
           Give {fy(d.last_fy)}&rsquo;s money to each district&rsquo;s{' '}
           {fy(d.first_comparable_fy)} pupil count and Lunenburg is{' '}
-          {money(lunAtOld.at_old_enrolment)}, {lunAtOld.rank_at_old_enrolment} of{' '}
+          {money(lunAtOld.at_old_enrollment)}, {lunAtOld.rank_at_old_enrollment} of{' '}
           {d.decomposition.length}, and {shortName(lastAtOld.district)} is last.
         </Insight>
         <Insight n={4} headline={
@@ -443,8 +663,8 @@ export function PeerSpending() {
           `${fy(d.last_fy)} money at ${fy(d.first_comparable_fy)} pupils`, 'Rank if so']}
         rows={d.decomposition.map(r => [
           r.district, signedPct(r.spend_pct), signedPct(r.pupils_pct),
-          signedPct(r.per_pupil_pct), money(r.at_old_enrolment),
-          `${r.rank_at_old_enrolment} of ${d.decomposition.length}`])}
+          signedPct(r.per_pupil_pct), money(r.at_old_enrollment),
+          `${r.rank_at_old_enrollment} of ${d.decomposition.length}`])}
         mark={r => r[0] === 'Lunenburg'}
         note={<>The identity is exact: (1 + spending growth) &divide; (1 + pupil growth) =
           (1 + per-pupil growth), checked for every district on every build. The fifth
@@ -458,7 +678,7 @@ export function PeerSpending() {
         {L.pupils_to.toLocaleString()}. Per pupil {money(L.per_pupil_from)} to{' '}
         {money(L.per_pupil_to)}. Hold the pupil count at its{' '}
         {fy(L.from_fy)} level and the same {fy(L.to_fy)} money is{' '}
-        {money(L.at_old_enrolment)} a pupil &mdash; so {pct1(L.denominator_share)} of the
+        {money(L.at_old_enrollment)} a pupil &mdash; so {pct1(L.denominator_share)} of the
         rise in the ratio is the denominator rather than the money.
       </Body>
       <NotShown>
@@ -466,7 +686,7 @@ export function PeerSpending() {
         not a counterfactual: it is one year&rsquo;s money divided by an older year&rsquo;s
         pupil count, and a district with more pupils would not have spent the same amount.
         It is here to show how much of a per-pupil <em>difference</em> is arithmetic on the
-        denominator, and nothing more. Nor does any of it say why enrolment fell, which is
+        denominator, and nothing more. Nor does any of it say why enrollment fell, which is
         a question about births, housing and school choice and not about budgets.
       </NotShown>
 
@@ -697,14 +917,14 @@ export function PeerSpending() {
         </div>
         <div className="card p-5">
           <p className="text-[15px] font-bold leading-snug">
-            Enrolment moves this number as hard as money does, and it moves on its own
+            Enrollment moves this number as hard as money does, and it moves on its own
           </p>
           <p className="text-[14px] leading-relaxed mt-2"
             style={{ color: 'var(--text-secondary)' }}>
             {pct1(L.denominator_share)} of the rise in Lunenburg&rsquo;s own per-pupil
             figure since {fy(L.from_fy)} is the denominator. A district that loses pupils
             without cutting proportionally will climb this table without deciding anything,
-            and a district that holds its enrolment will fall down it while spending more
+            and a district that holds its enrollment will fall down it while spending more
             every year. Neither movement is a budget decision, and a plan built on the
             ratio rather than on the two halves is planning against an artefact.
           </p>

@@ -38,6 +38,11 @@ import sqlite3
 import statistics as st
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 OUT = os.path.join(ROOT, 'fy28/public/data/budget-vs-actual.json')
@@ -452,7 +457,189 @@ def build():
         related.append(dict(id=rid, title=r['title'], why=why,
                             url=r['markdown']['url'], words=r['words']))
 
+    # ---------------------------------------------------- what this page CONCLUDES
+    #
+    # RULE 8 IS THE WHOLE DIFFICULTY HERE. This is the report most at risk of turning
+    # into an audit, and "line X overspent by Y%" is an accusation with a number on it,
+    # not a finding. What a resident actually needs from a budget-against-spending sweep
+    # is what a budget can and cannot tell them: which parts of it are dependable, which
+    # are structurally unforecastable, and whether the thing everybody says at meetings --
+    # that the schools ask for more than they need -- is in the documents. It is not, and
+    # rule 8 asks for that to be said with the same weight as anything else.
+    #
+    # The documentary half stays out. That both columns before FY2026 come out of the
+    # same budget book is a REGISTERED gap (`gaps`, above) and a stage note inside each
+    # conclusion -- never a conclusion of its own. A defect in a document is a footnote.
+    worst_year = max(year_rows, key=lambda r: abs(r['pct']))
+    within2 = sum(s['count'] for s in spread if s['centred'])
+    big_miss = sum(s['count'] for s in spread if s['hi'] <= -0.25 or s['lo'] >= 0.25)
+    by_section = {r['section']: r for r in section_rows}
+    sal, rest = by_section['Salaries'], by_section['Everything else']
+    t_over = max(r['pct'] for r in tuition)
+    t_under = min(r['pct'] for r in tuition)
+    sped_worst = max(abs(r['pct']) for r in sped_staff)
+    sw_under = sum(1 for r in same_way if r['direction'] == 'under')
+    concl = [
+        conclusion(
+            id='the-total-is-dependable-and-the-lines-are-not',
+            claim='Budget rows that landed within two per cent of their own plan',
+            so_what='The bottom line is dependable and any single row in it is not. A budget is a plan, not a promise.',
+            lede=(
+                'No measured year’s reported spending landed further than %s from the '
+                'budget printed beside it — and underneath that, only %s of %s line-years '
+                'landed within %s of their own line. The total is dependable; any single '
+                'line in it is not.'
+                % (C.pct(100 * abs(worst_year['pct'])), C.num(within2), C.num(len(recs)),
+                   C.pct(100 * SAME_WAY, 0))),
+            detail=(
+                'That is what a budget of this kind is: a plan whose parts absorb one '
+                'another. Salaries came in %s under across %s line-years and everything '
+                'else %s over across %s, and the two very nearly cancel. Underneath them '
+                '%s of the %s line-years missed by more than a quarter, in both '
+                'directions. So a resident or a Finance Committee member can rely on the '
+                'bottom line and should not read one line’s number as a forecast of that '
+                'line. Both columns come out of the district’s own budget books — a budget '
+                'printed beside a prior year the same publisher restated — so this is a '
+                'pattern in what the district reports about itself, not a reading of the '
+                'town’s books.'
+                % (C.pct(100 * abs(sal['pct'])), C.num(sal['line_years']),
+                   C.pct(100 * rest['pct']), C.num(rest['line_years']),
+                   C.num(big_miss), C.num(len(recs)))),
+            figures={
+                'worst': figure(100 * abs(worst_year['pct']),
+                                C.pct(100 * abs(worst_year['pct']))),
+                'within2': figure(within2, C.num(within2), 'of %s' % C.num(len(recs))),
+                'line_years': figure(len(recs), C.num(len(recs))),
+                'band': figure(100 * SAME_WAY, C.pct(100 * SAME_WAY, 0)),
+                'salaries_pct': figure(100 * abs(sal['pct']), C.pct(100 * abs(sal['pct']))),
+                'salaries_line_years': figure(sal['line_years'], C.num(sal['line_years'])),
+                'rest_pct': figure(100 * rest['pct'], C.pct(100 * rest['pct'])),
+                'rest_line_years': figure(rest['line_years'], C.num(rest['line_years'])),
+                'big_miss': figure(big_miss, C.num(big_miss)),
+            },
+            figure='within2',
+            kind='measured',
+            basis=(
+                'budget_figure, stage `settled` against stage `restated`, each year against '
+                'its own year, %s–%s. The %s documents behind the second column are '
+                'classified in document-basis.csv as restatements and forward budget books; '
+                'none is an accounting record. FY21 is excluded because its restated column '
+                'is its budget, and years with fewer than %d usable lines are excluded.'
+                % (C.fy(years[0]), C.fy(years[-1]), C.num(evidence['documents']),
+                   MIN_LINES_PER_YEAR)),
+            not_shown=(
+                'Whether a line coming in under is a saving. A post left vacant, a service '
+                'that did not happen, a grant that paid instead, money moved to another '
+                'line and a line over-budgeted from the start all produce the same smaller '
+                'number, and a budget document cannot show an approved mid-year transfer at '
+                'all. Both columns are also the town’s net general-fund share, so a line '
+                'that rose because a grant ended looks exactly like a line that got more '
+                'expensive.'),
+            see=[('/money-outside-the-budget', 'the funds these two columns never show'),
+                 ('/what-we-cannot-answer', 'what cannot be answered')],
+        ),
+        conclusion(
+            id='nothing-in-this-budget-is-quietly-over-provided',
+            claim='School budget rows that miss the same way every year, all by small amounts',
+            so_what='The misses look like noise rather than lines quietly over-provided.',
+            lede=(
+                'Only %s of the %s school budget lines with four or more measured years '
+                'miss the same way in every one of them, and the largest averages %s. The '
+                'misses in this budget look like noise, not like lines quietly '
+                'over-provided.'
+                % (C.num(len(same_way)), C.num(len(multi)),
+                   C.usd(abs(same_way[0]['mean_dollars'])))),
+            detail=(
+                '%s of the %s land under their own line and the rest over, and every one of '
+                'them is small: the largest is special education transportation at %s a '
+                'year below plan, and the next is %s. A padded budget shows up as the same '
+                'lines over-provided year after year, and that pattern is not in these '
+                'documents. What it establishes is a pattern in the district’s own budget '
+                'books restating themselves — the %s ledger is the only accounting record '
+                'the archive holds for school spending, and it is not one of the measured '
+                'years.'
+                % (C.num(sw_under), C.num(len(same_way)),
+                   C.usd(abs(same_way[0]['mean_dollars'])),
+                   C.usd(abs(same_way[1]['mean_dollars'])),
+                   C.fy(evidence['ledger']['deepest']['fy']))),
+            figures={
+                'same_way': figure(len(same_way), C.num(len(same_way)),
+                                   'of %s rows' % C.num(len(multi))),
+                'lines': figure(len(multi), C.num(len(multi))),
+                'largest': figure(abs(same_way[0]['mean_dollars']),
+                                  C.usd(abs(same_way[0]['mean_dollars']))),
+                'next': figure(abs(same_way[1]['mean_dollars']),
+                               C.usd(abs(same_way[1]['mean_dollars']))),
+                'under': figure(sw_under, C.num(sw_under)),
+                'ledger_fy': figure(evidence['ledger']['deepest']['fy'],
+                                    C.fy(evidence['ledger']['deepest']['fy'])),
+            },
+            figure='same_way',
+            kind='measured',
+            basis=(
+                'Every line with four or more usable line-years in the %s–%s sweep, each '
+                'year’s settled budget against the same year’s restated figure out of the '
+                'district’s own budget books. A line counts as missing the same way only '
+                'where it is more than %s off in every one of its years.'
+                % (C.fy(years[0]), C.fy(years[-1]), C.pct(100 * SAME_WAY, 0))),
+            not_shown=(
+                'That a line missing the same way every year was set wrong. A line reliably '
+                'under can be a service the town reliably does not use all of, and a '
+                'restatement cannot distinguish that from an estimate set too high. Nor '
+                'does the absence of a pattern here cover the lines the sweep never '
+                'reaches: most of the workbook’s lines are published at only one stage in '
+                'any given year and are not measured at all.'),
+            see=[('/reports', 'the written analysis behind this page')],
+        ),
+        conclusion(
+            id='tuition-is-the-line-nobody-can-forecast',
+            claim='How far below plan out-of-district tuition landed in its worst measured year',
+            so_what='The schools do not set that price or choose how many need it. Their own staffing lands within six per cent.',
+            lede=(
+                'Out-of-district tuition is the line nobody can forecast: across %s '
+                'measured years the district’s own books report it from %s over the budget '
+                'to %s under, while special education staffing never missed by more '
+                'than %s.'
+                % (C.num(len(tuition)), C.pct(100 * t_over), C.pct(100 * abs(t_under)),
+                   C.pct(100 * sped_worst))),
+            detail=(
+                'When a child’s plan requires a school the district cannot provide, the '
+                'town pays another school: it does not set the price, does not choose how '
+                'many children need it, and cannot say no. The part the district does '
+                'control behaves nothing like it — special education staffing lands within '
+                '%s in every one of those years. So a budget can be expected to be about '
+                'right on the staffing and cannot be expected to be right on the '
+                'placements, and a year in which tuition lands far from plan is not '
+                'evidence that anybody planned badly. Both columns are the district '
+                'restating its own budget book rather than a ledger.'
+                % C.pct(100 * sped_worst)),
+            figures={
+                'years': figure(len(tuition), C.num(len(tuition))),
+                'over': figure(100 * t_over, C.pct(100 * t_over)),
+                'under': figure(100 * abs(t_under), C.pct(100 * abs(t_under))),
+                'sped_worst': figure(100 * sped_worst, C.pct(100 * sped_worst)),
+            },
+            figure='under',
+            kind='measured',
+            basis=(
+                'The lines whose keys carry `tuition`, and the special education staffing '
+                'lines that do not, summed per year and compared budget against restated '
+                'figure within the same year, %s–%s, out of the district’s own budget '
+                'books. No rate of change is taken across the two kinds of column.'
+                % (C.fy(years[0]), C.fy(years[-1]))),
+            not_shown=(
+                'Why any year missed. A tuition line under plan can be fewer placements, '
+                'cheaper placements, a placement that started part way through the year, or '
+                'cost carried by the circuit breaker reimbursement or another fund that '
+                'never appears in the appropriation. And dollars are not children: none of '
+                'these columns counts a placement.'),
+            see=[('/what-special-education-costs', 'what special education actually costs'),
+                 ('/who-ends-up-out-of-district', 'who ends up out of district')],
+        ),
+    ]
+
     return dict(
+        conclusions=emit('budget-vs-actual', concl),
         generated_by='scripts/build_variance_charts.py',
         source='sources/data/lunenburg.db — budget_figure, lps_budget_lines, '
                'variance_by_group, line_history_disagreements',

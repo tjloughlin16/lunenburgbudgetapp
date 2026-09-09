@@ -232,7 +232,7 @@ def main():
         check('  %-30s per pupil' % row['district'], row['per_pupil_pct'],
               round(pp, 4), 0.0001)
         check('  %-30s at FY%d pupils' % (row['district'], BASE_FY),
-              row['at_old_enrolment'], round(b['total'] / pa['Total FTE Pupils']), 1)
+              row['at_old_enrollment'], round(b['total'] / pa['Total FTE Pupils']), 1)
     assert_true('(1+spending) / (1+pupils) = (1+per pupil), every district', worst < 0.005,
                 'the identity the page rests on drifts by %.4f' % worst)
 
@@ -289,9 +289,14 @@ def main():
         db, "SELECT district, total FROM dese_function_expenditure "
             "WHERE level='category' AND func_cat_code='TCHR' AND fy=?", FIN_FY)}
     tm = collections.defaultdict(dict)
+    # SCOPED TO THE PEER SET. dese_measure also carries the DESTINATIONS -- the districts
+    # Lunenburg's children leave for -- and those have no row in the finance collection
+    # this identity is checked against. Peers and destinations are different sets.
     for r in q(db, "SELECT district, measure, value FROM dese_measure WHERE fy=? AND "
                    "measure IN ('Average Teacher Salary','Teacher FTE',"
-                   "'Teachers per 100 FTE students')", FIN_FY):
+                   "'Teachers per 100 FTE students') "
+                   "AND lea IN (SELECT DISTINCT lea FROM dese_function_expenditure)",
+               FIN_FY):
         tm[r['district']][r['measure']] = r['value']
     worst_t = 0.0
     for dist, v in tm.items():
@@ -387,6 +392,153 @@ def main():
                 'formula treats the town as comparatively wealthy'
                 % (aid['target_aid_pct'], T['statewide_target_aid_pct']))
 
+    # ------------------------------------- 7b. the destinations, recomputed independently
+    #
+    # THE SET IS THE THING TO CHECK, not only the figures in it. A destination table whose
+    # membership was chosen can be entirely correct row by row and still carry a false
+    # claim, because the claim is about ALL of them. So the set is re-derived here from
+    # the threshold, by a differently shaped query, and asserted to be the same set.
+    print('\n§7b  Where Lunenburg’s children go, and what those districts spend')
+    D = d['destinations']
+
+    enr_fy = q(db, 'SELECT MAX(fy) fy FROM dese_town_enrollment WHERE town=?', TOWN)[0]['fy']
+    check('the enrollment year', D['enr_fy'], enr_fy)
+    seen = collections.defaultdict(float)
+    names = {}
+    for r in q(db, 'SELECT lea, district, students FROM dese_town_enrollment '
+                   'WHERE town=? AND fy=?', TOWN, enr_fy):
+        seen[r['lea']] += r['students']
+        names[r['lea']] = r['district']
+    check('children in Lunenburg’s own schools', D['stayed'], seen[LEA], 0.001)
+    left = sum(v for k, v in seen.items() if k != LEA)
+    check('children educated elsewhere', D['left'], left, 0.001)
+
+    want = {k for k, v in seen.items() if k != LEA and v >= D['threshold']}
+    got = {r['lea'] for r in D['rows']}
+    assert_true('the destination set is exactly what the threshold selects',
+                want == got,
+                'the threshold selects %s and the payload lists %s. A set that is chosen '
+                'rather than derived can be right row by row and still carry a false '
+                'claim about all of them.'
+                % (sorted(want - got) or 'nothing more', sorted(got - want) or 'nothing more'))
+
+    # The same measure for every district, read out of dese_measure by a second query
+    # shape, and asserted numeric -- a destination whose value would not parse must fail
+    # loudly rather than drop out of a table about who spends more.
+    pp = {r['lea']: r for r in q(
+        db, 'SELECT lea, value, reconciles FROM dese_measure '
+            'WHERE fy=? AND measure=? AND "group"=?',
+        FIN_FY, 'Total Expenditures', 'Expenditures Per Pupil')}
+    assert_true('every listed destination has a numeric FY%d per-pupil total' % FIN_FY,
+                all(isinstance((pp.get(l) or {}).get('value'), (int, float)) for l in got),
+                'one of them has no figure, or a figure that is not a number')
+    # Lunenburg is stated twice by DESE, in two collections, and the page prints one
+    # number. The two must agree or the destination gaps are measured off the wrong base.
+    check('Lunenburg’s per-pupil total, from the finance collection',
+          D['lunenburg'], lun['per_pupil'], 0.5)
+    check('Lunenburg’s per-pupil total, from RADAR', D['lunenburg'],
+          pp[LEA]['value'], 1.0)
+
+    for r in sorted(D['rows'], key=lambda x: -x['students']):
+        label = r['district'][:40]
+        check('%s children' % label, r['students'], seen[r['lea']], 0.001)
+        check('%s per pupil' % label, r['per_pupil'], pp[r['lea']]['value'], 0.5)
+        check('%s gap' % label, r['gap'], pp[r['lea']]['value'] - lun['per_pupil'], 0.5)
+        check('%s gap as a share' % label, r['gap_pct'],
+              (pp[r['lea']]['value'] - lun['per_pupil']) / lun['per_pupil'], 0.00001)
+        check('%s reconciles to its own printed total' % label, r['reconciles'],
+              pp[r['lea']]['reconciles'])
+        assert_true('%s is named as DESE names it' % label,
+                    r['district'] == names[r['lea']],
+                    'the page renames a district and a reader cannot find it in the source')
+
+    more = [r for r in D['rows'] if r['gap'] > 0]
+    less = [r for r in D['rows'] if r['gap'] <= 0]
+    check('destinations spending more', D['more'], len(more))
+    check('destinations spending less', D['less'], len(less))
+    check('children where more is spent', D['children_where_more'],
+          sum(r['students'] for r in more), 0.001)
+    check('children where less is spent', D['children_where_less'],
+          sum(r['students'] for r in less), 0.001)
+    assert_true('the widest gap is the widest gap',
+                D['widest']['gap'] == max(r['gap'] for r in D['rows']
+                                          if r['shape'] != 'Commonwealth virtual'),
+                'the conclusion leads with this figure')
+    assert_true('the like-for-like district is the largest ordinary K-12 destination',
+                D['like_for_like']['students'] == max(
+                    [r['students'] for r in D['rows'] if r['shape'] == 'K-12 district']),
+                'the page offers it as the comparison a reader should carry')
+    assert_true('the claim is scoped to the children, not to every destination',
+                D['children_where_more'] > D['children_where_less'],
+                'the conclusion says children who leave MOSTLY go to districts spending '
+                'more; that is a claim about children and it has to hold')
+
+    # ------------------------------------------------ 7c. foundation is not spending
+    #
+    # THE ERROR THIS SECTION EXISTS TO PREVENT. /monty-tech reports a FOUNDATION BUDGET per
+    # pupil -- a Chapter 70 formula output, the state's model of what an adequate education
+    # costs. This page reports SPENDING per pupil. They are different measures, they differ
+    # by thousands of dollars for the same district in the same year, and putting them in
+    # one table or one chart would be the single worst thing this page could do.
+    print('\n§7c  A foundation budget is not spending, and the two never share a row')
+    fnd = q(db, 'SELECT foundation_budget fb, foundation_enrollment fe '
+                'FROM dese_ch70_aid_factor WHERE fy=? AND lea=? AND level=?',
+            CH70_FY, LEA, 'district')
+    assert_true('Lunenburg has one Chapter 70 foundation row to compare against',
+                len(fnd) == 1, 'the separation cannot be demonstrated without it')
+    fnd_pp = fnd[0]['fb'] / fnd[0]['fe']
+    assert_true('the two measures genuinely differ, so the warning is not idle',
+                abs(fnd_pp - D['lunenburg']) > 1000,
+                'foundation %.0f against spending %.0f — if these ever coincide the '
+                'warning below stops meaning anything' % (fnd_pp, D['lunenburg']))
+
+    blob = json.dumps(D)
+    assert_true('no key in the destinations payload is a foundation figure',
+                'foundation' not in blob.lower(),
+                'a foundation figure has reached the block that carries the spending '
+                'comparison')
+    for name, value in (('the foundation budget per pupil', round(fnd_pp)),
+                        ('the foundation budget', round(fnd[0]['fb'])),
+                        ('the foundation enrollment', round(fnd[0]['fe']))):
+        assert_true('%s is nowhere in the destinations payload' % name,
+                    str(value) not in blob and usd(value) not in blob,
+                    'a Chapter 70 formula output is sitting in a block of spending '
+                    'figures, which is exactly what must not happen')
+
+    dest_page = open(PAGE, encoding='utf-8').read()
+    assert_true('the page has a destinations section', '<H2 id="destinations">' in dest_page,
+                'the lead comparison is not on the page')
+    sect = dest_page.split('<H2 id="destinations">', 1)[1].split('<H2 id="findings">', 1)[0]
+    flat_sect = ' '.join(sect.split())
+    for handle in ('S.target', 'S.peers', 'd.standing', 'foundation_budget',
+                   'foundation_enrollment', 'required_local_contribution'):
+        assert_true('the section renders no %s' % handle, handle not in sect,
+                    'a Chapter 70 field is being rendered inside the spending comparison')
+    assert_true('the section says plainly that it is spending and not a foundation budget',
+                'This is spending, not a foundation budget' in flat_sect,
+                'a reader arriving from /monty-tech has seen a foundation figure for the '
+                'same district and must be told which measure this is')
+    assert_true('...and names the other measure and where it appears',
+                'foundation budget per pupil' in flat_sect
+                and '/monty-tech' in flat_sect,
+                'naming the other measure is what stops a reader reconciling two numbers '
+                'that were never the same quantity')
+    assert_true('...and says the two measure different things',
+                'measure different things' in flat_sect,
+                'rule 13 — an instrument that reformats before you see it is part of the '
+                'finding')
+    assert_true('the section keeps destinations and peers apart in words',
+                'These are destinations, not peers' in flat_sect,
+                'merging the two sets lets a claim about one carry a claim about the other')
+    assert_true('the section refuses the like-for-like reading of a vocational figure',
+                'not like for' in flat_sect,
+                'a regional vocational district ranked silently beside a K-12 school is '
+                'the misreading this page would cause')
+    assert_true('the section states the family’s side of the Monty Tech choice',
+                'Families choose Monty Tech' in flat_sect,
+                'a member-town assessment is a fact about the BILL, not about whether a '
+                'family made a decision')
+
     db.close()
 
     # ---------------------------------------------------- 8. the analysis document itself
@@ -396,6 +548,38 @@ def main():
     lastyear = d['last_year']
     lun_row = next(r for r in lastyear if r['lea'] == LEA)
     next_lowest = lastyear[-2]
+    # The destination section, figure by figure. Recomputed above in §7b; asserted here to
+    # be the strings the document actually carries.
+    DD = d['destinations']
+    states(flat, 'children educated outside Lunenburg', format(int(DD['left']), ','))
+    states(flat, 'children where more is spent',
+           format(int(DD['children_where_more']), ','))
+    states(flat, 'children where less is spent',
+           format(int(DD['children_where_less']), ','))
+    states(flat, 'children in Lunenburg’s own schools', format(int(DD['stayed']), ','))
+    states(flat, 'children below the listing threshold',
+           format(int(DD['below_threshold_children']), ','))
+    for row in DD['rows']:
+        states(flat, '%s per pupil' % row['district'][:34], usd(row['per_pupil']))
+        states(flat, '%s children' % row['district'][:34], format(int(row['students']), ','))
+        if row['spends_more']:
+            # BOTH, every time. A percentage says how big the gap is and a dollar figure
+            # says what it is; the document is asserted to carry each one.
+            states(flat, '%s as a share' % row['district'][:34],
+                   '%.1f%%' % (row['gap_pct'] * 100))
+            states(flat, '%s in dollars' % row['district'][:34], usd(row['gap']))
+    states(flat, 'the widest destination gap in dollars', usd(DD['widest']['gap']))
+    states(flat, 'the widest destination’s share of leavers',
+           '%.1f%%' % (DD['widest']['share_of_leavers'] * 100))
+    assert_true('the analysis says destinations are not peers',
+                'destinations, not peers' in flat,
+                'merging the two sets lets a claim about one carry a claim about the '
+                'other')
+    assert_true('the analysis says none of the destination figures is a foundation budget',
+                'nothing in this section is a foundation budget' in flat.lower(),
+                'a reader arriving from /monty-tech has seen a foundation figure for the '
+                'same district in the same year')
+
     states(flat, 'the headline per-pupil figure', usd(H['per_pupil']))
     states(flat, 'the statewide median', usd(H['statewide_median']))
     states(flat, 'the distance below it', usd(H['statewide_below_median']))
@@ -418,7 +602,7 @@ def main():
         states(flat, '%s spending growth' % row['district'],
                '%.1f%%' % (row['spend_pct'] * 100))
         states(flat, '%s money at FY%d pupils' % (row['district'], BASE_FY),
-               usd(row['at_old_enrolment']))
+               usd(row['at_old_enrollment']))
     for code in ('TCHR', 'SERV', 'LDRS', 'OPMN', 'MATL', 'PDEV', 'TSER'):
         row = next(c for c in d['categories'] if c['code'] == code)
         states(flat, '%s gap' % code, usd(abs(row['gap'])))
@@ -530,6 +714,20 @@ def main():
          'is not in this data', page_body),
         ('a concrete thing somebody asked for, in a line called low',
          'Teachers and parents donate supplies', json.dumps(d['said'])),
+        # Added by the persona review of the destination section. The parent reader came
+        # to this page asking what the schools their neighbour's child attends spend, and
+        # before this section the page could not answer it at all.
+        ('the parent’s question is answered above the fold, not in a peer table',
+         'What the schools Lunenburg&rsquo;s children go to instead spend', page_body),
+        ('the widest figure carries its caveat in the same breath',
+         'is not a like-for-like comparison', page_body),
+        ('the family’s side of the Monty Tech decision is not overruled by the cherry '
+         'sheet', 'Families choose Monty Tech', page_body),
+        ('the destination comparison is a lead conclusion, not a table halfway down',
+         'the-districts-our-children-leave-for-spend-more',
+         json.dumps(d['conclusions'])),
+        ('the archive was searched about the destinations, not only the categories',
+         'disentangle ourselves from Monty Tech', json.dumps(d['said'])),
     ]
     for label, needle, hay in NEEDED:
         ok = ' '.join(needle.split()) in ' '.join(hay.split())
@@ -540,6 +738,14 @@ def main():
     # Step 3, which has to be re-run rather than remembered: the page calls categories low,
     # so the meeting archive must have been searched about those categories.
     said_keys = {q_['key'] for q_ in d['said']}
+    assert_true('the archive was searched about the destinations too',
+                'vocational' in said_keys,
+                'the page names the districts Lunenburg children leave for and quotes '
+                'nobody in the town about any of them')
+    assert_true('the destination conclusion leads the report',
+                d['conclusions'][0]['id']
+                == 'the-districts-our-children-leave-for-spend-more',
+                'a reader three sentences into this page must have met it')
     assert_true('the archive was searched about the lines called lowest',
                 {'materials', 'sharing-pd', 'grant-pd'} <= said_keys,
                 'the page names professional development and materials as the two lines '

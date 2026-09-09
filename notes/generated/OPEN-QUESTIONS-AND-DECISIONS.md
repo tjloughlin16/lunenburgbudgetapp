@@ -2,7 +2,7 @@
 
 The Lunenburg Budget Project — for review, 9 September 2026
 
-**4 decisions** and **13 open questions**. The gap registry behind the questions holds **91 rows** across 6 kinds: `document_wanted`, `held`, `money_in`, `money_out`, `people`, `record`.
+**4 decisions** and **13 open questions**. The gap registry behind the questions holds **99 rows** across 6 kinds: `document_wanted`, `held`, `money_in`, `money_out`, `people`, `record`.
 
 The two lists are kept apart because they behave differently, and section 3 below is the part worth reading first if you read nothing else.
 
@@ -67,9 +67,9 @@ would close it. All are registered in `sources/data/money-gaps.csv` unless marke
 9. **Whether an aid shortfall lands on the schools or on the town.** FY2024 came in
    $390,814 under estimate. Who absorbed it is in nothing we hold.
    *Closes:* the fiscal-year-end recap (Form A-1), beside the Cherry Sheet.
-10. **How many children Chapter 70 is paid for.** Foundation enrolment is 1,599; DESE's
+10. **How many children Chapter 70 is paid for.** Foundation enrollment is 1,599; DESE's
     own measures give 1,563, 1,568.9 and 1,665.9. Four counts of four different things.
-    *Closes:* DESE's FY27 foundation enrolment worksheet.
+    *Closes:* DESE's FY27 foundation enrollment worksheet.
 
 **Bounded rather than answerable:**
 

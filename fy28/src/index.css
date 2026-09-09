@@ -342,6 +342,21 @@ input[type="range"] { accent-color: var(--series-cost); }
    The light tokens are forced on for print regardless of the reader's theme:
    a dark-mode print is a page of black toner and unreadable body text. */
 @media print {
+  /* A COLLAPSED SECTION MUST NOT PRINT COLLAPSED. /what-it-all-adds-up-to hides each
+     conclusion's evidence and its "what this does not show" behind a <details>, because
+     sixteen claims each with a paragraph under it is a wall on screen. On paper there is
+     no click, so a caveat left folded is a caveat that did not print -- and a printed
+     claim without its limits is exactly the more-confident-than-its-sources failure the
+     collapse was built to avoid.
+
+     `::details-content` is what actually holds the folded children; the browser hides it
+     with `content-visibility: hidden` rather than with `display`, which is why the
+     obvious `details > *:not(summary) { display: block }` does nothing. The older rule is
+     kept beside it for engines that predate the pseudo-element. */
+  details::details-content { content-visibility: visible !important; }
+  details > *:not(summary) { display: revert !important; }
+  details > summary { list-style: none; }
+
   :root, :root[data-theme="dark"] {
     color-scheme: light;
     --surface-1: #ffffff;
@@ -440,3 +455,10 @@ input[type="range"] { accent-color: var(--series-cost); }
   }
   a { color: #000000 !important; text-decoration: underline; }
 }
+
+
+/* The disclosure chevron on a conclusion card turns when the card opens. The card's other
+   affordance is a LINK to the full report and it carries an arrow; these two must not be
+   confusable, so one rotates in place and the other points away. */
+.conc-chev { transform: rotate(0deg); }
+details[open] > summary .conc-chev { transform: rotate(90deg); }

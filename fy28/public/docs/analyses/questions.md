@@ -740,7 +740,7 @@ Returns `rank`, `dept`, `project`, `cost`, `funded`, `funding` — for example: 
 SELECT district, fy, measure, value FROM dese_measure WHERE district <> '' ORDER BY fy DESC LIMIT 20
 ```
 
-Returns `district`, `fy`, `measure`, `value` — for example: district=Harvard, fy=2025, measure=In-District FTE Pupils, value=1016.4
+Returns `district`, `fy`, `measure`, `value` — for example: district=Fitchburg, fy=2025, measure=In-District FTE Pupils, value=5250.5
 
 **Which DESE measures reconcile against the printed totals, and which do not?**
 
@@ -748,7 +748,7 @@ Returns `district`, `fy`, `measure`, `value` — for example: district=Harvard, 
 SELECT measure, COUNT(*) AS rows, SUM(CASE WHEN reconciles='1' THEN 1 ELSE 0 END) AS reconciling FROM dese_measure GROUP BY measure ORDER BY rows DESC LIMIT 15
 ```
 
-Returns `measure`, `rows`, `reconciling` — for example: measure=Total In-District Expenditures, rows=102, reconciling=0
+Returns `measure`, `rows`, `reconciling` — for example: measure=Teacher FTE, rows=190, reconciling=0
 
 **How has free cash moved for Lunenburg specifically?**
 
@@ -772,7 +772,7 @@ Returns `town`, `years`, `first`, `last` — for example: town=Ayer, years=5, fi
 SELECT measure, COUNT(*) AS rows, MIN(fy) AS first, MAX(fy) AS last FROM dese_measure GROUP BY measure ORDER BY rows DESC LIMIT 15
 ```
 
-Returns `measure`, `rows`, `first`, `last` — for example: measure=Total In-District Expenditures, rows=102, first=2009, last=2025
+Returns `measure`, `rows`, `first`, `last` — for example: measure=Teacher FTE, rows=190, first=2009, last=2025
 
 ## Votes and elections
 

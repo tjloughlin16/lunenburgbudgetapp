@@ -59,6 +59,11 @@ import re
 import sqlite3
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 OUT = os.path.join(ROOT, 'fy28/public/data/stopped-funding.json')
@@ -712,6 +717,37 @@ def build():
                          why=why.strip().rstrip('·').strip(),
                          closes=closes.strip() or None))
 
+    # ---- the quantities the conclusions rest on ------------------------------------
+    # Computed beside everything else the page states. Rule 2 applies to a claim exactly
+    # as it applies to a chart: a sentence carrying a figure nothing derived is the one
+    # thing here that can be silently wrong.
+    came_back = [e for e in events if e['returned']]
+    returned_share = 100.0 * len(came_back) / len(events)
+    stayed_share = 100.0 - returned_share
+    permanent_dollars = round(sum(p['last_funded'] for p in permanent), 2)
+    # AGAINST ONE YEAR OF THE BOOK, because that is the quantity a resident holds in their
+    # head. Not against the twelve-year total, which would flatter it further.
+    last_book = coverage[-1]['total']
+    permanent_share = 100.0 * permanent_dollars / last_book
+    perm_staff = next((c for c in categories['permanent_by_buys']
+                       if c['name'] == 'Teaching and specialist staff'), None)
+    if perm_staff is None:
+        fail('no permanently-zeroed line classifies as teaching or specialist staff — a '
+             'conclusion on this page says where the money in that group sits')
+    perm_staff_share = 100.0 * perm_staff['dollars'] / permanent_dollars
+    # The span in which a zeroing can be SEEN at all. The last years print almost no zeros,
+    # so a count across the whole series would be a count across years with no evidence.
+    measured_first = per_year[0]['fy']
+    measured_last = (silent[0] - 1) if silent else years[-1]
+    # THE TWO LARGEST SUSTAINED FALLS, and the claim below names what they are. If they
+    # stop being the tuition lines the sentence is wrong, so this stops the build.
+    TUITION = 'Tuition and out-of-district'
+    if declines[0]['buys'] != TUITION or declines[1]['buys'] != TUITION:
+        fail('the two largest sustained falls are no longer both out-of-district tuition '
+             '— a conclusion on this page says they are')
+    tui_a, tui_b = declines[0], declines[1]
+    tuition_fall = round(tui_a['fall'] + tui_b['fall'], 2)
+
     hits = searched()
     state = dese(cx, first_fy, last_fy)
     coverage_minutes = minutes_coverage()
@@ -792,6 +828,160 @@ def build():
                      first_date=hits['first_date'], last_date=hits['last_date']),
         searchable_from=int(hits['first_date'][:4]),
         gaps=gaps,
+        # WHAT A RESIDENT SHOULD TAKE AWAY. The loud finding on this page is that the
+        # budget book changed shape and lines vanished out of it — and that is a fact
+        # about a DOCUMENT, so it stays a footnote (see `shape`, and the gap register).
+        # These three are about the world: what happens to a line that hits zero, how
+        # much of it never comes back, and which lines have actually fallen furthest.
+        conclusions=emit('what-stopped-being-funded', [
+            conclusion(
+                id='a-zero-is-usually-a-pause',
+                claim='Things cut to zero in the school budget that were funded again later',
+                so_what='When the school budget stops paying for something, it usually comes back.',
+                lede='When the school budget stops paying for something, it usually '
+                      'comes back: %s of the %s things cut to zero between %s and %s were '
+                      'funded again in a later year.'
+                      % (C.num(len(came_back)), C.num(len(events)), C.fy(measured_first),
+                         C.fy(measured_last)),
+                detail='Those lines carried %s the year before they went to zero, and %s '
+                       'of it came back on the same line. So somebody quoting one year’s '
+                       'zero as a programme being cut is quoting the %s case. What this '
+                       'measures is the district’s own reporting of its general fund: a '
+                       'line at zero can also be a rename, a merge, or work that moved to '
+                       'a grant, and the book cannot tell those apart.'
+                       % (C.usd(round(sum(e['was'] for e in events), 2)),
+                          C.usd(round(sum(e['was'] for e in came_back), 2)),
+                          C.pct(stayed_share)),
+                figures={
+                    'returned': figure(len(came_back), C.num(len(came_back)),
+                                       'of %s cut to zero' % C.num(len(events))),
+                    'events': figure(len(events), C.num(len(events))),
+                    'first_fy': figure(measured_first, C.fy(measured_first)),
+                    'last_fy': figure(measured_last, C.fy(measured_last)),
+                    'dollars': figure(round(sum(e['was'] for e in events), 2),
+                                      C.usd(round(sum(e['was'] for e in events), 2))),
+                    'returned_dollars': figure(
+                        round(sum(e['was'] for e in came_back), 2),
+                        C.usd(round(sum(e['was'] for e in came_back), 2))),
+                    'stayed_share': figure(stayed_share, C.pct(stayed_share)),
+                },
+                figure='returned',
+                kind='measured',
+                basis='The district’s own budget books, %d of them, restating FY%d to '
+                      'FY%d line by line: every line carrying a figure above zero in one '
+                      'year and a printed zero in the next, followed forward to see '
+                      'whether it was ever funded again.'
+                      % (len(source_docs), first_fy, last_fy),
+                not_shown='That the service paused with the line. A budget line is not a '
+                          'programme and dollars are not people; a line funded again '
+                          'under the same name is evidence about the book rather than '
+                          'about what happened in a classroom.',
+                see=[('/when-grants-end', 'what happens when a grant stops paying'),
+                     ('/what-we-cannot-answer', 'what this record cannot settle')],
+            ),
+            conclusion(
+                id='what-stops-for-good-is-small-and-mostly-staff-money',
+                claim='Carried by everything the schools cut and never funded again',
+                so_what='Under one per cent of the school budget. What ends for good is small, and mostly specialist posts.',
+                lede='What stops for good is small: %s things the schools paid for were '
+                      'cut and never funded again, %s between them — %s of the %s school '
+                      'budget for %s.'
+                      % (C.num(len(permanent)), C.usd(permanent_dollars),
+                         C.pct(permanent_share), C.usd(last_book), C.fy(last_fy)),
+                detail='The dollars are not spread evenly across them. %s of the %s are '
+                       'teaching or specialist lines and they carry %s — %s of the money '
+                       '— while the rest are mostly books, materials and supplies. The '
+                       'largest single one is %s, last funded at %s in %s. That is the '
+                       'shape of what ends here: many small endings, and the money '
+                       'concentrated in a handful of specialist posts.'
+                       % (C.num(perm_staff['n']), C.num(len(permanent)),
+                          C.usd(perm_staff['dollars']), C.pct(perm_staff_share),
+                          permanent[0]['label'], C.usd(permanent[0]['last_funded']),
+                          C.fy(permanent[0]['last_funded_fy'])),
+                figures={
+                    'lines': figure(len(permanent), C.num(len(permanent))),
+                    'dollars': figure(permanent_dollars, C.usd(permanent_dollars)),
+                    'share': figure(permanent_share, C.pct(permanent_share)),
+                    'book': figure(last_book, C.usd(last_book)),
+                    'fy': figure(last_fy, C.fy(last_fy)),
+                    'staff_lines': figure(perm_staff['n'], C.num(perm_staff['n'])),
+                    'staff_dollars': figure(perm_staff['dollars'],
+                                            C.usd(perm_staff['dollars'])),
+                    'staff_share': figure(perm_staff_share, C.pct(perm_staff_share)),
+                    'biggest': figure(permanent[0]['last_funded'],
+                                      C.usd(permanent[0]['last_funded'])),
+                    'biggest_fy': figure(permanent[0]['last_funded_fy'],
+                                         C.fy(permanent[0]['last_funded_fy'])),
+                },
+                figure='dollars',
+                kind='measured',
+                basis='The same restated books: every line whose last funded year is '
+                      'followed only by printed zeros, grouped by what the district’s own '
+                      'label says the money buys. The grouping is ours; the district '
+                      'publishes no category for these lines.',
+                not_shown='That a post went with the line. A line at zero is not a '
+                          'position removed — the money can have moved to another line, '
+                          'to a grant, or to a differently-spelled line, and this book is '
+                          'the general fund only. The town publishes staff rosters, and '
+                          'they carry no FTE and no funding source.',
+                see=[('/school-staffing', 'the people the budget buys'),
+                     ('/what-we-cannot-answer', 'what this record cannot settle')],
+            ),
+            conclusion(
+                id='the-biggest-sustained-falls-are-tuition',
+                claim='A year below their peaks, across the two biggest lasting falls in the school budget',
+                so_what='Both are money paid to other schools to teach Lunenburg children — the part people hear is running away.',
+                lede='The two biggest lasting falls in the school budget are both money '
+                      'paid to other schools to teach Lunenburg children: %s is %s below '
+                      'its %s peak, and %s is %s below its own.'
+                      % (tui_a['label'], C.pct(100 * tui_a['fall_share']),
+                         C.fy(tui_a['peak_fy']), tui_b['label'],
+                         C.pct(100 * tui_b['fall_share'])),
+                detail='%s peaked at %s and averaged %s across %s and %s; %s peaked at %s '
+                       'and averaged %s. Together that is %s a year below the peaks, in '
+                       'the part of the budget this town most often hears is running away '
+                       'with it. These are the district’s own general fund lines and they '
+                       'are net: a fall can be the town’s share falling rather '
+                       'than the spending falling, and a placement count is a different '
+                       'quantity again.'
+                       % (tui_a['label'], C.usd(tui_a['peak']), C.usd(tui_a['recent']),
+                          C.fy(tui_a['recent_years'][0]), C.fy(tui_a['recent_years'][-1]),
+                          tui_b['label'], C.usd(tui_b['peak']), C.usd(tui_b['recent']),
+                          C.usd(tuition_fall)),
+                figures={
+                    'a_fall_share': figure(100 * tui_a['fall_share'],
+                                           C.pct(100 * tui_a['fall_share'])),
+                    'a_peak_fy': figure(tui_a['peak_fy'], C.fy(tui_a['peak_fy'])),
+                    'a_peak': figure(tui_a['peak'], C.usd(tui_a['peak'])),
+                    'a_recent': figure(tui_a['recent'], C.usd(tui_a['recent'])),
+                    'recent_from': figure(tui_a['recent_years'][0],
+                                          C.fy(tui_a['recent_years'][0])),
+                    'recent_to': figure(tui_a['recent_years'][-1],
+                                        C.fy(tui_a['recent_years'][-1])),
+                    'b_fall_share': figure(100 * tui_b['fall_share'],
+                                           C.pct(100 * tui_b['fall_share'])),
+                    'b_peak': figure(tui_b['peak'], C.usd(tui_b['peak'])),
+                    'b_recent': figure(tui_b['recent'], C.usd(tui_b['recent'])),
+                    'together': figure(tuition_fall, C.usd(tuition_fall)),
+                },
+                figure='together',
+                kind='measured',
+                basis='The restated books, every line still printed in FY%d whose own peak '
+                      'reached $%s and whose last %d printed years average at or under '
+                      '%d%% of it, ranked by how far it fell. The threshold is ours and '
+                      'the payload states it.'
+                      % (last_fy, format(int(DECLINE_FLOOR), ','), DECLINE_TAIL,
+                         int(DECLINE_SHARE * 100)),
+                not_shown='That fewer children are placed out of district, or that the '
+                          'need fell. Dollars are not students, the line is net of the '
+                          'circuit breaker and of any grant, and the state’s all-funds '
+                          'figures are a separate series measured to separate '
+                          'definitions.',
+                see=[('/what-special-education-costs',
+                      'the same money measured across every fund'),
+                     ('/who-ends-up-out-of-district', 'the placement count itself')],
+            ),
+        ]),
     )
 
 

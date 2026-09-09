@@ -245,14 +245,91 @@ export function Flows({ series, scenarioOut, scenarioLabel }: {
   )
 }
 
-/* ----------------------------------------- what aid has done, against what enrolment did */
+/* ------------------------------------ both directions, every programme, and the net of them */
+
+export type BothWaysYear = {
+  sy: number; out_all: number; in_all: number; net_all: number
+  out_member: number; out_choice: number; out_charter: number; out_other: number
+  in_choice: number; in_tuitioned: number; in_foster: number; in_other: number
+}
+
+/** THREE LINES, ONE UNIT, AND THE NET DRAWN WITH ITS TWO HALVES.
+ *
+ *  The net alone is a near-flat line and it is the most misleading thing this data can be
+ *  drawn as: it has never once turned positive and it has barely moved, so on its own it
+ *  says nothing is happening — while one of the two series that makes it has fallen by
+ *  more than two thirds. That is the whole reason all three are on one axis. A reader who
+ *  looks at this chart cannot come away with the flat reading, because the divergence is
+ *  the shape.
+ *
+ *  A ZERO RULE, drawn solid, because the net is negative in every year and "has this ever
+ *  been positive" is the question a reader brings. The line never touching the rule is the
+ *  answer, read off the picture rather than out of a sentence.
+ *
+ *  MEASURED, NOT MODELLED. Nothing on this chart moves when a dial moves — it is DESE's
+ *  count of children, and it carries no scenario reference line for that reason. The
+ *  scenario's own chart is Flows(), below, and keeping the two apart is deliberate. */
+export function BothWays({ series }: { series: BothWaysYear[] }) {
+  const data = series.map(r => ({
+    sy: `SY${String(r.sy).slice(2)}`,
+    out: r.out_all, in: r.in_all, net: r.net_all,
+  }))
+  const label: Record<string, string> = {
+    out: 'leaving — Lunenburg children at another district: ',
+    in: 'arriving — children from another town at Lunenburg: ',
+    net: 'net, arriving minus leaving: ',
+  }
+  return (
+    <div className="mt-5">
+      <div style={{ width: '100%', height: 300 }}>
+        <ResponsiveContainer>
+          <LineChart data={data} margin={{ top: 14, right: 8, left: 8, bottom: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="sy" tick={AXIS} tickLine={false} axisLine={false} />
+            <YAxis tick={AXIS} tickLine={false} axisLine={false}
+              tickFormatter={(v: number) => String(v)} />
+            <ReferenceLine y={0} stroke="var(--axis)" strokeWidth={1.5}
+              label={{ value: 'no net movement', position: 'insideTopLeft',
+                       fill: 'var(--text-muted)', fontSize: 11 }} />
+            <Tooltip cursor={{ stroke: 'var(--grid)' }} content={({ active, payload, label: l }) => {
+              if (!active || !payload?.length) return null
+              return (
+                <Box>
+                  <div className="font-bold">{l}</div>
+                  {payload.map(p => (
+                    <div key={String(p.dataKey)} className="tnum">
+                      {label[String(p.dataKey)]}{String(p.value)}
+                    </div>
+                  ))}
+                </Box>
+              )
+            }} />
+            <Line type="monotone" dataKey="out" stroke={LOSS} strokeWidth={2}
+              dot={{ r: 2.5 }} isAnimationActive={false} />
+            <Line type="monotone" dataKey="in" stroke={SAVE} strokeWidth={2}
+              dot={{ r: 2.5 }} isAnimationActive={false} />
+            <Line type="monotone" dataKey="net" stroke="var(--axis)" strokeWidth={2}
+              strokeDasharray="5 4" dot={{ r: 2 }} isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <Legend items={[
+        { hue: LOSS, label: 'Leaving — every Lunenburg child enrolled at another district, all programmes' },
+        { hue: SAVE, label: 'Arriving — every child from another town enrolled in Lunenburg, all programmes' },
+        { hue: 'var(--axis)', label: 'Net — arriving minus leaving. Below the rule is a net loss of children' },
+      ]} />
+    </div>
+  )
+}
+
+/* ----------------------------------------- what aid has done, against what enrollment did */
 
 export type AidYear = { fy: number; enrollment: number; aid: number }
 
-/** ONE AXIS, DOLLARS. Foundation enrolment is on the same picture only as a MARK — a dot
- *  on the aid line for a year enrolment fell — because a second axis in different units
+/** ONE AXIS, DOLLARS. Foundation enrollment is on the same picture only as a MARK — a dot
+ *  on the aid line for a year enrollment fell — because a second axis in different units
  *  invites a reader to compare two slopes that have no common scale, which is precisely
- *  the inference this chart exists to test. The enrolment numbers are in the table twin,
+ *  the inference this chart exists to test. The enrollment numbers are in the table twin,
  *  where they can be read rather than eyeballed. */
 export function AidHistory({ series, fellYears }: {
   series: AidYear[]; fellYears: number[]
@@ -298,7 +375,7 @@ export function AidHistory({ series, fellYears }: {
       </div>
       <Legend items={[
         { hue: SAVE, label: 'Chapter 70 aid to Lunenburg, as DESE states it' },
-        { hue: LOSS, label: 'A year foundation enrolment was lower than the year before' },
+        { hue: LOSS, label: 'A year foundation enrollment was lower than the year before' },
       ]} />
     </div>
   )

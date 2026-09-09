@@ -644,6 +644,189 @@
  "cb_transport_first_year": 2022,
  "closes": "The district\u2019s circuit breaker revolving fund cashbook for the year, which shows what the receipt was actually spent on \u2014 already the named remedy in `money-gaps.csv`. For the in-district question, Schedule 19 of the End of Year Financial Report as filed, which lists each grant and revolving fund separately.",
  "compared_count": 12,
+ "conclusions": [
+  {
+   "basis": "DESE\u2019s End of Year Financial Report, functions 9300 and 9400, against the district\u2019s own restated budget book, year by year.",
+   "claim": "Of what Lunenburg spent teaching children at other schools was paid from outside the budget",
+   "detail": "The special education figure residents argue about \u2014 what the schools pay other schools to teach children Lunenburg cannot \u2014 is the town\u2019s share of that bill and not the bill. In FY2025 the budget said $732,298 and $1,205,949 was spent. The district\u2019s own restated budget figure equals DESE\u2019s general fund column, to within a dollar or two, in 11 of the 12 years the two can be compared \u2014 and equals the all-funds column in none of them. So $473,651, 39.3% of what was spent on out-of-district placement that year, was paid from funds that never appear in the appropriation at all. A resident watching the budget line is watching what the town raises, which can move without a single placement changing.",
+   "figure": "outside_share",
+   "figures": {
+    "all_funds": {
+     "text": "$1,205,949",
+     "unit": "",
+     "value": 1205949
+    },
+    "budget_line": {
+     "text": "$732,298",
+     "unit": "",
+     "value": 732298
+    },
+    "compared": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    },
+    "fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "outside": {
+     "text": "$473,651",
+     "unit": "",
+     "value": 473651
+    },
+    "outside_share": {
+     "text": "39.3%",
+     "unit": "",
+     "value": 39.28
+    },
+    "ties": {
+     "text": "11",
+     "unit": "",
+     "value": 11
+    }
+   },
+   "id": "the-line-is-the-towns-share",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Which fund paid the rest. DESE reports one grants-and-revolving total and names no fund, so the money outside the appropriation cannot be attributed to the circuit breaker, to a grant, or to anything else.",
+   "see": [
+    {
+     "label": "the money outside the budget",
+     "slug": "/money-outside-the-budget"
+    },
+    {
+     "label": "what happens when a grant stops",
+     "slug": "/when-grants-end"
+    }
+   ],
+   "so_what": "The figure residents argue about is the town\u2019s share of that bill, not the bill."
+  },
+  {
+   "basis": "DESE\u2019s circuit breaker reimbursement schedule: claimed students, eligible expense, the threshold, the net claim and what was actually paid, every year it has been published.",
+   "claim": "Taken off the bill in FY2026 before the state reimburses anything",
+   "detail": "The state does reimburse out-of-district tuition, but it takes a threshold off before it pays anything \u2014 in FY2026 that threshold was $471,771. Lunenburg claimed $1,257,225 of eligible expense and was paid $579,142, which is 46.1% of the claim. That the threshold is a deduction rather than a rate is measured and not described: eligible expense minus threshold equals the net claim exactly in 13 of the 21 years the state has published. So the reimbursement grows as costs grow and never reaches the first slice of them, and the town carries that slice in every year whatever else happens.",
+   "figure": "threshold",
+   "figures": {
+    "eligible": {
+     "text": "$1,257,225",
+     "unit": "",
+     "value": 1257225
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "identity_years": {
+     "text": "13",
+     "unit": "",
+     "value": 13
+    },
+    "paid": {
+     "text": "$579,142",
+     "unit": "",
+     "value": 579142
+    },
+    "paid_share": {
+     "text": "46.1%",
+     "unit": "",
+     "value": 46.07
+    },
+    "threshold": {
+     "text": "$471,771",
+     "unit": "",
+     "value": 471771
+    },
+    "years": {
+     "text": "21",
+     "unit": "",
+     "value": 21
+    }
+   },
+   "id": "the-threshold-comes-off-first",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "What the receipt was spent on. The reimbursement lands in a revolving fund that carries a balance forward, so a payment received in one year is not established to have paid for that year\u2019s placements.",
+   "see": [],
+   "so_what": "So the town carries the first slice of these placements in every year, whatever else happens."
+  },
+  {
+   "basis": "DESE\u2019s End of Year Financial Report, all funds, functions 9300 and 9400, every year it has been published.",
+   "claim": "Spent teaching children at other schools in FY2025",
+   "detail": "Out-of-district tuition has not risen relentlessly. Measured across every fund it peaked at $2,094,813 in FY2015, and FY2025 came in at $1,205,949. That is 42.4% below the peak, and the series moves in both directions across the 17 years it covers \u2014 a low of $539,509 and a high of $2,094,813. What moves further than the total is who pays it: the share falling outside the appropriation has been as high as 70.3% and as low as 17.9%, so the line the town votes can rise in a year when spending falls. Out-of-district placement is a small number of children and the state\u2019s own reimbursement threshold for FY2026 was $52,419 per child, so one family moving in or out moves this series more than any policy does. A single year of it means very little.",
+   "figure": "last_total",
+   "figures": {
+    "cb_fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "down_from_peak": {
+     "text": "42.4%",
+     "unit": "",
+     "value": 42.4
+    },
+    "last_fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "last_total": {
+     "text": "$1,205,949",
+     "unit": "",
+     "value": 1205949
+    },
+    "least_outside": {
+     "text": "17.9%",
+     "unit": "",
+     "value": 17.85
+    },
+    "low": {
+     "text": "$539,509",
+     "unit": "",
+     "value": 539509
+    },
+    "most_outside": {
+     "text": "70.3%",
+     "unit": "",
+     "value": 70.34
+    },
+    "peak": {
+     "text": "$2,094,813",
+     "unit": "",
+     "value": 2094813
+    },
+    "peak_fy": {
+     "text": "FY2015",
+     "unit": "",
+     "value": 2015
+    },
+    "threshold_per_child": {
+     "text": "$52,419",
+     "unit": "",
+     "value": 52419
+    },
+    "years": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "id": "out-of-district-spending-is-not-a-straight-line",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That the need fell. A placement count and a placement cost are different quantities: a year with fewer dollars may be a year with fewer children, with cheaper placements, or with more of the cost carried by a fund that is not the appropriation.",
+   "see": [
+    {
+     "label": "the placement count itself",
+     "slug": "/who-ends-up-out-of-district"
+    }
+   ],
+   "so_what": "It peaked at $2,094,813 in FY2015. This cost steps with single placements rather than rising steadily."
+  }
+ ],
  "fy_first": 2009,
  "fy_last": 2025,
  "grain": "Dollars. Closed-year spending from a statutory return, and a state payment schedule. Not students, and not the appropriation the town votes.",

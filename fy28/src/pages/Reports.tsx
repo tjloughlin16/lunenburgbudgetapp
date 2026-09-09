@@ -34,11 +34,31 @@ type Page = {
   generator: string | null
 }
 
+/** How a READER groups these, which is not how we built them.
+ *
+ *  The page used to have two sections -- "the reports" (React pages) and "the written
+ *  analyses" (Markdown) -- which is a fact about our implementation and nothing a
+ *  resident cares about. It also showed several subjects TWICE, because Monty Tech and
+ *  special education each have both a page and a document. TJ: "monty tech being in the
+ *  'written' section seems wrong. I think a breakdown of school vs town to start is
+ *  good, then subcategories might help."
+ *
+ *  So: grouped by subject, one entry per subject, and where a page and a document cover
+ *  the same ground the page wins. The grouping is declared in build_reports_index.py,
+ *  which refuses to write if a report falls into no category — the failure this index
+ *  exists to prevent, arriving through the feature meant to organise it. */
+type Group = {
+  key: string; title: string
+  sections: { title: string; ids: string[] }[]
+}
+
 type Payload = {
   generated: string
   caveat: { headline: string; body: string; checkable: string; corrections: string }
   reports: Report[]
   pages: Page[]
+  groups: Group[]
+  superseded: Record<string, string>
   data: Record<string, { url: string; about: string }>
 }
 
@@ -54,6 +74,7 @@ type Payload = {
  *  dropped — a new report must always appear here, and appearing without a distinctive
  *  icon is a visible prompt to give it one. */
 const ICON: Record<string, string> = {
+  addsup: '\u{1F9ED}',      // the synthesis: a compass, not a subject
   // the routed reports
   sped: '\u{1F9E9}',          // special education
   peers: '\u{1F5FA}\uFE0F',    // other districts
@@ -80,6 +101,9 @@ const ICON: Record<string, string> = {
   'monty-tech': '\u{1F527}', questions: '\u2753', 'what-you-can-ask': '\u{1F50D}',
 }
 const icon = (id: string) => ICON[id] || '\u{1F4C4}'
+
+/** The method document, pulled out of the list and given the last section. */
+const SHOW_YOUR_WORK = 'show-your-work'
 
 /* Absolute, for the FILES this page still links — the datasets under each report and
  * the reference documents at the foot. The reports themselves are routes now, not
@@ -114,35 +138,74 @@ export function Reports() {
     </div>
   )
 
+  // Found by id rather than by position. If it is ever renamed the section disappears
+  // rather than promoting whatever happened to be last — a silently wrong feature is
+  // worse than an absent one, and the index's own --check will notice the document.
+  const syw = d.reports.find(r => r.id === SHOW_YOUR_WORK)
+
+  // Pages and documents in one lookup: the grouping addresses both by id and does not
+  // care which kind a report is.
+  const byId: Record<string, { title: string; about: string; url: string }> =
+    Object.fromEntries([...d.reports, ...d.pages].map(r => [r.id, r]))
+  const addsup = d.pages.find(r => r.id === 'addsup')
+  // What the page draws: the grouped subjects, plus the two that get sections of their own.
+  const shown = d.groups.reduce((n, g) =>
+    n + g.sections.reduce((m, sec) => m + sec.ids.length, 0), 0)
+    + (addsup ? 1 : 0) + (syw ? 1 : 0)
+
   return (
     <>
       <header className="mx-auto max-w-6xl px-5 pt-12 pb-2">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
           Reports and analyses
         </h1>
+        {/* THE COUNT IS WHAT THE PAGE ACTUALLY SHOWS.
+            It read "32 analyses" while 25 were drawn, because seven documents are now
+            superseded by a page covering the same subject and are reached from that page
+            instead. A standfirst that promises more than the page holds is the small
+            version of the failure this whole index exists to prevent. Derived, so it
+            cannot drift again. */}
         <p className="max-w-3xl text-[15px] leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}>
-          {d.pages.length + d.reports.length} analyses written by this project, from
-          records the town and district published and from documents obtained by request.
-          {' '}{d.pages.length} are pages computed from a published payload on every build;
-          {' '}{d.reports.length} are documents, each published as a page, a PDF and its
-          source text with a checksum. Every one of them prints.
+          {shown} analyses of the town's money, written by this project from records the
+          town and district published and from documents obtained by request. Every figure
+          in one is recomputed from the data on every build, and every one of them prints.
         </p>
       </header>
 
-      {/* The caveat is the first thing on the page, at full weight, not a footnote. */}
+      {/* THE CAVEAT STAYS, BUT COLLAPSED.
+          It was three paragraphs under a "Read this first" flag, immediately below a
+          three-sentence standfirst -- so the page opened with roughly 150 words of
+          throat-clearing before a single report. TJ: "this is too much text... if you
+          want to make it expandable then cool."
+
+          The ONE thing a reader must not miss is that these are not the town's
+          documents, so that line stays visible at full weight. The three paragraphs
+          explaining how to check them, and that corrections are left in the text, are
+          for somebody who has decided to rely on a figure -- which happens after they
+          have found one, not before.
+
+          This is the exception rule 7a names: a genuine warning about whether to trust
+          what follows leads. It does not license three paragraphs of it. */}
       <div className="mx-auto max-w-6xl px-5 mt-6">
-        <div className="card p-5" style={{ borderLeft: '4px solid var(--status-warning)' }}>
-          <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
-            style={{ color: 'var(--status-warning)' }}>Read this first</p>
-          <p className="text-lg font-bold mb-3">{d.caveat.headline}</p>
-          <div className="space-y-3 text-sm leading-relaxed max-w-3xl"
+        <details className="card p-4"
+          style={{ borderLeft: '4px solid var(--status-warning)' }}>
+          <summary className="cursor-pointer list-none flex items-baseline gap-2
+                              flex-wrap">
+            <span className="text-[11px] font-semibold uppercase tracking-widest"
+              style={{ color: 'var(--status-warning)' }}>Read this first</span>
+            <span className="text-[15px] font-bold">{d.caveat.headline}</span>
+            <span className="text-[12px] underline" style={{ color: 'var(--text-muted)' }}>
+              how to check any of it
+            </span>
+          </summary>
+          <div className="space-y-3 text-sm leading-relaxed max-w-3xl mt-3"
             style={{ color: 'var(--text-secondary)' }}>
             <p>{d.caveat.body}</p>
             <p>{d.caveat.checkable}</p>
             <p>{d.caveat.corrections}</p>
           </div>
-        </div>
+        </details>
       </div>
 
       {/* THE PLUMBING IS NOT THE OFFER.
@@ -158,83 +221,121 @@ export function Reports() {
           two-line description, on the page a resident meets first.
 
           What a row owes a reader is: what is this, and is it checked. */}
-      <Section id="pages" eyebrow="Computed on every build" title="The reports"
-        lede={<p>
-          Each is recomputed from published data every time the site is built, so no
-          figure in one was typed by hand. Open a report to see the data and the script
-          behind it.
-        </p>}>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {d.pages.map(r => (
-            <a key={r.id} href={r.url}
-              className="card p-4 block transition-opacity hover:opacity-90">
-              <div className="flex items-start gap-2.5">
-                <span aria-hidden="true" className="text-[20px] leading-none shrink-0 mt-0.5"
-                  >{icon(r.id)}</span>
-                <div className="min-w-0">
-                  <h3 className="text-[15px] font-bold leading-tight mb-1.5"
-                    style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</h3>
-                  <p className="text-[13px] leading-relaxed"
-                    style={{ color: 'var(--text-secondary)' }}>{r.about}</p>
-                </div>
+      {/* THE SYNTHESIS GOES FIRST, AND ALONE.
+          It is the only report on this page that is not about a subject — it reads the
+          conclusions out of all the others. Somebody arriving at the Analyses door
+          without a specific question wants this one, and somebody with a question will
+          scroll past it to the categories. Both are served by putting it above them
+          rather than inside a group where it would sit as the fifteenth card. */}
+      {/* mb-6 below is not decoration. `Section` carries `border-t`, so the first
+          section's rule is drawn immediately under whatever precedes it — and with margin
+          above this card and none below, the rule landed flush on its bottom edge. TJ:
+          "the horizontal rule sits right on the edge of that report button." The gap an
+          element needs from its container's edge is its INSET, and an asymmetric one
+          reads as a mistake even when nobody can name it. */}
+      {addsup && (
+        <div className="mx-auto max-w-6xl px-5 mt-8 mb-6">
+          <a href={addsup.url}
+            className="card block p-5 transition-opacity hover:opacity-90"
+            style={{ borderLeft: '4px solid var(--series-cost)' }}>
+            <div className="flex items-start gap-3">
+              <span aria-hidden="true" className="text-[28px] leading-none shrink-0"
+                >{icon(addsup.id)}</span>
+              <div className="min-w-0">
+                <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+                  style={{ color: 'var(--text-muted)' }}>Start here</p>
+                <h2 className="text-xl font-bold leading-tight mb-1.5"
+                  style={{ color: 'var(--series-cost)' }}>{addsup.title} &rarr;</h2>
+                <p className="text-[15px] leading-relaxed"
+                  style={{ color: 'var(--text-secondary)' }}>{addsup.about}</p>
               </div>
-            </a>
-          ))}
+            </div>
+          </a>
         </div>
-      </Section>
+      )}
 
-      <Section id="reports" eyebrow="The documents" title="The written analyses"
-        lede={<p>
-          Longer pieces, written rather than computed. Each opens as a page here; the
-          Markdown it is rendered from and a printable copy are linked from the document
-          itself, beside the sources it was built on.
-        </p>}>
-        <ul className="space-y-5">
-          {d.reports.map(r => (
-            <li key={r.id} className="card p-4">
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1.5">
-                <span aria-hidden="true" className="text-[20px] leading-none"
-                  >{icon(r.id)}</span>
-                <h3 className="text-lg font-bold leading-tight">{r.title}</h3>
-                <span className="text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
-                  {r.words.toLocaleString()} words
-                  {r.updated ? ` · updated ${r.updated}` : ''}
-                </span>
+      {/* GROUPED BY SUBJECT, ONE ENTRY PER SUBJECT.
+          Every report — page or document — is drawn the same way, because to a reader
+          they are the same kind of thing: something this project wrote about the town's
+          money. Which of them is computed on every build and which is prose with a
+          verifier beside it is a fact about the report, and it belongs ON the report. */}
+      {d.groups.map(g => (
+        <Section key={g.key} id={g.key}
+          eyebrow={g.key === 'school' ? 'Where most of the money goes'
+                 : g.key === 'town' ? 'The other side of the ledger' : 'Method'}
+          title={g.title}>
+          {g.sections.map((sec, si) => (
+            <div key={sec.title || si} className={si ? 'mt-8' : ''}>
+              {sec.title && (
+                <h3 className="text-[12px] font-semibold uppercase tracking-widest mb-3"
+                  style={{ color: 'var(--text-muted)' }}>{sec.title}</h3>
+              )}
+              <div className="grid gap-3 sm:grid-cols-2">
+                {sec.ids.map(id => {
+                  const r = byId[id]
+                  if (!r) return null
+                  return (
+                    <a key={id} href={r.url}
+                      className="card p-4 block transition-opacity hover:opacity-90">
+                      <div className="flex items-start gap-2.5">
+                        <span aria-hidden="true"
+                          className="text-[20px] leading-none shrink-0 mt-0.5"
+                          >{icon(id)}</span>
+                        <div className="min-w-0">
+                          <h4 className="text-[15px] font-bold leading-tight mb-1.5"
+                            style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</h4>
+                          <p className="text-[13px] leading-relaxed"
+                            style={{ color: 'var(--text-secondary)' }}>{r.about}</p>
+                        </div>
+                      </div>
+                    </a>
+                  )
+                })}
               </div>
-              <p className="text-sm leading-relaxed mb-3 max-w-3xl"
-                style={{ color: 'var(--text-secondary)' }}>{r.about}</p>
-
-              {/* THE INDEX OFFERS THE REPORT, NOT A CHOICE OF FILE FORMATS.
-                  TJ, 9 September: "just dont put pdfs/markdown in the analyses
-                  section". This row used to carry Read it / PDF / Source text as three
-                  peer links, which made the section read as a document library — three
-                  ways to obtain the same thing, and a decision to make before reading
-                  any of it. Every analysis is now a page, so the page is the offer.
-
-                  THE FILES DO NOT DISAPPEAR. Rule 12 requires our processed copy to be
-                  downloadable, and it still is: the markdown and the PDF are published
-                  at /docs/analyses/ and are linked from the report's own provenance
-                  block, beside the sources they were built from — which is where
-                  somebody who wants the file is actually standing. What changed is that
-                  they are no longer presented as alternatives to reading it. */}
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] items-center">
-                <a href={r.url} className="font-semibold underline"
-                  style={{ color: 'var(--series-cost)' }}>Read it</a>
-                {r.verifier ? (
-                  <span className="text-[12px]" style={{ color: 'var(--status-good)' }}>
-                    ✓ every figure recomputed by{' '}
-                    <code className="text-[11px]">{r.verifier.command}</code>
-                  </span>
-                ) : (
-                  <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
-                    no verifier script — figures checked by hand
-                  </span>
-                )}
-              </div>
-            </li>
+            </div>
           ))}
-        </ul>
-      </Section>
+        </Section>
+      ))}
+
+      {/* SHOW YOUR WORK GETS A SECTION TO ITSELF, AND IT GOES LAST.
+          TJ: "its a critical report". It is, and in the middle of a list of eighteen it
+          reads as the eighteenth — a 16,000-word document about arithmetic, sitting
+          between two analyses about money, where nobody would pick it out.
+
+          It is not another analysis. It is the one that makes every other figure on this
+          site checkable: each calculation with its inputs, its formula, a worked example,
+          and whether the number is published by somebody, set by contract, fixed by
+          statute, measured by us or assumed by us. That last distinction is rule 3, and
+          this is where it is answered for every figure at once.
+
+          LAST rather than first, deliberately. Somebody arrives wanting to know what the
+          reports say; the method is what they want once they have a reason to doubt one.
+          Leading with it would be the failure rule 7a describes — opening with how to
+          read the thing instead of the thing. */}
+      {syw && (
+        <Section id="method" eyebrow="How every figure was reached"
+          title="Show your work">
+          <a href={syw.url}
+            className="card block p-5 transition-opacity hover:opacity-90"
+            style={{ borderLeft: '4px solid var(--series-cost)' }}>
+            <div className="flex items-start gap-3">
+              <span aria-hidden="true" className="text-[28px] leading-none shrink-0"
+                >{icon(syw.id)}</span>
+              <div className="min-w-0">
+                <h3 className="text-xl font-bold leading-tight mb-1.5"
+                  style={{ color: 'var(--series-cost)' }}>{syw.title} &rarr;</h3>
+                <p className="text-[15px] leading-relaxed mb-2"
+                  style={{ color: 'var(--text-secondary)' }}>{syw.about}</p>
+                <p className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+                  {syw.words.toLocaleString()} words · every calculation on this site,
+                  and whether each number is published, contractual, statutory, our
+                  measurement or our assumption
+                </p>
+              </div>
+            </div>
+          </a>
+        </Section>
+      )}
 
       <Section id="data" eyebrow="Underneath all of it" title="The data, linked directly"
         lede={<p>

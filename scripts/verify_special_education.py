@@ -91,7 +91,7 @@ def check_students():
         fy = c['fy']
         eq('FY%d count on an IEP' % fy, float(c['swd']),
            pick(fy, 'Enrollment', 'Students with Disabilities', 'measure_cnt'))
-        eq('FY%d enrolment' % fy, float(c['enrolled']),
+        eq('FY%d enrollment' % fy, float(c['enrolled']),
            pick(fy, 'Enrollment', 'Total In- and Out-of-District Students', 'denominator_cnt'))
         eq('FY%d in district' % fy, float(c['in_district']),
            pick(fy, 'In District/Out of District', 'In-District', 'measure_cnt'))
@@ -255,10 +255,10 @@ def check_leaving():
                  if int(r['fy']) == latest and r['enrollment_reason'] == 'Resident/Member')
     here = d['last']['in_lunenburg']
     if member <= here:
-        FAILS.append('the Resident/Member programme no longer exceeds enrolment in the '
+        FAILS.append('the Resident/Member programme no longer exceeds enrollment in the '
                      'Lunenburg district; the definition note on the page is now wrong')
     else:
-        print('  OK    Resident/Member (%d) still exceeds Lunenburg enrolment (%d), which '
+        print('  OK    Resident/Member (%d) still exceeds Lunenburg enrollment (%d), which '
               'is why "elsewhere" is drawn from the district code' % (member, here))
 
 

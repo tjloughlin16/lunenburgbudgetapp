@@ -8,9 +8,11 @@ import {
   type ContribRow, type DistRow, type YearRow,
 } from '../components/MinimumAidCharts'
 import {
+  Conclusions,
   Body, H2, H3, Insight, NotShown, Quote, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 const TAB: Tab = 'minaid'
 const DATA = '/data/minimum-aid.json'
@@ -52,6 +54,7 @@ type Said = {
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   about: string
   not_this_page: string
   source: {
@@ -228,6 +231,14 @@ export function MinimumAid() {
         </Stat>
       </div>
 
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       <H2 id="findings">What this page establishes</H2>
       <div className="grid gap-4 mt-6"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 21rem), 1fr))' }}>
@@ -289,14 +300,14 @@ export function MinimumAid() {
             a smaller number of children.</>}>
           Required local contribution {money(N.required_from)} to {money(N.required_to)},{' '}
           {share(N.required_pct)}. Chapter 70 aid {money(N.aid_from)} to {money(N.aid_to)},{' '}
-          {share(N.aid_pct)}. Foundation enrolment{' '}
+          {share(N.aid_pct)}. Foundation enrollment{' '}
           {N.enrollment_from.toLocaleString()} to {N.enrollment_to.toLocaleString()}.{' '}
           {N.stage}
         </Insight>
         <Insight n={7} headline={
           <>Whether one more child changes the town&rsquo;s bill is NOT established here.</>}>
           The aid side has an answer while the floor binds. The contribution side does not
-          respond to enrolment at all, except through how the town&rsquo;s single
+          respond to enrollment at all, except through how the town&rsquo;s single
           requirement is split between its two districts. The two cannot simply be added,
           because a large enough foundation budget increase closes the {money(Z.headroom)} of
           headroom and moves the district off the floor entirely &mdash; and no document in
@@ -338,7 +349,7 @@ export function MinimumAid() {
       <NotShown>
         <p>
           <strong>A per-pupil figure is a division, and the denominator is contested.</strong>{' '}
-          Foundation enrolment is a count of the students a district is financially
+          Foundation enrollment is a count of the students a district is financially
           responsible for as of 1 October of the previous year. DESE publishes three other
           counts for the same district and they do not agree &mdash; that is a registered
           gap, not an aside. Every figure in this table divides by the first of the four.
@@ -461,8 +472,8 @@ export function MinimumAid() {
             {fy(H.fy)}: {money(H.increase)} across {H.enrollment.toLocaleString()} pupils
             is {dollars2(H.per_pupil)}, to the cent.</>,
           <>The town&rsquo;s target contribution is its combined effort yield, in all{' '}
-            {d.years} years. Enrolment does not appear in it.</>,
-          <>The statutory cap that WOULD bring enrolment in &mdash; the target local share
+            {d.years} years. Enrollment does not appear in it.</>,
+          <>The statutory cap that WOULD bring enrollment in &mdash; the target local share
             may not exceed 82.5% of the foundation budget &mdash; is not binding here.
             Lunenburg&rsquo;s target share is{' '}
             {share(contribLast.target_share ?? 0)} in {fy(d.fy_last)}.</>,
@@ -596,7 +607,7 @@ export function MinimumAid() {
       <TableTwin caption={`${d.source.filename}, sheets ${d.source.sheets.slice(0, 2).join(' and ')}`}
         head={['What DESE calls it', 'Cell', 'Value']}
         rows={[
-          ['Foundation enrolment', H.cells.enrollment, H.enrollment.toLocaleString()],
+          ['Foundation enrollment', H.cells.enrollment, H.enrollment.toLocaleString()],
           ['Foundation budget', H.cells.foundation_budget, money(H.foundation_budget)],
           ['Required local contribution (district)', H.cells.required_local_contribution,
             money(Z.required_local_contribution)],

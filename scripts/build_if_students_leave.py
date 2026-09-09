@@ -18,7 +18,7 @@ the town money -- is not disputed here and is not weakened by anything below.
 WHAT IS MEASURED, WHAT IS ASSUMED, AND THE LINE BETWEEN THEM (rules 3, 7 and 13):
 
   MEASURED, each from one document, quoted by coordinate:
-    * High school enrolment, 433, and the four grade counts that sum to it -- the FY2025
+    * High school enrollment, 433, and the four grade counts that sum to it -- the FY2025
       annual town report, printed page 89. The table's own column headings are read off
       the page rather than inferred, which matters because `column_meaning` in
       `report_enrollment_mcas` is EMPTY for this dataset and `v1` is an ordinal. The
@@ -54,7 +54,7 @@ grades is about twenty a grade. It holds at every setting of every dial, which i
 is the headline and the dollar figures are not.
 
 WHAT IT REFUSES TO WRITE ON. Eleven joins or assertions that could silently match nothing:
-  1. the FY2025 annual report's enrolment table not being on the page, or its column
+  1. the FY2025 annual report's enrollment table not being on the page, or its column
      headings not reading as the report prints them;
   2. the four high school grade counts not summing to the printed High School Total;
   3. the school totals not summing to the printed All Schools Total;
@@ -67,7 +67,15 @@ WHAT IT REFUSES TO WRITE ON. Eleven joins or assertions that could silently matc
   9. the FY2027 Town Meeting booklet's School Choice Receiving line not being on the line
      this script reads it from;
  10. a minutes quote no longer present verbatim in the file it is attributed to;
- 11. a `money_gaps` row quoted by key having been renamed out from under the page.
+ 11. a `money_gaps` row quoted by key having been renamed out from under the page;
+ 12. the outward filter ("a district that is not ours") excluding nothing, or everything,
+     or its two halves not adding back to DESE's own row count for the year — and the
+     same three for the arriving filter, in every one of the thirteen years;
+ 13. the filtered and unfiltered reads of the same programme disagreeing;
+ 14. a hole in the run of school years, which a line chart would draw straight across;
+ 15. the latest year's arrivals by mechanism not summing back to the year;
+ 16. the DESE counts and the town's own School Choice fund overlapping in too few years
+     to say that both halves fell over a common span.
 """
 import argparse
 import glob
@@ -77,6 +85,12 @@ import os
 import re
 import sqlite3
 import sys
+
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py: the generator that computed a figure writes the claim that rests
+# on it, and `emit()` refuses to ship a figure nothing computed.
+import conclusions as C
+from conclusions import conclusion, emit, figure
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'model'))
@@ -109,7 +123,7 @@ DESE = {
               'children come from'),
     'profile': dict(
         file='dese-ch70-district-profile.xlsx', sheet='DataC70', dataset=None,
-        title='Chapter 70 District Profile — foundation enrolment, foundation budget, '
+        title='Chapter 70 District Profile — foundation enrollment, foundation budget, '
               'required local contribution and aid, every district, FY1993 onward'),
     'factors': dict(
         file='dese-ch70-key-factors.xlsx', sheet='dataAid', dataset=None,
@@ -130,7 +144,7 @@ BOOKLET = 'sources/town-budget/text/3765-town-meeting-booklet-including-warrant.
 MINUTES = 'sources/meetings/text'
 
 TOWN = 'Lunenburg'
-ENROL_FY = 2025            # the annual town report edition the enrolment comes from
+ENROL_FY = 2025            # the annual town report edition the enrollment comes from
 ENROL_PAGE = '89'          # the printed page number, as the dataset records it
 ATH_FY = 2026              # the athletics workbook year
 
@@ -161,7 +175,7 @@ DEFAULTS = dict(
     tuition=5000.0,           # per student, per year
     # aid_per_pupil is NOT typed here. It is DERIVED from DESE's own aid components --
     # the minimum aid increment of the latest year divided by that year's foundation
-    # enrolment -- and filled in by scenario(). Typing it would be rule 2's exact error on
+    # enrollment -- and filled in by scenario(). Typing it would be rule 2's exact error on
     # the single most consequential number this page carries.
     avoidable_share=0.0,      # share of the per-pupil appropriation the district avoids
 )
@@ -176,8 +190,10 @@ DIAL_BASIS = {
         'but it can be bounded, and the bound is below.'),
     'transfer_rate': (
         'assumed',
-        'The scenario as it was put to this site. Nobody has measured how many Lunenburg '
-        'students choice out in any year, in either direction.'),
+        'The scenario as it was put to this site. DESE counts how many Lunenburg children '
+        'are ENROLLED elsewhere in a year, and this page draws thirteen years of it in '
+        'both directions — but a stock is not a flow. Nobody counts how many children '
+        'MOVED in a year, which is what this dial sets.'),
     'tuition': (
         'statute',
         'The base school choice tuition set by M.G.L. c.76 §12B. It is higher for special '
@@ -186,7 +202,7 @@ DIAL_BASIS = {
     'aid_per_pupil': (
         'derived',
         'Opens on the minimum aid increment DESE’s own aid-component columns give for the '
-        'latest year, divided by that year’s foundation enrolment — because in that year '
+        'latest year, divided by that year’s foundation enrollment — because in that year '
         'the minimum aid increment IS the whole of Lunenburg’s increase and the '
         'foundation aid increment is zero. Drag it to the foundation budget per pupil for '
         'the scenario as it was originally modelled; the distance between the two ends is '
@@ -195,7 +211,7 @@ DIAL_BASIS = {
         'assumed',
         'Opens at zero because the students leave from across four grades, so no '
         'classroom closes on the arithmetic alone. Nothing published says at what '
-        'enrolment a section is removed.'),
+        'enrollment a section is removed.'),
 }
 
 # WHAT THE TOWN SAID. Rule 15a: every one found with scripts/search_minutes.py, and every
@@ -254,12 +270,17 @@ QUOTES = [
 GAP_KEYS = [
     'What the children who leave the district cost, as against how many there are',
     'What Lunenburg pays in school choice sending tuition, and for how many children',
-    'What Chapter 70 aid would actually do if enrolment fell',
+    'What Chapter 70 aid would actually do if enrollment fell',
     'What the foundation budget pays per pupil for each kind of child',
     'How much of a school budget stops being spent when a student leaves',
     'How many children play sports',
     'How many children Chapter 70 is actually paid for',
     'The Cherry Sheet itself — what the state told Lunenburg to expect, receipt by receipt',
+    # The two the both-directions section hits. Rule 7c: an analysis that stops because
+    # the data will not carry it registers the stopping point, and these are this page's.
+    'What Lunenburg receives for a child who chooses IN, and what the fall from 51 to 15 '
+    'is worth',
+    'How many school choice seats Lunenburg opened, by grade and by year',
 ]
 
 RELATED = [
@@ -294,8 +315,8 @@ def norm(s):
 
 # ------------------------------------------------------------------ the children, counted
 
-def enrolment(c):
-    """The FY2025 annual town report's enrolment table, read TWO ways and reconciled.
+def enrollment(c):
+    """The FY2025 annual town report's enrollment table, read TWO ways and reconciled.
 
     Route one is the printed page itself, where the columns are named. Route two is
     `report_enrollment_mcas`, where they are not -- `column_meaning` is empty for this
@@ -313,7 +334,7 @@ def enrolment(c):
 
     m = HEADING_RE.search(text)
     if not m:
-        fail('the FY2025 annual town report no longer prints the enrolment table headings '
+        fail('the FY2025 annual town report no longer prints the enrollment table headings '
              'this page quotes — without them `v1` is an ordinal and nothing here may be '
              'called a count of resident students')
     # Captured BEFORE the row loop below, which rebinds `m`. It did, and this field
@@ -360,7 +381,7 @@ def enrolment(c):
            % ','.join('?' * (len(SCHOOL_TOTALS) + 1)),
            ENROL_FY, ENROL_PAGE, *(SCHOOL_TOTALS + (ALL_LABEL,)))
     if not ds:
-        fail('report_enrollment_mcas returned no rows for the FY2025 enrolment page — a '
+        fail('report_enrollment_mcas returned no rows for the FY2025 enrollment page — a '
              'join that matches nothing looks exactly like data that is absent')
     by_label = {r['label']: r for r in ds}
     for label in SCHOOL_TOTALS + (ALL_LABEL,):
@@ -374,7 +395,7 @@ def enrolment(c):
                  'two routes to the same printed row disagree')
     statuses = sorted({r['status'] for r in ds})
     if statuses != ['no check']:
-        fail(f'the enrolment rows now carry statuses {statuses}; this page states '
+        fail(f'the enrollment rows now carry statuses {statuses}; this page states '
              '"no check" in prose and that sentence is derived from here')
 
     return dict(
@@ -557,7 +578,7 @@ def formula():
         appropriation_per_pupil=round(LPS_APPROPRIATION / lun['enrollment'], 2),
         appropriation_denominator=(
             f'the FY{sheet_fy} appropriation to the schools divided by DESE’s FY{sheet_fy} '
-            f'foundation enrolment of {lun["enrollment"]:,}. Both figures are FY{sheet_fy}; '
+            f'foundation enrollment of {lun["enrollment"]:,}. Both figures are FY{sheet_fy}; '
             'the denominator is the count the aid is calculated on and it is not the same '
             'as any of the three headcounts DESE publishes for the same district.'),
     )
@@ -728,7 +749,7 @@ def dese_sheet(key):
 
 # ------------------------------------------------- where Lunenburg's children actually go
 
-def choice_flows():
+def choice_flows(inbound=None):
     """DESE's own count of children leaving and arriving, thirteen school years.
 
     THIS IS THE BASELINE THE SCENARIO DEPARTS FROM, and until this workbook arrived
@@ -812,13 +833,212 @@ def choice_flows():
         fail('the SY destination detail does not sum back to the year total — the two '
              'reads of the same rows disagree')
 
-    # The vocational district is MEMBERSHIP, not choice, and it is the largest single
-    # destination outside Lunenburg. Naming it stops a reader adding it to the choice
-    # count, which is the obvious misreading of this table.
+    # The vocational district is the largest single destination outside Lunenburg, and
+    # it reaches the town's books by a different rule: Lunenburg is a MEMBER TOWN, so the
+    # state splits one required local contribution by foundation-budget share instead of
+    # charging a tuition per child. That is a fact about the BILL and not about the
+    # family — they apply, compete for a place and may not get one. Naming it separately
+    # stops a reader adding it to the school choice count; it does not mean nobody chose.
     member_elsewhere = sorted(
         (dict(district=r[4].strip(), students=int(r[5] or 0))
          for r in sending if int(r[0]) == LATEST_SY and r[2] == MEMBER_REASON
          and r[3] != LEA_CODE), key=lambda d: -d['students'])
+
+    # ------------------------------------------------------ BOTH DIRECTIONS, ALL OF THEM
+    #
+    # WHAT THIS ADDS, AND WHY THE PROGRAMME SERIES ABOVE IS NOT ENOUGH. Everything above
+    # counts ONE PROGRAMME. School choice is not the whole of either direction: Lunenburg
+    # children also leave to charter schools and as members of a vocational district, and
+    # children arrive under three separate mechanisms. Netting one programme against
+    # itself cannot say whether the town gains or loses children overall, and that is the
+    # question a resident actually asks.
+    #
+    # THE TWO DEFINITIONS, and they are the whole of the arithmetic:
+    #     OUT = every Lunenburg resident enrolled in a district that is NOT Lunenburg
+    #     IN  = every child enrolled in Lunenburg whose town of residence is NOT Lunenburg
+    # Stated as FILTERS rather than as lists of programme names, on purpose. A new
+    # enrolment reason appearing in DESE's file lands in the total by itself instead of
+    # being dropped because nobody added its name to a tuple — and this file has gained
+    # and lost reasons over the thirteen years it covers.
+    #
+    # EACH FILTER IS ASSERTED TO SELECT SOMETHING, AND SO IS ITS COMPLEMENT. A filter that
+    # matches nothing looks exactly like a town nobody leaves; one that has come to match
+    # EVERYTHING looks exactly like a town where nobody stays. Neither surfaces as an
+    # error. Both surface as a clean chart, which is worse.
+    #
+    # SIGN CONVENTION, once, here: net = IN − OUT. Negative is a net loss of children.
+
+    OUT_GROUPS = ('member', 'choice', 'charter', 'other')
+    IN_GROUPS = ('choice', 'tuitioned', 'foster', 'other')
+
+    def out_group(reason):
+        return ('member' if reason == MEMBER_REASON else
+                'choice' if reason == CHOICE_REASON else
+                'charter' if reason == CHARTER_REASON else 'other')
+
+    def in_group(reason):
+        return ('choice' if reason == CHOICE_REASON else
+                'tuitioned' if reason.startswith('Tuitioned In') else
+                'foster' if reason.startswith('Out of District') else 'other')
+
+    both = []
+    for sy in years:
+        s_year = [r for r in sending if int(r[0]) == sy]
+        r_year = [r for r in receiving if int(r[0]) == sy]
+        s_out = [r for r in s_year if r[3] != LEA_CODE]
+        s_home = [r for r in s_year if r[3] == LEA_CODE]
+        r_in = [r for r in r_year if r[4] != TOWN]
+        r_home = [r for r in r_year if r[4] == TOWN]
+        if not s_home:
+            fail(f'SY{sy}: not one {TOWN} resident is recorded in the sending file as '
+                 f'attending LEA {LEA_CODE}. The "somewhere other than our own district" '
+                 'filter is therefore excluding nothing, and the outward count would '
+                 'silently become every child in town.')
+        if not r_home:
+            fail(f'SY{sy}: the receiving file records no {TOWN}-resident children at LEA '
+                 f'{LEA_CODE}. The "from somewhere other than our own town" filter is '
+                 'excluding nothing and the arriving count would silently become the '
+                 'whole district.')
+        if not s_out:
+            fail(f'SY{sy}: the outward filter matched no rows at all, which looks exactly '
+                 'like a town nobody leaves')
+        if not r_in:
+            fail(f'SY{sy}: the arriving filter matched no rows at all, which looks exactly '
+                 'like a district nobody chooses into')
+
+        out_by = dict.fromkeys(OUT_GROUPS, 0)
+        for r in s_out:
+            out_by[out_group(r[2])] += int(r[5] or 0)
+        in_by = dict.fromkeys(IN_GROUPS, 0)
+        for r in r_in:
+            in_by[in_group(r[3])] += int(r[5] or 0)
+        out_all, in_all = sum(out_by.values()), sum(in_by.values())
+
+        # THE FILTER, RECONCILED TO THE FILE'S OWN YEAR TOTAL. Every resident row is
+        # either at Lunenburg or not; if the two halves do not add back to the year, the
+        # DIST_CODE comparison is matching on something other than the district.
+        resident_year = sum(int(r[5] or 0) for r in s_year)
+        home_year = sum(int(r[5] or 0) for r in s_home)
+        if out_all + home_year != resident_year:
+            fail(f'SY{sy}: {out_all} residents elsewhere plus {home_year} at LEA '
+                 f'{LEA_CODE} is {out_all + home_year}, against {resident_year} rows in '
+                 'the sending file for the year — the two halves of the outward filter do '
+                 'not add back to the file’s own total for the year')
+        attend_year = sum(int(r[5] or 0) for r in r_year)
+        rhome_year = sum(int(r[5] or 0) for r in r_home)
+        if in_all + rhome_year != attend_year:
+            fail(f'SY{sy}: {in_all} arriving plus {rhome_year} resident is '
+                 f'{in_all + rhome_year}, against {attend_year} in the receiving file for '
+                 'the year — the arriving filter does not add back to the file’s own total')
+
+        # AND THE TWO ROUTES TO THE SAME PROGRAMME MUST AGREE. `series` above tallies
+        # school choice across ALL rows of the year; this tallies it across the filtered
+        # ones. They can only differ if a resident is recorded as choicing into their own
+        # district, which would mean one of the two reads is wrong.
+        prog = next(r for r in series if r['sy'] == sy)
+        if out_by['choice'] != prog['out_choice'] or out_by['charter'] != prog['out_charter']:
+            fail(f'SY{sy}: the filtered read gives {out_by["choice"]} choicing out and '
+                 f'{out_by["charter"]} at charters, against {prog["out_choice"]} and '
+                 f'{prog["out_charter"]} from the unfiltered read of the same rows')
+        if in_by['choice'] != prog['in_choice']:
+            fail(f'SY{sy}: the filtered read gives {in_by["choice"]} arriving under school '
+                 f'choice against {prog["in_choice"]} from the unfiltered read')
+
+        both.append(dict(
+            sy=sy, out_all=out_all, in_all=in_all, net_all=in_all - out_all,
+            out_member=out_by['member'], out_choice=out_by['choice'],
+            out_charter=out_by['charter'], out_other=out_by['other'],
+            in_choice=in_by['choice'], in_tuitioned=in_by['tuitioned'],
+            in_foster=in_by['foster'], in_other=in_by['other'],
+            residents=resident_year, at_lunenburg=home_year))
+
+    if len(years) != years[-1] - years[0] + 1:
+        fail(f'the school years both DESE files cover are {years} — there is a hole in the '
+             'run, and a line chart drawn across it would read as continuous')
+
+    b_first, b_last = both[0], both[-1]
+    gains = [r['sy'] for r in both if r['net_all'] > 0]
+    worst = min(both, key=lambda r: r['net_all'])
+    best = max(both, key=lambda r: r['net_all'])
+
+    # THE THREE SERIES THE PAGE DRAWS, and the reason all three are drawn rather than the
+    # net alone: the net is nearly flat and one of its two halves is not. A chart of the
+    # net by itself would be a near-straight line concealing the whole of the movement,
+    # which is why the page draws out, in and net together and never the net alone.
+    def pctchange(a, b):
+        return None if not a else round(b / a - 1.0, 4)
+
+    both_ways = dict(
+        series=both, years=years,
+        first=b_first, last=b_last,
+        out_first=b_first['out_all'], out_last=b_last['out_all'],
+        out_change=b_last['out_all'] - b_first['out_all'],
+        out_change_pct=pctchange(b_first['out_all'], b_last['out_all']),
+        out_max=max(r['out_all'] for r in both), out_min=min(r['out_all'] for r in both),
+        in_first=b_first['in_all'], in_last=b_last['in_all'],
+        in_change=b_last['in_all'] - b_first['in_all'],
+        in_change_pct=pctchange(b_first['in_all'], b_last['in_all']),
+        in_max=max(r['in_all'] for r in both), in_min=min(r['in_all'] for r in both),
+        net_first=b_first['net_all'], net_last=b_last['net_all'],
+        net_worst=worst['net_all'], net_worst_sy=worst['sy'],
+        net_best=best['net_all'], net_best_sy=best['sy'],
+        years_net_positive=len(gains), net_positive_years=gains,
+        # The latest year's arrivals, by the mechanism that brought each child, because
+        # three different mechanisms are three different money questions and only one of
+        # them is school choice.
+        in_latest=[dict(reason=reason, students=n) for reason, n in sorted(
+            ((reason, sum(int(x[5] or 0) for x in receiving
+                          if int(x[0]) == LATEST_SY and x[4] != TOWN
+                          and x[3] == reason))
+             for reason in {x[3] for x in receiving
+                            if int(x[0]) == LATEST_SY and x[4] != TOWN}),
+            key=lambda t: (-t[1], t[0]))],
+        definitions=dict(
+            out=f'every {TOWN} resident enrolled in a district other than LEA {LEA_CODE}',
+            inn=f'every child enrolled at LEA {LEA_CODE} resident in a town other than '
+                f'{TOWN}',
+            net='arriving minus leaving; negative is a net loss of children'),
+    )
+    if sum(x['students'] for x in both_ways['in_latest']) != b_last['in_all']:
+        fail('the latest year’s arrivals broken out by mechanism do not sum back to the '
+             'year total — two reads of the same rows disagree')
+
+    # ----------------------------------------------- and what the arriving half is WORTH
+    #
+    # NOTHING HERE CONVERTS A CHILD INTO A DOLLAR, and that refusal is the finding. Two
+    # separately measured series are published side by side — the count of children
+    # arriving, from DESE, and the money the town's own School Choice fund received, from
+    # thirteen annual town reports — over the years both cover. They are not divided into
+    # each other. A per-student rate produced that way would be an assumption wearing a
+    # measurement's clothes: the fund's receipts include years of arrivals, not one, and
+    # the statutory tuition is higher for special education, which nothing here can count.
+    if inbound is not None:
+        fund = {r['fy']: r for r in inbound['fund_series'] if r['usable']}
+        overlap = sorted(set(years) & set(fund))
+        if len(overlap) < 5:
+            fail(f'the DESE counts and the town’s own School Choice fund overlap in only '
+                 f'{len(overlap)} years — the page states that both halves fell over a '
+                 'common span and that sentence needs a span')
+        by_sy = {r['sy']: r for r in both}
+        both_ways['money'] = dict(
+            overlap=overlap,
+            first_fy=overlap[0], last_fy=overlap[-1],
+            receipts_first=fund[overlap[0]]['receipts'],
+            receipts_last=fund[overlap[-1]]['receipts'],
+            receipts_pct=pctchange(fund[overlap[0]]['receipts'],
+                                   fund[overlap[-1]]['receipts']),
+            in_first=by_sy[overlap[0]]['in_all'],
+            in_last=by_sy[overlap[-1]]['in_all'],
+            in_pct=pctchange(by_sy[overlap[0]]['in_all'], by_sy[overlap[-1]]['in_all']),
+            per_student_established=False,
+            per_student_why=(
+                'This archive holds no document stating what Lunenburg receives for a '
+                'child who chooses in. The statutory base rate is set by M.G.L. c.76 '
+                '§12B, it is higher for special education, and no Cherry Sheet — the one '
+                'document that prints the receipt — is in this archive for any year. The '
+                'two measured series on this page are set side by side and never divided '
+                'into each other.'),
+        )
 
     outs = [r['out_choice'] for r in series]
     return dict(
@@ -829,6 +1049,7 @@ def choice_flows():
         low=min(series, key=lambda r: r['out_choice']),
         mean_out=round(sum(outs) / len(outs), 1),
         first=series[0], last=series[-1],
+        both_ways=both_ways,
         reasons_seen=sorted({k for r in series for k in r['out_reasons']}))
 
 
@@ -837,9 +1058,9 @@ def choice_flows():
 def formula_history(c, fy27_aid):
     """What Chapter 70 aid has ACTUALLY done, and what its own components say drives it.
 
-    THE POINT OF THIS BLOCK. The brief this page answers assumed aid falls with enrolment.
+    THE POINT OF THIS BLOCK. The brief this page answers assumed aid falls with enrollment.
     Rather than assert the caveat, this measures it: DESE publishes Lunenburg's foundation
-    enrolment and aid for thirty-four years, so the years enrolment fell can simply be
+    enrollment and aid for thirty-four years, so the years enrollment fell can simply be
     counted, and what aid did in those years read off.
 
     AND THEN THE MECHANISM, from DESE's own aid-component columns. Aid is built on the
@@ -899,7 +1120,7 @@ def formula_history(c, fy27_aid):
              f'FY{latest["fy"]} figure of {latest["aid"]:,.0f} — the two sources no longer '
              'continue each other and the page draws them as one line')
 
-    # WHAT AID DID IN THE YEARS ENROLMENT FELL. Counted, not asserted.
+    # WHAT AID DID IN THE YEARS ENROLLMENT FELL. Counted, not asserted.
     fell = []
     for a, b in zip(hist, hist[1:]):
         if b['enrollment'] < a['enrollment']:
@@ -907,7 +1128,7 @@ def formula_history(c, fy27_aid):
                              aid_change=round(b['aid'] - a['aid'], 2),
                              aid_fell=b['aid'] < a['aid'] - 0.5))
     if not fell:
-        fail('no year in thirty-four in which foundation enrolment fell — that is not a '
+        fail('no year in thirty-four in which foundation enrollment fell — that is not a '
              'district, that is a broken read')
     aid_fell = [f for f in fell if f['aid_fell']]
 
@@ -969,15 +1190,15 @@ def formula_history(c, fy27_aid):
              'this page’s model opens on is derived from it, and with it at zero the '
              'model needs rebuilding rather than rewording.')
     if last['enrollment'] <= 0:
-        fail(f'FY{last["fy"]} foundation enrolment came back at {last["enrollment"]}')
+        fail(f'FY{last["fy"]} foundation enrollment came back at {last["enrollment"]}')
     min_aid_pp = round(last['minaidinc'] / last['enrollment'], 2)
 
     return dict(
         sources=[pprov, fprov],
         series=hist, span=[hist[0]['fy'], hist[-1]['fy']],
         latest=latest, town_ledger_ch70=town_ch70, fy27_aid=fy27_aid,
-        enrolment_fell_years=fell,
-        enrolment_fell=len(fell), aid_fell_too=len(aid_fell),
+        enrollment_fell_years=fell,
+        enrollment_fell=len(fell), aid_fell_too=len(aid_fell),
         aid_fell_in=[f['fy'] for f in aid_fell],
         # WHY AID FELL, only where a document says so. The component columns start at
         # FY2007, so a year before that carries no explanation in this archive and the
@@ -1186,6 +1407,261 @@ def said():
     return out
 
 
+# ------------------------------------------------------------------- what this establishes
+
+def the_conclusions(enr, fml, hist, flows, scn):
+    """The three claims this report makes, with every figure in them registered.
+
+    RULE 8, and it is the whole difficulty on this page. A scenario invites a verdict --
+    on the person who put it, on the district, on the state. None of that is the job. What
+    a resident needs is what the option would cost the town, what the aid formula is
+    actually doing to a departing pupil, and how fast the flow being modelled would have
+    to move. Three questions the community argues about already, answered from documents.
+
+    AND THE SCENARIO SAYS SO. The first conclusion is `hypothesis`, not `measured`: its
+    dollars are the output of dials a reader can move, and nothing in this archive counts
+    a single child leaving for a single reason. The other two rest on DESE's own series
+    and are measurements of what happened, which is a different kind of sentence.
+    """
+    grade = max(scn['per_grade'], key=lambda g: g['leaving'])
+    year_one = scn['tuition_out'] + scn['aid_loss']
+    bw = flows['both_ways']
+    nyears = len(bw['series'])
+    # A small whole number reads better as a word, and rule 2 still applies to it: the
+    # word is REGISTERED as the rendering of a computed figure, not typed beside one.
+    WORDS = ('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
+             'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen')
+    def word(n):
+        return WORDS[n] if 0 <= n < len(WORDS) else C.num(n)
+    in_words = word(-bw['out_change'])
+    years_word = word(nyears)
+    fy26 = hist['latest_components']
+    recent_ties = len([t for t in hist['identity_ties'] if t['fy'] >= fy26['fy'] - 6])
+    span = hist['span'][1] - hist['span'][0]
+
+    return emit('if-students-leave', [
+        conclusion(
+            id='what-the-scenario-costs-and-what-would-have-to-be-cut',
+            claim='Leaves the town in year one, if 78 high school students transferred out',
+            so_what='A scenario put to this site, not something that happened.',
+            lede='If %s high school students transferred out under school choice — the '
+                  'scenario as it was put to this site — %s leaves the town in the first '
+                  'year, and the town would have to stop spending %s of what it '
+                  'appropriates per pupil just to break even.'
+                  % (C.num(scn['leavers']), C.usd(year_one),
+                     C.pct(scn['break_even_avoidable_share'] * 100)),
+            detail='%s of that is sending tuition and %s is Chapter 70 aid at the margin '
+                   'the formula is currently paying. Both go in year one. The students '
+                   'come out of four grades, %s of them from the largest, which has %s '
+                   'residents in it — so the %s of appropriation they carry with them, at '
+                   '%s a pupil, only stops being spent where somebody decides to stop '
+                   'spending it. That decision is the whole of the difference between a '
+                   'town that loses money and a town that does not.'
+                   % (C.usd(scn['tuition_out']), C.usd(scn['aid_loss']),
+                      '%.1f' % grade['leaving'], C.num(grade['resident']),
+                      C.usd(scn['max_avoidable']), C.usd(scn['appropriation_per_pupil'])),
+            figures={
+                'leavers': figure(scn['leavers'], C.num(scn['leavers'])),
+                'year_one': figure(year_one, C.usd(year_one)),
+                'break_even': figure(scn['break_even_avoidable_share'] * 100,
+                                     C.pct(scn['break_even_avoidable_share'] * 100)),
+                'tuition': figure(scn['tuition_out'], C.usd(scn['tuition_out'])),
+                'aid_loss': figure(scn['aid_loss'], C.usd(scn['aid_loss'])),
+                'from_largest': figure(grade['leaving'], '%.1f' % grade['leaving']),
+                'largest_grade': figure(grade['resident'], C.num(grade['resident'])),
+                'appropriation_carried': figure(scn['max_avoidable'],
+                                                C.usd(scn['max_avoidable'])),
+                'per_pupil': figure(scn['appropriation_per_pupil'],
+                                    C.usd(scn['appropriation_per_pupil'])),
+            },
+            figure='year_one',
+            kind='hypothesis',
+            allow=('Chapter 70',),
+            basis='The scenario as a member of the Select Board put it to this site, '
+                  'evaluated at its own defaults. High school enrolment is the FY2025 '
+                  'annual town report’s enrolment table, read off the printed page and '
+                  'reconciled to the totals the page prints. The appropriation per pupil '
+                  'is the school appropriation over DESE’s foundation enrolment in the '
+                  'FY27 Chapter 70 district summary. Sending tuition is the base rate set '
+                  'by M.G.L. c.76 §12B, and no document in this archive states it for '
+                  'Lunenburg.',
+            not_shown='That any child will leave, or that athletes would be the ones who '
+                      'did. Nobody counts departures by reason. It also does not show '
+                      'that anything could be cut: nothing published says at what '
+                      'enrolment a section is removed, so the break-even share is what '
+                      'would have to happen and not what could.',
+            see=[('/where-students-go-instead', 'the children who actually leave, counted'),
+                 ('/what-other-districts-spend', 'what comparable districts spend')],
+        ),
+        conclusion(
+            id='chapter-70-moves-a-fraction-of-the-foundation-rate',
+            claim='What state aid currently moves for one pupil the funding formula counts',
+            so_what='Far less than a pupil’s share of the school budget, so those two must not be used interchangeably.',
+            lede='Chapter 70 is currently moving %s for one foundation pupil, not the %s '
+                  'the foundation budget is worth per pupil — a factor of %s between the '
+                  'two figures a scenario could price a departing student at.'
+                  % (C.usd(hist['min_aid_per_pupil']), C.usd(fml['foundation_per_pupil']),
+                     '%.1f' % scn['aid_ratio']),
+            detail='DESE’s own aid-component columns make each year’s aid the previous '
+                   'year’s plus named increments, an identity that holds to the dollar in '
+                   'all %s of the last seven years. In %s the whole of Lunenburg’s %s '
+                   'increase is the minimum aid increment and the foundation aid '
+                   'increment is %s; %s spread over %s foundation pupils is %s each. '
+                   'Across the %s years DESE publishes, foundation enrolment fell in %s '
+                   'of them and aid fell in %s.'
+                   % (C.num(recent_ties), C.fy(fy26['fy']), C.usd(fy26['increments']),
+                      C.usd(hist['foundation_aid_inc']), C.usd(hist['min_aid_total']),
+                      C.num(fy26['enrollment']), C.usd(hist['min_aid_per_pupil']),
+                      C.num(span), C.num(hist['enrollment_fell']),
+                      C.num(hist['aid_fell_too'])),
+            figures={
+                'marginal': figure(hist['min_aid_per_pupil'],
+                                   C.usd(hist['min_aid_per_pupil'])),
+                'foundation_pp': figure(fml['foundation_per_pupil'],
+                                        C.usd(fml['foundation_per_pupil'])),
+                'ratio': figure(scn['aid_ratio'], '%.1f' % scn['aid_ratio']),
+                'ties': figure(recent_ties, C.num(recent_ties)),
+                'fy': figure(fy26['fy'], C.fy(fy26['fy'])),
+                'increase': figure(fy26['increments'], C.usd(fy26['increments'])),
+                'foundation_inc': figure(hist['foundation_aid_inc'],
+                                         C.usd(hist['foundation_aid_inc'])),
+                'min_aid': figure(hist['min_aid_total'], C.usd(hist['min_aid_total'])),
+                'foundation_enrolment': figure(fy26['enrollment'],
+                                               C.num(fy26['enrollment'])),
+                'years': figure(span, C.num(span)),
+                'enrolment_fell': figure(hist['enrollment_fell'],
+                                         C.num(hist['enrollment_fell'])),
+                'aid_fell': figure(hist['aid_fell_too'], C.num(hist['aid_fell_too'])),
+            },
+            figure='marginal',
+            kind='measured',
+            allow=('Chapter 70',),
+            basis='DESE’s Chapter 70 Trends in Aid and Local Contribution workbook, sheet '
+                  '`dataAid`, which breaks the aid calculation into its named components, '
+                  'and DESE’s Chapter 70 District Profile, sheet `DataC70`, for the whole '
+                  'published run of foundation enrolment and aid. The latest year’s aid '
+                  'is tied to the town’s own revenue ledger before any of it is used.',
+            not_shown='What aid would do if enrolment actually fell. Minimum aid and '
+                      'hold-harmless are statutory provisions, this archive holds no '
+                      'document applying either to Lunenburg, and a record of what '
+                      'happened is not a forecast. DESE’s own row also shows Lunenburg’s '
+                      'aid sitting above foundation budget minus required contribution, '
+                      'so that subtraction is not currently what sets it.',
+            see=[('/why-we-only-get-minimum-aid', 'why the aid lands where it does'),
+                 ('/state-aid', 'the whole state aid line, not Chapter 70 alone')],
+        ),
+        conclusion(
+            id='this-is-a-flow-that-already-runs',
+            claim='Lunenburg residents leaving under school choice in the latest year counted',
+            so_what='Children already leave. The question the scenario puts is how fast that moves, not whether it happens.',
+            lede='Children already leave. DESE counts %s Lunenburg residents choicing '
+                  'out in %s against %s arriving, so the question the scenario puts is '
+                  'not whether school choice happens here but how fast it moves.'
+                  % (C.num(flows['latest']['out_choice']), 'SY%d' % flows['latest_sy'],
+                     C.num(flows['latest']['in_choice'])),
+            detail='The outward count has run between %s and %s in every year since %s, '
+                   'and a further %s residents attend charter schools. The scenario adds '
+                   '%s in a single year, which would take the outward flow to %s — %s '
+                   'times what DESE currently counts. Nothing in the published record has '
+                   'moved that far that fast, and that is the honest way to read the '
+                   'scenario: as a rate, against a flow somebody already measures.'
+                   % (C.num(flows['low']['out_choice']), C.num(flows['peak']['out_choice']),
+                      'SY%d' % flows['years'][0], C.num(flows['latest']['out_charter']),
+                      C.num(scn['leavers']), C.num(scn['after_out']),
+                      '%.2f' % scn['after_multiple']),
+            figures={
+                'out': figure(flows['latest']['out_choice'],
+                              C.num(flows['latest']['out_choice']), 'students'),
+                'sy': figure(flows['latest_sy'], 'SY%d' % flows['latest_sy']),
+                'in': figure(flows['latest']['in_choice'],
+                             C.num(flows['latest']['in_choice'])),
+                'low': figure(flows['low']['out_choice'],
+                              C.num(flows['low']['out_choice'])),
+                'peak': figure(flows['peak']['out_choice'],
+                               C.num(flows['peak']['out_choice'])),
+                'first_sy': figure(flows['years'][0], 'SY%d' % flows['years'][0]),
+                'charter': figure(flows['latest']['out_charter'],
+                                  C.num(flows['latest']['out_charter'])),
+                'added': figure(scn['leavers'], C.num(scn['leavers'])),
+                'after': figure(scn['after_out'], C.num(scn['after_out'])),
+                'multiple': figure(scn['after_multiple'],
+                                   '%.2f' % scn['after_multiple']),
+            },
+            figure='out',
+            kind='measured',
+            basis='DESE’s enrolment of town residents by district and its enrolment of a '
+                  'district by town of residence — the two files that count the same '
+                  'children in opposite directions — filtered to Lunenburg in every '
+                  'school year both cover, with each year’s destination detail summed '
+                  'back to that year’s total before it is used.',
+            not_shown='Why any of these children left, or where the money went with them. '
+                      'The counts carry no dollars: not one document in this archive '
+                      'states the tuition that follows a child in either direction, which '
+                      'is why every dollar on this page rests on an assumed rate.',
+            see=[('/where-students-go-instead', 'where they go, measured'),
+                 ('/monty-tech', 'the largest destination outside Lunenburg — families '
+                                 'choose it, and the bill follows a different rule')],
+        ),
+        conclusion(
+            id='the-net-is-flat-and-the-arriving-half-is-not',
+            claim='Fall in children arriving in Lunenburg from other towns',
+            so_what='Leaving is flat and arriving has collapsed. The net barely moves, and that is what hides it.',
+            lede='Lunenburg has not had a year of net gain in the %s school years DESE '
+                  'publishes — %s '
+                  'children left in %s against %s arriving. The net barely moves, and '
+                  'that is what hides it: leaving is flat and arriving has fallen %s.'
+                  % (years_word, C.num(bw['out_last']),
+                     'SY%d' % bw['last']['sy'], C.num(bw['in_last']),
+                     C.pct(-bw['in_change_pct'] * 100)),
+            detail='Leaving has run between %s and %s and ends at %s, %s fewer than the '
+                   '%s it began at. Arriving has gone from %s to %s. The net has been a '
+                   'loss of between %s and %s children in every single year, which is why '
+                   'the page draws all three lines: the net on its own is nearly flat '
+                   'across the whole of the movement.'
+                   % (C.num(bw['out_min']), C.num(bw['out_max']), C.num(bw['out_last']),
+                      in_words, C.num(bw['out_first']), C.num(bw['in_first']),
+                      C.num(bw['in_last']), C.num(-bw['net_best']),
+                      C.num(-bw['net_worst'])),
+            figures={
+                'years': figure(nyears, years_word),
+                'out_last': figure(bw['out_last'], C.num(bw['out_last'])),
+                'sy': figure(bw['last']['sy'], 'SY%d' % bw['last']['sy']),
+                'in_last': figure(bw['in_last'], C.num(bw['in_last'])),
+                'in_fall': figure(-bw['in_change_pct'] * 100,
+                                  C.pct(-bw['in_change_pct'] * 100)),
+                'out_min': figure(bw['out_min'], C.num(bw['out_min'])),
+                'out_max': figure(bw['out_max'], C.num(bw['out_max'])),
+                'out_change': figure(-bw['out_change'], in_words),
+                'out_first': figure(bw['out_first'], C.num(bw['out_first'])),
+                'in_first': figure(bw['in_first'], C.num(bw['in_first'])),
+                'net_best': figure(-bw['net_best'], C.num(-bw['net_best'])),
+                'net_worst': figure(-bw['net_worst'], C.num(-bw['net_worst'])),
+            },
+            figure='in_fall',
+            kind='measured',
+            basis='DESE’s two enrolment files, counted as filters rather than as lists of '
+                  'programmes: every Lunenburg resident enrolled in a district other than '
+                  'Lunenburg, and every child enrolled in Lunenburg resident in a town '
+                  'other than Lunenburg. Both filters, and the complement of each, are '
+                  'asserted to select something in every year, and each year’s two halves '
+                  'are added back to DESE’s own row count for that year before any of it '
+                  'is used. Charter and vocational children are inside the outward count; '
+                  'foster and locally-agreed placements are inside the arriving one.',
+            not_shown='Why arrivals fell. A district decides every year how many school '
+                      'choice seats to open and at which grades, so this is equally '
+                      'consistent with fewer seats being offered and with fewer families '
+                      'applying, and nothing published separates them: the Superintendent '
+                      'stated both counts to the Finance Committee for a single year, '
+                      'quoted on this page, and there is no series. Nor does it show what '
+                      'any of it is worth — no document in this archive states what '
+                      'Lunenburg receives for a child who chooses in, so the fall in '
+                      'children cannot be turned into a fall in dollars here.',
+            see=[('/where-students-go-instead', 'the outward half, decomposed'),
+                 ('/what-families-pay', 'what a family pays to stay')],
+        ),
+    ])
+
+
 # --------------------------------------------------------------------------- the build
 
 def build():
@@ -1194,12 +1670,12 @@ def build():
     c = sqlite3.connect(f'file:{DB}?mode=ro', uri=True)
     c.row_factory = sqlite3.Row
 
-    enr = enrolment(c)
+    enr = enrollment(c)
     prem = premise(enr)
     fml = formula()
     fee = athletics_fee()
     inbound = choice_in(c)
-    flows = choice_flows()
+    flows = choice_flows(inbound)
     hist = formula_history(c, fml['aid'])
     factors = key_factors()
     scn = scenario(enr, prem, fml, fee, hist, flows)
@@ -1214,7 +1690,7 @@ def build():
              f'{hist["latest"]["foundation"]:,.0f} — two DESE workbooks disagree')
     if factors['enrollment'] != hist['latest']['enrollment']:
         fail(f'the two DESE workbooks disagree about FY{hist["latest"]["fy"]} foundation '
-             f'enrolment: {factors["enrollment"]} and {hist["latest"]["enrollment"]}')
+             f'enrollment: {factors["enrollment"]} and {hist["latest"]["enrollment"]}')
 
     gaps = {g['what']: g for g in q(c, 'SELECT side, what, why FROM money_gaps')}
     missing = [k for k in GAP_KEYS if k not in gaps]
@@ -1248,7 +1724,7 @@ def build():
                + '; fy28/public/data/athletics.json; model/taxbase.py; '
                'sources/data/lunenburg.db — report_enrollment_mcas, v_revenue, '
                f'special_revenue_funds, money_gaps; {MINUTES}/',
-        enrolment=enr,
+        enrollment=enr,
         premise=prem,
         formula=fml,
         formula_history=hist,
@@ -1257,6 +1733,7 @@ def build():
         choice_in=inbound,
         scenario=scn,
         said=quotes,
+        conclusions=the_conclusions(enr, fml, hist, flows, scn),
         gaps=[split(gaps[k]) for k in GAP_KEYS],
         related=related,
     )
@@ -1285,8 +1762,8 @@ def main():
           f'in SY{s["baseline_sy"]} ({s["baseline_in"]} arrive); the scenario adds '
           f'{s["leavers"]} more, {s["after_multiple"]}x the present flow. '
           f'Chapter 70 moves {h["min_aid_per_pupil"]:,.2f} a pupil at the margin against a '
-          f'foundation budget of {f["foundation_per_pupil"]:,.2f}; enrolment fell in '
-          f'{h["enrolment_fell"]} of {h["span"][1] - h["span"][0]} years and aid fell in '
+          f'foundation budget of {f["foundation_per_pupil"]:,.2f}; enrollment fell in '
+          f'{h["enrollment_fell"]} of {h["span"][1] - h["span"][0]} years and aid fell in '
           f'{h["aid_fell_too"]}. Break-even avoidable share '
           f'{s["break_even_avoidable_share"] * 100:.0f}%')
     return 0

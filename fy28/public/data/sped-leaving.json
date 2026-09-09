@@ -1,6 +1,115 @@
 {
  "about": "Where Lunenburg\u2019s resident children actually go to school, from DESE\u2019s count of residents by district \u2014 every reason, both directions, SY2014 onward.",
- "closes": "DLS Cherry Sheet CS 1-EB (estimated charges) for Lunenburg, which prints the school choice sending and charter tuition assessments on their own lines \u2014 the money. For the disability question, DESE\u2019s SIMS detail crossing enrolment reason with IEP status, which is not published at town level at all.",
+ "closes": "DLS Cherry Sheet CS 1-EB (estimated charges) for Lunenburg, which prints the school choice sending and charter tuition assessments on their own lines \u2014 the money. For the disability question, DESE\u2019s SIMS detail crossing enrollment reason with IEP status, which is not published at town level at all.",
+ "conclusions": [
+  {
+   "basis": "DESE\u2019s count of resident children by town and district, every reason and both directions, for every year it has been published.",
+   "claim": "Change in children schooled outside Lunenburg, over 13 years",
+   "detail": "The number of Lunenburg children going to school somewhere other than a Lunenburg school has barely moved in 13 years \u2014 186 then, 177 now, a change of -4.8% \u2014 while where they go changed completely. Monty Tech went 70 to 97. School choice went 69 to 58. Charter schools went 44 to 22. Anybody watching only the total would report that nothing is happening here, and three things beneath it are moving in different directions at once, one of them by half. Over the same span the children in Lunenburg\u2019s own schools went 1,513 to 1,553. That matters for planning because the three routes cost the town different amounts and none of them is controlled by the same decision.",
+   "figure": "total_change",
+   "figures": {
+    "charter_from": {
+     "text": "44",
+     "unit": "",
+     "value": 44
+    },
+    "charter_to": {
+     "text": "22",
+     "unit": "",
+     "value": 22
+    },
+    "choice_from": {
+     "text": "69",
+     "unit": "",
+     "value": 69
+    },
+    "choice_to": {
+     "text": "58",
+     "unit": "",
+     "value": 58
+    },
+    "elsewhere_from": {
+     "text": "186",
+     "unit": "",
+     "value": 186
+    },
+    "elsewhere_to": {
+     "text": "177",
+     "unit": "",
+     "value": 177
+    },
+    "here_from": {
+     "text": "1,513",
+     "unit": "",
+     "value": 1513
+    },
+    "here_to": {
+     "text": "1,553",
+     "unit": "",
+     "value": 1553
+    },
+    "monty_from": {
+     "text": "70",
+     "unit": "",
+     "value": 70
+    },
+    "monty_to": {
+     "text": "97",
+     "unit": "",
+     "value": 97
+    },
+    "total_change": {
+     "text": "-4.8%",
+     "unit": "",
+     "value": -4.8
+    },
+    "years": {
+     "text": "13",
+     "unit": "years",
+     "value": 13
+    }
+   },
+   "id": "the-total-held-while-its-parts-changed",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Why any family left. A count of departures is not a reason for them, and nothing in this file or in the meeting record surveys the households.",
+   "see": [
+    {
+     "label": "what Monty Tech is assessed for",
+     "slug": "/monty-tech"
+    },
+    {
+     "label": "what more leaving would cost",
+     "slug": "/if-students-leave"
+    }
+   ],
+   "so_what": "The total barely moved. Where they go changed completely, and the routes cost the town different amounts."
+  },
+  {
+   "basis": "DESE\u2019s resident-by-district count for the latest published year, read by district rather than by enrollment reason.",
+   "claim": "Lunenburg children at Monty Tech, the largest single destination",
+   "detail": "The largest single destination for a Lunenburg child educated elsewhere is not school choice. It is Montachusett Regional Vocational Technical, with 97 children. More than school choice and charter schools put together. Those children are counted as resident MEMBERS, because Lunenburg belongs to that district and helps fund it \u2014 a family choosing it is not choosing OUT of anything the town runs, and no Lunenburg decision admits or refuses any of them. Reading \u201cchildren who leave\u201d as school choice alone understates the count by more than half and points the argument at the one route the town has least to do with.",
+   "figure": "students",
+   "figures": {
+    "students": {
+     "text": "97",
+     "unit": "children",
+     "value": 97
+    }
+   },
+   "id": "the-biggest-destination-is-not-school-choice",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "What any of it costs. The archive holds the counts and not one document stating the tuition Lunenburg is assessed for these children by route.",
+   "see": [
+    {
+     "label": "the Monty Tech assessment",
+     "slug": "/monty-tech"
+    }
+   ],
+   "so_what": "More than school choice and charter together. Lunenburg is a member town there, so this is not choosing out."
+  }
+ ],
  "destination_count": 13,
  "destinations": [
   {

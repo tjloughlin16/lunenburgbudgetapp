@@ -40,11 +40,11 @@ WHAT IS ESTABLISHED HERE IS ARITHMETIC ON PUBLISHED FIGURES, AND IT IS EXACT.
      FY2022.
   4. The town's required contribution is a WEALTH calculation. `targetlocacont` equals
      `cey`, the combined effort yield, in all twenty years -- property effort plus income
-     effort. Foundation enrolment does not appear in it.
+     effort. Foundation enrollment does not appear in it.
 
 WHAT IS NOT ESTABLISHED, AND THE PAGE SAYS SO IN THOSE WORDS. Whether one more child
 changes the town's bill. The aid side has an answer while the floor binds; the contribution
-side does not respond to enrolment except through the allocation share and a statutory cap
+side does not respond to enrollment except through the allocation share and a statutory cap
 that is not binding here; and the two cannot be combined, because a large enough foundation
 budget increase moves the district off the floor and no document here models that. Three
 `money_gaps` rows already carry this and are cited rather than restated.
@@ -60,6 +60,11 @@ import os
 import re
 import sqlite3
 import sys
+
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
@@ -219,7 +224,7 @@ QUOTES = [
 # choice tuition row and the town's own growth-rate row, neither of which is a limit THIS
 # page hits, and a citation to a gap a page does not hit is noise dressed as rigour.
 WANTED_GAPS = [
-    'What Chapter 70 aid would actually do if enrolment fell',
+    'What Chapter 70 aid would actually do if enrollment fell',
     'What the foundation budget pays per pupil for each kind of child',
     'How many children Chapter 70 is actually paid for',
     'Why Chapter 70 aid moved by more than the components DESE publishes',
@@ -232,6 +237,14 @@ SEARCHED = ['Chapter 70', 'minimum aid', 'foundation budget', 'combined effort y
 
 def fail(msg):
     raise SystemExit('%s\nNothing written.' % msg)
+
+
+def and_list(items):
+    """`a, b and c`, built rather than typed, because the number of items is data."""
+    items = list(items)
+    if len(items) == 1:
+        return items[0]
+    return '%s and %s' % (', '.join(items[:-1]), items[-1])
 
 
 def q(db, sql, *args):
@@ -381,7 +394,7 @@ def build():
     delta = a['ch70_aid'] - prior['ch70_aid']
     enrol = a['foundation_enrollment']
     if not enrol:
-        fail('FY%d foundation enrolment is zero or missing; every per-pupil figure on '
+        fail('FY%d foundation enrollment is zero or missing; every per-pupil figure on '
              'this page divides by it' % last)
     per_pupil = delta / enrol
     min_per_pupil = (a['minimum_aid_increment'] or 0) / enrol
@@ -542,7 +555,7 @@ def build():
         })
     if not target_is_cey:
         fail('the target local contribution is no longer equal to the combined effort '
-             'yield in every year. The page states that identity as the reason enrolment '
+             'yield in every year. The page states that identity as the reason enrollment '
              'does not enter the town’s contribution.')
 
     # The build identity, and the one year it does not hold.
@@ -673,7 +686,7 @@ def build():
     # ---- 9. THE MARGINAL PUPIL: what follows, and what does not ----------------------
     # Numeric, not analytic, and every assumption is published beside the number. Hold the
     # TOWN's required contribution fixed -- it is the combined effort yield path, which
-    # carries no enrolment term -- and let one more pupil raise both foundation budgets by
+    # carries no enrollment term -- and let one more pupil raise both foundation budgets by
     # the same amount, then re-run the two identities the page has already established.
     fpp = a['foundation_budget'] / enrol
     t_rlc, t_fb, d_fb = t['required_local_contribution'], t['town_foundation_budget'], a['foundation_budget']
@@ -839,7 +852,192 @@ def build():
 
     terms, minutes = searched()
 
+    # ---- THE CONCLUSIONS -------------------------------------------------------------
+    # Five quantities the page does not otherwise need, computed here beside everything
+    # else so that no figure in a sentence is typed (rule 2):
+    #   * how long the floor has bound, as a RUN of years rather than a count of them --
+    #     FY2023 is not on the floor, so "the last four increases" would be wrong;
+    #   * the per-pupil rate the Legislature chose in each of those years;
+    #   * the two wealth series and the two growth rates as percentages, because a
+    #     conclusion states a percentage and the payload carries fractions.
+    floor_span = last - min(on_floor) + 1
+    floor_rates = [rate_for(f) for f in on_floor]
+    rates_text = and_list([C.usd(r) for r in floor_rates])
+    rate_figures = {'rate_%d' % f: figure(rate_for(f), C.usd(rate_for(f)))
+                    for f in on_floor}
+    req_pct, aid_pct = 100 * since['required_pct'], 100 * since['aid_pct']
+    share_first_pct = 100 * share['first']
+    share_low_pct = 100 * share['low']
+    share_last_pct = 100 * share['last']
+    eqv_growth_pct, eqv_median_pct = 100 * wealth['eqv_growth'], 100 * wealth['eqv_median']
+    cey_growth_pct, cey_median_pct = 100 * wealth['cey_growth'], 100 * wealth['cey_median']
+
+    conclusions = emit('why-we-only-get-minimum-aid', [
+        conclusion(
+            id='the-whole-increase-is-the-legislatures-floor',
+            claim='Increase in state school aid for FY2026, all of it the Legislature’s flat minimum',
+            so_what='The funding formula itself awarded nothing. What the town gets moves with a rate set on Beacon Hill.',
+            lede='Lunenburg’s entire increase in state school aid for %s was the flat '
+                  'minimum the Legislature votes each year — %s, which is exactly %s for '
+                  'each of the %s pupils the state’s funding formula counts. The formula '
+                  'itself awarded %s.'
+                  % (C.fy(last), C.usd(delta), C.usd(headline['per_pupil']),
+                     C.num(enrol), C.usd(headline['foundation_aid_increment'])),
+            detail='The formula pays foundation aid only where the foundation budget less '
+                   'the town’s required contribution exceeds last year’s aid. For %s that '
+                   'is %s less %s, or %s of need, against %s already being paid: '
+                   'Lunenburg sits %s above the line at which the formula pays anything. '
+                   'It has been in that position in %s of the last %s years, and the '
+                   'floor the Legislature chose in those years was %s a pupil. So what '
+                   'the town receives moves with a rate set on Beacon Hill each spring, '
+                   'not with anything its own costs or its own enrollment do.'
+                   % (C.fy(last), C.usd(why_zero['foundation_budget']),
+                      C.usd(why_zero['required_local_contribution']),
+                      C.usd(why_zero['need']), C.usd(why_zero['prior_aid']),
+                      C.usd(why_zero['headroom']), C.num(len(on_floor)),
+                      C.num(floor_span), rates_text),
+            figures=dict(
+                fy=figure(last, C.fy(last)),
+                increase=figure(delta, C.usd(delta)),
+                per_pupil=figure(headline['per_pupil'], C.usd(headline['per_pupil'])),
+                enrollment=figure(enrol, C.num(enrol)),
+                foundation_aid=figure(headline['foundation_aid_increment'],
+                                      C.usd(headline['foundation_aid_increment'])),
+                foundation_budget=figure(why_zero['foundation_budget'],
+                                         C.usd(why_zero['foundation_budget'])),
+                required_local_contribution=figure(
+                    why_zero['required_local_contribution'],
+                    C.usd(why_zero['required_local_contribution'])),
+                need=figure(why_zero['need'], C.usd(why_zero['need'])),
+                prior_aid=figure(why_zero['prior_aid'], C.usd(why_zero['prior_aid'])),
+                headroom=figure(why_zero['headroom'], C.usd(why_zero['headroom'])),
+                floor_years=figure(len(on_floor), C.num(len(on_floor))),
+                floor_span=figure(floor_span, C.num(floor_span)),
+                **rate_figures),
+            figure='increase',
+            kind='measured',
+            allow=('Chapter 70',),
+            basis='DESE’s Chapter 70 Trends workbook, sheets %s and %s: the aid '
+                  'components as DESE ran them for each fiscal year, %s. Not a '
+                  'Governor’s-budget proposal and not a receipt — those are different '
+                  'numbers for the same year and are never differenced here.'
+                  % (SHEET_AID, SHEET_CONTRIB, C.fyspan(first, last)),
+            not_shown='Whether one more child would bring the town anything. While the '
+                      'floor binds, aid moves at the Legislature’s flat per-pupil rate — '
+                      'but a large enough foundation budget increase closes the headroom '
+                      'and moves the district off the floor entirely, and no document in '
+                      'this archive models that.',
+            see=[('/state-aid', 'all state aid, of which this is the largest part')],
+        ),
+        conclusion(
+            id='the-local-share-is-rising-faster-than-the-aid',
+            claim='Rise since FY2019 in what the state requires Lunenburg to pay for its own schools',
+            so_what='State aid rose by less over the same years, and the pupil count the formula runs on fell.',
+            lede='Since %s the amount the state requires Lunenburg to pay towards its '
+                  'own schools has risen %s, while the state aid it sends rose %s — and '
+                  'over the same years the pupil count the formula runs on fell from %s '
+                  'to %s.'
+                  % (C.fy(since['from_fy']), C.pct(req_pct), C.pct(aid_pct),
+                     C.num(since['enrollment_from']), C.num(since['enrollment_to'])),
+            detail='In dollars the required local contribution went from %s to %s, up %s, '
+                   'while aid went from %s to %s, up %s. Both are DESE’s published '
+                   'calculation for their own year, so the two are the same stage and can '
+                   'be compared. What it changes for a resident is where the foundation '
+                   'budget is paid from: the required local share of it was %s in %s, '
+                   'fell to %s by %s, and is %s now. A school budget that grows is '
+                   'increasingly a town bill, and that shift happens whether or not the '
+                   'district changes anything it does.'
+                   % (C.usd(since['required_from']), C.usd(since['required_to']),
+                      C.usd(since['required_change']), C.usd(since['aid_from']),
+                      C.usd(since['aid_to']), C.usd(since['aid_change']),
+                      C.pct(share_first_pct), C.fy(share['first_fy']),
+                      C.pct(share_low_pct), C.fy(share['low_fy']),
+                      C.pct(share_last_pct)),
+            figures=dict(
+                from_fy=figure(since['from_fy'], C.fy(since['from_fy'])),
+                required_pct=figure(req_pct, C.pct(req_pct)),
+                aid_pct=figure(aid_pct, C.pct(aid_pct)),
+                enrollment_from=figure(since['enrollment_from'],
+                                       C.num(since['enrollment_from'])),
+                enrollment_to=figure(since['enrollment_to'],
+                                     C.num(since['enrollment_to'])),
+                required_from=figure(since['required_from'], C.usd(since['required_from'])),
+                required_to=figure(since['required_to'], C.usd(since['required_to'])),
+                required_change=figure(since['required_change'],
+                                       C.usd(since['required_change'])),
+                aid_from=figure(since['aid_from'], C.usd(since['aid_from'])),
+                aid_to=figure(since['aid_to'], C.usd(since['aid_to'])),
+                aid_change=figure(since['aid_change'], C.usd(since['aid_change'])),
+                share_first=figure(share_first_pct, C.pct(share_first_pct)),
+                share_first_fy=figure(share['first_fy'], C.fy(share['first_fy'])),
+                share_low=figure(share_low_pct, C.pct(share_low_pct)),
+                share_low_fy=figure(share['low_fy'], C.fy(share['low_fy'])),
+                share_last=figure(share_last_pct, C.pct(share_last_pct))),
+            figure='required_pct',
+            kind='measured',
+            allow=('Chapter 70',),
+            basis='DESE’s `dataAid` sheet: the required local contribution and the '
+                  'Chapter 70 aid DESE calculated for the district, %s, with the '
+                  'foundation enrollment the same rows are built on.'
+                  % C.fyspan(since['from_fy'], since['to_fy']),
+            not_shown='That the town is being asked for more than it can afford, or for '
+                      'less. The required share is a ratio of two published figures and '
+                      'what a town can afford is in neither of them. Nor is any of this '
+                      'what the town SPENDS: the requirement is a floor, and the distance '
+                      'above it is a separate measurement.',
+            see=[('/what-the-state-requires-us-to-spend',
+                  'what the town actually spends against that floor')],
+        ),
+        conclusion(
+            id='the-required-contribution-is-wealth-not-children',
+            claim='Growth in Lunenburg’s property wealth since FY2019, against a state median far below it',
+            so_what='The town’s required share is worked out from wealth, not from how many children it has.',
+            lede='What the state requires Lunenburg to pay towards its own schools is '
+                  'worked out from property values and residents’ incomes, and has no '
+                  'pupil count in it at all — that holds in all %s published years.' % C.num(len(years)),
+            detail='Lunenburg’s equalized valuation rose %s between %s and %s, against a '
+                   'median of %s across the %s municipalities in DESE’s own table — rank '
+                   '%s, fastest first. Its combined effort yield, the sum of the two '
+                   'efforts, rose %s against a median of %s. This is why fewer children '
+                   'does not mean a smaller bill: the formula reads what the town is '
+                   'worth, not how many pupils it has. Foundation enrollment fell across '
+                   'those same years and the requirement rose %s.'
+                   % (C.pct(eqv_growth_pct), C.fy(wealth['fy_from']),
+                      C.fy(wealth['fy_to']), C.pct(eqv_median_pct),
+                      C.num(wealth['municipalities']), C.num(wealth['eqv_rank']),
+                      C.pct(cey_growth_pct), C.pct(cey_median_pct),
+                      C.usd(since['required_change'])),
+            figures=dict(
+                years=figure(len(years), C.num(len(years))),
+                eqv_growth=figure(eqv_growth_pct, C.pct(eqv_growth_pct)),
+                fy_from=figure(wealth['fy_from'], C.fy(wealth['fy_from'])),
+                fy_to=figure(wealth['fy_to'], C.fy(wealth['fy_to'])),
+                eqv_median=figure(eqv_median_pct, C.pct(eqv_median_pct)),
+                municipalities=figure(wealth['municipalities'],
+                                      C.num(wealth['municipalities'])),
+                eqv_rank=figure(wealth['eqv_rank'], C.num(wealth['eqv_rank'])),
+                cey_growth=figure(cey_growth_pct, C.pct(cey_growth_pct)),
+                cey_median=figure(cey_median_pct, C.pct(cey_median_pct)),
+                required_change=figure(since['required_change'],
+                                       C.usd(since['required_change']))),
+            figure='eqv_growth',
+            kind='measured',
+            basis='DESE’s `dataContribution` sheet: the target local contribution and the '
+                  'combined effort yield for Lunenburg in every published year, and '
+                  'equalized valuation and combined effort yield for every municipality '
+                  'the same sheet carries in both %s and %s.'
+                  % (C.fy(wealth['fy_from']), C.fy(wealth['fy_to'])),
+            not_shown='That the town’s wealth is its residents’ ability to pay. Equalized '
+                      'valuation is property value; DESE carries an income term beside '
+                      'it, and the combined effort yield grew more slowly than valuation '
+                      'did over the same years. Neither figure is a household budget.',
+            see=[('/monty-tech',
+                  'the other district this one required contribution is split with')],
+        ),
+    ])
+
     return {
+        'conclusions': conclusions,
         'about': 'Chapter 70 alone, term by term, out of DESE’s own workbook: what '
                  'the formula paid Lunenburg each year from FY%d to FY%d, and why the '
                  'last four increases are the Legislature’s flat floor rather than '

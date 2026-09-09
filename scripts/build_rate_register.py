@@ -90,6 +90,149 @@ BUS_ELIGIBILITY = [
 REVTRAK_CATALOGUE = ['Afterschool Activity Fee', 'Chromebook Repair Fee',
                      'Extended Day & ELC', 'Field Trips', 'LHS Parking Permit',
                      'Primary Preschool Program']
+# ---------------------------------------------------------------- THE HOUSEHOLD BILL
+# Every charge a Lunenburg family can meet that is NOT athletics and NOT the bus, with the
+# document that sets it. Each `quote` below is asserted verbatim against `source_file` on
+# every run, so a row here is a claim about a document rather than about our memory of one.
+#
+# THIS IS THE DATA-ENTRY POINT. When an amount arrives -- a fee schedule from the district,
+# a handbook, an answer to a records request -- fill in `value`, set `status` to the right
+# one of the five defined at the top of this file, and point `source_file` at the document.
+# Nothing else has to change: `build_what_families_pay.py` reads the register, so a row with
+# `value=''` renders as a named charge with no price and the same row renders as a priced
+# line the moment the value is filled in. Adding a charge nobody has named yet is the same
+# operation -- append a dict here.
+#
+# RULE 11 RUNS UNDER ALL OF IT. These are payments a HOUSEHOLD makes. They are not what the
+# thing costs, and a fee arriving does not reduce an appropriation one-for-one -- several of
+# these budget lines are already net of the fee.
+HOUSEHOLD = [
+    # THE STUDENT ACTIVITY FEE, VOTED. The February 2025 proposal was a base fee plus
+    # per-activity fees and it is NOT what passed: on 7 May 2025 the committee took a single
+    # universal rate instead. The amount is established by a motion that carried. The PERIOD
+    # and the BASE are not -- the minute says "$70" and does not say per what, so this row
+    # records the amount and `value_type` says the unit is not stated. Quoting the February
+    # proposal as the charged rate would be rule 13 exactly.
+    dict(fy=2026, category='activity_fee', unit='Student Activities',
+         item='student activity fee', value='70.00', value_type='dollars — period not stated',
+         set_on='2025-05-07',
+         source='School Committee minutes, 7 May 2025 — moved, seconded, all approve',
+         source_file=f'{SC}/2025-05-07-minutes-7207.txt',
+         quote='a universal increase from $55 to $70 Mr. Sculimbrene makes a motion to '
+               'approve the increase to $70, Mr. Beardmore seconds the motion, all approve',
+         source_ref='universal increase from $55 to $70',
+         status='verified'),
+    # The rate it replaced, so the change is readable as a change rather than as a level.
+    dict(fy=2025, category='activity_fee', unit='Student Activities',
+         item='student activity fee', value='55.00', value_type='dollars — period not stated',
+         set_on='2025-05-07',
+         source='School Committee minutes, 7 May 2025 — the rate the $70 replaced',
+         source_file=f'{SC}/2025-05-07-minutes-7207.txt',
+         quote='a universal increase from $55 to $70',
+         source_ref='from $55', status='recorded'),
+    # FY2027: nothing in this archive restates it. That is NOT the same as the fee having
+    # stopped -- it is charged, and the last rate anybody voted in public is the $70 above.
+    dict(fy=2027, category='activity_fee', unit='Student Activities',
+         item='student activity fee', value='', value_type='dollars',
+         set_on='',
+         source='Charged. No 2026-27 rate is restated anywhere in this archive; the last '
+                'rate set in public is the $70 voted 7 May 2025',
+         source_file='', quote=None, source_ref='', status='not_published'),
+
+    # SCHOOL MEALS. Massachusetts funds universal free school meals, and the district's own
+    # minutes record it choosing between the two programmes that deliver them. What that
+    # establishes is that the standard reimbursable meal is not billed to a family. It does
+    # NOT establish that a family spends nothing in the cafeteria -- a la carte items,
+    # snacks and second meals are outside both programmes and no price list for them is
+    # held here, which is a separate row below.
+    dict(fy=2026, category='meals', unit='School meals',
+         item='standard school meal', value='0.00', value_type='dollars per meal',
+         set_on='2024-06-26',
+         source='School Committee minutes, 26 June 2024 — CEP approved at Turkey Hill, '
+                'against the Universal Meals Program elsewhere',
+         source_file=f'{SC}/2024-06-26-minutes-6632.txt',
+         quote='Our students would not see any difference',
+         source_ref='CEP vs Universal Meal Program', status='recorded'),
+    dict(fy=2027, category='meals', unit='School meals',
+         item='standard school meal', value='0.00', value_type='dollars per meal',
+         set_on='2025-04-16',
+         source='School Committee minutes, 16 April 2025 — the state budget sustaining '
+                'universal free school meals',
+         source_file=f'{SC}/2025-04-16-minutes-7171.txt',
+         quote='sustain funding for universal free school meals',
+         source_ref='universal free school meals', status='recorded'),
+    dict(fy='', category='meals', unit='School meals',
+         item='a la carte and second meals', value='', value_type='dollars',
+         set_on='',
+         source='Outside the universal meal programmes. No price list is held here',
+         source_file='', quote=None, source_ref='', status='not_published'),
+
+    # THE PARKING PERMIT. A resident states the amount, in public comment, in a meeting the
+    # town minuted. That is a figure from a document we hold -- and it is a RESIDENT saying
+    # what they paid, not a schedule the district published, so it is `reported` rather than
+    # `verified` and the page says which. The portal sells "LHS Parking Permit" and prints
+    # no amount, which is the row this one stands beside rather than replaces.
+    dict(fy=2025, category='other_fee', unit='Lunenburg High School',
+         item='parking permit, as stated by a resident in public comment', value='50.00',
+         value_type='dollars — period not stated', set_on='2025-03-12',
+         source='School Committee minutes, 12 March 2025 — public comment, not a schedule',
+         source_file=f'{SC}/2025-03-12-minutes-7098.txt',
+         quote='I mean the $50 parking fee',
+         source_ref='the $50 parking fee', status='reported'),
+
+    # MUSIC. Established as a real household cost by a resident in the room where the
+    # athletic fees were voted, and established as nothing else: the sum named is a
+    # consumable bought from a shop, not a fee the district charges. There is no district
+    # music fee in this archive, and no instrument rental rate.
+    dict(fy='', category='other_fee', unit='Music', item='instruments, reeds and supplies',
+         value='', value_type='dollars', set_on='2025-02-26',
+         source='School Committee minutes, 26 February 2025 — public comment. Named as a '
+                'real cost to families and paid to shops rather than to the district',
+         source_file=f'{SC}/2025-02-26-minutes-7076.txt',
+         quote='Instruments cost a lot, you need reeds and that can cost $50 a semester.',
+         source_ref='reeds and that can cost $50 a semester', status='not_published'),
+
+    # THE PROCESSING FEE. The Superintendent's own email says it exists and does not say
+    # what it is. A family paying online pays it on top of every fee above.
+    dict(fy=2027, category='other_fee', unit='RevTrak payment portal',
+         item='online payment processing fee', value='', value_type='dollars',
+         set_on='2026-08-17',
+         source="Superintendent's email, 17 August 2026",
+         source_file=EMAIL27,
+         quote='RevTrak charges a small processing fee',
+         source_ref='RevTrak charges a small processing fee', status='not_published'),
+]
+
+
+def household_rows():
+    """The non-athletic household charges, each checked against the document it cites."""
+    out = []
+    for spec in HOUSEHOLD:
+        r = dict(spec)
+        quote = r.pop('quote')
+        if quote is not None:
+            # `source_file` is the PUBLISHED address (/docs/minutes/...), which is not
+            # where the bytes are: the meetings mirror lives under sources/meetings/.
+            rel = r['source_file']
+            if rel.startswith('minutes/'):
+                rel = 'meetings/' + rel[len('minutes/'):]
+            path = os.path.join(ROOT, 'sources', rel)
+            if not os.path.exists(path):
+                sys.exit(f'household charge cites a document not on disk: {r["source_file"]}')
+            hay = re.sub(r'\s+', ' ',
+                         open(path, encoding='utf-8', errors='replace').read())
+            hay = hay.replace('\u2019', "'").replace('\u2018', "'")
+            if re.sub(r'\s+', ' ', quote).replace('\u2019', "'") not in hay:
+                sys.exit(f'household charge quote not found in {r["source_file"]}: {quote!r}')
+        r.setdefault('expires', '')
+        r.setdefault('in_model', 'no')
+        out.append(r)
+    if len([r for r in out if r['status'] == 'not_published']) < 3:
+        sys.exit('household charges: fewer than three carry no published amount, which is '
+                 'the whole basis on which /what-families-pay calls its total a floor')
+    return out
+
+
 DECISIONS = [
     dict(fy=2026, category='bus_fee', unit='Transportation, to school',
          item='policy adopted', value='', value_type='note', set_on='2025-05-21', expires='',
@@ -231,7 +374,7 @@ def fee_rows():
 
 
 def main():
-    rows = fee_rows() + bus_rows() + contract_rows() + DECISIONS
+    rows = fee_rows() + bus_rows() + contract_rows() + household_rows() + DECISIONS
     rows.sort(key=lambda r: (r['category'], str(r['fy']), r['unit'], r['item']))
 
     with open(OUT, 'w', newline='') as fh:

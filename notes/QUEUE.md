@@ -441,7 +441,7 @@ FTE, and administrators 28 to 38 on a base of ten people over three years.
 ## 9. Chapter 70, modelled exactly
 
 34 years of every formula term, FY1993-FY2026, and FY2026 aid reconciles to the figure
-derived independently for `/state-aid`. Foundation enrolment, foundation budget, required
+derived independently for `/state-aid`. Foundation enrollment, foundation budget, required
 local contribution, aid, required and actual NSS — plus `keyfactors.xlsx` holding the
 INPUTS (English learner, vocational and low-income shares).
 
@@ -637,7 +637,7 @@ Set 8 September 2026. Recorded for later — the data is in hand.
     2026           1,553           97          1,730       5.6%
 
 Flat around 4% through FY2019, then up every single year since. 70 -> 97 in headcount,
-+39%, while Lunenburg's own enrolment fell. And the Class of 2030 lottery admitted **24
++39%, while Lunenburg's own enrollment fell. And the Class of 2030 lottery admitted **24
 Lunenburg students against 365 places, 6.6% of the incoming class** — larger than the
 current four-year average, so the climb looks set to continue.
 

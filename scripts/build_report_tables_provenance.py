@@ -32,8 +32,8 @@ WHAT = {
     'elections': 'the vote, by candidate or question, by precinct',
     'officials': 'who held which town office, and until when',
     'dept-activity': 'counts a department reports of what it did that year',
-    'enrollment-mcas': 'enrolment by school and MCAS results',
-    'monty-tech': 'the Montachusett Regional Vocational Technical assessment and enrolment',
+    'enrollment-mcas': 'enrollment by school and MCAS results',
+    'monty-tech': 'the Montachusett Regional Vocational Technical assessment and enrollment',
     'gross-wages': 'the gross wage paid to every town employee',
     'vital-records': 'births, marriages and deaths recorded by the Town Clerk',
 }

@@ -38,13 +38,13 @@ subtraction, from two columns of one DESE workbook that this project already hol
 That is a derivation and it is treated as one. It is checked at four separate points
 against figures the district's own business director gave the Finance Committee in three
 different years -- FY2023 $1,012,282, FY2024 $1,127,113, FY2026 $1,270,711, and the
-foundation enrolment moving 83 to 94 -- and the generator refuses to write if any of those
+foundation enrollment moving 83 to 94 -- and the generator refuses to write if any of those
 four stops matching to the dollar.
 
 THE APPORTIONMENT RULE IS MEASURED, NOT DESCRIBED. Two things fall straight out of the
 same workbook and both are asserted here rather than asserted in prose:
 
-1.  The town's TOTAL required contribution is set by WEALTH, not by enrolment.
+1.  The town's TOTAL required contribution is set by WEALTH, not by enrollment.
     `target_local_contribution` equals `combined_effort_yield` in every year here -- the
     82.5%-of-foundation cap never binds -- so the town-wide obligation is a function of
     property value and resident income and of nothing about where children go to school.
@@ -52,7 +52,7 @@ same workbook and both are asserted here rather than asserted in prose:
     share of the town's foundation budget. Checked to a tenth of a basis point; it holds
     in 19 of the 20 years published, and the one year it does not is named.
 
-So the assessment is not apportioned among member towns by their enrolment share, which is
+So the assessment is not apportioned among member towns by their enrollment share, which is
 what "regional assessment" leads a reader to assume. It is Chapter 70's minimum required
 local contribution, computed for the town as a whole and divided by foundation budget.
 
@@ -78,6 +78,11 @@ import os
 import re
 import sqlite3
 import sys
+
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
@@ -112,7 +117,7 @@ CORROBORATION = [
     dict(fy=2023, field='mt_fe', value=94,
          board='finance-committee', date='2022-03-23', doc='2056',
          who='the Monty Tech Business Director, to the Finance Committee',
-         what='Lunenburg’s FY2023 foundation enrolment at Monty Tech'),
+         what='Lunenburg’s FY2023 foundation enrollment at Monty Tech'),
     dict(fy=2024, field='mt_rlc', value=1127113,
          board='finance-committee', date='2023-03-22', doc='92',
          who='the Monty Tech Business Director, to the Finance Committee',
@@ -308,7 +313,7 @@ FIGURES = [
          text='town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt',
          title='FY27 Monty Tech Budget Presentation',
          what='DESE’s apportionment sheet for the district itself — every one of the '
-              'eighteen member towns, its foundation enrolment at Monty Tech and its '
+              'eighteen member towns, its foundation enrollment at Monty Tech and its '
               'required minimum contribution, for FY2026 and FY2027.',
          basis='DESE’s Chapter 70 calculation, reprinted inside the district’s budget '
                'book.',
@@ -371,7 +376,7 @@ FIGURES = [
          title='FY2017 Annual Town Report, printed page 146',
          what='The district’s own statement of how it apportions an assessment, printed '
               'inside Lunenburg’s annual town report: four parts, with transportation '
-              'and other operating divided by each town’s 1 October enrolment share and '
+              'and other operating divided by each town’s 1 October enrollment share and '
               'capital divided by its school-attending children in grades 1 to 12.',
          basis='the district’s own description of its method, reprinted by the Town. It '
                'is a statement of practice, not the regional agreement that binds it.',
@@ -425,7 +430,7 @@ CITES_GAPS = [
     'Why the district and the town state different FY2027 Monty Tech assessments',
     'How the Montachusett regional agreement apportions costs among its member towns',
     'How many Lunenburg applicants Monty Tech turns away',
-    'Why DESE’s foundation enrolment for Lunenburg at Monty Tech differs from its own '
+    'Why DESE’s foundation enrollment for Lunenburg at Monty Tech differs from its own '
     'October headcount',
 ]
 
@@ -433,7 +438,7 @@ DOCS = [
     dict(key='state-dese/dese-ch70-key-factors.xlsx',
          what='DESE’s Chapter 70 key factors — the municipal contribution sheet (income, '
               'property, combined effort yield, required local contribution, by town) '
-              'and the district aid sheet (foundation enrolment, foundation budget, '
+              'and the district aid sheet (foundation enrollment, foundation budget, '
               'required local contribution, Chapter 70 aid, by district). Every '
               'established figure on this page is a subtraction between those two '
               'sheets.',
@@ -447,7 +452,7 @@ DOCS = [
          publisher='Massachusetts Department of Elementary and Secondary Education '
                    '(extracted by this project)',
          stage='reported as of 1 October each year. A headcount, not a foundation '
-               'enrolment — the two are different counts and this page keeps them '
+               'enrollment — the two are different counts and this page keeps them '
                'apart.'),
     dict(key='town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx',
          what='The Town’s MUNIS year-to-date budget report for the general fund, FY2026 '
@@ -572,7 +577,7 @@ def assert_printed_apportionment(req, fig):
 
     This is the strongest check on the page. Everything else derives Lunenburg's Monty
     Tech share by subtracting one column of a state workbook from another. Here the split
-    is PRINTED -- enrolment, foundation budget, share and required contribution, for both
+    is PRINTED -- enrollment, foundation budget, share and required contribution, for both
     districts and the town -- and it must agree with the subtraction to the dollar."""
     printed = fig['dese-apportionment']['values']
     row = next((r for r in req if r['fy'] == 2026), None)
@@ -821,15 +826,15 @@ def apportionment(req):
 
 
 def wealth(req):
-    """THE TOWN TOTAL IS SET BY WEALTH, not by enrolment -- asserted, not assumed.
+    """THE TOWN TOTAL IS SET BY WEALTH, not by enrollment -- asserted, not assumed.
 
     DESE takes the lower of the town's combined effort yield (property value and resident
-    income) and 82.5% of its foundation budget. If the cap ever binds, enrolment starts
+    income) and 82.5% of its foundation budget. If the cap ever binds, enrollment starts
     entering the town's total and the page's central sentence stops being true."""
     bound = [r['fy'] for r in req if r['wealth_bound']]
     if len(bound) != len(req):
         fail('the 82.5%%-of-foundation cap binds in %s. The page says the town’s total '
-             'obligation is set by wealth rather than by enrolment, and in those years '
+             'obligation is set by wealth rather than by enrollment, and in those years '
              'it is not.' % [r['fy'] for r in req if not r['wealth_bound']])
     return dict(years=len(req), wealth_bound_years=len(bound),
                 cap_pct=0.825,
@@ -969,7 +974,7 @@ def students(db):
         fail('no Lunenburg rows in dese_town_enrollment.')
     years = sorted({r['fy'] for r in rows})
     if len(years) < MIN_STUDENT_YEARS:
-        fail('only %d years of resident enrolment.' % len(years))
+        fail('only %d years of resident enrollment.' % len(years))
 
     names = {r['district'] for r in rows if r['lea'] == MT_LEA}
     if not names:
@@ -997,7 +1002,7 @@ def counts(req, stu):
     """THE TWO STUDENT COUNTS, side by side and never merged.
 
     DESE publishes a 1 October headcount of Lunenburg residents at Monty Tech, and a
-    FOUNDATION enrolment used by the Chapter 70 formula. They are different numbers for
+    FOUNDATION enrollment used by the Chapter 70 formula. They are different numbers for
     the same year, and the difference is not noise: the district told the Finance
     Committee in 2022 that Lunenburg students attending trade programmes at other
     districts become part of the Monty Tech assessment."""
@@ -1011,7 +1016,7 @@ def counts(req, stu):
                         foundation=r['mt_fe'],
                         difference=round(r['mt_fe'] - s['monty_tech'], 2)))
     if not out:
-        fail('the foundation enrolment and the headcount share no year. The page prints '
+        fail('the foundation enrollment and the headcount share no year. The page prints '
              'them beside each other.')
     return out
 
@@ -1229,6 +1234,12 @@ def build():
     if prev_stu:
         headline['students_prev'] = prev_stu[0]['monty_tech']
 
+    # The year the Select Board's five-year projection started from, so the conclusion
+    # about that projection can compare the two things that actually moved over its span
+    # -- the town-wide requirement and Monty Tech's share of it -- rather than describe
+    # them. Neither is a price, and that is the point of the conclusion.
+    fc_base = next(r for r in req if r['fy'] == fc['base_fy'])
+
     return {
         'about': 'What Lunenburg is assessed for Montachusett Regional Vocational '
                  'Technical, what sets that figure, and what neither the town nor the '
@@ -1236,6 +1247,164 @@ def build():
         'ledger_fy': LEDGER_FY,
         'first_fy': first['fy'], 'last_fy': last['fy'],
         'headline': headline,
+        # WHAT A RESIDENT SHOULD TAKE AWAY, computed here rather than written on the
+        # page. The argument in this town is about vocational enrollment rising and the
+        # assessment rising with it; these say what that money actually is. Rule 8: what
+        # it means for planning, never what anybody got wrong -- and the eleven
+        # annual-report rows that fail their own reconciliation are a footnote about a
+        # DOCUMENT, so they are in `not_established` and not here.
+        'conclusions': emit('monty-tech', [
+            conclusion(
+                id='a-child-moving-there-moves-the-bill',
+                claim='The single amount the state requires Lunenburg to pay for schools, split between two districts',
+                so_what='A child moving to Monty Tech does not add to the town’s bill. It moves part of it.',
+                lede='A Lunenburg child enrolling at Monty Tech does not add to what the '
+                      'town has to raise for schools. It moves part of it: the state sets '
+                      'ONE required contribution for the whole town and splits it between '
+                      'the town\u2019s two districts.',
+                detail='In %s that single town-wide requirement was %s, of which Monty '
+                       'Tech\u2019s share was %s and Lunenburg Public Schools\u2019 %s. '
+                       'The town-wide total is the lesser of what the state calculates '
+                       'from Lunenburg\u2019s property values and resident income and a '
+                       'cap on the local share of its foundation budget \u2014 and the '
+                       'wealth figure is the binding one in all %s years DESE publishes, '
+                       'so enrollment never enters it. The split is each district\u2019s '
+                       'share of the town\u2019s foundation budget, and that identity '
+                       'holds to a tenth of a basis point in %s of those years.'
+                       % (C.fy(last['fy']), C.usd(last['town_rlc']), C.usd(last['mt_rlc']),
+                          C.usd(last['lps_rlc']), C.num(wea['years']),
+                          C.num(app['exact'])),
+                figures={
+                    'fy': figure(last['fy'], C.fy(last['fy'])),
+                    'town_required': figure(last['town_rlc'], C.usd(last['town_rlc'])),
+                    'monty_tech': figure(last['mt_rlc'], C.usd(last['mt_rlc'])),
+                    'lunenburg_schools': figure(last['lps_rlc'], C.usd(last['lps_rlc'])),
+                    'years': figure(wea['years'], C.num(wea['years'])),
+                    'identity_years': figure(app['exact'], C.num(app['exact'])),
+                },
+                figure='town_required',
+                kind='measured',
+                basis='DESE\u2019s Chapter 70 key factors workbook, %s to %s: the '
+                      'municipal contribution sheet for Lunenburg minus the district aid '
+                      'sheet for Lunenburg Public Schools, year by year. Checked against '
+                      'DESE\u2019s own apportionment sheet as Monty Tech reprinted it in '
+                      'its FY2027 budget presentation, and against three figures the '
+                      'district\u2019s business director gave the Finance Committee in '
+                      'three different years.'
+                      % (C.fy(first['fy']), C.fy(last['fy'])),
+                not_shown='That the town is therefore indifferent to where a child '
+                          'enrolls. The state sets a larger foundation budget for a '
+                          'vocational pupil than for one in the town\u2019s own schools, '
+                          'so a move shifts more than a proportionate slice of the bill; '
+                          'the assessment also carries transportation and capital above '
+                          'the state minimum, which the district apportions by enrollment '
+                          'and not by foundation budget; and nothing here says what '
+                          'Lunenburg\u2019s own schools stop spending when a child '
+                          'leaves.',
+                allow=('70',),
+                see=[('/what-the-state-requires-us-to-spend',
+                      'what the state requires the town to spend'),
+                     ('/if-students-leave', 'what happens when students leave')],
+            ),
+            conclusion(
+                id='the-assessment-is-a-bill-not-a-cost',
+                claim='Billed to Lunenburg for Monty Tech, which is not what a place there costs',
+                so_what='State aid paid straight to the school covers most of its budget, and none of that is in this bill.',
+                lede='What Lunenburg is billed for Monty Tech is not what a Monty Tech '
+                      'place costs. The town\u2019s %s is %s of the district\u2019s '
+                      'budget while Lunenburg\u2019s children are %s of its foundation '
+                      'enrollment.'
+                      % (C.usd(d26['lunenburg']), C.pct(d26['lunenburg_of_budget'] * 100),
+                         C.pct(d26['lunenburg_fe_share'] * 100)),
+                detail='Monty Tech\u2019s %s budget is %s. Chapter 70 aid paid straight '
+                       'to the district covers %s of it, and assessments on all eighteen '
+                       'member towns together cover %s; the rest is the district\u2019s '
+                       'own receipts, and none of that appears in Lunenburg\u2019s bill. '
+                       'So this line measures what the town raises, and it can move in a '
+                       'year when nothing at the school costs any more or any less.'
+                       % (C.fy(d26['fy']), C.usd(d26['budget']),
+                          C.pct(d26['ch70_share'] * 100),
+                          C.pct(d26['assessment_share'] * 100)),
+                figures={
+                    'fy': figure(d26['fy'], C.fy(d26['fy'])),
+                    'bill': figure(d26['lunenburg'], C.usd(d26['lunenburg'])),
+                    'of_budget': figure(d26['lunenburg_of_budget'] * 100,
+                                        C.pct(d26['lunenburg_of_budget'] * 100)),
+                    'of_enrollment': figure(d26['lunenburg_fe_share'] * 100,
+                                            C.pct(d26['lunenburg_fe_share'] * 100)),
+                    'district_budget': figure(d26['budget'], C.usd(d26['budget'])),
+                    'ch70_share': figure(d26['ch70_share'] * 100,
+                                         C.pct(d26['ch70_share'] * 100)),
+                    'assessment_share': figure(d26['assessment_share'] * 100,
+                                               C.pct(d26['assessment_share'] * 100)),
+                },
+                figure='bill',
+                kind='measured',
+                basis='the district\u2019s own FY2027 budget presentation \u2014 its '
+                      '\u201cFY 2027 Budget Summary\u201d page for the budget, the '
+                      'Chapter 70 estimate and the total assessed on all eighteen towns, '
+                      'and its member-town apportionment sheet for Lunenburg\u2019s own '
+                      'line. The town\u2019s side is its MUNIS year-to-date budget '
+                      'report, general fund, which carries the same total to the cent.',
+                not_shown='What a Lunenburg place at Monty Tech costs. This archive holds '
+                          'two of the district\u2019s budget books and no series, no '
+                          'all-funds report after a year closed, and nothing that '
+                          'attributes any of the district\u2019s spending to one member '
+                          'town\u2019s children. The bill can be tracked; the cost '
+                          'cannot.',
+                allow=('70', '2027'),
+                see=[('/state-aid', 'how state aid is set'),
+                     ('/what-we-cannot-answer', 'what nobody publishes')],
+            ),
+            conclusion(
+                id='not-an-escalator',
+                claim='The actual Monty Tech bill, against a forecast that carried it forward at an inflation rate',
+                so_what='This is set by a state formula, not by a price, so it cannot be planned like an ordinary cost.',
+                lede='This line cannot be planned as an ordinary cost escalator. Carried '
+                      'forward at %s a year it reached %s for %s, and the assessment came '
+                      'in at %s.'
+                      % (C.pct(fc['rate'] * 100), C.usd(fc['projected']),
+                         C.fy(fc['actual_fy']), C.usd(fc['actual'])),
+                detail='Over the same span the state-required minimum inside the '
+                       'assessment compounded at %s a year, and Monty Tech\u2019s share '
+                       'of the town\u2019s foundation budget \u2014 the fraction that '
+                       'decides how much of one town-wide requirement lands here \u2014 '
+                       'went from %s to %s. Neither of those is a price, and neither is '
+                       'inside an inflation assumption. A town that wants this line '
+                       'forecast has to forecast the Chapter 70 formula and the split, '
+                       'which is a different exercise and a harder one.'
+                       % (C.pct(fc['required_cagr'] * 100),
+                          C.pct(fc_base['fb_share'] * 100),
+                          C.pct(last['fb_share'] * 100)),
+                figures={
+                    'rate': figure(fc['rate'] * 100, C.pct(fc['rate'] * 100)),
+                    'projected': figure(fc['projected'], C.usd(fc['projected'])),
+                    'fy': figure(fc['actual_fy'], C.fy(fc['actual_fy'])),
+                    'actual': figure(fc['actual'], C.usd(fc['actual'])),
+                    'required_cagr': figure(fc['required_cagr'] * 100,
+                                            C.pct(fc['required_cagr'] * 100)),
+                    'share_from': figure(fc_base['fb_share'] * 100,
+                                         C.pct(fc_base['fb_share'] * 100)),
+                    'share_to': figure(last['fb_share'] * 100,
+                                       C.pct(last['fb_share'] * 100)),
+                },
+                figure='actual',
+                kind='measured',
+                basis='the five-year forecast of this line printed in a Select Board '
+                      'packet in January 2021, read as a series out of the minutes, '
+                      'against the town\u2019s MUNIS ledger for the last year of it and '
+                      'against the DESE-derived required-contribution series for the '
+                      'same span.',
+                not_shown='Why the projection was built that way, or that any other rate '
+                          'would have been better. It is one packet, it states a series '
+                          'and no method, and nothing here establishes what was assumed. '
+                          'What is established is that the quantity being projected is '
+                          'set by a state formula rather than by a price.',
+                allow=('70', '2021'),
+                see=[('/rate-register', 'every rate this project uses, and its source'),
+                     ('/why-we-only-get-minimum-aid', 'why the formula lands where it does')],
+            ),
+        ]),
         'required': req,
         'apportionment': app,
         'wealth': wea,
@@ -1283,7 +1452,7 @@ def build():
             'here separates demand from capacity, and the district told the Finance '
             'Committee in February 2026 that it did not know how many Lunenburg '
             'students had been turned away.',
-            'Why DESE’s foundation enrolment and DESE’s own October headcount of '
+            'Why DESE’s foundation enrollment and DESE’s own October headcount of '
             'Lunenburg residents at Monty Tech disagree in every year, by between '
             'eight below and fifteen above. Both are published; nothing reconciles '
             'them, so every per-student figure on this page names its denominator.',
@@ -1341,7 +1510,7 @@ def main():
     print('  apportionment identity holds in %d of %d years (worst miss FY%s, %s pp)'
           % (A['exact'], A['years'], A['worst_fy'], A['worst_gap_pp']))
     W = data['wealth']
-    print('  town total wealth-bound in %d of %d years — enrolment does not enter it'
+    print('  town total wealth-bound in %d of %d years — enrollment does not enter it'
           % (W['wealth_bound_years'], W['years']))
     C = data['candidates_meta']
     print('  %d annual-report candidates FY%d–FY%d, every one above the state minimum '
@@ -1370,7 +1539,7 @@ def main():
              format(round(M['fy27_town']), ','), M['fy27_gap']))
     D = data['district'][0]
     print('  rule 11: district budget $%s, Chapter 70 %.1f%%, all 18 assessments %.1f%%; '
-          'Lunenburg %.2f%% of the budget and %.2f%% of the foundation enrolment'
+          'Lunenburg %.2f%% of the budget and %.2f%% of the foundation enrollment'
           % (format(round(D['budget']), ','), D['ch70_share'] * 100,
              D['assessment_share'] * 100, D['lunenburg_of_budget'] * 100,
              D['lunenburg_fe_share'] * 100))

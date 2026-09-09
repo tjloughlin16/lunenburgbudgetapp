@@ -8,19 +8,51 @@
 
 ## What this establishes
 
-**1. Lunenburg is in the bottom quarter of Massachusetts districts by total per-pupil
+**1. 145 of the 177 Lunenburg children educated outside Lunenburg Public Schools go to
+districts that spend more for each pupil than Lunenburg does — 12.0% more at Leominster, and 43.3% more
+at Montachusett Regional Vocational Technical.** In FY2025 the widest is $25,827 a pupil against Lunenburg's $18,027 — $7,800 more, which is
+43.3% — and 54.8% of the leavers go there. The size of it depends enormously on which district:
+$720 more at Francis W. Parker Charter Essential (District), $1,900 at Sizer School: A North Central Charter Essential (District), $2,155 at Leominster, $4,687 at Fitchburg, and $7,800 at Montachusett Regional Vocational Technical. The exception is the two
+Commonwealth virtual districts, 16 children between them, at $11,230 and $13,037.
+
+| district | what it is | children, FY2026 | spent per pupil, FY2025 | difference | |
+|---|---|---:|---:|---:|---:|
+| Montachusett Regional Vocational Technical | regional vocational technical | 97 | $25,827 | +$7,800 | +43.3% |
+| Fitchburg | K-12 district | 8 | $22,714 | +$4,687 | +26.0% |
+| Leominster | K-12 district | 18 | $20,182 | +$2,155 | +12.0% |
+| Sizer School: A North Central Charter Essential (District) | charter | 7 | $19,927 | +$1,900 | +10.5% |
+| Francis W. Parker Charter Essential (District) | charter | 15 | $18,747 | +$720 | +4.0% |
+| Greater Commonwealth Virtual District | Commonwealth virtual | 8 | $13,037 | −$4,990 | −27.7% |
+| TEC Connections Academy Commonwealth Virtual School District | Commonwealth virtual | 8 | $11,230 | −$6,797 | −37.7% |
+| Lunenburg | its own schools | 1,553 | $18,027 | — | — |
+
+The set is every district that took 5 or more Lunenburg children in FY2026, derived from
+DESE's residents-sending and enrolment-receiving files rather than chosen; a further 16
+children went to 9 other districts in ones and twos. A regional vocational, charter or
+Commonwealth virtual district is funded and shaped differently from a K–12 municipal
+school, so $20,182 at Leominster, $2,155 more, is the nearest like-for-like comparison, and 4.0% to 43.3% is the
+range to carry rather than any one figure in it. **These are destinations, not peers** —
+where children actually went, which is a different question from which districts resemble
+Lunenburg, and the two sets are kept apart everywhere here.
+
+**And nothing in this section is a foundation budget.** A *foundation budget per pupil* is
+a Chapter 70 formula output — the state's model of what an adequate education costs — and
+it is thousands of dollars away from what the same district spends in the same year. Every
+figure above is spending, all funds, reported after the year closed.
+
+**2. Lunenburg is in the bottom quarter of Massachusetts districts by total per-pupil
 spending, and it has been in every one of the seventeen years the state publishes.** In
 FY2025 the figure is **$18,027**. The statewide median is **$23,520**, and Lunenburg sits
 **$5,493** below it. Of the 318 districts with a published figure, Lunenburg ranks
 **310** — **8** districts spend less.
 
-**2. Against five neighbouring districts it has never been higher than fifth of six.**
+**3. Against five neighbouring districts it has never been higher than fifth of six.**
 FY2025 puts it sixth, at $18,027 against $18,142 for Ashburnham-Westminster — a
 difference of $115, which is 0.6%. Over the seventeen years its rank in that set is fifth
 or sixth and nothing else. The word "last" is doing less work than it looks like it is
 doing; the durable fact is the *quarter*, not the position.
 
-**3. Most of the spread between these six districts is the denominator, not the money.**
+**4. Most of the spread between these six districts is the denominator, not the money.**
 From FY2012 to FY2025 every one of the six increased spending within a narrow band —
 **43.8%** at the bottom (North Middlesex) to **59.0%** at the top (Groton-Dunstable).
 Lunenburg's was **48.7%**, in the middle of that band. What separates them is pupils:
@@ -29,7 +61,7 @@ North Middlesex lost **23.5%** of its FTE pupils over the same span, Groton-Duns
 halves move. **Give FY2025's money to each district's FY2012 pupil count and Lunenburg is
 $17,025, fifth of six, and North Middlesex — currently third — is last at $16,474.**
 
-**4. The gap is not spread evenly across the budget. It is concentrated in six
+**5. The gap is not spread evenly across the budget. It is concentrated in six
 categories.** Lunenburg's in-district spending is **$17,785** a pupil against **$19,888**
 for the median district in the set, Ayer Shirley — a gap of **$2,103** a pupil, or
 **$3,299,397** across 1,568.9 in-district FTE pupils. Decomposed exactly across DESE's
@@ -38,7 +70,7 @@ Leadership **−$415**, Operations and Maintenance **−$235**, Instructional Ma
 Equipment and Technology **−$205**, Professional Development **−$154** — with Other
 Teaching Services running **+$158** in the other direction.
 
-**5. Against the whole state the two smallest lines are the extreme ones.** Professional
+**6. Against the whole state the two smallest lines are the extreme ones.** Professional
 development is **$48** a pupil against a statewide median of **$172** — **27.9%** of it,
 and only **25** of 317 districts spend less. Instructional materials, equipment and
 technology is **$226** against a median of **$626** — **36.1%**, with **13** districts
@@ -48,19 +80,19 @@ publishes a per-pupil figure for. The exception is **Other Teaching Services**, 
 162 of 317. That is the paraprofessional, tutor, substitute and instructional-support
 line, and it is the one place Lunenburg's spending is ordinary.
 
-**6. Lunenburg pays near the top of this set for teachers and employs the fewest of them
+**7. Lunenburg pays near the top of this set for teachers and employs the fewest of them
 per pupil.** Average teacher salary **$97,233**, second of six behind Harvard's $99,136.
 Teachers per 100 in-district FTE pupils **6.70**, last of six, against **7.41** to
 **8.55**. The two multiply to the per-pupil Teachers figure — but that is DESE's own
 construction rather than a discovery, and the section below says so plainly.
 
-**7. A tenth of what DESE counts as Lunenburg's school spending is not general-fund
+**8. A tenth of what DESE counts as Lunenburg's school spending is not general-fund
 money, and that is the smallest share in the set.** Of **$30,031,242** in FY2025,
 **$3,044,898** — **10.1%** — came from grants and revolving funds. Harvard's share is
 24.0%. This matters for reading everything above: none of these totals is the town's
 appropriation.
 
-**8. The two Chapter 70 standings that look like a contradiction are not one.** In FY2026
+**9. The two Chapter 70 standings that look like a contradiction are not one.** In FY2026
 the state requires Lunenburg to fund **60.4%** of its foundation budget against a median
 district's **74.1%**, and the town and state together put in **1.2004×** the minimum
 against a median of **1.3119×**. Both are "less", from different starting points. The
@@ -130,7 +162,7 @@ cross-district comparison in this document therefore starts at FY2012.
 The identity is exact: (1 + spending growth) ÷ (1 + pupil growth) = (1 + per-pupil growth),
 checked for every district by the verifier. The last column is the same arithmetic run
 once more — FY2025's dollars over FY2012's pupils — and it is arithmetic, not a claim
-about what would have happened had enrolment held.
+about what would have happened had enrollment held.
 
 ### The gap, by category, FY2025
 
@@ -334,10 +366,10 @@ a comparison of years that have already closed, and every district in it has sin
 Quoting it as though it described the year being voted is the easiest mistake to make with
 it.
 
-**Enrolment moves this number as hard as money does, and it moves on its own.** 22.2% of
+**Enrollment moves this number as hard as money does, and it moves on its own.** 22.2% of
 the rise in Lunenburg's own per-pupil figure since FY2009 is the denominator. A district
 that loses pupils without cutting proportionally climbs this table without deciding
-anything; a district that holds its enrolment falls down it while spending more every
+anything; a district that holds its enrollment falls down it while spending more every
 year. A plan built on the ratio rather than on the two halves is planning against an
 artefact.
 
@@ -407,7 +439,7 @@ All four are rows in `sources/data/money-gaps.csv` and render at
 | Document | Publisher | What it is |
 |---|---|---|
 | `district-expenditures-by-function.xlsx` | Massachusetts DESE | Every district's spending by function, all funds, with DESE's own per-pupil figure. Reported after the year closed — not a budget. |
-| `district-comparison.xlsx` (RADAR) | Massachusetts DESE | Enrolment, demographics, staffing FTE, average teacher salary and MCAS for all 421 districts. |
+| `district-comparison.xlsx` (RADAR) | Massachusetts DESE | Enrollment, demographics, staffing FTE, average teacher salary and MCAS for all 421 districts. |
 | `dese-ch70-district-profile.xlsx` | Massachusetts DESE | Required local contribution, required net school spending, and what each district spends against it. The net school spending column carries a stage per year. |
 
 Every one is mirrored at `/docs/state-dese/<filename>` with its sha256 in

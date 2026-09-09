@@ -19,7 +19,7 @@ carried in separate arrays, labelled, and the generator refuses to emit a single
 series at all -- there is no field here that a caller could accidentally treat as one.
 
 WHY THE RANK MATTERS MORE THAN THE RATIO. The ratio moves when the REQUIREMENT moves, and
-the requirement is recomputed every year from enrolment and municipal wealth. The rank
+the requirement is recomputed every year from enrollment and municipal wealth. The rank
 against every other district in the same year removes that: it asks where Lunenburg sits
 among districts all facing the same formula in the same year.
 
@@ -34,6 +34,11 @@ import re
 import os
 import sqlite3
 import sys
+
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
@@ -118,6 +123,22 @@ GAP_KEYS = [
 
 def fail(msg):
     raise SystemExit(msg + ' Nothing written.')
+
+
+def and_list(items):
+    """`a, b and c`, built rather than typed, because the number of items is data."""
+    items = list(items)
+    if len(items) == 1:
+        return items[0]
+    return '%s and %s' % (', '.join(items[:-1]), items[-1])
+
+
+def ratio_text(x):
+    """A spending-to-requirement ratio, at the four decimal places DESE publishes it to.
+    Not a percentage: the page, the table and the town all say `times the requirement`,
+    and 1.2978 against a median of 1.2978 is a statement four decimals make and two
+    destroy."""
+    return '%.4f' % float(x)
 
 
 def document():
@@ -298,7 +319,197 @@ def build():
     at_or_above = [a for a in ranked if a['state_median'] and a['ratio'] >= a['state_median']]
 
     terms, minutes = searched()
+
+    # ---- THE CONCLUSIONS -------------------------------------------------------------
+    # Six quantities the payload does not otherwise carry, computed here beside the
+    # series so that no figure in a sentence is typed (rule 2):
+    #   * the REFERENCE year the recent fall is measured from -- the most recent year in
+    #     which Lunenburg landed on the state median exactly, which is where the position
+    #     turned. Found rather than named, so it moves when DESE republishes;
+    #   * how far the requirement and the spending each moved from that year, in dollars
+    #     and as percentages. These two are the whole of the second conclusion;
+    #   * the last year before the latest one that ranked as low, so "weakest since" is
+    #     computed rather than remembered;
+    #   * the narrowest year, and the years below the state's first quartile.
+    exact = [r for r in ranked
+             if r['state_median'] and abs(r['ratio'] - r['state_median']) < 5e-5]
+    if not exact:
+        raise SystemExit('no year in which Lunenburg landed on the state median. The '
+                         'second conclusion measures the recent fall from that year, and '
+                         'it cannot be named if it does not exist. Nothing written.')
+    base = exact[-1]
+    latest = ranked[-1]
+    span_years = latest['fy'] - base['fy']
+    req_growth_pct = 100 * (latest['required'] / base['required'] - 1)
+    spent_growth_pct = 100 * (latest['spent'] / base['spent'] - 1)
+    worse = [r for r in ranked[:-1] if r['rank'] >= latest['rank']]
+    if not worse:
+        raise SystemExit('no earlier year ranks as low as the latest one, so there is no '
+                         '"weakest since" to state. Nothing written.')
+    worst_since = worse[-1]
+    narrowest = min(ranked, key=lambda r: r['ratio'])
+    below_p25 = [r for r in ranked if r['p25'] and r['ratio'] < r['p25']]
+    if not below_p25:
+        raise SystemExit('no year below the state first quartile. The first conclusion '
+                         'counts them. Nothing written.')
+    median_gap_pct = 100 * latest['short_of_median'] / latest['spent']
+
+    conclusions = emit('what-the-state-requires-us-to-spend', [
+            # ORDER IS THE ARGUMENT. This led with '14 of 31 years at or above the
+            # state median', which is true, backward-looking and the least useful of
+            # the three. TJ: "this stat is NOT the important one for this data". The
+            # finding a reader needs first is WHY the position moved -- the requirement
+            # rose 25.2% while spending rose 11.9%, so the slide is the bar moving and
+            # not the town spending less. Then what closing it would cost. The history
+            # comes third: useful context, not the headline.
+        conclusion(
+            id='the-requirement-moved-faster-than-the-spending',
+            claim='Rise in the state minimum since FY2018, against a rise in spending of half that',
+            so_what='Lunenburg’s slide down the state ranking is mostly the bar moving, not the town spending less.',
+            lede='Lunenburg’s slide down the state ranking since %s is mostly the bar '
+                  'rising: the requirement went up %s over those years while what the '
+                  'town spent went up %s.'
+                  % (C.fy(base['fy']), C.pct(req_growth_pct), C.pct(spent_growth_pct)),
+            detail='Required net school spending rose %s and what the town spent rose %s '
+                   '— spending ends the period higher than it started and rose more '
+                   'slowly than the figure it is measured against. The rank went from %s '
+                   'of %s districts in %s to %s of %s in %s, the weakest position since '
+                   '%s. The requirement is recomputed every year from enrollment and '
+                   'municipal wealth, so a district can spend more each year and still '
+                   'fall. And a fall that took %s years is a different problem, with '
+                   'different remedies, from a condition that has held since the series '
+                   'began.'
+                   % (C.usd(latest['required'] - base['required']),
+                      C.usd(latest['spent'] - base['spent']),
+                      C.num(base['rank']), C.num(base['districts']), C.fy(base['fy']),
+                      C.num(latest['rank']), C.num(latest['districts']),
+                      C.fy(latest['fy']), C.fy(worst_since['fy']), C.num(span_years)),
+            figures=dict(
+                base_fy=figure(base['fy'], C.fy(base['fy'])),
+                required_pct=figure(req_growth_pct, C.pct(req_growth_pct)),
+                spent_pct=figure(spent_growth_pct, C.pct(spent_growth_pct)),
+                required_change=figure(latest['required'] - base['required'],
+                                       C.usd(latest['required'] - base['required'])),
+                spent_change=figure(latest['spent'] - base['spent'],
+                                    C.usd(latest['spent'] - base['spent'])),
+                base_rank=figure(base['rank'], C.num(base['rank'])),
+                base_districts=figure(base['districts'], C.num(base['districts'])),
+                rank=figure(latest['rank'], C.num(latest['rank'])),
+                districts=figure(latest['districts'], C.num(latest['districts'])),
+                fy=figure(latest['fy'], C.fy(latest['fy'])),
+                worst_since_fy=figure(worst_since['fy'], C.fy(worst_since['fy'])),
+                span=figure(span_years, C.num(span_years))),
+            figure='required_pct',
+            kind='measured',
+            basis='The same ACTUAL series, differenced between %s and %s, against '
+                  'DESE’s statewide rank for Lunenburg in each of those two years. Both '
+                  'ends are the same stage of the same quantity, which is the only reason '
+                  'the difference can be taken at all.'
+                  % (C.fy(base['fy']), C.fy(latest['fy'])),
+            not_shown='That this measures the recent budget reductions. The most recent '
+                      'ACTUAL year here is %s; the years the town argued about are '
+                      'published so far only as BUDGETED figures, and a budgeted ratio '
+                      'and a spent one are two stages of one quantity. Nor does it show '
+                      'WHY the requirement rose — enrollment and municipal wealth both '
+                      'feed it and this series cannot separate them.' % C.fy(latest['fy']),
+            see=[('/why-we-only-get-minimum-aid',
+                  'why the requirement itself keeps rising')],
+        ),
+        conclusion(
+            id='what-the-median-would-have-cost',
+            claim='More than Lunenburg spent, to match the middle district in the state',
+            so_what='A subtraction on a published median. Nobody has proposed it and nothing is costed against it.',
+            lede='Spending like the middle district in Massachusetts would have meant '
+                  '%s more than Lunenburg spent in %s — %s more, on a state minimum '
+                  'of %s.'
+                  % (C.fy(latest['fy']), C.usd(latest['short_of_median']),
+                     C.pct(median_gap_pct), C.usd(latest['required'])),
+            detail='The median district spent %s times its required net school spending '
+                   'that year; Lunenburg spent %s. Applying the median ratio to '
+                   'Lunenburg’s own requirement gives %s against the %s it actually '
+                   'spent. That is a subtraction on a published median and nothing more: '
+                   'nobody has proposed it and no programme is costed against it. It is '
+                   'here because a rank is hard to weigh at a meeting and a dollar amount '
+                   'is not.'
+                   % (ratio_text(latest['state_median']), ratio_text(latest['ratio']),
+                      C.usd(latest['at_state_median']), C.usd(latest['spent'])),
+            figures=dict(
+                fy=figure(latest['fy'], C.fy(latest['fy'])),
+                gap=figure(latest['short_of_median'], C.usd(latest['short_of_median'])),
+                gap_pct=figure(median_gap_pct, C.pct(median_gap_pct)),
+                required=figure(latest['required'], C.usd(latest['required'])),
+                state_median=figure(latest['state_median'],
+                                    ratio_text(latest['state_median'])),
+                ratio=figure(latest['ratio'], ratio_text(latest['ratio'])),
+                at_state_median=figure(latest['at_state_median'],
+                                       C.usd(latest['at_state_median'])),
+                spent=figure(latest['spent'], C.usd(latest['spent']))),
+            figure='gap',
+            kind='measured',
+            basis='DESE’s statewide distribution of net school spending as a share of the '
+                  'requirement — the median column for %s — applied to Lunenburg’s own '
+                  'required net school spending in the same year.' % C.fy(latest['fy']),
+            not_shown='What the money would have bought, and whether the median is a '
+                      'target at all. Half of Massachusetts districts spend below it, it '
+                      'moves every year with what every other town decides, and no '
+                      'programme anywhere in this archive is costed against this figure.',
+            see=[('/what-other-districts-spend',
+                  'the per-pupil comparison, which is a different measure')],
+        ),
+        conclusion(
+            id='the-enforced-floor-has-never-been-missed',
+            claim='Years Lunenburg spent at or above what the middle district in the state spent',
+            so_what='Massachusetts sets a minimum every town must spend on its schools. Lunenburg has never missed it.',
+            lede='Massachusetts sets a minimum every town must spend on its own '
+                  'schools. Lunenburg has met it in all %s years measured, and in %s of '
+                  'those years spent at or above what the middle district in the state '
+                  'spent.'
+                  % (C.num(len(ranked)), C.num(len(at_or_above))),
+            detail='A district spending below its required net school spending is out of '
+                   'compliance. Lunenburg’s narrowest year was %s, at %s times the '
+                   'requirement. The story the town tells about itself is that it has '
+                   'always been a low spender, and against the measure the state enforces '
+                   'it has not been: it landed exactly on the state median in %s — %s '
+                   'against a median of %s — and has been below the state’s first '
+                   'quartile in %s of those years, %s. That is a real thing to know '
+                   'before any argument about what the schools are owed.'
+                   % (C.fy(narrowest['fy']), ratio_text(narrowest['ratio']),
+                      C.fy(base['fy']), ratio_text(base['ratio']),
+                      ratio_text(base['state_median']), C.num(len(below_p25)),
+                      and_list([C.fy(r['fy']) for r in below_p25])),
+            figures=dict(
+                years=figure(len(ranked), C.num(len(ranked))),
+                at_or_above=figure(len(at_or_above), C.num(len(at_or_above)),
+                                       'of %s years measured' % C.num(len(ranked))),
+                narrowest_fy=figure(narrowest['fy'], C.fy(narrowest['fy'])),
+                narrowest_ratio=figure(narrowest['ratio'],
+                                       ratio_text(narrowest['ratio'])),
+                median_fy=figure(base['fy'], C.fy(base['fy'])),
+                median_ratio=figure(base['ratio'], ratio_text(base['ratio'])),
+                state_median=figure(base['state_median'],
+                                    ratio_text(base['state_median'])),
+                below_p25=figure(len(below_p25), C.num(len(below_p25))),
+                **{'below_p25_%d' % r['fy']: figure(r['fy'], C.fy(r['fy']))
+                   for r in below_p25}),
+            figure='at_or_above',
+            kind='measured',
+            basis='DESE’s Chapter 70 district profile: required net school spending '
+                  'against net school spending as reported, ACTUAL stage only, %s, with '
+                  'the statewide median and quartiles for each of those years. The two '
+                  'most recent years DESE publishes are BUDGETED and are counted nowhere '
+                  'in this.' % C.fyspan(ranked[0]['fy'], ranked[-1]['fy']),
+            not_shown='Whether meeting the floor was a choice or a ceiling. The levy '
+                      'limit, two failed overrides, the district’s request and Town '
+                      'Meeting’s vote all resolve into this single number, and nothing '
+                      'here separates them.',
+            see=[('/what-other-districts-spend',
+                  'what districts spend for each pupil, which is a different measure'),
+                 ('/overrides', 'the overrides the town has voted on')],
+        ),
+    ])
+
     return {
+        'conclusions': conclusions,
         'about': 'Lunenburg’s net school spending against the minimum Chapter 70 requires, '
                  'and against every other district in the same year.',
         'source': document(),
@@ -325,7 +536,7 @@ def build():
             'WHAT THE MONEY WOULD HAVE BOUGHT. The gap to the median is arithmetic on a '
             'published median. It is not a costed programme and nobody has proposed it.',
             'THAT THE RATIO MEASURES EFFORT. It moves when the REQUIREMENT moves, and the '
-            'requirement is recomputed each year from enrolment and municipal wealth. That '
+            'requirement is recomputed each year from enrollment and municipal wealth. That '
             'is why the rank against other districts is carried beside it.',
         ],
         'closes': 'Nothing further is needed to measure this — DESE publishes it annually. '

@@ -62,6 +62,19 @@ CHECKS = [
     # and /reports went on listing thirteen. Nothing caught it because this file is
     # the thing that catches it, and this generator was not in it.
     ('build_reports_index.py', ['--check']),
+    # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
+    # own claims, so this entry fails exactly when it should: a report changed a
+    # conclusion, or stopped publishing one, and the synthesis still says the old thing.
+    # It is also the only check that can catch a report going SILENT -- the generator
+    # names every routed report with no conclusions rather than dropping it, so a report
+    # that loses its conclusions changes this output rather than vanishing from it.
+    ('build_master_report.py', ['--check']),
+    # And the conclusions themselves, against the reports they came from: rule 2 re-run on
+    # the published payloads rather than on the generators' own copies, every figure
+    # counted as quoted or computed, and the synthesis asserted to be byte-identical to
+    # its sources. It is here rather than only in a verifier because a conclusion is prose
+    # that ships, and prose that ships is what nothing was checking.
+    ('verify_conclusions.py', []),
     ('build_money_flow.py', ['--check']),
     ('build_money_nodes.py', ['--check']),
     ('build_ledger_structure.py', ['--check']),
@@ -151,7 +164,7 @@ CHECKS = [
     ('build_state_aid.py', ['--check']),
     # The school-choice scenario page. It reaches five documents and reconciles three of
     # them against each other, so this entry catches the drift nothing else would: the
-    # FY2025 annual town report's enrolment table, whose COLUMN HEADINGS are read off the
+    # FY2025 annual town report's enrollment table, whose COLUMN HEADINGS are read off the
     # printed page because `column_meaning` is empty for that dataset and `v1` is an
     # ordinal -- get that wrong and 433 stops being a count of resident students; the same
     # table checked against `report_enrollment_mcas`, two routes to one row; the DESE
@@ -176,6 +189,21 @@ CHECKS = [
     # fee. It also refuses if `rate_register` stops carrying unpublished fees, because the
     # open band above every total on that page rests on there being some.
     ('build_what_families_pay.py', ['--check']),
+    # And the register the household table reads. `rate-register.csv` is GENERATED, which
+    # makes it the data-entry point for a fee whose amount arrives later: fill the value in
+    # here and the table prices a row that was rendering as "not published". The --check is
+    # the guard on that -- it re-derives every rate from the athletic fee schedule, the
+    # contracts file and the Superintendent's own emails, and asserts each household charge
+    # quote is still verbatim in the document it is attributed to (rule 13).
+    ('build_rate_register.py', []),
+    # Every figure the household table publishes, recomputed from the register and the fee
+    # schedule rather than from the payload's own arithmetic. It asserts three STRUCTURES
+    # as well as the numbers, because each is a sentence the page rests on that no single
+    # figure would catch: a total that is not the sum of the rows under it; an unpriced row
+    # that has acquired an amount without changing band, which would be a guess published
+    # as a measurement; and a charge with no records request written for it, which rule 7c
+    # calls a grievance rather than a gap.
+    ('verify_what_families_pay.py', []),
     # The BUDGET-to-BUDGET state aid series, FY2005-FY2027 -- the like-for-like
     # counterpart to the receipts series above, and the evidence behind decision D10 in
     # notes/findings/STATE-AID-RATE.md. It catches four kinds of drift nothing else here
@@ -388,7 +416,7 @@ CHECKS = [
     # and carries whether each year's net school spending is actual or BUDGETED.
     ('extract_dese_state_aid.py', ['--check']),
     # The student datasets. Six DESE files, five tables: the sending and receiving
-    # enrolment files hold the identical rows and are loaded once, and the extract
+    # enrollment files hold the identical rows and are loaded once, and the extract
     # compares them row by row on every run so that a divergence stops the build rather
     # than quietly becoming two sources for one measurement.
     ('extract_dese_students.py', ['--check']),

@@ -50,7 +50,7 @@ is not a rate on any cost, and nothing here says what any of it paid for.
 
 RULE 7. A growth rate is a measurement. Why aid grew -- and whether it will keep growing
 -- is not. Chapter 70 is roughly four fifths of these totals and it is the output of a
-statutory formula whose inputs (foundation enrolment, required local contribution, the
+statutory formula whose inputs (foundation enrollment, required local contribution, the
 minimum-aid increment) move independently of anything measured here. See
 `notes/findings/STATE-AID-RATE.md` for what this series does and does not license.
 

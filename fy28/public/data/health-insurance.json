@@ -1,4 +1,138 @@
 {
+ "conclusions": [
+  {
+   "basis": "The town\u2019s MUNIS year-end expense report for FY2026 at period 12 \u2014 glytdbud, general fund, every department, an accounting printout rather than an assembled sheet \u2014 read account by account and reconciled against the department row the town\u2019s own period 9 report prints for the same department. The district\u2019s FY2026 budget book states the active-employee line at the same figure to the dollar.",
+   "claim": "Of the schools\u2019 health insurance is not in the school budget at all",
+   "detail": "The schools\u2019 health insurance is $5,222,731 in FY2026, and $1,521,536 of it is not in the school budget at all: it is appropriated to the town\u2019s insurance department, so the appropriation residents argue about understates what the town raises for the schools. The district\u2019s FY2026 appropriation is $26,287,474, and account 0100-19142-570018 \u2014 school retirees\u2019 health insurance \u2014 is not inside it. Retiree health is the town\u2019s obligation under Chapter 32B rather than the School Committee\u2019s, so it is appropriated to the town\u2019s insurance department instead. Adding it raises what the town raises for the schools by 5.8% without a single service changing, and the whole of the schools\u2019 health insurance, both departments together, is $5,222,731.",
+   "figure": "retiree",
+   "figures": {
+    "appropriation": {
+     "text": "$26,287,474",
+     "unit": "",
+     "value": 26287474.0
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "retiree": {
+     "text": "$1,521,536",
+     "unit": "",
+     "value": 1521535.59
+    },
+    "school_total": {
+     "text": "$5,222,731",
+     "unit": "",
+     "value": 5222730.59
+    },
+    "share": {
+     "text": "5.8%",
+     "unit": "",
+     "value": 5.788063128469475
+    }
+   },
+   "id": "the-school-budget-is-not-what-the-schools-cost",
+   "kind": "measured",
+   "literals": [
+    "0100-19142-570018",
+    "Chapter 32B"
+   ],
+   "not_shown": "Anything about people. A budget line is dollars: the retiree account can rise because there are more retirees, because the same retirees are on costlier plans, or because the town\u2019s share of the premium changed, and nothing published here separates them. Nor is this the whole of the schools\u2019 insurance \u2014 Medicare, life insurance, the Public Employee Committee and the cost-control reserve carry nothing in their names that says which side of the town they are for.",
+   "see": [
+    {
+     "label": "the money outside the budget",
+     "slug": "/money-outside-the-budget"
+    },
+    {
+     "label": "how the money reaches the schools",
+     "slug": "/the-money"
+    }
+   ],
+   "so_what": "It is appropriated to the town\u2019s insurance department, so the school budget understates the town\u2019s bill."
+  },
+  {
+   "basis": "The GENERAL FUND APPROPRIATIONS classification printed in each annual town report, insurance department, appropriated column only \u2014 every year kept is one whose component rows sum to the `Total Insurance` the same page prints \u2014 plus the FY2026 ledger for the last point. One stage throughout: appropriation against appropriation, never an actual.",
+   "claim": "A year, the growth of the town\u2019s insurance department",
+   "detail": "The town\u2019s insurance department has nearly doubled since FY2011, to $3,713,520 \u2014 4.3% a year, against a levy limit Proposition 2\u00bd raises by 2.5% a year plus new growth. Insurance takes a growing share of every increase the town votes. $1,970,826 in FY2011 against $3,713,520 in FY2026, appropriation against appropriation in every year: 12 of the 15 annual reports print an insurance block whose component lines sum, to the cent, to the subtotal the page itself prints, and the last point comes from the town\u2019s ledger. The school-named part of it grew faster still over the short run that can be measured at all \u2014 $1,213,618 in FY2023 to $1,521,536 in FY2026, 7.8% a year \u2014 but that is two observations from two publishers, not a trend.",
+   "figure": "cagr",
+   "figures": {
+    "cagr": {
+     "text": "4.3%",
+     "unit": "",
+     "value": 4.313975384697133
+    },
+    "checked": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    },
+    "editions": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    },
+    "first": {
+     "text": "$1,970,826",
+     "unit": "",
+     "value": 1970826.33
+    },
+    "first_fy": {
+     "text": "FY2011",
+     "unit": "",
+     "value": 2011
+    },
+    "last": {
+     "text": "$3,713,520",
+     "unit": "",
+     "value": 3713520.32
+    },
+    "last_fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "school_cagr": {
+     "text": "7.8%",
+     "unit": "",
+     "value": 7.82846134232047
+    },
+    "school_first": {
+     "text": "$1,213,618",
+     "unit": "",
+     "value": 1213617.67
+    },
+    "school_first_fy": {
+     "text": "FY2023",
+     "unit": "",
+     "value": 2023
+    },
+    "school_last": {
+     "text": "$1,521,536",
+     "unit": "",
+     "value": 1521535.59
+    }
+   },
+   "id": "insurance-outgrows-the-levy-that-pays-for-it",
+   "kind": "measured",
+   "literals": [
+    "Proposition 2\u00bd",
+    "2.5%"
+   ],
+   "not_shown": "What drove the growth. Premiums, enrolment in the plan, the town\u2019s share of the premium and the number of retirees all move this line and none of them is published beside it. The two school-named observations are eleven years apart from the start of the town series and come from two different publishers, so they bound the school share rather than measure its trend.",
+   "see": [
+    {
+     "label": "the revenue side of the same squeeze",
+     "slug": "/state-aid"
+    },
+    {
+     "label": "what cannot be answered",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "Faster than the levy that pays for it is allowed to rise, so it takes a growing share of every increase."
+  }
+ ],
  "district": {
   "actual": [
    {
@@ -193,13 +327,13 @@
  },
  "gaps": [
   {
-   "closes": "The town\u2019s Chapter 32B enrolment schedule, which counts insured employees and retirees by department and would split every year rather than the two that happened to be printed.",
+   "closes": "The town\u2019s Chapter 32B enrollment schedule, which counts insured employees and retirees by department and would split every year rather than the two that happened to be printed.",
    "side": "money_out",
    "what": "School share of the town\u2019s health insurance before FY2026",
    "why": "The town\u2019s insurance department prints one undivided `Health Insurance CH 32B` line in fifteen of the sixteen annual reports \u00b7 a school share is named only in the FY2023 report and in the FY2026 ledger, so no year between them can be split."
   },
   {
-   "closes": "The town\u2019s Chapter 32B enrolment schedule, which counts insured employees and retirees by department.",
+   "closes": "The town\u2019s Chapter 32B enrollment schedule, which counts insured employees and retirees by department.",
    "side": "money_out",
    "what": "School share of Medicare, active health insurance and the insurance reserves",
    "why": "Five of the seven FY2026 insurance accounts \u2014 active health insurance, Medicare, life insurance, insurance cost control and Public Employee Committee expenses \u2014 carry nothing in their names that says which side of the town they are for, so the school portion of them is not separable in any year."
@@ -207,7 +341,7 @@
   {
    "closes": "Splits every insurance account between the town and the schools, in every year, instead of in the two years the split happens to be printed.",
    "side": "document_wanted",
-   "what": "The town\u2019s Chapter 32B enrolment schedule",
+   "what": "The town\u2019s Chapter 32B enrollment schedule",
    "why": "Not published anywhere in this archive; the town must hold one to administer the plan and set premium shares."
   }
  ],

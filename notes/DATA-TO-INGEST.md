@@ -38,7 +38,7 @@ the rollup-beside-detail trap this file warned about, committed while writing th
 
 Ordered by the gap each closes. IDs are Socrata dataset ids on
 `educationtocareer.data.mass.gov`; the catalog API lists 207 datasets, 102 of them
-finance, staffing or enrolment related.
+finance, staffing or enrollment related.
 
 | id | dataset | closes |
 |---|---|---|
@@ -75,8 +75,8 @@ Staged in `sources/inbox/`, hashed, unread.
 | `dese-sped-program-characteristics.xlsx` | DESE `n62c-bx65`, 5.3 MB | `417435bddfca` | disability type and demographics behind the SWD count |
 | `dese-sped-movement.xlsx` | DESE `8aww-sugs`, 1.1 MB | `2b5e67f3ba6b` | students entering and leaving special education each year |
 | `dese-ch70-district-profile.xlsx` | **doe.mass.edu/finance/chapter70/**, not Socrata | `a0dc63bc9d51` | **34 years of the Chapter 70 formula, FY1993-FY2026** |
-| `dese-ch70-key-factors.xlsx` | same | `9fdc7d0a6131` | foundation enrolment split by EL / vocational / low-income — the formula's INPUTS |
-| `dese-enrollment-by-grade.xlsx` | DESE `t8td-gens`, 12.7 MB | `a2fb23dea70c` | enrolment by grade and school — the denominators |
+| `dese-ch70-key-factors.xlsx` | same | `9fdc7d0a6131` | foundation enrollment split by EL / vocational / low-income — the formula's INPUTS |
+| `dese-enrollment-by-grade.xlsx` | DESE `t8td-gens`, 12.7 MB | `a2fb23dea70c` | enrollment by grade and school — the denominators |
 | `sims-datahandbook_2021.docx` | doe.mass.edu, 421 KB | `be9c1fef99a9` | SIMS definitions — STUDENT data only |
 | `sims-datahandbook_2022.docx` | doe.mass.edu, 413 KB | `65ca4aea1430` | as above |
 
@@ -224,13 +224,13 @@ extended back to 1993.
 
 **What it changes.** The state-aid growth rate currently rests on 23 years of the TOWN's own
 `Subtotal State Aid` worksheets. This is 34 years of the STATE's series with foundation
-enrolment, required local contribution and aid separated — so the rate can be derived from
+enrollment, required local contribution and aid separated — so the rate can be derived from
 the formula's own terms rather than from a total the town happened to print. It also carries
 required against actual NSS past SY2022, which `5izv-jyrd` does not.
 
-`keyfactors.xlsx` holds the inputs: foundation enrolment split by English learner,
+`keyfactors.xlsx` holds the inputs: foundation enrollment split by English learner,
 vocational and low-income share. That is what lets anybody model how the formula RESPONDS to
-enrolment change — which is exactly what the students-leave scenario needs, and what it
+enrollment change — which is exactly what the students-leave scenario needs, and what it
 currently assumes linearly.
 
 **Note the front sheet is formulas.** Read with `data_only=True` and take the Data sheets;
@@ -310,7 +310,7 @@ would be indefensible.
 
 `yamx-769q` publishes a real count of students with disabilities — 217 to 265 — which
 closes a gap properly: the count was previously only reachable by multiplying a published
-percentage by enrolment, which was our arithmetic and not a published figure.
+percentage by enrollment, which was our arithmetic and not a published figure.
 
 It also gives special education paraprofessionals per 100 students with disabilities. Times
 the count, that implies an FTE:
@@ -385,7 +385,7 @@ discrimination this project could not make — see the BOUNDED verdict in
 without checking that would be the fiscal-year type error this repo has already had once,
 in the other direction.
 
-**The two enrolment files are a matched pair and are worth more together.** Sending gives
+**The two enrollment files are a matched pair and are worth more together.** Sending gives
 where Lunenburg's resident children go; receiving gives who arrives and from where. Both
 directions means a NET position, and the tuition that follows each way. This project holds
 `School Choice Receiving` as one dollar line on the cherry sheet; these are the headcounts

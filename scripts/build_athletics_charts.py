@@ -46,6 +46,11 @@ import re
 import sqlite3
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 OUT = os.path.join(ROOT, 'fy28/public/data/athletics.json')
@@ -752,6 +757,50 @@ def build():
                             updated=r['updated'], url=r['markdown']['url'],
                             pdf=(r.get('pdf') or {}).get('url')))
 
+    # ------------------------------------------------------ WHAT THIS PAGE CONCLUDES
+    #
+    # Rule 8 governs: the job is helping a resident understand who pays for a season of
+    # school sports and what each option costs somebody. Every figure below is one already
+    # computed above, so a conclusion cannot state more than the payload holds.
+    #
+    # The latest year both pots are visible, chosen from the data rather than named, and
+    # matched to the participation count for the same year -- a per-participation figure
+    # built from two different years would be the like-for-like error in one division.
+    paid_years = [r for r in both if r['all_in'] is not None]
+    if not paid_years:
+        fail('no year has both sides published, so nothing can be said about what a '
+             'season takes out of the two pots together')
+    latest = paid_years[-1]
+    part_latest = next((r for r in part_totals if r['fy'] == latest['fy']), None)
+    if part_latest is None or not part_latest['total']:
+        fail(f'FY{latest["fy"]}: both sides are published and no participation count '
+             'joins to it. A cost per participation with no denominator is not one.')
+    per_participation = latest['all_in'] / part_latest['total']
+    if not latest['revenue']:
+        fail(f'FY{latest["fy"]}: no fee revenue row, so the share families put in cannot '
+             'be computed and must not be described')
+    family_share = 100.0 * latest['revenue'] / latest['all_in']
+    hs = next(r for r in fee_check if r['level'] == 'High school')
+
+    # The years the workbook's transportation total, the appropriation and the fund's
+    # share are ALL published -- the only years the split between the two pots is visible.
+    split = [r for r in transport
+             if r['cost'] is not None and r['fund'] is not None and r['general'] is not None]
+    if len(split) < 2:
+        fail('fewer than two years carry all three transportation figures, so the '
+             'sentence about the split moving has nothing to move between')
+    t_from, t_to = split[0], split[-1]
+    t_last = transport[-1]
+    if t_last['general'] is None:
+        fail('the most recent year carries no general fund transportation line, and the '
+             'conclusion names it')
+
+    # Of the difference between what left the two pots and what the workbook says the
+    # whole programme cost, the part that is SCOPE -- general fund lines the workbook does
+    # not carry at all -- and the part that is not accounted for by either document.
+    scope = compare['unmatched_total']
+    unexplained = three_way['over_workbook'] - scope
+
     return dict(
         generated_by='scripts/build_athletics_charts.py',
         source='sources/data/lunenburg.db — athletics_history, athletics_by_sport, '
@@ -789,6 +838,173 @@ def build():
         recomputed=recomputed,
         gaps=[dict(side=g['side'], what=g['what'], why=g['why']) for g in keep],
         related=related,
+        conclusions=emit('what-sports-cost', [
+            conclusion(
+                id='what-a-season-takes-and-who-puts-it-in',
+                claim='For each place on a team, across everything two different pots spent on athletics',
+                so_what='The town’s budget paid most of it and fees paid the rest. Neither number alone is the cost.',
+                lede='Athletics in %s took %s out of two different pots for %s '
+                      'participations \u2014 %s each \u2014 and the town\u2019s '
+                      'appropriation was %s of it.'
+                      % (C.fy(latest['fy']), C.usd(latest['all_in']),
+                         C.num(part_latest['total']), C.usd(per_participation),
+                         C.usd(latest['general'])),
+                detail='The fee-funded revolving fund spent the other %s, and banked %s '
+                       'in user fees the same year \u2014 %s of what the two pots spent '
+                       'between them. Per participation the fund actually banked %s at '
+                       'the high school against a posted fee of %s, because waivers and '
+                       'sibling discounts sit in the same pool. A resident reading the '
+                       'town\u2019s budget line sees %s and a family reading the fee '
+                       'schedule sees %s; neither is the whole of what a season takes.'
+                       % (C.usd(latest['revolving']), C.usd(latest['revenue']),
+                          C.pct(family_share), C.usd(hs['per_participation']),
+                          C.usd(hs['stated_fee']), C.usd(latest['general']),
+                          C.usd(hs['stated_fee'])),
+                figures={
+                    'fy': figure(latest['fy'], C.fy(latest['fy'])),
+                    'all_in': figure(latest['all_in'], C.usd(latest['all_in'])),
+                    'participations': figure(part_latest['total'],
+                                             C.num(part_latest['total'])),
+                    'per_participation': figure(per_participation,
+                                                C.usd(per_participation)),
+                    'appropriation': figure(latest['general'], C.usd(latest['general'])),
+                    'fund_spending': figure(latest['revolving'],
+                                            C.usd(latest['revolving'])),
+                    'fee_revenue': figure(latest['revenue'], C.usd(latest['revenue'])),
+                    'family_share': figure(family_share, C.pct(family_share)),
+                    'banked_per_participation': figure(hs['per_participation'],
+                                                       C.usd(hs['per_participation'])),
+                    'posted_fee': figure(hs['stated_fee'], C.usd(hs['stated_fee'])),
+                },
+                figure='per_participation',
+                kind='measured',
+                basis='athletics_history for all three dollar figures \u2014 the '
+                      'appropriation out of the district\u2019s budget book, the '
+                      'fund\u2019s spending and its user-fee receipts out of the '
+                      'fund\u2019s own year-end report; athletics_by_sport, a workbook '
+                      'the district assembled, for the participation count; and '
+                      'athletic_fee_schedule for the posted fee, which is sourced to '
+                      'School Committee minutes rather than to a district web page.',
+                not_shown='What a season costs. These are two pots\u2019 outgoings in one '
+                          'year: the appropriation is net of everything else that pays '
+                          'for athletics, and the fee receipts are net of the payment '
+                          'processor\u2019s cut, so what a family was charged and what '
+                          'the fund banked are different numbers. Nor is a participation '
+                          'a child \u2014 one child in three seasons is three of these.',
+                see=[('/what-families-pay', 'what a family pays across the whole budget'),
+                     ('/money-outside-the-budget', 'the funds outside the budget')],
+            ),
+            conclusion(
+                id='more-left-the-accounts-than-any-document-totals',
+                claim='Left the town’s accounts for athletics, more than any document totals',
+                so_what='The district’s own workbook puts the whole programme well below that. The spread is published, not reconciled.',
+                lede='Athletics took %s out of the town\u2019s two pots in %s '
+                      '\u2014 %s more than the district\u2019s own workbook says the '
+                      'whole programme cost.'
+                      % (C.usd(three_way['two_pots']), C.fy(three_way['fy']),
+                         C.usd(three_way['over_workbook'])),
+                detail='%s of it is traced to individual payments in the fee-funded '
+                       'fund\u2019s cashbook \u2014 the only transaction-level record of '
+                       'athletics in this archive \u2014 and %s is the appropriation in '
+                       'the district\u2019s budget book. Part of the difference is '
+                       'scope: %s of the appropriation sits on lines like the athletic '
+                       'director and the trainer that the workbook does not carry at all. '
+                       'That leaves %s neither document accounts for. Every per-sport '
+                       'figure anybody quotes comes from that one workbook, so the spread '
+                       'is published rather than reconciled \u2014 averaging figures '
+                       'different people assembled to answer different questions would be '
+                       'adding a claim the documents do not make.'
+                       % (C.usd(three_way['fund_paid']), C.usd(three_way['general']),
+                          C.usd(scope), C.usd(unexplained)),
+                figures={
+                    'two_pots': figure(three_way['two_pots'],
+                                       C.usd(three_way['two_pots'])),
+                    'fy': figure(three_way['fy'], C.fy(three_way['fy'])),
+                    'over_workbook': figure(three_way['over_workbook'],
+                                            C.usd(three_way['over_workbook'])),
+                    'fund_paid': figure(three_way['fund_paid'],
+                                        C.usd(three_way['fund_paid'])),
+                    'general': figure(three_way['general'], C.usd(three_way['general'])),
+                    'scope': figure(scope, C.usd(scope)),
+                    'unexplained': figure(unexplained, C.usd(unexplained)),
+                },
+                figure='two_pots',
+                kind='measured',
+                basis='Three documents for one year. The fund\u2019s payments come out of '
+                      'fund_1301_cash_journal \u2014 the town\u2019s accounting system, '
+                      'every disbursement, and it chains to the town\u2019s own printed '
+                      'opening balance in each following year. The other two are figures '
+                      'people assembled: athletics_by_sport is the district\u2019s '
+                      'by-sport workbook and its own printed Total Expenses, and '
+                      'athletics_history is the budget book. However official a sheet '
+                      'looks, a figure somebody typed is stated and a figure the '
+                      'accounting system printed is evidence.',
+                not_shown='Which figure is right, or what any one sport cost. Two of the '
+                          'three are totals somebody assembled and only the fund\u2019s '
+                          'payments are traced to a payment \u2014 and even those cannot '
+                          'be put against a sport: not one disbursement in the cashbook '
+                          'names a sport anywhere on the row. The accounts-payable detail '
+                          'behind the warrants is what would close it.',
+                see=[('/sources', 'what produced each document\u2019s figures'),
+                     ('/what-we-cannot-answer', 'what the record cannot answer')],
+            ),
+            conclusion(
+                id='the-bus-bill-fell-and-the-town-paid-more',
+                claim='Budgeted for athletic buses, more than double the year before',
+                so_what='The bus bill itself fell that year. What changed is which pot paid, not what it cost.',
+                lede='Lunenburg\u2019s athletic transportation line rose from %s to %s '
+                      'in a year when the bus bill itself fell from %s to %s: the cost '
+                      'went down and the town\u2019s share went up.'
+                      % (C.usd(t_from['general']), C.usd(t_to['general']),
+                         C.usd(t_from['cost']), C.usd(t_to['cost'])),
+                detail='In %s the fee-funded fund paid %s of that bill, %s of it; in %s '
+                       'it paid %s, %s. Nothing about the buses had to change for the '
+                       'town\u2019s line to more than double \u2014 what changed is '
+                       'which pot paid. The two sides sum to the district\u2019s own '
+                       'transportation total exactly in both years, which is what lets '
+                       'them be read as two parts of one bill, and the %s line is %s. It '
+                       'is the clearest measurement on this site of why a budget line '
+                       'rising is not a cost rising.'
+                       % (C.fy(t_from['fy']), C.usd(t_from['fund']),
+                          C.pct(t_from['fund_share'] * 100), C.fy(t_to['fy']),
+                          C.usd(t_to['fund']), C.pct(t_to['fund_share'] * 100),
+                          C.fy(t_last['fy']), C.usd(t_last['general'])),
+                figures={
+                    'general_from': figure(t_from['general'], C.usd(t_from['general'])),
+                    'general_to': figure(t_to['general'], C.usd(t_to['general'])),
+                    'cost_from': figure(t_from['cost'], C.usd(t_from['cost'])),
+                    'cost_to': figure(t_to['cost'], C.usd(t_to['cost'])),
+                    'fy_from': figure(t_from['fy'], C.fy(t_from['fy'])),
+                    'fy_to': figure(t_to['fy'], C.fy(t_to['fy'])),
+                    'fund_from': figure(t_from['fund'], C.usd(t_from['fund'])),
+                    'fund_to': figure(t_to['fund'], C.usd(t_to['fund'])),
+                    'share_from': figure(t_from['fund_share'] * 100,
+                                         C.pct(t_from['fund_share'] * 100)),
+                    'share_to': figure(t_to['fund_share'] * 100,
+                                       C.pct(t_to['fund_share'] * 100)),
+                    'latest_fy': figure(t_last['fy'], C.fy(t_last['fy'])),
+                    'latest_general': figure(t_last['general'],
+                                             C.usd(t_last['general'])),
+                },
+                figure='general_to',
+                kind='measured',
+                basis='athletics_history, both sides, checked on every build against '
+                      'athletics_by_sport\u2019s own transportation total \u2014 the '
+                      'appropriation and the fund\u2019s share sum to the '
+                      'workbook\u2019s figure to the cent in both years, and the build '
+                      'refuses to draw them as two parts of one bill if they stop doing '
+                      'so.',
+                not_shown='Why the split moved. A fund carrying two thirds of a bill in '
+                          'one year and almost none of it the next fits a deliberate '
+                          'decision, a fund that could not afford it, and a change in '
+                          'which fund the charge was coded to, equally well; no document '
+                          'here says which. The fund\u2019s own year-end report for '
+                          'those years, or the warrant detail behind the payments, is '
+                          'what would settle it.',
+                see=[('/money-outside-the-budget', 'the funds outside the budget'),
+                     ('/find-the-money', 'where the money is')],
+            ),
+        ]),
     )
 
 

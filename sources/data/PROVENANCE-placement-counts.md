@@ -73,7 +73,7 @@ DESE counts **every** pupil educated outside the district: vocational, school
 choice, charter, and special education placements together. Lunenburg alone sent
 **92 students to Montachusett Regional Vocational Technical School in FY2017**
 (assessment $1,436,287, printed in that year's report), and 92 + 14 is most of
-DESE's 161.8 before school choice and charter enrolment are added.
+DESE's 161.8 before school choice and charter enrollment are added.
 
 So the two series are not the same population and neither validates the other.
 Both decline over the period, which is easy to mistake for agreement. Rule 7: a

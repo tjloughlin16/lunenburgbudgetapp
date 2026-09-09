@@ -422,8 +422,8 @@ Report to remove the grant question.
 ### How many children left the district each year — **NO, not directly**
 
 School choice sending is not in `annual_report_receipts` under that name and not in
-`dese_measure`. What we hold is *enrolment*, which falls for many reasons — families
-moving, birth cohorts shrinking, choice, charter. **Enrolment decline is not departure.**
+`dese_measure`. What we hold is *enrollment*, which falls for many reasons — families
+moving, birth cohorts shrinking, choice, charter. **Enrollment decline is not departure.**
 Treating one as the other is rule 7's error with a proxy.
 
 What would close it: DESE's school choice and charter sending reports, per year. Worth

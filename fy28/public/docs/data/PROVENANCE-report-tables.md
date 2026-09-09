@@ -69,9 +69,9 @@ a sum of different things.
 | `report-debt` | 354 | 74 | 98 | 182 | debt outstanding, issued and retired |
 | `report-dept-activity` | 515 | 0 | 0 | 515 | counts a department reports of what it did that year |
 | `report-elections` | 2,012 | 323 | 1,688 | 1 | the vote, by candidate or question, by precinct |
-| `report-enrollment-mcas` | 337 | 0 | 0 | 337 | enrolment by school and MCAS results |
+| `report-enrollment-mcas` | 337 | 0 | 0 | 337 | enrollment by school and MCAS results |
 | `report-gross-wages` | 3,545 | 0 | 0 | 3,545 | the gross wage paid to every town employee |
-| `report-monty-tech` | 70 | 0 | 0 | 70 | the Montachusett Regional Vocational Technical assessment and enrolment |
+| `report-monty-tech` | 70 | 0 | 0 | 70 | the Montachusett Regional Vocational Technical assessment and enrollment |
 | `report-officials` | 237 | 0 | 0 | 237 | who held which town office, and until when |
 | `report-trust-funds` | 642 | 12 | 417 | 213 | the trust and stabilisation funds, balance and activity by fund |
 | `report-valuation` | 316 | 0 | 0 | 316 | the assessors' valuation and tax rate history |

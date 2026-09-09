@@ -1,5 +1,5 @@
 {
- "about": "What DESE says Lunenburg spends for each pupil, against every district in Massachusetts and against five neighbours \u2014 and the arithmetic that says how much of the difference is money and how much is children.",
+ "about": "What DESE says Lunenburg spends for each pupil \u2014 against the districts its own children leave for, against every district in Massachusetts, and against five neighbours \u2014 with the arithmetic that says how much of the difference is money and how much is children.",
  "categories": [
   {
    "by_district": {
@@ -242,9 +242,347 @@
   "why_not_category_medians": 205
  },
  "ch70_fy": 2026,
+ "conclusions": [
+  {
+   "basis": "DESE\u2019s end-of-year finance collection for the finance year, all funds, the district per-pupil total \u2014 the same measure for every district on this page \u2014 against DESE\u2019s residents-sending and enrollment-receiving files for the enrollment year, which count Lunenburg resident children by the district that educated them. The destination set is every district that took five or more of them, derived on every run rather than chosen, and the generator refuses to write if one of them has no spending figure.",
+   "claim": "More for each pupil at Monty Tech, a regional vocational school, than Lunenburg",
+   "detail": "145 of the 177 Lunenburg children educated outside Lunenburg Public Schools go to districts that spend more for each pupil than Lunenburg does \u2014 12.0% more at Leominster, and 43.3% more at Montachusett Regional Vocational Technical. In FY2025 the widest is $25,827 a pupil against Lunenburg\u2019s $18,027 \u2014 $7,800 more, which is 43.3% \u2014 and 54.8% of the leavers go there. The size of it depends enormously on which district: $720 more at Francis W. Parker Charter Essential (District), $1,900 at Sizer School: A North Central Charter Essential (District), $2,155 at Leominster, $4,687 at Fitchburg, $7,800 at Montachusett Regional Vocational Technical. Leominster is the nearest like-for-like comparison, an ordinary K-12 municipal district, at $20,182 a pupil, $2,155 more. The exception is the two Commonwealth virtual districts, 16 children between them, which spend less. The children are counted in FY2026 and the spending measured in FY2025: two collections, and nothing here is differenced across them.",
+   "figure": "widest_pct",
+   "figures": {
+    "children_left": {
+     "text": "177",
+     "unit": "",
+     "value": 177.0
+    },
+    "children_where_less": {
+     "text": "16",
+     "unit": "",
+     "value": 16.0
+    },
+    "children_where_more": {
+     "text": "145",
+     "unit": "",
+     "value": 145.0
+    },
+    "enr_fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "fin_fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "gap_1": {
+     "text": "$720",
+     "unit": "",
+     "value": 720.0
+    },
+    "gap_2": {
+     "text": "$1,900",
+     "unit": "",
+     "value": 1900.0
+    },
+    "gap_3": {
+     "text": "$2,155",
+     "unit": "",
+     "value": 2155.0
+    },
+    "gap_4": {
+     "text": "$4,687",
+     "unit": "",
+     "value": 4687.0
+    },
+    "gap_5": {
+     "text": "$7,800",
+     "unit": "",
+     "value": 7800.0
+    },
+    "like_gap": {
+     "text": "$2,155",
+     "unit": "",
+     "value": 2155.0
+    },
+    "like_pct": {
+     "text": "12.0%",
+     "unit": "",
+     "value": 11.9543
+    },
+    "like_per_pupil": {
+     "text": "$20,182",
+     "unit": "",
+     "value": 20182.0
+    },
+    "lunenburg": {
+     "text": "$18,027",
+     "unit": "",
+     "value": 18027.0
+    },
+    "widest_gap": {
+     "text": "$7,800",
+     "unit": "",
+     "value": 7800.0
+    },
+    "widest_pct": {
+     "text": "43.3%",
+     "unit": "",
+     "value": 43.2684
+    },
+    "widest_per_pupil": {
+     "text": "$25,827",
+     "unit": "",
+     "value": 25827.0
+    },
+    "widest_share": {
+     "text": "54.8%",
+     "unit": "",
+     "value": 54.800000000000004
+    }
+   },
+   "id": "the-districts-our-children-leave-for-spend-more",
+   "kind": "measured",
+   "literals": [
+    "K-12"
+   ],
+   "not_shown": "What the difference buys, or that any family chose on spending. A per-pupil figure is a ratio and a district with fewer pupils reads higher with nothing bought \u2014 the same arithmetic this page applies to the peer set. A regional vocational, charter or Commonwealth virtual district is funded and shaped differently from a K-12 municipal school and its figure is not like for like, which is why the two virtual districts sit below Lunenburg at $11,230 and $13,037 a pupil. Nothing here is a foundation budget: that is a Chapter 70 formula output, a different measure, and it is not on this page.",
+   "see": [
+    {
+     "label": "the district that takes most of them, and how the town is billed for it",
+     "slug": "/monty-tech"
+    },
+    {
+     "label": "where students go, year by year",
+     "slug": "/where-students-go-instead"
+    }
+   ],
+   "so_what": "145 of the 177 children educated outside Lunenburg go to districts that spend more for each pupil."
+  },
+  {
+   "basis": "DESE\u2019s end-of-year finance collection, all funds, the district total level only, with DESE\u2019s own statewide distribution and its own published rank for Lunenburg. One stage throughout: what districts reported after the year closed, never differenced against a budget.",
+   "claim": "Spent for each pupil, counting every fund \u2014 below the state median",
+   "detail": "Lunenburg spends $18,027 a pupil, $5,493 below the statewide median, and it has been in the bottom quarter of Massachusetts districts in 17 of the 17 years the state publishes here. In FY2025 it ranks 310 of 318 districts, with 8 spending less, against a median of $23,520 and a middle half running $21,179 to $26,961. This is not the school budget and not what a household pays: DESE counts every fund \u2014 grants, revolving funds, school choice, gifts \u2014 and counts town-paid insurance and retirement attributed to the schools, so it is a larger figure than the appropriation Town Meeting votes. The distance between the two is two definitions, not hidden money.",
+   "figure": "per_pupil",
+   "figures": {
+    "below_median": {
+     "text": "$5,493",
+     "unit": "",
+     "value": 5493.0
+    },
+    "bottom_quarter_years": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    },
+    "districts": {
+     "text": "318",
+     "unit": "",
+     "value": 318
+    },
+    "fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "median": {
+     "text": "$23,520",
+     "unit": "",
+     "value": 23520.0
+    },
+    "p25": {
+     "text": "$21,179",
+     "unit": "",
+     "value": 21179.2
+    },
+    "p75": {
+     "text": "$26,961",
+     "unit": "",
+     "value": 26961.0
+    },
+    "per_pupil": {
+     "text": "$18,027",
+     "unit": "",
+     "value": 18027.0
+    },
+    "rank": {
+     "text": "310",
+     "unit": "",
+     "value": 310
+    },
+    "spend_less": {
+     "text": "8",
+     "unit": "",
+     "value": 8
+    },
+    "years": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "id": "the-bottom-quarter-is-the-durable-fact",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether that is a choice or a constraint, and what the difference buys. The town has a levy limit and two failed overrides and Town Meeting votes the appropriation, so this measure is the outcome of all of it at once and cannot be attributed to any part of it. Nothing here relates spending to results, and a function line is not a service.",
+   "see": [
+    {
+     "label": "what the state requires the town to spend",
+     "slug": "/what-the-state-requires-us-to-spend"
+    },
+    {
+     "label": "the insurance DESE counts here and the school budget does not",
+     "slug": "/health-insurance"
+    }
+   ],
+   "so_what": "Lunenburg has been in the bottom quarter of Massachusetts districts in every published year."
+  },
+  {
+   "basis": "DESE\u2019s end-of-year finance collection against DESE\u2019s own total FTE pupil counts, for the six districts this archive extracts. The identity (1 + spending growth) / (1 + pupil growth) = (1 + per-pupil growth) is checked to four decimal places on every district before anything is written. The span starts where it does because that is the first year all six exist in their current form \u2014 Ayer and Shirley regionalised for it.",
+   "claim": "What Lunenburg would spend for each pupil at its own enrollment of thirteen years ago",
+   "detail": "Most of the per-pupil gap between Lunenburg and its neighbours is the denominator. Spending grew within a narrow band across all six districts; enrollment did not. From FY2012 to FY2025 every one of the six raised spending by between 43.8% and 59.0%, and Lunenburg\u2019s 48.7% sits inside that band. Pupil counts are what separate them: -5.6% here against -23.5% at North Middlesex. Give FY2025\u2019s money to each district\u2019s FY2012 pupil count and Lunenburg is $17,025 a pupil, 5 of 6 rather than last, and North Middlesex is last. A neighbour\u2019s higher per-pupil figure is in large part fewer children rather than more money.",
+   "figure": "at_old_enrollment",
+   "figures": {
+    "at_old_enrollment": {
+     "text": "$17,025",
+     "unit": "",
+     "value": 17025
+    },
+    "districts": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "from_fy": {
+     "text": "FY2012",
+     "unit": "",
+     "value": 2012
+    },
+    "pupils_low": {
+     "text": "-23.5%",
+     "unit": "",
+     "value": -23.47
+    },
+    "pupils_lunenburg": {
+     "text": "-5.6%",
+     "unit": "",
+     "value": -5.56
+    },
+    "rank_at_old": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    },
+    "spend_high": {
+     "text": "59.0%",
+     "unit": "",
+     "value": 58.98
+    },
+    "spend_low": {
+     "text": "43.8%",
+     "unit": "",
+     "value": 43.75
+    },
+    "spend_lunenburg": {
+     "text": "48.7%",
+     "unit": "",
+     "value": 48.72
+    },
+    "to_fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    }
+   },
+   "id": "most-of-the-gap-is-the-denominator",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That per-pupil spending is therefore the wrong measure, or that a district with falling enrollment could have spent less. Costs do not fall in step with a class, so a smaller system genuinely does spend more for each child; this arithmetic says where the change in the ratio came from and not whether any of it was avoidable. The six districts are also this project\u2019s own set and no document records the criterion, which is why the standing claim above is against the whole state instead.",
+   "see": [
+    {
+     "label": "what happens when students leave",
+     "slug": "/if-students-leave"
+    }
+   ],
+   "so_what": "Most of the gap with its neighbours is fewer children, not less money."
+  },
+  {
+   "basis": "DESE\u2019s RADAR district comparison for the finance year \u2014 teacher FTE and average teacher salary \u2014 against DESE\u2019s own in-district FTE pupil counts and the teaching-salary category of its end-of-year finance collection. The salary implied by the finance figures and RADAR\u2019s published average agree to within a percent on every district, which is checked before anything is written.",
+   "claim": "Average teacher salary, near the top of the neighbouring districts",
+   "detail": "Lunenburg pays near the top of this group for a teacher and employs the fewest of them for each pupil: $97,233 on average, and 6.7 teachers for every hundred in-district pupils. Harvard\u2019s average is the highest at $99,136 and Ashburnham-Westminster\u2019s the lowest at $84,724; Lunenburg ranks 2 of 6 on pay and 6 of 6 on teachers for each pupil, where the next lowest is 7.4 and the highest is 8.5. Teaching salaries reach $6,513 a pupil here against $8,475 at Harvard \u2014 close to the same money for each teacher, spread across more children.",
+   "figure": "salary",
+   "figures": {
+    "districts": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "pay_rank": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    },
+    "per_hundred": {
+     "text": "6.7",
+     "unit": "",
+     "value": 6.7
+    },
+    "per_hundred_high": {
+     "text": "8.5",
+     "unit": "",
+     "value": 8.5
+    },
+    "per_hundred_next": {
+     "text": "7.4",
+     "unit": "",
+     "value": 7.4
+    },
+    "ratio_rank": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "salary": {
+     "text": "$97,233",
+     "unit": "",
+     "value": 97233.0
+    },
+    "salary_high": {
+     "text": "$99,136",
+     "unit": "",
+     "value": 99136.0
+    },
+    "salary_low": {
+     "text": "$84,724",
+     "unit": "",
+     "value": 84724.0
+    },
+    "teaching_per_pupil": {
+     "text": "$6,513",
+     "unit": "",
+     "value": 6513.0
+    },
+    "teaching_per_pupil_high": {
+     "text": "$8,475",
+     "unit": "",
+     "value": 8475.0
+    }
+   },
+   "id": "near-the-top-on-pay-fewest-teachers",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "What that means in a classroom. A teacher FTE is not a class size and not a person, DESE does not say which fund pays for any of them, and an average salary is an average over a distribution this archive does not hold. Nothing here establishes that the difference is a choice, or that either arrangement produces different results.",
+   "see": [
+    {
+     "label": "the people the budget buys",
+     "slug": "/school-staffing"
+    }
+   ],
+   "so_what": "And Lunenburg employs the fewest teachers for each pupil of the group \u2014 the same money, spread wider."
+  }
+ ],
  "decomposition": [
   {
-   "at_old_enrolment": 16474,
+   "at_old_enrollment": 16474,
    "district": "North Middlesex",
    "is_lunenburg": false,
    "per_pupil_from": 11461.0,
@@ -253,13 +591,13 @@
    "pupils_from": 3989.8,
    "pupils_pct": -0.2347,
    "pupils_to": 3053.2,
-   "rank_at_old_enrolment": 6,
+   "rank_at_old_enrollment": 6,
    "spend_from": 45725659.0,
    "spend_pct": 0.4375,
    "spend_to": 65728795.0
   },
   {
-   "at_old_enrolment": 19492,
+   "at_old_enrollment": 19492,
    "district": "Groton-Dunstable",
    "is_lunenburg": false,
    "per_pupil_from": 12261.0,
@@ -268,13 +606,13 @@
    "pupils_from": 2775.9,
    "pupils_pct": -0.14,
    "pupils_to": 2387.4,
-   "rank_at_old_enrolment": 3,
+   "rank_at_old_enrollment": 3,
    "spend_from": 34034408.0,
    "spend_pct": 0.5898,
    "spend_to": 54106517.0
   },
   {
-   "at_old_enrolment": 20775,
+   "at_old_enrollment": 20775,
    "district": "Harvard",
    "is_lunenburg": false,
    "per_pupil_from": 13984.0,
@@ -283,13 +621,13 @@
    "pupils_from": 1311.0,
    "pupils_pct": -0.1873,
    "pupils_to": 1065.4,
-   "rank_at_old_enrolment": 1,
+   "rank_at_old_enrollment": 1,
    "spend_from": 18333580.0,
    "spend_pct": 0.4856,
    "spend_to": 27236238.0
   },
   {
-   "at_old_enrolment": 17025,
+   "at_old_enrollment": 17025,
    "district": "Lunenburg",
    "is_lunenburg": true,
    "per_pupil_from": 11448.0,
@@ -298,13 +636,13 @@
    "pupils_from": 1763.9,
    "pupils_pct": -0.0556,
    "pupils_to": 1665.9,
-   "rank_at_old_enrolment": 5,
+   "rank_at_old_enrollment": 5,
    "spend_from": 20193414.0,
    "spend_pct": 0.4872,
    "spend_to": 30031242.0
   },
   {
-   "at_old_enrolment": 19809,
+   "at_old_enrollment": 19809,
    "district": "Ayer Shirley School District",
    "is_lunenburg": false,
    "per_pupil_from": 13080.0,
@@ -313,13 +651,13 @@
    "pupils_from": 1946.7,
    "pupils_pct": -0.0304,
    "pupils_to": 1887.6,
-   "rank_at_old_enrolment": 2,
+   "rank_at_old_enrollment": 2,
    "spend_from": 25463378.0,
    "spend_pct": 0.5144,
    "spend_to": 38561581.0
   },
   {
-   "at_old_enrolment": 17621,
+   "at_old_enrollment": 17621,
    "district": "Ashburnham-Westminster",
    "is_lunenburg": false,
    "per_pupil_from": 12027.0,
@@ -328,7 +666,7 @@
    "pupils_from": 2351.3,
    "pupils_pct": -0.0287,
    "pupils_to": 2283.8,
-   "rank_at_old_enrolment": 4,
+   "rank_at_old_enrollment": 4,
    "spend_from": 28278180.0,
    "spend_pct": 0.4652,
    "spend_to": 41432696.0
@@ -392,6 +730,233 @@
   "rows_tested": 6153,
   "tolerance": 1.0,
   "total_fte": 102
+ },
+ "destinations": {
+  "below_threshold": 9,
+  "below_threshold_children": 16.0,
+  "children_where_less": 16.0,
+  "children_where_more": 145.0,
+  "enr_fy": 2026,
+  "enr_years": 13,
+  "fin_fy": 2025,
+  "first_enr_fy": 2014,
+  "left": 177.0,
+  "left_share": 0.1023,
+  "less": 2,
+  "less_rows": [
+   {
+    "district": "Greater Commonwealth Virtual District",
+    "gap": -4990.0,
+    "gap_pct": -0.276807,
+    "how": [
+     "School Choice Program"
+    ],
+    "lea": "39010000",
+    "per_pupil": 13037.0,
+    "reconciles": "yes",
+    "shape": "Commonwealth virtual",
+    "share_of_leavers": 0.0452,
+    "spends_more": false,
+    "students": 8.0,
+    "students_all_years": 39.0,
+    "years": 12
+   },
+   {
+    "district": "TEC Connections Academy Commonwealth Virtual School District",
+    "gap": -6797.0,
+    "gap_pct": -0.377046,
+    "how": [
+     "School Choice Program"
+    ],
+    "lea": "39020000",
+    "per_pupil": 11230.0,
+    "reconciles": "yes",
+    "shape": "Commonwealth virtual",
+    "share_of_leavers": 0.0452,
+    "spends_more": false,
+    "students": 8.0,
+    "students_all_years": 60.0,
+    "years": 11
+   }
+  ],
+  "like_for_like": {
+   "district": "Leominster",
+   "gap": 2155.0,
+   "gap_pct": 0.119543,
+   "how": [
+    "School Choice Program"
+   ],
+   "lea": "01530000",
+   "per_pupil": 20182.0,
+   "reconciles": "yes",
+   "shape": "K-12 district",
+   "share_of_leavers": 0.1017,
+   "spends_more": true,
+   "students": 18.0,
+   "students_all_years": 224.0,
+   "years": 13
+  },
+  "listed": 7,
+  "listed_children": 161.0,
+  "lunenburg": 18027.0,
+  "more": 5,
+  "narrowest": {
+   "district": "Francis W. Parker Charter Essential (District)",
+   "gap": 720.0,
+   "gap_pct": 0.03994,
+   "how": [
+    "Charter School"
+   ],
+   "lea": "04780000",
+   "per_pupil": 18747.0,
+   "reconciles": "no",
+   "shape": "charter",
+   "share_of_leavers": 0.0847,
+   "spends_more": true,
+   "students": 15.0,
+   "students_all_years": 211.0,
+   "years": 13
+  },
+  "rows": [
+   {
+    "district": "Montachusett Regional Vocational Technical",
+    "gap": 7800.0,
+    "gap_pct": 0.432684,
+    "how": [
+     "Resident/Member"
+    ],
+    "lea": "08320000",
+    "per_pupil": 25827.0,
+    "reconciles": "yes",
+    "shape": "regional vocational technical",
+    "share_of_leavers": 0.548,
+    "spends_more": true,
+    "students": 97.0,
+    "students_all_years": 1092.0,
+    "years": 13
+   },
+   {
+    "district": "Leominster",
+    "gap": 2155.0,
+    "gap_pct": 0.119543,
+    "how": [
+     "School Choice Program"
+    ],
+    "lea": "01530000",
+    "per_pupil": 20182.0,
+    "reconciles": "yes",
+    "shape": "K-12 district",
+    "share_of_leavers": 0.1017,
+    "spends_more": true,
+    "students": 18.0,
+    "students_all_years": 224.0,
+    "years": 13
+   },
+   {
+    "district": "Francis W. Parker Charter Essential (District)",
+    "gap": 720.0,
+    "gap_pct": 0.03994,
+    "how": [
+     "Charter School"
+    ],
+    "lea": "04780000",
+    "per_pupil": 18747.0,
+    "reconciles": "no",
+    "shape": "charter",
+    "share_of_leavers": 0.0847,
+    "spends_more": true,
+    "students": 15.0,
+    "students_all_years": 211.0,
+    "years": 13
+   },
+   {
+    "district": "Fitchburg",
+    "gap": 4687.0,
+    "gap_pct": 0.259999,
+    "how": [
+     "School Choice Program"
+    ],
+    "lea": "00970000",
+    "per_pupil": 22714.0,
+    "reconciles": "yes",
+    "shape": "K-12 district",
+    "share_of_leavers": 0.0452,
+    "spends_more": true,
+    "students": 8.0,
+    "students_all_years": 263.0,
+    "years": 13
+   },
+   {
+    "district": "Greater Commonwealth Virtual District",
+    "gap": -4990.0,
+    "gap_pct": -0.276807,
+    "how": [
+     "School Choice Program"
+    ],
+    "lea": "39010000",
+    "per_pupil": 13037.0,
+    "reconciles": "yes",
+    "shape": "Commonwealth virtual",
+    "share_of_leavers": 0.0452,
+    "spends_more": false,
+    "students": 8.0,
+    "students_all_years": 39.0,
+    "years": 12
+   },
+   {
+    "district": "TEC Connections Academy Commonwealth Virtual School District",
+    "gap": -6797.0,
+    "gap_pct": -0.377046,
+    "how": [
+     "School Choice Program"
+    ],
+    "lea": "39020000",
+    "per_pupil": 11230.0,
+    "reconciles": "yes",
+    "shape": "Commonwealth virtual",
+    "share_of_leavers": 0.0452,
+    "spends_more": false,
+    "students": 8.0,
+    "students_all_years": 60.0,
+    "years": 11
+   },
+   {
+    "district": "Sizer School: A North Central Charter Essential (District)",
+    "gap": 1900.0,
+    "gap_pct": 0.105397,
+    "how": [
+     "Charter School"
+    ],
+    "lea": "04740000",
+    "per_pupil": 19927.0,
+    "reconciles": "yes",
+    "shape": "charter",
+    "share_of_leavers": 0.0395,
+    "spends_more": true,
+    "students": 7.0,
+    "students_all_years": 181.0,
+    "years": 13
+   }
+  ],
+  "stayed": 1553.0,
+  "threshold": 5,
+  "widest": {
+   "district": "Montachusett Regional Vocational Technical",
+   "gap": 7800.0,
+   "gap_pct": 0.432684,
+   "how": [
+    "Resident/Member"
+   ],
+   "lea": "08320000",
+   "per_pupil": 25827.0,
+   "reconciles": "yes",
+   "shape": "regional vocational technical",
+   "share_of_leavers": 0.548,
+   "spends_more": true,
+   "students": 97.0,
+   "students_all_years": 1092.0,
+   "years": 13
+  }
  },
  "districts": [
   {
@@ -481,7 +1046,7 @@
    "sha256": "0391c2d358c408c5c61e0dac257cabfca5ad67bfc2187196f80d5e0492a84e79",
    "stage": "reported for the fiscal year. Not a budget.",
    "url": "https://www.doe.mass.edu/research/radar/district-comparison.xlsx",
-   "what": "DESE\u2019s RADAR district comparison \u2014 enrolment, demographics, staffing FTE, average teacher salary and MCAS, for all 421 Massachusetts districts. The source of the denominators, the staffing and the results on this page."
+   "what": "DESE\u2019s RADAR district comparison \u2014 enrollment, demographics, staffing FTE, average teacher salary and MCAS, for all 421 Massachusetts districts. The source of the denominators, the staffing and the results on this page."
   },
   {
    "bytes": 3848346,
@@ -500,6 +1065,12 @@
  "first_comparable_fy": 2012,
  "first_fy": 2009,
  "gaps": [
+  {
+   "closes": "the Town\u2019s cherry sheet assessment detail for the fiscal year, which states the charter tuition, school choice tuition and regional assessment by receiving district, set beside DESE\u2019s End of Year Financial Report for each of those districts.",
+   "side": "money_out",
+   "what": "How much of a receiving district\u2019s per-pupil spending Lunenburg actually pays",
+   "why": "177 Lunenburg children were educated outside Lunenburg Public Schools in FY2026 and DESE publishes what each receiving district spends for every pupil, all funds. It does not publish what LUNENBURG pays towards any of it, and the two are different quantities by construction: a receiving district\u2019s per-pupil figure is its whole spending over its whole pupil count, paid for by its own levy, its own Chapter 70 aid, its grants and its revolving funds as well as by any tuition or assessment. Lunenburg\u2019s side arrives as three unlike mechanisms \u2014 a member-town assessment for Montachusett, a school choice tuition set by statute, and a charter tuition set by formula \u2014 and none of them equals the receiving district\u2019s per-pupil figure. So the honest statement is that the districts our children go to spend more for each pupil than Lunenburg does; what a Lunenburg child costs the town at each of them cannot be read off it."
+  },
   {
    "closes": "DESE\u2019s own DART comparison group for Lunenburg, which names the districts the Department considers similar and states the criteria it used.",
    "side": "record",
@@ -638,7 +1209,7 @@
   }
  ],
  "lunenburg_denominator": {
-  "at_old_enrolment": 16377,
+  "at_old_enrollment": 16377,
   "denominator_share": 0.2224,
   "from_fy": 2009,
   "per_pupil_change": 7422.0,
@@ -843,6 +1414,8 @@
   "What DESE\u2019s per-pupil figure buys. It is dollars over a pupil count. A function line is not a service, a paraprofessional FTE is not a person, and neither is a class size.",
   "Whether Lunenburg\u2019s figure is a choice or a constraint. The town has a levy limit and two failed overrides; the district has a budget it proposes and a Town Meeting that votes it. This measure is the outcome of all of that at once and cannot be attributed to any part of it.",
   "That the six districts here are the right six. The set is ours \u2014 DESE\u2019s own workbook covers all 421 districts and this archive extracts six for size \u2014 and no document records the criterion. That is why every headline on this page is against the statewide distribution rather than against the six.",
+  "How much of a destination district\u2019s higher per-pupil figure is programme and how much is a smaller denominator. This page decomposes the ratio into spending and pupils for the six comparison districts and does not do it for the destinations; a district with fewer pupils reads higher with nothing bought, and that applies to a receiving district exactly as it applies here.",
+  "What Lunenburg pays towards any destination district\u2019s spending. A receiving district\u2019s per-pupil figure is its whole spending over its whole pupil count across every fund; Lunenburg\u2019s side is a member-town assessment, a school choice tuition or a charter tuition, and none of the three equals it. Registered in the gaps below.",
   "That the FY2026 Chapter 70 figures and the FY2025 spending figures describe the same year. They do not, and they are never differenced: one is a budgeted formula calculation and the other is what districts reported after the year closed."
  ],
  "not_this_page": "Not the school appropriation, and not what a Lunenburg household pays. DESE counts all funds \u2014 grants, revolving funds, school choice, gifts \u2014 and counts town-paid insurance and retirement attributed to the schools. The difference between this and the town\u2019s budget is two definitions, not hidden money.",
@@ -919,6 +1492,17 @@
   },
   {
    "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2026-03-23-minutes-7732.txt",
+   "date": "2026-03-23",
+   "key": "vocational",
+   "kind": "Minutes",
+   "quote": "bringing back things like vocational programs to the school, even if it means that we'd have to disentangle ourselves from Monty Tech that is something that has real long-term value",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03232026-7732",
+   "who": "the Chair of the School Committee, in the Chair\u2019s report",
+   "why": "Said about the district that takes more Lunenburg children than every other destination combined, in the same meeting as a balanced budget the charter compelled. It is the destination comparison above being argued about in the room: Monty Tech spends the most for each pupil of anywhere Lunenburg children go, and the town is a member and is assessed for it. Nothing here tests whether disentangling would cost the town more or less."
+  },
+  {
+   "board": "School Committee",
    "cite": "/docs/meetings/text/school-committee/2026-06-24-minutes-7869.txt",
    "date": "2026-06-24",
    "key": "outcomes",
@@ -965,6 +1549,22 @@
   {
    "documents": 0,
    "term": "lowest spending"
+  },
+  {
+   "documents": 174,
+   "term": "Monty Tech"
+  },
+  {
+   "documents": 36,
+   "term": "school choice"
+  },
+  {
+   "documents": 22,
+   "term": "vocational"
+  },
+  {
+   "documents": 7,
+   "term": "charter school"
   }
  ],
  "standing": {

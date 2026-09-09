@@ -33,7 +33,7 @@ own account of what it spent.
 *We hold twelve years. This is where most of our school spending history comes from — and
 it is the district describing itself, not an independent record.*
 
-**4. The state's figures.** DESE collects staffing, enrolment and spending from every
+**4. The state's figures.** DESE collects staffing, enrollment and spending from every
 district to its own definitions.
 
 *We hold seventeen years, FY2009–FY2025. This is independent in a way nothing else here is.*
@@ -141,7 +141,7 @@ what the general fund paid out.
 
 **Have teacher counts changed — yes, seventeen years, from the state.** Teaching staff has
 fallen from about 120 full-time-equivalent in 2009 to about 105 in 2025, while students
-placed outside the district rose from about 84 to 97 and total enrolment fell from 1,739 to
+placed outside the district rose from about 84 to 97 and total enrollment fell from 1,739 to
 1,563. These are proper full-time-equivalent figures, not a count of names. **Nothing on the
 site says this yet.**
 
@@ -165,15 +165,15 @@ special education only — different groups of people. And the remainder could b
 more hours, reclassified roles, or a grant ending. The year-end financial report above would
 remove the grant explanation.
 
-**How many children leave the district each year — no.** We have enrolment, which falls for
+**How many children leave the district each year — no.** We have enrollment, which falls for
 many reasons: families moving away, smaller birth cohorts, school choice, charter schools.
-**A fall in enrolment is not a count of departures.** What would close it: the state's school
+**A fall in enrollment is not a count of departures.** What would close it: the state's school
 choice and charter reports, which state how many children go where and what tuition follows
 them.
 
 **How many special education students — yes as a share, roughly as a count.** The state
 publishes the percentage of students with disabilities each year: 14.7% in 2009, 15.8% in
-2025. Against current enrolment that is about 247 children — but that multiplication is
+2025. Against current enrollment that is about 247 children — but that multiplication is
 ours, not a published figure.
 
 Separately, the annual reports give **out-of-district placements** for thirteen years,
@@ -290,7 +290,7 @@ Ranked by how much each would unlock:
    the "is this line net of a grant" question that sits underneath the paraprofessional
    figures and the special education projection.
 
-3. **The school choice and charter sending reports.** Turns "enrolment fell" into "this many
+3. **The school choice and charter sending reports.** Turns "enrollment fell" into "this many
    children left, and for where".
 
 4. **Staffing by budget line with full-time-equivalents.** Would let a dollar change be split

@@ -3,14 +3,16 @@ import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd } from '../model/engine'
 import {
-  PeerRatio, IndexedPair, NamesPrinted, RoleGrid, StaffAgainstEnrolment, TableTwin,
+  PeerRatio, IndexedPair, NamesPrinted, RoleGrid, StaffAgainstEnrollment, TableTwin,
   fy, num, pct,
   type Peer, type RosterYear, type RoleRow, type StatePoint,
 } from '../components/StaffingCharts'
 import {
+  Conclusions,
   Body, H2, Maybe, NotShown, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
  *  TITLE is the report's NAME, used before the payload arrives; the h1 the
@@ -80,6 +82,7 @@ type Panel = {
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   generated_by: string
   source: string
   state: {
@@ -238,7 +241,7 @@ export function SchoolStaffing() {
       </>}
       standfirst={<>
         Between {fy(paraFte.first_fy)} and {fy(paraFte.last_fy)} the state recorded
-        Lunenburg&rsquo;s in-district enrolment falling {pct(pupils.pct!)} and its teacher
+        Lunenburg&rsquo;s in-district enrollment falling {pct(pupils.pct!)} and its teacher
         FTE moving {pct(teachFte.pct!)}. Over the same years its paraprofessional FTE went
         from {num(paraFte.first)} to {num(paraFte.last)}. That is one line moving and the
         rest holding &mdash; and nothing in these documents says why.
@@ -294,6 +297,14 @@ export function SchoolStaffing() {
           general fund, and the denominator counts the staff those funds pay for.
         </p>
       </div>
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
 
       {/* ================================================== 1. the paraprofessional shift */}
       <H2 id="paras">Lunenburg went from the fewest paraprofessionals per pupil to the most</H2>
@@ -360,10 +371,10 @@ export function SchoolStaffing() {
         </p>
       </Maybe>
 
-      {/* ================================================== 2. teachers against enrolment */}
-      <H2 id="enrolment">Enrolment fell. The teaching count did not follow it.</H2>
+      {/* ================================================== 2. teachers against enrollment */}
+      <H2 id="enrollment">Enrollment fell. The teaching count did not follow it.</H2>
       <Body>
-        Over the same years the town was printing rosters, in-district enrolment moved{' '}
+        Over the same years the town was printing rosters, in-district enrollment moved{' '}
         {pct(pupils.pct!)} &mdash; from {num(pupils.first, 1)} FTE pupils to{' '}
         {num(pupils.last, 1)} &mdash; while teacher FTE moved {pct(teachFte.pct!)}. Teachers
         per 100 pupils therefore rose {pct(perPupil.pct!)}, from {num(perPupil.first, 2)} to{' '}
@@ -379,7 +390,7 @@ export function SchoolStaffing() {
         ratio rising and a ratio being low are not in tension: both are true here.
       </Body>
       <div className="grid gap-4 mt-6 lg:grid-cols-2">
-        <StaffAgainstEnrolment rows={st.points} />
+        <StaffAgainstEnrollment rows={st.points} />
         <PeerRatio peers={d.peers} field="teachers_per_100"
           unit="Teacher FTE per 100 in-district pupils" subject="Lunenburg" />
       </div>
@@ -393,7 +404,7 @@ export function SchoolStaffing() {
         <p>
           <strong>Whether a staffing level was chosen.</strong> A district cannot shed a
           teacher for every departing child: sections, grade spans and required subjects
-          set a floor that has nothing to do with the enrolment total. A ratio moving is
+          set a floor that has nothing to do with the enrollment total. A ratio moving is
           the arithmetic of a falling denominator at least as much as it is a decision.
         </p>
         <p className="mt-2.5">
@@ -714,7 +725,7 @@ export function SchoolStaffing() {
       <H2 id="sources">Where every figure on this page comes from</H2>
       <div className="grid gap-2.5 mt-5 max-w-3xl">
         <div className="card px-4 py-3.5">
-          <p className="text-[14px] font-bold">The state&rsquo;s FTE and enrolment</p>
+          <p className="text-[14px] font-bold">The state&rsquo;s FTE and enrollment</p>
           <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-secondary)' }}>
             {st.points.length} years, {fy(st.first_fy)}&ndash;{fy(st.last_fy)}, LEA{' '}
             {st.lea}, {d.peers.length} districts. Every measure reconciles against

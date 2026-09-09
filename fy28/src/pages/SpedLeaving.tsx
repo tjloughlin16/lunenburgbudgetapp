@@ -2,7 +2,7 @@ import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import type { Base } from '../components/report'
 import {
-  Body, Coverage, Grain, H2, Insight, NotEstablished, NotShown, OtherReports,
+  Body, Conclusions, Coverage, Grain, H2, Insight, NotEstablished, NotShown, OtherReports,
   Provenance, Quote, Shell, Stat, useReport,
 } from '../components/report'
 import type { Dest, NetPoint, RoutePoint } from '../components/SpedCharts'
@@ -127,6 +127,14 @@ export function SpedLeaving() {
         {L('/what-we-cannot-answer', 'registered as a gap')} on both the money side and the
         people side.
       </Grain>
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
 
       <H2 id="findings">What this establishes</H2>
       <div className="grid gap-4 mt-5 md:grid-cols-2">
@@ -254,7 +262,7 @@ export function SpedLeaving() {
         head={['district', 'resident children']}
         rows={d.elsewhere_latest.map(r => [r.district, r.students])} />
       <NotShown>
-        Why any family chose any of these. A count of enrolments is not a reason for them.
+        Why any family chose any of these. A count of enrollments is not a reason for them.
         Nothing in this file, and nothing in the meeting record, surveys the households.
       </NotShown>
       <NotShown>

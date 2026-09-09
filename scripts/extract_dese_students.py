@@ -47,7 +47,7 @@ as a breakdown of it.
 
 SY2024 AND SY2025 ARE THE SAME FOUR NUMBERS IN `8aww-sugs`
 
-Lunenburg's SY2024 and SY2025 rows are identical across enrolment, students on an IEP,
+Lunenburg's SY2024 and SY2025 rows are identical across enrollment, students on an IEP,
 students moving in and students moving out. Four independently counted quantities landing
 on the same values two years running is not plausible; a row carried forward is. This
 extract does not decide which -- it MEASURES it, across every district in the file, and
@@ -209,7 +209,7 @@ def write(fields, recs):
 
 
 # --------------------------------------------------------------------------------------
-def build_enrolment(want, report):
+def build_enrollment(want, report):
     """t8td-gens. One row per organisation per year, with the grade columns kept apart."""
     kept, checked, failed = [], 0, []
     for r in records(os.path.join(ROOT, DOC_ENROL), ENROL_COLS, DOC_ENROL):
@@ -479,11 +479,11 @@ def build_town(report, want):
           'the second'
           % (f'{len(send):,}', f'{len(recv):,}', f'{len(only_s):,}', f'{len(only_r):,}'))
     if not send or not recv:
-        raise SystemExit('one of the two enrolment-reason files read as empty. '
+        raise SystemExit('one of the two enrollment-reason files read as empty. '
                          'Nothing written.')
     if only_s or only_r:
         raise SystemExit(
-            'The two enrolment-reason datasets are no longer the same rows. They were one '
+            'The two enrollment-reason datasets are no longer the same rows. They were one '
             'table\npublished twice, and this extract loads them once on that basis. If '
             'they have\ndiverged that is a change in what they ARE, and the table has to '
             'be rebuilt as two.\nNothing written.')
@@ -499,7 +499,7 @@ def build_town(report, want):
           'six peers.\n    The two files were compared on all %s before scoping.'
           % (f'{len(kept):,}', f'{len(send):,}', f'{len(send):,}'))
     if not kept:
-        raise SystemExit('scoping the enrolment-reason table left NO rows at all, which '
+        raise SystemExit('scoping the enrollment-reason table left NO rows at all, which '
                          'looks exactly\nlike a filter that matched nothing. '
                          'Nothing written.')
     return kept
@@ -530,7 +530,7 @@ def main():
             print('      (%s)' % note)
 
     print('Reading six DESE student datasets')
-    enrol = build_enrolment(want, report)
+    enrol = build_enrollment(want, report)
     ind, _ = build_indicator(want, report)
     number_printings(ind, ['fy', 'lea', 'grades', 'student_group', 'indicator_category',
                            'indicator'], 'yamx-769q')

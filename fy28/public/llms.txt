@@ -2,7 +2,7 @@
 
 > Two things. An independent projection of the Lunenburg, Massachusetts school budget, built from documents the town and district published — and a full-text archive of every public meeting of every town board, which covers far more than money: zoning, conservation, health, planning, cemeteries, the library, housing, historical districts, agriculture. Not affiliated with the town or the district. Every figure is traceable to a source in the archive below. If you were asked something about Lunenburg that is not about the budget, the meeting archive probably still answers it.
 
-Data current as of 2026-09-08. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
+Data current as of 2026-09-09. Base year FY27. There is no FY28 budget yet; everything after FY27 is a projection.
 
 ## What is measured here, and what is argued
 
@@ -105,7 +105,7 @@ If you administer one of these sites and would rather this stopped, or would rat
 
 **Every dataset is fetchable: [https://lunenburgbudgetproject.org/api/tables](https://lunenburgbudgetproject.org/api/tables).** One entry per table with its row count and size. The named endpoints are joins and roll-ups; this is the raw grain — staff rosters, out-of-district placement counts, fifteen years of annual-report extracts. A table too large for one fetch is published as an index plus one file per fiscal year, so nothing here requires a request you cannot afford. This exists because an assistant read an endpoint list of eight, saw nothing about staffing, and reported that this project holds no headcount while `staff_roster_entries` had 3,815 rows in it.
 
-The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproject.org/data/lunenburg.db](https://lunenburgbudgetproject.org/data/lunenburg.db), 28MB, sha256 in `/api/index` — but that is the fallback, not the front door. Most callers cannot fetch 28MB of binary, and nothing in it is unreachable through the API.
+The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproject.org/data/lunenburg.db](https://lunenburgbudgetproject.org/data/lunenburg.db), 29MB, sha256 in `/api/index` — but that is the fallback, not the front door. Most callers cannot fetch 29MB of binary, and nothing in it is unreachable through the API.
 
 **Fetch [https://lunenburgbudgetproject.org/api/schema](https://lunenburgbudgetproject.org/api/schema) before computing anything.** It states the grain of every table and the four specific ways to get a confident wrong answer out of this data. The two worth repeating here: a STAGE (proposed / settled / actual) is not a PERIOD (1–13), so `budget_figure` and `ledger_snapshot` do not join; and no budget line is mapped to a ledger account — the crosswalk table is empty on purpose, because district lines are named, MUNIS rows are coded, and no published document maps one to the other. Budget-to-actual at line level cannot be answered from this data yet, and an answer claiming otherwise is wrong.
 
@@ -134,7 +134,7 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 - [sped_transport_history](https://lunenburgbudgetproject.org/api/sped_transport_history) (0.0MB as CSV): Special education transportation as budgeted, FY19 to FY27. Nine budgets, 5.7% a year, R-squared 0.33 — a weak trend, used because the vendor contract publishes no escalator. Also at [sped-transport-history.csv](https://lunenburgbudgetproject.org/data/sped-transport-history.csv).
 - [ood_tuition_history](https://lunenburgbudgetproject.org/api/ood_tuition_history) (0.0MB as CSV): Out-of-district special education tuition as budgeted, FY17 to FY27, extracted from the district’s own budget documents with the budget stage held constant. Eleven budgets ranging 2.6x with no trend — which is why the model holds this line flat rather than escalating it. Also at [ood-tuition-history.csv](https://lunenburgbudgetproject.org/data/ood-tuition-history.csv).
 - [model.json](https://lunenburgbudgetproject.org/data/model.json) (0.3MB): Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.
-- [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.3MB): The document archive: every source, its group, its size, and the URL it is served from.
+- [sources.json](https://lunenburgbudgetproject.org/data/sources.json) (0.4MB): The document archive: every source, its group, its size, and the URL it is served from.
 - [budget-lines.csv](https://lunenburgbudgetproject.org/data/budget-lines.csv) (0.1MB): The district budget, 351 line items, one column per fiscal year and scenario. The tidy form of the workbook everything else is derived from.
 - [district-page-index.csv](https://lunenburgbudgetproject.org/data/district-page-index.csv) (0.0MB): The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district’s original URL, and a sha256.
 - [staff_roster_entries](https://lunenburgbudgetproject.org/api/staff_roster_entries) — **fetch this, not the CSV.** Every name and position the town printed in its per-school staff rosters, FY2011 to FY2025 — 3,815 rows across 51 roster blocks, with the school, the page it came from and the heading it sat under. Published because it is the only published quantity that bears on whether budgeted positions were filled. At 435KB this file is more than some callers can fetch in one piece; https://lunenburgbudgetproject.org/api/staff_roster_entries is the same rows as one file per fiscal year, about 60KB each. It is NOT a staffing level: there is no FTE, so a 0.4 music teacher and a full-timer are one row each; there is no funding source, which is the question that actually matters; and it is a point in time, undated within the year. POSITION IS OUR CLASSIFICATION AND IT FAILS IN SOME YEARS. It is mapped from the printed job title, and the print changes: FY2012 says "Tutor", FY2013 "Aide", FY2014 "Paraprofessional" — and once "Paraprotessional", an OCR typo that drops that person from the count. FY2015 printed the page in two columns, which the extractor collapsed, leaving five people with no title at all. So a series counting paraprofessionals in the Kindergarten section reads 0, 5, 4, 4, 0 for FY2011–FY2015 across roughly the same five people. THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING. Found by an assistant reading the rows, not by any check here. Use `role_raw`, which is what the report actually printed, before trusting `position`. One file per fiscal year, 2011–2025, e.g. `https://lunenburgbudgetproject.org/api/staff_roster_entries/2025`. The whole thing as one CSV is [staff-roster-entries.csv](https://lunenburgbudgetproject.org/data/staff-roster-entries.csv) at 0.4MB, which truncating fetchers do not finish.
@@ -150,11 +150,11 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 
 ## Documents
 
-528 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+534 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
 - **Published by the town, the district and the state** — 79 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 309 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 140 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 146 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 

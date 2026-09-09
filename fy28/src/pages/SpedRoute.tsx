@@ -2,7 +2,7 @@ import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import type { Base } from '../components/report'
 import {
-  Body, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown, OtherReports,
+  Body, Conclusions, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown, OtherReports,
   Provenance, Quote, Shell, Stat, useReport,
 } from '../components/report'
 import type { Cohort, PlaceCount } from '../components/SpedCharts'
@@ -104,6 +104,14 @@ export function SpedRoute() {
         &mdash; that is {L('/what-special-education-costs', 'the money report')}, and it is
         a separate page for exactly this reason.
       </Grain>
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
 
       <H2 id="findings">What this establishes</H2>
       <div className="grid gap-4 mt-5 md:grid-cols-2">

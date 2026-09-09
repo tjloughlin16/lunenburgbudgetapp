@@ -66,7 +66,15 @@ import openpyxl
 # Codes read out of the workbook itself, not recalled. Three of the first eight were
 # invented and the reconciliation caught them, which is the whole point of naming what
 # should be present and reporting what is absent rather than filtering silently.
-KEEP = {
+#
+# TWO SETS, AND THEY ARE NOT INTERCHANGEABLE. `PEERS` are districts of a similar shape, for
+# asking whether a Lunenburg figure is normal; `DESTINATIONS` are where Lunenburg resident
+# children were actually educated. Both are extracted from RADAR, and everything else in
+# this project that says "the peer set" means the first one only -- `dese_xlsx.peers()` and
+# `extract_dese_finance.py` import PEERS from here rather than reading back whatever this
+# file happened to write, because a wider RADAR is not a wider comparison set and reading
+# one off the other silently made it one.
+PEERS = {
     '01620000': 'Lunenburg',
     '06730000': 'Groton-Dunstable',
     '06100000': 'Ashburnham-Westminster',
@@ -75,6 +83,45 @@ KEEP = {
     '01250000': 'Harvard',
     '00190000': 'Ayer',
 }
+
+DESTINATIONS = {
+    # WHERE LUNENBURG'S CHILDREN ACTUALLY GO, which is a different question from who
+    # Lunenburg resembles. The six above are peers -- districts of a similar shape, for
+    # asking whether a figure is normal. These are DESTINATIONS: the places 177 resident
+    # children were educated in FY2026 instead of Lunenburg's own schools, and a parent
+    # comparing spending wants the school their neighbour's child attends, not a
+    # demographic match.
+    #
+    # Added at TJ's request: "here's what lunenburg spends, and heres what the towns our
+    # kids are going to spend."
+    #
+    # Codes read out of the workbook, not recalled -- the comment above records that three
+    # of the first eight were invented last time and the reconciliation caught them.
+    # THE CRITERION IS MECHANICAL AND IT IS WRITTEN DOWN, because a hand-picked set is an
+    # argument (see the `Why these six districts and not six others` row in
+    # money-gaps.csv, which exists because the peer set above has no recorded criterion).
+    # THE RULE: every district that enrolled FIVE OR MORE Lunenburg resident children in
+    # the latest year DESE publishes. `dese_town_enrollment` is the source and
+    # build_peer_spending.py re-derives the set from it on every run, so a destination
+    # that crosses the threshold appears as a FAILURE here rather than as a silent
+    # omission.
+    #
+    # It matters that the threshold is mechanical rather than chosen, because the first
+    # draft of this list held the five biggest bricks-and-mortar destinations and every
+    # one of them spends MORE per pupil than Lunenburg -- while the two Commonwealth
+    # virtual districts, which took eight Lunenburg children each in FY2026, spend LESS.
+    # Choosing the five would have made "every destination spends more" true of the set
+    # and false of the world.
+    '08320000': 'Montachusett Regional Vocational Technical',   # 97 in FY2026, the largest
+    '01530000': 'Leominster',                                   # 18, school choice
+    '04780000': 'Francis W. Parker Charter Essential (District)',  # 15, charter
+    '00970000': 'Fitchburg',                                    # 8, school choice
+    '39020000': 'TEC Connections Academy Commonwealth Virtual School District',  # 8
+    '39010000': 'Greater Commonwealth Virtual District',        # 8
+    '04740000': 'Sizer School: A North Central Charter Essential (District)',  # 7, charter
+}
+
+KEEP = dict(PEERS, **DESTINATIONS)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'sources', 'state-dese', 'radar-district-comparison.xlsx')

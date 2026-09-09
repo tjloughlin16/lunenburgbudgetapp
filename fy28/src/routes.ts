@@ -31,6 +31,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'peers'
   | 'montytech'
   | 'required'
+  | 'addsup'
   // Every analysis written as a MARKDOWN document rather than as a React page. One tab
   // for seventeen documents: the id is the second path segment, `/analysis/free-cash`,
   // and `analysisIdFromPath` below reads it. See pages/Analysis.tsx for why the documents
@@ -186,7 +187,7 @@ export const SLUG: Record<Tab, string> = {
   // The question as it gets asked out loud -- "how many kids are on an IEP" -- rather
   // than `sped-enrollment`, which names our instrument, or `students-with-disabilities`,
   // which is DESE's phrase and not the town's. NOT `how-many-students`, which promises
-  // enrolment as a whole.
+  // enrollment as a whole.
   spedcount: 'how-many-students-are-on-an-iep',
   // NOT `school-choice`, `students-leaving` or `transfers-out` -- all three have meant
   // /if-students-leave since before this page existed, and that page is a SCENARIO with
@@ -227,6 +228,14 @@ export const SLUG: Record<Tab, string> = {
   // payload. NOT `are-we-meeting-the-minimum` either: the answer is yes in every measured
   // year, and a slug that promises a yes/no buries the finding, which is about position.
   required: 'what-the-state-requires-us-to-spend',
+  // EVERY REPORT'S CONCLUSIONS, IN ONE PLACE. The slug is the sentence a resident says
+  // when they have read three of these and want the point -- "what does it all add up
+  // to?" NOT `summary` or `key-findings`, which are the words of the person who wrote the
+  // reports rather than of anybody reading them, and NOT `conclusions`, which names our
+  // instrument: the payload field, the Python module and the component are all called
+  // that, and an address should name the reader's question. NOT `the-big-picture`, which
+  // promises a view of the whole budget and this is a synthesis of the ANALYSES.
+  addsup: 'what-it-all-adds-up-to',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   // The bare address is the fallback index only. Every markdown analysis lives one
   // segment down -- /analysis/free-cash -- and those are the addresses that are
@@ -267,6 +276,11 @@ const ALIASES: Record<string, Tab> = {
   adjust: 'adjust', budget: 'adjust', build: 'adjust',
   solved: 'solved', packages: 'solved', sustainable: 'solved', forever: 'solved',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
+  // The words somebody types looking for the synthesis. `conclusions` and `findings` are
+  // what this project calls the thing internally and are exactly the forms a reader who
+  // has heard about it second-hand will try; they are accepted and never generated.
+  addsup: 'addsup', conclusions: 'addsup', 'key-findings': 'addsup',
+  findings: 'addsup', summary: 'addsup', takeaways: 'addsup',
   athletics: 'athletics', sports: 'athletics', athletic: 'athletics',
   // NOT 'rates' -- that alias already means the curve page, and has since before this
   // page existed. A shared link must not change where it lands.
@@ -448,6 +462,7 @@ export const LABEL: Record<Tab, string> = {
   spedroute: 'Who ends up out of district',
   peers: 'What other districts spend, for each pupil',
   required: 'What the state requires us to spend — and where that puts us',
+  addsup: 'The One Big Report',
   analysis: 'An analysis',
   dataroom: 'The data room',
 }
@@ -598,6 +613,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
+  addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
   ask: 'agents', agents: 'agents',
@@ -635,7 +651,11 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // about children who are not in a Lunenburg classroom and they answer three different
   // questions: how many there are, what it would cost if more left, and what the town is
   // already assessed for the largest group of them.
-  analyses: ['reports', 'sped', 'peers', 'required', 'minaid', 'staffing', 'stopped',
+  // `addsup` is FIRST, ahead of the index. A reader arriving in this area has a question,
+  // not a filing need, and the one page that answers a question rather than listing
+  // pages should be the one they meet -- rule 7a applied to a nav bar. /reports stays
+  // second because it is the area's home and every report is reachable from it.
+  analyses: ['addsup', 'reports', 'sped', 'peers', 'required', 'minaid', 'staffing', 'stopped',
              'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
              'insurance', 'variance'],
   data: ['database', 'rates'],

@@ -274,7 +274,7 @@ export type DecompRow = {
   spend_from: number; spend_to: number; spend_pct: number
   pupils_from: number; pupils_to: number; pupils_pct: number
   per_pupil_from: number; per_pupil_to: number; per_pupil_pct: number
-  at_old_enrolment: number; rank_at_old_enrolment: number
+  at_old_enrollment: number; rank_at_old_enrollment: number
 }
 
 /** THE PAGE'S CENTRAL CHART. Two bars per district — how much more it spent, and how many
@@ -311,7 +311,7 @@ export function MoneyAgainstPupils({ rows }: { rows: DecompRow[] }) {
                     Per pupil {signedPct(p.per_pupil_pct)}
                   </div>
                   <div className="mt-1.5" style={{ color: 'var(--text-muted)' }}>
-                    Same money over the older pupil count: {money(p.at_old_enrolment)}
+                    Same money over the older pupil count: {money(p.at_old_enrollment)}
                   </div>
                 </Box>
               )

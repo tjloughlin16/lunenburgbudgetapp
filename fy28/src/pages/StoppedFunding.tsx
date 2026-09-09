@@ -8,9 +8,10 @@ import {
   fy, type Cover, type Cut, type FundPoint, type Named, type Year,
 } from '../components/StoppedFundingCharts'
 import {
-  Body, H2, H3, Insight, Maybe, NotShown, Stat,
+  Body, Conclusions, H2, H3, Insight, Maybe, NotShown, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
  *  TITLE is the report's NAME, used before the payload arrives; the h1 the
@@ -88,6 +89,7 @@ type Decline = {
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   generated_by: string
   source: string
   stage: string
@@ -255,6 +257,14 @@ export function StoppedFunding() {
       </div>
 
       {/* ------------------------------------------------------- 1. conclusions */}
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       <H2 id="findings">What this establishes</H2>
       <div className="grid gap-4 mt-6"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))' }}>

@@ -104,10 +104,10 @@ def figure_rows(lines, counts=False):
     columns are.
 
     `counts=True` treats bare integers as figures. Not every table in these reports is
-    money: election tallies print `58 27 34 62 181`, enrolment prints headcounts, vital
+    money: election tallies print `58 27 34 62 181`, enrollment prints headcounts, vital
     records prints births and deaths. Keyed on currency alone those pages yield ZERO figure
     rows, so no ruler forms and the whole table is silently skipped — which is exactly what
-    happened to the elections, enrolment and vital-records datasets.
+    happened to the elections, enrollment and vital-records datasets.
 
     A page is not only its table. Centred titles, a `TOWN OF LUNENBURG` heading and a
     date span the full width and cross every gutter, so a ruler measured over all lines

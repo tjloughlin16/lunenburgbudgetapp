@@ -493,6 +493,168 @@
    "spent": 7462928.0
   }
  ],
+ "conclusions": [
+  {
+   "basis": "budget_figure, stage `settled` against stage `restated`, each year against its own year, FY2018\u2013FY2025. The 16 documents behind the second column are classified in document-basis.csv as restatements and forward budget books; none is an accounting record. FY21 is excluded because its restated column is its budget, and years with fewer than 20 usable lines are excluded.",
+   "claim": "Budget rows that landed within two per cent of their own plan",
+   "detail": "No measured year\u2019s reported spending landed further than 2.6% from the budget printed beside it \u2014 and underneath that, only 198 of 576 line-years landed within 2% of their own line. The total is dependable; any single line in it is not. That is what a budget of this kind is: a plan whose parts absorb one another. Salaries came in 0.8% under across 346 line-years and everything else 0.2% over across 195, and the two very nearly cancel. Underneath them 125 of the 576 line-years missed by more than a quarter, in both directions. So a resident or a Finance Committee member can rely on the bottom line and should not read one line\u2019s number as a forecast of that line. Both columns come out of the district\u2019s own budget books \u2014 a budget printed beside a prior year the same publisher restated \u2014 so this is a pattern in what the district reports about itself, not a reading of the town\u2019s books.",
+   "figure": "within2",
+   "figures": {
+    "band": {
+     "text": "2%",
+     "unit": "",
+     "value": 2.0
+    },
+    "big_miss": {
+     "text": "125",
+     "unit": "",
+     "value": 125
+    },
+    "line_years": {
+     "text": "576",
+     "unit": "",
+     "value": 576
+    },
+    "rest_line_years": {
+     "text": "195",
+     "unit": "",
+     "value": 195
+    },
+    "rest_pct": {
+     "text": "0.2%",
+     "unit": "",
+     "value": 0.22604089048128273
+    },
+    "salaries_line_years": {
+     "text": "346",
+     "unit": "",
+     "value": 346
+    },
+    "salaries_pct": {
+     "text": "0.8%",
+     "unit": "",
+     "value": 0.802751830691173
+    },
+    "within2": {
+     "text": "198",
+     "unit": "of 576",
+     "value": 198
+    },
+    "worst": {
+     "text": "2.6%",
+     "unit": "",
+     "value": 2.607185004676549
+    }
+   },
+   "id": "the-total-is-dependable-and-the-lines-are-not",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether a line coming in under is a saving. A post left vacant, a service that did not happen, a grant that paid instead, money moved to another line and a line over-budgeted from the start all produce the same smaller number, and a budget document cannot show an approved mid-year transfer at all. Both columns are also the town\u2019s net general-fund share, so a line that rose because a grant ended looks exactly like a line that got more expensive.",
+   "see": [
+    {
+     "label": "the funds these two columns never show",
+     "slug": "/money-outside-the-budget"
+    },
+    {
+     "label": "what cannot be answered",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "The bottom line is dependable and any single row in it is not. A budget is a plan, not a promise."
+  },
+  {
+   "basis": "Every line with four or more usable line-years in the FY2018\u2013FY2025 sweep, each year\u2019s settled budget against the same year\u2019s restated figure out of the district\u2019s own budget books. A line counts as missing the same way only where it is more than 2% off in every one of its years.",
+   "claim": "School budget rows that miss the same way every year, all by small amounts",
+   "detail": "Only 7 of the 98 school budget lines with four or more measured years miss the same way in every one of them, and the largest averages $42,878. The misses in this budget look like noise, not like lines quietly over-provided. 6 of the 7 land under their own line and the rest over, and every one of them is small: the largest is special education transportation at $42,878 a year below plan, and the next is $20,754. A padded budget shows up as the same lines over-provided year after year, and that pattern is not in these documents. What it establishes is a pattern in the district\u2019s own budget books restating themselves \u2014 the FY2026 ledger is the only accounting record the archive holds for school spending, and it is not one of the measured years.",
+   "figure": "same_way",
+   "figures": {
+    "largest": {
+     "text": "$42,878",
+     "unit": "",
+     "value": 42878.25
+    },
+    "ledger_fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "lines": {
+     "text": "98",
+     "unit": "",
+     "value": 98
+    },
+    "next": {
+     "text": "$20,754",
+     "unit": "",
+     "value": 20753.8
+    },
+    "same_way": {
+     "text": "7",
+     "unit": "of 98 rows",
+     "value": 7
+    },
+    "under": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    }
+   },
+   "id": "nothing-in-this-budget-is-quietly-over-provided",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That a line missing the same way every year was set wrong. A line reliably under can be a service the town reliably does not use all of, and a restatement cannot distinguish that from an estimate set too high. Nor does the absence of a pattern here cover the lines the sweep never reaches: most of the workbook\u2019s lines are published at only one stage in any given year and are not measured at all.",
+   "see": [
+    {
+     "label": "the written analysis behind this page",
+     "slug": "/reports"
+    }
+   ],
+   "so_what": "The misses look like noise rather than lines quietly over-provided."
+  },
+  {
+   "basis": "The lines whose keys carry `tuition`, and the special education staffing lines that do not, summed per year and compared budget against restated figure within the same year, FY2018\u2013FY2025, out of the district\u2019s own budget books. No rate of change is taken across the two kinds of column.",
+   "claim": "How far below plan out-of-district tuition landed in its worst measured year",
+   "detail": "Out-of-district tuition is the line nobody can forecast: across 6 measured years the district\u2019s own books report it from 27.0% over the budget to 51.5% under, while special education staffing never missed by more than 5.9%. When a child\u2019s plan requires a school the district cannot provide, the town pays another school: it does not set the price, does not choose how many children need it, and cannot say no. The part the district does control behaves nothing like it \u2014 special education staffing lands within 5.9% in every one of those years. So a budget can be expected to be about right on the staffing and cannot be expected to be right on the placements, and a year in which tuition lands far from plan is not evidence that anybody planned badly. Both columns are the district restating its own budget book rather than a ledger.",
+   "figure": "under",
+   "figures": {
+    "over": {
+     "text": "27.0%",
+     "unit": "",
+     "value": 27.040478210157982
+    },
+    "sped_worst": {
+     "text": "5.9%",
+     "unit": "",
+     "value": 5.930860806479743
+    },
+    "under": {
+     "text": "51.5%",
+     "unit": "",
+     "value": 51.48097753066998
+    },
+    "years": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    }
+   },
+   "id": "tuition-is-the-line-nobody-can-forecast",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Why any year missed. A tuition line under plan can be fewer placements, cheaper placements, a placement that started part way through the year, or cost carried by the circuit breaker reimbursement or another fund that never appears in the appropriation. And dollars are not children: none of these columns counts a placement.",
+   "see": [
+    {
+     "label": "what special education actually costs",
+     "slug": "/what-special-education-costs"
+    },
+    {
+     "label": "who ends up out of district",
+     "slug": "/who-ends-up-out-of-district"
+    }
+   ],
+   "so_what": "The schools do not set that price or choose how many need it. Their own staffing lands within six per cent."
+  }
+ ],
  "coverage": {
   "drift_threshold": 0.05,
   "excluded": [

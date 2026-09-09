@@ -995,7 +995,7 @@ printed heading. Treat a cluster as a hypothesis that these are the same table.
 | 82-83 | Police department activity statistics | `Activity (under '2024 Statistical Information:')` | 32 | — | clean |
 | 84 | Regional dispatch 911 call volumes, five years | `911 Calls:` | 12 | Total 12,489 / 12,985 / 14,454 / 16,527 / 18 | clean |
 | 85 | Regional dispatch calls by member town | `Police Related Calls:` | 10 | — | clean |
-| 97-98 | Special education enrolment and DESE indicators | `SPECIAL SERVICES DEPARTMENT / Town Report – FY24 (data taken from 2023-2024 school year)` | 20 | — | messy |
+| 97-98 | Special education enrollment and DESE indicators | `SPECIAL SERVICES DEPARTMENT / Town Report – FY24 (data taken from 2023-2024 school year)` | 20 | — | messy |
 
 ### FY2025 — 69 blocks
 

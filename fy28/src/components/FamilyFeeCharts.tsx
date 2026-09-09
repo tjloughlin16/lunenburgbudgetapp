@@ -207,3 +207,217 @@ export function LadderExhibit({ rows, cap, w = 640, h = 260 }: {
     </svg>
   )
 }
+
+/* ==========================================================================================
+ *                              THE HOUSEHOLD BILL — THE TABLE
+ * ==========================================================================================
+ * The page is this table. A reader sets their own household above it and reads a yearly
+ * figure off it; everything explaining how to read it comes after (rule 7a).
+ *
+ * FOUR BANDS, AND THE TABLE SHOWS ALL FOUR. `priced` is an amount a document states for the
+ * year shown. `carried` is charged, at a rate last set in public in an earlier year.
+ * `unpriced` is charged with no amount published anywhere — drawn hatched, with the request
+ * that would price it. `no charge` is a charge a family might expect and does not pay, and
+ * it is in the table at full size because the record showing a household bill going DOWN is
+ * as much a finding as one going up (rule 8).
+ *
+ * SO THE TOTAL IS A FLOOR AND THE TABLE SAYS SO ON ITS FACE. Nothing here estimates an
+ * unpriced row: rule 7 — the amounts are not in the archive, so a guess at them would be a
+ * proxy standing in for the thing. The unpriced rows are a COUNT with a named remedy each.
+ *
+ * NOT ONE FIGURE IS TYPED IN THIS FILE (rule 2). Every amount, label, note and request
+ * arrives from /data/what-families-pay.json.
+ */
+
+export type ChargeDef = {
+  id: string; label: string; applies: string; basis: string; status: string
+  quote: string | null; cite: string | null; request: string | null
+}
+export type BillRow = {
+  id: string; band: string; amount: number | null; detail: string; note: string
+  low?: number; high?: number; inferred?: boolean
+}
+export type Bill = {
+  rows: BillRow[]; floor: number; carried: number; floor_carried: number
+  unpriced_in_bill: number
+}
+
+const BAND_TONE: Record<string, string> = {
+  priced: 'var(--text-primary)',
+  carried: YEAR,
+  unpriced: SEASON,
+  'no charge': 'var(--text-muted)',
+}
+
+function Band({ band }: { band: string }) {
+  return (
+    <span className="text-[9.5px] font-bold uppercase tracking-widest whitespace-nowrap"
+      style={{ color: BAND_TONE[band] ?? MUTED }}>{band}</span>
+  )
+}
+
+/** One line of the bill. */
+function Row({ r, def }: { r: BillRow; def: ChargeDef }) {
+  const unpriced = r.band === 'unpriced'
+  return (
+    <tr style={{ borderTop: '1px solid var(--grid)' }}>
+      <td className="py-2.5 pr-3 align-top">
+        <div className="text-[13px] font-semibold">{def.label}</div>
+        {r.detail && (
+          <div className="text-[11.5px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+            {r.detail}
+          </div>
+        )}
+        {def.applies && (
+          <div className="text-[11px] mt-0.5" style={{ color: MUTED }}>
+            who pays it: {def.applies}
+          </div>
+        )}
+        {r.note && (
+          <div className="text-[11px] mt-1.5 leading-snug pl-2"
+            style={{ color: MUTED, borderLeft: '2px solid var(--grid)' }}>
+            {r.note}
+          </div>
+        )}
+        {unpriced && def.request && (
+          <div className="text-[11px] mt-1.5 leading-snug pl-2"
+            style={{ color: 'var(--text-secondary)', borderLeft: `2px solid ${SEASON}` }}>
+            <span className="font-bold uppercase tracking-widest text-[9.5px]">
+              what would price it&nbsp;
+            </span>
+            {def.request}
+          </div>
+        )}
+      </td>
+      <td className="py-2.5 pr-3 align-top whitespace-nowrap"><Band band={r.band} /></td>
+      <td className="py-2.5 text-right align-top tabular-nums whitespace-nowrap">
+        {r.amount === null
+          ? <span className="text-[12px] font-semibold" style={{ color: SEASON }}>
+              not published
+            </span>
+          : <span className="text-[15px] font-bold">{money(r.amount)}</span>}
+        {r.low !== undefined && r.high !== undefined && r.high > r.low && (
+          <div className="text-[10.5px] mt-0.5" style={{ color: MUTED }}>
+            {money(r.low)}–{money(r.high)}
+          </div>
+        )}
+      </td>
+    </tr>
+  )
+}
+
+export function HouseholdBill({ bill, standing, defs, bandMeaning, summary }: {
+  bill: Bill
+  standing: BillRow[]
+  defs: Record<string, ChargeDef>
+  bandMeaning: Record<string, string>
+  summary: React.ReactNode
+}) {
+  const priced = bill.rows.filter(r => r.band === 'priced' || r.band === 'carried')
+  const unpricedInBill = bill.rows.filter(r => r.band === 'unpriced')
+  const nocharge = standing.filter(r => r.band === 'no charge')
+  const unpriced = [...unpricedInBill, ...standing.filter(r => r.band === 'unpriced')]
+
+  return (
+    <div className="card overflow-hidden">
+      {/* THE ANSWER, FIRST. Not the method, not the caveat — the number. */}
+      <div className="px-4 sm:px-5 py-5"
+        style={{ background: 'var(--surface-2)', borderBottom: '1px solid var(--grid)' }}>
+        <div className="text-[11px] font-bold uppercase tracking-widest"
+          style={{ color: MUTED }}>this household pays, for the school year</div>
+        <div className="text-[38px] sm:text-[46px] font-black leading-none mt-1.5 tabular-nums">
+          {money(bill.floor_carried)}
+        </div>
+        <p className="text-[12.5px] leading-snug mt-2.5 max-w-2xl"
+          style={{ color: 'var(--text-secondary)' }}>
+          {summary}
+        </p>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-left" style={{ minWidth: 520 }}>
+          <thead>
+            <tr className="text-[10px] font-bold uppercase tracking-widest"
+              style={{ color: MUTED }}>
+              <th className="py-2 px-4 sm:px-5 font-bold">charge</th>
+              <th className="py-2 pr-3 font-bold">footing</th>
+              <th className="py-2 px-4 sm:px-5 text-right font-bold">a year</th>
+            </tr>
+          </thead>
+          <tbody className="px-4">
+            {priced.map(r => <Row key={r.id} r={r} def={defs[r.id]} />)}
+          </tbody>
+        </table>
+      </div>
+
+      {/* The two totals, and the difference between them is the honest part. */}
+      <div className="px-4 sm:px-5 py-3.5"
+        style={{ borderTop: '2px solid var(--text-primary)' }}>
+        <div className="flex justify-between items-baseline gap-4">
+          <span className="text-[12.5px] font-semibold">
+            Amounts a document states for this year
+          </span>
+          <span className="text-[16px] font-bold tabular-nums">{money(bill.floor)}</span>
+        </div>
+        {bill.carried > 0 && (
+          <div className="flex justify-between items-baseline gap-4 mt-1.5">
+            <span className="text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
+              …plus rates last set in public and not restated for this year
+            </span>
+            <span className="text-[14px] font-semibold tabular-nums"
+              style={{ color: YEAR }}>{money(bill.carried)}</span>
+          </div>
+        )}
+        <div className="flex justify-between items-baseline gap-4 mt-2 pt-2"
+          style={{ borderTop: '1px solid var(--grid)' }}>
+          <span className="text-[13px] font-bold">Total the household pays</span>
+          <span className="text-[19px] font-black tabular-nums">
+            {money(bill.floor_carried)}
+          </span>
+        </div>
+      </div>
+
+      {/* AND THEN WHAT SITS ABOVE IT. Named, counted, never estimated. */}
+      {unpriced.length > 0 && (
+        <div style={{ borderTop: '1px solid var(--grid)' }}>
+          <div className="px-4 sm:px-5 pt-4 pb-1">
+            <h3 className="text-[13px] font-bold">
+              …and {unpriced.length} charges above that, with no published amount
+            </h3>
+            <p className="text-[11.5px] leading-snug mt-1" style={{ color: MUTED }}>
+              {bandMeaning.unpriced}. Each is real — the district sells it or a family has
+              said they paid it — so the total above is a floor rather than a bill. Nothing
+              here estimates one: beside each is the document that would price it.
+            </p>
+          </div>
+          <div className="overflow-x-auto px-1">
+            <table className="w-full text-left" style={{ minWidth: 520 }}>
+              <tbody>
+                {unpriced.map(r => <Row key={r.id} r={r} def={defs[r.id]} />)}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {/* AND WHAT A FAMILY DOES NOT PAY. Rule 8: the record showing a bill going down. */}
+      {nocharge.length > 0 && (
+        <div style={{ borderTop: '1px solid var(--grid)' }}>
+          <div className="px-4 sm:px-5 pt-4 pb-1">
+            <h3 className="text-[13px] font-bold">What a family is not charged for</h3>
+            <p className="text-[11.5px] leading-snug mt-1" style={{ color: MUTED }}>
+              {bandMeaning['no charge']}.
+            </p>
+          </div>
+          <div className="overflow-x-auto px-1 pb-2">
+            <table className="w-full text-left" style={{ minWidth: 520 }}>
+              <tbody>
+                {nocharge.map(r => <Row key={r.id} r={r} def={defs[r.id]} />)}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}

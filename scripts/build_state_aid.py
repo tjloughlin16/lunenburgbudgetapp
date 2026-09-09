@@ -593,7 +593,7 @@ def pupils(c, fmla):
                    ORDER  BY fy, measure""" % ','.join('?' * len(PUPIL_MEASURES)),
              LEA, *PUPIL_MEASURES)
     if not rows:
-        fail('no DESE pupil counts — the enrolment join matched nothing, and the page '
+        fail('no DESE pupil counts — the enrollment join matched nothing, and the page '
              'divides aid by a headcount')
     unreconciled = [r for r in rows if r['reconciles'] != 'yes']
     if unreconciled:

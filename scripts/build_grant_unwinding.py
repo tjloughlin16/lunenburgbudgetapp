@@ -46,6 +46,11 @@ import re
 import sqlite3
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
@@ -334,6 +339,45 @@ def build():
 
     hits = searched()
     first, last = series[0], series[-1]
+
+    # ---- the quantities the conclusions rest on --------------------------------------
+    # Computed here, beside everything else the page states, because rule 2 applies to a
+    # claim exactly as it applies to a chart: a sentence carrying a figure nothing derived
+    # is the one thing on this page that can be silently wrong.
+    ly = [r for r in by_year if r['fy'] == latest][0]
+    # THE GRANT FALL AS A MAGNITUDE, and it is NOT the aggregate. The aggregate nets grant
+    # growth off against grant falls; what a resident means by "the grants ended" is the
+    # money that actually went away, which is the swap and the reduction added together.
+    grant_fall = -(ly['swap']['d_grants'] + ly['reduction']['d_grants'])
+    fell_n = ly['swap']['n'] + ly['reduction']['n']
+    if grant_fall <= 0 or not fell_n:
+        fail('no function lost grant money in FY%d -- the conclusions on this page are '
+             'about a year in which grants fell' % latest)
+    replaced = -ly['swap']['d_grants']
+    not_replaced = -ly['reduction']['d_grants']
+    replaced_share = 100.0 * replaced / grant_fall
+    # WHERE NO GRANT MOVED AT ALL. The class the aggregate hides, and the larger movement.
+    no_fall_n = ly['grant_growth']['n'] + ly['other']['n']
+    no_fall_gen = ly['grant_growth']['d_gen_fund'] + ly['other']['d_gen_fund']
+    net_grant_fall = -ly['aggregate']['d_grants']
+    # NOT `biggest` -- that name already holds the fifteen largest swaps in the record,
+    # and reusing it here replaced a LIST in the payload with a single ROW. The page did
+    # `.map` over it, threw, and prerendered zero characters, while the generator's own
+    # --check passed because it compares its output to itself. A payload field silently
+    # changing type is the shape of defect nothing in this repo was watching for.
+    top_rise = gen_fund_rises[0]
+    # The claim below says this rise is larger than the whole net grant fall. If that ever
+    # stops being true the sentence is wrong, so it stops the build rather than shipping.
+    if top_rise['d_gen_fund'] <= net_grant_fall:
+        fail('the largest general fund rise in FY%d is no longer larger than the year’s '
+             'net grant fall -- a conclusion on this page says it is' % latest)
+    cf = {
+        'actual': round(last['gen_fund']),
+        'at_first': round(last['total'] * first['gen_fund'] / first['total']),
+        'difference': round(last['gen_fund'] - last['total'] * first['gen_fund'] / first['total']),
+    }
+    total_change = ly['aggregate']['d_total']
+
     return {
         'about': 'Every dollar of Lunenburg school spending, split by the fund that paid '
                  'it, from DESE’s End of Year Financial Report.',
@@ -368,6 +412,151 @@ def build():
         'minutes': {k: hits[k] for k in
                     ('published', 'held', 'searchable', 'unsearchable', 'image_scan',
                      'searchable_share', 'text_files_present', 'first_date', 'last_date')},
+        # WHAT A RESIDENT SHOULD TAKE AWAY. Everyone in this town knows the federal money
+        # ran out; these say what actually happened to it, and what else was moving the
+        # town's bill in the same year. Rule 8: what it means for planning. Rule 11: a
+        # general fund line rising is a general fund line rising, and nothing more.
+        'conclusions': emit('when-grants-end', [
+            conclusion(
+                id='half-of-it-was-replaced-and-half-just-stopped',
+                claim='Of the grant money that ran out in FY2025 was replaced by the town’s own money',
+                so_what='The rest simply stopped. It was a handover and a reduction happening at the same time.',
+                lede='When the grant money ran out in %s the town replaced under half of '
+                      'it: of %s of grant funding that fell, across %s areas of school '
+                      'spending, %s fell where the town’s own money rose to meet it and '
+                      '%s fell where nothing did.'
+                      % (C.fy(latest), C.usd(grant_fall), C.num(fell_n),
+                         C.usd(replaced), C.usd(not_replaced)),
+                detail='In the %s functions where the two moved opposite ways the general '
+                       'fund rose %s. In the other %s, grants fell and the general fund '
+                       'fell a further %s on top of them. So the year is a handover and a '
+                       'reduction happening at once, and “the town picked up the bill for '
+                       'the grants” describes %s of the money. A function where the '
+                       'general fund rose is also not a function that was made whole: the '
+                       'rise is what the town raised, not what the work cost.'
+                       % (C.num(ly['swap']['n']), C.usd(ly['swap']['d_gen_fund']),
+                          C.num(ly['reduction']['n']),
+                          C.usd(-ly['reduction']['d_gen_fund']), C.pct(replaced_share)),
+                figures={
+                    'fy': figure(latest, C.fy(latest)),
+                    'grant_fall': figure(grant_fall, C.usd(grant_fall)),
+                    'functions': figure(fell_n, C.num(fell_n)),
+                    'replaced': figure(replaced, C.usd(replaced)),
+                    'not_replaced': figure(not_replaced, C.usd(not_replaced)),
+                    'swap_n': figure(ly['swap']['n'], C.num(ly['swap']['n'])),
+                    'reduction_n': figure(ly['reduction']['n'],
+                                          C.num(ly['reduction']['n'])),
+                    'town_rose': figure(ly['swap']['d_gen_fund'],
+                                        C.usd(ly['swap']['d_gen_fund'])),
+                    'town_fell_too': figure(-ly['reduction']['d_gen_fund'],
+                                            C.usd(-ly['reduction']['d_gen_fund'])),
+                    'replaced_share': figure(replaced_share, C.pct(replaced_share)),
+                },
+                figure='replaced_share',
+                kind='measured',
+                basis='DESE’s End of Year Financial Report for Lunenburg, function by '
+                      'function, FY%d against FY%d: the general fund column set against '
+                      'the grants-and-revolving column, and each function classified by '
+                      'the signs of the two. The classification is ours; the state '
+                      'publishes no such label.' % (latest - 1, latest),
+                not_shown='Which grant, and which post. DESE reports a fund total and '
+                          'names neither, so a general fund rise beside a grant fall is '
+                          'equally consistent with the town picking a cost up and with two '
+                          'unrelated things happening in one function in one year. Nor '
+                          'does a reduction establish that a service ended.',
+                see=[('/money-outside-the-budget', 'the money that never reaches the vote'),
+                     ('/what-stopped-being-funded', 'the lines the book took to zero')],
+            ),
+            conclusion(
+                id='the-biggest-rise-was-not-a-grant-ending',
+                claim='Rise in what the town paid for employee insurance in FY2025',
+                so_what='Larger than the whole year’s fall in grant funding, and no grant was paying for it.',
+                lede='The largest rise in the town’s own school spending in %s was not a '
+                      'grant ending. It was %s, up %s — more than the whole year’s net '
+                      'fall in grant funding of %s.'
+                      % (C.fy(latest), top_rise['func_desc'],
+                         C.usd(top_rise['d_gen_fund']), C.usd(net_grant_fall)),
+                detail='Nothing in the handover explains it: grant funding against that '
+                       'function did not fall, it rose %s in the same year. And across '
+                       'the %s functions where '
+                       'grants did not fall at all, the general fund rose %s net — a '
+                       'larger movement than the handover. The end of the grants is real '
+                       'and it is not the biggest thing that happened to what Lunenburg '
+                       'raises for its schools that year.'
+                       % (C.usd(top_rise['d_grants']), C.num(no_fall_n),
+                          C.usd(no_fall_gen)),
+                figures={
+                    'fy': figure(latest, C.fy(latest)),
+                    'insurance_rise': figure(top_rise['d_gen_fund'],
+                                             C.usd(top_rise['d_gen_fund'])),
+                    'net_grant_fall': figure(net_grant_fall, C.usd(net_grant_fall)),
+                    'insurance_grants': figure(top_rise['d_grants'],
+                                               C.usd(top_rise['d_grants'])),
+                    'no_fall_n': figure(no_fall_n, C.num(no_fall_n)),
+                    'no_fall_gen': figure(no_fall_gen, C.usd(no_fall_gen)),
+                },
+                figure='insurance_rise',
+                kind='measured',
+                basis='DESE’s End of Year Financial Report, every function in both FY%d '
+                      'and FY%d, ranked by the change in the general fund column '
+                      'whatever happened to grants in the same function.'
+                      % (latest - 1, latest),
+                not_shown='Why the insurance figure moved. DESE attributes dollars to a '
+                          'function; it does not report premiums, how many employees are '
+                          'covered, or how the town and the district divide the cost. And '
+                          'a line rising is not people being hired.',
+                see=[('/health-insurance', 'what health insurance costs the town'),
+                     ('/find-the-money', 'where the pressure actually sits')],
+            ),
+            conclusion(
+                id='the-town-carries-more-of-it-than-it-used-to',
+                claim='A year the town now carries that outside money used to, at today’s spending',
+                so_what='Outside money paid nearly a dollar in five of school spending and now pays about one in ten.',
+                lede='Money from outside the town’s budget — grants and the like — used '
+                      'to pay nearly one dollar in five of what Lunenburg schools spend, '
+                      'and now pays about one in ten. The town’s own share went from %s in '
+                      '%s to %s in %s.'
+                      % (C.pct(first['town_share']), C.fy(first['fy']),
+                         C.pct(last['town_share']), C.fy(last['fy'])),
+                detail='That is %s, and at %s spending it is worth %s a year: had the '
+                       'split stayed where it was in %s the general fund would have '
+                       'carried %s rather than %s. That last figure is arithmetic of ours '
+                       'and a counterfactual, not a forecast — but it is the size of the '
+                       'shift a household is paying for, and it is why the town’s bill can '
+                       'rise in a year when the schools spend less. In %s the general fund '
+                       'rose %s while spending across both funds fell %s.'
+                       % (C.points(last['town_share'] - first['town_share']),
+                          C.fy(last['fy']), C.usd(cf['difference']), C.fy(first['fy']),
+                          C.usd(cf['at_first']), C.usd(cf['actual']), C.fy(latest),
+                          C.usd(ly['aggregate']['d_gen_fund']), C.usd(-total_change)),
+                figures={
+                    'share_first': figure(first['town_share'], C.pct(first['town_share'])),
+                    'share_last': figure(last['town_share'], C.pct(last['town_share'])),
+                    'fy_first': figure(first['fy'], C.fy(first['fy'])),
+                    'fy_last': figure(last['fy'], C.fy(last['fy'])),
+                    'points': figure(last['town_share'] - first['town_share'],
+                                     C.points(last['town_share'] - first['town_share'])),
+                    'counterfactual': figure(cf['difference'], C.usd(cf['difference'])),
+                    'at_first_share': figure(cf['at_first'], C.usd(cf['at_first'])),
+                    'actual': figure(cf['actual'], C.usd(cf['actual'])),
+                    'latest_gen_fund_rise': figure(ly['aggregate']['d_gen_fund'],
+                                                   C.usd(ly['aggregate']['d_gen_fund'])),
+                    'latest_total_fall': figure(-total_change, C.usd(-total_change)),
+                },
+                figure='counterfactual',
+                kind='measured',
+                basis='DESE’s End of Year Financial Report, district totals, every year '
+                      'from FY%d to FY%d: the general fund column as a share of the '
+                      'state’s own total column.' % (first['fy'], last['fy']),
+                not_shown='That the shift was decided. The share is an outcome of grant '
+                          'programmes starting and ending, of what the state pays and of '
+                          'what the town appropriates, and nothing here separates them. '
+                          'The share also did not move in a straight line — it fell and '
+                          'recovered more than once inside the span.',
+                see=[('/state-aid', 'the aid the town does not set'),
+                     ('/money-outside-the-budget', 'the funds outside the appropriation')],
+            ),
+        ]),
         'not_established': [
             'Which grant. DESE reports a fund total; it does not name a grant.',
             'Which post. A dollar attributed to a fund is not a person, and a function '

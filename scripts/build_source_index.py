@@ -1029,11 +1029,11 @@ GROUPS = [
              '316 rows. No printed totals, so no arithmetic check.'),
             ('data/report-officials.csv', 'Who held which town office', 1,
              '237 rows. A list of names and terms; no total to check it against.'),
-            ('data/report-enrollment-mcas.csv', 'Enrolment and MCAS results', 1,
+            ('data/report-enrollment-mcas.csv', 'Enrollment and MCAS results', 1,
              '337 rows. No arithmetic check available.'),
             ('data/report-dept-activity.csv', 'What each department reports doing', 1,
              '515 rows of counts departments publish about their own year.'),
-            ('data/report-monty-tech.csv', 'Montachusett Regional assessment and enrolment',
+            ('data/report-monty-tech.csv', 'Montachusett Regional assessment and enrollment',
              1, '70 rows. The vocational assessment is one of the largest single lines the '
              'town votes and one of the least discussed.'),
             ('data/report-vital-records.csv', 'Births, marriages and deaths', 1,
@@ -1315,7 +1315,7 @@ GROUPS = [
             ('data/dese-ch70-formula.csv',
              'The Chapter 70 formula, term by term, FY1993\u2013FY2026', 3,
              'Thirty-four years of the state aid formula for every Massachusetts district '
-             '\u2014 foundation enrolment, foundation budget, required local '
+             '\u2014 foundation enrollment, foundation budget, required local '
              'contribution, Chapter 70 aid, required net school spending and what was '
              'actually spent. It answers a question nobody in town can currently put a '
              'number on: whether Lunenburg spends above or below the minimum the state '
@@ -1343,7 +1343,7 @@ GROUPS = [
              'How the Chapter 70 aid figure is built, FY2007 on', 3,
              'Every increment the formula adds between the foundation budget and the aid '
              'paid, and every reduction it applies. This is what lets anybody model how '
-             'the aid RESPONDS to a change in enrolment rather than assuming it moves '
+             'the aid RESPONDS to a change in enrollment rather than assuming it moves '
              'linearly \u2014 which is what the students-leave scenario needs. Rebuild '
              'with scripts/extract_dese_state_aid.py.'),
             ('data/dese-ch70-contribution.csv',
@@ -1402,8 +1402,8 @@ GROUPS = [
              'reclassification would look identical to a change in staffing. Rebuild with '
              'scripts/extract_dese_staffing.py.'),
             ('data/dese-enrollment.csv',
-             'Enrolment by grade and selected population, SY1992\u2013SY2026', 3,
-             'The denominator for nearly every rate on this site: enrolment by grade, and '
+             'Enrollment by grade and selected population, SY1992\u2013SY2026', 3,
+             'The denominator for nearly every rate on this site: enrollment by grade, and '
              'the counts of English learners, low income, economically disadvantaged, '
              'high needs and students with disabilities, per state, district and school. '
              'Its published count of students with disabilities agrees exactly with '
@@ -1423,7 +1423,7 @@ GROUPS = [
              'Disability type, race, gender, grade span, in district against out of '
              'district, placement, and the special education FTE ratios \u2014 with a '
              'PUBLISHED count of students with disabilities, which was previously '
-             'reachable here only by multiplying a percentage by enrolment. Three of the '
+             'reachable here only by multiplying a percentage by enrollment. Three of the '
              'ten categories do not behave like the rest: Placement is in-district only '
              'and runs short of its own total, Disability Type is a collapsed rendering '
              'of Disability Type All, and the FTE category is a ratio despite the file '

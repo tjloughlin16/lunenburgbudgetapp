@@ -75,6 +75,11 @@ import re
 import sqlite3
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 PAGES = os.path.join(ROOT, 'sources/town-budget/pages')
@@ -92,7 +97,7 @@ DISTRICT_LINE = 'health insurance'
 GAP_KEYS = [
     ('money_out', 'School share of the town’s health insurance before FY2026'),
     ('money_out', 'School share of Medicare, active health insurance and the insurance reserves'),
-    ('document_wanted', 'The town’s Chapter 32B enrolment schedule'),
+    ('document_wanted', 'The town’s Chapter 32B enrollment schedule'),
 ]
 
 # What each ledger account is, in words a resident uses. The KEY is the account id, so a
@@ -450,8 +455,132 @@ def build():
             }
 
     town_points = [{'fy': t['fy'], 'value': t['appropriated']} for t in town_series]
+    town_ch = change(town_points)
+    growth = None if not school23 else {
+        'first_fy': r23['fy'], 'last_fy': LEDGER_FY,
+        'first': school23, 'last': school_in_dept914,
+        'pct': (school_in_dept914 - school23) / school23,
+        'cagr': (school_in_dept914 / school23) ** (1 / (LEDGER_FY - r23['fy'])) - 1,
+    }
+
+    # ---------------------------------------------------- what this page CONCLUDES
+    #
+    # Rule 11 with a number attached, and rule 8's altitude: not what anybody got wrong,
+    # but what a resident comparing the school budget to anything is missing. The
+    # documentary half -- that the school share is separately printed in only two of
+    # sixteen years -- is a REGISTERED GAP above and not a conclusion. It is a fact about
+    # a report; these are facts about the money.
+    concl = [
+        conclusion(
+            id='the-school-budget-is-not-what-the-schools-cost',
+            claim='Of the schools’ health insurance is not in the school budget at all',
+            so_what='It is appropriated to the town’s insurance department, so the school budget understates the town’s bill.',
+            lede=(
+                'The schools’ health insurance is %s in %s, and %s of it is not in the '
+                'school budget at all: it is appropriated to the town’s insurance '
+                'department, so the appropriation residents argue about understates what '
+                'the town raises for the schools.'
+                % (C.usd(school_total), C.fy(LEDGER_FY), C.usd(school_in_dept914))),
+            detail=(
+                'The district’s %s appropriation is %s, and account %s — school retirees’ '
+                'health insurance — is not inside it. Retiree health is the town’s '
+                'obligation under Chapter 32B rather than the School Committee’s, so it is '
+                'appropriated to the town’s insurance department instead. Adding it raises '
+                'what the town raises for the schools by %s without a single service '
+                'changing, and the whole of the schools’ health insurance, both departments '
+                'together, is %s.'
+                % (C.fy(LEDGER_FY), C.usd(appropriation), SCHOOL_RETIREE,
+                   C.pct(100 * school_in_dept914 / appropriation),
+                   C.usd(school_total))),
+            figures={
+                'fy': figure(LEDGER_FY, C.fy(LEDGER_FY)),
+                'school_total': figure(school_total, C.usd(school_total)),
+                'retiree': figure(school_in_dept914, C.usd(school_in_dept914)),
+                'appropriation': figure(appropriation, C.usd(appropriation)),
+                'share': figure(100 * school_in_dept914 / appropriation,
+                                C.pct(100 * school_in_dept914 / appropriation)),
+            },
+            figure='retiree',
+            kind='measured',
+            allow=(SCHOOL_RETIREE, 'Chapter 32B'),
+            basis=(
+                'The town’s MUNIS year-end expense report for %s at period %d — glytdbud, '
+                'general fund, every department, an accounting printout rather than an '
+                'assembled sheet — read account by account and reconciled against the '
+                'department row the town’s own period 9 report prints for the same '
+                'department. The district’s FY2026 budget book states the active-employee '
+                'line at the same figure to the dollar.' % (C.fy(LEDGER_FY), LEDGER_PERIOD)),
+            not_shown=(
+                'Anything about people. A budget line is dollars: the retiree account can '
+                'rise because there are more retirees, because the same retirees are on '
+                'costlier plans, or because the town’s share of the premium changed, and '
+                'nothing published here separates them. Nor is this the whole of the '
+                'schools’ insurance — Medicare, life insurance, the Public Employee '
+                'Committee and the cost-control reserve carry nothing in their names that '
+                'says which side of the town they are for.'),
+            see=[('/money-outside-the-budget', 'the money outside the budget'),
+                 ('/the-money', 'how the money reaches the schools')],
+        ),
+    ]
+    if town_ch and growth:
+        concl.append(conclusion(
+            id='insurance-outgrows-the-levy-that-pays-for-it',
+            claim='A year, the growth of the town’s insurance department',
+            so_what='Faster than the levy that pays for it is allowed to rise, so it takes a growing share of every increase.',
+            lede=(
+                'The town’s insurance department has nearly doubled since %s, to %s — %s a '
+                'year, against a levy limit Proposition 2½ raises by 2.5%% a year plus new '
+                'growth. Insurance takes a growing share of every increase the town votes.'
+                % (C.fy(town_ch['first_fy']), C.usd(town_ch['last']),
+                   C.pct(100 * town_ch['cagr']))),
+            detail=(
+                '%s in %s against %s in %s, appropriation against appropriation in every '
+                'year: %s of the %s annual reports print an insurance block whose component '
+                'lines sum, to the cent, to the subtotal the page itself prints, and the '
+                'last point comes from the town’s ledger. The school-named part of it grew '
+                'faster still over the short run that can be measured at all — %s in %s to '
+                '%s in %s, %s a year — but that is two observations from two publishers, '
+                'not a trend.'
+                % (C.usd(town_ch['first']), C.fy(town_ch['first_fy']),
+                   C.usd(town_ch['last']), C.fy(town_ch['last_fy']),
+                   C.num(len(checked)), C.num(len(reports)),
+                   C.usd(growth['first']), C.fy(growth['first_fy']),
+                   C.usd(growth['last']), C.fy(growth['last_fy']),
+                   C.pct(100 * growth['cagr']))),
+            figures={
+                'first_fy': figure(town_ch['first_fy'], C.fy(town_ch['first_fy'])),
+                'last_fy': figure(town_ch['last_fy'], C.fy(town_ch['last_fy'])),
+                'first': figure(town_ch['first'], C.usd(town_ch['first'])),
+                'last': figure(town_ch['last'], C.usd(town_ch['last'])),
+                'cagr': figure(100 * town_ch['cagr'], C.pct(100 * town_ch['cagr'])),
+                'checked': figure(len(checked), C.num(len(checked))),
+                'editions': figure(len(reports), C.num(len(reports))),
+                'school_first': figure(growth['first'], C.usd(growth['first'])),
+                'school_first_fy': figure(growth['first_fy'], C.fy(growth['first_fy'])),
+                'school_last': figure(growth['last'], C.usd(growth['last'])),
+                'school_cagr': figure(100 * growth['cagr'], C.pct(100 * growth['cagr'])),
+            },
+            figure='cagr',
+            kind='measured',
+            allow=('Proposition 2½', '2.5%'),
+            basis=(
+                'The GENERAL FUND APPROPRIATIONS classification printed in each annual town '
+                'report, insurance department, appropriated column only — every year kept '
+                'is one whose component rows sum to the `Total Insurance` the same page '
+                'prints — plus the %s ledger for the last point. One stage throughout: '
+                'appropriation against appropriation, never an actual.' % C.fy(LEDGER_FY)),
+            not_shown=(
+                'What drove the growth. Premiums, enrolment in the plan, the town’s share '
+                'of the premium and the number of retirees all move this line and none of '
+                'them is published beside it. The two school-named observations are eleven '
+                'years apart from the start of the town series and come from two different '
+                'publishers, so they bound the school share rather than measure its trend.'),
+            see=[('/state-aid', 'the revenue side of the same squeeze'),
+                 ('/what-we-cannot-answer', 'what cannot be answered')],
+        ))
 
     return {
+        'conclusions': emit('health-insurance', concl),
         'generated_by': 'scripts/build_insurance_charts.py',
         'source': 'sources/data/lunenburg.db',
         'ledger': {
@@ -513,15 +642,10 @@ def build():
             'school_retirees_page': r23['page'] if r23 else None,
             'school_retirees_source': r23['source'] if r23 else None,
             'split': split,
-            'growth_since_named': None if not school23 else {
-                'first_fy': r23['fy'], 'last_fy': LEDGER_FY,
-                'first': school23, 'last': school_in_dept914,
-                'pct': (school_in_dept914 - school23) / school23,
-                'cagr': (school_in_dept914 / school23) ** (1 / (LEDGER_FY - r23['fy'])) - 1,
-            },
+            'growth_since_named': growth,
         },
         'town_series': town_series,
-        'town_change': change(town_points),
+        'town_change': town_ch,
         'gaps': gaps(cx),
     }
 

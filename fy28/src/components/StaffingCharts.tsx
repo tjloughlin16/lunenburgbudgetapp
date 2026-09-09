@@ -418,7 +418,7 @@ export function RoleGrid({ rows, format }: { rows: RoleRow[]; format: (s: string
   )
 }
 
-/* --------------------------------------------------------- one series against enrolment */
+/* --------------------------------------------------------- one series against enrollment */
 
 export type StatePoint = {
   fy: number; teacher_fte: number; para_fte: number
@@ -453,12 +453,12 @@ function EnrolTip({ active, label, rows, series }: {
 }
 
 
-/** Staff FTE and enrolment, both indexed to the first year on ONE axis.
+/** Staff FTE and enrollment, both indexed to the first year on ONE axis.
  *
  *  This is the chart a dual axis would ruin. Teachers are around 105 and pupils around
  *  1,570; drawn on their own scales, any relationship at all can be produced by choosing
  *  the two ranges. Indexed, the reader sees what actually happened to each. */
-export function StaffAgainstEnrolment({ rows }: { rows: StatePoint[] }) {
+export function StaffAgainstEnrollment({ rows }: { rows: StatePoint[] }) {
   const base = rows[0]
   const SERIES: EnrolSeries = [
     { key: 'para_fte', label: 'Paraprofessional FTE', hue: SUBJECT },

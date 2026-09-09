@@ -638,7 +638,7 @@ done about it, and what does each option cost an employee?
 
 ### What goes in
 
-Premiums from the Town’s open enrolment notice of 21 April 2026. Rates rose
+Premiums from the Town’s open enrollment notice of 21 April 2026. Rates rose
 5.38% for FY27. The Town pays
 75% of the premium and the employee
 25%.
@@ -726,7 +726,7 @@ apply it now.
   5.38% for FY27 — well under it — because the rate
   covers the whole line, including how many people enrol and at which tier, not the
   premium alone.
-- **What would settle the per-plan figures is enrolment by plan and tier.** One
+- **What would settle the per-plan figures is enrollment by plan and tier.** One
   table that nobody publishes.
 
 ---
@@ -1661,7 +1661,7 @@ These move individual pages rather than the gap. Every one of them is ours.
 | Sibling mix in athletics | 9.5% take a discount | Every fee figure, Section 8 | **no longer an assumption** — counted over 1,266 participations |
 | Athletic fee waivers | 12% | Every fee figure, Section 8 | still ours; two counts put it at 10.5% and 13.3% |
 | Drop-off as fees rise | 5% per $100 | The fee curve, Section 8 | no local figure has ever been measured |
-| Health enrolment by plan and tier | 194 enrollees | The per-plan figures, Section 6 | the total reconciles to the budget; the mix is ours |
+| Health enrollment by plan and tier | 194 enrollees | The per-plan figures, Section 6 | the total reconciles to the budget; the mix is ours |
 | Development values | order of magnitude | The buildings-per-gap figures, Section 11 | ours, and editable on the site |
 | Cut priority orders | four rankings | Which programme falls, Section 10 | preferences, not forecasts |
 
@@ -1728,7 +1728,7 @@ published, and no arithmetic on what *is* published substitutes for them.
   paraprofessional line, and it cannot currently be distinguished from grant money
   unwinding. The state’s End of Year Financial Report would answer it.
 - **Whether budgeted positions were actually filled.** A budget line is an intention.
-- **Health insurance enrolment by plan and tier.** Section 6 is calibrated to a total
+- **Health insurance enrollment by plan and tier.** Section 6 is calibrated to a total
   and guesses the shape.
 - **Athletic participation by fee category for the current year**, and the revolving
   fund’s own ledger by object code.
@@ -1762,7 +1762,7 @@ somebody who wants to rerun any figure above can find it.
 |:--|:--|:--|
 | 1, 2, 3 — the projection | `model/finance.py` | `sources/data/lps-budget-lines.csv` |
 | 4, 5 — special education | `model/sped.py` | the same file, plus the budget history extracts |
-| 6 — health insurance | `model/health.py` | the Town’s open enrolment notice |
+| 6 — health insurance | `model/health.py` | the Town’s open enrollment notice |
 | 7 — free cash | `model/freecash.py` | `sources/state-dls/`, `sources/data/capital-plan-fy27.csv` |
 | 8 — athletic fees | `model/athletics.py` | `sources/town-ledgers/account-details/`, `sources/data/athletics-by-sport.csv` |
 | 9 — the options | `model/levers.py` | the FY27 line-item budget |

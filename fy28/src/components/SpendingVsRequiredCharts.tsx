@@ -193,7 +193,7 @@ function StageTip({ p }: { p: ReturnType<typeof stack>[number] }) {
  *  the same year, under the same formula.
  *
  *  Rank rather than ratio, because the ratio moves when the REQUIREMENT moves and the
- *  requirement is recomputed every year from enrolment and municipal wealth. A rank asks
+ *  requirement is recomputed every year from enrollment and municipal wealth. A rank asks
  *  a question the requirement cannot contaminate: of the districts all facing this year's
  *  formula, how many spent a larger multiple of their own minimum.
  *

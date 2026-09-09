@@ -111,7 +111,7 @@ SOURCES = [
      'row; check before quoting either.'),
     ('sources/state-dese/dese-enrollment-by-grade.xlsx', 't8td-gens',
      'Enrollment: Grade, Race/Ethnicity, Gender, and Selected Populations',
-     'Enrolment by grade and school. The denominators for most of the above.', ''),
+     'Enrollment by grade and school. The denominators for most of the above.', ''),
 ]
 
 # Sources that are NOT on the Socrata portal. The distinction is the point.
@@ -119,7 +119,7 @@ ELSEWHERE = [
     ('sources/state-dese/dese-ch70-district-profile.xlsx', 'qt58-634r',
      'Chapter 70 District Profile',
      'https://www.doe.mass.edu/finance/chapter70/',
-     '34 years of the Chapter 70 formula, FY1993-FY2026 — foundation enrolment, foundation '
+     '34 years of the Chapter 70 formula, FY1993-FY2026 — foundation enrollment, foundation '
      'budget, required local contribution, aid, required and actual NSS. FY2026 aid '
      'reconciles exactly to the figure derived independently for /state-aid.',
      'The Socrata page qt58-634r has NO DOWNLOAD and redirects here. Read with '
@@ -127,8 +127,8 @@ ELSEWHERE = [
     ('sources/state-dese/dese-ch70-key-factors.xlsx', '',
      'Chapter 70 Key Factors',
      'https://www.doe.mass.edu/finance/chapter70/',
-     'Foundation enrolment split by English learner, vocational and low-income share — the '
-     'formula INPUTS, which is what lets anybody model how it responds to enrolment change.',
+     'Foundation enrollment split by English learner, vocational and low-income share — the '
+     'formula INPUTS, which is what lets anybody model how it responds to enrollment change.',
      'Data sheets are dataAid, dataNSS, dataContribution. Front sheet is an interface.'),
     ('sources/state-dese/dese-job-classification-codes.docx', '',
      'Job Classification Codes (evaluation)',

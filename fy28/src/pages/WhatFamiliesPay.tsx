@@ -3,12 +3,15 @@ import { useEffect, useMemo, useState } from 'react'
 import { abs } from '../lib/abs'
 import { TableTwin } from '../components/StateAidCharts'
 import {
-  BothReadings, Choice, LadderExhibit, SEASON, YEAR, money,
+  BothReadings, Choice, HouseholdBill, LadderExhibit, SEASON, YEAR, money,
 } from '../components/FamilyFeeCharts'
+import type { Bill, BillRow, ChargeDef } from '../components/FamilyFeeCharts'
 import {
+  Conclusions,
   Body, H2, H3, Insight, NotShown,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 const TAB: Tab = 'families'
 const DATA = '/data/what-families-pay.json'
@@ -18,30 +21,42 @@ const TITLE = 'What a family pays'
  *
  *  WHY THIS PAGE EXISTS. Residents say two things at meetings. One: parents should pay
  *  more, because they are the ones using the schools. Two: parents already pay a great
- *  deal, athletes' families especially. Both are claims about a number, so somebody asked
- *  this site to compute the number for families of one, two, three and four children.
+ *  deal. Both are claims about a number, and the number is what a HOUSEHOLD hands over in
+ *  a year to have children in the schools -- not what any one fee is.
  *
- *  THE ANSWER IS NOT A NUMBER, AND THAT IS THE PAGE. The family cap states no period, six
- *  fees the district sells have no published amount, and the ladder of per-child rates
- *  stops at the third child. So every total here is a FLOOR with an open band above it,
- *  and the band is a COUNT OF NAMED FEES rather than a dollar guess (rule 7).
+ *  THE TABLE IS THE PAGE (rule 7a). A reader sets their own household at the top and reads
+ *  a yearly figure off it. Everything explaining how to read it -- the bands, the cap, the
+ *  ladder, the provenance -- comes after, because a reader arrives for the figure.
  *
- *  SHAPE (rule 7b): conclusions, then the model and the organised data, then the raw and
- *  the caveats. A reader who stops after the first screen carries away the cap ambiguity
- *  and the five-children exhibit, which is the argument that needs no data at all.
+ *  THIS PAGE USED TO BE ABOUT ATHLETICS, and that was the defect. Athletics is the fee with
+ *  a schedule, a roll-call vote and four years of minutes behind it, so it filled the page
+ *  -- which is a fact about what the district PUBLISHES, not about what a family PAYS. It
+ *  is one row now, and it keeps its detail in a drill-in below.
  *
- *  RULE 7 IS THE HARD PART HERE, and it is the cap. That the two readings differ is a
- *  MEASUREMENT. That the per-season reading is implausible is an INFERENCE — from the cap
- *  being unreachable by family size — and it is labelled as one every time it appears. The
- *  page never says what the cap means, because nothing published says.
+ *  AND THE PAGE NO LONGER LEADS ON THE CAP'S AMBIGUITY. That the $1,500 family cap states
+ *  no period is true, evidenced and registered -- and it is a defect in a document rather
+ *  than something a household needs in order to plan. It is a footnote on the athletics
+ *  row, beside the figure it qualifies (rule 7a again), and a row in `money_gaps`. Rule 8:
+ *  findings arrive as what this means for planning, never as what anybody got wrong.
  *
- *  RULE 8. The fees were set in public by roll call and the schedule is the district's own.
- *  Nothing here says anybody set a wrong fee. What it says is that the archive cannot pin
- *  the cap's period and six fees carry no amount — and one email closes both.
+ *  FOUR BANDS, AND THE TOTAL IS A FLOOR. `priced`, `carried` (charged, last set in public
+ *  in an earlier year), `unpriced` (charged, no amount published anywhere) and `no charge`.
+ *  Nothing estimates an unpriced row -- rule 7, the amounts are not in the archive, so a
+ *  guess would be a proxy standing in for the thing. They are a COUNT with a named remedy
+ *  each, which is the argument for going and getting them.
  *
- *  RULE 2. Not one figure is typed into this file. Rates arrive from
- *  /data/what-families-pay.json; scenarios are looked up from the grid the generator
- *  computed, so the page and the verifier cannot disagree about arithmetic.
+ *  RULE 8 CUTS BOTH WAYS HERE, and the meals row is why it is in the table at full size:
+ *  the record shows the state and the district taking a real cost OFF a household, and a
+ *  page that only found fees going up would not be being believed, it would be being used.
+ *
+ *  RULE 11, POINTED AT HOUSEHOLDS. Every figure is money a family hands over. It is not
+ *  what the thing costs, and it does not reduce the appropriation one-for-one -- several of
+ *  these budget lines are recorded already net of the fee.
+ *
+ *  RULE 2. Not one figure is typed into this file. Every amount, label, note and request
+ *  arrives from /data/what-families-pay.json, and each household is LOOKED UP from a bill
+ *  the generator priced rather than computed here -- so the page and the verifier cannot
+ *  disagree about arithmetic.
  *
  *  NO D1 AT PAGE LOAD. One static file. */
 
@@ -73,6 +88,7 @@ type Cap = {
   headroom: number | null
 }
 type Payload = {
+  conclusions: Conclusion[]
   generated_by: string; source: string
   seasons: number; max_children: number; max_sports: number
   tiers: string[]
@@ -121,6 +137,19 @@ type Payload = {
     ratio: number | null; full_published: boolean
     source: string | null; source_ref: string | null
   }
+  household: {
+    default: { fy: number; level: string; children: number; sports: number; tier: string
+      bus: boolean; activities: boolean; parking: boolean }
+    options: { fy: number[]; level: string[]; children: number[]; sports: number[]
+      tier: string[] }
+    bands: string[]
+    band_meaning: Record<string, string>
+    standing: BillRow[]
+    charge_defs: Record<string, ChargeDef>
+    bills: Record<string, Bill>
+    lead: Bill & { key: string }
+    unpriced_named: number
+  }
   unpriced: {
     fy: string | null; category: string; unit: string; item: string; status: string
     source: string; source_ref: string | null
@@ -131,6 +160,8 @@ type Payload = {
   said: { key: string; board: string; date: string; who: string; quote: string; why: string
     cite: string; town: string }[]
   search_note: string
+  coverage: { board: string; since: string; scope: number; searched: number
+    unsearchable: number; not_held: number; pct: number }
   gaps: { side: string; what: string; why: string; closes: string | null }[]
   related: { id: string; title: string; why: string; words: number; updated: string
     url: string; pdf: string | null }[]
@@ -175,6 +206,8 @@ export function WhatFamiliesPay() {
   const [children, setChildren] = useState<number | null>(null)
   const [sports, setSports] = useState<number | null>(null)
   const [bus, setBus] = useState<boolean | null>(null)
+  const [activities, setActivities] = useState<boolean | null>(null)
+  const [parking, setParking] = useState<boolean | null>(null)
 
   useEffect(() => {
     if (!d) return
@@ -184,6 +217,8 @@ export function WhatFamiliesPay() {
     setChildren(v => v ?? d.default.children)
     setSports(v => v ?? d.default.sports)
     setBus(v => v ?? d.default.bus)
+    setActivities(v => v ?? d.household.default.activities)
+    setParking(v => v ?? d.household.default.parking)
   }, [d])
 
   const year = useMemo(
@@ -204,14 +239,39 @@ export function WhatFamiliesPay() {
     return year.bus[key]?.amount ?? null
   }, [year, bus, children, tier])
 
+  // THE BILL IS LOOKED UP, NEVER COMPUTED (rule 2). The generator priced every household
+  // a reader can describe and the key is built the same way in both places, so the page
+  // and the verifier cannot disagree about arithmetic.
+  const bill = useMemo(() => {
+    if (!d || fy === null || level === null || children === null || sports === null
+      || tier === null || bus === null || activities === null || parking === null) {
+      return null
+    }
+    const k = `${fy}|${level}|${children}|${sports}|${tier}|${bus ? 1 : 0}`
+      + `|${activities ? 1 : 0}|${parking ? 1 : 0}`
+    return d.household.bills[k] ?? null
+  }, [d, fy, level, children, sports, tier, bus, activities, parking])
+
   if (err) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} err={err} />
   if (!d || fy === null || !year || !lv || !tierData) return <ReportShell tab={TAB} title={TITLE} dataUrl={DATA} loading />
+
+  // WHAT A SECOND CHILD ADDS, taken from two priced households rather than from
+  // arithmetic in this file. `one` and `two` differ in exactly one input, so the
+  // difference on each row is what that one child costs on that fee.
+  const hb = d.household.bills
+  const bk = (n: number, on: boolean) =>
+    `${d.household.default.fy}|HS|${n}|1|full|${on ? 1 : 0}|0|0`
+  const amt = (k: string, id: string) =>
+    hb[k]?.rows.find(r => r.id.split(':')[0] === id)?.amount ?? 0
+  const secondChild = {
+    sport: (amt(bk(2, false), 'athletics') ?? 0) - (amt(bk(1, false), 'athletics') ?? 0),
+    bus: (amt(bk(2, true), 'bus') ?? 0) - (amt(bk(1, true), 'bus') ?? 0),
+  }
 
   const lx = d.ladder_exhibit
   const stated = d.caps.filter(c => c.unit_status === 'stated')
   const unstated = d.caps.filter(c => c.unit_status !== 'stated')
   const cap27 = d.caps.find(c => c.fy === lx.fy)!
-  const last = lx.rows[lx.rows.length - 1]
   const capNow = year.cap
   const ct = d.tier_contrast
 
@@ -221,55 +281,178 @@ export function WhatFamiliesPay() {
         What a family actually pays
       </>}
       standfirst={<>
-        Every school fee a Lunenburg household can be charged, priced for one, two, three
-        and four children — and the three places where the published record runs out.
+        Set your household and read the year off the table: every charge a Lunenburg family
+        meets to have children in school, over and above what it pays in property tax.
       </>}
     >
 
-      {/* ---------------------------------------------------------------- 1. conclusions */}
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
+      {/* ============================================================ 1. THE TABLE.
+          Rule 7a: the page is called what a family pays, so the bill is the page. The
+          controls sit directly above it because setting your own household IS how a
+          reader gets their number, and every word explaining the bands comes after. */}
+      <H2 id="the-bill">Set your household, and read the year off the table</H2>
+
+      <div className="grid gap-3 mt-6 sm:grid-cols-2">
+        <Choice label="Year" value={fy} setValue={setFy}
+          options={d.years.map(y => ({ value: y.fy, label: fyLabel(y.fy) }))}
+          note={`${fyLabel(d.years[0].fy)} is the year now running and the only account of
+                 it is an email to families this archive does not hold.
+                 ${fyLabel(d.years[1].fy)} is the last year published in full.`} />
+
+        <Choice label="School" value={level!} setValue={setLevel}
+          options={[
+            { value: 'HS', label: 'High school' },
+            { value: 'MS', label: 'Middle school' },
+          ]}
+          note={lv.ladder.kind === 'not published'
+            ? `No ${level === 'MS' ? 'middle school' : 'high school'} rate is published for
+               ${fyLabel(fy)}. Everything below is unknown.`
+            : `A high school student may play only one sport a season — the ${d.faq.title}
+               says so — which is what makes a season fee also a per-sport fee there. It
+               states no such rule for middle school.`} />
+
+        <Choice label="Children" value={children!} setValue={setChildren}
+          options={Array.from({ length: d.max_children }, (_, i) => ({
+            value: i + 1, label: String(i + 1),
+          }))}
+          note="The question as it was asked: families of one, two, three and four." />
+
+        <Choice label="Sports each, over the year" value={sports!} setValue={setSports}
+          options={Array.from({ length: d.max_sports + 1 }, (_, i) => ({
+            value: i, label: String(i),
+          }))}
+          note={`There are ${d.seasons} seasons, and a child plays at most one sport in
+                 each.`} />
+
+        <Choice label="What the family pays" value={tier!} setValue={setTier}
+          options={d.tiers.map(t => ({
+            value: t,
+            label: t === 'full' ? 'Full fee' : t === 'reduced' ? 'Reduced fee' : 'Waived',
+            disabled: !lv.tiers[t].available,
+            why: lv.tiers[t].available ? undefined
+              : `No ${t} rate is published for ${fyLabel(fy)} ${level}`,
+          }))}
+          note={tier === 'full'
+            ? 'The ladder, first child down to third.'
+            : tier === 'reduced'
+              ? `A flat ${money(tierData.flat ?? 0)} a child a season — no sibling ladder
+                 is published for it. This is the half of the argument that usually goes
+                 unsaid: the same three athletes cost this family far less.`
+              : 'Waived to zero. ' + (lv.tiers.waived.source ?? '')} />
+
+        <Choice label="Bus" value={bus ? 1 : 0} setValue={v => setBus(v === 1)}
+          options={[{ value: 1, label: 'Takes the bus' }, { value: 0, label: 'Does not' }]}
+          note="Charged per family for the year, not per child — and the town said so in
+                those words when it set it. Grades 7-12 are all charged; K-6 only inside
+                two miles." />
+
+        <Choice label="Clubs and student activities"
+          value={activities ? 1 : 0} setValue={v => setActivities(v === 1)}
+          options={[{ value: 1, label: 'At least one' }, { value: 0, label: 'None' }]}
+          note="The School Committee voted this fee to its current amount on 7 May 2025.
+                The motion names an amount and no period, so whether it is charged once a
+                year, once a term or once per activity is not established." />
+
+        <Choice label="Drives to the high school"
+          value={parking ? 1 : 0} setValue={v => setParking(v === 1)}
+          options={[{ value: 1, label: 'Yes' }, { value: 0, label: 'No' }]}
+          note="The figure is a resident stating in public comment what they paid, not a
+                schedule. The district's payment portal sells a parking permit and prints
+                no amount." />
+      </div>
+
+
+      <div className="mt-6">
+        {bill ? (
+          <HouseholdBill
+            bill={bill}
+            standing={d.household.standing}
+            defs={d.household.charge_defs}
+            bandMeaning={d.household.band_meaning}
+            summary={<>
+              {children} child{children === 1 ? '' : 'ren'} at the{' '}
+              {level === 'HS' ? 'high school' : 'middle school'} in {fyLabel(fy)}
+              {sports! > 0
+                ? <>, {sports} season{sports === 1 ? '' : 's'} of sport each</>
+                : <>, playing no sport</>}
+              {bus ? ', riding the bus' : ', not riding the bus'}
+              {activities ? ', in at least one club' : ''}
+              {parking && level === 'HS' ? ', one of them driving to school' : ''}
+              {tier !== 'full' ? ` — at the ${tier} fee` : ''}.{' '}
+              {money(bill.floor)} of that is an amount a document states for{' '}
+              {fyLabel(fy)}. It is a floor: {d.household.unpriced_named} further charges
+              this family can meet have no published amount at all, and they are listed
+              under the total rather than guessed at.
+            </>} />
+        ) : (
+          <div className="card p-5" style={{ borderLeft: `4px solid ${SEASON}` }}>
+            <p className="text-[15px] font-bold">This household cannot be priced.</p>
+            <p className="text-[14px] leading-relaxed mt-2"
+              style={{ color: 'var(--text-secondary)' }}>
+              No rate is published for this combination of year, school and fee tier. That
+              is the finding rather than a failure of the page, and it is registered below.
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* ------------------------------------------------ 2. what it means */}
       <H2 id="what-this-establishes">What this establishes</H2>
 
+      <Body>
+        What the table says, in sentences a reader could repeat at a meeting. Every figure
+        is the model’s, looked up rather than typed.
+      </Body>
+
       <div className="grid gap-3 mt-5 sm:grid-cols-2">
-        <Insight tone={SEASON} headline={
-          <>The family cap states no period, and the two readings differ by{' '}
-            {money(d.published_spread)} for a family of{' '}
-            {d.published_spread_at.children} with {d.published_spread_at.sports} sports
-            each.</>}>
-          The cap it replaced said which: the {d.faq.title} prints{' '}
-          <em>“{stated[0].source_ref}”</em>. The {fyLabel(unstated[0].fy)} one was set by
-          roll call with the words <em>“{unstated[0].source_ref}”</em> and nothing else.
-          Read per season and read per year, {money(unstated[0].amount)} is a different
-          bill for the same family.
-        </Insight>
-
         <Insight tone={YEAR} headline={
-          <>{last.children} children, one sport each, in a single season come to{' '}
-            {money(last.cumulative_by_rule)} — still under the{' '}
-            {money(lx.cap)} cap.</>}>
-          On the more expensive of the two ways of carrying the ladder past the third
-          child it is {money(last.cumulative_flat)}, and that is under the cap too. So a
-          per-season cap is unreachable by family size alone. <strong>That makes a
-          per-season reading implausible — an inference, not a measurement.</strong>{' '}
-          Nothing published states the period.
+          <>Two children at the high school, one sport each, riding the bus and in a club
+            pay {money(d.household.lead.floor_carried)} for the year.</>}>
+          {money(d.household.lead.floor)} of that is an amount a document states for{' '}
+          {fyLabel(d.household.default.fy)}; the rest is a fee that was voted in public and
+          has not been restated since. That is the answer to the question this page is
+          named after, and it is a floor rather than a bill — see the row below it.
         </Insight>
 
         <Insight tone={SEASON} headline={
-          <>{d.unpriced_portal} fees the district sells have no published amount.</>}>
-          They are on the district’s own payment portal by name — and the portal renders
-          in JavaScript and serves no amounts. So every total on this page is a{' '}
-          <strong>floor</strong>, drawn with a band above it that has no top. A family
-          cannot compute what a school year costs, and neither can the town while it
-          argues about who should pay.
+          <>A second child costs {money(secondChild.sport)} more in athletics and{' '}
+            {money(secondChild.bus)} more on the bus.</>}>
+          The two fees are built differently and a household feels the difference. The bus
+          is charged <strong>per family</strong> for the year however many children ride,
+          so the second child adds {money(secondChild.bus)}; athletics is charged per child
+          per season, so the second child adds {money(secondChild.sport)} even after the
+          sibling discount. Which fee a town raises decides which families pay for it.
         </Insight>
 
-        <Insight tone={YEAR} headline={
-          <>The rates are one rule, and it stops being published at the third child.</>}>
-          {money(lx.rows[0].rate_by_rule)} × {lx.ratio} is exactly{' '}
-          {money(lx.rows[1].rate_by_rule)}, and × {lx.ratio} again is exactly{' '}
-          {money(lx.rows[2].rate_by_rule)} — the {lx.ratio_pct}% sibling discount the
-          committee voted, compounding. A fourth child follows at{' '}
-          {money(d.fourth_child.by_rule)} <em>if</em> it keeps compounding. No document
-          says it does, and none states a fourth-child rate.
+        <Insight tone={SEASON} headline={
+          <>{d.household.unpriced_named} charges a Lunenburg family can meet have no
+            published amount anywhere.</>}>
+          Six of them are products the district’s own payment portal sells by name —
+          preschool, extended day, field trips, device repair, afterschool activities, a
+          parking permit — and the portal renders in JavaScript and serves no amounts. So
+          the total above is a floor with an open band over it. Each one is listed with the
+          single document that would price it, because a gap with a named remedy is a
+          records request and a gap without one is a complaint.
+        </Insight>
+
+        <Insight tone={'var(--text-muted)'} headline={
+          <>School meals cost a family nothing, and that is a real reduction in the
+            household bill.</>}>
+          Massachusetts funds universal free school meals and the district takes the
+          programme — its own minutes record it choosing between the two schemes that
+          deliver them, noting that <em>“Our students would not see any difference”</em>. A
+          family with two children eating at school every day is not billed for it. What
+          sits outside the programme — à la carte items, snacks, second meals — is charged,
+          and no price list for that is published.
         </Insight>
       </div>
 
@@ -320,7 +503,7 @@ export function WhatFamiliesPay() {
       </NotShown>
 
       {/* -------------------------------------------------- 2. the exhibit and the model */}
-      <H2 id="the-cap">The cap, and the arithmetic that argues about its period</H2>
+      <H3>The sibling ladder, and where it stops being published</H3>
       <Body>
         One sport each, one season, adding a child at a time — against the{' '}
         {fyLabel(lx.fy)} cap. Columns past the third child are hatched because no document
@@ -390,65 +573,15 @@ export function WhatFamiliesPay() {
         </>} />
 
       {/* ------------------------------------------------------------ 3. the calculator */}
-      <H2 id="your-family">Your family, both readings</H2>
+      <H2 id="athletics-detail">Athletics, in detail — the one fee with a schedule</H2>
       <Body>
-        Set the household. Every figure is looked up from the schedule, and anything the
-        archive does not publish is shown as unknown rather than estimated.
+        Athletics is one row of the table above and the only charge here with a published
+        schedule, a recorded vote and a sibling ladder behind it. That is a fact about what
+        the district publishes rather than about what a household pays, and it is why this
+        section is longer than the others — not because it is the largest thing a family
+        is charged. It reprices the household you set above, both ways the family cap can
+        be read.
       </Body>
-
-      <div className="grid gap-3 mt-6 sm:grid-cols-2">
-        <Choice label="Year" value={fy} setValue={setFy}
-          options={d.years.map(y => ({ value: y.fy, label: fyLabel(y.fy) }))}
-          note={`${fyLabel(d.years[0].fy)} is the year now running and the only account of
-                 it is an email to families this archive does not hold.
-                 ${fyLabel(d.years[1].fy)} is the last year published in full.`} />
-
-        <Choice label="School" value={level!} setValue={setLevel}
-          options={[
-            { value: 'HS', label: 'High school' },
-            { value: 'MS', label: 'Middle school' },
-          ]}
-          note={lv.ladder.kind === 'not published'
-            ? `No ${level === 'MS' ? 'middle school' : 'high school'} rate is published for
-               ${fyLabel(fy)}. Everything below is unknown.`
-            : `A high school student may play only one sport a season — the ${d.faq.title}
-               says so — which is what makes a season fee also a per-sport fee there. It
-               states no such rule for middle school.`} />
-
-        <Choice label="Children" value={children!} setValue={setChildren}
-          options={Array.from({ length: d.max_children }, (_, i) => ({
-            value: i + 1, label: String(i + 1),
-          }))}
-          note="The question as it was asked: families of one, two, three and four." />
-
-        <Choice label="Sports each, over the year" value={sports!} setValue={setSports}
-          options={Array.from({ length: d.max_sports + 1 }, (_, i) => ({
-            value: i, label: String(i),
-          }))}
-          note={`There are ${d.seasons} seasons, and a child plays at most one sport in
-                 each.`} />
-
-        <Choice label="What the family pays" value={tier!} setValue={setTier}
-          options={d.tiers.map(t => ({
-            value: t,
-            label: t === 'full' ? 'Full fee' : t === 'reduced' ? 'Reduced fee' : 'Waived',
-            disabled: !lv.tiers[t].available,
-            why: lv.tiers[t].available ? undefined
-              : `No ${t} rate is published for ${fyLabel(fy)} ${level}`,
-          }))}
-          note={tier === 'full'
-            ? 'The ladder, first child down to third.'
-            : tier === 'reduced'
-              ? `A flat ${money(tierData.flat ?? 0)} a child a season — no sibling ladder
-                 is published for it. This is the half of the argument that usually goes
-                 unsaid: the same three athletes cost this family far less.`
-              : 'Waived to zero. ' + (lv.tiers.waived.source ?? '')} />
-
-        <Choice label="Bus" value={bus ? 1 : 0} setValue={v => setBus(v === 1)}
-          options={[{ value: 1, label: 'Takes the bus' }, { value: 0, label: 'Does not' }]}
-          note="Charged per family for the year, not per child — and the town said so in
-                those words when it set it." />
-      </div>
 
       {cell && cell.computable ? (
         <BothReadings
@@ -529,11 +662,36 @@ export function WhatFamiliesPay() {
         </p>
       </NotShown>
 
-      {/* --------------------------------------------------------- 4. what has no price */}
-      <H2 id="no-price">The fees with no published amount</H2>
+      {/* ------------------------------------------------ what would complete the number */}
+      <H2 id="to-complete">What would make this number complete</H2>
       <Body>
-        Each of these is established as existing and not as costing anything. They are the
-        band above every total on this page, and the reason it has no top.
+        The total above is a floor because these charges are real and unpriced. This is the
+        list of things to ask for, in the form the answer has to take — a schedule, a rate,
+        a period. It is not a list of what anybody failed to publish; it is what would turn
+        a floor into a bill, and most of it is one document each.
+      </Body>
+      <div className="grid gap-2.5 mt-5">
+        {d.household.standing.filter(r => r.band === 'unpriced').map(r => {
+          const def = d.household.charge_defs[r.id]
+          return (
+            <div key={r.id} className="card p-4">
+              <p className="text-[14px] font-bold">{def.label}</p>
+              <p className="text-[12.5px] leading-snug mt-1"
+                style={{ color: 'var(--text-muted)' }}>{def.basis}</p>
+              <p className="text-[13px] leading-relaxed mt-2">
+                <span className="font-semibold">Ask for: </span>
+                <span style={{ color: 'var(--text-secondary)' }}>{def.request}</span>
+              </p>
+            </div>
+          )
+        })}
+      </div>
+
+      <H3>Every rate in the register with no amount attached</H3>
+      <Body>
+        The same thing as the register holds it, including the rates that are not a
+        household bill at all — a contract cost-of-living figure and a facilities hire
+        schedule are here because the register is one list.
       </Body>
       <TableTwin
         head={['Fee', 'Where it appears', 'State']}
@@ -542,6 +700,18 @@ export function WhatFamiliesPay() {
       {/* -------------------------------------------------------------- 5. what was said */}
       <H2 id="said">What was said in the room</H2>
       <Body>{d.search_note}</Body>
+      <p className="text-[13px] leading-relaxed mt-3 max-w-2xl"
+        style={{ color: 'var(--text-secondary)' }}>
+        <strong>Searched: {d.coverage.searched} of the {d.coverage.scope}{' '}
+        {d.coverage.board} documents published since {d.coverage.since}
+        {' '}({d.coverage.pct}%).</strong>{' '}
+        {d.coverage.unsearchable > 0
+          ? `${d.coverage.unsearchable} are held and cannot be read — scans without a text
+             layer — and ${d.coverage.not_held} the town lists are not held at all.`
+          : d.coverage.not_held > 0
+            ? `${d.coverage.not_held} the town lists are not held at all.`
+            : 'None is a scan we cannot read, and none the town lists is missing.'}
+      </p>
       <div className="grid gap-3 mt-5">
         {d.said.map(s => (
           <div key={s.key} className="card p-5">

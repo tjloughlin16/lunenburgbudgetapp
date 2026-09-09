@@ -32,6 +32,7 @@ import { StoppedFunding } from './pages/StoppedFunding'
 import { GrantUnwinding } from './pages/GrantUnwinding'
 import { MinimumAid } from './pages/MinimumAid'
 import { MontyTech } from './pages/MontyTech'
+import { WhatItAllAddsUpTo } from './pages/WhatItAllAddsUpTo'
 import { PeerSpending } from './pages/PeerSpending'
 import { SpendingVsRequired } from './pages/SpendingVsRequired'
 import { SpecialEducationHub } from './pages/SpecialEducationHub'
@@ -259,7 +260,42 @@ export default function App() {
               exists to escape. Those are the CRISIS ANALYSIS chapters; they belong inside
               that area and nowhere else. The addresses did not move: scoping the nav is
               not the same as nesting the URLs. */}
-          {area && (
+          {/* NOT ON /reports. That page IS the list of these tabs -- fifteen cards, each
+              with an icon and a sentence saying what the report establishes -- so drawing
+              the same fifteen as a cramped scrolling strip above it duplicates the page
+              in a worse form. TJ: "the header bar is..... useless. it has all the links in
+              it ha".
+
+              It is the front page's lesson one level down: a chooser with a sitemap
+              stapled to it is still a sitemap. The bar earns its place on a REPORT, where
+              it is the way out to the others; on the index it is the way out to the thing
+              you are already looking at.
+
+              Only `reports`. The other area homes keep their bar -- /the-money leads with
+              documents rather than with its own tab list, so there the strip is not a
+              duplicate. */}
+          {/* ON A REPORT, ONE LINK BACK — NOT FIFTEEN SIDEWAYS.
+              TJ: "make sure the reports dont have the crazy link problem at the top
+              either. seems they replicate every report link there". They did: the strip
+              drew all fifteen analyses on every one of them, so each report opened with a
+              cramped scrolling list of its fourteen siblings before its own title.
+
+              An area with three or four tabs is a bar. An area with fifteen is an index,
+              and it has one: /reports, with an icon and a sentence per report. So from a
+              report the honest affordance is the way back to that, and the reader chooses
+              there with room to read. This is the same correction as the front page and
+              as /reports itself — a chooser with a sitemap stapled to it is still a
+              sitemap — arriving a third time because the strip is generated per area and
+              nobody had asked what fifteen entries do to it. */}
+          {area === 'analyses' && tab !== 'reports' && (
+            <button onClick={() => go('reports')}
+              className="text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
+              style={{ color: 'var(--text-secondary)' }}>
+              &larr; All reports
+            </button>
+          )}
+
+          {area && area !== 'analyses' && tab !== 'reports' && (
             <>
               {/* The area's NAME is not drawn. The tabs beside it are the area, and a
                   label repeating them is a word that costs horizontal room on a phone
@@ -385,6 +421,7 @@ export default function App() {
       {tab === 'minaid' && <MinimumAid />}
       {tab === 'peers' && <PeerSpending />}
       {tab === 'montytech' && <MontyTech />}
+      {tab === 'addsup' && <WhatItAllAddsUpTo />}
       {tab === 'required' && <SpendingVsRequired />}
       {tab === 'sped' && <SpecialEducationHub />}
       {tab === 'spedcount' && <SpedStudents />}

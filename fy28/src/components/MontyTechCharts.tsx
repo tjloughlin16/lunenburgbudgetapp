@@ -267,7 +267,7 @@ export function Parts({ rows }: { rows: PartRow[] }) {
       </div>
       <Legend items={[
         { hue: MINIMUM, label: 'required minimum contribution — set by the state' },
-        { hue: TRANSPORT, label: 'transportation & other operating — by enrolment share' },
+        { hue: TRANSPORT, label: 'transportation & other operating — by enrollment share' },
         { hue: CAPITAL, label: 'capital — by school-attending children, grades 1–12' },
       ]} />
     </div>
@@ -282,7 +282,7 @@ export type ShareRow = {
 
 /** Two lines, one axis, both percentages of the same town. The gap between them is the
  *  finding: Monty Tech is a bigger share of the town's foundation BUDGET than of its
- *  foundation ENROLMENT, because the state's vocational rate per pupil is higher.
+ *  foundation ENROLLMENT, because the state's vocational rate per pupil is higher.
  *
  *  The categorical pair, not the diverging one — neither share is better or worse, and
  *  neither is a direction. */
@@ -317,7 +317,7 @@ export function Shares({ rows }: { rows: ShareRow[] }) {
       </div>
       <Legend items={[
         { hue: MINIMUM, label: 'Monty Tech’s share of Lunenburg’s required contribution' },
-        { hue: TRANSPORT, label: 'Monty Tech’s share of Lunenburg’s foundation enrolment' },
+        { hue: TRANSPORT, label: 'Monty Tech’s share of Lunenburg’s foundation enrollment' },
       ]} />
     </div>
   )

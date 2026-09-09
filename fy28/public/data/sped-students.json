@@ -3,6 +3,141 @@
  "change_count": 31,
  "change_share_points": 2.2,
  "closes": "DESE\u2019s SIMS submission detail for Lunenburg, stating the census date and the inclusion rule behind each published count, and the EPIMS work assignment records that would say what a special education FTE is a count of.",
+ "conclusions": [
+  {
+   "basis": "DESE\u2019s Special Education Program Characteristics file for Lunenburg, district rows only, every year it has been published.",
+   "claim": "Lunenburg children with a special education plan, FY2026",
+   "detail": "258 Lunenburg children had a special education plan in FY2026, against 227 in FY2022 \u2014 and because the number of children in the schools fell over those years, the SHARE with a plan rose further than the number did. 31 more children, on an enrollment that went from 1,608 to 1,581. The share therefore moved from 14.1% to 16.3% \u2014 2.2 points. Both halves of that matter to anyone reading a rising percentage as a rising caseload: the caseload did rise, and had enrollment held where it was the share would read 16.0% rather than 16.3%. These are DESE\u2019s own published counts, not a percentage multiplied back out.",
+   "figure": "last",
+   "figures": {
+    "change": {
+     "text": "31",
+     "unit": "",
+     "value": 31
+    },
+    "enrolled_from": {
+     "text": "1,608",
+     "unit": "",
+     "value": 1608
+    },
+    "enrolled_to": {
+     "text": "1,581",
+     "unit": "",
+     "value": 1581
+    },
+    "last": {
+     "text": "258",
+     "unit": "children",
+     "value": 258
+    },
+    "last_fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "low": {
+     "text": "227",
+     "unit": "",
+     "value": 227
+    },
+    "low_fy": {
+     "text": "FY2022",
+     "unit": "",
+     "value": 2022
+    },
+    "share_at_old_enrollment": {
+     "text": "16.0%",
+     "unit": "",
+     "value": 16.04
+    },
+    "share_from": {
+     "text": "14.1%",
+     "unit": "",
+     "value": 14.12
+    },
+    "share_points": {
+     "text": "2.2 points",
+     "unit": "",
+     "value": 2.2
+    },
+    "share_to": {
+     "text": "16.3%",
+     "unit": "",
+     "value": 16.32
+    }
+   },
+   "id": "the-share-rose-partly-because-enrollment-fell",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That a rising count means rising need. A count of children with an IEP is a count of children who have one; referral, evaluation and eligibility practice all move it and none of them is published.",
+   "see": [
+    {
+     "label": "what it costs",
+     "slug": "/what-special-education-costs"
+    }
+   ],
+   "so_what": "Up from 227 four years earlier. Enrollment fell over the same years, so the share rose further than the count."
+  },
+  {
+   "basis": "DESE\u2019s Special Education Indicators file. This is the one row of that table that reproduces from its own printed FTE and count in every year, which is why it is the only one published here.",
+   "claim": "Fall in the paraprofessionals the state counts in special education",
+   "detail": "The state counts 18.0 full-time paraprofessionals in Lunenburg\u2019s special education programme, down from 49.0 \u2014 a fall of 63.3%, while the number of children they support barely moved. For every hundred children with a special education plan that is 18.5 posts falling to 7.3, over a group of children that went from 265 to 246. Paraprofessionals are the staff this budget grows fastest in, and they are what this project\u2019s own forecast of in-district special education costs is built on, so which way this series runs changes what anybody planning from it should expect. A full-time equivalent is a share of a post rather than a person: the state counts assignments, so two half-time posts and one full-time post are the same figure here.",
+   "figure": "fall",
+   "figures": {
+    "base_from": {
+     "text": "265",
+     "unit": "",
+     "value": 265
+    },
+    "base_to": {
+     "text": "246",
+     "unit": "",
+     "value": 246
+    },
+    "fall": {
+     "text": "63.3%",
+     "unit": "",
+     "value": 63.3
+    },
+    "first_fy": {
+     "text": "FY2019",
+     "unit": "",
+     "value": 2019
+    },
+    "fte_from": {
+     "text": "49.0",
+     "unit": "full-time equivalent posts",
+     "value": 49.0
+    },
+    "fte_to": {
+     "text": "18.0",
+     "unit": "full-time equivalent posts",
+     "value": 18.0
+    },
+    "per100_from": {
+     "text": "18.5",
+     "unit": "",
+     "value": 18.5
+    },
+    "per100_to": {
+     "text": "7.3",
+     "unit": "",
+     "value": 7.3
+    }
+   },
+   "id": "paraprofessional-fte-fell-while-the-count-did-not",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That posts were removed. An FTE series is a count of what was CODED as a paraprofessional, and recoding, a change of funding source, or a change of reporting rule would each produce this same fall. Nothing published distinguishes them.",
+   "see": [
+    {
+     "label": "the people the budget buys",
+     "slug": "/school-staffing"
+    }
+   ],
+   "so_what": "49.0 posts down to 18.0 since FY2019, while the number of children they support barely moved."
+  }
+ ],
  "counts": [
   {
    "enrolled": 1605,
@@ -650,7 +785,7 @@
   "That a rising count means rising need. A count of children with an IEP is a count of children who have one. Referral, evaluation and eligibility practice all move it, and none of them is published here.",
   "What the special education FTE return counts. Only the paraprofessional row reproduces from its own printed FTE and count; the teacher, service and support rows in the same table do not, in any year, so they are not published as figures on this page.",
   "That the paraprofessional FTE series is a count of posts. `money-gaps.csv` already records that DESE\u2019s FTE and the district\u2019s paraprofessional budget line cannot describe the same population, and that DESE\u2019s special education teacher FTE for Lunenburg falls 90% while total teacher FTE holds flat \u2014 a signature that recoding would produce exactly.",
-  "How the third count relates to the other two. `dese_sped_movement` reports a K-12 grade-row basis and a different enrolment; nothing published states the census date or the inclusion rule behind either.",
+  "How the third count relates to the other two. `dese_sped_movement` reports a K-12 grade-row basis and a different enrollment; nothing published states the census date or the inclusion rule behind either.",
   "A breakdown of every child by setting. DESE\u2019s Placement category is in-district only and its parts run short of the total printed beside them; the shortfall is published on this page rather than hidden by rescaling."
  ],
  "para_first": {

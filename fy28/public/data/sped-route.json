@@ -432,6 +432,144 @@
    "unaccounted": 0
   }
  ],
+ "conclusions": [
+  {
+   "basis": "The Special Services report inside each annual town report, page by page, with the parts checked against the total the town printed beside them.",
+   "claim": "Children whose special education plan placed them outside Lunenburg schools, FY2025",
+   "detail": "The town\u2019s own count of children placed out of district for special education ran from 30 in FY2015 down to 7 in FY2023, and stood at 10 in FY2025. Lunenburg has printed this figure in the Special Services report of every annual town report since FY2011, sourced to SIMS Report 7 and measured on 1 March, split into collaborative, day and residential placements. It is the closest thing the town publishes to the quantity everybody argues about, and over 15 years it has moved in both directions rather than only upward. In FY2025 it was 6 collaborative, 3 day and 1 residential.",
+   "figure": "last",
+   "figures": {
+    "collaborative": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "day": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "first_fy": {
+     "text": "FY2011",
+     "unit": "",
+     "value": 2011
+    },
+    "last": {
+     "text": "10",
+     "unit": "children placed",
+     "value": 10
+    },
+    "last_fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "low": {
+     "text": "7",
+     "unit": "",
+     "value": 7
+    },
+    "low_fy": {
+     "text": "FY2023",
+     "unit": "",
+     "value": 2023
+    },
+    "peak": {
+     "text": "30",
+     "unit": "",
+     "value": 30
+    },
+    "peak_fy": {
+     "text": "FY2015",
+     "unit": "",
+     "value": 2015
+    },
+    "residential": {
+     "text": "1",
+     "unit": "",
+     "value": 1
+    },
+    "years": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    }
+   },
+   "id": "the-placement-count-fell-and-came-partly-back",
+   "kind": "measured",
+   "literals": [
+    "1 March",
+    "7"
+   ],
+   "not_shown": "What any of it costs. A placement count is children placed; it says nothing about which fund paid or what any placement cost, and one residential placement can exceed several day placements together.",
+   "see": [
+    {
+     "label": "what it costs",
+     "slug": "/what-special-education-costs"
+    }
+   ],
+   "so_what": "It was 30 in FY2015 and 7 in FY2023. The town prints this every year, and it moves both ways."
+  },
+  {
+   "basis": "DESE\u2019s special education trajectory file, K-12 rows for Lunenburg, pooled across every cohort it publishes.",
+   "claim": "Of children starting in a separate special education classroom end up outside the district",
+   "detail": "Where a child is taught to begin with tracks strongly with whether they end up at a school outside Lunenburg: 18.2% of the children who started in a separate special education classroom did, against 1.2% of those who started in an ordinary one. Added up over 9 groups the state follows, that is 36 children of 198 against 15 of 1,232. The counts are the figure and not the rate: a rate off a base of 28 moves by 3.6 points when one child does. This is the closest the published record comes to the question residents ask about early intervention, and it is worth having in front of anyone discussing in-district capacity \u2014 but see what it does not show, which is most of it.",
+   "figure": "sub_pct",
+   "figures": {
+    "cohorts": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    },
+    "incl_base": {
+     "text": "1,232",
+     "unit": "",
+     "value": 1232
+    },
+    "incl_out": {
+     "text": "15",
+     "unit": "",
+     "value": 15
+    },
+    "incl_pct": {
+     "text": "1.2%",
+     "unit": "",
+     "value": 1.2
+    },
+    "last_base": {
+     "text": "28",
+     "unit": "",
+     "value": 28
+    },
+    "one_child": {
+     "text": "3.6 points",
+     "unit": "",
+     "value": 3.5714285714285716
+    },
+    "sub_base": {
+     "text": "198",
+     "unit": "",
+     "value": 198
+    },
+    "sub_out": {
+     "text": "36",
+     "unit": "",
+     "value": 36
+    },
+    "sub_pct": {
+     "text": "18.2%",
+     "unit": "",
+     "value": 18.2
+    }
+   },
+   "id": "where-a-child-starts-tracks-where-they-end-up",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That a substantially separate placement LEADS to out of district. The children placed in the more intensive setting are not a random sample of the others, and selection alone fits this exactly. DESE also documents no interval between the starting placement and the destination, so every rate here is a rate over an unstated span, and the district has told the School Committee that some children arrive in Lunenburg already requiring a placement, never having been in a cohort at all.",
+   "see": [],
+   "so_what": "Against 1.2% of those starting in an ordinary classroom. Small groups \u2014 read what this does not show."
+  }
+ ],
  "count_first": {
   "as_of": "2011-03-01",
   "chain_agrees": false,

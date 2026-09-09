@@ -2,7 +2,7 @@ import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import type { Base } from '../components/report'
 import {
-  Body, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown,
+  Body, Conclusions, Coverage, Grain, H2, Insight, Maybe, NotEstablished, NotShown,
   OtherReports, Provenance, Quote, Shell, Stat, useReport,
 } from '../components/report'
 import type { Count, Para } from '../components/SpedCharts'
@@ -125,11 +125,19 @@ export function SpedStudents() {
       </Grain>
 
       {/* ---------------------------------------------------------------- conclusions */}
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       <H2 id="findings">What this establishes</H2>
       <div className="grid gap-4 mt-5 md:grid-cols-2">
         <Insight n={1} headline={`The count is up ${d.change_count} since ${fy(lowest.fy)}, and the share is up ${d.change_share_points.toFixed(1)} points`}>
           {lowest.swd} children in {fy(lowest.fy)}, {last.swd} in {fy(last.fy)}, against a
-          total enrolment that went from {lowest.enrolled.toLocaleString()} to{' '}
+          total enrollment that went from {lowest.enrolled.toLocaleString()} to{' '}
           {last.enrolled.toLocaleString()}. So the proportion moved from{' '}
           {lowest.share_pct.toFixed(1)}% to {last.share_pct.toFixed(1)}%. This is DESE&rsquo;s
           own published count, not a percentage multiplied back out by us.
@@ -300,7 +308,7 @@ export function SpedStudents() {
         DESE also publishes a caseload movement file. Its count of children on an IEP is
         lower than the count above in every overlapping year &mdash; by{' '}
         {Math.abs(widestGap.difference)} in {fy(widestGap.fy)}, the widest &mdash; and it
-        reports a different enrolment to go with it. Both are DESE, both are Lunenburg,
+        reports a different enrollment to go with it. Both are DESE, both are Lunenburg,
         both are the same school year.
       </Body>
       <TableTwin

@@ -9,9 +9,11 @@ import {
   type YearRow, type SpreadRow, type PairRow, type GroupRow,
 } from '../components/VarianceCharts'
 import {
+  Conclusions,
   Body, H2, NotShown, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
  *  TITLE is the report's NAME, used before the payload arrives; the h1 the
@@ -68,6 +70,7 @@ const TITLE = 'Budgets against what was later reported'
  *  rows read a day and a single join across these tables reads 19,006. */
 
 type Payload = {
+  conclusions: Conclusion[]
   generated_by: string
   source: string
   evidence: {
@@ -365,6 +368,14 @@ export function BudgetVsActual() {
           else here is built from budget columns only, and nothing on this page feeds it.
         </p>
       </div>
+
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
 
       {/* --------------------------------------------------------- by year */}
       <H2 id="by-year">The whole measured budget, year by year</H2>

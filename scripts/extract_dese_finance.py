@@ -129,14 +129,26 @@ STATE_FIELDS = ['fy', 'level', 'func_cat_code', 'func_code', 'func_desc', 'distr
 
 
 def peers():
-    """Lunenburg plus the districts dese-radar.csv already carries."""
+    """Lunenburg plus the COMPARISON districts dese-radar.csv carries.
+
+    NOT every district in that file. It also carries the DESTINATIONS -- where Lunenburg
+    children actually go -- and a destination is not a peer. The roles are declared in
+    extract_dese_radar.py; reading the set back off the whole file made the archive
+    growing into the comparison set growing, which is not the same thing.
+    """
+    from extract_dese_radar import PEERS
     seen = {}
     with open(RADAR, encoding='utf-8') as fh:
         for r in csv.DictReader(fh):
-            seen[r['lea']] = r['district']
+            if r['lea'] in PEERS:
+                seen[r['lea']] = r['district']
     if LUNENBURG not in seen:
         raise SystemExit('dese-radar.csv does not carry Lunenburg; the peer set cannot '
                          'be derived from it. Nothing written.')
+    missing = sorted(set(PEERS) - set(seen))
+    if missing:
+        raise SystemExit('dese-radar.csv is missing peer district(s) %s. Nothing written.'
+                         % missing)
     return seen
 
 

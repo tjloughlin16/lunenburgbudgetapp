@@ -40,18 +40,33 @@ STATE = '00000000'
 
 
 def peers():
-    """Lunenburg and the districts `dese-radar.csv` already carries, read from it.
+    """Lunenburg and the COMPARISON districts, read from `dese-radar.csv`.
 
     Never typed. Three of the first eight DESE org codes written from memory in the radar
     extract were invented, and only a reconciliation caught them.
+
+    NOT EVERY DISTRICT IN THAT FILE. `dese-radar.csv` also carries the DESTINATIONS -- the
+    districts Lunenburg children leave for -- and those are a different set answering a
+    different question. Reading the peer set back off whatever RADAR happened to write
+    made a wider archive into a wider comparison set, silently, in four extracts at once:
+    it would have put a regional vocational district and two charter schools into the
+    six-district Chapter 70 standing table. So the roles are declared in
+    extract_dese_radar.py and this filters on them.
     """
+    from extract_dese_radar import PEERS
     seen = {}
     with open(RADAR, encoding='utf-8') as fh:
         for r in csv.DictReader(fh):
-            seen[r['lea']] = r['district']
+            if r['lea'] in PEERS:
+                seen[r['lea']] = r['district']
     if LUNENBURG not in seen:
         raise SystemExit('dese-radar.csv does not carry Lunenburg; the peer set cannot be '
                          'derived from it. Nothing written.')
+    missing = sorted(set(PEERS) - set(seen))
+    if missing:
+        raise SystemExit('dese-radar.csv is missing peer district(s) %s. A comparison set '
+                         'that quietly shrank is the same defect as one that quietly grew. '
+                         'Nothing written.' % missing)
     return seen
 
 

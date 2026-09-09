@@ -57,6 +57,11 @@ import re
 import sqlite3
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
 OUT = os.path.join(ROOT, 'fy28/public/data/school-staffing.json')
@@ -444,6 +449,18 @@ def reconcile(a, b):
                 first_fy=shared[0], last_fy=shared[-1], disagree=off)
 
 
+# Two renderings conclusions.py has no formatter for, because no other report needs them:
+# a ratio per hundred pupils, and a full-time equivalent. Both are the state's own
+# precision -- DESE publishes FTE to a tenth -- and they are here rather than inline so
+# every conclusion on this page renders them the same way.
+def per100(v):
+    return '%.2f' % float(v)
+
+
+def fte(v):
+    return '%.1f' % float(v)
+
+
 def change(points, key='dollars'):
     """First to last of a series, as a fact about two published figures and nothing more."""
     if len(points) < 2:
@@ -528,6 +545,52 @@ def build():
                      "COUNT(DISTINCT status) statuses, MAX(status) status "
                      "FROM report_gross_wages GROUP BY fy ORDER BY fy")
 
+    # EVERY year, not two chosen ones. A rank quoted at a start and an end is a rank the
+    # writer picked; the page draws all of them and reads the extremes off the series,
+    # which is the same discipline as showing the whole chart.
+    para_ranks = [r for r in (rank_in_year(peers, fy, 'paras_per_100')
+                              for fy in range(s_lo, s_hi + 1)) if r]
+    teacher_ranks = [r for r in (rank_in_year(peers, fy, 'teachers_per_100')
+                                 for fy in range(s_lo, s_hi + 1)) if r]
+    if not para_ranks or not teacher_ranks:
+        sys.exit('the comparison sheet produced no ranks -- refusing to write.')
+
+    # ---- the figures the conclusions rest on, each one derived here and nowhere else.
+    lowest_para = min(para_ranks, key=lambda r: r['value'])   # the trough, WITH its rank
+    latest_para = para_ranks[-1]
+    latest_teach = teacher_ranks[-1]
+    # How long Lunenburg has been last of its group without a break, counted back from
+    # the most recent year rather than asserted.
+    teach_streak = 0
+    for r in reversed(teacher_ranks):
+        if r['rank'] != r['of']:
+            break
+        teach_streak += 1
+    # How many of the published years Lunenburg was last, and the year the unbroken run
+    # began. Both are read off the series rather than described, because the comparison
+    # set changes size year to year and a rank without its denominator is the shape of
+    # error this project keeps finding.
+    # The paraprofessional rise and the enrolment move over the SAME years -- from the
+    # trough to the latest published year. A rise measured over one span set beside an
+    # enrolment change measured over another is the like-for-like error in one sentence.
+    para_rise = 100.0 * (by_fy[s_hi]['para_fte'] / trough['para_fte'] - 1)
+    pupils_same_years = 100.0 * (by_fy[s_hi]['pupils_in_district']
+                                 / by_fy[trough['fy']]['pupils_in_district'] - 1)
+    teach_last_years = sum(1 for r in teacher_ranks if r['rank'] == r['of'])
+    streak_from = teacher_ranks[-teach_streak]['fy'] if teach_streak else None
+    # THE CLAIM BELOW USED TO ASSERT LUNENBURG IS LAST IN THIS GROUP, and the group is not
+    # ours: DESE decides who is on its comparison sheet, and it changed underneath this
+    # file mid-build -- charter districts entered the set and the unbroken run went to
+    # zero, which crashed the formatter on a `None` year. A conclusion may not assume a
+    # ranking it does not control. So the standing is READ, and the sentence is assembled
+    # from what the standing turned out to be, with the streak clause present only in the
+    # years there is a streak to state.
+    is_last = latest_teach['rank'] == latest_teach['of']
+    streak_clause = ('and last without a break since %s' % C.fy(streak_from)) if teach_streak \
+        else 'though not the lowest in the most recent year the state published'
+    cw_para = next(p for p in common['panels'] if p['key'] == 'sped_para')['change']
+    cw_teach = next(p for p in common['panels'] if p['key'] == 'sped_teacher')['change']
+
     return dict(
         generated_by='scripts/build_staffing_charts.py',
         source='sources/data/lunenburg.db — staff_roster_entries, role_classification, '
@@ -536,14 +599,7 @@ def build():
             lea=LEA, docs=dese_docs, reconciles=dese_recon,
             first_fy=s_lo, last_fy=s_hi, points=state,
             change=fte_change, change_over_roster_years=roster_window, trough=trough,
-            # EVERY year, not two chosen ones. A rank quoted at a start and an end is a
-            # rank the writer picked; the page draws all seventeen and reads the extremes
-            # off the series, which is the same discipline as showing the whole chart.
-            ranks=dict(
-                paras=[r for r in (rank_in_year(peers, fy, 'paras_per_100')
-                                   for fy in range(s_lo, s_hi + 1)) if r],
-                teachers=[r for r in (rank_in_year(peers, fy, 'teachers_per_100')
-                                      for fy in range(s_lo, s_hi + 1)) if r]),
+            ranks=dict(paras=para_ranks, teachers=teacher_ranks),
             latest=by_fy[s_hi]),
         peers=peers,
         roster=ros,
@@ -555,6 +611,189 @@ def build():
             statuses=sorted({r['status'] for r in wages}),
             by_year=[dict(fy=r['fy'], rows=r['n'], school_tagged=r['school'])
                      for r in wages]),
+        conclusions=emit('school-staffing', [
+            conclusion(
+                id='the-change-is-paraprofessionals',
+                claim='Rise in paraprofessionals for each hundred pupils, the biggest change in staffing',
+                so_what='Lunenburg went from the lowest on the state’s comparison sheet to the highest.',
+                lede='Paraprofessionals are the biggest change in who Lunenburg’s '
+                      'schools employ: the state’s count went from %s per hundred '
+                      'pupils in %s, the lowest of the %s districts on the state’s own '
+                      'sheet, to %s in '
+                      '%s, the highest.'
+                      % (per100(lowest_para['value']), C.fy(lowest_para['fy']),
+                         C.num(latest_para['of']), per100(latest_para['value']),
+                         C.fy(latest_para['fy'])),
+                detail='%s full-time equivalents in %s and %s in %s — a rise of %s '
+                       'over years in which in-district enrolment %s %s. Nothing else '
+                       'in this archive could have told a resident that: the town prints '
+                       'staff rosters every year and they carry names without hours, so '
+                       'the state’s file is the only place the size of the shift is '
+                       'visible.'
+                       % (fte(trough['para_fte']), C.fy(trough['fy']),
+                          fte(by_fy[s_hi]['para_fte']), C.fy(s_hi),
+                          C.pct(para_rise),
+                          'fell' if pupils_same_years < 0 else 'rose',
+                          C.pct(abs(pupils_same_years))),
+                figure='fte_rise',
+                figures={
+                    'low_ratio': figure(lowest_para['value'], per100(lowest_para['value'])),
+                    'low_fy': figure(lowest_para['fy'], C.fy(lowest_para['fy'])),
+                    'last_ratio': figure(latest_para['value'], per100(latest_para['value'])),
+                    'last_fy': figure(latest_para['fy'], C.fy(latest_para['fy'])),
+                    'districts': figure(latest_para['of'], C.num(latest_para['of'])),
+                    'low_fte': figure(trough['para_fte'], fte(trough['para_fte'])),
+                    'last_fte': figure(by_fy[s_hi]['para_fte'],
+                                       fte(by_fy[s_hi]['para_fte'])),
+                    'trough_fy': figure(trough['fy'], C.fy(trough['fy'])),
+                    'last_year': figure(s_hi, C.fy(s_hi)),
+                    'fte_rise': figure(para_rise, C.pct(para_rise)),
+                    'enrolment_move': figure(abs(pupils_same_years),
+                                             C.pct(abs(pupils_same_years))),
+                },
+                kind='measured',
+                basis='DESE’s own staffing and enrolment files for Lunenburg and for '
+                      'the districts on its published comparison sheet, %s–%s. State '
+                      'figures, printed by the state — not the town’s rosters, '
+                      'which carry no hours, and not a budget line.'
+                      % (C.fy(s_lo), C.fy(s_hi)),
+                not_shown='Whether any of this is about children. An FTE count is staff: '
+                          'not a count of students with disabilities, not one-to-one '
+                          'assignments, not hours delivered. And DESE counts staff paid '
+                          'from grants, circuit breaker reimbursement and revolving funds '
+                          'alongside those the town appropriates, so this series cannot '
+                          'say who pays for the rise — DESE’s End of Year '
+                          'Financial Report, which separates spending by fund, is what '
+                          'would.',
+                see=[('/what-special-education-costs', 'what special education costs'),
+                     ('/what-other-districts-spend', 'what other districts spend')],
+            ),
+            conclusion(
+                id='fewest-teachers-per-pupil-in-the-group',
+                claim='Teaching staff for each hundred pupils, near the bottom of the state’s comparison group',
+                so_what='Teaching fell faster than enrollment did, so falling rolls do not explain it.',
+                lede='Lunenburg ranks %s of the %s districts on the state’s '
+                      'comparison sheet for teachers per pupil — and falling '
+                      'enrolment is not the explanation: teacher FTE fell %s since %s '
+                      'while in-district enrolment fell %s.'
+                      % (C.num(latest_teach['rank']), C.num(latest_teach['of']),
+                         C.pct(abs(fte_change['teacher_fte']['pct']) * 100), C.fy(s_lo),
+                         C.pct(abs(fte_change['pupils_in_district']['pct']) * 100)),
+                detail='%s teacher FTE per hundred in-district pupils in %s, down from '
+                       '%s in %s: teaching fell faster than the roll did. It has been '
+                       'last in the group in %s of the %s years the state has published, '
+                       '%s. The two things a reader hears '
+                       'as contradictory are both true here — measured from %s '
+                       'instead, the ratio has RISEN, from %s, because over those years '
+                       'the denominator fell faster. Which window a comparison is drawn '
+                       'over decides its sign, so the window belongs beside the figure.'
+                       % (per100(latest_teach['value']), C.fy(latest_teach['fy']),
+                          per100(fte_change['teachers_per_100']['first']), C.fy(s_lo),
+                          C.num(teach_last_years), C.num(len(teacher_ranks)),
+                          streak_clause,
+                          C.fy(roster_window['teachers_per_100']['first_fy']),
+                          per100(roster_window['teachers_per_100']['first'])),
+                figure='ratio',
+                figures={
+                    'rank': figure(latest_teach['rank'], C.num(latest_teach['rank'])),
+                    'districts': figure(latest_teach['of'], C.num(latest_teach['of'])),
+                    'teacher_fall': figure(
+                        abs(fte_change['teacher_fte']['pct']) * 100,
+                        C.pct(abs(fte_change['teacher_fte']['pct']) * 100)),
+                    'first_fy': figure(s_lo, C.fy(s_lo)),
+                    'enrolment_fall': figure(
+                        abs(fte_change['pupils_in_district']['pct']) * 100,
+                        C.pct(abs(fte_change['pupils_in_district']['pct']) * 100)),
+                    'ratio': figure(latest_teach['value'], per100(latest_teach['value']),
+                                    'for every 100 pupils'),
+                    'last_fy': figure(latest_teach['fy'], C.fy(latest_teach['fy'])),
+                    'first_ratio': figure(fte_change['teachers_per_100']['first'],
+                                          per100(fte_change['teachers_per_100']['first'])),
+                    'years_last': figure(teach_last_years, C.num(teach_last_years)),
+                    'years_published': figure(len(teacher_ranks),
+                                              C.num(len(teacher_ranks))),
+                    **({'streak_from': figure(streak_from, C.fy(streak_from))}
+                       if teach_streak else {}),
+                    'roster_first': figure(
+                        roster_window['teachers_per_100']['first'],
+                        per100(roster_window['teachers_per_100']['first'])),
+                    'roster_first_fy': figure(
+                        roster_window['teachers_per_100']['first_fy'],
+                        C.fy(roster_window['teachers_per_100']['first_fy'])),
+                },
+                kind='measured',
+                basis='DESE’s published teacher FTE and in-district FTE pupils, for '
+                      'Lunenburg and for every district on the state’s comparison '
+                      'sheet, every year it has been published. The rank is taken among '
+                      'the districts REPORTING IN THAT YEAR, and the count of them is '
+                      'carried beside it.',
+                not_shown='That a staffing level was chosen. A district cannot shed a '
+                          'teacher for each departing child — sections, grade spans '
+                          'and required subjects set a floor that has nothing to do with '
+                          'the enrolment total, so a ratio moving is the arithmetic of a '
+                          'falling denominator at least as much as it is a decision. And '
+                          'a teacher here is DESE’s definition applied by DESE, not '
+                          'the district’s payroll and not the contract’s '
+                          'bargaining unit.',
+                see=[('/what-other-districts-spend', 'what other districts spend'),
+                     ('/if-students-leave', 'what happens as students leave')],
+            ),
+            conclusion(
+                id='inside-sped-the-money-went-to-paraprofessionals',
+                claim='Rise in what the schools budget for special education paraprofessionals',
+                so_what='Special education teacher lines rose a fifth as fast. Inside this budget, the money went to assistants.',
+                lede='Inside special education the money went to paraprofessionals: '
+                      'those %s budget lines rose %s over %s, while the %s special '
+                      'education teacher lines rose %s.'
+                      % (C.num(5), C.pct(cw_para['pct'] * 100),
+                         C.fyspan(common['first_fy'], common['last_fy']), C.num(5),
+                         C.pct(cw_teach['pct'] * 100)),
+                detail='%s to %s against %s to %s, both panels read at the %s stage over '
+                       'the %s years both of them cover. These are NET general fund '
+                       'lines — what the town has to raise after grants, circuit '
+                       'breaker reimbursement and revolving funds have paid their share '
+                       '— so the same rise appears whether the district added '
+                       'paraprofessionals or a grant that had been paying for them ended '
+                       'and the cost landed on the town. Which of the two it is matters: '
+                       'this is the line this project’s own in-district special '
+                       'education escalator is built on.'
+                       % (C.usd(cw_para['first']), C.usd(cw_para['last']),
+                          C.usd(cw_teach['first']), C.usd(cw_teach['last']),
+                          DOLLAR_STAGE,
+                          C.num(common['last_fy'] - common['first_fy'] + 1)),
+                figures={
+                    'lines': figure(5, C.num(5)),
+                    'para_pct': figure(cw_para['pct'] * 100, C.pct(cw_para['pct'] * 100)),
+                    'span': figure(common['first_fy'],
+                                   C.fyspan(common['first_fy'], common['last_fy'])),
+                    'teacher_pct': figure(cw_teach['pct'] * 100,
+                                          C.pct(cw_teach['pct'] * 100)),
+                    'para_first': figure(cw_para['first'], C.usd(cw_para['first'])),
+                    'para_last': figure(cw_para['last'], C.usd(cw_para['last'])),
+                    'teacher_first': figure(cw_teach['first'], C.usd(cw_teach['first'])),
+                    'teacher_last': figure(cw_teach['last'], C.usd(cw_teach['last'])),
+                    'years': figure(common['last_fy'] - common['first_fy'] + 1,
+                                    C.num(common['last_fy'] - common['first_fy'] + 1)),
+                },
+                figure='para_pct',
+                kind='measured',
+                basis='Two panels of five budget lines each, out of the district’s '
+                      'own budget books at one stage across their whole run, compared '
+                      'only over the years both panels report. The paraprofessional '
+                      'panel is reconciled against the district’s own five-school '
+                      'aggregation of the same figures, and the comparison is published '
+                      'in this payload rather than swallowed. A budget book restating '
+                      'itself is a document the district assembled, not an accounting '
+                      'printout.',
+                not_shown='That anybody was hired. A budget line is dollars: not a post, '
+                          'not a person, not an hour — a line rising and a line '
+                          'paying more for the same people are the same number on the '
+                          'page. Nor does it show what special education cost, because '
+                          'these lines are net of every fund but the general fund.',
+                see=[('/what-special-education-costs', 'what special education costs'),
+                     ('/when-grants-end', 'what happens when a grant stops')],
+            ),
+        ]),
     )
 
 

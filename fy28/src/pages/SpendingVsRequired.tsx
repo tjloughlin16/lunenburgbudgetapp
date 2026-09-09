@@ -7,9 +7,11 @@ import {
   fyLong, money, pct1, ratio, signedUsd, type Year,
 } from '../components/SpendingVsRequiredCharts'
 import {
+  Conclusions,
   Body, H2, H3, Insight, NotShown, Quote, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 const TAB: Tab = 'required'
 const DATA = '/data/spending-vs-required.json'
@@ -56,6 +58,7 @@ type Said = {
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   about: string
   source: {
     path: string; sha256: string; bytes: number; url: string; docs_url: string
@@ -189,6 +192,14 @@ export function SpendingVsRequired() {
         </Stat>
       </div>
 
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       <H2 id="findings">What this page establishes</H2>
       <div className="grid gap-4 mt-6"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 21rem), 1fr))' }}>
@@ -234,7 +245,7 @@ export function SpendingVsRequired() {
           {BEST.rank}. The state median moved from {ratio(BEST.state_median ?? 0)} to{' '}
           {ratio(L.state_median ?? 0)} underneath it. A ratio that rises can still be a
           district falling behind, because the requirement is recomputed every year from
-          enrolment and municipal wealth and every other district is moving too.
+          enrollment and municipal wealth and every other district is moving too.
         </Insight>
         <Insight n={5} headline={
           <>Below the median is not the bottom tenth, and on this measure Lunenburg is not
@@ -327,7 +338,7 @@ export function SpendingVsRequired() {
           <strong>And a rank says nothing about what any of the spending bought.</strong>{' '}
           Two districts at the same multiple of their own requirements may have entirely
           different class sizes, programmes and caseloads, because the requirement itself
-          is built from each district&rsquo;s own enrolment and its town&rsquo;s wealth.
+          is built from each district&rsquo;s own enrollment and its town&rsquo;s wealth.
         </p>
       </NotShown>
 

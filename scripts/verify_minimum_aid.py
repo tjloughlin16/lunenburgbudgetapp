@@ -305,7 +305,7 @@ def main():
     check('the increase', H['increase'], r['increase'], 0.01)
     check('minimum aid increment', H['minimum_aid_increment'], r['minimum_aid'], 0.01)
     check('foundation aid increment', H['foundation_aid_increment'], r['foundation_aid'], 0.01)
-    check('foundation enrolment', H['enrollment'], r['enrollment'], 0.001)
+    check('foundation enrollment', H['enrollment'], r['enrollment'], 0.001)
     check('the increase, per foundation pupil', H['per_pupil'], r['per_pupil'], 0.005)
     check('foundation budget per pupil', H['foundation_per_pupil'],
           r['foundation_per_pupil'], 0.01)
@@ -338,7 +338,7 @@ def main():
     assert_true('the target local contribution IS the combined effort yield, every year',
                 r['target_is_cey'],
                 'it is not, and finding 4 rests on it -- that identity is the whole reason '
-                'enrolment does not enter the town’s contribution')
+                'enrollment does not enter the town’s contribution')
     # THE MARGINAL SECTION RESTS ON THE LATEST YEAR, and the page states the count rather
     # than claiming every year -- FY2007 is $18,090 off the proportion and the page names
     # it. So this asserts the latest year AND that the published count is the true one; a
@@ -440,7 +440,7 @@ def main():
     assert_true('the requirement really has risen faster than the aid',
                 r['since_required_pct'] > r['since_aid_pct'],
                 'it has not, and the sixth finding says it has')
-    assert_true('foundation enrolment really is lower at the end than at the start',
+    assert_true('foundation enrollment really is lower at the end than at the start',
                 d['since']['enrollment_to'] < d['since']['enrollment_from'],
                 'the finding says "on a smaller number of children"')
 

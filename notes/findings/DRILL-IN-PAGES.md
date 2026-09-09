@@ -260,7 +260,7 @@ corrected.
   states the aid. Registered.
 - **Whether an aid shortfall falls on the schools or the town is unknown.** The
   −$390,814 year is a fact; who absorbed it is not in anything we hold.
-- **Four different pupil counts.** Foundation enrolment is 1,599; DESE's own measures
+- **Four different pupil counts.** Foundation enrollment is 1,599; DESE's own measures
   give 1,563, 1,568.9 and 1,665.9. They count different things and the page says so
   rather than picking one.
 
@@ -491,9 +491,9 @@ would close it. All are registered in `sources/data/money-gaps.csv` unless marke
 9. **Whether an aid shortfall lands on the schools or on the town.** FY2024 came in
    $390,814 under estimate. Who absorbed it is in nothing we hold.
    *Closes:* the fiscal-year-end recap (Form A-1), beside the Cherry Sheet.
-10. **How many children Chapter 70 is paid for.** Foundation enrolment is 1,599; DESE's
+10. **How many children Chapter 70 is paid for.** Foundation enrollment is 1,599; DESE's
     own measures give 1,563, 1,568.9 and 1,665.9. Four counts of four different things.
-    *Closes:* DESE's FY27 foundation enrolment worksheet.
+    *Closes:* DESE's FY27 foundation enrollment worksheet.
 
 **Bounded rather than answerable:**
 

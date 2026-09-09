@@ -72,7 +72,7 @@ applied to a quantity 22% larger than the one it was measured on.
 whole cherry sheet, and A is a series of budgeted estimates of the whole cherry sheet.
 
 **E is worth stating because it is where everybody looks first.** `dese_radar` holds 2,982
-rows over FY2009–FY2025 for seven districts, and thirty distinct measures — enrolment,
+rows over FY2009–FY2025 for seven districts, and thirty distinct measures — enrollment,
 demographics, per-pupil expenditure by function, MCAS, teacher and paraprofessional FTE,
 average salary. **Not one of them is Chapter 70 or any other aid figure.** DESE publishes
 Chapter 70 per district per year; this archive does not hold it.
@@ -263,7 +263,7 @@ happened lately"* and the wrong one for *"what happens next"*.
    on the Governor's budget). The enacted budget came in **$471,121 above** it.
 2. The CL#8 band (§4) is ±3% of aid — larger than the rate itself. This rate is a central
    tendency around a quantity that misses by more than its own growth every single year.
-3. **Chapter 70 is 78.7% of the model's base and it is a formula, not a trend.** Foundation enrolment,
+3. **Chapter 70 is 78.7% of the model's base and it is a formula, not a trend.** Foundation enrollment,
    the required local contribution and the minimum-aid increment are the inputs, and they
    move independently of anything measured here. A past growth rate is a summary of what
    the formula produced under the rules that then applied — including the Student

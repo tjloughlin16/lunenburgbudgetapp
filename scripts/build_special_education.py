@@ -50,6 +50,12 @@ import re
 import sqlite3
 import sys
 
+# The conclusions each of these four reports states, as DATA rather than as sentences in
+# a page. See scripts/conclusions.py: the generator that computed a figure writes the
+# claim that rests on it, and nothing downstream may state more than the payload holds.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
@@ -303,7 +309,7 @@ def coverage():
 
 def build_students(db, mf):
     """A published COUNT of children on an IEP -- and the three counts that are not it."""
-    # The count, and the enrolment it sits in. `dese_sped_program`, category `Enrollment`,
+    # The count, and the enrollment it sits in. `dese_sped_program`, category `Enrollment`,
     # whose own total row is `Total In- and Out-of-District Students`.
     enrol = need(q(db, """
         SELECT fy,
@@ -312,7 +318,7 @@ def build_students(db, mf):
                         THEN denominator_cnt END)
         FROM dese_sped_program
         WHERE lea=? AND geo_level='district' AND indicator_category='Enrollment'
-        GROUP BY fy ORDER BY fy""", LEA), 'students', 'the SWD enrolment rows')
+        GROUP BY fy ORDER BY fy""", LEA), 'students', 'the SWD enrollment rows')
 
     # In district against out of district, from the SAME file and the same total.
     io = dict(((fy, ind), cnt) for fy, ind, cnt in q(db, """
@@ -452,6 +458,18 @@ def build_students(db, mf):
 
     first, last = counts[0], counts[-1]
     lowest = min(counts, key=lambda c: c['swd'])
+    share_points = round(last['share_pct'] - lowest['share_pct'], 2)
+    # The share moved for two reasons and a reader deserves both. This holds the
+    # denominator still, so the part of the movement that is the count is visible on its
+    # own. It is a counterfactual and it is arithmetic on two published counts, not a
+    # model: the same operation /peer-spending does to separate spending from enrollment.
+    share_at_old_enrollment = round(100.0 * last['swd'] / lowest['enrolled'], 2)
+    # An FTE is printed to one decimal by DESE and is not a dollar or a count, so it gets
+    # its own rendering rather than being pushed through num() and losing the '.0'.
+    ftes = '%.1f'
+    para_first_fte, para_last_fte = ftes % paras[0]['fte'], ftes % paras[-1]['fte']
+    para_first_100, para_last_100 = ftes % paras[0]['per_100'], ftes % paras[-1]['per_100']
+    para_fall_pct = round(100.0 * (1 - paras[-1]['fte'] / paras[0]['fte']), 1)
     return {
         'about': 'How many Lunenburg children have an individual education programme, '
                  'from the count DESE publishes rather than from any dollar figure.',
@@ -487,6 +505,102 @@ def build_students(db, mf):
         'placement': placement,
         'placement_shortfall': short,
         'grade_span': grade_span,
+        'conclusions': emit('how-many-students-are-on-an-iep', [
+            conclusion(
+                id='the-share-rose-partly-because-enrollment-fell',
+                claim='Lunenburg children with a special education plan, %s'
+                      % C.fy(last['fy']),
+                so_what='Up from %s four years earlier. Enrollment fell over the same '
+                        'years, so the share rose further than the count.'
+                        % C.num(lowest['swd']),
+                lede='%s Lunenburg children had a special education plan in %s, against '
+                      '%s in %s \u2014 and because the number of children in the schools '
+                      'fell over those years, the SHARE with a plan rose further than the '
+                      'number did.'
+                      % (C.num(last['swd']), C.fy(last['fy']), C.num(lowest['swd']),
+                         C.fy(lowest['fy'])),
+                detail='%s more children, on an enrollment that went from %s to %s. The '
+                       'share therefore moved from %s to %s \u2014 %s. Both halves of '
+                       'that matter to anyone reading a rising percentage as a rising '
+                       'caseload: the caseload did rise, and had enrollment held where it '
+                       'was the share would read %s rather than %s. These are '
+                       'DESE\u2019s own published counts, not a percentage multiplied '
+                       'back out.'
+                       % (C.num(last['swd'] - lowest['swd']), C.num(lowest['enrolled']),
+                          C.num(last['enrolled']), C.pct(lowest['share_pct']),
+                          C.pct(last['share_pct']), C.points(share_points),
+                          C.pct(share_at_old_enrollment), C.pct(last['share_pct'])),
+                figures={
+                    'last': figure(last['swd'], C.num(last['swd']), 'children'),
+                    'last_fy': figure(last['fy'], C.fy(last['fy'])),
+                    'low': figure(lowest['swd'], C.num(lowest['swd'])),
+                    'low_fy': figure(lowest['fy'], C.fy(lowest['fy'])),
+                    'change': figure(last['swd'] - lowest['swd'],
+                                     C.num(last['swd'] - lowest['swd'])),
+                    'enrolled_from': figure(lowest['enrolled'], C.num(lowest['enrolled'])),
+                    'enrolled_to': figure(last['enrolled'], C.num(last['enrolled'])),
+                    'share_from': figure(lowest['share_pct'], C.pct(lowest['share_pct'])),
+                    'share_to': figure(last['share_pct'], C.pct(last['share_pct'])),
+                    'share_points': figure(share_points, C.points(share_points)),
+                    'share_at_old_enrollment': figure(share_at_old_enrollment,
+                                                     C.pct(share_at_old_enrollment)),
+                },
+                figure='last',
+                kind='measured',
+                basis='DESE\u2019s Special Education Program Characteristics file for '
+                      'Lunenburg, district rows only, every year it has been published.',
+                not_shown='That a rising count means rising need. A count of children with '
+                          'an IEP is a count of children who have one; referral, '
+                          'evaluation and eligibility practice all move it and none of '
+                          'them is published.',
+                see=[('/what-special-education-costs', 'what it costs')],
+            ),
+            conclusion(
+                id='paraprofessional-fte-fell-while-the-count-did-not',
+                claim='Fall in the paraprofessionals the state counts in special '
+                      'education',
+                so_what='%s posts down to %s since %s, while the number of children they '
+                        'support barely moved.'
+                        % (para_first_fte, para_last_fte, C.fy(paras[0]['fy'])),
+                lede='The state counts %s full-time paraprofessionals in Lunenburg\u2019s '
+                      'special education programme, down from %s \u2014 a fall of %s, '
+                      'while the number of children they support barely moved.'
+                      % (para_last_fte, para_first_fte, C.pct(para_fall_pct)),
+                detail='For every hundred children with a special education plan that is '
+                       '%s posts falling to %s, over a group of children that went from %s '
+                       'to %s. Paraprofessionals are the staff this budget grows fastest '
+                       'in, and they are what this project\u2019s own forecast of '
+                       'in-district special education costs is built on, so which way this '
+                       'series runs changes what anybody planning from it should expect. '
+                       'A full-time equivalent is a share of a post rather than a person: '
+                       'the state counts assignments, so two half-time posts and one '
+                       'full-time post are the same figure here.'
+                       % (para_first_100, para_last_100,
+                          C.num(paras[0]['swd_base']), C.num(paras[-1]['swd_base'])),
+                figure='fall',
+                figures={
+                    'fall': figure(para_fall_pct, C.pct(para_fall_pct)),
+                    'first_fy': figure(paras[0]['fy'], C.fy(paras[0]['fy'])),
+                    'fte_from': figure(paras[0]['fte'], para_first_fte,
+                                       'full-time equivalent posts'),
+                    'fte_to': figure(paras[-1]['fte'], para_last_fte,
+                                     'full-time equivalent posts'),
+                    'per100_from': figure(paras[0]['per_100'], para_first_100),
+                    'per100_to': figure(paras[-1]['per_100'], para_last_100),
+                    'base_from': figure(paras[0]['swd_base'], C.num(paras[0]['swd_base'])),
+                    'base_to': figure(paras[-1]['swd_base'], C.num(paras[-1]['swd_base'])),
+                },
+                kind='measured',
+                basis='DESE\u2019s Special Education Indicators file. This is the one row '
+                      'of that table that reproduces from its own printed FTE and count in '
+                      'every year, which is why it is the only one published here.',
+                not_shown='That posts were removed. An FTE series is a count of what was '
+                          'CODED as a paraprofessional, and recoding, a change of funding '
+                          'source, or a change of reporting rule would each produce this '
+                          'same fall. Nothing published distinguishes them.',
+                see=[('/school-staffing', 'the people the budget buys')],
+            ),
+        ]),
         'said': said_for('students'),
         'searched': searched('students'),
         'minutes': coverage(),
@@ -505,7 +619,7 @@ def build_students(db, mf):
             'total teacher FTE holds flat — a signature that recoding would produce '
             'exactly.',
             'How the third count relates to the other two. `dese_sped_movement` reports a '
-            'K-12 grade-row basis and a different enrolment; nothing published states the '
+            'K-12 grade-row basis and a different enrollment; nothing published states the '
             'census date or the inclusion rule behind either.',
             'A breakdown of every child by setting. DESE’s Placement category is '
             'in-district only and its parts run short of the total printed beside them; '
@@ -528,9 +642,9 @@ def build_leaving(db, mf):
         SELECT fy, enrollment_reason, district, lea, students FROM dese_town_enrollment
         WHERE town=? ORDER BY fy, enrollment_reason, district""", TOWN)
     if not rows:
-        fail('the town enrolment join matched nothing')
+        fail('the town enrollment join matched nothing')
     years = sorted({r[0] for r in rows})
-    need([(y,) for y in years], 'leaving', 'the town enrolment years')
+    need([(y,) for y in years], 'leaving', 'the town enrollment years')
 
     # ELSEWHERE IS "NOT ENROLLED IN THE LUNENBURG DISTRICT", NOT "NOT A RESIDENT MEMBER".
     # The 97 children at Montachusett Regional Vocational Technical are Resident/Member
@@ -660,6 +774,8 @@ def build_leaving(db, mf):
 
     first, last = series[0], series[-1]
     peak = max(series, key=lambda s: s.get('School Choice Program', 0))
+    rc = route_change
+    biggest_dest = elsewhere_latest[0]
     return {
         'about': 'Where Lunenburg’s resident children actually go to school, from '
                  'DESE’s count of residents by district — every reason, both '
@@ -709,6 +825,99 @@ def build_leaving(db, mf):
                      'different flow of money from school choice, assessed on the town '
                      'separately.'},
         ],
+        'conclusions': emit('where-students-go-instead', [
+            conclusion(
+                id='the-total-held-while-its-parts-changed',
+                claim='Change in children schooled outside Lunenburg, over %s years'
+                      % C.num(len(series)),
+                so_what='The total barely moved. Where they go changed completely, and the '
+                        'routes cost the town different amounts.',
+                lede='The number of Lunenburg children going to school somewhere other '
+                      'than a Lunenburg school has barely moved in %s years \u2014 %s '
+                      'then, %s now, a change of %s \u2014 while where they go changed '
+                      'completely.'
+                      % (C.num(len(series)), C.num(rc['elsewhere']['first']),
+                         C.num(rc['elsewhere']['last']),
+                         C.pct(rc['elsewhere']['pct'])),
+                detail='Monty Tech went %s to %s. School choice went %s to %s. Charter '
+                       'schools went %s to %s. Anybody watching only the total would '
+                       'report that nothing is happening here, and three things beneath it '
+                       'are moving in different directions at once, one of them by half. '
+                       'Over the same span the children in Lunenburg\u2019s own schools '
+                       'went %s to %s. That matters for planning because the three routes '
+                       'cost the town different amounts and none of them is controlled by '
+                       'the same decision.'
+                       % (C.num(rc['monty_tech']['first']), C.num(rc['monty_tech']['last']),
+                          C.num(rc['school_choice']['first']),
+                          C.num(rc['school_choice']['last']),
+                          C.num(rc['charter']['first']), C.num(rc['charter']['last']),
+                          C.num(rc['in_lunenburg']['first']),
+                          C.num(rc['in_lunenburg']['last'])),
+                figure='total_change',
+                figures={
+                    'total_change': figure(rc['elsewhere']['pct'],
+                                           C.pct(rc['elsewhere']['pct'])),
+                    'years': figure(len(series), C.num(len(series)), 'years'),
+                    'elsewhere_from': figure(rc['elsewhere']['first'],
+                                             C.num(rc['elsewhere']['first'])),
+                    'elsewhere_to': figure(rc['elsewhere']['last'],
+                                           C.num(rc['elsewhere']['last'])),
+                    'monty_from': figure(rc['monty_tech']['first'],
+                                         C.num(rc['monty_tech']['first'])),
+                    'monty_to': figure(rc['monty_tech']['last'],
+                                       C.num(rc['monty_tech']['last'])),
+                    'choice_from': figure(rc['school_choice']['first'],
+                                          C.num(rc['school_choice']['first'])),
+                    'choice_to': figure(rc['school_choice']['last'],
+                                        C.num(rc['school_choice']['last'])),
+                    'charter_from': figure(rc['charter']['first'],
+                                           C.num(rc['charter']['first'])),
+                    'charter_to': figure(rc['charter']['last'],
+                                         C.num(rc['charter']['last'])),
+                    'here_from': figure(rc['in_lunenburg']['first'],
+                                        C.num(rc['in_lunenburg']['first'])),
+                    'here_to': figure(rc['in_lunenburg']['last'],
+                                      C.num(rc['in_lunenburg']['last'])),
+                },
+                kind='measured',
+                basis='DESE\u2019s count of resident children by town and district, every '
+                      'reason and both directions, for every year it has been published.',
+                not_shown='Why any family left. A count of departures is not a reason for '
+                          'them, and nothing in this file or in the meeting record surveys '
+                          'the households.',
+                see=[('/monty-tech', 'what Monty Tech is assessed for'),
+                     ('/if-students-leave', 'what more leaving would cost')],
+            ),
+            conclusion(
+                id='the-biggest-destination-is-not-school-choice',
+                claim='Lunenburg children at Monty Tech, the largest single destination',
+                so_what='More than school choice and charter together. Lunenburg is a '
+                        'member town there, so this is not choosing out.',
+                lede='The largest single destination for a Lunenburg child educated '
+                      'elsewhere is not school choice. It is %s, with %s children.'
+                      % (biggest_dest['district'], C.num(biggest_dest['students'])),
+                detail='More than school choice and charter schools put together. Those '
+                       'children are counted as resident MEMBERS, because Lunenburg belongs '
+                       'to that district and helps fund it \u2014 a family choosing it is '
+                       'not choosing OUT of anything the town runs, and no Lunenburg '
+                       'decision admits or refuses any of them. Reading '
+                       '\u201cchildren who leave\u201d as school choice alone understates '
+                       'the count by more than half and points the argument at the one '
+                       'route the town has least to do with.',
+                figures={
+                    'students': figure(biggest_dest['students'],
+                                       C.num(biggest_dest['students']), 'children'),
+                },
+                figure='students',
+                kind='measured',
+                basis='DESE\u2019s resident-by-district count for the latest published '
+                      'year, read by district rather than by enrollment reason.',
+                not_shown='What any of it costs. The archive holds the counts and not one '
+                          'document stating the tuition Lunenburg is assessed for these '
+                          'children by route.',
+                see=[('/monty-tech', 'the Monty Tech assessment')],
+            ),
+        ]),
         'said': said_for('leaving'),
         'searched': searched('leaving'),
         'minutes': coverage(),
@@ -738,7 +947,7 @@ def build_leaving(db, mf):
         'closes': 'DLS Cherry Sheet CS 1-EB (estimated charges) for Lunenburg, which '
                   'prints the school choice sending and charter tuition assessments on '
                   'their own lines — the money. For the disability question, '
-                  'DESE’s SIMS detail crossing enrolment reason with IEP status, '
+                  'DESE’s SIMS detail crossing enrollment reason with IEP status, '
                   'which is not published at town level at all.',
     }
 
@@ -852,6 +1061,14 @@ def build_cost(db, mf):
 
     last = spend[-1]
     widest = max((s for s in spend if s['ratio']), key=lambda s: s['ratio'])
+    # THE SHAPE OF THE SERIES, not just its ends. Residents describe this line as rising
+    # relentlessly; measured across all funds it peaked years ago and has moved in both
+    # directions since, which is a different fact about the world and the one worth saying.
+    peak = max(spend, key=lambda s: s['total'])
+    low = min(spend, key=lambda s: s['total'])
+    down_from_peak = round(100.0 * (peak['total'] - last['total']) / peak['total'], 1)
+    most_outside = max(spend, key=lambda s: s['outside_share_pct'])
+    least_outside = min(spend, key=lambda s: s['outside_share_pct'])
     return {
         'about': 'What Lunenburg spends on out-of-district special education placement, '
                  'split by the fund that paid it — and what the state reimburses '
@@ -884,6 +1101,142 @@ def build_cost(db, mf):
         'cb_identity_years': cb_identity,
         'cb_identity_breaks': cb_identity_breaks,
         'beside': beside,
+        # WHAT A RESIDENT SHOULD TAKE AWAY, computed here rather than written on the
+        # page. Everyone in this town says special education is expensive and rising;
+        # these say what is actually happening to that money. Rule 8: what it means for
+        # planning, never what anybody got wrong.
+        'conclusions': emit('what-special-education-costs', [
+            conclusion(
+                id='the-line-is-the-towns-share',
+                claim='Of what Lunenburg spent teaching children at other schools was '
+                      'paid from outside the budget',
+                so_what='The figure residents argue about is the town\u2019s share of '
+                        'that bill, not the bill.',
+                lede='The special education figure residents argue about \u2014 what the '
+                      'schools pay other schools to teach children Lunenburg cannot \u2014 '
+                      'is the town\u2019s share of that bill and not the bill. In %s the '
+                      'budget said %s and %s was spent.'
+                      % (C.fy(last['fy']), C.usd(last['gen_fund']), C.usd(last['total'])),
+                detail='The district\u2019s own restated budget figure equals DESE\u2019s '
+                       'general fund column, to within a dollar or two, in %s of the %s '
+                       'years the two can be compared \u2014 and equals the all-funds '
+                       'column in none of them. So %s, %s of what was spent on '
+                       'out-of-district placement that year, was paid from funds that '
+                       'never appear in the appropriation at all. A resident watching the '
+                       'budget line is watching what the town raises, which can move '
+                       'without a single placement changing.'
+                       % (C.num(len(ties)), C.num(len(match)), C.usd(last['grants']),
+                          C.pct(last['outside_share_pct'])),
+                figures={
+                    'fy': figure(last['fy'], C.fy(last['fy'])),
+                    'budget_line': figure(last['gen_fund'], C.usd(last['gen_fund'])),
+                    'all_funds': figure(last['total'], C.usd(last['total'])),
+                    'ties': figure(len(ties), C.num(len(ties))),
+                    'compared': figure(len(match), C.num(len(match))),
+                    'outside': figure(last['grants'], C.usd(last['grants'])),
+                    'outside_share': figure(last['outside_share_pct'],
+                                            C.pct(last['outside_share_pct'])),
+                },
+                figure='outside_share',
+                kind='measured',
+                basis='DESE\u2019s End of Year Financial Report, functions 9300 and 9400, '
+                      'against the district\u2019s own restated budget book, year by year.',
+                not_shown='Which fund paid the rest. DESE reports one grants-and-revolving '
+                          'total and names no fund, so the money outside the appropriation '
+                          'cannot be attributed to the circuit breaker, to a grant, or to '
+                          'anything else.',
+                see=[('/money-outside-the-budget', 'the money outside the budget'),
+                     ('/when-grants-end', 'what happens when a grant stops')],
+            ),
+            conclusion(
+                id='the-threshold-comes-off-first',
+                claim='Taken off the bill in %s before the state reimburses anything'
+                      % C.fy(cb_last['fy']),
+                so_what='So the town carries the first slice of these placements in every '
+                        'year, whatever else happens.',
+                lede='The state does reimburse out-of-district tuition, but it takes a '
+                      'threshold off before it pays anything \u2014 in %s that threshold '
+                      'was %s.' % (C.fy(cb_last['fy']), C.usd(cb_last['threshold'])),
+                detail='Lunenburg claimed %s of eligible expense and was paid %s, which is '
+                       '%s of the claim. That the threshold is a deduction rather than a '
+                       'rate is measured and not described: eligible expense minus '
+                       'threshold equals the net claim exactly in %s of the %s years the '
+                       'state has published. So the reimbursement grows as costs grow and '
+                       'never reaches the first slice of them, and the town carries that '
+                       'slice in every year whatever else happens.'
+                       % (C.usd(cb_last['eligible']), C.usd(cb_last['paid']),
+                          C.pct(cb_last['paid_share_of_eligible']),
+                          C.num(len(cb_identity)), C.num(len(breaker))),
+                figures={
+                    'fy': figure(cb_last['fy'], C.fy(cb_last['fy'])),
+                    'threshold': figure(cb_last['threshold'], C.usd(cb_last['threshold'])),
+                    'eligible': figure(cb_last['eligible'], C.usd(cb_last['eligible'])),
+                    'paid': figure(cb_last['paid'], C.usd(cb_last['paid'])),
+                    'paid_share': figure(cb_last['paid_share_of_eligible'],
+                                         C.pct(cb_last['paid_share_of_eligible'])),
+                    'identity_years': figure(len(cb_identity), C.num(len(cb_identity))),
+                    'years': figure(len(breaker), C.num(len(breaker))),
+                },
+                figure='threshold',
+                kind='measured',
+                basis='DESE\u2019s circuit breaker reimbursement schedule: claimed '
+                      'students, eligible expense, the threshold, the net claim and what '
+                      'was actually paid, every year it has been published.',
+                not_shown='What the receipt was spent on. The reimbursement lands in a '
+                          'revolving fund that carries a balance forward, so a payment '
+                          'received in one year is not established to have paid for that '
+                          'year\u2019s placements.',
+            ),
+            conclusion(
+                id='out-of-district-spending-is-not-a-straight-line',
+                claim='Spent teaching children at other schools in %s' % C.fy(last['fy']),
+                so_what='It peaked at %s in %s. This cost steps with single placements '
+                        'rather than rising steadily.'
+                        % (C.usd(peak['total']), C.fy(peak['fy'])),
+                lede='Out-of-district tuition has not risen relentlessly. Measured across '
+                      'every fund it peaked at %s in %s, and %s came in at %s.'
+                      % (C.usd(peak['total']), C.fy(peak['fy']), C.fy(last['fy']),
+                         C.usd(last['total'])),
+                detail='That is %s below the peak, and the series moves in both '
+                       'directions across the %s years it covers \u2014 a low of %s and a '
+                       'high of %s. What moves further than the total is who pays it: the '
+                       'share falling outside the appropriation has been as high as %s and '
+                       'as low as %s, so the line the town votes can rise in a year when '
+                       'spending falls. Out-of-district placement is a small number of '
+                       'children and the state\u2019s own reimbursement threshold for %s '
+                       'was %s per child, so one family moving in or out moves this series '
+                       'more than any policy does. A single year of it means very little.'
+                       % (C.pct(down_from_peak), C.num(len(spend)), C.usd(low['total']),
+                          C.usd(peak['total']), C.pct(most_outside['outside_share_pct']),
+                          C.pct(least_outside['outside_share_pct']),
+                          C.fy(cb_last['fy']), C.usd(cb_last['threshold_per_student'])),
+                figures={
+                    'peak': figure(peak['total'], C.usd(peak['total'])),
+                    'peak_fy': figure(peak['fy'], C.fy(peak['fy'])),
+                    'last_fy': figure(last['fy'], C.fy(last['fy'])),
+                    'last_total': figure(last['total'], C.usd(last['total'])),
+                    'down_from_peak': figure(down_from_peak, C.pct(down_from_peak)),
+                    'years': figure(len(spend), C.num(len(spend))),
+                    'low': figure(low['total'], C.usd(low['total'])),
+                    'most_outside': figure(most_outside['outside_share_pct'],
+                                           C.pct(most_outside['outside_share_pct'])),
+                    'least_outside': figure(least_outside['outside_share_pct'],
+                                            C.pct(least_outside['outside_share_pct'])),
+                    'cb_fy': figure(cb_last['fy'], C.fy(cb_last['fy'])),
+                    'threshold_per_child': figure(cb_last['threshold_per_student'],
+                                                  C.usd(cb_last['threshold_per_student'])),
+                },
+                figure='last_total',
+                kind='measured',
+                basis='DESE\u2019s End of Year Financial Report, all funds, functions '
+                      '9300 and 9400, every year it has been published.',
+                not_shown='That the need fell. A placement count and a placement cost are '
+                          'different quantities: a year with fewer dollars may be a year '
+                          'with fewer children, with cheaper placements, or with more of '
+                          'the cost carried by a fund that is not the appropriation.',
+                see=[('/who-ends-up-out-of-district', 'the placement count itself')],
+            ),
+        ]),
         'said': said_for('cost'),
         'searched': searched('cost'),
         'minutes': coverage(),
@@ -1011,6 +1364,14 @@ def build_route(db, mf):
     if not two:
         fail('the town count and the DESE count share no year -- nothing to compare')
     agree = [t for t in two if t['difference'] == 0]
+    withtot = [c for c in counts if c['total'] is not None]
+    cpeak = max(withtot, key=lambda c: c['total'])
+    clow = min(withtot, key=lambda c: c['total'])
+    clast = withtot[-1]
+    pooled_rows = [pooled[x] for x in starts]
+    sub = next(p for p in pooled_rows if p['start'] == 'Substantially Separate Classroom')
+    incl = next(p for p in pooled_rows if p['start'] == 'Inclusive Setting')
+    lastsub = next(c for c in latest if c['start'] == 'Substantially Separate Classroom')
 
     return {
         'about': 'The route into out-of-district placement: a cohort followed from where '
@@ -1050,6 +1411,115 @@ def build_route(db, mf):
                          key=lambda c: c['total']),
         'two_counts': two,
         'two_counts_agree': len(agree), 'two_counts_compared': len(two),
+        'conclusions': emit('who-ends-up-out-of-district', [
+            conclusion(
+                id='the-placement-count-fell-and-came-partly-back',
+                # "children placed at a school outside the district" reads as SCHOOL
+                # CHOICE to anybody who has not already read this page, and this site has
+                # a separate report about exactly that. TJ: "this stat is misleading...
+                # This is specifically for special education, but reads like school
+                # choice." A placement is made because a child's education plan requires
+                # it; choosing out is a family applying elsewhere. Two mechanisms, two
+                # reports, and the label has to say which one it is.
+                claim='Children whose special education plan placed them outside '
+                      'Lunenburg schools, %s' % C.fy(clast['fy']),
+                so_what='It was %s in %s and %s in %s. The town prints this every year, '
+                        'and it moves both ways.'
+                        % (C.num(cpeak['total']), C.fy(cpeak['fy']),
+                           C.num(clow['total']), C.fy(clow['fy'])),
+                lede='The town\u2019s own count of children placed out of district for '
+                      'special education ran '
+                      'from %s in %s down to %s in %s, and stood at %s in %s.'
+                      % (C.num(cpeak['total']), C.fy(cpeak['fy']), C.num(clow['total']),
+                         C.fy(clow['fy']), C.num(clast['total']), C.fy(clast['fy'])),
+                detail='Lunenburg has printed this figure in the Special Services report of '
+                       'every annual town report since %s, sourced to SIMS Report 7 and '
+                       'measured on 1 March, split into collaborative, day and residential '
+                       'placements. It is the closest thing the town publishes to the '
+                       'quantity everybody argues about, and over %s years it has moved in '
+                       'both directions rather than only upward. In %s it was %s '
+                       'collaborative, %s day and %s residential.'
+                       % (C.fy(counts[0]['fy']), C.num(len(counts)), C.fy(clast['fy']),
+                          C.num(clast['collaborative']), C.num(clast['day']),
+                          C.num(clast['residential'])),
+                figures={
+                    'peak': figure(cpeak['total'], C.num(cpeak['total'])),
+                    'peak_fy': figure(cpeak['fy'], C.fy(cpeak['fy'])),
+                    'low': figure(clow['total'], C.num(clow['total'])),
+                    'low_fy': figure(clow['fy'], C.fy(clow['fy'])),
+                    'last': figure(clast['total'], C.num(clast['total']),
+                                   'children placed'),
+                    'last_fy': figure(clast['fy'], C.fy(clast['fy'])),
+                    'first_fy': figure(counts[0]['fy'], C.fy(counts[0]['fy'])),
+                    'years': figure(len(counts), C.num(len(counts))),
+                    'collaborative': figure(clast['collaborative'],
+                                            C.num(clast['collaborative'])),
+                    'day': figure(clast['day'], C.num(clast['day'])),
+                    'residential': figure(clast['residential'], C.num(clast['residential'])),
+                },
+                figure='last',
+                allow=('1 March', '7'),
+                kind='measured',
+                basis='The Special Services report inside each annual town report, page by '
+                      'page, with the parts checked against the total the town printed '
+                      'beside them.',
+                not_shown='What any of it costs. A placement count is children placed; it '
+                          'says nothing about which fund paid or what any placement cost, '
+                          'and one residential placement can exceed several day '
+                          'placements together.',
+                see=[('/what-special-education-costs', 'what it costs')],
+            ),
+            conclusion(
+                id='where-a-child-starts-tracks-where-they-end-up',
+                claim='Of children starting in a separate special education classroom '
+                      'end up outside the district',
+                so_what='Against %s of those starting in an ordinary classroom. Small '
+                        'groups \u2014 read what this does not show.'
+                        % C.pct(incl['ood_pct']),
+                lede='Where a child is taught to begin with tracks strongly with whether '
+                      'they end up at a school outside Lunenburg: %s of the children who '
+                      'started in a separate special education classroom did, against %s '
+                      'of those who started in an ordinary one.'
+                      % (C.pct(sub['ood_pct']), C.pct(incl['ood_pct'])),
+                figure='sub_pct',
+                detail='Added up over %s groups the state follows, that is %s children of '
+                       '%s against %s of %s. '
+                       'The counts are the figure and not the rate: a rate off a base of '
+                       '%s moves by %s when one child does. This is the closest the '
+                       'published record comes to the question residents ask about early '
+                       'intervention, and it is worth having in front of anyone discussing '
+                       'in-district capacity \u2014 but see what it does not show, which '
+                       'is most of it.'
+                       % (C.num(sub['years']), C.num(sub['out_of_district']),
+                          C.num(sub['cohort']), C.num(incl['out_of_district']),
+                          C.num(incl['cohort']), C.num(lastsub['cohort']),
+                          C.points(100.0 / lastsub['cohort'])),
+                figures={
+                    'sub_pct': figure(sub['ood_pct'], C.pct(sub['ood_pct'])),
+                    'incl_pct': figure(incl['ood_pct'], C.pct(incl['ood_pct'])),
+                    'cohorts': figure(sub['years'], C.num(sub['years'])),
+                    'sub_out': figure(sub['out_of_district'], C.num(sub['out_of_district'])),
+                    'sub_base': figure(sub['cohort'], C.num(sub['cohort'])),
+                    'incl_out': figure(incl['out_of_district'],
+                                       C.num(incl['out_of_district'])),
+                    'incl_base': figure(incl['cohort'], C.num(incl['cohort'])),
+                    'last_base': figure(lastsub['cohort'], C.num(lastsub['cohort'])),
+                    'one_child': figure(100.0 / lastsub['cohort'],
+                                        C.points(100.0 / lastsub['cohort'])),
+                },
+                kind='measured',
+                basis='DESE\u2019s special education trajectory file, K-12 rows for '
+                      'Lunenburg, pooled across every cohort it publishes.',
+                not_shown='That a substantially separate placement LEADS to out of '
+                          'district. The children placed in the more intensive setting are '
+                          'not a random sample of the others, and selection alone fits '
+                          'this exactly. DESE also documents no interval between the '
+                          'starting placement and the destination, so every rate here is a '
+                          'rate over an unstated span, and the district has told the School '
+                          'Committee that some children arrive in Lunenburg already '
+                          'requiring a placement, never having been in a cohort at all.',
+            ),
+        ]),
         'said': said_for('route'),
         'searched': searched('route'),
         'minutes': coverage(),
@@ -1133,7 +1603,7 @@ def main():
         print('%s' % os.path.relpath(OUTS[name], ROOT))
 
     s, l, c, r = data['students'], data['leaving'], data['cost'], data['route']
-    print('  students: %d on an IEP in FY%d, %.1f%% of enrolment; in+out reconciles in '
+    print('  students: %d on an IEP in FY%d, %.1f%% of enrollment; in+out reconciles in '
           'every year: %s' % (s['last']['swd'], s['last']['fy'], s['last']['share_pct'],
                               s['counts_reconcile']))
     print('  leaving:  %d resident children educated elsewhere in FY%d, %d of them under '

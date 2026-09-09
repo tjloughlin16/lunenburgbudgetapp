@@ -58,6 +58,39 @@ export type Base = {
   about: string; grain: string; sources: Source[]
   said: Said[]; searched: { term: string; documents: number }[]
   minutes: Minutes; not_established: string[]; closes: string
+  conclusions?: Conclusion[]
+}
+
+/** WHAT A REPORT ESTABLISHES, computed by the generator that computed its figures.
+ *
+ *  Written in Python, in `scripts/conclusions.py`, and shipped in the payload. The page
+ *  RENDERS these; it does not restate them. That is rule 2 extended from figures to the
+ *  claims figures support -- a sentence in a `.tsx` carrying an amount is prose that
+ *  ships and nothing recomputes it, which is this project's oldest defect shape.
+ *
+ *  `figures` is every amount the text states, keyed by name, each with the value it was
+ *  derived from and the exact string it renders as. A verifier recomputes the value; the
+ *  Python checker asserts the string is in the prose and that no unregistered digit is.
+ *
+ *  `kind` is the rule 7 line and it is drawn in the page, not only in the data: a
+ *  measurement and an explanation for a measurement are never set in the same voice. */
+export type Conclusion = {
+  id: string
+  /** ONE line: what the metric IS. */
+  claim: string
+  /** ONE line: what follows from it. */
+  so_what: string
+  /** The expansion. Everything a reader who wants the working would want, and nothing
+   *  they need in order to understand the two visible lines -- if the expansion is
+   *  load-bearing for comprehension, the card has failed. */
+  detail: string
+  /** The key in `figures` to set large above the claim, where the finding IS an amount. */
+  figure?: string
+  figures: Record<string, { value: number | string; text: string; unit: string }>
+  kind: 'measured' | 'hypothesis'
+  basis: string
+  not_shown: string
+  see: { slug: string; label: string }[]
 }
 
 /* ---- headings and prose -------------------------------------------------- */
@@ -162,6 +195,215 @@ export function Insight({ n, tone, figure, headline, children }: {
         : 'text-[14px] leading-relaxed mt-2.5'}
         style={{ color: 'var(--text-secondary)' }}>{children}</div>
     </div>
+  )
+}
+
+/** A report's conclusions, rendered from its payload.
+ *
+ *  RULE 7b's FIRST MOVEMENT, and the top of every drill-in. What the page MEANS, before
+ *  what it holds -- three or four claims a reader could repeat at a meeting, then the
+ *  categorical breakdown, then the raw table.
+ *
+ *  NOTHING HERE IS TYPED. Every word and every figure comes out of the payload, so a page
+ *  cannot state a conclusion its own data no longer supports, and /what-it-all-adds-up-to
+ *  can carry the same sentences without either copy drifting from the other.
+ *
+ *  WHAT IS ON THE CARD AND WHY EACH PART IS THERE. The claim, large, because it is the
+ *  thing. The detail under it. Then the two halves rule 7 insists on: what the claim rests
+ *  on, and what it does not show -- set smaller and quieter than the claim, but on the
+ *  same card, because a caveat on another card is a caveat nobody reads.
+ *
+ *  A HYPOTHESIS IS DRAWN DIFFERENTLY. `kind: 'hypothesis'` gets the warning rule and its
+ *  own label, the same treatment `Maybe` gives. A figure is a fact and an explanation for
+ *  it is not, and the whole of this project's error history is those two set in one voice
+ *  a paragraph apart. */
+export function Conclusions({ rows, collapse, reportUrl }: {
+  rows?: (Conclusion & { report_url?: string })[]
+  /** Collapse the evidence behind a `<details>`, leaving the claim and its figure. Used
+   *  by /what-it-all-adds-up-to, which carries a conclusion from EVERY report and so
+   *  accumulates weight faster than any single one of them.
+   *
+   *  TJ, reading that page: *"the boxes are very text heavy. I think we need the
+   *  conclusion clear, but the section is collapsed by default, and expandable, with a
+   *  link to drill in for more details."* Sixteen claims each with a paragraph of basis
+   *  under it is a wall, and the wall hides the thing the page exists to show -- that the
+   *  conclusions are individually short and collectively add up to something.
+   *
+   *  `<details>` rather than state: no JavaScript, it works before hydration, and it
+   *  PRINTS OPEN, which matters because these get taken to meetings on paper. Same
+   *  mechanism as the caveat block on /reports.
+   *
+   *  WHAT MUST NOT HAPPEN, and it is the trap in this whole idea: a claim visible with its
+   *  limits behind a click is a page quietly more confident than the reports it
+   *  summarises. So the summary line carries the first line of `not_shown` itself, clipped
+   *  by CSS rather than by cutting the string -- the EXISTENCE of a limit is visible
+   *  without expanding anything, and nothing is rewritten to make it fit. */
+  collapse?: boolean
+  /** Where "read the full report" goes, for a block of one report's conclusions. A row
+   *  carrying its own `report_url` -- as the master report's headlines do -- wins. */
+  reportUrl?: string
+}) {
+  if (!rows || !rows.length) return null
+  return (
+    <>
+    <div className="grid gap-4 mt-5 md:grid-cols-2">
+      {rows.map((c, i) => {
+        const fig = c.figure ? c.figures[c.figure]?.text : undefined
+        const unit = c.figure ? c.figures[c.figure]?.unit : undefined
+        const guess = c.kind === 'hypothesis'
+        const href = c.report_url ?? reportUrl
+        return (
+          <div key={c.id} id={c.id}
+            className="card p-5 avoid-break scroll-mt-[calc(var(--header-h)+1rem)]"
+            style={guess ? { borderTop: '3px solid var(--status-warning)' } : undefined}>
+            <div className="flex items-baseline gap-3">
+              <span className="text-[11px] font-bold tabular-nums"
+                style={{ color: 'var(--text-muted)' }}>{String(i + 1).padStart(2, '0')}</span>
+              {fig ? (
+                <span className="text-2xl font-bold tracking-tight tnum">{fig}</span>
+              ) : null}
+              {/* THE UNIT, ON THE NUMBER. Rule 7 in visual form: dollars are not students
+                  and a placement is not a cost, and this page sets figures from sixteen
+                  reports at six different grains side by side. A bare `10` in a stat box
+                  abandons that at the moment a reader is most likely to quote it. */}
+              {unit ? (
+                <span className="text-[13px] font-semibold"
+                  style={{ color: 'var(--text-secondary)' }}>{unit}</span>
+              ) : null}
+              </div>
+            {guess ? (
+              /* THE EPISTEMIC LABEL SURVIVES THE TRIM. Shortening these cards removed the
+                 sentences that used to carry "this is a scenario, not something that
+                 happened" in prose -- so the label has to do it, and it has to be legible
+                 next to fourteen measured cards rather than tucked beside the figure. A
+                 reader who takes a scenario's number for a measurement has been actively
+                 misled, which is worse than any sentence that was cut. */
+              <p className="text-[11px] font-semibold uppercase tracking-widest mt-1.5"
+                style={{ color: 'var(--status-warning)' }}>
+                A scenario or an explanation &mdash; nothing here tests it
+              </p>
+            ) : null}
+            {/* THE CARD IS FOUR THINGS AND NOT ONE MORE: the metric with its unit above,
+                one line saying what the metric is, one line saying what follows, and the
+                expansion. TJ: "we cannot have BOLD context lines that are 3-5 lines...
+                which means we have to be HYPER clear about what the metric represents,
+                and what conclusion to draw from it without needing a full paragraph of
+                context for each." The two lines are length-capped in conclusions.py, so a
+                card that grows a third idea fails the build rather than the eye. */}
+            <p className="text-[15.5px] font-semibold leading-snug mt-2">{c.claim}</p>
+            <p className="text-[14px] leading-snug mt-1.5"
+              style={{ color: 'var(--text-secondary)' }}>{c.so_what}</p>
+            {collapse && href ? (
+              <p className="text-[13px] mt-2.5 no-print">
+                <a className="underline font-semibold"
+                  style={{ color: 'var(--series-cost)' }}
+                  href={abs(href)}>Read the full report &rarr;</a>
+              </p>
+            ) : null}
+            {collapse ? (
+              <details className="mt-3">
+                {/* A CONTROL, NOT A SENTENCE. TJ: "'The evidence, and what it does not
+                    show' is not needed. Just make it obvious that each box can be
+                    expanded... we dont need all these words in each box. its
+                    overwhelming." A summary that explains what is inside costs a line and
+                    says what one click would show.
+                    AND IT MUST NOT READ AS A LINK. There is a real link on this card, to
+                    the full report, and it carries an arrow. This carries a chevron that
+                    turns, which is the affordance people already read as "opens here". */}
+                <summary className="cursor-pointer list-none inline-flex items-center gap-1.5
+                                    text-[12.5px] font-semibold"
+                  style={{ color: 'var(--text-muted)' }}>
+                  <span className="conc-chev inline-block transition-transform"
+                    aria-hidden="true">&#9656;</span>Details
+                </summary>
+                <ConclusionEvidence c={c} />
+              </details>
+            ) : (
+              <ConclusionEvidence c={c} />
+            )}
+          </div>
+        )
+      })}
+    </div>
+    <AskPrompt />
+    </>
+  )
+}
+
+/** The detail, the links out, the basis and the limits. Rendered inline on a report and
+ *  behind a `<details>` on the synthesis page -- the SAME nodes either way, so a reader
+ *  who expands one gets what a reader of the report already had. */
+function ConclusionEvidence({ c }: { c: Conclusion }) {
+  return (
+    <>
+      <p className="text-[14px] leading-relaxed mt-2.5"
+        style={{ color: 'var(--text-secondary)' }}>{c.detail}</p>
+      {c.see.length ? (
+        <p className="text-[13px] mt-3 no-print">
+          {c.see.map((l, j) => (
+            <span key={l.slug}>
+              {j ? ' \u00b7 ' : ''}
+              <a className="underline" style={{ color: 'var(--series-cost)' }}
+                href={abs(l.slug)}>{l.label} &rarr;</a>
+            </span>
+          ))}
+        </p>
+      ) : null}
+      <div className="mt-4 pt-3 border-t" style={{ borderColor: 'var(--grid)' }}>
+        <p className="text-[12.5px] leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          <span className="font-semibold uppercase tracking-widest text-[10.5px]">
+            What it rests on
+          </span>{' '}
+          {c.basis}
+        </p>
+        <p className="text-[12.5px] leading-relaxed mt-2"
+          style={{ color: 'var(--text-muted)' }}>
+          <span className="font-semibold uppercase tracking-widest text-[10.5px]">
+            What it does not show
+          </span>{' '}
+          {c.not_shown}
+        </p>
+      </div>
+    </>
+  )
+}
+
+/** THE OFFER, PUT WHERE THE QUESTION HAPPENS.
+ *
+ *  TJ: *"i think we should put that line to suggest the 'ask' after every conclusion
+ *  section."* Directly after the conclusions and before the categorical data -- not at the
+ *  foot of the page. Somebody who has just read that two fifths of what the town spends on
+ *  out-of-district placement never touches the budget they vote on has a question RIGHT
+ *  THEN, and four sections later they have either found it themselves or stopped reading.
+ *
+ *  IT IS IN THE SHELL SO A REPORT CANNOT FORGET IT, and it renders only where there are
+ *  conclusions to have raised a question in the first place: an orphan prompt under an
+ *  empty section is an invitation to ask about nothing.
+ *
+ *  THE WORDING IS THE WHOLE OF THE CARE HERE. It must not read as *we did not bother, go
+ *  and ask* -- these reports exist to answer things, and an offer that implies otherwise
+ *  is worse than no offer. So it says what the report DID reach first, and offers the
+ *  remainder. No exclamation, no verb in the imperative shouting at anybody, and no count
+ *  of questions received: zero is the honest number today and it is also the least
+ *  inviting thing this could print.
+ *
+ *  AND IT SAYS WHAT IS NOT REQUIRED, rather than claiming anonymity. TJ asked for the
+ *  anonymity to be said; the precise version of it is "no name or email needed", which is
+ *  true whichever way the reader goes. A flat "anonymous" would not be: the form has an
+ *  optional email field, and somebody who fills it in is no longer anonymous to us. A
+ *  promise conditional on a choice the reader has not yet made is not a promise this
+ *  project makes. What is actually kept -- a truncated salted hash of the IP for rate
+ *  limiting, never the address; the email only if given; a coarse country -- is set out on
+ *  /ask-a-question under "What we keep", one click away, so this line does not restate it. */
+function AskPrompt() {
+  return (
+    <p className="text-[13.5px] leading-relaxed max-w-2xl mt-5 no-print"
+      style={{ color: 'var(--text-muted)' }}>
+      Those are the answers this report could reach from the documents behind it. If the
+      one you came for is not among them,{' '}
+      <a className="underline" style={{ color: 'var(--series-cost)' }}
+        href={abs('/ask-a-question')}>ask us &mdash; no name or email needed</a>.
+    </p>
   )
 }
 

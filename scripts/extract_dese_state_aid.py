@@ -33,7 +33,7 @@ WHY THIS ONE MATTERS MORE THAN ITS SIZE
 Chapter 70 is about 35% of the school appropriation and is set in the Governor's budget
 rather than by anything Lunenburg does. Until now the state-aid growth rate rested on
 twenty-three years of the TOWN'S own `Subtotal State Aid` line -- a total the town happened
-to print. This is thirty-four years of the STATE'S series with foundation enrolment,
+to print. This is thirty-four years of the STATE'S series with foundation enrollment,
 required local contribution and aid separated, so the rate can be derived from the
 formula's own terms.
 
@@ -222,7 +222,7 @@ def build_statewide(formula, cb):
                 'stage: ' + (r['nss_stage'] or 'not stated'), lea, act / req, r['doc_id'])
         if aid is not None and enro:
             add(fy, 'Chapter 70 aid per foundation pupil',
-                'per FOUNDATION enrolment, which is not a headcount of children in the '
+                'per FOUNDATION enrollment, which is not a headcount of children in the '
                 'buildings', lea, aid / enro, r['doc_id'])
         if rlc is not None and fnd:
             add(fy, 'required local contribution as a share of the foundation budget',

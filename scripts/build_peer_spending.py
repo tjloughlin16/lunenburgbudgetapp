@@ -66,6 +66,11 @@ import sqlite3
 import statistics
 import sys
 
+# The conclusions this report states, as DATA rather than as sentences in a page. See
+# scripts/conclusions.py.
+import conclusions as C
+from conclusions import conclusion, emit, figure
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
@@ -105,7 +110,7 @@ DOCS = [
          stage='reported after the year closed — end-of-year finance collection. '
                'Not a budget.'),
     dict(key='state-dese/radar-district-comparison.xlsx',
-         what='DESE’s RADAR district comparison — enrolment, demographics, staffing FTE, '
+         what='DESE’s RADAR district comparison — enrollment, demographics, staffing FTE, '
               'average teacher salary and MCAS, for all 421 Massachusetts districts. The '
               'source of the denominators, the staffing and the results on this page.',
          publisher='Massachusetts Department of Elementary and Secondary Education',
@@ -185,6 +190,18 @@ QUOTES = [
              'finds furthest below the state. DESE counts it in the totals here, the '
              'town’s appropriation does not, and neither source says how much of either '
              'line is grant-funded in any given year.'),
+    dict(key='vocational', board='school-committee', date='2026-03-23', kind='minutes',
+         doc='7732',
+         quote='bringing back things like vocational programs to the school, even if it '
+               "means that we'd have to disentangle ourselves from Monty Tech that "
+               'is something that has real long-term value',
+         who='the Chair of the School Committee, in the Chair\u2019s report',
+         why='Said about the district that takes more Lunenburg children than every other '
+             'destination combined, in the same meeting as a balanced budget the charter '
+             'compelled. It is the destination comparison above being argued about in the '
+             'room: Monty Tech spends the most for each pupil of anywhere Lunenburg '
+             'children go, and the town is a member and is assessed for it. Nothing here '
+             'tests whether disentangling would cost the town more or less.'),
     dict(key='outcomes', board='school-committee', date='2026-06-24', kind='minutes',
          doc='7869',
          quote='neighboring districts such as Lancaster, Ayer/Shirley, Groton, Pepperell, '
@@ -199,11 +216,15 @@ QUOTES = [
 
 SEARCHED = ['per pupil', 'more with less', 'professional development',
             'instructional materials', 'sharing resources', 'neighboring district',
-            'surrounding town', 'comparable district', 'lowest spending']
+            'surrounding town', 'comparable district', 'lowest spending',
+            # Rule 15a, for the destination section: what the town has said about the
+            # places its children actually go.
+            'Monty Tech', 'school choice', 'vocational', 'charter school']
 
 # Rows this page CITES out of `money_gaps`. Cited by their `what`, so a renamed row fails
 # the build rather than rendering a gap with no reason on it.
 CITES_GAPS = [
+    'How much of a receiving district’s per-pupil spending Lunenburg actually pays',
     'Why these six districts and not six others',
     'What DESE’s per-pupil figure buys',
     'Whether Lunenburg’s MCAS results are high or low for Massachusetts',
@@ -455,17 +476,17 @@ def decomposition(tot):
             # What FY2025's money is per pupil if each district still had its FY2012
             # pupils. ARITHMETIC, not a counterfactual claim about the world: it is the
             # same numerator over the older denominator, and it is labelled that way.
-            at_old_enrolment=round(b['total'] / a['fte_total']),
+            at_old_enrollment=round(b['total'] / a['fte_total']),
         ))
     out.sort(key=lambda r: -r['per_pupil_pct'])
-    order = sorted(out, key=lambda r: -r['at_old_enrolment'])
+    order = sorted(out, key=lambda r: -r['at_old_enrollment'])
     for i, r in enumerate(order):
-        r['rank_at_old_enrolment'] = i + 1
+        r['rank_at_old_enrollment'] = i + 1
     return out
 
 
 def lunenburg_denominator(tot):
-    """The same split for Lunenburg alone, over the years since enrolment turned."""
+    """The same split for Lunenburg alone, over the years since enrollment turned."""
     series = sorted((r for r in tot if r['lea'] == LEA), key=lambda r: r['fy'])
     a, b = series[0], series[-1]
     hold = b['total'] / a['fte_total']
@@ -477,7 +498,7 @@ def lunenburg_denominator(tot):
         pupils_pct=round(b['fte_total'] / a['fte_total'] - 1, 4),
         per_pupil_from=a['per_pupil'], per_pupil_to=b['per_pupil'],
         per_pupil_change=b['per_pupil'] - a['per_pupil'],
-        at_old_enrolment=round(hold),
+        at_old_enrollment=round(hold),
         denominator_share=round((b['per_pupil'] - hold)
                                 / (b['per_pupil'] - a['per_pupil']), 4))
 
@@ -609,15 +630,186 @@ def categories(db, fte):
         why_not_category_medians=round(cat_median_sum - ind_pp[median_peer]),
         by_district={k: v for k, v in sorted(ind_pp.items())})
 
+# WHERE LUNENBURG'S CHILDREN ACTUALLY GO. A destination is not a peer, and the two answer
+# different questions -- see destinations() below. The threshold is mechanical because a
+# hand-picked destination set is an argument, exactly like the peer set this page already
+# registers as a gap.
+MIN_DEST_STUDENTS = 5
+
+
+def destinations(db, lun_per_pupil):
+    """The districts Lunenburg's children leave for, and what each of them spends.
+
+    DESTINATIONS ARE NOT PEERS AND THE PAGE KEEPS THEM APART. A peer is a district of a
+    similar shape, for asking whether a figure is normal. A destination is where resident
+    children were actually educated. They are different sets, they answer different
+    questions, and merging them would let a claim about one carry a claim about the other.
+
+    THE SET IS DERIVED, NOT CHOSEN. Every district that enrolled MIN_DEST_STUDENTS or more
+    Lunenburg resident children in the latest year DESE publishes, ranked by children.
+    That matters: the first draft of this was the five biggest bricks-and-mortar
+    destinations, every one of which spends MORE per pupil than Lunenburg -- while the two
+    Commonwealth virtual districts, eight Lunenburg children each, spend LESS. A chosen
+    set would have made "every destination spends more" true of the set and false of the
+    world.
+
+    TWO COLLECTIONS, TWO YEARS, NEVER DIFFERENCED (rule 1). The children are counted in
+    DESE's residents-sending and enrollment-receiving files for the enrollment year; the
+    spending is DESE's end-of-year finance collection for the finance year. One is a count
+    of children and the other is dollars over a pupil count, so nothing here subtracts one
+    from the other -- but the two years are stated wherever both appear.
+
+    NO FOUNDATION FIGURE COMES NEAR THIS. A foundation budget per pupil is a Chapter 70
+    formula output -- what the state's model says an adequate education costs -- and
+    Montachusett's is about five thousand dollars BELOW what it spends. Placing the two in
+    one table is the error this section was built to avoid; nothing derived from
+    dese_ch70_* is read here at all, and verify_peer_spending.py asserts it.
+
+    THE SHAPE OF EACH DISTRICT IS READ OFF DESE'S OWN NAME FOR IT, not assigned by us, so
+    a reader can check it against the same string DESE publishes."""
+    years = [r['fy'] for r in q(
+        db, 'SELECT DISTINCT fy FROM dese_town_enrollment WHERE town=? ORDER BY fy', TOWN)]
+    if not years:
+        fail('no town-of-residence enrollment rows for %s. A destination table built from '
+             'an empty join looks exactly like a town nobody leaves.' % TOWN)
+    enr_fy = years[-1]
+
+    rows = q(db, 'SELECT lea, district, enrollment_reason, students '
+                 'FROM dese_town_enrollment WHERE town=? AND fy=?', TOWN, enr_fy)
+    if not rows:
+        fail('no FY%d enrollment rows for %s.' % (enr_fy, TOWN))
+    cum = {r['lea']: r for r in q(
+        db, 'SELECT lea, SUM(students) students, COUNT(DISTINCT fy) years '
+            'FROM dese_town_enrollment WHERE town=? GROUP BY lea', TOWN)}
+
+    where = collections.defaultdict(lambda: dict(students=0.0, reasons=[], district=None))
+    for r in rows:
+        if r['students'] is None:
+            fail('%s FY%d carries no student count. A blank is not a zero.'
+                 % (r['district'], enr_fy))
+        w = where[r['lea']]
+        w['students'] += r['students']
+        w['reasons'].append(r['enrollment_reason'])
+        w['district'] = r['district']
+    if LEA not in where:
+        fail('FY%d has no row for %s\'s own district, so the share who left cannot be '
+             'stated against the whole.' % (enr_fy, TOWN))
+    stayed = where[LEA]['students']
+    away = {k: v for k, v in where.items() if k != LEA}
+    left = sum(v['students'] for v in away.values())
+
+    # DESE's all-funds per-pupil total, the SAME measure for every district here. Read out
+    # of the typed table rather than the CSV mirror, and every value asserted numeric: a
+    # destination whose figure would not parse must fail loudly, not vanish from a table
+    # about who spends more.
+    spend = {}
+    for r in q(db, 'SELECT lea, district, value, reconciles FROM dese_measure '
+                   'WHERE fy=? AND "group"=? AND measure=?',
+               FIN_FY, 'Expenditures Per Pupil', 'Total Expenditures'):
+        if not isinstance(r['value'], (int, float)):
+            fail('%s FY%d per-pupil total is %r, which is not a number.'
+                 % (r['district'], FIN_FY, r['value']))
+        spend[r['lea']] = r
+    if LEA not in spend:
+        fail('no FY%d per-pupil total for %s in dese_measure.' % (FIN_FY, TOWN))
+    # Two DESE collections state Lunenburg's per-pupil total and they must agree, or the
+    # destination table and the rest of this page are quoting different dollars.
+    if abs(spend[LEA]['value'] - lun_per_pupil) > 1.0:
+        fail('RADAR says %s spends %.0f a pupil in FY%d and the finance collection says '
+             '%.0f. The destination table is against the second and would be comparing '
+             'two measures.' % (TOWN, spend[LEA]['value'], FIN_FY, lun_per_pupil))
+
+    def shape(name):
+        """DESE's own name for the district, read for what kind of school it is. A
+        vocational, charter or virtual district is funded and shaped differently from a
+        K-12 municipal district and its per-pupil figure is not like for like."""
+        n = name.lower()
+        if 'vocational' in n:
+            return 'regional vocational technical'
+        if 'virtual' in n:
+            return 'Commonwealth virtual'
+        if 'charter' in n:
+            return 'charter'
+        return 'K-12 district'
+
+    out, short = [], []
+    for lea, w in sorted(away.items(), key=lambda kv: (-kv[1]['students'], kv[0])):
+        if w['students'] < MIN_DEST_STUDENTS:
+            short.append(w)
+            continue
+        s = spend.get(lea)
+        if not s:
+            fail('%s took %.0f %s children in FY%d and this archive holds no FY%d '
+                 'per-pupil figure for it. The set is defined by a threshold, so a '
+                 'missing figure is a hole in the claim and not a district to drop -- add '
+                 'lea %s to KEEP in scripts/extract_dese_radar.py.'
+                 % (w['district'], w['students'], TOWN, enr_fy, FIN_FY, lea))
+        gap = s['value'] - lun_per_pupil
+        c = cum.get(lea) or dict(students=w['students'], years=1)
+        out.append(dict(
+            lea=lea, district=w['district'], shape=shape(w['district']),
+            students=w['students'],
+            share_of_leavers=round(w['students'] / left, 4),
+            how=sorted(set(w['reasons'])),
+            students_all_years=c['students'], years=c['years'],
+            per_pupil=s['value'], reconciles=s['reconciles'],
+            gap=gap, gap_pct=round(gap / lun_per_pupil, 6),
+            spends_more=gap > 0))
+    if not out:
+        fail('no destination cleared %d children in FY%d. The join matched nothing and an '
+             'empty destination table reads as a town nobody leaves.'
+             % (MIN_DEST_STUDENTS, enr_fy))
+
+    more = [r for r in out if r['spends_more']]
+    less = [r for r in out if not r['spends_more']]
+    if not more:
+        fail('not one destination spends more per pupil than %s. The conclusion this '
+             'section carries says the opposite and would be false.' % TOWN)
+    bricks = [r for r in more if r['shape'] != 'Commonwealth virtual']
+    if not bricks:
+        fail('every destination spending more is a virtual district; the conclusion names '
+             'the ones with buildings and there are none.')
+    widest = max(bricks, key=lambda r: r['gap'])
+    narrowest = min(bricks, key=lambda r: r['gap'])
+    # The nearest LIKE-FOR-LIKE comparison: the largest destination that is an ordinary
+    # K-12 municipal district, so a reader is not left with a vocational school as the
+    # whole of the finding. Derived from DESE's own name, never named here.
+    like = [r for r in out if r['shape'] == 'K-12 district']
+    if not like:
+        fail('no destination is an ordinary K-12 district, and the section states one as '
+             'the like-for-like comparison.')
+    like = max(like, key=lambda r: r['students'])
+
+    return dict(
+        enr_fy=enr_fy, fin_fy=FIN_FY, first_enr_fy=years[0], enr_years=len(years),
+        threshold=MIN_DEST_STUDENTS,
+        lunenburg=lun_per_pupil, stayed=stayed, left=left,
+        left_share=round(left / (left + stayed), 4),
+        rows=out,
+        listed=len(out), listed_children=sum(r['students'] for r in out),
+        below_threshold=len(short),
+        below_threshold_children=sum(v['students'] for v in short),
+        more=len(more), less=len(less),
+        children_where_more=sum(r['students'] for r in more),
+        children_where_less=sum(r['students'] for r in less),
+        widest=widest, narrowest=narrowest, like_for_like=like,
+        less_rows=less)
+
 
 def teachers(db, fte):
     """Average salary times teachers per pupil, and it is DESE's own construction.
 
     The page says so, because presenting a definitional identity as a discovery is exactly
     the error rule 7 is about. What the split is FOR is that it says which half moves."""
+    # SCOPED TO THE PEER SET, and the scope is a table rather than a list. `dese_measure`
+    # also carries the DESTINATIONS -- the districts Lunenburg's children leave for -- and
+    # those have no row in the finance collection, which is what this section joins
+    # against. A destination arriving here would fail the join and read as a district with
+    # no teachers. Peers and destinations are different sets and this page keeps them so.
     sal = q(db, "SELECT lea, district, measure, value FROM dese_measure WHERE fy=? AND "
                 "measure IN ('Average Teacher Salary','Teacher FTE',"
-                "'Teachers per 100 FTE students','Paraprofessional FTE')", FIN_FY)
+                "'Teachers per 100 FTE students','Paraprofessional FTE') "
+                "AND lea IN (SELECT DISTINCT lea FROM dese_function_expenditure)", FIN_FY)
     if not sal:
         fail('the FY%d staffing query matched nothing.' % FIN_FY)
     m = collections.defaultdict(dict)
@@ -661,8 +853,10 @@ def teachers(db, fte):
 
 
 def demographics(db):
+    # The peer set, not every district in dese_measure -- see the note in teachers().
     rows = q(db, "SELECT lea, district, measure, value FROM dese_measure WHERE fy=? AND "
-                 "\"group\"='Student Demographics'", FIN_FY)
+                 "\"group\"='Student Demographics' "
+                 "AND lea IN (SELECT DISTINCT lea FROM dese_function_expenditure)", FIN_FY)
     if not rows:
         fail('the FY%d demographics query matched nothing.' % FIN_FY)
     m = collections.defaultdict(dict)
@@ -680,8 +874,11 @@ def demographics(db):
 
 
 def mcas(db, first_fy):
+    # The peer set, not every district in dese_measure -- see the note in teachers().
     rows = q(db, "SELECT fy, lea, district, measure, value FROM dese_measure "
-                 "WHERE \"group\"='MCAS Performance' AND fy >= ? ORDER BY fy", first_fy)
+                 "WHERE \"group\"='MCAS Performance' AND fy >= ? "
+                 "AND lea IN (SELECT DISTINCT lea FROM dese_function_expenditure) "
+                 "ORDER BY fy", first_fy)
     if not rows:
         fail('the MCAS query matched nothing from FY%d.' % first_fy)
     measures = sorted({r['measure'] for r in rows})
@@ -921,6 +1118,11 @@ def build():
         districts, regionalisation = district_set(db)
         tot, years = totals(db, fte)
         ranked(tot)
+        # The destination set needs Lunenburg's own per-pupil total to measure a gap
+        # against, and it must be THE SAME figure the rest of the page prints rather than
+        # a second one read out of a second table.
+        dest = destinations(
+            db, [r for r in tot if r['lea'] == LEA and r['fy'] == FIN_FY][0]['per_pupil'])
         cats, cat_headline = categories(db, fte)
         tch, tch_meta = teachers(db, fte)
         mc, mc_meta = mcas(db, FIN_FY - 2)
@@ -945,10 +1147,41 @@ def build():
     lun_ranks = [r for r in tot if r['lea'] == LEA]
     never_above = max(r['rank'] for r in lun_ranks), min(r['rank'] for r in lun_ranks)
 
+    # The ends of each series the conclusions name, derived here rather than picked by
+    # hand: the widest and narrowest spending growth across the six, the district whose
+    # pupil count fell furthest, Lunenburg's own decomposition row, and the teacher
+    # extremes. A conclusion that says "the top of the set" has to be told which district
+    # that is by the data.
+    # The destination ends, derived rather than picked. The district with the WIDEST gap
+    # and the district taking the MOST children are separate questions and the conclusion
+    # names each for what it is.
+    d_wide = dest['widest']
+    d_like = dest['like_for_like']
+    d_narrow = dest['narrowest']
+    # Ordered by how far above Lunenburg each one is, smallest first, so the detail
+    # reads as a RANGE. A reader who meets 43.3% first takes it for typical.
+    d_more = sorted((r for r in dest['rows'] if r['spends_more']),
+                    key=lambda r: r['gap_pct'])
+
+    dec_lun = next(r for r in dec if r['is_lunenburg'])
+    spend_low = min(dec, key=lambda r: r['spend_pct'])
+    spend_high = max(dec, key=lambda r: r['spend_pct'])
+    pupils_low = min(dec, key=lambda r: r['pupils_pct'])
+    at_old_last = max(dec, key=lambda r: r['rank_at_old_enrollment'])
+    tch_lun = next(r for r in tch if r['is_lunenburg'])
+    pay_order = sorted(tch, key=lambda r: -r['average_salary'])
+    ratio_order = sorted(tch, key=lambda r: -r['per_hundred'])
+    # Lunenburg's place in each of those two orderings. Both are stated in a conclusion
+    # and neither may be typed: the set is six districts and an ordering can change.
+    pay_rank = [r['district'] for r in pay_order].index(tch_lun['district']) + 1
+    ratio_rank = [r['district'] for r in ratio_order].index(tch_lun['district']) + 1
+    pp_top = max(tch, key=lambda r: r['per_pupil'])
+
     return {
-        'about': 'What DESE says Lunenburg spends for each pupil, against every district '
-                 'in Massachusetts and against five neighbours — and the arithmetic that '
-                 'says how much of the difference is money and how much is children.',
+        'about': 'What DESE says Lunenburg spends for each pupil — against the districts '
+                 'its own children leave for, against every district in Massachusetts, '
+                 'and against five neighbours — with the arithmetic that says how much of '
+                 'the difference is money and how much is children.',
         'not_this_page': 'Not the school appropriation, and not what a Lunenburg '
                          'household pays. DESE counts all funds — grants, revolving '
                          'funds, school choice, gifts — and counts town-paid insurance '
@@ -983,6 +1216,321 @@ def build():
             bottom_quarter_unbroken=len(bottom_quarter) == len(sw),
             best_rank=never_above[1], worst_rank=never_above[0],
         ),
+        # WHAT A RESIDENT SHOULD TAKE AWAY, computed here rather than written on the
+        # page. The argument in this town is whether the schools are underfunded, and it
+        # is conducted with a per-pupil figure whose denominator nobody looks at. These
+        # say where Lunenburg actually sits, what moved the ratio, and what the money
+        # buys in teachers. Rule 8: what it means, never what anybody got wrong. The
+        # denominator labelling and the peer-set criterion are findings about DOCUMENTS
+        # and stay in `denominators`, `not_established` and the gaps register.
+        'conclusions': emit('what-other-districts-spend', [
+            # THE LEAD. A resident three sentences into this page should have met it: what
+            # the town spends, against what the schools its own children attend spend.
+            #
+            # DESTINATIONS ARE NOT PEERS. The rest of this page compares Lunenburg with
+            # districts of a similar shape, to ask whether a figure is normal. This one
+            # compares it with where resident children were actually educated, which is a
+            # different question and is kept a different set.
+            #
+            # THE PERCENTAGE LEADS AND THE DOLLARS FOLLOW. $7,800 reads as small against a
+            # thirty-million-dollar budget until it is said as nearly half again for each
+            # child; the dollars are what a household can picture and the percentage is
+            # what makes the size of it obvious. Both are printed, neither is typed.
+            #
+            # THE WIDEST FIGURE CARRIES ITS CAVEAT IN THE SAME SENTENCE, because it will
+            # be quoted: the district is named in full and its name says `Regional
+            # Vocational Technical`. The nearest like-for-like K-12 comparison is named
+            # beside it so a reader does not take the vocational figure as typical.
+            conclusion(
+                id='the-districts-our-children-leave-for-spend-more',
+                # NOT "mostly". The count is known, so it is stated: `mostly` hedged
+                # where the data does not need a hedge, and it also hid the thing the
+                # hedge was there for. The exception is named in the detail by district.
+                # THE CAVEAT RIDES WITH THE METRIC. 43.3% is Montachusett, a regional
+                # VOCATIONAL district, and it will be quoted; if it leads, the
+                # not-like-for-like has to be in the same breath rather than in a note
+                # further down. The count carries the finding, in `so_what`, because
+                # `most` hedges where the data does not need a hedge.
+                claim='More for each pupil at Monty Tech, a regional vocational school, '
+                      'than Lunenburg',
+                so_what='%s of the %s children educated outside Lunenburg go to districts '
+                        'that spend more for each pupil.'
+                        % (C.num(dest['children_where_more']), C.num(dest['left'])),
+                lede='%s of the %s Lunenburg children educated outside Lunenburg Public '
+                      'Schools go to districts that spend more for each pupil than '
+                      'Lunenburg does — %s more at %s, and %s more at %s.'
+                      % (C.num(dest['children_where_more']), C.num(dest['left']),
+                         C.pct(d_like['gap_pct'] * 100), d_like['district'],
+                         C.pct(d_wide['gap_pct'] * 100), d_wide['district']),
+                # THE DOLLARS AND THE PERCENTAGE TOGETHER, in that order. A percentage
+                # says how big the gap is and a dollar figure says what it is; TJ, reading
+                # a draft that carried only the percentage: it "should contain the dollar
+                # amount paid too."
+                detail='In %s the widest is %s a pupil against Lunenburg’s %s — %s more, '
+                       'which is %s — and %s of the leavers go there. The size of it '
+                       'depends enormously on which district: %s more at %s, %s at %s, %s '
+                       'at %s, %s at %s, %s at %s. %s is the nearest like-for-like '
+                       'comparison, an ordinary K-12 municipal district, at %s a pupil, '
+                       '%s more. The exception is the two Commonwealth virtual districts, '
+                       '%s children between them, which spend less. The children are '
+                       'counted in %s and the spending measured in %s: two collections, '
+                       'and nothing here is differenced across them.'
+                       % (C.fy(dest['fin_fy']),
+                          C.usd(d_wide['per_pupil']), C.usd(dest['lunenburg']),
+                          C.usd(d_wide['gap']), C.pct(d_wide['gap_pct'] * 100),
+                          C.pct(d_wide['share_of_leavers'] * 100),
+                          C.usd(d_more[0]['gap']), d_more[0]['district'],
+                          C.usd(d_more[1]['gap']), d_more[1]['district'],
+                          C.usd(d_more[2]['gap']), d_more[2]['district'],
+                          C.usd(d_more[3]['gap']), d_more[3]['district'],
+                          C.usd(d_more[4]['gap']), d_more[4]['district'],
+                          d_like['district'], C.usd(d_like['per_pupil']),
+                          C.usd(d_like['gap']),
+                          C.num(dest['children_where_less']),
+                          C.fy(dest['enr_fy']), C.fy(dest['fin_fy'])),
+                figures={
+                    'like_pct': figure(d_like['gap_pct'] * 100,
+                                       C.pct(d_like['gap_pct'] * 100)),
+                    'widest_pct': figure(d_wide['gap_pct'] * 100,
+                                         C.pct(d_wide['gap_pct'] * 100)),
+                    'widest_share': figure(d_wide['share_of_leavers'] * 100,
+                                           C.pct(d_wide['share_of_leavers'] * 100)),
+                    'children_where_more': figure(dest['children_where_more'],
+                                                  C.num(dest['children_where_more'])),
+                    'children_left': figure(dest['left'], C.num(dest['left'])),
+                    'children_where_less': figure(dest['children_where_less'],
+                                                  C.num(dest['children_where_less'])),
+                    'enr_fy': figure(dest['enr_fy'], C.fy(dest['enr_fy'])),
+                    'fin_fy': figure(dest['fin_fy'], C.fy(dest['fin_fy'])),
+                    'widest_per_pupil': figure(d_wide['per_pupil'],
+                                               C.usd(d_wide['per_pupil'])),
+                    'widest_gap': figure(d_wide['gap'], C.usd(d_wide['gap'])),
+                    'lunenburg': figure(dest['lunenburg'], C.usd(dest['lunenburg'])),
+                    'like_per_pupil': figure(d_like['per_pupil'],
+                                             C.usd(d_like['per_pupil'])),
+                    'gap_1': figure(d_more[0]['gap'], C.usd(d_more[0]['gap'])),
+                    'gap_2': figure(d_more[1]['gap'], C.usd(d_more[1]['gap'])),
+                    'gap_3': figure(d_more[2]['gap'], C.usd(d_more[2]['gap'])),
+                    'gap_4': figure(d_more[3]['gap'], C.usd(d_more[3]['gap'])),
+                    'gap_5': figure(d_more[4]['gap'], C.usd(d_more[4]['gap'])),
+                    'like_gap': figure(d_like['gap'], C.usd(d_like['gap'])),
+                },
+                figure='widest_pct',
+                kind='measured',
+                basis='DESE’s end-of-year finance collection for the finance year, all '
+                      'funds, the district per-pupil total — the same measure for every '
+                      'district on this page — against DESE’s residents-sending and '
+                      'enrollment-receiving files for the enrollment year, which count '
+                      'Lunenburg resident children by the district that educated them. '
+                      'The destination set is every district that took five or more of '
+                      'them, derived on every run rather than chosen, and the generator '
+                      'refuses to write if one of them has no spending figure.',
+                not_shown='What the difference buys, or that any family chose on '
+                          'spending. A per-pupil figure is a ratio and a district with '
+                          'fewer pupils reads higher with nothing bought — the same '
+                          'arithmetic this page applies to the peer set. A regional '
+                          'vocational, charter or Commonwealth virtual district is funded '
+                          'and shaped differently from a K-12 municipal school and its '
+                          'figure is not like for like, which is why the two virtual '
+                          'districts sit below Lunenburg at %s and %s a pupil. Nothing '
+                          'here is a foundation budget: that is a Chapter 70 formula '
+                          'output, a different measure, and it is not on this page.'
+                          % (C.usd(min(r['per_pupil'] for r in dest['less_rows'])),
+                             C.usd(max(r['per_pupil'] for r in dest['less_rows']))),
+                see=[('/monty-tech', 'the district that takes most of them, and how the '
+                                     'town is billed for it'),
+                     ('/where-students-go-instead', 'where students go, year by year')],
+                # `K-12` is a grade range, not a derived figure. Declared rather than
+                # left invisible, which is what allow=() is for.
+                allow=('K-12',),
+            ),
+            conclusion(
+                id='the-bottom-quarter-is-the-durable-fact',
+                claim='Spent for each pupil, counting every fund — below the state median',
+                so_what='Lunenburg has been in the bottom quarter of Massachusetts districts in every published year.',
+                lede='Lunenburg spends %s a pupil, %s below the statewide median, and it '
+                      'has been in the bottom quarter of Massachusetts districts in %s of '
+                      'the %s years the state publishes here.'
+                      % (C.usd(lun_last['per_pupil']),
+                         C.usd(sw_last['below_median']),
+                         C.num(len(bottom_quarter)), C.num(len(sw))),
+                detail='In %s it ranks %s of %s districts, with %s spending less, against '
+                       'a median of %s and a middle half running %s to %s. This is not '
+                       'the school budget and not what a household pays: DESE counts '
+                       'every fund \u2014 grants, revolving funds, school choice, gifts '
+                       '\u2014 and counts town-paid insurance and retirement attributed '
+                       'to the schools, so it is a larger figure than the appropriation '
+                       'Town Meeting votes. The distance between the two is two '
+                       'definitions, not hidden money.'
+                       % (C.fy(FIN_FY), C.num(sw_last['rank']),
+                          C.num(sw_last['districts']), C.num(sw_last['spend_less']),
+                          C.usd(sw_last['median']), C.usd(sw_last['p25']),
+                          C.usd(sw_last['p75'])),
+                figures={
+                    'per_pupil': figure(lun_last['per_pupil'],
+                                        C.usd(lun_last['per_pupil'])),
+                    'below_median': figure(sw_last['below_median'],
+                                           C.usd(sw_last['below_median'])),
+                    'bottom_quarter_years': figure(len(bottom_quarter),
+                                                   C.num(len(bottom_quarter))),
+                    'years': figure(len(sw), C.num(len(sw))),
+                    'fy': figure(FIN_FY, C.fy(FIN_FY)),
+                    'rank': figure(sw_last['rank'], C.num(sw_last['rank'])),
+                    'districts': figure(sw_last['districts'],
+                                        C.num(sw_last['districts'])),
+                    'spend_less': figure(sw_last['spend_less'],
+                                         C.num(sw_last['spend_less'])),
+                    'median': figure(sw_last['median'], C.usd(sw_last['median'])),
+                    'p25': figure(sw_last['p25'], C.usd(sw_last['p25'])),
+                    'p75': figure(sw_last['p75'], C.usd(sw_last['p75'])),
+                },
+                figure='per_pupil',
+                kind='measured',
+                basis='DESE\u2019s end-of-year finance collection, all funds, the '
+                      'district total level only, with DESE\u2019s own statewide '
+                      'distribution and its own published rank for Lunenburg. One stage '
+                      'throughout: what districts reported after the year closed, never '
+                      'differenced against a budget.',
+                not_shown='Whether that is a choice or a constraint, and what the '
+                          'difference buys. The town has a levy limit and two failed '
+                          'overrides and Town Meeting votes the appropriation, so this '
+                          'measure is the outcome of all of it at once and cannot be '
+                          'attributed to any part of it. Nothing here relates spending to '
+                          'results, and a function line is not a service.',
+                see=[('/what-the-state-requires-us-to-spend',
+                      'what the state requires the town to spend'),
+                     ('/health-insurance',
+                      'the insurance DESE counts here and the school budget does not')],
+            ),
+            conclusion(
+                id='most-of-the-gap-is-the-denominator',
+                claim='What Lunenburg would spend for each pupil at its own enrollment of thirteen years ago',
+                so_what='Most of the gap with its neighbours is fewer children, not less money.',
+                lede='Most of the per-pupil gap between Lunenburg and its neighbours is '
+                      'the denominator. Spending grew within a narrow band across all six '
+                      'districts; enrollment did not.',
+                detail='From %s to %s every one of the six raised spending by between %s '
+                       'and %s, and Lunenburg\u2019s %s sits inside that band. Pupil '
+                       'counts are what separate them: %s here against %s at %s. Give '
+                       '%s\u2019s money to each district\u2019s %s pupil count and '
+                       'Lunenburg is %s a pupil, %s of %s rather than last, and %s is '
+                       'last. A neighbour\u2019s higher per-pupil figure is in large part '
+                       'fewer children rather than more money.'
+                       % (C.fy(FIRST_COMPARABLE_FY), C.fy(FIN_FY),
+                          C.pct(spend_low['spend_pct'] * 100),
+                          C.pct(spend_high['spend_pct'] * 100),
+                          C.pct(dec_lun['spend_pct'] * 100),
+                          C.pct(dec_lun['pupils_pct'] * 100),
+                          C.pct(pupils_low['pupils_pct'] * 100),
+                          pupils_low['district'], C.fy(FIN_FY),
+                          C.fy(FIRST_COMPARABLE_FY),
+                          C.usd(dec_lun['at_old_enrollment']),
+                          C.num(dec_lun['rank_at_old_enrollment']), C.num(len(dec)),
+                          at_old_last['district']),
+                figures={
+                    'from_fy': figure(FIRST_COMPARABLE_FY, C.fy(FIRST_COMPARABLE_FY)),
+                    'to_fy': figure(FIN_FY, C.fy(FIN_FY)),
+                    'spend_low': figure(spend_low['spend_pct'] * 100,
+                                        C.pct(spend_low['spend_pct'] * 100)),
+                    'spend_high': figure(spend_high['spend_pct'] * 100,
+                                         C.pct(spend_high['spend_pct'] * 100)),
+                    'spend_lunenburg': figure(dec_lun['spend_pct'] * 100,
+                                              C.pct(dec_lun['spend_pct'] * 100)),
+                    'pupils_lunenburg': figure(dec_lun['pupils_pct'] * 100,
+                                               C.pct(dec_lun['pupils_pct'] * 100)),
+                    'pupils_low': figure(pupils_low['pupils_pct'] * 100,
+                                         C.pct(pupils_low['pupils_pct'] * 100)),
+                    'at_old_enrollment': figure(dec_lun['at_old_enrollment'],
+                                                C.usd(dec_lun['at_old_enrollment'])),
+                    'rank_at_old': figure(dec_lun['rank_at_old_enrollment'],
+                                          C.num(dec_lun['rank_at_old_enrollment'])),
+                    'districts': figure(len(dec), C.num(len(dec))),
+                },
+                figure='at_old_enrollment',
+                kind='measured',
+                basis='DESE\u2019s end-of-year finance collection against DESE\u2019s '
+                      'own total FTE pupil counts, for the six districts this archive '
+                      'extracts. The identity (1 + spending growth) / (1 + pupil growth) '
+                      '= (1 + per-pupil growth) is checked to four decimal places on '
+                      'every district before anything is written. The span starts where '
+                      'it does because that is the first year all six exist in their '
+                      'current form \u2014 Ayer and Shirley regionalised for it.',
+                not_shown='That per-pupil spending is therefore the wrong measure, or '
+                          'that a district with falling enrollment could have spent less. '
+                          'Costs do not fall in step with a class, so a smaller system '
+                          'genuinely does spend more for each child; this arithmetic says '
+                          'where the change in the ratio came from and not whether any of '
+                          'it was avoidable. The six districts are also this '
+                          'project\u2019s own set and no document records the criterion, '
+                          'which is why the standing claim above is against the whole '
+                          'state instead.',
+                see=[('/if-students-leave', 'what happens when students leave')],
+            ),
+            conclusion(
+                id='near-the-top-on-pay-fewest-teachers',
+                claim='Average teacher salary, near the top of the neighbouring districts',
+                so_what='And Lunenburg employs the fewest teachers for each pupil of the group — the same money, spread wider.',
+                lede='Lunenburg pays near the top of this group for a teacher and '
+                      'employs the fewest of them for each pupil: %s on average, and %s '
+                      'teachers for every hundred in-district pupils.'
+                      % (C.usd(tch_lun['average_salary']),
+                         '%.1f' % tch_lun['per_hundred']),
+                detail='%s\u2019s average is the highest at %s and %s\u2019s the lowest '
+                       'at %s; Lunenburg ranks %s of %s on pay and %s of %s on teachers '
+                       'for each pupil, where the next lowest is %s and the highest is '
+                       '%s. Teaching salaries reach %s a pupil here against %s at %s \u2014 '
+                       'close to the same money for each teacher, spread across more '
+                       'children.'
+                       % (pay_order[0]['district'],
+                          C.usd(pay_order[0]['average_salary']),
+                          pay_order[-1]['district'],
+                          C.usd(pay_order[-1]['average_salary']),
+                          C.num(pay_rank), C.num(len(tch)),
+                          C.num(ratio_rank), C.num(len(tch)),
+                          '%.1f' % ratio_order[-2]['per_hundred'],
+                          '%.1f' % ratio_order[0]['per_hundred'],
+                          C.usd(tch_lun['per_pupil']), C.usd(pp_top['per_pupil']),
+                          pp_top['district']),
+                figures={
+                    'salary': figure(tch_lun['average_salary'],
+                                     C.usd(tch_lun['average_salary'])),
+                    'per_hundred': figure(tch_lun['per_hundred'],
+                                          '%.1f' % tch_lun['per_hundred']),
+                    'salary_high': figure(pay_order[0]['average_salary'],
+                                          C.usd(pay_order[0]['average_salary'])),
+                    'salary_low': figure(pay_order[-1]['average_salary'],
+                                         C.usd(pay_order[-1]['average_salary'])),
+                    'pay_rank': figure(pay_rank, C.num(pay_rank)),
+                    'ratio_rank': figure(ratio_rank, C.num(ratio_rank)),
+                    'districts': figure(len(tch), C.num(len(tch))),
+                    'per_hundred_next': figure(ratio_order[-2]['per_hundred'],
+                                               '%.1f' % ratio_order[-2]['per_hundred']),
+                    'per_hundred_high': figure(ratio_order[0]['per_hundred'],
+                                               '%.1f' % ratio_order[0]['per_hundred']),
+                    'teaching_per_pupil': figure(tch_lun['per_pupil'],
+                                                 C.usd(tch_lun['per_pupil'])),
+                    'teaching_per_pupil_high': figure(pp_top['per_pupil'],
+                                                      C.usd(pp_top['per_pupil'])),
+                },
+                figure='salary',
+                kind='measured',
+                basis='DESE\u2019s RADAR district comparison for the finance year \u2014 '
+                      'teacher FTE and average teacher salary \u2014 against DESE\u2019s '
+                      'own in-district FTE pupil counts and the teaching-salary category '
+                      'of its end-of-year finance collection. The salary implied by the '
+                      'finance figures and RADAR\u2019s published average agree to within '
+                      'a percent on every district, which is checked before anything is '
+                      'written.',
+                not_shown='What that means in a classroom. A teacher FTE is not a class '
+                          'size and not a person, DESE does not say which fund pays for '
+                          'any of them, and an average salary is an average over a '
+                          'distribution this archive does not hold. Nothing here '
+                          'establishes that the difference is a choice, or that either '
+                          'arrangement produces different results.',
+                see=[('/school-staffing', 'the people the budget buys')],
+            ),
+        ]),
+        'destinations': dest,
         'totals': tot,
         'last_year': last_year,
         'statewide': sw,
@@ -1018,6 +1566,16 @@ def build():
             'workbook covers all 421 districts and this archive extracts six for size — '
             'and no document records the criterion. That is why every headline on this '
             'page is against the statewide distribution rather than against the six.',
+            'How much of a destination district’s higher per-pupil figure is programme '
+            'and how much is a smaller denominator. This page decomposes the ratio into '
+            'spending and pupils for the six comparison districts and does not do it for '
+            'the destinations; a district with fewer pupils reads higher with nothing '
+            'bought, and that applies to a receiving district exactly as it applies here.',
+            'What Lunenburg pays towards any destination district’s spending. A receiving '
+            'district’s per-pupil figure is its whole spending over its whole pupil count '
+            'across every fund; Lunenburg’s side is a member-town assessment, a school '
+            'choice tuition or a charter tuition, and none of the three equals it. '
+            'Registered in the gaps below.',
             'That the FY%d Chapter 70 figures and the FY%d spending figures describe the '
             'same year. They do not, and they are never differenced: one is a budgeted '
             'formula calculation and the other is what districts reported after the year '

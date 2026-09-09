@@ -454,7 +454,7 @@ export function Pupils({ counts }: { counts: PupilCount[] }) {
   )
 }
 
-/* ---------------------------------------------------------- the enrolment series, plotted */
+/* ---------------------------------------------------------- the enrollment series, plotted */
 
 export type PupilPoint = { fy: number; measure: string; value: number }
 

@@ -8,9 +8,11 @@ import {
   type Account, type Point, type TownYear, type Variant,
 } from '../components/InsuranceCharts'
 import {
+  Conclusions,
   Body, H2, H3, Insight, Maybe, NotShown, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
  *  TITLE is the report's NAME, used before the payload arrives; the h1 the
@@ -72,6 +74,7 @@ type ReportYear = {
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   generated_by: string
   source: string
   ledger: {
@@ -198,6 +201,14 @@ export function HealthInsurance() {
       </div>
 
       {/* ------------------------------------------------------------ 1. THE CONCLUSIONS */}
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       <H2 id="findings">What this page establishes</H2>
       <Body>
         Four claims, each one derived from the town&rsquo;s own documents and each one
@@ -370,7 +381,7 @@ export function HealthInsurance() {
       </NotShown>
 
       <Maybe settle={
-        <>The town&rsquo;s Chapter&nbsp;32B enrolment schedule &mdash; who is insured, in
+        <>The town&rsquo;s Chapter&nbsp;32B enrollment schedule &mdash; who is insured, in
           which department, in each year. It is on the list below.</>
       }>
         The obvious reading of {split ? fy(split.fy) : 'the split year'} is that the town

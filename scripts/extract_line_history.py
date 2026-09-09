@@ -481,7 +481,7 @@ def year_candidates(lines):
     Each candidate carries whether it sits at the TOP OF A PAGE, and that flag is what
     decides which fiscal years a document may be said to cover. A table header is printed
     at the top of the page it heads. A line reading `FY10 FY11 ... FY23` two thirds of the
-    way down a slide deck is a chart of enrolment or levy history, and treating it as a
+    way down a slide deck is a chart of enrollment or levy history, and treating it as a
     header would have the coverage matrix claim the archive holds line-level budget
     documents for FY2010 -- turning one over-claim (a year absent that is not) into
     another (a year held that is not). Neither is worth having.
@@ -753,7 +753,7 @@ def scan(path, labels=None):
                             variant=variant, doc=os.path.basename(path), docYear=dy,
                             docDate=dd))
 
-    # AN ENROLMENT TABLE IS THE SAME SHAPE AS A BUDGET TABLE. `FY18 FY19 FY20` over
+    # AN ENROLLMENT TABLE IS THE SAME SHAPE AS A BUDGET TABLE. `FY18 FY19 FY20` over
     # `Actual Budgeted Proposed`, one row per school, and the only thing separating the
     # two is what the numbers are. The FY20 recommended-budget presentation carries one,
     # and it produced budget lines called `Lunenburg High School:`, `THES. K`, `grade`
@@ -770,7 +770,7 @@ def scan(path, labels=None):
         if med < 100:
             reason_median = (
                 'REFUSED as not a budget table: %d figures with a median of %s and a '
-                'total of %s -- an enrolment or class-size table, not dollars'
+                'total of %s -- an enrollment or class-size table, not dollars'
                 % (len(out), format(med, ',.0f'),
                    format(sum(vals), ',.0f')))
             out = []

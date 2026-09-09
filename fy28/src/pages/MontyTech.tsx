@@ -7,9 +7,11 @@ import {
   type ForecastRow, type PartRow, type SeriesRow, type ShareRow, type StudentRow,
 } from '../components/MontyTechCharts'
 import {
+  Conclusions,
   Body, H2, H3, Insight, NotShown, Quote, Stat,
   ReportShell,
 } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 const TAB: Tab = 'montytech'
 const DATA = '/data/monty-tech.json'
@@ -91,6 +93,7 @@ type Assessed = {
 }
 
 type Payload = {
+  conclusions: Conclusion[]
   about: string
   ledger_fy: number; first_fy: number; last_fy: number
   headline: {
@@ -324,6 +327,14 @@ export function MontyTech() {
         </Stat>
       </div>
 
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       <H2 id="findings">What this page establishes</H2>
       <div className="grid gap-4 mt-6"
         style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 21rem), 1fr))' }}>
@@ -340,11 +351,11 @@ export function MontyTech() {
           to the total exactly.
         </Insight>
         <Insight n={2} headline={
-          <>It is not apportioned among member towns by enrolment. It is Chapter&nbsp;70&rsquo;s
+          <>It is not apportioned among member towns by enrollment. It is Chapter&nbsp;70&rsquo;s
             local contribution, split between the town&rsquo;s two districts by foundation
             budget.</>}>
           DESE publishes both halves and the district reprinted DESE&rsquo;s own
-          apportionment sheet: FY{String(d.ledger_fy).slice(2)} foundation enrolment{' '}
+          apportionment sheet: FY{String(d.ledger_fy).slice(2)} foundation enrollment{' '}
           {last.lps_fe.toLocaleString()} for Lunenburg Public Schools and {last.mt_fe} for
           Montachusett, foundation budgets {money(last.lps_fb)} and {money(last.mt_fb)},
           each district&rsquo;s share of the town&rsquo;s foundation{' '}
@@ -357,7 +368,7 @@ export function MontyTech() {
           The town&rsquo;s total required contribution is the lesser of its combined effort
           yield &mdash; property wealth and resident income &mdash; and a statutory cap on
           the local share of its foundation budget. The wealth figure is the lower one, and
-          therefore the binding one, in all {W.years} years DESE publishes. Enrolment never
+          therefore the binding one, in all {W.years} years DESE publishes. Enrollment never
           enters the town-wide total. What it changes is the split: Monty Tech&rsquo;s share
           went from {pct2(first.rlc_share)} in {fy(first.fy)} to {pct2(last.rlc_share)}.
         </Insight>
@@ -368,7 +379,7 @@ export function MontyTech() {
           {money(last.mt_fb_per_pupil)} for each Lunenburg pupil at Monty Tech and{' '}
           {money(last.lps_fb_per_pupil)} for each one in Lunenburg&rsquo;s own schools
           &mdash; a ratio of {H.foundation_ratio.toFixed(2)}. Monty Tech is{' '}
-          {pct2(last.fe_share)} of the town&rsquo;s foundation enrolment and{' '}
+          {pct2(last.fe_share)} of the town&rsquo;s foundation enrollment and{' '}
           {pct2(last.fb_share)} of its foundation budget and of its bill.
         </Insight>
         <Insight n={5} headline={
@@ -389,7 +400,7 @@ export function MontyTech() {
           all eighteen member towns together cover {pct1(dist.assessment_share)}.
           Lunenburg&rsquo;s {money(dist.lunenburg)} is {pct2(dist.lunenburg_of_budget)} of
           the district&rsquo;s budget while Lunenburg is{' '}
-          {pct2(dist.lunenburg_fe_share)} of its foundation enrolment.
+          {pct2(dist.lunenburg_fe_share)} of its foundation enrollment.
         </Insight>
       </div>
 
@@ -464,12 +475,12 @@ export function MontyTech() {
         <em>{capFig.row.split(' · ').pop()}</em>
       </Body>
       <Body>
-        So two of the four parts <em>are</em> apportioned among member towns by enrolment
+        So two of the four parts <em>are</em> apportioned among member towns by enrollment
         share &mdash; but they are the small two. The large one is the state&rsquo;s.
       </Body>
       <Body>
         The district also publishes the split, in full, for every one of its eighteen
-        member towns and in the same book every year: foundation enrolment, foundation
+        member towns and in the same book every year: foundation enrollment, foundation
         budget, required minimum contribution, transportation, capital and bonds, beside
         the prior year&rsquo;s figure. That is why this page can decompose the bill at all,
         and it is more than the town&rsquo;s own budget documents show about any other
@@ -505,7 +516,7 @@ export function MontyTech() {
       <Body>
         <strong>Against DESE&rsquo;s own apportionment sheet</strong>, which the district
         reprinted in its {partsFig.title}: {d.printed_apportionment.fields} published
-        fields for FY{String(d.printed_apportionment.fy).slice(2)} &mdash; enrolment,
+        fields for FY{String(d.printed_apportionment.fy).slice(2)} &mdash; enrollment,
         foundation budget, share and required contribution, for both districts and the town
         &mdash; and every one agrees with the subtraction to the dollar. The sheet prints
         the share as {d.printed_apportionment.printed_share_pct.toFixed(2)}%; the
@@ -531,7 +542,7 @@ export function MontyTech() {
         budget to a tenth of a basis point in {A.exact} of the {A.years} years published.
         The exception is {fy(A.worst_fy ?? 0)}, off by{' '}
         {Math.abs(A.worst_gap_pp ?? 0).toFixed(2)} points. And that the town&rsquo;s total
-        is wealth-bound rather than enrolment-bound is measured too: DESE&rsquo;s target
+        is wealth-bound rather than enrollment-bound is measured too: DESE&rsquo;s target
         local contribution equals its combined effort yield in every one of those{' '}
         {W.years} years, meaning the statutory cap never binds.
       </Body>
@@ -635,7 +646,7 @@ export function MontyTech() {
       <H3>What would you have had to see, and when</H3>
       <Body>
         DESE publishes the apportionment sheet this page derives &mdash; foundation
-        enrolment, foundation budget and required contribution for each of a town&rsquo;s
+        enrollment, foundation budget and required contribution for each of a town&rsquo;s
         districts &mdash; in the same workbook and at the same time as the Chapter&nbsp;70
         aid figure the town already reads every January. The line that would have shown this
         coming is the town&rsquo;s required local contribution against the school
@@ -685,7 +696,7 @@ export function MontyTech() {
       <H3>Two counts of the same children, and they disagree in every year</H3>
       <Body>
         DESE publishes an October headcount of Lunenburg residents attending Montachusett,
-        and a Chapter&nbsp;70 <em>foundation enrolment</em> used to compute the assessment.
+        and a Chapter&nbsp;70 <em>foundation enrollment</em> used to compute the assessment.
         For {fy(latestCount.fy)} they are {latestCount.headcount} and{' '}
         {latestCount.foundation}. Across the overlapping years the difference runs from{' '}
         {Math.abs(H.count_gap_min)} below to {H.count_gap_max} above, with no consistent
@@ -697,7 +708,7 @@ export function MontyTech() {
       </Body>
       <TableTwin
         caption="the two counts"
-        head={['FY', 'October headcount', 'foundation enrolment', 'difference']}
+        head={['FY', 'October headcount', 'foundation enrollment', 'difference']}
         mark={r => r[0] === fy(latestCount.fy)}
         rows={d.counts.map(c => [
           fy(c.fy), c.headcount, c.foundation,
@@ -707,7 +718,7 @@ export function MontyTech() {
       <Body>
         <strong>So every per-student figure has to name its denominator.</strong> The
         district&rsquo;s own budget book prints {money(M.district_per_pupil)} for{' '}
-        {fy(d.ledger_fy)}, dividing the assessment by the foundation enrolment of{' '}
+        {fy(d.ledger_fy)}, dividing the assessment by the foundation enrollment of{' '}
         {H.foundation}. Dividing by DESE&rsquo;s October headcount of {H.students} gives{' '}
         {money(H.per_student)}. Both are correct arithmetic on different counts.
       </Body>
@@ -760,7 +771,7 @@ export function MontyTech() {
       />
       <Body>
         Lunenburg is {pct2(dist.lunenburg_fe_share)} of the district&rsquo;s foundation
-        enrolment and pays {pct2(dist.lunenburg_of_budget)} of its budget. Both are true and
+        enrollment and pays {pct2(dist.lunenburg_of_budget)} of its budget. Both are true and
         neither is a discount: the assessment is a share of what is left after
         Chapter&nbsp;70 and the district&rsquo;s other revenue, and it is apportioned by a
         wealth formula rather than by heads.

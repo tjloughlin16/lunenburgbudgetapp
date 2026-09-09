@@ -29,6 +29,24 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FY28 = os.path.join(ROOT, 'fy28')
 
 
+# WRANGLER NEEDS NODE 22 AND SAYS SO IN ITS OWN WORDS, WHICH ARE NOT ABOUT THIS SCRIPT.
+# Running this on the system Node produces "Wrangler requires at least Node.js v22" with
+# no hint that the caller was asking about the question inbox, so the fix looks like a
+# wrangler problem rather than a shell one. Say the actual command.
+def _require_node22():
+    import shutil
+    if not shutil.which('node'):
+        raise SystemExit('node is not on PATH. This reads D1 through wrangler.\n\n'
+                         '    export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; nvm use 22')
+    v = subprocess.run(['node', '-v'], capture_output=True, text=True).stdout.strip()
+    major = int(v.lstrip('v').split('.')[0]) if v.startswith('v') else 0
+    if major < 22:
+        raise SystemExit(
+            'node %s is too old — wrangler needs 22, and this script reads the question\n'
+            'inbox through it. In this shell:\n\n'
+            '    export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; nvm use 22\n' % v)
+
+
 def sql(statement):
     """Run one statement against the remote database and return its rows."""
     out = subprocess.run(
@@ -69,6 +87,7 @@ def main():
     ap.add_argument('--note', default=None)
     ap.add_argument('--url', default=None)
     a = ap.parse_args()
+    _require_node22()
 
     if a.set:
         qid, status = a.set

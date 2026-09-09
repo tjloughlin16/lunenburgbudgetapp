@@ -147,7 +147,7 @@ def main():
           max(abs(payload[fy]['mt_rlc'] - mine[fy]['rlc']) for fy in years), 0.0, 0.01)
     check('FY%d required contribution' % LEDGER_FY,
           payload[LEDGER_FY]['mt_rlc'], mine[LEDGER_FY]['rlc'], 0.01)
-    check('FY%d foundation enrolment' % LEDGER_FY,
+    check('FY%d foundation enrollment' % LEDGER_FY,
           payload[LEDGER_FY]['mt_fe'], mine[LEDGER_FY]['fe'], 0.01)
     print('  (worst year FY%d)' % worst)
 
@@ -155,7 +155,7 @@ def main():
     print('\n§2  The five sentences that are structure rather than arithmetic')
     assert_true('the town’s total is bound by WEALTH in every published year',
                 all(abs(town[fy]['tgt'] - town[fy]['cey']) < 1.0 for fy in years),
-                'the 82.5%-of-foundation cap now binds somewhere, so enrolment DOES '
+                'the 82.5%-of-foundation cap now binds somewhere, so enrollment DOES '
                 'enter the town-wide total and the page’s central sentence is wrong')
     # And the guard must be capable of failing: the cap has to be a real, different number.
     assert_true('...and the cap is a genuinely different number, so that is not vacuous',
@@ -166,10 +166,10 @@ def main():
              < 1e-5]
     check('years where the share identity holds exactly', d['apportionment']['exact'],
           len(exact))
-    assert_true('the split is by FOUNDATION BUDGET share, not by enrolment share',
+    assert_true('the split is by FOUNDATION BUDGET share, not by enrollment share',
                 all(abs(mine[fy]['rlc'] / town[fy]['rlc']
                         - mine[fy]['fe'] / town[fy]['fe']) > 1e-3 for fy in exact),
-                'the foundation-budget share and the enrolment share are the same '
+                'the foundation-budget share and the enrollment share are the same '
                 'number, so the page distinguishes two things that do not differ')
 
     cand = q(db, "SELECT fy, v1, status, column_meaning FROM report_appropriations "
@@ -262,7 +262,7 @@ def main():
     states(flat, 'the Monty Tech foundation budget', usd(mine[LEDGER_FY]['fb']))
     states(flat, 'the Lunenburg district contribution', usd(lps[LEDGER_FY]['rlc']))
     states(flat, 'the town-wide contribution', usd(town[LEDGER_FY]['rlc']))
-    states(flat, 'the Lunenburg district foundation enrolment',
+    states(flat, 'the Lunenburg district foundation enrollment',
            format(int(lps[LEDGER_FY]['fe']), ','))
     states(flat, 'growth in the required contribution since FY%d' % h['from_fy'],
            pct1(mine[LEDGER_FY]['rlc'] / mine[h['from_fy']]['rlc'] - 1))
@@ -281,7 +281,7 @@ def main():
     states(flat, 'the ratio between them',
            '%.2f' % ((mine[LEDGER_FY]['fb'] / mine[LEDGER_FY]['fe'])
                      / (lps[LEDGER_FY]['fb'] / lps[LEDGER_FY]['fe'])))
-    states(flat, 'the enrolment share of the town’s foundation',
+    states(flat, 'the enrollment share of the town’s foundation',
            '%.2f%%' % (100 * mine[LEDGER_FY]['fe'] / town[LEDGER_FY]['fe']))
 
     states(flat, 'the statutory cap on the local share',
@@ -303,7 +303,7 @@ def main():
            pct1(D['all_assessments'] / D['budget']))
     states(flat, 'Lunenburg’s share of the district budget',
            '%.2f%%' % (100 * D['lunenburg'] / D['budget']))
-    states(flat, 'Lunenburg’s share of the district’s foundation enrolment',
+    states(flat, 'Lunenburg’s share of the district’s foundation enrollment',
            '%.2f%%' % (100 * D['lunenburg_fe'] / D['members_fe']))
 
     stu = {r['fy']: r for r in d['students']}

@@ -468,7 +468,7 @@ CREATE TABLE dese_educator_workforce (
     PRIMARY KEY (fy, lea, race_ethnicity, job_class)
 );
 
--- t8td-gens. The denominator for nearly everything else here: enrolment by grade and by
+-- t8td-gens. The denominator for nearly everything else here: enrollment by grade and by
 -- selected population, per organisation, back to SY1992.
 -- `swd_cnt` is a PUBLISHED count of students with disabilities per organisation. It is
 -- not the same quantity as the count in dese_sped_program, which is measured on a
@@ -717,7 +717,7 @@ CREATE TABLE dese_ch70_contribution (
 -- state row -- the published database has to fit under Cloudflare's 25 MB per-asset limit
 -- -- and this is what a reader would otherwise lose: where Lunenburg SITS.
 --
--- `basis` says on every row what the ratio is a ratio OF. Read it: foundation enrolment
+-- `basis` says on every row what the ratio is a ratio OF. Read it: foundation enrollment
 -- is not a headcount of the children in the buildings, and the circuit breaker rows are
 -- keyed on a fiscal year the others are not.
 --
@@ -2462,14 +2462,14 @@ def reconcile(db):
           2.0)
 
     # Students. The published SWD count, which used to be reachable only by multiplying a
-    # percentage by enrolment -- our arithmetic, not a published figure.
+    # percentage by enrollment -- our arithmetic, not a published figure.
     check(db, 'SY2026 Lunenburg students with disabilities, as n62c-bx65 publishes it',
           q("""SELECT measure_cnt FROM dese_sped_program
                WHERE lea='01620000' AND fy=2026 AND indicator_category='Disability Type'
                  AND indicator_level='total'"""),
           258.0)
     # The same quantity out of three DESE datasets. Two of them agree exactly:
-    check(db, 'SY2026 Lunenburg SWD: the sped file minus the enrolment file',
+    check(db, 'SY2026 Lunenburg SWD: the sped file minus the enrollment file',
           q("""SELECT (SELECT measure_cnt FROM dese_sped_program
                        WHERE lea='01620000' AND fy=2026
                          AND indicator_category='Disability Type'
@@ -2491,7 +2491,7 @@ def reconcile(db):
                          AND grades='K-12'
                          AND student_group='Students with Disabilities')"""),
           -12.0)
-    check(db, 'SY2026 Lunenburg enrolment: PK to 12 plus SP, minus the printed total',
+    check(db, 'SY2026 Lunenburg enrollment: PK to 12 plus SP, minus the printed total',
           q("""SELECT pk_cnt + k_cnt + grade_1_cnt + grade_2_cnt + grade_3_cnt
                       + grade_4_cnt + grade_5_cnt + grade_6_cnt + grade_7_cnt
                       + grade_8_cnt + grade_9_cnt + grade_10_cnt + grade_11_cnt

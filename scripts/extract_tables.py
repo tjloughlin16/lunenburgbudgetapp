@@ -512,7 +512,7 @@ def extract(dataset):
         # OCR geometry usually preserves column position where the text layer collapses it,
         # so it is tried first. But not always: on the election tally pages the OCR
         # rendering rules into no columns at all while the text layer rules cleanly, and
-        # taking OCR for the whole document dropped every election, enrolment and vital
+        # taking OCR for the whole document dropped every election, enrollment and vital
         # records table to zero rows.
         #
         # There is no right rendering of a page, only a right one for the question being

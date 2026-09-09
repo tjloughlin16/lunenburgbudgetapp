@@ -77,7 +77,7 @@ export function SpecialEducationHub() {
         <Door href="/how-many-students-are-on-an-iep" unit="children"
           name="How many students are on an IEP"
           figure={s ? String(s.last.swd) : undefined}
-          caption={s ? `${fy(s.last.fy)} · ${s.last.share_pct.toFixed(1)}% of enrolment` : undefined}>
+          caption={s ? `${fy(s.last.fy)} · ${s.last.share_pct.toFixed(1)}% of enrollment` : undefined}>
           The count the state publishes, in district and out, with the one staffing figure
           in DESE&rsquo;s file that reproduces from its own arithmetic &mdash; and the two
           that do not.
@@ -85,7 +85,7 @@ export function SpecialEducationHub() {
         <Door href="/where-students-go-instead" unit="children — with no disability flag"
           name="Do children with an IEP leave at a different rate"
           figure="no"
-          caption="DESE publishes no disability status with the enrolment it publishes">
+          caption="DESE publishes no disability status with the enrollment it publishes">
           The count of children who leave exists, is measured, and is a{' '}
           <strong>general</strong> figure &mdash; {l ? l.last.elsewhere : 'every one'} of
           Lunenburg&rsquo;s resident children are educated by another district, and DESE

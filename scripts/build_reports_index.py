@@ -61,6 +61,67 @@ ORDER = [
     'connecting-the-budget', 'show-your-work',
 ]
 
+# --- how a READER groups these, which is not how we built them ----------------------
+#
+# The index was split into "routed reports" and "written analyses", which is a fact about
+# our implementation and nothing a resident cares about. It also DUPLICATED subjects:
+# Monty Tech appeared twice and special education three times, because each has both a
+# page and a document. TJ, seeing it: "monty tech being in the 'written' section seems
+# wrong. I think a breakdown of school vs town to start is good, then subcategories
+# might help."
+#
+# So: grouped by SUBJECT, and one entry per subject. Where a page and a document cover
+# the same ground the PAGE wins and the document is offered from it, because the page is
+# current, computed on every build, and the document is what it was written from.
+#
+# SCHOOL first because that is where the money and the argument are; TOWN second; METHOD
+# last, for the reader who has a reason to check rather than a question to answer.
+CATEGORIES = [
+    ('school', 'The schools', [
+        ('what the money buys', [
+            'sped', 'staffing', 'sportsmoney', 'stopped', 'unwind', 'insurance',
+            'athletics-ledger',
+        ]),
+        ('the students', [
+            'outflow', 'montytech', 'leaving', 'families',
+        ]),
+        ('where the money comes from, and how it compares', [
+            'minaid', 'required', 'peers', 'variance',
+        ]),
+    ]),
+    ('town', 'The town', [
+        ('the ledger, read', [
+            'fy26-closeout', 'fy26-closeout-town', 'free-cash',
+        ]),
+        ('what the votes decided', [
+            'fy27-and-the-override', 'fy27-cut-reconciliation',
+        ]),
+    ]),
+    ('method', 'How to check any of it', [
+        ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),
+    ]),
+]
+
+# A page and a document covering the same subject. The page is what the index offers.
+SUPERSEDED = {
+    'monty-tech': 'montytech',
+    'sped-and-the-curve': 'sped',
+    'sped-and-funds': 'sped',
+    'per-pupil-spending': 'peers',
+    'peer-districts': 'peers',
+    'athletics': 'sportsmoney',
+    'budget-vs-actual': 'variance',
+}
+
+# `show-your-work` is deliberately in no category: the page gives it a section of its own,
+# last, because it is the document that makes every figure on every other report checkable
+# rather than another report about money.
+#
+# `addsup` (/what-it-all-adds-up-to) is likewise outside the grouping, at the other end:
+# it is the synthesis of what every other report concludes, so it belongs ABOVE the
+# categories rather than inside one. The page renders it first and on its own.
+UNCATEGORISED = {'show-your-work', 'addsup'}
+
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
 ABOUT = {
@@ -185,8 +246,56 @@ ABOUT_PAGES = {
 }
 
 
-def routed_reports():
+def analyses_area_tabs():
+    """Every tab the app files in the ANALYSES area, whether or not it is in the bar.
+
+    `AREA_TABS.analyses` is the bar, and the bar is deliberately shorter than the area:
+    the four special education reports sit behind one `sped` entry because a bar with
+    fourteen entries is a sitemap. `AREA_OF` is the full membership, and anything that
+    means to cover the area rather than the bar has to read this one --
+    /what-it-all-adds-up-to does, which is how it reaches
+    /what-special-education-costs at all.
+    """
+    src = open(ROUTES_TS, encoding='utf-8').read()
+    m = re.search(r'const AREA_OF: Partial<Record<Tab, Area>> = \{(.*?)\n\}', src, re.S)
+    if not m:
+        raise SystemExit('routes.ts: could not find the AREA_OF table')
+    tabs = [t for t, a in re.findall(r"(\w+): '(\w+)'", m.group(1)) if a == 'analyses']
+    # `analysis` is the ONE tab that renders all seventeen Markdown documents at
+    # /analysis/<id>. It owns no single report, declares no `const TAB`, and has no
+    # payload, so it is not a row anywhere reports are enumerated.
+    tabs = [t for t in tabs if t != 'analysis']
+    if not tabs:
+        raise SystemExit('routes.ts: AREA_OF names no analyses tabs, which has never '
+                         'been true')
+    return tabs
+
+
+def parents():
+    """`PARENT` in routes.ts: which page a drill-in sits under.
+
+    Used for ORDERING here, not for navigation. It is the table that already records
+    which door each hidden report is behind, so reading it is how the master report can
+    place the four special education reports where the bar puts special education without
+    anybody keeping a second list in step with the first.
+    """
+    src = open(ROUTES_TS, encoding='utf-8').read()
+    m = re.search(r'export const PARENT: Partial<Record<Tab, Tab>> = \{(.*?)\n\}',
+                  src, re.S)
+    if not m:
+        raise SystemExit('routes.ts: could not find the PARENT table')
+    out = dict(re.findall(r"(\w+): '(\w+)'", m.group(1)))
+    if not out:
+        raise SystemExit('routes.ts: the PARENT table parsed to nothing')
+    return out
+
+
+def routed_reports(all_of_area=False):
     """Every report the app routes to, read off the table the app itself routes on.
+
+    `all_of_area=True` covers the whole Analyses AREA rather than its tab bar -- see
+    `analyses_area_tabs`. The bar is the default because /reports is a navigation index
+    and the bar is what a reader navigates.
 
     `AREA_TABS.analyses` in routes.ts is the Analyses area's own tab list. Parsed rather
     than imported, for the same reason `prerender.mjs` parses it: this is a TypeScript file
@@ -201,6 +310,26 @@ def routed_reports():
     tabs = re.findall(r"'([a-z]+)'", m.group(1))
     if not tabs:
         raise SystemExit('routes.ts: AREA_TABS.analyses parsed to nothing')
+    if all_of_area:
+        # THE BAR'S ORDER, WITH EACH HIDDEN REPORT PUT WHERE ITS DOOR IS.
+        #
+        # The bar draws `sped` -- one entry for four reports -- and the four are not in it.
+        # Appending them produced a page that ended on special education, which is the
+        # subject this town argues about most; the bar itself says where that subject
+        # sits, second, and `PARENT` in routes.ts says which door each of the four is
+        # behind. So each report the bar does not draw is inserted directly after its
+        # parent rather than at the end. Both facts are read off routes.ts: the ordering
+        # decision stays where the ordering decisions already are.
+        parent = parents()
+        for t in analyses_area_tabs():
+            if t in tabs:
+                continue
+            pt = parent.get(t)
+            at = tabs.index(pt) + 1 if pt in tabs else len(tabs)
+            # ...and successive children keep their own order rather than reversing.
+            while at < len(tabs) and parent.get(tabs[at]) == pt:
+                at += 1
+            tabs.insert(at, t)
 
     block = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
     slug = dict(re.findall(r"^\s*(\w+): '([^']*)',", block.group(1), re.M))
@@ -328,8 +457,61 @@ def main():
 
     pages, undescribed = routed_reports()
 
+    # --- group by subject, one entry per subject ------------------------------------
+    by_id = {r['id']: r for r in list(reports) + list(pages)}
+    groups, placed = [], set()
+    for key, title, subs in CATEGORIES:
+        out_subs = []
+        for sub_title, ids in subs:
+            rows = []
+            for i in ids:
+                if i in by_id:
+                    rows.append(i)
+                    placed.add(i)
+            if rows:
+                out_subs.append(dict(title=sub_title, ids=rows))
+        if out_subs:
+            groups.append(dict(key=key, title=title, sections=out_subs))
+
+    # AND THE SECOND TAXONOMY MUST COVER THE SAME REPORTS. `/what-it-all-adds-up-to`
+    # groups the same set by SUBJECT rather than by school/town, because special education
+    # is four reports the index draws behind one door and athletics is two the index
+    # separates -- see `conclusions.TOPICS`, which is the only declaration of it. Two
+    # groupings over one set will drift unless something compares them, and a reader who
+    # meets special education under one heading here and another there learns that neither
+    # is meaningful. So this refuses to write if a routed report is in neither.
+    import conclusions as _C
+    astray = sorted(p['id'] for p in pages
+                    if p['id'] not in _C.NOT_A_REPORT and not _C.topic_of(p['id']))
+    if astray:
+        raise SystemExit(
+            'these routed reports are in no subject in conclusions.TOPICS, so '
+            '/what-it-all-adds-up-to would not show them: %s\nAdd each to a topic there, '
+            'or to NOT_A_REPORT if it is not a report.' % ', '.join(astray))
+
+    # NOTHING MAY FALL OUT OF THE TAXONOMY SILENTLY. A report that is in neither a
+    # category, nor superseded by one, nor deliberately uncategorised would simply stop
+    # being listed -- the failure this index exists to prevent, arriving through the
+    # feature meant to organise it. So it refuses to write.
+    unplaced = sorted(set(by_id) - placed - set(SUPERSEDED) - UNCATEGORISED)
+    if unplaced:
+        raise SystemExit(
+            'these reports are in no category:\n  ' + '\n  '.join(unplaced) +
+            '\n\nAdd each to CATEGORIES in this script, or to SUPERSEDED if a page '
+            'already covers the same subject, or to UNCATEGORISED if it genuinely '
+            'belongs outside the grouping. Nothing written.')
+
+    # And a supersession must point at something that exists, or the document it hides
+    # would vanish while the page it points to was never built.
+    missing = sorted(v for v in SUPERSEDED.values() if v not in by_id)
+    if missing:
+        raise SystemExit('SUPERSEDED points at reports that do not exist: %s. '
+                         'Nothing written.' % missing)
+
     data = dict(
         generated=date.today().isoformat(),
+        groups=groups,
+        superseded={k: v for k, v in SUPERSEDED.items() if k in by_id},
         # The caveat leads. It is the first field for the same reason it is the first
         # thing on the page: these are not the town's documents and must never be
         # mistaken for them.

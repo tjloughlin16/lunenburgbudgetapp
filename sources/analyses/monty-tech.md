@@ -18,11 +18,11 @@ capital assessment of **$16,233**. Those three sum to the total exactly. Only th
 — **$63,810**, 4.8% of the bill — are anything a member town negotiates.
 
 **2. The required minimum contribution is not apportioned among member towns by their
-enrolment. It is Chapter 70's local contribution, computed from Lunenburg's property value
+enrollment. It is Chapter 70's local contribution, computed from Lunenburg's property value
 and resident income, then split between the town's two school districts in exact
 proportion to each district's share of the town's foundation budget.** DESE publishes both
 halves, and the district reprinted DESE's own apportionment sheet in its FY2027 budget
-presentation: FY2026 foundation enrolment 1,603 for Lunenburg Public Schools and 101 for
+presentation: FY2026 foundation enrollment 1,603 for Lunenburg Public Schools and 101 for
 Montachusett, foundation budgets $22,073,946 and $2,103,516, "each district's share of
 municipality's combined FY26 foundation" **91.30%** and **8.70%**, required contribution
 $13,334,631 and **$1,270,711** out of a town-wide $14,605,342.
@@ -31,8 +31,8 @@ $13,334,631 and **$1,270,711** out of a town-wide $14,605,342.
 moves part of it from one line to the other.** The town's total required contribution is
 the lesser of its combined effort yield — property wealth and resident income — and 82.5%
 of its foundation budget. In all twenty years DESE publishes, the wealth figure is the
-lower one and therefore the binding one, so enrolment never enters the town-wide total at
-all. What enrolment changes is the split. Between FY2014 and FY2026, Monty Tech's share of
+lower one and therefore the binding one, so enrollment never enters the town-wide total at
+all. What enrollment changes is the split. Between FY2014 and FY2026, Monty Tech's share of
 that obligation rose from **7.04%** to **8.70%**, and its dollar share from **$714,845** to
 **$1,270,711** — **+77.8%** — while the town-wide obligation rose 43.9% and the Lunenburg
 school district's share of it rose 41.4%.
@@ -41,7 +41,7 @@ school district's share of it rose 41.4%.
 one, which is why the money share runs well ahead of the head share.** In FY2026 the
 state's foundation budget is **$20,827** for each Lunenburg pupil at Monty Tech and
 **$13,770** for each one in Lunenburg's own schools — a ratio of **1.51**. That is why
-Monty Tech is **5.93%** of the town's foundation enrolment and **8.70%** of its foundation
+Monty Tech is **5.93%** of the town's foundation enrollment and **8.70%** of its foundation
 budget and of its bill.
 
 **5. The town's own five-year forecast of this line missed FY2026 by $329,057.** A Select
@@ -55,7 +55,7 @@ year.
 Monty Tech's FY2026 budget is **$34,641,344**. Chapter 70 aid paid directly to the district
 covers **54.2%** of it; assessments on all eighteen member towns together cover **38.0%**.
 Lunenburg's $1,334,521 is **3.85%** of the district's budget while Lunenburg is **6.79%**
-of its foundation enrolment. Rule 11 exactly: the bill and the cost are different
+of its foundation enrollment. Rule 11 exactly: the bill and the cost are different
 quantities, and this archive holds the bill.
 
 **7. Monty Tech is the larger of the two routes out of Lunenburg's own schools, and it is
@@ -135,7 +135,7 @@ and the two ratios, on the same page:
 > by the total number of students enrolled in Grades 1 through 12 of 18 member communities
 > equals the capital assessment ratio.
 
-So two of the four parts *are* apportioned by enrolment share — but they are the small two.
+So two of the four parts *are* apportioned by enrollment share — but they are the small two.
 The large one is the state's.
 
 ### In plain terms
@@ -154,7 +154,7 @@ The required-contribution half is verifiable twice over. Subtracting the Lunenbu
 district's required local contribution from the town's, in DESE's Chapter 70 key factors
 workbook, gives Monty Tech's share for FY2007 to FY2026. That subtraction is checked at
 five points against figures the district's own business director gave the Finance
-Committee — FY2023 $1,012,282 and a foundation enrolment moving 83 to 94 (23 March 2022),
+Committee — FY2023 $1,012,282 and a foundation enrollment moving 83 to 94 (23 March 2022),
 FY2024 $1,127,113 (22 March 2023), FY2026 $1,270,711 and $20,827 a pupil (6 March 2025) —
 and every one matches to the dollar. It is then checked against DESE's own apportionment
 sheet as the district reprinted it, nine published fields for FY2026, all of which agree.
@@ -164,7 +164,7 @@ required contribution equals its share of the town's foundation budget to a tent
 basis point in nineteen of the twenty years published. The exception is FY2007, off by
 0.19 points.
 
-That the town's total is wealth-bound rather than enrolment-bound is also measured: DESE's
+That the town's total is wealth-bound rather than enrollment-bound is also measured: DESE's
 `target local contribution` equals its `combined effort yield` in every one of those twenty
 years, meaning the 82.5%-of-foundation cap never binds.
 
@@ -194,7 +194,7 @@ A recollection at a meeting is not the instrument.
 
 **Two counts of the same children, and they disagree in every year.** DESE publishes an
 October headcount of Lunenburg residents attending Montachusett, and a Chapter 70 foundation
-enrolment used to compute the assessment. For FY2026 they are 97 and 101. Across FY2014 to
+enrollment used to compute the assessment. For FY2026 they are 97 and 101. Across FY2014 to
 FY2026 the difference runs from eight below to fifteen above, with no consistent sign. One
 documented mechanism puts children into the assessment who are not at Monty Tech: the
 district's business director told the Finance Committee in March 2022 that four Lunenburg
@@ -203,7 +203,7 @@ assessment". That explains a difference in one direction and not the years runni
 way.
 
 **So every per-student figure has to name its denominator.** The district's own budget book
-prints $13,213 for FY2026, dividing the assessment by the foundation enrolment of 101.
+prints $13,213 for FY2026, dividing the assessment by the foundation enrollment of 101.
 Dividing by DESE's October headcount of 97 gives $13,758. Both are correct arithmetic on
 different counts.
 
@@ -279,7 +279,7 @@ a column meaning.
 | Whether the ratios can be changed at all | the Montachusett regional agreement and its amendments | the district; each member town's clerk; DESE |
 | Why FY2027 is $1,452,379 to the district and $1,452,426 to the town | the FY2027 assessment certification, and the Monty Tech line as voted at Annual Town Meeting | the Town Accountant |
 | How many Lunenburg applicants are turned away | Monty Tech's admissions summary by sending town and year | the district |
-| Why DESE's two counts of the same children differ | DESE's foundation enrolment detail for the Chapter 70 calculation | DESE |
+| Why DESE's two counts of the same children differ | DESE's foundation enrollment detail for the Chapter 70 calculation | DESE |
 
 All six are registered in `sources/data/money-gaps.csv` and appear at
 `/what-we-cannot-answer`.

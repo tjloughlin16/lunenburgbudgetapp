@@ -393,6 +393,185 @@
   "outlier_fy": 2022,
   "outlier_pct": 0.005282
  },
+ "conclusions": [
+  {
+   "basis": "DESE\u2019s Chapter 70 key factors workbook, FY2007 to FY2026: the municipal contribution sheet for Lunenburg minus the district aid sheet for Lunenburg Public Schools, year by year. Checked against DESE\u2019s own apportionment sheet as Monty Tech reprinted it in its FY2027 budget presentation, and against three figures the district\u2019s business director gave the Finance Committee in three different years.",
+   "claim": "The single amount the state requires Lunenburg to pay for schools, split between two districts",
+   "detail": "A Lunenburg child enrolling at Monty Tech does not add to what the town has to raise for schools. It moves part of it: the state sets ONE required contribution for the whole town and splits it between the town\u2019s two districts. In FY2026 that single town-wide requirement was $14,605,342, of which Monty Tech\u2019s share was $1,270,711 and Lunenburg Public Schools\u2019 $13,334,631. The town-wide total is the lesser of what the state calculates from Lunenburg\u2019s property values and resident income and a cap on the local share of its foundation budget \u2014 and the wealth figure is the binding one in all 20 years DESE publishes, so enrollment never enters it. The split is each district\u2019s share of the town\u2019s foundation budget, and that identity holds to a tenth of a basis point in 19 of those years.",
+   "figure": "town_required",
+   "figures": {
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "identity_years": {
+     "text": "19",
+     "unit": "",
+     "value": 19
+    },
+    "lunenburg_schools": {
+     "text": "$13,334,631",
+     "unit": "",
+     "value": 13334631.0
+    },
+    "monty_tech": {
+     "text": "$1,270,711",
+     "unit": "",
+     "value": 1270711.0
+    },
+    "town_required": {
+     "text": "$14,605,342",
+     "unit": "",
+     "value": 14605342.0
+    },
+    "years": {
+     "text": "20",
+     "unit": "",
+     "value": 20
+    }
+   },
+   "id": "a-child-moving-there-moves-the-bill",
+   "kind": "measured",
+   "literals": [
+    "70"
+   ],
+   "not_shown": "That the town is therefore indifferent to where a child enrolls. The state sets a larger foundation budget for a vocational pupil than for one in the town\u2019s own schools, so a move shifts more than a proportionate slice of the bill; the assessment also carries transportation and capital above the state minimum, which the district apportions by enrollment and not by foundation budget; and nothing here says what Lunenburg\u2019s own schools stop spending when a child leaves.",
+   "see": [
+    {
+     "label": "what the state requires the town to spend",
+     "slug": "/what-the-state-requires-us-to-spend"
+    },
+    {
+     "label": "what happens when students leave",
+     "slug": "/if-students-leave"
+    }
+   ],
+   "so_what": "A child moving to Monty Tech does not add to the town\u2019s bill. It moves part of it."
+  },
+  {
+   "basis": "the district\u2019s own FY2027 budget presentation \u2014 its \u201cFY 2027 Budget Summary\u201d page for the budget, the Chapter 70 estimate and the total assessed on all eighteen towns, and its member-town apportionment sheet for Lunenburg\u2019s own line. The town\u2019s side is its MUNIS year-to-date budget report, general fund, which carries the same total to the cent.",
+   "claim": "Billed to Lunenburg for Monty Tech, which is not what a place there costs",
+   "detail": "What Lunenburg is billed for Monty Tech is not what a Monty Tech place costs. The town\u2019s $1,334,521 is 3.9% of the district\u2019s budget while Lunenburg\u2019s children are 6.8% of its foundation enrollment. Monty Tech\u2019s FY2026 budget is $34,641,344. Chapter 70 aid paid straight to the district covers 54.2% of it, and assessments on all eighteen member towns together cover 38.0%; the rest is the district\u2019s own receipts, and none of that appears in Lunenburg\u2019s bill. So this line measures what the town raises, and it can move in a year when nothing at the school costs any more or any less.",
+   "figure": "bill",
+   "figures": {
+    "assessment_share": {
+     "text": "38.0%",
+     "unit": "",
+     "value": 38.0428
+    },
+    "bill": {
+     "text": "$1,334,521",
+     "unit": "",
+     "value": 1334521
+    },
+    "ch70_share": {
+     "text": "54.2%",
+     "unit": "",
+     "value": 54.163
+    },
+    "district_budget": {
+     "text": "$34,641,344",
+     "unit": "",
+     "value": 34641344
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "of_budget": {
+     "text": "3.9%",
+     "unit": "",
+     "value": 3.8524000000000003
+    },
+    "of_enrollment": {
+     "text": "6.8%",
+     "unit": "",
+     "value": 6.7876
+    }
+   },
+   "id": "the-assessment-is-a-bill-not-a-cost",
+   "kind": "measured",
+   "literals": [
+    "70",
+    "2027"
+   ],
+   "not_shown": "What a Lunenburg place at Monty Tech costs. This archive holds two of the district\u2019s budget books and no series, no all-funds report after a year closed, and nothing that attributes any of the district\u2019s spending to one member town\u2019s children. The bill can be tracked; the cost cannot.",
+   "see": [
+    {
+     "label": "how state aid is set",
+     "slug": "/state-aid"
+    },
+    {
+     "label": "what nobody publishes",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "State aid paid straight to the school covers most of its budget, and none of that is in this bill."
+  },
+  {
+   "basis": "the five-year forecast of this line printed in a Select Board packet in January 2021, read as a series out of the minutes, against the town\u2019s MUNIS ledger for the last year of it and against the DESE-derived required-contribution series for the same span.",
+   "claim": "The actual Monty Tech bill, against a forecast that carried it forward at an inflation rate",
+   "detail": "This line cannot be planned as an ordinary cost escalator. Carried forward at 2.5% a year it reached $1,005,464 for FY2026, and the assessment came in at $1,334,521. Over the same span the state-required minimum inside the assessment compounded at 9.3% a year, and Monty Tech\u2019s share of the town\u2019s foundation budget \u2014 the fraction that decides how much of one town-wide requirement lands here \u2014 went from 7.2% to 8.7%. Neither of those is a price, and neither is inside an inflation assumption. A town that wants this line forecast has to forecast the Chapter 70 formula and the split, which is a different exercise and a harder one.",
+   "figure": "actual",
+   "figures": {
+    "actual": {
+     "text": "$1,334,521",
+     "unit": "",
+     "value": 1334521.0
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "projected": {
+     "text": "$1,005,464",
+     "unit": "",
+     "value": 1005464.38
+    },
+    "rate": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "required_cagr": {
+     "text": "9.3%",
+     "unit": "",
+     "value": 9.3034
+    },
+    "share_from": {
+     "text": "7.2%",
+     "unit": "",
+     "value": 7.180899999999999
+    },
+    "share_to": {
+     "text": "8.7%",
+     "unit": "",
+     "value": 8.7003
+    }
+   },
+   "id": "not-an-escalator",
+   "kind": "measured",
+   "literals": [
+    "70",
+    "2021"
+   ],
+   "not_shown": "Why the projection was built that way, or that any other rate would have been better. It is one packet, it states a series and no method, and nothing here establishes what was assumed. What is established is that the quantity being projected is set by a state formula rather than by a price.",
+   "see": [
+    {
+     "label": "every rate this project uses, and its source",
+     "slug": "/rate-register"
+    },
+    {
+     "label": "why the formula lands where it does",
+     "slug": "/why-we-only-get-minimum-aid"
+    }
+   ],
+   "so_what": "This is set by a state formula, not by a price, so it cannot be planned like an ordinary cost."
+  }
+ ],
  "corroboration": [
   {
    "board": "Finance Committee",
@@ -415,7 +594,7 @@
    "fy": 2023,
    "stated": 94,
    "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03232022-2056",
-   "what": "Lunenburg\u2019s FY2023 foundation enrolment at Monty Tech",
+   "what": "Lunenburg\u2019s FY2023 foundation enrollment at Monty Tech",
    "who": "the Monty Tech Business Director, to the Finance Committee"
   },
   {
@@ -584,7 +763,7 @@
    "sha256": "9fdc7d0a6131c82a400509f336f2ac88539e05b2dde1b019232757e668bc2e6f",
    "stage": "the Chapter 70 calculation for each fiscal year. A formula calculation, not a budget and not an actual.",
    "url": "https://www.doe.mass.edu/finance/chapter70/",
-   "what": "DESE\u2019s Chapter 70 key factors \u2014 the municipal contribution sheet (income, property, combined effort yield, required local contribution, by town) and the district aid sheet (foundation enrolment, foundation budget, required local contribution, Chapter 70 aid, by district). Every established figure on this page is a subtraction between those two sheets."
+   "what": "DESE\u2019s Chapter 70 key factors \u2014 the municipal contribution sheet (income, property, combined effort yield, required local contribution, by town) and the district aid sheet (foundation enrollment, foundation budget, required local contribution, Chapter 70 aid, by district). Every established figure on this page is a subtraction between those two sheets."
   },
   {
    "bytes": 247019,
@@ -594,7 +773,7 @@
    "path": "sources/data/dese-town-enrollment.csv",
    "publisher": "Massachusetts Department of Elementary and Secondary Education (extracted by this project)",
    "sha256": "8b1c177790540bafd1603f43a8c4ff60de6d660869b01aa07452c86ddb1e5915",
-   "stage": "reported as of 1 October each year. A headcount, not a foundation enrolment \u2014 the two are different counts and this page keeps them apart.",
+   "stage": "reported as of 1 October each year. A headcount, not a foundation enrollment \u2014 the two are different counts and this page keeps them apart.",
    "url": "",
    "what": "Every Lunenburg-resident student, by the district they actually attend and the programme they are there under. The source of the student counts on this page."
   },
@@ -717,7 +896,7 @@
     "fy27_members": 1465,
     "fy27_required": 12923815
    },
-   "what": "DESE\u2019s apportionment sheet for the district itself \u2014 every one of the eighteen member towns, its foundation enrolment at Monty Tech and its required minimum contribution, for FY2026 and FY2027."
+   "what": "DESE\u2019s apportionment sheet for the district itself \u2014 every one of the eighteen member towns, its foundation enrollment at Monty Tech and its required minimum contribution, for FY2026 and FY2027."
   },
   "method": {
    "basis": "the district\u2019s own description of its method, reprinted by the Town. It is a statement of practice, not the regional agreement that binds it.",
@@ -735,7 +914,7 @@
    "title": "FY2017 Annual Town Report, printed page 146",
    "url": "https://www.lunenburgma.gov/DocumentCenter/View/4124",
    "values": {},
-   "what": "The district\u2019s own statement of how it apportions an assessment, printed inside Lunenburg\u2019s annual town report: four parts, with transportation and other operating divided by each town\u2019s 1 October enrolment share and capital divided by its school-attending children in grades 1 to 12."
+   "what": "The district\u2019s own statement of how it apportions an assessment, printed inside Lunenburg\u2019s annual town report: four parts, with transportation and other operating divided by each town\u2019s 1 October enrollment share and capital divided by its school-attending children in grades 1 to 12."
   },
   "method-capital": {
    "basis": "the district\u2019s own description of its method, reprinted by the Town.",
@@ -906,10 +1085,10 @@
  },
  "gaps": [
   {
-   "closes": "Monty Tech\u2019s annual budget book for each year, presented to its own School Committee and to the Lunenburg Finance Committee every March, and DESE\u2019s End of Year Financial Report for LEA 08320000, which gives all-funds spending by function after the year closes.",
+   "closes": "Monty Tech\u2019s annual budget book for each year, presented to its own School Committee and to the Lunenburg Finance Committee every March, and DESE\u2019s End of Year Financial Report for LEA 08320000, which gives all-funds spending by function in dollars after the year closes.",
    "side": "money_out",
    "what": "What Monty Tech spends, and on what",
-   "why": "Lunenburg is assessed $1,334,521 for Montachusett Regional Vocational Technical in FY2026 and that figure is what the town is BILLED, not what educating 101 foundation pupils costs. The archive holds two of the district\u2019s own budget books \u2014 the FY2024 hearing book and the FY2027 presentation \u2014 so a FY24-to-FY27 view of its spending by DESE function code does exist. What does not exist here is a SERIES: no year before FY2024, nothing for the years between the two books, and no all-funds end-of-year figure at all, only budgets and two years the FY2027 book labels Actual Expenditures. So the district\u2019s cost per Lunenburg pupil cannot be tracked over time, and cannot be compared to Lunenburg Public Schools\u2019 own per-pupil spending, which is measured all-funds and after the year closed."
+   "why": "Lunenburg is assessed $1,334,521 for Montachusett Regional Vocational Technical in FY2026 and that figure is what the town is BILLED, not what educating 101 foundation pupils costs. PART OF THIS ROW HAS CLOSED. DESE\u2019s RADAR district comparison publishes an all-funds per-pupil total for LEA 08320000 for FY2009 to FY2025 \u2014 seventeen consecutive years, every one of them summing to the workbook\u2019s own printed in-district total \u2014 so the district\u2019s per-pupil spending CAN now be tracked over time and set beside Lunenburg Public Schools\u2019 own, measured the same way, which is what /what-other-districts-spend does. WHAT REMAINS OPEN is the composition and the attribution. RADAR gives ten per-pupil function columns and no dollars, no fund split and nothing specific to Lunenburg\u2019s children; the archive holds two of the district\u2019s own budget books \u2014 the FY2024 hearing book and the FY2027 presentation \u2014 so a FY24-to-FY27 view by DESE function code exists in dollars, with no year before FY2024 and nothing for the years between the two books. So what the district spends on a Lunenburg child, as against on any child, is still not established."
   },
   {
    "closes": "the district\u2019s annual assessment certification to each member town, which states the four components separately; the Town Accountant receives one every year and the district retains all of them.",
@@ -927,7 +1106,7 @@
    "closes": "the Montachusett Regional Vocational Technical School District regional agreement and its amendments, filed with the Department of Elementary and Secondary Education and held by the district and by each member town\u2019s clerk.",
    "side": "document_wanted",
    "what": "How the Montachusett regional agreement apportions costs among its member towns",
-   "why": "The apportionment method is now on the record twice: the district printed it in Lunenburg\u2019s FY2017 annual town report \u2014 four parts, with transportation and other operating divided by each town\u2019s 1 October enrolment share and capital divided by each town\u2019s school-attending children in grades 1 to 12 \u2014 and DESE\u2019s own apportionment sheet, reprinted in the FY2027 budget presentation, shows the required-contribution part split between a town\u2019s two districts by foundation-budget share. WHAT IS STILL MISSING IS THE INSTRUMENT. A budget book states current practice; the regional agreement is what binds it, and it is the document that would say whether the ratios can be changed, how bonds are apportioned and over what term, what a member town\u2019s withdrawal would require, and what amendments have been made. Asked at the Finance Committee on 5 February 2026 whether the agreement was indefinite or could be renegotiated, the Superintendent-Director said he believed it was ongoing and that amendments were very rare. A recollection at a meeting is not the instrument."
+   "why": "The apportionment method is now on the record twice: the district printed it in Lunenburg\u2019s FY2017 annual town report \u2014 four parts, with transportation and other operating divided by each town\u2019s 1 October enrollment share and capital divided by each town\u2019s school-attending children in grades 1 to 12 \u2014 and DESE\u2019s own apportionment sheet, reprinted in the FY2027 budget presentation, shows the required-contribution part split between a town\u2019s two districts by foundation-budget share. WHAT IS STILL MISSING IS THE INSTRUMENT. A budget book states current practice; the regional agreement is what binds it, and it is the document that would say whether the ratios can be changed, how bonds are apportioned and over what term, what a member town\u2019s withdrawal would require, and what amendments have been made. Asked at the Finance Committee on 5 February 2026 whether the agreement was indefinite or could be renegotiated, the Superintendent-Director said he believed it was ongoing and that amendments were very rare. A recollection at a meeting is not the instrument."
   },
   {
    "closes": "Monty Tech\u2019s admissions summary by sending town and year \u2014 applications received, offers made, waitlisted \u2014 which the district produces for its own School Committee.",
@@ -936,10 +1115,10 @@
    "why": "Lunenburg\u2019s count at Monty Tech has risen in nine of the last twelve years, and a count is the outcome of two things at once: families applying, and Monty Tech admitting. The lottery exists precisely because more apply than there are places. Asked at the Finance Committee on 5 February 2026 how many Lunenburg students were turned away, the district\u2019s business manager said she was unsure of the exact number. The Class of 2030 lottery result in this archive gives one cohort\u2019s admissions \u2014 24 Lunenburg students of 365 places \u2014 and its per-applicant pages are OCR of an image PDF and cannot be counted from. So a rising count cannot be read as rising demand, and the two have opposite implications for what the town should expect next."
   },
   {
-   "closes": "DESE\u2019s foundation enrolment detail for the Chapter 70 calculation, which states the collection date and the categories included, published beside the key factors workbook this project already holds.",
+   "closes": "DESE\u2019s foundation enrollment detail for the Chapter 70 calculation, which states the collection date and the categories included, published beside the key factors workbook this project already holds.",
    "side": "people",
-   "what": "Why DESE\u2019s foundation enrolment for Lunenburg at Monty Tech differs from its own October headcount",
-   "why": "Two DESE counts of the same thing disagree in every year. The Chapter 70 foundation enrolment used to compute the assessment \u2014 derived on /monty-tech by subtracting the Lunenburg district\u2019s from the town\u2019s \u2014 runs between eight below and fifteen above the October headcount of Lunenburg residents attending Montachusett Regional in DESE\u2019s own residents-by-district file, and the gap has no consistent sign or size. One documented mechanism puts children into the assessment who are not at Monty Tech: the district\u2019s business director told the Finance Committee in March 2022 that four Lunenburg students attending trade programmes at Leominster and Nashoba \u201cbecome part of the Monty Tech assessment\u201d. That accounts for a difference in one direction and not for the years running the other way. Until it is reconciled, no per-student figure on this page can be quoted without saying which count is the denominator."
+   "what": "Why DESE\u2019s foundation enrollment for Lunenburg at Monty Tech differs from its own October headcount",
+   "why": "Two DESE counts of the same thing disagree in every year. The Chapter 70 foundation enrollment used to compute the assessment \u2014 derived on /monty-tech by subtracting the Lunenburg district\u2019s from the town\u2019s \u2014 runs between eight below and fifteen above the October headcount of Lunenburg residents attending Montachusett Regional in DESE\u2019s own residents-by-district file, and the gap has no consistent sign or size. One documented mechanism puts children into the assessment who are not at Monty Tech: the district\u2019s business director told the Finance Committee in March 2022 that four Lunenburg students attending trade programmes at Leominster and Nashoba \u201cbecome part of the Monty Tech assessment\u201d. That accounts for a difference in one direction and not for the years running the other way. Until it is reconciled, no per-student figure on this page can be quoted without saying which count is the denominator."
   }
  ],
  "headline": {
@@ -1033,7 +1212,7 @@
   "That the eleven annual-report figures are right. Every one of them fails the extractor\u2019s own reconciliation, so they are drawn as candidates. What can be said is that each sits above the independently derived state minimum by a margin consistent with transportation and capital \u2014 which is a check on their shape, not a check on their values.",
   "Why the district\u2019s FY2027 assessment and the Town\u2019s FY2027 budget line differ by $47. Both are in the archive, neither mentions the other, and every other year where two figures exist ties to the dollar or to eighteen cents.",
   "Why the number of Lunenburg children at Monty Tech has risen. A count is the outcome of families applying and of Monty Tech admitting, and the lottery exists precisely because more apply than can be admitted. Nothing here separates demand from capacity, and the district told the Finance Committee in February 2026 that it did not know how many Lunenburg students had been turned away.",
-  "Why DESE\u2019s foundation enrolment and DESE\u2019s own October headcount of Lunenburg residents at Monty Tech disagree in every year, by between eight below and fifteen above. Both are published; nothing reconciles them, so every per-student figure on this page names its denominator.",
+  "Why DESE\u2019s foundation enrollment and DESE\u2019s own October headcount of Lunenburg residents at Monty Tech disagree in every year, by between eight below and fifteen above. Both are published; nothing reconciles them, so every per-student figure on this page names its denominator.",
   "That the town could reduce the assessment by deciding to. Roughly 95% of it is the Chapter 70 minimum required local contribution, computed by the state from Lunenburg\u2019s property value and resident income and apportioned by foundation budget. No Lunenburg vote sets it, and no Lunenburg vote admits or refuses a child to the school.",
   "What the regional agreement says. The apportionment METHOD is on the record \u2014 the district printed it in the FY2017 annual town report \u2014 but the instrument that binds it is not in this archive, so nothing here can say whether the ratios can be changed, how bonds would be apportioned, or what withdrawing from the district would involve."
  ],

@@ -177,6 +177,45 @@ document says so.
 Rule 7a still applies within section 1 — lead with the conclusion, not with a paragraph
 explaining that conclusions follow.
 
+### A conclusion is a metric and two lines. Everything else expands
+
+TJ, 9 September 2026, reading the synthesis page: *"we cannot have BOLD context lines that
+are 3-5 lines. the metric + the description need to be short. context description should
+be 1 or 2 lines max. Additional context must go into the expansion. which means we have to
+be HYPER clear about what the metric represents, and what conclusion to draw from it
+without needing a full paragraph of context for each."*
+
+    the METRIC, with its unit          93 of 132 budget items
+    one line: what it is               when the school budget stops funding something
+    one line: what follows             it usually comes back
+    ---- everything else expands ----
+
+**The hard part is not the trimming. Cutting the context forces the METRIC to carry its
+own meaning**, and that usually means picking a different metric rather than writing
+shorter prose around the same one. `93` needs a paragraph. `93 of 132 budget items` needs
+one line. Where a figure cannot be made self-explanatory in a few words it is the wrong
+figure for the card.
+
+Two failures this rule exists to stop, both real:
+
+- **A bare number.** `93`, `10`, `18`. This project's whole discipline is that dollars are
+  not students and a count is not a rate -- rule 7, and the reason every report states its
+  grain. A unitless figure in a stat box abandons that at the moment a reader is most
+  likely to quote it. Ten children, ten documents and ten budget lines must not look alike.
+- **Insider vocabulary.** *A line printed at zero in the district's book* is precise and is
+  not English anybody speaks. Every noun in it is ours. TJ, who reads this project daily,
+  said of that card: *"i have NO idea what this is talking about."* Precision and jargon
+  are not the same thing, and the second is often an unfinished sentence.
+
+**Enforce the length in the generator, not by eye** -- a character budget derived from the
+card's real width, and a build that fails past it. A rule checked by reading lasts until
+the next report.
+
+**And trimming must never cost the epistemic label.** The one scenario among sixteen
+measured conclusions has to stay visibly a scenario however short it gets: a reader who
+takes a modelled figure as something that happened has been misled, which is worse than
+any sentence cut to make room.
+
 ### Three years is a trend HERE, and that is not a general claim
 
 The default instinct — "three years is too short to plot" — is wrong in this town, and
@@ -771,6 +810,39 @@ Sustaining an overage needs roughly 9,600 rows read every second for a month. Cl
 publishes no hard spending cap, so the protection is the cache and the query limits rather
 than a budget setting.
 
+## Several agents in one working tree
+
+Four agents worked this repo at once on 9 September 2026 and every problem that caused was
+a SHARED RESOURCE nobody had declared. None was a coding mistake; each was two correct
+processes wanting the same thing.
+
+**`check_generated.py` runs 8 checks at once, so run it ONCE, at the end.** It was a serial
+loop taking 28 minutes -- long enough that nobody ran it before committing, which is the
+only moment it earns anything -- and it is now 3.5 minutes. But four agents each running it
+mid-work put 32 Python processes on the machine and took the load average past 11. The old
+version was slow enough that concurrent runs queued politely; the fast one does not. So:
+verify at the end of a task, not as you go, and if several agents are working, one of them
+runs it for everybody. `--serial` exists for debugging a single check.
+
+**The site build is not parallel-safe and cannot be made safe by asking.** `npm run
+build:site` spawns Chrome on a fixed port 8794 and writes a shared `dist/`. Briefing each
+agent to "check before building" does not work, because check-then-build races: three
+agents check at the same moment, all see the port free, and two die with `EADDRINUSE` or a
+half-written `dist/`. One of those failures arrived as exit 137 and was reported as an
+out-of-memory kill, which sent me looking in the wrong place entirely. **Have one agent
+build, at the end, or take a real lock.**
+
+**`git checkout <file>` destroys another agent's uncommitted work.** It cost five
+`money-gaps.csv` rows written by two other agents, and only three were recoverable from a
+grep somebody happened to have taken. The owning agents rewrote theirs from their own
+findings, which is the right repair -- reconstructing another agent's row from its title
+would be inventing content and calling it recovery. The same family as the standing rule
+against `git stash`: **never discard working-tree state you did not create.**
+
+**A generated file with several authors gets clobbered, not merged.** `money-gaps.csv` was
+rewritten whole twice in one day, once with the line endings changed. Append, re-read
+immediately before writing, and preserve the file's existing newline convention.
+
 ## Running the checks
 
     python3 scripts/check_generated.py      # EVERY generator still reproduces its output
@@ -789,6 +861,9 @@ than a budget setting.
     python3 scripts/classify_document_basis.py   # what produced each document's figures
     python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source
     python3 scripts/verify_athletics.py          # every figure in the athletics analysis
+    python3 scripts/verify_if_students_leave.py   # the both-directions record on /if-students-leave,
+                                                 #   recomputed from the database against a payload
+                                                 #   built from DESE's workbooks
     python3 scripts/verify_free_cash_capital.py  # the capital section of the free cash analysis
     python3 scripts/build_show_your_work.py       # regenerate the method document
     python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
