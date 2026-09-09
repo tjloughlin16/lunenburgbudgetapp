@@ -5,17 +5,25 @@ deployed unless it says otherwise.
 
 ## Running when this was written
 
-- **The D1 push was attempted and FAILED ON AUTHORISATION, not on quota.**
-  `code: 7403 — the given account is not valid or is not authorized to access this
-  service`. It failed BEFORE writing anything, so nothing is in a half-state and the live
-  `/api/query` still answers normally (checked: 276ms, correct row count).
+- **D1 IS PUSHED AND CURRENT.** 99 tables, 117,775 rows, verified by `sync_d1.py --check`
+  and by querying the new tables live. Every DESE table and `stated_cuts` are now
+  answerable through `/api/query`.
 
-  **This changes the problem.** We have spent a day managing a quota worry —
-  117,775 rows against a 100,000/day free-tier allowance — and have never got far enough
-  to discover whether it binds. The API token wrangler is using has either expired, lost
-  its D1 permission, or points at the wrong account. **Fix the credentials first, then
-  find out whether the quota is real.** Do not buy a plan on the strength of an error
-  that turned out to be an auth failure.
+  **Two things this settled, after a day of guessing at both:**
+
+  The failure was never the quota. It was a stale wrangler OAuth token that had lost its
+  `d1 (write)` scope and come back with `account (read)` alone — `code 7403`, which reads
+  like an account problem and is a credential refresh. `npx wrangler login` fixed it.
+  **When D1 refuses, check `npx wrangler whoami` for the scope list before assuming
+  anything about limits.**
+
+  And the quota does not bind the way this script's own warning says. It prints
+  "~235,550 writes with indexes — the free tier allows 100,000 a day" and then the import
+  succeeded in one pass at 117,902 statements. An import is not billed as rows x 2, so
+  that warning is pessimistic. Nobody should buy a plan on the strength of it. The
+  earlier exhaustion on 5 September was FOUR full re-imports in one day, which is a
+  different thing from one.
+
 - 18 tables are in the local database and not in the published one — every DESE table and
   `stated_cuts`. Until the push lands, querying them through the API returns
   `no such table`, including from the schema page's own modal.
