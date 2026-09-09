@@ -973,6 +973,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
     return emit('what-families-pay', [
         conclusion(
             id='what-a-family-actually-pays',
+                bearing='lever',
             claim='A year for two high schoolers, one sport each, riding the bus and joining a club',
             so_what='Athletic fees, the bus and student activity fees. Several other charges have no published amount.',
             lede='Two Lunenburg high schoolers, one sport each, riding the bus and '
@@ -1025,6 +1026,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
         ),
         conclusion(
             id='parents-is-not-one-group',
+                bearing='sizes',
             claim='A year for three children playing one sport each, at the full rate',
             so_what='Another family pays a fraction of that for the same children. Parents are not one group.',
             lede='The same %s children playing one sport each cost one Lunenburg family '

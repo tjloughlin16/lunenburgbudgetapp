@@ -95,9 +95,29 @@ import re
 
 KINDS = ('measured', 'hypothesis')
 
+# WHAT A READER CAN DO WITH IT, which is a different axis from whether it is true.
+#
+# TJ, after reading the synthesis: the conclusions "come off as 'interesting' but not clear
+# as to why they are 'important'". This is the distinction he was circling. `kind` says
+# whether we measured it or are guessing; `bearing` says whether anybody can act on it.
+#
+#   sizes   establishes how big something is, or how it got this way. Context. Most
+#           conclusions are this and that is fine -- you cannot act on a problem you have
+#           not sized.
+#   lever   points at something a body in this town can actually decide. A fee, a vote, a
+#           schedule, a request. It does NOT say what to decide: rule 8 is that this
+#           project names what can be pulled and what it costs somebody, never which to
+#           pull.
+#
+# Optional for now, so the 46 existing conclusions keep building while they are classified
+# one report at a time. The master report counts the unclassified out loud, so the gap is
+# visible rather than quiet.
+BEARINGS = ('sizes', 'lever')
+
 # The keys a conclusion has, in the order they are written. `figure` and `see` are
 # optional; everything else is required and empty is a failure, not a default.
-KEYS = ('id', 'claim', 'so_what', 'detail', 'figure', 'figures', 'kind', 'basis',
+KEYS = ('id', 'claim', 'so_what', 'detail', 'figure', 'figures', 'kind', 'bearing',
+        'basis',
         'not_shown', 'see', 'literals')
 
 # HOW LONG A CARD'S VISIBLE PROSE MAY BE, and where these two numbers come from.
@@ -165,7 +185,8 @@ def figure(value, text, unit=None):
 
 
 def conclusion(id, claim, detail, figures, kind, basis, not_shown, so_what,
-               figure=None, see=None, allow=(), no_figure=None, lede=None):
+               figure=None, see=None, allow=(), no_figure=None, lede=None,
+               bearing=None):
     """One conclusion, validated on the way in.
 
     `figure` names the entry in `figures` to set large above the claim, where the finding
@@ -181,6 +202,11 @@ def conclusion(id, claim, detail, figures, kind, basis, not_shown, so_what,
     """
     if not ID_RE.match(id or ''):
         raise ConclusionError('conclusion id %r is not a slug' % (id,))
+    if bearing is not None and bearing not in BEARINGS:
+        raise ConclusionError(
+            '%s: bearing=%r is not one of %s. `sizes` establishes how big something is; '
+            '`lever` points at something a body in this town can actually decide.'
+            % (id, bearing, BEARINGS))
     if kind not in KINDS:
         raise ConclusionError('%s: kind must be one of %s, not %r' % (id, KINDS, kind))
     # `lede` is the long sentence a conclusion used to LEAD with, before the card was cut
@@ -239,7 +265,7 @@ def conclusion(id, claim, detail, figures, kind, basis, not_shown, so_what,
                 % (id, figure, head['text']))
 
     row = dict(id=id, claim=claim.strip(), so_what=so_what.strip(), detail=detail.strip(),
-               figures=figures, kind=kind, basis=basis.strip(),
+               figures=figures, kind=kind, bearing=bearing, basis=basis.strip(),
                not_shown=not_shown.strip(),
                see=[dict(slug=s, label=l) for s, l in (see or [])])
     if figure is not None:

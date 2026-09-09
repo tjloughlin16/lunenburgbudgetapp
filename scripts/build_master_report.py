@@ -125,6 +125,17 @@ def build():
 
     rows, headlines, holes = [], [], []
     measured = hypothesis = 0
+    # WHAT A READER CAN DO WITH EACH ONE, counted out loud.
+    #
+    # TJ's complaint about this page was that the conclusions "come off as 'interesting'
+    # but not clear as to why they are 'important'". `bearing` is that distinction --
+    # `sizes` establishes how big something is or how it got this way, `lever` points at
+    # something a body in this town can actually decide.
+    #
+    # UNCLASSIFIED IS COUNTED AND NAMED rather than defaulted to either. A conclusion
+    # nobody has judged is not the same as one judged to be context, and quietly filing it
+    # as context would hide exactly the thing this field exists to surface.
+    bearing_counts = {'sizes': 0, 'lever': 0, 'unclassified': 0}
     for rep in reports:
         if rep['id'] == SELF or rep['id'] in NOT_A_REPORT:
             continue
@@ -135,6 +146,7 @@ def build():
                 hypothesis += 1
             else:
                 measured += 1
+            bearing_counts[c.get('bearing') or 'unclassified'] += 1
         row = {
             'id': rep['id'], 'title': rep['title'], 'url': rep['url'],
             'about': rep['about'], 'generator': rep['generator'],
@@ -200,6 +212,7 @@ def build():
             'without_conclusions': len(holes),
             'conclusions': measured + hypothesis,
             'measured': measured,
+            'bearing': bearing_counts,
             'hypothesis': hypothesis,
             'documents': len(docs),
             'document_words': sum(d['words'] for d in docs),

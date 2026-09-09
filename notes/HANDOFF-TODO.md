@@ -110,3 +110,52 @@ document rather than about the figure.
 - **`tsc -b` is not a syntax check.** It reads an incremental cache and passed a file Vite
   could not parse. For anything hand-edited, parse it with `@babel/parser` (jsx +
   typescript plugins), which is what Vite actually uses.
+
+## Next session, first thing: classify the remaining 48 conclusions
+
+`bearing` is now in the conclusion contract (`scripts/conclusions.py`), validated,
+published and counted on the synthesis page. Two values:
+
+- **`sizes`** — establishes how big something is, or how it got this way. Context. MOST
+  conclusions are this and that is correct; you cannot act on a problem nobody has sized.
+- **`lever`** — points at something a body in this town can actually decide. A fee, a
+  vote, a schedule, a request.
+
+**1 lever, 1 sizes, 48 unclassified** as of this commit. The count is published, so the
+gap is visible rather than quiet, and nothing defaults — an unjudged conclusion is not the
+same as one judged to be context.
+
+**Rule 8 holds:** name what can be pulled and what it costs somebody. Never say which to
+pull. `lever` is not a recommendation.
+
+Candidate levers on a first read, to be argued rather than accepted: the fee schedules
+(`families`, `sportsmoney` — set by School Committee vote); health insurance plan design
+(`insurance` — `/bend-the-curve` already models 75/25 → 70/30); and the cut register
+(`cuts`), because FY2020 proved a published cut list is negotiable, three of eight
+withdrawn in four weeks.
+
+Likely `sizes`, not levers: Chapter 70 minimum aid and the rising state minimum — nobody
+in Lunenburg controls the Legislature's floor; the peer and outflow comparisons; the
+special education trio; staffing.
+
+Also owed on this page, from the same conversation: **render the eight-step "how Chapter 70
+actually works" walkthrough**, which is in `minimum-aid.json` as `how_it_works` and not yet
+on the page.
+
+## And a real defect a reader found
+
+**`/where-students-go-instead` does not count private schools and does not say so.** A
+reader asked why Cushing Academy is absent. It is absent because DESE's town-enrolment file
+covers PUBLIC districts only — every reason in it (school choice, charter, foster care,
+foreign exchange, tuitioned-in) is a public mechanism, and Massachusetts keeps no statewide
+register of private-school enrolment by town of residence.
+
+So 177 is a floor, not a total, and the page reads as though it were a total. Owed: a title
+and standfirst that say PUBLIC, and a gap row naming what would close it — the district's
+own October 1 resident census, or the town census, either of which counts resident children
+regardless of where they enrol.
+
+**It matters in the opposite direction from the rest of that page.** A student at a private
+school costs the town no tuition and no assessment, and barely moves Chapter 70. Private
+departures are close to free for the budget — the one group whose leaving does not cost
+money — and the page cannot count them.
