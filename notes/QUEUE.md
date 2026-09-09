@@ -458,6 +458,38 @@ breaker reimburses; and the route into out-of-district placement.
 
 **Keep them apart.** Merging them into one narrative is how a proxy becomes a fact.
 
+## Foundation budget vs actual BY CATEGORY — cannot be done, and why
+
+Attempted 8 September 2026 and stopped at the data. **We hold the foundation budget as a
+single figure and never as its parts.** `dese-ch70-foundation-nss.xlsx` gives required NSS,
+actual NSS and the foundation budget per district per year; `dese-ch70-key-factors.xlsx`
+gives the aid calculation. Neither decomposes the foundation budget into the eleven
+categories the state builds it from. Registered as a gap with its closing document: DESE's
+foundation budget detail workbook, published annually beside the aid figures we already
+hold. **Fetch it and this becomes possible; nothing else is missing.**
+
+**What must not be done in the meantime:** dividing our foundation total by DESE's
+statewide category shares to estimate Lunenburg's. That yields a number for every category
+and establishes nothing, because those shares are precisely what the comparison exists to
+test.
+
+### But the workbook we DO hold carries a series nobody has used
+
+`dese-ch70-foundation-nss.xlsx`, Lunenburg, **SY2008-SY2022**: actual net school spending
+as a share of required, rising 1.13 -> 1.30, and as a share of the foundation budget,
+1.14 -> 1.30.
+
+**This is ACTUAL and the figure on `/why-we-only-get-minimum-aid` is BUDGETED.** That page
+reports 1.2004 for FY2026 from `dese_ch70_statewide`, whose `basis` column says
+`stage: budgeted`. Rule 1: these are two stages of the same quantity and must never be
+differenced. Both are DESE's, both are real, and the interesting thing is that they can be
+placed side by side and labelled — not subtracted.
+
+The obvious page here is *what the town budgets against what it ends up spending, at the
+one measure the state actually enforces*. It needs the stage handled explicitly in the
+generator, and the series stops at SY2022 so the recent years come from the other table
+and must stay visually separate.
+
 ## 11. What else — candidates worth testing
 
 - **Lunenburg is 310th of 318 districts on per-pupil spending**, $18,027 against a $23,520
