@@ -113,6 +113,71 @@ CELLS = {
 # formula works this way" from "our reading of the numbers suggests". Checked against the
 # workbook is not possible without openpyxl at build time, so they are checked against the
 # extractor's own recorded text instead -- see `definitions_hold()`.
+# HOW IT ACTUALLY WORKS, in the order it finally made sense to somebody.
+#
+# TJ, after a long back-and-forth on 9 September: "we absolutely need to document this and
+# explain it this way without the jargon. this is very clear and the first time i truly get
+# it!" What follows is that explanation. It took an hour of questions to reach, and the
+# ORDER is why it lands — every step answers the question the previous one raises.
+#
+# The thing that unlocked it was not a figure. It was that Chapter 70 is NOT recalculated
+# from your students each year. It is last year's aid plus an increment, and the increment
+# can be zero. Every confusing thing about Lunenburg's aid follows from that one fact.
+#
+# Each step below is checked against DESE's own definitions in DEFINITIONS, and against the
+# arithmetic this generator already reproduces from the workbook.
+HOW_IT_WORKS = [
+    dict(step='The state prices your students',
+         plain='Massachusetts sets a rate for each pupil, by grade and by category — a '
+               'vocational pupil is priced higher than a primary one. Multiply through and '
+               'you get the FOUNDATION BUDGET: the state’s own estimate of what educating '
+               'this town’s children ought to cost.',
+         watch='It is a calculation, not money anybody sends. Nobody ever receives the '
+               'foundation budget.'),
+    dict(step='The state decides what the town can afford',
+         plain='From the town’s property values and its residents’ income — not from how '
+               'many children it has — the state sets the REQUIRED LOCAL CONTRIBUTION: the '
+               'minimum the town itself must put in.',
+         watch='Enrolment is not in this step at all. Lose pupils and this number does not '
+               'move.'),
+    dict(step='The gap between them is what aid is FOR',
+         plain='Foundation budget minus required contribution is what the state calls '
+               'foundation aid — the amount a district needs to reach the budget the state '
+               'says it should have.',
+         watch='This is the step everybody assumes is the whole formula. It is not.'),
+    dict(step='But aid is last year’s aid plus an increase — never a fresh calculation',
+         plain='DESE’s own rule: “If foundation aid is greater than prior year Chapter 70 '
+               'aid, the district receives a foundation aid increase.” Only GREATER. If the '
+               'formula’s figure is below what the town already receives, it adds nothing '
+               'and the town keeps what it had.',
+         watch='This is the whole thing. The formula is a floor test, not a recalculation.'),
+    dict(step='Lunenburg is above that line, so the formula pays nothing',
+         plain='The town already receives more than the formula says it needs. So the '
+               'elaborate machinery of steps 1 to 3 runs every year and produces zero.',
+         watch='It has produced zero since before FY2022.'),
+    dict(step='What is left is a flat amount the Legislature picks',
+         plain='MINIMUM AID: “Guarantees a minimum per pupil increase in aid over the prior '
+               'year… Not available in every year.” It is the same rate for every district '
+               'on the floor — $150 a pupil in FY2026, $30 in FY2022, nothing at all in '
+               'FY2023.',
+         watch='This is an INCREASE per pupil, not the aid per pupil. The aid itself is '
+               'about $5,757 a pupil.'),
+    dict(step='So losing a student costs the town almost no aid',
+         plain='One fewer pupil drops the foundation budget by about $13,770 — but that '
+               'only changes a number in step 3, which was producing nothing anyway. The '
+               'required contribution does not move, because it comes from wealth. The only '
+               'part that responds is the flat per-pupil increase. About $150.',
+         watch='The real cost of a departing choice student is the roughly $5,000 tuition '
+               'the town pays the receiving district. Aid is the small half.'),
+    dict(step='And nothing in the formula takes aid away for losing students',
+         plain='Two rules can reduce Chapter 70 aid. One is a legislated across-the-board '
+               'percentage cut — that is what happened in FY2010 and FY2011, during the '
+               'recession, to everybody. The other applies only to NON-OPERATING districts, '
+               'which run no schools of their own. Lunenburg runs schools.',
+         watch='So: fewer students does not mean less aid. It means no increase. Those are '
+               'different, and the difference is most of this page.'),
+]
+
 DEFINITIONS = [
     dict(cell='User Guide!B17', term='Required Local Contribution (RLC)',
          text="The minimum equitable level of local funding needed to support a "
@@ -138,6 +203,22 @@ DEFINITIONS = [
          text='Guarantees a minimum per pupil increase in aid over the prior year '
               '(typically $30 per pupil), if all other available aid components do not '
               'equal that amount.  Not available in every year.'),
+    # THE TWO RULES THAT CAN REDUCE AID, and neither is enrolment for a district that
+    # runs schools. Added 9 September after TJ asked what happens if the town loses half
+    # its students and the honest answer was that nothing on this page established it.
+    # These two definitions settle it: a reduction is either a legislated across-the-board
+    # percentage cut, or a rule that applies only to NON-OPERATING districts.
+    dict(cell='User Guide!B41', term='Chapter 70 Aid Reduction',
+         text='Decreases aid by a fixed percentage. In the years when this was done, aid '
+              'was added back to ensure that districts had resources equal to their '
+              'foundation budgets. In some years, aid was supplanted with federal funds.'),
+    dict(cell='User Guide!B42', term='Non-Op Reduction in Aid',
+         text='Non-operating districts do not operate local schools, but sometimes '
+              'receive aid because they tuition small numbers of pupils to other '
+              'districts. In a few cases where the number of pupils has decreased, their '
+              'current year’s aid actually exceeds their foundation budget for those '
+              'pupils. This provision reduces aid to the level of the district’s '
+              'foundation budget.'),
     dict(cell='User Guide!B45', term='Required Net School Spending',
          text='Local Contribution + State Aid = a district’s Net School Spending '
               '(NSS) requirement. This is the minimum amount that a district must spend '
@@ -1049,6 +1130,7 @@ def build():
                          'the projection uses.',
         'source': document(),
         'definitions': DEFINITIONS,
+        'how_it_works': HOW_IT_WORKS,
         'fy_first': first, 'fy_last': last, 'years': len(years),
         'headline': headline,
         'why_zero': why_zero,
