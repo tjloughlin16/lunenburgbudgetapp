@@ -19,6 +19,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'sportsmoney'
   | 'stateaid'
   | 'stopped'
+  | 'cuts'
   | 'leaving'
   | 'families'
   | 'unwind'
@@ -143,6 +144,12 @@ export const SLUG: Record<Tab, string> = {
   // page is careful not to draw: a line ending is not a service ending. NOT `zeros` or
   // `zeroed`, which name our instrument instead of the reader's question.
   stopped: 'what-stopped-being-funded',
+  // The register of what the district SAID it was cutting, cycle by cycle, and what an
+  // independent series shows afterwards. `cut-register` rather than `cuts`: the page is
+  // not a list of cuts that happened, and an address should not promise the stronger
+  // claim -- the same reasoning that keeps /what-stopped-being-funded off `cuts`. The
+  // aliases below are what somebody actually types looking for this.
+  cuts: 'cut-register',
   // What school choice would cost the town if students transferred out. The slug is the
   // sentence a resident says -- "if students leave" -- rather than `school-choice`, which
   // names a programme and would promise the whole of it, including the seats Lunenburg
@@ -339,6 +346,10 @@ const ALIASES: Record<string, Tab> = {
   // line going to zero in a document. The two are not the same claim, and the address
   // should not promise the stronger one. `defunded` and `zeroed-out` are what people
   // type looking for it, so both land here.
+  // NOT 'cuts' bare -- see the slug note. These are the phrasings a resident types.
+  'cut-register': 'cuts', 'the-cut-register': 'cuts', 'announced-cuts': 'cuts',
+  'what-was-cut': 'cuts', 'did-the-cuts-happen': 'cuts', 'reduction-lists': 'cuts',
+  'personnel-cuts': 'cuts', 'staff-cuts': 'cuts',
   'what-stopped-being-funded': 'stopped', 'stopped-being-funded': 'stopped',
   defunded: 'stopped', 'zeroed-out': 'stopped', 'what-stopped': 'stopped',
   'lines-that-stopped': 'stopped',
@@ -449,6 +460,7 @@ export const LABEL: Record<Tab, string> = {
   sportsmoney: 'What sports cost, and who pays',
   stateaid: 'State aid — the part nobody here votes on',
   stopped: 'What stopped being funded',
+  cuts: 'The cut register — what was announced, and what shows',
   leaving: 'If students leave — what school choice would cost',
   families: 'What a family actually pays',
   unwind: 'When a grant ends — who picks up the bill',
@@ -485,6 +497,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   askus: 'themoney',
   stateaid: 'themoney',
   stopped: 'themoney',
+  cuts: 'themoney',
   leaving: 'themoney',
   families: 'themoney',
   unwind: 'themoney',
@@ -609,6 +622,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   // accounts of where money originates, and filing them by subject was what produced a
   // thirteen-tab strip in the first place.
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
+  cuts: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
@@ -655,7 +669,11 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // not a filing need, and the one page that answers a question rather than listing
   // pages should be the one they meet -- rule 7a applied to a nav bar. /reports stays
   // second because it is the area's home and every report is reachable from it.
-  analyses: ['addsup', 'reports', 'sped', 'peers', 'required', 'minaid', 'staffing', 'stopped',
+  // `cuts` sits beside `staffing` and `stopped` on purpose: the three are the same
+  // question asked of three records -- who is employed, which lines ended, and what the
+  // district said it was removing -- and a reader who opens one wants the other two.
+  analyses: ['addsup', 'reports', 'sped', 'peers', 'required', 'minaid', 'staffing', 'cuts',
+             'stopped',
              'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
              'insurance', 'variance'],
   data: ['database', 'rates'],

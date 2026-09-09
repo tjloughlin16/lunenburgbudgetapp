@@ -29,6 +29,7 @@ import { BudgetVsActual } from './pages/BudgetVsActual'
 import { SchoolStaffing } from './pages/SchoolStaffing'
 import { HealthInsurance } from './pages/HealthInsurance'
 import { StoppedFunding } from './pages/StoppedFunding'
+import { CutRegister } from './pages/CutRegister'
 import { GrantUnwinding } from './pages/GrantUnwinding'
 import { MinimumAid } from './pages/MinimumAid'
 import { MontyTech } from './pages/MontyTech'
@@ -417,6 +418,7 @@ export default function App() {
       {tab === 'leaving' && <IfStudentsLeave />}
       {tab === 'families' && <WhatFamiliesPay />}
       {tab === 'stopped' && <StoppedFunding />}
+      {tab === 'cuts' && <CutRegister />}
       {tab === 'unwind' && <GrantUnwinding />}
       {tab === 'minaid' && <MinimumAid />}
       {tab === 'peers' && <PeerSpending />}

@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**248 of 476 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**248 of 535 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **228 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **287 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -65,7 +65,9 @@ Listed so this view cannot look more complete than it is.
 - `analyses/connecting-the-budget.md` — What connects the school budget to the Town’s books, and what does not
 - `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
+- `analyses/monty-tech.md` — The Monty Tech assessment — the school bill nobody in Lunenburg votes on
 - `analyses/peer-districts.md` — What other districts did
+- `analyses/per-pupil-spending.md` — What Lunenburg spends for each pupil, and what that number hides
 - `analyses/questions.md` — A hundred questions this archive can answer, each with the query
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
 - `analyses/sped-and-funds.md` — Special education and the funds outside the budget
@@ -89,6 +91,7 @@ Listed so this view cannot look more complete than it is.
 - `data/PROVENANCE-special-revenue-funds.md` — Where the special revenue funds came from
 - `data/PROVENANCE-special-revenue-read.md` — Why the schedule is read rather than OCR’d
 - `data/PROVENANCE-staff-rosters.md` — Where the staff rosters came from, and what a name is not
+- `data/PROVENANCE-youtube-classification.md` — What the video classification is, and what it is not
 - `data/account-names.csv` — What the ledger’s account codes mean — our readings
 - `data/annual-report-catalogue.csv` — Every table in every annual report, catalogued
 - `data/annual-report-contents.csv` — What each report contains, section by section
@@ -106,7 +109,25 @@ Listed so this view cannot look more complete than it is.
 - `data/column-glossary.csv` — What each column name means, across every table
 - `data/copy-status.csv` — Whether the publisher’s copy is still our copy
 - `data/dataset-provenance.csv` — Every dataset row joined to the document it came from
+- `data/dese-ch70-aid-factor.csv` — How the Chapter 70 aid figure is built, FY2007 on
+- `data/dese-ch70-contribution.csv` — The municipal half of the Chapter 70 formula, FY2007 on
+- `data/dese-ch70-formula.csv` — The Chapter 70 formula, term by term, FY1993–FY2026
+- `data/dese-ch70-statewide.csv` — Where Lunenburg sits among every Massachusetts district on state aid
+- `data/dese-circuit-breaker.csv` — High-cost special education reimbursement, FY2006–FY2026
+- `data/dese-educator-workforce.csv` — Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023
+- `data/dese-enrollment.csv` — Enrollment by grade and selected population, SY1992–SY2026
+- `data/dese-function-expenditure.csv` — DESE spending by function code, general fund against grants, FY2009–FY2025
+- `data/dese-function-statewide.csv` — Where Lunenburg sits among every Massachusetts district, per function, FY2009–FY2025
 - `data/dese-radar.csv` — DESE’s own figures, every district, FY2009–FY2025
+- `data/dese-source-registry.csv` — Every DESE dataset this project reads, and how to refresh it
+- `data/dese-sped-indicator.csv` — Special education indicators and staffing ratios, SY2017–SY2026
+- `data/dese-sped-movement.csv` — Children entering and leaving special education services, SY2019–SY2025
+- `data/dese-sped-program.csv` — What the students with disabilities are, SY2020–SY2026
+- `data/dese-sped-trajectory.csv` — Where a placement starts and where it leads, SY2018–SY2026
+- `data/dese-teacher-grade-subject.csv` — Teacher FTE by grade band AND subject AND school, SY2008–SY2026
+- `data/dese-teacher-program-area.csv` — Teacher FTE by program area, SY2008–SY2026
+- `data/dese-teacher-subject.csv` — Teacher FTE by subject, with licensure and class ratios, SY2008–SY2026
+- `data/dese-town-enrollment.csv` — Where every town’s children actually go to school, SY2014–SY2026
 - `data/document-basis.csv` — What produced each document’s figures
 - `data/enterprise-balance-sheet-printed-totals.csv` — The TOTAL rows and the PROOF row each enterprise sheet prints
 - `data/enterprise-balance-sheet.csv` — The enterprise-funds balance sheet, read from the page
@@ -119,6 +140,12 @@ Listed so this view cannot look more complete than it is.
 - `data/link-status.csv` — Whether each source document is still public
 - `data/lps-budget-lines.csv` — Budget lines, tidy CSV
 - `data/lunenburg.db` — The whole analysis database, SQLite
+- `data/meeting-register.csv` — Every meeting, and what survives of it
+- `data/meeting-watch-events.csv` — What appeared on the town’s site between one crawl and the next
+- `data/meeting-watch-runs.csv` — When we looked, how much answered, and what was new
+- `data/meeting-watch-state.csv` — Every agenda and set of minutes the town has listed, and when we first saw it
+- `data/minutes-coverage.csv` — Minutes posted against agendas posted, by board and year
+- `data/minutes-searchable.csv` — How much of the meeting archive a search can actually read
 - `data/money-assumptions.csv` — Every assumption still holding the money model up
 - `data/money-classification.csv` — What every revenue account, fund and department IS
 - `data/money-edges.csv` — Which source of money pays which use, and whether that can be shown
@@ -136,9 +163,9 @@ Listed so this view cannot look more complete than it is.
 - `data/report-debt.csv` — Debt outstanding, issued and retired
 - `data/report-dept-activity.csv` — What each department reports doing
 - `data/report-elections.csv` — The vote, by candidate and precinct
-- `data/report-enrollment-mcas.csv` — Enrolment and MCAS results
+- `data/report-enrollment-mcas.csv` — Enrollment and MCAS results
 - `data/report-gross-wages.csv` — Gross wages paid, by employee
-- `data/report-monty-tech.csv` — Montachusett Regional assessment and enrolment
+- `data/report-monty-tech.csv` — Montachusett Regional assessment and enrollment
 - `data/report-officials.csv` — Who held which town office
 - `data/report-trust-funds.csv` — Trust and stabilisation funds
 - `data/report-valuation.csv` — Valuation and tax rate history
@@ -153,11 +180,19 @@ Listed so this view cannot look more complete than it is.
 - `data/staff-position-map.csv` — Roster position titles, grouped
 - `data/staff-roster-counts.csv` — Roster headcount by school and year
 - `data/staff-roster-entries.csv` — Every name the town printed on a school staff roster, FY2011–FY2025
+- `data/stated-cuts.csv` — Every reduction and restoration the district named in writing, FY2020–FY2027
 - `data/stated-figures.csv` — Figures the town stated about itself, with the quote
 - `data/table-semantics.csv` — What each table in the database is
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
 - `data/total-salaries-history.csv` — District total salaries, budget and actual by year
 - `data/variance-by-group.csv` — Budget against actual, every group and year
+- `data/youtube-boards.csv` — The bodies we named, and why we say two names are one board
+- `data/youtube-classification-overrides.csv` — Human corrections to the video classification
+- `data/youtube-title-classification.csv` — What each video title says the video IS
+- `data/youtube-transcript-index.csv` — Which meeting recordings we hold a transcript for
+- `data/youtube-video-boards.csv` — One row per (video, board) pair
+- `data/youtube-video-classification.csv` — One row per video, with what we think it is
+- `data/youtube-videos.csv` — Every video on the town’s PEG access channel
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
@@ -175,8 +210,29 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — School Committee deck, 23 March 2026
 - `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — Slide Deck from the SC Meeting 3/23/26
 - `district-budget/docs/superintendent-s-budget-recommendations.docx` — Superintendent’s Budget Recommendations
+- `peer-districts/montytech-class-of-2030-lottery.pdf` — Montachusett Regional admissions lottery, class of 2030
+- `state-dese/dese-ch70-district-profile.xlsx` — Chapter 70 District Profile
+- `state-dese/dese-ch70-foundation-nss.xlsx` — Chapter 70 Foundation Budget and Net School Spending
+- `state-dese/dese-ch70-key-factors.xlsx` — Chapter 70 Key Factors
+- `state-dese/dese-circuit-breaker.xlsx` — Special Education Circuit Breaker Reimbursements
+- `state-dese/dese-educators-retention.xlsx` — Total Educators, Retention, and New Hires
+- `state-dese/dese-enrollment-by-grade.xlsx` — Enrollment: Grade, Race/Ethnicity, Gender, and Selected Populations
+- `state-dese/dese-enrollment-receiving.xlsx` — Reasons for Student Enrollment by Town (Receiving)
+- `state-dese/dese-job-classification-codes.docx` — Job Classification Codes (evaluation)
+- `state-dese/dese-residents-sending.xlsx` — Where Residents Go to School (Sending)
+- `state-dese/dese-sped-indicators.xlsx` — Special Education Indicators
+- `state-dese/dese-sped-movement.xlsx` — Students Moving In and Out of Special Education Services
+- `state-dese/dese-sped-placement-trajectory.xlsx` — Special Education Placement Trajectory
+- `state-dese/dese-sped-program-characteristics.xlsx` — Special Education Program Characteristics and Student Demographics
+- `state-dese/dese-teacher-data.xlsx` — Elementary and Secondary Teacher Data
+- `state-dese/dese-teachers-by-grade-subject.xlsx` — Elementary and Secondary Teachers by Grade and Subject
+- `state-dese/dese-teachers-by-program-area.xlsx` — Elementary and Secondary Teachers by Program Area
+- `state-dese/district-expenditures-by-function.xlsx` — DESE district expenditures by function code, SY2009-SY2025 — general fund and grants/revolving as separate columns, every Massachusetts district
+- `state-dese/district-expenditures-by-spending-category.xlsx` — DESE district expenditures by spending category, SY2009-SY2025 — the RADAR measures for every district; supersedes the seven-district workbook
+- `state-dese/epims-datahandbook.docx` — EPIMS Data Handbook
 - `state-dese/lunenburg-finance-profile.html` — DESE school and district profiles — Lunenburg per pupil expenditures, all funds
 - `state-dese/radar-district-comparison.xlsx` — DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025
+- `state-dese/school-expenditures-by-spending-category.xlsx` — DESE school expenditures by spending category, SY2009-SY2025 — per-school rather than per-district
 - `state-dese/selected-populations-2019.html` — DESE selected populations, state report, FY2019
 - `state-dese/selected-populations-2020.html` — DESE selected populations, state report, FY2020
 - `state-dese/selected-populations-2021.html` — DESE selected populations, state report, FY2021
@@ -186,6 +242,9 @@ Listed so this view cannot look more complete than it is.
 - `state-dese/selected-populations-2025.html` — DESE selected populations, state report, FY2025
 - `state-dese/selected-populations-2026.html` — DESE selected populations, state report, FY2026
 - `state-dese/selected-populations.csv` — Lunenburg selected populations, all years (CSV)
+- `state-dese/sims-datahandbook-current.docx` — SIMS Data Handbook (current)
+- `state-dese/sims-datahandbook_2021.docx` — SIMS Data Handbook 2021
+- `state-dese/sims-datahandbook_2022.docx` — SIMS Data Handbook 2022
 - `state-dls/PROVENANCE.md` — Where these came from, and what they cannot do
 - `state-dls/free-cash-proof-ayer.xlsx` — Ayer
 - `state-dls/free-cash-proof-groton.xlsx` — Groton

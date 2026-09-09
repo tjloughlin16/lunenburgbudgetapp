@@ -185,3 +185,33 @@ It is not an editing pass for tone. Three of the six tests are about **what the 
 omits**, and omissions are what a writer cannot see in their own work. It is also not a
 substitute for the verifier: one checks that the figures are right, this checks that the
 right figures are there.
+
+---
+
+## Reviews run
+
+One line per report, with what the review CHANGED. A review that changed nothing is
+recorded as that, because it is a claim worth being able to disbelieve.
+
+### `/cut-register` — the cut register, 9 September 2026
+
+Six readers, six tests, plus the omission step. Five of the six failed on the first pass
+and the page was changed rather than the note.
+
+| reader | what failed | what changed |
+|---|---|---|
+| 1 · the resident who has decided | the credit was missing entirely: the page rested on lists nobody obliges a district to publish and never said so | a paragraph at the top, at the same weight as the caveat, saying the district prints its own stated consequence on 49 of these rows and that no row is about a person |
+| 2 · the second-hand reader | **the title was the failure.** "158 cuts announced — and the 6 a state series can see" repeats at a kitchen table as *only six of them happened*, which is false | the title now says what the record can and cannot say, and the standfirst leads with the true version: for 48 of the 60 adopted cuts old enough to check, nobody can tell |
+| 3 · close to the boards | a named retirement sits beside a cut, which can read as an accusation about a person | left in — it is a public thank-you in public minutes and it is the alternative reading that PROTECTS the district's account — with "no row here is about a person" stated at the top |
+| 4 · Finance Committee | the control question was not answered | a section, *What you would have had to see, and when*, naming the one document and the month it would have to arrive, and saying plainly that a ninth budget document would be a tenth claim rather than a first measurement |
+| 5 · School Committee | "did the cuts we voted actually happen?" was answerable only by reading to the bottom | answered in a box above the conclusions, leading with *this record cannot say, and neither can any other one that is published* |
+| 6 · Select Board | nothing said the register is school-side only, so it could be quoted as *the schools cut and the town did not* | a section saying the town publishes its own reduction lists in the warrant, that they are out of scope, and that nothing here supports a comparison |
+| the booster | passed | the June 2026 requests to restore middle school athletics and the 6th grade Jazz band were already on the page, against the FY27 cuts to both |
+
+Step 3 — the meeting archive searched for what people said about the categories the report
+names — produced the two restoration requests above, the May 2025 "significant number of
+staff being laid off", the January 2026 staffing dispute, and a world language
+teacher's retirement announced in the same month as the world language cut. All five are
+on the page. `scripts/verify_cut_register.py` re-reads every one of them verbatim and
+asserts the six phrases this review added, so a later edit that removes one fails the
+build rather than needing to be noticed.

@@ -1729,14 +1729,26 @@
      "textUrl": "/docs/data/report-anomalies.csv"
     },
     {
+     "path": "data/stated-cuts.csv",
+     "title": "Every reduction and restoration the district named in writing, FY2020–FY2027",
+     "stars": 2,
+     "what": "193 rows out of nine district budget documents across five budget cycles, each quoted at the page it is printed on. Rule 13a governs every row: a reduction list is a document somebody ASSEMBLED to argue for a budget, so `basis` is `stated` on all of them, and it is evidence of what the district intended rather than of what happened. Nothing in the `printed` column is our wording — it is read out of the extracted text and the extractor refuses to write if any of it stops being there. `direction` separates a reduction from a restoration; `conditional_on` records that in FY2025 the School Committee published TWO lists, one for each outcome of a ballot question. Loaded as `stated_cuts` and read by /cut-register, which sets DESE’s teacher counts beside it. See scripts/extract_stated_cuts.py.",
+     "kind": "Data",
+     "bytes": 108639,
+     "url": "/docs/data/stated-cuts.csv",
+     "count": 193,
+     "unit": "rows",
+     "textUrl": "/docs/data/stated-cuts.csv"
+    },
+    {
      "path": "data/money-gaps.csv",
      "title": "What the town’s records cannot answer",
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 86461,
+     "bytes": 88463,
      "url": "/docs/data/money-gaps.csv",
-     "count": 100,
+     "count": 103,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -1758,9 +1770,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 51661,
+     "bytes": 52726,
      "url": "/docs/data/table-semantics.csv",
-     "count": 98,
+     "count": 99,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -2185,7 +2197,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 30363648,
+     "bytes": 30494720,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -6573,9 +6585,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 534,
+  "documents": 535,
   "groups": 20,
-  "bytes": 1305828030,
+  "bytes": 1306070808,
   "loadBearing": 102
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

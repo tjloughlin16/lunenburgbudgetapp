@@ -79,7 +79,7 @@ ORDER = [
 CATEGORIES = [
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'staffing', 'sportsmoney', 'stopped', 'unwind', 'insurance',
+            'sped', 'staffing', 'cuts', 'sportsmoney', 'stopped', 'unwind', 'insurance',
             'athletics-ledger',
         ]),
         ('the students', [
@@ -231,6 +231,10 @@ ABOUT_PAGES = {
     'stopped':
         'Every time a school budget line went to a printed zero, and how many of them '
         'came back.',
+    'cuts':
+        'Every reduction the district named in its own budget documents, cycle by cycle, '
+        'quoted at its page — and, where a state series reaches it, whether the count '
+        'moved with it.',
     'funds':
         'The money the town holds and spends outside the budget Town Meeting votes — '
         'grants, revolving funds, gifts and the enterprise funds.',

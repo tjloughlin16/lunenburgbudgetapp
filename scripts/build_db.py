@@ -872,6 +872,13 @@ REFERENCE = [
     # `annual-report-receipts` carries a `status` column on every row: `reconciled` means
     # the year ties to its own printed GRAND TOTAL twice over, `partial` means it does not
     # and cannot. **Never aggregate across years without splitting on it.**
+    # Every reduction and restoration the district NAMED in one of its own budget
+    # documents, quoted at a page. Rule 13a: every row is `stated` — a document somebody
+    # assembled to argue for a budget — and none of it is evidence that a post was
+    # removed. `operative` on the report payload, not here, marks which list each cycle
+    # actually adopted. See scripts/extract_stated_cuts.py.
+    'stated-cuts',
+
     'placement-counts', 'ballot-questions', 'annual-report-receipts',
     'annual-report-catalogue', 'annual-report-contents', 'annual-report-survey',
     'staff-roster-entries', 'staff-roster-counts', 'report-anomalies',

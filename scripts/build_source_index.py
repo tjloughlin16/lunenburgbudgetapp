@@ -779,6 +779,21 @@ GROUPS = [
              'the document that would settle it. A row leaves this file when a document '
              'arrives, never because the assumption started to feel obvious. Loaded as '
              '`money_assumptions`.'),
+            ('data/stated-cuts.csv',
+             'Every reduction and restoration the district named in writing, '
+             'FY2020\u2013FY2027', 2,
+             '193 rows out of nine district budget documents across five budget cycles, '
+             'each quoted at the page it is printed on. Rule 13a governs every row: a '
+             'reduction list is a document somebody ASSEMBLED to argue for a budget, so '
+             '`basis` is `stated` on all of them, and it is evidence of what the district '
+             'intended rather than of what happened. Nothing in the `printed` column is '
+             'our wording \u2014 it is read out of the extracted text and the extractor '
+             'refuses to write if any of it stops being there. `direction` separates a '
+             'reduction from a restoration; `conditional_on` records that in FY2025 the '
+             'School Committee published TWO lists, one for each outcome of a ballot '
+             'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
+             'DESE\u2019s teacher counts beside it. '
+             'See scripts/extract_stated_cuts.py.'),
             ('data/money-gaps.csv',
              'What the town\u2019s records cannot answer', 2,
              'Money coming in that cannot be seen, spending that cannot be split, and the '

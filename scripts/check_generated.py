@@ -255,6 +255,27 @@ CHECKS = [
     # four `money_gaps` rows the page quotes BY KEY, since a limit whose wording has been
     # edited out from under it renders as an empty box.
     ('build_stopped_funding.py', ['--check']),
+    # The cut register, in two halves. The EXTRACTOR first: every `printed` and
+    # `consequence` string on /cut-register is read out of a district document at a named
+    # page, and this re-reads all of them on every run — a register whose quotations have
+    # drifted from the pages they cite is rule 13's exact failure, and slide decks extract
+    # differently when an extractor improves. It also asserts a row count for every one of
+    # the twelve blocks it parses, because a parser that matches nothing and a document
+    # with no cuts in it produce the same output.
+    ('extract_stated_cuts.py', ['--check']),
+    # Then the ANALYSIS. This entry catches six things a stale-file check would not,
+    # because the generator asserts the structure each conclusion rests on: that the
+    # FY2020 March list still names eight positions at a school and that the three the
+    # April list dropped are still absent from it; that the middle school foreign language
+    # FTE still falls and the high school's still does not, which is what makes the
+    # withdrawal case a case; that the district's restated `P.S. Librarian` line is still
+    # first funded in FY2020; that the FY2025 override statement still reconciles to its
+    # own sentence — 19 full-time posts cut, 10 retained, nine left — and that all nine
+    # still pair to the ESSER list; that the FY2026 world language cut is still visible
+    # and at least one FY2026 row still goes the other way, since the page publishes both
+    # on purpose. Plus the five meeting quotes, re-read verbatim, and the three
+    # money_gaps rows it cites BY KEY.
+    ('build_cut_register.py', ['--check']),
     # The grant-unwinding page's series -- DESE's split of every district dollar into the
     # general fund and grants/revolving. Four things fail here that nothing else would
     # catch. The year-on-year join, which must match functions: a join that matches
