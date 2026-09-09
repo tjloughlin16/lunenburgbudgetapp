@@ -294,6 +294,38 @@ link dying is a real exposure we are accepting knowingly rather than one we over
 and the index is what makes it recoverable, because it records the title, the date and the
 board even if the video goes.
 
+### BLOCKED UNTIL THURSDAY 10 SEPTEMBER 2026 — DO NOT TOUCH THE CAPTION ENDPOINT
+
+Ten test fetches on 8 September earned an `IpBlocked` from YouTube's caption endpoint, and
+a backfill runner then retried every 30 minutes for six hours and never got through.
+
+**The block is narrow and it is diagnosed.** Listing the channel works. Fetching a video's
+metadata works -- it can even see that automatic captions exist. Only the caption download
+is refused, from both `youtube-transcript-api` and `yt-dlp`, which is how we know it is the
+endpoint and not a library. So this is YouTube's anti-scraping on `timedtext`, not an
+account or network ban.
+
+**The retrying probably sustained it.** This kind of throttle commonly extends its timer on
+each refusal, so six hours of polling may have been six hours of resetting it. TJ's call:
+leave it completely alone and test ONCE on Thursday.
+
+    python3 - <<'PY'
+    from youtube_transcript_api import YouTubeTranscriptApi as Y
+    try: print('clear —', len(list(Y().fetch('J_kvfs3s0UE'))), 'segments')
+    except Exception as e: print('still blocked:', type(e).__name__)
+    PY
+
+If it is clear, run the backfill at its committed pacing and nothing faster. If it is still
+blocked, the options are a residential proxy (`youtube-transcript-api` supports one
+natively, a few dollars a month) or accepting that captions are not obtainable at scale.
+
+**Do NOT use `yt-dlp --cookies-from-browser`.** It works, and it authenticates as TJ --
+attaching automated scraping to his actual Google account. A caption backfill is not worth
+that risk.
+
+**Nothing else is blocked on this.** The video index is built and committed, and it already
+delivers the thing that mattered most: which 231 meetings have no other surviving record.
+
 ### What it needs
 
 One install (`yt-dlp` or `youtube-transcript-api`); neither is on the machine. **Neither is
