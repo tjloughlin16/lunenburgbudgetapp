@@ -977,3 +977,74 @@ every table named in Parts 4 and 7.
   that floor annually — it has been $30, $60, $104 and $150 in the four years it bound.
 - That the FY27 override failed *because* of any of this. The vote counts are not in the
   archive and no document here explains a result.
+
+---
+
+# TODO — the levers, and what each part of this site is FOR
+
+Added 9 September 2026, TJ's framing, recorded before it is lost:
+
+> "i think we also need to understand the 'levers' that can be pulled for each group. it
+> would be nice to see that on the final page/report. Its hard to tell what we can ACTION
+> with data. I feel like the crisis analysis page holds the real levers. but is there
+> anything else? Maybe the truth flow is: the crisis page is seriously everything we can
+> possibly do to change things, with justification as to the mathematical rate problems.
+> And the rest of the site is context for how we got here and what happens if we dont
+> change anything"
+
+## Why this is an architecture statement and not a feature request
+
+It assigns a JOB to each part of the site, and the site does not currently say which part
+is which:
+
+- **The crisis area is the ACTION.** Every lever anybody can actually pull, with the
+  arithmetic showing why the gap opens without them. `/what-would-fix-it`, `/bend-the-curve`,
+  `/build-your-own-budget`.
+- **Everything else is CONTEXT.** How the town arrived here, and what continues if nobody
+  acts. The reports establish the shape of the problem; they do not contain its solutions.
+
+A reader currently cannot tell that. Fourteen drill-in reports and a synthesis read as
+though they might contain an answer, and mostly they contain an explanation. Saying which
+is which is a kindness to somebody deciding where to spend an hour.
+
+## The open question, which is real research
+
+**Is the crisis page actually every lever?** Nobody has tested that. The work is to
+enumerate what a body can DO, from the record rather than from imagination, and check each
+against what the site already models. Candidates that are NOT obviously on the crisis page:
+
+- **The fee schedules** — athletics, transportation, activities. Real money, set by a
+  School Committee vote, and now measurable per household on `/what-families-pay`.
+- **The school choice seat vote.** The receiving district decides how many seats to open,
+  and Lunenburg's School Committee takes that vote annually — recorded 22 Jan 2025,
+  16 Apr 2025 and 4 Feb 2026. Inbound choice students bring tuition IN, and inbound has
+  fallen 71%. That is a lever nobody on this site has described as one.
+- **The required-contribution shortfall.** Lunenburg sits 8.29 points below its target
+  local share, a $2,278,929 gap closing at ~$275,365 a year. It closes whether anybody
+  votes or not, which makes it a lever in reverse: a rising floor.
+- **What the town does with free cash**, and whether it is certified before or after the
+  budget is built. FY27 was built against uncensored free cash.
+- **Grant replacement decisions.** When a grant ends the town chooses to absorb, cut, or
+  replace — `/when-grants-end` shows it did all three in FY2025 and nobody framed it as a
+  choice.
+- **The Monty Tech relationship.** A member town's assessment is set by a regional
+  agreement Lunenburg did not write and this archive does not hold. Whether that is a lever
+  at all is unknown, and a School Committee member raised "disentangling ourselves" in
+  public on 23 March 2026.
+
+## What to build
+
+1. **Per body, the levers it holds** — Town Manager, Select Board, Finance Committee,
+   School Committee. Each lever with: what it changes, roughly how much, when it must be
+   pulled in the calendar, and which report sizes it. Anything with no report sizing it is
+   a gap in the site, not in the town.
+2. **Say the job of each area on the site itself.** One line on the crisis door: these are
+   the things that can be done. One line on the analyses door: this is how it got this way
+   and what happens if nothing changes.
+3. **On The One Big Report**, mark each conclusion as SIZES A PROBLEM or POINTS AT A LEVER.
+   That is the distinction TJ has been asking for since he first said the conclusions read
+   as "interesting" rather than "important", and it is more useful than any reordering.
+
+**The honest caution.** Rule 8: this site helps a resident understand what would work and
+what each option costs somebody. A lever list must not become a recommendation list. Name
+what can be pulled and what it does; do not say which to pull.
