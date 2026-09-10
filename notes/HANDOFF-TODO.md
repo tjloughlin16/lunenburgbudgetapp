@@ -159,3 +159,45 @@ regardless of where they enrol.
 school costs the town no tuition and no assessment, and barely moves Chapter 70. Private
 departures are close to free for the budget — the one group whose leaving does not cost
 money — and the page cannot count them.
+
+## IEP counts by grade span — the data is there, the page does not use it
+
+Found 9 September, verified, not built.
+
+`dese_sped_program`, `indicator_category='Grade Span'`, `geo_level='district'`,
+`lea='01620000'` — six years, five bands, reconciling to the published total
+(`reconciles='yes'`, parts sum to `Total Students with Disabilities`):
+
+        fy    PK-2   3-5   6-8   9-12   >12   total
+      2021      87    59    51     56     8    261
+      2022      64    61    44     49     9    227
+      2023      66    54    63     45     6    234
+      2024      61    57    60     47     8    233
+      2025      70    47    68     51    12    248
+      2026      68    55    70     55    10    258
+
+**The total is flat and the distribution is not.** 261 → 258 overall, while PK–2 fell 19
+and Grades 6–8 rose 19. The same shape as the student flows and the staffing: a stable
+headline concealing a complete shift underneath. `/how-many-students-are-on-an-iep`
+publishes the total by year and none of this.
+
+**TWO READINGS FIT AND THIS DATA CANNOT SEPARATE THEM** — write it that way or not at all:
+
+- a cohort moving through. The 87 identified in PK–2 in FY2021 would reach Grades 3–5 by
+  FY2024 and middle school by FY2026, and 6–8 does rise 51 → 70 across exactly that window.
+- fewer young children being identified, which is a different fact with different
+  consequences for what the district should staff for.
+
+These are annual snapshots, not children followed through time. `dese_sped_trajectory` is
+cohort-shaped and may settle it; check before writing either sentence.
+
+**Why it is worth doing:** out-of-district placement clusters at the older end and costs
+most there. If the bulge is real and moving, the expensive years are ahead rather than
+behind — which is a forecastable thing on the one line the town most wants to forecast,
+and nobody has it.
+
+Also note `Special Education Beyond Grade 12` — 10 students in FY2026, post-secondary
+placements a district funds to age 22. Small count, typically the costliest placements,
+and never mentioned anywhere on the site.
+
+Grade SPAN, not individual grade. DESE publishes the five bands and no finer.
