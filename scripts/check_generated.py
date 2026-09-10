@@ -127,14 +127,20 @@ CHECKS = [
     # going stale: the published file, and the agreement between the database route and
     # the CSV route to the same figure.
     ('build_variance_charts.py', ['--check']),
-    # The school-staffing page's series. It reconciles two independent routes to the
+    # The staffing series -- THREE published payloads out of ONE build, because
+    # /school-staffing became /school-staffing, /who-works-in-each-school and
+    # /the-paraprofessionals and the data behind them is selected rather than recomputed.
+    # `--check` covers all three, and the generator refuses to write if a block, a
+    # conclusion, a caveat or a source document lands on no page -- a section silently
+    # dropped in a reorganisation reads to every reader as coverage.
+    # It also reconciles two independent routes to the
     # paraprofessional dollars -- summing five line keys out of `budget_figure`, and
     # `sped_para_history`'s own total column -- and REFUSES to write if they share no year,
     # because a comparison that compares nothing passes trivially. It also refuses if the
     # roster fails to join to its classification, since a name with no category looks
     # exactly like a name with no role.
     ('build_staffing_charts.py', ['--check']),
-    # ...and every figure on that page recomputed from the CSVs the database was built
+    # ...and every figure on all three pages recomputed from the CSVs the database was built
     # from, by a route that shares no SQL and no helper with the generator. A `--check`
     # proves the payload is what the generator NOW writes; it cannot see a database load
     # that dropped a row. This also re-derives the 2x rollup trap in DESE's educator file
@@ -430,6 +436,24 @@ CHECKS = [
     # what the tool tells a reader it searched. It refuses to write unless every count
     # foots against the town's own listing.
     ('build_minutes_searchable.py', ['--check']),
+    # The FTS5 index `search_minutes.py` now searches, over BOTH corpora: the documents
+    # the town published and our own machine captions. Fail-closed, and it checks three
+    # different things because an index can be wrong in three different ways.
+    #
+    #   * STALENESS, which is the one that matters. An index quietly older than the text
+    #     it indexes is the shape of nearly every defect in this repo, and it is worse
+    #     here than elsewhere: a search that misses a document does not look wrong, it
+    #     looks like the town never discussed the thing. So every indexed file's sha256
+    #     is recomputed on every run.
+    #   * THE DOCUMENT COUNT, against `minutes-searchable.csv` — a second route to the
+    #     same definition of "holds something a search could match", sharing no code with
+    #     this one. A document that can be grepped and is not in the index is a silently
+    #     smaller archive.
+    #   * THE CAPTION COUNT, against `youtube-transcript-index.csv`, re-read from disk.
+    #     Captions arrive by backfill, so this is EXPECTED to fail while one is running;
+    #     the remedy is `python3 scripts/build_minutes_fts.py`, which is incremental and
+    #     takes seconds.
+    ('build_minutes_fts.py', ['--check']),
     ('build_meeting_register.py', ['--check']),
     # The meeting watch, added 8 September 2026. Three entries because there are three
     # different ways this can be wrong and only one of them is staleness.

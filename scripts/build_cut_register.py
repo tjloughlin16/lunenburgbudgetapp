@@ -917,7 +917,8 @@ def build():
                           'three rows sit in the gap register with the document that '
                           'would close each.',
                 see=[('/what-we-cannot-answer', 'the gaps, and what would close them'),
-                     ('/school-staffing', 'the three quantities the archive does hold')],
+                     ('/who-works-in-each-school',
+                      'the three quantities the archive does hold')],
                 allow=('FY2021', 'FY2022', 'FY2023'),
             ),
             conclusion(

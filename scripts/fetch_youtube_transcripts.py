@@ -61,7 +61,7 @@ WARNING = (
     'though the meeting said it.')
 
 
-def load_targets(board, since, until):
+def load_targets(board, since, until, video_only=False):
     if not os.path.exists(BOARDS):
         raise SystemExit('%s is missing. Run scripts/build_youtube_classification.py.'
                          % os.path.relpath(BOARDS, ROOT))
@@ -81,7 +81,44 @@ def load_targets(board, since, until):
     # NEWEST FIRST. The refresh case and the backfill case are then the same loop, and an
     # interrupted backfill has still delivered the half people ask about.
     rows.sort(key=lambda r: (r['meeting_date'], r['video_id']), reverse=True)
+    if video_only:
+        rows = [r for r in rows if r['video_id'] in _video_only_ids()]
+        if not rows:
+            raise SystemExit(
+                'no meeting in `meeting-register.csv` has evidence "video only". '
+                'Either the register has not been rebuilt or every such meeting now '
+                'has a document.')
     return rows
+
+
+def _video_only_ids():
+    """Recordings of meetings for which NO document survives.
+
+    THIS IS THE POINT OF THE WHOLE EXERCISE and newest-first misses it entirely. 231
+    meetings in `meeting-register.csv` carry evidence `video only` -- 162 of them School
+    Committee -- and for those a rough machine caption is the difference between a
+    searchable account and none at all. Every meeting the backfill had reached working
+    backwards from today ALSO had minutes, so after fifty fetches the count of
+    document-less meetings made searchable was nought.
+
+    Read from the register on every call rather than cached: the register is rebuilt when
+    the town publishes, and a meeting stops being video-only the day its minutes appear.
+    """
+    import csv as _csv
+    path = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
+    if not os.path.exists(path):
+        raise SystemExit('--video-only needs sources/data/meeting-register.csv. '
+                         'Run: python3 scripts/build_meeting_register.py')
+    ids = set()
+    with open(path, newline='', encoding='utf-8') as fh:
+        for r in _csv.DictReader(fh):
+            if r.get('evidence') == 'video only':
+                # One meeting can list several recordings.
+                ids.update(v for v in (r.get('video_ids') or '').split('|') if v)
+    if not ids:
+        raise SystemExit('meeting-register.csv parsed to zero video-only recordings -- '
+                         'refusing to report that as "nothing to do".')
+    return ids
 
 
 def read_index():
@@ -161,6 +198,9 @@ def fetch_one(api, row):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--video-only', action='store_true',
+                    help='only meetings with NO surviving document -- the 231 for '
+                         'which a caption is the only possible record')
     ap.add_argument('--board')
     ap.add_argument('--since')
     ap.add_argument('--until')
@@ -185,7 +225,7 @@ def main():
     args = ap.parse_args()
 
     idx = read_index()
-    targets = load_targets(args.board, args.since, args.until)
+    targets = load_targets(args.board, args.since, args.until, args.video_only)
 
     if args.status:
         # COUNT VIDEOS, NOT BOARD-VIDEO PAIRS. A joint meeting is listed under every

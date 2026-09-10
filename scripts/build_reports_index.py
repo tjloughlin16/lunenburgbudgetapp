@@ -79,7 +79,7 @@ ORDER = [
 CATEGORIES = [
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'staffing', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
+            'sped', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
             'insurance',
             'athletics-ledger',
         ]),
@@ -126,6 +126,23 @@ CATEGORIES = [
     # shelves, and neither is moved.
     ('rules', 'The rules everyone argues under', [
         ('', ['classsize', 'formula']),
+    ]),
+    # A FIFTH SHELF, AND WHY THE PAGES ON IT ARE NOT UNDER "what the money buys".
+    #
+    # /school-staffing was one page of twenty-two sections answering three questions under
+    # one title -- did staffing go up, who works in each school, and what happened to the
+    # paraprofessionals -- and it is now three. Filing all three under "what the money
+    # buys" would have been true and useless: two of them are not about money at all. One
+    # counts NAMES the town printed and POSTS the state counts; one counts FTE against
+    # enrolment; only the third reaches a budget line.
+    #
+    # The shelf earns itself the way the rules shelf did. A reader who wants to know who
+    # is in their child's building is not asking a question about spending, and an index
+    # that offers them "what the money buys" has answered a different question. `staffing`
+    # MOVES here from the money shelf, because the page it named moved with it -- the
+    # address does not change and neither does anything a reader has bookmarked.
+    ('people', 'Who works in the schools', [
+        ('', ['staffing', 'schoolstaff', 'parastaff']),
     ]),
     ('method', 'How to check any of it', [
         ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),

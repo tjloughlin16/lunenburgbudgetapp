@@ -1,7 +1,7 @@
 # The Lunenburg Budget Project
 
 An independent, checkable archive of the Lunenburg, Massachusetts town and school budget:
-25,164 documents, 108 datasets, and 12,065 agendas and sets
+25,164 documents, 109 datasets, and 12,065 agendas and sets
 of minutes across 51 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
@@ -27,7 +27,7 @@ clone is needed:
 | you want | fetch |
 |---|---|
 | what this holds, and its limits | [`fy28/public/llms.txt`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/llms.txt) |
-| every dataset, with row counts and sizes | [`fy28/public/api/tables.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/tables.json) — 94 of them |
+| every dataset, with row counts and sizes | [`fy28/public/api/tables.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/tables.json) — 96 of them |
 | the grain of every table, and the traps | [`fy28/public/api/schema.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/schema.json) |
 | every figure the site computes | [`fy28/public/data/model/index.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/data/model/index.json) — 38 sections, one file each |
 | every source document, with its sha256 | [`sources/data/archive-manifest.csv`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/data/archive-manifest.csv) |
@@ -46,7 +46,7 @@ here, under `sources/*/text/`, and that is what the analysis reads.
 | | |
 |---|---|
 | `sources/` | the archive, keyed by **how a document reached us** — see `sources/README.txt` |
-| `sources/data/` | 108 datasets extracted from those documents, CSV |
+| `sources/data/` | 109 datasets extracted from those documents, CSV |
 | `sources/analyses/` | the written analyses, each with a verifier script |
 | `model/` | the projection — `python3 model/export.py` writes `fy28/src/data/model.json` |
 | `scripts/` | extraction, verification and publishing |

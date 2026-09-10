@@ -90,7 +90,7 @@
    "id": "questions",
    "title": "A hundred questions this archive can answer",
    "url": "/analysis/questions",
-   "words": 5493
+   "words": 5492
   },
   {
    "doc_url": "/docs/analyses/show-your-work.md",
@@ -830,6 +830,183 @@
     }
    ],
    "so_what": "Whether staffing \u201cwent up\u201d is decided by the years somebody picks, not by the town."
+  },
+  {
+   "basis": "DESE\u2019s educator headcount and retention file, FY2021\u2013FY2023, at the row the file prints as its own total \u2014 read beside DESE\u2019s published FTE for the same district and the same years. Three years is what exists; the span is on every figure drawn from it.",
+   "bearing": "sizes",
+   "claim": "Teachers the state counted as people in FY2023, against 112.8 full-time equivalent posts",
+   "detail": "The state publishes both counts and they are not the same count: 123 people teaching in Lunenburg in FY2023, holding 112.8 full-time equivalent posts between them \u2014 10.2 FTE fewer than there are bodies. The average teacher on that return holds 0.92 of a post, down from 0.95 in FY2021. Paraprofessionals are the other way about: 59 people and 59.0 FTE in FY2023, so almost every one of them is counted whole. The gap matters because it decides which instrument answers which question \u2014 the town\u2019s own printed rosters are a headcount and cannot be set beside an FTE series, and this is the size of the error that would be. On headcount for each hundred pupils Lunenburg is 5 of the 6 districts in this file for teachers and 2 of 6 for paraprofessionals, which is a smaller group than the comparison sheet the rest of this page uses and is not the same ranking.",
+   "figure": "headcount",
+   "figures": {
+    "fte": {
+     "text": "112.8",
+     "unit": "",
+     "value": 112.8
+    },
+    "fy": {
+     "text": "FY2023",
+     "unit": "",
+     "value": 2023
+    },
+    "headcount": {
+     "text": "123",
+     "unit": "people, not full-time posts",
+     "value": 123.0
+    },
+    "missing": {
+     "text": "10.2",
+     "unit": "",
+     "value": 10.200000000000003
+    },
+    "para_fte": {
+     "text": "59.0",
+     "unit": "",
+     "value": 59.0
+    },
+    "para_headcount": {
+     "text": "59",
+     "unit": "",
+     "value": 59.0
+    },
+    "para_of": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "para_rank": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    },
+    "share": {
+     "text": "0.92",
+     "unit": "",
+     "value": 0.9170731707317072
+    },
+    "share_first": {
+     "text": "0.95",
+     "unit": "",
+     "value": 0.9535087719298246
+    },
+    "share_first_fy": {
+     "text": "FY2021",
+     "unit": "",
+     "value": 2021
+    },
+    "teacher_of": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "teacher_rank": {
+     "text": "5",
+     "unit": "",
+     "value": 5
+    }
+   },
+   "id": "a-headcount-is-not-an-fte-count",
+   "kind": "measured",
+   "literals": [
+    "FY2021",
+    "FY2023"
+   ],
+   "not_shown": "Who is part-time. A share is an average over a whole job class, and one full-timer beside one half-timer and two people at three quarters give the same figure. Nothing published gives the distribution, and nothing gives the funding source for a single one of these people. Nor does a headcount say a post was filled all year: it is a return for one point in the school year, like the rosters.",
+   "report": "schoolstaff",
+   "report_title": "Who works in each school",
+   "report_url": "/who-works-in-each-school",
+   "see": [
+    {
+     "label": "what other districts spend",
+     "slug": "/what-other-districts-spend"
+    },
+    {
+     "label": "what we cannot answer",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "A roster counts heads and DESE counts posts, so the same staff give two different numbers."
+  },
+  {
+   "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
+   "bearing": "sizes",
+   "claim": "Rise in paraprofessionals for each hundred pupils, the biggest change in staffing",
+   "detail": "Paraprofessionals are the biggest change in who Lunenburg\u2019s schools employ: the state\u2019s count went from 0.94 per hundred pupils in FY2013, the lowest of the 13 districts on the state\u2019s own sheet, to 4.27 in FY2025, the highest. 14.8 full-time equivalents in FY2013 and 67.0 in FY2025 \u2014 a rise of 352.7% over years in which in-district enrolment fell 0.8%. Nothing else in this archive could have told a resident that: the town prints staff rosters every year and they carry names without hours, so the state\u2019s file is the only place the size of the shift is visible.",
+   "figure": "fte_rise",
+   "figures": {
+    "districts": {
+     "text": "13",
+     "unit": "",
+     "value": 13
+    },
+    "enrolment_move": {
+     "text": "0.8%",
+     "unit": "",
+     "value": 0.7653383934218772
+    },
+    "fte_rise": {
+     "text": "352.7%",
+     "unit": "",
+     "value": 352.7027027027027
+    },
+    "last_fte": {
+     "text": "67.0",
+     "unit": "",
+     "value": 67.0
+    },
+    "last_fy": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "last_ratio": {
+     "text": "4.27",
+     "unit": "",
+     "value": 4.270507999235132
+    },
+    "last_year": {
+     "text": "FY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "low_fte": {
+     "text": "14.8",
+     "unit": "",
+     "value": 14.8
+    },
+    "low_fy": {
+     "text": "FY2013",
+     "unit": "",
+     "value": 2013
+    },
+    "low_ratio": {
+     "text": "0.94",
+     "unit": "",
+     "value": 0.9361163820366857
+    },
+    "trough_fy": {
+     "text": "FY2013",
+     "unit": "",
+     "value": 2013
+    }
+   },
+   "id": "the-change-is-paraprofessionals",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
+   "report": "parastaff",
+   "report_title": "The paraprofessionals",
+   "report_url": "/the-paraprofessionals",
+   "see": [
+    {
+     "label": "what special education costs",
+     "slug": "/what-special-education-costs"
+    },
+    {
+     "label": "what other districts spend",
+     "slug": "/what-other-districts-spend"
+    }
+   ],
+   "so_what": "Lunenburg went from the lowest on the state\u2019s comparison sheet to the highest."
   },
   {
    "basis": "DESE\u2019s class-size collection \u2014 `tot_clss_cnt` and `avg_clss_cnt` for Lunenburg High \u2014 with the grade span of the school in every one of those years read off DESE\u2019s own enrolment-by-grade counts, so the two ends of the comparison are the same school.",
@@ -3438,7 +3615,7 @@
    "url": "/how-chapter-70-works"
   },
   {
-   "about": "Whether school staffing went up, over any span of years you choose \u2014 with the four quantities the archive holds kept apart: names the town printed, FTE and headcount the state published, and dollars.",
+   "about": "Whether school staffing went up \u2014 which depends entirely on the years you pick. A window you move yourself, over every year the state has published, and the count of how many spans give each answer.",
    "conclusions": [
     {
      "basis": "DESE\u2019s own `All Teachers` FTE line for the district, every year it has published one. The matrix is every ordered pair of those years, computed rather than sampled; the three named windows are the whole published run, the span read off the Tri-Board minutes, and the latest local maximum to the latest year.",
@@ -3539,85 +3716,6 @@
      "so_what": "Whether staffing \u201cwent up\u201d is decided by the years somebody picks, not by the town."
     },
     {
-     "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
-     "bearing": "sizes",
-     "claim": "Rise in paraprofessionals for each hundred pupils, the biggest change in staffing",
-     "detail": "Paraprofessionals are the biggest change in who Lunenburg\u2019s schools employ: the state\u2019s count went from 0.94 per hundred pupils in FY2013, the lowest of the 13 districts on the state\u2019s own sheet, to 4.27 in FY2025, the highest. 14.8 full-time equivalents in FY2013 and 67.0 in FY2025 \u2014 a rise of 352.7% over years in which in-district enrolment fell 0.8%. Nothing else in this archive could have told a resident that: the town prints staff rosters every year and they carry names without hours, so the state\u2019s file is the only place the size of the shift is visible.",
-     "figure": "fte_rise",
-     "figures": {
-      "districts": {
-       "text": "13",
-       "unit": "",
-       "value": 13
-      },
-      "enrolment_move": {
-       "text": "0.8%",
-       "unit": "",
-       "value": 0.7653383934218772
-      },
-      "fte_rise": {
-       "text": "352.7%",
-       "unit": "",
-       "value": 352.7027027027027
-      },
-      "last_fte": {
-       "text": "67.0",
-       "unit": "",
-       "value": 67.0
-      },
-      "last_fy": {
-       "text": "FY2025",
-       "unit": "",
-       "value": 2025
-      },
-      "last_ratio": {
-       "text": "4.27",
-       "unit": "",
-       "value": 4.270507999235132
-      },
-      "last_year": {
-       "text": "FY2025",
-       "unit": "",
-       "value": 2025
-      },
-      "low_fte": {
-       "text": "14.8",
-       "unit": "",
-       "value": 14.8
-      },
-      "low_fy": {
-       "text": "FY2013",
-       "unit": "",
-       "value": 2013
-      },
-      "low_ratio": {
-       "text": "0.94",
-       "unit": "",
-       "value": 0.9361163820366857
-      },
-      "trough_fy": {
-       "text": "FY2013",
-       "unit": "",
-       "value": 2013
-      }
-     },
-     "id": "the-change-is-paraprofessionals",
-     "kind": "measured",
-     "literals": [],
-     "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
-     "see": [
-      {
-       "label": "what special education costs",
-       "slug": "/what-special-education-costs"
-      },
-      {
-       "label": "what other districts spend",
-       "slug": "/what-other-districts-spend"
-      }
-     ],
-     "so_what": "Lunenburg went from the lowest on the state\u2019s comparison sheet to the highest."
-    },
-    {
      "basis": "DESE\u2019s published teacher FTE and in-district FTE pupils, for Lunenburg and for every district on the state\u2019s comparison sheet, every year it has been published. The rank is taken among the districts REPORTING IN THAT YEAR, and the count of them is carried beside it.",
      "bearing": "sizes",
      "claim": "Teaching staff for each hundred pupils, near the bottom of the state\u2019s comparison group",
@@ -3700,76 +3798,18 @@
       }
      ],
      "so_what": "Teaching fell faster than enrollment did, so falling rolls do not explain it."
-    },
-    {
-     "basis": "Two panels of five budget lines each, out of the district\u2019s own budget books at one stage across their whole run, compared only over the years both panels report. The paraprofessional panel is reconciled against the district\u2019s own five-school aggregation of the same figures, and the comparison is published in this payload rather than swallowed. A budget book restating itself is a document the district assembled, not an accounting printout.",
-     "bearing": "lever",
-     "claim": "Rise in what the schools budget for special education paraprofessionals",
-     "detail": "Inside special education the money went to paraprofessionals: those 5 budget lines rose 108.4% over FY2017 to FY2025, while the 5 special education teacher lines rose 20.1%. $597,464 to $1,244,894 against $1,537,583 to $1,846,499, both panels read at the restated stage over the 9 years both of them cover. These are NET general fund lines \u2014 what the town has to raise after grants, circuit breaker reimbursement and revolving funds have paid their share \u2014 so the same rise appears whether the district added paraprofessionals or a grant that had been paying for them ended and the cost landed on the town. Which of the two it is matters: this is the line this project\u2019s own in-district special education escalator is built on.",
-     "figure": "para_pct",
-     "figures": {
-      "lines": {
-       "text": "5",
-       "unit": "",
-       "value": 5
-      },
-      "para_first": {
-       "text": "$597,464",
-       "unit": "",
-       "value": 597464.0
-      },
-      "para_last": {
-       "text": "$1,244,894",
-       "unit": "",
-       "value": 1244894.0
-      },
-      "para_pct": {
-       "text": "108.4%",
-       "unit": "",
-       "value": 108.36301434061299
-      },
-      "span": {
-       "text": "FY2017 to FY2025",
-       "unit": "",
-       "value": 2017
-      },
-      "teacher_first": {
-       "text": "$1,537,583",
-       "unit": "",
-       "value": 1537583.0
-      },
-      "teacher_last": {
-       "text": "$1,846,499",
-       "unit": "",
-       "value": 1846499.0
-      },
-      "teacher_pct": {
-       "text": "20.1%",
-       "unit": "",
-       "value": 20.091012972958207
-      },
-      "years": {
-       "text": "9",
-       "unit": "",
-       "value": 9
-      }
-     },
-     "id": "inside-sped-the-money-went-to-paraprofessionals",
-     "kind": "measured",
-     "literals": [],
-     "not_shown": "That anybody was hired. A budget line is dollars: not a post, not a person, not an hour \u2014 a line rising and a line paying more for the same people are the same number on the page. Nor does it show what special education cost, because these lines are net of every fund but the general fund.",
-     "see": [
-      {
-       "label": "what special education costs",
-       "slug": "/what-special-education-costs"
-      },
-      {
-       "label": "what happens when a grant stops",
-       "slug": "/when-grants-end"
-      }
-     ],
-     "so_what": "Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals."
-    },
+    }
+   ],
+   "count": 2,
+   "data": "/data/school-staffing.json",
+   "generator": "scripts/build_staffing_charts.py",
+   "id": "staffing",
+   "title": "School staffing \u2014 did it go up, and over which years",
+   "url": "/school-staffing"
+  },
+  {
+   "about": "Who the town printed working in each of its four schools, every year from FY2011 \u2014 beside the posts and the people the state counts in the same buildings, and why a roster is not a census.",
+   "conclusions": [
     {
      "basis": "DESE\u2019s educator headcount and retention file, FY2021\u2013FY2023, at the row the file prints as its own total \u2014 read beside DESE\u2019s published FTE for the same district and the same years. Three years is what exists; the span is on every figure drawn from it.",
      "bearing": "sizes",
@@ -3861,6 +3901,96 @@
       }
      ],
      "so_what": "A roster counts heads and DESE counts posts, so the same staff give two different numbers."
+    }
+   ],
+   "count": 1,
+   "data": "/data/who-works-in-each-school.json",
+   "generator": "scripts/build_staffing_charts.py",
+   "id": "schoolstaff",
+   "title": "Who works in each school",
+   "url": "/who-works-in-each-school"
+  },
+  {
+   "about": "The biggest single change in who Lunenburg\u2019s schools employ: fewest paraprofessionals per pupil in its comparison group to most, the general education half that grew as the special education half halved, and the budget lines underneath.",
+   "conclusions": [
+    {
+     "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
+     "bearing": "sizes",
+     "claim": "Rise in paraprofessionals for each hundred pupils, the biggest change in staffing",
+     "detail": "Paraprofessionals are the biggest change in who Lunenburg\u2019s schools employ: the state\u2019s count went from 0.94 per hundred pupils in FY2013, the lowest of the 13 districts on the state\u2019s own sheet, to 4.27 in FY2025, the highest. 14.8 full-time equivalents in FY2013 and 67.0 in FY2025 \u2014 a rise of 352.7% over years in which in-district enrolment fell 0.8%. Nothing else in this archive could have told a resident that: the town prints staff rosters every year and they carry names without hours, so the state\u2019s file is the only place the size of the shift is visible.",
+     "figure": "fte_rise",
+     "figures": {
+      "districts": {
+       "text": "13",
+       "unit": "",
+       "value": 13
+      },
+      "enrolment_move": {
+       "text": "0.8%",
+       "unit": "",
+       "value": 0.7653383934218772
+      },
+      "fte_rise": {
+       "text": "352.7%",
+       "unit": "",
+       "value": 352.7027027027027
+      },
+      "last_fte": {
+       "text": "67.0",
+       "unit": "",
+       "value": 67.0
+      },
+      "last_fy": {
+       "text": "FY2025",
+       "unit": "",
+       "value": 2025
+      },
+      "last_ratio": {
+       "text": "4.27",
+       "unit": "",
+       "value": 4.270507999235132
+      },
+      "last_year": {
+       "text": "FY2025",
+       "unit": "",
+       "value": 2025
+      },
+      "low_fte": {
+       "text": "14.8",
+       "unit": "",
+       "value": 14.8
+      },
+      "low_fy": {
+       "text": "FY2013",
+       "unit": "",
+       "value": 2013
+      },
+      "low_ratio": {
+       "text": "0.94",
+       "unit": "",
+       "value": 0.9361163820366857
+      },
+      "trough_fy": {
+       "text": "FY2013",
+       "unit": "",
+       "value": 2013
+      }
+     },
+     "id": "the-change-is-paraprofessionals",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
+     "see": [
+      {
+       "label": "what special education costs",
+       "slug": "/what-special-education-costs"
+      },
+      {
+       "label": "what other districts spend",
+       "slug": "/what-other-districts-spend"
+      }
+     ],
+     "so_what": "Lunenburg went from the lowest on the state\u2019s comparison sheet to the highest."
     },
     {
      "basis": "Two DESE files over the years both publish: the district comparison sheet\u2019s all-programmes paraprofessional FTE, and the special education staff table, whose rate is recomputed from its own FTE and child count on every build and published only where it reproduces. The difference between them is derived here and is labelled as derived.",
@@ -3955,14 +4085,83 @@
       }
      ],
      "so_what": "The paraprofessional workforce grew while its special education half more than halved."
+    },
+    {
+     "basis": "Two panels of five budget lines each, out of the district\u2019s own budget books at one stage across their whole run, compared only over the years both panels report. The paraprofessional panel is reconciled against the district\u2019s own five-school aggregation of the same figures, and the comparison is published in this payload rather than swallowed. A budget book restating itself is a document the district assembled, not an accounting printout.",
+     "bearing": "lever",
+     "claim": "Rise in what the schools budget for special education paraprofessionals",
+     "detail": "Inside special education the money went to paraprofessionals: those 5 budget lines rose 108.4% over FY2017 to FY2025, while the 5 special education teacher lines rose 20.1%. $597,464 to $1,244,894 against $1,537,583 to $1,846,499, both panels read at the restated stage over the 9 years both of them cover. These are NET general fund lines \u2014 what the town has to raise after grants, circuit breaker reimbursement and revolving funds have paid their share \u2014 so the same rise appears whether the district added paraprofessionals or a grant that had been paying for them ended and the cost landed on the town. Which of the two it is matters: this is the line this project\u2019s own in-district special education escalator is built on.",
+     "figure": "para_pct",
+     "figures": {
+      "lines": {
+       "text": "5",
+       "unit": "",
+       "value": 5
+      },
+      "para_first": {
+       "text": "$597,464",
+       "unit": "",
+       "value": 597464.0
+      },
+      "para_last": {
+       "text": "$1,244,894",
+       "unit": "",
+       "value": 1244894.0
+      },
+      "para_pct": {
+       "text": "108.4%",
+       "unit": "",
+       "value": 108.36301434061299
+      },
+      "span": {
+       "text": "FY2017 to FY2025",
+       "unit": "",
+       "value": 2017
+      },
+      "teacher_first": {
+       "text": "$1,537,583",
+       "unit": "",
+       "value": 1537583.0
+      },
+      "teacher_last": {
+       "text": "$1,846,499",
+       "unit": "",
+       "value": 1846499.0
+      },
+      "teacher_pct": {
+       "text": "20.1%",
+       "unit": "",
+       "value": 20.091012972958207
+      },
+      "years": {
+       "text": "9",
+       "unit": "",
+       "value": 9
+      }
+     },
+     "id": "inside-sped-the-money-went-to-paraprofessionals",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "That anybody was hired. A budget line is dollars: not a post, not a person, not an hour \u2014 a line rising and a line paying more for the same people are the same number on the page. Nor does it show what special education cost, because these lines are net of every fund but the general fund.",
+     "see": [
+      {
+       "label": "what special education costs",
+       "slug": "/what-special-education-costs"
+      },
+      {
+       "label": "what happens when a grant stops",
+       "slug": "/when-grants-end"
+      }
+     ],
+     "so_what": "Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals."
     }
    ],
-   "count": 6,
-   "data": "/data/school-staffing.json",
+   "count": 3,
+   "data": "/data/the-paraprofessionals.json",
    "generator": "scripts/build_staffing_charts.py",
-   "id": "staffing",
-   "title": "School staffing \u2014 did it go up, and over which years",
-   "url": "/school-staffing"
+   "id": "parastaff",
+   "title": "The paraprofessionals",
+   "url": "/the-paraprofessionals"
   },
   {
    "about": "How many classes ran in each subject in Lunenburg\u2019s schools, year by year \u2014 the one measurement in this archive that counts what was taught rather than who was employed to teach it.",
@@ -4171,6 +4370,76 @@
      "so_what": "Sections went from 11 to 5 \u2014 the lowest share in the 9 years the school has existed."
     },
     {
+     "basis": "Teacher FTE, sections times average class size, and distinct students over the school\u2019s own `All` row \u2014 three DESE series for the same subject at the same school, averaged inside eras whose boundaries are the school\u2019s own grade spans plus one we assert for the pandemic.",
+     "bearing": "lever",
+     "claim": "60.4% of Lunenburg High takes a history course, against 75.8% before SY2020.",
+     "detail": "Three instruments measure this page\u2019s question \u2014 what was staffed, how much room ran, and how many children got in \u2014 and this is the only subject at the high school where all three moved down together. Averaged over SY2017 to SY2020 the school staffed 3.17 posts of history and 341 student places ran; over SY2023 to SY2025 it is 2.4 posts and 271 places, and the share of the school taking a history course went from 75.8% to 60.4%. The averages are over eras rather than single years on purpose: the same subject read end to end across the whole file appears to fall by a third more than this, and most of that is a reorganisation rather than a change in provision.",
+     "figure": "now",
+     "figures": {
+      "before": {
+       "text": "75.8%",
+       "unit": "",
+       "value": 0.7581
+      },
+      "era_first": {
+       "text": "SY2017",
+       "unit": "",
+       "value": 2017
+      },
+      "era_last": {
+       "text": "SY2025",
+       "unit": "",
+       "value": 2025
+      },
+      "era_last_first": {
+       "text": "SY2023",
+       "unit": "",
+       "value": 2023
+      },
+      "from_sy": {
+       "text": "SY2020",
+       "unit": "",
+       "value": 2020
+      },
+      "fte_before": {
+       "text": "3.17",
+       "unit": "",
+       "value": 3.17
+      },
+      "fte_now": {
+       "text": "2.4",
+       "unit": "",
+       "value": 2.4
+      },
+      "now": {
+       "text": "60.4%",
+       "unit": "",
+       "value": 0.6038
+      },
+      "seats_before": {
+       "text": "341",
+       "unit": "",
+       "value": 341
+      },
+      "seats_now": {
+       "text": "271",
+       "unit": "",
+       "value": 271
+      }
+     },
+     "id": "history-lost-staff-seats-and-takers-together",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "That a staffing decision caused it. The fall begins in the years the pandemic closed and reopened this school, students choose their own courses at this level, and history teaching recovered part of a post since without the share recovering with it. Those are three readings of one set of numbers and this page does not choose between them.",
+     "see": [
+      {
+       "label": "Teacher FTE by subject",
+       "slug": "/school-staffing"
+      }
+     ],
+     "so_what": "Teacher FTE went 3.17 to 2.4 and seats 341 to 271 \u2014 the one subject where all three fell."
+    },
+    {
      "basis": "`tot_clss_cnt` for Computer and Information Sciences at Lunenburg High and at Lunenburg Middle School in every year DESE publishes, with the high school\u2019s grade span in each of those years taken from DESE\u2019s enrolment-by-grade counts.",
      "bearing": "lever",
      "claim": "In the 11 years Lunenburg High held only grades 9-12 it ran 1 computer science section.",
@@ -4328,9 +4597,159 @@
       }
      ],
      "so_what": "The staffing proxy was not misleading \u2014 but only a section count can say whether a class stopped running."
+    },
+    {
+     "basis": "`tot_clss_cnt`, `avg_clss_cnt` and `tot_stu_cnt` for the Miscellaneous subject area at Lunenburg High, over the school\u2019s own `All` row \u2014 which DESE\u2019s separate enrolment file agrees with to within a few per cent in every year.",
+     "bearing": "sizes",
+     "claim": "Miscellaneous went from 35 sections to 51 at Lunenburg High, taking the same share of students.",
+     "detail": "A resident asked whether children are being offered thinner work and taking it \u2014 a filler bucket swelling while the subjects around it shrink. This is the bucket, and the count of children in it did not move. 250 student places ran in Miscellaneous at Lunenburg High in SY2025 among 129 different children, so a child in one is in about 1.9 of them; the groups averaged 5.8 students at the start of the window. Groups of under five are the shape of small-group support, not of a room somebody is parked in \u2014 and that is a reading, not a finding, because DESE files no course name against any of them. One year stands off its neighbours by more than thirty points, SY2022, and the page marks it rather than averaging it in.",
+     "figure": "sections_last",
+     "figures": {
+      "avg_first": {
+       "text": "5.8",
+       "unit": "",
+       "value": 5.8
+      },
+      "avg_last": {
+       "text": "4.9",
+       "unit": "",
+       "value": 4.9
+      },
+      "per_student": {
+       "text": "1.9",
+       "unit": "",
+       "value": 1.9
+      },
+      "seats_last": {
+       "text": "250",
+       "unit": "",
+       "value": 250
+      },
+      "sections_first": {
+       "text": "35",
+       "unit": "",
+       "value": 35
+      },
+      "sections_last": {
+       "text": "51",
+       "unit": "course sections",
+       "value": 51
+      },
+      "share_first": {
+       "text": "27.6%",
+       "unit": "",
+       "value": 0.2759
+      },
+      "share_last": {
+       "text": "29.4%",
+       "unit": "",
+       "value": 0.2945
+      },
+      "spike": {
+       "text": "SY2022",
+       "unit": "",
+       "value": 2022
+      },
+      "students_last": {
+       "text": "129",
+       "unit": "",
+       "value": 129
+      },
+      "sy_first": {
+       "text": "SY2017",
+       "unit": "",
+       "value": 2017
+      },
+      "sy_last": {
+       "text": "SY2025",
+       "unit": "",
+       "value": 2025
+      }
+     },
+     "id": "miscellaneous-is-more-groups-not-more-students",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "What any of these groups is. Academic support, an elective, directed study and a study hall all fit these numbers, and nothing published separates them. What would: the district\u2019s own Program of Studies, which exists and is not published.",
+     "see": [
+      {
+       "label": "The gap this leaves",
+       "slug": "/what-we-cannot-answer"
+      }
+     ],
+     "so_what": "More groups, smaller \u2014 4.9 students each. 27.6% of the school took one in SY2017 and 29.4% now."
+    },
+    {
+     "basis": "`dese_teacher_subject` teacher FTE per school against `dese_class_size` sections and average class size for the same subject, over the years both files cover. The generator refuses to write unless the schools\u2019 FTE sums to the district\u2019s and their sections sum to the district\u2019s.",
+     "bearing": "lever",
+     "claim": "Mathematics teacher FTE fell 2.8 at the middle school and rose 1.7 at the high school.",
+     "detail": "This page already published the district figure for mathematics and called it the one subject where the two instruments disagree. Split by building, it is not one subject disagreeing with itself \u2014 it is two schools going opposite ways. Between SY2017 and SY2025 the middle school ran 4 fewer mathematics sections and its classes went from 17.9 students to 22.0. The high school ran 7 more and its classes fell to 14.5. Both are inside one district figure, and the four schools\u2019 FTE adds up to it exactly. Which building a post sits in is a thing this town decides, so this is a dial rather than a condition \u2014 and nothing here says what it should be set to.",
+     "figure": "lost",
+     "figures": {
+      "avg_first": {
+       "text": "17.9",
+       "unit": "",
+       "value": 17.9
+      },
+      "avg_last": {
+       "text": "22.0",
+       "unit": "",
+       "value": 22.0
+      },
+      "district": {
+       "text": "-1.5",
+       "unit": "",
+       "value": -1.5
+      },
+      "gained": {
+       "text": "1.7",
+       "unit": "",
+       "value": 1.7
+      },
+      "hs_avg_last": {
+       "text": "14.5",
+       "unit": "",
+       "value": 14.5
+      },
+      "lost": {
+       "text": "2.8",
+       "unit": "full-time teaching posts",
+       "value": -2.8
+      },
+      "sec_gained": {
+       "text": "7",
+       "unit": "",
+       "value": 7
+      },
+      "sec_lost": {
+       "text": "4",
+       "unit": "",
+       "value": -4
+      },
+      "sy_first": {
+       "text": "SY2017",
+       "unit": "",
+       "value": 2017
+      },
+      "sy_last": {
+       "text": "SY2025",
+       "unit": "",
+       "value": 2025
+      }
+     },
+     "id": "mathematics-moved-between-two-buildings",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Why. A post can move because a timetable changed, because a retirement was not replaced, because a grant ended, or because the two schools were staffed to different targets. Nothing in either state file distinguishes them.",
+     "see": [
+      {
+       "label": "The FTE series in full",
+       "slug": "/school-staffing"
+      }
+     ],
+     "so_what": "The district figure is -1.5 and shows neither. Middle school classes went from 17.9 to 22.0."
     }
    ],
-   "count": 6,
+   "count": 9,
    "data": "/data/course-offerings.json",
    "generator": "scripts/build_course_offerings.py",
    "id": "courses",
@@ -4496,7 +4915,7 @@
       },
       {
        "label": "the three quantities the archive does hold",
-       "slug": "/school-staffing"
+       "slug": "/who-works-in-each-school"
       }
      ],
      "so_what": "The jobs the state counts are teachers. Most cut posts are not teachers."
@@ -8492,11 +8911,11 @@
   },
   {
    "about": "Staffing, the classes that ran, insurance, the lines that stopped, what the district said it was cutting, and how close the budget lands to what gets spent.",
-   "conclusions": 24,
+   "conclusions": 27,
    "key": "spending",
    "reports": [
     {
-     "about": "Whether school staffing went up, over any span of years you choose \u2014 with the four quantities the archive holds kept apart: names the town printed, FTE and headcount the state published, and dollars.",
+     "about": "Whether school staffing went up \u2014 which depends entirely on the years you pick. A window you move yourself, over every year the state has published, and the count of how many spans give each answer.",
      "conclusions": [
       {
        "basis": "DESE\u2019s own `All Teachers` FTE line for the district, every year it has published one. The matrix is every ordered pair of those years, computed rather than sampled; the three named windows are the whole published run, the span read off the Tri-Board minutes, and the latest local maximum to the latest year.",
@@ -8597,85 +9016,6 @@
        "so_what": "Whether staffing \u201cwent up\u201d is decided by the years somebody picks, not by the town."
       },
       {
-       "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
-       "bearing": "sizes",
-       "claim": "Rise in paraprofessionals for each hundred pupils, the biggest change in staffing",
-       "detail": "Paraprofessionals are the biggest change in who Lunenburg\u2019s schools employ: the state\u2019s count went from 0.94 per hundred pupils in FY2013, the lowest of the 13 districts on the state\u2019s own sheet, to 4.27 in FY2025, the highest. 14.8 full-time equivalents in FY2013 and 67.0 in FY2025 \u2014 a rise of 352.7% over years in which in-district enrolment fell 0.8%. Nothing else in this archive could have told a resident that: the town prints staff rosters every year and they carry names without hours, so the state\u2019s file is the only place the size of the shift is visible.",
-       "figure": "fte_rise",
-       "figures": {
-        "districts": {
-         "text": "13",
-         "unit": "",
-         "value": 13
-        },
-        "enrolment_move": {
-         "text": "0.8%",
-         "unit": "",
-         "value": 0.7653383934218772
-        },
-        "fte_rise": {
-         "text": "352.7%",
-         "unit": "",
-         "value": 352.7027027027027
-        },
-        "last_fte": {
-         "text": "67.0",
-         "unit": "",
-         "value": 67.0
-        },
-        "last_fy": {
-         "text": "FY2025",
-         "unit": "",
-         "value": 2025
-        },
-        "last_ratio": {
-         "text": "4.27",
-         "unit": "",
-         "value": 4.270507999235132
-        },
-        "last_year": {
-         "text": "FY2025",
-         "unit": "",
-         "value": 2025
-        },
-        "low_fte": {
-         "text": "14.8",
-         "unit": "",
-         "value": 14.8
-        },
-        "low_fy": {
-         "text": "FY2013",
-         "unit": "",
-         "value": 2013
-        },
-        "low_ratio": {
-         "text": "0.94",
-         "unit": "",
-         "value": 0.9361163820366857
-        },
-        "trough_fy": {
-         "text": "FY2013",
-         "unit": "",
-         "value": 2013
-        }
-       },
-       "id": "the-change-is-paraprofessionals",
-       "kind": "measured",
-       "literals": [],
-       "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
-       "see": [
-        {
-         "label": "what special education costs",
-         "slug": "/what-special-education-costs"
-        },
-        {
-         "label": "what other districts spend",
-         "slug": "/what-other-districts-spend"
-        }
-       ],
-       "so_what": "Lunenburg went from the lowest on the state\u2019s comparison sheet to the highest."
-      },
-      {
        "basis": "DESE\u2019s published teacher FTE and in-district FTE pupils, for Lunenburg and for every district on the state\u2019s comparison sheet, every year it has been published. The rank is taken among the districts REPORTING IN THAT YEAR, and the count of them is carried beside it.",
        "bearing": "sizes",
        "claim": "Teaching staff for each hundred pupils, near the bottom of the state\u2019s comparison group",
@@ -8758,76 +9098,18 @@
         }
        ],
        "so_what": "Teaching fell faster than enrollment did, so falling rolls do not explain it."
-      },
-      {
-       "basis": "Two panels of five budget lines each, out of the district\u2019s own budget books at one stage across their whole run, compared only over the years both panels report. The paraprofessional panel is reconciled against the district\u2019s own five-school aggregation of the same figures, and the comparison is published in this payload rather than swallowed. A budget book restating itself is a document the district assembled, not an accounting printout.",
-       "bearing": "lever",
-       "claim": "Rise in what the schools budget for special education paraprofessionals",
-       "detail": "Inside special education the money went to paraprofessionals: those 5 budget lines rose 108.4% over FY2017 to FY2025, while the 5 special education teacher lines rose 20.1%. $597,464 to $1,244,894 against $1,537,583 to $1,846,499, both panels read at the restated stage over the 9 years both of them cover. These are NET general fund lines \u2014 what the town has to raise after grants, circuit breaker reimbursement and revolving funds have paid their share \u2014 so the same rise appears whether the district added paraprofessionals or a grant that had been paying for them ended and the cost landed on the town. Which of the two it is matters: this is the line this project\u2019s own in-district special education escalator is built on.",
-       "figure": "para_pct",
-       "figures": {
-        "lines": {
-         "text": "5",
-         "unit": "",
-         "value": 5
-        },
-        "para_first": {
-         "text": "$597,464",
-         "unit": "",
-         "value": 597464.0
-        },
-        "para_last": {
-         "text": "$1,244,894",
-         "unit": "",
-         "value": 1244894.0
-        },
-        "para_pct": {
-         "text": "108.4%",
-         "unit": "",
-         "value": 108.36301434061299
-        },
-        "span": {
-         "text": "FY2017 to FY2025",
-         "unit": "",
-         "value": 2017
-        },
-        "teacher_first": {
-         "text": "$1,537,583",
-         "unit": "",
-         "value": 1537583.0
-        },
-        "teacher_last": {
-         "text": "$1,846,499",
-         "unit": "",
-         "value": 1846499.0
-        },
-        "teacher_pct": {
-         "text": "20.1%",
-         "unit": "",
-         "value": 20.091012972958207
-        },
-        "years": {
-         "text": "9",
-         "unit": "",
-         "value": 9
-        }
-       },
-       "id": "inside-sped-the-money-went-to-paraprofessionals",
-       "kind": "measured",
-       "literals": [],
-       "not_shown": "That anybody was hired. A budget line is dollars: not a post, not a person, not an hour \u2014 a line rising and a line paying more for the same people are the same number on the page. Nor does it show what special education cost, because these lines are net of every fund but the general fund.",
-       "see": [
-        {
-         "label": "what special education costs",
-         "slug": "/what-special-education-costs"
-        },
-        {
-         "label": "what happens when a grant stops",
-         "slug": "/when-grants-end"
-        }
-       ],
-       "so_what": "Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals."
-      },
+      }
+     ],
+     "count": 2,
+     "data": "/data/school-staffing.json",
+     "generator": "scripts/build_staffing_charts.py",
+     "id": "staffing",
+     "title": "School staffing \u2014 did it go up, and over which years",
+     "url": "/school-staffing"
+    },
+    {
+     "about": "Who the town printed working in each of its four schools, every year from FY2011 \u2014 beside the posts and the people the state counts in the same buildings, and why a roster is not a census.",
+     "conclusions": [
       {
        "basis": "DESE\u2019s educator headcount and retention file, FY2021\u2013FY2023, at the row the file prints as its own total \u2014 read beside DESE\u2019s published FTE for the same district and the same years. Three years is what exists; the span is on every figure drawn from it.",
        "bearing": "sizes",
@@ -8919,6 +9201,96 @@
         }
        ],
        "so_what": "A roster counts heads and DESE counts posts, so the same staff give two different numbers."
+      }
+     ],
+     "count": 1,
+     "data": "/data/who-works-in-each-school.json",
+     "generator": "scripts/build_staffing_charts.py",
+     "id": "schoolstaff",
+     "title": "Who works in each school",
+     "url": "/who-works-in-each-school"
+    },
+    {
+     "about": "The biggest single change in who Lunenburg\u2019s schools employ: fewest paraprofessionals per pupil in its comparison group to most, the general education half that grew as the special education half halved, and the budget lines underneath.",
+     "conclusions": [
+      {
+       "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
+       "bearing": "sizes",
+       "claim": "Rise in paraprofessionals for each hundred pupils, the biggest change in staffing",
+       "detail": "Paraprofessionals are the biggest change in who Lunenburg\u2019s schools employ: the state\u2019s count went from 0.94 per hundred pupils in FY2013, the lowest of the 13 districts on the state\u2019s own sheet, to 4.27 in FY2025, the highest. 14.8 full-time equivalents in FY2013 and 67.0 in FY2025 \u2014 a rise of 352.7% over years in which in-district enrolment fell 0.8%. Nothing else in this archive could have told a resident that: the town prints staff rosters every year and they carry names without hours, so the state\u2019s file is the only place the size of the shift is visible.",
+       "figure": "fte_rise",
+       "figures": {
+        "districts": {
+         "text": "13",
+         "unit": "",
+         "value": 13
+        },
+        "enrolment_move": {
+         "text": "0.8%",
+         "unit": "",
+         "value": 0.7653383934218772
+        },
+        "fte_rise": {
+         "text": "352.7%",
+         "unit": "",
+         "value": 352.7027027027027
+        },
+        "last_fte": {
+         "text": "67.0",
+         "unit": "",
+         "value": 67.0
+        },
+        "last_fy": {
+         "text": "FY2025",
+         "unit": "",
+         "value": 2025
+        },
+        "last_ratio": {
+         "text": "4.27",
+         "unit": "",
+         "value": 4.270507999235132
+        },
+        "last_year": {
+         "text": "FY2025",
+         "unit": "",
+         "value": 2025
+        },
+        "low_fte": {
+         "text": "14.8",
+         "unit": "",
+         "value": 14.8
+        },
+        "low_fy": {
+         "text": "FY2013",
+         "unit": "",
+         "value": 2013
+        },
+        "low_ratio": {
+         "text": "0.94",
+         "unit": "",
+         "value": 0.9361163820366857
+        },
+        "trough_fy": {
+         "text": "FY2013",
+         "unit": "",
+         "value": 2013
+        }
+       },
+       "id": "the-change-is-paraprofessionals",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
+       "see": [
+        {
+         "label": "what special education costs",
+         "slug": "/what-special-education-costs"
+        },
+        {
+         "label": "what other districts spend",
+         "slug": "/what-other-districts-spend"
+        }
+       ],
+       "so_what": "Lunenburg went from the lowest on the state\u2019s comparison sheet to the highest."
       },
       {
        "basis": "Two DESE files over the years both publish: the district comparison sheet\u2019s all-programmes paraprofessional FTE, and the special education staff table, whose rate is recomputed from its own FTE and child count on every build and published only where it reproduces. The difference between them is derived here and is labelled as derived.",
@@ -9013,14 +9385,83 @@
         }
        ],
        "so_what": "The paraprofessional workforce grew while its special education half more than halved."
+      },
+      {
+       "basis": "Two panels of five budget lines each, out of the district\u2019s own budget books at one stage across their whole run, compared only over the years both panels report. The paraprofessional panel is reconciled against the district\u2019s own five-school aggregation of the same figures, and the comparison is published in this payload rather than swallowed. A budget book restating itself is a document the district assembled, not an accounting printout.",
+       "bearing": "lever",
+       "claim": "Rise in what the schools budget for special education paraprofessionals",
+       "detail": "Inside special education the money went to paraprofessionals: those 5 budget lines rose 108.4% over FY2017 to FY2025, while the 5 special education teacher lines rose 20.1%. $597,464 to $1,244,894 against $1,537,583 to $1,846,499, both panels read at the restated stage over the 9 years both of them cover. These are NET general fund lines \u2014 what the town has to raise after grants, circuit breaker reimbursement and revolving funds have paid their share \u2014 so the same rise appears whether the district added paraprofessionals or a grant that had been paying for them ended and the cost landed on the town. Which of the two it is matters: this is the line this project\u2019s own in-district special education escalator is built on.",
+       "figure": "para_pct",
+       "figures": {
+        "lines": {
+         "text": "5",
+         "unit": "",
+         "value": 5
+        },
+        "para_first": {
+         "text": "$597,464",
+         "unit": "",
+         "value": 597464.0
+        },
+        "para_last": {
+         "text": "$1,244,894",
+         "unit": "",
+         "value": 1244894.0
+        },
+        "para_pct": {
+         "text": "108.4%",
+         "unit": "",
+         "value": 108.36301434061299
+        },
+        "span": {
+         "text": "FY2017 to FY2025",
+         "unit": "",
+         "value": 2017
+        },
+        "teacher_first": {
+         "text": "$1,537,583",
+         "unit": "",
+         "value": 1537583.0
+        },
+        "teacher_last": {
+         "text": "$1,846,499",
+         "unit": "",
+         "value": 1846499.0
+        },
+        "teacher_pct": {
+         "text": "20.1%",
+         "unit": "",
+         "value": 20.091012972958207
+        },
+        "years": {
+         "text": "9",
+         "unit": "",
+         "value": 9
+        }
+       },
+       "id": "inside-sped-the-money-went-to-paraprofessionals",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "That anybody was hired. A budget line is dollars: not a post, not a person, not an hour \u2014 a line rising and a line paying more for the same people are the same number on the page. Nor does it show what special education cost, because these lines are net of every fund but the general fund.",
+       "see": [
+        {
+         "label": "what special education costs",
+         "slug": "/what-special-education-costs"
+        },
+        {
+         "label": "what happens when a grant stops",
+         "slug": "/when-grants-end"
+        }
+       ],
+       "so_what": "Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals."
       }
      ],
-     "count": 6,
-     "data": "/data/school-staffing.json",
+     "count": 3,
+     "data": "/data/the-paraprofessionals.json",
      "generator": "scripts/build_staffing_charts.py",
-     "id": "staffing",
-     "title": "School staffing \u2014 did it go up, and over which years",
-     "url": "/school-staffing"
+     "id": "parastaff",
+     "title": "The paraprofessionals",
+     "url": "/the-paraprofessionals"
     },
     {
      "about": "How many classes ran in each subject in Lunenburg\u2019s schools, year by year \u2014 the one measurement in this archive that counts what was taught rather than who was employed to teach it.",
@@ -9229,6 +9670,76 @@
        "so_what": "Sections went from 11 to 5 \u2014 the lowest share in the 9 years the school has existed."
       },
       {
+       "basis": "Teacher FTE, sections times average class size, and distinct students over the school\u2019s own `All` row \u2014 three DESE series for the same subject at the same school, averaged inside eras whose boundaries are the school\u2019s own grade spans plus one we assert for the pandemic.",
+       "bearing": "lever",
+       "claim": "60.4% of Lunenburg High takes a history course, against 75.8% before SY2020.",
+       "detail": "Three instruments measure this page\u2019s question \u2014 what was staffed, how much room ran, and how many children got in \u2014 and this is the only subject at the high school where all three moved down together. Averaged over SY2017 to SY2020 the school staffed 3.17 posts of history and 341 student places ran; over SY2023 to SY2025 it is 2.4 posts and 271 places, and the share of the school taking a history course went from 75.8% to 60.4%. The averages are over eras rather than single years on purpose: the same subject read end to end across the whole file appears to fall by a third more than this, and most of that is a reorganisation rather than a change in provision.",
+       "figure": "now",
+       "figures": {
+        "before": {
+         "text": "75.8%",
+         "unit": "",
+         "value": 0.7581
+        },
+        "era_first": {
+         "text": "SY2017",
+         "unit": "",
+         "value": 2017
+        },
+        "era_last": {
+         "text": "SY2025",
+         "unit": "",
+         "value": 2025
+        },
+        "era_last_first": {
+         "text": "SY2023",
+         "unit": "",
+         "value": 2023
+        },
+        "from_sy": {
+         "text": "SY2020",
+         "unit": "",
+         "value": 2020
+        },
+        "fte_before": {
+         "text": "3.17",
+         "unit": "",
+         "value": 3.17
+        },
+        "fte_now": {
+         "text": "2.4",
+         "unit": "",
+         "value": 2.4
+        },
+        "now": {
+         "text": "60.4%",
+         "unit": "",
+         "value": 0.6038
+        },
+        "seats_before": {
+         "text": "341",
+         "unit": "",
+         "value": 341
+        },
+        "seats_now": {
+         "text": "271",
+         "unit": "",
+         "value": 271
+        }
+       },
+       "id": "history-lost-staff-seats-and-takers-together",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "That a staffing decision caused it. The fall begins in the years the pandemic closed and reopened this school, students choose their own courses at this level, and history teaching recovered part of a post since without the share recovering with it. Those are three readings of one set of numbers and this page does not choose between them.",
+       "see": [
+        {
+         "label": "Teacher FTE by subject",
+         "slug": "/school-staffing"
+        }
+       ],
+       "so_what": "Teacher FTE went 3.17 to 2.4 and seats 341 to 271 \u2014 the one subject where all three fell."
+      },
+      {
        "basis": "`tot_clss_cnt` for Computer and Information Sciences at Lunenburg High and at Lunenburg Middle School in every year DESE publishes, with the high school\u2019s grade span in each of those years taken from DESE\u2019s enrolment-by-grade counts.",
        "bearing": "lever",
        "claim": "In the 11 years Lunenburg High held only grades 9-12 it ran 1 computer science section.",
@@ -9386,9 +9897,159 @@
         }
        ],
        "so_what": "The staffing proxy was not misleading \u2014 but only a section count can say whether a class stopped running."
+      },
+      {
+       "basis": "`tot_clss_cnt`, `avg_clss_cnt` and `tot_stu_cnt` for the Miscellaneous subject area at Lunenburg High, over the school\u2019s own `All` row \u2014 which DESE\u2019s separate enrolment file agrees with to within a few per cent in every year.",
+       "bearing": "sizes",
+       "claim": "Miscellaneous went from 35 sections to 51 at Lunenburg High, taking the same share of students.",
+       "detail": "A resident asked whether children are being offered thinner work and taking it \u2014 a filler bucket swelling while the subjects around it shrink. This is the bucket, and the count of children in it did not move. 250 student places ran in Miscellaneous at Lunenburg High in SY2025 among 129 different children, so a child in one is in about 1.9 of them; the groups averaged 5.8 students at the start of the window. Groups of under five are the shape of small-group support, not of a room somebody is parked in \u2014 and that is a reading, not a finding, because DESE files no course name against any of them. One year stands off its neighbours by more than thirty points, SY2022, and the page marks it rather than averaging it in.",
+       "figure": "sections_last",
+       "figures": {
+        "avg_first": {
+         "text": "5.8",
+         "unit": "",
+         "value": 5.8
+        },
+        "avg_last": {
+         "text": "4.9",
+         "unit": "",
+         "value": 4.9
+        },
+        "per_student": {
+         "text": "1.9",
+         "unit": "",
+         "value": 1.9
+        },
+        "seats_last": {
+         "text": "250",
+         "unit": "",
+         "value": 250
+        },
+        "sections_first": {
+         "text": "35",
+         "unit": "",
+         "value": 35
+        },
+        "sections_last": {
+         "text": "51",
+         "unit": "course sections",
+         "value": 51
+        },
+        "share_first": {
+         "text": "27.6%",
+         "unit": "",
+         "value": 0.2759
+        },
+        "share_last": {
+         "text": "29.4%",
+         "unit": "",
+         "value": 0.2945
+        },
+        "spike": {
+         "text": "SY2022",
+         "unit": "",
+         "value": 2022
+        },
+        "students_last": {
+         "text": "129",
+         "unit": "",
+         "value": 129
+        },
+        "sy_first": {
+         "text": "SY2017",
+         "unit": "",
+         "value": 2017
+        },
+        "sy_last": {
+         "text": "SY2025",
+         "unit": "",
+         "value": 2025
+        }
+       },
+       "id": "miscellaneous-is-more-groups-not-more-students",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "What any of these groups is. Academic support, an elective, directed study and a study hall all fit these numbers, and nothing published separates them. What would: the district\u2019s own Program of Studies, which exists and is not published.",
+       "see": [
+        {
+         "label": "The gap this leaves",
+         "slug": "/what-we-cannot-answer"
+        }
+       ],
+       "so_what": "More groups, smaller \u2014 4.9 students each. 27.6% of the school took one in SY2017 and 29.4% now."
+      },
+      {
+       "basis": "`dese_teacher_subject` teacher FTE per school against `dese_class_size` sections and average class size for the same subject, over the years both files cover. The generator refuses to write unless the schools\u2019 FTE sums to the district\u2019s and their sections sum to the district\u2019s.",
+       "bearing": "lever",
+       "claim": "Mathematics teacher FTE fell 2.8 at the middle school and rose 1.7 at the high school.",
+       "detail": "This page already published the district figure for mathematics and called it the one subject where the two instruments disagree. Split by building, it is not one subject disagreeing with itself \u2014 it is two schools going opposite ways. Between SY2017 and SY2025 the middle school ran 4 fewer mathematics sections and its classes went from 17.9 students to 22.0. The high school ran 7 more and its classes fell to 14.5. Both are inside one district figure, and the four schools\u2019 FTE adds up to it exactly. Which building a post sits in is a thing this town decides, so this is a dial rather than a condition \u2014 and nothing here says what it should be set to.",
+       "figure": "lost",
+       "figures": {
+        "avg_first": {
+         "text": "17.9",
+         "unit": "",
+         "value": 17.9
+        },
+        "avg_last": {
+         "text": "22.0",
+         "unit": "",
+         "value": 22.0
+        },
+        "district": {
+         "text": "-1.5",
+         "unit": "",
+         "value": -1.5
+        },
+        "gained": {
+         "text": "1.7",
+         "unit": "",
+         "value": 1.7
+        },
+        "hs_avg_last": {
+         "text": "14.5",
+         "unit": "",
+         "value": 14.5
+        },
+        "lost": {
+         "text": "2.8",
+         "unit": "full-time teaching posts",
+         "value": -2.8
+        },
+        "sec_gained": {
+         "text": "7",
+         "unit": "",
+         "value": 7
+        },
+        "sec_lost": {
+         "text": "4",
+         "unit": "",
+         "value": -4
+        },
+        "sy_first": {
+         "text": "SY2017",
+         "unit": "",
+         "value": 2017
+        },
+        "sy_last": {
+         "text": "SY2025",
+         "unit": "",
+         "value": 2025
+        }
+       },
+       "id": "mathematics-moved-between-two-buildings",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Why. A post can move because a timetable changed, because a retirement was not replaced, because a grant ended, or because the two schools were staffed to different targets. Nothing in either state file distinguishes them.",
+       "see": [
+        {
+         "label": "The FTE series in full",
+         "slug": "/school-staffing"
+        }
+       ],
+       "so_what": "The district figure is -1.5 and shows neither. Middle school classes went from 17.9 to 22.0."
       }
      ],
-     "count": 6,
+     "count": 9,
      "data": "/data/course-offerings.json",
      "generator": "scripts/build_course_offerings.py",
      "id": "courses",
@@ -9917,7 +10578,7 @@
         },
         {
          "label": "the three quantities the archive does hold",
-         "slug": "/school-staffing"
+         "slug": "/who-works-in-each-school"
         }
        ],
        "so_what": "The jobs the state counts are teachers. Most cut posts are not teachers."
@@ -11290,17 +11951,17 @@
  ],
  "totals": {
   "bearing": {
-   "lever": 16,
-   "sizes": 54,
+   "lever": 18,
+   "sizes": 55,
    "unclassified": 0
   },
-  "conclusions": 70,
-  "document_words": 80084,
+  "conclusions": 73,
+  "document_words": 80083,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 69,
-  "reports": 20,
-  "with_conclusions": 20,
+  "measured": 72,
+  "reports": 22,
+  "with_conclusions": 22,
   "without_conclusions": 0
  }
 }

@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
-"""The school-staffing page's series, pre-rendered from the database.
+"""The staffing series, pre-rendered from the database — THREE payloads, ONE build.
 
-    python3 scripts/build_staffing_charts.py            # write it
-    python3 scripts/build_staffing_charts.py --check    # fail if it is stale
+    python3 scripts/build_staffing_charts.py            # write all three
+    python3 scripts/build_staffing_charts.py --check    # fail if any is stale
 
-WHAT THIS PAGE IS ABOUT, AND WHY IT IS BUILT THE WAY IT IS.
+  fy28/public/data/school-staffing.json          /school-staffing
+  fy28/public/data/who-works-in-each-school.json /who-works-in-each-school
+  fy28/public/data/the-paraprofessionals.json    /the-paraprofessionals
+
+/school-staffing grew to twenty-two sections because it was answering three questions
+under one title. It is three pages now, and the data behind them is still computed ONCE:
+`build()` computes everything and `split()` SELECTS. Three generators recomputing the same
+DESE series would be three chances to disagree about it, and each one's own `--check`
+would pass while they did. See PAGES, below, for what lands where and why.
+
+WHAT THESE PAGES ARE ABOUT, AND WHY THEY ARE BUILT THE WAY THEY ARE.
 
 Three separate things in this archive touch school staffing, and they are three different
 quantities that a reader will assume are one:
@@ -52,6 +62,7 @@ here is the same for every reader until the database is rebuilt.
 import argparse
 import collections
 import csv
+import glob
 import json
 import os
 import re
@@ -65,7 +76,7 @@ from conclusions import conclusion, emit, figure
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources/data/lunenburg.db')
-OUT = os.path.join(ROOT, 'fy28/public/data/school-staffing.json')
+OUT_DIR = os.path.join(ROOT, 'fy28/public/data')
 MANIFEST = os.path.join(ROOT, 'sources/data/archive-manifest.csv')
 MINUTES = 'sources/meetings/text'
 
@@ -1459,6 +1470,601 @@ def headcount(db):
               'them under. Not FTE, not posts, not the town’s payroll.')
 
 
+
+# =========================================================== THE SCHOOL BOARD (the panels)
+#
+# WHAT THIS IS FOR. Every other section on this page is a SERIES: a quantity over years,
+# for the district. A resident does not live in a district. They have a child at one
+# building, and the question they arrive with is what that building holds -- how many
+# children, how many adults, and who those adults are.
+#
+# WHAT IT IS BUILT FROM, AND THE THREE THINGS IT MUST NOT LET A READER CONFLATE:
+#
+#   * ADULTS are NAMES the town printed on a roster in its annual report. No FTE, no
+#     funding source, undated within the year. Rule 11: a count of names the town printed
+#     is a real quantity and it is not a staffing level.
+#   * CHILDREN are DESE's October enrolment for that school.
+#   * FTE is DESE's, and it is TEACHERS ONLY. There is no published full-time equivalent
+#     for a paraprofessional, an administrator, a nurse, a counsellor, a custodian or a
+#     kitchen post at any school in this town, in any year. So a school's "total FTE" here
+#     is a TEACHING total, it is labelled as one everywhere, and it is never set against
+#     the roster count as though the difference were part-timers.
+#
+# THE CATEGORIES MUST SUM TO THE ROSTER. A panel that shows categories and quietly omits
+# the ones it could not classify is a lie by composition, so `unknown` is a category with
+# a plain-English label and the sum is asserted below rather than trusted.
+#
+# THE GRADE SPANS ARE READ, NOT REMEMBERED. Lunenburg reorganised twice inside this run:
+# Passios closed after FY2012, every remaining school shifted up a grade for FY2013, and a
+# combined middle/high building opened for FY2017. Turkey Hill MIDDLE (grades 4-7, to
+# FY2016) and Turkey Hill ELEMENTARY (grades 3-5, from FY2017) are different schools and
+# not a rename -- but our roster key `turkey-hill` spans both, because the annual reports
+# print one heading. The span on each panel comes from DESE's own grade columns for that
+# year, so scrubbing the selector to FY2014 shows the primary school holding PK-3 and the
+# high school holding 8-12 rather than leaving a reader to wonder.
+
+# Our roster key -> DESE's org code, by era. THERE IS NO PUBLISHED CROSSWALK between the
+# headings the town prints in its annual report and the org codes the state assigns, so
+# this map is OURS and is declared here rather than inferred. Every code in it is asserted
+# to exist in dese_enrollment on every build. The two-era entry for `turkey-hill` is the
+# reorganisation above, and it is what stops a three-year change being measured across it.
+SCHOOL_ORGS = {
+    'primary':     (('01620010', 0, 9999),),
+    'turkey-hill': (('01620020', 0, 2016), ('01620025', 2017, 9999)),
+    'middle':      (('01620305', 2017, 9999),),
+    'high':        (('01620505', 0, 9999),),
+    'passios':     (('01620015', 0, 2012),),
+}
+
+# The role categories, grouped the way a parent thinks about a school rather than the way
+# a payroll file is ordered. The keys are `role_classification.role_category`; the set is
+# asserted against the database below, so a category appearing in the data and not here
+# fails the build instead of vanishing off the panels.
+BOARD_GROUPS = (
+    ('teach',   'Who teaches'),
+    ('support', 'Who supports children'),
+    ('lead',    'Who runs the building'),
+    ('run',     'Who keeps the building running'),
+    ('unknown', 'Printed titles we could not classify'),
+)
+BOARD_CATEGORIES = (
+    ('teacher',          'Teachers',                             'teach'),
+    ('specialist',       'Specialist teachers',                  'teach'),
+    ('librarian',        'Librarians',                           'teach'),
+    ('paraprofessional', 'Paraprofessionals',                    'support'),
+    ('counselor',        'Counsellors',                          'support'),
+    ('psychologist',     'School psychologists',                 'support'),
+    ('social_worker',    'Social workers',                       'support'),
+    ('speech_therapist', 'Speech therapists',                    'support'),
+    ('therapist',        'Occupational and physical therapists', 'support'),
+    ('nurse',            'Nurses',                               'support'),
+    ('administrator',    'Principals and administrators',        'lead'),
+    ('secretary',        'Office staff',                         'lead'),
+    ('technology',       'Technology staff',                     'run'),
+    ('custodian',        'Custodial and maintenance',            'run'),
+    ('cafeteria',        'Kitchen',                              'run'),
+    ('unknown',          'Printed title we could not classify',  'unknown'),
+)
+
+# How far back a panel's inline change is measured. THREE YEARS, and the span is printed
+# on the panel rather than implied. Rule 7b: three years is more forward visibility than
+# the boards in this town currently use, and FY2023-FY2025 sits entirely inside the
+# post-FY2017 structure, so unlike almost every longer window on this page it crosses no
+# reorganisation. That is a reason to prefer it, not an accident -- and a step that WOULD
+# cross one, or that would run through a year the town printed a roster twice, produces no
+# badge at all. An absent badge is honest; a wrong arrow is the most quotable thing on the
+# panel.
+BOARD_WINDOW = 2          # year-steps back, so FY2025 is compared with FY2023
+
+# DESE's grade-band columns, and the residual. `multi_grade` is not a grade band: it is
+# where the state puts an assignment it did not code to one, and its size moves by twelve
+# FTE at Lunenburg High between two years in which the total barely moves. It is shown as
+# its own labelled row and never apportioned across the others.
+BAND_COLS = (
+    ('pk_2_fte', 'Pre-K to grade 2'),
+    ('grade_3_5_fte', 'Grades 3 to 5'),
+    ('grade_6_8_fte', 'Grades 6 to 8'),
+    ('grade_9_12_fte', 'Grades 9 to 12'),
+    ('multi_grade_fte', 'Coded to no single band'),
+    ('all_grade_fte', 'Coded to all grades'),
+)
+# The grades each band covers, so a band's FTE can be set against the state's own
+# enrolment columns for the same school and year.
+BAND_GRADES = {
+    'pk_2_fte': ('PK', 'K', '1', '2'),
+    'grade_3_5_fte': ('3', '4', '5'),
+    'grade_6_8_fte': ('6', '7', '8'),
+    'grade_9_12_fte': ('9', '10', '11', '12'),
+}
+# Below this, a band's FTE is a rounding artefact rather than a school teaching a grade.
+# Lunenburg High reports 0.3 in the 6-8 band in FY2022, six years after grade 8 left the
+# building.
+BAND_FLOOR = 0.5
+
+
+# The town report's school section says which SCHOOL YEAR it is describing, in prose, in
+# the middle of a principal's narrative -- and it is not the year on the cover. Found by
+# rule rather than typed: any sentence in the annual report that names a fall and a
+# student count, matched against DESE's October enrolment for that school. Nothing else in
+# either document states the roster's date, which is why this matters: if the school
+# section of the FY2024 report describes the autumn of 2024, its roster is a year later
+# than its label, and the children counted beside it here are not the children those
+# adults taught.
+FALL_SENTENCE = re.compile(
+    r'fall of (\d{4})[,]?\s+(?:the\s+)?(.{3,60}?(?:School|Elementary|High))\b[^.]{0,90}?'
+    r'\b(\d{2,4})\s+(?:enrolled\s+)?students', re.I)
+
+
+def report_year_basis(db, enrol):
+    """Which school year each annual report's school section describes, measured.
+
+    The count the narrative states is compared with DESE's October enrolment for the SAME
+    school in both candidate years -- the year on the report's cover, and the year after
+    it. The closer match wins, per sentence, and the tally is published rather than a
+    conclusion asserted from it.
+    """
+    docs = {r['fy']: r['document'] for r in rows(
+        db, 'SELECT fy, document FROM staff_roster_entries GROUP BY fy')}
+    tsv = {os.path.basename(f)[:-4]: f
+           for f in glob.glob(os.path.join(ROOT, 'sources/*/ocr/*.tsv'))}
+    names = {}
+    for (fy, code), r in enrol.items():
+        names.setdefault((r['org_name'] or '').lower(), code)
+    found, missing = [], []
+    for fy, document in sorted(docs.items()):
+        stem = os.path.splitext(document or '')[0]
+        path = tsv.get(stem)
+        if not path:
+            missing.append(document)
+            continue
+        # JOINED PER PAGE BEFORE SEARCHING. The FY2024 report breaks this very sentence
+        # across two OCR rows -- `In the fall of` ends one and `2024, Turkey Hill ...`
+        # begins the next -- so a row-at-a-time search reads it as absent. The regex is
+        # bounded by a full stop, so joining cannot make it match across two sentences.
+        pages = collections.defaultdict(list)
+        with open(path, encoding='utf-8', errors='replace') as fh:
+            for row in csv.DictReader(fh, delimiter='\t'):
+                pages[row.get('page')].append((row.get('text') or '').strip())
+        for text in (' '.join(t for t in v if t) for v in pages.values()):
+            for m in FALL_SENTENCE.finditer(text):
+                fall, school, said = int(m.group(1)), m.group(2).strip(), int(m.group(3))
+                code = next((c for nm, c in names.items()
+                             if school.lower() in nm or nm in school.lower()), None)
+                if code is None:
+                    continue
+                # The school year that BEGINS in the named autumn is DESE's fy+1.
+                cand = {}
+                for label, y in (('same as the cover', fall), ('the year after', fall + 1)):
+                    en = enrol.get((y, code))
+                    if en and en['total_cnt']:
+                        cand[label] = dict(fy=y, dese=en['total_cnt'],
+                                           off=abs(en['total_cnt'] - said))
+                if len(cand) < 2:
+                    continue
+                best = min(cand, key=lambda k: cand[k]['off'])
+                found.append(dict(report_fy=fy, document=document, fall=fall,
+                                  school=school, org_code=code, said=said,
+                                  closer=best, candidates=cand))
+    if missing:
+        sys.exit('no OCR text found for %s. A search that reads nothing returns nothing '
+                 'and looks exactly like a document that says nothing -- refusing to '
+                 'write.' % ', '.join(sorted(set(missing))))
+    tally = collections.Counter(f['closer'] for f in found)
+    return dict(sentences=found, reports=len(docs), searched=len(docs),
+                tally=dict(tally),
+                verdict=(max(tally, key=tally.get) if tally else None))
+
+
+def school_board(db, ros):
+    """Four school panels: children, adults by category, and the teaching FTE beside them.
+
+    `ros` is the output of roster(), so the doubled-roster years are the ones that
+    function DETECTED rather than a second copy of the same fact computed here.
+    """
+    cats = {k: (lab, grp) for k, lab, grp in BOARD_CATEGORIES}
+    seen = {r['role_category'] for r in rows(
+        db, 'SELECT DISTINCT role_category FROM role_classification')}
+    missing = sorted(seen - set(cats))
+    if missing:
+        sys.exit('role_classification holds categories these panels do not name: %s. A '
+                 'panel that shows categories and omits people is a lie by composition -- '
+                 'refusing to write.' % ', '.join(missing))
+
+    ent = rows(db, 'SELECT e.fy, e.school, e.page, e.name, c.role_category '
+                   'FROM staff_roster_entries e '
+                   'LEFT JOIN role_classification c '
+                   '  ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept '
+                   'WHERE e.school IN (%s)' % ','.join('?' * len(SCHOOL_ORGS)),
+               *sorted(SCHOOL_ORGS))
+    if not ent:
+        sys.exit('no roster entries for the school panels -- refusing to write.')
+    if any(r['role_category'] is None for r in ent):
+        sys.exit('a roster entry did not join to role_classification. A row with no '
+                 'category is not a row with no role -- refusing to write.')
+
+    # DESE, once, for every school-year the state publishes.
+    enrol, prog = {}, {}
+    for r in rows(db, "SELECT fy, org_code, org_name, total_cnt, swd_cnt, %s "
+                      "FROM dese_enrollment WHERE lea = ? AND org_level = 'school'"
+                  % ', '.join(c for c, _ in GRADE_COLS), LEA):
+        enrol[(r['fy'], r['org_code'])] = r
+    for r in rows(db, "SELECT fy, org_code, org_name, gen_ed_fte, sped_fte, "
+                      "career_tech_fte, el_fte, total_fte FROM dese_teacher_program_area "
+                      "WHERE lea = ? AND org_level = 'school'", LEA):
+        prog[(r['fy'], r['org_code'])] = r
+
+    # THE SECOND ROUTE TO THE SAME FIGURE, and it is a real reconciliation rather than a
+    # restatement: `dese_teacher_program_area` splits a school's teaching FTE by PROGRAMME
+    # and `dese_teacher_grade_subject` splits it by GRADE BAND. Two files, two collections,
+    # one quantity -- so their totals have to agree, and this refuses to write when they
+    # do not.
+    bands = {}
+    for r in rows(db, "SELECT fy, org_code, pk_2_fte, grade_3_5_fte, grade_6_8_fte, "
+                      "grade_9_12_fte, multi_grade_fte, all_grade_fte, total_fte, "
+                      "reconciles FROM dese_teacher_grade_subject WHERE lea = ? AND "
+                      "org_level = 'school' AND subject = 'All'", LEA):
+        bands[(r['fy'], r['org_code'])] = r
+    if not bands:
+        sys.exit('dese_teacher_grade_subject returned no school rollups -- a join that '
+                 'matches nothing looks exactly like data that is absent. Refusing to '
+                 'write.')
+    band_check = dict(compared=0, agree=0, off=[])
+    for k, pr in sorted(prog.items()):
+        bd = bands.get(k)
+        if bd is None or pr['total_fte'] is None or bd['total_fte'] is None:
+            continue
+        band_check['compared'] += 1
+        if abs(pr['total_fte'] - bd['total_fte']) < 0.05:
+            band_check['agree'] += 1
+        else:
+            band_check['off'].append(dict(fy=k[0], org_code=k[1],
+                                          programme=pr['total_fte'],
+                                          grade_band=bd['total_fte']))
+    if band_check['off']:
+        sys.exit('DESE\'s programme-area and grade-band files disagree about a school\'s '
+                 'teaching FTE in %d school-years (%s). One quantity, two files -- '
+                 'refusing to write.'
+                 % (len(band_check['off']),
+                    ', '.join('%s %s: %s vs %s' % (o['fy'], o['org_code'],
+                                                   o['programme'], o['grade_band'])
+                              for o in band_check['off'][:4])))
+    have_orgs = {k[1] for k in enrol}
+    for school, eras in sorted(SCHOOL_ORGS.items()):
+        for code, _, _ in eras:
+            if code not in have_orgs:
+                sys.exit('org code %s (%s) is in the school map and in none of DESE\'s '
+                         'enrolment rows. A join that matches nothing looks exactly like '
+                         'data that is absent -- refusing to write.' % (code, school))
+
+    def org_of(school, fy):
+        for code, lo, hi in SCHOOL_ORGS[school]:
+            if lo <= fy <= hi:
+                return code
+        return None
+
+    doubled = {(d['fy'], d['school']): d for d in ros['doubled']}
+    years = sorted({r['fy'] for r in ent})
+    printed = collections.defaultdict(set)          # school -> years it was printed
+    for r in ent:
+        printed[r['school']].add(r['fy'])
+
+    def counts(sub):
+        c = collections.Counter(r['role_category'] for r in sub)
+        return c
+
+    panels = collections.defaultdict(list)
+    for fy in years:
+        for school in sorted(SCHOOL_ORGS):
+            if fy not in printed[school]:
+                continue
+            here = [r for r in ent if r['fy'] == fy and r['school'] == school]
+            code = org_of(school, fy)
+            en = enrol.get((fy, code)) if code else None
+            pr = prog.get((fy, code)) if code else None
+            c = counts(here)
+            if sum(c.values()) != len(here):
+                sys.exit('the categories on the %s %s panel do not sum to its roster '
+                         '(%d against %d) -- refusing to write.'
+                         % (school, fy, sum(c.values()), len(here)))
+
+            # ---- the three-year change, per category, or nothing at all.
+            back = fy - BOARD_WINDOW
+            why_no = None
+            if back not in printed[school]:
+                why_no = ('no roster was printed for this school in %s' % C.fy(back))
+            elif org_of(school, back) != code:
+                why_no = ('%s and %s are two different schools in the state’s own '
+                          'records, either side of the %s reorganisation'
+                          % (C.fy(back), C.fy(fy), C.fy(2017)))
+            elif (fy, school) in doubled or (back, school) in doubled:
+                why_no = ('the town printed two rosters for this school in %s, so '
+                          'neither end of the step is one year'
+                          % C.fy(fy if (fy, school) in doubled else back))
+            prev = counts([r for r in ent if r['fy'] == back and r['school'] == school]) \
+                if why_no is None else None
+
+            rows_ = []
+            for key, label, group in BOARD_CATEGORIES:
+                n = c.get(key, 0)
+                if not n:
+                    continue
+                rows_.append(dict(
+                    key=key, label=label, group=group, names=n,
+                    delta=(n - prev.get(key, 0)) if prev is not None else None))
+            group_rows = []
+            for gkey, glabel in BOARD_GROUPS:
+                n = sum(r['names'] for r in rows_ if r['group'] == gkey)
+                if not n:
+                    continue
+                group_rows.append(dict(
+                    key=gkey, label=glabel, names=n,
+                    delta=(n - sum(prev.get(k, 0) for k, _, g in BOARD_CATEGORIES
+                                   if g == gkey)) if prev is not None else None))
+
+            names = len(here)
+            band = None
+            d = doubled.get((fy, school))
+            if d:
+                # The SUMMED categories are withheld rather than published beside a
+                # warning. 135 people at a school of 64 is the most quotable figure on
+                # the panel and a caption underneath does not travel with it.
+                rows_, group_rows = None, None
+                # No way exists to split a category between two printed rosters, so the
+                # panel shows each printed roster on its own and the school total as a
+                # RANGE. Neither page says which year it describes.
+                band = dict(pages=d['pages'], shared=d['shared'],
+                            low=min(d['names']), high=max(d['names']),
+                            summed=names,
+                            rosters=[dict(page=p, names=sum(1 for r in here
+                                                            if r['page'] == p),
+                                          rows=[dict(key=k, label=cats[k][0],
+                                                     group=cats[k][1], names=v)
+                                                for k, v in sorted(
+                                                    counts([r for r in here
+                                                            if r['page'] == p]).items(),
+                                                    key=lambda kv: -kv[1])],
+                                          # WHICH ROSTER IS WHICH, as far as the archive
+                                          # can say: nothing on either page states a year,
+                                          # so the only evidence is who is named as
+                                          # running the school and which OTHER years the
+                                          # town printed that person there.
+                                          leaders=[
+                                              dict(name=r['name'],
+                                                   also=sorted(
+                                                       {q['fy'] for q in ent
+                                                        if q['name'] == r['name']
+                                                        and q['school'] == school
+                                                        and q['fy'] != fy}))
+                                              for r in sorted(
+                                                  (q for q in here
+                                                   if q['page'] == p
+                                                   and q['role_category'] == 'administrator'),
+                                                  key=lambda q: q['name'] or '')])
+                                     for p in d['pages']])
+
+            students = en['total_cnt'] if en else None
+            panels[fy].append(dict(
+                school=school, org_code=code,
+                name=(en or pr or {}).get('org_name'),
+                grade_span=grade_span(db, code, fy) if code else '',
+                students=students,
+                students_with_plans=en['swd_cnt'] if en else None,
+                names=names,
+                names_band=band,
+                per_adult=(students / names) if students and names and not band else None,
+                rows=rows_, groups=group_rows,
+                delta_from_fy=back if why_no is None else None,
+                delta_unavailable=why_no,
+                teaching=dict(
+                    total_fte=pr['total_fte'], gen_ed_fte=pr['gen_ed_fte'],
+                    sped_fte=pr['sped_fte'], career_tech_fte=pr['career_tech_fte'],
+                    el_fte=pr['el_fte'],
+                    students_per_fte=(students / pr['total_fte'])
+                    if students and pr['total_fte'] else None,
+                    # The same total, reached through DESE's other file. `multi_grade` is
+                    # a CODING RESIDUAL and is labelled as one: Lunenburg High reports
+                    # 13.3 in the 9-12 band and 21.1 multi-grade in FY2018, and 25.4 and
+                    # 5.9 in FY2019, while the total barely moves. Nothing is apportioned
+                    # out of it -- an allocation we invented would be worse than a column
+                    # a reader can see is unstable.
+                    bands=[dict(key=k, label=lab,
+                                fte=bands[(fy, code)][k])
+                           for k, lab in BAND_COLS
+                           if (fy, code) in bands and bands[(fy, code)][k]]
+                    if (fy, code) in bands else None,
+                    bands_total=bands[(fy, code)]['total_fte']
+                    if (fy, code) in bands else None,
+                ) if pr else None,
+            ))
+
+    # The reorganisation, READ off the map and the state's own grade columns rather than
+    # typed into a sentence: the year each roster key starts pointing at a different
+    # school, with the grade span either side.
+    breaks = []
+    for school, eras in sorted(SCHOOL_ORGS.items()):
+        for (a, _, ahi), (b, blo, _) in zip(eras, eras[1:]):
+            fya = max(fy for fy in years if fy <= ahi and fy in printed[school])
+            fyb = min(fy for fy in years if fy >= blo and fy in printed[school])
+            breaks.append(dict(
+                school=school, last_fy=fya, first_fy=fyb,
+                was=(enrol.get((fya, a)) or {}).get('org_name'),
+                now=(enrol.get((fyb, b)) or {}).get('org_name'),
+                was_span=grade_span(db, a, fya), now_span=grade_span(db, b, fyb)))
+
+    # ---- TWO ORGANISATIONS COUNTING THE SAME TEACHERS, SET AGAINST EACH OTHER.
+    #
+    # The town prints a roster of NAMES per school. DESE publishes teaching FTE per
+    # school. They are produced by different bodies from different records for different
+    # purposes and they overlap on exactly one quantity: teachers at a named school in a
+    # named year. So they can be compared -- and the comparison is the only independent
+    # check this archive has on either of them at school grain.
+    #
+    # THE RELATION IS NOT EQUALITY AND IS NEVER DRAWN AS ONE. A headcount above an FTE is
+    # ordinary: the state's own files put 123 teachers in Lunenburg holding 112.8 FTE, so
+    # the average teacher holds 0.92 of a post and the expected ratio sits a little above
+    # one. The finding is never "they differ".
+    #
+    # WHAT IS WORTH FLAGGING is the one direction that says the two documents cannot both
+    # be complete counts of the same people: FEWER NAMES PRINTED THAN FULL-TIME-EQUIVALENT
+    # POSTS. Fifteen people cannot hold 25.9 full-time posts between them. Rule 7 and rule
+    # 13a: that is a measurement that two documents disagree, it does not establish which
+    # is wrong, and the page publishes the spread rather than reconciling it. Three
+    # readings fit every one of them -- our extract lost part of a printed page, the town
+    # printed part of the faculty, or DESE counts an assignment at a school whose staff
+    # the town printed under another heading.
+    #
+    # AND THE CHECK IS TEACHERS ONLY, said on the panel rather than left as a blank
+    # column: no paraprofessional, administrator, nurse, counsellor, custodian or kitchen
+    # post has a published FTE at any school, so those categories have nothing to check
+    # against at all. A check that cannot run is not a check that passed.
+    TEACHING_GROUP = 'teach'
+    cross = []
+    for fy in years:
+        for p in panels[fy]:
+            t = p['teaching']
+            if not t or not t['total_fte']:
+                continue
+            if p['rows'] is None:                       # a doubled year: no single count
+                continue
+            heads = sum(r['names'] for r in p['rows'] if r['group'] == TEACHING_GROUP)
+            cross.append(dict(fy=fy, school=p['school'], heads=heads,
+                              fte=t['total_fte'], ratio=heads / t['total_fte']))
+    if not cross:
+        sys.exit('no school-year has both a printed roster and a published teaching FTE. '
+                 'A join that matches nothing looks exactly like data that is absent -- '
+                 'refusing to write.')
+    ratios = sorted(c['ratio'] for c in cross)
+    mid = ratios[len(ratios) // 2] if len(ratios) % 2 else \
+        (ratios[len(ratios) // 2 - 1] + ratios[len(ratios) // 2]) / 2
+    lo_at = min(cross, key=lambda c: c['ratio'])
+    hi_at = max(cross, key=lambda c: c['ratio'])
+    short = [c for c in cross if c['heads'] < c['fte']]
+    cross_index = {(c['fy'], c['school']): c for c in cross}
+
+    # The doubled year gets the same instrument pointed at it, which is the whole reason
+    # to build one: DESE's teaching FTE for that school barely moves across the years the
+    # town's roster doubles, and the SUMMED roster would sit outside every other
+    # school-year this archive holds.
+    doubled_cross = []
+    for (fy, school), dd in sorted(doubled.items()):
+        p = next((q for q in panels[fy] if q['school'] == school), None)
+        if not p or not p['teaching'] or not p['teaching']['total_fte']:
+            continue
+        heads = [sum(x['names'] for x in r['rows'] if x['group'] == TEACHING_GROUP)
+                 for r in p['names_band']['rosters']]
+        fte = p['teaching']['total_fte']
+        doubled_cross.append(dict(
+            fy=fy, school=school, fte=fte, heads=heads, summed=sum(heads),
+            summed_ratio=sum(heads) / fte,
+            each_ratio=[h / fte for h in heads],
+            outside_every_other_year=sum(heads) / fte > hi_at['ratio'],
+            # The state's own figure either side of the doubled year, so a reader can
+            # see that the quantity the town's roster doubles did not move.
+            fte_either_side=[
+                dict(fy=y, fte=next((q['teaching']['total_fte'] for q in panels[y]
+                                     if q['school'] == school and q['teaching']), None))
+                for y in (fy - 1, fy, fy + 1) if y in panels],
+        ))
+
+    for c in cross:
+        c['flag'] = 'fewer-names-than-posts' if c['heads'] < c['fte'] else None
+    # Attached to each panel by key rather than by position.
+    for fy in years:
+        for p in panels[fy]:
+            p['cross_check'] = cross_index.get((fy, p['school']))
+
+    # ---- THE ERAS, CONFIRMED BY A SECOND INSTRUMENT THAT DOES NOT KNOW ABOUT THE FIRST.
+    # The grade spans on these panels are read off DESE's ENROLMENT columns. DESE's
+    # TEACHER file codes each assignment to a grade band, and the two were collected
+    # separately -- so if the reorganisation is real, a school should carry teaching FTE
+    # in a band exactly in the years it enrolled children in those grades. Lunenburg High
+    # is the sharpest case: 8.0, 9.5, 7.5 and 8.6 FTE in the grades 6-8 band in FY2013 to
+    # FY2016, and nothing either side.
+    band_era = dict(floor=BAND_FLOOR, compared=0, agree=0, disagree=[], schools=[])
+    for school, eras in sorted(SCHOOL_ORGS.items()):
+        for code, lo, hi in eras:
+            for bkey, grades in sorted(BAND_GRADES.items()):
+                taught, enrolled = [], []
+                for fy in sorted({k[0] for k in bands if k[1] == code}):
+                    if not (lo <= fy <= hi):
+                        continue
+                    bd, en = bands.get((fy, code)), enrol.get((fy, code))
+                    if bd is None or en is None:
+                        continue
+                    band_era['compared'] += 1
+                    t = (bd[bkey] or 0) >= BAND_FLOOR
+                    e = any(en[col] for col, lab in GRADE_COLS if lab in grades)
+                    if t:
+                        taught.append(fy)
+                    if e:
+                        enrolled.append(fy)
+                    if t == e:
+                        band_era['agree'] += 1
+                    else:
+                        band_era['disagree'].append(
+                            dict(school=school, org_code=code, fy=fy, band=bkey,
+                                 fte=bd[bkey], enrolled=e))
+                if taught or enrolled:
+                    band_era['schools'].append(dict(
+                        school=school, org_code=code, band=bkey,
+                        label=dict(BAND_COLS)[bkey],
+                        taught=taught, enrolled=enrolled,
+                        agrees=taught == enrolled))
+    if band_era['compared'] and band_era['agree'] / band_era['compared'] < 0.95:
+        sys.exit('DESE\'s teacher grade bands and its enrolment columns agree about which '
+                 'grades a school held in only %d of %d school-year bands. The eras on '
+                 'these panels rest on that agreement -- refusing to write.'
+                 % (band_era['agree'], band_era['compared']))
+
+    latest = years[-1]
+    open_now = [p['school'] for p in panels[latest]]
+    return dict(
+        window=BOARD_WINDOW + 1,
+        first_fy=years[0], last_fy=latest, years=years,
+        groups=[dict(key=k, label=l) for k, l in BOARD_GROUPS],
+        categories=[dict(key=k, label=l, group=g) for k, l, g in BOARD_CATEGORIES],
+        schools=sorted(SCHOOL_ORGS),
+        open_now=open_now,
+        breaks=breaks,
+        band_check=band_check,
+        cross_check=dict(
+            group=TEACHING_GROUP,
+            categories=[k for k, _, g in BOARD_CATEGORIES if g == TEACHING_GROUP],
+            compared=len(cross), flagged=len(short),
+            median_ratio=mid,
+            lowest=lo_at, highest=hi_at,
+            short=sorted(short, key=lambda c: c['ratio']),
+            # WHERE THE DISAGREEMENT IS, because 25 of 54 is not an anomaly detector --
+            # it is a structural fact about two of the four schools, and saying so is
+            # more honest than dressing it as an outlier flag. The middle school and the
+            # high school share one building; DESE splits an assignment between the two
+            # org codes and the town prints one roster per school, which is one reading
+            # of it and is not established.
+            by_school=[dict(school=sc,
+                            years=sum(1 for c in cross if c['school'] == sc),
+                            short=sum(1 for c in short if c['school'] == sc))
+                       for sc in sorted({c['school'] for c in cross})],
+            doubled=doubled_cross,
+            what_it_is_not=(
+                'A headcount above an FTE is ordinary — the state counts 123 teachers in '
+                'Lunenburg holding 112.8 posts between them, so the average teacher holds '
+                '0.92 of one. What is flagged is the other direction only: fewer names '
+                'printed than full-time-equivalent posts, which says the two documents '
+                'cannot both be complete counts of the same people. It does not say which '
+                'is wrong.'),
+        ),
+        year_basis=report_year_basis(db, enrol),
+        band_era_evidence=band_era,
+        by_fy={str(fy): panels[fy] for fy in years},
+        # Said once, on the panel, rather than left to a reader's arithmetic.
+        fte_is_teachers_only=(
+            'DESE publishes a full-time equivalent for TEACHERS and for nobody else at '
+            'school level. There is no published FTE for a paraprofessional, an '
+            'administrator, a nurse, a counsellor, a custodian or a kitchen post at any '
+            'school in this town, in any year — so the FTE beside a panel is a teaching '
+            'total and the difference between it and the roster is not part-timers.'),
+    )
+
 # ------------------------- the special education half of the paraprofessional question
 #
 # TWO DESE FILES COUNT PARAPROFESSIONALS AND THEY MOVE IN OPPOSITE DIRECTIONS.
@@ -1566,6 +2172,189 @@ def sped_staffing(db):
                                'the first’s.'))
 
 
+# ------------------------------------------------------------------- three pages, one build
+#
+# WHY THREE FILES AND ONE GENERATOR.
+#
+# /school-staffing grew to twenty-two sections because it was answering three questions
+# under one title: did staffing go up, who works in each school, and what happened to the
+# paraprofessionals. They are now three pages -- and the tell that the cut is the right
+# one is that each keeps its OWN caveat. The window page's limit is that the sign of the
+# answer is a property of the endpoints; the school page's is that a roster is not a
+# census; the paraprofessional page's is rule 11, that a net line rising because a grant
+# ended looks identical to a line rising because the district hired.
+#
+# THE DATA IS COMPUTED ONCE. Three generators recomputing the same DESE series is three
+# chances for them to disagree about it, and the disagreement would be invisible -- each
+# one's own --check would pass. So `build()` computes everything and this function
+# SELECTS, which means a block appearing on two pages is the same block, byte for byte.
+#
+# Every assignment below is asserted rather than assumed: a top-level block, a conclusion,
+# a caveat or a source document that no page claims stops the build, because a section
+# silently dropped in a reorganisation reads to every reader as coverage.
+
+PAGES = (
+    dict(
+        out='school-staffing.json',
+        report='school-staffing',
+        # THE OLD ADDRESS, KEPT. /school-staffing has been published, linked and cited for
+        # months and this is the page it was: the window argument is the spine of what was
+        # there, it is what the h1 said, and a reader arriving from an old link lands on
+        # the finding they were sent for. The two new pages take new addresses; not one
+        # existing alias moves.
+        keys=('state', 'peers', 'composition'),
+        conclusions=('the-sign-is-a-property-of-the-window',
+                     'fewest-teachers-per-pupil-in-the-group'),
+        about=('Whether school staffing went up — which depends entirely on the years '
+               'you pick. A window you move yourself, over every year the state has '
+               'published, and the count of how many spans give each answer.'),
+        grain=('Teacher FTE as the state counts it — per ASSIGNMENT, not per person — '
+               'set against pupil headcount and the state’s need measures. Not dollars, '
+               'not posts, not people, and not a count of who the town appropriates for.'),
+        docs=('state-dese/dese-teacher-data.xlsx',
+              'state-dese/dese-teachers-by-grade-subject.xlsx',
+              'state-dese/dese-enrollment-by-grade.xlsx'),
+        # THE ENDPOINT CAVEAT IS THIS PAGE'S OWN, and it is the first line of it.
+        gaps=('Whether any position was filled.',
+              'What happened to music.',
+              'Whether a subject losing FTE lost a course.',
+              'How the low-income share moved'),
+        closes=('DESE’s own EPIMS work assignment detail by school, subject and job '
+                'classification, which would turn an assignment count into a position '
+                'count; and the district’s master schedule by year, which would say '
+                'whether a subject losing FTE lost a course rather than a timetable.'),
+    ),
+    dict(
+        out='who-works-in-each-school.json',
+        report='who-works-in-each-school',
+        keys=('board', 'roster', 'headcount', 'composition', 'state', 'peers',
+              'wages'),
+        conclusions=('a-headcount-is-not-an-fte-count',),
+        about=('Who the town printed working in each of its four schools, every year '
+               'from FY2011 — beside the posts and the people the state counts in the '
+               'same buildings, and why a roster is not a census.'),
+        grain=('Names the town PRINTED, one row per name, per school, per annual report '
+               '— set beside DESE’s FTE for teaching posts and DESE’s headcount of '
+               'people. Three instruments, never divided by one another.'),
+        docs=('state-dese/dese-teacher-data.xlsx',
+              'state-dese/dese-teachers-by-grade-subject.xlsx',
+              'state-dese/dese-teachers-by-program-area.xlsx',
+              'state-dese/dese-enrollment-by-grade.xlsx',
+              'state-dese/dese-educators-retention.xlsx'),
+        gaps=('What Lunenburg’s counsellors, social workers,',
+              'What share of a post any NON-TEACHING adult',
+              'Which school year a printed staff roster describes.',
+              'Which of two documents is short',
+              'How much of a post any individual holds.'),
+        closes=('DESE’s EPIMS work assignment detail by school and job classification, '
+                'which would put an FTE and a funding source beside every adult in a '
+                'building rather than beside the teaching posts alone; and a dated '
+                'roster, which would say which school year each printed page describes.'),
+    ),
+    dict(
+        out='the-paraprofessionals.json',
+        report='the-paraprofessionals',
+        keys=('state', 'peers', 'sped_staffing', 'dollars'),
+        conclusions=('the-change-is-paraprofessionals',
+                     'paraprofessionals-outside-special-education',
+                     'inside-sped-the-money-went-to-paraprofessionals'),
+        about=('The biggest single change in who Lunenburg’s schools employ: fewest '
+               'paraprofessionals per pupil in its comparison group to most, the general '
+               'education half that grew as the special education half halved, and the '
+               'budget lines underneath.'),
+        grain=('Paraprofessional FTE as the state counts it, from two DESE files with '
+               'two definitions — set beside NET general fund budget lines, which are '
+               'dollars and not posts. The two are never divided by one another.'),
+        docs=('state-dese/dese-teacher-data.xlsx',
+              'state-dese/dese-enrollment-by-grade.xlsx',
+              'state-dese/dese-sped-program-characteristics.xlsx'),
+        gaps=('Who pays for any of it.',
+              'Whether Lunenburg’s paraprofessionals moved out of special education'),
+        closes=('DESE’s End of Year Financial Report, Schedule 1, as Lunenburg files it, '
+                'which separates spending by fund and is the document that would say '
+                'which fund pays which post — and without which a line rising because '
+                'the district added staff cannot be told from a line rising because a '
+                'grant that had been paying for them ended.'),
+    ),
+)
+
+
+def split(everything):
+    """Select three payloads out of one computed body of data. Nothing is recomputed."""
+    rows = {c['id']: c for c in everything.pop('_conclusions')}
+    gaps = list(everything.pop('not_established'))
+    docs = {s['path'][len('sources/'):]: s for s in everything.pop('sources')}
+    # The whole-page `about`, `grain` and `closes` are replaced per page, so the ones
+    # build() wrote for the single page are dropped rather than left to be inherited
+    # by three pages describing three different things.
+    for k in ('about', 'grain', 'closes'):
+        everything.pop(k)
+    shared = {k: everything[k] for k in ('generated_by', 'source', 'said', 'searched',
+                                         'minutes')}
+
+    out, claimed_keys, claimed_rows, claimed_gaps, claimed_docs = {}, set(), set(), set(), set()
+    for spec in PAGES:
+        for k in spec['keys']:
+            if k not in everything:
+                sys.exit('%s wants the block %r and build() computed no such block -- '
+                         'refusing to write.' % (spec['out'], k))
+        claimed_keys.update(spec['keys'])
+
+        cons = []
+        for cid in spec['conclusions']:
+            if cid not in rows:
+                sys.exit('%s claims the conclusion %r and nothing computed one -- '
+                         'refusing to write.' % (spec['out'], cid))
+            if cid in claimed_rows:
+                sys.exit('the conclusion %r is on two pages. A conclusion belongs to '
+                         'exactly one report, or /what-it-all-adds-up-to prints it twice '
+                         'under two titles -- refusing to write.' % cid)
+            claimed_rows.add(cid)
+            cons.append(rows[cid])
+
+        mine = []
+        for lead in spec['gaps']:
+            hit = [g for g in gaps if g.startswith(lead)]
+            if len(hit) != 1:
+                sys.exit('%s: %d of the caveats start %r, and exactly one must -- '
+                         'refusing to write.' % (spec['out'], len(hit), lead))
+            if hit[0] in claimed_gaps:
+                sys.exit('%s: the caveat starting %r is already on another page. Each '
+                         'page keeps its OWN caveats -- refusing to write.'
+                         % (spec['out'], lead))
+            claimed_gaps.add(hit[0])
+            mine.append(hit[0])
+
+        srcs = []
+        for key in spec['docs']:
+            if key not in docs:
+                sys.exit('%s names the document %r and no source row describes it -- '
+                         'refusing to write.' % (spec['out'], key))
+            claimed_docs.add(key)
+            srcs.append(docs[key])
+
+        out[spec['out']] = dict(
+            shared,
+            about=spec['about'], grain=spec['grain'], closes=spec['closes'],
+            not_established=mine, sources=srcs,
+            conclusions=emit(spec['report'], cons),
+            **{k: everything[k] for k in spec['keys']})
+
+    # NOTHING FALLS OUT OF A REORGANISATION SILENTLY. Every block, conclusion, caveat and
+    # document computed above has to land on a page; one that lands nowhere is a section
+    # that quietly stopped being published, which is the defect this whole split risks.
+    orphan_keys = sorted(set(everything) - claimed_keys - set(shared))
+    orphan_rows = sorted(set(rows) - claimed_rows)
+    orphan_gaps = [g for g in gaps if g not in claimed_gaps]
+    orphan_docs = sorted(set(docs) - claimed_docs)
+    if orphan_keys or orphan_rows or orphan_gaps or orphan_docs:
+        sys.exit('these were computed and no page publishes them -- refusing to write.\n'
+                 '  blocks: %s\n  conclusions: %s\n  caveats: %s\n  documents: %s'
+                 % (orphan_keys or '-', orphan_rows or '-',
+                    [g[:48] for g in orphan_gaps] or '-', orphan_docs or '-'))
+    return out
+
+
 # ------------------------------------------------------------------------------- build
 
 def build():
@@ -1579,6 +2368,7 @@ def build():
     comp = composition(db, {x['fy'] for x in ros['doubled']})
     heads = headcount(db)
     sped = sped_staffing(db)
+    board = school_board(db, ros)
 
     # The paraprofessional dollars, reached twice: by summing the five line keys out of
     # `budget_figure`, and by reading the district's own five-school aggregation in
@@ -1747,7 +2537,7 @@ def build():
     sp_all, sp_sped = sped['all_programmes'], sped['special_education']
     sp_swd = sped['swd']
 
-    return dict(
+    everything = dict(
         generated_by='scripts/build_staffing_charts.py',
         source='sources/data/lunenburg.db — staff_roster_entries, role_classification, '
                'dese_measure, budget_figure, report_gross_wages',
@@ -1835,6 +2625,27 @@ def build():
             'special education count more than halves, and the two are different files '
             'with different definitions. A reassignment, a recoding and a change in what '
             'the state’s table counts all fit.',
+            'What share of a post any NON-TEACHING adult in a school holds. DESE '
+            'publishes a full-time equivalent for teachers at school level and for '
+            'nobody else — not for a paraprofessional, an administrator, a nurse, a '
+            'counsellor, a custodian or a kitchen post, at any school, in any year. So '
+            'the difference between a school panel’s roster count and its teaching FTE '
+            'is not part-timers: it is everybody the FTE file does not reach.',
+            'Which school year a printed staff roster describes. The rosters carry no '
+            'date, and the town’s own prose suggests the school section may run a year '
+            'ahead of the cover — three sentences across fifteen reports name a fall and '
+            'a student count, and matched against the state’s October enrolment two are '
+            'closer to the year after the report’s fiscal year and one to the year on '
+            'it. The panels pair each roster with the year it is labelled with, and that '
+            'pairing is not established.',
+            'Which of two documents is short where a school printed fewer teaching names '
+            'than the state counts teaching posts. It happens in %s of the %s '
+            'school-years that have both, and it is concentrated in the two schools that '
+            'share a building. Our reading of a scanned page, what the town chose to '
+            'print, and an assignment the state counts at one co-located school whose '
+            'holder the town printed under the other all fit the same numbers.'
+            % (C.num(board['cross_check']['flagged']),
+               C.num(board['cross_check']['compared'])),
             'How much of a post any individual holds. The headcount and the FTE together '
             'give an average share for a whole job class and nothing else: one full-timer '
             'beside one half-timer and two people at three quarters are the same figure.',
@@ -1849,6 +2660,7 @@ def build():
                'school, subject and job classification, which would turn an assignment '
                'count into a position count; and the district’s master schedule by year, '
                'which would say whether a subject losing FTE lost a course.',
+        board=board,
         roster=ros,
         dollars=dict(stage=DOLLAR_STAGE, panels=panels, sped_common_window=common,
                      reconciled=checked),
@@ -1858,7 +2670,7 @@ def build():
             statuses=sorted({r['status'] for r in wages}),
             by_year=[dict(fy=r['fy'], rows=r['n'], school_tagged=r['school'])
                      for r in wages]),
-        conclusions=emit('school-staffing', [
+        _conclusions=[
             # WHY THIS ONE IS FIRST, and why it is a `lever`.
             #
             # Two town bodies are publicly disagreeing about a fact, and the series
@@ -2308,35 +3120,38 @@ def build():
                 see=[('/how-many-students-are-on-an-iep', 'how many children are on a plan'),
                      ('/what-special-education-costs', 'what special education costs')],
             ),
-        ]),
+        ],
     )
+    return split(everything)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
-                    help='fail if the published file is not what this would write')
+                    help='fail if any published file is not what this would write')
     a = ap.parse_args()
-    payload = json.dumps(build(), indent=1, sort_keys=True) + '\n'
-    if a.check:
-        have = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
-        if have != payload:
-            print(f'STALE — {os.path.relpath(OUT, ROOT)} is not what the database now '
-                  f'produces. Run scripts/build_staffing_charts.py.')
-            return 1
-        print(f'ok — {os.path.relpath(OUT, ROOT)} reproduces from the database')
-        return 0
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    open(OUT, 'w', encoding='utf-8').write(payload)
-    d = json.loads(payload)
-    print(f"wrote {os.path.relpath(OUT, ROOT)} — "
-          f"{d['roster']['entries_in_panel']} roster names in the comparable panel "
-          f"FY{d['roster']['first_fy'] % 100}–FY{d['roster']['last_fy'] % 100}, "
-          f"{len(d['state']['points'])} years of DESE FTE, "
-          f"{len(d['peers'])} districts, {len(d['dollars']['panels'])} dollar panels, "
-          f"{len(d['roster']['ocr_defects'])} OCR-corrupted headings "
-          f"({d['roster']['ocr_rows']} rows)")
-    return 0
+    pages = build()
+    rc = 0
+    for name in sorted(pages):
+        path = os.path.join(OUT_DIR, name)
+        rel = os.path.relpath(path, ROOT)
+        text = json.dumps(pages[name], indent=1, sort_keys=True) + '\n'
+        if a.check:
+            have = open(path, encoding='utf-8').read() if os.path.exists(path) else ''
+            if have != text:
+                print(f'STALE — {rel} is not what the database now produces. '
+                      f'Run scripts/build_staffing_charts.py.')
+                rc = 1
+            else:
+                print(f'ok — {rel} reproduces from the database')
+            continue
+        os.makedirs(OUT_DIR, exist_ok=True)
+        open(path, 'w', encoding='utf-8').write(text)
+        d = json.loads(text)
+        print(f"wrote {rel} — {len(d['conclusions'])} conclusion(s), "
+              f"{len(d['not_established'])} caveats, {len(d['sources'])} documents, "
+              f"blocks: {', '.join(k for k in sorted(d) if isinstance(d[k], (dict, list)) and k not in ('conclusions', 'not_established', 'sources', 'said', 'searched', 'minutes'))}")
+    return rc
 
 
 if __name__ == '__main__':

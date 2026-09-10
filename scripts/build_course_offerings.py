@@ -234,6 +234,20 @@ QUOTES = [
              'among the subjects that gained sections here. The transcription reads '
              '“Statis tics”; it is quoted as the archive holds it rather than '
              'tidied, because a quote is a claim about a document.'),
+    dict(key='studyhalls', board='school-committee', date='2025-02-26', kind='minutes',
+         section='misc',
+         doc='7076', who='the district, answering a resident in public comment',
+         quote='No we expect that there will be an increased number of kids in study '
+               'halls, all classes will be larger.',
+         why='The persona review’s omission step found this, and it is the sharpest '
+             'thing in the archive on the question this page was asked. A resident asked '
+             'about “extra-large study halls” in the FY26 budget and the district '
+             'said it expects more children in them. IT DOES NOT SAY THE MISCELLANEOUS '
+             'ROWS ARE STUDY HALLS — nothing published says what those groups are, and '
+             'the ones measured here average under five students, which is not what a '
+             'large study hall looks like. It also describes the school year AFTER the '
+             'last one this file covers, so it is a statement of what the district '
+             'expected rather than a measurement of what happened.'),
     dict(key='largest31', board='school-committee', date='2025-09-03', kind='minutes',
          section='language',
          doc='7385', who='the High School Principal, in his opening report',
@@ -293,12 +307,21 @@ QUOTES = [
 # searches for its own vocabulary and residents use theirs.
 SEARCHED = ['electives', 'course offerings', 'master schedule', 'program of studies',
             'world language', 'foreign language', 'French', 'Latin',
-            'computer science', 'class size', 'course selection']
+            'computer science', 'class size', 'course selection',
+            # ADDED BY THE SECOND PERSONA RUN, for the categories this page newly names
+            # as movers -- Miscellaneous, History and mathematics at the middle school.
+            # `study hall` is the term a resident used at the School Committee for the
+            # thing this page measures as Miscellaneous, and searching for our own word
+            # for it would never have found her.
+            'study hall', 'work credit', 'history', 'social studies', 'Algebra',
+            'course request']
 
 # The rows in money-gaps.csv this page cites. The registry outranks the page (rule 7c):
 # if one of these is missing, nothing is written.
 CITES_GAPS = [
     'Which courses a Lunenburg High student could actually choose from, in any year',
+    'Why fewer Lunenburg High students take a history or a language course than before SY2020',
+    'How many classes ran in each subject at Lunenburg Middle School and Lunenburg High before SY2017',
     'What is taught in the fifth of Lunenburg High sections DESE files as Miscellaneous',
     'How many classes ran in each subject at the two elementary schools',
 ]
@@ -595,10 +618,21 @@ def spans(db, first_sy, last_sy):
         fail('dese_enrollment holds no Lunenburg school rows. Without the grade spans '
              'this page cannot say whether any two years are comparable, and a comparison '
              'across a reorganisation is worse than no comparison.')
+    # THE NAME MOVES AND THE CODE DOES NOT. `Thomas C Passios Elem` in SY2011 is
+    # `Thomas C Passios Elementary` in SY2012 -- one school, two strings, and anything
+    # grouped on the string reads it as two schools that each lasted a year. That is the
+    # same defect as reading `Turkey Hill Middle` and `Turkey Hill Elementary School` as
+    # ONE school, pointed the other way, and both are why every grouping here is on
+    # `org_code`. The name shown is the last one the state used.
+    latest = {}
+    for r in rows:
+        latest[r['org_code']] = r['org_name']
     out = []
     for r in rows:
         held = [label for col, label in GRADES if (r[col] or 0) > 0]
-        out.append(dict(sy=int(r['fy']), org_code=r['org_code'], org_name=r['org_name'],
+        out.append(dict(sy=int(r['fy']), org_code=r['org_code'],
+                        org_name=latest[r['org_code']],
+                        filed_as=r['org_name'],
                         students=int(r['total_cnt'] or 0),
                         grades=held,
                         span=('%s–%s' % (held[0], held[-1])) if held else 'not stated'))
@@ -621,15 +655,66 @@ def eras(span_rows):
     if off:
         fail('%s was not grades 9-12 in %s, which is inside the analysis window %s.'
              % (HIGH, off, WINDOW))
+    return _runs(hs), nine
+
+
+def _runs(by_year):
+    """Contiguous runs of ONE grade span. `by_year` is {sy: row-with-a-span}.
+
+    A run breaks on a change of span AND on a missing year, because a school that stops
+    reporting and starts again four years later is not one series either."""
     runs, cur = [], None
-    for sy in sorted(hs):
-        s = hs[sy]['span']
+    for sy in sorted(by_year):
+        s = by_year[sy]['span']
         if cur and cur['span'] == s and cur['last_sy'] == sy - 1:
             cur['last_sy'] = sy
         else:
             cur = dict(span=s, first_sy=sy, last_sy=sy)
             runs.append(cur)
-    return runs, nine
+    return runs
+
+
+def school_eras(span_rows, org):
+    """EVERY school's configuration history, on the same mechanism as the high school's.
+
+    THE REORGANISATION WAS NOT A RENAME AND IT WAS NOT ONLY THE HIGH SCHOOL'S. Thomas C
+    Passios closed after SY2012; for the four years until the new middle-school/high-school
+    building opened, every remaining school shifted up one grade band -- Lunenburg Primary
+    to PK-3, Turkey Hill Middle to 4-7, Lunenburg High to 8-12. SY2017 resets the whole
+    structure, and DESE issues NEW org codes for the two schools in the new building.
+
+    So `Turkey Hill Middle` (4-7, ending SY2016) and `Turkey Hill Elementary School` (3-5,
+    beginning SY2017) share a name stem and are different schools in different buildings
+    holding different children, and joining them into one series would draw a building
+    programme as a trend. Every span here is read off DESE's own enrolment-by-grade
+    counts, never off a name, and nothing in this file is hardcoded to the table above:
+    if the state restates a year, the runs move and the assertions below fail."""
+    rows = {r['sy']: r for r in span_rows if r['org_name'] == org}
+    if not rows:
+        fail('DESE’s enrolment file carries no rows for %s, and this page draws a '
+             'per-school series for it.' % org)
+    return _runs(rows)
+
+
+def latest_era(runs, org, class_years, fte_years):
+    """The window a school's own comparison may run over: its most recent unbroken run at
+    one grade span, narrowed to the years BOTH instruments cover.
+
+    Narrowed rather than assumed, because the two files do not span the same years -- the
+    teacher file runs one year further than the class-size file -- and a comparison is
+    only as long as its shorter instrument."""
+    era = runs[-1]
+    yrs = sorted(set(range(era['first_sy'], era['last_sy'] + 1))
+                 & set(class_years) & set(fte_years))
+    if len(yrs) < 3:
+        fail('%s has only %d year(s) inside its most recent grade span that both DESE '
+             'files cover. Three years is a trend to a board that will not project two, '
+             'and two is not.' % (org, len(yrs)))
+    if yrs != list(range(yrs[0], yrs[-1] + 1)):
+        fail('%s’s comparable years %s have a hole in them. A hole and a zero are '
+             'different facts.' % (org, yrs))
+    return dict(span=era['span'], first_sy=yrs[0], last_sy=yrs[-1], years=len(yrs),
+                era_first_sy=era['first_sy'], era_last_sy=era['last_sy'])
 
 
 def configurations(span_rows):
@@ -832,6 +917,932 @@ def beyond(db, org, sy):
     if not got:
         return {}
     return {r['subject']: r['teacher_fte'] for r in got}
+
+
+# ---- the two instruments, per school ----------------------------------------------
+#
+# WHAT THIS SECTION IS FOR. The page states in prose that sections and teacher FTE move
+# the same way in eight of ten subjects district-wide and that Mathematics does not. That
+# sentence is the most decision-relevant thing on the page and it is district-wide, which
+# is the level at which two schools moving in opposite directions look like one school
+# doing nothing. The quadrant below is the same comparison drawn, and drawn per school.
+#
+# THE THIRD INSTRUMENT IS A TEST AND NOT A DECORATION. A subject with fewer teachers and
+# MORE sections has two readings: the school found the staff elsewhere, or it spread the
+# same people thinner. Average class size separates them -- thinner means FULLER classes.
+# So every row here carries the change in average class size, and the chart encodes it as
+# a filled or hollow dot rather than as a colour, so the test survives any kind of vision.
+# Where the three instruments disagree, the row says so and nothing here picks a winner.
+
+# A published FTE is one decimal, so a change smaller than half of that is not a change.
+FTE_ZERO = 0.05
+
+# The district's FTE against the sum of its own schools'. Every school in the file is a
+# tenth or better, and four or five of them rounding the same way is 0.2 -- so a
+# disagreement past this is a rollup that no longer holds, not rounding.
+FTE_ROLLUP_TOL = 0.25
+
+# HOW MUCH A SCHOOL'S TOTAL SECTION COUNT MAY MOVE IN ONE YEAR before its series stops
+# being trendable. Not a taste: the four schools in the current configuration separate
+# cleanly and the constant sits in the gap between them. Lunenburg High's worst single
+# year is 9.1% and the middle school's is 20.7%; the two elementary schools' are 80.1%
+# and 111.4%, in years their enrolment moved by 1.4% and 1.0%. `assert_stability()`
+# refuses to write if that separation stops holding, so the line cannot quietly move.
+TRENDABLE_SWING = 0.35
+
+# The chart labels. A dot needs a word a reader knows at 390px, and `Social
+# Studies/Social Sciences` is not one. These are NAMES rather than figures -- rule 2 does
+# not reach them -- but they are declared here rather than typed into the page so the
+# chart and its table twin cannot disagree, and `_short()` fails on a subject it has never
+# seen rather than inventing an abbreviation for it.
+SHORT = {
+    'Agriculture, Food and Natural Resources': 'Agriculture',
+    'Architecture and Construction': 'Construction',
+    'Arts': 'Arts',
+    'Business and Marketing': 'Business',
+    'Civics/Government': 'Civics',
+    'Communications and Audio/Visual Technology': 'Media',
+    'Computer and Information Sciences': 'Computing',
+    'Core-All Subjects': 'Core, all subjects',
+    'Economics': 'Economics',
+    'Engineering and Technology': 'Engineering',
+    'English/Language Arts': 'English',
+    'Foreign Language': 'Language',
+    'Geography': 'Geography',
+    'Health Care Sciences': 'Health care',
+    'History': 'History',
+    'Hospitality and Tourism': 'Hospitality',
+    'Human Services': 'Human services',
+    'Manufacturing': 'Manufacturing',
+    'Mathematics': 'Mathematics',
+    'Military Science': 'Military science',
+    'Miscellaneous': 'Miscellaneous',
+    'Physical, Health, and Safety Education': 'PE and health',
+    'Public, Protective, and Government Service': 'Public service',
+    'Reading': 'Reading',
+    'Religious Education and Theology': 'Religious education',
+    'Science': 'Science',
+    'Social Studies/Social Sciences': 'Social studies',
+    'Transportation, Distribution and Logistics': 'Transport',
+}
+
+# What each corner of the quadrant MEANS, in the words the chart prints. Held here rather
+# than in the page because the classifier and the label must be the same statement.
+QUADRANTS = {
+    ('-', '+'): 'fewer teachers, more classes',
+    ('-', '-'): 'fewer teachers, fewer classes',
+    ('+', '+'): 'more teachers, more classes',
+    ('+', '-'): 'more teachers, fewer classes',
+}
+
+
+def _short(subj):
+    if subj not in SHORT:
+        fail('%r has no short label, and the quadrant chart prints one against every '
+             'dot. Add it to SHORT rather than letting the page fall back to a name no '
+             'reader can fit on a phone.' % subj)
+    return SHORT[subj]
+
+
+def assert_fte_rollup(db, first, last):
+    """The district's teacher FTE against the sum of its own schools', every subject,
+    every year.
+
+    THE ROLLUP TRAP AGAIN, ON THE OTHER INSTRUMENT. `dese_teacher_subject` carries the
+    district beside its schools exactly as the class-size file does, and this page is
+    about to decompose a district figure into four school figures. If those four do not
+    add up to the one, the decomposition is arithmetic on unrelated numbers."""
+    got = q(db, 'SELECT fy, org_name, org_level, subject, teacher_fte '
+                'FROM dese_teacher_subject '
+                "WHERE lea=? AND subject_level='subject'", LEA)
+    if not got:
+        fail('dese_teacher_subject holds no Lunenburg rows at all.')
+    dist = collections.defaultdict(float)
+    schools = collections.defaultdict(float)
+    for r in got:
+        key = (int(r['fy']), r['subject'])
+        if r['org_name'] == DISTRICT:
+            dist[key] += r['teacher_fte'] or 0
+        elif r['org_level'] == 'school':
+            schools[key] += r['teacher_fte'] or 0
+    worst, where = 0.0, None
+    for key in set(dist) | set(schools):
+        gap = abs(dist.get(key, 0.0) - schools.get(key, 0.0))
+        if gap > worst:
+            worst, where = gap, key
+    if worst > FTE_ROLLUP_TOL:
+        fail('district teacher FTE and the sum of its schools’ differ by %.2f at '
+             '%s, past the %.2f this page allows for one-decimal rounding. The district '
+             'figure cannot be decomposed into school figures that do not add up to it.'
+             % (worst, where, FTE_ROLLUP_TOL))
+    return dict(worst=round(worst, 3), at=list(where) if where else None,
+                tolerance=FTE_ROLLUP_TOL,
+                subject_years=len(set(dist) | set(schools)))
+
+
+def stability(rows, org, first, last):
+    """The largest one-year move in a school's TOTAL section count, with the move in its
+    own enrolment beside it.
+
+    A school whose section count halves and doubles between adjacent years while the same
+    number of children walk through the door is not recording sections the way the schools
+    either side of it are. This measures that rather than asserting it, and prints the
+    figure whichever side of the line it falls."""
+    pts = sorted((r for r in rows if r['org_name'] == org and r['subj'] == ROLLUP_SUBJ
+                  and first <= r['sy'] <= last), key=lambda r: r['sy'])
+    if len(pts) < 2:
+        fail('%s has fewer than two comparable years and a swing needs two.' % org)
+    worst = None
+    for a, b in zip(pts, pts[1:]):
+        if not a['tot_clss_cnt'] or not a['tot_stu_cnt']:
+            continue
+        swing = abs(b['tot_clss_cnt'] - a['tot_clss_cnt']) / a['tot_clss_cnt']
+        if worst is None or swing > worst['swing']:
+            worst = dict(swing=round(swing, 4), from_sy=a['sy'], to_sy=b['sy'],
+                         from_sections=round(a['tot_clss_cnt']),
+                         to_sections=round(b['tot_clss_cnt']),
+                         students_swing=round(abs(b['tot_stu_cnt'] - a['tot_stu_cnt'])
+                                              / a['tot_stu_cnt'], 4))
+    if worst is None:
+        fail('%s has no year with any sections in it, so no swing can be measured.' % org)
+    worst['trendable'] = worst['swing'] <= TRENDABLE_SWING
+    worst['bound'] = TRENDABLE_SWING
+    worst['sections'] = [dict(sy=p['sy'], sections=round(p['tot_clss_cnt']),
+                              students=round(p['tot_stu_cnt']),
+                              avg=round(p['avg_clss_cnt'], 1)) for p in pts]
+    return worst
+
+
+def assert_stability(schools):
+    """That the four schools still fall either side of the line the constant sits in.
+
+    A threshold with nothing asserting it is a taste. This one is a gap in the data --
+    the trendable schools are at 9% and 21% and the others at 80% and 111% -- and if that
+    gap closes, the constant stops being a reading of the data and the page has to be
+    rewritten rather than kept."""
+    inside = [s for s in schools if s['stability']['trendable']]
+    outside = [s for s in schools if not s['stability']['trendable']]
+    if not inside or not outside:
+        fail('every school now falls on the same side of the %.0f%% one-year swing '
+             'bound, and this page is written around two schools whose section counts '
+             'can be trended and two whose cannot. Re-read the series before publishing.'
+             % (TRENDABLE_SWING * 100))
+    hi = max(s['stability']['swing'] for s in inside)
+    lo = min(s['stability']['swing'] for s in outside)
+    if lo - hi < 0.2:
+        fail('the worst trendable school swings %.1f%% and the best untrendable one '
+             '%.1f%%. The bound at %.0f%% was set in a gap between two clusters and there '
+             'is no longer a gap, so it is now a judgement rather than a reading.'
+             % (hi * 100, lo * 100, TRENDABLE_SWING * 100))
+    return dict(worst_trendable=hi, best_untrendable=lo, bound=TRENDABLE_SWING)
+
+
+def instruments(db, rows, org, first, last, steps_readable):
+    """Sections, teacher FTE and average class size for one org, at both ends of its own
+    window -- and where each subject lands in the quadrant.
+
+    AND THE STEP CHECK IS ONLY PUBLISHED WHERE THE YEARS BETWEEN THE ENDS CAN BE READ.
+    The DISTRICT total is the sum of five schools including the two whose section counts
+    double and halve between adjacent years, so its year-by-year series says SY2021
+    Science ran 116 sections against 78 the year before and 76 the year after. Its two
+    ENDS are clean -- both elementary schools report ordinary counts in SY2017 and SY2025
+    -- so the endpoint comparison stands and the steps between them do not. `steps_readable`
+    carries that distinction into the payload rather than leaving the page to remember it,
+    because a column of largest-single-year moves that is really a column of coding
+    artefacts is exactly the kind of figure a reader would quote.
+
+    THE STEP CHECK IS RULE 6 AND IT IS NOT OPTIONAL. A change measured between two
+    endpoints nine years apart says nothing about whether it happened gradually or in one
+    year. The middle school's English sections read as −11 across the window and ten of
+    those eleven go in a single step between the first two years; a reader told 'English
+    lost eleven sections over nine years' has been given a trend where there is a step.
+    So every row carries its largest single-year move, that move's year, and its size
+    against the net -- and a row where one year is the whole of the net change says so."""
+    got = q(db, 'SELECT fy, subject, teacher_fte FROM dese_teacher_subject '
+                "WHERE org_name=? AND subject_level='subject'", org)
+    if not got:
+        fail('dese_teacher_subject returned nothing for %s. A join that matches nothing '
+             'looks exactly like a school that employs nobody.' % org)
+    fte = {(int(r['fy']), r['subject']): r['teacher_fte'] for r in got}
+    subs = sorted({s for (_y, s) in fte if (first, s) in fte and (last, s) in fte})
+    if not subs:
+        fail('not one subject at %s carries teacher FTE at both ends of its window.' % org)
+
+    out = []
+    for s in subs:
+        cell = {r['sy']: r for r in rows if r['org_name'] == org and r['subj'] == s
+                and first <= r['sy'] <= last}
+        missing = [y for y in range(first, last + 1) if y not in cell]
+        if missing:
+            fail('%r carries teacher FTE at %s but no class-size row in %s. DESE uses one '
+                 'subject vocabulary for both files, and a name present in one and not '
+                 'the other means the vocabulary moved.' % (s, org, missing))
+        pts = [dict(sy=y, sections=round(cell[y]['tot_clss_cnt']),
+                    avg=round(cell[y]['avg_clss_cnt'], 1),
+                    students=round(cell[y]['tot_stu_cnt']))
+               for y in range(first, last + 1)]
+        if not any(p['sections'] for p in pts):
+            continue
+        dfte = round(fte[(last, s)] - fte[(first, s)], 1)
+        dsec = pts[-1]['sections'] - pts[0]['sections']
+        davg = round(pts[-1]['avg'] - pts[0]['avg'], 1)
+        sx = '+' if dfte > FTE_ZERO else ('-' if dfte < -FTE_ZERO else '0')
+        sy_ = '+' if dsec > 0 else ('-' if dsec < 0 else '0')
+        quad = QUADRANTS.get((sx, sy_))
+        step = max(zip(pts, pts[1:]),
+                   key=lambda ab: abs(ab[1]['sections'] - ab[0]['sections']))
+        step_size = step[1]['sections'] - step[0]['sections']
+        out.append(dict(
+            subj=s, short=_short(s),
+            fte_first=fte[(first, s)], fte_last=fte[(last, s)], fte_change=dfte,
+            sections_first=pts[0]['sections'], sections_last=pts[-1]['sections'],
+            sections_change=dsec,
+            avg_first=pts[0]['avg'], avg_last=pts[-1]['avg'], avg_change=davg,
+            students_first=pts[0]['students'], students_last=pts[-1]['students'],
+            fuller=davg > 0,
+            agrees=(sx == sy_) or sx == '0' or sy_ == '0',
+            same_direction=(sx == sy_ and sx != '0'),
+            quadrant=quad,
+            on_the_line=(quad is None),
+            axis=('neither instrument moved' if sx == '0' and sy_ == '0'
+                  else 'teacher FTE did not move' if sx == '0'
+                  else 'the section count did not move' if sy_ == '0' else None),
+            points=pts,
+            step_from_sy=step[0]['sy'], step_to_sy=step[1]['sy'], step=step_size,
+            step_share=(round(abs(step_size) / abs(dsec), 2) if dsec else None),
+            # A net move of one or two sections is inside the noise of any single year,
+            # so flagging it as "one step" says nothing. The flag is for a move big
+            # enough to be called a change that turns out to have happened in one year.
+            one_step=abs(dsec) >= 3 and abs(step_size) >= abs(dsec),
+        ))
+    if not out:
+        fail('%s has no subject with both instruments and any section in its window.' % org)
+    out.sort(key=lambda r: (-abs(r['sections_change']), r['subj']))
+
+    inq = [r for r in out if r['quadrant']]
+    tally = collections.Counter(r['quadrant'] for r in inq)
+    thinner = [r for r in inq
+               if r['quadrant'] == QUADRANTS[('-', '+')] and r['fuller']]
+    return dict(
+        org=org, first_sy=first, last_sy=last, years=last - first + 1,
+        subjects=out, compared=len(out), steps_readable=steps_readable,
+        quadrants=[dict(quadrant=name, subjects=[r['short'] for r in inq
+                                                 if r['quadrant'] == name],
+                        count=tally.get(name, 0))
+                   for name in QUADRANTS.values()],
+        on_the_line=[r['short'] for r in out if r['on_the_line']],
+        # THE TEST, RUN. `fewer teachers, more classes` is consistent with the same staff
+        # spread thinner ONLY if the classes got fuller. Where they got emptier, that
+        # reading is refuted by the school's own third instrument, and the count of each
+        # is published rather than described.
+        spread_thinner=[r['short'] for r in thinner],
+        fewer_teachers_more_classes=[r['short'] for r in inq
+                                     if r['quadrant'] == QUADRANTS[('-', '+')]],
+        fuller=[r['short'] for r in out if r['fuller']],
+        emptier=[r['short'] for r in out if not r['fuller'] and r['avg_change'] < 0],
+        one_step=[r['short'] for r in out if r['one_step']] if steps_readable else [],
+    )
+
+
+def decompose(db, rows, district, schools, subj, first, last):
+    """One district subject, split across the buildings that make it up.
+
+    THE DISTRICT FIGURE IS THE ONE ON THE PAGE AND IT IS THE ONE THAT HIDES THIS. Teacher
+    FTE for a subject is a district total, and a total is what two schools moving in
+    opposite directions looks like when nobody splits it.
+
+    EVERY SCHOOL IS IN THE SPLIT, INCLUDING THE TWO WHOSE SECTION SERIES THIS PAGE WILL
+    NOT TREND. Two identities are the whole value of a decomposition -- the parts make the
+    whole on both instruments -- and dropping the schools that are awkward would break
+    both and hide the break. What the awkward schools get instead is a FLAG on the row:
+    their figures are two endpoints out of a series that swings 80% in a year, they are
+    printed so the identity can be seen to close, and no trend is drawn through them."""
+    d = [r for r in district['subjects'] if r['subj'] == subj]
+    if not d:
+        fail('%r is not among the district’s compared subjects, and this page '
+             'decomposes it.' % subj)
+    parts = []
+    for s in schools:
+        got = q(db, 'SELECT fy, teacher_fte FROM dese_teacher_subject '
+                    "WHERE org_name=? AND subject_level='subject' AND subject=? "
+                    'AND fy IN (?,?)', s['name'], subj, first, last)
+        fte = {int(r['fy']): r['teacher_fte'] for r in got}
+        if first not in fte or last not in fte:
+            continue
+        sa, sb = _sections(rows, s['name'], first, subj), _sections(rows, s['name'], last, subj)
+        aa = [r for r in rows if r['org_name'] == s['name'] and r['sy'] == first
+              and r['subj'] == subj]
+        ab = [r for r in rows if r['org_name'] == s['name'] and r['sy'] == last
+              and r['subj'] == subj]
+        if sa is None or sb is None or not aa or not ab:
+            fail('%s carries teacher FTE for %r and no class-size row at one end of the '
+                 'window, so it cannot appear in a decomposition that has to add up.'
+                 % (s['name'], subj))
+        parts.append(dict(
+            org=s['name'], trendable=bool(s['stability'] and s['stability']['trendable']),
+            fte_first=fte[first], fte_last=fte[last],
+            fte_change=round(fte[last] - fte[first], 1),
+            sections_first=sa, sections_last=sb, sections_change=sb - sa,
+            avg_first=round(aa[0]['avg_clss_cnt'], 1),
+            avg_last=round(ab[0]['avg_clss_cnt'], 1),
+            avg_change=round(ab[0]['avg_clss_cnt'] - aa[0]['avg_clss_cnt'], 1)))
+    if len(parts) < 2:
+        fail('%r is carried by fewer than two schools, so there is nothing to '
+             'decompose.' % subj)
+    fte_sum = round(sum(p['fte_change'] for p in parts), 1)
+    sec_sum = sum(p['sections_change'] for p in parts)
+    if abs(fte_sum - d[0]['fte_change']) > FTE_ROLLUP_TOL:
+        fail('the schools’ %s FTE changes sum to %+.1f and the district’s is '
+             '%+.1f. A decomposition whose parts do not make the whole is two unrelated '
+             'numbers printed together.' % (subj, fte_sum, d[0]['fte_change']))
+    if sec_sum != d[0]['sections_change']:
+        fail('the schools’ %s section changes sum to %+d and the district’s is '
+             '%+d. DESE suppresses small cells, so this can happen honestly — but it '
+             'may not happen silently under a decomposition this page prints as an '
+             'identity.' % (subj, sec_sum, d[0]['sections_change']))
+    up = [p for p in parts if p['fte_change'] > FTE_ZERO]
+    down = [p for p in parts if p['fte_change'] < -FTE_ZERO]
+    if not up or not down:
+        fail('%r no longer moves in both directions across the schools, and the '
+             'conclusion this page draws from it is that the district figure hides two '
+             'opposite moves.' % subj)
+    return dict(subj=subj, short=_short(subj), district=d[0], parts=parts,
+                fte_sum=fte_sum, sections_sum=sec_sum,
+                gained=max(up, key=lambda p: p['fte_change']),
+                lost=min(down, key=lambda p: p['fte_change']))
+
+
+def reorganisation(span_rows, rows, schools):
+    """What the two building changes were, and whether the unreadable years are them.
+
+    THE TIDY EXPLANATION IS AVAILABLE AND IT IS WRONG. Two school-years in this file
+    report an average class size no school can have, and both elementary schools' section
+    counts swing by 80% and 111% in a year. The reorganisation is right there, and it
+    would explain all of it neatly. It does not: the flagged years are checked against
+    the boundary years here and MOSTLY MISS THEM. Rule 7 -- that the broken years line up
+    with the reorganisation would be a measurement; that the reorganisation caused them
+    would be a hypothesis; and here there is not even the correlation."""
+    by_school = {}
+    for org in sorted({r['org_name'] for r in span_rows}):
+        by_school[org] = school_eras(span_rows, org)
+    # A boundary is a year in which ANY school changed grade span or stopped or started
+    # reporting -- read off the runs rather than typed.
+    bounds = set()
+    for org, runs in by_school.items():
+        for i, r in enumerate(runs):
+            if i:
+                bounds.add(r['first_sy'])
+        if runs[-1]['last_sy'] < max(x['sy'] for x in span_rows):
+            bounds.add(runs[-1]['last_sy'] + 1)
+        if runs[0]['first_sy'] > min(x['sy'] for x in span_rows):
+            bounds.add(runs[0]['first_sy'])
+    flagged = []
+    for org in sorted({r['org_name'] for r in rows if r['org_type'] == 'School'}):
+        pts = sorted((r for r in rows if r['org_name'] == org
+                      and r['subj'] == ROLLUP_SUBJ), key=lambda r: r['sy'])
+        for a, b in zip(pts, pts[1:]):
+            if a['tot_clss_cnt'] and (abs(b['tot_clss_cnt'] - a['tot_clss_cnt'])
+                                      / a['tot_clss_cnt']) > TRENDABLE_SWING:
+                flagged.append(dict(org=org, from_sy=a['sy'], to_sy=b['sy'],
+                                    from_sections=round(a['tot_clss_cnt']),
+                                    to_sections=round(b['tot_clss_cnt']),
+                                    at_boundary=b['sy'] in bounds))
+    for r in implausible(rows):
+        flagged.append(dict(org=r['org'], from_sy=r['sy'], to_sy=r['sy'],
+                            from_sections=r['sections'], to_sections=r['sections'],
+                            avg=r['avg'], at_boundary=r['sy'] in bounds))
+    if not flagged:
+        fail('no school-year is flagged as unreadable any more, and this page is built '
+             'around two schools whose records cannot be trended.')
+    at = sum(1 for f in flagged if f['at_boundary'])
+    return dict(
+        boundaries=sorted(bounds),
+        eras=[dict(org=o, runs=r) for o, r in sorted(by_school.items())],
+        flagged=flagged, flagged_count=len(flagged), at_boundary=at,
+        away_from_boundary=len(flagged) - at,
+        # Stated as the count rather than as a conclusion, because the count IS the
+        # finding and the sentence around it would be the hypothesis.
+        clusters_on_reorganisation=at > len(flagged) - at)
+
+
+# ---- the eras, and why every trend on this page is built on them -------------------
+#
+# THE SPINE. Three of this page's boundaries are EVENTS and one is a judgement, and the
+# difference is printed rather than blurred.
+#
+#   * SY2013 -- Thomas C Passios closes and every remaining school shifts up one grade
+#     band. Read off DESE's enrolment-by-grade counts.
+#   * SY2017 -- the new middle-school/high-school building opens and the structure resets
+#     to what it was. Read off the same counts.
+#   * SY2020 and SY2023 -- the pandemic. NOT in the data. We asserted it, it is labelled
+#     as asserted everywhere it appears, and a reader can disagree with it in a way they
+#     cannot disagree with a grade span.
+#
+# WHY THIS IS NOT A PRESENTATION CHOICE. Two findings drafted for this page from
+# endpoint-to-endpoint comparisons did not survive contact with the eras, and both were
+# wrong in the same direction:
+#
+#   * History at Lunenburg High reads as a 23-point fall in participation between SY2011
+#     and SY2025. Averaged within eras it is 80, 59, 76, 65, 60 -- it fell only in the
+#     four years the high school held grade 8, and RECOVERED when grade 8 left. The
+#     endpoint comparison was measuring an eighth grade arriving and leaving.
+#   * Arts reads as nearly doubling, 36 to 64. By era it is 41, 69, 57, 50, 61 -- the
+#     same four grade-8 years, the same artefact, pointed the other way.
+#
+# Both are computed here rather than described, in `overturned()`, and both are ON the
+# page, because the most convincing possible argument for why a two-point comparison
+# misleads in this town is two of them that did.
+#
+# AND THE DISTINCTION THE ERAS BUY, which endpoints cannot express: a fall that recovered
+# and a fall that did not are different problems, and only one of them is a decision
+# anybody still has in front of them.
+
+# The pandemic. A JUDGEMENT, not a reading -- the class-size file contains nothing that
+# marks these years, and this constant is the whole of the assertion. It is separated from
+# the structural boundaries everywhere it is used so that a reader can take it or leave it.
+COVID = (2020, 2022)
+
+
+def era_bands(runs, first, last):
+    """The five eras, built from the high school's own grade spans plus the one boundary
+    we assert. Nothing below is a typed year: change what DESE files and the bands move."""
+    bounds = {first}
+    for r in runs:
+        if first <= r['first_sy'] <= last:
+            bounds.add(r['first_sy'])
+    asserted = {COVID[0], COVID[1] + 1}
+    bounds |= {b for b in asserted if first < b <= last}
+    edges = sorted(bounds) + [last + 1]
+    out = []
+    for a, b in zip(edges, edges[1:]):
+        yrs = list(range(a, b))
+        if not yrs:
+            continue
+        span = {r['span'] for r in runs
+                for y in yrs if r['first_sy'] <= y <= r['last_sy']}
+        if len(span) != 1:
+            fail('SY%d–SY%d spans more than one high-school grade configuration '
+                 '(%s). An era that straddles a reorganisation is the thing the eras '
+                 'exist to stop.' % (a, b - 1, sorted(span)))
+        # WHICH END OF THIS ERA IS A READING AND WHICH IS A JUDGEMENT, separately, so
+        # the page can mark the pandemic boundary as ours without marking the
+        # reorganisation as ours too.
+        out.append(dict(first_sy=a, last_sy=b - 1, years=len(yrs), span=span.pop(),
+                        first_asserted=a in asserted, last_asserted=b in asserted,
+                        covid=a >= COVID[0] and b - 1 <= COVID[1]))
+    if len(out) < 4:
+        fail('only %d eras came out of the grade spans and the asserted pandemic '
+             'boundary, and this page is written around a segmentation with a '
+             'structural break, a reset and a shock in it.' % len(out))
+    return out
+
+
+# A grade band whose FTE is under this is nobody's teaching assignment. One year files
+# 0.3 against the high school's 6-8 band while grade 8 is in a different building, which
+# is a rounding artefact of an assignment filed against a band rather than a cohort.
+GRADE_BAND_NOISE = 0.5
+
+
+def assert_grade8_staffing(db, bands, g8):
+    """THE ERA BOUNDARY, CHECKED AGAINST A SECOND INSTRUMENT THAT DOES NOT KNOW ABOUT IT.
+
+    The grade spans on this page are read off DESE's enrolment-by-grade counts. DESE also
+    publishes teaching FTE by GRADE BAND per school, in a different file collected for a
+    different purpose -- and Lunenburg High's grades 6-8 band is nonzero in exactly the
+    four years the enrolment file says grade 8 was in that building, and zero in every
+    other year of nineteen.
+
+    Two files that must agree is worth more than one file checked carefully, so this is an
+    assertion rather than a reassurance: if enrolment and teacher assignment stop saying
+    the same thing about which years the high school held grade 8, the build stops.
+
+    `subject='All'` IS A ROLLUP ROW HERE TOO, exactly as in the class-size file, so this
+    reads that row rather than summing the detail. And `multi_grade_fte` is not read at
+    all: it moves 21.1 to 5.9 between two consecutive years while the school's total FTE
+    barely moves, which is coding rather than staffing."""
+    got = q(db, 'SELECT fy, grade_6_8_fte, grade_9_12_fte, total_fte '
+                'FROM dese_teacher_grade_subject '
+                "WHERE org_name=? AND subject='All' ORDER BY fy", HIGH)
+    if not got:
+        fail('dese_teacher_grade_subject carries no %s rows. A join that matches nothing '
+             'looks exactly like a school that staffs nobody.' % HIGH)
+    staffed = {int(r['fy']) for r in got
+               if (r['grade_6_8_fte'] or 0) >= GRADE_BAND_NOISE}
+    want = set(range(bands[g8]['first_sy'], bands[g8]['last_sy'] + 1))
+    if staffed != want:
+        fail('DESE’s enrolment counts put grade 8 in %s in %s, and its teacher '
+             'assignment file staffs the 6-8 band in %s. Two state files disagree about '
+             'when this school held a middle grade, and every era on this page rests on '
+             'them agreeing.'
+             % (HIGH, sorted(want), sorted(staffed)))
+    fte = {int(r['fy']): r for r in got}
+    return dict(
+        years=sorted(want),
+        grade_6_8=[dict(fy=y, fte=fte[y]['grade_6_8_fte'],
+                        total=fte[y]['total_fte']) for y in sorted(want)],
+        first=min(fte[y]['grade_6_8_fte'] for y in want),
+        last=max(fte[y]['grade_6_8_fte'] for y in want),
+        zero_years=sorted(set(fte) - want),
+        noise_bound=GRADE_BAND_NOISE,
+        # What the school's own total did across the same boundary -- the size of the
+        # arrival, in the instrument that counts posts rather than children.
+        total_before=fte[bands[g8]['first_sy'] - 1]['total_fte']
+        if bands[g8]['first_sy'] - 1 in fte else None,
+        total_during=round(sum(fte[y]['total_fte'] for y in want) / len(want), 1),
+        total_after=fte[bands[g8]['last_sy'] + 1]['total_fte']
+        if bands[g8]['last_sy'] + 1 in fte else None)
+
+
+def era_schools(span_rows, bands):
+    """Which schools reported in each era, from the state's own enrolment file. The
+    era table's context line is derived from this rather than written."""
+    out = []
+    for e in bands:
+        names = sorted({r['org_name'] for r in span_rows
+                        if e['first_sy'] <= r['sy'] <= e['last_sy']})
+        out.append(dict(e, schools=names, school_count=len(names)))
+    return out
+
+
+def era_series(rows, db, org, org_code, bands, first, last):
+    """THE TRIPLE: what was staffed, how much room existed, and how many students got in
+    — averaged within each era, per subject, on one time axis.
+
+    Three instruments and three units, and they are never combined into one number. A
+    reader matching a cut to what happened to students needs all three, because each pair
+    of them can move apart:
+
+      * teacher FTE -- posts. `dese_teacher_subject`, filed by fiscal year.
+      * seats -- `tot_clss_cnt` x `avg_clss_cnt`, how many student-places ran. NOT the
+        number of children: one child fills several.
+      * participation -- distinct students in the subject over the school's own `All`
+        row, the share of the school that took anything in it.
+
+    THE ERA MEAN IS THE POINT AND THE YEARS ARE STILL PUBLISHED. A mean over four years
+    is what survives one bad year in a file that has several; the yearly points are
+    carried beside it so a reader can see what the mean is a mean of.
+
+    THE FTE FILE RUNS A YEAR FURTHER THAN THE CLASS-SIZE FILE and that year is not in
+    here. All three instruments are cut to the years the class-size collection covers, so
+    the last era is the same length on all three."""
+    got = q(db, 'SELECT fy, subject, teacher_fte FROM dese_teacher_subject '
+                "WHERE org_name=? AND subject_level='subject'", org)
+    fte = {(int(r['fy']), r['subject']): r['teacher_fte'] for r in got}
+    den = {y['sy']: y['all_students']
+           for y in participation_denominator(rows, db, org, org_code, first, last)['years']}
+    cell = [r for r in rows if r['org_name'] == org and r['subj'] != ROLLUP_SUBJ
+            and not r['subj'].startswith(CH74) and first <= r['sy'] <= last]
+    out = []
+    for s in sorted({r['subj'] for r in cell}):
+        pts = {}
+        for r in cell:
+            if r['subj'] == s:
+                pts[r['sy']] = r
+        if not any(p['tot_stu_cnt'] for p in pts.values()):
+            continue
+        years, eras_ = [], []
+        for e in bands:
+            ys = [y for y in range(e['first_sy'], e['last_sy'] + 1) if y in pts]
+            if not ys:
+                continue
+            have_fte = [fte[(y, s)] for y in ys if (y, s) in fte]
+            eras_.append(dict(
+                first_sy=e['first_sy'], last_sy=e['last_sy'], covid=e['covid'],
+                participation=round(sum(pts[y]['tot_stu_cnt'] / den[y] for y in ys)
+                                    / len(ys), 4),
+                sections=round(sum(pts[y]['tot_clss_cnt'] for y in ys) / len(ys), 1),
+                seats=round(sum(pts[y]['tot_clss_cnt'] * pts[y]['avg_clss_cnt']
+                                for y in ys) / len(ys)),
+                avg=round(sum(pts[y]['avg_clss_cnt'] for y in ys) / len(ys), 1),
+                fte=(round(sum(have_fte) / len(have_fte), 2) if have_fte else None),
+                fte_years=len(have_fte), years=len(ys)))
+        for y in sorted(pts):
+            r = pts[y]
+            out_fte = fte.get((y, s))
+            years.append(dict(sy=y, participation=round(r['tot_stu_cnt'] / den[y], 4),
+                              sections=round(r['tot_clss_cnt']),
+                              seats=round(r['tot_clss_cnt'] * r['avg_clss_cnt']),
+                              avg=round(r['avg_clss_cnt'], 1),
+                              fte=out_fte, students=round(r['tot_stu_cnt'])))
+        if len(eras_) < 2:
+            continue
+        out.append(dict(subj=s, short=_short(s), eras=eras_, years=years,
+                        has_fte=any(e['fte'] is not None for e in eras_),
+                        # The whole point of the era view, as a field rather than a
+                        # sentence: did it fall and come back, or fall and stay?
+                        peak_era=max(range(len(eras_)),
+                                     key=lambda i: eras_[i]['participation']),
+                        low_era=min(range(len(eras_)),
+                                    key=lambda i: eras_[i]['participation'])))
+    if not out:
+        fail('%s produced no era series at all.' % org)
+    out.sort(key=lambda r: -r['eras'][-1]['participation'])
+    return dict(org=org, bands=bands, subjects=out,
+                first_sy=first, last_sy=last,
+                units=dict(fte='full-time-equivalent teaching posts',
+                           seats='student places — sections times the average class, '
+                                 'not a count of children',
+                           participation='the share of the school taking anything in '
+                                         'the subject area'))
+
+
+def grade8_shift(era, bands):
+    """The subjects whose share of the high school moved when grade 8 moved.
+
+    A FACT ABOUT THE SCHOOL, and the reason every trend on this page is read inside an
+    era rather than across the file. For four years the high school held grade 8, and a
+    subject an eighth grade all takes -- or none of it takes -- moves the school's share
+    by twenty points in the year they arrive and back again in the year they leave,
+    without one thing changing about what a ninth to twelfth grader was offered.
+
+    So this finds them: every subject whose participation moves at least ten points INTO
+    those four years and at least ten points back OUT of them, in opposite directions.
+    Nothing here is a list chosen in advance; the threshold is the whole of the choice
+    and the subjects come out of the file. Beside each one the page prints the years grade
+    8 was in the building, which is what a reader needs to see the shape for what it is.
+    """
+    now = bands[-1]['span']
+    odd = [i for i, b in enumerate(bands) if b['span'] != now]
+    if len(odd) != 1:
+        fail('the high school no longer holds exactly one era at a grade span other '
+             'than its current one, and this section rests on there being one.')
+    g8 = odd[0]
+    if g8 == 0 or g8 == len(bands) - 1:
+        fail('the era at a different grade span is at one end of the series, so there '
+             'is no step into it and out of it to measure.')
+    out = []
+    for r in era['subjects']:
+        band = [e['participation'] for e in r['eras']]
+        if len(band) != len(bands):
+            continue
+        into = round(band[g8] - band[g8 - 1], 4)
+        out_of = round(band[g8 + 1] - band[g8], 4)
+        if min(abs(into), abs(out_of)) < 0.10 or (into > 0) == (out_of > 0):
+            continue
+        ys = r['years']
+        out.append(dict(
+            subj=r['subj'], short=r['short'],
+            first_sy=ys[0]['sy'], last_sy=ys[-1]['sy'],
+            end_to_end=round(ys[-1]['participation'] - ys[0]['participation'], 4),
+            era_values=band, into=into, out_of=out_of,
+            grade8_era=g8, grade8_span=bands[g8]['span'], current_span=now,
+            grade8_first_sy=bands[g8]['first_sy'],
+            grade8_last_sy=bands[g8]['last_sy'],
+            # WHAT THE SUBJECT DID ONCE GRADE 8 WAS GONE, which is the comparison a
+            # reader of this page actually wants and the one the whole-file endpoints
+            # cannot make: the eras at the current configuration, on their own.
+            since=[dict(first_sy=e['first_sy'], last_sy=e['last_sy'],
+                        participation=e['participation'], covid=e['covid'])
+                   for e in r['eras'][g8 + 1:]],
+            since_change=round(band[-1] - band[g8 + 1], 4)))
+    if not out:
+        fail('no subject at the high school now moves ten points into the grade-8 years '
+             'and ten points back out, and this page explains its eras with the ones '
+             'that do.')
+    out.sort(key=lambda r: -abs(r['into']))
+    return dict(grade8_era=g8, grade8_first_sy=bands[g8]['first_sy'],
+                grade8_last_sy=bands[g8]['last_sy'],
+                grade8_span=bands[g8]['span'], current_span=now,
+                subjects=out, count=len(out))
+
+
+# ---- the third instrument: how many children got in -------------------------------
+#
+# THE QUESTION THIS ANSWERS, AND IT IS NOT THE ONE THE SECTION COUNTS ANSWER. A resident
+# asked whether Lunenburg students are being offered less substantive work AND TAKING IT:
+# a Miscellaneous bucket rising while music, mathematics and the rest fall would be
+# children filling slots because nothing else fits their timetable. Sections cannot see
+# that. A subject can gain sections and lose students, and Miscellaneous at Lunenburg High
+# does exactly that.
+#
+# `tot_stu_cnt` IS DISTINCT STUDENTS IN A SUBJECT AREA AND IT IS NOT SEATS. The two are
+# routinely confused and the file settles it twice over: at Lunenburg High in SY2025
+# Mathematics runs 32 sections averaging 14.5 -- 464 seats -- against a `tot_stu_cnt` of
+# 434; and the 22 subject rows sum to 2,726 against an `All` row of 438, because a student
+# takes several subjects. What the `All` row DOES track is the school: within 3.4% of
+# DESE's own enrolment count in all fifteen years, which is what makes
+# `subject students / All students` a PARTICIPATION RATE -- the share of the school taking
+# anything in that subject area.
+#
+# THE DENOMINATOR IS THE `All` ROW AND NEVER A SUM OF THE DETAIL. `assert_rollups()`
+# already refuses to write unless the detail sections sum to the `All` sections, and the
+# participation rate here divides by the `All` row's own student count. The two are checked
+# against each other in `participation_denominator()` below, and against DESE's separate
+# enrolment file, so a share on this page has a denominator that three sources agree about.
+#
+# RULE 7 GOVERNS THE READING AND THE READING IS NOT WHAT THE QUESTION EXPECTED. Within the
+# comparable window Miscellaneous participation at Lunenburg High is flat while its
+# sections rise by half -- more groups, smaller ones, the same share of the school. Two
+# subjects DID lose participation heavily, and both of their falls happen in a single year.
+# Every one of those is a measurement; every explanation for one is a hypothesis; and the
+# page carries the measurements and both readings.
+
+def participation_denominator(rows, db, org, org_code, first, last):
+    """That the `All` row's student count is the school, checked against a second file.
+
+    A share is only as good as what it is over, and this one is over a column whose
+    meaning is not printed anywhere. So it is established rather than assumed: the `All`
+    row against DESE's enrolment-by-grade count for the same school in the same year, and
+    the worst disagreement published beside the series it underwrites."""
+    enr = {int(r['fy']): r['total_cnt']
+           for r in q(db, 'SELECT fy, total_cnt FROM dese_enrollment '
+                          "WHERE org_code=? AND org_level='school'", org_code)}
+    out, worst = [], 0.0
+    for sy in range(first, last + 1):
+        m = [r for r in rows if r['org_name'] == org and r['sy'] == sy
+             and r['subj'] == ROLLUP_SUBJ]
+        if not m or not m[0]['tot_stu_cnt']:
+            fail('%s has no usable All row in SY%d, and every participation share on '
+                 'this page is over it.' % (org, sy))
+        e = enr.get(sy)
+        if not e:
+            fail('DESE’s enrolment file carries no SY%d row for %s, and the '
+                 'denominator of every share on this page is checked against it.'
+                 % (sy, org))
+        gap = abs(m[0]['tot_stu_cnt'] - e) / e
+        worst = max(worst, gap)
+        out.append(dict(sy=sy, all_students=round(m[0]['tot_stu_cnt']),
+                        enrolled=round(e), gap=round(gap, 4)))
+    if worst > 0.05:
+        fail('the All row and DESE’s enrolment count for %s differ by up to %.1f%%. '
+             'A participation rate over a denominator that is not the school is not a '
+             'participation rate.' % (org, worst * 100))
+    return dict(years=out, worst_gap=round(worst, 4),
+                bound=0.05,
+                what='distinct students on the file’s own `All` row, checked against '
+                     'DESE’s separate enrolment-by-grade count for the same school '
+                     'and year')
+
+
+# How far a year has to stand off BOTH its neighbours, in share-of-the-school points,
+# before it is a spike rather than a movement. One year in this file clears it -- and it
+# clears it by 33 points.
+SPIKE = 0.15
+
+
+def _spike(before, here, after):
+    return ((here - before > SPIKE and here - after > SPIKE)
+            or (before - here > SPIKE and after - here > SPIKE))
+
+
+def participation(rows, db, org, org_code, first, last):
+    """Every subject's share of the school, year by year, with what moved and WHEN."""
+    den = participation_denominator(rows, db, org, org_code, first, last)
+    total = {y['sy']: y['all_students'] for y in den['years']}
+    cell = [r for r in rows if r['org_name'] == org and r['subj'] != ROLLUP_SUBJ
+            and not r['subj'].startswith(CH74) and first <= r['sy'] <= last]
+    out = []
+    for s in sorted({r['subj'] for r in cell}):
+        pts = []
+        for sy in range(first, last + 1):
+            m = [r for r in cell if r['subj'] == s and r['sy'] == sy]
+            if not m:
+                fail('%s has no %r row in SY%d. A missing row and a zero are different '
+                     'facts.' % (org, s, sy))
+            pts.append(dict(sy=sy, students=round(m[0]['tot_stu_cnt']),
+                            share=round(m[0]['tot_stu_cnt'] / total[sy], 4),
+                            sections=round(m[0]['tot_clss_cnt']),
+                            avg=round(m[0]['avg_clss_cnt'], 1)))
+        if not any(p['students'] for p in pts):
+            continue
+        a, b = pts[0], pts[-1]
+        step = max(zip(pts, pts[1:]),
+                   key=lambda ab: abs(ab[1]['share'] - ab[0]['share']))
+        d = round(b['share'] - a['share'], 4)
+        ds = round(step[1]['share'] - step[0]['share'], 4)
+        out.append(dict(
+            subj=s, short=_short(s), points=pts,
+            first_share=a['share'], last_share=b['share'], share_change=d,
+            first_students=a['students'], last_students=b['students'],
+            sections_first=a['sections'], sections_last=b['sections'],
+            sections_change=b['sections'] - a['sections'],
+            avg_first=a['avg'], avg_last=b['avg'],
+            # WHEN, not just how much. Two of the three largest falls at the high school
+            # happen entirely between SY2020 and SY2021, and a reader shown only the two
+            # endpoints would read a step in one year as a drift across nine.
+            step=ds, step_from_sy=step[0]['sy'], step_to_sy=step[1]['sy'],
+            one_step=abs(d) >= 0.05 and abs(ds) >= abs(d),
+            # A year that disagrees with BOTH its neighbours by more than 15 points IN
+            # THE SAME DIRECTION -- up from one and up from the other, or down from
+            # both. That is a spike; a year that is 15 points below the one before it
+            # and stays there is a STEP, and the two must not be confused. Comparing
+            # against the MEAN of the neighbours does confuse them, and it also flags
+            # the years either side of a real spike as spikes themselves.
+            spikes=[pts[i]['sy'] for i in range(1, len(pts) - 1)
+                    if _spike(pts[i - 1]['share'], pts[i]['share'],
+                              pts[i + 1]['share'])],
+        ))
+    if not out:
+        fail('%s has no subject with any student in it.' % org)
+    movers = sorted(out, key=lambda r: -abs(r['share_change']))
+    return dict(
+        org=org, first_sy=first, last_sy=last, years=last - first + 1,
+        denominator=den, subjects=out,
+        movers=[r['short'] for r in movers[:6]],
+        fell=[r['short'] for r in out if r['share_change'] <= -0.05],
+        rose=[r['short'] for r in out if r['share_change'] >= 0.05],
+        held=[r['short'] for r in out if abs(r['share_change']) < 0.05],
+        one_step=[dict(short=r['short'], from_sy=r['step_from_sy'],
+                       to_sy=r['step_to_sy'], step=r['step'])
+                  for r in out if r['one_step']],
+        spiked=[dict(short=r['short'], years=r['spikes']) for r in out if r['spikes']],
+    )
+
+
+def more_groups_same_share(part, subj):
+    """The worked case, and the one that answers the question it was asked to answer.
+
+    THE HYPOTHESIS WAS THAT MISCELLANEOUS IS A STUDY HALL absorbing students who cannot
+    schedule anything else -- which would show as its share of the school RISING while
+    academic subjects fell. What the file shows is its sections rising by half and its
+    share of the school not moving, in groups averaging under five. Both are measurements.
+    Neither settles what a Miscellaneous group IS, and DESE publishes no course name for
+    any of them, so this function produces the numbers and the page carries both readings.
+    """
+    m = [r for r in part['subjects'] if r['subj'] == subj]
+    if not m:
+        fail('%r is not among %s’s subjects and this page works it as an example.'
+             % (subj, part['org']))
+    r = m[0]
+    if r['sections_change'] <= 0:
+        fail('%s at %s no longer gains sections across the window, and the worked case '
+             'on this page is a subject gaining sections while its share of the school '
+             'does not move.' % (subj, part['org']))
+    seats_first = round(r['sections_first'] * r['avg_first'])
+    seats_last = round(r['sections_last'] * r['avg_last'])
+    return dict(
+        subj=subj, short=_short(subj),
+        first_sy=part['first_sy'], last_sy=part['last_sy'],
+        sections_first=r['sections_first'], sections_last=r['sections_last'],
+        sections_change=r['sections_change'],
+        share_first=r['first_share'], share_last=r['last_share'],
+        share_change=r['share_change'],
+        avg_first=r['avg_first'], avg_last=r['avg_last'],
+        students_first=r['first_students'], students_last=r['last_students'],
+        # SEATS, SAID TO BE SEATS. Sections times the average is how many student-places
+        # ran; the student count is how many DIFFERENT children were in them. The ratio
+        # is how many Miscellaneous things a child in one takes, and it is the figure
+        # that makes the size of these groups legible.
+        seats_first=seats_first, seats_last=seats_last,
+        per_student_first=round(seats_first / r['first_students'], 1)
+        if r['first_students'] else None,
+        per_student_last=round(seats_last / r['last_students'], 1)
+        if r['last_students'] else None,
+        spikes=r['spikes'])
+
+
+def per_school(db, rows, span_rows, class_years, fte_years):
+    """Every school in the current configuration, on its OWN window.
+
+    Not on a common one. Forcing four schools onto one span would either throw away years
+    or straddle a reorganisation, and both are worse than four charts with four spans
+    printed on them. As it happens all four windows come out the same here -- the SY2017
+    reset is what starts every one of them -- and that is a derived fact rather than a
+    convenience, so it is asserted below instead of assumed."""
+    out = []
+    for org in sorted({r['org_name'] for r in rows if r['org_type'] == 'School'
+                       and r['sy'] == max(r2['sy'] for r2 in rows)}):
+        runs = school_eras(span_rows, org)
+        has_fte = any(y in fte_years.get(org, ()) for y in class_years)
+        if not has_fte:
+            # The Advanced Community Experience Program: one section a year, four to nine
+            # children, and no teacher FTE filed against it at all. Named rather than
+            # dropped, because a school missing from a list of schools is a hole.
+            pts = [r for r in rows if r['org_name'] == org and r['subj'] == ROLLUP_SUBJ]
+            out.append(dict(name=org, org_code=pts[0]['org_code'], eras=runs,
+                            window=None, stability=None, subjects=None,
+                            instruments=None, participation=None,
+                            excluded='ran %s section a year for %s children and files no '
+                                     'teacher FTE of its own — there is nothing to '
+                                     'trend and nothing to set beside it'
+                                     % (C.num(max(round(p['tot_clss_cnt']) for p in pts)),
+                                        C.num(max(round(p['tot_stu_cnt']) for p in pts)))))
+            continue
+        w = latest_era(runs, org, class_years, fte_years[org])
+        st = stability(rows, org, w['first_sy'], w['last_sy'])
+        entry = dict(name=org, org_code=[r for r in rows if r['org_name'] == org][0]['org_code'],
+                     eras=runs, window=w, stability=st, excluded=None)
+        if st['trendable']:
+            entry['subjects'] = by_subject(rows, org, w['first_sy'], w['last_sy'])
+            entry['instruments'] = instruments(db, rows, org, w['first_sy'], w['last_sy'],
+                                               steps_readable=True)
+            entry['participation'] = participation(rows, db, org, entry['org_code'],
+                                                   w['first_sy'], w['last_sy'])
+        else:
+            entry['subjects'] = None
+            entry['instruments'] = None
+            entry['participation'] = None
+            entry['excluded'] = (
+                'its total section count moved %s in one year — %s to %s between '
+                '%s and %s — while its own enrolment moved %s. A subject series '
+                'inside a school total that does that is not a series'
+                % (C.pct(st['swing'] * 100), C.num(st['from_sections']),
+                   C.num(st['to_sections']), 'SY%d' % st['from_sy'],
+                   'SY%d' % st['to_sy'], C.pct(st['students_swing'] * 100)))
+        out.append(entry)
+    if not out:
+        fail('no school is in the most recent year of the class-size file.')
+    return out
 
 
 # ---- the curriculum return --------------------------------------------------------
@@ -1071,8 +2082,43 @@ def _before_run(points):
                 years_at_this_level=len(run))
 
 
-def build_conclusions(hs, hs_subj, fj, cs, first, last, lang):
-    """The five things this page establishes, as DATA rather than as sentences in a page.
+def _era_history(era):
+    """History at the high school across the eras, and the assertion the card rests on:
+    that all THREE instruments moved the same way.
+
+    The comparison is the era before the pandemic against the era now -- both at the same
+    grade span, both after the new building opened -- and NOT the two ends of the file,
+    which straddle a reorganisation this page has already shown is worth sixteen points
+    on its own."""
+    m = [r for r in era['subjects'] if r['subj'] == 'History']
+    if not m:
+        fail('History is not in the era series and a conclusion on this page rests on '
+             'it.')
+    bands = m[0]['eras']
+    now = bands[-1]
+    before = [b for b in bands if b['last_sy'] < now['first_sy'] and not b['covid']]
+    if not before:
+        fail('there is no pre-pandemic era at the current configuration to compare the '
+             'present one with.')
+    was = before[-1]
+    for k in ('participation', 'seats', 'fte'):
+        if was[k] is None or now[k] is None:
+            fail('History has no %s in one of the two eras this page compares.' % k)
+        if now[k] >= was[k]:
+            fail('History’s %s is no longer lower now than before the pandemic '
+                 '(%s then, %s now), and the conclusion on this page is that all three '
+                 'instruments moved down together. Rewrite it rather than shipping a '
+                 'claim the data no longer makes.' % (k, was[k], now[k]))
+    return dict(before=was['participation'], now=now['participation'],
+                fte_before=was['fte'], fte_now=now['fte'],
+                seats_before=was['seats'], seats_now=now['seats'],
+                era_first_sy=was['first_sy'], era_last_sy=now['last_sy'],
+                era_last_first_sy=now['first_sy'],
+                from_sy=was['last_sy'] + 1)
+
+
+def build_conclusions(hs, hs_subj, fj, cs, first, last, lang, mc, split, era):
+    """What this page establishes, as DATA rather than as sentences in a page.
 
     RULE 2 IS ENFORCED HERE, NOT ASKED FOR. Every figure these sentences state -- the
     section counts, the shares, and the SCHOOL YEARS themselves -- is registered beside
@@ -1086,6 +2132,7 @@ def build_conclusions(hs, hs_subj, fj, cs, first, last, lang):
                  'a conclusion.' % name)
         return m[0]
 
+    era_h = _era_history(era)
     a = [r for r in hs if r['sy'] == first][0]
     b = [r for r in hs if r['sy'] == last][0]
     fl = sub('Foreign Language')
@@ -1243,6 +2290,61 @@ def build_conclusions(hs, hs_subj, fj, cs, first, last, lang):
         ),
 
         conclusion(
+            id='history-lost-staff-seats-and-takers-together',
+            claim='%s of Lunenburg High takes a history course, against %s before %s.'
+                  % (C.pct(era_h['now'] * 100), C.pct(era_h['before'] * 100),
+                     'SY%d' % era_h['from_sy']),
+            so_what='Teacher FTE went %s to %s and seats %s to %s — the one subject '
+                    'where all three fell.'
+                    % (era_h['fte_before'], era_h['fte_now'],
+                       C.num(era_h['seats_before']), C.num(era_h['seats_now'])),
+            figures={
+                'now': figure(era_h['now'], C.pct(era_h['now'] * 100)),
+                'before': figure(era_h['before'], C.pct(era_h['before'] * 100)),
+                'from_sy': sy(era_h['from_sy']),
+                'fte_before': figure(era_h['fte_before'], str(era_h['fte_before'])),
+                'fte_now': figure(era_h['fte_now'], str(era_h['fte_now'])),
+                'seats_before': figure(era_h['seats_before'],
+                                       C.num(era_h['seats_before'])),
+                'seats_now': figure(era_h['seats_now'], C.num(era_h['seats_now'])),
+                'era_first': sy(era_h['era_first_sy']),
+                'era_last': sy(era_h['era_last_sy']),
+                'era_last_first': sy(era_h['era_last_first_sy']),
+            },
+            figure='now',
+            kind='measured',
+            bearing='lever',
+            lede='Three instruments measure this page’s question — what was '
+                 'staffed, how much room ran, and how many children got in — and '
+                 'this is the only subject at the high school where all three moved down '
+                 'together.',
+            detail='Averaged over %s to %s the school staffed %s posts of history and '
+                   '%s student places ran; over %s to %s it is %s posts and %s places, '
+                   'and the share of the school taking a history course went from %s to '
+                   '%s. The averages are over eras rather than single years on purpose: '
+                   'the same subject read end to end across the whole file appears to '
+                   'fall by a third more than this, and most of that is a reorganisation '
+                   'rather than a change in provision.'
+                   % ('SY%d' % era_h['era_first_sy'], 'SY%d' % era_h['from_sy'],
+                      era_h['fte_before'], C.num(era_h['seats_before']),
+                      'SY%d' % era_h['era_last_first_sy'],
+                      'SY%d' % era_h['era_last_sy'], era_h['fte_now'],
+                      C.num(era_h['seats_now']), C.pct(era_h['before'] * 100),
+                      C.pct(era_h['now'] * 100)),
+            basis='Teacher FTE, sections times average class size, and distinct students '
+                  'over the school’s own `All` row — three DESE series for the '
+                  'same subject at the same school, averaged inside eras whose '
+                  'boundaries are the school’s own grade spans plus one we assert '
+                  'for the pandemic.',
+            not_shown='That a staffing decision caused it. The fall begins in the years '
+                      'the pandemic closed and reopened this school, students choose '
+                      'their own courses at this level, and history teaching recovered '
+                      'part of a post since without the share recovering with it. Those '
+                      'are three readings of one set of numbers and this page does not '
+                      'choose between them.',
+            see=[('/school-staffing', 'Teacher FTE by subject')],
+        ),
+        conclusion(
             id='computer-science-at-the-high-school',
             claim='In the %s years Lunenburg High held only grades 9-12 it ran %s '
                   'computer science section.'
@@ -1375,7 +2477,137 @@ def build_conclusions(hs, hs_subj, fj, cs, first, last, lang):
                           (x for x in fj['subjects'] if x['fte_beyond_change']),
                           key=lambda x: -abs(x['fte_beyond_change']))[:2]),
             see=[('/school-staffing', 'The FTE series in full')],
-        ),    ]
+        ),
+
+        # ---- what the eras and the third instrument added -----------------------
+        #
+        # THREE CARDS, AND THE REASON EACH IS A CARD RATHER THAN A PARAGRAPH.
+        #
+        # The first answers the question a resident actually asked -- whether children
+        # are being parked in filler classes because nothing else fits -- and it answers
+        # it against the expectation. The second makes a district figure this page
+        # already published legible, by saying which building it happened in. The third
+        # is the one place in the file where all three instruments move together.
+        #
+        # WHAT IS NOT A CARD, deliberately: that two of our own drafted findings were
+        # artefacts of a reorganisation. That is true, it is on the page, and it is about
+        # a METHOD rather than about the world -- conclusions.py's fourth test.
+        conclusion(
+            id='miscellaneous-is-more-groups-not-more-students',
+            claim='Miscellaneous went from %s sections to %s at Lunenburg High, taking '
+                  'the same share of students.'
+                  % (C.num(mc['sections_first']), C.num(mc['sections_last'])),
+            so_what='More groups, smaller — %s students each. %s of the school took '
+                    'one in %s and %s now.'
+                    % (mc['avg_last'], C.pct(mc['share_first'] * 100),
+                       'SY%d' % mc['first_sy'], C.pct(mc['share_last'] * 100)),
+            figures={
+                'sections_last': figure(mc['sections_last'],
+                                        C.num(mc['sections_last']), 'course sections'),
+                'sections_first': figure(mc['sections_first'],
+                                         C.num(mc['sections_first'])),
+                'avg_last': figure(mc['avg_last'], str(mc['avg_last'])),
+                'avg_first': figure(mc['avg_first'], str(mc['avg_first'])),
+                'share_first': figure(mc['share_first'],
+                                      C.pct(mc['share_first'] * 100)),
+                'share_last': figure(mc['share_last'],
+                                     C.pct(mc['share_last'] * 100)),
+                'students_last': figure(mc['students_last'],
+                                        C.num(mc['students_last'])),
+                'seats_last': figure(mc['seats_last'], C.num(mc['seats_last'])),
+                'per_student': figure(mc['per_student_last'],
+                                      str(mc['per_student_last'])),
+                'sy_first': sy(mc['first_sy']), 'sy_last': sy(mc['last_sy']),
+                'spike': sy(mc['spikes'][0]),
+            },
+            figure='sections_last',
+            kind='measured',
+            bearing='sizes',
+            lede='A resident asked whether children are being offered thinner work and '
+                 'taking it — a filler bucket swelling while the subjects around it '
+                 'shrink. This is the bucket, and the count of children in it did not '
+                 'move.',
+            detail='%s student places ran in Miscellaneous at Lunenburg High in %s '
+                   'among %s different children, so a child in one is in about %s of '
+                   'them; the groups averaged %s students at the start of the window. '
+                   'Groups of under five are the shape of small-group support, not '
+                   'of a room somebody is parked in — and that is a reading, not a '
+                   'finding, because DESE files no course name against any of them. One '
+                   'year stands off its neighbours by more than thirty points, %s, and '
+                   'the page marks it rather than averaging it in.'
+                   % (C.num(mc['seats_last']), 'SY%d' % mc['last_sy'],
+                      C.num(mc['students_last']), str(mc['per_student_last']),
+                      str(mc['avg_first']), 'SY%d' % mc['spikes'][0]),
+            basis='`tot_clss_cnt`, `avg_clss_cnt` and `tot_stu_cnt` for the '
+                  'Miscellaneous subject area at Lunenburg High, over the school’s '
+                  'own `All` row — which DESE’s separate enrolment file agrees '
+                  'with to within a few per cent in every year.',
+            not_shown='What any of these groups is. Academic support, an elective, '
+                      'directed study and a study hall all fit these numbers, and '
+                      'nothing published separates them. What would: the district’s '
+                      'own Program of Studies, which exists and is not published.',
+            see=[('/what-we-cannot-answer', 'The gap this leaves')],
+        ),
+        conclusion(
+            id='mathematics-moved-between-two-buildings',
+            claim='Mathematics teacher FTE fell %s at the middle school and rose %s at '
+                  'the high school.' % (abs(split['lost']['fte_change']),
+                                        split['gained']['fte_change']),
+            so_what='The district figure is %s and shows neither. Middle school classes '
+                    'went from %s to %s.'
+                    % (split['district']['fte_change'], split['lost']['avg_first'],
+                       split['lost']['avg_last']),
+            figures={
+                'lost': figure(split['lost']['fte_change'],
+                               str(abs(split['lost']['fte_change'])),
+                               'full-time teaching posts'),
+                'gained': figure(split['gained']['fte_change'],
+                                 str(split['gained']['fte_change'])),
+                'district': figure(split['district']['fte_change'],
+                                   str(split['district']['fte_change'])),
+                'avg_first': figure(split['lost']['avg_first'],
+                                    str(split['lost']['avg_first'])),
+                'avg_last': figure(split['lost']['avg_last'],
+                                   str(split['lost']['avg_last'])),
+                'sec_lost': figure(split['lost']['sections_change'],
+                                   C.num(abs(split['lost']['sections_change']))),
+                'sec_gained': figure(split['gained']['sections_change'],
+                                     C.num(split['gained']['sections_change'])),
+                'hs_avg_last': figure(split['gained']['avg_last'],
+                                      str(split['gained']['avg_last'])),
+                'sy_first': sy(first), 'sy_last': sy(last),
+            },
+            figure='lost',
+            kind='measured',
+            bearing='lever',
+            lede='This page already published the district figure for mathematics and '
+                 'called it the one subject where the two instruments disagree. Split by '
+                 'building, it is not one subject disagreeing with itself — it is '
+                 'two schools going opposite ways.',
+            detail='Between %s and %s the middle school ran %s fewer mathematics '
+                   'sections and its classes went from %s students to %s. The high '
+                   'school ran %s more and its classes fell to %s. Both are inside one '
+                   'district figure, and the '
+                   'four schools’ FTE adds up to it exactly. Which building a post '
+                   'sits in is a thing this town decides, so this is a dial rather than '
+                   'a condition — and nothing here says what it should be set to.'
+                   % ('SY%d' % first, 'SY%d' % last,
+                      C.num(abs(split['lost']['sections_change'])),
+                      split['lost']['avg_first'], split['lost']['avg_last'],
+                      C.num(split['gained']['sections_change']),
+                      split['gained']['avg_last']),
+            basis='`dese_teacher_subject` teacher FTE per school against '
+                  '`dese_class_size` sections and average class size for the same '
+                  'subject, over the years both files cover. The generator refuses to '
+                  'write unless the schools’ FTE sums to the district’s and '
+                  'their sections sum to the district’s.',
+            not_shown='Why. A post can move because a timetable changed, because a '
+                      'retirement was not replaced, because a grant ended, or because '
+                      'the two schools were staffed to different targets. Nothing in '
+                      'either state file distinguishes them.',
+            see=[('/school-staffing', 'The FTE series in full')],
+        ),
+    ]
     return emit('courses', rows)
 
 
@@ -1459,6 +2691,41 @@ def build():
                   last_students=ds[0]['last_students'],
                   is_largest_line=(bd['subj'] == fj['biggest_line']))
         cs = computer_science(rows, nine)
+
+        # ---- the two instruments, per school ------------------------------------
+        # The district figure this page already publishes, DRAWN and then SPLIT. Every
+        # assertion below is fail-closed: the FTE rollup, the schools' windows being
+        # their own most recent grade span, the stability separation the exclusion
+        # rests on, and the decomposition summing to the district figure it decomposes.
+        fte_rollup = assert_fte_rollup(db, first, last)
+        class_years = sorted({r['sy'] for r in rows})
+        fte_years = collections.defaultdict(set)
+        for r in q(db, 'SELECT DISTINCT fy, org_name FROM dese_teacher_subject '
+                       "WHERE lea=? AND subject_level='subject'", LEA):
+            fte_years[r['org_name']].add(int(r['fy']))
+        schools = per_school(db, rows, span_rows, class_years, fte_years)
+        assert_stability([s for s in schools if s['stability']])
+        # THE DISTRICT'S OWN STEPS ARE NOT READABLE and the payload says so rather than
+        # the page remembering it: the total is the sum of five schools, two of whose
+        # counts this page refuses to trend, and its intermediate years carry their
+        # swings. Both ENDS are ordinary years at all five, so the endpoints stand.
+        district_inst = instruments(db, rows, DISTRICT, first, last,
+                                    steps_readable=False)
+        hs_part = [s for s in schools if s['name'] == HIGH][0]['participation']
+        misc_case = more_groups_same_share(hs_part, 'Miscellaneous')
+
+        # ---- the eras, and the three instruments on them --------------------------
+        file_first = min(r['sy'] for r in rows)
+        file_last = max(r['sy'] for r in rows)
+        bands = era_schools(span_rows, era_bands(era_runs, file_first, file_last))
+        hs_code = [r for r in rows if r['org_name'] == HIGH][0]['org_code']
+        hs_era = era_series(rows, db, HIGH, hs_code, bands, file_first, file_last)
+        g8_shift = grade8_shift(hs_era, bands)
+        g8_staffing = assert_grade8_staffing(db, bands, g8_shift['grade8_era'])
+        split_subj = decompose(db, rows, district_inst, schools,
+                               fj["biggest_disagreement"]["subj"], first, last)
+        reorg = reorganisation(span_rows, rows, schools)
+
         cur = curriculum()
         said = said_in_meetings()
         terms, minutes = searched()
@@ -1507,6 +2774,16 @@ def build():
                               if losers else None),
             ),
             fte=fj,
+            schools=schools,
+            instruments=district_inst,
+            fte_rollup=fte_rollup,
+            decomposition=split_subj,
+            miscellaneous=misc_case,
+            bands=bands,
+            era_series=hs_era,
+            grade8_shift=g8_shift,
+            grade8_staffing=g8_staffing,
+            reorganisation=reorg,
             fte_beyond=dict(sy=last + 1, subjects=[
                 dict(subj=s, fte=v) for s, v in sorted(fte_extra.items())]),
             computer_science=cs,
@@ -1523,8 +2800,10 @@ def build():
                 rows, cur, hs, era_runs, implausible(rows),
                 max(r['sy'] for r in rows) - min(r['sy'] for r in rows) + 1),
             closes=closes(said), differently=differently(said),
-            conclusions=build_conclusions(hs, hs_subj, fj, cs, first, last,
-                                          language(rows, hs_subj, ms_subj, hs, middle)),
+            conclusions=build_conclusions(
+                hs, hs_subj, fj, cs, first, last,
+                language(rows, hs_subj, ms_subj, hs, middle),
+                misc_case, split_subj, hs_era),
         )
     finally:
         db.close()

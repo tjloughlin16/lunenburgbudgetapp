@@ -15,6 +15,8 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'askus'
   | 'funds'
   | 'staffing'
+  | 'schoolstaff'
+  | 'parastaff'
   | 'insurance'
   | 'sportsmoney'
   | 'stateaid'
@@ -124,6 +126,28 @@ export const SLUG: Record<Tab, string> = {
   // people say out loud is "school staffing", so that is the address; `staffing` and the
   // rest are aliases.
   staffing: 'school-staffing',
+  // WHY /school-staffing IS THIS PAGE AND NOT ONE OF THE OTHER TWO.
+  //
+  // The address was published, linked from other reports, listed in the sitemap and in
+  // llms.txt, and is cited off this site. It has always led with the window argument --
+  // the h1 a reader met was about the years somebody picks -- so the reader arriving on
+  // an old link lands on the finding they were sent for. Splitting a page is not a reason
+  // to move an address, and every alias below stays exactly where it was pointing.
+  //
+  // The two pages carved out of it take NEW addresses, and take only forms nobody has
+  // been given before.
+  //
+  // Who is in the building, which is the question a parent actually arrives with. NOT
+  // `staff-by-school` or `rosters` as the slug: `rosters` and `staff-rosters` have meant
+  // /school-staffing since long before this page existed and keep meaning it. The slug is
+  // the sentence somebody says out loud.
+  schoolstaff: 'who-works-in-each-school',
+  // The biggest single change in who the schools employ. NOT `paras` or
+  // `paraprofessionals` as the slug OR as an alias -- both have pointed at
+  // /school-staffing for months and a link that has been shared once keeps landing where
+  // it landed. The definite article is deliberate: it is the name of a group of people,
+  // not a topic heading.
+  parastaff: 'the-paraprofessionals',
   // The largest school cost that is not in the school budget. The slug is the THING, not
   // the finding — `health-insurance` is what a resident types and what gets read aloud at
   // a meeting. NOT `insurance` on its own: the town's ledger has a liability-insurance
@@ -357,6 +381,18 @@ const ALIASES: Record<string, Tab> = {
   'school-staffing': 'staffing', staffing: 'staffing', staff: 'staffing',
   teachers: 'staffing', headcount: 'staffing', paraprofessionals: 'staffing',
   paras: 'staffing', 'staff-rosters': 'staffing', rosters: 'staffing',
+  // NOTHING ABOVE MOVES. These are forms nobody has been handed before, for the two pages
+  // carved out of /school-staffing -- `staff-by-school` and `who-works-here` for the
+  // building question, and the paraprofessional forms that are NOT already spoken for.
+  // `paras`, `paraprofessionals`, `teachers`, `headcount`, `rosters` and `staff-rosters`
+  // are deliberately absent: every one of them has meant /school-staffing since long
+  // before these pages existed.
+  'who-works-in-each-school': 'schoolstaff', 'staff-by-school': 'schoolstaff',
+  'who-works-here': 'schoolstaff', 'school-by-school-staffing': 'schoolstaff',
+  'who-works-in-the-schools': 'schoolstaff', 'staff-per-school': 'schoolstaff',
+  'the-paraprofessionals': 'parastaff', 'paraprofessional-staffing': 'parastaff',
+  'para-staffing': 'parastaff', 'teaching-assistants': 'parastaff',
+  'classroom-aides': 'parastaff', 'paraprofessionals-and-teachers': 'parastaff',
   // NOT 'retirees' or 'benefits' alone -- the first names only half the page and the
   // second would promise pensions, which are a different assessment in a different
   // department and are NOT established here.
@@ -514,6 +550,8 @@ export const LABEL: Record<Tab, string> = {
   variance: 'Budgets against what was later reported',
   funds: 'The money outside the budget',
   staffing: 'School staffing — did it go up, and over which years',
+  schoolstaff: 'Who works in each school',
+  parastaff: 'The paraprofessionals',
   insurance: 'Health insurance — the cost outside the school budget',
   sportsmoney: 'What sports cost, and who pays',
   stateaid: 'State aid — the part nobody here votes on',
@@ -553,6 +591,8 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   variance: 'themoney',
   funds: 'themoney',
   staffing: 'themoney',
+  schoolstaff: 'themoney',
+  parastaff: 'themoney',
   insurance: 'themoney',
   sportsmoney: 'themoney',
   askus: 'themoney',
@@ -685,6 +725,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   // accounts of where money originates, and filing them by subject was what produced a
   // thirteen-tab strip in the first place.
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
+  schoolstaff: 'analyses', parastaff: 'analyses',
   cuts: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses', formula: 'analyses',
@@ -750,7 +791,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // explains the formula. Adjacent in the bar is where the difference is cheapest to see.
   analyses: ['addsup', 'reports', 'sped', 'classsize', 'peers', 'required', 'minaid',
              'formula',
-             'staffing', 'courses', 'cuts',
+             'staffing', 'schoolstaff', 'parastaff', 'courses', 'cuts',
              'stopped',
              'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
              'insurance', 'variance'],

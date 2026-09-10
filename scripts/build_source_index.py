@@ -1520,9 +1520,11 @@ GROUPS = [
          '\u2014 they are machine-generated captions, bulky and never edited by hand, so '
          'they go to the archive bucket like the documents rather than into git like the '
          'things we write. This index is the map into them, and it is small enough to '
-         'version. It is currently empty: YouTube IP-blocked the caption endpoint after '
-         'ten test fetches, and the backfill is deliberately on hold rather than '
-         'retrying. Rebuild with scripts/fetch_youtube_transcripts.py.'),
+         'version. The backfill runs slowly on purpose — the caption endpoint '
+         'throttles by IP, and ten fetches in 35 seconds once earned a refusal — and '
+         'it takes the meetings with NO surviving document first, because for those a '
+         'rough caption is the difference between a searchable account and none. '
+         'Rebuild with scripts/fetch_youtube_transcripts.py.'),
         ('data/dese-class-size.csv',
          'How many classes ran in each subject, and how full they were', 3,
          'DESE\u2019s class counts and average sizes for Lunenburg by school and subject, '
@@ -1780,13 +1782,29 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # was extracted, and `data/rosters/` the parsed roster blocks. They are kept
              # because re-reading them costs many hours, and they are not documents: the
              # citable artefacts are the CSVs they produced, which are catalogued below.
-             'data/inventory', 'data/rosters', 'data/verify'}
+             'data/inventory', 'data/rosters', 'data/verify',
+             # One JSON per meeting recording, machine-made captions, heading for about a
+             # thousand files. They are not documents anybody published and they are never
+             # a source -- a caption mangles the one thing this project cares about, since
+             # *fifteen hundred*, *$1,500* and *$50* are one sound. The citable artefact is
+             # the VIDEO AT ITS TIMESTAMP, and `data/youtube-transcript-index.csv` below is
+             # the map into them.
+             'data/youtube-transcripts'}
 # Bookkeeping about the R2 archive rather than anything read for a figure:
 # `archive-manifest.csv` is every object with its sha256, and `archive-push-state.csv`
 # records what `sync_archive.py` has uploaded and read back. Both are described on the
 # sources page as a group of their own rather than as documents.
 SKIP_FILES = {'supplemental.csv',
-              'data/archive-manifest.csv', 'data/archive-push-state.csv'}
+              'data/archive-manifest.csv', 'data/archive-push-state.csv',
+              # A derived full-text index over the minutes and the captions, rebuilt from
+              # them in ten seconds. Not a document, not versioned, and it carries no
+              # figure of its own -- everything in it is a copy of text catalogued
+              # elsewhere. `scripts/build_minutes_fts.py --check` is what guards it.
+              'data/minutes-fts.db',
+              # Semantics for the CSV datasets that are NOT database tables. A registry
+              # ABOUT the archive rather than anything read for a figure, in the same
+              # family as the manifest above.
+              'data/dataset-semantics.csv'}
 
 
 def page_count(path):

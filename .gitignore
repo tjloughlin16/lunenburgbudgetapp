@@ -153,3 +153,9 @@ fy28/public/docs/data/lunenburg.db
 # "Transcripts likely are not going to git either. R2."
 # The INDEX stays in git (it is a small CSV and it is the map into them).
 sources/data/youtube-transcripts/
+
+# The full-text index over both meeting corpora, built by scripts/build_minutes_fts.py.
+# Derived exactly like lunenburg.db above -- rebuildable from the text files in
+# sources/meetings/text/ and sources/data/youtube-transcripts/, and never a source of
+# truth. It is also ~70MB and growing with every caption fetched.
+sources/data/minutes-fts.db

@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { Basis } from '../components/Basis'
 import {
-  Caption, FULL, Legend, RAN, RanAgainstFull, SectionsOverTime, SubjectChange,
-  SubjectDetail, TableTwin, n0, n1, pct1, signed, syLong,
-  type Era, type Point, type Subject,
+  Caption, FULL, Legend, Quadrant, QuadrantKey, RAN, RanAgainstFull,
+  SectionsOverTime, SubjectChange, SubjectChips, SubjectDetail, SubjectsOverTime,
+  TableTwin, ThreeInstruments, n0, n1, pct1, signed, syLong,
+  type Band, type Era, type EraSubject, type Point, type QuadRow,
+  type Subject,
 } from '../components/CourseCharts'
 import {
   Body, Conclusions, Coverage, Grain, H2, H3, MoreReports, NotEstablished, NotShown,
@@ -58,6 +60,38 @@ const DATA = '/data/course-offerings.json'
 type LangPoint = {
   sy: number; sections: number; avg: number; students: number
   school_students: number | null; share: number | null
+}
+
+type Instruments = {
+  org: string; first_sy: number; last_sy: number; years: number
+  subjects: QuadRow[]; compared: number; steps_readable: boolean
+  quadrants: { quadrant: string; subjects: string[]; count: number }[]
+  on_the_line: string[]
+  spread_thinner: string[]
+  fewer_teachers_more_classes: string[]
+  fuller: string[]; emptier: string[]; one_step: string[]
+}
+
+type Participation = {
+  org: string; first_sy: number; last_sy: number; years: number
+  denominator: {
+    years: { sy: number; all_students: number; enrolled: number; gap: number }[]
+    worst_gap: number; bound: number; what: string
+  }
+  subjects: {
+    subj: string; short: string
+    points: { sy: number; students: number; share: number; sections: number
+              avg: number }[]
+    first_share: number; last_share: number; share_change: number
+    first_students: number; last_students: number
+    sections_first: number; sections_last: number; sections_change: number
+    avg_first: number; avg_last: number
+    step: number; step_from_sy: number; step_to_sy: number; one_step: boolean
+    spikes: number[]
+  }[]
+  movers: string[]; fell: string[]; rose: string[]; held: string[]
+  one_step: { short: string; from_sy: number; to_sy: number; step: number }[]
+  spiked: { short: string; years: number[] }[]
 }
 
 type Payload = {
@@ -121,6 +155,80 @@ type Payload = {
     }[]
   }
   fte_beyond: { sy: number; subjects: { subj: string; fte: number }[] }
+  instruments: Instruments
+  fte_rollup: { worst: number; at: [number, string] | null; tolerance: number
+                subject_years: number }
+  schools: {
+    name: string; org_code: string
+    eras: { span: string; first_sy: number; last_sy: number }[]
+    window: { span: string; first_sy: number; last_sy: number; years: number } | null
+    stability: {
+      swing: number; from_sy: number; to_sy: number
+      from_sections: number; to_sections: number; students_swing: number
+      trendable: boolean; bound: number
+      sections: { sy: number; sections: number; students: number; avg: number }[]
+    } | null
+    subjects: Subject[] | null
+    instruments: Instruments | null
+    participation: Participation | null
+    excluded: string | null
+  }[]
+  decomposition: {
+    subj: string; short: string
+    district: QuadRow
+    parts: {
+      org: string; trendable: boolean
+      fte_first: number; fte_last: number; fte_change: number
+      sections_first: number; sections_last: number; sections_change: number
+      avg_first: number; avg_last: number; avg_change: number
+    }[]
+    fte_sum: number; sections_sum: number
+    gained: { org: string; fte_change: number; sections_change: number; avg_last: number }
+    lost: { org: string; fte_change: number; sections_change: number
+            avg_first: number; avg_last: number }
+  }
+  reorganisation: {
+    boundaries: number[]
+    eras: { org: string; runs: { span: string; first_sy: number; last_sy: number }[] }[]
+    flagged: { org: string; from_sy: number; to_sy: number; from_sections: number
+               to_sections: number; avg?: number; at_boundary: boolean }[]
+    flagged_count: number; at_boundary: number; away_from_boundary: number
+    clusters_on_reorganisation: boolean
+  }
+  bands: Band[]
+  era_series: {
+    org: string; bands: Band[]; subjects: EraSubject[]
+    first_sy: number; last_sy: number
+    units: { fte: string; seats: string; participation: string }
+  }
+  grade8_staffing: {
+    years: number[]
+    grade_6_8: { fy: number; fte: number; total: number }[]
+    first: number; last: number; zero_years: number[]; noise_bound: number
+    total_before: number | null; total_during: number; total_after: number | null
+  }
+  grade8_shift: {
+    grade8_era: number; grade8_first_sy: number; grade8_last_sy: number
+    grade8_span: string; current_span: string; count: number
+    subjects: {
+      subj: string; short: string; first_sy: number; last_sy: number
+      end_to_end: number; era_values: number[]; into: number; out_of: number
+      grade8_first_sy: number; grade8_last_sy: number
+      since: { first_sy: number; last_sy: number; participation: number
+               covid: boolean }[]
+      since_change: number
+    }[]
+  }
+  miscellaneous: {
+    subj: string; short: string; first_sy: number; last_sy: number
+    sections_first: number; sections_last: number; sections_change: number
+    share_first: number; share_last: number; share_change: number
+    avg_first: number; avg_last: number
+    students_first: number; students_last: number
+    seats_first: number; seats_last: number
+    per_student_first: number | null; per_student_last: number | null
+    spikes: number[]
+  }
   retired: {
     subj: string; last_sy: number; last_sections: number; last_students: number
     years_since: number; ran_years: number[]; in_reliable_years: boolean
@@ -182,6 +290,23 @@ export function CourseOfferings() {
 
   if (err) return <Shell err={err} />
   if (!d) return <Shell loading />
+  return <Report d={d} />
+}
+
+/** Split out so the chart state below can use hooks — a component that returns early
+ *  while loading cannot also hold them. */
+function Report({ d }: { d: Payload }) {
+  // WHICH SUBJECTS THE READER IS LOOKING AT. Five is the cap because five is what the
+  // palette was validated for; a sixth choice pushes the oldest out rather than
+  // introducing a hue nothing checked.
+  const defaults = d.schools.find(s0 => s0.name === 'Lunenburg High')
+    ?.participation?.movers.slice(0, 5) ?? []
+  const [chosen, setChosen] = useState<string[]>(defaults)
+  const [focus, setFocus] = useState<string>(
+    d.decomposition.subj)
+  const toggle = (name: string) => setChosen(c =>
+    c.includes(name) ? c.filter(x => x !== name)
+      : (c.length >= 5 ? [...c.slice(1), name] : [...c, name]))
 
   const W = d.window
   const H = d.headline
@@ -206,7 +331,24 @@ export function CourseOfferings() {
   const window912 = d.high_school.filter(p => p.sy >= W.first_sy && p.sy <= W.last_sy)
   const seatsFirst = window912[0]
   const seatsLast = window912[window912.length - 1]
-  const BD = d.fte.biggest_disagreement
+  const I = d.instruments
+  const DEC = d.decomposition
+  const ES = d.era_series
+  const G8 = d.grade8_shift
+  const MISC = d.miscellaneous
+  const BANDS = d.bands
+  const CURRENT = BANDS[BANDS.length - 1].span
+  const g8band = BANDS[G8.grade8_era]
+  const G8S = d.grade8_staffing
+  const hsPart = d.schools.find(s0 => s0.name === 'Lunenburg High')?.participation ?? null
+  const drawable = d.schools.filter(s0 => s0.instruments)
+  const notDrawable = d.schools.filter(s0 => !s0.instruments)
+  const others = d.schools.filter(s0 => s0.instruments && s0.name !== 'Lunenburg High')
+  const eraSubjects = ES.subjects
+  const shown = chosen
+    .map(name => eraSubjects.find(x => x.short === name))
+    .filter((x): x is EraSubject => Boolean(x))
+  const focused = eraSubjects.find(x => x.subj === focus) ?? null
   const beyond = d.fte.subjects
     .filter(s => s.fte_beyond_change !== null && s.fte_beyond_change !== 0)
     .sort((a, b) => Math.abs(b.fte_beyond_change!) - Math.abs(a.fte_beyond_change!))
@@ -269,13 +411,451 @@ export function CourseOfferings() {
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
 
+      {/* ====================================================================
+          2. WHAT A STAFFING CHANGE DID TO WHAT RAN — the two visuals this page
+          was rebuilt around, immediately under the conclusions.
+
+          RULE 7a. The chart is the section; the prose that qualifies it comes after
+          it, and the key comes after the dots it is a key to. */}
+      <H2 id="instruments">Where the staffing changes landed on the timetable</H2>
+      <Body>
+        <Basis level="cross-checked">two DESE files that never see each other &mdash;
+          teacher FTE by subject, and the count of classes that ran in it</Basis>
+      </Body>
+      <Body>
+        <A href={abs('/school-staffing')}>School staffing</A> measures these same schools
+        with the instrument this town&rsquo;s argument has used for years: full-time
+        equivalents the state publishes by subject. Over the years both files cover the
+        two move the same way in {n0(d.fte.agree)} of {n0(d.fte.compared)} subjects
+        &mdash; and the useful part of this chart is the ones that do not.
+      </Body>
+      <Quadrant rows={I.subjects.filter(r => !r.on_the_line)} />
+      <QuadrantKey />
+      <Caption>
+        Every subject the district staffs and teaches, {syLong(I.first_sy)} to{' '}
+        {syLong(I.last_sy)} &mdash; {I.years} years, district-wide. Horizontal is the
+        change in teacher FTE, in full-time posts; vertical is the change in sections,
+        in classes that ran. A subject at {n1(DEC.district.fte_change)} and{' '}
+        {signed(DEC.district.sections_change)} lost{' '}
+        {n1(Math.abs(DEC.district.fte_change))} posts and gained{' '}
+        {n0(DEC.district.sections_change)} classes.{' '}
+        <strong>The two lower-left and upper-right corners are a subject moving one
+        way on both instruments.</strong> The other two are where they disagree, and
+        that is what neither file can show on its own.
+        {I.on_the_line.length ? <> {I.on_the_line.join(' and ')}{' '}
+          {I.on_the_line.length > 1 ? 'are' : 'is'} not drawn: one instrument did not
+          move at all, so there is no corner to be in.</> : null}
+      </Caption>
+      <Body>
+        <strong>The fill is the third instrument, and it is a test rather than a
+        decoration.</strong> A subject with fewer teachers and more classes is
+        consistent with the same people spread thinner &mdash; but only if the classes
+        got FULLER. {I.spread_thinner.length === 0 ? <>
+          Not one subject in that corner did.{' '}
+          {I.fewer_teachers_more_classes.join(' and ')} lost teachers and gained
+          classes, and the classes got SMALLER, so the spread-thinner reading is
+          refuted by the district&rsquo;s own third measurement rather than by
+          anything argued here.</> : <>
+          {I.spread_thinner.join(' and ')} did, and{' '}
+          {I.fewer_teachers_more_classes.filter(x => !I.spread_thinner.includes(x))
+            .join(' and ') || 'nothing else in that corner'} did not.</>}
+      </Body>
+      <TableTwin caption="Every subject, both instruments and the third"
+        head={['Subject', `FTE ${syLong(I.first_sy)}`, `FTE ${syLong(I.last_sy)}`,
+               'Change', `Sections ${syLong(I.first_sy)}`,
+               `Sections ${syLong(I.last_sy)}`, 'Change', 'Class size', 'Where it lands']}
+        rows={I.subjects.map(r => [
+          r.subj, n1(r.fte_first), n1(r.fte_last),
+          (r.fte_change > 0 ? '+' : r.fte_change < 0 ? '−' : '') + n1(Math.abs(r.fte_change)),
+          n0(r.sections_first), n0(r.sections_last), signed(r.sections_change),
+          `${n1(r.avg_first)} → ${n1(r.avg_last)}`,
+          r.quadrant ?? r.axis ?? '—'])}
+        note={<><strong>These are two ends and not a trend, and at district level that is
+          all they can be.</strong> The district total is the sum of five schools, two of
+          which report section counts that double and halve between adjacent years, so the
+          years BETWEEN these two carry those swings and nothing here reads them. Both
+          ends are ordinary years at all five schools, which is what makes the endpoint
+          comparison stand. The year-by-year moves are in the school tables below, where
+          the counts can be read. Class size is DESE&rsquo;s own average and it is a third
+          quantity again: not what ran and not who was employed.</>} />
+
+      <H3>The district figure, and which building it happened in</H3>
+      <Body>
+        A subject&rsquo;s teacher FTE is a district total, and a total is what two
+        schools moving in opposite directions looks like when nobody splits it.{' '}
+        {DEC.subj} is the clearest case in the file: the district figure is{' '}
+        {n1(DEC.district.fte_change)} posts, and underneath it{' '}
+        {DEC.gained.org} is up {n1(DEC.gained.fte_change)} while {DEC.lost.org} is down{' '}
+        {n1(Math.abs(DEC.lost.fte_change))}. The four schools add to the district figure
+        exactly, on both instruments, and the generator refuses to write if they stop
+        doing so.
+      </Body>
+      <TableTwin caption={`${DEC.subj}, by building`}
+        head={['', `FTE ${syLong(I.first_sy)}`, `FTE ${syLong(I.last_sy)}`, 'Change',
+               'Sections', 'Change', 'Class size']}
+        rows={[
+          ...DEC.parts.map(pt => [
+            pt.org + (pt.trendable ? '' : ' *'),
+            n1(pt.fte_first), n1(pt.fte_last),
+            (pt.fte_change > 0 ? '+' : pt.fte_change < 0 ? '−' : '')
+              + n1(Math.abs(pt.fte_change)),
+            `${n0(pt.sections_first)} → ${n0(pt.sections_last)}`,
+            signed(pt.sections_change),
+            `${n1(pt.avg_first)} → ${n1(pt.avg_last)}`]),
+          ['The four together', n1(DEC.parts.reduce((a, x) => a + x.fte_first, 0)),
+           n1(DEC.parts.reduce((a, x) => a + x.fte_last, 0)),
+           (DEC.fte_sum > 0 ? '+' : '−') + n1(Math.abs(DEC.fte_sum)),
+           '', signed(DEC.sections_sum), ''],
+          ['The district, as DESE files it', n1(DEC.district.fte_first),
+           n1(DEC.district.fte_last),
+           (DEC.district.fte_change > 0 ? '+' : '−')
+             + n1(Math.abs(DEC.district.fte_change)),
+           `${n0(DEC.district.sections_first)} → ${n0(DEC.district.sections_last)}`,
+           signed(DEC.district.sections_change),
+           `${n1(DEC.district.avg_first)} → ${n1(DEC.district.avg_last)}`],
+        ]}
+        note={<>* marks a school whose section counts this page does not trend &mdash;{' '}
+          the reason is below, under the elementary schools. Its figures are here so the
+          identity can be seen to close, and no line is drawn through them.</>} />
+
+      <H3>The year one instrument can see and the other cannot</H3>
+      <Body>
+        The teacher file runs to {syLong(d.fte_beyond.sy)} and the class-size collection
+        stops at {syLong(d.fte.last_sy)}. So the FTE moves in that last year have no
+        section count beside them, and nothing here differences the two: they are
+        different quantities at different stages, and a line drawn through both would be
+        the mistake this whole site is built to avoid.
+      </Body>
+      <TableTwin caption={`Teacher FTE in ${syLong(d.fte_beyond.sy)}, with no section count to set beside it`}
+        head={['Subject', `FTE ${syLong(d.fte.last_sy)}`,
+               `FTE ${syLong(d.fte_beyond.sy)}`, 'Change']}
+        rows={beyond.map(s => [s.subj, n1(s.fte_last), n1(s.fte_beyond!),
+          (s.fte_beyond_change! > 0 ? '+' : '−') + n1(Math.abs(s.fte_beyond_change!))])}
+        note={<>Only the subjects that moved are listed. This is the year in which the
+          largest changes <A href={abs('/school-staffing')}>school staffing</A> reports
+          actually happen, which is why that page and this one can both be right about a
+          subject and appear to disagree.</>} />
+
+      <H3>The same chart, school by school</H3>
+      <Body>
+        Each school on its own window and its own axes. They come out the same span
+        here &mdash; {syLong(drawable[0]?.window?.first_sy ?? 0)} to{' '}
+        {syLong(drawable[0]?.window?.last_sy ?? 0)} &mdash; because the SY
+        {BANDS[G8.grade8_era + 1]?.first_sy} reset is what starts every one of them,
+        and that is a fact about the buildings rather than a choice made here.
+      </Body>
+      <div className="grid gap-8 mt-6 md:grid-cols-2">
+        {drawable.map(s0 => (
+          <div key={s0.name}>
+            <p className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>
+              {s0.name}
+            </p>
+            <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+              grades {s0.window?.span} · {syLong(s0.window?.first_sy ?? 0)}&ndash;
+              {syLong(s0.window?.last_sy ?? 0)} · {s0.instruments?.compared} subjects
+              with both instruments
+            </p>
+            <Quadrant rows={s0.instruments!.subjects.filter(r => !r.on_the_line)}
+              height={300} compact />
+            <TableTwin head={['Subject', 'ΔFTE', 'Δsections', 'Class size',
+                              'Where it lands', 'Biggest single year']}
+              rows={s0.instruments!.subjects.map(r => [
+                r.short,
+                (r.fte_change > 0 ? '+' : r.fte_change < 0 ? '−' : '')
+                  + n1(Math.abs(r.fte_change)),
+                signed(r.sections_change),
+                `${n1(r.avg_first)} → ${n1(r.avg_last)}`,
+                r.quadrant ?? r.axis ?? '—',
+                `${signed(r.step)} ${syLong(r.step_from_sy)}→${syLong(r.step_to_sy)}`])}
+              note={s0.instruments!.one_step.length
+                ? <><strong>{s0.instruments!.one_step.join(', ')}</strong>{' '}
+                  {s0.instruments!.one_step.length > 1 ? 'each moved' : 'moved'} further
+                  in a single year than across the whole window, so the net figure is the
+                  residue of a step rather than a drift.</>
+                : <>No subject here moved further in one year than across the whole
+                  window.</>} />
+          </div>
+        ))}
+      </div>
+      <Caption>
+        {drawable.map(s0 => s0.name).join(' and ')} only.{' '}
+        {notDrawable.map(s0 => s0.name).join(' and ')} are not drawn, for reasons
+        measured rather than asserted &mdash; see below.
+      </Caption>
+
+      {/* ====================================================================
+          3. HOW MANY CHILDREN GOT IN — the third instrument, and the one that
+          answers whether provision narrowed for STUDENTS rather than on paper. */}
+      <H2 id="participation">How many children got into each subject</H2>
+      <Body>
+        <Basis level="cross-checked">the share against DESE&rsquo;s separate
+          enrolment-by-grade count for the same school and year</Basis>
+      </Body>
+      <SubjectsOverTime subjects={shown} bands={BANDS} current={CURRENT}
+        metric="participation" />
+      <SubjectChips all={eraSubjects} chosen={chosen} onToggle={toggle} max={5} />
+      <Caption>
+        Lunenburg High, {syLong(ES.first_sy)} to {syLong(ES.last_sy)} &mdash;{' '}
+        {ES.last_sy - ES.first_sy + 1} years. Each line is the share of the school that
+        took anything in that subject area, over the school&rsquo;s own student count.
+        Pick up to five. <strong>The darker band is a different school.</strong>{' '}
+        Lunenburg High held grades {G8.grade8_span} from {syLong(G8.grade8_first_sy)} to{' '}
+        {syLong(G8.grade8_last_sy)}, because Thomas C Passios had closed and every
+        remaining school moved up one grade band until the new building opened. Nothing
+        about what a ninth to twelfth grader was offered changed at either end of it.
+      </Caption>
+
+      <H3>The same subjects, but the classes rather than the children</H3>
+      <SubjectsOverTime subjects={shown} bands={BANDS} current={CURRENT}
+        metric="sections" height={260} />
+      <Caption>
+        The same five, counted as classes that RAN. These are two different questions
+        and they do not have to agree: a subject can gain classes and lose takers, which
+        means more and smaller groups, and one subject here does exactly that.
+      </Caption>
+      <TableTwin caption={`Every subject at Lunenburg High, ${syLong(ES.last_sy)}`}
+        head={['Subject', `Share ${syLong(hsPart!.first_sy)}`,
+               `Share ${syLong(hsPart!.last_sy)}`, 'Change',
+               'Sections', 'Change', 'Class size', 'Biggest single year']}
+        rows={[...hsPart!.subjects]
+          .sort((a, b) => b.last_share - a.last_share)
+          .map(r => [
+            r.subj, pct1(r.first_share), pct1(r.last_share),
+            `${r.share_change > 0 ? '+' : r.share_change < 0 ? '−' : ''}${
+              (Math.abs(r.share_change) * 100).toFixed(1)} pts`,
+            `${n0(r.sections_first)} → ${n0(r.sections_last)}`,
+            signed(r.sections_change),
+            `${n1(r.avg_first)} → ${n1(r.avg_last)}`,
+            `${r.step > 0 ? '+' : '−'}${(Math.abs(r.step) * 100).toFixed(0)} pts ${
+              syLong(r.step_from_sy)}→${syLong(r.step_to_sy)}`])}
+        note={<><strong>A share, not a count.</strong> Enrolment at the high school
+          fell from {n0(d.high_school[0].students)} to{' '}
+          {n0(d.high_school[d.high_school.length - 1].students)} over the file, so a raw
+          count of children falls with the school whether or not provision changed. The
+          denominator is {hsPart!.denominator.what} &mdash; the two agree to within{' '}
+          {pct1(hsPart!.denominator.worst_gap)} in every year of the window.{' '}
+          {hsPart!.spiked.length ? <>{hsPart!.spiked.map(x =>
+            `${x.short} in ${x.years.map(y => syLong(y)).join(' and ')}`).join('; ')}{' '}
+            stands more than fifteen points off both neighbouring years; it is marked
+            rather than averaged in.</> : null}</>} />
+
+      <H3>The bucket with no subject in its name</H3>
+      <Body>
+        A resident asked the question this section exists for: whether children are being
+        offered thinner work and taking it &mdash; a filler bucket swelling while the
+        subjects around it shrink. {MISC.subj} is that bucket, and the two instruments
+        say different things about it. <strong>Its classes went from{' '}
+        {n0(MISC.sections_first)} to {n0(MISC.sections_last)}. The share of the school in
+        one went from {pct1(MISC.share_first)} to {pct1(MISC.share_last)}.</strong> More
+        groups, the same children, and the groups got smaller &mdash;{' '}
+        {n1(MISC.avg_first)} students to {n1(MISC.avg_last)}.
+      </Body>
+      <Body>
+        {n0(MISC.seats_last)} student places ran in it in {syLong(MISC.last_sy)} among{' '}
+        {n0(MISC.students_last)} different children, so a child in one is in about{' '}
+        {MISC.per_student_last} of them. Groups of under five are the shape of
+        small-group support rather than of a room somebody is parked in &mdash;{' '}
+        <em>and that is a reading, not a finding.</em> DESE files no course name against
+        any of them, so academic support, an elective, directed study and a study hall
+        all fit these numbers equally. What would separate them is the district&rsquo;s
+        own Program of Studies, which exists and is not published.
+      </Body>
+      <TableTwin caption={`${MISC.subj} at Lunenburg High, year by year`}
+        head={['Year', 'Sections', 'Students in it', 'Share of the school',
+               'Students to a class', 'Student places']}
+        rows={(hsPart!.subjects.find(r => r.subj === MISC.subj)?.points ?? []).map(pt => [
+          syLong(pt.sy), n0(pt.sections), n0(pt.students), pct1(pt.share),
+          n1(pt.avg), n0(Math.round(pt.sections * pt.avg))])}
+        note={<>Student places are sections times the average class. They are not
+          children: one child fills several, which is the whole of the difference
+          between the second column and the third.</>} />
+
+      <Body>
+        <strong>And the district has said, in public, that it expects more of
+        them.</strong> A resident asked the School Committee about extra-large study
+        halls in the FY26 budget and was answered directly. That is the school year
+        AFTER the last one this file covers, so it is a statement of what the district
+        expected rather than a measurement of what happened &mdash; and it does not say
+        the Miscellaneous rows are study halls. Nothing published says what they are, and
+        groups averaging {n1(MISC.avg_last)} are not what a large study hall looks like.
+        Both of those are true at once.
+      </Body>
+      <div className="grid gap-4 mt-4 md:grid-cols-2">
+        {d.said.filter(q => q.section === 'misc').map(q => <Quote key={q.key} q={q} />)}
+      </div>
+
+      <H3>When grade 8 was in this building</H3>
+      <Body>
+        {G8.count} subjects move by more than ten points of participation into{' '}
+        {syLong(G8.grade8_first_sy)}&ndash;{syLong(G8.grade8_last_sy)} and more than ten
+        points back out of them. An eighth grade that all takes a subject &mdash; or none
+        of which takes it &mdash; moves a school&rsquo;s share that far by arriving,
+        without one thing changing about what anybody else was offered.{' '}
+        <strong>That is why nothing on this page is read across {syLong(g8band.first_sy)}{' '}
+        or {syLong(g8band.last_sy + 1)}</strong>, and why every trend here is read inside
+        an era.
+      </Body>
+      <Body>
+        <strong>And the arrival is visible in a second state file that does not know
+        about the first.</strong> DESE publishes teaching FTE by grade band as well as
+        enrolment by grade, collected separately and for a different purpose. Lunenburg
+        High staffs {G8S.first} to {G8S.last} full-time posts against the grades 6&ndash;8
+        band in each of those {G8S.years.length} years, and zero in every one of the
+        other {G8S.zero_years.length} the file covers. The school&rsquo;s total teaching
+        FTE goes from {n1(G8S.total_before ?? 0)} before to an average of{' '}
+        {n1(G8S.total_during)} during and {n1(G8S.total_after ?? 0)} after. Two files
+        agreeing is what makes the boundary an assertion here rather than a reading, and
+        the generator refuses to write if they stop.
+      </Body>
+      <TableTwin caption="The subjects that moved when the grades did"
+        head={['Subject', ...BANDS.map(b => `${syLong(b.first_sy)}–${syLong(b.last_sy)}${
+          b.covid ? ' *' : ''}`), 'Into', 'Back out', `Since ${syLong(g8band.last_sy + 1)}`]}
+        rows={G8.subjects.map(r => [
+          r.subj, ...r.era_values.map(v => pct1(v)),
+          `${r.into > 0 ? '+' : '−'}${(Math.abs(r.into) * 100).toFixed(0)} pts`,
+          `${r.out_of > 0 ? '+' : '−'}${(Math.abs(r.out_of) * 100).toFixed(0)} pts`,
+          `${r.since_change > 0 ? '+' : r.since_change < 0 ? '−' : ''}${
+            (Math.abs(r.since_change) * 100).toFixed(0)} pts`])}
+        note={<>Each cell is the average share across the era, not a single year.{' '}
+          <strong>The last column is the comparison this page actually makes</strong>:
+          what the subject has done since grade 8 left, at one configuration throughout.
+          * marks the pandemic era &mdash; that boundary is not in the data. The other
+          three are read off DESE&rsquo;s enrolment-by-grade counts; this one we
+          asserted, and a reader is free to disagree with it.</>} />
+
+      {/* ====================================================================
+          4. THREE INSTRUMENTS ON ONE SUBJECT — matching a staffing change to what
+          happened to students, which is the thing no single file can do. */}
+      <H2 id="three">One subject, three instruments, five eras</H2>
+      <Body>
+        What was staffed, how much room ran, and how many children got in &mdash; three
+        DESE series for the same subject at the same school, averaged inside each era.
+        <strong> Four readings this separates and no single file can:</strong> staffing
+        down with places and takers down; staffing down with takers holding, which is a
+        change absorbed; staffing down with places UP, which is more and smaller groups;
+        and staffing flat with takers falling, which is not a staffing story at all.
+        Which of those a subject shows is a measurement. Why it shows it is not, and
+        nothing below says why.
+      </Body>
+      <div className="flex flex-wrap gap-1.5 mt-5">
+        {eraSubjects.map(s0 => (
+          <button key={s0.short} type="button" onClick={() => setFocus(s0.subj)}
+            aria-pressed={s0.subj === focus}
+            className="text-[12px] px-2 py-1 rounded-full border transition-colors"
+            style={{
+              borderColor: s0.subj === focus ? RAN : 'var(--grid)',
+              color: s0.subj === focus ? RAN : 'var(--text-secondary)',
+              background: s0.subj === focus ? 'var(--surface-2)' : 'transparent',
+              fontWeight: s0.subj === focus ? 600 : 400,
+            }}>{s0.short}</button>
+        ))}
+      </div>
+      {focused ? (
+        <>
+          <ThreeInstruments subject={focused} bands={BANDS} />
+          <Caption>
+            {focused.subj} at Lunenburg High. Each bar is the average across the era
+            below it, over {BANDS.map(b => b.years).join(', ')} years respectively.{' '}
+            <strong>The grey bar is the era the school held grades{' '}
+            {G8.grade8_span}</strong>, and nothing should be read across it. Teacher FTE
+            is posts; student places are sections times the average class and are not a
+            count of children; the share is over the school&rsquo;s own student count.
+            {focused.has_fte ? null : <> DESE files no teacher FTE against this subject
+              area in any year, so the first panel is empty rather than zero.</>}
+          </Caption>
+          <TableTwin caption={`${focused.subj}, era by era`}
+            head={['Era', 'High school grades', 'Teacher FTE', 'Student places',
+                   'Sections', 'Students to a class', 'Share of the school']}
+            rows={focused.eras.map((e, i) => [
+              `${syLong(e.first_sy)}–${syLong(e.last_sy)}${e.covid ? ' *' : ''}`,
+              BANDS[i]?.span ?? '—',
+              e.fte === null ? '—' : e.fte.toFixed(2),
+              n0(e.seats), n1(e.sections), n1(e.avg), pct1(e.participation)])}
+            note={<>* the pandemic era, the one boundary here that is ours rather than
+              the state&rsquo;s. Every figure is a mean across the era&rsquo;s own
+              years; the year-by-year figures for every subject are in the table
+              above.</>} />
+        </>
+      ) : null}
+
+
+
+      <H2 id="subjects">Which subjects gained sections, and which lost them</H2>
+      <SubjectChange subjects={subs} />
+      <Caption>
+        Change in sections at Lunenburg High, {syLong(W.first_sy)} to{' '}
+        {syLong(W.last_sy)} &mdash; {W.years} years, one grade span throughout. Ranked by
+        the size of the move rather than the size of the subject: a large subject that did
+        not move is not the finding. {flat.length} subjects are not drawn because they did
+        not change.
+      </Caption>
+      <TableTwin caption="Every subject at Lunenburg High" head={subjHead}
+        rows={subs.map(subjRow)}
+        note={<>Sections are what RAN. Class size is DESE&rsquo;s own average. Students
+          is the count of DISTINCT children who took the subject &mdash; not seats, and
+          not the sum of the classes.</>} />
+
+      <H3>The same, school by school</H3>
+      <Body>
+        Each school over its own window rather than a common one. Forcing four schools
+        onto one span would either throw years away or straddle a reorganisation, and
+        both are worse than four charts with four spans printed on them.
+      </Body>
+      <div className={others.length > 1
+        ? 'grid gap-8 mt-6 md:grid-cols-2' : 'mt-6 max-w-3xl'}>
+        {others.map(s0 => (
+          <div key={s0.name}>
+            <p className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>
+              {s0.name}
+            </p>
+            <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+              grades {s0.window?.span} · {syLong(s0.window?.first_sy ?? 0)}&ndash;
+              {syLong(s0.window?.last_sy ?? 0)} · {s0.window?.years} years, one grade
+              span throughout
+            </p>
+            <SubjectChange subjects={s0.subjects!} height={300} />
+            <TableTwin head={['Subject', 'Sections', 'Change', 'Class size']}
+              rows={s0.subjects!.map(r => [
+                r.subj, `${n0(r.first)} → ${n0(r.last)}`, signed(r.change),
+                `${n1(r.first_avg)} → ${n1(r.last_avg)}`])} />
+          </div>
+        ))}
+      </div>
+      <div className="mt-6 max-w-2xl">
+        <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+          style={{ color: 'var(--text-muted)' }}>
+          The schools that carry no chart, and why
+        </p>
+        <ul className="text-[12.5px] leading-relaxed space-y-2"
+          style={{ color: 'var(--text-muted)' }}>
+          {notDrawable.map(s0 => (
+            <li key={s0.name}>
+              <span style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>
+                {s0.name}</span> &mdash; {s0.excluded}.
+            </li>
+          ))}
+        </ul>
+        <p className="text-[12.5px] leading-relaxed mt-3"
+          style={{ color: 'var(--text-muted)' }}>
+          <strong>The bound is measured rather than chosen.</strong> The two schools
+          drawn here swing at most{' '}
+          {drawable.map(s0 => pct1(s0.stability!.swing)).join(' and ')} in a year; these
+          swing{' '}
+          {notDrawable.filter(s0 => s0.stability)
+            .map(s0 => pct1(s0.stability!.swing)).join(' and ')}. The year-by-year
+          evidence is under the elementary schools below.
+        </p>
+      </div>
+
       <H2 id="mechanism">How a course stops running, in the district&rsquo;s own words</H2>
       <Body>
-        <strong>This is above the charts rather than below them because it changes what
-        they mean.</strong> A section that did not run may be a section nobody chose
-        rather than a section anybody cut, and the person who builds the schedule has said
-        so in public. Nothing measured on this page separates the two. What the record
-        also holds, in the same paragraph, is the school choosing what to ADD.
+        <strong>Read this against every chart above and every chart below.</strong> A
+        section that did not run may be a section nobody chose rather than a section
+        anybody cut, and the person who builds the schedule has said so in public.
+        Nothing measured on this page separates the two &mdash; not the section counts,
+        not the staffing comparison, and not the share of the school taking a subject.
+        What the record also holds, in the same paragraph, is the school choosing what
+        to ADD.
       </Body>
       <div className="grid gap-4 mt-6 md:grid-cols-2">
         {d.said.filter(q => q.section === 'mechanism').map(q => <Quote key={q.key} q={q} />)}
@@ -322,21 +902,6 @@ export function CourseOfferings() {
           average class size, which reconciles with the sum of the subjects&rsquo; own to
           within {pct1(d.seats_tolerance)} in every year.</>} />
 
-      <H2 id="subjects">Which subjects gained sections, and which lost them</H2>
-      <SubjectChange subjects={subs} />
-      <Caption>
-        Change in sections at Lunenburg High, {syLong(W.first_sy)} to{' '}
-        {syLong(W.last_sy)} &mdash; {W.years} years, one grade span throughout. Ranked by
-        the size of the move rather than the size of the subject: a large subject that did
-        not move is not the finding. {flat.length} subjects are not drawn because they did
-        not change.
-      </Caption>
-      <TableTwin caption="Every subject at Lunenburg High" head={subjHead}
-        rows={subs.map(subjRow)}
-        note={<>Sections are what RAN. Class size is DESE&rsquo;s own average. Students
-          is the count of DISTINCT children who took the subject &mdash; not seats, and
-          not the sum of the classes.</>} />
-
       <H3>Did anything stop altogether</H3>
       <Body>
         {d.retired.length} subjects ran district-wide at some point and have run nothing
@@ -372,8 +937,8 @@ export function CourseOfferings() {
         <p>
           <strong>That a subject with fewer sections offered less.</strong> A section is
           what ran, and what ran is two things at once: what the schedule offered and what
-          students chose. The district&rsquo;s own account of that mechanism is above the
-          chart on purpose, so it is read before the chart rather than after it.
+          students chose. The district&rsquo;s own account of that mechanism is on this
+          page, in its own words, and it qualifies every chart here rather than this one.
         </p>
         <p className="mt-2.5">
           <strong>And nothing here is a course.</strong> DESE files sections by subject
@@ -530,55 +1095,6 @@ export function CourseOfferings() {
         </>
       ) : null}
 
-      <H2 id="fte">Sections against teacher FTE &mdash; two instruments, one question</H2>
-      <Body>
-        <A href={abs('/school-staffing')}>School staffing</A> measures the same schools
-        with a different instrument: full-time equivalents the state publishes by subject.
-        That measure has carried the argument about course offerings in this town for
-        years, and the useful question is whether it was pointing the right way. Over the
-        years both files cover &mdash; {syLong(d.fte.first_sy)} to{' '}
-        {syLong(d.fte.last_sy)}, district-wide &mdash; the two move the same way in{' '}
-        {n0(d.fte.agree)} of {n0(d.fte.compared)} subjects.
-      </Body>
-      <TableTwin caption="Teacher FTE and sections, district-wide"
-        head={['Subject', `FTE ${syLong(d.fte.first_sy)}`, `FTE ${syLong(d.fte.last_sy)}`,
-               'Change', `Sections ${syLong(d.fte.first_sy)}`,
-               `Sections ${syLong(d.fte.last_sy)}`, 'Change', 'Same direction']}
-        rows={d.fte.subjects.map(s => [
-          s.subj, n1(s.fte_first), n1(s.fte_last),
-          (s.fte_change > 0 ? '+' : s.fte_change < 0 ? '−' : '') + n1(Math.abs(s.fte_change)),
-          n0(s.sections_first), n0(s.sections_last), signed(s.sections_change),
-          s.agrees ? 'yes' : 'no'])}
-        note={<><strong>{BD.subj} is the disagreement worth reading</strong>
-          {BD.is_largest_line ? <>, and it is the largest line in the comparison</> : null}:
-          its teacher FTE fell {n1(Math.abs(BD.fte_change))} while its sections rose by{' '}
-          {n0(BD.sections_change)} and its average class went from {n1(BD.first_avg)}{' '}
-          students to {n1(BD.last_avg)}. Fewer teachers, more classes, smaller ones
-          &mdash; all three at once, and a page carrying only the FTE would have reported
-          a subject contracting. The other is{' '}
-          {d.fte.disagreeing.filter(x => x !== BD.subj).join(' and ')}, which moves by a
-          fraction of a post. DESE uses one subject vocabulary for both files, so this is
-          a join on the publisher&rsquo;s own names rather than on ours; the generator
-          refuses to write unless every compared subject is present in both.</>} />
-
-      <H3>The year one instrument can see and the other cannot</H3>
-      <Body>
-        The teacher file runs to {syLong(d.fte_beyond.sy)} and the class-size collection
-        stops at {syLong(d.fte.last_sy)}. So the FTE moves in that last year have no
-        section count beside them, and nothing here differences the two: they are
-        different quantities at different stages, and a line drawn through both would be
-        the mistake this whole site is built to avoid.
-      </Body>
-      <TableTwin caption={`Teacher FTE in ${syLong(d.fte_beyond.sy)}, with no section count to set beside it`}
-        head={['Subject', `FTE ${syLong(d.fte.last_sy)}`,
-               `FTE ${syLong(d.fte_beyond.sy)}`, 'Change']}
-        rows={beyond.map(s => [s.subj, n1(s.fte_last), n1(s.fte_beyond!),
-          (s.fte_beyond_change! > 0 ? '+' : '−') + n1(Math.abs(s.fte_beyond_change!))])}
-        note={<>Only the subjects that moved are listed. This is the year in which the
-          largest changes <A href={abs('/school-staffing')}>school staffing</A> reports
-          actually happen, which is why that page and this one can both be right about a
-          subject and appear to disagree.</>} />
-
       {/* --------------------------------------------- 3. THE RAW, AND WHAT IT CANNOT SAY */}
       <H2 id="schools">Which schools these are, and why the name is not the school</H2>
       <Body>
@@ -593,6 +1109,64 @@ export function CourseOfferings() {
           syLong(c.sy),
           c.schools.map(s => `${s.name} (${s.span}, ${n0(s.students)})`).join(' · '),
         ])} />
+
+      <H2 id="eras">The five eras, and where their boundaries come from</H2>
+      <Body>
+        Three of the boundaries are events. Thomas C Passios closed after{' '}
+        {syLong(BANDS[0].last_sy)} and every remaining school moved up one grade band,
+        which put grade 8 in the high school building for four years; the new
+        middle-school and high-school building opened in {syLong(g8band.last_sy + 1)} and
+        the structure reset to what it had been. Both are read off DESE&rsquo;s own
+        enrolment-by-grade counts, which a reader can check.{' '}
+        <strong>The fourth is the pandemic, and that one is ours.</strong> Nothing in the
+        class-size file marks those years; we asserted the boundary, it is marked as
+        asserted wherever it appears, and a reader is free to disagree with it.
+      </Body>
+      <TableTwin caption="The eras, and the schools reporting in each"
+        head={['Era', 'Years', 'High school grades', 'Boundary', 'Schools reporting']}
+        rows={BANDS.map(b => [
+          `${syLong(b.first_sy)}–${syLong(b.last_sy)}`, b.years, b.span,
+          b.covid ? 'ours — the pandemic'
+            : b.first_asserted || b.last_asserted ? 'one end ours, one the state’s'
+              : 'DESE’s enrolment-by-grade counts',
+          (b.schools ?? []).join(' · ')])}
+        note={<>A boundary read off the state&rsquo;s own grade counts is a fact about
+          the buildings. The pandemic boundary is a judgement, and the difference is
+          printed rather than blurred.</>} />
+      <TableTwin caption="Every school, its own configuration history"
+        head={['School', 'Grade spans, and the years it held each']}
+        rows={d.reorganisation.eras.map(e => [
+          e.org,
+          e.runs.map(r => `${r.span} (${syLong(r.first_sy)}–${syLong(r.last_sy)})`)
+            .join(' · ')])}
+        note={<><strong>Turkey Hill Middle and Turkey Hill Elementary School are two
+          different schools</strong>, with different grades, different buildings and
+          different codes at the state. So are Thomas C Passios and anything that came
+          after it: it closed, and it did not become something else. Every row here is
+          grouped on the state&rsquo;s org CODE rather than on the name, because the
+          names move &mdash; one school is filed under two spellings in consecutive
+          years.</>} />
+      <Body>
+        <strong>The reorganisation is not why the elementary records are unreadable.</strong>{' '}
+        {d.reorganisation.flagged_count} school-years in this file are flagged &mdash; a
+        total section count that moves more than a third in a year, or an average class
+        size no school can have &mdash; and {d.reorganisation.away_from_boundary} of them
+        fall in years nothing changed about the buildings. The{' '}
+        {d.reorganisation.at_boundary === 1 ? 'one that does' : `${d.reorganisation.at_boundary} that do`}{' '}
+        is the high school in {syLong(g8band.first_sy)}, which is grade 8 arriving and is
+        a real event rather than a defect. Whatever is wrong with the elementary coding,
+        the tidy explanation is not it.
+      </Body>
+      <TableTwin caption="The flagged school-years, against the boundaries"
+        head={['School', 'Years', 'Sections', 'At a boundary']}
+        rows={d.reorganisation.flagged.map(f => [
+          f.org,
+          f.from_sy === f.to_sy ? syLong(f.from_sy)
+            : `${syLong(f.from_sy)} → ${syLong(f.to_sy)}`,
+          f.from_sy === f.to_sy
+            ? `${n0(f.from_sections)}, averaging ${n1(f.avg ?? 0)}`
+            : `${n0(f.from_sections)} → ${n0(f.to_sections)}`,
+          f.at_boundary ? 'yes' : 'no'])} />
 
       <H2 id="elementary">Why the two elementary schools are not on this page</H2>
       <Body>
@@ -621,6 +1195,25 @@ export function CourseOfferings() {
           nothing on this page is drawn from an elementary series.
         </p>
       </div>
+      <TableTwin caption="The two schools this page will not trend, year by year"
+        head={['School', ...(notDrawable.find(x => x.stability)?.stability?.sections
+          .map(x => syLong(x.sy)) ?? [])]}
+        rows={notDrawable.filter(x => x.stability).flatMap(x => [
+          [`${x.name} — sections`, ...x.stability!.sections.map(y => n0(y.sections))],
+          [`${x.name} — students`, ...x.stability!.sections.map(y => n0(y.students))],
+        ])}
+        note={<><strong>This is the evidence for the exclusion rather than an assertion
+          of it.</strong> A school is drawn on this page if its total section count never
+          moves more than {pct1(notDrawable[0]?.stability?.bound ?? 0)} in a year. The
+          two that are drawn move at most{' '}
+          {drawable.map(s0 => pct1(s0.stability!.swing)).join(' and ')}; these two move{' '}
+          {notDrawable.filter(x => x.stability).map(x => pct1(x.stability!.swing)).join(' and ')},
+          in years their own enrolment moved{' '}
+          {notDrawable.filter(x => x.stability)
+            .map(x => pct1(x.stability!.students_swing)).join(' and ')}. The bound sits
+          in the gap between the two clusters, and the generator refuses to write if that
+          gap closes.</>} />
+
       <SectionsOverTime points={d.district} eras={d.eras} keep={KEEP} />
       <Caption>
         The DISTRICT total, {d.district.length} school years &mdash; every school added

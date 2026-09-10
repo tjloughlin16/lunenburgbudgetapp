@@ -19,6 +19,39 @@ SLEEP=45          # between individual fetches
 COOLDOWN=1800     # 30 min after a throttled batch
 BETWEEN=300       # 5 min after a clean batch
 
+# THE 231 DOCUMENT-LESS MEETINGS COME FIRST, and this ordering is the whole point.
+# Newest-first is right for a refresh and wrong for a backfill: every meeting reached
+# working backwards from today ALSO had minutes, so after fifty fetches the number of
+# meetings made searchable that were not searchable before was NOUGHT. 226 recordings
+# carry evidence `video only` in the register -- 158 of them School Committee -- and for
+# those a rough caption is the difference between an account and none.
+#
+# It runs to completion before the boards loop, and it is idempotent: an already-fetched
+# recording is skipped from the index, so re-running costs nothing.
+echo "$(date -u +%H:%M:%S)  PHASE 1 — meetings with no surviving document"
+while true; do
+  left=$(python3 scripts/fetch_youtube_transcripts.py --video-only --status 2>/dev/null \
+         | awk '/video\(s\) in scope/ {print $(NF-1)}')
+  [ -z "${left:-}" ] && left=0
+  [ "$left" -eq 0 ] && { echo "$(date -u +%H:%M:%S)  phase 1 complete"; break; }
+  echo "$(date -u +%H:%M:%S)  video-only — $left remaining, taking $BATCH"
+  before=$(python3 scripts/fetch_youtube_transcripts.py --video-only --status 2>/dev/null \
+           | awk '/video\(s\) in scope/ {print $(NF-1)}')
+  python3 scripts/fetch_youtube_transcripts.py --video-only \
+      --limit "$BATCH" --sleep "$SLEEP" 2>&1 | tail -5
+  after=$(python3 scripts/fetch_youtube_transcripts.py --video-only --status 2>/dev/null \
+          | awk '/video\(s\) in scope/ {print $(NF-1)}')
+  # A batch that moved nothing means the endpoint is refusing. Go away for a while
+  # rather than grinding -- hammering a throttle makes the next run worse too.
+  if [ "${after:-0}" -ge "${before:-0}" ]; then
+    echo "$(date -u +%H:%M:%S)  no progress — cooling down ${COOLDOWN}s"
+    sleep "$COOLDOWN"
+  else
+    sleep "$BETWEEN"
+  fi
+done
+
+echo "$(date -u +%H:%M:%S)  PHASE 2 — everything else, newest first"
 while true; do
   progressed=0
   for b in $BOARDS; do

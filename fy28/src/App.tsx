@@ -27,6 +27,8 @@ import { Money } from './pages/Money'
 import { Gaps } from './pages/Gaps'
 import { BudgetVsActual } from './pages/BudgetVsActual'
 import { SchoolStaffing } from './pages/SchoolStaffing'
+import { WhoWorksInEachSchool } from './pages/WhoWorksInEachSchool'
+import { TheParaprofessionals } from './pages/TheParaprofessionals'
 import { HealthInsurance } from './pages/HealthInsurance'
 import { StoppedFunding } from './pages/StoppedFunding'
 import { CutRegister } from './pages/CutRegister'
@@ -416,6 +418,8 @@ export default function App() {
       {tab === 'gaps' && <Gaps onJump={go} />}
       {tab === 'variance' && <BudgetVsActual />}
       {tab === 'staffing' && <SchoolStaffing />}
+      {tab === 'schoolstaff' && <WhoWorksInEachSchool />}
+      {tab === 'parastaff' && <TheParaprofessionals />}
       {tab === 'insurance' && <HealthInsurance />}
       {tab === 'stateaid' && <StateAid />}
       {tab === 'leaving' && <IfStudentsLeave />}

@@ -257,6 +257,46 @@ use found four things, and all four are now on the page:
 and the student. Both are now in the page's own published search list, denominators
 included, so a later run cannot quietly narrow back to our vocabulary.
 
+#### Second run — 10 September 2026, after the page was rebuilt around three instruments
+
+The page gained a quadrant chart matching teacher FTE to sections, a participation series,
+a five-era segmentation and per-school charts, and rule 15a says the review is run again
+after a substantial change. Two of the six moved.
+
+| reader | what happened |
+|---|---|
+| 1 · the resident who has decided | **moved.** Three conclusions were added and all three landed at the end of the card grid, which put a new worst fact — the share of the high school taking a history course, 76% before the pandemic and 60% now, with teacher FTE and student places down beside it — in ninth place. It is now fourth, immediately after the two language cards, so the four cards about what narrowed sit together. The headline card did not move, because the master report takes a report's first conclusion as its headline and that is a different decision |
+| 2 · the second-hand reader | passed unchanged. The standfirst still carries both halves |
+| 3 · close to the boards | passed. Nothing added names a person; the one new quote is the district answering a resident, attributed to the role |
+| 4 · Finance Committee | passed, and gained. Two new rows in `money_gaps`, one naming the district's own course-request tallies — what students asked for beside what ran — and one saying plainly that **nothing published can** answer what the schools as they are now offered before SY2017, because the schools as they are now did not exist. A gap whose honest remedy is "none" is still a gap, and saying so is better than naming a document that would not settle it |
+| 5 · School Committee | **improved, and this is what the rebuild was for.** "Did the cuts we voted remove courses?" was answerable only by reading a table of FTE against sections near the bottom. It is now the second section on the page, drawn, and split by building — so a member can see that the district's one mathematics disagreement is the middle school down 2.8 posts and the high school up 1.7 |
+| 6 · Select Board | passed unchanged |
+
+**Step 3, the omission step, again produced the best material — and again from a word this
+project would not have searched.** The page now names Miscellaneous, History and middle
+school mathematics as movers, so the archive was searched for those. `social studies`,
+`course request` and `AP History` return nothing. **`study hall` returns one document, and
+it is the most directly relevant sentence in the archive to the question a resident
+brought to this page.** School Committee, 26 February 2025, a resident asking about the
+FY26 budget:
+
+> Q. Some topics coming up were extra-large study halls, getting work credit, possible
+> work credits, large PE classes — were there other things considered but tabled?
+> A. No we expect that there will be an increased number of kids in study halls, all
+> classes will be larger.
+
+The resident's question was whether children are being parked in filler classes. The
+district said in public that it expects more of them. **And the page must not turn that
+into a finding**, for two reasons that are both on it: the sentence describes the school
+year AFTER the last one the file covers, and nothing published says the Miscellaneous rows
+ARE study halls — the ones measured average under five students, which is not the shape of
+a large study hall. The measurement, the district's own statement of intent, and the
+reason they cannot be joined are all on the page, in that order.
+
+`study hall` is a resident's word for the thing this page measures under DESE's word,
+`Miscellaneous`. Searching for ours would never have found her, which is the third time
+in three reviews that has been the finding.
+
 ### `/special-education-class-size` — the class-size rule, 10 September 2026
 
 Six readers, six tests, plus the omission step. **Three failed on the first pass** and the
@@ -439,3 +479,90 @@ A defect found while running it and fixed: the published search denominator for 
 no word boundary and was matching *well*, *shell* and *sell*. It is 2. A denominator
 printed beside a search exists so a reader can judge an empty result, and one inflated
 thirty-fold teaches the opposite lesson.
+
+#### Re-reviewed 10 September 2026, on the school panels
+
+The page gained a thing it did not have: four school panels with a fiscal-year selector —
+each building's children, the adults the town printed, grouped the way a parent thinks
+about a school, and the teaching FTE the state publishes beside them. Six readers again.
+**Three changes came out of it and all three are in the page.**
+
+- **Reader 2, the second-hand reader, was the worst failure and it is a rule 7 failure.**
+  The panel's most repeatable figure is *5.1 children per name printed*, and the sentence
+  that carries off the first screen is *five kids per adult at the primary school* — which
+  a listener hears as a class size. The note under it said only "not a class size"; it now
+  says what the figure actually counts: **every adult printed, kitchen and custodial
+  included**. The metric had to be made to carry its own meaning rather than be defended
+  underneath.
+- **Reader 3, close to the boards.** The FY2024 report prints two complete Turkey Hill
+  rosters and the panel names the people printed as running the school on each, because
+  that is the only evidence in the archive of which year each page describes. Named
+  individuals beside a document defect reads as an accusation. One sentence now says what
+  it is: **a printing in a document, not a statement about anybody named in it.**
+- **Reader 4, the Finance Committee member, had no control question answered.** Every
+  limit on the panels traces to one absence — the roster carries no date — and the remedy
+  is a line of text in a document the town already publishes. A paragraph now names it:
+  the district files a staff return to the state every 1 October, and the roster could say
+  which return it is. That turns each panel from a bound into a count.
+
+Readers 1, 5 and 6 passed. The worst fact is on the panel itself rather than below it —
+in 25 of the 54 school-years with both, the town printed **fewer teaching names than the
+state counts teaching posts**, and the panel says so on the school it happens to, with all
+three readings that fit and none of them resolved (rule 13a: publish the spread). The
+arrows are drawn in one recessive ink in both directions, and the page says in its own
+prose that a change over three years is not a hire and not a cut.
+
+### `/who-works-in-each-school` and `/the-paraprofessionals` — the staffing split, 10 September 2026
+
+`/school-staffing` had grown to twenty-two sections because it was answering three
+questions under one title. It is now three pages, and the review question is not the usual
+one — no figure changed — it is whether each page still answers a reader's question with
+the other two thirds of the page gone.
+
+**The test the split has to pass is the caveat test.** Three pages sharing one block of
+caveats would be one page in three files. They do not: the window page's limit is that the
+SIGN of any staffing answer is a property of the endpoints; the school page's is that a
+roster is not a census — no FTE, no funding source, undated within the year; the
+paraprofessional page's is rule 11, that a net line rising because a grant ended looks
+identical to a line rising because the district hired. The generator refuses to write if a
+caveat appears on two of them, so the test is kept by the build rather than by reading.
+
+**Two changes came out of the six readers, and both are in the pages.**
+
+- **Reader 2, the second-hand reader, on `/who-works-in-each-school`.** The stat box read
+  `0.87` under the words *of a post held by the average teacher*, which carries off the
+  first screen as **teachers here are part-time** — a claim about individuals that the
+  figure cannot make. It is a whole job class divided by a whole job class. The metric now
+  states its own unit, `0.87 FTE each`, and the line under it says what makes the average:
+  two people at three quarters and one full-timer beside one half-timer give the same
+  number. Rule 7b's rule — where a figure cannot be made self-explanatory in a few words
+  it is the wrong figure for the card — applied by changing the rendering rather than by
+  writing more prose around it.
+- **Reader 4, the Finance Committee member, on `/the-paraprofessionals`.** The page's
+  whole argument is a lever — this is the line the project's own in-district special
+  education escalator rests on — and the one document that would settle it has to be named
+  ON THIS PAGE rather than inherited from a page a reader may not open. Its `closes` now
+  names DESE's End of Year Financial Report, Schedule 1, and says in the same sentence
+  what its absence costs: without it, a line rising because the district added staff
+  cannot be told from a line rising because a grant that had been paying for those people
+  ended.
+
+**Reader 1 passed on all three, and the split is why.** The worst fact was previously in
+competition with two other pages' worst facts for the first screen; each page now leads
+with its own. The window page opens on the count of published spans that fall rather than
+rise; the school page opens on the school-years where the town printed fewer teaching
+names than the state counts posts; the paraprofessional page opens on fewest-in-group to
+most-in-group. Readers 3, 5 and 6 passed unchanged — no finding was reworded in the move,
+which is the property that made the split checkable at all.
+
+**The omission step did not run again, and that is deliberate.** It ran on this material
+on 10 September and its results — the paraprofessional budget transfer, the social worker
+caseloads the district holds and does not publish, the MassHealth comment — are quoted on
+the pages that inherited the sections they belong to. The searched-terms list and its
+denominator are published on all three, because it was one search of the archive and
+splitting it into three would imply three.
+
+**One thing the split does NOT fix.** `/who-works-in-each-school` still cannot say which
+school year a printed roster describes, and `/the-paraprofessionals` still cannot say
+which fund pays which post. Both are rows in `sources/data/money-gaps.csv` and both are on
+the page that hits them.

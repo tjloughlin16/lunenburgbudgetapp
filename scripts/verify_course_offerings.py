@@ -43,6 +43,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 
 CSV = os.path.join(ROOT, 'sources', 'data', 'dese-class-size.csv')
+TEACHER = os.path.join(ROOT, 'sources', 'data', 'dese-teacher-subject.csv')
+GRADE_SUBJ = os.path.join(ROOT, 'sources', 'data', 'dese-teacher-grade-subject.csv')
+ENROL = os.path.join(ROOT, 'sources', 'data', 'dese-enrollment.csv')
 CURRICULUM = os.path.join(ROOT, 'sources', 'state-dese', 'dese-curriculum-lunenburg.xlsx')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'course-offerings.json')
 GAPS = os.path.join(ROOT, 'sources', 'data', 'money-gaps.csv')
@@ -52,6 +55,7 @@ MIDDLE = 'Lunenburg Middle School'
 DISTRICT = 'Lunenburg'
 ROLLUP = 'All'
 CH74 = 'CH74 - '
+LEA = '01620000'
 
 FAILS = []
 CHECKS = [0]
@@ -441,6 +445,224 @@ def main():
         if not g['closes']:
             FAILS.append('the gap %r names no document that would close it. A gap with '
                          'no named remedy is a grievance.' % g['what'])
+
+
+    # ==================================================================================
+    # THE PER-SCHOOL, PARTICIPATION AND ERA WORK, RECOMPUTED FROM THE CSVs
+    #
+    # Everything below arrives from the DATABASE in the generator and from the CSVs here,
+    # so a load that dropped a row, coerced a column or collided a key is caught. The
+    # teacher file is read here for the first time -- the sections half of this page has
+    # always been re-derived from `dese-class-size.csv` and the FTE half never was, which
+    # meant half of every comparison on the page rested on one route.
+    #
+    # THE ROLLUPS ARE RECOMPUTED AND NOT TRUSTED, on both files: `subject='All'` is a
+    # rollup row in the teacher file exactly as `subj='All'` is in the class-size file,
+    # and the district is a rollup beside its schools in both.
+    # ==================================================================================
+    teach = list(csv.DictReader(open(TEACHER, encoding='utf-8')))
+    CHECKS[0] += 1
+    if not teach:
+        FAILS.append('%s is empty' % TEACHER)
+    for r in teach:
+        r['fy'] = int(r['fy'])
+        r['teacher_fte'] = float(r['teacher_fte'] or 0)
+    FTE = {}
+    for r in teach:
+        if r['subject_level'] != 'subject':
+            continue
+        key = (r['fy'], r['org_name'], r['subject'])
+        if key in FTE:
+            FAILS.append('the teacher CSV carries %r twice' % (key,))
+        FTE[key] = r['teacher_fte']
+
+    # -- the FTE rollup this page decomposes a district figure across ----------------
+    dist_fte, sch_fte = collections.defaultdict(float), collections.defaultdict(float)
+    for r in teach:
+        if r['subject_level'] != 'subject' or r['lea'] != LEA:
+            continue
+        if r['org_name'] == DISTRICT:
+            dist_fte[(r['fy'], r['subject'])] += r['teacher_fte']
+        elif r['org_level'] == 'school':
+            sch_fte[(r['fy'], r['subject'])] += r['teacher_fte']
+    worst = max((abs(dist_fte.get(k, 0) - sch_fte.get(k, 0))
+                 for k in set(dist_fte) | set(sch_fte)), default=0)
+    ok('the worst district-against-schools FTE gap', round(worst, 3),
+       d['fte_rollup']['worst'], tol=0.001)
+    ok('the subject-years in that check', len(set(dist_fte) | set(sch_fte)),
+       d['fte_rollup']['subject_years'])
+    CHECKS[0] += 1
+    if worst > d['fte_rollup']['tolerance']:
+        FAILS.append('district FTE and the sum of its schools differ by %.2f, past the '
+                     'tolerance this page publishes a decomposition against' % worst)
+
+    # -- the schools, their windows, and the swing the exclusion rests on ------------
+    for sc in d['schools']:
+        st = sc['stability']
+        if st is None:
+            continue
+        pts = sorted((r for r in rows if r['org_name'] == sc['name']
+                      and r['subj'] == ROLLUP
+                      and sc['window']['first_sy'] <= r['sy'] <= sc['window']['last_sy']),
+                     key=lambda r: r['sy'])
+        ok('%s: comparable years' % sc['name'], len(pts), sc['window']['years'])
+        swing = max((abs(b['tot_clss_cnt'] - a['tot_clss_cnt']) / a['tot_clss_cnt']
+                     for a, b in zip(pts, pts[1:]) if a['tot_clss_cnt']), default=0)
+        ok('%s: worst one-year section swing' % sc['name'], round(swing, 4), st['swing'],
+           tol=0.0001)
+        ok('%s: is it trendable' % sc['name'], swing <= st['bound'], st['trendable'])
+        for y in st['sections']:
+            m = [r for r in pts if r['sy'] == y['sy']][0]
+            ok('%s SY%d sections' % (sc['name'], y['sy']), round(m['tot_clss_cnt']),
+               y['sections'])
+            ok('%s SY%d students' % (sc['name'], y['sy']), round(m['tot_stu_cnt']),
+               y['students'])
+
+    # -- both quadrants, district and per school ------------------------------------
+    def check_instruments(inst, org):
+        for r in inst['subjects']:
+            a = P.get((inst['first_sy'], org, r['subj']))
+            b = P.get((inst['last_sy'], org, r['subj']))
+            CHECKS[0] += 1
+            if not a or not b:
+                FAILS.append('%s has no %r class-size row at one end of its window'
+                             % (org, r['subj']))
+                continue
+            ok('%s %s FTE at the start' % (org, r['subj']),
+               FTE.get((inst['first_sy'], org, r['subj'])), r['fte_first'], tol=0.001)
+            ok('%s %s FTE at the end' % (org, r['subj']),
+               FTE.get((inst['last_sy'], org, r['subj'])), r['fte_last'], tol=0.001)
+            ok('%s %s FTE change' % (org, r['subj']),
+               round(FTE[(inst['last_sy'], org, r['subj'])]
+                     - FTE[(inst['first_sy'], org, r['subj'])], 1),
+               r['fte_change'], tol=0.001)
+            ok('%s %s sections change' % (org, r['subj']),
+               round(b['tot_clss_cnt']) - round(a['tot_clss_cnt']),
+               r['sections_change'])
+            ok('%s %s class size change' % (org, r['subj']),
+               round(round(b['avg_clss_cnt'], 1) - round(a['avg_clss_cnt'], 1), 1),
+               r['avg_change'], tol=0.001)
+            ok('%s %s got fuller' % (org, r['subj']),
+               round(b['avg_clss_cnt'], 1) - round(a['avg_clss_cnt'], 1) > 0, r['fuller'])
+            # THE QUADRANT LABEL IS A CLAIM AND IT IS RECOMPUTED, because a dot in the
+            # wrong corner is the one error on this chart a reader cannot see.
+            dx = r['fte_change']
+            dy = r['sections_change']
+            want = (None if abs(dx) <= 0.05 or dy == 0 else
+                    ('fewer teachers, more classes' if dx < 0 and dy > 0 else
+                     'fewer teachers, fewer classes' if dx < 0 else
+                     'more teachers, more classes' if dy > 0 else
+                     'more teachers, fewer classes'))
+            ok('%s %s quadrant' % (org, r['subj']), want, r['quadrant'])
+    check_instruments(d['instruments'], DISTRICT)
+    for sc in d['schools']:
+        if sc['instruments']:
+            check_instruments(sc['instruments'], sc['name'])
+
+    # -- the decomposition's two identities ------------------------------------------
+    DEC = d['decomposition']
+    ok('the schools’ FTE change sums to the district’s',
+       round(sum(p_['fte_change'] for p_ in DEC['parts']), 1),
+       DEC['district']['fte_change'], tol=0.25)
+    ok('the schools’ section change sums to the district’s',
+       sum(p_['sections_change'] for p_ in DEC['parts']),
+       DEC['district']['sections_change'])
+
+    # -- participation: the denominator, and every share on the page -----------------
+    enr = {}
+    for r in csv.DictReader(open(ENROL, encoding='utf-8')):
+        if r['org_level'] == 'school':
+            enr[(int(r['fy']), r['org_code'])] = float(r['total_cnt'] or 0)
+    for sc in d['schools']:
+        pa = sc['participation']
+        if not pa:
+            continue
+        for y in pa['denominator']['years']:
+            allrow = P[(y['sy'], sc['name'], ROLLUP)]
+            ok('%s SY%d denominator' % (sc['name'], y['sy']),
+               round(allrow['tot_stu_cnt']), y['all_students'])
+            ok('%s SY%d enrolled' % (sc['name'], y['sy']),
+               round(enr[(y['sy'], sc['org_code'])]), y['enrolled'])
+        for r in pa['subjects']:
+            for pt in r['points']:
+                m = P[(pt['sy'], sc['name'], r['subj'])]
+                den = P[(pt['sy'], sc['name'], ROLLUP)]['tot_stu_cnt']
+                ok('%s %s SY%d share' % (sc['name'], r['subj'], pt['sy']),
+                   round(m['tot_stu_cnt'] / den, 4), pt['share'], tol=0.0001)
+                ok('%s %s SY%d sections' % (sc['name'], r['subj'], pt['sy']),
+                   round(m['tot_clss_cnt']), pt['sections'])
+
+    # -- the worked Miscellaneous case ------------------------------------------------
+    MC = d['miscellaneous']
+    a = P[(MC['first_sy'], HIGH, MC['subj'])]
+    b = P[(MC['last_sy'], HIGH, MC['subj'])]
+    ok('Miscellaneous sections at the start', round(a['tot_clss_cnt']),
+       MC['sections_first'])
+    ok('Miscellaneous sections at the end', round(b['tot_clss_cnt']), MC['sections_last'])
+    ok('the Miscellaneous share at the start',
+       round(a['tot_stu_cnt'] / P[(MC['first_sy'], HIGH, ROLLUP)]['tot_stu_cnt'], 4),
+       MC['share_first'], tol=0.0001)
+    ok('the Miscellaneous share at the end',
+       round(b['tot_stu_cnt'] / P[(MC['last_sy'], HIGH, ROLLUP)]['tot_stu_cnt'], 4),
+       MC['share_last'], tol=0.0001)
+    ok('Miscellaneous student places at the end',
+       round(b['tot_clss_cnt'] * b['avg_clss_cnt']), MC['seats_last'])
+    # SEATS ARE NOT CHILDREN, asserted rather than trusted: if the two ever coincide the
+    # sentence this page builds on the difference has stopped being true.
+    CHECKS[0] += 1
+    if MC['seats_last'] == MC['students_last']:
+        FAILS.append('Miscellaneous student places and distinct students are now the '
+                     'same number, and this page explains that they are different '
+                     'quantities')
+
+    # -- the eras, and the second instrument that confirms their boundary -------------
+    BANDS = d['bands']
+    ok('the eras cover the file with no gap',
+       [(BANDS[i]['last_sy'] + 1) for i in range(len(BANDS) - 1)],
+       [b['first_sy'] for b in BANDS[1:]])
+    ok('the eras start at the file', BANDS[0]['first_sy'], min(r['sy'] for r in rows))
+    ok('the eras end at the file', BANDS[-1]['last_sy'], max(r['sy'] for r in rows))
+    G8 = d['grade8_shift']
+    grade8 = set(range(G8['grade8_first_sy'], G8['grade8_last_sy'] + 1))
+    # ...from the enrolment CSV, by grade, exactly as the generator does but read here
+    # off the file rather than off the database.
+    held8 = {int(r['fy']) for r in csv.DictReader(open(ENROL, encoding='utf-8'))
+             if r['org_level'] == 'school' and r['org_name'].lower().startswith('lunenburg high')
+             and float(r['grade_8_cnt'] or 0) > 0
+             and min(x['sy'] for x in rows) <= int(r['fy']) <= max(x['sy'] for x in rows)}
+    ok('the years grade 8 was in the high school, by enrolment', held8, grade8)
+    # ...and from the teacher-by-grade-band CSV, which knows nothing about either.
+    staffed = {int(r['fy']) for r in csv.DictReader(open(GRADE_SUBJ, encoding='utf-8'))
+               if r['org_name'] == HIGH and r['subject'] == ROLLUP
+               and float(r['grade_6_8_fte'] or 0) >= d['grade8_staffing']['noise_bound']
+               and min(x['sy'] for x in rows) <= int(r['fy']) <= max(x['sy'] for x in rows)}
+    ok('the same years, by teacher assignment', staffed, grade8)
+    for g in d['grade8_shift']['subjects']:
+        band = [e['participation'] for e in
+                [x for x in d['era_series']['subjects'] if x['subj'] == g['subj']][0]['eras']]
+        ok('%s into the grade-8 era' % g['subj'],
+           round(band[G8['grade8_era']] - band[G8['grade8_era'] - 1], 4), g['into'],
+           tol=0.0001)
+        ok('%s back out of it' % g['subj'],
+           round(band[G8['grade8_era'] + 1] - band[G8['grade8_era']], 4), g['out_of'],
+           tol=0.0001)
+
+    # -- every era mean, recomputed from the yearly rows ------------------------------
+    for r in d['era_series']['subjects']:
+        for e in r['eras']:
+            yrs = [y for y in range(e['first_sy'], e['last_sy'] + 1)
+                   if (y, HIGH, r['subj']) in P]
+            ok('%s %d-%d participation' % (r['subj'], e['first_sy'], e['last_sy']),
+               round(sum(P[(y, HIGH, r['subj'])]['tot_stu_cnt']
+                         / P[(y, HIGH, ROLLUP)]['tot_stu_cnt'] for y in yrs) / len(yrs), 4),
+               e['participation'], tol=0.0001)
+            ok('%s %d-%d student places' % (r['subj'], e['first_sy'], e['last_sy']),
+               round(sum(P[(y, HIGH, r['subj'])]['tot_clss_cnt']
+                         * P[(y, HIGH, r['subj'])]['avg_clss_cnt'] for y in yrs) / len(yrs)),
+               e['seats'])
+            got = [FTE[(y, HIGH, r['subj'])] for y in yrs if (y, HIGH, r['subj']) in FTE]
+            ok('%s %d-%d teacher FTE' % (r['subj'], e['first_sy'], e['last_sy']),
+               round(sum(got) / len(got), 2) if got else None, e['fte'], tol=0.005)
 
     # ---- rule 13: every quote still in the document it is attributed to -----------
     import re

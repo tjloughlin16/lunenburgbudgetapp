@@ -5,7 +5,11 @@ import {
 } from 'recharts'
 import { usd } from '../model/engine'
 
-/** The charts for /school-staffing. Every series arrives from /data/school-staffing.json,
+/** The charts for the three staffing pages — /school-staffing,
+ *  /who-works-in-each-school and /the-paraprofessionals. Every series arrives from one
+ *  of their three payloads, which are SELECTED out of a single build, so a chart drawn
+ *  on two of them is drawn from the same rows.
+ *  Every series arrives from a published payload,
  *  written by scripts/build_staffing_charts.py — nothing here computes a figure and
  *  nothing here has one typed into it (rule 2).
  *
@@ -942,5 +946,412 @@ export function PeerHeadcount({ rows, jobClass, fyOf }: {
         not the same comparison group as the rest of this page.
       </p>
     </Card>
+  )
+}
+
+/* ============================================================ THE SCHOOL BOARD
+ *
+ * Four buildings, one panel each: how many children, how many adults, and who those
+ * adults are — for whichever year the reader picks.
+ *
+ * NOT A CHART, deliberately. Every other section here is a series, and a resident does
+ * not live in a series: they have a child at one building. Absolute counts, grouped the
+ * way a parent thinks about a school, panels side by side so the comparison is the layout
+ * rather than a bar.
+ *
+ * THREE INSTRUMENTS, NEVER SUMMED. Children are DESE's October enrolment. Adults are
+ * NAMES the town printed on a roster — no FTE, no funding source, undated. Teaching FTE is
+ * DESE's and covers TEACHERS ONLY, so it is never labelled "total FTE" and the gap between
+ * it and the roster count is not part-timers: it is everyone the FTE file does not reach.
+ *
+ * THE BADGES ARE MEASUREMENTS, NOT VERDICTS. `▲2` says the count is two higher than it was
+ * three years ago and nothing else — not a hire, not a cut (rule 7). They are drawn in one
+ * recessive ink in both directions for that reason, and where the step would run through a
+ * reorganisation or through a year the town printed a roster twice, there is no badge at
+ * all. An absent badge is honest; a wrong arrow is the most quotable thing on the panel. */
+
+export type BoardRow = {
+  key: string; label: string; group: string; names: number; delta: number | null
+}
+export type BoardRoster = {
+  page: string; names: number
+  rows: { key: string; label: string; group: string; names: number }[]
+  leaders: { name: string; also: number[] }[]
+}
+export type BoardPanel = {
+  school: string; org_code: string | null; name: string | null; grade_span: string
+  students: number | null; students_with_plans: number | null
+  names: number
+  names_band: {
+    pages: string[]; shared: number; low: number; high: number; summed: number
+    rosters: BoardRoster[]
+  } | null
+  per_adult: number | null
+  rows: BoardRow[] | null
+  groups: { key: string; label: string; names: number; delta: number | null }[] | null
+  delta_from_fy: number | null; delta_unavailable: string | null
+  teaching: {
+    total_fte: number | null; gen_ed_fte: number | null; sped_fte: number | null
+    career_tech_fte: number | null; el_fte: number | null
+    students_per_fte: number | null
+    bands: { key: string; label: string; fte: number }[] | null
+    bands_total: number | null
+  } | null
+  cross_check: {
+    fy: number; school: string; heads: number; fte: number; ratio: number
+    flag: string | null
+  } | null | undefined
+}
+export type Board = {
+  window: number; first_fy: number; last_fy: number; years: number[]
+  groups: { key: string; label: string }[]
+  categories: { key: string; label: string; group: string }[]
+  schools: string[]; open_now: string[]
+  breaks: {
+    school: string; last_fy: number; first_fy: number
+    was: string | null; now: string | null; was_span: string; now_span: string
+  }[]
+  band_check: { compared: number; agree: number; off: unknown[] }
+  band_era_evidence: {
+    floor: number; compared: number; agree: number; disagree: unknown[]
+    schools: {
+      school: string; org_code: string; band: string; label: string
+      taught: number[]; enrolled: number[]; agrees: boolean
+    }[]
+  }
+  year_basis: {
+    reports: number; searched: number; tally: Record<string, number>
+    verdict: string | null
+    sentences: {
+      report_fy: number; fall: number; school: string; said: number; closer: string
+      candidates: Record<string, { fy: number; dese: number; off: number }>
+    }[]
+  }
+  cross_check: {
+    group: string; categories: string[]
+    compared: number; flagged: number; median_ratio: number
+    lowest: { fy: number; school: string; heads: number; fte: number; ratio: number }
+    highest: { fy: number; school: string; heads: number; fte: number; ratio: number }
+    short: { fy: number; school: string; heads: number; fte: number; ratio: number }[]
+    by_school: { school: string; years: number; short: number }[]
+    doubled: {
+      fy: number; school: string; fte: number; heads: number[]; summed: number
+      summed_ratio: number; each_ratio: number[]; outside_every_other_year: boolean
+      fte_either_side: { fy: number; fte: number | null }[]
+    }[]
+    what_it_is_not: string
+  }
+  by_fy: Record<string, BoardPanel[]>
+  fte_is_teachers_only: string
+}
+
+/** One count and its three-year change. The arrow is direction; the ink is neutral. */
+function Delta({ d }: { d: number | null }) {
+  if (d === null) return null
+  if (d === 0) {
+    return <span className="text-[11px] tnum tabular-nums" title="no change"
+      style={{ color: 'var(--text-muted)' }}>&nbsp;&mdash;</span>
+  }
+  return (
+    <span className="text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
+      {' '}{d > 0 ? '▲' : '▼'}{Math.abs(d)}
+    </span>
+  )
+}
+
+function Figure({ value, unit, note }: {
+  value: string; unit: string; note?: string
+}) {
+  return (
+    <div className="min-w-0">
+      <div className="text-[22px] font-bold leading-none tnum">{value}</div>
+      <div className="text-[11.5px] leading-tight mt-1" style={{ color: 'var(--text-secondary)' }}>
+        {unit}
+      </div>
+      {note && (
+        <div className="text-[10.5px] leading-tight mt-0.5" style={{ color: 'var(--text-muted)' }}>
+          {note}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }) {
+  const t = p.teaching
+  const band = p.names_band
+  const brk = board.breaks.find(b => b.school === p.school && b.first_fy === year)
+  const groups = board.groups
+  return (
+    <div className="card p-4 flex flex-col gap-3">
+      {/* the school, and what it held that year */}
+      <div>
+        <h3 className="text-[15px] font-bold leading-tight">{p.name || p.school}</h3>
+        <p className="text-[11.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+          {p.grade_span ? <>grades {p.grade_span}</> : 'grades not published'}
+          {' '}&middot; {fy(year)}
+        </p>
+      </div>
+
+      {/* children, adults, and the ratio between them */}
+      <div className="flex flex-wrap gap-x-6 gap-y-3">
+        <Figure value={p.students === null ? '—' : p.students.toLocaleString()}
+          unit="children" note="state count, 1 October" />
+        <Figure value={band ? `${band.low}–${band.high}` : String(p.names)}
+          unit={band ? 'names printed (two rosters)' : 'names on the roster'}
+          note="town’s annual report" />
+        {p.per_adult !== null && (
+          <Figure value={p.per_adult.toFixed(1)} unit="children per name printed"
+            note="every adult printed, kitchen and custodial included — not a class size" />
+        )}
+        {t && t.total_fte !== null && (
+          <Figure value={t.total_fte.toFixed(1)} unit="teaching FTE"
+            note="teachers only — see below" />
+        )}
+      </div>
+
+      {brk && (
+        <p className="text-[11.5px] leading-snug px-2.5 py-2 rounded"
+          style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
+          A different school from {fy(brk.last_fy)}. The state’s records hold{' '}
+          <strong>{brk.was}</strong>, grades {brk.was_span}, up to {fy(brk.last_fy)}, and{' '}
+          <strong>{brk.now}</strong>, grades {brk.now_span}, from {fy(brk.first_fy)} —
+          not a rename. The town prints one heading for both.
+        </p>
+      )}
+
+      {/* the two printed rosters, where the town printed two */}
+      {band && (
+        <div className="text-[12px]">
+          <p className="leading-snug px-2.5 py-2 rounded mb-2"
+            style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
+            The {fy(year)} annual report prints <strong>two complete rosters</strong> for
+            this school, on pages {band.pages.join(' and ')}, with {band.shared} names in
+            common. Neither page says which year it describes, so they are shown apart and
+            nothing here is summed. This is a printing in a document, not a statement
+            about anybody named in it.
+          </p>
+          <div className="grid gap-2" style={{
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
+          }}>
+            {band.rosters.map(r => (
+              <div key={r.page} className="rounded p-2.5"
+                style={{ background: 'var(--surface-2)' }}>
+                <div className="font-semibold text-[12px]">
+                  page {r.page} &middot; {r.names} names
+                </div>
+                {r.leaders.length > 0 && (
+                  <div className="text-[10.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                    named here as running the school:{' '}
+                    {r.leaders.map(l => `${l.name}${l.also.length
+                      ? ` (also printed ${fy(l.also[0])}–${fy(l.also[l.also.length - 1])})`
+                      : ''}`).join('; ')}
+                  </div>
+                )}
+                <ul className="mt-1.5 space-y-0.5">
+                  {r.rows.map(x => (
+                    <li key={x.key} className="flex justify-between gap-2">
+                      <span style={{ color: 'var(--text-secondary)' }}>{x.label}</span>
+                      <span className="tnum font-semibold">{x.names}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* who the adults are */}
+      {p.rows && (
+        <div className="text-[12.5px]">
+          {groups.map(g => {
+            const rs = p.rows!.filter(r => r.group === g.key)
+            if (!rs.length) return null
+            const gt = p.groups?.find(x => x.key === g.key)
+            return (
+              <div key={g.key} className="mb-2 last:mb-0">
+                <div className="flex justify-between items-baseline gap-2 pb-0.5 mb-1
+                                border-b" style={{ borderColor: 'var(--grid)' }}>
+                  <span className="text-[10.5px] font-semibold uppercase tracking-widest
+                                   min-w-0"
+                    style={{ color: 'var(--text-muted)' }}>{g.label}</span>
+                  {gt && <span className="tnum text-[12px] font-bold whitespace-nowrap">
+                    {gt.names}<Delta d={gt.delta} />
+                  </span>}
+                </div>
+                <ul className="space-y-0.5">
+                  {/* A group holding one category whose figures ARE the group's figures
+                      would print the same number twice. Where they differ they are two
+                      facts — a category that has gone to zero still moves the group — so
+                      the suppression tests both numbers, not just the count. */}
+                  {(rs.length === 1 && gt && rs[0].names === gt.names
+                    && rs[0].delta === gt.delta ? [] : rs).map(r => (
+                    <li key={r.key} className="flex justify-between gap-3">
+                      <span style={{ color: 'var(--text-secondary)' }}>{r.label}</span>
+                      <span className="tnum whitespace-nowrap">
+                        <strong>{r.names}</strong><Delta d={r.delta} />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
+          <p className="text-[10.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
+            {p.delta_from_fy !== null
+              ? <>&#9650;&#9660; is the change since {fy(p.delta_from_fy)} &mdash;{' '}
+                {board.window} years, names against names.</>
+              : <>No three-year change is shown: {p.delta_unavailable}.</>}
+          </p>
+        </div>
+      )}
+
+      {/* the teaching FTE, and what it is not */}
+      {t && (
+        <div className="text-[12px] rounded p-2.5" style={{ background: 'var(--surface-2)' }}>
+          <div className="text-[10.5px] font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'var(--text-muted)' }}>
+            Teaching posts, full-time equivalent (the state)
+          </div>
+          <ul className="space-y-0.5">
+            <li className="flex justify-between gap-3">
+              <span style={{ color: 'var(--text-secondary)' }}>General education</span>
+              <span className="tnum">{t.gen_ed_fte?.toFixed(1) ?? '—'}</span>
+            </li>
+            <li className="flex justify-between gap-3">
+              <span style={{ color: 'var(--text-secondary)' }}>Special education</span>
+              <span className="tnum">{t.sped_fte?.toFixed(1) ?? '—'}</span>
+            </li>
+            {!!t.career_tech_fte && (
+              <li className="flex justify-between gap-3">
+                <span style={{ color: 'var(--text-secondary)' }}>Career and technical</span>
+                <span className="tnum">{t.career_tech_fte.toFixed(1)}</span>
+              </li>
+            )}
+            {!!t.el_fte && (
+              <li className="flex justify-between gap-3">
+                <span style={{ color: 'var(--text-secondary)' }}>English learner</span>
+                <span className="tnum">{t.el_fte.toFixed(1)}</span>
+              </li>
+            )}
+            <li className="flex justify-between gap-3 pt-0.5 border-t"
+              style={{ borderColor: 'var(--grid)' }}>
+              <span className="font-semibold">All teaching posts</span>
+              <span className="tnum font-semibold">{t.total_fte?.toFixed(1) ?? '—'}</span>
+            </li>
+          </ul>
+          {t.sped_fte === 0 && (
+            <p className="text-[10.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>
+              A zero here is a CODING count, not a count of who works in this building.
+              The state’s special education teacher FTE for Lunenburg falls from 18.5 to
+              2.0 across this file while the district total holds flat, and nothing
+              published says why.
+            </p>
+          )}
+          {t.bands && t.bands.length > 0 && (
+            <>
+              <div className="text-[10.5px] font-semibold uppercase tracking-widest mt-2 mb-1"
+                style={{ color: 'var(--text-muted)' }}>
+                The same {t.bands_total?.toFixed(1)}, split by grade band in the state’s
+                other file
+              </div>
+              <ul className="space-y-0.5">
+                {t.bands.map(b => (
+                  <li key={b.key} className="flex justify-between gap-3">
+                    <span style={{ color: 'var(--text-secondary)' }}>{b.label}</span>
+                    <span className="tnum">{b.fte.toFixed(1)}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          <p className="text-[10.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>
+            Teachers only. No full-time equivalent is published for a paraprofessional, an
+            administrator, a nurse, a counsellor, a custodian or a kitchen post at any
+            school — so the difference between {t.total_fte?.toFixed(1)} and the roster
+            count above is not part-timers.
+            {t.students_per_fte !== null && <> {p.students?.toLocaleString()} children
+              against {t.total_fte?.toFixed(1)} teaching posts is{' '}
+              {t.students_per_fte.toFixed(1)} per post — the state’s own arithmetic, and
+              not a class size either.</>}
+          </p>
+        </div>
+      )}
+      {/* the two organisations, counting the same teachers */}
+      {p.cross_check && (
+        <div className="text-[11.5px] leading-snug rounded p-2.5"
+          style={{
+            background: 'var(--surface-2)',
+            borderLeft: p.cross_check.flag
+              ? '3px solid var(--status-warning)' : '3px solid var(--grid)',
+          }}>
+          <span className="font-semibold">Two counts of the same teachers.</span>{' '}
+          The town printed <strong>{p.cross_check.heads}</strong> teaching names here; the
+          state counts <strong>{p.cross_check.fte.toFixed(1)}</strong> teaching posts.
+          {p.cross_check.flag
+            ? <> That is <em>fewer names than posts</em>, so the two documents cannot both
+              be complete counts of the same people. Which one is short is not
+              established: our reading of the printed page, what the town chose to print,
+              or an assignment the state counts here whose holder the town printed under
+              another school.</>
+            : <> {p.cross_check.ratio.toFixed(2)} names per post, against{' '}
+              {board.cross_check.median_ratio.toFixed(2)} across every school-year — a
+              headcount above an FTE is ordinary, because a teacher can hold part of a
+              post.</>}
+          {' '}Teachers only: no full-time equivalent is published for any other kind of
+          post at a school, so nothing else on this panel can be checked this way.
+        </div>
+      )}
+    </div>
+  )
+}
+
+export function SchoolBoard({ board }: { board: Board }) {
+  const [year, setYear] = useState(board.last_fy)
+  const panels = board.by_fy[String(year)] || []
+  return (
+    <div className="mt-4">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-3">
+        <label className="text-[12.5px] font-semibold" htmlFor="board-year">
+          Year printed on the annual report
+        </label>
+        <select id="board-year" className="text-[13px] tnum rounded px-2 py-1 border"
+          style={{
+            background: 'var(--surface-2)', color: 'var(--text-primary)',
+            borderColor: 'var(--grid)',
+          }}
+          value={year} onChange={e => setYear(Number(e.target.value))}>
+          {board.years.slice().reverse().map(y => (
+            <option key={y} value={y}>{`FY${y}`}</option>
+          ))}
+        </select>
+        <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>
+          {panels.length} schools printed a roster in {fy(year)}
+        </span>
+      </div>
+      {/* Four panels across at a laptop width, a stack on a phone. `min(100%, …)` is what
+          stops the track floor forcing a horizontal scroll at 390px. */}
+      <div className="grid gap-3" style={{
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 248px), 1fr))',
+      }}>
+        {panels.map(p => <Panel key={p.school} p={p} board={board} year={year} />)}
+      </div>
+      <TableTwin caption={`Every school and every category, ${fy(year)}`}
+        head={['School', 'Grades', 'Children', 'Names printed', 'Category', 'Names',
+               `Change since ${board.window} years earlier`]}
+        rows={panels.flatMap(p => (p.rows ?? []).map(r => [
+          p.name || p.school, p.grade_span || '—',
+          p.students === null ? '—' : p.students,
+          p.names_band ? `${p.names_band.low}–${p.names_band.high}` : p.names,
+          r.label, r.names,
+          r.delta === null ? 'not comparable' : r.delta > 0 ? `+${r.delta}` : String(r.delta),
+        ])).concat(panels.flatMap(p => (p.names_band?.rosters ?? []).flatMap(ro =>
+          ro.rows.map(r => [
+            `${p.name || p.school} (roster printed on page ${ro.page})`,
+            p.grade_span || '—', p.students === null ? '—' : p.students, ro.names,
+            r.label, r.names, 'not comparable',
+          ]))))} />
+    </div>
   )
 }

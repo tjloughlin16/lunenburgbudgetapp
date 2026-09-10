@@ -47,7 +47,34 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'school-staffing.json')
+PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
+
+# THREE PAGES, ONE BODY OF DATA, ONE VERIFIER.
+#
+# /school-staffing was one page answering three questions and is now three pages. The data
+# behind them is still computed once -- `build_staffing_charts.py` SELECTS three payloads
+# out of one build -- so this file still checks one body of data, and checking it in three
+# places would be three chances to check it three different ways.
+#
+# The order matters exactly once: a block published on two pages is the SAME block (it was
+# selected, not recomputed), and the merge below takes the first, so the checks read the
+# window page's copy where a block appears twice. `same_where_shared()` asserts that they
+# really are identical rather than assuming it, because "computed once" is a property of
+# the generator and this file exists to not take the generator's word for anything.
+PAGES = (
+    ('/school-staffing', 'school-staffing.json',
+     ('composition', 'peers', 'state'),
+     ('the-sign-is-a-property-of-the-window',
+      'fewest-teachers-per-pupil-in-the-group')),
+    ('/who-works-in-each-school', 'who-works-in-each-school.json',
+     ('board', 'composition', 'headcount', 'peers', 'roster', 'state', 'wages'),
+     ('a-headcount-is-not-an-fte-count',)),
+    ('/the-paraprofessionals', 'the-paraprofessionals.json',
+     ('dollars', 'peers', 'sped_staffing', 'state'),
+     ('the-change-is-paraprofessionals',
+      'paraprofessionals-outside-special-education',
+      'inside-sped-the-money-went-to-paraprofessionals')),
+)
 GAPS = os.path.join(DATA, 'money-gaps.csv')
 PERSONAS = os.path.join(ROOT, 'notes', 'process', 'PERSONAS.md')
 
@@ -89,8 +116,61 @@ def f(x):
     return None if x in (None, '') else float(x)
 
 
+def payloads():
+    """The three published files, and the merged body of data the checks below read.
+
+    Asserts, on the way, the four things a split can silently get wrong: a page that lost
+    a block it renders; a block that ended up on no page at all; a conclusion on two pages
+    or on none; and a shared block whose two copies are not the same bytes.
+    """
+    got = {}
+    for url, name, keys, cids in PAGES:
+        path = os.path.join(PUB, name)
+        true('%s is not published at %s' % (url, name), os.path.exists(path))
+        if not os.path.exists(path):
+            continue
+        got[name] = json.load(open(path, encoding='utf-8'))
+
+    merged, owner = {}, {}
+    for url, name, keys, cids in PAGES:
+        j = got.get(name) or {}
+        for k in keys:
+            ok('%s publishes the block %r it renders' % (url, k), k in j, True)
+            if k in merged:
+                # SHARED, NOT RECOMPUTED. If these two ever differ, one page is drawing a
+                # different series from the other under the same name, which is the exact
+                # failure splitting a generator in three would have caused.
+                true('%s and %s publish DIFFERENT %r blocks. They are selected from one '
+                     'build and must be identical bytes.' % (owner[k], url, k),
+                     json.dumps(j.get(k), sort_keys=True)
+                     == json.dumps(merged[k], sort_keys=True))
+            else:
+                merged[k] = j.get(k)
+                owner[k] = url
+        for extra in ('said', 'searched', 'minutes', 'sources', 'not_established',
+                      'closes', 'about', 'grain', 'generated_by', 'source'):
+            true('%s publishes no %r' % (url, extra), bool(j.get(extra)))
+        mine = [c['id'] for c in (j.get('conclusions') or [])]
+        ok('%s publishes exactly the conclusions it owns' % url, mine, list(cids))
+
+    merged['conclusions'] = [c for _u, name, _k, _c in PAGES
+                             for c in (got.get(name) or {}).get('conclusions') or []]
+    for extra in ('said', 'searched', 'minutes'):
+        merged[extra] = (got.get(PAGES[0][1]) or {}).get(extra)
+
+    # EACH PAGE KEEPS ITS OWN CAVEATS. A caveat on two pages is a shared caveat block
+    # wearing a disguise, and it is the tell that the cut is in the wrong place.
+    seen = {}
+    for url, name, _k, _c in PAGES:
+        for g in (got.get(name) or {}).get('not_established') or []:
+            true('the caveat %r is on %s and on %s. Each page keeps its own.'
+                 % (g[:44], seen.get(g), url), g not in seen)
+            seen[g] = url
+    return merged
+
+
 def main():
-    d = json.load(open(PAYLOAD, encoding='utf-8'))
+    d = payloads()
 
     # ------------------------------------------------------------------ the FTE series
     ts = [r for r in load('dese-teacher-subject.csv')
@@ -322,7 +402,8 @@ def main():
 
     # ------------------------------------------------ every conclusion's registered value
     reg = {c['id']: c['figures'] for c in d['conclusions']}
-    ok('conclusions published', len(d['conclusions']), 6)
+    ok('conclusions published across the three pages', len(d['conclusions']),
+       sum(len(c) for _u, _n, _k, c in PAGES))
     for cid in ('the-sign-is-a-property-of-the-window', 'a-headcount-is-not-an-fte-count',
                 'paraprofessionals-outside-special-education'):
         true('the conclusion %r is gone from the payload' % cid, cid in reg)
@@ -392,20 +473,255 @@ def main():
              'omission step of the persona review found it, and quotes are the first '
              'thing a later edit trims.' % key,
              any(q['key'] == key for q in d['said']))
+    # ================================================== THE SCHOOL BOARD (the panels)
+    #
+    # A SECOND ROUTE, in plain Python off the CSVs: the roster entries joined to the role
+    # classification by hand, the enrolment file read directly, and both DESE teacher
+    # files summed independently. Nothing below shares a line of code with the generator.
+    b = d['board']
+    ents = [r for r in load('staff-roster-entries.csv')]
+    cls = {(r['role_raw'], r['grade_or_dept']): r['role_category']
+           for r in load('role-classification.csv')}
+    true('the roster CSV is empty', len(ents) > 1000)
+    enrol_csv = {}
+    for r in load('dese-enrollment.csv'):
+        if r['lea'] == LEA and r['org_level'] == 'school':
+            enrol_csv[(int(r['fy']), r['org_code'])] = r
+    prog_csv = {}
+    for r in load('dese-teacher-program-area.csv'):
+        if r['lea'] == LEA and r['org_level'] == 'school':
+            prog_csv[(int(r['fy']), r['org_code'])] = r
+    band_csv = {}
+    for r in load('dese-teacher-grade-subject.csv'):
+        if r['lea'] == LEA and r['org_level'] == 'school' and r['subject'] == 'All':
+            band_csv[(int(r['fy']), r['org_code'])] = r
+
+    # THE RECONCILIATION THE PAGE PUBLISHES, redone from the two CSVs rather than read
+    # out of the payload. Two DESE files, one quantity.
+    agree = compared = 0
+    for k, pr in prog_csv.items():
+        bd = band_csv.get(k)
+        if bd is None or f(pr['total_fte']) is None or f(bd['total_fte']) is None:
+            continue
+        compared += 1
+        if abs(f(pr['total_fte']) - f(bd['total_fte'])) < 0.05:
+            agree += 1
+    ok('school-years where the programme and grade-band files were compared',
+       b['band_check']['compared'], compared)
+    ok('school-years where the two DESE teacher files agree on a school total',
+       b['band_check']['agree'], agree)
+    true('the two DESE teacher files no longer agree about every school total. The '
+         'panels publish that agreement as a reconciliation.',
+         compared > 0 and agree == compared)
+
+    # EVERY PANEL, EVERY YEAR: the categories sum to the roster, the roster count matches
+    # a hand count of the CSV, and the children and the teaching FTE match the state's
+    # own files.
+    panels_checked = rows_checked = 0
+    for fy_s, panels in sorted(b['by_fy'].items()):
+        fyy = int(fy_s)
+        for p in panels:
+            panels_checked += 1
+            here = [r for r in ents
+                    if int(r['fy']) == fyy and r['school'] == p['school']]
+            ok('FY%d %s names printed' % (fyy, p['school']), p['names'], len(here))
+            if p['rows'] is not None:
+                ok('FY%d %s categories sum to the roster' % (fyy, p['school']),
+                   sum(r['names'] for r in p['rows']), len(here))
+                by_cat = {}
+                for r in here:
+                    c = cls.get((r['role_raw'], r['grade_or_dept']))
+                    by_cat[c] = by_cat.get(c, 0) + 1
+                for r in p['rows']:
+                    rows_checked += 1
+                    ok('FY%d %s %s' % (fyy, p['school'], r['key']),
+                       r['names'], by_cat.get(r['key']))
+                    # THE THREE-YEAR BADGE, recomputed. It is the most quotable thing on
+                    # a panel and nothing else on this site would notice it going wrong.
+                    if r['delta'] is not None:
+                        back = [q for q in ents if int(q['fy']) == fyy - (b['window'] - 1)
+                                and q['school'] == p['school']]
+                        prev = sum(1 for q in back
+                                   if cls.get((q['role_raw'], q['grade_or_dept'])) == r['key'])
+                        ok('FY%d %s %s three-year change'
+                           % (fyy, p['school'], r['key']), r['delta'], r['names'] - prev)
+                    else:
+                        true('FY%d %s %s has no change and no reason given'
+                             % (fyy, p['school'], r['key']),
+                             bool(p['delta_unavailable']))
+            else:
+                true('FY%d %s withholds its categories without saying it printed two '
+                     'rosters' % (fyy, p['school']), p['names_band'] is not None)
+            if p['org_code']:
+                en = enrol_csv.get((fyy, p['org_code']))
+                ok('FY%d %s children' % (fyy, p['school']), p['students'],
+                   f(en['total_cnt']) if en else None, 0.001)
+                pr = prog_csv.get((fyy, p['org_code']))
+                if p['teaching'] is not None:
+                    ok('FY%d %s teaching FTE' % (fyy, p['school']),
+                       p['teaching']['total_fte'],
+                       f(pr['total_fte']) if pr else None, 0.001)
+                    ok('FY%d %s special education teaching FTE' % (fyy, p['school']),
+                       p['teaching']['sped_fte'],
+                       f(pr['sped_fte']) if pr else None, 0.001)
+    true('the school panels cover fewer than fifty school-years', panels_checked >= 50)
+    true('the school panels publish fewer than three hundred category rows',
+         rows_checked >= 300)
+
+    # THE DOUBLED ROSTER. The one school-year the town printed twice is withheld rather
+    # than summed, and the overlap that establishes it is recomputed here.
+    doubled = [(int(k), p) for k, ps in b['by_fy'].items() for p in ps
+               if p['names_band']]
+    true('no double-printed roster is reported. The FY2024 report prints two complete '
+         'Turkey Hill rosters and a panel that sums them says 135 people at a school of '
+         '64.', len(doubled) >= 1)
+    for fyy, p in doubled:
+        pages = p['names_band']['pages']
+        sets = [{r['name'] for r in ents if int(r['fy']) == fyy
+                 and r['school'] == p['school'] and r['page'] == pg and r['name']}
+                for pg in pages]
+        ok('FY%d %s names shared between the two printed rosters' % (fyy, p['school']),
+           p['names_band']['shared'], len(sets[0] & sets[1]))
+        true('FY%d %s publishes summed categories beside a doubled roster'
+             % (fyy, p['school']), p['rows'] is None and p['per_adult'] is None)
+
+    # THE ERAS. Turkey Hill Middle and Turkey Hill Elementary are two schools under one
+    # roster heading, and the panel has to say so.
+    true('the reorganisation is no longer reported. Turkey Hill Middle (to FY2016) and '
+         'Turkey Hill Elementary (from FY2017) are different schools under one printed '
+         'heading, and a reader scrubbing across that year must be told.',
+         any(x['school'] == 'turkey-hill' for x in b['breaks']))
+    for x in b['breaks']:
+        true('the %s break states the same grade span either side, which would make it '
+             'a rename' % x['school'], x['was_span'] != x['now_span'])
+
+    # THE SECOND INSTRUMENT ON THE ERAS: teaching FTE in a grade band, against enrolment
+    # in those grades, recomputed from the two CSVs.
+    hb = next((x for x in b['band_era_evidence']['schools']
+               if x['school'] == 'high' and x['band'] == 'grade_6_8_fte'), None)
+    true('the high school no longer carries grades 6-8 teaching FTE in any year, so the '
+         'independent confirmation of the reorganisation is gone', hb is not None)
+    if hb:
+        taught = sorted(int(r['fy']) for r in band_csv.values()
+                        if r['org_code'] == hb['org_code']
+                        and (f(r['grade_6_8_fte']) or 0) >= b['band_era_evidence']['floor'])
+        ok('years Lunenburg High carried grades 6-8 teaching FTE', hb['taught'], taught)
+        # Only the years BOTH files publish for this school. The enrolment file reaches
+        # back to 1992 and the teacher file starts in 2008, and comparing across that is
+        # the like-for-like error in one line.
+        band_years = {int(r['fy']) for r in band_csv.values()
+                      if r['org_code'] == hb['org_code']}
+        enrolled = sorted(fyy for (fyy, code), r in enrol_csv.items()
+                          if code == hb['org_code'] and fyy in band_years and any(
+                              f(r[c]) for c in ('grade_6_cnt', 'grade_7_cnt', 'grade_8_cnt')))
+        ok('years Lunenburg High enrolled a grade 6-8 child', hb['enrolled'], enrolled)
+        true('the teacher file and the enrolment file no longer agree about when grade 8 '
+             'was in the high school building', hb['agrees'])
+
+    # THE CROSS-CHECK: two organisations counting the same teachers, redone here.
+    xc = b['cross_check']
+    teach_cats = {c['key'] for c in b['categories'] if c['group'] == xc['group']}
+    ok('the categories the cross-check treats as teaching',
+       sorted(xc['categories']), sorted(teach_cats))
+    redone, short2 = [], []
+    for fy_s, ps in b['by_fy'].items():
+        fyy = int(fy_s)
+        for p in ps:
+            if p['rows'] is None or not p['teaching'] or not p['teaching']['total_fte']:
+                true('FY%d %s publishes a cross-check with no single roster or no state '
+                     'FTE to check it against' % (fyy, p['school']),
+                     not p.get('cross_check'))
+                continue
+            here = [r for r in ents
+                    if int(r['fy']) == fyy and r['school'] == p['school']]
+            heads = sum(1 for r in here
+                        if cls.get((r['role_raw'], r['grade_or_dept'])) in teach_cats)
+            fte = f(prog_csv[(fyy, p['org_code'])]['total_fte'])
+            redone.append((fyy, p['school'], heads, fte))
+            if heads < fte:
+                short2.append((fyy, p['school']))
+            c = p.get('cross_check')
+            true('FY%d %s has both counts and publishes no cross-check'
+                 % (fyy, p['school']), c is not None)
+            if c:
+                ok('FY%d %s teaching names' % (fyy, p['school']), c['heads'], heads)
+                ok('FY%d %s teaching FTE in the cross-check' % (fyy, p['school']),
+                   c['fte'], fte, 0.001)
+                ok('FY%d %s names per post' % (fyy, p['school']), c['ratio'],
+                   heads / fte, 1e-9)
+                ok('FY%d %s is flagged as fewer names than posts' % (fyy, p['school']),
+                   c['flag'], 'fewer-names-than-posts' if heads < fte else None)
+    ok('school-years with both a roster and a state FTE', xc['compared'], len(redone))
+    ok('school-years with fewer names printed than posts counted',
+       xc['flagged'], len(short2))
+    for r in xc['by_school']:
+        ok('%s school-years compared' % r['school'], r['years'],
+           sum(1 for x in redone if x[1] == r['school']))
+        ok('%s school-years with fewer names than posts' % r['school'], r['short'],
+           sum(1 for x in short2 if x[1] == r['school']))
+    true('the disagreement is no longer concentrated in the two co-located schools, '
+         'which is the reading the page offers and does not assert',
+         all(r['short'] == r['years'] or r['short'] < r['years']
+             for r in xc['by_school']))
+    hi = max(redone, key=lambda x: x[2] / x[3])
+    ok('the highest names-per-post in any school-year', xc['highest']['ratio'],
+       hi[2] / hi[3], 1e-9)
+    for x in xc['doubled']:
+        heads = []
+        for ro in next(p for p in b['by_fy'][str(x['fy'])]
+                       if p['school'] == x['school'])['names_band']['rosters']:
+            heads.append(sum(r['names'] for r in ro['rows'] if r['group'] == xc['group']))
+        ok('FY%d %s teaching names on each printed roster' % (x['fy'], x['school']),
+           x['heads'], heads)
+        ok('FY%d %s names per post if the two rosters were added together'
+           % (x['fy'], x['school']), x['summed_ratio'], sum(heads) / x['fte'], 1e-9)
+        true('FY%d %s: adding the two printed rosters together would no longer sit '
+             'outside every other school-year, so the reason they are shown apart has '
+             'gone' % (x['fy'], x['school']),
+             x['outside_every_other_year']
+             and x['summed_ratio'] > xc['highest']['ratio'])
+
+    # THE TWO LIMITS THE PANELS REST ON ARE REGISTERED, not only written on the page.
+    gaps = load('money-gaps.csv')
+    for phrase in ('What share of a post any non-teaching adult in a school holds',
+                   'Which school year a printed staff roster describes'):
+        true('the gap %r is no longer in sources/data/money-gaps.csv. A limit stated in '
+             'one paragraph of one page is invisible to everyone who did not read that '
+             'page.' % phrase, any(g['what'] == phrase for g in gaps))
+
+    # THE YEAR ALIGNMENT, recomputed as a tally rather than asserted as a sentence.
+    yb = b['year_basis']
+    true('the panels no longer publish how many report sentences were matched against '
+         'the state’s enrolment. An unstated denominator beside a split verdict is the '
+         'shape of error this project keeps finding.',
+         yb['reports'] > 0 and len(yb['sentences']) > 0)
+    ok('sentences matched, against the tally the page prints',
+       sum(yb['tally'].values()), len(yb['sentences']))
+    for sent in yb['sentences']:
+        cand = sent['candidates']
+        best = min(cand, key=lambda k: cand[k]['off'])
+        ok('which year the FY%d report’s own prose is closer to' % sent['report_fy'],
+           sent['closer'], best)
+        for label, c in cand.items():
+            en = enrol_csv.get((c['fy'], sent['org_code']))
+            ok('FY%d %s enrolment behind the %s reading'
+               % (sent['report_fy'], sent['org_code'], label),
+               c['dese'], f(en['total_cnt']) if en else None, 0.001)
+
     if os.path.exists(PERSONAS):
         text = open(PERSONAS, encoding='utf-8').read()
-        true('no persona review is recorded for /school-staffing in '
-             'notes/process/PERSONAS.md. A report that is entirely correct and answers '
-             'nobody’s question is a failure no verifier can catch.',
-             '/school-staffing' in text)
+        for url, _n, _k, _c in PAGES:
+            true('no persona review is recorded for %s in notes/process/PERSONAS.md. A '
+                 'report that is entirely correct and answers nobody’s question is a '
+                 'failure no verifier can catch.' % url, url in text)
 
     if FAILS:
         print('%d check(s) FAILED of %d:' % (len(FAILS), CHECKS[0]))
         for x in FAILS:
             print('  ' + x)
         return 1
-    print('ok — %d checks, every figure on /school-staffing recomputed from the CSVs '
-          'the database was built from' % CHECKS[0])
+    print('ok — %d checks, every figure on %s recomputed from the CSVs the database '
+          'was built from' % (CHECKS[0], ', '.join(u for u, _n, _k, _c in PAGES)))
     print('   teacher FTE FY%d–FY%d: %d ordered pairs, %d fall, %d rise'
           % (years[0], years[-1], rose + fell + flat, fell, rose))
     print('   headcount FY%d: %d teachers holding %.1f FTE (%.2f of a post each)'

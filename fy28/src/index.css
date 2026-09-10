@@ -133,6 +133,24 @@
      reuse visible and follows the dark re-stepping; a copied hex would do neither.
      --mt-bonds is achromatic because it is zero in every year the archive can decompose,
      and a hue for a thing that is never present would be a colour with no referent. */
+  /* FIVE SUBJECT AREAS ON ONE TIME AXIS, on /what-courses-actually-ran. A CATEGORICAL
+     set and nothing more: no subject here is good or bad, and the relief is which line is
+     which. Five is the cap because six could not be separated -- a sixth hue collided
+     with one of these at delta-E 5 under deuteranopia, and a palette a reader cannot
+     resolve is worse than a shorter one.
+     MEASURED, NOT EYEBALLED. All ten pairs, CIEDE2000, under normal, protan and deutan
+     simulation, on both surfaces: the worst pair is 11.6 (blue/purple, deutan) on light
+     and 13.1 (blue/purple, protan) on dark, and every hue is at least 34 from its own
+     background. The dark purple and pink are re-stepped rather than flipped, because the
+     light pair collapses to 4.6 against a dark ground.
+     AND COLOUR IS NEVER THE ONLY CHANNEL. Each series carries a dash pattern of its own
+     and its name at the end of its own line, so a reader who cannot separate two hues
+     still reads the chart off the label. */
+  --subj-1: #2a78d6;
+  --subj-2: #eb6834;
+  --subj-3: #0e8a6b;
+  --subj-4: #8e3a95;
+  --subj-5: #e07fa8;
   --mt-minimum: var(--ath-coaches);
   --mt-transport: var(--ath-transport);
   --mt-capital: var(--ath-officials);
@@ -182,6 +200,12 @@
     --ath-coaches: #13a37f;
     --ath-transport: #b96fc3;
     --ath-officials: #b58e1e;
+    /* The five subject hues, re-stepped for the dark surface. Worst pair 13.1. */
+    --subj-1: #3987e5;
+    --subj-2: #d95926;
+    --subj-3: #13a37f;
+    --subj-4: #d9a3e8;
+    --subj-5: #f7b7cd;
   }
 }
 :root[data-theme="dark"] {
@@ -198,6 +222,13 @@
   --series-revenue: #d95926;
   --ch70-floor: #c26fb0;
   --status-bad: #ff6b6b;
+  /* The five subject hues, re-stepped for the dark surface. Worst pair 13.1. */
+  --subj-1: #3987e5;
+  --subj-2: #d95926;
+  --subj-3: #13a37f;
+  --subj-4: #d9a3e8;
+  --subj-5: #f7b7cd;
+
     --brand: #7aabf2;
     --trace-answerable: #4fae63;
     --trace-partial: #efc768;

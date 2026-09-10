@@ -985,6 +985,25 @@ the denominator is that nobody will notice the next gap either.
 The archive is also published: `/minutes/<board>.txt` per board, `/data/minutes-index.csv`
 with a `has_text` column, and `/minutes/find/` for callers that can only fetch URLs.
 
+**It searches TWO corpora and reports TWO denominators.** `sources/meetings/text/` is what
+the town published. `sources/data/youtube-transcripts/` is machine captions of the
+recordings -- ours, derived, and a FINDING AID rather than a source: a caption model hears
+*fifteen hundred*, *$1,500* and *$50* alike. They are searched together by default,
+because the register counts meetings whose only surviving record is a recording -- most of
+them School Committee -- and a search that skipped those reported *nobody said it* about
+meetings it had no way to read. Every caption hit is labelled a transcript and cited as
+**the video at its timestamp**, never as a document, and caption coverage is printed as its
+own line. Do not add the two together.
+
+Both corpora are indexed by `scripts/build_minutes_fts.py` into `sources/data/minutes-fts.db`
+-- SQLite FTS5, `porter` stemmed, derived and gitignored exactly like `lunenburg.db`, and
+deliberately NOT in it (everything in `lunenburg.db` is pushed to D1, which is at its write
+budget). Real tokenisation is not only speed: `ELL` used to match thousands of documents
+through *well*, *shell* and *sell*. Stemming means a hit may be a variant of your word, so
+every result prints the surface forms that matched and says whether yours was among them.
+The index re-reads its manifest on every search and greps anything it has not caught up
+with, so a stale index makes a search slower and never quieter.
+
 `notes/reference/SCHEMA.md` documents the database. The one rule: the CSVs are the source of truth
 and the database is a derived read model, rebuilt from scratch every run. Nothing is ever
 edited in it -- a row in a database has no address, no publisher filename and no sha256.
