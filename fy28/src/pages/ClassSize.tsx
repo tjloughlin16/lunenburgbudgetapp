@@ -62,6 +62,7 @@ type Payload = Base & {
   part_cap: number
   codes: { code: string; label: string; definition: string; element: string }[]
   code_ages: { this: string; other: string }
+  code_values: { code: string; description: string }[]
   placement: {
     fy: number; total: number; named: number; unnamed: number
     rows: { label: string; count: number; pct: number }[]
@@ -83,6 +84,10 @@ export function ClassSize() {
   const cl = d.clauses
   const subDef = d.codes.find(c => c.code === '40')
   const topTier = d.tiers.reduce((a, b) => (b.aides > a.aides ? b : a))
+  // DESE's own screen-reader expansion of `CMR`, present in some clauses and not others.
+  // Detected rather than assumed, so the note explaining it disappears if DESE stops.
+  const expanded = Object.values(cl).some(
+    c => c.text.includes('Code of Massachusetts Regulations'))
   const found = (term: string) => d.searched.find(s => s.term === term)
   const silent = d.searched.filter(s => s.documents === 0).map(s => s.term)
 
@@ -175,6 +180,17 @@ export function ClassSize() {
       </div>
       <Clause {...cl['28.06(6)(b)']} />
       <Clause {...cl['28.06(6)(e)']} />
+      {expanded && (
+        <p className="text-[12.5px] leading-relaxed max-w-2xl mt-3"
+          style={{ color: 'var(--text-muted)' }}>
+          The clauses above are quoted exactly as DESE publishes them, which is why some
+          read &ldquo;603 <span className="italic">Code of Massachusetts Regulations</span>{' '}
+          CMR&rdquo;. That expansion is in DESE&rsquo;s own page, in a span its markup
+          hides from sighted readers and reads aloud to screen readers. Tidying it here
+          would be this site quoting its rendering of the regulation instead of the
+          regulation.
+        </p>
+      )}
       <NotShown>
         What an <strong>aide</strong> is. The regulation uses the word and never defines
         it. {cl['28.02(3)'].cite} defines the certified special educator, in full, and
@@ -201,10 +217,17 @@ export function ClassSize() {
         head={['the setting', 'class size, at most', 'students with disabilities, at most',
           'the staff the clause names', 'where it says so']}
         rows={d.young.map(y => [y.setting, y.students,
-          y.swd_cap == null ? 'every child in the class' : y.swd_cap,
+          y.swd_cap == null ? '\u2014 (the clause states a floor, not a cap)' : y.swd_cap,
           y.staff, y.cite])} />
       <Clause {...cl['28.06(7)(e)']} />
       <Clause {...cl['28.06(7)(f)']} />
+      <NotShown>
+        A cap on students with disabilities in the substantially separate preschool row.
+        {' '}{cl['28.06(7)(f)'].cite} runs the other way: it defines such a programme as
+        one in which more than half the children have disabilities, and caps the class
+        rather than that share. Writing a number in that column would be this page
+        inverting a floor into a ceiling.
+      </NotShown>
 
       <H2 id="approved">And a school the district places a child into</H2>
       <Body>
@@ -263,10 +286,24 @@ export function ClassSize() {
       <NotShown>
         That the four printed categories divide the town&rsquo;s{' '}
         {d.placement.total} students between them. They account for{' '}
-        {d.placement.named}, leaving {d.placement.unnamed} in none of them, because DOE034
-        has nine acceptable values and this breakdown prints four &mdash; it is
-        in-district only. Adding the four and treating the total as the sum is the mistake
-        the row above exists to prevent.
+        {d.placement.named}, leaving {d.placement.unnamed} in none of them. The breakdown
+        is in-district only: {d.codes[0].element} allows{' '}
+        {d.code_values.length} placements and the published file prints four of them.
+        Adding the four and treating the total as their sum is the mistake the row above
+        exists to prevent.
+      </NotShown>
+      <TableTwin
+        caption={`every placement ${d.codes[0].element} allows`}
+        head={['code', 'what the handbook calls it',
+          'named identically in the published breakdown']}
+        rows={d.code_values.map(v => [v.code, v.description,
+          d.placement.rows.some(r => v.description.startsWith(r.label)) ? 'yes' : '—'])} />
+      <NotShown>
+        Which code each of the other printed categories is. The published breakdown labels
+        one row &ldquo;Separate School in District&rdquo; and the handbook has no value of
+        that name; matching it to a code would be this page inferring a correspondence
+        neither document states. The three marked above are marked because the two
+        documents use the same words, and no further mapping is attempted.
       </NotShown>
 
       {/* ------------------------------------- 4. THE THING THIS PAGE REFUSES TO DO */}
@@ -319,8 +356,8 @@ export function ClassSize() {
         town says <em>class size</em> and <em>paras</em>; it does not say{' '}
         {silent.map((t, i) => (
           <span key={t}>{i ? ' or ' : ''}&ldquo;{t}&rdquo;</span>
-        ))} &mdash; neither phrase appears in a single searchable meeting document. That is
-        a fact about vocabulary and not about attention: {found('class size')?.documents}{' '}
+        ))} &mdash; not one of those appears in a single searchable meeting document. That
+        is a fact about vocabulary and not about attention: {found('class size')?.documents}{' '}
         documents discuss class size and {found('paraprofessional')?.documents} discuss
         paraprofessionals.
       </Body>

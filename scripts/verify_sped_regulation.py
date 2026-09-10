@@ -289,14 +289,14 @@ def main():
     # of the regulation belongs in `ALLOWED` with a reason, rather than being matched
     # loosely -- an exception written down is reviewable and a loose match is not.
     page = os.path.join(ROOT, 'fy28', 'src', 'pages', 'ClassSize.tsx')
-    ALLOWED = {
-        # DESE's own labels, from the SIMS handbook rather than from the regulation.
-        'Substantially Separate', 'Full Inclusion', 'Partial Inclusion',
-        'aide', 'paraprofessional',   # the two words, discussed AS words
-        # The vocabulary the town does not use -- rendered from `searched`, and checked
-        # there.
-        '603 CMR', 'substantially separate',
-    }
+    # The exceptions, DERIVED rather than listed: a hand-kept list of one's own
+    # exceptions is the artefact that goes stale first. Everything DESE publishes as a
+    # placement label, plus every term this page searched the minutes for, plus the two
+    # words the page discusses AS words.
+    ALLOWED = ({r['label'] for r in d['placement']['rows']}
+               | {c['label'] for c in d['codes']}
+               | {t['term'] for t in d['searched']}
+               | {'aide', 'paraprofessional'})
     if os.path.exists(page):
         src = flat(open(page, encoding='utf-8').read())
         quoted = re.findall(r'&ldquo;(.*?)&rdquo;', src)
@@ -311,7 +311,11 @@ def main():
             # string is a substring of everything: a check that passes on nothing.
             if re.fullmatch(r'\s*\{[^}]*\}\s*', qt):
                 continue
-            t = flat(re.sub(r'\{[^}]*\}|<[^>]+>|&rsquo;', "'", qt)).replace("''", "'")
+            # Tags and interpolations are REMOVED; only `&rsquo;` becomes a character,
+            # because it IS one. Substituting a quote for a `<span>` once turned a
+            # faithful quotation into a string that matched nothing.
+            t = flat(re.sub(r'\{[^}]*\}|<[^>]+>', ' ',
+                            qt.replace('&rsquo;', "'")))
             if not t or t in ALLOWED:
                 continue
             checked += 1

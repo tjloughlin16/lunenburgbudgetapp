@@ -12,7 +12,15 @@ reached us.
 
 ## Downloaded, awaiting ingest
 
-### 603 CMR 28.00 — the special education regulations. NOT YET INGESTED.
+### 603 CMR 28.00 — the special education regulations. **INGESTED, 10 September 2026.**
+
+Fetched, hashed, catalogued in `sources/state-dese/index.csv` with the publisher's own
+address, extracted to text, split into readable parts and pushed to the bucket. It is
+quoted at `/special-education-class-size`, built by `scripts/build_sped_regulation.py`
+and checked clause by clause against DESE's own HTML by
+`scripts/verify_sped_regulation.py`. **Every instruction below was followed and the
+record of it is kept here rather than deleted**, because the ceiling and the warning
+about writing numbers from memory are the reasons the page is shaped the way it is.
 
 TJ downloaded this on 10 September 2026 and asked that it be stored for later rather than
 ingested now.

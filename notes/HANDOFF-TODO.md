@@ -265,3 +265,41 @@ requiring that setting. **That reframing is worth more than either side's curren
 MAXIMUMS, not requirements. A district may staff above them. And an IEP can specify
 one-to-one support for an individual child regardless of class size, which no ratio
 predicts and no published count reveals.
+
+# THE BUILD ORDER — set by TJ, 10 September 2026
+
+Pages, in the order he wants to see them. Ballot questions dropped: *"i dont care about the
+ballot questions. we can skip that."*
+
+1. **Special Education Regulation** *(new)* — 603 CMR 28.06(6), the 8:1 / 12:1 ratio, the
+   scenario table, and what the rule does NOT govern. IN PROGRESS.
+2. **The Chapter 70 Formula** *(new)* — the eight-step walkthrough, already in
+   `minimum-aid.json` as `how_it_works` and not yet rendered. TJ: its own page, **not**
+   added to the existing Chapter 70 page.
+3. **Course offerings** *(new)* — `dese-class-size.csv`. `TOT_CLSS_CNT` counts the sections
+   that actually ran, so this measures offerings rather than proxying them with teacher
+   FTE. **Join the curriculum data in where it helps** — TJ: "if the data helps". It is
+   thin (104 of 119 rows name no product) and is a TRANSPARENCY finding, not a provision
+   one: DESE's curriculum reporting is voluntary.
+4. **`/what-sports-cost`** — finish. Conclusions to the contract; say what is counted (the
+   athletic director, trainer and insurance ARE; facilities CANNOT be attributed at all).
+5. **`/school-staffing`** — finish. Per school, general education against special
+   education, counsellors and social workers, and **trends over time** (TJ asked for this
+   explicitly).
+6. **Attrition — its own page.** NOTE: this is the same thing as "which grades students
+   leave"; they were listed separately by mistake and are one page.
+   `sources/data/dese-attrition.csv`, 1,061 Lunenburg rows, SY2010–SY2026, rate per grade.
+   **It is a RATE and cannot say where a child went** — Monty Tech, school choice, a
+   private school and a family moving out of town are the same number.
+7. **Enrolment** *(new)* — `dese_enrollment`, 1992–2026, per school, with disability,
+   English-learner and low-income counts. Read by nothing.
+8. **Circuit breaker** *(new)* — `dese_circuit_breaker`, already loaded, unread. FY2026
+   $579,142 paid on $1,257,225 eligible, 9 students. The threshold is a DEDUCTION not a
+   rate, and reimbursement arrives in a different year from the spending it reimburses.
+9. **AP coursework** *(new)* — participation and performance, extracting now.
+
+**Then the rest:** classify the 48 conclusions `sizes`/`lever`; the levers per
+decision-making body; `dese_sped_movement` into the IEP page; subject sections on the
+synthesis; the Facebook post types.
+
+**Dropped:** ballot questions.
