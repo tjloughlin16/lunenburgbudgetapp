@@ -83,6 +83,16 @@ CATEGORIES = [
             'insurance',
             'athletics-ledger',
         ]),
+        # TJ, 10 September 2026: this belongs "under The Schools, and just above 'the
+        # students'". It had been a top-level shelf of its own, and the correction is
+        # right for a reason the shelf version missed: a reader browsing the schools is
+        # already in the place where "who works in them" is the obvious next question.
+        # A top-level shelf made it a peer of "The town", which it is not — it is one
+        # aspect of the schools, and the order adults-then-children reads the way a
+        # person would ask it.
+        ('who works in them', [
+            'staffing', 'schoolstaff', 'parastaff',
+        ]),
         ('the students', [
             'outflow', 'montytech', 'leaving', 'families',
         ]),
@@ -126,23 +136,6 @@ CATEGORIES = [
     # shelves, and neither is moved.
     ('rules', 'The rules everyone argues under', [
         ('', ['classsize', 'formula']),
-    ]),
-    # A FIFTH SHELF, AND WHY THE PAGES ON IT ARE NOT UNDER "what the money buys".
-    #
-    # /school-staffing was one page of twenty-two sections answering three questions under
-    # one title -- did staffing go up, who works in each school, and what happened to the
-    # paraprofessionals -- and it is now three. Filing all three under "what the money
-    # buys" would have been true and useless: two of them are not about money at all. One
-    # counts NAMES the town printed and POSTS the state counts; one counts FTE against
-    # enrolment; only the third reaches a budget line.
-    #
-    # The shelf earns itself the way the rules shelf did. A reader who wants to know who
-    # is in their child's building is not asking a question about spending, and an index
-    # that offers them "what the money buys" has answered a different question. `staffing`
-    # MOVES here from the money shelf, because the page it named moved with it -- the
-    # address does not change and neither does anything a reader has bookmarked.
-    ('people', 'Who works in the schools', [
-        ('', ['staffing', 'schoolstaff', 'parastaff']),
     ]),
     ('method', 'How to check any of it', [
         ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),
