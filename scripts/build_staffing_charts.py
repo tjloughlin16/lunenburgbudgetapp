@@ -839,6 +839,27 @@ def grade_span(db, org_code, fy):
     return got[0] if len(got) == 1 else '%s–%s' % (got[0], got[-1])
 
 
+def lowest_grade(db, org_code, fy):
+    """The lowest grade a school enrolled in a year, as an ordinal for sorting.
+
+    THE PANELS READ EARLIEST GRADES FIRST -- primary, elementary, middle, high -- which is
+    the order a parent thinks in and was not what `sorted()` produced (it gave high,
+    middle, primary, turkey-hill). Derived rather than hardcoded because the spans MOVED:
+    Passios closed after FY2012 and every remaining school shifted up one grade until the
+    new building opened for FY2017, so a fixed list would be right for eleven years and
+    wrong for four. A school whose enrolment we cannot read sorts last rather than first,
+    because an unknown must not silently take the top of the page."""
+    r = db.execute('SELECT %s FROM dese_enrollment WHERE lea = ? AND org_code = ? '
+                   'AND fy = ?' % ', '.join(c for c, _ in GRADE_COLS),
+                   (LEA, org_code, fy)).fetchone()
+    if not r:
+        return 99
+    for i, ((_, _lab), v) in enumerate(zip(GRADE_COLS, r)):
+        if v:
+            return i
+    return 99
+
+
 def upsteps(points, key='fte'):
     """How many of a series' year-steps rose, and how many steps there are.
 
@@ -1754,7 +1775,12 @@ def school_board(db, ros):
 
     panels = collections.defaultdict(list)
     for fy in years:
-        for school in sorted(SCHOOL_ORGS):
+        # Earliest grades first. See lowest_grade() -- the tie-break on the key keeps the
+        # order stable in a year where two schools somehow share a lowest grade.
+        order = sorted(SCHOOL_ORGS,
+                       key=lambda sc: (lowest_grade(db, org_of(sc, fy), fy)
+                                       if org_of(sc, fy) else 99, sc))
+        for school in order:
             if fy not in printed[school]:
                 continue
             here = [r for r in ent if r['fy'] == fy and r['school'] == school]
