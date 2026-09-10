@@ -29,6 +29,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'outflow'
   | 'spedcost'
   | 'spedroute'
+  | 'classsize'
   | 'peers'
   | 'montytech'
   | 'required'
@@ -210,6 +211,12 @@ export const SLUG: Record<Tab, string> = {
   // outcome. NOT `out-of-district`, which reads as a page about the placements
   // themselves, and NOT `placement-counts`, which names a CSV.
   spedroute: 'who-ends-up-out-of-district',
+  // THE RULE, at the address a resident would type. NOT `603-cmr-28`, which is the
+  // citation and not the question, and NOT `special-education-regulation`, which is what
+  // the regulation is CALLED rather than what anybody wants from it -- both are aliases.
+  // Nobody in the whole meeting archive has ever said "substantially separate" or "603
+  // CMR"; 21 documents say "class size". The address is the town's own word for it.
+  classsize: 'special-education-class-size',
   // What every OTHER district spends, and Lunenburg inside that. The slug is the sentence
   // a resident says at a meeting -- "what do other districts spend?" -- rather than
   // `per-pupil-spending`, which names the statistic instead of the question, or
@@ -416,6 +423,17 @@ const ALIASES: Record<string, Tab> = {
   'who-ends-up-out-of-district': 'spedroute', 'out-of-district': 'spedroute',
   'placement-counts': 'spedroute', 'placements': 'spedroute',
   'the-route-out-of-district': 'spedroute',
+  // NOT `class-size` bare pointing anywhere else: this is the only page about it. The
+  // citation forms are here because an official arriving from a DESE document has the
+  // number and not the question, and `paras`/`paraprofessionals` are deliberately NOT
+  // here -- both have meant /school-staffing since long before this page existed, and a
+  // link that has been shared once must keep landing where it landed.
+  'special-education-class-size': 'classsize', 'class-size': 'classsize',
+  'class-sizes': 'classsize', 'class-size-rules': 'classsize',
+  'special-education-regulation': 'classsize', '603-cmr-28': 'classsize',
+  '603cmr28': 'classsize', 'the-ratio-rule': 'classsize',
+  'students-per-teacher': 'classsize', 'how-many-students-per-teacher': 'classsize',
+  'instructional-grouping': 'classsize',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -472,6 +490,7 @@ export const LABEL: Record<Tab, string> = {
   outflow: 'Who leaves Lunenburg schools, and where they go',
   spedcost: 'What out-of-district special education costs, and what comes back',
   spedroute: 'Who ends up out of district',
+  classsize: 'How many students one special education group may have',
   peers: 'What other districts spend, for each pupil',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
@@ -627,6 +646,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
+  classsize: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
@@ -672,7 +692,11 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // `cuts` sits beside `staffing` and `stopped` on purpose: the three are the same
   // question asked of three records -- who is employed, which lines ended, and what the
   // district said it was removing -- and a reader who opens one wants the other two.
-  analyses: ['addsup', 'reports', 'sped', 'peers', 'required', 'minaid', 'staffing', 'cuts',
+  // `classsize` sits immediately after `sped` because it is the question a reader who
+  // opened special education came with -- how many children to a teacher -- and it is
+  // the only page in the area that quotes a STATUTE rather than measuring this town.
+  analyses: ['addsup', 'reports', 'sped', 'classsize', 'peers', 'required', 'minaid',
+             'staffing', 'cuts',
              'stopped',
              'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
              'insurance', 'variance'],

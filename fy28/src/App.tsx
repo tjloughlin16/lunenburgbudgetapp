@@ -41,6 +41,7 @@ import { SpedStudents } from './pages/SpedStudents'
 import { SpedLeaving } from './pages/SpedLeaving'
 import { SpedCost } from './pages/SpedCost'
 import { SpedRoute } from './pages/SpedRoute'
+import { ClassSize } from './pages/ClassSize'
 import { StateAid } from './pages/StateAid'
 import { IfStudentsLeave } from './pages/IfStudentsLeave'
 import { WhatFamiliesPay } from './pages/WhatFamiliesPay'
@@ -430,6 +431,7 @@ export default function App() {
       {tab === 'outflow' && <SpedLeaving />}
       {tab === 'spedcost' && <SpedCost />}
       {tab === 'spedroute' && <SpedRoute />}
+      {tab === 'classsize' && <ClassSize />}
       {tab === 'askus' && <AskUs />}
       {tab === 'sportsmoney' && <AthleticsMoney />}
       {tab === 'funds' && <SpecialRevenue />}

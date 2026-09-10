@@ -333,6 +333,24 @@ CHECKS = [
     # still in the extracted minutes. Any one of those going quiet would leave every
     # figure on the pages a faithful copy of the source and a sentence beside it wrong.
     ('build_special_education.py', ['--check']),
+    # The class-size rule. This entry catches far more than a stale payload, because the
+    # generator refuses to write unless the REGULATION still says what the page quotes it
+    # as saying: every clause is located by its own opening words and found exactly once;
+    # every group size is parsed out of the sentence that states it rather than typed;
+    # every tier still names exactly ONE certified special educator, which is the shape
+    # the scenario table exists to show; the phrase "two aides" still occurs exactly once
+    # in the whole of 603 CMR 28.00, which is what makes the third tier belong to one
+    # clause only; DESE's SIMS handbook still defines the placement labels on the same
+    # percentage-of-time axis the regulation uses, without which the two halves of the
+    # page are two things printed near each other; and the limit the page is built around
+    # is still a row in money-gaps.csv, word for word. Any one of those going quiet leaves
+    # a statute quoted under a citation it no longer matches.
+    ('build_sped_regulation.py', ['--check']),
+    # ...and the second route: every quoted passage checked against DESE's own HTML rather
+    # than against our extract of it, the tiers re-parsed by an independent expression,
+    # the counts taken straight from the table, and an assertion that the page still
+    # refuses to compute a staffing requirement for Lunenburg.
+    ('verify_sped_regulation.py', []),
     # The Monty Tech assessment. This entry catches far more than a stale file: the
     # generator refuses to write unless the DERIVATION the whole page rests on -- the
     # town's required local contribution minus its own school district's -- still equals

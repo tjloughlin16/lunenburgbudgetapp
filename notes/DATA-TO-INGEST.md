@@ -531,3 +531,26 @@ if the filter matches nothing.
 where a child went. A student leaving for Monty Tech, for Leominster under school choice,
 for Cushing, or because the family moved out of town are all the same number here. It
 bounds the question; it does not settle it.
+
+### Curriculum materials, Lunenburg — copied in 10 September
+
+    sources/state-dese/dese-curriculum-lunenburg.xlsx
+    https://profiles.doe.mass.edu/curriculum/?topNavId=1&leftNavId=16934&orgtypecode=5&orgcode=01620000
+
+The district's own export from DESE's curriculum page. 119 rows across eight subjects —
+ELA, MATH, STE, HSS, DLCS, ARTS, CHPE, WL — by grade, with `Product` and `Instruction Use`.
+
+**104 of the 119 rows name no product.** The 15 that do are ELA and Math in the middle
+grades: *Into Reading (2020)* for ELA 3–8, and a Math product. Five of the eight subjects
+report nothing at any grade.
+
+**READ THAT CAREFULLY BEFORE WRITING IT.** DESE's curriculum reporting is voluntary and a
+blank means THE DISTRICT DID NOT REPORT A PRODUCT — not that no curriculum is taught.
+Lunenburg plainly teaches science. The honest finding is about TRANSPARENCY, not provision:
+a parent who wants to know which materials their child's school uses can find out for ELA
+grades 3–8 and for nothing else.
+
+**Thin on its own.** Probably a section on whatever course-offerings page gets built rather
+than a page of its own. The statewide version of the same file (`curriculumdata.xlsx`,
+337 rows) is ELA-only and gives Lunenburg exactly one row, so this district export is the
+better copy.

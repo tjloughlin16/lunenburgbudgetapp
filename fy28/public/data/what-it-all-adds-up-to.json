@@ -345,6 +345,41 @@
    "so_what": "It was 30 in FY2015 and 7 in FY2023. The town prints this every year, and it moves both ways."
   },
   {
+   "basis": "603 CMR 28.06(6)(d), read out of DESE\u2019s own published text of the regulation on every build.",
+   "bearing": "sizes",
+   "claim": "A substantially separate group may not exceed 8 students to one certified special educator",
+   "detail": "603 CMR 28.06(6)(d), quoted in full below: a setting \"serving solely students with disabilities for more than 60% of the students\u2019 school schedule\" shall have \"instructional groupings that do not exceed eight students to one certified special educator or 12 students to a certified special educator and an aide\". These are the numbers residents argue about, and until this regulation was added to the archive nothing in this town\u2019s published record set them out.",
+   "figure": "cap",
+   "figures": {
+    "aide": {
+     "text": "12",
+     "unit": "students",
+     "value": 12
+    },
+    "cap": {
+     "text": "8",
+     "unit": "students",
+     "value": 8
+    },
+    "threshold": {
+     "text": "60%",
+     "unit": "",
+     "value": 60
+    }
+   },
+   "id": "eight-to-one",
+   "kind": "measured",
+   "literals": [
+    "603 CMR 28.06(6)(d)"
+   ],
+   "not_shown": "Anything about Lunenburg. This is the ceiling on a GROUP, and nothing on this page says how many groups this town runs or how large they are.",
+   "report": "classsize",
+   "report_title": "How many students one special education group may have",
+   "report_url": "/special-education-class-size",
+   "see": [],
+   "so_what": "With an aide it is 12. The aide is what raises the ceiling; the teacher count never changes."
+  },
+  {
    "basis": "DESE\u2019s end-of-year finance collection for the finance year, all funds, the district per-pupil total \u2014 the same measure for every district on this page \u2014 against DESE\u2019s residents-sending and enrollment-receiving files for the enrollment year, which count Lunenburg resident children by the district that educated them. The destination set is every district that took five or more of them, derived on every run rather than chosen, and the generator refuses to write if one of them has no spending figure.",
    "claim": "More for each pupil at Monty Tech, a regional vocational school, than Lunenburg",
    "detail": "145 of the 177 Lunenburg children educated outside Lunenburg Public Schools go to districts that spend more for each pupil than Lunenburg does \u2014 12.0% more at Leominster, and 43.3% more at Montachusett Regional Vocational Technical. In FY2025 the widest is $25,827 a pupil against Lunenburg\u2019s $18,027 \u2014 $7,800 more, which is 43.3% \u2014 and 54.8% of the leavers go there. The size of it depends enormously on which district: $720 more at Francis W. Parker Charter Essential (District), $1,900 at Sizer School: A North Central Charter Essential (District), $2,155 at Leominster, $4,687 at Fitchburg, $7,800 at Montachusett Regional Vocational Technical. Leominster is the nearest like-for-like comparison, an ordinary K-12 municipal district, at $20,182 a pupil, $2,155 more. The exception is the two Commonwealth virtual districts, 16 children between them, which spend less. The children are counted in FY2026 and the spending measured in FY2025: two collections, and nothing here is differenced across them.",
@@ -1906,6 +1941,210 @@
    "id": "spedroute",
    "title": "Who ends up out of district",
    "url": "/who-ends-up-out-of-district"
+  },
+  {
+   "about": "The state rule everybody argues around, quoted: how many students may be in one special education instructional group, and what staff that takes. With Lunenburg\u2019s own published placement counts beside it, and the reason neither one gives a staffing number.",
+   "conclusions": [
+    {
+     "basis": "603 CMR 28.06(6)(d), read out of DESE\u2019s own published text of the regulation on every build.",
+     "bearing": "sizes",
+     "claim": "A substantially separate group may not exceed 8 students to one certified special educator",
+     "detail": "603 CMR 28.06(6)(d), quoted in full below: a setting \"serving solely students with disabilities for more than 60% of the students\u2019 school schedule\" shall have \"instructional groupings that do not exceed eight students to one certified special educator or 12 students to a certified special educator and an aide\". These are the numbers residents argue about, and until this regulation was added to the archive nothing in this town\u2019s published record set them out.",
+     "figure": "cap",
+     "figures": {
+      "aide": {
+       "text": "12",
+       "unit": "students",
+       "value": 12
+      },
+      "cap": {
+       "text": "8",
+       "unit": "students",
+       "value": 8
+      },
+      "threshold": {
+       "text": "60%",
+       "unit": "",
+       "value": 60
+      }
+     },
+     "id": "eight-to-one",
+     "kind": "measured",
+     "literals": [
+      "603 CMR 28.06(6)(d)"
+     ],
+     "not_shown": "Anything about Lunenburg. This is the ceiling on a GROUP, and nothing on this page says how many groups this town runs or how large they are.",
+     "see": [],
+     "so_what": "With an aide it is 12. The aide is what raises the ceiling; the teacher count never changes."
+    },
+    {
+     "basis": "603 CMR 28.06(6)(c) and (d), parsed tier by tier out of the two sentences that state them.",
+     "bearing": "sizes",
+     "claim": "Every tier in the rule names one certified special educator. Only the aides scale",
+     "detail": "Across both settings the regulation states five group-size tiers, and the phrase in every one of them is a certified special educator, singular. What changes between 8 and 12, and between 12 and 16, is an aide. The build refuses to publish this table if a tier ever names a second educator, because the shape is the finding.",
+     "figure": "tiers",
+     "figures": {
+      "high": {
+       "text": "16",
+       "unit": "students",
+       "value": 16
+      },
+      "low": {
+       "text": "8",
+       "unit": "students",
+       "value": 8
+      },
+      "mid": {
+       "text": "12",
+       "unit": "students",
+       "value": 12
+      },
+      "tiers": {
+       "text": "5",
+       "unit": "group-size tiers",
+       "value": 5
+      }
+     },
+     "id": "one-educator-every-tier",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "What an aide is. The regulation says \"aide\" and never defines it; DESE\u2019s staffing files and the district\u2019s budget lines say \"paraprofessional\". Nothing here establishes that the two words name the same job.",
+     "see": [],
+     "so_what": "So the rule buys a bigger group with an aide, never with a second teacher \u2014 in all 5 tiers."
+    },
+    {
+     "basis": "The two clauses, parsed; and a count of the phrase \"two aides\" across the full regulation.",
+     "bearing": "sizes",
+     "claim": "Only the partly separate setting has a 16-student tier. Substantially separate stops at 12",
+     "detail": "28.06(6)(c) governs groups outside general education 60% or less of the schedule and runs to \"16 students if the certified special educator is assisted by two aides\". 28.06(6)(d), for settings above that threshold, names two tiers and stops. The phrase \"two aides\" occurs exactly once in the whole of 603 CMR 28.00, which this build asserts on every run.",
+     "figure": "high",
+     "figures": {
+      "high": {
+       "text": "16",
+       "unit": "students",
+       "value": 16
+      },
+      "mid": {
+       "text": "12",
+       "unit": "students",
+       "value": 12
+      },
+      "threshold": {
+       "text": "60%",
+       "unit": "",
+       "value": 60
+      }
+     },
+     "id": "third-tier-one-clause",
+     "kind": "measured",
+     "literals": [
+      "603 CMR 28.00",
+      "28.06(6)(c)",
+      "28.06(6)(d)"
+     ],
+     "not_shown": "Why. The regulation gives no reason for the asymmetry and this page offers none \u2014 any explanation would be a hypothesis about a drafting decision nobody here witnessed.",
+     "see": [],
+     "so_what": "The more separate the room, the LOWER the ceiling. That is the opposite of what most people assume."
+    },
+    {
+     "basis": "DESE\u2019s SIMS data handbook, element DOE034; and 603 CMR 28.06(6)(d).",
+     "bearing": "sizes",
+     "claim": "DESE counts placements on the same axis the rule uses: time outside general education",
+     "detail": "The SIMS data handbook defines element DOE034 value 40 as \"special education services outside the general education classroom more than 60% of the time\". The regulation governs settings \"serving solely students with disabilities for more than 60% of the students\u2019 school schedule\". The two are cut on the same axis, which is what makes the counts on this page comparable to the rule at all \u2014 and is also as far as the comparability goes, because the regulation binds a GROUP and DOE034 labels a CHILD.",
+     "figure": "threshold",
+     "figures": {
+      "threshold": {
+       "text": "60%",
+       "unit": "",
+       "value": 60
+      }
+     },
+     "id": "labels-share-the-axis",
+     "kind": "measured",
+     "literals": [
+      "DOE034",
+      "28.06(6)(d)",
+      "40"
+     ],
+     "not_shown": "That the two count the same population. The regulation applies to eligible students aged five and older and has separate rules for three- and four-year-olds; DOE034 covers ages 6 to 21 and a different element covers ages 3 to 5. Those are not the same line.",
+     "see": [],
+     "so_what": "Its \"Substantially Separate\" label and 28.06(6)(d) both turn on the same 60% threshold."
+    },
+    {
+     "basis": "DESE\u2019s special education program characteristics file, Placement rows for Lunenburg, most recent year published.",
+     "bearing": "sizes",
+     "claim": "DESE reports 41 of Lunenburg\u2019s 258 students with disabilities as substantially separate",
+     "detail": "In FY2026, 41 of 258 \u2014 15.9%. Two things about that count before anybody divides it by eight. It is a count of CHILDREN and the rule binds GROUPS. And DESE\u2019s Placement breakdown is in-district only: its four printed categories account for 242 of the 258, with 16 children in none of them, because element DOE034 has nine acceptable values and this breakdown prints four.",
+     "figure": "sub",
+     "figures": {
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "named": {
+       "text": "242",
+       "unit": "children",
+       "value": 242
+      },
+      "pct": {
+       "text": "15.9%",
+       "unit": "",
+       "value": 15.9
+      },
+      "sub": {
+       "text": "41",
+       "unit": "children",
+       "value": 41
+      },
+      "total": {
+       "text": "258",
+       "unit": "children",
+       "value": 258
+      },
+      "unnamed": {
+       "text": "16",
+       "unit": "children",
+       "value": 16
+      }
+     },
+     "id": "how-many-are-in-scope",
+     "kind": "measured",
+     "literals": [
+      "DOE034",
+      "28.06(6)(d)"
+     ],
+     "not_shown": "How those children are grouped, which is the only thing that would connect them to the rule. Nothing published says it.",
+     "see": [],
+     "so_what": "That is the group 28.06(6)(d) covers. It is children, not groups, so it sets no staffing number."
+    },
+    {
+     "basis": "603 CMR 28.06(6)(b), (c) and (e); and the absence of any published list of Lunenburg\u2019s special education instructional groups.",
+     "bearing": "sizes",
+     "claim": "Nothing published lets anybody compute how many staff this rule requires in Lunenburg",
+     "detail": "The regulation binds instructional groups. Lunenburg publishes a count of children by placement label and no count of groups, no size for any group, and no assignment of children to them. Three further things in the regulation would defeat a ratio even with that list: the sizes are MAXIMUMS and districts are \"expected to exercise judgment in determining appropriate group size and supports for smaller instructional groups serving students with complex special needs\"; grouping must be \"compatible with the methods and goals stated in each student\u2019s Individualized Education Program\", which can require one-to-one support no class size predicts; and a group already at maximum may take two more students mid-year by decision of the Administrator of Special Education. This page therefore states the rule and stops, and the limit is a registered row in money-gaps.csv rather than a sentence only this page carries.",
+     "figures": {
+      "sub": {
+       "text": "41",
+       "unit": "children",
+       "value": 41
+      }
+     },
+     "id": "no-required-number",
+     "kind": "measured",
+     "literals": [],
+     "no_figure": "No published figure exists. The town publishes children by label; the rule binds groups; nobody publishes the groups.",
+     "not_shown": "That Lunenburg is over-staffed or under-staffed. Nothing on this page supports either reading, and it is not an audit.",
+     "see": [],
+     "so_what": "41 children could be four groups or seven, needing very different staffing. Both are lawful."
+    }
+   ],
+   "count": 6,
+   "data": "/data/sped-regulation.json",
+   "generator": "scripts/build_sped_regulation.py",
+   "id": "classsize",
+   "title": "How many students one special education group may have",
+   "url": "/special-education-class-size"
   },
   {
    "about": "What DESE says Lunenburg spends for each pupil \u2014 against the districts its own children leave for, against every district in Massachusetts, and against five neighbours \u2014 with the arithmetic that says how much of the difference is money and how much is children.",
@@ -5062,8 +5301,8 @@
  ],
  "topics": [
   {
-   "about": "The subject this town argues about most, in four reports that do not combine.",
-   "conclusions": 7,
+   "about": "The subject this town argues about most, in reports that do not combine: how many children, what it costs, where a placement leads, and the state rule the whole argument runs under.",
+   "conclusions": 13,
    "key": "sped",
    "reports": [
     {
@@ -5555,6 +5794,210 @@
      "id": "spedroute",
      "title": "Who ends up out of district",
      "url": "/who-ends-up-out-of-district"
+    },
+    {
+     "about": "The state rule everybody argues around, quoted: how many students may be in one special education instructional group, and what staff that takes. With Lunenburg\u2019s own published placement counts beside it, and the reason neither one gives a staffing number.",
+     "conclusions": [
+      {
+       "basis": "603 CMR 28.06(6)(d), read out of DESE\u2019s own published text of the regulation on every build.",
+       "bearing": "sizes",
+       "claim": "A substantially separate group may not exceed 8 students to one certified special educator",
+       "detail": "603 CMR 28.06(6)(d), quoted in full below: a setting \"serving solely students with disabilities for more than 60% of the students\u2019 school schedule\" shall have \"instructional groupings that do not exceed eight students to one certified special educator or 12 students to a certified special educator and an aide\". These are the numbers residents argue about, and until this regulation was added to the archive nothing in this town\u2019s published record set them out.",
+       "figure": "cap",
+       "figures": {
+        "aide": {
+         "text": "12",
+         "unit": "students",
+         "value": 12
+        },
+        "cap": {
+         "text": "8",
+         "unit": "students",
+         "value": 8
+        },
+        "threshold": {
+         "text": "60%",
+         "unit": "",
+         "value": 60
+        }
+       },
+       "id": "eight-to-one",
+       "kind": "measured",
+       "literals": [
+        "603 CMR 28.06(6)(d)"
+       ],
+       "not_shown": "Anything about Lunenburg. This is the ceiling on a GROUP, and nothing on this page says how many groups this town runs or how large they are.",
+       "see": [],
+       "so_what": "With an aide it is 12. The aide is what raises the ceiling; the teacher count never changes."
+      },
+      {
+       "basis": "603 CMR 28.06(6)(c) and (d), parsed tier by tier out of the two sentences that state them.",
+       "bearing": "sizes",
+       "claim": "Every tier in the rule names one certified special educator. Only the aides scale",
+       "detail": "Across both settings the regulation states five group-size tiers, and the phrase in every one of them is a certified special educator, singular. What changes between 8 and 12, and between 12 and 16, is an aide. The build refuses to publish this table if a tier ever names a second educator, because the shape is the finding.",
+       "figure": "tiers",
+       "figures": {
+        "high": {
+         "text": "16",
+         "unit": "students",
+         "value": 16
+        },
+        "low": {
+         "text": "8",
+         "unit": "students",
+         "value": 8
+        },
+        "mid": {
+         "text": "12",
+         "unit": "students",
+         "value": 12
+        },
+        "tiers": {
+         "text": "5",
+         "unit": "group-size tiers",
+         "value": 5
+        }
+       },
+       "id": "one-educator-every-tier",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "What an aide is. The regulation says \"aide\" and never defines it; DESE\u2019s staffing files and the district\u2019s budget lines say \"paraprofessional\". Nothing here establishes that the two words name the same job.",
+       "see": [],
+       "so_what": "So the rule buys a bigger group with an aide, never with a second teacher \u2014 in all 5 tiers."
+      },
+      {
+       "basis": "The two clauses, parsed; and a count of the phrase \"two aides\" across the full regulation.",
+       "bearing": "sizes",
+       "claim": "Only the partly separate setting has a 16-student tier. Substantially separate stops at 12",
+       "detail": "28.06(6)(c) governs groups outside general education 60% or less of the schedule and runs to \"16 students if the certified special educator is assisted by two aides\". 28.06(6)(d), for settings above that threshold, names two tiers and stops. The phrase \"two aides\" occurs exactly once in the whole of 603 CMR 28.00, which this build asserts on every run.",
+       "figure": "high",
+       "figures": {
+        "high": {
+         "text": "16",
+         "unit": "students",
+         "value": 16
+        },
+        "mid": {
+         "text": "12",
+         "unit": "students",
+         "value": 12
+        },
+        "threshold": {
+         "text": "60%",
+         "unit": "",
+         "value": 60
+        }
+       },
+       "id": "third-tier-one-clause",
+       "kind": "measured",
+       "literals": [
+        "603 CMR 28.00",
+        "28.06(6)(c)",
+        "28.06(6)(d)"
+       ],
+       "not_shown": "Why. The regulation gives no reason for the asymmetry and this page offers none \u2014 any explanation would be a hypothesis about a drafting decision nobody here witnessed.",
+       "see": [],
+       "so_what": "The more separate the room, the LOWER the ceiling. That is the opposite of what most people assume."
+      },
+      {
+       "basis": "DESE\u2019s SIMS data handbook, element DOE034; and 603 CMR 28.06(6)(d).",
+       "bearing": "sizes",
+       "claim": "DESE counts placements on the same axis the rule uses: time outside general education",
+       "detail": "The SIMS data handbook defines element DOE034 value 40 as \"special education services outside the general education classroom more than 60% of the time\". The regulation governs settings \"serving solely students with disabilities for more than 60% of the students\u2019 school schedule\". The two are cut on the same axis, which is what makes the counts on this page comparable to the rule at all \u2014 and is also as far as the comparability goes, because the regulation binds a GROUP and DOE034 labels a CHILD.",
+       "figure": "threshold",
+       "figures": {
+        "threshold": {
+         "text": "60%",
+         "unit": "",
+         "value": 60
+        }
+       },
+       "id": "labels-share-the-axis",
+       "kind": "measured",
+       "literals": [
+        "DOE034",
+        "28.06(6)(d)",
+        "40"
+       ],
+       "not_shown": "That the two count the same population. The regulation applies to eligible students aged five and older and has separate rules for three- and four-year-olds; DOE034 covers ages 6 to 21 and a different element covers ages 3 to 5. Those are not the same line.",
+       "see": [],
+       "so_what": "Its \"Substantially Separate\" label and 28.06(6)(d) both turn on the same 60% threshold."
+      },
+      {
+       "basis": "DESE\u2019s special education program characteristics file, Placement rows for Lunenburg, most recent year published.",
+       "bearing": "sizes",
+       "claim": "DESE reports 41 of Lunenburg\u2019s 258 students with disabilities as substantially separate",
+       "detail": "In FY2026, 41 of 258 \u2014 15.9%. Two things about that count before anybody divides it by eight. It is a count of CHILDREN and the rule binds GROUPS. And DESE\u2019s Placement breakdown is in-district only: its four printed categories account for 242 of the 258, with 16 children in none of them, because element DOE034 has nine acceptable values and this breakdown prints four.",
+       "figure": "sub",
+       "figures": {
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "named": {
+         "text": "242",
+         "unit": "children",
+         "value": 242
+        },
+        "pct": {
+         "text": "15.9%",
+         "unit": "",
+         "value": 15.9
+        },
+        "sub": {
+         "text": "41",
+         "unit": "children",
+         "value": 41
+        },
+        "total": {
+         "text": "258",
+         "unit": "children",
+         "value": 258
+        },
+        "unnamed": {
+         "text": "16",
+         "unit": "children",
+         "value": 16
+        }
+       },
+       "id": "how-many-are-in-scope",
+       "kind": "measured",
+       "literals": [
+        "DOE034",
+        "28.06(6)(d)"
+       ],
+       "not_shown": "How those children are grouped, which is the only thing that would connect them to the rule. Nothing published says it.",
+       "see": [],
+       "so_what": "That is the group 28.06(6)(d) covers. It is children, not groups, so it sets no staffing number."
+      },
+      {
+       "basis": "603 CMR 28.06(6)(b), (c) and (e); and the absence of any published list of Lunenburg\u2019s special education instructional groups.",
+       "bearing": "sizes",
+       "claim": "Nothing published lets anybody compute how many staff this rule requires in Lunenburg",
+       "detail": "The regulation binds instructional groups. Lunenburg publishes a count of children by placement label and no count of groups, no size for any group, and no assignment of children to them. Three further things in the regulation would defeat a ratio even with that list: the sizes are MAXIMUMS and districts are \"expected to exercise judgment in determining appropriate group size and supports for smaller instructional groups serving students with complex special needs\"; grouping must be \"compatible with the methods and goals stated in each student\u2019s Individualized Education Program\", which can require one-to-one support no class size predicts; and a group already at maximum may take two more students mid-year by decision of the Administrator of Special Education. This page therefore states the rule and stops, and the limit is a registered row in money-gaps.csv rather than a sentence only this page carries.",
+       "figures": {
+        "sub": {
+         "text": "41",
+         "unit": "children",
+         "value": 41
+        }
+       },
+       "id": "no-required-number",
+       "kind": "measured",
+       "literals": [],
+       "no_figure": "No published figure exists. The town publishes children by label; the rule binds groups; nobody publishes the groups.",
+       "not_shown": "That Lunenburg is over-staffed or under-staffed. Nothing on this page supports either reading, and it is not an audit.",
+       "see": [],
+       "so_what": "41 children could be four groups or seven, needing very different staffing. Both are lawful."
+      }
+     ],
+     "count": 6,
+     "data": "/data/sped-regulation.json",
+     "generator": "scripts/build_sped_regulation.py",
+     "id": "classsize",
+     "title": "How many students one special education group may have",
+     "url": "/special-education-class-size"
     }
    ],
    "title": "Special education"
@@ -8747,16 +9190,16 @@
  "totals": {
   "bearing": {
    "lever": 1,
-   "sizes": 1,
+   "sizes": 7,
    "unclassified": 48
   },
-  "conclusions": 50,
+  "conclusions": 56,
   "document_words": 80084,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 49,
-  "reports": 17,
-  "with_conclusions": 17,
+  "measured": 55,
+  "reports": 18,
+  "with_conclusions": 18,
   "without_conclusions": 0
  }
 }

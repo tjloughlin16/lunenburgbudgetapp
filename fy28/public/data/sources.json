@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-09",
+ "generated": "2026-09-10",
  "origins": [
   {
    "id": "school",
@@ -40,11 +40,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 39 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 294 of these 309 feed no number on this site. The other 15 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 294 of these 310 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -511,6 +511,17 @@
    "title": "State staffing and spending counts",
    "blurb": "What the state records Lunenburg employing and spending, by year. It carries the quantity the district’s own budget documents cannot give: how many paraprofessionals there are.",
    "items": [
+    {
+     "path": "state-dese/603cmr28-special-education-regulations.html",
+     "title": "603 CMR 28.00 — the special education regulations",
+     "stars": 3,
+     "what": "The rule that constrains special education staffing, and it is cited by no document this town publishes: across all 3,877 documents here the only \"603 CMR\" references are 35, 4 and 7 — educator evaluation and licensure. 28.06(6)(d) sets the class-size rule everybody argues around without quoting: a substantially separate group may not exceed eight students to one certified special educator, or twelve to a special educator AND AN AIDE — so a paraprofessional is partly what PERMITS a larger group rather than being a ratio in itself. Three qualifications travel with it and are easy to drop: these are MAXIMUMS and districts are expected to go smaller for complex needs (28.06(6)(c)); grouping must match each student’s own IEP (b); and a group at maximum may take two more students mid-year by decision of the Administrator of Special Education (e). Saved from the state’s own page rather than published as a file.",
+     "upstream": "https://www.doe.mass.edu/lawsregs/603cmr28.html?section=all",
+     "kind": "HTML",
+     "bytes": 895948,
+     "url": "/docs/state-dese/603cmr28-special-education-regulations.html",
+     "textUrl": "/docs/state-dese/603cmr28-special-education-regulations.html"
+    },
     {
      "path": "state-dese/district-spending-categories.csv",
      "title": "Staffing and spending by category, FY09–FY25",
@@ -1746,9 +1757,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 88463,
+     "bytes": 91539,
      "url": "/docs/data/money-gaps.csv",
-     "count": 103,
+     "count": 105,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -1770,9 +1781,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 51661,
+     "bytes": 52726,
      "url": "/docs/data/table-semantics.csv",
-     "count": 98,
+     "count": 99,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -2197,7 +2208,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 30494720,
+     "bytes": 30498816,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -6020,8 +6031,20 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 34 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 35 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
+    {
+     "path": "state-dese/603cmr28-special-education-regulations.html",
+     "title": "603 CMR 28.00 — Special Education regulations",
+     "stars": 2,
+     "what": "Also catalogued above as a source this analysis is built on (state-dese/603cmr28-special-education-regulations.html). Same file, byte for byte.",
+     "kind": "HTML",
+     "bytes": 895948,
+     "url": "/docs/state-dese/603cmr28-special-education-regulations.html",
+     "textUrl": "/docs/state-dese/text/603cmr28-special-education-regulations.txt",
+     "upstream": "https://www.doe.mass.edu/lawsregs/603cmr28.html?section=all",
+     "alsoUsed": "state-dese/603cmr28-special-education-regulations.html"
+    },
     {
      "path": "state-dese/dese-ch70-district-profile.xlsx",
      "title": "Chapter 70 District Profile",
@@ -6585,10 +6608,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 535,
+  "documents": 537,
   "groups": 20,
-  "bytes": 1306069743,
-  "loadBearing": 102
+  "bytes": 1307869876,
+  "loadBearing": 103
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

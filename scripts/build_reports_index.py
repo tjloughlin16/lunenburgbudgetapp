@@ -97,6 +97,29 @@ CATEGORIES = [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
         ]),
     ]),
+    # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
+    #
+    # The first three answer "is this about the schools, the town, or how to check it",
+    # and every report fits one because every report MEASURES Lunenburg. The class-size
+    # rule does not. It quotes a state regulation that binds every district in
+    # Massachusetts, and its whole discipline is that it stops before saying anything
+    # about this town's staffing -- so filing it under "the schools / what the money buys"
+    # would promise a Lunenburg finding the page deliberately refuses to make, and a
+    # reader who opened it expecting one would leave thinking the page had failed.
+    #
+    # TJ asked for a new section and this is why one is right rather than merely asked
+    # for: a rule everybody argues under is a different KIND of document from a
+    # measurement, and the index is the one place a reader learns which they are getting.
+    #
+    # The shelf is expected to fill. Chapter 70's formula, the net school spending
+    # requirement and Proposition 2 1/2's levy limit are all rules this town argues under
+    # and all currently sit under headings about where money comes from -- which is right
+    # for them TODAY, because each of those pages measures Lunenburg against the rule.
+    # Nothing is moved here: an address that has been shared once keeps landing where it
+    # landed, and a category is not a reason to move a page.
+    ('rules', 'The rules everyone argues under', [
+        ('', ['classsize']),
+    ]),
     ('method', 'How to check any of it', [
         ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),
     ]),
@@ -247,6 +270,9 @@ ABOUT_PAGES = {
     'sped':
         'Four special education reports behind one door, and the reason they must not be '
         'combined: each counts a different thing.',
+    # NOT `classsize`. Its payload carries its own `about`, which wins here -- and a
+    # second description of the same page in this file is the artefact that goes stale
+    # first. The generated one is the one the index prints.
 }
 
 

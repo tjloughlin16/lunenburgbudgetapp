@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Advanced Placement participation and performance, Lunenburg only.
+"""Student attrition by GRADE, Lunenburg only — the dimension the outflow work lacked.
 
 WHY AN EXTRACTOR AND NOT A LOAD. The two workbooks are 85MB and 89MB -- every district,
 every year, every subject, every student group. The published database is served to
@@ -23,8 +23,8 @@ So this keeps Lunenburg's own rows, keeps every student group as its own row rat
 adding them, and records which is the total. Nothing here may be summed without splitting
 on `stu_grp` first.
 
-    python3 scripts/extract_dese_ap.py
-    python3 scripts/extract_dese_ap.py --check
+    python3 scripts/extract_dese_attrition.py
+    python3 scripts/extract_dese_attrition.py --check
 """
 import argparse
 import csv
@@ -34,11 +34,8 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'sources', 'state-dese')
 LEA = '01620000'
-FILES = [
-    ('participation', 'dese-ap-participation.xlsx'),
-    ('performance', 'dese-ap-performance.xlsx'),
-]
-OUT = os.path.join(ROOT, 'sources', 'data', 'dese-ap.csv')
+FILES = [('attrition', 'dese-student-attrition.xlsx')]
+OUT = os.path.join(ROOT, 'sources', 'data', 'dese-attrition.csv')
 
 
 def rows_for(path, kind):
@@ -48,7 +45,7 @@ def rows_for(path, kind):
     it = ws.iter_rows(values_only=True)
     hdr = [str(c).strip() if c is not None else '' for c in next(it)]
     ix = {h: i for i, h in enumerate(hdr)}
-    need = ('SY', 'DIST_CODE', 'ORG_CODE', 'ORG_NAME', 'ORG_TYPE', 'STU_GRP', 'SUBJ')
+    need = ('SY', 'DIST_CODE', 'ORG_CODE', 'ORG_NAME', 'ORG_TYPE', 'STU_GRP')
     missing = [n for n in need if n not in ix]
     if missing:
         raise SystemExit('%s is missing columns %s. Its shape changed; nothing written.'
@@ -59,9 +56,7 @@ def rows_for(path, kind):
             continue
         rec = {'kind': kind, 'sy': r[ix['SY']], 'org_code': r[ix['ORG_CODE']],
                'org_name': r[ix['ORG_NAME']], 'org_type': r[ix['ORG_TYPE']],
-               'stu_grp': r[ix['STU_GRP']], 'subj_cat': (r[ix['SUBJ_CAT']] if 'SUBJ_CAT' in ix
-                                  and ix['SUBJ_CAT'] < len(r) else None),
-               'subj': r[ix['SUBJ']]}
+               'stu_grp': r[ix['STU_GRP']]}
         # Everything else in the row is the measure block, kept under its own name.
         # ROWS CAN BE SHORTER THAN THE HEADER -- openpyxl stops at the last populated
         # cell, so a row whose trailing measures are blank comes back short and indexing
@@ -69,7 +64,7 @@ def rows_for(path, kind):
         # the header, and record the absence as None instead of skipping the row.
         for h, i in ix.items():
             if h in ('SY', 'DIST_CODE', 'DIST_NAME', 'ORG_CODE', 'ORG_NAME',
-                     'ORG_TYPE', 'STU_GRP', 'SUBJ_CAT', 'SUBJ'):
+                     'ORG_TYPE', 'STU_GRP'):
                 continue
             rec[h.lower()] = r[i] if i < len(r) else None
         out.append(rec)

@@ -215,3 +215,39 @@ teacher's retirement announced in the same month as the world language cut. All 
 on the page. `scripts/verify_cut_register.py` re-reads every one of them verbatim and
 asserts the six phrases this review added, so a later edit that removes one fails the
 build rather than needing to be noticed.
+
+### `/special-education-class-size` — the class-size rule, 10 September 2026
+
+Six readers, six tests, plus the omission step. **Three failed on the first pass** and the
+page was changed rather than the note. This is the first page here that quotes a STATUTE
+rather than measuring the town, and the failures are all the same shape: a rule reads as a
+verdict unless something stops it.
+
+| reader | what failed | what changed |
+|---|---|---|
+| 1 · the resident who has decided | the honest limit — *nobody can compute whether Lunenburg is staffed correctly* — was the sixth conclusion, behind five confident statements of the rule | `no-required-number` moved to **second**, immediately under the ratio. The rule, then why it gives no number for this town, then the detail |
+| 2 · the second-hand reader | **the worst failure on the page.** The first screen said "8 to one certified special educator" and the sentence they would repeat is *the state says eight kids per teacher* — applied to a kindergarten of 25, which the clause does not govern at all | the grain box now leads with **"This is not a general class-size rule"** and quotes 28.06(6)'s own opening scope: eligible students aged five and older, receiving services outside the general education environment |
+| 3 · close to the boards | a teacher's public statement that seven IEP students' pull-out service was being delivered by a paraprofessional sits one screen below a rule about certified special educators. It reads as an accusation of non-compliance and it is not one | a second `What this does not show` beside the quotes, and a rewritten note on the quote itself: **28.02(3) says a certified special educator may "provide, design, or supervise" services**, so delivery by somebody the educator supervises is contemplated by the regulation rather than excluded by it. That clause was already printed on the page and nothing had pointed at it |
+| 4 · Finance Committee | passed | the one document that would close this is named in the registered gap and again in *what would close these*: the district's own list of instructional groups by school and setting, compiled for DESE's program approval under 603 CMR 28.09 and not published |
+| 5 · School Committee | passed | their question here is not "is this FY25 again" but "are we being told we are out of compliance". Answered in the grain box, in the conclusion's `not_shown`, and in a section heading |
+| 6 · Select Board | passed | nothing on the page compares the two sides, and the rule applies to every district in Massachusetts equally |
+| the booster | passed | step 3 produced the concrete things and all three are on the page |
+
+**Step 3 — the meeting archive, searched for what people said about this — is the finding
+that shaped the page.** Across all 8,899 searchable documents, **nobody in Lunenburg has
+ever said "603 CMR" or "substantially separate".** Not once. The town argues in *class
+size* (21 documents) and *paras* (38). Two consequences, both acted on:
+
+- **the address is the town's word, not the state's.** `/special-education-class-size`,
+  with `603-cmr-28` and `special-education-regulation` as aliases for the official
+  arriving from a DESE document.
+- **the page says the vocabulary gap out loud**, with both zero counts computed rather
+  than claimed, because a search returning nothing is otherwise indistinguishable from
+  nobody caring.
+
+The three quotes that carry the section came out of the same search: the Finance
+Committee minute recording kindergarten classrooms "operating with 25 students and no
+aides"; the Director of Special Education, asked how staffing is decided, answering that
+"there is no formula"; and the pull-out account above. `scripts/verify_sped_regulation.py`
+re-reads all four quotes verbatim and asserts the phrases this review added, so an edit
+that removes one fails the build rather than needing to be noticed.
