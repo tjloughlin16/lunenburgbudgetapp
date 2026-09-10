@@ -32,7 +32,7 @@
  {
   "name": "sources.json",
   "note": "The document archive: every source, its group, its size, and the URL it is served from.",
-  "bytes": 358696
+  "bytes": 358874
  },
  {
   "name": "budget-lines.csv",
@@ -62,7 +62,7 @@
  {
   "name": "archive-manifest.csv",
   "note": "Every file in the archive \u2014 3,876 of them \u2014 with its size, its sha256, and the publisher\u2019s own URL where one is recorded. The documents themselves are no longer in the repository: they are in a public, locked R2 bucket and are served under the /docs/<path> URLs they have always had, so this is the index that makes a download checkable and the list a fresh clone works from. The bucket holds no copy of this file, deliberately \u2014 an object there cannot be updated once written, so a manifest inside it would be permanently out of date about its own contents.",
-  "bytes": 5060341
+  "bytes": 5060441
  },
  {
   "name": "free-cash-proof.csv",

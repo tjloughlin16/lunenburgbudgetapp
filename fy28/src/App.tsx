@@ -39,6 +39,7 @@ import { MontyTech } from './pages/MontyTech'
 import { WhatItAllAddsUpTo } from './pages/WhatItAllAddsUpTo'
 import { PeerSpending } from './pages/PeerSpending'
 import { CourseOfferings } from './pages/CourseOfferings'
+import { WhichGradesStudentsLeave } from './pages/WhichGradesStudentsLeave'
 import { SpendingVsRequired } from './pages/SpendingVsRequired'
 import { SpecialEducationHub } from './pages/SpecialEducationHub'
 import { SpedStudents } from './pages/SpedStudents'
@@ -431,6 +432,7 @@ export default function App() {
       {tab === 'formula' && <Ch70Formula />}
       {tab === 'peers' && <PeerSpending />}
       {tab === 'courses' && <CourseOfferings />}
+      {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}
       {tab === 'required' && <SpendingVsRequired />}

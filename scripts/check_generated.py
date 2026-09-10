@@ -476,6 +476,17 @@ CHECKS = [
     # asserts both rollups on every one of the 79 org-years, that no Chapter 74 row is
     # ever summed into a subject total, and that the analysis window is a single grade
     # span read off DESE's own enrolment-by-grade counts rather than off a school's name.
+    # WHICH GRADES CHILDREN LEAVE IN. The generator asserts the rollup guard, DESE's own
+    # blank rule on every school-year, and -- three independent ways -- that the year on
+    # a row is the year the children were GONE rather than the year they were counted. If
+    # that last one is wrong every grade on the page shifts by one and every figure stays
+    # internally consistent, which is the only kind of error a --check cannot otherwise
+    # see.
+    ('build_attrition.py', ['--check']),
+    # And the second route: the CSVs the database was built from, pivoted in Python
+    # rather than filtered in SQL, asserting the values the payload publishes AND the
+    # three shapes its prose rests on.
+    ('verify_attrition.py', []),
     ('build_course_offerings.py', ['--check']),
     # And the second route. The generator reads `dese_class_size` out of the database, so
     # a load that dropped a row or collided a primary key would have the generator and its

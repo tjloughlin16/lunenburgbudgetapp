@@ -566,3 +566,56 @@ splitting it into three would imply three.
 school year a printed roster describes, and `/the-paraprofessionals` still cannot say
 which fund pays which post. Both are rows in `sources/data/money-gaps.csv` and both are on
 the page that hits them.
+
+### `/which-grades-students-leave` — which grades students leave in, 10 September 2026
+
+Six readers, six tests, plus the omission step. **Two failed on the first pass** and the
+page was changed rather than the note. The shape of both failures is particular to this
+page: it is the first report here whose central measurement is about CHILDREN rather than
+dollars, and a number about children gets a cause attached to it in the reader's head
+before they have finished the sentence.
+
+| reader | what failed | what changed |
+|---|---|---|
+| 1 · the resident who has decided | passed | the worst fact is the first stat and the first conclusion, and the second-worst — a third of eighth graders on an IEP — is the third stat. The credit sits at the same weight and is computed rather than asserted: the rate has been in the same band through a school closing, a new building and a pandemic, and almost every departing child is replaced |
+| 2 · the second-hand reader | **failed, and it is the standard failure of this whole site.** The standfirst said *a fifth of every eighth grade does not come back*, so the sentence carried off the first screen is **a fifth of our families are fleeing the schools** — which the file cannot support and which is false about at least the largest candidate destination | the standfirst now carries both halves and nothing else: the rate, and then that where they go is not published anywhere — **Monty Tech, which this town belongs to and pays for either way**, a private school, and a family moving out of Lunenburg are one number here |
+| 3 · close to the boards | passed, narrowly | one person is quoted, twice, and it is a principal speaking in public comment about the budget. The page attributes both to the ROLE and neither quote names a child, a colleague or a decision. A `not_established` row says plainly that no figure here is about a person |
+| 4 · Finance Committee | passed | *One thing that could be done differently next year* names the one document: the district files the October submission that produces this rate to the state every year and reports none of it to its own School Committee. Not a new record — a report of one that already exists, in time to be in a budget cycle |
+| 5 · School Committee | **failed.** Their question is not "is this FY25 again", it is *did what we cut do this* — and it was answerable only by reading an era table near the bottom of the page and working it out | a box, *Did the budget cuts do this?*, above the charts. It answers in both directions from the payload's own era means: the rate was already this high years before any of the reductions now being argued about, AND the most recent era is the highest of the five. A rate that was this high before the cuts is not evidence they caused it, and a rate at its second-highest now is not evidence they did not |
+| 6 · Select Board | passed | a `not_established` row: Massachusetts collects an attrition rate from school districts and from nothing else, so no comparison between the two halves of the town budget can be drawn from this page in either direction |
+| the booster | passed, and the omission step produced the page's own vocabulary | see below |
+
+**Step 3 — the archive searched in the town's words rather than ours — is again the
+finding.** Five phrases a report would reach for return **nothing about children in 8,899
+readable documents**: `declining enrollment`, `enrollment decline`, `families leaving`,
+`losing students`, `leave the district`. And `attrition` itself returns two documents,
+both about **staff** attrition — a Personnel Committee note that there is "almost zero
+attrition" among firefighters, and a Finance Committee minute about educator burnout. The
+word this page is named after, in DESE's vocabulary, means something else entirely in
+Lunenburg's. That is the third time in five reviews that searching for our own word would
+have found nobody, and it is why the address is `/which-grades-students-leave`.
+
+What the town's own words found:
+
+- the **Middle High School Principal**, 12 March 2025, describing the exact decision this
+  page measures — a student *"looking at choicing out if her private school choices
+  didn't come through"* — and naming two destinations in one sentence, which is the whole
+  reason no rate here can be read as one thing. `choicing out` appears in **one** document
+  in the archive and this is it;
+- the same speaker, the same comment, predicting that students *"are going to hemorrhage
+  out of the high school"*. On the page as a prediction, with a note saying the series
+  does not yet reach the years that would test it;
+- a **student representative**, 7 February 2024, naming the grade 8 to grade 9 step where
+  this page finds every year's largest departure — about the high school band rather than
+  about anybody leaving. The town does discuss this transition; it discusses a different
+  quantity at it;
+- and rule 8's half: the **School Committee's own agenda**, 4 December 2024, carrying the
+  Sizer and Parker annual reports as business, with the minute recording that the data had
+  not arrived. The board is asking the question this page cannot answer and was told the
+  same thing this page reports.
+
+`scripts/verify_attrition.py` re-reads every quote verbatim against the file it cites, and
+recomputes every figure the page renders from the CSVs by a second route — including the
+three independent checks that the year printed on a row is the year the children were
+GONE, because if that were wrong every grade on the page would shift by one and every
+figure would still be internally consistent.

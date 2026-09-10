@@ -1,0 +1,3622 @@
+{
+ "about": "Which grades Lunenburg children leave in, year by year \u2014 DESE\u2019s attrition rate for the district and its schools, SY2010 to SY2026, with every figure kept as the rate it is.",
+ "churn": {
+  "enrol_change": -171,
+  "enrol_first": 1739,
+  "enrol_last": 1568,
+  "first_fy": 2009,
+  "implied_total": 1538,
+  "last_fy": 2026,
+  "per_year": 90.5,
+  "per_year_whole": 90,
+  "ratio": 9.0,
+  "transitions": 17,
+  "years": [
+   {
+    "cohort": 1524,
+    "cohort_fy": 2009,
+    "implied": 99.1,
+    "rate": 0.065,
+    "sy": 2010
+   },
+   {
+    "cohort": 1526,
+    "cohort_fy": 2010,
+    "implied": 102.2,
+    "rate": 0.067,
+    "sy": 2011
+   },
+   {
+    "cohort": 1474,
+    "cohort_fy": 2011,
+    "implied": 87.0,
+    "rate": 0.059,
+    "sy": 2012
+   },
+   {
+    "cohort": 1463,
+    "cohort_fy": 2012,
+    "implied": 108.3,
+    "rate": 0.074,
+    "sy": 2013
+   },
+   {
+    "cohort": 1409,
+    "cohort_fy": 2013,
+    "implied": 88.8,
+    "rate": 0.063,
+    "sy": 2014
+   },
+   {
+    "cohort": 1409,
+    "cohort_fy": 2014,
+    "implied": 84.5,
+    "rate": 0.06,
+    "sy": 2015
+   },
+   {
+    "cohort": 1405,
+    "cohort_fy": 2015,
+    "implied": 75.9,
+    "rate": 0.054,
+    "sy": 2016
+   },
+   {
+    "cohort": 1430,
+    "cohort_fy": 2016,
+    "implied": 82.9,
+    "rate": 0.058,
+    "sy": 2017
+   },
+   {
+    "cohort": 1465,
+    "cohort_fy": 2017,
+    "implied": 65.9,
+    "rate": 0.045,
+    "sy": 2018
+   },
+   {
+    "cohort": 1493,
+    "cohort_fy": 2018,
+    "implied": 89.6,
+    "rate": 0.06,
+    "sy": 2019
+   },
+   {
+    "cohort": 1490,
+    "cohort_fy": 2019,
+    "implied": 104.3,
+    "rate": 0.07,
+    "sy": 2020
+   },
+   {
+    "cohort": 1496,
+    "cohort_fy": 2020,
+    "implied": 116.7,
+    "rate": 0.078,
+    "sy": 2021
+   },
+   {
+    "cohort": 1442,
+    "cohort_fy": 2021,
+    "implied": 99.5,
+    "rate": 0.069,
+    "sy": 2022
+   },
+   {
+    "cohort": 1436,
+    "cohort_fy": 2022,
+    "implied": 87.6,
+    "rate": 0.061,
+    "sy": 2023
+   },
+   {
+    "cohort": 1416,
+    "cohort_fy": 2023,
+    "implied": 70.8,
+    "rate": 0.05,
+    "sy": 2024
+   },
+   {
+    "cohort": 1421,
+    "cohort_fy": 2024,
+    "implied": 88.1,
+    "rate": 0.062,
+    "sy": 2025
+   },
+   {
+    "cohort": 1406,
+    "cohort_fy": 2025,
+    "implied": 87.2,
+    "rate": 0.062,
+    "sy": 2026
+   }
+  ]
+ },
+ "closes": "DESE already publishes where every Lunenburg resident child is educated \u2014 177 of them somewhere other than a Lunenburg school in FY2026 \u2014 and publishes an attrition rate per grade. The two files never meet: one has no grade and the other has no destination. One column added to the first would say which grade each of those children left in, and would turn the largest measurement on this page from a rate into an answer.",
+ "conclusions": [
+  {
+   "basis": "`dese_attrition`, Lunenburg\u2019s district rows for All Students, joined to `dese_enrollment` on the PREVIOUS year\u2019s grade counts \u2014 which is the join DESE\u2019s own all-grades rate reproduces five times more closely than the same-year one, and which two other independent checks in the generator confirm.",
+   "bearing": "sizes",
+   "claim": "20.5% of each eighth grade does not come back to a Lunenburg school for grade 9.",
+   "detail": "Residents keep asking which grades children leave in. It is one grade, it is the same grade every year, and the step it sits at is the move from the middle school to the high school. Averaged over the whole file the grade 8 rate is 3.2 times the next highest grade, and it is the highest grade in every single year measured \u2014 through a school closing, a new building opening and a pandemic. Applied to the town\u2019s own eighth grades that is about 27 children a year and roughly 452 in total. Those counts are IMPLIED \u2014 DESE publishes the rate and the enrolment, and this page multiplies them.",
+   "figure": "mean",
+   "figures": {
+    "high": {
+     "text": "6.4%",
+     "unit": "",
+     "value": 0.0643
+    },
+    "low": {
+     "text": "3.0%",
+     "unit": "",
+     "value": 0.0303
+    },
+    "mean": {
+     "text": "20.5%",
+     "unit": "of each eighth grade",
+     "value": 0.2048
+    },
+    "multiple": {
+     "text": "3.2",
+     "unit": "",
+     "value": 3.2
+    },
+    "per_year": {
+     "text": "27",
+     "unit": "",
+     "value": 27
+    },
+    "total": {
+     "text": "452",
+     "unit": "",
+     "value": 452.0
+    },
+    "years": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "id": "one-grade-does-all-the-leaving",
+   "kind": "measured",
+   "literals": [
+    "grade 8",
+    "grade 9"
+   ],
+   "not_shown": "Why, and where to. Attrition is leaving for any reason: a vocational admission at grade 9, a private or charter school, a school choice transfer, an out-of-district placement and a family moving are one number here. Nothing in this file separates them, and the file that names destinations carries no grade.",
+   "see": [
+    {
+     "label": "Where the town\u2019s children are",
+     "slug": "/where-students-go-instead"
+    },
+    {
+     "label": "What Monty Tech costs the town",
+     "slug": "/monty-tech"
+    }
+   ],
+   "so_what": "The highest grade in all 17 years measured. The other eleven sit between 3.0% and 6.4%."
+  },
+  {
+   "basis": "The same district rows, averaged inside eras derived in code from `dese_enrollment` grade spans by the functions /what-courses-actually-ran uses, so the two pages cannot segment the same reorganisation differently. The pandemic boundary is OURS and is marked as ours wherever it appears.",
+   "bearing": "sizes",
+   "claim": "The eighth grade measured this year lost 27.7% \u2014 the second-highest of seventeen years.",
+   "detail": "The rate has risen for the last stretch of the series, which is what a reader will notice first. Set against seventeen years it is inside a range the town has been in the whole time. The series runs from 13.2% in SY2016 to 28.7% in SY2013 and the five eras \u2014 built from DESE\u2019s own grade spans, so a school closing and a new building are boundaries rather than noise \u2014 average within 4.9 points of each other. The current run of rises is 3 years long and the longest earlier one was 3, so a run of this length is not new either. A single Lunenburg grade is around a hundred and twenty children, so one family is close to a point.",
+   "figure": "latest",
+   "figures": {
+    "era_high": {
+     "text": "22.3%",
+     "unit": "",
+     "value": 0.223
+    },
+    "era_low": {
+     "text": "17.4%",
+     "unit": "",
+     "value": 0.1737
+    },
+    "latest": {
+     "text": "27.7%",
+     "unit": "of the last eighth grade",
+     "value": 0.277
+    },
+    "max": {
+     "text": "28.7%",
+     "unit": "",
+     "value": 0.287
+    },
+    "max_sy": {
+     "text": "SY2013",
+     "unit": "",
+     "value": 2013
+    },
+    "min": {
+     "text": "13.2%",
+     "unit": "",
+     "value": 0.132
+    },
+    "min_sy": {
+     "text": "SY2016",
+     "unit": "",
+     "value": 2016
+    },
+    "prior_run": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "run": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "spread": {
+     "text": "4.9 points",
+     "unit": "",
+     "value": 0.0493
+    }
+   },
+   "id": "a-high-year-not-a-new-level",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether the rise continues. Three points are three points, and this town\u2019s boards are being asked to read them as a direction because they have nothing longer. The eras are on the page precisely so a reader can see what the same three points looked like the last four times.",
+   "see": [],
+   "so_what": "Averaged inside five eras the rate stays between 17.4% and 22.3%. A high year, not a new level."
+  },
+  {
+   "basis": "DESE\u2019s all-grades attrition rate for each year applied to the previous year\u2019s Lunenburg enrolment in grades K to 11, against DESE\u2019s own district totals at both ends. Grade 12 is excluded from the rate by DESE: a twelfth grader who does not come back has graduated.",
+   "bearing": "sizes",
+   "claim": "DESE\u2019s rates imply 1,538 children left in seventeen years. Enrolment fell 171.",
+   "detail": "The question a resident arrives with is whether children leaving is why the schools are emptying. On these two files it is not: the leaving is an order of magnitude larger than the change, and almost all of it is replaced. About 90 children a year leave, every year, and district enrolment went from 1,739 in FY2009 to 1,568 in FY2026. A town losing 10 children a year net and a town losing 90 and gaining most of them back are the same line on an enrolment chart and are not the same town. It is the same shape this project found on the other side of the ledger, where inbound school choice collapsed while outbound stayed flat and the net barely moved.",
+   "figure": "implied",
+   "figures": {
+    "fall": {
+     "text": "171",
+     "unit": "",
+     "value": 171
+    },
+    "first": {
+     "text": "1,739",
+     "unit": "",
+     "value": 1739
+    },
+    "first_fy": {
+     "text": "FY2009",
+     "unit": "",
+     "value": 2009
+    },
+    "implied": {
+     "text": "1,538",
+     "unit": "children, implied",
+     "value": 1538
+    },
+    "last": {
+     "text": "1,568",
+     "unit": "",
+     "value": 1568
+    },
+    "last_fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "net_per_year": {
+     "text": "10",
+     "unit": "",
+     "value": 10.058823529411764
+    },
+    "per_year": {
+     "text": "90",
+     "unit": "",
+     "value": 90
+    },
+    "ratio": {
+     "text": "9.0",
+     "unit": "",
+     "value": 9.0
+    }
+   },
+   "id": "the-leaving-is-nine-times-the-fall",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Who arrives. This page measures one direction only and the balancing figure is a RESIDUAL rather than a measurement \u2014 births, families moving in, children returning from a private school and anybody repeating a year are one number here. Nor is the implied total a count of distinct children.",
+   "see": [
+    {
+     "label": "The other direction, priced",
+     "slug": "/if-students-leave"
+    }
+   ],
+   "so_what": "Churn is 9.0 times the net change, so arrivals rather than leavers set the size of the schools."
+  },
+  {
+   "basis": "`dese_attrition` district rows for Students with Disabilities against All Students, grade by grade, over the same years. The cohort sizes beside them are ESTIMATES: DESE publishes no count of a student group within a grade, so they are the district\u2019s own published share of that group applied to the grade\u2019s enrolment.",
+   "bearing": "sizes",
+   "claim": "Eighth graders on an IEP leave at 34.7%, against 20.5% for all students.",
+   "detail": "A group that leaves more everywhere is a different fact from one that leaves more at a single step. This is the second: across the other eleven grades the two series are close together. Published in all 17 years, and it swings from 19.0% to 54.5% between them \u2014 because the group inside one Lunenburg grade is on the order of twenty children, so one family is several points. That is the reason the year-by-year sits under this card rather than a headline off any single year. The same shape appears for High Needs and for Low Income, which OVERLAP this group and each other and are never added.",
+   "figure": "swd",
+   "figures": {
+    "all": {
+     "text": "20.5%",
+     "unit": "",
+     "value": 0.2048
+    },
+    "hi": {
+     "text": "54.5%",
+     "unit": "",
+     "value": 0.545
+    },
+    "lo": {
+     "text": "19.0%",
+     "unit": "",
+     "value": 0.19
+    },
+    "next": {
+     "text": "4.1 points",
+     "unit": "",
+     "value": 4.1
+    },
+    "swd": {
+     "text": "34.7%",
+     "unit": "of eighth graders on an IEP",
+     "value": 0.3474
+    },
+    "widest": {
+     "text": "14.3 points",
+     "unit": "",
+     "value": 14.3
+    },
+    "years": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "id": "the-gap-is-at-one-step-not-everywhere",
+   "kind": "measured",
+   "literals": [
+    "grade 8"
+   ],
+   "not_shown": "Anything about placement, service or cause. An out-of-district placement made at the high school transition, a vocational admission, a family moving for services and a private school all fit this number equally well. A special education placement is not attrition and this file cannot tell you which of these it counted.",
+   "see": [
+    {
+     "label": "The route out of district",
+     "slug": "/who-ends-up-out-of-district"
+    },
+    {
+     "label": "How many children are on an IEP",
+     "slug": "/how-many-students-are-on-an-iep"
+    }
+   ],
+   "so_what": "The gap is 14.3 points at grade 8 and never above 4.1 points at any other grade."
+  },
+  {
+   "basis": "`dese_town_enrollment`, read whole: its columns are checked on every run and the generator refuses to publish this claim if a grade column ever appears in it.",
+   "bearing": "lever",
+   "claim": "No published record says which school a departing Lunenburg eighth grader went to.",
+   "detail": "This is the question every reader of the card above will ask next, and it is the one the record refuses. Two DESE files each hold half of the answer and neither holds the join. 177 Lunenburg children were educated somewhere other than a Lunenburg school in FY2026. Monty Tech holds 97 of them across four grade years, about 24.2 a year, which is the same order of magnitude as the 27 eighth graders a year this page implies are leaving \u2014 and being the same size is not being the same children. Lunenburg is a MEMBER town of Monty Tech, so a child going there is not choosing out of the town\u2019s system in the way the phrase usually means. The district files the submission that produces this rate every 1 October, so the grade breakdown exists inside the district before the state publishes anything.",
+   "figures": {
+    "elsewhere": {
+     "text": "177",
+     "unit": "",
+     "value": 177
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "implied": {
+     "text": "27",
+     "unit": "",
+     "value": 27
+    },
+    "monty": {
+     "text": "97",
+     "unit": "",
+     "value": 97
+    },
+    "per_grade": {
+     "text": "24.2",
+     "unit": "",
+     "value": 24.2
+    }
+   },
+   "id": "nothing-published-says-where-they-went",
+   "kind": "measured",
+   "literals": [
+    "1 October"
+   ],
+   "no_figure": "There is no figure here because nobody publishes one. DESE publishes the rate without a destination and the destination without a grade, and the two files are never joined.",
+   "not_shown": "Any attribution at all. Nothing here says a single departing eighth grader went to any of these places. The sizes are comparable and that is the whole of what is established.",
+   "see": [
+    {
+     "label": "What Monty Tech costs the town",
+     "slug": "/monty-tech"
+    },
+    {
+     "label": "The gap this leaves",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "Monty Tech, a private school, a charter and a family moving are one number here."
+  }
+ ],
+ "dese": {
+  "blanks": "A blank value indicates that either: The school or district is new in the year selected; The school or district has no students enrolled in that grade level in the year selected; The school or district has no grade in the given year for students from the previous year to advance; The data is suppressed because the enrollment total is less than 6.",
+  "definition": "This dataset provides the percentage of attrition by grade from the end of one school year to the beginning of the next for students in Massachusetts public schools since 2010. The information is as of October 1 of the given school year.",
+  "groups": "Economically Disadvantaged was used 2015-2021. Low Income was used prior to 2015, and a different version of Low Income has been used since 2022.",
+  "url": "https://educationtocareer.data.mass.gov/Students-and-Teachers/Student-Attrition/4as3-w39x/about_data"
+ },
+ "destinations": {
+  "by_reason": [
+   {
+    "reason": "Resident/Member",
+    "students": 97
+   },
+   {
+    "reason": "School Choice Program",
+    "students": 58
+   },
+   {
+    "reason": "Charter School",
+    "students": 22
+   }
+  ],
+  "by_where": [
+   {
+    "district": "Montachusett Regional Vocational Technical",
+    "reason": "Resident/Member",
+    "students": 97
+   },
+   {
+    "district": "Leominster",
+    "reason": "School Choice Program",
+    "students": 18
+   },
+   {
+    "district": "Francis W. Parker Charter Essential (District)",
+    "reason": "Charter School",
+    "students": 15
+   },
+   {
+    "district": "Fitchburg",
+    "reason": "School Choice Program",
+    "students": 8
+   },
+   {
+    "district": "Greater Commonwealth Virtual District",
+    "reason": "School Choice Program",
+    "students": 8
+   },
+   {
+    "district": "TEC Connections Academy Commonwealth Virtual School District",
+    "reason": "School Choice Program",
+    "students": 8
+   },
+   {
+    "district": "Sizer School: A North Central Charter Essential (District)",
+    "reason": "Charter School",
+    "students": 7
+   },
+   {
+    "district": "Nashoba",
+    "reason": "School Choice Program",
+    "students": 4
+   },
+   {
+    "district": "Harvard",
+    "reason": "School Choice Program",
+    "students": 3
+   },
+   {
+    "district": "Gardner",
+    "reason": "School Choice Program",
+    "students": 2
+   },
+   {
+    "district": "Ayer Shirley School District",
+    "reason": "School Choice Program",
+    "students": 2
+   },
+   {
+    "district": "Littleton",
+    "reason": "School Choice Program",
+    "students": 1
+   },
+   {
+    "district": "Berlin-Boylston",
+    "reason": "School Choice Program",
+    "students": 1
+   },
+   {
+    "district": "Groton-Dunstable",
+    "reason": "School Choice Program",
+    "students": 1
+   },
+   {
+    "district": "North Middlesex",
+    "reason": "School Choice Program",
+    "students": 1
+   },
+   {
+    "district": "Ralph C Mahar",
+    "reason": "School Choice Program",
+    "students": 1
+   }
+  ],
+  "columns": [
+   "fy",
+   "town",
+   "enrollment_reason",
+   "lea",
+   "district",
+   "students",
+   "doc_id_sending",
+   "doc_id_receiving"
+  ],
+  "elsewhere": 177,
+  "fy": 2026,
+  "monty_grades": 4,
+  "monty_per_grade": 24.2,
+  "monty_tech": 97,
+  "outlier_grade": "8",
+  "series": [
+   {
+    "fy": 2014,
+    "students": 70
+   },
+   {
+    "fy": 2015,
+    "students": 76
+   },
+   {
+    "fy": 2016,
+    "students": 86
+   },
+   {
+    "fy": 2017,
+    "students": 87
+   },
+   {
+    "fy": 2018,
+    "students": 77
+   },
+   {
+    "fy": 2019,
+    "students": 72
+   },
+   {
+    "fy": 2020,
+    "students": 75
+   },
+   {
+    "fy": 2021,
+    "students": 77
+   },
+   {
+    "fy": 2022,
+    "students": 90
+   },
+   {
+    "fy": 2023,
+    "students": 92
+   },
+   {
+    "fy": 2024,
+    "students": 97
+   },
+   {
+    "fy": 2025,
+    "students": 96
+   },
+   {
+    "fy": 2026,
+    "students": 97
+   }
+  ]
+ },
+ "differently": "Report the grade 8 exit count to the School Committee each autumn, beside the October enrolment. The district files the submission that produces this rate to the state every 1 October, so the number exists inside the district before DESE publishes it \u2014 and it is the one figure that would let a board tell a year when 13.2% of an eighth grade left from a year when a third did, while there is still a budget cycle to do anything about it.",
+ "district": [
+  {
+   "all": 0.065,
+   "cohort": 1524,
+   "cohort_fy": 2009,
+   "grade8_cohort": 134,
+   "grade8_implied": 26.8,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.027
+    },
+    {
+     "grade": "1",
+     "rate": 0.059
+    },
+    {
+     "grade": "2",
+     "rate": 0.067
+    },
+    {
+     "grade": "3",
+     "rate": 0.022
+    },
+    {
+     "grade": "4",
+     "rate": 0.016
+    },
+    {
+     "grade": "5",
+     "rate": 0.031
+    },
+    {
+     "grade": "6",
+     "rate": 0.062
+    },
+    {
+     "grade": "7",
+     "rate": 0.075
+    },
+    {
+     "grade": "8",
+     "rate": 0.2
+    },
+    {
+     "grade": "9",
+     "rate": 0.044
+    },
+    {
+     "grade": "10",
+     "rate": 0.091
+    },
+    {
+     "grade": "11",
+     "rate": 0.079
+    }
+   ],
+   "implied": 99.1,
+   "sy": 2010
+  },
+  {
+   "all": 0.067,
+   "cohort": 1526,
+   "cohort_fy": 2010,
+   "grade8_cohort": 135,
+   "grade8_implied": 27.9,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.062
+    },
+    {
+     "grade": "1",
+     "rate": 0.051
+    },
+    {
+     "grade": "2",
+     "rate": 0.041
+    },
+    {
+     "grade": "3",
+     "rate": 0.033
+    },
+    {
+     "grade": "4",
+     "rate": 0.044
+    },
+    {
+     "grade": "5",
+     "rate": 0.047
+    },
+    {
+     "grade": "6",
+     "rate": 0.095
+    },
+    {
+     "grade": "7",
+     "rate": 0.047
+    },
+    {
+     "grade": "8",
+     "rate": 0.207
+    },
+    {
+     "grade": "9",
+     "rate": 0.049
+    },
+    {
+     "grade": "10",
+     "rate": 0.065
+    },
+    {
+     "grade": "11",
+     "rate": 0.038
+    }
+   ],
+   "implied": 102.2,
+   "sy": 2011
+  },
+  {
+   "all": 0.059,
+   "cohort": 1474,
+   "cohort_fy": 2011,
+   "grade8_cohort": 128,
+   "grade8_implied": 24.8,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.08
+    },
+    {
+     "grade": "1",
+     "rate": 0.017
+    },
+    {
+     "grade": "2",
+     "rate": 0.027
+    },
+    {
+     "grade": "3",
+     "rate": 0.01
+    },
+    {
+     "grade": "4",
+     "rate": 0.033
+    },
+    {
+     "grade": "5",
+     "rate": 0.015
+    },
+    {
+     "grade": "6",
+     "rate": 0.077
+    },
+    {
+     "grade": "7",
+     "rate": 0.056
+    },
+    {
+     "grade": "8",
+     "rate": 0.194
+    },
+    {
+     "grade": "9",
+     "rate": 0.039
+    },
+    {
+     "grade": "10",
+     "rate": 0.077
+    },
+    {
+     "grade": "11",
+     "rate": 0.066
+    }
+   ],
+   "implied": 87.0,
+   "sy": 2012
+  },
+  {
+   "all": 0.074,
+   "cohort": 1463,
+   "cohort_fy": 2012,
+   "grade8_cohort": 124,
+   "grade8_implied": 35.6,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.05
+    },
+    {
+     "grade": "1",
+     "rate": 0.073
+    },
+    {
+     "grade": "2",
+     "rate": 0.04
+    },
+    {
+     "grade": "3",
+     "rate": 0.058
+    },
+    {
+     "grade": "4",
+     "rate": 0.009
+    },
+    {
+     "grade": "5",
+     "rate": 0.048
+    },
+    {
+     "grade": "6",
+     "rate": 0.049
+    },
+    {
+     "grade": "7",
+     "rate": 0.049
+    },
+    {
+     "grade": "8",
+     "rate": 0.287
+    },
+    {
+     "grade": "9",
+     "rate": 0.06
+    },
+    {
+     "grade": "10",
+     "rate": 0.097
+    },
+    {
+     "grade": "11",
+     "rate": 0.067
+    }
+   ],
+   "implied": 108.3,
+   "sy": 2013
+  },
+  {
+   "all": 0.063,
+   "cohort": 1409,
+   "cohort_fy": 2013,
+   "grade8_cohort": 122,
+   "grade8_implied": 25.0,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.076
+    },
+    {
+     "grade": "1",
+     "rate": 0.017
+    },
+    {
+     "grade": "2",
+     "rate": 0.056
+    },
+    {
+     "grade": "3",
+     "rate": 0.04
+    },
+    {
+     "grade": "4",
+     "rate": 0.025
+    },
+    {
+     "grade": "5",
+     "rate": 0.009
+    },
+    {
+     "grade": "6",
+     "rate": 0.097
+    },
+    {
+     "grade": "7",
+     "rate": 0.063
+    },
+    {
+     "grade": "8",
+     "rate": 0.205
+    },
+    {
+     "grade": "9",
+     "rate": 0.057
+    },
+    {
+     "grade": "10",
+     "rate": 0.053
+    },
+    {
+     "grade": "11",
+     "rate": 0.054
+    }
+   ],
+   "implied": 88.8,
+   "sy": 2014
+  },
+  {
+   "all": 0.06,
+   "cohort": 1409,
+   "cohort_fy": 2014,
+   "grade8_cohort": 144,
+   "grade8_implied": 33.7,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.081
+    },
+    {
+     "grade": "1",
+     "rate": 0.07
+    },
+    {
+     "grade": "2",
+     "rate": 0.016
+    },
+    {
+     "grade": "3",
+     "rate": 0.019
+    },
+    {
+     "grade": "4",
+     "rate": 0.015
+    },
+    {
+     "grade": "5",
+     "rate": 0.042
+    },
+    {
+     "grade": "6",
+     "rate": 0.035
+    },
+    {
+     "grade": "7",
+     "rate": 0.017
+    },
+    {
+     "grade": "8",
+     "rate": 0.234
+    },
+    {
+     "grade": "9",
+     "rate": 0.064
+    },
+    {
+     "grade": "10",
+     "rate": 0.058
+    },
+    {
+     "grade": "11",
+     "rate": 0.036
+    }
+   ],
+   "implied": 84.5,
+   "sy": 2015
+  },
+  {
+   "all": 0.054,
+   "cohort": 1405,
+   "cohort_fy": 2015,
+   "grade8_cohort": 127,
+   "grade8_implied": 16.8,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.07
+    },
+    {
+     "grade": "1",
+     "rate": 0.04
+    },
+    {
+     "grade": "2",
+     "rate": 0.107
+    },
+    {
+     "grade": "3",
+     "rate": 0.039
+    },
+    {
+     "grade": "4",
+     "rate": 0.043
+    },
+    {
+     "grade": "5",
+     "rate": 0.022
+    },
+    {
+     "grade": "6",
+     "rate": 0.042
+    },
+    {
+     "grade": "7",
+     "rate": 0.054
+    },
+    {
+     "grade": "8",
+     "rate": 0.132
+    },
+    {
+     "grade": "9",
+     "rate": 0.047
+    },
+    {
+     "grade": "10",
+     "rate": 0.037
+    },
+    {
+     "grade": "11",
+     "rate": 0.011
+    }
+   ],
+   "implied": 75.9,
+   "sy": 2016
+  },
+  {
+   "all": 0.058,
+   "cohort": 1430,
+   "cohort_fy": 2016,
+   "grade8_cohort": 115,
+   "grade8_implied": 22.0,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.067
+    },
+    {
+     "grade": "1",
+     "rate": 0.052
+    },
+    {
+     "grade": "2",
+     "rate": 0.038
+    },
+    {
+     "grade": "3",
+     "rate": 0.066
+    },
+    {
+     "grade": "4",
+     "rate": 0.051
+    },
+    {
+     "grade": "5",
+     "rate": 0.034
+    },
+    {
+     "grade": "6",
+     "rate": 0.036
+    },
+    {
+     "grade": "7",
+     "rate": 0.041
+    },
+    {
+     "grade": "8",
+     "rate": 0.191
+    },
+    {
+     "grade": "9",
+     "rate": 0.043
+    },
+    {
+     "grade": "10",
+     "rate": 0.048
+    },
+    {
+     "grade": "11",
+     "rate": 0.038
+    }
+   ],
+   "implied": 82.9,
+   "sy": 2017
+  },
+  {
+   "all": 0.045,
+   "cohort": 1465,
+   "cohort_fy": 2017,
+   "grade8_cohort": 123,
+   "grade8_implied": 18.8,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.017
+    },
+    {
+     "grade": "1",
+     "rate": 0.034
+    },
+    {
+     "grade": "2",
+     "rate": 0.05
+    },
+    {
+     "grade": "3",
+     "rate": 0.038
+    },
+    {
+     "grade": "4",
+     "rate": 0.04
+    },
+    {
+     "grade": "5",
+     "rate": 0.014
+    },
+    {
+     "grade": "6",
+     "rate": 0.056
+    },
+    {
+     "grade": "7",
+     "rate": 0.007
+    },
+    {
+     "grade": "8",
+     "rate": 0.153
+    },
+    {
+     "grade": "9",
+     "rate": 0.045
+    },
+    {
+     "grade": "10",
+     "rate": 0.035
+    },
+    {
+     "grade": "11",
+     "rate": 0.059
+    }
+   ],
+   "implied": 65.9,
+   "sy": 2018
+  },
+  {
+   "all": 0.06,
+   "cohort": 1493,
+   "cohort_fy": 2018,
+   "grade8_cohort": 147,
+   "grade8_implied": 26.0,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.065
+    },
+    {
+     "grade": "1",
+     "rate": 0.058
+    },
+    {
+     "grade": "2",
+     "rate": 0.049
+    },
+    {
+     "grade": "3",
+     "rate": 0.053
+    },
+    {
+     "grade": "4",
+     "rate": 0.031
+    },
+    {
+     "grade": "5",
+     "rate": 0.024
+    },
+    {
+     "grade": "6",
+     "rate": 0.073
+    },
+    {
+     "grade": "7",
+     "rate": 0.031
+    },
+    {
+     "grade": "8",
+     "rate": 0.177
+    },
+    {
+     "grade": "9",
+     "rate": 0.04
+    },
+    {
+     "grade": "10",
+     "rate": 0.048
+    },
+    {
+     "grade": "11",
+     "rate": 0.044
+    }
+   ],
+   "implied": 89.6,
+   "sy": 2019
+  },
+  {
+   "all": 0.07,
+   "cohort": 1490,
+   "cohort_fy": 2019,
+   "grade8_cohort": 126,
+   "grade8_implied": 29.0,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.056
+    },
+    {
+     "grade": "1",
+     "rate": 0.07
+    },
+    {
+     "grade": "2",
+     "rate": 0.033
+    },
+    {
+     "grade": "3",
+     "rate": 0.058
+    },
+    {
+     "grade": "4",
+     "rate": 0.052
+    },
+    {
+     "grade": "5",
+     "rate": 0.03
+    },
+    {
+     "grade": "6",
+     "rate": 0.115
+    },
+    {
+     "grade": "7",
+     "rate": 0.042
+    },
+    {
+     "grade": "8",
+     "rate": 0.23
+    },
+    {
+     "grade": "9",
+     "rate": 0.049
+    },
+    {
+     "grade": "10",
+     "rate": 0.066
+    },
+    {
+     "grade": "11",
+     "rate": 0.04
+    }
+   ],
+   "implied": 104.3,
+   "sy": 2020
+  },
+  {
+   "all": 0.078,
+   "cohort": 1496,
+   "cohort_fy": 2020,
+   "grade8_cohort": 141,
+   "grade8_implied": 25.7,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.163
+    },
+    {
+     "grade": "1",
+     "rate": 0.11
+    },
+    {
+     "grade": "2",
+     "rate": 0.084
+    },
+    {
+     "grade": "3",
+     "rate": 0.084
+    },
+    {
+     "grade": "4",
+     "rate": 0.079
+    },
+    {
+     "grade": "5",
+     "rate": 0.034
+    },
+    {
+     "grade": "6",
+     "rate": 0.043
+    },
+    {
+     "grade": "7",
+     "rate": 0.063
+    },
+    {
+     "grade": "8",
+     "rate": 0.182
+    },
+    {
+     "grade": "9",
+     "rate": 0.0
+    },
+    {
+     "grade": "10",
+     "rate": 0.033
+    },
+    {
+     "grade": "11",
+     "rate": 0.034
+    }
+   ],
+   "implied": 116.7,
+   "sy": 2021
+  },
+  {
+   "all": 0.069,
+   "cohort": 1442,
+   "cohort_fy": 2021,
+   "grade8_cohort": 120,
+   "grade8_implied": 23.6,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.067
+    },
+    {
+     "grade": "1",
+     "rate": 0.048
+    },
+    {
+     "grade": "2",
+     "rate": 0.069
+    },
+    {
+     "grade": "3",
+     "rate": 0.055
+    },
+    {
+     "grade": "4",
+     "rate": 0.027
+    },
+    {
+     "grade": "5",
+     "rate": 0.04
+    },
+    {
+     "grade": "6",
+     "rate": 0.087
+    },
+    {
+     "grade": "7",
+     "rate": 0.022
+    },
+    {
+     "grade": "8",
+     "rate": 0.197
+    },
+    {
+     "grade": "9",
+     "rate": 0.083
+    },
+    {
+     "grade": "10",
+     "rate": 0.073
+    },
+    {
+     "grade": "11",
+     "rate": 0.057
+    }
+   ],
+   "implied": 99.5,
+   "sy": 2022
+  },
+  {
+   "all": 0.061,
+   "cohort": 1436,
+   "cohort_fy": 2022,
+   "grade8_cohort": 142,
+   "grade8_implied": 27.1,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.065
+    },
+    {
+     "grade": "1",
+     "rate": 0.055
+    },
+    {
+     "grade": "2",
+     "rate": 0.019
+    },
+    {
+     "grade": "3",
+     "rate": 0.015
+    },
+    {
+     "grade": "4",
+     "rate": 0.045
+    },
+    {
+     "grade": "5",
+     "rate": 0.035
+    },
+    {
+     "grade": "6",
+     "rate": 0.06
+    },
+    {
+     "grade": "7",
+     "rate": 0.032
+    },
+    {
+     "grade": "8",
+     "rate": 0.191
+    },
+    {
+     "grade": "9",
+     "rate": 0.048
+    },
+    {
+     "grade": "10",
+     "rate": 0.089
+    },
+    {
+     "grade": "11",
+     "rate": 0.049
+    }
+   ],
+   "implied": 87.6,
+   "sy": 2023
+  },
+  {
+   "all": 0.05,
+   "cohort": 1416,
+   "cohort_fy": 2023,
+   "grade8_cohort": 129,
+   "grade8_implied": 24.0,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.009
+    },
+    {
+     "grade": "1",
+     "rate": 0.033
+    },
+    {
+     "grade": "2",
+     "rate": 0.045
+    },
+    {
+     "grade": "3",
+     "rate": 0.063
+    },
+    {
+     "grade": "4",
+     "rate": 0.035
+    },
+    {
+     "grade": "5",
+     "rate": 0.038
+    },
+    {
+     "grade": "6",
+     "rate": 0.042
+    },
+    {
+     "grade": "7",
+     "rate": 0.046
+    },
+    {
+     "grade": "8",
+     "rate": 0.186
+    },
+    {
+     "grade": "9",
+     "rate": 0.042
+    },
+    {
+     "grade": "10",
+     "rate": 0.01
+    },
+    {
+     "grade": "11",
+     "rate": 0.037
+    }
+   ],
+   "implied": 70.8,
+   "sy": 2024
+  },
+  {
+   "all": 0.062,
+   "cohort": 1421,
+   "cohort_fy": 2024,
+   "grade8_cohort": 132,
+   "grade8_implied": 31.4,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.047
+    },
+    {
+     "grade": "1",
+     "rate": 0.076
+    },
+    {
+     "grade": "2",
+     "rate": 0.041
+    },
+    {
+     "grade": "3",
+     "rate": 0.054
+    },
+    {
+     "grade": "4",
+     "rate": 0.037
+    },
+    {
+     "grade": "5",
+     "rate": 0.035
+    },
+    {
+     "grade": "6",
+     "rate": 0.046
+    },
+    {
+     "grade": "7",
+     "rate": 0.024
+    },
+    {
+     "grade": "8",
+     "rate": 0.238
+    },
+    {
+     "grade": "9",
+     "rate": 0.068
+    },
+    {
+     "grade": "10",
+     "rate": 0.042
+    },
+    {
+     "grade": "11",
+     "rate": 0.02
+    }
+   ],
+   "implied": 88.1,
+   "sy": 2025
+  },
+  {
+   "all": 0.062,
+   "cohort": 1406,
+   "cohort_fy": 2025,
+   "grade8_cohort": 122,
+   "grade8_implied": 33.8,
+   "grades": [
+    {
+     "grade": "K",
+     "rate": 0.043
+    },
+    {
+     "grade": "1",
+     "rate": 0.038
+    },
+    {
+     "grade": "2",
+     "rate": 0.07
+    },
+    {
+     "grade": "3",
+     "rate": 0.016
+    },
+    {
+     "grade": "4",
+     "rate": 0.055
+    },
+    {
+     "grade": "5",
+     "rate": 0.017
+    },
+    {
+     "grade": "6",
+     "rate": 0.078
+    },
+    {
+     "grade": "7",
+     "rate": 0.045
+    },
+    {
+     "grade": "8",
+     "rate": 0.277
+    },
+    {
+     "grade": "9",
+     "rate": 0.055
+    },
+    {
+     "grade": "10",
+     "rate": 0.027
+    },
+    {
+     "grade": "11",
+     "rate": 0.009
+    }
+   ],
+   "implied": 87.2,
+   "sy": 2026
+  }
+ ],
+ "enrolment": [
+  {
+   "fy": 1994,
+   "total": 1758
+  },
+  {
+   "fy": 1995,
+   "total": 1786
+  },
+  {
+   "fy": 1996,
+   "total": 1788
+  },
+  {
+   "fy": 1997,
+   "total": 1843
+  },
+  {
+   "fy": 1998,
+   "total": 1829
+  },
+  {
+   "fy": 1999,
+   "total": 1830
+  },
+  {
+   "fy": 2000,
+   "total": 1861
+  },
+  {
+   "fy": 2001,
+   "total": 1889
+  },
+  {
+   "fy": 2002,
+   "total": 1851
+  },
+  {
+   "fy": 2003,
+   "total": 1887
+  },
+  {
+   "fy": 2004,
+   "total": 1830
+  },
+  {
+   "fy": 2005,
+   "total": 1822
+  },
+  {
+   "fy": 2006,
+   "total": 1836
+  },
+  {
+   "fy": 2007,
+   "total": 1844
+  },
+  {
+   "fy": 2008,
+   "total": 1824
+  },
+  {
+   "fy": 2009,
+   "total": 1739
+  },
+  {
+   "fy": 2010,
+   "total": 1702
+  },
+  {
+   "fy": 2011,
+   "total": 1650
+  },
+  {
+   "fy": 2012,
+   "total": 1637
+  },
+  {
+   "fy": 2013,
+   "total": 1587
+  },
+  {
+   "fy": 2014,
+   "total": 1564
+  },
+  {
+   "fy": 2015,
+   "total": 1557
+  },
+  {
+   "fy": 2016,
+   "total": 1567
+  },
+  {
+   "fy": 2017,
+   "total": 1613
+  },
+  {
+   "fy": 2018,
+   "total": 1641
+  },
+  {
+   "fy": 2019,
+   "total": 1649
+  },
+  {
+   "fy": 2020,
+   "total": 1641
+  },
+  {
+   "fy": 2021,
+   "total": 1593
+  },
+  {
+   "fy": 2022,
+   "total": 1597
+  },
+  {
+   "fy": 2023,
+   "total": 1562
+  },
+  {
+   "fy": 2024,
+   "total": 1580
+  },
+  {
+   "fy": 2025,
+   "total": 1563
+  },
+  {
+   "fy": 2026,
+   "total": 1568
+  }
+ ],
+ "eras": {
+  "bands": [
+   {
+    "all_mean": 0.0637,
+    "covid": false,
+    "first_asserted": false,
+    "first_sy": 2010,
+    "last_asserted": false,
+    "last_sy": 2012,
+    "outlier_mean": 0.2003,
+    "span": "9\u201312",
+    "years": 3,
+    "years_in_file": 3
+   },
+   {
+    "all_mean": 0.0628,
+    "covid": false,
+    "first_asserted": false,
+    "first_sy": 2013,
+    "last_asserted": false,
+    "last_sy": 2016,
+    "outlier_mean": 0.2145,
+    "span": "8\u201312",
+    "years": 4,
+    "years_in_file": 4
+   },
+   {
+    "all_mean": 0.0543,
+    "covid": false,
+    "first_asserted": false,
+    "first_sy": 2017,
+    "last_asserted": true,
+    "last_sy": 2019,
+    "outlier_mean": 0.1737,
+    "span": "9\u201312",
+    "years": 3,
+    "years_in_file": 3
+   },
+   {
+    "all_mean": 0.0723,
+    "covid": true,
+    "first_asserted": true,
+    "first_sy": 2020,
+    "last_asserted": true,
+    "last_sy": 2022,
+    "outlier_mean": 0.203,
+    "span": "9\u201312",
+    "years": 3,
+    "years_in_file": 3
+   },
+   {
+    "all_mean": 0.0587,
+    "covid": false,
+    "first_asserted": true,
+    "first_sy": 2023,
+    "last_asserted": false,
+    "last_sy": 2026,
+    "outlier_mean": 0.223,
+    "span": "9\u201312",
+    "years": 4,
+    "years_in_file": 4
+   }
+  ],
+  "high": {
+   "all_mean": 0.0587,
+   "covid": false,
+   "first_asserted": true,
+   "first_sy": 2023,
+   "last_asserted": false,
+   "last_sy": 2026,
+   "outlier_mean": 0.223,
+   "span": "9\u201312",
+   "years": 4,
+   "years_in_file": 4
+  },
+  "low": {
+   "all_mean": 0.0543,
+   "covid": false,
+   "first_asserted": false,
+   "first_sy": 2017,
+   "last_asserted": true,
+   "last_sy": 2019,
+   "outlier_mean": 0.1737,
+   "span": "9\u201312",
+   "years": 3,
+   "years_in_file": 3
+  },
+  "spread": 0.0493
+ },
+ "first_sy": 2010,
+ "gaps": [
+  {
+   "closes": "one column. DESE's residents-sending file with a grade on each row, or the district's own October SIMS submission broken out by exit grade and exit reason, which the district files to the state every 1 October and does not report to its own School Committee.",
+   "side": "students",
+   "what": "Which school a Lunenburg student who left went to, by grade",
+   "why": "DESE publishes two files that each hold half of this and never the join. `dese_attrition` gives an attrition rate for every grade, every year, and names no destination. `dese_residents_sending` names every receiving district and the reason -- Monty Tech, school choice, charter, foster care -- and carries no grade at all. So the single largest measured departure in this town, about one in five of every eighth grade, cannot be attributed to anywhere: a vocational admission, a private school, a charter, a school choice transfer, an out-of-district placement and a family moving out of town are one number."
+  },
+  {
+   "closes": "nothing anybody currently publishes. The nearest thing is an exit survey or an exit-reason tally kept by the district at the point a student is withdrawn, which is a record the district could choose to keep and report and does not.",
+   "side": "students",
+   "what": "Why one in five Lunenburg eighth graders does not return for grade 9",
+   "why": "The rate is measured and stable across seventeen years, two building reorganisations and a pandemic. The reason is not measured anywhere. Monty Tech admits at grade 9 and Lunenburg is a member town there, so a child going there moves part of the town's bill rather than adding to it -- but nothing published links the two quantities, and the same rate is equally consistent with private and parochial admission at grade 9, with charter admission, with an out-of-district special education placement made at the transition, and with families moving."
+  },
+  {
+   "closes": "the district's withdrawal records coded by reason (moved out of district / transferred within Massachusetts / private / home school), which is a field SIMS already requires the district to report on every exit.",
+   "side": "students",
+   "what": "How many of the children counted as leaving a Lunenburg school moved out of town",
+   "why": "Attrition is leaving for ANY reason, so a family that moves to another state and a family that keeps its address and enrolls a child elsewhere are the same number. Without the split, the rate cannot be read as a statement about the schools at all -- and it is the reading every resident supplies. The town's own records could bound it: residency is what the district verifies at enrollment and what the assessor's and clerk's records track."
+  }
+ ],
+ "generated_by": "scripts/build_attrition.py",
+ "grade8_lag": {
+  "attrition_years": [
+   2014,
+   2015,
+   2016,
+   2017
+  ],
+  "enrolment_years": [
+   2013,
+   2014,
+   2015,
+   2016
+  ],
+  "lag": 1,
+  "school": "Lunenburg High",
+  "years": 4
+ },
+ "grade9": {
+  "larger": 16,
+  "mean_leaving": 26.6,
+  "mean_residual": 11.7,
+  "steps": 17,
+  "years": [
+   {
+    "cohort_fy": 2009,
+    "grade8": 134,
+    "grade9": 144,
+    "rate": 0.2,
+    "residual": 36.8,
+    "stayed": 107.2,
+    "sy": 2010
+   },
+   {
+    "cohort_fy": 2010,
+    "grade8": 135,
+    "grade9": 124,
+    "rate": 0.207,
+    "residual": 16.9,
+    "stayed": 107.1,
+    "sy": 2011
+   },
+   {
+    "cohort_fy": 2011,
+    "grade8": 128,
+    "grade9": 114,
+    "rate": 0.194,
+    "residual": 10.8,
+    "stayed": 103.2,
+    "sy": 2012
+   },
+   {
+    "cohort_fy": 2012,
+    "grade8": 124,
+    "grade9": 105,
+    "rate": 0.287,
+    "residual": 16.6,
+    "stayed": 88.4,
+    "sy": 2013
+   },
+   {
+    "cohort_fy": 2013,
+    "grade8": 122,
+    "grade9": 106,
+    "rate": 0.205,
+    "residual": 9.0,
+    "stayed": 97.0,
+    "sy": 2014
+   },
+   {
+    "cohort_fy": 2014,
+    "grade8": 144,
+    "grade9": 108,
+    "rate": 0.234,
+    "residual": -2.3,
+    "stayed": 110.3,
+    "sy": 2015
+   },
+   {
+    "cohort_fy": 2015,
+    "grade8": 127,
+    "grade9": 117,
+    "rate": 0.132,
+    "residual": 6.8,
+    "stayed": 110.2,
+    "sy": 2016
+   },
+   {
+    "cohort_fy": 2016,
+    "grade8": 115,
+    "grade9": 112,
+    "rate": 0.191,
+    "residual": 19.0,
+    "stayed": 93.0,
+    "sy": 2017
+   },
+   {
+    "cohort_fy": 2017,
+    "grade8": 123,
+    "grade9": 124,
+    "rate": 0.153,
+    "residual": 19.8,
+    "stayed": 104.2,
+    "sy": 2018
+   },
+   {
+    "cohort_fy": 2018,
+    "grade8": 147,
+    "grade9": 126,
+    "rate": 0.177,
+    "residual": 5.0,
+    "stayed": 121.0,
+    "sy": 2019
+   },
+   {
+    "cohort_fy": 2019,
+    "grade8": 126,
+    "grade9": 107,
+    "rate": 0.23,
+    "residual": 10.0,
+    "stayed": 97.0,
+    "sy": 2020
+   },
+   {
+    "cohort_fy": 2020,
+    "grade8": 141,
+    "grade9": 122,
+    "rate": 0.182,
+    "residual": 6.7,
+    "stayed": 115.3,
+    "sy": 2021
+   },
+   {
+    "cohort_fy": 2021,
+    "grade8": 120,
+    "grade9": 107,
+    "rate": 0.197,
+    "residual": 10.6,
+    "stayed": 96.4,
+    "sy": 2022
+   },
+   {
+    "cohort_fy": 2022,
+    "grade8": 142,
+    "grade9": 125,
+    "rate": 0.191,
+    "residual": 10.1,
+    "stayed": 114.9,
+    "sy": 2023
+   },
+   {
+    "cohort_fy": 2023,
+    "grade8": 129,
+    "grade9": 119,
+    "rate": 0.186,
+    "residual": 14.0,
+    "stayed": 105.0,
+    "sy": 2024
+   },
+   {
+    "cohort_fy": 2024,
+    "grade8": 132,
+    "grade9": 109,
+    "rate": 0.238,
+    "residual": 8.4,
+    "stayed": 100.6,
+    "sy": 2025
+   },
+   {
+    "cohort_fy": 2025,
+    "grade8": 122,
+    "grade9": 89,
+    "rate": 0.277,
+    "residual": 0.8,
+    "stayed": 88.2,
+    "sy": 2026
+   }
+  ]
+ },
+ "grade_profile": [
+  {
+   "grade": "K",
+   "max": 0.163,
+   "max_sy": 2021,
+   "mean": 0.0615,
+   "median": 0.065,
+   "min": 0.009,
+   "min_sy": 2024,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "1",
+   "max": 0.11,
+   "max_sy": 2021,
+   "mean": 0.053,
+   "median": 0.052,
+   "min": 0.017,
+   "min_sy": 2014,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "2",
+   "max": 0.107,
+   "max_sy": 2016,
+   "mean": 0.0501,
+   "median": 0.045,
+   "min": 0.016,
+   "min_sy": 2015,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "3",
+   "max": 0.084,
+   "max_sy": 2021,
+   "mean": 0.0425,
+   "median": 0.04,
+   "min": 0.01,
+   "min_sy": 2012,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "4",
+   "max": 0.079,
+   "max_sy": 2021,
+   "mean": 0.0375,
+   "median": 0.037,
+   "min": 0.009,
+   "min_sy": 2013,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "5",
+   "max": 0.048,
+   "max_sy": 2013,
+   "mean": 0.0303,
+   "median": 0.034,
+   "min": 0.009,
+   "min_sy": 2014,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "6",
+   "max": 0.115,
+   "max_sy": 2020,
+   "mean": 0.0643,
+   "median": 0.06,
+   "min": 0.035,
+   "min_sy": 2015,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "7",
+   "max": 0.075,
+   "max_sy": 2010,
+   "mean": 0.042,
+   "median": 0.045,
+   "min": 0.007,
+   "min_sy": 2018,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "8",
+   "max": 0.287,
+   "max_sy": 2013,
+   "mean": 0.2048,
+   "median": 0.197,
+   "min": 0.132,
+   "min_sy": 2016,
+   "times_highest": 17,
+   "years": 17
+  },
+  {
+   "grade": "9",
+   "max": 0.083,
+   "max_sy": 2022,
+   "mean": 0.049,
+   "median": 0.048,
+   "min": 0.0,
+   "min_sy": 2021,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "10",
+   "max": 0.097,
+   "max_sy": 2013,
+   "mean": 0.0558,
+   "median": 0.053,
+   "min": 0.01,
+   "min_sy": 2024,
+   "times_highest": 0,
+   "years": 17
+  },
+  {
+   "grade": "11",
+   "max": 0.079,
+   "max_sy": 2010,
+   "mean": 0.0434,
+   "median": 0.04,
+   "min": 0.009,
+   "min_sy": 2026,
+   "times_highest": 0,
+   "years": 17
+  }
+ ],
+ "grain": "A RATE, NEVER A COUNT. Of the children in one grade in one year, the share who were not enrolled in a Lunenburg school the following October. It cannot be summed across grades and cannot be averaged across them without weighting by the enrolment in each. It counts leaving for ANY reason and names no destination. Where a number of children appears on this page it is the rate multiplied by DESE\u2019s own enrolment, and it says so.",
+ "group_definition_lag": {
+  "dese_says": "Economically Disadvantaged was used 2015-2021. Low Income was used prior to 2015, and a different version of Low Income has been used since 2022.",
+  "economically_disadvantaged": [
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ],
+  "low_income": [
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2023,
+   2024,
+   2025,
+   2026
+  ]
+ },
+ "group_gap": {
+  "grades": [
+   {
+    "all_mean": 0.0615,
+    "gap_points": -0.2,
+    "grade": "K",
+    "group_mean": 0.0591,
+    "years": 17
+   },
+   {
+    "all_mean": 0.053,
+    "gap_points": 1.4,
+    "grade": "1",
+    "group_mean": 0.0672,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0501,
+    "gap_points": 1.9,
+    "grade": "2",
+    "group_mean": 0.0688,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0425,
+    "gap_points": 0.3,
+    "grade": "3",
+    "group_mean": 0.0458,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0375,
+    "gap_points": 0.3,
+    "grade": "4",
+    "group_mean": 0.0406,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0303,
+    "gap_points": 1.5,
+    "grade": "5",
+    "group_mean": 0.0457,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0643,
+    "gap_points": 1.9,
+    "grade": "6",
+    "group_mean": 0.0831,
+    "years": 17
+   },
+   {
+    "all_mean": 0.042,
+    "gap_points": 3.9,
+    "grade": "7",
+    "group_mean": 0.0814,
+    "years": 17
+   },
+   {
+    "all_mean": 0.2048,
+    "gap_points": 14.3,
+    "grade": "8",
+    "group_mean": 0.3474,
+    "years": 17
+   },
+   {
+    "all_mean": 0.049,
+    "gap_points": 4.1,
+    "grade": "9",
+    "group_mean": 0.0903,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0558,
+    "gap_points": 3.0,
+    "grade": "10",
+    "group_mean": 0.0861,
+    "years": 17
+   },
+   {
+    "all_mean": 0.0434,
+    "gap_points": 3.1,
+    "grade": "11",
+    "group_mean": 0.0739,
+    "years": 17
+   }
+  ],
+  "grp": "Students with Disabilities",
+  "next_widest": {
+   "all_mean": 0.049,
+   "gap_points": 4.1,
+   "grade": "9",
+   "group_mean": 0.0903,
+   "years": 17
+  },
+  "widest": {
+   "all_mean": 0.2048,
+   "gap_points": 14.3,
+   "grade": "8",
+   "group_mean": 0.3474,
+   "years": 17
+  }
+ },
+ "groups": [
+  {
+   "all_mean": 0.0622,
+   "broken": false,
+   "first_sy": 2010,
+   "gap_points": 0.0,
+   "grp": "All Students",
+   "last_sy": 2026,
+   "max": 0.287,
+   "mean": 0.2048,
+   "min": 0.132,
+   "published_years": 17,
+   "series": [
+    {
+     "all": 0.065,
+     "cohort_fy": 2009,
+     "rate": 0.2,
+     "sy": 2010
+    },
+    {
+     "all": 0.067,
+     "cohort_fy": 2010,
+     "rate": 0.207,
+     "sy": 2011
+    },
+    {
+     "all": 0.059,
+     "cohort_fy": 2011,
+     "rate": 0.194,
+     "sy": 2012
+    },
+    {
+     "all": 0.074,
+     "cohort_fy": 2012,
+     "rate": 0.287,
+     "sy": 2013
+    },
+    {
+     "all": 0.063,
+     "cohort_fy": 2013,
+     "rate": 0.205,
+     "sy": 2014
+    },
+    {
+     "all": 0.06,
+     "cohort_fy": 2014,
+     "rate": 0.234,
+     "sy": 2015
+    },
+    {
+     "all": 0.054,
+     "cohort_fy": 2015,
+     "rate": 0.132,
+     "sy": 2016
+    },
+    {
+     "all": 0.058,
+     "cohort_fy": 2016,
+     "rate": 0.191,
+     "sy": 2017
+    },
+    {
+     "all": 0.045,
+     "cohort_fy": 2017,
+     "rate": 0.153,
+     "sy": 2018
+    },
+    {
+     "all": 0.06,
+     "cohort_fy": 2018,
+     "rate": 0.177,
+     "sy": 2019
+    },
+    {
+     "all": 0.07,
+     "cohort_fy": 2019,
+     "rate": 0.23,
+     "sy": 2020
+    },
+    {
+     "all": 0.078,
+     "cohort_fy": 2020,
+     "rate": 0.182,
+     "sy": 2021
+    },
+    {
+     "all": 0.069,
+     "cohort_fy": 2021,
+     "rate": 0.197,
+     "sy": 2022
+    },
+    {
+     "all": 0.061,
+     "cohort_fy": 2022,
+     "rate": 0.191,
+     "sy": 2023
+    },
+    {
+     "all": 0.05,
+     "cohort_fy": 2023,
+     "rate": 0.186,
+     "sy": 2024
+    },
+    {
+     "all": 0.062,
+     "cohort_fy": 2024,
+     "rate": 0.238,
+     "sy": 2025
+    },
+    {
+     "all": 0.062,
+     "cohort_fy": 2025,
+     "rate": 0.277,
+     "sy": 2026
+    }
+   ],
+   "years": 17
+  },
+  {
+   "all_mean": 0.0882,
+   "broken": false,
+   "first_sy": 2010,
+   "gap_points": 14.3,
+   "grp": "Students with Disabilities",
+   "last_sy": 2026,
+   "max": 0.545,
+   "mean": 0.3474,
+   "min": 0.19,
+   "published_years": 17,
+   "series": [
+    {
+     "all": 0.097,
+     "cohort_fy": 2009,
+     "rate": 0.429,
+     "sy": 2010
+    },
+    {
+     "all": 0.096,
+     "cohort_fy": 2010,
+     "rate": 0.545,
+     "sy": 2011
+    },
+    {
+     "all": 0.077,
+     "cohort_fy": 2011,
+     "rate": 0.4,
+     "sy": 2012
+    },
+    {
+     "all": 0.077,
+     "cohort_fy": 2012,
+     "rate": 0.316,
+     "sy": 2013
+    },
+    {
+     "all": 0.096,
+     "cohort_fy": 2013,
+     "rate": 0.318,
+     "sy": 2014
+    },
+    {
+     "all": 0.103,
+     "cohort_fy": 2014,
+     "rate": 0.429,
+     "sy": 2015
+    },
+    {
+     "all": 0.086,
+     "cohort_fy": 2015,
+     "rate": 0.19,
+     "sy": 2016
+    },
+    {
+     "all": 0.076,
+     "cohort_fy": 2016,
+     "rate": 0.353,
+     "sy": 2017
+    },
+    {
+     "all": 0.069,
+     "cohort_fy": 2017,
+     "rate": 0.444,
+     "sy": 2018
+    },
+    {
+     "all": 0.103,
+     "cohort_fy": 2018,
+     "rate": 0.438,
+     "sy": 2019
+    },
+    {
+     "all": 0.117,
+     "cohort_fy": 2019,
+     "rate": 0.313,
+     "sy": 2020
+    },
+    {
+     "all": 0.085,
+     "cohort_fy": 2020,
+     "rate": 0.2,
+     "sy": 2021
+    },
+    {
+     "all": 0.146,
+     "cohort_fy": 2021,
+     "rate": 0.444,
+     "sy": 2022
+    },
+    {
+     "all": 0.05,
+     "cohort_fy": 2022,
+     "rate": 0.3,
+     "sy": 2023
+    },
+    {
+     "all": 0.061,
+     "cohort_fy": 2023,
+     "rate": 0.263,
+     "sy": 2024
+    },
+    {
+     "all": 0.092,
+     "cohort_fy": 2024,
+     "rate": 0.261,
+     "sy": 2025
+    },
+    {
+     "all": 0.068,
+     "cohort_fy": 2025,
+     "rate": 0.263,
+     "sy": 2026
+    }
+   ],
+   "years": 17
+  },
+  {
+   "all_mean": 0.0992,
+   "broken": false,
+   "first_sy": 2010,
+   "gap_points": 9.5,
+   "grp": "High Needs",
+   "last_sy": 2026,
+   "max": 0.407,
+   "mean": 0.2998,
+   "min": 0.143,
+   "published_years": 17,
+   "series": [
+    {
+     "all": 0.11,
+     "cohort_fy": 2009,
+     "rate": 0.407,
+     "sy": 2010
+    },
+    {
+     "all": 0.104,
+     "cohort_fy": 2010,
+     "rate": 0.258,
+     "sy": 2011
+    },
+    {
+     "all": 0.087,
+     "cohort_fy": 2011,
+     "rate": 0.355,
+     "sy": 2012
+    },
+    {
+     "all": 0.118,
+     "cohort_fy": 2012,
+     "rate": 0.4,
+     "sy": 2013
+    },
+    {
+     "all": 0.092,
+     "cohort_fy": 2013,
+     "rate": 0.273,
+     "sy": 2014
+    },
+    {
+     "all": 0.112,
+     "cohort_fy": 2014,
+     "rate": 0.341,
+     "sy": 2015
+    },
+    {
+     "all": 0.093,
+     "cohort_fy": 2015,
+     "rate": 0.143,
+     "sy": 2016
+    },
+    {
+     "all": 0.098,
+     "cohort_fy": 2016,
+     "rate": 0.308,
+     "sy": 2017
+    },
+    {
+     "all": 0.082,
+     "cohort_fy": 2017,
+     "rate": 0.344,
+     "sy": 2018
+    },
+    {
+     "all": 0.111,
+     "cohort_fy": 2018,
+     "rate": 0.364,
+     "sy": 2019
+    },
+    {
+     "all": 0.106,
+     "cohort_fy": 2019,
+     "rate": 0.361,
+     "sy": 2020
+    },
+    {
+     "all": 0.101,
+     "cohort_fy": 2020,
+     "rate": 0.154,
+     "sy": 2021
+    },
+    {
+     "all": 0.125,
+     "cohort_fy": 2021,
+     "rate": 0.333,
+     "sy": 2022
+    },
+    {
+     "all": 0.079,
+     "cohort_fy": 2022,
+     "rate": 0.213,
+     "sy": 2023
+    },
+    {
+     "all": 0.081,
+     "cohort_fy": 2023,
+     "rate": 0.25,
+     "sy": 2024
+    },
+    {
+     "all": 0.096,
+     "cohort_fy": 2024,
+     "rate": 0.268,
+     "sy": 2025
+    },
+    {
+     "all": 0.091,
+     "cohort_fy": 2025,
+     "rate": 0.324,
+     "sy": 2026
+    }
+   ],
+   "years": 17
+  },
+  {
+   "all_mean": 0.118,
+   "broken": true,
+   "first_sy": 2010,
+   "gap_points": 11.0,
+   "grp": "Low Income",
+   "last_sy": 2026,
+   "max": 0.571,
+   "mean": 0.3144,
+   "min": 0.195,
+   "published_years": 10,
+   "series": [
+    {
+     "all": 0.144,
+     "cohort_fy": 2009,
+     "rate": 0.4,
+     "sy": 2010
+    },
+    {
+     "all": 0.135,
+     "cohort_fy": 2010,
+     "rate": 0.208,
+     "sy": 2011
+    },
+    {
+     "all": 0.113,
+     "cohort_fy": 2011,
+     "rate": 0.333,
+     "sy": 2012
+    },
+    {
+     "all": 0.176,
+     "cohort_fy": 2012,
+     "rate": 0.571,
+     "sy": 2013
+    },
+    {
+     "all": 0.091,
+     "cohort_fy": 2013,
+     "rate": 0.294,
+     "sy": 2014
+    },
+    {
+     "all": 0.131,
+     "cohort_fy": 2014,
+     "rate": 0.304,
+     "sy": 2015
+    },
+    {
+     "all": 0.088,
+     "cohort_fy": 2022,
+     "rate": 0.195,
+     "sy": 2023
+    },
+    {
+     "all": 0.091,
+     "cohort_fy": 2023,
+     "rate": 0.28,
+     "sy": 2024
+    },
+    {
+     "all": 0.115,
+     "cohort_fy": 2024,
+     "rate": 0.259,
+     "sy": 2025
+    },
+    {
+     "all": 0.096,
+     "cohort_fy": 2025,
+     "rate": 0.3,
+     "sy": 2026
+    }
+   ],
+   "years": 10
+  },
+  {
+   "all_mean": 0.115,
+   "broken": true,
+   "first_sy": 2016,
+   "gap_points": 4.4,
+   "grp": "Economically Disadvantaged",
+   "last_sy": 2022,
+   "max": 0.333,
+   "mean": 0.2484,
+   "min": 0.115,
+   "published_years": 7,
+   "series": [
+    {
+     "all": 0.126,
+     "cohort_fy": 2015,
+     "rate": 0.214,
+     "sy": 2016
+    },
+    {
+     "all": 0.12,
+     "cohort_fy": 2016,
+     "rate": 0.267,
+     "sy": 2017
+    },
+    {
+     "all": 0.113,
+     "cohort_fy": 2017,
+     "rate": 0.316,
+     "sy": 2018
+    },
+    {
+     "all": 0.094,
+     "cohort_fy": 2018,
+     "rate": 0.263,
+     "sy": 2019
+    },
+    {
+     "all": 0.108,
+     "cohort_fy": 2019,
+     "rate": 0.333,
+     "sy": 2020
+    },
+    {
+     "all": 0.12,
+     "cohort_fy": 2020,
+     "rate": 0.115,
+     "sy": 2021
+    },
+    {
+     "all": 0.124,
+     "cohort_fy": 2021,
+     "rate": 0.231,
+     "sy": 2022
+    }
+   ],
+   "years": 7
+  },
+  {
+   "all_mean": 0.1124,
+   "broken": false,
+   "grp": "English Learners",
+   "published_years": 0,
+   "series": [
+    {
+     "all": null,
+     "cohort_fy": 2009,
+     "rate": null,
+     "sy": 2010
+    },
+    {
+     "all": 0.111,
+     "cohort_fy": 2010,
+     "rate": null,
+     "sy": 2011
+    },
+    {
+     "all": 0.0,
+     "cohort_fy": 2011,
+     "rate": null,
+     "sy": 2012
+    },
+    {
+     "all": 0.0,
+     "cohort_fy": 2012,
+     "rate": null,
+     "sy": 2013
+    },
+    {
+     "all": 0.063,
+     "cohort_fy": 2013,
+     "rate": null,
+     "sy": 2014
+    },
+    {
+     "all": 0.1,
+     "cohort_fy": 2014,
+     "rate": null,
+     "sy": 2015
+    },
+    {
+     "all": 0.063,
+     "cohort_fy": 2015,
+     "rate": null,
+     "sy": 2016
+    },
+    {
+     "all": 0.37,
+     "cohort_fy": 2016,
+     "rate": null,
+     "sy": 2017
+    },
+    {
+     "all": 0.037,
+     "cohort_fy": 2017,
+     "rate": null,
+     "sy": 2018
+    },
+    {
+     "all": 0.265,
+     "cohort_fy": 2018,
+     "rate": null,
+     "sy": 2019
+    },
+    {
+     "all": 0.167,
+     "cohort_fy": 2019,
+     "rate": null,
+     "sy": 2020
+    },
+    {
+     "all": 0.056,
+     "cohort_fy": 2020,
+     "rate": null,
+     "sy": 2021
+    },
+    {
+     "all": 0.211,
+     "cohort_fy": 2021,
+     "rate": null,
+     "sy": 2022
+    },
+    {
+     "all": 0.13,
+     "cohort_fy": 2022,
+     "rate": null,
+     "sy": 2023
+    },
+    {
+     "all": 0.065,
+     "cohort_fy": 2023,
+     "rate": null,
+     "sy": 2024
+    },
+    {
+     "all": 0.047,
+     "cohort_fy": 2024,
+     "rate": null,
+     "sy": 2025
+    },
+    {
+     "all": 0.113,
+     "cohort_fy": 2025,
+     "rate": null,
+     "sy": 2026
+    }
+   ],
+   "years": 17
+  },
+  {
+   "all_mean": 0.0648,
+   "broken": false,
+   "first_sy": 2010,
+   "gap_points": 2.3,
+   "grp": "Male",
+   "last_sy": 2026,
+   "max": 0.375,
+   "mean": 0.2281,
+   "min": 0.131,
+   "published_years": 17,
+   "series": [
+    {
+     "all": 0.077,
+     "cohort_fy": 2009,
+     "rate": 0.243,
+     "sy": 2010
+    },
+    {
+     "all": 0.07,
+     "cohort_fy": 2010,
+     "rate": 0.232,
+     "sy": 2011
+    },
+    {
+     "all": 0.064,
+     "cohort_fy": 2011,
+     "rate": 0.21,
+     "sy": 2012
+    },
+    {
+     "all": 0.079,
+     "cohort_fy": 2012,
+     "rate": 0.375,
+     "sy": 2013
+    },
+    {
+     "all": 0.065,
+     "cohort_fy": 2013,
+     "rate": 0.259,
+     "sy": 2014
+    },
+    {
+     "all": 0.057,
+     "cohort_fy": 2014,
+     "rate": 0.304,
+     "sy": 2015
+    },
+    {
+     "all": 0.06,
+     "cohort_fy": 2015,
+     "rate": 0.131,
+     "sy": 2016
+    },
+    {
+     "all": 0.054,
+     "cohort_fy": 2016,
+     "rate": 0.25,
+     "sy": 2017
+    },
+    {
+     "all": 0.046,
+     "cohort_fy": 2017,
+     "rate": 0.167,
+     "sy": 2018
+    },
+    {
+     "all": 0.072,
+     "cohort_fy": 2018,
+     "rate": 0.228,
+     "sy": 2019
+    },
+    {
+     "all": 0.076,
+     "cohort_fy": 2019,
+     "rate": 0.219,
+     "sy": 2020
+    },
+    {
+     "all": 0.077,
+     "cohort_fy": 2020,
+     "rate": 0.184,
+     "sy": 2021
+    },
+    {
+     "all": 0.07,
+     "cohort_fy": 2021,
+     "rate": 0.222,
+     "sy": 2022
+    },
+    {
+     "all": 0.064,
+     "cohort_fy": 2022,
+     "rate": 0.183,
+     "sy": 2023
+    },
+    {
+     "all": 0.051,
+     "cohort_fy": 2023,
+     "rate": 0.203,
+     "sy": 2024
+    },
+    {
+     "all": 0.063,
+     "cohort_fy": 2024,
+     "rate": 0.197,
+     "sy": 2025
+    },
+    {
+     "all": 0.057,
+     "cohort_fy": 2025,
+     "rate": 0.27,
+     "sy": 2026
+    }
+   ],
+   "years": 17
+  },
+  {
+   "all_mean": 0.0597,
+   "broken": false,
+   "first_sy": 2010,
+   "gap_points": -2.5,
+   "grp": "Female",
+   "last_sy": 2026,
+   "max": 0.286,
+   "mean": 0.1803,
+   "min": 0.118,
+   "published_years": 17,
+   "series": [
+    {
+     "all": 0.054,
+     "cohort_fy": 2009,
+     "rate": 0.154,
+     "sy": 2010
+    },
+    {
+     "all": 0.064,
+     "cohort_fy": 2010,
+     "rate": 0.183,
+     "sy": 2011
+    },
+    {
+     "all": 0.053,
+     "cohort_fy": 2011,
+     "rate": 0.179,
+     "sy": 2012
+    },
+    {
+     "all": 0.069,
+     "cohort_fy": 2012,
+     "rate": 0.19,
+     "sy": 2013
+    },
+    {
+     "all": 0.062,
+     "cohort_fy": 2013,
+     "rate": 0.156,
+     "sy": 2014
+    },
+    {
+     "all": 0.064,
+     "cohort_fy": 2014,
+     "rate": 0.167,
+     "sy": 2015
+    },
+    {
+     "all": 0.048,
+     "cohort_fy": 2015,
+     "rate": 0.133,
+     "sy": 2016
+    },
+    {
+     "all": 0.062,
+     "cohort_fy": 2016,
+     "rate": 0.118,
+     "sy": 2017
+    },
+    {
+     "all": 0.044,
+     "cohort_fy": 2017,
+     "rate": 0.135,
+     "sy": 2018
+    },
+    {
+     "all": 0.048,
+     "cohort_fy": 2018,
+     "rate": 0.118,
+     "sy": 2019
+    },
+    {
+     "all": 0.065,
+     "cohort_fy": 2019,
+     "rate": 0.245,
+     "sy": 2020
+    },
+    {
+     "all": 0.08,
+     "cohort_fy": 2020,
+     "rate": 0.179,
+     "sy": 2021
+    },
+    {
+     "all": 0.066,
+     "cohort_fy": 2021,
+     "rate": 0.172,
+     "sy": 2022
+    },
+    {
+     "all": 0.058,
+     "cohort_fy": 2022,
+     "rate": 0.2,
+     "sy": 2023
+    },
+    {
+     "all": 0.05,
+     "cohort_fy": 2023,
+     "rate": 0.169,
+     "sy": 2024
+    },
+    {
+     "all": 0.062,
+     "cohort_fy": 2024,
+     "rate": 0.281,
+     "sy": 2025
+    },
+    {
+     "all": 0.066,
+     "cohort_fy": 2025,
+     "rate": 0.286,
+     "sy": 2026
+    }
+   ],
+   "years": 17
+  }
+ ],
+ "last_sy": 2026,
+ "levels": {
+  "district_rows": 237,
+  "groups": [
+   "All Students",
+   "American Indian or Alaska Native",
+   "Asian",
+   "Black or African American",
+   "Economically Disadvantaged",
+   "English Learners",
+   "Female",
+   "High Needs",
+   "Hispanic or Latino",
+   "Low Income",
+   "Male",
+   "Multi-Race, Not Hispanic or Latino",
+   "Native Hawaiian or Other Pacific Islander",
+   "Students with Disabilities",
+   "White"
+  ],
+  "rows": 1061,
+  "school_rows": 824
+ },
+ "minutes": {
+  "first_date": "2009-01-05",
+  "held": 12015,
+  "image_scan": 3096,
+  "last_date": "2026-11-17",
+  "searchable": 8899,
+  "searchable_share": 0.7407,
+  "text_files_present": 12014,
+  "unsearchable": 3116
+ },
+ "not_established": [
+  "WHY anybody left. Attrition is leaving for any reason. A vocational admission, a private school, a charter, a school choice transfer, an out-of-district placement and a family moving for work are one number in this file, and nothing in it separates them.",
+  "Where they went. DESE\u2019s own file of where the town\u2019s resident children are educated carries a receiving district and a reason and NO GRADE, so the 177 children educated somewhere else in FY2026 cannot be attributed to the grade they left in. Monty Tech holds 97 of them across 4 grade years \u2014 about 24.2 a year, which is the same order of magnitude as this page\u2019s implied grade 8 departures and is not evidence that they are the same children.",
+  "Anything about a school, at the grade that matters. DESE blanks the top grade of every school, because everybody in it advances out of the building \u2014 so Lunenburg Middle School, which ends at grade 8, publishes no grade 8 rate at all. The rule was checked on 62 school-years here. Every finding about grade 8 on this page is a DISTRICT figure, and there is no school-level version of it to be had.",
+  "Lunenburg High\u2019s own rate over time. It averages 8.8% in the 4 years the school held grade 8 and 5.1% in the other 13, a difference of 3.6 points that is a building programme rather than a change in anybody\u2019s behaviour. It is on this page only to make that visible.",
+  "A trend in the selected populations. English Learners have a published all-grades rate in 16 of 17 years and no published grade 8 rate in any year, because DESE suppresses a cell whose enrolment is under six. A group of a dozen children moves several points when one family does, and nothing on this page divides a group rate by anything.",
+  "A count of children who left. Every number of children on this page is DESE\u2019s rate multiplied by DESE\u2019s enrolment, and it is an implied figure rather than a headcount anybody published. It is also not a count of distinct children: a child who leaves and comes back is two events here.",
+  "Whether the town side has anything like this. Massachusetts collects an attrition rate from school districts and from nothing else, so no comparison between the two halves of the town budget can be drawn from this page in either direction.",
+  "Anything about a person. Every figure here is a rate over a grade cohort. Where a quote names somebody it is a role in a public meeting record, quoted for what it describes."
+ ],
+ "offset": {
+  "prior_year_max_error": 0.00085,
+  "ratio": 4.5,
+  "same_year_max_error": 0.00384,
+  "tolerance": 0.002,
+  "years_tested": 17
+ },
+ "outlier": {
+  "grade": "8",
+  "implied_per_year": 27,
+  "implied_total": 452.0,
+  "implied_years": 17,
+  "latest": {
+   "cohort": 122,
+   "cohort_fy": 2025,
+   "implied": 33.8,
+   "rate": 0.277,
+   "sy": 2026
+  },
+  "longest_prior_rising_run": 3,
+  "max": 0.287,
+  "max_sy": 2013,
+  "mean": 0.2048,
+  "median": 0.197,
+  "min": 0.132,
+  "min_sy": 2016,
+  "multiple": 3.2,
+  "others_high": 0.0643,
+  "others_low": 0.0303,
+  "rank_of_latest": 2,
+  "rising_run": 3,
+  "runner_up": "6",
+  "runner_up_mean": 0.0643,
+  "series": [
+   {
+    "cohort": 134,
+    "cohort_fy": 2009,
+    "implied": 26.8,
+    "rate": 0.2,
+    "sy": 2010
+   },
+   {
+    "cohort": 135,
+    "cohort_fy": 2010,
+    "implied": 27.9,
+    "rate": 0.207,
+    "sy": 2011
+   },
+   {
+    "cohort": 128,
+    "cohort_fy": 2011,
+    "implied": 24.8,
+    "rate": 0.194,
+    "sy": 2012
+   },
+   {
+    "cohort": 124,
+    "cohort_fy": 2012,
+    "implied": 35.6,
+    "rate": 0.287,
+    "sy": 2013
+   },
+   {
+    "cohort": 122,
+    "cohort_fy": 2013,
+    "implied": 25.0,
+    "rate": 0.205,
+    "sy": 2014
+   },
+   {
+    "cohort": 144,
+    "cohort_fy": 2014,
+    "implied": 33.7,
+    "rate": 0.234,
+    "sy": 2015
+   },
+   {
+    "cohort": 127,
+    "cohort_fy": 2015,
+    "implied": 16.8,
+    "rate": 0.132,
+    "sy": 2016
+   },
+   {
+    "cohort": 115,
+    "cohort_fy": 2016,
+    "implied": 22.0,
+    "rate": 0.191,
+    "sy": 2017
+   },
+   {
+    "cohort": 123,
+    "cohort_fy": 2017,
+    "implied": 18.8,
+    "rate": 0.153,
+    "sy": 2018
+   },
+   {
+    "cohort": 147,
+    "cohort_fy": 2018,
+    "implied": 26.0,
+    "rate": 0.177,
+    "sy": 2019
+   },
+   {
+    "cohort": 126,
+    "cohort_fy": 2019,
+    "implied": 29.0,
+    "rate": 0.23,
+    "sy": 2020
+   },
+   {
+    "cohort": 141,
+    "cohort_fy": 2020,
+    "implied": 25.7,
+    "rate": 0.182,
+    "sy": 2021
+   },
+   {
+    "cohort": 120,
+    "cohort_fy": 2021,
+    "implied": 23.6,
+    "rate": 0.197,
+    "sy": 2022
+   },
+   {
+    "cohort": 142,
+    "cohort_fy": 2022,
+    "implied": 27.1,
+    "rate": 0.191,
+    "sy": 2023
+   },
+   {
+    "cohort": 129,
+    "cohort_fy": 2023,
+    "implied": 24.0,
+    "rate": 0.186,
+    "sy": 2024
+   },
+   {
+    "cohort": 132,
+    "cohort_fy": 2024,
+    "implied": 31.4,
+    "rate": 0.238,
+    "sy": 2025
+   },
+   {
+    "cohort": 122,
+    "cohort_fy": 2025,
+    "implied": 33.8,
+    "rate": 0.277,
+    "sy": 2026
+   }
+  ],
+  "years": 17
+ },
+ "said": [
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2025-03-12-minutes-7098.txt",
+   "date": "2025-03-12",
+   "key": "choicing-out",
+   "kind": "Minutes",
+   "quote": "She said to me that she was looking at choicing out if her private school choices didn't come through.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7098",
+   "who": "the Lunenburg Middle High School Principal, to the School Committee",
+   "why": "The decision this whole page measures, described by the person who watches it happen, in the town\u2019s own words rather than ours. It also names two of the destinations at once -- a private school and a school choice transfer -- which is the reason no rate here can be read as one thing. What it establishes is that the choice is discussed in public. It establishes nothing about how many children make it."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2025-03-12-minutes-7098.txt",
+   "date": "2025-03-12",
+   "key": "hemorrhage",
+   "kind": "Minutes",
+   "quote": "I think that's going to be the reality that we have if we're not able to offer our student choices they are going to hemorrhage out of the high school",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7098",
+   "who": "the same principal, in the same comment",
+   "why": "A prediction, made in public, about the quantity on this page. It is evidence of what somebody in the district expected; it is not evidence about what happened, and the series that would test it does not yet reach the years after it was said."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2024-02-07-minutes-6395.txt",
+   "date": "2024-02-07",
+   "key": "band-transition",
+   "kind": "Minutes",
+   "quote": "When transitioning from 8th grade to 9th grade the numbers are reduced in the high school band.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02072024-6395",
+   "who": "a student representative, to the School Committee",
+   "why": "The town does talk about the grade 8 to grade 9 step -- just about a different quantity. This is a student naming the transition where this page finds every year\u2019s largest departure, and she attributes the drop she is describing to scheduling rather than to anybody leaving."
+  },
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2024-12-04-minutes-6907.txt",
+   "date": "2024-12-04",
+   "key": "sizer-parker",
+   "kind": "Minutes",
+   "quote": "b. Sizer & Parker Annual Reports Haven\u2019t received the updated data",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12042024-6907",
+   "who": "the School Committee\u2019s own minutes",
+   "why": "Rule 8, and the credit that goes with it: the committee had put the two charter schools\u2019 annual reports on its own agenda and said in public that the data had not arrived. The board is asking the question this page cannot answer, and was told the same thing this page reports."
+  }
+ ],
+ "school_artefact": {
+  "grade": "8",
+  "points": 3.6,
+  "ratio": 1.71,
+  "school": "Lunenburg High",
+  "series": [
+   {
+    "all": 0.072,
+    "cohort_fy": 2009,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2010
+   },
+   {
+    "all": 0.051,
+    "cohort_fy": 2010,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2011
+   },
+   {
+    "all": 0.062,
+    "cohort_fy": 2011,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2012
+   },
+   {
+    "all": 0.078,
+    "cohort_fy": 2012,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2013
+   },
+   {
+    "all": 0.097,
+    "cohort_fy": 2013,
+    "held_outlier_grade": true,
+    "span": "8\u201312",
+    "sy": 2014
+   },
+   {
+    "all": 0.11,
+    "cohort_fy": 2014,
+    "held_outlier_grade": true,
+    "span": "8\u201312",
+    "sy": 2015
+   },
+   {
+    "all": 0.06,
+    "cohort_fy": 2015,
+    "held_outlier_grade": true,
+    "span": "8\u201312",
+    "sy": 2016
+   },
+   {
+    "all": 0.084,
+    "cohort_fy": 2016,
+    "held_outlier_grade": true,
+    "span": "8\u201312",
+    "sy": 2017
+   },
+   {
+    "all": 0.046,
+    "cohort_fy": 2017,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2018
+   },
+   {
+    "all": 0.044,
+    "cohort_fy": 2018,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2019
+   },
+   {
+    "all": 0.055,
+    "cohort_fy": 2019,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2020
+   },
+   {
+    "all": 0.023,
+    "cohort_fy": 2020,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2021
+   },
+   {
+    "all": 0.071,
+    "cohort_fy": 2021,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2022
+   },
+   {
+    "all": 0.064,
+    "cohort_fy": 2022,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2023
+   },
+   {
+    "all": 0.03,
+    "cohort_fy": 2023,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2024
+   },
+   {
+    "all": 0.044,
+    "cohort_fy": 2024,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2025
+   },
+   {
+    "all": 0.029,
+    "cohort_fy": 2025,
+    "held_outlier_grade": false,
+    "span": "9\u201312",
+    "sy": 2026
+   }
+  ],
+  "with_mean": 0.0877,
+  "with_years": 4,
+  "without_mean": 0.0515,
+  "without_years": 13
+ },
+ "searched": [
+  {
+   "documents": 2,
+   "term": "attrition"
+  },
+  {
+   "documents": 0,
+   "term": "declining enrollment"
+  },
+  {
+   "documents": 0,
+   "term": "enrollment decline"
+  },
+  {
+   "documents": 0,
+   "term": "families leaving"
+  },
+  {
+   "documents": 0,
+   "term": "losing students"
+  },
+  {
+   "documents": 0,
+   "term": "leave the district"
+  },
+  {
+   "documents": 1,
+   "term": "choicing out"
+  },
+  {
+   "documents": 37,
+   "term": "school choice"
+  },
+  {
+   "documents": 4,
+   "term": "private school"
+  },
+  {
+   "documents": 176,
+   "term": "Monty Tech"
+  },
+  {
+   "documents": 27,
+   "term": "8th grade"
+  },
+  {
+   "documents": 8,
+   "term": "eighth grade"
+  },
+  {
+   "documents": 1,
+   "term": "enrollment projection"
+  },
+  {
+   "documents": 4,
+   "term": "Sizer"
+  }
+ ],
+ "sources": [
+  {
+   "bytes": 23511087,
+   "docs_url": "/docs/state-dese/dese-student-attrition.xlsx",
+   "filename": "dese-student-attrition.xlsx",
+   "key": "state-dese/dese-student-attrition.xlsx",
+   "note": "Every Massachusetts district and school, the share of students in each grade who did not return the following year, SY2010-SY2026, split by student group. Every figure in it is a PERCENTAGE. The source of every rate on this page. Stage: measured from the end of one school year to the beginning of the next, as at 1 October of the year named on the row. So the row says the year the children were GONE, not the year they were counted.",
+   "path": "sources/state-dese/dese-student-attrition.xlsx",
+   "publisher": "Massachusetts Department of Elementary and Secondary Education",
+   "sha256": "1323ea14ebb42d6f4bd9ae6f5ddbb62bb9c16b032ae3413c557f2206b7cbc76c",
+   "stage": "measured from the end of one school year to the beginning of the next, as at 1 October of the year named on the row. So the row says the year the children were GONE, not the year they were counted.",
+   "table": "dese_attrition",
+   "url": "https://educationtocareer.data.mass.gov/Students-and-Teachers/Student-Attrition/4as3-w39x/about_data",
+   "what": "Every Massachusetts district and school, the share of students in each grade who did not return the following year, SY2010-SY2026, split by student group. Every figure in it is a PERCENTAGE. The source of every rate on this page."
+  },
+  {
+   "bytes": 13368300,
+   "docs_url": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "filename": "dese-enrollment-by-grade.xlsx",
+   "key": "state-dese/dese-enrollment-by-grade.xlsx",
+   "note": "Enrolment by grade, by school, for every district. Two jobs here: it is the denominator that turns a rate into a number of children, and it is what establishes the grade span of each Lunenburg school in each year -- which is how this page knows a school-level series crosses a reorganisation. Stage: reported as at 1 October of the school year.",
+   "path": "sources/state-dese/dese-enrollment-by-grade.xlsx",
+   "publisher": "Massachusetts Department of Elementary and Secondary Education",
+   "sha256": "a2fb23dea70ce67dc0aea46a5eb4856630b1655d2ddf470b96681cdc6a56543e",
+   "stage": "reported as at 1 October of the school year.",
+   "table": "dese_enrollment",
+   "url": "https://educationtocareer.data.mass.gov/d/t8td-gens",
+   "what": "Enrolment by grade, by school, for every district. Two jobs here: it is the denominator that turns a rate into a number of children, and it is what establishes the grade span of each Lunenburg school in each year -- which is how this page knows a school-level series crosses a reorganisation."
+  },
+  {
+   "bytes": 2529872,
+   "docs_url": "/docs/state-dese/dese-residents-sending.xlsx",
+   "filename": "dese-residents-sending.xlsx",
+   "key": "state-dese/dese-residents-sending.xlsx",
+   "note": "Where the town\u2019s resident children are educated, by receiving district and by reason -- Monty Tech, school choice, charter. It has NO GRADE in it, which is precisely why it cannot say where a departing eighth grader went. Stage: a headcount as at 1 October, by receiving district.",
+   "path": "sources/state-dese/dese-residents-sending.xlsx",
+   "publisher": "Massachusetts Department of Elementary and Secondary Education",
+   "sha256": "ef345000874dab5ae2634cf084b5e8708f73f9740ae7065bf1ebb00846eccfe9",
+   "stage": "a headcount as at 1 October, by receiving district.",
+   "table": "dese_town_enrollment",
+   "url": "https://educationtocareer.data.mass.gov/d/vxt3-k35x",
+   "what": "Where the town\u2019s resident children are educated, by receiving district and by reason -- Monty Tech, school choice, charter. It has NO GRADE in it, which is precisely why it cannot say where a departing eighth grader went."
+  }
+ ],
+ "terminal_grade": {
+  "dese_says": "A blank value indicates that either: The school or district is new in the year selected; The school or district has no students enrolled in that grade level in the year selected; The school or district has no grade in the given year for students from the previous year to advance; The data is suppressed because the enrollment total is less than 6.",
+  "exceptions": 11,
+  "school_years_checked": 62
+ },
+ "years": 17
+}

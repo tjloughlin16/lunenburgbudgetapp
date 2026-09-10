@@ -1529,7 +1529,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 41067,
+     "bytes": 41063,
      "url": "/docs/analyses/questions.md",
      "count": 952,
      "unit": "lines",
@@ -1757,11 +1757,23 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 100935,
+     "bytes": 105541,
      "url": "/docs/data/money-gaps.csv",
-     "count": 114,
+     "count": 119,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
+     "path": "data/table-semantics.csv",
+     "title": "What each table in the database is",
+     "stars": 2,
+     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
+     "kind": "Data",
+     "bytes": 74432,
+     "url": "/docs/data/table-semantics.csv",
+     "count": 118,
+     "unit": "rows",
+     "textUrl": "/docs/data/table-semantics.csv"
     },
     {
      "path": "data/role-classification.csv",
@@ -1774,18 +1786,6 @@
      "count": 1030,
      "unit": "rows",
      "textUrl": "/docs/data/role-classification.csv"
-    },
-    {
-     "path": "data/table-semantics.csv",
-     "title": "What each table in the database is",
-     "stars": 2,
-     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
-     "kind": "Data",
-     "bytes": 54583,
-     "url": "/docs/data/table-semantics.csv",
-     "count": 100,
-     "unit": "rows",
-     "textUrl": "/docs/data/table-semantics.csv"
     },
     {
      "path": "data/money-classification.csv",
@@ -2208,7 +2208,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 31191040,
+     "bytes": 32563200,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2609,6 +2609,18 @@
      "textUrl": "/docs/data/dese-circuit-breaker.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 23460,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 139,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
      "path": "data/line-history-coverage.csv",
      "title": "What the line reader could and could not read, document by document",
      "stars": 3,
@@ -2812,16 +2824,6 @@
      "count": 28,
      "unit": "rows",
      "textUrl": "/docs/data/total-expenses-history.csv"
-    },
-    {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. It is currently empty: YouTube IP-blocked the caption endpoint after ten test fetches, and the backfill is deliberately on hold rather than retrying. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 92,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "data/meeting-watch-state.csv",
@@ -6666,7 +6668,7 @@
  "totals": {
   "documents": 542,
   "groups": 20,
-  "bytes": 1430939373,
+  "bytes": 1432359352,
   "loadBearing": 106
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

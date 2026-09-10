@@ -94,7 +94,7 @@ CATEGORIES = [
             'staffing', 'schoolstaff', 'parastaff',
         ]),
         ('the students', [
-            'outflow', 'montytech', 'leaving', 'families',
+            'attrition', 'outflow', 'montytech', 'leaving', 'families',
         ]),
         ('where the money comes from, and how it compares', [
             'minaid', 'required', 'peers', 'variance',
@@ -269,6 +269,10 @@ ABOUT_PAGES = {
         'Whether school staffing went up, over any span of years you choose — with the '
         'four quantities the archive holds kept apart: names the town printed, FTE and '
         'headcount the state published, and dollars.',
+    'attrition':
+        'Which grades Lunenburg children leave in, seventeen years of it — one '
+        'grade does almost all of it, and no published record says where any of them '
+        'went.',
     'courses':
         'How many classes actually ran in each subject at the high school, year by '
         'year — the one measure here of what was taught rather than who was '

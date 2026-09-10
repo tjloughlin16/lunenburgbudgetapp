@@ -1290,6 +1290,71 @@
    "so_what": "The rest simply stopped. It was a handover and a reduction happening at the same time."
   },
   {
+   "basis": "`dese_attrition`, Lunenburg\u2019s district rows for All Students, joined to `dese_enrollment` on the PREVIOUS year\u2019s grade counts \u2014 which is the join DESE\u2019s own all-grades rate reproduces five times more closely than the same-year one, and which two other independent checks in the generator confirm.",
+   "bearing": "sizes",
+   "claim": "20.5% of each eighth grade does not come back to a Lunenburg school for grade 9.",
+   "detail": "Residents keep asking which grades children leave in. It is one grade, it is the same grade every year, and the step it sits at is the move from the middle school to the high school. Averaged over the whole file the grade 8 rate is 3.2 times the next highest grade, and it is the highest grade in every single year measured \u2014 through a school closing, a new building opening and a pandemic. Applied to the town\u2019s own eighth grades that is about 27 children a year and roughly 452 in total. Those counts are IMPLIED \u2014 DESE publishes the rate and the enrolment, and this page multiplies them.",
+   "figure": "mean",
+   "figures": {
+    "high": {
+     "text": "6.4%",
+     "unit": "",
+     "value": 0.0643
+    },
+    "low": {
+     "text": "3.0%",
+     "unit": "",
+     "value": 0.0303
+    },
+    "mean": {
+     "text": "20.5%",
+     "unit": "of each eighth grade",
+     "value": 0.2048
+    },
+    "multiple": {
+     "text": "3.2",
+     "unit": "",
+     "value": 3.2
+    },
+    "per_year": {
+     "text": "27",
+     "unit": "",
+     "value": 27
+    },
+    "total": {
+     "text": "452",
+     "unit": "",
+     "value": 452.0
+    },
+    "years": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "id": "one-grade-does-all-the-leaving",
+   "kind": "measured",
+   "literals": [
+    "grade 8",
+    "grade 9"
+   ],
+   "not_shown": "Why, and where to. Attrition is leaving for any reason: a vocational admission at grade 9, a private or charter school, a school choice transfer, an out-of-district placement and a family moving are one number here. Nothing in this file separates them, and the file that names destinations carries no grade.",
+   "report": "attrition",
+   "report_title": "Which grades students leave in",
+   "report_url": "/which-grades-students-leave",
+   "see": [
+    {
+     "label": "Where the town\u2019s children are",
+     "slug": "/where-students-go-instead"
+    },
+    {
+     "label": "What Monty Tech costs the town",
+     "slug": "/monty-tech"
+    }
+   ],
+   "so_what": "The highest grade in all 17 years measured. The other eleven sit between 3.0% and 6.4%."
+  },
+  {
    "basis": "DESE\u2019s count of resident children by town and district, every reason and both directions, for every year it has been published.",
    "bearing": "sizes",
    "claim": "Change in children schooled outside Lunenburg, over 13 years",
@@ -5414,6 +5479,321 @@
    "id": "unwind",
    "title": "When a grant ends \u2014 who picks up the bill",
    "url": "/when-grants-end"
+  },
+  {
+   "about": "Which grades Lunenburg children leave in, year by year \u2014 DESE\u2019s attrition rate for the district and its schools, SY2010 to SY2026, with every figure kept as the rate it is.",
+   "conclusions": [
+    {
+     "basis": "`dese_attrition`, Lunenburg\u2019s district rows for All Students, joined to `dese_enrollment` on the PREVIOUS year\u2019s grade counts \u2014 which is the join DESE\u2019s own all-grades rate reproduces five times more closely than the same-year one, and which two other independent checks in the generator confirm.",
+     "bearing": "sizes",
+     "claim": "20.5% of each eighth grade does not come back to a Lunenburg school for grade 9.",
+     "detail": "Residents keep asking which grades children leave in. It is one grade, it is the same grade every year, and the step it sits at is the move from the middle school to the high school. Averaged over the whole file the grade 8 rate is 3.2 times the next highest grade, and it is the highest grade in every single year measured \u2014 through a school closing, a new building opening and a pandemic. Applied to the town\u2019s own eighth grades that is about 27 children a year and roughly 452 in total. Those counts are IMPLIED \u2014 DESE publishes the rate and the enrolment, and this page multiplies them.",
+     "figure": "mean",
+     "figures": {
+      "high": {
+       "text": "6.4%",
+       "unit": "",
+       "value": 0.0643
+      },
+      "low": {
+       "text": "3.0%",
+       "unit": "",
+       "value": 0.0303
+      },
+      "mean": {
+       "text": "20.5%",
+       "unit": "of each eighth grade",
+       "value": 0.2048
+      },
+      "multiple": {
+       "text": "3.2",
+       "unit": "",
+       "value": 3.2
+      },
+      "per_year": {
+       "text": "27",
+       "unit": "",
+       "value": 27
+      },
+      "total": {
+       "text": "452",
+       "unit": "",
+       "value": 452.0
+      },
+      "years": {
+       "text": "17",
+       "unit": "",
+       "value": 17
+      }
+     },
+     "id": "one-grade-does-all-the-leaving",
+     "kind": "measured",
+     "literals": [
+      "grade 8",
+      "grade 9"
+     ],
+     "not_shown": "Why, and where to. Attrition is leaving for any reason: a vocational admission at grade 9, a private or charter school, a school choice transfer, an out-of-district placement and a family moving are one number here. Nothing in this file separates them, and the file that names destinations carries no grade.",
+     "see": [
+      {
+       "label": "Where the town\u2019s children are",
+       "slug": "/where-students-go-instead"
+      },
+      {
+       "label": "What Monty Tech costs the town",
+       "slug": "/monty-tech"
+      }
+     ],
+     "so_what": "The highest grade in all 17 years measured. The other eleven sit between 3.0% and 6.4%."
+    },
+    {
+     "basis": "The same district rows, averaged inside eras derived in code from `dese_enrollment` grade spans by the functions /what-courses-actually-ran uses, so the two pages cannot segment the same reorganisation differently. The pandemic boundary is OURS and is marked as ours wherever it appears.",
+     "bearing": "sizes",
+     "claim": "The eighth grade measured this year lost 27.7% \u2014 the second-highest of seventeen years.",
+     "detail": "The rate has risen for the last stretch of the series, which is what a reader will notice first. Set against seventeen years it is inside a range the town has been in the whole time. The series runs from 13.2% in SY2016 to 28.7% in SY2013 and the five eras \u2014 built from DESE\u2019s own grade spans, so a school closing and a new building are boundaries rather than noise \u2014 average within 4.9 points of each other. The current run of rises is 3 years long and the longest earlier one was 3, so a run of this length is not new either. A single Lunenburg grade is around a hundred and twenty children, so one family is close to a point.",
+     "figure": "latest",
+     "figures": {
+      "era_high": {
+       "text": "22.3%",
+       "unit": "",
+       "value": 0.223
+      },
+      "era_low": {
+       "text": "17.4%",
+       "unit": "",
+       "value": 0.1737
+      },
+      "latest": {
+       "text": "27.7%",
+       "unit": "of the last eighth grade",
+       "value": 0.277
+      },
+      "max": {
+       "text": "28.7%",
+       "unit": "",
+       "value": 0.287
+      },
+      "max_sy": {
+       "text": "SY2013",
+       "unit": "",
+       "value": 2013
+      },
+      "min": {
+       "text": "13.2%",
+       "unit": "",
+       "value": 0.132
+      },
+      "min_sy": {
+       "text": "SY2016",
+       "unit": "",
+       "value": 2016
+      },
+      "prior_run": {
+       "text": "3",
+       "unit": "",
+       "value": 3
+      },
+      "run": {
+       "text": "3",
+       "unit": "",
+       "value": 3
+      },
+      "spread": {
+       "text": "4.9 points",
+       "unit": "",
+       "value": 0.0493
+      }
+     },
+     "id": "a-high-year-not-a-new-level",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Whether the rise continues. Three points are three points, and this town\u2019s boards are being asked to read them as a direction because they have nothing longer. The eras are on the page precisely so a reader can see what the same three points looked like the last four times.",
+     "see": [],
+     "so_what": "Averaged inside five eras the rate stays between 17.4% and 22.3%. A high year, not a new level."
+    },
+    {
+     "basis": "DESE\u2019s all-grades attrition rate for each year applied to the previous year\u2019s Lunenburg enrolment in grades K to 11, against DESE\u2019s own district totals at both ends. Grade 12 is excluded from the rate by DESE: a twelfth grader who does not come back has graduated.",
+     "bearing": "sizes",
+     "claim": "DESE\u2019s rates imply 1,538 children left in seventeen years. Enrolment fell 171.",
+     "detail": "The question a resident arrives with is whether children leaving is why the schools are emptying. On these two files it is not: the leaving is an order of magnitude larger than the change, and almost all of it is replaced. About 90 children a year leave, every year, and district enrolment went from 1,739 in FY2009 to 1,568 in FY2026. A town losing 10 children a year net and a town losing 90 and gaining most of them back are the same line on an enrolment chart and are not the same town. It is the same shape this project found on the other side of the ledger, where inbound school choice collapsed while outbound stayed flat and the net barely moved.",
+     "figure": "implied",
+     "figures": {
+      "fall": {
+       "text": "171",
+       "unit": "",
+       "value": 171
+      },
+      "first": {
+       "text": "1,739",
+       "unit": "",
+       "value": 1739
+      },
+      "first_fy": {
+       "text": "FY2009",
+       "unit": "",
+       "value": 2009
+      },
+      "implied": {
+       "text": "1,538",
+       "unit": "children, implied",
+       "value": 1538
+      },
+      "last": {
+       "text": "1,568",
+       "unit": "",
+       "value": 1568
+      },
+      "last_fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "net_per_year": {
+       "text": "10",
+       "unit": "",
+       "value": 10.058823529411764
+      },
+      "per_year": {
+       "text": "90",
+       "unit": "",
+       "value": 90
+      },
+      "ratio": {
+       "text": "9.0",
+       "unit": "",
+       "value": 9.0
+      }
+     },
+     "id": "the-leaving-is-nine-times-the-fall",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Who arrives. This page measures one direction only and the balancing figure is a RESIDUAL rather than a measurement \u2014 births, families moving in, children returning from a private school and anybody repeating a year are one number here. Nor is the implied total a count of distinct children.",
+     "see": [
+      {
+       "label": "The other direction, priced",
+       "slug": "/if-students-leave"
+      }
+     ],
+     "so_what": "Churn is 9.0 times the net change, so arrivals rather than leavers set the size of the schools."
+    },
+    {
+     "basis": "`dese_attrition` district rows for Students with Disabilities against All Students, grade by grade, over the same years. The cohort sizes beside them are ESTIMATES: DESE publishes no count of a student group within a grade, so they are the district\u2019s own published share of that group applied to the grade\u2019s enrolment.",
+     "bearing": "sizes",
+     "claim": "Eighth graders on an IEP leave at 34.7%, against 20.5% for all students.",
+     "detail": "A group that leaves more everywhere is a different fact from one that leaves more at a single step. This is the second: across the other eleven grades the two series are close together. Published in all 17 years, and it swings from 19.0% to 54.5% between them \u2014 because the group inside one Lunenburg grade is on the order of twenty children, so one family is several points. That is the reason the year-by-year sits under this card rather than a headline off any single year. The same shape appears for High Needs and for Low Income, which OVERLAP this group and each other and are never added.",
+     "figure": "swd",
+     "figures": {
+      "all": {
+       "text": "20.5%",
+       "unit": "",
+       "value": 0.2048
+      },
+      "hi": {
+       "text": "54.5%",
+       "unit": "",
+       "value": 0.545
+      },
+      "lo": {
+       "text": "19.0%",
+       "unit": "",
+       "value": 0.19
+      },
+      "next": {
+       "text": "4.1 points",
+       "unit": "",
+       "value": 4.1
+      },
+      "swd": {
+       "text": "34.7%",
+       "unit": "of eighth graders on an IEP",
+       "value": 0.3474
+      },
+      "widest": {
+       "text": "14.3 points",
+       "unit": "",
+       "value": 14.3
+      },
+      "years": {
+       "text": "17",
+       "unit": "",
+       "value": 17
+      }
+     },
+     "id": "the-gap-is-at-one-step-not-everywhere",
+     "kind": "measured",
+     "literals": [
+      "grade 8"
+     ],
+     "not_shown": "Anything about placement, service or cause. An out-of-district placement made at the high school transition, a vocational admission, a family moving for services and a private school all fit this number equally well. A special education placement is not attrition and this file cannot tell you which of these it counted.",
+     "see": [
+      {
+       "label": "The route out of district",
+       "slug": "/who-ends-up-out-of-district"
+      },
+      {
+       "label": "How many children are on an IEP",
+       "slug": "/how-many-students-are-on-an-iep"
+      }
+     ],
+     "so_what": "The gap is 14.3 points at grade 8 and never above 4.1 points at any other grade."
+    },
+    {
+     "basis": "`dese_town_enrollment`, read whole: its columns are checked on every run and the generator refuses to publish this claim if a grade column ever appears in it.",
+     "bearing": "lever",
+     "claim": "No published record says which school a departing Lunenburg eighth grader went to.",
+     "detail": "This is the question every reader of the card above will ask next, and it is the one the record refuses. Two DESE files each hold half of the answer and neither holds the join. 177 Lunenburg children were educated somewhere other than a Lunenburg school in FY2026. Monty Tech holds 97 of them across four grade years, about 24.2 a year, which is the same order of magnitude as the 27 eighth graders a year this page implies are leaving \u2014 and being the same size is not being the same children. Lunenburg is a MEMBER town of Monty Tech, so a child going there is not choosing out of the town\u2019s system in the way the phrase usually means. The district files the submission that produces this rate every 1 October, so the grade breakdown exists inside the district before the state publishes anything.",
+     "figures": {
+      "elsewhere": {
+       "text": "177",
+       "unit": "",
+       "value": 177
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "implied": {
+       "text": "27",
+       "unit": "",
+       "value": 27
+      },
+      "monty": {
+       "text": "97",
+       "unit": "",
+       "value": 97
+      },
+      "per_grade": {
+       "text": "24.2",
+       "unit": "",
+       "value": 24.2
+      }
+     },
+     "id": "nothing-published-says-where-they-went",
+     "kind": "measured",
+     "literals": [
+      "1 October"
+     ],
+     "no_figure": "There is no figure here because nobody publishes one. DESE publishes the rate without a destination and the destination without a grade, and the two files are never joined.",
+     "not_shown": "Any attribution at all. Nothing here says a single departing eighth grader went to any of these places. The sizes are comparable and that is the whole of what is established.",
+     "see": [
+      {
+       "label": "What Monty Tech costs the town",
+       "slug": "/monty-tech"
+      },
+      {
+       "label": "The gap this leaves",
+       "slug": "/what-we-cannot-answer"
+      }
+     ],
+     "so_what": "Monty Tech, a private school, a charter and a family moving are one number here."
+    }
+   ],
+   "count": 5,
+   "data": "/data/attrition.json",
+   "generator": "scripts/build_attrition.py",
+   "id": "attrition",
+   "title": "Which grades students leave in",
+   "url": "/which-grades-students-leave"
   },
   {
    "about": "Which PUBLIC district educates each of Lunenburg\u2019s resident children, from DESE\u2019s count of residents by district \u2014 every public route, both directions, SY2014 onward. Private and parochial schools are not in it.",
@@ -10825,10 +11205,325 @@
    "title": "What the money buys, and what it does not"
   },
   {
-   "about": "Who is taught outside Lunenburg, what the town is assessed for them, and what more leaving would cost.",
-   "conclusions": 9,
+   "about": "Which grades they leave in, who is taught outside Lunenburg, what the town is assessed for them, and what more leaving would cost.",
+   "conclusions": 14,
    "key": "children",
    "reports": [
+    {
+     "about": "Which grades Lunenburg children leave in, year by year \u2014 DESE\u2019s attrition rate for the district and its schools, SY2010 to SY2026, with every figure kept as the rate it is.",
+     "conclusions": [
+      {
+       "basis": "`dese_attrition`, Lunenburg\u2019s district rows for All Students, joined to `dese_enrollment` on the PREVIOUS year\u2019s grade counts \u2014 which is the join DESE\u2019s own all-grades rate reproduces five times more closely than the same-year one, and which two other independent checks in the generator confirm.",
+       "bearing": "sizes",
+       "claim": "20.5% of each eighth grade does not come back to a Lunenburg school for grade 9.",
+       "detail": "Residents keep asking which grades children leave in. It is one grade, it is the same grade every year, and the step it sits at is the move from the middle school to the high school. Averaged over the whole file the grade 8 rate is 3.2 times the next highest grade, and it is the highest grade in every single year measured \u2014 through a school closing, a new building opening and a pandemic. Applied to the town\u2019s own eighth grades that is about 27 children a year and roughly 452 in total. Those counts are IMPLIED \u2014 DESE publishes the rate and the enrolment, and this page multiplies them.",
+       "figure": "mean",
+       "figures": {
+        "high": {
+         "text": "6.4%",
+         "unit": "",
+         "value": 0.0643
+        },
+        "low": {
+         "text": "3.0%",
+         "unit": "",
+         "value": 0.0303
+        },
+        "mean": {
+         "text": "20.5%",
+         "unit": "of each eighth grade",
+         "value": 0.2048
+        },
+        "multiple": {
+         "text": "3.2",
+         "unit": "",
+         "value": 3.2
+        },
+        "per_year": {
+         "text": "27",
+         "unit": "",
+         "value": 27
+        },
+        "total": {
+         "text": "452",
+         "unit": "",
+         "value": 452.0
+        },
+        "years": {
+         "text": "17",
+         "unit": "",
+         "value": 17
+        }
+       },
+       "id": "one-grade-does-all-the-leaving",
+       "kind": "measured",
+       "literals": [
+        "grade 8",
+        "grade 9"
+       ],
+       "not_shown": "Why, and where to. Attrition is leaving for any reason: a vocational admission at grade 9, a private or charter school, a school choice transfer, an out-of-district placement and a family moving are one number here. Nothing in this file separates them, and the file that names destinations carries no grade.",
+       "see": [
+        {
+         "label": "Where the town\u2019s children are",
+         "slug": "/where-students-go-instead"
+        },
+        {
+         "label": "What Monty Tech costs the town",
+         "slug": "/monty-tech"
+        }
+       ],
+       "so_what": "The highest grade in all 17 years measured. The other eleven sit between 3.0% and 6.4%."
+      },
+      {
+       "basis": "The same district rows, averaged inside eras derived in code from `dese_enrollment` grade spans by the functions /what-courses-actually-ran uses, so the two pages cannot segment the same reorganisation differently. The pandemic boundary is OURS and is marked as ours wherever it appears.",
+       "bearing": "sizes",
+       "claim": "The eighth grade measured this year lost 27.7% \u2014 the second-highest of seventeen years.",
+       "detail": "The rate has risen for the last stretch of the series, which is what a reader will notice first. Set against seventeen years it is inside a range the town has been in the whole time. The series runs from 13.2% in SY2016 to 28.7% in SY2013 and the five eras \u2014 built from DESE\u2019s own grade spans, so a school closing and a new building are boundaries rather than noise \u2014 average within 4.9 points of each other. The current run of rises is 3 years long and the longest earlier one was 3, so a run of this length is not new either. A single Lunenburg grade is around a hundred and twenty children, so one family is close to a point.",
+       "figure": "latest",
+       "figures": {
+        "era_high": {
+         "text": "22.3%",
+         "unit": "",
+         "value": 0.223
+        },
+        "era_low": {
+         "text": "17.4%",
+         "unit": "",
+         "value": 0.1737
+        },
+        "latest": {
+         "text": "27.7%",
+         "unit": "of the last eighth grade",
+         "value": 0.277
+        },
+        "max": {
+         "text": "28.7%",
+         "unit": "",
+         "value": 0.287
+        },
+        "max_sy": {
+         "text": "SY2013",
+         "unit": "",
+         "value": 2013
+        },
+        "min": {
+         "text": "13.2%",
+         "unit": "",
+         "value": 0.132
+        },
+        "min_sy": {
+         "text": "SY2016",
+         "unit": "",
+         "value": 2016
+        },
+        "prior_run": {
+         "text": "3",
+         "unit": "",
+         "value": 3
+        },
+        "run": {
+         "text": "3",
+         "unit": "",
+         "value": 3
+        },
+        "spread": {
+         "text": "4.9 points",
+         "unit": "",
+         "value": 0.0493
+        }
+       },
+       "id": "a-high-year-not-a-new-level",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Whether the rise continues. Three points are three points, and this town\u2019s boards are being asked to read them as a direction because they have nothing longer. The eras are on the page precisely so a reader can see what the same three points looked like the last four times.",
+       "see": [],
+       "so_what": "Averaged inside five eras the rate stays between 17.4% and 22.3%. A high year, not a new level."
+      },
+      {
+       "basis": "DESE\u2019s all-grades attrition rate for each year applied to the previous year\u2019s Lunenburg enrolment in grades K to 11, against DESE\u2019s own district totals at both ends. Grade 12 is excluded from the rate by DESE: a twelfth grader who does not come back has graduated.",
+       "bearing": "sizes",
+       "claim": "DESE\u2019s rates imply 1,538 children left in seventeen years. Enrolment fell 171.",
+       "detail": "The question a resident arrives with is whether children leaving is why the schools are emptying. On these two files it is not: the leaving is an order of magnitude larger than the change, and almost all of it is replaced. About 90 children a year leave, every year, and district enrolment went from 1,739 in FY2009 to 1,568 in FY2026. A town losing 10 children a year net and a town losing 90 and gaining most of them back are the same line on an enrolment chart and are not the same town. It is the same shape this project found on the other side of the ledger, where inbound school choice collapsed while outbound stayed flat and the net barely moved.",
+       "figure": "implied",
+       "figures": {
+        "fall": {
+         "text": "171",
+         "unit": "",
+         "value": 171
+        },
+        "first": {
+         "text": "1,739",
+         "unit": "",
+         "value": 1739
+        },
+        "first_fy": {
+         "text": "FY2009",
+         "unit": "",
+         "value": 2009
+        },
+        "implied": {
+         "text": "1,538",
+         "unit": "children, implied",
+         "value": 1538
+        },
+        "last": {
+         "text": "1,568",
+         "unit": "",
+         "value": 1568
+        },
+        "last_fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "net_per_year": {
+         "text": "10",
+         "unit": "",
+         "value": 10.058823529411764
+        },
+        "per_year": {
+         "text": "90",
+         "unit": "",
+         "value": 90
+        },
+        "ratio": {
+         "text": "9.0",
+         "unit": "",
+         "value": 9.0
+        }
+       },
+       "id": "the-leaving-is-nine-times-the-fall",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Who arrives. This page measures one direction only and the balancing figure is a RESIDUAL rather than a measurement \u2014 births, families moving in, children returning from a private school and anybody repeating a year are one number here. Nor is the implied total a count of distinct children.",
+       "see": [
+        {
+         "label": "The other direction, priced",
+         "slug": "/if-students-leave"
+        }
+       ],
+       "so_what": "Churn is 9.0 times the net change, so arrivals rather than leavers set the size of the schools."
+      },
+      {
+       "basis": "`dese_attrition` district rows for Students with Disabilities against All Students, grade by grade, over the same years. The cohort sizes beside them are ESTIMATES: DESE publishes no count of a student group within a grade, so they are the district\u2019s own published share of that group applied to the grade\u2019s enrolment.",
+       "bearing": "sizes",
+       "claim": "Eighth graders on an IEP leave at 34.7%, against 20.5% for all students.",
+       "detail": "A group that leaves more everywhere is a different fact from one that leaves more at a single step. This is the second: across the other eleven grades the two series are close together. Published in all 17 years, and it swings from 19.0% to 54.5% between them \u2014 because the group inside one Lunenburg grade is on the order of twenty children, so one family is several points. That is the reason the year-by-year sits under this card rather than a headline off any single year. The same shape appears for High Needs and for Low Income, which OVERLAP this group and each other and are never added.",
+       "figure": "swd",
+       "figures": {
+        "all": {
+         "text": "20.5%",
+         "unit": "",
+         "value": 0.2048
+        },
+        "hi": {
+         "text": "54.5%",
+         "unit": "",
+         "value": 0.545
+        },
+        "lo": {
+         "text": "19.0%",
+         "unit": "",
+         "value": 0.19
+        },
+        "next": {
+         "text": "4.1 points",
+         "unit": "",
+         "value": 4.1
+        },
+        "swd": {
+         "text": "34.7%",
+         "unit": "of eighth graders on an IEP",
+         "value": 0.3474
+        },
+        "widest": {
+         "text": "14.3 points",
+         "unit": "",
+         "value": 14.3
+        },
+        "years": {
+         "text": "17",
+         "unit": "",
+         "value": 17
+        }
+       },
+       "id": "the-gap-is-at-one-step-not-everywhere",
+       "kind": "measured",
+       "literals": [
+        "grade 8"
+       ],
+       "not_shown": "Anything about placement, service or cause. An out-of-district placement made at the high school transition, a vocational admission, a family moving for services and a private school all fit this number equally well. A special education placement is not attrition and this file cannot tell you which of these it counted.",
+       "see": [
+        {
+         "label": "The route out of district",
+         "slug": "/who-ends-up-out-of-district"
+        },
+        {
+         "label": "How many children are on an IEP",
+         "slug": "/how-many-students-are-on-an-iep"
+        }
+       ],
+       "so_what": "The gap is 14.3 points at grade 8 and never above 4.1 points at any other grade."
+      },
+      {
+       "basis": "`dese_town_enrollment`, read whole: its columns are checked on every run and the generator refuses to publish this claim if a grade column ever appears in it.",
+       "bearing": "lever",
+       "claim": "No published record says which school a departing Lunenburg eighth grader went to.",
+       "detail": "This is the question every reader of the card above will ask next, and it is the one the record refuses. Two DESE files each hold half of the answer and neither holds the join. 177 Lunenburg children were educated somewhere other than a Lunenburg school in FY2026. Monty Tech holds 97 of them across four grade years, about 24.2 a year, which is the same order of magnitude as the 27 eighth graders a year this page implies are leaving \u2014 and being the same size is not being the same children. Lunenburg is a MEMBER town of Monty Tech, so a child going there is not choosing out of the town\u2019s system in the way the phrase usually means. The district files the submission that produces this rate every 1 October, so the grade breakdown exists inside the district before the state publishes anything.",
+       "figures": {
+        "elsewhere": {
+         "text": "177",
+         "unit": "",
+         "value": 177
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "implied": {
+         "text": "27",
+         "unit": "",
+         "value": 27
+        },
+        "monty": {
+         "text": "97",
+         "unit": "",
+         "value": 97
+        },
+        "per_grade": {
+         "text": "24.2",
+         "unit": "",
+         "value": 24.2
+        }
+       },
+       "id": "nothing-published-says-where-they-went",
+       "kind": "measured",
+       "literals": [
+        "1 October"
+       ],
+       "no_figure": "There is no figure here because nobody publishes one. DESE publishes the rate without a destination and the destination without a grade, and the two files are never joined.",
+       "not_shown": "Any attribution at all. Nothing here says a single departing eighth grader went to any of these places. The sizes are comparable and that is the whole of what is established.",
+       "see": [
+        {
+         "label": "What Monty Tech costs the town",
+         "slug": "/monty-tech"
+        },
+        {
+         "label": "The gap this leaves",
+         "slug": "/what-we-cannot-answer"
+        }
+       ],
+       "so_what": "Monty Tech, a private school, a charter and a family moving are one number here."
+      }
+     ],
+     "count": 5,
+     "data": "/data/attrition.json",
+     "generator": "scripts/build_attrition.py",
+     "id": "attrition",
+     "title": "Which grades students leave in",
+     "url": "/which-grades-students-leave"
+    },
     {
      "about": "Which PUBLIC district educates each of Lunenburg\u2019s resident children, from DESE\u2019s count of residents by district \u2014 every public route, both directions, SY2014 onward. Private and parochial schools are not in it.",
      "conclusions": [
@@ -11951,17 +12646,17 @@
  ],
  "totals": {
   "bearing": {
-   "lever": 18,
-   "sizes": 55,
+   "lever": 19,
+   "sizes": 59,
    "unclassified": 0
   },
-  "conclusions": 73,
+  "conclusions": 78,
   "document_words": 80083,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 72,
-  "reports": 22,
-  "with_conclusions": 22,
+  "measured": 77,
+  "reports": 23,
+  "with_conclusions": 23,
   "without_conclusions": 0
  }
 }

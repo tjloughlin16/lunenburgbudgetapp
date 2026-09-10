@@ -412,9 +412,9 @@ TOPICS = [
      ['staffing', 'schoolstaff', 'parastaff', 'courses', 'insurance', 'stopped',
       'cuts', 'variance']),
     ('children', 'Where the children are',
-     'Who is taught outside Lunenburg, what the town is assessed for them, and what more '
-     'leaving would cost.',
-     ['outflow', 'montytech', 'leaving']),
+     'Which grades they leave in, who is taught outside Lunenburg, what the town is '
+     'assessed for them, and what more leaving would cost.',
+     ['attrition', 'outflow', 'montytech', 'leaving']),
     ('household', 'Athletics, and what a family pays',
      'The two reports about money a household hands over, side by side.',
      ['sportsmoney', 'families']),

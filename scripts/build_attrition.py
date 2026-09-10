@@ -614,6 +614,9 @@ def the_outlier(prof, dist):
         rising_run=now, longest_prior_rising_run=prior,
         implied_total=round(sum(s['implied'] for s in series if s['implied']), 0),
         implied_years=len([s for s in series if s['implied'] is not None]),
+        implied_per_year=int(round(sum(s['implied'] for s in series if s['implied'])
+                                   / len([s for s in series
+                                          if s['implied'] is not None]))),
     )
 
 
@@ -636,6 +639,7 @@ def churn(dist, en):
     return dict(first_fy=first_fy, last_fy=last_fy, transitions=len(have),
                 implied_total=round(total),
                 per_year=round(total / len(have), 1),
+                per_year_whole=int(round(total / len(have))),
                 enrol_first=a, enrol_last=b, enrol_change=b - a,
                 ratio=round(total / abs(b - a), 1) if b != a else None,
                 years=[dict(sy=r['sy'], cohort_fy=r['cohort_fy'], cohort=r['cohort'],
@@ -837,9 +841,12 @@ def destinations(db, outlier):
     here = [r for r in rows if int(r['fy']) == last]
     away = [r for r in here if not (r['enrollment_reason'] == 'Resident/Member'
                                     and r['district'] == 'Lunenburg')]
-    by_reason = collections.Counter()
+    by_where = collections.defaultdict(int)
     for r in away:
-        by_reason[r['enrollment_reason']] += int(r['students'])
+        by_where[(r['enrollment_reason'], r['district'])] += int(r['students'])
+    by_reason = collections.Counter()
+    for (reason, _dist), v in by_where.items():
+        by_reason[reason] += v
     monty = [r for r in away if 'Montachusett' in r['district']]
     if not monty:
         fail('Monty Tech is not in the town file for FY%d, and it is the largest '
@@ -848,6 +855,8 @@ def destinations(db, outlier):
         fy=last, columns=cols,
         elsewhere=sum(int(r['students']) for r in away),
         by_reason=[dict(reason=k, students=v) for k, v in by_reason.most_common()],
+        by_where=[dict(reason=k[0], district=k[1], students=v)
+                  for k, v in sorted(by_where.items(), key=lambda x: -x[1])],
         monty_tech=int(monty[0]['students']),
         monty_grades=4,
         monty_per_grade=round(int(monty[0]['students']) / 4, 1),
@@ -920,9 +929,18 @@ def searched():
     if not tally['searchable'] or tally['held'] != tally['searchable'] + tally['unsearchable']:
         fail('minutes-searchable.csv does not reconcile — refusing to publish a '
              'coverage figure that does not add up')
+    # THE SPAN THE SEARCH COVERS, printed beside the denominator. A coverage sentence
+    # that says how MANY documents were read and not WHICH YEARS lets a reader assume the
+    # archive reaches further back than it does.
+    dates = sorted(r['date'] for r in rows if r['date'].strip())
+    if not dates:
+        fail('the meeting index carries no dates, so the search coverage cannot say '
+             'which years it covers')
     return terms, dict(held=tally['held'], searchable=tally['searchable'],
                        unsearchable=tally['unsearchable'],
                        image_scan=tally['image_scan'],
+                       text_files_present=len(readable),
+                       first_date=dates[0], last_date=dates[-1],
                        searchable_share=round(tally['searchable'] / tally['held'], 4))
 
 
@@ -1044,8 +1062,8 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
     rows = [
         conclusion(
             id='one-grade-does-all-the-leaving',
-            claim='One in five eighth graders does not come back to a Lunenburg school '
-                  'for grade 9.',
+            claim='%s of each eighth grade does not come back to a Lunenburg school '
+                  'for grade 9.' % C.pct(outlier['mean'] * 100),
             so_what='The highest grade in all %s years measured. The other eleven sit '
                     'between %s and %s.'
                     % (C.num(outlier['years']), C.pct(others[0] * 100),
@@ -1057,10 +1075,8 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                 'low': figure(others[0], C.pct(others[0] * 100)),
                 'high': figure(others[-1], C.pct(others[-1] * 100)),
                 'multiple': figure(outlier['multiple'], str(outlier['multiple'])),
-                'per_year': figure(round(outlier['implied_total']
-                                         / outlier['implied_years']),
-                                   C.num(outlier['implied_total']
-                                         / outlier['implied_years'])),
+                'per_year': figure(outlier['implied_per_year'],
+                                   C.num(outlier['implied_per_year'])),
                 'total': figure(outlier['implied_total'],
                                 C.num(outlier['implied_total'])),
             },
@@ -1078,7 +1094,7 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                    'IMPLIED — DESE publishes the rate and the enrolment, and this '
                    'page multiplies them.'
                    % (str(outlier['multiple']),
-                      C.num(outlier['implied_total'] / outlier['implied_years']),
+                      C.num(outlier['implied_per_year']),
                       C.num(outlier['implied_total'])),
             basis='`dese_attrition`, Lunenburg’s district rows for All Students, '
                   'joined to `dese_enrollment` on the PREVIOUS year’s grade counts '
@@ -1090,6 +1106,7 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                       'school choice transfer, an out-of-district placement and a family '
                       'moving are one number here. Nothing in this file separates them, '
                       'and the file that names destinations carries no grade.',
+            allow=('grade 8', 'grade 9'),
             see=[('/where-students-go-instead', 'Where the town’s children are'),
                  ('/monty-tech', 'What Monty Tech costs the town')],
         ),
@@ -1161,11 +1178,15 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                                   'children, implied'),
                 'fall': figure(abs(ch['enrol_change']), C.num(abs(ch['enrol_change']))),
                 'ratio': figure(ch['ratio'], str(ch['ratio'])),
-                'per_year': figure(ch['per_year'], C.num(ch['per_year'])),
+                'per_year': figure(ch['per_year_whole'],
+                                   C.num(ch['per_year_whole'])),
                 'first': figure(ch['enrol_first'], C.num(ch['enrol_first'])),
                 'last': figure(ch['enrol_last'], C.num(ch['enrol_last'])),
                 'first_fy': figure(ch['first_fy'], 'FY%d' % ch['first_fy']),
                 'last_fy': figure(ch['last_fy'], 'FY%d' % ch['last_fy']),
+                'net_per_year': figure(abs(ch['enrol_change']) / ch['transitions'],
+                                       C.num(abs(ch['enrol_change'])
+                                             / ch['transitions'])),
             },
             figure='implied',
             kind='measured',
@@ -1177,15 +1198,15 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
             detail='About %s children a year leave, every year, and district enrolment '
                    'went from %s in %s to %s in %s. A town losing %s children a year net '
                    'and a town losing %s and gaining most of them back are the same '
-                   'line on an enrolment chart and are not the same town. This is the '
-                   'same shape /if-students-leave found on the other side of the '
-                   'ledger, where inbound school choice collapsed while outbound stayed '
-                   'flat and the net barely moved.'
-                   % (C.num(ch['per_year']), C.num(ch['enrol_first']),
+                   'line on an enrolment chart and are not the same town. It is the '
+                   'same shape this project found on the other side of the ledger, '
+                   'where inbound school choice collapsed while outbound stayed flat '
+                   'and the net barely moved.'
+                   % (C.num(ch['per_year_whole']), C.num(ch['enrol_first']),
                       'FY%d' % ch['first_fy'], C.num(ch['enrol_last']),
                       'FY%d' % ch['last_fy'],
                       C.num(abs(ch['enrol_change']) / ch['transitions']),
-                      C.num(ch['per_year'])),
+                      C.num(ch['per_year_whole'])),
             basis='DESE’s all-grades attrition rate for each year applied to the '
                   'previous year’s Lunenburg enrolment in grades K to 11, against '
                   'DESE’s own district totals at both ends. Grade 12 is excluded '
@@ -1244,6 +1265,7 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                       'fit this number equally well. A special education placement is '
                       'not attrition and this file cannot tell you which of these it '
                       'counted.',
+            allow=('grade 8',),
             see=[('/who-ends-up-out-of-district', 'The route out of district'),
                  ('/how-many-students-are-on-an-iep', 'How many children are on an IEP')],
         ),
@@ -1259,10 +1281,8 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                 'monty': figure(dest['monty_tech'], C.num(dest['monty_tech'])),
                 'per_grade': figure(dest['monty_per_grade'],
                                     str(dest['monty_per_grade'])),
-                'implied': figure(round(outlier['implied_total']
-                                        / outlier['implied_years']),
-                                  C.num(outlier['implied_total']
-                                        / outlier['implied_years'])),
+                'implied': figure(outlier['implied_per_year'],
+                                  C.num(outlier['implied_per_year'])),
             },
             no_figure='There is no figure here because nobody publishes one. DESE '
                       'publishes the rate without a destination and the destination '
@@ -1284,13 +1304,14 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
                    'the state publishes anything.'
                    % (C.num(dest['elsewhere']), 'FY%d' % dest['fy'],
                       C.num(dest['monty_tech']), str(dest['monty_per_grade']),
-                      C.num(outlier['implied_total'] / outlier['implied_years'])),
+                      C.num(outlier['implied_per_year'])),
             basis='`dese_town_enrollment`, read whole: its columns are checked on every '
                   'run and the generator refuses to publish this claim if a grade column '
                   'ever appears in it.',
             not_shown='Any attribution at all. Nothing here says a single departing '
                       'eighth grader went to any of these places. The sizes are '
                       'comparable and that is the whole of what is established.',
+            allow=('1 October',),
             see=[('/monty-tech', 'What Monty Tech costs the town'),
                  ('/what-we-cannot-answer', 'The gap this leaves')],
         ),
@@ -1357,6 +1378,8 @@ def build():
             dese=dict(definition=DESE_DEFINITION, blanks=DESE_BLANKS,
                       groups=DESE_GROUPS, url=DESE_URL),
             district=dist,
+            enrolment=[dict(fy=y, total=int(en[y]['total_cnt']))
+                       for y in sorted(en) if en[y]['total_cnt']],
             grade_profile=prof,
             outlier=outlier,
             churn=ch,

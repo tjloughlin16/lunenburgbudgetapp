@@ -34,6 +34,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'spedroute'
   | 'classsize'
   | 'courses'
+  | 'attrition'
   | 'peers'
   | 'montytech'
   | 'required'
@@ -272,6 +273,18 @@ export const SLUG: Record<Tab, string> = {
   // site, and that page quotes a STATUTE while this one counts sections. Both are
   // accepted as aliases below, because they are what somebody types.
   courses: 'what-courses-actually-ran',
+  // WHICH GRADES CHILDREN LEAVE IN. The slug is the question residents ask out loud --
+  // TJ, relaying it: "people are asking me to show which grades students are leaving
+  // over time." NOT `attrition`, which is DESE's word and, in this town's own meeting
+  // record, means STAFF attrition both times anybody has ever said it. NOT
+  // `declining-enrollment` or `enrollment-decline`: no document in the whole readable
+  // archive uses either phrase, and the page's third finding is that the leaving is nine
+  // times the size of the enrolment change, so an address naming a decline would preload
+  // the opposite of what the page establishes. NOT `where-students-go`, which is
+  // /where-students-go-instead and answers a question this file explicitly cannot -- the
+  // attrition rate names no destination at all. Both are accepted as aliases below,
+  // because they are what somebody types.
+  attrition: 'which-grades-students-leave',
   peers: 'what-other-districts-spend',
   // The name everybody in town says out loud, and nothing else. NOT
   // `regional-vocational-assessment`, which is the accounting shape of the thing and what
@@ -510,6 +523,14 @@ const ALIASES: Record<string, Tab> = {
   'what-is-taught': 'courses', 'course-sections': 'courses', sections: 'courses',
   curriculum: 'courses', 'master-schedule': 'courses',
   'did-the-cuts-cut-courses': 'courses', 'what-classes-run': 'courses',
+  // NOT 'students-leaving', 'school-choice' or 'transfers-out' -- all three have meant
+  // /if-students-leave since before this page existed. These are the forms somebody
+  // types looking for WHICH GRADE.
+  'which-grades-students-leave': 'attrition', attrition: 'attrition',
+  'student-attrition': 'attrition', 'which-grades-lose-students': 'attrition',
+  'declining-enrollment': 'attrition', 'enrollment-decline': 'attrition',
+  'when-students-leave': 'attrition', 'grade-8': 'attrition',
+  'eighth-grade': 'attrition', 'who-leaves-and-when': 'attrition',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -571,6 +592,7 @@ export const LABEL: Record<Tab, string> = {
   spedroute: 'Who ends up out of district',
   classsize: 'How many students one special education group may have',
   courses: 'What courses actually ran, subject by subject',
+  attrition: 'Which grades students leave in',
   peers: 'What other districts spend, for each pupil',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
@@ -614,6 +636,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   outflow: 'reports',
   peers: 'reports',
   courses: 'reports',
+  attrition: 'reports',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -731,7 +754,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses', formula: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
-  classsize: 'analyses', courses: 'analyses',
+  classsize: 'analyses', courses: 'analyses', attrition: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
@@ -793,7 +816,8 @@ export const AREA_TABS: Record<Area, Tab[]> = {
              'formula',
              'staffing', 'schoolstaff', 'parastaff', 'courses', 'cuts',
              'stopped',
-             'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
+             'unwind', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
+             'sportsmoney',
              'insurance', 'variance'],
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
