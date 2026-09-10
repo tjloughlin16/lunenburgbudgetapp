@@ -789,3 +789,73 @@ before archiving.
 **The third cannot be answered from counts alone** — an admission is a place offered as well
 as a place wanted, and the lottery exists precisely because demand exceeds supply. Counts
 show the outcome of both and separate neither.
+
+## 18. SEARCH, exposed in the app — minutes AND transcripts, on the site
+
+TJ, 10 September 2026: *"I also think we need to expose 'search minutes and transcripts' as
+a search capability in the app as well, that can connect to this DB tool. Lets queue this up
+for after the page work is done."*
+
+**Explicitly AFTER the page work.** Recorded now so the design constraints are not
+rediscovered.
+
+### What exists by the time this starts
+
+`search_minutes.py` with an FTS5 index over both corpora — built 10 September. It fixes the
+substring class of bug outright: `ELL` matched 3,049 documents through *well*, *shell* and
+*sell* when the true count is 2; `ESSER` matched 125 through *lesser* and *assessor* against
+34; `Latin` matched 140 through *relating*. It adds phrase search, NEAR, and BM25 ranking.
+The transcripts join the corpus with their own denominator.
+
+### The five constraints, and none is optional
+
+1. **TWO DENOMINATORS, VISIBLE.** Minutes are what the TOWN published; a transcript is OUR
+   machine rendering of audio. The existing coverage line means "documents the town
+   published that can be read" and merging transcripts into it changes what the sentence
+   means while it keeps looking the same. That denominator has been wrong twice already,
+   both times exactly that way. Two lines, on the page, always -- including on a search with
+   no hits, which is when it matters most.
+
+2. **A TRANSCRIPT HIT LOOKS LIKE A TRANSCRIPT AND CITES A TIMESTAMP.** Never a filename a
+   reader could mistake for minutes. The citable address is the video at `&t=<start>s`, and
+   locating the moment IS the value. Rule 13 with a microphone: *fifteen hundred*, *$1,500*
+   and *$50* are the same sound to a caption model, so a figure read off a caption must
+   never be quotable as the record. Design the result card so that is obvious without
+   reading a caveat.
+
+3. **THE VOCABULARY PROBLEM IS THE REAL ONE, AND FTS5 DOES NOT SOLVE IT.** Searching
+   `foreign language` returns nothing; `French` and `Latin` return the material. `adjustment
+   counselor` and `reduction in force` return zero; `social worker` and `paraprofessional`
+   return plenty. **A resident will type our words and get nothing**, and a null result on a
+   public search reads as "the town never discussed it". Do something about it in the UI --
+   suggested terms, the town's own vocabulary surfaced from the index, "no hits for X; the
+   archive uses Y" -- and do NOT solve it with embeddings without a separate decision:
+   semantic search returns passages that are merely SIMILAR, which is the one thing this
+   project does not publish.
+
+4. **THE ENDPOINT COST IS REAL AND D1 IS THE CONSTRAINT.** `/api/query` bills in ROWS READ,
+   5 million a day on the free plan, and a full database re-import is ~51,000 writes against
+   100,000 a day. An FTS query is cheap per call and a public search box is many calls.
+   Before this ships: does D1 support FTS5 virtual tables at all (CHECK IT, do not assume),
+   what does an FTS match cost in rows read, and does the edge cache in `query.js` -- ten
+   minutes, keyed on statement and parameters -- cover a search box where every query is
+   different? If FTS cannot live in D1, a static prebuilt index served from R2 and queried
+   in the browser is the fallback worth pricing.
+
+5. **STALENESS MUST BE VISIBLE TO THE READER.** An index quietly older than the corpus is
+   the shape of nearly every defect in this repository. The page says when it was built and
+   how many documents it covers.
+
+### What it unlocks, and it is the reason to do it
+
+**231 meetings have no surviving record but the recording, 162 of them School Committee.**
+Until the transcripts existed those were unsearchable at any price. The 29 July 2026 School
+Committee meeting -- football helmets on the agenda, five weeks after a booster president
+told the committee *"we currently have more heads than we have helmets"* -- is one of them,
+and the archive holds no minutes for it.
+
+### What it must not become
+
+A search box that returns a wall of hits is a worse answer than the current script, which at
+least prints its denominator and its address per hit. Rank, group by board and by year, and
+make the citation the most prominent thing on every result.
