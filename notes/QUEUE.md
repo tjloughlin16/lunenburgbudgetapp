@@ -588,6 +588,74 @@ everything else here — cap it and say so.
 **Start with the three boards TJ already watched** — Select Board, Finance Committee, School
 Committee. We hold 1,022 sets of their minutes, 2010-2026.
 
+## 12b. FACEBOOK, and the four post types — a collaborator's proposal
+
+Received 10 September 2026 by email, from someone offering to collaborate. Recorded close
+to verbatim because the framing is better than anything this project has written about
+distribution.
+
+> **Assumptions:** The goal is to draw as many people in as possible. Use Facebook. While
+> it's not ideal, the primary rule of engagement is to meet people where they already are.
+> Why do this: attention spans are short, and most people prefer quick, easily digestible
+> information.
+>
+> **1. New Findings** — highlight new reports and fresh data as they become available.
+> **2. Myth vs Fact** — use real examples to directly address common misconceptions,
+> clarify ongoing claims, and set the record straight.
+> **3. Did You Know?** — simple, quick takeaways that deliver key points instantly, while
+> offering a link for those who want to read more.
+> **4. Analysis Spotlight** — direct links to full articles, with a teaser on what readers
+> will learn and the estimated reading time.
+
+TJ on the fourth: *"Which I think we should do."*
+
+**WHY THIS IS THE HALF THE PROJECT DOES NOT HAVE.** Everything built here assumes somebody
+arrives wanting to read. Almost nobody arrives. Sixty-two routes, a synthesis, a records
+archive and a query API are all worth nothing to a resident who never learns they exist,
+and the town's argument happens on Facebook whether this project is there or not.
+
+**Three of the four are already generated and need no new analysis:**
+
+- **New Findings** — `watch_meetings.py` already answers *what changed since last time*
+  deterministically. A new report is the same signal, and `reports.json` already carries
+  the title, the description and the date.
+- **Did You Know** — this is exactly the conclusion contract: a metric with a unit, a claim
+  of at most 95 characters, a supporting line of at most 110. **46 of them already exist**
+  and every figure in them is derived, so a post cannot state a number the report does not.
+- **Analysis Spotlight** — `reports.json` carries word counts; reading time is a division.
+
+**MYTH VS FACT IS THE STRONGEST AND THE MOST DANGEROUS.** Today produced several where the
+myth is widely held, checkable, and wrong for an interesting reason:
+
+- *"We have always been a low-spending town"* — at or above the state median in 14 of 31
+  measured years, and exactly at it in FY2018.
+- *"Losing students costs us state aid"* — about $150 a pupil. The cost is the $5,000
+  tuition, not the aid.
+- *"The district cut those positions"* — three of eight FY2020 cuts were withdrawn within
+  four weeks, and the state's own counts agree with the withdrawal.
+- *"Staffing went up" / "we cut staff"* — both true. The sign depends on the window.
+
+**THE LINE THIS FORMAT WALKS, and it must be written into whatever ships:** *Myth vs Fact*
+is one framing away from *here is who is wrong*. Every example above works because the myth
+is a genuine misunderstanding of a MECHANISM — how Chapter 70 increments work, what a
+published cut list is, which window a chart uses. **The moment a post names a person, a
+board or a faction as the source of a myth, this stops being a budget project and becomes
+a participant in the argument it exists to inform.** Rule 8, at the point of maximum
+temptation, in the medium least suited to nuance.
+
+Two consequences for how it gets built:
+
+- **A post is generated from a payload, never typed.** Same discipline as the pages: if a
+  figure changes, the post that quoted it is wrong, and only derivation catches that. A
+  Facebook post is also the one artefact that cannot be corrected once shared.
+- **Every post carries the link.** The point is not to win the argument in the comments; it
+  is to move somebody to a page where the working is shown and the caveats are attached.
+
+**Not yet decided, and TJ's to decide:** whether this is a Page or a Group; who posts;
+whether the project's voice on Facebook is the same as its voice on the site. A Group
+invites replies this project would then be answering in public, which is a different
+commitment from publishing.
+
 ## 13. Community news
 
 Aggregate and LINK. Do not republish. Reproducing somebody else's announcement wholesale is
