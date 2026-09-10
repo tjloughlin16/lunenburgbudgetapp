@@ -498,3 +498,36 @@ What it IS good for: sizing the private sector within reach of Lunenburg familie
 Cushing, Applewild, Notre Dame, St Bernard's — which nothing else here does, and which
 bounds how large the unknown could plausibly be. That is a real contribution to a gap that
 currently has no bound at all.
+
+### Student Attrition — copied in 10 September, NOT yet extracted
+
+    sources/state-dese/dese-student-attrition.xlsx
+    23,511,087 bytes
+    sha256 1323ea14ebb42d6f4bd9ae6f5ddbb62bb9c16b032ae3413c557f2206b7cbc76c
+
+Columns: `SY, DIST_CODE, DIST_NAME, ORG_CODE, ORG_NAME, ORG_TYPE, STU_GRP` then a
+PERCENTAGE PER GRADE — `GK_PCT, G01_PCT, G02_PCT …`.
+
+**WHY THIS ONE MATTERS MORE THAN IT LOOKS.** It is a per-GRADE rate for ALL students,
+which is the dimension the outflow work has been missing since the beginning.
+`money-gaps.csv` carries a row saying which grades Lunenburg children leave in cannot be
+answered — the plausible story being that choice-outs cluster at grade 9 when families
+pick a high school. **This file may answer it**, and if it does, that gap row gets narrowed
+rather than left standing. Check before assuming: an attrition RATE is not the same
+quantity as a count of children moving to a named district, and the two must not be
+conflated.
+
+It also pairs with `dese_sped_movement`, which gives movement on and off an IEP by grade.
+One is students leaving the district; the other is students leaving a programme. Different
+questions, adjacent grains, easy to confuse.
+
+**Both traps apply, and both are visible in the first three rows:** `DIST_CODE 00000000 /
+State` rollups sit beside district detail, and `STU_GRP` carries `All Students` alongside
+the race categories, which describe the same children. Follow `scripts/extract_dese_ap.py`
+— it filters to Lunenburg, keeps every student group as its own row, and refuses to write
+if the filter matches nothing.
+
+**And a caution on the measure itself:** attrition is a rate, so it says nothing about
+where a child went. A student leaving for Monty Tech, for Leominster under school choice,
+for Cushing, or because the family moved out of town are all the same number here. It
+bounds the question; it does not settle it.
