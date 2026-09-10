@@ -506,3 +506,61 @@ input[type="range"] { accent-color: var(--series-cost); }
    confusable, so one rotates in place and the other points away. */
 .conc-chev { transform: rotate(0deg); }
 details[open] > summary .conc-chev { transform: rotate(90deg); }
+
+/* THE SCHOOL PANELS ON /who-works-in-each-school, ALIGNED BLOCK FOR BLOCK.
+   TJ: "is it possible to keep the sections ... at the same page height (on desktop!
+   mobile clearly no) across the page? So that I can compare across all the schools. But I
+   like the visual separation and padding and dont want just a big table."
+
+   So the cards stay cards -- border, ground, padding -- and on a wide screen each one is a
+   `grid-template-rows: subgrid` child of the board grid. Equivalent blocks then share a
+   ROW TRACK across every card, so "who teaches" in one school begins at the same height as
+   "who teaches" in the next and a reader can scan across.
+
+   Three things this depends on, each of which fails silently if it moves:
+
+   1. **Alignment is by row INDEX, so every block carries an explicit `grid-row`** taken
+      from the enumerated slot table in StaffingCharts.tsx. A card that omits a block
+      leaves its track empty rather than pulling everything below it up -- which would look
+      aligned and not be, the worst outcome available here.
+   2. **The spacing between blocks is a MARGIN, not the grid gap.** A row gap is drawn
+      between two tracks whether or not either holds anything, so an omitted block would
+      cost 12px of dead space inside the card. A margin belongs to the block that renders,
+      so an empty track is exactly 0 high. The same rule spaces the flex fallback below,
+      which is why it sits outside the query.
+   3. **The columns are pinned to the number of panels** at this width, so the cards cannot
+      wrap onto a second band. With `row-gap: 0` a wrapped band would sit flush against the
+      one above it. Four panels is the most any year has printed.
+
+   Below the breakpoint, and in any browser without subgrid, the card is the flex column it
+   always was: same border, same padding, same 12px rhythm, just unaligned. Nothing here
+   changes what a phone gets -- `min(100%, 248px)` is still what stops a horizontal scroll
+   at 390px.
+
+   Subgrid is in Chrome from 117, Safari from 16 and Firefox from 71, so nearly every
+   reader gets the aligned version -- but the @supports query is what makes an older one
+   degrade to a correct page rather than a broken one, and it is not optional. 1120px is
+   where four cards still clear the 248px floor: they measure 261px there. */
+.school-board {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 248px), 1fr));
+}
+.school-panel > * + * { margin-top: 0.75rem; }
+
+@media (min-width: 1120px) {
+  @supports (grid-template-rows: subgrid) {
+    .school-board {
+      grid-template-columns: repeat(var(--panel-cols, 4), minmax(0, 1fr));
+      row-gap: 0;
+    }
+    .school-panel {
+      display: grid;
+      grid-template-rows: subgrid;
+      /* Row 1 always, and down to the last block this school actually prints: a card
+         with nothing for the last two slots ends there instead of drawing a border round
+         empty tracks. The tops are what align; the bottoms are ragged on purpose. */
+      grid-row: 1 / span var(--panel-span, var(--panel-slots, 6));
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import {
   BarChart, Bar, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   ReferenceArea, ReferenceLine, ResponsiveContainer,
@@ -1084,15 +1084,62 @@ function Figure({ value, unit, note }: {
   )
 }
 
+/* THE PANEL'S BLOCKS, ENUMERATED ONCE. THIS TABLE IS THE WHOLE OF THEM.
+ *
+ * A panel renders a VARIABLE number of these: the reorganisation notice appears in one
+ * school-year out of fifty, the doubled-roster band in one, and FY2016's middle school has
+ * neither a teaching FTE nor a cross-check. On a wide screen the cards are subgrid children
+ * of the board grid so that equivalent blocks line up across schools — and subgrid aligns
+ * by row INDEX, so a card that simply omitted a block would pull everything below it up one
+ * track and quietly align "who teaches" in one school against "who runs the building" in
+ * the next. It would LOOK right, which is worse than not doing it at all.
+ *
+ * So every block states its row, from here, and an absent block leaves an empty track.
+ * There are no placeholder elements: an empty track is 0 high because the spacing between
+ * blocks is a margin on the block rather than a gap between tracks (see .school-panel in
+ * index.css), so a slot a school does not have takes up nothing and shows nothing.
+ *
+ * ADDING A BLOCK MEANS ADDING IT HERE, and the row tracks follow: the board declares
+ * `PANEL_SLOTS` — the count of this table — and each card declares how far down it goes,
+ * also read off this table. Neither number is written in the CSS. A block rendered
+ * WITHOUT a `gridRow` from here lands in row 1, on top of the school's name, which is the
+ * one mistake this comment is for. */
+const SLOT = {
+  head: 1,        // the school, its grades, the year — always printed
+  figures: 2,     // children, names, the ratio, teaching FTE — always printed
+  break: 3,       // "a different school from FY2016" — FY2017 Turkey Hill only
+  roster: 4,      // who the adults are, by category — or, where the town printed two
+                  //   rosters for one school, the two rosters instead of the categories.
+                  //   One slot, because the generator makes them alternatives: see the
+                  //   comment on the block itself.
+  teaching: 5,    // the state's teaching FTE
+  cross: 6,       // the town's names against the state's posts
+} as const
+const PANEL_SLOTS = Object.keys(SLOT).length
+
 function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }) {
   const t = p.teaching
   const band = p.names_band
   const brk = board.breaks.find(b => b.school === p.school && b.first_fy === year)
   const groups = board.groups
+  /* A card SPANS ONLY AS FAR AS ITS LAST BLOCK. Alignment is about where a section
+     BEGINS; a school with nothing to print in the last two slots — FY2016's middle
+     school has neither a teaching FTE nor a cross-check — should end its card there
+     rather than draw a border round 600px of nothing. Every card still starts at row 1,
+     so nothing above moves. Read off the same table, in the same order, so a slot added
+     above cannot be missed here. */
+  const lastSlot = Math.max(
+    SLOT.figures,                              // always printed
+    brk ? SLOT.break : 0,
+    (band || p.rows) ? SLOT.roster : 0,
+    t ? SLOT.teaching : 0,
+    p.cross_check ? SLOT.cross : 0,
+  )
   return (
-    <div className="card p-4 flex flex-col gap-3">
+    <div className="card p-4 flex flex-col school-panel"
+      style={{ '--panel-span': lastSlot } as CSSProperties}>
       {/* the school, and what it held that year */}
-      <div>
+      <div style={{ gridRow: SLOT.head }}>
         <h3 className="text-[15px] font-bold leading-tight">{p.name || p.school}</h3>
         <p className="text-[11.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
           {p.grade_span ? <>grades {p.grade_span}</> : 'grades not published'}
@@ -1101,7 +1148,7 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
       </div>
 
       {/* children, adults, and the ratio between them */}
-      <div className="flex flex-wrap gap-x-6 gap-y-3">
+      <div className="flex flex-wrap gap-x-6 gap-y-3" style={{ gridRow: SLOT.figures }}>
         <Figure value={p.students === null ? '—' : p.students.toLocaleString()}
           unit="children" note="state count, 1 October" />
         <Figure value={band ? `${band.low}–${band.high}` : String(p.names)}
@@ -1119,7 +1166,10 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
 
       {brk && (
         <p className="text-[11.5px] leading-snug px-2.5 py-2 rounded"
-          style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
+          style={{
+            gridRow: SLOT.break,
+            background: 'var(--surface-3)', color: 'var(--text-secondary)',
+          }}>
           A different school from {fy(brk.last_fy)}. The state’s records hold{' '}
           <strong>{brk.was}</strong>, grades {brk.was_span}, up to {fy(brk.last_fy)}, and{' '}
           <strong>{brk.now}</strong>, grades {brk.now_span}, from {fy(brk.first_fy)} —
@@ -1127,103 +1177,114 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
         </p>
       )}
 
-      {/* the two printed rosters, where the town printed two */}
-      {band && (
-        <div className="text-[12px]">
-          <p className="leading-snug px-2.5 py-2 rounded mb-2"
-            style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
-            The {fy(year)} annual report prints <strong>two complete rosters</strong> for
-            this school, on pages {band.pages.join(' and ')}, with {band.shared} names in
-            common. Neither page says which year it describes, so they are shown apart and
-            nothing here is summed. This is a printing in a document, not a statement
-            about anybody named in it.
-          </p>
-          <div className="grid gap-2" style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
-          }}>
-            {band.rosters.map(r => (
-              <div key={r.page} className="rounded p-2.5"
-                style={{ background: 'var(--surface-2)' }}>
-                <div className="font-semibold text-[12px]">
-                  page {r.page} &middot; {r.names} names
-                </div>
-                {r.leaders.length > 0 && (
-                  <div className="text-[10.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                    named here as running the school:{' '}
-                    {r.leaders.map(l => `${l.name}${l.also.length
-                      ? ` (also printed ${fy(l.also[0])}–${fy(l.also[l.also.length - 1])})`
-                      : ''}`).join('; ')}
+      {/* WHAT THE ROSTER SAYS — one slot, because these two are alternatives.
+          `build_staffing_charts.py` sets `rows` to None for a school-year whose annual
+          report printed two rosters (`rows_, group_rows = None, None`), since no way
+          exists to split a category between two printed pages. So the band is what a
+          school prints INSTEAD of its categories, and giving them one track means the
+          doubled year does not open a roster-sized hole in the other three cards. The
+          wrapper renders whichever exists, and both if a payload ever carries both. */}
+      {(band || p.rows) && (
+        <div className="flex flex-col gap-3" style={{ gridRow: SLOT.roster }}>
+        {band && (
+          <div className="text-[12px]">
+            <p className="leading-snug px-2.5 py-2 rounded mb-2"
+              style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
+              The {fy(year)} annual report prints <strong>two complete rosters</strong> for
+              this school, on pages {band.pages.join(' and ')}, with {band.shared} names in
+              common. Neither page says which year it describes, so they are shown apart and
+              nothing here is summed. This is a printing in a document, not a statement
+              about anybody named in it.
+            </p>
+            <div className="grid gap-2" style={{
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
+            }}>
+              {band.rosters.map(r => (
+                <div key={r.page} className="rounded p-2.5"
+                  style={{ background: 'var(--surface-2)' }}>
+                  <div className="font-semibold text-[12px]">
+                    page {r.page} &middot; {r.names} names
                   </div>
-                )}
-                <ul className="mt-1.5 space-y-0.5">
-                  {r.rows.map(x => (
-                    <li key={x.key} className="flex justify-between gap-2">
-                      <span style={{ color: 'var(--text-secondary)' }}>{x.label}</span>
-                      <span className="tnum font-semibold">{x.names}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* who the adults are */}
-      {p.rows && (
-        <div className="text-[12.5px]">
-          {groups.map(g => {
-            const rs = p.rows!.filter(r => r.group === g.key)
-            if (!rs.length) return null
-            const gt = p.groups?.find(x => x.key === g.key)
-            return (
-              <div key={g.key} className="mb-2 last:mb-0">
-                {/* THE GROUP HEADING IS A HEADING, NOT AN EYEBROW. It was 10.5px,
-                    uppercase, tracking-widest and in the muted ink — a combination whose
-                    whole purpose is to recede, and wide letterspacing at that size costs
-                    legibility on top. TJ: "sections like 'Who runs the building' need to
-                    stand out a bit more. Its hard to see". Now full-size, in the primary
-                    ink, on a heavier rule: uppercase and a little tracking still mark it
-                    as structure rather than content. */}
-                <div className="flex justify-between items-baseline gap-2 pb-1 mb-1.5
-                                border-b" style={{ borderColor: 'var(--text-muted)' }}>
-                  <span className="text-[11.5px] font-bold uppercase tracking-wide
-                                   min-w-0"
-                    style={{ color: 'var(--text-primary)' }}>{g.label}</span>
-                  {gt && <span className="tnum text-[12px] font-bold whitespace-nowrap">
-                    {gt.names}<Delta d={gt.delta} />
-                  </span>}
+                  {r.leaders.length > 0 && (
+                    <div className="text-[10.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                      named here as running the school:{' '}
+                      {r.leaders.map(l => `${l.name}${l.also.length
+                        ? ` (also printed ${fy(l.also[0])}–${fy(l.also[l.also.length - 1])})`
+                        : ''}`).join('; ')}
+                    </div>
+                  )}
+                  <ul className="mt-1.5 space-y-0.5">
+                    {r.rows.map(x => (
+                      <li key={x.key} className="flex justify-between gap-2">
+                        <span style={{ color: 'var(--text-secondary)' }}>{x.label}</span>
+                        <span className="tnum font-semibold">{x.names}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-0.5">
-                  {/* A group holding one category whose figures ARE the group's figures
-                      would print the same number twice. Where they differ they are two
-                      facts — a category that has gone to zero still moves the group — so
-                      the suppression tests both numbers, not just the count. */}
-                  {(rs.length === 1 && gt && rs[0].names === gt.names
-                    && rs[0].delta === gt.delta ? [] : rs).map(r => (
-                    <li key={r.key} className="flex justify-between gap-3">
-                      <span style={{ color: 'var(--text-secondary)' }}>{r.label}</span>
-                      <span className="tnum whitespace-nowrap">
-                        <strong>{r.names}</strong><Delta d={r.delta} />
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )
-          })}
-          <p className="text-[10.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
-            {p.delta_from_fy !== null
-              ? <>&#9650;&#9660; is the change since {fy(p.delta_from_fy)} &mdash;{' '}
-                {board.window} years, names against names.</>
-              : <>No three-year change is shown: {p.delta_unavailable}.</>}
-          </p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* who the adults are */}
+        {p.rows && (
+          <div className="text-[12.5px]">
+            {groups.map(g => {
+              const rs = p.rows!.filter(r => r.group === g.key)
+              if (!rs.length) return null
+              const gt = p.groups?.find(x => x.key === g.key)
+              return (
+                <div key={g.key} className="mb-2 last:mb-0">
+                  {/* THE GROUP HEADING IS A HEADING, NOT AN EYEBROW. It was 10.5px,
+                      uppercase, tracking-widest and in the muted ink — a combination whose
+                      whole purpose is to recede, and wide letterspacing at that size costs
+                      legibility on top. TJ: "sections like 'Who runs the building' need to
+                      stand out a bit more. Its hard to see". Now full-size, in the primary
+                      ink, on a heavier rule: uppercase and a little tracking still mark it
+                      as structure rather than content. */}
+                  <div className="flex justify-between items-baseline gap-2 pb-1 mb-1.5
+                                  border-b" style={{ borderColor: 'var(--text-muted)' }}>
+                    <span className="text-[11.5px] font-bold uppercase tracking-wide
+                                     min-w-0"
+                      style={{ color: 'var(--text-primary)' }}>{g.label}</span>
+                    {gt && <span className="tnum text-[12px] font-bold whitespace-nowrap">
+                      {gt.names}<Delta d={gt.delta} />
+                    </span>}
+                  </div>
+                  <ul className="space-y-0.5">
+                    {/* A group holding one category whose figures ARE the group's figures
+                        would print the same number twice. Where they differ they are two
+                        facts — a category that has gone to zero still moves the group — so
+                        the suppression tests both numbers, not just the count. */}
+                    {(rs.length === 1 && gt && rs[0].names === gt.names
+                      && rs[0].delta === gt.delta ? [] : rs).map(r => (
+                      <li key={r.key} className="flex justify-between gap-3">
+                        <span style={{ color: 'var(--text-secondary)' }}>{r.label}</span>
+                        <span className="tnum whitespace-nowrap">
+                          <strong>{r.names}</strong><Delta d={r.delta} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
+            <p className="text-[10.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
+              {p.delta_from_fy !== null
+                ? <>&#9650;&#9660; is the change since {fy(p.delta_from_fy)} &mdash;{' '}
+                  {board.window} years, names against names.</>
+                : <>No three-year change is shown: {p.delta_unavailable}.</>}
+            </p>
+          </div>
+        )}
         </div>
       )}
 
       {/* the teaching FTE, and what it is not */}
       {t && (
-        <div className="text-[12px] rounded p-2.5" style={{ background: 'var(--surface-2)' }}>
+        <div className="text-[12px] rounded p-2.5"
+          style={{ gridRow: SLOT.teaching, background: 'var(--surface-2)' }}>
           <div className="text-[10.5px] font-semibold uppercase tracking-widest mb-1"
             style={{ color: 'var(--text-muted)' }}>
             Teaching posts, full-time equivalent (the state)
@@ -1308,6 +1369,7 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
       {p.cross_check && (
         <div className="text-[11.5px] leading-snug rounded p-2.5"
           style={{
+            gridRow: SLOT.cross,
             background: 'var(--surface-2)',
             borderLeft: p.cross_check.flag
               ? '3px solid var(--status-warning)' : '3px solid var(--grid)',
@@ -1356,11 +1418,15 @@ export function SchoolBoard({ board }: { board: Board }) {
           {panels.length} schools printed a roster in {fy(year)}
         </span>
       </div>
-      {/* Four panels across at a laptop width, a stack on a phone. `min(100%, …)` is what
-          stops the track floor forcing a horizontal scroll at 390px. */}
-      <div className="grid gap-3" style={{
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 248px), 1fr))',
-      }}>
+      {/* Four panels across at a laptop width, a stack on a phone, and above 1120px the
+          cards become subgrid children so equivalent blocks line up across schools — the
+          track floor, the breakpoint and the fallback all live in `.school-board` /
+          `.school-panel` in index.css, where the reasons are written down. The two custom
+          properties are the only things the component knows: how many panels this year
+          printed, and how many blocks a panel has. */}
+      <div className="school-board" style={{
+        '--panel-cols': panels.length, '--panel-slots': PANEL_SLOTS,
+      } as CSSProperties}>
         {panels.map(p => <Panel key={p.school} p={p} board={board} year={year} />)}
       </div>
       <TableTwin caption={`Every school and every category, ${fy(year)}`}
