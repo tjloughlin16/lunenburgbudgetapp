@@ -443,6 +443,85 @@ CREATE TABLE dese_teacher_subject (
 --   tot_stu_cnt   DISTINCT students who took the subject, NOT seats. It is not
 --                 tot_clss_cnt * avg_clss_cnt, and on most rows it is far smaller.
 --
+-- ADVANCED PLACEMENT, both halves, SY2007-SY2025. Filtered from two statewide DESE
+-- workbooks of 174MB each to LEA 01620000.
+--
+-- `kind` IS A LEVEL COLUMN AND THE MOST IMPORTANT ONE HERE: `participation` and
+-- `performance` are two separate publications sharing a table, and the figure columns of
+-- each are NULL on the other's rows. Filter it before touching any figure.
+--
+-- `org_type` separates the DISTRICT rollup from its own schools -- and here they are the
+-- same size (4,953 rows each), because Lunenburg's AP is all at one school. That makes
+-- summing them a silent DOUBLING rather than an obvious one.
+--
+-- `stu_grp` OVERLAPS. `All Students` sits beside race, sex and selected-population
+-- groups, which describe the same children. Never add across it.
+--
+-- AND TESTS ARE NOT STUDENTS. `test_takers_cnt` counts children; `tests_taken_cnt` counts
+-- sittings; `one_test_cnt` through `five_plus_test_cnt` distribute the children by how
+-- many they sat. A score column is a count of TESTS at that score, so `score_5` is not
+-- a count of pupils. DESE suppresses small cells, and a blank is NULL rather than nought.
+CREATE TABLE dese_ap (
+    kind                TEXT NOT NULL,      -- participation | performance  <- level
+    sy                  INTEGER NOT NULL,   -- SCHOOL YEAR ENDING
+    org_code            TEXT NOT NULL,
+    org_name            TEXT,
+    org_type            TEXT NOT NULL,      -- District | School  <- the rollup guard
+    stu_grp             TEXT NOT NULL,      -- OVERLAPPING groups; 'All Students' is a total
+    subj_cat            TEXT,               -- the subject family
+    subj                TEXT,               -- 'All Subjects' is a rollup of the rest
+    test_takers_cnt     REAL,               -- CHILDREN who sat at least one
+    tests_taken_cnt     REAL,               -- SITTINGS, not children
+    one_test_cnt        REAL,
+    two_test_cnt        REAL,
+    three_test_cnt      REAL,
+    four_test_cnt       REAL,
+    five_plus_test_cnt  REAL,
+    tests_taken         REAL,
+    score_1             REAL,               -- counts of TESTS at each score, not pupils
+    score_2             REAL,
+    score_3             REAL,
+    score_4             REAL,
+    score_5             REAL,
+    pct_1_2             REAL,
+    pct_3_5             REAL
+);
+
+-- WHO LEFT, BY GRADE, SY2010-SY2026. This is the table that answers "which grades are
+-- students leaving in, over time" -- the question residents actually ask.
+--
+-- EVERY FIGURE IS A PERCENTAGE. `gk_pct` through `g11_pct` and `grd_all` are RATES, so
+-- they may not be summed across grades, and they may not be averaged across grades
+-- without weighting by the enrolment in each -- join `dese_enrollment` for that. A rate
+-- off a small grade cohort moves violently; read the year-by-year before calling a trend.
+--
+-- `org_type` separates the DISTRICT rollup from its schools. `stu_grp` OVERLAPS.
+--
+-- AND ATTRITION IS LEAVING FOR ANY REASON. It does not separate a family moving out of
+-- town from a transfer to another school, and it is not school choice -- for where a
+-- child went, see `dese_town_enrollment`.
+CREATE TABLE dese_attrition (
+    kind        TEXT NOT NULL,      -- always 'attrition'
+    sy          INTEGER NOT NULL,   -- SCHOOL YEAR ENDING
+    org_code    TEXT NOT NULL,
+    org_name    TEXT,
+    org_type    TEXT NOT NULL,      -- District | School  <- the rollup guard
+    stu_grp     TEXT NOT NULL,      -- OVERLAPPING groups; 'All Students' is a total
+    gk_pct      REAL,               -- PERCENTAGES, all of them
+    g01_pct     REAL,
+    g02_pct     REAL,
+    g03_pct     REAL,
+    g04_pct     REAL,
+    g05_pct     REAL,
+    g06_pct     REAL,
+    g07_pct     REAL,
+    g08_pct     REAL,
+    g09_pct     REAL,
+    g10_pct     REAL,
+    g11_pct     REAL,
+    grd_all     REAL                -- the school's own all-grades rate, NOT a sum
+);
+
 -- The demographic columns are PERCENTAGES OF THE SUBJECT'S STUDENTS and overlap each
 -- other: race, sex, English learner, low income and disability all describe the same
 -- children. Nothing here may be added across them.
@@ -1466,6 +1545,10 @@ DESE_DATASETS = [
     # `org_type` is the level column here, and it is the ONE thing standing
     # between a caller and summing a district with its own schools.
     ('dese-class-size', 'dese_class_size', 'org_type', {'District', 'School'}),
+    # Both of these carry `org_type` as the guard, and AP carries a SECOND level column
+    # (`kind`) because participation and performance are two publications in one file.
+    ('dese-ap', 'dese_ap', 'org_type', {'District', 'School'}),
+    ('dese-attrition', 'dese_attrition', 'org_type', {'District', 'School'}),
 ]
 
 # Which columns are text in these tables. Everything else that is not `fy` is a figure,
@@ -1481,6 +1564,7 @@ DESE_TEXT_COLS = {
     'lea_number', 'level', 'municipality', 'nss_stage', 'student_teacher_ratio_printed',
     'measure', 'basis', 'lunenburg_rank_of_districts',
     'kind', 'org_type', 'subj',
+    'stu_grp', 'subj_cat',
 }
 # `printing` is an ordinal, not a figure: 1 for the first row published under a natural
 # key, 2 for the next. It is part of the primary key of three tables.

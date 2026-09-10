@@ -225,6 +225,13 @@ TIERS = {
 ROLE_LABEL = {
     'fact': 'fact', 'dimension': 'dimension', 'extract': 'extract',
     'classification': 'our model', 'provenance': 'provenance', 'derived': 'derived',
+    # A VIEW IS NOT A DERIVED TABLE, and the difference matters to a caller: it is
+    # computed when you query it, holds no rows of its own, and can therefore be EMPTY
+    # because the document behind it does not exist rather than because nothing matched.
+    # `v_appropriation_vs_spend` is exactly that -- it filters period 13 and the ledger
+    # holds 9 and 12, so it returns nothing and always will until the year-end close
+    # arrives.
+    'view': 'view',
 }
 
 # The three grains SCHEMA.md names. Called out because confusing them is how a budget gets
@@ -259,8 +266,12 @@ def by_scope(c, tabs):
     with... and by group 'school vs town department'". So the top-level split is whose
     money it is, and role and tier ride along as badges.
     """
+    # TABLES AND VIEWS BOTH. `table-semantics.csv` grew to cover the sixteen views on
+    # 10 September 2026, and this check read `type='table'` only -- so every view row it
+    # gained was reported as describing something that no longer exists. The registry is
+    # keyed on what a caller can query, and a caller cannot tell a view from a table.
     tables = [r[0] for r in c.execute(
-        "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")]
+        "SELECT name FROM sqlite_master WHERE type IN ('table','view') ORDER BY name")]
     undescribed = sorted(set(tables) - set(tabs))
     if undescribed:
         raise SystemExit(
