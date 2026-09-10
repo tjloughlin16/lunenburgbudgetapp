@@ -463,3 +463,38 @@ with the town both can be right about different things.
 
 On the confidence ladder: **cross-checked, not traced.** A promotion for most of what this
 project holds, and still not the top rung.
+
+### Two more from TJ, 10 September 2026
+
+**Pre-Kindergarten and Kindergarten Enrolment** — TODO, ingest later.
+
+    /Users/tj/Downloads/Pre-Kindergarten_and_Kindergarten_Enrollment_20260910.xlsx
+    12,792,809 bytes
+    sha256 63d09ecd1e9534b9a266ec92eedf5a349503a3ee9661119da1e24717a9526e02
+
+Worth having beside `dese_sped_movement`: the IEP grade-span work showed PK-2 falling 19
+while Grades 6-8 rose 19, and could not say whether that is a cohort moving through or
+fewer young children being identified. PK/K enrolment is the denominator that question
+needs.
+
+**Non-Public School Enrolment** — ingest, but NOT for the reason it looks like.
+
+    /Users/tj/Downloads/Non-Public_School_Enrollment_20260910.xlsx
+    1,323,346 bytes
+    sha256 62c533aca6c3ad88f23bbf9c44bfc8ea601f43fdee400785a1ab58183adf504a
+
+**IT DOES NOT CLOSE THE PRIVATE-SCHOOL GAP, and this was checked rather than assumed.**
+Its columns are `SY, DIST_CODE, DIST_NAME, ORG_CODE, ORG_NAME, GRD_TOTAL_CNT` and then a
+count per grade. **It is keyed on the SCHOOL and carries no town of residence.** So it says
+how many children attend Cushing Academy, by grade. It cannot say how many of them are
+from Lunenburg.
+
+The gap registered on 10 September asks *how many Lunenburg children are educated at
+private or parochial schools*. This file answers a different question and the join that
+would connect them is not in it. **Do not let it be read as closing that row** — the
+closing document is still the town census or the district's own October 1 resident count.
+
+What it IS good for: sizing the private sector within reach of Lunenburg families —
+Cushing, Applewild, Notre Dame, St Bernard's — which nothing else here does, and which
+bounds how large the unknown could plausibly be. That is a real contribution to a gap that
+currently has no bound at all.

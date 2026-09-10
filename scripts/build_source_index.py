@@ -285,6 +285,21 @@ GROUPS = [
                  'carries the quantity the district\u2019s own budget documents cannot '
                  'give: how many paraprofessionals there are.',
         'items': [
+            ('state-dese/603cmr28-special-education-regulations.html',
+             '603 CMR 28.00 — the special education regulations', 3,
+             'The rule that constrains special education staffing, and it is cited by no '
+             'document this town publishes: across all 3,877 documents here the only '
+             '"603 CMR" references are 35, 4 and 7 — educator evaluation and licensure. '
+             '28.06(6)(d) sets the class-size rule everybody argues around without '
+             'quoting: a substantially separate group may not exceed eight students to '
+             'one certified special educator, or twelve to a special educator AND AN AIDE '
+             '— so a paraprofessional is partly what PERMITS a larger group rather than '
+             'being a ratio in itself. Three qualifications travel with it and are easy '
+             'to drop: these are MAXIMUMS and districts are expected to go smaller for '
+             'complex needs (28.06(6)(c)); grouping must match each student\u2019s own '
+             'IEP (b); and a group at maximum may take two more students mid-year by '
+             'decision of the Administrator of Special Education (e). Saved from the '
+             'state\u2019s own page rather than published as a file.'),
             ('state-dese/district-spending-categories.csv',
              'Staffing and spending by category, FY09\u2013FY25', 3,
              'Massachusetts DESE, via the state open-data portal. Teacher FTE, '

@@ -160,7 +160,7 @@ school costs the town no tuition and no assessment, and barely moves Chapter 70.
 departures are close to free for the budget — the one group whose leaving does not cost
 money — and the page cannot count them.
 
-## CORRECTED: grade span is ALREADY on the page. The gap is the MOVEMENT table
+## STILL OPEN: `dese_sped_movement` is unread. (Grade span was already published — my error)
 
 Found 9 September, verified, not built.
 
@@ -222,7 +222,7 @@ and never mentioned anywhere on the site.
 
 Grade SPAN, not individual grade. DESE publishes the five bands and no finer.
 
-## Fetch 603 CMR 28.06 — the class-size regulation — and test staffing against it
+## DONE 10 Sept: 603 CMR 28 is ingested. Kept for the reasoning, and for what it still cannot settle
 
 Asked 9 September: is there a legally defined ratio of paraprofessionals to students on an
 IEP, by classroom setting? **Nothing in this archive answers it, and the archive should
@@ -245,8 +245,10 @@ quoted at a Finance Committee meeting is the exact failure rule 13 exists to pre
 is a maximum number of students per certified special education teacher, **with a higher
 maximum permitted when an aide is present.**
 
-**Do not write the numbers until the regulation is in `sources/` with its sha256.** Fetch
-it, catalogue it with its address per rule 12, and quote it at a citation.
+**DONE.** `sources/state-dese/603cmr28-special-education-regulations.html`, sha256
+`33943cfe…`, from `https://www.doe.mass.edu/lawsregs/603cmr28.html?section=all`, text
+extracted, catalogued, pushed to R2. The rule is 28.06(6)(d): eight students to one
+certified special educator, or twelve to an educator AND AN AIDE. A page is being built.
 
 **Then the analysis that matters.** If an aide is what PERMITS a larger class rather than
 being a ratio in its own right, then paraprofessional counts track PROGRAM STRUCTURE and
