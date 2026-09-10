@@ -349,3 +349,93 @@ question the previous one raises — and `scripts/verify_ch70_formula.py` assert
 published list is identical, step by step and field by field, to the one in
 `scripts/build_minimum_aid.py`. A rewrite is a decision somebody should have to make
 against a failing check.
+
+### `/what-sports-cost` — athletics, both sides of the money, 10 September 2026
+
+Six readers, six tests, plus the omission step. **Two failed on the first pass** and the
+page was changed rather than the note. Both failures are the same shape and it is the
+shape this site keeps repeating: a page whose finding is about MEASUREMENT — three
+documents that disagree — drifts into describing its own method at the top, and leaves the
+reader with nothing to do at the bottom.
+
+| reader | what failed | what changed |
+|---|---|---|
+| 1 · the resident who has decided | passed | the worst fact is the first conclusion and the first stat: more money left the town's two accounts for athletics than any published document totals. The credit sits at the same weight — the revolving fund is a Chapter 658 fund doing exactly what such a fund is for, the district wrote the arrangement down in its own budget overview, and rule 11 is documented here rather than suspected |
+| 2 · the second-hand reader | **the worst failure, and the same one `/what-courses-actually-ran` had.** The standfirst described the METHOD — the town appropriates, families pay a fee, that fund spends — so the sentence carried off the first screen was about how the page is built | the title now answers the question the address asks: *what a sport costs depends on which document you read*. The standfirst carries both halves — three documents, three totals for the same 25 teams, and more money than any of them actually leaving the town's accounts — and every figure in it is read from the same computation the panel below renders |
+| 3 · close to the boards | passed, narrowly | four people are named on the page and all four are members of the public speaking in public comment, quoted from the town's own minutes. The one district employee named appears inside a resident's sentence about having filed a records request, and the surrounding text says only that: a request was made |
+| 4 · the Finance Committee member | **the control question was unanswered.** Every limit was named as a document to ask for, scattered across a dozen sections, and none said WHEN it would have to arrive to change a vote | a section, *One thing that could be done differently next year*, naming three documents and the month. Two of the three already exist inside the district and the third is a report the accounting system can already print, so what is named is a publication schedule rather than a project — and it says plainly what it would not fix, which is the buildings |
+| 5 · the School Committee member | passed | their question here is not "is this FY25 again" but "we cut middle school sports for a funding reason — was that reason real". The reduction the minutes name is checked against the district's own budget line on every build, and the answer the page can give is that the record does not settle it |
+| 6 · the Select Board member | narrowly failed | nothing said the page was school-side only, so it could be quoted as *the schools cannot account for their sport*. One sentence now says the town runs its own recreation programmes and its own fee-funded funds, none of them measured here, so no comparison between the two halves follows in either direction |
+| the booster | **passed, and step 3 produced the best material on the page** | see below |
+
+**Step 3 — the archive searched in the town's words rather than ours — changed this page
+more than the other five tests combined.** `programmatic cost` is our phrase for a column
+heading and it appears in **one** document in 8,899 readable ones. `pay to play` appears in
+**none**: nobody in Lunenburg argues about athletics in that vocabulary. `helmets`,
+`jersey` and `booster` are what people actually say, and they found three things:
+
+- a **parent**, 24 June 2026, arriving at this page's exact question from the other end. He
+  had found the FY24 by-sport figures in the town's own budget files and could not
+  reconcile them with two seasons of watching the sport happen: *"field hockey had 11 games
+  last year and one official per game at $50 per official. Track had zero officials, the
+  coaches were the officials and they are using hand me down jerseys from varsity."* The
+  sport he names is track, and Outdoor Track is one of the two widest disagreements in the
+  three-document table. He is also the one document in the archive that says *programmatic
+  cost*;
+- the same speaker's last sentence, which is the remedy the gap register already names:
+  *"I have put in a formal request records to Dr. Fortuna and the school to help out, I
+  would like the actuals for this."*;
+- and **the sequel to the helmets**, which is rule 8's half of the review. The page prints
+  a booster president saying in June that the team had more heads than helmets and had
+  heard nothing back. Five weeks later, 29 July 2026, *Donation-Football Helmets &
+  Transportation* is New Business on the committee's own published agenda. What that
+  establishes is a date and an item. It does not establish that the request was approved,
+  who paid, or that these are the same helmets — and this archive holds no minutes for that
+  meeting, so the outcome is not readable at all. Left off, the page would have found fault
+  and stopped.
+
+`scripts/verify_athletics.py` re-reads every quote this review added against the file it
+cites, at the line given, and recounts both search figures the page states in prose over
+the same corpus — because the sentence *nobody in this town says "pay to play"* is a claim
+about an absence, and an absence is the one thing a reader cannot check for themselves.
+
+### `/school-staffing` — school staffing, 10 September 2026
+
+Run on the rebuilt page: trends over time as the centre, headcount added beside FTE, the
+general-education / special-education split drawn, counsellors and social workers given
+their own section. Six readers, six tests, plus the omission step. **Four changes came out
+of it and all four are in the page rather than in this note.**
+
+- **Reader 1, the worst fact in thirty seconds.** Failed on the first draft: the page led
+  with the paraprofessional ratio, and the fact this reader came for — that the staffing
+  chart a board was shown covers a span over which the count rose, while most spans in the
+  same series fall — was three sections down. It is now the first stat and the first
+  conclusion. Note the conclusion opens by saying **both sides are quoting true numbers**,
+  because a page that reads as an accusation gets used rather than believed (rule 8).
+- **Reader 4, one thing to do differently next year.** Passed only after the window became
+  a CONTROL. A page that picks three windows and argues from them hands a Finance
+  Committee member an opinion; a page that hands them the series and the arithmetic hands
+  them a practice — print the span on the chart. That is the actionable half, and it is
+  why the conclusion is marked `lever` rather than `sizes`.
+- **The omission step, which is the one that cannot be simulated.** Searched the meeting
+  archive in the TOWN's vocabulary rather than ours. `adjustment counselor` and `reduction
+  in force` return zero School Committee documents; `social worker`, `caseload` and
+  `paraprofessional` return material, and three of those hits are now quoted on the page:
+  a budget transfer for paraprofessional resignations, transfers and new hires (1 November
+  2023) that is what the state's 66% retention figure looks like inside the budget; the
+  district telling the committee it holds **social worker caseloads by building** while
+  deciding what to cut (6 December 2023), which became the `— closes:` document on a new
+  gaps row; and public comment naming MassHealth reimbursement as a way to pay for the
+  same posts (24 January 2024), which is rule 11 in a sentence.
+- **The step that found the helmets, applied here.** The page held two halves and had not
+  put them together: the district's special education paraprofessional BUDGET rose 108%
+  while the paraprofessional FTE the state codes to special education more than halved,
+  over almost the same years, in two sections that never referred to each other. They are
+  now stated side by side — with the reason they cannot be divided into one another, which
+  is rule 11.
+
+A defect found while running it and fixed: the published search denominator for `ELL` read
+**3,049 documents**, about a quarter of the whole meeting archive, because the search had
+no word boundary and was matching *well*, *shell* and *sell*. It is 2. A denominator
+printed beside a search exists so a reader can judge an empty result, and one inflated
+thirty-fold teaches the opposite lesson.

@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import {
   BarChart, Bar, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ReferenceLine, ResponsiveContainer,
+  ReferenceArea, ReferenceLine, ResponsiveContainer,
 } from 'recharts'
 import { usd } from '../model/engine'
 
@@ -498,6 +499,447 @@ export function StaffAgainstEnrollment({ rows }: { rows: StatePoint[] }) {
       <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
         All three set to 100 in {fy(base.fy)}. One axis on purpose &mdash; two scales would
         let the picture be chosen rather than read.
+      </p>
+    </Card>
+  )
+}
+
+/** One tooltip shape for the charts added below, because recharts' own `formatter` prop
+ *  is typed against `ValueType | undefined` and every call site would otherwise carry a
+ *  cast. `rows` is looked up by the category the axis is keyed on, so the tooltip reads
+ *  the SOURCE row rather than the rendered datum. */
+function PlainTip<T extends { }>({ active, payload, title, lines }: {
+  active?: boolean
+  payload?: { payload: T }[]
+  title: (d: T) => string
+  lines: (d: T) => { label: string; value: string; hue?: string }[]
+}) {
+  if (!active || !payload?.length) return null
+  const d = payload[0].payload
+  return (
+    <div className="rounded-[10px] px-3 py-2 text-xs max-w-[17rem]"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      <p className="font-semibold mb-1" style={{ color: 'var(--text-secondary)' }}>
+        {title(d)}
+      </p>
+      {lines(d).map(l => (
+        <p key={l.label} className="flex justify-between gap-5">
+          <span style={{ color: l.hue ?? 'var(--text-secondary)' }}>{l.label}</span>
+          <span className="tnum font-semibold">{l.value}</span>
+        </p>
+      ))}
+    </div>
+  )
+}
+
+/* ============================================================ trends over time
+ *
+ *  ADDED because "did staffing go up" has no answer that is not a window, and the page
+ *  used to pick three windows for the reader. It now hands over the control: the reader
+ *  moves the two endpoints and the chart says what the change is between them. That is
+ *  the whole finding made operable rather than asserted.
+ *
+ *  THE SPAN IS ON EVERY CHART. Rule 7b: three years is a trend in this town, because the
+ *  boards here will not look two years forward — but a reader must never be able to
+ *  mistake three years for fifteen, so every one of these prints its own first and last
+ *  year in the frame.
+ */
+
+export type DistrictPoint = {
+  fy: number; fte: number; students: number | null; high_needs: number | null
+  swd: number | null; el: number | null
+  per_100_students: number | null; per_100_high_needs: number | null
+}
+
+export type NamedWindow = {
+  key: string; label: string; first_fy: number; last_fy: number; why: string
+}
+
+function WindowTip({ active, label, rows }: {
+  active?: boolean; label?: number; rows: DistrictPoint[]
+}) {
+  if (!active || label === undefined) return null
+  const r = rows.find(q => q.fy === label)
+  if (!r) return null
+  return (
+    <div className="rounded-[10px] px-3 py-2 text-xs"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      <p className="font-semibold mb-1" style={{ color: 'var(--text-secondary)' }}>{fy(r.fy)}</p>
+      <p className="flex justify-between gap-5">
+        <span style={{ color: SUBJECT }}>Teacher FTE</span>
+        <span className="tnum font-semibold">{num(r.fte, 1)}</span>
+      </p>
+      {r.students !== null && (
+        <p className="flex justify-between gap-5">
+          <span style={{ color: NEUTRAL }}>Pupils</span>
+          <span className="tnum font-semibold">{r.students.toLocaleString()}</span>
+        </p>
+      )}
+      {r.per_100_students !== null && (
+        <p className="flex justify-between gap-5">
+          <span style={{ color: NEUTRAL }}>Per 100 pupils</span>
+          <span className="tnum font-semibold">{num(r.per_100_students, 2)}</span>
+        </p>
+      )}
+    </div>
+  )
+}
+
+/** The teacher FTE series, with the window as a CONTROL rather than an editorial choice.
+ *
+ *  Two selects and three presets. Selects rather than a drag handle on purpose: a drag
+ *  target on a chart is a 4px hit area on a phone, and the question here is arithmetic
+ *  between two named years rather than a gesture. */
+export function WindowedSeries({ rows, windows }: {
+  rows: DistrictPoint[]; windows: NamedWindow[]
+}) {
+  const years = rows.map(r => r.fy)
+  const preset = windows[0]
+  const [lo, setLo] = useState(preset.first_fy)
+  const [hi, setHi] = useState(preset.last_fy)
+  const a = rows.find(r => r.fy === lo), b = rows.find(r => r.fy === hi)
+  const span = rows.filter(r => r.fy >= Math.min(lo, hi) && r.fy <= Math.max(lo, hi))
+  const change = a && b ? b.fte - a.fte : 0
+  const up = span.reduce((n, r, i) => (i && r.fte > span[i - 1].fte ? n + 1 : n), 0)
+  const matched = windows.find(w => w.first_fy === lo && w.last_fy === hi)
+  const sel = 'text-[13px] rounded-[8px] border px-2 min-h-[44px] tnum'
+  const selStyle = { borderColor: 'var(--grid)', background: 'var(--surface-1)' }
+  return (
+    <Card>
+      <div className="flex flex-wrap items-center gap-2 mb-3">
+        <label className="text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
+          From{' '}
+          <select className={sel} style={selStyle} value={lo}
+            onChange={e => setLo(Number(e.target.value))}>
+            {years.map(y => <option key={y} value={y}>{fy(y)}</option>)}
+          </select>
+        </label>
+        <label className="text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
+          to{' '}
+          <select className={sel} style={selStyle} value={hi}
+            onChange={e => setHi(Number(e.target.value))}>
+            {years.map(y => <option key={y} value={y}>{fy(y)}</option>)}
+          </select>
+        </label>
+        <span className="text-[15px] font-bold tnum ml-1"
+          style={{ color: change > 0 ? 'var(--series-revenue)' : change < 0 ? 'var(--series-cost)' : 'var(--text-muted)' }}>
+          {change > 0 ? '+' : change < 0 ? '−' : ''}{Math.abs(change).toFixed(1)} FTE
+        </span>
+      </div>
+      <div className="flex flex-wrap gap-2 mb-3" role="group" aria-label="Named windows">
+        {windows.map(w => (
+          <button key={w.key} title={w.why}
+            onClick={() => { setLo(w.first_fy); setHi(w.last_fy) }}
+            aria-pressed={matched?.key === w.key}
+            className="px-3 min-h-[44px] rounded-[10px] text-[12.5px] font-semibold border"
+            style={{
+              borderColor: matched?.key === w.key ? 'var(--series-cost)' : 'var(--grid)',
+              background: matched?.key === w.key ? 'var(--surface-3)' : 'transparent',
+              color: matched?.key === w.key ? 'var(--text-primary)' : 'var(--text-secondary)',
+            }}>
+            {w.label}
+          </button>
+        ))}
+      </div>
+      <div style={{ height: 260 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={rows} margin={{ top: 6, right: 10, left: -14, bottom: 0 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="fy" tickFormatter={fy} tick={{ fontSize: 11, fill: 'var(--text-muted)' }}
+              stroke="var(--axis)" minTickGap={14} />
+            <YAxis tick={{ fontSize: 11, fill: 'var(--text-muted)' }} stroke="var(--axis)"
+              width={44} domain={['dataMin - 4', 'dataMax + 4']} />
+            <ReferenceArea x1={Math.min(lo, hi)} x2={Math.max(lo, hi)}
+              fill="var(--series-cost)" fillOpacity={0.09} />
+            <Tooltip cursor={{ stroke: 'var(--axis)' }} content={<WindowTip rows={rows} />} />
+            <Line type="monotone" dataKey="fte" dot={{ r: 2.5 }} stroke={SUBJECT}
+              strokeWidth={2.5} isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        Every year the state has published: {fy(rows[0].fy)}&ndash;{fy(rows[rows.length - 1].fy)}.
+        Inside the shaded window {up} of {Math.max(span.length - 1, 0)} year-steps rise.
+        {matched ? ` This window is ${matched.why}.` : ' This window is one you chose.'}
+      </p>
+    </Card>
+  )
+}
+
+/* ------------------------------------------------------------------ by school */
+
+export type SchoolRow = {
+  org_code: string; name: string; grades: string; open_now: boolean
+  first_fy: number; last_fy: number
+  points: { fy: number; fte: number; students: number | null; per_100: number | null }[]
+  since_era: { first_fy: number; last_fy: number; first: number; last: number
+    change: number; pct: number | null; up: number; steps: number } | null
+}
+
+/** One panel per school, on ONE shared vertical scale, from the reconfiguration onward.
+ *
+ *  Shared scale because the question is which building carries the district's movement,
+ *  and per-panel scales would make a school of 18 FTE and a school of 45 look alike. */
+export function SchoolPanels({ rows, from }: { rows: SchoolRow[]; from: number }) {
+  const shown = rows.map(r => ({ ...r, points: r.points.filter(p => p.fy >= from) }))
+    .filter(r => r.points.length >= 2)
+  const top = Math.max(...shown.flatMap(r => r.points.map(p => p.fte)))
+  return (
+    <div className="grid gap-2.5 mt-4"
+      style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 240px), 1fr))' }}>
+      {shown.map(r => {
+        const first = r.points[0], last = r.points[r.points.length - 1]
+        const d = last.fte - first.fte
+        return (
+          <div key={r.org_code} className="card p-3">
+            <div className="flex items-baseline justify-between gap-2">
+              <span className="text-[13px] font-bold leading-tight">{r.name}</span>
+              <span className="text-[12.5px] tnum font-bold"
+                style={{ color: d >= 0 ? 'var(--series-revenue)' : 'var(--series-cost)' }}>
+                {d > 0 ? '+' : d < 0 ? '−' : ''}{Math.abs(d).toFixed(1)}
+              </span>
+            </div>
+            <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+              grades {r.grades || '—'} &middot; {fy(first.fy)}&ndash;{fy(last.fy)}
+            </p>
+            <div style={{ height: 74 }} className="mt-1.5">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={r.points} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
+                  <YAxis domain={[0, top]} hide />
+                  <XAxis dataKey="fy" hide />
+                  <Tooltip cursor={{ stroke: 'var(--axis)' }} content={
+                    <PlainTip<SchoolRow['points'][number]>
+                      title={d => `${r.name} · ${fy(d.fy)}`}
+                      lines={d => [
+                        { label: 'Teacher FTE', value: d.fte.toFixed(1), hue: COOL },
+                        ...(d.students !== null
+                          ? [{ label: 'Pupils', value: d.students.toLocaleString() }] : []),
+                      ]} />} />
+                  <Line type="monotone" dataKey="fte" dot={false} stroke={COOL}
+                    strokeWidth={2} isAnimationActive={false} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
+              {first.fte.toFixed(1)} → {last.fte.toFixed(1)} teacher FTE
+              {last.per_100 !== null && <> &middot; {last.per_100.toFixed(2)} per 100 pupils</>}
+            </p>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+/* --------------------------------------------------- which subject moved, and by how much */
+
+export type SubjectMove = {
+  subject: string; first: number; last: number; change: number; pct: number | null
+}
+
+/** Signed movement in one diverging bar chart. A pie cannot draw a negative and two
+ *  stacked charts hide the thing that matters: the net is small because the arms are
+ *  large and cancel. */
+export function SubjectMovement({ rows, first_fy, last_fy }: {
+  rows: SubjectMove[]; first_fy: number; last_fy: number
+}) {
+  const shown = rows.filter(r => Math.abs(r.change) >= 0.05)
+  return (
+    <Card>
+      <div style={{ height: Math.max(200, shown.length * 22 + 30) }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={shown} layout="vertical"
+            margin={{ top: 4, right: 16, left: 4, bottom: 0 }}>
+            <CartesianGrid stroke="var(--grid)" horizontal={false} />
+            <XAxis type="number" tick={{ fontSize: 11, fill: 'var(--text-muted)' }}
+              stroke="var(--axis)" />
+            <YAxis type="category" dataKey="subject" width={150}
+              tick={{ fontSize: 11, fill: 'var(--text-secondary)' }} stroke="var(--axis)" />
+            <ReferenceLine x={0} stroke="var(--axis)" />
+            <Tooltip cursor={{ fill: 'var(--surface-3)' }} content={
+              <PlainTip title={(d: SubjectMove) => d.subject}
+                lines={(d: SubjectMove) => [
+                  { label: fy(first_fy), value: d.first.toFixed(1) },
+                  { label: fy(last_fy), value: d.last.toFixed(1) },
+                  { label: 'Change',
+                    value: `${d.change > 0 ? '+' : d.change < 0 ? '−' : ''}` +
+                      `${Math.abs(d.change).toFixed(1)} FTE`,
+                    hue: d.change >= 0 ? 'var(--series-revenue)' : 'var(--series-cost)' },
+                ]} />} />
+            <Bar dataKey="change" isAnimationActive={false} radius={[2, 2, 2, 2]}>
+              {shown.map(r => (
+                <Cell key={r.subject}
+                  fill={r.change >= 0 ? 'var(--series-revenue)' : 'var(--series-cost)'} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        Change in teacher FTE, {fy(first_fy)} to {fy(last_fy)}. Subjects moving less than
+        0.05 FTE are left out of the drawing and are in the table.
+      </p>
+    </Card>
+  )
+}
+
+/* ------------------------------------------------- headcount beside FTE, never blurred */
+
+export type HeadFte = {
+  fy: number; teacher_headcount: number; teacher_fte: number; teacher_share: number
+  para_headcount: number; para_fte: number; para_share: number
+}
+
+/** People and posts, side by side, on ONE axis because they are the same unit of nothing.
+ *
+ *  Both are counts of staff, so a shared axis is honest here in a way it would not be for
+ *  dollars against FTE. The point of the chart is the GAP, which only reads if the two
+ *  bars sit on the same scale. */
+export function HeadcountAgainstFte({ rows }: { rows: HeadFte[] }) {
+  const data = rows.flatMap(r => ([
+    { key: `${r.fy}-t`, label: `${fy(r.fy)} teachers`, people: r.teacher_headcount,
+      posts: r.teacher_fte, share: r.teacher_share },
+    { key: `${r.fy}-p`, label: `${fy(r.fy)} paras`, people: r.para_headcount,
+      posts: r.para_fte, share: r.para_share },
+  ]))
+  return (
+    <Card>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2">
+        <Chip color={SUBJECT}>People the state counted</Chip>
+        <Chip color={COOL}>Full-time equivalent posts</Chip>
+      </div>
+      <div style={{ height: 250 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} margin={{ top: 6, right: 10, left: -14, bottom: 0 }}
+            barCategoryGap="22%">
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="label" tick={{ fontSize: 10.5, fill: 'var(--text-muted)' }}
+              stroke="var(--axis)" interval={0} />
+            <YAxis tick={{ fontSize: 11, fill: 'var(--text-muted)' }} stroke="var(--axis)"
+              width={44} />
+            <Tooltip cursor={{ fill: 'var(--surface-3)' }} content={
+              <PlainTip<typeof data[number]>
+                title={d => d.label}
+                lines={d => [
+                  { label: 'People', value: d.people.toFixed(0), hue: SUBJECT },
+                  { label: 'FTE posts', value: d.posts.toFixed(1), hue: COOL },
+                  { label: 'Share of a post each', value: d.share.toFixed(2) },
+                ]} />} />
+            <Bar dataKey="people" fill={SUBJECT} isAnimationActive={false} radius={[2, 2, 0, 0]} />
+            <Bar dataKey="posts" fill={COOL} isAnimationActive={false} radius={[2, 2, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        {fy(rows[0].fy)}&ndash;{fy(rows[rows.length - 1].fy)}, the only years the state
+        publishes a headcount. Two DESE files; the gap between the pair is how much of a
+        post the average member of that group holds.
+      </p>
+    </Card>
+  )
+}
+
+/* ---------------------------------- the paraprofessional count, split two ways by DESE */
+
+export type ParaSplitPoint = {
+  fy: number; all_programmes: number; special_education: number; implied: number
+  swd: number | null
+}
+
+export function ParaSplit({ rows }: { rows: ParaSplitPoint[] }) {
+  const SERIES = [
+    { key: 'all_programmes', label: 'All programmes', hue: SUBJECT },
+    { key: 'special_education', label: 'Coded to special education', hue: COOL },
+    { key: 'implied', label: 'The difference between them', hue: NEUTRAL },
+  ] as const
+  return (
+    <Card>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2">
+        {SERIES.map(s => (
+          <Chip key={s.key} color={s.hue} dashed={s.key === 'implied'}>{s.label}</Chip>
+        ))}
+      </div>
+      <div style={{ height: 260 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={rows} margin={{ top: 6, right: 10, left: -14, bottom: 0 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="fy" tickFormatter={fy} tick={{ fontSize: 11, fill: 'var(--text-muted)' }}
+              stroke="var(--axis)" />
+            <YAxis tick={{ fontSize: 11, fill: 'var(--text-muted)' }} stroke="var(--axis)"
+              width={44} />
+            <Tooltip cursor={{ stroke: 'var(--axis)' }} content={
+              <PlainTip title={(d: ParaSplitPoint) => fy(d.fy)}
+                lines={(d: ParaSplitPoint) => [
+                  { label: 'All programmes', value: `${d.all_programmes.toFixed(1)} FTE`,
+                    hue: SUBJECT },
+                  { label: 'Special education',
+                    value: `${d.special_education.toFixed(1)} FTE`, hue: COOL },
+                  { label: 'The difference', value: `${d.implied.toFixed(1)} FTE` },
+                  ...(d.swd !== null
+                    ? [{ label: 'Children on a plan', value: String(d.swd) }] : []),
+                ]} />} />
+            {SERIES.map(s => (
+              <Line key={s.key} type="monotone" dataKey={s.key} dot={{ r: 2.5 }}
+                stroke={s.hue} strokeWidth={s.key === 'implied' ? 1.5 : 2.5}
+                strokeDasharray={s.key === 'implied' ? '4 3' : undefined}
+                isAnimationActive={false} />
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        {fy(rows[0].fy)}&ndash;{fy(rows[rows.length - 1].fy)}. Two DESE files, one axis,
+        both in full-time equivalents. The dotted line is one subtracted from the other and
+        is DERIVED &mdash; it is not a figure either file prints.
+      </p>
+    </Card>
+  )
+}
+
+/* ------------------------------------------------ headcount per 100 pupils, by district */
+
+export type PeerHead = {
+  lea: string; district: string; job_class: string; headcount: number
+  students: number; per_100: number | null; is_lunenburg: boolean
+}
+
+export function PeerHeadcount({ rows, jobClass, fyOf }: {
+  rows: PeerHead[]; jobClass: string; fyOf: number
+}) {
+  const shown = rows.filter(r => r.job_class === jobClass && r.per_100 !== null)
+    .sort((a, b) => b.per_100! - a.per_100!)
+  return (
+    <Card>
+      <p className="text-[13px] font-bold mb-1">{jobClass}</p>
+      <div style={{ height: Math.max(150, shown.length * 26 + 26) }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={shown} layout="vertical"
+            margin={{ top: 4, right: 16, left: 4, bottom: 0 }}>
+            <CartesianGrid stroke="var(--grid)" horizontal={false} />
+            <XAxis type="number" tick={{ fontSize: 11, fill: 'var(--text-muted)' }}
+              stroke="var(--axis)" />
+            <YAxis type="category" dataKey="district" width={130}
+              tick={{ fontSize: 11, fill: 'var(--text-secondary)' }} stroke="var(--axis)" />
+            <Tooltip cursor={{ fill: 'var(--surface-3)' }} content={
+              <PlainTip title={(d: PeerHead) => d.district}
+                lines={(d: PeerHead) => [
+                  { label: 'Per 100 pupils',
+                    value: d.per_100 === null ? '—' : d.per_100.toFixed(2), hue: SUBJECT },
+                  { label: 'People', value: d.headcount.toFixed(0) },
+                  { label: 'Pupils', value: d.students.toLocaleString() },
+                ]} />} />
+            <Bar dataKey="per_100" isAnimationActive={false} radius={[0, 2, 2, 0]}>
+              {shown.map(r => (
+                <Cell key={r.lea} fill={r.is_lunenburg ? SUBJECT : PEER}
+                  fillOpacity={r.is_lunenburg ? 1 : 0.45} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-[11.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        {fy(fyOf)} &middot; headcount, not FTE &middot; {shown.length} districts, which is
+        not the same comparison group as the rest of this page.
       </p>
     </Card>
   )

@@ -40,6 +40,7 @@ match nothing:
 """
 import argparse
 import collections
+import csv
 import json
 import os
 import re
@@ -255,6 +256,76 @@ HELMETS_QUOTES = [
 ]
 EQUIPMENT_ACCOUNTS = ('EQUIP RECO', 'NEW EQUIP')
 
+# THE SEQUEL TO THE HELMETS, AND RULE 8 IS THE REASON IT IS HERE.
+#
+# The page prints a booster president saying in June that the team had more heads than
+# helmets and had heard nothing back. Left there, that is a page that finds fault and
+# stops -- which persona 1 will read as advocacy and persona 3 as an ambush. Five weeks
+# later football helmets are on the School Committee's own published agenda.
+#
+# WHAT IT ESTABLISHES AND WHAT IT DOES NOT. It establishes that the subject reached the
+# committee's agenda under New Business, as a donation, on a date. It does not establish
+# that the request was approved, that the helmets were bought, who paid, or that the two
+# items are the same helmets. An agenda is a list of what will be discussed, and this
+# archive holds no minutes for that meeting, so the outcome is not readable here at all.
+AGENDA_DOC = 'sources/meetings/text/school-committee/2026-07-29-agenda-7930.txt'
+AGENDA_URL = '/docs/minutes/text/school-committee/2026-07-29-agenda-7930.txt'
+AGENDA_TOWN_URL = ('https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/'
+                   '_07292026-7930')
+AGENDA_DATE = '29 July 2026'
+AGENDA_QUOTES = [
+    'Donation-Football Helmets & Transportation',
+]
+
+# THE PER-SPORT QUESTION, PUT IN PUBLIC BY A PARENT WHO HAD DONE THE ARITHMETIC HIMSELF.
+#
+# Rule 15a's step 3 -- search the archive for what people said about the thing in the same
+# year -- found this and it is the single most useful thing the search returned. The page
+# sets three documents side by side and says a resident choosing which team to give up is
+# choosing between figures that disagree by a multiple. On 24 June 2026 a resident stood up
+# and described exactly that, from the other end: he had found the FY24 by-sport figures in
+# the town's own budget files, escalated them himself, and then could not reconcile the
+# result with what he had watched two seasons of middle school sport actually consume.
+#
+# WHY IT BELONGS ON THIS PAGE RATHER THAN ANY OTHER. The sport he names is TRACK, and
+# Outdoor Track is the widest disagreement in the archive after Boys' Lacrosse -- three
+# documents, three figures, one year. He also reaches for the words `programmatic cost`,
+# which is the literal heading of one of the three columns. That is a resident and a
+# document using one phrase, and it is the closest anything in this archive comes to
+# saying what one of the three columns counts.
+#
+# RULE 7, AND IT BITES HARD HERE. What the minutes establish is that a resident said these
+# things in public. They do not establish what track cost, what a programmatic cost is, or
+# that his reading of the column is the district's. His definition is a hypothesis offered
+# by a member of the public; the page says so beside it, and nothing on the page is
+# computed from it.
+BYSPORT_SPEAKER = 'Matt Nazarenko'
+BYSPORT_QUOTES = [
+    ('Field hockey and track, they are using hand me down jerseys, field hockey had 11 '
+     'games last year and one official per game at $50 per official. Track had zero '
+     'officials, the coaches were the officials and they are using hand me down jerseys '
+     'from varsity.'),
+    ('I don’t know how track costs anything other than overhead allocations, which I '
+     'would call programmatic cost.'),
+    ('I have put in a formal request records to Dr. Fortuna and the school to help out, '
+     'I would like the actuals for this.'),
+]
+
+# WHAT WAS SEARCHED FOR, IN THE TOWN'S VOCABULARY RATHER THAN OURS.
+#
+# The lesson is /what-courses-actually-ran's: `foreign language` returned nothing useful
+# and `French` returned the parent. So this list is what residents in Lunenburg say about
+# sport -- helmets, jerseys, boosters, the fee under three different names -- and not the
+# nouns this project uses for the same things. `programmatic cost` is here because it is
+# the one term a document and a resident share.
+#
+# THE COUNT IS PUBLISHED WITH ITS DENOMINATOR, and that is the point of printing it at all.
+# A search that finds nothing prints nothing, and nothing reads as `nobody said it`. It is
+# not: it means nobody said it in the documents that can be READ, and three quarters of
+# this archive is readable.
+SEARCHED = ['helmets', 'jersey', 'booster', 'athletic fee', 'user fee', 'pay to play',
+            'middle school athletics', 'programmatic cost', 'officials']
+
 # The generic words in the workbook's sport names. They are not sports, so a payment
 # reading "MS" or "OOD" is not a payment attributed to a sport, and counting one as a hit
 # would turn a real absence into a false presence.
@@ -299,7 +370,7 @@ def _flat(text):
     return ' '.join(text.split())
 
 
-def minutes_quotes(doc=None, speaker=None, quotes=None):
+def minutes_quotes(doc=None, speaker=None, quotes=None, window=None):
     """Every quote this page prints, checked against the minutes file. Rule 15a.
 
     Returns the quote with the line of the file it starts on. Refuses to write if a quote
@@ -308,8 +379,14 @@ def minutes_quotes(doc=None, speaker=None, quotes=None):
     rule 13 failure of quoting a rendering rather than the source.
     """
     doc = doc or MINUTES_DOC
-    speaker = speaker or MINUTES_SPEAKER
+    speaker = MINUTES_SPEAKER if speaker is None else speaker
     quotes = quotes or MINUTES_QUOTES
+    # HOW FAR IS TOO FAR, PER SPEAKER RATHER THAN GLOBALLY. The default window is sized
+    # for a short public comment. One statement on this page runs the length of a page and
+    # a half, so a window that fits it is stated at the call site with the reason, rather
+    # than the global being widened for everybody -- a limit relaxed for one case and left
+    # relaxed is a check that has stopped checking.
+    window = SPEAKER_WINDOW if window is None else window
     path = os.path.join(ROOT, doc)
     if not os.path.exists(path):
         fail(f'{doc} is not on disk — run scripts/sync_archive.py --pull. '
@@ -334,8 +411,14 @@ def minutes_quotes(doc=None, speaker=None, quotes=None):
     # attributed to the wrong person. The test is whether the quote sits inside the
     # NEAREST PRECEDING mention of that speaker, which is the thing the claim actually
     # rests on.
-    speaker_at = [m.start() for m in re.finditer(re.escape(speaker), flat)]
-    if not speaker_at:
+    #
+    # `speaker=False` means the document HAS no speakers: an agenda is a list of items a
+    # board published in advance, and there is no person to attribute a line to. Saying
+    # that explicitly is better than inventing an attribution to satisfy a check -- the
+    # verbatim assertion still runs, and it is the whole of what an agenda can support.
+    speaker_at = ([] if speaker is False
+                  else [m.start() for m in re.finditer(re.escape(speaker), flat)])
+    if speaker is not False and not speaker_at:
         fail(f'{doc} no longer names {speaker}. The page attributes these '
              'words to that speaker, and an attribution that cannot be checked is not one.')
 
@@ -346,14 +429,78 @@ def minutes_quotes(doc=None, speaker=None, quotes=None):
             fail(f'{doc} no longer contains, verbatim:\n  “{quote}”\n'
                  'Either the town republished the minutes or the extractor changed. '
                  'Nothing is published from a quote that cannot be found in its source.')
+        if speaker is False:
+            out.append(dict(text=quote, line=line_at[at]))
+            continue
         before = [x for x in speaker_at if x <= at]
         gap = at - before[-1] if before else -1
-        if not 0 <= gap <= SPEAKER_WINDOW:
+        if not 0 <= gap <= window:
             fail(f'the quote “{quote[:60]}…” is {gap} characters after the nearest '
                  f'mention of {speaker} in {doc}. The page says it is that '
                  'speaker’s; at that distance it is a guess.')
         out.append(dict(text=quote, line=line_at[at]))
     return out
+
+
+MEETING_TEXT = 'sources/meetings/text'
+
+
+def searched():
+    """How many meeting documents use each of the town's own words for sport, and out of
+    how many that can be read at all.
+
+    THE DENOMINATOR IS THE POINT. A grep that finds nothing prints nothing, and nothing
+    reads as *nobody said it*. It is not: it means nobody said it in the documents that
+    carry text, and a quarter of this archive is image scans awaiting OCR.
+
+    ON A LEADING WORD BOUNDARY, LEADING ONLY. A bare substring match for `Latin` once
+    matched 140 documents here through the word `relating`; the true count was four. A
+    TRAILING boundary is the opposite and quieter error -- it drops `officials` from a
+    search for `official`, and residents write plurals. So the boundary goes on the front
+    and nowhere else.
+    """
+    idx = os.path.join(ROOT, 'sources/meetings/index.csv')
+    if not os.path.exists(idx):
+        fail('sources/meetings/index.csv is not here — a search of nothing is not a search')
+    readable, dates, published = [], [], 0
+    for r in csv.DictReader(open(idx, encoding='utf-8')):
+        published += 1
+        stem = os.path.splitext(r['path'])[0] if r['path'].strip() else ''
+        txt = os.path.join(ROOT, MEETING_TEXT, stem + '.txt') if stem else ''
+        if stem and os.path.exists(txt):
+            readable.append(txt)
+            if (r.get('date') or '').strip():
+                dates.append(r['date'].strip())
+    if not readable:
+        fail('no meeting document is readable — refusing to publish a count of what '
+             'nobody said')
+    bodies = [open(t, encoding='utf-8', errors='replace').read() for t in readable]
+    terms = [dict(term=t,
+                  documents=sum(1 for b in bodies
+                                if re.search(r'\b%s' % re.escape(t), b, re.I)))
+             for t in SEARCHED]
+    if not any(t['documents'] for t in terms):
+        fail('not one search term matched any document. The archive did not go quiet; '
+             'something is wrong with the read.')
+    cov = os.path.join(ROOT, 'sources/data/minutes-searchable.csv')
+    if not os.path.exists(cov):
+        fail('sources/data/minutes-searchable.csv is not here — the searchable share '
+             'cannot be typed')
+    tally = collections.Counter()
+    for r in csv.DictReader(open(cov, encoding='utf-8')):
+        for k in ('held', 'searchable', 'unsearchable', 'image_scan'):
+            tally[k] += int(r[k] or 0)
+    if not tally['searchable'] or tally['held'] != tally['searchable'] + tally['unsearchable']:
+        fail('minutes-searchable.csv does not reconcile — refusing to publish a coverage '
+             'figure that does not add up')
+    if not dates:
+        fail('no meeting document carries a date — the span cannot be typed')
+    return terms, dict(held=tally['held'], searchable=tally['searchable'],
+                       unsearchable=tally['unsearchable'],
+                       image_scan=tally['image_scan'],
+                       text_files_present=len(readable), published=published,
+                       first_date=min(dates), last_date=max(dates),
+                       searchable_share=round(tally['searchable'] / tally['held'], 4))
 
 
 def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
@@ -1076,6 +1223,22 @@ def build():
         url=FIELDS_URL, town_url=FIELDS_TOWN_URL,
         quotes=minutes_quotes(FIELDS_DOC, FIELDS_SPEAKER, FIELDS_QUOTES))
 
+    # ---------------------------------------------- rule 15a, the archive searched
+    #
+    # WINDOW. This statement runs a page and a half of minutes, so the last quote sits
+    # about four thousand characters after the speaker is named. The default window is
+    # sized for a short public comment and would reject it; widening it here, at the call,
+    # with the reason, keeps the check meaningful everywhere else.
+    by_sport_said = dict(
+        board=MINUTES_BOARD, date=MINUTES_DATE, speaker=BYSPORT_SPEAKER,
+        url=MINUTES_URL, town_url=MINUTES_TOWN_URL,
+        quotes=minutes_quotes(MINUTES_DOC, BYSPORT_SPEAKER, BYSPORT_QUOTES, window=5000))
+    helmets_sequel = dict(
+        board=MINUTES_BOARD, date=AGENDA_DATE, kind='agenda',
+        url=AGENDA_URL, town_url=AGENDA_TOWN_URL,
+        quotes=minutes_quotes(AGENDA_DOC, False, AGENDA_QUOTES))
+    search_terms, minutes_cov = searched()
+
     # RULE 2 APPLIED TO THE GAP REGISTER, which is prose that ships.
     #
     # `money-gaps.csv` is written by hand -- it is read by the API, by the records request
@@ -1148,9 +1311,41 @@ def build():
             spending=next(r['revolving'] for r in both if r['fy'] == 2026),
             appropriation=next(r['general'] for r in both if r['fy'] == 2026),
             all_in=next(r['all_in'] for r in both if r['fy'] == 2026)),
+        by_sport_said=by_sport_said,
+        helmets_sequel=helmets_sequel,
+        searched=search_terms,
+        minutes=minutes_cov,
         recomputed=recomputed,
         gaps=[dict(side=g['side'], what=g['what'], why=g['why']) for g in keep],
         related=related,
+        # ---- WHAT A READER CAN DO WITH EACH OF THESE, argued rather than assigned ----
+        #
+        # `bearing` was set on these three in one pass and then re-examined, because an
+        # axis applied by reflex is the same as no axis. The argument, one conclusion at a
+        # time:
+        #
+        #   `more-left-the-accounts-than-any-document-totals` -- SIZES. It establishes how
+        #   big the programme actually was and that no published document totals it.
+        #   Nothing in it is a dial: a resident cannot vote on the spread between three
+        #   documents, and the remedy -- ask for the accounts-payable detail -- is a
+        #   request for a MEASUREMENT rather than a decision with a cost. Rule 8's test is
+        #   what each option costs somebody, and this option costs nobody anything.
+        #
+        #   `everything-the-books-call-athletics-and-what-they-cannot` -- SIZES, and it is
+        #   the clearest case of the three. It draws the box: what the ledger codes to
+        #   athletics, and the buildings that no programme code touches. A box is context
+        #   by construction. You cannot act on a problem you have not sized.
+        #
+        #   `the-bus-bill-fell-and-the-town-paid-more` -- LEVER, and this is the one worth
+        #   arguing. The temptation is to call it `sizes` too, because the page cannot say
+        #   WHY the split moved and says so. But `bearing` is not about whether the cause
+        #   is known; it is about whether a body in this town has a dial. It does: which
+        #   pot pays a given athletics cost is settable -- the School Committee sets the
+        #   fee and what the revolving fund carries, Town Meeting votes the appropriation
+        #   -- and this conclusion is the archive watching that dial being turned, with
+        #   the cost of the thing itself falling while the town's share more than doubled.
+        #   Rule 8 holds: it names the dial and what moving it did, and it does not say
+        #   which way anybody should set it.
         conclusions=emit('what-sports-cost', [
             conclusion(
                 id='more-left-the-accounts-than-any-document-totals',

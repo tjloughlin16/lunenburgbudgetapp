@@ -464,6 +464,17 @@ def fte(v):
     return '%.1f' % float(v)
 
 
+def signed_fte(v):
+    """A CHANGE in FTE, carrying its sign, because +0.3 and −10.6 ARE the finding.
+
+    The typographic minus is deliberate and matches how every other document on this
+    site writes a negative; the registered rendering is what the rule-2 scan strips out
+    of the prose, so the two cannot drift.
+    """
+    v = float(v)
+    return ('+%.1f' % v) if v > 0 else (('−%.1f' % abs(v)) if v < 0 else '0.0')
+
+
 def change(points, key='dollars'):
     """First to last of a series, as a fact about two published figures and nothing more."""
     if len(points) < 2:
@@ -573,6 +584,29 @@ QUOTES = [
          why='The other end of the same grant. Positions were kept, cut and moved onto a '
              'different grant in one year — three different things that look identical '
              'in a headcount and in an FTE count alike.'),
+    dict(key='para-transfers', board='school-committee', date='2023-11-01',
+         kind='minutes', doc='1761',
+         quote='$19,539 transfer to reconcile accounts for transfer’s associated with '
+               'paraprofessionals, from resignations, internal transfers and new hires',
+         why='A budget transfer voted in one meeting, for one job class, naming three '
+             'kinds of movement at once. The state’s own retention file says only 66% of '
+             'the paraprofessionals counted the year before were still there — this is '
+             'what that number looks like inside the budget.'),
+    dict(key='social-worker-caseloads', board='school-committee', date='2023-12-06',
+         kind='minutes', doc='6110',
+         quote='Information is broken out to social worker caseloads by bui lding',
+         why='The district HOLDS a per-building social worker caseload, and told the '
+             'School Committee so while deciding what to cut. It is not published, and '
+             'it is the one document that would turn the roster’s printed names into a '
+             'service level. (The space inside “building” is in the town’s own scanned '
+             'text; the quote is what the archive holds, not our repair of it.)'),
+    dict(key='social-workers-billed-elsewhere', board='school-committee',
+         date='2024-01-24', kind='minutes', doc='6375',
+         quote='something you should be looking at to address social workers being cut',
+         why='Public comment naming MassHealth reimbursement and outside agencies as ways '
+             'to pay for the same work. Rule 11 in a sentence: the post is the same post '
+             'and the fund is different, and no published document says which fund pays '
+             'which post here.'),
     dict(key='one-music-teacher', board='school-committee', date='2024-01-24',
          kind='minutes', doc='6375',
          quote='there is one high school music teacher and there are two art teachers',
@@ -588,8 +622,16 @@ QUOTES = [
              'FY2026, so the most recent cuts are visible only in the minutes.'),
 ]
 
+# THEIR VOCABULARY, NOT OURS. A search for our word for a thing finds nothing and reads
+# as nobody having said it. `adjustment counselor` and `reduction in force` are the two
+# terms this project would have reached for and they return ZERO School Committee
+# documents; `social worker`, `caseload` and `paraprofessional` are what the town
+# actually says, and each of those found something. Both kinds are searched here so the
+# denominator on the page carries the misses as well as the hits.
 SEARCHED_TERMS = ['staffing', 'class size', 'paraprofessional', 'world language',
-                  'interventionist', 'ELL', 'ESSER', 'guidance counselor']
+                  'interventionist', 'ELL', 'ESSER', 'guidance counselor',
+                  'social worker', 'caseload', 'adjustment counselor',
+                  'reduction in force', 'school psychologist']
 
 
 def said_in_meetings():
@@ -664,10 +706,27 @@ def archive():
 
 
 def searched():
+    """How many documents mention each term — WITH WORD BOUNDARIES, and this is a fix.
+
+    THE SUBSTRING TRAP, caught on this page. `ELL` was searched case-insensitively with
+    no boundary and reported 3,049 documents, which is roughly a quarter of the whole
+    meeting archive. It was matching *well*, *shell*, *sell* and *tell*. A denominator
+    printed beside a search exists so a reader can judge an empty result; one inflated
+    thirty-fold by a substring teaches the opposite lesson.
+
+    So: a LEADING word boundary, always. Leading rather than both, because the plural is
+    the same subject -- `class size` has to find *class sizes* and `paraprofessional` has
+    to find *paraprofessionals*, and a trailing boundary loses both. And an ACRONYM is
+    matched case-sensitively, because `ELL` is a programme and `ell` is a unit of cloth.
+    """
     a = archive()
-    return [dict(term=t, documents=sum(1 for b in a['bodies']
-                                       if re.search(re.escape(t), b, re.I)))
-            for t in SEARCHED_TERMS]
+    out = []
+    for t in SEARCHED_TERMS:
+        flags = 0 if t.isupper() else re.I
+        rx = re.compile(r'\b%s' % re.escape(t), flags)
+        out.append(dict(term=t, documents=sum(1 for b in a['bodies'] if rx.search(b)),
+                        cased=flags == 0))
+    return out
 
 
 def coverage():
@@ -861,8 +920,13 @@ def need_breaks(rows_):
     return out
 
 
-def composition(db):
+def composition(db, doubled_years=()):
     """Teacher FTE decomposed four ways, against enrolment and against need.
+
+    `doubled_years` comes from `roster()` rather than being recomputed here: it is the
+    years the town printed one school's roster twice, and the support-role panels shade
+    those bars for the same reason the other role panels do. Deriving it twice is how two
+    copies of one fact come to disagree.
 
     Every one of the four is a different question and none of them is the others:
       * BY YEAR      -- did the number of teachers move, and in which direction, when
@@ -1193,12 +1257,26 @@ def composition(db):
                  'matches nothing looks exactly like a role nobody holds -- refusing to '
                  'write.' % ', '.join(missing))
     support_years = sorted({r['fy'] for r in support})
-    support_rows = [
-        dict(role=c, points=[dict(fy=f, names=next((r['n'] for r in support
-                                                    if r['role_category'] == c
-                                                    and r['fy'] == f), 0))
-                             for f in support_years])
-        for c in support_roles]
+    support_rows = []
+    for c in support_roles:
+        pts = [dict(fy=f, doubled=f in doubled_years,
+                    names=next((r['n'] for r in support
+                                if r['role_category'] == c and r['fy'] == f), 0))
+               for f in support_years]
+        # A ROSTER COUNT IS A COUNT OF NAMES THE TOWN PRINTED, and the change between two
+        # printed years is a difference between two documents. It is published with both
+        # endpoints and with how many of the year-steps rose, so nobody can read a net
+        # difference as a trend without seeing how noisy the run underneath it is.
+        support_rows.append(dict(
+            role=c, points=pts, first=pts[0]['names'], last=pts[-1]['names'],
+            change=pts[-1]['names'] - pts[0]['names'],
+            peak=max(p['names'] for p in pts), trough=min(p['names'] for p in pts),
+            # The same three fields the role panels elsewhere on this page carry, because
+            # they are drawn by the SAME component -- a shape that is nearly right renders
+            # as a sentence with a hole in it rather than as an error.
+            total=sum(p['names'] for p in pts),
+            first_fy=pts[0]['fy'], last_fy=pts[-1]['fy'],
+            **upsteps(pts, 'names')))
 
     return dict(
         first_fy=first_fy, last_fy=last_fy,
@@ -1244,6 +1322,250 @@ def composition(db):
     )
 
 
+# ------------------------------------------------- HEADCOUNT, which is not FTE
+#
+# WHY THIS BLOCK EXISTS AT ALL. Everything else on this page that counts staff counts
+# FTE, and FTE cannot answer "how many people". DESE's educator retention file counts
+# PEOPLE -- a headcount by job classification -- for Lunenburg, five peer districts and
+# the state, FY2021-FY2023. Three years, which rule 7b says is a trend HERE: this town's
+# boards will not look two years forward, so three published years is more forward
+# visibility than they currently use. The span is stated on every figure drawn from it.
+#
+# WHAT THE TWO TOGETHER SAY THAT NEITHER SAYS ALONE. A headcount over an FTE count is the
+# average share of a post one member of staff holds. That is the "0.4 music teacher and a
+# full-timer are one row each" problem turned into a number, and it is the only place in
+# this archive where the size of that problem is visible.
+#
+# THE ROLLUP TRAP, AND THE CORRECTION THAT PRODUCED THIS COMMENT. `All Educators` is the
+# file's own total printed as a row BESIDE seven race rows that sum to it. A first pass
+# summed both and published administrators at 38 and paraprofessionals at 118 -- exactly
+# twice the truth, 19 and 59. Only `race_level = 'all'` is read, the naive sum is computed
+# anyway, and the build REFUSES TO WRITE unless the naive sum is exactly twice the
+# published figure -- so if DESE ever changes the shape of the file, this stops rather
+# than silently halving or doubling. Rule 13: an instrument that reformats before you see
+# it is part of the finding.
+WORKFORCE_STATE = '00000000'      # DESE's own `State Totals` row. Not a district.
+
+
+def headcount(db):
+    """DESE's educator HEADCOUNT by job class, beside the FTE the rest of this page uses."""
+    wf = [dict(r) for r in rows(
+        db, "SELECT fy, job_class, educators_headcount, hires_headcount, "
+            "retained_headcount, retained_pct FROM dese_educator_workforce "
+            "WHERE lea = ? AND race_level = 'all' ORDER BY fy, job_class", LEA)]
+    if not wf:
+        sys.exit('dese_educator_workforce returned nothing at race_level = all for '
+                 'Lunenburg -- a join that matches nothing looks exactly like a district '
+                 'with no staff. Refusing to write.')
+    years = sorted({r['fy'] for r in wf})
+    classes = sorted({r['job_class'] for r in wf})
+
+    # The guard, computed rather than trusted. See the comment above this function.
+    naive = []
+    for r in rows(db, "SELECT fy, job_class, SUM(educators_headcount) both "
+                      "FROM dese_educator_workforce WHERE lea = ? GROUP BY fy, job_class",
+                  LEA):
+        pub = next((w['educators_headcount'] for w in wf
+                    if w['fy'] == r['fy'] and w['job_class'] == r['job_class']), None)
+        if pub is None:
+            continue
+        if abs(r['both'] - 2 * pub) > 0.5:
+            sys.exit('FY%d %s: the race detail rows sum to %s against a published %s, '
+                     'which is not twice it. The rollup shape this code guards against '
+                     'has changed and the guard has to be re-derived -- refusing to '
+                     'write.' % (r['fy'], r['job_class'], r['both'], pub))
+        naive.append(dict(fy=r['fy'], job_class=r['job_class'], naive=r['both'],
+                          published=pub))
+
+    # HEADCOUNT BESIDE FTE, for the two job classes DESE publishes an FTE for. The share
+    # is a DERIVED ratio of two figures out of two different DESE files, and it is what a
+    # roster cannot see: it says how much of a post the average member of that group
+    # holds, not who is part-time.
+    vs_fte = []
+    for f in years:
+        row = dict(fy=f)
+        for jc, measure, tag in (('Teacher', 'Teacher FTE', 'teacher'),
+                                 ('Paraprofessional', 'Paraprofessional FTE', 'para')):
+            hc = next((w['educators_headcount'] for w in wf
+                       if w['fy'] == f and w['job_class'] == jc), None)
+            m = db.execute('SELECT value FROM dese_measure WHERE lea = ? AND fy = ? AND '
+                           'measure = ?', (LEA, f, measure)).fetchone()
+            if hc is None or m is None or not hc:
+                sys.exit('FY%d has a %s headcount or FTE and not the other. The whole '
+                         'point of this block is the pair -- refusing to write.' % (f, jc))
+            row[tag + '_headcount'] = hc
+            row[tag + '_fte'] = m[0]
+            row[tag + '_share'] = m[0] / hc
+        vs_fte.append(row)
+
+    # THE COMPARISON GROUP, and it is NOT the one the rest of this page uses. DESE's
+    # radar comparison sheet carries nine districts; this file carries five plus the
+    # state, so the two rankings are over different sets and the count travels with every
+    # rank. Per 100 pupils, because a headcount without a denominator ranks by town size.
+    latest = years[-1]
+    peers, state_row = [], None
+    for r in rows(db, "SELECT w.lea, w.district, w.job_class, w.educators_headcount hc, "
+                      "e.total_cnt FROM dese_educator_workforce w "
+                      "JOIN dese_enrollment e ON e.lea = w.lea AND e.fy = w.fy "
+                      "AND e.org_level = 'district' "
+                      "WHERE w.fy = ? AND w.race_level = 'all' "
+                      "ORDER BY w.job_class, w.district", latest):
+        row = dict(lea=r['lea'], district=r['district'], job_class=r['job_class'],
+                   headcount=r['hc'], students=r['total_cnt'],
+                   per_100=100.0 * r['hc'] / r['total_cnt'] if r['total_cnt'] else None,
+                   is_lunenburg=r['lea'] == LEA)
+        (peers if r['lea'] != WORKFORCE_STATE else []).append(row)
+        if r['lea'] == WORKFORCE_STATE:
+            state_row = state_row or []
+            state_row.append(row)
+    if not peers or not any(p['is_lunenburg'] for p in peers):
+        sys.exit('the FY%d headcount peer join produced no Lunenburg row -- refusing to '
+                 'write.' % latest)
+
+    ranks = {}
+    for jc in classes:
+        got = sorted([p for p in peers if p['job_class'] == jc and p['per_100'] is not None],
+                     key=lambda p: -p['per_100'])
+        mine = next((p for p in got if p['is_lunenburg']), None)
+        if not mine:
+            sys.exit('no Lunenburg row for %s in FY%d -- refusing to write.' % (jc, latest))
+        ranks[jc] = dict(fy=latest, of=len(got), rank=got.index(mine) + 1,
+                         value=mine['per_100'], headcount=mine['headcount'],
+                         highest=got[0]['district'], highest_value=got[0]['per_100'],
+                         lowest=got[-1]['district'], lowest_value=got[-1]['per_100'])
+
+    # CHURN, which is the second thing a headcount can say and an FTE count cannot.
+    # `retained` is DESE's own measure of how many of last year's staff in that class are
+    # still there; `hires` is how many are new. Both are people, not posts.
+    churn = [dict(fy=r['fy'], job_class=r['job_class'],
+                  headcount=r['educators_headcount'], hires=r['hires_headcount'],
+                  retained=r['retained_headcount'], retained_pct=r['retained_pct'],
+                  hire_share=(r['hires_headcount'] / r['educators_headcount']
+                              if r['hires_headcount'] and r['educators_headcount']
+                              else None))
+             for r in wf]
+
+    return dict(
+        first_fy=years[0], last_fy=years[-1], years=len(years), job_classes=classes,
+        rows=wf, vs_fte=vs_fte, churn=churn,
+        peers=dict(fy=latest, rows=peers, state=state_row or [], ranks=ranks,
+                   districts=len({p['lea'] for p in peers})),
+        naive=naive,
+        rollup_trap='`All Educators` is this file’s own total printed as a row beside '
+                    'seven race rows that sum to it. Reading both doubles every figure — '
+                    'which this project did once, publishing 38 administrators and 118 '
+                    'paraprofessionals where the file says 19 and 59.',
+        grain='People, counted once each, by the job classification the district reports '
+              'them under. Not FTE, not posts, not the town’s payroll.')
+
+
+# ------------------------- the special education half of the paraprofessional question
+#
+# TWO DESE FILES COUNT PARAPROFESSIONALS AND THEY MOVE IN OPPOSITE DIRECTIONS.
+#
+#   radar-district-comparison.xlsx      `Paraprofessional FTE`, all programmes
+#   dese-sped-program-characteristics   `Paraprofessionals`, in the SPECIAL EDUCATION
+#                                       staff table, per 100 students with disabilities
+#
+# Over the years both publish, the first RISES and the second FALLS. That is not a
+# contradiction -- a paraprofessional coded to general education is in the first and not
+# the second -- but it is the single most important thing this page can say about the
+# gen-ed / special-education split, because the whole town argues about the total.
+#
+# RULE 13. The difference between the two is a DERIVED quantity taken across two files
+# that were not built to be subtracted, and it is published as exactly that: `implied`,
+# with the two sources named on it. Nothing here claims the district reassigned anybody.
+#
+# RULE 15a's neighbour: /how-many-students-are-on-an-iep already publishes the falling
+# series on its own and `money_gaps` already registers that three of the four rows in
+# that table do not reproduce from their own columns. The paraprofessional row is the one
+# that DOES reproduce in every year, and this block re-checks that rather than trusting
+# it.
+SPED_STAFF = 'Special Education FTEs per 100 SWDs'
+
+
+def sped_staffing(db):
+    """The special education staff table, and the all-programmes count beside it."""
+    raw = rows(db, "SELECT fy, indicator, denominator_cnt fte, measure_cnt swd, "
+                   "measure_pct rate FROM dese_sped_program WHERE lea = ? AND "
+                   "geo_level = 'district' AND indicator_category = ? ORDER BY fy",
+               LEA, SPED_STAFF)
+    if not raw:
+        sys.exit('the special education staff join matched nothing -- refusing to write.')
+    # THE COLUMN NAMES LIE AND THAT IS CHECKED, NOT ASSUMED. `denominator_cnt` holds the
+    # FTE and `measure_cnt` holds the count of children; the rate has to reproduce from
+    # the two of them or the row is not readable. Only rows that reproduce are published.
+    keep = {'Paraprofessionals': 'sped_para', 'Total Special Education FTEs': 'sped_total'}
+    series, checked, failed = {}, 0, 0
+    swd = {}
+    for r in raw:
+        if r['indicator'] == 'Total Students with Disabilities':
+            swd[r['fy']] = r['fte']
+            continue
+        if r['fte'] is None or r['swd'] is None or r['rate'] is None:
+            continue
+        checked += 1
+        if abs(round(100.0 * r['fte'] / r['swd'], 1) - round(100.0 * r['rate'], 1)) > 0.051:
+            failed += 1
+            continue
+        if r['indicator'] in keep:
+            series.setdefault(keep[r['indicator']], []).append(
+                dict(fy=r['fy'], fte=r['fte'], swd=int(r['swd']),
+                     per_100=round(100.0 * r['fte'] / r['swd'], 2)))
+    for k in keep.values():
+        if k not in series or len(series[k]) < 3:
+            sys.exit('%s reproduces from its own columns in fewer than three years. A '
+                     'row that cannot be read is not publishable -- refusing to write.' % k)
+
+    total = [dict(fy=r['fy'], fte=r['value'])
+             for r in rows(db, "SELECT fy, value FROM dese_measure WHERE lea = ? AND "
+                               "measure = 'Paraprofessional FTE' ORDER BY fy", LEA)]
+    lo = max(series['sped_para'][0]['fy'], total[0]['fy'])
+    hi = min(series['sped_para'][-1]['fy'], total[-1]['fy'])
+    by_total = {r['fy']: r['fte'] for r in total}
+    by_sped = {r['fy']: r['fte'] for r in series['sped_para']}
+    both = []
+    for f in range(lo, hi + 1):
+        if f not in by_total or f not in by_sped:
+            continue
+        both.append(dict(fy=f, all_programmes=by_total[f], special_education=by_sped[f],
+                         # DERIVED, ACROSS TWO FILES. Named `implied` and never `general
+                         # education`, because the second file's universe is not stated to
+                         # be a subset of the first's.
+                         implied=round(by_total[f] - by_sped[f], 4),
+                         swd=int(swd[f]) if f in swd else None))
+    if len(both) < 3:
+        sys.exit('the two paraprofessional series share %d years. A crossover drawn over '
+                 'two points is a line -- refusing to write.' % len(both))
+    if any(b['implied'] < 0 for b in both):
+        sys.exit('the special education paraprofessional FTE exceeds the all-programmes '
+                 'figure in FY%s, which would mean the second file is not a subset of '
+                 'the first. The subtraction below rests on it being one -- refusing to '
+                 'write.' % ', FY'.join(str(b['fy']) for b in both if b['implied'] < 0))
+
+    def move(key):
+        return dict(first_fy=both[0]['fy'], last_fy=both[-1]['fy'],
+                    first=both[0][key], last=both[-1][key],
+                    change=round(both[-1][key] - both[0][key], 4),
+                    pct=((both[-1][key] - both[0][key]) / both[0][key] * 100
+                         if both[0][key] else None),
+                    **upsteps(both, key))
+
+    return dict(
+        first_fy=both[0]['fy'], last_fy=both[-1]['fy'], rows=both,
+        all_programmes=move('all_programmes'), special_education=move('special_education'),
+        implied=move('implied'), swd=move('swd'),
+        sped_total=series['sped_total'],
+        reproduces=dict(checked=checked, failed=failed),
+        two_files=dict(a='radar-district-comparison.xlsx', b='dese-sped-program-'
+                       'characteristics.xlsx',
+                       warning='These are two DESE files with two definitions. The '
+                               'difference between them is computed here and called '
+                               'IMPLIED, never “general education”, because nothing '
+                               'published says the second file’s universe sits inside '
+                               'the first’s.'))
+
+
 # ------------------------------------------------------------------------------- build
 
 def build():
@@ -1254,7 +1576,9 @@ def build():
     peers = peer_series(db)
     ros = roster(db)
     mf = manifest()
-    comp = composition(db)
+    comp = composition(db, {x['fy'] for x in ros['doubled']})
+    heads = headcount(db)
+    sped = sped_staffing(db)
 
     # The paraprofessional dollars, reached twice: by summing the five line keys out of
     # `budget_figure`, and by reading the district's own five-school aggregation in
@@ -1393,6 +1717,36 @@ def build():
     top_down = sub_run['rows'][-1]
     cut_down = sub_fall['rows'][-1]
 
+    # ---- THE WINDOW FACT, which is this page's most important single thing.
+    # Two town bodies are publicly disagreeing about whether staffing went up, and both
+    # are right, because the sign of the answer is a property of the window. The matrix
+    # counts every pair of published years; naming the counts is what turns "it depends"
+    # from a dodge into a measurement.
+    ew = comp['every_window']
+    if ew['pairs'] != ew['rose'] + ew['fell'] + ew['flat']:
+        sys.exit('the window matrix no longer accounts for every pair -- refusing to write.')
+
+    # ---- THE HEADCOUNT FIGURES. `share` is an FTE count over a headcount: the average
+    # slice of a post one member of that group holds. It is the ONLY place in this
+    # archive where the "a 0.4 music teacher and a full-timer are one row each" problem
+    # has a number attached, and it needs both files to exist.
+    hc_last = heads['vs_fte'][-1]
+    hc_first = heads['vs_fte'][0]
+    t_rank = heads['peers']['ranks']['Teacher']
+    p_rank = heads['peers']['ranks']['Paraprofessional']
+    missing_fte = hc_last['teacher_headcount'] - hc_last['teacher_fte']
+    # Churn, latest year, for the class the rest of the page says moved most.
+    para_churn = max((c for c in heads['churn']
+                      if c['job_class'] == 'Paraprofessional' and c['retained_pct']),
+                     key=lambda c: c['fy'])
+    teach_churn = max((c for c in heads['churn']
+                       if c['job_class'] == 'Teacher' and c['retained_pct']),
+                      key=lambda c: c['fy'])
+
+    # ---- THE SPECIAL EDUCATION SPLIT.
+    sp_all, sp_sped = sped['all_programmes'], sped['special_education']
+    sp_swd = sped['swd']
+
     return dict(
         generated_by='scripts/build_staffing_charts.py',
         source='sources/data/lunenburg.db — staff_roster_entries, role_classification, '
@@ -1405,9 +1759,16 @@ def build():
             latest=by_fy[s_hi]),
         peers=peers,
         composition=comp,
-        about='Who Lunenburg’s schools employ, in the two instruments that exist: the '
-              'names the town prints in its own annual reports, and the full-time '
-              'equivalents the state publishes by school, by subject and by programme.',
+        headcount=heads,
+        sped_staffing=sped,
+        # THE PAYLOAD'S `about` WINS over ABOUT_PAGES in build_reports_index.py, so this
+        # is the sentence /reports renders. It said "the two instruments that exist" and
+        # there are now four -- which is the shape of defect this project keeps finding:
+        # something derived was written down, the thing it derived from moved, and nothing
+        # connected the two.
+        about=('Whether school staffing went up, over any span of years you choose — '
+               'with the four quantities the archive holds kept apart: names the town '
+               'printed, FTE and headcount the state published, and dollars.'),
         grain='Teacher FTE as the state counts it — per ASSIGNMENT, not per person — set '
               'against pupil headcount and the state’s need measures. Not dollars, not '
               'posts, not people, and not a count of who the town appropriates for.',
@@ -1436,6 +1797,12 @@ def build():
                 'Educator headcount and retention by job classification, FY2021–FY2023. '
                 'The only state file that reaches counsellors, administrators and '
                 'paraprofessionals as a group — three years, headcount not FTE.'),
+            doc(mf, 'state-dese/dese-sped-program-characteristics.xlsx',
+                'dese_sped_program', DESE_PUB,
+                'What the children with a special education plan are — disability, '
+                'placement, grade span — and the special education STAFF table, whose '
+                'paraprofessional row is the only one in it that reproduces from its own '
+                'printed FTE and child count in every year.'),
         ],
         said=said_in_meetings(),
         searched=searched(),
@@ -1459,7 +1826,18 @@ def build():
             'What Lunenburg’s counsellors, social workers, psychologists and nurses do as '
             'a series. None of them is a teacher on these returns; the state’s workforce '
             'file reaches them for three years only and puts them in two residual '
-            'buckets; the town’s rosters name them and carry no FTE.',
+            'buckets; the town’s rosters name them and carry no FTE. The district DOES '
+            'hold a per-building social worker caseload — it said so to the School '
+            'Committee on 6 December 2023 while deciding what to cut — and it is not '
+            'published.',
+            'Whether Lunenburg’s paraprofessionals moved out of special education or were '
+            'recoded. The state’s all-programmes count rises over the same years its '
+            'special education count more than halves, and the two are different files '
+            'with different definitions. A reassignment, a recoding and a change in what '
+            'the state’s table counts all fit.',
+            'How much of a post any individual holds. The headcount and the FTE together '
+            'give an average share for a whole job class and nothing else: one full-timer '
+            'beside one half-timer and two people at three quarters are the same figure.',
             'How the low-income share moved between FY2014 and FY2022. DESE replaced '
             '“low income” with “economically disadvantaged” and then went back to a '
             'redefined “low income”, so the three segments published here are three '
@@ -1481,6 +1859,98 @@ def build():
             by_year=[dict(fy=r['fy'], rows=r['n'], school_tagged=r['school'])
                      for r in wages]),
         conclusions=emit('school-staffing', [
+            # WHY THIS ONE IS FIRST, and why it is a `lever`.
+            #
+            # Two town bodies are publicly disagreeing about a fact, and the series
+            # settles it by refusing to take a side: over the 171 pairs of years DESE has
+            # published, teacher FTE is lower at the end in 95 of them and higher in 76.
+            # Nobody in that argument has said so out loud.
+            #
+            # `lever` rather than `sizes` after arguing it both ways. The test in
+            # conclusions.py is whether a body in this town can actually decide something,
+            # and here one can: the Finance Committee chose the span of the chart it
+            # showed the Tri-Board, and a board that publishes the whole series instead of
+            # a window is making a different decision next January. That is exactly what
+            # persona 4 asks a report to hand a Finance Committee member -- one thing they
+            # could do differently next year. It is not a `sizes` conclusion dressed up:
+            # the dial is real, it is theirs, and this project does not say which way to
+            # turn it.
+            conclusion(
+                id='the-sign-is-a-property-of-the-window',
+                bearing='lever',
+                claim='Pairs of published years where the state counts fewer teachers at '
+                      'the end than the start',
+                so_what='Whether staffing “went up” is decided by the years somebody '
+                        'picks, not by the town.',
+                lede='Both sides of the staffing argument in this town are quoting true '
+                      'numbers. Teacher FTE is lower at the end than the start in %s of '
+                      'the %s pairs of years the state has published, and higher in %s — '
+                      'so the sign of “did staffing go up” is a property of the window '
+                      'and not of Lunenburg.'
+                      % (C.num(ew['fell']), C.num(ew['pairs']), C.num(ew['rose'])),
+                detail='Three windows, each chosen by a rule rather than by argument. %s '
+                       'to %s is %s FTE — that is the span of the staffing chart the '
+                       'Tri-Board was shown on 27 January 2026, read off the minutes. %s '
+                       'to %s is %s, from the latest local maximum in the series to the '
+                       'latest year published. %s to %s is %s, every year DESE has '
+                       'published. The series has two peaks and no trend: it falls to %s '
+                       'in FY2020, climbs to %s in FY2024 and falls again. So a chart '
+                       'that starts in one year rather than another is an argument, and '
+                       'the remedy is to print the span on it.'
+                       % (C.fy(charted['first_fy']), C.fy(charted['last_fy']),
+                          signed_fte(charted['change']),
+                          C.fy(recent['first_fy']), C.fy(recent['last_fy']),
+                          signed_fte(recent['change']),
+                          C.fy(whole['first_fy']), C.fy(whole['last_fy']),
+                          signed_fte(whole['change']),
+                          fte(min(p['fte'] for p in comp['district']
+                                  if p['fy'] == 2020)),
+                          fte(max(p['fte'] for p in comp['district']
+                                  if p['fy'] == 2024))),
+                figure='fell',
+                figures={
+                    'fell': figure(ew['fell'], C.num(ew['fell']),
+                                   'pairs of published years, of ' + C.num(ew['pairs'])),
+                    'pairs': figure(ew['pairs'], C.num(ew['pairs'])),
+                    'rose': figure(ew['rose'], C.num(ew['rose'])),
+                    'charted_first': figure(charted['first_fy'],
+                                            C.fy(charted['first_fy'])),
+                    'charted_last': figure(charted['last_fy'], C.fy(charted['last_fy'])),
+                    'charted_change': figure(charted['change'],
+                                             signed_fte(charted['change'])),
+                    'recent_first': figure(recent['first_fy'], C.fy(recent['first_fy'])),
+                    'recent_last': figure(recent['last_fy'], C.fy(recent['last_fy'])),
+                    'recent_change': figure(recent['change'],
+                                            signed_fte(recent['change'])),
+                    'whole_first': figure(whole['first_fy'], C.fy(whole['first_fy'])),
+                    'whole_last': figure(whole['last_fy'], C.fy(whole['last_fy'])),
+                    'whole_change': figure(whole['change'], signed_fte(whole['change'])),
+                    'trough_2020': figure(
+                        min(p['fte'] for p in comp['district'] if p['fy'] == 2020),
+                        fte(min(p['fte'] for p in comp['district'] if p['fy'] == 2020))),
+                    'peak_2024': figure(
+                        max(p['fte'] for p in comp['district'] if p['fy'] == 2024),
+                        fte(max(p['fte'] for p in comp['district'] if p['fy'] == 2024))),
+                },
+                kind='measured',
+                basis='DESE’s own `All Teachers` FTE line for the district, every year '
+                      'it has published one. The matrix is every ordered pair of those '
+                      'years, computed rather than sampled; the three named windows are '
+                      'the whole published run, the span read off the Tri-Board minutes, '
+                      'and the latest local maximum to the latest year.',
+                not_shown='What anybody decided. An FTE series records what the district '
+                          'reported to the state, and DESE counts FTE per ASSIGNMENT — '
+                          'one person split across two roles and two people each '
+                          'half-time are the same figure. It also counts staff paid from '
+                          'grants and revolving funds alongside those the town '
+                          'appropriates, so the federal ESSER money arriving and ending '
+                          'are both invisible in this line.',
+                # The 2026 in the Tri-Board date, and the two years named as the second
+                # peak and the intervening trough, are dates rather than derived figures.
+                allow=('27 January 2026', 'FY2020', 'FY2024'),
+                see=[('/what-courses-actually-ran', 'which classes actually ran'),
+                     ('/when-grants-end', 'what happens when a grant stops')],
+            ),
             conclusion(
                 id='the-change-is-paraprofessionals',
                 bearing='sizes',
@@ -1609,6 +2079,18 @@ def build():
                 see=[('/what-other-districts-spend', 'what other districts spend'),
                      ('/if-students-leave', 'what happens as students leave')],
             ),
+            # BEARING RE-EXAMINED, and kept. The argument against `lever` is real: rule
+            # 11 says this line can rise because a grant that was paying for these people
+            # ended, so what moved may be nothing anybody in Lunenburg decided. But
+            # `bearing` asks whether a body in this town can DECIDE something, not whether
+            # it caused what already happened -- and the School Committee sets this
+            # appropriation and Town Meeting votes it, every year, whatever moved it last
+            # year. So it stays a lever, with the funding-source caveat beside the figure
+            # rather than in place of it.
+            #
+            # `the-change-is-paraprofessionals` and `fewest-teachers-per-pupil-in-the-group`
+            # were re-examined too and both stay `sizes`: neither a DESE count nor a rank
+            # among districts DESE chose is anything a town body turns.
             conclusion(
                 id='inside-sped-the-money-went-to-paraprofessionals',
                 bearing='lever',
@@ -1664,6 +2146,167 @@ def build():
                           'these lines are net of every fund but the general fund.',
                 see=[('/what-special-education-costs', 'what special education costs'),
                      ('/when-grants-end', 'what happens when a grant stops')],
+            ),
+            # THE HEADCOUNT INSTRUMENT, and why it earns a conclusion of its own.
+            #
+            # Everything else on this page counts FTE, and this project has said in four
+            # places that a roster count cannot be compared to an FTE count because a 0.4
+            # music teacher and a full-timer are one row each. That sentence was true and
+            # had no number attached to it. DESE's educator retention file counts PEOPLE,
+            # so for three years the size of the difference is visible: the average
+            # Lunenburg teacher holds well under a whole post, and the gap widened.
+            #
+            # `sizes`, not `lever`. Nobody in Lunenburg decides how DESE counts, and the
+            # conclusion's job here is to stop a reader treating two numbers as one.
+            conclusion(
+                id='a-headcount-is-not-an-fte-count',
+                bearing='sizes',
+                claim='Teachers the state counted as people in %s, against %s full-time '
+                      'equivalent posts'
+                      % (C.fy(hc_last['fy']), fte(hc_last['teacher_fte'])),
+                so_what='A roster counts heads and DESE counts posts, so the same staff '
+                        'give two different numbers.',
+                lede='The state publishes both counts and they are not the same count: '
+                      '%s people teaching in Lunenburg in %s, holding %s full-time '
+                      'equivalent posts between them — %s FTE fewer than there are '
+                      'bodies.'
+                      % (C.num(hc_last['teacher_headcount']), C.fy(hc_last['fy']),
+                         fte(hc_last['teacher_fte']), fte(missing_fte)),
+                detail='The average teacher on that return holds %s of a post, down from '
+                       '%s in %s. Paraprofessionals are the other way about: %s people '
+                       'and %s FTE in %s, so almost every one of them is counted whole. '
+                       'The gap matters because it decides which instrument answers which '
+                       'question — the town’s own printed rosters are a headcount and '
+                       'cannot be set beside an FTE series, and this is the size of the '
+                       'error that would be. On headcount for each hundred pupils '
+                       'Lunenburg is %s of the %s districts in this file for teachers and '
+                       '%s of %s for paraprofessionals, which is a smaller group than the '
+                       'comparison sheet the rest of this page uses and is not the same '
+                       'ranking.'
+                       % (per100(hc_last['teacher_share']),
+                          per100(hc_first['teacher_share']), C.fy(hc_first['fy']),
+                          C.num(hc_last['para_headcount']), fte(hc_last['para_fte']),
+                          C.fy(hc_last['fy']),
+                          C.num(t_rank['rank']), C.num(t_rank['of']),
+                          C.num(p_rank['rank']), C.num(p_rank['of'])),
+                figure='headcount',
+                figures={
+                    'headcount': figure(hc_last['teacher_headcount'],
+                                        C.num(hc_last['teacher_headcount']),
+                                        'people, not full-time posts'),
+                    'fte': figure(hc_last['teacher_fte'], fte(hc_last['teacher_fte'])),
+                    'fy': figure(hc_last['fy'], C.fy(hc_last['fy'])),
+                    'missing': figure(missing_fte, fte(missing_fte)),
+                    'share': figure(hc_last['teacher_share'],
+                                    per100(hc_last['teacher_share'])),
+                    'share_first': figure(hc_first['teacher_share'],
+                                          per100(hc_first['teacher_share'])),
+                    'share_first_fy': figure(hc_first['fy'], C.fy(hc_first['fy'])),
+                    'para_headcount': figure(hc_last['para_headcount'],
+                                             C.num(hc_last['para_headcount'])),
+                    'para_fte': figure(hc_last['para_fte'], fte(hc_last['para_fte'])),
+                    'teacher_rank': figure(t_rank['rank'], C.num(t_rank['rank'])),
+                    'teacher_of': figure(t_rank['of'], C.num(t_rank['of'])),
+                    'para_rank': figure(p_rank['rank'], C.num(p_rank['rank'])),
+                    'para_of': figure(p_rank['of'], C.num(p_rank['of'])),
+                },
+                kind='measured',
+                basis='DESE’s educator headcount and retention file, %s–%s, at the row '
+                      'the file prints as its own total — read beside DESE’s published '
+                      'FTE for the same district and the same years. Three years is what '
+                      'exists; the span is on every figure drawn from it.'
+                      % (C.fy(heads['first_fy']), C.fy(heads['last_fy'])),
+                not_shown='Who is part-time. A share is an average over a whole job '
+                          'class, and one full-timer beside one half-timer and two people '
+                          'at three quarters give the same figure. Nothing published '
+                          'gives the distribution, and nothing gives the funding source '
+                          'for a single one of these people. Nor does a headcount say a '
+                          'post was filled all year: it is a return for one point in the '
+                          'school year, like the rosters.',
+                allow=(C.fy(heads['first_fy']), C.fy(heads['last_fy'])),
+                see=[('/what-other-districts-spend', 'what other districts spend'),
+                     ('/what-we-cannot-answer', 'what we cannot answer')],
+            ),
+            # THE GENERAL EDUCATION / SPECIAL EDUCATION SPLIT, which was the question TJ
+            # asked and which the page previously answered only as a registered gap.
+            #
+            # NOT A RESTATEMENT of /how-many-students-are-on-an-iep, which publishes the
+            # falling special education series on its own. The finding here is the
+            # JUXTAPOSITION: the all-programmes count rose over exactly the same years, so
+            # the paraprofessional workforce did not shrink -- the share of it the state
+            # codes to special education did, in every one of the five year-steps.
+            #
+            # `sizes`. The coding is DESE's and the reassignment, if it is one, is the
+            # district's operational business rather than a dial a town body turns at a
+            # meeting.
+            conclusion(
+                id='paraprofessionals-outside-special-education',
+                bearing='sizes',
+                claim='Rise in paraprofessional FTE the state does not code to special '
+                      'education, %s to %s'
+                      % (C.fy(sp_all['first_fy']), C.fy(sp_all['last_fy'])),
+                so_what='The paraprofessional workforce grew while its special education '
+                        'half more than halved.',
+                lede='Two of the state’s files count Lunenburg’s paraprofessionals and '
+                      'they move in opposite directions. All programmes: %s full-time '
+                      'equivalents to %s. Special education: %s to %s. The difference '
+                      'between them goes from %s to %s — a rise of %s.'
+                      % (fte(sp_all['first']), fte(sp_all['last']),
+                         fte(sp_sped['first']), fte(sp_sped['last']),
+                         fte(sped['implied']['first']), fte(sped['implied']['last']),
+                         fte(sped['implied']['change'])),
+                detail='That is a %s fall in the special education count against a %s '
+                       'rise in the all-programmes one, over years in which the number of children '
+                       'with a special education plan went from %s to %s. It is not one '
+                       'noisy year: the special education line falls at every one of the '
+                       '%s steps and the difference rises at every one. WHAT IT IS NOT is '
+                       'a measurement of anybody moving jobs — these are two DESE files '
+                       'with two definitions, and subtracting one from the other assumes '
+                       'the second sits inside the first, which nothing published says. '
+                       'A district reassigning paraprofessionals, a district recoding '
+                       'them, and DESE changing what its special education table counts '
+                       'all produce this shape.'
+                       % (C.pct(abs(sp_sped['pct'])), C.pct(sp_all['pct']),
+                          C.num(sp_swd['first']), C.num(sp_swd['last']),
+                          C.num(sp_all['steps'])),
+                figure='implied_rise',
+                figures={
+                    'implied_rise': figure(sped['implied']['change'],
+                                           fte(sped['implied']['change']),
+                                           'full-time paraprofessional posts'),
+                    'first_fy': figure(sp_all['first_fy'], C.fy(sp_all['first_fy'])),
+                    'last_fy': figure(sp_all['last_fy'], C.fy(sp_all['last_fy'])),
+                    'all_first': figure(sp_all['first'], fte(sp_all['first'])),
+                    'all_last': figure(sp_all['last'], fte(sp_all['last'])),
+                    'sped_first': figure(sp_sped['first'], fte(sp_sped['first'])),
+                    'sped_last': figure(sp_sped['last'], fte(sp_sped['last'])),
+                    'implied_first': figure(sped['implied']['first'],
+                                            fte(sped['implied']['first'])),
+                    'implied_last': figure(sped['implied']['last'],
+                                           fte(sped['implied']['last'])),
+                    'sped_pct': figure(abs(sp_sped['pct']), C.pct(abs(sp_sped['pct']))),
+                    'all_pct': figure(sp_all['pct'], C.pct(sp_all['pct'])),
+                    'swd_first': figure(sp_swd['first'], C.num(sp_swd['first'])),
+                    'swd_last': figure(sp_swd['last'], C.num(sp_swd['last'])),
+                    'steps': figure(sp_all['steps'], C.num(sp_all['steps'])),
+                },
+                kind='measured',
+                basis='Two DESE files over the years both publish: the district '
+                      'comparison sheet’s all-programmes paraprofessional FTE, and the '
+                      'special education staff table, whose rate is recomputed from its '
+                      'own FTE and child count on every build and published only where '
+                      'it reproduces. The difference between them is derived here and is '
+                      'labelled as derived.',
+                not_shown='That anybody was reassigned, hired or cut. Three readings fit '
+                          'these numbers equally well and this archive cannot separate '
+                          'them: paraprofessionals moved onto general education '
+                          'assignments; the same people were recoded; or DESE changed '
+                          'what its special education staff table counts. Nor does it '
+                          'show who pays — the state counts staff on grants, circuit '
+                          'breaker reimbursement and revolving funds exactly like staff '
+                          'the town appropriates.',
+                see=[('/how-many-students-are-on-an-iep', 'how many children are on a plan'),
+                     ('/what-special-education-costs', 'what special education costs')],
             ),
         ]),
     )

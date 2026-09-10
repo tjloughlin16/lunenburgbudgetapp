@@ -9,7 +9,7 @@ transcribed into model/athletics.py -- and then asserted to be present in the do
 
     python3 scripts/verify_athletics.py
 """
-import os, sys, csv, collections
+import os, sys, csv, collections, json, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'model'))
@@ -266,6 +266,173 @@ basis = collections.Counter(r['source_type']
                             for r in csv.DictReader(open(os.path.join(DATA, 'document-basis.csv'))))
 for k in ('ledger', 'restatement', 'forward', 'narrative'):
     present(f'{k} documents', f'| {basis[k]} |')
+
+# --- THE PER-SPORT DISAGREEMENT, WHICH IS NOW THE CENTREPIECE OF /what-sports-cost ----
+#
+# WHY THIS SECTION EXISTS. `model/athletics_sources.py` computes the three published
+# per-sport costs and the spread between them, ships them in model.json, and until now
+# NOTHING re-derived any of it. It is the most quoted material this project holds -- a
+# reader uses it to decide which team to give up -- and it was the least checked.
+#
+# AND HOW IT IS CHECKED MATTERS MORE THAN THAT IT IS. This file's own history is the
+# warning: it once asserted that a SENTENCE existed and passed while the sentence was
+# wrong. So nothing below looks for a string in prose. Each check recomputes a value from
+# the CSV or from the constants and compares it to the value that SHIPPED, which is what a
+# reader gets.
+head('The three per-sport cost columns, recomputed against what ships in model.json')
+
+_MODEL = json.load(open(os.path.join(ROOT, 'fy28/src/data/model.json')))['athletics']['costSources']
+
+
+def same(label, got, want, tol=0.005):
+    ok = abs(float(got) - float(want)) <= tol
+    if not ok:
+        FAILS.append(f'{label}: recomputed {got!r}, model.json ships {want!r}')
+    print(f"  {'OK  ' if ok else 'FAIL'}  {label:<46} {got}")
+
+
+def same_text(label, got, want):
+    ok = str(got) == str(want)
+    if not ok:
+        FAILS.append(f'{label}: recomputed {got!r}, model.json ships {want!r}')
+    print(f"  {'OK  ' if ok else 'FAIL'}  {label:<46} {got}")
+
+
+# 1. THE DERIVED COLUMN, READ BACK OUT OF THE EXTRACT BY A DIFFERENT ROUTE.
+#    athletics_sources.py maps workbook rows onto the roster through a crosswalk. This
+#    sums the workbook's own `Total Expenses` column for the comparison year with no
+#    crosswalk at all, and asserts the mapped column plus the rows the module says it held
+#    out come back to it. A crosswalk that silently stopped matching would publish a small
+#    column and look exactly like a district that spends less.
+_FY = _MODEL['fy']
+_wb_rows = [r for r in csv.DictReader(open(os.path.join(DATA, 'athletics-by-sport.csv')))
+            if r['metric'] == 'Total Expenses' and r['is_numeric'] == '1'
+            and int(r['fy']) == _FY]
+if not _wb_rows:
+    FAILS.append(f'athletics-by-sport.csv carries no FY{_FY} Total Expenses rows at all')
+_wb_column = round(sum(float(r['value']) for r in _wb_rows), 2)
+_excluded_names = {(e['level'], e['sport']) for e in _MODEL['excluded']}
+_excluded_sum = round(sum(float(r['value']) for r in _wb_rows
+                         if (r['level'], r['sport']) in _excluded_names), 2)
+same(f'FY{_FY} workbook Total Expenses column', _wb_column,
+     round(_MODEL['totals']['workbook'] + _excluded_sum, 2))
+
+# 2. EVERY COLUMN TOTAL IS THE SUM OF ITS OWN CELLS. The export states this identity and
+#    a total that has drifted from its rows is the one error a reader cannot see.
+for _col in sorted(_MODEL['totals']):
+    same(f'{_col} total = sum of its per-sport cells',
+         round(sum(s['columns'][_col] for s in _MODEL['sports'] if _col in s['columns']), 2),
+         _MODEL['totals'][_col])
+
+# 3. THE TWO TRANSCRIBED COLUMNS AGAINST THE CONSTANTS THEY WERE TRANSCRIBED INTO.
+#    Rule 2 permits them to stay typed because no machine-readable extract of either
+#    document exists. It does not permit them to go unchecked against the one place they
+#    are written down.
+_by_name = {s['name']: s for s in A.SPORTS}
+for _s in _MODEL['sports']:
+    _src = _by_name.get(_s['name'])
+    if _src is None:
+        FAILS.append(f"model.json ships a sport model/athletics.py does not: {_s['name']}")
+        continue
+    if abs(_s['columns']['costsBySport'] - _src['cost']) > 0.005:
+        FAILS.append(f"{_s['name']}: costsBySport {_s['columns']['costsBySport']} is not "
+                     f"the constant {_src['cost']}")
+    if abs(_s['columns']['deck'] - _src['deckCost']) > 0.005:
+        FAILS.append(f"{_s['name']}: deck {_s['columns']['deck']} is not the constant "
+                     f"{_src['deckCost']}")
+print(f"  {'OK  ' if not FAILS else '....'}  "
+      f"{len(_MODEL['sports'])} sports against model/athletics.py's constants")
+
+# 4. THE SPREAD, THE WIDEST TEAM AND THE COUNT THAT AGREE, all recomputed. These three are
+#    the figures the page sets large, and rule 13a turns on them: publish the spread,
+#    never a reconciliation.
+_lo, _hi = min(_MODEL['totals'].values()), max(_MODEL['totals'].values())
+same('total spread', round(_hi - _lo, 2), _MODEL['totalSpread'])
+same('total spread, per cent', round((_hi - _lo) / _lo * 100, 1), _MODEL['totalSpreadPct'])
+_widest = max(_MODEL['sports'], key=lambda s: s['spreadPct'] or 0)
+same_text('widest team', _widest['name'], _MODEL['widest'])
+same('widest team, per cent', _widest['spreadPct'], _MODEL['widestPct'], tol=0.05)
+same('teams whose three figures agree',
+     sum(1 for s in _MODEL['sports'] if s['spread'] < 0.005), _MODEL['agreeing'])
+for _s in _MODEL['sports']:
+    _vals = list(_s['columns'].values())
+    if abs(_s['spread'] - (max(_vals) - min(_vals))) > 0.005:
+        FAILS.append(f"{_s['name']}: the published spread is not high minus low")
+
+# --- THE PAGE'S OWN PAYLOAD -------------------------------------------------------
+#
+# /what-sports-cost renders `fy28/public/data/athletics.json`. Its generator's --check
+# proves the file still reproduces from the database; it cannot prove that the three-way
+# figures the page sets large are arithmetically what they claim, because the generator
+# computed them and would compute them the same way again.
+head('The page payload — the three pots, recomputed')
+_PAGE = json.load(open(os.path.join(ROOT, 'fy28/public/data/athletics.json')))
+_t = _PAGE['three_way']
+same('two pots = fund payments + appropriation',
+     round(_t['fund_paid'] + _t['general'], 2), _t['two_pots'])
+same('over the workbook = two pots - workbook',
+     round(_t['fund_paid'] + _t['general'] - _t['workbook'], 2), _t['over_workbook'])
+_src_amounts = sorted(round(s['amount'], 2) for s in _t['sources'])
+if _src_amounts != sorted(round(x, 2) for x in
+                          (_t['workbook'], _t['fund_paid'], _t['general'])):
+    FAILS.append('the three rows the page prints are not the three figures it computes')
+print(f"  OK    the three printed rows are the three computed figures")
+
+# THE TWO SEARCH COUNTS THE PAGE STATES IN PROSE, counted again over the same corpus.
+# The page says `programmatic cost` appears in one document and `pay to play` in none, and
+# both sentences are load-bearing: the first is the closest the record comes to saying what
+# a column counts, and the second is the claim that this town does not use that phrase.
+# Counted with a LEADING word boundary only -- residents write plurals.
+head('The two search counts the page states, recounted')
+_bodies = []
+for _dirpath, _dirnames, _files in os.walk(os.path.join(ROOT, 'sources/meetings/text')):
+    for _f in _files:
+        if _f.endswith('.txt'):
+            _bodies.append(os.path.join(_dirpath, _f))
+if not _bodies:
+    FAILS.append('sources/meetings/text holds no documents — a recount of nothing is not '
+                 'a recount')
+for _term in ('programmatic cost', 'pay to play'):
+    _n = sum(1 for _b in _bodies
+             if re.search(r'\b%s' % re.escape(_term),
+                          open(_b, encoding='utf-8', errors='replace').read(), re.I))
+    _shipped = next(s['documents'] for s in _PAGE['searched'] if s['term'] == _term)
+    same(f'documents saying “{_term}”', _n, _shipped, tol=0)
+
+# EVERY QUOTE THE PAGE PRINTS, STILL IN THE FILE IT NAMES. The generator asserts this on
+# the way out; this asserts it against the published payload, which is what a reader gets.
+head('Every quote in the payload, against the minutes file it cites')
+for _key in ('by_sport_said', 'helmets_sequel'):
+    _blk = _PAGE[_key]
+    # The published address is /docs/minutes/...; on disk it is sources/meetings/text/...
+    # Two names for one thing, and the mapping is written here rather than assumed.
+    _path = os.path.join(ROOT, _blk['url'].replace('/docs/minutes/', 'sources/meetings/', 1))
+    if not os.path.exists(_path):
+        FAILS.append(f'{_key}: {_path} is not on disk')
+        continue
+    _flat = ' '.join(open(_path, encoding='utf-8', errors='replace').read().split())
+    for _q in _blk['quotes']:
+        _ok = ' '.join(_q['text'].split()) in _flat
+        if not _ok:
+            FAILS.append(f'{_key}: “{_q["text"][:50]}…” is no longer in {_blk["url"]}')
+        print(f"  {'OK  ' if _ok else 'GONE'}  {_key:<20} line {_q['line']:<6} "
+              f"{_q['text'][:44]}…")
+
+
+# THE PERSONA REVIEW WAS RUN, AND THIS IS THE ONE ASSERTION HERE THAT IS ABOUT PROSE.
+# It is deliberate and it is narrow. Everything else in this file recomputes a value and
+# compares it, because a check on a sentence passes while the sentence is wrong -- this
+# file's own history. But whether notes/process/PERSONAS.md records a review for this page
+# is not a figure at all; it is a process artefact, and the only mechanical way to notice
+# that a page was substantially rewritten without being re-read as its six readers.
+head('The persona review — notes/process/PERSONAS.md')
+_personas = open(os.path.join(ROOT, 'notes/process/PERSONAS.md'), encoding='utf-8').read()
+_ok = '`/what-sports-cost`' in _personas
+if not _ok:
+    FAILS.append('notes/process/PERSONAS.md records no review for /what-sports-cost. '
+                 'Rule 15a: a verifier checks the figures and cannot check that anybody’s '
+                 'question was answered.')
+print(f"  {'OK  ' if _ok else 'FAIL'}  a review is recorded for /what-sports-cost")
 
 print()
 if FAILS:

@@ -244,8 +244,8 @@ DATA_DIR = os.path.join(ROOT, 'fy28', 'public', 'data')
 ABOUT_PAGES = {
     'sportsmoney':
         'Athletics with both sides of the money visible at once — the town’s '
-        'appropriation, the fee-funded revolving fund, and the district’s own '
-        'sport-by-sport workbook, which disagree by up to a factor of thirteen.',
+        'appropriation, the fee-funded revolving fund, and three district documents that '
+        'state three different costs for the same team in the same year.',
     'variance':
         'What the district budgeted against what it later reported spending, line by '
         'line — and why nothing before FY2026 is an accounting record.',
@@ -256,8 +256,9 @@ ABOUT_PAGES = {
         'What it would cost the town if more children left under school choice — a '
         'scenario with dials, priced against DESE’s own counts.',
     'staffing':
-        'The people the school budget buys, in the three quantities the archive holds: '
-        'names the town printed, FTE the state published, and dollars.',
+        'Whether school staffing went up, over any span of years you choose — with the '
+        'four quantities the archive holds kept apart: names the town printed, FTE and '
+        'headcount the state published, and dollars.',
     'courses':
         'How many classes actually ran in each subject at the high school, year by '
         'year — the one measure here of what was taught rather than who was '

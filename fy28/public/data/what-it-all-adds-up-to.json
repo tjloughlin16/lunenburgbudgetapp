@@ -731,86 +731,105 @@
    "so_what": "Losing pupils does not cut the aid. It changes only the flat increase, which is set on Beacon Hill."
   },
   {
-   "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
-   "bearing": "sizes",
-   "claim": "Rise in paraprofessionals for each hundred pupils, the biggest change in staffing",
-   "detail": "Paraprofessionals are the biggest change in who Lunenburg\u2019s schools employ: the state\u2019s count went from 0.94 per hundred pupils in FY2013, the lowest of the 13 districts on the state\u2019s own sheet, to 4.27 in FY2025, the highest. 14.8 full-time equivalents in FY2013 and 67.0 in FY2025 \u2014 a rise of 352.7% over years in which in-district enrolment fell 0.8%. Nothing else in this archive could have told a resident that: the town prints staff rosters every year and they carry names without hours, so the state\u2019s file is the only place the size of the shift is visible.",
-   "figure": "fte_rise",
+   "basis": "DESE\u2019s own `All Teachers` FTE line for the district, every year it has published one. The matrix is every ordered pair of those years, computed rather than sampled; the three named windows are the whole published run, the span read off the Tri-Board minutes, and the latest local maximum to the latest year.",
+   "bearing": "lever",
+   "claim": "Pairs of published years where the state counts fewer teachers at the end than the start",
+   "detail": "Both sides of the staffing argument in this town are quoting true numbers. Teacher FTE is lower at the end than the start in 95 of the 171 pairs of years the state has published, and higher in 76 \u2014 so the sign of \u201cdid staffing go up\u201d is a property of the window and not of Lunenburg. Three windows, each chosen by a rule rather than by argument. FY2016 to FY2025 is +0.3 FTE \u2014 that is the span of the staffing chart the Tri-Board was shown on 27 January 2026, read off the minutes. FY2024 to FY2026 is \u221210.6, from the latest local maximum in the series to the latest year published. FY2008 to FY2026 is \u221216.1, every year DESE has published. The series has two peaks and no trend: it falls to 107.4 in FY2020, climbs to 114.0 in FY2024 and falls again. So a chart that starts in one year rather than another is an argument, and the remedy is to print the span on it.",
+   "figure": "fell",
    "figures": {
-    "districts": {
-     "text": "13",
+    "charted_change": {
+     "text": "+0.3",
      "unit": "",
-     "value": 13
+     "value": 0.3
     },
-    "enrolment_move": {
-     "text": "0.8%",
+    "charted_first": {
+     "text": "FY2016",
      "unit": "",
-     "value": 0.7653383934218772
+     "value": 2016
     },
-    "fte_rise": {
-     "text": "352.7%",
-     "unit": "",
-     "value": 352.7027027027027
-    },
-    "last_fte": {
-     "text": "67.0",
-     "unit": "",
-     "value": 67.0
-    },
-    "last_fy": {
+    "charted_last": {
      "text": "FY2025",
      "unit": "",
      "value": 2025
     },
-    "last_ratio": {
-     "text": "4.27",
-     "unit": "",
-     "value": 4.270507999235132
+    "fell": {
+     "text": "95",
+     "unit": "pairs of published years, of 171",
+     "value": 95
     },
-    "last_year": {
-     "text": "FY2025",
+    "pairs": {
+     "text": "171",
      "unit": "",
-     "value": 2025
+     "value": 171
     },
-    "low_fte": {
-     "text": "14.8",
+    "peak_2024": {
+     "text": "114.0",
      "unit": "",
-     "value": 14.8
+     "value": 114.0
     },
-    "low_fy": {
-     "text": "FY2013",
+    "recent_change": {
+     "text": "\u221210.6",
      "unit": "",
-     "value": 2013
+     "value": -10.6
     },
-    "low_ratio": {
-     "text": "0.94",
+    "recent_first": {
+     "text": "FY2024",
      "unit": "",
-     "value": 0.9361163820366857
+     "value": 2024
     },
-    "trough_fy": {
-     "text": "FY2013",
+    "recent_last": {
+     "text": "FY2026",
      "unit": "",
-     "value": 2013
+     "value": 2026
+    },
+    "rose": {
+     "text": "76",
+     "unit": "",
+     "value": 76
+    },
+    "trough_2020": {
+     "text": "107.4",
+     "unit": "",
+     "value": 107.4
+    },
+    "whole_change": {
+     "text": "\u221216.1",
+     "unit": "",
+     "value": -16.1
+    },
+    "whole_first": {
+     "text": "FY2008",
+     "unit": "",
+     "value": 2008
+    },
+    "whole_last": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
     }
    },
-   "id": "the-change-is-paraprofessionals",
+   "id": "the-sign-is-a-property-of-the-window",
    "kind": "measured",
-   "literals": [],
-   "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
+   "literals": [
+    "27 January 2026",
+    "FY2020",
+    "FY2024"
+   ],
+   "not_shown": "What anybody decided. An FTE series records what the district reported to the state, and DESE counts FTE per ASSIGNMENT \u2014 one person split across two roles and two people each half-time are the same figure. It also counts staff paid from grants and revolving funds alongside those the town appropriates, so the federal ESSER money arriving and ending are both invisible in this line.",
    "report": "staffing",
-   "report_title": "School staffing \u2014 names, FTE and dollars",
+   "report_title": "School staffing \u2014 did it go up, and over which years",
    "report_url": "/school-staffing",
    "see": [
     {
-     "label": "what special education costs",
-     "slug": "/what-special-education-costs"
+     "label": "which classes actually ran",
+     "slug": "/what-courses-actually-ran"
     },
     {
-     "label": "what other districts spend",
-     "slug": "/what-other-districts-spend"
+     "label": "what happens when a grant stops",
+     "slug": "/when-grants-end"
     }
    ],
-   "so_what": "Lunenburg went from the lowest on the state\u2019s comparison sheet to the highest."
+   "so_what": "Whether staffing \u201cwent up\u201d is decided by the years somebody picks, not by the town."
   },
   {
    "basis": "DESE\u2019s class-size collection \u2014 `tot_clss_cnt` and `avg_clss_cnt` for Lunenburg High \u2014 with the grade span of the school in every one of those years read off DESE\u2019s own enrolment-by-grade counts, so the two ends of the comparison are the same school.",
@@ -3419,8 +3438,106 @@
    "url": "/how-chapter-70-works"
   },
   {
-   "about": "Who Lunenburg\u2019s schools employ, in the two instruments that exist: the names the town prints in its own annual reports, and the full-time equivalents the state publishes by school, by subject and by programme.",
+   "about": "Whether school staffing went up, over any span of years you choose \u2014 with the four quantities the archive holds kept apart: names the town printed, FTE and headcount the state published, and dollars.",
    "conclusions": [
+    {
+     "basis": "DESE\u2019s own `All Teachers` FTE line for the district, every year it has published one. The matrix is every ordered pair of those years, computed rather than sampled; the three named windows are the whole published run, the span read off the Tri-Board minutes, and the latest local maximum to the latest year.",
+     "bearing": "lever",
+     "claim": "Pairs of published years where the state counts fewer teachers at the end than the start",
+     "detail": "Both sides of the staffing argument in this town are quoting true numbers. Teacher FTE is lower at the end than the start in 95 of the 171 pairs of years the state has published, and higher in 76 \u2014 so the sign of \u201cdid staffing go up\u201d is a property of the window and not of Lunenburg. Three windows, each chosen by a rule rather than by argument. FY2016 to FY2025 is +0.3 FTE \u2014 that is the span of the staffing chart the Tri-Board was shown on 27 January 2026, read off the minutes. FY2024 to FY2026 is \u221210.6, from the latest local maximum in the series to the latest year published. FY2008 to FY2026 is \u221216.1, every year DESE has published. The series has two peaks and no trend: it falls to 107.4 in FY2020, climbs to 114.0 in FY2024 and falls again. So a chart that starts in one year rather than another is an argument, and the remedy is to print the span on it.",
+     "figure": "fell",
+     "figures": {
+      "charted_change": {
+       "text": "+0.3",
+       "unit": "",
+       "value": 0.3
+      },
+      "charted_first": {
+       "text": "FY2016",
+       "unit": "",
+       "value": 2016
+      },
+      "charted_last": {
+       "text": "FY2025",
+       "unit": "",
+       "value": 2025
+      },
+      "fell": {
+       "text": "95",
+       "unit": "pairs of published years, of 171",
+       "value": 95
+      },
+      "pairs": {
+       "text": "171",
+       "unit": "",
+       "value": 171
+      },
+      "peak_2024": {
+       "text": "114.0",
+       "unit": "",
+       "value": 114.0
+      },
+      "recent_change": {
+       "text": "\u221210.6",
+       "unit": "",
+       "value": -10.6
+      },
+      "recent_first": {
+       "text": "FY2024",
+       "unit": "",
+       "value": 2024
+      },
+      "recent_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "rose": {
+       "text": "76",
+       "unit": "",
+       "value": 76
+      },
+      "trough_2020": {
+       "text": "107.4",
+       "unit": "",
+       "value": 107.4
+      },
+      "whole_change": {
+       "text": "\u221216.1",
+       "unit": "",
+       "value": -16.1
+      },
+      "whole_first": {
+       "text": "FY2008",
+       "unit": "",
+       "value": 2008
+      },
+      "whole_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      }
+     },
+     "id": "the-sign-is-a-property-of-the-window",
+     "kind": "measured",
+     "literals": [
+      "27 January 2026",
+      "FY2020",
+      "FY2024"
+     ],
+     "not_shown": "What anybody decided. An FTE series records what the district reported to the state, and DESE counts FTE per ASSIGNMENT \u2014 one person split across two roles and two people each half-time are the same figure. It also counts staff paid from grants and revolving funds alongside those the town appropriates, so the federal ESSER money arriving and ending are both invisible in this line.",
+     "see": [
+      {
+       "label": "which classes actually ran",
+       "slug": "/what-courses-actually-ran"
+      },
+      {
+       "label": "what happens when a grant stops",
+       "slug": "/when-grants-end"
+      }
+     ],
+     "so_what": "Whether staffing \u201cwent up\u201d is decided by the years somebody picks, not by the town."
+    },
     {
      "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
      "bearing": "sizes",
@@ -3652,13 +3769,199 @@
       }
      ],
      "so_what": "Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals."
+    },
+    {
+     "basis": "DESE\u2019s educator headcount and retention file, FY2021\u2013FY2023, at the row the file prints as its own total \u2014 read beside DESE\u2019s published FTE for the same district and the same years. Three years is what exists; the span is on every figure drawn from it.",
+     "bearing": "sizes",
+     "claim": "Teachers the state counted as people in FY2023, against 112.8 full-time equivalent posts",
+     "detail": "The state publishes both counts and they are not the same count: 123 people teaching in Lunenburg in FY2023, holding 112.8 full-time equivalent posts between them \u2014 10.2 FTE fewer than there are bodies. The average teacher on that return holds 0.92 of a post, down from 0.95 in FY2021. Paraprofessionals are the other way about: 59 people and 59.0 FTE in FY2023, so almost every one of them is counted whole. The gap matters because it decides which instrument answers which question \u2014 the town\u2019s own printed rosters are a headcount and cannot be set beside an FTE series, and this is the size of the error that would be. On headcount for each hundred pupils Lunenburg is 5 of the 6 districts in this file for teachers and 2 of 6 for paraprofessionals, which is a smaller group than the comparison sheet the rest of this page uses and is not the same ranking.",
+     "figure": "headcount",
+     "figures": {
+      "fte": {
+       "text": "112.8",
+       "unit": "",
+       "value": 112.8
+      },
+      "fy": {
+       "text": "FY2023",
+       "unit": "",
+       "value": 2023
+      },
+      "headcount": {
+       "text": "123",
+       "unit": "people, not full-time posts",
+       "value": 123.0
+      },
+      "missing": {
+       "text": "10.2",
+       "unit": "",
+       "value": 10.200000000000003
+      },
+      "para_fte": {
+       "text": "59.0",
+       "unit": "",
+       "value": 59.0
+      },
+      "para_headcount": {
+       "text": "59",
+       "unit": "",
+       "value": 59.0
+      },
+      "para_of": {
+       "text": "6",
+       "unit": "",
+       "value": 6
+      },
+      "para_rank": {
+       "text": "2",
+       "unit": "",
+       "value": 2
+      },
+      "share": {
+       "text": "0.92",
+       "unit": "",
+       "value": 0.9170731707317072
+      },
+      "share_first": {
+       "text": "0.95",
+       "unit": "",
+       "value": 0.9535087719298246
+      },
+      "share_first_fy": {
+       "text": "FY2021",
+       "unit": "",
+       "value": 2021
+      },
+      "teacher_of": {
+       "text": "6",
+       "unit": "",
+       "value": 6
+      },
+      "teacher_rank": {
+       "text": "5",
+       "unit": "",
+       "value": 5
+      }
+     },
+     "id": "a-headcount-is-not-an-fte-count",
+     "kind": "measured",
+     "literals": [
+      "FY2021",
+      "FY2023"
+     ],
+     "not_shown": "Who is part-time. A share is an average over a whole job class, and one full-timer beside one half-timer and two people at three quarters give the same figure. Nothing published gives the distribution, and nothing gives the funding source for a single one of these people. Nor does a headcount say a post was filled all year: it is a return for one point in the school year, like the rosters.",
+     "see": [
+      {
+       "label": "what other districts spend",
+       "slug": "/what-other-districts-spend"
+      },
+      {
+       "label": "what we cannot answer",
+       "slug": "/what-we-cannot-answer"
+      }
+     ],
+     "so_what": "A roster counts heads and DESE counts posts, so the same staff give two different numbers."
+    },
+    {
+     "basis": "Two DESE files over the years both publish: the district comparison sheet\u2019s all-programmes paraprofessional FTE, and the special education staff table, whose rate is recomputed from its own FTE and child count on every build and published only where it reproduces. The difference between them is derived here and is labelled as derived.",
+     "bearing": "sizes",
+     "claim": "Rise in paraprofessional FTE the state does not code to special education, FY2020 to FY2025",
+     "detail": "Two of the state\u2019s files count Lunenburg\u2019s paraprofessionals and they move in opposite directions. All programmes: 57.0 full-time equivalents to 67.0. Special education: 44.0 to 20.0. The difference between them goes from 13.0 to 47.0 \u2014 a rise of 34.0. That is a 54.5% fall in the special education count against a 17.5% rise in the all-programmes one, over years in which the number of children with a special education plan went from 244 to 238. It is not one noisy year: the special education line falls at every one of the 5 steps and the difference rises at every one. WHAT IT IS NOT is a measurement of anybody moving jobs \u2014 these are two DESE files with two definitions, and subtracting one from the other assumes the second sits inside the first, which nothing published says. A district reassigning paraprofessionals, a district recoding them, and DESE changing what its special education table counts all produce this shape.",
+     "figure": "implied_rise",
+     "figures": {
+      "all_first": {
+       "text": "57.0",
+       "unit": "",
+       "value": 57.0
+      },
+      "all_last": {
+       "text": "67.0",
+       "unit": "",
+       "value": 67.0
+      },
+      "all_pct": {
+       "text": "17.5%",
+       "unit": "",
+       "value": 17.543859649122805
+      },
+      "first_fy": {
+       "text": "FY2020",
+       "unit": "",
+       "value": 2020
+      },
+      "implied_first": {
+       "text": "13.0",
+       "unit": "",
+       "value": 13.0
+      },
+      "implied_last": {
+       "text": "47.0",
+       "unit": "",
+       "value": 47.0
+      },
+      "implied_rise": {
+       "text": "34.0",
+       "unit": "full-time paraprofessional posts",
+       "value": 34.0
+      },
+      "last_fy": {
+       "text": "FY2025",
+       "unit": "",
+       "value": 2025
+      },
+      "sped_first": {
+       "text": "44.0",
+       "unit": "",
+       "value": 44.0
+      },
+      "sped_last": {
+       "text": "20.0",
+       "unit": "",
+       "value": 20.0
+      },
+      "sped_pct": {
+       "text": "54.5%",
+       "unit": "",
+       "value": 54.54545454545454
+      },
+      "steps": {
+       "text": "5",
+       "unit": "",
+       "value": 5
+      },
+      "swd_first": {
+       "text": "244",
+       "unit": "",
+       "value": 244
+      },
+      "swd_last": {
+       "text": "238",
+       "unit": "",
+       "value": 238
+      }
+     },
+     "id": "paraprofessionals-outside-special-education",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "That anybody was reassigned, hired or cut. Three readings fit these numbers equally well and this archive cannot separate them: paraprofessionals moved onto general education assignments; the same people were recoded; or DESE changed what its special education staff table counts. Nor does it show who pays \u2014 the state counts staff on grants, circuit breaker reimbursement and revolving funds exactly like staff the town appropriates.",
+     "see": [
+      {
+       "label": "how many children are on a plan",
+       "slug": "/how-many-students-are-on-an-iep"
+      },
+      {
+       "label": "what special education costs",
+       "slug": "/what-special-education-costs"
+      }
+     ],
+     "so_what": "The paraprofessional workforce grew while its special education half more than halved."
     }
    ],
-   "count": 3,
+   "count": 6,
    "data": "/data/school-staffing.json",
    "generator": "scripts/build_staffing_charts.py",
    "id": "staffing",
-   "title": "School staffing \u2014 names, FTE and dollars",
+   "title": "School staffing \u2014 did it go up, and over which years",
    "url": "/school-staffing"
   },
   {
@@ -5579,7 +5882,7 @@
    "url": "/what-families-pay"
   },
   {
-   "about": "Athletics with both sides of the money visible at once \u2014 the town\u2019s appropriation, the fee-funded revolving fund, and the district\u2019s own sport-by-sport workbook, which disagree by up to a factor of thirteen.",
+   "about": "Athletics with both sides of the money visible at once \u2014 the town\u2019s appropriation, the fee-funded revolving fund, and three district documents that state three different costs for the same team in the same year.",
    "conclusions": [
     {
      "basis": "Three documents for one year. The fund\u2019s payments come out of fund_1301_cash_journal \u2014 the town\u2019s accounting system, every disbursement, and it chains to the town\u2019s own printed opening balance in each following year. The other two are figures people assembled: athletics_by_sport is the district\u2019s by-sport workbook and its own printed Total Expenses, and athletics_history is the budget book. However official a sheet looks, a figure somebody typed is stated and a figure the accounting system printed is evidence.",
@@ -8189,12 +8492,110 @@
   },
   {
    "about": "Staffing, the classes that ran, insurance, the lines that stopped, what the district said it was cutting, and how close the budget lands to what gets spent.",
-   "conclusions": 21,
+   "conclusions": 24,
    "key": "spending",
    "reports": [
     {
-     "about": "Who Lunenburg\u2019s schools employ, in the two instruments that exist: the names the town prints in its own annual reports, and the full-time equivalents the state publishes by school, by subject and by programme.",
+     "about": "Whether school staffing went up, over any span of years you choose \u2014 with the four quantities the archive holds kept apart: names the town printed, FTE and headcount the state published, and dollars.",
      "conclusions": [
+      {
+       "basis": "DESE\u2019s own `All Teachers` FTE line for the district, every year it has published one. The matrix is every ordered pair of those years, computed rather than sampled; the three named windows are the whole published run, the span read off the Tri-Board minutes, and the latest local maximum to the latest year.",
+       "bearing": "lever",
+       "claim": "Pairs of published years where the state counts fewer teachers at the end than the start",
+       "detail": "Both sides of the staffing argument in this town are quoting true numbers. Teacher FTE is lower at the end than the start in 95 of the 171 pairs of years the state has published, and higher in 76 \u2014 so the sign of \u201cdid staffing go up\u201d is a property of the window and not of Lunenburg. Three windows, each chosen by a rule rather than by argument. FY2016 to FY2025 is +0.3 FTE \u2014 that is the span of the staffing chart the Tri-Board was shown on 27 January 2026, read off the minutes. FY2024 to FY2026 is \u221210.6, from the latest local maximum in the series to the latest year published. FY2008 to FY2026 is \u221216.1, every year DESE has published. The series has two peaks and no trend: it falls to 107.4 in FY2020, climbs to 114.0 in FY2024 and falls again. So a chart that starts in one year rather than another is an argument, and the remedy is to print the span on it.",
+       "figure": "fell",
+       "figures": {
+        "charted_change": {
+         "text": "+0.3",
+         "unit": "",
+         "value": 0.3
+        },
+        "charted_first": {
+         "text": "FY2016",
+         "unit": "",
+         "value": 2016
+        },
+        "charted_last": {
+         "text": "FY2025",
+         "unit": "",
+         "value": 2025
+        },
+        "fell": {
+         "text": "95",
+         "unit": "pairs of published years, of 171",
+         "value": 95
+        },
+        "pairs": {
+         "text": "171",
+         "unit": "",
+         "value": 171
+        },
+        "peak_2024": {
+         "text": "114.0",
+         "unit": "",
+         "value": 114.0
+        },
+        "recent_change": {
+         "text": "\u221210.6",
+         "unit": "",
+         "value": -10.6
+        },
+        "recent_first": {
+         "text": "FY2024",
+         "unit": "",
+         "value": 2024
+        },
+        "recent_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "rose": {
+         "text": "76",
+         "unit": "",
+         "value": 76
+        },
+        "trough_2020": {
+         "text": "107.4",
+         "unit": "",
+         "value": 107.4
+        },
+        "whole_change": {
+         "text": "\u221216.1",
+         "unit": "",
+         "value": -16.1
+        },
+        "whole_first": {
+         "text": "FY2008",
+         "unit": "",
+         "value": 2008
+        },
+        "whole_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        }
+       },
+       "id": "the-sign-is-a-property-of-the-window",
+       "kind": "measured",
+       "literals": [
+        "27 January 2026",
+        "FY2020",
+        "FY2024"
+       ],
+       "not_shown": "What anybody decided. An FTE series records what the district reported to the state, and DESE counts FTE per ASSIGNMENT \u2014 one person split across two roles and two people each half-time are the same figure. It also counts staff paid from grants and revolving funds alongside those the town appropriates, so the federal ESSER money arriving and ending are both invisible in this line.",
+       "see": [
+        {
+         "label": "which classes actually ran",
+         "slug": "/what-courses-actually-ran"
+        },
+        {
+         "label": "what happens when a grant stops",
+         "slug": "/when-grants-end"
+        }
+       ],
+       "so_what": "Whether staffing \u201cwent up\u201d is decided by the years somebody picks, not by the town."
+      },
       {
        "basis": "DESE\u2019s own staffing and enrolment files for Lunenburg and for the districts on its published comparison sheet, FY2009\u2013FY2025. State figures, printed by the state \u2014 not the town\u2019s rosters, which carry no hours, and not a budget line.",
        "bearing": "sizes",
@@ -8426,13 +8827,199 @@
         }
        ],
        "so_what": "Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals."
+      },
+      {
+       "basis": "DESE\u2019s educator headcount and retention file, FY2021\u2013FY2023, at the row the file prints as its own total \u2014 read beside DESE\u2019s published FTE for the same district and the same years. Three years is what exists; the span is on every figure drawn from it.",
+       "bearing": "sizes",
+       "claim": "Teachers the state counted as people in FY2023, against 112.8 full-time equivalent posts",
+       "detail": "The state publishes both counts and they are not the same count: 123 people teaching in Lunenburg in FY2023, holding 112.8 full-time equivalent posts between them \u2014 10.2 FTE fewer than there are bodies. The average teacher on that return holds 0.92 of a post, down from 0.95 in FY2021. Paraprofessionals are the other way about: 59 people and 59.0 FTE in FY2023, so almost every one of them is counted whole. The gap matters because it decides which instrument answers which question \u2014 the town\u2019s own printed rosters are a headcount and cannot be set beside an FTE series, and this is the size of the error that would be. On headcount for each hundred pupils Lunenburg is 5 of the 6 districts in this file for teachers and 2 of 6 for paraprofessionals, which is a smaller group than the comparison sheet the rest of this page uses and is not the same ranking.",
+       "figure": "headcount",
+       "figures": {
+        "fte": {
+         "text": "112.8",
+         "unit": "",
+         "value": 112.8
+        },
+        "fy": {
+         "text": "FY2023",
+         "unit": "",
+         "value": 2023
+        },
+        "headcount": {
+         "text": "123",
+         "unit": "people, not full-time posts",
+         "value": 123.0
+        },
+        "missing": {
+         "text": "10.2",
+         "unit": "",
+         "value": 10.200000000000003
+        },
+        "para_fte": {
+         "text": "59.0",
+         "unit": "",
+         "value": 59.0
+        },
+        "para_headcount": {
+         "text": "59",
+         "unit": "",
+         "value": 59.0
+        },
+        "para_of": {
+         "text": "6",
+         "unit": "",
+         "value": 6
+        },
+        "para_rank": {
+         "text": "2",
+         "unit": "",
+         "value": 2
+        },
+        "share": {
+         "text": "0.92",
+         "unit": "",
+         "value": 0.9170731707317072
+        },
+        "share_first": {
+         "text": "0.95",
+         "unit": "",
+         "value": 0.9535087719298246
+        },
+        "share_first_fy": {
+         "text": "FY2021",
+         "unit": "",
+         "value": 2021
+        },
+        "teacher_of": {
+         "text": "6",
+         "unit": "",
+         "value": 6
+        },
+        "teacher_rank": {
+         "text": "5",
+         "unit": "",
+         "value": 5
+        }
+       },
+       "id": "a-headcount-is-not-an-fte-count",
+       "kind": "measured",
+       "literals": [
+        "FY2021",
+        "FY2023"
+       ],
+       "not_shown": "Who is part-time. A share is an average over a whole job class, and one full-timer beside one half-timer and two people at three quarters give the same figure. Nothing published gives the distribution, and nothing gives the funding source for a single one of these people. Nor does a headcount say a post was filled all year: it is a return for one point in the school year, like the rosters.",
+       "see": [
+        {
+         "label": "what other districts spend",
+         "slug": "/what-other-districts-spend"
+        },
+        {
+         "label": "what we cannot answer",
+         "slug": "/what-we-cannot-answer"
+        }
+       ],
+       "so_what": "A roster counts heads and DESE counts posts, so the same staff give two different numbers."
+      },
+      {
+       "basis": "Two DESE files over the years both publish: the district comparison sheet\u2019s all-programmes paraprofessional FTE, and the special education staff table, whose rate is recomputed from its own FTE and child count on every build and published only where it reproduces. The difference between them is derived here and is labelled as derived.",
+       "bearing": "sizes",
+       "claim": "Rise in paraprofessional FTE the state does not code to special education, FY2020 to FY2025",
+       "detail": "Two of the state\u2019s files count Lunenburg\u2019s paraprofessionals and they move in opposite directions. All programmes: 57.0 full-time equivalents to 67.0. Special education: 44.0 to 20.0. The difference between them goes from 13.0 to 47.0 \u2014 a rise of 34.0. That is a 54.5% fall in the special education count against a 17.5% rise in the all-programmes one, over years in which the number of children with a special education plan went from 244 to 238. It is not one noisy year: the special education line falls at every one of the 5 steps and the difference rises at every one. WHAT IT IS NOT is a measurement of anybody moving jobs \u2014 these are two DESE files with two definitions, and subtracting one from the other assumes the second sits inside the first, which nothing published says. A district reassigning paraprofessionals, a district recoding them, and DESE changing what its special education table counts all produce this shape.",
+       "figure": "implied_rise",
+       "figures": {
+        "all_first": {
+         "text": "57.0",
+         "unit": "",
+         "value": 57.0
+        },
+        "all_last": {
+         "text": "67.0",
+         "unit": "",
+         "value": 67.0
+        },
+        "all_pct": {
+         "text": "17.5%",
+         "unit": "",
+         "value": 17.543859649122805
+        },
+        "first_fy": {
+         "text": "FY2020",
+         "unit": "",
+         "value": 2020
+        },
+        "implied_first": {
+         "text": "13.0",
+         "unit": "",
+         "value": 13.0
+        },
+        "implied_last": {
+         "text": "47.0",
+         "unit": "",
+         "value": 47.0
+        },
+        "implied_rise": {
+         "text": "34.0",
+         "unit": "full-time paraprofessional posts",
+         "value": 34.0
+        },
+        "last_fy": {
+         "text": "FY2025",
+         "unit": "",
+         "value": 2025
+        },
+        "sped_first": {
+         "text": "44.0",
+         "unit": "",
+         "value": 44.0
+        },
+        "sped_last": {
+         "text": "20.0",
+         "unit": "",
+         "value": 20.0
+        },
+        "sped_pct": {
+         "text": "54.5%",
+         "unit": "",
+         "value": 54.54545454545454
+        },
+        "steps": {
+         "text": "5",
+         "unit": "",
+         "value": 5
+        },
+        "swd_first": {
+         "text": "244",
+         "unit": "",
+         "value": 244
+        },
+        "swd_last": {
+         "text": "238",
+         "unit": "",
+         "value": 238
+        }
+       },
+       "id": "paraprofessionals-outside-special-education",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "That anybody was reassigned, hired or cut. Three readings fit these numbers equally well and this archive cannot separate them: paraprofessionals moved onto general education assignments; the same people were recoded; or DESE changed what its special education staff table counts. Nor does it show who pays \u2014 the state counts staff on grants, circuit breaker reimbursement and revolving funds exactly like staff the town appropriates.",
+       "see": [
+        {
+         "label": "how many children are on a plan",
+         "slug": "/how-many-students-are-on-an-iep"
+        },
+        {
+         "label": "what special education costs",
+         "slug": "/what-special-education-costs"
+        }
+       ],
+       "so_what": "The paraprofessional workforce grew while its special education half more than halved."
       }
      ],
-     "count": 3,
+     "count": 6,
      "data": "/data/school-staffing.json",
      "generator": "scripts/build_staffing_charts.py",
      "id": "staffing",
-     "title": "School staffing \u2014 names, FTE and dollars",
+     "title": "School staffing \u2014 did it go up, and over which years",
      "url": "/school-staffing"
     },
     {
@@ -10237,7 +10824,7 @@
    "key": "household",
    "reports": [
     {
-     "about": "Athletics with both sides of the money visible at once \u2014 the town\u2019s appropriation, the fee-funded revolving fund, and the district\u2019s own sport-by-sport workbook, which disagree by up to a factor of thirteen.",
+     "about": "Athletics with both sides of the money visible at once \u2014 the town\u2019s appropriation, the fee-funded revolving fund, and three district documents that state three different costs for the same team in the same year.",
      "conclusions": [
       {
        "basis": "Three documents for one year. The fund\u2019s payments come out of fund_1301_cash_journal \u2014 the town\u2019s accounting system, every disbursement, and it chains to the town\u2019s own printed opening balance in each following year. The other two are figures people assembled: athletics_by_sport is the district\u2019s by-sport workbook and its own printed Total Expenses, and athletics_history is the budget book. However official a sheet looks, a figure somebody typed is stated and a figure the accounting system printed is evidence.",
@@ -10703,15 +11290,15 @@
  ],
  "totals": {
   "bearing": {
-   "lever": 15,
-   "sizes": 52,
+   "lever": 16,
+   "sizes": 54,
    "unclassified": 0
   },
-  "conclusions": 67,
+  "conclusions": 70,
   "document_words": 80084,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 66,
+  "measured": 69,
   "reports": 20,
   "with_conclusions": 20,
   "without_conclusions": 0

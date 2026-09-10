@@ -4,15 +4,19 @@ import { useEffect, useMemo, useState } from 'react'
 import { usd } from '../model/engine'
 import {
   PeerRatio, IndexedPair, NamesPrinted, RoleGrid, StaffAgainstEnrollment, TableTwin,
+  WindowedSeries, SchoolPanels, SubjectMovement, HeadcountAgainstFte, ParaSplit,
+  PeerHeadcount,
   fy, num, pct,
   type Peer, type RosterYear, type RoleRow, type StatePoint,
+  type DistrictPoint, type NamedWindow, type SchoolRow, type SubjectMove,
+  type HeadFte, type ParaSplitPoint, type PeerHead,
 } from '../components/StaffingCharts'
 import {
-  Conclusions,
-  Body, H2, Maybe, NotShown, Stat,
+  Conclusions, Coverage, Grain, NotEstablished, Provenance, Quote, MoreReports,
+  Body, H2, H3, Maybe, NotShown, Stat,
   ReportShell,
 } from '../components/report'
-import type { Conclusion } from '../components/report'
+import type { Base, Conclusion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
  *  TITLE is the report's NAME, used before the payload arrives; the h1 the
@@ -81,10 +85,75 @@ type Panel = {
   documents_disagree?: number
 }
 
-type Payload = {
+type Window = {
+  why: string; first_fy: number; last_fy: number; first: number; last: number
+  change: number; pct: number | null; up: number; steps: number
+  students: Change; per_100: Change; high_needs: Change; per_100_high_needs: Change
+}
+
+type Payload = Base & {
   conclusions: Conclusion[]
   generated_by: string
   source: string
+  composition: {
+    first_fy: number; last_fy: number
+    eras: { total: number; school: number; subject: number
+      why_total: string; why_school: string; why_subject: string }
+    district: DistrictPoint[]
+    peak: { fy: number; fte: number }
+    windows: Record<string, Window>
+    every_window: { pairs: number; rose: number; fell: number; flat: number
+      years: number[]; rows: { fy: number; to: (number | null)[] }[] }
+    schools: {
+      era: number; rows: SchoolRow[]; open_now: string[]
+      reconciliation: { fy: number; district: number; schools: number; difference: number }[]
+      worst: { fy: number; district: number; schools: number; difference: number }
+      biggest_fall: SchoolRow; steady: string[]
+    }
+    subjects: {
+      era: number
+      rows: { subject: string; level: string; is_programme: boolean
+        first_fy: number; last_fy: number; latest: number
+        points: { fy: number; fte: number }[] }[]
+      windows: { key: string; label: string; why: string; first_fy: number; last_fy: number
+        rows: SubjectMove[]; up: number; down: number; gross: number; net: number
+        subjects: number }[]
+      agreement: { compared: number; agree: number; disagree: number; largest: number }
+      source: string; checked_against: string
+    }
+    programme: { rows: { fy: number; gen_ed_fte: number | null; sped_fte: number | null
+      career_tech_fte: number | null; el_fte: number | null
+      total_fte: number | null }[]; registered_gap: string }
+    not_counted: {
+      first_fy: number; last_fy: number; years: number; job_classes: string[]
+      rollup_trap: string
+      roster: { first_fy: number; last_fy: number
+        roles: (RoleRow & { first: number; last: number; change: number
+          peak: number; trough: number; up: number; steps: number })[] }
+    }
+  }
+  headcount: {
+    first_fy: number; last_fy: number; years: number; job_classes: string[]
+    grain: string; rollup_trap: string
+    rows: { fy: number; job_class: string; educators_headcount: number
+      hires_headcount: number | null; retained_headcount: number | null
+      retained_pct: number | null }[]
+    vs_fte: HeadFte[]
+    churn: { fy: number; job_class: string; headcount: number; hires: number | null
+      retained: number | null; retained_pct: number | null; hire_share: number | null }[]
+    peers: { fy: number; districts: number; rows: PeerHead[]; state: PeerHead[]
+      ranks: Record<string, { fy: number; of: number; rank: number; value: number
+        headcount: number; highest: string; highest_value: number
+        lowest: string; lowest_value: number }> }
+    naive: { fy: number; job_class: string; naive: number; published: number }[]
+  }
+  sped_staffing: {
+    first_fy: number; last_fy: number; rows: ParaSplitPoint[]
+    all_programmes: Window; special_education: Window; implied: Window; swd: Window
+    sped_total: { fy: number; fte: number; swd: number; per_100: number }[]
+    reproduces: { checked: number; failed: number }
+    two_files: { a: string; b: string; warning: string }
+  }
   state: {
     lea: string; docs: string[]; reconciles: Record<string, number>
     first_fy: number; last_fy: number
@@ -234,6 +303,33 @@ export function SchoolStaffing() {
   const recon = d.dollars.reconciled[0]
   const negCell = recon?.disagree[0]
 
+  /* ---- the composition series. Nothing here computes a FIGURE; these are lookups and
+     orderings of rows the generator already derived (rule 2). */
+  const comp = d.composition
+  const ew = comp.every_window
+  const NAMED: NamedWindow[] = [
+    { key: 'charted', label: 'The charted years', ...comp.windows.charted },
+    { key: 'recent', label: 'Since the last peak', ...comp.windows.recent },
+    { key: 'whole', label: 'Every published year', ...comp.windows.whole },
+  ].map(w => ({ key: w.key, label: w.label, first_fy: w.first_fy, last_fy: w.last_fy,
+    why: w.why }))
+  const subWindow = comp.subjects.windows[0]
+  const worstSchool = comp.schools.biggest_fall
+  const support = comp.not_counted.roster.roles
+  const hc = d.headcount
+  const hcLast = hc.vs_fte[hc.vs_fte.length - 1]
+  const sp = d.sped_staffing
+  const paraChurn = hc.churn.filter(c => c.job_class === 'Paraprofessional'
+    && c.retained_pct !== null)
+  const lastParaChurn = paraChurn[paraChurn.length - 1]
+  const otherLicensed = hc.churn.filter(c => c.job_class === 'Other - Licensed'
+    && c.retained_pct !== null).slice(-1)[0]
+  const teacherRetained = otherLicensed
+    ? hc.churn.find(c => c.job_class === 'Teacher' && c.fy === otherLicensed.fy)
+    : undefined
+  const prog = comp.programme.rows
+  const progFirst = prog[0], progLast = prog[prog.length - 1]
+
   return (
     <ReportShell tab={TAB} dataUrl={DATA}
       title={<>
@@ -248,7 +344,17 @@ export function SchoolStaffing() {
       </>}
     >
 
+      <Grain>{d.grain}</Grain>
+
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+        <Stat value={`${ew.fell} of ${ew.pairs}`} tone="var(--series-cost)">
+          pairs of published years over which the state counts <em>fewer</em> teachers at
+          the end than the start &mdash; {ew.rose} of them count more
+        </Stat>
+        <Stat value={num(hcLast.teacher_headcount, 0)}>
+          people teaching in Lunenburg in {fy(hcLast.fy)}, holding{' '}
+          {num(hcLast.teacher_fte, 1)} full-time equivalent posts between them
+        </Stat>
         <Stat value={num(lastPara.value, 2)} tone="var(--series-revenue)">
           paraprofessional FTE per 100 in-district pupils in {fy(lastPara.fy)} &mdash; the
           {lastPara.rank === 1 ? ' highest' : ` ${lastPara.rank}th highest`} of the{' '}
@@ -266,11 +372,19 @@ export function SchoolStaffing() {
         </Stat>
       </div>
 
+      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
+      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
+          payload, computed by the generator that computed the figures -- see
+          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
+          from the same file, so the two cannot drift apart. */}
+      <H2 id="conclusions">If you read nothing else</H2>
+      <Conclusions rows={d.conclusions} />
+
       {/* ------------------------------------------------ what the three quantities are */}
       <div className="card p-4 mt-8 max-w-2xl" style={{ borderLeft: '4px solid var(--status-warning)' }}>
         <p className="text-[14.5px] font-bold mb-1.5">
-          Three different quantities are on this page, and none of them is &ldquo;how many
-          people work for the schools&rdquo;.
+          Four different quantities are on this page, and only one of them is a count of
+          people.
         </p>
         <ul className="text-[13.5px] leading-relaxed space-y-1.5"
           style={{ color: 'var(--text-secondary)' }}>
@@ -286,25 +400,428 @@ export function SchoolStaffing() {
             This is the only full-time-equivalent count in the archive.
           </li>
           <li>
+            <strong>Headcount the state published.</strong> {hc.years} years of it,{' '}
+            {fy(hc.first_fy)}&ndash;{fy(hc.last_fy)} &mdash; people, counted once each, by
+            job classification. It is the only count of PEOPLE here, it is short, and it
+            still carries no funding source.
+          </li>
+          <li>
             <strong>Dollars.</strong> Net general-fund budget lines. A line is what the
             town has to raise after state aid, grants, fees and reimbursement have paid
             theirs &mdash; so a line can rise because a grant ended and nothing else changed.
           </li>
         </ul>
         <p className="text-[13.5px] leading-relaxed mt-2.5" style={{ color: 'var(--text-secondary)' }}>
-          Nothing on this page divides one of them by another. Dollars over FTE looks like a
+          Nothing on this page divides a dollar by a person. Dollars over FTE looks like a
           cost per employee and is not one: the numerator leaves out every fund but the
-          general fund, and the denominator counts the staff those funds pay for.
+          general fund, and the denominator counts the staff those funds pay for. The one
+          division the page does make is headcount into FTE, which is two counts of staff
+          from the same publisher and gives the average share of a post &mdash; and it is
+          labelled as that everywhere it appears.
         </p>
       </div>
 
-      {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
-      {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
-          payload, computed by the generator that computed the figures -- see
-          scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
-          from the same file, so the two cannot drift apart. */}
-      <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions} />
+
+
+      {/* ================================================== TRENDS OVER TIME
+          The centre of this page, and the answer to the question two town bodies are
+          publicly disagreeing about. The window is the reader's to move; the page does
+          not pick one for them and then argue from it. */}
+      <H2 id="over-time">Did staffing go up? That depends entirely on the years you pick</H2>
+      <Body>
+        Teacher FTE, every year the state has published. Over the {ew.pairs} pairs of those
+        years, the count is <em>lower</em> at the end in {ew.fell} of them and higher in{' '}
+        {ew.rose}. The series has two peaks and no trend, so the sign of the answer is a
+        property of the window rather than of the town &mdash; which is why the window
+        below is a control rather than a choice we made for you.
+      </Body>
+      <div className="mt-6">
+        <WindowedSeries rows={comp.district} windows={NAMED} />
+      </div>
+      <TableTwin caption="Teacher FTE, and the two denominators, every published year"
+        head={['Year', 'Teacher FTE', 'Pupils', 'Per 100 pupils', 'High needs',
+          'Per 100 high needs']}
+        rows={comp.district.map(r => [
+          fy(r.fy), num(r.fte, 1),
+          r.students === null ? '—' : r.students.toLocaleString(),
+          r.per_100_students === null ? '—' : num(r.per_100_students, 2),
+          r.high_needs === null ? '—' : r.high_needs.toLocaleString(),
+          r.per_100_high_needs === null ? '—' : num(r.per_100_high_needs, 2)])} />
+
+      <div className="grid gap-3 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+        {NAMED.map(w => {
+          const win = comp.windows[w.key]
+          return (
+            <div key={w.key} className="card p-4">
+              <p className="text-[13px] font-bold">{w.label}</p>
+              <p className="text-2xl font-bold tnum mt-1"
+                style={{ color: win.change >= 0 ? 'var(--series-revenue)' : 'var(--series-cost)' }}>
+                {win.change > 0 ? '+' : win.change < 0 ? '−' : ''}
+                {Math.abs(win.change).toFixed(1)} FTE
+              </p>
+              <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+                {fy(win.first_fy)}&ndash;{fy(win.last_fy)} &middot; {num(win.first, 1)} to{' '}
+                {num(win.last, 1)} &middot; {win.up} of {win.steps} year-steps rise
+              </p>
+              <p className="text-[12px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+                {w.why}.
+              </p>
+            </div>
+          )
+        })}
+      </div>
+
+      <Body>
+        Those three are not a menu of opinions. Each one is picked by a rule that is
+        nobody&rsquo;s argument: every year the state has published; the span of the chart
+        the Tri-Board was actually shown, read off the minutes; and the latest local
+        maximum in the series to the latest year. Any other pair of years is one you can
+        set above, and the shaded band will tell you what it gives.
+      </Body>
+
+      <div className="grid gap-3 mt-6 lg:grid-cols-3">
+        {d.said.filter(q => ['chair-staffing-up', 'composition-not-headcount',
+          'need-has-risen'].includes(q.key)).map(q => <Quote key={q.key} q={q} />)}
+      </div>
+
+      <NotShown>
+        <p>
+          <strong>That any of these windows is the right one.</strong> The chart is drawn
+          from a single series and the arithmetic is the same in every direction. What the
+          page establishes is that a chart starting in one year rather than another is an
+          argument, and that the remedy is to print the span on it.
+        </p>
+        <p className="mt-2.5">
+          <strong>Who paid for any of it.</strong> The federal ESSER money arrived and
+          ended inside this window &mdash; thirteen positions, by the Finance
+          Committee&rsquo;s own account. DESE counts grant-funded staff exactly like staff
+          the town appropriates, so both events are invisible in this line. See{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }}
+            href={abs('/when-grants-end')}>what happens when a grant stops</a>.
+        </p>
+      </NotShown>
+
+      {/* ================================================== by school */}
+      <H2 id="by-school">Which building the movement is in</H2>
+      <Body>
+        The same FTE, split by school, from {fy(comp.schools.era)} onward. It starts there
+        because {comp.eras.why_school.charAt(0).toLowerCase() + comp.eras.why_school.slice(1)}{' '}
+        The schools sum to the district total in every year: the largest disagreement
+        across the whole run is {num(Math.abs(comp.schools.worst.difference), 1)} FTE, in{' '}
+        {fy(comp.schools.worst.fy)}.
+      </Body>
+      <SchoolPanels rows={comp.schools.rows} from={comp.schools.era} />
+      <Body>
+        <strong>{worstSchool.name} carries most of it.</strong>{' '}
+        {worstSchool.since_era && <>
+          {num(worstSchool.since_era.first, 1)} teacher FTE in{' '}
+          {fy(worstSchool.since_era.first_fy)} to {num(worstSchool.since_era.last, 1)} in{' '}
+          {fy(worstSchool.since_era.last_fy)}, with {worstSchool.since_era.up} of{' '}
+          {worstSchool.since_era.steps} year-steps rising.
+        </>}{' '}
+        {comp.schools.steady.length > 0 && <>
+          {comp.schools.steady.length} of the open schools move less than a whole FTE over
+          the same years: {comp.schools.steady.join(', ')}.
+        </>}
+      </Body>
+      <TableTwin caption={`Every school, ${fy(comp.schools.era)} onward`}
+        head={['School', 'Grades', 'First year', 'FTE then', 'Latest year', 'FTE now',
+          'Change', 'Steps that rose']}
+        rows={comp.schools.rows.filter(r => r.since_era).map(r => [
+          r.name, r.grades || '—', fy(r.since_era!.first_fy), num(r.since_era!.first, 1),
+          fy(r.since_era!.last_fy), num(r.since_era!.last, 1),
+          `${r.since_era!.change > 0 ? '+' : r.since_era!.change < 0 ? '−' : ''}${Math.abs(r.since_era!.change).toFixed(1)}`,
+          `${r.since_era!.up} of ${r.since_era!.steps}`])} />
+
+      <NotShown>
+        <p>
+          <strong>Why a school gained or lost.</strong> A building&rsquo;s FTE moves with
+          its roll, with the grades it holds, with how a district apportions a teacher who
+          works in two buildings, and with decisions. Nothing here separates them, and the
+          FY2017 reconfiguration is the reason this panel does not run back to FY2008.
+        </p>
+      </NotShown>
+
+      {/* ================================================== by subject */}
+      <H2 id="by-subject">A flat total hiding a recomposition</H2>
+      <Body>
+        The same teachers, split by what they teach, over {fy(subWindow.first_fy)} to{' '}
+        {fy(subWindow.last_fy)} &mdash; {subWindow.why}. The net across{' '}
+        {subWindow.subjects} subjects is {num(subWindow.net, 1)} FTE. The{' '}
+        <em>gross</em> is {num(subWindow.gross, 1)}: {num(subWindow.up, 1)} added to
+        subjects that grew and {num(Math.abs(subWindow.down), 1)} taken from those that
+        shrank. A total that barely moves is not a district that barely moved.
+      </Body>
+      <div className="mt-6">
+        <SubjectMovement rows={subWindow.rows} first_fy={subWindow.first_fy}
+          last_fy={subWindow.last_fy} />
+      </div>
+      <TableTwin caption={`Every subject, ${fy(subWindow.first_fy)} to ${fy(subWindow.last_fy)}`}
+        head={['Subject', `FTE in ${fy(subWindow.first_fy)}`,
+          `FTE in ${fy(subWindow.last_fy)}`, 'Change']}
+        rows={subWindow.rows.map(r => [
+          r.subject, num(r.first, 1), num(r.last, 1),
+          `${r.change > 0 ? '+' : r.change < 0 ? '−' : ''}${Math.abs(r.change).toFixed(1)}`])} />
+      <Body>
+        A subject losing FTE is not the same fact as a subject losing a class.{' '}
+        <a className="underline" style={{ color: 'var(--series-cost)' }}
+          href={abs('/what-courses-actually-ran')}>Which classes actually ran</a> counts
+        sections rather than staff, and finds the two moving together in eight subjects out
+        of ten and disagreeing in mathematics. The two pages deliberately do not difference
+        one against the other.
+      </Body>
+      {d.said.filter(q => q.key === 'cuts-by-subject' || q.key === 'one-music-teacher')
+        .length > 0 && (
+        <div className="grid gap-3 mt-6 lg:grid-cols-2">
+          {d.said.filter(q => ['cuts-by-subject', 'one-music-teacher'].includes(q.key))
+            .map(q => <Quote key={q.key} q={q} />)}
+        </div>
+      )}
+
+      {/* ================================================== general ed vs special ed */}
+      <H2 id="gen-ed-sped">
+        General education and special education &mdash; the paraprofessional count splits
+      </H2>
+      <Body>
+        Two of the state&rsquo;s files count Lunenburg&rsquo;s paraprofessionals over{' '}
+        {fy(sp.first_fy)}&ndash;{fy(sp.last_fy)}, and they move in opposite directions. All
+        programmes: {num(sp.all_programmes.first, 1)} full-time equivalents to{' '}
+        {num(sp.all_programmes.last, 1)}. Coded to special education:{' '}
+        {num(sp.special_education.first, 1)} to {num(sp.special_education.last, 1)} &mdash;
+        falling at every one of the {sp.special_education.steps} year-steps, over a group of
+        children that went from {sp.swd.first.toLocaleString()} to{' '}
+        {sp.swd.last.toLocaleString()}.
+      </Body>
+      <div className="mt-6"><ParaSplit rows={sp.rows} /></div>
+      <Body>
+        <strong>And here is the thing this page has to say out loud, because it holds both
+        halves.</strong> Over almost exactly these years the district&rsquo;s{' '}
+        <em>budget</em> for special education paraprofessionals rose{' '}
+        {pct(cwPara.change!.pct!)} &mdash; that section is further down this page &mdash;
+        while the paraprofessional FTE the state codes to special education more than
+        halved. Those two facts are not in contradiction and they are also not divisible:
+        the budget line is a net general-fund appropriation and the FTE is a state coding
+        of assignments, so dividing one by the other would produce a cost per employee that
+        is wrong twice over. What can be said is that the money and the coded staffing move
+        in opposite directions, and that nothing published says why.
+      </Body>
+      <TableTwin caption="Both counts, and the difference between them"
+        head={['Year', 'All programmes (FTE)', 'Special education (FTE)',
+          'The difference', 'Children on a plan']}
+        rows={sp.rows.map(r => [fy(r.fy), num(r.all_programmes, 1),
+          num(r.special_education, 1), num(r.implied, 1),
+          r.swd === null ? '—' : r.swd.toLocaleString()])} />
+
+      <NotShown>
+        <p>
+          <strong>That anybody was reassigned.</strong> {sp.two_files.warning} A district
+          moving paraprofessionals onto general education assignments, the same people
+          being recoded, and DESE changing what its special education staff table counts
+          all produce this shape, and this archive cannot separate them.
+        </p>
+        <p className="mt-2.5">
+          <strong>Whether the teaching side split the same way.</strong> It cannot be read
+          here. DESE&rsquo;s programme-area file puts Lunenburg&rsquo;s special education
+          teacher FTE at {num(progFirst.sped_fte ?? 0, 1)} in {fy(progFirst.fy)} and{' '}
+          {num(progLast.sped_fte ?? 0, 1)} in {fy(progLast.fy)} while the district total
+          holds flat &mdash; a fall no staffing decision produces. That is a{' '}
+          <a className="underline" style={{ color: 'var(--series-cost)' }}
+            href={abs('/what-we-cannot-answer')}>registered gap</a>, not a finding, and it
+          is drawn below rather than hidden.
+        </p>
+        <p className="mt-2.5">
+          <strong>Who pays for any of them.</strong> Rule of this whole page: DESE counts
+          staff on grants, circuit breaker reimbursement and revolving funds exactly like
+          staff the town appropriates, and the budget line the town votes is net of all of
+          them. A line rising because a grant ended looks identical to a line rising
+          because the district grew &mdash; and the district&rsquo;s own special education
+          paraprofessional line is what this project&rsquo;s in-district escalator rests
+          on.
+        </p>
+      </NotShown>
+
+      <H3>The programme-area split, drawn because refusing to draw it is how it stayed
+        unexamined</H3>
+      <TableTwin caption={comp.programme.registered_gap}
+        head={['Year', 'General education', 'Special education', 'Career and technical',
+          'English learner', 'Total']}
+        rows={prog.map(r => [fy(r.fy), num(r.gen_ed_fte ?? 0, 1), num(r.sped_fte ?? 0, 1),
+          num(r.career_tech_fte ?? 0, 1), num(r.el_fte ?? 0, 1),
+          num(r.total_fte ?? 0, 1)])} />
+
+      {/* ================================================== headcount */}
+      <H2 id="headcount">People, not posts &mdash; the one count that is a headcount</H2>
+      <Body>
+        Everything above counts full-time equivalents. The state publishes a{' '}
+        <em>headcount</em> too &mdash; people, counted once each, by job classification
+        &mdash; for {hc.years} years, {fy(hc.first_fy)}&ndash;{fy(hc.last_fy)}. That is
+        short, and it is the only place in this archive where the difference between a
+        person and a post has a number attached to it.
+      </Body>
+      <Body>
+        In {fy(hcLast.fy)} the state counted {num(hcLast.teacher_headcount, 0)} people
+        teaching in Lunenburg, holding {num(hcLast.teacher_fte, 1)} full-time equivalent
+        posts between them: the average teacher holds{' '}
+        {num(hcLast.teacher_share, 2)} of a post, down from{' '}
+        {num(hc.vs_fte[0].teacher_share, 2)} in {fy(hc.vs_fte[0].fy)}. Paraprofessionals
+        are the other way about &mdash; {num(hcLast.para_headcount, 0)} people and{' '}
+        {num(hcLast.para_fte, 1)} FTE, so almost every one of them is counted whole.
+      </Body>
+      <div className="mt-6"><HeadcountAgainstFte rows={hc.vs_fte} /></div>
+      <TableTwin caption="People and posts, side by side"
+        head={['Year', 'Teachers (people)', 'Teacher FTE', 'Share of a post each',
+          'Paraprofessionals (people)', 'Paraprofessional FTE', 'Share of a post each']}
+        rows={hc.vs_fte.map(r => [fy(r.fy), num(r.teacher_headcount, 0),
+          num(r.teacher_fte, 1), num(r.teacher_share, 2), num(r.para_headcount, 0),
+          num(r.para_fte, 1), num(r.para_share, 2)])} />
+
+      <H3>Everyone the state counted, by job classification</H3>
+      <TableTwin caption={`Headcount, ${fy(hc.first_fy)}–${fy(hc.last_fy)}`}
+        head={['Job classification', ...hc.vs_fte.map(r => fy(r.fy)), 'New hires, latest',
+          'Retained, latest']}
+        rows={hc.job_classes.map(jc => {
+          const mine = hc.rows.filter(r => r.job_class === jc)
+          const last = mine[mine.length - 1]
+          return [jc, ...mine.map(r => num(r.educators_headcount, 0)),
+            last.hires_headcount === null ? 'not published' : num(last.hires_headcount, 0),
+            last.retained_pct === null ? 'not published'
+              : `${(last.retained_pct * 100).toFixed(1)}%`]
+        })} />
+
+      {lastParaChurn && <>
+      <Body>
+        <strong>A headcount can say one more thing an FTE count cannot: who stayed.</strong>{' '}
+        Of the paraprofessionals the state counted in {fy(lastParaChurn.fy)},{' '}
+        {(lastParaChurn.retained_pct! * 100).toFixed(1)}% were retained from the year
+        before, and {lastParaChurn.hires === null ? 'the hires figure is suppressed'
+          : `${num(lastParaChurn.hires, 0)} of the ${num(lastParaChurn.headcount, 0)} were new`}
+        . The School Committee voted a budget transfer for exactly this in the same period.
+      </Body>
+      {d.said.filter(q => q.key === 'para-transfers').map(q => (
+        <div key={q.key} className="mt-4 max-w-2xl"><Quote q={q} /></div>
+      ))}
+      </>}
+
+      <H3>Against the districts in the same file</H3>
+      <Body>
+        Headcount for each hundred pupils, {fy(hc.peers.fy)}. This is a{' '}
+        <strong>different comparison group</strong> from the one the rest of this page uses
+        &mdash; {hc.peers.districts} districts here against {d.peers.length} on DESE&rsquo;s
+        radar sheet &mdash; so the two rankings are not interchangeable and the count of
+        districts travels with every one of them.
+      </Body>
+      <div className="grid gap-3 mt-5 lg:grid-cols-2">
+        <PeerHeadcount rows={hc.peers.rows} jobClass="Teacher" fyOf={hc.peers.fy} />
+        <PeerHeadcount rows={hc.peers.rows} jobClass="Paraprofessional" fyOf={hc.peers.fy} />
+      </div>
+      <TableTwin caption={`Lunenburg's standing in ${fy(hc.peers.fy)}, by job classification`}
+        head={['Job classification', 'Lunenburg per 100 pupils', 'Rank', 'Highest',
+          'Lowest']}
+        rows={hc.job_classes.map(jc => {
+          const r = hc.peers.ranks[jc]
+          return [jc, num(r.value, 2), `${r.rank} of ${r.of}`,
+            `${r.highest} ${num(r.highest_value, 2)}`,
+            `${r.lowest} ${num(r.lowest_value, 2)}`]
+        })} />
+
+      <div className="card p-4 mt-5 max-w-2xl"
+        style={{ borderLeft: '4px solid var(--status-warning)' }}>
+        <p className="text-[14.5px] font-bold mb-1.5">
+          A correction this file caused, kept here because the shape repeats
+        </p>
+        <p className="text-[13.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          {hc.rollup_trap} The build now refuses to write unless the naive sum is{' '}
+          <em>exactly</em> twice the published figure, so if the state changes the shape of
+          this file the page stops rather than quietly doubling or halving. Any column that
+          prints a group total beside its own parts is the same trap.
+        </p>
+      </div>
+
+      <NotShown>
+        <p>
+          <strong>Who is part-time.</strong> A share is an average over a whole job class.
+          One full-timer beside one half-timer, and two people at three quarters, give the
+          same figure. Nothing published gives the distribution.
+        </p>
+        <p className="mt-2.5">
+          <strong>Whether a post was filled all year.</strong> A headcount is a return for
+          one point in the school year, exactly like the town&rsquo;s printed rosters. A
+          post held open for six months and filled for six is not distinguishable from
+          either.
+        </p>
+        <p className="mt-2.5">
+          <strong>Who pays.</strong> Not one of these {hc.years} years carries a funding
+          source. That remains the question this whole archive cannot answer.
+        </p>
+      </NotShown>
+
+      {/* ================================================== counsellors and social workers */}
+      <H2 id="support">
+        Counsellors, social workers, psychologists and nurses &mdash; and why they are the
+        hardest group here to see
+      </H2>
+      <Body>
+        None of these people is a teacher on the state&rsquo;s teacher returns, so the
+        fifteen-year FTE series above contains none of them. The state&rsquo;s workforce
+        file reaches them for {hc.years} years only and folds them into two residual
+        buckets. What is left is the town&rsquo;s own printed rosters &mdash; names, by
+        school, {fy(comp.not_counted.roster.first_fy)}&ndash;
+        {fy(comp.not_counted.roster.last_fy)} &mdash; which carry no FTE, no funding source
+        and no date within the year.
+      </Body>
+      <RoleGrid rows={support} format={role} />
+      <TableTwin caption={`Names printed, ${fy(comp.not_counted.roster.first_fy)}–${fy(comp.not_counted.roster.last_fy)}`}
+        head={['Role', `Names in ${fy(comp.not_counted.roster.first_fy)}`,
+          `Names in ${fy(comp.not_counted.roster.last_fy)}`, 'Lowest', 'Highest',
+          'Years that rose']}
+        rows={support.map(r => [role(r.role), r.first, r.last, r.trough, r.peak,
+          `${r.up} of ${r.steps}`])} />
+      <p className="text-[12px] mt-3 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+        A count of names the town printed is a real quantity and it is not a staffing
+        level. Two consecutive reports may be photographs taken at different points in the
+        school year, and a change between them is a difference between two documents.
+      </p>
+
+      {otherLicensed && (
+        <Body>
+          <strong>The one thing the state&rsquo;s file does say about this group is who
+          stayed, and it is the lowest figure in it.</strong> The bucket these people sit
+          in &mdash; <em>{otherLicensed.job_class}</em>, {otherLicensed.headcount} people
+          in {fy(otherLicensed.fy)} &mdash; retained{' '}
+          {(otherLicensed.retained_pct! * 100).toFixed(1)}% of the previous year&rsquo;s
+          staff, against{' '}
+          {teacherRetained?.retained_pct == null ? '—'
+            : `${(teacherRetained.retained_pct * 100).toFixed(1)}%`}{' '}
+          for teachers. <strong>That is not a statement about counsellors.</strong> The
+          bucket is a residual: it holds counsellors, social workers and psychologists and
+          it also holds everyone else licensed who is not a teacher or an administrator,
+          and DESE publishes no split of it. What can be said is that the group containing
+          them turned over faster than any other group in the file.
+        </Body>
+      )}
+
+      <div className="grid gap-3 mt-6 lg:grid-cols-2">
+        {d.said.filter(q => ['social-worker-caseloads', 'social-workers-billed-elsewhere',
+          'esser-hired-13', 'esser-unwound'].includes(q.key))
+          .map(q => <Quote key={q.key} q={q} />)}
+      </div>
+
+      <Maybe settle={<>
+        The per-building social worker and adjustment counsellor caseload the district
+        prepared for its own budget decisions &mdash; it told the School Committee it had
+        one, in the quote above &mdash; with FTE and funding source beside each post. That is a records request rather than a download, and it is a row
+        in <a className="underline" style={{ color: 'var(--series-cost)' }}
+          href={abs('/what-we-cannot-answer')}>what we cannot answer</a>.
+      </>}>
+        <p>
+          The ESSER grant paid for social workers, guidance counsellors, subject
+          specialists, tutors and technicians &mdash; thirteen positions by the Finance
+          Committee&rsquo;s own account &mdash; and then ended. A roster that gains names in
+          those years and loses them afterwards would look exactly like a district hiring
+          and then cutting. So would a district doing neither while a grant arrived and
+          left. Nothing in the rosters distinguishes the two.
+        </p>
+      </Maybe>
 
       {/* ================================================== 1. the paraprofessional shift */}
       <H2 id="paras">Lunenburg went from the fewest paraprofessionals per pupil to the most</H2>
@@ -721,6 +1238,25 @@ export function SchoolStaffing() {
         </p>
       </div>
 
+      {/* ------------------------------------------------------ rule 15a, with its denominator */}
+      <H2 id="said">What the town said about this, and how much of the archive could be read</H2>
+      <Body>
+        Every quote on this page is re-read out of the archive on each build and the build
+        refuses to write if one is no longer verbatim there. These are the terms searched
+        &mdash; in the town&rsquo;s vocabulary rather than ours, which is why{' '}
+        <em>adjustment counselor</em> and <em>reduction in force</em> are on the list
+        despite returning nothing.
+      </Body>
+      <Coverage m={d.minutes} searched={d.searched} />
+
+      {/* ------------------------------------------------------------- what it cannot say */}
+      <H2 id="cannot">What this page cannot say</H2>
+      <NotEstablished rows={d.not_established} closes={d.closes} />
+
+      {/* ------------------------------------------------------------------ rule 12 */}
+      <H2 id="documents">The documents behind this</H2>
+      <Provenance sources={d.sources} />
+
       {/* ------------------------------------------------------------------ where it came from */}
       <H2 id="sources">Where every figure on this page comes from</H2>
       <div className="grid gap-2.5 mt-5 max-w-3xl">
@@ -782,6 +1318,8 @@ export function SchoolStaffing() {
           joins them.
         </p>
       </div>
+
+      <MoreReports here={TAB} />
     </ReportShell>
   )
 }

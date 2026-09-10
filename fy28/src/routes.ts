@@ -513,7 +513,7 @@ export const LABEL: Record<Tab, string> = {
   gaps: 'What we cannot answer',
   variance: 'Budgets against what was later reported',
   funds: 'The money outside the budget',
-  staffing: 'School staffing — names, FTE and dollars',
+  staffing: 'School staffing — did it go up, and over which years',
   insurance: 'Health insurance — the cost outside the school budget',
   sportsmoney: 'What sports cost, and who pays',
   stateaid: 'State aid — the part nobody here votes on',

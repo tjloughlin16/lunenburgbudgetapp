@@ -35,6 +35,10 @@ export const COLUMN_SHORT: Record<CostColumn, string> = {
 
 export const COLUMNS = Object.keys(C.totals) as CostColumn[]
 
+/** How many teams the three columns describe. Exported so a page can state the count
+ *  without recounting it — one computation, one number. */
+export const TEAM_COUNT = C.count
+
 /** Per-sport costs by column, keyed by sport name, for anything that needs to re-price
  *  the roster on a reader's chosen basis. */
 export const COSTS_BY_SPORT = new Map(C.sports.map(s => [s.name, s]))

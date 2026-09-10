@@ -134,6 +134,15 @@ CHECKS = [
     # roster fails to join to its classification, since a name with no category looks
     # exactly like a name with no role.
     ('build_staffing_charts.py', ['--check']),
+    # ...and every figure on that page recomputed from the CSVs the database was built
+    # from, by a route that shares no SQL and no helper with the generator. A `--check`
+    # proves the payload is what the generator NOW writes; it cannot see a database load
+    # that dropped a row. This also re-derives the 2x rollup trap in DESE's educator file
+    # rather than trusting that the generator filters it, asserts the special education
+    # staff table's columns hold what the page says they hold (its own headers do not say),
+    # and asserts the SHAPE the paraprofessional conclusion rests on -- that the series
+    # falls at every step -- not only its endpoints.
+    ('verify_school_staffing.py', []),
     # The health-insurance page's series. Three things go stale independently here and this
     # catches all three: the published file against the ledger; the annual-report extract,
     # which refuses to write unless the insurance block of each year sums to the `Total
