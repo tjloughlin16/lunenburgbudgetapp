@@ -505,6 +505,15 @@ CHECKS = [
     ('check_archive_layout.py', []),
     ('check_moved_docs.py', []),
     ('build_source_index.py', []),
+    # Every table, view and CSV dataset says what question it answers. This is a
+    # DISCOVERABILITY check, not a correctness one, and it is here because the failure it
+    # guards cost a real hour: `dese_teacher_grade_subject` held teacher FTE by grade band
+    # per school, said so in `what_it_answers`, and was passed over by an agent grepping
+    # column names for `fte`. Documentation nobody is routed to is the same as none.
+    # A dataset that lands with no semantics is invisible to `describe_data.py`, and the
+    # data that has not been described yet is exactly the data somebody is about to build
+    # a page on.
+    ('describe_data.py', ['--undescribed']),
     ('sync_d1.py', ['--check']),
 ]
 

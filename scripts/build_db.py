@@ -997,12 +997,27 @@ WHERE   l.period = 13;
 
 -- How a line moved during the year. Transfers are cumulative in the report, so the
 -- movement between two periods is the difference, not the later value.
+--
+-- EXPENSE ACCOUNTS ONLY. Revenue is stored NEGATIVE in `ledger_snapshot`, and 224 revenue
+-- rows sat in here unnegated and unlabelled -- so anything ranking or summing this got
+-- revenue mixed into an expense measure. `account_type` is the discriminator and it was
+-- simply never applied.
+--
+-- `moved_since_last` IS NOT COMPUTABLE FROM THE DATA WE HOLD, and is kept only so the
+-- shape does not change under anything reading it. The LAG needs one account at two
+-- periods; the ledger holds period 9 (71 department roll-ups + 277 accounts) and period
+-- 12 (a different 635), and NO account_id appears in both. It was non-NULL on 2 of 983
+-- rows, and both were duplicate rows WITHIN period 9 rather than movement between
+-- periods -- which is worse than empty, because two plausible numbers read as data.
+-- It is now NULL always and says so. Closing it needs the same accounts printed at two
+-- periods of one fiscal year: a MUNIS year-to-date budget report at p09 AND p12 for the
+-- same FY.
 CREATE VIEW v_transfer_history AS
 SELECT  a.dept, a.name, l.fy, l.period, l.original, l.transfers, l.revised,
-        l.transfers - LAG(l.transfers) OVER (
-            PARTITION BY l.account_id, l.fy ORDER BY l.period) AS moved_since_last,
+        CAST(NULL AS REAL)                                          AS moved_since_last,
         l.doc_id
 FROM    ledger_snapshot l JOIN account a USING (account_id)
+WHERE   a.account_type = 'expense'
 ORDER BY a.dept, l.fy, l.period;
 
 -- Burn rate: what share of the revised budget is committed, against how much of the year
@@ -1021,7 +1036,14 @@ SELECT  a.dept, a.name, l.fy, l.period,
 FROM    ledger_snapshot l
         JOIN account a USING (account_id)
         JOIN fiscal_period p ON p.period = l.period
-WHERE   p.is_final = 0;
+WHERE   p.is_final = 0
+        -- EXPENSE ACCOUNTS ONLY. Revenue is stored NEGATIVE and was neither filtered nor
+        -- negated here, so 224 revenue rows carried a `spent_share` that is arithmetic on
+        -- a sign rather than a burn rate. The published question "which departments are
+        -- spending faster than the year is elapsing?" answered PS TUITION, PARK FINE and
+        -- DOG FINES -- none of them a department, none of them spending. Their `dept` was
+        -- NULL, which was the tell nobody read.
+        AND a.account_type = 'expense';
 
 -- Budget against actual for a single line, from the district's own documents.
 -- Both halves are read from the same document, which is what makes the pair sound;

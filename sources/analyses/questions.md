@@ -226,7 +226,7 @@ Returns `dept`, `name`, `fy`, `period`, `revised`, `expended`, `available` — f
 SELECT dept, name, fy, period, ROUND(year_elapsed,2) AS year_elapsed, ROUND(spent_share,2) AS spent_share, ROUND(pace_gap,2) AS pace_gap FROM v_burn WHERE pace_gap IS NOT NULL ORDER BY pace_gap DESC LIMIT 20
 ```
 
-Returns `dept`, `name`, `fy`, `period`, `year_elapsed`, `spent_share`, `pace_gap` — for example: dept=None, name=PS TUITION, fy=2026, period=9, year_elapsed=0.75, spent_share=7.53, pace_gap=6.78
+Returns `dept`, `name`, `fy`, `period`, `year_elapsed`, `spent_share`, `pace_gap` — for example: dept=300, name=MILEAGE, fy=2026, period=12, year_elapsed=1.0, spent_share=5.95, pace_gap=4.95
 
 **What funds does the town keep, and what restricts them?**
 
