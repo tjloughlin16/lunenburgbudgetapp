@@ -188,9 +188,20 @@ def main():
     targets = load_targets(args.board, args.since, args.until)
 
     if args.status:
-        done = [r for r in targets if r['video_id'] in idx]
-        print('%d video(s) in scope; %d fetched, %d not'
-              % (len(targets), len(done), len(targets) - len(done)))
+        # COUNT VIDEOS, NOT BOARD-VIDEO PAIRS. A joint meeting is listed under every
+        # board that sat in it -- eight recordings here are select-board AND
+        # finance-committee AND school-committee -- so summing the per-board rows counts
+        # one recording three times. It reported 35 held when 25 files existed, and told
+        # us select-board had 5 transcripts when it had none: those five were tri-board
+        # meetings already fetched under school-committee. The per-board rows below are
+        # RIGHT to count a joint meeting under each board; only the total was wrong.
+        scope = {r['video_id'] for r in targets}
+        done = scope & set(idx)
+        joint = len(targets) - len(scope)
+        print('%d video(s) in scope; %d fetched, %d not%s'
+              % (len(scope), len(done), len(scope) - len(done),
+                 ('  (%d joint listing(s) across boards, counted once here '
+                  'and under each board below)' % joint) if joint else ''))
         by = {}
         for r in targets:
             b = by.setdefault(r['board_slug'], [0, 0])
