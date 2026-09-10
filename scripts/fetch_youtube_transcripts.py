@@ -83,6 +83,19 @@ def load_targets(board, since, until, video_only=False):
     rows.sort(key=lambda r: (r['meeting_date'], r['video_id']), reverse=True)
     if video_only:
         rows = [r for r in rows if r['video_id'] in _video_only_ids()]
+        # TWO TIERS, NEWEST FIRST INSIDE EACH. TJ: "i would rather get all the 3 boards,
+        # in newest first order, THEN the other boards in newest first order."
+        #
+        # The three tables where the town's money is argued come first, INTERLEAVED with
+        # each other by date rather than one board exhausted before the next -- so a run
+        # that stops early leaves the most recent months across all three, which is what
+        # somebody asking about a current argument needs. Everything else follows, also
+        # newest first. It matters because the caption endpoint can stop a run at any
+        # point: the order decides what we have when it does, not merely what we get to
+        # last.
+        TIER_1 = ('school-committee', 'select-board', 'finance-committee')
+        rows.sort(key=lambda r: (0 if r['board_slug'] in TIER_1 else 1,
+                                 [-ord(c) for c in r['meeting_date']]))
         if not rows:
             raise SystemExit(
                 'no meeting in `meeting-register.csv` has evidence "video only". '
