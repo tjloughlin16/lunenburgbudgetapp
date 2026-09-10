@@ -221,3 +221,45 @@ placements a district funds to age 22. Small count, typically the costliest plac
 and never mentioned anywhere on the site.
 
 Grade SPAN, not individual grade. DESE publishes the five bands and no finer.
+
+## Fetch 603 CMR 28.06 — the class-size regulation — and test staffing against it
+
+Asked 9 September: is there a legally defined ratio of paraprofessionals to students on an
+IEP, by classroom setting? **Nothing in this archive answers it, and the archive should
+hold the answer.**
+
+**What exists here now, separately and never crossed:**
+
+- `dese_sped_program`, `indicator_category='Special Education FTEs per 100 SWDs'` —
+  paraprofessional FTE per 100 students with disabilities, DISTRICT-WIDE only.
+- `dese_sped_program`, `indicator_category='Placement'` — FY2026: Full Inclusion 183
+  (70.9%), Substantially Separate 41 (15.9%), Partial Inclusion 16, Separate School in
+  District 2, of 258.
+
+Nothing joins them. Nothing in the archive says how many paraprofessionals a substantially
+separate classroom has against an inclusion classroom.
+
+**The regulation is 603 CMR 28.06(6)** and it is public. Its SHAPE — stated here as shape
+only, because the specific maximums were recalled rather than read, and a recalled figure
+quoted at a Finance Committee meeting is the exact failure rule 13 exists to prevent —
+is a maximum number of students per certified special education teacher, **with a higher
+maximum permitted when an aide is present.**
+
+**Do not write the numbers until the regulation is in `sources/` with its sha256.** Fetch
+it, catalogue it with its address per rule 12, and quote it at a citation.
+
+**Then the analysis that matters.** If an aide is what PERMITS a larger class rather than
+being a ratio in its own right, then paraprofessional counts track PROGRAM STRUCTURE and
+not student headcount. That would be a real explanation for the thing `/school-staffing`
+measures and cannot explain: paraprofessionals rising while enrolment fell.
+
+And it speaks straight to the argument the Finance Committee and the School Committee are
+having. If the regulation requires roughly the staffing Lunenburg has for the 41
+substantially separate students it reports, then "did we add too much staff" is not a
+question about judgement at all — it is a question about how many children have plans
+requiring that setting. **That reframing is worth more than either side's current number.**
+
+**What it cannot settle**, and say so on any page that uses it: the regulation sets
+MAXIMUMS, not requirements. A district may staff above them. And an IEP can specify
+one-to-one support for an individual child regardless of class size, which no ratio
+predicts and no published count reveals.
