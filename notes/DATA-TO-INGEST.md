@@ -12,6 +12,44 @@ reached us.
 
 ## Downloaded, awaiting ingest
 
+### 603 CMR 28.00 — the special education regulations. NOT YET INGESTED.
+
+TJ downloaded this on 10 September 2026 and asked that it be stored for later rather than
+ingested now.
+
+    /Users/tj/Downloads/603 CMR 28.00_ Special Education - Education Laws and Regulations.html
+    895,948 bytes
+    sha256 33943cfe2e3068d218774c627399e22d84836f6b7192b01ecaea2d11a57e3e13
+
+**Publisher's address to record on ingest (rule 12):** the Massachusetts Department of
+Elementary and Secondary Education's regulations pages at mass.gov — capture the exact URL
+from the saved HTML rather than reconstructing it, and note that it is a saved page rather
+than a PDF the state publishes as a file.
+
+**Why it was fetched.** Nothing in this archive cites 603 CMR 28 anywhere. Checked across
+all 3,877 documents: the seven hits for "603 CMR" are 35 (educator evaluation), 4 and 7
+(licensure), in the teachers' contract and the FY2017 annual report. **The rule that
+constrains special education staffing across the whole budget is referenced by no document
+this town publishes.**
+
+**What to do with it, from `notes/HANDOFF-TODO.md`:** 28.06(6) carries the class-size
+rule — a maximum number of students per certified special education teacher, with a higher
+maximum permitted when an aide is present. **Read it; do not write the numbers from
+anybody's memory, including mine.** Then test Lunenburg's paraprofessional staffing
+against its 41 substantially separate students, which speaks directly to the argument the
+Finance Committee and School Committee are having about whether staff were added.
+
+**And the ceiling, for any page that uses it:** the regulation sets MAXIMUMS, not
+requirements. A district may staff above them, and an IEP can specify one-to-one support
+for an individual child regardless of class size — which no ratio predicts and no
+published count reveals.
+
+**On ingest:** it is a regulation, not a town or district document. `sources/` is organised
+by HOW A DOCUMENT REACHED US and there are fourteen folders; `state-dese` is the closest
+(state-published), and `check_archive_layout.py` will refuse a fifteenth. Decide
+deliberately and record the reasoning rather than inventing a folder.
+
+
 | what | where it came from | status |
 |---|---|---|
 | District Expenditures by Function Code | DESE `cnfs-edqq` — the `GEN_FUND` / `GRNTS_REVOLV` split | agent ingesting |
