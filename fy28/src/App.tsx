@@ -32,9 +32,11 @@ import { StoppedFunding } from './pages/StoppedFunding'
 import { CutRegister } from './pages/CutRegister'
 import { GrantUnwinding } from './pages/GrantUnwinding'
 import { MinimumAid } from './pages/MinimumAid'
+import { Ch70Formula } from './pages/Ch70Formula'
 import { MontyTech } from './pages/MontyTech'
 import { WhatItAllAddsUpTo } from './pages/WhatItAllAddsUpTo'
 import { PeerSpending } from './pages/PeerSpending'
+import { CourseOfferings } from './pages/CourseOfferings'
 import { SpendingVsRequired } from './pages/SpendingVsRequired'
 import { SpecialEducationHub } from './pages/SpecialEducationHub'
 import { SpedStudents } from './pages/SpedStudents'
@@ -422,7 +424,9 @@ export default function App() {
       {tab === 'cuts' && <CutRegister />}
       {tab === 'unwind' && <GrantUnwinding />}
       {tab === 'minaid' && <MinimumAid />}
+      {tab === 'formula' && <Ch70Formula />}
       {tab === 'peers' && <PeerSpending />}
+      {tab === 'courses' && <CourseOfferings />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}
       {tab === 'required' && <SpendingVsRequired />}

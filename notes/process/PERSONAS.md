@@ -216,6 +216,47 @@ on the page. `scripts/verify_cut_register.py` re-reads every one of them verbati
 asserts the six phrases this review added, so a later edit that removes one fails the
 build rather than needing to be noticed.
 
+### `/what-courses-actually-ran` — course offerings, 10 September 2026
+
+Six readers, six tests, plus the omission step. **Four of the six failed on the first
+pass** and the page was changed rather than the note. The shape of every failure is the
+same: this is the first page here whose headline finding is GOOD news for the district —
+the high school runs more sections than it did — and a page that opens with good news has
+to work harder than one that opens with bad.
+
+| reader | what failed | what changed |
+|---|---|---|
+| 1 · the resident who has decided | the first screen led with *more sections ran*, and the worst fact — a middle school where the share taking a world language fell from 61.0% to 29.3% — was the third conclusion | that share is now a stat in the top row, at full size, coloured like the loss it is. The two language conclusions sit second and third, immediately under the headline |
+| 2 · the second-hand reader | **the worst failure.** The standfirst described the METHOD — "the first measurement in this archive of what was taught" — so the sentence that repeats at a kitchen table was *the schools didn't cut any courses*, which is false | the standfirst now carries both halves and nothing else: more classes at the high school for the same children, **and fewer of those children taking a language** |
+| 3 · close to the boards | passed, but narrowly. A student's public comment names the high school band teacher's electives | left in — it is public minutes, it is about a position rather than conduct, and it is the concrete thing the omission step exists to surface. A row in `not_established` now says plainly that no figure here is about a person |
+| 4 · Finance Committee | the control question was not answered at all | a section, *One thing that could be done differently next year*, naming the two documents that would close almost every limit on the page — the Program of Studies and the LHS master schedule. **Both already exist and both have already been in front of the School Committee**, on 6 March 2024 and 4 December 2024, and neither is published. Two PDFs a year |
+| 5 · School Committee | "did the cuts we voted actually remove courses?" was answerable only from the bottom of the page | the district's own account of the mechanism — *"we will whittle away at courses once we have recommendations and students choices entered"* — moved **above the charts**, immediately under the conclusions, with a line saying it is there because it changes what the charts mean |
+| 6 · Select Board | nothing said the page is school-side only, so it could be quoted as *the schools cut and the town did not* | a row in `not_established`: Massachusetts collects a class count from school districts and from nothing else, so no comparison between the two halves of the town budget can be drawn from this page in either direction |
+| the booster | **failed, and it produced the best material on the page** | see below |
+
+**Step 3 — the omission step — changed this page more than the other five tests
+combined.** Searching the archive for the words the page had already chosen —
+`course offerings`, `class size` — found nothing useful. Searching for the words residents
+use found four things, and all four are now on the page:
+
+- the **High School Principal's own opening report**, September 2025: *"Our largest class
+  is 31 which is because of a reduction in foreign language."* The only place in the
+  readable archive where anybody in the district connects the two quantities this page
+  keeps apart — how many classes ran, and how full they were;
+- a **parent**, January 2024, on a seventh grader who *"has been practising French for the
+  last three years"* — which is the middle school half of the finding, from the year it
+  moved, and which sent the analysis back to the middle school series it had not read;
+- **grade 8 world language** still being discussed alongside the override in April 2026,
+  two years later;
+- and, in the same paragraph as the whittling quote, the school choosing what to **add**:
+  *"We would like to offer AP Statistics if possible."* Rule 8 — that goes on the page at
+  the same weight as the losses.
+
+`foreign language` and `world language` are the terms this project would have searched.
+`French` and `Latin` are the terms the residents used, and they are what found the parent
+and the student. Both are now in the page's own published search list, denominators
+included, so a later run cannot quietly narrow back to our vocabulary.
+
 ### `/special-education-class-size` — the class-size rule, 10 September 2026
 
 Six readers, six tests, plus the omission step. **Three failed on the first pass** and the
@@ -232,6 +273,28 @@ verdict unless something stops it.
 | 5 · School Committee | passed | their question here is not "is this FY25 again" but "are we being told we are out of compliance". Answered in the grain box, in the conclusion's `not_shown`, and in a section heading |
 | 6 · Select Board | passed | nothing on the page compares the two sides, and the rule applies to every district in Massachusetts equally |
 | the booster | passed | step 3 produced the concrete things and all three are on the page |
+
+**Re-reviewed 10 September 2026, after three changes TJ asked for.** The preschool tiers
+were merged UP into the ratio table; a worked-rooms block was added; and a defined-terms
+section was added after the tables. Each was re-run against the six readers and each
+changed the page rather than the note.
+
+| reader | what the change fixed |
+|---|---|
+| 2 · the second-hand reader | **the biggest gain of the three.** "12 kids, 1 teacher, 3 paras, each a 1:1 — how does that work out?" is the question people actually arrive with, and the tier table answered it only for somebody who already knew the numbers were a ceiling on CHILDREN. The worked rooms answer it in one screen: the room complies and has more staff than the rule requires. The sentence that now repeats is *the rule sets the minimum; IEPs add on top of it*, and it stays true when repeated |
+| 1 · the resident who has decided | the rooms cut both ways on purpose, and that is why they are safe to publish. A room at the legal minimum and a room staffed three times over look identical from outside — so a count of paras is not evidence of compliance and not evidence of its absence either. Neither side of the argument gets a weapon out of it |
+| 3 · close to the boards | the merge risked flattening `teacher` and `certified special educator` into one word. The band header now prints each clause's own term and a `What this does not show` says the two are not established to be the same qualification |
+| 4 · Finance Committee | the defined-terms section is the one they can act on: 28.02 defines six of the fourteen terms the page leans on and none of the other eight. `aide` — the word that decides whether a group of eight may hold twelve — is used seven times and defined nowhere, and the regulation names no other document for it |
+| 5 · School Committee | unchanged and still passing: nothing on the page is a compliance finding |
+| 6 · Select Board | unchanged; the rule applies to every district in Massachusetts equally |
+
+The three fixes carried a fourth finding with them, and it is a rule 13 case worth
+recording: **the archived HTML is a saved web page, and counting a word across the whole
+of it counts DESE's site navigation.** "Curriculum Ratings by Teachers" and "Teacher
+Leadership" are menu items; counted, they made `teacher` 17 rather than 15. The extract
+had already dropped the chrome and the verifier was the thing that was wrong. Both sides
+now count the regulation's BODY — which begins at the second occurrence of the first
+heading, because the first is the page's own table of contents — and they agree.
 
 **Step 3 — the meeting archive, searched for what people said about this — is the finding
 that shaped the page.** Across all 8,899 searchable documents, **nobody in Lunenburg has
@@ -251,3 +314,38 @@ aides"; the Director of Special Education, asked how staffing is decided, answer
 "there is no formula"; and the pull-out account above. `scripts/verify_sped_regulation.py`
 re-reads all four quotes verbatim and asserts the phrases this review added, so an edit
 that removes one fails the build rather than needing to be noticed.
+
+### `/how-chapter-70-works` — the Chapter 70 formula, 10 September 2026
+
+Six readers, six tests, plus the omission step. Three failed and the page was changed
+rather than the note. The page is unusual for this review in that it measures almost
+nothing about Lunenburg: it explains a statute, in eight plain steps, with one fiscal year
+worked through it. Most of the tests that usually bite — is it fair to somebody by name,
+does it read as an audit — pass by construction, and the two that failed are about what a
+page explaining a rule leaves a reader free to conclude.
+
+| reader | what failed | what changed |
+|---|---|---|
+| 1 · the resident who has decided | a formula that runs and produces nothing reads as somebody in town failing to apply for something. The page nowhere said whose decisions these are | a paragraph under the steps: none of the eight is a decision anybody in Lunenburg makes — the rates are the state's, the floor is a line in the Legislature's budget, the required share is worked out from property values and income |
+| 2 · the second-hand reader | passed, narrowly | the sentence they repeat is *losing students does not cost us aid*, which is true and incomplete. The limit is already on the first screen: conclusion 01's **what it does not show** carries both halves — the marginal rate does not extrapolate, and a school choice transfer takes a tuition payment with it — and it renders inline on a report page rather than behind a click |
+| 3 · close to the boards | passed | no person, board or decision in this town appears in the mechanism at all |
+| 4 · Finance Committee | **the control question was unanswered.** Everything on the page was true and none of it reached a budget cycle | a box, *If you are building a budget*: while the floor binds, forecasting Chapter 70 means forecasting one number the Legislature votes; an enrollment projection moves a term that is producing nothing; and the figure quoted while the town builds its own budget is an early-stage one, linked to the two-stage table on the companion page |
+| 5 · School Committee | passed | their question here is "we lost students — did that cost us aid?", and it is conclusion 01, first card, first screen |
+| 6 · Select Board | **"the schools get $5,757 a pupil from the state" comes straight off this page** and is a town-versus-school argument made carelessly | the same paragraph now says Chapter 70 is not a payment to the district: it arrives as town revenue and the town appropriates the school budget separately, linked to /state-aid. The three-numbers section already refuses the other half of it — the aid per pupil, the year's increase per pupil and the marginal effect of one pupil are three quantities and two of them are the same figure for different reasons |
+| the booster | passed | the concrete thing a parent brings is *school choice is draining us*, and step 7's own warning line says the real cost of a departing choice student is the tuition the town pays the receiving district, with the aid the small half |
+
+**Step 3 — the meeting archive.** Five documents in the whole archive say "minimum aid",
+and all five are consistent with the page: the March 2024 Finance Committee minute
+recording $30 a pupil and the town as "a hold harmless district", the June 2024 note of
+220 minimum aid districts organising, the September 2024 School Committee report on
+building a coalition of them, and the two 2025 minutes recording the rate moving from $75
+to $150 and then passing. Nothing said in public contradicts the mechanism; what the
+search establishes is that the town has been arguing about this formula for at least three
+years without anywhere setting out how it works.
+
+**And one thing this review deliberately did not change.** The eight steps themselves. They
+were written after an hour of questions, their order is the artefact — each answers the
+question the previous one raises — and `scripts/verify_ch70_formula.py` asserts the
+published list is identical, step by step and field by field, to the one in
+`scripts/build_minimum_aid.py`. A rewrite is a decision somebody should have to make
+against a failing check.

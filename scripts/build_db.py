@@ -414,6 +414,64 @@ CREATE TABLE dese_teacher_subject (
     PRIMARY KEY (fy, org_code, subject)
 );
 
+-- 35yv-uxv5. HOW MANY CLASSES RAN, and how full they were, by school and subject.
+-- Lunenburg's rows only; the workbook is 115 MB of every district in the Commonwealth.
+--
+-- THIS IS THE ONLY TABLE HERE THAT COUNTS WHAT WAS TAUGHT. Everything else about the
+-- schools counts people, dollars or children. `tot_clss_cnt` is how many classes RAN in
+-- a subject, so a subject with none is a subject nobody ran that year -- which is what
+-- makes it a measurement of course offerings rather than the teacher-FTE proxy that
+-- cannot tell four Spanish sections from two.
+--
+-- `sy` AND NOT `fy`, DELIBERATELY. Every other DESE table here is keyed `fy` on the
+-- SCHOOL YEAR ENDING, and SY2025 in this table is the same year as fy=2025 in
+-- `dese_teacher_subject`. The column keeps the publisher's own name because that is what
+-- the workbook prints and rule 13 says quote the source, never your rendering of it; the
+-- equivalence is stated here so a join can be written without guessing.
+--
+-- THREE THINGS MUST BE SPLIT ON BEFORE ANYTHING IS SUMMED.
+--   `org_type`  District | School. The district row is a ROLLUP of the school rows.
+--   `subj`      `All` is a rollup of the 25 named subjects beside it.
+--   `CH74 - `   fifteen subjects prefixed this way are Chapter 74 vocational programme
+--               areas -- a SECOND, PARALLEL classification, not part of the subject
+--               total. Every Lunenburg row is zero: this district runs no Chapter 74
+--               programme, and its vocational students go to Monty Tech.
+--
+-- AND THE THREE FIGURE COLUMNS ARE THREE DIFFERENT QUANTITIES.
+--   tot_clss_cnt  classes that ran
+--   avg_clss_cnt  DESE's own average class size -- seats over classes
+--   tot_stu_cnt   DISTINCT students who took the subject, NOT seats. It is not
+--                 tot_clss_cnt * avg_clss_cnt, and on most rows it is far smaller.
+--
+-- The demographic columns are PERCENTAGES OF THE SUBJECT'S STUDENTS and overlap each
+-- other: race, sex, English learner, low income and disability all describe the same
+-- children. Nothing here may be added across them.
+CREATE TABLE dese_class_size (
+    kind            TEXT NOT NULL,      -- always 'class_size'; the extract's own tag
+    sy              INTEGER NOT NULL,   -- SCHOOL YEAR ENDING. SY2025 == fy 2025 elsewhere
+    org_code        TEXT NOT NULL,
+    org_name        TEXT,
+    org_type        TEXT NOT NULL,      -- District | School  <- the rollup guard
+    subj            TEXT NOT NULL,      -- 'All' is a rollup; 'CH74 - *' is a second scheme
+    tot_clss_cnt    REAL,               -- classes that RAN
+    avg_clss_cnt    REAL,               -- DESE's own average class size
+    tot_stu_cnt     REAL,               -- DISTINCT students, not seats
+    aian_pct        REAL,
+    as_pct          REAL,
+    baa_pct         REAL,
+    hl_pct          REAL,
+    mnhl_pct        REAL,
+    nhpi_pct        REAL,
+    wh_pct          REAL,
+    fe_pct          REAL,
+    ma_pct          REAL,
+    el_pct          REAL,
+    li_pct          REAL,
+    ecd_pct         REAL,
+    swd_pct         REAL,
+    PRIMARY KEY (sy, org_code, subj)
+);
+
 -- 77fu-a6h8. The same grain, with the FTE split across grade bands -- which is what makes
 -- it worth 133 MB: grade detail AND FTE, where the town's rosters give grade detail with
 -- no FTE and DESE elsewhere gives FTE with no grade.
@@ -1383,6 +1441,9 @@ DESE_DATASETS = [
     ('dese-ch70-contribution', 'dese_ch70_contribution', None, None),
     ('dese-circuit-breaker', 'dese_circuit_breaker', 'level', {'state', 'district'}),
     ('dese-ch70-statewide', 'dese_ch70_statewide', None, None),
+    # `org_type` is the level column here, and it is the ONE thing standing
+    # between a caller and summing a district with its own schools.
+    ('dese-class-size', 'dese_class_size', 'org_type', {'District', 'School'}),
 ]
 
 # Which columns are text in these tables. Everything else that is not `fy` is a figure,
@@ -1397,10 +1458,13 @@ DESE_TEXT_COLS = {
     'town', 'enrollment_reason', 'doc_id_sending', 'doc_id_receiving', 'org4_code',
     'lea_number', 'level', 'municipality', 'nss_stage', 'student_teacher_ratio_printed',
     'measure', 'basis', 'lunenburg_rank_of_districts',
+    'kind', 'org_type', 'subj',
 }
 # `printing` is an ordinal, not a figure: 1 for the first row published under a natural
 # key, 2 for the next. It is part of the primary key of three tables.
-DESE_INT_COLS = {'fy', 'printing', 'districts'}
+# `sy` is the school year ending, and it is an integer for the same reason `fy` is:
+# `dese_class_size` keeps the publisher's own column name (see its schema note).
+DESE_INT_COLS = {'fy', 'sy', 'printing', 'districts'}
 
 
 def load_dese_datasets(db):

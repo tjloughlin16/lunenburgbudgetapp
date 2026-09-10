@@ -79,7 +79,8 @@ ORDER = [
 CATEGORIES = [
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'staffing', 'cuts', 'sportsmoney', 'stopped', 'unwind', 'insurance',
+            'sped', 'staffing', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
+            'insurance',
             'athletics-ledger',
         ]),
         ('the students', [
@@ -117,8 +118,14 @@ CATEGORIES = [
     # for them TODAY, because each of those pages measures Lunenburg against the rule.
     # Nothing is moved here: an address that has been shared once keeps landing where it
     # landed, and a category is not a reason to move a page.
+    # `formula` is the second entry on this shelf and it is the case the note above
+    # forecast. It explains Chapter 70 — a statute that binds every district in
+    # Massachusetts — in eight plain steps, and its discipline is that it stops at the
+    # mechanism. `minaid` stays under "where the money comes from" because that page
+    # MEASURES Lunenburg against the rule; this one explains the rule. Two pages, two
+    # shelves, and neither is moved.
     ('rules', 'The rules everyone argues under', [
-        ('', ['classsize']),
+        ('', ['classsize', 'formula']),
     ]),
     ('method', 'How to check any of it', [
         ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),
@@ -251,6 +258,10 @@ ABOUT_PAGES = {
     'staffing':
         'The people the school budget buys, in the three quantities the archive holds: '
         'names the town printed, FTE the state published, and dollars.',
+    'courses':
+        'How many classes actually ran in each subject at the high school, year by '
+        'year — the one measure here of what was taught rather than who was '
+        'employed to teach it.',
     'stopped':
         'Every time a school budget line went to a printed zero, and how many of them '
         'came back.',

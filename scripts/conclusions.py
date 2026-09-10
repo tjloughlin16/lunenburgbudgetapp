@@ -84,6 +84,8 @@ is written down and reviewable instead of being invisible.
     conclusion(
         id='the-line-is-the-towns-share',
         claim='...',                 one sentence, repeatable at a meeting
+        bearing='sizes'|'lever',     does this SIZE a problem, or point at a dial
+                                     somebody in Lunenburg can actually turn
         detail='...',                two or three, the support
         figures={'x': figure(39.3, '39.3%')},
         kind='measured',             or 'hypothesis'
@@ -403,11 +405,11 @@ TOPICS = [
     ('income', 'Where the school money comes from',
      'State aid, the minimum the state requires, what other districts spend, and what '
      'happened when the grants ended.',
-     ['minaid', 'required', 'peers', 'unwind']),
+     ['minaid', 'formula', 'required', 'peers', 'unwind']),
     ('spending', 'What the money buys, and what it does not',
-     'Staffing, insurance, the lines that stopped, what the district said it was '
-     'cutting, and how close the budget lands to what gets spent.',
-     ['staffing', 'insurance', 'stopped', 'cuts', 'variance']),
+     'Staffing, the classes that ran, insurance, the lines that stopped, what the '
+     'district said it was cutting, and how close the budget lands to what gets spent.',
+     ['staffing', 'courses', 'insurance', 'stopped', 'cuts', 'variance']),
     ('children', 'Where the children are',
      'Who is taught outside Lunenburg, what the town is assessed for them, and what more '
      'leaving would cost.',

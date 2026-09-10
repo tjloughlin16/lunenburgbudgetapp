@@ -1,0 +1,488 @@
+{
+ "about": "Chapter 70 explained in eight plain steps, in the order the questions actually arrive \u2014 what the state prices, what it decides the town can afford, and the one fact everything else follows from: aid is last year\u2019s aid plus an increase, and the increase can be zero.",
+ "aid": 9229410.0,
+ "conclusions": [
+  {
+   "basis": "DESE\u2019s Chapter 70 Trends workbook, sheets dataAid and dataContribution, and DESE\u2019s own definition of the foundation aid increase at the workbook\u2019s User Guide. The FY2026 aid components as DESE ran them, with the town\u2019s required contribution held fixed because DESE\u2019s target local contribution equals the combined effort yield in every published year.",
+   "bearing": "sizes",
+   "claim": "What one more or one fewer foundation pupil moves Lunenburg\u2019s state aid by",
+   "detail": "Chapter 70 is not recalculated from your students each year. It is last year\u2019s aid plus an increase, and in FY2026 the only increase available was the Legislature\u2019s flat floor \u2014 $150.00 a pupil. So one pupil more or fewer moves the aid by that, and by nothing else. DESE\u2019s own rule is a floor test rather than a recalculation: \u201cIf foundation aid is greater than prior year Chapter 70 aid, the district receives a foundation aid increase.\u201d Only greater. Lunenburg already receives more than the formula says it needs, so that term paid $0 in FY2026 and the whole increase was the flat rate. A pupil changes the foundation budget, which is an input to a term producing nothing \u2014 and it changes the town\u2019s required contribution not at all, because that is worked out from property values and income. Measured one pupil at a time, holding everything else at its FY2026 value.",
+   "figure": "marginal",
+   "figures": {
+    "foundation_aid": {
+     "text": "$0",
+     "unit": "",
+     "value": 0
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "marginal": {
+     "text": "$150.00",
+     "unit": "per pupil",
+     "value": 150.0
+    }
+   },
+   "id": "fewer-students-does-not-mean-less-aid",
+   "kind": "measured",
+   "literals": [
+    "Chapter 70"
+   ],
+   "not_shown": "What a large loss of pupils would do. This is a marginal rate and it does not extrapolate: below the point where the foundation budget falls under the required contribution the formula\u2019s own subtraction turns negative, and no document here models that. Nor is aid the whole cost of a departing pupil \u2014 a school choice transfer also takes a tuition payment with it.",
+   "see": [
+    {
+     "label": "why Lunenburg is on the floor in the first place",
+     "slug": "/why-we-only-get-minimum-aid"
+    },
+    {
+     "label": "what a departing pupil costs, tuition included",
+     "slug": "/if-students-leave"
+    }
+   ],
+   "so_what": "Losing pupils does not cut the aid. It changes only the flat increase, which is set on Beacon Hill."
+  },
+  {
+   "basis": "DESE\u2019s `dataAid` sheet: Chapter 70 aid and foundation enrollment for Lunenburg Public Schools in FY2026, and the minimum aid increment in the same row.",
+   "bearing": "sizes",
+   "claim": "Chapter 70 aid for each foundation pupil in FY2026, against $150.00 of increase",
+   "detail": "Three numbers get used interchangeably in this town and two of them are the same figure for different reasons. Chapter 70 pays $5,757.59 for each of the 1,603 pupils the formula counts. This year\u2019s increase is $150.00 a pupil. And one more pupil moves the aid by $150.00. The last two coincide in FY2026, and only because minimum aid is the sole component operating \u2014 the formula\u2019s own aid term paid nothing, so the flat per-pupil increase is the only part of the build-up a pupil can move. They are not the same quantity and in a year when the formula pays they will not be the same number. The first is a different kind of figure again: it is the aid divided by the pupils, and quoting it beside the other two is how a town comes to believe that a pupil is worth $5,757.59 of state money.",
+   "figure": "aid_per_pupil",
+   "figures": {
+    "aid_per_pupil": {
+     "text": "$5,757.59",
+     "unit": "aid per pupil",
+     "value": 5757.585776668746
+    },
+    "enrollment": {
+     "text": "1,603",
+     "unit": "",
+     "value": 1603.0
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "increase": {
+     "text": "$150.00",
+     "unit": "",
+     "value": 150.0
+    },
+    "ratio": {
+     "text": "38",
+     "unit": "",
+     "value": 38.38390517779164
+    }
+   },
+   "id": "the-aid-and-the-increase-are-different-numbers",
+   "kind": "measured",
+   "literals": [
+    "Chapter 70"
+   ],
+   "not_shown": "What the state pays for any particular child. The foundation budget is built from rates that differ by grade and by category, and an average across all of them is not the amount attached to any pupil.",
+   "see": [
+    {
+     "label": "what a pupil costs, against every district",
+     "slug": "/what-other-districts-spend"
+    }
+   ],
+   "so_what": "The figure everybody quotes is an increase, not the aid. They differ by a factor of 38."
+  },
+  {
+   "basis": "DESE\u2019s own definitions in the workbook\u2019s User Guide, quoted at their cells, and the reduction column of the `dataAid` sheet for Lunenburg across FY2007 to FY2026.",
+   "bearing": "sizes",
+   "claim": "Provisions in DESE\u2019s own definitions that can reduce a district\u2019s Chapter 70 aid",
+   "detail": "DESE\u2019s glossary names 2 things that reduce Chapter 70 aid, and neither of them is enrolment for a district that runs its own schools. The first decreases aid by a fixed percentage, legislated and applied to everybody \u2014 the workbook\u2019s reduction column is populated for Lunenburg in FY2009 (-$485,942), FY2010 (-$92,416) and FY2011 (-$279,101), the recession years, and in no year since. The second reduces aid to the level of the foundation budget for NON-OPERATING districts, which run no schools of their own and tuition their pupils elsewhere. Lunenburg runs schools. There is no provision that cuts an operating district\u2019s aid because it has fewer children: what falling enrolment reaches is the increase, not the base.",
+   "figure": "provisions",
+   "figures": {
+    "cut_2009": {
+     "text": "-$485,942",
+     "unit": "",
+     "value": -485942.0
+    },
+    "cut_2010": {
+     "text": "-$92,416",
+     "unit": "",
+     "value": -92416.0
+    },
+    "cut_2011": {
+     "text": "-$279,101",
+     "unit": "",
+     "value": -279101.0
+    },
+    "cut_fy_2009": {
+     "text": "FY2009",
+     "unit": "",
+     "value": 2009
+    },
+    "cut_fy_2010": {
+     "text": "FY2010",
+     "unit": "",
+     "value": 2010
+    },
+    "cut_fy_2011": {
+     "text": "FY2011",
+     "unit": "",
+     "value": 2011
+    },
+    "provisions": {
+     "text": "2",
+     "unit": "provisions that reduce aid",
+     "value": 2
+    }
+   },
+   "id": "nothing-in-the-formula-takes-aid-away-for-losing-pupils",
+   "kind": "measured",
+   "literals": [
+    "Chapter 70"
+   ],
+   "not_shown": "That these are the only provisions in statute. The User Guide is DESE\u2019s glossary for its own workbook, not Chapter 70 itself, and a component absent from the glossary would be absent from this page too. Nor does any of it say what a future Legislature will do.",
+   "see": [
+    {
+     "label": "the aid components, term by term, for twenty years",
+     "slug": "/why-we-only-get-minimum-aid"
+    }
+   ],
+   "so_what": "One is a legislated across-the-board cut. The other applies only to districts that run no schools."
+  },
+  {
+   "basis": "The FY2026 foundation budget and required local contribution from DESE\u2019s `dataAid` sheet, with the foundation budget scaled by pupils at its own average and the required contribution held fixed \u2014 which is DESE\u2019s own structure, not an assumption: the target local contribution equals the combined effort yield in every published year and carries no pupil term.",
+   "bearing": "sizes",
+   "claim": "Foundation pupils at which the formula\u2019s own subtraction would turn negative",
+   "detail": "Everything on this page about one more or one fewer pupil was measured AT THE MARGIN. It is not a rate that can be multiplied out: below about 968 foundation pupils the town\u2019s foundation budget falls under its required contribution and step 3 of the formula turns negative. The required contribution is a wealth calculation and does not move with pupils; the foundation budget does. In FY2026 the required contribution is 60.4% of the foundation budget, so the two would meet at roughly 60.4% of today\u2019s 1,603 pupils. Nothing in this archive models what the formula does from there, and it has not happened in any of the 20 years DESE publishes here \u2014 the highest the required share has been is 72.3%, in FY2007. What this page establishes is the behaviour of the formula near where Lunenburg actually sits.",
+   "figure": "pupils",
+   "figures": {
+    "enrollment": {
+     "text": "1,603",
+     "unit": "",
+     "value": 1603.0
+    },
+    "fall": {
+     "text": "39.6%",
+     "unit": "",
+     "value": 39.59108556747268
+    },
+    "fy": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "highest": {
+     "text": "72.3%",
+     "unit": "",
+     "value": 72.26584080609827
+    },
+    "highest_fy": {
+     "text": "FY2007",
+     "unit": "",
+     "value": 2007
+    },
+    "pupils": {
+     "text": "968",
+     "unit": "foundation pupils",
+     "value": 968.3548983534129
+    },
+    "share": {
+     "text": "60.4%",
+     "unit": "",
+     "value": 60.40891443252732
+    },
+    "years": {
+     "text": "20",
+     "unit": "",
+     "value": 20
+    }
+   },
+   "id": "the-marginal-rate-does-not-extrapolate",
+   "kind": "measured",
+   "literals": [
+    "Chapter 70",
+    "step 3"
+   ],
+   "not_shown": "What the formula would actually pay at that enrollment. This is the point at which one subtraction in the sequence changes sign, not a projection: a district that far off its foundation budget would meet hold-harmless provisions, a different minimum aid rate and possibly legislation, none of which is in this workbook.",
+   "see": [
+    {
+     "label": "the limits, as the registry records them",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "39.6% below today. The per-pupil finding was measured at the margin and stops well above it."
+  }
+ ],
+ "cut_years": [
+  {
+   "amount": -485942.0,
+   "fy": 2009
+  },
+  {
+   "amount": -92416.0,
+   "fy": 2010
+  },
+  {
+   "amount": -279101.0,
+   "fy": 2011
+  }
+ ],
+ "definitions": [
+  {
+   "cell": "User Guide!B17",
+   "term": "Required Local Contribution (RLC)",
+   "text": "The minimum equitable level of local funding needed to support a district's foundation budget, based upon the relative wealth of the community."
+  },
+  {
+   "cell": "User Guide!B24",
+   "term": "Combined Effort Yield (CEY)",
+   "text": "The sum of local effort from property and local effort from income."
+  },
+  {
+   "cell": "User Guide!B26",
+   "term": "Target Local Share",
+   "text": "An equitable portion of a city or town's foundation budget that should be supported through local funds. Individual communities\u2019 target local shares are based on local property values and income, and foundation budget. It is calculated as CEY divided by foundation budget multiplied by 100%, and is capped at 82.5%."
+  },
+  {
+   "cell": "User Guide!B34",
+   "term": "Foundation Aid Increase",
+   "text": "The amount of additional aid a district needs to have resources equal to its foundation budget. Foundation budget less required contribution equals foundation aid. If foundation aid is greater than prior year Chapter 70 aid, the district receives a foundation aid increase."
+  },
+  {
+   "cell": "User Guide!B38",
+   "term": "Minimum Aid",
+   "text": "Guarantees a minimum per pupil increase in aid over the prior year (typically $30 per pupil), if all other available aid components do not equal that amount.  Not available in every year."
+  },
+  {
+   "cell": "User Guide!B41",
+   "term": "Chapter 70 Aid Reduction",
+   "text": "Decreases aid by a fixed percentage. In the years when this was done, aid was added back to ensure that districts had resources equal to their foundation budgets. In some years, aid was supplanted with federal funds."
+  },
+  {
+   "cell": "User Guide!B42",
+   "term": "Non-Op Reduction in Aid",
+   "text": "Non-operating districts do not operate local schools, but sometimes receive aid because they tuition small numbers of pupils to other districts. In a few cases where the number of pupils has decreased, their current year\u2019s aid actually exceeds their foundation budget for those pupils. This provision reduces aid to the level of the district\u2019s foundation budget."
+  },
+  {
+   "cell": "User Guide!B45",
+   "term": "Required Net School Spending",
+   "text": "Local Contribution + State Aid = a district\u2019s Net School Spending (NSS) requirement. This is the minimum amount that a district must spend to comply with state law."
+  }
+ ],
+ "enrollment": 1603.0,
+ "foundation_aid_increment": 0,
+ "foundation_budget": 22073945.75,
+ "foundation_per_pupil": 13770.396600124766,
+ "fy": 2026,
+ "fy_first": 2007,
+ "fy_last": 2026,
+ "gaps": [
+  {
+   "closes": "DESE\u2019s preliminary Chapter 70 aid calculation for Lunenburg for the year in question, which states the foundation aid, minimum aid and hold-harmless components before the year is set.",
+   "side": "money_in",
+   "what": "What Chapter 70 aid would actually do if enrollment fell",
+   "why": "MUCH NARROWER THAN IT WAS. DESE\u2019s Chapter 70 trends workbook breaks the aid calculation into its named components, and for Lunenburg they show that this year\u2019s aid is last year\u2019s aid plus named increments \u2014 an identity that holds to the dollar in every one of the last seven years. In FY2026 the whole of the increase is the minimum aid increment, $240,450, which is exactly $150.00 for each of the 1,603 foundation pupils, and the foundation aid increment is zero. Over thirty-four years foundation enrollment fell in 17 and aid fell in 3 \u2014 FY1997, FY2010 and FY2011. DESE\u2019s component columns show a reduction applied in FY2010 and FY2011; they start at FY2007, so nothing in this archive says why aid fell in FY1997. So the marginal aid attached to one foundation pupil is currently about $150 and not the $14,440 foundation budget per pupil. What is NOT established: that the Legislature sets the same minimum aid rate next year \u2014 it has ranged from $30 to $150 a pupil in the years published \u2014 nor what happens if a large enough enrollment fall moves the district off the minimum aid track, which no document here models."
+  },
+  {
+   "closes": "DESE\u2019s FY26 foundation budget rate schedule, the table of per-pupil rates by grade and category and the low-income increment by decile group.",
+   "side": "money_in",
+   "what": "What the foundation budget pays per pupil for each kind of child",
+   "why": "DESE builds the foundation budget from per-pupil rates that differ by grade and by category, and it publishes the CATEGORIES for Lunenburg \u2014 FY2026 foundation enrollment of 1,603, of whom 54 are English learners (3.4%), 452 are low income (28.8%, low-income group 5) and none is vocational, at a wage adjustment factor of 1.000 \u2014 without publishing the rate attached to any of them in the same file. So which children leave a district changes the foundation effect and not only how many, and this archive can state that it matters and cannot size it."
+  },
+  {
+   "closes": "DESE\u2019s FY27 foundation enrollment worksheet for Lunenburg, which states the October 1 count by grade and category the formula was run on.",
+   "side": "people",
+   "what": "How many children Chapter 70 is actually paid for",
+   "why": "The aid is calculated on a `Foundation enrollment` of 1,599 in DESE\u2019s FY27 Chapter 70 summary. DESE publishes three other counts for the same district \u2014 Student Headcount, In-District FTE Pupils and Total FTE Pupils \u2014 and in the latest year published they are 1,563, 1,568.9 and 1,665.9. Four numbers, one agency, none of them equal, measured on different dates and counting different things. So every per-pupil figure on this project, including aid per pupil, is a division by a count whose definition has to be stated with it, and no published document reconciles the foundation count to the children in the buildings."
+  }
+ ],
+ "headroom": 249645.25,
+ "how_it_works": [
+  {
+   "plain": "Massachusetts sets a rate for each pupil, by grade and by category \u2014 a vocational pupil is priced higher than a primary one. Multiply through and you get the FOUNDATION BUDGET: the state\u2019s own estimate of what educating this town\u2019s children ought to cost.",
+   "step": "The state prices your students",
+   "watch": "It is a calculation, not money anybody sends. Nobody ever receives the foundation budget."
+  },
+  {
+   "plain": "From the town\u2019s property values and its residents\u2019 income \u2014 not from how many children it has \u2014 the state sets the REQUIRED LOCAL CONTRIBUTION: the minimum the town itself must put in.",
+   "step": "The state decides what the town can afford",
+   "watch": "Enrolment is not in this step at all. Lose pupils and this number does not move."
+  },
+  {
+   "plain": "Foundation budget minus required contribution is what the state calls foundation aid \u2014 the amount a district needs to reach the budget the state says it should have.",
+   "step": "The gap between them is what aid is FOR",
+   "watch": "This is the step everybody assumes is the whole formula. It is not."
+  },
+  {
+   "plain": "DESE\u2019s own rule: \u201cIf foundation aid is greater than prior year Chapter 70 aid, the district receives a foundation aid increase.\u201d Only GREATER. If the formula\u2019s figure is below what the town already receives, it adds nothing and the town keeps what it had.",
+   "step": "But aid is last year\u2019s aid plus an increase \u2014 never a fresh calculation",
+   "watch": "This is the whole thing. The formula is a floor test, not a recalculation."
+  },
+  {
+   "plain": "The town already receives more than the formula says it needs. So the elaborate machinery of steps 1 to 3 runs every year and produces zero.",
+   "step": "Lunenburg is above that line, so the formula pays nothing",
+   "watch": "It has produced zero since before FY2022."
+  },
+  {
+   "plain": "MINIMUM AID: \u201cGuarantees a minimum per pupil increase in aid over the prior year\u2026 Not available in every year.\u201d It is the same rate for every district on the floor \u2014 $150 a pupil in FY2026, $30 in FY2022, nothing at all in FY2023.",
+   "step": "What is left is a flat amount the Legislature picks",
+   "watch": "This is an INCREASE per pupil, not the aid per pupil. The aid itself is about $5,757 a pupil."
+  },
+  {
+   "plain": "One fewer pupil drops the foundation budget by about $13,770 \u2014 but that only changes a number in step 3, which was producing nothing anyway. The required contribution does not move, because it comes from wealth. The only part that responds is the flat per-pupil increase. About $150.",
+   "step": "So losing a student costs the town almost no aid",
+   "watch": "The real cost of a departing choice student is the roughly $5,000 tuition the town pays the receiving district. Aid is the small half."
+  },
+  {
+   "plain": "Two rules can reduce Chapter 70 aid. One is a legislated across-the-board percentage cut \u2014 that is what happened in FY2010 and FY2011, during the recession, to everybody. The other applies only to NON-OPERATING districts, which run no schools of their own. Lunenburg runs schools.",
+   "step": "And nothing in the formula takes aid away for losing students",
+   "watch": "So: fewer students does not mean less aid. It means no increase. Those are different, and the difference is most of this page."
+  }
+ ],
+ "increase": 240450.0,
+ "minutes": {
+  "held": 12015,
+  "image_scan": 3096,
+  "searchable": 8899,
+  "searchable_share": 0.7407,
+  "unsearchable": 3116
+ },
+ "need": 8739314.75,
+ "not_established": [
+  "What a large fall in enrollment would do to the aid. The finding on this page is a marginal one \u2014 one pupil, everything else held at its FY2026 value \u2014 and a marginal rate multiplied out is not a projection.",
+  "What the state pays for any particular child. The foundation budget is built from rates that differ by grade and by category, and the workbook publishes Lunenburg\u2019s categories without the rates, so the average of $13,770 a pupil is not the amount attached to anybody.",
+  "That the Legislature sets the same floor next year. Minimum aid is voted each year, it was not available at all in some years, and DESE\u2019s own definition says so: \u201cNot available in every year.\u201d",
+  "Whether these are the only provisions in statute that reduce aid. The two on this page are the two DESE\u2019s glossary for its own workbook names."
+ ],
+ "not_this_page": "Lunenburg\u2019s position. Where the town sits in this formula, the twenty-year series of aid components, the peer districts on the same per-pupil rate and the wealth calculation behind the required contribution are on /why-we-only-get-minimum-aid. This page is the mechanism, with FY2026 used to show it working.",
+ "prior_aid": 8988960.0,
+ "ratio": 38.38390517779164,
+ "reductions": [
+  {
+   "cell": "User Guide!B41",
+   "term": "Chapter 70 Aid Reduction",
+   "text": "Decreases aid by a fixed percentage. In the years when this was done, aid was added back to ensure that districts had resources equal to their foundation budgets. In some years, aid was supplanted with federal funds."
+  },
+  {
+   "cell": "User Guide!B42",
+   "term": "Non-Op Reduction in Aid",
+   "text": "Non-operating districts do not operate local schools, but sometimes receive aid because they tuition small numbers of pupils to other districts. In a few cases where the number of pupils has decreased, their current year\u2019s aid actually exceeds their foundation budget for those pupils. This provision reduces aid to the level of the district\u2019s foundation budget."
+  }
+ ],
+ "required_local_contribution": 13334631.0,
+ "said": [
+  {
+   "board": "School Committee",
+   "cite": "/docs/meetings/text/school-committee/2025-05-07-minutes-7207.txt",
+   "date": "2025-05-07",
+   "key": "passed",
+   "kind": "Minutes",
+   "quote": "The House budget passed including 150 per pupil minimum aid increase.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05072025-7207",
+   "why": "The rate, stated as passed. DESE\u2019s workbook then runs it: Lunenburg\u2019s whole FY2026 increase is $150.00 a pupil, to the cent."
+  },
+  {
+   "board": "Finance Committee",
+   "cite": "/docs/meetings/text/finance-committee/2021-10-28-minutes-2097.txt",
+   "date": "2021-10-28",
+   "key": "novick",
+   "kind": "Minutes",
+   "quote": "After the Commonwealth determines how much each district is required to spend, municipalities are obligated to fund 59 percent of that foundation budget, while the Commonwealth provides 41 percent.",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282021-2097",
+   "why": "A description of the formula given to the Finance Committee by the Massachusetts Association of School Committees. Recomputed for Lunenburg below -- it is close for the year it was said and it is not a constant, which is the whole subject of this page."
+  },
+  {
+   "board": "Select Board",
+   "cite": "/docs/meetings/text/select-board/2025-05-20-agenda-7231.txt",
+   "date": "2025-05-20",
+   "key": "commission",
+   "kind": "Agenda",
+   "quote": "Review Letter of Support for the Establishment of a Chapter 70 Commission to Review the Foundation Budget and Local Contribution Formulas",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05202025-7231",
+   "why": "The two halves of this page, named as the two things the town asked the Legislature to reopen -- the foundation budget and the local contribution formula. It is evidence of intent and of what the town believes the problem is. It is not evidence of an outcome."
+  }
+ ],
+ "searched": [
+  {
+   "documents": 93,
+   "term": "Chapter 70"
+  },
+  {
+   "documents": 5,
+   "term": "minimum aid"
+  },
+  {
+   "documents": 7,
+   "term": "foundation budget"
+  },
+  {
+   "documents": 1,
+   "term": "combined effort yield"
+  },
+  {
+   "documents": 0,
+   "term": "required local contribution"
+  },
+  {
+   "documents": 17,
+   "term": "Student Opportunity Act"
+  }
+ ],
+ "source": {
+  "bytes": 4597493,
+  "docs_url": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+  "filename": "dese-ch70-key-factors.xlsx",
+  "path": "sources/state-dese/dese-ch70-key-factors.xlsx",
+  "publisher": "Massachusetts Department of Elementary and Secondary Education",
+  "sha256": "9fdc7d0a6131c82a400509f336f2ac88539e05b2dde1b019232757e668bc2e6f",
+  "sheets": [
+   "dataAid",
+   "dataContribution",
+   "User Guide"
+  ],
+  "stage": "DESE\u2019s published Chapter 70 calculation for each fiscal year. Not a Governor\u2019s budget proposal and not a receipt.",
+  "url": "https://www.doe.mass.edu/finance/chapter70/"
+ },
+ "three_numbers": [
+  {
+   "key": "aid_per_pupil",
+   "label": "Chapter 70 aid, for each foundation pupil",
+   "text": "$5,757.59",
+   "value": 5757.585776668746,
+   "what": "What the state actually sends, divided by the pupils the formula counts. The size of the aid."
+  },
+  {
+   "key": "increase_per_pupil",
+   "label": "This year\u2019s INCREASE, for each foundation pupil",
+   "text": "$150.00",
+   "value": 150.0,
+   "what": "The rate the Legislature set for FY2026. It is an increase over last year\u2019s aid, not the aid."
+  },
+  {
+   "key": "marginal_per_pupil",
+   "label": "What one more pupil moves the aid by",
+   "text": "$150.00",
+   "value": 150.0,
+   "what": "The same figure as the one above it, for a different reason: minimum aid is the only component operating, so the only part of the build-up that responds to a pupil is the flat per-pupil increase."
+  }
+ ],
+ "threshold": {
+  "assumptions": [
+   "The town\u2019s required contribution does not move. It is the combined effort yield path, and DESE\u2019s target local contribution equals the combined effort yield in all 20 years published.",
+   "The extra pupil costs the AVERAGE foundation amount. DESE builds the foundation budget from per-pupil rates that differ by grade and by category and does not publish them here, so the marginal cost is unknown and the average is standing in for it.",
+   "The statutory cap on the target local share does not bind. Lunenburg\u2019s target share is 68.7% of its foundation budget in FY2026 against a cap of 82.5%.",
+   "Everything else in the formula is held at its FY2026 value, including the minimum aid rate, which the Legislature sets each year and which has ranged from $30 to $150 a pupil in the years published."
+  ],
+  "enrollment": 1603.0,
+  "fall_pct": 0.39591085567472684,
+  "first_fy": 2007,
+  "fy": 2026,
+  "highest_share": 0.7226584080609827,
+  "highest_share_fy": 2007,
+  "is_measurement": false,
+  "last_fy": 2026,
+  "pupils_at_zero": 968.3548983534129,
+  "required_share": 0.6040891443252732,
+  "years_checked": 20
+ },
+ "unlock": "But aid is last year\u2019s aid plus an increase \u2014 never a fresh calculation",
+ "years": 20
+}

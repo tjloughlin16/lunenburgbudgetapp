@@ -44,7 +44,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 294 of these 310 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 296 of these 312 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -1757,9 +1757,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 91539,
+     "bytes": 98407,
      "url": "/docs/data/money-gaps.csv",
-     "count": 105,
+     "count": 112,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2208,7 +2208,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 30498816,
+     "bytes": 31186944,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2247,6 +2247,18 @@
      "count": 6930,
      "unit": "rows",
      "textUrl": "/docs/data/dese-function-expenditure.csv"
+    },
+    {
+     "path": "data/dese-ap.csv",
+     "title": "Advanced Placement participation and performance",
+     "stars": 3,
+     "what": "Lunenburg’s AP rows from DESE’s two statewide files, SY2007–SY2025 — participation and performance, by subject and by student group. It is the only measure here of whether OPPORTUNITY narrowed, as against staffing or spending, which is the half of “did the cuts hurt” that nothing else in this archive can reach. Student groups OVERLAP: All Students sits beside the race categories, low-income and disability status, all describing the same children, so nothing may be summed without splitting on stu_grp first — the trap that once reported Lunenburg’s administrators doubling when the truth was 14 to 19. The full workbooks are 174MB and stay in the archive rather than the published database. Rebuild with scripts/extract_dese_ap.py.",
+     "kind": "Data",
+     "bytes": 1152906,
+     "url": "/docs/data/dese-ap.csv",
+     "count": 9906,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-ap.csv"
     },
     {
      "path": "data/dese-sped-indicator.csv",
@@ -2307,6 +2319,18 @@
      "count": 7014,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
+    },
+    {
+     "path": "data/dese-class-size.csv",
+     "title": "How many classes ran in each subject, and how full they were",
+     "stars": 3,
+     "what": "DESE’s class counts and average sizes for Lunenburg by school and subject, SY2011–SY2025. `tot_clss_cnt` is how many classes actually RAN, so a subject with no classes is a subject nobody offered that year — which makes this a measurement of course offerings rather than the teacher-FTE proxy every earlier attempt used, and a proxy that cannot tell four Spanish sections from two. `avg_clss_cnt` answers a different question: not what was offered but how full it was. The two move independently and must not be read as one. AND A TRAP: a general class size is NOT a special education instructional group. 603 CMR 28.06(6) binds instructional groups — eight students to a certified special educator, twelve with an aide — and nothing here is that quantity. Rebuild with scripts/extract_dese_class_size.py.",
+     "kind": "Data",
+     "bytes": 450644,
+     "url": "/docs/data/dese-class-size.csv",
+     "count": 3160,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-class-size.csv"
     },
     {
      "path": "data/dese-sped-program.csv",
@@ -2403,6 +2427,18 @@
      "count": 659,
      "unit": "rows",
      "textUrl": "/docs/data/dese-teacher-program-area.csv"
+    },
+    {
+     "path": "data/dese-attrition.csv",
+     "title": "How many students leave, by grade, SY2010–SY2026",
+     "stars": 3,
+     "what": "DESE’s attrition rate for Lunenburg, per grade and per student group, across seventeen years — the grade dimension the outflow work has lacked since it began. IT IS A RATE AND NOT A DESTINATION: a child leaving for Monty Tech, for another district under school choice, for a private school, or because the family moved out of town are all the same number here. It bounds the question of WHERE departures cluster; it cannot say where anybody went. Student groups overlap — All Students sits beside the race categories describing the same children — so nothing here may be summed without splitting on stu_grp first. Rebuild with scripts/extract_dese_attrition.py.",
+     "kind": "Data",
+     "bytes": 104251,
+     "url": "/docs/data/dese-attrition.csv",
+     "count": 1061,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-attrition.csv"
     },
     {
      "path": "data/free-cash-proof.csv",
@@ -6031,7 +6067,7 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 35 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 37 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
     {
      "path": "state-dese/603cmr28-special-education-regulations.html",
@@ -6074,6 +6110,26 @@
      "bytes": 4597493,
      "url": "/docs/state-dese/dese-ch70-key-factors.xlsx",
      "upstream": "https://www.doe.mass.edu/finance/chapter70/"
+    },
+    {
+     "path": "state-dese/dese-class-size.xlsx",
+     "title": "Class size by gender, race/ethnicity and selected populations",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 120651949,
+     "url": "/docs/state-dese/dese-class-size.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/Students-and-Teachers/Class-Size-by-Gender-Race-Ethnicity-and-Selected-P/35yv-uxv5/about_data"
+    },
+    {
+     "path": "state-dese/dese-curriculum-lunenburg.xlsx",
+     "title": "Curriculum materials reported to DESE, Lunenburg",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 6270,
+     "url": "/docs/state-dese/dese-curriculum-lunenburg.xlsx",
+     "upstream": "https://profiles.doe.mass.edu/curriculum/?topNavId=1&leftNavId=16934&orgtypecode=5&orgcode=01620000"
     },
     {
      "path": "state-dese/radar-district-comparison.xlsx",
@@ -6608,10 +6664,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 537,
+  "documents": 542,
   "groups": 20,
-  "bytes": 1307869876,
-  "loadBearing": 103
+  "bytes": 1430930892,
+  "loadBearing": 106
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

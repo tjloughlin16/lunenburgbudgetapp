@@ -5,8 +5,8 @@ import {
   Body, Conclusions, Coverage, Grain, H2, H3, Insight, MoreReports, NotEstablished,
   NotShown, Provenance, Quote, Shell, Stat, useReport,
 } from '../components/report'
-import type { Tier } from '../components/ClassSizeTable'
-import { Clause, ScenarioTable, TableTwin } from '../components/ClassSizeTable'
+import type { Band, Room, Tier } from '../components/ClassSizeTable'
+import { Clause, RoomTable, ScenarioTable, TableTwin } from '../components/ClassSizeTable'
 
 const TAB: Tab = 'classsize'
 
@@ -53,7 +53,14 @@ type Payload = Base & {
   fy: number
   clauses: Record<string, Clause>
   tiers: Tier[]
-  young: Tier[]
+  bands: Band[]
+  rooms: Room[]
+  room_extra_iep_aides: number
+  silent_on: { term: string; count: number }[]
+  silent_total: number
+  terms: { term: string; uses: number; defined: boolean; cite: string
+    definition: string; note: string }[]
+  young_share: number
   midyear_extra: number
   age_months: number
   threshold_pct: number
@@ -84,6 +91,11 @@ export function ClassSize() {
   const cl = d.clauses
   const subDef = d.codes.find(c => c.code === '40')
   const topTier = d.tiers.reduce((a, b) => (b.aides > a.aides ? b : a))
+  // Split rather than declared: which terms 28.02 defines is computed in the generator on
+  // every build, so a term that gains a definition at DESE moves between these two lists
+  // without anybody editing this page.
+  const defined = d.terms.filter(t => t.defined)
+  const undefined_ = d.terms.filter(t => !t.defined)
   // DESE's own screen-reader expansion of `CMR`, present in some clauses and not others.
   // Detected rather than assumed, so the note explaining it disappears if DESE stops.
   const expanded = Object.values(cl).some(
@@ -130,23 +142,81 @@ export function ClassSize() {
       {/* ------------------------------------------- 2. THE RULE, AS A TABLE (rule 7b) */}
       <H2 id="table">What the rule permits, group by group</H2>
       <Body>
-        Every tier the regulation names, for students aged five and older. Read the two
-        staff columns before the student column: the certified special educator is{' '}
-        <strong>one, in every single row</strong>. What buys a larger group is an aide.
+        Every tier the regulation sets, at every age it covers, in one table. Read the two
+        staff columns before the student column: the educator is <strong>one, in every
+        single row</strong> &mdash; school age and preschool alike. What buys a larger
+        group is an aide.
       </Body>
-      <ScenarioTable rows={d.tiers}
-        caption="603 CMR 28.06(6)(c) and (d), parsed from the sentences that state them" />
+      <ScenarioTable rows={d.tiers} bands={d.bands}
+        caption={`all ${d.tiers.length} tiers — 603 CMR 28.06(6)(c) and (d) and 28.06(7)(e) and (f), parsed from the sentences that state them`} />
       <Body>
-        The two settings are not the same rule, and the difference runs the way most
-        people do not expect. A group outside general education{' '}
-        {d.threshold_pct}% of the schedule <em>or less</em> reaches {d.part_cap} students
-        with {topTier.aides} aides. A substantially separate group &mdash; <em>more</em>
-        than{' '}
-        {d.threshold_pct}% &mdash; stops at {d.sub_aide_cap}. The more separate the room,
-        the lower the ceiling.
+        <strong>And the ceiling falls as the setting gets more separate, in both
+        bands.</strong> A school-age group outside general education {d.threshold_pct}% of
+        the schedule <em>or less</em> reaches {d.bands[0].top} students with{' '}
+        {topTier.aides} aides; a substantially separate one &mdash; <em>more</em> than{' '}
+        {d.threshold_pct}% &mdash; stops at {d.bands[0].sub}. Preschool runs the same way
+        and further: {d.bands[1].top} integrated, {d.bands[1].sub} substantially separate.
+        Same direction, {d.bands[1].drop > d.bands[0].drop ? 'a bigger drop' : 'a smaller drop'}.
       </Body>
       <Clause {...cl['28.06(6)(c)']} />
       <Clause {...cl['28.06(6)(d)']} />
+      <Clause {...cl['28.06(7)(e)']} />
+      <Clause {...cl['28.06(7)(f)']} />
+      <NotShown>
+        That the two bands are strictly comparable. 28.06(6) caps an instructional{' '}
+        <strong>group</strong> and 28.06(7) caps a <strong>class</strong>; the preschool
+        clauses count children with and without disabilities together, and they say{' '}
+        <em>teacher</em> where the school-age clauses say{' '}
+        <em>certified special educator</em>. Nothing here establishes those are the same
+        qualification, which is why the table prints each clause&rsquo;s own word on its
+        band rather than one word over all of them.
+      </NotShown>
+      <NotShown>
+        A cap on students with disabilities in the substantially separate preschool row.
+        {' '}{cl['28.06(7)(f)'].cite} runs the other way: it defines such a programme as
+        one in which more than {d.young_share}% of the children have disabilities, and
+        caps the class rather than that share. Writing a number in that column would be
+        this page inverting a floor into a ceiling.
+      </NotShown>
+
+      {/* --------------------------- THE ROOM, which is what people actually ask */}
+      <H2 id="rooms">The same children, staffed two ways</H2>
+      <Body>
+        The question that comes up every time: <em>if there are {d.rooms[2].students}{' '}
+        children in a room with one teacher and {d.rooms[2].aides} paras, and each para is
+        a one-to-one, how does that work out?</em> It complies &mdash; and it has more
+        staff than the rule requires. <strong>The rule sets the minimum for a group size.
+        IEPs add on top of it.</strong>
+      </Body>
+      <RoomTable rooms={d.rooms}
+        caption="the rule asks two questions: how many students, and is there an educator with an aide" />
+      <Body>
+        A room at the legal minimum and a room staffed three times over{' '}
+        <strong>look identical from outside</strong>. That is why a count of
+        paraprofessionals cannot be turned into a statement about group sizes, and why
+        group sizes cannot be turned into a staffing number &mdash; the same wall this
+        page hits below, approached from the other side.
+      </Body>
+      <NotShown>
+        Any part of those rooms except the ones the regulation fixes. The student counts
+        and the minimum staffing are read off the tiers above; the{' '}
+        {d.room_extra_iep_aides} extra aides in the third room are{' '}
+        <strong>this page&rsquo;s illustration</strong>, chosen to match the room people
+        describe, and nothing here says how common such a room is in Lunenburg or
+        anywhere else.
+      </NotShown>
+      <NotShown>
+        The corner of it. Where a group of {d.sub_aide_cap} has exactly{' '}
+        <em>one</em> aide and that aide is assigned to a single child, nothing states
+        whether they also satisfy the tier. The regulation says &ldquo;assisted by one
+        aide&rdquo; and defines neither the aide nor their duties &mdash; and it contains{' '}
+        {d.silent_total} rules about one-to-one support of any kind, searched on every
+        build for {d.silent_on.length} phrasings including{' '}
+        {d.silent_on.slice(0, 3).map((t, i) => (
+          <span key={t.term}>{i ? ', ' : ''}&ldquo;{t.term}&rdquo;</span>
+        ))}. Assuming such an aide counts understates the staffing a group needs; assuming
+        they do not overstates it. Registered as a gap below.
+      </NotShown>
 
       <H2 id="qualifications">What travels with those numbers</H2>
       <div className="grid gap-4 mt-5 md:grid-cols-2">
@@ -204,29 +274,66 @@ export function ClassSize() {
       <Clause {...cl['28.02(3)']} />
       <Clause {...cl['28.03(1)(a)']} />
 
-      <H2 id="young">Young children are a different rule again</H2>
+      {/* ------------------------------- THE KEY, AFTER THE THING IT IS A KEY TO */}
+      <H2 id="terms">What the words mean &mdash; and which ones the rule never defines</H2>
       <Body>
-        Three- and four-year-olds are governed by {cl['28.06(7)(e)'].cite} and{' '}
-        {cl['28.06(7)(f)'].cite}, which set class sizes rather than group sizes and say{' '}
-        <em>teacher</em> where the clauses above say <em>certified special educator</em>.
-        The rows are printed as the regulation words them and are not folded into the
-        table above.
+        A reader who has just been told that <em>aide</em> and{' '}
+        <em>paraprofessional</em> are two documents&rsquo; words needs to know what either
+        one means. 603 CMR 28.02 is the definitions section, and{' '}
+        <strong>it defines {defined.length} of the {d.terms.length} terms this page leans
+        on and none of the other {undefined_.length}</strong>. The absences are the more
+        useful half.
       </Body>
-      <TableTwin
-        caption="603 CMR 28.06(7)(e) and (f)"
-        head={['the setting', 'class size, at most', 'students with disabilities, at most',
-          'the staff the clause names', 'where it says so']}
-        rows={d.young.map(y => [y.setting, y.students,
-          y.swd_cap == null ? '\u2014 (the clause states a floor, not a cap)' : y.swd_cap,
-          y.staff, y.cite])} />
-      <Clause {...cl['28.06(7)(e)']} />
-      <Clause {...cl['28.06(7)(f)']} />
+      <div className="mt-5 space-y-4 max-w-2xl">
+        {defined.map(t => (
+          <div key={t.term} className="pl-4 border-l-2 avoid-break"
+            style={{ borderColor: 'var(--fund-school)' }}>
+            <p className="text-[14px] font-bold">{t.term}</p>
+            <p className="text-[14px] leading-relaxed mt-1"
+              style={{ color: 'var(--text-secondary)' }}>{t.definition}</p>
+            <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>
+              {t.cite} &middot; used {t.uses}{' '}
+              {t.uses === 1 ? 'time' : 'times'} in the regulation
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <H3>Used, and never defined</H3>
+      <Body>
+        Each of these appears in the regulation &mdash; several of them inside the tiers
+        above &mdash; and 28.02 gives none of them a meaning. The count is how many times
+        the word appears, singular or plural. <strong>What each one must therefore
+        mean is not stated here and is not guessed at.</strong>
+      </Body>
+      <div className="mt-4 space-y-3 max-w-2xl">
+        {undefined_.map(t => (
+          <div key={t.term} className="pl-4 border-l-2 avoid-break"
+            style={{ borderColor: 'var(--axis)' }}>
+            <p className="text-[14px]">
+              <strong>{t.term}</strong>
+              <span className="ml-2 text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+                {t.uses === 0
+                  ? 'does not appear in the regulation at all'
+                  : `used ${t.uses} ${t.uses === 1 ? 'time' : 'times'}, defined nowhere`}
+              </span>
+            </p>
+            {t.note && (
+              <p className="text-[13.5px] leading-relaxed mt-1"
+                style={{ color: 'var(--text-secondary)' }}>{t.note}</p>
+            )}
+          </div>
+        ))}
+      </div>
+      <Clause {...cl['28.02(3)']} />
+      <Clause {...cl['28.03(1)(a)']} />
       <NotShown>
-        A cap on students with disabilities in the substantially separate preschool row.
-        {' '}{cl['28.06(7)(f)'].cite} runs the other way: it defines such a programme as
-        one in which more than half the children have disabilities, and caps the class
-        rather than that share. Writing a number in that column would be this page
-        inverting a floor into a ceiling.
+        What an undefined word means anyway. A count of how often the regulation uses{' '}
+        <em>aide</em> is a fact; what an aide must be qualified to do is not established
+        by it, and nothing in this archive settles it. Whether the aide the tiers name is
+        the paraprofessional the town budgets is a registered gap, below &mdash; and its
+        direction matters: reading them as the same job understates what a group needs,
+        reading them as different overstates it.
       </NotShown>
 
       <H2 id="approved">And a school the district places a child into</H2>

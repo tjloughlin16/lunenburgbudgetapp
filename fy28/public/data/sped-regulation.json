@@ -1,6 +1,36 @@
 {
  "about": "The state rule everybody argues around, quoted: how many students may be in one special education instructional group, and what staff that takes. With Lunenburg\u2019s own published placement counts beside it, and the reason neither one gives a staffing number.",
  "age_months": 48,
+ "bands": [
+  {
+   "ages": "aged five and older",
+   "band": "School age",
+   "cites": [
+    "603 CMR 28.06(6)(c)",
+    "603 CMR 28.06(6)(d)"
+   ],
+   "drop": 4,
+   "role": "certified special educator",
+   "rows": 5,
+   "sub": 12,
+   "top": 16,
+   "top_setting": "partly separate"
+  },
+  {
+   "ages": "three and four years of age",
+   "band": "Young children",
+   "cites": [
+    "603 CMR 28.06(7)(e)",
+    "603 CMR 28.06(7)(f)"
+   ],
+   "drop": 11,
+   "role": "teacher",
+   "rows": 3,
+   "sub": 9,
+   "top": 20,
+   "top_setting": "integrated"
+  }
+ ],
  "clauses": {
   "28.02(3)": {
    "cite": "603 CMR 28.02(3)",
@@ -46,6 +76,11 @@
    "cite": "603 CMR 28.06(6)(g)",
    "text": "(g) Instructional group sizes in all programs approved under 603 Code of Massachusetts Regulations CMR 28.09 shall be limited to those outlined in 603 Code of Massachusetts Regulations CMR 28.06(6)(d), and no such instructional groups shall have an age range greater than 48 months.",
    "title": "Approved programs take the substantially separate sizes"
+  },
+  "28.06(7)": {
+   "cite": "603 CMR 28.06(7)",
+   "text": "(7) Programs for young children. The school district shall ensure programs are available for eligible children three and four years of age. Such programs shall be developmentally appropriate and specially designed for children ages three and four years.",
+   "title": "Programs for young children"
   },
   "28.06(7)(e)": {
    "cite": "603 CMR 28.06(7)(e)",
@@ -176,10 +211,10 @@
    "so_what": "41 children could be four groups or seven, needing very different staffing. Both are lawful."
   },
   {
-   "basis": "603 CMR 28.06(6)(c) and (d), parsed tier by tier out of the two sentences that state them.",
+   "basis": "603 CMR 28.06(6)(c) and (d) and 28.06(7)(e) and (f), parsed tier by tier out of the sentences that state them.",
    "bearing": "sizes",
-   "claim": "Every tier in the rule names one certified special educator. Only the aides scale",
-   "detail": "Across both settings the regulation states five group-size tiers, and the phrase in every one of them is a certified special educator, singular. What changes between 8 and 12, and between 12 and 16, is an aide. The build refuses to publish this table if a tier ever names a second educator, because the shape is the finding.",
+   "claim": "Every tier the rule sets names one educator \u2014 at every age, in every setting",
+   "detail": "8 tiers, in two age bands: 28.06(6)(c) and (d) for students aged five and older, 28.06(7)(e) and (f) for children three and four years of age. In every one of them the adult in charge is singular. What changes between 8 and 12, and between 12 and 16, is an aide. The build refuses to publish this table if a single row ever names a second educator, because the shape is the finding.",
    "figure": "tiers",
    "figures": {
     "high": {
@@ -198,24 +233,27 @@
      "value": 12
     },
     "tiers": {
-     "text": "5",
+     "text": "8",
      "unit": "group-size tiers",
-     "value": 5
+     "value": 8
     }
    },
    "id": "one-educator-every-tier",
    "kind": "measured",
-   "literals": [],
-   "not_shown": "What an aide is. The regulation says \"aide\" and never defines it; DESE\u2019s staffing files and the district\u2019s budget lines say \"paraprofessional\". Nothing here establishes that the two words name the same job.",
+   "literals": [
+    "28.06(6)(c)",
+    "28.06(7)(e)"
+   ],
+   "not_shown": "That the two bands name the same qualification. 28.06(6) says \"certified special educator\" and 28.06(7) says \"teacher\", and nothing here establishes those are the same thing \u2014 the table prints each clause\u2019s own word. Nor what an aide is: the regulation never defines it, while DESE\u2019s staffing files and the district\u2019s budget lines say \"paraprofessional\".",
    "see": [],
-   "so_what": "So the rule buys a bigger group with an aide, never with a second teacher \u2014 in all 5 tiers."
+   "so_what": "Across all 8 tiers only the aides change. A bigger group never buys a second educator."
   },
   {
-   "basis": "The two clauses, parsed; and a count of the phrase \"two aides\" across the full regulation.",
+   "basis": "All four class-size clauses, parsed; and a count of the phrase \"two aides\" across the full regulation.",
    "bearing": "sizes",
-   "claim": "A 16-student tier exists only below the 60% threshold. Above it the rule stops at 12",
-   "detail": "28.06(6)(c) governs groups outside general education 60% or less of the schedule and runs to \"16 students if the certified special educator is assisted by two aides\". 28.06(6)(d), for settings above that threshold, names two tiers and stops. The phrase \"two aides\" occurs exactly once in the whole of 603 CMR 28.00, which this build asserts on every run.",
-   "figure": "high",
+   "claim": "The more separate the setting, the lower the ceiling \u2014 in both age bands",
+   "detail": "This is the opposite of what most people assume, and it holds at every age the regulation covers. 28.06(6)(c) governs groups outside general education 60% of the schedule or less and runs to \"16 students if the certified special educator is assisted by two aides\"; 28.06(6)(d), above that threshold, names two tiers and stops at 12. The phrase \"two aides\" occurs exactly once in the whole of 603 CMR 28.00, which this build asserts on every run. The preschool clauses run the same way and further: an integrated class may reach 20 under 28.06(7)(e), a substantially separate one is limited to 9 under 28.06(7)(f). The build refuses to publish if either band stops falling, or if preschool stops falling further than school age.",
+   "figure": "ytop",
    "figures": {
     "high": {
      "text": "16",
@@ -231,18 +269,72 @@
      "text": "60%",
      "unit": "",
      "value": 60
+    },
+    "ysub": {
+     "text": "9",
+     "unit": "students",
+     "value": 9
+    },
+    "ytop": {
+     "text": "20",
+     "unit": "students",
+     "value": 20
     }
    },
-   "id": "third-tier-one-clause",
+   "id": "ceiling-falls-with-separateness",
    "kind": "measured",
    "literals": [
     "603 CMR 28.00",
     "28.06(6)(c)",
-    "28.06(6)(d)"
+    "28.06(6)(d)",
+    "28.06(7)(e)",
+    "28.06(7)(f)"
    ],
-   "not_shown": "Why. The regulation gives no reason for the asymmetry and this page offers none \u2014 any explanation would be a hypothesis about a drafting decision nobody here witnessed.",
+   "not_shown": "Why. The regulation gives no reason for the pattern and this page offers none \u2014 any explanation would be a hypothesis about drafting decisions nobody here witnessed. Nor are the two bands strictly comparable: 28.06(6) caps an instructional GROUP and 28.06(7) caps a CLASS, and the preschool clauses count children with and without disabilities together.",
    "see": [],
-   "so_what": "The more separate the room, the LOWER the ceiling. That is the opposite of what most people assume."
+   "so_what": "School age falls 16 to 12. Preschool falls 20 to 9 \u2014 same direction, bigger drop."
+  },
+  {
+   "basis": "Every class-size clause, read for what it counts; a worked room checked back against the tier it satisfies on every build; and a search of the full text of 603 CMR 28.00 for eight phrasings of individual support, published beside the result.",
+   "bearing": "sizes",
+   "claim": "The rule sets the MINIMUM staffing for a group size. IEPs add on top of it",
+   "detail": "This is the most misread thing about the class-size rule, and it runs in both directions. Take the room people actually ask about: 12 children, one certified special educator, and 3 aides of whom 2 are assigned to individual children by their IEPs. The rule asks two questions \u2014 are there 12 students or fewer, and is there a certified special educator with an aide \u2014 and both are answered, so the room complies and has more staff than the rule requires. Every tier caps CHILDREN given a staffing configuration; not one of them limits adults. A room may also hold a speech therapist and a behaviour specialist and the class-size rule speaks to neither. So a room at the legal minimum and a room staffed three times over look identical from outside, which is why \"we have a lot of paras\" and \"our groups are within the rule\" can both be true and neither explains the other. And the regulation carries 0 limits on adults anywhere: this build searches its full text for 8 phrasings of individual support \u2014 \"one-to-one\", \"1:1\", \"individual aide\" among them \u2014 on every run, and publishes the count beside the result.",
+   "figure": "caps",
+   "figures": {
+    "adults": {
+     "text": "3",
+     "unit": "aides",
+     "value": 3
+    },
+    "caps": {
+     "text": "0",
+     "unit": "limits on adults in the room",
+     "value": 0
+    },
+    "iep": {
+     "text": "2",
+     "unit": "aides assigned by an IEP",
+     "value": 2
+    },
+    "students": {
+     "text": "12",
+     "unit": "children",
+     "value": 12
+    },
+    "terms": {
+     "text": "8",
+     "unit": "phrasings",
+     "value": 8
+    }
+   },
+   "id": "caps-children-not-adults",
+   "kind": "measured",
+   "literals": [
+    "1:1"
+   ],
+   "not_shown": "The corner of it. Where a group of 12 has exactly ONE aide and that aide is assigned to a single child, nothing says whether they also satisfy the tier: the regulation says \"assisted by one aide\" and defines neither the aide nor their duties. Assuming they do understates the staffing a group needs; assuming they do not overstates it. The document does not say, and this page does not choose. Registered as a gap.",
+   "see": [],
+   "so_what": "12 children with one educator and 3 aides is lawful. So is 12 with one aide."
   },
   {
    "basis": "DESE\u2019s SIMS data handbook, element DOE034; and 603 CMR 28.06(6)(d).",
@@ -338,6 +430,11 @@
    "side": "people",
    "what": "Where 16 of Lunenburg\u2019s students with disabilities are placed, in FY2026",
    "why": "DESE\u2019s placement breakdown prints four categories \u2014 Full Inclusion, Partial Inclusion, Substantially Separate and Separate School in District \u2014 and in FY2026 they sum to 242 of the 258 the same file prints as the total. Element DOE034 has nine acceptable values and this breakdown is in-district only, so the other 16 children are in categories the file does not print, and nothing published says which. That bounds every reading of the placement mix: the four printed rows are not a partition, and adding them and treating the result as the whole is the same error as summing a column that was never the total\u2019s parts. \u2014 closes: DESE\u2019s full DOE034 distribution for Lunenburg, or the district\u2019s 1 October SIMS placement submission."
+  },
+  {
+   "side": "people",
+   "what": "Whether an aide assigned to one child also counts as the aide that raises a group from eight students to twelve",
+   "why": "603 CMR 28.06(6)(c) and (d) raise the maximum group size from eight students to twelve when the certified special educator is \"assisted by one aide\". The regulation never defines the aide, never states their duties, and \u2014 searched on every build for eight phrasings \u2014 contains NO rule about one-to-one support of any kind. So where a child\u2019s IEP assigns an aide to that child, nothing published says whether that person also satisfies the tier. THE DIRECTION OF THE ERROR IS THE POINT: assuming they do understates the staffing a group needs, and assuming they do not overstates it, so neither assumption is safe and this project makes neither. It is the same wall as the paraprofessional gap, hit from the other side \u2014 the rule counts students and the staffing record counts posts, and nothing converts one into the other. \u2014 closes: DESE\u2019s program approval materials under 603 CMR 28.09, which describe how each approved group is staffed; or the district\u2019s own group descriptions naming which adults are counted against which tier."
   }
  ],
  "grain": "A REGULATION and a HEADCOUNT, and they are not the same quantity.",
@@ -394,6 +491,45 @@
   "total": 258,
   "unnamed": 16
  },
+ "room_extra_iep_aides": 2,
+ "rooms": [
+  {
+   "aides": 0,
+   "cite": "603 CMR 28.06(6)(d)",
+   "educators": 1,
+   "headline": "8 children",
+   "iep_aides": 0,
+   "key": "minimum-no-aide",
+   "minimum": true,
+   "students": 8,
+   "verdict": "Complies, at the minimum the rule allows",
+   "why": "One certified special educator and no aide. This is the largest group the rule permits without one."
+  },
+  {
+   "aides": 1,
+   "cite": "603 CMR 28.06(6)(d)",
+   "educators": 1,
+   "headline": "12 children",
+   "iep_aides": 0,
+   "key": "minimum-one-aide",
+   "minimum": true,
+   "students": 12,
+   "verdict": "Complies, at the minimum the rule allows",
+   "why": "The aide is what raises the ceiling from 8 to 12. Nothing more is required at this group size."
+  },
+  {
+   "aides": 3,
+   "cite": "603 CMR 28.06(6)(d)",
+   "educators": 1,
+   "headline": "12 children",
+   "iep_aides": 2,
+   "key": "ieps-on-top",
+   "minimum": false,
+   "students": 12,
+   "verdict": "Complies, with more staff than the rule requires",
+   "why": "The same group size, staffed three times over. The rule asks two questions \u2014 12 students or fewer, and a certified special educator with an aide \u2014 and both are answered. The other 2 are there because IEPs require them, not because this rule does."
+  }
+ ],
  "said": [
   {
    "board": "Finance Committee",
@@ -458,6 +594,41 @@
    "term": "603 CMR"
   }
  ],
+ "silent_on": [
+  {
+   "count": 0,
+   "term": "one-to-one"
+  },
+  {
+   "count": 0,
+   "term": "one to one"
+  },
+  {
+   "count": 0,
+   "term": "1:1"
+  },
+  {
+   "count": 0,
+   "term": "individual aide"
+  },
+  {
+   "count": 0,
+   "term": "individualized aide"
+  },
+  {
+   "count": 0,
+   "term": "dedicated aide"
+  },
+  {
+   "count": 0,
+   "term": "personal care"
+  },
+  {
+   "count": 0,
+   "term": "number of adults"
+  }
+ ],
+ "silent_total": 0,
  "sources": [
   {
    "bytes": 895948,
@@ -492,84 +663,256 @@
  ],
  "sub_aide_cap": 12,
  "sub_cap": 8,
+ "terms": [
+  {
+   "cite": "603 CMR 28.02(3)",
+   "defined": true,
+   "definition": "(3) Certified special educator shall mean a person with a teaching certificate or license in an area of special education or a related service provider with appropriate certification or license in his or her professional area. Licensure shall meet the requirements of the Massachusetts Regulations for Educator Licensure and Preparation Program Approval at 603 Code of Massachusetts Regulations CMR 7.00 and the requirements for renewal of license at 603 Code of Massachusetts Regulations CMR 44.00, as necessary. A certified or licensed special educator may provide, design, or supervise special education services.",
+   "note": "",
+   "term": "Certified special educator",
+   "uses": 7
+  },
+  {
+   "cite": "603 CMR 28.02(20)",
+   "defined": true,
+   "definition": "(20) Special education shall mean specially designed instruction to meet the unique needs of the eligible student or related services necessary to access the general curriculum and shall include the programs and services set forth in state and federal special education law.",
+   "note": "",
+   "term": "Special education",
+   "uses": 208
+  },
+  {
+   "cite": "603 CMR 28.02(9)",
+   "defined": true,
+   "definition": "(9) Eligible student shall mean a person aged three through 21 who has not attained a high school diploma or its equivalent, who has been determined by a Team to have a disability(ies), and as a consequence is unable to progress effectively in the general education program without specially designed instruction or is unable to access the general curriculum without a related service. An eligible student shall have the right to receive special education and any related services that are necessary for the student to benefit from special education or that are necessary for the student to access the general curriculum. In determining eligibility, the school district must thoroughly evaluate and provide a narrative description of the student's educational and developmental potential.",
+   "note": "",
+   "term": "Eligible student",
+   "uses": 63
+  },
+  {
+   "cite": "603 CMR 28.02(12)",
+   "defined": true,
+   "definition": "(12) Least restrictive environment ( LRE ) shall mean the educational placement that assures that, to the maximum extent appropriate, students with disabilities, including students in public or private institutions or other care facilities, are educated with students who are not disabled, and that special classes, separate schooling, or other removal of students with disabilities from the general education environment occurs only when the nature or severity of the student's disability is such that education in regular classes with the use of supplementary aids and services cannot be achieved satisfactorily.",
+   "note": "",
+   "term": "Least restrictive environment",
+   "uses": 8
+  },
+  {
+   "cite": "603 CMR 28.02(10)",
+   "defined": true,
+   "definition": "(10) In-district program shall mean a special education program operated in a public school building or other facility that provides educational services to students of comparable age, with and without disabilities.",
+   "note": "",
+   "term": "In-district program",
+   "uses": 10
+  },
+  {
+   "cite": "603 CMR 28.02(14)",
+   "defined": true,
+   "definition": "(14) Out-of-district program shall mean a special education program located in a building or facility outside of the general education environment that provides educational services primarily to students with disabilities and shall include all programs approved under 603 Code of Massachusetts Regulations CMR 28.09. Such program may be operated by a private organization or individual, a public school district, or a collaborative.",
+   "note": "",
+   "term": "Out-of-district program",
+   "uses": 6
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "the word that decides whether a group of eight may hold twelve, and the regulation defines neither the person nor their duties. It names no other document for the meaning either.",
+   "term": "aide",
+   "uses": 7
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "every occurrence is in the staff-training clauses of 603 CMR 28.03(1)(a), one of which names \u201cteachers, paraprofessionals, and teacher assistants\u201d as three separate things. The regulation never says what one is, or what one may do.",
+   "term": "paraprofessional",
+   "uses": 2
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "the only licensure requirement anywhere in the regulation is 603 CMR 28.09(7)(b), and it governs APPROVED SPECIAL EDUCATION SCHOOLS rather than a district classroom. Nothing here states what a teacher in 28.06(7) must hold.",
+   "term": "teacher",
+   "uses": 15
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "",
+   "term": "teacher assistant",
+   "uses": 1
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "",
+   "term": "instructional grouping",
+   "uses": 9
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "",
+   "term": "substantially separate",
+   "uses": 7
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "",
+   "term": "class size",
+   "uses": 4
+  },
+  {
+   "cite": "",
+   "defined": false,
+   "definition": "",
+   "note": "searched for in 8 phrasings across the full text. The regulation contains no rule about individual support at all.",
+   "term": "one-to-one",
+   "uses": 0
+  }
+ ],
  "threshold_pct": 60,
  "tiers": [
   {
+   "ages": "aged five and older",
    "aides": 0,
+   "band": "School age",
    "cite": "603 CMR 28.06(6)(c)",
+   "condition": "",
    "educators": 1,
+   "order": 8,
+   "role": "certified special educator",
+   "separateness": "partly separate",
+   "separateness_rank": 1,
    "setting": "Outside general education 60% or less of the schedule",
    "short": "Partly separate",
    "staff": "a certified special educator",
    "students": 8
   },
   {
+   "ages": "aged five and older",
    "aides": 1,
+   "band": "School age",
    "cite": "603 CMR 28.06(6)(c)",
+   "condition": "",
    "educators": 1,
+   "order": 12,
+   "role": "certified special educator",
+   "separateness": "partly separate",
+   "separateness_rank": 1,
    "setting": "Outside general education 60% or less of the schedule",
    "short": "Partly separate",
    "staff": "a certified special educator assisted by one aide",
    "students": 12
   },
   {
+   "ages": "aged five and older",
    "aides": 2,
+   "band": "School age",
    "cite": "603 CMR 28.06(6)(c)",
+   "condition": "",
    "educators": 1,
+   "order": 16,
+   "role": "certified special educator",
+   "separateness": "partly separate",
+   "separateness_rank": 1,
    "setting": "Outside general education 60% or less of the schedule",
    "short": "Partly separate",
    "staff": "a certified special educator assisted by two aides",
    "students": 16
   },
   {
+   "ages": "aged five and older",
    "aides": 0,
+   "band": "School age",
    "cite": "603 CMR 28.06(6)(d)",
+   "condition": "",
    "educators": 1,
+   "order": 8,
+   "role": "certified special educator",
+   "separateness": "substantially separate",
+   "separateness_rank": 2,
    "setting": "Substantially separate \u2014 more than 60% of the schedule",
    "short": "Substantially separate",
    "staff": "one certified special educator",
    "students": 8
   },
   {
+   "ages": "aged five and older",
    "aides": 1,
+   "band": "School age",
    "cite": "603 CMR 28.06(6)(d)",
+   "condition": "",
    "educators": 1,
+   "order": 12,
+   "role": "certified special educator",
+   "separateness": "substantially separate",
+   "separateness_rank": 2,
    "setting": "Substantially separate \u2014 more than 60% of the schedule",
    "short": "Substantially separate",
    "staff": "a certified special educator and an aide",
    "students": 12
-  }
- ],
- "young": [
+  },
   {
+   "ages": "three and four years of age",
    "aides": 1,
+   "band": "Young children",
    "cite": "603 CMR 28.06(7)(e)",
+   "condition": "up to five of the class have disabilities",
    "educators": 1,
-   "setting": "Young children, integrated setting (ages three and four)",
+   "order": 5,
+   "role": "teacher",
+   "separateness": "integrated",
+   "separateness_rank": 0,
+   "setting": "Integrated with children who do not have disabilities",
    "short": "Integrated preschool",
-   "staff": "one teacher and one aide, with no more than five of the 20 children having disabilities",
+   "staff": "one teacher and one aide",
    "students": 20,
-   "swd_cap": 5
+   "swd_cap": 5,
+   "swd_min": null
   },
   {
+   "ages": "three and four years of age",
    "aides": 1,
+   "band": "Young children",
    "cite": "603 CMR 28.06(7)(e)",
+   "condition": "six or seven of the class have disabilities",
    "educators": 1,
-   "setting": "Young children, integrated setting (ages three and four)",
+   "order": 7,
+   "role": "teacher",
+   "separateness": "integrated",
+   "separateness_rank": 0,
+   "setting": "Integrated with children who do not have disabilities",
    "short": "Integrated preschool",
-   "staff": "one teacher and one aide, where six or seven of the children have disabilities",
+   "staff": "one teacher and one aide",
    "students": 15,
-   "swd_cap": 7
+   "swd_cap": 7,
+   "swd_min": 6
   },
   {
+   "ages": "three and four years of age",
    "aides": 1,
+   "band": "Young children",
    "cite": "603 CMR 28.06(7)(f)",
+   "condition": "more than 50% of the class have disabilities",
    "educators": 1,
-   "setting": "Young children, substantially separate (ages three and four)",
+   "order": 9,
+   "role": "teacher",
+   "separateness": "substantially separate",
+   "separateness_rank": 2,
+   "setting": "Substantially separate \u2014 serving primarily or solely children with disabilities",
    "short": "Substantially separate preschool",
    "staff": "one teacher and one aide",
    "students": 9,
-   "swd_cap": null
+   "swd_cap": null,
+   "swd_min": null
   }
- ]
+ ],
+ "young_share": 50
 }

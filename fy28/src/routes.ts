@@ -24,12 +24,14 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'families'
   | 'unwind'
   | 'minaid'
+  | 'formula'
   | 'sped'
   | 'spedcount'
   | 'outflow'
   | 'spedcost'
   | 'spedroute'
   | 'classsize'
+  | 'courses'
   | 'peers'
   | 'montytech'
   | 'required'
@@ -182,6 +184,15 @@ export const SLUG: Record<Tab, string> = {
   // somebody receives rather than as the complaint the town has actually been making to
   // the Legislature. NOT `the-formula`, which promises every formula in the budget.
   minaid: 'why-we-only-get-minimum-aid',
+  // HOW Chapter 70 works, as against WHERE Lunenburg sits in it. Two pages because they
+  // are two questions: /why-we-only-get-minimum-aid establishes the town's position and
+  // this one explains the mechanism, in eight plain steps. The slug is what somebody types
+  // when they want the thing explained -- "how does Chapter 70 work" -- rather than
+  // `chapter-70`, which is an alias for /state-aid, or `ch70-formula` and `the-formula`,
+  // which have meant /why-we-only-get-minimum-aid since before this page existed. A link
+  // that has been shared once keeps landing where it landed, even when a newer page is a
+  // better answer to the word.
+  formula: 'how-chapter-70-works',
   // Special education, as FOUR reports behind one door. The door's slug is the words a
   // resident says -- "special education" -- and nothing more, because the page is a
   // chooser rather than an argument and a slug that named a finding would preload one.
@@ -224,6 +235,19 @@ export const SLUG: Record<Tab, string> = {
   // older analysis about what neighbours CUT rather than what they spend. NOT `spending`
   // or `comparison` on their own: the first promises the whole budget and the second
   // promises nothing at all. NOT `how-we-compare`, which reads as a verdict.
+  // WHAT RAN, as against who was employed to run it. The slug is the question a parent
+  // asks at a meeting -- "did the cuts change what my kid can take?" -- narrowed to the
+  // half this page can answer, and the verb is the grain: a section is what RAN, which is
+  // what the schedule offered and what students chose, together. NOT `course-offerings`,
+  // which is the district's phrase for the catalogue and promises a list of courses this
+  // file does not hold -- DESE publishes sections by SUBJECT AREA and never by course, so
+  // an address naming courses in the plural would over-promise on the first click. NOT
+  // `electives`, which is one part of what is counted here and the loudest part, so it
+  // would preload the finding. NOT `class-size` or anything near it: those have meant
+  // /special-education-class-size since before this page existed, they are cited off this
+  // site, and that page quotes a STATUTE while this one counts sections. Both are
+  // accepted as aliases below, because they are what somebody types.
+  courses: 'what-courses-actually-ran',
   peers: 'what-other-districts-spend',
   // The name everybody in town says out loud, and nothing else. NOT
   // `regional-vocational-assessment`, which is the accounting shape of the thing and what
@@ -382,6 +406,12 @@ const ALIASES: Record<string, Tab> = {
   'why-we-only-get-minimum-aid': 'minaid', 'minimum-aid': 'minaid',
   'min-aid': 'minaid', 'ch70-formula': 'minaid', 'chapter-70-formula': 'minaid',
   'foundation-budget': 'minaid', 'the-formula': 'minaid',
+  // The forms somebody types wanting the formula EXPLAINED rather than applied to this
+  // town. NOT 'chapter-70', 'ch70-formula', 'the-formula' or 'foundation-budget': all
+  // four already land elsewhere and are cited off this site.
+  'how-chapter-70-works': 'formula', 'how-the-formula-works': 'formula',
+  'how-chapter-70-is-calculated': 'formula', 'chapter-70-explained': 'formula',
+  'how-school-aid-is-calculated': 'formula', 'minimum-aid-explained': 'formula',
   'if-students-leave': 'leaving', 'school-choice': 'leaving', 'choicing-out': 'leaving',
   'students-leaving': 'leaving', 'school-choice-scenario': 'leaving',
   'what-if-students-leave': 'leaving', 'transfers-out': 'leaving',
@@ -434,6 +464,16 @@ const ALIASES: Record<string, Tab> = {
   '603cmr28': 'classsize', 'the-ratio-rule': 'classsize',
   'students-per-teacher': 'classsize', 'how-many-students-per-teacher': 'classsize',
   'instructional-grouping': 'classsize',
+  // NOT 'class-size', 'class-sizes' or 'students-per-teacher' -- all three have meant
+  // /special-education-class-size since before this page existed and are cited off this
+  // site. A link that has been shared once keeps landing where it landed. These are the
+  // forms somebody types looking for WHAT RAN.
+  'what-courses-actually-ran': 'courses', 'course-offerings': 'courses',
+  courses: 'courses', electives: 'courses', 'course-catalog': 'courses',
+  'program-of-studies': 'courses', 'what-gets-taught': 'courses',
+  'what-is-taught': 'courses', 'course-sections': 'courses', sections: 'courses',
+  curriculum: 'courses', 'master-schedule': 'courses',
+  'did-the-cuts-cut-courses': 'courses', 'what-classes-run': 'courses',
 }
 
 const BY_SLUG: Record<string, Tab> = {
@@ -483,6 +523,7 @@ export const LABEL: Record<Tab, string> = {
   families: 'What a family actually pays',
   unwind: 'When a grant ends — who picks up the bill',
   minaid: 'Chapter 70 — the formula, and why it pays the floor',
+  formula: 'How Chapter 70 actually works, in eight steps',
   askus: 'Ask us a question',
   sped: 'Special education — four reports',
   montytech: 'Monty Tech — the assessment, and what sets it',
@@ -491,6 +532,7 @@ export const LABEL: Record<Tab, string> = {
   spedcost: 'What out-of-district special education costs, and what comes back',
   spedroute: 'Who ends up out of district',
   classsize: 'How many students one special education group may have',
+  courses: 'What courses actually ran, subject by subject',
   peers: 'What other districts spend, for each pupil',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
@@ -521,6 +563,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   families: 'themoney',
   unwind: 'themoney',
   minaid: 'themoney',
+  formula: 'minaid',
   sped: 'reports',
   spedcount: 'sped', spedcost: 'sped', spedroute: 'sped',
   // NOT under `sped`, and that is the whole structural point of this page. It counts
@@ -530,6 +573,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // education hub still reaches it, as the question it cannot answer.
   outflow: 'reports',
   peers: 'reports',
+  courses: 'reports',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -643,10 +687,10 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   reports: 'analyses', staffing: 'analyses', stopped: 'analyses', leaving: 'analyses',
   cuts: 'analyses',
   families: 'analyses', sportsmoney: 'analyses', insurance: 'analyses',
-  variance: 'analyses', unwind: 'analyses', minaid: 'analyses',
+  variance: 'analyses', unwind: 'analyses', minaid: 'analyses', formula: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
-  classsize: 'analyses',
+  classsize: 'analyses', courses: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
@@ -692,11 +736,21 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // `cuts` sits beside `staffing` and `stopped` on purpose: the three are the same
   // question asked of three records -- who is employed, which lines ended, and what the
   // district said it was removing -- and a reader who opens one wants the other two.
+  // `courses` sits INSIDE that run, immediately after `staffing`, because it is the
+  // fourth record of the same question and the only one that counts what was TAUGHT
+  // rather than what was employed or appropriated. A reader who has just been told
+  // teacher FTE fell in a subject arrives at the next question -- did a class stop
+  // running -- and that is the page next to it.
   // `classsize` sits immediately after `sped` because it is the question a reader who
   // opened special education came with -- how many children to a teacher -- and it is
   // the only page in the area that quotes a STATUTE rather than measuring this town.
+  // `formula` sits immediately after `minaid` because it is the question a reader who
+  // opened that page arrives with -- HOW does this work -- and the two are deliberately
+  // separate addresses: one establishes where the town sits in the formula and the other
+  // explains the formula. Adjacent in the bar is where the difference is cheapest to see.
   analyses: ['addsup', 'reports', 'sped', 'classsize', 'peers', 'required', 'minaid',
-             'staffing', 'cuts',
+             'formula',
+             'staffing', 'courses', 'cuts',
              'stopped',
              'unwind', 'outflow', 'montytech', 'leaving', 'families', 'sportsmoney',
              'insurance', 'variance'],

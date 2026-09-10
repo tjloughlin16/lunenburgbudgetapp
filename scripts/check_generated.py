@@ -299,6 +299,19 @@ CHECKS = [
     # still a faithful copy of the workbook. It also re-reads the eight meeting quotes and
     # refuses to write if the five money_gaps rows it CITES have been renamed.
     ('build_minimum_aid.py', ['--check']),
+    # Chapter 70's FORMULA, on /how-chapter-70-works — the eight-step explanation, which
+    # is the one artefact on this site that was authored rather than computed. This entry
+    # catches more than staleness. The generator refuses to write if the step count moves,
+    # if any step has lost its `plain` or its `watch` line, if a DESE definition the page
+    # QUOTES is no longer in the workbook extract, if the foundation aid increment stops
+    # being zero — which is the whole reason the year's per-pupil increase and the marginal
+    # effect of one pupil are the same number, and the page says they coincide for that
+    # reason — if the reduction column matches no year, or if the foundation budget has
+    # ever fallen below the required contribution, which is the threshold the page's limit
+    # section is built on. It shares its figures with build_minimum_aid by CALLING it
+    # rather than reading its published file, so the two pages cannot state different
+    # numbers for one quantity.
+    ('build_ch70_formula.py', ['--check']),
     # What every OTHER district spends, on /what-other-districts-spend. This entry catches
     # far more than a stale file, because the generator asserts the structure the page's
     # sentences rest on and refuses to write if one has stopped holding: that the four
@@ -425,6 +438,21 @@ CHECKS = [
     ('check_meeting_watch_idempotent.py', []),
     ('build_meeting_feed.py', ['--check']),
     ('build_spending_vs_required.py', ['--check']),
+    # What RAN, as against who was employed to run it -- the only measurement in this
+    # archive that counts classes rather than people, dollars or children. The generator
+    # asserts both rollups on every one of the 79 org-years, that no Chapter 74 row is
+    # ever summed into a subject total, and that the analysis window is a single grade
+    # span read off DESE's own enrolment-by-grade counts rather than off a school's name.
+    ('build_course_offerings.py', ['--check']),
+    # And the second route. The generator reads `dese_class_size` out of the database, so
+    # a load that dropped a row or collided a primary key would have the generator and its
+    # own --check agreeing perfectly about a wrong number. This reads the CSV the database
+    # was built from, pivots it in Python rather than filtering in SQL, re-reads the
+    # curriculum workbook BY COLUMN POSITION, and asserts the figures the PAGE derives at
+    # render time -- the net change, the seats-per-student series, the share of the school
+    # in each subject -- which no generator publishes and nothing else would notice going
+    # wrong.
+    ('verify_course_offerings.py', []),
     # The generator agrees with its own output by construction. This recomputes every
     # figure /what-the-state-requires-us-to-spend renders by a SECOND route -- both
     # DESE tables read whole and partitioned in Python rather than filtered in SQL --

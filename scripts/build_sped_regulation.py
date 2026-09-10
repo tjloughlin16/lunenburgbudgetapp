@@ -98,6 +98,8 @@ GAP_ALSO = (
     'Whether an “aide” in the class-size regulation is a paraprofessional the '
     'town budgets',
     'Where 16 of Lunenburg’s students with disabilities are placed, in FY2026',
+    'Whether an aide assigned to one child also counts as the aide that raises a group '
+    'from eight students to twelve',
 )
 
 SEARCHED = ['class size', 'paraprofessional', 'caseload', 'substantially separate',
@@ -193,6 +195,28 @@ def regulation():
     return open(path, encoding='utf-8').read()
 
 
+# THE EXTRACT OPENS WITH THE PAGE'S OWN TABLE OF CONTENTS, and a count taken over the
+# whole file counts it twice. `28.09: Approval of Public or Private Day and Residential
+# Special Education School Programs` is a heading, printed once in the contents and once
+# over the section -- so counting the words the tier table leans on across the whole file
+# reports two uses of a term the regulation used once. Every COUNT below is therefore
+# taken over the body, which begins at the SECOND occurrence of the first heading.
+#
+# The clause extraction is unaffected: it locates each passage by its own opening words,
+# which are unique in the file. This is only about counting.
+BODY_STARTS = '28.01: Authority, Scope and Purpose'
+
+
+def body(whole):
+    """The regulation without its own table of contents."""
+    first = whole.find(BODY_STARTS)
+    second = whole.find(BODY_STARTS, first + 1)
+    if first < 0 or second < 0:
+        fail('the extracted regulation no longer carries a table of contents followed by '
+             'its body, and every count on this page is taken over the body')
+    return whole[second:]
+
+
 def only(text, needle, what):
     """The one place `needle` occurs, or a stop. Rule 13: a quote that matches twice was
     never checked against anything."""
@@ -271,6 +295,9 @@ def clauses():
         '28.06(6)(f)': dict(cite='603 CMR 28.06(6)(f)',
                             text=subclause(six, 'f', '28.06(6)(f)'),
                             title='No more than 48 months between youngest and oldest'),
+        '28.06(7)': dict(cite='603 CMR 28.06(7)',
+                         text=seven.split('\n')[0].strip(),
+                         title='Programs for young children'),
         '28.06(6)(g)': dict(cite='603 CMR 28.06(6)(g)',
                             text=subclause(six, 'g', '28.06(6)(g)'),
                             title='Approved programs take the substantially separate sizes'),
@@ -306,14 +333,41 @@ def clauses():
 
 # ------------------------------------------------------------------- the scenario table
 
-def tiers(cl, whole):
-    """The group-size tiers, parsed out of the two sentences that state them.
+# The two words the regulation uses for the one adult in charge of a group. They are NOT
+# asserted to be the same qualification -- 28.06(6) says one and 28.06(7) says the other,
+# and each row carries its own clause's word so a merged table cannot quietly equate them.
+EDUCATOR = 'certified special educator'
+TEACHER = 'teacher'
 
-    NOTHING HERE IS TYPED. Each row's student count, its educator count and its aide count
-    come out of the clause's own words, and the shape of each sentence is asserted -- three
-    tiers in (c), two in (d), exactly one certified special educator in every one of them.
-    That last assertion is the answer to the question anybody laying this out asks first:
-    the teacher count never changes, and what a larger group buys is an aide."""
+SCHOOL_AGE = 'School age'
+YOUNG = 'Young children'
+
+
+def tiers(cl, whole):
+    """Every group-size tier the regulation sets, in BOTH age bands, in one list.
+
+    NOTHING HERE IS TYPED. Each row's student count, its educator count, its aide count
+    and the age band it applies to come out of the clause's own words, and the shape of
+    each sentence is asserted -- three tiers in (c), two in (d), two integrated preschool
+    cases and one substantially separate one in (7), and exactly ONE educator in every
+    single row. That last assertion is the whole point of putting them in one table: the
+    educator count never changes, at any age, in any setting, and what a larger group buys
+    is an aide.
+    """
+    # THE AGE SPLIT, from the two clauses that state it rather than from memory. The
+    # regulation divides at five: 28.06(6) governs eligible students "aged five and
+    # older" and 28.06(7) covers children "three and four years of age". A merged table
+    # has to show that split on the row, because a reader who takes a preschool maximum
+    # for a school-age one has been misled by our layout rather than by the regulation.
+    sa = re.search(r'eligible students (aged [a-z]+ and older)', cl['28.06(6)']['text'])
+    yg = re.search(r'eligible children ([a-z]+ and [a-z]+ years of age)',
+                   cl['28.06(7)']['text'])
+    if not sa or not yg:
+        fail('the regulation no longer states the ages each of 28.06(6) and 28.06(7) '
+             'applies to in the words this reads. A merged table cannot label its bands '
+             'without them')
+    school_ages, young_ages = sa.group(1), yg.group(1)
+
     rows = []
 
     c = cl['28.06(6)(c)']['text']
@@ -332,7 +386,9 @@ def tiers(cl, whole):
         rows.append(dict(
             setting='Outside general education 60% or less of the schedule',
             short='Partly separate', cite=cl['28.06(6)(c)']['cite'],
-            students=count(students), educators=1,
+            band=SCHOOL_AGE, ages=school_ages, role=EDUCATOR,
+            separateness='partly separate', separateness_rank=1,
+            condition='', students=count(students), educators=1,
             aides=0 if alone else count(aides),
             staff=('a certified special educator' if alone
                    else 'a certified special educator assisted by %s aide%s'
@@ -353,7 +409,9 @@ def tiers(cl, whole):
         rows.append(dict(
             setting='Substantially separate — more than 60% of the schedule',
             short='Substantially separate', cite=cl['28.06(6)(d)']['cite'],
-            students=count(students), educators=1,
+            band=SCHOOL_AGE, ages=school_ages, role=EDUCATOR,
+            separateness='substantially separate', separateness_rank=2,
+            condition='', students=count(students), educators=1,
             aides=0 if staff == 'one certified special educator' else 1,
             staff=staff))
 
@@ -368,14 +426,19 @@ def tiers(cl, whole):
              % whole.count('two aides'))
     if max(r['aides'] for r in rows if r['short'] == 'Substantially separate') != 1:
         fail('28.06(6)(d) now names a tier with more than one aide')
-    if {r['educators'] for r in rows} != {1}:
-        fail('a tier no longer names exactly one certified special educator, which is the '
-             'shape the whole table is built to show')
 
-    # Young children. A different clause, different words -- `teacher` rather than
-    # `certified special educator` -- and the row carries the clause's own wording rather
-    # than being normalised into the rows above, because nothing here establishes that a
-    # teacher in 28.06(7) is a certified special educator in 28.06(6).
+    # YOUNG CHILDREN, IN THE SAME TABLE, and this is a decision rather than a tidy-up.
+    #
+    # These sat in a section of their own headed "a different rule again", and held out
+    # like that they read as an EXCEPTION. They are not: they are the same shape carried
+    # into the other age band, and merging them turns the page's strongest finding from a
+    # fact about one clause into a pattern holding across every age the regulation covers.
+    # TJ, on the first draft: move them up into the ratios.
+    #
+    # WHAT MERGING MUST NOT FLATTEN. 28.06(7) says `teacher` where 28.06(6) says
+    # `certified special educator`, and nothing here establishes that those are the same
+    # qualification. So every row carries the word ITS OWN clause uses, in `role`, and the
+    # table prints it -- the rows sit together and are not silently made identical.
     e = cl['28.06(7)(e)']['text']
     m = re.search(r'class size shall not exceed (\d+) with ([a-z]+) teacher and ([a-z]+) '
                   r'aide and no more than ([a-z]+) students with disabilities', e)
@@ -385,34 +448,61 @@ def tiers(cl, whole):
     if not m or not m2:
         fail('28.06(7)(e) no longer states the integrated preschool class sizes in the '
              'two sentences this parses')
+    # WHY THERE ARE TWO INTEGRATED ROWS, which is the first thing anybody asks of a table
+    # showing one citation against two different maximums. The clause makes the class size
+    # depend on HOW MANY OF THE CHILDREN HAVE DISABILITIES: up to five, and the class may
+    # reach 20; six or seven, and it may not exceed 15. Both conditions are read out of
+    # the sentence that states them, so the table explains itself rather than looking like
+    # a parsing error.
     young = [
-        dict(setting='Young children, integrated setting (ages three and four)',
+        dict(setting='Integrated with children who do not have disabilities',
              short='Integrated preschool', cite=cl['28.06(7)(e)']['cite'],
+             band=YOUNG, ages=young_ages, role=TEACHER,
+             separateness='integrated', separateness_rank=0,
+             condition='up to %s of the class have disabilities' % m.group(4),
              students=int(m.group(1)), educators=count(m.group(2)),
              aides=count(m.group(3)),
-             staff='%s teacher and %s aide, with no more than %s of the %s children '
-                   'having disabilities' % (m.group(2), m.group(3), m.group(4),
-                                            m.group(1)),
-             swd_cap=count(m.group(4))),
-        dict(setting='Young children, integrated setting (ages three and four)',
+             staff='%s teacher and %s aide' % (m.group(2), m.group(3)),
+             swd_min=None, swd_cap=count(m.group(4))),
+        dict(setting='Integrated with children who do not have disabilities',
              short='Integrated preschool', cite=cl['28.06(7)(e)']['cite'],
+             band=YOUNG, ages=young_ages, role=TEACHER,
+             separateness='integrated', separateness_rank=0,
+             condition='%s or %s of the class have disabilities'
+                       % (m2.group(1), m2.group(2)),
              students=int(m2.group(3)), educators=count(m2.group(4)),
              aides=count(m2.group(5)),
-             staff='%s teacher and %s aide, where %s or %s of the children have '
-                   'disabilities' % (m2.group(4), m2.group(5), m2.group(1), m2.group(2)),
-             swd_cap=count(m2.group(2))),
+             staff='%s teacher and %s aide' % (m2.group(4), m2.group(5)),
+             swd_min=count(m2.group(1)), swd_cap=count(m2.group(2))),
     ]
     f = cl['28.06(7)(f)']['text']
     m3 = re.search(r'limit class sizes to ([a-z]+) students with ([a-z]+) teacher and '
                    r'([a-z]+) aide', f)
-    if not m3:
-        fail('28.06(7)(f) no longer states the substantially separate preschool class size')
+    share = re.search(r'programs in which more than (\d+)% of the children have '
+                      r'disabilities', f)
+    if not m3 or not share:
+        fail('28.06(7)(f) no longer states the substantially separate preschool class '
+             'size and the share of children that defines the setting')
     young.append(dict(
-        setting='Young children, substantially separate (ages three and four)',
+        setting='Substantially separate — serving primarily or solely children with '
+                'disabilities',
         short='Substantially separate preschool', cite=cl['28.06(7)(f)']['cite'],
+        band=YOUNG, ages=young_ages, role=TEACHER,
+        separateness='substantially separate', separateness_rank=2,
+        condition='more than %s%% of the class have disabilities' % share.group(1),
         students=count(m3.group(1)), educators=count(m3.group(2)),
         aides=count(m3.group(3)),
-        staff='%s teacher and %s aide' % (m3.group(2), m3.group(3)), swd_cap=None))
+        staff='%s teacher and %s aide' % (m3.group(2), m3.group(3)),
+        swd_min=None, swd_cap=None))
+    young_share = int(share.group(1))
+
+    # AND THE INVARIANT IS ASSERTED ACROSS BOTH BANDS, not just the school-age one. One
+    # educator in every tier the regulation sets, at every age, in every setting. That is
+    # the claim the merged table exists to make, and the build refuses to publish if a
+    # single row stops supporting it.
+    if {r['educators'] for r in rows + young} != {1}:
+        fail('a tier no longer names exactly one educator. The merged table\u2019s whole '
+             'claim is that the educator count never changes and only the aides scale')
 
     # The two provisions that move a row rather than making one.
     mid = re.search(r'increase the size of an instructional grouping by no more than '
@@ -422,10 +512,237 @@ def tiers(cl, whole):
     if not mid or not age:
         fail('28.06(6)(e) or (f) no longer states its own limit in the words this parses')
 
-    return rows, young, count(mid.group(1)), int(age.group(1))
+    return rows, young, count(mid.group(1)), int(age.group(1)), young_share
 
 
 # ------------------------------------------------------ how DESE's labels are defined
+
+# WHAT THE REGULATION NEVER SAYS, and it has to be MEASURED rather than asserted.
+#
+# TJ: "include 1:1s in a classroom to show that you can have many paras/aides in a
+# classroom and it doesn't count against the ratio." He is right about the substance and
+# the framing is the whole risk: 603 CMR 28.00 contains NO rule about one-to-one support,
+# so this may not be presented as one. What it contains is a cap on STUDENTS given a
+# staffing configuration, and no cap on adults anywhere.
+#
+# A claim that a document says nothing about something is the easiest kind to get wrong
+# and the hardest to notice being wrong, so it is a search with its terms published beside
+# the result -- the same discipline as printing the denominator on a minutes search. If
+# DESE ever adds a clause about individual aides, this count stops being zero and the
+# build says so instead of going on publishing "the regulation is silent".
+SILENT_ON = ('one-to-one', 'one to one', '1:1', 'individual aide', 'individualized aide',
+             'dedicated aide', 'personal care', 'number of adults')
+
+
+# THE WORDS THE TIER TABLE LEANS ON, and whether the regulation defines any of them.
+#
+# TJ: "make sure to define the terms of aids paras etc if the definitions exist, or say
+# that if they dont". The page already tells a reader that `aide` and `paraprofessional`
+# are two documents' words and asserts nothing about whether they name the same job. That
+# distinction is unusable without knowing what either one means -- so the terms are set
+# out, and THE ABSENCES ARE THE HALF THAT MATTERS.
+#
+# NOTHING IN THIS LIST DECLARES WHETHER A TERM IS DEFINED. Each is looked up in 28.02 on
+# every build and the answer is whatever the search returns, so a term that gains a
+# definition at DESE appears here as defined without anybody editing this file, and one
+# that loses it stops being quoted rather than being quoted from memory.
+#
+# RULE 7 GOVERNS THE SECOND COLUMN. "The regulation uses this word nine times and never
+# defines it" is a FACT and it is all that is published. What the word must therefore mean
+# -- that an aide is a paraprofessional, that a teacher must hold a particular licence --
+# is a hypothesis, and it is not offered. Where the regulation itself points somewhere,
+# that pointer is quoted; where it points nowhere, the row says so.
+TERMS = [
+    'Certified special educator',
+    'Special education',
+    'Eligible student',
+    'Least restrictive environment',
+    'In-district program',
+    'Out-of-district program',
+    'aide',
+    'paraprofessional',
+    'teacher',
+    'teacher assistant',
+    'instructional grouping',
+    'substantially separate',
+    'class size',
+    'one-to-one',
+]
+
+
+def definitions(whole):
+    """Every term the tier table leans on: defined here, or used and never defined.
+
+    The definitions section is bounded by the first definition's own opening words and
+    the first clause of 28.03 -- both unique in the document -- rather than by the
+    heading `28.02: Definitions`, which appears twice because the page prints a table of
+    contents. A location is not an identity; that is the shape of nearly every defect in
+    this repository."""
+    defs_block = block(whole,
+                       '(1) Approved private special education school or approved '
+                       'program shall mean',
+                       '(1) General Responsibilities of the School District.', '28.02')
+    found = {}
+    for m in re.finditer(r'\((\d+)\)\s+([A-Z][^\n]*?)\s+shall (?:mean|have the meaning)'
+                         r'[^\n]*', defs_block):
+        found[m.group(2).strip().lower()] = dict(number=int(m.group(1)),
+                                                 term=m.group(2).strip(),
+                                                 text=m.group(0).strip())
+    if len(found) < 15:
+        fail('603 CMR 28.02 parsed to %d definitions, and it has always carried far more. '
+             'The definitions section is not being read' % len(found))
+
+    text = body(whole)
+    out = []
+    for term in TERMS:
+        uses = len(re.findall(r'\b' + re.escape(term), text, re.I))
+        hit = None
+        for key, d in found.items():
+            if key == term.lower() or key.startswith(term.lower() + ' ('):
+                hit = d
+                break
+        row = dict(term=term, uses=uses, defined=bool(hit), note='')
+        if hit:
+            row.update(cite='603 CMR 28.02(%d)' % hit['number'], definition=hit['text'])
+        else:
+            row.update(cite='', definition='')
+            # AND THE ABSENCE IS ASSERTED, not assumed. A term this says is undefined must
+            # not turn out to be defined somewhere else in the regulation under a slightly
+            # different heading -- so the whole text is searched for it being given a
+            # meaning, and the build stops if one is found.
+            if re.search(r'\b' + re.escape(term) + r'\b\s+shall (?:mean|have the meaning)',
+                         whole, re.I):
+                fail('%r is defined somewhere in the regulation and this page is about to '
+                     'publish that it is not' % term)
+        if uses == 0 and term.lower() not in ('one-to-one',):
+            fail('%r does not appear in the regulation at all, so a page listing it as a '
+                 'term the rule uses would be wrong' % term)
+        out.append(row)
+
+    # TWO NOTES THAT ARE MEASURED RATHER THAN REMEMBERED, and both are about an absence.
+    #
+    # `paraprofessional` is the word the town, the district's budget and DESE's staffing
+    # return all use, and the regulation that decides group sizes contains it only in the
+    # clauses about STAFF TRAINING. That is checkable -- every occurrence either lies
+    # inside 28.03(1) or it does not -- so it is checked, and the note is written only if
+    # it holds.
+    train = block(whole, '(1) General Responsibilities of the School District.',
+                  '(2) Administrator of Special Education.', '28.03(1)')
+    for row in out:
+        if row['term'] == 'paraprofessional':
+            inside = len(re.findall(r'\b' + re.escape(row['term']), train, re.I))
+            if inside == row['uses']:
+                row['note'] = ('every occurrence is in the staff-training clauses of '
+                               '603 CMR 28.03(1)(a), one of which names \u201cteachers, '
+                               'paraprofessionals, and teacher assistants\u201d as three '
+                               'separate things. The regulation never says what one is, '
+                               'or what one may do.')
+            else:
+                row['note'] = ('%d of its %d occurrences are outside the staff-training '
+                               'clauses' % (row['uses'] - inside, row['uses']))
+        # `teacher` is undefined here too, and the only thing the regulation says about
+        # what one must hold is in the section on APPROVED SCHOOLS -- which is a
+        # different population from a district classroom, and the note says so rather
+        # than letting the citation imply otherwise.
+        if row['term'] == 'teacher' and not row['defined']:
+            lic = ('(b) Teaching staff shall have teaching licensure appropriate to meet '
+                   'the needs of the population served')
+            if whole.count(lic) == 1:
+                row['note'] = ('the only licensure requirement anywhere in the regulation '
+                               'is 603 CMR 28.09(7)(b), and it governs APPROVED SPECIAL '
+                               'EDUCATION SCHOOLS rather than a district classroom. '
+                               'Nothing here states what a teacher in 28.06(7) must hold.')
+        if row['term'] == 'aide' and not row['defined']:
+            row['note'] = ('the word that decides whether a group of eight may hold '
+                           'twelve, and the regulation defines neither the person nor '
+                           'their duties. It names no other document for the meaning '
+                           'either.')
+        if row['term'] == 'one-to-one' and row['uses'] == 0:
+            row['note'] = ('searched for in %d phrasings across the full text. The '
+                           'regulation contains no rule about individual support at all.'
+                           % len(SILENT_ON))
+
+    if not any(r['defined'] for r in out) or not any(not r['defined'] for r in out):
+        fail('the terms table has gone all one way. Its whole point is the contrast '
+             'between the words 28.02 defines and the words it only uses')
+    return out
+
+
+# HOW MANY EXTRA AIDES THE WORKED ROOM SHOWS, and why the number is declared here.
+#
+# TJ's question: "If we see 12 kids in a room, with 1 teacher and 3 paras, but each para
+# is a 1:1, how does that work out?" The answer is that the room complies and has more
+# staff than the rule requires -- and the room is how the page says so, because the tier
+# table alone only answers it for a reader who already knows the numbers are a ceiling on
+# CHILDREN rather than a description of staffing.
+#
+# The student count and the minimum staffing in every room below are READ OFF THE
+# REGULATION. This one number is not: it is the illustration's own, chosen to match the
+# room TJ described, and it is declared here rather than typed into the page so that the
+# payload can say which half of each room is the rule and which half is the example.
+ROOM_EXTRA_IEP_AIDES = 2
+
+
+def rooms(tier_rows, sub_cap, sub_aide, cite):
+    """The same group size at the rule's minimum and above it, both lawful.
+
+    THE ASSERTION THAT MAKES THIS SAFE TO PUBLISH: every room is checked back against the
+    tier it claims to satisfy. A worked example that quietly stopped satisfying the rule
+    it illustrates would be the worst thing on this page, so the build recomputes it
+    rather than trusting the sentence beside it."""
+    tiers_here = {(t['students'], t['aides']): t for t in tier_rows
+                  if t['separateness'] == 'substantially separate'
+                  and t['band'] == SCHOOL_AGE}
+    if (sub_cap, 0) not in tiers_here or (sub_aide, 1) not in tiers_here:
+        fail('the two substantially separate tiers this page works its rooms against are '
+             'no longer in the regulation as parsed')
+
+    out = [
+        dict(key='minimum-no-aide', students=sub_cap, educators=1, aides=0, iep_aides=0,
+             minimum=True, cite=cite,
+             headline='%d children' % sub_cap,
+             verdict='Complies, at the minimum the rule allows',
+             why='One certified special educator and no aide. This is the largest group '
+                 'the rule permits without one.'),
+        dict(key='minimum-one-aide', students=sub_aide, educators=1, aides=1, iep_aides=0,
+             minimum=True, cite=cite,
+             headline='%d children' % sub_aide,
+             verdict='Complies, at the minimum the rule allows',
+             why='The aide is what raises the ceiling from %d to %d. Nothing more is '
+                 'required at this group size.' % (sub_cap, sub_aide)),
+        dict(key='ieps-on-top', students=sub_aide, educators=1,
+             aides=1 + ROOM_EXTRA_IEP_AIDES, iep_aides=ROOM_EXTRA_IEP_AIDES,
+             minimum=False, cite=cite,
+             headline='%d children' % sub_aide,
+             verdict='Complies, with more staff than the rule requires',
+             why='The same group size, staffed three times over. The rule asks two '
+                 'questions — %d students or fewer, and a certified special educator '
+                 'with an aide — and both are answered. The other %d are there '
+                 'because IEPs require them, not because this rule does.'
+                 % (sub_aide, ROOM_EXTRA_IEP_AIDES)),
+    ]
+    for r in out:
+        cap = sub_cap if r['aides'] == 0 else sub_aide
+        if r['students'] > cap:
+            fail('the worked room %r puts %d students in a group the regulation caps at '
+                 '%d. A worked example that does not satisfy the rule it illustrates is '
+                 'the worst thing this page could publish'
+                 % (r['key'], r['students'], cap))
+        if r['educators'] != 1:
+            fail('the worked room %r names %d educators' % (r['key'], r['educators']))
+        if r['iep_aides'] > r['aides']:
+            fail('the worked room %r assigns more individual aides than it has aides'
+                 % r['key'])
+    return out
+
+
+def silence(whole):
+    """Count each term the page says the regulation does not use. Zero is the finding."""
+    text = body(whole)
+    hits = [dict(term=t, count=len(re.findall(re.escape(t), text, re.I)))
+            for t in SILENT_ON]
+    return hits, sum(h['count'] for h in hits)
+
 
 def doe034():
     """DESE's own definition of each placement label, out of the SIMS data handbook.
@@ -591,15 +908,63 @@ def build():
     db = sqlite3.connect(DB)
     mf = manifest()
     whole, cl = clauses()
-    main, young, midyear, age_months = tiers(cl, whole)
+    main, young, midyear, age_months, young_share = tiers(cl, whole)
     codes, ages, values = doe034()
+    silent, silent_total = silence(whole)
+    terms = definitions(whole)
     p = placements(db)
     gaps = gap_rows()
+
+    # ORDERED THE WAY THE CLAUSE READS, not by student count. Within a setting the rows
+    # run in the order the regulation introduces them, and for the two integrated
+    # preschool rows that is by HOW MANY OF THE CLASS HAVE DISABILITIES -- up to five,
+    # then six or seven -- which runs the student cap DOWNWARDS, 20 then 15. Sorting
+    # those two by student count printed the exception before the base case and read as
+    # an error.
+    for r in main + young:
+        r['order'] = r['swd_cap'] if r.get('swd_cap') is not None else r['students']
+    all_tiers = sorted(main + young,
+                       key=lambda r: (0 if r['band'] == SCHOOL_AGE else 1,
+                                      r['separateness_rank'], r['order']))
+    integrated = [r for r in all_tiers if r['separateness'] == 'integrated']
+    if len(integrated) == 2 and integrated[0]['students'] < integrated[1]['students']:
+        fail('the two integrated preschool rows are printing the smaller class first. '
+             'The clause introduces the base case (up to five children with disabilities, '
+             'class of 20) before the exception, and reversing them reads as a defect')
+    bands = []
+    for b in (SCHOOL_AGE, YOUNG):
+        rs = [r for r in all_tiers if r['band'] == b]
+        if not rs:
+            fail('%s came back with no tiers, and the merged table is half a table' % b)
+        bands.append(dict(
+            band=b, ages=rs[0]['ages'], role=rs[0]['role'], rows=len(rs),
+            cites=sorted({r['cite'] for r in rs}),
+            # THE SEPARATENESS PATTERN, measured per band rather than asserted once. The
+            # highest ceiling the band reaches, against the ceiling of its substantially
+            # separate setting. School age falls from 16 to 12; preschool from 20 to 9.
+            # Same direction, and further -- which is the claim, and it is computed.
+            top=max(r['students'] for r in rs),
+            top_setting=max(rs, key=lambda r: r['students'])['separateness'],
+            sub=max(r['students'] for r in rs
+                    if r['separateness'] == 'substantially separate'),
+            drop=(max(r['students'] for r in rs)
+                  - max(r['students'] for r in rs
+                        if r['separateness'] == 'substantially separate'))))
+    if not all(b['drop'] > 0 for b in bands):
+        fail('the ceiling no longer falls as the setting gets more separate in every age '
+             'band, and that pattern is a published conclusion on this page')
+    sa_band, yg_band = bands[0], bands[1]
+    if yg_band['drop'] <= sa_band['drop']:
+        fail('the preschool ceiling no longer falls FURTHER than the school-age one '
+             '(%d against %d). The page publishes "the same direction and a bigger drop" '
+             'and that sentence would now be wrong'
+             % (yg_band['drop'], sa_band['drop']))
 
     sub_cap = min(r['students'] for r in main
                   if r['short'] == 'Substantially separate')
     sub_aide = max(r['students'] for r in main
                    if r['short'] == 'Substantially separate')
+    worked_rooms = rooms(all_tiers, sub_cap, sub_aide, cl['28.06(6)(d)']['cite'])
     part_cap = max(r['students'] for r in main if r['short'] == 'Partly separate')
     threshold = int(re.search(r'more than (\d+)%', cl['28.06(6)(d)']['text']).group(1))
     sub_def = [c for c in codes if c['code'] == '40'][0]
@@ -612,8 +977,19 @@ def build():
         'grain': 'A REGULATION and a HEADCOUNT, and they are not the same quantity.',
         'fy': p['fy'],
         'clauses': cl,
-        'tiers': main,
-        'young': young,
+        # ONE LIST, BOTH BANDS. School age first because that is where the argument in
+        # this town is, then the preschool clauses -- and within each band ordered from
+        # least separate to most, because the second finding on this page is what happens
+        # to the ceiling as the setting gets more separate, and a table that does not run
+        # in that order hides it.
+        'tiers': all_tiers,
+        'bands': bands,
+        'young_share': young_share,
+        'terms': terms,
+        'silent_on': silent,
+        'silent_total': silent_total,
+        'rooms': worked_rooms,
+        'room_extra_iep_aides': ROOM_EXTRA_IEP_AIDES,
         'midyear_extra': midyear,
         'age_months': age_months,
         'threshold_pct': threshold,
@@ -709,55 +1085,132 @@ def build():
                           'this page supports either reading, and it is not an audit.',
             ),            conclusion(
                 id='one-educator-every-tier',
-                claim='Every tier in the rule names one certified special educator. Only '
-                      'the aides scale',
-                so_what='So the rule buys a bigger group with an aide, never with a '
-                        'second teacher — in all %s tiers.' % C.num(len(main)),
-                detail='Across both settings the regulation states five group-size tiers, '
-                       'and the phrase in every one of them is a certified special '
-                       'educator, singular. What changes between 8 and 12, and between 12 '
-                       'and 16, is an aide. The build refuses to publish this table if a '
-                       'tier ever names a second educator, because the shape is the '
-                       'finding.',
+                claim='Every tier the rule sets names one educator — at every age, in '
+                      'every setting',
+                so_what='Across all %s tiers only the aides change. A bigger group never '
+                        'buys a second educator.' % C.num(len(all_tiers)),
+                detail='%s tiers, in two age bands: 28.06(6)(c) and (d) for students %s, '
+                       '28.06(7)(e) and (f) for children %s. In every one of them the '
+                       'adult in charge is singular. What changes between %s and %s, and '
+                       'between %s and %s, is an aide. The build refuses to publish this '
+                       'table if a single row ever names a second educator, because the '
+                       'shape is the finding.'
+                       % (C.num(len(all_tiers)), sa_band['ages'], yg_band['ages'],
+                          C.num(sub_cap), C.num(sub_aide), C.num(sub_aide),
+                          C.num(part_cap)),
                 figures={
-                    'tiers': figure(len(main), C.num(len(main)), 'group-size tiers'),
+                    'tiers': figure(len(all_tiers), C.num(len(all_tiers)),
+                                    'group-size tiers'),
                     'low': figure(sub_cap, C.num(sub_cap), 'students'),
                     'mid': figure(sub_aide, C.num(sub_aide), 'students'),
                     'high': figure(part_cap, C.num(part_cap), 'students'),
                 },
+                allow=('28.06(6)(c)', '28.06(7)(e)'),
                 kind='measured', bearing='sizes', figure='tiers',
-                basis='603 CMR 28.06(6)(c) and (d), parsed tier by tier out of the two '
-                      'sentences that state them.',
-                not_shown='What an aide is. The regulation says "aide" and never defines '
-                          'it; DESE’s staffing files and the district’s budget '
-                          'lines say "paraprofessional". Nothing here establishes that '
-                          'the two words name the same job.',
+                basis='603 CMR 28.06(6)(c) and (d) and 28.06(7)(e) and (f), parsed tier '
+                      'by tier out of the sentences that state them.',
+                not_shown='That the two bands name the same qualification. 28.06(6) says '
+                          '"certified special educator" and 28.06(7) says "teacher", and '
+                          'nothing here establishes those are the same thing — the '
+                          'table prints each clause’s own word. Nor what an aide is: '
+                          'the regulation never defines it, while DESE’s staffing '
+                          'files and the district’s budget lines say '
+                          '"paraprofessional".',
             ),
             conclusion(
-                id='third-tier-one-clause',
-                claim='A %s-student tier exists only below the %d%% threshold. Above it '
-                      'the rule stops at %s'
-                      % (C.num(part_cap), threshold, C.num(sub_aide)),
-                so_what='The more separate the room, the LOWER the ceiling. That is the '
-                        'opposite of what most people assume.',
-                detail='28.06(6)(c) governs groups outside general education 60% or less '
-                       'of the schedule and runs to "16 students if the certified special '
-                       'educator is assisted by two aides". 28.06(6)(d), for settings '
-                       'above that threshold, names two tiers and stops. The phrase "two '
+                id='ceiling-falls-with-separateness',
+                claim='The more separate the setting, the lower the ceiling — in both '
+                      'age bands',
+                so_what='School age falls %s to %s. Preschool falls %s to %s — same '
+                        'direction, bigger drop.'
+                        % (C.num(sa_band['top']), C.num(sa_band['sub']),
+                           C.num(yg_band['top']), C.num(yg_band['sub'])),
+                lede='This is the opposite of what most people assume, and it holds at '
+                     'every age the regulation covers.',
+                detail='28.06(6)(c) governs groups outside general education %d%% of the '
+                       'schedule or less and runs to "16 students if the certified '
+                       'special educator is assisted by two aides"; 28.06(6)(d), above '
+                       'that threshold, names two tiers and stops at 12. The phrase "two '
                        'aides" occurs exactly once in the whole of 603 CMR 28.00, which '
-                       'this build asserts on every run.',
+                       'this build asserts on every run. The preschool clauses run the '
+                       'same way and further: an integrated class may reach 20 under '
+                       '28.06(7)(e), a substantially separate one is limited to 9 under '
+                       '28.06(7)(f). The build refuses to publish if either band stops '
+                       'falling, or if preschool stops falling further than school age.'
+                       % threshold,
                 figures={
-                    'high': figure(part_cap, C.num(part_cap), 'students'),
-                    'mid': figure(sub_aide, C.num(sub_aide), 'students'),
+                    'high': figure(sa_band['top'], C.num(sa_band['top']), 'students'),
+                    'mid': figure(sa_band['sub'], C.num(sa_band['sub']), 'students'),
+                    'ytop': figure(yg_band['top'], C.num(yg_band['top']), 'students'),
+                    'ysub': figure(yg_band['sub'], C.num(yg_band['sub']), 'students'),
                     'threshold': figure(threshold, '%d%%' % threshold),
                 },
-                allow=('603 CMR 28.00', '28.06(6)(c)', '28.06(6)(d)'),
-                kind='measured', bearing='sizes', figure='high',
-                basis='The two clauses, parsed; and a count of the phrase "two aides" '
-                      'across the full regulation.',
-                not_shown='Why. The regulation gives no reason for the asymmetry and this '
+                allow=('603 CMR 28.00', '28.06(6)(c)', '28.06(6)(d)', '28.06(7)(e)',
+                       '28.06(7)(f)'),
+                kind='measured', bearing='sizes', figure='ytop',
+                basis='All four class-size clauses, parsed; and a count of the phrase '
+                      '"two aides" across the full regulation.',
+                not_shown='Why. The regulation gives no reason for the pattern and this '
                           'page offers none — any explanation would be a hypothesis '
-                          'about a drafting decision nobody here witnessed.',
+                          'about drafting decisions nobody here witnessed. Nor are the '
+                          'two bands strictly comparable: 28.06(6) caps an instructional '
+                          'GROUP and 28.06(7) caps a CLASS, and the preschool clauses '
+                          'count children with and without disabilities together.',
+            ),
+            conclusion(
+                id='caps-children-not-adults',
+                claim='The rule sets the MINIMUM staffing for a group size. IEPs add on '
+                      'top of it',
+                so_what='%s children with one educator and %s aides is lawful. So is %s '
+                        'with one aide.'
+                        % (C.num(sub_aide), C.num(1 + ROOM_EXTRA_IEP_AIDES),
+                           C.num(sub_aide)),
+                lede='This is the most misread thing about the class-size rule, and it '
+                     'runs in both directions.',
+                detail='Take the room people actually ask about: %s children, one '
+                       'certified special educator, and %s aides of whom %s are assigned '
+                       'to individual children by their IEPs. The rule asks two questions '
+                       '— are there %s students or fewer, and is there a certified '
+                       'special educator with an aide — and both are answered, so '
+                       'the room complies and has more staff than the rule requires. '
+                       'Every tier caps CHILDREN given a staffing configuration; not one '
+                       'of them limits adults. A room may also hold a speech therapist '
+                       'and a behaviour specialist and the class-size rule speaks to '
+                       'neither. So a room at the legal minimum and a room staffed three '
+                       'times over look identical from outside, which is why "we have a '
+                       'lot of paras" and "our groups are within the rule" can both be '
+                       'true and neither explains the other. And the regulation carries '
+                       '%s limits on adults anywhere: this build searches its full text '
+                       'for %s phrasings of individual support — "one-to-one", '
+                       '"1:1", "individual aide" among them — on every run, and '
+                       'publishes the count beside the result.'
+                       % (C.num(sub_aide), C.num(1 + ROOM_EXTRA_IEP_AIDES),
+                          C.num(ROOM_EXTRA_IEP_AIDES), C.num(sub_aide),
+                          C.num(silent_total), C.num(len(silent))),
+                figures={
+                    'students': figure(sub_aide, C.num(sub_aide), 'children'),
+                    'adults': figure(1 + ROOM_EXTRA_IEP_AIDES,
+                                     C.num(1 + ROOM_EXTRA_IEP_AIDES), 'aides'),
+                    'iep': figure(ROOM_EXTRA_IEP_AIDES, C.num(ROOM_EXTRA_IEP_AIDES),
+                                  'aides assigned by an IEP'),
+                    'caps': figure(silent_total, C.num(silent_total),
+                                   'limits on adults in the room'),
+                    'terms': figure(len(silent), C.num(len(silent)), 'phrasings'),
+                },
+                allow=('1:1',),
+                kind='measured', bearing='sizes', figure='caps',
+                basis='Every class-size clause, read for what it counts; a worked room '
+                      'checked back against the tier it satisfies on every build; and a '
+                      'search of the full text of 603 CMR 28.00 for eight phrasings of '
+                      'individual support, published beside the result.',
+                not_shown='The corner of it. Where a group of %s has exactly ONE aide and '
+                          'that aide is assigned to a single child, nothing says whether '
+                          'they also satisfy the tier: the regulation says "assisted by '
+                          'one aide" and defines neither the aide nor their duties. '
+                          'Assuming they do understates the staffing a group needs; '
+                          'assuming they do not overstates it. The document does not say, '
+                          'and this page does not choose. Registered as a gap.'
+                          % C.num(sub_aide),
             ),
             conclusion(
                 id='labels-share-the-axis',
@@ -874,12 +1327,18 @@ def main():
         json.dump(data, fh, indent=1, sort_keys=True)
         fh.write('\n')
     print(rel)
-    print('  %d tiers: %s' % (len(data['tiers']), '; '.join(
-        '%s — %d students, %d educator, %d aide(s)'
-        % (t['short'], t['students'], t['educators'], t['aides'])
-        for t in data['tiers'])))
-    print('  %d young-children rows; mid-year allowance +%d students; age range %d months'
-          % (len(data['young']), data['midyear_extra'], data['age_months']))
+    print('  %d tiers across %d age bands, one educator in every one:'
+          % (len(data['tiers']), len(data['bands'])))
+    for b in data['bands']:
+        print('    %-14s (%s, %r): %s' % (
+            b['band'], b['ages'], b['role'], '; '.join(
+                '%d students / %d aide(s) [%s]'
+                % (t['students'], t['aides'], t['separateness'])
+                for t in data['tiers'] if t['band'] == b['band'])))
+        print('      ceiling falls %d -> %d as the setting gets more separate (%d)'
+              % (b['top'], b['sub'], b['drop']))
+    print('  mid-year allowance +%d students; age range %d months'
+          % (data['midyear_extra'], data['age_months']))
     pl = data['placement']
     print('  FY%d: %d of %d substantially separate; the four printed categories account '
           'for %d, leaving %d in none' % (pl['fy'], pl['sub']['count'], pl['total'],

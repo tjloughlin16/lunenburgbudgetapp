@@ -1523,6 +1523,43 @@ GROUPS = [
          'version. It is currently empty: YouTube IP-blocked the caption endpoint after '
          'ten test fetches, and the backfill is deliberately on hold rather than '
          'retrying. Rebuild with scripts/fetch_youtube_transcripts.py.'),
+        ('data/dese-class-size.csv',
+         'How many classes ran in each subject, and how full they were', 3,
+         'DESE\u2019s class counts and average sizes for Lunenburg by school and subject, '
+         'SY2011\u2013SY2025. `tot_clss_cnt` is how many classes actually RAN, so a '
+         'subject with no classes is a subject nobody offered that year \u2014 which '
+         'makes this a measurement of course offerings rather than the teacher-FTE proxy '
+         'every earlier attempt used, and a proxy that cannot tell four Spanish sections '
+         'from two. `avg_clss_cnt` answers a different question: not what was offered but '
+         'how full it was. The two move independently and must not be read as one. AND A '
+         'TRAP: a general class size is NOT a special education instructional group. '
+         '603 CMR 28.06(6) binds instructional groups \u2014 eight students to a '
+         'certified special educator, twelve with an aide \u2014 and nothing here is '
+         'that quantity. Rebuild with scripts/extract_dese_class_size.py.'),
+        ('data/dese-ap.csv',
+         'Advanced Placement participation and performance', 3,
+         'Lunenburg\u2019s AP rows from DESE\u2019s two statewide files, SY2007\u2013'
+         'SY2025 \u2014 participation and performance, by subject and by student group. '
+         'It is the only measure here of whether OPPORTUNITY narrowed, as against '
+         'staffing or spending, which is the half of \u201cdid the cuts hurt\u201d that '
+         'nothing else in this archive can reach. Student groups OVERLAP: All Students '
+         'sits beside the race categories, low-income and disability status, all '
+         'describing the same children, so nothing may be summed without splitting on '
+         'stu_grp first \u2014 the trap that once reported Lunenburg\u2019s '
+         'administrators doubling when the truth was 14 to 19. The full workbooks are '
+         '174MB and stay in the archive rather than the published database. Rebuild with '
+         'scripts/extract_dese_ap.py.'),
+        ('data/dese-attrition.csv',
+         'How many students leave, by grade, SY2010\u2013SY2026', 3,
+         'DESE\u2019s attrition rate for Lunenburg, per grade and per student group, '
+         'across seventeen years \u2014 the grade dimension the outflow work has lacked '
+         'since it began. IT IS A RATE AND NOT A DESTINATION: a child leaving for Monty '
+         'Tech, for another district under school choice, for a private school, or '
+         'because the family moved out of town are all the same number here. It bounds '
+         'the question of WHERE departures cluster; it cannot say where anybody went. '
+         'Student groups overlap \u2014 All Students sits beside the race categories '
+         'describing the same children \u2014 so nothing here may be summed without '
+         'splitting on stu_grp first. Rebuild with scripts/extract_dese_attrition.py.'),
         ('data/minutes-searchable.csv',
          'How much of the meeting archive a search can actually read', 3,
          'Per board and year: how many documents the town listed, how many we hold, and '

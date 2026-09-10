@@ -69,6 +69,27 @@ def plain(path):
     return flat(html.unescape(re.sub(r'<[^>]+>', ' ', raw)))
 
 
+# THE ARCHIVED FILE IS A SAVED WEB PAGE, NOT A REGULATION, and the difference is
+# measurable. Counting the word `teacher` across the whole of it counts DESE's site
+# navigation -- "Curriculum Ratings by Teachers", "Teacher Leadership" -- and comes out
+# 17 against the extract's 15. The extractor is right to drop the chrome and this
+# verifier was wrong to keep it; scoping is what makes the two comparable.
+#
+# The body begins at the SECOND occurrence of the first section heading: the first is the
+# page's own table of contents, which repeats every heading. That is rule 13 in one line
+# -- an instrument that reformats before you see it is part of the finding.
+BODY_STARTS = '28.01: Authority, Scope and Purpose'
+
+
+def body(doc):
+    """The regulation itself, without the site it was published on."""
+    first = doc.find(BODY_STARTS)
+    second = doc.find(BODY_STARTS, first + 1)
+    if first < 0 or second < 0:
+        return None
+    return doc[second:]
+
+
 def main():
     for p in (PAY, REG, SIMS, DB, GAPS):
         if not os.path.exists(p):
@@ -76,6 +97,11 @@ def main():
             return 1
     d = json.load(open(PAY, encoding='utf-8'))
     doc = plain(REG)
+    reg = body(doc)
+    if reg is None:
+        print('the archived page no longer carries its own table of contents followed by '
+              'its body, so the regulation cannot be told apart from the site around it')
+        return 1
 
     # 1. EVERY QUOTED PASSAGE IS IN DESE'S OWN PAGE, EXACTLY ONCE.
     for key, cl in sorted(d['clauses'].items()):
@@ -101,13 +127,21 @@ def main():
                 for a, b in re.findall(
                     r'([A-Za-z0-9]+) students to (one certified special educator|'
                     r'a certified special educator and an aide)', dd.group(1))]
-        want = [(t['students'], t['aides']) for t in d['tiers']]
-        ok(part + subs == want,
-           'the tiers this verifier reads out of the HTML are %s; the page publishes %s'
-           % (part + subs, want))
+        sa = [(t['students'], t['aides']) for t in d['tiers']
+              if t['band'] == 'School age']
+        ok(sorted(part + subs) == sorted(sa),
+           'the school-age tiers this verifier reads out of the HTML are %s; the page '
+           'publishes %s' % (sorted(part + subs), sorted(sa)))
+        # ONE EDUCATOR IN EVERY ROW, ACROSS BOTH BANDS. This is the claim the merged table
+        # exists to make, and it is the one that would be quietly broken by a parser
+        # change rather than by DESE.
         ok(all(t['educators'] == 1 for t in d['tiers']),
-           'a published tier names more than one certified special educator, which is the '
-           'shape the whole scenario table is built to show')
+           'a published tier names more than one educator, which is the shape the whole '
+           'scenario table is built to show')
+        ok(len({t['band'] for t in d['tiers']}) == 2,
+           'the tier table has stopped covering both age bands. The preschool clauses '
+           'were merged UP into it on purpose — held out separately they read as an '
+           'exception rather than as the same pattern')
         ok(max(a for _s, a in subs) == 1 and max(a for _s, a in part) == 2,
            'the asymmetry the page is built on has moved: the substantially separate '
            'clause should stop at one aide and the partly separate one should reach two')
@@ -127,12 +161,147 @@ def main():
     ok(bool(thr) and int(thr.group(1)) == d['threshold_pct'],
        'the threshold that separates the two settings is not what the page publishes')
 
-    # The young-children rows, likewise.
-    for row in d['young']:
-        ok(('%d' % row['students']) in doc or
-           any(w for w, v in words.items() if v == row['students'] and w in doc),
-           'the young-children row for %d students is not findable in the regulation'
-           % row['students'])
+    # THE PRESCHOOL TIERS, re-parsed from the HTML by their own sentences rather than
+    # merely looked for. They sit in the same table as the school-age ones now, so they
+    # get the same treatment: the numbers come out of the clause, not out of the payload.
+    pe = re.search(r'class size shall not exceed (\d+) with ([a-z]+) teacher and '
+                   r'([a-z]+) aide and no more than ([a-z]+) students with disabilities',
+                   doc)
+    pe2 = re.search(r'students with disabilities is ([a-z]+) or ([a-z]+) then the class '
+                    r'size may not exceed (\d+) students', doc)
+    pf = re.search(r'limit class sizes to ([a-z]+) students with ([a-z]+) teacher and '
+                   r'([a-z]+) aide', doc)
+    ok(bool(pe) and bool(pe2) and bool(pf),
+       'the preschool class sizes are no longer stated in DESE’s page in the form '
+       'this reads')
+    if pe and pe2 and pf:
+        got = sorted((t['students'], t['aides']) for t in d['tiers']
+                     if t['band'] == 'Young children')
+        wants = sorted([(int(pe.group(1)), n(pe.group(3))),
+                        (int(pe2.group(3)), n(pe.group(3))),
+                        (n(pf.group(1)), n(pf.group(3)))])
+        ok(got == wants,
+           'the preschool tiers this verifier reads out of the HTML are %s; the page '
+           'publishes %s' % (wants, got))
+        # WHY THERE ARE TWO INTEGRATED ROWS. One citation against two maximums reads as a
+        # bug unless the condition is on the row, so the condition is checked to be there
+        # and to carry the number the clause makes it depend on.
+        integrated = [t for t in d['tiers'] if t['separateness'] == 'integrated']
+        ok(len(integrated) == 2 and all(t['condition'] for t in integrated),
+           'the two integrated preschool rows no longer state what distinguishes them, '
+           'and a reader will take them for a parsing error')
+        ok(any(pe.group(4) in t['condition'] for t in integrated)
+           and any(pe2.group(1) in t['condition'] for t in integrated),
+           'the integrated preschool conditions no longer quote the counts of children '
+           'with disabilities the clause makes the class size depend on')
+        # AND IN THE ORDER THE CLAUSE INTRODUCES THEM. The base case -- up to five
+        # children with disabilities, a class of 20 -- comes before the exception. Sorted
+        # by student count they print the other way round and read as a parsing error.
+        ok(len(integrated) == 2
+           and integrated[0]['students'] > integrated[1]['students'],
+           'the integrated preschool rows print the smaller class first, which puts the '
+           'exception before the base case')
+    share = re.search(r'programs in which more than (\d+)% of the children have '
+                      r'disabilities', doc)
+    ok(bool(share) and int(share.group(1)) == d['young_share'],
+       'the share that defines a substantially separate preschool programme is not what '
+       'the page publishes')
+
+    # The ages each band applies to, off the two clauses that state them.
+    for b in d['bands']:
+        ok(b['ages'] and b['ages'] in doc,
+           '%s: the age span the band header prints is not in the regulation' % b['band'])
+        ok(b['drop'] > 0,
+           '%s: the ceiling no longer falls as the setting gets more separate, and the '
+           'page publishes that it does' % b['band'])
+    ok(len(d['bands']) == 2 and d['bands'][1]['drop'] > d['bands'][0]['drop'],
+       'the preschool ceiling no longer falls further than the school-age one, and the '
+       'page says "same direction, bigger drop"')
+
+    # 2b. WHAT THE REGULATION DOES NOT SAY — the claim that is easiest to get wrong and
+    # hardest to notice being wrong, so it is a search with its terms published.
+    for t in d['silent_on']:
+        ok(len(re.findall(re.escape(t['term']), reg, re.I)) == t['count'],
+           'the page publishes %d occurrence(s) of %r in the regulation and this run '
+           'finds a different number' % (t['count'], t['term']))
+    ok(d['silent_total'] == sum(t['count'] for t in d['silent_on']),
+       'the published total of individual-support mentions does not sum its own parts')
+    ok(len(d['silent_on']) >= 5,
+       'only %d phrasing(s) are searched. A claim that a document is silent about '
+       'something is worth exactly as much as the number of ways it looked'
+       % len(d['silent_on']))
+
+    # 2c. THE WORKED ROOMS. A worked example that quietly stopped satisfying the rule it
+    # illustrates would be the worst thing on this page, so each is recomputed here
+    # against the tiers rather than trusted.
+    caps = {t['aides']: t['students'] for t in d['tiers']
+            if t['band'] == 'School age' and t['separateness'] == 'substantially separate'}
+    ok(len(d['rooms']) >= 3, 'the worked rooms are gone, and the question they answer is '
+                             'the one every reader arrives with')
+    for r in d['rooms']:
+        cap = caps.get(min(r['aides'], max(caps)))
+        ok(cap is not None and r['students'] <= cap,
+           'the worked room %r puts %d students in a group the regulation caps at %s'
+           % (r['key'], r['students'], cap))
+        ok(r['educators'] == 1,
+           'the worked room %r names %d educators' % (r['key'], r['educators']))
+        ok(r['iep_aides'] <= r['aides'],
+           'the worked room %r assigns more individual aides than it has aides' % r['key'])
+    ok(any(r['iep_aides'] > 0 for r in d['rooms']),
+       'no worked room shows an aide assigned by an IEP, and that room IS the finding — '
+       'the same group size staffed two ways')
+    ok(any(r['minimum'] for r in d['rooms']) and any(not r['minimum'] for r in d['rooms']),
+       'the rooms no longer contrast the rule’s minimum against a room above it')
+
+    # 2d. THE DEFINED TERMS, AND THE UNDEFINED ONES.
+    #
+    # The undefined half is the assertion that matters and it is the one a verifier can
+    # actually make: a claim that a document never defines a word is checkable against
+    # the document by a second route, and this one searches DESE's own HTML rather than
+    # our extract of it. If a term the page prints as undefined turns out to be defined,
+    # the page is making a claim the regulation contradicts.
+    ok(len(d['terms']) >= 8,
+       'the terms table has %d rows and the page promises the words its tiers lean on'
+       % len(d['terms']))
+    for t in d['terms']:
+        got = len(re.findall(r'\b' + re.escape(t['term']), reg, re.I))
+        ok(got == t['uses'],
+           '%r: the page publishes %d use(s) in the regulation and this run counts %d'
+           % (t['term'], t['uses'], got))
+        # The abbreviation a defined term carries sits BETWEEN the term and its verb --
+        # "Least restrictive environment ( LRE ) shall mean" -- so the gap is allowed for
+        # explicitly rather than by a loose match that would also swallow a sentence.
+        gives_meaning = re.search(
+            r'\b' + re.escape(t['term']) + r'\b\s*(?:\([^)]{0,20}\)\s*)?'
+            r'shall (?:mean|have the meaning)', reg, re.I)
+        if t['defined']:
+            ok(bool(gives_meaning),
+               '%r is published as defined by %s and DESE\u2019s page gives it no '
+               'meaning' % (t['term'], t['cite']))
+            ok(t['definition'] and flat(t['definition']) in doc,
+               '%r: the definition the page prints is not in DESE\u2019s page word for '
+               'word' % t['term'])
+            ok(re.match(r'^603 CMR 28\.02\(\d+\)$', t['cite'] or ''),
+               '%r cites %r, and every definition on this page comes from 28.02'
+               % (t['term'], t['cite']))
+        else:
+            ok(not gives_meaning,
+               '%r is published as NEVER DEFINED and the regulation defines it. That is '
+               'the page making a claim its own source contradicts' % t['term'])
+            ok(not t['definition'],
+               '%r is published as undefined and carries a definition anyway' % t['term'])
+    ok(any(t['defined'] for t in d['terms'])
+       and any(not t['defined'] for t in d['terms']),
+       'the terms table has gone all one way, and its whole point is the contrast between '
+       'the words 28.02 defines and the words it only uses')
+    aide = [t for t in d['terms'] if t['term'] == 'aide']
+    ok(len(aide) == 1 and not aide[0]['defined'] and aide[0]['uses'] > 0,
+       '"aide" is the word that decides whether a group of eight may hold twelve. It must '
+       'be in the terms table, used, and undefined — that is the finding')
+    para = [t for t in d['terms'] if t['term'] == 'paraprofessional']
+    ok(len(para) == 1 and not para[0]['defined'],
+       '"paraprofessional" must be in the terms table and undefined: the whole page rests '
+       'on it being the OTHER document\u2019s word')
 
     # 3. WHAT DESE'S LABELS MEAN, out of the SIMS handbook, by a second read.
     import zipfile
@@ -213,8 +382,10 @@ def main():
     # printed placement category. Both are quoted, not paraphrased.
     all_gaps = {r['what'].strip(): r for r in
                 csv.DictReader(open(GAPS, encoding='utf-8'))}
-    ok(len(d['gaps_also']) == 2,
-       'the page publishes %d further registered gaps; it was written with two'
+    ok(len(d['gaps_also']) >= 3,
+       'the page publishes %d further registered gaps and was written with three: the '
+       'aide/paraprofessional definitional gap, the children in no printed placement '
+       'category, and whether an aide assigned to one child also satisfies a tier'
        % len(d['gaps_also']))
     for g in d['gaps_also']:
         row = all_gaps.get(g['what'].strip())
@@ -232,8 +403,8 @@ def main():
         path = os.path.join(ROOT, rel)
         ok(os.path.exists(path), '%s: the document this quote cites is not here' % rel)
         if os.path.exists(path):
-            body = flat(open(path, encoding='utf-8', errors='replace').read())
-            ok(flat(q['quote']) in body,
+            minutes = flat(open(path, encoding='utf-8', errors='replace').read())
+            ok(flat(q['quote']) in minutes,
                '%s %s: the quote is no longer in %s' % (q['board'], q['date'], rel))
 
     # 8. THE COVERAGE DENOMINATOR IS PRESENT AND NON-TRIVIAL. A grep that found nothing
