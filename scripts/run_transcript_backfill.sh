@@ -21,7 +21,8 @@ cd "$(dirname "$0")/.."
 BOARDS="school-committee select-board finance-committee"
 BATCH=25          # per attempt, then a long pause regardless
 SLEEP=45          # between individual fetches
-COOLDOWN=1800     # 30 min after a throttled batch
+COOLDOWN=1800     # first cooldown after a throttled batch; DOUBLES while it stays stuck
+COOLDOWN_MAX=21600  # ...up to six hours
 BETWEEN=300       # 5 min after a clean batch
 
 # THE 231 DOCUMENT-LESS MEETINGS COME FIRST, and this ordering is the whole point.
@@ -50,9 +51,18 @@ while true; do
   # A batch that moved nothing means the endpoint is refusing. Go away for a while
   # rather than grinding -- hammering a throttle makes the next run worse too.
   if [ "${after:-0}" -ge "${before:-0}" ]; then
+    # ESCALATING BACKOFF. A fixed 30 minutes is right for a passing throttle and wrong
+    # for a sustained block: on 10 September 2026 three consecutive cooldowns fetched
+    # nothing at all, which means each retry was poking an endpoint that had already
+    # refused and, by this script's own reasoning, making the block last longer. So the
+    # wait DOUBLES for as long as nothing is landing, and resets the moment a batch
+    # succeeds. Nothing depends on this finishing today.
     echo "$(date -u +%H:%M:%S)  no progress — cooling down ${COOLDOWN}s"
     sleep "$COOLDOWN"
+    COOLDOWN=$(( COOLDOWN * 2 ))
+    [ "$COOLDOWN" -gt "$COOLDOWN_MAX" ] && COOLDOWN=$COOLDOWN_MAX
   else
+    COOLDOWN=1800
     sleep "$BETWEEN"
   fi
 done
