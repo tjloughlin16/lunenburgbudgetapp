@@ -81,12 +81,25 @@ Also unread: `balance_sheet` (774 rows — the only STOCK table in an archive of
 
 ## Dated and close
 
-**A Special Town Meeting is called for 17 November and its warrant closes 17 September at
-5 p.m.** Anything meant to reach that meeting has to exist before then.
+**THE TARGET IS THE ANNUAL TOWN MEETING AND THE FY28 BUDGET.** TJ, 10 September 2026,
+correcting a plan built around the November Special: *"we dont have the ability to
+influence the warrant so thats not the plan"*, and *"this is for the annual town
+meeting"*.
 
-And from the FY27 calendar reconstructed out of the minutes: **anything that will change a
-number in the budget must land before mid-February.** After that the argument is about a
-document rather than about the figure.
+So the 17 September warrant deadline for the 17 November Special Town Meeting is a date
+that passes, not a deadline this work is aimed at. It is left recorded because it will
+otherwise be rediscovered and mistaken for one — a date in a calendar looks like a
+deadline whether or not anybody here can act on it.
+
+**The one real deadline is the budget cycle.** From the FY27 calendar reconstructed out of
+the minutes: **anything that will change a number in the budget must land before
+mid-February.** After that the argument is about a document rather than about the figure.
+
+What follows for how to choose work: the audience is a resident or a board member reading
+BEFORE the budget is drafted, not somebody trying to amend a warrant article. That favours
+the pages that size a problem and name a lever over anything shaped like a last-minute
+intervention — and it is why the build order is a list of drill-ins rather than a
+countdown.
 
 ## Still TJ's
 
