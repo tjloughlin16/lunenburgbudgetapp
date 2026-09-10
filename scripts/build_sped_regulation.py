@@ -442,6 +442,26 @@ def doe034():
     xml = zipfile.ZipFile(path).read('word/document.xml').decode('utf-8')
     text = re.sub(r'<[^>]+>', '', xml.replace('</w:p>', '\n'))
     text = text.replace('—', '—')
+    # THE WHOLE VALUE LIST, from the element's own segment of the handbook -- not a
+    # remembered count of it. The page needs to say that DESE's published breakdown prints
+    # four of these, and "nine" was typed into a draft of that sentence and was wrong:
+    # there are eight placements, plus two values that mean the child is not a special
+    # education student at all. A count typed beside a table is rule 2's defect exactly,
+    # and this one would have shipped.
+    starts = [m.start() for m in
+              re.finditer(r'Special Education Placement, ages 6\s*[\u2013-]\s*21(?!\d)',
+                          text)]
+    if not starts:
+        fail('the SIMS data handbook no longer carries the element that defines the '
+             'placement labels DESE publishes')
+    seg = text[starts[-1]:text.index('Notes:', starts[-1])]
+    pairs = re.findall(r'\n\s*(\d{2})\s*\n\s*([^\n]+)', seg)
+    values = [dict(code=c, description=t.strip()) for c, t in pairs
+              if not t.strip().lower().startswith('not ')]
+    if len(values) < 5 or len(values) != len({v['code'] for v in values}):
+        fail('the DOE034 value list parsed to %d placements, which is not the shape of '
+             'the element' % len(values))
+
     want = [
         ('10', 'Full Inclusion'), ('20', 'Partial Inclusion'),
         ('40', 'Substantially Separate Classroom'),
@@ -476,7 +496,7 @@ def doe034():
         fail('the SIMS handbook no longer heads its two placement elements with the age '
              'span each covers; the distinct spans found were %r' % (spans,))
     return out, dict(this=[s for s in spans if s.startswith('6')][0],
-                     other=[s for s in spans if not s.startswith('6')][0])
+                     other=[s for s in spans if not s.startswith('6')][0]), values
 
 
 # --------------------------------------------------------------- Lunenburg, set beside
@@ -572,7 +592,7 @@ def build():
     mf = manifest()
     whole, cl = clauses()
     main, young, midyear, age_months = tiers(cl, whole)
-    codes, ages = doe034()
+    codes, ages, values = doe034()
     p = placements(db)
     gaps = gap_rows()
 
@@ -600,6 +620,7 @@ def build():
         'sub_cap': sub_cap, 'sub_aide_cap': sub_aide, 'part_cap': part_cap,
         'codes': codes,
         'code_ages': ages,
+        'code_values': values,
         'placement': p,
         'gap': gaps[0],
         'gaps_also': gaps[1:],
@@ -714,9 +735,9 @@ def build():
             ),
             conclusion(
                 id='third-tier-one-clause',
-                claim='Only the partly separate setting has a %s-student tier. '
-                      'Substantially separate stops at %s'
-                      % (C.num(part_cap), C.num(sub_aide)),
+                claim='A %s-student tier exists only below the %d%% threshold. Above it '
+                      'the rule stops at %s'
+                      % (C.num(part_cap), threshold, C.num(sub_aide)),
                 so_what='The more separate the room, the LOWER the ceiling. That is the '
                         'opposite of what most people assume.',
                 detail='28.06(6)(c) governs groups outside general education 60% or less '
@@ -776,11 +797,12 @@ def build():
                        'anybody divides it by eight. It is a count of CHILDREN and the '
                        'rule binds GROUPS. And DESE’s Placement breakdown is '
                        'in-district only: its four printed categories account for %s of '
-                       'the %s, with %s children in none of them, because element DOE034 '
-                       'has nine acceptable values and this breakdown prints four.'
+                       'the %s, with %s children in none of them: the breakdown is '
+                       'in-district only, and element DOE034 allows %s placements where '
+                       'this prints four.'
                        % (p['fy'], C.num(p['sub']['count']), C.num(p['total']),
                           C.pct(p['sub']['pct']), C.num(p['named']), C.num(p['total']),
-                          C.num(p['unnamed'])),
+                          C.num(p['unnamed']), C.num(len(values))),
                 figures={
                     'sub': figure(p['sub']['count'], C.num(p['sub']['count']),
                                   'children'),
@@ -788,6 +810,8 @@ def build():
                     'pct': figure(p['sub']['pct'], C.pct(p['sub']['pct'])),
                     'named': figure(p['named'], C.num(p['named']), 'children'),
                     'unnamed': figure(p['unnamed'], C.num(p['unnamed']), 'children'),
+                    'values': figure(len(values), C.num(len(values)),
+                                     'placement values'),
                     'fy': figure(p['fy'], C.fy(p['fy'])),
                 },
                 allow=('DOE034', '28.06(6)(d)'),

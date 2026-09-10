@@ -68,6 +68,40 @@
   "other": "3 to 5",
   "this": "6 to 21"
  },
+ "code_values": [
+  {
+   "code": "10",
+   "description": "Full Inclusion \u2014 special education services outside the general education classroom less than 21% of the time"
+  },
+  {
+   "code": "20",
+   "description": "Partial Inclusion \u2014 special education services outside the general education classroom 21% to 60% of the time"
+  },
+  {
+   "code": "40",
+   "description": "Substantially Separate Classroom \u2014 special education services outside the general education classroom more than 60% of the time"
+  },
+  {
+   "code": "41",
+   "description": "Public Separate Day School"
+  },
+  {
+   "code": "50",
+   "description": "Private Separate Day School"
+  },
+  {
+   "code": "60",
+   "description": "Residential School"
+  },
+  {
+   "code": "70",
+   "description": "Homebound/Hospital"
+  },
+  {
+   "code": "90",
+   "description": "Public Residential Institutional Facilities (0370XXXX schools)"
+  }
+ ],
  "codes": [
   {
    "code": "10",
@@ -179,7 +213,7 @@
   {
    "basis": "The two clauses, parsed; and a count of the phrase \"two aides\" across the full regulation.",
    "bearing": "sizes",
-   "claim": "Only the partly separate setting has a 16-student tier. Substantially separate stops at 12",
+   "claim": "A 16-student tier exists only below the 60% threshold. Above it the rule stops at 12",
    "detail": "28.06(6)(c) governs groups outside general education 60% or less of the schedule and runs to \"16 students if the certified special educator is assisted by two aides\". 28.06(6)(d), for settings above that threshold, names two tiers and stops. The phrase \"two aides\" occurs exactly once in the whole of 603 CMR 28.00, which this build asserts on every run.",
    "figure": "high",
    "figures": {
@@ -238,7 +272,7 @@
    "basis": "DESE\u2019s special education program characteristics file, Placement rows for Lunenburg, most recent year published.",
    "bearing": "sizes",
    "claim": "DESE reports 41 of Lunenburg\u2019s 258 students with disabilities as substantially separate",
-   "detail": "In FY2026, 41 of 258 \u2014 15.9%. Two things about that count before anybody divides it by eight. It is a count of CHILDREN and the rule binds GROUPS. And DESE\u2019s Placement breakdown is in-district only: its four printed categories account for 242 of the 258, with 16 children in none of them, because element DOE034 has nine acceptable values and this breakdown prints four.",
+   "detail": "In FY2026, 41 of 258 \u2014 15.9%. Two things about that count before anybody divides it by eight. It is a count of CHILDREN and the rule binds GROUPS. And DESE\u2019s Placement breakdown is in-district only: its four printed categories account for 242 of the 258, with 16 children in none of them: the breakdown is in-district only, and element DOE034 allows 8 placements where this prints four.",
    "figure": "sub",
    "figures": {
     "fy": {
@@ -270,6 +304,11 @@
      "text": "16",
      "unit": "children",
      "value": 16
+    },
+    "values": {
+     "text": "8",
+     "unit": "placement values",
+     "value": 8
     }
    },
    "id": "how-many-are-in-scope",

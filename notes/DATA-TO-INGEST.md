@@ -554,3 +554,29 @@ grades 3–8 and for nothing else.
 than a page of its own. The statewide version of the same file (`curriculumdata.xlsx`,
 337 rows) is ELA-only and gives Lunenburg exactly one row, so this district export is the
 better copy.
+
+### Class size by gender, race/ethnicity and selected populations — stored, NOT extracted
+
+    sources/state-dese/dese-class-size.xlsx
+    120,651,949 bytes
+    sha256 899f14f9f457504c...
+    https://educationtocareer.data.mass.gov/Students-and-Teachers/Class-Size-by-Gender-Race-Ethnicity-and-Selected-P/35yv-uxv5/about_data
+
+Copied in and catalogued; deliberately not inspected or extracted. TJ: *"make sure we dont
+do a lot of token-based processing of this data just yet. Just ingest it into digestible
+formats."*
+
+**Why it is worth having.** It is the only measure of what a Lunenburg classroom actually
+holds, against every argument about staffing that has been made from FTE counts. Extract it
+the way `scripts/extract_dese_ap.py` does — filter to LEA `01620000`, keep every student
+group as its own row, refuse to write on an empty filter — and expect the same two traps:
+State rollups beside district detail, and `All Students` sitting beside the race categories
+that describe the same children.
+
+**AND ONE TRAP SPECIFIC TO THIS FILE, which will otherwise be walked into on the
+regulation page.** 603 CMR 28.06(6) binds SPECIAL EDUCATION INSTRUCTIONAL GROUPS — eight
+students to a certified special educator, twelve with an aide. **A general class size is
+not an instructional group.** They are different quantities, counted differently, for
+different purposes. Do not place this file's numbers beside the regulation's maximums as
+though they could be compared, and do not let a general class size of 22 read as a breach
+of a rule that never applied to it.

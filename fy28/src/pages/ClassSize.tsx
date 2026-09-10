@@ -10,15 +10,18 @@ import { Clause, ScenarioTable, TableTwin } from '../components/ClassSizeTable'
 
 const TAB: Tab = 'classsize'
 
-/** THE CLASS-SIZE RULE, and the one page on this site that quotes a statute rather than
- *  measuring this town.
+/** THE CLASS-SIZE RULE: a page that quotes a STATUTE rather than measuring this town,
+ *  which is a different grain from every other report in this area and is why it sits in
+ *  a section of its own on /reports.
  *
  *  WHY IT EXISTS. Residents argue about paraprofessional staffing constantly, and the
  *  rule the argument is actually about was in nobody's published record for Lunenburg
- *  until 603 CMR 28.00 was ingested. Not one of the 8,899 searchable documents in the
- *  meeting archive contains the phrase "603 CMR" or "substantially separate" -- the
- *  page computes both counts rather than claiming them. So this is not a finding about
- *  the district; it is the rule everybody is arguing around, put where they can read it.
+ *  until 603 CMR 28.00 was ingested. Not one searchable document in the meeting archive
+ *  contains the phrase "603 CMR" or "substantially separate" -- the page COMPUTES both
+ *  counts and the denominator beside them rather than stating any of the three, because
+ *  a zero typed into a sentence is the one thing here that can be silently wrong. So this
+ *  is not a finding about the district; it is the rule everybody is arguing around, put
+ *  somewhere they can read it.
  *
  *  THE ONE THING THIS PAGE MUST NOT DO, and every design decision here follows from it:
  *  IT MUST NOT COMPUTE A REQUIRED NUMBER OF PARAPROFESSIONALS FOR LUNENBURG. The
@@ -79,6 +82,7 @@ export function ClassSize() {
 
   const cl = d.clauses
   const subDef = d.codes.find(c => c.code === '40')
+  const topTier = d.tiers.reduce((a, b) => (b.aides > a.aides ? b : a))
   const found = (term: string) => d.searched.find(s => s.term === term)
   const silent = d.searched.filter(s => s.documents === 0).map(s => s.term)
 
@@ -131,14 +135,15 @@ export function ClassSize() {
         The two settings are not the same rule, and the difference runs the way most
         people do not expect. A group outside general education{' '}
         {d.threshold_pct}% of the schedule <em>or less</em> reaches {d.part_cap} students
-        with two aides. A substantially separate group &mdash; <em>more</em> than{' '}
+        with {topTier.aides} aides. A substantially separate group &mdash; <em>more</em>
+        than{' '}
         {d.threshold_pct}% &mdash; stops at {d.sub_aide_cap}. The more separate the room,
         the lower the ceiling.
       </Body>
       <Clause {...cl['28.06(6)(c)']} />
       <Clause {...cl['28.06(6)(d)']} />
 
-      <H2 id="qualifications">Three things that travel with those numbers</H2>
+      <H2 id="qualifications">What travels with those numbers</H2>
       <div className="grid gap-4 mt-5 md:grid-cols-2">
         <Insight n={1} headline="They are maximums, and smaller is expected">
           The same clause that sets the sizes says districts are &ldquo;expected to
@@ -185,7 +190,6 @@ export function ClassSize() {
 
       <H2 id="young">Young children are a different rule again</H2>
       <Body>
-        {cl['28.06(7)'] ? null : null}
         Three- and four-year-olds are governed by {cl['28.06(7)(e)'].cite} and{' '}
         {cl['28.06(7)(f)'].cite}, which set class sizes rather than group sizes and say{' '}
         <em>teacher</em> where the clauses above say <em>certified special educator</em>.

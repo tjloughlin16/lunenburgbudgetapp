@@ -207,6 +207,24 @@ def main():
            'staffing number follows')
         ok(reg[0]['side'].strip() == d['gap']['side'].strip(),
            'the gap row has changed side')
+    # AND THE TWO THIS PAGE ADDED. Rule 7c: a limit written in one paragraph of one page
+    # is invisible to everyone who did not read that page, so writing this one registered
+    # two more -- the aide/paraprofessional definitional gap and the children in no
+    # printed placement category. Both are quoted, not paraphrased.
+    all_gaps = {r['what'].strip(): r for r in
+                csv.DictReader(open(GAPS, encoding='utf-8'))}
+    ok(len(d['gaps_also']) == 2,
+       'the page publishes %d further registered gaps; it was written with two'
+       % len(d['gaps_also']))
+    for g in d['gaps_also']:
+        row = all_gaps.get(g['what'].strip())
+        ok(row is not None,
+           'money-gaps.csv no longer registers %r, which this page quotes as a row in it'
+           % g['what'][:70])
+        if row:
+            ok(row['why'].strip() == g['why'].strip(),
+               '%r: the page and the registry no longer say the same thing'
+               % g['what'][:70])
 
     # 7. EVERY QUOTE IS STILL IN THE MEETING DOCUMENT IT NAMES.
     for q in d['said']:
@@ -259,6 +277,53 @@ def main():
     ok('aged five and older' in d['clauses']['28.06(6)']['text'],
        'reader 2: the scope sentence the grain box rests on — eligible students aged '
        'five and older, outside the general education environment — has moved')
+
+    # 10. EVERY PHRASE THE PAGE ITSELF PUTS IN QUOTATION MARKS.
+    #
+    # Rule 13's hardest half: check what a READER sees, not only what the payload holds.
+    # Most of this page's quotation is rendered from `clauses`, which section 1 already
+    # checked against DESE's HTML -- but a handful of phrases are set inside the page's
+    # own prose, in `&ldquo;...&rdquo;`, and nothing else on this run would notice one
+    # drifting. So the component is read as text, every such phrase is pulled out, and
+    # each is looked for in the regulation. A phrase this finds that is NOT a quotation
+    # of the regulation belongs in `ALLOWED` with a reason, rather than being matched
+    # loosely -- an exception written down is reviewable and a loose match is not.
+    page = os.path.join(ROOT, 'fy28', 'src', 'pages', 'ClassSize.tsx')
+    ALLOWED = {
+        # DESE's own labels, from the SIMS handbook rather than from the regulation.
+        'Substantially Separate', 'Full Inclusion', 'Partial Inclusion',
+        'aide', 'paraprofessional',   # the two words, discussed AS words
+        # The vocabulary the town does not use -- rendered from `searched`, and checked
+        # there.
+        '603 CMR', 'substantially separate',
+    }
+    if os.path.exists(page):
+        src = flat(open(page, encoding='utf-8').read())
+        quoted = re.findall(r'&ldquo;(.*?)&rdquo;', src)
+        ok(len(quoted) > 0,
+           'the page quotes nothing in its own prose any more, and this check has '
+           'silently stopped having anything to check')
+        checked = 0
+        for qt in quoted:
+            # A quotation whose whole content is an interpolation -- the search terms the
+            # town does not use -- is checked where it is COMPUTED, not here. Skipped
+            # explicitly, because stripping it would leave an empty string and an empty
+            # string is a substring of everything: a check that passes on nothing.
+            if re.fullmatch(r'\s*\{[^}]*\}\s*', qt):
+                continue
+            t = flat(re.sub(r'\{[^}]*\}|<[^>]+>|&rsquo;', "'", qt)).replace("''", "'")
+            if not t or t in ALLOWED:
+                continue
+            checked += 1
+            hit = t in doc or t.replace("'", '\u2019') in doc
+            ok(hit,
+               'the page sets %r in quotation marks and that string is not in DESE\u2019s '
+               'text of the regulation. Quote the source, never your rendering of it '
+               '\u2014 or add it to ALLOWED here with a reason' % t[:90])
+        ok(checked >= 2,
+           'only %d quotation(s) in the page\u2019s own prose were checked against the '
+           'regulation. This check earns nothing if the page has stopped quoting, so it '
+           'says so rather than passing quietly' % checked)
 
     print('%d checks' % CHECKS[0])
     if FAILS:
