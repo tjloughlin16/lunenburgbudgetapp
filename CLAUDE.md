@@ -832,6 +832,22 @@ half-written `dist/`. One of those failures arrived as exit 137 and was reported
 out-of-memory kill, which sent me looking in the wrong place entirely. **Have one agent
 build, at the end, or take a real lock.**
 
+**And the wait-loop that check is written into LIES, because `pgrep -f` matches itself.**
+`pgrep -f "build:site|vite build|prerender"` matches the `zsh -c` command line of the loop
+running it, so the loop sees a builder that is itself, never exits, and every later "is the
+slot free?" check inherits a false BUSY. Three of those were the entire contention signal in
+one session, and the agent reported another agent's builds as the cause. The bug is a
+**self-matching pattern**, and it costs a whole session's coordination rather than failing
+loudly.
+
+> Write the pattern so it cannot match its own literal text: `pgrep -f "[v]ite build"`.
+> Or exclude the caller: `pgrep -f ... | grep -v $$`. Never grep for a string that is
+> sitting in your own argv.
+
+This has now happened twice here. The guidance above -- check the slot before building --
+is what puts the pattern in an agent's hands, so it does not get to be stated without the
+trap beside it.
+
 **`git checkout <file>` destroys another agent's uncommitted work.** It cost five
 `money-gaps.csv` rows written by two other agents, and only three were recoverable from a
 grep somebody happened to have taken. The owning agents rewrote theirs from their own

@@ -482,6 +482,7 @@ def build():
     concl = [
         conclusion(
             id='the-total-is-dependable-and-the-lines-are-not',
+            bearing='sizes',
             claim='Budget rows that landed within two per cent of their own plan',
             so_what='The bottom line is dependable and any single row in it is not. A budget is a plan, not a promise.',
             lede=(
@@ -540,6 +541,7 @@ def build():
         ),
         conclusion(
             id='nothing-in-this-budget-is-quietly-over-provided',
+            bearing='sizes',
             claim='School budget rows that miss the same way every year, all by small amounts',
             so_what='The misses look like noise rather than lines quietly over-provided.',
             lede=(
@@ -593,6 +595,7 @@ def build():
         ),
         conclusion(
             id='tuition-is-the-line-nobody-can-forecast',
+            bearing='sizes',
             claim='How far below plan out-of-district tuition landed in its worst measured year',
             so_what='The schools do not set that price or choose how many need it. Their own staffing lands within six per cent.',
             lede=(

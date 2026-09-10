@@ -1442,6 +1442,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
     return emit('if-students-leave', [
         conclusion(
             id='what-the-scenario-costs-and-what-would-have-to-be-cut',
+            bearing='sizes',
             claim='Leaves the town in year one, if 78 high school students transferred out',
             so_what='A scenario put to this site, not something that happened.',
             lede='If %s high school students transferred out under school choice — the '
@@ -1495,6 +1496,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
         ),
         conclusion(
             id='chapter-70-moves-a-fraction-of-the-foundation-rate',
+            bearing='sizes',
             # "FOUNDATION BUDGET" IS THE JARGON THAT BREAKS THIS CARD.
             # TJ, reading it: "i think 'foundation' is not clear." It is the state's own
             # calculation of what educating a district's children ought to cost -- a
@@ -1585,6 +1587,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
         ),
         conclusion(
             id='this-is-a-flow-that-already-runs',
+            bearing='sizes',
             claim='Lunenburg residents leaving under school choice in the latest year counted',
             so_what='Children already leave. The question the scenario puts is how fast that moves, not whether it happens.',
             lede='Children already leave. DESE counts %s Lunenburg residents choicing '
@@ -1637,6 +1640,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
         ),
         conclusion(
             id='the-net-is-flat-and-the-arriving-half-is-not',
+            bearing='lever',
             claim='Fall in children arriving in Lunenburg from other towns',
             so_what='Leaving is flat and arriving has collapsed. The net barely moves, and that is what hides it.',
             lede='Lunenburg has not had a year of net gain in the %s school years DESE '

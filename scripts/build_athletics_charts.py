@@ -1154,6 +1154,7 @@ def build():
         conclusions=emit('what-sports-cost', [
             conclusion(
                 id='more-left-the-accounts-than-any-document-totals',
+                bearing='sizes',
                 claim='Left the town’s accounts for athletics in %s, more than any '
                       'document totals' % C.fy(three_way['fy']),
                 so_what='The district’s own workbook puts the whole programme well below that. The spread is published, not reconciled.',
@@ -1209,6 +1210,7 @@ def build():
             ),
             conclusion(
                 id='everything-the-books-call-athletics-and-what-they-cannot',
+                bearing='sizes',
                 claim='Everything the town’s books code to athletics in %s — director '
                       'and trainer included' % C.fy(count['fy']),
                 so_what='Not the buildings. Grounds, heat and custodians split by no programme, so this is a floor.',
@@ -1273,6 +1275,7 @@ def build():
             ),
             conclusion(
                 id='the-bus-bill-fell-and-the-town-paid-more',
+                bearing='lever',
                 claim='Budgeted for athletic buses in %s, more than double the year '
                       'before' % C.fy(t_to['fy']),
                 so_what='The bus bill itself fell that year. What changed is which pot paid, not what it cost.',

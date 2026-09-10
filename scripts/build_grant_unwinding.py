@@ -419,6 +419,7 @@ def build():
         'conclusions': emit('when-grants-end', [
             conclusion(
                 id='half-of-it-was-replaced-and-half-just-stopped',
+                bearing='sizes',
                 claim='Of the grant money that ran out in FY2025 was replaced by the town’s own money',
                 so_what='The rest simply stopped. It was a handover and a reduction happening at the same time.',
                 lede='When the grant money ran out in %s the town replaced under half of '
@@ -469,6 +470,7 @@ def build():
             ),
             conclusion(
                 id='the-biggest-rise-was-not-a-grant-ending',
+                bearing='sizes',
                 claim='Rise in what the town paid for employee insurance in FY2025',
                 so_what='Larger than the whole year’s fall in grant funding, and no grant was paying for it.',
                 lede='The largest rise in the town’s own school spending in %s was not a '
@@ -510,6 +512,7 @@ def build():
             ),
             conclusion(
                 id='the-town-carries-more-of-it-than-it-used-to',
+                bearing='sizes',
                 claim='A year the town now carries that outside money used to, at today’s spending',
                 so_what='Outside money paid nearly a dollar in five of school spending and now pays about one in ten.',
                 lede='Money from outside the town’s budget — grants and the like — used '

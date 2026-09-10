@@ -782,6 +782,7 @@ def build():
         conclusions=emit('cut-register', [
             conclusion(
                 id='a-cut-list-is-a-draft',
+                bearing='lever',
                 claim='Positions on the FY2020 cut list that were gone from it four weeks later',
                 so_what='A published cut list is a stage in an argument, not a decision the town has taken.',
                 lede='In FY2020 the district published a list of %s positions it '
@@ -841,6 +842,7 @@ def build():
             ),
             conclusion(
                 id='the-override-changed-which-cuts-happened',
+                bearing='lever',
                 claim='School positions the May 2024 override took off the cut list',
                 so_what='The nine it did not save are the nine a federal grant had been paying for.',
                 lede='Before the May 2024 ballot the School Committee published two cut '
@@ -882,6 +884,7 @@ def build():
             ),
             conclusion(
                 id='most-announced-cuts-cannot-be-checked',
+                bearing='sizes',
                 claim='Adopted school cuts that no published series can see at all',
                 so_what='The jobs the state counts are teachers. Most cut posts are not teachers.',
                 lede='Of the %s reductions on the lists this town actually adopted and '
@@ -919,6 +922,7 @@ def build():
             ),
             conclusion(
                 id='half-of-what-can-be-checked-checks-out',
+                bearing='sizes',
                 claim='Adopted cuts the state’s teacher counts move with, of the ones it can see',
                 so_what='Half. Two moved the other way and four by less than the document stated.',
                 lede='Where a published series can see an adopted cut at all — %s of '

@@ -508,6 +508,7 @@ def build_students(db, mf):
         'conclusions': emit('how-many-students-are-on-an-iep', [
             conclusion(
                 id='the-share-rose-partly-because-enrollment-fell',
+                bearing='sizes',
                 claim='Lunenburg children with a special education plan, %s'
                       % C.fy(last['fy']),
                 so_what='Up from %s four years earlier. Enrollment fell over the same '
@@ -557,6 +558,7 @@ def build_students(db, mf):
             ),
             conclusion(
                 id='paraprofessional-fte-fell-while-the-count-did-not',
+                bearing='sizes',
                 claim='Fall in the paraprofessionals the state counts in special '
                       'education',
                 so_what='%s posts down to %s since %s, while the number of children they '
@@ -830,6 +832,7 @@ def build_leaving(db, mf):
         'conclusions': emit('where-students-go-instead', [
             conclusion(
                 id='the-total-held-while-its-parts-changed',
+                bearing='sizes',
                 claim='Change in children schooled outside Lunenburg, over %s years'
                       % C.num(len(series)),
                 so_what='The total barely moved. Where they go changed completely, and the '
@@ -892,6 +895,7 @@ def build_leaving(db, mf):
             ),
             conclusion(
                 id='the-biggest-destination-is-not-school-choice',
+                bearing='sizes',
                 claim='Lunenburg children at Monty Tech, the largest single destination',
                 so_what='More than school choice and charter together. Lunenburg is a '
                         'member town there, so this is not choosing out.',
@@ -1129,6 +1133,7 @@ def build_cost(db, mf):
         'conclusions': emit('what-special-education-costs', [
             conclusion(
                 id='the-line-is-the-towns-share',
+                bearing='sizes',
                 claim='Of what Lunenburg spent teaching children at other schools was '
                       'paid from outside the budget',
                 so_what='The figure residents argue about is the town\u2019s share of '
@@ -1171,6 +1176,7 @@ def build_cost(db, mf):
             ),
             conclusion(
                 id='the-threshold-comes-off-first',
+                bearing='sizes',
                 claim='Taken off the bill in %s before the state reimburses anything'
                       % C.fy(cb_last['fy']),
                 so_what='So the town carries the first slice of these placements in every '
@@ -1210,6 +1216,7 @@ def build_cost(db, mf):
             ),
             conclusion(
                 id='out-of-district-spending-is-not-a-straight-line',
+                bearing='sizes',
                 claim='Spent teaching children at other schools in %s' % C.fy(last['fy']),
                 so_what='It peaked at %s in %s. This cost steps with single placements '
                         'rather than rising steadily.'
@@ -1435,6 +1442,7 @@ def build_route(db, mf):
         'conclusions': emit('who-ends-up-out-of-district', [
             conclusion(
                 id='the-placement-count-fell-and-came-partly-back',
+                bearing='sizes',
                 # "children placed at a school outside the district" reads as SCHOOL
                 # CHOICE to anybody who has not already read this page, and this site has
                 # a separate report about exactly that. TJ: "this stat is misleading...
@@ -1492,6 +1500,7 @@ def build_route(db, mf):
             ),
             conclusion(
                 id='where-a-child-starts-tracks-where-they-end-up',
+                bearing='lever',
                 claim='Of children starting in a separate special education classroom '
                       'end up outside the district',
                 so_what='Against %s of those starting in an ordinary classroom. Small '

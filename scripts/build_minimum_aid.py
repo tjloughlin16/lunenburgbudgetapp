@@ -956,6 +956,7 @@ def build():
     conclusions = emit('why-we-only-get-minimum-aid', [
         conclusion(
             id='the-whole-increase-is-the-legislatures-floor',
+            bearing='sizes',
             claim='Increase in state school aid for FY2026, all of it the Legislature’s flat minimum',
             so_what='The funding formula itself awarded nothing. What the town gets moves with a rate set on Beacon Hill.',
             lede='Lunenburg’s entire increase in state school aid for %s was the flat '
@@ -1012,6 +1013,7 @@ def build():
         ),
         conclusion(
             id='the-local-share-is-rising-faster-than-the-aid',
+            bearing='sizes',
             claim='Rise since FY2019 in what the state requires Lunenburg to pay for its own schools',
             so_what='State aid rose by less over the same years, and the pupil count the formula runs on fell.',
             lede='Since %s the amount the state requires Lunenburg to pay towards its '
@@ -1071,6 +1073,7 @@ def build():
         ),
         conclusion(
             id='the-required-contribution-is-wealth-not-children',
+            bearing='sizes',
             claim='Growth in Lunenburg’s property wealth since FY2019, against a state median far below it',
             so_what='The town’s required share is worked out from wealth, not from how many children it has.',
             lede='What the state requires Lunenburg to pay towards its own schools is '

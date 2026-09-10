@@ -836,6 +836,7 @@ def build():
         conclusions=emit('what-stopped-being-funded', [
             conclusion(
                 id='a-zero-is-usually-a-pause',
+                bearing='lever',
                 claim='Things cut to zero in the school budget that were funded again later',
                 so_what='When the school budget stops paying for something, it usually comes back.',
                 lede='When the school budget stops paying for something, it usually '
@@ -881,6 +882,7 @@ def build():
             ),
             conclusion(
                 id='what-stops-for-good-is-small-and-mostly-staff-money',
+                bearing='sizes',
                 claim='Carried by everything the schools cut and never funded again',
                 so_what='Under one per cent of the school budget. What ends for good is small, and mostly specialist posts.',
                 lede='What stops for good is small: %s things the schools paid for were '
@@ -929,6 +931,7 @@ def build():
             ),
             conclusion(
                 id='the-biggest-sustained-falls-are-tuition',
+                bearing='sizes',
                 claim='A year below their peaks, across the two biggest lasting falls in the school budget',
                 so_what='Both are money paid to other schools to teach Lunenburg children — the part people hear is running away.',
                 lede='The two biggest lasting falls in the school budget are both money '

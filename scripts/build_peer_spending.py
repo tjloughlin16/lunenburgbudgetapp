@@ -1243,6 +1243,7 @@ def build():
             # beside it so a reader does not take the vocational figure as typical.
             conclusion(
                 id='the-districts-our-children-leave-for-spend-more',
+                bearing='sizes',
                 # NOT "mostly". The count is known, so it is stated: `mostly` hedged
                 # where the data does not need a hedge, and it also hid the thing the
                 # hedge was there for. The exception is named in the detail by district.
@@ -1346,6 +1347,7 @@ def build():
             ),
             conclusion(
                 id='the-bottom-quarter-is-the-durable-fact',
+                bearing='sizes',
                 claim='Spent for each pupil, counting every fund — below the state median',
                 so_what='Lunenburg has been in the bottom quarter of Massachusetts districts in every published year.',
                 lede='Lunenburg spends %s a pupil, %s below the statewide median, and it '
@@ -1404,6 +1406,7 @@ def build():
             ),
             conclusion(
                 id='most-of-the-gap-is-the-denominator',
+                bearing='sizes',
                 claim='What Lunenburg would spend for each pupil at its own enrollment of thirteen years ago',
                 so_what='Most of the gap with its neighbours is fewer children, not less money.',
                 lede='Most of the per-pupil gap between Lunenburg and its neighbours is '
@@ -1468,6 +1471,7 @@ def build():
             ),
             conclusion(
                 id='near-the-top-on-pay-fewest-teachers',
+                bearing='lever',
                 claim='Average teacher salary, near the top of the neighbouring districts',
                 so_what='And Lunenburg employs the fewest teachers for each pupil of the group — the same money, spread wider.',
                 lede='Lunenburg pays near the top of this group for a teacher and '

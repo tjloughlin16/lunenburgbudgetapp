@@ -1483,6 +1483,7 @@ def build():
         conclusions=emit('school-staffing', [
             conclusion(
                 id='the-change-is-paraprofessionals',
+                bearing='sizes',
                 claim='Rise in paraprofessionals for each hundred pupils, the biggest change in staffing',
                 so_what='Lunenburg went from the lowest on the state’s comparison sheet to the highest.',
                 lede='Paraprofessionals are the biggest change in who Lunenburg’s '
@@ -1539,6 +1540,7 @@ def build():
             ),
             conclusion(
                 id='fewest-teachers-per-pupil-in-the-group',
+                bearing='sizes',
                 claim='Teaching staff for each hundred pupils, near the bottom of the state’s comparison group',
                 so_what='Teaching fell faster than enrollment did, so falling rolls do not explain it.',
                 lede='Lunenburg ranks %s of the %s districts on the state’s '
@@ -1609,6 +1611,7 @@ def build():
             ),
             conclusion(
                 id='inside-sped-the-money-went-to-paraprofessionals',
+                bearing='lever',
                 claim='Rise in what the schools budget for special education paraprofessionals',
                 so_what='Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals.',
                 lede='Inside special education the money went to paraprofessionals: '

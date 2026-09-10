@@ -1071,6 +1071,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
         ),
         conclusion(
             id='the-second-child-does-not-double-the-bill',
+            bearing='lever',
             claim='What a second child adds to a family’s school bill',
             so_what='Not another full share: the bus is one charge per family, and each athlete after the first pays less.',
             lede='A second child costs a Lunenburg family %s more and a third %s more — '
