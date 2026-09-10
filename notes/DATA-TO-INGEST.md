@@ -580,3 +580,29 @@ not an instructional group.** They are different quantities, counted differently
 different purposes. Do not place this file's numbers beside the regulation's maximums as
 though they could be compared, and do not let a general class size of 22 read as a breach
 of a rule that never applied to it.
+
+### Circuit breaker reimbursements, 10 September download — ALREADY HELD, do not re-ingest
+
+    /Users/tj/Downloads/Special_Education_Circuit_Breaker_Reimbursements_20260910.xlsx
+    459,801 bytes, sha256 b489e6fbc81d919e...
+
+Header checked and it is the same dataset already loaded as `dese_circuit_breaker`:
+18 columns mapping one-to-one onto our 20 (ours adds `lea` and `level` for joining).
+21 rows for Lunenburg, FY2006–FY2026.
+
+**Its only use is as a SECOND COPY at a later download date** — the existing extractor's
+`--check` could hash against it to confirm DESE has not silently revised the historical
+figures. Worth doing once; not worth an ingest.
+
+**The real gap is that the table we hold is barely read.** `dese_circuit_breaker` is on the
+decision-maker document's list of unused holdings, and the circuit breaker is the mechanism
+that partly explains why the out-of-district special education line is NET rather than
+gross: the state reimburses a share of costs above a per-student threshold. FY2026:
+**$579,142 paid on $1,257,225 eligible, 9 students claimed.** Nothing on the site says
+this.
+
+**The trap when it does get written**, and it is rule 1: the threshold is a DEDUCTION and
+not a rate — eligible minus threshold equals net claim exactly in 13 of 21 years, and the
+special education work already published the residual for the other 8 rather than
+explaining it away. And reimbursement arrives in a different fiscal year from the spending
+it reimburses, so it must never be differenced against the same year's tuition line.
