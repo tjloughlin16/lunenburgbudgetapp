@@ -160,7 +160,7 @@ school costs the town no tuition and no assessment, and barely moves Chapter 70.
 departures are close to free for the budget — the one group whose leaving does not cost
 money — and the page cannot count them.
 
-## IEP counts by grade span — the data is there, the page does not use it
+## CORRECTED: grade span is ALREADY on the page. The gap is the MOVEMENT table
 
 Found 9 September, verified, not built.
 
@@ -176,10 +176,30 @@ Found 9 September, verified, not built.
       2025      70    47    68     51    12    248
       2026      68    55    70     55    10    258
 
+**TJ caught this: `grade_span` is already in `sped-students.json` and already on the page.**
+The note below was written as though it were missing. What follows about the numbers still
+holds; what was wrong was the claim that nothing publishes them.
+
 **The total is flat and the distribution is not.** 261 → 258 overall, while PK–2 fell 19
-and Grades 6–8 rose 19. The same shape as the student flows and the staffing: a stable
-headline concealing a complete shift underneath. `/how-many-students-are-on-an-iep`
-publishes the total by year and none of this.
+and Grades 6–8 rose 19 — a stable headline concealing a complete shift underneath.
+
+**THE REAL GAP IS `dese_sped_movement`, WHICH NOTHING READS.** It has two things grade span
+does not:
+
+- **Individual grades**, not five bands. FY2024: Grade 5 is 29 of 147 on an IEP (19.7%)
+  against Grade 10 at 7 of 120 (5.8%) — a threefold spread the bands hide.
+- **`moved_in_cnt` and `moved_out_cnt`** — children moving ONTO and OFF an IEP during the
+  year. That is a FLOW, and it is exactly what separates "a cohort moving through" from
+  "fewer young children identified", which the grade-span chart raises and cannot answer.
+
+Moved off, by year, district total: 40, 19, 28, 28, 21, 17. Moved on: 28, 24, 19, 33, 23,
+38. **FY2024 is the crossover — 38 on against 17 off**, more than two joining for every one
+leaving, and moving-off has fallen every year since FY2021.
+
+**THE TRAP, and it nearly caught me:** FY2025's row is byte-identical to FY2024's and is
+flagged `repeats_prior_year='yes'`. DESE republished the year unchanged. **Never sum
+FY2024 and FY2025 as two years of movement.** The registry warned about this exact pair at
+ingest and the extractor set the column so nobody could miss it.
 
 **TWO READINGS FIT AND THIS DATA CANNOT SEPARATE THEM** — write it that way or not at all:
 
