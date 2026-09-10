@@ -1783,14 +1783,22 @@ def school_board(db, ros):
             prev = counts([r for r in ent if r['fy'] == back and r['school'] == school]) \
                 if why_no is None else None
 
+            # A CATEGORY THAT WENT TO ZERO STILL MOVED THE GROUP, and dropping its row
+            # made the panel read as self-contradictory. Lunenburg High FY2025 showed
+            # "Who teaches 38 (down 6)" above a single row "Teachers 38 (up 3)" -- both
+            # figures correct, and no way for a reader to reconcile them, because the
+            # nine specialist teachers who explain the difference had no row at all.
+            # A zero is only omitted when it was zero at BOTH ends; a category that
+            # emptied is a fact about the roster and is printed as `0`, with its fall.
             rows_ = []
             for key, label, group in BOARD_CATEGORIES:
                 n = c.get(key, 0)
-                if not n:
+                was = prev.get(key, 0) if prev is not None else 0
+                if not n and not was:
                     continue
                 rows_.append(dict(
                     key=key, label=label, group=group, names=n,
-                    delta=(n - prev.get(key, 0)) if prev is not None else None))
+                    delta=(n - was) if prev is not None else None))
             group_rows = []
             for gkey, glabel in BOARD_GROUPS:
                 n = sum(r['names'] for r in rows_ if r['group'] == gkey)

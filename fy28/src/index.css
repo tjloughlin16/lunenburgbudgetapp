@@ -10,6 +10,15 @@
   --text-muted: #898781;
   --grid: #e1e0d9;
   --axis: #c3c2b7;
+  /* UP AND DOWN ON THE SCHOOL PANELS. TJ asked for red and green on the roster deltas.
+     Note what colour is doing here and what it is not: it encodes DIRECTION only. It does
+     not say a rise is good — more paraprofessionals is not a verdict, and rule 7 still
+     governs the badge, which reports that a count moved and never why. The arrow glyph
+     carries the same information, so a reader who cannot separate these hues loses
+     nothing. Kept off --series-cost/--series-revenue, which mean cost and revenue
+     elsewhere on this site and would collide. */
+  --delta-up: #15803d;
+  --delta-down: #b91c1c;
   --series-cost: #2a78d6;
   --series-revenue: #eb6834;
   /* THE FLOOR, on /why-we-only-get-minimum-aid. ONE new hue, for one thing: the flat
@@ -158,6 +167,8 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    --delta-up: #4ade80;
+    --delta-down: #f87171;
     color-scheme: dark;
     --surface-1: #1a1a19;
     --surface-2: #0d0d0d;
@@ -209,6 +220,8 @@
   }
 }
 :root[data-theme="dark"] {
+    --delta-up: #4ade80;
+    --delta-down: #f87171;
   color-scheme: dark;
   --surface-1: #1a1a19;
   --surface-2: #0d0d0d;

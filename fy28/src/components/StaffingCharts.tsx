@@ -1045,7 +1045,12 @@ export type Board = {
   fte_is_teachers_only: string
 }
 
-/** One count and its three-year change. The arrow is direction; the ink is neutral. */
+/** One count and its change over the window.
+ *
+ * COLOUR IS DIRECTION AND NOTHING ELSE. TJ asked for red and green here. It does not say a
+ * rise is good — more paraprofessionals is not a verdict, and rule 7 still governs: the
+ * badge reports that a count moved and never why. The arrow glyph carries the same
+ * information, so a reader who cannot separate the hues loses nothing. */
 function Delta({ d }: { d: number | null }) {
   if (d === null) return null
   if (d === 0) {
@@ -1053,7 +1058,9 @@ function Delta({ d }: { d: number | null }) {
       style={{ color: 'var(--text-muted)' }}>&nbsp;&mdash;</span>
   }
   return (
-    <span className="text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>
+    <span className="text-[11px] tnum font-semibold"
+      style={{ color: d > 0 ? 'var(--delta-up)' : 'var(--delta-down)' }}
+      title={`${d > 0 ? 'up' : 'down'} ${Math.abs(d)} — a measurement, not a cause`}>
       {' '}{d > 0 ? '▲' : '▼'}{Math.abs(d)}
     </span>
   )
@@ -1171,11 +1178,18 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
             const gt = p.groups?.find(x => x.key === g.key)
             return (
               <div key={g.key} className="mb-2 last:mb-0">
-                <div className="flex justify-between items-baseline gap-2 pb-0.5 mb-1
-                                border-b" style={{ borderColor: 'var(--grid)' }}>
-                  <span className="text-[10.5px] font-semibold uppercase tracking-widest
+                {/* THE GROUP HEADING IS A HEADING, NOT AN EYEBROW. It was 10.5px,
+                    uppercase, tracking-widest and in the muted ink — a combination whose
+                    whole purpose is to recede, and wide letterspacing at that size costs
+                    legibility on top. TJ: "sections like 'Who runs the building' need to
+                    stand out a bit more. Its hard to see". Now full-size, in the primary
+                    ink, on a heavier rule: uppercase and a little tracking still mark it
+                    as structure rather than content. */}
+                <div className="flex justify-between items-baseline gap-2 pb-1 mb-1.5
+                                border-b" style={{ borderColor: 'var(--text-muted)' }}>
+                  <span className="text-[11.5px] font-bold uppercase tracking-wide
                                    min-w-0"
-                    style={{ color: 'var(--text-muted)' }}>{g.label}</span>
+                    style={{ color: 'var(--text-primary)' }}>{g.label}</span>
                   {gt && <span className="tnum text-[12px] font-bold whitespace-nowrap">
                     {gt.names}<Delta d={gt.delta} />
                   </span>}
@@ -1243,10 +1257,14 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
           </ul>
           {t.sped_fte === 0 && (
             <p className="text-[10.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>
-              A zero here is a CODING count, not a count of who works in this building.
-              The state’s special education teacher FTE for Lunenburg falls from 18.5 to
-              2.0 across this file while the district total holds flat, and nothing
-              published says why.
+              <span
+                title={'A zero here is a CODING count, not a count of who works in this '
+                  + 'building. The state’s special education teacher FTE for Lunenburg '
+                  + 'falls from 18.5 to 2.0 across this file while the district total '
+                  + 'holds flat, and nothing published says why.'}
+                style={{ borderBottom: '1px dotted currentColor', cursor: 'help' }}>
+                A zero here is a coding count, not a count of who works here.
+              </span>
             </p>
           )}
           {t.bands && t.bands.length > 0 && (
@@ -1267,14 +1285,22 @@ function Panel({ p, board, year }: { p: BoardPanel; board: Board; year: number }
             </>
           )}
           <p className="text-[10.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>
-            Teachers only. No full-time equivalent is published for a paraprofessional, an
-            administrator, a nurse, a counsellor, a custodian or a kitchen post at any
-            school — so the difference between {t.total_fte?.toFixed(1)} and the roster
-            count above is not part-timers.
-            {t.students_per_fte !== null && <> {p.students?.toLocaleString()} children
-              against {t.total_fte?.toFixed(1)} teaching posts is{' '}
-              {t.students_per_fte.toFixed(1)} per post — the state’s own arithmetic, and
-              not a class size either.</>}
+            <span
+              title={'No full-time equivalent is published for a paraprofessional, an '
+                + 'administrator, a nurse, a counsellor, a custodian or a kitchen post at '
+                + 'any school, so the difference between the teaching FTE and the roster '
+                + 'count above is not part-timers — it is everyone the state’s file does '
+                + 'not reach.'}
+              style={{ borderBottom: '1px dotted currentColor', cursor: 'help' }}>
+              Teachers only
+            </span>
+            {t.students_per_fte !== null && <> · {t.students_per_fte.toFixed(1)} children
+              per teaching post{' '}
+              <span title={'The state’s own arithmetic on its own two numbers. It is not '
+                + 'a class size: it counts every child in the school against every '
+                + 'teaching post in it, including posts that teach none of them.'}
+                style={{ borderBottom: '1px dotted currentColor', cursor: 'help' }}>
+                (not a class size)</span></>}
           </p>
         </div>
       )}

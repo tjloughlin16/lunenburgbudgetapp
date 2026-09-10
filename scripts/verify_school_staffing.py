@@ -534,8 +534,25 @@ def main():
                     by_cat[c] = by_cat.get(c, 0) + 1
                 for r in p['rows']:
                     rows_checked += 1
+                    # `by_cat` has no entry for a category nobody was printed under, and
+                    # a row for such a category now EXISTS with a count of nought -- see
+                    # the note in build_staffing_charts.py. Lunenburg High FY2025 read
+                    # "Who teaches 38 (down 6)" over a single row "Teachers 38 (up 3)",
+                    # both correct and irreconcilable, because the nine specialist
+                    # teachers who account for the difference had no row at all.
                     ok('FY%d %s %s' % (fyy, p['school'], r['key']),
-                       r['names'], by_cat.get(r['key']))
+                       r['names'], by_cat.get(r['key'], 0))
+                    # A ZERO ROW MUST BE EARNED. It is there to explain a fall, so it may
+                    # only appear where the category held somebody at the other end of
+                    # the window; a category empty at both ends is still omitted.
+                    if r['names'] == 0:
+                        back0 = [q for q in ents
+                                 if int(q['fy']) == fyy - (b['window'] - 1)
+                                 and q['school'] == p['school']]
+                        true('FY%d %s %s prints a zero only because it emptied'
+                             % (fyy, p['school'], r['key']),
+                             any(cls.get((q['role_raw'], q['grade_or_dept'])) == r['key']
+                                 for q in back0))
                     # THE THREE-YEAR BADGE, recomputed. It is the most quotable thing on
                     # a panel and nothing else on this site would notice it going wrong.
                     if r['delta'] is not None:
