@@ -156,7 +156,7 @@ def plan(local):
     to_send = [k for k in want if k not in have or have[k]['sha256'] != want[k]['sha256']]
     # Smallest corpora first, so a run cut off by the budget has sent the pages, the
     # posts and the documents whole and left only transcripts for tomorrow.
-    order = {c: i for i, c in enumerate(('post', 'page', 'source', 'minutes', 'transcript'))}
+    order = {c: i for i, c in enumerate(('post', 'page', 'recorded', 'source', 'minutes', 'transcript'))}
     to_send.sort(key=lambda k: (order.get(want[k]['corpus'], 9), k))
     return want, have, to_send, to_delete
 
@@ -273,7 +273,7 @@ def record_counts(written):
     import datetime as dt
     rc = remote_counts()
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
-        for c in ('post', 'page', 'source', 'minutes', 'transcript'):
+        for c in ('post', 'page', 'recorded', 'source', 'minutes', 'transcript'):
             fh.write("INSERT OR REPLACE INTO build_meta VALUES ('rows:%s', %s);\n" % (c, q(str(rc.get(c, 0)))))
         fh.write("INSERT OR REPLACE INTO build_meta VALUES ('pushed', %s);\n"
                  % q(dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')))

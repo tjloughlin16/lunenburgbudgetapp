@@ -39,9 +39,13 @@ def payload():
             'video_url': m['video_url'],
             'summary': mm['summary'],
             'confidence': mm['confidence'],
+            'tags': mm.get('tags', []),
+            'recording': m.get('recording'),
             'counts': {'votes': len(votes), 'procedural_votes': len(mm['votes']) - len(votes),
                        'transfers': len(mm['transfers']), 'budget_items': len(mm['budget_items']),
                        'decisions': len(mm['decisions']), 'topics': len(mm['topics']),
+                       'public_comment': len(mm.get('public_comment', [])),
+                       'attendees': len(mm.get('attendees', [])),
                        'not_audible': len(mm['not_audible'])},
             'town_published': m['town_published'],
             'has_official_minutes': any(d['kind'] == 'minutes' for d in m['town_published']),
@@ -55,8 +59,13 @@ def payload():
         b = boards.setdefault(i['board_slug'], {'board': i['board'], 'meetings': 0, 'without_official_minutes': 0})
         b['meetings'] += 1
         b['without_official_minutes'] += 0 if i['has_official_minutes'] else 1
+    tags = {}
+    for i in items:
+        for t in i['tags']:
+            tags[t] = tags.get(t, 0) + 1
     return {
         'warning': W.WARNING,
+        'tags': dict(sorted(tags.items(), key=lambda kv: (-kv[1], kv[0]))),
         'what': 'Our minutes of recorded meetings, written by a language model from our machine '
                 'captions. A finding aid to the recording, cited by the second.',
         'counts': {'meetings': len(items), 'boards': len(boards),

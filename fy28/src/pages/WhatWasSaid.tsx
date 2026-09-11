@@ -29,8 +29,13 @@ type BudgetItem = { t: number; topic: string; what_was_said: string; figures_as_
 type Transfer = { t: number; description: string; amount_as_heard?: string; outcome: string }
 type Decision = { t: number; decision: string }
 type Topic = { t_start: number; t_end: number; topic: string; resolution: string }
+type Attendee = { name_as_heard: string; role: string; remote?: boolean }
+type Comment = { t: number; topic: string; speaker_as_heard?: string; stated_role?: string }
 type Minutes = {
   summary: string
+  attendees?: Attendee[]
+  public_comment?: Comment[]
+  tags?: string[]
   votes: Vote[]
   budget_items: BudgetItem[]
   transfers: Transfer[]
@@ -49,6 +54,8 @@ type Meeting = {
   video_url: string
   summary: string
   confidence: string
+  tags: string[]
+  recording: { duration_s: number; duration: string; words_approx: number } | null
   counts: Record<string, number>
   town_published: TownDoc[]
   has_official_minutes: boolean
@@ -59,6 +66,7 @@ type Meeting = {
 type Payload = {
   warning: string
   what: string
+  tags: Record<string, number>
   counts: { meetings: number; boards: number; without_official_minutes: number }
   boards: Record<string, { board: string; meetings: number; without_official_minutes: number }>
   meetings: Meeting[]
@@ -113,7 +121,10 @@ export function WhatWasSaid() {
 }
 
 function Index({ d }: { d: Payload }) {
+  const tag = new URL(window.location.href).searchParams.get('tag') || ''
+  const shown = tag ? d.meetings.filter(m => m.tags.includes(tag)) : d.meetings
   const boards = Object.entries(d.boards).sort((a, b) => b[1].meetings - a[1].meetings)
+    .filter(([slug]) => shown.some(m => m.board_slug === slug))
   return (
     <ReportShell tab={TAB} title="What was said, meeting by meeting"
       standfirst="Our minutes of the recorded meetings — votes, transfers, budget items and decisions, each linked to the second of the video."
@@ -123,6 +134,21 @@ function Index({ d }: { d: Payload }) {
         <strong>{d.counts.without_official_minutes}</strong> of them with no minutes published by the town.
       </p>
       <Caveat warning={d.warning} />
+      {/* TOPICS, as a controlled list -- TJ: "TOPICS flagged. athletics. primary school."
+          One tag means one thing across every board, so a reader can follow athletics
+          from the School Committee to the Select Board. Counts are meetings, not
+          mentions. */}
+      <p className="mt-6 text-xs" style={{ color: 'var(--text-muted)' }}>By topic — the number is meetings that touched it:</p>
+      <p className="mt-1 flex flex-wrap gap-1.5">
+        {tag && <a href="/what-was-said" className="px-2 py-0.5 text-xs rounded border font-semibold"
+          style={{ borderColor: 'var(--text-primary)', color: 'var(--text-primary)' }}>all meetings ×</a>}
+        {Object.entries(d.tags).map(([t, n]) => (
+          <a key={t} href={`/what-was-said?tag=${t}`} className="px-2 py-0.5 text-xs rounded border"
+            style={{ borderColor: t === tag ? 'var(--series-cost)' : 'var(--grid)', color: 'var(--series-cost)',
+                     background: t === tag ? 'var(--surface-3)' : 'transparent' }}>{t.replace(/-/g, ' ')} <span className="tnum" style={{ color: 'var(--text-muted)' }}>{n}</span></a>
+        ))}
+      </p>
+      {tag && <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}><strong>{shown.length}</strong> meeting{shown.length === 1 ? '' : 's'} touched <strong>{tag.replace(/-/g, ' ')}</strong>.</p>}
       {boards.map(([slug, b]) => (
         <section key={slug} className="mt-8">
           <H2>{b.board}</H2>
@@ -130,17 +156,21 @@ function Index({ d }: { d: Payload }) {
             {b.meetings} meeting{b.meetings === 1 ? '' : 's'}; {b.without_official_minutes} with no official minutes
           </p>
           <ol className="space-y-3">
-            {d.meetings.filter(m => m.board_slug === slug).map(m => (
+            {shown.filter(m => m.board_slug === slug).map(m => (
               <li key={m.slug} className="card p-4">
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   <a className="font-semibold underline" href={`/what-was-said/${m.slug}`}
                     style={{ color: 'var(--series-cost)' }}>{longDate(m.date)}</a>
                   <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                    {m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'} · {m.counts.transfers} transfer{m.counts.transfers === 1 ? '' : 's'} · {m.counts.budget_items} budget item{m.counts.budget_items === 1 ? '' : 's'}
+                    {m.recording ? `${m.recording.duration} long · ` : ''}{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'} · {m.counts.transfers} transfer{m.counts.transfers === 1 ? '' : 's'} · {m.counts.budget_items} budget item{m.counts.budget_items === 1 ? '' : 's'} · {m.counts.public_comment} public comment{m.counts.public_comment === 1 ? '' : 's'}
                     {!m.has_official_minutes && <> · <span style={{ color: 'var(--series-revenue, #b5540f)' }}>no official minutes</span></>}
                   </span>
                 </div>
                 <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{m.summary}</p>
+                <p className="mt-1.5 flex flex-wrap gap-1">
+                  {m.tags.map(t => <a key={t} href={`/what-was-said?tag=${t}`} className="px-1.5 py-0.5 text-[10.5px] rounded"
+                    style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>{t.replace(/-/g, ' ')}</a>)}
+                </p>
               </li>
             ))}
           </ol>
@@ -178,6 +208,7 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
       dataUrl={DATA}
       meta={<span className="text-xs" style={{ color: 'var(--text-muted)' }}>
         <a className="underline" href={u} target="_blank" rel="noreferrer">the recording</a>
+        {m.recording ? <>{' · '}{m.recording.duration} long, about {m.recording.words_approx.toLocaleString()} words spoken</> : null}
         {' · '}captions carried this meeting {mm.confidence === 'high' ? 'well' : mm.confidence === 'moderate' ? 'moderately well' : 'poorly'}
       </span>}>
 
@@ -198,6 +229,20 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
       )}
 
       <Body>{mm.summary}</Body>
+      {m.tags.length > 0 && (
+        <p className="mt-2 flex flex-wrap gap-1">
+          {m.tags.map(t => <a key={t} href={`/what-was-said?tag=${t}`} className="px-1.5 py-0.5 text-[11px] rounded"
+            style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>{t.replace(/-/g, ' ')}</a>)}
+        </p>
+      )}
+
+      {(mm.attendees || []).length > 0 && (
+        <p className="mt-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
+          <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Present, as heard: </span>
+          {(mm.attendees || []).map((a, i) => <span key={i}>{i ? '; ' : ''}{a.name_as_heard} <span style={{ color: 'var(--text-muted)' }}>({a.role}{a.remote ? ', remote' : ''})</span></span>)}.
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}> Names are the caption model's hearing and may be wrong.</span>
+        </p>
+      )}
 
       <H2>Votes</H2>
       {votes.length === 0
@@ -269,6 +314,22 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
               <li key={i} className="text-sm flex gap-3 items-baseline"><At url={u} t={x.t} /><span>{x.decision}</span></li>
             ))}
           </ul>
+        </>
+      )}
+
+      {(mm.public_comment || []).length > 0 && (
+        <>
+          <H2>Public comment</H2>
+          <ol className="space-y-2">
+            {(mm.public_comment || []).map((c, i) => (
+              <li key={i} className="text-sm flex gap-3 items-baseline">
+                <At url={u} t={c.t} />
+                <span><span style={{ color: 'var(--text-secondary)' }}>{c.topic}</span>
+                  {(c.speaker_as_heard || c.stated_role) && <span className="text-xs" style={{ color: 'var(--text-muted)' }}> — {c.speaker_as_heard ? `${c.speaker_as_heard}, as heard` : 'a speaker'}{c.stated_role ? `, ${c.stated_role}` : ''}</span>}
+                </span>
+              </li>
+            ))}
+          </ol>
         </>
       )}
 

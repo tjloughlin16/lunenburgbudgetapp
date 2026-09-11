@@ -148,8 +148,17 @@ looks like it has.
    nothing concludes the site does not have it. **The index must be built to TAKE blog
    posts that do not exist yet.** `notes/QUEUE.md` item 18 has the five constraints; its
    scope is written for minutes only and is now much wider.
-3. **THEN — minutes from the transcripts.** Inserted by TJ on 11 September, ahead of
-   the refresh work. 590 machine transcripts are held and most School Committee
+3. **THEN — minutes from the transcripts.** **BUILT 11 September** (`96887e4f`).
+   `write_recording_minutes.py` writes one JSON per recording via `claude -p --tools ""
+   --json-schema` (no API key needed; runs on TJ's subscription, ~$0.50 and two minutes a
+   meeting); `build_recording_minutes.py` makes the payload; `/what-was-said` renders the
+   index and one page per meeting, every item linked to the video at its second.
+   **Approved scope so far: School Committee, Finance Committee, Select Board since
+   11 June 2026 — 22 meetings.** TJ: *"we will do all others later."* Running the rest
+   (~640 transcripts, ~$300, ~20 hours serial) is a decision, not a default. The minutes
+   are also a search corpus (`recorded`). Original note follows.
+
+   Inserted by TJ on 11 September, ahead of the refresh work. 590 machine transcripts are held and most School Committee
    meetings have no other surviving record. The job: **write our own minutes for every
    transcript**, in a fixed format, stored beside the meeting's agenda and its official
    minutes where those exist. What TJ wants first in each: **votes taken** (not the

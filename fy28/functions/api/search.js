@@ -18,6 +18,8 @@
  *               record.
  *   source      a page of a document in the archive -- a budget, an annual report.
  *   page        a page of this site.
+ *   recorded    OUR minutes of a recording, written from the captions. Cited to the
+ *               page, which cites the video by the second.
  *   post        a published blog post. Drafts are not on the site and are not here.
  *
  * Every response carries a count PER CORPUS, against that corpus's own size, and the
@@ -46,7 +48,7 @@
  */
 
 const SITE = 'https://lunenburgbudgetproject.org'
-const CORPORA = ['post', 'page', 'source', 'minutes', 'transcript']
+const CORPORA = ['post', 'page', 'recorded', 'source', 'minutes', 'transcript']
 const PER_CORPUS = 12          // hits returned per corpus
 const CANDIDATES = 2000        // rows a corpus search may read before ranking
 const CACHE_SECONDS = 600
@@ -104,7 +106,8 @@ export async function onRequest(context) {
     built: meta.built || null,
     holds,
     note: 'minutes = documents the town published; transcript = our machine captions of '
-      + 'recordings, a finding aid cited to the video at a timestamp; source = pages of '
+      + 'recordings, a finding aid cited to the video at a timestamp; recorded = our minutes '
+      + 'of a recording; source = pages of '
       + 'archive documents; page = this site; post = published posts.',
   }
 

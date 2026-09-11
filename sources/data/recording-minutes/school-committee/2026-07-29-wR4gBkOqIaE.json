@@ -12,6 +12,12 @@
   "caption_lines": 376,
   "segments": 3480
  },
+ "recording": {
+  "duration_s": 7874,
+  "duration": "2:11",
+  "spoken_chars": 113250,
+  "words_approx": 18875
+ },
  "town_published": [
   {
    "kind": "agenda",
@@ -23,251 +29,414 @@
  "written": {
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
-  "at": "2026-09-11T20:50:22Z",
-  "cost_usd": 0.499827
+  "at": "2026-09-11T21:02:15Z",
+  "cost_usd": 0.575985
  },
  "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Laura",
+    "role": "chair (also presented the cherry sheet/state aid slideshow)"
+   },
+   {
+    "name_as_heard": "Mandy Gilman",
+    "role": "member (also the citizen who filed the special town meeting petition)"
+   },
+   {
+    "name_as_heard": "Miss Russell",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tony (surname heard variously as \"Schooly\"/\"Scully\"/\"Scoring\"/\"Skully\")",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jean",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr. Fortuna",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Liz",
+    "role": "central office staff (as stated, handled scholarship checks and correspondence)"
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "presenter, 300th anniversary committee (fireworks proposal)"
+   },
+   {
+    "name_as_heard": "Cara Harukunowitz",
+    "role": "Zoom host / event manager (new hire), spoke during public comment"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 79,
+    "speaker_as_heard": "Anthony Scullenbriny",
+    "stated_role": "resident; vice chair, master plan steering committee",
+    "topic": "Urges the school committee to prioritize renovating/replacing Turkey Hill Elementary, citing ADA/handicap accessibility issues and the approaching MSBA statement-of-interest window in January 2027."
+   },
+   {
+    "t": 6517,
+    "speaker_as_heard": "Laura version",
+    "stated_role": "resident, 389 Mulpus Road",
+    "topic": "Thanks the committee for pursuing the extra state education funding, argues the millionaire's-tax money is constitutionally for education, and describes her daughter's scheduling problems (no room for a PE class junior year) from prior cuts."
+   },
+   {
+    "t": 6708,
+    "speaker_as_heard": "Anna Lockwood",
+    "stated_role": "resident (attending by Zoom)",
+    "topic": "Shares her own review of ten years of cherry sheet data arguing state aid has never decreased year over year, praises Gilman's petition effort, and urges the select board to cooperate on the warrant article."
+   },
+   {
+    "t": 7191,
+    "speaker_as_heard": "Cara",
+    "stated_role": "new district staff member (event manager)",
+    "topic": "Asks whether the new part-time athletic director will also serve as vice principal, as the previous position-holder did."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy27",
+   "chapter-70",
+   "contracts-and-unions",
+   "esser",
+   "facilities",
+   "free-cash",
+   "grants",
+   "hiring",
+   "legal",
+   "msba",
+   "override",
+   "personnel",
+   "public-comment",
+   "school-choice",
+   "special-education",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "town-meeting",
+   "transfers",
+   "transportation",
+   "turkey-hill",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 390,
+    "motion": "Take executive session out of order and enter executive session",
+    "moved_by": "a member (unspecified)",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 1877,
+    "motion": "Accept the line item transfers",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2007,
+    "motion": "Accept the LEAF grants (six grants totaling the LEAF disbursement)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2196,
+    "motion": "Accept the Lunenburg Musicators donations ($300 uniforms, $1,213 jazz stipend)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2382,
+    "motion": "Accept the Friends of Lunenburg High Football Booster Program transportation donation",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3557,
+    "motion": "Accept the proposal to shoot fireworks on the football practice field for the 300th anniversary, Dec 31",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5322,
+    "motion": "Amend the FY27 school department warrant article amount from $350,000 to $418,056 (as heard, \"4418,56\") for the September 3 special town meeting",
+    "moved_by": "Mandy Gilman",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5972,
+    "motion": "Accept and sign Mandy's letter to the legislature supporting House 5586 / the $100 million per-pupil allocation",
+    "moved_by": "Tony",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6392,
+    "motion": "Accept the new custodians' union (AFSCME Council 93) contract/MOU changes",
+    "moved_by": "Mandy Gilman",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6496,
+    "motion": "Table the FY26 budget updates item under old business",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7861,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
   "budget_items": [
    {
-    "t": 947,
-    "topic": "Cherry sheet education aid increases (FY27 governor's proposal vs final budget)",
-    "what_was_said": "The chair walked through increases in chapter 70, charter tuition reimbursement, smart growth school reimbursement, and school choice receiving tuition between the governor's proposed and final FY27 budgets. Charter tuition and smart growth were described as highly variable year to year, while school choice receipts have trended down over 15 years.",
+    "t": 967,
+    "topic": "Cherry sheet education-line increases, FY27 governor's budget vs. final budget",
     "figures_as_heard": [
      "$135,915",
      "$116,413",
      "$160,187,000"
-    ]
+    ],
+    "what_was_said": "The chair walked through the difference between the governor's initial FY27 local aid proposal and the final signed budget for chapter 70, charter tuition reimbursement, and smart growth school reimbursement. She noted charter tuition and smart growth are highly variable year to year while school choice receipts have generally been declining."
    },
    {
-    "t": 1028,
-    "topic": "Total cherry sheet receipts increase, including UGGA and VBS",
-    "what_was_said": "Beyond education-coded funds, the town also saw a slight increase in unrestricted general government aid and funds for the visually impaired and elderly. The chair gave a total increase across all cherry sheet receipts.",
+    "t": 1050,
+    "topic": "Total cherry sheet receipts increase",
     "figures_as_heard": [
      "$491,988"
-    ]
+    ],
+    "what_was_said": "The total increase across all cherry sheet receipt lines (education plus small increases in UGGA and aid for the visually impaired/elderly) was given as this figure."
    },
    {
-    "t": 1197,
-    "topic": "State assessments and charges (charter and school choice sending tuition)",
-    "what_was_said": "Charter school sending tuition assessed to the town increased while school choice sending tuition decreased, producing a net extra assessment for the year, all within education.",
+    "t": 1217,
+    "topic": "State assessments/charges increase (school choice and charter sending tuition)",
     "figures_as_heard": [
      "$15,326"
-    ]
+    ],
+    "what_was_said": "School choice sending tuition decreased while charter school sending tuition increased, netting to this additional assessment amount, the only assessments that rose being education-related."
    },
    {
     "t": 1237,
-    "topic": "Net additional state aid for FY27",
-    "what_was_said": "Subtracting the extra assessments from the extra receipts gives the net additional aid the town received above what the town budget was originally built on.",
+    "topic": "Net additional state aid available to the town",
     "figures_as_heard": [
-     "$491,988",
-     "$15,326",
      "$476,662"
-    ]
+    ],
+    "what_was_said": "Subtracting the extra assessments from the extra receipts yields the town's net additional state aid for FY27, framed as the basis for the school committee's funding request."
    },
    {
-    "t": 1381,
-    "topic": "Transfer: maintenance of buildings to grounds contracted services",
-    "what_was_said": "A year-end transfer to cover a grounds contracted-services overage.",
+    "t": 1382,
+    "topic": "Line item transfer: maintenance of buildings to grounds contracted services",
     "figures_as_heard": [
      "$7,535"
-    ]
+    ],
+    "what_was_said": "Transfer to cover a grounds contracted-services overage."
    },
    {
-    "t": 1446,
-    "topic": "Transfer: maintenance salaries to maintenance overtime",
-    "what_was_said": "A small transfer to cover a maintenance overtime salary overage.",
+    "t": 1424,
+    "topic": "Line item transfer: maintenance salaries to maintenance overtime",
     "figures_as_heard": [
      "$114.58"
-    ]
+    ],
+    "what_was_said": "Transfer to cover a maintenance overtime overage."
    },
    {
     "t": 1467,
-    "topic": "Transfer: custodian salaries",
-    "what_was_said": "Funds moved from middle and high school custodian lines to elementary and primary school custodian lines to cover salary overages.",
+    "topic": "Line item transfer: custodian salaries",
     "figures_as_heard": [
      "$13,950.61"
-    ]
+    ],
+    "what_was_said": "Transferred from middle and high school custodian lines to elementary and primary school custodian lines to cover overages."
    },
    {
     "t": 1491,
-    "topic": "Transfer: athletic security/athletic transportation",
-    "what_was_said": "A transfer to cover athletic event security (police detail) overage, described as coming from the athletic transportation line.",
+    "topic": "Line item transfer: athletic security/detail",
     "figures_as_heard": [
      "$2,894"
-    ]
+    ],
+    "what_was_said": "Transferred from athletic transportation to special detail (police) at athletic events to cover an overage."
    },
    {
-    "t": 1531,
-    "topic": "Transfer: heating charges to regular transportation",
-    "what_was_said": "Surplus heating funds were moved to cover a regular transportation overage; a member noted this was because the line had been budgeted too low, since revised for FY27.",
+    "t": 1511,
+    "topic": "Line item transfer: regular transportation",
     "figures_as_heard": [
      "$11,000"
-    ]
+    ],
+    "what_was_said": "Transferred from heating charges to regular transportation; business manager said the transportation line had simply been budgeted too low the prior year, and it has since been revised for FY27."
    },
    {
-    "t": 1576,
-    "topic": "Transfer: guidance counselor and secretary salaries",
-    "what_was_said": "Funds moved from middle school guidance counselors to high school guidance counselor and secretary lines; part attributed to extra costs from summer scheduling issues.",
+    "t": 1552,
+    "topic": "Line item transfer: high school guidance salaries",
     "figures_as_heard": [
      "$16,170.37"
-    ]
+    ],
+    "what_was_said": "Transferred from middle school guidance counselors to high school guidance counselor and secretary lines; attributed partly to costs from summer scheduling issues."
    },
    {
     "t": 1617,
-    "topic": "Transfer: high school substitute salaries",
-    "what_was_said": "A transfer to cover a high school regular substitute overage.",
+    "topic": "Line item transfer: high school substitutes",
     "figures_as_heard": [
      "$2,460"
-    ]
+    ],
+    "what_was_said": "Transferred from long-term substitutes to regular substitutes to cover an overage."
    },
    {
     "t": 1640,
-    "topic": "Transfer: high school principal/assistant principal salaries",
-    "what_was_said": "Funds moved from a middle school administrative secretary line to cover high school principal and assistant principal salary overages, described as lines budgeted too low, now corrected for FY27.",
+    "topic": "Line item transfer: high school principal/assistant principal salaries",
     "figures_as_heard": [
      "$9,663.95"
-    ]
+    ],
+    "what_was_said": "Transferred from a middle school administrative secretary line; described as a line that had been budgeted too low, now corrected for FY27."
    },
    {
     "t": 1689,
-    "topic": "Transfer: special education positions and hospital tutoring",
-    "what_was_said": "A transfer from a high school sped resource room teacher line to hospital tutoring and several special-education paraprofessional lines across schools, attributed to a staff leave of absence.",
+    "topic": "Line item transfer: special education paraprofessionals and hospital tutoring",
     "figures_as_heard": [
      "$81,75.96"
-    ]
+    ],
+    "what_was_said": "Transferred from a high school special education resource room teacher line (attributed to a staff leave of absence) to hospital tutoring and special ed paraprofessional lines across several schools."
    },
    {
     "t": 1754,
-    "topic": "Transfer: superintendent's dues/meetings to general supplies",
-    "what_was_said": "A transfer to cover a general supplies overage in the superintendent's budget, from unused dues/meetings funds.",
+    "topic": "Line item transfer: superintendent general supplies",
     "figures_as_heard": [
      "$3,584.8"
-    ]
+    ],
+    "what_was_said": "Transferred from dues and meetings to general supplies, attributed to unused conference/meeting funds."
    },
    {
     "t": 1794,
-    "topic": "Percent of budget spent this year",
-    "what_was_said": "Asked what share of the budget was spent, the business staff said expenses came in essentially at full budget, with salary figures still being finalized and expected to land close to full spend.",
+    "topic": "FY26 year-end budget spend rate",
     "figures_as_heard": [
      "100.2%"
-    ]
+    ],
+    "what_was_said": "The business manager reported total expenses came in at about this percentage of budget, with salaries still being finalized and expected to land close to but under 100%."
    },
    {
     "t": 1834,
-    "topic": "Prior-year budget overage (context for this year's transfers)",
-    "what_was_said": "Referencing an earlier-year budget shortfall the district had to give back, a member asked what share of the budget that represented; staff estimated it as a couple of percent of the total budget.",
+    "topic": "Prior-year budget overage (context for the shortfall crisis)",
     "figures_as_heard": [
+     "654",
      "600,000",
      "2 and a half%"
-    ]
+    ],
+    "what_was_said": "Referencing the overage that caused a earlier-year budget crisis, a member asked what share of the budget it represented; the business manager estimated it at around 2.5%, expecting this year's number to be smaller."
    },
    {
-    "t": 1915,
-    "topic": "Warrants paid out",
-    "what_was_said": "Staff reported a routine warrant total alongside the donations for approval.",
-    "figures_as_heard": [
-     "$1,57.91"
-    ]
-   },
-   {
-    "t": 1936,
+    "t": 1987,
     "topic": "LEAF grants (Lunenburg Education Accelerator Foundation)",
-    "what_was_said": "LEAF's first year of fundraising produced six grants to district programs (sound system/headsets, erector sets, STEM programming, a history program, and magazine subscriptions), submitted for committee acceptance.",
     "figures_as_heard": [
      "over $10,000",
-     "10,716"
-    ]
+     "$10,716"
+    ],
+    "what_was_said": "LEAF's first year of fundraising produced six grants for classroom/program items (sound system, erector sets, STEM materials, magazine subscriptions), totaling this amount."
    },
    {
-    "t": 2048,
+    "t": 2071,
     "topic": "Lunenburg Musicators donations",
-    "what_was_said": "The Musicators' president requested approval of two donations: new color guard uniforms/gloves, and funding for the middle school jazz band stipend.",
     "figures_as_heard": [
      "$300",
      "$1,213"
-    ]
+    ],
+    "what_was_said": "The Musicators donated $300 for color guard uniforms/gloves (citing a tripling of band/color guard membership) and $1,213 to fund the middle school jazz band stipend."
    },
    {
-    "t": 2216,
-    "topic": "Football helmets donation withdrawn",
-    "what_was_said": "The football boosters had offered to buy extra helmets, but because helmets are integral to student safety the district will cover that cost itself, so the donation was withdrawn from the packet.",
-    "figures_as_heard": []
+    "t": 2236,
+    "topic": "Football helmets donation, withdrawn",
+    "figures_as_heard": [],
+    "what_was_said": "Football boosters had offered to buy extra helmets, but because helmets are integral to safety the district will pay for them instead, so that donation was withdrawn."
    },
    {
-    "t": 2278,
-    "topic": "Football boosters transportation donation",
-    "what_was_said": "With transportation cut from the athletic budget, the boosters proposed funding one-way bus transportation to away games for football and cheerleading, to be given in installments so the club retains starting funds.",
+    "t": 2299,
+    "topic": "Football/cheer away-game transportation donation",
     "figures_as_heard": [
      "$3,100 something dollars"
-    ]
-   },
-   {
-    "t": 2633,
-    "topic": "FY26 earmark for passenger vans",
-    "what_was_said": "An FY26 state earmark to purchase 10-passenger vans for smaller programs was finalized and the vans have been ordered.",
-    "figures_as_heard": []
+    ],
+    "what_was_said": "With transportation cut from the athletic budget, the football boosters will fund two buses for away games (football and cheerleaders), split into three separate donations to preserve some booster treasury funds for the season."
    },
    {
     "t": 2654,
-    "topic": "FY27 technology infrastructure earmark",
-    "what_was_said": "Senator Cronin's office secured a state earmark for FY27 designated for district technology/infrastructure upgrades; a spending plan is being developed with technology and buildings and grounds staff.",
+    "topic": "FY27 technology/infrastructure earmark from Senator Cronin's office",
     "figures_as_heard": [
      "$175,000"
-    ]
+    ],
+    "what_was_said": "The district received notice of a state earmark for system infrastructure upgrades; the superintendent will work with technology and buildings/grounds staff on a spending plan."
    },
    {
     "t": 2738,
-    "topic": "ESSA (federal) entitlement grants: Title II, Title IV, Title I",
-    "what_was_said": "Title II and Title IV allocations were relatively flat with slight decreases; Title I came in well above what the district had budgeted for, with the superintendent noting the district does not know the reason for the increase. Title II funds are earmarked for math professional development, Title IV for trauma-informed practice/school climate work, and Title I for instructional coaching aimed at struggling students.",
+    "topic": "ESSER/Title grant allocations",
     "figures_as_heard": [
      "$28,443",
      "$15,19",
      "$193,820",
-     "banking on $96,000"
-    ]
+     "$96,000"
+    ],
+    "what_was_said": "Title II and Title IV allocations were relatively flat ($28,443 and $15,19 as heard); Title I came in far higher than the $96,000 the district had budgeted for, at $193,820, reason unknown to the superintendent."
    },
    {
-    "t": 3642,
-    "topic": "FY27 additional state-aid warrant article amount",
-    "what_was_said": "A member asked the committee to revisit and increase the amount requested in the warrant article for the upcoming special town meeting, from the previously voted figure to the full education-related increase, or possibly the full town-wide cherry sheet increase.",
+    "t": 3662,
+    "topic": "Warrant article amount for additional state aid to schools",
     "figures_as_heard": [
-     "$350,000",
-     "$418,000",
-     "$475,000"
-    ]
+     "350,000",
+     "418,000",
+     "475,000",
+     "800,000",
+     "300,000"
+    ],
+    "what_was_said": "Gilman proposed increasing the previously-passed $350,000 warrant article to $418,000 (the legislature's increase to Lunenburg schools above the governor's budget) or as much as $475,000 (total town-wide increase); she noted the district also cut over $800,000 this year and that a further roughly $300,000 in one-time state money exists that she is not requesting."
    },
    {
     "t": 3746,
-    "topic": "Proposed use of additional funds: occupational therapy assistant position",
-    "what_was_said": "The superintendent proposed restoring a certified occupational therapy assistant position, tied to rising caseloads and a new state restriction on school 'cool down rooms' that arrived with no accompanying funding.",
+    "topic": "Proposed use of the additional $68,000 (difference between $350,000 and $418,000)",
     "figures_as_heard": [
-     "zero dollars"
-    ]
+     "$68,000"
+    ],
+    "what_was_said": "The superintendent proposed using the incremental funds to restore a certified occupational therapy assistant (COTA) position, needed in part due to a new unfunded state mandate eliminating school \"cool down rooms.\""
    },
    {
-    "t": 5300,
-    "topic": "Amended warrant article amount",
-    "what_was_said": "The committee reread and formally amended the warrant article language to request the full education-related cherry sheet increase for the FY27 school operating budget, rather than the smaller amount previously voted.",
+    "t": 4268,
+    "topic": "Town stabilization/free cash funds, contrasted with the requested state aid",
     "figures_as_heard": [
-     "$418,56"
-    ]
+     "over $9 million"
+    ],
+    "what_was_said": "Gilman stated the town holds over $9 million in its stabilization account and is also receiving more free cash, but said she is not asking for any of that one-time money, distinguishing it from the recurring state aid she is requesting."
    },
    {
-    "t": 5800,
-    "topic": "Proposed millionaire's-tax per-pupil funding (state level)",
-    "what_was_said": "The governor proposed additional per-pupil funding drawn from millionaire's-tax revenue, pending legislative approval, which if passed would go directly to districts without a town meeting vote. A member cautioned the amount, even if approved, would not be enough to restore multiple cut positions.",
+    "t": 5322,
+    "topic": "Final FY27 warrant article amount for the September 3 special town meeting",
+    "figures_as_heard": [
+     "$418,56",
+     "4418,56"
+    ],
+    "what_was_said": "The committee voted to amend its warrant article language to request this full amount of additional education receipts for the FY27 operating budget, rather than the previously voted $350,000."
+   },
+   {
+    "t": 5788,
+    "topic": "Potential additional per-pupil state funding (millionaire's tax)",
     "figures_as_heard": [
      "$100 million",
      "$170,000",
      "$175,000"
-    ]
+    ],
+    "what_was_said": "Gilman described a further proposal from the governor for $100 million in millionaire's-tax funds for per-pupil aid, which could mean roughly $170,000-$175,000 more for the district if the legislature passes it; the superintendent cautioned it would not be enough to restore multiple lost positions."
    },
    {
-    "t": 6119,
-    "topic": "Custodial union (AFSCME Council 93) contract terms",
-    "what_was_said": "The negotiated custodial contract includes annual salary increases over three years, two added steps, revised longevity payments now expressed as flat dollar amounts by years of service, and an increased clothing allowance.",
+    "t": 6204,
+    "topic": "Custodians' union (AFSCME Council 93) contract economics",
     "figures_as_heard": [
-     "3.5%",
+     "3.5",
      "2.5%",
      "2.5%",
      "$500",
@@ -275,42 +444,49 @@
      "$1,250",
      "$1,750",
      "$455"
-    ]
+    ],
+    "what_was_said": "The new MOU gives custodians a 3.5% increase in FY27 and 2.5% increases in FY28 and FY29, adds longevity steps, converts longevity pay to flat dollar amounts ($500/$1,000/$1,250/$1,750 by years of service), and raises the clothing allowance to $455."
+   },
+   {
+    "t": 7213,
+    "topic": "Athletic director / assistant principal staffing structure and cost",
+    "figures_as_heard": [],
+    "what_was_said": "The previously combined half-time athletic director/vice principal role (held by Miss Burns) has been split; the district plans two full-time assistant principals contingent on town meeting appropriating the funds, alongside a new half-time athletic director."
    }
   ],
   "transfers": [
    {
-    "t": 1381,
-    "description": "Maintenance of buildings to maintenance of grounds, contracted services",
+    "t": 1382,
+    "description": "Maintenance of buildings to maintenance of grounds, contracted services (to cover a grounds contracted-services overage)",
     "amount_as_heard": "$7,535",
     "outcome": "voted"
    },
    {
-    "t": 1446,
+    "t": 1424,
     "description": "Maintenance salaries to maintenance overtime salaries",
     "amount_as_heard": "$114.58",
     "outcome": "voted"
    },
    {
     "t": 1467,
-    "description": "Middle and high school custodian salaries to elementary and primary school custodian salaries",
+    "description": "Middle school and high school custodians to elementary and primary school custodians",
     "amount_as_heard": "$13,950.61",
     "outcome": "voted"
    },
    {
     "t": 1491,
-    "description": "Athletic transportation to special detail athletic events (event security)",
+    "description": "Athletic transportation to special detail athletic events (police/security)",
     "amount_as_heard": "$2,894",
     "outcome": "voted"
    },
    {
-    "t": 1531,
+    "t": 1511,
     "description": "Heating charges to regular transportation",
     "amount_as_heard": "$11,000",
     "outcome": "voted"
    },
    {
-    "t": 1576,
+    "t": 1552,
     "description": "Middle school guidance counselors to high school guidance counselors and high school guidance secretary",
     "amount_as_heard": "$16,170.37",
     "outcome": "voted"
@@ -323,275 +499,189 @@
    },
    {
     "t": 1640,
-    "description": "Middle school administrative secretary to high school principal/assistant principal salaries",
+    "description": "Middle school administrative secretary to high school principal/assistant principal",
     "amount_as_heard": "$9,663.95",
     "outcome": "voted"
    },
    {
     "t": 1689,
-    "description": "High school sped resource room teacher to hospital tutoring and special-education paraprofessional lines (primary, elementary, middle, high school)",
+    "description": "High school sped resource room teacher to hospital tutoring and special ed paraprofessionals at primary, elementary, middle, and high schools",
     "amount_as_heard": "$81,75.96",
     "outcome": "voted"
    },
    {
     "t": 1754,
-    "description": "Superintendent's dues/meetings to general supplies",
+    "description": "Superintendent's dues and meetings to general supplies",
     "amount_as_heard": "$3,584.8",
     "outcome": "voted"
    }
   ],
   "decisions": [
    {
-    "t": 450,
-    "decision": "A member's citizen petition triggered a legal requirement that the select board hold a special town meeting within 45 days; the committee is treating September 3rd as that meeting, referred to informally as the 'extra special' town meeting."
+    "t": 2236,
+    "decision": "The district, rather than the football boosters, will pay for extra football helmets, so that donation offer was withdrawn."
    },
    {
-    "t": 4057,
-    "decision": "The committee agreed to submit its own warrant article, taking ownership of and editing the language originally filed as a citizen petition, rather than leaving the citizen petition as the vehicle; the citizen who filed the petition said she would not separately pursue a specific dollar amount through it."
+    "t": 4683,
+    "decision": "Rather than track two competing routes (the citizen petition and a separate school committee article), the committee agreed to take the language of the existing warrant article, amend it, and vote on it as the committee's own article, with Gilman stating she will not separately pursue funding through the citizen petition track."
    },
    {
-    "t": 7296,
-    "decision": "At a joint select board/municipal building design committee meeting, an informal straw poll (not a recorded vote) favored eventually taking down the TCP building, with one dissent, on the view that it has no remaining municipal use."
+    "t": 7503,
+    "decision": "The Athletic Advisory Committee will be restarted to help coordinate booster-club fundraising and ensure compliance with state/federal requirements; Tony and Mandy will serve on it along with volunteers Peter Beard and others."
    },
    {
-    "t": 7522,
-    "decision": "The athletic advisory committee is being restarted to help coordinate booster-club fundraising and ensure compliance with legal requirements on accepting donations."
+    "t": 7755,
+    "decision": "The committee will put together an MSBA/Turkey Hill primer presentation for itself and the public ahead of beginning the formal MSBA process."
    },
    {
     "t": 7819,
-    "decision": "No August meeting is currently planned unless needed for additional line-item transfers; the committee's next meeting is the day before the September special town meeting, with a finance committee meeting also expected before then."
+    "decision": "No regular meeting is planned for August, though a Zoom meeting may be called if needed for line item transfers; the committee will otherwise meet next at a finance committee meeting and then the day before the September 3 special town meeting."
    }
   ],
   "topics": [
    {
-    "t_start": 2,
+    "t_start": 0,
     "t_end": 47,
-    "topic": "Opening remarks, broadcast/open meeting law notice",
+    "topic": "Opening, open meeting law notice, pledge of allegiance",
     "resolution": "informational"
    },
    {
-    "t_start": 48,
-    "t_end": 67,
-    "topic": "Pledge of Allegiance",
-    "resolution": "procedural"
-   },
-   {
-    "t_start": 68,
+    "t_start": 57,
     "t_end": 348,
-    "topic": "Public comment on prior issues: Turkey Hill Elementary building needs, MSBA process, town master plan priorities",
-    "resolution": "no resolution"
+    "topic": "Public comment on prior issues: Turkey Hill Elementary/MSBA window",
+    "resolution": "informational, no vote"
    },
    {
     "t_start": 348,
-    "t_end": 389,
-    "topic": "Further public comment / Zoom check",
-    "resolution": "informational"
-   },
-   {
-    "t_start": 390,
     "t_end": 410,
     "topic": "Motion to take executive session out of order",
-    "resolution": "voted"
+    "resolution": "voted, passed"
    },
    {
     "t_start": 410,
     "t_end": 430,
     "topic": "Executive session",
-    "resolution": "not discussed on camera"
+    "resolution": "not on recording"
    },
    {
     "t_start": 430,
     "t_end": 511,
-    "topic": "Chair's report: special town meeting petition process",
+    "topic": "Chair's report: explanation of the citizen petition for a special town meeting",
     "resolution": "informational"
    },
    {
     "t_start": 511,
     "t_end": 1301,
-    "topic": "Cherry sheet / state education aid presentation",
+    "topic": "Cherry sheet / state aid presentation and Q&A",
     "resolution": "informational"
    },
    {
     "t_start": 1322,
     "t_end": 1341,
-    "topic": "Student representative report and review of minutes",
-    "resolution": "no items available"
+    "topic": "Student representative report and minutes",
+    "resolution": "no minutes to approve, no report given"
    },
    {
-    "t_start": 1342,
-    "t_end": 1911,
-    "topic": "Line item transfers",
-    "resolution": "voted"
+    "t_start": 1341,
+    "t_end": 1896,
+    "topic": "Review of FY26 line item transfers",
+    "resolution": "voted, passed unanimously"
    },
    {
-    "t_start": 1911,
-    "t_end": 2047,
+    "t_start": 1906,
+    "t_end": 2048,
     "topic": "Warrants and LEAF grant donations",
-    "resolution": "voted"
+    "resolution": "voted, passed unanimously"
    },
    {
     "t_start": 2048,
-    "t_end": 2216,
-    "topic": "Lunenburg Musicators donations",
-    "resolution": "voted"
+    "t_end": 2196,
+    "topic": "Lunenburg Musicators donation requests",
+    "resolution": "voted, passed"
    },
    {
-    "t_start": 2216,
-    "t_end": 2402,
-    "topic": "Football boosters donations (helmets withdrawn; transportation approved)",
-    "resolution": "voted"
+    "t_start": 2236,
+    "t_end": 2382,
+    "topic": "Football booster helmet and transportation donations",
+    "resolution": "helmet donation withdrawn; transportation donation voted and passed"
    },
    {
-    "t_start": 2464,
-    "t_end": 3156,
-    "topic": "Superintendent's report: hiring, grants, earmarks, scholarships, recreation partnership",
-    "resolution": "informational"
+    "t_start": 2444,
+    "t_end": 3136,
+    "topic": "Superintendent's report: hires, van/tech earmarks, scholarships, recreation partnership, ESSER grants, conference",
+    "resolution": "informational, Q&A"
    },
    {
     "t_start": 3156,
     "t_end": 3600,
     "topic": "300th anniversary fireworks proposal",
-    "resolution": "voted"
+    "resolution": "voted, passed"
    },
    {
     "t_start": 3600,
-    "t_end": 5786,
-    "topic": "FY27 budget: amending the warrant article for additional state aid",
-    "resolution": "voted"
+    "t_end": 5788,
+    "topic": "FY27 additional state aid warrant article amendment discussion",
+    "resolution": "voted, passed (amended to $418,56 as heard)"
    },
    {
     "t_start": 5788,
-    "t_end": 6035,
-    "topic": "Letter to state legislature supporting additional per-pupil funding",
-    "resolution": "voted"
+    "t_end": 6055,
+    "topic": "Letter to the legislature on the proposed $100 million per-pupil funding",
+    "resolution": "voted, passed"
    },
    {
-    "t_start": 6097,
-    "t_end": 6119,
-    "topic": "Follow-up on governor's per-pupil funding proposal",
-    "resolution": "informational"
+    "t_start": 6098,
+    "t_end": 6412,
+    "topic": "Custodians' union (AFSCME Council 93) MOU/contract",
+    "resolution": "voted, passed"
    },
    {
-    "t_start": 6119,
-    "t_end": 6435,
-    "topic": "Custodial union (AFSCME Council 93) contract/MOU",
-    "resolution": "voted"
+    "t_start": 6412,
+    "t_end": 6517,
+    "topic": "Old business: FY26 budget updates",
+    "resolution": "voted to table"
    },
    {
-    "t_start": 6494,
-    "t_end": 6516,
-    "topic": "FY26 budget update",
-    "resolution": "tabled"
-   },
-   {
-    "t_start": 6516,
+    "t_start": 6517,
     "t_end": 7296,
     "topic": "Public comment on issues discussed tonight",
-    "resolution": "no resolution"
+    "resolution": "informational, no vote"
    },
    {
     "t_start": 7296,
     "t_end": 7735,
-    "topic": "Subcommittee reports: municipal building design/TCP, athletic advisory committee",
+    "topic": "Subcommittee reports: municipal building design committee/TCP, athletic advisory committee restart",
     "resolution": "informational"
    },
    {
     "t_start": 7735,
-    "t_end": 7840,
-    "topic": "Topics for future discussion: MSBA primer, Turkey Hill process, meeting schedule",
+    "t_end": 7797,
+    "topic": "Topics for future discussion: MSBA primer",
+    "resolution": "no vote, agreed to prepare a presentation"
+   },
+   {
+    "t_start": 7797,
+    "t_end": 7861,
+    "topic": "Scheduling of future meetings",
     "resolution": "informational"
    },
    {
-    "t_start": 7850,
-    "t_end": 7862,
+    "t_start": 7861,
+    "t_end": 7876,
     "topic": "Adjournment",
-    "resolution": "voted"
+    "resolution": "voted, passed"
    }
   ],
   "not_audible": [
-   "The public commenter's name at the start (heard as \"Anthony Scullenbriny\") is uncertain.",
-   "The smart growth figure heard as \"$160,187,000\" is implausibly large for this context and may be a captioning error; recorded as heard per the rules.",
-   "The warrant figure at t=1915 (\"$1,57.91\") has an unclear digit grouping.",
-   "The transfer figure at t=1689 (\"$81,75.96\") has an unclear digit grouping, likely meant as a different value.",
-   "The Title IV allocation at t=2758 (\"$15,19\") has an unclear digit grouping.",
-   "Miss Gilman's roll-call vote on the final adjournment motion is cut off in the captions before her answer is heard.",
-   "The exact dollar figure of the football boosters' transportation donation (\"$3,100 something dollars\") is not fully stated.",
-   "The third member of the custodians' union negotiating team's name is initially misheard before being corrected to Tim McKenna.",
-   "Whether an earlier-mentioned new hire (\"Eric Shehan\") is actually being hired is explicitly uncertain per the superintendent's own comment.",
-   "Some exchanges during public comment and subcommittee reports have overlapping speakers not clearly attributable to a single name."
+   "Whether \"Jean,\" who participates by Zoom and is asked for input, is counted separately in the roll-call votes is unclear; roll calls consistently name only Gilman, the member heard as \"Schooly,\" Russell, and the chair's own \"yes.\"",
+   "The surname of the member heard as \"Schooly\"/\"Scully\"/\"Scoring\"/\"Skully\" could not be reliably determined from captions.",
+   "The exact wording and content of the executive session (410-430) is not on the recording.",
+   "The smart growth cherry sheet figure captioned as \"$160,187,000\" is almost certainly a captioning error given context (smart growth is described as a small, volatile line), but is reported here exactly as heard per instructions.",
+   "The transfer amount captioned as \"$114.58\" for a maintenance overtime overage seems implausibly small relative to the stated purpose, but is reported exactly as heard.",
+   "Precise vote tallies (e.g., \"4-0\") were not stated numerically in captions; only each named member's individual \"yes\" was audible, so outcomes are reported as \"passed\" rather than as a count.",
+   "The identity/role of \"Liz,\" referenced regarding scholarship checks and the legislative letter, was not clearly stated."
   ],
   "confidence": "moderate",
-  "summary": "This School Committee meeting covered public comment urging action on the long-neglected Turkey Hill Elementary building, a detailed walkthrough of state cherry sheet aid increases, a large batch of routine year-end line-item transfers, several donations (LEAF grants, Lunenburg Musicators, football boosters), the superintendent's report on new hires and grants, and a proposal for 300th-anniversary fireworks. The committee's central business was amending its warrant article to request more of the state's additional education aid for a September 3rd special town meeting, alongside sending a legislative letter for further per-pupil funding and ratifying a new custodial union contract; an FY26 budget update was tabled for a future meeting.",
-  "votes": [
-   {
-    "t": 390,
-    "motion": "Take the executive session item out of order and enter executive session",
-    "outcome": "passed 4-0",
-    "procedural": true
-   },
-   {
-    "t": 1877,
-    "motion": "Accept the line item transfers as a package",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 2007,
-    "motion": "Accept the LEAF grants",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 2196,
-    "motion": "Accept the Lunenburg Musicators donations (uniforms and jazz band stipend)",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 2362,
-    "motion": "Accept the football boosters' transportation donation",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 3536,
-    "motion": "Accept the proposal to shoot fireworks on the football practice field for the 300th anniversary on December 31st",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 5320,
-    "moved_by": "a committee member",
-    "motion": "Amend the FY27 warrant article to request $418,56 instead of $350,000 for the school operating budget",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 5972,
-    "moved_by": "Tony",
-    "motion": "Accept and send the letter to the legislature supporting the additional per-pupil funding proposal",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 6392,
-    "moved_by": "Mandy",
-    "motion": "Accept the new custodial union contract/MOU as ratified by AFSCME Council 93",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 6494,
-    "motion": "Table the FY26 budget update item",
-    "outcome": "passed 4-0",
-    "procedural": false
-   },
-   {
-    "t": 7850,
-    "motion": "Adjourn the meeting",
-    "outcome": "passed",
-    "procedural": true
-   }
-  ]
+  "summary": "The Lunenburg School Committee reviewed FY26 year-end line item transfers, approved several donations (LEAF grants, Musicators, football boosters), heard a detailed presentation on additional FY27 state aid via the cherry sheet, and voted to amend its warrant article for the September 3 \"extra special\" town meeting from $350,000 to $418,056 in additional state education aid. It also voted to sign a letter to the legislature supporting a further $100 million per-pupil funding proposal, ratified a new custodians' union contract, heard the superintendent's report on hiring and grants, approved a 300th-anniversary fireworks proposal, and discussed the long MSBA process facing Turkey Hill Elementary."
  }
 }

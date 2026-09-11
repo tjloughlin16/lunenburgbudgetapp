@@ -29,6 +29,8 @@ FIVE CORPORA, AND EACH KEEPS ITS OWN DENOMINATOR
     source      the archive's documents -- budgets, annual reports, DESE files -- one row
                 per PAGE, so a hit cites a page of a PDF rather than a 200-page file.
     page        the site's own pages, from the prerendered build. One row per page.
+    recorded    OUR minutes of a recording (write_recording_minutes.py): votes, transfers,
+                topics. Derived twice over; cited to the video, styled as ours.
     post        blog posts, and ONLY the ones in PUBLISHED. The drafts are not on the
                 site and must not be findable through it either -- `build_blog.py --check`
                 walks the built site for exactly that, and an index that leaked a draft
@@ -60,6 +62,7 @@ time.
 import argparse
 import csv
 import datetime as dt
+import glob
 import html
 import json
 import os
@@ -75,6 +78,7 @@ DB = os.path.join(ROOT, 'sources', 'data', 'search-fts.db')
 SRC = os.path.join(ROOT, 'sources')
 DIST = os.path.join(ROOT, 'fy28', 'dist')
 BLOG_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'blog.json')
+RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 # The town's words for ours. Curated by hand in the CSV, published as JSON for the search
 # page, which offers them when a search finds little. Constraint 3 of QUEUE item 18: a
 # resident types "foreign language" and the archive says "French", and a null result on a
@@ -280,6 +284,43 @@ def page_rows(entry):
     }, body)]
 
 
+# ------------------------------------------------------------ our minutes of recordings
+
+def recorded_files():
+    out = []
+    for f in sorted(glob.glob(os.path.join(RECORDED, '*', '*.json'))):
+        out.append({'file': f, 'file_key': rel(f), 'corpus': 'recorded'})
+    return out
+
+
+def recorded_rows(entry):
+    m = json.load(open(entry['file'], encoding='utf-8'))
+    mm = m['minutes']
+    parts = [mm.get('summary', '')]
+    parts += [t.replace('-', ' ') for t in mm.get('tags', [])]
+    parts += [p['topic'] for p in mm.get('public_comment', [])]
+    parts += [v['motion'] + ' — ' + v['outcome'] for v in mm.get('votes', [])]
+    parts += [t['description'] for t in mm.get('transfers', [])]
+    parts += [b['topic'] + '. ' + b['what_was_said'] for b in mm.get('budget_items', [])]
+    parts += [d['decision'] for d in mm.get('decisions', [])]
+    parts += [t['topic'] + ' — ' + t['resolution'] for t in mm.get('topics', [])]
+    body = re.sub(r'\s+', ' ', ' '.join(p for p in parts if p)).strip()
+    slug = '%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id'])
+    return [({
+        'corpus': 'recorded',
+        'doc_key': 'recorded:' + slug,
+        'file_key': entry['file_key'],
+        'title': '%s, %s — our minutes of the recording' % (m['board'], m['meeting_date']),
+        'board': m['board'], 'board_slug': m['board_slug'],
+        'date': m['meeting_date'],
+        'kind': 'our minutes',
+        'cite_url': '%s/what-was-said/%s' % (SITE, slug),
+        'source_url': m['video_url'],
+        'start_s': None, 'seg_starts': None,
+        'chars': len(body),
+    }, body)]
+
+
 # ---------------------------------------------------------------------- published posts
 
 def post_files():
@@ -328,13 +369,14 @@ READERS = {
     'source': source_rows,
     'page': page_rows,
     'post': post_rows,
+    'recorded': recorded_rows,
 }
 
 
 def wanted():
     out = {}
     for e in (minutes_files() + M.transcript_files() + source_files()
-              + page_files() + post_files()):
+              + page_files() + post_files() + recorded_files()):
         e['sha256'] = M.sha256_of(e['file'])
         out[e['file_key']] = e
     if not out:

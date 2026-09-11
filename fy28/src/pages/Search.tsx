@@ -48,7 +48,7 @@ type Hit = {
   matched: string[]
   via?: 'text' | 'topic'
 }
-type Corpus = 'post' | 'page' | 'source' | 'minutes' | 'transcript'
+type Corpus = 'post' | 'page' | 'recorded' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
 type Payload = {
   q: string
@@ -63,10 +63,11 @@ type Payload = {
 }
 type Vocab = Record<string, { try: string[]; note: string }>
 
-const ORDER: Corpus[] = ['post', 'page', 'source', 'minutes', 'transcript']
+const ORDER: Corpus[] = ['post', 'page', 'recorded', 'source', 'minutes', 'transcript']
 const NAME: Record<Corpus, string> = {
   post: 'Blog posts',
   page: 'Pages on this site',
+  recorded: 'What was said — our minutes of recordings',
   source: 'Documents in the archive',
   minutes: 'Minutes and agendas the town published',
   transcript: 'Recordings — our transcripts',
@@ -74,6 +75,7 @@ const NAME: Record<Corpus, string> = {
 const UNIT: Record<Corpus, [string, string]> = {
   post: ['post', 'posts'],
   page: ['page', 'pages'],
+  recorded: ['meeting', 'meetings'],
   source: ['document page', 'document pages'],
   minutes: ['document', 'documents'],
   transcript: ['minute of recording', 'minutes of recording'],
@@ -81,6 +83,7 @@ const UNIT: Record<Corpus, [string, string]> = {
 const WHAT: Record<Corpus, string> = {
   post: 'What this project has published, one finding at a time.',
   page: 'The analyses and reference pages here.',
+  recorded: 'Our minutes of recorded meetings, written from the captions: votes, transfers, topics. Each links to the video by the second.',
   source: 'Budgets, annual reports and state files, cited to the page.',
   minutes: 'What the town itself published. A record.',
   transcript: 'Machine captions of meeting videos — ours, not the town’s. They locate a moment; they do not settle what was said.',

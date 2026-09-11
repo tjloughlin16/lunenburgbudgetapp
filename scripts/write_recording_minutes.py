@@ -65,12 +65,49 @@ WARNING = ('OUR MINUTES OF A RECORDING, written by a language model from machine
            'timestamp, never this file. Figures are as heard and may be wrong; names may be '
            'wrong; where the town published minutes, those are the record.')
 
+# A CONTROLLED LIST, so a tag means the same thing on every meeting and a reader can
+# follow one across boards. Free text would give "sports", "athletics" and "the football
+# program" for the same thing. Add to the list; do not let the model invent.
+TAGS = [
+    'budget', 'budget-fy26', 'budget-fy27', 'budget-fy28', 'state-aid', 'chapter-70',
+    'override', 'town-meeting', 'warrant-article', 'transfers', 'free-cash', 'capital',
+    'debt', 'tax-rate', 'grants', 'esser', 'fees', 'contracts-and-unions', 'hiring',
+    'staffing', 'layoffs', 'special-education', 'out-of-district', 'enrollment',
+    'school-choice', 'monty-tech', 'athletics', 'transportation', 'facilities',
+    'turkey-hill', 'primary-school', 'middle-school', 'high-school', 'technology',
+    'curriculum', 'policy', 'executive-session', 'public-comment', 'health-insurance',
+    'retirement', 'town-departments', 'public-safety', 'roads-and-dpw', 'water-sewer',
+    'planning-and-zoning', 'elections', 'legal', 'msba', 'recreation', 'library',
+    'seniors', 'housing', 'economic-development', 'personnel', 'superintendent-report',
+]
+
 SCHEMA = {
     'type': 'object',
     'additionalProperties': False,
-    'required': ['summary', 'votes', 'budget_items', 'transfers', 'decisions', 'topics',
-                 'not_audible', 'confidence'],
+    'required': ['summary', 'attendees', 'public_comment', 'tags', 'votes', 'budget_items',
+                 'transfers', 'decisions', 'topics', 'not_audible', 'confidence'],
     'properties': {
+        'attendees': {'type': 'array', 'items': {
+            'type': 'object', 'additionalProperties': False,
+            'required': ['name_as_heard', 'role'],
+            'properties': {
+                'name_as_heard': {'type': 'string', 'description': 'exactly as the captions render it; may be wrong'},
+                'role': {'type': 'string', 'description': 'chair, member, superintendent, business manager, town manager, town accountant, student representative, presenter, or as stated'},
+                'remote': {'type': 'boolean', 'description': 'true if said to be attending by Zoom or phone'},
+            }},
+            'description': 'board members and officials identified as present -- by roll call, by the chair, or by being addressed. Not the public.'},
+        'public_comment': {'type': 'array', 'items': {
+            'type': 'object', 'additionalProperties': False,
+            'required': ['t', 'topic'],
+            'properties': {
+                't': {'type': 'integer'},
+                'topic': {'type': 'string', 'description': 'what was raised, in a sentence'},
+                'speaker_as_heard': {'type': 'string', 'description': 'ONLY if the speaker stated their own name for the record; exactly as heard; omit otherwise'},
+                'stated_role': {'type': 'string', 'description': 'parent, resident, teacher, coach, booster president... only if they said so'},
+            }},
+            'description': 'each person who spoke during public comment or from the floor'},
+        'tags': {'type': 'array', 'items': {'type': 'string', 'enum': TAGS},
+                 'description': 'every topic from the controlled list that this meeting substantively touched'},
         'summary': {'type': 'string', 'description': 'Two or three sentences: what this meeting was mostly about and what, if anything, was decided. No figures.'},
         'votes': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
@@ -138,7 +175,9 @@ Rules, none optional:
 8. decisions are things settled without a formal vote.
 9. topics cover the whole meeting in order, with a start and end second and how each ended.
 10. Do not summarise what the captions do not contain. If a stretch is garbled, say so in not_audible.
-11. Public comment: record the topic raised, never the speaker's name.
+11. Public comment: record each speaker's topic; record the speaker's name ONLY if they stated it themselves for the record, and exactly as heard.
+12. attendees: officials and members identified as present, with the role as stated or as evident from how they are addressed. Never the public.
+13. tags: choose every tag from the controlled list that the meeting substantively touched; "turkey-hill" is Turkey Hill Elementary, "primary-school" is Lunenburg Primary School.
 
 Return only the JSON."""
 
@@ -222,9 +261,15 @@ def write_one(entry, docs, force=False):
     body = res.get('structured_output') or res.get('result')
     if isinstance(body, str):
         body = json.loads(body)
+    if isinstance(body, dict) and 'tags' in body:
+        body['tags'] = sorted(set(body['tags']))
     if not isinstance(body, dict) or 'votes' not in body:
         raise SystemExit('no structured output for %s: %s' % (entry['rel'], str(res)[:800]))
     video_url = doc.get('video_url') or 'https://www.youtube.com/watch?v=' + entry['video_id']
+    segs = doc.get('segments') or []
+    last = segs[-1] if segs else {}
+    duration_s = int(float(last.get('start') or 0) + float(last.get('duration') or 0))
+    spoken_chars = sum(len(x.get('text') or '') for x in segs)
     minutes = {
         'warning': WARNING,
         'board_slug': entry['board_slug'],
@@ -234,7 +279,11 @@ def write_one(entry, docs, force=False):
         'video_url': video_url,
         'cite': 'the video at &t=<seconds>s; every t below is such a second',
         'source': {'transcript': entry['rel'], 'sha256': sha, 'caption_lines': len(lines),
-                   'segments': len(doc.get('segments') or [])},
+                   'segments': len(segs)},
+        # MEASURED, not asked: the recording's length from the last caption's end, and how
+        # much was spoken. A meeting can be long and quiet.
+        'recording': {'duration_s': duration_s, 'duration': '%d:%02d' % (duration_s // 3600, (duration_s % 3600) // 60),
+                      'spoken_chars': spoken_chars, 'words_approx': spoken_chars // 6},
         'town_published': docs.get((entry['board_slug'], entry['date']), []),
         'written': {'by': 'scripts/write_recording_minutes.py', 'model': MODEL,
                     'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
