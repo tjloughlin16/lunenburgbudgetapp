@@ -79,22 +79,22 @@ actually having and neither has the table.
 
 </details>
 
-### 1.2 "Did staffing go up?" has 171 published answers
+### 1.2 The same teacher counts give three different answers
 
-> ### Teacher staffing is lower at the end than the start in 95 of the 171 pairs of years the state publishes, and higher in 76.
+> ### The state's own teacher counts give +0.3, −10.6 and −16.1 — the same numbers, three different starting years.
 
 > FY2016→FY2025 is +0.3 FTE, which is the span of the chart the Tri-Board was shown on 27 January 2026. FY2024→FY2026 is −10.6. FY2008→FY2026 is −16.1.  
 > *— said/shown*
 
 **If you are a resident:** Both sides of the argument you are hearing are quoting real numbers. The sign depends on the years picked, so the years belong on every chart you are shown.
 
-**If you are a Finance Committee member:** The chart was one window of 171, and the archive publishes all of them.
+**If you are a Finance Committee member:** The chart you were shown starts in FY2016 and ends in FY2025. Start in FY2024 instead and the same official series falls by 10.6 posts; start in FY2008 and it falls by 16.1. The archive publishes every year, so any start and end can be checked.
 
 **If you are a School Committee member:** So is yours. Neither window is wrong and neither is the series.
 
 **What we expect the reader to take away**
 
-**Both charts are real.** Teacher staffing fell over the years one side quotes and rose over the years the other side quotes, because 95 of the 171 published pairs of years fall and 76 rise. Nobody is being misled and nobody has to be wrong: the sign is a property of the window rather than of the schools. What it leaves a reader with is one question worth asking out loud — what are the start year and the end year on this chart?
+**Both charts are real.** Teacher staffing rose over the years one side quotes and fell over the years the other quotes — and neither side picked their years dishonestly. Count every start-and-end the state has published and a little over half go down, the rest go up; there is no underlying direction for a chart to be faithful to. Nobody is being misled and nobody has to be wrong. What it leaves a reader with is one question worth asking out loud, of any staffing chart anybody shows them: **which year does it start, and which year does it end?**
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
