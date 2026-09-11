@@ -25,12 +25,12 @@ actually having and neither has the table.
 
 ### 1.1 The same number of children is not the same children
 
-> ### Lunenburg has 14% fewer students than in 2008, and five times as many who need a second language taught alongside the first.
+> ### Lunenburg teaches 256 fewer children than in 2008 — and exactly as many children with disabilities: 258 then, 258 now.
 
-> FY2008: 1,824 students, **3** English learners, 10.0% low income, 258 with disabilities (14.1%). FY2026: 1,568 students, **70** English learners, 25.2% low income, 258 with disabilities (16.3%).  
+> The count did not move while the school around it shrank, so the SHARE went 14.1% to 16.3%. Children in low-income households roughly doubled as a share, 10.0% to 25.2% — the largest change of the three, and the one to read with care, because DESE altered how it identifies low income part-way through the series. English learners went 3 to 70, the smallest of the three in children: +67 against +213.  
 > *— then/now*
 
-**If you are a resident:** Both things you have heard are true. The schools are smaller than they were and the children in them are not the same mix, so a budget that tracks headcount and a budget that tracks need do not give the same answer.
+**If you are a resident:** Both things you have heard are true. There are fewer children and the same number of them need the most expensive help the schools provide, so a budget that tracks headcount and a budget that tracks need do not give the same answer.
 
 **If you are a Finance Committee member:** The chart you were shown at Tri-Board measured headcount. This is the column beside it, from the same publisher, and it moves the other way.
 
