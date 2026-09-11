@@ -10,6 +10,32 @@ load-bearing against the repo itself.
 
 ## Where everything is
 
+**UPDATED 11 September, evening.** Everything below the line was done in one session and
+is DEPLOYED (`2fb983f3`, `origin/main` = `e3fdd527`+):
+
+- **/search** — five... six corpora, one D1 database `lunenburg-search`. The first load is
+  **two-thirds pushed**: `python3 scripts/sync_search_d1.py` tomorrow sends the remaining
+  ~33,000 rows (709 minutes files, 260 transcripts, the 22 `recorded` rows) and writes the
+  build date; then `--check`. Do NOT run `sync_d1.py` the same day. Search-page
+  denominators read 0 for corpora not yet pushed; that is the push, not a bug.
+- **/what-was-said** — 22 meetings' minutes from the recordings, approved scope only. To
+  widen: `write_recording_minutes.py --board <slug> --limit N` (~$0.50, 2 min each), then
+  `build_recording_minutes.py`, rebuild the index, push, deploy.
+- **Affinity** — `sources/data/search-affinity.csv`, 77 pages tagged. Edit the CSV; the
+  index rebuild and push replace the table whole.
+- **App metrics** — `notes/generated/APP-METRICS.md`, generated; regenerate after any
+  ingest before sharing.
+- **The family-fees inset bug** TJ found is fixed and live.
+- **The transcript backfill** is still running (`/tmp/transcripts.log`); 748 held at the
+  last index build. It is safe to leave running; `sync_archive.py --push --only
+  data/youtube-transcripts` backs up what is new.
+
+Remaining from the original list: the post order (after Tiffany), the refresh mechanisms
+and digests (12, 12a), items 13–17, the paused pages 7–9.
+
+---
+
+
 **`HEAD == origin == 38b7e540`, zero uncommitted.** All work is on GitHub.
 
 | | |

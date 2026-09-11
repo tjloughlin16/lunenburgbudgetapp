@@ -288,6 +288,8 @@ def record_counts(written):
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
         for c in ('post', 'page', 'recorded', 'source', 'minutes', 'transcript'):
             fh.write("INSERT OR REPLACE INTO build_meta VALUES ('rows:%s', %s);\n" % (c, q(str(rc.get(c, 0)))))
+        built = sqlite3.connect(B.DB, timeout=300).execute("SELECT v FROM build_meta WHERE k='built'").fetchone()
+        fh.write("INSERT OR REPLACE INTO build_meta VALUES ('built', %s);\n" % q(built[0] if built else ''))
         fh.write("INSERT OR REPLACE INTO build_meta VALUES ('pushed', %s);\n"
                  % q(dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')))
     run_file(fh.name)
