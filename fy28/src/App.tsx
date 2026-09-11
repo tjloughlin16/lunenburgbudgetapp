@@ -42,6 +42,7 @@ import { CourseOfferings } from './pages/CourseOfferings'
 import { LunenburgByTheNumbers } from './pages/LunenburgByTheNumbers'
 import { Blog } from './pages/Blog'
 import Search from './pages/Search'
+import { WhatWasSaid } from './pages/WhatWasSaid'
 // LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
 // reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
 // production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
@@ -475,6 +476,7 @@ export default function App() {
           the slug is the second path segment, the same shape /analysis/<id> uses. */}
       {tab === 'blog' && <Blog />}
       {tab === 'search' && <Search />}
+      {tab === 'recorded' && <WhatWasSaid />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}

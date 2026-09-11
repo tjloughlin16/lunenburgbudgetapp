@@ -46,6 +46,7 @@ type Hit = {
   rank: number
   snippet: string
   matched: string[]
+  via?: 'text' | 'topic'
 }
 type Corpus = 'post' | 'page' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
@@ -330,7 +331,11 @@ function Result({ h }: { h: Hit }) {
         {where && <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{where}</span>}
       </div>
       <p className="text-sm mt-1 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        <Snippet s={h.snippet} />
+        {h.via === 'topic'
+          ? <><span className="text-[10.5px] font-bold uppercase tracking-widest mr-1.5"
+                style={{ color: 'var(--text-muted)' }}>matched by topic</span>
+              <span className="text-xs">this page is about: <Snippet s={h.snippet} /></span></>
+          : <Snippet s={h.snippet} />}
       </p>
       <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
         {isT

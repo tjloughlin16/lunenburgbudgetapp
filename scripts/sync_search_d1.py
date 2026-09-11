@@ -171,9 +171,10 @@ def push(limit, dry_run):
           % (len(have), len(want), len(to_send), rows_to_send, len(to_delete)))
     if dry_run:
         return 0
+    written_aff = push_affinity(local)
     if not to_send and not to_delete:
         print('nothing to send; restating the remote counts')
-        return record_counts(0)
+        return record_counts(written_aff)
 
     # Deletions first, so a changed file is never present twice.
     if to_delete:
@@ -244,6 +245,22 @@ def push(limit, dry_run):
         os.unlink(fh.name)
         print('complete: remote is current as of %s' % (built['v'] if built else '?'))
     return record_counts(written)
+
+
+def push_affinity(local):
+    """The affinity table, replaced whole: it is ~80 rows and it is curated, so a
+    changed tag must land on the next run without anybody diffing it."""
+    rows = local.execute('SELECT tags, doc_key, corpus, title, cite_url FROM affinity').fetchall()
+    with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
+        fh.write('DROP TABLE IF EXISTS affinity;\n')
+        fh.write(B.AFFINITY_DDL + ';\n')
+        for i in range(0, len(rows), 100):
+            vals = ',\n'.join('(%s)' % ','.join(q(v) for v in r) for r in rows[i:i + 100])
+            fh.write('INSERT INTO affinity (tags, doc_key, corpus, title, cite_url) VALUES %s;\n' % vals)
+    run_file(fh.name)
+    os.unlink(fh.name)
+    print('affinity: %d row(s) replaced' % len(rows))
+    return len(rows)
 
 
 def record_counts(written):

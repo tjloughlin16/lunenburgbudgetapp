@@ -79,6 +79,12 @@ CHECKS = [
     # every input's sha256 against what was indexed. A search over a stale index is a
     # search that says "nobody said it" about things that were said last week.
     ('build_search_index.py', ['--check']),
+    # OUR MINUTES OF THE RECORDINGS. Each file records the sha256 of the transcript it was
+    # written from and the town documents it links to; the payload is derived from the
+    # files. A minutes file that outlives a re-fetched transcript is the derived-thing-
+    # whose-input-moved defect in its purest form.
+    ('write_recording_minutes.py', ['--check']),
+    ('build_recording_minutes.py', ['--check']),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a
     # conclusion, or stopped publishing one, and the synthesis still says the old thing.

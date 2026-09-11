@@ -81,6 +81,13 @@ BLOG_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'blog.json')
 # public search reads as "the town never discussed it".
 VOCAB_CSV = os.path.join(ROOT, 'sources', 'data', 'search-vocabulary.csv')
 VOCAB_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'search-vocabulary.json')
+# AFFINITY -- what a page is ABOUT, as words, whether or not its text says them often.
+# TJ, 11 September: "put 'affinity' so that certain words hit more with certain pages and
+# reports or minutes even if the words don't show up as much." The search-engine term is
+# BOOSTING: a curated keywords field weighted above the body. Here it is its own small
+# FTS table, so it can change without re-pushing 97,000 rows, and a hit through it is
+# labelled as matched by topic rather than by text -- curation is visible as curation.
+AFFINITY_CSV = os.path.join(ROOT, 'sources', 'data', 'search-affinity.csv')
 SITE = M.SITE
 
 TOKENIZE = M.TOKENIZE
@@ -108,6 +115,8 @@ CREATE TABLE indexed_file (
 );
 CREATE TABLE build_meta (k TEXT PRIMARY KEY, v TEXT);
 """
+AFFINITY_DDL = ("CREATE VIRTUAL TABLE affinity USING fts5(tags, doc_key UNINDEXED, "
+                "corpus UNINDEXED, title UNINDEXED, cite_url UNINDEXED, tokenize=%r)" % TOKENIZE)
 
 
 def fts_ddl(name='search'):
@@ -420,6 +429,7 @@ def build(rebuild=False, quiet=False):
         n += index_file(db, w[k])
         if not quiet and i % 500 == 0:
             print('  %d/%d files' % (i, len(added) + len(changed)), file=sys.stderr)
+    build_affinity(db)
     db.execute('INSERT OR REPLACE INTO build_meta VALUES (?,?)', ('tokenize', TOKENIZE))
     if added or changed or removed or fresh:
         db.execute('INSERT OR REPLACE INTO build_meta VALUES (?,?)',
@@ -433,6 +443,37 @@ def build(rebuild=False, quiet=False):
               % ('rebuilt' if fresh else 'refreshed', rel(DB), len(added), len(changed),
                  len(removed), n))
     return db
+
+
+def affinity_rows():
+    """Every curated row, joined to the indexed row it names. A tag for a page that does
+    not exist is a typo, and a join that matches nothing must not read as data."""
+    rows = list(csv.DictReader(open(AFFINITY_CSV, encoding='utf-8')))
+    if len(rows) < 10:
+        raise SystemExit('%s parsed to %d rows; refusing' % (rel(AFFINITY_CSV), len(rows)))
+    return [(r['doc_key'].strip(), re.sub(r'\s*;\s*', ' ; ', r['tags'].strip())) for r in rows]
+
+
+def build_affinity(db):
+    db.execute('DROP TABLE IF EXISTS affinity')
+    db.execute(AFFINITY_DDL)
+    missing = []
+    for doc_key, tags in affinity_rows():
+        hit = db.execute('SELECT corpus, title, cite_url FROM search WHERE doc_key=? LIMIT 1',
+                         (doc_key,)).fetchone()
+        if not hit:
+            missing.append(doc_key)
+            continue
+        db.execute('INSERT INTO affinity (tags, doc_key, corpus, title, cite_url) VALUES (?,?,?,?,?)',
+                   (tags, doc_key, hit['corpus'], hit['title'], hit['cite_url']))
+    if missing:
+        # Pages exist only when the site has been built; without a build, nothing can be
+        # said. With one, a tag naming no page is an error.
+        if os.path.isdir(DIST):
+            raise SystemExit('search-affinity.csv names %d doc_key(s) the index does not hold:\n  %s'
+                             % (len(missing), '\n  '.join(missing[:20])))
+        print('  NOTE: %d affinity rows name pages; fy28/dist is absent so they were skipped'
+              % len(missing), file=sys.stderr)
 
 
 def vocabulary():
@@ -468,6 +509,8 @@ def status(db):
     for r in db.execute('SELECT f.corpus, COUNT(*) files, SUM(rows) rows FROM indexed_file f '
                         'GROUP BY f.corpus ORDER BY f.corpus'):
         print('  %-12s %8d %10d' % (r['corpus'], r['files'], r['rows'] or 0))
+    n = db.execute('SELECT COUNT(*) FROM affinity').fetchone()[0]
+    print('  affinity     %8d rows of curated topic tags' % n)
     if not os.path.isdir(DIST):
         print('  NOTE: fy28/dist is absent, so the page corpus reflects the last build indexed')
 

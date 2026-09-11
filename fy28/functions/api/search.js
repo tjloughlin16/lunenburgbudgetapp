@@ -127,6 +127,21 @@ export async function onRequest(context) {
   if (since) { filters.push("date >= ?"); binds.push(since) }
   const where = filters.length ? ' AND ' + filters.join(' AND ') : ''
 
+  // AFFINITY, first. A small curated table of what each page is ABOUT -- TJ: "certain
+  // words hit more with certain pages ... even if the words don't show up as much". A
+  // page matched here is pinned to the top of its corpus and marked as matched by
+  // topic, so curation reads as curation and never as the text having said it.
+  const pinned = {}
+  try {
+    const a = await db.prepare(
+      `SELECT doc_key, corpus, title, cite_url, snippet(affinity, 0, '‹', '›', ' · ', 12) AS snippet
+       FROM affinity WHERE affinity MATCH ?1 ORDER BY bm25(affinity) LIMIT 8`).bind(expr).all()
+    rowsRead += (a.meta && a.meta.rows_read) || 0
+    for (const row of a.results || []) (pinned[row.corpus] ||= []).push(row)
+  } catch (e) {
+    // No affinity table yet, or a bad expression: the text search still answers.
+  }
+
   try {
     for (const c of corpora) {
       const sql = `
@@ -151,15 +166,24 @@ export async function onRequest(context) {
       // One entry per citation: a long page is indexed in parts and every part carries
       // the page's address, so the best-ranked part stands for the page.
       const seen = new Set()
-      results[c] = (r.results || []).filter(row => {
+      const byTopic = (pinned[c] || []).map(row => ({
+        ...row, board: null, board_slug: null, date: '', kind: 'page', source_url: null,
+        start_s: null, chars: 0, rank: -1e9, via: 'topic',
+        matched: [...row.snippet.matchAll(/‹([^›]+)›/g)].map(m => m[1].toLowerCase())
+          .filter((w, i, a) => a.indexOf(w) === i),
+      }))
+      for (const row of byTopic) seen.add(row.cite_url)
+      results[c] = byTopic.concat((r.results || []).filter(row => {
         if (seen.has(row.cite_url)) return false
         seen.add(row.cite_url)
         return true
       }).map(row => ({
         ...row,
+        via: 'text',
         matched: [...row.snippet.matchAll(/‹([^›]+)›/g)].map(m => m[1].toLowerCase())
           .filter((w, i, a) => a.indexOf(w) === i),
-      }))
+      })))
+      if (byTopic.length) counts[c].hits += byTopic.filter(t => !(r.results || []).some(x => x.cite_url === t.cite_url)).length
     }
   } catch (e) {
     return json({

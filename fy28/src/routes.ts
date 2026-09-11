@@ -50,6 +50,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   // are rendered rather than transcribed.
   | 'analysis'
   | 'search'
+  | 'recorded'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -312,6 +313,12 @@ export const SLUG: Record<Tab, string> = {
   // reached by typing the word; `find` is what the /minutes/find/ endpoint for callers
   // uses and is accepted as an alias.
   search: 'search',
+  // WHAT WAS SAID. Our minutes of recorded meetings -- 231 meetings have no record but
+  // the video. Not `minutes`: the town's minutes live at /minutes and these are not
+  // those. Not `transcripts`: a transcript is the captions, and this is a reading of
+  // them. "What was said" is the question a resident arrives with and it carries its
+  // own caveat, because what was said is on the recording and this points at it.
+  recorded: 'what-was-said',
   // The name everybody in town says out loud, and nothing else. NOT
   // `regional-vocational-assessment`, which is the accounting shape of the thing and what
   // nobody calls it; NOT `montachusett`, which is also a planning commission, a transit
@@ -559,6 +566,7 @@ const ALIASES: Record<string, Tab> = {
   'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
+  'what-was-said': 'recorded', 'recording-minutes': 'recorded', 'our-minutes': 'recorded',
   search: 'search', find: 'search', 'search-minutes': 'search', 'search-everything': 'search',
   // /worth-knowing WAS A PAGE AND IS NOW THE BLOG. It rendered all 48 items as cards from
   // a published payload, with the editorial apparatus on every one -- which put copy
@@ -605,6 +613,7 @@ export const LABEL: Record<Tab, string> = {
   solved: 'What solved would require',
   sources: 'Sources',
   search: 'Search — everything this project holds',
+  recorded: 'What was said — minutes from the recordings',
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
@@ -684,6 +693,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   peers: 'reports',
   bythenumbers: 'reports',
   blog: 'reports',
+  recorded: 'reports',
   courses: 'reports',
   attrition: 'reports',
   analysis: 'reports',
@@ -712,6 +722,7 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('analysis/')) return 'analysis'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
+  if (seg.startsWith('what-was-said/')) return 'recorded'
   return BY_SLUG[seg] ?? ROOT
 }
 
@@ -729,6 +740,12 @@ export function analysisIdFromPath(pathname: string): string | null {
  *  Restricted to the shape a slug actually has, for the same reason `analysisIdFromPath`
  *  is: this value is compared against a generated payload and rendered into the page, and
  *  an address is not a place to accept arbitrary text. */
+/** The meeting a `/what-was-said/<board>/<date>-<video>` address names, or null. */
+export function recordedSlugFromPath(pathname: string): string | null {
+  const m = /^\/what-was-said\/([a-z0-9-]+\/[0-9]{4}-[0-9]{2}-[0-9]{2}-[A-Za-z0-9_-]+)\/?$/.exec(pathname)
+  return m ? m[1] : null
+}
+
 export function blogSlugFromPath(pathname: string): string | null {
   const m = /^\/blog\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null
@@ -825,6 +842,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   // with conclusions of its own.
   bythenumbers: 'analyses',
   blog: 'analyses',
+  recorded: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
@@ -892,7 +910,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // finding in two minutes and then hands the reader on. Somebody who does not yet have a
   // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
   // argument that put `addsup` first.
-  analyses: ['addsup', 'blog', 'reports', 'bythenumbers', 'sped', 'classsize',
+  analyses: ['addsup', 'blog', 'recorded', 'reports', 'bythenumbers', 'sped', 'classsize',
              'peers',
              'required', 'minaid',
              'formula',
