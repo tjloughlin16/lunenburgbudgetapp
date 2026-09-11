@@ -261,7 +261,11 @@ function Row({ r, def }: { r: BillRow; def: ChargeDef }) {
   const unpriced = r.band === 'unpriced'
   return (
     <tr style={{ borderTop: '1px solid var(--grid)' }}>
-      <td className="py-2.5 pr-3 align-top">
+      {/* The same inset as the header row and the totals block (px-4 sm:px-5). A
+          `px-4` on <tbody> was meant to do this and does nothing: padding on a table
+          section is not rendered, so the rows sat flush left while everything around
+          them was inset 16px. */}
+      <td className="py-2.5 pl-4 sm:pl-5 pr-3 align-top">
         <div className="text-[13px] font-semibold">{def.label}</div>
         {r.detail && (
           <div className="text-[11.5px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>
@@ -290,7 +294,7 @@ function Row({ r, def }: { r: BillRow; def: ChargeDef }) {
         )}
       </td>
       <td className="py-2.5 pr-3 align-top whitespace-nowrap"><Band band={r.band} /></td>
-      <td className="py-2.5 text-right align-top tabular-nums whitespace-nowrap">
+      <td className="py-2.5 pr-4 sm:pr-5 text-right align-top tabular-nums whitespace-nowrap">
         {r.amount === null
           ? <span className="text-[12px] font-semibold" style={{ color: SEASON }}>
               not published
@@ -344,7 +348,7 @@ export function HouseholdBill({ bill, standing, defs, bandMeaning, summary }: {
               <th className="py-2 px-4 sm:px-5 text-right font-bold">a year</th>
             </tr>
           </thead>
-          <tbody className="px-4">
+          <tbody>
             {priced.map(r => <Row key={r.id} r={r} def={defs[r.id]} />)}
           </tbody>
         </table>
@@ -390,7 +394,7 @@ export function HouseholdBill({ bill, standing, defs, bandMeaning, summary }: {
               here estimates one: beside each is the document that would price it.
             </p>
           </div>
-          <div className="overflow-x-auto px-1">
+          <div className="overflow-x-auto">
             <table className="w-full text-left" style={{ minWidth: 520 }}>
               <tbody>
                 {unpriced.map(r => <Row key={r.id} r={r} def={defs[r.id]} />)}
@@ -409,7 +413,7 @@ export function HouseholdBill({ bill, standing, defs, bandMeaning, summary }: {
               {bandMeaning['no charge']}.
             </p>
           </div>
-          <div className="overflow-x-auto px-1 pb-2">
+          <div className="overflow-x-auto pb-2">
             <table className="w-full text-left" style={{ minWidth: 520 }}>
               <tbody>
                 {nocharge.map(r => <Row key={r.id} r={r} def={defs[r.id]} />)}
