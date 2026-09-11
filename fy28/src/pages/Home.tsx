@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { useReport } from '../components/report'
 import { Inline } from '../lib/inline'
@@ -78,6 +79,17 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           the words in it. The count is deliberately not written into the prose here or in
           the comment above — it was "four" until it was five, which is rule 2 arriving in
           a doc comment. */}
+      {/* TWO COLUMNS AT A LAPTOP WIDTH. TJ asked for this twice — "This should be a new
+          column or something on the home page that gives them another way in", "an easier
+          door" — and then, seeing it as a section underneath everything: "at the bottom
+          and inline is NOT going to work".
+          The earlier argument against a column was that it would make the posts a PEER of
+          the doors. They are a peer. A chooser assumes you already know what you want; the
+          post is for the larger number of people who do not. On a phone it stacks with the
+          doors first, because somebody who came back on purpose should not scroll past an
+          article to reach them. */}
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
+      <div>
       <div className="grid gap-2.5">
         {DOORS.map(d => d.href ? (
           <a key={d.area} href={abs(d.href)}
@@ -157,7 +169,9 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           cannot convince anybody on its own -- see pages/Blog.tsx for the three lengths.
           The rule that replaced the old one is smaller and harder: nothing unpublished
           reaches the front page. */}
-      <HomeLatest />
+      </div>
+      <div className="lg:sticky lg:top-4"><HomeLatest /></div>
+      </div>
 
       {/* The "the walkthrough moved" note was here and is gone. It explained a
           change to somebody who had not seen the old page and could not have missed it,
@@ -193,15 +207,48 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
  *  it, and there is no fallback copy to show because there is no copy here (rule 2). */
 function HomeLatest() {
   const { d } = useReport<BlogPayload>('blog.json')
+  // IN DEV ONLY, fall back to the drafts payload so the section can be SEEN with real
+  // content before anything is published. TJ: "whats going to show on the homepage when we
+  // post blogs? Id like to see how it looks". `import.meta.env.DEV` is replaced with
+  // `false` in the production bundle, so this branch and the fetch inside it are
+  // eliminated -- an unpublished post cannot reach a built page through here.
+  // `useReport` prefixes `/data/`, so the drafts payload is fetched directly. The whole
+  // branch is eliminated from the production bundle by `import.meta.env.DEV`.
+  const [draft, setDraft] = useState<BlogPayload | null>(null)
+  useEffect(() => {
+    if (!import.meta.env.DEV) return
+    let live = true
+    fetch('/blog-all.json').then(r => (r.ok ? r.json() : null))
+      .then(j => { if (live) setDraft(j) }).catch(() => {})
+    return () => { live = false }
+  }, [])
   if (!d) return null
   const live = d.posts.filter(p => p.published)
-  const post = live.find(p => p.slug === d.pinned) ?? live[0] ?? null
+  let post = live.find(p => p.slug === d.pinned) ?? live[0] ?? null
+  let preview = false
+  if (!post && import.meta.env.DEV && draft?.posts?.length) {
+    post = draft.posts[0]
+    preview = true
+  }
+
+  // NOTHING PUBLISHED MEANS NOTHING ON THE PAGE -- not a heading over an empty space.
+  // A section that announces itself and then shows nothing reads as broken, and TJ read it
+  // exactly that way: "we need to cut the 'worth knowing' section on the home page. i think
+  // thats stale." It was not stale; it was empty, which looks the same and is worse,
+  // because it is the front page telling a stranger that something here is not working.
+  if (!post) return null
 
   return (
     <section className="mt-10 pt-8" style={{ borderTop: '1px solid var(--grid)' }}>
-      <h2 className="text-[17px] font-bold tracking-tight">Worth knowing</h2>
+      {preview ? (
+        <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+          style={{ color: 'var(--status-warning)' }}>
+          Local preview &mdash; nothing is published; this is draft {post.n}
+        </p>
+      ) : null}
+      <h2 className="text-[17px] font-bold tracking-tight">Latest articles</h2>
       <p className="text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>
-        One finding at a time, with the report behind it. No question needed.
+        One finding at a time, in about two minutes, with the report behind it.
       </p>
 
       {post ? (
