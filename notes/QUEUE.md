@@ -876,6 +876,26 @@ plan (item 12b, and the blog tier built on 11 September). A group needs a header
 header is the only thing every visitor sees before deciding whether this is a place that
 argues or a place that informs.
 
+### What TJ asked for
+
+> *"the banner is just imaging that represent lunenburg, colors, etc. no numbers. should be
+> lunenburg budget project focused. maybe with that logo or name or something"*
+
+So: **imagery and colour that reads as this town, with the project's name on it.** Not a
+findings card, not a mission statement.
+
+**The colour is already decided and already argued.** `--brand: #12428f` in
+`fy28/src/index.css` — the Blue Knights' royal — and the comment beside it says why it is
+held apart from the data hues: *"A reader who learns that this blue means 'cost' on a chart
+should not meet it again as decoration."* The banner is the one place that separation costs
+nothing, because a banner carries no data. Use the brand blue and do not reach for a series
+colour.
+
+**THERE IS NO LOGO.** `fy28/public/favicon.svg` is a purple `#863bff` mark that is a
+leftover template placeholder, not anything to do with Lunenburg — worth knowing before
+anybody builds a banner around it, and worth replacing separately. **The wordmark is the
+name**: "The Lunenburg Budget Project", which is what `index.html` already carries.
+
 ### What it must and must not be
 
 **It is a banner for a group, not a card.** The four post formats have a measured design
