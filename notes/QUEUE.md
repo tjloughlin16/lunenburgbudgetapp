@@ -896,6 +896,48 @@ leftover template placeholder, not anything to do with Lunenburg — worth knowi
 anybody builds a banner around it, and worth replacing separately. **The wordmark is the
 name**: "The Lunenburg Budget Project", which is what `index.html` already carries.
 
+### IT MUST NOT READ AS OFFICIAL. This outranks every other instruction here
+
+TJ: *"make sure it doesnt read as official"*.
+
+**This is not a style note. It is the constraint the whole artefact is built around**, and
+it cuts against the instruction directly above it. `--brand: #12428f` is described in
+`index.css` as *the Blue Knights' royal* — it is the SCHOOL DISTRICT'S COLOUR. On the site,
+surrounded by pages that say who wrote them, that reads as affection for the town. On a
+Facebook banner, seen alone by somebody scrolling, a town name in the district's own blue
+with a civic-looking mark is indistinguishable from a communication FROM the town.
+
+That would be bad in three separate ways, and the first is the one that matters:
+
+- **It misleads.** A resident who thinks this is the town's own page reads every finding as
+  the town's own admission. Nothing here is the town speaking.
+- **It would be dishonest about the project's standing.** This is a private project that
+  reads public documents. Its only authority is that its figures are checkable, and
+  borrowing official-looking authority would trade the real thing for the appearance of it.
+- **It is fragile.** The moment somebody official says "that is not us", the banner becomes
+  the story instead of the budget.
+
+So: the town's character, not the town's livery. Landscape, seasons, a sense of place —
+whatever reads as Lunenburg to somebody who lives there. **Consider NOT using the brand
+blue at all here**, or using it only as an accent, and decide deliberately rather than by
+inheritance. No seal, no crest, no municipal typography, nothing that mimics a letterhead.
+
+**And say what it is, on the banner.** Something plainly in the name or the subtitle that
+marks it as a residents' project reading published documents. A disclaimer is a defensive
+line; a plain description is just true, and it does the same work without sounding worried.
+
+### The app needs a favicon too
+
+TJ: *"we prob need a favicon for the app too"*. Same job, same constraint, 32x32.
+
+`fy28/public/favicon.svg` is currently a purple `#863bff` mark left over from a template. It
+is not Lunenburg, it is not this project, and it is the thing every browser tab and every
+bookmark shows. **Do it in the same pass as the banner** — one idea, two sizes, and the
+favicon is the harder of the two because at 32 pixels only one shape survives.
+
+Note that the not-official rule applies here as well: a tiny civic-looking shield is exactly
+what a town website's favicon looks like.
+
 ### What it must and must not be
 
 **It is a banner for a group, not a card.** The four post formats have a measured design
