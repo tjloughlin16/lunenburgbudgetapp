@@ -36,6 +36,16 @@ BETWEEN=300       # 5 min after a clean batch
 # recording is skipped from the index, so re-running costs nothing.
 echo "$(date -u +%H:%M:%S)  PHASE 1 — meetings with no surviving document"
 while true; do
+  # WHAT IS LEFT IS NOT WHAT IS FETCHABLE. `--status` counts every recording without a
+  # transcript, including the ones known to have no captions at all -- 27 of the 226 --
+  # so the phase never reached zero and cooled down for half an hour, forever, with
+  # nothing left that it could ever get. Ask the fetcher what it would actually DO.
+  left=$(python3 scripts/fetch_youtube_transcripts.py --video-only --limit 0 2>/dev/null \
+         | awk '/nothing to fetch/ {print 0}')
+  if [ "${left:-}" = "0" ]; then
+    echo "$(date -u +%H:%M:%S)  phase 1 complete — everything fetchable has been fetched"
+    break
+  fi
   left=$(python3 scripts/fetch_youtube_transcripts.py --video-only --status 2>/dev/null \
          | awk '/video\(s\) in scope/ {print $(NF-1)}')
   [ -z "${left:-}" ] && left=0

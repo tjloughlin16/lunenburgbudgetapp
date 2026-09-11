@@ -283,8 +283,14 @@ def main():
             have = list(csv.DictReader(fh))
         now = [{c: str(r.get(c, '')) for c in COLS} for r in rows]
         # sha256 moves whenever Census re-serves the same data, so compare the FIGURES.
-        keyed = lambda rs: {(r['vintage'], r['variable']): (r['estimate'], r['moe'])
-                            for r in rs}
+        # KEYED ON THE GEOGRAPHY TOO, and without it this check was fail-open. B19013 is
+        # fetched for every Massachusetts municipality and every one of those 350 rows
+        # carries the SAME variable, so a key of (vintage, variable) collapsed the whole
+        # statewide column onto one entry -- the last row written -- and 349 of them could
+        # have changed without this noticing. The rank and the overlap count on
+        # /lunenburg-by-the-numbers are computed from exactly those rows.
+        keyed = lambda rs: {(r['vintage'], r['variable'], r['geography']):
+                            (r['estimate'], r['moe']) for r in rs}
         a, b = keyed(have), keyed(now)
         if a != b:
             diff = [k for k in sorted(set(a) | set(b)) if a.get(k) != b.get(k)]

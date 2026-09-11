@@ -62,6 +62,18 @@ CHECKS = [
     # and /reports went on listing thirteen. Nothing caught it because this file is
     # the thing that catches it, and this generator was not in it.
     ('build_reports_index.py', ['--check']),
+    # THE BLOG. `notes/process/CONTENT-CANDIDATES.md` is the content and a PERSON edits
+    # it, so this entry fails the moment somebody rewrites an item and the published
+    # payload still carries the old wording. It is the only generator here whose input is
+    # prose being actively marked up, which makes it the one most likely to go stale
+    # between commits.
+    #
+    # AND IT PROVES AN ABSENCE, which is the half that matters most: only the items named
+    # in `PUBLISHED` may appear anywhere under fy28/public or fy28/dist, and the check
+    # searches the whole published tree for the address of every item that is not. A
+    # leaked post looks exactly like a published one to anybody who fetches it.
+    ('build_blog.py', ['--check']),
+    ('verify_blog.py', []),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a
     # conclusion, or stopped publishing one, and the synthesis still says the old thing.
@@ -497,6 +509,15 @@ CHECKS = [
     # in each subject -- which no generator publishes and nothing else would notice going
     # wrong.
     ('verify_course_offerings.py', []),
+    # WHO LIVES HERE. The generator reads `census_acs`; the verifier reads the CSV the
+    # table was loaded from and does its own Census arithmetic -- the margin of a sum is
+    # the root of the sum of squares, a share has its own two-branch formula, and two
+    # estimates differ only past their combined margin. Both are here because the failure
+    # this page is most exposed to is silent: a sentinel read as a number. -666666666 is
+    # not an income and -555555555 is not a margin of zero, and the verifier walks the
+    # whole published payload asserting that neither has become a figure anywhere in it.
+    ('build_lunenburg_by_the_numbers.py', ['--check']),
+    ('verify_lunenburg_by_the_numbers.py', []),
     # The generator agrees with its own output by construction. This recomputes every
     # figure /what-the-state-requires-us-to-spend renders by a SECOND route -- both
     # DESE tables read whole and partitioned in Python rather than filtered in SQL --

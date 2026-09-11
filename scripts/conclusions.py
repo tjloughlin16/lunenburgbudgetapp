@@ -415,14 +415,25 @@ TOPICS = [
      'Which grades they leave in, who is taught outside Lunenburg, what the town is '
      'assessed for them, and what more leaving would cost.',
      ['attrition', 'outflow', 'montytech', 'leaving']),
-    ('household', 'Athletics, and what a family pays',
-     'The two reports about money a household hands over, side by side.',
-     ['sportsmoney', 'families']),
+    # THE HOUSEHOLD, and it is broader than it was. It held the two reports about money a
+    # family hands over; it now opens with the report about who those households ARE.
+    # `bythenumbers` belongs here rather than in a sixth topic: the ACS's own grain is the
+    # HOUSEHOLD -- 4,529 of them, a third with a child under 18, four in five owning their
+    # home -- and a reader who wants to know what a family pays wants to know how many
+    # families there are and what they earn. The five-topic cap holds, deliberately: the
+    # value of the synthesis page is that the shape of everything fits in one view.
+    ('household', 'The households — who they are, and what they pay',
+     'Who lives in Lunenburg, and the two reports about money a household hands over, '
+     'side by side.',
+     ['bythenumbers', 'sportsmoney', 'families']),
 ]
 
 # Tabs in the Analyses area that are not reports and belong in no topic: the Markdown
 # renderer, the four-way chooser at /special-education, and the synthesis page itself.
-NOT_A_REPORT = ('analysis', 'sped', 'addsup')
+# `blog` is the fourth and it is the same kind of thing as `addsup` from the other end: it
+# reaches no conclusion of its own, it re-presents what the reports already concluded, and
+# a topic heading over it would file the whole archive under one subject.
+NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog')
 
 
 def topic_of(tab):

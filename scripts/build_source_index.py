@@ -77,6 +77,12 @@ ORIGINS = [
     {'id': 'state-dls', 'name': 'Massachusetts DOR, Division of Local Services',
      'url': 'https://dls-gw.dor.state.ma.us/gateway/dlspublic/'
             'certificationfreecashpublicreport/certificationfreecashpublic'},
+    # THE CENSUS BUREAU IS A PUBLISHER LIKE ANY OTHER, and an API answer is a document.
+    # These arrive as JSON from api.census.gov rather than as a PDF from a document hub,
+    # which changes nothing about rule 12: the raw response is saved, hashed and
+    # catalogued, because a figure nobody can get back to is not checkable.
+    {'id': 'us-census', 'name': 'United States Census Bureau',
+     'url': 'https://www.census.gov/programs-surveys/acs/'},
     {'id': 'peer-districts', 'name': 'Neighboring districts', 'url': None},
     {'id': 'request', 'name': 'Obtained from the Town by records request', 'url': None},
     {'id': 'us', 'name': 'Built by this project', 'url': None},
@@ -308,6 +314,62 @@ GROUPS = [
              'is the one figure that lets a budget line be read as staffing rather than as '
              'dollars \u2014 and it says the para budget has grown roughly six times '
              'faster than the number of paras. Rebuild with scripts/fetch_dese.py.'),
+        ]},
+    {
+        'section': 'theirs', 'id': 'census', 'origin': 'us-census',
+        'title': 'Who lives here \u2014 the American Community Survey',
+        'blurb': 'The Census Bureau\u2019s five-year estimates for Lunenburg: age, '
+                 'households with children, income by age of householder, and owner '
+                 'against renter \u2014 plus median household income for every '
+                 'Massachusetts municipality. EVERY FIGURE IS A SAMPLE ESTIMATE WITH A '
+                 'MARGIN, which is what makes it a different kind of document from a '
+                 'DESE count of children.',
+        'items': [
+            ('state-census/acs5-2023-B01001-lunenburg.json',
+             'Age by sex, Lunenburg, 2019\u20132023', 3,
+             'The raw API response, saved as returned. 49 estimates with their margins: '
+             'every five-year age band for each sex, which is where the 65-and-over '
+             'count comes from \u2014 it is a sum of twelve cells and its margin is the '
+             'root of the sum of their squares, not one of theirs.'),
+            ('state-census/acs5-2023-B11005-lunenburg.json',
+             'Households by presence of a child under 18, Lunenburg, 2019\u20132023', 3,
+             'The real denominator behind \u201cabout 30% of homes have a child in the '
+             'school\u201d. It counts households with a child under 18 \u2014 which '
+             'includes Monty Tech, private, charter and pre-school children \u2014 so it '
+             'is a CEILING on the claim rather than the figure.'),
+            ('state-census/acs5-2023-B19049-lunenburg.json',
+             'Median household income by age of householder, Lunenburg, 2019\u20132023', 3,
+             'What turns \u201cseniors on fixed incomes\u201d from a claim into a '
+             'number. Five estimates; the under-25 band is published as the sentinel '
+             '-666666666, which means not available and is not a figure.'),
+            ('state-census/acs5-2023-B25003-lunenburg.json',
+             'Owner against renter, Lunenburg, 2019\u20132023', 3,
+             'Tenure. It is how a levy increase reaching four households in five directly '
+             'stops being an impression.'),
+            ('state-census/acs5-2023-B19013-massachusetts-lunenburg.json',
+             'Median household income, every Massachusetts municipality, 2019\u20132023', 3,
+             'Fetched whole rather than for Lunenburg alone, because a rank is a claim '
+             'about 350 other places and quoting one from a query nobody kept is a '
+             'derived thing passed off as an observed one. Four municipalities are '
+             'top-coded at $250,001 with no computable margin.'),
+            ('state-census/acs5-2018-B01001-lunenburg.json',
+             'Age by sex, Lunenburg, 2014\u20132018', 2,
+             'The older vintage. The two five-year windows do not overlap, which is what '
+             'makes a comparison between them permissible at all \u2014 and most of the '
+             'comparisons still do not clear the margins.'),
+            ('state-census/acs5-2018-B11005-lunenburg.json',
+             'Households by presence of a child under 18, Lunenburg, 2014\u20132018', 2,
+             'The 2014\u20132018 window.'),
+            ('state-census/acs5-2018-B19049-lunenburg.json',
+             'Median household income by age of householder, Lunenburg, 2014\u20132018', 2,
+             'The 2014\u20132018 window.'),
+            ('state-census/acs5-2018-B25003-lunenburg.json',
+             'Owner against renter, Lunenburg, 2014\u20132018', 2,
+             'The 2014\u20132018 window.'),
+            ('state-census/acs5-2018-B19013-massachusetts-lunenburg.json',
+             'Median household income, every Massachusetts municipality, 2014\u20132018', 2,
+             'The 2014\u20132018 window. It holds 351 municipalities against 2023\u2019s '
+             '350, so a rank in one vintage is not a rank in the same set as the other.'),
         ]},
     {
         'section': 'theirs', 'id': 'tax-base', 'origin': 'town',
@@ -1112,6 +1174,13 @@ GROUPS = [
         'blurb': 'Machine-readable extracts. Derived from the documents above and '
                  'rebuildable from them.',
         'items': [
+            ('data/census-acs.csv', 'The Census figures, one row per estimate', 3,
+             '853 rows: every estimate from the five ACS tables above, in both vintages, '
+             'WITH ITS MARGIN OF ERROR IN THE SAME ROW. The margin is the column that '
+             'makes this data safe to quote, so it is never dropped and the sentinels '
+             '\u2014 -666666666 for no estimate, -555555555 for an estimate controlled '
+             'to a total \u2014 are kept verbatim rather than read as numbers. Rebuild '
+             'with scripts/fetch_census_acs.py.'),
             ('data/lps-budget-lines.csv', 'Budget lines, tidy CSV', 3,
              '356 rows extracted from the district workbook — section, function group, '
              'line item, and one column per fiscal year and scenario. Line sums tie to the '

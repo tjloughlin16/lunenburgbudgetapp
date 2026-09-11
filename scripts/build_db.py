@@ -946,6 +946,47 @@ CREATE TABLE grant_award (
     PRIMARY KEY (fy, name)
 );
 
+-- WHO LIVES IN LUNENBURG -- the American Community Survey, five-year estimates, two
+-- vintages. The first table in this database that measures RESIDENTS rather than
+-- children, dollars or documents.
+--
+-- EVERY FIGURE HERE IS A SAMPLE ESTIMATE WITH A MARGIN, AND THE MARGIN IS NOT
+-- DECORATION. A DESE enrolment count is a census of children: 1,568 means 1,568. For a
+-- town of 11,804 the ACS samples are small and the margins are wide -- households with a
+-- child under 18 is 1,477 +/- 198 -- so two figures whose intervals overlap are NOT
+-- different, and a difference between vintages smaller than the combined margin is not a
+-- change. `moe` is never dropped and never rendered as though it were zero.
+--
+-- `level` IS THE ROLLUP GUARD AND IT IS DERIVED ON LOAD. Four of the five tables are
+-- Lunenburg alone (`level='town'`); B19013 is median household income for EVERY
+-- Massachusetts municipality (`level='municipality'`, 350 of them in 2023). Reading one
+-- for the other turns a town figure into a statewide one, so the loader asserts the split
+-- and refuses to write if it breaks.
+--
+-- THE NEGATIVE VALUES ARE SENTINELS, NOT FIGURES, and printing one as a number is the
+-- worst thing that can be done with this table. -666666666 in `estimate` means the
+-- estimate is not available; -222222222 and -333333333 in `moe` mean no margin could be
+-- computed; -555555555 in `moe` means the estimate is CONTROLLED to an independent total
+-- and has no sampling error, which is not the same as a margin of zero. `usable` is
+-- derived on load and is 1 only where the estimate is a real figure.
+CREATE TABLE census_acs (
+    vintage     INTEGER NOT NULL,   -- the 5-year release: 2023 is 2019-2023
+    "table"     TEXT NOT NULL,      -- B01001 | B11005 | B19013 | B19049 | B25003
+    variable    TEXT NOT NULL,
+    level       TEXT NOT NULL,      -- town | municipality   <- the rollup guard
+    geography   TEXT NOT NULL,
+    estimate    REAL,               -- NULL where the source published a sentinel
+    moe         REAL,               -- NULL where no margin was published
+    estimate_raw TEXT NOT NULL,     -- exactly what the API returned, sentinels included
+    moe_raw     TEXT NOT NULL,
+    usable      INTEGER NOT NULL,   -- 1 where `estimate` is a figure at all
+    moe_note    TEXT,
+    about       TEXT,
+    source_file TEXT NOT NULL,
+    sha256      TEXT NOT NULL,
+    PRIMARY KEY (vintage, "table", variable, geography)
+);
+
 CREATE INDEX ix_account_function ON account(function);
 CREATE INDEX ix_ledger_fy      ON ledger_snapshot(fy, period);
 CREATE INDEX ix_ledger_account ON ledger_snapshot(account_id);
@@ -1623,6 +1664,108 @@ def load_dese_datasets(db):
                     % (table, level_col, sorted(got), sorted(levels)))
         total += n
     return total
+
+
+# WHO LIVES HERE, from the Census. `census-acs.csv` is written by fetch_census_acs.py.
+#
+# THE LEVEL SPLIT IS THE WHOLE OF THE CARE HERE. Four tables describe Lunenburg town and
+# one -- B19013, median household income -- describes every municipality in Massachusetts,
+# and the two sit in one file under one set of column names. A query that forgets the
+# difference reads a statewide column as though it were this town's, which is the silent
+# failure this loader exists to make loud.
+CENSUS_TOWN_TABLES = {'B01001', 'B11005', 'B19049', 'B25003'}
+CENSUS_STATEWIDE_TABLES = {'B19013'}
+LUNENBURG_GEO = 'Lunenburg town, Worcester County, Massachusetts'
+# Massachusetts has 351 municipalities. A statewide release that came back with far fewer
+# has been filtered by something, and a rank computed off it would be a rank of a subset.
+CENSUS_MIN_MUNICIPALITIES = 300
+# The Census's own sentinels. None of them is a number and none may be averaged, summed,
+# ranked or printed. See the schema note above for what each one means.
+CENSUS_SENTINELS = {'-666666666', '-555555555', '-333333333', '-222222222', '-999999999'}
+
+
+def census_value(raw):
+    """A figure, or None where the source published a sentinel rather than a figure."""
+    v = (raw or '').strip()
+    if v == '' or v in CENSUS_SENTINELS:
+        return None
+    try:
+        return float(v)
+    except ValueError:
+        return None
+
+
+def load_census(db):
+    """census-acs.csv, with the level split asserted rather than assumed."""
+    data = rows('census-acs')
+    if not data:
+        raise SystemExit(
+            'census-acs.csv is empty, so census_acs would load as an empty table.\n'
+            'An empty table passes every check downstream and renders a blank page.\n'
+            'Re-run scripts/fetch_census_acs.py.')
+    known = CENSUS_TOWN_TABLES | CENSUS_STATEWIDE_TABLES
+    got = {r['table'] for r in data}
+    if got != known:
+        raise SystemExit(
+            'census-acs.csv holds tables %s; %s are known.\n'
+            'A table nobody has classified has no level, and a level is what stops a '
+            'statewide\ncolumn being read as this town\'s. Nothing written.'
+            % (sorted(got), sorted(known)))
+
+    batch = []
+    for r in data:
+        table = r['table']
+        level = 'town' if table in CENSUS_TOWN_TABLES else 'municipality'
+        est, moe = census_value(r['estimate']), census_value(r['moe'])
+        batch.append((int(r['vintage']), table, r['variable'], level, r['geography'],
+                      est, moe, r['estimate'], r['moe'], 1 if est is not None else 0,
+                      r['moe_note'], r['about'], r['source_file'], r['sha256']))
+
+    # 1. A TOWN TABLE DESCRIBES ONE PLACE. If a row filed as `town` names any other
+    #    geography, the split has broken in the direction that matters -- a figure for
+    #    somewhere else being read as Lunenburg's.
+    astray = sorted({r['geography'] for r in data
+                     if r['table'] in CENSUS_TOWN_TABLES and r['geography'] != LUNENBURG_GEO})
+    if astray:
+        raise SystemExit(
+            'these geographies appear in a Lunenburg-only census table: %s.\n'
+            'Every row of %s must be %r, or the town figures are not the town\'s.\n'
+            'Nothing written.' % (astray, sorted(CENSUS_TOWN_TABLES), LUNENBURG_GEO))
+
+    # 2. AND THE STATEWIDE TABLE DESCRIBES THE STATE. One municipality per vintage, and
+    #    enough of them to be Massachusetts rather than a filtered subset -- a rank is a
+    #    claim about 350 other places and it is only as good as the set it ranks within.
+    for vintage in sorted({r['vintage'] for r in data}):
+        geos = {r['geography'] for r in data
+                if r['table'] in CENSUS_STATEWIDE_TABLES and r['vintage'] == vintage}
+        if len(geos) < CENSUS_MIN_MUNICIPALITIES:
+            raise SystemExit(
+                'the statewide census table holds %d municipalities for %s and '
+                'Massachusetts has 351.\nA rank computed against a filtered subset is a '
+                'rank of nothing. Nothing written.' % (len(geos), vintage))
+        if LUNENBURG_GEO not in geos:
+            raise SystemExit(
+                'Lunenburg is not in the %s statewide census table, so it cannot be '
+                'ranked against it.\nNothing written.' % vintage)
+
+    db.executemany(
+        'INSERT INTO census_acs (vintage, "table", variable, level, geography, estimate, '
+        'moe, estimate_raw, moe_raw, usable, moe_note, about, source_file, sha256) '
+        'VALUES (%s)' % ','.join('?' * 14), batch)
+    n = db.execute('SELECT COUNT(*) FROM census_acs').fetchone()[0]
+    if n != len(data):
+        raise SystemExit(
+            'census_acs holds %d rows from a %d-row CSV. The primary key collided, and a '
+            'load\nthat drops rows looks exactly like data that was never published.'
+            % (n, len(data)))
+    # 3. AND THE LEVEL COLUMN SURVIVED THE LOAD. Checked against the database rather than
+    #    against the list built above, because what a query reads is the table.
+    seen = {x[0] for x in db.execute('SELECT DISTINCT level FROM census_acs')}
+    if seen != {'town', 'municipality'}:
+        raise SystemExit(
+            'census_acs.level holds %s; it must hold both levels. The level column is '
+            'what stops\na statewide median being read as this town\'s.' % sorted(seen))
+    return n
 
 
 def load_budget_figures(db):
@@ -2746,6 +2889,8 @@ def main():
     print('  DESE by function %5d  (+ %d statewide distribution rows)' % (nfn, nsw))
     print('  DESE staffing,   %5d  (%d tables: teachers, students, Chapter 70)'
           % (load_dese_datasets(db), len(DESE_DATASETS)))
+    print('  census figures   %5d  (ACS 5-year, every estimate with its margin)'
+          % load_census(db))
     print('  reference rows   %5d' % load_reference(db))
     print('  provenance rows  %5d' % load_provenance(db))
     print('  role vocabulary  %5d' % load_role_classification(db))

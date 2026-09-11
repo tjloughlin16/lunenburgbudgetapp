@@ -160,3 +160,13 @@ sources/data/youtube-transcripts/
 # truth. It is also ~70MB and growing with every caption fetched.
 sources/data/minutes-fts.db
 .census-key
+
+# The blog review copy: all 48 posts, rendered locally so they can be read as pages before
+# any of them goes out. Written by `python3 scripts/build_blog.py --all`, served only by
+# the vite dev server (see fy28/vite.config.ts), and never bundled. It must not be
+# committed: it is the whole of the unpublished content in one file.
+# ...and the PDFs of every post, which exist so a collaborator can read them without
+# going to the site -- because the posts are not ON the site. `build/` holds nothing that
+# is tracked, so the whole directory is ignored: an unpublished post must not become
+# committable by somebody adding a file next to these.
+build/

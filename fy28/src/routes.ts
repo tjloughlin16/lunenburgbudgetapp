@@ -35,6 +35,11 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'classsize'
   | 'courses'
   | 'attrition'
+  | 'bythenumbers'
+  // The middle of three lengths. One tab for all the posts: the slug is the second path
+  // segment, `/blog/why-a-school-with-fewer-children-is-not-a-cheaper-school`, and
+  // `blogSlugFromPath` below reads it. The bare `/blog` is the archive. See pages/Blog.
+  | 'blog'
   | 'peers'
   | 'montytech'
   | 'required'
@@ -286,6 +291,22 @@ export const SLUG: Record<Tab, string> = {
   // because they are what somebody types.
   attrition: 'which-grades-students-leave',
   peers: 'what-other-districts-spend',
+  // WHO LIVES HERE, before any argument about what the town should spend. The slug is
+  // the phrase people already use for a page of facts about a place -- "Lunenburg by the
+  // numbers" -- and it is the one address here that promises no finding at all, which is
+  // right for a page whose whole job is to hand both sides of the override argument the
+  // same figures. NOT `demographics`, which is the word of the person who fetched the
+  // data rather than of anybody reading it. NOT `census`: the town runs its own annual
+  // census and a resident typing that means the Town Clerk's, not the Census Bureau's --
+  // it is accepted as an alias because it is what people type, and the page says in its
+  // first screen which census it is. NOT `who-lives-here` as the canonical form, because
+  // the page is also households, income and tenure; it is an alias.
+  bythenumbers: 'lunenburg-by-the-numbers',
+  // THE WORD EVERYBODY ALREADY HAS. Not `posts`, which names the container rather than
+  // the thing; not `updates`, which promises news about this project rather than about
+  // the town's money. A post is shared into a Facebook group and the address travels with
+  // it, so it has to read as an address somebody would click from a feed.
+  blog: 'blog',
   // The name everybody in town says out loud, and nothing else. NOT
   // `regional-vocational-assessment`, which is the accounting shape of the thing and what
   // nobody calls it; NOT `montachusett`, which is also a planning commission, a transit
@@ -526,6 +547,23 @@ const ALIASES: Record<string, Tab> = {
   // NOT 'students-leaving', 'school-choice' or 'transfers-out' -- all three have meant
   // /if-students-leave since before this page existed. These are the forms somebody
   // types looking for WHICH GRADE.
+  // NOT 'population' or 'enrollment' pointing anywhere else: nothing has meant either
+  // before. `census` lands here deliberately -- see the slug note -- and so does
+  // `seniors`, which nothing else answers to.
+  'lunenburg-by-the-numbers': 'bythenumbers', 'by-the-numbers': 'bythenumbers',
+  'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
+  demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
+  blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
+  // /worth-knowing WAS A PAGE AND IS NOW THE BLOG. It rendered all 48 items as cards from
+  // a published payload, with the editorial apparatus on every one -- which put copy
+  // nobody had decided to publish on the public site, and made a worklist into a product.
+  // The address stays because it was published, linked and in the sitemap: a URL that has
+  // been shared once is out of your hands forever, and /blog is where a reader arriving on
+  // one wanted to be anyway.
+  'worth-knowing': 'blog', 'did-you-know': 'blog', 'myth-vs-fact': 'blog', cards: 'blog',
+  'one-fact-at-a-time': 'blog',
+  population: 'bythenumbers', seniors: 'bythenumbers', 'town-profile': 'bythenumbers',
+  households: 'bythenumbers', 'median-income': 'bythenumbers',
   'which-grades-students-leave': 'attrition', attrition: 'attrition',
   'student-attrition': 'attrition', 'which-grades-lose-students': 'attrition',
   'declining-enrollment': 'attrition', 'enrollment-decline': 'attrition',
@@ -594,6 +632,8 @@ export const LABEL: Record<Tab, string> = {
   courses: 'What courses actually ran, subject by subject',
   attrition: 'Which grades students leave in',
   peers: 'What other districts spend, for each pupil',
+  bythenumbers: 'Lunenburg by the numbers — who lives here',
+  blog: 'The blog — one finding at a time, in two minutes',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
   analysis: 'An analysis',
@@ -635,6 +675,8 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   // education hub still reaches it, as the question it cannot answer.
   outflow: 'reports',
   peers: 'reports',
+  bythenumbers: 'reports',
+  blog: 'reports',
   courses: 'reports',
   attrition: 'reports',
   analysis: 'reports',
@@ -661,6 +703,8 @@ export function tabFromPath(pathname: string): Tab {
   // page component, so the document id travels in the path rather than in a Tab of its
   // own -- see `analysis` in the union above.
   if (seg.startsWith('analysis/')) return 'analysis'
+  // The second. Forty-eight posts share one page component; the slug is in the path.
+  if (seg.startsWith('blog/')) return 'blog'
   return BY_SLUG[seg] ?? ROOT
 }
 
@@ -670,6 +714,16 @@ export function tabFromPath(pathname: string): Tab {
  *  reach for anything else: this value becomes part of a fetch URL. */
 export function analysisIdFromPath(pathname: string): string | null {
   const m = /^\/analysis\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
+}
+
+/** The post a `/blog/<slug>` address names, or null for the archive at `/blog`.
+ *
+ *  Restricted to the shape a slug actually has, for the same reason `analysisIdFromPath`
+ *  is: this value is compared against a generated payload and rendered into the page, and
+ *  an address is not a place to accept arbitrary text. */
+export function blogSlugFromPath(pathname: string): string | null {
+  const m = /^\/blog\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null
 }
 
@@ -755,6 +809,15 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
   classsize: 'analyses', courses: 'analyses', attrition: 'analyses',
+  // AN ANALYSIS OF THE TOWN RATHER THAN OF ITS BUDGET, and this area is named for the
+  // FORM rather than for the subject precisely so that it can land here -- see the note
+  // on AREA_LABEL.analyses. It is not `crisis`: a page of facts about who lives in
+  // Lunenburg is not a chapter of an argument, and filing it inside one would make it
+  // read as evidence for a conclusion it does not draw. It is not `data` either: that
+  // area is the database and the register, which are instruments, and this is a report
+  // with conclusions of its own.
+  bythenumbers: 'analyses',
+  blog: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
@@ -812,7 +875,19 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // opened that page arrives with -- HOW does this work -- and the two are deliberately
   // separate addresses: one establishes where the town sits in the formula and the other
   // explains the formula. Adjacent in the bar is where the difference is cheapest to see.
-  analyses: ['addsup', 'reports', 'sped', 'classsize', 'peers', 'required', 'minaid',
+  // `bythenumbers` is third, immediately after the index, because it is the only page in
+  // the area that needs no budget knowledge to read -- a resident can start there and
+  // arrive at everything else knowing who the town is. Every other entry assumes the
+  // argument; this one is the denominator under it.
+  // `blog` is second, immediately after the synthesis and before the index, because it is
+  // the only entry here that asks nothing of a reader. /reports is a filing system and
+  // every other entry assumes you know which report you want; a post hands over one
+  // finding in two minutes and then hands the reader on. Somebody who does not yet have a
+  // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
+  // argument that put `addsup` first.
+  analyses: ['addsup', 'blog', 'reports', 'bythenumbers', 'sped', 'classsize',
+             'peers',
+             'required', 'minaid',
              'formula',
              'staffing', 'schoolstaff', 'parastaff', 'courses', 'cuts',
              'stopped',

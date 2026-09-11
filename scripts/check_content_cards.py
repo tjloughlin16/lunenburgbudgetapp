@@ -20,13 +20,25 @@ and then: **"Enforce the length in the generator, not by eye -- a character budg
 from the card's real width, and a build that fails past it. A rule checked by reading lasts
 until the next report."**
 
-THE BUDGETS ARE DERIVED FROM THE CARD, NOT CHOSEN. At the headline size the collaborator's
-template runs about 48 characters to the line and the design holds two lines, so 95 -- which
-is also, not by coincidence, the limit `scripts/conclusions.py` already enforces on a
-claim. The supporting block is smaller type and gets two to three lines. An impact line is
-ONE line. Everything that does not fit belongs under the expander, which is not a demotion:
-a reader who wants the mechanism opens it, and a reader who wants the point has already
-had it.
+THE BUDGETS WERE MEASURED FROM A CARD, NOT CHOSEN. They used to be four template images,
+and the comment on BUDGETS below said so and said to replace them the moment a real card
+existed. One did: /worth-knowing drew all 48, and `fy28/scripts/measure-card-budgets.mjs`
+read the rendered box at 390px and at 1280px and divided it by the advance width of the
+copy actually set in it. The numbers below are that measurement.
+
+THAT PAGE AND THAT SCRIPT ARE BOTH GONE, and this is what stands in their place. The card
+that has a real constraint now is the 1200x630 SHARE IMAGE -- the thing that actually gets
+posted -- and `python3 scripts/build_blog.py --measure` renders every one of them and
+fails if any element's copy overflows the box, which is a stronger check than a character
+budget because it measures the artefact rather than a proxy for it. What survives here is
+the WORKLIST: a per-format character budget is still the cheapest way to see, at a
+terminal, which items are long before anybody renders anything.
+
+AND THE MEASUREMENT MOVED THE ANSWER. The templates implied four very different headline
+budgets, 16 to 129 characters. The rendered card gives 123 to 126 for all four, because
+they are all the same card in the same 350px box -- what differs between the formats is the
+COPY, not the space. A budget read off a screenshot was measuring the sentence somebody had
+chosen to put in the picture.
 
 THE HARD PART IS NOT THE TRIMMING. Cutting the context forces the HEADLINE to carry its own
 meaning, and that usually means picking a different figure rather than writing shorter prose
@@ -49,37 +61,61 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = os.path.join(ROOT, 'notes', 'process', 'CONTENT-CANDIDATES.md')
 
-# Per format, because a Myth vs Fact carries two statements where a Did You Know carries
-# one, and an Analysis Spotlight is a teaser rather than a finding.
-# PROVISIONAL, AND THE NUMBERS ARE MEASURED RATHER THAN CHOSEN -- they are the lengths of
-# the four template cards the collaborator actually supplied, rounded up a little:
+# MEASURED FROM THE RENDERED CARD, at 390px and at 1280px, on 11 September 2026.
 #
-#   analysis spotlight   headline  16   support 116
-#   did you know         headline  68   support  91
-#   myth vs fact         headline 129   support   0
-#   new finding          headline  77   support 136
+# These were provisional and this comment used to say so: the first budgets were the
+# lengths of the four template IMAGES a collaborator supplied, which is a guess about a
+# rendering that did not yet exist. TJ: "lets build out the pages and the entryways for
+# all the format types. Then we can figure out how the content fills those in. Then we
+# know our real restrictions." The cards exist now, so these are the real restrictions.
 #
-# THEY ARE PLACEHOLDERS AND THIS COMMENT IS THE POINT. TJ: "lets build out the pages and
-# the entryways for all the format types. Then we can figure out how the content fills
-# those in. Then we know our real restrictions." He is right: a budget derived from a
-# screenshot is a guess about a rendering that does not exist yet. Once the card
-# components ship, RE-DERIVE these from what actually fits at 390px and 1280px -- measure
-# the rendered box, do not read the design.
+# HOW THEY WERE DERIVED, on 11 September 2026, by a script that no longer exists (see the
+# docstring). It served the built site, opened /worth-knowing -- the page that drew all 48
+# as cards -- in headless Chrome at each width, and for every rendered field
+# reads the content-box width, the computed font and the line-height off the DOM, then
+# measures the average advance width of THAT ITEM'S OWN TEXT with a canvas in the same
+# font. Characters are not interchangeable -- a headline of dollar figures sets wider than
+# one of prose -- so the published figure is the MEDIAN over the real items of that
+# format, and the spread is printed beside it.
 #
-# Note how different the four are. A Myth vs Fact headline is 129 characters because it
-# has to state a complete corrected fact; an Analysis Spotlight headline is 16 because it
-# is a question, with the work done by the support line. One budget for all four would be
-# wrong for three of them.
+#     budget = characters per line x the lines the field is allotted
+#
+# The lines allotted -- headline 3, support 3, one impact line 2, takeaway 4 -- are the one
+# DESIGN decision in the chain and they are declared in that script. Everything else is
+# measured.
+#
+# THE 390px FIGURE IS THE BUDGET. A card has to work on a phone. The desktop box is about
+# 45% wider and its figures are in the script's output, not here, because a budget that
+# only holds on a laptop is not a budget.
+#
+#   format               headline (390 / 1280)   support         impact    takeaway
+#   new finding             126 / 183            162 / 234       110/160   224/324
+#   myth vs fact            126 / 183            156 / 225       112/162   224/328
+#   did you know            126 / 183            162 / 234       110/158   224/324
+#   analysis spotlight      123 / 180            141 / 207       108/158   224/324
+#
+# WHAT THE MEASUREMENT SAYS THAT THE TEMPLATES DID NOT. The four headline budgets are
+# nearly the same -- 123 to 126 -- where the template images implied 16 to 129. That is
+# because they are all the same card in the same 350px box; what differs between formats
+# is not the space, it is the COPY set in it. The old spread was measuring four
+# screenshots of four different sentences and calling it four formats.
+#
+# `analysis-spotlight` rests on a single item, which is all the copy there is in that
+# format today. It is the tightest of the four and it is the least well established; if
+# more spotlights are written, re-run the script.
 BUDGETS = {
-    'did you know':       dict(headline=80,  support=110),
-    'new finding':        dict(headline=90,  support=150),
-    'myth vs fact':       dict(headline=135, support=120),
-    'analysis spotlight': dict(headline=60,  support=130),
+    'did you know':       dict(headline=126, support=162),
+    'new finding':        dict(headline=126, support=162),
+    'myth vs fact':       dict(headline=126, support=156),
+    'analysis spotlight': dict(headline=123, support=141),
 }
-# Shared across every format.
-IMPACT_EACH = 140          # one line, in the reader's own terms
-TAKEAWAY = 260             # two sentences: what to conclude, and what NOT to
-DEFAULT = dict(headline=95, support=160)
+# Shared across every format, so each takes the NARROWEST measurement of the four: a
+# budget that holds for three formats and not the fourth is not a shared budget.
+IMPACT_EACH = 108          # one line, in the reader's own terms -- two rendered lines
+TAKEAWAY = 224             # what to conclude, and what NOT to -- four rendered lines
+# For a format that does not exist yet: the tightest measured card, because an unmeasured
+# thing should not be given the most generous number available.
+DEFAULT = dict(headline=123, support=141)
 
 
 def items(text):

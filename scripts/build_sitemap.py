@@ -22,6 +22,8 @@ files -- a sitemap of shards helps nobody -- but every door into them.
 """
 import argparse
 import glob
+import io
+import json
 import os
 import sys
 from datetime import date
@@ -74,6 +76,31 @@ def analysis_pages():
     return out
 
 
+def blog_pages():
+    """The archive, and every post that has actually been PUBLISHED.
+
+    Two things this has to get right and neither is obvious.
+
+    THE ARCHIVE BREAKS THE SAME CYCLE `analysis_pages` BREAKS. `routes()` finds a page only
+    once it has been rendered into dist, and `prerender.mjs` refuses to render a route that
+    is not already in the sitemap -- so a brand new top-level route can never enter either
+    list on its own. `/blog` is emitted from the payload, which is the thing that decides
+    it exists.
+
+    AND A DRAFT IS NOT AN ADDRESS TO INDEX. A post with no publication date, or one dated
+    in the future, is reachable by its link and listed nowhere: putting it in the sitemap
+    would be publishing it, which is the one decision this whole pipeline leaves to a
+    person. So the state is computed here, from the same field the page computes it from.
+    """
+    p = os.path.join(PUB, 'data', 'blog.json')
+    if not os.path.exists(p):
+        return []
+    posts = json.load(io.open(p, encoding='utf-8')).get('posts', [])
+    today = date.today().isoformat()
+    live = [x['slug'] for x in posts if x.get('publish') and x['publish'] <= today]
+    return ['/blog'] + ['/blog/' + s for s in sorted(live)]
+
+
 def published_data():
     """Every dataset published under /data, so each is indexable on its own."""
     out = []
@@ -107,7 +134,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + ENTRY + published_data()
               + reference() + analyses()):
         if u not in seen:
             seen.add(u)

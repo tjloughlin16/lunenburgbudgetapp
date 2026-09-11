@@ -125,7 +125,24 @@ async function readRoutes() {
     .filter(f => f.endsWith('.md')).map(f => f.slice(0, -3)).sort()
   if (!docs.length) throw new Error('no analyses in public/docs/analyses — nothing to render')
   console.log(`  ${docs.length} markdown analyses at /analysis/<id>`)
-  return [...routes, ...docs.map(d => `/analysis/${d}`)]
+
+  // THE BLOG POSTS THAT HAVE BEEN PUBLISHED, and only those.
+  //
+  // Same shape as the analyses -- one Tab, the slug in the second path segment -- and the
+  // same discipline: the routes come from the thing that decides them. What is different
+  // is that a post has a STATE. A draft (no publication date) or a scheduled one (a date
+  // in the future) is reachable by its link and listed nowhere, so it gets no static twin,
+  // no sitemap entry and no place in dist for a crawler to find. Prerendering one would be
+  // publishing it, which is the one decision in this pipeline that belongs to a person.
+  const blogFile = join(APP, 'public', 'data', 'blog.json')
+  let posts = []
+  if (existsSync(blogFile)) {
+    const today = new Date().toISOString().slice(0, 10)
+    posts = JSON.parse(await readFile(blogFile, 'utf8')).posts
+      .filter(p => p.publish && p.publish <= today).map(p => p.slug).sort()
+    console.log(`  ${posts.length} published blog posts at /blog/<slug>`)
+  }
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`)]
 }
 
 /** Serve dist, falling back to the PRISTINE shell.

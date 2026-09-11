@@ -39,6 +39,14 @@ import { MontyTech } from './pages/MontyTech'
 import { WhatItAllAddsUpTo } from './pages/WhatItAllAddsUpTo'
 import { PeerSpending } from './pages/PeerSpending'
 import { CourseOfferings } from './pages/CourseOfferings'
+import { LunenburgByTheNumbers } from './pages/LunenburgByTheNumbers'
+import { Blog } from './pages/Blog'
+// LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
+// reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
+// production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
+// for the third guarantee (its payload is not in the published tree either) and
+// scripts/build_blog.py --check, which looks rather than reasoning about it.
+import { BlogDrafts } from './pages/BlogDrafts'
 import { WhichGradesStudentsLeave } from './pages/WhichGradesStudentsLeave'
 import { SpendingVsRequired } from './pages/SpendingVsRequired'
 import { SpecialEducationHub } from './pages/SpecialEducationHub'
@@ -222,6 +230,18 @@ export default function App() {
     const result = runCascade(order, MODEL.assumptions, 1)
     setSeed({ state: seedFromCuts(result[0].cuts), nonce: Date.now() })
     go('adjust')
+  }
+
+  // THE REVIEW PAGE, AND IT TAKES OVER THE WHOLE RENDER.
+  //
+  // `/blog-drafts` is deliberately not in the route table, so `tabFromPath` falls back to
+  // the chooser for it -- which would draw the front page underneath this. An early return
+  // is the honest shape: it is not a tab, it is a different surface that happens to share a
+  // bundle, and only in development. `import.meta.env.DEV` is replaced with `false` in a
+  // production build, so this branch and the import above are both eliminated.
+  if (import.meta.env.DEV
+      && window.location.pathname.replace(/\/+$/, '') === '/blog-drafts') {
+    return <BlogDrafts />
   }
 
   return (
@@ -432,6 +452,10 @@ export default function App() {
       {tab === 'formula' && <Ch70Formula />}
       {tab === 'peers' && <PeerSpending />}
       {tab === 'courses' && <CourseOfferings />}
+      {tab === 'bythenumbers' && <LunenburgByTheNumbers />}
+      {/* The archive at /blog and every post at /blog/<slug>, one component for both --
+          the slug is the second path segment, the same shape /analysis/<id> uses. */}
+      {tab === 'blog' && <Blog />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}

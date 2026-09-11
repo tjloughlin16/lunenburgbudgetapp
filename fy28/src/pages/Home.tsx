@@ -1,4 +1,7 @@
 import { abs } from '../lib/abs'
+import { useReport } from '../components/report'
+import { Inline } from '../lib/inline'
+import { type BlogPayload } from './Blog'
 import type { Area, Tab } from '../routes'
 import { AREA_HOME, AREA_LABEL } from '../routes'
 
@@ -130,6 +133,32 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         </span>
       </button>
 
+      {/* A SECOND WAY IN, AND IT IS NOT A FIFTH DOOR EITHER.
+          The doors stay, all of them, and they stay ABOVE this. TJ: "we have to keep the
+          current 'doors' we have. This should be a new column or something on the home
+          page that gives them another way in" -- and "an easier door".
+
+          THE ARGUMENT, because the docstring at the top of this file argues hard against
+          adding targets and that argument still stands for the doors. A chooser assumes
+          somebody already knows what they want; every door on this page is a place to go
+          and read, and a reader who does not yet have a question cannot pick one. A CARD
+          is the other half: it gives somebody a reason to want something. Both belong,
+          and they are different acts, so they are not in the same set -- the doors are a
+          decision and this is an offer.
+
+          WHY IT IS BELOW AND NOT BESIDE. A column next to the doors would make the two
+          sets peers and reinstate exactly the "too many buttons" failure the docstring
+          records. Under them, behind a rule, the page is still four choices; a reader who
+          knew what they wanted has already left, and a reader who did not scrolls into
+          the thing that was built for them.
+
+          AND IT IS ONE POST, NOT FORTY-EIGHT CARDS. It was three cards, chosen by a
+          rule; it is now the newest PUBLISHED post, because a card is eight seconds and
+          cannot convince anybody on its own -- see pages/Blog.tsx for the three lengths.
+          The rule that replaced the old one is smaller and harder: nothing unpublished
+          reaches the front page. */}
+      <HomeLatest />
+
       {/* The "the walkthrough moved" note was here and is gone. It explained a
           change to somebody who had not seen the old page and could not have missed it,
           on the one page whose job is to be four choices. Every old address still
@@ -137,5 +166,86 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           so nobody arrives at a dead link and needs telling. */}
 
     </div>
+  )
+}
+
+/** THE NEWEST PUBLISHED POST, and the offer that stands when there is not one yet.
+ *
+ *  WHAT CHANGED AND WHY. This used to draw three CARDS, chosen by a rule: the most
+ *  recently changed new finding, the first myth, the first did-you-know that fitted. All
+ *  three were items nobody had decided to publish, and the front page of a public tool is
+ *  not where unreviewed copy belongs. So it shows the newest post that is actually up --
+ *  and the payload it reads holds nothing else.
+ *
+ *  A PIN, BECAUSE THE NEWEST IS NOT ALWAYS THE ONE THAT MATTERS THIS WEEK. An item may
+ *  carry `**Pin** — yes` in the candidates file and it takes this slot. A pin promotes a
+ *  post that is already up; it does not put one up, and a pin on an unpublished item is
+ *  simply not there to find.
+ *
+ *  AND NOTHING RATHER THAN A PLACEHOLDER. With nothing published there is no post and
+ *  none is invented -- the section draws its heading and the one line under it, and that
+ *  is TJ's actual request here: *"we have to keep the current 'doors' we have. This
+ *  should be a new column or something on the home page that gives them another way in"*,
+ *  *"an easier door"*.
+ *
+ *  IT RENDERS NOTHING UNTIL THE PAYLOAD ARRIVES. The front page is four doors and an
+ *  offer; an error box where the offer was would be a worse front page than one without
+ *  it, and there is no fallback copy to show because there is no copy here (rule 2). */
+function HomeLatest() {
+  const { d } = useReport<BlogPayload>('blog.json')
+  if (!d) return null
+  const live = d.posts.filter(p => p.published)
+  const post = live.find(p => p.slug === d.pinned) ?? live[0] ?? null
+
+  return (
+    <section className="mt-10 pt-8" style={{ borderTop: '1px solid var(--grid)' }}>
+      <h2 className="text-[17px] font-bold tracking-tight">Worth knowing</h2>
+      <p className="text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>
+        One finding at a time, with the report behind it. No question needed.
+      </p>
+
+      {post ? (
+        <a href={`/blog/${post.slug}`}
+          className="card block p-5 mt-4 transition-opacity hover:opacity-90">
+          <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="text-[11px] font-semibold uppercase tracking-widest"
+              style={{ color: 'var(--text-secondary)' }}>{post.label}</span>
+            <span className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+              {post.reading.minutes} min read
+            </span>
+            {post.vintage === null ? (
+              <span className="text-[12.5px]" style={{ color: 'var(--status-bad)' }}>
+                Year not established
+              </span>
+            ) : (
+              <span className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+                {post.vintage_span
+                  ? `FY${post.vintage_span[0]}\u2013FY${post.vintage_span[1]}`
+                  : `FY${post.vintage}`}
+              </span>
+            )}
+          </span>
+          <span className="block text-[19px] font-bold leading-snug mt-2">
+            <Inline text={post.headline} />
+          </span>
+          {post.support ? (
+            <span className="block text-[14px] leading-snug mt-2"
+              style={{ color: 'var(--text-secondary)' }}>
+              <Inline text={post.support.split('. ')[0] + '.'} />
+            </span>
+          ) : null}
+          <span className="block text-[13.5px] font-semibold mt-3"
+            style={{ color: 'var(--series-cost)' }}>Read the post &rarr;</span>
+        </a>
+      ) : null}
+
+      {d.counts.published > 1 ? (
+        <p className="text-[13.5px] font-semibold mt-4">
+          <a className="underline" style={{ color: 'var(--series-cost)' }} href="/blog">
+            All {d.counts.published} &rarr;
+          </a>
+        </p>
+      ) : null}
+    </section>
   )
 }

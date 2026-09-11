@@ -124,6 +124,55 @@
  "generated_by": "scripts/build_master_report.py",
  "headlines": [
   {
+   "basis": "Census Bureau, American Community Survey five-year estimates, table B01001, 2019\u20132023, for Lunenburg town; DESE enrolment for the latest published year.",
+   "bearing": "sizes",
+   "claim": "1,979 \u00b1 309 residents are 65 or over \u2014 16.8% of the town, on a five-year sample.",
+   "detail": "The count is a sum of twelve age cells, so its margin is the root of the sum of their squares, and the interval it describes runs from 1,670 to 2,288. The enrolment figure beside it is a DESE count of children rather than a sample estimate, which is the difference this whole page turns on: 1,568 means exactly that, and this does not.",
+   "figure": "senior",
+   "figures": {
+    "high": {
+     "text": "2,288",
+     "unit": "",
+     "value": 2288.3864896856358
+    },
+    "low": {
+     "text": "1,670",
+     "unit": "",
+     "value": 1669.6135103143642
+    },
+    "senior": {
+     "text": "1,979 \u00b1 309",
+     "unit": "residents 65 or over",
+     "value": 1979.0
+    },
+    "share": {
+     "text": "16.8%",
+     "unit": "",
+     "value": 16.765503219247712
+    },
+    "students": {
+     "text": "1,568",
+     "unit": "",
+     "value": 1568
+    }
+   },
+   "id": "a-sixth-of-the-town-is-65-or-over",
+   "kind": "measured",
+   "literals": [
+    "65 or over",
+    "65 and over",
+    "under 18",
+    "45-to-64",
+    "under-25"
+   ],
+   "not_shown": "Nothing about what this group wants, can afford, or how it votes. An age is an age.",
+   "report": "bythenumbers",
+   "report_title": "Lunenburg by the numbers \u2014 who lives here",
+   "report_url": "/lunenburg-by-the-numbers",
+   "see": [],
+   "so_what": "A group about the size of the 1,568 children in the schools, and measured far less exactly."
+  },
+  {
    "basis": "DESE\u2019s Special Education Program Characteristics file for Lunenburg, district rows only, every year it has been published.",
    "bearing": "sizes",
    "claim": "Lunenburg children with a special education plan, FY2026",
@@ -1843,6 +1892,248 @@
  ],
  "not_covered": [],
  "reports": [
+  {
+   "about": "Who lives in Lunenburg \u2014 how many people, how old, in how many households, owning or renting, and on what income \u2014 from the Census Bureau\u2019s five-year estimates, every figure with its margin of error.",
+   "conclusions": [
+    {
+     "basis": "Census Bureau, American Community Survey five-year estimates, table B01001, 2019\u20132023, for Lunenburg town; DESE enrolment for the latest published year.",
+     "bearing": "sizes",
+     "claim": "1,979 \u00b1 309 residents are 65 or over \u2014 16.8% of the town, on a five-year sample.",
+     "detail": "The count is a sum of twelve age cells, so its margin is the root of the sum of their squares, and the interval it describes runs from 1,670 to 2,288. The enrolment figure beside it is a DESE count of children rather than a sample estimate, which is the difference this whole page turns on: 1,568 means exactly that, and this does not.",
+     "figure": "senior",
+     "figures": {
+      "high": {
+       "text": "2,288",
+       "unit": "",
+       "value": 2288.3864896856358
+      },
+      "low": {
+       "text": "1,670",
+       "unit": "",
+       "value": 1669.6135103143642
+      },
+      "senior": {
+       "text": "1,979 \u00b1 309",
+       "unit": "residents 65 or over",
+       "value": 1979.0
+      },
+      "share": {
+       "text": "16.8%",
+       "unit": "",
+       "value": 16.765503219247712
+      },
+      "students": {
+       "text": "1,568",
+       "unit": "",
+       "value": 1568
+      }
+     },
+     "id": "a-sixth-of-the-town-is-65-or-over",
+     "kind": "measured",
+     "literals": [
+      "65 or over",
+      "65 and over",
+      "under 18",
+      "45-to-64",
+      "under-25"
+     ],
+     "not_shown": "Nothing about what this group wants, can afford, or how it votes. An age is an age.",
+     "see": [],
+     "so_what": "A group about the size of the 1,568 children in the schools, and measured far less exactly."
+    },
+    {
+     "basis": "Census Bureau, American Community Survey five-year estimates, table B11005, 2019\u20132023, for Lunenburg town.",
+     "bearing": "sizes",
+     "claim": "1,477 \u00b1 198 of 4,529 households have a child under 18 \u2014 32.6% of them.",
+     "detail": "This is a CEILING on homes with a child in the Lunenburg public schools rather than that figure: it counts children at Monty Tech, at private and charter schools, and children not yet of school age. The share carries a margin of 4.0% in its own right, so about a third is the honest reading and any exact fraction is not.",
+     "figure": "withchild",
+     "figures": {
+      "households": {
+       "text": "4,529",
+       "unit": "",
+       "value": 4529.0
+      },
+      "share": {
+       "text": "32.6%",
+       "unit": "",
+       "value": 32.61205564142195
+      },
+      "sharemoe": {
+       "text": "4.0%",
+       "unit": "",
+       "value": 4.031057799335084
+      },
+      "withchild": {
+       "text": "1,477 \u00b1 198",
+       "unit": "households with a child under 18",
+       "value": 1477.0
+      }
+     },
+     "id": "a-third-of-homes-have-a-child-under-18",
+     "kind": "measured",
+     "literals": [
+      "65 or over",
+      "65 and over",
+      "under 18",
+      "45-to-64",
+      "under-25"
+     ],
+     "not_shown": "Which households have a child in the town\u2019s own schools. Nothing published joins a child to a household to a school, and that is a registered gap.",
+     "see": [
+      {
+       "label": "What a family actually pays",
+       "slug": "what-families-pay"
+      }
+     ],
+     "so_what": "The rough claim heard in town, that schools serve about a third of homes, is fair on this measure."
+    },
+    {
+     "basis": "Census Bureau, American Community Survey five-year estimates, table B19049, 2019\u20132023, for Lunenburg town.",
+     "bearing": "sizes",
+     "claim": "A household headed by someone 65 or over has a median income of $72,935 \u00b1 $8,677.",
+     "detail": "Two medians of two different sets of households in the same five years. It is not one household\u2019s income falling as it ages, and it says nothing about savings, equity or a tax bill \u2014 none of which this archive holds by age at all. The under-25 band is published as a sentinel in both releases and is not a figure.",
+     "figure": "senior",
+     "figures": {
+      "middle": {
+       "text": "$129,183",
+       "unit": "",
+       "value": 129183.0
+      },
+      "senior": {
+       "text": "$72,935 \u00b1 $8,677",
+       "unit": "",
+       "value": 72935.0
+      },
+      "share": {
+       "text": "56.5%",
+       "unit": "",
+       "value": 56.45866716208789
+      }
+     },
+     "id": "a-senior-household-earns-about-half",
+     "kind": "measured",
+     "literals": [
+      "65 or over",
+      "65 and over",
+      "under 18",
+      "45-to-64",
+      "under-25"
+     ],
+     "not_shown": "What any household can afford. Income is not wealth, and no record here joins a property tax payment to the age of the person paying it.",
+     "see": [],
+     "so_what": "That is 56.5% of a 45-to-64 household\u2019s $129,183 \u2014 the gap under the \u201cfixed incomes\u201d argument."
+    },
+    {
+     "basis": "Census Bureau, American Community Survey five-year estimates, table B25003, 2019\u20132023, for Lunenburg town.",
+     "bearing": "sizes",
+     "claim": "81.3% of occupied homes are owner-occupied \u2014 3,682 households.",
+     "detail": "The remaining 847 \u00b1 189 homes are renter-occupied. A renting household pays property tax through its rent rather than on a bill, which is a different thing to experience and the same thing to fund; nothing here measures how much of a levy increase reaches a rent, or how fast.",
+     "figure": "ownershare",
+     "figures": {
+      "owner": {
+       "text": "3,682",
+       "unit": "",
+       "value": 3682.0
+      },
+      "ownershare": {
+       "text": "81.3%",
+       "unit": "",
+       "value": 81.2982998454405
+      },
+      "renter": {
+       "text": "847 \u00b1 189",
+       "unit": "",
+       "value": 847.0
+      }
+     },
+     "id": "four-in-five-homes-are-owner-occupied",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "What any household pays. Tenure is not a tax bill, and the town publishes no split of the levy by who pays it.",
+     "see": [
+      {
+       "label": "What an override would cost",
+       "slug": "overrides"
+      }
+     ],
+     "so_what": "A rise in the levy reaches four households in five as a bill they receive directly."
+    },
+    {
+     "basis": "Census table B19013 for every Massachusetts municipality, 2019\u20132023; DESE\u2019s all-district per-pupil expenditure, every published year.",
+     "bearing": "sizes",
+     "claim": "Ordinary income for Massachusetts, and 310 of 318 districts on spending for each pupil.",
+     "detail": "Lunenburg\u2019s median household income ranks 167 of 350 Massachusetts municipalities \u2014 and 205 of them have an income interval that overlaps this town\u2019s, so the rank is arithmetic and the band is the finding. On spending for each pupil the town sits in the bottom quarter of Massachusetts districts in 17 of 17 measured years. The two are not the same kind of rank: one is municipalities on a sample estimate with a margin, the other is districts on a figure DESE computes from returns.",
+     "figure": "overlap",
+     "figures": {
+      "overlap": {
+       "text": "205",
+       "unit": "towns we cannot be told apart from",
+       "value": 205
+      },
+      "pprank": {
+       "text": "310 of 318",
+       "unit": "",
+       "value": 310
+      },
+      "ppyears": {
+       "text": "17 of 17",
+       "unit": "",
+       "value": 17
+      },
+      "rank": {
+       "text": "167 of 350",
+       "unit": "",
+       "value": 167
+      }
+     },
+     "id": "ordinary-on-income-near-the-bottom-on-spending",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Any relation between the two. Nothing here establishes what a town of this income should spend for each pupil, and the two ranks are drawn over different sets.",
+     "see": [
+      {
+       "label": "What other districts spend, for each pupil",
+       "slug": "what-other-districts-spend"
+      }
+     ],
+     "so_what": "Both are true at once, and this town has not had the two put side by side before."
+    },
+    {
+     "basis": "Census Bureau, American Community Survey five-year estimates, tables B01001, B11005, B19049 and B25003, the two releases side by side.",
+     "bearing": "sizes",
+     "claim": "Only 3 of 15 measures compared across the two five-year windows clear their margins.",
+     "detail": "The windows are 2014\u20132018 and 2019\u20132023, which do not overlap \u2014 consecutive ACS releases share four years of sample and may not be differenced at all. What survives: Population; Households; Median income, householder 65 and over. Everything else, including the share of residents 65 or over and the share of households with a child under 18, moved by less than the combined margin of its own two estimates, which is not a change.",
+     "figure": "survived",
+     "figures": {
+      "survived": {
+       "text": "3 of 15",
+       "unit": "comparisons that clear their margins",
+       "value": 3
+      }
+     },
+     "id": "most-of-what-changed-is-inside-the-margin",
+     "kind": "measured",
+     "literals": [
+      "65 or over",
+      "65 and over",
+      "under 18",
+      "45-to-64",
+      "under-25",
+      "2014\u20132018",
+      "2019\u20132023"
+     ],
+     "not_shown": "That nothing changed. A difference inside the margin is one this instrument cannot see, which is not the same as one that did not happen.",
+     "see": [],
+     "so_what": "The town changed less than any table of five-year differences would make it look."
+    }
+   ],
+   "count": 6,
+   "data": "/data/lunenburg-by-the-numbers.json",
+   "generator": "scripts/build_lunenburg_by_the_numbers.py",
+   "id": "bythenumbers",
+   "title": "Lunenburg by the numbers \u2014 who lives here",
+   "url": "/lunenburg-by-the-numbers"
+  },
   {
    "about": "How many Lunenburg children have an individual education programme, from the count DESE publishes rather than from any dollar figure.",
    "conclusions": [
@@ -12175,10 +12466,252 @@
    "title": "Where the children are"
   },
   {
-   "about": "The two reports about money a household hands over, side by side.",
-   "conclusions": 6,
+   "about": "Who lives in Lunenburg, and the two reports about money a household hands over, side by side.",
+   "conclusions": 12,
    "key": "household",
    "reports": [
+    {
+     "about": "Who lives in Lunenburg \u2014 how many people, how old, in how many households, owning or renting, and on what income \u2014 from the Census Bureau\u2019s five-year estimates, every figure with its margin of error.",
+     "conclusions": [
+      {
+       "basis": "Census Bureau, American Community Survey five-year estimates, table B01001, 2019\u20132023, for Lunenburg town; DESE enrolment for the latest published year.",
+       "bearing": "sizes",
+       "claim": "1,979 \u00b1 309 residents are 65 or over \u2014 16.8% of the town, on a five-year sample.",
+       "detail": "The count is a sum of twelve age cells, so its margin is the root of the sum of their squares, and the interval it describes runs from 1,670 to 2,288. The enrolment figure beside it is a DESE count of children rather than a sample estimate, which is the difference this whole page turns on: 1,568 means exactly that, and this does not.",
+       "figure": "senior",
+       "figures": {
+        "high": {
+         "text": "2,288",
+         "unit": "",
+         "value": 2288.3864896856358
+        },
+        "low": {
+         "text": "1,670",
+         "unit": "",
+         "value": 1669.6135103143642
+        },
+        "senior": {
+         "text": "1,979 \u00b1 309",
+         "unit": "residents 65 or over",
+         "value": 1979.0
+        },
+        "share": {
+         "text": "16.8%",
+         "unit": "",
+         "value": 16.765503219247712
+        },
+        "students": {
+         "text": "1,568",
+         "unit": "",
+         "value": 1568
+        }
+       },
+       "id": "a-sixth-of-the-town-is-65-or-over",
+       "kind": "measured",
+       "literals": [
+        "65 or over",
+        "65 and over",
+        "under 18",
+        "45-to-64",
+        "under-25"
+       ],
+       "not_shown": "Nothing about what this group wants, can afford, or how it votes. An age is an age.",
+       "see": [],
+       "so_what": "A group about the size of the 1,568 children in the schools, and measured far less exactly."
+      },
+      {
+       "basis": "Census Bureau, American Community Survey five-year estimates, table B11005, 2019\u20132023, for Lunenburg town.",
+       "bearing": "sizes",
+       "claim": "1,477 \u00b1 198 of 4,529 households have a child under 18 \u2014 32.6% of them.",
+       "detail": "This is a CEILING on homes with a child in the Lunenburg public schools rather than that figure: it counts children at Monty Tech, at private and charter schools, and children not yet of school age. The share carries a margin of 4.0% in its own right, so about a third is the honest reading and any exact fraction is not.",
+       "figure": "withchild",
+       "figures": {
+        "households": {
+         "text": "4,529",
+         "unit": "",
+         "value": 4529.0
+        },
+        "share": {
+         "text": "32.6%",
+         "unit": "",
+         "value": 32.61205564142195
+        },
+        "sharemoe": {
+         "text": "4.0%",
+         "unit": "",
+         "value": 4.031057799335084
+        },
+        "withchild": {
+         "text": "1,477 \u00b1 198",
+         "unit": "households with a child under 18",
+         "value": 1477.0
+        }
+       },
+       "id": "a-third-of-homes-have-a-child-under-18",
+       "kind": "measured",
+       "literals": [
+        "65 or over",
+        "65 and over",
+        "under 18",
+        "45-to-64",
+        "under-25"
+       ],
+       "not_shown": "Which households have a child in the town\u2019s own schools. Nothing published joins a child to a household to a school, and that is a registered gap.",
+       "see": [
+        {
+         "label": "What a family actually pays",
+         "slug": "what-families-pay"
+        }
+       ],
+       "so_what": "The rough claim heard in town, that schools serve about a third of homes, is fair on this measure."
+      },
+      {
+       "basis": "Census Bureau, American Community Survey five-year estimates, table B19049, 2019\u20132023, for Lunenburg town.",
+       "bearing": "sizes",
+       "claim": "A household headed by someone 65 or over has a median income of $72,935 \u00b1 $8,677.",
+       "detail": "Two medians of two different sets of households in the same five years. It is not one household\u2019s income falling as it ages, and it says nothing about savings, equity or a tax bill \u2014 none of which this archive holds by age at all. The under-25 band is published as a sentinel in both releases and is not a figure.",
+       "figure": "senior",
+       "figures": {
+        "middle": {
+         "text": "$129,183",
+         "unit": "",
+         "value": 129183.0
+        },
+        "senior": {
+         "text": "$72,935 \u00b1 $8,677",
+         "unit": "",
+         "value": 72935.0
+        },
+        "share": {
+         "text": "56.5%",
+         "unit": "",
+         "value": 56.45866716208789
+        }
+       },
+       "id": "a-senior-household-earns-about-half",
+       "kind": "measured",
+       "literals": [
+        "65 or over",
+        "65 and over",
+        "under 18",
+        "45-to-64",
+        "under-25"
+       ],
+       "not_shown": "What any household can afford. Income is not wealth, and no record here joins a property tax payment to the age of the person paying it.",
+       "see": [],
+       "so_what": "That is 56.5% of a 45-to-64 household\u2019s $129,183 \u2014 the gap under the \u201cfixed incomes\u201d argument."
+      },
+      {
+       "basis": "Census Bureau, American Community Survey five-year estimates, table B25003, 2019\u20132023, for Lunenburg town.",
+       "bearing": "sizes",
+       "claim": "81.3% of occupied homes are owner-occupied \u2014 3,682 households.",
+       "detail": "The remaining 847 \u00b1 189 homes are renter-occupied. A renting household pays property tax through its rent rather than on a bill, which is a different thing to experience and the same thing to fund; nothing here measures how much of a levy increase reaches a rent, or how fast.",
+       "figure": "ownershare",
+       "figures": {
+        "owner": {
+         "text": "3,682",
+         "unit": "",
+         "value": 3682.0
+        },
+        "ownershare": {
+         "text": "81.3%",
+         "unit": "",
+         "value": 81.2982998454405
+        },
+        "renter": {
+         "text": "847 \u00b1 189",
+         "unit": "",
+         "value": 847.0
+        }
+       },
+       "id": "four-in-five-homes-are-owner-occupied",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "What any household pays. Tenure is not a tax bill, and the town publishes no split of the levy by who pays it.",
+       "see": [
+        {
+         "label": "What an override would cost",
+         "slug": "overrides"
+        }
+       ],
+       "so_what": "A rise in the levy reaches four households in five as a bill they receive directly."
+      },
+      {
+       "basis": "Census table B19013 for every Massachusetts municipality, 2019\u20132023; DESE\u2019s all-district per-pupil expenditure, every published year.",
+       "bearing": "sizes",
+       "claim": "Ordinary income for Massachusetts, and 310 of 318 districts on spending for each pupil.",
+       "detail": "Lunenburg\u2019s median household income ranks 167 of 350 Massachusetts municipalities \u2014 and 205 of them have an income interval that overlaps this town\u2019s, so the rank is arithmetic and the band is the finding. On spending for each pupil the town sits in the bottom quarter of Massachusetts districts in 17 of 17 measured years. The two are not the same kind of rank: one is municipalities on a sample estimate with a margin, the other is districts on a figure DESE computes from returns.",
+       "figure": "overlap",
+       "figures": {
+        "overlap": {
+         "text": "205",
+         "unit": "towns we cannot be told apart from",
+         "value": 205
+        },
+        "pprank": {
+         "text": "310 of 318",
+         "unit": "",
+         "value": 310
+        },
+        "ppyears": {
+         "text": "17 of 17",
+         "unit": "",
+         "value": 17
+        },
+        "rank": {
+         "text": "167 of 350",
+         "unit": "",
+         "value": 167
+        }
+       },
+       "id": "ordinary-on-income-near-the-bottom-on-spending",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Any relation between the two. Nothing here establishes what a town of this income should spend for each pupil, and the two ranks are drawn over different sets.",
+       "see": [
+        {
+         "label": "What other districts spend, for each pupil",
+         "slug": "what-other-districts-spend"
+        }
+       ],
+       "so_what": "Both are true at once, and this town has not had the two put side by side before."
+      },
+      {
+       "basis": "Census Bureau, American Community Survey five-year estimates, tables B01001, B11005, B19049 and B25003, the two releases side by side.",
+       "bearing": "sizes",
+       "claim": "Only 3 of 15 measures compared across the two five-year windows clear their margins.",
+       "detail": "The windows are 2014\u20132018 and 2019\u20132023, which do not overlap \u2014 consecutive ACS releases share four years of sample and may not be differenced at all. What survives: Population; Households; Median income, householder 65 and over. Everything else, including the share of residents 65 or over and the share of households with a child under 18, moved by less than the combined margin of its own two estimates, which is not a change.",
+       "figure": "survived",
+       "figures": {
+        "survived": {
+         "text": "3 of 15",
+         "unit": "comparisons that clear their margins",
+         "value": 3
+        }
+       },
+       "id": "most-of-what-changed-is-inside-the-margin",
+       "kind": "measured",
+       "literals": [
+        "65 or over",
+        "65 and over",
+        "under 18",
+        "45-to-64",
+        "under-25",
+        "2014\u20132018",
+        "2019\u20132023"
+       ],
+       "not_shown": "That nothing changed. A difference inside the margin is one this instrument cannot see, which is not the same as one that did not happen.",
+       "see": [],
+       "so_what": "The town changed less than any table of five-year differences would make it look."
+      }
+     ],
+     "count": 6,
+     "data": "/data/lunenburg-by-the-numbers.json",
+     "generator": "scripts/build_lunenburg_by_the_numbers.py",
+     "id": "bythenumbers",
+     "title": "Lunenburg by the numbers \u2014 who lives here",
+     "url": "/lunenburg-by-the-numbers"
+    },
     {
      "about": "Athletics with both sides of the money visible at once \u2014 the town\u2019s appropriation, the fee-funded revolving fund, and three district documents that state three different costs for the same team in the same year.",
      "conclusions": [
@@ -12641,22 +13174,22 @@
      "url": "/what-families-pay"
     }
    ],
-   "title": "Athletics, and what a family pays"
+   "title": "The households \u2014 who they are, and what they pay"
   }
  ],
  "totals": {
   "bearing": {
    "lever": 19,
-   "sizes": 59,
+   "sizes": 65,
    "unclassified": 0
   },
-  "conclusions": 78,
+  "conclusions": 84,
   "document_words": 80083,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 77,
-  "reports": 23,
-  "with_conclusions": 23,
+  "measured": 83,
+  "reports": 24,
+  "with_conclusions": 24,
   "without_conclusions": 0
  }
 }

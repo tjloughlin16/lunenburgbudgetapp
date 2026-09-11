@@ -1,0 +1,1543 @@
+{
+ "about": "Who lives in Lunenburg \u2014 how many people, how old, in how many households, owning or renting, and on what income \u2014 from the Census Bureau\u2019s five-year estimates, every figure with its margin of error.",
+ "ages": {
+  "groups": [
+   {
+    "cells": 8,
+    "estimate": 2736.0,
+    "estimate_text": "2,736",
+    "key": "children",
+    "label": "Under 18",
+    "moe": 429.4857389949054,
+    "moe_text": "429",
+    "share": 23.17858353100644,
+    "share_conservative": false,
+    "share_moe": 3.638284984151937,
+    "share_moe_text": "3.6%",
+    "share_text": "23.2%",
+    "text": "2,736 \u00b1 429"
+   },
+   {
+    "cells": 8,
+    "estimate": 653.0,
+    "estimate_text": "653",
+    "key": "young",
+    "label": "18 to 24",
+    "moe": 247.24481794367298,
+    "moe_text": "247",
+    "share": 5.532023043036259,
+    "share_conservative": false,
+    "share_moe": 2.0945661111026657,
+    "share_moe_text": "2.1%",
+    "share_text": "5.5%",
+    "text": "653 \u00b1 247"
+   },
+   {
+    "cells": 8,
+    "estimate": 2983.0,
+    "estimate_text": "2,983",
+    "key": "early",
+    "label": "25 to 44",
+    "moe": 390.7390433524656,
+    "moe_text": "391",
+    "share": 25.2710945442223,
+    "share_conservative": false,
+    "share_moe": 3.309975780403406,
+    "share_moe_text": "3.3%",
+    "share_text": "25.3%",
+    "text": "2,983 \u00b1 391"
+   },
+   {
+    "cells": 10,
+    "estimate": 3453.0,
+    "estimate_text": "3,453",
+    "key": "middle",
+    "label": "45 to 64",
+    "moe": 470.5985550339057,
+    "moe_text": "471",
+    "share": 29.25279566248729,
+    "share_conservative": false,
+    "share_moe": 3.986493834010142,
+    "share_moe_text": "4.0%",
+    "share_text": "29.3%",
+    "text": "3,453 \u00b1 471"
+   },
+   {
+    "cells": 12,
+    "estimate": 1979.0,
+    "estimate_text": "1,979",
+    "key": "senior",
+    "label": "65 and over",
+    "moe": 309.38648968563575,
+    "moe_text": "309",
+    "share": 16.765503219247712,
+    "share_conservative": false,
+    "share_moe": 2.6208919905548558,
+    "share_moe_text": "2.6%",
+    "share_text": "16.8%",
+    "text": "1,979 \u00b1 309"
+   }
+  ],
+  "population": {
+   "estimate": 11804.0,
+   "estimate_text": "11,804",
+   "label": "Population",
+   "moe": 19.0,
+   "moe_text": "19",
+   "text": "11,804 \u00b1 19"
+  },
+  "vintage": 2023,
+  "window": "2019\u20132023"
+ },
+ "change": {
+  "compared": 15,
+  "inside_the_margin": 12,
+  "new": 2023,
+  "new_window": "2019\u20132023",
+  "old": 2018,
+  "old_window": "2014\u20132018",
+  "survived": 3,
+  "survived_labels": [
+   "Population",
+   "Households",
+   "Median income, householder 65 and over"
+  ],
+  "survived_text": "3 of 15",
+  "tests": [
+   {
+    "combined_moe": 31.400636936215164,
+    "combined_moe_text": "31",
+    "difference": 533.0,
+    "difference_text": "+533",
+    "distinguishable": true,
+    "kind": "count",
+    "label": "Population",
+    "new": 11804.0,
+    "new_moe": 19.0,
+    "new_text": "11,804 \u00b1 19",
+    "old": 11271.0,
+    "old_moe": 25.0,
+    "old_text": "11,271 \u00b1 25",
+    "short": "Population",
+    "unit": "residents",
+    "verdict": "clears its margin"
+   },
+   {
+    "combined_moe": 405.5231189463802,
+    "combined_moe_text": "406",
+    "difference": 169.0,
+    "difference_text": "+169",
+    "distinguishable": false,
+    "kind": "count",
+    "label": "Residents 65 and over",
+    "new": 1979.0,
+    "new_moe": 309.38648968563575,
+    "new_text": "1,979 \u00b1 309",
+    "old": 1810.0,
+    "old_moe": 262.16216355530787,
+    "old_text": "1,810 \u00b1 262",
+    "short": "Residents 65+",
+    "unit": "residents",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 3.504001788483203,
+    "combined_moe_text": "3.5 points",
+    "difference": 0.7065909665638337,
+    "difference_text": "+0.7 points",
+    "distinguishable": false,
+    "kind": "share",
+    "label": "Share of the town 65 and over",
+    "new": 16.765503219247712,
+    "new_moe": 2.6208919905548558,
+    "new_text": "16.8% \u00b1 2.6%",
+    "old": 16.05891225268388,
+    "old_moe": 2.3257157409148026,
+    "old_text": "16.1% \u00b1 2.3%",
+    "short": "Share 65+",
+    "unit": "% of the town",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 560.2160297599489,
+    "combined_moe_text": "560",
+    "difference": 158.0,
+    "difference_text": "+158",
+    "distinguishable": false,
+    "kind": "count",
+    "label": "Residents under 18",
+    "new": 2736.0,
+    "new_moe": 429.4857389949054,
+    "new_text": "2,736 \u00b1 429",
+    "old": 2578.0,
+    "old_moe": 359.6998748957247,
+    "old_text": "2,578 \u00b1 360",
+    "short": "Residents under 18",
+    "unit": "residents",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 4.839361322934331,
+    "combined_moe_text": "4.8 points",
+    "difference": 0.30572397994619394,
+    "difference_text": "+0.3 points",
+    "distinguishable": false,
+    "kind": "share",
+    "label": "Share of the town under 18",
+    "new": 23.17858353100644,
+    "new_moe": 3.638284984151937,
+    "new_text": "23.2% \u00b1 3.6%",
+    "old": 22.872859551060245,
+    "old_moe": 3.1909716996562754,
+    "old_text": "22.9% \u00b1 3.2%",
+    "short": "Share under 18",
+    "unit": "% of the town",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 276.1340254296815,
+    "combined_moe_text": "276",
+    "difference": 326.0,
+    "difference_text": "+326",
+    "distinguishable": true,
+    "kind": "count",
+    "label": "Households",
+    "new": 4529.0,
+    "new_moe": 235.0,
+    "new_text": "4,529 \u00b1 235",
+    "old": 4203.0,
+    "old_moe": 145.0,
+    "old_text": "4,203 \u00b1 145",
+    "short": "Households",
+    "unit": "households",
+    "verdict": "clears its margin"
+   },
+   {
+    "combined_moe": 243.0740627874558,
+    "combined_moe_text": "243",
+    "difference": 14.0,
+    "difference_text": "+14",
+    "distinguishable": false,
+    "kind": "count",
+    "label": "Households with a child under 18",
+    "new": 1477.0,
+    "new_moe": 198.0,
+    "new_text": "1,477 \u00b1 198",
+    "old": 1463.0,
+    "old_moe": 141.0,
+    "old_text": "1,463 \u00b1 141",
+    "short": "Homes with a child",
+    "unit": "households",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 5.1050640828905935,
+    "combined_moe_text": "5.1 points",
+    "difference": -2.1964144989539776,
+    "difference_text": "\u22122.2 points",
+    "distinguishable": false,
+    "kind": "share",
+    "label": "Share of households with a child under 18",
+    "new": 32.61205564142195,
+    "new_moe": 4.031057799335084,
+    "new_text": "32.6% \u00b1 4.0%",
+    "old": 34.808470140375924,
+    "old_moe": 3.1324514854725787,
+    "old_text": "34.8% \u00b1 3.1%",
+    "short": "Share with a child",
+    "unit": "% of the town",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 14038.966984789158,
+    "combined_moe_text": "$14,039",
+    "difference": 8243.0,
+    "difference_text": "+$8,243",
+    "distinguishable": false,
+    "kind": "money",
+    "label": "Median household income",
+    "new": 109753.0,
+    "new_moe": 12275.0,
+    "new_text": "$109,753 \u00b1 $12,275",
+    "old": 101510.0,
+    "old_moe": 6813.0,
+    "old_text": "$101,510 \u00b1 $6,813",
+    "short": "Median income",
+    "unit": "a year",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 23302.1220063753,
+    "combined_moe_text": "$23,302",
+    "difference": 7931.0,
+    "difference_text": "+$7,931",
+    "distinguishable": false,
+    "kind": "money",
+    "label": "Median income, householder 25 to 44",
+    "new": 119500.0,
+    "new_moe": 20747.0,
+    "new_text": "$119,500 \u00b1 $20,747",
+    "old": 111569.0,
+    "old_moe": 10609.0,
+    "old_text": "$111,569 \u00b1 $10,609",
+    "short": "Income, householder 25 to 44",
+    "unit": "a year",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 25584.513206234744,
+    "combined_moe_text": "$25,585",
+    "difference": 11292.0,
+    "difference_text": "+$11,292",
+    "distinguishable": false,
+    "kind": "money",
+    "label": "Median income, householder 45 to 64",
+    "new": 129183.0,
+    "new_moe": 21150.0,
+    "new_text": "$129,183 \u00b1 $21,150",
+    "old": 117891.0,
+    "old_moe": 14396.0,
+    "old_text": "$117,891 \u00b1 $14,396",
+    "short": "Income, householder 45 to 64",
+    "unit": "a year",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 15292.93882809972,
+    "combined_moe_text": "$15,293",
+    "difference": 30193.0,
+    "difference_text": "+$30,193",
+    "distinguishable": true,
+    "kind": "money",
+    "label": "Median income, householder 65 and over",
+    "new": 72935.0,
+    "new_moe": 8677.0,
+    "new_text": "$72,935 \u00b1 $8,677",
+    "old": 42742.0,
+    "old_moe": 12593.0,
+    "old_text": "$42,742 \u00b1 $12,593",
+    "short": "Income, householder 65+",
+    "unit": "a year",
+    "verdict": "clears its margin"
+   },
+   {
+    "combined_moe": 388.0270609119936,
+    "combined_moe_text": "388",
+    "difference": 207.0,
+    "difference_text": "+207",
+    "distinguishable": false,
+    "kind": "count",
+    "label": "Owner-occupied homes",
+    "new": 3682.0,
+    "new_moe": 321.0,
+    "new_text": "3,682 \u00b1 321",
+    "old": 3475.0,
+    "old_moe": 218.0,
+    "old_text": "3,475 \u00b1 218",
+    "short": "Owner-occupied",
+    "unit": "households",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 7.15588571955414,
+    "combined_moe_text": "7.2 points",
+    "difference": -1.3807389363820164,
+    "difference_text": "\u22121.4 points",
+    "distinguishable": false,
+    "kind": "share",
+    "label": "Share of homes owner-occupied",
+    "new": 81.2982998454405,
+    "new_moe": 5.695616687085581,
+    "new_text": "81.3% \u00b1 5.7%",
+    "old": 82.67903878182251,
+    "old_moe": 4.332049282396399,
+    "old_text": "82.7% \u00b1 4.3%",
+    "short": "Share owner-occupied",
+    "unit": "% of the town",
+    "verdict": "inside the margin"
+   },
+   {
+    "combined_moe": 252.87348615463821,
+    "combined_moe_text": "253",
+    "difference": 119.0,
+    "difference_text": "+119",
+    "distinguishable": false,
+    "kind": "count",
+    "label": "Renter-occupied homes",
+    "new": 847.0,
+    "new_moe": 189.0,
+    "new_text": "847 \u00b1 189",
+    "old": 728.0,
+    "old_moe": 168.0,
+    "old_text": "728 \u00b1 168",
+    "short": "Renter-occupied",
+    "unit": "households",
+    "verdict": "inside the margin"
+   }
+  ]
+ },
+ "children": {
+  "fy": 2026,
+  "students": 1568,
+  "students_text": "1,568",
+  "with_child_text": "1,477 \u00b1 198"
+ },
+ "closes": "The town census. It counts every resident by name, age and household each year, it is compiled by the Town Clerk, and it is the one record that would replace every estimate on this page with a count \u2014 including the two things the Census cannot say: which households have a child in the Lunenburg public schools, and what the people in them pay in property tax.",
+ "conclusions": [
+  {
+   "basis": "Census Bureau, American Community Survey five-year estimates, table B01001, 2019\u20132023, for Lunenburg town; DESE enrolment for the latest published year.",
+   "bearing": "sizes",
+   "claim": "1,979 \u00b1 309 residents are 65 or over \u2014 16.8% of the town, on a five-year sample.",
+   "detail": "The count is a sum of twelve age cells, so its margin is the root of the sum of their squares, and the interval it describes runs from 1,670 to 2,288. The enrolment figure beside it is a DESE count of children rather than a sample estimate, which is the difference this whole page turns on: 1,568 means exactly that, and this does not.",
+   "figure": "senior",
+   "figures": {
+    "high": {
+     "text": "2,288",
+     "unit": "",
+     "value": 2288.3864896856358
+    },
+    "low": {
+     "text": "1,670",
+     "unit": "",
+     "value": 1669.6135103143642
+    },
+    "senior": {
+     "text": "1,979 \u00b1 309",
+     "unit": "residents 65 or over",
+     "value": 1979.0
+    },
+    "share": {
+     "text": "16.8%",
+     "unit": "",
+     "value": 16.765503219247712
+    },
+    "students": {
+     "text": "1,568",
+     "unit": "",
+     "value": 1568
+    }
+   },
+   "id": "a-sixth-of-the-town-is-65-or-over",
+   "kind": "measured",
+   "literals": [
+    "65 or over",
+    "65 and over",
+    "under 18",
+    "45-to-64",
+    "under-25"
+   ],
+   "not_shown": "Nothing about what this group wants, can afford, or how it votes. An age is an age.",
+   "see": [],
+   "so_what": "A group about the size of the 1,568 children in the schools, and measured far less exactly."
+  },
+  {
+   "basis": "Census Bureau, American Community Survey five-year estimates, table B11005, 2019\u20132023, for Lunenburg town.",
+   "bearing": "sizes",
+   "claim": "1,477 \u00b1 198 of 4,529 households have a child under 18 \u2014 32.6% of them.",
+   "detail": "This is a CEILING on homes with a child in the Lunenburg public schools rather than that figure: it counts children at Monty Tech, at private and charter schools, and children not yet of school age. The share carries a margin of 4.0% in its own right, so about a third is the honest reading and any exact fraction is not.",
+   "figure": "withchild",
+   "figures": {
+    "households": {
+     "text": "4,529",
+     "unit": "",
+     "value": 4529.0
+    },
+    "share": {
+     "text": "32.6%",
+     "unit": "",
+     "value": 32.61205564142195
+    },
+    "sharemoe": {
+     "text": "4.0%",
+     "unit": "",
+     "value": 4.031057799335084
+    },
+    "withchild": {
+     "text": "1,477 \u00b1 198",
+     "unit": "households with a child under 18",
+     "value": 1477.0
+    }
+   },
+   "id": "a-third-of-homes-have-a-child-under-18",
+   "kind": "measured",
+   "literals": [
+    "65 or over",
+    "65 and over",
+    "under 18",
+    "45-to-64",
+    "under-25"
+   ],
+   "not_shown": "Which households have a child in the town\u2019s own schools. Nothing published joins a child to a household to a school, and that is a registered gap.",
+   "see": [
+    {
+     "label": "What a family actually pays",
+     "slug": "what-families-pay"
+    }
+   ],
+   "so_what": "The rough claim heard in town, that schools serve about a third of homes, is fair on this measure."
+  },
+  {
+   "basis": "Census Bureau, American Community Survey five-year estimates, table B19049, 2019\u20132023, for Lunenburg town.",
+   "bearing": "sizes",
+   "claim": "A household headed by someone 65 or over has a median income of $72,935 \u00b1 $8,677.",
+   "detail": "Two medians of two different sets of households in the same five years. It is not one household\u2019s income falling as it ages, and it says nothing about savings, equity or a tax bill \u2014 none of which this archive holds by age at all. The under-25 band is published as a sentinel in both releases and is not a figure.",
+   "figure": "senior",
+   "figures": {
+    "middle": {
+     "text": "$129,183",
+     "unit": "",
+     "value": 129183.0
+    },
+    "senior": {
+     "text": "$72,935 \u00b1 $8,677",
+     "unit": "",
+     "value": 72935.0
+    },
+    "share": {
+     "text": "56.5%",
+     "unit": "",
+     "value": 56.45866716208789
+    }
+   },
+   "id": "a-senior-household-earns-about-half",
+   "kind": "measured",
+   "literals": [
+    "65 or over",
+    "65 and over",
+    "under 18",
+    "45-to-64",
+    "under-25"
+   ],
+   "not_shown": "What any household can afford. Income is not wealth, and no record here joins a property tax payment to the age of the person paying it.",
+   "see": [],
+   "so_what": "That is 56.5% of a 45-to-64 household\u2019s $129,183 \u2014 the gap under the \u201cfixed incomes\u201d argument."
+  },
+  {
+   "basis": "Census Bureau, American Community Survey five-year estimates, table B25003, 2019\u20132023, for Lunenburg town.",
+   "bearing": "sizes",
+   "claim": "81.3% of occupied homes are owner-occupied \u2014 3,682 households.",
+   "detail": "The remaining 847 \u00b1 189 homes are renter-occupied. A renting household pays property tax through its rent rather than on a bill, which is a different thing to experience and the same thing to fund; nothing here measures how much of a levy increase reaches a rent, or how fast.",
+   "figure": "ownershare",
+   "figures": {
+    "owner": {
+     "text": "3,682",
+     "unit": "",
+     "value": 3682.0
+    },
+    "ownershare": {
+     "text": "81.3%",
+     "unit": "",
+     "value": 81.2982998454405
+    },
+    "renter": {
+     "text": "847 \u00b1 189",
+     "unit": "",
+     "value": 847.0
+    }
+   },
+   "id": "four-in-five-homes-are-owner-occupied",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "What any household pays. Tenure is not a tax bill, and the town publishes no split of the levy by who pays it.",
+   "see": [
+    {
+     "label": "What an override would cost",
+     "slug": "overrides"
+    }
+   ],
+   "so_what": "A rise in the levy reaches most households as a bill they receive, rather than through a rent."
+  },
+  {
+   "basis": "Census table B19013 for every Massachusetts municipality, 2019\u20132023; DESE\u2019s all-district per-pupil expenditure, every published year.",
+   "bearing": "sizes",
+   "claim": "Ordinary income for Massachusetts, and 310 of 318 districts on spending for each pupil.",
+   "detail": "Lunenburg\u2019s median household income ranks 167 of 350 Massachusetts municipalities \u2014 and 205 of them have an income interval that overlaps this town\u2019s, so the rank is arithmetic and the band is the finding. On spending for each pupil the town sits in the bottom quarter of Massachusetts districts in 17 of 17 measured years. The two are not the same kind of rank: one is municipalities on a sample estimate with a margin, the other is districts on a figure DESE computes from returns.",
+   "figure": "overlap",
+   "figures": {
+    "overlap": {
+     "text": "205",
+     "unit": "towns we cannot be told apart from",
+     "value": 205
+    },
+    "pprank": {
+     "text": "310 of 318",
+     "unit": "",
+     "value": 310
+    },
+    "ppyears": {
+     "text": "17 of 17",
+     "unit": "",
+     "value": 17
+    },
+    "rank": {
+     "text": "167 of 350",
+     "unit": "",
+     "value": 167
+    }
+   },
+   "id": "ordinary-on-income-near-the-bottom-on-spending",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Any relation between the two. Nothing here establishes what a town of this income should spend for each pupil, and the two ranks are drawn over different sets.",
+   "see": [
+    {
+     "label": "What other districts spend, for each pupil",
+     "slug": "what-other-districts-spend"
+    }
+   ],
+   "so_what": "Both are true at once, and this town has not had the two put side by side before."
+  },
+  {
+   "basis": "Census Bureau, American Community Survey five-year estimates, tables B01001, B11005, B19049 and B25003, the two releases side by side.",
+   "bearing": "sizes",
+   "claim": "Only 3 of 15 measures compared across the two five-year windows clear their margins.",
+   "detail": "The windows are 2014\u20132018 and 2019\u20132023, which do not overlap \u2014 consecutive ACS releases share four years of sample and may not be differenced at all. What survives: Population; Households; Median income, householder 65 and over. Everything else, including the share of residents 65 or over and the share of households with a child under 18, moved by less than the combined margin of its own two estimates, which is not a change.",
+   "figure": "survived",
+   "figures": {
+    "survived": {
+     "text": "3 of 15",
+     "unit": "comparisons that clear their margins",
+     "value": 3
+    }
+   },
+   "id": "most-of-what-changed-is-inside-the-margin",
+   "kind": "measured",
+   "literals": [
+    "65 or over",
+    "65 and over",
+    "under 18",
+    "45-to-64",
+    "under-25",
+    "2014\u20132018",
+    "2019\u20132023"
+   ],
+   "not_shown": "That nothing changed. A difference inside the margin is one this instrument cannot see, which is not the same as one that did not happen.",
+   "see": [],
+   "so_what": "The town changed less than any table of five-year differences would make it look."
+  }
+ ],
+ "gaps": [
+  {
+   "side": "people",
+   "what": "How many Lunenburg homes have a child in the LUNENBURG PUBLIC SCHOOLS \u2014 as opposed to a child under 18?",
+   "why": "The Census answers the second and not the first. B11005 puts 1,477 of 4,529 households \u2014 32.6% \u2014 with a child under 18, which is what people mean when they say \"about 30% of taxpaying homes\", and on that reading the claim is fair. But that count includes children at Monty Tech, at private and charter schools, and children not yet of school age, so it is a CEILING rather than the figure. The arithmetic suggests the gap is real: 1,477 households against roughly 1,745 school-age children is about 1.2 per household, low enough that a meaningful share of those homes have only pre-school children. Nothing published joins a child to a household to a school. \u2014 closes: a count of DISTINCT HOUSEHOLDS with at least one child enrolled, which the district can produce from its own student information system and DESE cannot, because DESE counts children and the Census counts households and neither knows about the other."
+  },
+  {
+   "side": "people",
+   "what": "Who actually lives in Lunenburg \u2014 how many are over 65, how many households have a child in the schools, and what each group can afford?",
+   "why": "ANSWERED IN PART, 11 September 2026, and the part that remains is the part the argument actually runs on. The Census tables named below were fetched and are loaded as `census_acs`: 11,804 \u00b1 19 residents, 1,979 \u00b1 309 of them 65 or over, 4,529 \u00b1 235 households, 1,477 \u00b1 198 with a child under 18, median household income $109,753 \u00b1 $12,275 and $72,935 \u00b1 $8,677 where the householder is 65 or over. See /lunenburg-by-the-numbers, where every figure carries its margin. WHAT SURVIVES is the third clause \u2014 what each group can AFFORD. Income is not wealth, not savings, not equity and not a tax bill, and nothing published joins a property tax payment to the age of the person who paid it; the two rows below carry the two halves of what is still missing. \u2014 closes: the town census, which counts every resident by name, age and household rather than sampling them, held by the Town Clerk."
+  },
+  {
+   "side": "people",
+   "what": "How much of the property tax levy is paid by households headed by someone 65 or over?",
+   "why": "The Census now gives income by age of householder \u2014 a household headed by someone 65 or over has a median income of $72,935 \u00b1 $8,677, against $129,183 \u00b1 $21,150 for a 45-to-64 household \u2014 and that is income, not tax. The override argument is about a BILL: what a $3,000,000 override adds to a household is quoted at meetings as a town-wide average, and the town publishes no split of the levy by who pays it, by age or by anything else. Nor does it publish how many households take the statutory elderly exemptions and abatements that would change the answer. So \"seniors on fixed incomes cannot carry it\" cannot be checked in either direction, and neither can its opposite. \u2014 closes: the Board of Assessors\u2019 commitment list with the Clause 41A, 41C and 17D exemptions granted, joined to the town census by age of owner \u2014 both held by the Town and neither published."
+  }
+ ],
+ "generated_by": "scripts/build_lunenburg_by_the_numbers.py",
+ "grain": "RESIDENTS AND HOUSEHOLDS, as five-year SAMPLE ESTIMATES. Not a count: the American Community Survey samples a town of 11,804 and publishes a margin of error with every figure. Two estimates whose intervals overlap are not different. Nothing here is a dollar of budget, a child in a classroom or a tax bill.",
+ "households": {
+  "households": {
+   "estimate": 4529.0,
+   "estimate_text": "4,529",
+   "label": "Households",
+   "moe": 235.0,
+   "moe_text": "235",
+   "text": "4,529 \u00b1 235"
+  },
+  "share": 32.61205564142195,
+  "share_moe": 4.031057799335084,
+  "share_moe_text": "4.0%",
+  "share_text": "32.6%",
+  "vintage": 2023,
+  "window": "2019\u20132023",
+  "with_child": {
+   "estimate": 1477.0,
+   "estimate_text": "1,477",
+   "label": "With a child under 18",
+   "moe": 198.0,
+   "moe_text": "198",
+   "text": "1,477 \u00b1 198"
+  },
+  "without_child": {
+   "estimate": 3052.0,
+   "estimate_text": "3,052",
+   "label": "With no child under 18",
+   "moe": 325.0,
+   "moe_text": "325",
+   "text": "3,052 \u00b1 325"
+  }
+ },
+ "income": {
+  "all_households": {
+   "estimate": 109753.0,
+   "estimate_text": "$109,753",
+   "label": "All households",
+   "moe": 12275.0,
+   "moe_text": "$12,275",
+   "text": "$109,753 \u00b1 $12,275"
+  },
+  "bands": [
+   {
+    "estimate": 119500.0,
+    "estimate_text": "$119,500",
+    "label": "25 to 44",
+    "moe": 20747.0,
+    "moe_text": "$20,747",
+    "text": "$119,500 \u00b1 $20,747"
+   },
+   {
+    "estimate": 129183.0,
+    "estimate_text": "$129,183",
+    "label": "45 to 64",
+    "moe": 21150.0,
+    "moe_text": "$21,150",
+    "text": "$129,183 \u00b1 $21,150"
+   },
+   {
+    "estimate": 72935.0,
+    "estimate_text": "$72,935",
+    "label": "65 and over",
+    "moe": 8677.0,
+    "moe_text": "$8,677",
+    "text": "$72,935 \u00b1 $8,677"
+   }
+  ],
+  "unavailable": [
+   {
+    "estimate_raw": "-666666666",
+    "label": "Under 25",
+    "moe_raw": "-222222222",
+    "variable": "B19049_002E"
+   }
+  ],
+  "vintage": 2023,
+  "window": "2019\u20132023"
+ },
+ "minutes": {
+  "first_date": "2009-01-05",
+  "held": 12015,
+  "image_scan": 3096,
+  "last_date": "2026-11-17",
+  "published": 12065,
+  "searchable": 8899,
+  "searchable_share": 0.7407,
+  "text_files_present": 12014,
+  "unsearchable": 3116
+ },
+ "not_established": [
+  "That any of these figures is a count. Every one is a five-year SAMPLE estimate with a margin of error, and two figures whose intervals overlap are not different. The town\u2019s own population total is measured to \u00b119; a single age band inside it is not.",
+  "That 1,477 \u00b1 198 households have a child in the LUNENBURG PUBLIC SCHOOLS. The Census counts a child under 18, which includes Monty Tech, private and charter children and children not yet of school age, so the figure is a ceiling.",
+  "That Lunenburg is richer or poorer than a town it out-ranks. 205 of the 350 municipalities have an income interval that overlaps this town\u2019s, so a rank of 167 of 350 is arithmetic rather than a finding.",
+  "That the income rank and the per-pupil rank measure the same population. One is 350 municipalities on a sample estimate; the other is 318 school districts on a figure DESE computes from returns, and it includes charter and virtual districts that are not municipal.",
+  "Anything about what a household can AFFORD. Income is not wealth, not savings, not equity in a house and not a tax bill, and nothing in this archive joins a property tax payment to the age of the person who paid it.",
+  "Anything in real terms. This archive holds no price index, so no figure here is deflated and no change described is a change in purchasing power.",
+  "Anything at all from 2 published sentinel(s) \u2014 the Census\u2019s codes for \"no estimate\" and \"no computable margin\". They are not zeros and are not printed as figures.",
+  "Why any of this is so. Every figure here is a measurement of who lives in this town; a reason for it would be a hypothesis, and this page states none."
+ ],
+ "per_pupil": {
+  "below_median_years": 17,
+  "bottom_quarter_years": 17,
+  "first_fy": 2009,
+  "last": {
+   "basis": "per pupil, in-district FTE",
+   "districts": 318,
+   "fy": 2025,
+   "median": 23520.0,
+   "per_pupil": 18027.0,
+   "percentile_from_bottom": 2.830188679245283,
+   "rank": 310,
+   "rank_text": "310 of 318"
+  },
+  "last_fy": 2025,
+  "ppyears_text": "17 of 17",
+  "series": [
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 328,
+    "fy": 2009,
+    "median": 12242.0,
+    "per_pupil": 10605.0,
+    "percentile_from_bottom": 15.24390243902439,
+    "rank": 279,
+    "rank_text": "279 of 328"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 328,
+    "fy": 2010,
+    "median": 12449.5,
+    "per_pupil": 10720.0,
+    "percentile_from_bottom": 14.939024390243903,
+    "rank": 280,
+    "rank_text": "280 of 328"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 328,
+    "fy": 2011,
+    "median": 12728.0,
+    "per_pupil": 11080.0,
+    "percentile_from_bottom": 14.024390243902438,
+    "rank": 283,
+    "rank_text": "283 of 328"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 326,
+    "fy": 2012,
+    "median": 13080.5,
+    "per_pupil": 11448.0,
+    "percentile_from_bottom": 13.803680981595091,
+    "rank": 282,
+    "rank_text": "282 of 326"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 324,
+    "fy": 2013,
+    "median": 13463.0,
+    "per_pupil": 12027.0,
+    "percentile_from_bottom": 16.97530864197531,
+    "rank": 270,
+    "rank_text": "270 of 324"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 324,
+    "fy": 2014,
+    "median": 13983.5,
+    "per_pupil": 12384.0,
+    "percentile_from_bottom": 14.814814814814815,
+    "rank": 277,
+    "rank_text": "277 of 324"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 321,
+    "fy": 2015,
+    "median": 14461.0,
+    "per_pupil": 12424.0,
+    "percentile_from_bottom": 8.411214953271028,
+    "rank": 295,
+    "rank_text": "295 of 321"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 322,
+    "fy": 2016,
+    "median": 15018.5,
+    "per_pupil": 12982.0,
+    "percentile_from_bottom": 9.937888198757763,
+    "rank": 291,
+    "rank_text": "291 of 322"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 322,
+    "fy": 2017,
+    "median": 15581.0,
+    "per_pupil": 13209.0,
+    "percentile_from_bottom": 8.385093167701863,
+    "rank": 296,
+    "rank_text": "296 of 322"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 322,
+    "fy": 2018,
+    "median": 16269.5,
+    "per_pupil": 13828.0,
+    "percentile_from_bottom": 11.490683229813664,
+    "rank": 286,
+    "rank_text": "286 of 322"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 320,
+    "fy": 2019,
+    "median": 16952.5,
+    "per_pupil": 13783.0,
+    "percentile_from_bottom": 6.25,
+    "rank": 301,
+    "rank_text": "301 of 320"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 320,
+    "fy": 2020,
+    "median": 17308.0,
+    "per_pupil": 13797.0,
+    "percentile_from_bottom": 5.9375,
+    "rank": 302,
+    "rank_text": "302 of 320"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 318,
+    "fy": 2021,
+    "median": 18902.0,
+    "per_pupil": 15201.0,
+    "percentile_from_bottom": 5.345911949685535,
+    "rank": 302,
+    "rank_text": "302 of 318"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 318,
+    "fy": 2022,
+    "median": 19552.5,
+    "per_pupil": 15864.0,
+    "percentile_from_bottom": 5.660377358490566,
+    "rank": 301,
+    "rank_text": "301 of 318"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 320,
+    "fy": 2023,
+    "median": 20865.5,
+    "per_pupil": 17684.0,
+    "percentile_from_bottom": 12.1875,
+    "rank": 282,
+    "rank_text": "282 of 320"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 320,
+    "fy": 2024,
+    "median": 22227.0,
+    "per_pupil": 17601.0,
+    "percentile_from_bottom": 5.625,
+    "rank": 303,
+    "rank_text": "303 of 320"
+   },
+   {
+    "basis": "per pupil, in-district FTE",
+    "districts": 318,
+    "fy": 2025,
+    "median": 23520.0,
+    "per_pupil": 18027.0,
+    "percentile_from_bottom": 2.830188679245283,
+    "rank": 310,
+    "rank_text": "310 of 318"
+   }
+  ],
+  "worst_percentile_from_bottom": 16.97530864197531,
+  "worst_percentile_text": "17.0%",
+  "years": 17
+ },
+ "previous": {
+  "ages": {
+   "groups": [
+    {
+     "cells": 8,
+     "estimate": 2578.0,
+     "estimate_text": "2,578",
+     "key": "children",
+     "label": "Under 18",
+     "moe": 359.6998748957247,
+     "moe_text": "360",
+     "share": 22.872859551060245,
+     "share_conservative": false,
+     "share_moe": 3.1909716996562754,
+     "share_moe_text": "3.2%",
+     "share_text": "22.9%",
+     "text": "2,578 \u00b1 360"
+    },
+    {
+     "cells": 8,
+     "estimate": 709.0,
+     "estimate_text": "709",
+     "key": "young",
+     "label": "18 to 24",
+     "moe": 172.35718725948158,
+     "moe_text": "172",
+     "share": 6.290479992902139,
+     "share_conservative": false,
+     "share_moe": 1.5291457072759806,
+     "share_moe_text": "1.5%",
+     "share_text": "6.3%",
+     "text": "709 \u00b1 172"
+    },
+    {
+     "cells": 8,
+     "estimate": 2336.0,
+     "estimate_text": "2,336",
+     "key": "early",
+     "label": "25 to 44",
+     "moe": 300.2032644725903,
+     "moe_text": "300",
+     "share": 20.725756365894775,
+     "share_conservative": false,
+     "share_moe": 2.663104834710504,
+     "share_moe_text": "2.7%",
+     "share_text": "20.7%",
+     "text": "2,336 \u00b1 300"
+    },
+    {
+     "cells": 10,
+     "estimate": 3838.0,
+     "estimate_text": "3,838",
+     "key": "middle",
+     "label": "45 to 64",
+     "moe": 379.5365595038243,
+     "moe_text": "380",
+     "share": 34.051991837458964,
+     "share_conservative": false,
+     "share_moe": 3.3665253686429244,
+     "share_moe_text": "3.4%",
+     "share_text": "34.1%",
+     "text": "3,838 \u00b1 380"
+    },
+    {
+     "cells": 12,
+     "estimate": 1810.0,
+     "estimate_text": "1,810",
+     "key": "senior",
+     "label": "65 and over",
+     "moe": 262.16216355530787,
+     "moe_text": "262",
+     "share": 16.05891225268388,
+     "share_conservative": false,
+     "share_moe": 2.3257157409148026,
+     "share_moe_text": "2.3%",
+     "share_text": "16.1%",
+     "text": "1,810 \u00b1 262"
+    }
+   ],
+   "population": {
+    "estimate": 11271.0,
+    "estimate_text": "11,271",
+    "label": "Population",
+    "moe": 25.0,
+    "moe_text": "25",
+    "text": "11,271 \u00b1 25"
+   },
+   "vintage": 2018,
+   "window": "2014\u20132018"
+  },
+  "households": {
+   "households": {
+    "estimate": 4203.0,
+    "estimate_text": "4,203",
+    "label": "Households",
+    "moe": 145.0,
+    "moe_text": "145",
+    "text": "4,203 \u00b1 145"
+   },
+   "share": 34.808470140375924,
+   "share_moe": 3.1324514854725787,
+   "share_moe_text": "3.1%",
+   "share_text": "34.8%",
+   "vintage": 2018,
+   "window": "2014\u20132018",
+   "with_child": {
+    "estimate": 1463.0,
+    "estimate_text": "1,463",
+    "label": "With a child under 18",
+    "moe": 141.0,
+    "moe_text": "141",
+    "text": "1,463 \u00b1 141"
+   },
+   "without_child": {
+    "estimate": 2740.0,
+    "estimate_text": "2,740",
+    "label": "With no child under 18",
+    "moe": 204.0,
+    "moe_text": "204",
+    "text": "2,740 \u00b1 204"
+   }
+  },
+  "income": {
+   "all_households": {
+    "estimate": 101510.0,
+    "estimate_text": "$101,510",
+    "label": "All households",
+    "moe": 6813.0,
+    "moe_text": "$6,813",
+    "text": "$101,510 \u00b1 $6,813"
+   },
+   "bands": [
+    {
+     "estimate": 111569.0,
+     "estimate_text": "$111,569",
+     "label": "25 to 44",
+     "moe": 10609.0,
+     "moe_text": "$10,609",
+     "text": "$111,569 \u00b1 $10,609"
+    },
+    {
+     "estimate": 117891.0,
+     "estimate_text": "$117,891",
+     "label": "45 to 64",
+     "moe": 14396.0,
+     "moe_text": "$14,396",
+     "text": "$117,891 \u00b1 $14,396"
+    },
+    {
+     "estimate": 42742.0,
+     "estimate_text": "$42,742",
+     "label": "65 and over",
+     "moe": 12593.0,
+     "moe_text": "$12,593",
+     "text": "$42,742 \u00b1 $12,593"
+    }
+   ],
+   "unavailable": [
+    {
+     "estimate_raw": "-666666666",
+     "label": "Under 25",
+     "moe_raw": "-222222222",
+     "variable": "B19049_002E"
+    }
+   ],
+   "vintage": 2018,
+   "window": "2014\u20132018"
+  },
+  "tenure": {
+   "occupied": {
+    "estimate": 4203.0,
+    "estimate_text": "4,203",
+    "label": "Occupied homes",
+    "moe": 145.0,
+    "moe_text": "145",
+    "text": "4,203 \u00b1 145"
+   },
+   "owner": {
+    "estimate": 3475.0,
+    "estimate_text": "3,475",
+    "label": "Owner-occupied",
+    "moe": 218.0,
+    "moe_text": "218",
+    "text": "3,475 \u00b1 218"
+   },
+   "owner_share": 82.67903878182251,
+   "owner_share_moe": 4.332049282396399,
+   "owner_share_moe_text": "4.3%",
+   "owner_share_text": "82.7%",
+   "renter": {
+    "estimate": 728.0,
+    "estimate_text": "728",
+    "label": "Renter-occupied",
+    "moe": 168.0,
+    "moe_text": "168",
+    "text": "728 \u00b1 168"
+   },
+   "vintage": 2018,
+   "window": "2014\u20132018"
+  }
+ },
+ "previous_vintage": 2018,
+ "previous_window": "2014\u20132018",
+ "rank": {
+  "best_rank_in_band": 37,
+  "distribution": [
+   {
+    "count": 0,
+    "high": 20000,
+    "is_lunenburg": false,
+    "label": "$0k",
+    "low": 0,
+    "range_label": "$0k\u2013$20k"
+   },
+   {
+    "count": 0,
+    "high": 40000,
+    "is_lunenburg": false,
+    "label": "$20k",
+    "low": 20000,
+    "range_label": "$20k\u2013$40k"
+   },
+   {
+    "count": 12,
+    "high": 60000,
+    "is_lunenburg": false,
+    "label": "$40k",
+    "low": 40000,
+    "range_label": "$40k\u2013$60k"
+   },
+   {
+    "count": 42,
+    "high": 80000,
+    "is_lunenburg": false,
+    "label": "$60k",
+    "low": 60000,
+    "range_label": "$60k\u2013$80k"
+   },
+   {
+    "count": 85,
+    "high": 100000,
+    "is_lunenburg": false,
+    "label": "$80k",
+    "low": 80000,
+    "range_label": "$80k\u2013$100k"
+   },
+   {
+    "count": 81,
+    "high": 120000,
+    "is_lunenburg": true,
+    "label": "$100k",
+    "low": 100000,
+    "range_label": "$100k\u2013$120k"
+   },
+   {
+    "count": 54,
+    "high": 140000,
+    "is_lunenburg": false,
+    "label": "$120k",
+    "low": 120000,
+    "range_label": "$120k\u2013$140k"
+   },
+   {
+    "count": 28,
+    "high": 160000,
+    "is_lunenburg": false,
+    "label": "$140k",
+    "low": 140000,
+    "range_label": "$140k\u2013$160k"
+   },
+   {
+    "count": 16,
+    "high": 180000,
+    "is_lunenburg": false,
+    "label": "$160k",
+    "low": 160000,
+    "range_label": "$160k\u2013$180k"
+   },
+   {
+    "count": 16,
+    "high": 200000,
+    "is_lunenburg": false,
+    "label": "$180k",
+    "low": 180000,
+    "range_label": "$180k\u2013$200k"
+   },
+   {
+    "count": 9,
+    "high": 220000,
+    "is_lunenburg": false,
+    "label": "$200k",
+    "low": 200000,
+    "range_label": "$200k\u2013$220k"
+   },
+   {
+    "count": 2,
+    "high": 240000,
+    "is_lunenburg": false,
+    "label": "$220k",
+    "low": 220000,
+    "range_label": "$220k\u2013$240k"
+   },
+   {
+    "count": 5,
+    "high": 260000,
+    "is_lunenburg": false,
+    "label": "$240k",
+    "low": 240000,
+    "range_label": "$240k\u2013$260k"
+   }
+  ],
+  "estimate": 109753.0,
+  "estimate_text": "$109,753",
+  "high": 122028.0,
+  "high_text": "$122,028",
+  "indistinguishable": 152,
+  "indistinguishable_text": "152 of 350",
+  "low": 97478.0,
+  "low_text": "$97,478",
+  "moe": 12275.0,
+  "moe_text": "$12,275",
+  "municipalities": 350,
+  "no_margin": 4,
+  "no_margin_places": [
+   {
+    "estimate_raw": "250001",
+    "geography": "Carlisle town, Middlesex County, Massachusetts",
+    "moe_raw": "-333333333"
+   },
+   {
+    "estimate_raw": "250001",
+    "geography": "Dover town, Norfolk County, Massachusetts",
+    "moe_raw": "-333333333"
+   },
+   {
+    "estimate_raw": "250001",
+    "geography": "Wellesley town, Norfolk County, Massachusetts",
+    "moe_raw": "-333333333"
+   },
+   {
+    "estimate_raw": "250001",
+    "geography": "Weston town, Middlesex County, Massachusetts",
+    "moe_raw": "-333333333"
+   }
+  ],
+  "overlap": 205,
+  "overlap_share": 58.57142857142857,
+  "overlap_share_text": "58.6%",
+  "overlap_text": "205 of 350",
+  "population_moe": 19.0,
+  "rank": 167,
+  "rank_text": "167 of 350",
+  "state_median": 107705.0,
+  "state_median_text": "$107,705",
+  "text": "$109,753 \u00b1 $12,275",
+  "vintage": 2023,
+  "window": "2019\u20132023",
+  "worst_rank_in_band": 336
+ },
+ "said": [
+  {
+   "board": "Finance Committee",
+   "cite": "/docs/meetings/text/finance-committee/2026-01-27-minutes-7619.txt",
+   "date": "2026-01-27",
+   "key": "fixed-incomes",
+   "kind": "minutes",
+   "quote": "particularly seniors on fixed incomes, a $3,000,000 override would translate to approximately $600 per year in additional taxes, a significant burden",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01272026-7619",
+   "why": "A Finance Committee member at the Tri-Board meeting, on whether an override is necessary. This is the claim the income-by-age table can finally be set beside: a household headed by someone 65 or over has a median income a little over half that of a 45-to-64 household. It establishes what was said. It does not establish what any particular household can afford, which no table here measures."
+  },
+  {
+   "board": "Master Plan Steering Committee",
+   "cite": "/docs/meetings/text/master-plan-steering-committee/2024-04-05-minutes-6494.txt",
+   "date": "2024-04-05",
+   "key": "both-halves",
+   "kind": "minutes",
+   "quote": "young families are looking for smaller houses with some land, but developers are building large houses that young families cannot afford",
+   "town": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04052024-6494",
+   "why": "The Master Plan Steering Committee, in the same minute that records an aging population looking for accessible and affordable options. Both halves of the town appear in one paragraph, which is the shape this page is trying to keep: the same numbers handed to both sides."
+  }
+ ],
+ "searched": [
+  {
+   "documents": 9,
+   "term": "fixed income"
+  },
+  {
+   "documents": 166,
+   "term": "seniors"
+  },
+  {
+   "documents": 5,
+   "term": "young families"
+  },
+  {
+   "documents": 1,
+   "term": "aging population"
+  },
+  {
+   "documents": 51,
+   "term": "census"
+  },
+  {
+   "documents": 2,
+   "term": "town census"
+  }
+ ],
+ "senior_gap": {
+  "difference": 56248.0,
+  "difference_text": "$56,248",
+  "middle": {
+   "estimate": 129183.0,
+   "estimate_text": "$129,183",
+   "label": "45 to 64",
+   "moe": 21150.0,
+   "moe_text": "$21,150",
+   "text": "$129,183 \u00b1 $21,150"
+  },
+  "senior": {
+   "estimate": 72935.0,
+   "estimate_text": "$72,935",
+   "label": "65 and over",
+   "moe": 8677.0,
+   "moe_text": "$8,677",
+   "text": "$72,935 \u00b1 $8,677"
+  },
+  "share": 56.45866716208789,
+  "share_text": "56.5%"
+ },
+ "sentinels": {
+  "detail": [
+   {
+    "estimate_raw": "-666666666",
+    "moe_raw": "-222222222",
+    "variable": "B19049_002E",
+    "vintage": 2018
+   },
+   {
+    "estimate_raw": "-666666666",
+    "moe_raw": "-222222222",
+    "variable": "B19049_002E",
+    "vintage": 2023
+   }
+  ],
+  "meanings": [
+   {
+    "code": "-666666666",
+    "field": "estimate",
+    "means": "no estimate could be published for this cell"
+   },
+   {
+    "code": "-222222222",
+    "field": "margin",
+    "means": "no margin of error could be computed"
+   },
+   {
+    "code": "-333333333",
+    "field": "margin",
+    "means": "the estimate is top-coded, so no margin applies"
+   },
+   {
+    "code": "-555555555",
+    "field": "margin",
+    "means": "the estimate is CONTROLLED to an independent total and has no sampling error \u2014 which is not a margin of zero"
+   }
+  ],
+  "rows": 2
+ },
+ "sources": [
+  {
+   "bytes": 4050,
+   "docs_url": "/docs/state-census/acs5-2023-B01001-lunenburg.json",
+   "note": "Sex by age \u2014 the 65-and-over share, and every band beneath it",
+   "path": "sources/state-census/acs5-2023-B01001-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "3c371d3a828e55fedd3b772a265700a1e3fb739d469f36ae23ba53d3b6fe7c9f",
+   "table": "B01001, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 1662,
+   "docs_url": "/docs/state-census/acs5-2023-B11005-lunenburg.json",
+   "note": "Households by presence of people under 18 \u2014 the real denominator for \"the 30% who have students in the school\"",
+   "path": "sources/state-census/acs5-2023-B11005-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "0f738e9f499256079794ec194818d0c3ca2b7bcc08c1d806615c192b099ea0d2",
+   "table": "B11005, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 31257,
+   "docs_url": "/docs/state-census/acs5-2023-B19013-massachusetts-lunenburg.json",
+   "note": "Median household income \u2014 every Massachusetts municipality, so Lunenburg can be ranked against them rather than described",
+   "path": "sources/state-census/acs5-2023-B19013-massachusetts-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "4edbe5e1bf435d9579d277fbafa9456385ea29bb8689fa9005a2dcb7d08326b4",
+   "table": "B19013, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 582,
+   "docs_url": "/docs/state-census/acs5-2023-B19049-lunenburg.json",
+   "note": "Median household income in the past 12 months, by age of householder \u2014 what turns \"seniors on fixed incomes\" from a claim into a number",
+   "path": "sources/state-census/acs5-2023-B19049-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "1c2f173a60ceaa4a8259f890e014698dc6ceee9e73f1fafe06041ef986a3e9e3",
+   "table": "B19049, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 393,
+   "docs_url": "/docs/state-census/acs5-2023-B25003-lunenburg.json",
+   "note": "Tenure \u2014 owner-occupied against renter-occupied",
+   "path": "sources/state-census/acs5-2023-B25003-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "b95763743e50449c3434d76c5011c84b9f3830ec386f1719f050fe4802ecce17",
+   "table": "B25003, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 4039,
+   "docs_url": "/docs/state-census/acs5-2018-B01001-lunenburg.json",
+   "note": "Sex by age \u2014 the 65-and-over share, and every band beneath it",
+   "path": "sources/state-census/acs5-2018-B01001-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "693f9671c3106eda23d7108a9998402013ffebf58c95b3faaa077e5edfb2dcbd",
+   "table": "B01001, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 1668,
+   "docs_url": "/docs/state-census/acs5-2018-B11005-lunenburg.json",
+   "note": "Households by presence of people under 18 \u2014 the real denominator for \"the 30% who have students in the school\"",
+   "path": "sources/state-census/acs5-2018-B11005-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "3e61847b189e3e1960f2ee8d62fd630d9fa15c7ba98df634630f1a0bb5b253ac",
+   "table": "B11005, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 31012,
+   "docs_url": "/docs/state-census/acs5-2018-B19013-massachusetts-lunenburg.json",
+   "note": "Median household income \u2014 every Massachusetts municipality, so Lunenburg can be ranked against them rather than described",
+   "path": "sources/state-census/acs5-2018-B19013-massachusetts-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "ec6f1555065f35324f4b76f0f645bb76baf20386b619398db7442edc01fc76b0",
+   "table": "B19013, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 582,
+   "docs_url": "/docs/state-census/acs5-2018-B19049-lunenburg.json",
+   "note": "Median household income in the past 12 months, by age of householder \u2014 what turns \"seniors on fixed incomes\" from a claim into a number",
+   "path": "sources/state-census/acs5-2018-B19049-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "e1f3e77454e2d0b8996f585f1a005626928fc6bf2ffd7dcfb4661a5231d7fd79",
+   "table": "B19049, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 393,
+   "docs_url": "/docs/state-census/acs5-2018-B25003-lunenburg.json",
+   "note": "Tenure \u2014 owner-occupied against renter-occupied",
+   "path": "sources/state-census/acs5-2018-B25003-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "bc36438db2e40aba86ce21a1da5eb338e2d23fde063c7429198d2f3d383f1f3c",
+   "table": "B25003, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 266174,
+   "docs_url": "/data/census-acs.csv",
+   "note": "One row per estimate per vintage, the margin of error in the same row. Written by scripts/fetch_census_acs.py, which refuses to write if the API returns anything that is not JSON.",
+   "path": "sources/data/census-acs.csv",
+   "publisher": "Built by this project, from the responses above",
+   "sha256": "505e8e0e1a5dc039e16a8b3a5752d2e8eab802bed19e5c8c99d09da332b78636",
+   "table": "Every estimate, with its margin",
+   "url": "https://www.census.gov/programs-surveys/acs/"
+  }
+ ],
+ "tenure": {
+  "occupied": {
+   "estimate": 4529.0,
+   "estimate_text": "4,529",
+   "label": "Occupied homes",
+   "moe": 235.0,
+   "moe_text": "235",
+   "text": "4,529 \u00b1 235"
+  },
+  "owner": {
+   "estimate": 3682.0,
+   "estimate_text": "3,682",
+   "label": "Owner-occupied",
+   "moe": 321.0,
+   "moe_text": "321",
+   "text": "3,682 \u00b1 321"
+  },
+  "owner_share": 81.2982998454405,
+  "owner_share_moe": 5.695616687085581,
+  "owner_share_moe_text": "5.7%",
+  "owner_share_text": "81.3%",
+  "renter": {
+   "estimate": 847.0,
+   "estimate_text": "847",
+   "label": "Renter-occupied",
+   "moe": 189.0,
+   "moe_text": "189",
+   "text": "847 \u00b1 189"
+  },
+  "vintage": 2023,
+  "window": "2019\u20132023"
+ },
+ "vintage": 2023,
+ "window": "2019\u20132023"
+}

@@ -78,7 +78,13 @@ CHROME = next((p for p in (
 NAME_THE = 'The'
 NAME = 'Lunenburg Budget Project'
 BLURB = 'An independent project reading the town and school budgets, document by document'
-ADDR = 'lunenburgbudgetproject.org'
+# BOTH ADDRESSES, and the order matters. `lunenburgbudgetproject.org` is the canonical
+# one and is what a link should carry; `lburg.org` 301s to it and is the one somebody
+# types from memory after seeing this at arm's length on a phone. Twenty-six characters
+# is not a thing anybody retypes, so the short form has to be there -- and it has to be
+# visibly the SAME place rather than a second site, which is what "or just" does in one
+# word. TJ uses the same construction in the group's own description.
+ADDR = 'lunenburgbudgetproject.org  ·  or just lburg.org'
 
 SANS = ('ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", '
         '"Segoe UI", Roboto, sans-serif')

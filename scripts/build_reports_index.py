@@ -77,6 +77,21 @@ ORDER = [
 # SCHOOL first because that is where the money and the argument are; TOWN second; METHOD
 # last, for the reader who has a reason to check rather than a question to answer.
 CATEGORIES = [
+    # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
+    #
+    # Every other shelf here answers "is this about the schools, the town, the rules or
+    # the method" -- a filing question, which a reader can only ask once they know what
+    # they want. /blog is the entry for a reader who does not: one finding at a time, two
+    # minutes each, every one opening onto the report that computed it. Filing it under one
+    # of the four would promise a subject, and it has no subject; it has all of them.
+    #
+    # It is first for the reason rule 7a gives: it needs no budget knowledge to read, and
+    # a reader who has arrived at an INDEX and does not know which report they want is
+    # exactly the reader it was built for. It is not in UNCATEGORISED with `addsup` and
+    # `show-your-work` because those two are about the reports; this is a way IN to them.
+    ('cards', 'One finding at a time', [
+        ('', ['blog']),
+    ]),
     ('school', 'The schools', [
         ('what the money buys', [
             'sped', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
@@ -101,6 +116,11 @@ CATEGORIES = [
         ]),
     ]),
     ('town', 'The town', [
+        # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
+        # this shelf measures the town's money; this one measures the town. A reader who
+        # does not yet know the place cannot weigh anything below it, and it is the one
+        # report in the index that needs no budget knowledge at all to read.
+        ('who lives here', ['bythenumbers']),
         ('the ledger, read', [
             'fy26-closeout', 'fy26-closeout-town', 'free-cash',
         ]),
@@ -280,6 +300,11 @@ ABOUT_PAGES = {
     'stopped':
         'Every time a school budget line went to a printed zero, and how many of them '
         'came back.',
+    'bythenumbers':
+        'Who lives in Lunenburg — age, households, income by age of householder and '
+        'owner against renter, from the Census Bureau’s five-year estimates. Every '
+        'figure carries its margin of error, because a town this size is a small sample '
+        'and the margins decide what may be said.',
     'cuts':
         'Every reduction the district named in its own budget documents, cycle by cycle, '
         'quoted at its page — and, where a state series reaches it, whether the count '
@@ -296,6 +321,10 @@ ABOUT_PAGES = {
     'sped':
         'Four special education reports behind one door, and the reason they must not be '
         'combined: each counts a different thing.',
+    'blog':
+        'Every finding this project has published as a post: the figures, what it means '
+        'for a resident, a Finance Committee member and a School Committee member, and '
+        'the links to the report underneath it. About two minutes each.',
     # NOT `classsize`. Its payload carries its own `about`, which wins here -- and a
     # second description of the same page in this file is the artefact that goes stale
     # first. The generated one is the one the index prints.

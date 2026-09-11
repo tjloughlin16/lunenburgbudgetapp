@@ -44,6 +44,19 @@ BOARDS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
 VIDEOS = os.path.join(ROOT, 'sources', 'data', 'youtube-videos.csv')
 DEST = os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts')
 INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
+NO_CAPTIONS = os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv')
+
+# TWO FAILURES THAT LOOK IDENTICAL AND ARE NOT. `TranscriptsDisabled` and
+# `NoTranscriptFound` are PERMANENT FACTS ABOUT ONE RECORDING -- the town posted it with
+# captions off, and no amount of waiting changes that. Everything else (a refusal, a
+# timeout, a reset) is about the ENDPOINT and is worth backing away from.
+#
+# Conflating them cost fifteen hours on 10 September 2026. Six consecutive 2017 meetings
+# had captions disabled, the run read three-in-a-row as a throttle, and the backfill sat
+# in escalating cooldowns up to the six-hour cap while nothing at all was wrong with our
+# access. A permanent condition must never drive a backoff.
+PERMANENT = ('TranscriptsDisabled', 'NoTranscriptFound', 'VideoUnavailable',
+             'VideoUnplayable', 'AgeRestricted')
 
 COLS = ['video_id', 'board_slug', 'meeting_date', 'path', 'segments', 'seconds',
         'language', 'generated', 'chars', 'fetched_at']
@@ -134,6 +147,41 @@ def _video_only_ids():
     return ids
 
 
+def note_no_captions(row, reason):
+    """Flag a recording that will never yield a caption, for a person to look at.
+
+    TJ: "if you hit that (transcripts disabled, can you flag it??? I want to review those
+    manually)" -- and then "but then skip, normally". So it is written down rather than
+    swallowed: a meeting we cannot read is a hole in the archive whatever the cause, and
+    some of these may have captions that YouTube simply will not serve to this library.
+    """
+    cols = ['video_id', 'board_slug', 'meeting_date', 'reason', 'url', 'seen_at']
+    have = {}
+    if os.path.exists(NO_CAPTIONS):
+        with open(NO_CAPTIONS, newline='', encoding='utf-8') as fh:
+            have = {r['video_id']: r for r in csv.DictReader(fh)}
+    have[row['video_id']] = dict(
+        video_id=row['video_id'], board_slug=row['board_slug'],
+        meeting_date=row['meeting_date'], reason=reason,
+        url='https://www.youtube.com/watch?v=' + row['video_id'],
+        seen_at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+    tmp = NO_CAPTIONS + '.tmp'
+    with open(tmp, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=cols, lineterminator='\n')
+        w.writeheader()
+        for k in sorted(have, key=lambda k: (have[k]['meeting_date'], k), reverse=True):
+            w.writerow({c: have[k].get(c, '') for c in cols})
+    os.replace(tmp, NO_CAPTIONS)
+    return len(have)
+
+
+def read_no_captions():
+    if not os.path.exists(NO_CAPTIONS):
+        return set()
+    with open(NO_CAPTIONS, newline='', encoding='utf-8') as fh:
+        return {r['video_id'] for r in csv.DictReader(fh)}
+
+
 def read_index():
     if not os.path.exists(INDEX):
         return {}
@@ -211,6 +259,9 @@ def fetch_one(api, row):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--retry-no-captions', action='store_true',
+                    help='try recordings previously found to have no captions '
+                         'at all — the town can turn them on later')
     ap.add_argument('--video-only', action='store_true',
                     help='only meetings with NO surviving document -- the 231 for '
                          'which a caption is the only possible record')
@@ -264,7 +315,21 @@ def main():
             print('  %-38s %5d fetched of %5d' % (b, by[b][1], by[b][0]))
         return 0
 
-    todo = [r for r in targets if r['video_id'] not in idx][:args.limit]
+    # A RECORDING ALREADY KNOWN TO HAVE NO CAPTIONS IS NOT WORK. Retrying it every run
+    # spends a request and a 45-second pause to be told the same permanent thing, and --
+    # before the two cases were separated -- three of them in a row halted the backfill.
+    # `--retry-no-captions` exists because the town CAN turn captions on later, so this
+    # must be a skip somebody can undo rather than a decision made once.
+    skip = set() if args.retry_no_captions else read_no_captions()
+    todo = [r for r in targets
+            if r['video_id'] not in idx and r['video_id'] not in skip][:args.limit]
+    if skip:
+        held_back = sum(1 for r in targets
+                        if r['video_id'] not in idx and r['video_id'] in skip)
+        if held_back:
+            print('%d recording(s) in scope carry no captions and are skipped; '
+                  'see %s (--retry-no-captions to try them again)'
+                  % (held_back, os.path.relpath(NO_CAPTIONS, ROOT)))
     if not todo:
         print('nothing to fetch — every video in scope already has a transcript')
         return 0
@@ -275,7 +340,7 @@ def main():
         raise SystemExit('pip3 install --user youtube-transcript-api')
     api = YouTubeTranscriptApi()
 
-    ok = fail = streak = 0
+    ok = fail = streak = nocap = 0
     for i, row in enumerate(todo, 1):
         try:
             rec = fetch_one(api, row)
@@ -286,11 +351,22 @@ def main():
                   % (i, len(todo), rec['meeting_date'], rec['board_slug'][:22],
                      rec['segments'], rec['seconds'] / 60.0, rec['generated']))
         except Exception as e:
+            kind = type(e).__name__
+            if kind in PERMANENT:
+                # A FACT ABOUT THE RECORDING, NOT ABOUT OUR ACCESS. Flag it, skip it, and
+                # do NOT touch the streak -- see PERMANENT above.
+                nocap += 1
+                total_flagged = note_no_captions(row, kind)
+                print('  %2d/%d  %s  %-22s  NO CAPTIONS (%s) — flagged for review'
+                      % (i, len(todo), row['meeting_date'], row['board_slug'][:22], kind))
+                if i < len(todo):
+                    time.sleep(args.sleep)
+                continue
             fail += 1
             streak += 1
             print('  %2d/%d  %s  %s  FAILED %s: %s'
                   % (i, len(todo), row['meeting_date'], row['video_id'],
-                     type(e).__name__, str(e).splitlines()[0][:110]))
+                     kind, str(e).splitlines()[0][:110]))
             # STOP ON A STREAK RATHER THAN GRINDING THROUGH IT. Once the endpoint is
             # throttling, every further request is both useless and more evidence to
             # whatever is counting. A run that stops early has cost nothing; a run that
@@ -307,8 +383,11 @@ def main():
         if i < len(todo):
             time.sleep(args.sleep)
 
-    print('\n%d fetched, %d failed. %d transcript(s) held in total.'
-          % (ok, fail, len(idx)))
+    print('\n%d fetched, %d failed, %d with no captions. %d transcript(s) held in total.'
+          % (ok, fail, nocap, len(idx)))
+    if nocap:
+        print('  %d recording(s) carry no captions at all — flagged in %s for review.'
+              % (len(read_no_captions()), os.path.relpath(NO_CAPTIONS, ROOT)))
     remaining = len([r for r in targets if r['video_id'] not in idx])
     print('%d still to fetch in this scope.' % remaining)
     return 0 if ok else 1
