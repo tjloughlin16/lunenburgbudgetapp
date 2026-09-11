@@ -113,7 +113,7 @@ actually having and neither has the table.
 
 ### 1.3 The biggest change in who works in the schools is not teachers
 
-> ### Paraprofessionals went from the lowest of thirteen comparable districts to the highest: 0.94 per hundred pupils in FY2013, 4.27 in FY2025.
+> ### Lowest of thirteen districts in FY2013, highest in FY2025: paraprofessionals went from 0.94 to 4.27 per hundred pupils.
 
 > , and then/now at once. 14.8 full-time equivalents to 67.0, over years when in-district enrolment fell 0.8%.  
 > *— us/them*
@@ -145,7 +145,9 @@ actually having and neither has the table.
 
 ### 1.4 Two state files count the same paraprofessionals and disagree by 34 posts
 
-> ### All programmes: 57.0 posts to 67.0. Special education: 44.0 to 20.0. The difference between the two files rose by 34.
+> ### In one state file paraprofessionals rise, 57.0 to 67.0 posts; in another the special education ones fall, 44.0 to 20.0.
+
+> FY2020 to FY2025. The difference between the two files rose by 34 posts.  
 
 > *— document/document*
 
@@ -174,7 +176,7 @@ actually having and neither has the table.
 
 ### 1.5 Near the top on pay, last on teachers per pupil
 
-> ### Lunenburg pays the second-highest average teacher salary of six districts and employs the fewest teachers per pupil of the six.
+> ### Of six districts, Lunenburg pays the second-highest average teacher salary and employs the fewest teachers per pupil.
 
 > $97,233 average, 6.7 teachers per hundred in-district pupils against a group range of 7.4 to 8.5.  
 > *— us/them*
@@ -298,7 +300,7 @@ actually having and neither has the table.
 
 ### 2.3 The bill the state sends the town is set by property values, not by children
 
-> ### Since FY2019 what the state requires Lunenburg to pay for its own schools rose 37.8% while the aid rose 22.4% — and the pupil count the formula runs on fell.
+> ### Since FY2019 what the state requires Lunenburg to pay for its own schools rose 37.8%. Aid rose 22.4%. The pupil count fell.
 
 > , plus assumed/mechanism. Required contribution $9,678,671 to $13,334,631. Aid $7,538,072 to $9,229,410. Foundation pupils 1,716 to 1,603.  
 > *— then/now*
@@ -365,7 +367,7 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 3.1 $1.5 million of school insurance is not in the school budget
 
-> ### The schools' health insurance is $5,222,731 in FY2026 and $1,521,536 of it is appropriated to the town's insurance department, outside the school budget entirely.
+> ### $1,521,536 of the schools' $5,222,731 health insurance in FY2026 is appropriated to the town's insurance department instead.
 
 > *— document/document*
 
@@ -394,7 +396,7 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 3.2 The bus bill fell and the town's line more than doubled
 
-> ### The athletic transportation line went from $40,000 to $87,822 in a year when the bus bill itself fell from $117,555 to $91,066.
+> ### The athletic transportation line went from $40,000 to $87,822 in a year the bus bill itself fell from $117,555 to $91,066.
 
 > The fee-funded fund paid 66.0% of the bill in FY2024 and 3.6% in FY2025.  
 > *— assumed/mechanism*
@@ -425,7 +427,9 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 3.3 Outside money used to pay a dollar in five. It now pays about one in ten
 
-> ### The town's own share of school spending went from 81.5% in FY2009 to 89.9% in FY2025 — 8.4 points, worth $2,520,227 a year at today's spending.
+> ### The town's own share of school spending went from 81.5% in FY2009 to 89.9% in FY2025 — 8.4 points, worth $2,520,227 a year.
+
+> At today's spending — a counterfactual, not money anybody lost.  
 
 > *— then/now*
 
@@ -510,7 +514,7 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 3.6 Insurance grows faster than the levy that pays for it
 
-> ### The town's insurance department has nearly doubled since FY2011 to $3,713,520 — 4.3% a year against a levy Proposition 2½ raises 2.5% a year.
+> ### The town's insurance department has nearly doubled since FY2011, to $3,713,520 — 4.3% a year against a levy rising 2.5%.
 
 > , and assumed/mechanism.  
 > *— then/now*
@@ -738,7 +742,7 @@ The regulation runs the opposite way to the common assumption: a more separate p
 
 ### 5.1 A child at Monty Tech does not add to the town's bill. It moves part of it
 
-> ### The state sets one required contribution for the whole town — $14,605,342 in FY2026 — and splits it between the town's two districts.
+> ### The state sets one required contribution for the whole town, $14,605,342 in FY2026, and splits it between two districts.
 
 > *— assumed/mechanism*
 
@@ -769,7 +773,7 @@ The regulation runs the opposite way to the common assumption: a more separate p
 
 ### 5.2 The largest destination is not school choice
 
-> ### 97 of the 177 Lunenburg children educated elsewhere go to Monty Tech — more than school choice and charter schools put together.
+> ### 97 of the 177 Lunenburg children educated elsewhere go to Monty Tech — more than school choice and charters put together.
 
 > , and then/now beneath it: Monty Tech 70→97, school choice 69→58, charter 44→22, total 186→177 over thirteen years.  
 > *— assumed/mechanism*
@@ -1062,7 +1066,7 @@ misreading something they will be shown.
 
 ### 6.5 Nothing in this budget is quietly over-provided
 
-> ### Only 7 of the 98 school budget lines with four or more measured years miss the same way in every one of them, and the largest averages $42,878.
+> ### Only 7 of 98 school budget lines with four or more measured years miss the same way every year. The largest averages $42,878.
 
 > A padded budget shows up as the same lines over-provided year after year, and that pattern is not in these documents.  
 > *— said/shown*
@@ -1212,9 +1216,9 @@ misreading something they will be shown.
 
 ### 7.3 Foreign language is the one subject narrowing on every instrument
 
-> ### 57.8% of Lunenburg High students took a foreign language in SY2025 against 70.1% in SY2017; sections 28 to 21; teacher FTE moving with them.
+> ### 57.8% of Lunenburg High students took a foreign language in SY2025, against 70.1% in SY2017. Sections went from 28 to 21.
 
-> , on three independent instruments.  
+> , on three independent instruments — the share of students, the section count, and teacher FTE moving with them.  
 > *— then/now*
 
 **If you are a resident:** Three measures pointing the same way for one subject and only one — which is what separates it from everything else on that page.
@@ -1244,9 +1248,9 @@ misreading something they will be shown.
 
 ### 7.4 A fifth of the high school's classes have no named subject
 
-> ### 51 of 247 sections in SY2025 are in a category DESE calls Miscellaneous, averaging 4.9 students, and nothing published says what they teach.
+> ### 51 of the high school's 247 sections in SY2025 are in a category DESE calls Miscellaneous. Nothing says what they teach.
 
-> It is the single largest mover in the section count since SY2017 — 35 sections to 51 — carrying the same share of students.  
+> They average 4.9 students. It is the single largest mover in the section count since SY2017 — 35 sections to 51 — carrying the same share of students.  
 > *— document/document*
 
 **If you are a parent:** More groups, smaller. What is in them is not published anywhere.
@@ -1369,7 +1373,7 @@ invisible to everyone who did not read that page.
 
 ### 9.2 Nobody publishes which fund pays which post
 
-> ### A budget line rising because the district employs more people and a budget line rising because a grant stopped paying for those people are identical on the page.
+> ### A line rising because the district employs more people and one rising because a grant stopped paying for them look identical.
 
 > *— assumed/mechanism*
 
@@ -1425,9 +1429,9 @@ invisible to everyone who did not read that page.
 
 ### 9.4 No Cherry Sheet for any year is in this archive
 
-> ### The state's own statement of what it will send Lunenburg, receipt by receipt — the document a tax rate is set on — is not held here for any year.
+> ### The state's own statement of what it will send Lunenburg, receipt by receipt, is not held in this archive for any year.
 
-> Without it the only measurement of aid forecast error available is one net line on the DLS free cash proof, which lumps Chapter 70, UGGA and every other receipt into a single figure.  
+> It is the document a tax rate is set on. Without it, aid forecast error can only be measured as one net line on the DLS free cash proof, every receipt lumped together.  
 > *— document/document*
 
 **If you are a resident:** A year that came in $390,814 short can be reported as short and cannot be reported as short in *anything*.
