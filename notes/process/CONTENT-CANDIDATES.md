@@ -18,6 +18,11 @@ judgement, not before you have read one.
 
 ---
 
+# 1. READY
+Forty-eight items that pass all three tests: a contrast, an impact a reader would
+recognise as theirs, and a figure this archive already derives. Grouped by subject,
+strongest first inside each group.
+
 ## Subject: who is in the classroom
 
 The strongest group in the archive, because it is the one argument both boards are
@@ -1472,6 +1477,7 @@ invisible to everyone who did not read that page.
 - **ALSO REACHES:** A resident close to people on the boards
 ---
 # 2. NEEDS WORK FIRST
+
 Real findings whose impact line cannot be written honestly yet, or that need analysis not
 done. This is the build queue, and it is ordered by what it would unlock.
 **N0. Who lives in Lunenburg — the other ten thousand residents.** The loudest argument in
@@ -1547,6 +1553,7 @@ needs:* the rule-7 apparatus retrofitted, or they stay out of the headline set. 
 in list 1 for that reason alone — several would be strong cards.
 ---
 # 3. REJECTED
+
 True, derived, and still not worth a reader's time. Twenty-nine of them, with the reason.
 **Rejected because the number is too small to matter to anybody (rule 4: rank by pull).**
 1. `what-stops-for-good-is-small-and-mostly-staff-money` — $181,180, 0.8% of the school
@@ -1793,12 +1800,5 @@ commonest error shape available: a count of HOUSEHOLDS with children read as a s
 PEOPLE. 1,568 students is about 13% of the town's people and the household share is a
 different denominator entirely. Registered as a gap, `people` side. See **N0** below, which
 is cheap and would close it.
-
----
-
-# 1. READY
-
-Passes all three tests. Format is one of **New Finding · Myth vs Fact · Did You Know ·
-Analysis Spotlight**.
 
 ---
