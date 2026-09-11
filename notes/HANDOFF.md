@@ -10,6 +10,26 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 
 ---
 
+## 11 September 2026 — the blog, the brand, and the reset order
+
+**`notes/HANDOFF-BLOG.md` is the current workstream** and supersedes the ordering below for
+everything in it. Short version: a blog tier now sits between the cards and the analyses,
+because a card is too short to convince anybody and an analysis page is too long to read
+from Facebook. 48 posts are written and NONE is published — `PUBLISHED = {}` in
+`scripts/build_blog.py`, and nothing reads a date.
+
+**Two things in it are easy to break by not knowing.** `fy28/public/` IS the site, so an
+unpublished post must not be written there at all rather than merely unrouted — the
+generator refuses and `verify_blog.py` proves the absence with 145 probes over the built
+output. And `/blog` is the reader's while `/blog-drafts` is TJ's; they share one component,
+and the drafts page adds a frame around the post rather than anything inside it.
+
+The order was reset the same day: blog, then **search across every page, post, source and
+minute**, then the refresh mechanisms, with items 13-17 deferred as a block. Pages 7, 8 and
+9 of the nine-page order are paused with their data already loaded.
+
+---
+
 ## An open decision found on 5 September 2026, not resolved here
 
 `sources/analyses/athletics-ledger.md` §7 no longer recomputes, and the gap moves a published
