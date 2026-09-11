@@ -269,6 +269,79 @@ def banner_c():
 """
 
 
+def banner_d():
+    """D. THE MARGIN, CENTRED — the same page, laid out so the crop survives.
+
+    A Facebook GROUP has no profile picture. The square thumbnail beside the group's name
+    is the cover's CENTRE SQUARE, cropped by Facebook and shrunk to about 56 pixels, and
+    the first cover put the wordmark there, so the thumbnail read "nenburg Budget Pro".
+    The fix is layout rather than a second image: the L-mark from the favicon sits in the
+    centre 856x856, large enough to survive 56px, and the wordmark and addresses stack
+    beneath it inside the mobile-safe area. Cover your thumbs over the outer thirds and
+    what remains is the favicon.
+
+    The mark is the favicon's own geometry scaled up -- same coordinates, same colours --
+    so the tab icon and the thumbnail are one drawing at two sizes.
+    """
+    paper, ink, soft, mark = '#fbf8f1', '#181713', '#565044', '#c9911c'
+    import random
+
+    def row(seed, lo, hi, base, overlap):
+        rnd = random.Random(seed)
+        pts, x = [], -30
+        while x < W + 70:
+            w = rnd.randint(88, 164)
+            pts.append(f'L{x + w / 2:.0f} {base - rnd.randint(lo, hi)} L{x + w:.0f} {base}')
+            x += w - rnd.randint(overlap, overlap + 22)
+        return 'M-30 %d ' % base + ' '.join(pts) + f' L{W + 70} {base} Z'
+
+    back = row(3, 74, 132, 162, 34)
+    front = row(11, 48, 100, 172, 26)
+    # The favicon's rects, on its 32-grid; the <svg> viewBox scales them.
+    glyph = """
+  <rect x="8.5" y="5" width="4.6" height="17" fill="%(ink)s"/>
+  <rect x="8.5" y="22" width="13.5" height="4.6" fill="%(ink)s"/>
+  <rect x="15.6" y="6.6" width="9.5" height="3.4" fill="%(mark)s"/>
+  <rect x="15.6" y="12.4" width="7" height="3.4" fill="%(ink)s" opacity=".22"/>
+  <rect x="15.6" y="17.2" width="9.5" height="3.4" fill="%(ink)s" opacity=".22"/>""" % dict(ink=ink, mark=mark)
+    return f"""
+<style>
+  body {{ margin:0; width:{W}px; height:{H}px; overflow:hidden; background:{paper};
+          font-family:{SERIF}; position:relative; color:{ink}; }}
+  .rules {{ position:absolute; inset:0;
+            background:repeating-linear-gradient(180deg,
+              transparent 0 51px, rgba(24,23,19,.05) 51px 52px); }}
+  .gutter {{ position:absolute; left:196px; top:0; bottom:0; width:2px;
+             background:rgba(181,58,40,.22); }}
+  .stack {{ position:absolute; left:0; right:0; top:118px; text-align:center; }}
+  .glyph {{ display:block; margin:0 auto; width:370px; height:370px; }}
+  .the {{ font-family:{SANS}; font-size:24px; letter-spacing:.32em;
+          text-transform:uppercase; color:{soft}; margin:18px 0 6px; font-weight:600; }}
+  h1 {{ font-size:80px; line-height:1.0; letter-spacing:-.026em; margin:0;
+        font-weight:400; }}
+  .hl {{ display:block; height:15px; width:352px; background:{mark};
+         opacity:.5; margin:-7px auto 0; }}
+  .addr {{ font-family:{SANS}; font-size:25px; letter-spacing:.055em; margin:22px 0 0;
+           font-weight:600; }}
+  svg.trees {{ position:absolute; left:0; bottom:0; }}
+</style>
+<div class="rules"></div>
+<div class="gutter"></div>
+<div class="stack">
+  <svg class="glyph" viewBox="4 3 26 26">{glyph}
+  </svg>
+  <p class="the">{NAME_THE}</p>
+  <h1>{NAME}</h1>
+  <div class="hl"></div>
+  <p class="addr">{ADDR}</p>
+</div>
+<svg class="trees" width="{W}" height="172" viewBox="0 0 {W} 172">
+  <path fill="{ink}" opacity=".10" d="{back}"/>
+  <path fill="{ink}" opacity=".19" d="{front}"/>
+</svg>
+"""
+
+
 # ---------------------------------------------------------------- favicons
 #
 # Hand-written SVG on a 32 grid, because 32 pixels is where the idea either survives or
@@ -313,7 +386,7 @@ FAVICONS = {
 """,
 }
 
-BANNERS = {'a': banner_a, 'b': banner_b, 'c': banner_c}
+BANNERS = {'a': banner_a, 'b': banner_b, 'c': banner_c, 'd': banner_d}
 
 TITLES = {
     'a': ('The Ridge', 'The town seen whole, at the end of the day. Landscape, calm, '
@@ -326,6 +399,9 @@ TITLES = {
     'c': ('The Margin', 'A page, not a poster. Paper, a wordmark, one marked line, and a '
                         'hairline treeline. Says the work is reading, done in public. '
                         'No blue; the accent is a highlighter ochre.'),
+    'd': ('The Margin, centred', 'The chosen option, laid out so that the centre square '
+                                 'Facebook crops into the group thumbnail is the mark '
+                                 'itself rather than the middle of the wordmark.'),
 }
 
 
@@ -538,9 +614,10 @@ def main():
         return 0
     keys = [a.only] if a.only else ['a', 'b', 'c']
     for k in keys:
+        # d shares c's favicon: it is the same mark, laid out differently on the cover.
         p = os.path.join(OUT, 'favicon-%s.svg' % k)
         with open(p, 'w', encoding='utf-8') as fh:
-            fh.write(FAVICONS[k])
+            fh.write(FAVICONS.get(k) or FAVICONS['c'])
         print('wrote ' + os.path.relpath(p, ROOT))
         render(k)
     favicon_sheet()

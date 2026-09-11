@@ -38,6 +38,14 @@ project IS, not what it found.
 | `facebook-group-cover.png` | 1640x856 | the Facebook group cover |
 | `favicon.svg` | 32x32 | published as `fy28/public/favicon.svg` |
 
+**The layout was changed on 11 September so the thumbnail is the mark.** A Facebook GROUP
+has no profile picture: the square beside the group's name is the cover's CENTRE SQUARE,
+cropped and shrunk to about 56 pixels, and the first layout put the wordmark there, so
+the thumbnail read *"nenburg Budget Pro"*. The L-mark now sits in the centre 856x856 with
+the wordmark and both addresses stacked beneath it inside the mobile-safe area; the blurb
+line was dropped for room (the group description carries it). Option `d` in the
+generator; TJ, seeing it: *"OHHH I love that"*.
+
 **1640x856 is the GROUP cover size, checked September 2026** — a PAGE cover is 820x312 and
 is a different thing. Facebook crops the top and bottom on mobile and overlays the group
 name across the bottom, so everything that matters sits inside the centre 1440x560.
