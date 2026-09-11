@@ -85,6 +85,9 @@ CHECKS = [
     # whose-input-moved defect in its purest form.
     ('write_recording_minutes.py', ['--check']),
     ('build_recording_minutes.py', ['--check']),
+    # THE NUMBERS FOR THE COMMUNITY. A sharing document is the one most likely to be
+    # quoted, so it is generated and this fails the day the archive outgrows it.
+    ('build_app_metrics.py', ['--check']),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a
     # conclusion, or stopped publishing one, and the synthesis still says the old thing.

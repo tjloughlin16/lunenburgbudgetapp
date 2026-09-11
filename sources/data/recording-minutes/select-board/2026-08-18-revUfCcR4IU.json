@@ -1,0 +1,353 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board Public Hearing - Dog Complaint",
+ "meeting_date": "2026-08-18",
+ "video_id": "revUfCcR4IU",
+ "video_url": "https://www.youtube.com/watch?v=revUfCcR4IU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-08-18-revUfCcR4IU.json",
+  "sha256": "7b246f61e3450c751b20ab05712877b8cd0ff6bf587f04028ccae4994cb688db",
+  "caption_lines": 236,
+  "segments": 2288
+ },
+ "recording": {
+  "duration_s": 4935,
+  "duration": "1:22",
+  "spoken_chars": 75868,
+  "words_approx": 12644
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08182026-7965",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-18-agenda-7965.txt",
+   "path": "sources/meetings/select-board/2026-08-18-agenda-7965.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08182026-7968",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-18-agenda-7968.txt",
+   "path": "sources/meetings/select-board/2026-08-18-agenda-7968.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08182026-7972",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-18-agenda-7972.txt",
+   "path": "sources/meetings/select-board/2026-08-18-agenda-7972.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-11T21:17:10Z",
+  "cost_usd": 0.357199
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Madam Chair",
+    "role": "chair, Select Board"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "Select Board member (referred to by a colleague as \"Tom\")"
+   },
+   {
+    "name_as_heard": "the clerk",
+    "role": "clerk (read the hearing notice)"
+   },
+   {
+    "name_as_heard": "Adam Costa",
+    "role": "town counsel, firm heard as \"Tyler and Costa\""
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager (name not stated; referenced as having made comments on hearing procedure)"
+   },
+   {
+    "name_as_heard": "Detective McNamera",
+    "role": "Lunenburg Police detective, investigating officer (witness)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Kathy Kimo",
+    "role": "animal control officer (witness)",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 4391,
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident, 162 Highland Street",
+    "topic": "Argued the board gave too much latitude to the dog owner and did not consider whether the complainant (Mr. Burden) himself is a \"sick person\" under the nuisance-dog standard."
+   }
+  ],
+  "tags": [
+   "legal",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 4310,
+    "motion": "Close the testimonial portion of the public hearing",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4330,
+    "motion": "Reopen the hearing for the limited purpose of hearing public comment (from a Zoom participant identified as \"JB\")",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4478,
+    "motion": "Close the public hearing",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4706,
+    "moved_by": "a Select Board member",
+    "motion": "Find as a board that the dog is not a nuisance dog",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4910,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2835,
+    "topic": "Prior lawsuit by George Burton against Cordmash and others",
+    "figures_as_heard": [
+     "$375,000"
+    ],
+    "what_was_said": "The dog owner testified that the complainant had sued him, his wife, former neighbors, and the former police chief for this amount in Barnstable Court, and lost."
+   },
+   {
+    "t": 2856,
+    "topic": "Legal fees ordered against Burden in that lawsuit",
+    "figures_as_heard": [
+     "$60,000"
+    ],
+    "what_was_said": "The dog owner testified the complainant was ordered to pay this amount in legal fees after losing the suit; later in cross-examination a figure of $51,000 was also mentioned by the complainant."
+   },
+   {
+    "t": 1733,
+    "topic": "Payment related to an unrelated prior court docket",
+    "figures_as_heard": [
+     "$25,000"
+    ],
+    "what_was_said": "The dog owner stated he was eventually paid this amount related to a mortgage-insurance collection matter that the complainant had mischaracterized as a dog-related case."
+   },
+   {
+    "t": 3126,
+    "topic": "Cost of arborvitae planted along the property line",
+    "figures_as_heard": [
+     "$23,000"
+    ],
+    "what_was_said": "The dog owner testified he spent this amount planting 43 arborvitae trees so his dog and he would not have to see the complainant."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 584,
+    "decision": "Board agreed to hear from the investigating police detective (Detective McNamera) first."
+   },
+   {
+    "t": 2728,
+    "decision": "Board's preference set to hear the dog owner's testimony before the HOA neighbor witness."
+   },
+   {
+    "t": 4685,
+    "decision": "Board members informally agreed the standard for allowing a nuisance-dog hearing to proceed should be raised in the future so a respondent is not put through a hearing without supporting evidence."
+   },
+   {
+    "t": 4787,
+    "decision": "Town counsel Adam Costa will draft the board's written decision."
+   },
+   {
+    "t": 4787,
+    "decision": "Town counsel raised, for future consideration, bifurcating dangerous-dog and nuisance-dog hearings and delegating nuisance-dog hearings to staff rather than the full board."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 108,
+    "topic": "Meeting opening, recording notice, and reading of the public hearing notice for the nuisance dog complaint",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 108,
+    "t_end": 237,
+    "topic": "Chair explains hearing process and reads the Mass. General Law definition of a nuisance dog",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 237,
+    "t_end": 397,
+    "topic": "Town counsel Adam Costa opens the hearing and swears in witnesses present in the room; no Zoom participant identifies to testify",
+    "resolution": "procedural, completed"
+   },
+   {
+    "t_start": 397,
+    "t_end": 563,
+    "topic": "Complainant George Burden, participating by Zoom, states he and his wife will not testify, citing alleged persecution by the town",
+    "resolution": "no testimony given by complainant"
+   },
+   {
+    "t_start": 563,
+    "t_end": 1214,
+    "topic": "Testimony of Detective McNamera: reads the Burden complaint aloud, describes his investigation, concludes the complaint contained falsehoods",
+    "resolution": "testimony given"
+   },
+   {
+    "t_start": 1214,
+    "t_end": 1357,
+    "topic": "Town counsel's follow-up questions to Detective McNamera confirming no evidence of nuisance behavior was found",
+    "resolution": "testimony concluded"
+   },
+   {
+    "t_start": 1357,
+    "t_end": 1774,
+    "topic": "George Burden's cross-examination of Detective McNamera regarding disputed court dockets",
+    "resolution": "no further questions, witness excused"
+   },
+   {
+    "t_start": 1774,
+    "t_end": 2213,
+    "topic": "Testimony of Animal Control Officer Kathy Kimo: fencing inspection, neighbor interviews, no evidence of barking from the subject dog",
+    "resolution": "testimony concluded, no board questions"
+   },
+   {
+    "t_start": 2233,
+    "t_end": 2708,
+    "topic": "George Burden's cross-examination of the ACO regarding fence-testing methods and an unrelated phone-call incident",
+    "resolution": "no further questions, witness excused"
+   },
+   {
+    "t_start": 2708,
+    "t_end": 2752,
+    "topic": "Board confirms remaining witnesses (dog owner, an HOA neighbor) and sets order",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 2752,
+    "t_end": 3208,
+    "topic": "Testimony of dog owner Charles/Chuck Cordmash denying any nuisance and describing a history of litigation with the complainant",
+    "resolution": "testimony given"
+   },
+   {
+    "t_start": 3208,
+    "t_end": 3293,
+    "topic": "Town counsel's follow-up questions to Cordmash confirming no excessive barking and no other complaints",
+    "resolution": "testimony concluded"
+   },
+   {
+    "t_start": 3293,
+    "t_end": 3843,
+    "topic": "George Burden's contentious cross-examination of Cordmash, repeatedly ruled off-topic by town counsel",
+    "resolution": "concluded, chair moves on"
+   },
+   {
+    "t_start": 3843,
+    "t_end": 4290,
+    "topic": "Testimony of neighbor/HOA trustee Ned Pratt that the condo association received no pet complaints in about three years, followed by Burden's cross-examination alleging coordination between witnesses",
+    "resolution": "no further questions, witness excused"
+   },
+   {
+    "t_start": 4290,
+    "t_end": 4310,
+    "topic": "Board confirms no further witnesses are available",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 4310,
+    "t_end": 4330,
+    "topic": "Vote to close the testimonial portion of the hearing",
+    "resolution": "voted, passed unanimously"
+   },
+   {
+    "t_start": 4330,
+    "t_end": 4391,
+    "topic": "Vote to reopen the hearing to hear a public comment from a Zoom participant (\"JB\")",
+    "resolution": "voted, passed unanimously"
+   },
+   {
+    "t_start": 4391,
+    "t_end": 4478,
+    "topic": "Public comment from John Bowen",
+    "resolution": "comment heard"
+   },
+   {
+    "t_start": 4478,
+    "t_end": 4498,
+    "topic": "Vote to close the public hearing",
+    "resolution": "voted, passed unanimously"
+   },
+   {
+    "t_start": 4498,
+    "t_end": 4600,
+    "topic": "Town counsel answers a board question about legal attachment/trustee process related to older, unrelated court cases",
+    "resolution": "informational, partly garbled"
+   },
+   {
+    "t_start": 4600,
+    "t_end": 4684,
+    "topic": "Board deliberation: a member (\"Tom\") summarizes that no evidence supports the nuisance dog complaint and recommends dismissal",
+    "resolution": "informational, leads to motion"
+   },
+   {
+    "t_start": 4684,
+    "t_end": 4706,
+    "topic": "Other board members concur and comment that the bar for future nuisance-dog hearings should be raised",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 4706,
+    "t_end": 4767,
+    "topic": "Motion and vote finding the dog is not a nuisance dog",
+    "resolution": "voted, passed unanimously"
+   },
+   {
+    "t_start": 4767,
+    "t_end": 4787,
+    "topic": "Board thanks town counsel and asks him to draft the written decision",
+    "resolution": "agreed informally"
+   },
+   {
+    "t_start": 4787,
+    "t_end": 4910,
+    "topic": "Discussion of a possible future process change: bifurcating dangerous-dog and nuisance-dog hearings and delegating nuisance cases to staff",
+    "resolution": "no vote taken; noted for future consideration"
+   },
+   {
+    "t_start": 4910,
+    "t_end": 4930,
+    "topic": "Motion to adjourn",
+    "resolution": "voted, passed"
+   }
+  ],
+  "not_audible": [
+   "Extended crosstalk between George Burden and Charles Cordmash (roughly 3293-3843) is heavily garbled and hard to attribute line by line.",
+   "The legal explanation of the trustee/attachment process for old court judgments (~4559-4600) is garbled and the speaker is not clearly identifiable.",
+   "The investigating detective's name is rendered inconsistently in the captions (\"McNamera\" and, once, \"Nightmare\") and is not confirmed spelled.",
+   "No formal roll call of Select Board members was captioned; individual board members other than one referred to as \"Tom\" are not identified by name.",
+   "Exact vote tallies are never stated; all votes are captioned only as unanimous by voice (\"aye\")."
+  ],
+  "confidence": "moderate",
+  "summary": "The Lunenburg Select Board held a public hearing under MGL c.140 §157 on a nuisance-dog complaint filed by George and Jennifer Burden against neighbors Charles and Stacy Cordmash. The complainant declined to testify, while the investigating detective, the animal control officer, the dog owner, and a neighboring HOA trustee all testified that they found no evidence of excessive barking or other nuisance behavior; after deliberation the board voted unanimously that the dog is not a nuisance dog, and town counsel was asked to draft the written decision and to consider changing the hearing process going forward."
+ }
+}

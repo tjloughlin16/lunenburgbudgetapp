@@ -944,6 +944,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/write_recording_minutes.py --check    # every minutes file parses, links, and matches its transcript
     python3 scripts/build_recording_minutes.py            # the /what-was-said payload, from the files
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
+    python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
+    python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
     python3 scripts/build_question_bank.py      # 107 questions, each run against the database
     python3 scripts/build_question_bank.py --check   # ...and fail if one stops answering
     python3 scripts/watch_meetings.py --seed     # adopt what we hold, announcing nothing

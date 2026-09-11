@@ -1,0 +1,179 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-07-27",
+ "video_id": "5v_3VPZyn6U",
+ "video_url": "https://www.youtube.com/watch?v=5v_3VPZyn6U",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-07-27-5v_3VPZyn6U.json",
+  "sha256": "c95cecc6093829a31f28644d8f6ba110311e1181a083bcdf3655f87373451b37",
+  "caption_lines": 53,
+  "segments": 543
+ },
+ "recording": {
+  "duration_s": 1097,
+  "duration": "0:18",
+  "spoken_chars": 15303,
+  "words_approx": 2550
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07272026-7925",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-07-27-agenda-7925.txt",
+   "path": "sources/meetings/select-board/2026-07-27-agenda-7925.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-11T21:35:06Z",
+  "cost_usd": 0.20153900000000002
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Madam Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "board member"
+   },
+   {
+    "name_as_heard": "Town Manager (unnamed)",
+    "role": "town manager"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 787,
+    "topic": "Cost of posting legal ad (Sentinel vs. the Ledger)",
+    "what_was_said": "The board discussed whether to post the special town meeting warrant's legal ad in the daily Sentinel instead of the weekly Ledger to save time, and someone suggested the cost difference was probably minor. The board decided to stick with the Ledger for consistency with what residents expect to read.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 994,
+    "topic": "Teamsters Union Local 170 (DPW) collective bargaining agreement",
+    "what_was_said": "The board ratified the DPW collective bargaining agreement with Teamsters Local 170, noting the board had already voted on it in executive session and was waiting on paperwork that has now been received.",
+    "figures_as_heard": []
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 42,
+    "speaker_as_heard": "Tim Murphy",
+    "stated_role": "town moderator",
+    "topic": "His availability for a proposed special town meeting date (available Sept. 2, not Sept. 3) and the charter/statutory process for a deputy or temporary moderator to stand in if he is absent."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "elections",
+   "facilities",
+   "legal",
+   "personnel",
+   "public-comment",
+   "roads-and-dpw",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 869,
+    "motion": "Call a special town meeting for Thursday, September 3, 2026 at 7:00 p.m. at the Lunenburg Middle High School Auditorium, per the citizens' petition, and open the warrant July 28, 2026 with it closing 5:00 p.m. Friday, August 7, 2026.",
+    "moved_by": "unnamed board member",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 972,
+    "motion": "Approve the September 1, 2026 state primary election warrant.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1014,
+    "motion": "Ratify the collective bargaining agreement with Teamsters Union Local 170 (DPW).",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1076,
+    "motion": "Adjourn at 6:18 p.m.",
+    "moved_by": "Brian",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 847,
+    "decision": "The board will continue posting the special town meeting legal ad in the Ledger rather than switching to the daily Sentinel, for consistency."
+   },
+   {
+    "t": 559,
+    "decision": "The board agreed to try to confirm deputy moderator Rob Bowen's availability for September 3rd before/while proceeding, though the meeting date was set regardless."
+   },
+   {
+    "t": 620,
+    "decision": "The pre-town-meeting moderator's meeting (normally run by the moderator) will be open to anyone who might serve as the temporary moderator on September 3rd."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 22,
+    "topic": "Meeting called to order; recording/broadcast notice and agenda disclaimer",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 22,
+    "t_end": 164,
+    "topic": "Public comment: town moderator Tim Murphy on his availability and deputy-moderator process for the special town meeting",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 164,
+    "t_end": 951,
+    "topic": "Setting the date and warrant schedule for a citizens'-petition special town meeting (Sept. 3, 2026)",
+    "resolution": "voted"
+   },
+   {
+    "t_start": 951,
+    "t_end": 993,
+    "topic": "Approval of the September 1, 2026 state primary election warrant",
+    "resolution": "voted"
+   },
+   {
+    "t_start": 993,
+    "t_end": 1034,
+    "topic": "Ratification of Teamsters Local 170 (DPW) collective bargaining agreement",
+    "resolution": "voted"
+   },
+   {
+    "t_start": 1034,
+    "t_end": 1076,
+    "topic": "Announcement of upcoming meetings: joint workshop with the Municipal Building Design Committee and Mass Save presentation; next regular meeting Aug. 4",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 1076,
+    "t_end": 1093,
+    "topic": "Closing public comment and adjournment",
+    "resolution": "voted"
+   }
+  ],
+  "not_audible": [
+   "Exact identities of several board members are not distinguishable in the captions beyond the chair and 'Brian'; the person narrating the detailed warrant schedule (likely the Town Manager) is not explicitly named.",
+   "The precise Mass. General Law citation numbers and charter section numbers in the special town meeting motion are as heard and not independently confirmed.",
+   "The exact required number of citizen petition signatures is stated ambiguously as '50 or 100.'"
+  ],
+  "confidence": "moderate",
+  "summary": "The Select Board set the schedule for a citizen-petition special town meeting for September 3, 2026, working through a tight statutory timeline for the warrant, legal ad, FinCom public hearing and mailed notices, complicated by town moderator Tim Murphy's unavailability that date. The board also approved the September 1 state primary election warrant and ratified the DPW collective bargaining agreement with Teamsters Local 170, then adjourned to meet again the next evening in a joint workshop with the Municipal Building Design Committee."
+ }
+}

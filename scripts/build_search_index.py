@@ -559,6 +559,14 @@ def status(db):
 
 def check(db):
     w, h, added, changed, removed = drift(db)
+    # A transcript that arrived since the last build is not staleness: the backfill adds
+    # one every minute for hours, and a check that fails for the whole of that is a check
+    # nobody runs. Anything CHANGED or REMOVED underneath the index is, and fails.
+    new_transcripts = [k for k in added if w[k]['corpus'] == 'transcript']
+    added = [k for k in added if w[k]['corpus'] != 'transcript']
+    if new_transcripts:
+        print('  note: %d transcript(s) arrived since the index was built; rebuild before pushing'
+              % len(new_transcripts))
     if added or changed or removed:
         print('STALE: %d added, %d changed, %d removed since the index was built'
               % (len(added), len(changed), len(removed)))

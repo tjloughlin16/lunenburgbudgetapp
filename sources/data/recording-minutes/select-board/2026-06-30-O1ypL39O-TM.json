@@ -1,0 +1,140 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-06-30",
+ "video_id": "O1ypL39O-TM",
+ "video_url": "https://www.youtube.com/watch?v=O1ypL39O-TM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-06-30-O1ypL39O-TM.json",
+  "sha256": "987a65b8bc32c26eb1d5718c507ef9412a606c02ebad045fabcd06db04e9e35c",
+  "caption_lines": 16,
+  "segments": 158
+ },
+ "recording": {
+  "duration_s": 326,
+  "duration": "0:05",
+  "spoken_chars": 4633,
+  "words_approx": 772
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06302026-7879",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-30-agenda-7879.txt",
+   "path": "sources/meetings/select-board/2026-06-30-agenda-7879.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-11T21:46:44Z",
+  "cost_usd": 0.15755999999999998
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair (referred to as \"Madam Chair\")",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jennifer Warren Diamond (\"Jen\")",
+    "role": "Town Manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "elections",
+   "personnel",
+   "public-safety",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 83,
+    "motion": "Appoint annual Select Board appointments: Animal Control Officer Kathy Como; Fence Viewer Brian Gingras; Field Driver Kathy Como; Forest Warden Chief Patrick Sullivan; Municipal Hearing Officer Jennifer Warren Diamond; Parking Clerk Melissa Richard.",
+    "moved_by": "the chair",
+    "outcome": "passed 3-0 (roll call: Glenn - I, Brian - I, chair - I)",
+    "procedural": false
+   },
+   {
+    "t": 268,
+    "motion": "Ratify the town manager's annual appointments as read.",
+    "outcome": "passed 3-0 (roll call: Glenn - Aye, Brian - Aye, chair - aye)",
+    "procedural": false
+   },
+   {
+    "t": 308,
+    "motion": "Adjourn the meeting at 7:07 p.m.",
+    "outcome": "passed 3-0 (roll call: Glenn - Aye, Brian - Aye, chair - aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 41,
+    "decision": "The board learned from the state that discontinuing use of electronic voting machines for the August 8, 2026 special town election is not an option, so the machines must be used; the agenda item was passed over without a vote."
+   },
+   {
+    "t": 268,
+    "decision": "The chief's recommendation to promote Brandon McNamara to detective has not yet been considered, so he remains listed as SRO for this appointment round."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 41,
+    "topic": "Meeting called to order; agenda/open meeting law statement; full board noted present",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 41,
+    "t_end": 62,
+    "topic": "Consideration of discontinuing electronic voting machines for the August 8, 2026 special town election",
+    "resolution": "no resolution - passed over after state determined it is not an option"
+   },
+   {
+    "t_start": 62,
+    "t_end": 123,
+    "topic": "Annual Select Board appointments (Animal Control Officer, Fence Viewer, Field Driver, Forest Warden, Municipal Hearing Officer, Parking Clerk)",
+    "resolution": "voted, passed by roll call"
+   },
+   {
+    "t_start": 124,
+    "t_end": 287,
+    "topic": "Town Manager's annual appointments read into the record (building/dam/emergency management/RACES officers, plumbing and gas inspectors, public weighers, wiring inspectors, town clock winders, veteran service officer, and full police department roster)",
+    "resolution": "read into record, then ratified by vote"
+   },
+   {
+    "t_start": 288,
+    "t_end": 307,
+    "topic": "Closing remarks and announcement of next meeting, Tuesday July 7th",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 307,
+    "t_end": 317,
+    "topic": "Adjournment",
+    "resolution": "voted, passed by roll call"
+   }
+  ],
+  "not_audible": [
+   "Full names of some public weigher and civilian traffic officer appointees are unclear or possibly mistranscribed (e.g. \"Jay Valeri Valeri Mike Reynolds\", \"John Hazard League\", \"Robert DeConza\")",
+   "Who seconded the first motion (appointments) at t=103 is not identified by name",
+   "The chair's own name is never stated in the captions"
+  ],
+  "confidence": "high",
+  "summary": "The Select Board (chair, Glenn, and Brian) held a short meeting largely devoted to annual appointments. They passed over discontinuing electronic voting machines for the August 2026 special election after learning from the state it isn't optional, then voted by roll call to make the Select Board's own annual appointments and to ratify the Town Manager's lengthy list of annual town appointments, including the full police department roster, before adjourning."
+ }
+}

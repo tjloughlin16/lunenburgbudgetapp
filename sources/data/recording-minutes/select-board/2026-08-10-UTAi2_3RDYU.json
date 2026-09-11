@@ -1,0 +1,227 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-08-10",
+ "video_id": "UTAi2_3RDYU",
+ "video_url": "https://www.youtube.com/watch?v=UTAi2_3RDYU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-08-10-UTAi2_3RDYU.json",
+  "sha256": "d54bbe26c072ed6ea9144b5ca2d328006458002962f2a15545b6efc8593f1916",
+  "caption_lines": 39,
+  "segments": 404
+ },
+ "recording": {
+  "duration_s": 804,
+  "duration": "0:13",
+  "spoken_chars": 11142,
+  "words_approx": 1857
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08102026-7955",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-10-agenda-7955.txt",
+   "path": "sources/meetings/select-board/2026-08-10-agenda-7955.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-11T21:27:11Z",
+  "cost_usd": 0.217112
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Madam Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "select board member"
+   },
+   {
+    "name_as_heard": "Damon (also heard as \"Dave\")",
+    "role": "select board member"
+   },
+   {
+    "name_as_heard": "Town Manager (unnamed)",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy27",
+   "elections",
+   "free-cash",
+   "legal",
+   "middle-school",
+   "town-meeting",
+   "transfers",
+   "transportation",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 312,
+    "motion": "Approve the school department's article for inclusion in the special town meeting warrant",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 396,
+    "motion": "Approve the warrant as presented, with the articles in the order shown",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 790,
+    "motion": "Adjourn at 7:13 p.m.",
+    "moved_by": "a board member",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 229,
+    "topic": "Article 1 - FY27 school operating budget supplemental appropriation (school department article)",
+    "what_was_said": "The school department submitted an article to raise and appropriate an additional sum for the FY27 school operating budget.",
+    "figures_as_heard": [
+     "$418,056"
+    ]
+   },
+   {
+    "t": 249,
+    "topic": "Article 2 - citizens' petition to supplement FY27 school operating budget",
+    "what_was_said": "A citizens' petition article asks the town to raise and appropriate or transfer from available funds a sum of money to supplement the school department's FY27 operating budget; no dollar figure was stated in this article as read.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 271,
+    "topic": "Article 3 - free cash/available funds transfer for athletics and transportation",
+    "what_was_said": "A citizens' petition article seeks to transfer a sum from certified free cash or available funds to the schools' FY27 operating budget to reinstate middle school sports and provide student-athlete transportation.",
+    "figures_as_heard": [
+     "$151,338.38"
+    ]
+   },
+   {
+    "t": 354,
+    "topic": "Article 2 - speculation on possible amount",
+    "what_was_said": "In discussing whether article two would duplicate article one, a board member speculated the town would not be putting in as large a sum as another figure mentioned.",
+    "figures_as_heard": [
+     "$900,000"
+    ]
+   },
+   {
+    "t": 416,
+    "topic": "Certified free cash availability for article 3",
+    "what_was_said": "The town manager explained that no certified free cash currently exists this early in the fiscal year and it is very unlikely to be certified before the September 3rd special town meeting; town counsel was being consulted on what other fund types might be in scope for the article's \"available funds\" language.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 271,
+    "description": "certified free cash or other available funds transferred to Lunenburg Public Schools' FY27 operating budget, for athletics/transportation",
+    "amount_as_heard": "$151,338.38",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 602,
+    "decision": "The August 18th select board meeting will start at 6:00 p.m. (pushed back from 5:30) with a hard stop at 7:00 p.m. before a dog hearing."
+   },
+   {
+    "t": 644,
+    "decision": "The board will not meet on August 25th, keeping that week free."
+   },
+   {
+    "t": 685,
+    "decision": "The board's next regular meeting will be September 1st, which may include petitioners presenting their warrant articles to the select board."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 42,
+    "topic": "Call to order and meeting opening",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 42,
+    "t_end": 166,
+    "topic": "Public comment period: congratulations to election winners and a question about a separate petition's feasibility",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 166,
+    "t_end": 292,
+    "topic": "Review of the three warrant articles for the September 3rd special town meeting",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 312,
+    "t_end": 332,
+    "topic": "Vote to include the school department's article in the warrant",
+    "resolution": "voted"
+   },
+   {
+    "t_start": 332,
+    "t_end": 396,
+    "topic": "Discussion of the order of articles and overlap between article one and article two",
+    "resolution": "no resolution / left to town meeting floor"
+   },
+   {
+    "t_start": 396,
+    "t_end": 416,
+    "topic": "Vote to approve the full warrant as presented",
+    "resolution": "voted"
+   },
+   {
+    "t_start": 416,
+    "t_end": 540,
+    "topic": "Town manager's explanation of certified free cash status for article 3",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 540,
+    "t_end": 706,
+    "topic": "Scheduling of upcoming meetings (Aug 18, Aug 25, Sept 1) and Finance Committee/School Committee timing",
+    "resolution": "decided"
+   },
+   {
+    "t_start": 706,
+    "t_end": 728,
+    "topic": "Reminder of a posted meeting the next day at Brooks House then TCB",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 728,
+    "t_end": 790,
+    "topic": "Second public comment call and closing banter",
+    "resolution": "informational"
+   },
+   {
+    "t_start": 790,
+    "t_end": 807,
+    "topic": "Adjournment",
+    "resolution": "voted"
+   }
+  ],
+  "not_audible": [
+   "Exact identities/surnames of the two board members congratulated on the election (\"Mr. Alonzo\" and \"Mr. Clay\") versus the names \"Tom\" and \"Damon\"/\"Dave\" used elsewhere are not clearly reconciled in the captions.",
+   "No roll-call vote counts were given for any of the three votes; only \"unanimously\"/\"passed\" was stated.",
+   "Voter turnout figures are inconsistent in the captions (\"410 voters\" at one point, \"454\" final tally at another).",
+   "The specific movers and seconders of each motion are not clearly attributed to named individuals.",
+   "Town Counsel's opinion on which fund types are in scope for article 3's \"available funds\" language was not given; the town manager said he had not yet received a definitive answer."
+  ],
+  "confidence": "moderate",
+  "summary": "The Select Board voted to place the school committee's article on the warrant for the September 3rd special town meeting and then voted to approve the full warrant, which includes three articles addressing the FY27 school operating budget shortfall and reinstating middle school athletics/transportation. The town manager clarified that no certified free cash currently exists for one citizen-petition article and that town counsel was still reviewing which fund types are legally in scope; the board also set its meeting schedule through early September, including a September 1st session likely for petitioner presentations."
+ }
+}
