@@ -1,5 +1,62 @@
 # What is queued, in order
 
+## THE ORDER, RESET BY TJ ON 11 SEPTEMBER 2026
+
+This supersedes the 8 September order below, which is kept because its reasoning about
+phases still holds for everything past the blog.
+
+**WHAT CHANGED: the blog became the priority, and it took the value space of items 13-17.**
+TJ: *"The BLOG is taking the value space of those for the time being. we'll build these in
+after."* Nine of the nineteen items below are already done and the numbering no longer
+reflects what matters.
+
+### NOW — three things at once, plus one that costs no attention
+
+1. **The blog, the four formats, and the mechanisms around them.** In flight. The card, the
+   post, the archive with dates, the home callout, the editor's view. See item 12b and the
+   blog work of 11 September.
+2. **The Facebook group header image.** Moved up from 19. Blocked on nothing but a quiet
+   machine.
+3. **A real favicon for the site.** Moved up from 19. The current one is a purple template
+   leftover and it is live in every browser tab right now.
+
+   And underneath all three, **the meeting transcript backfill keeps running** — TJ:
+   *"WHILE we fetch the meeting transcripts (network, not agentic)"*. It is network-bound,
+   it costs no model attention, and it must not be paused to make room for anything. 282
+   held at the time of writing.
+
+### NEXT — search across EVERYTHING, and the scope is bigger than item 18 says
+
+TJ: *"THEN search across all app content (ALL PAGES, all blogs, all sources, all meeting
+minutes) will be just after we finish the blog setup. People need to be able to find things
+once we start pushing people here."*
+
+**That last sentence is the whole argument and it is a deadline in disguise.** The blog
+exists to bring strangers here from Facebook. A stranger who arrives, looks for the one
+thing they care about and finds nothing concludes the site does not have it — and this site
+has 68 pages, 12,000 meeting documents and 282 transcripts. Publishing the front door
+before the search is building a shop with no aisles.
+
+Item 18 is written for minutes and transcripts only. **The scope is now every page, every
+blog post, every source document and every minute** — including posts that do not exist
+yet, which means the index has to be built to take them rather than retrofitted. Its five
+constraints still apply, and the vocabulary problem it names gets WORSE at this scale:
+`foreign language` finds nothing while `French` finds the material, and a resident who
+types our words and sees nothing reads it as "the town never discussed it".
+
+### AFTER THAT — the refresh mechanisms
+
+Items 12 and 12a, in their existing order. **12a, the meeting digests, is still "the actual
+point"** and that has not changed; it moves behind the blog and the search rather than down
+in importance.
+
+### AT THE END, FOR NOW — items 13 through 17
+
+Community news, athletics as its own section, the sports directory, Facebook-later, the
+Monty Tech drill-in. Deferred as a block, not dropped. TJ: *"we'll build these in after."*
+
+---
+
 ## THE ORDER, set by TJ on 8 September 2026
 
 **Phase two, then phase four, then phase three.** Phase three (the town hub, the digests,
