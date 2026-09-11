@@ -30,9 +30,9 @@ actually having and neither has the table.
 
 ### 1.1 Why a school with fewer children is not a cheaper school
 
-> ### Lunenburg teaches 256 fewer children than in 2008 — and the schools did not get cheaper. Exactly as many children with disabilities are still here, 258 then and 258 now, and losing a pupil takes about $150 of state aid with it rather than the $5,847 a pupil the aid works out to.
+> ### Lunenburg teaches 256 fewer children than in 2008 — and the schools did not get cheaper.
 
-> The count did not move while the school around it shrank, so the SHARE went 14.1% to 16.3%. Children in low-income households roughly doubled as a share, 10.0% to 25.2% — the largest change of the three, and the one to read with care, because DESE altered how it identifies low income part-way through the series. English learners went 3 to 70, the smallest of the three in children: +67 against +212.  
+> The count did not move while the school around it shrank, so the SHARE went 14.1% to 16.3%. Children in low-income households roughly doubled as a share, 10.0% to 25.2% — the largest change of the three, and the one to read with care, because DESE altered how it identifies low income part-way through the series. English learners went 3 to 70, the smallest of the three in children: +67 against +212. Exactly as many children with disabilities are still here, 258 then and 258 now, and losing a pupil takes about $150 of state aid with it rather than the $5,847 a pupil the aid works out to.  
 > *— then/now*
 
 > **And the price of the thing rose, in the state's own books.** DESE's foundation budget — what the state calculates an adequate education for *these* children costs — went from $7,880.78 a pupil in FY2008 to $13,770.40 in FY2026, +74.7%, on 62 fewer foundation pupils. Over the years that can be compared like for like, actual against actual, Lunenburg's net school spending went $8,950.89 a pupil in FY2008 to $14,887.59 in FY2024, +66.3%, against +62.3% in the state's own foundation rate over the same span. Four mechanisms sit underneath that and each is its own item here: the aid barely moves with enrolment (2.1); the out-of-district tuition the 258 attract is set by other districts and by each child's plan, not by Lunenburg (4.1, 6.6); insurance grows faster than the levy that pays for it and $1,521,536 of the schools' share is not even in the school budget (3.1, 3.6); and costs are lumpy — a grade losing five children does not remove a seventh of a teacher, a bus route or a building.
@@ -272,8 +272,9 @@ actually having and neither has the table.
 
 ### 2.2 The formula awarded nothing. The whole increase was a floor voted on Beacon Hill
 
-> ### Lunenburg's entire FY2026 increase in school aid — $240,450 — was the flat minimum the Legislature sets each year. The funding formula itself paid $0.
+> ### Lunenburg's entire FY2026 increase in school aid — $240,450 — was the flat minimum the Legislature sets each year.
 
+> The funding formula itself paid $0.  
 > *— assumed/mechanism*
 
 **If you are a resident:** What the town receives moves with a rate chosen in Boston each spring, not with what Lunenburg's schools cost or how many children are in them. That floor has been $30, $60, $104 and $150 a pupil in the four years it bound.
@@ -335,9 +336,9 @@ actually having and neither has the table.
 
 ### 2.4 Chapter 70 is not "state aid", and this project got that wrong for months
 
-> ### $11,404,917 is all state aid to Lunenburg. Chapter 70 is 78.7% of it. Our own documentation folded the two together and published a share eight points too high.
+> ### $11,404,917 is all state aid to Lunenburg and Chapter 70 is 78.7% of it — this project folded the two together for months.
 
-> , and it is our own error corrected in public.  
+> , and it is our own error corrected in public. Our own documentation published a share eight points too high.  
 > *— document/document*
 
 **If you are a resident:** Two real figures, and using the wrong one moves the school-funding share from 35% to 43%. Both numbers appear in town documents.
@@ -457,9 +458,9 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 3.4 When the federal grants ran out, under half was picked up
 
-> ### Of $2,670,158 of grant funding that fell in FY2025, $1,127,647 fell where the town's own money rose to meet it. The rest simply stopped.
+> ### Of $2,670,158 of grant funding that fell in FY2025, $1,127,647 fell where the town's own money rose to meet it.
 
-> "The town picked up the bill for the grants" describes 42.2% of the money.  
+> "The town picked up the bill for the grants" describes 42.2% of the money. The rest simply stopped.  
 > *— said/shown*
 
 **If you are a resident:** It was a handover and a reduction happening at the same time, and a function where the general fund rose is not a function that was made whole.
@@ -544,8 +545,9 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 4.1 The line residents argue about is the town's share, not the bill
 
-> ### In FY2025 the out-of-district tuition budget said $732,298 and $1,205,949 was spent. 39.3% of it came from funds that never appear in the appropriation.
+> ### In FY2025 the out-of-district tuition budget said $732,298 and $1,205,949 was spent.
 
+> 39.3% of it came from funds that never appear in the appropriation.  
 > *— document/document*
 
 **If you are a resident:** A resident watching the budget line is watching what the town raises, which can move without a single placement changing.
@@ -629,8 +631,9 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 ### 4.4 The class-size rule caps children, not adults
 
-> ### 603 CMR 28.06(6)(d): eight students to one certified special educator, or twelve with an aide. The rule sets a minimum staffing for a group size — IEPs add on top.
+> ### 603 CMR 28.06(6)(d): eight students to one certified special educator, or twelve with an aide.
 
+> The rule sets a minimum staffing for a group size — IEPs add on top.  
 > *— assumed/mechanism*
 
 **If you are a resident:** A room at the legal minimum and a room staffed three times over look identical from outside. "We have a lot of paras" and "our groups are within the rule" can both be true and neither explains the other.
@@ -713,9 +716,9 @@ The regulation runs the opposite way to the common assumption: a more separate p
 
 ### 4.7 The caseload rose and the share rose further
 
-> ### 258 Lunenburg children had a special education plan in FY2026 against 227 in FY2022. The share went 14.1% to 16.3%; had enrolment held, it would read 16.0%.
+> ### 258 Lunenburg children had a special education plan in FY2026 against 227 in FY2022.
 
-> , with the denominator separated out.  
+> , with the denominator separated out. The share went 14.1% to 16.3%; had enrolment held, it would read 16.0%.  
 > *— then/now*
 
 **If you are a resident:** Both halves are true and they are different sizes: the caseload did rise, and part of the rising percentage is fewer children in the schools.
@@ -831,9 +834,9 @@ The regulation runs the opposite way to the common assumption: a more separate p
 
 ### 5.4 Nothing published says where they went
 
-> ### No published record says which school a departing Lunenburg eighth grader went to. A vocational admission, a private school, a charter, a placement and a family moving are one number.
+> ### No published record says which school a departing Lunenburg eighth grader went to.
 
-> DESE publishes a rate by grade with no destination, and destinations with no grade, and never the join.  
+> DESE publishes a rate by grade with no destination, and destinations with no grade, and never the join. A vocational admission, a private school, a charter, a placement and a family moving are one number.  
 > *— document/document*
 
 **If you are a resident:** Anyone telling you why one in five eighth graders leaves is telling you something nobody measures.
@@ -978,9 +981,9 @@ misreading something they will be shown.
 
 ### 6.2 The override changed which cuts happened — and not the grant-funded ones
 
-> ### Two lists were published before the May 2024 ballot: 22 positions without an override, 9 with. The override passed 753–664, and 13 positions came off.
+> ### Two lists were published before the May 2024 ballot: 22 positions without an override, 9 with.
 
-> Every one of the 9 that stayed pairs to a post the district's own budget update lists as cut "due to loss of ESSER".  
+> Every one of the 9 that stayed pairs to a post the district's own budget update lists as cut "due to loss of ESSER". The override passed 753–664, and 13 positions came off.  
 > *— document/document*
 
 **If you are a resident:** What the town voted for bought back the posts it was paying for itself. The grant-funded ones ended either way.
@@ -1038,9 +1041,9 @@ misreading something they will be shown.
 
 ### 6.4 The bottom line is dependable and no single line in it is
 
-> ### No measured year's reported spending landed further than 2.6% from the budget beside it. Underneath that, only 198 of 576 line-years landed within 2% of their own line.
+> ### No measured year's reported spending landed further than 2.6% from the budget beside it.
 
-> , at two grains of the same document.  
+> , at two grains of the same document. Underneath that, only 198 of 576 line-years landed within 2% of their own line.  
 > *— document/document*
 
 **If you are a resident:** You can rely on the total and you should not read one line's number as a forecast of that line.
@@ -1094,9 +1097,9 @@ misreading something they will be shown.
 
 ### 6.6 The one line nobody can forecast is the one nobody controls
 
-> ### Across six measured years out-of-district tuition ran from 27.0% over budget to 51.5% under. Special education staffing never missed by more than 5.9%.
+> ### Across six measured years out-of-district tuition ran from 27.0% over budget to 51.5% under.
 
-> within one budget: the part the district controls against the part it does not.  
+> within one budget: the part the district controls against the part it does not. Special education staffing never missed by more than 5.9%.  
 > *— us/them*
 
 **If you are a resident:** When a child's plan requires a school the district cannot provide, the town pays another school — it does not set the price, does not choose how many children need it, and cannot say no. A year where tuition lands far from plan is not evidence that anybody planned badly.
@@ -1123,9 +1126,9 @@ misreading something they will be shown.
 
 ### 6.7 Three published figures for what athletics cost, and they disagree by 1.88 times
 
-> ### $185,355.62, $275,947.63 and $349,145.39 for one year of Lunenburg athletics. Per sport it is worse: Outdoor Track is $15,221.50 in one column and $1,146.00 in another.
+> ### $185,355.62, $275,947.63 and $349,145.39 for one year of Lunenburg athletics.
 
-> , and two of the three are **printed side by side on one page**.  
+> , and two of the three are **printed side by side on one page**. Per sport it is worse: Outdoor Track is $15,221.50 in one column and $1,146.00 in another.  
 > *— document/document*
 
 **If you are a resident:** Anybody quoting what a sport costs is quoting one of three numbers. Averaging them would be adding a claim the documents do not make.
@@ -1310,9 +1313,9 @@ misreading something they will be shown.
 
 ### 8.2 $1,110 for two high schoolers — and that is a floor
 
-> ### Two Lunenburg high schoolers, one sport each, riding the bus and joining a club, cost their family $1,110 in FY2027. Nine further charges have no published amount anywhere.
+> ### Two Lunenburg high schoolers, one sport each, riding the bus and joining a club, cost their family $1,110 in FY2027.
 
-> : what is priced against what is charged and not priced.  
+> : what is priced against what is charged and not priced. Nine further charges have no published amount anywhere.  
 > *— document/document*
 
 **If you are a resident:** No family and no committee can total a school year exactly.
@@ -1402,8 +1405,9 @@ invisible to everyone who did not read that page.
 
 ### 9.3 The town charges a bus fee and no ledger shows where it lands
 
-> ### The fee schedule is published and verified. The account `STUDENTBUS` shows zero. A charged fee with no observable destination is the clearest single gap in this model.
+> ### The bus fee schedule is published and verified, and the account `STUDENTBUS` shows zero.
 
+> A charged fee with no observable destination is the clearest single gap in this model.  
 > *— document/document*
 
 **If you are a resident:** You pay it. Nothing published says where it goes.
