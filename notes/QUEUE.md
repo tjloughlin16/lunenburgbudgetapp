@@ -859,3 +859,43 @@ and the archive holds no minutes for it.
 A search box that returns a wall of hits is a worse answer than the current script, which at
 least prints its denominator and its address per hit. Rank, group by board and by year, and
 make the citation the most prominent thing on every result.
+
+## 19. A Facebook group header image — SMALL, and waiting on a quiet machine
+
+TJ, 11 September 2026: *"can you add a task when memory is free: generate a facebook group
+header image to use"*.
+
+**Deferred on resources rather than on priority.** It was asked for while the machine was at
+8% free memory with three agents working; it is a small job and it needs a quiet moment
+rather than a queue slot behind the analyses.
+
+### What it is for
+
+The blog posts get shared into local town Facebook groups — that is the whole distribution
+plan (item 12b, and the blog tier built on 11 September). A group needs a header, and the
+header is the only thing every visitor sees before deciding whether this is a place that
+argues or a place that informs.
+
+### What it must and must not be
+
+**It is a banner for a group, not a card.** The four post formats have a measured design
+already (`fy28/src/components/ContentCard.tsx`, budgets in `scripts/check_content_cards.py`),
+and the header should belong to the same family — this site's tokens, not a mock's.
+
+- **Facebook group cover is 1640x856** and is cropped hard on mobile, so nothing that
+  matters may sit near an edge. Check the current dimensions before generating; Facebook
+  changes them.
+- **No figure on it.** Rule 2, in its sharpest form: a banner cannot be corrected, it is
+  seen more than anything else published here, and a number on it is stale the day a
+  generator runs. Say what the project IS, not what it found.
+- **It does not take a side.** Rule 8. The group header is the first impression of a
+  project whose whole claim is that it explains rather than argues, and a slogan would
+  spend that in one line.
+- **It carries the address**, because a screenshot of a Facebook post travels further than
+  the post does, and lunenburgbudgetproject.org is how somebody gets back.
+
+### How to make it
+
+Generate it from HTML the way the shareable post images are generated, rather than by hand
+in a design tool -- same pipeline, same tokens, reproducible, and regenerable when the
+design moves. If the post-image renderer exists by then, this is a second template in it.
