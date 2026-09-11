@@ -94,6 +94,15 @@ VINTAGES = (2023, 2018)
 # variable in the table, estimates and margins together, which is why they are fetched
 # whole rather than variable by variable: a hand-picked subset is a decision about what
 # matters made before anybody has looked.
+# One statewide table, fetched for EVERY Massachusetts municipality rather than for
+# Lunenburg alone. A rank is a claim about 350 other places, and quoting one from a query
+# nobody kept is a derived thing passed off as an observed one -- rule 13. So the whole
+# column is stored and the rank is recomputed from it.
+STATEWIDE = {
+    'B19013_001E': 'Median household income — every Massachusetts municipality, so '
+                   'Lunenburg can be ranked against them rather than described',
+}
+
 TABLES = {
     'B01001': 'Sex by age — the 65-and-over share, and every band beneath it',
     'B11005': 'Households by presence of people under 18 — the real denominator for '
@@ -180,6 +189,42 @@ def pivot(rows):
     return dict(zip(head, data))
 
 
+def collect_statewide(key, vintage):
+    """Median household income for every county subdivision in Massachusetts."""
+    var = sorted(STATEWIDE)[0]
+    url = ('%s?get=NAME,%s,%s&for=county%%20subdivision:*&in=state:%s&key=%s'
+           % (BASE % vintage, var, var[:-1] + 'M', STATE, key))
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=180) as r:
+                raw = r.read()
+            break
+        except TimeoutError:
+            print('  statewide %s: timed out, retrying (%d of 3)' % (vintage, attempt + 1))
+    else:
+        raise SystemExit('statewide %s: timed out three times' % vintage)
+    if not raw.lstrip().startswith(b'['):
+        raise SystemExit('statewide %s: %s' % (vintage, raw[:200].decode('utf-8', 'replace')))
+    rows = json.loads(raw.decode('utf-8'))
+    name, digest = save_raw(vintage, 'B19013-massachusetts', raw)
+    head, out = rows[0], []
+    for r in rows[1:]:
+        d = dict(zip(head, r))
+        est = d.get(var)
+        # -666666666 is the Census sentinel for "estimate not available", NOT a figure.
+        if est in (None, '', '-666666666'):
+            continue
+        out.append(dict(
+            vintage=vintage, table='B19013', variable=var, estimate=est,
+            moe=d.get(var[:-1] + 'M', ''), moe_note='',
+            geography=d.get('NAME', ''), about=STATEWIDE[var],
+            source_file=name, sha256=digest))
+    if len(out) < 300:
+        raise SystemExit('statewide %s returned only %d municipalities — Massachusetts '
+                         'has about 350, so something is filtered' % (vintage, len(out)))
+    return out
+
+
 def collect(key):
     out = []
     for vintage in VINTAGES:
@@ -203,6 +248,8 @@ def collect(key):
                               else ''),
                     geography=rec.get('NAME', ''), about=about,
                     source_file=name, sha256=digest))
+    for vintage in VINTAGES:
+        out.extend(collect_statewide(key, vintage))
     if not out:
         raise SystemExit('nothing collected — refusing to write an empty census file')
     return out

@@ -23,18 +23,24 @@ judgement, not before you have read one.
 The strongest group in the archive, because it is the one argument both boards are
 actually having and neither has the table.
 
-### 1.1 The same number of children is not the same children
+### 1.1 Why a school with fewer children is not a cheaper school
 
-> ### Lunenburg teaches 256 fewer children than in 2008 — and exactly as many children with disabilities: 258 then, 258 now.
+> ### Lunenburg teaches 256 fewer children than in 2008 — and the schools did not get cheaper. Exactly as many children with disabilities are still here, 258 then and 258 now, and losing a pupil takes about $150 of state aid with it rather than the $5,847 a pupil the aid works out to.
 
-> The count did not move while the school around it shrank, so the SHARE went 14.1% to 16.3%. Children in low-income households roughly doubled as a share, 10.0% to 25.2% — the largest change of the three, and the one to read with care, because DESE altered how it identifies low income part-way through the series. English learners went 3 to 70, the smallest of the three in children: +67 against +213.  
+> The count did not move while the school around it shrank, so the SHARE went 14.1% to 16.3%. Children in low-income households roughly doubled as a share, 10.0% to 25.2% — the largest change of the three, and the one to read with care, because DESE altered how it identifies low income part-way through the series. English learners went 3 to 70, the smallest of the three in children: +67 against +212.  
 > *— then/now*
 
-**If you are a resident:** Both things you have heard are true. There are fewer children and the same number of them need the most expensive help the schools provide, so a budget that tracks headcount and a budget that tracks need do not give the same answer.
+> **And the price of the thing rose, in the state's own books.** DESE's foundation budget — what the state calculates an adequate education for *these* children costs — went from $7,880.78 a pupil in FY2008 to $13,770.40 in FY2026, +74.7%, on 62 fewer foundation pupils. Over the years that can be compared like for like, actual against actual, Lunenburg's net school spending went $8,950.89 a pupil in FY2008 to $14,887.59 in FY2024, +66.3%, against +62.3% in the state's own foundation rate over the same span. Four mechanisms sit underneath that and each is its own item here: the aid barely moves with enrolment (2.1); the out-of-district tuition the 258 attract is set by other districts and by each child's plan, not by Lunenburg (4.1, 6.6); insurance grows faster than the levy that pays for it and $1,521,536 of the schools' share is not even in the school budget (3.1, 3.6); and costs are lumpy — a grade losing five children does not remove a seventh of a teacher, a bus route or a building.
+
+**If you are a resident:** Both things you have heard are true, and neither is somebody's fault. There are fewer children; the schools are not cheaper; and what connects them is that the expensive part of the work did not leave with the headcount, while the state's own price for a year of school rose 74.7% a pupil.
 
 **If you are a Finance Committee member:** The chart you were shown at Tri-Board measured headcount. This is the column beside it, from the same publisher, and it moves the other way.
 
 **If you are a School Committee member:** "Even flat staffing represents a reduction in effective capacity" is a claim about this table. The table is published for FY1992–FY2026 and the claim has never been put beside it.
+
+**What we expect the reader to take away**
+
+**Both are true.** There are 256 fewer children, and the schools are not cheaper — and the part a reader usually does not have is that neither of those is somebody's fault. The expensive work did not leave with the headcount: the aid barely moves with enrolment, the 258 children with the most expensive needs are all still here, insurance outgrows the levy, and a grade losing five children does not remove a bus route. Over the years that can be compared like for like, Lunenburg's spending for each pupil rose 66.3% while the state's own price for a year of school here rose 62.3% — so the town tracked the cost of the thing rather than outrunning it, which says nothing at all about whether the money bought the right things.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -42,8 +48,14 @@ actually having and neither has the table.
   arguing from and neither had. A resident needs it second, to judge the argument
   they are hearing.
 - **Format** — New Finding.
-- **Source** — `dese_enrollment`, Lunenburg district rows, verified against the database on
-  11 September 2026. **No page reads this table yet.** See item N1 in list 2.
+- **Source** — `dese_enrollment`, Lunenburg district rows, and `dese_ch70_formula`, district
+  level, for the foundation budget and the net school spending, both verified against the
+  database on 11 September 2026. The four mechanisms are
+  `fewer-students-does-not-mean-less-aid` and `chapter-70-moves-a-fraction-of-the-foundation-rate`
+  (2.1), `the-line-is-the-towns-share` and `tuition-is-the-line-nobody-can-forecast` (4.1, 6.6),
+  `the-school-budget-is-not-what-the-schools-cost` and
+  `insurance-outgrows-the-levy-that-pays-for-it` (3.1, 3.6); all measured. **No page reads
+  `dese_enrollment`'s need columns yet.** See item N1 in list 2.
 - **Strength — highest in the archive.** It is the FY27 override's central factual dispute,
   both sides are quoting real numbers, and the item takes no side.
 - **FOR:** The Finance Committee member and the School Committee member, together
@@ -52,6 +64,13 @@ actually having and neither has the table.
   `low_income` to FY2014, `economically_disadvantaged` FY2015–FY2021, and `low_income`
   again from FY2022. FY2008 against FY2026 is like for like on the field name and not on
   the collection method. The EL count and the SWD count are continuous and carry no break.
+- **Must carry** — the spending comparison is **stage-matched on purpose** (rule 1). FY2026
+  net school spending is `budgeted` in DESE's file and FY2008 is `actual`, so the growth
+  figure quoted runs FY2008 to FY2024, actual against actual. The FY2026 figure — $27,085,833,
+  $16,896.96 a pupil — is a budgeted stage and may not be differenced against an actual.
+- **Must carry** — **costs are lumpy** is a mechanism, not a measurement. Nothing in this
+  archive quantifies how much of a teacher, a route or a building a departing child removes;
+  `most-of-the-gap-is-the-denominator` is the nearest thing and it is about the peer set.
 
 </details>
 
@@ -67,6 +86,10 @@ actually having and neither has the table.
 **If you are a Finance Committee member:** The chart was one window of 171, and the archive publishes all of them.
 
 **If you are a School Committee member:** So is yours. Neither window is wrong and neither is the series.
+
+**What we expect the reader to take away**
+
+**Both charts are real.** Teacher staffing fell over the years one side quotes and rose over the years the other side quotes, because 95 of the 171 published pairs of years fall and 76 rise. Nobody is being misled and nobody has to be wrong: the sign is a property of the window rather than of the schools. What it leaves a reader with is one question worth asking out loud — what are the start year and the end year on this chart?
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -93,6 +116,10 @@ actually having and neither has the table.
 **If you are a resident:** The town prints staff rosters every year and they carry names without hours, so the state's file is the only place the size of this shift is visible at all.
 
 **If you are a Finance Committee member:** This is the single largest movement in the school workforce and it is not in any document the town publishes.
+
+**What we expect the reader to take away**
+
+**The rise is real and it is the largest movement in the school workforce**: lowest of thirteen districts to highest, 14.8 posts to 67.0. What sits beside it is that DESE counts staff paid from grants, circuit-breaker reimbursement and revolving funds exactly like staff the town appropriates, so the same series appears whether the town hired them or a grant did. Both are the district's own reported figures, and what connects them is a document nobody publishes — which makes this the size of a shift and a question to ask, not a line anybody can point to in the budget.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -121,6 +148,10 @@ actually having and neither has the table.
 
 **If you are a School Committee member:** The in-district special education escalator in this project's model is built on a line that this discrepancy sits underneath.
 
+**What we expect the reader to take away**
+
+**Both counts are the state's own and they disagree.** All-programme paraprofessionals rose while the special education count more than halved, and the difference between the two files grew by 34 posts. Neither file is wrong, and neither shows that anybody was reassigned, hired or cut — a reassignment, a recoding, and DESE changing what its special education table counts all produce this identical shape. The usable part is the caution: a paraprofessional figure quoted without naming which file it came from cannot be checked.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because the special education escalator rests
@@ -147,6 +178,10 @@ actually having and neither has the table.
 
 **If you are a Select Board member:** It is a like-for-like comparison of two published state figures, which is the kind that survives a Tri-Board.
 
+**What we expect the reader to take away**
+
+**Both things people say about Lunenburg teachers are true.** The money attached to each teacher is near the top of the group and the number of teachers spread across the children is the bottom of it — the same money, spread wider. That is not evidence that teachers are overpaid: an average salary is a mix of experience and seniority under a negotiated contract rather than a pay rate, and nothing here compares two districts at the same step. Nor does it say what either arrangement produces for a child.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is a like-for-like comparison of two state
@@ -172,6 +207,10 @@ actually having and neither has the table.
 **If you are a resident:** When somebody quotes a staff number, ask which of the two it is — the gap between them is ten posts in one year.
 
 **If you are a Finance Committee member:** The town's printed rosters are a headcount and cannot be set beside an FTE series. This is the size of the error that would be.
+
+**What we expect the reader to take away**
+
+**Both numbers are right.** The town's rosters count people and DESE counts full-time posts, so 123 and 112.8 are two correct answers to what sounds like one question. The error is in neither figure; it happens at the moment somebody sets one beside the other, and it is worth about ten posts in a single year. So when a staff number is quoted, the useful question is which of the two it is.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -200,6 +239,10 @@ actually having and neither has the table.
 **If you are a resident:** If you have heard that children leaving is draining our state aid: it is not the aid that leaves. Where a departure costs the town is the tuition that follows a child, which is a different number in a different place.
 
 **If you are a School Committee member:** A revenue argument built on per-pupil aid is out by two orders of magnitude. The aid is last year's aid plus an increase, and in FY2026 the whole increase was the Legislature's flat floor.
+
+**What we expect the reader to take away**
+
+**Both halves of what you have heard are true, and they are about different money.** Children leaving does cost the town, and it is not the state aid that leaves: the aid moves by about $150 a pupil, because it is last year's aid plus a flat increase rather than a payment per child. What does not follow is that enrolment stops mattering — a school choice transfer still takes a tuition payment with it, a different number in a different place. It is also a marginal rate and does not extrapolate to a large loss of pupils.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -230,6 +273,10 @@ actually having and neither has the table.
 
 **If you are a Town Manager / Select Board member:** The revenue line you hold level pending the Governor's budget is, for this town, almost entirely a legislative decision rather than a formula output.
 
+**What we expect the reader to take away**
+
+**The aid did go up, and the formula paid nothing for it.** Lunenburg's whole FY2026 increase was the flat minimum the Legislature sets — a rate chosen in Boston each spring rather than anything about what Lunenburg's schools cost or how many children are in them. That is not the town being short-changed: the floor is what every district on it receives, and Lunenburg is on it because the formula already says it gets more than it needs. For anybody holding a revenue forecast, the aid line is a legislative decision to watch rather than a local variable to manage.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is a revenue-forecast fact and the Town
@@ -255,6 +302,10 @@ actually having and neither has the table.
 
 **If you are a Finance Committee member:** A school budget that grows is increasingly a town bill, and that shift happens whether or not the district changes anything it does.
 
+**What we expect the reader to take away**
+
+**Both are true: there are fewer children, and the state's bill to the town for its own schools rose 37.8% since FY2019.** What connects them is that the required contribution is worked out from property values and income rather than from children, so a house rising in value moves it and a child leaving does not. That is a mechanism and not a grievance — the calculation is the same for every Massachusetts town and nobody in Lunenburg sets it, and it is not a tax bill but the floor under what the town must appropriate. **And both groups this lands on are real and large**: a Lunenburg householder aged 65 or over has a median household income of $72,935 against $129,183 for a householder aged 45 to 64, and 1,477 of the town's 4,529 households hold a child under 18.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen deliberately for this reader: their house rising in
@@ -264,7 +315,10 @@ actually having and neither has the table.
 - **Format** — New Finding.
 - **Source** — `the-local-share-is-rising-faster-than-the-aid` and
   `the-required-contribution-is-wealth-not-children` (both measured/sizes) ·
-  `/why-we-only-get-minimum-aid`
+  `/why-we-only-get-minimum-aid`. The two household figures in the takeaway are
+  `sources/data/census-acs.csv`, ACS 5-year 2023, Lunenburg town: B19049_004E and
+  B19049_005E, and B11005_002E against B11005_001E. Published by the Census Bureau, not
+  ours, and both groups are stated so neither is made the obstacle (rule 8).
 - **Strength — high.** It is the mechanism behind the tax bill, stated without telling
   anybody it is unfair.
 - **FOR:** A senior or a household without children in the schools
@@ -280,6 +334,10 @@ actually having and neither has the table.
 > *— document/document*
 
 **If you are a resident:** Two real figures, and using the wrong one moves the school-funding share from 35% to 43%. Both numbers appear in town documents.
+
+**What we expect the reader to take away**
+
+**Both figures are real and they are not the same figure.** All state aid to Lunenburg is $11,404,917 and Chapter 70 is 78.7% of it, and folding the two together moves the school-funding share from 35% to 43%. That is the error this project published for months and has corrected, so nothing here is about anybody else's conduct. The takeaway is to check which of the two you are holding before quoting a share.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -310,6 +368,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a Select Board member:** This is the number that makes a careless town-versus-school comparison wrong. Retiree health is the town's obligation under Chapter 32B rather than the School Committee's, which is why it sits where it sits.
 
+**What we expect the reader to take away**
+
+**Both are true: the school appropriation is what Town Meeting votes, and it is not what the town raises for the schools.** $1,521,536 of the schools' health insurance is appropriated to the town's insurance department instead. That is not a cost being hidden — retiree health is the town's obligation under Chapter 32B rather than the School Committee's, so the booking is the ordinary one and the district's own book states the active-employee line to the dollar. What it does change is any town-side-against-school-side comparison, which is out by 5.8% before it starts.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because this is the number that makes a careless
@@ -335,6 +397,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 **If you are a resident:** A budget line going up is not a cost going up. This is the clearest measurement on the site of why.
 
 **If you are a Finance Committee member:** Nothing about the buses had to change for the appropriation to double. What changed is which pot paid, and no document here says why.
+
+**What we expect the reader to take away**
+
+**Both are true, and that is the whole lesson**: the town's line for athletic transportation more than doubled and the bus bill itself fell. What changed is which pot paid, and no document in this archive says why — so this is not evidence that anybody moved money to pad a budget. Carry the habit rather than the figure: when a budget line moves, the first question is what else was paying for it.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -362,6 +428,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a Finance Committee member:** The shift is an outcome of grant programmes starting and ending and of what the town appropriates; nothing here separates them, and the share did not move in a straight line.
 
+**What we expect the reader to take away**
+
+**Both are true: your bill went up and the schools spent less.** The town's own share of school spending rose 8.4 points while spending across all funds did not, so the town can pay more for the same schools. It does not show that grants were taken away or that the town chose to absorb them — programmes starting and ending and what the town appropriates both move this share, and nothing here separates them. The $2,520,227 is ours and is a counterfactual: what those 8.4 points are worth at today's spending, not money anybody lost.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is the mechanism behind the sentence 'my
@@ -386,6 +456,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 **If you are a resident:** It was a handover and a reduction happening at the same time, and a function where the general fund rose is not a function that was made whole.
 
 **If you are a School Committee member:** Eight functions saw grants fall and the general fund fall further on top of them.
+
+**What we expect the reader to take away**
+
+**Both are true.** The town did pick up the bill for the grants, for 42.2% of the money, and the rest of the funding simply stopped. Neither half shows which posts survived: DESE names neither the grant nor the position, so a general fund rise beside a grant fall in the same function is equally consistent with two unrelated things happening at once. Read it as the size of the handover, not as a list of what came through it.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -413,6 +487,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a Town Manager / Finance Committee member:** Grant funding against that same function did not fall — it rose $179,646.
 
+**What we expect the reader to take away**
+
+**The grants ending was real, and it was not the biggest thing that happened that year.** Active-employee insurance rose more in FY2025 than the whole net fall in grant funding — and grant funding against that same function actually rose. That does not make insurance the reason the budget is hard in every year; this is one year, measured. It is a correction to a shorthand rather than a new headline cause.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is the correct answer to a question FinCom
@@ -435,6 +513,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 **If you are a resident:** Insurance takes a growing share of every increase the town votes, before anybody decides anything.
 
 **If you are a Select Board member:** At the 12 January 2026 Tri-Board the two health insurance increases together exceeded all of the year's new revenue by about $34,000, before Monty Tech, COLAs or any new position.
+
+**What we expect the reader to take away**
+
+**Both are true: the town votes an increase every year, and less of it is available every year.** Insurance grows about 4.3% a year against a levy Proposition 2½ raises 2.5% a year plus new growth, so it takes a growing share before anybody decides anything. That is a structural squeeze rather than a choice somebody made, and naming it argues for no particular remedy. The rate is appropriation against appropriation, so what is growing is the town's share — not necessarily the price of insurance.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -461,6 +543,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a Finance Committee member:** The district's restated figure equals DESE's general fund column in 11 of 12 comparable years and equals the all-funds column in none of them.
 
+**What we expect the reader to take away**
+
+**Both figures are real.** The out-of-district tuition line said $732,298 and $1,205,949 was spent, because the line is the town's share and not the bill. That is not a budget understated on purpose — every line here is net of whatever else pays for the thing, which is how the district's books are built and is stated in them. What it means for a reader is that the line can move without a single placement changing, and that nobody publishes which fund paid the other 39.3%.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because this line is the one most often quoted as
@@ -484,6 +570,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 **If you are a resident:** One residential placement can exceed several day placements together, so one family moving in or out moves this series more than any policy does. A single year of it means very little.
 
 **If you are a School Committee member:** This is the line the forward budget escalator is drawn from, and it is not a trend.
+
+**What we expect the reader to take away**
+
+**Both are true: out-of-district placement is expensive, and it is not running away with the budget.** Measured across every fund it peaked in FY2015 and FY2025 came in 42.4% below that peak. The conclusion to resist is the opposite one — that special education is therefore not a problem: one residential placement can exceed several day placements together, so this line moves with individual families rather than with policy. A single year of it means very little in either direction.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -511,6 +601,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a Finance Committee member:** Eligible expense minus threshold equals the net claim exactly in 13 of the 21 published years, so this is measured rather than described.
 
+**What we expect the reader to take away**
+
+**Both are true: the state does reimburse out-of-district tuition, and the town still carries the first slice of it every year.** A threshold comes off before anything is paid, so the reimbursement grows as costs grow and never reaches the beginning of the bill. Nobody created that shortfall — it is how the programme is written, which makes it something to plan against rather than something that went wrong.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because the threshold is a budgeting fact - the town
@@ -534,6 +628,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a School Committee member:** The regulation places zero limits on adults anywhere in its full text, checked on every build.
 
+**What we expect the reader to take away**
+
+**Both are true and neither explains the other**: Lunenburg has a lot of paraprofessionals, and its special education groups can be within the rule. The regulation caps how many children are in a group and places no limit anywhere on how many adults are in the room. So the rule cannot be used to argue that staffing is too high or too low — it is a floor under staffing for a given group size, and individual education plans add on top of it.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is the rule the School Committee is asked
@@ -556,6 +654,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 > *— assumed/mechanism*
 
 **If you are a resident:** More intensive placement means smaller groups by law, not larger ones.
+
+**What we expect the reader to take away**
+
+The regulation runs the opposite way to the common assumption: a more separate placement means a smaller group by law, not a larger one. That is part of why a more intensive setting costs more for each child — the rule itself puts fewer children with each educator, before anybody decides anything. It does not describe what any Lunenburg classroom actually holds.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -582,6 +684,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a School Committee member:** It is the closest published thing to the quantity everybody argues about, and it is not the money: a placement count says nothing about which fund paid or what any placement cost.
 
+**What we expect the reader to take away**
+
+**Both are true: placements fell a long way, and they have come partly back** — 30 in FY2015, 7 in FY2023, 10 in FY2025, printed in the annual town report every year since FY2011. The reading to resist is that the district brought children back in district to save money: nothing here tests that, and two lines moving in opposite directions is not a decision anybody can be shown to have made. A placement count is children, and it says nothing about which fund paid or what any placement cost.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is the town's own published count, printed
@@ -604,6 +710,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 > *— then/now*
 
 **If you are a resident:** Both halves are true and they are different sizes: the caseload did rise, and part of the rising percentage is fewer children in the schools.
+
+**What we expect the reader to take away**
+
+**Both are true and they are different sizes.** The caseload genuinely rose, 227 to 258, and part of the rising share is simply fewer children in the schools — had enrolment held, the share would read 16.0% rather than 16.3%. So the percentage is not an artefact of the denominator, and quoting it alone still overstates how much of it is the numerator. Ask for the count and the share together.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -630,6 +740,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 **If you are a resident:** This is a bill, not a cost: Chapter 70 paid straight to Monty Tech covers 54.2% of its budget and none of that is in Lunenburg's assessment.
 
 **If you are a Select Board member:** The town-wide requirement is the wealth calculation in all 20 published years, so enrolment never enters it. The split is each district's share of the town's foundation budget, holding to a tenth of a basis point in 19 of them.
+
+**What we expect the reader to take away**
+
+**Both are true: the Monty Tech assessment is real money on the town's ledger, and a child going there does not add to the town's bill.** The state sets one required contribution for the whole town and splits it between the town's two districts, so the assessment is a share moving rather than a new cost — and it is a bill rather than a cost, since Chapter 70 paid straight to Monty Tech covers 54.2% of its budget. The one thing that does not net out is that the state sets a larger foundation budget for a vocational pupil, so a move shifts more than a proportionate slice.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -659,6 +773,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a School Committee member:** The total barely moved while the three parts moved in different directions, one of them by half — and the three routes cost the town different amounts.
 
+**What we expect the reader to take away**
+
+**Both are true: children do leave, and school choice is not where most of them go.** 97 of the 177 go to Monty Tech, a district Lunenburg is a member town of — more than school choice and charters put together. Reading 'children who leave' as school choice alone understates the count by more than half and aims the argument at the route the town has least to do with. It says nothing about why any of them went; the three routes are counted here, not explained.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because 'children are leaving under school choice' is
@@ -683,6 +801,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 **If you are a resident:** It is one step, the same step every year — through a school closing, a new building and a pandemic. About 27 children a year.
 
 **If you are a School Committee member:** The district files the submission that produces this every 1 October, so the grade breakdown exists inside the district before the state publishes anything.
+
+**What we expect the reader to take away**
+
+**Both are true: one in five eighth graders does not come back, and every other grade sits between 3.0% and 6.4%.** The leaving is one step, the same step every year, through a school closing, a new building and a pandemic. What it does not establish is that families are rejecting Lunenburg High — nothing published says where a departing eighth grader went, and a vocational admission, a private school, a charter, a placement and a family moving are all inside the one number. What is established is where the decision point is: about 27 children a year, at one grade.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -709,6 +831,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a School Committee member:** What would close it is **one column** — DESE's residents-sending file with a grade on each row, or the district's own October SIMS submission broken out by exit grade and exit reason. The district files that to the state and does not report it to its own School Committee.
 
+**What we expect the reader to take away**
+
+**The rate is measured and the reason is published by nobody.** DESE gives a rate by grade with no destination, and destinations with no grade, and never the join — so anybody telling you why one in five eighth graders leaves is telling you something no document supports. That is not a claim that anyone is withholding it. One column would close it, and it is a column the district already files to the state every October.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the School Committee because the closing document
@@ -731,6 +857,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 > *— assumed/mechanism*
 
 **If you are a resident:** A town losing 10 children a year net and a town losing 90 and gaining most of them back are the same line on an enrolment chart and are not the same town.
+
+**What we expect the reader to take away**
+
+**Both are true: enrolment is falling, and about 90 children a year leave and are almost all replaced.** The leaving is nine times the net change, so a town losing 10 net and a town losing 90 and gaining 80 back are the same line on an enrolment chart and are not the same town. The balancing figure is a residual rather than a count of arrivals, so take the churn as an order of magnitude and not as a headcount.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -756,6 +886,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 
 **If you are a School Committee member:** The receiving district decides how many school choice seats to open and at which grades — a vote this committee takes annually. Whether the fall is fewer seats offered or fewer families applying is not published, and no document in this archive states what Lunenburg receives for a child who chooses in.
 
+**What we expect the reader to take away**
+
+**Both are true: the net has barely moved, and the two halves underneath it have moved a great deal.** Leaving is flat and arriving has fallen 70.6% since SY2014, from 51 to 15. The conclusion to resist is that nobody wants to come to Lunenburg: the receiving district votes how many school choice seats to open and at which grades, so fewer seats offered and fewer families applying produce an identical fall and nothing published separates them. No document here states what Lunenburg receives for a child who chooses in, either.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because the committee takes an annual vote on school
@@ -778,6 +912,10 @@ Rule 11's group. Every item here changes how a reader reads a number they will b
 > *— us/them*
 
 **If you are a resident:** It says nothing about what the difference buys, and nothing here says any family chose on spending.
+
+**What we expect the reader to take away**
+
+**Both are true: most children educated outside Lunenburg go to higher-spending districts, and nothing says spending is why.** Nothing in this archive asks a family why they left, and nothing here says what the difference buys. The comparison is also not like for like — a regional vocational or charter district is a different kind of thing, and the two virtual districts spend less. It is a fact about where they went, not about why.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -812,6 +950,10 @@ misreading something they will be shown.
 
 **If you are a School Committee member:** The FY2020 memo restoring a foreign language post and a 0.5 librarian is published, and both are absent from the budget presented for adoption four weeks later.
 
+**What we expect the reader to take away**
+
+**Both are true: the positions were published as cuts, and three of the eight were off the list four weeks later.** A cut list in February is a stage in an argument rather than a decision the town has taken. That does not make cut lists theatre — it means the document circulating in winter is not the record of what happened, and the state's own teacher counts agree with the withdrawal. The thing to look for is the budget presented for adoption, and the difference between the two.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the parent because a cut list naming their
@@ -836,6 +978,10 @@ misreading something they will be shown.
 
 **If you are a Select Board member:** This is the town's own record of what an override did, against the theory.
 
+**What we expect the reader to take away**
+
+**Both are true: the override saved positions, and the grant-funded ones ended anyway.** What the May 2024 vote bought back were the posts the town was paying for itself; every one of the nine that stayed pairs to a post the district's own update lists as cut for loss of ESSER. That is the town's own record of what an override did, set beside the theory of what one does, and it tells nobody how to vote on the next one. The pairing between the two documents' wordings is ours, and it is printed so it can be disagreed with.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it is the town's own record of what an
@@ -859,6 +1005,10 @@ misreading something they will be shown.
 **If you are a resident:** Somebody quoting one year's zero as a programme being cut is quoting the 29.5% case.
 
 **If you are a Finance Committee member:** A line at zero can also be a rename, a merge, or work that moved to a grant, and the budget book cannot tell those apart.
+
+**What we expect the reader to take away**
+
+**Both are true: things do get cut to zero, and most of them come back.** 93 of the 132 zeroed between FY2015 and FY2022 were funded again in a later year, so somebody quoting one year's zero as a programme ending is quoting the 29.5% case. A zero can also be a rename, a merge, or work that moved onto a grant, and the budget book cannot tell those apart — which cuts against reading a single zero as very much at all.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -888,6 +1038,10 @@ misreading something they will be shown.
 
 **If you are a Finance Committee member:** 125 of the 576 line-years missed by more than a quarter, in both directions, and salaries coming in 0.8% under nearly cancels everything else coming in 0.2% over.
 
+**What we expect the reader to take away**
+
+**Both are true, at two grains of the same document**: the bottom line is dependable and no single line in it is. The misses run in both directions and largely cancel, which is what a total landing within 2.6% means, so this is not evidence of sloppy budgeting. Carry it as a rule for reading a variance report — one line missing badly is the ordinary case, and the total missing badly is not.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because FinCom reads the line-level budget and is the
@@ -909,6 +1063,10 @@ misreading something they will be shown.
 > *— said/shown*
 
 **If you are a resident who has already decided the schools are not straight with them:** This is the test for the thing you suspect, run against the district's own books, and it does not find it.
+
+**What we expect the reader to take away**
+
+**The suspicion is a reasonable one and the test does not find it.** A padded budget shows up as the same lines over-provided year after year, and only 7 of the 98 lines with four or more measured years do that. It does not follow that the budget holds nothing worth cutting — this tests persistent padding, not whether any given line is the right size, and those are different questions. It is a negative result on one clearly stated hypothesis, published as prominently as anything critical would be.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -936,6 +1094,10 @@ misreading something they will be shown.
 
 **If you are a Finance Committee member:** A budget can be expected to be about right on the staffing and cannot be expected to be right on the placements.
 
+**What we expect the reader to take away**
+
+**Both are true, and they are different parts of one budget**: the district missed badly on out-of-district tuition and never missed by more than 5.9% on special education staffing. When a child's plan requires a school the district cannot provide, the town pays another school — it does not set the price, does not choose how many children need it, and cannot say no. So a year where tuition lands far from plan is not evidence that anybody planned badly, and equally it is not an excuse available to the lines the district does control.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen because it separates the part of the budget the
@@ -960,6 +1122,10 @@ misreading something they will be shown.
 **If you are a resident:** Anybody quoting what a sport costs is quoting one of three numbers. Averaging them would be adding a claim the documents do not make.
 
 **If you are a School Committee member:** No athletics decision can currently be made on the numbers the town holds. What would close it is the accounts-payable detail behind the warrants — a report the accounting system can already produce.
+
+**What we expect the reader to take away**
+
+**All three figures were published, and they disagree by 1.88 times** — per sport by a factor of thirteen. That is not somebody cooking the books: these are hand-assembled sheets counting different things, and two of the three are printed side by side on a single page by whoever built it. So no decision about athletics can currently be made on the numbers the town holds, and averaging them would add a claim the documents do not make. What would settle it is a report the accounting system can already produce.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -991,6 +1157,10 @@ misreading something they will be shown.
 
 **If you are a School Committee member:** More sections is not more choice — a fifth of them are groups averaging under five students and nothing published says what those teach.
 
+**What we expect the reader to take away**
+
+**Both are true: positions were cut, and the high school ran more classes than it did in SY2017** — 247 against 225, on flat enrolment, with the average class falling from 14.7 to 13.5. That does not establish that choice widened: a section is what ran, DESE files sections by subject area and never by course, and a fifth of them are groups averaging under five students. It answers 'did classes stop running'; it does not answer 'what can my child take'.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the parent because 'the cuts narrowed what my
@@ -1014,6 +1184,10 @@ misreading something they will be shown.
 **If you are a parent:** This is the subject residents actually came to a meeting about — a parent told the School Committee her seventh grader had practised French for three years and had just heard she might not be able to take it.
 
 **If you are a School Committee member:** **Read the series before concluding.** The school fell to the same 5 sections in SY2020 and was back above it the next year. What is different now is that it has stayed for two years.
+
+**What we expect the reader to take away**
+
+**Both are true: world language taking at the middle school halved, and the school has been here before.** It fell to the same 5 sections in SY2020 and was back above it the next year; what is different now is that it has stayed down for two. The data also does not show whether a language was offered and not chosen, or not offered at all — so read the series before concluding anything was cut.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -1041,6 +1215,10 @@ misreading something they will be shown.
 **If you are a resident:** Three measures pointing the same way for one subject and only one — which is what separates it from everything else on that page.
 
 **If you are a School Committee member:** A language schedule is set by people in this town, in a document this committee sees. That makes it something somebody can look at rather than a condition.
+
+**What we expect the reader to take away**
+
+**Both are true: foreign language narrowed on three independent measures, and that is not proof the schedule caused it.** The high school's own principal told the School Committee that courses are whittled away after student choices are entered, so a fall in sections and a fall in students choosing can be one thing measured twice. What is usable either way is that a language schedule is set in this town, in a document the committee sees — which makes it something somebody can look at rather than a condition.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -1070,6 +1248,10 @@ misreading something they will be shown.
 
 **If you are a School Committee member:** The LHS master schedule, or the district's own Student Course Schedule submission to DESE, holds the course records the published aggregate is built from. Neither is published.
 
+**What we expect the reader to take away**
+
+**Both are true: the high school runs more sections than it did, and a fifth of them are in a category nobody publishes the contents of.** Miscellaneous is a reporting bucket in a state file rather than a description of a class, and it carries about the same share of students it did in SY2017 — so this is not a fifth of a child's day being filler. What is established is that the largest mover in the section count is the one category nobody can see inside.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the parent because a fifth of their child's
@@ -1097,6 +1279,10 @@ misreading something they will be shown.
 
 **If you are a School Committee member:** You vote the fee schedule, including the sibling discount and the reduced rate. For the year now running the district publishes no reduced or waived rate at all, so the cheaper half of this comparison cannot currently be drawn.
 
+**What we expect the reader to take away**
+
+**Both are true: the fee schedule is published and voted, and the same three children cost two households a factor of five apart.** 'Parents should pay more' is therefore an argument about *which* parents before it is an argument about how much. It does not say either figure is wrong or that anybody is unfairly subsidised — the sibling discount and the reduced rate are doing what they were written to do. Nothing published counts how many families sit in each tier, so this prices three households and cannot weight them.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the committee because they vote the fee schedule
@@ -1123,6 +1309,10 @@ misreading something they will be shown.
 **If you are a resident:** No family and no committee can total a school year exactly.
 
 **If you are a School Committee member:** Preschool, extended day, field trips and device repair are sold by the district with no published amount in this archive.
+
+**What we expect the reader to take away**
+
+**Both are true: $1,110 is a real figure, and it is a floor rather than a total.** Nine further charges a Lunenburg family can be asked for have no published amount anywhere, so no family and no committee can total a school year exactly. That is a documentation gap and not a claim that the charges are too high — and the unpriced ones are named, which is what makes it something a committee could fix.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -1154,6 +1344,10 @@ invisible to everyone who did not read that page.
 
 **If you are a Town Clerk / Select Board member:** What closes it is OCR — which produces *our* rendering rather than the town's words — and, for the 50 documents the town lists and we do not hold, a records request in a text-bearing format.
 
+**What we expect the reader to take away**
+
+**Both are true: the town publishes a great deal of its meeting record, and a quarter of what this project holds cannot be searched at all.** Almost all of the unsearchable documents are photographs of pages, which is a scanning practice rather than a refusal. What it changes is the weight of 'nobody ever raised that' — an unreadable document and a subject nobody mentioned produce the identical empty result, and coverage is uneven between boards. It bounds what any search of this record can claim, ours included.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the sceptical reader because it is the archive
@@ -1177,6 +1371,10 @@ invisible to everyone who did not read that page.
 **If you are a resident:** This is the single load-bearing unknown in the whole archive. It is what the in-district special education escalator rests on.
 
 **If you are a Finance Committee member:** One document closes it: **DESE's End of Year Financial Report, Schedule 1**, which separates district spending by fund. It is a return the district already files.
+
+**What we expect the reader to take away**
+
+**Both are true, and that is the problem**: a budget line rises when the district employs more people, and it rises when a grant stops paying for people already there. The two are identical on the page, which is what makes this the single load-bearing unknown in the archive. It is not a claim that anybody is concealing it — one return the district already files separates spending by fund — but until somebody obtains it, every staffing-cost argument in this town rests on a distinction nobody can draw.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
@@ -1203,6 +1401,10 @@ invisible to everyone who did not read that page.
 
 **If you are a Finance Committee member:** The district's own FY27 workbook asks the question in its comments column — *"Does this reflect a reduction of $50K to accound for the money planned to come from the busing fees?"*
 
+**What we expect the reader to take away**
+
+**Both are true: the fee is charged and published, and the account shows zero.** A fee netted against the line it pays for would produce exactly this picture, and the district's own FY27 workbook asks in its comments column whether that is what is happening. So what is established here is a missing document, not missing money — and which one it is has a one-line answer somebody in Town Hall already knows.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the paying household because it is their own
@@ -1227,6 +1429,10 @@ invisible to everyone who did not read that page.
 
 **If you are a Town Manager / Finance Committee member:** DLS CS 1-ER and CS 1-EB, FY2021–FY2027. It is a public download from mass.gov.
 
+**What we expect the reader to take away**
+
+**Both are true: the state publishes its statement of what it will send Lunenburg, and this archive holds it for no year.** So aid forecast error can currently be reported only as one net line that lumps Chapter 70, UGGA and every other receipt together. That is our gap rather than the town's, and the documents are a free download from mass.gov — the cheapest thing on the gap register to close.
+
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
 - **Why this reader** — Chosen for the bodies that set a tax rate against it. The
@@ -1250,6 +1456,10 @@ invisible to everyone who did not read that page.
 
 - **As any board member.** The FinCom Chair circulated all three documents to his own
   committee on 23 July 2026, so they exist and are easy to obtain from the Town Clerk.
+
+**What we expect the reader to take away**
+
+**Both are true: the charter is quoted often, and nobody in this archive can check a quotation of it.** Every charter citation here is secondhand inside somebody's minutes, the Superintendent's included. That is not a dispute about what the charter says — it is that who holds which budget authority cannot currently be settled here in either direction. The documents exist and the Town Clerk has them, which makes this a request rather than a mystery.
 
 <details><summary>metadata — who it is for, where it comes from, how strong</summary>
 
