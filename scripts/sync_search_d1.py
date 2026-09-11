@@ -98,7 +98,9 @@ def run_file(path, attempts=4):
         if r.returncode == 0:
             return r.stdout
         text = r.stdout + r.stderr
-        if 'fetch failed' in text or 'ECONNRESET' in text or 'ETIMEDOUT' in text:
+        # ...and an OAuth token that expired mid-run: 'Authentication error [code: 10000]'
+        # once, two hours in, on a token that worked before and after.
+        if any(x in text for x in ('fetch failed', 'ECONNRESET', 'ETIMEDOUT', 'Authentication error')):
             wait = 15 * (i + 1)
             print('  network error on upload; retrying in %ds (%d/%d)' % (wait, i + 1, attempts))
             time.sleep(wait)
@@ -162,7 +164,10 @@ def plan(local):
 
 
 def push(limit, dry_run):
-    local = sqlite3.connect(B.DB)
+    # A rebuild of the index while a push is reading it raised `database is locked` and
+    # killed a run two hours in. The timeout waits out a rebuild's write transaction
+    # rather than dying; a push and a rebuild still should not be run together.
+    local = sqlite3.connect(B.DB, timeout=300)
     local.row_factory = sqlite3.Row
     ensure_schema()
     want, have, to_send, to_delete = plan(local)
@@ -188,8 +193,9 @@ def push(limit, dry_run):
         print('deleted %d file(s) remotely' % len(to_delete))
 
     # Then inserts, file by file, in SQL files of a few thousand rows. A file's
-    # indexed_file row is written in the SAME SQL file as its last rows, after them, so a
-    # run that dies mid-way leaves files either wholly present or wholly absent.
+    # indexed_file row follows its last rows, and its rows are deleted before they are
+    # inserted, so a run that dies mid-way is repaired by the next run rather than
+    # doubled by it.
     written, sent_files, batch, batch_rows, n_files = 0, 0, [], 0, 0
     cols = ','.join(B.COLS)
 
@@ -215,6 +221,13 @@ def push(limit, dry_run):
                   % (limit, len(to_send) - sent_files))
             break
         rows = local.execute('SELECT %s FROM search WHERE file_key=?' % cols, (k,)).fetchall()
+        # wrangler runs a file in CHUNKS, not one transaction: an upload that dies midway
+        # leaves earlier chunks committed. A file can therefore have its rows in the
+        # remote and no indexed_file marker -- 709 minutes files were in that state after
+        # a dropped connection -- and re-sending it blind would double them. So every
+        # file's rows are deleted before they are inserted; on a clean file that costs
+        # nothing.
+        batch.append('DELETE FROM search WHERE file_key = %s;' % q(k))
         vals, size = [], 0
         for r in rows:
             v = '(%s)' % ','.join(q(r[c]) for c in B.COLS)
@@ -285,12 +298,18 @@ def record_counts(written):
 
 
 def check():
-    local = sqlite3.connect(B.DB)
+    local = sqlite3.connect(B.DB, timeout=300)
     local.row_factory = sqlite3.Row
     lc = {r['corpus']: r['n'] for r in
           local.execute('SELECT corpus, COUNT(*) n FROM search GROUP BY corpus')}
     rc = remote_counts()
     bad = 0
+    # A row present twice is the failure the chunked upload makes possible, and a count
+    # that happens to match would hide it; ask for it directly. Reads every row once.
+    dup, _ = command('SELECT COUNT(*) - COUNT(DISTINCT doc_key) AS n FROM search')
+    if dup and dup[0]['n']:
+        print('  %d duplicated row(s) in the remote -- re-run the sync; it deletes before it inserts' % dup[0]['n'])
+        bad += 1
     for c in sorted(set(lc) | set(rc)):
         flag = '' if lc.get(c, 0) == rc.get(c, 0) else '   <-- DIFFERS'
         bad += bool(flag)
