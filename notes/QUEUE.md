@@ -849,6 +849,19 @@ show the outcome of both and separate neither.
 
 ## 18. SEARCH, exposed in the app — minutes AND transcripts, on the site
 
+**BUILT, 11 September 2026** (`1cab0247`), and wider than written: `/search` and
+`/api/search` cover five corpora — pages, published posts, archive documents by page,
+minutes, transcripts — in one FTS5 table in its own D1 database. All five constraints
+below are met and each is named in the code: two denominators on every result including
+an empty one; a transcript hit styled as a transcript and cited to the video at a
+timestamp; a curated vocabulary (`sources/data/search-vocabulary.csv`) for the words
+residents type, no embeddings; D1 FTS5 was measured before design (1 row written per
+chunk, ~1 read per hit) and each corpus is searched through a 2,000-row subselect; the
+page prints the build date and per-corpus holdings. The index is pushed incrementally
+by `sync_search_d1.py` inside the shared 100,000-writes-a-day budget — the first load is
+two runs on two days by design.
+
+
 TJ, 10 September 2026: *"I also think we need to expose 'search minutes and transcripts' as
 a search capability in the app as well, that can connect to this DB tool. Lets queue this up
 for after the page work is done."*

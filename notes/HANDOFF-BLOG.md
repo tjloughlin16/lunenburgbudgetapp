@@ -90,18 +90,20 @@ it is byte-for-byte what a resident gets.
 
 ## WHAT IS OWED — the editorial pass TJ asked for and I have not done
 
-1. **Pick the post order.** TJ: *"pick the ones that you think the community cares about
+1. **Pick the post order** — AFTER Tiffany has reviewed the package. TJ: *"pick the ones that you think the community cares about
    most."* `notes/process/BLOG-PLAN.md` suggests 1.2, 2.1, 1.1, 3.1, 6.4 with an argument
    for each; the ordering reasoning there is good and worth keeping — 1.1 is deliberately
    third because it reads better once 1.2 has established that two true charts can disagree.
-2. **Fix the 14 flagged headlines.** All 14 are the same problem: the headline runs past
+2. ~~**Fix the 14 flagged headlines.**~~ **DONE, 11 September** (`da32bb53`, `65a0f0f6`): every
+   headline is one sentence inside both budgets. All 14 were the same problem: the headline runs past
    ~125 characters and Facebook cuts it mid-sentence at "See more". `python3
    scripts/check_content_cards.py` lists them. Fixing a headline fixes the card and the
    post together — it is the same 126-character budget, measured off the rendered card.
-3. **Item 1.4 does not open with its headline.** Every other post does. Unverified whether
-   that is a real gap or my check misreading a headline that begins with a figure.
-4. **Zip the PDFs with their Facebook posts** for Tiffany, the collaborator, to review by
-   email.
+3. ~~**Item 1.4 does not open with its headline.**~~ **DONE.** It did open with it — but the
+   headline was three clauses and the composer takes the first sentence only, so the post
+   opened *"All programmes: 57.0 posts to 67.0."* It is one sentence now.
+4. ~~**Zip the PDFs with their Facebook posts**~~ **DONE.** `build/lunenburg-budget-project-drafts.zip`
+   — README with each post's text, `posts/` PDFs, `images/` share cards. Sent to TJ 11 September.
 
 Then TJ's stated sequence: **deploy `/lunenburg-by-the-numbers` and the favicon, then the
 blog scaffolding — which is a no-op for viewers because nothing is published.**
@@ -136,17 +138,36 @@ looks like it has.
 
 1. **NOW** — finish the blog (above), the Facebook header, the favicon. The transcript
    backfill runs underneath and costs no attention.
-2. **NEXT — search across EVERYTHING.** Every page, every blog post, every source document,
+2. ~~**NEXT — search across EVERYTHING.**~~ **BUILT 11 September** (`1cab0247`); see
+   QUEUE item 18. What remains is operational: the first D1 load is two runs on two days
+   (`python3 scripts/sync_search_d1.py`, then `--check`), and after any deploy that
+   changes pages, `build_search_index.py` then the sync. Original note follows. Every page, every blog post, every source document,
    every minute. TJ's reason is a deadline in disguise: *"People need to be able to find
    things once we start pushing people here."* The blog exists to bring strangers from
    Facebook, and a stranger who searches for the one thing they care about and finds
    nothing concludes the site does not have it. **The index must be built to TAKE blog
    posts that do not exist yet.** `notes/QUEUE.md` item 18 has the five constraints; its
    scope is written for minutes only and is now much wider.
-3. **THEN** the refresh mechanisms and the meeting digests (12, 12a). 12a is still *"the
+3. **THEN — minutes from the transcripts.** Inserted by TJ on 11 September, ahead of
+   the refresh work. 590 machine transcripts are held and most School Committee
+   meetings have no other surviving record. The job: **write our own minutes for every
+   transcript**, in a fixed format, stored beside the meeting's agenda and its official
+   minutes where those exist. What TJ wants first in each: **votes taken** (not the
+   procedural ones — adjournment, approving prior minutes), **budget items discussed**,
+   **transfers**, **decisions made**, and **topics with their resolutions**.
+
+   The order is the point: (a) process one or two School Committee transcripts by hand
+   to find the format; (b) build the generator that produces minutes for any transcript,
+   stores them, and links them to the agenda and official minutes; (c) render a page or
+   two in that format for TJ to review; (d) only once approved, run it across all 590.
+   Rule 7 and rule 13 apply with full force — a caption is a derived rendering of what
+   was said, every figure in it is `stated`, and a vote read off a caption is a claim
+   about the recording, cited to the video at its timestamp, never to a document.
+
+4. **THEN** the refresh mechanisms and the meeting digests (12, 12a). 12a is still *"the
    actual point"*.
-4. **AT THE END, for now** — items 13-17, deferred as a block.
-5. **Paused, not dropped**: pages 7, 8 and 9 of the nine-page order — enrollment, circuit
+5. **AT THE END, for now** — items 13-17, deferred as a block.
+6. **Paused, not dropped**: pages 7, 8 and 9 of the nine-page order — enrollment, circuit
    breaker, AP coursework. Data for all three is loaded.
 
 ---
