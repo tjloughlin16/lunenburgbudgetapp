@@ -147,7 +147,7 @@ actually having and neither has the table.
 
 > ### In one state file paraprofessionals rise, 57.0 to 67.0 posts; in another the special education ones fall, 44.0 to 20.0.
 
-> FY2020 to FY2025. The difference between the two files rose by 34 posts.  
+> The difference between the two files rose by 34 posts over FY2020 to FY2025.  
 
 > *— document/document*
 
