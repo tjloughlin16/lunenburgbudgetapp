@@ -74,6 +74,11 @@ CHECKS = [
     # leaked post looks exactly like a published one to anybody who fetches it.
     ('build_blog.py', ['--check']),
     ('verify_blog.py', []),
+    # THE SEARCH INDEX, and the town's-words-for-ours vocabulary it publishes. The index
+    # is derived from every text file, the built site and blog.json; `--check` recomputes
+    # every input's sha256 against what was indexed. A search over a stale index is a
+    # search that says "nobody said it" about things that were said last week.
+    ('build_search_index.py', ['--check']),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a
     # conclusion, or stopped publishing one, and the synthesis still says the old thing.

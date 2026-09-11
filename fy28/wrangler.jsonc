@@ -31,7 +31,12 @@
     // the published data goes stale. Here the worst case is this form saying "try again
     // tomorrow" while everything else carries on.
     { "binding": "QUESTIONS", "database_name": "lunenburg-questions",
-      "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" }
+      "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" },
+    // The full-text index over everything the site holds, for /api/search. Its own
+    // database for the same reason: it is 97,000 rows, pushed incrementally by
+    // scripts/sync_search_d1.py, and a push must not take /api/query dark.
+    { "binding": "SEARCH", "database_name": "lunenburg-search",
+      "database_id": "b49eb3b2-eb17-4b3a-812e-f4ba09ec7d02" }
   ],
   "r2_buckets": [
     { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
@@ -42,7 +47,9 @@
         { "binding": "DB", "database_name": "lunenburg-budget",
           "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" },
         { "binding": "QUESTIONS", "database_name": "lunenburg-questions",
-          "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" }
+          "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" },
+        { "binding": "SEARCH", "database_name": "lunenburg-search",
+          "database_id": "b49eb3b2-eb17-4b3a-812e-f4ba09ec7d02" }
       ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
@@ -53,7 +60,9 @@
         { "binding": "DB", "database_name": "lunenburg-budget",
           "database_id": "9e2f3f8a-32c8-46e4-b26e-917a8b180a72" },
         { "binding": "QUESTIONS", "database_name": "lunenburg-questions",
-          "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" }
+          "database_id": "ad68c757-4d08-49df-b7da-d4067526365d" },
+        { "binding": "SEARCH", "database_name": "lunenburg-search",
+          "database_id": "b49eb3b2-eb17-4b3a-812e-f4ba09ec7d02" }
       ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }

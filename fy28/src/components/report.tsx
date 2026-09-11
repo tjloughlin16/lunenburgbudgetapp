@@ -672,8 +672,12 @@ export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string 
  *  theirs at /docs/analyses/<id>.md, which is rule 12's third leg. */
 export function ReportShell({
   tab, kicker, title, standfirst, err, loading, dataUrl, sourceUrl, meta, children,
+  noPrint,
 }: {
   title: React.ReactNode
+  /** A page that is an instrument rather than a document -- the search box -- has
+   *  nothing to print. */
+  noPrint?: boolean
   /** The page's own tab. The kicker is derived from the area it belongs to, so it cannot
    *  go stale the way six hand-typed ones had: they still read `The money` after those
    *  reports moved into the Analyses area. Rule 2 applied to a word rather than a figure. */
@@ -705,7 +709,7 @@ export function ReportShell({
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05]
                            max-w-3xl">{title}</h1>
           </div>
-          <PrintButton />
+          {!noPrint && <PrintButton />}
         </div>
         {standfirst && (
           <p className="mt-5 text-lg leading-relaxed max-w-2xl"

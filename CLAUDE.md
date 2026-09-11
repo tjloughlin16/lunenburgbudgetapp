@@ -934,6 +934,12 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   a full replace is ~51,000 rows against a
                                                 #   free-tier limit of 100,000 writes a day
     python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree
+    python3 scripts/build_search_index.py       # one FTS index over pages, posts, documents, minutes, transcripts
+    python3 scripts/build_search_index.py --check    # ...and fail if any input has changed since
+    python3 scripts/sync_search_d1.py           # push it to D1, INCREMENTALLY, inside the shared
+                                                #   100,000-writes-a-day budget; never the same day
+                                                #   as a full sync_d1.py
+    python3 scripts/sync_search_d1.py --check   # ...and fail if the two copies disagree
     python3 scripts/build_question_bank.py      # 107 questions, each run against the database
     python3 scripts/build_question_bank.py --check   # ...and fail if one stops answering
     python3 scripts/watch_meetings.py --seed     # adopt what we hold, announcing nothing

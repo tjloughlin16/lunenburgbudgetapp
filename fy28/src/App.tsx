@@ -41,6 +41,7 @@ import { PeerSpending } from './pages/PeerSpending'
 import { CourseOfferings } from './pages/CourseOfferings'
 import { LunenburgByTheNumbers } from './pages/LunenburgByTheNumbers'
 import { Blog } from './pages/Blog'
+import Search from './pages/Search'
 // LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
 // reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
 // production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
@@ -350,6 +351,23 @@ export default function App() {
               resident can check it, and evidence reachable only on a desktop is a weaker
               claim than it sounds. */}
           <div className="flex items-center gap-1.5 ml-auto min-w-0 shrink-0">
+            {/* Search sits beside Sources for the same reason Sources is here: it backs
+                every area. A magnifier alone is the one icon everybody reads, so on a
+                phone the word goes and the glyph stays. */}
+            <button onClick={() => go('search')} title="Search everything this project holds"
+              aria-label="Search"
+              aria-current={tab === 'search' ? 'page' : undefined}
+              className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded
+                         whitespace-nowrap shrink-0"
+              style={{ background: tab === 'search' ? 'var(--surface-3)' : 'transparent',
+                       color: tab === 'search' ? 'var(--text-primary)'
+                                               : 'var(--text-secondary)' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" />
+              </svg>
+              <span className="hidden sm:inline">Search</span>
+            </button>
             <button onClick={() => go('sources')} title="Every document this is built on"
               aria-current={tab === 'sources' ? 'page' : undefined}
               className="inline-flex text-xs font-semibold px-2 py-1 rounded
@@ -456,6 +474,7 @@ export default function App() {
       {/* The archive at /blog and every post at /blog/<slug>, one component for both --
           the slug is the second path segment, the same shape /analysis/<id> uses. */}
       {tab === 'blog' && <Blog />}
+      {tab === 'search' && <Search />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}

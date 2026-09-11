@@ -49,6 +49,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   // and `analysisIdFromPath` below reads it. See pages/Analysis.tsx for why the documents
   // are rendered rather than transcribed.
   | 'analysis'
+  | 'search'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -307,6 +308,10 @@ export const SLUG: Record<Tab, string> = {
   // the town's money. A post is shared into a Facebook group and the address travels with
   // it, so it has to read as an address somebody would click from a feed.
   blog: 'blog',
+  // THE ONE WORD. A search box is the most-understood affordance on the web and it is
+  // reached by typing the word; `find` is what the /minutes/find/ endpoint for callers
+  // uses and is accepted as an alias.
+  search: 'search',
   // The name everybody in town says out loud, and nothing else. NOT
   // `regional-vocational-assessment`, which is the accounting shape of the thing and what
   // nobody calls it; NOT `montachusett`, which is also a planning commission, a transit
@@ -554,6 +559,7 @@ const ALIASES: Record<string, Tab> = {
   'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
+  search: 'search', find: 'search', 'search-minutes': 'search', 'search-everything': 'search',
   // /worth-knowing WAS A PAGE AND IS NOW THE BLOG. It rendered all 48 items as cards from
   // a published payload, with the editorial apparatus on every one -- which put copy
   // nobody had decided to publish on the public site, and made a worklist into a product.
@@ -598,6 +604,7 @@ export const LABEL: Record<Tab, string> = {
   development: 'Development',
   solved: 'What solved would require',
   sources: 'Sources',
+  search: 'Search — everything this project holds',
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
