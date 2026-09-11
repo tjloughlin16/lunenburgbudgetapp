@@ -72,6 +72,26 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           style={{ color: 'var(--text-secondary)' }}>
           An independent tool for residents. Pick your depth.
         </p>
+        {/* THE SEARCH BOX, ON THE FRONT PAGE. TJ, 11 September, on seeing /search: "We
+            need to put an indicator on the home page that users can search." The
+            indicator is the box itself: a text field is the one affordance on the web
+            that needs no label, and a sentence saying "you can search" would be weaker
+            than the thing. It is not a door -- it goes to nowhere in particular -- so it
+            sits with the header, above the set, and stays narrow. */}
+        <form className="mt-4 flex gap-2"
+          onSubmit={e => {
+            e.preventDefault()
+            const q = (new FormData(e.currentTarget).get('q') as string || '').trim()
+            window.location.assign('/search' + (q ? '?q=' + encodeURIComponent(q) : ''))
+          }}>
+          <input name="q" type="search" aria-label="Search everything this project holds"
+            placeholder="Search the budgets, the minutes, the meetings…"
+            className="flex-1 min-w-0 px-3 py-2 text-[15px] rounded-lg border"
+            style={{ background: 'var(--surface-2)', borderColor: 'var(--grid)',
+                     color: 'var(--text-primary)' }} />
+          <button type="submit" className="px-3.5 py-2 text-sm font-semibold rounded-lg shrink-0"
+            style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
+        </form>
       </header>
 
       {/* One column, always. The rows are the whole page on a phone; two columns would
