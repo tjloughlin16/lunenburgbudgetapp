@@ -10,6 +10,14 @@ export PATH="/Users/tj/.nvm/versions/node/v22.22.2/bin:/usr/local/bin:/usr/bin:/
 cd /Users/tj/lunenburgbudgets || exit 1
 mkdir -p build/refresh-logs
 LOG="build/refresh-logs/$(date +%Y-%m-%d).log"
+# ONCE A DAY, WHENEVER THE MACHINE IS ON. launchd fires this at 9:00 and again at every
+# login/boot (RunAtLoad), because the Mac is not always on at 9:00: asleep, launchd runs
+# it on wake; powered off, the 9:00 firing is lost and the next boot catches it. The
+# guard makes the second firing a no-op on a day that already ran.
+if grep -q "=== finished" "$LOG" 2>/dev/null; then
+  echo "already ran today ($(date)); nothing to do" >> "$LOG"
+  exit 0
+fi
 {
   echo "=== daily refresh started $(date) ==="
   python3 scripts/refresh.py --deploy

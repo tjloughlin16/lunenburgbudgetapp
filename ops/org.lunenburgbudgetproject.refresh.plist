@@ -5,6 +5,7 @@
   <key>Label</key><string>org.lunenburgbudgetproject.refresh</string>
   <key>ProgramArguments</key>
   <array><string>/bin/bash</string><string>/Users/tj/lunenburgbudgets/scripts/daily_refresh.sh</string></array>
+  <key>RunAtLoad</key><true/>
   <key>StartCalendarInterval</key>
   <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
   <key>StandardOutPath</key><string>/Users/tj/lunenburgbudgets/build/refresh-logs/launchd.out</string>
