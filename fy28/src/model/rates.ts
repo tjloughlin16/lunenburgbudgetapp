@@ -822,13 +822,13 @@ export interface FirstYears {
   feeShareOfCeiling: number | null
 }
 
-const holdsWith = (rates: Record<Bucket, number>, years: number,
+export const holdsWith = (rates: Record<Bucket, number>, years: number,
                    over: Partial<Scenario>, stateAidGrowth = DEFAULT_SCENARIO.stateAidGrowth) =>
   run(years, { ...DEFAULT_SCENARIO, rates, stateAidGrowth, ...over })
     .every(y => y.gap <= 0)
 
 /** Smallest x that works, or null if the largest sane x does not. */
-function least(ok: (x: number) => boolean, hi: number): number | null {
+export function least(ok: (x: number) => boolean, hi: number): number | null {
   if (!ok(hi)) return null
   let lo = 0
   for (let i = 0; i < 50; i++) {

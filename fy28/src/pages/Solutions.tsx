@@ -2,6 +2,7 @@ import type { Tab } from '../routes'
 import { ReportShell, useReport } from '../components/report'
 import { COST_GROWTH_BLENDED } from '../model/engine'
 import { BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES } from '../model/rates'
+import { FUTURES, MENU } from '../model/futures'
 
 const TAB: Tab = 'solutions'
 const DATA = '/data/model.json'
@@ -52,7 +53,8 @@ function Body({ d }: { d: Model }) {
   const business = d.headlines.find(h => h.id === 'business')!
   const pkg = d.recommendation.package
   const pkgTotal = pkg.reduce((s, p) => s + p.value, 0)
-  const overrideBill = d.taxBase.avgHomeBill * (gap / d.taxBase.levy)
+  // The model's own treadmill figure, not this page's arithmetic -- one override number on the page, not two.
+  const overrideBill = MENU.overrideYearOne
   const freeCashC = d.conclusions.find(c => c.n === 17)
   const v = (id: string) => pkg.find(p => p.id === id)?.value ?? 0
   // THE RATE SIDE. Costs grow at the blended rate, revenue at the levy cap plus new
@@ -84,10 +86,31 @@ function Body({ d }: { d: Model }) {
       <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
         <div><div className="text-3xl font-bold tnum" style={{ color: 'var(--status-critical)' }}>{gapH.value}</div><div className="text-sm max-w-xs" style={{ color: 'var(--text-secondary)' }}>short, every year — {gapH.sub.charAt(0).toLowerCase() + gapH.sub.slice(1)}</div></div>
         <div><div className="text-3xl font-bold tnum">{usd(pkgTotal)}</div><div className="text-sm max-w-xs" style={{ color: 'var(--text-secondary)' }}>a year from the fees and trims below that cut no program — about {Math.round(100 * pkgTotal / gap)}% of the gap</div></div>
-        <div><div className="text-3xl font-bold tnum">{usd(overrideBill)}</div><div className="text-sm max-w-xs" style={{ color: 'var(--text-secondary)' }}>a year on the average tax bill if the rest were an override — our arithmetic: the gap’s share of the levy, applied to the {usd(d.taxBase.avgHomeBill)} average bill</div></div>
+        <div><div className="text-3xl font-bold tnum">{usd(overrideBill)}</div><div className="text-sm max-w-xs" style={{ color: 'var(--text-secondary)' }}>on the average tax bill next year if the whole gap were an override — and more the year after, because the rates do not change</div></div>
       </div>
 
-      <h2 className="text-lg font-semibold mt-10">Everything on the table, biggest first</h2>
+      <h2 className="text-lg font-semibold mt-10">The choices, whole</h2>
+      <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        Eight things the town could actually decide, each priced by the same model. Four change an amount and buy time; four change a growth rate and can end it. Every figure is the model’s, and “positions” is an estimate at the catalogue’s own cost per position.
+      </p>
+      <div className="grid gap-3 mt-4 md:grid-cols-2">
+        {FUTURES.map(f => (
+          <div key={f.id} className="card p-4" style={{ borderLeft: `3px solid ${f.bends ? 'var(--status-good)' : 'var(--text-muted)'}` }}>
+            <div className="flex items-baseline justify-between gap-3">
+              <p className="text-[15px] font-bold">{f.label}</p>
+              <span className="text-[10px] font-bold uppercase tracking-widest shrink-0" style={{ color: f.bends ? 'var(--status-good)' : 'var(--text-muted)' }}>{f.bends ? 'bends the curve' : 'buys time'}</span>
+            </div>
+            <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>{f.angle}</p>
+            <dl className="mt-3 text-[13px] space-y-1.5">
+              <div><dt className="inline font-semibold">Who says yes. </dt><dd className="inline" style={{ color: 'var(--text-secondary)' }}>{f.whoSaysYes}</dd></div>
+              <div><dt className="inline font-semibold">What it costs. </dt><dd className="inline tnum" style={{ color: 'var(--text-secondary)' }}>{f.costs}</dd></div>
+              <div><dt className="inline font-semibold">How long it holds. </dt><dd className="inline" style={{ color: f.bends ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{f.holds}</dd></div>
+            </dl>
+            <a className="underline text-xs mt-2 inline-block" style={{ color: 'var(--text-muted)' }} href={f.more}>the working</a>
+          </div>))}
+      </div>
+
+      <h2 className="text-lg font-semibold mt-10">The parts, biggest first</h2>
       <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Recurring money a year at the top; then what pays once or takes a decade; then what is left.</p>
       <div className="overflow-x-auto mt-3">
         <table className="w-full text-sm" style={{ minWidth: 820 }}>
@@ -112,7 +135,7 @@ function Body({ d }: { d: Model }) {
         {ranked.map(l => (
           <div key={l.key} className="flex items-baseline gap-3 py-1.5 text-sm" style={{ borderTop: '1px solid var(--grid)' }}>
             <span className="w-52 shrink-0 font-semibold">{l.label}</span>
-            <span className="grow h-1.5 rounded-full" style={{ background: 'var(--surface-3)' }}><span className="block h-full rounded-full" style={{ width: `${(l.swing / ranked[0].swing) * 100}%`, background: 'var(--series-cost)' }} /></span>
+            <span className="grow h-1.5 rounded-full" style={{ background: 'var(--surface-3)' }}><span className="block h-full rounded-full" style={{ width: `${Math.max(0, l.swing / ranked[0].swing) * 100}%`, background: 'var(--series-cost)' }} /></span>
             <span className="w-16 text-right tnum font-bold shrink-0">{pts(l.swing)}</span>
             <span className="w-40 text-right text-xs shrink-0 tnum" style={{ color: 'var(--text-muted)' }}>{pct(l.weight, 0)} of budget, +{pct(l.rate, 1)}/yr</span>
           </div>))}
@@ -134,7 +157,7 @@ function Body({ d }: { d: Model }) {
       <p className="text-sm mt-10 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
         Every figure on this page is computed by the same model that runs the rest of this site and is read from it, not typed; the working is on{' '}
         <a className="underline" href="/bend-the-curve">Bend the curve</a>, <a className="underline" href="/what-solved-requires">What “solved” requires</a> and{' '}
-        <a className="underline" href="/build-your-own-budget">Build your own budget</a>. The override figure is this page’s own arithmetic and is labelled as such.
+        <a className="underline" href="/build-your-own-budget">Build your own budget</a>. The whole-choice cards run the same projection as Bend the curve; the override figures are that page’s treadmill, on the average bill.
       </p>
     </>
   )
