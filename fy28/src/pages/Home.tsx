@@ -62,9 +62,37 @@ const DOORS: { area: Area; who: string; note?: string; quiet?: boolean
     quiet: true },
 ]
 
+/** WHAT WAS SAID, the standing entrance. The last three recorded meetings with our
+ *  minutes, and the count. The contextual link is on each board's row above; this is
+ *  for somebody who did not come for a particular board. */
+function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
+  const { d } = useReport<{ counts: { meetings: number }; meetings: { slug: string; board: string; date: string; counts: Record<string, number>; summary: string }[] }>('recording-minutes.json')
+  if (!d || !d.meetings.length) return null
+  const fmt = (iso: string) => { const [y, m, dd] = iso.split('-').map(Number); return new Date(y, m - 1, dd).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }
+  return (
+    <section aria-label="What was said">
+      <div className="flex items-baseline justify-between gap-3 mb-2">
+        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>What was said</h2>
+        <button onClick={() => onJump('recorded')} className="text-[12px] underline"
+          style={{ color: 'var(--series-cost)' }}>all {d.counts.meetings} meetings &rarr;</button>
+      </div>
+      <ol className="space-y-2">
+        {d.meetings.slice(0, 3).map(m => (
+          <li key={m.slug} className="card px-3 py-2.5">
+            <a className="text-[13px] font-semibold underline" href={`/what-was-said/${m.slug}`} style={{ color: 'var(--series-cost)' }}>{m.board}, {fmt(m.date)}</a>
+            <span className="text-[11.5px] ml-2" style={{ color: 'var(--text-muted)' }}>{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'}{m.counts.transfers ? ` · ${m.counts.transfers} transfer${m.counts.transfers === 1 ? '' : 's'}` : ''}</span>
+            <p className="text-[12.5px] mt-1 leading-snug line-clamp-3" style={{ color: 'var(--text-secondary)' }}>{m.summary}</p>
+          </li>
+        ))}
+      </ol>
+      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Our minutes, from the recordings — every item links to the video at that moment.</p>
+    </section>
+  )
+}
+
 export function Home({ onJump }: { onJump: (t: Tab) => void }) {
   return (
-    <div className="mx-auto max-w-3xl px-5 pb-20">
+    <div className="mx-auto max-w-5xl px-5 pb-20">
       <header className="pt-10 pb-6">
         <h1 className="text-[27px] sm:text-4xl font-bold tracking-tight leading-[1.1]">
           The <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project
@@ -98,19 +126,6 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
             not have to guess which door hides it. */}
       </header>
 
-      {/* THE THREE BOARDS, at a glance, above the doors. TJ: "we need the same short
-          listing on the home page for the 3 boards". A resident who came to find out
-          whether the School Committee meets this week gets the answer before the
-          doors, in three rows, with the hook and the time. */}
-      <section className="mb-6" aria-label="Meetings this week">
-        <div className="flex items-baseline justify-between gap-3 mb-2">
-          <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week</h2>
-          <button onClick={() => onJump('thisweek')} className="text-[12.5px] underline"
-            style={{ color: 'var(--series-cost)' }}>every board, and what just happened &rarr;</button>
-        </div>
-        <BoardsThisWeek days={7} compact />
-      </section>
-
       {/* One column, always. The rows are the whole page on a phone; two columns would
           pair them off and stop the set reading as a list. The row is the hit target, not
           the words in it. The count is deliberately not written into the prose here or in
@@ -125,8 +140,16 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           post is for the larger number of people who do not. On a phone it stacks with the
           doors first, because somebody who came back on purpose should not scroll past an
           article to reach them. */}
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
-      <div>
+      {/* TWO COLUMNS BY TEMPO. Left is the map -- the sections, which change monthly.
+          Right is the live column -- this week, what was said, the latest article --
+          which changes daily. On a phone the live column comes FIRST: somebody on a
+          phone in the evening is there for tonight's meeting more often than for the
+          theory. TJ, 12 September: "the 'doors' need a heading now" -- and a heading
+          that says what the five DO, paired with the live column's, rather than a
+          label for the container. */}
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start">
+      <div className="order-2 lg:order-1">
+      <h2 className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>Understand the budget</h2>
       <div className="grid gap-2.5">
         {DOORS.map(d => d.href ? (
           <a key={d.area} href={abs(d.href)}
@@ -207,7 +230,18 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           The rule that replaced the old one is smaller and harder: nothing unpublished
           reaches the front page. */}
       </div>
-      <div className="lg:sticky lg:top-4"><HomeLatest /></div>
+      <div className="order-1 lg:order-2 space-y-8">
+        <section aria-label="Meetings this week">
+          <div className="flex items-baseline justify-between gap-3 mb-2">
+            <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
+            <button onClick={() => onJump('thisweek')} className="text-[12px] underline"
+              style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
+          </div>
+          <BoardsThisWeek days={7} compact />
+        </section>
+        <HomeWhatWasSaid onJump={onJump} />
+        <HomeLatest />
+      </div>
       </div>
 
       {/* The "the walkthrough moved" note was here and is gone. It explained a
@@ -276,7 +310,7 @@ function HomeLatest() {
   if (!post) return null
 
   return (
-    <section className="mt-10 pt-8" style={{ borderTop: '1px solid var(--grid)' }}>
+    <section>
       {preview ? (
         <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
           style={{ color: 'var(--status-warning)' }}>
