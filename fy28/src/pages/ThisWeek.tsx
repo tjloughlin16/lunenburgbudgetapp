@@ -37,7 +37,7 @@ type Video = { first_seen: string; video_id: string; title: string; url: string;
 type Ours = { written: string; board: string; board_slug: string; date: string; url: string; votes: number }
 type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; vote_expected?: boolean }
 type Upcoming2 = { board: string; board_slug: string; date: string; days_away: number; when: string; where: string; how_to_attend: string; one_line: string; items: PreviewItem[]; nothing_of_note: boolean; agenda_url: string }
-type Retro = { board: string; board_slug: string; date: string; url: string; summary: string; votes: number; transfers: number; tags: string[]; has_official_minutes: boolean }
+type Retro = { board: string; board_slug: string; date: string; url: string; headline?: string; summary: string; votes: number; transfers: number; tags: string[]; has_official_minutes: boolean }
 type Notices = { as_of: string; upcoming: Upcoming2[]; retro: Retro[] }
 type WhatsNew = {
   as_of: string
@@ -141,7 +141,7 @@ export function ThisWeek() {
                       <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href={o.url}>{o.board}, {longDate(o.date)}</a>
                       <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{o.votes} substantive vote{o.votes === 1 ? '' : 's'} · {o.transfers} transfer{o.transfers === 1 ? '' : 's'}{o.has_official_minutes ? '' : ' · no official minutes yet'}</span>
                     </div>
-                    <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{o.summary}</p>
+                    <p className="text-sm mt-1 font-medium">{o.headline || o.summary}</p>
                   </li>
                 ))}
               </ol>}

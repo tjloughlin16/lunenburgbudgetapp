@@ -54,7 +54,7 @@ def retro_text(m):
     mm = m['minutes']
     votes = [v for v in mm['votes'] if not v.get('procedural')]
     url = '%s/what-was-said/%s/%s-%s' % (SITE, m['board_slug'], m['meeting_date'], m['video_id'])
-    lines = ['%s met %s. Here is what the recording carries.' % (m['board'], long_date(m['meeting_date']))]
+    lines = ['%s, %s: %s' % (m['board'], long_date(m['meeting_date']), mm.get('headline') or 'here is what the recording carries.')]
     lines.append(mm['summary'])
     if votes:
         lines.append('Votes taken (%d): ' % len(votes)
@@ -103,6 +103,7 @@ def payload():
         retro.append({
             'board': m['board'], 'board_slug': m['board_slug'], 'date': m['meeting_date'],
             'url': '/what-was-said/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
+            'headline': mm.get('headline', ''),
             'summary': mm['summary'],
             'votes': sum(1 for v in mm['votes'] if not v.get('procedural')),
             'transfers': len(mm['transfers']),

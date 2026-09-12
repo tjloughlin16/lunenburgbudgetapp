@@ -50,6 +50,7 @@ def payload():
             'date': m['meeting_date'],
             'video_id': m['video_id'],
             'video_url': m['video_url'],
+            'headline': mm.get('headline', ''),
             'summary': mm['summary'],
             'confidence': mm['confidence'],
             'tags': mm.get('tags', []),

@@ -52,6 +52,7 @@ type Meeting = {
   date: string
   video_id: string
   video_url: string
+  headline?: string
   summary: string
   confidence: string
   tags: string[]
@@ -207,7 +208,7 @@ function Index({ d }: { d: Payload }) {
                     {!m.has_official_minutes && <> · <span style={{ color: 'var(--series-revenue, #b5540f)' }}>no official minutes</span></>}
                   </span>
                 </div>
-                <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{m.summary}</p>
+                <p className="text-sm mt-1 font-medium">{m.headline || m.summary}</p>
                 <p className="mt-1.5 flex flex-wrap gap-1">
                   {m.tags.map(t => <a key={t} href={`/what-was-said?tag=${t}`} className="px-1.5 py-0.5 text-[10.5px] rounded"
                     style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>{t.replace(/-/g, ' ')}</a>)}

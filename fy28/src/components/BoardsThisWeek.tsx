@@ -103,6 +103,10 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
           const p = previewFor(m)
           const hook = p?.hook || p?.one_line
           const id = `m-${m.board_slug}-${m.date}`
+          // The indent lines the hook up under the day in the wide layout only. In the
+          // narrow column the chips wrap and an indent leaves a dead gutter with the
+          // words crushed to the right -- TJ: "This looks broken".
+          const indent = compact ? '' : 'sm:pl-[9.75rem]'
           const Row = compact ? 'a' : 'div'
           return (
             <li key={m.file_id} id={id} className="card px-3 py-2.5" style={{ scrollMarginTop: 80, ...(target === id ? { borderColor: 'var(--series-cost)' } : {}) }}>
@@ -118,22 +122,22 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
                 {compact && <span className="text-[11.5px] ml-auto" style={{ color: 'var(--series-cost)' }}>details &rarr;</span>}
               </div>
               {hook && (
-                <p className="text-[13.5px] mt-1 leading-snug sm:pl-[9.75rem]">{hook}</p>
+                <p className={`text-[13.5px] mt-1 leading-snug ${indent}`}>{hook}</p>
               )}
               </Row>
-              <p className="mt-1 sm:pl-[9.75rem]"><LastTime slug={slug} rec={recorded.d} /></p>
+              <p className={`mt-1 ${indent}`}><LastTime slug={slug} rec={recorded.d} /></p>
               {/* WHAT MATTERS, FLAGGED. TJ: "if there is anything in there that is
                   'important' (think, schools, budgets, citizen-facing impact) then lets
                   highlight that. And if there's NOTHING important, we probably need to
                   show that". Important items come first with a mark; a meeting with
                   none says so in plain words rather than leaving a blank. */}
               {p && p.items.length > 0 && !p.items.some(it => it.important) && (
-                <p className="text-[12px] mt-1 sm:pl-[9.75rem]" style={{ color: 'var(--text-muted)' }}>
+                <p className={`text-[12px] mt-1 ${indent}`} style={{ color: 'var(--text-muted)' }}>
                   Routine business — nothing on this agenda changes a bill, a school or a service.
                 </p>
               )}
               {!compact && p && p.items.length > 0 && (
-                <details className="mt-1 sm:pl-[9.75rem]" open={target === id}>
+                <details className={`mt-1 ${indent}`} open={target === id}>
                   <summary className="text-[12px] cursor-pointer" style={{ color: 'var(--series-cost)' }}>
                     {(() => { const n = p.items.filter(it => it.important).length
                       return n ? `${n} item${n === 1 ? '' : 's'} that matter, and ${p.items.length - n} more` : `${p.items.length} items of note` })()}

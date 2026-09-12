@@ -84,7 +84,7 @@ TAGS = [
 SCHEMA = {
     'type': 'object',
     'additionalProperties': False,
-    'required': ['summary', 'attendees', 'public_comment', 'tags', 'votes', 'budget_items',
+    'required': ['headline', 'summary', 'attendees', 'public_comment', 'tags', 'votes', 'budget_items',
                  'transfers', 'decisions', 'topics', 'not_audible', 'confidence'],
     'properties': {
         'attendees': {'type': 'array', 'items': {
@@ -108,6 +108,7 @@ SCHEMA = {
             'description': 'each person who spoke during public comment or from the floor'},
         'tags': {'type': 'array', 'items': {'type': 'string', 'enum': TAGS},
                  'description': 'every topic from the controlled list that this meeting substantively touched'},
+        'headline': {'type': 'string', 'description': 'THE ONE THING: the most consequential decision or discussion of the meeting, as one plain sentence under 120 characters, the most important part first. A vote outcome if there was a substantive one; otherwise what the meeting was really about. No figures from captions.'},
         'summary': {'type': 'string', 'description': 'Two or three sentences: what this meeting was mostly about and what, if anything, was decided. No figures.'},
         'votes': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
@@ -183,6 +184,7 @@ Rules, none optional:
 11. Public comment: record each speaker's topic; record the speaker's name ONLY if they stated it themselves for the record, and exactly as heard.
 12. attendees: officials and members identified as present, with the role as stated or as evident from how they are addressed. Never the public.
 13. tags (meeting-level): choose every tag from the controlled list that the meeting substantively touched; "turkey-hill" is Turkey Hill Elementary, "primary-school" is Lunenburg Primary School.
+15. headline: the one most consequential thing, first and plainly, under 120 characters -- what a resident who reads nothing else should know.
 14. topics[].tags: one to three tags from the same list for each topic, so time can be summed by subject. A procedural stretch (pledge, adjournment) gets none. "public-comment" means comment from the floor by residents only -- a public interview of a candidate is hiring; a board member speaking is not public comment.
 
 Return only the JSON."""
@@ -303,6 +305,44 @@ def write_one(entry, docs, force=False):
     return 'written ($%.3f)' % (res.get('total_cost_usd') or 0)
 
 
+HEADLINE_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['headline'],
+                   'properties': {'headline': {'type': 'string'}}}
+
+
+def headline(path):
+    """Add a headline to a minutes file written before the schema asked for one. One
+    small call over the file's own summary, votes and decisions -- not the captions."""
+    m = json.load(open(path, encoding='utf-8'))
+    mm = m['minutes']
+    if mm.get('headline'):
+        return 'current'
+    votes = [v for v in mm['votes'] if not v.get('procedural')]
+    prompt = ('From these minutes of a %s meeting on %s, write the ONE most consequential thing as one '
+              'plain sentence under 120 characters, most important part first, no figures. '
+              'A substantive vote outcome if there was one; otherwise what the meeting was really about.\n\n'
+              'Summary: %s\n\nVotes:\n%s\n\nDecisions:\n%s'
+              % (m['board'], m['meeting_date'], mm['summary'],
+                 '\n'.join('- %s — %s' % (v['motion'], v['outcome']) for v in votes) or '- none',
+                 '\n'.join('- ' + d['decision'] for d in mm.get('decisions', [])) or '- none'))
+    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL,
+                        '--json-schema', json.dumps(HEADLINE_SCHEMA), '--output-format', 'json',
+                        '--max-budget-usd', '0.3'],
+                       input=prompt, capture_output=True, text=True, env=env, timeout=300)
+    if r.returncode != 0:
+        raise SystemExit('claude failed on headline for %s' % path)
+    res = json.loads(r.stdout)
+    body = res.get('structured_output') or res.get('result')
+    if isinstance(body, str):
+        body = json.loads(body)
+    mm['headline'] = body['headline'].strip()
+    m['written'].setdefault('backfilled', []).append({'field': 'headline', 'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'cost_usd': res.get('total_cost_usd')})
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(m, fh, indent=1, ensure_ascii=False)
+        fh.write('\n')
+    return 'headlined ($%.3f): %s' % (res.get('total_cost_usd') or 0, mm['headline'][:80])
+
+
 RETAG_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['topics'],
                 'properties': {'topics': {'type': 'array', 'items': {
                     'type': 'object', 'additionalProperties': False, 'required': ['i', 'tags'],
@@ -362,6 +402,8 @@ def check():
         if sha256_of(t['path']) != m['source']['sha256']:
             print('STALE %s: transcript changed since these minutes were written' % os.path.relpath(f, ROOT)); bad += 1
         mm = m.get('minutes', {})
+        if not mm.get('headline'):
+            print('NO HEADLINE %s: run --retag' % os.path.relpath(f, ROOT)); bad += 1
         for t in mm.get('topics', []):
             if 'tags' not in t:
                 print('NO TOPIC TAGS %s: run --retag' % os.path.relpath(f, ROOT)); bad += 1; break
@@ -408,6 +450,7 @@ def main():
     if a.retag:
         for f in sorted(glob.glob(os.path.join(OUT, '*', '*.json'))):
             print('%s  %s' % (os.path.relpath(f, OUT), retag(f)), flush=True)
+            print('%s  %s' % (os.path.relpath(f, OUT), headline(f)), flush=True)
         return 0
     if a.status:
         status(); return 0

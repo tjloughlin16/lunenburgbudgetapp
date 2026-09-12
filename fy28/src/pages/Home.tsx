@@ -66,7 +66,7 @@ const DOORS: { area: Area; who: string; note?: string; quiet?: boolean
  *  minutes, and the count. The contextual link is on each board's row above; this is
  *  for somebody who did not come for a particular board. */
 function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
-  const { d } = useReport<{ counts: { meetings: number }; meetings: { slug: string; board: string; date: string; counts: Record<string, number>; summary: string }[] }>('recording-minutes.json')
+  const { d } = useReport<{ counts: { meetings: number }; meetings: { slug: string; board: string; date: string; counts: Record<string, number>; headline: string; summary: string }[] }>('recording-minutes.json')
   if (!d || !d.meetings.length) return null
   const fmt = (iso: string) => { const [y, m, dd] = iso.split('-').map(Number); return new Date(y, m - 1, dd).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }
   return (
@@ -81,7 +81,10 @@ function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
           <li key={m.slug} className="card px-3 py-2.5">
             <a className="text-[13px] font-semibold underline" href={`/what-was-said/${m.slug}`} style={{ color: 'var(--series-cost)' }}>{m.board}, {fmt(m.date)}</a>
             <span className="text-[11.5px] ml-2" style={{ color: 'var(--text-muted)' }}>{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'}{m.counts.transfers ? ` · ${m.counts.transfers} transfer${m.counts.transfers === 1 ? '' : 's'}` : ''}</span>
-            <p className="text-[12.5px] mt-1 leading-snug line-clamp-3" style={{ color: 'var(--text-secondary)' }}>{m.summary}</p>
+            {/* THE HEADLINE, not the summary. TJ: "not wordy, a high level summary, and
+                definitely include the most important thing first." One sentence, the
+                consequential thing first, written for exactly this card. */}
+            <p className="text-[13px] mt-1 leading-snug">{m.headline || m.summary}</p>
           </li>
         ))}
       </ol>
