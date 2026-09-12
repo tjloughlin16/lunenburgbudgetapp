@@ -102,9 +102,12 @@ def main():
     check(not hits, 'unpublished copy is on the published side:\n    '
                     + '\n    '.join(hits))
     check(len(probes) > 3, 'the leak check ran %d probes' % len(probes))
-    check(payload['counts']['prepared'] >= C.MIN_ITEMS,
-          'the payload says %d items were parsed and the floor is %d'
-          % (payload['counts']['prepared'], C.MIN_ITEMS))
+    # The public payload no longer says how many items are prepared -- that count is
+    # addressed to us -- so the floor is checked against the candidates file directly.
+    check(len(C.items()) >= C.MIN_ITEMS,
+          '%d items were parsed and the floor is %d' % (len(C.items()), C.MIN_ITEMS))
+    check('prepared' not in payload['counts'] and 'prepared' not in payload['source'],
+          'the public payload carries the count of unpublished items')
 
     tok = BL.tokens()
     with io.open(C.MYTHS, encoding='utf-8', newline='') as fh:
@@ -277,7 +280,7 @@ def main():
     print('ok: %d of %d items published — every sentence verbatim from %s, every address '
           'routed, every reading time, label, vintage and count recomputed, and none of '
           'the %d unpublished items anywhere under fy28/public or fy28/dist'
-          % (len(posts), cnt['prepared'], os.path.relpath(C.DOC, ROOT), len(probes)))
+          % (len(posts), len(C.items()), os.path.relpath(C.DOC, ROOT), len(probes)))
     return 0
 
 

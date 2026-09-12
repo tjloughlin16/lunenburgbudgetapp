@@ -287,14 +287,18 @@ def build(everything=False):
     # otherwise reorder the page silently.
     order = list(PUBLISHED)
     posts.sort(key=lambda p: (order.index(p['n']) if p['n'] in order else -1), reverse=True)
+    # THE PUBLIC PAYLOAD CARRIES NO COUNT OF WHAT IS UNPUBLISHED. `prepared` is the size of
+    # the drafts pile -- addressed to us, and the reader's surface must carry nothing
+    # addressed to us. The review payload (`everything`) keeps it; blog.json does not.
     return dict(
-        source=dict(path='notes/process/CONTENT-CANDIDATES.md', prepared=prepared),
+        source=dict(path='notes/process/CONTENT-CANDIDATES.md',
+                    **({'prepared': prepared} if everything else {})),
         review=everything,
         words_per_minute=WPM,
         pinned=pinned[0] if pinned else None,
         counts=dict(
             published=sum(1 for p in posts if p['published']),
-            prepared=prepared,
+            **({'prepared': prepared} if everything else {}),
             no_vintage=sum(1 for p in posts if p['vintage'] is None),
             hypothesis=sum(1 for p in posts if p['epistemic'] == 'hypothesis'),
             no_facebook_post=sum(1 for p in posts if not p['facebook']['text']),
@@ -883,7 +887,7 @@ def main():
             return 1
         print('ok: %d of %d items published; blog.json and %d share pages reproduce; none '
               'of the %d unpublished items appears anywhere under fy28/public or fy28/dist'
-              % (c['published'], c['prepared'], len(files), len(probes)))
+              % (c['published'], len(C.items()), len(files), len(probes)))
         return 0
 
     with io.open(OUT, 'w', encoding='utf-8', newline='\n') as fh:
@@ -903,7 +907,7 @@ def main():
 
     probes, hits = leak_check(payload)
     print('wrote fy28/public/data/blog.json — %d of %d items published, %d share pages'
-          % (c['published'], c['prepared'], len(files)))
+          % (c['published'], len(C.items()), len(files)))
     if hits:
         print('\nUNPUBLISHED COPY IS ON THE PUBLISHED SIDE:\n  %s' % '\n  '.join(hits))
         return 1

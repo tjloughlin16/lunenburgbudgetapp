@@ -1,5 +1,40 @@
 # What is queued, in order
 
+## WHERE EVERY ITEM STANDS — 12 SEPTEMBER 2026
+
+The two order blocks below are kept for their reasoning; this table is the status. Every
+"done" names the address or the script, so it can be checked rather than believed.
+
+| # | item | state |
+|---|---|---|
+| 1 | the three partial pages | **done** — `/what-families-pay`, `/if-students-leave`, `/what-stopped-being-funded` |
+| 2 | harvest the meetings 2023–24 | **done** — 12,081 documents back to 2009 |
+| 3 | the denominator | **done** — `search_minutes.py` prints both denominators every run |
+| 4 | re-run the empty rule-15a searches | **done** with the FTS5 index |
+| 5 | YouTube transcripts | **done, backfill still running** — 987 held, 988 in R2 |
+| 6 | the database | **done** — 103 tables, `/api/query` |
+| 7 | grant unwinding | **done** — `/when-grants-end` |
+| 8 | staffing over time and cuts | **done** — `/school-staffing`, `/cut-register`, `/the-paraprofessionals` |
+| 9 | Chapter 70 modelled | **done** — `/how-chapter-70-works`, `/why-we-only-get-minimum-aid` |
+| 10 | special education, four reports | **done** — `/special-education` and its four pages |
+| 11 | candidates worth testing | open list; nothing blocking |
+| 12 | refresh mechanisms | **done** — `refresh.py`, `/this-week`; scheduling needs TJ's hand (`ops/README.md`) |
+| 12a | meeting digests | **v1** — the retro notices and our minutes; the editorial digest in TJ's voice is not built |
+| 12b | Facebook, four post types | **done** — the blog system, 48 posts prepared, publish by `PUBLISHED` |
+| 13 | community news | **done** — `watch_feeds.py`, "From the town" on `/this-week` |
+| 14 | athletics registrations | **mechanism done, sources missing** — every youth league publishes only on Facebook |
+| 15 | sports directory | later, by TJ |
+| 16 | Facebook, later | nothing to build; the texts land in `build/notices-to-post.md` |
+| 17 | Monty Tech drill-in | **done** — `/monty-tech` |
+| 18 | search | **done** — `/search`, six corpora, affinity; first D1 load completes with the next refresh |
+| 19 | Facebook header and favicon | **done** — The Margin, on the group and in every tab |
+
+**Not on this list and open:** minutes for the ~700 recordings outside the approved
+policy (a decision, ~$0.50 each); the paused pages 7–9 of the nine-page order —
+enrollment, circuit breaker, AP coursework; affinity tags for the 273 archive documents.
+
+---
+
 ## THE ORDER, RESET BY TJ ON 11 SEPTEMBER 2026
 
 This supersedes the 8 September order below, which is kept because its reasoning about
